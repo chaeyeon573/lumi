@@ -22,7 +22,7 @@ npm run preview    # 빌드 결과 미리보기
 
 ## 모바일 앱 (Expo) — `apps/mobile`
 
-웹과 같은 도메인 코드(`packages/core`: 타입·API·mock DB·스토어·i18n·추천 로직)를 그대로 쓰는 React Native 앱입니다. 화면은 RN으로 다시 그렸고, 웹의 모든 화면(사람·발견·캠퍼스·나 탭, `+` 시트, 사람/활동/조직/공고 상세, 채팅, 알림, 설정, 시간표, 수업 공간, Plan Together, 활동·게시물 만들기, 프로필 편집)이 `apps/mobile/app/**` 에 같은 경로 이름으로 있습니다. 온보딩·지도는 아직 없고 데모 계정으로 바로 들어갑니다.
+웹과 같은 도메인 코드(`packages/core`: 타입·API·mock DB·스토어·i18n·추천 로직)를 그대로 쓰는 React Native 앱입니다. **PRD의 5탭 구조(Home | People | Meet | Feed | Profile)는 아직 웹에만 반영됐고, 모바일은 이전 구조(사람 | 발견 | + | 캠퍼스 | 나)입니다 — 다음 라운드에 이식.** 화면은 RN으로 다시 그렸고, 웹의 모든 화면(사람·발견·캠퍼스·나 탭, `+` 시트, 사람/활동/조직/공고 상세, 채팅, 알림, 설정, 시간표, 수업 공간, Plan Together, 활동·게시물 만들기, 프로필 편집)이 `apps/mobile/app/**` 에 같은 경로 이름으로 있습니다. 온보딩·지도는 아직 없고 데모 계정으로 바로 들어갑니다.
 
 **폰에서 보기 (Windows PowerShell)** — 다른 작업 세션이 브랜치를 바꿔도 안 깨지도록 `~/AroundU-mobile` 에 따로 클론해서 실행합니다.
 
@@ -208,23 +208,39 @@ npm run import:opportunities -- server/data/opportunities-berkeley.csv
 - 인증 코드 요청에 rate limit 이 없다 (Railway 앞단 또는 `express-rate-limit` 추가).
 - 세션 토큰 만료·기기 목록, 이미지 업로드(현재 `public/photos` 정적 파일).
 
-## 앱 구조 — People | Discover | + | Campus | Me
+## 앱 구조 — Home | People | Meet | Feed | Profile (PRD 4절, `docs/PRD.md`)
+
+하단 5탭, 가운데 + 버튼 없음. DM은 헤더 오른쪽 메시지 아이콘. 작업 규칙은 `CLAUDE.md`.
 
 | 탭 | 질문 | 내용 |
 | --- | --- | --- |
-| **People** (`src/pages/home/HomePage.tsx`) | 누구를 만날 것인가 | 한 번에 한 명 카드 스와이프. 큰 사진, 소속, 공통 관심사, 추천 이유, 가능한 시간, "지금 같이 하고 싶은 것". 왼쪽=넘기기, 오른쪽=관심(상대에게 비공개, 상호일 때만 매칭 시트). 버튼: 넘기기 / 친구로 연결 / 커피 제안 / 함께할 일. 이전 카드, 나중에 보기, 오늘 본 사람(localStorage). 필터: 전체·친구·밥·카페·공부·운동·취미·창업·프로젝트 |
-| **Discover** (`src/pages/discover/DiscoverPage.tsx`, `src/lib/discover.ts`) | 무엇을 함께할 것인가 | 상단 시간표 카드(오늘 공강·시간 맞는 사람·가능한 활동 → Open Slot). **Now**: 오늘 안에 시작하는 가벼운 활동을 한 줄 카드로(작은 프로필, 무엇·언제·어디, 같이 가기), 시간 칩(지금/30분/1시간/오늘)·종류 칩, 승인제는 승인 전 대략 위치만(`place.area`), Who's free·오늘의 질문·친구들의 계획·Campus Pulse. **Activities**: 이후 활동 + 같이 가는 행사·동아리·창업 기회. **Teams**: 팀원 모집 활동, Study Crew, 해커톤·창업 기회, 동아리 모집 — 목적·역할·대면/온라인 필터, 내가 제공할 수 있는 역할 표시 |
-| **+** (`src/components/layout/BottomNav.tsx`) | 새로운 활동 만들기 | 즉석 만남(30분 뒤 시작, People에서 마지막으로 본 사람 자동 초대) / 활동·약속 / 같이 시간 정하기(Plan Together) / Study Crew(수업 선택) / 팀원 모집 / 게시물 작성. 단체 글·기회 공유는 단체 페이지와 캠퍼스 › 공고에서 |
-| **Campus** (`src/pages/community/CommunityPage.tsx`) | 학교의 이야기·공고·단체 | **피드**: 사진·일상·질문·익명 글. **공고**: 장학금·인턴·연구실/RA·공모전·교환학생 (같이 가는 행사·동아리 모집·팀 기회는 발견에만). **단체**: 동아리·학회·학생회·연구실·Greek → 단체 페이지 탭 소개·게시물·행사·모집·멤버 (`src/pages/org/OrgPage.tsx`) |
-| **Me** (`src/pages/profile/ProfilePage.tsx`) | 나와 내 일정 | 프로필 카드·질문 답변·목표. 목록: My Plans(받은 초대·참가 대기·확정·관심 행사·팀 신청·Study Crew, `src/pages/plans/PlansPage.tsx`) / 내 시간표 / 친구 / 채팅 / 저장한 공고 / 관심 행사 / 가입한 동아리 / 활동 기록. 게시물·만든 활동·참여·저장 탭 |
+| **Home** (`src/pages/home/HomePage.tsx`, `@core/lib/home`) | 오늘 나에게 뭐가 있나 | Today dashboard — 오늘 수업·공강("3시간 비어요 · 같이 비는 사람 4명 · 사람 찾기"), Happening Today(동아리 박람회·행사·해커톤·Rush), Meet Around You 2~3개, People You May Want to Meet 2~4 카드(Why you might connect), Opportunities 3개. **Alumni Home**: 시간표 대신 근처 사람·내 그룹·예정 Meet·글·도시/직업 기회 |
+| **People** (`src/pages/people/*`, `@core/lib/network`) | 누구를 만날까 | **My Network**(내 학교, 무료): 한 장짜리 카드 덱 — 사진 + Context(이름·학교·단계·전공·지역) + Interests + Why you might connect, 버튼 Pass / **Connect** / Invite to Meet, 필터 Students·Master's·PhD·Alumni, 하루 30회. **Beyond**(다른 학교·도시): 무료는 3명 미리보기 + 블러, 배너 "Expand your circle → Try AroundU+"; Plus는 전체 + 고급 필터(학교 다중·단계·관심사·도시)·프리셋·saved search·alerts (`/people/search`) |
+| **Meet** (`src/pages/meet/*`) | 무엇을 같이 할까 | **For You**(추천 그룹·이벤트·Now 섞음) · **Groups**(동아리·학회·연구실·Greek 카드 → 단체 페이지 Overview/Posts/People/Events) · **Events**(활동 카드, n/m joined, Join/Request) · **Now**(즉석 만남 compact 카드 + 제휴 딜 + 공강 열기). 상단 **+ Create**: Coffee/Lunch/Study/Sports/Dinner/Networking/Party/Other → 활동 만들기, Plan Together, Study Crew, 팀원 모집 |
+| **Feed** (`src/pages/feed/*`, `@core/lib/feed`) | 무슨 이야기가 오가나 | 컴포저 "What's happening?"(Text·Photo·Question·Poll, 태그, 공개 범위) · **For You**(관심사·팔로우·학교 점수순) · **Campus**(내 학교, 글별 익명 옵션) · **Following**(팔로우·친구·가입 그룹). 4개마다 Sponsored 글, Boosted 글은 맨 위. 글 상세 `/feed/:id`, 내 글 **Boost** |
+| **Profile** (`src/pages/profile/*`) | 나는 지금 어떤 사람인가 | 사진·이름·학교 단계("Yonsei Student"/"Yonsei Alumni")·전공·도시, Interests, **Open To**(Coffee·Activities·Research·Networking·Mentoring·Co-founding), Schedule(재학생만) 또는 Career(졸업생), My Groups · My Meets · Connections · My Posts |
 
-시간표는 탭이 아니라 Discover 상단 카드와 Me에서 진입합니다. **수업을 탭하면 수업 공간**(`src/pages/classes/ClassPage.tsx`)이 열려 같은 수업 학생(시간표 공개 범위·같은 학교 기준)과 운영 중인 Study Crew를 보고, `Study Crew 만들기`로 제목·장소·시간(수업 직후)·공개 범위(같은 수업만, `visibilityTargets: ['course:<수업명>']`)가 미리 채워진 생성 화면으로 갑니다. 유형(시험·과제·복습·팀플)과 대면/온라인만 고르면 됩니다.
+**온보딩 8화면** (`src/pages/onboarding/*`): Splash → Login/Sign up → School selection → School verification(코드 `123456`) → Current stage(Undergrad·Master's·PhD·Alumni·Professional, 졸업생은 도시·회사·산업·역할) → Interests → What are you looking for?(Open To) → Schedule setup(첫 수업 추가 / 예시 불러오기 / 건너뛰기).
 
-**Plan Together** (`src/pages/together/*`, `src/lib/together.ts`, `api.together`): 단체 약속 시간 투표. `+` › 같이 시간 정하기 → 무엇(카테고리·제목·장소) → 누구(친구 다중 선택) → 언제(주최자·초대자 시간표의 공강이 겹치는 시간을 자동 제안 + 직접 추가) → 마감(24/48/72시간) → 보내기. 초대받은 사람은 되는 시간을 모두 고르고, 주최자는 표가 많은 시간으로 확정 → 활동(초대제)과 그룹 채팅방이 생성되고 그 시간에 가능하다고 한 사람만 참가자로 들어간다. 전체 시간표는 공유되지 않고 각자 고른 시간만 보인다. Me › My Plans "시간 정하는 중", Discover › Now "친구들의 계획", 알림에서 진입. 데모에서는 초대받은 사람이 4~7초 뒤 자기 공강에 맞춰 자동 투표.
+**Alumni 전환** (설정 › 졸업생으로 전환, `api.users.setStage`): 온보딩 재요구 없이 `Yonsei Student → Yonsei Alumni`. 관심사·그룹·연결 유지, Home이 Alumni Home으로, People 필터에 Alumni/Current students/Graduate.
 
-**발견 › 활동 피드는 글만**: 활동·행사 카드는 사진 없이 이모지 타일 + 제목·설명·언제·어디서·인원·참가비·주최자만 보인다 (`ActivityCard`/`OpportunityCard`의 `variant="text"`). 사진은 커뮤니티 Feed의 개인 포스트와 상세 화면에서만.
+**검색** (`src/pages/search/SearchPage.tsx`): People · Groups · Events · Posts · Opportunities. Explore 탭은 없다 — 정보는 Home + Feed + Search.
 
-**개인 포스트** (`src/pages/create/CreatePostPage.tsx`, `src/components/cards/PostCard.tsx`): 사진 1~4장 + 짧은 글, 종류·주제·수업 태그, 함께한 사람(상대가 승인해야 상대 프로필에 표시), 참여한 활동·관련 기회 연결, "다음 활동 같이할 사람 모집". 공개 범위는 같은 학교 / 친구 / 팔로워 / 나만 — 인터넷 전체 공개 없음. "내 프로필에 표시", "Community Feed에도 공개" 체크. 반응: 공감 / 댓글 / 나도 관심 있어요(관련 기회) / 다음에는 같이하기(작성자에게 제안) / 활동 자세히 보기 / 팀 참여 문의. 익명은 글만.
+시간표는 Profile › Schedule(`/timetable`)에서 편집하고 Home·Meet 추천에 쓴다. 수업을 탭하면 **수업 공간**(`src/pages/classes/ClassPage.tsx`)이 열려 같은 수업 학생과 Study Crew를 본다. **Plan Together**(`src/pages/together/*`, `api.together`)는 Meet › + Create에서: 후보 시간 투표 → 확정 → 활동 + 그룹 채팅.
+
+## 수익 모델 (`/pricing` 페이지에 근거와 함께 상세, `@core/lib/monetization`)
+
+핵심 social graph는 무료(PRD 22절): 같은 학교 people/alumni discovery, 기본 스와이프 30/일, DM, Feed 읽기/쓰기, Group·Meet 생성/참여, Campus 정보, 기본 프로필.
+
+| 상품 | 가격(KR / US) | 무엇을 사나 |
+| --- | --- | --- |
+| **A. AroundU+** | ₩7,900/월 · ₩64,900/년 · 학기권(4개월) ₩24,900 / $5.99 · $49.99 · $19.99, 7일 무료 | Beyond(다른 학교·도시) 무제한, cross-school alumni, 고급 필터·다중 학교 검색, saved search·alerts, 더 많은 introduction requests, 광고 없음 |
+| **B. Boost** | Profile 24h ₩2,900 · Meet 24h ₩4,900 · Post Community ₩10,000–30,000 · Post Cross-network ₩50,000–150,000 · Group 주 ₩30,000 | 내 학교 덱·Meet·Feed에서 추가 노출 |
+| **C. Promoted Opportunity** | 1학교 1주 ₩100,000 · 3학교 ₩250,000 · 전국 2주 ₩500,000 (+타겟팅 20%) | 기업·연구실·프로그램이 Home › Opportunities와 Feed에 노출 (CPM ≈ ₩950) |
+| **D. Sponsored Experience** | 오피스아워·회사 방문 ₩500,000 · 워크숍 ₩1,000,000–1,500,000 · 리서치 나이트·해커톤 ₩2,000,000–3,000,000 | 기업이 Meet를 직접 운영, RSVP·opt-in 연락처·리포트 |
+| **E. Sponsored Post · Partner Deal** | 캠퍼스당 주 ₩150,000 · 제휴 딜 카드 주 ₩50,000 | 4개 글마다 1개, 하루 최대 3광고주, 배너 없음 |
+
+모두 **모의 결제**(실제 과금 없음). 앱에서는 People › Beyond 배너, 30회 초과, 설정, Feed › 내 글 Boost, `/pricing`에서 진입.
 
 ## Open Slot · 소셜 RSVP (`src/pages/plans`, `src/components/social`, `src/lib/social.ts`)
 

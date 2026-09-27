@@ -8,7 +8,8 @@ import { FREE_SWIPES_PER_DAY } from '@core/lib/monetization';
 import { todayISO as todayISO_ } from '@core/lib/format';
 import type { Patch, Snapshot, RegisterInput, ActivityInput, PostInput, OpportunityInput, TimePollInput } from './types';
 import type {
-  Activity, ActivityProposal, Availability, ChatRoom, ID, Notification, OpportunityIntent, Participation, Post, User, Opportunity, TimePoll, TimeOption, ReportTargetType, Plan } from '@core/types';
+  Activity, ActivityProposal, Availability, ChatRoom, ID, Notification, OpportunityIntent, Participation, Post, User, Opportunity, TimePoll, TimeOption, ReportTargetType, Plan, Stage, Career, BoostTier } from '@core/types';
+import { STAGE_ROLE } from '@core/types';
 import { freeBlocks, jsDayToIdx, toMin } from '@core/lib/timetable';
 import { uid, pairKey } from '@core/lib/format';
 import { CATEGORY_LABELS } from '@core/lib/labels';
@@ -129,6 +130,7 @@ export function createEngine(ctx: EngineContext) {
         goals: input.goals, lookingFor: input.lookingFor ?? [], canOffer: input.canOffer ?? [], living: input.living, interestedOrgIds: [], meetPreference: input.meetPreference ?? [],
         fieldVisibility: input.fieldVisibility,
         settings: { messagePolicy: 'connected', notifications: input.notifications, locationPermission: input.locationPermission },
+        stage: input.stage, openTo: input.openTo, career: input.career,
         createdAt: now(),
       };
       db().users.push(user);
@@ -173,6 +175,15 @@ export function createEngine(ctx: EngineContext) {
       setPlan(id: ID, plan: Plan): Patch {
         const u = find(db().users, id);
         u.plan = plan;
+        return { users: [u] };
+      },
+      /** 생애 단계 변경 — Alumni 전환은 온보딩을 다시 요구하지 않는다. 학교·관심사·그룹은 유지 */
+      setStage(id: ID, stage: Stage, career?: Career): Patch {
+        const u = find(db().users, id);
+        u.stage = stage;
+        if (u.affiliation.type === 'university') u.affiliation.role = STAGE_ROLE[stage];
+        if (career) u.career = { ...u.career, ...career };
+        if (stage === 'alumni' || stage === 'professional') { if (u.career?.city) u.region = u.career.city; }
         return { users: [u] };
       },
     },
@@ -257,6 +268,14 @@ export function createEngine(ctx: EngineContext) {
     },
 
     posts: {
+      /** Post Boost (모의 결제) — 7일간 관련 audience 에 추가 노출 */
+      boost(postId: ID, tier: BoostTier, audiences: string[]): Patch {
+        const p = find(db().posts, postId);
+        if (p.sponsored) throw new Error(t('스폰서 글은 부스트할 수 없어요.'));
+        const until = new Date(); until.setDate(until.getDate() + 7);
+        p.boost = { tier, audiences, until: until.toISOString().slice(0, 10) };
+        return { posts: [p] };
+      },
       create(authorId: ID, input: PostInput): { post: Post; patch: Patch } {
         const post: Post = { id: uid('po'), authorId, authorType: input.orgId ? 'org' : 'user', likeIds: [], savedIds: [], comments: [], createdAt: now(), showOnProfile: true, showOnFeed: true, ...input };
         if (post.anonymous) { post.media = []; post.taggedUserIds = []; }

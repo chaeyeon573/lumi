@@ -127,14 +127,24 @@ export interface User {
     notifications: boolean;
     locationPermission: 'granted' | 'denied' | 'undecided';
   };
-  /** 요금제 — free(기본) / plus(AroundU+, 무제한 친구 요청·광고 없음) */
+  /** 요금제 — free(기본) / plus(AroundU+: 다른 학교·도시 탐색, 고급 필터, 광고 없음) */
   plan?: Plan;
+  /** 생애 단계 — Home 변형·People 필터·프로필 표시에 쓴다. alumni/professional 은 affiliation.role 'alumni' 와 동기화 */
+  stage?: Stage;
+  /** 졸업 후 정보 (Alumni 전환 시 입력) */
+  career?: Career;
+  /** 지금 열려 있는 것 (PRD "Open To") */
+  openTo?: OpenTo[];
   /** 오늘 보낸 친구 요청(오른쪽 스와이프) 수 — 무료 플랜 일일 한도 계산용 */
   swipes?: { date: string; count: number };
   createdAt: string;
 }
 
 export type Plan = 'free' | 'plus';
+export type Stage = 'undergrad' | 'masters' | 'phd' | 'alumni' | 'professional';
+export interface Career { city?: string; company?: string; industry?: string; role?: string }
+export type OpenTo = 'coffee' | 'activities' | 'research' | 'networking' | 'mentoring' | 'cofounding';
+export const STAGE_ROLE: Record<Stage, UniversityRole> = { undergrad: 'undergraduate', masters: 'graduate', phd: 'graduate', alumni: 'alumni', professional: 'alumni' };
 
 export interface School {
   id: ID;
@@ -309,6 +319,7 @@ export interface Participation {
 export type PostCategory = 'friend' | 'school' | 'club' | 'public';
 /** 게시물 종류: 그냥 이야기 / 질문 / 정보 / 후기 / 같이할 사람 / 소식 */
 export type PostType = 'story' | 'question' | 'info' | 'review' | 'together' | 'news';
+export type BoostTier = 'community' | 'cross';
 
 export interface Post {
   id: ID;
@@ -341,6 +352,8 @@ export interface Post {
   showOnFeed?: boolean;
   /** 스폰서 글(광고) — 피드에 '광고' 표시와 CTA로 나간다. 좋아요·댓글 없음 */
   sponsored?: { advertiser: string; cta: string; url?: string; deal?: string };
+  /** 부스트(모의 결제) — 관련 audience 에 추가 노출, 피드에 'Boosted' 표시 */
+  boost?: { tier: BoostTier; audiences: string[]; until: string };
   createdAt: string;
 }
 

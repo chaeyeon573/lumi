@@ -188,14 +188,14 @@ type Rule = number | ((me: ID, args: unknown[]) => boolean);
 const owner = <T extends { id: ID }>(list: () => T[], pick: (x: T) => ID | undefined) => (me: ID, args: unknown[]) => { const x = list().find((i) => i.id === args[0]); return !!x && pick(x) === me; };
 const activityHost = (me: ID, activityId: unknown) => db.activities.find((a) => a.id === activityId)?.hostId === me;
 const RULES: Record<Group, Record<string, Rule>> = {
-  users: { update: 0, setAvailability: 0, votePoll: 1, recordSwipe: 0, setPlan: 0 },
+  users: { update: 0, setAvailability: 0, votePoll: 1, recordSwipe: 0, setPlan: 0, setStage: 0 },
   activities: {
     create: 0, update: owner(() => db.activities, (a) => a.hostId), remove: owner(() => db.activities, (a) => a.hostId), join: 1, cancel: 1,
     approve: (me, args) => { const p = db.participations.find((x) => x.id === args[0]); return !!p && activityHost(me, p.activityId); },
     reject: (me, args) => { const p = db.participations.find((x) => x.id === args[0]); return !!p && activityHost(me, p.activityId); },
     comment: 1,
   },
-  posts: { create: 0, remove: owner(() => db.posts, (p) => p.authorId), toggleLike: 1, toggleSave: 1, comment: 1, approveTag: 1 },
+  posts: { create: 0, remove: owner(() => db.posts, (p) => p.authorId), boost: owner(() => db.posts, (p) => p.authorId), toggleLike: 1, toggleSave: 1, comment: 1, approveTag: 1 },
   relationships: {
     toggleLike: 0, toggleFollow: 0, sendFriendRequest: 0, block: 0, unblock: 0,
     cancelFriendRequest: owner(() => db.relationships.friendRequests, (r) => r.fromId),

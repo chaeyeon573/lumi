@@ -1,6 +1,6 @@
 import type {
   Activity, ActivityProposal, ChatRoom, ID, Notification, Organization, Participation, Post, Relationships, Report, School, User,
-  ActivityCategory, Visibility, JoinPolicy, ActivityKind, Place, ReportTargetType, Availability, Opportunity, OpportunityIntentRecord, OpportunityIntent, Role, TimePoll, TimeOption, Plan } from '@core/types';
+  ActivityCategory, Visibility, JoinPolicy, ActivityKind, Place, ReportTargetType, Availability, Opportunity, OpportunityIntentRecord, OpportunityIntent, Role, TimePoll, TimeOption, Plan, Stage, Career, OpenTo, BoostTier } from '@core/types';
 
 /** 클라이언트가 보유하는 전체 데이터 스냅샷 (실제 API에서는 필요한 부분만 내려받도록 분리) */
 export interface Snapshot {
@@ -49,6 +49,9 @@ export interface RegisterInput {
   availability: Availability;
   preferredPartner?: string;
   fieldVisibility: User['fieldVisibility'];
+  stage?: Stage;
+  openTo?: OpenTo[];
+  career?: Career;
   prompts: User['prompts'];
   voicePrompt?: User['voicePrompt'];
   poll?: User['poll'];
@@ -176,6 +179,8 @@ export interface AroundUApi {
     recordSwipe(id: ID): Promise<Patch>;
     /** 요금제 변경 (모의 결제) */
     setPlan(id: ID, plan: Plan): Promise<Patch>;
+    /** 생애 단계 변경 (재학생 → 졸업생 등). 온보딩 재요구 없음 */
+    setStage(id: ID, stage: Stage, career?: Career): Promise<Patch>;
   };
 
   activities: {
@@ -192,6 +197,8 @@ export interface AroundUApi {
   posts: {
     create(authorId: ID, input: PostInput): Promise<{ post: Post; patch: Patch }>;
     remove(id: ID): Promise<Patch>;
+    /** Post Boost (모의 결제) */
+    boost(postId: ID, tier: BoostTier, audiences: string[]): Promise<Patch>;
     toggleLike(postId: ID, userId: ID): Promise<Patch>;
     toggleSave(postId: ID, userId: ID): Promise<Patch>;
     comment(postId: ID, authorId: ID, text: string): Promise<Patch>;

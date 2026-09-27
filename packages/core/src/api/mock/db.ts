@@ -6,7 +6,7 @@ import { getPlatform } from '@core/platform';
 
 const seed = lang === 'en' ? seedEn : seedKo;
 
-const STORAGE_KEY = `aroundu.mockdb.v7.${lang}`;
+const STORAGE_KEY = `aroundu.mockdb.v8.${lang}`;
 const SESSION_KEY = `aroundu.session.v1.${lang}`;
 
 export interface MockDB extends Snapshot {
@@ -16,7 +16,7 @@ export interface MockDB extends Snapshot {
 
 function freshDB(): MockDB {
   return {
-    version: 7,
+    version: 8,
     seededOn: new Date().toISOString().slice(0, 10),
     users: structuredClone(seed.users),
     schools: structuredClone(seed.schools),

@@ -50,6 +50,7 @@ const mk = (u: Partial<User> & Pick<User, 'id' | 'nickname'>): User => ({
   canOffer: [],
   interestedOrgIds: [],
   meetPreference: ['same_hobby', 'same_goal'],
+  openTo: ['coffee', 'activities'],
   fieldVisibility: defaultVisibility(),
   settings: { messagePolicy: 'connected', notifications: true, locationPermission: 'granted' },
   createdAt: isoHoursAgo(24 * 30),
@@ -162,7 +163,7 @@ export const users: User[] = [
   mk({
     id: 'u_taeho', nickname: '태호', birthYear: 1999, gender: 'male',
     avatar: { emoji: '🚀', hue: 10, photoType: 'face' , url: photo('p_taeho') }, photos: [photo('p_taeho'), photo('p_x5'), photo('c_city')], identityVerified: true,
-    affiliation: { type: 'university', schoolId: 's_yonsei', schoolName: '연세대학교', role: 'alumni', department: '전기전자공학부', year: 2023, emailVerified: true, showSchool: true, showDepartment: true },
+    affiliation: { type: 'university', schoolId: 's_yonsei', schoolName: '연세대학교', role: 'alumni', department: '전기전자공학부', year: 2023, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'alumni', career: { city: '서울 성수', company: '스타트업 (창업)', industry: 'AI', role: '공동창업자' },
     bio: '졸업 후 스타트업 창업. 후배들과 커피챗 환영해요.',
     likes: '프로덕트, 등산, 위스키',
     freeTime: '정문 카페에서 커피챗',
@@ -235,6 +236,22 @@ export const users: User[] = [
     fieldVisibility: { ...defaultVisibility('school'), timetable: 'school' },
     goals: ['scholarship', 'lab', 'internship'], lookingFor: ['application_partner', 'study_partner'], canOffer: ['data', 'research', 'club_ops'], living: { residence: 'commute', zone: '신촌 남쪽' }, interestedOrgIds: ['o_stat'],
   }),
+  // ─── Beyond: 다른 학교·도시 사람 (무료 3명 미리보기, 전체는 AroundU+) ───
+  mk({ id: 'u_b_snu1', nickname: '서준', birthYear: 2001, gender: 'male', avatar: { emoji: '🤖', hue: 250, photoType: 'face', url: photo('p_x5') }, photos: [photo('p_x5'), photo('c_desktop')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_snu', schoolName: '서울대학교', role: 'graduate', department: '컴퓨터공학부', year: 2024, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'masters', region: '관악',
+    bio: 'LLM 에이전트 연구. 사이드로 창업 준비 중.', interests: ['research', 'startup', 'coffee'], purposes: ['networking', 'study'], goals: ['startup', 'lab'], lookingFor: ['cofounder', 'developer'], canOffer: ['developer', 'research'], openTo: ['coffee', 'research', 'cofounding'], fieldVisibility: defaultVisibility('public'), availability: 'afternoon', nowWant: '관악에서 AI 얘기할 사람' }),
+  mk({ id: 'u_b_kaist1', nickname: '지우', birthYear: 2000, gender: 'female', avatar: { emoji: '🔬', hue: 190, photoType: 'face', url: photo('p_x3') }, photos: [photo('p_x3'), photo('c_beaker')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_kaist', schoolName: 'KAIST', role: 'graduate', department: '로봇공학', year: 2022, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'phd', region: '대전 유성',
+    bio: '로봇 매니퓰레이션 박사과정. 서울 자주 올라와요.', interests: ['research', 'exercise', 'exhibition'], purposes: ['networking'], goals: ['lab', 'hackathon'], lookingFor: ['teammate'], canOffer: ['research', 'data'], openTo: ['research', 'networking', 'mentoring'], fieldVisibility: defaultVisibility('public'), availability: 'weekend' }),
+  mk({ id: 'u_b_korea1', nickname: '민재', birthYear: 2002, gender: 'male', avatar: { emoji: '🚀', hue: 20, photoType: 'face', url: photo('p_x6') }, photos: [photo('p_x6'), photo('c_two_laptops')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_korea', schoolName: '고려대학교', role: 'undergraduate', department: '경영학과', year: 2021, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'undergrad', region: '안암',
+    bio: '학생 창업팀 운영. 디자이너 찾는 중.', interests: ['startup', 'networking', 'coffee'], purposes: ['networking', 'friend'], goals: ['startup'], lookingFor: ['designer', 'cofounder'], canOffer: ['planning', 'marketing'], openTo: ['coffee', 'cofounding', 'networking'], fieldVisibility: defaultVisibility('public'), availability: 'after18', nowWant: '창업 얘기 커피' }),
+  mk({ id: 'u_b_snu2', nickname: '하린', birthYear: 1998, gender: 'female', avatar: { emoji: '💼', hue: 330, photoType: 'face', url: photo('p_x2') }, photos: [photo('p_x2'), photo('c_city')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_snu', schoolName: '서울대학교', role: 'alumni', department: '산업공학과', year: 2021, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'alumni', career: { city: '서울 성수', company: '토스', industry: '핀테크', role: 'PM' }, region: '서울 성수',
+    bio: '핀테크 PM 3년차. 학생 창업팀 멘토링 좋아해요.', interests: ['startup', 'networking', 'exercise'], purposes: ['networking'], goals: [], lookingFor: ['mentor'], canOffer: ['planning', 'presentation'], openTo: ['mentoring', 'coffee', 'networking'], fieldVisibility: defaultVisibility('public'), availability: 'after18' }),
+  mk({ id: 'u_b_kaist2', nickname: '도윤', birthYear: 2003, gender: 'male', avatar: { emoji: '🎸', hue: 280, photoType: 'face', url: photo('p_x4') }, photos: [photo('p_x4'), photo('c_stage')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_kaist', schoolName: 'KAIST', role: 'undergraduate', department: '전산학부', year: 2022, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'undergrad', region: '대전 유성',
+    bio: '해커톤 5회 수상. 밴드도 함.', interests: ['startup', 'club', 'coffee'], purposes: ['friend', 'networking'], goals: ['hackathon'], lookingFor: ['teammate', 'designer'], canOffer: ['developer'], openTo: ['activities', 'cofounding'], fieldVisibility: defaultVisibility('public'), availability: 'weekend' }),
 ];
 
 export const organizations: Organization[] = [
@@ -440,6 +457,11 @@ export const activities: Activity[] = [
     cover: { emoji: '🏷️', hue: 50, url: photo('c_mug') }, hostId: 'u_taeho', hostType: 'user', date: T, startTime: '10:00', endTime: '21:00',
     place: { name: '카페 온더코너 신촌점', address: '서대문구 연세로', lat: 37.5585, lng: 126.9370 }, capacity: 999, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(12),
     partner: { name: '카페 온더코너', deal: '라떼 1+1 · 오늘 21시까지' },
+  },
+  {
+    id: 'a_clubfair', kind: 'org_event', category: 'school_event', title: '가을 동아리 박람회', description: '백양로에서 동아리 80개 부스. AroundU 부스에서 음료 무료.',
+    cover: { emoji: '🎪', hue: 200, url: photo('c_tents') }, hostId: 'u_woojin', hostType: 'org', orgId: 'o_stat', date: T, startTime: '11:00', endTime: '15:00',
+    place: { name: '백양로', lat: 37.5640, lng: 126.9380 }, capacity: 999, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(30),
   },
 ];
 

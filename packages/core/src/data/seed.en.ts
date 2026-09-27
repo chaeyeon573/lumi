@@ -24,6 +24,7 @@ export const schools: School[] = [
   { id: 's_ucla', name: 'UCLA', emailDomain: 'ucla.edu', region: 'Los Angeles', center: { lat: 34.0689, lng: -118.4452 } },
   { id: 's_sfsu', name: 'San Francisco State', emailDomain: 'sfsu.edu', region: 'San Francisco', center: { lat: 37.7219, lng: -122.4782 } },
   { id: 's_mit', name: 'MIT', emailDomain: 'mit.edu', region: 'Cambridge', center: { lat: 42.3601, lng: -71.0942 } },
+  { id: 's_nyu', name: 'NYU', emailDomain: 'nyu.edu', region: 'New York', center: { lat: 40.7295, lng: -73.9965 } },
 ];
 
 const mk = (u: Partial<User> & Pick<User, 'id' | 'nickname'>): User => ({
@@ -102,7 +103,7 @@ export const users: User[] = [
   }),
   mk({
     id: 'u_taeho', nickname: 'Ethan', birthYear: 2000, gender: 'male', avatar: { emoji: '🚀', hue: 10, photoType: 'face' , url: photo('p_taeho') }, photos: [photo('p_taeho'), photo('p_x5'), photo('c_city')], identityVerified: true,
-    affiliation: { type: 'university', schoolId: 's_berkeley', schoolName: 'UC Berkeley', role: 'alumni', department: 'EECS', year: 2024, emailVerified: true, showSchool: true, showDepartment: true },
+    affiliation: { type: 'university', schoolId: 's_berkeley', schoolName: 'UC Berkeley', role: 'alumni', department: 'EECS', year: 2024, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'alumni', career: { city: 'San Francisco', company: 'Own startup', industry: 'AI', role: 'Co-founder' },
     bio: 'Founded a startup after graduating. Always up for coffee chats with students.', likes: 'Product, hiking, whiskey', freeTime: 'Coffee chats on Southside', availability: 'after18',
     interests: ['startup', 'networking', 'coffee'], purposes: ['networking'], nowWant: 'Coffee chat if you’re into startups',
     prompts: [{ questionId: 'q_ask_me', answer: 'Shipping an MVP, team building, investor meetings' }, { questionId: 'q_want_person', answer: 'Anyone building something' }, { questionId: 'q_3hours', answer: 'Coffee chats with students at Strada' }],
@@ -148,6 +149,22 @@ export const users: User[] = [
     fieldVisibility: { ...defaultVisibility('school'), timetable: 'school' },
     goals: ['scholarship', 'lab', 'internship'], lookingFor: ['application_partner', 'study_partner'], canOffer: ['data', 'research', 'club_ops'], living: { residence: 'commute', zone: 'Southside' }, interestedOrgIds: ['o_stat'],
   }),
+  // ─── Beyond: people outside your network (free preview 3, full with AroundU+) ───
+  mk({ id: 'u_b_stan1', nickname: 'Priya', birthYear: 2001, gender: 'female', avatar: { emoji: '🤖', hue: 250, photoType: 'face', url: photo('p_x3') }, photos: [photo('p_x3'), photo('c_desktop')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_stanford', schoolName: 'Stanford University', role: 'graduate', department: 'Computer Science', year: 2024, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'masters', region: 'Palo Alto',
+    bio: 'LLM agents research. Quietly building a startup on the side.', interests: ['research', 'startup', 'coffee'], purposes: ['networking', 'study'], goals: ['startup', 'lab'], lookingFor: ['cofounder', 'developer'], canOffer: ['developer', 'research'], openTo: ['coffee', 'research', 'cofounding'], fieldVisibility: defaultVisibility('public'), availability: 'afternoon', nowWant: 'Talk AI over coffee in Palo Alto' }),
+  mk({ id: 'u_b_mit1', nickname: 'Noah', birthYear: 2000, gender: 'male', avatar: { emoji: '🔬', hue: 190, photoType: 'face', url: photo('p_x5') }, photos: [photo('p_x5'), photo('c_beaker')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_mit', schoolName: 'MIT', role: 'graduate', department: 'Robotics', year: 2022, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'phd', region: 'Cambridge',
+    bio: 'Robot manipulation PhD. In the Bay Area every other month.', interests: ['research', 'exercise', 'exhibition'], purposes: ['networking'], goals: ['lab', 'hackathon'], lookingFor: ['teammate'], canOffer: ['research', 'data'], openTo: ['research', 'networking', 'mentoring'], fieldVisibility: defaultVisibility('public'), availability: 'weekend' }),
+  mk({ id: 'u_b_ucla1', nickname: 'Diego', birthYear: 2002, gender: 'male', avatar: { emoji: '🚀', hue: 20, photoType: 'face', url: photo('p_x6') }, photos: [photo('p_x6'), photo('c_two_laptops')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_ucla', schoolName: 'UCLA', role: 'undergraduate', department: 'Business Economics', year: 2021, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'undergrad', region: 'Los Angeles',
+    bio: 'Runs a student founders club. Looking for a designer.', interests: ['startup', 'networking', 'coffee'], purposes: ['networking', 'friend'], goals: ['startup'], lookingFor: ['designer', 'cofounder'], canOffer: ['planning', 'marketing'], openTo: ['coffee', 'cofounding', 'networking'], fieldVisibility: defaultVisibility('public'), availability: 'after18', nowWant: 'Startup talk over coffee' }),
+  mk({ id: 'u_b_stan2', nickname: 'Grace', birthYear: 1998, gender: 'female', avatar: { emoji: '💼', hue: 330, photoType: 'face', url: photo('p_x2') }, photos: [photo('p_x2'), photo('c_city')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_stanford', schoolName: 'Stanford University', role: 'alumni', department: 'Management Science', year: 2021, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'alumni', career: { city: 'New York', company: 'Stripe', industry: 'Fintech', role: 'Product Manager' }, region: 'New York',
+    bio: 'PM at a fintech, 3 years in. Love mentoring student founders.', interests: ['startup', 'networking', 'exercise'], purposes: ['networking'], goals: [], lookingFor: ['mentor'], canOffer: ['planning', 'presentation'], openTo: ['mentoring', 'coffee', 'networking'], fieldVisibility: defaultVisibility('public'), availability: 'after18' }),
+  mk({ id: 'u_b_nyu1', nickname: 'Aiden', birthYear: 2003, gender: 'male', avatar: { emoji: '🎸', hue: 280, photoType: 'face', url: photo('p_x4') }, photos: [photo('p_x4'), photo('c_stage')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_nyu', schoolName: 'NYU', role: 'undergraduate', department: 'Computer Science', year: 2022, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'undergrad', region: 'New York',
+    bio: 'Five hackathon wins. Also in a band.', interests: ['startup', 'club', 'coffee'], purposes: ['friend', 'networking'], goals: ['hackathon'], lookingFor: ['teammate', 'designer'], canOffer: ['developer'], openTo: ['activities', 'cofounding'], fieldVisibility: defaultVisibility('public'), availability: 'weekend' }),
 ];
 
 const demoOrganizations: Organization[] = [
@@ -332,6 +349,16 @@ export const activities: Activity[] = [
     id: 'a_hack_team', kind: 'group', category: 'networking', title: 'Hackathon team needs a designer + PM', opportunityId: 'op_hackathon', rolesNeeded: ['designer', 'planning'], mode: 'offline', description: 'Two devs on board. Looking for one designer and one PM. Topic: dining hall crowd levels.',
     cover: { emoji: '💡', hue: 230 , url: photo('c_abstract2') }, hostId: 'u_dohyun', hostType: 'user', date: T4, startTime: '19:00', endTime: '21:00',
     place: { name: 'Soda Hall lounge', lat: 37.8756, lng: -122.2588 }, capacity: 4, visibility: 'school', joinPolicy: 'approval', fee: 0, comments: [], createdAt: isoHoursAgo(5),
+  },
+  {
+    id: 'a_clubfair', kind: 'org_event', category: 'school_event', title: 'Fall Club Fair', description: '200+ clubs tabling on Sproul. Free boba at the AroundU table.',
+    cover: { emoji: '🎪', hue: 200, url: photo('c_tents') }, hostId: 'u_woojin', hostType: 'org', orgId: 'o_stat', date: T, startTime: '11:00', endTime: '15:00',
+    place: { name: 'Sproul Plaza', lat: 37.8697, lng: -122.2590 }, capacity: 999, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(30),
+  },
+  {
+    id: 'a_rush', kind: 'org_event', category: 'school_event', title: 'Sorority Recruitment Info Night', description: 'Meet the chapters, ask anything. Open to all.',
+    cover: { emoji: '🏛️', hue: 330, url: photo('c_hall') }, hostId: 'u_hana', hostType: 'org', orgId: 'o_sorority', date: T, startTime: '18:00', endTime: '20:00',
+    place: { name: 'Pauley Ballroom', lat: 37.8692, lng: -122.2596 }, capacity: 200, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(40),
   },
 ];
 

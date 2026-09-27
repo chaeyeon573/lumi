@@ -123,6 +123,10 @@ spacing:
   space-xl: 2.5rem
 ---
 
+## 적용 범위 (2026-09)
+
+앱 **구조·화면 구성은 `docs/PRD.md`**(Home | People | Meet | Feed | Profile), **색·타이포·컴포넌트는 이 Pastel Breeze 시스템**을 따른다. 참고 화면 PNG는 이전 구조(사람·발견·캠퍼스) 기준이지만 카드·알약·헤더 스타일은 그대로 쓴다.
+
 ## Brand & Style
 
 This design system embodies a fresh, buoyant, and youthful aesthetic tailored for modern campus dating and social discovery. It strips away the cynical, high-pressure feel of traditional dating platforms in favor of an airy, optimistic, and low-friction atmosphere reminiscent of sunny quad afternoons and casual coffee meetups.
