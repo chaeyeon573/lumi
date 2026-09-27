@@ -61,7 +61,7 @@ export function SmallTablesPage() {
   return (
     <div className="min-h-full bg-bg pb-10">
       <TopBar back title={t('작은 모임')} />
-      <div className="px-4 space-y-4">
+      <div className="px-4 pt-3 space-y-4">
         <div className="rounded-[24px] bg-[linear-gradient(135deg,#D2E4FF,#BFF4FF)] p-4">
           <div className="flex items-center gap-2 text-primary"><Users size={16} /><span className="text-[15px] font-bold">{t('작은 모임 · 4~6명')}</span></div>
           <p className="text-[13px] text-ink-2 mt-1">{t('4~6명이 모이는 작은 모임이 1:1보다 편해요')}</p>

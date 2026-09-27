@@ -66,7 +66,7 @@ export function AroundPage() {
   return (
     <div className="min-h-full bg-bg pb-10">
       <TopBar back title={t('이번 주 주변')} />
-      <div className="px-4 space-y-4">
+      <div className="px-4 pt-3 space-y-4">
         {denied && (
           <div className="rounded-2xl bg-surface-2 px-3.5 py-2.5 flex items-center gap-2 text-[12px] text-ink-2">
             <MapPinOff size={14} className="shrink-0 text-primary" />{t('위치 권한 없이도 도시로 찾을 수 있어요')}

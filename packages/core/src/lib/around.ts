@@ -80,8 +80,10 @@ export interface AroundPerson { user: User; kind: 'here' | 'visiting'; tripFrom?
 export function weekRange(win: AroundWindow, now = new Date()): [string, string] {
   const d = new Date(now); const day = (d.getDay() + 6) % 7; // 월=0
   d.setDate(d.getDate() - day + (win === 'next' ? 7 : 0));
-  const start = d.toISOString().slice(0, 10); d.setDate(d.getDate() + 6);
-  return [start, d.toISOString().slice(0, 10)];
+  // 로컬 날짜로 (toISOString 은 UTC 라 시간대에 따라 하루 밀린다)
+  const ymd = (x: Date) => `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, '0')}-${String(x.getDate()).padStart(2, '0')}`;
+  const start = ymd(d); d.setDate(d.getDate() + 6);
+  return [start, ymd(d)];
 }
 
 const lcc = (s?: string) => (s ?? '').toLowerCase();

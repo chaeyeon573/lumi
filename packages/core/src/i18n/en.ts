@@ -5,9 +5,10 @@ import { en_people } from './v2/people';
 import { en_meet } from './v2/meet';
 import { en_profile } from './v2/profile';
 import { en_around } from './v2/around';
+import { en_find } from './v2/find';
 
 export const en: Record<string, string> = {
-  ...en_common, ...en_onboarding, ...en_people, ...en_meet, ...en_profile, ...en_around,
+  ...en_common, ...en_onboarding, ...en_people, ...en_meet, ...en_profile, ...en_around, ...en_find,
   '로그인이 필요해요.': 'Please sign in.',
   '입력값을 확인해주세요.': 'Please check your input.',
   '이미 가입된 이메일이에요. 이메일로 로그인해주세요.': 'That email is already registered. Sign in with email instead.',

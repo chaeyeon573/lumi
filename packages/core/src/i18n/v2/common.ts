@@ -181,4 +181,5 @@ export const en_common: Record<string, string> = {
   '비공개': 'Private',
   '관심사가 겹치는 사람': 'People with shared interests',
   '같은 학교 사람': 'People from your school',
+  '가능': 'available',
 };

@@ -60,7 +60,7 @@ export function SavedPeoplePage() {
   const move = async (id: ID, listId: ID | null) => {
     setPersonMenu(null);
     const name = listId ? lists.find((l) => l.id === listId)?.name : null;
-    await run(() => api.users.moveSaved(me.id, id, listId), name ? `${name}${t('(으)로 옮겼어요')}` : t('목록에서 뺐어요')).catch(() => undefined);
+    await run(() => api.users.moveSaved(me.id, id, listId), name ? (lang === 'en' ? `Moved to ${name}` : `${name}(으)로 옮겼어요`) : t('목록에서 뺐어요')).catch(() => undefined);
   };
   const submitName = async () => {
     if (!nameSheet) return;

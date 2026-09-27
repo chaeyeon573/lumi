@@ -27,6 +27,9 @@ import { EditPromptsPage } from '@/pages/profile/EditPromptsPage';
 import { TimetablePage } from '@/pages/timetable/TimetablePage';
 import { PeoplePage } from '@/pages/people/PeoplePage';
 import { PeopleResultsPage } from '@/pages/people/PeopleResultsPage';
+import { AroundPage } from '@/pages/people/AroundPage';
+import { AdvancedExplorePage } from '@/pages/people/AdvancedExplorePage';
+import { SmallTablesPage } from '@/pages/meet/SmallTablesPage';
 import { AskNetworkPage } from '@/pages/people/AskNetworkPage';
 import { RequestsPage } from '@/pages/people/RequestsPage';
 import { RequestDetailPage } from '@/pages/people/RequestDetailPage';
@@ -130,6 +133,9 @@ export default function App() {
           <Route path="/people/requests" element={<RequestsPage />} />
           <Route path="/people/requests/:id" element={<RequestDetailPage />} />
           <Route path="/plus" element={<PlusPage />} />
+          <Route path="/people/around" element={<AroundPage />} />
+          <Route path="/people/advanced" element={<AdvancedExplorePage />} />
+          <Route path="/meet/tables" element={<SmallTablesPage />} />
           <Route path="/plus/checkout" element={<CheckoutPage />} />
           <Route path="/groups/new" element={<CreateGroupPage />} />
           <Route path="/profile/wants" element={<WantsPage />} />

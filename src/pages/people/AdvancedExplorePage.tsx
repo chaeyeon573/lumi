@@ -38,7 +38,7 @@ export function AdvancedExplorePage() {
   return (
     <div className="min-h-full bg-bg pb-10">
       <TopBar back title={t('고급 탐색')} right={plus && !sub.loading ? <Tag tone="primary" className="mr-2"><Sparkles size={11} />AroundU+</Tag> : undefined} />
-      <div className="px-4 space-y-4">
+      <div className="px-4 pt-3 space-y-4">
         {sub.loading ? (
           <div className="space-y-3" aria-busy="true" aria-label={t('구독 정보를 불러오는 중')}>
             <Skeleton className="h-24 w-full rounded-[24px]" />
