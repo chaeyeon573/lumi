@@ -16,7 +16,7 @@
 - **API 메서드 추가·수정은 `packages/core/src/api/engine.ts`** (mock과 서버가 같이 씀). `api/mock/index.ts`, `api/remote/index.ts`에 도메인 로직을 쓰지 않는다. 서버 권한 규칙은 `server/index.ts`의 `RULES`에 메서드마다 한 줄 추가.
 - 타입은 `packages/core/src/types/index.ts`, API 계약은 `packages/core/src/api/types.ts`.
 - core는 브라우저·RN API를 직접 쓰지 않는다. 저장소·환경변수·자산은 `@core/platform`(`getPlatform()`) 어댑터로. (`import.meta`, `localStorage`, `window` 금지)
-- 시드 스키마가 바뀌면 `api/mock/db.ts`의 `DB_VERSION` 을 올린다 (현재 v11).
+- 시드 스키마가 바뀌면 `api/mock/db.ts`의 `DB_VERSION` 을 올린다 (현재 v12).
 - 문구는 한국어 원문을 키로 `t('한국어')`, 영어는 `packages/core/src/i18n/en.ts`(또는 화면 영역별 `i18n/v2/*.ts`)에 추가. 미번역 키 점검: 스크래치패드 `missing.mjs` 패턴(`t()` 키 ↔ `en.ts` 비교).
 - **커밋 전** `npm run typecheck && npm run typecheck:server && npm run build` 모두 통과. 모바일을 건드렸으면 `cd apps/mobile && npx tsc --noEmit && npx expo export --platform ios`.
 - 브랜치는 새로 파지 않고 지정된 작업 브랜치에서 계속. 배포 브랜치(`claude/friendly-euler-emuo1f`, Railway)로는 제품 오너가 합친다.
@@ -34,6 +34,7 @@
 - 추천은 `@core/lib/recommend` `matchReasons`(단계별 `REASON_WEIGHTS` + `wants` 부스트)와 `@core/lib/people` `recommendPeople` 로만 만든다. 카드에는 항상 이유 칩(`ReasonChips`)을 보여준다.
 - 거주 지역 `homeCity` ≠ 활동 지역 `activityCity` ≠ GPS. 도시 단위만, 주소 금지. `cityOf(u)` 사용.
 - 네트워크 요청(사람 찾기 › 네트워크에 물어보기)은 `@core/lib/requests`(전달 대상·추천·받은 요청) + `@core/lib/graph`(촌수) + 엔진 `requests.*`. 지인 추천 후보는 본인이 '관심 있어요' 하기 전까지 요청자에게 공개하지 않는다(`server/view.ts sanitizeRequest`).
+- 네트워크 16화면(UX-SPEC 6.7): 사람을 보여줄 때 이유 → 촌수·공통 연결 → 경로 → 프로필 순. 공개 범위는 반드시 `@core/lib/privacy` `profileView`/`connectionStatus` 로 마스킹. 섹션마다 `useSectionState` + `Section/SectionSkeleton/SectionError/SectionEmpty` 로 로딩·부분 오류·빈 상태. 자연어 찾기 `@core/lib/nlsearch`, 2촌·소개 `graph.secondDegree` + 엔진 `intros.*`, 주변·방문 예정 `around.whoIsAround`, 작은 모임 `meet.recommendSmallTables`.
 - 한국/미국 맥락 프리셋은 `@core/lib/locale-context` `localeContext()` (인증 방법·도시·업종·직무·전공·프리셋).
 
 ## Free vs Premium (PRD 7·22절 v2 — 절대 유료화 금지 목록)

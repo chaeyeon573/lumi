@@ -33,6 +33,11 @@ const ICONS: Record<NotificationType, { Icon: typeof Heart; cls: string }> = {
   request_response: { Icon: UserCheck, cls: 'bg-mint-soft text-mint' },
   request_referral: { Icon: Sparkles, cls: 'bg-primary-soft text-primary' },
   request_accepted: { Icon: UserCheck, cls: 'bg-mint-soft text-mint' },
+  intro_request: { Icon: Users, cls: 'bg-primary-soft text-primary' },
+  intro_forwarded: { Icon: Sparkles, cls: 'bg-accent-soft text-primary' },
+  intro_accepted: { Icon: UserCheck, cls: 'bg-mint-soft text-mint' },
+  saved_update: { Icon: Sparkles, cls: 'bg-primary-soft text-primary' },
+  trip_nearby: { Icon: MapPin, cls: 'bg-accent-soft text-accent' },
 };
 
 export function NotificationsPage() {

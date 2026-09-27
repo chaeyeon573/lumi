@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { t, lang } from '@core/i18n';
 import { Navigate, useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { UserPlus, UserMinus, MessageCircle, MoreHorizontal, Clock, MapPin, Flag, Ban, Sparkles, Users, CalendarPlus, Check, Lock, Mic, Briefcase, Bell } from 'lucide-react';
+import { UserMinus, MessageCircle, MoreHorizontal, Clock, MapPin, Flag, Ban, Sparkles, Users, CalendarPlus, Check, Lock, Mic, Briefcase, X } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Avatar, VerifiedBadge, Tag, Button, BottomSheet, Dialog, Textarea, Input, Chip, Cover, EmptyState, VisibilityTag } from '@/components/ui';
 import { SheetItem } from '@/components/cards/PostCard';
@@ -10,10 +10,11 @@ import { ActivityCard } from '@/components/cards/ActivityCard';
 import { useViewer } from '@/hooks/useViewer';
 import { SchoolBadge } from '@/components/people_SchoolBadge';
 import { ReasonList } from '@/components/people_ReasonChips';
-import { PaywallSheet, type PaywallReason } from '@/components/social/PaywallSheet';
+import { ActionBar } from '@/components/people_ActionBar';
+import { SmallTables } from '@/components/people_SmallTables';
+import { StatusPill } from '@/components/people_StatusPill';
 import { personLine, cityOf, isAlumniStage } from '@core/lib/network';
 import { PEOPLE_WANT_LABELS, ACTIVITY_WANT_LABELS, PEOPLE_WANT_EMOJI, ACTIVITY_WANT_EMOJI, hasWants } from '@core/lib/wants';
-import { isPlus, swipesLeft } from '@core/lib/monetization';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { INTEREST_EMOJI, INTEREST_LABELS, PURPOSE_LABELS, ALL_CATEGORIES, CATEGORY_EMOJI, CATEGORY_LABELS, CATEGORY_COLORS } from '@core/lib/labels';
@@ -49,8 +50,6 @@ export function PersonPage() {
   const [pMsg, setPMsg] = useState(oppRef ? (lang === 'en' ? `Want to go to ${oppRef.title} together?` : `${oppRef.title} 같이 갈래요?`) : '');
   const [pWhen, setPWhen] = useState(`${todayISO()} 18:00`);
   const [busy, setBusy] = useState(false);
-  const [connecting, setConnecting] = useState(false);
-  const [paywall, setPaywall] = useState<PaywallReason | null>(null);
   useEffect(() => { if (params.get('propose')) setParams({}, { replace: true }); }, [params, setParams]);
 
   if (user && user.id === v.me.id) return <Navigate to="/profile" replace />;
@@ -58,7 +57,6 @@ export function PersonPage() {
   if (v.hasBlocked(user.id)) return <div className="min-h-full"><TopBar back title={t('프로필')} /><EmptyState emoji="🚫" title={t('차단한 사용자예요')} description={t('차단을 해제하면 프로필을 다시 볼 수 있어요.')} action={<Button variant="outline" onClick={() => run(() => api.relationships.unblock(v.me.id, user.id), t('차단을 해제했어요.'))}>{t('차단 해제')}</Button>} /></div>;
   if (v.isBlocked(user.id)) return <div className="min-h-full"><TopBar back title={t('프로필')} /><EmptyState emoji="🙈" title={t('사용자를 찾을 수 없어요')} /></div>;
 
-  const following = v.isFollowing(user.id);
   const friend = v.isFriend(user.id);
   const outReq = v.pendingOut(user.id);
   const inReq = v.pendingIn(user.id);
@@ -79,14 +77,6 @@ export function PersonPage() {
   const city = cityOf(user);
   const career = isAlumniStage(user) ? [user.career?.role, user.career?.company, user.career?.industry].filter(Boolean).join(' · ') : '';
 
-  /** 연결 요청 — 하루 한도(무료 30회)는 API 가 강제. 한도 초과면 페이월 */
-  const connect = async () => {
-    if (!isPlus(v.me) && swipesLeft(v.me) <= 0) { setPaywall('limit'); return; }
-    setConnecting(true);
-    try { await run(() => api.relationships.sendFriendRequest(v.me.id, user.id), t('연결 요청을 보냈어요.')); }
-    catch { if (!isPlus(v.me) && swipesLeft(useAppStore.getState().users.find((x) => x.id === v.me.id) ?? v.me) <= 0) setPaywall('limit'); }
-    finally { setConnecting(false); }
-  };
   const openChat = async () => {
     if (!msg.ok) { showToast(msg.reason ?? t('아직 메시지를 보낼 수 없어요.'), 'info'); return; }
     try { const res = await run(() => api.chats.openDirect(v.me.id, user.id)); nav(`/chats/${res.room.id}`); } catch { /* toast */ }
@@ -104,6 +94,7 @@ export function PersonPage() {
         <div className="card p-4">
           <h1 className="font-display text-[28px] leading-tight font-bold text-ink">{user.nickname}</h1>
           <SchoolBadge user={user} withYear size="lg" className="mt-1" />
+          <StatusPill user={user} className="mt-2" />
           <div className="text-[14px] text-ink-2 mt-1">{personLine(user, lang)}</div>
           {career && <div className="text-[13px] text-ink-2 mt-0.5 flex items-center gap-1"><Briefcase size={13} className="text-ink-3" />{career}</div>}
           {city && <div className="text-[13px] text-ink-3 mt-0.5 flex items-center gap-1"><MapPin size={13} />{city}{user.activityCity && user.activityCity !== city ? ` · ${t('활동')} ${user.activityCity}` : ''}</div>}
@@ -121,6 +112,7 @@ export function PersonPage() {
         </div>
 
         <ReasonList reasons={reasons} title={t('우리의 공통점')} max={6} />
+        <SmallTables other={user} />
         {hasWants(user.wants) && (
           <div className="card p-4">
             <div className="text-[11px] font-bold text-ink-3">{t('찾고 있어요')}</div>
@@ -182,19 +174,16 @@ export function PersonPage() {
         {upcoming.filter((a) => a.hostId !== user.id).length > 0 && <div><h2 className="text-[15px] font-bold mb-2">{t('참여 예정인 공개 활동')}</h2><div className="space-y-2">{upcoming.filter((a) => a.hostId !== user.id).map((a) => <ActivityCard key={a.id} activity={a} variant="row" />)}</div></div>}
       </div>
 
+      {/* 저장 · 관심 · 연결 — 가장 가벼운 저장이 먼저. 메시지는 보낼 수 있을 때만 조용히 */}
       <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-surface/95 backdrop-blur border-t border-line p-3 safe-bottom z-20">
-        <div className="flex gap-2">
-          {friend ? <Button size="lg" className="flex-1" variant="secondary" icon={<Check size={16} />} disabled>{t('연결됨')}</Button>
-            : outReq ? <Button size="lg" className="flex-1" variant="outline" onClick={() => run(() => api.relationships.cancelFriendRequest(outReq.id), t('요청을 취소했어요.'))}>{t('요청 취소')}</Button>
-            : <Button size="lg" className="flex-1" icon={<UserPlus size={16} />} loading={connecting} onClick={connect}>{t('연결하기')}</Button>}
-          <Button size="lg" variant={msg.ok ? 'secondary' : 'outline'} icon={msg.ok ? <MessageCircle size={18} /> : <Lock size={15} />} onClick={openChat} aria-label={t('메시지')}>{t('메시지')}</Button>
-          <Button size="lg" variant="outline" icon={<CalendarPlus size={18} />} onClick={() => setPropose(true)} disabled={!!pendingProposal} aria-label={t('만남에 초대')}>{pendingProposal ? t('대기 중') : t('만남에 초대')}</Button>
+        <div className="flex items-center gap-2">
+          <ActionBar user={user} className="flex-1 min-w-0" />
+          {msg.ok && <button onClick={openChat} className="h-11 w-11 shrink-0 rounded-full grid place-items-center text-primary bg-surface-2 press" aria-label={t('메시지')}><MessageCircle size={19} /></button>}
         </div>
-        {!msg.ok && <p className="text-[11px] text-ink-3 mt-2 text-center flex items-center justify-center gap-1"><Lock size={11} />{msg.reason}</p>}
+        <p className="text-[11px] text-ink-3 mt-1.5 text-center">{t('저장은 나만 볼 수 있어요')}</p>
       </div>
-      <PaywallSheet open={!!paywall} onClose={() => setPaywall(null)} reason={paywall ?? undefined} />
 
-      <BottomSheet open={propose} onClose={() => setPropose(false)} title={`${user.nickname}${t('님에게 활동 제안')}`}>
+      <BottomSheet open={propose} onClose={() => setPropose(false)} title={`${user.nickname}${t('님과 같이 해요')}`}>
         <p className="text-[12px] text-ink-3">{t('읽음 여부는 표시되지 않고, 48시간이 지나면 자동으로 만료돼요.')}</p>
         <div className="flex flex-wrap gap-1.5 mt-3">{ALL_CATEGORIES.filter((c) => !['school_event', 'store_deal'].includes(c)).map((c) => <Chip key={c} size="sm" color={CATEGORY_COLORS[c]} active={pCat === c} onClick={() => setPCat(c)}>{CATEGORY_EMOJI[c]} {CATEGORY_LABELS[c]}</Chip>)}</div>
         <Input className="mt-3" placeholder={t('언제? 예: 오늘 18:00')} value={pWhen} onChange={(e) => setPWhen(e.target.value)} />
@@ -204,7 +193,9 @@ export function PersonPage() {
 
       <BottomSheet open={menu} onClose={() => setMenu(false)} title={user.nickname}>
         <div className="space-y-1">
-          <SheetItem icon={following ? <Bell size={18} /> : <Bell size={18} className="text-ink-3" />} label={following ? t('팔로우 취소') : t('팔로우')} onClick={() => { setMenu(false); run(() => api.relationships.toggleFollow(v.me.id, user.id, 'user'), following ? t('팔로우를 취소했어요.') : t('팔로우했어요. 새 글을 피드에서 볼 수 있어요.')); }} />
+          <SheetItem icon={<CalendarPlus size={18} />} label={pendingProposal ? `${t('같이 해요')} · ${t('대기 중')}` : t('같이 해요')} onClick={() => { setMenu(false); if (!pendingProposal) setPropose(true); }} />
+          {!msg.ok && <div className="px-3 py-2 text-[12px] text-ink-3 flex items-center gap-1"><Lock size={12} />{msg.reason}</div>}
+          {outReq && <SheetItem icon={<X size={18} />} label={t('연결 요청 취소')} onClick={() => { setMenu(false); run(() => api.relationships.cancelFriendRequest(outReq.id), t('요청을 취소했어요.')); }} />}
           {friend && <SheetItem icon={<UserMinus size={18} />} label={t('연결 끊기')} onClick={() => { setMenu(false); run(() => api.relationships.unfriend(v.me.id, user.id), t('연결을 끊었어요.')); }} />}
           <SheetItem icon={<Flag size={18} />} label={t('사용자 신고')} danger onClick={() => { setMenu(false); setReport(true); }} />
           <SheetItem icon={<Ban size={18} />} label={t('사용자 차단')} danger onClick={() => { setMenu(false); setBlockOpen(true); }} />

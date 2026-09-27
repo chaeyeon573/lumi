@@ -13,7 +13,7 @@ import type { Patch, Snapshot, CatalogCourse } from '@core/api/types';
 import type { ID } from '@core/types';
 
 export type Collection = Exclude<keyof Snapshot, 'relationships'>;
-export const COLLECTIONS: Collection[] = ['users', 'schools', 'organizations', 'activities', 'participations', 'posts', 'proposals', 'chatRooms', 'notifications', 'reports', 'opportunities', 'opportunityIntents', 'timePolls', 'savedSearches', 'networkRequests'];
+export const COLLECTIONS: Collection[] = ['users', 'schools', 'organizations', 'activities', 'participations', 'posts', 'proposals', 'chatRooms', 'notifications', 'reports', 'opportunities', 'opportunityIntents', 'timePolls', 'savedSearches', 'networkRequests', 'introRequests'];
 
 export interface Account { email: string; userId: ID; createdAt: string }
 export interface Session { token: string; userId: ID; createdAt: string }
@@ -222,7 +222,7 @@ export function emptySnapshot(): Snapshot {
   return {
     users: [], schools: [], organizations: [], activities: [], participations: [], posts: [],
     relationships: { likes: [], follows: [], friendRequests: [], friends: [], blocks: [] },
-    proposals: [], chatRooms: [], notifications: [], reports: [], opportunities: [], opportunityIntents: [], timePolls: [], savedSearches: [], networkRequests: [],
+    proposals: [], chatRooms: [], notifications: [], reports: [], opportunities: [], opportunityIntents: [], timePolls: [], savedSearches: [], networkRequests: [], introRequests: [],
   };
 }
 

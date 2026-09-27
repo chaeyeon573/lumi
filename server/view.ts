@@ -9,7 +9,9 @@ import type { ID, User, NetworkRequest } from '@core/types';
 function sanitizeUser(u: User, viewerId: ID): User {
   if (u.id === viewerId) return u;
   // 다른 사람의 요금제·연결 요청 사용량·검색 취향은 내려보내지 않는다
-  const { plan: _p, swipes: _s, savedPeople: _sp, ...rest } = u;
+  // 요금제·사용량·저장·숨김·최근 검색은 본인만. 방문 예정은 공개 설정이 꺼져 있으면 뺀다
+  const { plan: _p, swipes: _s, savedPeople: _sp, savedLists: _sl, hiddenPeople: _hp, hiddenActivities: _ha, recentSearches: _rs, ...rest } = u;
+  if (u.privacy && u.privacy.showTrips === false) delete (rest as Partial<User>).trips;
   return { ...rest, timetable: u.timetable.map(({ room: _room, ...c }) => c) };
 }
 
@@ -27,6 +29,7 @@ export function snapshotFor(db: Snapshot, viewerId: ID): Snapshot {
     reports: db.reports.filter((r) => r.reporterId === viewerId),
     savedSearches: db.savedSearches.filter((s) => s.userId === viewerId),
     networkRequests: db.networkRequests.map((r) => sanitizeRequest(r, viewerId)),
+    introRequests: db.introRequests.filter((x) => x.fromId === viewerId || x.viaId === viewerId || (x.toId === viewerId && x.status !== 'pending' && x.status !== 'passed')),
   };
 }
 
@@ -37,6 +40,7 @@ export function patchFor(patch: Patch, viewerId: ID): Patch | null {
   if (patch.reports) out.reports = patch.reports.filter((r) => r.reporterId === viewerId);
   if (patch.savedSearches) out.savedSearches = patch.savedSearches.filter((s) => s.userId === viewerId);
   if (patch.networkRequests) out.networkRequests = patch.networkRequests.map((r) => sanitizeRequest(r, viewerId));
+  if (patch.introRequests) out.introRequests = patch.introRequests.filter((x) => x.fromId === viewerId || x.viaId === viewerId || (x.toId === viewerId && x.status !== 'pending' && x.status !== 'passed'));
   const hasContent = Object.entries(out).some(([k, v]) => (k === 'relationships' ? !!v : k === 'removed' ? !!v && Object.values(v).some((ids) => ids && ids.length) : Array.isArray(v) && v.length > 0));
   return hasContent ? out : null;
 }

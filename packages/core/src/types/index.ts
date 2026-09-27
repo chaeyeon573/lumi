@@ -151,8 +151,21 @@ export interface User {
   wants?: Wants;
   /** 저장한 사람 — 가장 가벼운 행동(보기 → 저장 → 나중에 연결). 본인에게만 보인다 */
   savedPeople?: ID[];
-  /** 지금 열려 있는 것 — "☕ 이번 주 커피 가능"처럼 기간이 지나면 자동으로 꺼지는 상태 */
+  /** 지금 열려 있는 것 — "☕ 이번 주 커피 가능"처럼 기간이 지나면 자동으로 꺼지는 상태 (레거시 단일) */
   status?: UserStatus;
+  /** Open To — 여러 개 켤 수 있고 항목마다 기간·공개 대상이 있다 */
+  openStatuses?: UserStatus[];
+  /** 저장 목록 (기본 목록 외 사용자 지정). 본인에게만 보인다 */
+  savedLists?: SavedList[];
+  /** 숨긴 추천 카드 / 숨긴 모임 */
+  hiddenPeople?: ID[];
+  hiddenActivities?: ID[];
+  /** 최근 자연어 검색 (본인만) */
+  recentSearches?: string[];
+  /** 방문 예정 — 도시 단위, 기간만 (Who's around this week) */
+  trips?: Trip[];
+  /** 프로필·네트워크 공개 범위 */
+  privacy?: PrivacySettings;
   createdAt: string;
 }
 
@@ -188,11 +201,16 @@ export interface NetworkRequest {
   createdAt: string;
   expiresAt: string;
 }
+export type ShareField = 'school' | 'major' | 'city' | 'career' | 'interests' | 'groups';
 /** "저예요" — 본인이 손 든 응답. 요청자가 수락하면 서로 연결 + Mutual Room */
 export interface RequestResponse {
   id: ID;
   userId: ID;
   note?: string;
+  /** 본인이 체크한 일치 조건 */
+  matched?: string[];
+  /** 요청자에게 공개하기로 고른 프로필 항목 (연락처는 항상 비공개) */
+  shared?: ShareField[];
   /** 지인 추천을 거쳐 온 응답이면 추천한 사람 */
   viaId?: ID;
   status: 'pending' | 'accepted' | 'declined';
@@ -209,8 +227,38 @@ export interface RequestReferral {
 
 /** 가벼운 상태 — Open To 를 프로필에 거창하게 붙이는 대신, 기간이 지나면 꺼진다 */
 export type StatusKind = 'coffee' | 'meal' | 'running' | 'study' | 'walk' | 'chat';
-export type StatusWhen = 'now' | 'today' | 'week' | 'weekend';
-export interface UserStatus { kind: StatusKind; when: StatusWhen; until: string; setAt: string }
+export type StatusWhen = 'now' | 'today' | 'week' | 'weekend' | 'ongoing';
+/** 공개 대상 — 전체 AroundU / 같은 학교 + 2촌 / 연결된 사람만 */
+export type Audience = 'everyone' | 'school_2nd' | 'connections';
+export interface UserStatus { kind: StatusKind; when: StatusWhen; until: string; setAt: string; audience?: Audience }
+
+export interface SavedList { id: ID; name: string; memberIds: ID[]; notify: boolean }
+export interface Trip { id: ID; city: string; from: string; to: string }
+/** 공개 범위 — 전화번호·개인 이메일·정확한 위치·실시간 위치는 어떤 설정에서도 공개하지 않는다 */
+export interface PrivacySettings {
+  scope: Audience;
+  showCompany: boolean;
+  showCity: boolean;
+  showGradYear: boolean;
+  showGroups: boolean;
+  /** 2촌 경로에 내 이름이 "공통 연결"로 보이는 것 허용 */
+  showInPaths: boolean;
+  /** 방문 예정 도시를 보여줄지 */
+  showTrips: boolean;
+}
+/** 연결 상태 */
+export type ConnectionStatus = 'can_follow' | 'can_request' | 'requested' | 'connected' | 'blocked' | 'private';
+
+/** "연결해줄 수 있나요?" — 2촌에게 가기 위해 공통 연결(via)에게 부탁. via 가 전달해야 상대가 알게 된다 */
+export interface IntroRequest {
+  id: ID;
+  fromId: ID;
+  viaId: ID;
+  toId: ID;
+  note?: string;
+  status: 'pending' | 'forwarded' | 'accepted' | 'declined' | 'passed';
+  createdAt: string;
+}
 
 /** 어떤 사람을 만나고 싶나 */
 export type PeopleWant = 'same_major' | 'same_interest' | 'other_school' | 'senior_mentor' | 'alumni' | 'same_city' | 'same_field' | 'new_people';
@@ -555,7 +603,8 @@ export type NotificationType =
   | 'participation_request' | 'activity_reminder' | 'comment' | 'like' | 'follow'
   | 'org_event' | 'nearby_activity' | 'proposal' | 'proposal_result' | 'deadline' | 'opportunity_match' | 'plan_vote' | 'plan_decided'
   | 'new_people' | 'group_joined'
-  | 'request_received' | 'request_response' | 'request_referral' | 'request_accepted';
+  | 'request_received' | 'request_response' | 'request_referral' | 'request_accepted'
+  | 'intro_request' | 'intro_forwarded' | 'intro_accepted' | 'saved_update' | 'trip_nearby';
 
 export interface Notification {
   id: ID;

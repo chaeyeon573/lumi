@@ -1,18 +1,19 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Hand, Users, MessageCircle, CheckCircle2, ChevronRight } from 'lucide-react';
+import { Hand, Users, MessageCircle, CheckCircle2, ChevronRight, MoreHorizontal, EyeOff, Flag, Lock, Clock } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import type { IncomingRequest } from '@core/lib/requests';
 import { degreeLabel, requestContextLine, referralCandidates } from '@core/lib/requests';
-import { personLine } from '@core/lib/network';
+import { personLine, cityOf, majorOf } from '@core/lib/network';
+import { INTEREST_LABELS } from '@core/lib/labels';
 import { api } from '@core/api';
 import { useAppStore } from '@core/store/useAppStore';
 import { useViewer } from '@/hooks/useViewer';
 import { useSnapshot } from '@/hooks/useSnapshot';
-import { Avatar, Button, BottomSheet, Textarea, Tag, EmptyState } from '@/components/ui';
+import { Avatar, Button, BottomSheet, Tag, EmptyState } from '@/components/ui';
 import { SchoolBadge } from '@/components/people_SchoolBadge';
 import { cn } from '@core/lib/cn';
-import type { User } from '@core/types';
+import type { Interest, NetworkRequest, Organization, ShareField, User } from '@core/types';
 
 /** 문자열 이유 칩 — "같은 지역 · 서울" 처럼 전체 문장을 그대로 보여준다 */
 export function PlainReasonChips({ reasons, max = 3, className }: { reasons: string[]; max?: number; className?: string }) {
@@ -29,9 +30,87 @@ export function directRoomWith(rooms: { id: string; type: string; memberIds: str
   return rooms.find((r) => r.type === 'direct' && r.memberIds.length === 2 && r.memberIds.includes(a) && r.memberIds.includes(b));
 }
 
+/** 요청이 마감됐는가 (기간이 지났거나 요청자가 그만 찾기로 함) */
+export const isRequestExpired = (req: Pick<NetworkRequest, 'expiresAt'>) => new Date(req.expiresAt).getTime() < Date.now();
+
+// ─── "저요" 때 요청자에게 보여줄 정보 ────────────────────────────────────────
+/** 공개 항목 — 순서대로 토글·미니 카드에 쓴다. 연락처·정확한 위치는 목록 자체에 없다 */
+export const SHARE_FIELDS: ShareField[] = ['school', 'major', 'city', 'career', 'interests', 'groups'];
+export const DEFAULT_SHARED: ShareField[] = ['school', 'interests'];
+export const shareFieldLabel = (f: ShareField) => ({ school: t('학교'), major: t('전공'), city: t('도시'), career: t('하는 일'), interests: t('관심사'), groups: t('그룹') })[f];
+
+/** 공개 항목의 실제 값 (비어 있으면 '') */
+export function shareFieldValue(u: User, f: ShareField, orgs: Organization[]): string {
+  switch (f) {
+    case 'school': return u.affiliation.type === 'university' ? u.affiliation.schoolName : u.affiliation.companyName;
+    case 'major': return majorOf(u);
+    case 'city': return cityOf(u) ?? '';
+    case 'career': return [u.career?.role, u.career?.company].filter(Boolean).join(' @ ') || u.career?.industry || '';
+    case 'interests': return u.interests.slice(0, 4).map((i: Interest) => INTEREST_LABELS[i]).join(' · ');
+    case 'groups': return orgs.filter((o) => o.memberIds.includes(u.id)).slice(0, 3).map((o) => o.name).join(' · ');
+  }
+}
+
+/**
+ * 손 든 사람 미니 카드 — 이름·사진 + 본인이 고른 항목만. 연락처·정확한 위치는 항상 비공개.
+ * 응답 화면의 "요청자에게 이렇게 보여요" 미리보기와 요청자 화면의 응답 카드가 같이 쓴다.
+ */
+export function SharedProfileMini({ user, shared, preview, className }: { user: User; shared: ShareField[]; preview?: boolean; className?: string }) {
+  const orgs = useAppStore((s) => s.organizations);
+  const rows = SHARE_FIELDS.filter((f) => shared.includes(f)).map((f) => ({ f, value: shareFieldValue(user, f, orgs) }));
+  return (
+    <div className={cn('rounded-2xl bg-surface-2 px-3 py-2.5', className)}>
+      <div className="flex items-center gap-2 min-w-0">
+        <Avatar emoji={user.avatar.emoji} hue={user.avatar.hue} url={user.avatar.url} size={32} />
+        <span className="text-[14px] font-bold truncate">{user.nickname}</span>
+      </div>
+      <dl className="mt-2 space-y-1">
+        {rows.length === 0 && <div className="text-[12px] text-ink-3">{t('이름과 사진만 보여요')}</div>}
+        {rows.map(({ f, value }) => (
+          <div key={f} className="flex items-baseline gap-2 text-[12px] min-w-0">
+            <dt className="w-14 shrink-0 text-ink-3 font-semibold">{shareFieldLabel(f)}</dt>
+            <dd className={cn('min-w-0 truncate', value ? 'text-ink' : 'text-ink-3')}>{value || (preview ? t('프로필에 없어요') : '—')}</dd>
+          </div>
+        ))}
+        <div className="flex items-baseline gap-2 text-[12px] pt-1 mt-1 border-t border-line/70">
+          <dt className="w-14 shrink-0 text-ink-3 font-semibold inline-flex items-center gap-1"><Lock size={10} />{t('비공개')}</dt>
+          <dd className="text-ink-3">{t('연락처 · 정확한 위치 — 항상 비공개')}</dd>
+        </div>
+      </dl>
+    </div>
+  );
+}
+
+/** 작성 화면용 미리보기 — 받는 사람의 카드 모양 그대로, 누를 수 없다 */
+export function RequestPreviewCard({ author, text, context, degreeText, className }: { author: User; text: string; context?: string; degreeText: string; className?: string }) {
+  return (
+    <div className={cn('rounded-[24px] border border-line bg-white overflow-hidden pointer-events-none select-none', className)} aria-hidden>
+      <div className="px-4 pt-3.5 pb-3">
+        <div className="text-[12px] font-bold text-primary">{t('혹시 여기에 해당되나요?')}</div>
+        <p className={cn('mt-1 text-[15px] font-bold leading-snug line-clamp-3', text ? 'text-ink' : 'text-ink-3')}>{text || t('찾는 사람을 한 줄로 적어주세요')}</p>
+        {context && <p className="mt-1 text-[12px] text-ink-3 truncate">{context}</p>}
+        <div className="mt-2 flex items-center gap-1.5 min-w-0 text-[12px] text-ink-3">
+          <Avatar emoji={author.avatar.emoji} hue={author.avatar.hue} url={author.avatar.url} size={20} />
+          <span className="truncate">{author.nickname}{t('님')} · {degreeText}</span>
+          <SchoolBadge user={author} size="sm" className="min-w-0 ml-1 text-ink-3 font-medium" />
+        </div>
+      </div>
+      <div className="px-3 pb-3 flex gap-1.5 opacity-80">
+        <span className="flex-1 h-9 rounded-full bg-primary text-white text-[13px] font-semibold inline-flex items-center justify-center gap-1.5"><Hand size={14} />{t('저요')}</span>
+        <span className="flex-1 h-9 rounded-full bg-accent text-primary text-[13px] font-semibold inline-flex items-center justify-center gap-1.5"><Users size={14} />{t('아는 사람 있어요')}</span>
+        <span className="h-9 px-3 rounded-full text-ink-2 text-[13px] font-semibold inline-flex items-center">{t('넘기기')}</span>
+      </div>
+    </div>
+  );
+}
+
+const REPORT_REASONS = () => [t('스팸·광고'), t('연락처·개인정보를 요구해요'), t('부적절한 내용'), t('사칭 또는 허위'), t('기타')];
+
 /**
  * 나에게 온 것 — "혹시 여기에 해당되나요?" 한 장. 가볍게: 저요 / 아는 사람 있어요 / 넘기기.
+ * 저요 → 응답 화면(/people/requests/:id/respond)에서 해당되는 부분·보여줄 정보를 고른다.
  * 지인이 떠올려 보낸 것은 먼저 '관심 있어요' 를 묻고, 그 전까지 찾는 사람에게 내 프로필은 보이지 않는다.
+ * ⋯ 메뉴: 숨기기 · 신고. 마감된 요청은 흐리게, 행동 없이. 읽음 표시·불이익 없음.
  */
 export function IncomingRequestCard({ item, highlightReferral, compact, onOpen, className }: { item: IncomingRequest; highlightReferral?: boolean; compact?: boolean; onOpen?: () => void; className?: string }) {
   const nav = useNavigate();
@@ -40,30 +119,39 @@ export function IncomingRequestCard({ item, highlightReferral, compact, onOpen, 
   const snap = useSnapshot();
   const run = useAppStore((s) => s.run);
   const rooms = useAppStore((s) => s.chatRooms);
-  const [sheet, setSheet] = useState<'me' | 'refer' | null>(null);
-  const [note, setNote] = useState('');
+  const [sheet, setSheet] = useState<'refer' | 'menu' | 'report' | null>(null);
+  const [reason, setReason] = useState<string | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
   const { req, author, degree, reasons, myResponse, myReferral } = item;
   const referrer = myReferral ? v.userById(myReferral.referrerId) : undefined;
   const ctx = requestContextLine(req);
   const room = myResponse?.status === 'accepted' ? directRoomWith(rooms, me.id, author.id) : undefined;
+  const expired = isRequestExpired(req) || req.status !== 'open';
 
   const act = async (key: string, fn: Parameters<typeof run>[0], msg?: string) => {
     setBusy(key);
-    try { await run(fn, msg); } catch { /* toast */ } finally { setBusy(null); }
+    try { await run(fn, msg); return true; } catch { return false; } finally { setBusy(null); }
   };
-  const respond = async () => { setSheet(null); await act('me', () => api.requests.respond(req.id, me.id, note.trim() || undefined), t('손 들었어요. 상대가 대화를 시작하면 알려드려요.')); setNote(''); };
   const refer = async (u: User) => { setSheet(null); await act(`refer-${u.id}`, () => api.requests.refer(req.id, me.id, u.id), `${u.nickname}${t('님에게 조용히 물어봤어요. 본인이 관심 있어요 하면 연결돼요.')}`); };
   const dismiss = () => act('dismiss', () => api.requests.dismiss(req.id, me.id));
+  const hide = async () => { setSheet(null); await act('dismiss', () => api.requests.dismiss(req.id, me.id), t('숨겼어요. 다시 보이지 않아요.')); };
+  const report = async () => {
+    if (!reason) return;
+    const ok = await act('report', () => api.requests.report(req.id, me.id, reason), t('신고가 접수되었어요. 이 요청은 더 이상 보이지 않아요.'));
+    if (ok) { setSheet(null); setReason(null); }
+  };
   const referralDecide = (ok: boolean) => myReferral && act(ok ? 'ref-yes' : 'ref-no', () => api.requests.referralDecide(req.id, myReferral.id, ok), ok ? t('관심 있다고 알렸어요. 상대가 대화를 시작하면 알려드려요.') : undefined);
 
   const candidates = sheet === 'refer' ? referralCandidates(snap, me, req) : [];
 
   return (
-    <article className={cn('rounded-[24px] border border-line bg-white overflow-hidden', className)}>
-      <div className="px-4 pt-3.5 pb-3">
-        <div className="text-[12px] font-bold text-primary">{t('혹시 여기에 해당되나요?')}</div>
-        <button onClick={onOpen} className={cn('mt-1 block w-full text-left', onOpen && 'press')} disabled={!onOpen}>
+    <article className={cn('rounded-[24px] border border-line bg-white overflow-hidden', expired && 'bg-surface-2/60', className)}>
+      <div className={cn('px-4 pt-3.5 pb-3', expired && 'opacity-55')}>
+        <div className="flex items-center gap-2">
+          <div className="flex-1 text-[12px] font-bold text-primary">{expired ? <span className="inline-flex items-center gap-1 text-ink-3"><Clock size={12} />{t('마감된 요청이에요')}</span> : t('혹시 여기에 해당되나요?')}</div>
+          <button type="button" onClick={() => setSheet('menu')} aria-label={t('더보기')} className="-mr-2 -my-1 h-8 w-8 rounded-full grid place-items-center text-ink-3 hover:bg-surface-2 press"><MoreHorizontal size={17} /></button>
+        </div>
+        <button onClick={onOpen} className={cn('mt-0.5 block w-full text-left', onOpen && 'press')} disabled={!onOpen}>
           <p className={cn('text-[15px] font-bold text-ink leading-snug', compact && 'line-clamp-2')}>{req.text}</p>
           {ctx && !compact && <p className="mt-1 text-[12px] text-ink-3 truncate">{ctx}</p>}
         </button>
@@ -72,10 +160,10 @@ export function IncomingRequestCard({ item, highlightReferral, compact, onOpen, 
           <span className="truncate">{author.nickname}{t('님')} · {degreeLabel(degree, lang)}</span>
           {!compact && <SchoolBadge user={author} size="sm" className="min-w-0 ml-1 text-ink-3 font-medium" />}
         </div>
-        {!compact && <PlainReasonChips reasons={reasons} className="mt-2" />}
+        {!compact && !expired && <PlainReasonChips reasons={reasons} className="mt-2" />}
       </div>
 
-      {myReferral && myReferral.status === 'pending' && referrer ? (
+      {myReferral && myReferral.status === 'pending' && referrer && !expired ? (
         <div className={cn('mx-3 mb-3 rounded-2xl p-3', highlightReferral ? 'bg-primary text-white' : 'bg-primary-soft')}>
           <div className={cn('text-[13px] font-semibold leading-snug flex items-center gap-2', highlightReferral ? 'text-white' : 'text-primary')}>
             <Avatar emoji={referrer.avatar.emoji} hue={referrer.avatar.hue} url={referrer.avatar.url} size={26} />
@@ -93,27 +181,37 @@ export function IncomingRequestCard({ item, highlightReferral, compact, onOpen, 
           <span className="flex-1" />
           {room && <Button size="sm" icon={<MessageCircle size={14} />} onClick={() => nav(`/chats/${room.id}`)}>{t('대화 열기')}</Button>}
         </div>
-      ) : (
-        <div className="px-3 pb-3 flex gap-1.5">
-          <Button size="sm" full icon={<Hand size={14} />} loading={busy === 'me'} onClick={() => setSheet('me')}>{t('저요')}</Button>
-          <Button size="sm" full variant="secondary" icon={<Users size={14} />} loading={busy?.startsWith('refer') ?? false} onClick={() => setSheet('refer')}>{t('아는 사람 있어요')}</Button>
-          <Button size="sm" variant="ghost" loading={busy === 'dismiss'} onClick={dismiss}>{t('넘기기')}</Button>
+      ) : expired ? null : (
+        <div className="px-3 pb-3">
+          <div className="flex gap-1.5">
+            <Button size="sm" full icon={<Hand size={14} />} onClick={() => nav(`/people/requests/${req.id}/respond`)}>{t('저요')}</Button>
+            <Button size="sm" full variant="secondary" icon={<Users size={14} />} loading={busy?.startsWith('refer') ?? false} onClick={() => setSheet('refer')}>{t('아는 사람 있어요')}</Button>
+            <Button size="sm" variant="ghost" loading={busy === 'dismiss'} onClick={dismiss}>{t('넘기기')}</Button>
+          </div>
+          <p className="mt-2 px-1 text-[11px] text-ink-3 flex items-center gap-1"><Lock size={10} className="shrink-0" />{t('저요를 누르면 고른 정보만 보여요 · 연락처는 공개되지 않아요')}</p>
         </div>
       )}
 
-      <BottomSheet open={sheet === 'me'} onClose={() => setSheet(null)} title={t('저요')}>
-        <p className="text-[13px] text-ink-2 leading-relaxed">{author.nickname}{t('님에게 내 프로필과 함께 전해져요. 상대가 대화를 시작하면 서로 연결돼요.')}</p>
-        <div className="mt-3">
-          <Textarea placeholder={t('한 줄이면 충분해요 (예: 일본 식품 유통 5년)')} value={note} onChange={(e) => setNote(e.target.value)} maxLength={120} />
+      <BottomSheet open={sheet === 'menu'} onClose={() => setSheet(null)}>
+        <div className="space-y-1">
+          <button onClick={hide} className="w-full flex items-center gap-3 rounded-xl px-3 h-12 text-[14px] font-semibold press hover:bg-surface-2"><EyeOff size={18} />{t('숨기기')}<span className="ml-auto text-[11px] font-medium text-ink-3">{t('상대는 알 수 없어요')}</span></button>
+          <button onClick={() => setSheet('report')} className="w-full flex items-center gap-3 rounded-xl px-3 h-12 text-[14px] font-semibold press hover:bg-surface-2 text-danger"><Flag size={18} />{t('신고')}</button>
         </div>
-        <div className="mt-4 flex gap-2">
-          <Button variant="outline" onClick={() => setSheet(null)}>{t('취소')}</Button>
-          <Button full icon={<Hand size={16} />} onClick={respond}>{t('저요')}</Button>
+      </BottomSheet>
+
+      <BottomSheet open={sheet === 'report'} onClose={() => setSheet(null)} title={t('신고하기')}>
+        <p className="text-[13px] text-ink-3">{t('신고 내용은 상대에게 공개되지 않아요.')} {t('신고하면 이 요청은 더 이상 보이지 않아요.')}</p>
+        <div className="mt-3 space-y-1.5">
+          {REPORT_REASONS().map((r) => (
+            <button key={r} onClick={() => setReason(r)} className={cn('w-full text-left rounded-xl px-3.5 h-11 text-[14px] font-medium border press', reason === r ? 'border-primary bg-primary-soft' : 'border-line')}>{r}</button>
+          ))}
         </div>
+        <Button full size="lg" variant="danger" className="mt-4" disabled={!reason} loading={busy === 'report'} onClick={report}>{t('신고 제출')}</Button>
       </BottomSheet>
 
       <BottomSheet open={sheet === 'refer'} onClose={() => setSheet(null)} title={t('아는 사람 있어요')} tall>
         <p className="text-[13px] text-ink-2 leading-relaxed">{t('떠오르는 사람을 고르면 그 사람에게 먼저 조용히 물어봐요. 본인이 관심 있어요 해야 상대에게 보여요.')}</p>
+        <p className="mt-1 text-[11px] text-ink-3 flex items-center gap-1"><Lock size={10} />{t('그 전까지 요청자는 누구를 떠올렸는지 알 수 없어요.')}</p>
         {candidates.length === 0 ? (
           <EmptyState emoji="" title={t('아직 물어볼 연결이 없어요')} description={t('연결이 늘면 여기서 아는 사람을 떠올릴 수 있어요.')} className="py-8" />
         ) : (

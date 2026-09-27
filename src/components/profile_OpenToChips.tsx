@@ -7,7 +7,7 @@ import { cn } from '@core/lib/cn';
 export const ALL_OPEN_TO: OpenTo[] = ['coffee', 'activities', 'research', 'networking', 'mentoring', 'cofounding'];
 export const OPEN_TO_EMOJI: Record<OpenTo, string> = { coffee: '☕', activities: '🎯', research: '🔬', networking: '🤝', mentoring: '🧭', cofounding: '🚀' };
 export const openToLabel = (k: OpenTo): string =>
-  ({ coffee: t('커피'), activities: t('활동'), research: t('연구 협업'), networking: t('네트워킹'), mentoring: t('멘토링'), cofounding: t('공동창업') })[k];
+  ({ coffee: t('커피'), activities: t('활동'), research: t('연구 협업'), networking: t('새로운 사람'), mentoring: t('멘토링'), cofounding: t('공동창업') })[k];
 
 /** Open To → 기존 purposes 로직 호환용 매핑 (coffee/activities→friend, research→study, networking/mentoring/cofounding→networking) */
 export function purposesFromOpenTo(openTo: OpenTo[]): Purpose[] {

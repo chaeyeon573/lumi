@@ -1,11 +1,12 @@
 import { useMemo, useState, type ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Clock, CalendarPlus, ChevronRight, Users, MapPin, X, UserPlus, Sparkles, CalendarDays, Briefcase, RefreshCw } from 'lucide-react';
+import { Clock, CalendarPlus, ChevronRight, Users, MapPin, X, Sparkles, CalendarDays, Briefcase, RefreshCw } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { CardSkeleton, ErrorState, Button, Avatar, EmptyState } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useSnapshot } from '@/hooks/useSnapshot';
+import { AroundTodayCard } from '@/components/home_AroundToday';
 import { useAppStore } from '@core/store/useAppStore';
 import { getPlatform } from '@core/platform';
 import type { Snapshot } from '@core/api';
@@ -24,6 +25,8 @@ import { JoinButton } from '@/components/cards/JoinButton';
 import { OpportunityCard } from '@/components/cards/OpportunityCard';
 import { NowActivityRow } from '@/components/cards/NowActivityRow';
 import { FIRSTRUN_KEY } from '@/pages/onboarding/OnboardingPage';
+import { requestsForMe } from '@core/lib/requests';
+import { IncomingRequestCard } from '@/components/people_RequestCard';
 
 /**
  * Home — "오늘 나에게 뭐가 있나". 게시글 피드가 아니라 지금 내 상황에서 볼 가치가 높은 것 2~4개씩.
@@ -50,6 +53,8 @@ export function HomePage() {
         <>
           <Identity me={me} />
           <FirstRunCard />
+          <AroundTodayCard me={me} snap={snap} />
+          <AskedOfMe me={me} snap={snap} />
           {student ? <StudentHome d={student} me={me} /> : alum ? <AlumniHome d={alum} me={me} /> : null}
         </>
       )}
@@ -79,34 +84,35 @@ function Identity({ me }: { me: User }) {
   );
 }
 
-// ─── 첫 사용 카드 (가입 직후 1회) ───────────────────────────────────────────────
+// ─── 첫 사용 카드 (가입 직후 1회) — 할 일 목록이 아니라 한 줄 안내. 아무것도 안 해도 된다 ─────────────
 function FirstRunCard() {
   const nav = useNavigate();
   const [show, setShow] = useState(() => { try { return getPlatform().getItem(FIRSTRUN_KEY) === '1'; } catch { return false; } });
   if (!show) return null;
   const dismiss = () => { try { getPlatform().removeItem(FIRSTRUN_KEY); } catch { /* */ } setShow(false); };
-  const steps = [
-    { n: 1, label: t('추천 사람 보기'), to: '/people', Icon: Users },
-    { n: 2, label: t('연결 요청'), to: '/people', Icon: UserPlus },
-    { n: 3, label: t('모임 참여'), to: '/meet', Icon: CalendarDays },
-  ];
   return (
-    <div className="mx-4 mt-3 rounded-[24px] bg-primary text-white p-4 relative">
-      <button onClick={dismiss} aria-label={t('닫기')} className="absolute top-3 right-3 h-8 w-8 rounded-full grid place-items-center text-white/80 press"><X size={16} /></button>
-      <div className="text-[11px] font-bold text-white/70 flex items-center gap-1"><Sparkles size={12} />{t('AroundU 시작하기')}</div>
-      <div className="mt-1 text-[16px] font-bold leading-snug pr-8">{t('학교에서 시작해, 관계를 넓혀보세요')}</div>
-      <div className="mt-3 flex items-center gap-1">
-        {steps.map((s, i) => (
-          <span key={s.n} className="contents">
-            <button onClick={() => { dismiss(); nav(s.to); }} className="flex-1 min-w-0 rounded-2xl bg-white/12 hover:bg-white/20 px-2 py-2.5 text-center press">
-              <s.Icon size={16} className="mx-auto" />
-              <span className="block text-[11px] font-semibold mt-1 truncate">{s.label}</span>
-            </button>
-            {i < steps.length - 1 && <ChevronRight size={14} className="text-white/50 shrink-0" />}
-          </span>
-        ))}
+    <div className="mx-4 mt-3 rounded-[24px] bg-primary-soft p-4 relative">
+      <button onClick={dismiss} aria-label={t('닫기')} className="absolute top-3 right-3 h-8 w-8 rounded-full grid place-items-center text-ink-3 press"><X size={16} /></button>
+      <div className="text-[11px] font-bold text-primary flex items-center gap-1"><Sparkles size={12} />{t('어서 오세요')}</div>
+      <div className="mt-1 text-[15px] font-bold leading-snug pr-8 text-ink">{t('천천히 둘러보세요. 마음에 드는 사람은 저장해 두고, 나중에 편할 때 연결하면 돼요.')}</div>
+      <div className="mt-3 flex gap-2">
+        <button onClick={() => { dismiss(); nav('/people'); }} className="h-9 px-3.5 rounded-full bg-white text-primary text-[12px] font-semibold flex items-center gap-1.5 press"><Users size={14} />{t('가까운 사람 보기')}</button>
+        <button onClick={() => { dismiss(); nav('/meet/tables'); }} className="h-9 px-3.5 rounded-full bg-white text-primary text-[12px] font-semibold flex items-center gap-1.5 press"><CalendarDays size={14} />{t('작은 모임 보기')}</button>
       </div>
     </div>
+  );
+}
+
+// ─── 혹시 여기에 해당되나요? — 건너건너 물어온 것 1건, 조용히 ─────────────────────
+function AskedOfMe({ me, snap }: { me: User; snap: Snapshot }) {
+  const nav = useNavigate();
+  const incoming = useMemo(() => requestsForMe(snap, me), [snap, me]);
+  if (incoming.length === 0) return null;
+  const first = incoming[0];
+  return (
+    <Section title={t('혹시 여기에 해당되나요?')} action={incoming.length > 1 ? `${t('전체보기')} ${incoming.length}` : undefined} onAction={() => nav('/people/requests')}>
+      <IncomingRequestCard item={first} compact onOpen={() => nav(`/people/requests/${first.req.id}`)} />
+    </Section>
   );
 }
 
@@ -214,7 +220,7 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
         )}
       </Section>
 
-      <Section title={t('지금 연결할 수 있는 사람')} action={t('전체보기')} onAction={() => nav('/people')}>
+      <Section title={t('지금 가까운 사람')} action={t('전체보기')} onAction={() => nav('/people')}>
         {d.connectNow.length === 0
           ? <Empty emoji="🤝" title={t('아직 추천할 사람이 없어요')} description={t('관심사와 찾는 것을 채우면 추천이 시작돼요.')} action={t('사람 둘러보기')} onAction={() => nav('/people')} />
           : <PeopleStrip people={d.connectNow} />}
@@ -285,7 +291,7 @@ function AlumniHome({ d, me }: { d: AlumniHome; me: User }) {
   const field = [me.career?.industry, me.career?.role].filter(Boolean).join(' / ');
   return (
     <>
-      <Section title={t('새롭게 연결할 사람')} action={t('전체보기')} onAction={() => nav('/people')}>
+      <Section title={t('새로운 사람')} action={t('전체보기')} onAction={() => nav('/people')}>
         {d.connect.length === 0
           ? <Empty emoji="🤝" title={t('아직 추천할 사람이 없어요')} action={t('사람 둘러보기')} onAction={() => nav('/people')} />
           : <PeopleStrip people={d.connect} />}

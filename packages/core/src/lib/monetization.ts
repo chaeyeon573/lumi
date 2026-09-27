@@ -5,6 +5,9 @@ import { todayISO } from './format';
 export const FREE_SWIPES_PER_DAY = 30;
 /** 무료 사용자가 Beyond(다른 학교·도시)에서 볼 수 있는 사람 수 — 가치는 보여주되 전체는 AroundU+ */
 export const BEYOND_FREE_PREVIEW = 3;
+/** 동시에 열어둘 수 있는 '사람 찾아보기' 요청 수 */
+export const FREE_OPEN_REQUESTS = 3;
+export const PLUS_OPEN_REQUESTS = 20;
 
 /** AroundU+ 가격표 (모의 결제) — PRD: $5.99/월, $49.99/년 */
 export const PLANS = {

@@ -220,6 +220,8 @@ npm run import:opportunities -- server/data/opportunities-berkeley.csv
 | **피드** (`src/pages/feed/*`, `@core/lib/feed`) | 무슨 이야기가 오가나 | 컴포저(텍스트·사진·**공개 범위** 전체/내 학교/특정 그룹/팔로워, 나머지는 더 보기) · **추천** · **내 학교**(재학생만 \| 학교 전체) · **팔로잉**(팔로우·연결·가입 그룹). 스폰서 글 4개마다 1개(Plus 광고 없음), 내 글 Boost |
 | **프로필** (`src/pages/profile/*`) | 나는 지금 어떤 사람인가 | 사진·이름·**학교 ✓**(인증 방법 툴팁)·전공·'25 졸업 예정/2018 졸업 → **현재**(거주 도시·활동 지역·졸업생은 회사·업종·직무) → 관심사 → **추천 설정**(찾는 사람·하고 싶은 활동) → 시간표(학생) → 그룹·연결·모임·글 → **현재 상태가 바뀌었나요?** → 더 알려주기(프로필 질문·목표·생활권) |
 
+**네트워크 16화면** (`docs/UX-SPEC.md` 6.7): 사람 탭 추천 허브(가까운 사람·이번 주 주변·Open To·의외의 연결·저장·사람 찾아보기, 기존 한 장씩 보기 유지) · `/people/unexpected` · `/people/second`(2촌 + 연결해줄 수 있나요?) · `/users/:id` Overlap · `/people/find` 자연어 · `/people/ask` · `/people/requests` · `/people/requests/:id/respond` · `/people/around` · `/profile/open-to` · `/meet/tables` · `/activities/:id` · `/profile/saved` · 1:1 대화 Mutual Room · `/settings/privacy` · `/people/advanced`. 모든 화면에 로딩·빈·부분 오류·연결 상태·공개 범위 상태가 있다.
+
 **온보딩 9단계** (`src/pages/onboarding/*`): 시작 → 학교 선택 → 학교 인증(재학생: 학교 이메일·SSO·학생증 / 졸업생: 졸업생 이메일·졸업증명·동문회 연동·이전 인증 이력, 데모 코드 `123456` 또는 즉시 인증) → 현재 상태(학부·석사·박사·졸업) → 기본 프로필(사진·이름·전공·졸업연도) → 관심사(≤5) → 지역(거주 도시 + 활동 지역) → **무엇을 찾고 있나요?**(어떤 사람 · 어떤 활동 → 추천 가중치) → 시간표(학생) 또는 현재 직업(졸업생).
 
 **졸업 전환** (프로필 › 현재 상태가 바뀌었나요? → `/profile/status` → `/profile/status/career`, `api.users.setStage`): 새 계정 없이 연결·글·그룹·인증·활동 기록 유지, 거주 도시·하는 일만 입력 → 헤더 "동문 ✓", 홈·추천 우선순위가 졸업생 기준으로.

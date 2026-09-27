@@ -1,7 +1,7 @@
 import type {
   Activity, ActivityProposal, ChatRoom, ID, Notification, Organization, Participation, Post, Relationships, Report, School, User,
   ActivityCategory, Visibility, JoinPolicy, ActivityKind, Place, ReportTargetType, Availability, Opportunity, OpportunityIntentRecord, OpportunityIntent, Role, TimePoll, TimeOption, Plan, Stage, Career, OpenTo, BoostTier,
-  SavedSearch, PeopleSearch, Wants, VerificationMethod, GroupScope, Interest, NetworkRequest, RequestReach, StatusKind, StatusWhen } from '@core/types';
+  SavedSearch, PeopleSearch, Wants, VerificationMethod, GroupScope, Interest, NetworkRequest, RequestReach, StatusKind, StatusWhen, UserStatus, PrivacySettings, Trip, IntroRequest, ShareField } from '@core/types';
 
 /** 클라이언트가 보유하는 전체 데이터 스냅샷 (실제 API에서는 필요한 부분만 내려받도록 분리) */
 export interface Snapshot {
@@ -23,12 +23,14 @@ export interface Snapshot {
   savedSearches: SavedSearch[];
   /** 네트워크 요청 (응답·추천 목록은 요청자와 당사자에게만 내려온다) */
   networkRequests: NetworkRequest[];
+  /** "연결해줄 수 있나요?" (당사자에게만) */
+  introRequests: IntroRequest[];
 }
 
 /** 변경된 엔티티만 담아 돌려주는 부분 응답. 스토어가 id 기준으로 병합한다. */
 export type Patch = Partial<Omit<Snapshot, 'relationships'>> & {
   relationships?: Relationships;
-  removed?: Partial<Record<'activities' | 'posts' | 'chatRooms' | 'participations' | 'proposals' | 'opportunityIntents' | 'timePolls' | 'organizations' | 'opportunities' | 'savedSearches' | 'networkRequests', ID[]>>;
+  removed?: Partial<Record<'activities' | 'posts' | 'chatRooms' | 'participations' | 'proposals' | 'opportunityIntents' | 'timePolls' | 'organizations' | 'opportunities' | 'savedSearches' | 'networkRequests' | 'introRequests', ID[]>>;
 };
 
 export interface RegisterInput {
@@ -225,6 +227,20 @@ export interface AroundUApi {
     toggleSavePerson(id: ID, targetId: ID): Promise<Patch>;
     /** 가벼운 상태 켜기/끄기 (null = 끄기). 기간이 지나면 자동으로 꺼진다 */
     setStatus(id: ID, kind: StatusKind | null, when?: StatusWhen): Promise<Patch>;
+    /** Open To 전체 저장 (여러 항목 · 항목별 기간 · 공개 대상) */
+    setOpenStatuses(id: ID, statuses: UserStatus[]): Promise<Patch>;
+    setPrivacy(id: ID, privacy: PrivacySettings): Promise<Patch>;
+    /** 방문 예정 (도시·기간만) */
+    setTrips(id: ID, trips: Trip[]): Promise<Patch>;
+    /** 추천 카드·모임 숨기기 (다시 보이게 하려면 unhide) */
+    hide(id: ID, kind: 'person' | 'activity', targetId: ID, unhide?: boolean): Promise<Patch>;
+    pushRecentSearch(id: ID, q: string): Promise<Patch>;
+    /** 저장 목록 — 만들기·이름 바꾸기·삭제·알림 */
+    createSavedList(id: ID, name: string): Promise<Patch>;
+    updateSavedList(id: ID, listId: ID, patch: { name?: string; notify?: boolean }): Promise<Patch>;
+    deleteSavedList(id: ID, listId: ID): Promise<Patch>;
+    /** 저장한 사람을 목록으로 옮기기 (null = 기본 목록만) */
+    moveSaved(id: ID, targetId: ID, listId: ID | null): Promise<Patch>;
   };
 
   /** 네트워크 요청 — 사람 찾기 › 네트워크에 물어보기 */
@@ -233,7 +249,9 @@ export interface AroundUApi {
     create(authorId: ID, input: NetworkRequestInput): Promise<{ request: NetworkRequest; matched: number; delivered: number; patch: Patch }>;
     close(id: ID): Promise<Patch>;
     /** "저예요" */
-    respond(requestId: ID, userId: ID, note?: string): Promise<Patch>;
+    respond(requestId: ID, userId: ID, note?: string, matched?: string[], shared?: ShareField[]): Promise<Patch>;
+    /** 신고 (요청 숨김 포함) */
+    report(requestId: ID, userId: ID, reason: string): Promise<Patch>;
     /** 요청자가 응답을 수락 → 서로 연결 + Mutual Room, 또는 거절 */
     decide(requestId: ID, responseId: ID, accept: boolean): Promise<{ roomId?: ID; patch: Patch }>;
     /** "제가 아는 사람이 있어요" — 후보에게 먼저 전달, 본인이 관심 있어요 해야 요청자에게 보인다 */
@@ -242,6 +260,15 @@ export interface AroundUApi {
     referralDecide(requestId: ID, referralId: ID, interested: boolean): Promise<Patch>;
     /** "관심 없어요" — 이 요청을 다시 보지 않는다 */
     dismiss(requestId: ID, userId: ID): Promise<Patch>;
+  };
+
+  /** "연결해줄 수 있나요?" — 2촌에게 공통 연결을 통해 */
+  intros: {
+    create(fromId: ID, viaId: ID, toId: ID, note?: string): Promise<Patch>;
+    /** 공통 연결이 전달 / 넘기기 */
+    forward(introId: ID, viaId: ID, pass?: boolean): Promise<Patch>;
+    /** 대상이 수락 → 연결 + 대화 / 거절 */
+    respond(introId: ID, toId: ID, accept: boolean): Promise<{ roomId?: ID; patch: Patch }>;
   };
 
   /** 저장한 사람 검색 + 새 사람 알림 (AroundU+) */

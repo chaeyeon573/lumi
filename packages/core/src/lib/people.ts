@@ -167,3 +167,23 @@ export function searchOptions(users: User[]) {
     gradYears: [...new Set(users.map(gradYearOf).filter((y): y is number => !!y))].sort(),
   };
 }
+
+/**
+ * 의외의 연결 — 같은 학교·같은 전공처럼 뻔한 이유가 아니라, 다른 학교·다른 분야인데 의미 있는 공통점이 2개 이상인 사람.
+ * (관심사·그룹·모임·공통 연결·도시·분야). 숨긴 카드는 빠진다.
+ */
+export function unexpectedConnections(snap: Snapshot, me: User, users: User[], canSeeTimetable: (u: User) => boolean, limit = 12): RecommendedPerson[] {
+  const hidden = new Set(me.hiddenPeople ?? []);
+  const meaningful = new Set(['interest', 'group', 'meet', 'mutual', 'city', 'field']);
+  return users
+    .filter((u) => u.id !== me.id && !hidden.has(u.id) && !isBlocked(snap, me.id, u.id))
+    .map((u) => { const r = matchScore(me, u, snap, canSeeTimetable(u)); return { user: u, reasons: shareableReasons(r.reasons), score: r.score }; })
+    .filter((x) => {
+      const kinds = new Set(x.reasons.map((r) => r.kind));
+      const obvious = kinds.has('school') || kinds.has('major') || kinds.has('class');
+      const hits = [...kinds].filter((k) => meaningful.has(k)).length;
+      return !obvious && hits >= 1 && x.reasons.length >= 2;
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit);
+}

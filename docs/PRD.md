@@ -96,6 +96,9 @@ A Home → free time → Find someone → People → Connect → DM → Coffee M
 - **맥락**: KO(한국 대학·도시·업종) / EN(미국 대학·도시·업종) 두 프리셋을 같은 구조에 얹는다.
 - **네트워크에 물어보기** (v2.1): 사람 찾기에서 🔎 AroundU가 찾아보기 + 📣 네트워크에 물어보기. 요청은 1촌 → 2촌 → 3촌 → 관련 학교·업종·관심사로 전달되고, 받은 사람은 저예요 / 제가 아는 사람이 있어요 / 관심 없어요. 지인 추천 후보는 본인이 '관심 있어요' 하기 전까지 요청자에게 공개되지 않는다. 수락하면 연결 + Mutual Room. 졸업생 인증에 동문 보증(vouch) 추가.
 
+## 27-2. 네트워크 기능 16화면 (v2.2, 상세 `docs/UX-SPEC.md` 6.7)
+People 메인(추천 허브) · 의외의 연결 · 2촌 탐색(연결해줄 수 있나요?) · Person Detail + Overlap · 자연어 사람 찾기 · 사람 찾아보기 작성 · 받은 요청 · "저요" 응답(공개할 정보 선택) · Who's Around This Week(방문 예정, 도시 단위) · Open To 설정(여러 항목·기간·공개 대상) · Small Table 추천·상세 · 저장 목록(사용자 목록·알림) · Mutual Room(연결된 이유·겹치는 것·커피 일정) · Privacy(전체 AroundU / 같은 학교+2촌 / 연결된 사람만) · AroundU+ 고급 탐색(2·3촌 필터, 자동 알림, 요청 한도). 흐름: 사람 → 관계의 이유 → 연결 경로 → 실제 연결. 전화번호·개인 이메일·정확한/실시간 위치는 항상 비공개. AroundU+ 는 사람을 볼 권한이 아니라 탐색 도구다.
+
 ## 28–29. Principle · Brand
 Your university gives you your first trusted network. But users are never trapped inside it: My university → My interests → My city → My profession → My wider network.
 Primary: **Start with your university. Expand your circle.** Secondary: Find opportunities. Meet people. Make friends.

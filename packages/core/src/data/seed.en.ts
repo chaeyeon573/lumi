@@ -1,6 +1,6 @@
 /** English demo: a US campus (UC Berkeley) with Greek life, .edu verification and US-style opportunities */
 import type {
-  Activity, ActivityProposal, ChatRoom, Notification, Organization, Participation, Post, Relationships, School, User, Visibility, ProfileField, Opportunity, OpportunityIntentRecord, TimePoll, Course, SavedSearch, NetworkRequest } from '@core/types';
+  Activity, ActivityProposal, ChatRoom, Notification, Organization, Participation, Post, Relationships, School, User, Visibility, ProfileField, Opportunity, OpportunityIntentRecord, TimePoll, Course, SavedSearch, NetworkRequest, IntroRequest } from '@core/types';
 import { addDaysISO, isoHoursAgo, isoMinutesAgo, todayISO } from '@core/lib/format';
 import { photo } from '@core/lib/assets';
 import { catalogOrganizations } from './catalog/orgs';
@@ -606,3 +606,19 @@ export const networkRequests: NetworkRequest[] = [
   { id: 'nr_emma_ny', authorId: 'u_a_ny_fin', text: 'Cal students prepping for grad school in New York. Happy to talk essays and recommendation letters', city: 'New York', field: 'Finance', interests: ['finance', 'study'], reach: 3, status: 'open', dismissedIds: [], responses: [], referrals: [], createdAt: isoHoursAgo(50), expiresAt: addDaysISO(10) },
 ];
 
+/** v2.2 trips · saved lists · intro asks (Who's around · Saved lists · 2nd degree) */
+const wk = (d: number) => addDaysISO(d);
+const TRIPS: Record<string, User['trips']> = {
+  u_a_ny_fin: [{ id: 'tr1', city: 'San Francisco', from: wk(1), to: wk(6) }],
+  u_a_tokyo_pm: [{ id: 'tr2', city: 'San Francisco', from: wk(8), to: wk(11) }],
+  u_b_mit1: [{ id: 'tr3', city: 'Berkeley', from: wk(0), to: wk(3) }],
+  u_me: [{ id: 'tr4', city: 'New York', from: wk(9), to: wk(11) }],
+};
+users.forEach((u) => { if (TRIPS[u.id]) u.trips = TRIPS[u.id]; });
+const me0 = users.find((u) => u.id === DEMO_USER_ID)!;
+me0.savedPeople = ['u_a_sf_ai', 'u_b_ucla1'];
+me0.savedLists = [{ id: 'sl_startup', name: 'Startup chats', memberIds: ['u_b_ucla1'], notify: true }];
+me0.privacy = { scope: 'school_2nd', showCompany: true, showCity: true, showGradYear: true, showGroups: true, showInPaths: true, showTrips: true };
+export const introRequests: IntroRequest[] = [
+  { id: 'ir_seed1', fromId: 'u_hana', viaId: DEMO_USER_ID, toId: 'u_junho', note: 'I would love to help design the band show poster', status: 'pending', createdAt: isoHoursAgo(6) },
+];

@@ -10,6 +10,11 @@ import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { cn } from '@core/lib/cn';
+import { overlapChips } from '@core/lib/around';
+import { INTEREST_LABELS } from '@core/lib/labels';
+import type { Interest, User } from '@core/types';
+import { useSnapshot } from '@/hooks/useSnapshot';
+import { SmallTables } from '@/components/people_SmallTables';
 
 export function ChatRoomPage() {
   const { roomId } = useParams();
@@ -48,6 +53,7 @@ export function ChatRoomPage() {
         right={<button onClick={() => setMenu(true)} className="h-10 w-10 grid place-items-center rounded-full" aria-label={t('메뉴')}><MoreVertical size={20} /></button>} />
       <div className="flex-1 overflow-y-auto hide-scrollbar px-4 py-3 space-y-2">
         {activity && <button onClick={() => nav(`/activities/${activity.id}`)} className="w-full card p-3 flex items-center gap-3 text-left press mb-2"><span className="h-9 w-9 rounded-xl bg-primary-soft text-primary grid place-items-center"><CalendarDays size={18} /></span><span className="flex-1 min-w-0"><b className="text-[13px] block truncate">{activity.title}</b><span className="text-[11px] text-ink-3">{activity.place.name} · {activity.date} {activity.startTime}</span></span></button>}
+        {other && !blocked && <OverlapCard other={other} />}
         {room.messages.length === 0 && <div className="text-center text-[12px] text-ink-3 py-8">{t('대화를 시작해보세요. 차단·신고는 오른쪽 위 메뉴에서 할 수 있어요.')}</div>}
         {room.messages.map((m, i) => {
           if (m.system) return <div key={m.id} className="text-center text-[11px] text-ink-3 py-1">{m.text}</div>;
@@ -88,6 +94,22 @@ export function ChatRoomPage() {
           <Button variant="danger" full onClick={async () => { setBlockOpen(false); await run(() => api.relationships.block(v.me.id, other.id), t('차단했어요.')); nav('/chats'); }}>{t('차단')}</Button>
         </Dialog>
       )}
+    </div>
+  );
+}
+
+/** DM 위 작은 카드 — 둘이 겹치는 것 (학교 · 관심사 · 도시 · 공통 연결) + 둘 다 갈 수 있는 작은 모임. 그 아래는 그냥 대화 */
+function OverlapCard({ other }: { other: User }) {
+  const v = useViewer();
+  const snap = useSnapshot();
+  const chips = overlapChips(snap, v.me, other, (i) => INTEREST_LABELS[i as Interest] ?? i)
+    .map((c) => (c.startsWith('__mutual:') ? `${t('공통 연결')} ${c.slice(9)}${t('명')}` : c));
+  if (chips.length === 0) return <SmallTables other={other} compact className="rounded-[20px] border border-line bg-white p-3 mb-2" />;
+  return (
+    <div className="rounded-[20px] border border-line bg-white p-3 mb-2">
+      <div className="text-[11px] font-bold text-ink-3">{t('둘이 겹치는 것')}</div>
+      <div className="mt-1.5 flex flex-wrap gap-1.5">{chips.map((c) => <span key={c} className="h-7 px-3 rounded-full bg-accent-soft text-primary text-[12px] font-semibold inline-flex items-center">{c}</span>)}</div>
+      <SmallTables other={other} compact className="mt-3" />
     </div>
   );
 }

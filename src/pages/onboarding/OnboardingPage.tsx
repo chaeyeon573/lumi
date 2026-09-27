@@ -152,7 +152,7 @@ function SchoolStep({ form, patch, next }: StepProps) {
   };
   return (
     <>
-      <Heading title={t('학교를 선택해주세요')} sub={t('검증된 학교 관계망에서 시작해요. 같은 학교 사람들이 첫 네트워크가 돼요.')} />
+      <Heading title={t('학교를 선택해주세요')} sub={t('검증된 학교에서 시작해요. 같은 학교 사람들부터 가볍게 만나요.')} />
       <div className="relative"><Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-3" /><Input className="pl-9" placeholder={t('학교명 또는 지역')} value={q} onChange={(e) => setQ(e.target.value)} /></div>
       <div className="card divide-y divide-line">
         {searching && results.length === 0 && <div className="px-4 py-3 text-[12px] text-ink-3">{t('검색 중…')}</div>}

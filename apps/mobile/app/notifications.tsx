@@ -35,6 +35,11 @@ const ICONS: Record<NotificationType, { Icon: typeof Heart; bg: string; fg: stri
   request_response:{ Icon: CalendarCheck, bg: C.mintSoft, fg: C.mint },
   request_referral:{ Icon: CalendarCheck, bg: C.mintSoft, fg: C.mint },
   request_accepted:{ Icon: CalendarCheck, bg: C.mintSoft, fg: C.mint },
+  intro_request:{ Icon: CalendarCheck, bg: C.mintSoft, fg: C.mint },
+  intro_forwarded:{ Icon: CalendarCheck, bg: C.mintSoft, fg: C.mint },
+  intro_accepted:{ Icon: CalendarCheck, bg: C.mintSoft, fg: C.mint },
+  saved_update:{ Icon: CalendarCheck, bg: C.mintSoft, fg: C.mint },
+  trip_nearby:{ Icon: CalendarCheck, bg: C.mintSoft, fg: C.mint },
 };
 
 /** 알림 목록 (웹 NotificationsPage) */

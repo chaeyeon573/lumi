@@ -71,3 +71,40 @@ export function overlapChips(snap: Snapshot, me: User, other: User, interestLabe
   const m = mutualFriends(snap, me.id, other.id).length;
   return m ? [...out, `__mutual:${m}`] : out;
 }
+
+// ─── Who's Around This Week — 도시·권역 단위, 정확한 위치·실시간 위치는 쓰지 않는다 ──────────────────────
+export type AroundWindow = 'this' | 'next';
+export interface AroundPerson { user: User; kind: 'here' | 'visiting'; tripFrom?: string; tripTo?: string; degree?: number }
+
+/** 이번 주/다음 주 [start, end] (YYYY-MM-DD) */
+export function weekRange(win: AroundWindow, now = new Date()): [string, string] {
+  const d = new Date(now); const day = (d.getDay() + 6) % 7; // 월=0
+  d.setDate(d.getDate() - day + (win === 'next' ? 7 : 0));
+  const start = d.toISOString().slice(0, 10); d.setDate(d.getDate() + 6);
+  return [start, d.toISOString().slice(0, 10)];
+}
+
+const lcc = (s?: string) => (s ?? '').toLowerCase();
+
+/**
+ * 도시(권역)에 있는 사람 — 사는 사람·주로 활동하는 사람(here) + 그 기간에 방문 예정인 사람(visiting).
+ * 방문 예정은 상대의 privacy.showTrips 와 공개 범위를 따르는 canSeeTrips 로 거른다.
+ */
+export function whoIsAround(snap: Snapshot, me: User, city: string, win: AroundWindow, canSeeTrips: (u: User) => boolean): AroundPerson[] {
+  const [from, to] = weekRange(win);
+  const deg = degreesFrom(snap, me.id, 3);
+  const out: AroundPerson[] = [];
+  for (const u of snap.users) {
+    if (u.id === me.id || isBlocked(snap, me.id, u.id)) continue;
+    if (citiesOf(u).some((c) => lcc(c) === lcc(city))) { out.push({ user: u, kind: 'here', degree: deg.get(u.id) }); continue; }
+    const trip = (u.trips ?? []).find((tr) => lcc(tr.city) === lcc(city) && tr.from <= to && tr.to >= from);
+    if (trip && canSeeTrips(u)) out.push({ user: u, kind: 'visiting', tripFrom: trip.from, tripTo: trip.to, degree: deg.get(u.id) });
+  }
+  const rank = (p: AroundPerson) => (p.degree ?? 9) * 10 - (activeStatus(p.user) ? 5 : 0);
+  return out.sort((a, b) => rank(a) - rank(b));
+}
+
+/** 내가 방문 예정인 도시들 + 내 도시 — 도시 선택 칩 */
+export function aroundCityOptions(me: User, extra: string[]): string[] {
+  return [...new Set([...citiesOf(me), ...(me.trips ?? []).map((t) => t.city), ...extra])].filter(Boolean);
+}

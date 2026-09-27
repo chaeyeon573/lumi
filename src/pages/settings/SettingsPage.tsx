@@ -1,12 +1,15 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { t, lang, setLang } from '@core/i18n';
-import { ChevronRight, Lock, ShieldAlert, Bell, MapPin, LogOut, RotateCcw, Bug, User, Sparkles, Receipt, GraduationCap, Target, BellRing } from 'lucide-react';
+import { ChevronRight, Lock, ShieldAlert, Bell, MapPin, LogOut, RotateCcw, Bug, User, Sparkles, Receipt, GraduationCap, Target, BellRing, Coffee } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Toggle, Button, Segmented } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { isAlumniStage, stageLabel, stageOf } from '@core/lib/network';
+import { activeStatus } from '@core/lib/status';
+import { StatusPicker, statusText } from '@/components/people_StatusPill';
 
 export function SettingsPage() {
   const nav = useNavigate();
@@ -16,9 +19,11 @@ export function SettingsPage() {
   const init = useAppStore((s) => s.init);
   const showToast = useAppStore((s) => s.showToast);
   const savedSearches = useAppStore((s) => s.savedSearches);
+  const [statusOpen, setStatusOpen] = useState(false);
   const me = v.me;
   const alumni = isAlumniStage(me);
   const plus = me.plan === 'plus';
+  const myStatus = activeStatus(me);
   const items = [
     { Icon: User, label: t('프로필 편집'), desc: t('사진 · 전공 · 거주 도시 · 관심사'), to: '/profile/edit' },
     { Icon: Target, label: t('추천 설정'), desc: t('AroundU가 나를 이해하는 기준'), to: '/profile/wants' },
@@ -48,9 +53,14 @@ export function SettingsPage() {
           {items.map((it) => <Row key={it.to} Icon={it.Icon} label={it.label} desc={it.desc} onClick={() => nav(it.to)} />)}
         </div>
 
+        {/* ── 지금 상태: "☕ 이번 주 커피 가능" — 기간이 지나면 자동으로 꺼짐 ── */}
+        <div className="card divide-y divide-line">
+          <Row Icon={Coffee} label={t('지금 상태')} desc={myStatus ? statusText(myStatus) : `${t('상태 없음')} · ${t('기간이 지나면 자동으로 꺼져요')}`} onClick={() => setStatusOpen(true)} />
+        </div>
+
         {/* ── 상태 (재학생 ↔ 졸업생) ── */}
         <div className="card divide-y divide-line">
-          <Row Icon={GraduationCap} label={alumni ? `${t('상태')}: ${stageLabel(stageOf(me), lang)}` : t('졸업생으로 전환')} desc={alumni ? t('졸업 후 정보 · 재학생으로 되돌리기(데모)') : t('학교 네트워크는 그대로, 도시·경력으로 서클을 넓혀요')} onClick={() => nav('/profile/status')} />
+          <Row Icon={GraduationCap} label={alumni ? `${t('상태')}: ${stageLabel(stageOf(me), lang)}` : t('졸업생으로 전환')} desc={alumni ? t('졸업 후 정보 · 재학생으로 되돌리기(데모)') : t('학교 연결은 그대로, 졸업 후에도 새로운 사람을 만나요')} onClick={() => nav('/profile/status')} />
         </div>
 
         <div className="card px-4 divide-y divide-line">
@@ -106,6 +116,7 @@ export function SettingsPage() {
         </div>
         <p className="text-center text-[11px] text-ink-3">AroundU MVP · mock API (localStorage)</p>
       </div>
+      <StatusPicker open={statusOpen} onClose={() => setStatusOpen(false)} />
     </div>
   );
 }

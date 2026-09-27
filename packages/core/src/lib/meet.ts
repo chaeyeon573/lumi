@@ -83,3 +83,29 @@ export const joinStateOf = (a: Activity, me: User, participations: Participation
   const p = participations.find((x) => x.activityId === a.id && x.userId === me.id && (x.status === 'approved' || x.status === 'pending'));
   return p ? (p.status === 'approved' ? 'approved' : 'pending') : 'none';
 };
+
+/** Small Table 추천 — 4~6명 작은 모임을 나와의 공통점으로. 숨긴 모임 제외, 자리 남은 것만 */
+export interface SmallTableRec { a: Activity; reasons: string[]; filled: number; sharedPeople: User[] }
+export function recommendSmallTables(acts: Activity[], me: User, users: User[], participations: Participation[], limit = 10): SmallTableRec[] {
+  const today = todayISO();
+  const hidden = new Set(me.hiddenActivities ?? []);
+  const wantCats = new Set((me.wants?.activities ?? []).flatMap((w) => ACTIVITY_WANT_CATEGORIES[w]));
+  return acts
+    .filter((a) => a.capacity >= 3 && a.capacity <= 6 && a.category !== 'store_deal' && a.date >= today && !hidden.has(a.id) && a.hostId !== me.id)
+    .map((a) => {
+      const partIds = participations.filter((p) => p.activityId === a.id && p.status === 'approved').map((p) => p.userId);
+      const people = [a.hostId, ...partIds].map((id) => users.find((u) => u.id === id)).filter((u): u is User => !!u);
+      const filled = people.length;
+      const reasons: string[] = [];
+      if (wantCats.has(a.category)) reasons.push(t('하고 싶은 활동'));
+      const sharedPeople = people.filter((u) => u.interests.some((i) => me.interests.includes(i)));
+      if (sharedPeople.length) reasons.push(`${t('관심사가 겹치는 사람')} ${sharedPeople.length}${t('명')}`);
+      if (people.some((u) => sameSchool(u, me))) reasons.push(t('같은 학교 사람'));
+      if (inCity(a, me)) reasons.push(cityOf(me));
+      return { a, reasons, filled, sharedPeople, score: reasons.length * 2 + sharedPeople.length };
+    })
+    .filter((x) => x.filled < x.a.capacity && x.reasons.length > 0)
+    .sort((x, y) => y.score - x.score || x.a.date.localeCompare(y.a.date))
+    .slice(0, limit)
+    .map(({ a, reasons, filled, sharedPeople }) => ({ a, reasons, filled, sharedPeople }));
+}

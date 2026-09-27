@@ -120,9 +120,10 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
       courses: (schoolId, query) => call('catalog/courses', { schoolId, query }),
     },
 
-    users: group('users', ['update', 'setAvailability', 'votePoll', 'recordSwipe', 'setPlan', 'setStage', 'updateWants', 'verify', 'toggleSavePerson', 'setStatus']),
+    users: group('users', ['update', 'setAvailability', 'votePoll', 'recordSwipe', 'setPlan', 'setStage', 'updateWants', 'verify', 'toggleSavePerson', 'setStatus', 'setOpenStatuses', 'setPrivacy', 'setTrips', 'hide', 'pushRecentSearch', 'createSavedList', 'updateSavedList', 'deleteSavedList', 'moveSaved']),
     searches: group('searches', ['save', 'remove', 'setAlert', 'run']),
-    requests: group('requests', ['create', 'close', 'respond', 'decide', 'refer', 'referralDecide', 'dismiss']),
+    requests: group('requests', ['create', 'close', 'respond', 'report', 'decide', 'refer', 'referralDecide', 'dismiss']),
+    intros: group('intros', ['create', 'forward', 'respond']),
     activities: group('activities', ['create', 'update', 'remove', 'join', 'cancel', 'approve', 'reject', 'comment']),
     posts: group('posts', ['create', 'remove', 'boost', 'toggleLike', 'toggleSave', 'comment', 'approveTag']),
     relationships: group('relationships', ['toggleLike', 'toggleFollow', 'sendFriendRequest', 'cancelFriendRequest', 'respondFriendRequest', 'unfriend', 'block', 'unblock']),

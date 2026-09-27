@@ -9,7 +9,7 @@ import { todayISO as todayISO_ } from '@core/lib/format';
 import type { Patch, Snapshot, RegisterInput, ActivityInput, PostInput, OpportunityInput, TimePollInput, GroupInput, NetworkRequestInput } from './types';
 import type {
   Activity, ActivityProposal, Availability, ChatRoom, ID, Notification, OpportunityIntent, Participation, Post, User, Opportunity, TimePoll, TimeOption, ReportTargetType, Plan, Stage, Career, BoostTier,
-  Wants, VerificationMethod, PeopleSearch, SavedSearch, Organization, NetworkRequest, RequestResponse, RequestReferral, StatusKind, StatusWhen } from '@core/types';
+  Wants, VerificationMethod, PeopleSearch, SavedSearch, Organization, NetworkRequest, RequestResponse, RequestReferral, StatusKind, StatusWhen, UserStatus, PrivacySettings, Trip, IntroRequest, ShareField } from '@core/types';
 import { STAGE_ROLE } from '@core/types';
 import { freeBlocks, jsDayToIdx, toMin } from '@core/lib/timetable';
 import { uid, pairKey } from '@core/lib/format';
@@ -18,6 +18,8 @@ import { canMessage } from '@core/lib/relations';
 import { searchPeople } from '@core/lib/people';
 import { openToFromWants } from '@core/lib/wants';
 import { makeStatus } from '@core/lib/status';
+import { containsContact } from '@core/lib/privacy';
+import { FREE_OPEN_REQUESTS, PLUS_OPEN_REQUESTS } from '@core/lib/monetization';
 import { audienceForRequest, matchesForRequest, relevanceToRequest, referralCandidates } from '@core/lib/requests';
 
 export interface EngineContext {
@@ -111,6 +113,26 @@ export function createEngine(ctx: EngineContext) {
 
   const later = (ms: number, fn: () => void) => { if (ctx.demo) setTimeout(fn, ms); };
   const AUTO_ACCEPT_FRIEND_LIST = [...AUTO_ACCEPT_FRIEND];
+
+  function introForward(it: IntroRequest, pass: boolean): Patch {
+    it.status = pass ? 'passed' : 'forwarded';
+    if (pass) return { introRequests: [it] }; // 넘기기 — 요청자에게 따로 알리지 않는다
+    const from = find(db().users, it.fromId); const via = find(db().users, it.viaId);
+    const nts = [notify(it.toId, { type: 'intro_forwarded', title: `${t('연결 제안')} · ${from.nickname}`, body: `${via.nickname}${t('님이 이어주고 싶어해요')}${it.note ? ` · "${it.note.slice(0, 50)}"` : ''}`, link: '/people/second?tab=asks' })];
+    return { introRequests: [it], notifications: nts };
+  }
+  function introRespond(it: IntroRequest, accept: boolean): { roomId?: ID; patch: Patch } {
+    it.status = accept ? 'accepted' : 'declined';
+    if (!accept) return { patch: { introRequests: [it] } };
+    const r = db().relationships;
+    if (!r.friends.some((f) => pairKey(f.a, f.b) === pairKey(it.fromId, it.toId))) r.friends.push({ a: it.fromId, b: it.toId, since: now() });
+    const room = ensureDirectRoom(it.fromId, it.toId);
+    const via = find(db().users, it.viaId); const to = find(db().users, it.toId);
+    room.messages.push({ id: uid('m'), senderId: it.viaId, text: `${via.nickname}${t('님이 이어줬어요')}`, createdAt: now(), system: true });
+    const nts = [notify(it.fromId, { type: 'intro_accepted', title: `${to.nickname}${t('님과 대화가 열렸어요')}`, body: `${via.nickname}${t('님이 이어줬어요')}`, link: `/chats/${room.id}` })];
+    return { roomId: room.id, patch: { introRequests: [it], relationships: r, chatRooms: [room], notifications: nts } };
+  }
+
   /** "저예요" — 응답을 기록하고 요청자에게 알린다 (지인 추천을 거친 경우 viaId) */
   function engineRespond(req: NetworkRequest, userId: ID, note?: string, viaId?: ID): Patch {
     if (req.status !== 'open') throw new Error(t('마감된 요청이에요.'));
@@ -262,6 +284,53 @@ export function createEngine(ctx: EngineContext) {
         if (kind) u.status = makeStatus(kind, when); else delete u.status;
         return { users: [u] };
       },
+      setOpenStatuses(id: ID, statuses: UserStatus[]): Patch {
+        const u = find(db().users, id);
+        u.openStatuses = statuses.map((x) => ({ ...x }));
+        delete u.status; // 레거시 단일 상태는 Open To 로 합친다
+        return { users: [u] };
+      },
+      setPrivacy(id: ID, privacy: PrivacySettings): Patch {
+        const u = find(db().users, id); u.privacy = { ...privacy }; return { users: [u] };
+      },
+      setTrips(id: ID, trips: Trip[]): Patch {
+        const u = find(db().users, id);
+        u.trips = trips.filter((x) => x.city.trim() && x.from && x.to && x.from <= x.to).map((x) => ({ ...x, city: x.city.trim(), id: x.id || uid('tr') }));
+        return { users: [u] };
+      },
+      hide(id: ID, kind: 'person' | 'activity', targetId: ID, unhide = false): Patch {
+        const u = find(db().users, id);
+        const key = kind === 'person' ? 'hiddenPeople' : 'hiddenActivities';
+        const set = new Set(u[key] ?? []);
+        if (unhide) set.delete(targetId); else set.add(targetId);
+        u[key] = [...set];
+        return { users: [u] };
+      },
+      pushRecentSearch(id: ID, q: string): Patch {
+        const u = find(db().users, id); const v = q.trim();
+        if (v) u.recentSearches = [v, ...(u.recentSearches ?? []).filter((x) => x !== v)].slice(0, 8);
+        return { users: [u] };
+      },
+      createSavedList(id: ID, name: string): Patch {
+        const u = find(db().users, id);
+        if (!name.trim()) throw new Error(t('목록 이름을 적어주세요.'));
+        u.savedLists = [...(u.savedLists ?? []), { id: uid('sl'), name: name.trim(), memberIds: [], notify: false }];
+        return { users: [u] };
+      },
+      updateSavedList(id: ID, listId: ID, patch: { name?: string; notify?: boolean }): Patch {
+        const u = find(db().users, id);
+        u.savedLists = (u.savedLists ?? []).map((l) => (l.id === listId ? { ...l, ...(patch.name?.trim() ? { name: patch.name.trim() } : {}), ...(patch.notify !== undefined ? { notify: patch.notify } : {}) } : l));
+        return { users: [u] };
+      },
+      deleteSavedList(id: ID, listId: ID): Patch {
+        const u = find(db().users, id); u.savedLists = (u.savedLists ?? []).filter((l) => l.id !== listId); return { users: [u] };
+      },
+      moveSaved(id: ID, targetId: ID, listId: ID | null): Patch {
+        const u = find(db().users, id);
+        if (!(u.savedPeople ?? []).includes(targetId)) u.savedPeople = [...(u.savedPeople ?? []), targetId];
+        u.savedLists = (u.savedLists ?? []).map((l) => ({ ...l, memberIds: l.id === listId ? [...new Set([...l.memberIds, targetId])] : l.memberIds.filter((m) => m !== targetId) }));
+        return { users: [u] };
+      },
     },
 
     /** 네트워크 요청 — 검색으로 잡히지 않는 사람까지 발견하는 장치. 프로필은 본인이 손 들기 전까지 요청자에게 공개되지 않는다 */
@@ -269,6 +338,10 @@ export function createEngine(ctx: EngineContext) {
       create(authorId: ID, input: NetworkRequestInput): { request: NetworkRequest; matched: number; delivered: number; patch: Patch } {
         const author = find(db().users, authorId);
         if (!input.text.trim()) throw new Error(t('어떤 분을 찾는지 적어주세요.'));
+        if (containsContact(input.text)) throw new Error(t('연락처(전화번호·이메일·메신저 ID)는 적을 수 없어요. 연결되면 대화에서 주고받아요.'));
+        const open = db().networkRequests.filter((r) => r.authorId === authorId && r.status === 'open').length;
+        const cap = author.plan === 'plus' ? PLUS_OPEN_REQUESTS : FREE_OPEN_REQUESTS;
+        if (open >= cap) throw new Error(`${t('동시에 찾을 수 있는 건 ')}${cap}${t('개까지예요. 하나를 마치거나 AroundU+ 에서 늘릴 수 있어요.')}`);
         const req: NetworkRequest = {
           id: uid('nr'), authorId, text: input.text.trim(), city: input.city?.trim() || undefined, field: input.field?.trim() || undefined, interests: [...input.interests], reach: input.reach,
           status: 'open', dismissedIds: [], responses: [], referrals: [], createdAt: now(), expiresAt: new Date(Date.now() + 14 * 86400000).toISOString(),
@@ -287,7 +360,23 @@ export function createEngine(ctx: EngineContext) {
         return { request: req, matched, delivered: audience.length, patch: { networkRequests: [req], notifications: nts } };
       },
       close(id: ID): Patch { const r = find(db().networkRequests, id); r.status = 'closed'; return { networkRequests: [r] }; },
-      respond(requestId: ID, userId: ID, note?: string): Patch { return engineRespond(find(db().networkRequests, requestId), userId, note); },
+      respond(requestId: ID, userId: ID, note?: string, matched?: string[], shared?: ShareField[]): Patch {
+        const req = find(db().networkRequests, requestId);
+        if (new Date(req.expiresAt).getTime() < Date.now()) throw new Error(t('마감된 요청이에요.'));
+        if (req.responses.some((r) => r.userId === userId)) throw new Error(t('이미 손을 들었어요.'));
+        if (note && containsContact(note)) throw new Error(t('연락처(전화번호·이메일·메신저 ID)는 적을 수 없어요. 연결되면 대화에서 주고받아요.'));
+        const p = engineRespond(req, userId, note);
+        const res = req.responses.find((r) => r.userId === userId);
+        if (res) { if (matched?.length) res.matched = [...matched]; res.shared = shared ? [...shared] : ['school', 'interests']; }
+        return p;
+      },
+      report(requestId: ID, userId: ID, reason: string): Patch {
+        const req = find(db().networkRequests, requestId);
+        if (!req.dismissedIds.includes(userId)) req.dismissedIds.push(userId);
+        const r = { id: uid('rp'), reporterId: userId, targetType: 'post' as const, targetId: requestId, reason: `[request] ${reason}`, createdAt: now() };
+        db().reports.push(r);
+        return { networkRequests: [req], reports: [r] };
+      },
       decide(requestId: ID, responseId: ID, accept: boolean): { roomId?: ID; patch: Patch } {
         const req = find(db().networkRequests, requestId);
         const res = find(req.responses, responseId);
@@ -315,6 +404,35 @@ export function createEngine(ctx: EngineContext) {
         const req = find(db().networkRequests, requestId);
         if (!req.dismissedIds.includes(userId)) req.dismissedIds.push(userId);
         return { networkRequests: [req] };
+      },
+    },
+
+    /** "연결해줄 수 있나요?" — 요청자 → 공통 연결(via) → 대상. via 가 전달하기 전까지 대상은 모른다 */
+    intros: {
+      create(fromId: ID, viaId: ID, toId: ID, note?: string): Patch {
+        const r = db().relationships;
+        const isF = (a: ID, b: ID) => r.friends.some((f) => pairKey(f.a, f.b) === pairKey(a, b));
+        if (!isF(fromId, viaId) || !isF(viaId, toId)) throw new Error(t('공통 연결을 통해서만 부탁할 수 있어요.'));
+        if (isF(fromId, toId)) throw new Error(t('이미 연결된 사람이에요.'));
+        if (note && containsContact(note)) throw new Error(t('연락처(전화번호·이메일·메신저 ID)는 적을 수 없어요. 연결되면 대화에서 주고받아요.'));
+        if (db().introRequests.some((x) => x.fromId === fromId && x.toId === toId && (x.status === 'pending' || x.status === 'forwarded'))) throw new Error(t('이미 부탁했어요.'));
+        const it: IntroRequest = { id: uid('ir'), fromId, viaId, toId, note: note?.trim() || undefined, status: 'pending', createdAt: now() };
+        db().introRequests.unshift(it);
+        const from = find(db().users, fromId); const to = find(db().users, toId);
+        const nts = [notify(viaId, { type: 'intro_request', title: `${from.nickname}${t('님이 연결해줄 수 있냐고 물어요')}`, body: `${to.nickname}${t('님과')}${it.note ? ` · "${it.note.slice(0, 50)}"` : ''}`, link: '/people/second?tab=asks' })];
+        // 데모: 자동 수락 친구가 via 면 잠시 후 전달, 대상도 곧 수락
+        if (ctx.demo && AUTO_ACCEPT_FRIEND.has(viaId)) later(4000, () => { if (it.status !== 'pending') return; ctx.push(introForward(it, false)); if (AUTO_ACCEPT_FRIEND.has(toId) || AUTO_REQUEST_RESPONDERS.includes(toId)) later(3500, () => { if (it.status === 'forwarded') ctx.push(introRespond(it, true).patch); }); });
+        return { introRequests: [it], notifications: nts };
+      },
+      forward(introId: ID, viaId: ID, pass = false): Patch {
+        const it = find(db().introRequests, introId);
+        if (it.viaId !== viaId) throw new Error(t('권한이 없어요.'));
+        return introForward(it, pass);
+      },
+      respond(introId: ID, toId: ID, accept: boolean): { roomId?: ID; patch: Patch } {
+        const it = find(db().introRequests, introId);
+        if (it.toId !== toId) throw new Error(t('권한이 없어요.'));
+        return introRespond(it, accept);
       },
     },
 

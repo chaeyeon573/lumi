@@ -20,6 +20,7 @@ export function useSnapshot(): Snapshot {
   const timePolls = useAppStore((s) => s.timePolls);
   const savedSearches = useAppStore((s) => s.savedSearches);
   const networkRequests = useAppStore((s) => s.networkRequests);
-  return useMemo(() => ({ users, schools, organizations, activities, participations, posts, relationships, proposals, chatRooms, notifications, reports, opportunities, opportunityIntents, timePolls, savedSearches, networkRequests }),
-    [users, schools, organizations, activities, participations, posts, relationships, proposals, chatRooms, notifications, reports, opportunities, opportunityIntents, timePolls, savedSearches, networkRequests]);
+  const introRequests = useAppStore((s) => s.introRequests);
+  return useMemo(() => ({ users, schools, organizations, activities, participations, posts, relationships, proposals, chatRooms, notifications, reports, opportunities, opportunityIntents, timePolls, savedSearches, networkRequests, introRequests }),
+    [users, schools, organizations, activities, participations, posts, relationships, proposals, chatRooms, notifications, reports, opportunities, opportunityIntents, timePolls, savedSearches, networkRequests, introRequests]);
 }

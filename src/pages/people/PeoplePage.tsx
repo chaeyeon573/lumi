@@ -27,6 +27,7 @@ import { ProposeSheet } from '@/components/people_ProposeSheet';
 import { ReasonChips, ReasonList } from '@/components/people_ReasonChips';
 import { SchoolBadge } from '@/components/people_SchoolBadge';
 import { PersonRow } from '@/components/cards/PersonRow';
+import { requestsForMe } from '@core/lib/requests';
 
 type Tab = 'recommend' | 'search' | 'connections';
 const TABS: Tab[] = ['recommend', 'search', 'connections'];
@@ -105,9 +106,16 @@ function RecommendDeck({ connect, invite, openPaywall, freeFirst }: { connect: (
   const connected = current ? v.isFriend(current.user.id) : false;
   const requested = current ? !!v.pendingOut(current.user.id) : false;
   const wants = wantsLine(me.wants);
+  const incoming = useMemo(() => requestsForMe(snap, me), [snap, me]);
 
   return (
     <>
+      {incoming.length > 0 && (
+        <button onClick={() => nav('/people/requests')} className="shrink-0 mx-4 mb-2 h-9 pl-3.5 pr-2.5 rounded-full bg-[#BFF4FF] text-primary text-[12px] font-semibold flex items-center gap-1.5 press">
+          <span className="truncate flex-1 text-left">{t('혹시 여기에 해당되나요?')} · {incoming.length}{t('건')}</span>
+          <span className="shrink-0 flex items-center">{t('보기')}<ChevronRight size={13} /></span>
+        </button>
+      )}
       <div className="shrink-0 px-4 pb-2 flex items-center gap-2">
         <button onClick={() => nav('/profile/wants')} className="flex-1 min-w-0 h-8 pl-3 pr-2 rounded-full bg-surface-2 text-[12px] font-semibold text-ink-2 flex items-center gap-1.5 press">
           {hasWants(me.wants)
@@ -207,6 +215,9 @@ function SearchTab({ openPaywall, initial }: { openPaywall: (r: PaywallReason) =
   const [savedMenu, setSavedMenu] = useState<SavedSearch | null>(null);
   const [runningId, setRunningId] = useState<string | null>(null);
   const ctx = localeContext();
+  const openAsks = useAppStore((s) => s.networkRequests).filter((r) => r.authorId === me.id && r.status === 'open').length;
+  const [ask, setAsk] = useState('');
+  const submitAsk = () => { const s = ask.trim(); if (s) nav(`/people/ask?q=${encodeURIComponent(s)}`); };
   const opts = useMemo(() => searchOptions(v.users), [v.users]);
   const presets = useMemo(() => searchPresets(me, lang), [me]);
   const schoolName = (id: string) => schools.find((s) => s.id === id)?.name ?? id;
@@ -238,6 +249,15 @@ function SearchTab({ openPaywall, initial }: { openPaywall: (r: PaywallReason) =
 
   return (
     <div className="flex-1 min-h-0 overflow-y-auto hide-scrollbar pb-28">
+      {/* 사람 찾아보기 — 한 줄로 물어보면 가까운 네트워크에서 먼저 찾고, 건너건너 물어볼 수 있다 */}
+      <div className="px-4 pb-3">
+        <div className="relative">
+          <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[15px]">💬</span>
+          <Input className="pl-10 pr-12 h-12 rounded-full bg-[#F4F9FF] border-[#D2E4FF]" placeholder={t('혹시 찾는 사람이 있나요? 예: 일본 식품 유통 아는 사람')} value={ask} onChange={(e) => setAsk(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter') submitAsk(); }} />
+          <button onClick={submitAsk} aria-label={t('사람 찾아보기')} disabled={!ask.trim()} className="absolute right-1.5 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-primary text-white grid place-items-center press disabled:opacity-35"><ChevronRight size={18} /></button>
+        </div>
+        {openAsks > 0 && <button onClick={() => nav('/people/requests?tab=mine')} className="mt-1.5 ml-3 text-[11px] font-semibold text-primary flex items-center gap-0.5 press">{t('내가 찾는 것')} {openAsks}<ChevronRight size={12} /></button>}
+      </div>
       <div className="px-4">
         <div className="relative">
           <Search size={17} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-3" />

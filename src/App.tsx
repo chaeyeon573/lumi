@@ -27,6 +27,9 @@ import { EditPromptsPage } from '@/pages/profile/EditPromptsPage';
 import { TimetablePage } from '@/pages/timetable/TimetablePage';
 import { PeoplePage } from '@/pages/people/PeoplePage';
 import { PeopleResultsPage } from '@/pages/people/PeopleResultsPage';
+import { AskNetworkPage } from '@/pages/people/AskNetworkPage';
+import { RequestsPage } from '@/pages/people/RequestsPage';
+import { RequestDetailPage } from '@/pages/people/RequestDetailPage';
 import { PlusPage } from '@/pages/plus/PlusPage';
 import { CheckoutPage } from '@/pages/plus/CheckoutPage';
 import { CreateGroupPage } from '@/pages/groups/CreateGroupPage';
@@ -122,6 +125,10 @@ export default function App() {
           <Route path="/profile" element={<ProfilePage />} />
         </Route>
         <Route element={<AppShell withNav={false} />}>
+          {/* 사람 찾아보기 — 가까운 네트워크에서 찾고, 건너건너 물어보기 */}
+          <Route path="/people/ask" element={<AskNetworkPage />} />
+          <Route path="/people/requests" element={<RequestsPage />} />
+          <Route path="/people/requests/:id" element={<RequestDetailPage />} />
           <Route path="/plus" element={<PlusPage />} />
           <Route path="/plus/checkout" element={<CheckoutPage />} />
           <Route path="/groups/new" element={<CreateGroupPage />} />

@@ -1,5 +1,5 @@
 import type {
-  Activity, ActivityProposal, ChatRoom, Notification, Organization, Participation, Post, Relationships, School, User, Visibility, ProfileField, Opportunity, OpportunityIntentRecord, TimePoll, Course, SavedSearch, NetworkRequest } from '@core/types';
+  Activity, ActivityProposal, ChatRoom, Notification, Organization, Participation, Post, Relationships, School, User, Visibility, ProfileField, Opportunity, OpportunityIntentRecord, TimePoll, Course, SavedSearch, NetworkRequest, IntroRequest } from '@core/types';
 import { addDaysISO, isoHoursAgo, isoMinutesAgo, todayISO } from '@core/lib/format';
 import { photo } from '@core/lib/assets';
 
@@ -880,3 +880,19 @@ export const networkRequests: NetworkRequest[] = [
   { id: 'nr_yerin_ny', authorId: 'u_a_ny_fin', text: '뉴욕에서 대학원 준비 중인 연세 후배. 추천서·에세이 이야기 편하게 해드릴게요', city: '뉴욕', field: '금융', interests: ['finance', 'study'], reach: 3, status: 'open', dismissedIds: [], responses: [], referrals: [], createdAt: isoHoursAgo(50), expiresAt: addDaysISO(10) },
 ];
 
+/** v2.2 방문 예정 · 저장 목록 · 연결 부탁 (Who's around · Saved lists · 2촌) */
+const wk = (d: number) => addDaysISO(d);
+const TRIPS: Record<string, User['trips']> = {
+  u_a_ny_fin: [{ id: 'tr1', city: '서울', from: wk(1), to: wk(6) }],
+  u_a_tokyo_pm: [{ id: 'tr2', city: '서울', from: wk(8), to: wk(11) }],
+  u_b_kaist1: [{ id: 'tr3', city: '서울', from: wk(0), to: wk(3) }],
+  u_me: [{ id: 'tr4', city: '부산', from: wk(9), to: wk(11) }],
+};
+users.forEach((u) => { if (TRIPS[u.id]) u.trips = TRIPS[u.id]; });
+const me0 = users.find((u) => u.id === DEMO_USER_ID)!;
+me0.savedPeople = ['u_a_seoul_ai', 'u_b_korea1'];
+me0.savedLists = [{ id: 'sl_startup', name: '창업 이야기 나눌 사람', memberIds: ['u_b_korea1'], notify: true }];
+me0.privacy = { scope: 'school_2nd', showCompany: true, showCity: true, showGradYear: true, showGroups: true, showInPaths: true, showTrips: true };
+export const introRequests: IntroRequest[] = [
+  { id: 'ir_seed1', fromId: 'u_hana', viaId: DEMO_USER_ID, toId: 'u_junho', note: '밴드 공연 포스터 디자인 도와드리고 싶어요', status: 'pending', createdAt: isoHoursAgo(6) },
+];
