@@ -97,10 +97,10 @@ export function RequestPreviewCard({ author, text, context, degreeText, classNam
           <SchoolBadge user={author} size="sm" className="min-w-0 ml-1 text-ink-3 font-medium" />
         </div>
       </div>
-      <div className="px-3 pb-3 flex gap-1.5 opacity-80">
-        <span className="flex-1 h-9 rounded-full bg-primary text-white text-[13px] font-semibold inline-flex items-center justify-center gap-1.5"><Hand size={14} />{t('저요')}</span>
-        <span className="flex-1 h-9 rounded-full bg-accent text-primary text-[13px] font-semibold inline-flex items-center justify-center gap-1.5"><Users size={14} />{t('아는 사람 있어요')}</span>
-        <span className="h-9 px-3 rounded-full text-ink-2 text-[13px] font-semibold inline-flex items-center">{t('넘기기')}</span>
+      <div className="px-3 pb-3 flex gap-1.5 opacity-80 text-[12px] font-semibold whitespace-nowrap">
+        <span className="flex-1 h-9 px-2 rounded-full bg-primary text-white inline-flex items-center justify-center gap-1"><Hand size={13} />{t('저요')}</span>
+        <span className="flex-[1.4] h-9 px-2 rounded-full bg-accent text-primary inline-flex items-center justify-center gap-1"><Users size={13} />{t('아는 사람 있어요')}</span>
+        <span className="h-9 px-2 rounded-full text-ink-2 inline-flex items-center">{t('넘기기')}</span>
       </div>
     </div>
   );
@@ -186,9 +186,9 @@ export function IncomingRequestCard({ item, highlightReferral, compact, onOpen, 
       ) : expired ? null : (
         <div className="px-3 pb-3">
           <div className="flex gap-1.5">
-            <Button size="sm" full icon={<Hand size={14} />} onClick={() => nav(`/people/requests/${req.id}/respond`)}>{t('저요')}</Button>
-            <Button size="sm" full variant="secondary" icon={<Users size={14} />} loading={busy?.startsWith('refer') ?? false} onClick={() => setSheet('refer')}>{t('아는 사람 있어요')}</Button>
-            <Button size="sm" variant="ghost" loading={busy === 'dismiss'} onClick={dismiss}>{t('넘기기')}</Button>
+            <Button size="sm" full className="min-w-0 !px-3 whitespace-nowrap" icon={<Hand size={14} />} onClick={() => nav(`/people/requests/${req.id}/respond`)}>{t('저요')}</Button>
+            <Button size="sm" full variant="secondary" className="min-w-0 !px-3 whitespace-nowrap" icon={<Users size={14} />} loading={busy?.startsWith('refer') ?? false} onClick={() => setSheet('refer')}>{t('아는 사람 있어요')}</Button>
+            <Button size="sm" variant="ghost" className="shrink-0 !px-2.5" loading={busy === 'dismiss'} onClick={dismiss}>{t('넘기기')}</Button>
           </div>
           <p className="mt-2 px-1 text-[11px] text-ink-3 flex items-center gap-1"><Lock size={10} className="shrink-0" />{t('저요를 누르면 고른 정보만 보여요 · 연락처는 공개되지 않아요')}</p>
         </div>

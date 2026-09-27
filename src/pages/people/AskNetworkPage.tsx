@@ -157,7 +157,7 @@ export function AskNetworkPage() {
         {hasContact && <p className="mt-1.5 ml-3 text-[12px] text-danger" role="alert">{t('연락처(전화번호·이메일·메신저 ID)는 적을 수 없어요. 연결되면 대화에서 주고받아요.')}</p>}
 
         {/* 읽어낸 조건 — ✕ 로 빼기 */}
-        {(chips.length > 0 || removed.length > 0) && (
+        {!hasContact && (chips.length > 0 || removed.length > 0) && (
           <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
             <span className="text-[11px] font-bold text-ink-3 mr-0.5">{t('읽어낸 조건')}</span>
             {chips.map((c) => (

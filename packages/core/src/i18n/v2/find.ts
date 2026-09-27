@@ -66,7 +66,6 @@ export const en_find: Record<string, string> = {
   '보내지 못했어요. 연결을 확인하고 다시 보내주세요.': "Couldn't send. Check your connection and try again.",
   '비공개 연결': 'Private connection',
   '손을 들었어요': 'You raised your hand',
-  '손을 들었어요. 상대가 대화를 시작하면 알려드려요': "You raised your hand. We'll let you know if they start a conversation",
   '요청자에게 이렇게 보여요': "Here's what the requester sees",
   '답하지 않아도 괜찮아요 — 상대가 대화를 시작하지 않으면 아무 일도 없어요.': "No pressure — if they don't start a conversation, nothing happens.",
   '기간이 지났거나 요청자가 그만 찾기로 했어요.': 'It expired, or the requester stopped looking.',

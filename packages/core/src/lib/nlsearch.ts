@@ -9,7 +9,7 @@ import { LOCALE_CONTEXT } from './locale-context';
 import { emptySearch } from './people';
 import { shortSchool } from './network';
 
-export type ChipKind = 'school' | 'city' | 'industry' | 'role' | 'interest' | 'stage' | 'gradYear' | 'keyword';
+export type ChipKind = 'major' | 'school' | 'city' | 'industry' | 'role' | 'interest' | 'stage' | 'gradYear' | 'keyword';
 export interface QueryChip { kind: ChipKind; label: string; value: string }
 export interface ParsedQuery { criteria: PeopleSearch; chips: QueryChip[]; dropped: string[] }
 
@@ -26,9 +26,11 @@ const CITY_ALIAS: Record<string, string> = { NYC: 'New York', SF: 'San Francisco
 const INDUSTRY_ALIAS: Record<string, string> = { 금융권: '금융', 핀테크: '금융', fintech: 'Finance', 투자: '금융', vc: 'Finance', 유통: '유통', 식품: '유통', 테크: 'IT', 개발: 'IT', 스타트업: '스타트업' };
 const ROLE_ALIAS: Record<string, string> = { pm: 'Product', 기획: 'Product', 프로덕트: 'Product', 창업자: '창업자', 파운더: '창업자', founder: 'Founder', founders: 'Founder', 개발자: '개발', engineer: 'Engineer', engineers: 'Engineer', 디자이너: '디자인', designer: 'Designer', 연구원: '연구원', researcher: 'Researcher', 마케터: '마케팅' };
 
+const INTEREST_ALIAS: Record<string, Interest> = { runners: 'running', runner: 'running', run: 'running', 달리기: 'running', founders: 'startup', startups: 'startup', photographers: 'photo', designers: 'design', readers: 'reading', gamers: 'game', investors: 'invest', investing: 'invest', 스타트업: 'startup' };
+
 const norm = (s: string) => s.toLowerCase().replace(/\s+/g, ' ').trim();
 
-export function parseQuery(text: string, schools: School[], lang: 'ko' | 'en'): ParsedQuery {
+export function parseQuery(text: string, schools: School[], lang: 'ko' | 'en', opts: { myMajor?: string } = {}): ParsedQuery {
   const ctx = LOCALE_CONTEXT[lang];
   const c = emptySearch();
   const chips: QueryChip[] = [];
@@ -40,9 +42,15 @@ export function parseQuery(text: string, schools: School[], lang: 'ko' | 'en'): 
   let m: RegExpMatchArray | null;
   while ((m = rest.match(SENSITIVE))) { dropped.push(m[0].trim()); rest = rest.replace(m[0], ' '); }
 
+  // 같은 전공 ("러닝 좋아하는 같은 전공", "Runners in my major") — 내 전공을 알 때만
+  const mj = take(/(^|\s)(같은\s?전공|내\s?전공|(in\s)?(my|same)\s(major|department))(의|인)?(?=\s|$)/i);
+  if (mj && opts.myMajor) { c.majors.push(opts.myMajor); chips.push({ kind: 'major', label: opts.myMajor, value: opts.myMajor }); }
   // 학교 (정식명 · 짧은 이름 · 이메일 도메인 앞부분)
   for (const s of schools) {
-    const names = [s.name, shortSchool(s.name), shortSchool(s.name) + '대', s.emailDomain.split('.')[0]].filter((x) => x && x.length >= 2);
+    // 짧은 이름이 도시 이름과 같으면("서울" → 서울대) 도시로 읽히게 짧은 이름 단독은 쓰지 않는다
+    const short = shortSchool(s.name);
+    const cityLike = [...ctx.cities, ...EXTRA_CITIES].some((c) => c.toLowerCase() === short.toLowerCase());
+    const names = [s.name, short + '대', cityLike ? '' : short, s.emailDomain.split('.')[0].length >= 3 ? s.emailDomain.split('.')[0] : ''].filter((x) => x && x.length >= 2);
     for (const n of names) {
       const re = new RegExp(`(^|[\\s,+/])${n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(대학교|대|\\b)?`, 'i');
       if (re.test(rest)) { take(re); if (!c.schools.includes(s.id)) { c.schools.push(s.id); chips.push({ kind: 'school', label: shortSchool(s.name), value: s.id }); } break; }
@@ -55,12 +63,12 @@ export function parseQuery(text: string, schools: School[], lang: 'ko' | 'en'): 
   if (y) { const raw = y[0].match(/\d{2,4}/)![0]; const yr = raw.length === 2 ? 2000 + Number(raw) : Number(raw); if (yr > 1980 && yr < 2040) { c.gradYearFrom = yr; c.gradYearTo = yr; chips.push({ kind: 'gradYear', label: String(yr), value: String(yr) }); } }
   // 도시
   for (const city of [...new Set([...ctx.cities, ...EXTRA_CITIES])]) {
-    const re = new RegExp(`(^|[\\s,+/])${city.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(에|에서|의|\\b)`, 'i');
+    const re = new RegExp(`(^|[\\s,+/])${city.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(에서|에|의)?(?=[\\s,+/]|$)`, 'i');
     if (re.test(rest)) { take(re); const v = CITY_ALIAS[city] ?? city; if (!c.homeCities.includes(v)) { c.homeCities.push(v); chips.push({ kind: 'city', label: v, value: v }); } }
   }
   // 업종
   for (const ind of [...ctx.industries, ...Object.keys(INDUSTRY_ALIAS)]) {
-    const re = new RegExp(`(^|[\\s,+/])${ind.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(권|업계|쪽|\\b)?`, 'i');
+    const re = new RegExp(`(^|[\\s,+/])${ind.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(권|업계|쪽|s\\b|\\b)?`, 'i');
     if (re.test(rest) && ind.length >= 2) { take(re); const v = INDUSTRY_ALIAS[ind] ?? INDUSTRY_ALIAS[ind.toLowerCase()] ?? ind; if (!c.industries.includes(v)) { c.industries.push(v); chips.push({ kind: 'industry', label: v, value: v }); } }
   }
   // 직무
@@ -74,15 +82,21 @@ export function parseQuery(text: string, schools: School[], lang: 'ko' | 'en'): 
     const re = new RegExp(`(^|[\\s,+/])(${label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}|${i})(\\b|에|을|를)?`, 'i');
     if (label.length >= 2 && re.test(rest)) { take(re); if (!c.interests.includes(i)) { c.interests.push(i); chips.push({ kind: 'interest', label, value: i }); } }
   });
+  // 관심사 별칭 (runners → 러닝, hikers …)
+  for (const [w, i] of Object.entries(INTEREST_ALIAS)) {
+    const re = new RegExp(`(^|[\\s,+/])${w}(?=[\\s,+/]|$)`, 'i');
+    if (re.test(rest)) { take(re); if (!c.interests.includes(i)) { c.interests.push(i); chips.push({ kind: 'interest', label: INTEREST_LABELS[i], value: i }); } }
+  }
   // 남은 의미 있는 단어는 키워드로
-  const leftover = norm(rest).replace(/(관심\s?있는|하는|있는|사람|분|찾아요|찾고|싶어요|who|people|someone|looking for|in|at|the|and|with|of|a|이|가|을|를|은|는|에서|에)(?=\s|$)/gi, ' ').replace(/\s+/g, ' ').trim();
+  const leftover = norm(rest).replace(/(?<=^|\s)(관심\s?있는|좋아하는|하는|있는|사람|분|찾아요|찾고|싶어요|who|people|someone|looking for|into|interested|working|work|near|like|love|from|for|are|is|in|at|the|and|with|of|my|a|[a-z]|이|가|을|를|은|는|에서|에)(?=\s|$)/gi, ' ').replace(/\s+/g, ' ').trim();
   if (leftover.length >= 2) { c.q = leftover; chips.push({ kind: 'keyword', label: leftover, value: leftover }); }
   return { criteria: c, chips, dropped };
 }
 
 /** 칩 하나 제거 → 조건 갱신 */
 export function removeChip(criteria: PeopleSearch, chip: QueryChip): PeopleSearch {
-  const c: PeopleSearch = { ...criteria, schools: [...criteria.schools], homeCities: [...criteria.homeCities], industries: [...criteria.industries], roles: [...criteria.roles], interests: [...criteria.interests], stages: [...criteria.stages] };
+  const c: PeopleSearch = { ...criteria, schools: [...criteria.schools], majors: [...criteria.majors], homeCities: [...criteria.homeCities], industries: [...criteria.industries], roles: [...criteria.roles], interests: [...criteria.interests], stages: [...criteria.stages] };
+  if (chip.kind === 'major') c.majors = c.majors.filter((x) => x !== chip.value);
   if (chip.kind === 'school') c.schools = c.schools.filter((x) => x !== chip.value);
   if (chip.kind === 'city') c.homeCities = c.homeCities.filter((x) => x !== chip.value);
   if (chip.kind === 'industry') c.industries = c.industries.filter((x) => x !== chip.value);
@@ -96,7 +110,7 @@ export function removeChip(criteria: PeopleSearch, chip: QueryChip): PeopleSearc
 
 /** 결과가 없을 때 조건 완화 제안 — 가장 좁은 조건부터 하나씩 뺀 버전 */
 export function relaxations(chips: QueryChip[]): QueryChip[] {
-  const order: ChipKind[] = ['keyword', 'gradYear', 'role', 'school', 'industry', 'interest', 'stage', 'city'];
+  const order: ChipKind[] = ['keyword', 'major', 'gradYear', 'role', 'school', 'industry', 'interest', 'stage', 'city'];
   return [...chips].sort((a, b) => order.indexOf(a.kind) - order.indexOf(b.kind)).slice(0, 3);
 }
 

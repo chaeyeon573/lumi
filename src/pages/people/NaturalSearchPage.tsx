@@ -14,6 +14,7 @@ import { searchPeople, isAdvancedSearch } from '@core/lib/people';
 import { matchScore, shareableReasons, type Reason } from '@core/lib/recommend';
 import { profileView, canShowInPath, type ProfileView } from '@core/lib/privacy';
 import { degreeOf, pathBetween } from '@core/lib/graph';
+import { majorOf } from '@core/lib/network';
 import { mutualFriends } from '@core/lib/relations';
 import { degreeLabel } from '@core/lib/requests';
 import { isPlus, swipesLeft } from '@core/lib/monetization';
@@ -73,6 +74,8 @@ function bumpToday() {
 /** 같은 문장은 한 번만 센다 (뒤로 가기·재방문) */
 const counted = new Set<string>();
 const chipKey = (c: QueryChip) => `${c.kind}:${c.value}`;
+/** 의미 있는 조건인가 — "??" 같은 기호뿐인 키워드는 조건으로 치지 않는다 */
+const meaningful = (c: QueryChip) => c.kind !== 'keyword' || /[\p{L}\p{N}]{2,}/u.test(c.label);
 
 /**
  * /people/find?q= — 자연어 사람 찾기. "혹시 찾는 사람이 있나요?" 한 줄 → 조건 칩 → 가까운 네트워크 결과.
@@ -101,6 +104,7 @@ export function NaturalSearchPage() {
     setDraft(q); setRemoved([]);
     if (!q) { setLimited(false); return; }
     if (counted.has(q)) { setLimited(false); return; }
+    if (!parseQuery(q, schools, lang, { myMajor: majorOf(me) }).chips.some(meaningful)) { setLimited(false); return; } // 읽지 못한 문장은 세지 않는다
     if (!plus && usedToday() >= FREE_NL_SEARCHES_PER_DAY) { setLimited(true); return; }
     counted.add(q); setLimited(false);
     if (!plus) { bumpToday(); setUsed(usedToday()); }
@@ -108,7 +112,7 @@ export function NaturalSearchPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [q]);
 
-  const parsed = useMemo(() => (q ? parseQuery(q, schools, lang) : null), [q, schools]);
+  const parsed = useMemo(() => (q ? parseQuery(q, schools, lang, { myMajor: majorOf(me) }) : null), [q, schools, me]);
   const chips = useMemo(() => (parsed ? parsed.chips.filter((c) => !removed.includes(chipKey(c))) : []), [parsed, removed]);
   const criteria = useMemo(() => {
     if (!parsed) return null;
@@ -128,7 +132,7 @@ export function NaturalSearchPage() {
     .sort((a, b) => b.score - a.score) : []), [v, me, criteria, chips.length, snap]);
   const advancedLocked = !!criteria && isAdvancedSearch(criteria) && !plus;
   const shown = advancedLocked ? results.slice(0, 3) : results;
-  const parseFailed = !!parsed && parsed.chips.length === 0;
+  const parseFailed = !!parsed && !parsed.chips.some(meaningful);
   const allRemoved = !!parsed && !parseFailed && chips.length === 0;
   const examples = EXAMPLE_QUERIES[lang === 'en' ? 'en' : 'ko'];
   const recent = me.recentSearches ?? [];

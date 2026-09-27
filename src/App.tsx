@@ -28,6 +28,8 @@ import { TimetablePage } from '@/pages/timetable/TimetablePage';
 import { PeoplePage } from '@/pages/people/PeoplePage';
 import { PeopleResultsPage } from '@/pages/people/PeopleResultsPage';
 import { AroundPage } from '@/pages/people/AroundPage';
+import { NaturalSearchPage } from '@/pages/people/NaturalSearchPage';
+import { RespondPage } from '@/pages/people/RespondPage';
 import { AdvancedExplorePage } from '@/pages/people/AdvancedExplorePage';
 import { SmallTablesPage } from '@/pages/meet/SmallTablesPage';
 import { AskNetworkPage } from '@/pages/people/AskNetworkPage';
@@ -134,6 +136,8 @@ export default function App() {
           <Route path="/people/requests/:id" element={<RequestDetailPage />} />
           <Route path="/plus" element={<PlusPage />} />
           <Route path="/people/around" element={<AroundPage />} />
+          <Route path="/people/find" element={<NaturalSearchPage />} />
+          <Route path="/people/requests/:id/respond" element={<RespondPage />} />
           <Route path="/people/advanced" element={<AdvancedExplorePage />} />
           <Route path="/meet/tables" element={<SmallTablesPage />} />
           <Route path="/plus/checkout" element={<CheckoutPage />} />

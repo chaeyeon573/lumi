@@ -353,7 +353,7 @@ export function createEngine(ctx: EngineContext) {
         // 데모: 관련 있는 사람 1~2명이 잠시 후 손 들고, 1명은 지인을 추천한다
         if (ctx.demo) {
           const responders = audience.filter((a) => AUTO_REQUEST_RESPONDERS.includes(a.userId)).slice(0, 2);
-          responders.forEach((a, i) => later(4000 + i * 2500, () => { if (req.status !== 'open' || req.responses.some((r) => r.userId === a.userId)) return; const { reasons } = relevanceToRequest(req, find(db().users, a.userId)); ctx.push(engineRespond(req, a.userId, reasons[0] ? `${reasons[0]} — ${t('이야기 나눠요!')}` : t('제가 도움이 될 것 같아요.'))); }));
+          responders.forEach((a, i) => later(4000 + i * 2500, () => { if (req.status !== 'open' || req.responses.some((r) => r.userId === a.userId)) return; const who = find(db().users, a.userId); const line = [who.career?.role, who.career?.industry, who.career?.company].filter(Boolean).join(' · '); ctx.push(engineRespond(req, a.userId, line ? `${line} — ${t('이야기 나눠요!')}` : t('제가 도움이 될 것 같아요.'))); }));
           const referrer = audience.find((a) => AUTO_REQUEST_REFERRERS.includes(a.userId) && !responders.some((r) => r.userId === a.userId));
           if (referrer) later(9000, () => { if (req.status !== 'open') return; const cand = referralCandidates(db(), find(db().users, referrer.userId), req).find((c) => c.user.id !== authorId && c.score > 0); if (cand) ctx.push(engineRefer(req, referrer.userId, cand.user.id)); });
         }

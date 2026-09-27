@@ -128,7 +128,7 @@ function RespondForm({ req, author }: { req: NetworkRequest; author: User }) {
         <div className="px-4 pt-6 text-center">
           <div className="mx-auto h-16 w-16 rounded-full bg-[#BFF4FF] grid place-items-center text-primary"><CheckCircle2 size={30} /></div>
           <h1 className="mt-4 font-display text-[20px] font-bold text-primary">{t('손을 들었어요')}</h1>
-          <p className="mt-1 text-[13px] text-ink-2 leading-relaxed">{t('손을 들었어요. 상대가 대화를 시작하면 알려드려요')}</p>
+          <p className="mt-1 text-[13px] text-ink-2 leading-relaxed">{t('상대가 대화를 시작하면 알려드려요.')}</p>
         </div>
         <div className="px-4 mt-5">
           <div className="text-[11px] font-bold text-ink-3 mb-1.5">{t('요청자에게 이렇게 보여요')}</div>
