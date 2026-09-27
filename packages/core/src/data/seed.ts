@@ -1,5 +1,5 @@
 import type {
-  Activity, ActivityProposal, ChatRoom, Notification, Organization, Participation, Post, Relationships, School, User, Visibility, ProfileField, Opportunity, OpportunityIntentRecord, TimePoll, Course } from '@core/types';
+  Activity, ActivityProposal, ChatRoom, Notification, Organization, Participation, Post, Relationships, School, User, Visibility, ProfileField, Opportunity, OpportunityIntentRecord, TimePoll, Course, SavedSearch } from '@core/types';
 import { addDaysISO, isoHoursAgo, isoMinutesAgo, todayISO } from '@core/lib/format';
 import { photo } from '@core/lib/assets';
 
@@ -378,7 +378,7 @@ export const activities: Activity[] = [
     capacity: 2, visibility: 'department', visibilityTargets: ['컴퓨터과학과'], joinPolicy: 'open', fee: 0, comments: [], createdAt: isoMinutesAgo(25),
   },
   {
-    id: 'a_deal', kind: 'org_event', category: 'store_deal', title: '학생증 제시 시 아메리카노 1+1',
+    id: 'a_deal_americano', kind: 'org_event', category: 'store_deal', title: '학생증 제시 시 아메리카노 1+1',
     description: '정문 앞 카페 오늘 하루 한정 혜택. AroundU 화면 제시.',
     cover: { emoji: '🏷️', hue: 50 , url: photo('c_mug') }, hostId: 'u_taeho', hostType: 'user', date: T, startTime: '10:00', endTime: '21:00',
     place: { name: '카페 온도 (연세로)', lat: 37.5580, lng: 126.9360 },
@@ -783,3 +783,78 @@ export const timePolls: TimePoll[] = [
     status: 'open', closesAt: new Date(Date.now() + 36 * 3600000).toISOString(), createdAt: isoHoursAgo(2),
   },
 ];
+
+// ─── v2 (2026-09 UX 재설계): 거주·활동 도시 · 졸업연도 · 인증 방법 · 찾는 것 · 직업 ────────────────
+// 모든 사용자는 학교 인증 하나 이상. 지역은 도시 단위, 거주지와 활동 지역이 다를 수 있다.
+const Y = new Date().getFullYear();
+const V2: Record<string, Partial<User>> = {
+  u_me: { homeCity: '서울', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 30) }, wants: { people: ['same_interest', 'other_school', 'senior_mentor'], activities: ['coffee', 'project', 'study'] } },
+  u_jimin: { homeCity: '서울', gradYear: Y + 1, verification: { method: 'sso', at: isoHoursAgo(24 * 40) }, interests: ['coffee', 'exhibition', 'running', 'startup', 'networking'], wants: { people: ['same_interest', 'new_people'], activities: ['coffee', 'exercise', 'networking'] } },
+  u_dohyun: { homeCity: '서울', gradYear: Y + 2, verification: { method: 'school_email', at: isoHoursAgo(24 * 100) }, interests: ['research', 'ai', 'exercise', 'coffee'], wants: { people: ['same_major', 'same_interest'], activities: ['study', 'research', 'exercise'] } },
+  u_seoyeon: { homeCity: '서울', gradYear: Y + 2, verification: { method: 'student_id', at: isoHoursAgo(24 * 12) }, interests: ['club', 'music', 'meal', 'walk'], wants: { people: ['same_interest', 'new_people'], activities: ['hobby', 'meal'] } },
+  u_minjun: { homeCity: '서울', activityCity: '서울', gradYear: Y, verification: { method: 'school_email', at: isoHoursAgo(24 * 60) }, interests: ['running', 'exercise', 'cycling', 'meal'], wants: { people: ['same_city', 'same_interest'], activities: ['exercise', 'meal'] } },
+  u_yuna: { homeCity: '인천', activityCity: '서울', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 50) }, interests: ['study', 'coffee', 'reading', 'research'], wants: { people: ['same_major', 'senior_mentor'], activities: ['study', 'coffee'] } },
+  u_taeho: { homeCity: '서울', gradYear: 2023, verification: { method: 'alumni_email', at: isoHoursAgo(24 * 200) }, career: { city: '서울', company: '스타트업 (창업)', industry: '스타트업', role: '창업자' }, interests: ['startup', 'networking', 'coffee', 'ai'], wants: { people: ['alumni', 'same_field', 'same_city'], activities: ['coffee', 'networking', 'project'] } },
+  u_hana: { homeCity: '서울', gradYear: Y + 2, verification: { method: 'student_id', at: isoHoursAgo(24 * 20) }, interests: ['exhibition', 'design', 'photo', 'coffee'], wants: { people: ['other_school', 'same_interest'], activities: ['hobby', 'coffee'] } },
+  u_junho: { homeCity: '서울', gradYear: Y, verification: { method: 'sso', at: isoHoursAgo(24 * 90) }, interests: ['club', 'music', 'film', 'coffee'], wants: { people: ['same_interest'], activities: ['hobby', 'meal'] } },
+  u_sua: { homeCity: '서울', gradYear: Y + 3, verification: { method: 'school_email', at: isoHoursAgo(24 * 10) }, interests: ['study', 'walk', 'coffee', 'startup'], wants: { people: ['same_major', 'senior_mentor'], activities: ['study', 'coffee'] } },
+  u_woojin: { homeCity: '성남', activityCity: '서울', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 70) }, interests: ['study', 'exercise', 'research', 'finance'], wants: { people: ['same_major', 'same_field'], activities: ['study', 'exercise'] } },
+  u_b_snu1: { homeCity: '서울', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 30) }, interests: ['research', 'ai', 'startup', 'coffee'], wants: { people: ['other_school', 'same_interest'], activities: ['coffee', 'project', 'research'] } },
+  u_b_kaist1: { homeCity: '대전', activityCity: '서울', gradYear: Y + 2, verification: { method: 'sso', at: isoHoursAgo(24 * 30) }, interests: ['research', 'ai', 'exercise', 'exhibition'], wants: { people: ['same_field', 'other_school'], activities: ['research', 'networking'] } },
+  u_b_korea1: { homeCity: '서울', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 30) }, interests: ['startup', 'networking', 'coffee', 'design'], wants: { people: ['other_school', 'same_interest'], activities: ['coffee', 'project'] } },
+  u_b_snu2: { homeCity: '서울', gradYear: 2021, verification: { method: 'diploma', at: isoHoursAgo(24 * 30) }, career: { city: '서울', company: '토스', industry: '금융', role: 'Product' }, interests: ['startup', 'networking', 'exercise', 'finance'], wants: { people: ['same_field', 'same_city', 'alumni'], activities: ['coffee', 'networking'] } },
+  u_b_kaist2: { homeCity: '대전', gradYear: Y + 2, verification: { method: 'student_id', at: isoHoursAgo(24 * 30) }, interests: ['startup', 'club', 'coffee', 'game'], wants: { people: ['other_school', 'new_people'], activities: ['project', 'hobby'] } },
+};
+users.forEach((u) => Object.assign(u, V2[u.id]));
+
+/** v2 추가 사용자 — 다른 학교·다른 도시 졸업생 (뉴욕+금융 · Product+도쿄 · 서울+AI 검색 예시가 걸리도록). 타학교·동문 보기는 무료 */
+users.push(
+  mk({ id: 'u_a_ny_fin', nickname: '예린', birthYear: 1995, gender: 'female', avatar: { emoji: '🗽', hue: 205, photoType: 'face', url: photo('p_x1') }, photos: [photo('p_x1'), photo('c_city')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_yonsei', schoolName: '연세대학교', role: 'alumni', department: '경영학과', year: 2017, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'alumni',
+    homeCity: '뉴욕', gradYear: 2017, verification: { method: 'alumni_association', at: isoHoursAgo(24 * 15) }, career: { city: '뉴욕', company: '골드만삭스', industry: '금융', role: 'IB Associate' }, region: '뉴욕',
+    bio: '뉴욕 IB 5년차. 미국 금융권 준비하는 후배들 커피챗 환영.', interests: ['finance', 'invest', 'running', 'travel'], purposes: ['networking'], goals: [], lookingFor: [], canOffer: ['mentor'], openTo: ['mentoring', 'coffee', 'networking'], fieldVisibility: defaultVisibility('public'), availability: 'weekend',
+    wants: { people: ['alumni', 'same_city', 'same_field'], activities: ['coffee', 'networking'] }, createdAt: isoHoursAgo(24 * 3) }),
+  mk({ id: 'u_a_tokyo_pm', nickname: '현우', birthYear: 1994, gender: 'male', avatar: { emoji: '🗼', hue: 350, photoType: 'face', url: photo('p_x5') }, photos: [photo('p_x5'), photo('c_desktop')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_korea', schoolName: '고려대학교', role: 'alumni', department: '산업공학과', year: 2016, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'alumni',
+    homeCity: '도쿄', gradYear: 2016, verification: { method: 'alumni_email', at: isoHoursAgo(24 * 25) }, career: { city: '도쿄', company: '메루카리', industry: 'IT', role: 'Product' }, region: '도쿄',
+    bio: '도쿄에서 프로덕트 매니저. 일본 취업·이직 이야기 나눠요.', interests: ['design', 'travel', 'coffee', 'startup'], purposes: ['networking'], goals: [], lookingFor: [], canOffer: ['mentor', 'planning'], openTo: ['mentoring', 'coffee'], fieldVisibility: defaultVisibility('public'), availability: 'after18',
+    wants: { people: ['same_field', 'same_city', 'new_people'], activities: ['coffee', 'networking'] }, createdAt: isoHoursAgo(24 * 5) }),
+  mk({ id: 'u_a_seoul_ai', nickname: '소영', birthYear: 1997, gender: 'female', avatar: { emoji: '🤖', hue: 160, photoType: 'face', url: photo('p_x3') }, photos: [photo('p_x3'), photo('c_road_sunset')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_kaist', schoolName: 'KAIST', role: 'alumni', department: '전산학부', year: 2019, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'alumni',
+    homeCity: '서울', gradYear: 2019, verification: { method: 'diploma', at: isoHoursAgo(24 * 8) }, career: { city: '서울', company: '네이버', industry: 'AI', role: 'ML Engineer' }, region: '서울',
+    bio: 'ML 엔지니어. 주말엔 한강 러닝. 서울 AI 러닝 크루 운영해요.', interests: ['ai', 'running', 'research', 'coffee'], purposes: ['networking', 'hobby'], goals: [], lookingFor: [], canOffer: ['mentor', 'developer'], openTo: ['activities', 'networking', 'mentoring'], fieldVisibility: defaultVisibility('public'), availability: 'weekend',
+    wants: { people: ['same_field', 'same_city', 'same_interest'], activities: ['exercise', 'networking', 'research'] }, createdAt: isoHoursAgo(24 * 2) }),
+  mk({ id: 'u_a_yonsei_seoul', nickname: '재민', birthYear: 1996, gender: 'male', avatar: { emoji: '💼', hue: 30, photoType: 'face', url: photo('p_x6') }, photos: [photo('p_x6'), photo('c_lounge')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_yonsei', schoolName: '연세대학교', role: 'alumni', department: '컴퓨터과학과', year: 2018, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'alumni',
+    homeCity: '성남', activityCity: '서울', gradYear: 2018, verification: { method: 'prior_student', at: isoHoursAgo(24 * 400) }, career: { city: '서울', company: '스타트업 (창업)', industry: '스타트업', role: '창업자' }, region: '성남',
+    bio: '판교 거주, 서울에서 주로 활동. B2B SaaS 창업 2년차. 같은 과 후배 환영.', interests: ['startup', 'ai', 'coffee', 'invest'], purposes: ['networking'], goals: [], lookingFor: [], canOffer: ['mentor', 'planning'], openTo: ['coffee', 'cofounding', 'mentoring'], fieldVisibility: defaultVisibility('public'), availability: 'after18',
+    wants: { people: ['alumni', 'same_major', 'same_field'], activities: ['coffee', 'project', 'networking'] }, createdAt: isoHoursAgo(24 * 6) }),
+);
+
+/** v2 자유 그룹 — 학교·지역·관심사·직업 어느 기반이든 사용자가 만든다. 생성·가입 무료 */
+organizations.push(
+  { id: 'o_seoul_ai_run', name: '서울 AI 러닝 크루', logo: { emoji: '🏃', hue: 160, url: photo('c_road_sunset') }, type: 'community', scope: 'city', city: '서울', joinPolicy: 'open', interests: ['ai', 'running'], verified: false,
+    description: 'AI 일 하면서 뛰는 사람들. 학교 상관없이 서울이면 누구나. 매주 토요일 한강.', gallery: [{ emoji: '🌅', hue: 160, caption: '토요일 한강', url: photo('c_road_sunset') }], regularActivities: ['매주 토 08:00 뚝섬'], notices: [],
+    followerIds: ['u_jimin', 'u_dohyun'], memberIds: ['u_a_seoul_ai', 'u_minjun', 'u_taeho', 'u_b_kaist1'], adminIds: ['u_a_seoul_ai'], applicantIds: [] },
+  { id: 'o_product_study', name: '프로덕트 스터디', logo: { emoji: '🧩', hue: 260, url: photo('c_two_laptops') }, type: 'community', scope: 'career', joinPolicy: 'approval', interests: ['startup', 'design'], verified: false,
+    description: 'PM·창업자·디자이너가 2주에 한 번 케이스 토론. 학생도 환영 (직무 관심 있으면).', gallery: [], regularActivities: ['격주 목 20:00 온라인·성수'], notices: [],
+    followerIds: ['u_b_korea1'], memberIds: ['u_b_snu2', 'u_a_tokyo_pm', 'u_a_yonsei_seoul'], adminIds: ['u_b_snu2'], applicantIds: [] },
+  { id: 'o_yonsei_alumni_seoul', name: '연세 동문 서울 커피챗', logo: { emoji: '🎓', hue: 215, url: photo('c_cafe_laptop') }, type: 'community', scope: 'school', schoolId: 's_yonsei', joinPolicy: 'open', interests: ['coffee', 'networking'], verified: false,
+    description: '서울에 있는 연세 동문·재학생 커피챗 모임. 기수·전공 상관없음.', gallery: [], regularActivities: ['월 1회 강남·신촌'], notices: [],
+    followerIds: ['u_jimin'], memberIds: ['u_taeho', 'u_a_yonsei_seoul', 'u_a_ny_fin'], adminIds: ['u_taeho'], applicantIds: [] },
+);
+
+/** v2 그룹 안 모임 — 모임은 시간·장소·인원·공개 범위만 관리한다 */
+activities.push(
+  { id: 'a_g_run', kind: 'group', category: 'exercise', title: '토요일 한강 러닝 8km', description: '뚝섬에서 잠실 왕복. 페이스 6분대. 끝나고 커피.', cover: { emoji: '🏃', hue: 160, url: photo('c_road_sunset') },
+    hostId: 'u_a_seoul_ai', hostType: 'user', orgId: 'o_seoul_ai_run', date: addDaysISO(2), startTime: '08:00', endTime: '09:30', place: { name: '뚝섬 한강공원', address: '서울 광진구', area: '서울 뚝섬', lat: 37.5310, lng: 127.0665 },
+    capacity: 12, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(20) },
+  { id: 'a_g_product', kind: 'group', category: 'study', title: '프로덕트 케이스 토론 — 온보딩 개선', description: '그룹 멤버만. 각자 사례 하나씩 가져와요.', cover: { emoji: '🧩', hue: 260, url: photo('c_two_laptops') },
+    hostId: 'u_b_snu2', hostType: 'user', orgId: 'o_product_study', date: T4, startTime: '20:00', endTime: '21:30', place: { name: '성수 코워킹 라운지', address: '서울 성동구', area: '서울 성수', lat: 37.5445, lng: 127.0560 },
+    capacity: 8, visibility: 'group', joinPolicy: 'approval', fee: 0, comments: [], createdAt: isoHoursAgo(26) },
+  { id: 'a_g_alumni_coffee', kind: 'group', category: 'networking', title: '연세 동문 커피챗 (강남)', description: '재학생·동문 누구나. 커리어 이야기 편하게.', cover: { emoji: '☕', hue: 215, url: photo('c_cafe_laptop') },
+    hostId: 'u_taeho', hostType: 'user', orgId: 'o_yonsei_alumni_seoul', date: T1, startTime: '19:30', endTime: '21:00', place: { name: '강남역 카페', address: '서울 강남구', area: '서울 강남', lat: 37.4979, lng: 127.0276 },
+    capacity: 6, visibility: 'school', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(9) },
+);
+
+export const savedSearches: SavedSearch[] = [];

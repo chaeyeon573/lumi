@@ -26,8 +26,13 @@ import { ProfileListPage } from '@/pages/profile/ProfileListPage';
 import { EditPromptsPage } from '@/pages/profile/EditPromptsPage';
 import { TimetablePage } from '@/pages/timetable/TimetablePage';
 import { PeoplePage } from '@/pages/people/PeoplePage';
-import { BeyondPage } from '@/pages/people/BeyondPage';
-import { AdvancedSearchPage } from '@/pages/people/AdvancedSearchPage';
+import { PeopleResultsPage } from '@/pages/people/PeopleResultsPage';
+import { PlusPage } from '@/pages/plus/PlusPage';
+import { CheckoutPage } from '@/pages/plus/CheckoutPage';
+import { CreateGroupPage } from '@/pages/groups/CreateGroupPage';
+import { WantsPage } from '@/pages/profile/WantsPage';
+import { StatusPage } from '@/pages/profile/StatusPage';
+import { StatusCareerPage } from '@/pages/profile/StatusCareerPage';
 import { MeetPage } from '@/pages/meet/MeetPage';
 import { CreateMeetPage } from '@/pages/meet/CreateMeetPage';
 import { FeedPage } from '@/pages/feed/FeedPage';
@@ -100,8 +105,10 @@ export default function App() {
         <Route element={<AppShell />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/people" element={<PeoplePage />} />
-          <Route path="/people/beyond" element={<BeyondPage />} />
-          <Route path="/people/search" element={<AdvancedSearchPage />} />
+          {/* v2: 학교로 나누지 않는다 — 이전 Beyond/고급 검색은 찾기 탭으로 */}
+          <Route path="/people/beyond" element={<Navigate to="/people?tab=search" replace />} />
+          <Route path="/people/search" element={<Navigate to="/people?tab=search" replace />} />
+          <Route path="/people/results" element={<PeopleResultsPage />} />
           <Route path="/meet" element={<MeetPage />} />
           <Route path="/meet/create" element={<CreateMeetPage />} />
           <Route path="/feed" element={<FeedPage />} />
@@ -115,6 +122,12 @@ export default function App() {
           <Route path="/profile" element={<ProfilePage />} />
         </Route>
         <Route element={<AppShell withNav={false} />}>
+          <Route path="/plus" element={<PlusPage />} />
+          <Route path="/plus/checkout" element={<CheckoutPage />} />
+          <Route path="/groups/new" element={<CreateGroupPage />} />
+          <Route path="/profile/wants" element={<WantsPage />} />
+          <Route path="/profile/status" element={<StatusPage />} />
+          <Route path="/profile/status/career" element={<StatusCareerPage />} />
           <Route path="/timetable" element={<TimetablePage />} />
           <Route path="/plans" element={<PlansPage />} />
           <Route path="/classes/:courseName" element={<ClassPage />} />

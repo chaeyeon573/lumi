@@ -22,9 +22,10 @@ export const SECTIONS: { id: string; letter: string; label: Bi }[] = [
 
 // ─── 0. Principle ────────────────────────────────────────────────────────
 export const FREE_CORE: Bi[] = [
-  { ko: '같은 학교 사람 발견', en: 'Same-school people discovery' },
-  { ko: '내 학교 졸업생 발견', en: 'Alumni discovery within my school' },
-  { ko: '기본 스와이프 30/일', en: 'Basic swipe 30/day' },
+  { ko: '추천 사람 보기 (학교 구분 없음)', en: 'Recommended people (no school split)' },
+  { ko: '타학교 사람·동문 보기', en: 'People at other schools & alumni' },
+  { ko: '기본 검색 (키워드 + 필터 1개)', en: 'Basic search (keyword + 1 filter)' },
+  { ko: '기본 연결 요청 30/일', en: 'Basic connection requests 30/day' },
   { ko: 'DM', en: 'DM' },
   { ko: '피드 읽기·쓰기', en: 'Feed read & write' },
   { ko: '그룹 만들기·참여', en: 'Group create & join' },
@@ -34,7 +35,7 @@ export const FREE_CORE: Bi[] = [
 ];
 
 export const REVENUE_STREAMS: { key: 'A' | 'B' | 'C'; title: Bi; desc: Bi; product: Bi }[] = [
-  { key: 'A', title: { ko: '내 네트워크 밖으로 확장', en: 'Expanding beyond your network' }, desc: { ko: '다른 학교·도시·커뮤니티의 사람을 찾을 때', en: 'When you look for people at other schools, cities and communities' }, product: { ko: 'AroundU+ 구독', en: 'AroundU+ subscription' } },
+  { key: 'A', title: { ko: '원하는 사람을 더 빠르고 정확하게', en: 'Finding the right people faster' }, desc: { ko: '복수 조건·상세 조건 검색, 검색 저장, 새 사람 알림, 더 많은 연결 요청, 고급 추천. 사람을 보는 것 자체는 무료', en: 'Multi-condition & detailed search, saved searches, new-people alerts, more connection requests, advanced recommendations. Seeing people is free' }, product: { ko: 'AroundU+ 구독', en: 'AroundU+ subscription' } },
   { key: 'B', title: { ko: '도달 구매', en: 'Buying reach' }, desc: { ko: '내 프로필·글·만남·그룹을 더 많은 사람에게', en: 'Put your profile, post, meet or group in front of more people' }, product: { ko: '부스트 (1회성)', en: 'Boosts (one-off)' } },
   { key: 'C', title: { ko: '기관이 학생에게 도달', en: 'Institutions reaching students' }, desc: { ko: '기업·연구실·프로그램이 인증된 학생에게', en: 'Companies, labs and programs reaching verified students' }, product: { ko: '프로모티드 · 스폰서 경험 · 스폰서 글', en: 'Promoted · Sponsored Experience · Sponsored posts' } },
 ];
@@ -59,12 +60,13 @@ export const PLUS_NOTES: Bi[] = [
 ];
 
 export const PLUS_PERKS: { feature: Bi; free: Bi; plus: Bi }[] = [
-  { feature: { ko: 'Beyond 발견 (다른 학교·도시)', en: 'Beyond discovery (other schools & cities)' }, free: { ko: '하루 3명 미리보기', en: '3 previews/day' }, plus: { ko: '무제한', en: 'Unlimited' } },
-  { feature: { ko: '다른 학교 졸업생', en: 'Cross-school alumni' }, free: { ko: '—', en: '—' }, plus: { ko: '✓', en: '✓' } },
-  { feature: { ko: '고급 필터 (학교 × 단계 × 관심사 × 도시)', en: 'Advanced filters (school × stage × interest × city)' }, free: { ko: '—', en: '—' }, plus: { ko: '✓', en: '✓' } },
-  { feature: { ko: '여러 학교 동시 검색', en: 'Multi-school search' }, free: { ko: '—', en: '—' }, plus: { ko: '✓', en: '✓' } },
-  { feature: { ko: '저장한 검색 + 발견 알림', en: 'Saved searches + discovery alerts' }, free: { ko: '—', en: '—' }, plus: { ko: '✓', en: '✓' } },
-  { feature: { ko: '소개 요청', en: 'Introduction requests' }, free: { ko: '하루 30개', en: '30/day' }, plus: { ko: '무제한', en: 'Unlimited' } },
+  { feature: { ko: '추천·타학교·동문 보기', en: 'Recommendations, other schools, alumni' }, free: { ko: '✓ 무료', en: '✓ Free' }, plus: { ko: '✓', en: '✓' } },
+  { feature: { ko: '복수 조건 검색 (예: 서울 + AI + Founder + 연세/서울/KAIST)', en: 'Multi-condition search (e.g. Seoul + AI + Founder + Yonsei/SNU/KAIST)' }, free: { ko: '필터 1개까지', en: 'Up to 1 filter' }, plus: { ko: '무제한 조합', en: 'Any combination' } },
+  { feature: { ko: '상세 조건 (업종·직무·회사·졸업연도·활동 지역)', en: 'Detailed filters (industry · role · company · grad year · activity area)' }, free: { ko: '—', en: '—' }, plus: { ko: '✓', en: '✓' } },
+  { feature: { ko: '검색 저장 (예: "뉴욕 금융권 연세대 동문")', en: 'Saved searches (e.g. "Yonsei alumni in NYC finance")' }, free: { ko: '—', en: '—' }, plus: { ko: '✓', en: '✓' } },
+  { feature: { ko: '새 사람 알림 (조건에 맞는 사람이 들어오면)', en: 'New-people alerts (when someone matches)' }, free: { ko: '—', en: '—' }, plus: { ko: '✓', en: '✓' } },
+  { feature: { ko: '연결 요청', en: 'Connection requests' }, free: { ko: '하루 30개', en: '30/day' }, plus: { ko: '무제한', en: 'Unlimited' } },
+  { feature: { ko: '고급 추천 (검색·행동 기반)', en: 'Advanced recommendations (search & behavior based)' }, free: { ko: '기본 추천', en: 'Basic' }, plus: { ko: '✓', en: '✓' } },
   { feature: { ko: '광고 없는 피드', en: 'Ad-free feed' }, free: { ko: '—', en: '—' }, plus: { ko: '✓', en: '✓' } },
   { feature: { ko: '"덱에서 먼저 보이기" 부스트', en: '"Shown first in the deck" boost' }, free: { ko: '—', en: '—' }, plus: { ko: '주 1회', en: '1x/week' } },
 ];
@@ -93,7 +95,7 @@ export const BOOSTS: { group: Bi; meta?: Bi; items: BoostItem[] }[] = [
     { name: { ko: '24시간', en: '24h' }, price: { krw: '₩2,900', usd: '$1.99' } },
     { name: { ko: '5팩', en: '5-pack' }, desc: { ko: '24시간 × 5 · 개당 ₩1,980', en: '5 × 24h · $1.40 each' }, price: { krw: '₩9,900', usd: '$6.99' } },
   ] },
-  { group: { ko: '만남 부스트', en: 'Meet Boost' }, meta: { ko: '내 학교 Meet › 지금/이벤트 맨 위에 고정', en: 'Pinned at top of Meet › Now/Events for your school' }, items: [
+  { group: { ko: '만남 부스트', en: 'Meet Boost' }, meta: { ko: '모임 › 추천 맨 위에 고정', en: 'Pinned at top of Meet › Recommended' }, items: [
     { name: { ko: '24시간', en: '24h' }, price: { krw: '₩4,900', usd: '$3.99' } },
   ] },
   { group: { ko: '글 부스트 — 커뮤니티', en: 'Post Boost — Community' }, meta: { ko: '모두 7일 · ~x3 도달', en: 'All 7 days · ~x3 reach' }, items: [
@@ -106,7 +108,7 @@ export const BOOSTS: { group: Bi; meta?: Bi; items: BoostItem[] }[] = [
     { name: { ko: '오디언스 4개', en: '4 audiences' }, price: { krw: '₩100,000', usd: '$74.99' } },
     { name: { ko: '전체 오디언스 + 14일', en: 'All audiences + 14 days' }, price: { krw: '₩150,000', usd: '$109.99' } },
   ] },
-  { group: { ko: '그룹 부스트 (모집 주간)', en: 'Group Boost (recruiting week)' }, meta: { ko: '동아리·학회 모집 기간에 Meet › 그룹 상단', en: 'Top of Meet › Groups during recruiting season' }, items: [
+  { group: { ko: '그룹 부스트 (모집 주간)', en: 'Group Boost (recruiting week)' }, meta: { ko: '모집 기간에 모임 › 그룹 상단', en: 'Top of Meet › Groups during recruiting season' }, items: [
     { name: { ko: '1주', en: '1 week' }, price: { krw: '₩30,000', usd: '$22.99' }, unit: { ko: '/주', en: '/week' } },
   ] },
 ];
@@ -161,7 +163,7 @@ export const EXPERIENCE_REASON: Bi[] = [
 // ─── E. Sponsored Posts & Partner Deals ──────────────────────────────────
 export const SPONSORED: { name: Bi; desc: Bi; price: Price; unit: Bi; rule?: Bi }[] = [
   { name: { ko: '스폰서 글', en: 'Sponsored post' }, desc: { ko: '맥락에 맞고, 라벨이 붙은 글', en: 'Context-relevant, labeled' }, price: { krw: '₩150,000', usd: '$119' }, unit: { ko: '/캠퍼스/주', en: '/campus/week' }, rule: { ko: '글 4개당 1슬롯 · 캠퍼스당 하루 최대 3 광고주 (Fizz식 희소성)', en: '1 slot per 4 posts · max 3 advertisers/campus/day (Fizz-style scarcity)' } },
-  { name: { ko: '파트너 딜 카드', en: 'Partner Deal card' }, desc: { ko: 'Meet › 지금에 노출 · 동네 카페·식당의 학생증 할인', en: 'In Meet › Now · local café/restaurant, student-ID deal' }, price: { krw: '₩50,000', usd: '$39' }, unit: { ko: '/주', en: '/week' } },
+  { name: { ko: '파트너 딜 카드', en: 'Partner Deal card' }, desc: { ko: '모임 › 추천 "지금" 스트립에 노출 · 동네 카페·식당의 학생증 할인', en: 'In the Meet › Recommended "Now" strip · local café/restaurant, student-ID deal' }, price: { krw: '₩50,000', usd: '$39' }, unit: { ko: '/주', en: '/week' } },
 ];
 export const SPONSORED_REASON: Bi[] = [
   { ko: '배너 광고는 없어요. 광고는 피드의 글과 같은 모양이되 "스폰서" 라벨이 붙고, 4개당 1개만 들어가요.', en: 'No banner ads. An ad looks like any feed post, carries a "Sponsored" label, and appears at most once per 4 posts.' },
@@ -181,13 +183,13 @@ export const UNIT_TOTAL = { perCampus: { krw: '≈ ₩4.7M', usd: '≈ $3,500' }
 
 // ─── G. Free vs Premium boundary ─────────────────────────────────────────
 export const BOUNDARY: { feature: Bi; free: Bi; premium: Bi }[] = [
-  { feature: { ko: '같은 학교 사람 발견', en: 'Same-school discovery' }, free: { ko: '무료', en: 'Free' }, premium: { ko: '—', en: '—' } },
-  { feature: { ko: '내 학교 졸업생', en: 'Alumni within my school' }, free: { ko: '무료', en: 'Free' }, premium: { ko: '—', en: '—' } },
+  { feature: { ko: '추천 사람 · 타학교 사람 · 동문 보기', en: 'Recommended people · other schools · alumni' }, free: { ko: '무료', en: 'Free' }, premium: { ko: '—', en: '—' } },
+  { feature: { ko: '기본 검색 (키워드 + 필터 1개)', en: 'Basic search (keyword + 1 filter)' }, free: { ko: '무료', en: 'Free' }, premium: { ko: '—', en: '—' } },
   { feature: { ko: 'DM · 피드 · 그룹 · 만남 · 캠퍼스 정보 · 기본 프로필', en: 'DM · Feed · Groups · Meets · Campus info · Basic profile' }, free: { ko: '무료', en: 'Free' }, premium: { ko: '—', en: '—' } },
-  { feature: { ko: '스와이프 · 소개 요청', en: 'Swipes · introduction requests' }, free: { ko: '하루 30', en: '30/day' }, premium: { ko: '무제한 (Plus)', en: 'Unlimited (Plus)' } },
-  { feature: { ko: 'Beyond (다른 학교·도시)', en: 'Beyond (other schools & cities)' }, free: { ko: '하루 3명 미리보기', en: '3 previews/day' }, premium: { ko: '무제한 (Plus)', en: 'Unlimited (Plus)' } },
-  { feature: { ko: '다른 학교 졸업생', en: 'Cross-school alumni' }, free: { ko: '—', en: '—' }, premium: { ko: 'Plus', en: 'Plus' } },
-  { feature: { ko: '고급 필터 · 여러 학교 검색 · 저장한 검색·알림', en: 'Advanced filters · multi-school search · saved searches & alerts' }, free: { ko: '—', en: '—' }, premium: { ko: 'Plus', en: 'Plus' } },
+  { feature: { ko: '연결 요청', en: 'Connection requests' }, free: { ko: '하루 30', en: '30/day' }, premium: { ko: '무제한 (Plus)', en: 'Unlimited (Plus)' } },
+  { feature: { ko: '복수 조건 검색 (필터 2개 이상)', en: 'Multi-condition search (2+ filters)' }, free: { ko: '—', en: '—' }, premium: { ko: 'Plus', en: 'Plus' } },
+  { feature: { ko: '상세 조건 (업종·직무·회사·졸업연도·활동 지역)', en: 'Detailed filters (industry · role · company · grad year · activity area)' }, free: { ko: '—', en: '—' }, premium: { ko: 'Plus', en: 'Plus' } },
+  { feature: { ko: '검색 저장 · 새 사람 알림 · 고급 추천', en: 'Saved searches · new-people alerts · advanced recommendations' }, free: { ko: '—', en: '—' }, premium: { ko: 'Plus', en: 'Plus' } },
   { feature: { ko: '피드 광고', en: 'Ads in feed' }, free: { ko: '글 4개당 1개 (라벨)', en: '1 per 4 posts (labeled)' }, premium: { ko: '광고 없음 (Plus)', en: 'Ad-free (Plus)' } },
   { feature: { ko: '노출 · 도달', en: 'Visibility · reach' }, free: { ko: '오가닉', en: 'Organic' }, premium: { ko: '부스트 (1회성)', en: 'Boosts (one-off)' } },
   { feature: { ko: '기관이 학생에게 도달', en: 'Institutions reaching students' }, free: { ko: '—', en: '—' }, premium: { ko: '프로모티드 · 스폰서', en: 'Promoted · Sponsored' } },

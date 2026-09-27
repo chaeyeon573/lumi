@@ -7,11 +7,17 @@ export const INTEREST_LABELS: Record<Interest, string> = {
   coffee: t('커피'), meal: t('식사'), study: t('공부'), exercise: t('운동'), walk: t('산책'), cycling: t('사이클'),
   shopping: t('쇼핑'), exhibition: t('전시·공연'), club: t('동아리'), research: t('연구·논문'), startup: t('창업'),
   networking: t('네트워킹'), etc: t('기타'),
+  ai: 'AI', design: t('디자인'), finance: t('금융'), travel: t('여행'), music: t('음악'), film: t('영화'), reading: t('독서'), photo: t('사진'),
+  cooking: t('요리'), volunteer: t('봉사'), invest: t('투자'), art: t('예술'), game: t('게임'), fashion: t('패션'), running: t('러닝'),
 };
 export const INTEREST_EMOJI: Record<Interest, string> = {
   coffee: '☕', meal: '🍜', study: '📚', exercise: '🏃', walk: '🚶', cycling: '🚴', shopping: '🛍️',
   exhibition: '🎨', club: '🎸', research: '🔬', startup: '🚀', networking: '🤝', etc: '✨',
+  ai: '🤖', design: '🎨', finance: '💹', travel: '✈️', music: '🎧', film: '🎬', reading: '📖', photo: '📷',
+  cooking: '🍳', volunteer: '🤲', invest: '📈', art: '🖼️', game: '🎮', fashion: '👗', running: '👟',
 };
+/** 온보딩 관심사 칩 순서 (v2) — 최대 5개 선택 */
+export const ONBOARDING_INTERESTS: Interest[] = ['ai', 'startup', 'running', 'design', 'finance', 'travel', 'music', 'film', 'reading', 'photo', 'cooking', 'volunteer', 'research', 'invest', 'art', 'exercise', 'game', 'fashion', 'coffee', 'study', 'networking', 'exhibition', 'club', 'etc'];
 
 export const PURPOSE_LABELS: Record<Purpose, string> = {
   friend: t('친구'), dating: t('연애'), study: t('스터디'), hobby: t('취미'), club: t('동아리'), networking: t('네트워킹'), any: t('상관없음'),
@@ -23,10 +29,10 @@ export const AVAILABILITY_LABELS: Record<Availability, string> = {
 };
 
 export const VISIBILITY_LABELS: Record<Visibility, string> = {
-  public: t('전체 공개'), school: t('같은 학교'), department: t('특정 학과·조직'), friends: t('친구'), followers: t('팔로워'), selected: t('선택한 사람만'), private: t('비공개'),
+  public: t('전체 공개'), school: t('같은 학교'), department: t('특정 학과·조직'), friends: t('친구'), followers: t('팔로워'), selected: t('선택한 사람만'), private: t('비공개'), group: t('특정 그룹'),
 };
 
-export const VISIBILITY_ORDER: Visibility[] = ['public', 'school', 'department', 'friends', 'followers', 'selected', 'private'];
+export const VISIBILITY_ORDER: Visibility[] = ['public', 'school', 'group', 'department', 'friends', 'followers', 'selected', 'private'];
 
 export const CATEGORY_LABELS: Record<ActivityCategory, string> = {
   coffee: t('커피'), meal: t('식사'), study: t('공부'), exercise: t('운동'), club: t('동아리'), performance: t('공연'),
@@ -47,7 +53,7 @@ export const JOIN_POLICY_LABELS: Record<JoinPolicy, string> = {
 };
 
 export const ROLE_LABELS: Record<UniversityRole, string> = { undergraduate: t('학부생'), graduate: t('대학원생'), alumni: t('졸업생') };
-export const ORG_TYPE_LABELS: Record<OrganizationType, string> = { club: t('동아리'), department: t('학과'), lab: t('연구실·RA'), council: t('학생회'), greek: t('소셜 조직 (Greek)') };
+export const ORG_TYPE_LABELS: Record<OrganizationType, string> = { club: t('동아리'), department: t('학과'), lab: t('연구실·RA'), council: t('학생회'), greek: t('소셜 조직 (Greek)'), community: t('그룹') };
 export const KIND_LABELS: Record<ActivityKind, string> = { personal: t('개인 활동'), group: t('그룹 모임'), org_event: t('동아리·학교 행사') };
 export const GENDER_LABELS: Record<Gender, string> = { female: t('여성'), male: t('남성'), other: t('기타'), private: t('비공개') };
 

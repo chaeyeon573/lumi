@@ -1,6 +1,6 @@
 /** English demo: a US campus (UC Berkeley) with Greek life, .edu verification and US-style opportunities */
 import type {
-  Activity, ActivityProposal, ChatRoom, Notification, Organization, Participation, Post, Relationships, School, User, Visibility, ProfileField, Opportunity, OpportunityIntentRecord, TimePoll, Course } from '@core/types';
+  Activity, ActivityProposal, ChatRoom, Notification, Organization, Participation, Post, Relationships, School, User, Visibility, ProfileField, Opportunity, OpportunityIntentRecord, TimePoll, Course, SavedSearch } from '@core/types';
 import { addDaysISO, isoHoursAgo, isoMinutesAgo, todayISO } from '@core/lib/format';
 import { photo } from '@core/lib/assets';
 import { catalogOrganizations } from './catalog/orgs';
@@ -510,3 +510,77 @@ export const timePolls: TimePoll[] = [
     status: 'open', closesAt: new Date(Date.now() + 36 * 3600000).toISOString(), createdAt: isoHoursAgo(2),
   },
 ];
+
+// ─── v2 (2026-09 UX redesign): home/activity city · grad year · verification method · wants · career ─────
+const Y = new Date().getFullYear();
+const V2: Record<string, Partial<User>> = {
+  u_me: { homeCity: 'Berkeley', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 30) }, wants: { people: ['same_interest', 'other_school', 'senior_mentor'], activities: ['coffee', 'project', 'study'] } },
+  u_jimin: { homeCity: 'Berkeley', gradYear: Y + 1, verification: { method: 'sso', at: isoHoursAgo(24 * 40) }, interests: ['coffee', 'exhibition', 'running', 'startup', 'networking'], wants: { people: ['same_interest', 'new_people'], activities: ['coffee', 'exercise', 'networking'] } },
+  u_dohyun: { homeCity: 'Berkeley', gradYear: Y + 2, verification: { method: 'school_email', at: isoHoursAgo(24 * 100) }, interests: ['research', 'ai', 'exercise', 'coffee'], wants: { people: ['same_major', 'same_interest'], activities: ['study', 'research', 'exercise'] } },
+  u_seoyeon: { homeCity: 'Berkeley', gradYear: Y + 2, verification: { method: 'student_id', at: isoHoursAgo(24 * 12) }, interests: ['club', 'music', 'meal', 'walk'], wants: { people: ['same_interest', 'new_people'], activities: ['hobby', 'meal'] } },
+  u_minjun: { homeCity: 'San Francisco', activityCity: 'Berkeley', gradYear: Y, verification: { method: 'school_email', at: isoHoursAgo(24 * 60) }, interests: ['running', 'exercise', 'cycling', 'meal'], wants: { people: ['same_city', 'same_interest'], activities: ['exercise', 'meal'] } },
+  u_yuna: { homeCity: 'Oakland', activityCity: 'Berkeley', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 50) }, interests: ['study', 'coffee', 'reading', 'research'], wants: { people: ['same_major', 'senior_mentor'], activities: ['study', 'coffee'] } },
+  u_taeho: { homeCity: 'San Francisco', gradYear: 2023, verification: { method: 'alumni_email', at: isoHoursAgo(24 * 200) }, career: { city: 'San Francisco', company: 'Own startup', industry: 'Startup', role: 'Founder' }, interests: ['startup', 'networking', 'coffee', 'ai'], wants: { people: ['alumni', 'same_field', 'same_city'], activities: ['coffee', 'networking', 'project'] } },
+  u_hana: { homeCity: 'San Francisco', gradYear: Y + 2, verification: { method: 'student_id', at: isoHoursAgo(24 * 20) }, interests: ['exhibition', 'design', 'photo', 'coffee'], wants: { people: ['other_school', 'same_interest'], activities: ['hobby', 'coffee'] } },
+  u_junho: { homeCity: 'Berkeley', gradYear: Y, verification: { method: 'sso', at: isoHoursAgo(24 * 90) }, interests: ['club', 'music', 'film', 'coffee'], wants: { people: ['same_interest'], activities: ['hobby', 'meal'] } },
+  u_sua: { homeCity: 'Berkeley', gradYear: Y + 3, verification: { method: 'school_email', at: isoHoursAgo(24 * 10) }, interests: ['study', 'walk', 'coffee', 'startup'], wants: { people: ['same_major', 'senior_mentor'], activities: ['study', 'coffee'] } },
+  u_woojin: { homeCity: 'Oakland', activityCity: 'Berkeley', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 70) }, interests: ['study', 'exercise', 'research', 'finance'], wants: { people: ['same_major', 'same_field'], activities: ['study', 'exercise'] } },
+  u_b_stan1: { homeCity: 'Palo Alto', activityCity: 'San Francisco', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 30) }, interests: ['research', 'ai', 'startup', 'coffee'], wants: { people: ['other_school', 'same_interest'], activities: ['coffee', 'project', 'research'] } },
+  u_b_mit1: { homeCity: 'Boston', activityCity: 'San Francisco', gradYear: Y + 2, verification: { method: 'sso', at: isoHoursAgo(24 * 30) }, interests: ['research', 'ai', 'exercise', 'exhibition'], wants: { people: ['same_field', 'other_school'], activities: ['research', 'networking'] } },
+  u_b_ucla1: { homeCity: 'Los Angeles', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 30) }, interests: ['startup', 'networking', 'coffee', 'design'], wants: { people: ['other_school', 'same_interest'], activities: ['coffee', 'project'] } },
+  u_b_stan2: { homeCity: 'New York', gradYear: 2021, verification: { method: 'diploma', at: isoHoursAgo(24 * 30) }, career: { city: 'New York', company: 'Stripe', industry: 'Finance', role: 'Product' }, interests: ['startup', 'networking', 'exercise', 'finance'], wants: { people: ['same_field', 'same_city', 'alumni'], activities: ['coffee', 'networking'] } },
+  u_b_nyu1: { homeCity: 'New York', gradYear: Y + 2, verification: { method: 'student_id', at: isoHoursAgo(24 * 30) }, interests: ['startup', 'club', 'coffee', 'game'], wants: { people: ['other_school', 'new_people'], activities: ['project', 'hobby'] } },
+};
+users.forEach((u) => Object.assign(u, V2[u.id]));
+
+/** v2 extra users — alumni in other cities / other schools (so "NYC + Finance", "Product + Tokyo", "SF + AI" searches return people). Seeing other schools is free */
+users.push(
+  mk({ id: 'u_a_ny_fin', nickname: 'Emma', birthYear: 1995, gender: 'female', avatar: { emoji: '🗽', hue: 205, photoType: 'face', url: photo('p_x1') }, photos: [photo('p_x1'), photo('c_city')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_berkeley', schoolName: 'UC Berkeley', role: 'alumni', department: 'Economics', year: 2017, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'alumni',
+    homeCity: 'New York', gradYear: 2017, verification: { method: 'alumni_association', at: isoHoursAgo(24 * 15) }, career: { city: 'New York', company: 'Goldman Sachs', industry: 'Finance', role: 'IB Associate' }, region: 'New York',
+    bio: 'Five years in IB in New York. Happy to do coffee chats with Cal students heading into finance.', interests: ['finance', 'invest', 'running', 'travel'], purposes: ['networking'], goals: [], lookingFor: [], canOffer: ['mentor'], openTo: ['mentoring', 'coffee', 'networking'], fieldVisibility: defaultVisibility('public'), availability: 'weekend',
+    wants: { people: ['alumni', 'same_city', 'same_field'], activities: ['coffee', 'networking'] }, createdAt: isoHoursAgo(24 * 3) }),
+  mk({ id: 'u_a_tokyo_pm', nickname: 'Ken', birthYear: 1994, gender: 'male', avatar: { emoji: '🗼', hue: 350, photoType: 'face', url: photo('p_x5') }, photos: [photo('p_x5'), photo('c_desktop')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_ucla', schoolName: 'UCLA', role: 'alumni', department: 'Industrial Engineering', year: 2016, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'alumni',
+    homeCity: 'Tokyo', gradYear: 2016, verification: { method: 'alumni_email', at: isoHoursAgo(24 * 25) }, career: { city: 'Tokyo', company: 'Mercari', industry: 'Tech', role: 'Product' }, region: 'Tokyo',
+    bio: 'Product manager in Tokyo. Ask me about working in Japan.', interests: ['design', 'travel', 'coffee', 'startup'], purposes: ['networking'], goals: [], lookingFor: [], canOffer: ['mentor', 'planning'], openTo: ['mentoring', 'coffee'], fieldVisibility: defaultVisibility('public'), availability: 'after18',
+    wants: { people: ['same_field', 'same_city', 'new_people'], activities: ['coffee', 'networking'] }, createdAt: isoHoursAgo(24 * 5) }),
+  mk({ id: 'u_a_sf_ai', nickname: 'Sofia', birthYear: 1997, gender: 'female', avatar: { emoji: '🤖', hue: 160, photoType: 'face', url: photo('p_x3') }, photos: [photo('p_x3'), photo('c_road_sunset')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_mit', schoolName: 'MIT', role: 'alumni', department: 'EECS', year: 2019, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'alumni',
+    homeCity: 'San Francisco', gradYear: 2019, verification: { method: 'diploma', at: isoHoursAgo(24 * 8) }, career: { city: 'San Francisco', company: 'An AI lab', industry: 'AI', role: 'ML Engineer' }, region: 'San Francisco',
+    bio: 'ML engineer. Runs the Bay Area AI running crew on weekends.', interests: ['ai', 'running', 'research', 'coffee'], purposes: ['networking', 'hobby'], goals: [], lookingFor: [], canOffer: ['mentor', 'developer'], openTo: ['activities', 'networking', 'mentoring'], fieldVisibility: defaultVisibility('public'), availability: 'weekend',
+    wants: { people: ['same_field', 'same_city', 'same_interest'], activities: ['exercise', 'networking', 'research'] }, createdAt: isoHoursAgo(24 * 2) }),
+  mk({ id: 'u_a_berkeley_sf', nickname: 'Jordan', birthYear: 1996, gender: 'male', avatar: { emoji: '💼', hue: 30, photoType: 'face', url: photo('p_x6') }, photos: [photo('p_x6'), photo('c_lounge')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_berkeley', schoolName: 'UC Berkeley', role: 'alumni', department: 'Computer Science', year: 2018, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'alumni',
+    homeCity: 'Oakland', activityCity: 'San Francisco', gradYear: 2018, verification: { method: 'prior_student', at: isoHoursAgo(24 * 400) }, career: { city: 'San Francisco', company: 'Own startup', industry: 'Startup', role: 'Founder' }, region: 'Oakland',
+    bio: 'Lives in Oakland, works out of SF. Second year on a B2B SaaS. Cal CS folks welcome.', interests: ['startup', 'ai', 'coffee', 'invest'], purposes: ['networking'], goals: [], lookingFor: [], canOffer: ['mentor', 'planning'], openTo: ['coffee', 'cofounding', 'mentoring'], fieldVisibility: defaultVisibility('public'), availability: 'after18',
+    wants: { people: ['alumni', 'same_major', 'same_field'], activities: ['coffee', 'project', 'networking'] }, createdAt: isoHoursAgo(24 * 6) }),
+);
+
+/** v2 community groups — school, city, interest or career based; users decide. Free to create and join */
+organizations.push(
+  { id: 'o_new_to_nyc', name: 'New to NYC', logo: { emoji: '🗽', hue: 205, url: photo('c_city') }, type: 'community', scope: 'city', city: 'New York', joinPolicy: 'open', interests: ['travel', 'networking'], verified: false,
+    description: 'People moving to New York. Any school. Weekly dinners and apartment tips.', gallery: [{ emoji: '🌆', hue: 205, caption: 'Rooftop night', url: photo('c_city') }], regularActivities: ['Thursday dinners'], notices: [],
+    followerIds: ['u_jimin'], memberIds: ['u_a_ny_fin', 'u_b_stan2', 'u_b_nyu1'], adminIds: ['u_a_ny_fin'], applicantIds: [] },
+  { id: 'o_ai_builders_bay', name: 'AI Builders Bay Area', logo: { emoji: '🤖', hue: 160, url: photo('c_two_laptops') }, type: 'community', scope: 'interest', joinPolicy: 'approval', interests: ['ai', 'startup'], verified: false,
+    description: 'People building with AI, students and professionals. Demo nights every other week.', gallery: [], regularActivities: ['Demo night every other Thursday'], notices: [],
+    followerIds: ['u_b_ucla1'], memberIds: ['u_a_sf_ai', 'u_a_berkeley_sf', 'u_dohyun', 'u_taeho'], adminIds: ['u_a_sf_ai'], applicantIds: [] },
+  { id: 'o_cal_alumni_sf', name: 'Cal Alumni SF Coffee', logo: { emoji: '🎓', hue: 215, url: photo('c_cafe_laptop') }, type: 'community', scope: 'school', schoolId: 's_berkeley', joinPolicy: 'open', interests: ['coffee', 'networking'], verified: false,
+    description: 'Berkeley alumni and students in the city. Any year, any major.', gallery: [], regularActivities: ['Monthly coffee in SoMa'], notices: [],
+    followerIds: ['u_jimin'], memberIds: ['u_taeho', 'u_a_berkeley_sf', 'u_a_ny_fin'], adminIds: ['u_taeho'], applicantIds: [] },
+);
+
+/** v2 meets inside groups — a meet only manages time, place, people, capacity and visibility */
+activities.push(
+  { id: 'a_g_run', kind: 'group', category: 'exercise', title: 'Saturday Embarcadero run, 8k', description: 'Ferry Building to Crissy Field and back. ~6 min/km. Coffee after.', cover: { emoji: '🏃', hue: 160, url: photo('c_road_sunset') },
+    hostId: 'u_a_sf_ai', hostType: 'user', orgId: 'o_ai_builders_bay', date: addDaysISO(2), startTime: '08:00', endTime: '09:30', place: { name: 'Ferry Building', address: 'San Francisco', area: 'San Francisco', lat: 37.7955, lng: -122.3937 },
+    capacity: 12, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(20) },
+  { id: 'a_g_product', kind: 'group', category: 'study', title: 'Demo night — onboarding flows', description: 'Members only. Bring one thing you built.', cover: { emoji: '🧩', hue: 260, url: photo('c_two_laptops') },
+    hostId: 'u_a_sf_ai', hostType: 'user', orgId: 'o_ai_builders_bay', date: T4, startTime: '19:00', endTime: '21:00', place: { name: 'SoMa coworking lounge', address: 'San Francisco', area: 'San Francisco', lat: 37.7785, lng: -122.3950 },
+    capacity: 8, visibility: 'group', joinPolicy: 'approval', fee: 0, comments: [], createdAt: isoHoursAgo(26) },
+  { id: 'a_g_alumni_coffee', kind: 'group', category: 'networking', title: 'Cal alumni coffee (SoMa)', description: 'Students and alumni. Career talk, no pressure.', cover: { emoji: '☕', hue: 215, url: photo('c_cafe_laptop') },
+    hostId: 'u_taeho', hostType: 'user', orgId: 'o_cal_alumni_sf', date: T1, startTime: '18:30', endTime: '20:00', place: { name: 'Blue Bottle SoMa', address: 'San Francisco', area: 'San Francisco', lat: 37.7825, lng: -122.3934 },
+    capacity: 6, visibility: 'school', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(9) },
+);
+
+export const savedSearches: SavedSearch[] = [];

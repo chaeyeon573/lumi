@@ -20,7 +20,7 @@ export function useViewer() {
   const currentUserId = useAppStore((s) => s.currentUserId);
 
   return useMemo(() => {
-    const snap = { users, relationships, participations, proposals, activities, opportunities, opportunityIntents, timePolls };
+    const snap = { users, relationships, participations, proposals, activities, opportunities, opportunityIntents, timePolls, organizations };
     const me = users.find((u) => u.id === currentUserId) as User;
     const userById = (id: ID) => users.find((u) => u.id === id);
     const orgById = (id: ID) => organizations.find((o) => o.id === id);

@@ -1,21 +1,34 @@
-import { useMemo, type ReactNode } from 'react';
+import { useMemo, useState, type ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Clock, CalendarPlus, ChevronRight, Users, CheckCircle2, MapPin } from 'lucide-react';
+import { Clock, CalendarPlus, ChevronRight, Users, MapPin, X, UserPlus, Sparkles, CalendarDays, Briefcase, RefreshCw } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
-import { CardSkeleton, ErrorState, Button, Avatar, Tag } from '@/components/ui';
+import { CardSkeleton, ErrorState, Button, Avatar, EmptyState } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
+import { getPlatform } from '@core/platform';
 import type { Snapshot } from '@core/api';
-import { homeToday, alumniHome, type HomeToday, type AlumniHome } from '@core/lib/home';
-import { isAlumniStage, networkLabel } from '@core/lib/network';
-import { INTEREST_LABELS, CATEGORY_EMOJI, CATEGORY_COLORS, OPP_TYPE_EMOJI, OPP_TYPE_COLORS, OPP_TYPE_LABELS, ORG_TYPE_LABELS } from '@core/lib/labels';
+import { homeToday, alumniHome, type HomeToday, type AlumniHome, type NetworkNews } from '@core/lib/home';
+import { isAlumniStage, contextLine, cityOf, personLine, shouldSuggestStatusUpdate } from '@core/lib/network';
+import type { RecommendedPerson } from '@core/lib/people';
+import type { RecommendedMeet } from '@core/lib/meet';
+import { CATEGORY_EMOJI, CATEGORY_COLORS, OPP_TYPE_EMOJI, OPP_TYPE_COLORS, ORG_TYPE_LABELS } from '@core/lib/labels';
 import { formatTime, formatDate } from '@core/lib/format';
-import { fmtHours, fmtBlock } from '@core/lib/timetable';
-import { dday, type Reason } from '@core/lib/recommend';
-import type { User, Activity, Opportunity } from '@core/types';
+import { fmtHours, fmtBlock, toMin, nowMin } from '@core/lib/timetable';
+import { localeContext } from '@core/lib/locale-context';
+import type { User, Activity } from '@core/types';
+import { SchoolBadge } from '@/components/people_SchoolBadge';
+import { ReasonChips } from '@/components/people_ReasonChips';
+import { JoinButton } from '@/components/cards/JoinButton';
+import { OpportunityCard } from '@/components/cards/OpportunityCard';
+import { NowActivityRow } from '@/components/cards/NowActivityRow';
+import { FIRSTRUN_KEY } from '@/pages/onboarding/OnboardingPage';
 
-/** Home — 오늘 대시보드. 재학생은 시간표·캠퍼스·만남·사람·기회, 졸업생은 도시·그룹·만남·글·기회 */
+/**
+ * Home — "오늘 나에게 뭐가 있나". 게시글 피드가 아니라 지금 내 상황에서 볼 가치가 높은 것 2~4개씩.
+ * 재학생: 오늘 일정 → 지금 연결할 수 있는 사람 → 학교에서 일어나는 것 → 나에게 맞는 모임 → 지금 열린 만남 → 새로운 사람 → 추천 기회
+ * 졸업생: 새롭게 연결할 사람 → 내 지역 사람 → 내 분야 사람 → 이번 주 모임 → 내 관계망 소식 → 내 그룹 → 추천 기회
+ */
 export function HomePage() {
   const status = useAppStore((s) => s.status);
   const error = useAppStore((s) => s.error);
@@ -26,9 +39,10 @@ export function HomePage() {
   const chatRooms = useAppStore((s) => s.chatRooms);
   const notifications = useAppStore((s) => s.notifications);
   const reports = useAppStore((s) => s.reports);
+  const savedSearches = useAppStore((s) => s.savedSearches);
   const v = useViewer();
   const me = v.me as User | undefined;
-  const snap: Snapshot = useMemo(() => ({ ...v.snap, schools, organizations, posts, chatRooms, notifications, reports }), [v.snap, schools, organizations, posts, chatRooms, notifications, reports]);
+  const snap: Snapshot = useMemo(() => ({ ...v.snap, schools, organizations, posts, chatRooms, notifications, reports, savedSearches }), [v.snap, schools, organizations, posts, chatRooms, notifications, reports, savedSearches]);
   const alumni = !!me && isAlumniStage(me);
   const student = useMemo(() => (me && !alumni ? homeToday(snap, me, v.visibleActivities, (u) => v.canSeeField(u, 'timetable')) : null), [snap, me, alumni, v]);
   const alum = useMemo(() => (me && alumni ? alumniHome(snap, me, v.visibleActivities, v.visiblePosts, (u) => v.canSeeField(u, 'timetable')) : null), [snap, me, alumni, v]);
@@ -38,7 +52,66 @@ export function HomePage() {
       <AppHeader search />
       {status === 'loading' && <div className="px-4"><CardSkeleton /></div>}
       {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
-      {status === 'ready' && me && (student ? <StudentHome d={student} me={me} /> : alum ? <AlumniHome d={alum} me={me} /> : null)}
+      {status === 'ready' && me && (
+        <>
+          <Identity me={me} />
+          <FirstRunCard />
+          {student ? <StudentHome d={student} me={me} /> : alum ? <AlumniHome d={alum} me={me} /> : null}
+        </>
+      )}
+    </div>
+  );
+}
+
+// ─── 정체성 블록 — "연세대학교 ✓ · 학부생 · 경영학과 3학년" ────────────────────────
+function Identity({ me }: { me: User }) {
+  const nav = useNavigate();
+  const line = contextLine(me, lang);
+  const suggest = shouldSuggestStatusUpdate(me);
+  return (
+    <div className="px-4 pt-1 pb-1">
+      <button onClick={() => nav('/profile')} className="text-left press flex items-center gap-3 w-full">
+        <Avatar emoji={me.avatar.emoji} hue={me.avatar.hue} url={me.avatar.url} size={44} />
+        <span className="min-w-0 flex-1">
+          <SchoolBadge user={me} size="lg" className="block truncate" />
+          {line && <span className="block text-[13px] text-ink-2 truncate">{line}</span>}
+        </span>
+        <ChevronRight size={16} className="text-ink-3 shrink-0" />
+      </button>
+      {suggest && (
+        <button onClick={() => nav('/profile/edit')} className="mt-2 w-full rounded-2xl bg-accent-soft px-3.5 py-2.5 text-[12px] font-semibold text-primary flex items-center gap-2 press"><RefreshCw size={13} />{t('현재 상태가 바뀌었나요? 졸업했다면 알려주세요.')}<ChevronRight size={14} className="ml-auto" /></button>
+      )}
+    </div>
+  );
+}
+
+// ─── 첫 사용 카드 (가입 직후 1회) ───────────────────────────────────────────────
+function FirstRunCard() {
+  const nav = useNavigate();
+  const [show, setShow] = useState(() => { try { return getPlatform().getItem(FIRSTRUN_KEY) === '1'; } catch { return false; } });
+  if (!show) return null;
+  const dismiss = () => { try { getPlatform().removeItem(FIRSTRUN_KEY); } catch { /* */ } setShow(false); };
+  const steps = [
+    { n: 1, label: t('추천 사람 보기'), to: '/people', Icon: Users },
+    { n: 2, label: t('연결 요청'), to: '/people', Icon: UserPlus },
+    { n: 3, label: t('모임 참여'), to: '/meet', Icon: CalendarDays },
+  ];
+  return (
+    <div className="mx-4 mt-3 rounded-[24px] bg-primary text-white p-4 relative">
+      <button onClick={dismiss} aria-label={t('닫기')} className="absolute top-3 right-3 h-8 w-8 rounded-full grid place-items-center text-white/80 press"><X size={16} /></button>
+      <div className="text-[11px] font-bold text-white/70 flex items-center gap-1"><Sparkles size={12} />{t('AroundU 시작하기')}</div>
+      <div className="mt-1 text-[16px] font-bold leading-snug pr-8">{t('학교에서 시작해, 관계를 넓혀보세요')}</div>
+      <div className="mt-3 flex items-center gap-1">
+        {steps.map((s, i) => (
+          <span key={s.n} className="contents">
+            <button onClick={() => { dismiss(); nav(s.to); }} className="flex-1 min-w-0 rounded-2xl bg-white/12 hover:bg-white/20 px-2 py-2.5 text-center press">
+              <s.Icon size={16} className="mx-auto" />
+              <span className="block text-[11px] font-semibold mt-1 truncate">{s.label}</span>
+            </button>
+            {i < steps.length - 1 && <ChevronRight size={14} className="text-white/50 shrink-0" />}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }
@@ -46,7 +119,7 @@ export function HomePage() {
 // ─── 공용 조각 ────────────────────────────────────────────────────────────────
 function Section({ title, action, onAction, children }: { title: string; action?: string; onAction?: () => void; children: ReactNode }) {
   return (
-    <section className="px-4 mt-5">
+    <section className="px-4 mt-6">
       <div className="flex items-end justify-between mb-2">
         <h2 className="font-display text-[18px] font-bold text-primary">{title}</h2>
         {action && <button onClick={onAction} className="text-[12px] font-semibold text-primary flex items-center gap-0.5 press">{action}<ChevronRight size={14} /></button>}
@@ -66,44 +139,44 @@ function Row({ icon, color, title, sub, right, onClick }: { icon: ReactNode; col
   );
 }
 
-const Note = ({ children }: { children: ReactNode }) => <div className="card px-4 py-3 text-[13px] text-ink-3 flex items-center justify-between gap-2">{children}</div>;
-
-function MeetRow({ a }: { a: Activity }) {
-  const nav = useNavigate();
-  const v = useViewer();
-  return <Row icon={CATEGORY_EMOJI[a.category]} color={CATEGORY_COLORS[a.category]} title={a.title} sub={`${formatDate(a.date)} ${formatTime(a.startTime)} · ${a.place.name}`} right={<span className="text-[12px] text-ink-3 flex items-center gap-0.5 shrink-0"><Users size={11} />{v.approvedCount(a.id)}/{a.capacity >= 999 ? '∞' : a.capacity}</span>} onClick={() => nav(`/activities/${a.id}`)} />;
+/** 섹션 안의 작은 빈 상태 — 행동 하나만 */
+function Empty({ emoji, title, description, action, onAction }: { emoji?: string; title: string; description?: string; action: string; onAction: () => void }) {
+  return <div className="card"><EmptyState emoji={emoji} title={title} description={description} className="py-7 px-5" action={<Button size="sm" variant="outline" onClick={onAction}>{action}</Button>} /></div>;
 }
 
-function OppRow({ o }: { o: Opportunity }) {
-  const nav = useNavigate();
-  return <Row icon={OPP_TYPE_EMOJI[o.type]} color={OPP_TYPE_COLORS[o.type]} title={o.title} sub={`${OPP_TYPE_LABELS[o.type]} · ${o.host}`} right={o.deadline ? <span className="text-[12px] font-bold text-ink-3 shrink-0">{dday(o.deadline)}</span> : undefined} onClick={() => nav(`/opportunities/${o.id}`)} />;
-}
-
-/** 사람 카드 가로 스트립 — 아바타·이름·소속·관심사 3·연결 이유 2·프로필 보기 */
-function PeopleStrip({ people, city }: { people: { u: User; reasons: Reason[] }[]; city?: boolean }) {
+/** 사람 미니 카드 가로 스트립 — 사진 · 이름 · 학교 ✓ · 한 줄 · 이유 칩 2 */
+function PeopleStrip({ people }: { people: RecommendedPerson[] }) {
   const nav = useNavigate();
   return (
-    <div className="flex gap-3 overflow-x-auto hide-scrollbar -mx-4 px-4 snap-x">
-      {people.map(({ u, reasons }) => {
-        const dept = u.affiliation.type === 'university' && u.affiliation.showDepartment ? u.affiliation.department : '';
-        const sub = city ? [networkLabel(u, lang), u.career?.city ?? u.region].join(' · ') : [networkLabel(u, lang), dept].filter(Boolean).join(' · ');
-        return (
-          <article key={u.id} className="card w-[248px] shrink-0 snap-start p-4 flex flex-col">
-            <div className="flex items-center gap-3">
-              <Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={48} />
-              <div className="min-w-0"><div className="text-[15px] font-bold truncate">{u.nickname}</div><div className="text-[12px] text-ink-3 truncate flex items-center gap-1">{city && <MapPin size={11} className="shrink-0" />}{sub}</div></div>
-            </div>
-            <div className="mt-2.5 flex flex-wrap gap-1">{u.interests.slice(0, 3).map((i) => <Tag key={i}>{INTEREST_LABELS[i]}</Tag>)}</div>
-            <div className="mt-2.5 flex-1">
-              {reasons.length > 0 && (<>
-                <div className="text-[11px] font-bold text-ink-3">{t('이런 이유로 맞아요')}</div>
-                <ul className="mt-0.5 space-y-0.5">{reasons.slice(0, 2).map((r) => <li key={r.text} className="text-[12px] text-ink-2 flex items-start gap-1"><CheckCircle2 size={12} className="text-primary shrink-0 mt-0.5" /><span className="line-clamp-1">{r.text}</span></li>)}</ul>
-              </>)}
-            </div>
-            <Button size="sm" variant="outline" full className="mt-3" onClick={() => nav(`/users/${u.id}`)}>{t('프로필 보기')}</Button>
-          </article>
-        );
-      })}
+    <div className="flex gap-2.5 overflow-x-auto hide-scrollbar -mx-4 px-4 snap-x">
+      {people.map(({ user: u, reasons }) => (
+        <button key={u.id} onClick={() => nav(`/users/${u.id}`)} className="card w-[196px] shrink-0 snap-start p-3.5 text-left press flex flex-col">
+          <div className="flex items-center gap-2.5">
+            <Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={44} />
+            <div className="min-w-0"><div className="text-[14px] font-bold truncate">{u.nickname}</div><SchoolBadge user={u} withYear size="sm" className="max-w-full" /></div>
+          </div>
+          <div className="mt-2 text-[12px] text-ink-2 truncate">{personLine(u, lang)}</div>
+          <ReasonChips reasons={reasons} max={2} className="mt-2" />
+        </button>
+      ))}
+    </div>
+  );
+}
+
+/** 추천 모임 행 — 제목 · 언제·어디 · 이유 · [참여] */
+function MeetRow({ m }: { m: RecommendedMeet }) {
+  const nav = useNavigate();
+  const v = useViewer();
+  const a = m.a;
+  return (
+    <div className="flex items-center gap-3 px-3.5 py-3">
+      <button onClick={() => nav(`/activities/${a.id}`)} className="h-10 w-10 rounded-xl grid place-items-center text-[18px] shrink-0 press" style={{ background: `${CATEGORY_COLORS[a.category]}1A` }}>{CATEGORY_EMOJI[a.category]}</button>
+      <button onClick={() => nav(`/activities/${a.id}`)} className="flex-1 min-w-0 text-left press">
+        <span className="block text-[14px] font-bold truncate">{a.title}</span>
+        <span className="block text-[12px] text-ink-3 truncate">{formatDate(a.date)} {formatTime(a.startTime)} · {a.place.name}</span>
+        <span className="block text-[11px] font-semibold text-primary truncate mt-0.5">{m.reason} · <Users size={10} className="inline -mt-0.5" /> {v.approvedCount(a.id)}/{a.capacity >= 999 ? '∞' : a.capacity}</span>
+      </button>
+      <JoinButton activity={a} size="sm" label={t('참여')} className="shrink-0" />
     </div>
   );
 }
@@ -111,22 +184,24 @@ function PeopleStrip({ people, city }: { people: { u: User; reasons: Reason[] }[
 // ─── 재학생·대학원생 ───────────────────────────────────────────────────────────
 function StudentHome({ d, me }: { d: HomeToday; me: User }) {
   const nav = useNavigate();
+  const ctx = localeContext();
   const hasTT = me.timetable.length > 0;
-  const freeText = d.nextFree ? (lang === 'en' ? `You have ${fmtHours(d.nextFree)} free · ${d.freeTogether} people are also free` : `${fmtHours(d.nextFree)} 비어요 · ${d.freeTogether}명도 비어요`) : '';
+  const freeText = d.nextFree ? (lang === 'en' ? `${fmtHours(d.nextFree)} free · ${d.freeTogether} also free` : `${fmtHours(d.nextFree)} 비어요 · 같이 비는 사람 ${d.freeTogether}명`) : '';
+  const nowMinutes = nowMin();
   return (
     <>
-      <Section title={t('오늘 일정')} action={hasTT ? t('시간표') : undefined} onAction={() => nav('/timetable')}>
+      <Section title={t('오늘 일정')} action={hasTT ? t('전체보기') : undefined} onAction={() => nav('/timetable')}>
         {!hasTT ? (
           <button onClick={() => nav('/timetable')} className="card w-full p-4 text-left press flex items-center gap-3">
             <span className="h-11 w-11 rounded-2xl bg-primary-soft grid place-items-center text-primary shrink-0"><CalendarPlus size={20} /></span>
-            <span className="flex-1 min-w-0"><span className="block text-[15px] font-bold">{t('시간표를 추가하세요')}</span><span className="block text-[12px] text-ink-3">{t('수업을 넣으면 공강에 맞는 사람과 만남을 추천해요')}</span></span>
+            <span className="flex-1 min-w-0"><span className="block text-[15px] font-bold">{t('시간표 추가')}</span><span className="block text-[12px] text-ink-3">{t('수업을 넣으면 공강이 겹치는 사람을 찾아드려요')}</span></span>
             <ChevronRight size={16} className="text-ink-3 shrink-0" />
           </button>
         ) : (
           <>
-            {d.classes.length === 0 ? <Note>{t('오늘 수업 없음')}</Note> : (
+            {d.classes.length === 0 ? <div className="card px-4 py-3 text-[13px] text-ink-3">{t('오늘 수업 없음')}</div> : (
               <div className="card divide-y divide-line">
-                {d.classes.map((c) => (
+                {d.classes.slice(0, 4).map((c) => (
                   <button key={c.id} onClick={() => nav(`/classes/${encodeURIComponent(c.name)}`)} className="w-full flex items-center gap-3 px-3.5 py-2.5 text-left press">
                     <span className="w-1 h-8 rounded-full shrink-0" style={{ background: `hsl(${c.hue} 70% 60%)` }} />
                     <span className="flex-1 min-w-0"><span className="block text-[14px] font-bold truncate">{c.name}</span><span className="block text-[12px] text-ink-3">{formatTime(c.start)} – {formatTime(c.end)}</span></span>
@@ -145,31 +220,45 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
         )}
       </Section>
 
-      {d.happening.length > 0 && (
-        <Section title={t('오늘 캠퍼스에서')}>
-          <div className="card divide-y divide-line">
-            {d.happening.map((h) => h.kind === 'activity'
-              ? <Row key={h.a.id} icon={CATEGORY_EMOJI[h.a.category]} color={CATEGORY_COLORS[h.a.category]} title={h.a.title} sub={`${formatTime(h.a.startTime)} · ${h.a.place.name}`} onClick={() => nav(`/activities/${h.a.id}`)} />
-              : <Row key={h.o.id} icon={OPP_TYPE_EMOJI[h.o.type]} color={OPP_TYPE_COLORS[h.o.type]} title={h.o.title} sub={`${h.o.startTime ? `${formatTime(h.o.startTime)} · ` : ''}${h.o.host}`} onClick={() => nav(`/opportunities/${h.o.id}`)} />)}
-          </div>
+      <Section title={t('지금 연결할 수 있는 사람')} action={t('전체보기')} onAction={() => nav('/people')}>
+        {d.connectNow.length === 0
+          ? <Empty emoji="🤝" title={t('아직 추천할 사람이 없어요')} description={t('관심사와 찾는 것을 채우면 추천이 시작돼요.')} action={t('사람 둘러보기')} onAction={() => nav('/people')} />
+          : <PeopleStrip people={d.connectNow} />}
+      </Section>
+
+      <Section title={t('학교에서 일어나는 것')} action={t('전체보기')} onAction={() => nav('/meet?tab=recommend')}>
+        {d.happening.length === 0
+          ? <Empty emoji="🏫" title={t('오늘은 학교 행사가 없어요')} description={ctx.campusHappenings.slice(0, 3).join(' · ')} action={t('모임 둘러보기')} onAction={() => nav('/meet?tab=recommend')} />
+          : (
+            <div className="card divide-y divide-line">
+              {d.happening.map((h) => h.kind === 'activity'
+                ? <Row key={h.a.id} icon={CATEGORY_EMOJI[h.a.category]} color={CATEGORY_COLORS[h.a.category]} title={h.a.title} sub={`${formatTime(h.a.startTime)} · ${h.a.place.name}`} onClick={() => nav(`/activities/${h.a.id}`)} />
+                : <Row key={h.o.id} icon={OPP_TYPE_EMOJI[h.o.type]} color={OPP_TYPE_COLORS[h.o.type]} title={h.o.title} sub={`${h.o.startTime ? `${formatTime(h.o.startTime)} · ` : ''}${h.o.host}`} onClick={() => nav(`/opportunities/${h.o.id}`)} />)}
+            </div>
+          )}
+      </Section>
+
+      <Section title={t('나에게 맞는 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
+        {d.meets.length === 0
+          ? <Empty emoji="📅" title={t('맞는 모임이 아직 없어요')} action={t('모임 만들기')} onAction={() => nav('/meet/create')} />
+          : <div className="card divide-y divide-line">{d.meets.map((m) => <MeetRow key={m.a.id} m={m} />)}</div>}
+      </Section>
+
+      {d.now.length > 0 && (
+        <Section title={t('지금 열린 만남')} action={t('전체보기')} onAction={() => nav('/meet?tab=now')}>
+          <div className="space-y-2">{d.now.map((a: Activity) => <NowActivityRow key={a.id} activity={a} inMin={toMin(a.startTime) - nowMinutes} />)}</div>
         </Section>
       )}
 
-      <Section title={t('주변 만남')} action={t('전체 보기')} onAction={() => nav('/meet')}>
-        {d.meets.length === 0
-          ? <Note>{t('지금 열린 만남이 없어요')}<Button size="sm" variant="outline" onClick={() => nav('/meet/create')}>{t('만남 열기')}</Button></Note>
-          : <div className="card divide-y divide-line">{d.meets.map((a) => <MeetRow key={a.id} a={a} />)}</div>}
-      </Section>
-
-      {d.people.length > 0 && (
-        <Section title={t('만나보면 좋을 사람')} action={t('전체 보기')} onAction={() => nav('/people')}>
-          <PeopleStrip people={d.people} />
+      {d.newPeople.length > 0 && (
+        <Section title={t('새로운 사람')} action={t('찾기에서 더 보기')} onAction={() => nav('/people?tab=search')}>
+          <PeopleStrip people={d.newPeople} />
         </Section>
       )}
 
       {d.opportunities.length > 0 && (
         <Section title={t('추천 기회')}>
-          <div className="card divide-y divide-line">{d.opportunities.map((o) => <OppRow key={o.id} o={o} />)}</div>
+          <div className="space-y-2">{d.opportunities.map((o) => <OpportunityCard key={o.id} o={o} variant="row" />)}</div>
         </Section>
       )}
     </>
@@ -177,50 +266,73 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
 }
 
 // ─── 졸업생·직장인 ─────────────────────────────────────────────────────────────
-function AlumniHome({ d, me }: { d: AlumniHome; me: User }) {
+function NewsRow({ n }: { n: NetworkNews }) {
   const nav = useNavigate();
   const v = useViewer();
-  const city = me.career?.city ?? me.region;
+  if (n.kind === 'post' && n.post) {
+    const p = n.post; const author = v.userById(p.authorId);
+    return (
+      <button onClick={() => nav(`/feed/${p.id}`)} className="w-full flex items-start gap-3 px-3.5 py-3 text-left press">
+        {p.anonymous || !author ? <span className="h-9 w-9 rounded-full bg-surface-2 grid place-items-center text-[16px] shrink-0">👤</span> : <Avatar emoji={author.avatar.emoji} hue={author.avatar.hue} url={author.avatar.url} size={36} />}
+        <span className="flex-1 min-w-0"><span className="block text-[12px] font-bold text-ink-2 truncate">{n.who} · {t('새 글')}</span><span className="block text-[13px] text-ink line-clamp-2 mt-0.5">{p.text}</span></span>
+      </button>
+    );
+  }
+  if (n.kind === 'meet' && n.meet) {
+    const a = n.meet;
+    return <Row icon={CATEGORY_EMOJI[a.category]} color={CATEGORY_COLORS[a.category]} title={a.title} sub={`${n.who} · ${formatDate(a.date)} ${formatTime(a.startTime)}`} onClick={() => nav(`/activities/${a.id}`)} />;
+  }
+  return null;
+}
+
+function AlumniHome({ d, me }: { d: AlumniHome; me: User }) {
+  const nav = useNavigate();
+  const city = cityOf(me);
+  const field = [me.career?.industry, me.career?.role].filter(Boolean).join(' / ');
   return (
     <>
-      <Section title={`${t('주변 사람')} · ${city}`} action={t('전체 보기')} onAction={() => nav('/people')}>
-        {d.nearby.length === 0 ? <Note>{t('아직 근처에 사람이 없어요')}</Note> : <PeopleStrip people={d.nearby} city />}
+      <Section title={t('새롭게 연결할 사람')} action={t('전체보기')} onAction={() => nav('/people')}>
+        {d.connect.length === 0
+          ? <Empty emoji="🤝" title={t('아직 추천할 사람이 없어요')} action={t('사람 둘러보기')} onAction={() => nav('/people')} />
+          : <PeopleStrip people={d.connect} />}
       </Section>
 
-      <Section title={t('내 그룹')} action={t('전체 보기')} onAction={() => nav('/profile/groups')}>
+      <Section title={city ? `${t('내 지역 사람')} · ${city}` : t('내 지역 사람')} action={d.nearby.length ? t('전체보기') : undefined} onAction={() => nav('/people?tab=search')}>
+        {d.nearby.length === 0
+          ? <Empty emoji="📍" title={city ? t('이 지역에서 활동하는 사람이 아직 없어요') : t('활동 지역을 알려주세요')} description={t('지역을 더하면 같은 도시의 동문을 먼저 보여드려요.')} action={t('활동 지역 추가')} onAction={() => nav('/profile/edit')} />
+          : <PeopleStrip people={d.nearby} />}
+      </Section>
+
+      <Section title={field ? `${t('내 분야 사람')} · ${field}` : t('내 분야 사람')} action={d.field.length ? t('전체보기') : undefined} onAction={() => nav('/people?tab=search')}>
+        {d.field.length === 0
+          ? <Empty emoji="💼" title={field ? t('같은 분야 사람이 아직 없어요') : t('직무·업종을 알려주세요')} description={t('같은 분야의 동문과 자연스럽게 이어져요.')} action={t('직무·업종 추가')} onAction={() => nav('/profile/edit')} />
+          : <PeopleStrip people={d.field} />}
+      </Section>
+
+      <Section title={t('이번 주 참여 가능한 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
+        {d.thisWeek.length === 0
+          ? <Empty emoji="📅" title={t('이번 주 모임이 없어요')} action={t('모임 둘러보기')} onAction={() => nav('/meet')} />
+          : <div className="card divide-y divide-line">{d.thisWeek.map((m) => <MeetRow key={m.a.id} m={m} />)}</div>}
+      </Section>
+
+      {d.news.length > 0 && (
+        <Section title={t('내 관계망 소식')} action={t('전체보기')} onAction={() => nav('/feed?tab=following')}>
+          <div className="card divide-y divide-line">{d.news.map((n) => <NewsRow key={`${n.kind}-${n.post?.id ?? n.meet?.id ?? n.group?.id}`} n={n} />)}</div>
+        </Section>
+      )}
+
+      <Section title={t('내 그룹')} action={t('전체보기')} onAction={() => nav('/meet?tab=groups')}>
         {d.groups.length === 0
-          ? <Note>{t('아직 참여한 그룹이 없어요')}<Button size="sm" variant="outline" onClick={() => nav('/search?tab=orgs')}>{t('그룹 찾기')}</Button></Note>
+          ? <Empty emoji="👥" title={t('아직 참여한 그룹이 없어요')} action={t('그룹 찾기')} onAction={() => nav('/search?tab=groups')} />
           : <div className="card divide-y divide-line">{d.groups.map((g) => <Row key={g.id} icon={g.logo.url ? <Avatar emoji={g.logo.emoji} hue={g.logo.hue} url={g.logo.url} size={40} /> : g.logo.emoji} color="#0F2B48" title={g.name} sub={`${ORG_TYPE_LABELS[g.type]} · ${g.memberIds.length}${t('명')}`} onClick={() => nav(`/orgs/${g.id}`)} />)}</div>}
       </Section>
 
-      <Section title={t('다가오는 만남')} action={t('전체 보기')} onAction={() => nav('/meet')}>
-        {d.upcoming.length === 0
-          ? <Note>{t('예정된 만남이 없어요')}<Button size="sm" variant="outline" onClick={() => nav('/meet')}>{t('만남 둘러보기')}</Button></Note>
-          : <div className="card divide-y divide-line">{d.upcoming.map((a) => <MeetRow key={a.id} a={a} />)}</div>}
-      </Section>
-
-      {d.posts.length > 0 && (
-        <Section title={t('관련 글')} action={t('전체 보기')} onAction={() => nav('/feed')}>
-          <div className="card divide-y divide-line">
-            {d.posts.map((p) => {
-              const author = v.userById(p.authorId); const org = p.orgId ? v.orgById(p.orgId) : undefined;
-              const name = p.anonymous ? t('익명') : org?.name ?? author?.nickname ?? '';
-              return (
-                <button key={p.id} onClick={() => nav(`/feed/${p.id}`)} className="w-full flex items-start gap-3 px-3.5 py-3 text-left press">
-                  {p.anonymous || !author ? <span className="h-9 w-9 rounded-full bg-surface-2 grid place-items-center text-[16px] shrink-0">{org?.logo.emoji ?? '👤'}</span> : <Avatar emoji={author.avatar.emoji} hue={author.avatar.hue} url={author.avatar.url} size={36} />}
-                  <span className="flex-1 min-w-0"><span className="block text-[12px] font-bold text-ink-2 truncate">{name}</span><span className="block text-[13px] text-ink line-clamp-2 mt-0.5">{p.text}</span></span>
-                </button>
-              );
-            })}
-          </div>
-        </Section>
-      )}
-
       {d.opportunities.length > 0 && (
         <Section title={t('추천 기회')}>
-          <div className="card divide-y divide-line">{d.opportunities.map((o) => <OppRow key={o.id} o={o} />)}</div>
+          <div className="space-y-2">{d.opportunities.map((o) => <OpportunityCard key={o.id} o={o} variant="row" />)}</div>
         </Section>
       )}
+      <p className="px-6 mt-6 text-center text-[11px] text-ink-3 flex items-center justify-center gap-1"><MapPin size={11} /><Briefcase size={11} />{t('지역과 분야는 프로필에서 언제든 바꿀 수 있어요.')}</p>
     </>
   );
 }

@@ -30,16 +30,16 @@ Home은 social feed가 아니라 Today dashboard다. "오늘 나한테 뭐가 �
 - Opportunities (Internship, RA, Hackathon, Scholarship, Competition, Startup Program, Exchange Program; 2~3개)
 길고 무거운 infinite feed로 만들지 않는다.
 
-## 6. People
-"누구를 만나고 싶지?" 상단: **My Network | Beyond**.
-My Network = 기본 학교 네트워크(필터 Students / Master's / PhD / Alumni), 무료, swipe 또는 card discovery.
-Person Card: 큰 사진을 쓸 수 있으나 Tinder처럼 보이지 않게. 사진 아래 반드시 Context(이름·학교·기수·소속·도시) · Interests · Why You Might Connect. Buttons: Pass / Connect / Invite to Meet.
+## 6. People (v2)
+"누구를 만나고 싶지?" 상단: **추천 | 찾기 | 연결** — 학교 기준으로 나누지 않는다. 다른 학교 사람·동문을 보는 것은 **무료**.
+- 추천: 현재 맥락(학교·전공·지역·분야·관심사·그룹·모임·연결 + 찾는 것)으로 순위. 카드에는 **왜 추천되었는지**(같은 학교 · 같은 전공 · 같은 지역…)를 사진보다 먼저 보여준다. Buttons: Pass / 연결 / 만남에 초대.
+- 찾기: 학교 · 전공 · 졸업연도 · 거주 지역 · 활동 지역 · 회사 · 업종 · 직무 · 관심사 · 상태. 학교는 여러 조건 중 하나("뉴욕 + 금융", "연세대 + 서울 + AI", "Product + 도쿄").
+- 연결: 요청함 · 연결된 사람 · 팔로잉.
 
-## 7. Beyond
-주요 Premium conversion point. 기본 네트워크를 넘어 사람을 찾는 공간(다른 학교, 도시, 커뮤니티: "AI researchers in Seoul", "Founders in NYC"…).
-Free: 다른 학교 사람도 일부 preview("3 people outside your network today"). 완전 차단 금지.
-**AroundU+**: $5.99/month 또는 $49.99/year. 다른 학교 사람 무제한 discovery · 다른 학교 Alumni 탐색 · Cross-school people search · Advanced filters · 여러 학교 동시 검색 · 다른 도시 network · Extended discovery · 더 많은 introduction requests · saved search · discovery alerts.
-Paywall copy: **Expand your circle** — Discover people across universities, cities and communities. [Try AroundU+]
+## 7. AroundU+ (v2 — 유료는 "더 빠르고 정확하게 찾기")
+사람을 만나는 데 돈을 받지 않는다. 무료: 추천 사람 보기 · 타학교 사람 보기 · 동문 보기 · 기본 검색(키워드 + 필터 1개) · 기본 연결 요청(30/일) · 모임·그룹 참가 · 피드 · 메시지.
+**AroundU+** ($5.99/월 · $49.99/년, KR ₩7,900 · ₩64,900): 복수 조건 검색 · 상세 조건(직무·업종·회사·졸업연도·거주지·활동지역) · 검색 저장("뉴욕 금융권 연세대 동문") · 새 사람 알림 · 연결 요청 확대(무제한) · 고급 추천. 학생과 졸업생에게 같은 기준 — 졸업했다고 유료가 되지 않는다.
+Paywall copy: **더 정확한 사람을 더 빠르게** — 사람을 만나는 데는 돈을 받지 않아요. [구독 시작하기]
 
 ## 8–12. Meet
 Community와 Meetup을 분리하지 않는다. 상단: **For You | Groups | Events | Now**.
@@ -66,8 +66,8 @@ C. Promoted Opportunity — 기업/기관, 초기 ₩100,000–500,000 / campaig
 D. Sponsored Experience — Meetup · Workshop · Research night · Company visit · Office hours, 초기 ₩500,000–3,000,000.
 (구체 가격표와 근거는 앱 `/pricing` 페이지와 `README.md` 수익 모델 절.)
 
-## 22. What Should Remain Free
-같은 학교 People discovery · 같은 학교 alumni discovery · basic swipe · basic DM · Feed 읽기/쓰기 · Group 생성/가입 · Meet 생성/참여 · Campus information · basic profile. 핵심 social graph를 paywall 뒤에 넣지 않는다.
+## 22. What Should Remain Free (v2)
+추천 사람 보기 · **타학교 사람 보기** · 동문 보기 · 기본 검색 · 기본 연결 요청(30/일) · 모임 참가 · 그룹 참가·생성 · Feed 읽기/쓰기 · Campus information · basic profile · 메시지. 핵심 social graph를 paywall 뒤에 넣지 않는다. 유료는 §7 의 "찾기" 기능만.
 
 ## 23. Core Product Loops
 1 Social: People → Connect → DM → Meet → Stay connected. 2 Activity: Meet → Join → Meet people → Connect → Join Group. 3 Content: Feed → post → profile/group → Connect or Meet. 4 Expansion: My Network → value → Beyond preview → AroundU+ → Expanded network.
@@ -78,11 +78,22 @@ Not a dating app(하트·romantic 언어·match 집착 금지 → Connect · Mee
 ## 25. Visual Direction
 Modern · Premium · Warm · Social · International · Trustworthy. 한국식 커뮤니티 게시판, 데이팅 핑크/레드, LinkedIn 블루 지양. (구현은 Stitch **Pastel Breeze** 디자인 시스템을 유지: `design/stitch/DESIGN.md`.)
 
-## 26. Screens
-Onboarding 8(Splash · Login/Sign up · School selection · School verification · Current stage · Interests · What are you looking for? · Schedule setup) · Home 3(Student · Graduate/PhD · Alumni) · People 6(My Network · Swipe · Profile · Beyond · Advanced Search · Paywall) · Meet 7 · Feed 7(For You · Campus · Following · Post Detail · Create · Sponsored · Boost) · Profile 6 · Messaging 3.
+## 26. Screens (v2 — 36화면, 상세는 `docs/UX-SPEC.md` 14절)
+가입 9(시작 · 학교 선택 · 학교 인증 · 현재 상태 · 기본 프로필 · 관심사 · 지역 · 무엇을 찾고 있나요 · 시간표(학생)/현재 직업(졸업생)) · 학생 10(홈 · 사람 추천 · 사람 검색 · 사람 상세 · 모임 · 그룹 · 피드 · 학교 피드 · 프로필 · 시간표) · 졸업생 9(홈 · 추천 · 지역 탐색 · 직업/업종 탐색 · 동문 탐색 · 상세 검색 · 모임 · 피드 · 프로필) · 전환 2(졸업 상태 업데이트 · 학생 → Alumni) · 유료 6(고급 검색 · 복수 조건 · 검색 저장 · 새 사람 알림 · AroundU+ 설명 · 결제).
 
 ## 27. Key User Flows
 A Home → free time → Find someone → People → Connect → DM → Coffee Meet. B People → Beyond → preview → AroundU+ paywall. C Meet → Join Group → Join Event → Group Chat → Connect. D Feed → post → profile → Connect → Invite to Meet. E Campus Home → Club/Event → Group → Join → Event.
+
+## 27-1. v2 보완 (2026-09-27, `docs/UX-SPEC.md`)
+제품 오너의 "제품 정체성 및 UX 재설계" 스펙을 반영했다.
+- **정체성**: 검증된 대학 관계망에서 시작 → 지금 나와 관련 있는 사람 발견 → 졸업 후에도 관계망 확장. 학교는 입장 자격이자 첫 번째 신뢰·맥락일 뿐, 평생 가두는 범위가 아니다.
+- **가입·인증**: 재학생(학교 이메일 · SSO · 학생증) / 졸업생(졸업생 이메일 · 졸업증명 · 동문회 연동 · 이전 인증 이력) 중 하나 이상. 최초 가입 정보는 학교 인증 · 상태 · 지역 · 전공/하는 일 · 관심사 · 무엇을 찾나(어떤 사람 · 어떤 활동)까지만.
+- **상태**: 학부 / 석사 / 박사 / 졸업. 같은 앱, 추천 우선순위와 홈 구성만 다르다(학생: 학교·전공·시간표·공강·관심사 / 졸업생: 거주 지역·하는 일·업종·직무·학교·관심사).
+- **지역**: 거주 지역과 활동 지역을 분리(도시 단위, 주소 없음). GPS 는 별도.
+- **탭**: 홈 · 사람(추천 | 찾기 | 연결) · 모임(추천 | 그룹 | 일정) · 피드(추천 | 내 학교 | 팔로잉) · 프로필. 그룹은 자유 성격(학교·지역·관심사·직업), 모임은 시간·장소·참여자·인원·공개 범위만.
+- **전환**: "현재 상태가 바뀌었나요?" → 졸업 → 거주 도시·하는 일만 입력. 연결·글·그룹·인증·활동 기록 유지.
+- **과금**: 타학교 보기 무료. 유료는 복수 조건·상세 조건 검색 · 검색 저장 · 새 사람 알림 · 연결 요청 확대 · 고급 추천.
+- **맥락**: KO(한국 대학·도시·업종) / EN(미국 대학·도시·업종) 두 프리셋을 같은 구조에 얹는다.
 
 ## 28–29. Principle · Brand
 Your university gives you your first trusted network. But users are never trapped inside it: My university → My interests → My city → My profession → My wider network.

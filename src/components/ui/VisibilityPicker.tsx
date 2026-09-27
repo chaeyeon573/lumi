@@ -1,4 +1,4 @@
-import { Globe, School, Users, UserCheck, Lock, Building2, ChevronRight, Heart } from 'lucide-react';
+import { Globe, School, Users, UserCheck, Lock, Building2, ChevronRight, Heart, UsersRound } from 'lucide-react';
 import { t } from '@core/i18n';
 import type { Visibility } from '@core/types';
 import { VISIBILITY_LABELS, VISIBILITY_ORDER } from '@core/lib/labels';
@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { BottomSheet } from './Sheet';
 
 export const VISIBILITY_ICONS: Record<Visibility, typeof Globe> = {
-  public: Globe, school: School, department: Building2, friends: Users, followers: Heart, selected: UserCheck, private: Lock,
+  public: Globe, school: School, department: Building2, friends: Users, followers: Heart, selected: UserCheck, private: Lock, group: UsersRound,
 };
 
 interface Props {

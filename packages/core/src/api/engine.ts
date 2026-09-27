@@ -6,14 +6,17 @@
  */
 import { FREE_SWIPES_PER_DAY } from '@core/lib/monetization';
 import { todayISO as todayISO_ } from '@core/lib/format';
-import type { Patch, Snapshot, RegisterInput, ActivityInput, PostInput, OpportunityInput, TimePollInput } from './types';
+import type { Patch, Snapshot, RegisterInput, ActivityInput, PostInput, OpportunityInput, TimePollInput, GroupInput } from './types';
 import type {
-  Activity, ActivityProposal, Availability, ChatRoom, ID, Notification, OpportunityIntent, Participation, Post, User, Opportunity, TimePoll, TimeOption, ReportTargetType, Plan, Stage, Career, BoostTier } from '@core/types';
+  Activity, ActivityProposal, Availability, ChatRoom, ID, Notification, OpportunityIntent, Participation, Post, User, Opportunity, TimePoll, TimeOption, ReportTargetType, Plan, Stage, Career, BoostTier,
+  Wants, VerificationMethod, PeopleSearch, SavedSearch, Organization } from '@core/types';
 import { STAGE_ROLE } from '@core/types';
 import { freeBlocks, jsDayToIdx, toMin } from '@core/lib/timetable';
 import { uid, pairKey } from '@core/lib/format';
 import { CATEGORY_LABELS } from '@core/lib/labels';
 import { canMessage } from '@core/lib/relations';
+import { searchPeople } from '@core/lib/people';
+import { openToFromWants } from '@core/lib/wants';
 
 export interface EngineContext {
   /** 변경 가능한 데이터. 엔진은 이 객체를 직접 수정한다 */
@@ -103,6 +106,15 @@ export function createEngine(ctx: EngineContext) {
 
   const later = (ms: number, fn: () => void) => { if (ctx.demo) setTimeout(fn, ms); };
 
+  /** 연결 요청 카운트 — 무료 플랜은 하루 FREE_SWIPES_PER_DAY 회. 어디서 보내든(추천·찾기·프로필) 같은 한도 */
+  function recordConnect(id: ID) {
+    const u = find(db().users, id);
+    const today = todayISO_();
+    const count = u.swipes?.date === today ? u.swipes.count : 0;
+    if (u.plan !== 'plus' && count >= FREE_SWIPES_PER_DAY) throw new Error(`${t('오늘 연결 요청')} ${FREE_SWIPES_PER_DAY}${t('회를 다 썼어요. AroundU+에서 무제한으로.')}`);
+    u.swipes = { date: today, count: count + 1 };
+  }
+
   return {
     find,
     notify,
@@ -117,24 +129,29 @@ export function createEngine(ctx: EngineContext) {
 
     register(input: RegisterInput): User {
       const school = find(db().schools, input.schoolId);
+      const verified = input.emailVerified || !!input.verification;
+      const homeCity = input.homeCity?.trim() || school.region;
       const user: User = {
         id: uid('u'), nickname: input.nickname, birthYear: input.birthYear, gender: input.gender, avatar: input.avatar,
         identityVerified: false,
         affiliation: {
           type: 'university', schoolId: school.id, schoolName: school.name, role: input.role, department: input.department, year: input.year,
-          emailVerified: input.emailVerified, showSchool: input.showSchool, showDepartment: input.showDepartment,
+          emailVerified: verified, showSchool: input.showSchool, showDepartment: input.showDepartment,
         },
         bio: input.bio, likes: input.likes, freeTime: input.freeTime, height: input.height, availability: input.availability,
-        interests: input.interests, purposes: input.purposes, preferredPartner: input.preferredPartner, region: school.region,
+        interests: input.interests, purposes: input.purposes, preferredPartner: input.preferredPartner, region: homeCity,
+        homeCity, activityCity: input.activityCity?.trim() || undefined, gradYear: input.gradYear,
+        verification: input.verification ? { method: input.verification, at: now() } : verified ? { method: 'school_email', at: now() } : undefined,
+        wants: input.wants,
         prompts: input.prompts, voicePrompt: input.voicePrompt, poll: input.poll, timetable: input.timetable ?? [],
         goals: input.goals, lookingFor: input.lookingFor ?? [], canOffer: input.canOffer ?? [], living: input.living, interestedOrgIds: [], meetPreference: input.meetPreference ?? [],
         fieldVisibility: input.fieldVisibility,
         settings: { messagePolicy: 'connected', notifications: input.notifications, locationPermission: input.locationPermission },
-        stage: input.stage, openTo: input.openTo, career: input.career,
+        stage: input.stage, openTo: input.openTo ?? (input.wants ? openToFromWants(input.wants) : undefined), career: input.career,
         createdAt: now(),
       };
       db().users.push(user);
-      notify(user.id, { type: 'nearby_activity', title: t('AroundU에 오신 걸 환영해요'), body: t('학교 주변에서 열리는 활동을 홈에서 확인해보세요.'), link: '/' });
+      notify(user.id, { type: 'nearby_activity', title: t('AroundU에 오신 걸 환영해요'), body: t('사람 탭에서 지금 나와 관련 있는 사람을 먼저 만나보세요.'), link: '/people' });
       return user;
     },
 
@@ -162,14 +179,10 @@ export function createEngine(ctx: EngineContext) {
         u.poll.votes[voterId] = optionIndex;
         return { users: [u] };
       },
-      /** 오른쪽 스와이프(친구 요청) 1회 기록 — 무료 플랜은 하루 한도를 넘기면 거부 */
+      /** 연결 요청 1회 기록 — 무료 플랜은 하루 한도를 넘기면 거부 */
       recordSwipe(id: ID): Patch {
-        const u = find(db().users, id);
-        const today = todayISO_();
-        const count = u.swipes?.date === today ? u.swipes.count : 0;
-        if (u.plan !== 'plus' && count >= FREE_SWIPES_PER_DAY) throw new Error(t('오늘 친구 요청 한도를 다 썼어요. AroundU+에서 무제한으로.'));
-        u.swipes = { date: today, count: count + 1 };
-        return { users: [u] };
+        recordConnect(id);
+        return { users: [find(db().users, id)] };
       },
       /** 요금제 변경 (모의 결제 — 실제 과금 없음) */
       setPlan(id: ID, plan: Plan): Patch {
@@ -177,20 +190,69 @@ export function createEngine(ctx: EngineContext) {
         u.plan = plan;
         return { users: [u] };
       },
-      /** 생애 단계 변경 — Alumni 전환은 온보딩을 다시 요구하지 않는다. 학교·관심사·그룹은 유지 */
-      setStage(id: ID, stage: Stage, career?: Career): Patch {
+      /** 생애 단계 변경 — 졸업 전환은 온보딩을 다시 요구하지 않는다. 연결·글·그룹·학교 인증·활동 기록 모두 유지 */
+      setStage(id: ID, stage: Stage, career?: Career, homeCity?: string, activityCity?: string): Patch {
         const u = find(db().users, id);
         u.stage = stage;
         if (u.affiliation.type === 'university') u.affiliation.role = STAGE_ROLE[stage];
         if (career) u.career = { ...u.career, ...career };
-        if (stage === 'alumni' || stage === 'professional') { if (u.career?.city) u.region = u.career.city; }
+        if (homeCity?.trim()) { u.homeCity = homeCity.trim(); u.region = u.homeCity; }
+        if (activityCity !== undefined) u.activityCity = activityCity.trim() || undefined;
+        if ((stage === 'alumni' || stage === 'professional') && !homeCity && u.career?.city) { u.homeCity = u.career.city; u.region = u.career.city; }
+        if (stage === 'alumni' || stage === 'professional') {
+          if (!u.gradYear || u.gradYear > new Date().getFullYear()) u.gradYear = new Date().getFullYear();
+          if (u.affiliation.type === 'university') u.affiliation.year = u.gradYear;
+        }
         return { users: [u] };
+      },
+      updateWants(id: ID, wants: Wants): Patch {
+        const u = find(db().users, id);
+        u.wants = { people: [...wants.people], activities: [...wants.activities] };
+        u.openTo = openToFromWants(u.wants);
+        return { users: [u] };
+      },
+      /** 학교 인증 완료 — 방법을 기록하고 emailVerified 를 켠다 (데모: 즉시) */
+      verify(id: ID, method: VerificationMethod): Patch {
+        const u = find(db().users, id);
+        u.verification = { method, at: now() };
+        if (u.affiliation.type === 'university') u.affiliation.emailVerified = true;
+        return { users: [u] };
+      },
+    },
+
+    /** 저장한 사람 검색 — AroundU+ 기능. 조건 저장 · 새 사람 알림 */
+    searches: {
+      save(userId: ID, name: string, criteria: PeopleSearch, alert: boolean): Patch {
+        const me = find(db().users, userId);
+        const matched = searchPeople(db().users, me, criteria).length;
+        const s: SavedSearch = { id: uid('ss'), userId, name: name.trim() || t('저장한 검색'), criteria: structuredClone(criteria), alert, lastMatched: matched, createdAt: now() };
+        db().savedSearches.unshift(s);
+        return { savedSearches: [s] };
+      },
+      remove(id: ID): Patch {
+        db().savedSearches = db().savedSearches.filter((s) => s.id !== id);
+        return { removed: { savedSearches: [id] } };
+      },
+      setAlert(id: ID, alert: boolean): Patch {
+        const s = find(db().savedSearches, id); s.alert = alert; return { savedSearches: [s] };
+      },
+      /** 조건을 다시 실행 — 데모에서는 알림이 켜져 있으면 '새 사람 N명' 알림을 만든다 */
+      run(userId: ID, id: ID): Patch {
+        const s = find(db().savedSearches, id);
+        const me = find(db().users, userId);
+        const matched = searchPeople(db().users, me, s.criteria).length;
+        const fresh = Math.max(1, matched - s.lastMatched);
+        s.lastMatched = matched;
+        const nts: Notification[] = s.alert ? [notify(userId, { type: 'new_people', title: t('조건에 맞는 새 사람'), body: `"${s.name}" ${t('조건에 맞는 사람이')} ${fresh}${t('명 새로 들어왔어요.')}`, link: `/people/results?saved=${s.id}` })] : [];
+        return { savedSearches: [s], notifications: nts };
       },
     },
 
     activities: {
       create(hostId: ID, input: ActivityInput): { activity: Activity; patch: Patch } {
-        const activity: Activity = { id: uid('a'), hostId, hostType: input.orgId ? 'org' : 'user', comments: [], createdAt: now(), ...input };
+        // 그룹 안에서 만든 모임: hostType 은 org_event 일 때만 org. 개인이 그룹에 올리는 모임은 사람이 주최
+        if (input.visibility === 'group' && !input.orgId) throw new Error(t('공개할 그룹을 골라주세요.'));
+        const activity: Activity = { id: uid('a'), hostId, hostType: input.kind === 'org_event' && input.orgId ? 'org' : 'user', comments: [], createdAt: now(), ...input };
         db().activities.unshift(activity);
         const room = ensureActivityRoom(activity);
         // 초대된 사람은 바로 참가자로 등록
@@ -279,6 +341,11 @@ export function createEngine(ctx: EngineContext) {
       create(authorId: ID, input: PostInput): { post: Post; patch: Patch } {
         const post: Post = { id: uid('po'), authorId, authorType: input.orgId ? 'org' : 'user', likeIds: [], savedIds: [], comments: [], createdAt: now(), showOnProfile: true, showOnFeed: true, ...input };
         if (post.anonymous) { post.media = []; post.taggedUserIds = []; }
+        if (post.visibility === 'group') {
+          if (!post.groupId) throw new Error(t('공개할 그룹을 골라주세요.'));
+          const g = find(db().organizations, post.groupId);
+          if (!g.memberIds.includes(authorId) && !g.adminIds.includes(authorId)) throw new Error(t('가입한 그룹에만 글을 올릴 수 있어요.'));
+        } else { delete post.groupId; }
         db().posts.unshift(post);
         const author = find(db().users, authorId);
         const nts: Notification[] = [];
@@ -355,10 +422,12 @@ export function createEngine(ctx: EngineContext) {
       sendFriendRequest(fromId: ID, toId: ID): Patch {
         const r = db().relationships;
         if (r.friendRequests.some((q) => q.fromId === fromId && q.toId === toId && q.status === 'pending')) return { relationships: r };
+        if (r.friends.some((f) => pairKey(f.a, f.b) === pairKey(fromId, toId))) return { relationships: r };
+        recordConnect(fromId);
         const req = { id: uid('fr'), fromId, toId, status: 'pending' as const, createdAt: now() };
         r.friendRequests.push(req);
         if (AUTO_ACCEPT_FRIEND.has(toId)) later(5000, () => { if (req.status === 'pending') ctx.push(acceptFriend(req.id)); });
-        return { relationships: r };
+        return { relationships: r, users: [find(db().users, fromId)] };
       },
       cancelFriendRequest(requestId: ID): Patch {
         const r = db().relationships;
@@ -395,10 +464,39 @@ export function createEngine(ctx: EngineContext) {
     },
 
     orgs: {
+      /** 가입 — 자유 그룹(open)은 즉시 멤버, 승인제·기존 조직은 지원 목록 */
       apply(orgId: ID, userId: ID): Patch {
         const org = find(db().organizations, orgId);
-        if (!org.applicantIds.includes(userId) && !org.memberIds.includes(userId)) org.applicantIds.push(userId);
+        if (org.memberIds.includes(userId)) return { organizations: [org] };
+        if (org.joinPolicy === 'open') {
+          org.memberIds.push(userId);
+          org.applicantIds = org.applicantIds.filter((i) => i !== userId);
+          return { organizations: [org] };
+        }
+        if (!org.applicantIds.includes(userId)) org.applicantIds.push(userId);
         return { organizations: [org] };
+      },
+      leave(orgId: ID, userId: ID): Patch {
+        const org = find(db().organizations, orgId);
+        org.memberIds = org.memberIds.filter((i) => i !== userId);
+        org.applicantIds = org.applicantIds.filter((i) => i !== userId);
+        org.adminIds = org.adminIds.filter((i) => i !== userId);
+        return { organizations: [org] };
+      },
+      /** 자유 그룹 만들기 — 학교·지역·관심사·직업 어느 기반이든. 만든 사람이 운영진이자 첫 멤버 */
+      create(userId: ID, input: GroupInput): { org: Organization; patch: Patch } {
+        const me = find(db().users, userId);
+        const org: Organization = {
+          id: uid('o'), name: input.name.trim(), logo: input.logo, type: 'community', scope: input.scope,
+          city: input.scope === 'city' ? (input.city?.trim() || me.homeCity || me.region) : input.city?.trim() || undefined,
+          schoolId: input.scope === 'school' ? (input.schoolId ?? (me.affiliation.type === 'university' ? me.affiliation.schoolId : undefined)) : undefined,
+          joinPolicy: input.joinPolicy, interests: input.interests ?? [], verified: false, description: input.description.trim(),
+          gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [userId], adminIds: [userId], applicantIds: [],
+        };
+        db().organizations.unshift(org);
+        const room: ChatRoom = { id: uid('cr'), type: 'org', orgId: org.id, memberIds: [userId], title: org.name, messages: [{ id: uid('m'), senderId: userId, text: t('그룹 채팅방이 열렸어요.'), createdAt: now(), system: true }], lastReadAt: {}, createdAt: now() };
+        db().chatRooms.push(room);
+        return { org, patch: { organizations: [org], chatRooms: [room] } };
       },
     },
 

@@ -1,5 +1,12 @@
 /** 한국어 원문 → 영어. 키는 소스의 한국어 문자열 그대로 */
+import { en_common } from './v2/common';
+import { en_onboarding } from './v2/onboarding';
+import { en_people } from './v2/people';
+import { en_meet } from './v2/meet';
+import { en_profile } from './v2/profile';
+
 export const en: Record<string, string> = {
+  ...en_common, ...en_onboarding, ...en_people, ...en_meet, ...en_profile,
   '로그인이 필요해요.': 'Please sign in.',
   '입력값을 확인해주세요.': 'Please check your input.',
   '이미 가입된 이메일이에요. 이메일로 로그인해주세요.': 'That email is already registered. Sign in with email instead.',
@@ -326,7 +333,7 @@ export const en: Record<string, string> = {
   '초대받은 사람만 참가': 'Invite only',
   '학부생': 'Undergrad',
   '대학원생': 'Grad student',
-  '졸업생': 'Alum',
+  '졸업생': 'Alumni',
   '학과': 'Department',
   '연구실': 'Lab',
   '학생회': 'Student council',

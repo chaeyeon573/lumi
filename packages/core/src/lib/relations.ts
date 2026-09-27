@@ -3,7 +3,7 @@ import { t } from '@core/i18n';
 import type { Activity, ID, Post, User, Visibility, ProfileField } from '@core/types';
 import { pairKey } from './format';
 
-type Rel = Pick<Snapshot, 'relationships' | 'participations' | 'proposals' | 'users'>;
+type Rel = Pick<Snapshot, 'relationships' | 'participations' | 'proposals' | 'users'> & { organizations?: Snapshot['organizations'] };
 
 export const isFriend = (s: Rel, a: ID, b: ID) => s.relationships.friends.some((f) => pairKey(f.a, f.b) === pairKey(a, b));
 export const isBlocked = (s: Rel, a: ID, b: ID) => s.relationships.blocks.some((x) => (x.fromId === a && x.toId === b) || (x.fromId === b && x.toId === a));
@@ -77,14 +77,15 @@ export function canView(s: Rel, viewer: User, ownerId: ID, visibility: Visibilit
     case 'friends': return isFriend(s, viewer.id, ownerId);
     case 'followers': return isFollowing(s, viewer.id, ownerId) || isFriend(s, viewer.id, ownerId);
     case 'selected': return (targets ?? []).includes(viewer.id);
+    case 'group': return (targets ?? []).some((gid) => s.organizations?.some((o) => o.id === gid && (o.memberIds.includes(viewer.id) || o.adminIds.includes(viewer.id))));
     case 'private': return false;
   }
 }
 
 export const canViewActivity = (s: Rel, viewer: User, a: Activity) =>
-  canView(s, viewer, a.hostId, a.visibility, a.visibilityTargets) || (a.joinPolicy === 'invite' && (a.invitedIds ?? []).includes(viewer.id));
+  canView(s, viewer, a.hostId, a.visibility, a.visibility === 'group' ? (a.orgId ? [a.orgId] : []) : a.visibilityTargets) || (a.joinPolicy === 'invite' && (a.invitedIds ?? []).includes(viewer.id));
 
-export const canViewPost = (s: Rel, viewer: User, p: Post) => canView(s, viewer, p.authorId, p.visibility);
+export const canViewPost = (s: Rel, viewer: User, p: Post) => canView(s, viewer, p.authorId, p.visibility, p.visibility === 'group' ? (p.groupId ? [p.groupId] : []) : undefined);
 
 /** 같은 수업을 듣는 사람 (시간표 공개 범위를 지킨다) */
 export const classmates = (s: Rel, viewer: User, courseName: string, canSee: (u: User) => boolean) =>
@@ -107,6 +108,7 @@ export function visibilityDescription(v: Visibility) {
     case 'friends': return t('친구만 볼 수 있어요');
     case 'followers': return t('나를 팔로우하는 사람과 친구만 볼 수 있어요');
     case 'selected': return t('선택한 사람만 볼 수 있어요');
+    case 'group': return t('그룹 멤버만 볼 수 있어요');
     case 'private': return t('나만 볼 수 있어요');
   }
 }

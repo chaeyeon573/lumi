@@ -27,7 +27,7 @@ export function affiliationText(u: User, showSchoolOverride?: boolean) {
   return parts.join(' · ');
 }
 
-const VISIBILITY_ICONS = { public: Globe, school: School, department: Building2, friends: Users, followers: Heart, selected: UserCheck, private: Lock } as const;
+const VISIBILITY_ICONS = { public: Globe, school: School, department: Building2, friends: Users, followers: Heart, selected: UserCheck, private: Lock, group: Users } as const;
 export function VisibilityTag({ value }: { value: Visibility }) {
   const Icon = VISIBILITY_ICONS[value];
   return <View style={tw`flex-row items-center`}><Icon size={12} color={C.ink3} /><Text style={tw`ml-1 text-[11px] font-semibold text-ink-3`}>{VISIBILITY_LABELS[value]}</Text></View>;

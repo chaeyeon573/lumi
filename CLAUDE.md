@@ -16,8 +16,8 @@
 - **API 메서드 추가·수정은 `packages/core/src/api/engine.ts`** (mock과 서버가 같이 씀). `api/mock/index.ts`, `api/remote/index.ts`에 도메인 로직을 쓰지 않는다. 서버 권한 규칙은 `server/index.ts`의 `RULES`에 메서드마다 한 줄 추가.
 - 타입은 `packages/core/src/types/index.ts`, API 계약은 `packages/core/src/api/types.ts`.
 - core는 브라우저·RN API를 직접 쓰지 않는다. 저장소·환경변수·자산은 `@core/platform`(`getPlatform()`) 어댑터로. (`import.meta`, `localStorage`, `window` 금지)
-- 시드 스키마가 바뀌면 `api/mock/db.ts`의 `STORAGE_KEY` 버전(vN)을 올린다.
-- 문구는 한국어 원문을 키로 `t('한국어')`, 영어는 `packages/core/src/i18n/en.ts`에 추가. 미번역 키 점검: 스크래치패드 `missing.mjs` 패턴(`t()` 키 ↔ `en.ts` 비교).
+- 시드 스키마가 바뀌면 `api/mock/db.ts`의 `DB_VERSION` 을 올린다 (현재 v9).
+- 문구는 한국어 원문을 키로 `t('한국어')`, 영어는 `packages/core/src/i18n/en.ts`(또는 화면 영역별 `i18n/v2/*.ts`)에 추가. 미번역 키 점검: 스크래치패드 `missing.mjs` 패턴(`t()` 키 ↔ `en.ts` 비교).
 - **커밋 전** `npm run typecheck && npm run typecheck:server && npm run build` 모두 통과. 모바일을 건드렸으면 `cd apps/mobile && npx tsc --noEmit && npx expo export --platform ios`.
 - 브랜치는 새로 파지 않고 지정된 작업 브랜치에서 계속. 배포 브랜치(`claude/friendly-euler-emuo1f`, Railway)로는 제품 오너가 합친다.
 
@@ -26,22 +26,25 @@
 | 탭 | 질문 | 웹 파일 |
 | --- | --- | --- |
 | Home — 오늘 대시보드 | 오늘 나에게 뭐가 있나 | `src/pages/home/HomePage.tsx` (`@core/lib/home`: `homeToday`, `alumniHome`) |
-| People — My Network / Beyond | 누구를 만날까 | `src/pages/people/{PeoplePage,BeyondPage,AdvancedSearchPage}.tsx` (`@core/lib/network`) |
-| Meet — For You / Groups / Events / Now | 무엇을 같이 할까 | `src/pages/meet/{MeetPage,CreateMeetPage}.tsx` |
-| Feed — For You / Campus / Following | 무슨 이야기가 오가나 | `src/pages/feed/{FeedPage,PostDetailPage}.tsx` (`@core/lib/feed`) |
-| Profile | 나는 지금 어떤 사람인가 | `src/pages/profile/*` |
-온보딩 8화면 `src/pages/onboarding/*`. 과금 설명 `src/pages/pricing/PricingPage.tsx` (`/pricing`).
+| People — **추천 \| 찾기 \| 연결** (학교로 나누지 않음, 타학교 무료) | 누구를 만날까 | `src/pages/people/{PeoplePage,PeopleResultsPage,PersonPage}.tsx` (`@core/lib/people`, `recommend`, `network`) |
+| Meet — **추천 \| 그룹 \| 일정** (그룹은 자유 성격, 모임은 시간·장소·인원·공개 범위만) | 무엇을 같이 할까 | `src/pages/meet/{MeetPage,CreateMeetPage}.tsx`, `src/pages/groups/CreateGroupPage.tsx`, `src/pages/org/OrgPage.tsx` (`@core/lib/meet`) |
+| Feed — **추천 \| 내 학교(재학생만/전체) \| 팔로잉**, 공개 범위 전체/내 학교/특정 그룹/팔로워 | 무슨 이야기가 오가나 | `src/pages/feed/{FeedPage,PostDetailPage}.tsx`, `src/pages/create/CreatePostPage.tsx` (`@core/lib/feed`) |
+| Profile — 현재(거주·활동 지역·하는 일) · 추천 설정(wants) · "현재 상태가 바뀌었나요?" | 나는 지금 어떤 사람인가 | `src/pages/profile/{ProfilePage,WantsPage,StatusPage,StatusCareerPage,EditProfilePage}.tsx` |
+온보딩 9단계 `src/pages/onboarding/*` (학교 → 인증(방법 여러 개) → 상태 → 기본 프로필 → 관심사 → 지역(거주·활동) → 무엇을 찾나 → 시간표/현재 직업). AroundU+ 설명·결제 `src/pages/plus/*` (`/plus`, `/plus/checkout`), 과금 상세 `src/pages/pricing/PricingPage.tsx` (`/pricing`). **개발자 스펙: `docs/UX-SPEC.md`** (화면 계층·추천 가중치·필터·공개 범위·전환·36화면 표).
+- 추천은 `@core/lib/recommend` `matchReasons`(단계별 `REASON_WEIGHTS` + `wants` 부스트)와 `@core/lib/people` `recommendPeople` 로만 만든다. 카드에는 항상 이유 칩(`ReasonChips`)을 보여준다.
+- 거주 지역 `homeCity` ≠ 활동 지역 `activityCity` ≠ GPS. 도시 단위만, 주소 금지. `cityOf(u)` 사용.
+- 한국/미국 맥락 프리셋은 `@core/lib/locale-context` `localeContext()` (인증 방법·도시·업종·직무·전공·프리셋).
 
-## Free vs Premium (PRD 22절 — 절대 유료화 금지 목록)
-무료: 같은 학교 people discovery, 같은 학교 alumni, 기본 스와이프(하루 30회), 기본 DM, Feed 읽기/쓰기, Group 생성/가입, Meet 생성/참여, Campus 정보, 기본 프로필.
-유료(**AroundU+**, 모의 결제): Beyond(다른 학교·도시) 무제한, cross-school alumni, 고급 필터, 다중 학교 검색, saved search·alerts, 더 많은 introduction requests, 광고 없음. 그 외 Boost·Promoted Opportunity·Sponsored Experience·Sponsored Post. 상수·가격은 `@core/lib/monetization`.
+## Free vs Premium (PRD 7·22절 v2 — 절대 유료화 금지 목록)
+**사람을 만나는 데 돈을 받지 않는다.** 무료: 추천 사람 보기, **타학교 사람 보기**, 동문 보기, 기본 검색(키워드 + 필터 1그룹), 기본 연결 요청(하루 30회, `FREE_SWIPES_PER_DAY`), 모임·그룹 참가·생성, Feed 읽기/쓰기, 메시지, 기본 프로필.
+유료(**AroundU+**, 모의 결제): 복수 조건 검색(필터 2그룹 이상), 상세 조건(회사·업종·직무·졸업연도·활동 지역), 검색 저장, 새 사람 알림, 연결 요청 무제한, 고급 추천, 광고 없음. 판정은 `@core/lib/people` `isAdvancedSearch`. 학생·졸업생 같은 기준. 그 외 Boost·Promoted Opportunity·Sponsored Experience·Sponsored Post. 상수·가격은 `@core/lib/monetization`.
 
 ## 디자인
 Stitch **Pastel Breeze** 유지 (`design/stitch/DESIGN.md`, 참고 화면 `design/stitch/*.png`): 흰 배경, 알약 모양, 슬레이트 코발트 `#0F2B48` 액션, 파스텔 블루 `#A3D5FF`/`#BFF4FF`/`#D2E4FF`, Plus Jakarta Sans. 글은 최소한으로.
 용어: **Connect · Meet · Invite · Why you might connect**. 하트·"좋아요"·"매칭"·romantic 언어 금지(데이팅 앱 아님). 직함·이력으로 시작하지 않음(LinkedIn 아님).
 
 ## 데모 편의
-mock API(localStorage/AsyncStorage). 데모 계정 자동 로그인, 언어 전환(KO 한국 대학 / EN 미국 대학 — 데이터셋이 바뀜), 설정 › 데모 도구(데이터 초기화·플랜 초기화·스와이프 카운트 초기화·졸업생 전환·데모 사용자 전환). 이메일 인증 코드 `123456`.
+mock API(localStorage/AsyncStorage). 데모 계정 자동 로그인, 언어 전환(KO 한국 대학 / EN 미국 대학 — 데이터셋이 바뀜), 설정 › 데모 도구(데이터 초기화·플랜 초기화·연결 요청 카운트 초기화·재학생으로 되돌리기·새 사람 알림 시뮬레이션). 이메일 인증 코드 `123456`.
 
 ## 검증·배포
 - 웹 스모크: Playwright 스크립트는 스크래치패드(`e2e.mjs` 패턴, 400×820, KO/EN).

@@ -1,15 +1,17 @@
 // ─── 공통 ────────────────────────────────────────────────────────────────
 export type ID = string;
 
-/** 항목별 공개 범위 */
-export type Visibility = 'public' | 'school' | 'department' | 'friends' | 'followers' | 'selected' | 'private';
+/** 항목별 공개 범위. 'group' = 특정 그룹 멤버만 (Post.groupId / Activity.orgId) */
+export type Visibility = 'public' | 'school' | 'department' | 'friends' | 'followers' | 'selected' | 'private' | 'group';
 
 /** 활동 가능한 시간 (완전한 시간표 대신 사용) */
 export type Availability = 'now' | 'afternoon' | 'after18' | 'weekend' | 'in_class' | 'hidden';
 
 export type Interest =
   | 'coffee' | 'meal' | 'study' | 'exercise' | 'walk' | 'cycling' | 'shopping'
-  | 'exhibition' | 'club' | 'research' | 'startup' | 'networking' | 'etc';
+  | 'exhibition' | 'club' | 'research' | 'startup' | 'networking' | 'etc'
+  // v2 온보딩 관심사 (AI · 디자인 · 금융 · 여행 · 음악 · 영화 · 독서 · 사진 · 요리 · 봉사 · 투자 · 예술 · 게임 · 패션 · 러닝)
+  | 'ai' | 'design' | 'finance' | 'travel' | 'music' | 'film' | 'reading' | 'photo' | 'cooking' | 'volunteer' | 'invest' | 'art' | 'game' | 'fashion' | 'running';
 
 export type Purpose = 'friend' | 'dating' | 'study' | 'hobby' | 'club' | 'networking' | 'any';
 
@@ -135,8 +137,18 @@ export interface User {
   career?: Career;
   /** 지금 열려 있는 것 (PRD "Open To") */
   openTo?: OpenTo[];
-  /** 오늘 보낸 친구 요청(오른쪽 스와이프) 수 — 무료 플랜 일일 한도 계산용 */
+  /** 오늘 보낸 연결 요청 수 — 무료 플랜 일일 한도 계산용 */
   swipes?: { date: string; count: number };
+  /** 거주 도시 (도시·생활권 단위, 상세 주소 없음). 없으면 region */
+  homeCity?: string;
+  /** 주 활동 지역 (선택) — 거주지와 다를 수 있다 (예: 거주 성남 · 활동 서울) */
+  activityCity?: string;
+  /** 졸업연도 또는 졸업 예정연도 */
+  gradYear?: number;
+  /** 학교 소속 인증 — 방법과 시각. 있으면 affiliation.emailVerified 도 true */
+  verification?: { method: VerificationMethod; at: string };
+  /** 무엇을 찾고 있나 — 온보딩에서 묻고 추천 가중치에 쓴다. 프로필 › 추천 설정에서 언제든 수정 */
+  wants?: Wants;
   createdAt: string;
 }
 
@@ -145,6 +157,47 @@ export type Stage = 'undergrad' | 'masters' | 'phd' | 'alumni' | 'professional';
 export interface Career { city?: string; company?: string; industry?: string; role?: string }
 export type OpenTo = 'coffee' | 'activities' | 'research' | 'networking' | 'mentoring' | 'cofounding';
 export const STAGE_ROLE: Record<Stage, UniversityRole> = { undergrad: 'undergraduate', masters: 'graduate', phd: 'graduate', alumni: 'alumni', professional: 'alumni' };
+
+/** 학교 인증 방법 — 재학생: school_email · sso · student_id / 졸업생: alumni_email · diploma · alumni_association · prior_student */
+export type VerificationMethod = 'school_email' | 'sso' | 'student_id' | 'alumni_email' | 'diploma' | 'alumni_association' | 'prior_student';
+export const STUDENT_VERIFICATIONS: VerificationMethod[] = ['school_email', 'sso', 'student_id'];
+export const ALUMNI_VERIFICATIONS: VerificationMethod[] = ['alumni_email', 'diploma', 'alumni_association', 'prior_student'];
+
+/** 어떤 사람을 만나고 싶나 */
+export type PeopleWant = 'same_major' | 'same_interest' | 'other_school' | 'senior_mentor' | 'alumni' | 'same_city' | 'same_field' | 'new_people';
+/** 어떤 활동을 하고 싶나 */
+export type ActivityWant = 'coffee' | 'meal' | 'study' | 'exercise' | 'networking' | 'project' | 'research' | 'hobby';
+export interface Wants { people: PeopleWant[]; activities: ActivityWant[] }
+export const ALL_PEOPLE_WANTS: PeopleWant[] = ['same_major', 'same_interest', 'other_school', 'senior_mentor', 'alumni', 'same_city', 'same_field', 'new_people'];
+export const ALL_ACTIVITY_WANTS: ActivityWant[] = ['coffee', 'meal', 'study', 'exercise', 'networking', 'project', 'research', 'hobby'];
+
+/** 저장한 사람 검색 (AroundU+) — 조건을 저장하고 새 사람 알림을 받는다 */
+export interface SavedSearch {
+  id: ID;
+  userId: ID;
+  name: string;
+  criteria: PeopleSearch;
+  alert: boolean;
+  /** 마지막 실행 시 조건에 맞은 사람 수 */
+  lastMatched: number;
+  createdAt: string;
+}
+
+/** 사람 찾기 조건 — 학교는 여러 조건 중 하나 */
+export interface PeopleSearch {
+  q?: string;
+  schools: ID[];
+  majors: string[];
+  gradYearFrom?: number;
+  gradYearTo?: number;
+  homeCities: string[];
+  activityCities: string[];
+  companies: string[];
+  industries: string[];
+  roles: string[];
+  interests: Interest[];
+  stages: Stage[];
+}
 
 export interface School {
   id: ID;
@@ -212,14 +265,25 @@ export type Residence = 'dorm' | 'offcampus' | 'commute';
 export type MeetPreference = 'same_hobby' | 'same_class' | 'same_goal' | 'same_living' | 'new_people';
 
 // ─── 조직 (동아리·학과·연구실·학생회) ──────────────────────────────────────
-export type OrganizationType = 'club' | 'department' | 'lab' | 'council' | 'greek';
+/** 'community' = 사용자가 자유롭게 만든 그룹 (학교·지역·관심사·직업 어느 기반이든) */
+export type OrganizationType = 'club' | 'department' | 'lab' | 'council' | 'greek' | 'community';
+/** 그룹의 성격 — AroundU가 미리 규정하지 않고 만든 사람이 고른다 */
+export type GroupScope = 'school' | 'city' | 'interest' | 'career';
 
 export interface Organization {
   id: ID;
   name: string;
   logo: { emoji: string; hue: number; url?: string };
   type: OrganizationType;
-  schoolId: ID;
+  /** 학교 기반 그룹만 가진다. 지역·관심사·직업 그룹은 없음 */
+  schoolId?: ID;
+  scope?: GroupScope;
+  /** 지역 기반 그룹의 도시 */
+  city?: string;
+  /** 가입 방식 — open 은 바로 멤버, approval 은 운영진 승인 */
+  joinPolicy?: 'open' | 'approval';
+  /** 관심사 태그 (추천용) */
+  interests?: Interest[];
   parent?: string;
   verified: boolean;
   description: string;
@@ -330,6 +394,8 @@ export interface Post {
   text: string;
   tags: string[];
   visibility: Visibility;
+  /** visibility === 'group' 일 때 대상 그룹 */
+  groupId?: ID;
   likeIds: ID[];
   savedIds: ID[];
   comments: Comment[];
@@ -438,7 +504,8 @@ export interface ChatRoom {
 export type NotificationType =
   | 'friend_accepted' | 'mutual_like' | 'participation_approved' | 'participation_rejected'
   | 'participation_request' | 'activity_reminder' | 'comment' | 'like' | 'follow'
-  | 'org_event' | 'nearby_activity' | 'proposal' | 'proposal_result' | 'deadline' | 'opportunity_match' | 'plan_vote' | 'plan_decided';
+  | 'org_event' | 'nearby_activity' | 'proposal' | 'proposal_result' | 'deadline' | 'opportunity_match' | 'plan_vote' | 'plan_decided'
+  | 'new_people' | 'group_joined';
 
 export interface Notification {
   id: ID;

@@ -1,32 +1,39 @@
+/**
+ * 홈 — 게시글 피드가 아니라 "지금 나의 상황에서 볼 가치가 높은 것"을 2~4개씩 압축한 화면.
+ * 학생: 오늘 일정 → 지금 연결할 수 있는 사람 → 학교에서 일어나는 것 → 나에게 맞는 모임 → 새로운 사람 → 추천 기회
+ * 졸업생: 새롭게 연결할 사람 → 내 지역 사람 → 내 분야 사람 → 이번 주 참여 가능한 모임 → 내 관계망 소식 → 기회
+ */
 import type { Activity, Opportunity, User, Organization, Post } from '@core/types';
 import type { Snapshot } from '@core/api/types';
-import { todayISO } from './format';
+import { todayISO, addDaysISO } from './format';
 import { freeBlocks, todayIdx, nowMin, coursesOn, statusNow, type Block } from './timetable';
 import { nowActivities } from './discover';
-import { matchScore, shareableReasons, opportunityScore, daysUntil, type Reason } from './recommend';
-import { commonInterests } from './relations';
-import { myNetwork, isAlumniStage } from './network';
+import { opportunityScore, daysUntil, type Reason } from './recommend';
+import { recommendPeople, type RecommendedPerson } from './people';
+import { recommendMeets, type RecommendedMeet } from './meet';
+import { myNetwork, sameSchool, sameCity, sameField, cityOf } from './network';
+import { friendsOf } from './relations';
 
 export interface HomeToday {
-  /** 오늘 수업 (시간순) */
   classes: ReturnType<typeof coursesOn>;
-  /** 지금 이후 첫 공강 */
   nextFree: Block | null;
-  /** 그 공강에 같이 비는 내 학교 사람 수 */
   freeTogether: number;
-  /** 오늘 학교에서 일어나는 것 — 행사·동아리·공고 */
-  happening: { kind: 'activity'; a: Activity }[] | { kind: 'opportunity'; o: Opportunity }[] | ({ kind: 'activity'; a: Activity } | { kind: 'opportunity'; o: Opportunity })[];
-  /** 지금 주변 Meet 2~3개 */
-  meets: Activity[];
-  /** 만나볼 사람 2~4명 + 이유 */
-  people: { u: User; reasons: Reason[] }[];
-  /** 기회 3개 */
+  /** 지금 연결할 수 있는 사람 (2~4) — 공강 겹침·같은 학교·전공·관심사 우선 */
+  connectNow: RecommendedPerson[];
+  /** 학교에서 일어나는 것 — 행사·동아리·공고 (3) */
+  happening: ({ kind: 'activity'; a: Activity } | { kind: 'opportunity'; o: Opportunity })[];
+  /** 나에게 맞는 모임 (3) — 타학교 공개 모임 포함 */
+  meets: RecommendedMeet[];
+  /** 지금 열린 만남 (기존 Now) */
+  now: Activity[];
+  /** 새로운 사람 (3) — 다른 학교이거나 관심사가 겹치는 사람 */
+  newPeople: RecommendedPerson[];
   opportunities: Opportunity[];
 }
 
 const CAMPUS_CATS = new Set(['school_event', 'club', 'performance', 'seminar', 'networking']);
 
-/** Home(오늘 대시보드) 데이터 — 재학생·대학원생용 */
+/** 학생·대학원생 홈 */
 export function homeToday(snap: Snapshot, me: User, visibleActivities: Activity[], canSeeTimetable: (u: User) => boolean): HomeToday {
   const today = todayISO(); const day = todayIdx(); const now = nowMin();
   const classes = coursesOn(me.timetable, day);
@@ -35,40 +42,67 @@ export function homeToday(snap: Snapshot, me: User, visibleActivities: Activity[
   const network = myNetwork(snap.users, me);
   const freeTogether = nextFree ? network.filter((u) => u.timetable.length && canSeeTimetable(u) && freeBlocks(u.timetable, day).some((b) => b.start <= nextFree.start + 30 && b.end >= nextFree.start + 60)).length : 0;
   const mySchool = me.affiliation.type === 'university' ? me.affiliation.schoolId : '';
-  const happening: ({ kind: 'activity'; a: Activity } | { kind: 'opportunity'; o: Opportunity })[] = [
+  const ranked = recommendPeople(snap, me, snap.users, canSeeTimetable, 40);
+  const connectNow = ranked.filter((p) => p.reasons.some((r) => r.kind === 'time') || sameSchool(p.user, me)).slice(0, 4);
+  const taken = new Set(connectNow.map((p) => p.user.id));
+  const newPeople = ranked.filter((p) => !taken.has(p.user.id) && (!sameSchool(p.user, me) || p.reasons.some((r) => r.kind === 'interest'))).slice(0, 3);
+  const happening: HomeToday['happening'] = [
     ...visibleActivities.filter((a) => a.date === today && a.category !== 'store_deal' && (CAMPUS_CATS.has(a.category) || a.kind === 'org_event')).map((a) => ({ kind: 'activity' as const, a })),
     ...snap.opportunities.filter((o) => o.date === today && (!o.schoolId || o.schoolId === mySchool)).map((o) => ({ kind: 'opportunity' as const, o })),
   ].slice(0, 3);
-  const meets = nowActivities(visibleActivities, me.id).slice(0, 3).map((x) => x.a);
-  const people = network.map((u) => ({ u, ...matchScore(me, u, snap, canSeeTimetable(u)) }))
-    .map((x) => ({ ...x, score: x.score + commonInterests(me, x.u).length * 0.5, reasons: shareableReasons(x.reasons) }))
-    .sort((a, b) => b.score - a.score).slice(0, 4).map(({ u, reasons }) => ({ u, reasons }));
+  const meets = recommendMeets(visibleActivities, me, snap.users, snap.organizations, snap.participations, 3);
+  const nowList = nowActivities(visibleActivities, me.id).slice(0, 3).map((x) => x.a);
   const opportunities = snap.opportunities.filter((o) => (!o.schoolId || o.schoolId === mySchool) && (!o.deadline || daysUntil(o.deadline) >= 0))
     .map((o) => ({ o, ...opportunityScore(me, o, snap.opportunityIntents) })).sort((a, b) => b.score - a.score).slice(0, 3).map((x) => x.o);
-  return { classes, nextFree, freeTogether, happening, meets, people, opportunities };
+  return { classes, nextFree, freeTogether, connectNow, happening, meets, now: nowList, newPeople, opportunities };
+}
+
+export interface NetworkNews {
+  kind: 'post' | 'meet' | 'group';
+  post?: Post; meet?: Activity; group?: Organization;
+  /** 누가 (연결·그룹) */
+  who: string;
+  at: string;
 }
 
 export interface AlumniHome {
-  nearby: { u: User; reasons: Reason[] }[];
+  /** 새롭게 연결할 만한 사람 (4) */
+  connect: RecommendedPerson[];
+  /** 내 지역에서 활동하는 사람 (3) */
+  nearby: RecommendedPerson[];
+  /** 현재 분야와 관련 있는 사람 (3) */
+  field: RecommendedPerson[];
+  /** 이번 주 참여 가능한 모임 (3) */
+  thisWeek: RecommendedMeet[];
+  /** 내가 속한 관계망에서 새롭게 생긴 것 (3) — 연결·그룹의 새 글·모임 */
+  news: NetworkNews[];
   groups: Organization[];
-  upcoming: Activity[];
-  posts: Post[];
   opportunities: Opportunity[];
 }
 
-/** Alumni / Professional Home — 시간표 대신 도시·직업 중심 */
+/** 졸업생 홈 — "내 관계망에 지금 어떤 변화가 있는가" */
 export function alumniHome(snap: Snapshot, me: User, visibleActivities: Activity[], visiblePosts: Post[], canSeeTimetable: (u: User) => boolean): AlumniHome {
-  const city = me.career?.city ?? me.region;
-  const today = todayISO();
-  const pool = snap.users.filter((u) => u.id !== me.id);
-  const nearby = pool.map((u) => ({ u, ...matchScore(me, u, snap, canSeeTimetable(u)), near: (u.career?.city ?? u.region) === city || u.region === city }))
-    .map((x) => ({ ...x, score: x.score + (x.near ? 2 : 0) + (isAlumniStage(x.u) ? 1 : 0) + commonInterests(me, x.u).length * 0.5, reasons: shareableReasons(x.reasons) }))
-    .sort((a, b) => b.score - a.score).slice(0, 4).map(({ u, reasons }) => ({ u, reasons }));
-  const groups = snap.organizations.filter((o) => o.memberIds.includes(me.id) || o.followerIds.includes(me.id)).slice(0, 3);
-  const upcoming = visibleActivities.filter((a) => a.date >= today && (a.hostId === me.id || snap.participations.some((p) => p.activityId === a.id && p.userId === me.id && p.status === 'approved'))).slice(0, 3);
-  const posts = visiblePosts.filter((p) => !p.sponsored).slice(0, 3);
-  const opportunities = snap.opportunities.filter((o) => ['internship', 'startup', 'lab', 'event'].includes(o.type) && (!o.deadline || daysUntil(o.deadline) >= 0)).slice(0, 3);
-  return { nearby, groups, upcoming, posts, opportunities };
+  const ranked = recommendPeople(snap, me, snap.users, canSeeTimetable, 40);
+  const connect = ranked.slice(0, 4);
+  const used = new Set(connect.map((p) => p.user.id));
+  const nearby = ranked.filter((p) => !used.has(p.user.id) && sameCity(p.user, me)).slice(0, 3);
+  nearby.forEach((p) => used.add(p.user.id));
+  const field = ranked.filter((p) => !used.has(p.user.id) && sameField(p.user, me)).slice(0, 3);
+  const week = addDaysISO(7); const today = todayISO();
+  const thisWeek = recommendMeets(visibleActivities.filter((a) => a.date <= week), me, snap.users, snap.organizations, snap.participations, 3);
+  const friends = new Set(friendsOf(snap, me.id));
+  const myOrgs = snap.organizations.filter((o) => o.memberIds.includes(me.id) || o.followerIds.includes(me.id));
+  const orgIds = new Set(myOrgs.map((o) => o.id));
+  const news: NetworkNews[] = [
+    ...visiblePosts.filter((p) => !p.sponsored && (friends.has(p.authorId) || (p.orgId && orgIds.has(p.orgId)) || (p.groupId && orgIds.has(p.groupId)))).slice(0, 3)
+      .map((p) => ({ kind: 'post' as const, post: p, who: p.orgId ? (snap.organizations.find((o) => o.id === p.orgId)?.name ?? '') : (snap.users.find((u) => u.id === p.authorId)?.nickname ?? ''), at: p.createdAt })),
+    ...visibleActivities.filter((a) => a.date >= today && ((a.orgId && orgIds.has(a.orgId)) || friends.has(a.hostId))).slice(0, 3)
+      .map((a) => ({ kind: 'meet' as const, meet: a, who: a.orgId ? (snap.organizations.find((o) => o.id === a.orgId)?.name ?? '') : (snap.users.find((u) => u.id === a.hostId)?.nickname ?? ''), at: a.createdAt })),
+  ].sort((a, b) => b.at.localeCompare(a.at)).slice(0, 3);
+  const opportunities = snap.opportunities.filter((o) => ['internship', 'startup', 'lab', 'event', 'hackathon'].includes(o.type) && (!o.deadline || daysUntil(o.deadline) >= 0)).slice(0, 3);
+  return { connect, nearby, field, thisWeek, news, groups: myOrgs.slice(0, 3), opportunities };
 }
 
 export const isInClass = (me: User) => statusNow(me.timetable).kind === 'in_class';
+export const homeCityLabel = (me: User) => cityOf(me);
+export type { Reason };

@@ -1,6 +1,7 @@
 import type {
   Activity, ActivityProposal, ChatRoom, ID, Notification, Organization, Participation, Post, Relationships, Report, School, User,
-  ActivityCategory, Visibility, JoinPolicy, ActivityKind, Place, ReportTargetType, Availability, Opportunity, OpportunityIntentRecord, OpportunityIntent, Role, TimePoll, TimeOption, Plan, Stage, Career, OpenTo, BoostTier } from '@core/types';
+  ActivityCategory, Visibility, JoinPolicy, ActivityKind, Place, ReportTargetType, Availability, Opportunity, OpportunityIntentRecord, OpportunityIntent, Role, TimePoll, TimeOption, Plan, Stage, Career, OpenTo, BoostTier,
+  SavedSearch, PeopleSearch, Wants, VerificationMethod, GroupScope, Interest } from '@core/types';
 
 /** 클라이언트가 보유하는 전체 데이터 스냅샷 (실제 API에서는 필요한 부분만 내려받도록 분리) */
 export interface Snapshot {
@@ -18,12 +19,14 @@ export interface Snapshot {
   opportunities: Opportunity[];
   opportunityIntents: OpportunityIntentRecord[];
   timePolls: TimePoll[];
+  /** 저장한 사람 검색 (본인 것만 내려온다) */
+  savedSearches: SavedSearch[];
 }
 
 /** 변경된 엔티티만 담아 돌려주는 부분 응답. 스토어가 id 기준으로 병합한다. */
 export type Patch = Partial<Omit<Snapshot, 'relationships'>> & {
   relationships?: Relationships;
-  removed?: Partial<Record<'activities' | 'posts' | 'chatRooms' | 'participations' | 'proposals' | 'opportunityIntents' | 'timePolls' | 'organizations' | 'opportunities', ID[]>>;
+  removed?: Partial<Record<'activities' | 'posts' | 'chatRooms' | 'participations' | 'proposals' | 'opportunityIntents' | 'timePolls' | 'organizations' | 'opportunities' | 'savedSearches', ID[]>>;
 };
 
 export interface RegisterInput {
@@ -52,6 +55,14 @@ export interface RegisterInput {
   stage?: Stage;
   openTo?: OpenTo[];
   career?: Career;
+  /** 거주 도시 (도시 단위). 없으면 학교 지역 */
+  homeCity?: string;
+  activityCity?: string;
+  gradYear?: number;
+  /** 학교 인증 방법 (온보딩에서 하나 이상 완료) */
+  verification?: VerificationMethod;
+  /** 무엇을 찾고 있나 (어떤 사람 · 어떤 활동) */
+  wants?: Wants;
   prompts: User['prompts'];
   voicePrompt?: User['voicePrompt'];
   poll?: User['poll'];
@@ -91,11 +102,25 @@ export interface ActivityInput {
   mode?: Activity['mode'];
 }
 
+/** 자유 그룹 만들기 — 성격(scope)은 만든 사람이 고른다 */
+export interface GroupInput {
+  name: string;
+  description: string;
+  scope: GroupScope;
+  city?: string;
+  schoolId?: ID;
+  joinPolicy: 'open' | 'approval';
+  logo: Organization['logo'];
+  interests?: Interest[];
+}
+
 export interface PostInput {
   text: string;
   media: Post['media'];
   tags: string[];
   visibility: Visibility;
+  /** visibility === 'group' 일 때 */
+  groupId?: ID;
   relatedActivityId?: ID;
   relatedOpportunityId?: ID;
   orgId?: ID;
@@ -175,12 +200,25 @@ export interface AroundUApi {
     setAvailability(id: ID, availability: Availability): Promise<Patch>;
     /** 다른 사용자의 투표형 질문에 한 표 */
     votePoll(ownerId: ID, voterId: ID, optionIndex: number): Promise<Patch>;
-    /** 오른쪽 스와이프(친구 요청) 1회 기록 — 무료 플랜 하루 한도(10)를 넘기면 throw */
+    /** 연결 요청 1회 기록 — 무료 플랜 하루 한도(FREE_SWIPES_PER_DAY)를 넘기면 throw. sendFriendRequest 가 내부에서 호출 */
     recordSwipe(id: ID): Promise<Patch>;
     /** 요금제 변경 (모의 결제) */
     setPlan(id: ID, plan: Plan): Promise<Patch>;
-    /** 생애 단계 변경 (재학생 → 졸업생 등). 온보딩 재요구 없음 */
-    setStage(id: ID, stage: Stage, career?: Career): Promise<Patch>;
+    /** 생애 단계 변경 (재학생 → 졸업생 등). 온보딩 재요구 없음. 연결·글·그룹·인증·활동 기록은 모두 유지 */
+    setStage(id: ID, stage: Stage, career?: Career, homeCity?: string, activityCity?: string): Promise<Patch>;
+    /** 무엇을 찾고 있나 수정 (프로필 › 추천 설정) */
+    updateWants(id: ID, wants: Wants): Promise<Patch>;
+    /** 학교 인증 완료 (데모: 즉시) */
+    verify(id: ID, method: VerificationMethod): Promise<Patch>;
+  };
+
+  /** 저장한 사람 검색 + 새 사람 알림 (AroundU+) */
+  searches: {
+    save(userId: ID, name: string, criteria: PeopleSearch, alert: boolean): Promise<Patch>;
+    remove(id: ID): Promise<Patch>;
+    setAlert(id: ID, alert: boolean): Promise<Patch>;
+    /** 조건을 다시 실행해 매칭 수를 갱신하고, 알림이 켜져 있고 새 사람이 있으면 알림을 만든다 */
+    run(userId: ID, id: ID): Promise<Patch>;
   };
 
   activities: {
@@ -218,7 +256,11 @@ export interface AroundUApi {
   };
 
   orgs: {
+    /** 가입 — joinPolicy 'open' 이면 즉시 멤버, 아니면 지원 목록에 */
     apply(orgId: ID, userId: ID): Promise<Patch>;
+    leave(orgId: ID, userId: ID): Promise<Patch>;
+    /** 자유 그룹 만들기 (무료) */
+    create(userId: ID, input: GroupInput): Promise<{ org: Organization; patch: Patch }>;
   };
 
   opportunities: {

@@ -27,6 +27,8 @@ const ICONS: Record<NotificationType, { Icon: typeof Heart; cls: string }> = {
   opportunity_match: { Icon: Users, cls: 'bg-primary-soft text-primary' },
   plan_vote: { Icon: Vote, cls: 'bg-accent-soft text-accent' },
   plan_decided: { Icon: CalendarCheck, cls: 'bg-mint-soft text-mint' },
+  new_people: { Icon: Users, cls: 'bg-gold-soft text-[#B57A0E]' },
+  group_joined: { Icon: Users, cls: 'bg-primary-soft text-primary' },
 };
 
 export function NotificationsPage() {

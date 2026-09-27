@@ -180,15 +180,16 @@ app.post('/api/schools/verify-code', wrap(async (req) => {
 app.post('/api/catalog/courses', wrap(async (req) => searchCatalog(catalog, String(req.body.schoolId ?? ''), String(req.body.query ?? ''))));
 
 // ─── RPC (엔진 메서드) ────────────────────────────────────────────────────
-type Group = 'users' | 'activities' | 'posts' | 'relationships' | 'orgs' | 'opportunities' | 'proposals' | 'together' | 'chats' | 'notifications' | 'reports';
-const GROUPS: Group[] = ['users', 'activities', 'posts', 'relationships', 'orgs', 'opportunities', 'proposals', 'together', 'chats', 'notifications', 'reports'];
+type Group = 'users' | 'searches' | 'activities' | 'posts' | 'relationships' | 'orgs' | 'opportunities' | 'proposals' | 'together' | 'chats' | 'notifications' | 'reports';
+const GROUPS: Group[] = ['users', 'searches', 'activities', 'posts', 'relationships', 'orgs', 'opportunities', 'proposals', 'together', 'chats', 'notifications', 'reports'];
 
 /** 호출자가 해당 작업을 할 권한이 있는지. 숫자면 그 위치의 인자가 본인 id 여야 한다 */
 type Rule = number | ((me: ID, args: unknown[]) => boolean);
 const owner = <T extends { id: ID }>(list: () => T[], pick: (x: T) => ID | undefined) => (me: ID, args: unknown[]) => { const x = list().find((i) => i.id === args[0]); return !!x && pick(x) === me; };
 const activityHost = (me: ID, activityId: unknown) => db.activities.find((a) => a.id === activityId)?.hostId === me;
 const RULES: Record<Group, Record<string, Rule>> = {
-  users: { update: 0, setAvailability: 0, votePoll: 1, recordSwipe: 0, setPlan: 0, setStage: 0 },
+  users: { update: 0, setAvailability: 0, votePoll: 1, recordSwipe: 0, setPlan: 0, setStage: 0, updateWants: 0, verify: 0 },
+  searches: { save: 0, remove: owner(() => db.savedSearches, (s) => s.userId), setAlert: owner(() => db.savedSearches, (s) => s.userId), run: 0 },
   activities: {
     create: 0, update: owner(() => db.activities, (a) => a.hostId), remove: owner(() => db.activities, (a) => a.hostId), join: 1, cancel: 1,
     approve: (me, args) => { const p = db.participations.find((x) => x.id === args[0]); return !!p && activityHost(me, p.activityId); },
@@ -202,7 +203,7 @@ const RULES: Record<Group, Record<string, Rule>> = {
     respondFriendRequest: owner(() => db.relationships.friendRequests, (r) => r.toId),
     unfriend: (me, args) => args[0] === me || args[1] === me,
   },
-  orgs: { apply: 1 },
+  orgs: { apply: 1, leave: 1, create: 0 },
   opportunities: { create: 0, setIntent: 1, toggleSave: 1, ask: 1, review: 1 },
   proposals: { create: 0, respond: owner(() => db.proposals, (p) => p.toId) },
   together: { create: 0, vote: 1, addOption: 1, decide: owner(() => db.timePolls, (p) => p.hostId), cancel: owner(() => db.timePolls, (p) => p.hostId) },
