@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { Button, BottomSheet, Field, Input } from '@/components/ui';
 import { useAppStore } from '@core/store/useAppStore';
 import { api, apiMode } from '@core/api';
-import { GraduationCap, MapPin, Users, Sparkles, Mail } from 'lucide-react';
+import { Mail, ArrowRight, GraduationCap, Sparkles, MapPin } from 'lucide-react';
 
+/** 1. Splash — "Start with your university. Expand your circle." */
 export function WelcomePage() {
   const nav = useNavigate();
   const setCurrentUser = useAppStore((s) => s.setCurrentUser);
@@ -44,29 +45,35 @@ export function WelcomePage() {
     } catch (e) { showToast((e as Error).message, 'error'); setBusy(false); }
   };
 
+  const pills = [
+    { Icon: GraduationCap, label: t('내 학교') },
+    { Icon: Sparkles, label: t('내 관심사') },
+    { Icon: MapPin, label: t('내 도시') },
+  ];
+
   return (
-    <div className="min-h-full flex flex-col relative bg-[linear-gradient(180deg,#EEF1FF_0%,#F6F7FB_45%)]">
-      <div className="absolute top-4 right-4 flex rounded-full bg-white/80 backdrop-blur p-0.5 text-[12px] font-bold shadow-sm">
-        <button onClick={() => lang !== 'ko' && setLang('ko')} className={`px-3 h-7 rounded-full ${lang === 'ko' ? 'bg-ink text-white' : 'text-ink-2'}`}>한국어</button>
-        <button onClick={() => lang !== 'en' && setLang('en')} className={`px-3 h-7 rounded-full ${lang === 'en' ? 'bg-ink text-white' : 'text-ink-2'}`}>English</button>
+    <div className="min-h-full flex flex-col relative bg-white">
+      <div className="absolute top-4 right-4 flex rounded-full bg-surface-2 p-0.5 text-[12px] font-bold">
+        <button onClick={() => lang !== 'ko' && setLang('ko')} className={`px-3 h-7 rounded-full ${lang === 'ko' ? 'bg-primary text-white' : 'text-ink-2'}`}>한국어</button>
+        <button onClick={() => lang !== 'en' && setLang('en')} className={`px-3 h-7 rounded-full ${lang === 'en' ? 'bg-primary text-white' : 'text-ink-2'}`}>English</button>
       </div>
-      <div className="flex-1 flex flex-col items-center justify-center px-8 pt-16 text-center">
-        <div className="relative">
-          <div className="h-24 w-24 rounded-[28px] bg-primary grid place-items-center text-white shadow-[var(--shadow-float)]"><MapPin size={46} strokeWidth={2.4} /></div>
-          <span className="absolute -right-3 -top-2 h-10 w-10 rounded-2xl bg-white shadow grid place-items-center text-xl">☕</span>
-          <span className="absolute -left-4 bottom-0 h-10 w-10 rounded-2xl bg-white shadow grid place-items-center text-xl">📚</span>
-        </div>
-        <h1 className="mt-8 text-[30px] font-extrabold tracking-tight">AroundU</h1>
-        <p className="mt-2 text-[15px] text-ink-2 leading-relaxed">{t('학교와 주변에서 일어나는 활동을 발견하고')}<br />{t('사람·동아리·모임과 자연스럽게 연결되는 앱')}</p>
-        <div className="mt-8 grid grid-cols-3 gap-2 w-full">
-          {[{ Icon: Users, t: t('사람'), d: t('누구와') }, { Icon: Sparkles, t: t('활동'), d: t('무엇을') }, { Icon: MapPin, t: t('장소'), d: t('어디서') }].map((x) => (
-            <div key={x.t} className="card p-3 flex flex-col items-center gap-1"><x.Icon size={20} className="text-primary" /><b className="text-[13px]">{x.t}</b><span className="text-[11px] text-ink-3">{x.d}</span></div>
+      <div className="flex-1 flex flex-col items-center justify-center px-7 pt-16 text-center">
+        <div className="font-display text-[46px] font-extrabold tracking-tight text-primary leading-none">AroundU</div>
+        <h1 className="mt-7 font-display text-[28px] font-bold text-primary leading-tight">
+          {lang === 'en' ? <>Start with your university.<br />Expand your circle.</> : <>학교에서 시작해,<br />서클을 넓히세요.</>}
+        </h1>
+        <p className="mt-3 text-[15px] text-ink-2 leading-relaxed">{lang === 'en' ? 'Find opportunities. Meet people. Make friends.' : t('기회를 찾고, 사람을 만나고, 친구를 만드세요.')}</p>
+        <div className="mt-8 flex items-center justify-center gap-1.5 flex-wrap">
+          {pills.map((p, i) => (
+            <span key={p.label} className="contents">
+              <span className={`inline-flex items-center gap-1.5 h-8 px-3 rounded-full text-[12px] font-semibold ${i === 0 ? 'bg-primary text-white' : i === 1 ? 'bg-primary-soft text-primary' : 'bg-accent-soft text-primary'}`}><p.Icon size={13} />{p.label}</span>
+              {i < pills.length - 1 && <ArrowRight size={14} className="text-ink-3" />}
+            </span>
           ))}
         </div>
-        <div className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-primary-soft text-primary text-[12px] font-semibold px-3 h-8"><GraduationCap size={14} /> {t('대학생·대학원생·졸업생을 위한 서비스')}</div>
       </div>
       <div className="px-6 pb-10 space-y-2.5 safe-bottom">
-        <Button full size="lg" onClick={() => nav('/onboarding/basic')}>{t('회원가입')}</Button>
+        <Button full size="lg" onClick={() => nav('/onboarding/account')}>{t('회원가입')}</Button>
         <Button full size="lg" variant="outline" icon={<Mail size={16} />} onClick={() => setEmailOpen(true)}>{t('이메일로 로그인')}</Button>
         <Button full size="lg" variant="ghost" onClick={login} loading={busy && !emailOpen}>{t('로그인 (데모 계정)')}</Button>
         <p className="text-center text-[11px] text-ink-3 pt-1">{t('정확한 위치는 다른 사용자에게 절대 공개되지 않아요.')}</p>

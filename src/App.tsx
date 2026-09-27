@@ -7,7 +7,6 @@ import { WelcomePage } from '@/pages/onboarding/WelcomePage';
 import { OnboardingPage } from '@/pages/onboarding/OnboardingPage';
 import { HomePage } from '@/pages/home/HomePage';
 import { MapPage } from '@/pages/map/MapPage';
-import { CommunityPage } from '@/pages/community/CommunityPage';
 import { ProfilePage } from '@/pages/profile/ProfilePage';
 import { EditProfilePage } from '@/pages/profile/EditProfilePage';
 import { ActivityDetailPage } from '@/pages/activity/ActivityDetailPage';
@@ -22,11 +21,19 @@ import { NotificationsPage } from '@/pages/notifications/NotificationsPage';
 import { SettingsPage } from '@/pages/settings/SettingsPage';
 import { PrivacySettingsPage } from '@/pages/settings/PrivacySettingsPage';
 import { SafetySettingsPage } from '@/pages/settings/SafetySettingsPage';
-import { SearchPage } from '@/pages/home/SearchPage';
+import { SearchPage } from '@/pages/search/SearchPage';
 import { ProfileListPage } from '@/pages/profile/ProfileListPage';
 import { EditPromptsPage } from '@/pages/profile/EditPromptsPage';
 import { TimetablePage } from '@/pages/timetable/TimetablePage';
-import { DiscoverPage } from '@/pages/discover/DiscoverPage';
+import { PeoplePage } from '@/pages/people/PeoplePage';
+import { BeyondPage } from '@/pages/people/BeyondPage';
+import { AdvancedSearchPage } from '@/pages/people/AdvancedSearchPage';
+import { MeetPage } from '@/pages/meet/MeetPage';
+import { CreateMeetPage } from '@/pages/meet/CreateMeetPage';
+import { FeedPage } from '@/pages/feed/FeedPage';
+import { PostDetailPage } from '@/pages/feed/PostDetailPage';
+import { PricingPage } from '@/pages/pricing/PricingPage';
+import { MyGroupsPage } from '@/pages/profile/MyGroupsPage';
 import { PlansPage } from '@/pages/plans/PlansPage';
 import { ClassPage } from '@/pages/classes/ClassPage';
 import { CreateTogetherPage } from '@/pages/together/CreateTogetherPage';
@@ -50,6 +57,13 @@ function RedirectIfAuthed() {
   if (status === 'idle' || status === 'loading') return <SplashScreen />;
   if (currentUserId) return <Navigate to="/" replace />;
   return <Outlet />;
+}
+
+/** /community?tab=... → /feed 또는 /meet?tab=groups */
+function CommunityRedirect() {
+  const location = useLocation();
+  const tab = new URLSearchParams(location.search).get('tab');
+  return <Navigate to={tab === 'clubs' ? '/meet?tab=groups' : tab === 'opportunities' ? '/' : '/feed'} replace />;
 }
 
 function SplashScreen() {
@@ -85,9 +99,19 @@ export default function App() {
       <Route element={<RequireAuth />}>
         <Route element={<AppShell />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/discover" element={<DiscoverPage />} />
-          <Route path="/opportunities" element={<Navigate to="/community?tab=opportunities" replace />} />
-          <Route path="/community" element={<CommunityPage />} />
+          <Route path="/people" element={<PeoplePage />} />
+          <Route path="/people/beyond" element={<BeyondPage />} />
+          <Route path="/people/search" element={<AdvancedSearchPage />} />
+          <Route path="/meet" element={<MeetPage />} />
+          <Route path="/meet/create" element={<CreateMeetPage />} />
+          <Route path="/feed" element={<FeedPage />} />
+          <Route path="/feed/:id" element={<PostDetailPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/profile/groups" element={<MyGroupsPage />} />
+          {/* 이전 구조 호환 */}
+          <Route path="/discover" element={<Navigate to="/meet" replace />} />
+          <Route path="/community" element={<CommunityRedirect />} />
+          <Route path="/opportunities" element={<Navigate to="/" replace />} />
           <Route path="/profile" element={<ProfilePage />} />
         </Route>
         <Route element={<AppShell withNav={false} />}>

@@ -13,7 +13,7 @@ import { isTeamActivity } from '@core/lib/discover';
 import { cn } from '@core/lib/cn';
 import { ReportSheet } from '@/components/cards/ReportSheet';
 
-export function PostCard({ post: p, className }: { post: Post; className?: string }) {
+export function PostCard({ post: p, className, openComments }: { post: Post; className?: string; /** 상세 화면: 댓글을 처음부터 펼친다 */ openComments?: boolean }) {
   const nav = useNavigate();
   const v = useViewer();
   const run = useAppStore((s) => s.run);
@@ -31,7 +31,7 @@ export function PostCard({ post: p, className }: { post: Post; className?: strin
   const liked = p.likeIds.includes(v.me.id);
   const saved = p.savedIds.includes(v.me.id);
   const following = v.isFollowing(org ? org.id : p.authorId);
-  const [comments, setComments] = useState(false);
+  const [comments, setComments] = useState(!!openComments);
   const [menu, setMenu] = useState(false);
   const [report, setReport] = useState(false);
   const [text, setText] = useState('');

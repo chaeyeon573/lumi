@@ -9,6 +9,9 @@ import { api } from '@core/api';
 import { ALL_AVAILABILITY, ALL_INTERESTS, ALL_PURPOSES, AVAILABILITY_LABELS, INTEREST_EMOJI, INTEREST_LABELS, PURPOSE_LABELS } from '@core/lib/labels';
 import type { Availability, Interest, ProfileField, Purpose, User } from '@core/types';
 import { cn } from '@core/lib/cn';
+import { isAlumniStage } from '@core/lib/network';
+import { OpenToChips } from '@/components/profile_OpenToChips';
+import { CareerFields } from '@/components/profile_CareerFields';
 
 const EMOJIS = ['🙂', '😎', '🧑‍💻', '👩‍🎨', '🧑‍🔬', '🏃', '🎸', '📚', '🌱', '🎨', '🚀', '🧗', '☕', '🐱', '🦊', '🎧'];
 
@@ -51,12 +54,19 @@ export function EditProfilePage() {
         <Field label={t('좋아하는 것')} right={fv('likes')}><Input value={form.likes} onChange={(e) => patch({ likes: e.target.value })} /></Field>
         <Field label={t('자유시간에 하고 싶은 활동')} right={fv('freeTime')}><Input value={form.freeTime} onChange={(e) => patch({ freeTime: e.target.value })} /></Field>
         <Field label={t('관심사')} right={fv('interests')}><div className="flex flex-wrap gap-2">{ALL_INTERESTS.map((i) => <Chip key={i} active={form.interests.includes(i)} onClick={() => patch({ interests: toggle(form.interests, i) as Interest[] })}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Chip>)}</div></Field>
+        <Field label={t('열려 있어요')} hint={t('지금 열려 있는 것 — 사람 카드와 프로필에 표시돼요')}><OpenToChips value={form.openTo ?? []} onChange={(openTo) => patch({ openTo })} /></Field>
         <Field label={t('이용 목적')} right={fv('purposes')}><div className="flex flex-wrap gap-2">{ALL_PURPOSES.map((p) => <Chip key={p} active={form.purposes.includes(p)} onClick={() => patch({ purposes: toggle(form.purposes, p) as Purpose[] })}>{PURPOSE_LABELS[p]}</Chip>)}</div></Field>
         <Field label={t('활동 가능한 시간')} right={fv('availability')}><div className="flex flex-wrap gap-2">{ALL_AVAILABILITY.map((a) => <Chip key={a} active={form.availability === a} onClick={() => patch({ availability: a as Availability })}>{AVAILABILITY_LABELS[a]}</Chip>)}</div></Field>
         <div className="grid grid-cols-2 gap-3">
           <Field label={t('키 (선택)')} right={fv('height')}><Input type="number" placeholder="cm" value={form.height ?? ''} onChange={(e) => patch({ height: e.target.value ? Number(e.target.value) : undefined })} /></Field>
           <Field label={t('지역')}><Input value={form.region} onChange={(e) => patch({ region: e.target.value })} /></Field>
         </div>
+        {isAlumniStage(form) && (
+          <div className="card p-4 space-y-3">
+            <div><b className="text-[13px]">{t('경력')}</b><div className="text-[12px] text-ink-3">{t('졸업 후 정보 — 도시는 프로필 헤더에 표시돼요')}</div></div>
+            <CareerFields value={form.career ?? {}} onChange={(career) => patch({ career })} />
+          </div>
+        )}
         <Field label={t('관심 있는 사람의 조건 (선택)')} right={fv('preferredPartner')}><Input value={form.preferredPartner ?? ''} onChange={(e) => patch({ preferredPartner: e.target.value })} /></Field>
         {aff && (
           <div className="card px-4 divide-y divide-line">

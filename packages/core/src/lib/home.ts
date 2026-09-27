@@ -36,7 +36,7 @@ export function homeToday(snap: Snapshot, me: User, visibleActivities: Activity[
   const freeTogether = nextFree ? network.filter((u) => u.timetable.length && canSeeTimetable(u) && freeBlocks(u.timetable, day).some((b) => b.start <= nextFree.start + 30 && b.end >= nextFree.start + 60)).length : 0;
   const mySchool = me.affiliation.type === 'university' ? me.affiliation.schoolId : '';
   const happening: ({ kind: 'activity'; a: Activity } | { kind: 'opportunity'; o: Opportunity })[] = [
-    ...visibleActivities.filter((a) => a.date === today && (CAMPUS_CATS.has(a.category) || a.kind === 'org_event')).map((a) => ({ kind: 'activity' as const, a })),
+    ...visibleActivities.filter((a) => a.date === today && a.category !== 'store_deal' && (CAMPUS_CATS.has(a.category) || a.kind === 'org_event')).map((a) => ({ kind: 'activity' as const, a })),
     ...snap.opportunities.filter((o) => o.date === today && (!o.schoolId || o.schoolId === mySchool)).map((o) => ({ kind: 'opportunity' as const, o })),
   ].slice(0, 3);
   const meets = nowActivities(visibleActivities, me.id).slice(0, 3).map((x) => x.a);

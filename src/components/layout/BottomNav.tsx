@@ -1,17 +1,19 @@
 import { useState } from 'react';
-import { t } from '@core/i18n';
+import { t, lang } from '@core/i18n';
 import { NavLink, useLocation, useNavigate, useParams } from 'react-router-dom';
-import { Plus, User, Users, Compass, CalendarPlus, Image, Lightbulb, Zap, BookOpen, Vote, Building2 } from 'lucide-react';
+import { Home, User, Users, CalendarDays, MessageSquareText, CalendarPlus, Image, Lightbulb, Zap, BookOpen, Vote } from 'lucide-react';
 import { cn } from '@core/lib/cn';
 import { BottomSheet } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 
+/** PRD 4절: Home | People | Meet | Feed | Profile. 가운데 + 버튼 없음 — 만들기는 Meet › + Create, Feed › 컴포저 */
 const items = [
-  { to: '/', label: t('사람'), Icon: Users },
-  { to: '/discover', label: t('발견'), Icon: Compass },
-  { to: '/community', label: t('캠퍼스'), Icon: Building2 },
-  { to: '/profile', label: t('프로필'), Icon: User },
+  { to: '/', label: t('홈'), Icon: Home },
+  { to: '/people', label: t('사람'), Icon: Users },
+  { to: '/meet', label: t('만나기'), Icon: CalendarDays },
+  { to: '/feed', label: t('피드'), Icon: MessageSquareText },
+  { to: '/profile', label: lang === 'en' ? 'Profile' : t('프로필'), Icon: User },
 ];
 
 /** 마지막으로 본 사람 (People 카드) — `+`에서 바로 초대할 때 사용 */
@@ -57,14 +59,7 @@ export function BottomNav() {
     <>
       <nav className="shrink-0 bg-surface/95 backdrop-blur border-t border-line safe-bottom">
         <div className="grid grid-cols-5 h-[64px] items-center">
-          {items.slice(0, 2).map((it) => <NavItem key={it.to} {...it} />)}
-          <div className="grid place-items-center">
-            <button onClick={() => setOpen(true)} aria-label={t('만들기')}
-              className="-mt-6 h-[60px] w-[60px] rounded-full bg-primary text-white grid place-items-center shadow-[var(--shadow-float)] press">
-              <Plus size={28} strokeWidth={2.4} />
-            </button>
-          </div>
-          {items.slice(2).map((it) => <NavItem key={it.to} {...it} />)}
+          {items.map((it) => <NavItem key={it.to} {...it} />)}
         </div>
       </nav>
       <BottomSheet open={open} onClose={() => setOpen(false)} title={t('무엇을 함께 시작할까요?')} tall>

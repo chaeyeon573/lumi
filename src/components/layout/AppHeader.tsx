@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Bell, MessageCircle, Search, GraduationCap, ChevronDown, User } from 'lucide-react';
-import { t } from '@core/i18n';
+import { t, lang } from '@core/i18n';
+import { networkLabel } from '@core/lib/network';
 import { useUnreadCounts } from '@/components/layout/TopBar';
 import { useViewer } from '@/hooks/useViewer';
 import { Avatar } from '@/components/ui';
@@ -10,7 +11,7 @@ export function AppHeader({ search, right }: { search?: boolean; right?: React.R
   const nav = useNavigate();
   const counts = useUnreadCounts();
   const v = useViewer();
-  const school = v.me.affiliation.type === 'university' ? v.me.affiliation.schoolName : t('학교 선택');
+  const school = v.me.affiliation.type === 'university' ? networkLabel(v.me, lang) : t('학교 선택');
   const Btn = ({ onClick, badge, label, children }: { onClick: () => void; badge?: number; label: string; children: React.ReactNode }) => (
     <button onClick={onClick} aria-label={label} className="relative h-10 w-10 rounded-full grid place-items-center text-ink-2 press">{children}{badge ? <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-danger" /> : null}</button>
   );
