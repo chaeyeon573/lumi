@@ -21,6 +21,9 @@ import { PaywallSheet } from '@/components/social/PaywallSheet';
  * 원칙: 사람을 보여줄 때 이유와 거리 → 경로 → 이름·프로필 순서.
  */
 
+/** 문장 템플릿 — t('{name}님에게 물어봤어요') 처럼 영어 어순이 다른 문장에 */
+export const fmt = (s: string, vars: Record<string, string | number>) => s.replace(/\{(\w+)\}/g, (_, k: string) => String(vars[k] ?? ''));
+
 export interface Closeness { degree?: number; mutual: number }
 
 /** 나로부터 모든 사람까지의 촌수 + 공통 연결 수 (렌더마다 BFS 한 번) */
@@ -37,7 +40,7 @@ export function closenessText(c: Closeness): string {
   if (c.degree === 1) parts.push(t('1촌'));
   else if (c.degree === 2) parts.push(t('2촌'));
   else if (c.degree === 3) parts.push(t('3촌'));
-  if (c.mutual > 0) parts.push(`${t('공통 연결')} ${c.mutual}${t('명')}`);
+  if (c.mutual > 0) parts.push(fmt(t('공통 연결 {n}명'), { n: c.mutual }));
   return parts.length ? parts.join(' · ') : t('새로운 사람');
 }
 
@@ -109,7 +112,7 @@ export function useHideWithUndo() {
   };
   const bar = undo ? createPortal(
     <div key={undo.key} role="status" style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 bottom-24 z-[1200] h-11 pl-4 pr-1.5 rounded-full bg-ink text-white text-[13px] font-semibold shadow-lg animate-toast-in flex items-center gap-3 max-w-[90%]">
-      <span className="truncate">{undo.user.nickname}{t('님을 숨겼어요 · 상대는 몰라요')}</span>
+      <span className="truncate">{fmt(t('{name}님을 숨겼어요 · 상대는 몰라요'), { name: undo.user.nickname })}</span>
       <button onClick={restore} className="h-8 px-3 rounded-full bg-white/15 text-[#BFF4FF] font-bold shrink-0 press">{t('되돌리기')}</button>
     </div>, shellEl()) : null;
   return { hide, bar };

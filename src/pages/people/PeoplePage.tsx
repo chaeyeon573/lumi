@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { X, Clock, UserPlus, CalendarPlus, Search, Bell, ChevronRight, Lock, Pencil, Sparkles, Bookmark, ChevronDown, Star, Trash2, BellOff, Plus } from 'lucide-react';
+import { X, Clock, UserPlus, CalendarPlus, Search, Bell, ChevronRight, Lock, Pencil, Sparkles, Bookmark, ChevronDown, Star, Trash2, BellOff, Plus, List, GalleryHorizontal, EyeOff } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { LAST_SEEN_KEY } from '@/components/layout/BottomNav';
-import { CardSkeleton, EmptyState, ErrorState, Button, BottomSheet, Chip, Segmented, Input, Select, Avatar, Tag } from '@/components/ui';
+import { CardSkeleton, EmptyState, ErrorState, Button, BottomSheet, Chip, Segmented, Input, Select, Avatar, Tag, Section, SectionEmpty, SectionSkeleton, PrivacyNote } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useSnapshot } from '@/hooks/useSnapshot';
 import { useAppStore } from '@core/store/useAppStore';
@@ -13,7 +13,7 @@ import { INTEREST_LABELS, ALL_INTERESTS } from '@core/lib/labels';
 import { commonInterests, friendsOf } from '@core/lib/relations';
 import { statusNow, freeBlocks, todayIdx, nowMin, fmtBlock } from '@core/lib/timetable';
 import { personLine, cityOf } from '@core/lib/network';
-import { recommendPeople, emptySearch, SEARCH_GROUPS, groupsUsed, isAdvancedSearch, searchPresets, searchOptions, searchLabel, isEmptySearch, type SearchGroup } from '@core/lib/people';
+import { recommendPeople, unexpectedConnections, emptySearch, SEARCH_GROUPS, groupsUsed, isAdvancedSearch, searchPresets, searchOptions, searchLabel, isEmptySearch, type SearchGroup } from '@core/lib/people';
 import { matchReasons, shareableReasons, type Reason } from '@core/lib/recommend';
 import { localeContext } from '@core/lib/locale-context';
 import { wantsLine, hasWants } from '@core/lib/wants';
@@ -28,6 +28,13 @@ import { ReasonChips, ReasonList } from '@/components/people_ReasonChips';
 import { SchoolBadge } from '@/components/people_SchoolBadge';
 import { PersonRow } from '@/components/cards/PersonRow';
 import { requestsForMe } from '@core/lib/requests';
+import { aroundToday } from '@core/lib/around';
+import { activeStatuses } from '@core/lib/status';
+import { useSectionState } from '@/hooks/useSectionState';
+import { SaveButton } from '@/components/people_ActionBar';
+import { StatusPill, StatusPicker } from '@/components/people_StatusPill';
+import { ClosenessTag, closenessText, fmt, useCloseness, useHideWithUndo, type Closeness } from '@/components/people_Network';
+import { UnexpectedCard } from '@/pages/people/UnexpectedPage';
 
 type Tab = 'recommend' | 'search' | 'connections';
 const TABS: Tab[] = ['recommend', 'search', 'connections'];
@@ -73,7 +80,7 @@ export function PeoplePage() {
       <div className="shrink-0 px-4 pb-2.5"><Segmented value={tab} onChange={setTab} options={[{ value: 'recommend', label: t('추천') }, { value: 'search', label: t('찾기') }, { value: 'connections', label: t('연결') }]} /></div>
       {status === 'loading' && <CardSkeleton />}
       {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
-      {status === 'ready' && tab === 'recommend' && <RecommendDeck connect={connect} invite={setProposeFor} openPaywall={() => setPaywall('open')} freeFirst={params.get('free') === '1'} />}
+      {status === 'ready' && tab === 'recommend' && <RecommendTab connect={connect} invite={setProposeFor} openPaywall={() => setPaywall('open')} freeFirst={params.get('free') === '1'} />}
       {status === 'ready' && tab === 'search' && <SearchTab openPaywall={(r) => setPaywall(r)} initial={parseCriteria(params.get('c'))} />}
       {status === 'ready' && tab === 'connections' && <ConnectionsTab />}
       <PaywallSheet open={!!paywall} onClose={() => setPaywall(null)} reason={paywall && paywall !== 'open' ? paywall : undefined} />
@@ -82,29 +89,22 @@ export function PeoplePage() {
   );
 }
 
-// ─── 추천 — 한 장씩 넘겨 보는 덱 (모든 학교) ────────────────────────────────
-function RecommendDeck({ connect, invite, openPaywall, freeFirst }: { connect: (u: User) => Promise<boolean>; invite: (u: User) => void; openPaywall: () => void; freeFirst: boolean }) {
+// ─── 추천 — 조용한 허브(기본) · 한 장씩 보기(덱) ─────────────────────────────
+const VIEW_KEY = 'aroundu.people.recommendView';
+type RecView = 'hub' | 'deck';
+function readView(): RecView { try { return localStorage.getItem(VIEW_KEY) === 'deck' ? 'deck' : 'hub'; } catch { return 'hub'; } }
+
+/** 추천 탭 — 맨 위 "혹시 여기에 해당되나요?" 배너 · 찾는 사람 줄은 그대로, 아래는 허브 또는 덱 */
+function RecommendTab({ connect, invite, openPaywall, freeFirst }: { connect: (u: User) => Promise<boolean>; invite: (u: User) => void; openPaywall: () => void; freeFirst: boolean }) {
   const nav = useNavigate();
   const v = useViewer();
   const me = v.me;
-  const [idx, setIdx] = useState(0);
-  const [busy, setBusy] = useState(false);
-  const scroller = useRef<HTMLDivElement>(null);
+  const snap: Snapshot = useSnapshot();
+  const [view, setViewState] = useState<RecView>(() => (freeFirst ? 'deck' : readView()));
+  const setView = (x: RecView) => { setViewState(x); try { localStorage.setItem(VIEW_KEY, x); } catch { /* */ } };
   const left = swipesLeft(me);
   const plus = isPlus(me);
   const used = plus ? 0 : FREE_SWIPES_PER_DAY - left;
-
-  const snap: Snapshot = useSnapshot();
-  const cards = useMemo(() => {
-    return recommendPeople(snap, me, v.visibleUsers, (u) => v.canSeeField(u, 'timetable'), 20);
-  }, [v, me, snap]);
-  const current = idx < cards.length ? cards[idx] : null;
-  useEffect(() => { try { if (current) localStorage.setItem(LAST_SEEN_KEY, current.user.id); } catch { /* */ } }, [current]);
-
-  const advance = () => { const el = scroller.current; if (el) el.scrollBy({ left: el.clientWidth, behavior: 'smooth' }); };
-  const onConnect = async (u: User) => { setBusy(true); const ok = await connect(u); setBusy(false); if (ok) advance(); };
-  const connected = current ? v.isFriend(current.user.id) : false;
-  const requested = current ? !!v.pendingOut(current.user.id) : false;
   const wants = wantsLine(me.wants);
   const incoming = useMemo(() => requestsForMe(snap, me), [snap, me]);
 
@@ -127,7 +127,43 @@ function RecommendDeck({ connect, invite, openPaywall, freeFirst }: { connect: (
         </button>
       </div>
       {freeFirst && <div className="shrink-0 mx-4 mb-2 h-8 px-3 rounded-full bg-mint-soft text-mint text-[12px] font-semibold flex items-center gap-1.5"><Clock size={13} />{t('지금 공강인 사람 우선')}</div>}
+      {view === 'deck' ? (
+        <>
+          <div className="shrink-0 px-4 pb-2 flex justify-end">
+            <button onClick={() => setView('hub')} className="h-7 px-3 rounded-full border border-line bg-white text-[12px] font-semibold text-ink-2 flex items-center gap-1 press"><List size={13} />{t('목록으로 보기')}</button>
+          </div>
+          <RecommendDeck connect={connect} invite={invite} />
+        </>
+      ) : (
+        <QuietHub onDeck={() => setView('deck')} />
+      )}
+    </>
+  );
+}
 
+/** 한 장씩 넘겨 보는 덱 (모든 학교) — "한 장씩 보기"로 켠다 */
+function RecommendDeck({ connect, invite }: { connect: (u: User) => Promise<boolean>; invite: (u: User) => void }) {
+  const nav = useNavigate();
+  const v = useViewer();
+  const me = v.me;
+  const [idx, setIdx] = useState(0);
+  const [busy, setBusy] = useState(false);
+  const scroller = useRef<HTMLDivElement>(null);
+
+  const snap: Snapshot = useSnapshot();
+  const cards = useMemo(() => {
+    return recommendPeople(snap, me, v.visibleUsers, (u) => v.canSeeField(u, 'timetable'), 20);
+  }, [v, me, snap]);
+  const current = idx < cards.length ? cards[idx] : null;
+  useEffect(() => { try { if (current) localStorage.setItem(LAST_SEEN_KEY, current.user.id); } catch { /* */ } }, [current]);
+
+  const advance = () => { const el = scroller.current; if (el) el.scrollBy({ left: el.clientWidth, behavior: 'smooth' }); };
+  const onConnect = async (u: User) => { setBusy(true); const ok = await connect(u); setBusy(false); if (ok) advance(); };
+  const connected = current ? v.isFriend(current.user.id) : false;
+  const requested = current ? !!v.pendingOut(current.user.id) : false;
+
+  return (
+    <>
       {cards.length === 0 ? (
         <DeckEnd onWants={() => nav('/profile/wants')} onSearch={() => nav('/people?tab=search')} />
       ) : (
@@ -147,6 +183,177 @@ function RecommendDeck({ connect, invite, openPaywall, freeFirst }: { connect: (
         </div>
       )}
     </>
+  );
+}
+
+/**
+ * 조용한 허브 — 관리할 것 없이 둘러보기만 해도 되는 세로 스크롤.
+ * (a) 지금 가까운 사람(저장이 기본) (b) 이번 주 주변 (c) 열려 있는 사람 (d) 의외의 연결 (e) 저장한 사람 · 혹시 찾는 사람이 있나요?
+ * 모든 사람 카드는 이유·거리 → 이름 순서.
+ */
+function QuietHub({ onDeck }: { onDeck: () => void }) {
+  const nav = useNavigate();
+  const v = useViewer();
+  const me = v.me;
+  const snap: Snapshot = useSnapshot();
+  const closeness = useCloseness(snap, me.id);
+  const { hide, bar } = useHideWithUndo();
+  const [more, setMore] = useState(false);
+  const [statusOpen, setStatusOpen] = useState(false);
+  const secNear = useSectionState('people.near');
+  const secAround = useSectionState('people.around', 420);
+  const secOpen = useSectionState('people.open', 480);
+  const secUnexp = useSectionState('people.unexpected', 540);
+
+  const hidden = useMemo(() => new Set(me.hiddenPeople ?? []), [me.hiddenPeople]);
+  const pool = useMemo(() => v.visibleUsers.filter((u) => !hidden.has(u.id)), [v.visibleUsers, hidden]);
+  const near = useMemo(() => recommendPeople(snap, me, pool, (u) => v.canSeeField(u, 'timetable'), 12), [snap, me, pool, v]);
+  const around = useMemo(() => aroundToday(snap, me), [snap, me]);
+  const visible = (u: User) => !v.isBlocked(u.id) && !hidden.has(u.id);
+  const openPeople = around.openNow.filter(visible);
+  const unexpected = useMemo(() => unexpectedConnections(snap, me, pool, (u) => v.canSeeField(u, 'timetable'), 2), [snap, me, pool, v]);
+  const savedCount = (me.savedPeople ?? []).filter((id) => v.visibleUsers.some((u) => u.id === id)).length;
+  const shown = near.slice(0, more ? 12 : 4);
+
+  const nextActions = (
+    <div className="flex flex-wrap justify-center gap-2">
+      <Button size="sm" onClick={() => nav('/profile/wants')}>{t('찾는 사람 설정')}</Button>
+      <Button size="sm" variant="outline" onClick={() => nav('/profile/edit')}>{t('프로필 보완')}</Button>
+      <Button size="sm" variant="ghost" icon={<Search size={14} />} onClick={() => nav('/people/find')}>{t('사람 찾아보기')}</Button>
+    </div>
+  );
+
+  return (
+    <div className="flex-1 min-h-0 overflow-y-auto hide-scrollbar pb-28 px-4 space-y-5">
+      {/* (a) 지금 가까운 사람 */}
+      <section aria-labelledby="h-near" className="space-y-2">
+        <div className="flex items-center gap-2 px-1">
+          <h2 id="h-near" className="text-[15px] font-bold flex-1">{t('지금 가까운 사람')}</h2>
+          <button onClick={onDeck} className="h-7 px-3 rounded-full border border-line bg-white text-[12px] font-semibold text-ink-2 flex items-center gap-1 press"><GalleryHorizontal size={13} />{t('한 장씩 보기')}</button>
+        </div>
+        <Section loading={secNear.loading} error={secNear.error} onRetry={secNear.retry} skeleton={<SectionSkeleton count={3} />}
+          empty={near.length === 0 && <SectionEmpty emoji="🌱" title={t('지금은 새 추천이 없어요')} description={t('찾는 사람을 정하거나 프로필을 채우면 가까운 사람이 보여요.')} action={nextActions} />}>
+          <div className="space-y-2">
+            {shown.map((c) => <NearCard key={c.user.id} user={c.user} reasons={c.reasons} closeness={closeness(c.user.id)} onHide={() => hide(c.user)} />)}
+          </div>
+          {near.length > 4 && (
+            <button onClick={() => setMore((x) => !x)} className="w-full h-9 rounded-full text-[12px] font-semibold text-primary flex items-center justify-center gap-1 press">
+              {more ? t('접기') : t('더 보기')}<ChevronDown size={13} className={cn('transition-transform', more && 'rotate-180')} />
+            </button>
+          )}
+          <PrivacyNote text={t('저장은 나만 봐요 · 상대에게 알리지 않아요')} className="px-1" />
+        </Section>
+      </section>
+
+      {/* (b) 이번 주 주변 */}
+      <section aria-labelledby="h-around" className="space-y-2">
+        <h2 id="h-around" className="text-[15px] font-bold px-1">{t('이번 주 주변')}</h2>
+        <Section loading={secAround.loading} error={secAround.error} onRetry={secAround.retry} skeleton={<SectionSkeleton count={1} />}
+          empty={around.viaFriends.length + around.inCity.length + openPeople.length === 0 && (
+            <SectionEmpty emoji="🌤️" title={t('이번 주는 조용해요')} description={t('아무것도 안 해도 괜찮아요. 새로운 사람이 생기면 여기에 보여요.')}
+              action={<Button size="sm" variant="outline" icon={<Search size={14} />} onClick={() => nav('/people/find')}>{t('사람 찾아보기')}</Button>} />
+          )}>
+          <div className="rounded-[24px] bg-gradient-to-br from-[#D2E4FF] to-[#BFF4FF] p-1.5">
+            <div className="rounded-[20px] bg-white/80 divide-y divide-line/70">
+              <AroundRow emoji="🤝" label={t('아는 사람을 통해 이어진 사람')} n={around.viaFriends.length} onClick={() => nav('/people/second')} />
+              <AroundRow emoji="📍" label={around.city ? fmt(t('이번 주 {city}에 있는 사람'), { city: around.city }) : t('이번 주 같은 도시에 있는 사람')} n={around.inCity.length} onClick={() => nav('/people/around')} />
+              <AroundRow emoji="☕" label={t('지금 열려 있는 사람')} n={openPeople.length} onClick={() => nav('/people/around?open=1')} />
+            </div>
+          </div>
+          <PrivacyNote text={t('도시 단위로만 보여요 · 정확한 위치는 공유하지 않아요')} className="px-1" />
+        </Section>
+      </section>
+
+      {/* (c) Open To — 상태가 켜진 사람 */}
+      <section aria-labelledby="h-open" className="space-y-2">
+        <div className="flex items-center gap-2 px-1">
+          <h2 id="h-open" className="text-[15px] font-bold flex-1">{t('열려 있는 사람')}</h2>
+          {openPeople.length > 3 && <button onClick={() => nav('/people/around?open=1')} className="text-[12px] font-semibold text-primary flex items-center press">{t('모두 보기')}<ChevronRight size={13} /></button>}
+        </div>
+        <Section loading={secOpen.loading} error={secOpen.error} onRetry={secOpen.retry} skeleton={<SectionSkeleton count={2} />}
+          empty={openPeople.length === 0 && (
+            <SectionEmpty emoji="☕" title={t('지금 열려 있는 사람이 없어요')} description={t('내 상태를 켜 두면 가까운 사람에게 가볍게 보여요.')}
+              action={<Button size="sm" variant="outline" onClick={() => setStatusOpen(true)}>{t('내 상태 켜기')}</Button>} />
+          )}>
+          <div className="rounded-[24px] border border-line bg-white divide-y divide-line/70">
+            {openPeople.slice(0, 3).map((u) => <OpenRow key={u.id} user={u} closeness={closeness(u.id)} />)}
+          </div>
+        </Section>
+      </section>
+
+      {/* (d) 의외의 연결 미리보기 */}
+      <section aria-labelledby="h-unexp" className="space-y-2">
+        <div className="flex items-center gap-2 px-1">
+          <h2 id="h-unexp" className="text-[15px] font-bold flex-1">{t('의외의 연결')}</h2>
+          <button onClick={() => nav('/people/unexpected')} className="text-[12px] font-semibold text-primary flex items-center press">{t('모두 보기')}<ChevronRight size={13} /></button>
+        </div>
+        <Section loading={secUnexp.loading} error={secUnexp.error} onRetry={secUnexp.retry} skeleton={<SectionSkeleton count={2} />}
+          empty={unexpected.length === 0 && <SectionEmpty emoji="🌿" title={t('새로운 추천이 없어요')} description={t('찾는 사람을 조정하거나 프로필을 채우면 새로운 사람이 보여요.')} action={nextActions} />}>
+          <div className="space-y-2">
+            {unexpected.map((c) => <UnexpectedCard key={c.user.id} user={c.user} reasons={c.reasons} closeness={closeness(c.user.id)} onHide={() => hide(c.user)} compact />)}
+          </div>
+        </Section>
+      </section>
+
+      {/* (e) 들어가는 길 */}
+      <section className="rounded-[24px] border border-line bg-white divide-y divide-line/70">
+        <button onClick={() => nav('/profile/saved')} className="w-full h-13 min-h-[52px] px-4 flex items-center gap-3 text-left press">
+          <span className="h-8 w-8 rounded-full bg-primary-soft text-primary grid place-items-center shrink-0"><Bookmark size={15} /></span>
+          <span className="flex-1 text-[14px] font-semibold">{t('저장한 사람')} <span className="text-ink-3">{savedCount}</span></span>
+          <ChevronRight size={16} className="text-ink-3" />
+        </button>
+        <button onClick={() => nav('/people/find')} className="w-full min-h-[52px] px-4 flex items-center gap-3 text-left press">
+          <span className="h-8 w-8 rounded-full bg-[#BFF4FF] text-primary grid place-items-center shrink-0"><Search size={15} /></span>
+          <span className="flex-1 text-[14px] font-semibold">{t('혹시 찾는 사람이 있나요?')}</span>
+          <ChevronRight size={16} className="text-ink-3" />
+        </button>
+      </section>
+      <StatusPicker open={statusOpen} onClose={() => setStatusOpen(false)} />
+      {bar}
+    </div>
+  );
+}
+
+/** 지금 가까운 사람 카드 — 위: 거리·이유 / 아래: PersonRow(저장이 기본, 작은 연결) */
+function NearCard({ user, reasons, closeness, onHide }: { user: User; reasons: Reason[]; closeness: Closeness; onHide: () => void }) {
+  return (
+    <div className="rounded-[20px] border border-line bg-white overflow-hidden">
+      <div className="px-3 pt-2.5 flex items-center gap-1.5 min-w-0">
+        <ClosenessTag c={closeness} className="shrink-0" />
+        <ReasonChips reasons={reasons} max={2} className="flex-nowrap overflow-hidden min-w-0" />
+        <span className="flex-1" />
+        <button onClick={onHide} aria-label={t('숨기기')} title={t('숨기기')} className="h-7 w-7 rounded-full grid place-items-center text-ink-3 hover:bg-surface-2 shrink-0 press"><EyeOff size={14} /></button>
+      </div>
+      <PersonRow user={user} reasons={[]} actions className="!border-0 !rounded-none !pt-1.5" />
+    </div>
+  );
+}
+
+function AroundRow({ emoji, label, n, onClick }: { emoji: string; label: string; n: number; onClick: () => void }) {
+  return (
+    <button onClick={onClick} className="w-full min-h-[48px] px-3.5 flex items-center gap-2.5 text-left press">
+      <span className="text-[16px] shrink-0" aria-hidden>{emoji}</span>
+      <span className="flex-1 min-w-0 text-[13px] font-semibold text-ink truncate">{label}</span>
+      <span className={cn('text-[15px] font-bold shrink-0', n > 0 ? 'text-primary' : 'text-ink-3')}>{n}{t('명')}</span>
+      <ChevronRight size={15} className="text-ink-3 shrink-0" />
+    </button>
+  );
+}
+
+/** 열려 있는 사람 한 줄 — 상태가 먼저, 그다음 사람 */
+function OpenRow({ user, closeness }: { user: User; closeness: Closeness }) {
+  const nav = useNavigate();
+  const statuses = activeStatuses(user);
+  return (
+    <div className="px-3 py-2.5 flex items-center gap-2.5">
+      <button onClick={() => nav(`/users/${user.id}`)} className="shrink-0 press" aria-label={user.nickname}><Avatar emoji={user.avatar.emoji} hue={user.avatar.hue} url={user.avatar.url} size={40} /></button>
+      <button onClick={() => nav(`/users/${user.id}`)} className="flex-1 min-w-0 text-left">
+        <StatusPill user={user} size="sm" />
+        {statuses.length > 1 && <span className="ml-1 text-[11px] text-ink-3">+{statuses.length - 1}</span>}
+        <div className="mt-0.5 text-[13px] font-bold truncate">{user.nickname} <span className="text-[11px] font-semibold text-ink-3">· {closenessText(closeness)}</span></div>
+      </button>
+      <SaveButton user={user} />
+    </div>
   );
 }
 

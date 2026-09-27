@@ -21,7 +21,8 @@ export function degreeLine(snap: Snapshot, me: User, u: User, degree?: number): 
   if (degree === 1) return t('1촌 · 연결됨');
   if (degree === 2) {
     const n = mutualFriends(snap, me.id, u.id).map((id) => snap.users.find((x) => x.id === id)).filter((x): x is User => !!x && canShowInPath(x)).length;
-    return n ? `${t('2촌')} · ${t('공통 연결')} ${n}${t('명')}` : t('2촌');
+    if (!n) return t('2촌');
+    return lang === 'en' ? `2nd · ${n} mutual` : `2촌 · 공통 연결 ${n}명`;
   }
   if (degree === 3) return t('3촌 · 건너건너 아는 사람');
   return t('새로운 사람');

@@ -1,7 +1,6 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { t, lang, setLang } from '@core/i18n';
-import { ChevronRight, Lock, ShieldAlert, Bell, MapPin, LogOut, RotateCcw, Bug, User, Sparkles, Receipt, GraduationCap, Target, BellRing, Coffee } from 'lucide-react';
+import { ChevronRight, Lock, ShieldAlert, Bell, MapPin, LogOut, RotateCcw, Bug, User, Sparkles, Receipt, GraduationCap, Target, BellRing, Coffee, Bookmark, SplitSquareVertical } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Toggle, Button, Segmented } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
@@ -9,7 +8,8 @@ import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { isAlumniStage, stageLabel, stageOf } from '@core/lib/network';
 import { activeStatus } from '@core/lib/status';
-import { StatusPicker, statusText } from '@/components/people_StatusPill';
+import { statusText } from '@/components/people_StatusPill';
+import { PARTIAL_FAIL_KEY } from '@/hooks/useSectionState';
 
 export function SettingsPage() {
   const nav = useNavigate();
@@ -19,7 +19,6 @@ export function SettingsPage() {
   const init = useAppStore((s) => s.init);
   const showToast = useAppStore((s) => s.showToast);
   const savedSearches = useAppStore((s) => s.savedSearches);
-  const [statusOpen, setStatusOpen] = useState(false);
   const me = v.me;
   const alumni = isAlumniStage(me);
   const plus = me.plan === 'plus';
@@ -55,7 +54,8 @@ export function SettingsPage() {
 
         {/* ── 지금 상태: "☕ 이번 주 커피 가능" — 기간이 지나면 자동으로 꺼짐 ── */}
         <div className="card divide-y divide-line">
-          <Row Icon={Coffee} label={t('지금 상태')} desc={myStatus ? statusText(myStatus) : `${t('상태 없음')} · ${t('기간이 지나면 자동으로 꺼져요')}`} onClick={() => setStatusOpen(true)} />
+          <Row Icon={Coffee} label={`Open To · ${t('지금 상태')}`} desc={myStatus ? statusText(myStatus) : `${t('상태 없음')} · ${t('기간이 지나면 자동으로 꺼져요')}`} onClick={() => nav('/profile/open-to')} />
+          <Row Icon={Bookmark} label={t('저장한 사람')} desc={t('나만 볼 수 있어요')} onClick={() => nav('/profile/saved')} />
         </div>
 
         {/* ── 상태 (재학생 ↔ 졸업생) ── */}
@@ -111,12 +111,12 @@ export function SettingsPage() {
           <Row Icon={RotateCcw} label={t('플랜 초기화')} desc={t('무료 플랜으로')} onClick={() => run(() => api.users.setPlan(me.id, 'free'), t('플랜을 초기화했어요.'))} />
           {alumni && <Row Icon={GraduationCap} label={t('재학생으로 되돌리기')} desc={t('연결·기록은 그대로, 홈이 재학생 기준으로')} onClick={() => run(() => api.users.setStage(me.id, 'undergrad'), t('재학생으로 되돌렸어요.'))} />}
           <Row Icon={BellRing} label={t('새 사람 알림 시뮬레이션')} desc={t('알림이 켜진 저장 검색을 다시 실행해요')} onClick={simulateAlerts} />
+          <Row Icon={SplitSquareVertical} label={t('부분 오류 미리보기')} desc={t('다음에 여는 화면의 한 섹션만 실패시켜 재시도를 확인해요')} onClick={() => { try { sessionStorage.setItem(PARTIAL_FAIL_KEY, '1'); } catch { /* */ } showToast(t('다음에 여는 화면에서 한 섹션이 실패해요.')); }} />
           <Row Icon={Bug} label={t('오류 상태 미리보기')} desc={t('다음 API 요청 1회를 실패시켜 오류 화면을 확인해요')} onClick={() => { api.system.failNext(); showToast(t('다음 요청이 실패해요. 홈으로 돌아가 새로고침해보세요.')); init(); }} />
           <Row Icon={RotateCcw} tone="danger" label={t('데모 데이터 초기화')} desc={t('모든 변경 사항을 지우고 예시 데이터로 되돌려요')} onClick={async () => { await api.system.reset(); await logout(); nav('/welcome', { replace: true }); showToast(t('데모 데이터를 초기화했어요.')); }} />
         </div>
         <p className="text-center text-[11px] text-ink-3">AroundU MVP · mock API (localStorage)</p>
       </div>
-      <StatusPicker open={statusOpen} onClose={() => setStatusOpen(false)} />
     </div>
   );
 }

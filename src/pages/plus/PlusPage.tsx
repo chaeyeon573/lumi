@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Sparkles, Check, Search, Layers, Bell, UserPlus, Wand2, GraduationCap } from 'lucide-react';
+import { Sparkles, Check, Search, Layers, Bell, UserPlus, Wand2, GraduationCap, ChevronRight, Lock, Telescope } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import { TopBar } from '@/components/layout/TopBar';
 import { Button, Tag } from '@/components/ui';
@@ -46,6 +46,16 @@ export function PlusPage() {
             </div>
           ); })}
         </div>
+
+        <button onClick={() => nav('/people/advanced')} className="w-full card p-4 flex items-center gap-3 text-left press">
+          <span className="h-10 w-10 rounded-2xl bg-[#BFF4FF] text-primary grid place-items-center shrink-0"><Telescope size={18} /></span>
+          <span className="flex-1 min-w-0">
+            <span className="block text-[15px] font-bold text-primary">{t('고급 탐색 열기')}</span>
+            <span className="block text-[12px] text-ink-2 mt-0.5">{t('조건 겹치기 · 2촌/3촌 필터 · 검색 저장 · 새 사람 알림')}</span>
+          </span>
+          <ChevronRight size={18} className="text-ink-3 shrink-0" />
+        </button>
+        <p className="text-[12px] text-ink-2 flex items-center gap-1.5 px-1"><Lock size={12} className="text-primary shrink-0" />{t('유료여도 비공개 정보는 볼 수 없어요 · 찾는 힘만 커져요')}</p>
 
         <div className="rounded-[24px] border border-line bg-white p-4">
           <div className="text-[14px] font-bold">{t('무료로 할 수 있는 것')}</div>

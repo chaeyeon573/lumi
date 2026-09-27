@@ -221,6 +221,11 @@ function RecommendTab() {
   return (
     <div>
       <NowStrip />
+      <button onClick={() => nav('/meet/tables')} className="mb-4 w-full h-12 rounded-full bg-[#BFF4FF] pl-4 pr-2 flex items-center gap-2 text-left press">
+        <Users size={16} className="text-primary shrink-0" />
+        <span className="flex-1 min-w-0 text-[14px] font-semibold text-primary truncate">{t('작은 모임 · 4~6명')}</span>
+        <ChevronRight size={16} className="text-primary shrink-0" />
+      </button>
       <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-3">{chips.map((c) => <Chip key={c.key} active={chip === c.key} onClick={() => setChip(c.key)}>{c.label}</Chip>)}</div>
       {list.length === 0
         ? <EmptyState emoji="" title={t('찾는 활동을 설정하면 더 잘 맞아요')} description={recs.length > 0 ? t('이 조건에 맞는 모임이 아직 없어요.') : undefined} action={<div className="flex gap-2"><Button size="sm" variant="outline" onClick={() => nav('/profile/wants')}>{t('설정')}</Button><Button size="sm" icon={<Plus size={14} />} onClick={() => nav('/meet/create')}>{t('모임 만들기')}</Button></div>} />

@@ -55,7 +55,7 @@ export function shareFieldValue(u: User, f: ShareField, orgs: Organization[]): s
  * 손 든 사람 미니 카드 — 이름·사진 + 본인이 고른 항목만. 연락처·정확한 위치는 항상 비공개.
  * 응답 화면의 "요청자에게 이렇게 보여요" 미리보기와 요청자 화면의 응답 카드가 같이 쓴다.
  */
-export function SharedProfileMini({ user, shared, preview, className }: { user: User; shared: ShareField[]; preview?: boolean; className?: string }) {
+export function SharedProfileMini({ user, shared, preview, lockedRow = true, className }: { user: User; shared: ShareField[]; preview?: boolean; lockedRow?: boolean; className?: string }) {
   const orgs = useAppStore((s) => s.organizations);
   const rows = SHARE_FIELDS.filter((f) => shared.includes(f)).map((f) => ({ f, value: shareFieldValue(user, f, orgs) }));
   return (
@@ -72,10 +72,12 @@ export function SharedProfileMini({ user, shared, preview, className }: { user: 
             <dd className={cn('min-w-0 truncate', value ? 'text-ink' : 'text-ink-3')}>{value || (preview ? t('프로필에 없어요') : '—')}</dd>
           </div>
         ))}
-        <div className="flex items-baseline gap-2 text-[12px] pt-1 mt-1 border-t border-line/70">
-          <dt className="w-14 shrink-0 text-ink-3 font-semibold inline-flex items-center gap-1"><Lock size={10} />{t('비공개')}</dt>
-          <dd className="text-ink-3">{t('연락처 · 정확한 위치 — 항상 비공개')}</dd>
-        </div>
+        {lockedRow && (
+          <div className="flex items-baseline gap-2 text-[12px] pt-1 mt-1 border-t border-line/70">
+            <dt className="w-14 shrink-0 text-ink-3 font-semibold inline-flex items-center gap-1"><Lock size={10} />{t('비공개')}</dt>
+            <dd className="text-ink-3">{t('연락처 · 정확한 위치 — 항상 비공개')}</dd>
+          </div>
+        )}
       </dl>
     </div>
   );

@@ -18,7 +18,7 @@ import { ReasonChips } from '@/components/people_ReasonChips';
 import { SchoolBadge } from '@/components/people_SchoolBadge';
 import { SaveButton } from '@/components/people_ActionBar';
 import { StatusPill } from '@/components/people_StatusPill';
-import { ConnectStatusButton, maskedCity, maskedLine } from '@/components/people_Network';
+import { ConnectStatusButton, fmt, maskedCity, maskedLine } from '@/components/people_Network';
 
 type Tab = 'people' | 'asks';
 
@@ -84,7 +84,7 @@ function PathLine({ sd }: { sd: SecondDegree }) {
       <ArrowRight size={13} className="text-ink-3 shrink-0" />
       <span className="flex items-center gap-1 min-w-0">
         {sd.via.slice(0, 2).map((u) => <Avatar key={u.id} emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={20} className="shrink-0" />)}
-        <span className="truncate text-primary">{names || `${t('공통 연결')} ${sd.hiddenVia}${t('명')}`}{names && extra > 0 ? ` ${t('외')} ${extra}${t('명')}` : ''}</span>
+        <span className="truncate text-primary">{names || fmt(t('공통 연결 {n}명'), { n: sd.hiddenVia })}{names && extra > 0 ? ` ${fmt(t('외 {n}명'), { n: extra })}` : ''}</span>
       </span>
       <ArrowRight size={13} className="text-ink-3 shrink-0" />
       <span className="shrink-0">{sd.user.nickname}</span>
@@ -110,7 +110,7 @@ function SecondCard({ sd, asked, onMutual, onAsk, onAsks }: { sd: SecondDegree; 
       <div className="bg-[#F4F9FF] px-3.5 pt-3 pb-2.5 space-y-1.5">
         <div className="flex items-center gap-2">
           <span className="h-6 px-2.5 rounded-full bg-primary text-white text-[11px] font-bold inline-flex items-center shrink-0">{t('2촌')}</span>
-          <button onClick={onMutual} className="h-6 px-2.5 rounded-full bg-white border border-[#D2E4FF] text-primary text-[11px] font-bold inline-flex items-center gap-0.5 press">{t('공통 연결')} {total}{t('명')}<ChevronRight size={12} /></button>
+          <button onClick={onMutual} className="h-6 px-2.5 rounded-full bg-white border border-[#D2E4FF] text-primary text-[11px] font-bold inline-flex items-center gap-0.5 press">{fmt(t('공통 연결 {n}명'), { n: total })}<ChevronRight size={12} /></button>
           <span className="flex-1" />
           {canIntro && <Tag tone="mint">{t('소개 가능')}</Tag>}
         </div>
@@ -151,7 +151,7 @@ function SecondCard({ sd, asked, onMutual, onAsk, onAsks }: { sd: SecondDegree; 
 function MutualSheet({ sd, onClose }: { sd: SecondDegree | null; onClose: () => void }) {
   const nav = useNavigate();
   return (
-    <BottomSheet open={!!sd} onClose={onClose} title={sd ? `${sd.user.nickname}${t('님과의 공통 연결')}` : ''}>
+    <BottomSheet open={!!sd} onClose={onClose} title={sd ? fmt(t('{name}님과의 공통 연결'), { name: sd.user.nickname }) : ''}>
       {sd && (
         <div className="space-y-1.5">
           {sd.via.map((u) => (
@@ -161,7 +161,7 @@ function MutualSheet({ sd, onClose }: { sd: SecondDegree | null; onClose: () => 
               <ChevronRight size={16} className="text-ink-3" />
             </button>
           ))}
-          {sd.hiddenVia > 0 && <PrivacyNote text={`${t('외')} ${sd.hiddenVia}${t('명은 경로에 보이지 않게 설정했어요')}`} className="px-1 pt-1" />}
+          {sd.hiddenVia > 0 && <PrivacyNote text={fmt(t('외 {n}명은 경로에 보이지 않게 설정했어요'), { n: sd.hiddenVia })} className="px-1 pt-1" />}
         </div>
       )}
     </BottomSheet>
@@ -186,7 +186,7 @@ function AskSheet({ sd, onClose, onDone }: { sd: SecondDegree | null; onClose: (
     if (contact) { setErr(t('연락처(전화번호·이메일·메신저 ID)는 적을 수 없어요. 연결되면 대화에서 주고받아요.')); return; }
     setBusy(true); setErr(null);
     try {
-      await run(() => api.intros.create(v.me.id, via.id, sd.user.id, note.trim() || undefined), `${via.nickname}${t('님에게 물어봤어요')}`);
+      await run(() => api.intros.create(v.me.id, via.id, sd.user.id, note.trim() || undefined), fmt(t('{name}님에게 물어봤어요'), { name: via.nickname }));
       onClose(); setKey(null); onDone();
     } catch (e) { setErr((e as Error).message); } finally { setBusy(false); }
   };
@@ -195,7 +195,7 @@ function AskSheet({ sd, onClose, onDone }: { sd: SecondDegree | null; onClose: (
     <BottomSheet open={!!sd} onClose={() => { onClose(); setKey(null); }} title={t('연결해줄 수 있나요?')}>
       {sd && (
         <div className="space-y-3">
-          <p className="text-[13px] text-ink-2">{`${sd.user.nickname}${t('님은 공통 연결이 전달하기 전까지 이 부탁을 몰라요. 넘겨도 괜찮은 가벼운 부탁이에요.')}`}</p>
+          <p className="text-[13px] text-ink-2">{fmt(t('{name}님은 공통 연결이 전달하기 전까지 이 부탁을 몰라요. 넘겨도 괜찮은 가벼운 부탁이에요.'), { name: sd.user.nickname })}</p>
           <div>
             <div className="text-[12px] font-bold text-ink-3 mb-1.5">{t('누구에게 물어볼까요?')}</div>
             <div className="space-y-1.5" role="radiogroup">
@@ -208,14 +208,14 @@ function AskSheet({ sd, onClose, onDone }: { sd: SecondDegree | null; onClose: (
                 </button>
               ))}
             </div>
-            {sd.hiddenVia > 0 && <PrivacyNote text={`${t('외')} ${sd.hiddenVia}${t('명은 경로에 보이지 않게 설정했어요')}`} className="mt-1.5 px-1" />}
+            {sd.hiddenVia > 0 && <PrivacyNote text={fmt(t('외 {n}명은 경로에 보이지 않게 설정했어요'), { n: sd.hiddenVia })} className="mt-1.5 px-1" />}
           </div>
           <div>
             <div className="text-[12px] font-bold text-ink-3 mb-1.5">{t('한 줄 (선택)')}</div>
             <Textarea rows={3} maxLength={200} value={note} onChange={(e) => { setNote(e.target.value); setErr(null); }} placeholder={t('어떤 이야기를 나누고 싶은지 짧게 적어주세요')} aria-invalid={contact || !!err} />
             {(contact || err) && <p className="mt-1 text-[12px] text-danger" role="alert">{err ?? t('연락처(전화번호·이메일·메신저 ID)는 적을 수 없어요. 연결되면 대화에서 주고받아요.')}</p>}
           </div>
-          <Button full size="lg" loading={busy} disabled={!via || contact} icon={<Handshake size={16} />} onClick={submit}>{via ? `${via.nickname}${t('님에게 물어보기')}` : t('물어보기')}</Button>
+          <Button full size="lg" loading={busy} disabled={!via || contact} icon={<Handshake size={16} />} onClick={submit}>{via ? fmt(t('{name}님에게 물어보기'), { name: via.nickname }) : t('물어보기')}</Button>
         </div>
       )}
     </BottomSheet>
@@ -240,9 +240,9 @@ function AsksTab({ onPeople }: { onPeople: () => void }) {
   const empty = viaMe.length + toMe.length + mine.length === 0;
 
   const act = async (id: string, fn: () => Promise<unknown>) => { setBusy(id); try { await fn(); } catch { /* toast by run */ } finally { setBusy(null); } };
-  const forward = (it: IntroRequest, pass: boolean) => act(`${it.id}${pass ? 'p' : 'f'}`, () => run(() => api.intros.forward(it.id, me, pass), pass ? t('넘겼어요 · 아무에게도 알리지 않아요') : `${name(it.toId)}${t('님에게 전달했어요')}`));
+  const forward = (it: IntroRequest, pass: boolean) => act(`${it.id}${pass ? 'p' : 'f'}`, () => run(() => api.intros.forward(it.id, me, pass), pass ? t('넘겼어요 · 아무에게도 알리지 않아요') : fmt(t('{name}님에게 전달했어요'), { name: name(it.toId) })));
   const respond = (it: IntroRequest, accept: boolean) => act(`${it.id}${accept ? 'a' : 'd'}`, async () => {
-    const r = await run(() => api.intros.respond(it.id, me, accept), accept ? `${name(it.fromId)}${t('님과 대화가 열렸어요')}` : t('알겠어요 · 상대에게 따로 알리지 않아요'));
+    const r = await run(() => api.intros.respond(it.id, me, accept), accept ? fmt(t('{name}님과 대화가 열렸어요'), { name: name(it.fromId) }) : t('알겠어요 · 상대에게 따로 알리지 않아요'));
     if (accept && r.roomId) nav(`/chats/${r.roomId}`);
   });
   const roomWith = (other: string) => rooms.find((r) => r.type === 'direct' && r.memberIds.includes(me) && r.memberIds.includes(other));
@@ -251,7 +251,7 @@ function AsksTab({ onPeople }: { onPeople: () => void }) {
     <div className="px-4 space-y-4">
       <Section loading={sec.loading} error={sec.error} onRetry={sec.retry} skeleton={<SectionSkeleton count={2} />}
         empty={empty && (
-          <SectionEmpty emoji="🤝" title={t('아직 연결 부탁이 없어요')} description={t("2촌 카드에서 '연결해줄 수 있나요?'로 공통 연결에게 물어볼 수 있어요.")}
+          <SectionEmpty emoji="🤝" title={t('아직 연결 부탁이 없어요')} description={t('2촌 카드에서 “연결해줄 수 있나요?”로 공통 연결에게 물어볼 수 있어요.')}
             action={<Button size="sm" onClick={onPeople}>{t('2촌 보기')}</Button>} />
         )}>
         {viaMe.length > 0 && (
@@ -259,7 +259,7 @@ function AsksTab({ onPeople }: { onPeople: () => void }) {
             <h2 className="text-[14px] font-bold px-1">{t('이어줄 수 있을까요?')}</h2>
             {viaMe.map((it) => (
               <AskCard key={it.id} a={v.userById(it.fromId)} b={v.userById(it.toId)} note={it.note}
-                title={`${name(it.fromId)}${t('님이 ')}${name(it.toId)}${t('님과 연결되고 싶어해요')}`}
+                title={fmt(t('{a}님이 {b}님과 연결되고 싶어해요'), { a: name(it.fromId), b: name(it.toId) })}
                 foot={t('넘겨도 아무에게도 알리지 않아요')}
                 actions={<>
                   <Button size="sm" variant="outline" loading={busy === `${it.id}p`} onClick={() => forward(it, true)}>{t('넘기기')}</Button>
@@ -273,7 +273,7 @@ function AsksTab({ onPeople }: { onPeople: () => void }) {
             <h2 className="text-[14px] font-bold px-1">{t('나에게 온 소개')}</h2>
             {toMe.map((it) => (
               <AskCard key={it.id} a={v.userById(it.viaId)} b={v.userById(it.fromId)} note={it.note}
-                title={`${name(it.viaId)}${t('님이 ')}${name(it.fromId)}${t('님을 이어주고 싶어해요')}`}
+                title={fmt(t('{a}님이 {b}님을 이어주고 싶어해요'), { a: name(it.viaId), b: name(it.fromId) })}
                 foot={t('괜찮아요를 눌러도 상대에게 따로 알리지 않아요')}
                 onPerson={() => nav(`/users/${it.fromId}`)}
                 actions={<>

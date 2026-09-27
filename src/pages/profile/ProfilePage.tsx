@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Settings, Pencil, ShieldCheck, CalendarDays, ChevronRight, Users, CalendarCheck, Bookmark, Building2, FileText, Bell, MapPin, Briefcase, Sparkles, GraduationCap, Quote, Target, MessageSquareText, BookmarkCheck, Coffee } from 'lucide-react';
 import { t, lang } from '@core/i18n';
@@ -6,8 +5,9 @@ import { AppHeader } from '@/components/layout/AppHeader';
 import { Avatar, Button, CardSkeleton, ErrorState, Tag } from '@/components/ui';
 import { PostCard } from '@/components/cards/PostCard';
 import { SchoolBadge } from '@/components/people_SchoolBadge';
-import { StatusPill, StatusPicker } from '@/components/people_StatusPill';
-import { activeStatus } from '@core/lib/status';
+import { StatusPills } from '@/components/people_StatusPill';
+import { activeStatuses } from '@core/lib/status';
+import { AUDIENCE_LABELS, privacyOf } from '@core/lib/privacy';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { INTEREST_LABELS, INTEREST_EMOJI } from '@core/lib/labels';
@@ -52,7 +52,6 @@ export function ProfilePage() {
   const orgs = useAppStore((s) => s.organizations);
   const posts = useAppStore((s) => s.posts);
   const notifications = useAppStore((s) => s.notifications);
-  const [statusOpen, setStatusOpen] = useState(false);
   const me = v.me;
   if (status === 'loading' || !me) return <div><AppHeader /><CardSkeleton count={3} /></div>;
   if (status === 'error') return <div><AppHeader /><ErrorState message={error ?? undefined} onRetry={init} /></div>;
@@ -76,7 +75,7 @@ export function ProfilePage() {
   const suggest = shouldSuggestStatusUpdate(me);
   const wants = me.wants;
   const homeCity = cityOf(me);
-  const myStatus = activeStatus(me);
+  const myStatus = activeStatuses(me).length > 0;
   const savedPeople = (me.savedPeople ?? []).filter((id) => v.visibleUsers.some((u) => u.id === id)).length;
   const scrollToPosts = () => document.getElementById('my-posts')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
@@ -113,12 +112,12 @@ export function ProfilePage() {
           </div>
         </section>
 
-        {/* ── 지금 상태: "☕ 이번 주 커피 가능" — 기간이 지나면 자동으로 꺼진다 ── */}
-        <button onClick={() => setStatusOpen(true)} className="card w-full p-4 flex items-center gap-3 text-left press">
+        {/* ── Open To: "☕ 이번 주 커피 가능" — 기간이 지나면 자동으로 꺼진다. 크게 내걸지 않고 한 줄 ── */}
+        <button onClick={() => nav('/profile/open-to')} className="card w-full p-4 flex items-center gap-3 text-left press">
           <span className="h-10 w-10 rounded-full bg-accent-soft grid place-items-center text-primary shrink-0"><Coffee size={18} /></span>
           <span className="flex-1 min-w-0">
-            <span className="block text-[12px] font-bold text-ink-3">{t('지금 상태')}</span>
-            {myStatus ? <StatusPill user={me} className="mt-1" /> : <span className="block text-[14px] text-ink-2">{t('상태 없음')}</span>}
+            <span className="block text-[12px] font-bold text-ink-3">Open To · {t('지금 상태')}</span>
+            {myStatus ? <StatusPills user={me} className="mt-1" /> : <span className="block text-[14px] text-ink-2">{t('상태 없음')}</span>}
           </span>
           <span className="text-[13px] font-bold text-verify shrink-0">{myStatus ? t('바꾸기') : t('켜기')}</span>
         </button>
@@ -260,6 +259,7 @@ export function ProfilePage() {
             {[
               { icon: <MessageSquareText size={18} />, label: t('프로필 질문'), sub: `${t('프로필 완성')} ${completion.percent}%`, go: () => nav('/profile/prompts') },
               { icon: <BookmarkCheck size={18} />, label: `${t('저장한 사람')} ${savedPeople}`, sub: t('나만 볼 수 있어요'), go: () => nav('/profile/saved') },
+              { icon: <ShieldCheck size={18} />, label: t('공개 범위'), sub: AUDIENCE_LABELS[privacyOf(me).scope], go: () => nav('/settings/privacy') },
               { icon: <Target size={18} />, label: t('목표와 역할'), sub: t('이번 학기 목표 · 생활권 · 찾는 역할'), go: () => nav('/profile/context') },
               { icon: <Building2 size={18} />, label: t('내 그룹'), sub: `${myOrgs}${t('개')}`, go: () => nav('/profile/groups') },
               { icon: <Users size={18} />, label: t('내 연결'), sub: `${friends}${t('명')}`, go: () => nav('/profile/friends') },
@@ -289,7 +289,6 @@ export function ProfilePage() {
           ) : myPosts.slice(0, 3).map((p) => <PostCard key={p.id} post={p} />)}
         </section>
       </div>
-      <StatusPicker open={statusOpen} onClose={() => setStatusOpen(false)} />
     </div>
   );
 }
