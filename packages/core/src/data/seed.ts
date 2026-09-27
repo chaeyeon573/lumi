@@ -1,5 +1,5 @@
 import type {
-  Activity, ActivityProposal, ChatRoom, Notification, Organization, Participation, Post, Relationships, School, User, Visibility, ProfileField, Opportunity, OpportunityIntentRecord, TimePoll, Course, SavedSearch } from '@core/types';
+  Activity, ActivityProposal, ChatRoom, Notification, Organization, Participation, Post, Relationships, School, User, Visibility, ProfileField, Opportunity, OpportunityIntentRecord, TimePoll, Course, SavedSearch, NetworkRequest } from '@core/types';
 import { addDaysISO, isoHoursAgo, isoMinutesAgo, todayISO } from '@core/lib/format';
 import { photo } from '@core/lib/assets';
 
@@ -857,4 +857,26 @@ activities.push(
     capacity: 6, visibility: 'school', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(9) },
 );
 
+/** v2.1 가벼운 상태 — 기간이 지나면 꺼진다 */
+const soon = (h: number) => new Date(Date.now() + h * 3600000).toISOString();
+const STATUS: Record<string, User['status']> = {
+  u_jimin: { kind: 'coffee', when: 'week', until: soon(24 * 4), setAt: isoHoursAgo(3) },
+  u_minjun: { kind: 'running', when: 'weekend', until: soon(24 * 3), setAt: isoHoursAgo(20) },
+  u_a_seoul_ai: { kind: 'running', when: 'weekend', until: soon(24 * 3), setAt: isoHoursAgo(8) },
+  u_a_sf_ai: { kind: 'running', when: 'weekend', until: soon(24 * 3), setAt: isoHoursAgo(8) },
+  u_b_snu1: { kind: 'coffee', when: 'today', until: soon(8), setAt: isoHoursAgo(1) },
+  u_b_stan1: { kind: 'coffee', when: 'today', until: soon(8), setAt: isoHoursAgo(1) },
+  u_taeho: { kind: 'coffee', when: 'week', until: soon(24 * 4), setAt: isoHoursAgo(30) },
+  u_sua: { kind: 'walk', when: 'now', until: soon(2), setAt: isoMinutesAgo(20) },
+};
+users.forEach((u) => { if (STATUS[u.id]) u.status = STATUS[u.id]; });
+
 export const savedSearches: SavedSearch[] = [];
+
+/** v2 네트워크 요청 — "이런 분을 찾고 있어요" (다른 사람이 올린 요청이 데모 사용자에게 2촌·관련 네트워크로 온다) */
+export const networkRequests: NetworkRequest[] = [
+  { id: 'nr_taeho_japan', authorId: 'u_taeho', text: '일본 식품 유통 경험이 있고, 서울에서 한 번 이야기 나눌 수 있는 분', city: '서울', field: '유통', interests: ['startup', 'travel'], reach: 3, status: 'open', dismissedIds: [], responses: [], referrals: [], createdAt: isoHoursAgo(5), expiresAt: addDaysISO(13) },
+  { id: 'nr_harin_pm', authorId: 'u_b_snu2', text: 'B2C 앱을 직접 만들어본 경험이 있는 분 (직무 상관없음). 온보딩 개선 사례 30분만 들려주실 수 있으면 좋겠어요', city: '서울', field: 'Product', interests: ['startup', 'design'], reach: 2, status: 'open', dismissedIds: [], responses: [], referrals: [], createdAt: isoHoursAgo(26), expiresAt: addDaysISO(12) },
+  { id: 'nr_yerin_ny', authorId: 'u_a_ny_fin', text: '뉴욕에서 대학원 준비 중인 연세 후배. 추천서·에세이 이야기 편하게 해드릴게요', city: '뉴욕', field: '금융', interests: ['finance', 'study'], reach: 3, status: 'open', dismissedIds: [], responses: [], referrals: [], createdAt: isoHoursAgo(50), expiresAt: addDaysISO(10) },
+];
+

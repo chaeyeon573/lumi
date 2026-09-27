@@ -23,6 +23,22 @@
 
 Meetup(모임 → 사람)과 달리 AroundU는 **사람 → 관계 → 필요하면 모임**. 그래서 하단 탭 순서도 홈 · **사람** · 모임 · 피드 · 프로필이고, 홈의 첫 섹션(일정 다음)이 "지금 연결할 수 있는 사람"이다.
 
+## 0-1. 부담 없는 앱 — 관리하게 하지 말고, 알아서 가볍게 발견시킨다 (v2.1)
+
+AroundU 가 주는 느낌은 "인맥을 만들어야 한다"가 아니라 **"어? 내가 몰랐던 괜찮은 사람이 생각보다 가까이 있었네."** 앱은 관계를 관리하는 도구가 아니라 관계가 우연히 생기기 쉬운 환경이다. 아무것도 안 해도 되는 앱이어야 한다.
+
+| 하지 않는 것 | 대신 |
+| --- | --- |
+| "네트워크를 확장하세요", "이번 주 목표: 5명 연결", "프로필이 70%밖에…" | 홈 **오늘 주변에서** — 아는 사람을 통해 이어진 사람 3명 · 이번 주 서울에 있는 사람 2명 · 지금 커피에 열려 있는 사람 1명 (`lib/around.ts aroundToday`) |
+| 카드를 보면 연결·팔로우해야 할 것 같은 압박, 스와이프 | **보기 → 저장 → 나중에 연결**. 행동 3단계: 저장(가장 가벼움, 나만 봄, 알림 없음) · 관심(팔로우) · 연결(실제 관계). 팔로워 수는 프로필 전면에 없다 |
+| "네트워크에 요청을 게시하세요" | 사람 탭 "혹시 찾는 사람이 있나요?" 한 줄 → AroundU 가 조용히 "가까운 네트워크에서 4명을 찾았어요" → 부족할 때만 "건너건너 물어볼까요?" |
+| 받은 요청에 응답 압박·읽음 표시 | "혹시 여기에 해당되나요?" [저요] [아는 사람 있어요] [넘기기]. 응답 안 해도 불이익 없음, 읽음 표시 없음 |
+| Open to networking / mentorship / business opportunities | 상태 한 줄 "☕ 이번 주 커피 가능", "🏃 주말 러닝 가능" — 기간이 지나면 자동으로 꺼짐 (`lib/status.ts`) |
+| Mutual Room 을 회의실처럼 (관계 강화·미팅 예약) | 그냥 DM 이 열리고 위에 작은 카드 "둘이 겹치는 것 · 연세대 · AI · 서울 · 공통 연결 2명" |
+| "이 사람과 단둘이 커피챗 하세요" | **작은 모임**(4~6명) — "둘 다 참여할 수 있는 작은 모임이 있어요" (`sharedSmallTables`) |
+
+어휘: 네트워크 확장 → **새로운 사람** · 네트워크 요청 → **사람 찾아보기** · 네트워킹 이벤트 → **작은 모임** · 소개 요청 → **연결해줄 수 있나요?** (화면 문구에서 '네트워킹'을 쓰지 않는다)
+
 ## 1. 가입 구조 · 학교 인증
 
 가입 조건: 현재 대학생·대학원생 또는 특정 대학 졸업생. **최소 한 개의 학교 소속 확인**을 완료해야 앱에 들어온다(건너뛰기 없음). 다른 대학 사람을 보는 것은 무료 — 가입은 대학 기반, 관계 형성은 대학을 초월.
@@ -54,7 +70,8 @@ Meetup(모임 → 사람)과 달리 AroundU는 **사람 → 관계 → 필요하
 | 졸업생 | `alumni_email` | 졸업생(평생) 이메일 인증 | Alumni (lifetime) email | 코드 `123456` |
 | 졸업생 | `diploma` | 졸업증명서·학위증 | Diploma / transcript | 즉시 |
 | 졸업생 | `alumni_association` | 학교·동문회 연동 | Alumni association account | 즉시 |
-| 졸업생 | `prior_student` | 이전 AroundU 재학생 인증 이력 | Verified as a student before | 즉시 |
+| 졸업생 | `prior_student` | 이전 AroundU 재학생 인증 이력 (가장 쉬움) | Verified as a student before | 즉시 |
+| 졸업생 | `vouch` | 동문 보증 — 인증된 같은 학교 사람 2명 | Vouched by alumni | 즉시 |
 
 저장: `User.verification = { method, at }`, `affiliation.emailVerified = true`. 표시: 프로필·카드·헤더에 **학교명 ✓** (툴팁 = 인증 방법, `verificationLabel`). 졸업생은 "학교명 동문 ✓". 프로필 편집 › 학교 카드에서 "다른 방법으로 인증"으로 추가 인증 가능.
 
@@ -98,6 +115,8 @@ Meetup(모임 → 사람)과 달리 AroundU는 **사람 → 관계 → 필요하
 /people?tab=recommend     사람 › 추천 (한 장 카드 덱)
 /people?tab=search        사람 › 찾기 (필터 8종 · 프리셋 · 저장한 검색)
 /people/results?c=…       검색 결과 · [검색 저장]
+/people/ask               네트워크에 물어보기 (요청 작성 · 두 엔진 미리보기)
+/people/requests          받은 요청 | 내 요청 · /people/requests/:id 요청 상세 (요청자: 추천·응답·수락 / 받는 사람: 저예요·아는 사람·관심 없어요)
 /people?tab=connections   사람 › 연결 (요청함 · 연결 · 팔로잉)
 /users/:id                사람 상세 (우리의 공통점 · 찾고 있어요)
 /meet?tab=recommend       모임 › 추천 ("지금" 스트립 + 추천 모임)
@@ -194,6 +213,46 @@ Meetup(모임 → 사람)과 달리 AroundU는 **사람 → 관계 → 필요하
 
 ### 6.5 사람 상세 `/users/:id`
 사진 → 이름 · 학교 'YY ✓ → 전공 · 직무 · 회사 → 거주/활동 도시 → 관심사 → **우리의 공통점**(이유 전부) → **찾고 있어요**(상대 wants) → 소개·프로필 질문 → 그룹 · 참여한 모임 · 글. 하단 고정 [연결하기] [메시지] [만남에 초대]. 하트·팔로우 버튼은 하단에서 제거(팔로우는 ⋯ 메뉴).
+
+### 6.6 네트워크에 물어보기 (Network Request) — 검색으로 잡히지 않는 사람까지
+
+친구의 친구가 멋진 사람이면 나도 연결되고 싶다. 플랫폼이 몰래 골라 주는 것만이 아니라, **내 네트워크 건너건너에 공개적으로 요청을 던지고 해당되는 사람이 직접 손드는 구조**. 화면 이름은 그냥 **사람 찾기**.
+
+```
+사람 › 찾기 상단  "어떻게 찾을까요?"
+  🔎 AroundU가 찾아보기   프로필과 네트워크를 바탕으로 적합한 사람 추천 (= 기존 찾기 필터)
+  📣 네트워크에 물어보기   내 주변과 건너건너 네트워크에 요청 전달 (→ /people/ask)   둘 다 선택 가능
+```
+
+**요청 작성 `/people/ask`**: "이런 분을 찾고 있어요" 본문 + 맥락(도시 · 분야 · 관심사, 선택) + 전달 범위(1촌 / 2촌 / 3촌 + 관련 학교·업종·관심사). 작성하는 동안 두 엔진이 미리 답한다.
+- 🔎 "조건과 가까운 사람 7명을 찾았어요" — `matchesForRequest`(프로필 관련성: 같은 지역 +3 · 같은 분야 +4 · 관심사 +1.5/개 · 본문 키워드가 소개·직무·회사·전공에 등장 +1/개, 촌수 안이면 +0.5).
+- 📣 "관련 있는 2촌 네트워크 86명에게 요청을 전달할까요?" — `audienceForRequest`(촌수 안 사람 전부 + 범위 밖이어도 같은 학교·같은 분야·같은 도시·관심사 겹치는 사람).
+
+**받는 사람 화면** (`/people/requests` 받은 요청 · 홈 "내 네트워크에서 찾는 사람" · 알림):
+```
+내 네트워크에서 이런 사람을 찾고 있어요
+일본 식품 유통 경험이 있는 분
+서울 · 유통 · 창업
+김채연님의 네트워크에서 온 요청 · 2촌 거리
+[저예요]  [제가 아는 사람이 있어요]  [관심 없어요]
+```
+| 행동 | 무엇이 일어나나 | 공개 범위 |
+| --- | --- | --- |
+| 저예요 (`requests.respond`) | 요청자에게 "박민수님이 이 요청에 응답했습니다 · 일본 식품 유통 5년 · 서울 · 공통 연결 2명". 요청자가 [수락]하면 서로 연결 + **Mutual Room**(DM) 생성 (`requests.decide`) | 손 든 본인만 요청자에게 보인다 |
+| 제가 아는 사람이 있어요 (`requests.refer`) | 내 연결 중 관련성 높은 후보를 골라 전달. 후보에게 먼저 "지훈님이 이 요청이 당신과 잘 맞는다고 생각해 전달했습니다" | **후보 프로필은 본인이 [관심 있어요](`referralDecide`) 하기 전까지 요청자에게 넘어가지 않는다** |
+| 관심 없어요 (`requests.dismiss`) | 이 요청을 다시 보지 않는다 | — |
+
+**요청자 화면 `/people/requests/:id`**: 🔎 AroundU 추천 n명(연결 버튼) · 📣 응답 n(사람 · 한 줄 · 관련성 · 공통 연결 · "OO님 추천" · [수락]/[거절]) · 전달됨(n명에게 전달 · 지인 추천 진행 중 m건은 본인이 관심 있어요 하면 여기 나타남) · [마감].
+
+왜 두 엔진인가: 직업은 PM인데 실제로 앱을 직접 만들어본 사람은 데이터로는 못 찾지만 요청을 보고 "어? 이거 나 할 수 있는데" 하고 손 들 수 있다. 검색 + 자발적 응답 + 지인 추천이 한꺼번에 돌아가 LinkedIn 검색보다 살아 있는 네트워크가 된다.
+
+**촌수** (`lib/graph.ts`): 연결(친구) 그래프 BFS. 1촌 = 연결, 2촌 = 연결의 연결, 3촌까지. 카드에 "2촌 거리"와 경로(나 → 공통 연결 → 요청자)를 보여준다. 촌수는 연결 요청·팔로우와 별개로 계산되며, 요청 전달 범위 외에 추천 이유 "공통 연결 n명"에도 쓴다.
+
+**서버 공개 규칙** (`server/view.ts sanitizeRequest`): 요청 본문·요청자는 전달 대상 모두에게, 응답 목록은 요청자와 응답자 본인에게만, 지인 추천은 후보 본인·추천한 사람에게만(요청자는 '관심 있어요' 뒤에 응답으로 본다). 데모: 요청을 올리면 관련 있는 시드 사용자 1~2명이 몇 초 뒤 손 들고, 1명은 지인을 추천한다.
+
+**스와이프 vs 팔로우에 대한 결정**: 추천 카드 덱(한 장씩)은 "지금 나와 관련 있는 사람을 한 명씩 이유와 함께 보는" 용도로 유지하되, 연결 요청은 카드·검색 결과·프로필 어디서든 같은 버튼이고 팔로우는 별도(⋯ 메뉴)로 남긴다. 네트워크 요청이 붙으면서 "친구의 친구"는 촌수·공통 연결·요청 전달로 자연스럽게 드러나므로, 덱을 없애고 팔로우+추천 목록으로 갈지는 다음 라운드에 사용 데이터로 판단한다(덱은 `PeoplePage` 추천 탭 한 컴포넌트라 교체 비용이 작다).
+
+**졸업생 인증 부담**: 졸업증명서는 실제로 떼기 힘드니 순서를 쉬운 것부터 둔다 — ① 이전 재학생 인증 이력(가장 쉬움) ② 졸업생 이메일 ③ **동문 보증**(이미 인증된 같은 학교 사람 2명이 보증, `vouch`) ④ 동문회 연동 ⑤ 졸업증명. 인증 전에는 검색·추천에 뜨지 않고 보기만 가능하게 두는 것이 원칙(데모는 즉시 인증).
 
 ## 7. 모임 — 그룹과 모임의 관계
 
@@ -326,6 +385,10 @@ Meetup(모임 → 사람)과 달리 AroundU는 **사람 → 관계 → 필요하
 | 34 | 새 사람 알림 | `/notifications` (`new_people`) | `pages/notifications/NotificationsPage.tsx` | 설정 › 새 사람 알림 시뮬레이션 |
 | 35 | AroundU+ 설명 | `/plus` | `pages/plus/PlusPage.tsx` | 설정 · 페이월 "자세히" |
 | 36 | 결제 | `/plus/checkout` | `pages/plus/CheckoutPage.tsx` | 구독 시작하기 |
+| 37 | 사람 찾기 (어떻게 찾을까요) | `/people?tab=search` 상단 | `pages/people/PeoplePage.tsx` | |
+| 38 | 네트워크에 물어보기 | `/people/ask` | `pages/people/AskNetworkPage.tsx` | 찾기 › 📣 |
+| 39 | 받은 요청 (저예요 · 아는 사람 · 관심 없어요) | `/people/requests` | `pages/people/RequestsPage.tsx` | 홈 · 알림 |
+| 40 | 요청 상세 (추천 · 응답 · 수락 → Mutual Room) | `/people/requests/:id` | `pages/people/RequestDetailPage.tsx` | 내 요청 |
 
 ## 15. 한국 / 미국 맥락 (`lib/locale-context.ts`)
 
@@ -344,6 +407,6 @@ Meetup(모임 → 사람)과 달리 AroundU는 **사람 → 관계 → 필요하
 ## 16. 데이터 계약 요약 (개발자용)
 
 - 타입: `packages/core/src/types/index.ts` — `User.homeCity/activityCity/gradYear/verification/wants`, `VerificationMethod`, `PeopleWant`, `ActivityWant`, `Wants`, `PeopleSearch`, `SavedSearch`, `Organization.scope/city/joinPolicy/interests`, `Visibility 'group'`, `Post.groupId`, `NotificationType 'new_people'`.
-- API(`api/types.ts`, 엔진 `api/engine.ts`, 서버 권한 `server/index.ts` RULES): `auth.register(RegisterInput)`, `users.setStage(id, stage, career?, homeCity?, activityCity?)`, `users.updateWants`, `users.verify(id, method)`, `relationships.sendFriendRequest`(한도 강제), `searches.save/remove/setAlert/run`, `orgs.create/apply/leave`, `activities.create`(orgId + visibility group), `posts.create`(visibility group + groupId).
-- 순수 로직(`lib/`): `people.ts`(recommendPeople · searchPeople · isAdvancedSearch · searchPresets), `recommend.ts`(matchReasons · REASON_WEIGHTS), `meet.ts`(recommendMeets · recommendGroups · mySchedule), `home.ts`(homeToday · alumniHome), `feed.ts`(feedForYou · feedCampus(scope) · feedFollowing), `network.ts`(stageOf · cityOf · contextLine · schoolBadge · personLine), `wants.ts`, `locale-context.ts`.
+- API(`api/types.ts`, 엔진 `api/engine.ts`, 서버 권한 `server/index.ts` RULES): `auth.register(RegisterInput)`, `users.setStage(id, stage, career?, homeCity?, activityCity?)`, `users.updateWants`, `users.verify(id, method)`, `relationships.sendFriendRequest`(한도 강제), `searches.save/remove/setAlert/run`, `requests.create/respond/decide/refer/referralDecide/dismiss/close`, `orgs.create/apply/leave`, `activities.create`(orgId + visibility group), `posts.create`(visibility group + groupId).
+- 순수 로직(`lib/`): `requests.ts`(matchesForRequest · audienceForRequest · requestsForMe · referralCandidates), `graph.ts`(degreeOf · pathBetween), `people.ts`(recommendPeople · searchPeople · isAdvancedSearch · searchPresets), `recommend.ts`(matchReasons · REASON_WEIGHTS), `meet.ts`(recommendMeets · recommendGroups · mySchedule), `home.ts`(homeToday · alumniHome), `feed.ts`(feedForYou · feedCampus(scope) · feedFollowing), `network.ts`(stageOf · cityOf · contextLine · schoolBadge · personLine), `wants.ts`, `locale-context.ts`.
 - 시드: `data/seed.ts`(KO) · `data/seed.en.ts`(EN) 끝의 `V2` 맵과 추가 사용자·그룹·모임. mock DB 키 `aroundu.mockdb.v9.<lang>`.

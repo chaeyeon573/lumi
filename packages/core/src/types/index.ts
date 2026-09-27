@@ -149,6 +149,10 @@ export interface User {
   verification?: { method: VerificationMethod; at: string };
   /** 무엇을 찾고 있나 — 온보딩에서 묻고 추천 가중치에 쓴다. 프로필 › 추천 설정에서 언제든 수정 */
   wants?: Wants;
+  /** 저장한 사람 — 가장 가벼운 행동(보기 → 저장 → 나중에 연결). 본인에게만 보인다 */
+  savedPeople?: ID[];
+  /** 지금 열려 있는 것 — "☕ 이번 주 커피 가능"처럼 기간이 지나면 자동으로 꺼지는 상태 */
+  status?: UserStatus;
   createdAt: string;
 }
 
@@ -158,10 +162,55 @@ export interface Career { city?: string; company?: string; industry?: string; ro
 export type OpenTo = 'coffee' | 'activities' | 'research' | 'networking' | 'mentoring' | 'cofounding';
 export const STAGE_ROLE: Record<Stage, UniversityRole> = { undergrad: 'undergraduate', masters: 'graduate', phd: 'graduate', alumni: 'alumni', professional: 'alumni' };
 
-/** 학교 인증 방법 — 재학생: school_email · sso · student_id / 졸업생: alumni_email · diploma · alumni_association · prior_student */
-export type VerificationMethod = 'school_email' | 'sso' | 'student_id' | 'alumni_email' | 'diploma' | 'alumni_association' | 'prior_student';
+/** 학교 인증 방법 — 재학생: school_email · sso · student_id / 졸업생: alumni_email · diploma · alumni_association · prior_student · vouch(동문 보증: 인증된 같은 학교 사람 2명) */
+export type VerificationMethod = 'school_email' | 'sso' | 'student_id' | 'alumni_email' | 'diploma' | 'alumni_association' | 'prior_student' | 'vouch';
 export const STUDENT_VERIFICATIONS: VerificationMethod[] = ['school_email', 'sso', 'student_id'];
-export const ALUMNI_VERIFICATIONS: VerificationMethod[] = ['alumni_email', 'diploma', 'alumni_association', 'prior_student'];
+export const ALUMNI_VERIFICATIONS: VerificationMethod[] = ['alumni_email', 'prior_student', 'vouch', 'alumni_association', 'diploma'];
+
+// ─── 네트워크 요청 ("사람 찾기 › 네트워크에 물어보기") ─────────────────────
+/** 요청이 퍼지는 범위 — 1촌(연결) · 2촌(연결의 연결) · 3촌 + 관련 학교·업종·관심사 */
+export type RequestReach = 1 | 2 | 3;
+export interface NetworkRequest {
+  id: ID;
+  authorId: ID;
+  /** "이런 분을 찾고 있어요" 본문 */
+  text: string;
+  /** 맥락 — 도시 · 업종/분야 · 관심사 (선택). 전달 대상 관련성 계산에 쓴다 */
+  city?: string;
+  field?: string;
+  interests: Interest[];
+  reach: RequestReach;
+  status: 'open' | 'closed';
+  /** 요청자가 '관심 없어요' 한 사람은 다시 보지 않는다 */
+  dismissedIds: ID[];
+  responses: RequestResponse[];
+  referrals: RequestReferral[];
+  createdAt: string;
+  expiresAt: string;
+}
+/** "저예요" — 본인이 손 든 응답. 요청자가 수락하면 서로 연결 + Mutual Room */
+export interface RequestResponse {
+  id: ID;
+  userId: ID;
+  note?: string;
+  /** 지인 추천을 거쳐 온 응답이면 추천한 사람 */
+  viaId?: ID;
+  status: 'pending' | 'accepted' | 'declined';
+  createdAt: string;
+}
+/** "제가 아는 사람이 있어요" — 후보 본인이 '관심 있어요' 하기 전까지 요청자에게 공개되지 않는다 */
+export interface RequestReferral {
+  id: ID;
+  referrerId: ID;
+  candidateId: ID;
+  status: 'pending' | 'interested' | 'declined';
+  createdAt: string;
+}
+
+/** 가벼운 상태 — Open To 를 프로필에 거창하게 붙이는 대신, 기간이 지나면 꺼진다 */
+export type StatusKind = 'coffee' | 'meal' | 'running' | 'study' | 'walk' | 'chat';
+export type StatusWhen = 'now' | 'today' | 'week' | 'weekend';
+export interface UserStatus { kind: StatusKind; when: StatusWhen; until: string; setAt: string }
 
 /** 어떤 사람을 만나고 싶나 */
 export type PeopleWant = 'same_major' | 'same_interest' | 'other_school' | 'senior_mentor' | 'alumni' | 'same_city' | 'same_field' | 'new_people';
@@ -505,7 +554,8 @@ export type NotificationType =
   | 'friend_accepted' | 'mutual_like' | 'participation_approved' | 'participation_rejected'
   | 'participation_request' | 'activity_reminder' | 'comment' | 'like' | 'follow'
   | 'org_event' | 'nearby_activity' | 'proposal' | 'proposal_result' | 'deadline' | 'opportunity_match' | 'plan_vote' | 'plan_decided'
-  | 'new_people' | 'group_joined';
+  | 'new_people' | 'group_joined'
+  | 'request_received' | 'request_response' | 'request_referral' | 'request_accepted';
 
 export interface Notification {
   id: ID;

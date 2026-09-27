@@ -6,7 +6,7 @@ import type {
 export const INTEREST_LABELS: Record<Interest, string> = {
   coffee: t('커피'), meal: t('식사'), study: t('공부'), exercise: t('운동'), walk: t('산책'), cycling: t('사이클'),
   shopping: t('쇼핑'), exhibition: t('전시·공연'), club: t('동아리'), research: t('연구·논문'), startup: t('창업'),
-  networking: t('네트워킹'), etc: t('기타'),
+  networking: t('새로운 사람'), etc: t('기타'),
   ai: 'AI', design: t('디자인'), finance: t('금융'), travel: t('여행'), music: t('음악'), film: t('영화'), reading: t('독서'), photo: t('사진'),
   cooking: t('요리'), volunteer: t('봉사'), invest: t('투자'), art: t('예술'), game: t('게임'), fashion: t('패션'), running: t('러닝'),
 };
@@ -20,7 +20,7 @@ export const INTEREST_EMOJI: Record<Interest, string> = {
 export const ONBOARDING_INTERESTS: Interest[] = ['ai', 'startup', 'running', 'design', 'finance', 'travel', 'music', 'film', 'reading', 'photo', 'cooking', 'volunteer', 'research', 'invest', 'art', 'exercise', 'game', 'fashion', 'coffee', 'study', 'networking', 'exhibition', 'club', 'etc'];
 
 export const PURPOSE_LABELS: Record<Purpose, string> = {
-  friend: t('친구'), dating: t('연애'), study: t('스터디'), hobby: t('취미'), club: t('동아리'), networking: t('네트워킹'), any: t('상관없음'),
+  friend: t('친구'), dating: t('연애'), study: t('스터디'), hobby: t('취미'), club: t('동아리'), networking: t('새로운 사람'), any: t('상관없음'),
 };
 
 export const AVAILABILITY_LABELS: Record<Availability, string> = {
@@ -36,7 +36,7 @@ export const VISIBILITY_ORDER: Visibility[] = ['public', 'school', 'group', 'dep
 
 export const CATEGORY_LABELS: Record<ActivityCategory, string> = {
   coffee: t('커피'), meal: t('식사'), study: t('공부'), exercise: t('운동'), club: t('동아리'), performance: t('공연'),
-  school_event: t('학교 행사'), seminar: t('연구·세미나'), networking: t('네트워킹'), store_deal: t('매장 혜택'), etc: t('기타'),
+  school_event: t('학교 행사'), seminar: t('연구·세미나'), networking: t('작은 모임'), store_deal: t('매장 혜택'), etc: t('기타'),
 };
 export const CATEGORY_EMOJI: Record<ActivityCategory, string> = {
   coffee: '☕', meal: '🍽️', study: '📖', exercise: '🏃', club: '🎸', performance: '🎤', school_event: '🎓',
@@ -65,7 +65,7 @@ export const HOME_ACTIVITY_FILTERS: { key: string; label: string; categories: Ac
   { key: 'exercise', label: t('운동'), categories: ['exercise'] },
   { key: 'club', label: t('동아리'), categories: ['club', 'performance'] },
   { key: 'event', label: t('행사'), categories: ['school_event', 'performance'] },
-  { key: 'networking', label: t('네트워킹'), categories: ['networking'] },
+  { key: 'networking', label: t('작은 모임'), categories: ['networking'] },
   { key: 'etc', label: t('기타'), categories: ['store_deal', 'etc'] },
 ];
 

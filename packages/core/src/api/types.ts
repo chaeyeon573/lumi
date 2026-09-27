@@ -1,7 +1,7 @@
 import type {
   Activity, ActivityProposal, ChatRoom, ID, Notification, Organization, Participation, Post, Relationships, Report, School, User,
   ActivityCategory, Visibility, JoinPolicy, ActivityKind, Place, ReportTargetType, Availability, Opportunity, OpportunityIntentRecord, OpportunityIntent, Role, TimePoll, TimeOption, Plan, Stage, Career, OpenTo, BoostTier,
-  SavedSearch, PeopleSearch, Wants, VerificationMethod, GroupScope, Interest } from '@core/types';
+  SavedSearch, PeopleSearch, Wants, VerificationMethod, GroupScope, Interest, NetworkRequest, RequestReach, StatusKind, StatusWhen } from '@core/types';
 
 /** 클라이언트가 보유하는 전체 데이터 스냅샷 (실제 API에서는 필요한 부분만 내려받도록 분리) */
 export interface Snapshot {
@@ -21,12 +21,14 @@ export interface Snapshot {
   timePolls: TimePoll[];
   /** 저장한 사람 검색 (본인 것만 내려온다) */
   savedSearches: SavedSearch[];
+  /** 네트워크 요청 (응답·추천 목록은 요청자와 당사자에게만 내려온다) */
+  networkRequests: NetworkRequest[];
 }
 
 /** 변경된 엔티티만 담아 돌려주는 부분 응답. 스토어가 id 기준으로 병합한다. */
 export type Patch = Partial<Omit<Snapshot, 'relationships'>> & {
   relationships?: Relationships;
-  removed?: Partial<Record<'activities' | 'posts' | 'chatRooms' | 'participations' | 'proposals' | 'opportunityIntents' | 'timePolls' | 'organizations' | 'opportunities' | 'savedSearches', ID[]>>;
+  removed?: Partial<Record<'activities' | 'posts' | 'chatRooms' | 'participations' | 'proposals' | 'opportunityIntents' | 'timePolls' | 'organizations' | 'opportunities' | 'savedSearches' | 'networkRequests', ID[]>>;
 };
 
 export interface RegisterInput {
@@ -100,6 +102,15 @@ export interface ActivityInput {
   courseName?: string;
   crewType?: Activity['crewType'];
   mode?: Activity['mode'];
+}
+
+/** 네트워크 요청 만들기 — "이런 분을 찾고 있어요" */
+export interface NetworkRequestInput {
+  text: string;
+  city?: string;
+  field?: string;
+  interests: Interest[];
+  reach: RequestReach;
 }
 
 /** 자유 그룹 만들기 — 성격(scope)은 만든 사람이 고른다 */
@@ -210,6 +221,27 @@ export interface AroundUApi {
     updateWants(id: ID, wants: Wants): Promise<Patch>;
     /** 학교 인증 완료 (데모: 즉시) */
     verify(id: ID, method: VerificationMethod): Promise<Patch>;
+    /** 저장 — 가장 가벼운 행동. 상대에게 알리지 않는다 */
+    toggleSavePerson(id: ID, targetId: ID): Promise<Patch>;
+    /** 가벼운 상태 켜기/끄기 (null = 끄기). 기간이 지나면 자동으로 꺼진다 */
+    setStatus(id: ID, kind: StatusKind | null, when?: StatusWhen): Promise<Patch>;
+  };
+
+  /** 네트워크 요청 — 사람 찾기 › 네트워크에 물어보기 */
+  requests: {
+    /** 요청을 만들고 관련 네트워크에 전달한다. 데모: 일부 사람이 잠시 후 '저예요' / 지인 추천으로 응답 */
+    create(authorId: ID, input: NetworkRequestInput): Promise<{ request: NetworkRequest; matched: number; delivered: number; patch: Patch }>;
+    close(id: ID): Promise<Patch>;
+    /** "저예요" */
+    respond(requestId: ID, userId: ID, note?: string): Promise<Patch>;
+    /** 요청자가 응답을 수락 → 서로 연결 + Mutual Room, 또는 거절 */
+    decide(requestId: ID, responseId: ID, accept: boolean): Promise<{ roomId?: ID; patch: Patch }>;
+    /** "제가 아는 사람이 있어요" — 후보에게 먼저 전달, 본인이 관심 있어요 해야 요청자에게 보인다 */
+    refer(requestId: ID, referrerId: ID, candidateId: ID): Promise<Patch>;
+    /** 추천받은 본인의 결정 — interested 면 응답(저예요)으로 전환 */
+    referralDecide(requestId: ID, referralId: ID, interested: boolean): Promise<Patch>;
+    /** "관심 없어요" — 이 요청을 다시 보지 않는다 */
+    dismiss(requestId: ID, userId: ID): Promise<Patch>;
   };
 
   /** 저장한 사람 검색 + 새 사람 알림 (AroundU+) */

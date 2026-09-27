@@ -94,6 +94,7 @@ A Home → free time → Find someone → People → Connect → DM → Coffee M
 - **전환**: "현재 상태가 바뀌었나요?" → 졸업 → 거주 도시·하는 일만 입력. 연결·글·그룹·인증·활동 기록 유지.
 - **과금**: 타학교 보기 무료. 유료는 복수 조건·상세 조건 검색 · 검색 저장 · 새 사람 알림 · 연결 요청 확대 · 고급 추천.
 - **맥락**: KO(한국 대학·도시·업종) / EN(미국 대학·도시·업종) 두 프리셋을 같은 구조에 얹는다.
+- **네트워크에 물어보기** (v2.1): 사람 찾기에서 🔎 AroundU가 찾아보기 + 📣 네트워크에 물어보기. 요청은 1촌 → 2촌 → 3촌 → 관련 학교·업종·관심사로 전달되고, 받은 사람은 저예요 / 제가 아는 사람이 있어요 / 관심 없어요. 지인 추천 후보는 본인이 '관심 있어요' 하기 전까지 요청자에게 공개되지 않는다. 수락하면 연결 + Mutual Room. 졸업생 인증에 동문 보증(vouch) 추가.
 
 ## 28–29. Principle · Brand
 Your university gives you your first trusted network. But users are never trapped inside it: My university → My interests → My city → My profession → My wider network.

@@ -13,7 +13,7 @@ export const PEOPLE_WANT_EMOJI: Record<PeopleWant, string> = {
   same_major: '📚', same_interest: '🎯', other_school: '🏫', senior_mentor: '🧭', alumni: '🎓', same_city: '📍', same_field: '💼', new_people: '🌍',
 };
 export const ACTIVITY_WANT_LABELS: Record<ActivityWant, string> = {
-  coffee: t('커피'), meal: t('식사'), study: t('스터디'), exercise: t('운동'), networking: t('네트워킹'), project: t('프로젝트·창업'), research: t('연구'), hobby: t('취미'),
+  coffee: t('커피'), meal: t('식사'), study: t('스터디'), exercise: t('운동'), networking: t('작은 모임'), project: t('프로젝트·창업'), research: t('연구'), hobby: t('취미'),
 };
 export const ACTIVITY_WANT_EMOJI: Record<ActivityWant, string> = {
   coffee: '☕', meal: '🍽️', study: '📖', exercise: '🏃', networking: '🤝', project: '🚀', research: '🔬', hobby: '🎨',

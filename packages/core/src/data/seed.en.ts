@@ -1,6 +1,6 @@
 /** English demo: a US campus (UC Berkeley) with Greek life, .edu verification and US-style opportunities */
 import type {
-  Activity, ActivityProposal, ChatRoom, Notification, Organization, Participation, Post, Relationships, School, User, Visibility, ProfileField, Opportunity, OpportunityIntentRecord, TimePoll, Course, SavedSearch } from '@core/types';
+  Activity, ActivityProposal, ChatRoom, Notification, Organization, Participation, Post, Relationships, School, User, Visibility, ProfileField, Opportunity, OpportunityIntentRecord, TimePoll, Course, SavedSearch, NetworkRequest } from '@core/types';
 import { addDaysISO, isoHoursAgo, isoMinutesAgo, todayISO } from '@core/lib/format';
 import { photo } from '@core/lib/assets';
 import { catalogOrganizations } from './catalog/orgs';
@@ -583,4 +583,26 @@ activities.push(
     capacity: 6, visibility: 'school', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(9) },
 );
 
+/** v2.1 가벼운 상태 — 기간이 지나면 꺼진다 */
+const soon = (h: number) => new Date(Date.now() + h * 3600000).toISOString();
+const STATUS: Record<string, User['status']> = {
+  u_jimin: { kind: 'coffee', when: 'week', until: soon(24 * 4), setAt: isoHoursAgo(3) },
+  u_minjun: { kind: 'running', when: 'weekend', until: soon(24 * 3), setAt: isoHoursAgo(20) },
+  u_a_seoul_ai: { kind: 'running', when: 'weekend', until: soon(24 * 3), setAt: isoHoursAgo(8) },
+  u_a_sf_ai: { kind: 'running', when: 'weekend', until: soon(24 * 3), setAt: isoHoursAgo(8) },
+  u_b_snu1: { kind: 'coffee', when: 'today', until: soon(8), setAt: isoHoursAgo(1) },
+  u_b_stan1: { kind: 'coffee', when: 'today', until: soon(8), setAt: isoHoursAgo(1) },
+  u_taeho: { kind: 'coffee', when: 'week', until: soon(24 * 4), setAt: isoHoursAgo(30) },
+  u_sua: { kind: 'walk', when: 'now', until: soon(2), setAt: isoMinutesAgo(20) },
+};
+users.forEach((u) => { if (STATUS[u.id]) u.status = STATUS[u.id]; });
+
 export const savedSearches: SavedSearch[] = [];
+
+/** v2 network requests — "Looking for someone like this" (other people's requests reach the demo user via 2nd-degree / related network) */
+export const networkRequests: NetworkRequest[] = [
+  { id: 'nr_taeho_japan', authorId: 'u_taeho', text: 'Someone with experience in Japanese food distribution who can chat once in San Francisco', city: 'San Francisco', field: 'Distribution', interests: ['startup', 'travel'], reach: 3, status: 'open', dismissedIds: [], responses: [], referrals: [], createdAt: isoHoursAgo(5), expiresAt: addDaysISO(13) },
+  { id: 'nr_grace_pm', authorId: 'u_b_stan2', text: 'Anyone who has actually shipped a B2C app (any role). Would love 30 minutes on onboarding lessons', city: 'New York', field: 'Product', interests: ['startup', 'design'], reach: 2, status: 'open', dismissedIds: [], responses: [], referrals: [], createdAt: isoHoursAgo(26), expiresAt: addDaysISO(12) },
+  { id: 'nr_emma_ny', authorId: 'u_a_ny_fin', text: 'Cal students prepping for grad school in New York. Happy to talk essays and recommendation letters', city: 'New York', field: 'Finance', interests: ['finance', 'study'], reach: 3, status: 'open', dismissedIds: [], responses: [], referrals: [], createdAt: isoHoursAgo(50), expiresAt: addDaysISO(10) },
+];
+

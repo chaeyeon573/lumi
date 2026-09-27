@@ -6,10 +6,10 @@
  */
 import { FREE_SWIPES_PER_DAY } from '@core/lib/monetization';
 import { todayISO as todayISO_ } from '@core/lib/format';
-import type { Patch, Snapshot, RegisterInput, ActivityInput, PostInput, OpportunityInput, TimePollInput, GroupInput } from './types';
+import type { Patch, Snapshot, RegisterInput, ActivityInput, PostInput, OpportunityInput, TimePollInput, GroupInput, NetworkRequestInput } from './types';
 import type {
   Activity, ActivityProposal, Availability, ChatRoom, ID, Notification, OpportunityIntent, Participation, Post, User, Opportunity, TimePoll, TimeOption, ReportTargetType, Plan, Stage, Career, BoostTier,
-  Wants, VerificationMethod, PeopleSearch, SavedSearch, Organization } from '@core/types';
+  Wants, VerificationMethod, PeopleSearch, SavedSearch, Organization, NetworkRequest, RequestResponse, RequestReferral, StatusKind, StatusWhen } from '@core/types';
 import { STAGE_ROLE } from '@core/types';
 import { freeBlocks, jsDayToIdx, toMin } from '@core/lib/timetable';
 import { uid, pairKey } from '@core/lib/format';
@@ -17,6 +17,8 @@ import { CATEGORY_LABELS } from '@core/lib/labels';
 import { canMessage } from '@core/lib/relations';
 import { searchPeople } from '@core/lib/people';
 import { openToFromWants } from '@core/lib/wants';
+import { makeStatus } from '@core/lib/status';
+import { audienceForRequest, matchesForRequest, relevanceToRequest, referralCandidates } from '@core/lib/requests';
 
 export interface EngineContext {
   /** 변경 가능한 데이터. 엔진은 이 객체를 직접 수정한다 */
@@ -33,6 +35,9 @@ export interface EngineContext {
 const AUTO_ACCEPT_FRIEND = new Set(['u_jimin', 'u_hana', 'u_yuna', 'u_seoyeon']);
 const AUTO_ACCEPT_PROPOSAL = new Set(['u_jimin', 'u_sua', 'u_seoyeon']);
 const AUTO_APPROVE_HOSTS = new Set(['u_woojin', 'u_hana']);
+/** 데모: 네트워크 요청에 잠시 후 '저예요' 로 응답하거나 지인을 추천하는 사람 */
+const AUTO_REQUEST_RESPONDERS = ['u_taeho', 'u_b_snu2', 'u_a_seoul_ai', 'u_a_sf_ai', 'u_b_stan2', 'u_jimin'];
+const AUTO_REQUEST_REFERRERS = ['u_sua', 'u_junho', 'u_seoyeon'];
 
 export const CATEGORY_EMOJI = { coffee: '☕', meal: '🍽️', study: '📖', exercise: '🏃', club: '🎸', performance: '🎤', school_event: '🎓', seminar: '🧪', networking: '🤝', store_deal: '🏷️', etc: '✨' } as const;
 export const OPPORTUNITY_EMOJI = { event: '🎪', club: '🎸', lab: '🔬', internship: '💼', scholarship: '🎓', hackathon: '💡', startup: '🚀', activity: '☕', exchange: '✈️' } as const;
@@ -105,6 +110,32 @@ export function createEngine(ctx: EngineContext) {
   }
 
   const later = (ms: number, fn: () => void) => { if (ctx.demo) setTimeout(fn, ms); };
+  const AUTO_ACCEPT_FRIEND_LIST = [...AUTO_ACCEPT_FRIEND];
+  /** "저예요" — 응답을 기록하고 요청자에게 알린다 (지인 추천을 거친 경우 viaId) */
+  function engineRespond(req: NetworkRequest, userId: ID, note?: string, viaId?: ID): Patch {
+    if (req.status !== 'open') throw new Error(t('마감된 요청이에요.'));
+    const existing = req.responses.find((r) => r.userId === userId);
+    if (existing) return { networkRequests: [req] };
+    const res: RequestResponse = { id: uid('rr'), userId, note: note?.trim() || undefined, viaId, status: 'pending', createdAt: now() };
+    req.responses.push(res);
+    const who = find(db().users, userId);
+    const { reasons } = relevanceToRequest(req, who);
+    const nts = [notify(req.authorId, { type: 'request_response', title: `${who.nickname}${t('님이 손을 들었어요')}`, body: `${reasons[0] ?? req.text.slice(0, 40)}${viaId ? ` · ${find(db().users, viaId).nickname}${t('님 추천')}` : ''}`, link: `/people/requests/${req.id}` })];
+    return { networkRequests: [req], notifications: nts };
+  }
+  /** "제가 아는 사람이 있어요" — 후보에게만 먼저 알린다. 요청자는 아직 후보를 볼 수 없다 */
+  function engineRefer(req: NetworkRequest, referrerId: ID, candidateId: ID): Patch {
+    if (req.status !== 'open') throw new Error(t('마감된 요청이에요.'));
+    if (candidateId === req.authorId || req.referrals.some((r) => r.candidateId === candidateId) || req.responses.some((r) => r.userId === candidateId)) return { networkRequests: [req] };
+    const ref: RequestReferral = { id: uid('rf'), referrerId, candidateId, status: 'pending', createdAt: now() };
+    req.referrals.push(ref);
+    const referrer = find(db().users, referrerId);
+    const nts = [notify(candidateId, { type: 'request_referral', title: `${referrer.nickname}${t('님이 당신이 떠올랐대요')}`, body: req.text.slice(0, 80), link: `/people/requests/${req.id}?referral=${ref.id}` })];
+    // 데모: 추천받은 예시 사용자는 잠시 후 '관심 있어요'
+    if (ctx.demo && AUTO_REQUEST_RESPONDERS.concat(AUTO_ACCEPT_FRIEND_LIST).includes(candidateId)) later(5000, () => { if (ref.status === 'pending' && req.status === 'open') { ref.status = 'interested'; ctx.push({ ...engineRespond(req, candidateId, undefined, referrerId) }); } });
+    return { networkRequests: [req], notifications: nts };
+  }
+
 
   /** 연결 요청 카운트 — 무료 플랜은 하루 FREE_SWIPES_PER_DAY 회. 어디서 보내든(추천·찾기·프로필) 같은 한도 */
   function recordConnect(id: ID) {
@@ -217,6 +248,73 @@ export function createEngine(ctx: EngineContext) {
         u.verification = { method, at: now() };
         if (u.affiliation.type === 'university') u.affiliation.emailVerified = true;
         return { users: [u] };
+      },
+      /** 저장 — 상대에게 알림 없음, 본인에게만 보인다 */
+      toggleSavePerson(id: ID, targetId: ID): Patch {
+        const u = find(db().users, id);
+        const set = new Set(u.savedPeople ?? []);
+        if (set.has(targetId)) set.delete(targetId); else set.add(targetId);
+        u.savedPeople = [...set];
+        return { users: [u] };
+      },
+      setStatus(id: ID, kind: StatusKind | null, when: StatusWhen = 'week'): Patch {
+        const u = find(db().users, id);
+        if (kind) u.status = makeStatus(kind, when); else delete u.status;
+        return { users: [u] };
+      },
+    },
+
+    /** 네트워크 요청 — 검색으로 잡히지 않는 사람까지 발견하는 장치. 프로필은 본인이 손 들기 전까지 요청자에게 공개되지 않는다 */
+    requests: {
+      create(authorId: ID, input: NetworkRequestInput): { request: NetworkRequest; matched: number; delivered: number; patch: Patch } {
+        const author = find(db().users, authorId);
+        if (!input.text.trim()) throw new Error(t('어떤 분을 찾는지 적어주세요.'));
+        const req: NetworkRequest = {
+          id: uid('nr'), authorId, text: input.text.trim(), city: input.city?.trim() || undefined, field: input.field?.trim() || undefined, interests: [...input.interests], reach: input.reach,
+          status: 'open', dismissedIds: [], responses: [], referrals: [], createdAt: now(), expiresAt: new Date(Date.now() + 14 * 86400000).toISOString(),
+        };
+        db().networkRequests.unshift(req);
+        const audience = audienceForRequest(db(), req);
+        const matched = matchesForRequest(db(), req).length;
+        const nts = audience.slice(0, 30).map((a) => notify(a.userId, { type: 'request_received', title: t('혹시 여기에 해당되나요?'), body: `${req.text.slice(0, 60)} · ${author.nickname}${t('님')}`, link: `/people/requests/${req.id}` }));
+        // 데모: 관련 있는 사람 1~2명이 잠시 후 손 들고, 1명은 지인을 추천한다
+        if (ctx.demo) {
+          const responders = audience.filter((a) => AUTO_REQUEST_RESPONDERS.includes(a.userId)).slice(0, 2);
+          responders.forEach((a, i) => later(4000 + i * 2500, () => { if (req.status !== 'open' || req.responses.some((r) => r.userId === a.userId)) return; const { reasons } = relevanceToRequest(req, find(db().users, a.userId)); ctx.push(engineRespond(req, a.userId, reasons[0] ? `${reasons[0]} — ${t('이야기 나눠요!')}` : t('제가 도움이 될 것 같아요.'))); }));
+          const referrer = audience.find((a) => AUTO_REQUEST_REFERRERS.includes(a.userId) && !responders.some((r) => r.userId === a.userId));
+          if (referrer) later(9000, () => { if (req.status !== 'open') return; const cand = referralCandidates(db(), find(db().users, referrer.userId), req).find((c) => c.user.id !== authorId && c.score > 0); if (cand) ctx.push(engineRefer(req, referrer.userId, cand.user.id)); });
+        }
+        return { request: req, matched, delivered: audience.length, patch: { networkRequests: [req], notifications: nts } };
+      },
+      close(id: ID): Patch { const r = find(db().networkRequests, id); r.status = 'closed'; return { networkRequests: [r] }; },
+      respond(requestId: ID, userId: ID, note?: string): Patch { return engineRespond(find(db().networkRequests, requestId), userId, note); },
+      decide(requestId: ID, responseId: ID, accept: boolean): { roomId?: ID; patch: Patch } {
+        const req = find(db().networkRequests, requestId);
+        const res = find(req.responses, responseId);
+        res.status = accept ? 'accepted' : 'declined';
+        if (!accept) return { patch: { networkRequests: [req] } };
+        // 서로 연결 + Mutual Room
+        const r = db().relationships;
+        if (!r.friends.some((f) => pairKey(f.a, f.b) === pairKey(req.authorId, res.userId))) r.friends.push({ a: req.authorId, b: res.userId, since: now() });
+        const room = ensureDirectRoom(req.authorId, res.userId);
+        const author = find(db().users, req.authorId);
+        room.messages.push({ id: uid('m'), senderId: req.authorId, text: `${t('사람 찾아보기에서 이어졌어요: ')}"${req.text.slice(0, 40)}"`, createdAt: now(), system: true });
+        const nts = [notify(res.userId, { type: 'request_accepted', title: `${author.nickname}${t('님과 대화가 열렸어요')}`, body: req.text.slice(0, 60), link: `/chats/${room.id}` })];
+        return { roomId: room.id, patch: { networkRequests: [req], relationships: r, chatRooms: [room], notifications: nts } };
+      },
+      refer(requestId: ID, referrerId: ID, candidateId: ID): Patch { return engineRefer(find(db().networkRequests, requestId), referrerId, candidateId); },
+      referralDecide(requestId: ID, referralId: ID, interested: boolean): Patch {
+        const req = find(db().networkRequests, requestId);
+        const ref = find(req.referrals, referralId);
+        ref.status = interested ? 'interested' : 'declined';
+        if (!interested) return { networkRequests: [req] };
+        // 관심 있어요 → 이제서야 요청자에게 공개 (응답으로 전환)
+        return engineRespond(req, ref.candidateId, undefined, ref.referrerId);
+      },
+      dismiss(requestId: ID, userId: ID): Patch {
+        const req = find(db().networkRequests, requestId);
+        if (!req.dismissedIds.includes(userId)) req.dismissedIds.push(userId);
+        return { networkRequests: [req] };
       },
     },
 

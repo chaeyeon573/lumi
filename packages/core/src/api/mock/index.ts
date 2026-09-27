@@ -104,6 +104,7 @@ export const mockApi: AroundUApi = {
 
   users: wrap(engine.users),
   searches: wrap(engine.searches),
+  requests: wrap(engine.requests),
   activities: wrap(engine.activities),
   posts: wrap(engine.posts),
   relationships: wrap(engine.relationships),

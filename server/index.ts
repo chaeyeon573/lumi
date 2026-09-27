@@ -180,15 +180,16 @@ app.post('/api/schools/verify-code', wrap(async (req) => {
 app.post('/api/catalog/courses', wrap(async (req) => searchCatalog(catalog, String(req.body.schoolId ?? ''), String(req.body.query ?? ''))));
 
 // ─── RPC (엔진 메서드) ────────────────────────────────────────────────────
-type Group = 'users' | 'searches' | 'activities' | 'posts' | 'relationships' | 'orgs' | 'opportunities' | 'proposals' | 'together' | 'chats' | 'notifications' | 'reports';
-const GROUPS: Group[] = ['users', 'searches', 'activities', 'posts', 'relationships', 'orgs', 'opportunities', 'proposals', 'together', 'chats', 'notifications', 'reports'];
+type Group = 'users' | 'searches' | 'requests' | 'activities' | 'posts' | 'relationships' | 'orgs' | 'opportunities' | 'proposals' | 'together' | 'chats' | 'notifications' | 'reports';
+const GROUPS: Group[] = ['users', 'searches', 'requests', 'activities', 'posts', 'relationships', 'orgs', 'opportunities', 'proposals', 'together', 'chats', 'notifications', 'reports'];
 
 /** 호출자가 해당 작업을 할 권한이 있는지. 숫자면 그 위치의 인자가 본인 id 여야 한다 */
 type Rule = number | ((me: ID, args: unknown[]) => boolean);
 const owner = <T extends { id: ID }>(list: () => T[], pick: (x: T) => ID | undefined) => (me: ID, args: unknown[]) => { const x = list().find((i) => i.id === args[0]); return !!x && pick(x) === me; };
 const activityHost = (me: ID, activityId: unknown) => db.activities.find((a) => a.id === activityId)?.hostId === me;
 const RULES: Record<Group, Record<string, Rule>> = {
-  users: { update: 0, setAvailability: 0, votePoll: 1, recordSwipe: 0, setPlan: 0, setStage: 0, updateWants: 0, verify: 0 },
+  users: { update: 0, setAvailability: 0, votePoll: 1, recordSwipe: 0, setPlan: 0, setStage: 0, updateWants: 0, verify: 0, toggleSavePerson: 0, setStatus: 0 },
+  requests: { create: 0, close: owner(() => db.networkRequests, (r) => r.authorId), respond: 1, decide: owner(() => db.networkRequests, (r) => r.authorId), refer: 1, referralDecide: (me, args) => db.networkRequests.find((r) => r.id === args[0])?.referrals.some((x) => x.id === args[1] && x.candidateId === me) ?? false, dismiss: 1 },
   searches: { save: 0, remove: owner(() => db.savedSearches, (s) => s.userId), setAlert: owner(() => db.savedSearches, (s) => s.userId), run: 0 },
   activities: {
     create: 0, update: owner(() => db.activities, (a) => a.hostId), remove: owner(() => db.activities, (a) => a.hostId), join: 1, cancel: 1,

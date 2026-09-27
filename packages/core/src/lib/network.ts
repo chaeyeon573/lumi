@@ -42,10 +42,10 @@ export const STAGE_LABELS_EN: Record<Stage, string> = { undergrad: 'Undergrad', 
 export const stageLabel = (s: Stage, lang: 'ko' | 'en') => (lang === 'en' ? STAGE_LABELS_EN : STAGE_LABELS_KO)[s];
 
 export const VERIFICATION_LABELS_KO: Record<VerificationMethod, string> = {
-  school_email: '학교 이메일 인증', sso: '학교 SSO 인증', student_id: '학생증 인증', alumni_email: '졸업생 이메일 인증', diploma: '졸업증명 인증', alumni_association: '동문회 연동 인증', prior_student: '재학생 인증 이력',
+  school_email: '학교 이메일 인증', sso: '학교 SSO 인증', student_id: '학생증 인증', alumni_email: '졸업생 이메일 인증', diploma: '졸업증명 인증', alumni_association: '동문회 연동 인증', prior_student: '재학생 인증 이력', vouch: '동문 보증 인증',
 };
 export const VERIFICATION_LABELS_EN: Record<VerificationMethod, string> = {
-  school_email: 'School email verified', sso: 'Campus SSO verified', student_id: 'Student ID verified', alumni_email: 'Alumni email verified', diploma: 'Diploma verified', alumni_association: 'Alumni association verified', prior_student: 'Verified as a student before',
+  school_email: 'School email verified', sso: 'Campus SSO verified', student_id: 'Student ID verified', alumni_email: 'Alumni email verified', diploma: 'Diploma verified', alumni_association: 'Alumni association verified', prior_student: 'Verified as a student before', vouch: 'Vouched by verified alumni',
 };
 export const verificationLabel = (m: VerificationMethod, lang: 'ko' | 'en') => (lang === 'en' ? VERIFICATION_LABELS_EN : VERIFICATION_LABELS_KO)[m];
 export const isVerified = (u: Pick<User, 'affiliation' | 'verification'>) => !!u.verification || (u.affiliation.type === 'university' && u.affiliation.emailVerified);

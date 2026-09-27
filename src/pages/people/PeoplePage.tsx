@@ -6,6 +6,7 @@ import { AppHeader } from '@/components/layout/AppHeader';
 import { LAST_SEEN_KEY } from '@/components/layout/BottomNav';
 import { CardSkeleton, EmptyState, ErrorState, Button, BottomSheet, Chip, Segmented, Input, Select, Avatar, Tag } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
+import { useSnapshot } from '@/hooks/useSnapshot';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { INTEREST_LABELS, ALL_INTERESTS } from '@core/lib/labels';
@@ -92,16 +93,10 @@ function RecommendDeck({ connect, invite, openPaywall, freeFirst }: { connect: (
   const plus = isPlus(me);
   const used = plus ? 0 : FREE_SWIPES_PER_DAY - left;
 
-  const schools = useAppStore((s) => s.schools);
-  const posts = useAppStore((s) => s.posts);
-  const chatRooms = useAppStore((s) => s.chatRooms);
-  const notifications = useAppStore((s) => s.notifications);
-  const reports = useAppStore((s) => s.reports);
-  const savedSearches = useAppStore((s) => s.savedSearches);
+  const snap: Snapshot = useSnapshot();
   const cards = useMemo(() => {
-    const snap: Snapshot = { ...v.snap, schools, posts, chatRooms, notifications, reports, savedSearches };
     return recommendPeople(snap, me, v.visibleUsers, (u) => v.canSeeField(u, 'timetable'), 20);
-  }, [v, me, schools, posts, chatRooms, notifications, reports, savedSearches]);
+  }, [v, me, snap]);
   const current = idx < cards.length ? cards[idx] : null;
   useEffect(() => { try { if (current) localStorage.setItem(LAST_SEEN_KEY, current.user.id); } catch { /* */ } }, [current]);
 
