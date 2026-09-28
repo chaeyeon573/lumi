@@ -102,7 +102,7 @@ function NowTab() {
           ))}
         </div>
       )}
-      <h2 className="font-display text-[24px] font-bold text-ink mb-3">{lang === 'en' ? 'Spontaneous Hangouts' : '지금 열린 활동'}</h2>
+      <h2 className="font-display text-[24px] font-bold text-ink mb-3">{lang === 'en' ? 'Spontaneous Hangouts' : '참여할 수 있는 모임'}</h2>
       <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-4">{NOW_CHIPS.map((c) => <Chip key={c.key} active={chip === c.key} onClick={() => setChip(c.key)}>{c.label}{c.key === 'all' ? ` (${list.length})` : ''}</Chip>)}</div>
       {partner && (
         <button onClick={() => nav(`/activities/${partner.id}`)} className="w-full card rounded-full bg-gold-soft pl-2.5 pr-2.5 py-2 flex items-center gap-3 text-left mb-3 press">
@@ -112,7 +112,7 @@ function NowTab() {
         </button>
       )}
       {shown.length === 0 ? (
-        <EmptyState emoji="" title={t('이 시간에 열린 활동이 없어요')} action={<Button size="sm" onClick={() => nav('/create/activity?kind=personal&now=1')}>{t('즉석 만남')}</Button>} />
+        <EmptyState emoji="" title={t('이 시간에 참여할 수 있는 모임이 없어요')} action={<Button size="sm" onClick={() => nav('/create/activity?kind=personal&now=1')}>{t('즉석 만남')}</Button>} />
       ) : <div className="space-y-3">{shown.map(({ a }) => { const host = v.userById(a.hostId); return (
         <Row key={a.id} avatar={<button onClick={() => nav(`/activities/${a.id}`)}><Avatar emoji={host?.avatar.emoji ?? '👤'} hue={host?.avatar.hue ?? 200} url={host?.avatar.url} size={44} /></button>} title={a.title} sub={`${formatTime(a.startTime)} · ${a.place.name}`} action={<JoinButton activity={a} size="sm" label={t('참여하기')} className="bg-accent text-primary shadow-none" />} />
       ); })}</div>}

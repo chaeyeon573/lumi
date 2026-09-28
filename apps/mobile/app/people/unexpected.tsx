@@ -21,8 +21,8 @@ import { useCloseness, maskedCity, type Closeness } from '@/v2/personView';
 import { ClosenessTag, ConnectStatusButton, maskedLine, useHideWithUndo } from '@/v2/Network';
 
 /**
- * 의외의 연결 (웹 UnexpectedPage) — 같은 학교·같은 전공처럼 뻔한 이유가 아니라,
- * 다른 학교·다른 분야인데 의미 있게 겹치는 사람. 카드 위쪽에 "왜 의외인지"가 먼저, 사람은 그다음.
+ * 다른 학교, 비슷한 사람 (웹 UnexpectedPage) — 같은 학교·같은 전공처럼 뻔한 이유가 아니라,
+ * 다른 학교·다른 분야인데 의미 있게 겹치는 사람. 카드 위쪽에 "어떤 점이 비슷한지"가 먼저, 사람은 그다음.
  */
 export default function UnexpectedScreen() {
   const v = useViewer();
@@ -34,7 +34,7 @@ export default function UnexpectedScreen() {
 
   return (
     <View style={tw`flex-1 bg-white`}>
-      <Screen title={t('의외의 연결')}>
+      <Screen title={t('다른 학교, 비슷한 사람')}>
         <View style={tw`pt-1 pb-3 flex-row items-start`}>
           <Sparkles size={14} color={C.primary} style={tw`mt-0.5`} />
           <Text style={tw`ml-1.5 flex-1 text-[13px] text-ink-2`}>{t('다른 학교·다른 분야인데 겹치는 게 있는 사람이에요. 둘러보기만 해도 괜찮아요.')}</Text>
@@ -53,7 +53,7 @@ export default function UnexpectedScreen() {
   );
 }
 
-/** 의외의 연결 카드 — 위: 왜 의외인지(이유 칩 · 거리 · 펼치면 이유 전부) → 아래: 사진·이름·학교(공개 범위 적용) → 행동 */
+/** 다른 학교, 비슷한 사람 카드 — 위: 어떤 점이 비슷한지(이유 칩 · 거리 · 펼치면 이유 전부) → 아래: 사진·이름·학교(공개 범위 적용) → 행동 */
 function UnexpectedCard({ user, reasons, closeness, onHide }: { user: User; reasons: Reason[]; closeness: Closeness; onHide: () => void }) {
   const v = useViewer();
   const [open, setOpen] = useState(false);
@@ -62,9 +62,9 @@ function UnexpectedCard({ user, reasons, closeness, onHide }: { user: User; reas
   const openProfile = () => nav(`/users/${user.id}`);
   return (
     <View style={tw`mb-3 card overflow-hidden`}>
-      {/* 1. 왜 의외인지 — 사람보다 먼저 */}
+      {/* 1. 어떤 점이 비슷한지 — 사람보다 먼저 */}
       <View style={tw`bg-sky-soft px-3.5 pt-3 pb-2.5`}>
-        <View style={tw`flex-row items-center mb-1.5`}><Text style={tw`flex-1 text-[11px] font-bold text-ink-3`}>{t('왜 의외인지')}</Text><ClosenessTag c={closeness} /></View>
+        <View style={tw`flex-row items-center mb-1.5`}><Text style={tw`flex-1 text-[11px] font-bold text-ink-3`}>{t('어떤 점이 비슷한지')}</Text><ClosenessTag c={closeness} /></View>
         <ReasonChips reasons={reasons} max={3} />
         {reasons.length > 0 ? (
           <Pressable onPress={() => setOpen((x) => !x)} style={tw`mt-2 flex-row items-center`}>

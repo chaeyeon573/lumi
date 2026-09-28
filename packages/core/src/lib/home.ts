@@ -24,7 +24,7 @@ export interface HomeToday {
   happening: ({ kind: 'activity'; a: Activity } | { kind: 'opportunity'; o: Opportunity })[];
   /** 나에게 맞는 모임 (3) — 타학교 공개 모임 포함 */
   meets: RecommendedMeet[];
-  /** 지금 열린 만남 (기존 Now) */
+  /** 곧 시작하는 모임 (기존 Now) */
   now: Activity[];
   /** 새로운 사람 (3) — 다른 학교이거나 관심사가 겹치는 사람 */
   newPeople: RecommendedPerson[];
@@ -108,13 +108,13 @@ export interface GradHome extends HomeToday {
   researchWeek: Activity[];
   /** 같은 연구 분야 사람 (4) — 다른 학교 연구실 포함 */
   researchPeople: RecommendedPerson[];
-  /** 먼저 간 사람 (3) — 박사과정 · 그 분야에서 일하는 선배 */
+  /** 먼저 가 본 선배 (3) — 박사과정 · 그 분야에서 일하는 선배 */
   ahead: RecommendedPerson[];
 }
 
 const RESEARCH_CATS = new Set(['seminar', 'study']);
 
-/** 대학원생 홈 — 수업·공강보다 연구 분야 · 연구 일정 · 먼저 간 사람 */
+/** 대학원생 홈 — 수업·공강보다 연구 분야 · 연구 일정 · 먼저 가 본 선배 */
 export function gradHome(snap: Snapshot, me: User, visibleActivities: Activity[], canSeeTimetable: (u: User) => boolean): GradHome {
   const base = homeToday(snap, me, visibleActivities, canSeeTimetable);
   const ranked = recommendPeople(snap, me, snap.users, canSeeTimetable, 60);

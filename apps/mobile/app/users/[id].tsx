@@ -3,7 +3,7 @@ import { Dimensions, Pressable, Text, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Heart, UserPlus, MessageCircle, MoreHorizontal, Clock, MapPin, Flag, Ban, Sparkles, Users, CalendarPlus, Check, Lock, Mic } from 'lucide-react-native';
+import { Star, UserPlus, MessageCircle, MoreHorizontal, Clock, MapPin, Flag, Ban, Sparkles, Users, CalendarPlus, Check, Lock, Mic } from 'lucide-react-native';
 import { t } from '@core/i18n';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
@@ -82,7 +82,7 @@ export default function PersonScreen() {
   const adminOrgs = orgs.filter((o) => o.adminIds.includes(user.id));
   const pendingProposal = proposals.find((p) => p.fromId === v.me.id && p.toId === user.id && p.status === 'pending');
   const reasons = shareableReasons(matchReasons(v.me, user, v.snap, seeTT));
-  const connLabel = { friend: t('친구'), activity: t('같은 활동 참가자'), proposal: t('활동 제안 수락'), matched: t('매칭'), none: '' }[conn];
+  const connLabel = { friend: t('친구'), activity: t('같은 활동 참가자'), proposal: t('활동 제안 수락'), matched: t('서로 관심'), none: '' }[conn];
 
   const like = async () => {
     const res = await run(() => api.relationships.toggleLike(v.me.id, user.id));
@@ -96,7 +96,7 @@ export default function PersonScreen() {
   const footer = (
     <View>
       <View style={[tw`flex-row`, { gap: 8 }]}>
-        <Pressable onPress={like} style={[tw`h-[52px] w-[52px] rounded-2xl items-center justify-center`, { backgroundColor: liked ? C.primary : C.tint }]}><Heart size={22} color={liked ? C.onPrimary : C.primary} fill={liked ? C.onPrimary : 'none'} /></Pressable>
+        <Pressable onPress={like} style={[tw`h-[52px] w-[52px] rounded-2xl items-center justify-center`, { backgroundColor: liked ? C.primary : C.tint }]}><Star size={22} color={liked ? C.onPrimary : C.primary} fill={liked ? C.onPrimary : 'none'} /></Pressable>
         <Button size="lg" variant={following ? 'secondary' : 'outline'} onPress={() => run(() => api.relationships.toggleFollow(v.me.id, user.id, 'user'))}>{following ? t('팔로잉') : t('팔로우')}</Button>
         {friend ? <Button size="lg" variant="secondary" icon={<Check size={16} color={C.primary} />} disabled>{t('친구')}</Button>
           : outReq ? <Button size="lg" variant="outline" onPress={() => run(() => api.relationships.cancelFriendRequest(outReq.id), t('요청을 취소했어요.'))}>{t('요청 취소')}</Button>
@@ -115,7 +115,7 @@ export default function PersonScreen() {
         <View style={tw`card p-4`}>
           <View style={tw`flex-row items-center flex-wrap`}>{user.affiliation.type === 'university' && user.affiliation.emailVerified && <VerifiedBadge kind="school" size={16} label />}{user.identityVerified && <VerifiedBadge kind="identity" size={16} label />}</View>
           <View style={tw`mt-2`}><MutualLine user={user} big onPress={() => setMutualOpen(true)} /></View>
-          {mutual && <View style={[tw`mt-3 rounded-xl px-3 py-2.5 flex-row items-center`, { backgroundColor: C.tint }]}><Heart size={15} color={C.ink} fill={C.ink} /><Text style={tw`ml-2 text-[13px] font-semibold text-ink shrink`}>{t('서로 관심이 있어요. 이제 메시지를 보낼 수 있어요.')}</Text></View>}
+          {mutual && <View style={[tw`mt-3 rounded-xl px-3 py-2.5 flex-row items-center`, { backgroundColor: C.tint }]}><Star size={15} color={C.ink} fill={C.ink} /><Text style={tw`ml-2 text-[13px] font-semibold text-ink shrink`}>{t('서로 관심이 있어요. 이제 메시지를 보낼 수 있어요.')}</Text></View>}
           {conn !== 'none' && !mutual && <View style={tw`mt-2 flex-row`}><Tag tone="mint">✓ {connLabel}</Tag></View>}
           {inReq && (
             <View style={tw`mt-3 rounded-xl bg-primary-soft px-3 py-2.5 flex-row items-center`}>
@@ -139,7 +139,7 @@ export default function PersonScreen() {
             <View style={tw`mt-2`}>
               {hosting.map((a) => <Pressable key={a.id} onPress={() => nav(`/activities/${a.id}`)} style={tw`flex-row items-center mb-1.5`}><Text style={tw`text-[13px]`}>{CATEGORY_EMOJI[a.category]}</Text><Text numberOfLines={1} style={tw`flex-1 mx-2 text-[13px] text-ink`}>{a.title}</Text><Text style={tw`text-[11px] text-primary font-semibold`}>{t('참가')}</Text></Pressable>)}
               {sharedOpps.map((o) => <Pressable key={o.id} onPress={() => nav(`/opportunities/${o.id}`)} style={tw`flex-row items-center mb-1.5`}><Text style={tw`text-[13px]`}>🎪</Text><Text numberOfLines={1} style={tw`flex-1 mx-2 text-[13px] text-ink`}>{o.title}</Text><Text style={tw`text-[11px] text-primary font-semibold`}>{t('같이 가기')}</Text></Pressable>)}
-              {hosting.length === 0 && sharedOpps.length === 0 && <Text style={tw`text-[12px] text-ink-2`}>{t('아직 열린 활동은 없어요. 공통 관심사로 커피나 점심을 제안해보세요.')}</Text>}
+              {hosting.length === 0 && sharedOpps.length === 0 && <Text style={tw`text-[12px] text-ink-2`}>{t('아직 참여할 수 있는 모임이 없어요. 겹치는 관심사로 커피나 점심을 제안해 보세요.')}</Text>}
             </View>
             <View style={[tw`flex-row flex-wrap mt-3`, { gap: 8 }]}>{(common.length ? common : user.interests).slice(0, 3).map((i) => <Button key={i} size="sm" variant="outline" onPress={() => { setPCat(i === 'meal' ? 'meal' : i === 'study' ? 'study' : i === 'exercise' ? 'exercise' : 'coffee'); setPropose(true); }}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]} {t('제안')}</Button>)}</View>
           </View>

@@ -8,7 +8,7 @@ export const en_around: Record<string, string> = {
   '다음 주': 'Next week',
   '다음 주 보기': 'See next week',
   '인접 도시': 'Nearby city',
-  '지금 열려 있는 사람만': 'Only people open now',
+  '지금 시간 되는 사람만': 'Only people open now',
   '여기 있는 사람': 'Here',
   '방문 예정': 'Visiting',
   '상태를 켠 사람만 보고 있어요': 'Showing only people with a status on',

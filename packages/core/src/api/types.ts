@@ -23,7 +23,7 @@ export interface Snapshot {
   savedSearches: SavedSearch[];
   /** 네트워크 요청 (응답·추천 목록은 요청자와 당사자에게만 내려온다) */
   networkRequests: NetworkRequest[];
-  /** "연결해줄 수 있나요?" (당사자에게만) */
+  /** "소개해 줄 수 있어요?" (당사자에게만) */
   introRequests: IntroRequest[];
 }
 
@@ -247,9 +247,9 @@ export interface AroundUApi {
     moveSaved(id: ID, targetId: ID, listId: ID | null): Promise<Patch>;
   };
 
-  /** 네트워크 요청 — 사람 찾기 › 네트워크에 물어보기 */
+  /** 네트워크 요청 — 사람 찾기 › 지인들에게 물어보기 */
   requests: {
-    /** 요청을 만들고 관련 네트워크에 전달한다. 데모: 일부 사람이 잠시 후 '저예요' / 지인 추천으로 응답 */
+    /** 요청을 만들고 건너 아는 사이에 전달한다. 데모: 일부 사람이 잠시 후 '저예요' / 지인 추천으로 응답 */
     create(authorId: ID, input: NetworkRequestInput): Promise<{ request: NetworkRequest; matched: number; delivered: number; patch: Patch }>;
     close(id: ID): Promise<Patch>;
     /** "저예요" */
@@ -266,10 +266,10 @@ export interface AroundUApi {
     dismiss(requestId: ID, userId: ID): Promise<Patch>;
   };
 
-  /** "연결해줄 수 있나요?" — 2촌에게 공통 연결을 통해 */
+  /** "소개해 줄 수 있어요?" — 2촌에게 서로 아는 사람을 통해 */
   intros: {
     create(fromId: ID, viaId: ID, toId: ID, note?: string): Promise<Patch>;
-    /** 공통 연결이 전달 / 넘기기 */
+    /** 서로 아는 사람이 전달 / 넘기기 */
     forward(introId: ID, viaId: ID, pass?: boolean): Promise<Patch>;
     /** 대상이 수락 → 연결 + 대화 / 거절 */
     respond(introId: ID, toId: ID, accept: boolean): Promise<{ roomId?: ID; patch: Patch }>;

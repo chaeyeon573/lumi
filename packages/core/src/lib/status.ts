@@ -36,6 +36,6 @@ export const activeStatus = (u: Pick<User, 'status' | 'openStatuses'>, now = Dat
 
 /** "☕ 이번 주 커피 가능" */
 export function statusLine(s: UserStatus): string {
-  if (s.when === 'ongoing') return `${STATUS_EMOJI[s.kind]} ${STATUS_LABELS[s.kind]} ${t('열려 있어요')}`;
+  if (s.when === 'ongoing') return `${STATUS_EMOJI[s.kind]} ${STATUS_LABELS[s.kind]} ${t('요즘 가능해요')}`;
   return `${STATUS_EMOJI[s.kind]} ${WHEN_LABELS[s.when]} ${STATUS_LABELS[s.kind]} ${t('가능')}`;
 }

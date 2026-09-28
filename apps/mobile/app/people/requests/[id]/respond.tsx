@@ -157,7 +157,7 @@ function RespondForm({ req, author }: { req: NetworkRequest; author: User }) {
             <View style={tw`flex-row flex-wrap`}>{conditions.map((c) => <CheckPill key={c.key} on={checked.has(c.key)} label={c.label} onPress={() => toggleCond(c.key)} />)}</View>
             {noHit ? (
               <View style={tw`mt-2 rounded-2xl bg-surface-2 px-3.5 py-3`}>
-                <Text style={tw`text-[12px] text-ink-2`}>{t("딱 맞지 않아도 괜찮아요 — 아는 사람이 있다면 '아는 사람 있어요'로 연결해줄 수도 있어요")}</Text>
+                <Text style={tw`text-[12px] text-ink-2`}>{t("딱 맞지 않아도 괜찮아요 — 아는 사람이 있다면 '아는 사람 있어요'로 소개해 줄 수도 있어요")}</Text>
                 <Pressable onPress={() => nav(`/people/requests/${req.id}`)} style={tw`mt-1.5 flex-row items-center`}><Users size={13} color={C.primary} /><Text style={tw`mx-1 text-[12px] font-bold text-primary`}>{t('아는 사람 있어요로 가기')}</Text><ArrowRight size={12} color={C.primary} /></Pressable>
               </View>
             ) : null}

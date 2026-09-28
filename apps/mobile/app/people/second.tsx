@@ -28,8 +28,8 @@ type Tab = 'people' | 'asks';
 
 /**
  * 아는 사람의 아는 사람 (웹 SecondDegreePage) — 2촌 탐색.
- *   사람: 경로(나 → 공통 연결 → 상대) · 겹치는 것 → 이름·프로필 → "연결해줄 수 있나요?" · 저장 · 연결
- *   연결 부탁(?tab=asks): 내가 이어줄 수 있는 부탁 · 나에게 전달된 소개 · 내가 한 부탁
+ *   사람: 경로(나 → 서로 아는 사람 → 상대) · 겹치는 것 → 이름·프로필 → "소개해 줄 수 있어요?" · 저장 · 연결
+ *   소개 부탁(?tab=asks): 내가 이어줄 수 있는 부탁 · 나에게 전달된 소개 · 내가 한 부탁
  */
 export default function SecondDegreeScreen() {
   const params = useLocalSearchParams<{ tab?: string }>();
@@ -39,7 +39,7 @@ export default function SecondDegreeScreen() {
   const intros = useAppStore((s) => s.introRequests);
   const waiting = intros.filter((i) => (i.viaId === v.me.id && i.status === 'pending') || (i.toId === v.me.id && i.status === 'forwarded')).length;
   return (
-    <Screen title={t('아는 사람의 아는 사람')} sub={<View style={tw`px-4 pb-3`}><Segmented<Tab> value={tab} onChange={setTab} options={[['people', t('사람')], ['asks', waiting ? `${t('연결 부탁')} ${waiting}` : t('연결 부탁')]]} /></View>}>
+    <Screen title={t('아는 사람의 아는 사람')} sub={<View style={tw`px-4 pb-3`}><Segmented<Tab> value={tab} onChange={setTab} options={[['people', t('사람')], ['asks', waiting ? `${t('소개 부탁')} ${waiting}` : t('소개 부탁')]]} /></View>}>
       {tab === 'people' ? <PeopleTab onAsks={() => setTab('asks')} /> : <AsksTab onPeople={() => setTab('people')} />}
     </Screen>
   );
@@ -58,7 +58,7 @@ function PeopleTab({ onAsks }: { onAsks: () => void }) {
 
   return (
     <View>
-      <Text style={tw`px-1 pb-3 text-[12px] text-ink-3`}>{t('내 연결이 알고 있는 사람이에요. 공통 연결에게 먼저 물어볼 수 있어요.')}</Text>
+      <Text style={tw`px-1 pb-3 text-[12px] text-ink-3`}>{t('내 연결이 알고 있는 사람이에요. 서로 아는 사람에게 먼저 물어볼 수 있어요.')}</Text>
       <Section loading={sec.loading} error={sec.error} onRetry={sec.retry} skeleton={<SectionSkeleton count={3} />}
         empty={list.length === 0 && (
           <SectionEmpty emoji="🌱" title={t('아직 2촌이 없어요')} description={t('연결이 생기면 그 사람들이 아는 사람이 여기에 보여요.')}
@@ -81,7 +81,7 @@ function PathLine({ sd }: { sd: SecondDegree }) {
       <Text style={tw`text-[13px] font-semibold text-ink-3`}>{t('나')}</Text>
       <ArrowRight size={13} color={C.ink3} style={tw`mx-1`} />
       {sd.via.slice(0, 2).map((u) => <Avatar key={u.id} emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={20} style={tw`mr-0.5`} />)}
-      <Text numberOfLines={1} style={tw`ml-0.5 shrink text-[13px] font-semibold text-primary`}>{names || fmt(t('공통 연결 {n}명'), { n: sd.hiddenVia })}{names && extra > 0 ? ` ${fmt(t('외 {n}명'), { n: extra })}` : ''}</Text>
+      <Text numberOfLines={1} style={tw`ml-0.5 shrink text-[13px] font-semibold text-primary`}>{names || fmt(t('서로 아는 사람 {n}명'), { n: sd.hiddenVia })}{names && extra > 0 ? ` ${fmt(t('외 {n}명'), { n: extra })}` : ''}</Text>
       <ArrowRight size={13} color={C.ink3} style={tw`mx-1`} />
       <Text numberOfLines={1} style={tw`text-[13px] font-semibold text-ink`}>{sd.user.nickname}</Text>
     </View>
@@ -103,7 +103,7 @@ function SecondCard({ sd, asked, onMutual, onAsk, onAsks }: { sd: SecondDegree; 
       <View style={tw`bg-sky-soft px-3.5 pt-3 pb-2.5`}>
         <View style={tw`flex-row items-center`}>
           <View style={tw`h-6 px-2.5 rounded-full bg-primary justify-center`}><Text style={tw`text-[11px] font-bold text-white`}>{t('2촌')}</Text></View>
-          <Pressable onPress={onMutual} style={tw`ml-1.5 h-6 pl-2.5 pr-1.5 rounded-full bg-white border border-primary-soft flex-row items-center`}><Text style={tw`text-[11px] font-bold text-primary`}>{fmt(t('공통 연결 {n}명'), { n: total })}</Text><ChevronRight size={12} color={C.primary} /></Pressable>
+          <Pressable onPress={onMutual} style={tw`ml-1.5 h-6 pl-2.5 pr-1.5 rounded-full bg-white border border-primary-soft flex-row items-center`}><Text style={tw`text-[11px] font-bold text-primary`}>{fmt(t('서로 아는 사람 {n}명'), { n: total })}</Text><ChevronRight size={12} color={C.primary} /></Pressable>
           <View style={tw`flex-1`} />
           {canIntro ? <Tag tone="mint">{t('소개 가능')}</Tag> : null}
         </View>
@@ -127,7 +127,7 @@ function SecondCard({ sd, asked, onMutual, onAsk, onAsks }: { sd: SecondDegree; 
             <Handshake size={14} color={C.ink2} /><Text style={tw`mx-1 text-[12px] font-semibold text-ink-2`}>{asked.status === 'forwarded' ? t('전달됨') : t('전달 대기')}</Text><ChevronRight size={13} color={C.ink2} />
           </Pressable>
         ) : canIntro ? (
-          <Button size="sm" variant="secondary" icon={<Handshake size={14} color={C.primary} />} onPress={onAsk}>{t('연결해줄 수 있나요?')}</Button>
+          <Button size="sm" variant="secondary" icon={<Handshake size={14} color={C.primary} />} onPress={onAsk}>{t('소개해 줄 수 있어요?')}</Button>
         ) : null}
         <View style={tw`w-1.5`} />
         <SaveButton user={u} />
@@ -138,10 +138,10 @@ function SecondCard({ sd, asked, onMutual, onAsk, onAsks }: { sd: SecondDegree; 
   );
 }
 
-/** 공통 연결 목록 — 경로에 보이지 않게 설정한 사람은 숫자로만 */
+/** 서로 아는 사람 목록 — 경로에 보이지 않게 설정한 사람은 숫자로만 */
 function MutualSheet({ sd, onClose }: { sd: SecondDegree | null; onClose: () => void }) {
   return (
-    <BottomSheet open={!!sd} onClose={onClose} title={sd ? fmt(t('{name}님과의 공통 연결'), { name: sd.user.nickname }) : ''}>
+    <BottomSheet open={!!sd} onClose={onClose} title={sd ? fmt(t('{name}님과 서로 아는 사람'), { name: sd.user.nickname }) : ''}>
       {sd ? (
         <View>
           {sd.via.map((u) => (
@@ -158,7 +158,7 @@ function MutualSheet({ sd, onClose }: { sd: SecondDegree | null; onClose: () => 
   );
 }
 
-/** "연결해줄 수 있나요?" — 공통 연결 고르기 + 한 줄(선택). 연락처는 적을 수 없다 */
+/** "소개해 줄 수 있어요?" — 서로 아는 사람 고르기 + 한 줄(선택). 연락처는 적을 수 없다 */
 function AskSheet({ sd, onClose, onDone }: { sd: SecondDegree | null; onClose: () => void; onDone: () => void }) {
   const v = useViewer();
   const run = useAppStore((s) => s.run);
@@ -180,10 +180,10 @@ function AskSheet({ sd, onClose, onDone }: { sd: SecondDegree | null; onClose: (
     } catch (e) { setErr((e as Error).message); } finally { setBusy(false); }
   };
   return (
-    <BottomSheet open={!!sd} onClose={() => { onClose(); setKey(null); }} title={t('연결해줄 수 있나요?')} tall>
+    <BottomSheet open={!!sd} onClose={() => { onClose(); setKey(null); }} title={t('소개해 줄 수 있어요?')} tall>
       {sd ? (
         <View>
-          <Text style={tw`text-[13px] text-ink-2`}>{fmt(t('{name}님은 공통 연결이 전달하기 전까지 이 부탁을 몰라요. 넘겨도 괜찮은 가벼운 부탁이에요.'), { name: sd.user.nickname })}</Text>
+          <Text style={tw`text-[13px] text-ink-2`}>{fmt(t('{name}님은 서로 아는 사람이 전달하기 전까지 이 부탁을 몰라요. 넘겨도 괜찮은 가벼운 부탁이에요.'), { name: sd.user.nickname })}</Text>
           <Text style={tw`mt-3 mb-1.5 text-[12px] font-bold text-ink-3`}>{t('누구에게 물어볼까요?')}</Text>
           {sd.via.map((u) => { const on = viaId === u.id; return (
             <Pressable key={u.id} accessibilityRole="radio" accessibilityState={{ selected: on }} onPress={() => setViaId(u.id)} style={tw`mb-1.5 rounded-2xl border px-3 py-2 flex-row items-center ${on ? 'border-primary bg-primary-soft' : 'border-line bg-white'}`}>
@@ -203,7 +203,7 @@ function AskSheet({ sd, onClose, onDone }: { sd: SecondDegree | null; onClose: (
   );
 }
 
-// ─── 연결 부탁 ───────────────────────────────────────────────────────────────
+// ─── 소개 부탁 ───────────────────────────────────────────────────────────────
 const MY_STATUS: Record<IntroRequest['status'], { label: string; tone: 'neutral' | 'primary' }> = {
   pending: { label: t('전달 대기'), tone: 'neutral' },
   forwarded: { label: t('전달됨'), tone: 'primary' },
@@ -237,7 +237,7 @@ function AsksTab({ onPeople }: { onPeople: () => void }) {
 
   return (
     <Section loading={sec.loading} error={sec.error} onRetry={sec.retry} skeleton={<SectionSkeleton count={2} />}
-      empty={empty && <SectionEmpty emoji="🤝" title={t('아직 연결 부탁이 없어요')} description={t('2촌 카드에서 “연결해줄 수 있나요?”로 공통 연결에게 물어볼 수 있어요.')} action={<Button size="sm" onPress={onPeople}>{t('2촌 보기')}</Button>} />}>
+      empty={empty && <SectionEmpty emoji="🤝" title={t('아직 소개 부탁이 없어요')} description={t('2촌 카드에서 “소개해 줄 수 있어요?”로 서로 아는 사람에게 물어볼 수 있어요.')} action={<Button size="sm" onPress={onPeople}>{t('2촌 보기')}</Button>} />}>
       {viaMe.length > 0 ? (
         <View>
           <H>{t('이어줄 수 있을까요?')}</H>

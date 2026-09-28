@@ -54,7 +54,7 @@ export function AroundPage() {
   const emptyTitle = lang === 'en' ? `No one in ${city} for these dates yet` : `이 기간에 ${city}에는 아직 없어요`;
   const empty = list.length === 0 && (
     openOnly && all.length > 0
-      ? <SectionEmpty emoji="☕" title={t('지금 열려 있는 사람이 없어요')} description={t('상태를 켠 사람만 보고 있어요')} action={<Button size="sm" variant="outline" onClick={() => set({ open: null })}>{t('필터 끄기')}</Button>} />
+      ? <SectionEmpty emoji="☕" title={t('지금 시간 되는 사람이 없어요')} description={t('상태를 켠 사람만 보고 있어요')} action={<Button size="sm" variant="outline" onClick={() => set({ open: null })}>{t('필터 끄기')}</Button>} />
       : <SectionEmpty emoji="🌙" title={emptyTitle} description={t('방문 예정은 공개한 사람만 보여요')} action={
         <div className="flex flex-wrap justify-center gap-2">
           {win === 'this' && <Button size="sm" variant="outline" onClick={() => set({ week: 'next' })}>{t('다음 주 보기')}</Button>}
@@ -95,7 +95,7 @@ export function AroundPage() {
           </div>
           <Segmented className="mt-2" value={win} onChange={(w) => set({ week: w === 'this' ? null : w })} options={[{ value: 'this', label: t('이번 주') }, { value: 'next', label: t('다음 주') }]} />
           <div className="mt-2 flex items-center gap-2">
-            <Chip size="sm" active={openOnly} onClick={() => set({ open: openOnly ? null : '1' })}>☕ {t('지금 열려 있는 사람만')}</Chip>
+            <Chip size="sm" active={openOnly} onClick={() => set({ open: openOnly ? null : '1' })}>☕ {t('지금 시간 되는 사람만')}</Chip>
             <span className="ml-auto text-[11px] text-ink-3 flex items-center gap-1"><CalendarDays size={11} />{shortRange(from, to)}</span>
           </div>
         </div>

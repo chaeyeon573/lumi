@@ -94,11 +94,11 @@ export function ActivityForm({ editId }: { editId?: string }) {
     } catch { setBusy(false); }
   };
 
-  const title = editing ? t('활동 수정') : isCrew ? t('Study Crew 만들기') : isNow ? t('지금 만날 사람 찾기') : isTeam ? t('팀·준비방 만들기') : `${KIND_LABELS[kind]}${t(' 만들기')}`;
+  const title = editing ? t('활동 수정') : isCrew ? t('스터디 만들기') : isNow ? t('지금 만날 사람 찾기') : isTeam ? t('팀·준비방 만들기') : `${KIND_LABELS[kind]}${t(' 만들기')}`;
   const teamRoles = [...new Set([...OFFER_ROLES, ...LOOKING_FOR_ROLES.filter((r) => ['teammate', 'cofounder', 'study_partner', 'application_partner'].includes(r))])];
 
   return (
-    <Screen title={title} footer={<View style={tw`flex-row`}><Button full size="lg" disabled={!valid} loading={busy} onPress={submit}>{editing ? t('수정 완료') : isCrew ? t('Crew 열기') : isNow ? t('지금 열기') : t('활동 만들기')}</Button></View>}>
+    <Screen title={title} footer={<View style={tw`flex-row`}><Button full size="lg" disabled={!valid} loading={busy} onPress={submit}>{editing ? t('수정 완료') : isCrew ? t('스터디 열기') : isNow ? t('지금 열기') : t('활동 만들기')}</Button></View>}>
       <View style={tw`py-4`}>
         {isNow && <View style={tw`rounded-xl bg-accent-soft px-3 py-2.5 mb-5`}><Text style={tw`text-[13px] text-ink`}>⚡ {t('30분 뒤 시작으로 맞춰뒀어요. 시간이 맞는 사람의 발견 › Now에 바로 보여요.')}</Text></View>}
         {isCrew && (

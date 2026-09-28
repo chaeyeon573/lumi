@@ -38,7 +38,7 @@ export function withinDegree(s: Rel, from: ID, n: number): ID[] {
   return [...degreesFrom(s, from, n).entries()].filter(([id, d]) => d > 0 && id !== from).map(([id]) => id);
 }
 
-/** a→b 경로의 중간 사람 (2촌이면 공통 연결 1명, 3촌이면 2명). 표시용 */
+/** a→b 경로의 중간 사람 (2촌이면 서로 아는 사람 1명, 3촌이면 2명). 표시용 */
 export function pathBetween(s: Rel, a: ID, b: ID, maxDegree = 3): ID[] {
   const adj = adjacency(s);
   const prev = new Map<ID, ID | null>([[a, null]]);
@@ -54,7 +54,7 @@ export function pathBetween(s: Rel, a: ID, b: ID, maxDegree = 3): ID[] {
 export const isBlockedPair = (s: Rel, a: ID, b: ID) => s.relationships.blocks.some((x) => pairKey(x.fromId, x.toId) === pairKey(a, b));
 
 import type { User } from '@core/types';
-/** 2촌 — 친구의 친구. via = 공통 연결(경로에 보여도 되는 사람만 이름 공개, 나머지는 숫자로) */
+/** 2촌 — 친구의 친구. via = 서로 아는 사람(경로에 보여도 되는 사람만 이름 공개, 나머지는 숫자로) */
 export interface SecondDegree { user: User; via: User[]; hiddenVia: number }
 export function secondDegree(s: Rel & { users: User[] }, meId: ID, canShowInPath: (u: User) => boolean): SecondDegree[] {
   const adj = adjacency(s);

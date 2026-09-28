@@ -99,7 +99,7 @@ function RequesterView({ req }: { req: NetworkRequest }) {
 }
 
 /**
- * 손 든 사람 한 명 — 왜(해당되는 부분 · 한 줄) → 얼마나 가까운지(촌수 · 공통 연결 · 누가 떠올렸나) → 본인이 고른 정보만.
+ * 손 든 사람 한 명 — 왜(해당되는 부분 · 한 줄) → 얼마나 가까운지(촌수 · 서로 아는 사람 · 누가 떠올렸나) → 본인이 고른 정보만.
  * 이름·사진 외 프로필은 응답자가 고른 항목(shared)만 보여주고, 대화가 열리기 전에는 프로필로 들어가지 않는다.
  */
 function ResponseCard({ res, busy, onDecide, roomId }: { res: RequestResponse; busy: string | null; onDecide: (r: RequestResponse, accept: boolean) => void; roomId?: string }) {
@@ -129,7 +129,7 @@ function ResponseCard({ res, busy, onDecide, roomId }: { res: RequestResponse; b
       <div className="mt-2 text-[11px] text-ink-3 flex items-center gap-1 flex-wrap">
         <span>{degreeLabel(degree, lang)}</span>
         <span>·</span>
-        <span className="inline-flex items-center gap-0.5"><Users size={10} />{t('공통 연결')} {mutual}{t('명')}</span>
+        <span className="inline-flex items-center gap-0.5"><Users size={10} />{t('서로 아는 사람')} {mutual}{t('명')}</span>
         {via && <span>· {via.nickname}{t('님이 떠올렸어요')}</span>}
       </div>
       {connected

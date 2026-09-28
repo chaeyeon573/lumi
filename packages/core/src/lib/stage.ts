@@ -1,7 +1,7 @@
 /**
  * 단계별 화면 — 학부생 · 대학원생 · 졸업생은 같은 5탭 구조를 쓰지만, 무엇을 먼저 보여주고 무엇을 쓰기 쉽게 할지가 다르다.
  * 학부생: 수업·공강·동아리·학교 행사 → 같은 학교·같은 전공·같은 수업
- * 대학원생: 연구 분야·연구실·리딩 그룹·세미나·학회 → 같은 연구 분야(다른 학교 포함) · 먼저 간 사람(박사·업계)
+ * 대학원생: 연구 분야·연구실·리딩 그룹·세미나·학회 → 같은 연구 분야(다른 학교 포함) · 먼저 가 본 선배(박사·업계)
  * 졸업생: 도시·하는 일·동문 → 같은 도시·같은 분야 · 근황 · 후배 질문
  * 화면(웹·모바일)은 여기 설정만 읽는다. 데이터 계산은 home/feed/recommend/people 에서.
  */
@@ -45,7 +45,7 @@ export function composerPrompts(kind: StageKind): ComposerPrompt[] {
     update: { key: 'update', emoji: '🌱', label: t('근황'), postType: 'story', placeholder: t('예: 새 도시로 이사 왔어요. 요즘 이렇게 지내요') },
     city_meet: { key: 'city_meet', emoji: '☕', label: t('이 도시에서 만나요'), postType: 'together', placeholder: t('예: 퇴근 후 커피 한 잔 하실 동문') },
     ama: { key: 'ama', emoji: '💬', label: t('후배 질문 받아요'), postType: 'question', placeholder: t('예: 지금 하는 일에 대해 궁금한 것 편하게 물어보세요') },
-    visit: { key: 'visit', emoji: '✈️', label: t('이번에 가요'), postType: 'together', placeholder: t('예: 다음 주에 서울 가요. 시간 맞는 분 커피해요') },
+    visit: { key: 'visit', emoji: '✈️', label: t('출장·여행 가요'), postType: 'together', placeholder: t('예: 다음 주에 서울 가요. 시간 맞는 분 커피해요') },
     hiring: { key: 'hiring', emoji: '📌', label: t('채용·추천 정보'), postType: 'info', placeholder: t('예: 우리 팀이 사람을 찾고 있어요. 관심 있으면 편하게 물어보세요') },
   };
   return COMPOSER_PROMPT_KEYS[kind].map((k) => all[k]);
@@ -106,7 +106,7 @@ export function stageCopy(kind: StageKind): StageCopy {
   };
 }
 
-// ─── 연구 분야 ↔ 업계 (대학원생이 "먼저 간 사람"을 찾을 때) ─────────────────────────────
+// ─── 연구 분야 ↔ 업계 (대학원생이 "먼저 가 본 선배"을 찾을 때) ─────────────────────────────
 const RESEARCH_ALIASES: Record<string, string[]> = {
   nlp: ['nlp', 'ai', 'ml', 'llm', '자연어', 'machine learning'],
   ai: ['ai', 'ml', 'machine learning', 'nlp', 'llm', '인공지능'],

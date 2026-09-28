@@ -33,7 +33,7 @@ import { hideForAlumni } from '@/pages/meet/MeetExtras';
 
 /**
  * Home — "오늘 나에게 뭐가 있나". 게시글 피드가 아니라 지금 내 상황에서 볼 가치가 높은 것 2~4개씩.
- * 재학생: 오늘 일정 → 지금 연결할 수 있는 사람 → 학교에서 일어나는 것 → 나에게 맞는 모임 → 지금 열린 만남 → 새로운 사람 → 추천 기회
+ * 재학생: 오늘 일정 → 지금 연결할 수 있는 사람 → 학교에서 일어나는 것 → 나에게 맞는 모임 → 곧 시작하는 모임 → 새로운 사람 → 추천 기회
  * 졸업생: 새롭게 연결할 사람 → 내 지역 사람 → 내 분야 사람 → 이번 주 모임 → 내 관계망 소식 → 내 그룹 → 추천 기회
  */
 export function HomePage() {
@@ -264,7 +264,7 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
           : <div className="card divide-y divide-line">{d.meets.map((m) => <MeetRow key={m.a.id} m={m} />)}</div>}
       </Section>
 
-      <MoreSections titles={[t('오늘의 질문'), t('학교에서 일어나는 것'), d.now.length ? t('지금 열린 만남') : '', d.newPeople.length ? t('새로운 사람') : '', d.opportunities.length ? t('추천 기회') : '']}>
+      <MoreSections titles={[t('오늘의 질문'), t('학교에서 일어나는 것'), d.now.length ? t('곧 시작하는 모임') : '', d.newPeople.length ? t('새로운 사람') : '', d.opportunities.length ? t('추천 기회') : '']}>
       <Section title={t('오늘의 질문')}><DailyPromptCard /></Section>
 
       <Section title={t('학교에서 일어나는 것')} action={t('전체보기')} onAction={() => nav('/meet?tab=recommend')}>
@@ -281,7 +281,7 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
 
 
       {d.now.length > 0 && (
-        <Section title={t('지금 열린 만남')} action={t('전체보기')} onAction={() => nav('/meet?tab=now')}>
+        <Section title={t('곧 시작하는 모임')} action={t('전체보기')} onAction={() => nav('/meet?tab=now')}>
           <div className="space-y-2">{d.now.map((a: Activity) => <NowActivityRow key={a.id} activity={a} inMin={toMin(a.startTime) - nowMinutes} />)}</div>
         </Section>
       )}
@@ -302,7 +302,7 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
   );
 }
 
-// ─── 대학원생 — 수업·공강보다 연구 분야 · 연구 일정 · 먼저 간 사람 ─────────────────────
+// ─── 대학원생 — 수업·공강보다 연구 분야 · 연구 일정 · 먼저 가 본 선배 ─────────────────────
 function GradHome({ d, me }: { d: GradHomeData; me: User }) {
   const nav = useNavigate();
   const field = me.research?.field;
@@ -324,7 +324,7 @@ function GradHome({ d, me }: { d: GradHomeData; me: User }) {
       </Section>
 
       {d.ahead.length > 0 && (
-        <Section title={t('먼저 간 사람')} action={t('전체보기')} onAction={() => nav('/people?tab=search')}>
+        <Section title={t('먼저 가 본 선배')} action={t('전체보기')} onAction={() => nav('/people?tab=search')}>
           <p className="-mt-1 mb-2 text-[12px] text-ink-3">{t('박사과정 · 그 분야에서 일하는 선배 — 진로 이야기를 편하게')}</p>
           <PeopleStrip people={d.ahead} />
         </Section>

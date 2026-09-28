@@ -28,7 +28,7 @@ export default function DiscoverScreen() {
   const nextFree = myFree[0] ? { start: Math.max(myFree[0].start, nowMin()), end: myFree[0].end } : null;
 
   return (
-    <Screen title={t('지금 열린 만남')}>
+    <Screen title={t('곧 시작하는 모임')}>
       <View style={tw`mt-2 h-12 rounded-full bg-surface-2 flex-row items-center pl-4 pr-1.5`}>
         <View style={tw`h-2 w-2 rounded-full bg-primary mr-2`} />
         <Text numberOfLines={1} style={tw`flex-1 text-[14px] text-ink font-medium`}>{me.timetable.length === 0 ? t('시간표를 추가해보세요') : nextFree ? `${lang === 'en' ? 'Free' : '공강'} ${fmtBlock(nextFree)}` : t('오늘 수업 끝')}</Text>
@@ -70,7 +70,7 @@ function NowTab() {
           ))}
         </ScrollView>
       )}
-      <H1 style={tw`mb-3`}>{lang === 'en' ? 'Spontaneous Hangouts' : '지금 열린 활동'}</H1>
+      <H1 style={tw`mb-3`}>{lang === 'en' ? 'Spontaneous Hangouts' : '참여할 수 있는 모임'}</H1>
       <View style={tw`mb-4`}><ChipRow>{NOW_CHIPS.map((c) => <Chip key={c.key} active={chip === c.key} onPress={() => setChip(c.key)}>{c.label}{c.key === 'all' ? ` (${list.length})` : ''}</Chip>)}</ChipRow></View>
       {partner && (
         <Pressable onPress={() => nav(`/activities/${partner.id}`)} style={tw`rounded-full border border-line bg-gold-soft pl-2.5 pr-2.5 py-2 flex-row items-center mb-3`}>
@@ -79,7 +79,7 @@ function NowTab() {
           <Button size="sm" onPress={() => nav(`/activities/${partner.id}`)}>{t('쿠폰 보기')}</Button>
         </Pressable>
       )}
-      {shown.length === 0 ? <Empty title={t('이 시간에 열린 활동이 없어요')} action={<Button size="sm" onPress={() => nav('/create/activity?kind=personal&now=1')}>{t('즉석 만남')}</Button>} />
+      {shown.length === 0 ? <Empty title={t('이 시간에 참여할 수 있는 모임이 없어요')} action={<Button size="sm" onPress={() => nav('/create/activity?kind=personal&now=1')}>{t('즉석 만남')}</Button>} />
         : shown.map(({ a }) => { const host = v.userById(a.hostId); return (
           <PillRow key={a.id} onPress={() => nav(`/activities/${a.id}`)} avatar={<Avatar emoji={host?.avatar.emoji ?? '👤'} hue={host?.avatar.hue ?? 200} url={host?.avatar.url} size={44} />} title={a.title} sub={`${formatTime(a.startTime)} · ${a.place.name}`} action={<JoinButton activity={a} label={t('참여')} />} />
         ); })}

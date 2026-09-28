@@ -116,7 +116,7 @@ export function TeamCard({ activity: a }: { activity: Activity }) {
         {host && <Pressable onPress={() => nav(`/users/${host.id}`)} style={tw`flex-row items-center mr-2`}><Avatar emoji={host.avatar.emoji} hue={host.avatar.hue} url={host.avatar.url} size={22} /><Text style={tw`ml-1.5 text-[12px] text-ink-2`}>{host.nickname}</Text></Pressable>}
         <Users size={11} color={C.ink3} /><Text style={tw`ml-0.5 text-[12px] text-ink-3`}>{count + 1}/{a.capacity}</Text>
         <View style={tw`flex-1`} />
-        <JoinButton activity={a} size="sm" label={a.courseName ? t('Crew 참여') : t('팀 참여 문의')} />
+        <JoinButton activity={a} size="sm" label={a.courseName ? t('스터디 참여') : t('팀 참여 문의')} />
       </View>
     </View>
   );

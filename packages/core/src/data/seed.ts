@@ -164,14 +164,14 @@ export const users: User[] = [
     id: 'u_taeho', nickname: '태호', birthYear: 1999, gender: 'male',
     avatar: { emoji: '🚀', hue: 10, photoType: 'face' , url: photo('p_taeho') }, photos: [photo('p_taeho'), photo('p_x5'), photo('c_city')], identityVerified: true,
     affiliation: { type: 'university', schoolId: 's_yonsei', schoolName: '연세대학교', role: 'alumni', department: '전기전자공학부', year: 2023, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'alumni', career: { city: '서울 성수', company: '스타트업 (창업)', industry: 'AI', role: '공동창업자' },
-    bio: '졸업 후 스타트업 창업. 후배들과 커피챗 환영해요.',
+    bio: '졸업 후 스타트업 창업. 후배들과 커피 한잔 환영해요.',
     likes: '프로덕트, 등산, 위스키',
-    freeTime: '정문 카페에서 커피챗',
+    freeTime: '정문 카페에서 커피 한잔',
     availability: 'after18',
     interests: ['startup', 'networking', 'coffee'],
     purposes: ['networking'],
-    nowWant: '창업 관심 있는 분과 커피챗',
-    prompts: [{ questionId: 'q_now', answer: '정문 카페에서 커피챗, 아이디어 피드백 환영' }, { questionId: 'q_3hours', answer: '정문 카페에서 후배들 커피챗' }, { questionId: 'q_role', answer: '일 벌이는 사람' }, { questionId: 'q_ask_me', answer: 'MVP 만들기, 팀빌딩, 투자 미팅 준비' }, { questionId: 'q_want_person', answer: '뭔가 만들고 있는 사람' }],
+    nowWant: '창업 관심 있는 분과 커피 한잔',
+    prompts: [{ questionId: 'q_now', answer: '정문 카페에서 커피 한잔, 아이디어 피드백 환영' }, { questionId: 'q_3hours', answer: '정문 카페에서 후배들이랑 커피 한잔' }, { questionId: 'q_role', answer: '일 벌이는 사람' }, { questionId: 'q_ask_me', answer: 'MVP 만들기, 팀빌딩, 투자 미팅 준비' }, { questionId: 'q_want_person', answer: '뭔가 만들고 있는 사람' }],
     voicePrompt: { questionId: 'v_hello', durationSec: 12, recordedAt: isoHoursAgo(200) },
     goals: ['startup', 'cofounder'], lookingFor: ['developer', 'designer', 'cofounder'], canOffer: ['planning', 'marketing', 'mentor'], living: { residence: 'offcampus', zone: '신촌 남쪽' }, interestedOrgIds: ['o_startup'],
   }),
@@ -283,9 +283,9 @@ export const organizations: Organization[] = [
   },
   {
     id: 'o_startup', name: '연세 창업동아리 YSVC', logo: { emoji: '🚀', hue: 15 , url: photo('c_abstract3') }, type: 'club', schoolId: 's_yonsei', verified: false,
-    description: '아이디어를 제품으로. 매주 커피챗과 데모데이를 운영합니다.',
+    description: '아이디어를 제품으로. 매주 커피 모임과 데모데이를 운영합니다.',
     gallery: [{ emoji: '💡', hue: 15, caption: '데모데이' , url: photo('c_lounge') }],
-    regularActivities: ['매주 금 커피챗', '학기 말 데모데이'],
+    regularActivities: ['매주 금요일 커피 모임', '학기 말 데모데이'],
     recruitment: { title: '가을 기수 모집', period: `${T} ~ ${addDaysISO(14)}`, open: true },
     notices: [],
     followerIds: ['u_jimin', 'u_taeho'], memberIds: ['u_jimin', 'u_taeho'], adminIds: ['u_taeho'], applicantIds: [],
@@ -336,8 +336,8 @@ export const activities: Activity[] = [
     capacity: 10, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(6),
   },
   {
-    id: 'a_startup_chat', kind: 'personal', category: 'networking', title: '창업 커피챗 — 프로덕트 이야기',
-    description: '졸업 후 창업한 선배가 후배들과 커피챗. MVP, 팀빌딩 뭐든 물어보세요.',
+    id: 'a_startup_chat', kind: 'personal', category: 'networking', title: '창업 커피 모임 — 프로덕트 이야기',
+    description: '졸업 후 창업한 선배가 후배들과 커피 한잔. MVP, 팀빌딩 뭐든 물어보세요.',
     cover: { emoji: '🚀', hue: 15 , url: photo('c_two_laptops') }, hostId: 'u_taeho', hostType: 'user', orgId: 'o_startup', date: T1, startTime: '18:30', endTime: '20:00',
     place: { name: '정문 카페 (스타벅스 연세점)', lat: 37.5594, lng: 126.9372 },
     capacity: 5, visibility: 'school', joinPolicy: 'approval', fee: 0, conditions: '창업에 관심 있는 연세대 구성원', comments: [], createdAt: isoHoursAgo(10),
@@ -681,7 +681,7 @@ export const notifications: Notification[] = [
   { id: 'nt4', userId: DEMO_USER_ID, type: 'comment', title: '새 댓글', body: '하나님이 "리액트 사이드 프로젝트"에 댓글을 남겼어요.', link: '/activities/a_mine', read: true, createdAt: isoHoursAgo(1) },
   { id: 'nt5', userId: DEMO_USER_ID, type: 'follow', title: '새 팔로워', body: '지민님이 회원님을 팔로우하기 시작했어요.', link: '/users/u_jimin', read: true, createdAt: isoHoursAgo(3) },
   { id: 'nt6', userId: DEMO_USER_ID, type: 'org_event', title: '소리울림 새 행사', body: '가을 정기공연이 등록되었어요.', link: '/activities/a_band_show', read: true, createdAt: isoHoursAgo(48) },
-  { id: 'nt7', userId: DEMO_USER_ID, type: 'nearby_activity', title: '가까운 곳에서 관심 활동 시작', body: '정문 카페에서 창업 커피챗이 열려요.', link: '/activities/a_startup_chat', read: true, createdAt: isoHoursAgo(10) },
+  { id: 'nt7', userId: DEMO_USER_ID, type: 'nearby_activity', title: '가까운 곳에서 관심 활동 시작', body: '정문 카페에서 창업 이야기 나누는 커피 모임이 열려요.', link: '/activities/a_startup_chat', read: true, createdAt: isoHoursAgo(10) },
   { id: 'nt9', userId: DEMO_USER_ID, type: 'deadline', title: '마감 4일 전', body: '저장한 "2학기 우리사랑 장학금" 신청이 곧 마감돼요.', link: '/opportunities/op_scholarship', read: false, createdAt: isoMinutesAgo(10) },
   { id: 'nt10', userId: DEMO_USER_ID, type: 'opportunity_match', title: '같이 준비할 사람이 있어요', body: 'AI Campus Hackathon에 지원 예정인 학생 2명이 개발자를 찾고 있어요.', link: '/opportunities/op_hackathon', read: false, createdAt: isoHoursAgo(2) },
   { id: 'nt8', userId: DEMO_USER_ID, type: 'like', title: '좋아요', body: '수아, 하나님이 회원님의 게시물을 좋아해요.', link: '/community', read: true, createdAt: isoHoursAgo(24) },
@@ -812,7 +812,7 @@ users.push(
   mk({ id: 'u_a_ny_fin', nickname: '예린', birthYear: 1995, gender: 'female', avatar: { emoji: '🗽', hue: 205, photoType: 'face', url: photo('p_x1') }, photos: [photo('p_x1'), photo('c_city')], identityVerified: true,
     affiliation: { type: 'university', schoolId: 's_yonsei', schoolName: '연세대학교', role: 'alumni', department: '경영학과', year: 2017, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'alumni',
     homeCity: '뉴욕', gradYear: 2017, verification: { method: 'alumni_association', at: isoHoursAgo(24 * 15) }, career: { city: '뉴욕', company: '골드만삭스', industry: '금융', role: 'IB Associate' }, region: '뉴욕',
-    bio: '뉴욕 IB 5년차. 미국 금융권 준비하는 후배들 커피챗 환영.', interests: ['finance', 'invest', 'running', 'travel'], purposes: ['networking'], goals: [], lookingFor: [], canOffer: ['mentor'], openTo: ['mentoring', 'coffee', 'networking'], fieldVisibility: defaultVisibility('public'), availability: 'weekend',
+    bio: '뉴욕 IB 5년차. 미국 금융권 준비하는 후배들 커피 한잔 환영.', interests: ['finance', 'invest', 'running', 'travel'], purposes: ['networking'], goals: [], lookingFor: [], canOffer: ['mentor'], openTo: ['mentoring', 'coffee', 'networking'], fieldVisibility: defaultVisibility('public'), availability: 'weekend',
     wants: { people: ['alumni', 'same_city', 'same_field'], activities: ['coffee', 'networking'] }, createdAt: isoHoursAgo(24 * 3) }),
   mk({ id: 'u_a_tokyo_pm', nickname: '현우', birthYear: 1994, gender: 'male', avatar: { emoji: '🗼', hue: 350, photoType: 'face', url: photo('p_x5') }, photos: [photo('p_x5'), photo('c_desktop')], identityVerified: true,
     affiliation: { type: 'university', schoolId: 's_korea', schoolName: '고려대학교', role: 'alumni', department: '산업공학과', year: 2016, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'alumni',
@@ -839,8 +839,8 @@ organizations.push(
   { id: 'o_product_study', name: '프로덕트 스터디', logo: { emoji: '🧩', hue: 260, url: photo('c_two_laptops') }, type: 'community', scope: 'career', joinPolicy: 'approval', interests: ['startup', 'design'], verified: false,
     description: 'PM·창업자·디자이너가 2주에 한 번 케이스 토론. 학생도 환영 (직무 관심 있으면).', gallery: [], regularActivities: ['격주 목 20:00 온라인·성수'], notices: [],
     followerIds: ['u_b_korea1'], memberIds: ['u_b_snu2', 'u_a_tokyo_pm', 'u_a_yonsei_seoul'], adminIds: ['u_b_snu2'], applicantIds: [] },
-  { id: 'o_yonsei_alumni_seoul', name: '연세 동문 서울 커피챗', logo: { emoji: '🎓', hue: 215, url: photo('c_cafe_laptop') }, type: 'community', scope: 'school', schoolId: 's_yonsei', joinPolicy: 'open', interests: ['coffee', 'networking'], verified: false,
-    description: '서울에 있는 연세 동문·재학생 커피챗 모임. 기수·전공 상관없음.', gallery: [], regularActivities: ['월 1회 강남·신촌'], notices: [],
+  { id: 'o_yonsei_alumni_seoul', name: '연세 동문 서울 커피 모임', logo: { emoji: '🎓', hue: 215, url: photo('c_cafe_laptop') }, type: 'community', scope: 'school', schoolId: 's_yonsei', joinPolicy: 'open', interests: ['coffee', 'networking'], verified: false,
+    description: '서울에 있는 연세 동문·재학생 커피 모임. 기수·전공 상관없음.', gallery: [], regularActivities: ['월 1회 강남·신촌'], notices: [],
     followerIds: ['u_jimin'], memberIds: ['u_taeho', 'u_a_yonsei_seoul', 'u_a_ny_fin'], adminIds: ['u_taeho'], applicantIds: [] },
 );
 
@@ -852,7 +852,7 @@ activities.push(
   { id: 'a_g_product', kind: 'group', category: 'study', title: '프로덕트 케이스 토론 — 온보딩 개선', description: '그룹 멤버만. 각자 사례 하나씩 가져와요.', cover: { emoji: '🧩', hue: 260, url: photo('c_two_laptops') },
     hostId: 'u_b_snu2', hostType: 'user', orgId: 'o_product_study', date: T4, startTime: '20:00', endTime: '21:30', place: { name: '성수 코워킹 라운지', address: '서울 성동구', area: '서울 성수', lat: 37.5445, lng: 127.0560 },
     capacity: 8, visibility: 'group', joinPolicy: 'approval', fee: 0, comments: [], createdAt: isoHoursAgo(26) },
-  { id: 'a_g_alumni_coffee', kind: 'group', category: 'networking', title: '연세 동문 커피챗 (강남)', description: '재학생·동문 누구나. 커리어 이야기 편하게.', cover: { emoji: '☕', hue: 215, url: photo('c_cafe_laptop') },
+  { id: 'a_g_alumni_coffee', kind: 'group', category: 'networking', title: '연세 동문 커피 모임 (강남)', description: '재학생·동문 누구나. 커리어 이야기 편하게.', cover: { emoji: '☕', hue: 215, url: photo('c_cafe_laptop') },
     hostId: 'u_taeho', hostType: 'user', orgId: 'o_yonsei_alumni_seoul', date: T1, startTime: '19:30', endTime: '21:00', place: { name: '강남역 카페', address: '서울 강남구', area: '서울 강남', lat: 37.4979, lng: 127.0276 },
     capacity: 6, visibility: 'school', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(9) },
 );
@@ -873,14 +873,14 @@ users.forEach((u) => { if (STATUS[u.id]) u.status = STATUS[u.id]; });
 
 export const savedSearches: SavedSearch[] = [];
 
-/** v2 네트워크 요청 — "이런 분을 찾고 있어요" (다른 사람이 올린 요청이 데모 사용자에게 2촌·관련 네트워크로 온다) */
+/** v2 네트워크 요청 — "이런 분을 찾고 있어요" (다른 사람이 올린 요청이 데모 사용자에게 2촌·건너 아는 사이로 온다) */
 export const networkRequests: NetworkRequest[] = [
   { id: 'nr_taeho_japan', authorId: 'u_taeho', text: '일본 식품 유통 경험이 있고, 서울에서 한 번 이야기 나눌 수 있는 분', city: '서울', field: '유통', interests: ['startup', 'travel'], reach: 3, status: 'open', dismissedIds: [], responses: [], referrals: [], createdAt: isoHoursAgo(5), expiresAt: addDaysISO(13) },
   { id: 'nr_harin_pm', authorId: 'u_b_snu2', text: 'B2C 앱을 직접 만들어본 경험이 있는 분 (직무 상관없음). 온보딩 개선 사례 30분만 들려주실 수 있으면 좋겠어요', city: '서울', field: 'Product', interests: ['startup', 'design'], reach: 2, status: 'open', dismissedIds: [], responses: [], referrals: [], createdAt: isoHoursAgo(26), expiresAt: addDaysISO(12) },
   { id: 'nr_yerin_ny', authorId: 'u_a_ny_fin', text: '뉴욕에서 대학원 준비 중인 연세 후배. 추천서·에세이 이야기 편하게 해드릴게요', city: '뉴욕', field: '금융', interests: ['finance', 'study'], reach: 3, status: 'open', dismissedIds: [], responses: [], referrals: [], createdAt: isoHoursAgo(50), expiresAt: addDaysISO(10) },
 ];
 
-/** v2.2 방문 예정 · 저장 목록 · 연결 부탁 (Who's around · Saved lists · 2촌) */
+/** v2.2 방문 예정 · 저장 목록 · 소개 부탁 (Who's around · Saved lists · 2촌) */
 const wk = (d: number) => addDaysISO(d);
 const TRIPS: Record<string, User['trips']> = {
   u_a_ny_fin: [{ id: 'tr1', city: '서울', from: wk(1), to: wk(6) }],
@@ -939,13 +939,13 @@ activities.push(
   { id: 'a_gr_conf', kind: 'group', category: 'networking', title: 'EMNLP 가는 사람들 — 포스터 리허설 · 일정 맞추기', description: '올해 EMNLP 가는 대학원생끼리 포스터 한 번씩 발표해보고 숙소·동선 같이 봐요. 발표 없이 참석만 하는 분도 환영.', cover: { emoji: '🎤', hue: 250, url: photo('c_hall') },
     hostId: 'u_b_snu1', hostType: 'user', date: addDaysISO(6), startTime: '18:30', endTime: '20:30', place: { name: '서울대 302동 세미나실', area: '서울 관악', lat: 37.4488, lng: 126.9526 },
     capacity: 10, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(15) },
-  { id: 'a_gr_career', kind: 'personal', category: 'coffee', title: '박사 진학 vs 취업 — 대학원생 커피챗', description: '석사 졸업 앞둔 분, 박사 중에 업계를 고민하는 분. 업계로 간 선배도 한 명 와요. 결론 내는 자리가 아니라 경험 나누는 자리예요.', cover: { emoji: '🧭', hue: 25, url: photo('c_cafe_laptop') },
+  { id: 'a_gr_career', kind: 'personal', category: 'coffee', title: '박사 진학이냐 취업이냐 — 대학원생 커피 모임', description: '석사 졸업 앞둔 분, 박사 중에 업계를 고민하는 분. 업계로 간 선배도 한 명 와요. 결론 내는 자리가 아니라 경험 나누는 자리예요.', cover: { emoji: '🧭', hue: 25, url: photo('c_cafe_laptop') },
     hostId: 'u_b_kaist1', hostType: 'user', date: addDaysISO(3), startTime: '14:00', endTime: '15:30', place: { name: '강남역 카페', address: '서울 강남구', area: '서울 강남', lat: 37.4979, lng: 127.0276 },
     capacity: 6, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(27) },
   { id: 'a_al_seongsu', kind: 'personal', category: 'networking', title: '퇴근 후 성수 커피 (4명)', description: '일 끝나고 가볍게 커피 한 잔. 졸업생이면 학교·분야 상관없어요. 한 시간만.', cover: { emoji: '☕', hue: 30, url: photo('c_espresso') },
     hostId: 'u_b_snu2', hostType: 'user', date: T2, startTime: '19:00', endTime: '20:00', place: { name: '성수 카페', address: '서울 성동구', area: '서울 성수', lat: 37.5445, lng: 127.0560 },
     capacity: 4, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(4) },
-  { id: 'a_al_visit', kind: 'personal', category: 'networking', title: '서울 온 김에 — 뉴욕 금융·유학 커피챗', description: '일주일 서울에 있어요. 뉴욕 금융권이나 미국 대학원 준비하는 연세 후배·동문이면 편하게 오세요.', cover: { emoji: '✈️', hue: 205, url: photo('c_city') },
+  { id: 'a_al_visit', kind: 'personal', category: 'networking', title: '서울 온 김에 — 뉴욕 금융·유학 커피 한잔', description: '일주일 서울에 있어요. 뉴욕 금융권이나 미국 대학원 준비하는 연세 후배·동문이면 편하게 오세요.', cover: { emoji: '✈️', hue: 205, url: photo('c_city') },
     hostId: 'u_a_ny_fin', hostType: 'user', date: T4, startTime: '11:00', endTime: '12:30', place: { name: '광화문 카페', address: '서울 종로구', area: '서울 광화문', lat: 37.5714, lng: 126.9768 },
     capacity: 5, visibility: 'school', joinPolicy: 'approval', fee: 0, comments: [], createdAt: isoHoursAgo(8) },
 );
@@ -985,8 +985,8 @@ posts.push(
     text: '석사 졸업 앞두고 박사 진학이냐 취업이냐 고민 중이에요. 경제학은 박사면 유학이 거의 기본이라 더 고민되네요. 먼저 고민해본 분들 이야기 듣고 싶어요.', topics: ['path', 'finance'],
     tags: ['진로', '박사'], visibility: 'public', likeIds: ['u_g_yonsei_nlp', 'u_b_snu1', 'u_woojin'], savedIds: [],
     comments: [
-      { id: 'pc22', authorId: 'u_b_snu2', text: '저는 석사 마치고 바로 일했어요. 기준 하나만 꼽으면 "평소 하루가 어떤 모습이었으면 하나"였어요. 커피챗 가능해요', createdAt: isoHoursAgo(22) },
-      { id: 'pc23', authorId: 'u_b_kaist1', text: '강남 커피챗에 오세요. 같이 이야기해요!', createdAt: isoHoursAgo(21) },
+      { id: 'pc22', authorId: 'u_b_snu2', text: '저는 석사 마치고 바로 일했어요. 기준 하나만 꼽으면 "평소 하루가 어떤 모습이었으면 하나"였어요. 커피 한잔 가능해요', createdAt: isoHoursAgo(22) },
+      { id: 'pc23', authorId: 'u_b_kaist1', text: '강남 커피 모임에 오세요. 같이 이야기해요!', createdAt: isoHoursAgo(21) },
     ], relatedActivityId: 'a_gr_career', createdAt: isoHoursAgo(28) },
   { id: 'pa1', authorId: 'u_a_tokyo_pm', authorType: 'user', postType: 'story', media: [{ emoji: '🗼', hue: 350, url: photo('c_city') }],
     text: '도쿄 온 지 1년. 회의 일본어는 아직 반만 들리지만 동네 단골 카페가 생겼어요. 곧 서울 들어가요. 일본 이직 궁금한 분 그때 봬요.', topics: ['update', 'travel'],
@@ -1003,12 +1003,12 @@ posts.push(
     ], createdAt: isoHoursAgo(11) },
   { id: 'pa4', authorId: 'u_a_ny_fin', authorType: 'user', postType: 'together', media: [],
     text: '내일부터 일주일 서울에 있어요. 뉴욕 금융권이나 미국 대학원 준비하는 연세 후배들, 광화문에서 커피해요. 모임 열어뒀어요.', topics: ['visit', 'finance'],
-    tags: ['서울방문', '커피챗'], visibility: 'school', likeIds: ['u_woojin', 'u_taeho'], savedIds: [], comments: [], relatedActivityId: 'a_al_visit', createdAt: isoHoursAgo(8) },
+    tags: ['서울방문', '커피한잔'], visibility: 'school', likeIds: ['u_woojin', 'u_taeho'], savedIds: [], comments: [], relatedActivityId: 'a_al_visit', createdAt: isoHoursAgo(8) },
   { id: 'pa5', authorId: 'u_a_yonsei_seoul', authorType: 'user', postType: 'info', media: [],
     text: '저희 팀에서 백엔드 한 분 찾아요. 연세 동문 추천 환영이고, 궁금하면 편하게 메시지 주세요.', topics: ['hiring', 'startup'],
     tags: ['채용', '동문추천'], visibility: 'school', likeIds: ['u_taeho'], savedIds: [], comments: [], createdAt: isoHoursAgo(30) },
   { id: 'pa6', authorId: 'u_taeho', authorType: 'user', postType: 'story', media: [],
-    text: '창업하고 처음으로 일주일 쉬었어요. 쉬어보니 다음에 뭘 만들고 싶은지 오히려 잘 보이네요. 다음 주부터 정문 카페 커피챗 다시 엽니다.', topics: ['update', 'startup'],
+    text: '창업하고 처음으로 일주일 쉬었어요. 쉬어보니 다음에 뭘 만들고 싶은지 오히려 잘 보이네요. 다음 주부터 정문 카페 커피 모임 다시 열어요.', topics: ['update', 'startup'],
     tags: ['근황'], visibility: 'school', likeIds: ['u_jimin', DEMO_USER_ID], savedIds: [], comments: [], createdAt: isoHoursAgo(36) },
 );
 

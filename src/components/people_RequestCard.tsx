@@ -169,7 +169,7 @@ export function IncomingRequestCard({ item, highlightReferral, compact, onOpen, 
         <div className={cn('mx-3 mb-3 rounded-2xl p-3', highlightReferral ? 'bg-primary text-white' : 'bg-primary-soft')}>
           <div className={cn('text-[13px] font-semibold leading-snug flex items-center gap-2', highlightReferral ? 'text-white' : 'text-primary')}>
             <Avatar emoji={referrer.avatar.emoji} hue={referrer.avatar.hue} url={referrer.avatar.url} size={26} />
-            <span>{referrer.nickname}{t('님이 당신이 떠올랐대요')}</span>
+            <span>{referrer.nickname}{t('님이 나를 떠올렸어요')}</span>
           </div>
           <p className={cn('mt-1.5 text-[11px]', highlightReferral ? 'text-white/75' : 'text-ink-3')}>{t('관심 있어요 하기 전까지 상대에게 내 프로필은 보이지 않아요.')}</p>
           <div className="mt-2.5 flex gap-2">

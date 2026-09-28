@@ -1,5 +1,5 @@
 /**
- * 네트워크 요청 — "사람 찾기 › 네트워크에 물어보기".
+ * 네트워크 요청 — "사람 찾기 › 지인들에게 물어보기".
  * 두 엔진이 같이 돈다: (1) AroundU 가 프로필로 조건과 가까운 사람을 찾고, (2) 요청을 1촌 → 2촌 → 3촌 → 관련 학교·업종·관심사 순으로
  * 관련 있는 사람에게 보여줘 본인이 "저예요" 하거나 지인이 "제가 아는 사람이 있어요" 로 추천한다.
  * 후보의 프로필은 본인이 '관심 있어요' 하기 전까지 요청자에게 공개되지 않는다.
@@ -91,7 +91,7 @@ export const myRequests = (snap: Snapshot, me: User) => snap.networkRequests.fil
 
 /** "2촌 거리" 라벨 */
 export function degreeLabel(d: number | undefined, lang: 'ko' | 'en'): string {
-  if (d === undefined) return lang === 'en' ? 'Related network' : '관련 네트워크';
+  if (d === undefined) return lang === 'en' ? 'Related network' : '건너 아는 사이';
   if (d === 1) return lang === 'en' ? 'Your connection' : '내 연결';
   return lang === 'en' ? `${d}${d === 2 ? 'nd' : 'rd'}-degree` : `${d}촌 거리`;
 }

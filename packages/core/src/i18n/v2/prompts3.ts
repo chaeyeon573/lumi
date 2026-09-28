@@ -44,4 +44,6 @@ export const en_prompts3: Record<string, string> = {
   '토요일 아침엔': 'Saturday mornings',
   '늦잠': 'Sleep in',
   '브런치': 'Brunch',
+  '서로 관심': 'Both interested',
+  '관심은 상대에게 보이지 않아요. 서로 관심이 있으면 메시지를 보낼 수 있어요.': "They won't see it. If you're both interested, you can message each other.",
 };

@@ -19,8 +19,8 @@ import { StatusPill } from '@/components/people_StatusPill';
 import { ClosenessTag, ConnectStatusButton, maskedCity, maskedLine, useCloseness, useHideWithUndo, type Closeness } from '@/components/people_Network';
 
 /**
- * 의외의 연결 (/people/unexpected) — 같은 학교·같은 전공처럼 뻔한 이유가 아니라,
- * 다른 학교·다른 분야인데 의미 있게 겹치는 사람. 카드 위쪽에 "왜 의외인지"가 먼저, 사람은 그다음.
+ * 다른 학교, 비슷한 사람 (/people/unexpected) — 같은 학교·같은 전공처럼 뻔한 이유가 아니라,
+ * 다른 학교·다른 분야인데 의미 있게 겹치는 사람. 카드 위쪽에 "어떤 점이 비슷한지"가 먼저, 사람은 그다음.
  */
 export function UnexpectedPage() {
   const nav = useNavigate();
@@ -33,7 +33,7 @@ export function UnexpectedPage() {
 
   return (
     <div className="min-h-full pb-10 bg-bg">
-      <TopBar back title={t('의외의 연결')} messages />
+      <TopBar back title={t('다른 학교, 비슷한 사람')} messages />
       <div className="px-4 pt-1 pb-3">
         <p className="text-[13px] text-ink-2 flex items-start gap-1.5"><Sparkles size={14} className="text-primary shrink-0 mt-0.5" />{t('다른 학교·다른 분야인데 겹치는 게 있는 사람이에요. 둘러보기만 해도 괜찮아요.')}</p>
       </div>
@@ -52,7 +52,7 @@ export function UnexpectedPage() {
   );
 }
 
-/** 의외의 연결 카드 — 위: 왜 의외인지(이유 칩 · 거리 · 펼치면 이유 전부) → 아래: 사진·이름·학교(공개 범위 적용) → 행동 */
+/** 다른 학교, 비슷한 사람 카드 — 위: 어떤 점이 비슷한지(이유 칩 · 거리 · 펼치면 이유 전부) → 아래: 사진·이름·학교(공개 범위 적용) → 행동 */
 export function UnexpectedCard({ user, reasons, closeness, onHide, compact }: { user: User; reasons: Reason[]; closeness: Closeness; onHide?: () => void; compact?: boolean }) {
   const nav = useNavigate();
   const v = useViewer();
@@ -64,10 +64,10 @@ export function UnexpectedCard({ user, reasons, closeness, onHide, compact }: { 
 
   return (
     <article className="rounded-[24px] border border-line bg-white overflow-hidden">
-      {/* 1. 왜 의외인지 — 사람보다 먼저 */}
+      {/* 1. 어떤 점이 비슷한지 — 사람보다 먼저 */}
       <div className="bg-[#F4F9FF] px-3.5 pt-3 pb-2.5">
         <div className="flex items-center gap-2">
-          <span className="text-[11px] font-bold text-ink-3 flex-1">{t('왜 의외인지')}</span>
+          <span className="text-[11px] font-bold text-ink-3 flex-1">{t('어떤 점이 비슷한지')}</span>
           <ClosenessTag c={closeness} />
         </div>
         <ReasonChips reasons={reasons} max={3} className="mt-1.5" />

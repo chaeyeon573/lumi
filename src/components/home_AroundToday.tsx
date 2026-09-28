@@ -10,16 +10,16 @@ import { useSectionState } from '@/hooks/useSectionState';
 
 /**
  * 오늘 주변에서 — 목표·숙제 없이 사실만 조용히.
- * "아는 사람을 통해 이어진 사람 3명 · 이번 주 서울에 있는 사람 2명 · 지금 커피에 열려 있는 사람 1명"
+ * "건너 아는 사람 3명 · 이번 주 서울에 있는 사람 2명 · 지금 커피에 시간 되는 사람 1명"
  */
 export function AroundTodayCard({ me, snap }: { me: User; snap: Snapshot }) {
   const nav = useNavigate();
   const st = useSectionState('home-around');
   const d = useMemo(() => aroundToday(snap, me), [snap, me]);
   const rows = [
-    { key: 'via', Icon: Link2, n: d.viaFriends.length, label: t('아는 사람을 통해 이어진 사람'), people: d.viaFriends.map((x) => x.user), to: '/people/second' },
+    { key: 'via', Icon: Link2, n: d.viaFriends.length, label: t('건너 아는 사람'), people: d.viaFriends.map((x) => x.user), to: '/people/second' },
     { key: 'city', Icon: MapPin, n: d.inCity.length, label: lang === 'en' ? `People in ${d.city} this week` : `이번 주 ${d.city}에 있는 사람`, people: d.inCity, to: `/people/around?city=${encodeURIComponent(d.city)}` },
-    { key: 'open', Icon: Coffee, n: d.openNow.length, label: t('지금 무언가에 열려 있는 사람'), people: d.openNow, to: '/people/around?open=1' },
+    { key: 'open', Icon: Coffee, n: d.openNow.length, label: t('지금 시간 되는 사람'), people: d.openNow, to: '/people/around?open=1' },
   ].filter((r) => r.n > 0);
   if (st.loading) return <div className="px-4 mt-3"><SectionSkeleton count={1} /></div>;
   if (st.error) return <div className="px-4 mt-3"><SectionError onRetry={st.retry} /></div>;

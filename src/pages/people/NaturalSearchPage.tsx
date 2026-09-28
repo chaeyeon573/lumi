@@ -37,7 +37,7 @@ function maskUser(u: User, view: ProfileView): User {
 }
 
 /**
- * 사람 한 명 — 왜(이유 칩) → 얼마나 가까운지(촌수 · 공통 연결) → 경로(나 → 아는 사람) → 세부(공개 범위 안에서만).
+ * 사람 한 명 — 왜(이유 칩) → 얼마나 가까운지(촌수 · 서로 아는 사람) → 경로(나 → 아는 사람) → 세부(공개 범위 안에서만).
  * 전화번호·개인 이메일·정확한 위치는 애초에 보여주지 않는다.
  */
 export function MaskedPersonRow({ user, reasons, onConnect, busy }: { user: User; reasons: Reason[]; onConnect?: (u: User) => void; busy?: boolean }) {

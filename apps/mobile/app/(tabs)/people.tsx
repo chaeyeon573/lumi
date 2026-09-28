@@ -156,7 +156,7 @@ const LinkBtn = ({ label, onPress }: { label: string; onPress: () => void }) => 
 
 /**
  * 조용한 허브 — 관리할 것 없이 둘러보기만 해도 되는 세로 스크롤.
- * (a) 단계별 첫 섹션(학부생: 지금 가까운 사람 · 대학원생: 같은 연구 분야 · 졸업생: 가까운 동문) (b) 이번 주 주변 (c) 열려 있는 사람 (d) 의외의 연결 (e) 저장한 사람 · 혹시 찾는 사람이 있나요?
+ * (a) 단계별 첫 섹션(학부생: 지금 가까운 사람 · 대학원생: 같은 연구 분야 · 졸업생: 가까운 동문) (b) 이번 주 주변 (c) 시간 되는 사람 (d) 다른 학교, 비슷한 사람 (e) 저장한 사람 · 혹시 찾는 사람이 있나요?
  */
 function QuietHub({ onDeck }: { onDeck: () => void }) {
   const v = useViewer();
@@ -235,23 +235,23 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
             )}>
             <View style={tw`rounded-[20px] bg-primary-soft p-1.5`}>
               <View style={[tw`rounded-[20px]`, { backgroundColor: C.glassSoft }]}>
-                <AroundRow emoji="🤝" label={t('아는 사람을 통해 이어진 사람')} n={around.viaFriends.length} onPress={() => nav('/people/second')} />
+                <AroundRow emoji="🤝" label={t('건너 아는 사람')} n={around.viaFriends.length} onPress={() => nav('/people/second')} />
                 <AroundRow emoji="📍" label={around.city ? fmt(t('이번 주 {city}에 있는 사람'), { city: around.city }) : t('이번 주 같은 도시에 있는 사람')} n={around.inCity.length} onPress={() => nav('/people/around')} border />
-                <AroundRow emoji="☕" label={t('지금 열려 있는 사람')} n={openPeople.length} onPress={() => nav('/people/around?open=1')} border />
+                <AroundRow emoji="☕" label={t('지금 시간 되는 사람')} n={openPeople.length} onPress={() => nav('/people/around?open=1')} border />
               </View>
             </View>
             <PrivacyNote text={t('도시 단위로만 보여요 · 정확한 위치는 공유하지 않아요')} />
           </Section>
         </View>
 
-        {/* 섹션 줄이기 — (c) 열려 있는 사람 · (d) 의외의 연결 · (e) 저장·찾아보기는 "더 보기" 카드 하나로 (누르면 그 자리에서 펼친다) */}
-        <MoreSections top={20} titles={[t('열려 있는 사람'), t('의외의 연결'), t('저장한 사람'), t('혹시 찾는 사람이 있나요?')]}>
+        {/* 섹션 줄이기 — (c) 시간 되는 사람 · (d) 다른 학교, 비슷한 사람 · (e) 저장·찾아보기는 "더 보기" 카드 하나로 (누르면 그 자리에서 펼친다) */}
+        <MoreSections top={20} titles={[t('시간 되는 사람'), t('다른 학교, 비슷한 사람'), t('저장한 사람'), t('혹시 찾는 사람이 있나요?')]}>
         {/* (c) Open To — 상태가 켜진 사람 */}
         <View style={tw`mt-5`}>
-          <HubTitle title={t('열려 있는 사람')} right={openPeople.length > 3 ? <LinkBtn label={t('모두 보기')} onPress={() => nav('/people/around?open=1')} /> : undefined} />
+          <HubTitle title={t('시간 되는 사람')} right={openPeople.length > 3 ? <LinkBtn label={t('모두 보기')} onPress={() => nav('/people/around?open=1')} /> : undefined} />
           <Section loading={secOpen.loading} error={secOpen.error} onRetry={secOpen.retry} skeleton={<SectionSkeleton count={2} />}
             empty={openPeople.length === 0 && (
-              <SectionEmpty emoji="☕" title={t('지금 열려 있는 사람이 없어요')} description={t('내 상태를 켜 두면 가까운 사람에게 가볍게 보여요.')}
+              <SectionEmpty emoji="☕" title={t('지금 시간 되는 사람이 없어요')} description={t('내 상태를 켜 두면 가까운 사람에게 가볍게 보여요.')}
                 action={<Button size="sm" variant="outline" onPress={() => nav('/profile/open-to')}>{t('내 상태 켜기')}</Button>} />
             )}>
             <View style={tw`card`}>
@@ -260,15 +260,15 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
           </Section>
         </View>
 
-        {/* (d) 의외의 연결 미리보기 */}
+        {/* (d) 다른 학교, 비슷한 사람 미리보기 */}
         <View style={tw`mt-5`}>
-          <HubTitle title={t('의외의 연결')} right={<LinkBtn label={t('모두 보기')} onPress={() => nav('/people/unexpected')} />} />
+          <HubTitle title={t('다른 학교, 비슷한 사람')} right={<LinkBtn label={t('모두 보기')} onPress={() => nav('/people/unexpected')} />} />
           <Section loading={secUnexp.loading} error={secUnexp.error} onRetry={secUnexp.retry} skeleton={<SectionSkeleton count={2} />}
             empty={unexpected.length === 0 && <SectionEmpty emoji="🌿" title={t('새로운 추천이 없어요')} description={t('찾는 사람을 조정하거나 프로필을 채우면 새로운 사람이 보여요.')} action={nextActions} />}>
             {unexpected.map((c) => (
               <View key={c.user.id} style={tw`mb-2 card overflow-hidden`}>
                 <View style={tw`bg-sky-soft px-3.5 pt-3 pb-2.5`}>
-                  <View style={tw`flex-row items-center mb-1.5`}><Text style={tw`flex-1 text-[11px] font-bold text-ink-3`}>{t('왜 의외인지')}</Text><ClosenessTag c={closeness(c.user.id)} /></View>
+                  <View style={tw`flex-row items-center mb-1.5`}><Text style={tw`flex-1 text-[11px] font-bold text-ink-3`}>{t('어떤 점이 비슷한지')}</Text><ClosenessTag c={closeness(c.user.id)} /></View>
                   <ReasonChips reasons={c.reasons} max={3} />
                 </View>
                 <PersonRow user={c.user} compact actions bare />
@@ -326,7 +326,7 @@ function AroundRow({ emoji, label, n, onPress, border }: { emoji: string; label:
   );
 }
 
-/** 열려 있는 사람 한 줄 — 상태가 먼저, 그다음 사람 */
+/** 시간 되는 사람 한 줄 — 상태가 먼저, 그다음 사람 */
 function OpenRow({ user, closeness, border }: { user: User; closeness: Closeness; border?: boolean }) {
   const statuses = activeStatuses(user);
   return (

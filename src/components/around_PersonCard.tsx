@@ -16,13 +16,13 @@ import { SaveButton, ConnectTextButton } from '@/components/people_ActionBar';
 import { useSnapshot } from '@/hooks/useSnapshot';
 import { useViewer } from '@/hooks/useViewer';
 
-/** "2촌 · 공통 연결 1명" — 이유·거리가 먼저. 공통 연결은 경로 노출을 허용한 사람만 센다 */
+/** "2촌 · 서로 아는 사람 1명" — 이유·거리가 먼저. 서로 아는 사람은 경로 노출을 허용한 사람만 센다 */
 export function degreeLine(snap: Snapshot, me: User, u: User, degree?: number): string {
   if (degree === 1) return t('1촌 · 연결됨');
   if (degree === 2) {
     const n = mutualFriends(snap, me.id, u.id).map((id) => snap.users.find((x) => x.id === id)).filter((x): x is User => !!x && canShowInPath(x)).length;
     if (!n) return t('2촌');
-    return lang === 'en' ? `2nd · ${n} mutual` : `2촌 · 공통 연결 ${n}명`;
+    return lang === 'en' ? `2nd · ${n} mutual` : `2촌 · 서로 아는 사람 ${n}명`;
   }
   if (degree === 3) return t('3촌 · 건너건너 아는 사람');
   return t('새로운 사람');

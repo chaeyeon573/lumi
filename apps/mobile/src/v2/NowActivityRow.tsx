@@ -12,7 +12,7 @@ import { nav } from '@/nav';
 import { Avatar, Tag, C } from '@/ui';
 import { JoinButton } from '@/components/JoinButton';
 
-/** 지금 열린 만남 한 줄 카드 (웹 cards/NowActivityRow) — 사람 사진은 작게, 무엇·언제·어디가 먼저 */
+/** 곧 시작하는 모임 한 줄 카드 (웹 cards/NowActivityRow) — 사람 사진은 작게, 무엇·언제·어디가 먼저 */
 export function NowActivityRow({ activity: a, inMin }: { activity: Activity; inMin: number }) {
   const v = useViewer();
   const participations = useAppStore((s) => s.participations);

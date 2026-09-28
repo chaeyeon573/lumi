@@ -184,7 +184,7 @@ export type VerificationMethod = 'school_email' | 'sso' | 'student_id' | 'alumni
 export const STUDENT_VERIFICATIONS: VerificationMethod[] = ['school_email', 'sso', 'student_id'];
 export const ALUMNI_VERIFICATIONS: VerificationMethod[] = ['alumni_email', 'prior_student', 'vouch', 'alumni_association', 'diploma'];
 
-// ─── 네트워크 요청 ("사람 찾기 › 네트워크에 물어보기") ─────────────────────
+// ─── 네트워크 요청 ("사람 찾기 › 지인들에게 물어보기") ─────────────────────
 /** 요청이 퍼지는 범위 — 1촌(연결) · 2촌(연결의 연결) · 3촌 + 관련 학교·업종·관심사 */
 export type RequestReach = 1 | 2 | 3;
 export interface NetworkRequest {
@@ -245,7 +245,7 @@ export interface PrivacySettings {
   showCity: boolean;
   showGradYear: boolean;
   showGroups: boolean;
-  /** 2촌 경로에 내 이름이 "공통 연결"로 보이는 것 허용 */
+  /** 2촌 경로에 내 이름이 "서로 아는 사람"로 보이는 것 허용 */
   showInPaths: boolean;
   /** 방문 예정 도시를 보여줄지 */
   showTrips: boolean;
@@ -253,7 +253,7 @@ export interface PrivacySettings {
 /** 연결 상태 */
 export type ConnectionStatus = 'can_follow' | 'can_request' | 'requested' | 'connected' | 'blocked' | 'private';
 
-/** "연결해줄 수 있나요?" — 2촌에게 가기 위해 공통 연결(via)에게 부탁. via 가 전달해야 상대가 알게 된다 */
+/** "소개해 줄 수 있어요?" — 2촌에게 가기 위해 서로 아는 사람(via)에게 부탁. via 가 전달해야 상대가 알게 된다 */
 export interface IntroRequest {
   id: ID;
   fromId: ID;
@@ -454,7 +454,7 @@ export interface Activity {
   opportunityId?: ID;
   /** 시간표 공강에서 열린 활동 */
   openSlot?: boolean;
-  /** 제휴 딜(store_deal) — 발견 탭 '지금 열린 활동' 맨 위 제휴 카드 */
+  /** 제휴 딜(store_deal) — 발견 탭 '참여할 수 있는 모임' 맨 위 제휴 카드 */
   partner?: { name: string; deal: string };
   rolesNeeded?: Role[];
   /** Study Crew — 수업 이름으로 묶인다. visibilityTargets: ['course:<이름>']로 같은 수업 학생에게만 보인다 */

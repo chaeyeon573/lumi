@@ -1,6 +1,6 @@
 /**
  * 대화 거리 — AI 사람 찾기 입구 · 프로필 질문 카드 · 한마디 · 오늘의 질문 · 서로 아는 사람 (웹과 같은 core 헬퍼 `@core/lib/prompts-fun`).
- * 데이팅 앱이 아니다: 하트·좋아요 대신 "한마디", 공통 연결 대신 "서로 아는 사람".
+ * 데이팅 앱이 아니다: 하트·좋아요 대신 "한마디", 서로 아는 사람 대신 "서로 아는 사람".
  */
 import { useMemo, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';

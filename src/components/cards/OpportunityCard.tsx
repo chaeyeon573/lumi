@@ -6,7 +6,7 @@ import { Cover, Tag, Button } from '@/components/ui';
 import { OPP_TYPE_COLORS, OPP_TYPE_EMOJI, OPP_TYPE_LABELS, PERSON_ROLE_LABELS, RSVP_LABELS, RSVP_EMOJI } from '@core/lib/labels';
 import { formatDateTime } from '@core/lib/format';
 import { dday, daysUntil, isTogetherType } from '@core/lib/recommend';
-import { Heart } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { useAppStore } from '@core/store/useAppStore';
 import { useViewer } from '@/hooks/useViewer';
 import { api } from '@core/api';
@@ -84,7 +84,7 @@ export function OpportunityCard({ o, reasons, variant = 'feed', className }: { o
         </div>
         <div className="mt-3 flex gap-2">
           {isTogetherType(o.type) ? (<>
-            <button onClick={() => run(() => api.opportunities.setIntent(o.id, v.me.id, mine?.intent === 'interested' ? null : 'interested'), mine ? undefined : t('관심 표시했어요.'))} aria-label={t('관심')} className={cn('h-9 w-9 rounded-xl grid place-items-center press', mine?.intent === 'interested' ? 'bg-heart text-white' : 'bg-heart-soft text-heart')}><Heart size={16} fill={mine?.intent === 'interested' ? 'currentColor' : 'none'} /></button>
+            <button onClick={() => run(() => api.opportunities.setIntent(o.id, v.me.id, mine?.intent === 'interested' ? null : 'interested'), mine ? undefined : t('관심 표시했어요.'))} aria-label={t('관심')} className={cn('h-9 w-9 rounded-xl grid place-items-center press', mine?.intent === 'interested' ? 'bg-heart text-white' : 'bg-heart-soft text-heart')}><Star size={16} fill={mine?.intent === 'interested' ? 'currentColor' : 'none'} /></button>
             <Button size="sm" variant={mine && mine.intent !== 'interested' ? 'secondary' : 'primary'} className="flex-1" onClick={() => nav(`/opportunities/${o.id}`)}>{mine && mine.intent !== 'interested' ? `${RSVP_EMOJI[mine.intent]} ${RSVP_LABELS[mine.intent]}` : t('같이 갈래요')}</Button>
             <Button size="sm" variant="outline" onClick={() => nav(`/opportunities/${o.id}?tab=people`)}>{t('사람 찾기')}</Button>
           </>) : (

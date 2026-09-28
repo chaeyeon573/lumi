@@ -78,7 +78,7 @@ export function StatusPicker({ open, onClose }: { open: boolean; onClose: () => 
         {current && <Button size="lg" variant="outline" onClick={() => save(false)} disabled={busy}>{t('끄기')}</Button>}
         <Button size="lg" full loading={busy} onClick={() => save(true)}>{current ? t('바꾸기') : t('켜기')}</Button>
       </div>
-      <button type="button" onClick={() => { onClose(); nav('/profile/open-to'); }} className="mt-3 w-full flex items-center justify-center gap-1 text-[12px] font-semibold text-verify press">{t('Open To 자세히 설정')}<ChevronRight size={13} /></button>
+      <button type="button" onClick={() => { onClose(); nav('/profile/open-to'); }} className="mt-3 w-full flex items-center justify-center gap-1 text-[12px] font-semibold text-verify press">{t('요즘 가능한 것 자세히 설정')}<ChevronRight size={13} /></button>
     </BottomSheet>
   );
 }

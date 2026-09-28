@@ -32,8 +32,8 @@ const FIRSTRUN_KEY = 'aroundu.firstrun';
 
 /**
  * Home — "오늘 나에게 뭐가 있나" (웹 HomePage). 게시글 피드가 아니라 지금 내 상황에서 볼 가치가 높은 것 2~4개씩.
- * 섹션은 3개 + "더 보기" 카드 하나 (UX-SPEC 13). 학부생: 오늘 일정 · 지금 가까운 사람 · 나에게 맞는 모임 / 더 보기: 학교에서 일어나는 것 · 지금 열린 만남 · 새로운 사람 · 추천 기회
- * 대학원생: 이번 주 연구 일정 · 같은 연구 분야 · 먼저 간 사람 / 더 보기: 나에게 맞는 모임 · 오늘 일정 · 같은 학교 사람 · 추천 기회
+ * 섹션은 3개 + "더 보기" 카드 하나 (UX-SPEC 13). 학부생: 오늘 일정 · 지금 가까운 사람 · 나에게 맞는 모임 / 더 보기: 학교에서 일어나는 것 · 곧 시작하는 모임 · 새로운 사람 · 추천 기회
+ * 대학원생: 이번 주 연구 일정 · 같은 연구 분야 · 먼저 가 본 선배 / 더 보기: 나에게 맞는 모임 · 오늘 일정 · 같은 학교 사람 · 추천 기회
  * 졸업생: 새로운 사람 · 내 지역 사람 · 이번 주 모임 / 더 보기: 내 분야 사람 · 내 관계망 소식 · 내 그룹 · 추천 기회
  */
 export default function HomeScreen() {
@@ -178,7 +178,7 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
           : <CardList>{d.meets.map((m, i) => <MeetRow key={m.a.id} m={m} last={i === d.meets.length - 1} />)}</CardList>}
       </HSection>
 
-      <MoreSections titles={[t('학교에서 일어나는 것'), d.now.length ? t('지금 열린 만남') : '', d.newPeople.length ? t('새로운 사람') : '', d.opportunities.length ? t('추천 기회') : '']}>
+      <MoreSections titles={[t('학교에서 일어나는 것'), d.now.length ? t('곧 시작하는 모임') : '', d.newPeople.length ? t('새로운 사람') : '', d.opportunities.length ? t('추천 기회') : '']}>
       <HSection title={t('학교에서 일어나는 것')} action={t('전체보기')} onAction={() => nav('/meet?tab=recommend')}>
         {d.happening.length === 0
           ? <SmallEmpty emoji="🏫" title={t('오늘은 학교 행사가 없어요')} description={ctx.campusHappenings.slice(0, 3).join(' · ')} action={t('모임 둘러보기')} onAction={() => nav('/meet?tab=recommend')} />
@@ -192,7 +192,7 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
       </HSection>
 
       {d.now.length > 0 && (
-        <HSection title={t('지금 열린 만남')} action={t('전체보기')} onAction={() => nav('/discover')}>
+        <HSection title={t('곧 시작하는 모임')} action={t('전체보기')} onAction={() => nav('/discover')}>
           <View>{d.now.map((a: Activity) => <NowActivityRow key={a.id} activity={a} inMin={toMin(a.startTime) - nowMinutes} />)}</View>
         </HSection>
       )}
@@ -209,7 +209,7 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
   );
 }
 
-// ─── 대학원생 — 수업·공강보다 연구 분야 · 연구 일정 · 먼저 간 사람 ─────────────────────
+// ─── 대학원생 — 수업·공강보다 연구 분야 · 연구 일정 · 먼저 가 본 선배 ─────────────────────
 function GradHome({ d, me }: { d: GradHomeData; me: User }) {
   const field = me.research?.field;
   const hasTT = me.timetable.length > 0;
@@ -230,7 +230,7 @@ function GradHome({ d, me }: { d: GradHomeData; me: User }) {
       </HSection>
 
       {d.ahead.length > 0 && (
-        <HSection title={t('먼저 간 사람')} action={t('전체보기')} onAction={() => nav('/people?tab=search')} sub={t('박사과정 · 그 분야에서 일하는 선배 — 진로 이야기를 편하게')}>
+        <HSection title={t('먼저 가 본 선배')} action={t('전체보기')} onAction={() => nav('/people?tab=search')} sub={t('박사과정 · 그 분야에서 일하는 선배 — 진로 이야기를 편하게')}>
           <PeopleStrip people={d.ahead} />
         </HSection>
       )}

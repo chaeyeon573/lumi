@@ -126,7 +126,7 @@ export default function CreateMeetScreen() {
                 <Text style={tw`mb-2 text-[13px] font-semibold text-ink-3`}>{t('다른 방법으로 모으기')}</Text>
                 <View style={tw`card`}>
                   <ExtraRow first icon={<Vote size={18} color={C.primary} />} title={t('같이 계획하기')} sub={t('시간 투표로 정하기')} to="/together/new" />
-                  {kind === 'undergrad' ? <ExtraRow icon={<BookOpen size={18} color={C.primary} />} title={t('수업 Study Crew')} sub={t('시간표에서 수업을 골라요')} to="/timetable" /> : null}
+                  {kind === 'undergrad' ? <ExtraRow icon={<BookOpen size={18} color={C.primary} />} title={t('수업 스터디')} sub={t('시간표에서 수업을 골라요')} to="/timetable" /> : null}
                   <ExtraRow icon={<Users size={18} color={C.primary} />} title={t('팀원 모집하기')} sub={t('역할별로 팀원을 모아요')} to="/create/activity?kind=group&team=1" />
                 </View>
               </>

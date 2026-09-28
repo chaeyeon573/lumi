@@ -38,13 +38,13 @@ export function DegreePill({ text, solid }: { text: string; solid?: boolean }) {
   return <View style={tw`h-6 px-2.5 mr-1.5 rounded-full justify-center ${solid ? 'bg-primary' : 'bg-accent-soft'}`}><Text numberOfLines={1} style={tw`text-[11px] font-bold ${solid ? 'text-white' : 'text-primary'}`}>{text}</Text></View>;
 }
 
-/** "2촌 · 공통 연결 1명" — 공통 연결은 경로 노출을 허용한 사람만 센다 */
+/** "2촌 · 서로 아는 사람 1명" — 서로 아는 사람은 경로 노출을 허용한 사람만 센다 */
 export function degreeLine(snap: Snapshot, me: User, u: User, degree?: number): string {
   if (degree === 1) return t('1촌 · 연결됨');
   if (degree === 2) {
     const n = mutualFriends(snap, me.id, u.id).map((id) => snap.users.find((x) => x.id === id)).filter((x): x is User => !!x && canShowInPath(x)).length;
     if (!n) return t('2촌');
-    return lang === 'en' ? `2nd · ${n} mutual` : `2촌 · 공통 연결 ${n}명`;
+    return lang === 'en' ? `2nd · ${n} mutual` : `2촌 · 서로 아는 사람 ${n}명`;
   }
   if (degree === 3) return t('3촌 · 건너건너 아는 사람');
   return t('새로운 사람');
@@ -160,7 +160,7 @@ function maskUser(u: User, view: ProfileView): User {
 }
 
 /**
- * 사람 한 명 (자연어 찾기 · 사람 찾아보기) — 왜(이유 칩) → 얼마나 가까운지(촌수 · 공통 연결) → 경로 → 세부(공개 범위 안에서만).
+ * 사람 한 명 (자연어 찾기 · 사람 찾아보기) — 왜(이유 칩) → 얼마나 가까운지(촌수 · 서로 아는 사람) → 경로 → 세부(공개 범위 안에서만).
  * 전화번호·개인 이메일·정확한 위치는 애초에 보여주지 않는다.
  */
 export function MaskedPersonRow({ user, reasons }: { user: User; reasons: Reason[] }) {

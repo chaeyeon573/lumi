@@ -74,7 +74,7 @@ export function IncomingRequestCard({ item, compact, highlightReferral }: { item
 
       {myReferral && myReferral.status === 'pending' && referrer && !expired ? (
         <View style={tw`mx-3 mb-3 rounded-2xl p-3 ${hi ? 'bg-primary' : 'bg-primary-soft'}`}>
-          <View style={tw`flex-row items-center`}><Avatar emoji={referrer.avatar.emoji} hue={referrer.avatar.hue} url={referrer.avatar.url} size={26} /><Text style={tw`ml-2 flex-1 text-[13px] font-semibold ${hi ? 'text-white' : 'text-primary'}`}>{referrer.nickname}{t('님이 당신이 떠올랐대요')}</Text></View>
+          <View style={tw`flex-row items-center`}><Avatar emoji={referrer.avatar.emoji} hue={referrer.avatar.hue} url={referrer.avatar.url} size={26} /><Text style={tw`ml-2 flex-1 text-[13px] font-semibold ${hi ? 'text-white' : 'text-primary'}`}>{referrer.nickname}{t('님이 나를 떠올렸어요')}</Text></View>
           <Text style={[tw`mt-1.5 text-[11px]`, { color: hi ? C.glassSoft : C.ink3 }]}>{t('관심 있어요 하기 전까지 상대에게 내 프로필은 보이지 않아요.')}</Text>
           <View style={tw`mt-2.5 flex-row`}>
             <Button size="sm" full variant={hi ? 'accent' : 'primary'} loading={busy === 'ref-yes'} onPress={() => act('ref-yes', () => api.requests.referralDecide(req.id, myReferral.id, true), t('관심 있다고 알렸어요. 상대가 대화를 시작하면 알려드려요.'))}>{t('관심 있어요')}</Button>

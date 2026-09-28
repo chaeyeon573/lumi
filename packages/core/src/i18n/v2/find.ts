@@ -73,7 +73,7 @@ export const en_find: Record<string, string> = {
   '상대가 대화를 시작하면 알려드려요.': "We'll let you know if they start a conversation.",
   '맞는 것만 골라주세요. 요청자에게 그대로 보여요.': 'Pick only what fits. The requester sees exactly this.',
   '아는 사람 있어요로 가기': 'Go to "I know someone"',
-  "딱 맞지 않아도 괜찮아요 — 아는 사람이 있다면 '아는 사람 있어요'로 연결해줄 수도 있어요": 'Not a perfect fit is fine — if you know someone, you can connect them with "I know someone"',
+  "딱 맞지 않아도 괜찮아요 — 아는 사람이 있다면 '아는 사람 있어요'로 소개해 줄 수도 있어요": 'Not a perfect fit is fine — if you know someone, you can connect them with "I know someone"',
   '한 줄': 'One line',
   '(선택)': '(optional)',
   '요청자에게 보여줄 정보': 'What the requester can see',

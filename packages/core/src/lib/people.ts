@@ -190,8 +190,8 @@ export function searchOptions(users: User[]) {
 }
 
 /**
- * 의외의 연결 — 같은 학교·같은 전공처럼 뻔한 이유가 아니라, 다른 학교·다른 분야인데 의미 있는 공통점이 2개 이상인 사람.
- * (관심사·그룹·모임·공통 연결·도시·분야). 숨긴 카드는 빠진다.
+ * 다른 학교, 비슷한 사람 — 같은 학교·같은 전공처럼 뻔한 이유가 아니라, 다른 학교·다른 분야인데 의미 있는 공통점이 2개 이상인 사람.
+ * (관심사·그룹·모임·서로 아는 사람·도시·분야). 숨긴 카드는 빠진다.
  */
 export function unexpectedConnections(snap: Snapshot, me: User, users: User[], canSeeTimetable: (u: User) => boolean, limit = 12): RecommendedPerson[] {
   const hidden = new Set(me.hiddenPeople ?? []);

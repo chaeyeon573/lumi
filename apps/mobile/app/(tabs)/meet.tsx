@@ -123,14 +123,14 @@ function GroupCard({ org, reason }: { org: Organization; reason?: string }) {
 
 // ─── 추천 ──────────────────────────────────────────────────────────────────
 
-/** "지금" 스트립 (학부생만) — 공강 바(OpenSlotSheet) · 제휴 카드 · 지금 열린 만남. 있을 때만 */
+/** "지금" 스트립 (학부생만) — 공강 바(OpenSlotSheet) · 제휴 카드 · 곧 시작하는 모임. 있을 때만 */
 function NowStrip() {
   const v = useViewer();
   const me = v.me;
   const [slot, setSlot] = useState<{ start: number; end: number } | null>(null);
   const today = todayIdx();
   const todayDate = todayISO();
-  // 시간표가 없으면 "공강"이 의미 없으니 공강 바는 숨긴다 (제휴·지금 열린 만남은 그대로)
+  // 시간표가 없으면 "공강"이 의미 없으니 공강 바는 숨긴다 (제휴·곧 시작하는 모임은 그대로)
   const myFree = me.timetable.length ? freeBlocks(me.timetable, today).filter((b) => b.end > nowMin()) : [];
   const nextFree = myFree[0] ? { start: Math.max(myFree[0].start, nowMin()), end: myFree[0].end } : null;
   const partner = v.visibleActivities.find((a) => a.category === 'store_deal' && a.partner && a.date === todayDate);
@@ -162,7 +162,7 @@ function NowStrip() {
   );
 }
 
-/** 지금 열린 만남 한 줄 — 제목·시간·장소·n명 참여 중 + 같이 가기 */
+/** 곧 시작하는 모임 한 줄 — 제목·시간·장소·n명 참여 중 + 같이 가기 */
 function NowRow({ a, inMin }: { a: Activity; inMin: number }) {
   const v = useViewer();
   const host = v.userById(a.hostId);
@@ -294,9 +294,9 @@ function MeetExtraRows() {
     // 졸업생에게는 수업·스터디·팀원 모집·같이 계획하기(시간 투표)·공강 기반 "지금" 화면을 보여주지 않는다
     ...(kind === 'alumni' ? [] : [
       { key: 'together', icon: <Vote size={18} color={C.primary} />, title: t('같이 계획하기'), sub: t('시간 투표로 정하기'), to: '/together/new' },
-      ...(kind === 'undergrad' ? [{ key: 'crew', icon: <BookOpen size={18} color={C.primary} />, title: t('수업 Study Crew'), sub: t('시간표에서 수업을 골라요'), to: '/timetable' }] : []),
+      ...(kind === 'undergrad' ? [{ key: 'crew', icon: <BookOpen size={18} color={C.primary} />, title: t('수업 스터디'), sub: t('시간표에서 수업을 골라요'), to: '/timetable' }] : []),
       { key: 'team', icon: <Users size={18} color={C.primary} />, title: t('팀원 모집하기'), sub: t('역할별로 팀원을 모아요'), to: '/create/activity?kind=group&team=1' },
-      { key: 'now', icon: <Zap size={18} color={C.primary} />, title: t('지금 열린 만남'), sub: t('즉석 만남 · 팀 모집'), to: '/discover' },
+      { key: 'now', icon: <Zap size={18} color={C.primary} />, title: t('곧 시작하는 모임'), sub: t('즉석 만남 · 팀 모집'), to: '/discover' },
     ]),
     ...(kind === 'alumni' ? [{ key: 'tables', icon: <Users size={18} color={C.primary} />, title: t('작은 모임 · 4~6명'), sub: t('모임 둘러보기'), to: '/meet/tables' }] : []),
     { key: 'campus', icon: <School size={18} color={C.primary} />, title: t('캠퍼스'), sub: `${t('공고')} · ${t('단체')}`, to: '/community?tab=opportunities' },

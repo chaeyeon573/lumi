@@ -24,8 +24,8 @@ type Tab = 'people' | 'asks';
 
 /**
  * 아는 사람의 아는 사람 (/people/second) — 2촌 탐색.
- *   사람: 경로(나 → 공통 연결 → 상대) · 겹치는 것 → 이름·프로필 → "연결해줄 수 있나요?" · 저장 · 연결
- *   연결 부탁(?tab=asks): 내가 이어줄 수 있는 부탁 · 나에게 전달된 소개 · 내가 한 부탁
+ *   사람: 경로(나 → 서로 아는 사람 → 상대) · 겹치는 것 → 이름·프로필 → "소개해 줄 수 있어요?" · 저장 · 연결
+ *   소개 부탁(?tab=asks): 내가 이어줄 수 있는 부탁 · 나에게 전달된 소개 · 내가 한 부탁
  */
 export function SecondDegreePage() {
   const [params, setParams] = useSearchParams();
@@ -39,7 +39,7 @@ export function SecondDegreePage() {
     <div className="min-h-full pb-10 bg-bg">
       <TopBar back title={t('아는 사람의 아는 사람')} messages />
       <div className="px-4 pb-3">
-        <Segmented value={tab} onChange={setTab} options={[{ value: 'people', label: t('사람') }, { value: 'asks', label: waiting ? `${t('연결 부탁')} ${waiting}` : t('연결 부탁') }]} />
+        <Segmented value={tab} onChange={setTab} options={[{ value: 'people', label: t('사람') }, { value: 'asks', label: waiting ? `${t('소개 부탁')} ${waiting}` : t('소개 부탁') }]} />
       </div>
       {tab === 'people' ? <PeopleTab onAsks={() => setTab('asks')} /> : <AsksTab onPeople={() => setTab('people')} />}
     </div>
@@ -60,7 +60,7 @@ function PeopleTab({ onAsks }: { onAsks: () => void }) {
 
   return (
     <div className="px-4 space-y-3">
-      <p className="text-[12px] text-ink-3 px-1">{t('내 연결이 알고 있는 사람이에요. 공통 연결에게 먼저 물어볼 수 있어요.')}</p>
+      <p className="text-[12px] text-ink-3 px-1">{t('내 연결이 알고 있는 사람이에요. 서로 아는 사람에게 먼저 물어볼 수 있어요.')}</p>
       <Section loading={sec.loading} error={sec.error} onRetry={sec.retry} skeleton={<SectionSkeleton count={3} />}
         empty={list.length === 0 && (
           <SectionEmpty emoji="🌱" title={t('아직 2촌이 없어요')} description={t('연결이 생기면 그 사람들이 아는 사람이 여기에 보여요.')}
@@ -84,7 +84,7 @@ function PathLine({ sd }: { sd: SecondDegree }) {
       <ArrowRight size={13} className="text-ink-3 shrink-0" />
       <span className="flex items-center gap-1 min-w-0">
         {sd.via.slice(0, 2).map((u) => <Avatar key={u.id} emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={20} className="shrink-0" />)}
-        <span className="truncate text-ink">{names || fmt(t('공통 연결 {n}명'), { n: sd.hiddenVia })}{names && extra > 0 ? ` ${fmt(t('외 {n}명'), { n: extra })}` : ''}</span>
+        <span className="truncate text-ink">{names || fmt(t('서로 아는 사람 {n}명'), { n: sd.hiddenVia })}{names && extra > 0 ? ` ${fmt(t('외 {n}명'), { n: extra })}` : ''}</span>
       </span>
       <ArrowRight size={13} className="text-ink-3 shrink-0" />
       <span className="shrink-0">{sd.user.nickname}</span>
@@ -110,7 +110,7 @@ function SecondCard({ sd, asked, onMutual, onAsk, onAsks }: { sd: SecondDegree; 
       <div className="bg-[#F4F9FF] px-3.5 pt-3 pb-2.5 space-y-1.5">
         <div className="flex items-center gap-2">
           <span className="h-6 px-2.5 rounded-full bg-primary text-white text-[11px] font-bold inline-flex items-center shrink-0">{t('2촌')}</span>
-          <button onClick={onMutual} className="h-6 px-2.5 rounded-full bg-white border border-[var(--tint)] text-primary text-[11px] font-bold inline-flex items-center gap-0.5 press">{fmt(t('공통 연결 {n}명'), { n: total })}<ChevronRight size={12} /></button>
+          <button onClick={onMutual} className="h-6 px-2.5 rounded-full bg-white border border-[var(--tint)] text-primary text-[11px] font-bold inline-flex items-center gap-0.5 press">{fmt(t('서로 아는 사람 {n}명'), { n: total })}<ChevronRight size={12} /></button>
           <span className="flex-1" />
           {canIntro && <Tag tone="mint">{t('소개 가능')}</Tag>}
         </div>
@@ -137,7 +137,7 @@ function SecondCard({ sd, asked, onMutual, onAsk, onAsks }: { sd: SecondDegree; 
             <Handshake size={14} />{asked.status === 'forwarded' ? t('전달됨') : t('전달 대기')}<ChevronRight size={13} />
           </button>
         ) : canIntro ? (
-          <Button size="sm" variant="secondary" icon={<Handshake size={14} />} onClick={onAsk}>{t('연결해줄 수 있나요?')}</Button>
+          <Button size="sm" variant="secondary" icon={<Handshake size={14} />} onClick={onAsk}>{t('소개해 줄 수 있어요?')}</Button>
         ) : null}
         <SaveButton user={u} />
         <span className="flex-1" />
@@ -147,11 +147,11 @@ function SecondCard({ sd, asked, onMutual, onAsk, onAsks }: { sd: SecondDegree; 
   );
 }
 
-/** 공통 연결 목록 — 경로에 보이지 않게 설정한 사람은 숫자로만 */
+/** 서로 아는 사람 목록 — 경로에 보이지 않게 설정한 사람은 숫자로만 */
 function MutualSheet({ sd, onClose }: { sd: SecondDegree | null; onClose: () => void }) {
   const nav = useNavigate();
   return (
-    <BottomSheet open={!!sd} onClose={onClose} title={sd ? fmt(t('{name}님과의 공통 연결'), { name: sd.user.nickname }) : ''}>
+    <BottomSheet open={!!sd} onClose={onClose} title={sd ? fmt(t('{name}님과 서로 아는 사람'), { name: sd.user.nickname }) : ''}>
       {sd && (
         <div className="space-y-1.5">
           {sd.via.map((u) => (
@@ -168,7 +168,7 @@ function MutualSheet({ sd, onClose }: { sd: SecondDegree | null; onClose: () => 
   );
 }
 
-/** "연결해줄 수 있나요?" — 공통 연결 고르기 + 한 줄(선택). 연락처는 적을 수 없다 */
+/** "소개해 줄 수 있어요?" — 서로 아는 사람 고르기 + 한 줄(선택). 연락처는 적을 수 없다 */
 export function AskSheet({ sd, onClose, onDone }: { sd: SecondDegree | null; onClose: () => void; onDone: () => void }) {
   const v = useViewer();
   const run = useAppStore((s) => s.run);
@@ -192,10 +192,10 @@ export function AskSheet({ sd, onClose, onDone }: { sd: SecondDegree | null; onC
   };
 
   return (
-    <BottomSheet open={!!sd} onClose={() => { onClose(); setKey(null); }} title={t('연결해줄 수 있나요?')}>
+    <BottomSheet open={!!sd} onClose={() => { onClose(); setKey(null); }} title={t('소개해 줄 수 있어요?')}>
       {sd && (
         <div className="space-y-3">
-          <p className="text-[13px] text-ink-2">{fmt(t('{name}님은 공통 연결이 전달하기 전까지 이 부탁을 몰라요. 넘겨도 괜찮은 가벼운 부탁이에요.'), { name: sd.user.nickname })}</p>
+          <p className="text-[13px] text-ink-2">{fmt(t('{name}님은 서로 아는 사람이 전달하기 전까지 이 부탁을 몰라요. 넘겨도 괜찮은 가벼운 부탁이에요.'), { name: sd.user.nickname })}</p>
           <div>
             <div className="text-[12px] font-bold text-ink-3 mb-1.5">{t('누구에게 물어볼까요?')}</div>
             <div className="space-y-1.5" role="radiogroup">
@@ -222,7 +222,7 @@ export function AskSheet({ sd, onClose, onDone }: { sd: SecondDegree | null; onC
   );
 }
 
-// ─── 연결 부탁 ───────────────────────────────────────────────────────────────
+// ─── 소개 부탁 ───────────────────────────────────────────────────────────────
 function AsksTab({ onPeople }: { onPeople: () => void }) {
   const nav = useNavigate();
   const v = useViewer();
@@ -251,7 +251,7 @@ function AsksTab({ onPeople }: { onPeople: () => void }) {
     <div className="px-4 space-y-4">
       <Section loading={sec.loading} error={sec.error} onRetry={sec.retry} skeleton={<SectionSkeleton count={2} />}
         empty={empty && (
-          <SectionEmpty emoji="🤝" title={t('아직 연결 부탁이 없어요')} description={t('2촌 카드에서 “연결해줄 수 있나요?”로 공통 연결에게 물어볼 수 있어요.')}
+          <SectionEmpty emoji="🤝" title={t('아직 소개 부탁이 없어요')} description={t('2촌 카드에서 “소개해 줄 수 있어요?”로 서로 아는 사람에게 물어볼 수 있어요.')}
             action={<Button size="sm" onClick={onPeople}>{t('2촌 보기')}</Button>} />
         )}>
         {viaMe.length > 0 && (

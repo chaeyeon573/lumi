@@ -58,7 +58,7 @@ export function OpenToPage() {
       }
       return r.expired ? [r.expired] : []; // 지난 것은 흐리게 남겨 "다시 켜기"를 보여준다
     });
-    try { await run(() => api.users.setOpenStatuses(me.id, next), t('Open To를 저장했어요')); }
+    try { await run(() => api.users.setOpenStatuses(me.id, next), t('요즘 가능한 것을 저장했어요')); }
     catch { /* toast by run */ } finally { setBusy(false); }
   };
 
@@ -68,7 +68,7 @@ export function OpenToPage() {
     <div className="min-h-full pb-28">
       <TopBar back title="Open To" />
       <div className="px-4 py-3 space-y-4">
-        <p className="text-[12px] text-ink-3 px-1">{t('지금 가볍게 열려 있는 것만 켜 두세요. 기간이 지나면 자동으로 꺼져요.')}</p>
+        <p className="text-[12px] text-ink-3 px-1">{t('요즘 가볍게 할 수 있는 것만 켜 두세요. 기간이 지나면 자동으로 꺼져요.')}</p>
 
         {/* ── 미리보기 ── */}
         <section className="card p-4">

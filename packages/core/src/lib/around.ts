@@ -1,7 +1,7 @@
 /**
  * "오늘 주변에서" — 앱이 알아서 가볍게 발견시켜 주는 조용한 요약.
  * 목표·완성도·"네트워크를 확장하세요" 같은 숙제 문구 없이 사실만:
- *   아는 사람을 통해 이어진 사람 3명 · 이번 주 서울에 있는 사람 2명 · 지금 커피에 열려 있는 사람 1명
+ *   건너 아는 사람 3명 · 이번 주 서울에 있는 사람 2명 · 지금 커피에 시간 되는 사람 1명
  * 그리고 사람을 추천할 때 1:1 대신 "둘 다 참여할 수 있는 작은 모임"을 함께 보여준다.
  */
 import type { Snapshot } from '@core/api/types';
@@ -18,7 +18,7 @@ export interface AroundToday {
   /** 이번 주 내 도시(거주·활동)에 있는 사람 */
   inCity: User[];
   city: string;
-  /** 지금/오늘 무언가에 열려 있는 사람 (상태가 켜져 있는) */
+  /** 지금/오늘 무언가에 시간 되는 사람 (상태가 켜져 있는) */
   openNow: User[];
 }
 
@@ -34,7 +34,7 @@ export function aroundToday(snap: Snapshot, me: User): AroundToday {
 }
 
 const SMALL = 6;
-/** 작은 모임 — 4~6명 규모 (1:1 커피챗보다 부담이 적다) */
+/** 작은 모임 — 4~6명 규모 (1:1 커피 한잔보다 부담이 적다) */
 export const isSmallTable = (a: Activity) => a.capacity >= 3 && a.capacity <= SMALL && a.category !== 'store_deal';
 
 /**
@@ -62,7 +62,7 @@ export function sharedSmallTables(snap: Snapshot, me: User, other: User, visible
     .map((x) => x.a);
 }
 
-/** DM 위 작은 카드 — "둘이 겹치는 것": 학교 · 관심사 · 도시 · 공통 연결 n명 */
+/** DM 위 작은 카드 — "둘이 겹치는 것": 학교 · 관심사 · 도시 · 서로 아는 사람 n명 */
 export function overlapChips(snap: Snapshot, me: User, other: User, interestLabel: (i: string) => string): string[] {
   const out: string[] = [];
   if (me.affiliation.type === 'university' && other.affiliation.type === 'university' && me.affiliation.schoolId === other.affiliation.schoolId) out.push(me.affiliation.schoolName.replace(/대학교$/, '대'));

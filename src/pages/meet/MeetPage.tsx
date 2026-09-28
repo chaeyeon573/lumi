@@ -143,7 +143,7 @@ function GroupCard({ org, reason }: { org: Organization; reason?: string }) {
 
 // ─── 추천 ──────────────────────────────────────────────────────────────────
 
-/** "지금" 스트립 — 공강 바(OpenSlotSheet) · 제휴 카드 · 지금 열린 만남. 있을 때만 */
+/** "지금" 스트립 — 공강 바(OpenSlotSheet) · 제휴 카드 · 곧 시작하는 모임. 있을 때만 */
 function NowStrip() {
   const v = useViewer();
   const nav = useNavigate();
@@ -155,7 +155,7 @@ function NowStrip() {
   const nextFree = myFree[0] ? { start: Math.max(myFree[0].start, nowMin()), end: myFree[0].end } : null;
   const partner = v.visibleActivities.find((a) => a.category === 'store_deal' && a.partner && a.date === todayDate);
   const now = useMemo(() => nowActivities(v.visibleActivities, me.id).slice(0, 3), [v, me.id]);
-  // 공강 바는 학부생에게만, 제휴 카드는 재학생(학부·대학원)에게만. 지금 열린 만남은 모두
+  // 공강 바는 학부생에게만, 제휴 카드는 재학생(학부·대학원)에게만. 곧 시작하는 모임은 모두
   const kind = stageKind(me);
   const showFree = kind === 'undergrad' && me.timetable.length > 0 ? nextFree : null;
   const showPartner = kind !== 'alumni' ? partner : undefined;
@@ -185,7 +185,7 @@ function NowStrip() {
   );
 }
 
-/** 지금 열린 만남 한 줄 — 제목·시간·장소·n명 참여 중 + 같이 가기 */
+/** 곧 시작하는 모임 한 줄 — 제목·시간·장소·n명 참여 중 + 같이 가기 */
 function NowRow({ a, inMin }: { a: Activity; inMin: number }) {
   const v = useViewer();
   const nav = useNavigate();

@@ -96,7 +96,7 @@ export function CreateActivityPage() {
 
   return (
     <div className="min-h-full pb-28">
-      <TopBar back title={editing ? t('활동 수정') : isCrew ? t('Study Crew 만들기') : isNow ? t('지금 만날 사람 찾기') : isTeam ? t('팀·준비방 만들기') : `${KIND_LABELS[kind]}${t(' 만들기')}`} />
+      <TopBar back title={editing ? t('활동 수정') : isCrew ? t('스터디 만들기') : isNow ? t('지금 만날 사람 찾기') : isTeam ? t('팀·준비방 만들기') : `${KIND_LABELS[kind]}${t(' 만들기')}`} />
       <div className="px-4 py-4 space-y-5">
         {isNow && <div className="rounded-xl bg-accent-soft text-[13px] px-3 py-2.5">⚡ {t('30분 뒤 시작으로 맞춰뒀어요. 시간이 맞는 사람의 발견 › Now에 바로 보여요.')}</div>}
         {isCrew && (
@@ -174,7 +174,7 @@ export function CreateActivityPage() {
         <div className="rounded-xl bg-surface-2 px-3.5 py-3 text-[12px] text-ink-2"><b>{t('미리보기')}</b> · {preview}</div>
       </div>
       <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-surface/95 backdrop-blur border-t border-line p-3 safe-bottom z-20">
-        <Button full size="lg" disabled={!valid} loading={busy} onClick={submit}>{editing ? t('수정 완료') : isCrew ? t('Crew 열기') : isNow ? t('지금 열기') : t('활동 만들기')}</Button>
+        <Button full size="lg" disabled={!valid} loading={busy} onClick={submit}>{editing ? t('수정 완료') : isCrew ? t('스터디 열기') : isNow ? t('지금 열기') : t('활동 만들기')}</Button>
       </div>
     </div>
   );

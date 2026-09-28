@@ -175,7 +175,7 @@ function RespondForm({ req, author }: { req: NetworkRequest; author: User }) {
               </div>
               {noHit && (
                 <div className="mt-3 rounded-2xl bg-surface-2 px-3.5 py-3">
-                  <p className="text-[12px] text-ink-2 leading-relaxed">{t("딱 맞지 않아도 괜찮아요 — 아는 사람이 있다면 '아는 사람 있어요'로 연결해줄 수도 있어요")}</p>
+                  <p className="text-[12px] text-ink-2 leading-relaxed">{t("딱 맞지 않아도 괜찮아요 — 아는 사람이 있다면 '아는 사람 있어요'로 소개해 줄 수도 있어요")}</p>
                   <button onClick={() => nav(`/people/requests/${req.id}`)} className="mt-1.5 text-[12px] font-bold text-primary inline-flex items-center gap-1 press"><Users size={13} />{t('아는 사람 있어요로 가기')}<ArrowRight size={12} /></button>
                 </div>
               )}

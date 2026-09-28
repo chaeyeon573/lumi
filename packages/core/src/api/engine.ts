@@ -152,7 +152,7 @@ export function createEngine(ctx: EngineContext) {
     const ref: RequestReferral = { id: uid('rf'), referrerId, candidateId, status: 'pending', createdAt: now() };
     req.referrals.push(ref);
     const referrer = find(db().users, referrerId);
-    const nts = [notify(candidateId, { type: 'request_referral', title: `${referrer.nickname}${t('님이 당신이 떠올랐대요')}`, body: req.text.slice(0, 80), link: `/people/requests/${req.id}?referral=${ref.id}` })];
+    const nts = [notify(candidateId, { type: 'request_referral', title: `${referrer.nickname}${t('님이 나를 떠올렸어요')}`, body: req.text.slice(0, 80), link: `/people/requests/${req.id}?referral=${ref.id}` })];
     // 데모: 추천받은 예시 사용자는 잠시 후 '관심 있어요'
     if (ctx.demo && AUTO_REQUEST_RESPONDERS.concat(AUTO_ACCEPT_FRIEND_LIST).includes(candidateId)) later(5000, () => { if (ref.status === 'pending' && req.status === 'open') { ref.status = 'interested'; ctx.push({ ...engineRespond(req, candidateId, undefined, referrerId) }); } });
     return { networkRequests: [req], notifications: nts };
@@ -421,19 +421,19 @@ export function createEngine(ctx: EngineContext) {
       },
     },
 
-    /** "연결해줄 수 있나요?" — 요청자 → 공통 연결(via) → 대상. via 가 전달하기 전까지 대상은 모른다 */
+    /** "소개해 줄 수 있어요?" — 요청자 → 서로 아는 사람(via) → 대상. via 가 전달하기 전까지 대상은 모른다 */
     intros: {
       create(fromId: ID, viaId: ID, toId: ID, note?: string): Patch {
         const r = db().relationships;
         const isF = (a: ID, b: ID) => r.friends.some((f) => pairKey(f.a, f.b) === pairKey(a, b));
-        if (!isF(fromId, viaId) || !isF(viaId, toId)) throw new Error(t('공통 연결을 통해서만 부탁할 수 있어요.'));
+        if (!isF(fromId, viaId) || !isF(viaId, toId)) throw new Error(t('서로 아는 사람을 통해서만 부탁할 수 있어요.'));
         if (isF(fromId, toId)) throw new Error(t('이미 연결된 사람이에요.'));
         if (note && containsContact(note)) throw new Error(t('연락처(전화번호·이메일·메신저 ID)는 적을 수 없어요. 연결되면 대화에서 주고받아요.'));
         if (db().introRequests.some((x) => x.fromId === fromId && x.toId === toId && (x.status === 'pending' || x.status === 'forwarded'))) throw new Error(t('이미 부탁했어요.'));
         const it: IntroRequest = { id: uid('ir'), fromId, viaId, toId, note: note?.trim() || undefined, status: 'pending', createdAt: now() };
         db().introRequests.unshift(it);
         const from = find(db().users, fromId); const to = find(db().users, toId);
-        const nts = [notify(viaId, { type: 'intro_request', title: `${from.nickname}${t('님이 연결해줄 수 있냐고 물어요')}`, body: `${to.nickname}${t('님과')}${it.note ? ` · "${it.note.slice(0, 50)}"` : ''}`, link: '/people/second?tab=asks' })];
+        const nts = [notify(viaId, { type: 'intro_request', title: `${from.nickname}${t('님이 소개해 줄 수 있냐고 물어요')}`, body: `${to.nickname}${t('님과')}${it.note ? ` · "${it.note.slice(0, 50)}"` : ''}`, link: '/people/second?tab=asks' })];
         // 데모: 자동 수락 친구가 via 면 잠시 후 전달, 대상도 곧 수락
         if (ctx.demo && AUTO_ACCEPT_FRIEND.has(viaId)) later(4000, () => { if (it.status !== 'pending') return; ctx.push(introForward(it, false)); if (AUTO_ACCEPT_FRIEND.has(toId) || AUTO_REQUEST_RESPONDERS.includes(toId)) later(3500, () => { if (it.status === 'forwarded') ctx.push(introRespond(it, true).patch); }); });
         return { introRequests: [it], notifications: nts };
@@ -847,7 +847,7 @@ export function createEngine(ctx: EngineContext) {
         const goers = [...new Set([p.hostId, ...Object.entries(p.votes).filter(([, ids]) => ids.includes(optionId)).map(([u]) => u)])];
         const host = find(db().users, p.hostId);
         const activity: Activity = {
-          id: uid('a'), kind: 'group', category: p.category, title: p.title, description: `${t('Plan Together로 정한 약속이에요. ')}${goers.length}${t('명이 이 시간에 가능하다고 했어요.')}`,
+          id: uid('a'), kind: 'group', category: p.category, title: p.title, description: `${t('같이 시간 정하기로 정한 약속이에요. ')}${goers.length}${t('명이 이 시간에 가능하다고 했어요.')}`,
           cover: { emoji: CATEGORY_EMOJI[p.category], hue: 200 },
           hostId: p.hostId, hostType: 'user', date: opt.date, startTime: opt.startTime, endTime: opt.endTime,
           place: p.place ?? { name: t('장소 미정'), lat: 0, lng: 0 }, capacity: Math.max(goers.length, p.inviteeIds.length + 1), visibility: 'selected', visibilityTargets: [...p.inviteeIds],

@@ -26,7 +26,7 @@ function writeInterested(ids: string[]) {
 
 const PAGE = 5;
 
-/** /meet/tables — Small Table 추천. 1:1 커피챗 대신 4~6명이 모이는 작은 모임 */
+/** /meet/tables — Small Table 추천. 1:1 커피 한잔 대신 4~6명이 모이는 작은 모임 */
 export function SmallTablesPage() {
   const nav = useNavigate();
   const v = useViewer();

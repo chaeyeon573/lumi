@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { t } from '@core/i18n';
-import { UserCheck, Heart, CalendarCheck, CalendarX, Inbox, Clock, MessageSquare, ThumbsUp, UserPlus, Megaphone, MapPin, Sparkles, CheckCheck, AlarmClock, Users, Vote } from 'lucide-react';
+import { UserCheck, Star, CalendarCheck, CalendarX, Inbox, Clock, MessageSquare, ThumbsUp, UserPlus, Megaphone, MapPin, Sparkles, CheckCheck, AlarmClock, Users, Vote } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Button, EmptyState, CardSkeleton, ErrorState } from '@/components/ui';
 import { useAppStore } from '@core/store/useAppStore';
@@ -9,9 +9,9 @@ import { relativeTime } from '@core/lib/format';
 import type { NotificationType } from '@core/types';
 import { cn } from '@core/lib/cn';
 
-const ICONS: Record<NotificationType, { Icon: typeof Heart; cls: string }> = {
+const ICONS: Record<NotificationType, { Icon: typeof Star; cls: string }> = {
   friend_accepted: { Icon: UserCheck, cls: 'bg-mint-soft text-mint' },
-  mutual_like: { Icon: Heart, cls: 'bg-heart-soft text-heart' },
+  mutual_like: { Icon: Star, cls: 'bg-heart-soft text-heart' },
   participation_approved: { Icon: CalendarCheck, cls: 'bg-mint-soft text-mint' },
   participation_rejected: { Icon: CalendarX, cls: 'bg-surface-2 text-ink-3' },
   participation_request: { Icon: Inbox, cls: 'bg-primary-soft text-primary' },

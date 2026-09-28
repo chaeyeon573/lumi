@@ -110,7 +110,7 @@ export function PersonPage() {
   const reasons = shareableReasons(matchReasons(v.me, user, v.snap, seeTT));
   const city = maskedCity(user, view);
   const career = isAlumniStage(user) ? [user.career?.role, view.company ? user.career?.company : undefined, user.career?.industry].filter(Boolean).join(' · ') : '';
-  const degreeText = degree === 1 ? t('1촌 · 연결된 사이') : degree === 2 ? `${t('2촌')}${mutualUsers.length ? ` · ${t('공통 연결')} ${mutualUsers.length}${t('명')}` : ''}` : degree === 3 ? t('3촌') : t('아직 이어진 연결이 없어요');
+  const degreeText = degree === 1 ? t('1촌 · 연결된 사이') : degree === 2 ? `${t('2촌')}${mutualUsers.length ? ` · ${t('서로 아는 사람')} ${mutualUsers.length}${t('명')}` : ''}` : degree === 3 ? t('3촌') : t('아직 이어진 연결이 없어요');
 
   const openChat = async () => {
     if (!msg.ok) { showToast(msg.reason ?? t('아직 메시지를 보낼 수 없어요.'), 'info'); return; }
@@ -205,7 +205,7 @@ export function PersonPage() {
             <div className="mt-2 space-y-1.5">
               {hosting.map((a) => <button key={a.id} onClick={() => nav(`/activities/${a.id}`)} className="w-full flex items-center gap-2 text-[13px] text-left press"><span>{CATEGORY_EMOJI[a.category]}</span><span className="flex-1 truncate">{a.title}</span><span className="text-[11px] text-primary font-semibold">{t('참가')}</span></button>)}
               {sharedOpps.map((o) => <button key={o.id} onClick={() => nav(`/opportunities/${o.id}`)} className="w-full flex items-center gap-2 text-[13px] text-left press"><span>🎪</span><span className="flex-1 truncate">{o.title}</span><span className="text-[11px] text-primary font-semibold">{t('같이 가기')}</span></button>)}
-              {hosting.length === 0 && sharedOpps.length === 0 && <p className="text-[12px] text-ink-2">{t('아직 열린 활동은 없어요. 공통 관심사로 커피나 점심을 제안해보세요.')}</p>}
+              {hosting.length === 0 && sharedOpps.length === 0 && <p className="text-[12px] text-ink-2">{t('아직 참여할 수 있는 모임이 없어요. 겹치는 관심사로 커피나 점심을 제안해 보세요.')}</p>}
             </div>
             <div className="flex gap-2 mt-3">{(common.length ? common : user.interests).slice(0, 3).map((i) => <Button key={i} size="sm" variant="outline" onClick={() => { setPCat(i === 'meal' ? 'meal' : i === 'study' ? 'study' : i === 'exercise' ? 'exercise' : 'coffee'); setPropose(true); }}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]} {t('제안')}</Button>)}</div>
           </div>

@@ -92,7 +92,7 @@ function RequesterView({ req }: { req: NetworkRequest }) {
 }
 
 /**
- * 손 든 사람 한 명 — 해당되는 부분 · 한 줄 → 촌수 · 공통 연결 · 누가 떠올렸나 → 본인이 고른 정보만.
+ * 손 든 사람 한 명 — 해당되는 부분 · 한 줄 → 촌수 · 서로 아는 사람 · 누가 떠올렸나 → 본인이 고른 정보만.
  * 대화가 열리기 전에는 프로필로 들어가지 않는다.
  */
 function ResponseCard({ res, busy, onDecide, roomId }: { res: RequestResponse; busy: string | null; onDecide: (r: RequestResponse, accept: boolean) => void; roomId?: string }) {
@@ -112,7 +112,7 @@ function ResponseCard({ res, busy, onDecide, roomId }: { res: RequestResponse; b
       {res.note ? <Text style={tw`mt-2 rounded-2xl bg-surface-2 px-3 py-2 text-[13px] text-ink`}>“{res.note}”</Text> : null}
       <View style={tw`mt-2 flex-row items-center flex-wrap`}>
         <Text style={tw`text-[11px] text-ink-3`}>{degreeLabel(degree, lang)} · </Text>
-        <Users size={10} color={C.ink3} /><Text style={tw`ml-0.5 text-[11px] text-ink-3`}>{t('공통 연결')} {mutual}{t('명')}</Text>
+        <Users size={10} color={C.ink3} /><Text style={tw`ml-0.5 text-[11px] text-ink-3`}>{t('서로 아는 사람')} {mutual}{t('명')}</Text>
         {via ? <Text style={tw`text-[11px] text-ink-3`}> · {via.nickname}{t('님이 떠올렸어요')}</Text> : null}
       </View>
       <Pressable disabled={!connected} onPress={() => nav(`/users/${u.id}`)} style={tw`mt-2`}><SharedProfileMini user={u} shared={shared} /></Pressable>

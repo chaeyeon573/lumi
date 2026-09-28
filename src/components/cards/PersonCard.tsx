@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { t } from '@core/i18n';
-import { Heart, UserPlus, Clock, MapPin, X, Sparkles } from 'lucide-react';
+import { Star, UserPlus, Clock, MapPin, X, Sparkles } from 'lucide-react';
 import type { User } from '@core/types';
 import { Portrait, VerifiedBadge, Tag, Button } from '@/components/ui';
 import { INTEREST_EMOJI, INTEREST_LABELS, PURPOSE_LABELS, ROLE_LABELS } from '@core/lib/labels';
@@ -86,7 +86,7 @@ export function PersonCard({ user, onSkip, compact, className }: Props) {
         {hl ? <div className="rounded-xl bg-primary-soft px-3 py-2"><div className="text-[11px] font-semibold text-ink-3 truncate">{hl.question}</div><div className="text-[13px] font-semibold text-ink leading-snug line-clamp-2">“{hl.answer}”</div></div>
           : user.nowWant && <div className="rounded-xl bg-primary-soft text-primary text-[13px] font-semibold px-3 py-2">“{user.nowWant}”</div>}
         <div className="mt-auto flex items-center gap-1.5 pt-1">
-          <button onClick={like} aria-label={t('관심')} className={cn('h-10 w-10 rounded-xl grid place-items-center press', liked ? 'bg-heart text-white' : 'bg-heart-soft text-heart')}><Heart size={18} fill={liked ? 'currentColor' : 'none'} /></button>
+          <button onClick={like} aria-label={t('관심')} className={cn('h-10 w-10 rounded-xl grid place-items-center press', liked ? 'bg-heart text-white' : 'bg-heart-soft text-heart')}><Star size={18} fill={liked ? 'currentColor' : 'none'} /></button>
           <Button size="sm" className="flex-1 h-10" onClick={() => nav(`/users/${user.id}?propose=1`)}>{t('같이하기')}</Button>
           <Button size="sm" variant={following ? 'secondary' : 'outline'} className="h-10" onClick={follow} icon={<UserPlus size={15} />}>{following ? t('팔로잉') : t('팔로우')}</Button>
           {onSkip && <button onClick={onSkip} aria-label={t('넘기기')} className="h-10 w-10 rounded-xl grid place-items-center bg-surface-2 text-ink-3 press"><X size={18} /></button>}

@@ -1,6 +1,6 @@
 import { Pressable, Text, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
-import { Heart } from 'lucide-react-native';
+import { Star } from 'lucide-react-native';
 import { t } from '@core/i18n';
 import { useAppStore } from '@core/store/useAppStore';
 import { friendsOf, followersOf, followingOf } from '@core/lib/relations';
@@ -21,7 +21,7 @@ export default function ProfileListScreen() {
   const ids = list === 'friends' ? friendsOf(v.snap, me.id) : list === 'followers' ? followersOf(v.snap, me.id) : list === 'following' ? followingOf(v.snap, me.id) : v.snap.relationships.likes.filter((l) => l.fromId === me.id).map((l) => l.toId);
   return (
     <Screen title={TITLES[list] ?? t('목록')}>
-      {list === 'likes' && <View style={tw`pt-3 flex-row items-center`}><Heart size={12} color={C.primary} /><Text style={tw`ml-1 text-[12px] text-ink-3 shrink`}>{t('관심은 상대에게 공개되지 않아요. 서로 관심을 표시하면 매칭돼요.')}</Text></View>}
+      {list === 'likes' && <View style={tw`pt-3 flex-row items-center`}><Star size={12} color={C.primary} /><Text style={tw`ml-1 text-[12px] text-ink-3 shrink`}>{t('관심은 상대에게 보이지 않아요. 서로 관심이 있으면 메시지를 보낼 수 있어요.')}</Text></View>}
       <View style={tw`py-3`}>
         {ids.length === 0 ? <Empty title={t('아직 아무도 없어요')} /> : (
           <View style={tw`card`}>
@@ -37,7 +37,7 @@ export default function ProfileListScreen() {
                     <View style={tw`flex-row items-center`}><Text style={tw`text-[14px] font-bold text-ink`}>{u.nickname}</Text>{u.affiliation.type === 'university' && u.affiliation.emailVerified && <View style={tw`ml-1`}><VerifiedBadge /></View>}</View>
                     <Text numberOfLines={1} style={tw`text-[12px] text-ink-3`}>{affiliationText(u)}</Text>
                   </View>
-                  {list === 'likes' && v.isMutual(id) && <Text style={tw`text-[11px] font-bold text-primary`}>{t('매칭')}</Text>}
+                  {list === 'likes' && v.isMutual(id) && <Text style={tw`text-[11px] font-bold text-primary`}>{t('서로 관심')}</Text>}
                 </Pressable>
               );
             })}

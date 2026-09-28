@@ -87,7 +87,7 @@ export function PlansPage() {
         <Section icon={<Clock size={15} className="text-gold" />} title={t('참가 신청 대기')} count={pendingActs.filter((a) => !isTeamActivity(a)).length} empty={t('승인을 기다리는 신청이 없어요.')}>
           {pendingActs.filter((a) => !isTeamActivity(a)).map((a) => <Row key={a.id} a={a} right={<Tag tone="gold" className="h-5">{t('대기')}</Tag>} />)}
         </Section>
-        <Section icon={<CalendarCheck size={15} className="text-mint" />} title={t('확정된 약속')} count={plain.length} empty={t('확정된 약속이 없어요. 발견 탭에서 지금 열린 활동에 올라타 보세요.')}>
+        <Section icon={<CalendarCheck size={15} className="text-mint" />} title={t('확정된 약속')} count={plain.length} empty={t('확정된 약속이 없어요. 모임 탭에서 참여할 수 있는 모임을 찾아보세요.')}>
           {plain.map((a) => <Row key={a.id} a={a} />)}
         </Section>
         <Section icon={<Heart size={15} className="text-heart" />} title={t('관심 표시한 행사')} count={events.length} empty={t('관심 표시한 행사가 없어요.')}>
@@ -102,7 +102,7 @@ export function PlansPage() {
         {!alumni && <><Section icon={<Puzzle size={15} className="text-primary" />} title={t('대기 중인 팀 신청')} count={teamPending.length} empty={t('신청한 팀이 없어요. 발견 › 팀에서 역할이 맞는 팀을 찾아보세요.')}>
           {teamPending.map((a) => <Row key={a.id} a={a} right={<Tag tone="gold" className="h-5">{t('대기')}</Tag>} />)}
         </Section>
-        <Section icon={<BookOpen size={15} className="text-primary" />} title={t('Study Crew 일정')} count={crews.length} empty={t('참여 중인 Study Crew가 없어요. 시간표에서 수업을 누르면 만들 수 있어요.')}>
+        <Section icon={<BookOpen size={15} className="text-primary" />} title={t('스터디 일정')} count={crews.length} empty={t('참여 중인 스터디가 없어요. 시간표에서 수업을 누르면 만들 수 있어요.')}>
           {crews.map((a) => <Row key={a.id} a={a} right={<Tag tone="primary" className="h-5">{a.courseName}</Tag>} />)}
         </Section></>}
         <div className="flex gap-2">{!alumni && <Button full variant="outline" onClick={() => nav('/timetable')}>{t('내 시간표')}</Button>}<Button full onClick={() => nav('/meet')}>{t('활동 찾기')}</Button></div>

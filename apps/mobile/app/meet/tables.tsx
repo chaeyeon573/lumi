@@ -27,7 +27,7 @@ function readInterested(): string[] {
 function writeInterested(ids: string[]) { try { getPlatform().setItem(INTERESTED_KEY, JSON.stringify(ids)); } catch { /* 저장 불가 — 화면 상태만 유지 */ } }
 const PAGE = 5;
 
-/** /meet/tables — Small Table 추천 (웹 SmallTablesPage). 1:1 커피챗 대신 4~6명이 모이는 작은 모임 */
+/** /meet/tables — Small Table 추천 (웹 SmallTablesPage). 1:1 커피 한잔 대신 4~6명이 모이는 작은 모임 */
 export default function SmallTablesScreen() {
   const v = useViewer();
   const run = useAppStore((s) => s.run);

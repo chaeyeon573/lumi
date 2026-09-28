@@ -39,7 +39,7 @@ export default function WantsScreen() {
         <Field label={t('어떤 사람을 만나고 싶어요?')} hint={t('1개 이상 골라주세요. 사람 추천과 홈의 "오늘의 사람"에 쓰여요.')}>
           <WantGrid all={peopleWantOptions(kind)} value={wants.people} labels={PEOPLE_WANT_LABELS} emoji={PEOPLE_WANT_EMOJI} onToggle={togglePeople} />
         </Field>
-        <Field label={t('어떤 활동을 하고 싶어요?')} hint={t('1개 이상 골라주세요. 모임 추천과 프로필의 "열려 있어요"에 쓰여요.')}>
+        <Field label={t('어떤 활동을 하고 싶어요?')} hint={t('1개 이상 골라주세요. 모임 추천과 프로필의 "요즘 가능해요"에 쓰여요.')}>
           <WantGrid all={activityWantOptions(kind)} value={wants.activities} labels={ACTIVITY_WANT_LABELS} emoji={ACTIVITY_WANT_EMOJI} onToggle={toggleActivity} />
         </Field>
         <View style={tw`flex-row items-start`}><Sparkles size={13} color={C.ink3} style={tw`mt-0.5`} /><Text style={tw`ml-1.5 flex-1 text-[12px] text-ink-3`}>{t('고른 기준은 추천 카드의 "왜 연결될 수 있나"에도 그대로 나타나요.')}</Text></View>

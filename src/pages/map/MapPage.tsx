@@ -128,7 +128,7 @@ export function MapPage() {
               </div>
               {filtered.length === 0 && (
                 <div className="absolute inset-x-6 top-1/3 z-[400] card p-4 text-center">
-                  <div className="text-2xl">🗓️</div><b className="text-[14px] block mt-1">{t('이 시간대에 열린 활동이 없어요')}</b><p className="text-[12px] text-ink-3 mt-1">{t('\'이번 주\'로 바꾸거나 새 활동을 만들어보세요.')}</p>
+                  <div className="text-2xl">🗓️</div><b className="text-[14px] block mt-1">{t('이 시간대에 참여할 수 있는 모임이 없어요')}</b><p className="text-[12px] text-ink-3 mt-1">{t('\'이번 주\'로 바꾸거나 새 활동을 만들어보세요.')}</p>
                   <div className="flex gap-2 mt-3"><Button size="sm" variant="outline" full onClick={() => setRange('week')}>{t('이번 주 보기')}</Button><Button size="sm" full onClick={() => nav('/create/activity?kind=personal')}>{t('활동 만들기')}</Button></div>
                 </div>
               )}

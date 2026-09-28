@@ -59,7 +59,7 @@ export default function OpenToScreen() {
       }
       return r.expired ? [r.expired] : []; // 지난 것은 흐리게 남겨 "다시 켜기"를 보여준다
     });
-    try { await run(() => api.users.setOpenStatuses(me.id, next), t('Open To를 저장했어요')); } catch { /* toast by run */ } finally { setBusy(false); }
+    try { await run(() => api.users.setOpenStatuses(me.id, next), t('요즘 가능한 것을 저장했어요')); } catch { /* toast by run */ } finally { setBusy(false); }
   };
   const whenOptions = (w: StatusWhen): [StatusWhen, string][] => (OPEN_TO_WHENS.includes(w) ? OPEN_TO_WHENS : [...OPEN_TO_WHENS, w]).map((x) => [x, WHEN_LABELS[x]]);
 
@@ -74,7 +74,7 @@ export default function OpenToScreen() {
   return (
     <Screen title="Open To" footer={footer}>
       <View style={tw`py-3`}>
-        <Text style={tw`px-1 mb-3 text-[12px] text-ink-3`}>{t('지금 가볍게 열려 있는 것만 켜 두세요. 기간이 지나면 자동으로 꺼져요.')}</Text>
+        <Text style={tw`px-1 mb-3 text-[12px] text-ink-3`}>{t('요즘 가볍게 할 수 있는 것만 켜 두세요. 기간이 지나면 자동으로 꺼져요.')}</Text>
 
         {/* 1. 미리보기 */}
         <View style={tw`card p-4`}>

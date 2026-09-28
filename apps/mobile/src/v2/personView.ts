@@ -40,7 +40,7 @@ export const fmt = (s: string, vars: Record<string, string | number>) => s.repla
 
 export interface Closeness { degree?: number; mutual: number }
 
-/** 나로부터 모든 사람까지의 촌수 + 공통 연결 수 */
+/** 나로부터 모든 사람까지의 촌수 + 서로 아는 사람 수 */
 export function useCloseness(snap: Snapshot, meId: string) {
   return useMemo(() => {
     const deg = degreesFrom(snap, meId, 3);
@@ -48,12 +48,12 @@ export function useCloseness(snap: Snapshot, meId: string) {
   }, [snap, meId]);
 }
 
-/** "2촌 · 공통 연결 2명" / "1촌" / "새로운 사람" */
+/** "2촌 · 서로 아는 사람 2명" / "1촌" / "새로운 사람" */
 export function closenessText(c: Closeness): string {
   const parts: string[] = [];
   if (c.degree === 1) parts.push(t('1촌'));
   else if (c.degree === 2) parts.push(t('2촌'));
   else if (c.degree === 3) parts.push(t('3촌'));
-  if (c.mutual > 0) parts.push(fmt(t('공통 연결 {n}명'), { n: c.mutual }));
+  if (c.mutual > 0) parts.push(fmt(t('서로 아는 사람 {n}명'), { n: c.mutual }));
   return parts.length ? parts.join(' · ') : t('새로운 사람');
 }

@@ -196,7 +196,7 @@ function RecommendDeck({ connect, invite }: { connect: (u: User) => Promise<bool
 
 /**
  * 조용한 허브 — 관리할 것 없이 둘러보기만 해도 되는 세로 스크롤.
- * (a) 지금 가까운 사람(저장이 기본) (b) 이번 주 주변 (c) 열려 있는 사람 (d) 의외의 연결 (e) 저장한 사람 · 혹시 찾는 사람이 있나요?
+ * (a) 지금 가까운 사람(저장이 기본) (b) 이번 주 주변 (c) 시간 되는 사람 (d) 다른 학교, 비슷한 사람 (e) 저장한 사람 · 혹시 찾는 사람이 있나요?
  * 모든 사람 카드는 이유·거리 → 이름 순서.
  */
 function QuietHub({ onDeck }: { onDeck: () => void }) {
@@ -227,7 +227,7 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
   const around = useMemo(() => aroundToday(snap, me), [snap, me]);
   const visible = (u: User) => !v.isBlocked(u.id) && !hidden.has(u.id);
   const openPeople = around.openNow.filter(visible);
-  // 서로 아는 사람이 있는 2촌 — 공통 연결이 많은 순
+  // 서로 아는 사람이 있는 2촌 — 서로 아는 사람이 많은 순
   const second = useMemo(() => secondDegree(snap, me.id, canShowInPath).filter((x) => !v.isBlocked(x.user.id) && !hidden.has(x.user.id)), [snap, me.id, v, hidden]);
   const unexpected = useMemo(() => unexpectedConnections(snap, me, pool, (u) => v.canSeeField(u, 'timetable'), 2), [snap, me, pool, v]);
   const savedCount = (me.savedPeople ?? []).filter((id) => v.visibleUsers.some((u) => u.id === id)).length;
@@ -275,24 +275,24 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
             <div className="rounded-[20px] bg-white/80 divide-y divide-line/70">
               <MutualRow list={second} onClick={() => nav('/people/second')} />
               <AroundRow emoji="📍" label={around.city ? fmt(t('이번 주 {city}에 있는 사람'), { city: around.city }) : t('이번 주 같은 도시에 있는 사람')} n={around.inCity.length} onClick={() => nav('/people/around')} />
-              <AroundRow emoji="☕" label={t('지금 열려 있는 사람')} n={openPeople.length} onClick={() => nav('/people/around?open=1')} />
+              <AroundRow emoji="☕" label={t('지금 시간 되는 사람')} n={openPeople.length} onClick={() => nav('/people/around?open=1')} />
             </div>
           </div>
           <PrivacyNote text={t('도시 단위로만 보여요 · 정확한 위치는 공유하지 않아요')} className="px-1" />
         </Section>
       </section>
 
-      {/* 섹션 줄이기 — (c) 열려 있는 사람 · (d) 의외의 연결 · (e) 저장·찾아보기는 한 카드로 접어 둔다. 누르면 그 자리에서 펼친다 */}
-      <HubMore titles={[t('열려 있는 사람'), t('의외의 연결'), t('저장한 사람'), t('혹시 찾는 사람이 있나요?')]}>
+      {/* 섹션 줄이기 — (c) 시간 되는 사람 · (d) 다른 학교, 비슷한 사람 · (e) 저장·찾아보기는 한 카드로 접어 둔다. 누르면 그 자리에서 펼친다 */}
+      <HubMore titles={[t('시간 되는 사람'), t('다른 학교, 비슷한 사람'), t('저장한 사람'), t('혹시 찾는 사람이 있나요?')]}>
       {/* (c) Open To — 상태가 켜진 사람 */}
       <section aria-labelledby="h-open" className="space-y-2">
         <div className="flex items-center gap-2 px-1">
-          <h2 id="h-open" className="text-[15px] font-bold flex-1">{t('열려 있는 사람')}</h2>
+          <h2 id="h-open" className="text-[15px] font-bold flex-1">{t('시간 되는 사람')}</h2>
           {openPeople.length > 3 && <button onClick={() => nav('/people/around?open=1')} className="text-[12px] font-semibold text-primary flex items-center press">{t('모두 보기')}<ChevronRight size={13} /></button>}
         </div>
         <Section loading={secOpen.loading} error={secOpen.error} onRetry={secOpen.retry} skeleton={<SectionSkeleton count={2} />}
           empty={openPeople.length === 0 && (
-            <SectionEmpty emoji="☕" title={t('지금 열려 있는 사람이 없어요')} description={t('내 상태를 켜 두면 가까운 사람에게 가볍게 보여요.')}
+            <SectionEmpty emoji="☕" title={t('지금 시간 되는 사람이 없어요')} description={t('내 상태를 켜 두면 가까운 사람에게 가볍게 보여요.')}
               action={<Button size="sm" variant="outline" onClick={() => setStatusOpen(true)}>{t('내 상태 켜기')}</Button>} />
           )}>
           <div className="rounded-[24px] border border-line bg-white divide-y divide-line/70">
@@ -301,10 +301,10 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
         </Section>
       </section>
 
-      {/* (d) 의외의 연결 미리보기 */}
+      {/* (d) 다른 학교, 비슷한 사람 미리보기 */}
       <section aria-labelledby="h-unexp" className="space-y-2">
         <div className="flex items-center gap-2 px-1">
-          <h2 id="h-unexp" className="text-[15px] font-bold flex-1">{t('의외의 연결')}</h2>
+          <h2 id="h-unexp" className="text-[15px] font-bold flex-1">{t('다른 학교, 비슷한 사람')}</h2>
           <button onClick={() => nav('/people/unexpected')} className="text-[12px] font-semibold text-primary flex items-center press">{t('모두 보기')}<ChevronRight size={13} /></button>
         </div>
         <Section loading={secUnexp.loading} error={secUnexp.error} onRetry={secUnexp.retry} skeleton={<SectionSkeleton count={2} />}
@@ -391,7 +391,7 @@ function MutualRow({ list, onClick }: { list: SecondDegree[]; onClick: () => voi
   );
 }
 
-/** 열려 있는 사람 한 줄 — 상태가 먼저, 그다음 사람 */
+/** 시간 되는 사람 한 줄 — 상태가 먼저, 그다음 사람 */
 function OpenRow({ user, closeness }: { user: User; closeness: Closeness }) {
   const nav = useNavigate();
   const statuses = activeStatuses(user);

@@ -15,7 +15,7 @@ export function MeetExtraRows({ className, kind }: { className?: string; kind?: 
   if (kind === 'alumni') return null;
   const rows: { key: string; icon: React.ReactNode; title: string; sub: string; to: string }[] = [
     { key: 'together', icon: <Vote size={18} />, title: t('같이 계획하기'), sub: t('시간 투표로 정하기'), to: '/together/new' },
-    { key: 'crew', icon: <BookOpen size={18} />, title: t('수업 Study Crew'), sub: t('시간표에서 수업을 골라요'), to: '/timetable' },
+    { key: 'crew', icon: <BookOpen size={18} />, title: t('수업 스터디'), sub: t('시간표에서 수업을 골라요'), to: '/timetable' },
     { key: 'team', icon: <Users size={18} />, title: t('팀원 모집하기'), sub: t('역할별로 팀원을 모아요'), to: '/create/activity?kind=group&team=1' },
   ];
   return (

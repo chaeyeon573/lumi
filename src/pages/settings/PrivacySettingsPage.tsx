@@ -21,7 +21,7 @@ const ITEMS: { key: keyof Omit<PrivacySettings, 'scope'>; label: string; desc?: 
   { key: 'showGradYear', label: t('졸업연도') },
   { key: 'showGroups', label: t('그룹') },
   { key: 'showTrips', label: t('방문 예정'), desc: t('도시와 기간만 보여요') },
-  { key: 'showInPaths', label: t('2촌 경로에 내 이름 표시'), desc: t('끄면 "공통 연결 1명"처럼 숫자로만 보여요') },
+  { key: 'showInPaths', label: t('2촌 경로에 내 이름 표시'), desc: t('끄면 "서로 아는 사람 1명"처럼 숫자로만 보여요') },
 ];
 
 const FIELDS: { key: ProfileField; label: string; desc?: string }[] = [

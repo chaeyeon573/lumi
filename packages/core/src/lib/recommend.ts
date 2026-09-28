@@ -11,7 +11,7 @@ import { mutualFriends } from './relations';
 /**
  * 추천 이유의 종류.
  * school 같은 학교 · alumni 같은 학교 동문 · major 같은 전공 · city 같은 지역 · field 같은 분야(업종·직무) · group 같은 그룹 · meet 같은 모임 참여
- * mutual 공통 연결 · interest 관심사 · class 같은 수업 · time 공강 겹침 · living 생활권 · goal 목표 · new 다른 분야(새로운 사람) · opportunity/role 은 카드에 숨김
+ * mutual 서로 아는 사람 · interest 관심사 · class 같은 수업 · time 공강 겹침 · living 생활권 · goal 목표 · new 다른 분야(새로운 사람) · opportunity/role 은 카드에 숨김
  */
 export type ReasonKind = 'school' | 'alumni' | 'major' | 'city' | 'field' | 'group' | 'meet' | 'mutual' | 'interest' | 'class' | 'time' | 'living' | 'goal' | 'new' | 'opportunity' | 'role' | 'research';
 export interface Reason { text: string; weight: number; kind: ReasonKind }
@@ -65,10 +65,10 @@ export function matchReasons(me: User, other: User, snap: Pick<Snapshot, 'opport
     const mine = new Set(snap.participations.filter((p) => p.userId === me.id && p.status === 'approved').map((p) => p.activityId));
     if (snap.participations.some((p) => p.userId === other.id && p.status === 'approved' && mine.has(p.activityId))) out.push({ kind: 'meet', weight: W.meet, text: t('같은 모임에 참여했어요') });
   }
-  // 공통 연결
+  // 서로 아는 사람
   if (snap.relationships && snap.users) {
     const m = mutualFriends({ relationships: snap.relationships, participations: snap.participations ?? [], proposals: [], users: snap.users }, me.id, other.id);
-    if (m.length) out.push({ kind: 'mutual', weight: W.mutual, text: `${t('공통 연결')} ${m.length}${t('명')}` });
+    if (m.length) out.push({ kind: 'mutual', weight: W.mutual, text: `${t('서로 아는 사람')} ${m.length}${t('명')}` });
   }
   // 관심사
   const interests = me.interests.filter((i) => other.interests.includes(i));
@@ -94,7 +94,7 @@ export function matchReasons(me: User, other: User, snap: Pick<Snapshot, 'opport
     if (o) out.push({ kind: 'opportunity', weight: W.opportunity, text: `${o.title}${t('에 ')}${s.intent === 'going' ? t('지원 예정') : t('관심')}` });
   }
   const roleMatch = other.canOffer.filter((r) => me.lookingFor.includes(r));
-  if (roleMatch.length) out.push({ kind: 'role', weight: W.role, text: `${t('당신이 찾는 ')}${PERSON_ROLE_LABELS[roleMatch[0]]}${t(' 역할을 할 수 있어요')}` });
+  if (roleMatch.length) out.push({ kind: 'role', weight: W.role, text: `${t('내가 찾는 ')}${PERSON_ROLE_LABELS[roleMatch[0]]}${t(' 역할을 할 수 있어요')}` });
   // 새로운 사람 — 다른 학교 또는 다른 분야
   if (bothUni && !sameSchool(me, other)) out.push({ kind: 'new', weight: W.new, text: `${t('다른 학교')} · ${shortSchool(schoolNameOf(other))}` });
   else if (bothUni && majorOf(me) !== majorOf(other) && interests.length === 0) out.push({ kind: 'new', weight: W.new * 0.5, text: `${t('다른 분야 (')}${majorOf(other)})` });

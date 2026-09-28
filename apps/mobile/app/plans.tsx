@@ -109,7 +109,7 @@ export default function PlansScreen() {
         <Section icon={<Clock size={15} color={C.gold} />} title={t('참가 신청 대기')} count={pendingActs.filter((a) => !isTeamActivity(a)).length} empty={t('승인을 기다리는 신청이 없어요.')}>
           {pendingActs.filter((a) => !isTeamActivity(a)).map((a, idx) => <Row key={a.id} a={a} first={idx === 0} right={<Tag tone="gold">{t('대기')}</Tag>} />)}
         </Section>
-        <Section icon={<CalendarCheck size={15} color={C.mint} />} title={t('확정된 약속')} count={plain.length} empty={t('확정된 약속이 없어요. 발견 탭에서 지금 열린 활동에 올라타 보세요.')}>
+        <Section icon={<CalendarCheck size={15} color={C.mint} />} title={t('확정된 약속')} count={plain.length} empty={t('확정된 약속이 없어요. 모임 탭에서 참여할 수 있는 모임을 찾아보세요.')}>
           {plain.map((a, idx) => <Row key={a.id} a={a} first={idx === 0} />)}
         </Section>
         <Section icon={<Heart size={15} color={C.primary} />} title={t('관심 표시한 행사')} count={events.length} empty={t('관심 표시한 행사가 없어요.')}>
@@ -124,7 +124,7 @@ export default function PlansScreen() {
         {!(alumni && teamPending.length === 0) && <Section icon={<Puzzle size={15} color={C.primary} />} title={t('대기 중인 팀 신청')} count={teamPending.length} empty={t('신청한 팀이 없어요. 발견 › 팀에서 역할이 맞는 팀을 찾아보세요.')}>
           {teamPending.map((a, idx) => <Row key={a.id} a={a} first={idx === 0} right={<Tag tone="gold">{t('대기')}</Tag>} />)}
         </Section>}
-        {!(alumni && crews.length === 0) && <Section icon={<BookOpen size={15} color={C.primary} />} title={t('Study Crew 일정')} count={crews.length} empty={t('참여 중인 Study Crew가 없어요. 시간표에서 수업을 누르면 만들 수 있어요.')}>
+        {!(alumni && crews.length === 0) && <Section icon={<BookOpen size={15} color={C.primary} />} title={t('스터디 일정')} count={crews.length} empty={t('참여 중인 스터디가 없어요. 시간표에서 수업을 누르면 만들 수 있어요.')}>
           {crews.map((a, idx) => <Row key={a.id} a={a} first={idx === 0} right={<Tag tone="primary">{a.courseName}</Tag>} />)}
         </Section>}
         {alumni

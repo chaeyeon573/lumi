@@ -59,7 +59,7 @@ export function profileView(s: Rel, viewer: User, owner: User): ProfileView {
   };
 }
 
-/** 2촌 경로에 이 사람을 "공통 연결"로 보여도 되는가 */
+/** 2촌 경로에 이 사람을 "서로 아는 사람"로 보여도 되는가 */
 export const canShowInPath = (u: User) => privacyOf(u).showInPaths;
 
 /** 연결 상태 — 팔로우 가능 / 연결 요청 가능 / 요청 보냄 / 연결됨 / 차단됨 / 비공개 */

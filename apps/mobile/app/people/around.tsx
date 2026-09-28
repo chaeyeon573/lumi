@@ -52,7 +52,7 @@ export default function AroundScreen() {
   const emptyTitle = lang === 'en' ? `No one in ${city} for these dates yet` : `이 기간에 ${city}에는 아직 없어요`;
   const empty = list.length === 0 && (
     openOnly && all.length > 0
-      ? <SectionEmpty emoji="☕" title={t('지금 열려 있는 사람이 없어요')} description={t('상태를 켠 사람만 보고 있어요')} action={<Button size="sm" variant="outline" onPress={() => set({ open: null })}>{t('필터 끄기')}</Button>} />
+      ? <SectionEmpty emoji="☕" title={t('지금 시간 되는 사람이 없어요')} description={t('상태를 켠 사람만 보고 있어요')} action={<Button size="sm" variant="outline" onPress={() => set({ open: null })}>{t('필터 끄기')}</Button>} />
       : <SectionEmpty emoji="🌙" title={emptyTitle} description={t('방문 예정은 공개한 사람만 보여요')} action={
         <View style={tw`flex-row flex-wrap justify-center`}>
           {win === 'this' ? <View style={tw`m-1`}><Button size="sm" variant="outline" onPress={() => set({ week: 'next' })}>{t('다음 주 보기')}</Button></View> : null}
@@ -87,7 +87,7 @@ export default function AroundScreen() {
         </ScrollView>
         <View style={tw`mt-2`}><Segmented<AroundWindow> value={win} onChange={(w) => set({ week: w === 'this' ? null : w })} options={[['this', t('이번 주')], ['next', t('다음 주')]]} /></View>
         <View style={tw`mt-2 flex-row items-center`}>
-          <Chip size="sm" active={openOnly} onPress={() => set({ open: openOnly ? null : '1' })}>☕ {t('지금 열려 있는 사람만')}</Chip>
+          <Chip size="sm" active={openOnly} onPress={() => set({ open: openOnly ? null : '1' })}>☕ {t('지금 시간 되는 사람만')}</Chip>
           <View style={tw`flex-1`} />
           <CalendarDays size={11} color={C.ink3} /><Text style={tw`ml-1 text-[11px] text-ink-3`}>{shortRange(from, to)}</Text>
         </View>

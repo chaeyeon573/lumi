@@ -127,7 +127,7 @@ export function ChatRoomPage() {
       </BottomSheet>
       {other && <CoffeeSheet open={coffeeOpen} onClose={() => setCoffeeOpen(false)} other={other} />}
       {other && (
-        <BottomSheet open={mutualOpen} onClose={() => setMutualOpen(false)} title={`${t('공통 연결')} ${mutualUsers.length}${t('명')}`}>
+        <BottomSheet open={mutualOpen} onClose={() => setMutualOpen(false)} title={`${t('서로 아는 사람')} ${mutualUsers.length}${t('명')}`}>
           <div className="space-y-1">
             {mutualUsers.filter(canShowInPath).map((m) => <button key={m.id} onClick={() => { setMutualOpen(false); nav(`/users/${m.id}`); }} className="w-full flex items-center gap-3 px-2 py-2 rounded-xl text-left press hover:bg-surface-2"><Avatar emoji={m.avatar.emoji} hue={m.avatar.hue} url={m.avatar.url} size={36} /><span className="flex-1 min-w-0"><span className="block text-[14px] font-semibold truncate">{m.nickname}</span><SchoolBadge user={m} size="sm" /></span><ChevronRight size={16} className="text-ink-3" /></button>)}
             {mutualUsers.some((m) => !canShowInPath(m)) && <PrivacyNote text={`${t('외')} ${mutualUsers.filter((m) => !canShowInPath(m)).length}${t('명은 경로에 이름을 보이지 않게 설정했어요')}`} className="px-2 pt-2" />}
@@ -158,7 +158,7 @@ function roomOrigin(room: ChatRoom): string | null {
 }
 
 /**
- * Mutual Room 머리 카드 — DM 위에 작게: 연결된 이유 · 둘이 겹치는 것(공통 연결·그룹·관심사…) · 둘 다 갈 수 있는 작은 모임 · 빠른 행동.
+ * Mutual Room 머리 카드 — DM 위에 작게: 연결된 이유 · 둘이 겹치는 것(서로 아는 사람·그룹·관심사…) · 둘 다 갈 수 있는 작은 모임 · 빠른 행동.
  * 공개 범위(profileView)가 허용한 것만. 그 아래는 그냥 대화.
  */
 function MutualHeader({ roomId, other, origin, mutualCount, onCoffee, onMutual }: { roomId: string; other: User; origin: string | null; mutualCount: number; onCoffee: () => void; onMutual: () => void }) {
@@ -171,7 +171,7 @@ function MutualHeader({ roomId, other, origin, mutualCount, onCoffee, onMutual }
   const city = cityOf(other);
   const chips = overlapChips(snap, v.me, other, (i) => INTEREST_LABELS[i as Interest] ?? i)
     .filter((c) => view.city || c !== city)
-    .map((c) => (c.startsWith('__mutual:') ? `${t('공통 연결')} ${c.slice(9)}${t('명')}` : c));
+    .map((c) => (c.startsWith('__mutual:') ? `${t('서로 아는 사람')} ${c.slice(9)}${t('명')}` : c));
   const groups = view.groups ? orgs.filter((o) => { const has = (id: string) => o.memberIds.includes(id) || o.adminIds.includes(id); return has(v.me.id) && has(other.id); }).slice(0, 2) : [];
   const why = origin ?? (v.isFriend(other.id) ? t('연결된 사이예요') : v.connection(other.id) === 'activity' ? t('같은 모임에서 만났어요') : null);
   return (
@@ -191,7 +191,7 @@ function MutualHeader({ roomId, other, origin, mutualCount, onCoffee, onMutual }
         <div className="mt-3 flex gap-1.5 overflow-x-auto hide-scrollbar">
           <button type="button" onClick={onCoffee} className="h-8 px-3 rounded-full bg-surface-2 text-[12px] font-semibold text-primary inline-flex items-center gap-1 whitespace-nowrap press"><Coffee size={13} />{t('커피 일정 잡기')}</button>
           <button type="button" onClick={() => nav(`/meet/create?invite=${other.id}`)} className="h-8 px-3 rounded-full bg-surface-2 text-[12px] font-semibold text-primary inline-flex items-center gap-1 whitespace-nowrap press"><Plus size={13} />{t('작은 모임 만들기')}</button>
-          {mutualCount > 0 && <button type="button" onClick={onMutual} className="h-8 px-3 rounded-full bg-surface-2 text-[12px] font-semibold text-primary inline-flex items-center gap-1 whitespace-nowrap press"><Users size={13} />{t('공통 연결 보기')}</button>}
+          {mutualCount > 0 && <button type="button" onClick={onMutual} className="h-8 px-3 rounded-full bg-surface-2 text-[12px] font-semibold text-primary inline-flex items-center gap-1 whitespace-nowrap press"><Users size={13} />{t('서로 아는 사람 보기')}</button>}
         </div>
       </div>
     </Section>
