@@ -37,6 +37,8 @@ export interface Store {
   createSession(s: Session): Promise<void>;
   findSession(token: string): Promise<Session | null>;
   deleteSession(token: string): Promise<void>;
+  /** 계정 삭제 — 로그인 이메일·세션을 모두 지운다 */
+  deleteLogin(userId: ID): Promise<void>;
   setCode(c: EmailCode): Promise<void>;
   takeCode(email: string): Promise<EmailCode | null>;
 }
@@ -148,6 +150,7 @@ export class PgStore implements Store {
     return rows[0] ? { token: rows[0].token, userId: rows[0].user_id, createdAt: rows[0].created_at.toISOString() } : null;
   }
   async deleteSession(token: string) { await this.pool.query('DELETE FROM sessions WHERE token = $1', [token]); }
+  async deleteLogin(userId: ID) { await this.pool.query('DELETE FROM accounts WHERE user_id = $1', [userId]); await this.pool.query('DELETE FROM sessions WHERE user_id = $1', [userId]); }
   async setCode(c: EmailCode) { await this.pool.query('INSERT INTO email_codes (email, code, expires_at) VALUES ($1, $2, $3) ON CONFLICT (email) DO UPDATE SET code = EXCLUDED.code, expires_at = EXCLUDED.expires_at', [c.email, c.code, c.expiresAt]); }
   async takeCode(email: string) {
     const { rows } = await this.pool.query<{ email: string; code: string; expires_at: Date }>('DELETE FROM email_codes WHERE email = $1 RETURNING *', [email]);
@@ -209,6 +212,7 @@ export class FileStore implements Store {
   async createSession(s: Session) { this.data.sessions.push(s); await this.flush(); }
   async findSession(token: string) { return this.data.sessions.find((s) => s.token === token) ?? null; }
   async deleteSession(token: string) { this.data.sessions = this.data.sessions.filter((s) => s.token !== token); await this.flush(); }
+  async deleteLogin(userId: ID) { this.data.accounts = this.data.accounts.filter((a) => a.userId !== userId); this.data.sessions = this.data.sessions.filter((s) => s.userId !== userId); await this.flush(); }
   async setCode(c: EmailCode) { this.data.codes = [...this.data.codes.filter((x) => x.email !== c.email), c]; await this.flush(); }
   async takeCode(email: string) {
     const c = this.data.codes.find((x) => x.email === email) ?? null;

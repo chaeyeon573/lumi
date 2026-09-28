@@ -5,6 +5,10 @@ import { useEffect, useState } from 'react';
 import { App } from 'expo-router/build/qualified-entry';
 import { renderRootComponent } from 'expo-router/build/renderRootComponent';
 import { hydrate } from './src/platform';
+import RNEventSource from 'react-native-sse';
+
+// 실제 서버 모드의 실시간 알림(SSE) — RN에는 EventSource 가 없어서 채워 넣는다 (웹은 브라우저 것을 그대로)
+if (typeof globalThis.EventSource === 'undefined') globalThis.EventSource = RNEventSource;
 
 function Gate() {
   const [ready, setReady] = useState(false);

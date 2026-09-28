@@ -10,7 +10,11 @@
  *   POST /api/system/reset              ALLOW_RESET=1 일 때만
  *
  * 환경변수: PORT, DATABASE_URL, AROUNDU_LANG(ko|en), DEMO_AUTOREPLY(1이면 데모 자동응답), ALLOW_DEMO_LOGIN(0이면 비활성),
- *          ALLOW_RESET, RESEND_API_KEY, MAIL_FROM, HIDE_DEV_CODE, CORS_ORIGIN, VERIFY_EMAIL_DOMAIN(0이면 학교 도메인 검사 생략)
+ *          ALLOW_RESET, RESEND_API_KEY, MAIL_FROM, HIDE_DEV_CODE, CORS_ORIGIN, VERIFY_EMAIL_DOMAIN(0이면 학교 도메인 검사 생략),
+ *          SEED(full|base — base 는 예시 사람·글 없이 학교·조직만), REVIEW_EMAIL · REVIEW_CODE(앱 심사용 로그인),
+ *          SUPPORT_EMAIL · OPERATOR_NAME (약관·개인정보처리방침 페이지)
+ *   GET  /privacy · /terms · /support · /delete-account  (스토어 등록용 공개 페이지, ?lang=ko|en)
+ *   POST /api/auth/delete               계정 삭제
  */
 import express, { type Request, type Response, type NextFunction } from 'express';
 import cors from 'cors';
@@ -25,8 +29,9 @@ import { createEngine } from '@core/api/engine';
 import { searchCatalog, catalogCourses as builtInCatalog } from '@core/data/catalog/courses';
 import { createStore } from './store';
 import { snapshotFor, patchFor } from './view';
-import { sendCodeMail } from './mail';
+import { sendCodeMail, sendReportMail } from './mail';
 import { loadSeed } from './seed';
+import { LEGAL_PAGES, legalPage } from './legal';
 
 const PORT = Number(process.env.PORT ?? 8787);
 const store = createStore();
@@ -43,6 +48,14 @@ let catalog = await store.loadCatalog();
 if (catalog.length === 0) { catalog = builtInCatalog; await store.upsertCatalog(catalog); console.log(`[seed] ${catalog.length} catalog courses`); }
 
 const DEMO_USER_ID = 'u_me';
+const REVIEW_EMAIL = norm0(process.env.REVIEW_EMAIL);
+const REVIEW_CODE = (process.env.REVIEW_CODE ?? '').trim();
+function norm0(v: unknown) { return String(v ?? '').trim().toLowerCase(); }
+// 심사용 이메일은 데모 계정에 연결해 둔다 (처음 한 번)
+if (REVIEW_EMAIL && db.users.some((u) => u.id === DEMO_USER_ID) && !(await store.findAccount(REVIEW_EMAIL))) {
+  await store.createAccount({ email: REVIEW_EMAIL, userId: DEMO_USER_ID, createdAt: new Date().toISOString() });
+  console.log('[review] account linked to demo user');
+}
 const clients = new Map<ID, Set<Response>>();
 
 function broadcast(patch: Patch) {
@@ -77,7 +90,7 @@ async function auth(req: Req, _res: Response, next: NextFunction) {
     const token = header.startsWith('Bearer ') ? header.slice(7) : (req.query.token as string | undefined);
     if (token) {
       const s = await store.findSession(token);
-      if (s && db.users.some((u) => u.id === s.userId)) req.userId = s.userId;
+      if (s && db.users.some((u) => u.id === s.userId && !u.suspended && !u.deleted)) req.userId = s.userId;
     }
     next();
   } catch (e) { next(e); }
@@ -111,6 +124,7 @@ app.post('/api/auth/login', wrap(async (req) => {
   const account = await store.findAccount(email);
   const user = account ? db.users.find((u) => u.id === account.userId) : undefined;
   if (!user) throw bad(t('이 이메일로 가입된 계정이 없어요.'), 404);
+  if (user.suspended) throw bad(t('이용이 정지된 계정이에요. 고객지원으로 문의해주세요.'), 403);
   return { token: await issueSession(user.id), user };
 }));
 
@@ -133,6 +147,18 @@ app.post('/api/auth/logout', auth, wrap(async (req: Req) => {
   return {};
 }));
 
+// 계정 삭제 (앱스토어·플레이스토어 필수) — 프로필·글·관계를 지우고 로그인 이메일·세션도 지운다
+app.post('/api/auth/delete', auth, wrap(async (req: Req) => {
+  const me = requireUser(req);
+  if (me === DEMO_USER_ID) throw bad(t('데모 계정은 삭제할 수 없어요.'), 403);
+  const patch = engine.users.deleteAccount(me);
+  await store.applyPatch(patch);
+  broadcast(patch);
+  await store.deleteLogin(me);
+  clients.get(me)?.forEach((r) => r.end()); clients.delete(me);
+  return { patch };
+}));
+
 app.post('/api/auth/me', auth, wrap(async (req: Req) => ({ user: req.userId ? db.users.find((u) => u.id === req.userId) ?? null : null })));
 
 // ─── 부트스트랩 ──────────────────────────────────────────────────────────
@@ -153,8 +179,13 @@ app.post('/api/schools/send-code', wrap(async (req) => {
   const email = norm(req.body.email);
   const school = db.schools.find((s) => s.id === req.body.schoolId);
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return { ok: false, hint: t('이메일 형식을 확인해주세요.') };
-  if (school && process.env.VERIFY_EMAIL_DOMAIN !== '0' && !email.endsWith(`@${school.emailDomain}`) && !email.endsWith(`.${school.emailDomain}`)) {
+  if (school && process.env.VERIFY_EMAIL_DOMAIN !== '0' && email !== REVIEW_EMAIL && !email.endsWith(`@${school.emailDomain}`) && !email.endsWith(`.${school.emailDomain}`)) {
     return { ok: false, hint: `@${school.emailDomain}${t(' 이메일만 사용할 수 있어요.')}` };
+  }
+  // 앱 심사용 계정 — 메일 없이 고정 코드로 로그인 (REVIEW_EMAIL · REVIEW_CODE)
+  if (REVIEW_EMAIL && email === REVIEW_EMAIL && REVIEW_CODE) {
+    await store.setCode({ email, code: REVIEW_CODE, expiresAt: new Date(Date.now() + CODE_TTL_MS).toISOString() });
+    return { ok: true, hint: t('인증 코드를 보냈어요. 메일함을 확인해주세요.') };
   }
   const code = String(randomInt(0, 1_000_000)).padStart(6, '0');
   await store.setCode({ email, code, expiresAt: new Date(Date.now() + CODE_TTL_MS).toISOString() });
@@ -228,7 +259,29 @@ app.post('/api/rpc/:group/:method', auth, wrap(async (req: Req) => {
   const patch: Patch = result && 'patch' in result ? result.patch : (result ?? {});
   void store.applyPatch(patch);
   broadcast(patch);
+  if (group === 'reports' || (group === 'requests' && method === 'report')) void sendReportMail(`${group}.${method} by ${me}: ${JSON.stringify(args).slice(0, 500)}`);
   return result ?? {};
+}));
+
+// ─── 운영(신고 처리) — ADMIN_TOKEN 헤더가 맞을 때만 ───────────────────────────
+const adminOnly = (req: Request) => { const tk = process.env.ADMIN_TOKEN; if (!tk || req.headers['x-admin-token'] !== tk) throw bad('Forbidden', 403); };
+/** 신고 목록 (최신순) */
+app.get('/api/admin/reports', wrap(async (req) => { adminOnly(req); return { reports: [...db.reports].sort((a, b) => b.createdAt.localeCompare(a.createdAt)).slice(0, 200) }; }));
+/** 위반 처리 — { action: 'removePost' | 'suspendUser' | 'unsuspendUser', id } */
+app.post('/api/admin/action', wrap(async (req) => {
+  adminOnly(req);
+  const { action, id } = req.body as { action?: string; id?: string };
+  if (!id) throw bad('id required');
+  let patch: Patch = {};
+  if (action === 'removePost') { const i = db.posts.findIndex((p) => p.id === id); if (i >= 0) db.posts.splice(i, 1); patch = { removed: { posts: [id] } }; }
+  else if (action === 'suspendUser' || action === 'unsuspendUser') {
+    const u = db.users.find((x) => x.id === id); if (!u) throw bad('no user', 404);
+    u.suspended = action === 'suspendUser';
+    patch = { users: [u] };
+    if (u.suspended) { clients.get(u.id)?.forEach((r) => r.end()); clients.delete(u.id); }
+  } else throw bad('unknown action');
+  await store.applyPatch(patch); broadcast(patch);
+  return { ok: true };
 }));
 
 // ─── SSE ─────────────────────────────────────────────────────────────────
@@ -252,6 +305,9 @@ app.post('/api/system/reset', auth, wrap(async (req: Req) => {
 }));
 
 app.get('/api/health', (_req, res) => { res.json({ ok: true, users: db.users.length, lang, store: process.env.DATABASE_URL ? 'postgres' : 'file' }); });
+
+// ─── 약관 · 개인정보처리방침 · 고객지원 · 계정 삭제 안내 (스토어 등록에 쓰는 공개 URL) ─────
+for (const page of LEGAL_PAGES) app.get(`/${page}`, (req, res) => { res.type('html').send(legalPage(page, req.query.lang === 'en' ? 'en' : req.query.lang === 'ko' ? 'ko' : lang)); });
 
 // ─── 정적 파일 (빌드된 프론트엔드) ─────────────────────────────────────────
 const dist = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist');

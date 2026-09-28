@@ -28,3 +28,15 @@ export async function sendCodeMail(to: string, code: string, lang: 'ko' | 'en'):
   }
   return { sent: true };
 }
+
+/** 신고 알림 — 운영자(SUPPORT_EMAIL)에게 바로 알린다. 메일이 설정되지 않았으면 콘솔에만 */
+export async function sendReportMail(summary: string): Promise<void> {
+  const key = process.env.RESEND_API_KEY, from = process.env.MAIL_FROM, to = process.env.SUPPORT_EMAIL;
+  console.log(`[report] ${summary}`);
+  if (!key || !from || !to) return;
+  await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { authorization: `Bearer ${key}`, 'content-type': 'application/json' },
+    body: JSON.stringify({ from, to: [to], subject: '[AroundU] 새 신고 / New report', text: `${summary}\n\n24시간 안에 확인해주세요: GET /api/admin/reports (x-admin-token)` }),
+  }).catch((e) => console.error('[report] mail failed', e));
+}

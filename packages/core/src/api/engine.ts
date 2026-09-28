@@ -225,6 +225,55 @@ export function createEngine(ctx: EngineContext) {
         Object.assign(u, rest);
         return { users: [u] };
       },
+      /**
+       * 계정 삭제 (앱스토어 필수) — 프로필 정보를 지우고 "탈퇴한 사용자"로 남긴다(대화 상대의 기록이 깨지지 않게).
+       * 내 글·댓글·모임·참여·제안·저장한 검색·사람 찾기 요청·소개·관계는 모두 지운다.
+       */
+      deleteAccount(id: ID): Patch {
+        const d = db();
+        const u = find(d.users, id);
+        const keep = { id: u.id, createdAt: u.createdAt, affiliation: u.affiliation, stage: u.stage };
+        for (const k of Object.keys(u) as (keyof User)[]) delete (u as unknown as Record<string, unknown>)[k];
+        Object.assign(u, keep, {
+          nickname: t('탈퇴한 사용자'), birthYear: 2000, gender: 'private', avatar: { emoji: '👤', hue: 210, photoType: 'masked' },
+          photos: [], bio: '', likes: '', freeTime: '', interests: [], prompts: [], timetable: [], goals: [], lookingFor: [], canOffer: [],
+          purposes: [], fieldVisibility: {}, deleted: true, deletedAt: now(),
+        });
+        if (u.affiliation.type === 'university') u.affiliation = { ...u.affiliation, department: '', showDepartment: false };
+        const patch: Patch = { users: [u], removed: {} };
+        const rm = patch.removed!;
+        const myActs = d.activities.filter((a) => a.hostId === id).map((a) => a.id);
+        rm.activities = myActs;
+        rm.participations = d.participations.filter((p) => p.userId === id || myActs.includes(p.activityId)).map((p) => p.id);
+        rm.posts = d.posts.filter((p) => p.authorId === id).map((p) => p.id);
+        rm.proposals = d.proposals.filter((p) => p.fromId === id || p.toId === id).map((p) => p.id);
+        rm.opportunityIntents = d.opportunityIntents.filter((x) => x.userId === id).map((x) => x.id);
+        rm.timePolls = d.timePolls.filter((x) => x.hostId === id).map((x) => x.id);
+        rm.savedSearches = d.savedSearches.filter((x) => x.userId === id).map((x) => x.id);
+        rm.networkRequests = d.networkRequests.filter((x) => x.authorId === id).map((x) => x.id);
+        rm.introRequests = d.introRequests.filter((x) => x.fromId === id || x.viaId === id || x.toId === id).map((x) => x.id);
+        const drop = <T extends { id: ID }>(xs: T[], ids: ID[] | undefined) => { const s = new Set(ids ?? []); for (let i = xs.length - 1; i >= 0; i--) if (s.has(xs[i].id)) xs.splice(i, 1); };
+        drop(d.activities, rm.activities); drop(d.participations, rm.participations); drop(d.posts, rm.posts); drop(d.proposals, rm.proposals);
+        drop(d.opportunityIntents, rm.opportunityIntents); drop(d.timePolls, rm.timePolls); drop(d.savedSearches, rm.savedSearches);
+        drop(d.networkRequests, rm.networkRequests); drop(d.introRequests, rm.introRequests);
+        // 남의 글에 단 댓글·반응
+        const touched = d.posts.filter((p) => p.comments.some((c) => c.authorId === id) || p.likeIds.includes(id) || p.savedIds.includes(id));
+        touched.forEach((p) => { p.comments = p.comments.filter((c) => c.authorId !== id); p.likeIds = p.likeIds.filter((x) => x !== id); p.savedIds = p.savedIds.filter((x) => x !== id); });
+        if (touched.length) patch.posts = touched;
+        // 그룹 멤버·팔로워
+        const orgs = d.organizations.filter((o) => [o.memberIds, o.followerIds, o.adminIds, o.applicantIds].some((xs) => xs.includes(id)));
+        orgs.forEach((o) => { o.memberIds = o.memberIds.filter((x) => x !== id); o.followerIds = o.followerIds.filter((x) => x !== id); o.adminIds = o.adminIds.filter((x) => x !== id); o.applicantIds = o.applicantIds.filter((x) => x !== id); });
+        if (orgs.length) patch.organizations = orgs;
+        // 관계 (차단은 상대가 한 것도 같이 정리)
+        const r = d.relationships;
+        r.likes = r.likes.filter((x) => x.fromId !== id && x.toId !== id);
+        r.follows = r.follows.filter((x) => x.fromId !== id && x.toId !== id);
+        r.friendRequests = r.friendRequests.filter((x) => x.fromId !== id && x.toId !== id);
+        r.friends = r.friends.filter((x) => x.a !== id && x.b !== id);
+        r.blocks = r.blocks.filter((x) => x.fromId !== id && x.toId !== id);
+        patch.relationships = r;
+        return patch;
+      },
       setAvailability(id: ID, availability: Availability): Patch {
         const u = find(db().users, id); u.availability = availability; return { users: [u] };
       },

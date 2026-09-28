@@ -213,6 +213,8 @@ export interface AroundUApi {
 
   users: {
     update(id: ID, patch: Partial<User>): Promise<Patch>;
+    /** 계정 삭제 — 프로필을 지우고 "탈퇴한 사용자"로 남긴다. 서버는 로그인 계정·세션도 지운다 */
+    deleteAccount(id: ID): Promise<Patch>;
     setAvailability(id: ID, availability: Availability): Promise<Patch>;
     /** 다른 사용자의 투표형 질문에 한 표 */
     votePoll(ownerId: ID, voterId: ID, optionIndex: number): Promise<Patch>;

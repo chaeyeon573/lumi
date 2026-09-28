@@ -61,13 +61,23 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
   function startEvents() {
     stopEvents();
     const token = readToken();
-    if (!token || typeof EventSource === 'undefined') return;
+    if (!token) return;
+    if (typeof EventSource === 'undefined') { startPolling(); return; }
     source = new EventSource(`${base}/api/events?token=${encodeURIComponent(token)}`);
     source.addEventListener('patch', (e) => {
       try { const patch = JSON.parse((e as MessageEvent).data) as Patch; listeners.forEach((l) => l(patch)); } catch { /* ignore */ }
     });
   }
-  function stopEvents() { source?.close(); source = null; }
+  function stopEvents() { source?.close(); source = null; if (poll) { clearInterval(poll); poll = null; } }
+  /** EventSource 가 없는 환경(React Native 등) — 20초마다 전체 스냅샷을 받아 Patch 로 흘려보낸다 */
+  let poll: ReturnType<typeof setInterval> | null = null;
+  function startPolling() {
+    if (poll) return;
+    poll = setInterval(async () => {
+      if (!readToken()) return;
+      try { const snap = await call<Snapshot>('bootstrap', {}); listeners.forEach((l) => l(snap as Patch)); } catch { /* 다음에 다시 */ }
+    }, 20_000);
+  }
 
   const session = async (): Promise<ID | null> => {
     if (!readToken()) return null;
@@ -120,7 +130,7 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
       courses: (schoolId, query) => call('catalog/courses', { schoolId, query }),
     },
 
-    users: group('users', ['update', 'setAvailability', 'votePoll', 'recordSwipe', 'setPlan', 'setStage', 'setResearch', 'updateWants', 'verify', 'toggleSavePerson', 'setStatus', 'setOpenStatuses', 'setPrivacy', 'setTrips', 'hide', 'pushRecentSearch', 'createSavedList', 'updateSavedList', 'deleteSavedList', 'moveSaved']),
+    users: { ...group<AroundUApi['users']>('users', ['update', 'setAvailability', 'votePoll', 'recordSwipe', 'setPlan', 'setStage', 'setResearch', 'updateWants', 'verify', 'toggleSavePerson', 'setStatus', 'setOpenStatuses', 'setPrivacy', 'setTrips', 'hide', 'pushRecentSearch', 'createSavedList', 'updateSavedList', 'deleteSavedList', 'moveSaved']), deleteAccount: async () => { const r = await call<{ patch: Patch }>('auth/delete', {}); writeToken(null, null); stopEvents(); return r.patch ?? {}; } },
     searches: group('searches', ['save', 'remove', 'setAlert', 'run']),
     requests: group('requests', ['create', 'close', 'respond', 'report', 'decide', 'refer', 'referralDecide', 'dismiss']),
     intros: group('intros', ['create', 'forward', 'respond']),

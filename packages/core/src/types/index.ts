@@ -161,6 +161,11 @@ export interface User {
   savedLists?: SavedList[];
   /** 숨긴 추천 카드 / 숨긴 모임 */
   hiddenPeople?: ID[];
+  /** 탈퇴한 사용자 — 목록·추천·검색에서 빠지고, 대화 기록에는 "탈퇴한 사용자"로 남는다 */
+  deleted?: boolean;
+  deletedAt?: string;
+  /** 운영자가 이용 정지한 사용자 — 목록에서 빠진다 */
+  suspended?: boolean;
   hiddenActivities?: ID[];
   /** 최근 자연어 검색 (본인만) */
   recentSearches?: string[];
