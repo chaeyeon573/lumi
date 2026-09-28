@@ -13,6 +13,8 @@ import { nav, replace } from '@/nav';
 import { useViewer } from '@/viewer';
 import { Screen, Segmented, Toggle, Button, BottomSheet, Avatar, C } from '@/ui';
 import { affiliationText } from '@/components/b_Profile';
+import { stageKind, type StageKind } from '@core/lib/stage';
+import { setPartialFail } from '@/v2/useSectionState';
 
 const card = tw`rounded-[24px] border border-line bg-white`;
 
@@ -45,6 +47,14 @@ export default function SettingsScreen() {
     if (next === lang) return;
     setLang(next); // 저장 + platform.reload() — 핸들러가 없으면 아래 폴백으로 앱을 다시 띄운다
     Updates.reloadAsync().catch(() => init());
+  };
+  /** 데모: 학부생 · 대학원생 · 졸업생 화면을 바로 확인 (웹 설정 › 데모 도구 와 같은 동작) */
+  const previewStage = async (k: StageKind) => {
+    try {
+      if (k === 'undergrad') { await run(() => api.users.setStage(me.id, 'undergrad')); await run(() => api.users.setResearch(me.id, null), t('학부생')); }
+      else if (k === 'grad') { await run(() => api.users.setStage(me.id, 'masters')); await run(() => api.users.setResearch(me.id, { field: 'NLP', lab: lang === 'en' ? 'NLP Lab' : '자연어처리 연구실', year: 2, keywords: ['LLM', lang === 'en' ? 'Evaluation' : '평가'] }), t('대학원생')); }
+      else await run(() => api.users.setStage(me.id, 'alumni'), t('졸업생'));
+    } catch { /* toast by run */ }
   };
   const switchUser = async (u: UserT) => {
     setSwitchOpen(false);
@@ -99,6 +109,15 @@ export default function SettingsScreen() {
 
         <View style={[card, tw`mt-3`]}>
           <Text style={tw`px-4 pt-3 pb-1 text-[11px] font-bold text-ink-3`}>{t('데모 도구')}</Text>
+          <View style={tw`px-4 py-3 border-t border-line`}>
+            <Text style={tw`text-[14px] font-semibold text-ink mb-2`}>{t('단계 미리보기')}</Text>
+            <Segmented<StageKind> value={stageKind(me)} onChange={previewStage} options={[['undergrad', t('학부생')], ['grad', t('대학원생')], ['alumni', t('졸업생')]]} />
+            <Text style={tw`text-[12px] text-ink-3 mt-2`}>{t('단계에 따라 홈과 추천이 달라져요. 학교 네트워크는 졸업 후에도 그대로예요.')}</Text>
+          </View>
+          <Pressable onPress={() => { setPartialFail('1'); showToast(t('다음에 여는 섹션 하나가 실패해요. 다시 시도로 복구해보세요.')); }} style={tw`flex-row items-center px-4 py-3.5 border-t border-line`}>
+            <Bug size={18} color={C.ink2} />
+            <View style={tw`flex-1 ml-3`}><Text style={tw`text-[14px] font-semibold text-ink`}>{t('부분 오류 미리보기')}</Text></View>
+          </Pressable>
           <Pressable onPress={() => run(() => api.users.update(me.id, { swipes: { date: '1970-01-01', count: 0 } }), t('스와이프 카운트를 초기화했어요.'))} style={tw`flex-row items-center px-4 py-3.5 border-t border-line`}>
             <RotateCcw size={18} color={C.ink2} />
             <View style={tw`flex-1 ml-3`}><Text style={tw`text-[14px] font-semibold text-ink`}>{t('오늘 스와이프 카운트 초기화')}</Text></View>

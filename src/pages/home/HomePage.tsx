@@ -77,7 +77,7 @@ function Identity({ me }: { me: User }) {
         <span className="min-w-0 flex-1">
           <SchoolBadge user={me} size="lg" className="block truncate" />
           {line && <span className="block text-[13px] text-ink-2 truncate">{line}</span>}
-          {me.research?.field && <span className="block text-[12px] text-verify font-semibold truncate">🔬 {researchLine(me, lang)}</span>}
+          {me.research?.field && stageKind(me) === 'grad' && <span className="block text-[12px] text-verify font-semibold truncate">🔬 {researchLine(me, lang)}</span>}
         </span>
         <ChevronRight size={16} className="text-ink-3 shrink-0" />
       </button>
@@ -180,7 +180,7 @@ function MeetRow({ m }: { m: RecommendedMeet }) {
         <span className="block text-[12px] text-ink-3 truncate">{formatDate(a.date)} {formatTime(a.startTime)} · {a.place.name}</span>
         <span className="block text-[11px] font-semibold text-primary truncate mt-0.5">{m.reason} · <Users size={10} className="inline -mt-0.5" /> {v.approvedCount(a.id)}/{a.capacity >= 999 ? '∞' : a.capacity}</span>
       </button>
-      <JoinButton activity={a} size="sm" label={t('참여')} className="shrink-0" />
+      <JoinButton activity={a} size="sm" label={t('참여하기')} className="shrink-0" />
     </div>
   );
 }

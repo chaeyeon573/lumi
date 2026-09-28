@@ -77,7 +77,7 @@ export default function ChatInboxScreen() {
             <Empty
               title={tab === 'direct' ? t('아직 개인 채팅이 없어요') : tab === 'activity' ? t('참가 중인 활동 채팅이 없어요') : t('조직 채팅이 없어요')}
               description={tab === 'direct' ? t('친구 요청 수락, 상호 관심, 활동 참가 승인 중 하나가 성립하면 대화를 시작할 수 있어요.') : tab === 'activity' ? t('활동에 참가하면 그룹 채팅방이 열려요.') : t('동아리·조직에 가입하거나 팔로우해보세요.')}
-              action={<Button variant="outline" onPress={() => nav(tab === 'direct' ? '/' : tab === 'activity' ? '/discover' : '/community')}>{t('둘러보기')}</Button>} />
+              action={<Button variant="outline" onPress={() => nav(tab === 'direct' ? '/people' : tab === 'activity' ? '/meet' : '/meet?tab=groups')}>{t('둘러보기')}</Button>} />
           ) : (
             <View>
               {list.map((r, idx) => {

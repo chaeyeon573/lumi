@@ -11,7 +11,7 @@ import type { OpportunityType, OrganizationType, PostType, Post } from '@core/ty
 import { tw } from '@/tw';
 import { useViewer } from '@/viewer';
 import { nav } from '@/nav';
-import { TabScreen, AppHeader, IconBtn, UnderlineTabs, Chip, ChipRow, ListRow, Avatar, Cover, Tag, Button, Empty, C } from '@/ui';
+import { Screen, IconBtn, UnderlineTabs, Chip, ChipRow, ListRow, Avatar, Cover, Tag, Button, Empty, C } from '@/ui';
 import { PostCard } from '@/components/PostCard';
 import { SponsoredRow } from '@/components/SponsoredRow';
 import { injectSponsored } from '@core/lib/monetization';
@@ -19,23 +19,20 @@ import { Linking } from 'react-native';
 
 type Tab = 'feed' | 'opportunities' | 'clubs';
 
-/** 캠퍼스 — 피드 | 공고 | 단체 (Pastel Breeze, 행 목록) */
+/** 캠퍼스 — 피드 | 공고 | 단체 (Pastel Breeze, 행 목록). v2 부터 탭이 아니라 피드·모임·프로필에서 들어오는 화면 */
 export default function CampusScreen() {
   const params = useLocalSearchParams<{ tab?: string; sub?: string; mine?: string }>();
   const [tab, setTab] = useState<Tab>((params.tab as Tab) || 'feed');
   useEffect(() => { if (params.tab) setTab(params.tab as Tab); }, [params.tab]);
   const tabs: [Tab, string][] = [['feed', t('피드')], ['opportunities', t('공고')], ['clubs', lang === 'en' ? 'Clubs & Greek' : t('단체')]];
   return (
-    <TabScreen header={<>
-      <AppHeader right={tab === 'feed' ? <IconBtn onPress={() => nav('/create/post')}><PenSquare size={21} color={C.ink2} /></IconBtn> : undefined} />
-      <UnderlineTabs value={tab} onChange={setTab} options={tabs} />
-    </>}>
+    <Screen title={t('캠퍼스')} right={tab === 'feed' ? <IconBtn onPress={() => nav('/create/post')}><PenSquare size={21} color={C.ink2} /></IconBtn> : undefined} sub={<UnderlineTabs value={tab} onChange={setTab} options={tabs} />}>
       <View style={tw`pt-4`}>
         {tab === 'feed' && <FeedTab />}
         {tab === 'opportunities' && <OpportunitiesTab initial={params.sub} />}
         {tab === 'clubs' && <ClubsTab mine={!!params.mine} />}
       </View>
-    </TabScreen>
+    </Screen>
   );
 }
 

@@ -10,6 +10,7 @@ import { api } from '@core/api';
 import { ALL_POST_TYPES, POST_TYPE_LABELS, POST_TYPE_EMOJI, TOPIC_TAGS } from '@core/lib/labels';
 import { friendsOf } from '@core/lib/relations';
 import { photo } from '@core/lib/assets';
+import { composerPrompts, type StageKind } from '@core/lib/stage';
 import { tw } from '@/tw';
 import { useViewer } from '@/viewer';
 import { replace } from '@/nav';
@@ -24,7 +25,9 @@ const MAX_PHOTOS = 4;
 
 /** 개인 포스트: 사진 1~4장 + 짧은 글, 종류·주제·함께한 사람·관련 활동, 공개 범위와 노출 위치 (웹 CreatePostPage 와 동일) */
 export default function CreatePostScreen() {
-  const params = useLocalSearchParams<{ org?: string; type?: string; activity?: string; anon?: string }>();
+  const params = useLocalSearchParams<{ org?: string; type?: string; activity?: string; anon?: string; topic?: string }>();
+  /** 피드 컴포저의 단계별 시작점 칩 (?type=…&topic=key) — 종류를 미리 고르고, 예시 문장을 보여주고, topics 에 key 를 저장 */
+  const prompt = params.topic ? (['undergrad', 'grad', 'alumni'] as StageKind[]).flatMap((k) => composerPrompts(k)).find((p) => p.key === params.topic) : undefined;
   const v = useViewer();
   const run = useAppStore((s) => s.run);
   const orgs = useAppStore((s) => s.organizations);
@@ -34,9 +37,9 @@ export default function CreatePostScreen() {
   const friends = useMemo(() => friendsOf(v.snap, v.me.id).map((id) => v.userById(id)!).filter(Boolean), [v]);
   const orgParam = params.org;
   const [form, setForm] = useState<PostInput>({
-    text: '', media: [], tags: [], topics: [], visibility: 'school', relatedActivityId: params.activity || undefined, relatedOpportunityId: undefined,
+    text: '', media: [], tags: [], topics: prompt ? [prompt.key] : [], visibility: 'school', relatedActivityId: params.activity || undefined, relatedOpportunityId: undefined,
     orgId: orgParam && myOrgs.some((o) => o.id === orgParam) ? orgParam : undefined, anonymous: params.anon === '1',
-    postType: (params.type as PostType | undefined) || 'story', taggedUserIds: [], recruitNext: false, showOnProfile: true, showOnFeed: true,
+    postType: (params.type as PostType | undefined) || prompt?.postType || 'story', taggedUserIds: [], recruitNext: false, showOnProfile: true, showOnFeed: true,
   });
   const [tagInput, setTagInput] = useState('');
   const [busy, setBusy] = useState(false);
@@ -48,12 +51,13 @@ export default function CreatePostScreen() {
 
   const submit = async () => {
     setBusy(true);
-    try { await run(() => api.posts.create(v.me.id, { ...form, media: anon ? [] : form.media, taggedUserIds: anon ? [] : form.taggedUserIds }), t('게시물을 올렸어요.')); replace(form.orgId ? `/orgs/${form.orgId}?tab=posts` : form.showOnFeed ? '/community' : '/profile'); } catch { setBusy(false); }
+    try { await run(() => api.posts.create(v.me.id, { ...form, media: anon ? [] : form.media, taggedUserIds: anon ? [] : form.taggedUserIds }), t('게시물을 올렸어요.')); replace(form.orgId ? `/orgs/${form.orgId}?tab=posts` : form.showOnFeed ? '/feed' : '/profile'); } catch { setBusy(false); }
   };
 
   return (
     <Screen title={form.orgId ? t('조직 소식 작성') : t('게시물 작성')} footer={<View style={tw`flex-row`}><Button full size="lg" disabled={!form.text.trim()} loading={busy} onPress={submit}>{t('게시하기')}</Button></View>}>
       <View style={tw`py-4`}>
+        {prompt ? <View style={tw`mb-4 self-start h-8 px-3 rounded-full bg-accent-soft justify-center`}><Text style={tw`text-[13px] font-semibold text-primary`}>{prompt.emoji} {prompt.label}</Text></View> : null}
         {!form.orgId && <View style={tw`rounded-[24px] border border-line bg-white px-4 mb-5`}><Toggle label={t('익명으로 올리기')} description={t('이름과 사진 대신 "익명"으로 표시돼요. 익명은 글만 올릴 수 있고 학교명만 보여요. 신고 시 운영진이 확인할 수 있어요.')} checked={anon} onChange={(val) => patch({ anonymous: val, orgId: val ? undefined : form.orgId, media: val ? [] : form.media })} /></View>}
         <Field label={t('종류')}><ChipWrap>{ALL_POST_TYPES.filter((pt) => form.orgId ? true : pt !== 'news').map((pt) => <WrapItem key={pt}><Chip size="sm" active={form.postType === pt} onPress={() => patch({ postType: pt })}>{POST_TYPE_EMOJI[pt]} {POST_TYPE_LABELS[pt]}</Chip></WrapItem>)}</ChipWrap></Field>
         <Field label={`${t('사진')} (${form.media.length}/${MAX_PHOTOS})`} hint={anon ? undefined : t('캠퍼스 생활·활동 중심으로. 데모에서는 샘플 사진이나 이모지 카드로 대체해요.')}>
@@ -75,7 +79,7 @@ export default function CreatePostScreen() {
             )}
           </>)}
         </Field>
-        <Field label={t('내용')}><Textarea placeholder={form.postType === 'question' ? t('무엇이 궁금해요?') : form.postType === 'together' ? t('무엇을 같이 하고 싶어요?') : t('무슨 일이 있었나요?')} value={form.text} onChangeText={(text) => patch({ text })} maxLength={500} /></Field>
+        <Field label={t('내용')}><Textarea placeholder={prompt ? prompt.placeholder : form.postType === 'question' ? t('무엇이 궁금해요?') : form.postType === 'together' ? t('무엇을 같이 하고 싶어요?') : t('무슨 일이 있었나요?')} value={form.text} onChangeText={(text) => patch({ text })} maxLength={500} /></Field>
         <Field label={t('주제')}><ChipWrap>{TOPIC_TAGS.map((tg) => <WrapItem key={tg.key}><Chip size="sm" active={form.topics?.includes(tg.key)} onPress={() => patch({ topics: toggle(form.topics, tg.key) })}>#{tg.label}</Chip></WrapItem>)}</ChipWrap></Field>
         <Field label={t('태그 (학교·수업·동아리)')}>
           <View style={tw`flex-row items-center`}><Input placeholder={t('태그 입력 후 추가')} value={tagInput} onChangeText={setTagInput} onSubmitEditing={addTag} style={tw`flex-1`} /><View style={tw`w-2`} /><Button variant="secondary" onPress={addTag}>{t('추가')}</Button></View>

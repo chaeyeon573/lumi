@@ -105,7 +105,7 @@ function MeetCard({ a, reason }: { a: Activity; reason: string }) {
         </button>
         <div className="mt-1.5 flex items-center justify-between gap-2">
           <span className="text-[12px] text-ink-3 truncate flex items-center gap-1 min-w-0"><Users size={11} className="shrink-0" />{count}/{a.capacity >= 999 ? '∞' : a.capacity} {t('참여')}<span className="text-line">·</span><span className="truncate text-primary font-medium">{reason}</span></span>
-          <JoinButton activity={a} size="sm" label={t('참여')} className="shrink-0" />
+          <JoinButton activity={a} size="sm" label={t('참여하기')} className="shrink-0" />
         </div>
       </div>
     </div>

@@ -14,11 +14,11 @@ import { tw } from '@/tw';
 import { useViewer } from '@/viewer';
 import { nav } from '@/nav';
 import { Tag as UiTag } from '@/ui';
-import { TabScreen, Chip, ChipRow, PillRow, Avatar, Button, Empty, H1, Muted, C } from '@/ui';
+import { Screen, Chip, ChipRow, PillRow, Avatar, Button, Empty, H1, Muted, C } from '@/ui';
 import { JoinButton } from '@/components/JoinButton';
 import { OpenSlotSheet } from '@/components/OpenSlotSheet';
 
-/** 발견 — Free Right Now + Spontaneous Hangouts (Pastel Breeze) */
+/** 발견 — Free Right Now + Spontaneous Hangouts (Pastel Breeze). v2 부터 탭이 아니라 모임 탭에서 들어오는 화면 */
 export default function DiscoverScreen() {
   const v = useViewer();
   const me = v.me;
@@ -28,8 +28,8 @@ export default function DiscoverScreen() {
   const nextFree = myFree[0] ? { start: Math.max(myFree[0].start, nowMin()), end: myFree[0].end } : null;
 
   return (
-    <TabScreen>
-      <View style={tw`h-12 rounded-full bg-surface-2 flex-row items-center pl-4 pr-1.5`}>
+    <Screen title={t('지금 열린 만남')}>
+      <View style={tw`mt-2 h-12 rounded-full bg-surface-2 flex-row items-center pl-4 pr-1.5`}>
         <View style={tw`h-2 w-2 rounded-full bg-primary mr-2`} />
         <Text numberOfLines={1} style={tw`flex-1 text-[14px] text-primary font-medium`}>{me.timetable.length === 0 ? t('시간표를 추가해보세요') : nextFree ? `${lang === 'en' ? 'Free' : '공강'} ${fmtBlock(nextFree)}` : t('오늘 수업 끝')}</Text>
         <Pressable onPress={() => (nextFree ? setSlot(nextFree) : nav('/timetable'))} style={tw`h-9 px-4 rounded-full bg-primary flex-row items-center`}><Plus size={14} color="#fff" /><Text style={tw`ml-1 text-white text-[13px] font-semibold`}>{nextFree ? t('열기') : t('시간표')}</Text></Pressable>
@@ -38,7 +38,7 @@ export default function DiscoverScreen() {
       <View style={tw`pt-8`}><ActivitiesTab /></View>
       <View style={tw`pt-8`}><TeamsTab /></View>
       <OpenSlotSheet open={!!slot} onClose={() => setSlot(null)} day={today} block={slot} />
-    </TabScreen>
+    </Screen>
   );
 }
 

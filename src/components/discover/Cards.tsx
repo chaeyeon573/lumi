@@ -88,7 +88,7 @@ export function TeamRow({ activity: a }: { activity: Activity }) {
         <h3 className="text-[15px] font-bold leading-snug line-clamp-1">{a.title}</h3>
         <p className={cn('text-[12px] mt-0.5 truncate', fit ? 'text-primary font-semibold' : 'text-ink-3')}>{a.courseName ? `${a.courseName} · ${a.crewType ? CREW_TYPE_LABELS[a.crewType] : ''}` : roles.map((r) => PERSON_ROLE_LABELS[r]).join(' · ')}{fit ? ` · ${t('내 역할')}` : ''}</p>
       </button>
-      <JoinButton activity={a} size="sm" label={t('참여')} className="rounded-full" />
+      <JoinButton activity={a} size="sm" label={t('참여하기')} className="rounded-full" />
     </div>
   );
 }

@@ -114,7 +114,7 @@ function NowTab() {
       {shown.length === 0 ? (
         <EmptyState emoji="" title={t('이 시간에 열린 활동이 없어요')} action={<Button size="sm" onClick={() => nav('/create/activity?kind=personal&now=1')}>{t('즉석 만남')}</Button>} />
       ) : <div className="space-y-3">{shown.map(({ a }) => { const host = v.userById(a.hostId); return (
-        <Row key={a.id} avatar={<button onClick={() => nav(`/activities/${a.id}`)}><Avatar emoji={host?.avatar.emoji ?? '👤'} hue={host?.avatar.hue ?? 200} url={host?.avatar.url} size={44} /></button>} title={a.title} sub={`${formatTime(a.startTime)} · ${a.place.name}`} action={<JoinButton activity={a} size="sm" label={t('참여')} className="bg-accent text-primary shadow-none" />} />
+        <Row key={a.id} avatar={<button onClick={() => nav(`/activities/${a.id}`)}><Avatar emoji={host?.avatar.emoji ?? '👤'} hue={host?.avatar.hue ?? 200} url={host?.avatar.url} size={44} /></button>} title={a.title} sub={`${formatTime(a.startTime)} · ${a.place.name}`} action={<JoinButton activity={a} size="sm" label={t('참여하기')} className="bg-accent text-primary shadow-none" />} />
       ); })}</div>}
     </div>
   );
@@ -148,7 +148,7 @@ function ActivityRow({ a }: { a: Activity }) {
   const v = useViewer(); const nav = useNavigate();
   const host = v.userById(a.hostId); const org = a.orgId ? v.orgById(a.orgId) : undefined;
   const av = org ? org.logo : host?.avatar ?? { emoji: '👤', hue: 200 };
-  return <Row avatar={<button onClick={() => nav(`/activities/${a.id}`)}><Avatar emoji={av.emoji} hue={av.hue} url={av.url} size={44} /></button>} title={a.title} sub={`${formatDate(a.date)} ${formatTime(a.startTime)} · ${CATEGORY_LABELS[a.category]}`} action={<JoinButton activity={a} size="sm" label={t('참여')} className="bg-accent text-primary shadow-none" />} />;
+  return <Row avatar={<button onClick={() => nav(`/activities/${a.id}`)}><Avatar emoji={av.emoji} hue={av.hue} url={av.url} size={44} /></button>} title={a.title} sub={`${formatDate(a.date)} ${formatTime(a.startTime)} · ${CATEGORY_LABELS[a.category]}`} action={<JoinButton activity={a} size="sm" label={t('참여하기')} className="bg-accent text-primary shadow-none" />} />;
 }
 function OppRow({ o }: { o: Opportunity }) {
   const nav = useNavigate();
@@ -174,7 +174,7 @@ function TeamsTab() {
           if (i.kind === 'opp') return <OppRow key={i.id} o={i.opp} />;
           const a = i.activity; const host = v.userById(a.hostId);
           const sub = a.courseName ? `${a.courseName} · ${a.crewType ? CREW_TYPE_LABELS[a.crewType] : ''}` : (a.rolesNeeded ?? []).map((r) => PERSON_ROLE_LABELS[r]).join(' · ');
-          return <Row key={i.id} avatar={<button onClick={() => nav(`/activities/${a.id}`)}><Avatar emoji={host?.avatar.emoji ?? '👤'} hue={host?.avatar.hue ?? 200} url={host?.avatar.url} size={44} /></button>} title={a.title} sub={`${formatDate(a.date)} ${formatTime(a.startTime)} · ${sub}`} action={<JoinButton activity={a} size="sm" label={t('참여')} className="bg-accent text-primary shadow-none" />} />;
+          return <Row key={i.id} avatar={<button onClick={() => nav(`/activities/${a.id}`)}><Avatar emoji={host?.avatar.emoji ?? '👤'} hue={host?.avatar.hue ?? 200} url={host?.avatar.url} size={44} /></button>} title={a.title} sub={`${formatDate(a.date)} ${formatTime(a.startTime)} · ${sub}`} action={<JoinButton activity={a} size="sm" label={t('참여하기')} className="bg-accent text-primary shadow-none" />} />;
         })}</div>}
       <span className="hidden">{toHHMM(0)}</span>
     </div>

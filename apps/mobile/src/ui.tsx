@@ -6,7 +6,8 @@ import { useState, type ReactNode } from 'react';
 import { ActivityIndicator, Modal, Pressable, ScrollView, Text, TextInput, View, type TextInputProps, type ViewStyle, type ImageStyle, type StyleProp } from 'react-native';
 import { Image } from 'expo-image';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Bell, MessageCircle, GraduationCap, ChevronDown, ChevronLeft, User as UserIcon, X, Search, MapPin } from 'lucide-react-native';
+import { Bell, MessageCircle, GraduationCap, ChevronDown, ChevronLeft, User as UserIcon, X, Search, MapPin, BadgeCheck } from 'lucide-react-native';
+import { schoolBadge, isVerified } from '@core/lib/network';
 import { t, lang, setLang } from '@core/i18n';
 import { getPlatform } from '@core/platform';
 import { useAppStore } from '@core/store/useAppStore';
@@ -14,7 +15,10 @@ import { tw } from './tw';
 import { useViewer } from './viewer';
 import { nav, back } from './nav';
 
-export const C = { primary: '#0F2B48', soft: '#D2E4FF', accent: '#A3D5FF', accentSoft: '#BFF4FF', surface2: '#F3F4ED', line: '#E6E8E1', ink: '#1A1C18', ink2: '#43474D', ink3: '#74777E', verify: '#2E6388', danger: '#BA1A1A', mint: '#2E7D5B', mintSoft: '#DDF3E6', gold: '#B8860B', goldSoft: '#FFF1C9' };
+export const C = { primary: '#0F2B48', soft: '#D2E4FF', accent: '#A3D5FF', accentSoft: '#BFF4FF', surface2: '#F3F4ED', line: '#E6E8E1', ink: '#1A1C18', ink2: '#43474D', ink3: '#74777E', verify: '#2E6388', danger: '#BA1A1A', mint: '#2E7D5B', mintSoft: '#DDF3E6', gold: '#B8860B', goldSoft: '#FFF1C9',
+  /** 팔레트 교체를 한 곳에서 하기 위한 보조 토큰 — 새 화면은 hex 대신 이것들을 쓴다 */
+  bg: '#FFFFFF', onPrimary: '#FFFFFF', goldInk: '#B57A0E', goldLine: '#E8D28A', skySoft: '#F4F9FF', inputLine: '#B1E5FF',
+  glass: 'rgba(255,255,255,0.88)', glassSoft: 'rgba(255,255,255,0.85)', glassDim: 'rgba(255,255,255,0.4)', onDarkBtn: 'rgba(255,255,255,0.15)', scrim: 'rgba(0,0,0,0.35)' };
 export const img = (path?: string) => (path ? (getPlatform().asset(path) as number) : undefined);
 const hsl = (h: number, s: number, l: number) => `hsl(${h}, ${s}%, ${l}%)`;
 
@@ -34,30 +38,33 @@ export function Cover({ emoji, hue, url, size = 56, radius = 16, style }: { emoj
 }
 
 /* ---------- Header / Screen ---------- */
-/** 루트 탭 공통 헤더 — 워드마크 + 학교 알약 + 알림·메시지·프로필 */
-export function AppHeader({ right, people }: { right?: ReactNode; people?: boolean }) {
+/** 루트 탭 공통 헤더 — 워드마크 + 학교 알약("연세대학교 ✓") + (검색) · 알림 · 메시지(DM) · 프로필 (웹 AppHeader) */
+export function AppHeader({ right, people, search }: { right?: ReactNode; people?: boolean; search?: boolean }) {
   const v = useViewer();
   const [langOpen, setLangOpen] = useState(false);
   const notifications = useAppStore((s) => s.notifications);
   const rooms = useAppStore((s) => s.chatRooms);
   const unreadBell = notifications.some((n) => n.userId === v.me.id && !n.read);
   const unreadChat = rooms.some((r) => r.memberIds.includes(v.me.id) && r.messages.some((m) => m.senderId !== v.me.id && new Date(m.createdAt) > new Date(r.lastReadAt[v.me.id] ?? 0)));
-  const full = v.me.affiliation.type === 'university' ? v.me.affiliation.schoolName : '';
-  const school = people ? full.replace(/대학교|University of California,?|University|UC /g, '').trim() : full;
+  const hasSchool = v.me.affiliation.type === 'university';
+  const full = hasSchool ? (v.me.affiliation as { schoolName: string }).schoolName : '';
+  const school = hasSchool ? schoolBadge(v.me, lang) : t('학교 선택');
+  const verified = hasSchool && isVerified(v.me);
   return (
-    <View style={tw`h-16 pl-4 pr-3 flex-row items-center`}>
-      <Text style={tw`text-[22px] font-extrabold text-brand tracking-tight`}>AroundU</Text>
-      <Pressable onPress={() => setLangOpen(true)} style={tw`ml-2 h-9 pl-2.5 pr-2 rounded-full bg-primary-soft flex-row items-center max-w-[118px]`}>
-        {people ? <MapPin size={15} color={C.primary} /> : <GraduationCap size={15} color={C.primary} />}
-        <Text numberOfLines={1} style={tw`mx-1.5 text-[13px] font-semibold text-primary shrink`}>{school}</Text>
-        <ChevronDown size={14} color={C.primary} />
+    <View style={tw`h-16 pl-4 pr-2 flex-row items-center`}>
+      <Text style={tw`text-[21px] font-extrabold text-brand tracking-tight`}>AroundU</Text>
+      <Pressable onPress={() => setLangOpen(true)} style={tw`ml-1.5 h-8 pl-2 pr-2 rounded-full bg-accent-soft border border-accent flex-row items-center max-w-[112px] shrink`}>
+        {people ? <MapPin size={13} color={C.primary} /> : <GraduationCap size={13} color={C.primary} />}
+        <Text numberOfLines={1} style={tw`mx-1 text-[12px] font-bold text-primary shrink`}>{school}</Text>
+        {verified ? <BadgeCheck size={13} color={C.verify} /> : <ChevronDown size={13} color={C.primary} />}
       </Pressable>
       <View style={tw`flex-1`} />
       {right}
-      {people ? <IconBtn onPress={() => nav('/search?tab=people')}><Search size={22} color={C.ink2} /></IconBtn> : <IconBtn onPress={() => nav('/notifications')} badge={unreadBell}><Bell size={22} color={C.ink2} /></IconBtn>}
-      <IconBtn onPress={() => nav('/chats')} badge={unreadChat}><MessageCircle size={22} color={C.ink2} /></IconBtn>
-      <Pressable onPress={() => nav('/profile')} style={tw`ml-1`}>
-        {v.me.avatar.url ? <Avatar emoji={v.me.avatar.emoji} hue={v.me.avatar.hue} url={v.me.avatar.url} size={32} /> : <View style={tw`h-8 w-8 rounded-full bg-primary items-center justify-center`}><UserIcon size={17} color="#fff" /></View>}
+      {search || people ? <IconBtn onPress={() => nav('/search?tab=people')}><Search size={21} color={C.ink2} /></IconBtn> : null}
+      {people ? null : <IconBtn onPress={() => nav('/notifications')} badge={unreadBell}><Bell size={21} color={C.ink2} /></IconBtn>}
+      <IconBtn onPress={() => nav('/chats')} badge={unreadChat}><MessageCircle size={21} color={C.ink2} /></IconBtn>
+      <Pressable onPress={() => nav('/profile')} style={tw`ml-0.5`}>
+        {v.me.avatar.url ? <Avatar emoji={v.me.avatar.emoji} hue={v.me.avatar.hue} url={v.me.avatar.url} size={30} /> : <View style={tw`h-[30px] w-[30px] rounded-full bg-primary items-center justify-center`}><UserIcon size={16} color="#fff" /></View>}
       </Pressable>
       <LangSheet open={langOpen} onClose={() => setLangOpen(false)} school={full} />
     </View>
@@ -80,7 +87,7 @@ export function LangSheet({ open, onClose, school }: { open: boolean; onClose: (
   );
 }
 export function IconBtn({ onPress, children, badge }: { onPress: () => void; children: ReactNode; badge?: boolean }) {
-  return <Pressable onPress={onPress} hitSlop={6} style={tw`h-10 w-10 rounded-full items-center justify-center`}>{children}{badge ? <View style={tw`absolute top-2 right-2 h-2 w-2 rounded-full bg-danger`} /> : null}</Pressable>;
+  return <Pressable onPress={onPress} hitSlop={4} style={tw`h-10 w-[38px] rounded-full items-center justify-center`}>{children}{badge ? <View style={tw`absolute top-2 right-2 h-2 w-2 rounded-full bg-danger`} /> : null}</Pressable>;
 }
 
 /** 탭 화면 래퍼: SafeArea + 흰 배경 (+ 옵션 스크롤) */
@@ -93,7 +100,7 @@ export function TabScreen({ children, scroll = true, header }: { children: React
   );
 }
 /** 상세 화면 래퍼: 뒤로가기 + 제목 + 오른쪽 액션 */
-export function Screen({ title, right, children, scroll = true, footer }: { title?: string; right?: ReactNode; children: ReactNode; scroll?: boolean; footer?: ReactNode }) {
+export function Screen({ title, right, children, scroll = true, footer, sub }: { title?: string; right?: ReactNode; children: ReactNode; scroll?: boolean; footer?: ReactNode; sub?: ReactNode }) {
   const insets = useSafeAreaInsets();
   return (
     <SafeAreaView edges={['top']} style={tw`flex-1 bg-white`}>
@@ -102,6 +109,7 @@ export function Screen({ title, right, children, scroll = true, footer }: { titl
         <Text numberOfLines={1} style={tw`flex-1 text-[17px] font-bold text-primary ml-1`}>{title ?? ''}</Text>
         {right}
       </View>
+      {sub}
       {scroll ? <ScrollView contentContainerStyle={tw`px-4 pb-10`} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">{children}</ScrollView> : <View style={tw`flex-1`}>{children}</View>}
       {footer && <View style={[tw`px-4 pt-2 bg-white border-t border-line`, { paddingBottom: Math.max(insets.bottom, 12) }]}>{footer}</View>}
     </SafeAreaView>
@@ -139,7 +147,7 @@ export function Button({ children, onPress, variant = 'primary', size = 'md', fu
   const fg = { primary: '#fff', secondary: C.primary, outline: C.ink2, accent: C.primary, danger: C.danger }[variant];
   return (
     <Pressable onPress={onPress} disabled={disabled || loading} style={[tw`${h} rounded-full flex-row items-center justify-center ${bg} ${full ? 'flex-1' : ''} ${disabled ? 'opacity-50' : ''}`, style]}>
-      {loading ? <ActivityIndicator color={fg} /> : <>{icon ? <View style={tw`mr-1.5`}>{icon}</View> : null}<Text style={{ color: fg, fontSize: size === 'sm' ? 13 : 14, fontWeight: '600' }}>{children}</Text></>}
+      {loading ? <ActivityIndicator color={fg} /> : <>{icon ? <View style={tw`mr-1.5`}>{icon}</View> : null}<Text numberOfLines={1} style={{ color: fg, fontSize: size === 'sm' ? 13 : 14, fontWeight: '600', flexShrink: 1 }}>{children}</Text></>}
     </Pressable>
   );
 }
@@ -250,6 +258,7 @@ export function useConfirm() {
   return { confirm: (title: string, onOk: () => void) => setState({ title, onOk }), el };
 }
 
+/** 아직 옮기지 않은 화면 자리 — 뒤로가기가 있어서 내비게이션이 끊기지 않는다 */
 export function Soon({ title }: { title: string }) {
-  return <TabScreen><Empty title={title} description="Coming soon" /></TabScreen>;
+  return <Screen title={title}><Empty title={title} description="Coming soon" /></Screen>;
 }

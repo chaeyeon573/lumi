@@ -125,7 +125,10 @@ export function gradHome(snap: Snapshot, me: User, visibleActivities: Activity[]
   const ahead = ranked.filter((p) => !used.has(p.user.id) && ((isAlumniStage(p.user) && p.reasons.some((r) => r.kind === 'research' || r.kind === 'field' || r.kind === 'alumni')) || (stageOf(p.user) === 'phd' && myRank === 1))).slice(0, 3);
   const week = addDaysISO(7); const today = todayISO();
   const hostGrad = (a: Activity) => { const h = snap.users.find((u) => u.id === a.hostId); return !!h && isGradStage(h); };
-  const researchWeek = visibleActivities.filter((a) => a.date >= today && a.date <= week && RESEARCH_CATS.has(a.category) && (hostGrad(a) || a.kind === 'org_event'))
+  // 연구 일정 = 세미나, 또는 대학원생이 여는 논문·리딩·학회·연구 스터디 (사이드 프로젝트·시험 스터디는 제외)
+  const RESEARCH_WORDS = /(논문|리딩|세미나|학회|연구|콜로키움|paper|reading|seminar|conference|research|colloquium|journal club|emnlp|acl|neurips|icml|cvpr)/i;
+  const researchWeek = visibleActivities.filter((a) => a.date >= today && a.date <= week && RESEARCH_CATS.has(a.category)
+    && (a.category === 'seminar' || ((hostGrad(a) || a.kind === 'org_event') && RESEARCH_WORDS.test(`${a.title} ${a.description ?? ''}`))))
     .sort((a, b) => (a.date + a.startTime).localeCompare(b.date + b.startTime)).slice(0, 3);
   const taken = new Set([...researchPeople, ...ahead].map((p) => p.user.id));
   // 모임은 세미나·스터디(대학원생이 여는 것) 먼저, 이번 주 연구 일정과 겹치지 않게

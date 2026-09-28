@@ -8,6 +8,7 @@ module.exports = {
         primary: '#0F2B48', brand: '#00162D', 'primary-deep': '#00162D', 'primary-soft': '#D2E4FF',
         accent: '#A3D5FF', 'accent-soft': '#BFF4FF', mint: '#2E7D5B', 'mint-soft': '#DDF3E6',
         gold: '#B8860B', 'gold-soft': '#FFF1C9', danger: '#BA1A1A', 'danger-soft': '#FFDAD6', verify: '#2E6388',
+        'sky-soft': '#F4F9FF', 'input-line': '#B1E5FF', 'gold-ink': '#B57A0E',
       },
     },
   },

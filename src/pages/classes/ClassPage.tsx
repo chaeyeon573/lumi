@@ -44,7 +44,7 @@ export function ClassSpaceContent({ courseName, onEdit, onClose }: { courseName:
           <div className="space-y-2">{crews.map((a) => { const left = a.capacity - v.approvedCount(a.id); return (
             <div key={a.id} className="rounded-2xl bg-surface-2 px-4 py-3.5 flex items-center gap-3">
               <button onClick={() => go(`/activities/${a.id}`)} className="flex-1 min-w-0 text-left"><span className="block text-[15px] font-semibold text-primary truncate">{a.title}</span><span className="block text-[13px] text-verify mt-0.5">{formatDate(a.date)} {formatTime(a.startTime)} · {left}{lang === 'en' ? ` spot${left === 1 ? '' : 's'} left` : '자리'}</span></button>
-              <JoinButton activity={a} size="sm" label={t('참여')} />
+              <JoinButton activity={a} size="sm" label={t('참여하기')} />
             </div>
           ); })}</div>
         )}

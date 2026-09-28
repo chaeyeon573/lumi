@@ -1,214 +1,319 @@
-import { useMemo, useRef, useState } from 'react';
-import { tw } from '@/tw';
-import { Dimensions, Pressable, ScrollView, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { LinearGradient } from 'expo-linear-gradient';
-import { Image } from 'expo-image';
-import { SlidersHorizontal, Clock, Zap, Bookmark, Heart, BadgeCheck, Hand, X, Coffee, Utensils, BookOpen, MessageCircle } from 'lucide-react-native';
+import { useMemo, useState } from 'react';
+import { Pressable, Text, View } from 'react-native';
+import { Clock, CalendarPlus, ChevronRight, Users, MapPin, X, Sparkles, CalendarDays, Briefcase, RefreshCw } from 'lucide-react-native';
 import { t, lang } from '@core/i18n';
-import { useAppStore } from '@core/store/useAppStore';
-import { api } from '@core/api';
 import { getPlatform } from '@core/platform';
-import { LAST_SEEN_KEY } from '@/components/CreateSheet';
-import { INTEREST_LABELS, GOAL_LABELS, ALL_INTERESTS, ALL_GOALS, AVAILABILITY_LABELS } from '@core/lib/labels';
-import { commonInterests } from '@core/lib/relations';
-import { matchScore, shareableReasons, type Reason } from '@core/lib/recommend';
-import { statusNow, freeBlocks, todayIdx, nowMin, fmtBlock } from '@core/lib/timetable';
-import type { User, Interest, Goal, ActivityCategory } from '@core/types';
-import { ProposeSheet } from '@/components/a_ProposeSheet';
-import { Deck, justDragged } from '@/components/Deck';
-import { PaywallSheet } from '@/components/PaywallSheet';
-import { swipesLeft, isPlus, FREE_SWIPES_PER_DAY } from '@core/lib/monetization';
+import type { Snapshot } from '@core/api/types';
+import { homeToday, alumniHome, gradHome, type HomeToday, type AlumniHome as AlumniHomeData, type GradHome as GradHomeData, type NetworkNews } from '@core/lib/home';
+import { stageKind, researchLine } from '@core/lib/stage';
+import { isAlumniStage, contextLine, cityOf, shouldSuggestStatusUpdate } from '@core/lib/network';
+import { CATEGORY_EMOJI, CATEGORY_COLORS, OPP_TYPE_EMOJI, OPP_TYPE_COLORS, ORG_TYPE_LABELS } from '@core/lib/labels';
+import { formatTime, formatDate } from '@core/lib/format';
+import { fmtHours, fmtBlock, toMin, nowMin } from '@core/lib/timetable';
+import { localeContext } from '@core/lib/locale-context';
+import { requestsForMe } from '@core/lib/requests';
+import type { User, Activity } from '@core/types';
+import { tw } from '@/tw';
 import { useViewer } from '@/viewer';
 import { nav } from '@/nav';
-import { AppHeader, C, BottomSheet, Chip, Button } from '@/ui';
+import { TabScreen, AppHeader, Avatar, Button, C } from '@/ui';
+import { OppRow } from '@/components/a_shared';
+import { useSnapshot } from '@/v2/useSnapshot';
+import { SchoolBadge } from '@/v2/SchoolBadge';
+import { PeopleStrip } from '@/v2/PeopleStrip';
+import { MeetRow } from '@/v2/MeetRow';
+import { NowActivityRow } from '@/v2/NowActivityRow';
+import { AroundTodayCard } from '@/v2/AroundTodayCard';
+import { IncomingRequestCard } from '@/v2/IncomingRequestCard';
+import { HSection, CardList, Row, SmallEmpty } from '@/v2/HomeParts';
 
-const W = Dimensions.get('window').width;
-const CARD_W = W - 32;
-interface Filters { years: number[]; sameDept: boolean; sameClass: boolean; freeNow: boolean; interests: Interest[]; goals: Goal[] }
-const EMPTY: Filters = { years: [], sameDept: false, sameClass: false, freeNow: false, interests: [], goals: [] };
-const yearOf = (u: User) => (u.affiliation.type === 'university' ? Math.min(4, Math.max(1, new Date().getFullYear() - u.affiliation.year + 1)) : 0);
-const gradYear = (u: User) => (u.affiliation.type === 'university' ? `'${String(u.affiliation.year + 4).slice(2)}` : '');
+/** 가입 직후 1회 보여주는 첫 사용 카드 (웹 OnboardingPage FIRSTRUN_KEY 와 같은 키) */
+const FIRSTRUN_KEY = 'aroundu.firstrun';
 
-/** 사람 — 전체 화면 사진 카드, 옆으로 넘겨 보기 (Pastel Breeze) */
-export default function PeopleScreen() {
-  const run = useAppStore((s) => s.run);
-  const opps = useAppStore((s) => s.opportunities);
-  const intents = useAppStore((s) => s.opportunityIntents);
+/**
+ * Home — "오늘 나에게 뭐가 있나" (웹 HomePage). 게시글 피드가 아니라 지금 내 상황에서 볼 가치가 높은 것 2~4개씩.
+ * 학부생: 오늘 일정 → 지금 가까운 사람 → 학교에서 일어나는 것 → 나에게 맞는 모임 → 지금 열린 만남 → 새로운 사람 → 추천 기회
+ * 대학원생: 이번 주 연구 일정 → 같은 연구 분야 → 먼저 간 사람 → 나에게 맞는 모임 → 오늘 일정(시간표 있을 때) → 같은 학교 사람 → 추천 기회
+ * 졸업생: 새로운 사람 → 내 지역 사람 → 내 분야 사람 → 이번 주 모임 → 내 관계망 소식 → 내 그룹 → 추천 기회
+ */
+export default function HomeScreen() {
   const v = useViewer();
   const me = v.me;
-  const [idx, setIdx] = useState(0);
-  const [saved, setSaved] = useState<string[]>([]);
-  const [f, setF] = useState<Filters>(EMPTY);
-  const [filterOpen, setFilterOpen] = useState(false);
-  const [propose, setPropose] = useState<{ u: User; cat: ActivityCategory } | null>(null);
-  const [paywall, setPaywall] = useState<'limit' | 'open' | null>(null);
-  const left = swipesLeft(me);
-  const swipe = useRef<((dir: 'right' | 'left') => void) | null>(null);
-  const myDept = me.affiliation.type === 'university' ? me.affiliation.department : '';
-
-  type Card = { u: User; reasons: Reason[]; score: number };
-  const scored: Card[] = useMemo(() => v.visibleUsers
-    .map((u) => ({ u, ...matchScore(me, u, { opportunities: opps, opportunityIntents: intents }, v.canSeeField(u, 'timetable')) }))
-    .map((x) => ({ ...x, score: x.score + commonInterests(me, x.u).length * 0.5 })), [v, me, opps, intents]);
-  const passes = (u: User) => {
-    if (f.years.length && !f.years.includes(yearOf(u))) return false;
-    if (f.sameDept && !(u.affiliation.type === 'university' && u.affiliation.department === myDept)) return false;
-    if (f.sameClass && !u.timetable.some((c) => me.timetable.some((m) => m.name === c.name))) return false;
-    if (f.freeNow && !((u.timetable.length && v.canSeeField(u, 'timetable')) ? statusNow(u.timetable).kind === 'free' : u.availability === 'now')) return false;
-    if (f.interests.length && !f.interests.some((i) => u.interests.includes(i))) return false;
-    if (f.goals.length && !f.goals.some((g) => u.goals.includes(g))) return false;
-    return true;
-  };
-  const cards = scored.filter((x) => passes(x.u)).sort((a, b) => b.score - a.score).slice(0, 20);
-  const reset = () => setIdx(0);
-  const tog = <T,>(arr: T[], x: T) => (arr.includes(x) ? arr.filter((y) => y !== x) : [...arr, x]);
-  const chips: { key: string; label: string; clear: () => void }[] = [
-    ...f.years.map((y) => ({ key: `y${y}`, label: `${y}${t('학년')}`, clear: () => setF({ ...f, years: f.years.filter((x) => x !== y) }) })),
-    ...(f.sameDept ? [{ key: 'dept', label: t('같은 학과'), clear: () => setF({ ...f, sameDept: false }) }] : []),
-    ...(f.sameClass ? [{ key: 'class', label: t('같은 수업'), clear: () => setF({ ...f, sameClass: false }) }] : []),
-    ...(f.freeNow ? [{ key: 'free', label: t('지금 공강'), clear: () => setF({ ...f, freeNow: false }) }] : []),
-    ...f.interests.map((i) => ({ key: `i${i}`, label: INTEREST_LABELS[i], clear: () => setF({ ...f, interests: f.interests.filter((x) => x !== i) }) })),
-    ...f.goals.map((g) => ({ key: `g${g}`, label: GOAL_LABELS[g], clear: () => setF({ ...f, goals: f.goals.filter((x) => x !== g) }) })),
-  ];
-  const current = cards[idx];
-  if (current) getPlatform().setItem(LAST_SEEN_KEY, current.u.id);
-  const exhausted = !current && cards.length > 0;
-  const onCampus = v.visibleUsers.filter((u) => u.timetable.length ? statusNow(u.timetable).kind !== 'none' : u.availability !== 'hidden').length * 3 + 6;
-
-  const message = async (u: User) => {
-    if (!v.canMessage(u.id).ok) { nav(`/users/${u.id}`); return; }
-    try { const res = await run(() => api.chats.openDirect(me.id, u.id)); nav(`/chats/${res.room.id}`); } catch { /* toast */ }
-  };
-  /** 오른쪽 스와이프 = 친구 요청. 무료 플랜은 하루 한도를 먼저 차감하고, 다 썼으면 페이월 */
-  const onSwipe = async (c: Card, dir: 'right' | 'left') => {
-    if (dir === 'right') {
-      try { await api.users.recordSwipe(me.id).then((patch) => useAppStore.getState().applyPatch(patch)); }
-      catch { setPaywall('limit'); return; }
-      if (!(v.isFriend(c.u.id) || v.pendingOut(c.u.id))) run(() => api.relationships.sendFriendRequest(me.id, c.u.id), `${c.u.nickname}${t('님에게 친구 요청을 보냈어요.')}`).catch(() => {});
-    }
-    setIdx((i) => i + 1);
-  };
-  const tryConnect = () => { if (!current) return; if (left <= 0) { setPaywall('limit'); return; } swipe.current?.('right'); };
-  const connected = current ? !!(v.isFriend(current.u.id) || v.pendingOut(current.u.id)) : false;
-  const isSaved = current ? saved.includes(current.u.id) : false;
-
+  const snap = useSnapshot();
+  const kind = stageKind(me);
+  const student = useMemo(() => (kind === 'undergrad' ? homeToday(snap, me, v.visibleActivities, (u) => v.canSeeField(u, 'timetable')) : null), [snap, me, kind, v]);
+  const grad = useMemo(() => (kind === 'grad' ? gradHome(snap, me, v.visibleActivities, (u) => v.canSeeField(u, 'timetable')) : null), [snap, me, kind, v]);
+  const alum = useMemo(() => (isAlumniStage(me) ? alumniHome(snap, me, v.visibleActivities, v.visiblePosts, (u) => v.canSeeField(u, 'timetable')) : null), [snap, me, v]);
   return (
-    <SafeAreaView edges={['top']} style={tw`flex-1 bg-white`}>
-      <AppHeader people />
-      <View style={tw`px-4 pt-1 pb-3 flex-row items-center`}>
-        <View style={tw`h-9 px-3.5 rounded-full bg-surface-2 flex-row items-center`}>
-          <View style={tw`h-2 w-2 rounded-full bg-primary mr-2`} />
-          <Text style={tw`text-[13px] font-medium text-primary`}>{lang === 'en' ? `${onCampus} students on campus now` : `지금 캠퍼스에 ${onCampus}명`}</Text>
-        </View>
-        <Pressable onPress={() => setPaywall('open')} style={tw`ml-2 h-9 px-3 rounded-full flex-row items-center ${isPlus(me) ? 'bg-primary' : left <= 2 ? 'bg-gold-soft' : 'bg-accent-soft'}`}><Heart size={12} color={isPlus(me) ? '#fff' : C.primary} fill={isPlus(me) ? '#fff' : C.primary} /><Text style={tw`ml-1 text-[12px] font-bold ${isPlus(me) ? 'text-white' : 'text-primary'}`}>{isPlus(me) ? '∞' : `${left}/${FREE_SWIPES_PER_DAY}`}</Text></Pressable>
-        <View style={tw`flex-1`} />
-        <Pressable onPress={() => setFilterOpen(true)} style={tw`h-10 w-10 rounded-full ${chips.length ? 'bg-primary' : 'bg-surface-2'} items-center justify-center`}><SlidersHorizontal size={18} color={C.ink2} /></Pressable>
-      </View>
-
-      {chips.length > 0 && <ScrollView horizontal showsHorizontalScrollIndicator={false} style={tw`shrink-0 max-h-10 -mt-1`} contentContainerStyle={tw`px-4 pb-2`}>{chips.map((c) => <Pressable key={c.key} onPress={() => { c.clear(); reset(); }} style={tw`h-8 pl-2.5 pr-3 mr-1.5 rounded-full bg-accent-soft flex-row items-center`}><X size={12} color={C.primary} /><Text style={tw`ml-1 text-[12px] font-semibold text-primary`}>{c.label}</Text></Pressable>)}</ScrollView>}
-      {!current ? (
-        <View style={tw`flex-1 items-center justify-center`}><Text style={tw`text-[15px] text-ink-3`}>{exhausted ? (lang === 'en' ? "You've seen everyone for now" : '지금은 여기까지 봤어요') : t('이 조건에 맞는 사람이 아직 없어요')}</Text><View style={tw`mt-3`}><Button size="sm" variant="outline" onPress={() => { if (!exhausted) setF(EMPTY); reset(); }}>{exhausted ? (lang === 'en' ? 'Start over' : '처음부터') : t('조건 지우기')}</Button></View></View>
-      ) : (
-        <View style={tw`flex-1`}>
-          <View style={tw`flex-1 px-4`}>
-            <Deck<Card> items={cards} index={idx} width={CARD_W} controlRef={swipe} labels={{ right: lang === 'en' ? 'Connect' : '친구', left: lang === 'en' ? 'Later' : '나중에' }}
-              renderCard={(c, isTop) => <PersonSlide user={c.u} reasons={c.reasons} interactive={isTop} />} onSwipe={onSwipe} />
-          </View>
-          <View style={tw`pt-3 pb-1 items-center`}>
-            <View style={[tw`flex-row items-center`, { gap: 32 }]}>
-              <Pressable onPress={() => setSaved((s) => (isSaved ? s.filter((x) => x !== current.u.id) : [...s, current.u.id]))} style={tw`h-[60px] w-[60px] rounded-full items-center justify-center ${isSaved ? 'bg-primary' : 'bg-surface-2'}`}>
-                <Bookmark size={26} color={isSaved ? '#fff' : C.primary} fill={isSaved ? '#fff' : 'none'} />
-              </Pressable>
-              <Pressable onPress={tryConnect} style={[tw`h-[72px] w-[72px] rounded-full items-center justify-center ${connected ? 'bg-primary' : 'bg-accent'}`, { shadowColor: C.primary, shadowOpacity: 0.3, shadowRadius: 14, shadowOffset: { width: 0, height: 10 }, elevation: 8 }]}>
-                {connected ? <Hand size={32} color="#fff" /> : <Heart size={34} color={C.primary} />}
-              </Pressable>
-            </View>
-            <View style={tw`mt-4 flex-row items-center`}>
-              {([['coffee', t('커피'), Coffee], ['meal', t('점심'), Utensils], ['study', t('공부'), BookOpen]] as [ActivityCategory, string, typeof Coffee][]).map(([cat, label, Icon]) => (
-                <Pressable key={cat} onPress={() => setPropose({ u: current.u, cat })} style={tw`h-9 pl-3 pr-3.5 mr-2 rounded-full bg-white border border-line flex-row items-center`}><Icon size={17} color={C.verify} /><Text style={tw`ml-1.5 text-[13px] font-medium text-ink`}>{label}</Text></Pressable>
-              ))}
-              <Pressable onPress={() => message(current.u)} style={tw`h-10 w-10 ml-1 rounded-full bg-primary items-center justify-center`}><MessageCircle size={18} color="#fff" /></Pressable>
-            </View>
-            <Text style={tw`mt-3 text-[12px] text-ink-3`}>{lang === 'en' ? 'Swipe card to connect · Tap card for details' : '카드를 밀면 친구 요청 · 누르면 프로필'}</Text>
-          </View>
-        </View>
-      )}
-      <PaywallSheet open={!!paywall} onClose={() => setPaywall(null)} reason={paywall === 'limit' ? 'limit' : undefined} />
-      {propose && <ProposeSheet open onClose={() => setPropose(null)} user={propose.u} category={propose.cat} onCategory={(c) => setPropose({ ...propose, cat: c })} />}
-      <BottomSheet open={filterOpen} onClose={() => setFilterOpen(false)} title={t('조건')} tall>
-        <FilterGroup label={t('학년')}>{[1, 2, 3, 4].map((y) => <Chip key={y} size="sm" active={f.years.includes(y)} onPress={() => setF({ ...f, years: tog(f.years, y) })}>{y}{t('학년')}</Chip>)}</FilterGroup>
-        <FilterGroup label={t('관계')}><Chip size="sm" active={f.sameDept} onPress={() => setF({ ...f, sameDept: !f.sameDept })}>{t('같은 학과')}</Chip><Chip size="sm" active={f.sameClass} onPress={() => setF({ ...f, sameClass: !f.sameClass })}>{t('같은 수업')}</Chip><Chip size="sm" active={f.freeNow} onPress={() => setF({ ...f, freeNow: !f.freeNow })}>{t('지금 공강')}</Chip></FilterGroup>
-        <FilterGroup label={t('관심사')}>{ALL_INTERESTS.map((i) => <Chip key={i} size="sm" active={f.interests.includes(i)} onPress={() => setF({ ...f, interests: tog(f.interests, i) })}>{INTEREST_LABELS[i]}</Chip>)}</FilterGroup>
-        <FilterGroup label={t('이번 학기 목표')}>{ALL_GOALS.map((g) => <Chip key={g} size="sm" active={f.goals.includes(g)} onPress={() => setF({ ...f, goals: tog(f.goals, g) })}>{GOAL_LABELS[g]}</Chip>)}</FilterGroup>
-        <View style={tw`flex-row pt-1`}><Button variant="outline" onPress={() => setF(EMPTY)}>{t('초기화')}</Button><View style={tw`w-2`} /><Button full onPress={() => { setFilterOpen(false); reset(); }}>{lang === 'en' ? `Show ${scored.filter((x) => passes(x.u)).length}` : `${scored.filter((x) => passes(x.u)).length}명 보기`}</Button></View>
-      </BottomSheet>
-    </SafeAreaView>
+    <TabScreen header={<AppHeader search />}>
+      <Identity me={me} />
+      <FirstRunCard />
+      <AroundTodayCard me={me} snap={snap} />
+      <AskedOfMe me={me} snap={snap} />
+      {student ? <StudentHome d={student} me={me} /> : grad ? <GradHome d={grad} me={me} /> : alum ? <AlumniHome d={alum} me={me} /> : null}
+      <View style={tw`h-6`} />
+    </TabScreen>
   );
 }
 
-function FilterGroup({ label, children }: { label: string; children: React.ReactNode }) {
-  return <View style={tw`mb-4`}><Text style={tw`text-[12px] font-bold text-ink-3 mb-1.5`}>{label}</Text><View style={tw`flex-row flex-wrap gap-y-1.5`}>{children}</View></View>;
+// ─── 정체성 블록 — "연세대학교 ✓ · 학부생 · 경영학과 3학년" (대학원생은 연구 한 줄) ──────────────
+function Identity({ me }: { me: User }) {
+  const line = contextLine(me, lang);
+  const suggest = shouldSuggestStatusUpdate(me);
+  const research = stageKind(me) === 'grad' ? researchLine(me, lang) : '';
+  return (
+    <View style={tw`pt-1 pb-1`}>
+      <Pressable onPress={() => nav('/profile')} style={tw`flex-row items-center`}>
+        <Avatar emoji={me.avatar.emoji} hue={me.avatar.hue} url={me.avatar.url} size={44} />
+        <View style={tw`flex-1 min-w-0 mx-3`}>
+          <SchoolBadge user={me} size="lg" />
+          {line ? <Text numberOfLines={1} style={tw`text-[13px] text-ink-2`}>{line}</Text> : null}
+          {research ? <Text numberOfLines={1} style={tw`text-[12px] text-verify font-semibold`}>🔬 {research}</Text> : null}
+        </View>
+        <ChevronRight size={16} color={C.ink3} />
+      </Pressable>
+      {suggest && (
+        <Pressable onPress={() => nav('/profile/status')} style={tw`mt-2 rounded-2xl bg-accent-soft px-3.5 py-2.5 flex-row items-center`}>
+          <RefreshCw size={13} color={C.primary} />
+          <Text style={tw`flex-1 mx-2 text-[12px] font-semibold text-primary`}>{t('현재 상태가 바뀌었나요? 졸업했다면 알려주세요.')}</Text>
+          <ChevronRight size={14} color={C.primary} />
+        </Pressable>
+      )}
+    </View>
+  );
 }
 
-/** 카드: 사진 전체 + 아래 그라데이션 위에 이름·학과·찾는 것·칩 3개 */
-function PersonSlide({ user, reasons, interactive = true }: { user: User; reasons: Reason[]; interactive?: boolean }) {
-  const v = useViewer();
-  const [pi, setPi] = useState(0);
-  const photos = user.photos?.length ? user.photos : user.avatar.url ? [user.avatar.url] : [];
-  const common = commonInterests(v.me, user);
-  const want = v.canSeeField(user, 'prompts') && user.prompts[0]?.answer ? user.prompts[0].answer : user.nowWant;
-  const reason = shareableReasons(reasons)[0];
-  const dept = user.affiliation.type === 'university' && user.affiliation.showDepartment ? user.affiliation.department : '';
-  const school = user.affiliation.type === 'university' && user.affiliation.showSchool ? user.affiliation.schoolName.replace(/대학교|University|UC /g, '').trim() : '';
-  const canSeeTT = user.timetable.length > 0 && v.canSeeField(user, 'timetable');
-  const st = canSeeTT ? statusNow(user.timetable) : null;
-  const block = canSeeTT ? freeBlocks(user.timetable, todayIdx()).find((b) => b.end > nowMin()) : null;
-  const freeLabel = block ? `${t('공강')} ${fmtBlock({ start: st?.kind === 'free' ? Math.max(block.start, nowMin()) : block.start, end: block.end })}` : user.availability !== 'hidden' ? AVAILABILITY_LABELS[user.availability] : null;
-  const tap = (x: number) => {
-    if (justDragged()) return;
-    if (photos.length > 1 && x < CARD_W * 0.3) setPi((p) => (p - 1 + photos.length) % photos.length);
-    else if (photos.length > 1 && x > CARD_W * 0.7) setPi((p) => (p + 1) % photos.length);
-    else nav(`/users/${user.id}`);
-  };
+// ─── 첫 사용 카드 (가입 직후 1회) — 한 줄 안내, 아무것도 안 해도 된다 ───────────────────
+function FirstRunCard() {
+  const [show, setShow] = useState(() => { try { return getPlatform().getItem(FIRSTRUN_KEY) === '1'; } catch { return false; } });
+  if (!show) return null;
+  const dismiss = () => { try { getPlatform().removeItem(FIRSTRUN_KEY); } catch { /* */ } setShow(false); };
   return (
-    <View style={[tw`flex-1 rounded-[32px] overflow-hidden bg-primary`, { width: CARD_W }]}>
-      <Pressable style={{ flex: 1 }} disabled={!interactive} onPress={(e) => tap(e.nativeEvent.locationX)}>
-        {photos.length > 0
-          ? <Image source={getPlatform().asset(photos[pi]) as number} style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }} contentFit="cover" transition={150} />
-          : <View style={tw`absolute inset-0 items-center justify-center`}><Text style={{ fontSize: 96 }}>{user.avatar.emoji}</Text></View>}
-        <LinearGradient colors={['rgba(15,43,72,0)', 'rgba(15,43,72,0.25)', 'rgba(15,43,72,0.88)']} locations={[0.3, 0.55, 1]} style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }} />
-      </Pressable>
-      {photos.length > 1 && (
-        <View style={[tw`absolute top-3 left-4 right-4 flex-row`, { gap: 4 }]}>
-          {photos.map((_, i) => <View key={i} style={[tw`h-[3px] flex-1 rounded-full`, { backgroundColor: i === pi ? '#fff' : 'rgba(255,255,255,0.4)' }]} />)}
-        </View>
-      )}
-      {freeLabel && (
-        <View style={[tw`absolute top-6 left-4 h-8 pl-3 pr-3.5 rounded-full flex-row items-center`, { backgroundColor: 'rgba(255,255,255,0.88)' }]}>
-          <Clock size={14} color={C.verify} /><Text style={tw`ml-1.5 text-[12px] font-semibold text-primary`}>{freeLabel}</Text>
-        </View>
-      )}
-      {user.affiliation.type === 'university' && user.affiliation.emailVerified && (
-        <View style={[tw`absolute top-6 right-4 h-8 w-8 rounded-full items-center justify-center`, { backgroundColor: 'rgba(255,255,255,0.88)' }]}><BadgeCheck size={16} color={C.verify} /></View>
-      )}
-      <View pointerEvents="none" style={tw`absolute left-0 right-0 bottom-0 p-6`}>
-        <View style={[tw`flex-row items-baseline`, { gap: 8 }]}>
-          <Text style={tw`text-[30px] font-bold text-white`}>{user.nickname}</Text>
-          <Text style={tw`text-[22px] text-white opacity-90`}>{new Date().getFullYear() - user.birthYear + 1}</Text>
-        </View>
-        <Text style={tw`text-[15px] text-accent`}>{dept}{gradYear(user) ? ` • ${school} ${gradYear(user)}` : ''}</Text>
-        {(want || reason) && (
-          <View style={[tw`mt-2.5 self-start h-9 px-3.5 rounded-full flex-row items-center`, { backgroundColor: 'rgba(255,255,255,0.15)', maxWidth: '100%' }]}>
-            <Zap size={15} color={C.accent} /><Text numberOfLines={1} style={tw`ml-2 text-[13px] font-medium text-white shrink`}>{want ?? reason?.text}</Text>
-          </View>
-        )}
-        <View style={[tw`mt-3 flex-row flex-wrap`, { gap: 6 }]}>
-          {(common.length ? common : user.interests).slice(0, 3).map((i) => (
-            <View key={i} style={tw`h-8 px-3.5 rounded-full bg-primary-soft items-center justify-center`}><Text style={tw`text-[12px] font-semibold text-primary`}>{INTEREST_LABELS[i]}</Text></View>
-          ))}
-        </View>
+    <View style={tw`mt-3 rounded-[24px] bg-primary-soft p-4`}>
+      <Pressable onPress={dismiss} accessibilityLabel={t('닫기')} style={tw`absolute top-3 right-3 h-8 w-8 rounded-full items-center justify-center`}><X size={16} color={C.ink3} /></Pressable>
+      <View style={tw`flex-row items-center`}><Sparkles size={12} color={C.primary} /><Text style={tw`ml-1 text-[11px] font-bold text-primary`}>{t('어서 오세요')}</Text></View>
+      <Text style={tw`mt-1 pr-8 text-[15px] font-bold text-ink`}>{t('천천히 둘러보세요. 마음에 드는 사람은 저장해 두고, 나중에 편할 때 연결하면 돼요.')}</Text>
+      <View style={tw`mt-3 flex-row`}>
+        <Pressable onPress={() => { dismiss(); nav('/people'); }} style={tw`h-9 px-3.5 mr-2 rounded-full bg-white flex-row items-center`}><Users size={14} color={C.primary} /><Text style={tw`ml-1.5 text-[12px] font-semibold text-primary`}>{t('가까운 사람 보기')}</Text></Pressable>
+        <Pressable onPress={() => { dismiss(); nav('/meet/tables'); }} style={tw`h-9 px-3.5 rounded-full bg-white flex-row items-center`}><CalendarDays size={14} color={C.primary} /><Text style={tw`ml-1.5 text-[12px] font-semibold text-primary`}>{t('작은 모임 보기')}</Text></Pressable>
       </View>
     </View>
+  );
+}
+
+// ─── 혹시 여기에 해당되나요? — 건너건너 물어온 것 1건, 조용히 ─────────────────────
+function AskedOfMe({ me, snap }: { me: User; snap: Snapshot }) {
+  const incoming = useMemo(() => requestsForMe(snap, me), [snap, me]);
+  if (incoming.length === 0) return null;
+  return (
+    <HSection title={t('혹시 여기에 해당되나요?')} action={incoming.length > 1 ? `${t('전체보기')} ${incoming.length}` : undefined} onAction={() => nav('/people/requests')}>
+      <IncomingRequestCard item={incoming[0]} compact />
+    </HSection>
+  );
+}
+
+/** 오늘 수업 목록 (색 막대 + 시간) */
+function ClassList({ classes, max }: { classes: HomeToday['classes']; max: number }) {
+  const list = classes.slice(0, max);
+  return (
+    <CardList>
+      {list.map((c, i) => (
+        <Pressable key={c.id} onPress={() => nav(`/classes/${encodeURIComponent(c.name)}`)} style={tw`flex-row items-center px-3.5 py-2.5 ${i === list.length - 1 ? '' : 'border-b border-line'}`}>
+          <View style={[tw`w-1 h-8 rounded-full`, { backgroundColor: `hsl(${c.hue}, 70%, 60%)` }]} />
+          <View style={tw`flex-1 min-w-0 ml-3`}><Text numberOfLines={1} style={tw`text-[14px] font-bold text-ink`}>{c.name}</Text><Text style={tw`text-[12px] text-ink-3`}>{formatTime(c.start)} – {formatTime(c.end)}</Text></View>
+        </Pressable>
+      ))}
+    </CardList>
+  );
+}
+
+function Opps({ list }: { list: HomeToday['opportunities'] }) {
+  if (!list.length) return null;
+  return <HSection title={t('추천 기회')}><View>{list.map((o) => <OppRow key={o.id} o={o} />)}</View></HSection>;
+}
+
+// ─── 학부생 ───────────────────────────────────────────────────────────────────
+function StudentHome({ d, me }: { d: HomeToday; me: User }) {
+  const ctx = localeContext();
+  const hasTT = me.timetable.length > 0;
+  const freeText = d.nextFree ? (lang === 'en' ? `${fmtHours(d.nextFree)} free · ${d.freeTogether} also free` : `${fmtHours(d.nextFree)} 비어요 · 같이 비는 사람 ${d.freeTogether}명`) : '';
+  const nowMinutes = nowMin();
+  return (
+    <>
+      <HSection title={t('오늘 일정')} action={hasTT ? t('전체보기') : undefined} onAction={() => nav('/timetable')}>
+        {!hasTT ? (
+          <Pressable onPress={() => nav('/timetable')} style={tw`rounded-[24px] border border-line bg-white p-4 flex-row items-center`}>
+            <View style={tw`h-11 w-11 rounded-2xl bg-primary-soft items-center justify-center`}><CalendarPlus size={20} color={C.primary} /></View>
+            <View style={tw`flex-1 min-w-0 mx-3`}><Text style={tw`text-[15px] font-bold text-ink`}>{t('시간표 추가')}</Text><Text style={tw`text-[12px] text-ink-3`}>{t('수업을 넣으면 공강이 겹치는 사람을 찾아드려요')}</Text></View>
+            <ChevronRight size={16} color={C.ink3} />
+          </Pressable>
+        ) : (
+          <>
+            {d.classes.length === 0 ? <View style={tw`rounded-[24px] border border-line bg-white px-4 py-3`}><Text style={tw`text-[13px] text-ink-3`}>{t('오늘 수업 없음')}</Text></View> : <ClassList classes={d.classes} max={4} />}
+            {d.nextFree && (
+              <View style={tw`mt-2 rounded-[24px] bg-accent-soft p-4 flex-row items-center`}>
+                <Clock size={18} color={C.primary} />
+                <View style={tw`flex-1 min-w-0 mx-3`}><Text style={tw`text-[13px] font-semibold text-primary`}>{freeText}</Text><Text style={tw`text-[11px] text-ink-3`}>{fmtBlock(d.nextFree)}</Text></View>
+                <Button size="sm" onPress={() => nav('/people?free=1')}>{t('같이할 사람 찾기')}</Button>
+              </View>
+            )}
+          </>
+        )}
+      </HSection>
+
+      <HSection title={t('지금 가까운 사람')} action={t('전체보기')} onAction={() => nav('/people')}>
+        {d.connectNow.length === 0
+          ? <SmallEmpty emoji="🤝" title={t('아직 추천할 사람이 없어요')} description={t('관심사와 찾는 것을 채우면 추천이 시작돼요.')} action={t('사람 둘러보기')} onAction={() => nav('/people')} />
+          : <PeopleStrip people={d.connectNow} />}
+      </HSection>
+
+      <HSection title={t('학교에서 일어나는 것')} action={t('전체보기')} onAction={() => nav('/meet?tab=recommend')}>
+        {d.happening.length === 0
+          ? <SmallEmpty emoji="🏫" title={t('오늘은 학교 행사가 없어요')} description={ctx.campusHappenings.slice(0, 3).join(' · ')} action={t('모임 둘러보기')} onAction={() => nav('/meet?tab=recommend')} />
+          : (
+            <CardList>
+              {d.happening.map((h, i) => h.kind === 'activity'
+                ? <Row key={h.a.id} last={i === d.happening.length - 1} icon={CATEGORY_EMOJI[h.a.category]} color={CATEGORY_COLORS[h.a.category]} title={h.a.title} sub={`${formatTime(h.a.startTime)} · ${h.a.place.name}`} onPress={() => nav(`/activities/${h.a.id}`)} />
+                : <Row key={h.o.id} last={i === d.happening.length - 1} icon={OPP_TYPE_EMOJI[h.o.type]} color={OPP_TYPE_COLORS[h.o.type]} title={h.o.title} sub={`${h.o.startTime ? `${formatTime(h.o.startTime)} · ` : ''}${h.o.host}`} onPress={() => nav(`/opportunities/${h.o.id}`)} />)}
+            </CardList>
+          )}
+      </HSection>
+
+      <HSection title={t('나에게 맞는 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
+        {d.meets.length === 0
+          ? <SmallEmpty emoji="📅" title={t('맞는 모임이 아직 없어요')} action={t('모임 만들기')} onAction={() => nav('/meet/create')} />
+          : <CardList>{d.meets.map((m, i) => <MeetRow key={m.a.id} m={m} last={i === d.meets.length - 1} />)}</CardList>}
+      </HSection>
+
+      {d.now.length > 0 && (
+        <HSection title={t('지금 열린 만남')} action={t('전체보기')} onAction={() => nav('/discover')}>
+          <View>{d.now.map((a: Activity) => <NowActivityRow key={a.id} activity={a} inMin={toMin(a.startTime) - nowMinutes} />)}</View>
+        </HSection>
+      )}
+
+      {d.newPeople.length > 0 && (
+        <HSection title={t('새로운 사람')} action={t('찾기에서 더 보기')} onAction={() => nav('/people?tab=search')}>
+          <PeopleStrip people={d.newPeople} />
+        </HSection>
+      )}
+
+      <Opps list={d.opportunities} />
+    </>
+  );
+}
+
+// ─── 대학원생 — 수업·공강보다 연구 분야 · 연구 일정 · 먼저 간 사람 ─────────────────────
+function GradHome({ d, me }: { d: GradHomeData; me: User }) {
+  const field = me.research?.field;
+  const hasTT = me.timetable.length > 0;
+  return (
+    <>
+      <HSection title={t('이번 주 연구 일정')} action={d.researchWeek.length ? t('전체보기') : undefined} onAction={() => nav('/meet?tab=schedule')}>
+        {d.researchWeek.length === 0
+          ? <SmallEmpty emoji="📚" title={t('이번 주 세미나·리딩 그룹이 없어요')} description={t('같은 분야 사람과 작게 시작해보세요.')} action={t('리딩 그룹 만들기')} onAction={() => nav('/meet/create?category=study')} />
+          : <CardList>{d.researchWeek.map((a, i) => <Row key={a.id} last={i === d.researchWeek.length - 1} icon={CATEGORY_EMOJI[a.category]} color={CATEGORY_COLORS[a.category]} title={a.title} sub={`${formatDate(a.date)} ${formatTime(a.startTime)} · ${a.place.name}`} onPress={() => nav(`/activities/${a.id}`)} />)}</CardList>}
+      </HSection>
+
+      <HSection title={field ? `${t('같은 연구 분야')} · ${field}` : t('같은 연구 분야')} action={d.researchPeople.length && field ? t('전체보기') : undefined} onAction={() => nav(`/people?tab=search${field ? `&q=${encodeURIComponent(field)}` : ''}`)}>
+        {!field
+          ? <SmallEmpty emoji="🔬" title={t('연구 분야를 알려주세요')} description={t('다른 학교 연구실까지, 분야가 겹치는 사람을 먼저 보여드려요.')} action={t('연구 분야 추가')} onAction={() => nav('/profile/edit')} />
+          : d.researchPeople.length === 0
+            ? <SmallEmpty emoji="🔬" title={t('같은 분야 대학원생이 아직 없어요')} action={t('사람 찾아보기')} onAction={() => nav('/people/find')} />
+            : <PeopleStrip people={d.researchPeople} />}
+      </HSection>
+
+      {d.ahead.length > 0 && (
+        <HSection title={t('먼저 간 사람')} action={t('전체보기')} onAction={() => nav('/people?tab=search')} sub={t('박사과정 · 그 분야에서 일하는 선배 — 진로 이야기를 편하게')}>
+          <PeopleStrip people={d.ahead} />
+        </HSection>
+      )}
+
+      <HSection title={t('나에게 맞는 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
+        {d.meets.length === 0
+          ? <SmallEmpty emoji="📅" title={t('맞는 모임이 아직 없어요')} action={t('모임 만들기')} onAction={() => nav('/meet/create')} />
+          : <CardList>{d.meets.map((m, i) => <MeetRow key={m.a.id} m={m} last={i === d.meets.length - 1} />)}</CardList>}
+      </HSection>
+
+      {hasTT && d.classes.length > 0 && (
+        <HSection title={t('오늘 일정')} action={t('전체보기')} onAction={() => nav('/timetable')}>
+          <ClassList classes={d.classes} max={3} />
+        </HSection>
+      )}
+
+      {d.connectNow.length > 0 && (
+        <HSection title={t('같은 학교 사람')} action={t('전체보기')} onAction={() => nav('/people')}>
+          <PeopleStrip people={d.connectNow} />
+        </HSection>
+      )}
+
+      <Opps list={d.opportunities} />
+      <Text style={tw`px-4 mt-6 text-center text-[11px] text-ink-3`}>{t('연구 분야와 연구실은 프로필에서 바꿀 수 있어요. 지도교수는 켤 때만 보여요.')}</Text>
+    </>
+  );
+}
+
+// ─── 졸업생·직장인 ─────────────────────────────────────────────────────────────
+function NewsRow({ n, last }: { n: NetworkNews; last?: boolean }) {
+  const v = useViewer();
+  if (n.kind === 'post' && n.post) {
+    const p = n.post; const author = v.userById(p.authorId);
+    return (
+      <Pressable onPress={() => nav(`/feed/${p.id}`)} style={tw`flex-row items-start px-3.5 py-3 ${last ? '' : 'border-b border-line'}`}>
+        {p.anonymous || !author ? <View style={tw`h-9 w-9 rounded-full bg-surface-2 items-center justify-center`}><Text style={tw`text-[16px]`}>👤</Text></View> : <Avatar emoji={author.avatar.emoji} hue={author.avatar.hue} url={author.avatar.url} size={36} />}
+        <View style={tw`flex-1 min-w-0 ml-3`}><Text numberOfLines={1} style={tw`text-[12px] font-bold text-ink-2`}>{n.who} · {t('새 글')}</Text><Text numberOfLines={2} style={tw`text-[13px] text-ink mt-0.5`}>{p.text}</Text></View>
+      </Pressable>
+    );
+  }
+  if (n.kind === 'meet' && n.meet) {
+    const a = n.meet;
+    return <Row last={last} icon={CATEGORY_EMOJI[a.category]} color={CATEGORY_COLORS[a.category]} title={a.title} sub={`${n.who} · ${formatDate(a.date)} ${formatTime(a.startTime)}`} onPress={() => nav(`/activities/${a.id}`)} />;
+  }
+  return null;
+}
+
+function AlumniHome({ d, me }: { d: AlumniHomeData; me: User }) {
+  const city = cityOf(me);
+  const field = [me.career?.industry, me.career?.role].filter(Boolean).join(' / ');
+  return (
+    <>
+      <HSection title={t('새로운 사람')} action={t('전체보기')} onAction={() => nav('/people')}>
+        {d.connect.length === 0
+          ? <SmallEmpty emoji="🤝" title={t('아직 추천할 사람이 없어요')} action={t('사람 둘러보기')} onAction={() => nav('/people')} />
+          : <PeopleStrip people={d.connect} />}
+      </HSection>
+
+      <HSection title={city ? `${t('내 지역 사람')} · ${city}` : t('내 지역 사람')} action={d.nearby.length ? t('전체보기') : undefined} onAction={() => nav('/people?tab=search')}>
+        {d.nearby.length === 0
+          ? <SmallEmpty emoji="📍" title={city ? t('이 지역에서 활동하는 사람이 아직 없어요') : t('활동 지역을 알려주세요')} description={t('지역을 더하면 같은 도시의 동문을 먼저 보여드려요.')} action={t('활동 지역 추가')} onAction={() => nav('/profile/edit')} />
+          : <PeopleStrip people={d.nearby} />}
+      </HSection>
+
+      <HSection title={field ? `${t('내 분야 사람')} · ${field}` : t('내 분야 사람')} action={d.field.length ? t('전체보기') : undefined} onAction={() => nav('/people?tab=search')}>
+        {d.field.length === 0
+          ? <SmallEmpty emoji="💼" title={field ? t('같은 분야 사람이 아직 없어요') : t('직무·업종을 알려주세요')} description={t('같은 분야의 동문과 자연스럽게 이어져요.')} action={t('직무·업종 추가')} onAction={() => nav('/profile/edit')} />
+          : <PeopleStrip people={d.field} />}
+      </HSection>
+
+      <HSection title={t('이번 주 참여 가능한 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
+        {d.thisWeek.length === 0
+          ? <SmallEmpty emoji="📅" title={t('이번 주 모임이 없어요')} action={t('모임 둘러보기')} onAction={() => nav('/meet')} />
+          : <CardList>{d.thisWeek.map((m, i) => <MeetRow key={m.a.id} m={m} last={i === d.thisWeek.length - 1} />)}</CardList>}
+      </HSection>
+
+      {d.news.length > 0 && (
+        <HSection title={t('내 관계망 소식')} action={t('전체보기')} onAction={() => nav('/feed?tab=following')}>
+          <CardList>{d.news.map((n, i) => <NewsRow key={`${n.kind}-${n.post?.id ?? n.meet?.id ?? n.group?.id}`} n={n} last={i === d.news.length - 1} />)}</CardList>
+        </HSection>
+      )}
+
+      <HSection title={t('내 그룹')} action={t('전체보기')} onAction={() => nav('/meet?tab=groups')}>
+        {d.groups.length === 0
+          ? <SmallEmpty emoji="👥" title={t('아직 참여한 그룹이 없어요')} action={t('그룹 찾기')} onAction={() => nav('/meet?tab=groups')} />
+          : <CardList>{d.groups.map((g, i) => <Row key={g.id} last={i === d.groups.length - 1} icon={g.logo.url ? <Avatar emoji={g.logo.emoji} hue={g.logo.hue} url={g.logo.url} size={40} /> : g.logo.emoji} color={C.primary} title={g.name} sub={`${ORG_TYPE_LABELS[g.type]} · ${g.memberIds.length}${t('명')}`} onPress={() => nav(`/orgs/${g.id}`)} />)}</CardList>}
+      </HSection>
+
+      <Opps list={d.opportunities} />
+      <View style={tw`px-4 mt-6 flex-row items-center justify-center`}><MapPin size={11} color={C.ink3} /><Briefcase size={11} color={C.ink3} /><Text style={tw`ml-1 text-[11px] text-ink-3 text-center shrink`}>{t('지역과 분야는 프로필에서 언제든 바꿀 수 있어요.')}</Text></View>
+    </>
   );
 }
