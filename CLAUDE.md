@@ -35,6 +35,9 @@
 - 거주 지역 `homeCity` ≠ 활동 지역 `activityCity` ≠ GPS. 도시 단위만, 주소 금지. `cityOf(u)` 사용.
 - 네트워크 요청(사람 찾기 › 네트워크에 물어보기)은 `@core/lib/requests`(전달 대상·추천·받은 요청) + `@core/lib/graph`(촌수) + 엔진 `requests.*`. 지인 추천 후보는 본인이 '관심 있어요' 하기 전까지 요청자에게 공개하지 않는다(`server/view.ts sanitizeRequest`).
 - 네트워크 16화면(UX-SPEC 6.7): 사람을 보여줄 때 이유 → 촌수·공통 연결 → 경로 → 프로필 순. 공개 범위는 반드시 `@core/lib/privacy` `profileView`/`connectionStatus` 로 마스킹. 섹션마다 `useSectionState` + `Section/SectionSkeleton/SectionError/SectionEmpty` 로 로딩·부분 오류·빈 상태. 자연어 찾기 `@core/lib/nlsearch`, 2촌·소개 `graph.secondDegree` + 엔진 `intros.*`, 주변·방문 예정 `around.whoIsAround`, 작은 모임 `meet.recommendSmallTables`.
+- 피드 공간 `Post.audience` 재학생/동문/모두 (`@core/lib/feed` `postAudienceOf`·`inMySpace`·`defaultAudience`) — 졸업생 추천 피드에 재학생 글(팀원 모집·혼밥)이 섞이지 않게. 졸업생에게는 시간표·공강·수업·스터디·팀원 모집을 보여주지 않는다.
+- 프로필 질문은 단계별 풀(`@core/data/prompts` `textPromptsFor(stageKind)`·`firstPromptIdFor`), 답에 **한마디**와 함께 연결 요청(`sendFriendRequest(from, to, note)`), 오늘의 질문·서로 아는 사람은 `@core/lib/prompts-fun`. AI 찾기(`/people/find`)는 홈·사람 탭 맨 위에 보이게.
+- 한국어 문구는 번역투 금지 — 용어표는 `docs/UX-SPEC.md` 17절 (커피챗→커피 한잔, 공통 연결→서로 아는 사람, 열려 있는→시간 되는/요즘 가능해요, 의외의 연결→다른 학교, 비슷한 사람).
 - 한국/미국 맥락 프리셋은 `@core/lib/locale-context` `localeContext()` (인증 방법·도시·업종·직무·전공·프리셋).
 - **단계별 화면은 세 갈래** `@core/lib/stage` `stageKind(u)` = 학부생 / 대학원생(석·박사) / 졸업생. 홈(`homeToday`/`gradHome`/`alumniHome`), 피드 컴포저 프롬프트·내 학교 범위(`composerPrompts`, `campusScopes`), 사람·모임 문구(`stageCopy`), 찾는 것 순서(`peopleWantOptions`)가 여기서 나온다. 대학원생 연구 정보 `User.research`(지도교수 기본 비공개)는 엔진 `users.setResearch`. 단계 표는 UX-SPEC 2절. 데모: 설정 › 데모 도구 › 단계 미리보기.
 

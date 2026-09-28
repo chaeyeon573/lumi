@@ -318,6 +318,18 @@ AroundU 가 주는 느낌은 "인맥을 만들어야 한다"가 아니라 **"어
 - **추천** 점수(`feedForYou`): 관심사 주제 +2 · 팔로잉 +3 · 내 학교 +1.5 · 내 그룹 글 +2 · 같은 도시 작성자 +1 · 관심사 겹치는 작성자 +1 · 질문/같이할 사람 +0.5 · 반응 · 시간 감쇠.
 - 스폰서 글은 4개마다 1개(Plus 광고 없음), 내 글 Boost 유지.
 
+### 8.1 피드 공간 — 재학생 / 동문 / 모두 (v3)
+졸업생 피드에 "해커톤 팀 구해요"·"혼밥 하실 분" 같은 재학생 글이 섞이지 않게, 글마다 **공간**(`Post.audience`)이 있다. 공개 범위(누가 볼 수 있나)와 별개로 "어느 피드에 뜨나"를 정한다.
+
+| 공간 | 기본값 (`defaultAudience`) | 추천 탭에 뜨는 사람 (`inMySpace`) |
+| --- | --- | --- |
+| 재학생 | 학부생·대학원생이 쓴 글 | 학부생·대학원생 |
+| 동문 | 졸업생이 쓴 글 | 졸업생 |
+| 모두 | 학교·동아리 공식 글, 후배 질문 받아요(`ama`), 채용(`hiring`), 장학·공모전 정보 | 모두 |
+
+- 값이 없는 옛 글은 `postAudienceOf`가 작성자 단계·주제로 추정한다.
+- 컴포저에 칩 **재학생 / 동문 / 모두** (기본값은 단계·시작 주제로). 팔로잉 탭과 내 학교 › 학교 전체는 공간과 관계없이 다 보인다 — 특정 사람 글을 보고 싶으면 거기서.
+
 ## 9. 프로필 정보 구조
 
 | 구역 | 내용 | 편집 위치 |
@@ -332,6 +344,13 @@ AroundU 가 주는 느낌은 "인맥을 만들어야 한다"가 아니라 **"어
 | 더 알려주기 | 프로필 질문·음성·투표, 이번 학기 목표, 생활권, 찾는 역할, 완성도 % | `/profile/prompts`, `/profile/context` |
 
 프로필은 "남이 나를 보는 화면"이자 "AroundU가 나를 이해하는 설정 화면" — 추천 설정 카드가 그 둘을 잇는다.
+
+### 9.1 프로필 질문 — Hinge식, 단계마다 다른 질문 (v3)
+- 질문 풀은 단계별(`textPromptsFor(stageKind)`): **학부생** 수업·공강·학교 근처, **대학원생** 연구실·학회·"내 연구를 할머니께 설명한다면", **졸업생** 퇴근 후·동네·"후배가 물어보면 얘기해 줄 수 있는 것". 공통 질문(취미·요즘 꽂힌 것·나를 설명하는 이모지…)은 모두. 1번 질문은 단계별 고정(`firstPromptIdFor`: q_now / qg_now / qa_now), 나머지는 카테고리별로 골라 답한다(필수 3개, 최대 6개).
+- 졸업생에게는 시간표·공강·학기 목표·생활권을 묻지도, 보여주지도 않는다(`profileCompletion`도 제외).
+- 사람 상세에서 답은 사진 사이에 큰 카드로. 카드마다 **한마디** → 그 답을 인용한 짧은 말(140자, 연락처 금지)과 함께 연결 요청(`sendFriendRequest(from, to, note)`), 이미 연결된 사이면 메시지로. 받은 요청에 인용과 한마디가 같이 보인다.
+- **오늘의 질문**(`dailyPrompt`): 날마다 바뀌는 단계별 질문 하나, 내 답 + 가까운 사람들의 답(`answersTo`).
+- 사람 카드에는 나와 겹치는 답 하나(`highlightPrompt`), 그리고 **서로 아는 사람**(`mutualPeople`) 아바타와 이름.
 
 ## 10. 학생 → 졸업생 전환
 
@@ -464,3 +483,21 @@ AroundU 가 주는 느낌은 "인맥을 만들어야 한다"가 아니라 **"어
 - API(`api/types.ts`, 엔진 `api/engine.ts`, 서버 권한 `server/index.ts` RULES): `auth.register(RegisterInput)`, `users.setStage(id, stage, career?, homeCity?, activityCity?)`, `users.updateWants`, `users.verify(id, method)`, `relationships.sendFriendRequest`(한도 강제), `searches.save/remove/setAlert/run`, `requests.create/respond/decide/refer/referralDecide/dismiss/close`, `orgs.create/apply/leave`, `activities.create`(orgId + visibility group), `posts.create`(visibility group + groupId).
 - 순수 로직(`lib/`): `requests.ts`(matchesForRequest · audienceForRequest · requestsForMe · referralCandidates), `graph.ts`(degreeOf · pathBetween), `people.ts`(recommendPeople · searchPeople · isAdvancedSearch · searchPresets), `recommend.ts`(matchReasons · REASON_WEIGHTS), `meet.ts`(recommendMeets · recommendGroups · mySchedule), `home.ts`(homeToday · alumniHome), `feed.ts`(feedForYou · feedCampus(scope) · feedFollowing), `network.ts`(stageOf · cityOf · contextLine · schoolBadge · personLine), `wants.ts`, `locale-context.ts`.
 - 시드: `data/seed.ts`(KO) · `data/seed.en.ts`(EN) 끝의 `V2` 맵과 추가 사용자·그룹·모임. mock DB 키 `aroundu.mockdb.v9.<lang>`.
+
+## 17. 한국어 문구 원칙 (v3)
+번역투·낯선 외래어 대신 일상 한국어. 영어판은 `i18n` 사전에서 따로 다듬는다.
+
+| 쓰지 않음 | 씀 |
+| --- | --- |
+| 열려 있는 사람 / Open To | 지금 시간 되는 사람 / 요즘 가능해요 |
+| 지금 열린 만남 · 열린 활동 | 곧 시작하는 모임 · 참여할 수 있는 모임 |
+| 의외의 연결 · 왜 의외인지 | 다른 학교, 비슷한 사람 · 어떤 점이 비슷한지 |
+| 커피챗 | 커피 한잔 |
+| 공통 연결 | 서로 아는 사람 |
+| 연결 부탁 · 연결해줄 수 있나요? | 소개 부탁 · 소개해 줄 수 있어요? |
+| 네트워크에 물어보기 · 관련 네트워크 | 지인들에게 물어보기 · 건너 아는 사이 |
+| 이번에 가요 · 먼저 간 사람 | 출장·여행 가요 · 먼저 가 본 선배 |
+| Study Crew · Plan Together | 스터디 · 같이 시간 정하기 |
+| 당신 | 나 (1인칭) 또는 생략 |
+
+AI 찾기는 숨기지 않는다: 홈과 사람 탭 맨 위에 "찾는 사람을 말로 설명해 보세요 — AI가 조건을 알아듣고 찾아줘요" 입력 카드와 단계별 예시 칩, 결과 화면은 "AI가 이렇게 이해했어요" 조건 칩부터.
