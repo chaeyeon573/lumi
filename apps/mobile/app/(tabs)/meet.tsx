@@ -291,10 +291,14 @@ function ScheduleRow({ a, last }: { a: Activity; last?: boolean }) {
 function MeetExtraRows() {
   const kind = stageKind(useViewer().me);
   const rows: { key: string; icon: ReactNode; title: string; sub: string; to: string }[] = [
-    { key: 'together', icon: <Vote size={18} color={C.primary} />, title: t('같이 계획하기'), sub: t('시간 투표로 정하기'), to: '/together/new' },
-    ...(kind === 'undergrad' ? [{ key: 'crew', icon: <BookOpen size={18} color={C.primary} />, title: t('수업 Study Crew'), sub: t('시간표에서 수업을 골라요'), to: '/timetable' }] : []),
-    { key: 'team', icon: <Users size={18} color={C.primary} />, title: t('팀원 모집하기'), sub: t('역할별로 팀원을 모아요'), to: '/create/activity?kind=group&team=1' },
-    { key: 'now', icon: <Zap size={18} color={C.primary} />, title: t('지금 열린 만남'), sub: t('즉석 만남 · 팀 모집'), to: '/discover' },
+    // 졸업생에게는 수업·스터디·팀원 모집·같이 계획하기(시간 투표)·공강 기반 "지금" 화면을 보여주지 않는다
+    ...(kind === 'alumni' ? [] : [
+      { key: 'together', icon: <Vote size={18} color={C.primary} />, title: t('같이 계획하기'), sub: t('시간 투표로 정하기'), to: '/together/new' },
+      ...(kind === 'undergrad' ? [{ key: 'crew', icon: <BookOpen size={18} color={C.primary} />, title: t('수업 Study Crew'), sub: t('시간표에서 수업을 골라요'), to: '/timetable' }] : []),
+      { key: 'team', icon: <Users size={18} color={C.primary} />, title: t('팀원 모집하기'), sub: t('역할별로 팀원을 모아요'), to: '/create/activity?kind=group&team=1' },
+      { key: 'now', icon: <Zap size={18} color={C.primary} />, title: t('지금 열린 만남'), sub: t('즉석 만남 · 팀 모집'), to: '/discover' },
+    ]),
+    ...(kind === 'alumni' ? [{ key: 'tables', icon: <Users size={18} color={C.primary} />, title: t('작은 모임 · 4~6명'), sub: t('모임 둘러보기'), to: '/meet/tables' }] : []),
     { key: 'campus', icon: <School size={18} color={C.primary} />, title: t('캠퍼스'), sub: `${t('공고')} · ${t('단체')}`, to: '/community?tab=opportunities' },
     { key: 'map', icon: <MapIcon size={18} color={C.primary} />, title: t('지도'), sub: t('주변 활동'), to: '/map' },
   ];

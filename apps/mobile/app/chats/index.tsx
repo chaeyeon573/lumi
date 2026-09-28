@@ -14,6 +14,8 @@ import { nav } from '@/nav';
 import { useViewer } from '@/viewer';
 import { Screen, Avatar, Empty, Button, Tag, Chip, Loading, C } from '@/ui';
 import { ErrorState } from '@/components/b_States';
+import { NoteBubble } from '@/v2/PromptParts';
+import { isAlumniStage } from '@core/lib/network';
 
 type Tab = 'direct' | 'activity' | 'org' | 'requests';
 const last = (r: ChatRoom) => r.messages[r.messages.length - 1];
@@ -43,7 +45,8 @@ export default function ChatInboxScreen() {
   const reqCount = inProposals.length + inRequests.length;
   const orgs = useAppStore((s) => s.organizations);
   const snap = useMemo(() => ({ ...v.snap, organizations: orgs }), [v.snap, orgs]);
-  const free = useMemo(() => whosFree(snap, me, (u) => v.canSeeField(u, 'timetable')), [snap, me, v]);
+  // 공강 기반 "지금 시간 되는 사람"은 재학생에게만 (졸업생에게는 시간표가 없다)
+  const free = useMemo(() => (isAlumniStage(me) ? [] : whosFree(snap, me, (u) => v.canSeeField(u, 'timetable'))), [snap, me, v]);
 
   const avatarOf = (id: string) => { const u = v.userById(id); return { emoji: u?.avatar.emoji ?? '👤', hue: u?.avatar.hue ?? 200, url: u?.avatar.url }; };
 
@@ -117,12 +120,15 @@ export default function ChatInboxScreen() {
           <View style={tw`mb-4`}>
             <View style={tw`flex-row items-center mb-2`}><Users size={15} color={C.ink} /><Text style={tw`ml-1.5 text-[14px] font-bold text-ink`}>{t('받은 친구 요청')} {inRequests.length}</Text></View>
             {inRequests.length === 0 ? <View style={tw`card p-4`}><Text style={tw`text-[13px] text-ink-3`}>{t('받은 친구 요청이 없어요.')}</Text></View> : inRequests.map((q) => { const u = v.userById(q.fromId); const a = avatarOf(q.fromId); return (
-              <View key={q.id} style={tw`card p-3.5 mb-2 flex-row items-center`}>
-                <Pressable onPress={() => nav(`/users/${q.fromId}`)}><Avatar emoji={a.emoji} hue={a.hue} url={a.url} size={40} /></Pressable>
-                <View style={tw`flex-1 min-w-0 ml-3`}><Text style={tw`text-[14px] font-bold text-ink`}>{u?.nickname}</Text><Text style={tw`text-[12px] text-ink-3`}>{relativeTime(q.createdAt)}</Text></View>
-                <Button size="sm" variant="outline" onPress={() => run(() => api.relationships.respondFriendRequest(q.id, false))}>{t('거절')}</Button>
-                <View style={tw`w-2`} />
-                <Button size="sm" onPress={() => run(() => api.relationships.respondFriendRequest(q.id, true), `${u?.nickname}${t('님과 친구가 되었어요!')}`)}>{t('수락')}</Button>
+              <View key={q.id} style={tw`card p-3.5 mb-2`}>
+                <View style={tw`flex-row items-center`}>
+                  <Pressable onPress={() => nav(`/users/${q.fromId}`)}><Avatar emoji={a.emoji} hue={a.hue} url={a.url} size={40} /></Pressable>
+                  <View style={tw`flex-1 min-w-0 ml-3`}><Text style={tw`text-[14px] font-bold text-ink`}>{u?.nickname}</Text><Text style={tw`text-[12px] text-ink-3`}>{relativeTime(q.createdAt)}</Text></View>
+                  <Button size="sm" variant="outline" onPress={() => run(() => api.relationships.respondFriendRequest(q.id, false))}>{t('거절')}</Button>
+                  <View style={tw`w-2`} />
+                  <Button size="sm" onPress={() => run(() => api.relationships.respondFriendRequest(q.id, true), `${u?.nickname}${t('님과 친구가 되었어요!')}`)}>{t('수락')}</Button>
+                </View>
+                <NoteBubble note={q.note} />
               </View>
             ); })}
             <Text style={tw`text-[11px] text-ink-3 mt-1`}>{t('거절해도 상대에게 알림이 가지 않아요.')}</Text>

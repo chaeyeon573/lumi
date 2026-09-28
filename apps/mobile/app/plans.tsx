@@ -14,6 +14,8 @@ import { nav } from '@/nav';
 import { useViewer } from '@/viewer';
 import { Screen, Avatar, Button, Tag, Loading, C } from '@/ui';
 import { ErrorState } from '@/components/b_States';
+import { NoteBubble } from '@/v2/PromptParts';
+import { isAlumniStage } from '@core/lib/network';
 
 const card = tw`card`;
 
@@ -30,6 +32,8 @@ export default function PlansScreen() {
   const intents = useAppStore((s) => s.opportunityIntents);
   const polls = useAppStore((s) => s.timePolls);
   const me = v.me;
+  /** 졸업생에게는 시간표·Study Crew·팀원 모집·같이 계획하기를 보여주지 않는다 (기존 데이터가 있으면 그 목록만) */
+  const alumni = isAlumniStage(me);
   const today = todayISO();
   const openPolls = polls.filter((p) => p.status === 'open' && (p.hostId === me.id || p.inviteeIds.includes(me.id)));
   if (status === 'loading') return <Screen title="My Plans"><Loading /></Screen>;
@@ -65,10 +69,10 @@ export default function PlansScreen() {
   return (
     <Screen title="My Plans">
       <View style={tw`pt-2`}>
-        <View style={tw`mb-5`}>
+        {!(alumni && openPolls.length === 0) && <View style={tw`mb-5`}>
           <View style={tw`flex-row items-end justify-between mb-2`}>
             <View style={tw`flex-row items-center`}><Vote size={15} color={C.primary} /><Text style={tw`ml-1.5 text-[15px] font-bold text-ink`}>{t('시간 정하는 중')}</Text><Text style={tw`ml-1.5 text-[12px] text-ink-3 font-semibold`}>{openPolls.length}</Text></View>
-            <Pressable onPress={() => nav('/together/new')}><Text style={tw`text-[12px] font-semibold text-primary`}>+ Plan Together</Text></Pressable>
+            {alumni ? null : <Pressable onPress={() => nav('/together/new')}><Text style={tw`text-[12px] font-semibold text-primary`}>+ Plan Together</Text></Pressable>}
           </View>
           {openPolls.length === 0 ? <View style={[card, tw`px-4 py-3`]}><Text style={tw`text-[12px] text-ink-3`}>{t('진행 중인 시간 투표가 없어요. 친구들과 만날 시간을 투표로 정해보세요.')}</Text></View> : (
             <View style={card}>{openPolls.map((p, idx) => { const h = v.userById(p.hostId); const voted = !!p.votes[me.id]; const n = Object.keys(p.votes).length; return (
@@ -78,16 +82,19 @@ export default function PlansScreen() {
                 {p.hostId === me.id ? <Tag tone="primary">{t('확정하기')}</Tag> : voted ? <Tag tone="mint">{t('투표 완료')}</Tag> : <Tag tone="primary">{t('투표하기')}</Tag>}
               </Pressable>); })}</View>
           )}
-        </View>
+        </View>}
 
         <Section icon={<Mail size={15} color={C.accent} />} title={t('받은 초대')} count={invites.length + proposalsIn.length + friendReqs.length} empty={t('받은 초대가 없어요.')}>
           {friendReqs.map((r, idx) => { const u = v.userById(r.fromId); return u ? (
-            <View key={r.id} style={tw`flex-row items-center px-3.5 py-3 ${idx === 0 ? '' : 'border-t border-line'}`}>
-              <Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} />
-              <Text style={tw`flex-1 ml-3 text-[13px] text-ink`}><Text style={tw`font-bold`}>{u.nickname}</Text>{t('님의 친구 요청')}</Text>
-              <Button size="sm" variant="outline" onPress={() => run(() => api.relationships.respondFriendRequest(r.id, false))}>{t('거절')}</Button>
-              <View style={tw`w-2`} />
-              <Button size="sm" onPress={() => run(() => api.relationships.respondFriendRequest(r.id, true), t('친구가 되었어요!'))}>{t('수락')}</Button>
+            <View key={r.id} style={tw`px-3.5 py-3 ${idx === 0 ? '' : 'border-t border-line'}`}>
+              <View style={tw`flex-row items-center`}>
+                <Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} />
+                <Text style={tw`flex-1 ml-3 text-[13px] text-ink`}><Text style={tw`font-bold`}>{u.nickname}</Text>{t('님의 친구 요청')}</Text>
+                <Button size="sm" variant="outline" onPress={() => run(() => api.relationships.respondFriendRequest(r.id, false))}>{t('거절')}</Button>
+                <View style={tw`w-2`} />
+                <Button size="sm" onPress={() => run(() => api.relationships.respondFriendRequest(r.id, true), t('친구가 되었어요!'))}>{t('수락')}</Button>
+              </View>
+              <NoteBubble note={r.note} />
             </View>) : null; })}
           {proposalsIn.map((p, idx) => { const u = v.userById(p.fromId); return u ? (
             <View key={p.id} style={tw`flex-row items-center px-3.5 py-3 ${idx === 0 && friendReqs.length === 0 ? '' : 'border-t border-line'}`}>
@@ -114,13 +121,15 @@ export default function PlansScreen() {
             </Pressable>
           ))}
         </Section>
-        <Section icon={<Puzzle size={15} color={C.primary} />} title={t('대기 중인 팀 신청')} count={teamPending.length} empty={t('신청한 팀이 없어요. 발견 › 팀에서 역할이 맞는 팀을 찾아보세요.')}>
+        {!(alumni && teamPending.length === 0) && <Section icon={<Puzzle size={15} color={C.primary} />} title={t('대기 중인 팀 신청')} count={teamPending.length} empty={t('신청한 팀이 없어요. 발견 › 팀에서 역할이 맞는 팀을 찾아보세요.')}>
           {teamPending.map((a, idx) => <Row key={a.id} a={a} first={idx === 0} right={<Tag tone="gold">{t('대기')}</Tag>} />)}
-        </Section>
-        <Section icon={<BookOpen size={15} color={C.primary} />} title={t('Study Crew 일정')} count={crews.length} empty={t('참여 중인 Study Crew가 없어요. 시간표에서 수업을 누르면 만들 수 있어요.')}>
+        </Section>}
+        {!(alumni && crews.length === 0) && <Section icon={<BookOpen size={15} color={C.primary} />} title={t('Study Crew 일정')} count={crews.length} empty={t('참여 중인 Study Crew가 없어요. 시간표에서 수업을 누르면 만들 수 있어요.')}>
           {crews.map((a, idx) => <Row key={a.id} a={a} first={idx === 0} right={<Tag tone="primary">{a.courseName}</Tag>} />)}
-        </Section>
-        <View style={tw`flex-row`}><Button full variant="outline" onPress={() => nav('/timetable')}>{t('내 시간표')}</Button><View style={tw`w-2`} /><Button full onPress={() => nav('/discover')}>{t('활동 찾기')}</Button></View>
+        </Section>}
+        {alumni
+          ? <View style={tw`flex-row`}><Button full onPress={() => nav('/meet')}>{t('모임 둘러보기')}</Button></View>
+          : <View style={tw`flex-row`}><Button full variant="outline" onPress={() => nav('/timetable')}>{t('내 시간표')}</Button><View style={tw`w-2`} /><Button full onPress={() => nav('/discover')}>{t('활동 찾기')}</Button></View>}
       </View>
     </Screen>
   );

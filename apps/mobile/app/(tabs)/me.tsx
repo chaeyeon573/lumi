@@ -12,7 +12,7 @@ import { activeStatuses } from '@core/lib/status';
 import { AUDIENCE_LABELS, privacyOf } from '@core/lib/privacy';
 import { todayISO, formatDateTime } from '@core/lib/format';
 import { statusNow, freeBlocks, todayIdx, nowMin, fmtBlock, toHHMM } from '@core/lib/timetable';
-import { profileCompletion, questionById } from '@core/data/prompts';
+import { profileCompletion } from '@core/data/prompts';
 import type { User } from '@core/types';
 import { myGroupLists } from '@/v2/myGroups';
 import { tw } from '@/tw';
@@ -24,6 +24,7 @@ import { WeekGrid } from '@/components/WeekGrid';
 import { PostCard } from '@/components/PostCard';
 import { SchoolBadge } from '@/v2/SchoolBadge';
 import { StatusPills } from '@/v2/StatusPill';
+import { BigPromptCard, DailyPromptCard } from '@/v2/PromptParts';
 
 /** 헤더 두 번째 줄 — 학생: "경영학과 · '25 졸업 예정" / 석·박사: "컴퓨터과학과 · 석사 과정" / 졸업생: "2018 졸업 · 서울 · AI / Product" */
 function headerLine(me: User, kind: StageKind): string {
@@ -67,7 +68,6 @@ export default function ProfileScreen() {
   const upcoming = activities.filter((a) => a.date >= today && (a.hostId === me.id || participations.some((p) => p.activityId === a.id && p.userId === me.id && (p.status === 'approved' || p.status === 'pending')))).sort((a, b) => (a.date + a.startTime).localeCompare(b.date + b.startTime));
   const meets = activities.filter((a) => participations.some((p) => p.activityId === a.id && p.userId === me.id && p.status === 'approved')).length + activities.filter((a) => a.hostId === me.id).length;
   const completion = profileCompletion(me);
-  const goTo = me.prompts[0];
   const openPolls = polls.filter((p) => p.status === 'open' && (p.hostId === me.id || p.inviteeIds.includes(me.id))).length;
   const saved = intents.filter((i) => i.userId === me.id && (i.saved || i.intent === 'applied')).length;
   const myOrgs = myGroupLists(orgs, me.id).total;
@@ -93,18 +93,18 @@ export default function ProfileScreen() {
             <Text numberOfLines={1} style={tw`text-[13px] text-ink-2`}>{headerLine(me, kind)}</Text>
           </View>
         </View>
-        {goTo?.answer ? (
-          <View style={tw`mt-4 rounded-2xl bg-surface-2 px-4 py-3`}>
-            <View style={tw`flex-row items-center`}><Quote size={11} color={C.verify} /><Text style={tw`ml-1 text-[11px] font-bold text-verify uppercase`}>{questionById(goTo.questionId)?.text}</Text></View>
-            <Text style={tw`mt-1 text-[14px] text-ink-2 italic`}>“{goTo.answer}”</Text>
-          </View>
-        ) : null}
         <View style={tw`mt-4 flex-row`}>
           <Button full icon={<Pencil size={15} color={C.onPrimary} />} onPress={() => nav('/profile/edit')}>{t('프로필 편집')}</Button>
           <View style={tw`w-2`} />
           <Button full variant="secondary" icon={<ShieldCheck size={15} color={C.primary} />} onPress={() => nav('/settings/privacy')}>{t('공개 범위')}</Button>
         </View>
       </View>
+
+      {/* ── 오늘의 질문 — 답하면 내 프로필 질문에 더해진다 ── */}
+      <DailyPromptCard />
+
+      {/* ── 내 질문 답변 — 큰 카드 (사람들이 한마디를 거는 곳) ── */}
+      <MyPrompts me={me} />
 
       {/* ── Open To: 기간이 지나면 자동으로 꺼진다. 한 줄 ── */}
       <Pressable onPress={() => nav('/profile/open-to')} style={tw`mt-4 card p-4 flex-row items-center`}>
@@ -119,14 +119,6 @@ export default function ProfileScreen() {
       {/* ── 단계 카드 ── */}
       {kind === 'undergrad' ? <SemesterCard me={me} /> : kind === 'grad' ? <ResearchCard me={me} /> : <NowCard me={me} />}
 
-      {/* ── 관심사 ── */}
-      <Card>
-        <SectionTitle icon={<Sparkles size={17} color={C.primary} />} right={<EditLink to="/profile/edit" />}>{t('관심사')}</SectionTitle>
-        {me.interests.length === 0
-          ? <Text style={tw`mt-2 text-[13px] text-ink-3`}>{t('관심사를 고르면 비슷한 사람과 모임을 먼저 추천해요.')}</Text>
-          : <View style={tw`mt-3 flex-row flex-wrap`}>{me.interests.slice(0, 8).map((i) => <Pill key={i}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Pill>)}</View>}
-      </Card>
-
       {/* ── 카운트: 그룹 · 연결 · 모임 · 글 ── */}
       <View style={tw`mt-4 card px-2 py-3 flex-row`}>
         {[
@@ -138,7 +130,15 @@ export default function ProfileScreen() {
       </View>
 
       {/* ── 더 보기: 추천 설정 · 시간표 · 상태 · 다가오는 만남 · 더 알려주기 (섹션은 3개까지, 나머지는 그 자리에서 펼친다) ── */}
-      <MoreSections top={16} titles={[t('추천 설정'), kind === 'grad' && me.timetable.length > 0 ? t('이번 주 시간표') : '', t('상태'), upcoming.length ? t('다가오는 만남') : '', t('더 알려주기')]}>
+      <MoreSections top={16} titles={[t('관심사'), t('추천 설정'), kind === 'grad' && me.timetable.length > 0 ? t('이번 주 시간표') : '', t('상태'), upcoming.length ? t('다가오는 만남') : '', t('더 알려주기')]}>
+      {/* ── 관심사 ── */}
+      <Card>
+        <SectionTitle icon={<Sparkles size={17} color={C.primary} />} right={<EditLink to="/profile/edit" />}>{t('관심사')}</SectionTitle>
+        {me.interests.length === 0
+          ? <Text style={tw`mt-2 text-[13px] text-ink-3`}>{t('관심사를 고르면 비슷한 사람과 모임을 먼저 추천해요.')}</Text>
+          : <View style={tw`mt-3 flex-row flex-wrap`}>{me.interests.slice(0, 8).map((i) => <Pill key={i}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Pill>)}</View>}
+      </Card>
+
       {/* ── 추천 설정 — 나만 보는 추천 기준. 단계별 순서(peopleWantOptions/activityWantOptions) ── */}
       <Card>
         <SectionTitle icon={<Target size={17} color={C.primary} />} right={<EditLink to="/profile/wants" />}>{t('추천 설정')}</SectionTitle>
@@ -209,7 +209,7 @@ export default function ProfileScreen() {
           { Icon: MessageSquareText, label: t('프로필 질문'), sub: `${t('프로필 완성')} ${completion.percent}%`, to: '/profile/prompts' },
           { Icon: BookmarkCheck, label: `${t('저장한 사람')} ${savedPeople}`, sub: t('나만 볼 수 있어요'), to: '/profile/saved' },
           { Icon: ShieldCheck, label: t('공개 범위'), sub: AUDIENCE_LABELS[privacyOf(me).scope], to: '/settings/privacy' },
-          { Icon: Target, label: t('목표와 역할'), sub: t('이번 학기 목표 · 생활권 · 찾는 역할'), to: '/profile/context' },
+          { Icon: Target, label: t('목표와 역할'), sub: kind === 'alumni' ? t('찾는 사람·제공할 수 있는 것') : t('이번 학기 목표 · 생활권 · 찾는 역할'), to: '/profile/context' },
           { Icon: Building2, label: t('내 그룹'), sub: `${myOrgs}${t('개')}`, to: '/profile/groups' },
           { Icon: Users, label: t('내 연결'), sub: `${friends}${t('명')}`, to: '/profile/friends' },
           { Icon: Bookmark, label: t('저장·지원 내역'), sub: `${saved}${t('개')}`, to: '/community?tab=opportunities&sub=saved' },
@@ -348,5 +348,31 @@ function TimetableCard({ me }: { me: User }) {
       <SectionTitle icon={<CalendarDays size={17} color={C.primary} />}>{t('이번 주 시간표')}</SectionTitle>
       <Pressable onPress={() => nav('/timetable')} style={tw`mt-3`}><WeekGrid courses={me.timetable} px={18} /></Pressable>
     </Card>
+  );
+}
+
+/** 내 질문 답변 — 큰 카드 2개 + 그 자리에서 더 보기. "질문 바꾸기"로 편집 */
+function MyPrompts({ me }: { me: User }) {
+  const [all, setAll] = useState(false);
+  const answered = me.prompts.filter((p) => p.answer.trim());
+  const shown = all ? answered : answered.slice(0, 2);
+  return (
+    <View style={tw`mt-4`}>
+      <View style={tw`px-1 mb-2 flex-row items-center justify-between`}>
+        <View style={tw`flex-row items-center`}><Quote size={15} color={C.primary} /><Text style={tw`ml-2 text-[18px] font-bold text-ink`}>{t('프로필 질문')}</Text></View>
+        <EditLink to="/profile/prompts" label={t('질문 바꾸기')} />
+      </View>
+      {answered.length === 0 ? (
+        <Pressable onPress={() => nav('/profile/prompts')} style={tw`card p-4 flex-row items-center`}>
+          <Text style={tw`flex-1 text-[13px] text-ink-2`}>{t('질문에 답하면 사람들이 한마디를 걸 수 있어요')}</Text><ChevronRight size={16} color={C.ink3} />
+        </Pressable>
+      ) : shown.map((p) => <View key={p.questionId} style={tw`mb-2.5`}><BigPromptCard prompt={p} /></View>)}
+      {answered.length > 2 ? (
+        <Pressable onPress={() => setAll((x) => !x)} style={tw`h-9 flex-row items-center justify-center`}>
+          <Text style={tw`text-[13px] font-semibold text-primary`}>{all ? t('접기') : `${t('더 보기')} ${answered.length - 2}`}</Text>
+          <ChevronDown size={14} color={C.primary} style={all ? { transform: [{ rotate: '180deg' }] } : undefined} />
+        </Pressable>
+      ) : null}
+    </View>
   );
 }

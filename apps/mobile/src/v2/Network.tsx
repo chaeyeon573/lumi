@@ -170,14 +170,12 @@ export function MaskedPersonRow({ user, reasons }: { user: User; reasons: Reason
   const masked = maskUser(user, view);
   const rs = reasons.filter((r) => (view.city || (r.kind !== 'city' && r.kind !== 'living')) && (view.groups || r.kind !== 'group'));
   const degree = degreeOf(v.snap, me.id, user.id, 3);
-  const mutual = mutualFriends(v.snap, me.id, user.id).length;
   const via = degree && degree >= 2 ? pathBetween(v.snap, me.id, user.id, 3).map((id) => v.userById(id)).filter((u): u is User => !!u && canShowInPath(u)) : [];
   return (
     <View style={tw`mb-3`}>
       <PersonRow user={masked} reasons={rs} actions compact={!view.city} />
       <View style={tw`px-3 mt-1 flex-row items-center flex-wrap`}>
         <Text style={tw`text-[11px] font-semibold text-ink-2`}>{degreeLabel(degree, lang)}</Text>
-        {mutual > 0 ? <Text style={tw`text-[11px] text-ink-3`}> · {t('공통 연결')} {mutual}{t('명')}</Text> : null}
         {via.length > 0 ? <View style={tw`flex-row items-center`}><Text style={tw`text-[11px] text-ink-3`}> · </Text><PathText via={via} to={user.nickname} /></View> : null}
       </View>
       {!view.full && view.reason ? <View style={tw`px-2`}><PrivacyNote text={view.reason} /></View> : null}

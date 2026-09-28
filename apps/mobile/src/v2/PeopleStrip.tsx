@@ -7,8 +7,9 @@ import { nav } from '@/nav';
 import { Avatar } from '@/ui';
 import { SchoolBadge } from './SchoolBadge';
 import { ReasonChips } from './ReasonChips';
+import { PromptQuote } from './PromptParts';
 
-/** 사람 미니 카드 가로 스트립 (웹 HomePage PeopleStrip) — 사진 · 이름 · 학교 ✓ · 한 줄 · 이유 칩 2 */
+/** 사람 미니 카드 가로 스트립 (웹 HomePage PeopleStrip) — 사진 · 이름 · 학교 ✓ · 한 줄 · 질문 답 한 줄 · 이유 칩 2 */
 export function PeopleStrip({ people }: { people: RecommendedPerson[] }) {
   return (
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={tw`-mx-4`} contentContainerStyle={tw`px-4`}>
@@ -22,6 +23,7 @@ export function PeopleStrip({ people }: { people: RecommendedPerson[] }) {
             </View>
           </View>
           <Text numberOfLines={1} style={tw`mt-2 text-[12px] text-ink-2`}>{personLine(u, lang)}</Text>
+          <PromptQuote user={u} />
           <View style={tw`mt-2`}><ReasonChips reasons={reasons} max={2} /></View>
         </Pressable>
       ))}

@@ -29,6 +29,8 @@ export default function FeedScreen() {
     <TabScreen header={<AppHeader />}>
       <Composer />
       <View style={tw`mt-3`}><Segmented<Tab> value={tab} onChange={setTab} options={[['foryou', t('추천')], ['campus', campusTabLabel(kind)], ['following', t('팔로잉')]]} /></View>
+      {/* 졸업생 추천에는 재학생 글이 섞이지 않는다 — 어디서 볼 수 있는지 한 줄만 */}
+      {kind === 'alumni' && tab === 'foryou' ? <Pressable onPress={() => setTab('campus')} style={tw`mt-2 px-1`}><Text style={tw`text-[12px] text-ink-3`}>{t('재학생 글은 내 학교 › 학교 전체에서 볼 수 있어요')}</Text></Pressable> : null}
       <View style={tw`pt-2`}><FeedList tab={tab} /></View>
     </TabScreen>
   );

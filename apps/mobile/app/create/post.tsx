@@ -4,13 +4,14 @@ import { useLocalSearchParams } from 'expo-router';
 import { Plus, X, Lock, ImageOff } from 'lucide-react-native';
 import { t } from '@core/i18n';
 import type { PostInput } from '@core/api';
-import type { PostType, Visibility } from '@core/types';
+import type { PostAudience, PostType, Visibility } from '@core/types';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { ALL_POST_TYPES, POST_TYPE_LABELS, POST_TYPE_EMOJI, TOPIC_TAGS } from '@core/lib/labels';
 import { friendsOf } from '@core/lib/relations';
 import { photo } from '@core/lib/assets';
 import { composerPrompts, type StageKind } from '@core/lib/stage';
+import { defaultAudience } from '@core/lib/feed';
 import { tw } from '@/tw';
 import { useViewer } from '@/viewer';
 import { replace } from '@/nav';
@@ -22,6 +23,8 @@ const EMOJIS = ['📷', '☕', '🍜', '📚', '🏃', '🎸', '🎨', '🌅', '
 /** 데모용 샘플 사진 — 실제 서비스에서는 카메라·앨범 업로드 */
 const SAMPLE_PHOTOS = ['c_cafe_laptop', 'c_espresso', 'c_library', 'c_road_sunset', 'c_stage', 'c_bench', 'c_pizza', 'c_meadow'];
 const MAX_PHOTOS = 4;
+const audiences = (): [PostAudience, string][] => [['students', t('재학생')], ['alumni', t('동문')], ['all', t('모두')]];
+const audienceHelp = (a: PostAudience) => (a === 'students' ? t('재학생만 봐요') : a === 'alumni' ? t('동문만 봐요') : t('모두가 봐요'));
 
 /** 개인 포스트: 사진 1~4장 + 짧은 글, 종류·주제·함께한 사람·관련 활동, 공개 범위와 노출 위치 (웹 CreatePostPage 와 동일) */
 export default function CreatePostScreen() {
@@ -40,6 +43,7 @@ export default function CreatePostScreen() {
     text: '', media: [], tags: [], topics: prompt ? [prompt.key] : [], visibility: 'school', relatedActivityId: params.activity || undefined, relatedOpportunityId: undefined,
     orgId: orgParam && myOrgs.some((o) => o.id === orgParam) ? orgParam : undefined, anonymous: params.anon === '1',
     postType: (params.type as PostType | undefined) || prompt?.postType || 'story', taggedUserIds: [], recruitNext: false, showOnProfile: true, showOnFeed: true,
+    audience: defaultAudience(v.me, params.topic),
   });
   const [tagInput, setTagInput] = useState('');
   const [busy, setBusy] = useState(false);
@@ -58,6 +62,15 @@ export default function CreatePostScreen() {
     <Screen title={form.orgId ? t('조직 소식 작성') : t('게시물 작성')} footer={<View style={tw`flex-row`}><Button full size="lg" disabled={!form.text.trim()} loading={busy} onPress={submit}>{t('게시하기')}</Button></View>}>
       <View style={tw`py-4`}>
         {prompt ? <View style={tw`mb-4 self-start h-8 px-3 rounded-full bg-accent-soft justify-center`}><Text style={tw`text-[13px] font-semibold text-primary`}>{prompt.emoji} {prompt.label}</Text></View> : null}
+        {/* 글이 올라갈 공간 — 재학생 / 동문 / 모두. 기본은 내 단계(후배 질문 받아요·채용은 모두) */}
+        {!form.orgId && (
+          <View style={tw`mb-5`}>
+            <View style={tw`flex-row`}>
+              {audiences().map(([key, label]) => <Chip key={key} active={form.audience === key} onPress={() => patch({ audience: key })}>{label}</Chip>)}
+            </View>
+            <Text style={tw`mt-1.5 text-[12px] text-ink-3`}>{audienceHelp(form.audience ?? 'all')}</Text>
+          </View>
+        )}
         {!form.orgId && <View style={tw`card px-4 mb-5`}><Toggle label={t('익명으로 올리기')} description={t('이름과 사진 대신 "익명"으로 표시돼요. 익명은 글만 올릴 수 있고 학교명만 보여요. 신고 시 운영진이 확인할 수 있어요.')} checked={anon} onChange={(val) => patch({ anonymous: val, orgId: val ? undefined : form.orgId, media: val ? [] : form.media })} /></View>}
         <Field label={t('종류')}><ChipWrap>{ALL_POST_TYPES.filter((pt) => form.orgId ? true : pt !== 'news').map((pt) => <WrapItem key={pt}><Chip size="sm" active={form.postType === pt} onPress={() => patch({ postType: pt })}>{POST_TYPE_EMOJI[pt]} {POST_TYPE_LABELS[pt]}</Chip></WrapItem>)}</ChipWrap></Field>
         <Field label={`${t('사진')} (${form.media.length}/${MAX_PHOTOS})`} hint={anon ? undefined : t('캠퍼스 생활·활동 중심으로. 데모에서는 샘플 사진이나 이모지 카드로 대체해요.')}>

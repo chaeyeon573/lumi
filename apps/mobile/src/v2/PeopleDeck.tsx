@@ -21,6 +21,8 @@ import { LAST_SEEN_KEY } from '@/components/CreateSheet';
 import { useSnapshot } from './useSnapshot';
 import { useConnect } from './PersonActions';
 import { ReasonChips, ReasonList } from './ReasonChips';
+import { PromptQuote } from './PromptParts';
+import { isAlumniStage } from '@core/lib/network';
 import { SchoolBadge } from './SchoolBadge';
 
 const W = Dimensions.get('window').width;
@@ -93,7 +95,8 @@ function RecommendSlide({ user, reasons, interactive = true }: { user: User; rea
   const [pi, setPi] = useState(0);
   const photos = user.photos?.length ? user.photos : user.avatar.url ? [user.avatar.url] : [];
   const common = commonInterests(v.me, user);
-  const canSeeTT = user.timetable.length > 0 && v.canSeeField(user, 'timetable');
+  // 졸업생에게는 공강을 보여주지 않는다
+  const canSeeTT = !isAlumniStage(v.me) && user.timetable.length > 0 && v.canSeeField(user, 'timetable');
   const st = canSeeTT ? statusNow(user.timetable) : null;
   const block = canSeeTT ? freeBlocks(user.timetable, todayIdx()).find((b) => b.end > nowMin()) : null;
   const freeLabel = st?.kind === 'free' && block ? `${t('공강')} ${fmtBlock({ start: Math.max(block.start, nowMin()), end: block.end })}` : user.availability === 'now' ? t('지금 가능') : null;
@@ -122,6 +125,7 @@ function RecommendSlide({ user, reasons, interactive = true }: { user: User; rea
           <View style={tw`mt-1`}><SchoolBadge user={user} withYear /></View>
           <Text numberOfLines={1} style={tw`text-[13px] text-ink-2 mt-0.5`}>{personLine(user, lang)}</Text>
           {city ? <Text numberOfLines={1} style={tw`text-[12px] text-ink-3 mt-0.5`}>{city}{user.activityCity && user.activityCity !== city ? ` · ${t('활동')} ${user.activityCity}` : ''}</Text> : null}
+          <PromptQuote user={user} lines={2} />
         </Pressable>
         {user.interests.length > 0 && (
           <View style={tw`mt-2.5 flex-row flex-wrap`}>

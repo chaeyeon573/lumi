@@ -8,12 +8,13 @@ import { t } from '@core/i18n';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { INTEREST_EMOJI, INTEREST_LABELS, PURPOSE_LABELS, CATEGORY_EMOJI, GOAL_EMOJI, GOAL_LABELS, PERSON_ROLE_LABELS, RESIDENCE_LABELS } from '@core/lib/labels';
-import { commonInterests, mutualFriends } from '@core/lib/relations';
+import { commonInterests } from '@core/lib/relations';
 import { todayISO } from '@core/lib/format';
-import type { ActivityCategory, User } from '@core/types';
+import type { ActivityCategory, ProfilePrompt, User } from '@core/types';
 import { questionById } from '@core/data/prompts';
 import { availabilityText, freeBlocks, todayIdx, fmtBlock, overlapBlocks } from '@core/lib/timetable';
 import { matchReasons, shareableReasons } from '@core/lib/recommend';
+import { isAlumniStage } from '@core/lib/network';
 import { tw } from '@/tw';
 import { WeekGrid } from '@/components/WeekGrid';
 import { useViewer } from '@/viewer';
@@ -22,8 +23,9 @@ import { Screen, Avatar, Tag, Button, BottomSheet, Chip, Cover, Empty, IconBtn, 
 import { SheetItem } from '@/components/PostCard';
 import { ReportSheet } from '@/components/a_ReportSheet';
 import { ProposeSheet } from '@/components/a_ProposeSheet';
-import { PromptAnswerCard, VoicePlayer, PollCard } from '@/components/a_Prompts';
+import { VoicePlayer, PollCard } from '@/components/a_Prompts';
 import { affiliationText, VerifiedBadge, VisibilityTag, Dialog, ActivityRow } from '@/components/a_shared';
+import { BigPromptCard, NoteSheet, MutualLine, MutualSheet, NoteBubble } from '@/v2/PromptParts';
 
 const W = Dimensions.get('window').width;
 
@@ -42,6 +44,8 @@ export default function PersonScreen() {
   const [blockOpen, setBlockOpen] = useState(false);
   const [propose, setPropose] = useState(proposeParam === '1');
   const [pCat, setPCat] = useState<ActivityCategory>((cat as ActivityCategory) || 'coffee');
+  const [noteFor, setNoteFor] = useState<ProfilePrompt | null>(null);
+  const [mutualOpen, setMutualOpen] = useState(false);
   const isMe = !!user && user.id === v.me.id;
   useEffect(() => { if (isMe) replace('/profile'); }, [isMe]);
 
@@ -59,8 +63,16 @@ export default function PersonScreen() {
   const conn = v.connection(user.id);
   const msg = v.canMessage(user.id);
   const common = commonInterests(v.me, user);
-  const mutualF = mutualFriends(v.snap, v.me.id, user.id);
   const see = (f: Parameters<typeof v.canSeeField>[1]) => v.canSeeField(user, f);
+  /** 졸업생이 보거나 졸업생을 볼 때는 시간표·공강·학기 목표·생활권을 보여주지 않는다 */
+  const alumniView = isAlumniStage(v.me) || isAlumniStage(user);
+  const ownerAlumni = isAlumniStage(user);
+  const seeTT = see('timetable') && !alumniView;
+  /** Hinge식 — 질문 답변 카드 사이사이에 사진. 첫 사진은 맨 위 */
+  const answered = see('prompts') ? user.prompts.filter((p) => p.answer.trim()) : [];
+  const photos = user.photos?.length ? user.photos : user.avatar.url ? [user.avatar.url] : [];
+  const interleave = answered.length > 0 && photos.length > 1;
+  const between = interleave ? photos.slice(1) : [];
   const upcoming = v.visibleActivities.filter((a) => a.visibility === 'public' && a.date >= todayISO() && (a.hostId === user.id || v.snap.participations.some((p) => p.activityId === a.id && p.userId === user.id && p.status === 'approved')));
   const hosting = v.visibleActivities.filter((a) => a.hostId === user.id && a.date >= todayISO());
   const userPosts = v.visiblePosts.filter((p) => p.authorId === user.id && p.authorType === 'user' && !p.anonymous);
@@ -69,7 +81,7 @@ export default function PersonScreen() {
   const sharedOpps = v.snap.opportunityIntents.filter((i) => i.userId === user.id).map((i) => oppsAll.find((o) => o.id === i.opportunityId)).filter((o): o is NonNullable<typeof o> => !!o && o.date !== undefined && o.date >= todayISO());
   const adminOrgs = orgs.filter((o) => o.adminIds.includes(user.id));
   const pendingProposal = proposals.find((p) => p.fromId === v.me.id && p.toId === user.id && p.status === 'pending');
-  const reasons = shareableReasons(matchReasons(v.me, user, v.snap, see('timetable')));
+  const reasons = shareableReasons(matchReasons(v.me, user, v.snap, seeTT));
   const connLabel = { friend: t('친구'), activity: t('같은 활동 참가자'), proposal: t('활동 제안 수락'), matched: t('매칭'), none: '' }[conn];
 
   const like = async () => {
@@ -98,10 +110,11 @@ export default function PersonScreen() {
 
   return (
     <Screen title="" right={<IconBtn onPress={() => setMenu(true)}><MoreHorizontal size={20} color={C.ink2} /></IconBtn>} footer={footer}>
-      <PhotoHero user={user} />
+      <PhotoHero user={user} photos={interleave ? photos.slice(0, 1) : photos} />
       <View style={tw`-mt-8`}>
         <View style={tw`card p-4`}>
           <View style={tw`flex-row items-center flex-wrap`}>{user.affiliation.type === 'university' && user.affiliation.emailVerified && <VerifiedBadge kind="school" size={16} label />}{user.identityVerified && <VerifiedBadge kind="identity" size={16} label />}</View>
+          <View style={tw`mt-2`}><MutualLine user={user} big onPress={() => setMutualOpen(true)} /></View>
           {mutual && <View style={[tw`mt-3 rounded-xl px-3 py-2.5 flex-row items-center`, { backgroundColor: C.tint }]}><Heart size={15} color={C.ink} fill={C.ink} /><Text style={tw`ml-2 text-[13px] font-semibold text-ink shrink`}>{t('서로 관심이 있어요. 이제 메시지를 보낼 수 있어요.')}</Text></View>}
           {conn !== 'none' && !mutual && <View style={tw`mt-2 flex-row`}><Tag tone="mint">✓ {connLabel}</Tag></View>}
           {inReq && (
@@ -110,12 +123,12 @@ export default function PersonScreen() {
               <Button size="sm" variant="outline" onPress={() => run(() => api.relationships.respondFriendRequest(inReq.id, false))}>{t('거절')}</Button><View style={tw`w-2`} /><Button size="sm" onPress={() => run(() => api.relationships.respondFriendRequest(inReq.id, true), t('친구가 되었어요!'))}>{t('수락')}</Button>
             </View>
           )}
+          {inReq?.note ? <NoteBubble note={inReq.note} /> : null}
           {see('bio') && user.bio ? <Text style={tw`text-[14px] text-ink-2 leading-6 mt-3`}>{user.bio}</Text> : null}
           {reasons.length > 0 && <View style={tw`mt-3 rounded-xl bg-surface-2 px-3 py-2.5`}>{reasons.slice(0, 4).map((r) => <View key={r.text} style={tw`flex-row items-start mb-1`}><Check size={12} color={C.primary} style={{ marginTop: 2 }} /><Text style={tw`ml-1.5 text-[12px] text-ink-2 shrink`}>{r.text}</Text></View>)}</View>}
-          {(common.length > 0 || mutualF.length > 0) && (
+          {common.length > 0 && (
             <View style={[tw`mt-3 flex-row flex-wrap`, { gap: 6 }]}>
-              {common.length > 0 && <Tag tone="primary">✨ {t('공통 관심사')} {common.map((i) => INTEREST_LABELS[i]).join(', ')}</Tag>}
-              {mutualF.length > 0 && <Tag tone="mint">👥 {t('함께 아는 친구')} {mutualF.length}{t('명')}</Tag>}
+              <Tag tone="primary">✨ {t('공통 관심사')} {common.map((i) => INTEREST_LABELS[i]).join(', ')}</Tag>
             </View>
           )}
         </View>
@@ -132,24 +145,30 @@ export default function PersonScreen() {
           </View>
         )}
 
-        {see('prompts') && (user.prompts.length > 0 || user.voicePrompt || user.poll) && (
+        {see('prompts') && (answered.length > 0 || user.voicePrompt || user.poll) && (
           <View style={tw`mt-3`}>
-            {user.prompts.filter((p) => p.answer.trim()).map((p) => <View key={p.questionId} style={tw`mb-2.5`}><PromptAnswerCard prompt={p} /></View>)}
+            {answered.map((p, i) => (
+              <View key={p.questionId}>
+                <View style={tw`mb-2.5`}><BigPromptCard prompt={p} onNote={() => setNoteFor(p)} /></View>
+                {between[i] ? <InlinePhoto url={between[i]} /> : null}
+              </View>
+            ))}
+            {between.slice(answered.length).map((url) => <InlinePhoto key={url} url={url} />)}
             {user.voicePrompt && <View style={tw`card p-4 mb-2.5`}><View style={tw`flex-row items-center`}><Mic size={12} color={C.primary} /><Text style={tw`ml-1 text-[12px] font-bold text-primary`}>{questionById(user.voicePrompt.questionId)?.text}</Text></View><View style={tw`mt-2 flex-row`}><VoicePlayer duration={user.voicePrompt.durationSec} /></View></View>}
             {user.poll && <PollCard poll={user.poll} ownerName={user.nickname} myVote={user.poll.votes[v.me.id]} onVote={(i) => run(() => api.users.votePoll(user.id, v.me.id, i), t('투표했어요.'))} />}
           </View>
         )}
 
         <View style={tw`mt-3 card p-4`}>
-          <Block label={t('이번 학기 목표')} visible={see('goals') && user.goals.length > 0}><View style={[tw`flex-row flex-wrap`, { gap: 6 }]}>{user.goals.map((g) => <Tag key={g} tone={v.me.goals.includes(g) ? 'primary' : 'neutral'}>{GOAL_EMOJI[g]} {GOAL_LABELS[g]}</Tag>)}</View></Block>
+          {ownerAlumni ? null : <Block label={t('이번 학기 목표')} visible={see('goals') && user.goals.length > 0}><View style={[tw`flex-row flex-wrap`, { gap: 6 }]}>{user.goals.map((g) => <Tag key={g} tone={v.me.goals.includes(g) ? 'primary' : 'neutral'}>{GOAL_EMOJI[g]} {GOAL_LABELS[g]}</Tag>)}</View></Block>}
           {(user.lookingFor.length > 0 || user.canOffer.length > 0) && <Block label={t('찾는 사람 · 제공할 수 있는 것')} visible><View>{user.lookingFor.length > 0 && <Text style={tw`text-[13px] text-ink-2`}>🔍 {user.lookingFor.map((r) => PERSON_ROLE_LABELS[r]).join(', ')}</Text>}{user.canOffer.length > 0 && <Text style={tw`text-[13px] text-ink-2 mt-0.5`}>🛠 {user.canOffer.map((r) => PERSON_ROLE_LABELS[r]).join(', ')}</Text>}</View></Block>}
-          {user.living && <Block label={t('생활권')} visible={see('living')}><Text style={tw`text-[13px] text-ink-2`}>{RESIDENCE_LABELS[user.living.residence]} · {user.living.zone}{v.me.living?.zone === user.living.zone && <Text style={tw`text-mint font-semibold`}> {t('같은 생활권')}</Text>}</Text></Block>}
+          {user.living && !ownerAlumni && <Block label={t('생활권')} visible={see('living')}><Text style={tw`text-[13px] text-ink-2`}>{RESIDENCE_LABELS[user.living.residence]} · {user.living.zone}{v.me.living?.zone === user.living.zone && <Text style={tw`text-mint font-semibold`}> {t('같은 생활권')}</Text>}</Text></Block>}
           <Block label={t('관심사')} visible><View style={tw`flex-row flex-wrap`}>{user.interests.map((i) => <View key={i} style={tw`mb-2`}><Chip size="sm" active={common.includes(i)}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Chip></View>)}</View></Block>
           <Block label={t('하고 싶은 활동')} visible={see('freeTime')}>{user.nowWant ? <View style={tw`rounded-xl bg-primary-soft px-3 py-2 mb-1.5`}><Text style={tw`text-primary text-[13px] font-semibold`}>“{user.nowWant}”</Text></View> : null}<Text style={tw`text-[13px] text-ink-2`}>{user.freeTime || t('아직 작성하지 않았어요')}</Text></Block>
           <Block label={t('좋아하는 것')} visible={see('likes')}><Text style={tw`text-[13px] text-ink-2`}>{user.likes || '—'}</Text></Block>
-          <Block label={t('활동 가능한 시간')} visible={see('timetable') && user.timetable.length > 0 ? true : see('availability') && user.availability !== 'hidden'}>
-            <View style={tw`flex-row items-center`}><Clock size={13} color={C.ink3} /><Text style={tw`ml-1 text-[13px] text-ink-2`}>{availabilityText(user, see('timetable')).text}</Text></View>
-            {see('timetable') && user.timetable.length > 0 && (() => { const fb = freeBlocks(user.timetable, todayIdx()); const ov = v.me.timetable.length ? overlapBlocks(freeBlocks(v.me.timetable, todayIdx()), fb) : []; return (
+          <Block label={t('활동 가능한 시간')} visible={seeTT && user.timetable.length > 0 ? true : see('availability') && user.availability !== 'hidden'}>
+            <View style={tw`flex-row items-center`}><Clock size={13} color={C.ink3} /><Text style={tw`ml-1 text-[13px] text-ink-2`}>{availabilityText(user, seeTT).text}</Text></View>
+            {seeTT && user.timetable.length > 0 && (() => { const fb = freeBlocks(user.timetable, todayIdx()); const ov = v.me.timetable.length ? overlapBlocks(freeBlocks(v.me.timetable, todayIdx()), fb) : []; return (
               <View>
                 <View style={[tw`mt-1.5 flex-row flex-wrap`, { gap: 4 }]}>{fb.map((b) => <Tag key={b.start} tone={ov.some((o) => o.start <= b.start && o.end >= b.end) ? 'mint' : 'neutral'}>{fmtBlock(b)}</Tag>)}</View>
                 <View style={tw`mt-3`}><WeekGrid courses={user.timetable} /></View>
@@ -179,6 +198,8 @@ export default function PersonScreen() {
         {upcoming.filter((a) => a.hostId !== user.id).length > 0 && <View style={tw`mt-3`}><Text style={tw`text-[15px] font-bold text-ink mb-2`}>{t('참여 예정인 공개 활동')}</Text>{upcoming.filter((a) => a.hostId !== user.id).map((a) => <ActivityRow key={a.id} activity={a} />)}</View>}
       </View>
 
+      <NoteSheet user={user} prompt={noteFor} onClose={() => setNoteFor(null)} />
+      <MutualSheet user={user} open={mutualOpen} onClose={() => setMutualOpen(false)} />
       <ProposeSheet open={propose} onClose={() => setPropose(false)} user={user} category={pCat} onCategory={setPCat} oppId={opp} />
 
       <BottomSheet open={menu} onClose={() => setMenu(false)} title={user.nickname}>
@@ -195,10 +216,14 @@ export default function PersonScreen() {
   );
 }
 
-/** 사진 여러 장, 이름은 사진 위에 — 좌/우 탭으로 넘김 */
-function PhotoHero({ user }: { user: User }) {
+/** 질문 카드 사이의 사진 한 장 */
+function InlinePhoto({ url }: { url: string }) {
+  return <View style={tw`mb-2.5 rounded-[24px] overflow-hidden`}><Image source={img(url)} style={{ width: '100%', height: Math.round(W * 1.05) }} contentFit="cover" transition={150} /></View>;
+}
+
+/** 사진 여러 장, 이름은 사진 위에 — 좌/우 탭으로 넘김 (질문 카드 사이에 사진을 둘 때는 첫 장만) */
+function PhotoHero({ user, photos }: { user: User; photos: string[] }) {
   const [pi, setPi] = useState(0);
-  const photos = user.photos?.length ? user.photos : user.avatar.url ? [user.avatar.url] : [];
   const tap = (x: number) => { if (photos.length < 2) return; setPi((p) => (x < W / 2 ? (p - 1 + photos.length) % photos.length : (p + 1) % photos.length)); };
   return (
     <Pressable onPress={(e) => tap(e.nativeEvent.locationX)} style={[tw`-mx-4 h-[440px] overflow-hidden`, { borderBottomLeftRadius: 32, borderBottomRightRadius: 32, backgroundColor: `hsl(${user.avatar.hue}, 60%, 75%)` }]}>

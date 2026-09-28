@@ -69,7 +69,10 @@ export function advancedReason(c: PeopleSearch): 'multi' | 'detailed' | null {
 }
 
 const lc = (s?: string) => (s ?? '').toLowerCase();
-const anyMatch = (values: string[], target: string) => values.some((v) => lc(target).includes(lc(v)) || lc(v).includes(lc(target)));
+const anyMatch = (values: string[], target: string | string[]) => {
+  const ts = (Array.isArray(target) ? target : [target]).filter((x) => x && x.trim());
+  return values.some((v) => ts.some((tg) => lc(tg).includes(lc(v)) || lc(v).includes(lc(tg))));
+};
 
 export function matchesSearch(u: User, c: PeopleSearch): boolean {
   if (c.schools.length && !c.schools.includes(schoolIdOf(u))) return false;
@@ -79,14 +82,15 @@ export function matchesSearch(u: User, c: PeopleSearch): boolean {
   if (c.homeCities.length && !c.homeCities.some((city) => lc(cityOf(u)) === lc(city))) return false;
   if (c.activityCities.length && !c.activityCities.some((city) => citiesOf(u).some((x) => lc(x) === lc(city)))) return false;
   if (c.companies.length && !anyMatch(c.companies, u.career?.company ?? (u.affiliation.type === 'company' ? u.affiliation.companyName : ''))) return false;
-  if (c.industries.length && !anyMatch(c.industries, u.career?.industry ?? '')) return false;
+  // 업종 — 직장인은 업종, 대학원생은 연구 분야·키워드, 학생은 관심사로도 본다 ("AI 대학원생")
+  if (c.industries.length && !anyMatch(c.industries, [u.career?.industry ?? '', u.research?.field ?? '', ...(u.research?.keywords ?? []), ...(u.career ? [] : u.interests.map((i) => INTEREST_LABELS[i]))])) return false;
   if (c.roles.length && !anyMatch(c.roles, u.career?.role ?? (u.affiliation.type === 'company' ? u.affiliation.jobTitle ?? '' : ''))) return false;
   if (c.interests.length && !c.interests.some((i) => u.interests.includes(i))) return false;
   if (c.stages.length && !c.stages.includes(normalizeStage(stageOf(u)))) return false;
   if (c.q?.trim()) {
-    const q = lc(c.q.trim());
-    const hay = [u.nickname, u.affiliation.type === 'university' ? u.affiliation.schoolName : u.affiliation.companyName, majorOf(u), cityOf(u), u.activityCity, u.career?.company, u.career?.industry, u.career?.role, u.research?.field, u.research?.lab, ...(u.research?.keywords ?? []), u.bio, ...u.interests.map((i) => INTEREST_LABELS[i])].filter(Boolean).map(lc);
-    if (!hay.some((h) => h!.includes(q))) return false;
+    // 단어마다 어딘가에 있으면 통과 (프로필 질문 답·연구 키워드·동네까지)
+    const hay = [u.nickname, u.affiliation.type === 'university' ? u.affiliation.schoolName : u.affiliation.companyName, majorOf(u), cityOf(u), u.activityCity, u.region, u.career?.city, u.career?.company, u.career?.industry, u.career?.role, u.research?.field, u.research?.lab, ...(u.research?.keywords ?? []), u.bio, ...u.prompts.map((p) => p.answer), ...u.interests.map((i) => INTEREST_LABELS[i])].filter(Boolean).map((x) => lc(x as string)).join(' · ');
+    if (!lc(c.q.trim()).split(/\s+/).every((w) => hay.includes(w))) return false;
   }
   return true;
 }

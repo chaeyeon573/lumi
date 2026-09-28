@@ -36,6 +36,7 @@ import { StatusPill } from '@/v2/StatusPill';
 import { SaveButton } from '@/v2/PersonActions';
 import { PeopleDeck } from '@/v2/PeopleDeck';
 import { useCloseness, closenessText, fmt, type Closeness } from '@/v2/personView';
+import { AiSearchEntry, NoteBubble } from '@/v2/PromptParts';
 
 type Tab = 'recommend' | 'search' | 'connections';
 const TABS: Tab[] = ['recommend', 'search', 'connections'];
@@ -54,6 +55,7 @@ export default function PeopleScreen() {
   return (
     <SafeAreaView edges={['top']} style={tw`flex-1 bg-white`}>
       <AppHeader search />
+      <AiSearchEntry />
       <View style={tw`px-4 pb-2.5`}><Segmented<Tab> value={tab} onChange={setTab} options={[['recommend', t('추천')], ['search', t('찾기')], ['connections', t('연결')]]} /></View>
       {tab === 'recommend' && <RecommendTab openPaywall={() => setPaywall('open')} freeFirst={params.free === '1'} />}
       {tab === 'search' && <SearchTab key={`${params.q ?? ''}|${params.c ?? ''}`} openPaywall={() => setPaywall('open')} initialQ={params.q} initialC={params.c} />}
@@ -565,12 +567,15 @@ function ConnectionsTab() {
         <View style={tw`mb-3 rounded-[20px] bg-primary-soft p-3`}>
           <Text style={tw`px-1 text-[13px] font-bold text-primary`}>{t('받은 요청')} {incoming.length} · {t('보낸 요청')} {outgoing.length}</Text>
           {incoming.map(({ r, u }) => (
-            <View key={r.id} style={tw`mt-1.5 rounded-2xl bg-white px-3 py-2 flex-row items-center`}>
-              <Pressable onPress={() => nav(`/users/${u.id}`)}><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={40} /></Pressable>
-              <View style={tw`flex-1 min-w-0 mx-2.5`}><Text numberOfLines={1} style={tw`text-[14px] font-bold text-ink`}>{u.nickname}</Text><Text numberOfLines={1} style={tw`text-[11px] text-ink-3`}>{personLine(u, lang)}</Text></View>
-              <Button size="sm" variant="outline" loading={busyId === `d${r.id}`} onPress={() => act(`d${r.id}`, () => api.relationships.respondFriendRequest(r.id, false))}>{t('거절')}</Button>
-              <View style={tw`w-1.5`} />
-              <Button size="sm" loading={busyId === `a${r.id}`} onPress={() => act(`a${r.id}`, () => api.relationships.respondFriendRequest(r.id, true), `${u.nickname}${t('님과 연결되었어요.')}`)}>{t('수락')}</Button>
+            <View key={r.id} style={tw`mt-1.5 rounded-2xl bg-white px-3 py-2`}>
+              <View style={tw`flex-row items-center`}>
+                <Pressable onPress={() => nav(`/users/${u.id}`)}><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={40} /></Pressable>
+                <View style={tw`flex-1 min-w-0 mx-2.5`}><Text numberOfLines={1} style={tw`text-[14px] font-bold text-ink`}>{u.nickname}</Text><Text numberOfLines={1} style={tw`text-[11px] text-ink-3`}>{personLine(u, lang)}</Text></View>
+                <Button size="sm" variant="outline" loading={busyId === `d${r.id}`} onPress={() => act(`d${r.id}`, () => api.relationships.respondFriendRequest(r.id, false))}>{t('거절')}</Button>
+                <View style={tw`w-1.5`} />
+                <Button size="sm" loading={busyId === `a${r.id}`} onPress={() => act(`a${r.id}`, () => api.relationships.respondFriendRequest(r.id, true), `${u.nickname}${t('님과 연결되었어요.')}`)}>{t('수락')}</Button>
+              </View>
+              <NoteBubble note={r.note} />
             </View>
           ))}
           {outgoing.map(({ r, u }) => (

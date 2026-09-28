@@ -11,6 +11,7 @@ import { ALL_CATEGORIES, CATEGORY_EMOJI, CATEGORY_LABELS } from '@core/lib/label
 import { myGroups } from '@core/lib/meet';
 import { localeContext } from '@core/lib/locale-context';
 import { cityOf } from '@core/lib/network';
+import { stageKind } from '@core/lib/stage';
 import { todayISO } from '@core/lib/format';
 import { tw } from '@/tw';
 import { nav, replace } from '@/nav';
@@ -33,6 +34,7 @@ const ISO = /^\d{4}-\d{2}-\d{2}$/;
 export default function CreateMeetScreen() {
   const p = useLocalSearchParams<{ title?: string; category?: string; org?: string; date?: string; start?: string; end?: string }>();
   const v = useViewer();
+  const kind = stageKind(v.me);
   const run = useAppStore((s) => s.run);
   const orgs = useAppStore((s) => s.organizations);
   const schools = useAppStore((s) => s.schools);
@@ -118,12 +120,17 @@ export default function CreateMeetScreen() {
             <View style={tw`mb-4 card px-4`}><Toggle label={t('참가 승인')} description={t('켜면 신청을 확인한 뒤 참가가 확정돼요.')} checked={approval} onChange={setApproval} /></View>
             <Field label={t('종류 (선택)')}><Wrap>{CATS.map((c) => <WChip key={c} active={category === c} onPress={() => setCategory(c)}>{CATEGORY_EMOJI[c]} {CATEGORY_LABELS[c]}</WChip>)}</Wrap></Field>
             <Field label={t('설명 (선택)')}><Textarea placeholder={t('어떤 사람과 무엇을 하고 싶은지 한두 줄이면 충분해요.')} value={description} onChangeText={setDescription} maxLength={500} /></Field>
-            <Text style={tw`mb-2 text-[13px] font-semibold text-ink-3`}>{t('다른 방법으로 모으기')}</Text>
-            <View style={tw`card`}>
-              <ExtraRow first icon={<Vote size={18} color={C.primary} />} title={t('같이 계획하기')} sub={t('시간 투표로 정하기')} to="/together/new" />
-              <ExtraRow icon={<BookOpen size={18} color={C.primary} />} title={t('수업 Study Crew')} sub={t('시간표에서 수업을 골라요')} to="/timetable" />
-              <ExtraRow icon={<Users size={18} color={C.primary} />} title={t('팀원 모집하기')} sub={t('역할별로 팀원을 모아요')} to="/create/activity?kind=group&team=1" />
-            </View>
+            {/* 졸업생에게는 수업·스터디·팀원 모집·같이 계획하기를 보여주지 않는다 */}
+            {kind === 'alumni' ? null : (
+              <>
+                <Text style={tw`mb-2 text-[13px] font-semibold text-ink-3`}>{t('다른 방법으로 모으기')}</Text>
+                <View style={tw`card`}>
+                  <ExtraRow first icon={<Vote size={18} color={C.primary} />} title={t('같이 계획하기')} sub={t('시간 투표로 정하기')} to="/together/new" />
+                  {kind === 'undergrad' ? <ExtraRow icon={<BookOpen size={18} color={C.primary} />} title={t('수업 Study Crew')} sub={t('시간표에서 수업을 골라요')} to="/timetable" /> : null}
+                  <ExtraRow icon={<Users size={18} color={C.primary} />} title={t('팀원 모집하기')} sub={t('역할별로 팀원을 모아요')} to="/create/activity?kind=group&team=1" />
+                </View>
+              </>
+            )}
           </View>
         ) : null}
       </View>

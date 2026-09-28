@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { Pressable, Text, TextInput, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
-import { Search, ArrowRight, X, Clock, Star, Lock, Sparkles, SlidersHorizontal, Send, ShieldCheck } from 'lucide-react-native';
+import { ArrowRight, X, Clock, Star, Lock, Sparkles, SlidersHorizontal, Send, ShieldCheck } from 'lucide-react-native';
 import { t, lang } from '@core/i18n';
 import { api } from '@core/api';
 import { useAppStore } from '@core/store/useAppStore';
@@ -22,6 +22,8 @@ import { useSectionState } from '@/v2/useSectionState';
 import { Section, SectionEmpty, SectionSkeleton, PrivacyNote } from '@/v2/SectionState';
 import { MaskedPersonRow } from '@/v2/Network';
 import { Row } from '@/v2/Forms';
+import { aiExamples } from '@/v2/PromptParts';
+import { stageKind } from '@core/lib/stage';
 
 // ─── 하루 무료 한도 (모바일: platform 저장소) ───────────────────────────────
 const DAILY_KEY = 'aroundu.nlsearch.daily';
@@ -87,7 +89,8 @@ export default function NaturalSearchScreen() {
   const shown = advancedLocked ? results.slice(0, 3) : results;
   const parseFailed = !!parsed && !parsed.chips.some(meaningful);
   const allRemoved = !!parsed && !parseFailed && chips.length === 0;
-  const examples = EXAMPLE_QUERIES[lang === 'en' ? 'en' : 'ko'];
+  // 단계별 예시 먼저, 그다음 공통 예시
+  const examples = [...new Set([...aiExamples(stageKind(me)), ...EXAMPLE_QUERIES[lang === 'en' ? 'en' : 'ko']])].slice(0, 5);
   const recent = me.recentSearches ?? [];
 
   const go = (text: string) => { const s = text.trim(); if (s) router.setParams({ q: s } as never); };
@@ -109,8 +112,8 @@ export default function NaturalSearchScreen() {
     <Screen title={t('사람 찾기')}>
       <View style={tw`pt-2`}>
         <View style={tw`h-12 rounded-full bg-sky-soft border border-primary-soft flex-row items-center pl-3.5 pr-1.5`}>
-          <Search size={17} color={C.ink3} />
-          <TextInput style={tw`flex-1 mx-2 text-[14px] text-ink`} placeholderTextColor={C.ink3} autoFocus={!q} placeholder={t('혹시 찾는 사람이 있나요?')} value={draft} onChangeText={setDraft} onSubmitEditing={() => go(draft)} returnKeyType="search" />
+          <Sparkles size={17} color={C.primary} />
+          <TextInput style={tw`flex-1 mx-2 text-[14px] text-ink`} placeholderTextColor={C.ink3} autoFocus={!q} placeholder={t('찾는 사람을 말로 설명해 보세요')} value={draft} onChangeText={setDraft} onSubmitEditing={() => go(draft)} returnKeyType="search" />
           <Pressable onPress={() => go(draft)} disabled={!draft.trim()} accessibilityLabel={t('찾기')} style={tw`h-9 w-9 rounded-full bg-primary items-center justify-center ${draft.trim() ? '' : 'opacity-35'}`}><ArrowRight size={16} color={C.onPrimary} /></Pressable>
         </View>
         {!plus ? <Text style={tw`mt-1.5 ml-3 text-[11px] text-ink-3`}>{t('오늘 남은 자연어 찾기')} {Math.max(0, FREE_NL_SEARCHES_PER_DAY - used)}/{FREE_NL_SEARCHES_PER_DAY}</Text> : null}
@@ -119,6 +122,7 @@ export default function NaturalSearchScreen() {
       {/* 아직 입력 전 — 예시 · 최근 검색 */}
       {!q && (
         <View style={tw`mt-5`}>
+          <Text style={tw`mb-3 text-[13px] text-ink-2`}>{t('AI가 조건을 알아듣고 찾아줘요')}</Text>
           <H icon={<Sparkles size={13} color={C.ink2} />}>{t('이렇게 찾아보세요')}</H>
           {exampleChips}
           <View style={tw`mt-4`}><H icon={<Clock size={13} color={C.ink2} />}>{t('최근 찾은 것')}</H></View>
@@ -159,7 +163,7 @@ export default function NaturalSearchScreen() {
             )}>
             {/* 읽어낸 조건 */}
             <View style={tw`flex-row flex-wrap items-center`}>
-              <Text style={tw`mr-1.5 mb-1.5 text-[11px] font-bold text-ink-3`}>{t('읽어낸 조건')}</Text>
+              <View style={tw`mr-1.5 mb-1.5 flex-row items-center`}><Sparkles size={11} color={C.ink3} /><Text style={tw`ml-1 text-[11px] font-bold text-ink-3`}>{t('AI가 이렇게 이해했어요')}</Text></View>
               {chips.map((c) => (
                 <View key={chipKey(c)} style={tw`h-8 pl-3 pr-1 mr-1.5 mb-1.5 rounded-full bg-primary-soft flex-row items-center`}>
                   <Text style={tw`text-[12px] font-bold text-primary`}>{c.label}</Text>
@@ -184,9 +188,9 @@ export default function NaturalSearchScreen() {
                   ))}
                 </View>
                 <View style={tw`mt-3 rounded-2xl bg-primary p-3.5`}>
-                  <Text style={tw`text-[16px] font-bold text-white`}>{t('건너건너 물어볼까요?')}</Text>
+                  <Text style={tw`text-[16px] font-bold text-white`}>{t('지인들에게 물어보기')}</Text>
                   <Text style={[tw`mt-0.5 text-[12px]`, { color: C.glassSoft }]}>{t('아는 사람들의 네트워크에 조용히 물어봐요. 해당되는 사람만 답해요.')}</Text>
-                  <Row style={tw`mt-2.5`}><Button size="sm" variant="accent" icon={<Send size={14} color={C.primary} />} onPress={askNetwork}>{t('건너건너 물어보기')}</Button></Row>
+                  <Row style={tw`mt-2.5`}><Button size="sm" variant="accent" icon={<Send size={14} color={C.primary} />} onPress={askNetwork}>{t('지인들에게 물어보기')}</Button></Row>
                 </View>
               </View>
             ) : (
@@ -211,7 +215,7 @@ export default function NaturalSearchScreen() {
                   </View>
                 ) : null}
                 <Pressable onPress={askNetwork} style={tw`mt-4 h-11 rounded-full border border-line bg-white flex-row items-center justify-center`}>
-                  <Send size={14} color={C.primary} /><Text style={tw`ml-1.5 text-[13px] font-semibold text-primary`}>{t('건너건너 물어볼까요?')}</Text>
+                  <Send size={14} color={C.primary} /><Text style={tw`ml-1.5 text-[13px] font-semibold text-primary`}>{t('지인들에게 물어보기')}</Text>
                 </Pressable>
               </>
             )}

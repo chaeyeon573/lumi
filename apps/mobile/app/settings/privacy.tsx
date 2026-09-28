@@ -112,7 +112,8 @@ export default function PrivacySettingsScreen() {
           <View>
             <Text style={tw`text-[12px] text-ink-3`}>{t('멀티프로필 대신 항목별로 공개 범위를 정해요. 정확한 위치는 어떤 설정에서도 공개되지 않아요.')}</Text>
             <View style={tw`card mt-3`}>
-              {FIELDS.map((f, i) => (
+              {/* 졸업생에게는 시간표·이번 학기 목표·생활권 행을 보여주지 않는다 */}
+              {FIELDS.filter((f) => !isAlumniStage(me) || !['timetable', 'goals', 'living'].includes(f.key)).map((f, i) => (
                 <View key={f.key} style={tw`flex-row items-center px-4 py-3 ${i === 0 ? '' : 'border-t border-line'}`}>
                   <View style={tw`flex-1 mr-3`}><Text style={tw`text-[14px] font-medium text-ink`}>{f.label}</Text>{f.desc ? <Text style={tw`text-[11px] text-ink-3`}>{f.desc}</Text> : null}</View>
                   <VisibilityPicker compact value={me.fieldVisibility[f.key]} onChange={(vis) => setField(f.key, vis)} label={`${f.label}${t(' 공개 범위')}`} />

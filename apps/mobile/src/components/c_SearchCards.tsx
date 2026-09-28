@@ -7,6 +7,7 @@ import { api } from '@core/api';
 import { INTEREST_EMOJI, INTEREST_LABELS, PURPOSE_LABELS, ROLE_LABELS, ORG_TYPE_LABELS, CATEGORY_COLORS, CATEGORY_EMOJI, CATEGORY_LABELS } from '@core/lib/labels';
 import { commonInterests } from '@core/lib/relations';
 import { availabilityText } from '@core/lib/timetable';
+import { isAlumniStage } from '@core/lib/network';
 import { matchReasons } from '@core/lib/recommend';
 import { formatDateTime } from '@core/lib/format';
 import { questionById } from '@core/data/prompts';
@@ -35,7 +36,8 @@ export function PersonCard({ user }: { user: User }) {
   const opps = useAppStore((s) => s.opportunities);
   const intents = useAppStore((s) => s.opportunityIntents);
   const reasons = matchReasons(v.me, user, { opportunities: opps, opportunityIntents: intents }, v.canSeeField(user, 'timetable')).filter((r) => r.kind !== 'school');
-  const avail = availabilityText(user, v.canSeeField(user, 'timetable'));
+  // 졸업생이 보거나 졸업생을 볼 때는 공강(시간표)을 쓰지 않는다
+  const avail = availabilityText(user, !isAlumniStage(v.me) && !isAlumniStage(user) && v.canSeeField(user, 'timetable'));
   const showAvail = avail.auto || (v.canSeeField(user, 'availability') && user.availability !== 'hidden');
   const prompt = v.canSeeField(user, 'prompts') && user.prompts[0]?.answer ? user.prompts[0] : null;
 

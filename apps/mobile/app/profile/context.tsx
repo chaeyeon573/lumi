@@ -14,6 +14,7 @@ import { useViewer } from '@/viewer';
 import { Screen, Button, Chip, Input, Segmented, C } from '@/ui';
 import { VisibilityPicker } from '@/components/b_VisibilityPicker';
 import { CompletionMeter } from '@/components/b_PromptComponents';
+import { isAlumniStage } from '@core/lib/network';
 
 /** 라벨 + 오른쪽 슬롯 + 힌트 (웹 Field right 슬롯) — 렌더 밖에 정의해 입력 포커스 유지 */
 function Field({ label, right, hint, children }: { label: string; right?: ReactNode; hint?: string; children: ReactNode }) {
@@ -44,6 +45,8 @@ export default function ProfileContextScreen() {
   const toggle = <T,>(arr: T[], x: T) => (arr.includes(x) ? arr.filter((i) => i !== x) : [...arr, x]);
   const preview = profileCompletion({ ...me, goals, lookingFor, canOffer, living: zone ? { residence, zone } : undefined });
   const mySchool = me.affiliation.type === 'university' ? me.affiliation.schoolId : '';
+  /** 졸업생에게는 이번 학기 목표 · 생활권을 묻지 않는다 */
+  const alumni = isAlumniStage(me);
 
   const save = async () => {
     setBusy(true);
@@ -69,15 +72,15 @@ export default function ProfileContextScreen() {
             </Pressable>
           ))}
         </Field>
-        <Field label={t('이번 학기에 하고 싶은 것')} right={<VisibilityPicker compact value={me.fieldVisibility.goals} onChange={(vis) => run(() => api.users.update(me.id, { fieldVisibility: { ...me.fieldVisibility, goals: vis } }))} />}>
+        {alumni ? null : <Field label={t('이번 학기에 하고 싶은 것')} right={<VisibilityPicker compact value={me.fieldVisibility.goals} onChange={(vis) => run(() => api.users.update(me.id, { fieldVisibility: { ...me.fieldVisibility, goals: vis } }))} />}>
           <Wrap>{ALL_GOALS.map((g) => <View key={g} style={tw`mb-2`}><Chip active={goals.includes(g)} onPress={() => setGoals(toggle(goals, g))}>{GOAL_EMOJI[g]} {GOAL_LABELS[g]}</Chip></View>)}</Wrap>
-        </Field>
+        </Field>}
         <Field label={t('찾는 사람')}><Wrap>{LOOKING_FOR_ROLES.map((r) => <View key={r} style={tw`mb-2`}><Chip active={lookingFor.includes(r)} onPress={() => setLookingFor(toggle(lookingFor, r))}>{PERSON_ROLE_LABELS[r]}</Chip></View>)}</Wrap></Field>
         <Field label={t('내가 제공할 수 있는 것')} hint={t('팀원·공동창업자 추천의 핵심 데이터예요.')}><Wrap>{OFFER_ROLES.map((r) => <View key={r} style={tw`mb-2`}><Chip active={canOffer.includes(r)} onPress={() => setCanOffer(toggle(canOffer, r))}>{PERSON_ROLE_LABELS[r]}</Chip></View>)}</Wrap></Field>
-        <Field label={t('생활권')} hint={t('정확한 기숙사 방·주소·실시간 위치는 저장하지 않아요. \'같은 생활권이에요\' 정도만 보여요.')} right={<VisibilityPicker compact value={me.fieldVisibility.living} onChange={(vis) => run(() => api.users.update(me.id, { fieldVisibility: { ...me.fieldVisibility, living: vis } }))} />}>
+        {alumni ? null : <Field label={t('생활권')} hint={t('정확한 기숙사 방·주소·실시간 위치는 저장하지 않아요. \'같은 생활권이에요\' 정도만 보여요.')} right={<VisibilityPicker compact value={me.fieldVisibility.living} onChange={(vis) => run(() => api.users.update(me.id, { fieldVisibility: { ...me.fieldVisibility, living: vis } }))} />}>
           <Segmented<Residence> value={residence} onChange={setResidence} options={(Object.keys(RESIDENCE_LABELS) as Residence[]).map((r) => [r, RESIDENCE_LABELS[r]] as [Residence, string])} />
           <Input style={tw`mt-2`} placeholder={t('주로 활동하는 구역 (예: 신촌 북쪽, 공학관 근처)')} value={zone} onChangeText={setZone} />
-        </Field>
+        </Field>}
         <Field label={t('관심 있는 연구실·동아리')} hint={t('관심 조직의 모집·행사가 먼저 추천돼요.')}>
           <Wrap>{orgs.filter((o) => o.schoolId === mySchool).map((o) => <View key={o.id} style={tw`mb-2`}><Chip active={orgIds.includes(o.id)} onPress={() => setOrgIds(toggle(orgIds, o.id))}>{o.logo.emoji} {o.name}</Chip></View>)}</Wrap>
         </Field>

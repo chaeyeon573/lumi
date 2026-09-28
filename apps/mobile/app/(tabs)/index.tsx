@@ -25,6 +25,7 @@ import { MeetRow } from '@/v2/MeetRow';
 import { NowActivityRow } from '@/v2/NowActivityRow';
 import { AroundTodayCard } from '@/v2/AroundTodayCard';
 import { HSection, CardList, Row, SmallEmpty, MoreSections } from '@/v2/HomeParts';
+import { AiSearchCard } from '@/v2/PromptParts';
 
 /** 가입 직후 1회 보여주는 첫 사용 카드 (웹 OnboardingPage FIRSTRUN_KEY 와 같은 키) */
 const FIRSTRUN_KEY = 'aroundu.firstrun';
@@ -46,6 +47,7 @@ export default function HomeScreen() {
   return (
     <TabScreen header={<AppHeader search />}>
       <Identity me={me} />
+      <AiSearchCard kind={kind} />
       <FirstRunCard />
       <AroundTodayCard me={me} snap={snap} />
       <AskedOfMe me={me} snap={snap} />
