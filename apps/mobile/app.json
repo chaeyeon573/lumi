@@ -2,33 +2,49 @@
   "expo": {
     "name": "AroundU",
     "slug": "aroundu",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "scheme": "aroundu",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#FFFFFF"
-    },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "app.aroundu.mobile"
+      "bundleIdentifier": "app.aroundu.mobile",
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSPhotoLibraryAddUsageDescription": "시간표 이미지를 사진 앱에 저장할 때 사용해요.",
+        "NSPhotoLibraryUsageDescription": "시간표 이미지를 사진 앱에 저장할 때 사용해요."
+      }
     },
     "android": {
       "package": "app.aroundu.mobile",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#2F80ED"
+      },
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ]
     },
     "plugins": [
       "expo-router",
       "expo-localization",
       "expo-image",
-      "expo-splash-screen",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 180,
+          "backgroundColor": "#F6F9FC",
+          "resizeMode": "contain"
+        }
+      ],
       "expo-status-bar",
       "expo-font",
       [
@@ -46,7 +62,12 @@
     "web": {
       "bundler": "metro",
       "output": "single",
-      "favicon": "./assets/icon.png"
-    }
+      "favicon": "./assets/favicon.png"
+    },
+    "description": "Start with your university. Expand your circle. — 학교에서 시작해 사람을 발견하고, 만나고, 졸업 후에도 서클을 넓혀요.",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "extra": {}
   }
 }
