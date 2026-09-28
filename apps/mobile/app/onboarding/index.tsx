@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Check, GraduationCap, Search, ShieldCheck, Plus, Trash2, Sparkles, ChevronRight, ChevronLeft, ChevronDown, Mail, Briefcase, Upload, BadgeCheck } from 'lucide-react-native';
@@ -23,6 +23,7 @@ import { back, replace } from '@/nav';
 import { Avatar, BottomSheet, Button, Chip, Field, IconBtn, Input, Segmented, C } from '@/ui';
 import { ResearchFields } from '@/v2/ResearchFields';
 import { CityPicker, Heading, Row, Wrap, WChip } from '@/v2/Forms';
+import { openLegal } from '@/legal';
 
 /**
  * 온보딩 (웹 OnboardingPage) — 한 화면 안에서 단계를 넘긴다 (뒤로가기 = 이전 단계).
@@ -49,9 +50,9 @@ function purposesFromOpenTo(openTo: OpenTo[]): Purpose[] {
   return out.size ? [...out] : ['any'];
 }
 
-type Draft = RegisterInput & { avatarType: 'face' | 'masked' | 'back'; email: string; codeSent: boolean; schoolName: string; emailDomain: string; wants: Wants };
+type Draft = RegisterInput & { avatarType: 'face' | 'masked' | 'back'; email: string; codeSent: boolean; schoolName: string; emailDomain: string; wants: Wants; /** 이용약관·개인정보처리방침 동의 (필수, 기본 프로필 단계) */ agreedTerms: boolean };
 const initial: Draft = {
-  nickname: '', birthYear: 2003, gender: 'private', avatar: { emoji: '🙂', hue: 210, photoType: 'face' }, avatarType: 'face',
+  nickname: '', birthYear: 2003, gender: 'private', avatar: { emoji: '🙂', hue: 210, photoType: 'face' }, avatarType: 'face', agreedTerms: false,
   schoolId: '', schoolName: '', emailDomain: '', role: 'undergraduate', department: '', year: THIS_YEAR, emailVerified: false, showSchool: true, showDepartment: true, email: '', codeSent: false,
   stage: 'undergrad', career: {}, openTo: [], homeCity: '', activityCity: '', gradYear: THIS_YEAR + 2, verification: undefined, wants: { people: [], activities: [] },
   interests: [], purposes: [], bio: '', likes: '', freeTime: '', height: undefined, availability: 'after18', preferredPartner: undefined,
@@ -60,7 +61,16 @@ const initial: Draft = {
 /** 세션 동안만 기억하는 초안 (웹 sessionStorage 와 같은 수명) */
 let memoryDraft: { form: Draft; history: Step[] } | null = null;
 
+/** 로그아웃 상태의 시작 화면에서 띄운 경우 — 가입이 끝나면 루트 레이아웃이 알아서 홈을 보여주므로 라우터를 건드리지 않는다 */
+const FlowCtx = createContext<{ embedded: boolean; goBasic: () => void }>({ embedded: false, goBasic: () => {} });
+
+/** 라우트 /onboarding (설정 › 데모 도구 › 새 계정으로 시작하기) */
 export default function OnboardingScreen() {
+  return <OnboardingFlow />;
+}
+
+/** 온보딩 흐름 — onExit: 첫 단계에서 뒤로 (없으면 라우터 back). embedded: 시작 화면(로그아웃 상태)에서 띄움 */
+export function OnboardingFlow({ onExit, embedded = false }: { onExit?: () => void; embedded?: boolean }) {
   const [form, setForm] = useState<Draft>(() => memoryDraft?.form ?? initial);
   const [history, setHistory] = useState<Step[]>(() => memoryDraft?.history ?? ['school']);
   useEffect(() => { memoryDraft = { form, history }; }, [form, history]);
@@ -71,13 +81,14 @@ export default function OnboardingScreen() {
   const raw = history[history.length - 1];
   const step: Step = raw === 'research' && !grad ? (alumni ? 'career' : 'schedule') : raw === 'schedule' && alumni ? 'career' : raw === 'career' && !alumni ? 'schedule' : raw;
   const go = (s: Step) => setHistory((h) => [...h, s]);
-  const prev = () => { if (history.length > 1) setHistory((h) => h.slice(0, -1)); else back(); };
+  const prev = () => { if (history.length > 1) setHistory((h) => h.slice(0, -1)); else (onExit ?? back)(); };
   const n = grad && step === 'schedule' ? 10 : STEP_NO[step];
   const total = grad ? 10 : TOTAL;
   const titles: Record<Step, string> = { school: t('학교 선택'), verify: t('학교 인증하기'), stage: t('현재 상태'), basic: t('기본 프로필'), interests: t('관심사'), region: t('지역'), wants: t('찾는 것'), research: t('연구'), schedule: t('시간표'), career: t('현재 직업') };
   const props = { form, patch };
 
   return (
+    <FlowCtx.Provider value={{ embedded, goBasic: () => setHistory((h) => [...h, 'basic']) }}>
     <SafeAreaView edges={['top', 'bottom']} style={tw`flex-1 bg-white`}>
       <View style={tw`h-14 pl-1 pr-3 flex-row items-center`}>
         <IconBtn onPress={prev}><ChevronLeft size={26} color={C.primary} /></IconBtn>
@@ -99,6 +110,7 @@ export default function OnboardingScreen() {
         </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>
+    </FlowCtx.Provider>
   );
 }
 
@@ -111,11 +123,14 @@ const Next = ({ onPress, disabled, children, loading, variant }: { onPress?: () 
 function useFinish(form: Draft) {
   const setCurrentUser = useAppStore((s) => s.setCurrentUser);
   const showToast = useAppStore((s) => s.showToast);
+  const { embedded, goBasic } = useContext(FlowCtx);
   const [busy, setBusy] = useState(false);
   const finish = async (override: Partial<RegisterInput> = {}) => {
+    // 약관 동의 없이는 계정을 만들지 않는다 (기본 프로필 단계로 돌려보냄)
+    if (!form.agreedTerms) { showToast(t('이용약관과 개인정보처리방침에 동의해주세요.'), 'error'); goBasic(); return; }
     setBusy(true);
     try {
-      const { avatarType: _a, codeSent: _c, schoolName: _s, emailDomain: _d, ...input } = form;
+      const { avatarType: _a, codeSent: _c, schoolName: _s, emailDomain: _d, agreedTerms: _t, ...input } = form;
       const alumni = isAlumniLike(input.stage);
       const openTo = openToFromWants(form.wants);
       const career = alumni ? { ...(input.career ?? {}), city: input.career?.city || input.homeCity || undefined } : undefined;
@@ -139,7 +154,7 @@ function useFinish(form: Draft) {
       memoryDraft = null;
       try { getPlatform().setItem(FIRSTRUN_KEY, '1'); } catch { /* */ }
       await setCurrentUser(user);
-      replace('/');
+      if (!embedded) replace('/');
     } catch (e) { showToast((e as Error).message, 'error'); setBusy(false); }
   };
   return { finish, busy };
@@ -308,7 +323,7 @@ function BasicStep({ form, patch, next }: StepProps) {
   const alumni = isAlumniLike(form.stage);
   const gradYears = alumni ? Array.from({ length: 40 }, (_, i) => THIS_YEAR - i) : Array.from({ length: 6 }, (_, i) => THIS_YEAR + i);
   const birthYears = Array.from({ length: 40 }, (_, i) => THIS_YEAR - 17 - i);
-  const valid = form.nickname.trim().length >= 2 && form.email.includes('@') && !!form.avatar.emoji && !!form.gradYear;
+  const valid = form.nickname.trim().length >= 2 && form.email.includes('@') && !!form.avatar.emoji && !!form.gradYear && form.agreedTerms;
   const majors = ctx.majors.filter((m) => !form.department || m.toLowerCase().includes(form.department.toLowerCase())).slice(0, 6);
   return (
     <>
@@ -333,8 +348,28 @@ function BasicStep({ form, patch, next }: StepProps) {
       <Field label={`${t('이메일')} *`} hint={form.emailVerified && form.email ? t('인증에 쓴 이메일이에요. 로그인에 쓰여요.') : t('로그인에 쓰여요. 프로필에는 보이지 않아요.')}>
         <Input keyboardType="email-address" autoCapitalize="none" placeholder={`you@${form.emailDomain || 'school.edu'}`} value={form.email} onChangeText={(email) => patch({ email })} />
       </Field>
+      <TermsConsent checked={form.agreedTerms} onChange={(agreedTerms) => patch({ agreedTerms })} />
       <Next disabled={!valid} onPress={next} />
     </>
+  );
+}
+
+/** 이용약관·개인정보처리방침 동의 (필수) — App Store 1.2 (UGC) */
+function TermsConsent({ checked, onChange }: { checked: boolean; onChange: (v: boolean) => void }) {
+  const link = (page: 'terms' | 'privacy', label: string) => <Text onPress={() => openLegal(page)} accessibilityRole="link" style={tw`font-semibold text-primary underline`}>{label}</Text>;
+  const terms = link('terms', t('이용약관'));
+  const privacy = link('privacy', t('개인정보처리방침'));
+  return (
+    <View style={tw`rounded-2xl border border-line bg-white px-3.5 py-3`}>
+      <View style={tw`flex-row items-start`}>
+        <Pressable onPress={() => onChange(!checked)} hitSlop={8} accessibilityRole="checkbox" accessibilityState={{ checked }} accessibilityLabel={t('이용약관과 개인정보처리방침에 동의해요 (필수)')}
+          style={tw`h-5 w-5 mt-0.5 rounded-md items-center justify-center ${checked ? 'bg-primary' : 'border-2 border-line bg-white'}`}>
+          {checked ? <Check size={14} color={C.onPrimary} /> : null}
+        </Pressable>
+        <Text onPress={() => onChange(!checked)} style={tw`flex-1 ml-2.5 text-[13px] text-ink leading-5`}>{lang === 'en' ? <>I agree to the {terms} and {privacy} (required)</> : <>{terms}과 {privacy}에 동의해요 (필수)</>}</Text>
+      </View>
+      <Text style={tw`mt-1.5 ml-[30px] text-[12px] text-ink-3`}>{t('괴롭힘·혐오·스팸은 무관용으로 처리해요')}</Text>
+    </View>
   );
 }
 

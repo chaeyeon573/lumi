@@ -5,7 +5,11 @@ import { Button, BottomSheet, Field, Input } from '@/components/ui';
 import { useAppStore } from '@core/store/useAppStore';
 import { api, apiMode } from '@core/api';
 import { localeContext } from '@core/lib/locale-context';
+import { legalUrl } from '@core/lib/legal';
 import { ArrowRight, GraduationCap, Sparkles, Briefcase, Globe } from 'lucide-react';
+
+/** 데모 계정 버튼 — mock 모드이거나 VITE_SHOW_DEMO=1 로 빌드한 경우만 (스토어 빌드에는 숨김) */
+const SHOW_DEMO = apiMode === 'mock' || import.meta.env.VITE_SHOW_DEMO === '1';
 
 /**
  * 1. Welcome — "같은 대학에서, 더 넓은 세상으로."
@@ -81,8 +85,13 @@ export function WelcomePage() {
         <button type="button" onClick={() => setEmailOpen(true)} className="w-full h-11 text-[13px] text-ink-2 press">
           {t('이미 계정이 있나요?')} <span className="font-bold text-primary underline underline-offset-2">{t('로그인')}</span>
         </button>
-        <Button full size="lg" variant="ghost" onClick={login} loading={busy && !emailOpen}>{t('로그인 (데모 계정)')}</Button>
+        {SHOW_DEMO && <Button full size="lg" variant="ghost" onClick={login} loading={busy && !emailOpen}>{t('로그인 (데모 계정)')}</Button>}
         <p className="text-center text-[11px] text-ink-3 pt-1">{t('학교 인증을 거친 사람만 만나요. 정확한 위치는 절대 공개되지 않아요.')}</p>
+        <p className="text-center text-[11px] text-ink-3">
+          <a href={legalUrl('terms')} target="_blank" rel="noreferrer" className="underline underline-offset-2">{t('이용약관')}</a>
+          <span className="mx-1.5">·</span>
+          <a href={legalUrl('privacy')} target="_blank" rel="noreferrer" className="underline underline-offset-2">{t('개인정보처리방침')}</a>
+        </p>
       </div>
 
       <BottomSheet open={emailOpen} onClose={() => setEmailOpen(false)} title={t('이메일로 로그인')}>

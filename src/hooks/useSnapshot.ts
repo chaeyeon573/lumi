@@ -4,7 +4,9 @@ import type { Snapshot } from '@core/api/types';
 
 /** 스토어의 전체 스냅샷 — core 순수 함수(recommendPeople · homeToday · requestsForMe …)에 그대로 넘긴다 */
 export function useSnapshot(): Snapshot {
-  const users = useAppStore((s) => s.users);
+  const allUsers = useAppStore((s) => s.users);
+  /** 탈퇴·이용 정지 사용자는 추천·네트워크 계산에서 뺀다 (대화 기록 표시는 userById 가 전체 목록으로 찾는다) */
+  const users = useMemo(() => allUsers.filter((u) => !u.deleted && !u.suspended), [allUsers]);
   const schools = useAppStore((s) => s.schools);
   const organizations = useAppStore((s) => s.organizations);
   const activities = useAppStore((s) => s.activities);

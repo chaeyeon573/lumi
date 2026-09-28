@@ -23,6 +23,7 @@ import { verificationLabel } from '@core/lib/network';
 import { DEMO_TIMETABLE as DEMO_TIMETABLE_KO } from '@core/data/seed';
 import { DEMO_TIMETABLE as DEMO_TIMETABLE_EN } from '@core/data/seed.en';
 import { purposesFromOpenTo } from '@/components/profile_OpenToChips';
+import { legalUrl } from '@core/lib/legal';
 
 /**
  * 온보딩 9화면 — 1 Welcome(/welcome) 은 WelcomePage, 2~9 는 여기.
@@ -46,9 +47,9 @@ const isAlumniLike = (s?: Stage) => s === 'alumni' || s === 'professional';
 /** 입학연도 추정 — 졸업(예정)연도에서 과정 길이를 뺀다 (affiliation.year 용) */
 const entryYearOf = (stage: Stage | undefined, gradYear: number) => (isAlumniLike(stage) ? gradYear : stage === 'phd' ? gradYear - 5 : stage === 'masters' ? gradYear - 2 : gradYear - 4);
 
-type Draft = RegisterInput & { avatarType: 'face' | 'masked' | 'back'; email: string; codeSent: boolean; schoolName: string; emailDomain: string; wants: Wants };
+type Draft = RegisterInput & { avatarType: 'face' | 'masked' | 'back'; email: string; codeSent: boolean; schoolName: string; emailDomain: string; wants: Wants; /** 이용약관·개인정보처리방침 동의 (필수, 기본 프로필 단계) */ agreedTerms: boolean };
 const initial: Draft = {
-  nickname: '', birthYear: 2003, gender: 'private', avatar: { emoji: '🙂', hue: 210, photoType: 'face' }, avatarType: 'face',
+  nickname: '', birthYear: 2003, gender: 'private', avatar: { emoji: '🙂', hue: 210, photoType: 'face' }, avatarType: 'face', agreedTerms: false,
   schoolId: '', schoolName: '', emailDomain: '', role: 'undergraduate', department: '', year: THIS_YEAR, emailVerified: false, showSchool: true, showDepartment: true, email: '', codeSent: false,
   stage: 'undergrad', career: {}, openTo: [], homeCity: '', activityCity: '', gradYear: THIS_YEAR + 2, verification: undefined, wants: { people: [], activities: [] },
   interests: [], purposes: [], bio: '', likes: '', freeTime: '', height: undefined, availability: 'after18', preferredPartner: undefined,
@@ -113,9 +114,11 @@ function useFinish(form: Draft) {
   const showToast = useAppStore((s) => s.showToast);
   const [busy, setBusy] = useState(false);
   const finish = async (override: Partial<RegisterInput> = {}) => {
+    // 약관 동의 없이는 계정을 만들지 않는다 (기본 프로필 단계로 돌려보냄)
+    if (!form.agreedTerms) { showToast(t('이용약관과 개인정보처리방침에 동의해주세요.'), 'error'); nav('/onboarding/basic'); return; }
     setBusy(true);
     try {
-      const { avatarType: _a, codeSent: _c, schoolName: _s, emailDomain: _d, ...input } = form;
+      const { avatarType: _a, codeSent: _c, schoolName: _s, emailDomain: _d, agreedTerms: _t, ...input } = form;
       const alumni = isAlumniLike(input.stage);
       const openTo = openToFromWants(form.wants);
       const career = alumni ? { ...(input.career ?? {}), city: input.career?.city || input.homeCity || undefined } : undefined;
@@ -323,7 +326,7 @@ function BasicStep({ form, patch, next }: StepProps) {
   const alumni = isAlumniLike(form.stage);
   const gradYears = alumni ? Array.from({ length: 40 }, (_, i) => THIS_YEAR - i) : Array.from({ length: 6 }, (_, i) => THIS_YEAR + i);
   const birthYears = Array.from({ length: 40 }, (_, i) => THIS_YEAR - 17 - i);
-  const valid = form.nickname.trim().length >= 2 && form.email.includes('@') && !!form.avatar.emoji && !!form.gradYear;
+  const valid = form.nickname.trim().length >= 2 && form.email.includes('@') && !!form.avatar.emoji && !!form.gradYear && form.agreedTerms;
   return (
     <>
       <Heading title={t('기본 프로필을 만들어요')} sub={t('직함이 아니라 사람이 먼저예요. 이름·전공·졸업연도만 있으면 돼요.')} />
@@ -353,8 +356,25 @@ function BasicStep({ form, patch, next }: StepProps) {
       <Field label={t('이메일')} required hint={form.emailVerified && form.email ? t('인증에 쓴 이메일이에요. 로그인에 쓰여요.') : t('로그인에 쓰여요. 프로필에는 보이지 않아요.')}>
         <Input type="email" inputMode="email" placeholder={`you@${form.emailDomain || 'school.edu'}`} value={form.email} onChange={(e) => patch({ email: e.target.value })} />
       </Field>
+      <TermsConsent checked={form.agreedTerms} onChange={(agreedTerms) => patch({ agreedTerms })} />
       <Button full size="lg" disabled={!valid} onClick={next}>{t('다음')}</Button>
     </>
+  );
+}
+
+/** 이용약관·개인정보처리방침 동의 (필수) — App Store 1.2 (UGC) */
+function TermsConsent({ checked, onChange }: { checked: boolean; onChange: (v: boolean) => void }) {
+  const link = (page: 'terms' | 'privacy', label: string) => <a href={legalUrl(page)} target="_blank" rel="noreferrer" className="font-semibold text-primary underline underline-offset-2">{label}</a>;
+  const terms = link('terms', t('이용약관'));
+  const privacy = link('privacy', t('개인정보처리방침'));
+  return (
+    <div className="rounded-2xl border border-line bg-surface px-3.5 py-3">
+      <label className="flex items-start gap-2.5 cursor-pointer">
+        <input type="checkbox" checked={checked} onChange={(e) => onChange(e.target.checked)} aria-label={t('이용약관과 개인정보처리방침에 동의해요 (필수)')} className="mt-0.5 h-5 w-5 shrink-0 accent-primary" />
+        <span className="text-[13px] text-ink leading-snug">{lang === 'en' ? <>I agree to the {terms} and {privacy} (required)</> : <>{terms}과 {privacy}에 동의해요 (필수)</>}</span>
+      </label>
+      <p className="mt-1.5 pl-[30px] text-[12px] text-ink-3">{t('괴롭힘·혐오·스팸은 무관용으로 처리해요')}</p>
+    </div>
   );
 }
 

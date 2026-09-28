@@ -3,18 +3,20 @@ import { useNavigate } from 'react-router-dom';
 import { PALETTES, type PaletteId } from '@core/theme/tokens';
 import { PALETTE_IDS, currentPalette, setPalette } from '@/lib/palette';
 import { t, lang, setLang } from '@core/i18n';
-import { ChevronRight, Lock, ShieldAlert, Bell, MapPin, LogOut, RotateCcw, Bug, User, Sparkles, Receipt, GraduationCap, Target, BellRing, Coffee, Bookmark, SplitSquareVertical } from 'lucide-react';
+import { ChevronRight, Lock, ShieldAlert, Bell, MapPin, LogOut, RotateCcw, Bug, User, Sparkles, Receipt, GraduationCap, Target, BellRing, Coffee, Bookmark, SplitSquareVertical, Trash2, FileText, Shield, LifeBuoy, ExternalLink } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Toggle, Button, Segmented } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
-import { api } from '@core/api';
+import { api, apiMode } from '@core/api';
 import { isAlumniStage, stageLabel, stageOf } from '@core/lib/network';
 import { stageKind, STAGE_KIND_LABELS, type StageKind } from '@core/lib/stage';
 import { DEMO_STAGE_PROMPTS } from '@core/data/prompts-demo';
 import { activeStatus } from '@core/lib/status';
 import { statusText } from '@/components/people_StatusPill';
 import { PARTIAL_FAIL_KEY } from '@/hooks/useSectionState';
+import { legalUrl, type LegalPageKey } from '@core/lib/legal';
+import { DeleteAccountSheet } from '@/components/settings_DeleteAccountSheet';
 
 export function SettingsPage() {
   const nav = useNavigate();
@@ -29,6 +31,12 @@ export function SettingsPage() {
   const plus = me.plan === 'plus';
   const myStatus = activeStatus(me);
   const [palette, setPaletteState] = useState<PaletteId>(() => currentPalette());
+  const [deleteOpen, setDeleteOpen] = useState(false);
+  const legal: { Icon: typeof User; label: string; page: LegalPageKey }[] = [
+    { Icon: FileText, label: t('이용약관'), page: 'terms' },
+    { Icon: Shield, label: t('개인정보처리방침'), page: 'privacy' },
+    { Icon: LifeBuoy, label: t('고객지원'), page: 'support' },
+  ];
   const items = [
     { Icon: User, label: t('프로필 편집'), desc: t('사진 · 전공 · 거주 도시 · 관심사'), to: '/profile/edit' },
     { Icon: Target, label: t('추천 설정'), desc: t('AroundU가 나를 이해하는 기준'), to: '/profile/wants' },
@@ -117,8 +125,20 @@ export function SettingsPage() {
           <Row Icon={Receipt} label={t('과금 구조')} desc={t('무료 · AroundU+ · 부스트')} onClick={() => nav('/pricing')} />
         </div>
 
+        {/* ── 약관 · 개인정보 · 고객지원 (서버 공개 페이지) ── */}
+        <div className="card divide-y divide-line">
+          {legal.map((l) => (
+            <a key={l.page} href={legalUrl(l.page)} target="_blank" rel="noreferrer" className="w-full flex items-center gap-3 px-4 py-3.5 text-left press">
+              <l.Icon size={18} className="text-ink-2" />
+              <span className="flex-1 text-[14px] font-semibold">{l.label}</span>
+              <ExternalLink size={16} className="text-ink-3" />
+            </a>
+          ))}
+        </div>
+
         <div className="card divide-y divide-line">
           <button onClick={async () => { await logout(); nav('/welcome', { replace: true }); }} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press"><LogOut size={18} className="text-ink-2" /><span className="flex-1 text-[14px] font-semibold">{t('로그아웃')}</span></button>
+          <Row Icon={Trash2} tone="danger" label={t('계정 삭제')} desc={t('프로필과 활동 기록을 영구히 지워요')} onClick={() => setDeleteOpen(true)} />
         </div>
 
         {/* ── 데모 도구 ── */}
@@ -142,8 +162,9 @@ export function SettingsPage() {
           <Row Icon={Bug} label={t('오류 상태 미리보기')} desc={t('다음 API 요청 1회를 실패시켜 오류 화면을 확인해요')} onClick={() => { api.system.failNext(); showToast(t('다음 요청이 실패해요. 홈으로 돌아가 새로고침해보세요.')); init(); }} />
           <Row Icon={RotateCcw} tone="danger" label={t('데모 데이터 초기화')} desc={t('모든 변경 사항을 지우고 예시 데이터로 되돌려요')} onClick={async () => { await api.system.reset(); await logout(); nav('/welcome', { replace: true }); showToast(t('데모 데이터를 초기화했어요.')); }} />
         </div>
-        <p className="text-center text-[11px] text-ink-3">AroundU MVP · mock API (localStorage)</p>
+        <p className="text-center text-[11px] text-ink-3">{apiMode === 'mock' ? 'AroundU MVP · mock API (localStorage)' : 'AroundU'}</p>
       </div>
+      <DeleteAccountSheet open={deleteOpen} onClose={() => setDeleteOpen(false)} />
     </div>
   );
 }

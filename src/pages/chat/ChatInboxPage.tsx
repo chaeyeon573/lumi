@@ -9,6 +9,7 @@ import { Avatar, EmptyState, Button, Tag, CardSkeleton, ErrorState, Chip } from 
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
+import { displayAvatar, displayName } from '@core/lib/deleted';
 import { relativeTime } from '@core/lib/format';
 import { CATEGORY_EMOJI, CATEGORY_LABELS } from '@core/lib/labels';
 import type { ChatRoom } from '@core/types';
@@ -77,12 +78,12 @@ export function ChatInboxPage() {
                 const org = r.orgId ? v.orgById(r.orgId) : undefined;
                 const lm = last(r);
                 const n = unread(r);
-                const avatar = other?.avatar ?? org?.logo ?? { emoji: r.type === 'activity' ? '🗓️' : '🏛️', hue: 220 };
+                const avatar = (other ? displayAvatar(other) : undefined) ?? org?.logo ?? { emoji: r.type === 'activity' ? '🗓️' : '🏛️', hue: 220 };
                 return (
                   <button key={r.id} onClick={() => nav(`/chats/${r.id}`)} className="w-full flex items-center gap-3 py-3.5 text-left press">
                     {r.type === 'direct' ? <Avatar emoji={avatar.emoji} hue={avatar.hue} url={avatar.url} size={52} /> : <span className="h-[52px] w-[52px] rounded-full bg-primary text-white grid place-items-center shrink-0">{r.type === 'activity' ? <Users size={20} /> : <Building2 size={20} />}</span>}
                     <div className="flex-1 min-w-0 flex items-center gap-2">
-                      <span className={cn('text-[16px] font-semibold text-primary truncate shrink-0 max-w-[45%]')}>{other?.nickname ?? r.title}</span>
+                      <span className={cn('text-[16px] font-semibold text-primary truncate shrink-0 max-w-[45%]')}>{other ? displayName(other) : r.title}</span>
                       <span className={cn('text-[15px] truncate', n > 0 ? 'text-ink' : 'text-ink-2')}>· {lm?.text ?? t('대화를 시작해보세요')}</span>
                     </div>
                     <span className="text-[12px] text-ink-3 shrink-0">{lm ? relativeTime(lm.createdAt) : ''}</span>

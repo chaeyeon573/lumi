@@ -12,6 +12,7 @@ import { POST_TYPE_LABELS, topicLabel, CATEGORY_EMOJI } from '@core/lib/labels';
 import { isTeamActivity } from '@core/lib/discover';
 import { cn } from '@core/lib/cn';
 import { ReportSheet } from '@/components/cards/ReportSheet';
+import { displayAvatar, displayName as userName } from '@core/lib/deleted';
 
 export function PostCard({ post: p, className, openComments }: { post: Post; className?: string; /** 상세 화면: 댓글을 처음부터 펼친다 */ openComments?: boolean }) {
   const nav = useNavigate();
@@ -39,13 +40,13 @@ export function PostCard({ post: p, className, openComments }: { post: Post; cla
   const isMine = p.authorId === v.me.id;
 
   const anon = !!p.anonymous;
-  const displayName = anon ? t('익명') : org?.name ?? author?.nickname ?? t('알 수 없음');
+  const displayName = anon ? t('익명') : org?.name ?? userName(author, t('알 수 없음'));
   const TextBlock = () => (<>
     <p className={cn('leading-relaxed mt-1', p.media.length ? 'text-[15px]' : 'text-[17px]')}>{p.text}</p>
     {tagged.filter((x) => x.ok || x.id === v.me.id || isMine).length > 0 && <div className="mt-1 text-[12px] text-ink-2 flex items-center gap-1 flex-wrap"><Users size={11} className="text-ink-3" />{t('함께:')} {tagged.filter((x) => x.ok || x.id === v.me.id || isMine).map((x) => <button key={x.id} onClick={() => nav(`/users/${x.id}`)} className="font-semibold">{x.u!.nickname}{!x.ok && <span className="text-ink-3 font-normal"> ({t('승인 대기')})</span>}</button>)}</div>}
     {(p.tags.length > 0 || p.topics?.length || p.courseTag) && <div className="mt-1 text-[12px] text-primary">{[...(p.topics ?? []).map((k) => `#${topicLabel(k)}`), ...(p.courseTag ? [`📚${p.courseTag}`] : []), ...p.tags.map((tg) => `#${tg}`)].join(' ')}</div>}
   </>);
-  const avatar = anon ? { emoji: '🫥', hue: 220 } : org ? org.logo : author?.avatar ?? { emoji: '👤', hue: 200 };
+  const avatar = anon ? { emoji: '🫥', hue: 220 } : org ? org.logo : displayAvatar(author);
   const goAuthor = () => { if (anon) return; nav(org ? `/orgs/${org.id}` : `/users/${p.authorId}`); };
   const anonSchool = anon && author?.affiliation.type === 'university' ? author.affiliation.schoolName : '';
 
@@ -94,8 +95,8 @@ export function PostCard({ post: p, className, openComments }: { post: Post; cla
         {comments && (
           <div className="mt-3 border-t border-line pt-3 space-y-2">
             {p.comments.length === 0 && <p className="text-[12px] text-ink-3">{t('첫 댓글을 남겨보세요.')}</p>}
-            {p.comments.map((c) => { const u = v.userById(c.authorId); const cAnon = anon; return (
-              <div key={c.id} className="flex gap-2 text-[13px]"><Avatar emoji={cAnon ? '🫥' : (u?.avatar.emoji ?? '👤')} hue={cAnon ? 220 : (u?.avatar.hue ?? 200)} url={cAnon ? undefined : u?.avatar.url} size={24} /><div><b className="mr-1">{cAnon ? (c.authorId === p.authorId ? t('글쓴이') : t('익명')) : u?.nickname}</b>{c.text}<span className="text-ink-3 text-[11px] ml-1.5">{relativeTime(c.createdAt)}</span></div></div>
+            {p.comments.map((c) => { const u = v.userById(c.authorId); const cAnon = anon; const ua = displayAvatar(u); return (
+              <div key={c.id} className="flex gap-2 text-[13px]"><Avatar emoji={cAnon ? '🫥' : ua.emoji} hue={cAnon ? 220 : ua.hue} url={cAnon ? undefined : ua.url} size={24} /><div><b className="mr-1">{cAnon ? (c.authorId === p.authorId ? t('글쓴이') : t('익명')) : userName(u)}</b>{c.text}<span className="text-ink-3 text-[11px] ml-1.5">{relativeTime(c.createdAt)}</span></div></div>
             ); })}
             <form className="flex gap-2 pt-1" onSubmit={async (e) => { e.preventDefault(); if (!text.trim()) return; await run(() => api.posts.comment(p.id, v.me.id, text.trim())); setText(''); }}>
               <Input placeholder={t('댓글 달기…')} value={text} onChange={(e) => setText(e.target.value)} className="h-10" />

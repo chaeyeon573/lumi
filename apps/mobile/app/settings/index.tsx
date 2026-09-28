@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import * as Updates from 'expo-updates';
-import { ChevronRight, Lock, ShieldAlert, Bell, MapPin, LogOut, RotateCcw, Bug, User, Users } from 'lucide-react-native';
+import Constants from 'expo-constants';
+import { ChevronRight, Lock, ShieldAlert, Bell, MapPin, LogOut, RotateCcw, Bug, User, Users, Trash2, FileText, Shield, LifeBuoy, ExternalLink } from 'lucide-react-native';
 import { PaywallSheet } from '@/components/PaywallSheet';
 import { Sparkles } from 'lucide-react-native';
 import { t, lang, setLang, type Lang } from '@core/i18n';
 import { useAppStore } from '@core/store/useAppStore';
-import { api } from '@core/api';
+import { api, apiMode } from '@core/api';
 import type { User as UserT } from '@core/types';
 import { tw } from '@/tw';
 import { nav, replace } from '@/nav';
@@ -17,6 +18,10 @@ import { affiliationText } from '@/components/b_Profile';
 import { stageKind, type StageKind } from '@core/lib/stage';
 import { DEMO_STAGE_PROMPTS } from '@core/data/prompts-demo';
 import { setPartialFail } from '@/v2/useSectionState';
+import { DeleteAccountSheet } from '@/components/settings_DeleteAccountSheet';
+import { openLegal } from '@/legal';
+import { SHOW_DEMO } from '@/demo';
+import type { LegalPageKey } from '@core/lib/legal';
 
 const card = tw`card`;
 
@@ -32,14 +37,23 @@ export default function SettingsScreen() {
   const me = v.me;
   const palette = usePalette();
   const [switchOpen, setSwitchOpen] = useState(false);
+  const [deleteOpen, setDeleteOpen] = useState(false);
+  const version = Constants.expoConfig?.version ?? '';
+  const legal: { Icon: typeof User; label: string; page: LegalPageKey }[] = [
+    { Icon: FileText, label: t('이용약관'), page: 'terms' },
+    { Icon: Shield, label: t('개인정보처리방침'), page: 'privacy' },
+    { Icon: LifeBuoy, label: t('고객지원'), page: 'support' },
+  ];
   const items = [
     { Icon: User, label: t('프로필 편집'), to: '/profile/edit' },
     { Icon: Lock, label: t('공개 범위 설정'), desc: t('프로필 항목별 공개 범위'), to: '/settings/privacy' },
     { Icon: ShieldAlert, label: t('계정 및 안전 설정'), desc: t('차단 목록, 메시지 수신 제한, 신고 내역'), to: '/settings/safety' },
   ];
 
-  /** 웹은 /welcome 으로 보내지만 모바일은 데모 계정으로 바로 다시 로그인한다 (루트 레이아웃 부팅 로직과 동일) */
   const [paywall, setPaywall] = useState(false);
+  /** 로그아웃 — 세션을 지우면 루트 레이아웃이 시작 화면(Welcome)을 보여준다 */
+  const signOut = async () => { await logout(); };
+  /** 데모 도구(데이터 초기화) 뒤에만 — 데모 계정으로 바로 다시 로그인 */
   const relogin = async () => {
     await logout();
     const u = await api.auth.loginDemo();
@@ -101,7 +115,23 @@ export default function SettingsScreen() {
         </View>
 
         <View style={[card, tw`mt-3`]}>
-          <Pressable onPress={relogin} style={tw`flex-row items-center px-4 py-3.5`}><LogOut size={18} color={C.ink2} /><Text style={tw`flex-1 ml-3 text-[14px] font-semibold text-ink`}>{t('로그아웃')}</Text></Pressable>
+          <Pressable onPress={signOut} style={tw`flex-row items-center px-4 py-3.5`}><LogOut size={18} color={C.ink2} /><Text style={tw`flex-1 ml-3 text-[14px] font-semibold text-ink`}>{t('로그아웃')}</Text></Pressable>
+          <Pressable onPress={() => setDeleteOpen(true)} style={tw`flex-row items-center px-4 py-3.5 border-t border-line`}>
+            <Trash2 size={18} color={C.danger} />
+            <View style={tw`flex-1 ml-3`}><Text style={tw`text-[14px] font-semibold text-danger`}>{t('계정 삭제')}</Text><Text style={tw`text-[12px] text-ink-3`}>{t('프로필과 활동 기록을 영구히 지워요')}</Text></View>
+            <ChevronRight size={18} color={C.ink3} />
+          </Pressable>
+        </View>
+
+        {/* 약관 · 개인정보 · 고객지원 (서버 공개 페이지) */}
+        <View style={[card, tw`mt-3`]}>
+          {legal.map((l, i) => (
+            <Pressable key={l.page} onPress={() => openLegal(l.page)} accessibilityRole="link" style={tw`flex-row items-center px-4 py-3.5 ${i === 0 ? '' : 'border-t border-line'}`}>
+              <l.Icon size={18} color={C.ink2} />
+              <Text style={tw`flex-1 ml-3 text-[14px] font-semibold text-ink`}>{l.label}</Text>
+              <ExternalLink size={16} color={C.ink3} />
+            </Pressable>
+          ))}
         </View>
 
         <View style={[card, tw`mt-3`]}>
@@ -112,7 +142,7 @@ export default function SettingsScreen() {
           </Pressable>
         </View>
 
-        <View style={[card, tw`mt-3`]}>
+        {SHOW_DEMO ? <View style={[card, tw`mt-3`]}>
           <Text style={tw`px-4 pt-3 pb-1 text-[11px] font-bold text-ink-3`}>{t('데모 도구')}</Text>
           <View style={tw`px-4 py-3 border-t border-line`}>
             <Text style={tw`text-[14px] font-semibold text-ink mb-2`}>{t('단계 미리보기')}</Text>
@@ -153,11 +183,12 @@ export default function SettingsScreen() {
             <RotateCcw size={18} color={C.danger} />
             <View style={tw`flex-1 ml-3`}><Text style={tw`text-[14px] font-semibold text-danger`}>{t('데모 데이터 초기화')}</Text><Text style={tw`text-[12px] text-ink-3`}>{t('모든 변경 사항을 지우고 예시 데이터로 되돌려요')}</Text></View>
           </Pressable>
-        </View>
-        <Text style={tw`text-center text-[11px] text-ink-3 mt-3`}>AroundU MVP · mock API (AsyncStorage)</Text>
+        </View> : null}
+        <Text style={tw`text-center text-[11px] text-ink-3 mt-3`}>{`AroundU${version ? ` ${t('버전')} ${version}` : ''}${apiMode === 'mock' ? ' · mock API (AsyncStorage)' : ''}`}</Text>
       </View>
 
       <PaywallSheet open={paywall} onClose={() => setPaywall(false)} />
+      <DeleteAccountSheet open={deleteOpen} onClose={() => setDeleteOpen(false)} />
       <BottomSheet open={switchOpen} onClose={() => setSwitchOpen(false)} title={lang === 'en' ? 'Switch demo user' : '데모 사용자 전환'} tall>
         {users.map((u) => (
           <Pressable key={u.id} onPress={() => switchUser(u)} style={tw`flex-row items-center rounded-xl px-3 py-2.5 mb-1 ${u.id === me.id ? 'bg-primary-soft' : ''}`}>

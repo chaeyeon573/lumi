@@ -10,11 +10,12 @@ import { en_stage } from './v2/stage';
 import { en_mobile } from './v2/mobile';
 import { en_prompts3 } from './v2/prompts3';
 import { en_web3 } from './v2/web3';
+import { en_release } from './v2/release';
 import { en_mobile3 } from './v2/mobile3';
 
 export const en: Record<string, string> = {
   // 먼저 둔 사전은 뒤의 같은 키에 덮인다 (기존 번역 우선)
-  ...en_stage, ...en_mobile, ...en_prompts3, ...en_web3, ...en_mobile3,
+  ...en_stage, ...en_mobile, ...en_prompts3, ...en_web3, ...en_release, ...en_mobile3,
   ...en_common, ...en_onboarding, ...en_people, ...en_meet, ...en_profile, ...en_around, ...en_find,
   '로그인이 필요해요.': 'Please sign in.',
   '입력값을 확인해주세요.': 'Please check your input.',

@@ -69,7 +69,8 @@ export function PersonPage() {
 
   if (user && user.id === v.me.id) return <Navigate to="/profile" replace />;
   const gone = <div className="min-h-full"><TopBar back title={t('프로필')} /><EmptyState emoji="🫥" title={t('없거나 비활성화된 계정이에요')} description={t('링크가 오래됐거나 계정이 닫혔을 수 있어요.')} action={<Button size="sm" variant="secondary" onClick={() => nav('/people')}>{t('사람 찾아보기')}</Button>} /></div>;
-  if (!user) return gone;
+  if (!user || user.suspended) return gone;
+  if (user.deleted) return <div className="min-h-full"><TopBar back title={t('프로필')} /><EmptyState emoji="👤" title={t('탈퇴한 사용자예요')} description={t('계정이 삭제되어 프로필을 볼 수 없고, 연결하거나 메시지를 보낼 수 없어요.')} action={<Button size="sm" variant="secondary" onClick={() => nav('/people')}>{t('사람 찾아보기')}</Button>} /></div>;
   if (v.hasBlocked(user.id)) return <div className="min-h-full"><TopBar back title={t('프로필')} /><EmptyState emoji="🚫" title={t('차단한 사용자예요')} description={t('차단을 해제하면 프로필을 다시 볼 수 있어요.')} action={<Button variant="outline" onClick={() => run(() => api.relationships.unblock(v.me.id, user.id), t('차단을 해제했어요.'))}>{t('차단 해제')}</Button>} /></div>;
   if (v.isBlocked(user.id)) return gone;
 

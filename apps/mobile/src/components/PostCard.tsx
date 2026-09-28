@@ -11,6 +11,8 @@ import { tw } from '@/tw';
 import { useViewer } from '@/viewer';
 import { nav } from '@/nav';
 import { Avatar, Cover, Button, BottomSheet, Input, C } from '@/ui';
+import { ReportSheet } from '@/components/a_ReportSheet';
+import { displayAvatar, displayName } from '@core/lib/deleted';
 
 /** 게시물 카드 (펼친 상태): 작성자 · 본문 · 공감/댓글/저장 · 댓글 */
 export function PostCard({ post: p }: { post: Post }) {
@@ -22,11 +24,12 @@ export function PostCard({ post: p }: { post: Post }) {
   const saved = p.savedIds.includes(v.me.id);
   const [comments, setComments] = useState(false);
   const [menu, setMenu] = useState(false);
+  const [report, setReport] = useState(false);
   const [text, setText] = useState('');
   const isMine = p.authorId === v.me.id;
   const anon = !!p.anonymous;
-  const name = anon ? t('익명') : org?.name ?? author?.nickname ?? '';
-  const avatar = anon ? { emoji: '🫥', hue: 220 } : org ? org.logo : author?.avatar ?? { emoji: '👤', hue: 200 };
+  const name = anon ? t('익명') : org?.name ?? displayName(author);
+  const avatar = anon ? { emoji: '🫥', hue: 220 } : org ? org.logo : displayAvatar(author);
   const goAuthor = () => { if (anon) return; nav(org ? `/orgs/${org.id}` : `/users/${p.authorId}`); };
   const tags = [...(p.topics ?? []).map((k) => `#${topicLabel(k)}`), ...(p.courseTag ? [`📚${p.courseTag}`] : []), ...p.tags.map((tg) => `#${tg}`)];
 
@@ -53,8 +56,8 @@ export function PostCard({ post: p }: { post: Post }) {
         {comments && (
           <View style={tw`mt-2 border-t border-line pt-3`}>
             {p.comments.length === 0 ? <Text style={tw`text-[12px] text-ink-3`}>{t('첫 댓글을 남겨보세요.')}</Text> : null}
-            {p.comments.map((c) => { const u = v.userById(c.authorId); return (
-              <View key={c.id} style={tw`flex-row mb-2`}><Avatar emoji={anon ? '🫥' : (u?.avatar.emoji ?? '👤')} hue={anon ? 220 : (u?.avatar.hue ?? 200)} url={anon ? undefined : u?.avatar.url} size={24} /><Text style={tw`flex-1 ml-2 text-[13px] text-ink`}><Text style={tw`font-bold`}>{anon ? (c.authorId === p.authorId ? t('글쓴이') : t('익명')) : u?.nickname} </Text>{c.text}<Text style={tw`text-ink-3 text-[11px]`}>  {relativeTime(c.createdAt)}</Text></Text></View>
+            {p.comments.map((c) => { const u = v.userById(c.authorId); const ua = displayAvatar(u); return (
+              <View key={c.id} style={tw`flex-row mb-2`}><Avatar emoji={anon ? '🫥' : ua.emoji} hue={anon ? 220 : ua.hue} url={anon ? undefined : ua.url} size={24} /><Text style={tw`flex-1 ml-2 text-[13px] text-ink`}><Text style={tw`font-bold`}>{anon ? (c.authorId === p.authorId ? t('글쓴이') : t('익명')) : displayName(u)} </Text>{c.text}<Text style={tw`text-ink-3 text-[11px]`}>  {relativeTime(c.createdAt)}</Text></Text></View>
             ); })}
             <View style={tw`flex-row items-center mt-1`}>
               <Input placeholder={t('댓글 달기…')} value={text} onChangeText={setText} style={tw`flex-1 h-10`} />
@@ -65,9 +68,10 @@ export function PostCard({ post: p }: { post: Post }) {
       </View>
       <BottomSheet open={menu} onClose={() => setMenu(false)} title={t('게시물')}>
         {p.relatedActivityId ? <SheetItem icon={<CalendarCheck size={18} color={C.ink} />} label={t('관련 활동 확인')} onPress={() => { setMenu(false); nav(`/activities/${p.relatedActivityId}`); }} /> : null}
-        {!isMine ? <SheetItem icon={<Flag size={18} color={C.danger} />} label={t('게시물 신고')} danger onPress={() => { setMenu(false); run(() => api.reports.create(v.me.id, 'post', p.id, t('부적절한 게시물')), t('신고가 접수됐어요.')); }} /> : null}
+        {!isMine ? <SheetItem icon={<Flag size={18} color={C.danger} />} label={t('게시물 신고')} danger onPress={() => { setMenu(false); setReport(true); }} /> : null}
         {isMine ? <SheetItem icon={<Trash2 size={18} color={C.danger} />} label={t('삭제')} danger onPress={async () => { setMenu(false); await run(() => api.posts.remove(p.id), t('게시물을 삭제했어요.')); }} /> : null}
       </BottomSheet>
+      <ReportSheet open={report} onClose={() => setReport(false)} targetType="post" targetId={p.id} />
     </View>
   );
 }

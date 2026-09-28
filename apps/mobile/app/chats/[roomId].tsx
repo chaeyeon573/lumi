@@ -12,6 +12,7 @@ import { useViewer } from '@/viewer';
 import { Screen, Avatar, Button, BottomSheet, Empty, IconBtn, Input, C } from '@/ui';
 import { SheetItem } from '@/components/PostCard';
 import { ReportSheet } from '@/components/b_ReportSheet';
+import { displayAvatar, displayName } from '@core/lib/deleted';
 
 /** 채팅방 — 메시지 목록 + 입력 (웹 ChatRoomPage) */
 export default function ChatRoomScreen() {
@@ -34,12 +35,15 @@ export default function ChatRoomScreen() {
 
   const other = room.type === 'direct' ? v.userById(room.memberIds.find((m) => m !== v.me.id)!) : undefined;
   const activity = room.activityId ? v.visibleActivities.find((a) => a.id === room.activityId) : undefined;
-  const title = other?.nickname ?? room.title ?? t('채팅');
-  const blocked = other ? v.isBlocked(other.id) : false;
+  /** 탈퇴한 상대 — 기록만 남고 대화·신고·차단은 막는다 */
+  const gone = !!other?.deleted;
+  const title = other ? displayName(other) : room.title ?? t('채팅');
+  const blocked = other && !gone ? v.isBlocked(other.id) : false;
+  const inputOff = gone || blocked;
 
   const send = async () => {
     const msg = text.trim();
-    if (!msg) return;
+    if (!msg || inputOff) return;
     setText('');
     await run(() => api.chats.send(room.id, v.me.id, msg));
   };
@@ -60,13 +64,14 @@ export default function ChatRoomScreen() {
     if (m.system) return <Text style={tw`text-center text-[11px] text-ink-3 py-1`}>{m.text}</Text>;
     const mine = m.senderId === v.me.id;
     const u = v.userById(m.senderId);
+    const av = displayAvatar(u);
     const showName = !mine && room.type !== 'direct' && room.messages[i - 1]?.senderId !== m.senderId;
     const hideAvatar = room.messages[i + 1]?.senderId === m.senderId;
     return (
       <View style={tw`flex-row items-end mb-2 ${mine ? 'justify-end' : 'justify-start'}`}>
-        {!mine && <View style={[tw`mr-2`, hideAvatar ? { opacity: 0 } : null]}><Avatar emoji={u?.avatar.emoji ?? '👤'} hue={u?.avatar.hue ?? 200} url={u?.avatar.url} size={28} /></View>}
+        {!mine && <View style={[tw`mr-2`, hideAvatar ? { opacity: 0 } : null]}><Avatar emoji={av.emoji} hue={av.hue} url={av.url} size={28} /></View>}
         <View style={tw`max-w-[72%] ${mine ? 'items-end' : 'items-start'}`}>
-          {showName && <Text style={tw`text-[11px] text-ink-3 mb-0.5 ml-1`}>{u?.nickname}</Text>}
+          {showName && <Text style={tw`text-[11px] text-ink-3 mb-0.5 ml-1`}>{displayName(u)}</Text>}
           <View style={tw`px-3.5 py-2 rounded-2xl ${mine ? 'bg-primary rounded-br-md' : 'bg-white border border-line rounded-bl-md'}`}><Text style={tw`text-[14px] leading-5 ${mine ? 'text-white' : 'text-ink'}`}>{m.text}</Text></View>
         </View>
       </View>
@@ -74,7 +79,7 @@ export default function ChatRoomScreen() {
   };
 
   const titleNode = (
-    <Pressable onPress={() => (other ? nav(`/users/${other.id}`) : activity ? nav(`/activities/${activity.id}`) : undefined)} style={tw`flex-1 ml-1`}>
+    <Pressable onPress={() => (other ? (gone ? undefined : nav(`/users/${other.id}`)) : activity ? nav(`/activities/${activity.id}`) : undefined)} style={tw`flex-1 ml-1`}>
       <Text numberOfLines={1} style={tw`text-[17px] font-bold text-ink`}>{title}</Text>
       {room.type !== 'direct' && <Text style={tw`text-[11px] text-ink-3 font-medium`}>{t('멤버')} {room.memberIds.length}{t('명')}</Text>}
     </Pressable>
@@ -86,18 +91,18 @@ export default function ChatRoomScreen() {
       <Screen scroll={false} right={<View style={[tw`flex-row items-center`, { flex: 1000 }]}>{titleNode}<IconBtn onPress={() => setMenu(true)}><MoreVertical size={20} color={C.ink2} /></IconBtn></View>}
         footer={
           <View style={tw`flex-row items-center`}>
-            <Input style={tw`flex-1 h-11 rounded-2xl bg-surface-2 border-0`} placeholder={blocked ? t('차단된 사용자와는 대화할 수 없어요') : t('메시지 입력…')} value={text} onChangeText={setText} editable={!blocked} onSubmitEditing={send} returnKeyType="send" blurOnSubmit={false} />
+            <Input style={tw`flex-1 h-11 rounded-2xl bg-surface-2 border-0`} placeholder={gone ? t('탈퇴한 사용자와는 대화할 수 없어요') : blocked ? t('차단된 사용자와는 대화할 수 없어요') : t('메시지 입력…')} value={text} onChangeText={setText} editable={!inputOff} onSubmitEditing={send} returnKeyType="send" blurOnSubmit={false} />
             <View style={tw`w-2`} />
-            <Button style={tw`h-11 w-11 px-0 rounded-2xl`} disabled={!text.trim() || blocked} onPress={send}><Send size={18} color={C.onPrimary} /></Button>
+            <Button style={tw`h-11 w-11 px-0 rounded-2xl`} disabled={!text.trim() || inputOff} onPress={send}><Send size={18} color={C.onPrimary} /></Button>
           </View>
         }>
         <FlatList ref={listRef} data={room.messages} keyExtractor={(m) => m.id} renderItem={renderItem} ListHeaderComponent={header} contentContainerStyle={tw`px-4 py-3`} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled" onContentSizeChange={() => listRef.current?.scrollToEnd({ animated: false })} />
       </Screen>
 
       <BottomSheet open={menu} onClose={() => setMenu(false)} title={title}>
-        {room.type !== 'direct' && <View style={tw`px-3 py-2 flex-row items-center`}><Users size={13} color={C.ink3} /><Text style={tw`ml-1 text-[12px] text-ink-3 shrink`}>{t('멤버')} {room.memberIds.map((id) => v.userById(id)?.nickname ?? (id === v.me.id ? t('나') : '')).filter(Boolean).join(', ')}</Text></View>}
-        {other && <SheetItem icon={<Flag size={18} color={C.danger} />} label={t('사용자 신고')} danger onPress={() => { setMenu(false); setReport(true); }} />}
-        {other && <SheetItem icon={<Ban size={18} color={C.danger} />} label={blocked ? t('차단 해제') : t('사용자 차단')} danger onPress={() => { setMenu(false); if (blocked) run(() => api.relationships.unblock(v.me.id, other.id), t('차단을 해제했어요.')); else setBlockOpen(true); }} />}
+        {room.type !== 'direct' && <View style={tw`px-3 py-2 flex-row items-center`}><Users size={13} color={C.ink3} /><Text style={tw`ml-1 text-[12px] text-ink-3 shrink`}>{t('멤버')} {room.memberIds.map((id) => displayName(v.userById(id), id === v.me.id ? t('나') : '')).filter(Boolean).join(', ')}</Text></View>}
+        {other && !gone && <SheetItem icon={<Flag size={18} color={C.danger} />} label={t('사용자 신고')} danger onPress={() => { setMenu(false); setReport(true); }} />}
+        {other && !gone && <SheetItem icon={<Ban size={18} color={C.danger} />} label={blocked ? t('차단 해제') : t('사용자 차단')} danger onPress={() => { setMenu(false); if (blocked) run(() => api.relationships.unblock(v.me.id, other.id), t('차단을 해제했어요.')); else setBlockOpen(true); }} />}
         {activity && activity.hostId !== v.me.id && <SheetItem icon={<LogOut size={18} color={C.danger} />} label={t('활동 나가기')} danger onPress={async () => { setMenu(false); await run(() => api.activities.cancel(activity.id, v.me.id), t('활동에서 나갔어요.')); nav('/chats?tab=activity'); }} />}
         {!other && !activity && <SheetItem icon={<Flag size={18} color={C.danger} />} label={t('채팅방 신고')} danger onPress={() => { setMenu(false); setReport(true); }} />}
       </BottomSheet>

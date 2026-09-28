@@ -21,6 +21,7 @@ import type { ChatRoom, Interest, User } from '@core/types';
 import { useSnapshot } from '@/hooks/useSnapshot';
 import { SmallTables } from '@/components/people_SmallTables';
 import { SchoolBadge } from '@/components/people_SchoolBadge';
+import { displayAvatar, displayName } from '@core/lib/deleted';
 
 export function ChatRoomPage() {
   const { roomId } = useParams();
@@ -47,13 +48,15 @@ export function ChatRoomPage() {
 
   const other = room.type === 'direct' ? v.userById(room.memberIds.find((m) => m !== v.me.id)!) : undefined;
   const activity = room.activityId ? v.visibleActivities.find((a) => a.id === room.activityId) : undefined;
-  const title = other?.nickname ?? room.title ?? t('채팅');
-  const blocked = other ? v.isBlocked(other.id) || v.hasBlocked(other.id) : false;
+  /** 탈퇴한 상대 — 기록만 남고 대화·신고·차단은 막는다 */
+  const gone = !!other?.deleted;
+  const title = other ? displayName(other) : room.title ?? t('채팅');
+  const blocked = other && !gone ? v.isBlocked(other.id) || v.hasBlocked(other.id) : false;
   const origin = other ? roomOrigin(room) : null;
   const msg = other ? v.canMessage(other.id) : { ok: true, reason: '' };
   /** 연결이 끊겼거나 상대가 수신을 막았을 때 — 소개·사람 찾아보기로 열린 방은 그대로 둔다 */
-  const locked = !!other && !blocked && !msg.ok && !origin;
-  const inputOff = blocked || locked;
+  const locked = !!other && !gone && !blocked && !msg.ok && !origin;
+  const inputOff = gone || blocked || locked;
   const mutualUsers = other ? mutualFriends(v.snap, v.me.id, other.id).map((id) => v.userById(id)).filter((u): u is User => !!u) : [];
 
   const send = async (body?: string, retryId?: string) => {
@@ -67,11 +70,11 @@ export function ChatRoomPage() {
 
   return (
     <div className="h-full flex flex-col">
-      <TopBar back title={<button className="text-left" onClick={() => (other ? nav(`/users/${other.id}`) : activity ? nav(`/activities/${activity.id}`) : undefined)}><span className="block truncate">{title}</span>{room.type !== 'direct' && <span className="block text-[11px] text-ink-3 font-medium">{t('멤버')} {room.memberIds.length}{t('명')}</span>}</button>}
+      <TopBar back title={<button className="text-left" onClick={() => (other ? (gone ? undefined : nav(`/users/${other.id}`)) : activity ? nav(`/activities/${activity.id}`) : undefined)}><span className="block truncate">{title}</span>{room.type !== 'direct' && <span className="block text-[11px] text-ink-3 font-medium">{t('멤버')} {room.memberIds.length}{t('명')}</span>}</button>}
         right={<button onClick={() => setMenu(true)} className="h-10 w-10 grid place-items-center rounded-full" aria-label={t('메뉴')}><MoreVertical size={20} /></button>} />
       <div className="flex-1 overflow-y-auto hide-scrollbar px-4 py-3 space-y-2">
         {activity && <button onClick={() => nav(`/activities/${activity.id}`)} className="w-full card p-3 flex items-center gap-3 text-left press mb-2"><span className="h-9 w-9 rounded-xl bg-primary-soft text-primary grid place-items-center"><CalendarDays size={18} /></span><span className="flex-1 min-w-0"><b className="text-[13px] block truncate">{activity.title}</b><span className="text-[11px] text-ink-3">{activity.place.name} · {activity.date} {activity.startTime}</span></span></button>}
-        {other && !blocked && <MutualHeader roomId={room.id} other={other} origin={origin} onCoffee={() => setCoffeeOpen(true)} onMutual={() => setMutualOpen(true)} mutualCount={mutualUsers.length} />}
+        {other && !gone && !blocked && <MutualHeader roomId={room.id} other={other} origin={origin} onCoffee={() => setCoffeeOpen(true)} onMutual={() => setMutualOpen(true)} mutualCount={mutualUsers.length} />}
         {room.messages.filter((m) => !m.system).length === 0 && failed.length === 0 && (
           other && !inputOff ? <Openers other={other} onPick={(s) => setText(s)} />
             : <div className="text-center text-[12px] text-ink-3 py-8">{t('대화를 시작해보세요. 차단·신고는 오른쪽 위 메뉴에서 할 수 있어요.')}</div>
@@ -80,12 +83,13 @@ export function ChatRoomPage() {
           if (m.system) return <div key={m.id} className="text-center text-[11px] text-ink-3 py-1">{m.text}</div>;
           const mine = m.senderId === v.me.id;
           const u = v.userById(m.senderId);
+          const av = displayAvatar(u);
           const showName = !mine && room.type !== 'direct' && room.messages[i - 1]?.senderId !== m.senderId;
           return (
             <div key={m.id} className={cn('flex gap-2 items-end', mine ? 'justify-end' : 'justify-start')}>
-              {!mine && <Avatar emoji={u?.avatar.emoji ?? '👤'} hue={u?.avatar.hue ?? 200} url={u?.avatar.url} size={28} className={cn(room.messages[i + 1]?.senderId === m.senderId && 'invisible')} />}
+              {!mine && <Avatar emoji={av.emoji} hue={av.hue} url={av.url} size={28} className={cn(room.messages[i + 1]?.senderId === m.senderId && 'invisible')} />}
               <div className={cn('max-w-[72%]', mine && 'text-right')}>
-                {showName && <div className="text-[11px] text-ink-3 mb-0.5 ml-1">{u?.nickname}</div>}
+                {showName && <div className="text-[11px] text-ink-3 mb-0.5 ml-1">{displayName(u)}</div>}
                 <div className={cn('inline-block px-3.5 py-2 rounded-2xl text-[14px] leading-relaxed text-left', mine ? 'bg-primary text-white rounded-br-md' : 'bg-surface border border-line rounded-bl-md')}>{m.text}</div>
               </div>
             </div>
@@ -106,20 +110,20 @@ export function ChatRoomPage() {
       {other && inputOff && (
         <div className="shrink-0 border-t border-line bg-surface-2 px-4 py-2.5 flex items-center gap-2 text-[12px] text-ink-2">
           <Lock size={13} className="text-ink-3 shrink-0" />
-          <span className="flex-1">{blocked ? (v.hasBlocked(other.id) ? t('차단한 사용자예요. 차단을 해제해야 대화할 수 있어요.') : t('지금은 이 사람과 대화할 수 없어요.')) : `${t('지금은 메시지를 보낼 수 없어요.')} ${msg.reason}`}</span>
+          <span className="flex-1">{gone ? t('탈퇴한 사용자와는 대화할 수 없어요') : blocked ? (v.hasBlocked(other.id) ? t('차단한 사용자예요. 차단을 해제해야 대화할 수 있어요.') : t('지금은 이 사람과 대화할 수 없어요.')) : `${t('지금은 메시지를 보낼 수 없어요.')} ${msg.reason}`}</span>
           {blocked && v.hasBlocked(other.id) && <Button size="sm" variant="outline" onClick={() => run(() => api.relationships.unblock(v.me.id, other.id), t('차단을 해제했어요.')).catch(() => undefined)}>{t('차단 해제')}</Button>}
         </div>
       )}
       <form className="shrink-0 border-t border-line bg-surface p-2.5 flex gap-2 safe-bottom" onSubmit={(e) => { e.preventDefault(); send(); }}>
-        <input className="flex-1 h-11 rounded-2xl bg-surface-2 px-4 text-[14px] outline-none focus:bg-surface focus:ring-1 ring-primary disabled:opacity-60" placeholder={blocked ? t('차단된 사용자와는 대화할 수 없어요') : locked ? t('메시지를 보낼 수 없어요') : t('메시지 입력…')} value={text} onChange={(e) => setText(e.target.value)} disabled={inputOff} />
+        <input className="flex-1 h-11 rounded-2xl bg-surface-2 px-4 text-[14px] outline-none focus:bg-surface focus:ring-1 ring-primary disabled:opacity-60" placeholder={gone ? t('탈퇴한 사용자와는 대화할 수 없어요') : blocked ? t('차단된 사용자와는 대화할 수 없어요') : locked ? t('메시지를 보낼 수 없어요') : t('메시지 입력…')} value={text} onChange={(e) => setText(e.target.value)} disabled={inputOff} />
         <Button type="submit" className="h-11 w-11 !px-0 rounded-2xl" disabled={!text.trim() || inputOff} aria-label={t('보내기')}><Send size={18} /></Button>
       </form>
 
       <BottomSheet open={menu} onClose={() => setMenu(false)} title={title}>
         <div className="space-y-1">
-          {room.type !== 'direct' && <div className="px-3 py-2 text-[12px] text-ink-3 flex items-center gap-1"><Users size={13} />{t('멤버')} {room.memberIds.map((id) => v.userById(id)?.nickname ?? (id === v.me.id ? t('나') : '')).filter(Boolean).join(', ')}</div>}
-          {other && <SheetItem icon={<Flag size={18} />} label={t('사용자 신고')} danger onClick={() => { setMenu(false); setReport(true); }} />}
-          {other && <SheetItem icon={<Ban size={18} />} label={blocked ? t('차단 해제') : t('사용자 차단')} danger onClick={() => { setMenu(false); blocked ? run(() => api.relationships.unblock(v.me.id, other.id), t('차단을 해제했어요.')) : setBlockOpen(true); }} />}
+          {room.type !== 'direct' && <div className="px-3 py-2 text-[12px] text-ink-3 flex items-center gap-1"><Users size={13} />{t('멤버')} {room.memberIds.map((id) => displayName(v.userById(id), id === v.me.id ? t('나') : '')).filter(Boolean).join(', ')}</div>}
+          {other && !gone && <SheetItem icon={<Flag size={18} />} label={t('사용자 신고')} danger onClick={() => { setMenu(false); setReport(true); }} />}
+          {other && !gone && <SheetItem icon={<Ban size={18} />} label={blocked ? t('차단 해제') : t('사용자 차단')} danger onClick={() => { setMenu(false); blocked ? run(() => api.relationships.unblock(v.me.id, other.id), t('차단을 해제했어요.')) : setBlockOpen(true); }} />}
           {activity && activity.hostId !== v.me.id && <SheetItem icon={<LogOut size={18} />} label={t('활동 나가기')} danger onClick={async () => { setMenu(false); await run(() => api.activities.cancel(activity.id, v.me.id), t('활동에서 나갔어요.')); nav('/chats?tab=activity'); }} />}
           {!other && !activity && <SheetItem icon={<Flag size={18} />} label={t('채팅방 신고')} danger onClick={() => { setMenu(false); setReport(true); }} />}
           <SheetItem icon={<Bug size={18} className="text-ink-3" />} label={t('전송 실패 미리보기 (데모)')} onClick={() => { setMenu(false); api.system.failNext(); showToast(t('다음 메시지 전송이 한 번 실패해요')); }} />

@@ -20,7 +20,8 @@ export function useViewer() {
   const currentUserId = useAppStore((s) => s.currentUserId);
 
   return useMemo(() => {
-    const snap = { users, relationships, participations, proposals, activities, opportunities, opportunityIntents, timePolls };
+    // 추천·관계 계산용 스냅샷에서는 탈퇴·이용 정지 사용자를 뺀다 (userById 는 전체 — 대화 기록의 "탈퇴한 사용자" 표시용)
+    const snap = { users: users.filter((u) => !u.deleted && !u.suspended), relationships, participations, proposals, activities, opportunities, opportunityIntents, timePolls };
     const me = users.find((u) => u.id === currentUserId) as User;
     const userById = (id: ID) => users.find((u) => u.id === id);
     const orgById = (id: ID) => organizations.find((o) => o.id === id);

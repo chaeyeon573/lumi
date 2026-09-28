@@ -69,10 +69,13 @@ function StudentOnly({ children }: { children: React.ReactElement }) {
 function RequireAuth() {
   const currentUserId = useAppStore((s) => s.currentUserId);
   const status = useAppStore((s) => s.status);
+  // 계정 삭제 직후(로그아웃 전) 익명화된 "나"가 실시간 패치로 들어와도 화면을 그리지 않는다
+  const meDeleted = useAppStore((s) => !!s.users.find((u) => u.id === s.currentUserId)?.deleted);
   const location = useLocation();
   if (status === 'idle' || status === 'loading') return <SplashScreen />;
   if (status === 'error') return <FullError />;
   if (!currentUserId) return <Navigate to="/welcome" replace state={{ from: location }} />;
+  if (meDeleted) return <SplashScreen />;
   return <Outlet />;
 }
 

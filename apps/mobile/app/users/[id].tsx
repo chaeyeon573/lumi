@@ -50,7 +50,8 @@ export default function PersonScreen() {
   useEffect(() => { if (isMe) replace('/profile'); }, [isMe]);
 
   if (isMe) return null;
-  if (!user) return <Screen title={t('프로필')}><Empty title={`🙈 ${t('사용자를 찾을 수 없어요')}`} /></Screen>;
+  if (!user || user.suspended) return <Screen title={t('프로필')}><Empty title={`🙈 ${t('사용자를 찾을 수 없어요')}`} /></Screen>;
+  if (user.deleted) return <Screen title={t('프로필')}><Empty title={`👤 ${t('탈퇴한 사용자예요')}`} description={t('계정이 삭제되어 프로필을 볼 수 없고, 연결하거나 메시지를 보낼 수 없어요.')} /></Screen>;
   if (v.hasBlocked(user.id)) return <Screen title={t('프로필')}><Empty title={`🚫 ${t('차단한 사용자예요')}`} description={t('차단을 해제하면 프로필을 다시 볼 수 있어요.')} action={<Button variant="outline" onPress={() => run(() => api.relationships.unblock(v.me.id, user.id), t('차단을 해제했어요.'))}>{t('차단 해제')}</Button>} /></Screen>;
   if (v.isBlocked(user.id)) return <Screen title={t('프로필')}><Empty title={`🙈 ${t('사용자를 찾을 수 없어요')}`} /></Screen>;
 

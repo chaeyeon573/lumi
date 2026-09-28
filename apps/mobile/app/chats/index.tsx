@@ -6,6 +6,7 @@ import { t, lang } from '@core/i18n';
 import { whosFree } from '@core/lib/social';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
+import { displayAvatar, displayName } from '@core/lib/deleted';
 import { relativeTime } from '@core/lib/format';
 import { CATEGORY_EMOJI, CATEGORY_LABELS } from '@core/lib/labels';
 import type { ChatRoom } from '@core/types';
@@ -88,12 +89,12 @@ export default function ChatInboxScreen() {
                 const org = r.orgId ? v.orgById(r.orgId) : undefined;
                 const lm = last(r);
                 const n = unread(r);
-                const avatar = other?.avatar ?? org?.logo ?? { emoji: r.type === 'activity' ? '🗓️' : '🏛️', hue: 220 };
+                const avatar = (other ? displayAvatar(other) : undefined) ?? org?.logo ?? { emoji: r.type === 'activity' ? '🗓️' : '🏛️', hue: 220 };
                 return (
                   <Pressable key={r.id} onPress={() => nav(`/chats/${r.id}`)} style={tw`flex-row items-center py-3.5 ${idx === 0 ? '' : 'border-t border-line'}`}>
                     {r.type === 'direct' ? <Avatar emoji={avatar.emoji} hue={avatar.hue} url={avatar.url} size={52} /> : <View style={tw`h-[52px] w-[52px] rounded-full bg-primary items-center justify-center`}>{r.type === 'activity' ? <Users size={20} color={C.onPrimary} /> : <Building2 size={20} color={C.onPrimary} />}</View>}
                     <View style={tw`flex-1 min-w-0 flex-row items-center ml-3`}>
-                      <Text numberOfLines={1} style={tw`text-[16px] font-semibold text-ink max-w-[45%]`}>{other?.nickname ?? r.title}</Text>
+                      <Text numberOfLines={1} style={tw`text-[16px] font-semibold text-ink max-w-[45%]`}>{other ? displayName(other) : r.title}</Text>
                       <Text numberOfLines={1} style={tw`ml-2 text-[15px] shrink ${n > 0 ? 'text-ink' : 'text-ink-2'}`}>· {lm?.text ?? t('대화를 시작해보세요')}</Text>
                     </View>
                     <Text style={tw`ml-2 text-[12px] text-ink-3`}>{lm ? relativeTime(lm.createdAt) : ''}</Text>
