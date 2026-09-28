@@ -10,7 +10,7 @@ import { nav } from '@/nav';
 import { Screen, Button, Empty, Loading, C } from '@/ui';
 import { ErrorState } from '@/components/b_States';
 
-const GOLD = '#B57A0E';
+const GOLD = C.goldInk;
 const ICONS: Record<NotificationType, { Icon: typeof Heart; bg: string; fg: string }> = {
   friend_accepted: { Icon: UserCheck, bg: C.mintSoft, fg: C.mint },
   mutual_like: { Icon: Heart, bg: C.accent, fg: C.primary },
@@ -25,7 +25,7 @@ const ICONS: Record<NotificationType, { Icon: typeof Heart; bg: string; fg: stri
   nearby_activity: { Icon: MapPin, bg: C.accentSoft, fg: C.accent },
   proposal: { Icon: Sparkles, bg: C.soft, fg: C.primary },
   proposal_result: { Icon: Sparkles, bg: C.mintSoft, fg: C.mint },
-  deadline: { Icon: AlarmClock, bg: '#FFDAD6', fg: C.danger },
+  deadline: { Icon: AlarmClock, bg: C.tint, fg: C.danger },
   opportunity_match: { Icon: Users, bg: C.soft, fg: C.primary },
   plan_vote: { Icon: Vote, bg: C.accentSoft, fg: C.accent },
   plan_decided: { Icon: CalendarCheck, bg: C.mintSoft, fg: C.mint },
@@ -57,9 +57,9 @@ export default function NotificationsScreen() {
       {status === 'loading' && <Loading />}
       {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
       {status === 'ready' && (list.length === 0 ? <Empty title={t('알림이 없어요')} description={t('참가 승인, 친구 요청 수락, 활동 시작 전 알림이 여기에 표시돼요.')} /> : (
-        <View style={tw`my-3 rounded-[24px] border border-line bg-white overflow-hidden`}>
+        <View style={tw`my-3 card overflow-hidden`}>
           {list.map((n, idx) => { const { Icon, bg, fg } = ICONS[n.type]; return (
-            <Pressable key={n.id} onPress={async () => { if (!n.read) await run(() => api.notifications.markRead(n.id)); if (n.link) nav(n.link); }} style={[tw`flex-row items-start px-3.5 py-3 ${idx === 0 ? '' : 'border-t border-line'}`, !n.read ? { backgroundColor: 'rgba(210,228,255,0.4)' } : null]}>
+            <Pressable key={n.id} onPress={async () => { if (!n.read) await run(() => api.notifications.markRead(n.id)); if (n.link) nav(n.link); }} style={[tw`flex-row items-start px-3.5 py-3 ${idx === 0 ? '' : 'border-t border-line'}`, !n.read ? { backgroundColor: C.tint } : null]}>
               <View style={[tw`h-10 w-10 rounded-xl items-center justify-center`, { backgroundColor: bg }]}><Icon size={18} color={fg} /></View>
               <View style={tw`flex-1 min-w-0 ml-3`}>
                 <Text style={tw`text-[14px] font-semibold text-ink`}>{n.title}</Text>

@@ -18,9 +18,9 @@ export function WrapItem({ children }: { children: ReactNode }) {
 /** 아바타가 들어간 친구 선택 칩 */
 export function FriendChip({ user, active, onPress }: { user: User; active?: boolean; onPress?: () => void }) {
   return (
-    <Pressable onPress={onPress} style={tw`h-8 pl-1.5 pr-3 rounded-full flex-row items-center mr-2 ${active ? 'bg-primary' : 'bg-surface-2'}`}>
+    <Pressable onPress={onPress} style={tw`h-8 pl-1.5 pr-3 rounded-full flex-row items-center mr-2 border ${active ? 'bg-tint border-primary' : 'bg-white border-line'}`}>
       <Avatar emoji={user.avatar.emoji} hue={user.avatar.hue} url={user.avatar.url} size={20} />
-      <Text style={tw`ml-1.5 text-[12px] font-semibold ${active ? 'text-white' : 'text-primary'}`}>{user.nickname}</Text>
+      <Text style={tw`ml-1.5 text-[12px] font-semibold ${active ? 'text-primary' : 'text-ink-2'}`}>{user.nickname}</Text>
     </Pressable>
   );
 }
@@ -64,8 +64,8 @@ export function SelectChips<T extends string>({ value, options, onChange, emptyL
     <ChipWrap>
       {all.map(([k, l]) => (
         <WrapItem key={k || '__empty'}>
-          <Pressable onPress={() => onChange(k)} style={tw`h-8 px-3 rounded-full items-center justify-center mr-2 ${value === k ? 'bg-primary' : 'bg-surface-2'}`}>
-            <Text numberOfLines={1} style={tw`text-[12px] font-semibold ${value === k ? 'text-white' : 'text-primary'}`}>{l}</Text>
+          <Pressable onPress={() => onChange(k)} style={tw`h-8 px-3 rounded-full items-center justify-center mr-2 border ${value === k ? 'bg-tint border-primary' : 'bg-white border-line'}`}>
+            <Text numberOfLines={1} style={tw`text-[12px] font-semibold ${value === k ? 'text-primary' : 'text-ink-2'}`}>{l}</Text>
           </Pressable>
         </WrapItem>
       ))}

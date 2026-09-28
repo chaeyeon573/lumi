@@ -31,8 +31,8 @@ export default function DiscoverScreen() {
     <Screen title={t('지금 열린 만남')}>
       <View style={tw`mt-2 h-12 rounded-full bg-surface-2 flex-row items-center pl-4 pr-1.5`}>
         <View style={tw`h-2 w-2 rounded-full bg-primary mr-2`} />
-        <Text numberOfLines={1} style={tw`flex-1 text-[14px] text-primary font-medium`}>{me.timetable.length === 0 ? t('시간표를 추가해보세요') : nextFree ? `${lang === 'en' ? 'Free' : '공강'} ${fmtBlock(nextFree)}` : t('오늘 수업 끝')}</Text>
-        <Pressable onPress={() => (nextFree ? setSlot(nextFree) : nav('/timetable'))} style={tw`h-9 px-4 rounded-full bg-primary flex-row items-center`}><Plus size={14} color="#fff" /><Text style={tw`ml-1 text-white text-[13px] font-semibold`}>{nextFree ? t('열기') : t('시간표')}</Text></Pressable>
+        <Text numberOfLines={1} style={tw`flex-1 text-[14px] text-ink font-medium`}>{me.timetable.length === 0 ? t('시간표를 추가해보세요') : nextFree ? `${lang === 'en' ? 'Free' : '공강'} ${fmtBlock(nextFree)}` : t('오늘 수업 끝')}</Text>
+        <Pressable onPress={() => (nextFree ? setSlot(nextFree) : nav('/timetable'))} style={tw`h-9 px-4 rounded-full bg-primary flex-row items-center`}><Plus size={14} color={C.onPrimary} /><Text style={tw`ml-1 text-white text-[13px] font-semibold`}>{nextFree ? t('열기') : t('시간표')}</Text></Pressable>
       </View>
       <View style={tw`pt-6`}><NowTab /></View>
       <View style={tw`pt-8`}><ActivitiesTab /></View>
@@ -75,7 +75,7 @@ function NowTab() {
       {partner && (
         <Pressable onPress={() => nav(`/activities/${partner.id}`)} style={tw`rounded-full border border-line bg-gold-soft pl-2.5 pr-2.5 py-2 flex-row items-center mb-3`}>
           <View style={tw`h-11 w-11 rounded-full bg-white items-center justify-center`}><Text style={tw`text-[20px]`}>🏷️</Text></View>
-          <View style={tw`flex-1 min-w-0 mx-3`}><View style={tw`flex-row items-center`}><Text numberOfLines={1} style={tw`text-[15px] font-semibold text-primary shrink`}>{partner.partner!.name}</Text><View style={tw`ml-2`}><UiTag tone="gold">{t('제휴')}</UiTag></View></View><Text numberOfLines={1} style={tw`text-[13px] text-ink-2`}>{partner.partner!.deal}</Text></View>
+          <View style={tw`flex-1 min-w-0 mx-3`}><View style={tw`flex-row items-center`}><Text numberOfLines={1} style={tw`text-[15px] font-semibold text-ink shrink`}>{partner.partner!.name}</Text><View style={tw`ml-2`}><UiTag tone="gold">{t('제휴')}</UiTag></View></View><Text numberOfLines={1} style={tw`text-[13px] text-ink-2`}>{partner.partner!.deal}</Text></View>
           <Button size="sm" onPress={() => nav(`/activities/${partner.id}`)}>{t('쿠폰 보기')}</Button>
         </Pressable>
       )}

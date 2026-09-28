@@ -67,8 +67,8 @@ export function useConnect() {
 export function SaveButton({ user }: { user: User }) {
   const { saved, toggle } = useSavePerson(user);
   return (
-    <Pressable onPress={toggle} accessibilityLabel={saved ? t('저장됨') : t('저장')} hitSlop={4} style={tw`h-9 w-9 rounded-full items-center justify-center ${saved ? 'bg-primary' : 'bg-primary-soft'}`}>
-      <Bookmark size={16} color={saved ? C.onPrimary : C.primary} fill={saved ? C.onPrimary : 'none'} />
+    <Pressable onPress={toggle} accessibilityLabel={saved ? t('저장됨') : t('저장')} hitSlop={4} style={[tw`h-9 w-9 rounded-full items-center justify-center bg-primary-soft border`, { borderColor: saved ? C.primary : 'transparent' }]}>
+      <Bookmark size={16} color={C.primary} fill={saved ? C.primary : 'none'} />
     </Pressable>
   );
 }

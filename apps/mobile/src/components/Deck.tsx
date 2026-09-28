@@ -60,7 +60,7 @@ export function Deck<T>({ items, index, width, renderCard, onSwipe, labels, tapE
       {top && (
         <Animated.View {...(tapEnabled ? pan.panHandlers : {})} style={[tw`absolute inset-0`, { transform: [{ translateX: pos.x }, { translateY: pos.y }, { rotate }] }]}>
           {renderCard(top, true)}
-          <Animated.View pointerEvents="none" style={[tw`absolute top-10 right-6 px-4 py-1.5 rounded-xl bg-accent`, { opacity: likeOp, transform: [{ rotate: '12deg' }] }]}><Text style={tw`text-[20px] font-extrabold text-primary uppercase tracking-wider`}>{labels.right}</Text></Animated.View>
+          <Animated.View pointerEvents="none" style={[tw`absolute top-10 right-6 px-4 py-1.5 rounded-xl bg-accent`, { opacity: likeOp, transform: [{ rotate: '12deg' }] }]}><Text style={tw`text-[20px] font-extrabold text-ink uppercase tracking-wider`}>{labels.right}</Text></Animated.View>
           <Animated.View pointerEvents="none" style={[tw`absolute top-10 left-6 px-4 py-1.5 rounded-xl bg-surface-2`, { opacity: passOp, transform: [{ rotate: '-12deg' }] }]}><Text style={tw`text-[20px] font-extrabold text-ink-2 uppercase tracking-wider`}>{labels.left}</Text></Animated.View>
         </Animated.View>
       )}

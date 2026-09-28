@@ -77,7 +77,7 @@ export default function OpenToScreen() {
         <Text style={tw`px-1 mb-3 text-[12px] text-ink-3`}>{t('지금 가볍게 열려 있는 것만 켜 두세요. 기간이 지나면 자동으로 꺼져요.')}</Text>
 
         {/* 1. 미리보기 */}
-        <View style={tw`rounded-[24px] border border-line bg-white p-4`}>
+        <View style={tw`card p-4`}>
           <Text style={tw`text-[11px] font-bold text-ink-3`}>{t('다른 사람에게 이렇게 보여요')}</Text>
           <View style={tw`mt-2 flex-row items-center`}>
             <Avatar emoji={me.avatar.emoji} hue={me.avatar.hue} url={me.avatar.url} size={44} />
@@ -97,7 +97,7 @@ export default function OpenToScreen() {
                 <Wrap>{SUGGESTIONS.map((s) => <WChip key={s.kind} onPress={() => patch(s.kind, { on: true, when: s.when })}>{STATUS_EMOJI[s.kind]} {lang === 'en' ? `${STATUS_LABELS[s.kind]} · ${WHEN_LABELS[s.when].toLowerCase()}` : `${WHEN_LABELS[s.when]} ${STATUS_LABELS[s.kind]}`}</WChip>)}</Wrap>
               </View>
             ) : null}
-            <View style={tw`rounded-[24px] border border-line bg-white`}>
+            <View style={tw`card`}>
               {ALL_STATUS_KINDS.map((k, i) => {
                 const r = rows[k];
                 return (

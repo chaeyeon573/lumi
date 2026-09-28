@@ -81,7 +81,7 @@ export default function OnboardingScreen() {
     <SafeAreaView edges={['top', 'bottom']} style={tw`flex-1 bg-white`}>
       <View style={tw`h-14 pl-1 pr-3 flex-row items-center`}>
         <IconBtn onPress={prev}><ChevronLeft size={26} color={C.primary} /></IconBtn>
-        <Text numberOfLines={1} style={tw`flex-1 ml-1 text-[15px] font-bold text-primary`}>{titles[step]} <Text style={tw`font-medium text-ink-3`}>{n}/{total}</Text></Text>
+        <Text numberOfLines={1} style={tw`flex-1 ml-1 text-[15px] font-bold text-ink`}>{titles[step]} <Text style={tw`font-medium text-ink-3`}>{n}/{total}</Text></Text>
       </View>
       <View style={tw`px-4 pt-1`}><View style={tw`h-1.5 rounded-full bg-line overflow-hidden`}><View style={[tw`h-full bg-primary`, { width: `${(n / total) * 100}%` }]} /></View></View>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={tw`flex-1`}>
@@ -155,7 +155,7 @@ function PickRow({ active, done, icon, title, sub, onPress, disabled, first }: {
     </Pressable>
   );
 }
-const Box = ({ children }: { children: ReactNode }) => <View style={tw`rounded-[24px] border border-line bg-white overflow-hidden`}>{children}</View>;
+const Box = ({ children }: { children: ReactNode }) => <View style={tw`card overflow-hidden`}>{children}</View>;
 
 // ─── 2. 학교 선택 ──────────────────────────────────────────────────────────────
 function SchoolStep({ form, patch, next }: StepProps) {
@@ -231,7 +231,7 @@ function VerifyStep({ form, patch, next }: StepProps) {
   return (
     <>
       <Heading title={t('학교를 인증해주세요')} sub={t('AroundU는 인증된 사람만 만나요. 방법을 하나 골라 완료하면 프로필에 ✓ 배지가 붙어요.')} />
-      <View style={tw`rounded-[24px] border border-line bg-white p-3.5 flex-row items-center`}>
+      <View style={tw`card p-3.5 flex-row items-center`}>
         <View style={tw`h-10 w-10 rounded-full bg-primary-soft items-center justify-center`}><GraduationCap size={18} color={C.primary} /></View>
         <View style={tw`flex-1 min-w-0 mx-3`}><Text numberOfLines={1} style={tw`text-[14px] font-bold text-ink`}>{form.schoolName}</Text><Text style={tw`text-[12px] text-ink-3`}>@{form.emailDomain}</Text></View>
         {done ? <BadgeCheck size={20} color={C.verify} /> : null}
@@ -242,7 +242,7 @@ function VerifyStep({ form, patch, next }: StepProps) {
         <>
           {group(t('재학생'), options.filter((o) => o.for === 'student'))}
           {codeCard ? (
-            <View style={tw`mt-3 rounded-[24px] border border-line bg-white p-4`}>
+            <View style={tw`mt-3 card p-4`}>
               <Field label={t('학교 이메일')} hint={hint || `@${form.emailDomain}${t(' 이메일로 인증 코드를 보내드려요.')}`}>
                 <Row><Input style={tw`flex-1`} keyboardType="email-address" autoCapitalize="none" placeholder={`id@${form.emailDomain}`} value={form.email} onChangeText={(email) => patch({ email, codeSent: false })} /><View style={tw`w-2`} /><Button variant="secondary" onPress={sendCode} loading={busy && !form.codeSent} disabled={!form.email.includes('@')}>{t('코드 전송')}</Button></Row>
               </Field>
@@ -439,7 +439,7 @@ function ScheduleStep({ form, patch }: StepProps) {
           </Pressable>
         ); })}
       </Box>
-      <View style={tw`mt-3 rounded-[24px] border border-line bg-white p-4`}>
+      <View style={tw`mt-3 card p-4`}>
         <View style={tw`flex-row items-center mb-3`}><Plus size={15} color={C.primary} /><Text style={tw`ml-1.5 text-[14px] font-bold text-ink`}>{t('수업 추가')}</Text></View>
         <Field label={t('수업 이름')}><Input placeholder={t('예: 데이터베이스')} value={draft.name} onChangeText={(name) => setDraft({ ...draft, name })} /></Field>
         <Field label={t('요일')}><Wrap>{[0, 1, 2, 3, 4].map((d) => <WChip key={d} active={draft.day === d} onPress={() => setDraft({ ...draft, day: d })}>{DAY_LABELS[d]}</WChip>)}</Wrap></Field>

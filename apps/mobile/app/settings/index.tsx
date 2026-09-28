@@ -11,12 +11,13 @@ import type { User as UserT } from '@core/types';
 import { tw } from '@/tw';
 import { nav, replace } from '@/nav';
 import { useViewer } from '@/viewer';
-import { Screen, Segmented, Toggle, Button, BottomSheet, Avatar, C } from '@/ui';
+import { Screen, Segmented, Toggle, Button, BottomSheet, Avatar, C, usePalette, setPalette, PALETTE_IDS } from '@/ui';
+import { PALETTES, type PaletteId } from '@core/theme/tokens';
 import { affiliationText } from '@/components/b_Profile';
 import { stageKind, type StageKind } from '@core/lib/stage';
 import { setPartialFail } from '@/v2/useSectionState';
 
-const card = tw`rounded-[24px] border border-line bg-white`;
+const card = tw`card`;
 
 /** 설정 (웹 SettingsPage) */
 export default function SettingsScreen() {
@@ -28,6 +29,7 @@ export default function SettingsScreen() {
   const users = useAppStore((s) => s.users);
   const showToast = useAppStore((s) => s.showToast);
   const me = v.me;
+  const palette = usePalette();
   const [switchOpen, setSwitchOpen] = useState(false);
   const items = [
     { Icon: User, label: t('프로필 편집'), to: '/profile/edit' },
@@ -113,6 +115,10 @@ export default function SettingsScreen() {
             <Text style={tw`text-[14px] font-semibold text-ink mb-2`}>{t('단계 미리보기')}</Text>
             <Segmented<StageKind> value={stageKind(me)} onChange={previewStage} options={[['undergrad', t('학부생')], ['grad', t('대학원생')], ['alumni', t('졸업생')]]} />
             <Text style={tw`text-[12px] text-ink-3 mt-2`}>{t('단계에 따라 홈과 추천이 달라져요. 학교 네트워크는 졸업 후에도 그대로예요.')}</Text>
+          </View>
+          <View style={tw`px-4 py-3 border-t border-line`}>
+            <Text style={tw`text-[14px] font-semibold text-ink mb-2`}>{t('색 조합')}</Text>
+            <Segmented<PaletteId> value={palette} onChange={(id) => setPalette(id)} options={PALETTE_IDS.map((id) => [id, PALETTES[id].name] as [PaletteId, string])} />
           </View>
           <Pressable onPress={() => { setPartialFail('1'); showToast(t('다음에 여는 섹션 하나가 실패해요. 다시 시도로 복구해보세요.')); }} style={tw`flex-row items-center px-4 py-3.5 border-t border-line`}>
             <Bug size={18} color={C.ink2} />

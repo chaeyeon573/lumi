@@ -23,7 +23,7 @@ export function PostRow({ post: p, onPress, last }: { post: Post; onPress: () =>
       {p.anonymous ? <View style={tw`h-11 w-11 rounded-full bg-primary-soft items-center justify-center`}><Text style={tw`text-[13px] font-bold text-primary`}>?</Text></View> : <Avatar emoji={av.emoji} hue={av.hue} url={av.url} size={44} />}
       <View style={tw`flex-1 min-w-0 ml-3`}>
         <View style={tw`flex-row items-center`}>
-          <Text numberOfLines={1} style={tw`text-[15px] font-semibold text-primary shrink`}>{name}</Text>
+          <Text numberOfLines={1} style={tw`text-[15px] font-semibold text-ink shrink`}>{name}</Text>
           {isBoosted(p) ? <View style={tw`ml-2`}><Tag tone="gold">{t('부스트됨')}</Tag></View> : null}
           {p.postType && p.postType !== 'story' ? <View style={tw`ml-2`}><Tag tone="primary">{POST_TYPE_LABELS[p.postType]}</Tag></View> : null}
           <View style={tw`flex-1`} /><Text style={tw`ml-2 text-[12px] text-ink-3`}>{relativeTime(p.createdAt)}</Text>

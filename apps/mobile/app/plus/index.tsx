@@ -36,7 +36,7 @@ export default function PlusScreen() {
       <View style={tw`pt-2`}>
         {/* 1. 한 줄 가치 */}
         <View style={tw`rounded-[28px] bg-primary-soft p-5`}>
-          <View style={tw`flex-row items-center`}><Sparkles size={18} color={C.primary} /><Text style={tw`ml-2 flex-1 text-[22px] font-bold text-primary`}>{t('더 정확한 사람을 더 빠르게')}</Text></View>
+          <View style={tw`flex-row items-center`}><Sparkles size={18} color={C.primary} /><Text style={tw`ml-2 flex-1 text-[22px] font-bold text-ink`}>{t('더 정확한 사람을 더 빠르게')}</Text></View>
           <Text style={tw`text-[13px] text-ink-2 mt-2`}>{t('사람을 만나는 데는 돈을 받지 않아요. 원하는 사람을 더 빠르고 정교하게 찾는 기능만 AroundU+ 예요.')}</Text>
           {plus ? <View style={tw`mt-3 self-start`}><Tag tone="primary">✓ {t('이용 중')}</Tag></View> : null}
         </View>
@@ -44,7 +44,7 @@ export default function PlusScreen() {
         {/* 2. 유료 기능 5가지 */}
         <View style={tw`mt-4`}>
           {PLUS_PERKS().map((p, i) => { const Icon = ICONS[i]; return (
-            <View key={p.title} style={tw`mb-2 rounded-[24px] border border-line bg-white p-4 flex-row items-start`}>
+            <View key={p.title} style={tw`mb-2 card p-4 flex-row items-start`}>
               <View style={tw`h-10 w-10 rounded-2xl bg-primary-soft items-center justify-center`}><Icon size={18} color={C.primary} /></View>
               <View style={tw`flex-1 min-w-0 ml-3`}>
                 <Text style={tw`text-[15px] font-bold text-ink`}>{p.title}</Text>
@@ -63,13 +63,13 @@ export default function PlusScreen() {
         <MoreRow open={more} onToggle={() => setMore((x) => !x)} />
         {more ? (
           <View>
-            <View style={tw`rounded-[24px] border border-line bg-white p-4`}>
+            <View style={tw`card p-4`}>
               <Text style={tw`text-[14px] font-bold text-ink`}>{t('무료로 할 수 있는 것')}</Text>
               <View style={tw`mt-2 flex-row flex-wrap`}>{free.map((f) => <View key={f} style={tw`w-1/2 py-0.5 flex-row items-center`}><Check size={13} color={C.mint} /><Text numberOfLines={1} style={tw`ml-1.5 flex-1 text-[13px] text-ink-2`}>{f}</Text></View>)}</View>
             </View>
-            <Pressable onPress={() => nav('/people/advanced')} style={tw`mt-2 rounded-[24px] border border-line bg-white p-4 flex-row items-center`}>
+            <Pressable onPress={() => nav('/people/advanced')} style={tw`mt-2 card p-4 flex-row items-center`}>
               <View style={tw`h-10 w-10 rounded-2xl bg-accent-soft items-center justify-center`}><Telescope size={18} color={C.primary} /></View>
-              <View style={tw`flex-1 min-w-0 mx-3`}><Text style={tw`text-[15px] font-bold text-primary`}>{t('고급 탐색 열기')}</Text><Text style={tw`text-[12px] text-ink-2 mt-0.5`}>{t('조건 겹치기 · 2촌/3촌 필터 · 검색 저장 · 새 사람 알림')}</Text></View>
+              <View style={tw`flex-1 min-w-0 mx-3`}><Text style={tw`text-[15px] font-bold text-ink`}>{t('고급 탐색 열기')}</Text><Text style={tw`text-[12px] text-ink-2 mt-0.5`}>{t('조건 겹치기 · 2촌/3촌 필터 · 검색 저장 · 새 사람 알림')}</Text></View>
               <ChevronRight size={18} color={C.ink3} />
             </Pressable>
             <View style={tw`mt-3 px-1 flex-row items-center`}><Lock size={12} color={C.primary} /><Text style={tw`ml-1.5 flex-1 text-[12px] text-ink-2`}>{t('유료여도 비공개 정보는 볼 수 없어요 · 찾는 힘만 커져요')}</Text></View>

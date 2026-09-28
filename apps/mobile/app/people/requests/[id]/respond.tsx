@@ -101,7 +101,7 @@ function RespondForm({ req, author }: { req: NetworkRequest; author: User }) {
       <Screen title={t('저요')} footer={<Row><Button full size="lg" onPress={() => replace('/people/requests')}>{t('받은 요청으로')}</Button></Row>}>
         <View style={tw`pt-6 items-center`}>
           <View style={tw`h-16 w-16 rounded-full bg-accent-soft items-center justify-center`}><CheckCircle2 size={30} color={C.primary} /></View>
-          <Text style={tw`mt-4 text-[20px] font-bold text-primary`}>{t('손을 들었어요')}</Text>
+          <Text style={tw`mt-4 text-[20px] font-bold text-ink`}>{t('손을 들었어요')}</Text>
           <Text style={tw`mt-1 text-[13px] text-ink-2 text-center`}>{t('상대가 대화를 시작하면 알려드려요.')}</Text>
         </View>
         <Text style={tw`mt-6 mb-1.5 text-[11px] font-bold text-ink-3`}>{t('요청자에게 이렇게 보여요')}</Text>
@@ -123,7 +123,7 @@ function RespondForm({ req, author }: { req: NetworkRequest; author: User }) {
       <View style={tw`pt-1`}>
         {/* 요청 요약 — 왜 → 얼마나 가까운지 → 경로 */}
         <Section loading={sec.loading} error={sec.error} onRetry={sec.retry} skeleton={<SectionSkeleton count={1} />}>
-          <View style={tw`rounded-[24px] border border-line p-4 ${expired ? 'bg-surface-2' : 'bg-primary-soft'}`}>
+          <View style={tw`rounded-[20px] border border-line p-4 ${expired ? 'bg-surface-2' : 'bg-primary-soft'}`}>
             {expired
               ? <View style={tw`flex-row items-center`}><Clock size={12} color={C.ink3} /><Text style={tw`ml-1 text-[12px] font-bold text-ink-3`}>{t('마감된 요청이에요')}</Text></View>
               : <Text style={tw`text-[12px] font-bold text-primary`}>{t('혹시 여기에 해당되나요?')}</Text>}

@@ -24,6 +24,7 @@ import type { User, Interest, Stage, PeopleSearch, SavedSearch } from '@core/typ
 import { tw } from '@/tw';
 import { useViewer } from '@/viewer';
 import { nav } from '@/nav';
+import { MoreSections } from '@/v2/HomeParts';
 import { AppHeader, Segmented, Button, BottomSheet, Chip, Input, Avatar, Tag, Empty, C } from '@/ui';
 import { PaywallSheet } from '@/components/PaywallSheet';
 import { useSnapshot } from '@/v2/useSnapshot';
@@ -149,7 +150,7 @@ function HubTitle({ title, right, sub }: { title: string; right?: ReactNode; sub
     </View>
   );
 }
-const LinkBtn = ({ label, onPress }: { label: string; onPress: () => void }) => <Pressable onPress={onPress} hitSlop={6} style={tw`flex-row items-center`}><Text style={tw`text-[12px] font-semibold text-primary`}>{label}</Text><ChevronRight size={13} color={C.primary} /></Pressable>;
+const LinkBtn = ({ label, onPress }: { label: string; onPress: () => void }) => <Pressable onPress={onPress} hitSlop={6} style={tw`flex-row items-center`}><Text style={tw`text-[12px] font-semibold text-verify`}>{label}</Text><ChevronRight size={13} color={C.verify} /></Pressable>;
 
 /**
  * 조용한 허브 — 관리할 것 없이 둘러보기만 해도 되는 세로 스크롤.
@@ -196,7 +197,7 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
     <View style={tw`flex-row flex-wrap justify-center`}>
       <View style={tw`m-1`}><Button size="sm" onPress={() => nav('/profile/wants')}>{t('찾는 사람 설정')}</Button></View>
       <View style={tw`m-1`}><Button size="sm" variant="outline" onPress={() => nav('/profile/edit')}>{t('프로필 보완')}</Button></View>
-      <View style={tw`m-1`}><Button size="sm" variant="outline" icon={<Search size={14} color={C.ink2} />} onPress={() => nav('/people/find')}>{t('사람 찾아보기')}</Button></View>
+      <View style={tw`m-1`}><Button size="sm" variant="ghost" icon={<Search size={14} color={C.ink2} />} onPress={() => nav('/people/find')}>{t('사람 찾아보기')}</Button></View>
     </View>
   );
 
@@ -230,7 +231,7 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
               <SectionEmpty emoji="🌤️" title={t('이번 주는 조용해요')} description={t('아무것도 안 해도 괜찮아요. 새로운 사람이 생기면 여기에 보여요.')}
                 action={<Button size="sm" variant="outline" icon={<Search size={14} color={C.ink2} />} onPress={() => nav('/people/find')}>{t('사람 찾아보기')}</Button>} />
             )}>
-            <View style={tw`rounded-[24px] bg-primary-soft p-1.5`}>
+            <View style={tw`rounded-[20px] bg-primary-soft p-1.5`}>
               <View style={[tw`rounded-[20px]`, { backgroundColor: C.glassSoft }]}>
                 <AroundRow emoji="🤝" label={t('아는 사람을 통해 이어진 사람')} n={around.viaFriends.length} onPress={() => nav('/people/second')} />
                 <AroundRow emoji="📍" label={around.city ? fmt(t('이번 주 {city}에 있는 사람'), { city: around.city }) : t('이번 주 같은 도시에 있는 사람')} n={around.inCity.length} onPress={() => nav('/people/around')} border />
@@ -241,6 +242,8 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
           </Section>
         </View>
 
+        {/* 섹션 줄이기 — (c) 열려 있는 사람 · (d) 의외의 연결 · (e) 저장·찾아보기는 "더 보기" 카드 하나로 (누르면 그 자리에서 펼친다) */}
+        <MoreSections top={20} titles={[t('열려 있는 사람'), t('의외의 연결'), t('저장한 사람'), t('혹시 찾는 사람이 있나요?')]}>
         {/* (c) Open To — 상태가 켜진 사람 */}
         <View style={tw`mt-5`}>
           <HubTitle title={t('열려 있는 사람')} right={openPeople.length > 3 ? <LinkBtn label={t('모두 보기')} onPress={() => nav('/people/around?open=1')} /> : undefined} />
@@ -249,7 +252,7 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
               <SectionEmpty emoji="☕" title={t('지금 열려 있는 사람이 없어요')} description={t('내 상태를 켜 두면 가까운 사람에게 가볍게 보여요.')}
                 action={<Button size="sm" variant="outline" onPress={() => nav('/profile/open-to')}>{t('내 상태 켜기')}</Button>} />
             )}>
-            <View style={tw`rounded-[24px] border border-line bg-white`}>
+            <View style={tw`card`}>
               {openPeople.slice(0, 3).map((u, i) => <OpenRow key={u.id} user={u} closeness={closeness(u.id)} border={i > 0} />)}
             </View>
           </Section>
@@ -261,7 +264,7 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
           <Section loading={secUnexp.loading} error={secUnexp.error} onRetry={secUnexp.retry} skeleton={<SectionSkeleton count={2} />}
             empty={unexpected.length === 0 && <SectionEmpty emoji="🌿" title={t('새로운 추천이 없어요')} description={t('찾는 사람을 조정하거나 프로필을 채우면 새로운 사람이 보여요.')} action={nextActions} />}>
             {unexpected.map((c) => (
-              <View key={c.user.id} style={tw`mb-2 rounded-[24px] border border-line bg-white overflow-hidden`}>
+              <View key={c.user.id} style={tw`mb-2 card overflow-hidden`}>
                 <View style={tw`bg-sky-soft px-3.5 pt-3 pb-2.5`}>
                   <View style={tw`flex-row items-center mb-1.5`}><Text style={tw`flex-1 text-[11px] font-bold text-ink-3`}>{t('왜 의외인지')}</Text><ClosenessTag c={closeness(c.user.id)} /></View>
                   <ReasonChips reasons={c.reasons} max={3} />
@@ -273,7 +276,7 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
         </View>
 
         {/* (e) 들어가는 길 */}
-        <View style={tw`mt-5 rounded-[24px] border border-line bg-white`}>
+        <View style={tw`mt-5 card`}>
           <Pressable onPress={() => nav('/profile/saved')} style={tw`min-h-[52px] px-4 flex-row items-center`}>
             <View style={tw`h-8 w-8 rounded-full bg-primary-soft items-center justify-center`}><Bookmark size={15} color={C.primary} /></View>
             <Text style={tw`flex-1 ml-3 text-[14px] font-semibold text-ink`}>{t('저장한 사람')} <Text style={tw`text-ink-3`}>{savedCount}</Text></Text>
@@ -285,6 +288,7 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
             <ChevronRight size={16} color={C.ink3} />
           </Pressable>
         </View>
+        </MoreSections>
       </ScrollView>
       {bar}
     </View>
@@ -314,7 +318,7 @@ function AroundRow({ emoji, label, n, onPress, border }: { emoji: string; label:
     <Pressable onPress={onPress} style={tw`min-h-[48px] px-3.5 flex-row items-center ${border ? 'border-t border-line' : ''}`}>
       <Text style={tw`text-[16px]`}>{emoji}</Text>
       <Text numberOfLines={1} style={tw`flex-1 ml-2.5 text-[13px] font-semibold text-ink`}>{label}</Text>
-      <Text style={tw`text-[15px] font-bold ${n > 0 ? 'text-primary' : 'text-ink-3'}`}>{n}{t('명')}</Text>
+      <Text style={tw`text-[15px] font-bold ${n > 0 ? 'text-ink' : 'text-ink-3'}`}>{n}{t('명')}</Text>
       <ChevronRight size={15} color={C.ink3} />
     </Pressable>
   );
@@ -423,7 +427,7 @@ function SearchTab({ openPaywall, initialQ, initialC }: { openPaywall: () => voi
         </ScrollView>
       )}
 
-      <View style={tw`mx-4 mt-2 rounded-[24px] border border-line bg-white overflow-hidden`}>
+      <View style={tw`mx-4 mt-2 card overflow-hidden`}>
         {rows.map((r, i) => { const vals = r.summary(c); return (
           <Pressable key={r.key} onPress={() => setSheet(r.key)} style={tw`h-12 px-4 flex-row items-center ${i > 0 ? 'border-t border-line' : ''}`}>
             <Text style={tw`text-[14px] font-semibold text-ink`}>{r.label}</Text>
@@ -558,7 +562,7 @@ function ConnectionsTab() {
   return (
     <ScrollView contentContainerStyle={tw`px-4 pb-24`} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
       {(incoming.length > 0 || outgoing.length > 0) && (
-        <View style={tw`mb-3 rounded-[24px] bg-primary-soft p-3`}>
+        <View style={tw`mb-3 rounded-[20px] bg-primary-soft p-3`}>
           <Text style={tw`px-1 text-[13px] font-bold text-primary`}>{t('받은 요청')} {incoming.length} · {t('보낸 요청')} {outgoing.length}</Text>
           {incoming.map(({ r, u }) => (
             <View key={r.id} style={tw`mt-1.5 rounded-2xl bg-white px-3 py-2 flex-row items-center`}>
@@ -592,7 +596,7 @@ function ConnectionsTab() {
       )}
 
       {following.length > 0 && (
-        <View style={tw`mt-1 rounded-[24px] border border-line bg-white overflow-hidden`}>
+        <View style={tw`mt-1 card overflow-hidden`}>
           <Pressable onPress={() => setFollowOpen((x) => !x)} style={tw`h-12 px-4 flex-row items-center`}>
             <Text style={tw`flex-1 text-[14px] font-bold text-ink`}>{t('팔로잉')} <Text style={tw`text-ink-3`}>{following.length}</Text></Text>
             <ChevronDown size={16} color={C.ink3} style={followOpen ? { transform: [{ rotate: '180deg' }] } : undefined} />

@@ -126,7 +126,7 @@ export default function TimetableScreen() {
   if (status === 'error') return <Screen title={t('시간표')}><Empty title={error ?? t('문제가 발생했어요.')} action={<Button size="sm" onPress={() => init()}>{t('다시 시도')}</Button>} /></Screen>;
 
   const headerRight = (
-    <Pressable onPress={() => setEditing(emptyCourse(today < 5 ? today : 0))} style={tw`h-9 pl-3 pr-3.5 rounded-full bg-primary flex-row items-center`}><Plus size={16} color="#fff" /><Text style={tw`ml-1 text-[13px] font-semibold text-white`}>{t('수업 추가')}</Text></Pressable>
+    <Pressable onPress={() => setEditing(emptyCourse(today < 5 ? today : 0))} style={tw`h-9 pl-3 pr-3.5 rounded-full bg-primary flex-row items-center`}><Plus size={16} color={C.onPrimary} /><Text style={tw`ml-1 text-[13px] font-semibold text-white`}>{t('수업 추가')}</Text></Pressable>
   );
 
   const upcomingFree = myFree.filter((b) => b.end > nowMin());
@@ -135,7 +135,7 @@ export default function TimetableScreen() {
     <Screen title={t('시간표')} right={headerRight}>
       <View style={tw`pt-3`}>
         {me.timetable.length > 0 && (
-          <View style={[tw`rounded-[24px] border border-line p-3.5 flex-row items-center mb-3`, { backgroundColor: now.kind === 'in_class' ? '#FFF4DE' : '#E1F7F0' }]}>
+          <View style={[tw`rounded-[20px] border border-line p-3.5 flex-row items-center mb-3`, { backgroundColor: now.kind === 'in_class' ? C.warnSoft : C.okSoft }]}>
             <View style={tw`h-2.5 w-2.5 rounded-full ${now.kind === 'in_class' ? 'bg-gold' : 'bg-mint'}`} />
             <View style={tw`flex-1 min-w-0 mx-3`}>
               <Text style={tw`text-[14px] font-bold text-ink`}>{lang === 'en' ? `${DAY_LABELS[today]} · ${statusLabel(now)}` : `${DAY_LABELS[today]}요일 · ${statusLabel(now)}`}</Text>
@@ -146,7 +146,7 @@ export default function TimetableScreen() {
         )}
 
         {me.timetable.length > 0 && upcomingFree.length > 0 && (
-          <View style={tw`rounded-[24px] border border-line bg-white p-3.5 mb-3`}>
+          <View style={tw`card p-3.5 mb-3`}>
             <Text style={tw`text-[13px] font-bold text-ink`}>{t('오늘 공강에 끼워 넣을 수 있는 것')}</Text>
             <View style={tw`mt-2`}>
               {upcomingFree.slice(0, 3).map((b) => { const sg = slotSuggestions({ ...v.snap, organizations: orgs }, me, v.visibleActivities, b, today, (u) => v.canSeeField(u, 'timetable')); return (
@@ -163,10 +163,10 @@ export default function TimetableScreen() {
         {me.timetable.length === 0 ? (
           <View style={tw`items-center pt-16 px-4`}>
             <View style={tw`h-16 w-16 rounded-full bg-primary-soft items-center justify-center`}><CalendarPlus size={28} color={C.primary} /></View>
-            <Text style={tw`mt-4 text-[20px] font-bold text-primary`}>{t('시간표 추가하기')}</Text>
+            <Text style={tw`mt-4 text-[20px] font-bold text-ink`}>{t('시간표 추가하기')}</Text>
             <Text style={tw`mt-2 text-[13px] text-ink-3 text-center`}>{t('수업을 추가하면 공강 시간에 맞는 친구와 활동을 추천해요. 강의실과 전체 시간표는 다른 사람에게 공개되지 않아요.')}</Text>
             <View style={tw`mt-6 w-full`}>
-              <Button size="lg" icon={<Plus size={17} color="#fff" />} onPress={() => setEditing(emptyCourse(today < 5 ? today : 0))}>{t('첫 수업 추가')}</Button>
+              <Button size="lg" icon={<Plus size={17} color={C.onPrimary} />} onPress={() => setEditing(emptyCourse(today < 5 ? today : 0))}>{t('첫 수업 추가')}</Button>
               <View style={tw`h-2`} />
               <Button size="lg" variant="secondary" loading={busy} onPress={loadSample}>{t('예시 시간표 불러오기')}</Button>
             </View>
@@ -178,7 +178,7 @@ export default function TimetableScreen() {
             <Text numberOfLines={1} style={tw`ml-2 flex-1 text-[12px] text-ink-3`}>{lang === 'en' ? `Visible to: ${VISIBILITY_LABELS[me.fieldVisibility.timetable]}` : `공개: ${VISIBILITY_LABELS[me.fieldVisibility.timetable]}`}</Text>
             <Pressable onPress={saveImage} style={tw`h-9 pl-3 pr-3.5 rounded-full bg-surface-2 flex-row items-center`}><ImageDown size={16} color={C.primary} /><Text style={tw`ml-1 text-[12px] font-semibold text-primary`}>{t('이미지 저장')}</Text></Pressable>
           </View>
-          <View ref={gridRef} collapsable={false} style={tw`rounded-[24px] border border-line bg-white overflow-hidden mb-3`}>
+          <View ref={gridRef} collapsable={false} style={tw`card overflow-hidden mb-3`}>
             <View style={tw`flex-row`}>
               <View style={{ width: TIME_COL }} />
               {days.map((d) => <View key={d} style={tw`flex-1 items-center py-2`}><Text style={tw`text-[12px] font-bold ${d === today ? 'text-primary' : 'text-ink-3'}`}>{DAY_LABELS[d]}</Text></View>)}
@@ -186,7 +186,7 @@ export default function TimetableScreen() {
             <View style={[tw`flex-row border-t border-line`, { height: hours.length * HOUR_PX }]}>
               <View style={{ width: TIME_COL }}>{hours.map((h, i) => <Text key={h} style={[tw`absolute right-1.5 text-[10px] text-ink-3`, { top: i * HOUR_PX + 2 }]}>{h}</Text>)}</View>
               {days.map((d) => (
-                <Pressable key={d} onPress={(e) => tapColumn(d, e.nativeEvent.locationY)} style={[tw`flex-1 border-l border-line`, d === today ? { backgroundColor: 'rgba(210,228,255,0.3)' } : null]}>
+                <Pressable key={d} onPress={(e) => tapColumn(d, e.nativeEvent.locationY)} style={[tw`flex-1 border-l border-line`, d === today ? { backgroundColor: C.tint } : null]}>
                   {hours.map((h, i) => <View key={h} pointerEvents="none" style={[tw`absolute left-0 right-0 border-t border-line`, { top: i * HOUR_PX, opacity: 0.7 }]} />)}
                   {me.timetable.filter((c) => c.day === d).map((c) => (
                     <Pressable key={c.id} onPress={() => setSpace(c.name)} style={[tw`absolute left-0.5 right-0.5 rounded-lg px-1.5 py-1 overflow-hidden`, { top: (toMin(c.start) - GRID_START * 60) / 60 * HOUR_PX, height: (toMin(c.end) - toMin(c.start)) / 60 * HOUR_PX - 2, backgroundColor: `hsl(${c.hue}, 80%, 90%)`, borderLeftWidth: 3, borderLeftColor: `hsl(${c.hue}, 70%, 55%)` }]}>
@@ -212,7 +212,7 @@ export default function TimetableScreen() {
         )}
 
         {me.timetable.length > 0 && (
-          <View style={tw`rounded-[24px] border border-line bg-white p-4 mb-3`}>
+          <View style={tw`card p-4 mb-3`}>
             <View style={tw`flex-row items-center`}><Users size={15} color={C.primary} /><Text style={tw`ml-1.5 text-[14px] font-bold text-ink`}>{t('오늘 공강이 겹치는 친구')}</Text></View>
             {overlaps.length === 0 ? (
               <Text style={tw`text-[12px] text-ink-3 mt-2`}>{friendIds.length === 0 ? t('친구를 추가하면 공강이 겹치는 시간을 알려드려요.') : t('오늘은 겹치는 공강이 없어요. 친구가 시간표를 공개하면 여기에 보여요.')}</Text>
@@ -231,7 +231,7 @@ export default function TimetableScreen() {
                     </Pressable>
                   ))}
                 </View>
-                {bestBlock && <View style={tw`flex-row mt-2`}><Button full size="sm" icon={<CalendarPlus size={15} color="#fff" />} onPress={() => nav(`/create/activity?kind=personal&start=${toHHMM(bestBlock.start)}&end=${toHHMM(Math.min(bestBlock.end, bestBlock.start + 90))}`)}>{fmtBlock({ start: bestBlock.start, end: Math.min(bestBlock.end, bestBlock.start + 90) })} {t('활동 만들기')}</Button></View>}
+                {bestBlock && <View style={tw`flex-row mt-2`}><Button full size="sm" icon={<CalendarPlus size={15} color={C.onPrimary} />} onPress={() => nav(`/create/activity?kind=personal&start=${toHHMM(bestBlock.start)}&end=${toHHMM(Math.min(bestBlock.end, bestBlock.start + 90))}`)}>{fmtBlock({ start: bestBlock.start, end: Math.min(bestBlock.end, bestBlock.start + 90) })} {t('활동 만들기')}</Button></View>}
               </>
             )}
           </View>

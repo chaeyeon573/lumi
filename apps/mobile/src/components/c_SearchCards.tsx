@@ -46,7 +46,7 @@ export function PersonCard({ user }: { user: User }) {
   const follow = () => run(() => api.relationships.toggleFollow(v.me.id, user.id, 'user'), following ? undefined : `${user.nickname}${t('님을 팔로우해요')}`);
 
   return (
-    <View style={tw`rounded-[24px] border border-line bg-white overflow-hidden mb-3`}>
+    <View style={tw`card overflow-hidden mb-3`}>
       <Pressable onPress={() => nav(`/users/${user.id}`)}><Cover emoji={user.avatar.emoji} hue={user.avatar.hue} url={user.avatar.url} size={220} radius={0} style={{ width: '100%', height: 220 }} /></Pressable>
       <View style={tw`p-3.5`}>
         <View style={tw`flex-row items-center`}>
@@ -68,7 +68,7 @@ export function PersonCard({ user }: { user: User }) {
         {prompt ? <View style={tw`mt-2 rounded-xl bg-surface-2 px-3 py-2`}><Text style={tw`text-[11px] font-bold text-primary`}>{questionById(prompt.questionId)?.text}</Text><Text numberOfLines={2} style={tw`text-[13px] font-semibold text-ink mt-0.5`}>{prompt.answer}</Text></View>
           : user.nowWant ? <View style={tw`mt-2 rounded-xl bg-primary-soft px-3 py-2`}><Text style={tw`text-[13px] font-semibold text-primary`}>“{user.nowWant}”</Text></View> : null}
         <View style={tw`flex-row items-center mt-3`}>
-          <Pressable onPress={like} style={[tw`h-10 w-10 rounded-xl items-center justify-center mr-1.5`, { backgroundColor: liked ? C.danger : '#FFDAD6' }]}><Heart size={18} color={liked ? '#fff' : C.danger} fill={liked ? '#fff' : 'none'} /></Pressable>
+          <Pressable onPress={like} style={[tw`h-10 w-10 rounded-xl items-center justify-center mr-1.5`, { backgroundColor: liked ? C.primary : C.tint }]}><Heart size={18} color={liked ? C.onPrimary : C.primary} fill={liked ? C.onPrimary : 'none'} /></Pressable>
           <Button size="sm" full style={tw`h-10`} onPress={() => nav(`/users/${user.id}?propose=1`)}>{t('같이하기')}</Button>
           <View style={tw`w-1.5`} />
           <Button size="sm" style={tw`h-10`} variant={following ? 'secondary' : 'outline'} onPress={follow} icon={<UserPlus size={15} color={following ? C.primary : C.ink2} />}>{following ? t('팔로잉') : t('팔로우')}</Button>
@@ -87,7 +87,7 @@ export function ActivityRowCard({ activity: a, badge }: { activity: Activity; ba
   const count = v.approvedCount(a.id);
   const color = CATEGORY_COLORS[a.category];
   return (
-    <Pressable onPress={() => nav(`/activities/${a.id}`)} style={tw`rounded-[24px] border border-line bg-white flex-row p-3 mb-3`}>
+    <Pressable onPress={() => nav(`/activities/${a.id}`)} style={tw`card flex-row p-3 mb-3`}>
       <Cover emoji={a.cover.emoji} hue={a.cover.hue} url={a.cover.url} size={76} radius={12} />
       <View style={tw`flex-1 min-w-0 ml-3`}>
         <View style={tw`flex-row items-center`}><Text style={[tw`text-[11px] font-bold`, { color }]}>{CATEGORY_EMOJI[a.category]} {CATEGORY_LABELS[a.category]}</Text>{badge ? <View style={tw`ml-1.5`}><Tag tone="primary">{badge}</Tag></View> : null}</View>
@@ -103,7 +103,7 @@ export function ActivityRowCard({ activity: a, badge }: { activity: Activity; ba
 /** 조직 카드 (웹 OrgCard) */
 export function OrgCard({ org }: { org: Organization }) {
   return (
-    <Pressable onPress={() => nav(`/orgs/${org.id}`)} style={tw`rounded-[24px] border border-line bg-white flex-row items-center p-3 mb-3`}>
+    <Pressable onPress={() => nav(`/orgs/${org.id}`)} style={tw`card flex-row items-center p-3 mb-3`}>
       <Cover emoji={org.logo.emoji} hue={org.logo.hue} url={org.logo.url} size={48} radius={16} />
       <View style={tw`flex-1 min-w-0 ml-3`}>
         <View style={tw`flex-row items-center`}><Text numberOfLines={1} style={tw`text-[14px] font-bold text-ink shrink`}>{org.name}</Text>{org.verified && <BadgeCheck size={14} color={C.gold} style={tw`ml-1`} />}</View>

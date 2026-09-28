@@ -56,7 +56,7 @@ export default function ProfileContextScreen() {
   return (
     <Screen title={t('목표와 역할')} footer={<View style={tw`flex-row`}><Button full size="lg" loading={busy} onPress={save}>{t('저장')}</Button></View>}>
       <View style={tw`py-4`}>
-        <LinearGradient colors={['#E9EDFF', '#FFFFFF']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0.4 }} style={tw`rounded-[24px] border border-line p-4 mb-5`}>
+        <LinearGradient colors={[C.tint, C.surface]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0.4 }} style={tw`rounded-[20px] border border-line p-4 mb-5`}>
           <View style={tw`flex-row items-center mb-2`}><Gift size={16} color={C.primary} /><Text style={tw`ml-2 text-[14px] font-bold text-ink`}>{t('채울수록 더 잘 연결돼요')}</Text></View>
           <CompletionMeter {...preview} />
           <Text style={tw`text-[12px] text-ink-2 mt-2`}>{t('완성도가 높을수록 추천에 더 자주 노출되고(100%면 1.5배), 상대 카드에 "왜 잘 맞는지"가 구체적으로 표시돼요.')}</Text>

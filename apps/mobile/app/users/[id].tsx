@@ -84,13 +84,13 @@ export default function PersonScreen() {
   const footer = (
     <View>
       <View style={[tw`flex-row`, { gap: 8 }]}>
-        <Pressable onPress={like} style={[tw`h-[52px] w-[52px] rounded-2xl items-center justify-center`, { backgroundColor: liked ? C.danger : '#FFDAD6' }]}><Heart size={22} color={liked ? '#fff' : C.danger} fill={liked ? '#fff' : 'none'} /></Pressable>
+        <Pressable onPress={like} style={[tw`h-[52px] w-[52px] rounded-2xl items-center justify-center`, { backgroundColor: liked ? C.primary : C.tint }]}><Heart size={22} color={liked ? C.onPrimary : C.primary} fill={liked ? C.onPrimary : 'none'} /></Pressable>
         <Button size="lg" variant={following ? 'secondary' : 'outline'} onPress={() => run(() => api.relationships.toggleFollow(v.me.id, user.id, 'user'))}>{following ? t('팔로잉') : t('팔로우')}</Button>
         {friend ? <Button size="lg" variant="secondary" icon={<Check size={16} color={C.primary} />} disabled>{t('친구')}</Button>
           : outReq ? <Button size="lg" variant="outline" onPress={() => run(() => api.relationships.cancelFriendRequest(outReq.id), t('요청을 취소했어요.'))}>{t('요청 취소')}</Button>
           : <Button size="lg" variant="outline" icon={<UserPlus size={16} color={C.ink2} />} onPress={() => run(() => api.relationships.sendFriendRequest(v.me.id, user.id), t('친구 요청을 보냈어요.'))}>{t('친구 요청')}</Button>}
-        {msg.ok ? <Button size="lg" full icon={<MessageCircle size={18} color="#fff" />} onPress={openChat}>{t('메시지')}</Button>
-          : <Button size="lg" full icon={<CalendarPlus size={18} color="#fff" />} onPress={() => setPropose(true)} disabled={!!pendingProposal}>{pendingProposal ? t('제안 대기 중') : t('활동 제안')}</Button>}
+        {msg.ok ? <Button size="lg" full icon={<MessageCircle size={18} color={C.onPrimary} />} onPress={openChat}>{t('메시지')}</Button>
+          : <Button size="lg" full icon={<CalendarPlus size={18} color={C.onPrimary} />} onPress={() => setPropose(true)} disabled={!!pendingProposal}>{pendingProposal ? t('제안 대기 중') : t('활동 제안')}</Button>}
       </View>
       {!msg.ok && <View style={tw`flex-row items-center justify-center mt-2`}><Lock size={11} color={C.ink3} /><Text style={tw`ml-1 text-[11px] text-ink-3`}>{msg.reason}</Text></View>}
     </View>
@@ -100,9 +100,9 @@ export default function PersonScreen() {
     <Screen title="" right={<IconBtn onPress={() => setMenu(true)}><MoreHorizontal size={20} color={C.ink2} /></IconBtn>} footer={footer}>
       <PhotoHero user={user} />
       <View style={tw`-mt-8`}>
-        <View style={tw`rounded-[24px] border border-line bg-white p-4`}>
+        <View style={tw`card p-4`}>
           <View style={tw`flex-row items-center flex-wrap`}>{user.affiliation.type === 'university' && user.affiliation.emailVerified && <VerifiedBadge kind="school" size={16} label />}{user.identityVerified && <VerifiedBadge kind="identity" size={16} label />}</View>
-          {mutual && <View style={[tw`mt-3 rounded-xl px-3 py-2.5 flex-row items-center`, { backgroundColor: '#FFDAD6' }]}><Heart size={15} color={C.ink} fill={C.ink} /><Text style={tw`ml-2 text-[13px] font-semibold text-ink shrink`}>{t('서로 관심이 있어요. 이제 메시지를 보낼 수 있어요.')}</Text></View>}
+          {mutual && <View style={[tw`mt-3 rounded-xl px-3 py-2.5 flex-row items-center`, { backgroundColor: C.tint }]}><Heart size={15} color={C.ink} fill={C.ink} /><Text style={tw`ml-2 text-[13px] font-semibold text-ink shrink`}>{t('서로 관심이 있어요. 이제 메시지를 보낼 수 있어요.')}</Text></View>}
           {conn !== 'none' && !mutual && <View style={tw`mt-2 flex-row`}><Tag tone="mint">✓ {connLabel}</Tag></View>}
           {inReq && (
             <View style={tw`mt-3 rounded-xl bg-primary-soft px-3 py-2.5 flex-row items-center`}>
@@ -121,7 +121,7 @@ export default function PersonScreen() {
         </View>
 
         {together && (
-          <View style={[tw`mt-3 rounded-[24px] border border-line p-4`, { backgroundColor: '#E1F7F0' }]}>
+          <View style={[tw`mt-3 rounded-[20px] border border-line p-4`, { backgroundColor: C.okSoft }]}>
             <View style={tw`flex-row items-center`}><Sparkles size={15} color={C.mint} /><Text style={tw`ml-1.5 text-[14px] font-bold text-ink`}>{user.nickname}{t('님과 함께할 수 있는 것')}</Text></View>
             <View style={tw`mt-2`}>
               {hosting.map((a) => <Pressable key={a.id} onPress={() => nav(`/activities/${a.id}`)} style={tw`flex-row items-center mb-1.5`}><Text style={tw`text-[13px]`}>{CATEGORY_EMOJI[a.category]}</Text><Text numberOfLines={1} style={tw`flex-1 mx-2 text-[13px] text-ink`}>{a.title}</Text><Text style={tw`text-[11px] text-primary font-semibold`}>{t('참가')}</Text></Pressable>)}
@@ -135,12 +135,12 @@ export default function PersonScreen() {
         {see('prompts') && (user.prompts.length > 0 || user.voicePrompt || user.poll) && (
           <View style={tw`mt-3`}>
             {user.prompts.filter((p) => p.answer.trim()).map((p) => <View key={p.questionId} style={tw`mb-2.5`}><PromptAnswerCard prompt={p} /></View>)}
-            {user.voicePrompt && <View style={tw`rounded-[24px] border border-line bg-white p-4 mb-2.5`}><View style={tw`flex-row items-center`}><Mic size={12} color={C.primary} /><Text style={tw`ml-1 text-[12px] font-bold text-primary`}>{questionById(user.voicePrompt.questionId)?.text}</Text></View><View style={tw`mt-2 flex-row`}><VoicePlayer duration={user.voicePrompt.durationSec} /></View></View>}
+            {user.voicePrompt && <View style={tw`card p-4 mb-2.5`}><View style={tw`flex-row items-center`}><Mic size={12} color={C.primary} /><Text style={tw`ml-1 text-[12px] font-bold text-primary`}>{questionById(user.voicePrompt.questionId)?.text}</Text></View><View style={tw`mt-2 flex-row`}><VoicePlayer duration={user.voicePrompt.durationSec} /></View></View>}
             {user.poll && <PollCard poll={user.poll} ownerName={user.nickname} myVote={user.poll.votes[v.me.id]} onVote={(i) => run(() => api.users.votePoll(user.id, v.me.id, i), t('투표했어요.'))} />}
           </View>
         )}
 
-        <View style={tw`mt-3 rounded-[24px] border border-line bg-white p-4`}>
+        <View style={tw`mt-3 card p-4`}>
           <Block label={t('이번 학기 목표')} visible={see('goals') && user.goals.length > 0}><View style={[tw`flex-row flex-wrap`, { gap: 6 }]}>{user.goals.map((g) => <Tag key={g} tone={v.me.goals.includes(g) ? 'primary' : 'neutral'}>{GOAL_EMOJI[g]} {GOAL_LABELS[g]}</Tag>)}</View></Block>
           {(user.lookingFor.length > 0 || user.canOffer.length > 0) && <Block label={t('찾는 사람 · 제공할 수 있는 것')} visible><View>{user.lookingFor.length > 0 && <Text style={tw`text-[13px] text-ink-2`}>🔍 {user.lookingFor.map((r) => PERSON_ROLE_LABELS[r]).join(', ')}</Text>}{user.canOffer.length > 0 && <Text style={tw`text-[13px] text-ink-2 mt-0.5`}>🛠 {user.canOffer.map((r) => PERSON_ROLE_LABELS[r]).join(', ')}</Text>}</View></Block>}
           {user.living && <Block label={t('생활권')} visible={see('living')}><Text style={tw`text-[13px] text-ink-2`}>{RESIDENCE_LABELS[user.living.residence]} · {user.living.zone}{v.me.living?.zone === user.living.zone && <Text style={tw`text-mint font-semibold`}> {t('같은 생활권')}</Text>}</Text></Block>}
@@ -163,7 +163,7 @@ export default function PersonScreen() {
         </View>
 
         {(see('posts') ? userPosts.length > 0 : true) && (
-          <View style={tw`mt-3 rounded-[24px] border border-line bg-white p-4`}>
+          <View style={tw`mt-3 card p-4`}>
             <View style={tw`flex-row items-center justify-between`}><Text style={tw`text-[14px] font-bold text-ink`}>{t('사진과 게시물')}</Text>{!see('posts') && <VisibilityTag value={user.fieldVisibility.posts} />}</View>
             {see('posts') ? (
               <View style={[tw`flex-row flex-wrap mt-3`, { gap: 6 }]}>
@@ -175,7 +175,7 @@ export default function PersonScreen() {
         )}
 
         {hosting.length > 0 && <View style={tw`mt-3`}><Text style={tw`text-[15px] font-bold text-ink mb-2`}>{t('운영 중인 모임')}</Text>{hosting.map((a) => <ActivityRow key={a.id} activity={a} />)}</View>}
-        {adminOrgs.length > 0 && <View style={tw`mt-3`}><Text style={tw`text-[15px] font-bold text-ink mb-2`}>{t('운영 중인 조직')}</Text>{adminOrgs.map((o) => <Pressable key={o.id} onPress={() => nav(`/orgs/${o.id}`)} style={tw`rounded-[24px] border border-line bg-white p-3 flex-row items-center mb-2`}><Avatar emoji={o.logo.emoji} hue={o.logo.hue} url={o.logo.url} size={40} style={{ borderRadius: 12 }} /><Text style={tw`ml-3 text-[14px] font-bold text-ink`}>{o.name}</Text></Pressable>)}</View>}
+        {adminOrgs.length > 0 && <View style={tw`mt-3`}><Text style={tw`text-[15px] font-bold text-ink mb-2`}>{t('운영 중인 조직')}</Text>{adminOrgs.map((o) => <Pressable key={o.id} onPress={() => nav(`/orgs/${o.id}`)} style={tw`card p-3 flex-row items-center mb-2`}><Avatar emoji={o.logo.emoji} hue={o.logo.hue} url={o.logo.url} size={40} style={{ borderRadius: 12 }} /><Text style={tw`ml-3 text-[14px] font-bold text-ink`}>{o.name}</Text></Pressable>)}</View>}
         {upcoming.filter((a) => a.hostId !== user.id).length > 0 && <View style={tw`mt-3`}><Text style={tw`text-[15px] font-bold text-ink mb-2`}>{t('참여 예정인 공개 활동')}</Text>{upcoming.filter((a) => a.hostId !== user.id).map((a) => <ActivityRow key={a.id} activity={a} />)}</View>}
       </View>
 
@@ -205,7 +205,7 @@ function PhotoHero({ user }: { user: User }) {
       {photos.length ? <Image source={img(photos[pi])} style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }} contentFit="cover" transition={150} /> : <View style={tw`absolute inset-0 items-center justify-center`}><Text style={{ fontSize: 120 }}>{user.avatar.emoji}</Text></View>}
       <LinearGradient colors={['rgba(0,0,0,0.5)', 'rgba(0,0,0,0)']} style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 128 }} />
       <LinearGradient colors={['rgba(0,0,0,0)', 'rgba(20,14,10,0.3)', 'rgba(20,14,10,0.9)']} locations={[0, 0.4, 1]} style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: 242 }} />
-      {photos.length > 1 && <View style={[tw`absolute top-3 left-4 right-4 flex-row`, { gap: 4 }]}>{photos.map((_, i) => <View key={i} style={[tw`h-[3px] flex-1 rounded-full`, { backgroundColor: i === pi ? '#fff' : 'rgba(255,255,255,0.4)' }]} />)}</View>}
+      {photos.length > 1 && <View style={[tw`absolute top-3 left-4 right-4 flex-row`, { gap: 4 }]}>{photos.map((_, i) => <View key={i} style={[tw`h-[3px] flex-1 rounded-full`, { backgroundColor: i === pi ? C.onPrimary : 'rgba(255,255,255,0.4)' }]} />)}</View>}
       {user.avatar.photoType !== 'face' && <View style={[tw`absolute top-6 left-4 rounded-full px-2.5 py-1`, { backgroundColor: 'rgba(0,0,0,0.35)' }]}><Text style={tw`text-white text-[11px]`}>{user.avatar.photoType === 'masked' ? t('얼굴 비공개') : t('뒷모습')}</Text></View>}
       <View pointerEvents="none" style={tw`absolute left-0 right-0 bottom-0 p-5 pb-12`}>
         <View style={[tw`flex-row items-end`, { gap: 8 }]}><Text style={tw`text-[40px] font-bold text-white leading-[44px]`}>{user.nickname}</Text><Text style={tw`text-[22px] text-white opacity-80 pb-1`}>{new Date().getFullYear() - user.birthYear + 1}</Text></View>

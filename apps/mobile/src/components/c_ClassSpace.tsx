@@ -26,7 +26,7 @@ export function ClassSpaceContent({ courseName, onEdit, onClose }: { courseName:
       <View style={tw`flex-row items-start justify-between`}>
         <View style={tw`flex-1 mr-3`}>
           <View style={tw`flex-row items-center`}>
-            <Text style={tw`text-[28px] font-bold text-primary`}>{short}</Text>
+            <Text style={tw`text-[28px] font-bold text-ink`}>{short}</Text>
             {freeMates.length > 0 && <View style={tw`ml-2 h-6 px-2.5 rounded-full bg-accent items-center justify-center`}><Text style={tw`text-[11px] font-bold text-primary`}>Live</Text></View>}
           </View>
           <Text style={tw`mt-1.5 text-[14px] text-verify`}>{mine[0]?.room ? `${mine[0].room} · ` : ''}{times}</Text>
@@ -36,7 +36,7 @@ export function ClassSpaceContent({ courseName, onEdit, onClose }: { courseName:
 
       <View style={tw`mt-6`}>
         <View style={tw`flex-row items-center justify-between mb-3`}>
-          <View style={tw`flex-row items-center`}><View style={tw`h-2 w-2 rounded-full bg-accent mr-2`} /><Text style={tw`text-[14px] font-semibold text-primary`}>{lang === 'en' ? 'Free Now' : '지금 공강'}</Text></View>
+          <View style={tw`flex-row items-center`}><View style={tw`h-2 w-2 rounded-full bg-accent mr-2`} /><Text style={tw`text-[14px] font-semibold text-ink`}>{lang === 'en' ? 'Free Now' : '지금 공강'}</Text></View>
           <Text style={tw`text-[13px] text-verify`}>{mates.length}{lang === 'en' ? ' classmates' : '명 같은 수업'}</Text>
         </View>
         {freeMates.length === 0 ? <Text style={tw`text-[13px] text-ink-3`}>{t('시간표를 공개한 같은 수업 학생이 아직 없어요.')}</Text> : (
@@ -55,12 +55,12 @@ export function ClassSpaceContent({ courseName, onEdit, onClose }: { courseName:
       </View>
 
       <View style={tw`mt-6`}>
-        <View style={tw`flex-row items-center justify-between mb-2`}><Text style={tw`text-[14px] font-semibold text-primary`}>Study Crews</Text><Text style={tw`text-[13px] text-verify`}>{crews.length}{lang === 'en' ? ' active' : '개'}</Text></View>
+        <View style={tw`flex-row items-center justify-between mb-2`}><Text style={tw`text-[14px] font-semibold text-ink`}>Study Crews</Text><Text style={tw`text-[13px] text-verify`}>{crews.length}{lang === 'en' ? ' active' : '개'}</Text></View>
         {crews.length === 0 ? <Text style={tw`text-[13px] text-ink-3`}>{lang === 'en' ? 'No crews yet. Start the first one.' : '아직 없어요. 첫 Crew를 열어보세요.'}</Text> : (
           crews.map((a) => { const left = a.capacity - v.approvedCount(a.id); return (
             <View key={a.id} style={tw`rounded-2xl bg-surface-2 px-4 py-3.5 flex-row items-center mb-2`}>
               <Pressable onPress={() => go(`/activities/${a.id}`)} style={tw`flex-1 min-w-0 mr-3`}>
-                <Text numberOfLines={1} style={tw`text-[15px] font-semibold text-primary`}>{a.title}</Text>
+                <Text numberOfLines={1} style={tw`text-[15px] font-semibold text-ink`}>{a.title}</Text>
                 <Text style={tw`text-[13px] text-verify mt-0.5`}>{formatDate(a.date)} {formatTime(a.startTime)} · {left}{lang === 'en' ? ` spot${left === 1 ? '' : 's'} left` : '자리'}</Text>
               </Pressable>
               <JoinButton activity={a} size="sm" label={t('참여')} />
@@ -69,7 +69,7 @@ export function ClassSpaceContent({ courseName, onEdit, onClose }: { courseName:
         )}
       </View>
 
-      <View style={tw`mt-6 items-center`}><Button size="lg" icon={<Plus size={18} color="#fff" />} onPress={() => go(`/create/activity?crew=${encodeURIComponent(courseName)}`)}>{lang === 'en' ? 'New Crew' : 'Crew 만들기'}</Button></View>
+      <View style={tw`mt-6 items-center`}><Button size="lg" icon={<Plus size={18} color={C.onPrimary} />} onPress={() => go(`/create/activity?crew=${encodeURIComponent(courseName)}`)}>{lang === 'en' ? 'New Crew' : 'Crew 만들기'}</Button></View>
       {onEdit && <Pressable onPress={onEdit} style={tw`h-9 items-center justify-center mt-2`}><Text style={tw`text-[12px] font-semibold text-ink-3`}>{t('수업 정보 수정')}</Text></Pressable>}
     </View>
   );

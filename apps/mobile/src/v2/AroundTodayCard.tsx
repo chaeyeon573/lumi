@@ -27,13 +27,13 @@ export function AroundTodayCard({ me, snap }: { me: User; snap: Snapshot }) {
   if (st.error) return <View style={tw`mt-3`}><SectionError onRetry={st.retry} /></View>;
   if (!rows.length) return null; // 아무것도 없으면 조용히 비워둔다
   return (
-    <View accessibilityLabel={t('오늘 주변에서')} style={tw`mt-3 rounded-[24px] bg-white border border-line p-3.5`}>
+    <View accessibilityLabel={t('오늘 주변에서')} style={tw`mt-3 card p-3.5`}>
       <Text style={tw`px-0.5 text-[12px] font-bold text-ink-3`}>{t('오늘 주변에서')}</Text>
       <View style={tw`mt-1`}>
         {rows.map((r, i) => (
           <Pressable key={r.key} onPress={() => nav(r.to)} style={tw`flex-row items-center py-2.5 ${i ? 'border-t border-line' : ''}`}>
             <View style={tw`h-8 w-8 rounded-full bg-accent-soft items-center justify-center`}><r.Icon size={15} color={C.primary} /></View>
-            <Text numberOfLines={1} style={tw`flex-1 ml-3 text-[14px] text-ink`}>{r.label} <Text style={tw`font-bold text-primary`}>{r.n}{t('명')}</Text></Text>
+            <Text numberOfLines={1} style={tw`flex-1 ml-3 text-[14px] text-ink`}>{r.label} <Text style={tw`font-bold text-ink`}>{r.n}{t('명')}</Text></Text>
             <View style={tw`flex-row mx-1`}>{r.people.slice(0, 3).map((p, j) => <Avatar key={p.id} emoji={p.avatar.emoji} hue={p.avatar.hue} url={p.avatar.url} size={24} style={[{ borderWidth: 2, borderColor: C.onPrimary }, j ? { marginLeft: -8 } : null]} />)}</View>
             <ChevronRight size={15} color={C.ink3} />
           </Pressable>

@@ -75,13 +75,13 @@ export default function PrivacySettingsScreen() {
 
         <Section loading={sec.loading} error={sec.error} onRetry={sec.retry} skeleton={<SectionSkeleton count={2} />}>
           {/* 1. 전체 공개 범위 */}
-          <View style={tw`rounded-[24px] border border-line bg-white p-4`}>
+          <View style={tw`card p-4`}>
             <Text style={tw`mb-2.5 text-[14px] font-bold text-ink`}>{t('전체 공개 범위')}</Text>
             {AUDIENCES.map((a) => <RadioRow key={a} on={draft.scope === a} title={AUDIENCE_LABELS[a]} desc={AUDIENCE_DESC[a]} badge={a === DEFAULT_PRIVACY.scope ? t('기본') : undefined} onPress={() => setDraft((d) => ({ ...d, scope: a }))} />)}
           </View>
 
           {/* 2. 항목별 */}
-          <View style={tw`mt-3 rounded-[24px] border border-line bg-white px-4`}>
+          <View style={tw`mt-3 card px-4`}>
             {ITEMS.map((it, i) => <View key={it.key} style={i ? tw`border-t border-line` : undefined}><Toggle label={it.label} description={it.desc} checked={draft[it.key]} onChange={(val) => setDraft((d) => ({ ...d, [it.key]: val }))} /></View>)}
             <View style={tw`py-3 flex-row items-start border-t border-line`}>
               <Lock size={16} color={C.ink3} style={tw`mt-0.5`} />
@@ -90,7 +90,7 @@ export default function PrivacySettingsScreen() {
           </View>
 
           {/* 3. 미리보기 */}
-          <View style={tw`mt-3 rounded-[24px] border border-line bg-white p-4`}>
+          <View style={tw`mt-3 card p-4`}>
             <Text style={tw`text-[11px] font-bold text-ink-3`}>{t('학교가 다른 사람에게는 이렇게 보여요')}</Text>
             <View style={tw`mt-2.5 rounded-[20px] border border-line p-3 flex-row items-start`}>
               <Avatar emoji={me.avatar.emoji} hue={me.avatar.hue} url={me.avatar.url} size={48} />
@@ -111,7 +111,7 @@ export default function PrivacySettingsScreen() {
         {more ? (
           <View>
             <Text style={tw`text-[12px] text-ink-3`}>{t('멀티프로필 대신 항목별로 공개 범위를 정해요. 정확한 위치는 어떤 설정에서도 공개되지 않아요.')}</Text>
-            <View style={tw`rounded-[24px] border border-line bg-white mt-3`}>
+            <View style={tw`card mt-3`}>
               {FIELDS.map((f, i) => (
                 <View key={f.key} style={tw`flex-row items-center px-4 py-3 ${i === 0 ? '' : 'border-t border-line'}`}>
                   <View style={tw`flex-1 mr-3`}><Text style={tw`text-[14px] font-medium text-ink`}>{f.label}</Text>{f.desc ? <Text style={tw`text-[11px] text-ink-3`}>{f.desc}</Text> : null}</View>
@@ -120,7 +120,7 @@ export default function PrivacySettingsScreen() {
               ))}
             </View>
             {aff ? (
-              <View style={tw`rounded-[24px] border border-line bg-white px-4 mt-3`}>
+              <View style={tw`card px-4 mt-3`}>
                 <Toggle label={t('학교명 공개')} checked={aff.showSchool} onChange={(val) => { run(() => api.users.update(me.id, { affiliation: { ...aff, showSchool: val } })).catch(() => undefined); }} />
                 <View style={tw`h-px bg-line`} />
                 <Toggle label={t('학과 공개')} checked={aff.showDepartment} onChange={(val) => { run(() => api.users.update(me.id, { affiliation: { ...aff, showDepartment: val } })).catch(() => undefined); }} />

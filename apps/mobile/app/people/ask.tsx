@@ -172,7 +172,7 @@ export default function AskNetworkScreen() {
           {modeFind ? (
             <View style={tw`mt-5`}>
               <Section loading={sec.loading} error={sec.error} onRetry={sec.retry} skeleton={<SectionSkeleton count={2} />}>
-                <Text style={tw`text-[18px] font-bold text-primary`}>{matches.length > 0 ? `${t('가까운 네트워크에서')} ${matches.length}${t('명을 찾았어요')}` : t('가까운 네트워크에서 바로 떠오르는 사람이 없어요')}</Text>
+                <Text style={tw`text-[18px] font-bold text-ink`}>{matches.length > 0 ? `${t('가까운 네트워크에서')} ${matches.length}${t('명을 찾았어요')}` : t('가까운 네트워크에서 바로 떠오르는 사람이 없어요')}</Text>
                 {matches.length > 0 ? <Text style={tw`mt-0.5 mb-3 text-[12px] text-ink-3`}>{t('프로필과 연결을 바탕으로 골랐어요')}</Text> : null}
                 {matches.map((m) => <MaskedPersonRow key={m.user.id} user={m.user} reasons={asReasons(m.reasons)} />)}
               </Section>
@@ -180,8 +180,8 @@ export default function AskNetworkScreen() {
           ) : null}
 
           {modeAsk ? (
-            <View style={tw`mt-5 rounded-[24px] p-4 ${few ? 'bg-primary' : 'bg-white border border-line'}`}>
-              <Text style={tw`text-[17px] font-bold ${few ? 'text-white' : 'text-primary'}`}>{t('건너건너 물어볼까요?')}</Text>
+            <View style={tw`mt-5 rounded-[20px] p-4 ${few ? 'bg-primary' : 'bg-white border border-line'}`}>
+              <Text style={tw`text-[17px] font-bold ${few ? 'text-white' : 'text-ink'}`}>{t('건너건너 물어볼까요?')}</Text>
               <Text style={[tw`mt-1 text-[13px] ${few ? '' : 'text-ink-2'}`, sub]}>{t('아는 사람들의 네트워크에 조용히 물어봐요. 해당되는 사람만 답해요.')}</Text>
 
               <Pressable onPress={() => setMore((x) => !x)} style={tw`mt-3 h-8 self-start flex-row items-center`}>
@@ -221,7 +221,7 @@ export default function AskNetworkScreen() {
               <View style={tw`mt-2 flex-row items-start`}><Lock size={11} color={few ? C.glassSoft : C.ink3} style={tw`mt-0.5`} /><Text style={[tw`ml-1.5 flex-1 text-[11px] ${few ? '' : 'text-ink-3'}`, sub]}>{t('이름·학교만 함께 보여요. 연락처는 적지 마세요.')}</Text></View>
             </View>
           ) : (
-            <View style={tw`mt-5 rounded-[24px] bg-surface-2 p-4`}>
+            <View style={tw`mt-5 rounded-[20px] bg-surface-2 p-4`}>
               <Text style={tw`text-[13px] text-ink-2`}>{t('건너건너 물어보기가 꺼져 있어요. 요청은 만들지 않고 찾은 사람만 보여드려요.')}</Text>
               <Row style={tw`mt-2.5`}>
                 <Button size="sm" variant="outline" icon={<Send size={14} color={C.ink2} />} onPress={() => setModeAsk(true)}>{t('건너건너 물어보기 켜기')}</Button>

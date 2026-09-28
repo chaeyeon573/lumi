@@ -47,7 +47,7 @@ export default function OrgScreen() {
     { key: 'about', label: t('소개') }, { key: 'posts', label: t('게시물'), n: posts.length }, { key: 'events', label: t('행사'), n: events.length }, { key: 'recruit', label: t('모집'), n: recruits.length + orgOpps.length + (org.recruitment?.open ? 1 : 0) }, { key: 'members', label: t('멤버'), n: org.memberIds.length },
   ];
   const members = [...org.adminIds, ...org.memberIds.filter((m) => !org.adminIds.includes(m))];
-  const card = tw`rounded-[24px] border border-line bg-white p-4`;
+  const card = tw`card p-4`;
 
   return (
     <Screen title={org.name} right={isAdmin ? <Button size="sm" variant="outline" icon={<PenSquare size={15} color={C.ink2} />} onPress={() => setPost(true)}>{t('올리기')}</Button> : undefined}>
@@ -55,7 +55,7 @@ export default function OrgScreen() {
       <View style={tw`-mt-8`}>
         <View style={card}>
           <View style={tw`flex-row items-start`}>
-            <Avatar emoji={org.logo.emoji} hue={org.logo.hue} url={org.logo.url} size={64} style={[tw`-mt-10`, { borderRadius: 16, borderWidth: 4, borderColor: '#fff' }]} />
+            <Avatar emoji={org.logo.emoji} hue={org.logo.hue} url={org.logo.url} size={64} style={[tw`-mt-10`, { borderRadius: 16, borderWidth: 4, borderColor: C.surface }]} />
             <View style={tw`flex-1 min-w-0 ml-3`}>
               <View style={tw`flex-row items-center`}><Text style={tw`text-[18px] font-extrabold text-ink leading-6 shrink`}>{org.name}</Text>{org.verified && <BadgeCheck size={18} color={C.gold} style={{ marginLeft: 4 }} />}</View>
               <Text style={tw`text-[12px] text-ink-3 mt-0.5`}>{school?.name}{org.parent ? ` · ${org.parent}` : ''} · {ORG_TYPE_LABELS[org.type]}</Text>
@@ -86,7 +86,7 @@ export default function OrgScreen() {
                   {org.links && org.links.length > 0 && <View style={[tw`flex-row flex-wrap mb-2`, { gap: 6 }]}>{org.links.map((l) => <Pressable key={l.url} onPress={() => Linking.openURL(l.url)} style={tw`flex-row items-center h-8 px-3 rounded-lg bg-surface-2`}><ExternalLink size={12} color={C.ink2} /><Text style={tw`ml-1 text-[12px] font-semibold text-ink-2`}>{l.label}</Text></Pressable>)}</View>}
                   {org.joinProcess ? <Text style={tw`text-[13px] text-ink mb-2`}><Text style={tw`text-ink-3`}>{t('가입 절차')} · </Text>{org.joinProcess}</Text> : null}
                   {org.dues ? <Text style={tw`text-[13px] text-ink mb-2`}><Text style={tw`text-ink-3`}>{t('회비')} · </Text>{org.dues}</Text> : null}
-                  {org.policyNote ? <View style={tw`rounded-xl bg-gold-soft px-3 py-2 flex-row`}><ShieldCheck size={14} color="#B57A0E" style={{ marginTop: 2 }} /><Text style={tw`ml-2 text-[12px] text-ink-2 shrink`}><Text style={tw`font-bold`}>{t('학교 정책 안내')}</Text> · {org.policyNote}</Text></View> : null}
+                  {org.policyNote ? <View style={tw`rounded-xl bg-gold-soft px-3 py-2 flex-row`}><ShieldCheck size={14} color={C.goldInk} style={{ marginTop: 2 }} /><Text style={tw`ml-2 text-[12px] text-ink-2 shrink`}><Text style={tw`font-bold`}>{t('학교 정책 안내')}</Text> · {org.policyNote}</Text></View> : null}
                 </View>
               ) : null}
             </View>
@@ -110,8 +110,8 @@ export default function OrgScreen() {
         {tab === 'recruit' && (
           <View style={tw`mt-3`}>
             {org.recruitment && (
-              <View style={[tw`rounded-[24px] border border-line p-4 mb-3`, { backgroundColor: '#FFF4DE' }]}>
-                <View style={tw`flex-row items-center`}><Megaphone size={16} color="#B57A0E" /><Text style={tw`ml-2 text-[14px] font-bold text-ink shrink`}>{org.recruitment.title}</Text>{org.recruitment.open && <View style={tw`ml-2`}><Tag tone="primary">{t('모집 중')}</Tag></View>}</View>
+              <View style={[tw`rounded-[20px] border border-line p-4 mb-3`, { backgroundColor: C.warnSoft }]}>
+                <View style={tw`flex-row items-center`}><Megaphone size={16} color={C.goldInk} /><Text style={tw`ml-2 text-[14px] font-bold text-ink shrink`}>{org.recruitment.title}</Text>{org.recruitment.open && <View style={tw`ml-2`}><Tag tone="primary">{t('모집 중')}</Tag></View>}</View>
                 <Text style={tw`text-[12px] text-ink-2 mt-1`}>{t('모집 기간 ·')} {org.recruitment.period}</Text>
                 {!isMember && !isApplicant && org.recruitment.open && <View style={tw`flex-row mt-3`}><Button size="sm" onPress={() => run(() => api.orgs.apply(org.id, v.me.id), t('지원서를 보냈어요.'))}>{t('가입 지원')}</Button></View>}
               </View>
@@ -122,7 +122,7 @@ export default function OrgScreen() {
           </View>
         )}
         {tab === 'members' && (
-          <View style={tw`mt-3 rounded-[24px] border border-line bg-white overflow-hidden`}>
+          <View style={tw`mt-3 card overflow-hidden`}>
             {members.map((mid) => { const u = v.userById(mid); return u && (
               <Pressable key={mid} onPress={() => nav(`/users/${mid}`)} style={tw`flex-row items-center px-3.5 py-3 border-b border-line`}>
                 <Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={40} />

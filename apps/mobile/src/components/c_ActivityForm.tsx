@@ -102,7 +102,7 @@ export function ActivityForm({ editId }: { editId?: string }) {
       <View style={tw`py-4`}>
         {isNow && <View style={tw`rounded-xl bg-accent-soft px-3 py-2.5 mb-5`}><Text style={tw`text-[13px] text-ink`}>⚡ {t('30분 뒤 시작으로 맞춰뒀어요. 시간이 맞는 사람의 발견 › Now에 바로 보여요.')}</Text></View>}
         {isCrew && (
-          <View style={tw`rounded-[24px] border border-line bg-white p-3.5 mb-5`}>
+          <View style={tw`card p-3.5 mb-5`}>
             <View style={tw`flex-row items-center mb-3`}>
               <Text style={tw`text-[20px]`}>📚</Text>
               <View style={tw`ml-2 flex-1`}><Text style={tw`text-[11px] text-ink-3`}>{t('수업')}</Text><Text style={tw`text-[13px] font-bold text-ink`}>{crewCourse}</Text></View>
@@ -117,7 +117,7 @@ export function ActivityForm({ editId }: { editId?: string }) {
             {myOrgs.length ? <SelectChips value={form.orgId ?? ''} emptyLabel={t('개인 이름으로')} options={myOrgs.map((o) => [o.id, o.name] as [string, string])} onChange={(val) => patch({ orgId: val || undefined })} /> : null}
           </Field>
         )}
-        {opp && <View style={tw`rounded-[24px] border border-line bg-white p-3 flex-row items-center mb-5`}><Text style={tw`text-[24px]`}>{opp.cover.emoji}</Text><View style={tw`flex-1 ml-3`}><Text style={tw`text-[11px] text-ink-3`}>{t('연결된 기회')}</Text><Text style={tw`text-[13px] font-bold text-ink`}>{opp.title}</Text></View></View>}
+        {opp && <View style={tw`card p-3 flex-row items-center mb-5`}><Text style={tw`text-[24px]`}>{opp.cover.emoji}</Text><View style={tw`flex-1 ml-3`}><Text style={tw`text-[11px] text-ink-3`}>{t('연결된 기회')}</Text><Text style={tw`text-[13px] font-bold text-ink`}>{opp.title}</Text></View></View>}
         {isTeam && (
           <Field label={t('필요한 역할')} hint={t('맞는 역할을 가진 사람에게 먼저 추천돼요')}>
             <ChipWrap>{teamRoles.map((r) => <WrapItem key={r}><Chip size="sm" active={form.rolesNeeded?.includes(r)} onPress={() => patch({ rolesNeeded: form.rolesNeeded?.includes(r) ? form.rolesNeeded.filter((x) => x !== r) : [...(form.rolesNeeded ?? []), r as Role] })}>{PERSON_ROLE_LABELS[r]}</Chip></WrapItem>)}</ChipWrap>

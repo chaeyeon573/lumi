@@ -38,7 +38,7 @@ export default function EditPromptsScreen() {
     <Screen title={t('질문 답변')} right={<VisibilityPicker compact value={visibility} onChange={setVisibility} label={t('질문 답변 공개 범위')} />}
       footer={<View style={tw`flex-row`}><Button full size="lg" loading={busy} disabled={!ok} onPress={save}>{ok ? t('저장') : `${t('필수 질문 ')}${REQUIRED_TEXT_PROMPTS - Math.min(answered, REQUIRED_TEXT_PROMPTS)}${t('개 더 답해주세요')}`}</Button></View>}>
       <View style={tw`py-4`}>
-        <View style={tw`rounded-[24px] border border-line bg-white p-4 mb-5`}><Text style={tw`text-[12px] font-semibold text-ink-3 mb-2`}>{t('프로필 완성도')}</Text><CompletionMeter {...preview} /></View>
+        <View style={tw`card p-4 mb-5`}><Text style={tw`text-[12px] font-semibold text-ink-3 mb-2`}>{t('프로필 완성도')}</Text><CompletionMeter {...preview} /></View>
         <Field label={`${t('텍스트 질문 (')}${answered}/${REQUIRED_TEXT_PROMPTS}${t(' 필수, 최대 6개)')} *`}><PromptEditor value={prompts} onChange={setPrompts} /></Field>
         <Field label={t('음성 질문 (선택)')}><VoicePromptEditor value={voice} onChange={setVoice} /></Field>
         <Field label={t('투표형 질문 (선택)')} hint={t('방문자가 한 표씩 던질 수 있어요. 질문을 바꾸면 기존 투표는 사라져요.')}><PollEditor value={poll} onChange={setPoll} /></Field>

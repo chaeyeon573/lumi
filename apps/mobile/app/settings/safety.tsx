@@ -11,7 +11,7 @@ import { useViewer } from '@/viewer';
 import { Screen, Avatar, Button, Segmented, Tag, C } from '@/ui';
 
 type Policy = User['settings']['messagePolicy'];
-const card = tw`rounded-[24px] border border-line bg-white p-4`;
+const card = tw`card p-4`;
 
 /** 계정 및 안전 설정 (웹 SafetySettingsPage) */
 export default function SafetySettingsScreen() {

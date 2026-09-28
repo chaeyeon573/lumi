@@ -13,10 +13,16 @@ import { api } from '@core/api';
 import { t } from '@core/i18n';
 import { setReloadHandler } from '@/platform';
 import { FONTS, applyDefaultFont } from '@/fonts';
-import { Toast } from '@/ui';
+import { Toast, C } from '@/ui';
+import { TamaguiProvider, Theme } from 'tamagui';
+import config from '@/tamagui.config';
+import { setPalette, storedPalette, usePalette } from '@/theme';
 
 // 언어 변경 등 전체 재시작: 배포 빌드는 Updates.reloadAsync, 개발은 DevSettings.reload
 setReloadHandler(() => { Updates.reloadAsync().catch(() => { try { DevSettings.reload(); } catch { /* */ } }); });
+
+// 색 조합(설정 › 데모 도구) — index.js 가 저장소를 먼저 올리므로(hydrate) 첫 화면부터 저장된 팔레트로 그린다
+setPalette(storedPalette(), false);
 
 const FONT_WAIT_MS = 3000;
 
@@ -30,6 +36,7 @@ export default function RootLayout() {
   const [bootError, setBootError] = useState<string | null>(null);
   const [fontsLoaded, fontError] = useFonts(FONTS);
   const [fontTimeout, setFontTimeout] = useState(false);
+  const palette = usePalette();
   if (fontsLoaded) applyDefaultFont();
 
   // 폰트는 화면을 막지 않는다: 실패하거나 오래 걸리면 시스템 글꼴로 진행
@@ -62,24 +69,29 @@ export default function RootLayout() {
   const fontsSettled = fontsLoaded || !!fontError || fontTimeout;
   const failed = !booting && (bootError || status === 'error' || !currentUserId);
   const ready = !booting && fontsSettled && status === 'ready' && !!currentUserId;
+  // 색 조합이 바뀌면 화면 트리를 다시 그린다 (C · tw 를 쓰는 화면까지 새 색을 받게). Tamagui 컴포넌트는 <Theme> 로 바로 바뀐다.
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <SafeAreaProvider>
-        <StatusBar style="dark" />
-        {ready ? (
-          <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: '#fff' } }} />
-        ) : failed ? (
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff', padding: 28 }}>
-            <Text style={{ fontSize: 20, fontWeight: '700', color: '#0F2B48' }}>{t('문제가 발생했어요.')}</Text>
-            <Text style={{ marginTop: 8, fontSize: 13, color: '#74777E', textAlign: 'center' }}>{bootError || error || ''}</Text>
-            <Pressable onPress={boot} style={{ marginTop: 20, height: 44, paddingHorizontal: 22, borderRadius: 22, backgroundColor: '#0F2B48', justifyContent: 'center' }}><Text style={{ color: '#fff', fontWeight: '600' }}>{t('다시 시도')}</Text></Pressable>
-            <Pressable onPress={async () => { try { await api.system.reset(); } catch { /* */ } boot(); }} style={{ marginTop: 10, height: 40, paddingHorizontal: 18, justifyContent: 'center' }}><Text style={{ color: '#2E6388', fontWeight: '600' }}>{t('데모 데이터 초기화')}</Text></Pressable>
-          </View>
-        ) : (
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}><ActivityIndicator color="#0F2B48" /></View>
-        )}
-        <Toast />
-      </SafeAreaProvider>
+      <TamaguiProvider config={config} defaultTheme="light">
+        <Theme name={palette}>
+          <SafeAreaProvider>
+            <StatusBar style="dark" />
+            {ready ? (
+              <Stack key={palette} screenOptions={{ headerShown: false, contentStyle: { backgroundColor: C.bg } }} />
+            ) : failed ? (
+              <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: C.bg, padding: 28 }}>
+                <Text style={{ fontSize: 20, fontWeight: '700', color: C.ink }}>{t('문제가 발생했어요.')}</Text>
+                <Text style={{ marginTop: 8, fontSize: 13, color: C.ink3, textAlign: 'center' }}>{bootError || error || ''}</Text>
+                <Pressable onPress={boot} style={{ marginTop: 20, height: 44, paddingHorizontal: 22, borderRadius: 22, backgroundColor: C.primary, justifyContent: 'center' }}><Text style={{ color: C.onPrimary, fontWeight: '600' }}>{t('다시 시도')}</Text></Pressable>
+                <Pressable onPress={async () => { try { await api.system.reset(); } catch { /* */ } boot(); }} style={{ marginTop: 10, height: 40, paddingHorizontal: 18, justifyContent: 'center' }}><Text style={{ color: C.link, fontWeight: '600' }}>{t('데모 데이터 초기화')}</Text></Pressable>
+              </View>
+            ) : (
+              <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: C.bg }}><ActivityIndicator color={C.primary} /></View>
+            )}
+            <Toast />
+          </SafeAreaProvider>
+        </Theme>
+      </TamaguiProvider>
     </GestureHandlerRootView>
   );
 }

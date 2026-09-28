@@ -42,7 +42,7 @@ export default function RequestsScreen() {
           <Row style={tw`mb-3`}><Button full variant="outline" icon={<Plus size={16} color={C.ink2} />} onPress={() => nav('/people/ask')}>{t('새로 찾아보기')}</Button></Row>
           <Section loading={sec.loading} error={sec.error} onRetry={sec.retry}
             empty={mine.length === 0 && <SectionEmpty emoji="🔎" title={t('아직 찾아본 사람이 없어요')} description={t('한 줄로 적으면 가까운 네트워크에서 먼저 찾고, 건너건너 물어볼 수 있어요.')} />}>
-            <View style={tw`rounded-[24px] border border-line bg-white overflow-hidden`}>
+            <View style={tw`card overflow-hidden`}>
               {mine.map((r, i) => <MyRequestRow key={r.id} r={r} first={i === 0} />)}
             </View>
           </Section>

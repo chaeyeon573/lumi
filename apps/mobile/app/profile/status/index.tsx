@@ -39,7 +39,7 @@ export default function StatusScreen() {
         <View style={tw`py-4`}>
           <Card style={tw`items-center`}>
             <View style={tw`h-20 w-20 rounded-full bg-primary-soft items-center justify-center`}><GraduationCap size={38} color={C.primary} /></View>
-            <Text style={tw`mt-4 text-[22px] font-bold text-primary text-center`}>{t('졸업생으로 활동 중이에요')}</Text>
+            <Text style={tw`mt-4 text-[22px] font-bold text-ink text-center`}>{t('졸업생으로 활동 중이에요')}</Text>
             <Text style={tw`mt-1 text-[13px] text-ink-2 text-center`}>{contextLine(me, lang) || stageLabel(stageOf(me), lang)}</Text>
             <View style={tw`mt-4 flex-row flex-wrap -mx-1 self-stretch`}>
               {facts.map((x) => <View key={x.l} style={tw`w-1/2 p-1`}><View style={tw`rounded-2xl bg-surface-2 px-3.5 py-2.5`}><Text style={tw`text-[11px] text-ink-3`}>{x.l}</Text><Text numberOfLines={1} style={tw`text-[14px] font-semibold text-ink`}>{x.v}</Text></View></View>)}
@@ -63,7 +63,7 @@ export default function StatusScreen() {
       <View style={tw`py-4`}>
         <Card style={tw`items-center p-6`}>
           <View style={tw`h-28 w-28 rounded-full bg-primary-soft items-center justify-center`}><GraduationCap size={56} color={C.primary} strokeWidth={1.6} /><Text style={tw`absolute -top-1 right-1 text-[18px]`}>✨</Text></View>
-          <Text style={tw`mt-5 text-[24px] font-bold text-primary text-center`}>{t('졸업하셨나요?')}</Text>
+          <Text style={tw`mt-5 text-[24px] font-bold text-ink text-center`}>{t('졸업하셨나요?')}</Text>
           <Text style={tw`mt-1.5 text-[13px] text-ink-2 text-center`}>{suggest ? t('졸업 예정연도가 지났어요. 새 계정은 필요 없어요 — 지금 프로필 그대로 이어져요.') : t('새 계정은 필요 없어요. 지금 프로필 그대로 이어져요.')}</Text>
           <View style={tw`mt-5 self-stretch`}>
             {keeps.map((k) => <View key={k} style={tw`mb-2.5 flex-row items-center`}><View style={tw`h-7 w-7 rounded-full bg-mint-soft items-center justify-center`}><Check size={15} color={C.mint} strokeWidth={3} /></View><Text style={tw`ml-3 flex-1 text-[14px] font-semibold text-ink`}>{k}</Text></View>)}
@@ -73,7 +73,7 @@ export default function StatusScreen() {
         </Card>
 
         <Card style={tw`mt-4`}>
-          <View style={tw`flex-row items-center`}><BookOpen size={17} color={C.primary} /><Text style={tw`ml-2 text-[17px] font-bold text-primary`}>{t('대학원에 진학했어요')}</Text></View>
+          <View style={tw`flex-row items-center`}><BookOpen size={17} color={C.primary} /><Text style={tw`ml-2 text-[17px] font-bold text-ink`}>{t('대학원에 진학했어요')}</Text></View>
           <Text style={tw`mt-1 text-[12px] text-ink-3`}>{grad ? `${t('현재')}: ${stageLabel(stageOf(me), lang)} · ${t('시간표와 캠퍼스 추천은 그대로예요')}` : t('시간표·캠퍼스 추천은 그대로, 프로필 표시만 바뀌어요.')}</Text>
           <Row style={tw`mt-3`}>
             {(['masters', 'phd'] as Stage[]).map((s, i) => (

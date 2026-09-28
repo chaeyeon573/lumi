@@ -115,11 +115,11 @@ export default function CreateMeetScreen() {
         <MoreRow open={more} onToggle={() => setMore((x) => !x)} />
         {more ? (
           <View style={tw`mt-2`}>
-            <View style={tw`mb-4 rounded-[24px] border border-line bg-white px-4`}><Toggle label={t('참가 승인')} description={t('켜면 신청을 확인한 뒤 참가가 확정돼요.')} checked={approval} onChange={setApproval} /></View>
+            <View style={tw`mb-4 card px-4`}><Toggle label={t('참가 승인')} description={t('켜면 신청을 확인한 뒤 참가가 확정돼요.')} checked={approval} onChange={setApproval} /></View>
             <Field label={t('종류 (선택)')}><Wrap>{CATS.map((c) => <WChip key={c} active={category === c} onPress={() => setCategory(c)}>{CATEGORY_EMOJI[c]} {CATEGORY_LABELS[c]}</WChip>)}</Wrap></Field>
             <Field label={t('설명 (선택)')}><Textarea placeholder={t('어떤 사람과 무엇을 하고 싶은지 한두 줄이면 충분해요.')} value={description} onChangeText={setDescription} maxLength={500} /></Field>
             <Text style={tw`mb-2 text-[13px] font-semibold text-ink-3`}>{t('다른 방법으로 모으기')}</Text>
-            <View style={tw`rounded-[24px] border border-line bg-white`}>
+            <View style={tw`card`}>
               <ExtraRow first icon={<Vote size={18} color={C.primary} />} title={t('같이 계획하기')} sub={t('시간 투표로 정하기')} to="/together/new" />
               <ExtraRow icon={<BookOpen size={18} color={C.primary} />} title={t('수업 Study Crew')} sub={t('시간표에서 수업을 골라요')} to="/timetable" />
               <ExtraRow icon={<Users size={18} color={C.primary} />} title={t('팀원 모집하기')} sub={t('역할별로 팀원을 모아요')} to="/create/activity?kind=group&team=1" />
@@ -132,14 +132,14 @@ export default function CreateMeetScreen() {
 }
 
 const Stepper = ({ onPress, children }: { onPress: () => void; children: string }) => (
-  <Pressable onPress={onPress} style={tw`h-11 w-11 rounded-full bg-surface-2 items-center justify-center`}><Text style={tw`text-[18px] font-bold text-primary`}>{children}</Text></Pressable>
+  <Pressable onPress={onPress} style={tw`h-11 w-11 rounded-full bg-surface-2 items-center justify-center`}><Text style={tw`text-[18px] font-bold text-ink`}>{children}</Text></Pressable>
 );
 
 function ExtraRow({ icon, title, sub, to, first }: { icon: ReactNode; title: string; sub: string; to: string; first?: boolean }) {
   return (
     <Pressable onPress={() => nav(to)} style={tw`px-3.5 py-3 flex-row items-center ${first ? '' : 'border-t border-line'}`}>
       <View style={tw`h-9 w-9 rounded-full bg-primary-soft items-center justify-center`}>{icon}</View>
-      <View style={tw`flex-1 min-w-0 mx-3`}><Text numberOfLines={1} style={tw`text-[14px] font-semibold text-primary`}>{title}</Text><Text numberOfLines={1} style={tw`text-[12px] text-ink-3`}>{sub}</Text></View>
+      <View style={tw`flex-1 min-w-0 mx-3`}><Text numberOfLines={1} style={tw`text-[14px] font-semibold text-ink`}>{title}</Text><Text numberOfLines={1} style={tw`text-[12px] text-ink-3`}>{sub}</Text></View>
       <ChevronRight size={16} color={C.ink3} />
     </Pressable>
   );

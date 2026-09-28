@@ -21,7 +21,7 @@ export function VisibilityList({ value, options, onChange }: { value: Visibility
         const active = v === value;
         return (
           <Pressable key={v} onPress={() => onChange(v)} style={tw`flex-row items-center rounded-xl px-3.5 py-3 border mb-1.5 ${active ? 'border-primary bg-primary-soft' : 'border-line bg-white'}`}>
-            <View style={tw`h-9 w-9 rounded-xl items-center justify-center ${active ? 'bg-primary' : 'bg-surface-2'}`}><I size={17} color={active ? '#fff' : C.ink2} /></View>
+            <View style={tw`h-9 w-9 rounded-xl items-center justify-center ${active ? 'bg-primary' : 'bg-surface-2'}`}><I size={17} color={active ? C.onPrimary : C.ink2} /></View>
             <View style={tw`flex-1 ml-3`}>
               <Text style={tw`text-[14px] font-semibold text-ink`}>{VISIBILITY_LABELS[v]}</Text>
               <Text style={tw`text-[12px] text-ink-3`}>{visibilityDescription(v)}</Text>

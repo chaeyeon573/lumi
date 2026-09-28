@@ -74,11 +74,11 @@ function MeetCard({ a, reason }: { a: Activity; reason: string }) {
   const open = () => nav(`/activities/${a.id}`);
   const place = [a.place.name, a.place.area].filter(Boolean).join(' · ');
   return (
-    <View style={tw`mb-3 rounded-[24px] border border-line bg-white p-3 flex-row`}>
+    <View style={tw`mb-3 card p-3 flex-row`}>
       <Pressable onPress={open}><Cover emoji={a.cover.emoji} hue={a.cover.hue} url={a.cover.url} size={76} radius={16} /></Pressable>
       <View style={tw`flex-1 min-w-0 ml-3`}>
         <Pressable onPress={open}>
-          <Text numberOfLines={1} style={tw`text-[15px] font-bold text-primary`}>{a.title}</Text>
+          <Text numberOfLines={1} style={tw`text-[15px] font-bold text-ink`}>{a.title}</Text>
           <HostLine a={a} />
           <View style={tw`flex-row items-center mt-0.5`}><Clock size={11} color={C.ink3} /><Text numberOfLines={1} style={tw`ml-1 text-[12px] text-ink-2`}>{formatDate(a.date)} · {formatTime(a.startTime)}</Text></View>
           <View style={tw`flex-row items-center`}><MapPin size={11} color={C.ink3} /><Text numberOfLines={1} style={tw`ml-1 text-[12px] text-ink-2 shrink`}>{place}</Text></View>
@@ -106,10 +106,10 @@ function GroupCard({ org, reason }: { org: Organization; reason?: string }) {
     try { await run(() => api.orgs.apply(org.id, v.me.id), org.joinPolicy === 'open' ? t('그룹에 가입했어요.') : t('가입 신청을 보냈어요.')); } catch { /* toast */ } finally { setBusy(false); }
   };
   return (
-    <View style={tw`mb-3 rounded-[24px] border border-line bg-white p-3 flex-row items-start`}>
+    <View style={tw`mb-3 card p-3 flex-row items-start`}>
       <Pressable onPress={open}><Cover emoji={org.logo.emoji} hue={org.logo.hue} url={org.logo.url} size={52} radius={16} /></Pressable>
       <Pressable onPress={open} style={tw`flex-1 min-w-0 mx-3`}>
-        <View style={tw`flex-row items-center`}><Text numberOfLines={1} style={tw`text-[15px] font-bold text-primary shrink`}>{org.name}</Text>{org.verified ? <BadgeCheck size={14} color={C.gold} style={tw`ml-1`} /> : null}</View>
+        <View style={tw`flex-row items-center`}><Text numberOfLines={1} style={tw`text-[15px] font-bold text-ink shrink`}>{org.name}</Text>{org.verified ? <BadgeCheck size={14} color={C.gold} style={tw`ml-1`} /> : null}</View>
         <View style={tw`flex-row items-center mt-0.5`}><ScopePill org={org} /><Text style={tw`ml-1.5 text-[12px] text-ink-3`}>{memberLabel(members(org))}</Text></View>
         <Text numberOfLines={1} style={tw`text-[13px] text-ink-2 mt-1`}>{org.description}</Text>
         {reason ? <Text numberOfLines={1} style={tw`text-[12px] text-primary font-medium mt-0.5`}>{reason}</Text> : null}
@@ -142,18 +142,18 @@ function NowStrip() {
       {nextFree && (
         <View style={tw`mb-2 h-12 rounded-full bg-surface-2 flex-row items-center pl-4 pr-1.5`}>
           <View style={tw`h-2 w-2 rounded-full bg-primary`} />
-          <Text numberOfLines={1} style={tw`flex-1 ml-2 text-[14px] text-primary font-medium`}>{`${lang === 'en' ? 'Free' : '공강'} ${fmtBlock(nextFree)}`}</Text>
-          <Pressable onPress={() => setSlot(nextFree)} style={tw`h-9 px-4 rounded-full bg-primary flex-row items-center`}><Plus size={14} color={C.onPrimary} /><Text style={tw`ml-1 text-[13px] font-semibold text-white`}>{t('열기')}</Text></Pressable>
+          <Text numberOfLines={1} style={tw`flex-1 ml-2 text-[14px] text-ink font-medium`}>{`${lang === 'en' ? 'Free' : '공강'} ${fmtBlock(nextFree)}`}</Text>
+          <Pressable onPress={() => setSlot(nextFree)} style={tw`h-9 px-4 rounded-full bg-accent-soft flex-row items-center`}><Plus size={14} color={C.primary} /><Text style={tw`ml-1 text-[13px] font-semibold text-primary`}>{t('열기')}</Text></Pressable>
         </View>
       )}
       {partner && (
         <Pressable onPress={() => nav(`/activities/${partner.id}`)} style={tw`mb-2 rounded-full bg-gold-soft border border-line pl-2.5 pr-2.5 py-2 flex-row items-center`}>
           <View style={tw`h-11 w-11 rounded-full bg-white items-center justify-center`}><Text style={tw`text-[20px]`}>🏷️</Text></View>
           <View style={tw`flex-1 min-w-0 mx-3`}>
-            <View style={tw`flex-row items-center`}><Text numberOfLines={1} style={tw`text-[15px] font-semibold text-primary shrink`}>{partner.partner!.name}</Text><View style={tw`ml-2`}><Tag tone="gold">{t('제휴')}</Tag></View></View>
+            <View style={tw`flex-row items-center`}><Text numberOfLines={1} style={tw`text-[15px] font-semibold text-ink shrink`}>{partner.partner!.name}</Text><View style={tw`ml-2`}><Tag tone="gold">{t('제휴')}</Tag></View></View>
             <Text numberOfLines={1} style={tw`text-[13px] text-ink-2`}>{partner.partner!.deal}</Text>
           </View>
-          <View style={tw`h-9 px-4 rounded-full bg-primary justify-center`}><Text style={tw`text-[13px] font-semibold text-white`}>{t('쿠폰 보기')}</Text></View>
+          <View style={tw`h-9 px-4 rounded-full bg-accent-soft justify-center`}><Text style={tw`text-[13px] font-semibold text-primary`}>{t('쿠폰 보기')}</Text></View>
         </Pressable>
       )}
       {now.map(({ a, inMin }) => <NowRow key={a.id} a={a} inMin={inMin} />)}
@@ -173,7 +173,7 @@ function NowRow({ a, inMin }: { a: Activity; inMin: number }) {
     <View style={tw`mb-2 rounded-full border border-line bg-white pl-2.5 pr-2.5 py-2 flex-row items-center`}>
       <Pressable onPress={open}><Avatar emoji={host?.avatar.emoji ?? '👤'} hue={host?.avatar.hue ?? 200} url={host?.avatar.url} size={44} /></Pressable>
       <Pressable onPress={open} style={tw`flex-1 min-w-0 mx-3`}>
-        <Text numberOfLines={1} style={tw`text-[15px] font-semibold text-primary`}>{a.title}</Text>
+        <Text numberOfLines={1} style={tw`text-[15px] font-semibold text-ink`}>{a.title}</Text>
         <Text numberOfLines={1} style={tw`text-[13px] text-ink-2`}>{when} · {a.place.name} · {n}{t('명 참여 중')}</Text>
       </Pressable>
       <JoinButton activity={a} size="sm" label={t('같이 가기')} />
@@ -204,7 +204,7 @@ function RecommendTab() {
     <View>
       {kind === 'undergrad' && <NowStrip />}
       {/* 단계별 한 줄 + 만들기 예시 — 학부생: 공강·밥·스터디 / 대학원생: 리딩 그룹·학회 / 졸업생: 퇴근 후 작은 모임 */}
-      <View style={tw`mb-4 rounded-[24px] bg-primary-soft p-3.5`}>
+      <View style={tw`mb-4 rounded-[20px] bg-primary-soft p-3.5`}>
         <Text style={tw`text-[13px] font-semibold text-primary`}>{copy.meetHint}</Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} style={tw`-mx-3.5 mt-2`} contentContainerStyle={tw`px-3.5`}>
           {copy.meetExamples.map((ex) => (
@@ -216,7 +216,7 @@ function RecommendTab() {
       </View>
       <Pressable onPress={() => nav('/meet/tables')} style={tw`mb-4 h-12 rounded-full bg-accent-soft pl-4 pr-2 flex-row items-center`}>
         <Users size={16} color={C.primary} />
-        <Text numberOfLines={1} style={tw`flex-1 ml-2 text-[14px] font-semibold text-primary`}>{t('작은 모임 · 4~6명')}</Text>
+        <Text numberOfLines={1} style={tw`flex-1 ml-2 text-[14px] font-semibold text-ink`}>{t('작은 모임 · 4~6명')}</Text>
         <ChevronRight size={16} color={C.primary} />
       </Pressable>
       <View style={tw`mb-3`}><ChipRow>{chips.map((c) => <Chip key={c.key} active={chip === c.key} onPress={() => setChip(c.key)}>{c.label}</Chip>)}</ChipRow></View>
@@ -247,7 +247,7 @@ function GroupsTab() {
     <View>
       <SectionLabel right={mine.length > 0 ? <Pressable onPress={() => nav('/profile/groups')}><Text style={tw`text-[12px] font-semibold text-primary`}>{t('전체 보기')}</Text></Pressable> : undefined}>{t('내 그룹')}</SectionLabel>
       {mine.length === 0
-        ? <View style={tw`rounded-[24px] border border-line bg-white px-4 py-3`}><Text style={tw`text-[13px] text-ink-3`}>{t('아직 가입한 그룹이 없어요')}</Text></View>
+        ? <View style={tw`card px-4 py-3`}><Text style={tw`text-[13px] text-ink-3`}>{t('아직 가입한 그룹이 없어요')}</Text></View>
         : (
           <ScrollView horizontal showsHorizontalScrollIndicator={false} style={tw`-mx-4`} contentContainerStyle={tw`px-4`}>
             {mine.map((o) => (
@@ -280,7 +280,7 @@ function ScheduleRow({ a, last }: { a: Activity; last?: boolean }) {
   return (
     <Pressable onPress={() => nav(`/activities/${a.id}`)} style={tw`px-3.5 py-3 flex-row items-center ${last ? '' : 'border-b border-line'}`}>
       <View style={tw`w-[64px]`}><Text numberOfLines={1} style={tw`text-[12px] font-semibold text-primary`}>{formatDate(a.date)}</Text><Text style={tw`text-[11px] text-ink-3`}>{formatTime(a.startTime)}</Text></View>
-      <View style={tw`flex-1 min-w-0 mx-2`}><Text numberOfLines={1} style={tw`text-[14px] font-semibold text-primary`}>{a.title}</Text><Text numberOfLines={1} style={tw`text-[12px] text-ink-3`}>{a.place.name}</Text></View>
+      <View style={tw`flex-1 min-w-0 mx-2`}><Text numberOfLines={1} style={tw`text-[14px] font-semibold text-ink`}>{a.title}</Text><Text numberOfLines={1} style={tw`text-[12px] text-ink-3`}>{a.place.name}</Text></View>
       <Tag tone={state === 'host' ? 'primary' : state === 'pending' ? 'neutral' : 'mint'}>{label}</Tag>
       <ChevronRight size={16} color={C.ink3} />
     </Pressable>
@@ -299,11 +299,11 @@ function MeetExtraRows() {
     { key: 'map', icon: <MapIcon size={18} color={C.primary} />, title: t('지도'), sub: t('주변 활동'), to: '/map' },
   ];
   return (
-    <View style={tw`rounded-[24px] border border-line bg-white overflow-hidden`}>
+    <View style={tw`card overflow-hidden`}>
       {rows.map((m, i) => (
         <Pressable key={m.key} onPress={() => nav(m.to)} style={tw`px-3.5 py-3 flex-row items-center ${i ? 'border-t border-line' : ''}`}>
           <View style={tw`h-9 w-9 rounded-full bg-primary-soft items-center justify-center`}>{m.icon}</View>
-          <View style={tw`flex-1 min-w-0 mx-3`}><Text numberOfLines={1} style={tw`text-[14px] font-semibold text-primary`}>{m.title}</Text><Text numberOfLines={1} style={tw`text-[12px] text-ink-3`}>{m.sub}</Text></View>
+          <View style={tw`flex-1 min-w-0 mx-3`}><Text numberOfLines={1} style={tw`text-[14px] font-semibold text-ink`}>{m.title}</Text><Text numberOfLines={1} style={tw`text-[12px] text-ink-3`}>{m.sub}</Text></View>
           <ChevronRight size={16} color={C.ink3} />
         </Pressable>
       ))}
@@ -325,7 +325,7 @@ function ScheduleTab({ go }: { go: (tb: Tab) => void }) {
             {buckets.filter((b) => b.items.length > 0).map((b) => (
               <View key={b.key} style={tw`mb-5`}>
                 <SectionLabel>{b.label} <Text style={tw`font-normal`}>{b.items.length}</Text></SectionLabel>
-                <View style={tw`rounded-[24px] border border-line bg-white overflow-hidden`}>{b.items.map((a, i) => <ScheduleRow key={a.id} a={a} last={i === b.items.length - 1} />)}</View>
+                <View style={tw`card overflow-hidden`}>{b.items.map((a, i) => <ScheduleRow key={a.id} a={a} last={i === b.items.length - 1} />)}</View>
               </View>
             ))}
             <View style={tw`flex-row`}><Button size="sm" variant="outline" icon={<Plus size={14} color={C.ink2} />} onPress={() => nav('/meet/create')}>{t('모임 만들기')}</Button><View style={tw`w-2`} /><Button size="sm" variant="outline" onPress={() => nav('/plans')}>My Plans</Button></View>

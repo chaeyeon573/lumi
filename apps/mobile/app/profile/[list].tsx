@@ -24,7 +24,7 @@ export default function ProfileListScreen() {
       {list === 'likes' && <View style={tw`pt-3 flex-row items-center`}><Heart size={12} color={C.primary} /><Text style={tw`ml-1 text-[12px] text-ink-3 shrink`}>{t('관심은 상대에게 공개되지 않아요. 서로 관심을 표시하면 매칭돼요.')}</Text></View>}
       <View style={tw`py-3`}>
         {ids.length === 0 ? <Empty title={t('아직 아무도 없어요')} /> : (
-          <View style={tw`rounded-[24px] border border-line bg-white`}>
+          <View style={tw`card`}>
             {ids.map((id, idx) => {
               const u = v.userById(id); const o = orgs.find((x) => x.id === id);
               const border = idx === 0 ? '' : 'border-t border-line';

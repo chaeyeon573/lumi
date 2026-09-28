@@ -24,17 +24,16 @@ import { PeopleStrip } from '@/v2/PeopleStrip';
 import { MeetRow } from '@/v2/MeetRow';
 import { NowActivityRow } from '@/v2/NowActivityRow';
 import { AroundTodayCard } from '@/v2/AroundTodayCard';
-import { IncomingRequestCard } from '@/v2/IncomingRequestCard';
-import { HSection, CardList, Row, SmallEmpty } from '@/v2/HomeParts';
+import { HSection, CardList, Row, SmallEmpty, MoreSections } from '@/v2/HomeParts';
 
 /** 가입 직후 1회 보여주는 첫 사용 카드 (웹 OnboardingPage FIRSTRUN_KEY 와 같은 키) */
 const FIRSTRUN_KEY = 'aroundu.firstrun';
 
 /**
  * Home — "오늘 나에게 뭐가 있나" (웹 HomePage). 게시글 피드가 아니라 지금 내 상황에서 볼 가치가 높은 것 2~4개씩.
- * 학부생: 오늘 일정 → 지금 가까운 사람 → 학교에서 일어나는 것 → 나에게 맞는 모임 → 지금 열린 만남 → 새로운 사람 → 추천 기회
- * 대학원생: 이번 주 연구 일정 → 같은 연구 분야 → 먼저 간 사람 → 나에게 맞는 모임 → 오늘 일정(시간표 있을 때) → 같은 학교 사람 → 추천 기회
- * 졸업생: 새로운 사람 → 내 지역 사람 → 내 분야 사람 → 이번 주 모임 → 내 관계망 소식 → 내 그룹 → 추천 기회
+ * 섹션은 3개 + "더 보기" 카드 하나 (UX-SPEC 13). 학부생: 오늘 일정 · 지금 가까운 사람 · 나에게 맞는 모임 / 더 보기: 학교에서 일어나는 것 · 지금 열린 만남 · 새로운 사람 · 추천 기회
+ * 대학원생: 이번 주 연구 일정 · 같은 연구 분야 · 먼저 간 사람 / 더 보기: 나에게 맞는 모임 · 오늘 일정 · 같은 학교 사람 · 추천 기회
+ * 졸업생: 새로운 사람 · 내 지역 사람 · 이번 주 모임 / 더 보기: 내 분야 사람 · 내 관계망 소식 · 내 그룹 · 추천 기회
  */
 export default function HomeScreen() {
   const v = useViewer();
@@ -89,7 +88,7 @@ function FirstRunCard() {
   if (!show) return null;
   const dismiss = () => { try { getPlatform().removeItem(FIRSTRUN_KEY); } catch { /* */ } setShow(false); };
   return (
-    <View style={tw`mt-3 rounded-[24px] bg-primary-soft p-4`}>
+    <View style={tw`mt-3 rounded-[20px] bg-primary-soft p-4`}>
       <Pressable onPress={dismiss} accessibilityLabel={t('닫기')} style={tw`absolute top-3 right-3 h-8 w-8 rounded-full items-center justify-center`}><X size={16} color={C.ink3} /></Pressable>
       <View style={tw`flex-row items-center`}><Sparkles size={12} color={C.primary} /><Text style={tw`ml-1 text-[11px] font-bold text-primary`}>{t('어서 오세요')}</Text></View>
       <Text style={tw`mt-1 pr-8 text-[15px] font-bold text-ink`}>{t('천천히 둘러보세요. 마음에 드는 사람은 저장해 두고, 나중에 편할 때 연결하면 돼요.')}</Text>
@@ -105,10 +104,14 @@ function FirstRunCard() {
 function AskedOfMe({ me, snap }: { me: User; snap: Snapshot }) {
   const incoming = useMemo(() => requestsForMe(snap, me), [snap, me]);
   if (incoming.length === 0) return null;
+  const first = incoming[0];
+  // 섹션 대신 한 줄 — 누르면 받은 요청으로 (답하지 않아도 괜찮다)
   return (
-    <HSection title={t('혹시 여기에 해당되나요?')} action={incoming.length > 1 ? `${t('전체보기')} ${incoming.length}` : undefined} onAction={() => nav('/people/requests')}>
-      <IncomingRequestCard item={incoming[0]} compact />
-    </HSection>
+    <Pressable onPress={() => nav(incoming.length > 1 ? '/people/requests' : `/people/requests/${first.req.id}`)} style={tw`mt-3 h-12 rounded-full bg-accent-soft pl-4 pr-3 flex-row items-center`}>
+      <Text numberOfLines={1} style={tw`flex-1 min-w-0 text-[13px] font-semibold text-ink`}>{t('혹시 여기에 해당되나요?')} · <Text style={tw`font-medium text-ink-2`}>{first.req.text}</Text></Text>
+      <Text style={tw`ml-2 text-[12px] font-semibold text-verify`}>{incoming.length > 1 ? `${incoming.length}${lang === 'en' ? '' : '건'}` : t('보기')}</Text>
+      <ChevronRight size={15} color={C.ink3} />
+    </Pressable>
   );
 }
 
@@ -142,16 +145,16 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
     <>
       <HSection title={t('오늘 일정')} action={hasTT ? t('전체보기') : undefined} onAction={() => nav('/timetable')}>
         {!hasTT ? (
-          <Pressable onPress={() => nav('/timetable')} style={tw`rounded-[24px] border border-line bg-white p-4 flex-row items-center`}>
+          <Pressable onPress={() => nav('/timetable')} style={tw`card p-4 flex-row items-center`}>
             <View style={tw`h-11 w-11 rounded-2xl bg-primary-soft items-center justify-center`}><CalendarPlus size={20} color={C.primary} /></View>
             <View style={tw`flex-1 min-w-0 mx-3`}><Text style={tw`text-[15px] font-bold text-ink`}>{t('시간표 추가')}</Text><Text style={tw`text-[12px] text-ink-3`}>{t('수업을 넣으면 공강이 겹치는 사람을 찾아드려요')}</Text></View>
             <ChevronRight size={16} color={C.ink3} />
           </Pressable>
         ) : (
           <>
-            {d.classes.length === 0 ? <View style={tw`rounded-[24px] border border-line bg-white px-4 py-3`}><Text style={tw`text-[13px] text-ink-3`}>{t('오늘 수업 없음')}</Text></View> : <ClassList classes={d.classes} max={4} />}
+            {d.classes.length === 0 ? <View style={tw`card px-4 py-3`}><Text style={tw`text-[13px] text-ink-3`}>{t('오늘 수업 없음')}</Text></View> : <ClassList classes={d.classes} max={4} />}
             {d.nextFree && (
-              <View style={tw`mt-2 rounded-[24px] bg-accent-soft p-4 flex-row items-center`}>
+              <View style={tw`mt-2 rounded-[20px] bg-accent-soft p-4 flex-row items-center`}>
                 <Clock size={18} color={C.primary} />
                 <View style={tw`flex-1 min-w-0 mx-3`}><Text style={tw`text-[13px] font-semibold text-primary`}>{freeText}</Text><Text style={tw`text-[11px] text-ink-3`}>{fmtBlock(d.nextFree)}</Text></View>
                 <Button size="sm" onPress={() => nav('/people?free=1')}>{t('같이할 사람 찾기')}</Button>
@@ -167,6 +170,13 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
           : <PeopleStrip people={d.connectNow} />}
       </HSection>
 
+      <HSection title={t('나에게 맞는 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
+        {d.meets.length === 0
+          ? <SmallEmpty emoji="📅" title={t('맞는 모임이 아직 없어요')} action={t('모임 만들기')} onAction={() => nav('/meet/create')} />
+          : <CardList>{d.meets.map((m, i) => <MeetRow key={m.a.id} m={m} last={i === d.meets.length - 1} />)}</CardList>}
+      </HSection>
+
+      <MoreSections titles={[t('학교에서 일어나는 것'), d.now.length ? t('지금 열린 만남') : '', d.newPeople.length ? t('새로운 사람') : '', d.opportunities.length ? t('추천 기회') : '']}>
       <HSection title={t('학교에서 일어나는 것')} action={t('전체보기')} onAction={() => nav('/meet?tab=recommend')}>
         {d.happening.length === 0
           ? <SmallEmpty emoji="🏫" title={t('오늘은 학교 행사가 없어요')} description={ctx.campusHappenings.slice(0, 3).join(' · ')} action={t('모임 둘러보기')} onAction={() => nav('/meet?tab=recommend')} />
@@ -177,12 +187,6 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
                 : <Row key={h.o.id} last={i === d.happening.length - 1} icon={OPP_TYPE_EMOJI[h.o.type]} color={OPP_TYPE_COLORS[h.o.type]} title={h.o.title} sub={`${h.o.startTime ? `${formatTime(h.o.startTime)} · ` : ''}${h.o.host}`} onPress={() => nav(`/opportunities/${h.o.id}`)} />)}
             </CardList>
           )}
-      </HSection>
-
-      <HSection title={t('나에게 맞는 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
-        {d.meets.length === 0
-          ? <SmallEmpty emoji="📅" title={t('맞는 모임이 아직 없어요')} action={t('모임 만들기')} onAction={() => nav('/meet/create')} />
-          : <CardList>{d.meets.map((m, i) => <MeetRow key={m.a.id} m={m} last={i === d.meets.length - 1} />)}</CardList>}
       </HSection>
 
       {d.now.length > 0 && (
@@ -197,7 +201,8 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
         </HSection>
       )}
 
-      <Opps list={d.opportunities} />
+        <Opps list={d.opportunities} />
+      </MoreSections>
     </>
   );
 }
@@ -228,6 +233,7 @@ function GradHome({ d, me }: { d: GradHomeData; me: User }) {
         </HSection>
       )}
 
+      <MoreSections titles={[t('나에게 맞는 모임'), hasTT && d.classes.length ? t('오늘 일정') : '', d.connectNow.length ? t('같은 학교 사람') : '', d.opportunities.length ? t('추천 기회') : '']}>
       <HSection title={t('나에게 맞는 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
         {d.meets.length === 0
           ? <SmallEmpty emoji="📅" title={t('맞는 모임이 아직 없어요')} action={t('모임 만들기')} onAction={() => nav('/meet/create')} />
@@ -246,7 +252,8 @@ function GradHome({ d, me }: { d: GradHomeData; me: User }) {
         </HSection>
       )}
 
-      <Opps list={d.opportunities} />
+        <Opps list={d.opportunities} />
+      </MoreSections>
       <Text style={tw`px-4 mt-6 text-center text-[11px] text-ink-3`}>{t('연구 분야와 연구실은 프로필에서 바꿀 수 있어요. 지도교수는 켤 때만 보여요.')}</Text>
     </>
   );
@@ -288,16 +295,17 @@ function AlumniHome({ d, me }: { d: AlumniHomeData; me: User }) {
           : <PeopleStrip people={d.nearby} />}
       </HSection>
 
-      <HSection title={field ? `${t('내 분야 사람')} · ${field}` : t('내 분야 사람')} action={d.field.length ? t('전체보기') : undefined} onAction={() => nav('/people?tab=search')}>
-        {d.field.length === 0
-          ? <SmallEmpty emoji="💼" title={field ? t('같은 분야 사람이 아직 없어요') : t('직무·업종을 알려주세요')} description={t('같은 분야의 동문과 자연스럽게 이어져요.')} action={t('직무·업종 추가')} onAction={() => nav('/profile/edit')} />
-          : <PeopleStrip people={d.field} />}
-      </HSection>
-
       <HSection title={t('이번 주 참여 가능한 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
         {d.thisWeek.length === 0
           ? <SmallEmpty emoji="📅" title={t('이번 주 모임이 없어요')} action={t('모임 둘러보기')} onAction={() => nav('/meet')} />
           : <CardList>{d.thisWeek.map((m, i) => <MeetRow key={m.a.id} m={m} last={i === d.thisWeek.length - 1} />)}</CardList>}
+      </HSection>
+
+      <MoreSections titles={[t('내 분야 사람'), d.news.length ? t('내 관계망 소식') : '', t('내 그룹'), d.opportunities.length ? t('추천 기회') : '']}>
+      <HSection title={field ? `${t('내 분야 사람')} · ${field}` : t('내 분야 사람')} action={d.field.length ? t('전체보기') : undefined} onAction={() => nav('/people?tab=search')}>
+        {d.field.length === 0
+          ? <SmallEmpty emoji="💼" title={field ? t('같은 분야 사람이 아직 없어요') : t('직무·업종을 알려주세요')} description={t('같은 분야의 동문과 자연스럽게 이어져요.')} action={t('직무·업종 추가')} onAction={() => nav('/profile/edit')} />
+          : <PeopleStrip people={d.field} />}
       </HSection>
 
       {d.news.length > 0 && (
@@ -312,7 +320,8 @@ function AlumniHome({ d, me }: { d: AlumniHomeData; me: User }) {
           : <CardList>{d.groups.map((g, i) => <Row key={g.id} last={i === d.groups.length - 1} icon={g.logo.url ? <Avatar emoji={g.logo.emoji} hue={g.logo.hue} url={g.logo.url} size={40} /> : g.logo.emoji} color={C.primary} title={g.name} sub={`${ORG_TYPE_LABELS[g.type]} · ${g.memberIds.length}${t('명')}`} onPress={() => nav(`/orgs/${g.id}`)} />)}</CardList>}
       </HSection>
 
-      <Opps list={d.opportunities} />
+        <Opps list={d.opportunities} />
+      </MoreSections>
       <View style={tw`px-4 mt-6 flex-row items-center justify-center`}><MapPin size={11} color={C.ink3} /><Briefcase size={11} color={C.ink3} /><Text style={tw`ml-1 text-[11px] text-ink-3 text-center shrink`}>{t('지역과 분야는 프로필에서 언제든 바꿀 수 있어요.')}</Text></View>
     </>
   );

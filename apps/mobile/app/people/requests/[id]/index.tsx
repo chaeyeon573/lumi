@@ -64,7 +64,7 @@ function RequesterView({ req }: { req: NetworkRequest }) {
 
   return (
     <Screen title={t('사람 찾아보기')}>
-      <View style={tw`mt-1 rounded-[24px] bg-primary-soft border border-line p-4`}>
+      <View style={tw`mt-1 rounded-[20px] bg-primary-soft border border-line p-4`}>
         <View style={tw`flex-row items-center`}>
           {req.status === 'open' ? <Tag tone="primary">{t('찾는 중')}</Tag> : <Tag>{t('그만 찾음')}</Tag>}
           <Text numberOfLines={1} style={tw`ml-2 flex-1 text-[11px] text-ink-3`}>{reachLabels[req.reach]}</Text>
@@ -74,13 +74,13 @@ function RequesterView({ req }: { req: NetworkRequest }) {
         {ctx ? <Text style={tw`mt-1 text-[12px] text-ink-2`}>{ctx}</Text> : null}
       </View>
 
-      <Text style={tw`mt-6 mb-2 text-[18px] font-bold text-primary`}>{t('AroundU가 찾은 사람')} <Text style={tw`text-[15px] text-ink-3`}>{matches.length}</Text></Text>
+      <Text style={tw`mt-6 mb-2 text-[18px] font-bold text-ink`}>{t('AroundU가 찾은 사람')} <Text style={tw`text-[15px] text-ink-3`}>{matches.length}</Text></Text>
       <Section loading={secFound.loading} error={secFound.error} onRetry={secFound.retry} skeleton={<SectionSkeleton count={2} />}
         empty={matches.length === 0 && <SectionEmpty emoji="🔎" title={t('가까운 네트워크에서 바로 떠오르는 사람이 없어요')} action={<Button size="sm" variant="outline" onPress={() => nav('/people/find')}>{t('사람 찾아보기')}</Button>} />}>
         {matches.map((m) => <View key={m.user.id} style={tw`mb-2`}><PersonRow user={m.user} reasons={asReasons(m.reasons)} compact actions /></View>)}
       </Section>
 
-      <Text style={tw`mt-6 mb-1 text-[18px] font-bold text-primary`}>{t('손 든 사람')} <Text style={tw`text-[15px] text-ink-3`}>{raised.length}</Text></Text>
+      <Text style={tw`mt-6 mb-1 text-[18px] font-bold text-ink`}>{t('손 든 사람')} <Text style={tw`text-[15px] text-ink-3`}>{raised.length}</Text></Text>
       <View style={tw`mb-2`}><PrivacyNote text={t('손 든 사람이 고른 정보만 보여요 · 연락처는 공개되지 않아요')} /></View>
       <Section loading={secRaised.loading} error={secRaised.error} onRetry={secRaised.retry} skeleton={<SectionSkeleton count={1} />}
         empty={raised.length === 0 && <SectionEmpty emoji="✋" title={t('아직 손 든 사람이 없어요. 데모에서는 잠시 후 관련 있는 사람이 손을 들어요.')} />}>
@@ -106,7 +106,7 @@ function ResponseCard({ res, busy, onDecide, roomId }: { res: RequestResponse; b
   const connected = res.status === 'accepted';
   const shared = res.shared ?? DEFAULT_SHARED;
   return (
-    <View style={[tw`mb-2 rounded-[24px] border bg-white p-3.5`, { borderColor: connected ? C.mint : C.line }]}>
+    <View style={[tw`mb-2 rounded-[20px] border bg-white p-3.5`, { borderColor: connected ? C.mint : C.line }]}>
       <View style={tw`flex-row items-center`}><Text style={tw`flex-1 text-[11px] font-bold text-primary`}>{t('손 들었어요')}</Text>{connected ? <Tag tone="mint">{t('연결됨')}</Tag> : null}</View>
       {res.matched && res.matched.length > 0 ? <View style={tw`mt-1.5`}><Text style={tw`text-[11px] text-ink-3 mb-1`}>{t('해당되는 부분')}</Text><PlainReasonChips reasons={res.matched} max={6} /></View> : null}
       {res.note ? <Text style={tw`mt-2 rounded-2xl bg-surface-2 px-3 py-2 text-[13px] text-ink`}>“{res.note}”</Text> : null}
@@ -156,7 +156,7 @@ function ReceiverView({ req, referral }: { req: NetworkRequest; referral?: strin
           <IncomingRequestCard item={item} highlightReferral={highlight} />
         </Section>
 
-        <View style={tw`mt-3 rounded-[24px] border border-line bg-white p-3.5`}>
+        <View style={tw`mt-3 card p-3.5`}>
           <Text style={tw`text-[11px] font-bold text-ink-3`}>{t('찾는 사람')}</Text>
           <Pressable onPress={() => nav(`/users/${author.id}`)} style={tw`mt-2 flex-row items-center`}>
             <Avatar emoji={author.avatar.emoji} hue={author.avatar.hue} url={author.avatar.url} size={44} />

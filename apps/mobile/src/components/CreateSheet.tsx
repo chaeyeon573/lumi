@@ -37,7 +37,7 @@ export function CreateSheet({ open, onClose }: { open: boolean; onClose: () => v
     { key: 'activity', label: t('활동·약속 만들기'), desc: t('점심·운동·전시·모임 — 날짜와 장소를 정해서'), Icon: CalendarPlus, path: `/create/activity?kind=${invitee ? 'personal' : 'group'}${invitee ? `&invite=${invitee.id}` : ''}`, bg: C.soft, fg: C.primary },
     { key: 'together', label: t('같이 시간 정하기 (Plan Together)'), desc: invitee ? `${invitee.nickname}${t('님과 후보 시간 투표로 약속 잡기')}` : t('친구들에게 후보 시간을 보내고 겹치는 시간으로 확정'), Icon: Vote, path: `/together/new${invitee ? `?invite=${invitee.id}` : ''}`, bg: C.soft, fg: C.primary },
     { key: 'crew', label: t('Study Crew 만들기'), desc: classHere ? `${classHere} · ${t('같은 수업 학생에게만 보여요')}` : t('시험·과제·팀플 — 같은 수업 학생에게만 보여요'), Icon: BookOpen, path: classHere ? `/create/activity?crew=${encodeURIComponent(classHere)}` : '', bg: C.mintSoft, fg: C.mint },
-    { key: 'team', label: t('팀원 모집하기'), desc: oppHere ? `${oppHere.title} · ${t('필요한 역할을 미리 채워요')}` : t('해커톤·창업·프로젝트에 필요한 역할 모집'), Icon: Lightbulb, path: `/create/activity?kind=group&team=1${oppHere ? `&opportunity=${oppHere.id}` : ''}`, bg: C.goldSoft, fg: '#B57A0E' },
+    { key: 'team', label: t('팀원 모집하기'), desc: oppHere ? `${oppHere.title} · ${t('필요한 역할을 미리 채워요')}` : t('해커톤·창업·프로젝트에 필요한 역할 모집'), Icon: Lightbulb, path: `/create/activity?kind=group&team=1${oppHere ? `&opportunity=${oppHere.id}` : ''}`, bg: C.goldSoft, fg: C.goldInk },
     { key: 'post', label: t('게시물 작성'), desc: orgHere ? `${orgHere.name} ${t('페이지에 소식 올리기')}` : t('사진·일상·질문, 익명은 글만'), Icon: ImageIcon, path: `/create/post${orgHere && adminOrgs.includes(orgHere) ? `?org=${orgHere.id}&type=news` : ''}`, bg: C.surface2, fg: C.primary },
   ];
   const pick = (o: typeof options[number]) => {

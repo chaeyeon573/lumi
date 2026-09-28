@@ -13,9 +13,9 @@ export default function MapScreen() {
   return (
     <Screen title={t('지도')}>
       {a ? (
-        <View style={tw`rounded-[24px] border border-line p-5 items-center`}>
+        <View style={tw`rounded-[20px] border border-line p-5 items-center`}>
           <MapPin size={28} color={C.primary} />
-          <Text style={tw`mt-2 text-[17px] font-bold text-primary text-center`}>{a.place.name}</Text>
+          <Text style={tw`mt-2 text-[17px] font-bold text-ink text-center`}>{a.place.name}</Text>
           {a.place.address ? <Text style={tw`mt-1 text-[13px] text-ink-3 text-center`}>{a.place.address}</Text> : null}
         </View>
       ) : <Empty title={t('장소 정보가 없어요')} />}

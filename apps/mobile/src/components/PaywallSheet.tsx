@@ -27,7 +27,7 @@ export function PlanToggle({ period, onChange }: { period: PlanPeriod; onChange:
       {(['yearly', 'monthly'] as const).map((k) => { const p = plans[k]; const on = period === k; return (
         <Pressable key={k} onPress={() => onChange(k)} style={[tw`flex-1 rounded-2xl border-2 p-3.5 ${k === 'yearly' ? 'mr-2' : ''}`, { borderColor: on ? C.primary : C.line, backgroundColor: on ? C.soft : C.bg }]}>
           <View style={tw`flex-row items-center`}><Text style={tw`text-[12px] font-bold text-ink-3`}>{p.label}</Text>{'badge' in p ? <View style={tw`ml-2 h-5 px-2 rounded-full bg-primary justify-center`}><Text style={tw`text-[10px] font-bold text-white`}>{p.badge}</Text></View> : null}</View>
-          <Text style={tw`mt-1 text-[20px] font-extrabold text-primary`}>{p.price}<Text style={tw`text-[12px] font-medium text-ink-3`}>{p.per}</Text></Text>
+          <Text style={tw`mt-1 text-[20px] font-extrabold text-ink`}>{p.price}<Text style={tw`text-[12px] font-medium text-ink-3`}>{p.per}</Text></Text>
         </Pressable>
       ); })}
     </View>
@@ -56,7 +56,7 @@ export function PaywallSheet({ open, onClose, reason }: { open: boolean; onClose
           </View>
         </View>
       ) : null}
-      <View style={tw`flex-row items-center`}><Sparkles size={18} color={C.primary} /><Text style={tw`ml-2 flex-1 text-[20px] font-bold text-primary`}>{t('더 정확한 사람을 더 빠르게')}</Text></View>
+      <View style={tw`flex-row items-center`}><Sparkles size={18} color={C.primary} /><Text style={tw`ml-2 flex-1 text-[20px] font-bold text-ink`}>{t('더 정확한 사람을 더 빠르게')}</Text></View>
       <Text style={tw`text-[13px] text-ink-2 mt-1`}>{t('사람을 만나는 데는 돈을 받지 않아요. 원하는 사람을 더 빠르고 정교하게 찾는 기능만 AroundU+ 예요.')}</Text>
       <View style={tw`mt-3`}>
         {PLUS_PERKS().map((p) => (

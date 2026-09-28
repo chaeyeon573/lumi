@@ -50,7 +50,7 @@ export function IncomingRequestCard({ item, compact, highlightReferral }: { item
   const hi = !!highlightReferral;
 
   return (
-    <View style={tw`rounded-[24px] border border-line overflow-hidden ${expired ? 'bg-surface-2' : 'bg-white'}`}>
+    <View style={tw`rounded-[20px] border border-line overflow-hidden ${expired ? 'bg-surface-2' : 'bg-white'}`}>
       <View style={tw`px-4 pt-3.5 pb-3 ${expired ? 'opacity-60' : ''}`}>
         <View style={tw`flex-row items-center`}>
           <View style={tw`flex-1`}>

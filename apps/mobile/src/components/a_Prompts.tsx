@@ -12,7 +12,7 @@ import { Tag, C } from '@/ui';
 export function PromptAnswerCard({ prompt, compact }: { prompt: ProfilePrompt; compact?: boolean }) {
   const q = questionById(prompt.questionId);
   return (
-    <View style={tw`${compact ? 'rounded-2xl bg-primary-soft px-3 py-2' : 'rounded-[24px] border border-line bg-white p-4'}`}>
+    <View style={tw`${compact ? 'rounded-2xl bg-primary-soft px-3 py-2' : 'card p-4'}`}>
       <Text style={tw`font-bold text-primary ${compact ? 'text-[11px]' : 'text-[12px]'}`}>{q?.text}</Text>
       <Text numberOfLines={compact ? 2 : undefined} style={tw`text-ink leading-5 ${compact ? 'text-[13px] font-semibold mt-0.5' : 'text-[16px] font-bold mt-1'}`}>{prompt.answer}</Text>
     </View>
@@ -29,7 +29,7 @@ export function VoicePlayer({ duration }: { duration: number }) {
   }, [playing, duration]);
   return (
     <View style={tw`flex-1 flex-row items-center rounded-xl bg-primary-soft px-3 py-2`}>
-      <Pressable onPress={() => setPlaying((p) => !p)} style={tw`h-9 w-9 rounded-full bg-primary items-center justify-center`}>{playing ? <Pause size={16} color="#fff" /> : <Play size={16} color="#fff" style={{ marginLeft: 2 }} />}</Pressable>
+      <Pressable onPress={() => setPlaying((p) => !p)} style={tw`h-9 w-9 rounded-full bg-primary items-center justify-center`}>{playing ? <Pause size={16} color={C.onPrimary} /> : <Play size={16} color={C.onPrimary} style={{ marginLeft: 2 }} />}</Pressable>
       <Waveform progress={pos / duration} />
       <Text style={tw`text-[12px] font-semibold text-primary`}>{playing ? `${pos}s` : `${duration}s`}</Text>
     </View>
@@ -40,7 +40,7 @@ function Waveform({ progress = 0 }: { progress?: number }) {
   const bars = [4, 9, 14, 8, 16, 11, 6, 13, 9, 15, 7, 12, 5, 10, 14, 8, 6, 11, 9, 13];
   return (
     <View style={[tw`flex-1 flex-row items-center h-5 mx-2.5`, { gap: 3 }]}>
-      {bars.map((h, i) => <View key={i} style={{ width: 3, height: h, borderRadius: 2, backgroundColor: i / bars.length < progress ? C.primary : 'rgba(15,43,72,0.35)' }} />)}
+      {bars.map((h, i) => <View key={i} style={{ width: 3, height: h, borderRadius: 2, backgroundColor: i / bars.length < progress ? C.primary : C.tint2 }} />)}
     </View>
   );
 }

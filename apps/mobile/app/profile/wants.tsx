@@ -32,8 +32,8 @@ export default function WantsScreen() {
   return (
     <Screen title={t('추천 설정')} footer={<Row><Button full size="lg" loading={busy} disabled={!valid} onPress={save}>{valid ? t('저장') : t('각각 1개 이상 골라주세요')}</Button></Row>}>
       <View style={tw`py-4`}>
-        <View style={tw`mb-5 rounded-[24px] border border-line bg-primary-soft p-4`}>
-          <View style={tw`flex-row items-center`}><Target size={16} color={C.primary} /><Text style={tw`ml-2 text-[14px] font-bold text-primary`}>{t('AroundU가 나를 이해하는 기준')}</Text></View>
+        <View style={tw`mb-5 rounded-[20px] border border-line bg-primary-soft p-4`}>
+          <View style={tw`flex-row items-center`}><Target size={16} color={C.primary} /><Text style={tw`ml-2 text-[14px] font-bold text-ink`}>{t('AroundU가 나를 이해하는 기준')}</Text></View>
           <Text style={tw`mt-1.5 text-[12px] text-ink-2`}>{t('추천·홈·모임 추천의 우선순위에 바로 반영돼요. 언제든 바꿀 수 있고, 다른 사람에게는 보이지 않아요.')}</Text>
         </View>
         <Field label={t('어떤 사람을 만나고 싶어요?')} hint={t('1개 이상 골라주세요. 사람 추천과 홈의 "오늘의 사람"에 쓰여요.')}>

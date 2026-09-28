@@ -7,7 +7,7 @@ import { TEXT_PROMPTS, VOICE_PROMPTS, POLL_PROMPTS, PROMPT_CATEGORY_LABELS, ques
 import { tw } from '@/tw';
 import { BottomSheet, Chip, Textarea, Tag, C } from '@/ui';
 
-const card = tw`rounded-[24px] border border-line bg-white`;
+const card = tw`card`;
 
 // ─── 텍스트 질문 편집 ──────────────────────────────────────────────────────
 export function PromptEditor({ value, onChange }: { value: ProfilePrompt[]; onChange: (v: ProfilePrompt[]) => void }) {
@@ -102,7 +102,7 @@ export function VoicePromptEditor({ value, onChange }: { value?: VoicePrompt; on
     <View style={[card, tw`p-3.5`]}>
       <View style={tw`flex-row flex-wrap`}>{VOICE_PROMPTS.map((q) => <View key={q.id} style={tw`mb-1.5`}><Chip size="sm" active={questionId === q.id} onPress={() => !recording && setQuestionId(q.id)}>{q.text}</Chip></View>)}</View>
       <View style={tw`mt-3 flex-row items-center`}>
-        <Pressable onPress={recording ? stop : start} style={tw`h-14 w-14 rounded-full items-center justify-center ${recording ? 'bg-danger' : 'bg-primary'}`}>{recording ? <Square size={20} color="#fff" /> : <Mic size={22} color="#fff" />}</Pressable>
+        <Pressable onPress={recording ? stop : start} style={tw`h-14 w-14 rounded-full items-center justify-center ${recording ? 'bg-danger' : 'bg-primary'}`}>{recording ? <Square size={20} color={C.onPrimary} /> : <Mic size={22} color={C.onPrimary} />}</Pressable>
         <View style={tw`flex-1 ml-3`}>
           <Text style={tw`text-[14px] font-semibold text-ink`}>{recording ? `${t('녹음 중 · ')}${sec}${t('초')}` : t('탭해서 녹음 (최대 30초)')}</Text>
           <Text style={tw`text-[11px] text-ink-3`}>{t('데모에서는 실제 음성 대신 녹음 길이만 저장돼요.')}</Text>
@@ -123,7 +123,7 @@ export function VoicePlayer({ duration }: { duration: number }) {
   }, [playing, duration]);
   return (
     <View style={tw`flex-1 flex-row items-center rounded-xl bg-primary-soft px-3 py-2`}>
-      <Pressable onPress={() => setPlaying((p) => !p)} style={tw`h-9 w-9 rounded-full bg-primary items-center justify-center`}>{playing ? <Pause size={16} color="#fff" /> : <Play size={16} color="#fff" style={tw`ml-0.5`} />}</Pressable>
+      <Pressable onPress={() => setPlaying((p) => !p)} style={tw`h-9 w-9 rounded-full bg-primary items-center justify-center`}>{playing ? <Pause size={16} color={C.onPrimary} /> : <Play size={16} color={C.onPrimary} style={tw`ml-0.5`} />}</Pressable>
       <View style={tw`flex-1 mx-2.5`}><Waveform active={playing} progress={pos / duration} /></View>
       <Text style={tw`text-[12px] font-semibold text-primary`}>{playing ? `${pos}s` : `${duration}s`}</Text>
     </View>
@@ -134,7 +134,7 @@ function Waveform({ active, progress = 0 }: { active?: boolean; progress?: numbe
   const bars = [4, 9, 14, 8, 16, 11, 6, 13, 9, 15, 7, 12, 5, 10, 14, 8, 6, 11, 9, 13];
   return (
     <View style={tw`flex-row items-center h-5`}>
-      {bars.map((h, i) => <View key={i} style={[tw`w-[3px] rounded-full mr-[3px]`, { height: h, backgroundColor: i / bars.length < progress ? C.primary : 'rgba(15,43,72,0.35)', opacity: active ? 0.8 : 1 }]} />)}
+      {bars.map((h, i) => <View key={i} style={[tw`w-[3px] rounded-full mr-[3px]`, { height: h, backgroundColor: i / bars.length < progress ? C.primary : C.tint2, opacity: active ? 0.8 : 1 }]} />)}
     </View>
   );
 }

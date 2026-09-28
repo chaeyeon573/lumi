@@ -15,7 +15,7 @@ import { useViewer } from '@/viewer';
 import { Screen, Avatar, Button, Tag, Loading, C } from '@/ui';
 import { ErrorState } from '@/components/b_States';
 
-const card = tw`rounded-[24px] border border-line bg-white`;
+const card = tw`card`;
 
 /** Me › My Plans — 받은 초대 / 대기 / 확정 / 관심 행사 / 팀 신청 / Study Crew (웹 PlansPage) */
 export default function PlansScreen() {

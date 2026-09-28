@@ -54,7 +54,7 @@ export default function ActivityDetailScreen() {
     <Screen title="" right={<IconBtn onPress={() => setMenu(true)}><MoreHorizontal size={20} color={C.ink2} /></IconBtn>} footer={footer}>
       <View style={tw`-mx-4`}><Cover emoji={a.cover.emoji} hue={a.cover.hue} url={a.cover.url} size={240} radius={0} style={{ width: '100%', height: 240 }} /></View>
       <View style={tw`-mt-6`}>
-        <View style={tw`rounded-[24px] border border-line bg-white p-4`}>
+        <View style={tw`card p-4`}>
           <View style={[tw`flex-row flex-wrap items-center`, { gap: 6 }]}>
             <View style={[tw`rounded-lg px-2 h-6 justify-center`, { backgroundColor: color }]}><Text style={tw`text-[11px] font-bold text-white`}>{CATEGORY_EMOJI[a.category]} {CATEGORY_LABELS[a.category]}</Text></View>
             <Tag>{KIND_LABELS[a.kind]}</Tag>
@@ -65,7 +65,7 @@ export default function ActivityDetailScreen() {
           <Text style={tw`text-[14px] text-ink-2 leading-6 mt-2`}>{a.description}</Text>
         </View>
 
-        <Pressable onPress={() => nav(org ? `/orgs/${org.id}` : `/users/${a.hostId}`)} style={tw`mt-3 rounded-[24px] border border-line bg-white p-3 flex-row items-center`}>
+        <Pressable onPress={() => nav(org ? `/orgs/${org.id}` : `/users/${a.hostId}`)} style={tw`mt-3 card p-3 flex-row items-center`}>
           {org ? <Avatar emoji={org.logo.emoji} hue={org.logo.hue} url={org.logo.url} size={44} style={{ borderRadius: 12 }} /> : host && <Avatar emoji={host.avatar.emoji} hue={host.avatar.hue} url={host.avatar.url} size={44} />}
           <View style={tw`flex-1 min-w-0 ml-3`}>
             <Text style={tw`text-[11px] text-ink-3`}>{t('주최자')}</Text>
@@ -74,7 +74,7 @@ export default function ActivityDetailScreen() {
           </View>
         </Pressable>
 
-        <View style={tw`mt-3 rounded-[24px] border border-line bg-white overflow-hidden`}>
+        <View style={tw`mt-3 card overflow-hidden`}>
           <InfoRow icon={<Clock size={16} color={C.ink2} />} label={t('날짜와 시간')} value={`${formatDate(a.date)} ${formatTime(a.startTime)} – ${formatTime(a.endTime)}`} />
           <InfoRow icon={<MapPin size={16} color={C.ink2} />} label={t('장소')} value={a.place.name} sub={a.place.address} />
           <InfoRow icon={<Users size={16} color={C.ink2} />} label={t('모집 인원')} value={`${approved.length}${t('명 참가 중 · 모집 ')}${a.capacity >= 999 ? t('제한 없음') : `${a.capacity}${t('명')}`}`} />
@@ -83,7 +83,7 @@ export default function ActivityDetailScreen() {
           {a.conditions ? <InfoRow icon={<ShieldCheck size={16} color={C.ink2} />} label={t('참가 조건')} value={a.conditions} last /> : null}
         </View>
 
-        <View style={tw`mt-3 rounded-[24px] border border-line bg-white overflow-hidden`}>
+        <View style={tw`mt-3 card overflow-hidden`}>
           <View style={tw`h-[120px] bg-surface-2 items-center justify-center px-4`}>
             <View style={[tw`h-9 w-9 rounded-full items-center justify-center`, { backgroundColor: color }]}><Text style={tw`text-[16px]`}>{CATEGORY_EMOJI[a.category]}</Text></View>
             <Text numberOfLines={1} style={tw`mt-2 text-[14px] font-bold text-ink`}>{a.place.name}</Text>
@@ -92,7 +92,7 @@ export default function ActivityDetailScreen() {
           <Pressable onPress={() => nav(`/map?focus=${a.id}`)} style={tw`h-11 flex-row items-center justify-center`}><MapPin size={14} color={C.primary} /><Text style={tw`ml-1 text-[13px] font-semibold text-primary`}>{t('지도에서 보기')}</Text></Pressable>
         </View>
 
-        <View style={tw`mt-3 rounded-[24px] border border-line bg-white p-4`}>
+        <View style={tw`mt-3 card p-4`}>
           <View style={tw`flex-row items-center justify-between`}><Text style={tw`text-[14px] font-bold text-ink`}>{t('현재 참가자')} {approved.length}</Text>{isHost && <Pressable onPress={() => nav(`/activities/${a.id}/manage`)}><Text style={tw`text-[12px] font-semibold text-primary`}>{t('참가자 관리')}</Text></Pressable>}</View>
           <View style={tw`flex-row flex-wrap mt-3`}>
             {host && <PersonPill id={host.id} label={t('주최')} />}
@@ -101,7 +101,7 @@ export default function ActivityDetailScreen() {
           </View>
         </View>
 
-        <View style={tw`mt-3 rounded-[24px] border border-line bg-white p-4`}>
+        <View style={tw`mt-3 card p-4`}>
           <Text style={tw`text-[14px] font-bold text-ink`}>{t('댓글 또는 질문')} {a.comments.length}</Text>
           <View style={tw`mt-3`}>
             {a.comments.map((c) => { const u = v.userById(c.authorId); return (

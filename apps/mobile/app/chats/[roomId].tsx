@@ -47,7 +47,7 @@ export default function ChatRoomScreen() {
   const header = (
     <View>
       {activity && (
-        <Pressable onPress={() => nav(`/activities/${activity.id}`)} style={tw`rounded-[24px] border border-line bg-white p-3 flex-row items-center mb-2`}>
+        <Pressable onPress={() => nav(`/activities/${activity.id}`)} style={tw`card p-3 flex-row items-center mb-2`}>
           <View style={tw`h-9 w-9 rounded-xl bg-primary-soft items-center justify-center`}><CalendarDays size={18} color={C.primary} /></View>
           <View style={tw`flex-1 min-w-0 ml-3`}><Text numberOfLines={1} style={tw`text-[13px] font-bold text-ink`}>{activity.title}</Text><Text style={tw`text-[11px] text-ink-3`}>{activity.place.name} · {activity.date} {activity.startTime}</Text></View>
         </Pressable>
@@ -75,7 +75,7 @@ export default function ChatRoomScreen() {
 
   const titleNode = (
     <Pressable onPress={() => (other ? nav(`/users/${other.id}`) : activity ? nav(`/activities/${activity.id}`) : undefined)} style={tw`flex-1 ml-1`}>
-      <Text numberOfLines={1} style={tw`text-[17px] font-bold text-primary`}>{title}</Text>
+      <Text numberOfLines={1} style={tw`text-[17px] font-bold text-ink`}>{title}</Text>
       {room.type !== 'direct' && <Text style={tw`text-[11px] text-ink-3 font-medium`}>{t('멤버')} {room.memberIds.length}{t('명')}</Text>}
     </Pressable>
   );
@@ -88,7 +88,7 @@ export default function ChatRoomScreen() {
           <View style={tw`flex-row items-center`}>
             <Input style={tw`flex-1 h-11 rounded-2xl bg-surface-2 border-0`} placeholder={blocked ? t('차단된 사용자와는 대화할 수 없어요') : t('메시지 입력…')} value={text} onChangeText={setText} editable={!blocked} onSubmitEditing={send} returnKeyType="send" blurOnSubmit={false} />
             <View style={tw`w-2`} />
-            <Button style={tw`h-11 w-11 px-0 rounded-2xl`} disabled={!text.trim() || blocked} onPress={send}><Send size={18} color="#fff" /></Button>
+            <Button style={tw`h-11 w-11 px-0 rounded-2xl`} disabled={!text.trim() || blocked} onPress={send}><Send size={18} color={C.onPrimary} /></Button>
           </View>
         }>
         <FlatList ref={listRef} data={room.messages} keyExtractor={(m) => m.id} renderItem={renderItem} ListHeaderComponent={header} contentContainerStyle={tw`px-4 py-3`} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled" onContentSizeChange={() => listRef.current?.scrollToEnd({ animated: false })} />

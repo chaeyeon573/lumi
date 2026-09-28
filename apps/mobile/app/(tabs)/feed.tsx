@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Linking, Pressable, ScrollView, Text, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
-import { Image as ImageIcon, School } from 'lucide-react-native';
+import { Image as ImageIcon } from 'lucide-react-native';
 import { t } from '@core/i18n';
 import { useAppStore } from '@core/store/useAppStore';
 import { injectSponsored, isPlus } from '@core/lib/monetization';
@@ -34,33 +34,30 @@ export default function FeedScreen() {
   );
 }
 
-function ComposerAction({ icon, label, to, outline }: { icon: React.ReactNode; label: string; to: string; outline?: boolean }) {
+function ComposerAction({ icon, label, to }: { icon: React.ReactNode; label: string; to: string }) {
   return (
-    <Pressable onPress={() => nav(to)} style={tw`${outline ? 'h-7 border border-line bg-white' : 'h-8 bg-surface-2'} px-3 mr-2 rounded-full flex-row items-center`}>
+    <Pressable onPress={() => nav(to)} style={tw`h-8 bg-surface-2 px-3 mr-2 rounded-full flex-row items-center`}>
       {icon}<Text style={tw`ml-1 text-[12px] font-semibold text-ink-2`}>{label}</Text>
     </Pressable>
   );
 }
 
 /**
- * 컴포저 — 글 + 사진. 아래 칩은 단계별 시작점(학부생: 수업 질문·같이 밥 / 대학원생: 연구 질문·리딩 그룹·학회 / 졸업생: 근황·후배 질문·이번에 가요).
- * 쓰는 걸 강요하지 않는 보조 칩이다. 칩 → 글쓰기(type · topic 미리 채움)
+ * 컴포저 — 글 + 한 줄(사진 + 단계별 시작점: 학부생 수업 질문·같이 밥 / 대학원생 연구 질문·리딩 그룹·학회 / 졸업생 근황·후배 질문·이번에 가요).
+ * 쓰는 걸 강요하지 않는 보조 칩이다. 공개 범위는 글쓰기 화면에서 고른다 (웹 FeedPage Composer)
  */
 function Composer() {
   const v = useViewer();
   const kind = stageKind(v.me);
   return (
-    <View style={tw`rounded-[24px] border border-line bg-white p-3`}>
+    <View style={tw`card p-3`}>
       <Pressable onPress={() => nav('/create/post')} style={tw`flex-row items-center`}>
         <Avatar emoji={v.me.avatar.emoji} hue={v.me.avatar.hue} url={v.me.avatar.url} size={40} />
         <View style={tw`flex-1 ml-3 h-10 rounded-full bg-surface-2 px-4 justify-center`}><Text numberOfLines={1} style={tw`text-[14px] text-ink-3`}>{composerPlaceholder(kind)}</Text></View>
       </Pressable>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={tw`mt-2.5 -mr-3`} contentContainerStyle={tw`pl-[52px] pr-3 items-center`}>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={tw`mt-2.5 -mr-3`} contentContainerStyle={tw`pl-[52px] pr-3 items-center`} accessibilityLabel={t('이런 글은 어때요?')}>
         <ComposerAction icon={<ImageIcon size={14} color={C.ink2} />} label={t('사진')} to="/create/post?photo=1" />
-        <ComposerAction icon={<School size={13} color={C.ink2} />} label={t('캠퍼스')} to="/community" />
-      </ScrollView>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={tw`mt-2 -mr-3`} contentContainerStyle={tw`pl-[52px] pr-3 items-center`} accessibilityLabel={t('이런 글은 어때요?')}>
-        {composerPrompts(kind).map((p) => <ComposerAction key={p.key} outline icon={<Text style={tw`text-[12px]`}>{p.emoji}</Text>} label={p.label} to={`/create/post?type=${p.postType}&topic=${p.key}`} />)}
+        {composerPrompts(kind).map((p) => <ComposerAction key={p.key} icon={<Text style={tw`text-[12px]`}>{p.emoji}</Text>} label={p.label} to={`/create/post?type=${p.postType}&topic=${p.key}`} />)}
       </ScrollView>
     </View>
   );

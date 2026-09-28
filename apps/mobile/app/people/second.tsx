@@ -98,7 +98,7 @@ function SecondCard({ sd, asked, onMutual, onAsk, onAsks }: { sd: SecondDegree; 
   const canIntro = sd.via.length > 0;
   const open = () => nav(`/users/${u.id}`);
   return (
-    <View style={tw`mb-3 rounded-[24px] border border-line bg-white overflow-hidden`}>
+    <View style={tw`mb-3 card overflow-hidden`}>
       {/* 1. 관계의 이유 · 연결 경로 */}
       <View style={tw`bg-sky-soft px-3.5 pt-3 pb-2.5`}>
         <View style={tw`flex-row items-center`}>
@@ -284,7 +284,7 @@ function AsksTab({ onPeople }: { onPeople: () => void }) {
 /** 부탁 카드 — 두 사람(아바타) · 한 문장 · 한 줄 메모 · 행동 */
 function AskCard({ a, b, title, note, foot, actions, onPerson }: { a?: User; b?: User; title: string; note?: string; foot: string; actions: ReactNode; onPerson?: () => void }) {
   return (
-    <View style={tw`mb-2 rounded-[24px] border border-line bg-white p-3.5`}>
+    <View style={tw`mb-2 card p-3.5`}>
       <View style={tw`flex-row items-start`}>
         <Pressable onPress={onPerson} disabled={!onPerson} style={tw`h-11 w-14`}>
           {a ? <Avatar emoji={a.avatar.emoji} hue={a.avatar.hue} url={a.avatar.url} size={36} style={tw`absolute left-0 top-0`} /> : null}

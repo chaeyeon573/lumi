@@ -37,15 +37,15 @@ export default function StatusCareerScreen() {
       replace('/');
     } catch { setBusy(false); }
   };
-  const H = ({ icon, title }: { icon: ReactNode; title: string }) => <View style={tw`mt-2 mb-3 px-1 flex-row items-center`}>{icon}<Text style={tw`ml-2 text-[14px] font-bold text-primary`}>{title}</Text></View>;
+  const H = ({ icon, title }: { icon: ReactNode; title: string }) => <View style={tw`mt-2 mb-3 px-1 flex-row items-center`}>{icon}<Text style={tw`ml-2 text-[14px] font-bold text-ink`}>{title}</Text></View>;
 
   return (
     <Screen title={t('졸업 후 정보')} footer={<Row><Button full size="lg" loading={busy} icon={<GraduationCap size={17} color={C.onPrimary} />} onPress={finish}>{t('졸업생으로 시작하기')}</Button></Row>}>
       <View style={tw`py-4`}>
-        <View style={tw`mb-4 rounded-[24px] border border-line bg-primary-soft p-4 flex-row items-center`}>
+        <View style={tw`mb-4 rounded-[20px] border border-line bg-primary-soft p-4 flex-row items-center`}>
           <View style={tw`h-11 w-11 rounded-full bg-white items-center justify-center`}><GraduationCap size={22} color={C.primary} /></View>
           <View style={tw`flex-1 min-w-0 ml-3`}>
-            <View style={tw`flex-row items-center`}><Text numberOfLines={1} style={tw`shrink text-[14px] font-bold text-primary`}>{alumniBadge}</Text><BadgeCheck size={14} color={C.verify} style={tw`ml-1`} /></View>
+            <View style={tw`flex-row items-center`}><Text numberOfLines={1} style={tw`shrink text-[14px] font-bold text-ink`}>{alumniBadge}</Text><BadgeCheck size={14} color={C.verify} style={tw`ml-1`} /></View>
             <Text style={tw`text-[12px] text-ink-2`}>{t('모두 선택 사항이에요. 적을수록 같은 도시·분야의 동문과 더 정확하게 연결돼요.')}</Text>
           </View>
         </View>

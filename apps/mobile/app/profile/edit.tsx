@@ -77,14 +77,14 @@ export default function EditProfileScreen() {
         <Field label={t('지금 하고 싶은 활동 (한 줄)')} hint={t('홈 추천 카드에 표시돼요')}><Input placeholder={t('예: 오늘 저녁 신촌에서 커피 한 잔?')} value={form.nowWant ?? ''} onChangeText={(text) => patch({ nowWant: text })} /></Field>
         {/* 대학원생: 연구 (웹 EditProfilePage #research) */}
         {grad ? (
-          <View style={tw`mb-5 rounded-[24px] border border-line bg-white p-4`}>
+          <View style={tw`mb-5 card p-4`}>
             <Text style={tw`text-[13px] font-bold text-ink`}>{t('연구')}</Text>
             <Text style={tw`mb-3 text-[12px] text-ink-3`}>{t('같은 연구 분야 사람과 먼저 이어져요.')}</Text>
             <ResearchFields value={form.research ?? {}} onChange={(r) => patch({ research: r as Research })} />
           </View>
         ) : null}
         {/* 현재: 거주 도시 · 활동 지역 · (졸업생) 하는 일 */}
-        <View style={tw`mb-5 rounded-[24px] border border-line bg-white p-4`}>
+        <View style={tw`mb-5 card p-4`}>
           <Text style={tw`text-[13px] font-bold text-ink`}>{t('현재')}</Text>
           <Text style={tw`mb-3 text-[12px] text-ink-3`}>{t('도시·생활권 단위만 — GPS 위치는 설정 › 위치에서 따로 다뤄요')}</Text>
           <ChipsWithText label={t('거주 도시')} hint={t('정확한 주소는 받지 않아요')} options={ctx.cities} value={form.homeCity ?? form.region ?? ''} placeholder={t('도시 이름')} onChange={(homeCity) => patch({ homeCity })} />
@@ -108,7 +108,7 @@ export default function EditProfileScreen() {
         <Field label={t('관심 있는 사람의 조건 (선택)')} right={fv('preferredPartner')}><Input value={form.preferredPartner ?? ''} onChangeText={(text) => patch({ preferredPartner: text })} /></Field>
 
         {aff && (
-          <View style={tw`rounded-[24px] border border-line bg-white px-4 mb-5`}>
+          <View style={tw`card px-4 mb-5`}>
             <View style={tw`py-3`}><Text style={tw`text-[13px] font-bold text-ink`}>{t('학교 정보')}</Text><Text style={tw`text-[12px] text-ink-3`}>{aff.schoolName} · {aff.department} · {aff.emailVerified ? t('학교 인증 완료') : t('미인증')}</Text></View>
             <View style={tw`h-px bg-line`} />
             <Toggle label={t('학교명 공개')} checked={aff.showSchool} onChange={(val) => patch({ affiliation: { ...aff, showSchool: val } })} />
@@ -117,7 +117,7 @@ export default function EditProfileScreen() {
             {!aff.emailVerified && <View style={tw`py-3 flex-row border-t border-line`}><Button size="sm" variant="secondary" onPress={() => patch({ affiliation: { ...aff, emailVerified: true } })}>{t('학교 이메일 인증하기 (데모: 즉시 완료)')}</Button></View>}
           </View>
         )}
-        <View style={tw`rounded-[24px] border border-line bg-white px-4`}><Toggle label={t('본인 인증')} description={form.identityVerified ? t('인증 완료 — 프로필에 배지가 표시돼요') : t('데모에서는 토글로 인증 상태를 바꿀 수 있어요')} checked={form.identityVerified} onChange={(val) => patch({ identityVerified: val })} /></View>
+        <View style={tw`card px-4`}><Toggle label={t('본인 인증')} description={form.identityVerified ? t('인증 완료 — 프로필에 배지가 표시돼요') : t('데모에서는 토글로 인증 상태를 바꿀 수 있어요')} checked={form.identityVerified} onChange={(val) => patch({ identityVerified: val })} /></View>
       </View>
     </Screen>
   );

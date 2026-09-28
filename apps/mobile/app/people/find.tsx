@@ -135,7 +135,7 @@ export default function NaturalSearchScreen() {
 
       {/* 하루 무료 한도 */}
       {q && limited ? (
-        <View accessibilityRole="alert" style={[tw`mt-5 rounded-[24px] border border-line bg-surface-2 p-4`, { borderStyle: 'dashed' }]}>
+        <View accessibilityRole="alert" style={[tw`mt-5 rounded-[20px] border border-line bg-surface-2 p-4`, { borderStyle: 'dashed' }]}>
           <Text style={tw`text-[15px] font-bold text-ink`}>{t('오늘 자연어 찾기를 다 썼어요 — 필터로 찾거나 내일 다시')}</Text>
           <Text style={tw`mt-1 text-[12px] text-ink-3`}>{t('무료는 하루')} {FREE_NL_SEARCHES_PER_DAY}{t('번까지예요. 필터 찾기는 계속 무료예요.')}</Text>
           <Row style={tw`mt-3`}>
@@ -151,7 +151,7 @@ export default function NaturalSearchScreen() {
           <Section loading={sec.loading} error={sec.error} onRetry={sec.retry}
             skeleton={<View><Text style={tw`text-[13px] font-semibold text-ink-3 mb-3`}>{t('조건을 읽는 중…')}</Text><SectionSkeleton count={2} /></View>}
             empty={parseFailed && (
-              <View style={tw`rounded-[24px] bg-surface-2 p-4`}>
+              <View style={tw`rounded-[20px] bg-surface-2 p-4`}>
                 <Text style={tw`text-[15px] font-bold text-ink`}>{t('무엇을 찾는지 조금만 더 적어주세요')}</Text>
                 {parsed?.dropped.length ? <PrivacyNote text={t('성별·나이·종교 같은 민감한 조건은 쓰지 않아요')} /> : <Text style={tw`mt-1 text-[12px] text-ink-3`}>{t('도시 · 학교 · 분야 · 관심사 중 하나만 있어도 돼요.')}</Text>}
                 <View style={tw`mt-3`}>{exampleChips}</View>
@@ -173,7 +173,7 @@ export default function NaturalSearchScreen() {
             {allRemoved ? (
               <View style={tw`mt-4`}><SectionEmpty emoji="🧹" title={t('조건을 모두 뺐어요')} description={t('다시 적거나 처음 조건으로 돌아가요.')} action={<Button size="sm" variant="outline" onPress={() => setRemoved([])}>{t('처음 조건으로')}</Button>} /></View>
             ) : results.length === 0 ? (
-              <View style={tw`mt-4 rounded-[24px] border border-line bg-white p-4`}>
+              <View style={tw`mt-4 card p-4`}>
                 <Text style={tw`text-[15px] font-bold text-ink`}>{t('가까운 네트워크에서 바로 떠오르는 사람이 없어요')}</Text>
                 <Text style={tw`mt-0.5 text-[12px] text-ink-3`}>{t('조건을 하나 빼면 더 넓게 찾을 수 있어요.')}</Text>
                 <View style={tw`mt-3`}>
@@ -192,7 +192,7 @@ export default function NaturalSearchScreen() {
             ) : (
               <>
                 <View style={tw`mt-4 flex-row items-end`}>
-                  <Text style={tw`flex-1 text-[18px] font-bold text-primary`}>{t('가까운 네트워크에서')} {results.length}{t('명을 찾았어요')}</Text>
+                  <Text style={tw`flex-1 text-[18px] font-bold text-ink`}>{t('가까운 네트워크에서')} {results.length}{t('명을 찾았어요')}</Text>
                   <Pressable onPress={save} disabled={saving} style={tw`ml-2 h-8 px-3 rounded-full border border-line bg-white flex-row items-center`}>
                     {plus ? <Star size={13} color={C.primary} /> : <Lock size={12} color={C.primary} />}<Text style={tw`ml-1 text-[12px] font-bold text-primary`}>{t('검색 저장')}</Text>
                   </Pressable>
@@ -200,8 +200,8 @@ export default function NaturalSearchScreen() {
                 <View style={tw`mt-0.5 mb-3 flex-row items-center`}><ShieldCheck size={12} color={C.ink3} /><Text style={tw`ml-1 text-[12px] text-ink-3`}>{t('공개 범위 안에서만 보여요')}</Text></View>
                 {shown.map((x) => <MaskedPersonRow key={x.u.id} user={x.u} reasons={x.reasons} />)}
                 {advancedLocked && results.length > shown.length ? (
-                  <View style={tw`rounded-[24px] bg-primary-soft p-4`}>
-                    <Text style={tw`text-[14px] font-bold text-primary`}>{lang === 'en' ? `${results.length - shown.length} more match these combined conditions` : `조건을 겹친 결과 ${results.length - shown.length}명이 더 있어요`}</Text>
+                  <View style={tw`rounded-[20px] bg-primary-soft p-4`}>
+                    <Text style={tw`text-[14px] font-bold text-ink`}>{lang === 'en' ? `${results.length - shown.length} more match these combined conditions` : `조건을 겹친 결과 ${results.length - shown.length}명이 더 있어요`}</Text>
                     <Text style={tw`mt-0.5 text-[12px] text-ink-2`}>{t('조건 2개 이상은 AroundU+ 에서 모두 보여요. 조건 하나씩은 무료예요.')}</Text>
                     <Row style={tw`mt-2.5`}>
                       <Button size="sm" onPress={() => nav('/plus')}>{t('AroundU+ 보기')}</Button>

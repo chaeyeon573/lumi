@@ -16,6 +16,7 @@ import { profileCompletion, questionById } from '@core/data/prompts';
 import type { User } from '@core/types';
 import { myGroupLists } from '@/v2/myGroups';
 import { tw } from '@/tw';
+import { MoreSections } from '@/v2/HomeParts';
 import { useViewer } from '@/viewer';
 import { nav } from '@/nav';
 import { TabScreen, AppHeader, IconBtn, Avatar, Button, Tag, IconCircle, C } from '@/ui';
@@ -32,9 +33,9 @@ function headerLine(me: User, kind: StageKind): string {
   return [major, stagePart].filter(Boolean).join(' · ');
 }
 
-const Card = ({ children, style }: { children: ReactNode; style?: object }) => <View style={[tw`mt-4 rounded-[24px] border border-line bg-white p-5`, style]}>{children}</View>;
+const Card = ({ children, style }: { children: ReactNode; style?: object }) => <View style={[tw`mt-4 card p-5`, style]}>{children}</View>;
 function SectionTitle({ icon, children, right }: { icon: ReactNode; children: ReactNode; right?: ReactNode }) {
-  return <View style={tw`flex-row items-center justify-between`}><View style={tw`flex-row items-center flex-1`}>{icon}<Text numberOfLines={1} style={tw`ml-2 text-[18px] font-bold text-primary shrink`}>{children}</Text></View>{right}</View>;
+  return <View style={tw`flex-row items-center justify-between`}><View style={tw`flex-row items-center flex-1`}>{icon}<Text numberOfLines={1} style={tw`ml-2 text-[18px] font-bold text-ink shrink`}>{children}</Text></View>{right}</View>;
 }
 const EditLink = ({ to, label }: { to: string; label?: string }) => (
   <Pressable onPress={() => nav(to)} style={tw`h-8 px-3 rounded-full bg-surface-2 flex-row items-center`}><Pencil size={12} color={C.primary} /><Text style={tw`ml-1 text-[12px] font-bold text-primary`}>{label ?? t('편집')}</Text></Pressable>
@@ -47,7 +48,7 @@ const Tile = ({ icon, l, v }: { icon: ReactNode; l: string; v: string }) => (
 );
 
 /**
- * 나 (웹 ProfilePage) — 헤더 · Open To · 단계 카드 · 관심사 · 추천 설정 · 카운트 · 상태 변경 · 다가오는 만남 · 더 알려주기 · 내 글.
+ * 나 (웹 ProfilePage) — 헤더 · Open To · 단계 카드 · 관심사 · 카운트 · 더 보기(추천 설정 · 시간표 · 상태 · 다가오는 만남 · 더 알려주기) · 내 글.
  * 단계 카드: 학부생 "이번 학기"(학년·전공·시간표 미니·동아리) / 대학원생 "연구"(분야·연구실·키워드, 지도교수는 켤 때만) / 졸업생 "현재"(도시·활동 지역·회사·업종·직무)
  */
 export default function ProfileScreen() {
@@ -83,11 +84,11 @@ export default function ProfileScreen() {
   return (
     <TabScreen header={<AppHeader right={<IconBtn onPress={() => nav('/settings')}><Settings size={21} color={C.ink2} /></IconBtn>} />}>
       {/* ── 헤더: 사진 · 이름 · 학교 배지 · 전공 · 졸업(예정) ── */}
-      <View style={tw`rounded-[24px] border border-line bg-white p-5`}>
+      <View style={tw`card p-5`}>
         <View style={tw`flex-row items-center`}>
           <Avatar emoji={me.avatar.emoji} hue={me.avatar.hue} url={me.avatar.url} size={72} />
           <View style={tw`flex-1 min-w-0 ml-4`}>
-            <View style={tw`flex-row items-center`}><Text numberOfLines={1} style={tw`text-[24px] font-bold text-primary shrink`}>{me.nickname}</Text>{me.plan === 'plus' ? <View style={tw`ml-2 h-5 px-2 rounded-full bg-primary justify-center`}><Text style={tw`text-[10px] font-extrabold text-white`}>PLUS</Text></View> : null}</View>
+            <View style={tw`flex-row items-center`}><Text numberOfLines={1} style={tw`text-[24px] font-bold text-ink shrink`}>{me.nickname}</Text>{me.plan === 'plus' ? <View style={tw`ml-2 h-5 px-2 rounded-full bg-primary justify-center`}><Text style={tw`text-[10px] font-extrabold text-white`}>PLUS</Text></View> : null}</View>
             {me.affiliation.type === 'university' ? <View style={tw`mt-0.5`}><SchoolBadge user={me} /></View> : null}
             <Text numberOfLines={1} style={tw`text-[13px] text-ink-2`}>{headerLine(me, kind)}</Text>
           </View>
@@ -106,7 +107,7 @@ export default function ProfileScreen() {
       </View>
 
       {/* ── Open To: 기간이 지나면 자동으로 꺼진다. 한 줄 ── */}
-      <Pressable onPress={() => nav('/profile/open-to')} style={tw`mt-4 rounded-[24px] border border-line bg-white p-4 flex-row items-center`}>
+      <Pressable onPress={() => nav('/profile/open-to')} style={tw`mt-4 card p-4 flex-row items-center`}>
         <View style={tw`h-10 w-10 rounded-full bg-accent-soft items-center justify-center`}><Coffee size={18} color={C.primary} /></View>
         <View style={tw`flex-1 min-w-0 mx-3`}>
           <Text style={tw`text-[12px] font-bold text-ink-3`}>Open To · {t('지금 상태')}</Text>
@@ -126,6 +127,18 @@ export default function ProfileScreen() {
           : <View style={tw`mt-3 flex-row flex-wrap`}>{me.interests.slice(0, 8).map((i) => <Pill key={i}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Pill>)}</View>}
       </Card>
 
+      {/* ── 카운트: 그룹 · 연결 · 모임 · 글 ── */}
+      <View style={tw`mt-4 card px-2 py-3 flex-row`}>
+        {[
+          { n: myOrgs, l: t('그룹'), to: '/profile/groups' },
+          { n: friends, l: t('연결'), to: '/profile/friends' },
+          { n: meets, l: t('모임'), to: '/plans' },
+          { n: myPosts.length, l: t('글'), to: '/feed?tab=following' },
+        ].map((s) => <Pressable key={s.l} onPress={() => nav(s.to)} style={tw`flex-1 items-center py-1`}><Text style={tw`text-[22px] font-bold text-ink`}>{s.n}</Text><Text style={tw`text-[12px] text-ink-3`}>{s.l}</Text></Pressable>)}
+      </View>
+
+      {/* ── 더 보기: 추천 설정 · 시간표 · 상태 · 다가오는 만남 · 더 알려주기 (섹션은 3개까지, 나머지는 그 자리에서 펼친다) ── */}
+      <MoreSections top={16} titles={[t('추천 설정'), kind === 'grad' && me.timetable.length > 0 ? t('이번 주 시간표') : '', t('상태'), upcoming.length ? t('다가오는 만남') : '', t('더 알려주기')]}>
       {/* ── 추천 설정 — 나만 보는 추천 기준. 단계별 순서(peopleWantOptions/activityWantOptions) ── */}
       <Card>
         <SectionTitle icon={<Target size={17} color={C.primary} />} right={<EditLink to="/profile/wants" />}>{t('추천 설정')}</SectionTitle>
@@ -148,22 +161,12 @@ export default function ProfileScreen() {
       {/* ── 대학원생 시간표 (있을 때만 — 학부생은 이번 학기 카드에) ── */}
       {kind === 'grad' && me.timetable.length > 0 && <TimetableCard me={me} />}
 
-      {/* ── 카운트: 그룹 · 연결 · 모임 · 글 ── */}
-      <View style={tw`mt-4 rounded-[24px] border border-line bg-white px-2 py-3 flex-row`}>
-        {[
-          { n: myOrgs, l: t('그룹'), to: '/profile/groups' },
-          { n: friends, l: t('연결'), to: '/profile/friends' },
-          { n: meets, l: t('모임'), to: '/plans' },
-          { n: myPosts.length, l: t('글'), to: '/feed?tab=following' },
-        ].map((s) => <Pressable key={s.l} onPress={() => nav(s.to)} style={tw`flex-1 items-center py-1`}><Text style={tw`text-[22px] font-bold text-primary`}>{s.n}</Text><Text style={tw`text-[12px] text-ink-3`}>{s.l}</Text></Pressable>)}
-      </View>
-
       {/* ── 현재 상태가 바뀌었나요? (학생) / 상태: 졸업생 · 변경 (졸업생) ── */}
       {student ? (
-        <Pressable onPress={() => nav('/profile/status')} style={[tw`mt-4 rounded-[24px] border p-4 flex-row items-center`, { borderColor: suggest ? C.goldLine : C.line, backgroundColor: suggest ? C.goldSoft : C.onPrimary }]}>
+        <Pressable onPress={() => nav('/profile/status')} style={[tw`mt-4 rounded-[20px] border p-4 flex-row items-center`, { borderColor: suggest ? C.goldLine : C.line, backgroundColor: suggest ? C.goldSoft : C.onPrimary }]}>
           <View style={tw`h-11 w-11 rounded-full items-center justify-center ${suggest ? 'bg-white' : 'bg-primary-soft'}`}><GraduationCap size={20} color={suggest ? C.goldInk : C.primary} /></View>
           <View style={tw`flex-1 min-w-0 mx-3`}>
-            <Text style={tw`text-[15px] font-bold text-primary`}>{t('현재 상태가 바뀌었나요?')}</Text>
+            <Text style={tw`text-[15px] font-bold text-ink`}>{t('현재 상태가 바뀌었나요?')}</Text>
             <Text style={tw`text-[12px] text-ink-2`}>{suggest ? t('졸업 예정연도가 지났어요. 졸업생으로 바꾸면 홈과 추천이 달라져요.') : t('졸업·대학원 진학 — 연결과 기록은 그대로 유지돼요')}</Text>
           </View>
           <ChevronRight size={18} color={C.ink3} />
@@ -177,7 +180,7 @@ export default function ProfileScreen() {
       {/* ── 다가오는 만남 ── */}
       <Card>
         <View style={tw`flex-row items-center justify-between mb-2`}>
-          <View style={tw`flex-row items-center`}><CalendarCheck size={17} color={C.primary} /><Text style={tw`ml-2 text-[18px] font-bold text-primary`}>{t('다가오는 만남')}</Text></View>
+          <View style={tw`flex-row items-center`}><CalendarCheck size={17} color={C.primary} /><Text style={tw`ml-2 text-[18px] font-bold text-ink`}>{t('다가오는 만남')}</Text></View>
           <Pressable onPress={() => nav('/plans')}><Text style={tw`text-[13px] font-semibold text-verify`}>{t('전체')} ({upcoming.length + openPolls})</Text></Pressable>
         </View>
         {upcoming.length === 0 && openPolls === 0 ? (
@@ -190,7 +193,7 @@ export default function ProfileScreen() {
             {upcoming.slice(0, 3).map((a, i) => { const pending = participations.some((p) => p.activityId === a.id && p.userId === me.id && p.status === 'pending'); return (
               <Pressable key={a.id} onPress={() => nav(`/activities/${a.id}`)} style={tw`flex-row items-center py-3 ${i === 0 ? '' : 'border-t border-line'}`}>
                 <IconCircle><CalendarCheck size={17} color={C.primary} /></IconCircle>
-                <View style={tw`flex-1 min-w-0 mx-3`}><Text numberOfLines={1} style={tw`text-[14px] font-semibold text-primary`}>{a.title}</Text><Text style={tw`text-[12px] text-ink-3`}>{formatDateTime(a.date, a.startTime)}</Text></View>
+                <View style={tw`flex-1 min-w-0 mx-3`}><Text numberOfLines={1} style={tw`text-[14px] font-semibold text-ink`}>{a.title}</Text><Text style={tw`text-[12px] text-ink-3`}>{formatDateTime(a.date, a.startTime)}</Text></View>
                 <Tag tone={pending ? 'neutral' : 'primary'}>{pending ? t('대기') : lang === 'en' ? 'Confirmed' : '확정'}</Tag>
               </Pressable>
             ); })}
@@ -200,8 +203,8 @@ export default function ProfileScreen() {
       </Card>
 
       {/* ── 더 알려주기 ── */}
-      <Text style={tw`mt-5 px-1 text-[18px] font-bold text-primary`}>{t('더 알려주기')}</Text>
-      <View style={tw`mt-2 rounded-[24px] border border-line bg-white`}>
+      <Text style={tw`mt-5 px-1 text-[18px] font-bold text-ink`}>{t('더 알려주기')}</Text>
+      <View style={tw`mt-2 card`}>
         {[
           { Icon: MessageSquareText, label: t('프로필 질문'), sub: `${t('프로필 완성')} ${completion.percent}%`, to: '/profile/prompts' },
           { Icon: BookmarkCheck, label: `${t('저장한 사람')} ${savedPeople}`, sub: t('나만 볼 수 있어요'), to: '/profile/saved' },
@@ -215,7 +218,7 @@ export default function ProfileScreen() {
         ].slice(0, moreLinks ? undefined : 4).map((r, i) => (
           <Pressable key={r.to + r.label} onPress={() => nav(r.to)} style={tw`flex-row items-center px-4 py-3 ${i === 0 ? '' : 'border-t border-line'}`}>
             <IconCircle><r.Icon size={18} color={C.primary} /></IconCircle>
-            <View style={tw`flex-1 min-w-0 mx-3`}><Text style={tw`text-[14px] font-semibold text-primary`}>{r.label}</Text><Text numberOfLines={1} style={tw`text-[12px] text-ink-3`}>{r.sub}</Text></View>
+            <View style={tw`flex-1 min-w-0 mx-3`}><Text style={tw`text-[14px] font-semibold text-ink`}>{r.label}</Text><Text numberOfLines={1} style={tw`text-[12px] text-ink-3`}>{r.sub}</Text></View>
             <ChevronRight size={18} color={C.ink3} />
           </Pressable>
         ))}
@@ -225,13 +228,15 @@ export default function ProfileScreen() {
         </Pressable>
       </View>
 
+      </MoreSections>
+
       {/* ── 내 글 ── */}
       <View style={tw`mt-5 px-1 flex-row items-center justify-between`}>
-        <View style={tw`flex-row items-center`}><FileText size={17} color={C.primary} /><Text style={tw`ml-2 text-[18px] font-bold text-primary`}>{t('내 글')}</Text></View>
+        <View style={tw`flex-row items-center`}><FileText size={17} color={C.primary} /><Text style={tw`ml-2 text-[18px] font-bold text-ink`}>{t('내 글')}</Text></View>
         <Pressable onPress={() => nav('/feed?tab=following')}><Text style={tw`text-[13px] font-semibold text-verify`}>{t('전체 보기')}</Text></Pressable>
       </View>
       {myPosts.length === 0 ? (
-        <View style={tw`mt-3 rounded-[24px] border border-line bg-white p-5 items-center`}>
+        <View style={tw`mt-3 card p-5 items-center`}>
           <Text style={tw`text-[13px] text-ink-3`}>{t('아직 글이 없어요')}</Text>
           <View style={tw`mt-3`}><Button size="sm" variant="secondary" onPress={() => nav('/create/post')}>{t('첫 글 쓰기')}</Button></View>
         </View>

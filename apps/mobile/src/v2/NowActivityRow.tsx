@@ -24,7 +24,7 @@ export function NowActivityRow({ activity: a, inMin }: { activity: Activity; inM
   const faces = [a.hostId, ...approved.map((p) => p.userId)].slice(0, 4).map((id) => v.userById(id)).filter((u): u is NonNullable<typeof u> => !!u);
   const open = () => nav(`/activities/${a.id}`);
   return (
-    <View style={tw`rounded-[24px] border border-line bg-white p-3 flex-row items-center mb-2`}>
+    <View style={tw`card p-3 flex-row items-center mb-2`}>
       <Pressable onPress={open}>
         <Avatar emoji={host?.avatar.emoji ?? '👤'} hue={host?.avatar.hue ?? 200} url={host?.avatar.url} size={40} />
         <View style={[tw`absolute -bottom-1 -right-1 h-5 w-5 rounded-full items-center justify-center border-2 border-white`, { backgroundColor: CATEGORY_COLORS[a.category] }]}><Text style={tw`text-[10px]`}>{CATEGORY_EMOJI[a.category]}</Text></View>

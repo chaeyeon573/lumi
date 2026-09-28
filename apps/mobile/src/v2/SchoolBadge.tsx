@@ -16,7 +16,7 @@ export function SchoolBadge({ user, withYear, size = 'md', muted }: { user: User
   const fs = size === 'sm' ? 12 : size === 'lg' ? 17 : 14;
   return (
     <View style={tw`flex-row items-center shrink min-w-0`}>
-      <Text numberOfLines={1} style={[tw`font-semibold shrink`, { fontSize: fs, color: muted ? C.ink3 : C.primary }]}>{label}</Text>
+      <Text numberOfLines={1} style={[tw`font-semibold shrink`, { fontSize: fs, color: muted ? C.ink3 : size === 'lg' ? C.ink : C.ink2 }]}>{label}</Text>
       {verified ? <BadgeCheck size={size === 'sm' ? 13 : size === 'lg' ? 18 : 15} color={C.verify} style={tw`ml-1`} /> : null}
     </View>
   );

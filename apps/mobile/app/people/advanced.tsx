@@ -41,7 +41,7 @@ export default function AdvancedExploreScreen() {
     <Screen title={t('고급 탐색')} right={plus && !sub.loading ? <Tag tone="primary">AroundU+</Tag> : undefined}>
       <View style={tw`pt-3`}>
         {sub.loading ? (
-          <View accessibilityLabel={t('구독 정보를 불러오는 중')}><View style={tw`h-24 rounded-[24px] bg-surface-2 mb-3`} /><SectionSkeleton count={2} /></View>
+          <View accessibilityLabel={t('구독 정보를 불러오는 중')}><View style={tw`h-24 rounded-[20px] bg-surface-2 mb-3`} /><SectionSkeleton count={2} /></View>
         ) : sub.error ? (
           <Section loading={false} error={sub.error} onRetry={sub.retry}>{null}</Section>
         ) : plus ? (
@@ -55,8 +55,8 @@ export default function AdvancedExploreScreen() {
                 {mySaved.map((s) => <View key={s.id} style={tw`mt-1 flex-row items-center`}><BellOff size={12} color={C.ink3} /><Text style={tw`ml-1.5 text-[12px] text-ink-2`}>{s.name}</Text></View>)}
               </View>
             ) : null}
-            <View style={tw`rounded-[24px] bg-primary-soft p-5`}>
-              <View style={tw`flex-row items-center`}><Sparkles size={18} color={C.primary} /><Text style={tw`ml-2 flex-1 text-[20px] font-bold text-primary`}>{t('원하는 사람을 더 정확하게')}</Text></View>
+            <View style={tw`rounded-[20px] bg-primary-soft p-5`}>
+              <View style={tw`flex-row items-center`}><Sparkles size={18} color={C.primary} /><Text style={tw`ml-2 flex-1 text-[20px] font-bold text-ink`}>{t('원하는 사람을 더 정확하게')}</Text></View>
               {PLUS_PERKS().map((p) => (
                 <View key={p.title} style={tw`mt-2 flex-row items-start`}>
                   <View style={tw`h-5 w-5 rounded-full bg-white items-center justify-center mt-0.5`}><Check size={12} color={C.primary} /></View>
@@ -124,7 +124,7 @@ function Explorer({ saved }: { saved: SavedSearch[] }) {
   return (
     <View>
       {/* 1. 조건 */}
-      <View style={tw`rounded-[24px] border border-line bg-white p-4`}>
+      <View style={tw`card p-4`}>
         <View style={tw`flex-row items-center`}><Text style={tw`flex-1 text-[14px] font-bold text-ink`}>{t('조건 겹치기')}</Text>{used.length > 0 ? <Pressable onPress={() => setC(emptySearch())}><Text style={tw`text-[12px] font-semibold text-ink-3`}>{t('모두 지우기')}</Text></Pressable> : null}</View>
         <View style={tw`mt-2.5 h-11 px-3.5 rounded-2xl border border-input-line flex-row items-center`}>
           <Search size={15} color={C.ink3} />

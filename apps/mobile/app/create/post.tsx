@@ -58,7 +58,7 @@ export default function CreatePostScreen() {
     <Screen title={form.orgId ? t('조직 소식 작성') : t('게시물 작성')} footer={<View style={tw`flex-row`}><Button full size="lg" disabled={!form.text.trim()} loading={busy} onPress={submit}>{t('게시하기')}</Button></View>}>
       <View style={tw`py-4`}>
         {prompt ? <View style={tw`mb-4 self-start h-8 px-3 rounded-full bg-accent-soft justify-center`}><Text style={tw`text-[13px] font-semibold text-primary`}>{prompt.emoji} {prompt.label}</Text></View> : null}
-        {!form.orgId && <View style={tw`rounded-[24px] border border-line bg-white px-4 mb-5`}><Toggle label={t('익명으로 올리기')} description={t('이름과 사진 대신 "익명"으로 표시돼요. 익명은 글만 올릴 수 있고 학교명만 보여요. 신고 시 운영진이 확인할 수 있어요.')} checked={anon} onChange={(val) => patch({ anonymous: val, orgId: val ? undefined : form.orgId, media: val ? [] : form.media })} /></View>}
+        {!form.orgId && <View style={tw`card px-4 mb-5`}><Toggle label={t('익명으로 올리기')} description={t('이름과 사진 대신 "익명"으로 표시돼요. 익명은 글만 올릴 수 있고 학교명만 보여요. 신고 시 운영진이 확인할 수 있어요.')} checked={anon} onChange={(val) => patch({ anonymous: val, orgId: val ? undefined : form.orgId, media: val ? [] : form.media })} /></View>}
         <Field label={t('종류')}><ChipWrap>{ALL_POST_TYPES.filter((pt) => form.orgId ? true : pt !== 'news').map((pt) => <WrapItem key={pt}><Chip size="sm" active={form.postType === pt} onPress={() => patch({ postType: pt })}>{POST_TYPE_EMOJI[pt]} {POST_TYPE_LABELS[pt]}</Chip></WrapItem>)}</ChipWrap></Field>
         <Field label={`${t('사진')} (${form.media.length}/${MAX_PHOTOS})`} hint={anon ? undefined : t('캠퍼스 생활·활동 중심으로. 데모에서는 샘플 사진이나 이모지 카드로 대체해요.')}>
           {anon ? <View style={tw`rounded-xl bg-surface-2 px-3.5 py-3 flex-row items-center`}><ImageOff size={15} color={C.ink3} /><Text style={tw`ml-2 flex-1 text-[12px] text-ink-3`}>{t('익명 글에는 사진을 붙일 수 없어요. 사진을 올리려면 익명을 끄세요.')}</Text></View> : (<>
@@ -66,7 +66,7 @@ export default function CreatePostScreen() {
               {form.media.map((m, i) => (
                 <View key={i} style={tw`mr-2`}>
                   <Cover emoji={m.emoji} hue={m.hue} url={m.url} size={96} radius={16} />
-                  <Pressable onPress={() => patch({ media: form.media.filter((_, j) => j !== i) })} hitSlop={6} style={tw`absolute -top-1.5 -right-1.5 h-6 w-6 rounded-full bg-ink items-center justify-center`}><X size={12} color="#fff" /></Pressable>
+                  <Pressable onPress={() => patch({ media: form.media.filter((_, j) => j !== i) })} hitSlop={6} style={tw`absolute -top-1.5 -right-1.5 h-6 w-6 rounded-full bg-ink items-center justify-center`}><X size={12} color={C.onPrimary} /></Pressable>
                 </View>
               ))}
               {form.media.length < MAX_PHOTOS && <Pressable onPress={() => patch({ media: [...form.media, { emoji: EMOJIS[form.media.length % EMOJIS.length], hue: (form.media.length * 70 + 30) % 360, url: photo(SAMPLE_PHOTOS[(form.media.length + SAMPLE_PHOTOS.length - 1) % SAMPLE_PHOTOS.length]) }] })} style={[tw`h-24 w-24 rounded-2xl border-2 border-line items-center justify-center`, { borderStyle: 'dashed' }]}><Plus size={22} color={C.ink3} /></Pressable>}
@@ -95,12 +95,12 @@ export default function CreatePostScreen() {
         )}
         <Field label={t('참여한 활동')}><SelectChips value={form.relatedActivityId ?? ''} emptyLabel={t('연결 안 함')} options={myActs.map((a) => [a.id, a.title] as [string, string])} onChange={(val) => patch({ relatedActivityId: val || undefined })} /></Field>
         <Field label={t('관련 기회')}><SelectChips value={form.relatedOpportunityId ?? ''} emptyLabel={t('연결 안 함')} options={opps.map((o) => [o.id, o.title] as [string, string])} onChange={(val) => patch({ relatedOpportunityId: val || undefined })} /></Field>
-        {!anon && <View style={tw`rounded-[24px] border border-line bg-white px-4 mb-5`}><Toggle label={t('다음 활동 같이할 사람 모집')} description={t('게시물에 "다음에는 같이하기" 버튼이 강조돼요.')} checked={!!form.recruitNext} onChange={(val) => patch({ recruitNext: val })} /></View>}
+        {!anon && <View style={tw`card px-4 mb-5`}><Toggle label={t('다음 활동 같이할 사람 모집')} description={t('게시물에 "다음에는 같이하기" 버튼이 강조돼요.')} checked={!!form.recruitNext} onChange={(val) => patch({ recruitNext: val })} /></View>}
         {myOrgs.length > 0 && !anon && <Field label={t('조직 이름으로 게시')}><SelectChips value={form.orgId ?? ''} emptyLabel={t('내 이름으로')} options={myOrgs.map((o) => [o.id, o.name] as [string, string])} onChange={(val) => patch({ orgId: val || undefined, postType: val ? 'news' : form.postType })} /></Field>}
         <Field label={t('공개 범위')} hint={t('인터넷 전체 공개는 없어요. 학교 인증 사용자 안에서만 보여요.')}>
           <VisibilityList value={form.visibility} options={(anon ? ['school', 'private'] : ['school', 'friends', 'followers', 'private']) as Visibility[]} onChange={(vis) => patch({ visibility: vis })} />
         </Field>
-        <View style={tw`rounded-[24px] border border-line bg-white px-4 mb-5`}>
+        <View style={tw`card px-4 mb-5`}>
           <Toggle label={t('내 프로필에 표시')} checked={form.showOnProfile !== false && !anon} onChange={(val) => patch({ showOnProfile: val })} />
           <View style={tw`h-px bg-line`} />
           <Toggle label={t('Community Feed에도 공개')} description={form.visibility === 'private' ? t('나만 보기에서는 Feed에 올라가지 않아요.') : undefined} checked={form.showOnFeed !== false && form.visibility !== 'private'} onChange={(val) => patch({ showOnFeed: val })} />

@@ -65,7 +65,7 @@ export function SharedProfileMini({ user, shared, preview, lockedRow = true }: {
 /** 작성 화면용 미리보기 — 받는 사람의 카드 모양 그대로, 누를 수 없다 */
 export function RequestPreviewCard({ author, text, context, degreeText }: { author: User; text: string; context?: string; degreeText: string }) {
   return (
-    <View pointerEvents="none" style={tw`rounded-[24px] border border-line bg-white overflow-hidden`}>
+    <View pointerEvents="none" style={tw`card overflow-hidden`}>
       <View style={tw`px-4 pt-3.5 pb-3`}>
         <Text style={tw`text-[12px] font-bold text-primary`}>{t('혹시 여기에 해당되나요?')}</Text>
         <Text numberOfLines={3} style={tw`mt-1 text-[15px] font-bold ${text ? 'text-ink' : 'text-ink-3'}`}>{text || t('찾는 사람을 한 줄로 적어주세요')}</Text>

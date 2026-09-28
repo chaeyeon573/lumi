@@ -67,10 +67,10 @@ export default function AroundScreen() {
         {denied ? <View style={tw`mb-3 rounded-2xl bg-surface-2 px-3.5 py-2.5 flex-row items-center`}><MapPinOff size={14} color={C.primary} /><Text style={tw`ml-2 flex-1 text-[12px] text-ink-2`}>{t('위치 권한 없이도 도시로 찾을 수 있어요')}</Text></View> : null}
 
         {/* 1. 내 방문 예정 */}
-        <View style={tw`rounded-[24px] bg-primary-soft p-4`}>
+        <View style={tw`rounded-[20px] bg-primary-soft p-4`}>
           <View style={tw`flex-row items-center`}>
             <Plane size={16} color={C.primary} />
-            <Text style={tw`ml-2 flex-1 text-[14px] font-bold text-primary`}>{t('내 방문 예정')}</Text>
+            <Text style={tw`ml-2 flex-1 text-[14px] font-bold text-ink`}>{t('내 방문 예정')}</Text>
             <Pressable onPress={() => setTripsOpen(true)} style={tw`h-8 px-3 rounded-full bg-white flex-row items-center`}><Pencil size={12} color={C.primary} /><Text style={tw`ml-1 text-[12px] font-semibold text-primary`}>{t('추가·수정')}</Text></Pressable>
           </View>
           {myTrips.length === 0
@@ -104,7 +104,7 @@ export default function AroundScreen() {
         {/* 더 보기 — 작은 모임 */}
         <Pressable onPress={() => nav('/meet/tables')} style={tw`mt-4 rounded-[20px] border border-line bg-white px-4 py-3 flex-row items-center`}>
           <View style={tw`flex-1`}>
-            <Text style={tw`text-[14px] font-bold text-primary`}>{t('작은 모임 · 4~6명')}</Text>
+            <Text style={tw`text-[14px] font-bold text-ink`}>{t('작은 모임 · 4~6명')}</Text>
             <Text style={tw`text-[12px] text-ink-3 mt-0.5`}>{t('4~6명이 모이는 작은 모임이 1:1보다 편해요')}</Text>
           </View>
           <ChevronRight size={16} color={C.ink3} />

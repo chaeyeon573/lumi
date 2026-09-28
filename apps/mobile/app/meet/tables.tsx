@@ -61,8 +61,8 @@ export default function SmallTablesScreen() {
     <View style={tw`flex-1 bg-white`}>
       <Screen title={t('작은 모임')}>
         <View style={tw`pt-3`}>
-          <View style={tw`rounded-[24px] bg-primary-soft p-4`}>
-            <View style={tw`flex-row items-center`}><Users size={16} color={C.primary} /><Text style={tw`ml-2 text-[15px] font-bold text-primary`}>{t('작은 모임 · 4~6명')}</Text></View>
+          <View style={tw`rounded-[20px] bg-primary-soft p-4`}>
+            <View style={tw`flex-row items-center`}><Users size={16} color={C.primary} /><Text style={tw`ml-2 text-[15px] font-bold text-ink`}>{t('작은 모임 · 4~6명')}</Text></View>
             <Text style={tw`text-[13px] text-ink-2 mt-1`}>{t('4~6명이 모이는 작은 모임이 1:1보다 편해요')}</Text>
           </View>
 
@@ -104,7 +104,7 @@ function TableCard({ r, interested, onInterest, onHide }: { r: SmallTableRec; in
   const closed = filled >= a.capacity || a.date < todayISO();
   const others = sharedPeople.filter((u) => u.id !== v.me.id);
   return (
-    <View style={tw`mb-3 rounded-[24px] border border-line bg-white p-3.5`}>
+    <View style={tw`mb-3 card p-3.5`}>
       <Pressable onPress={() => nav(`/activities/${a.id}`)} style={tw`flex-row items-start`}>
         <Cover emoji={a.cover.emoji} hue={a.cover.hue} url={a.cover.url} size={56} />
         <View style={tw`flex-1 min-w-0 ml-3`}>

@@ -13,7 +13,7 @@ export function PeopleStrip({ people }: { people: RecommendedPerson[] }) {
   return (
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={tw`-mx-4`} contentContainerStyle={tw`px-4`}>
       {people.map(({ user: u, reasons }) => (
-        <Pressable key={u.id} onPress={() => nav(`/users/${u.id}`)} style={tw`w-[196px] mr-2.5 rounded-[24px] border border-line bg-white p-3.5`}>
+        <Pressable key={u.id} onPress={() => nav(`/users/${u.id}`)} style={tw`w-[196px] mr-2.5 card p-3.5`}>
           <View style={tw`flex-row items-center`}>
             <Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={44} />
             <View style={tw`flex-1 min-w-0 ml-2.5`}>

@@ -61,7 +61,7 @@ function UnexpectedCard({ user, reasons, closeness, onHide }: { user: User; reas
   const line = [maskedLine(user, view), maskedCity(user, view)].filter(Boolean).join(' · ');
   const openProfile = () => nav(`/users/${user.id}`);
   return (
-    <View style={tw`mb-3 rounded-[24px] border border-line bg-white overflow-hidden`}>
+    <View style={tw`mb-3 card overflow-hidden`}>
       {/* 1. 왜 의외인지 — 사람보다 먼저 */}
       <View style={tw`bg-sky-soft px-3.5 pt-3 pb-2.5`}>
         <View style={tw`flex-row items-center mb-1.5`}><Text style={tw`flex-1 text-[11px] font-bold text-ink-3`}>{t('왜 의외인지')}</Text><ClosenessTag c={closeness} /></View>

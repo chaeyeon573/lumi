@@ -68,9 +68,9 @@ export default function PeopleResultsScreen() {
       </Pressable>
     ) : undefined}>
       {saved ? (
-        <View style={tw`mb-3 rounded-[24px] bg-primary-soft px-4 pt-3`}>
+        <View style={tw`mb-3 rounded-[20px] bg-primary-soft px-4 pt-3`}>
           <View style={tw`flex-row items-center`}><Star size={11} color={C.primary} fill={C.primary} /><Text style={tw`ml-1 text-[11px] font-bold text-ink-3`}>{t('저장한 검색')}</Text></View>
-          <Text style={tw`text-[16px] font-bold text-primary mt-0.5`}>{saved.name}</Text>
+          <Text style={tw`text-[16px] font-bold text-ink mt-0.5`}>{saved.name}</Text>
           <Toggle label={t('새 사람 알림')} description={t('조건에 맞는 사람이 새로 들어오면 알려드려요')} checked={saved.alert} onChange={(on) => { run(() => api.searches.setAlert(saved.id, on), on ? t('새 사람 알림을 켰어요.') : t('새 사람 알림을 껐어요.')).catch(() => undefined); }} />
         </View>
       ) : null}

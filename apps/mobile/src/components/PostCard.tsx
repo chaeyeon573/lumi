@@ -31,7 +31,7 @@ export function PostCard({ post: p }: { post: Post }) {
   const tags = [...(p.topics ?? []).map((k) => `#${topicLabel(k)}`), ...(p.courseTag ? [`📚${p.courseTag}`] : []), ...p.tags.map((tg) => `#${tg}`)];
 
   return (
-    <View style={tw`rounded-[24px] border border-line bg-white overflow-hidden mb-3`}>
+    <View style={tw`card overflow-hidden mb-3`}>
       <View style={tw`flex-row items-center px-3.5 py-3`}>
         <Pressable onPress={goAuthor}><Avatar emoji={avatar.emoji} hue={avatar.hue} url={avatar.url} size={36} /></Pressable>
         <View style={tw`flex-1 min-w-0 ml-2.5`}>

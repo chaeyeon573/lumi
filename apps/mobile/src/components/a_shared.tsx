@@ -76,7 +76,7 @@ export function ActivityRow({ activity: a, badge }: { activity: Activity; badge?
   const name = org?.name ?? host?.nickname ?? '';
   const color = CATEGORY_COLORS[a.category];
   return (
-    <Pressable onPress={() => nav(`/activities/${a.id}`)} style={tw`rounded-[24px] border border-line bg-white p-3 flex-row mb-2`}>
+    <Pressable onPress={() => nav(`/activities/${a.id}`)} style={tw`card p-3 flex-row mb-2`}>
       <Cover emoji={a.cover.emoji} hue={a.cover.hue} url={a.cover.url} size={76} radius={12} />
       <View style={tw`flex-1 min-w-0 ml-3`}>
         <View style={tw`flex-row items-center`}><Text style={{ fontSize: 11, fontWeight: '700', color }}>{CATEGORY_EMOJI[a.category]} {CATEGORY_LABELS[a.category]}</Text>{badge ? <View style={tw`ml-1.5`}><Tag tone="primary">{badge}</Tag></View> : null}</View>
@@ -97,7 +97,7 @@ export function TeamCard({ activity: a }: { activity: Activity }) {
   const roles = a.rolesNeeded ?? [];
   const fit = roles.filter((r) => v.me.canOffer.includes(r));
   return (
-    <View style={tw`rounded-[24px] border border-line bg-white p-3.5 mb-3`}>
+    <View style={tw`card p-3.5 mb-3`}>
       <View style={tw`flex-row`}>
         <View style={tw`h-[52px] w-[52px] rounded-xl bg-surface-2 items-center justify-center`}><Text style={{ fontSize: 24 }}>{a.cover.emoji}</Text></View>
         <View style={tw`flex-1 min-w-0 ml-3`}>
@@ -131,7 +131,7 @@ export function OppRow({ o }: { o: Opportunity }) {
   const color = OPP_TYPE_COLORS[o.type];
   const urgent = !!o.deadline && daysUntil(o.deadline) <= 7 && daysUntil(o.deadline) >= 0;
   return (
-    <Pressable onPress={() => nav(`/opportunities/${o.id}`)} style={tw`rounded-[24px] border border-line bg-white p-3 flex-row mb-2`}>
+    <Pressable onPress={() => nav(`/opportunities/${o.id}`)} style={tw`card p-3 flex-row mb-2`}>
       <View style={[tw`h-[52px] w-[52px] rounded-xl items-center justify-center`, { backgroundColor: `${color}1A` }]}><Text style={{ fontSize: 24 }}>{OPP_TYPE_EMOJI[o.type]}</Text></View>
       <View style={tw`flex-1 min-w-0 ml-3`}>
         <View style={tw`flex-row items-center`}><Text style={{ fontSize: 11, fontWeight: '700', color }}>{OPP_TYPE_EMOJI[o.type]} {OPP_TYPE_LABELS[o.type]}</Text>{o.deadline ? <View style={tw`ml-1.5`}><Tag tone={urgent ? 'danger' : 'neutral'}>{dday(o.deadline)}</Tag></View> : null}</View>

@@ -1,15 +1,22 @@
-/** Pastel Breeze — 웹 index.css 토큰과 같은 값 (twrnc 가 런타임에 읽는다) */
+/**
+ * 디자인 v3 — twrnc 색 이름. 값은 packages/core/src/theme/tokens.ts PALETTES 에서 가져온다 (hex 를 여기 쓰지 않는다).
+ * 예전 이름은 웹 src/index.css `@theme inline` 과 같은 새 의미로 이어 붙인다:
+ * primary = 맑은 파랑, primary-soft / accent-soft / sky-soft = tint, accent = tint2, brand = ink, verify = link.
+ * 팔레트를 바꾸면 src/tw.ts 가 twColors(PALETTES[id]) 로 다시 만든다.
+ */
+const { PALETTES, DEFAULT_PALETTE } = require('../../packages/core/src/theme/tokens');
+
+const twColors = (p) => ({
+  bg: p.bg, surface: p.surface, 'surface-2': p.surface2, line: p.line,
+  ink: p.ink, 'ink-2': p.ink2, 'ink-3': p.ink3,
+  primary: p.primary, 'primary-deep': p.primaryPress, 'primary-soft': p.tint, 'on-primary': p.onPrimary, brand: p.ink,
+  tint: p.tint, 'tint-2': p.tint2, accent: p.tint2, 'accent-soft': p.tint, 'sky-soft': p.tint,
+  link: p.link, verify: p.link,
+  mint: p.ok, 'mint-soft': p.okSoft, gold: p.warn, 'gold-soft': p.warnSoft, 'gold-ink': p.warn,
+  danger: p.danger, 'danger-soft': p.dangerSoft, 'input-line': p.line,
+});
+
 module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        bg: '#FFFFFF', surface: '#FFFFFF', 'surface-2': '#F3F4ED', line: '#E6E8E1',
-        ink: '#1A1C18', 'ink-2': '#43474D', 'ink-3': '#74777E',
-        primary: '#0F2B48', brand: '#00162D', 'primary-deep': '#00162D', 'primary-soft': '#D2E4FF',
-        accent: '#A3D5FF', 'accent-soft': '#BFF4FF', mint: '#2E7D5B', 'mint-soft': '#DDF3E6',
-        gold: '#B8860B', 'gold-soft': '#FFF1C9', danger: '#BA1A1A', 'danger-soft': '#FFDAD6', verify: '#2E6388',
-        'sky-soft': '#F4F9FF', 'input-line': '#B1E5FF', 'gold-ink': '#B57A0E',
-      },
-    },
-  },
+  theme: { extend: { colors: twColors(PALETTES[DEFAULT_PALETTE]) } },
+  twColors,
 };

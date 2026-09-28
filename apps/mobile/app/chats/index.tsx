@@ -88,9 +88,9 @@ export default function ChatInboxScreen() {
                 const avatar = other?.avatar ?? org?.logo ?? { emoji: r.type === 'activity' ? '🗓️' : '🏛️', hue: 220 };
                 return (
                   <Pressable key={r.id} onPress={() => nav(`/chats/${r.id}`)} style={tw`flex-row items-center py-3.5 ${idx === 0 ? '' : 'border-t border-line'}`}>
-                    {r.type === 'direct' ? <Avatar emoji={avatar.emoji} hue={avatar.hue} url={avatar.url} size={52} /> : <View style={tw`h-[52px] w-[52px] rounded-full bg-primary items-center justify-center`}>{r.type === 'activity' ? <Users size={20} color="#fff" /> : <Building2 size={20} color="#fff" />}</View>}
+                    {r.type === 'direct' ? <Avatar emoji={avatar.emoji} hue={avatar.hue} url={avatar.url} size={52} /> : <View style={tw`h-[52px] w-[52px] rounded-full bg-primary items-center justify-center`}>{r.type === 'activity' ? <Users size={20} color={C.onPrimary} /> : <Building2 size={20} color={C.onPrimary} />}</View>}
                     <View style={tw`flex-1 min-w-0 flex-row items-center ml-3`}>
-                      <Text numberOfLines={1} style={tw`text-[16px] font-semibold text-primary max-w-[45%]`}>{other?.nickname ?? r.title}</Text>
+                      <Text numberOfLines={1} style={tw`text-[16px] font-semibold text-ink max-w-[45%]`}>{other?.nickname ?? r.title}</Text>
                       <Text numberOfLines={1} style={tw`ml-2 text-[15px] shrink ${n > 0 ? 'text-ink' : 'text-ink-2'}`}>· {lm?.text ?? t('대화를 시작해보세요')}</Text>
                     </View>
                     <Text style={tw`ml-2 text-[12px] text-ink-3`}>{lm ? relativeTime(lm.createdAt) : ''}</Text>
@@ -106,18 +106,18 @@ export default function ChatInboxScreen() {
         <View style={tw`py-3`}>
           <View style={tw`mb-4`}>
             <View style={tw`flex-row items-center mb-2`}><Inbox size={15} color={C.ink} /><Text style={tw`ml-1.5 text-[14px] font-bold text-ink`}>{t('받은 활동 제안')} {inProposals.length}</Text></View>
-            {inProposals.length === 0 ? <View style={tw`rounded-[24px] border border-line bg-white p-4`}><Text style={tw`text-[13px] text-ink-3`}>{t('받은 제안이 없어요.')}</Text></View> : inProposals.map((p) => { const u = v.userById(p.fromId); const a = avatarOf(p.fromId); return (
-              <View key={p.id} style={tw`rounded-[24px] border border-line bg-white p-3.5 mb-2`}>
+            {inProposals.length === 0 ? <View style={tw`card p-4`}><Text style={tw`text-[13px] text-ink-3`}>{t('받은 제안이 없어요.')}</Text></View> : inProposals.map((p) => { const u = v.userById(p.fromId); const a = avatarOf(p.fromId); return (
+              <View key={p.id} style={tw`card p-3.5 mb-2`}>
                 <Pressable onPress={() => nav(`/users/${p.fromId}`)} style={tw`flex-row items-center`}><Avatar emoji={a.emoji} hue={a.hue} url={a.url} size={40} /><View style={tw`flex-1 ml-3`}><Text style={tw`text-[14px] font-bold text-ink`}>{u?.nickname}</Text><Text style={tw`text-[12px] text-ink-3`}>{CATEGORY_EMOJI[p.category]} {CATEGORY_LABELS[p.category]} · {p.when}</Text></View><Tag>{relativeTime(p.createdAt)}</Tag></Pressable>
                 <View style={tw`mt-2 rounded-xl bg-surface-2 px-3 py-2`}><Text style={tw`text-[13px] text-ink`}>“{p.message}”</Text></View>
-                <View style={tw`flex-row mt-3`}><Button full variant="outline" icon={<X size={15} color={C.ink2} />} onPress={() => run(() => api.proposals.respond(p.id, false))}>{t('이번에는 어려워요')}</Button><View style={tw`w-2`} /><Button full icon={<Check size={15} color="#fff" />} onPress={async () => { await run(() => api.proposals.respond(p.id, true), t('제안을 수락했어요. 대화를 시작해요!')); setTab('direct'); }}>{t('좋아요')}</Button></View>
+                <View style={tw`flex-row mt-3`}><Button full variant="outline" icon={<X size={15} color={C.ink2} />} onPress={() => run(() => api.proposals.respond(p.id, false))}>{t('이번에는 어려워요')}</Button><View style={tw`w-2`} /><Button full icon={<Check size={15} color={C.onPrimary} />} onPress={async () => { await run(() => api.proposals.respond(p.id, true), t('제안을 수락했어요. 대화를 시작해요!')); setTab('direct'); }}>{t('좋아요')}</Button></View>
               </View>
             ); })}
           </View>
           <View style={tw`mb-4`}>
             <View style={tw`flex-row items-center mb-2`}><Users size={15} color={C.ink} /><Text style={tw`ml-1.5 text-[14px] font-bold text-ink`}>{t('받은 친구 요청')} {inRequests.length}</Text></View>
-            {inRequests.length === 0 ? <View style={tw`rounded-[24px] border border-line bg-white p-4`}><Text style={tw`text-[13px] text-ink-3`}>{t('받은 친구 요청이 없어요.')}</Text></View> : inRequests.map((q) => { const u = v.userById(q.fromId); const a = avatarOf(q.fromId); return (
-              <View key={q.id} style={tw`rounded-[24px] border border-line bg-white p-3.5 mb-2 flex-row items-center`}>
+            {inRequests.length === 0 ? <View style={tw`card p-4`}><Text style={tw`text-[13px] text-ink-3`}>{t('받은 친구 요청이 없어요.')}</Text></View> : inRequests.map((q) => { const u = v.userById(q.fromId); const a = avatarOf(q.fromId); return (
+              <View key={q.id} style={tw`card p-3.5 mb-2 flex-row items-center`}>
                 <Pressable onPress={() => nav(`/users/${q.fromId}`)}><Avatar emoji={a.emoji} hue={a.hue} url={a.url} size={40} /></Pressable>
                 <View style={tw`flex-1 min-w-0 ml-3`}><Text style={tw`text-[14px] font-bold text-ink`}>{u?.nickname}</Text><Text style={tw`text-[12px] text-ink-3`}>{relativeTime(q.createdAt)}</Text></View>
                 <Button size="sm" variant="outline" onPress={() => run(() => api.relationships.respondFriendRequest(q.id, false))}>{t('거절')}</Button>
@@ -130,7 +130,7 @@ export default function ChatInboxScreen() {
           {(outProposals.length > 0 || outRequests.length > 0) && (
             <View>
               <View style={tw`flex-row items-center mb-2`}><MessageCircle size={15} color={C.ink} /><Text style={tw`ml-1.5 text-[14px] font-bold text-ink`}>{t('보낸 요청')}</Text></View>
-              <View style={tw`rounded-[24px] border border-line bg-white`}>
+              <View style={tw`card`}>
                 {outRequests.map((q, i) => { const u = v.userById(q.toId); const a = avatarOf(q.toId); return <View key={q.id} style={tw`flex-row items-center px-3.5 py-3 ${i === 0 ? '' : 'border-t border-line'}`}><Avatar emoji={a.emoji} hue={a.hue} url={a.url} size={36} /><Text style={tw`flex-1 ml-3 text-[13px] text-ink`}><Text style={tw`font-bold`}>{u?.nickname}</Text>{t('님에게 친구 요청')}</Text><Tag>{t('대기 중')}</Tag></View>; })}
                 {outProposals.map((p, i) => { const u = v.userById(p.toId); const a = avatarOf(p.toId); return <View key={p.id} style={tw`flex-row items-center px-3.5 py-3 ${i === 0 && outRequests.length === 0 ? '' : 'border-t border-line'}`}><Avatar emoji={a.emoji} hue={a.hue} url={a.url} size={36} /><Text style={tw`flex-1 ml-3 text-[13px] text-ink`}><Text style={tw`font-bold`}>{u?.nickname}</Text>{t('님에게')} {CATEGORY_LABELS[p.category]} {t('제안')}</Text>{p.status === 'pending' ? <Tag>{t('대기 중')}</Tag> : <Tag tone="neutral">{t('이번 활동은 성사되지 않았어요')}</Tag>}</View>; })}
               </View>

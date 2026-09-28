@@ -40,7 +40,7 @@ export default function CheckoutScreen() {
       <Screen title="AroundU+">
         <View style={tw`pt-10 items-center`}>
           <View style={tw`h-16 w-16 rounded-full bg-accent-soft items-center justify-center`}><CheckCircle2 size={30} color={C.primary} /></View>
-          <Text style={tw`mt-4 text-[20px] font-bold text-primary text-center`}>{t('이제 복수 조건 검색을 쓸 수 있어요')}</Text>
+          <Text style={tw`mt-4 text-[20px] font-bold text-ink text-center`}>{t('이제 복수 조건 검색을 쓸 수 있어요')}</Text>
           <Text style={tw`mt-1 text-[13px] text-ink-2 text-center`}>{t('상세 조건 · 검색 저장 · 새 사람 알림 · 무제한 연결 요청도 함께 열렸어요.')}</Text>
           <View style={tw`mt-5 items-center`}>
             <Button icon={<Search size={16} color={C.onPrimary} />} onPress={() => replace('/people?tab=search')}>{t('찾기로 가기')}</Button>
@@ -60,7 +60,7 @@ export default function CheckoutScreen() {
     }>
       <View style={tw`pt-2`}>
         {/* 1. 요금제 */}
-        <View style={tw`rounded-[24px] bg-primary p-4 flex-row items-center`}>
+        <View style={tw`rounded-[20px] bg-primary p-4 flex-row items-center`}>
           <View style={[tw`h-10 w-10 rounded-2xl items-center justify-center`, { backgroundColor: C.onDarkBtn }]}><Sparkles size={18} color={C.onPrimary} /></View>
           <View style={tw`flex-1 min-w-0 ml-3`}>
             <Text style={tw`text-[12px] font-semibold text-accent`}>AroundU+ · {plan.label}</Text>
@@ -70,7 +70,7 @@ export default function CheckoutScreen() {
         </View>
 
         {/* 2. 카드 정보 */}
-        <View style={tw`mt-4 rounded-[24px] border border-line bg-white p-4`}>
+        <View style={tw`mt-4 card p-4`}>
           <View style={tw`flex-row items-center mb-3`}><CreditCard size={16} color={C.primary} /><Text style={tw`ml-2 text-[14px] font-bold text-ink`}>{t('카드 정보')}</Text></View>
           <Field label={t('이름')}><Input value={name} onChangeText={setName} autoComplete="cc-name" /></Field>
           <Field label={t('카드 번호')}><Input keyboardType="number-pad" value={number} onChangeText={(s) => setNumber(fmtCard(s))} placeholder="0000 0000 0000 0000" autoComplete="cc-number" /></Field>

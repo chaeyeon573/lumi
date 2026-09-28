@@ -63,9 +63,9 @@ export function WantGrid<T extends string>({ all, value, labels, emoji, onToggle
         const active = value.includes(k);
         return (
           <View key={k} style={tw`w-1/2 p-1`}>
-            <Pressable onPress={() => onToggle(k)} accessibilityState={{ selected: active }} style={tw`h-[60px] rounded-[20px] border px-3 flex-row items-center ${active ? 'bg-primary border-primary' : 'bg-white border-line'}`}>
+            <Pressable onPress={() => onToggle(k)} accessibilityState={{ selected: active }} style={tw`h-[60px] rounded-[20px] border px-3 flex-row items-center ${active ? 'bg-tint border-primary' : 'bg-white border-line'}`}>
               <Text style={tw`text-[20px]`}>{emoji[k]}</Text>
-              <Text numberOfLines={2} style={tw`ml-2 flex-1 text-[13px] font-bold ${active ? 'text-white' : 'text-ink'}`}>{labels[k]}</Text>
+              <Text numberOfLines={2} style={tw`ml-2 flex-1 text-[13px] font-bold ${active ? 'text-primary' : 'text-ink'}`}>{labels[k]}</Text>
             </Pressable>
           </View>
         );

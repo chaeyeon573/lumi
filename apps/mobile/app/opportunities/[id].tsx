@@ -48,7 +48,7 @@ export default function OpportunityDetailScreen() {
   const setIntent = (intent: OpportunityIntent | null, msg?: string) => run(() => api.opportunities.setIntent(o.id, v.me.id, intent), msg);
   const ask = async () => { if (!text.trim()) return; await run(() => api.opportunities.ask(o.id, v.me.id, text.trim())); setText(''); };
   const submitReview = async () => { await run(() => api.opportunities.review(o.id, v.me.id, review.trim(), result || undefined), t('후기를 남겼어요.')); setReview(''); setResult(''); };
-  const card = tw`rounded-[24px] border border-line bg-white p-4`;
+  const card = tw`card p-4`;
   const resultOptions: [Result, string][] = [['', t('결과 비공개')], ['accepted', t('합격·수혜')], ['rejected', t('불합격')], ['attended', t('참가')]];
   const tabOptions: [Tab, string][] = together
     ? [['info', t('상세')], ['people', `${t('함께할 사람 ')}${people.length}`], ['qna', `${t('Q&A·후기 ')}${o.qna.length + o.reviews.length}`]]
@@ -56,7 +56,7 @@ export default function OpportunityDetailScreen() {
 
   const footer = (
     <View style={[tw`flex-row`, { gap: 8 }]}>
-      <Pressable onPress={() => run(() => api.opportunities.toggleSave(o.id, v.me.id), mine?.saved ? undefined : t('저장했어요. 마감 3일 전에 알려드릴게요.'))} style={tw`h-[52px] w-[52px] rounded-2xl items-center justify-center ${mine?.saved ? 'bg-primary' : 'bg-surface-2'}`}><Bookmark size={20} color={mine?.saved ? '#fff' : C.ink2} fill={mine?.saved ? '#fff' : 'none'} /></Pressable>
+      <Pressable onPress={() => run(() => api.opportunities.toggleSave(o.id, v.me.id), mine?.saved ? undefined : t('저장했어요. 마감 3일 전에 알려드릴게요.'))} style={tw`h-[52px] w-[52px] rounded-2xl items-center justify-center ${mine?.saved ? 'bg-primary' : 'bg-surface-2'}`}><Bookmark size={20} color={mine?.saved ? C.onPrimary : C.ink2} fill={mine?.saved ? C.onPrimary : 'none'} /></Pressable>
       {together ? (<>
         <Button size="lg" variant={mine ? 'secondary' : 'primary'} full onPress={() => setRsvpOpen(true)}>{mine ? `${RSVP_EMOJI[mine.intent]} ${RSVP_LABELS[mine.intent]}` : t('같이 갈래요')}</Button>
         {mine && (mine.intent === 'solo' || mine.intent === 'company') && <Button size="lg" variant="outline" onPress={() => setTab('people')} icon={<Users size={18} color={C.ink2} />}>{t('사람 찾기')}</Button>}
@@ -82,7 +82,7 @@ export default function OpportunityDetailScreen() {
           {together && <View style={[tw`mt-3 flex-row`, { gap: 8 }]}>
             <View style={tw`flex-1 rounded-xl bg-surface-2 py-2 items-center`}><Text style={tw`text-[16px] font-extrabold text-ink`}>{others.length}</Text><Text style={tw`text-[10px] text-ink-3`}>{t('관심 있는 학생')}</Text></View>
             <View style={tw`flex-1 rounded-xl bg-surface-2 py-2 items-center`}><Text style={tw`text-[16px] font-extrabold text-ink`}>{others.filter((i) => ['going', 'solo', 'company', 'team', 'applied'].includes(i.intent)).length}</Text><Text style={tw`text-[10px] text-ink-3`}>{t('참가 예정')}</Text></View>
-            <Pressable onPress={() => setTab('people')} style={tw`flex-1 rounded-xl bg-primary-soft py-2 items-center`}><Text style={tw`text-[16px] font-extrabold text-primary`}>{others.filter((i) => i.intent === 'solo' || i.intent === 'company' || i.intent === 'team').length}</Text><Text style={tw`text-[10px] text-primary text-center`}>{t('같이 갈 사람 찾는 중')}</Text></Pressable>
+            <Pressable onPress={() => setTab('people')} style={tw`flex-1 rounded-xl bg-primary-soft py-2 items-center`}><Text style={tw`text-[16px] font-extrabold text-ink`}>{others.filter((i) => i.intent === 'solo' || i.intent === 'company' || i.intent === 'team').length}</Text><Text style={tw`text-[10px] text-primary text-center`}>{t('같이 갈 사람 찾는 중')}</Text></Pressable>
           </View>}
         </View>
 
@@ -91,7 +91,7 @@ export default function OpportunityDetailScreen() {
         {tab === 'info' && (
           <>
             <View style={[card, tw`mt-3`]}><Text style={tw`text-[14px] text-ink-2 leading-6`}>{o.description}</Text></View>
-            <View style={tw`mt-3 rounded-[24px] border border-line bg-white overflow-hidden`}>
+            <View style={tw`mt-3 card overflow-hidden`}>
               {o.date ? <InfoRow icon={<Clock size={16} color={C.ink2} />} label={t('일시')} value={formatDateTime(o.date, o.startTime ?? '00:00')} /> : null}
               {o.place ? <InfoRow icon={<MapPin size={16} color={C.ink2} />} label={t('장소')} value={o.place.name} action={<Pressable onPress={() => nav('/map')}><Text style={tw`text-[12px] text-primary font-semibold`}>{t('지도')}</Text></Pressable>} /> : null}
               <InfoRow icon={<Text>👤</Text>} label={t('누구에게 맞는지')} value={o.eligibility} last={!o.benefit && !o.rolesNeeded && !o.sourceUrl} />
@@ -111,7 +111,7 @@ export default function OpportunityDetailScreen() {
           <View style={tw`mt-3`}>
             {people.length === 0 && <Empty title={`🙋 ${t('아직 관심 있는 사람이 없어요')}`} description={t('관심을 표시하면 다른 사람에게 내가 보여요.')} />}
             {people.map(({ u, i, reasons }) => (
-              <View key={u.id} style={tw`rounded-[24px] border border-line bg-white p-3.5 mb-2`}>
+              <View key={u.id} style={tw`card p-3.5 mb-2`}>
                 <Pressable onPress={() => nav(`/users/${u.id}`)} style={tw`flex-row items-center`}>
                   <Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={44} />
                   <View style={tw`flex-1 min-w-0 ml-3`}>
@@ -121,7 +121,7 @@ export default function OpportunityDetailScreen() {
                 </Pressable>
                 {reasons.length > 0 && <View style={tw`mt-2`}>{reasons.slice(0, 3).map((r) => <View key={r.text} style={tw`flex-row items-center mb-0.5`}><CheckCircle2 size={12} color={C.primary} /><Text style={tw`ml-1 text-[12px] text-ink-2 shrink`}>{r.text}</Text></View>)}</View>}
                 <View style={[tw`flex-row mt-3`, { gap: 8 }]}>
-                  {(i.intent === 'solo' || i.intent === 'company') ? <Button size="sm" full icon={<Users size={14} color="#fff" />} onPress={() => nav(`/users/${u.id}?propose=1&cat=networking&opp=${o.id}`)}>{t('같이 가기 제안')}</Button>
+                  {(i.intent === 'solo' || i.intent === 'company') ? <Button size="sm" full icon={<Users size={14} color={C.onPrimary} />} onPress={() => nav(`/users/${u.id}?propose=1&cat=networking&opp=${o.id}`)}>{t('같이 가기 제안')}</Button>
                     : <Button size="sm" full onPress={() => nav(`/create/activity?kind=group&opportunity=${o.id}&invite=${u.id}`)}>{o.rolesNeeded ? t('팀 제안하기') : t('같이 준비해요')}</Button>}
                   <Button size="sm" variant="outline" onPress={() => nav(`/users/${u.id}?propose=1`)} icon={<MessageCircle size={14} color={C.ink2} />}>{t('커피 한 잔')}</Button>
                 </View>
