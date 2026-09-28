@@ -6,7 +6,7 @@ import { getPlatform } from '@core/platform';
 
 const seed = lang === 'en' ? seedEn : seedKo;
 
-const DB_VERSION = 14;
+const DB_VERSION = 15;
 const STORAGE_KEY = `aroundu.mockdb.v${DB_VERSION}.${lang}`;
 const SESSION_KEY = `aroundu.session.v1.${lang}`;
 

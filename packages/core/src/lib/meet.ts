@@ -7,6 +7,13 @@ import { t } from '@core/i18n';
 import { todayISO, addDaysISO } from './format';
 import { ACTIVITY_WANT_CATEGORIES } from './wants';
 import { cityOf, citiesOf, sameSchool, isAlumniStage } from './network';
+import { isTeamActivity } from './discover';
+
+/** 재학생에게만 의미 있는 모임 — 수업 스터디 · 팀원 모집 · 동아리 모집/박람회 · 학생회관 혼밥 · 시험 공부. 졸업생에게는 보여주지 않는다 */
+const STUDENT_WORDS = /(동아리|신입회원|박람회|학생회관|학식|혼밥|중간고사|기말|시험|과제|수업|강의|club fair|recruit|dining hall|student union|midterm|final exam|homework|lecture|eating alone)/i;
+export const isStudentOnlyActivity = (a: Activity) => isTeamActivity(a) || a.category === 'study' || STUDENT_WORDS.test(`${a.title} ${a.place?.name ?? ''}`);
+/** 이 사람에게 보여줄 모임인가 (졸업생이면 재학생 전용 모임 제외) */
+export const meetFitsStage = (a: Activity, me: User) => !isAlumniStage(me) || !isStudentOnlyActivity(a);
 
 export interface RecommendedMeet { a: Activity; score: number; reason: string }
 
@@ -20,7 +27,7 @@ export function recommendMeets(acts: Activity[], me: User, users: User[], orgs: 
   const wantCats = new Set((me.wants?.activities ?? []).flatMap((w) => ACTIVITY_WANT_CATEGORIES[w]));
   const myOrgs = new Set(orgs.filter((o) => o.memberIds.includes(me.id)).map((o) => o.id));
   return acts
-    .filter((a) => a.date >= today && a.hostId !== me.id && !joined.has(a.id) && a.category !== 'store_deal')
+    .filter((a) => a.date >= today && a.hostId !== me.id && !joined.has(a.id) && a.category !== 'store_deal' && meetFitsStage(a, me))
     .map((a) => {
       let s = 0; const why: string[] = [];
       if (wantCats.has(a.category)) { s += 4; why.push(t('하고 싶은 활동')); }

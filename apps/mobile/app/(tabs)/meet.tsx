@@ -8,7 +8,7 @@ import { useAppStore } from '@core/store/useAppStore';
 import { nowActivities } from '@core/lib/discover';
 import { freeBlocks, todayIdx, fmtBlock, nowMin } from '@core/lib/timetable';
 import { todayISO, formatTime, formatDate } from '@core/lib/format';
-import { recommendMeets, recommendGroups, myGroups, mySchedule, joinStateOf, GROUP_SCOPE_LABELS, GROUP_SCOPE_EMOJI, scopeOf } from '@core/lib/meet';
+import { meetFitsStage, recommendMeets, recommendGroups, myGroups, mySchedule, joinStateOf, GROUP_SCOPE_LABELS, GROUP_SCOPE_EMOJI, scopeOf } from '@core/lib/meet';
 import { cityOf, sameSchool } from '@core/lib/network';
 import { stageKind, stageCopy } from '@core/lib/stage';
 import type { Activity, Organization, GroupScope } from '@core/types';
@@ -134,7 +134,7 @@ function NowStrip() {
   const myFree = me.timetable.length ? freeBlocks(me.timetable, today).filter((b) => b.end > nowMin()) : [];
   const nextFree = myFree[0] ? { start: Math.max(myFree[0].start, nowMin()), end: myFree[0].end } : null;
   const partner = v.visibleActivities.find((a) => a.category === 'store_deal' && a.partner && a.date === todayDate);
-  const now = useMemo(() => nowActivities(v.visibleActivities, me.id).slice(0, 3), [v, me.id]);
+  const now = useMemo(() => nowActivities(v.visibleActivities.filter((a) => meetFitsStage(a, me)), me.id).slice(0, 3), [v, me]);
   if (!nextFree && !partner && now.length === 0) return null;
   return (
     <View style={tw`mb-5`}>
@@ -318,7 +318,7 @@ function MeetExtraRows() {
 function ScheduleTab({ go }: { go: (tb: Tab) => void }) {
   const v = useViewer();
   const participations = useAppStore((s) => s.participations);
-  const buckets = useMemo(() => mySchedule(v.visibleActivities, v.me, participations), [v, participations]);
+  const buckets = useMemo(() => mySchedule(v.visibleActivities.filter((a) => meetFitsStage(a, v.me)), v.me, participations), [v, participations]);
   const total = buckets.reduce((n, b) => n + b.items.length, 0);
   return (
     <View>

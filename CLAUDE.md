@@ -16,7 +16,7 @@
 - **API 메서드 추가·수정은 `packages/core/src/api/engine.ts`** (mock과 서버가 같이 씀). `api/mock/index.ts`, `api/remote/index.ts`에 도메인 로직을 쓰지 않는다. 서버 권한 규칙은 `server/index.ts`의 `RULES`에 메서드마다 한 줄 추가.
 - 타입은 `packages/core/src/types/index.ts`, API 계약은 `packages/core/src/api/types.ts`.
 - core는 브라우저·RN API를 직접 쓰지 않는다. 저장소·환경변수·자산은 `@core/platform`(`getPlatform()`) 어댑터로. (`import.meta`, `localStorage`, `window` 금지)
-- 시드 스키마가 바뀌면 `api/mock/db.ts`의 `DB_VERSION` 을 올린다 (현재 v14).
+- 시드 스키마가 바뀌면 `api/mock/db.ts`의 `DB_VERSION` 을 올린다 (현재 v15).
 - 문구는 한국어 원문을 키로 `t('한국어')`, 영어는 `packages/core/src/i18n/en.ts`(또는 화면 영역별 `i18n/v2/*.ts`)에 추가. 미번역 키 점검: 스크래치패드 `missing.mjs` 패턴(`t()` 키 ↔ `en.ts` 비교).
 - **커밋 전** `npm run typecheck && npm run typecheck:server && npm run build` 모두 통과. 모바일을 건드렸으면 `cd apps/mobile && npx tsc --noEmit && npx expo export --platform ios`.
 - 브랜치는 새로 파지 않고 지정된 작업 브랜치에서 계속. 배포 브랜치(`claude/friendly-euler-emuo1f`, Railway)로는 제품 오너가 합친다.

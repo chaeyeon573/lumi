@@ -30,12 +30,12 @@ import { fmt } from './personView';
 const AI_EXAMPLES: Record<'ko' | 'en', Record<StageKind, string[]>> = {
   ko: {
     undergrad: ['같이 클라이밍 갈 공대생', '러닝 좋아하는 같은 전공', '보드게임 같이 할 사람'],
-    grad: ['다른 학교에서 NLP 연구하는 대학원생', '서울 AI 창업 관심 있는 대학원생', '같은 분야 박사과정 선배'],
+    grad: ['다른 학교에서 NLP 연구하는 대학원생', 'AI 연구하는 대학원생', '같은 분야 박사과정 선배'],
     alumni: ['성수에서 일하는 핀테크 동문', '뉴욕 금융권 동문', '서울에서 창업한 동문'],
   },
   en: {
     undergrad: ['Climbing buddies in engineering', 'Runners in my major', 'Board game people'],
-    grad: ['NLP grad students at other schools', 'Grad students into AI startups', 'PhD students ahead of me in my field'],
+    grad: ['NLP grad students at other schools', 'Grad students in AI', 'PhD students ahead of me in my field'],
     alumni: ['Fintech alumni in New York', 'Alumni in NYC finance', 'Alumni founders in SF'],
   },
 };

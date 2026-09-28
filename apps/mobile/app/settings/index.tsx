@@ -15,6 +15,7 @@ import { Screen, Segmented, Toggle, Button, BottomSheet, Avatar, C, usePalette, 
 import { PALETTES, type PaletteId } from '@core/theme/tokens';
 import { affiliationText } from '@/components/b_Profile';
 import { stageKind, type StageKind } from '@core/lib/stage';
+import { DEMO_STAGE_PROMPTS } from '@core/data/prompts-demo';
 import { setPartialFail } from '@/v2/useSectionState';
 
 const card = tw`card`;
@@ -56,6 +57,8 @@ export default function SettingsScreen() {
       if (k === 'undergrad') { await run(() => api.users.setStage(me.id, 'undergrad')); await run(() => api.users.setResearch(me.id, null), t('학부생')); }
       else if (k === 'grad') { await run(() => api.users.setStage(me.id, 'masters')); await run(() => api.users.setResearch(me.id, { field: 'NLP', lab: lang === 'en' ? 'NLP Lab' : '자연어처리 연구실', year: 2, keywords: ['LLM', lang === 'en' ? 'Evaluation' : '평가'] }), t('대학원생')); }
       else await run(() => api.users.setStage(me.id, 'alumni'), t('졸업생'));
+      // 데모 계정은 질문 답변도 그 단계 질문으로
+      if (me.id === 'u_me') await run(() => api.users.update(me.id, { prompts: DEMO_STAGE_PROMPTS[lang][k] }));
     } catch { /* toast by run */ }
   };
   const switchUser = async (u: UserT) => {

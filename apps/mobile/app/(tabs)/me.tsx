@@ -110,7 +110,7 @@ export default function ProfileScreen() {
       <Pressable onPress={() => nav('/profile/open-to')} style={tw`mt-4 card p-4 flex-row items-center`}>
         <View style={tw`h-10 w-10 rounded-full bg-accent-soft items-center justify-center`}><Coffee size={18} color={C.primary} /></View>
         <View style={tw`flex-1 min-w-0 mx-3`}>
-          <Text style={tw`text-[12px] font-bold text-ink-3`}>Open To · {t('지금 상태')}</Text>
+          <Text style={tw`text-[12px] font-bold text-ink-3`}>{t('요즘 가능해요')} · {t('지금 상태')}</Text>
           {myStatus ? <View style={tw`mt-1`}><StatusPills user={me} /></View> : <Text style={tw`text-[14px] text-ink-2`}>{t('상태 없음')}</Text>}
         </View>
         <Text style={tw`text-[13px] font-bold text-verify`}>{myStatus ? t('바꾸기') : t('켜기')}</Text>

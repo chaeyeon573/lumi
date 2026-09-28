@@ -501,7 +501,7 @@ export const posts: Post[] = [
     tags: ['고양이'], visibility: 'friends', likeIds: ['u_seoyeon'], savedIds: [], comments: [], taggedUserIds: ['u_seoyeon'], tagApprovedIds: ['u_seoyeon'], showOnProfile: true, showOnFeed: false, createdAt: isoHoursAgo(8),
   },
   {
-    id: 'po15', authorId: 'u_taeho', authorType: 'user', postType: 'together', media: [],
+    id: 'po15', authorId: 'u_taeho', authorType: 'user', postType: 'together', media: [], audience: 'students',
     text: '해커톤 팀 아직 못 구한 사람? 저희 팀 기획 한 자리 남았어요. 프로필 보고 편하게 문의 주세요.', topics: ['startup', 'career'],
     tags: ['해커톤', '팀원모집'], visibility: 'school', likeIds: ['u_hana'], savedIds: [], comments: [], relatedActivityId: 'a_hack_team', relatedOpportunityId: 'op_hackathon', showOnProfile: true, showOnFeed: true, createdAt: isoHoursAgo(2),
   },

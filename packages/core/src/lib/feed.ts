@@ -6,6 +6,9 @@ const byNew = (a: Post, b: Post) => b.createdAt.localeCompare(a.createdAt);
 
 /** 모두에게 보이는 글 종류 — 후배 질문 받아요 · 채용 · 학교 소식 */
 const OPEN_TOPICS = ['ama', 'hiring', 'info_scholar'];
+const STUDENT_TOPICS = ['class_q', 'together_meal', 'club_review'];
+const STUDENT_TEXT = /(팀원 모집|해커톤 팀|혼밥|looking for teammates|hackathon team|eating alone)/i;
+const STUDENT_TAGS = /^(팀원모집|해커톤|혼밥|시험기간|공강|hackathon|teammates?|study ?group)$/i;
 /**
  * 글이 속한 공간 — 재학생(학부·대학원) / 동문 / 모두.
  * 작성자가 고른 값이 있으면 그대로, 없으면: 동아리·학교 조직 글과 '후배 질문 받아요'·채용 글은 모두, 그 외에는 작성자 단계.
@@ -15,6 +18,8 @@ export function postAudienceOf(p: Post, author?: User): PostAudience {
   if (p.audience) return p.audience;
   if (p.authorType === 'org' || p.sponsored) return 'all';
   if ((p.topics ?? []).some((tp) => OPEN_TOPICS.includes(tp))) return 'all';
+  // 수업 질문 · 같이 밥/공부 · 동아리 후기 · 팀원 모집은 누가 써도 재학생 공간
+  if ((p.topics ?? []).some((tp) => STUDENT_TOPICS.includes(tp)) || (p.tags ?? []).some((tg) => STUDENT_TAGS.test(tg)) || STUDENT_TEXT.test(p.text)) return 'students';
   if (!author) return 'all';
   return isAlumniStage(author) ? 'alumni' : 'students';
 }
@@ -37,9 +42,11 @@ export function feedCampus(posts: Post[], me: User, users: User[], orgs: Organiz
     if (p.orgId) return (scope === 'all' || scope === 'students') && orgs.find((o) => o.id === p.orgId)?.schoolId === mySchool;
     const a = users.find((u) => u.id === p.authorId);
     if (!a || !sameSchool(a, me)) return false;
-    if (scope === 'students') return isStudentStage(a);
+    // 작성자 단계 + 글 공간 (졸업생이 재학생에게 쓴 팀원 모집 글은 '동문'에 안 뜬다)
+    const aud = postAudienceOf(p, a);
+    if (scope === 'students') return (isStudentStage(a) && aud !== 'alumni') || aud === 'students';
     if (scope === 'grads') return isGradStage(a);
-    if (scope === 'alumni') return isAlumniStage(a);
+    if (scope === 'alumni') return isAlumniStage(a) && aud !== 'students';
     return true;
   }).sort(byNew);
 }

@@ -7,7 +7,7 @@ import { cn } from '@core/lib/cn';
 /** 단계별로 바로 눌러볼 수 있는 예시 문장 — 파서가 조건으로 읽어내는 문장만 고른다 */
 export function aiExamples(kind: StageKind): string[] {
   if (kind === 'grad') return [t('NLP 연구하는 대학원생'), t('AI 연구하는 대학원생'), t('박사과정 선배')];
-  if (kind === 'alumni') return [t('서울 핀테크 동문'), t('서울 AI 동문'), t('뉴욕 금융권 동문')];
+  if (kind === 'alumni') return [t('핀테크 동문'), t('서울 창업 동문'), t('뉴욕 금융권 동문')];
   return [t('러닝 좋아하는 재학생'), t('창업 관심 있는 재학생'), t('디자인 좋아하는 재학생')];
 }
 
@@ -54,7 +54,7 @@ export function AskAiBar({ className }: { className?: string }) {
       <span className="h-8 w-8 rounded-full bg-primary-soft text-primary grid place-items-center shrink-0"><Sparkles size={15} /></span>
       <span className="flex-1 min-w-0">
         <span className="block text-[14px] font-semibold text-ink truncate">{t('AI에게 찾아달라고 하기')}</span>
-        <span className="block text-[11px] text-ink-3 truncate">{t('예: 러닝 좋아하는 재학생, 서울 AI 동문')}</span>
+        <span className="block text-[11px] text-ink-3 truncate">{t('예: 러닝 좋아하는 재학생, 뉴욕 금융권 동문')}</span>
       </span>
       <ArrowRight size={16} className="text-ink-3 shrink-0" />
     </button>

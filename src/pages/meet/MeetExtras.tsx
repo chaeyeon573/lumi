@@ -4,10 +4,10 @@ import { t } from '@core/i18n';
 import { cn } from '@core/lib/cn';
 import type { StageKind } from '@core/lib/stage';
 import type { Activity } from '@core/types';
-import { isTeamActivity } from '@core/lib/discover';
+import { isStudentOnlyActivity } from '@core/lib/meet';
 
 /** 졸업생에게는 수업·Study Crew·팀원 모집·스터디를 보여주지 않는다 (대학원생은 연구·스터디를 그대로) */
-export const hideForAlumni = (a: Activity) => isTeamActivity(a) || a.category === 'study';
+export const hideForAlumni = (a: Activity) => isStudentOnlyActivity(a);
 
 /** 모임 탭 하단·모임 만들기 폼 아래의 조용한 확장 행 — 같이 계획하기 / Study Crew / 팀원 모집 (기존 기능 유지). 졸업생에게는 없다 */
 export function MeetExtraRows({ className, kind }: { className?: string; kind?: StageKind }) {

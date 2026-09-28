@@ -11,6 +11,7 @@ import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { isAlumniStage, stageLabel, stageOf } from '@core/lib/network';
 import { stageKind, STAGE_KIND_LABELS, type StageKind } from '@core/lib/stage';
+import { DEMO_STAGE_PROMPTS } from '@core/data/prompts-demo';
 import { activeStatus } from '@core/lib/status';
 import { statusText } from '@/components/people_StatusPill';
 import { PARTIAL_FAIL_KEY } from '@/hooks/useSectionState';
@@ -49,6 +50,8 @@ export function SettingsPage() {
       if (k === 'undergrad') { await run(() => api.users.setStage(me.id, 'undergrad')); await run(() => api.users.setResearch(me.id, null), t('학부생 화면으로 바꿨어요.')); }
       if (k === 'grad') { await run(() => api.users.setStage(me.id, 'masters')); await run(() => api.users.setResearch(me.id, { field: 'NLP', lab: lang === 'en' ? 'NLP Lab' : '자연어처리 연구실', year: 2, keywords: ['LLM', lang === 'en' ? 'Evaluation' : '평가'] }), t('대학원생 화면으로 바꿨어요.')); }
       if (k === 'alumni') await run(() => api.users.setStage(me.id, 'alumni', me.career?.industry ? undefined : (lang === 'en' ? { city: 'San Francisco', company: 'Startup', industry: 'AI', role: 'ML Engineer' } : { city: '서울', company: '스타트업', industry: 'AI', role: 'ML Engineer' })), t('졸업생 화면으로 바꿨어요.'));
+      // 데모 계정은 질문 답변도 그 단계 질문으로
+      if (me.id === 'u_me') await run(() => api.users.update(me.id, { prompts: DEMO_STAGE_PROMPTS[lang][k] }));
     } catch { /* toast by run */ }
   };
   const Row = ({ Icon, label, desc, onClick, tone }: { Icon: typeof User; label: string; desc?: string; onClick: () => void; tone?: 'danger' | 'primary' }) => (
@@ -68,7 +71,7 @@ export function SettingsPage() {
 
         {/* ── 지금 상태: "☕ 이번 주 커피 가능" — 기간이 지나면 자동으로 꺼짐 ── */}
         <div className="card divide-y divide-line">
-          <Row Icon={Coffee} label={`Open To · ${t('지금 상태')}`} desc={myStatus ? statusText(myStatus) : `${t('상태 없음')} · ${t('기간이 지나면 자동으로 꺼져요')}`} onClick={() => nav('/profile/open-to')} />
+          <Row Icon={Coffee} label={`${t('요즘 가능해요')} · ${t('지금 상태')}`} desc={myStatus ? statusText(myStatus) : `${t('상태 없음')} · ${t('기간이 지나면 자동으로 꺼져요')}`} onClick={() => nav('/profile/open-to')} />
           <Row Icon={Bookmark} label={t('저장한 사람')} desc={t('나만 볼 수 있어요')} onClick={() => nav('/profile/saved')} />
         </div>
 

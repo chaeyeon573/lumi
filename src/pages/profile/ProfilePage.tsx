@@ -136,7 +136,7 @@ export function ProfilePage() {
         <button onClick={() => nav('/profile/open-to')} className="card w-full p-4 flex items-center gap-3 text-left press">
           <span className="h-10 w-10 rounded-full bg-accent-soft grid place-items-center text-primary shrink-0"><Coffee size={18} /></span>
           <span className="flex-1 min-w-0">
-            <span className="block text-[12px] font-bold text-ink-3">Open To · {t('지금 상태')}</span>
+            <span className="block text-[12px] font-bold text-ink-3">{t('요즘 가능해요')} · {t('지금 상태')}</span>
             {myStatus ? <StatusPills user={me} className="mt-1" /> : <span className="block text-[14px] text-ink-2">{t('상태 없음')}</span>}
           </span>
           <span className="text-[13px] font-bold text-verify shrink-0">{myStatus ? t('바꾸기') : t('켜기')}</span>

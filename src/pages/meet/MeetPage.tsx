@@ -12,6 +12,7 @@ import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { nowActivities } from '@core/lib/discover';
+import { meetFitsStage } from '@core/lib/meet';
 import { freeBlocks, todayIdx, fmtBlock, nowMin } from '@core/lib/timetable';
 import { todayISO, formatTime, formatDate } from '@core/lib/format';
 import { recommendMeets, recommendGroups, myGroups, mySchedule, joinStateOf, GROUP_SCOPE_LABELS, GROUP_SCOPE_EMOJI, scopeOf } from '@core/lib/meet';
@@ -154,7 +155,7 @@ function NowStrip() {
   const myFree = freeBlocks(me.timetable, today).filter((b) => b.end > nowMin());
   const nextFree = myFree[0] ? { start: Math.max(myFree[0].start, nowMin()), end: myFree[0].end } : null;
   const partner = v.visibleActivities.find((a) => a.category === 'store_deal' && a.partner && a.date === todayDate);
-  const now = useMemo(() => nowActivities(v.visibleActivities, me.id).slice(0, 3), [v, me.id]);
+  const now = useMemo(() => nowActivities(v.visibleActivities.filter((a) => meetFitsStage(a, me)), me.id).slice(0, 3), [v, me]);
   // 공강 바는 학부생에게만, 제휴 카드는 재학생(학부·대학원)에게만. 곧 시작하는 모임은 모두
   const kind = stageKind(me);
   const showFree = kind === 'undergrad' && me.timetable.length > 0 ? nextFree : null;
