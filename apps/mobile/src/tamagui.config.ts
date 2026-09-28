@@ -14,7 +14,7 @@ import { alpha } from './theme';
 function themeOf(p: Palette) {
   return {
     // Tamagui 컴포넌트(Switch · Sheet · Input …)가 읽는 기본 키
-    background: p.bg, backgroundHover: p.surface2, backgroundPress: p.tint, backgroundFocus: p.surface2, backgroundStrong: p.surface, backgroundTransparent: alpha(p.bg, 0),
+    background: p.bg, backgroundHover: p.surface2, backgroundPress: p.tint, backgroundFocus: p.surface2, backgroundStrong: p.surface, backgroundActive: p.primary, backgroundTransparent: alpha(p.bg, 0),
     color: p.ink, colorHover: p.ink, colorPress: p.ink, colorFocus: p.ink, colorTransparent: alpha(p.ink, 0),
     borderColor: p.line, borderColorHover: p.tint2, borderColorPress: p.tint2, borderColorFocus: p.primary,
     placeholderColor: p.ink3, outlineColor: alpha(p.primary, 0.3), shadowColor: alpha(p.ink, 0.1), shadowColorStrong: alpha(p.ink, 0.22),

@@ -46,6 +46,6 @@ function applyWebFont() {
   }).join('\n');
   const el = document.createElement('style');
   el.id = 'aroundu-web-font';
-  el.textContent = `${faces}\ndiv,span,p,input,textarea,button{font-family:"PJS",system-ui,-apple-system,sans-serif !important}`;
+  el.textContent = `${faces}\ndiv,span,p,input,textarea,button{font-family:"PJS",system-ui,-apple-system,sans-serif !important}\ninput:focus,textarea:focus{outline:none}`;
   document.head.appendChild(el);
 }

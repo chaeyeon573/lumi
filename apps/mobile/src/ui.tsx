@@ -331,7 +331,7 @@ export function Toggle({ checked, onChange, label, description }: { checked: boo
   return (
     <XStack onPress={() => onChange(!checked)} alignItems="center" paddingVertical={12} cursor="pointer">
       <YStack flex={1} marginRight={12}><T fontSize={14} fontWeight="600" color="$ink">{label}</T>{description ? <T fontSize={12} color="$ink3">{description}</T> : null}</YStack>
-      <Switch checked={checked} onCheckedChange={onChange} width={48} height={28} padding={3} borderWidth={0} borderRadius={RADIUS.pill} backgroundColor={checked ? '$primary' : '$line'} aria-label={label}>
+      <Switch checked={checked} onCheckedChange={onChange} width={48} height={28} padding={3} borderWidth={0} borderRadius={RADIUS.pill} backgroundColor="$line" activeStyle={{ backgroundColor: '$primary' }} aria-label={label}>
         <Switch.Thumb width={22} height={22} borderRadius={11} backgroundColor="$surface" boxShadow={`0 1px 2px ${alpha(C.shadow, 0.2)}`} transition="quick" />
       </Switch>
     </XStack>
