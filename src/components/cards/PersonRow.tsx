@@ -39,7 +39,7 @@ export function PersonRow({ user, reasons = [], onConnect, busy, compact, action
         <ReasonChips reasons={reasons} max={2} className="mb-1" />
         {degree === 2 && <div className="text-[11px] font-semibold text-verify">{t('2촌')}{mutual ? ` · ${t('공통 연결')} ${mutual}${t('명')}` : ''}</div>}
         <div className="flex items-center gap-1.5 min-w-0">
-          <button onClick={() => nav(`/users/${user.id}`)} className="text-[15px] font-bold truncate">{user.nickname}</button>
+          <button onClick={() => nav(`/users/${user.id}`)} className="text-[15px] font-bold truncate shrink-0 max-w-[70%]">{user.nickname}</button>
           <SchoolBadge user={user} withYear={view.gradYear} size="sm" className="min-w-0" />
         </div>
         <StatusPill user={user} size="sm" className="mt-0.5" />

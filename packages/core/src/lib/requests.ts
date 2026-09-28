@@ -13,7 +13,10 @@ import { INTEREST_LABELS } from './labels';
 import { isBlocked } from './relations';
 
 const lc = (s?: string) => (s ?? '').toLowerCase();
-const words = (s: string) => lc(s).split(/[\s,·/()+&]+/).filter((w) => w.length >= 2);
+const STOP = new Set(['the', 'and', 'with', 'who', 'can', 'for', 'from', 'into', 'that', 'this', 'once', 'any', 'anyone', 'someone', 'would', 'love', 'like', 'about', 'have', 'has', 'had', 'actually', 'minutes', 'chat', 'talk', 'meet', 'people', 'person', 'looking', 'experience', 'know', 'knows', 'our', 'your', 'you', 'are', 'was', 'were', 'one', 'out', 'over', 'what', 'when', 'where', 'how', 'lessons', '사람', '분', '있는', '하는', '아는', '관심', '경험', '이야기', '한번', '같이', '혹시', '찾아요', '찾고', '있어요', '싶어요', '나눌', '해주실', '분을']);
+const words = (s: string) => [...new Set(lc(s).replace(/[.!?'"“”‘’:;]/g, ' ').split(/[\s,·/()+&]+/).filter((w) => !STOP.has(w) && (/[가-힣]/.test(w) ? w.length >= 2 : w.length >= 3)))];
+/** 라틴 문자는 단어 단위로, 한글은 부분 문자열로 (조사가 붙으니까) */
+const mentions = (hay: string, w: string) => (/[가-힣]/.test(w) ? hay.includes(w) : new RegExp(`(^|[^a-z0-9])${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(s|es)?([^a-z0-9]|$)`).test(hay));
 
 /** 요청 본문·맥락과 사용자 프로필의 관련성 점수 (0 = 무관) */
 export function relevanceToRequest(req: Pick<NetworkRequest, 'text' | 'city' | 'field' | 'interests'>, u: User): { score: number; reasons: string[] } {
@@ -29,7 +32,7 @@ export function relevanceToRequest(req: Pick<NetworkRequest, 'text' | 'city' | '
   // 본문 키워드 ↔ 소개·직무·회사·업종·전공
   const ws = words(req.text);
   const text = [u.bio, u.likes, u.career?.industry, u.career?.role, u.career?.company, majorOf(u), u.nowWant].map(lc).join(' ');
-  const hits = ws.filter((w) => text.includes(w));
+  const hits = ws.filter((w) => mentions(text, w));
   if (hits.length) { s += Math.min(hits.length, 4); why.push(`${t('프로필에 언급')} · ${hits.slice(0, 2).join(', ')}`); }
   return { score: s, reasons: why };
 }
