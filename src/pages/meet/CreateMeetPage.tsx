@@ -6,6 +6,7 @@ import type { ActivityCategory, Visibility } from '@core/types';
 import { TopBar } from '@/components/layout/TopBar';
 import { Button, Chip, Field, Input, Textarea, Select, Segmented, Toggle } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
+import { stageKind } from '@core/lib/stage';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { ALL_CATEGORIES, CATEGORY_COLORS, CATEGORY_EMOJI, CATEGORY_LABELS } from '@core/lib/labels';
@@ -100,10 +101,12 @@ export function CreateMeetPage() {
           <div className="flex flex-wrap gap-1.5">{CATS.map((c) => <Chip key={c} size="sm" color={CATEGORY_COLORS[c]} active={category === c} onClick={() => setCategory(c)}>{CATEGORY_EMOJI[c]} {CATEGORY_LABELS[c]}</Chip>)}</div>
         </Field>
         <Field label={t('설명 (선택)')}><Textarea placeholder={t('어떤 사람과 무엇을 하고 싶은지 한두 줄이면 충분해요.')} value={description} onChange={(e) => setDescription(e.target.value)} maxLength={500} /></Field>
-        <section className="pt-2">
-          <p className="text-[13px] font-semibold text-ink-3 mb-2.5">{t('다른 방법으로 모으기')}</p>
-          <MeetExtraRows />
-        </section>
+        {stageKind(v.me) !== 'alumni' && (
+          <section className="pt-2">
+            <p className="text-[13px] font-semibold text-ink-3 mb-2.5">{t('다른 방법으로 모으기')}</p>
+            <MeetExtraRows />
+          </section>
+        )}
       </div>
       <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-surface/95 backdrop-blur border-t border-line p-3 safe-bottom z-20">
         <Button full size="lg" disabled={!valid} loading={busy} onClick={submit}>{t('모임 만들기')}</Button>

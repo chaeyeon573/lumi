@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Settings, Pencil, ShieldCheck, CalendarDays, ChevronRight, Users, CalendarCheck, Bookmark, Building2, FileText, Bell, MapPin, Briefcase, Sparkles, GraduationCap, Quote, Target, MessageSquareText, BookmarkCheck, Coffee, FlaskConical, Lock, ChevronDown } from 'lucide-react';
+import { Settings, Pencil, ShieldCheck, CalendarDays, ChevronRight, Users, CalendarCheck, Bookmark, Building2, FileText, Bell, MapPin, Briefcase, Sparkles, GraduationCap, Target, MessageSquareText, BookmarkCheck, Coffee, FlaskConical, Lock, ChevronDown } from 'lucide-react';
 import { stageKind, stageCopy } from '@core/lib/stage';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
-import { Avatar, Button, CardSkeleton, ErrorState, Tag } from '@/components/ui';
+import { Avatar, BottomSheet, Button, CardSkeleton, ErrorState, Tag } from '@/components/ui';
 import { PostCard } from '@/components/cards/PostCard';
 import { SchoolBadge } from '@/components/people_SchoolBadge';
 import { StatusPills } from '@/components/people_StatusPill';
@@ -18,7 +18,9 @@ import { isStudentStage, isAlumniStage, isGradStage, majorOf, cityOf, contextLin
 import { PEOPLE_WANT_LABELS, PEOPLE_WANT_EMOJI, ACTIVITY_WANT_LABELS, ACTIVITY_WANT_EMOJI, hasWants } from '@core/lib/wants';
 import { todayISO, formatDateTime } from '@core/lib/format';
 import { DAY_LABELS, toMin, statusNow, freeBlocks, todayIdx, nowMin, fmtBlock, toHHMM } from '@core/lib/timetable';
-import { profileCompletion, questionById } from '@core/data/prompts';
+import { profileCompletion } from '@core/data/prompts';
+import { HingePromptCard } from '@/components/prompts/ConnectNote';
+import { DailyPromptCard, useDailyPrompt } from '@/components/prompts/DailyPrompt';
 import { cn } from '@core/lib/cn';
 import type { User } from '@core/types';
 
@@ -81,7 +83,6 @@ export function ProfilePage() {
   const upcoming = activities.filter((a) => a.date >= today && (a.hostId === me.id || participations.some((p) => p.activityId === a.id && p.userId === me.id && (p.status === 'approved' || p.status === 'pending')))).sort((a, b) => (a.date + a.startTime).localeCompare(b.date + b.startTime));
   const meets = activities.filter((a) => participations.some((p) => p.activityId === a.id && p.userId === me.id && p.status === 'approved')).length + activities.filter((a) => a.hostId === me.id).length;
   const completion = profileCompletion(me);
-  const goTo = me.prompts[0];
   const now = statusNow(me.timetable);
   const nextFree = freeBlocks(me.timetable, todayIdx()).find((b) => b.end > nowMin());
   const days = [0, 1, 2, 3, 4];
@@ -122,17 +123,14 @@ export function ProfilePage() {
               <div className="text-[13px] text-ink-2 leading-snug truncate">{headerLine(me)}</div>
             </div>
           </div>
-          {goTo?.answer && (
-            <div className="mt-4 rounded-2xl bg-surface-2 px-4 py-3">
-              <div className="text-[11px] font-bold tracking-wide text-verify uppercase flex items-center gap-1"><Quote size={11} />{questionById(goTo.questionId)?.text}</div>
-              <p className="mt-1 text-[14px] text-ink-2 italic">“{goTo.answer}”</p>
-            </div>
-          )}
           <div className="mt-4 flex gap-2">
             <Button full icon={<Pencil size={15} />} onClick={() => nav('/profile/edit')}>{t('프로필 편집')}</Button>
             <Button full variant="secondary" icon={<ShieldCheck size={15} />} onClick={() => nav('/settings/privacy')}>{t('공개 범위')}</Button>
           </div>
         </section>
+
+        {/* ── 내 답변 — Hinge 처럼 질문은 작게, 답은 크게. 끝에 오늘의 질문 ── */}
+        <MyPrompts me={me} />
 
         {/* ── Open To: "☕ 이번 주 커피 가능" — 기간이 지나면 자동으로 꺼진다. 크게 내걸지 않고 한 줄 ── */}
         <button onClick={() => nav('/profile/open-to')} className="card w-full p-4 flex items-center gap-3 text-left press">
@@ -305,7 +303,7 @@ export function ProfilePage() {
               { icon: <MessageSquareText size={18} />, label: t('프로필 질문'), sub: `${t('프로필 완성')} ${completion.percent}%`, go: () => nav('/profile/prompts') },
               { icon: <BookmarkCheck size={18} />, label: `${t('저장한 사람')} ${savedPeople}`, sub: t('나만 볼 수 있어요'), go: () => nav('/profile/saved') },
               { icon: <ShieldCheck size={18} />, label: t('공개 범위'), sub: AUDIENCE_LABELS[privacyOf(me).scope], go: () => nav('/settings/privacy') },
-              { icon: <Target size={18} />, label: t('목표와 역할'), sub: t('이번 학기 목표 · 생활권 · 찾는 역할'), go: () => nav('/profile/context') },
+              { icon: <Target size={18} />, label: alumni ? t('찾는 사람과 역할') : t('목표와 역할'), sub: alumni ? t('찾는 역할 · 내가 도울 수 있는 것') : t('이번 학기 목표 · 생활권 · 찾는 역할'), go: () => nav('/profile/context') },
               { icon: <Building2 size={18} />, label: t('내 그룹'), sub: `${myOrgs}${t('개')}`, go: () => nav('/profile/groups') },
               { icon: <Users size={18} />, label: t('내 연결'), sub: `${friends}${t('명')}`, go: () => nav('/profile/friends') },
               { icon: <Bookmark size={18} />, label: t('저장·지원 내역'), sub: `${saved}${t('개')}`, go: () => nav('/community?tab=opportunities&sub=saved') },
@@ -337,5 +335,38 @@ export function ProfilePage() {
         </section>
       </div>
     </div>
+  );
+}
+
+/** 내 답변 — 가로로 넘기는 큰 카드. 오늘의 질문에 아직 답하지 않았으면 마지막에 한 장 */
+function MyPrompts({ me }: { me: User }) {
+  const nav = useNavigate();
+  const { q, mine } = useDailyPrompt();
+  const [dailyOpen, setDailyOpen] = useState(false);
+  const answered = me.prompts.filter((p) => p.answer.trim());
+  return (
+    <section className="space-y-2.5">
+      <SectionTitle icon={<MessageSquareText size={17} />} right={<EditLink to="/profile/prompts" label={t('질문 바꾸기')} />}>{t('내 답변')}</SectionTitle>
+      {answered.length === 0 ? (
+        <button onClick={() => nav('/profile/prompts')} className="card w-full p-4 text-left press">
+          <span className="block text-[15px] font-bold text-ink">{t('질문 3개에 답해 보세요')}</span>
+          <span className="block text-[12px] text-ink-3 mt-0.5">{t('답이 있으면 처음 만나는 사람도 말 걸기 쉬워요')}</span>
+        </button>
+      ) : (
+        <div className="flex gap-2.5 overflow-x-auto hide-scrollbar -mx-4 px-4 snap-x pb-1">
+          {answered.map((p) => <HingePromptCard key={p.questionId} prompt={p} className="w-[280px] shrink-0 snap-start" />)}
+          {!mine && (
+            <button onClick={() => setDailyOpen(true)} className="w-[210px] shrink-0 snap-start rounded-[20px] border-2 border-dashed border-line bg-card/60 p-4 text-left press flex flex-col">
+              <span className="text-[11px] font-bold text-primary flex items-center gap-1"><Sparkles size={12} />{t('오늘의 질문')}</span>
+              <span className="mt-1.5 text-[15px] font-bold text-ink leading-snug flex-1">{q.text}</span>
+              <span className="mt-3 text-[13px] font-semibold text-verify flex items-center gap-0.5">{t('답하기')}<ChevronRight size={14} /></span>
+            </button>
+          )}
+        </div>
+      )}
+      <BottomSheet open={dailyOpen} onClose={() => setDailyOpen(false)} title={t('오늘의 질문')}>
+        <DailyPromptCard bare onDone={() => setDailyOpen(false)} />
+      </BottomSheet>
+    </section>
   );
 }

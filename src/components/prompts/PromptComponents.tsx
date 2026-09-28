@@ -3,20 +3,23 @@ import { t, lang } from '@core/i18n';
 import { Plus, X, Mic, Square, Play, Pause, Trash2, Check, BarChart3, Pencil } from 'lucide-react';
 import type { PollPrompt, ProfilePrompt, VoicePrompt } from '@core/types';
 import { BottomSheet, Chip, Textarea, Tag } from '@/components/ui';
-import { TEXT_PROMPTS, VOICE_PROMPTS, POLL_PROMPTS, PROMPT_CATEGORY_LABELS, questionById, pollById, MAX_TEXT_PROMPTS, REQUIRED_TEXT_PROMPTS, REQUIRED_SLOTS, FIRST_PROMPT_ID, slotCategories, normalizePrompts, type PromptCategory } from '@core/data/prompts';
+import { textPromptsFor, voicePromptsFor, pollPromptsFor, firstPromptIdFor, PROMPT_CATEGORY_LABELS, questionById, pollById, MAX_TEXT_PROMPTS, REQUIRED_TEXT_PROMPTS, REQUIRED_SLOTS, slotCategories, normalizePrompts, type PromptCategory } from '@core/data/prompts';
+import type { StageKind } from '@core/lib/stage';
 import { cn } from '@core/lib/cn';
 
 // ─── 텍스트 질문 편집 ──────────────────────────────────────────────────────
-export function PromptEditor({ value, onChange }: { value: ProfilePrompt[]; onChange: (v: ProfilePrompt[]) => void }) {
+export function PromptEditor({ value, onChange, kind = 'undergrad' }: { value: ProfilePrompt[]; onChange: (v: ProfilePrompt[]) => void; kind?: StageKind }) {
   const [pickerOpen, setPickerOpen] = useState(false);
   const [editing, setEditing] = useState<number | null>(null);
   const [cat, setCat] = useState<PromptCategory | 'all'>('all');
   const used = new Set(value.map((p) => p.questionId));
   const answered = value.filter((p) => p.answer.trim()).length;
-  // 1번 슬롯은 첫 질문으로 고정. 저장된 값이 규칙에 안 맞으면 정규화한다.
+  // 1번 슬롯은 단계별 첫 질문으로 고정. 저장된 값이 규칙에 안 맞으면 정규화한다.
+  const firstId = firstPromptIdFor(kind);
+  const pool = textPromptsFor(kind);
   useEffect(() => {
-    if (value[0]?.questionId !== FIRST_PROMPT_ID) onChange(normalizePrompts(value));
-  }, [value, onChange]);
+    if (value[0]?.questionId !== firstId) onChange(normalizePrompts(value, kind));
+  }, [value, onChange, firstId, kind]);
   const targetIndex = editing ?? value.length;
   const allowed = slotCategories(targetIndex);
   const slot = REQUIRED_SLOTS[targetIndex];
@@ -41,7 +44,7 @@ export function PromptEditor({ value, onChange }: { value: ProfilePrompt[]; onCh
               {fixed
                 ? <div className="text-left text-[13px] font-bold text-primary">{q?.text}</div>
                 : <button type="button" onClick={() => openPicker(i)} className="text-left text-[13px] font-bold text-primary flex items-center gap-1">{q?.text}<Pencil size={11} className="text-ink-3" /></button>}
-              {!fixed && <button type="button" onClick={() => onChange(normalizePrompts(value.filter((_, j) => j !== i)))} className="text-ink-3 h-6 w-6 grid place-items-center" aria-label={t('삭제')}><X size={15} /></button>}
+              {!fixed && <button type="button" onClick={() => onChange(normalizePrompts(value.filter((_, j) => j !== i), kind))} className="text-ink-3 h-6 w-6 grid place-items-center" aria-label={t('삭제')}><X size={15} /></button>}
             </div>
             <Textarea className="mt-2 min-h-[64px]" placeholder={q?.placeholder ?? t('2줄 이내로 짧게')} maxLength={80} value={p.answer} onChange={(e) => onChange(value.map((x, j) => (j === i ? { ...x, answer: e.target.value } : x)))} />
             <div className="text-right text-[11px] text-ink-3 mt-1">{p.answer.length}/80</div>
@@ -53,24 +56,32 @@ export function PromptEditor({ value, onChange }: { value: ProfilePrompt[]; onCh
       )}
       <BottomSheet open={pickerOpen} onClose={() => { setPickerOpen(false); setEditing(null); }} title={slot ? `${targetIndex + 1}. ${slot.hint}` : t('질문 고르기')} tall>
         {slot && <p className="text-[12px] text-ink-3 mb-2">{t('이 자리에는 다른 종류의 질문이 들어가요')}: {slot.categories.map((c) => PROMPT_CATEGORY_LABELS[c]).join(' · ')}</p>}
-        <div className="flex gap-1.5 overflow-x-auto hide-scrollbar pb-2 -mx-1 px-1">
-          <Chip size="sm" active={cat === 'all'} onClick={() => setCat('all')}>{t('전체')}</Chip>
-          {(Object.keys(PROMPT_CATEGORY_LABELS) as PromptCategory[]).filter((c) => !allowed || allowed.includes(c)).map((c) => <Chip key={c} size="sm" active={cat === c} onClick={() => setCat(c)}>{PROMPT_CATEGORY_LABELS[c]}</Chip>)}
-        </div>
-        <div className="space-y-1.5 mt-1">
-          {TEXT_PROMPTS.filter((q) => q.id !== FIRST_PROMPT_ID && (!allowed || allowed.includes(q.category)) && (cat === 'all' || q.category === cat)).map((q) => {
-            const taken = used.has(q.id) && value[editing ?? -1]?.questionId !== q.id;
-            return <button key={q.id} type="button" disabled={taken} onClick={() => pick(q.id)} className={cn('w-full text-left rounded-xl px-3.5 py-3 border border-line text-[14px] font-medium press', taken ? 'opacity-40' : 'hover:bg-surface-2')}>{q.text}<span className="block text-[11px] text-ink-3 mt-0.5">{PROMPT_CATEGORY_LABELS[q.category]}{taken ? t(' · 이미 답했어요') : ''}</span></button>;
-          })}
-        </div>
+        {(() => {
+          const pickable = pool.filter((q) => q.id !== firstId && (!allowed || allowed.includes(q.category)));
+          const cats = (Object.keys(PROMPT_CATEGORY_LABELS) as PromptCategory[]).filter((c) => pickable.some((q) => q.category === c));
+          const shown = pickable.filter((q) => cat === 'all' || q.category === cat);
+          return (<>
+            <div className="flex gap-1.5 overflow-x-auto hide-scrollbar pb-2 -mx-1 px-1">
+              <Chip size="sm" active={cat === 'all'} onClick={() => setCat('all')}>{t('전체')} {pickable.length}</Chip>
+              {cats.map((c) => <Chip key={c} size="sm" active={cat === c} onClick={() => setCat(c)}>{PROMPT_CATEGORY_LABELS[c]} {pickable.filter((q) => q.category === c).length}</Chip>)}
+            </div>
+            <div className="space-y-1.5 mt-1">
+              {shown.map((q) => {
+                const taken = used.has(q.id) && value[editing ?? -1]?.questionId !== q.id;
+                return <button key={q.id} type="button" disabled={taken} onClick={() => pick(q.id)} className={cn('w-full text-left rounded-2xl px-4 py-3.5 border border-line text-[15px] font-semibold text-ink press', taken ? 'opacity-40' : 'hover:bg-surface-2')}>{q.text}<span className="block text-[11px] font-medium text-ink-3 mt-0.5">{PROMPT_CATEGORY_LABELS[q.category]}{q.placeholder ? ` · ${q.placeholder}` : ''}{taken ? t(' · 이미 답했어요') : ''}</span></button>;
+              })}
+            </div>
+          </>);
+        })()}
       </BottomSheet>
     </div>
   );
 }
 
 // ─── 음성 질문 (데모: 실제 녹음 대신 길이만 기록) ────────────────────────────
-export function VoicePromptEditor({ value, onChange }: { value?: VoicePrompt; onChange: (v?: VoicePrompt) => void }) {
-  const [questionId, setQuestionId] = useState(value?.questionId ?? VOICE_PROMPTS[0].id);
+export function VoicePromptEditor({ value, onChange, kind = 'undergrad' }: { value?: VoicePrompt; onChange: (v?: VoicePrompt) => void; kind?: StageKind }) {
+  const voices = voicePromptsFor(kind);
+  const [questionId, setQuestionId] = useState(value?.questionId ?? voices[0].id);
   const [recording, setRecording] = useState(false);
   const [sec, setSec] = useState(0);
   const timer = useRef<number | null>(null);
@@ -89,7 +100,7 @@ export function VoicePromptEditor({ value, onChange }: { value?: VoicePrompt; on
   }
   return (
     <div className="card p-3.5">
-      <div className="flex flex-wrap gap-1.5">{VOICE_PROMPTS.map((q) => <Chip key={q.id} size="sm" active={questionId === q.id} onClick={() => !recording && setQuestionId(q.id)}>{q.text}</Chip>)}</div>
+      <div className="flex flex-wrap gap-1.5">{voices.map((q) => <Chip key={q.id} size="sm" active={questionId === q.id} onClick={() => !recording && setQuestionId(q.id)}>{q.text}</Chip>)}</div>
       <div className="mt-3 flex items-center gap-3">
         <button type="button" onClick={recording ? stop : start} className={cn('h-14 w-14 rounded-full grid place-items-center text-white press', recording ? 'bg-danger animate-pulse' : 'bg-primary')} aria-label={recording ? t('녹음 중지') : t('녹음 시작')}>{recording ? <Square size={20} /> : <Mic size={22} />}</button>
         <div className="flex-1">
@@ -129,7 +140,7 @@ function Waveform({ active, progress = 0 }: { active?: boolean; progress?: numbe
 }
 
 // ─── 투표형 질문 ───────────────────────────────────────────────────────────
-export function PollEditor({ value, onChange }: { value?: PollPrompt; onChange: (v?: PollPrompt) => void }) {
+export function PollEditor({ value, onChange, kind = 'undergrad' }: { value?: PollPrompt; onChange: (v?: PollPrompt) => void; kind?: StageKind }) {
   if (value) {
     const q = pollById(value.questionId);
     return (
@@ -142,7 +153,7 @@ export function PollEditor({ value, onChange }: { value?: PollPrompt; onChange: 
   }
   return (
     <div className="space-y-1.5">
-      {POLL_PROMPTS.map((q) => <button key={q.id} type="button" onClick={() => onChange({ questionId: q.id, options: q.options, ownChoice: 0, votes: {} })} className="w-full text-left card px-3.5 py-3 press"><div className="text-[14px] font-semibold">{q.text}</div><div className="text-[12px] text-ink-3 mt-0.5">{q.options.join(' · ')}</div></button>)}
+      {pollPromptsFor(kind).map((q) => <button key={q.id} type="button" onClick={() => onChange({ questionId: q.id, options: q.options, ownChoice: 0, votes: {} })} className="w-full text-left card px-3.5 py-3 press"><div className="text-[14px] font-semibold">{q.text}</div><div className="text-[12px] text-ink-3 mt-0.5">{q.options.join(' · ')}</div></button>)}
     </div>
   );
 }

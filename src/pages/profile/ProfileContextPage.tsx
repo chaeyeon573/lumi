@@ -11,6 +11,7 @@ import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { ALL_GOALS, GOAL_EMOJI, GOAL_LABELS, LOOKING_FOR_ROLES, OFFER_ROLES, PERSON_ROLE_LABELS, RESIDENCE_LABELS, ALL_MEET_PREFS, MEET_PREF_LABELS, MEET_PREF_EMOJI } from '@core/lib/labels';
 import type { Goal, Role, Residence, MeetPreference } from '@core/types';
+import { isAlumniStage } from '@core/lib/network';
 
 /** 이번 학기 목표·찾는 사람·제공할 수 있는 것·생활권·관심 조직 — 추천의 핵심 입력 */
 export function ProfileContextPage() {
@@ -19,6 +20,7 @@ export function ProfileContextPage() {
   const run = useAppStore((s) => s.run);
   const orgs = useAppStore((s) => s.organizations);
   const me = v.me;
+  const alumni = isAlumniStage(me);
   const [goals, setGoals] = useState<Goal[]>(me.goals);
   const [lookingFor, setLookingFor] = useState<Role[]>(me.lookingFor);
   const [canOffer, setCanOffer] = useState<Role[]>(me.canOffer);
@@ -41,7 +43,7 @@ export function ProfileContextPage() {
 
   return (
     <div className="min-h-full pb-28">
-      <TopBar back title={t('목표와 역할')} />
+      <TopBar back title={alumni ? t('찾는 사람과 역할') : t('목표와 역할')} />
       <div className="px-4 py-4 space-y-5">
         <div className="card p-4 bg-[linear-gradient(120deg,#E9EDFF,#FFFFFF)]">
           <div className="flex items-center gap-2 mb-2"><Gift size={16} className="text-primary" /><b className="text-[14px]">{t('채울수록 더 잘 연결돼요')}</b></div>
@@ -51,15 +53,15 @@ export function ProfileContextPage() {
         <Field label={t('어떤 사람을 만나고 싶어요?')} hint={t('여러 개 골라도 돼요. 추천 순서에 바로 반영돼요.')}>
           <div className="space-y-1.5">{ALL_MEET_PREFS.map((p) => <button key={p} type="button" onClick={() => setPref(toggle(pref, p))} className={`w-full text-left rounded-xl px-3.5 h-11 text-[14px] font-medium border flex items-center gap-2 ${pref.includes(p) ? 'border-primary bg-primary-soft' : 'border-line'}`}><span>{MEET_PREF_EMOJI[p]}</span>{MEET_PREF_LABELS[p]}</button>)}</div>
         </Field>
-        <Field label={t('이번 학기에 하고 싶은 것')} right={<VisibilityPicker compact value={me.fieldVisibility.goals} onChange={(vis) => run(() => api.users.update(me.id, { fieldVisibility: { ...me.fieldVisibility, goals: vis } }))} />}>
+        {!alumni && <Field label={t('이번 학기에 하고 싶은 것')} right={<VisibilityPicker compact value={me.fieldVisibility.goals} onChange={(vis) => run(() => api.users.update(me.id, { fieldVisibility: { ...me.fieldVisibility, goals: vis } }))} />}>
           <div className="flex flex-wrap gap-2">{ALL_GOALS.map((g) => <Chip key={g} active={goals.includes(g)} onClick={() => setGoals(toggle(goals, g))}>{GOAL_EMOJI[g]} {GOAL_LABELS[g]}</Chip>)}</div>
-        </Field>
+        </Field>}
         <Field label={t('찾는 사람')}><div className="flex flex-wrap gap-2">{LOOKING_FOR_ROLES.map((r) => <Chip key={r} active={lookingFor.includes(r)} onClick={() => setLookingFor(toggle(lookingFor, r))}>{PERSON_ROLE_LABELS[r]}</Chip>)}</div></Field>
         <Field label={t('내가 제공할 수 있는 것')} hint={t('팀원·공동창업자 추천의 핵심 데이터예요.')}><div className="flex flex-wrap gap-2">{OFFER_ROLES.map((r) => <Chip key={r} active={canOffer.includes(r)} onClick={() => setCanOffer(toggle(canOffer, r))}>{PERSON_ROLE_LABELS[r]}</Chip>)}</div></Field>
-        <Field label={t('생활권')} hint={t('정확한 기숙사 방·주소·실시간 위치는 저장하지 않아요. \'같은 생활권이에요\' 정도만 보여요.')} right={<VisibilityPicker compact value={me.fieldVisibility.living} onChange={(vis) => run(() => api.users.update(me.id, { fieldVisibility: { ...me.fieldVisibility, living: vis } }))} />}>
+        {!alumni && <Field label={t('생활권')} hint={t('정확한 기숙사 방·주소·실시간 위치는 저장하지 않아요. \'같은 생활권이에요\' 정도만 보여요.')} right={<VisibilityPicker compact value={me.fieldVisibility.living} onChange={(vis) => run(() => api.users.update(me.id, { fieldVisibility: { ...me.fieldVisibility, living: vis } }))} />}>
           <Segmented value={residence} onChange={setResidence} options={(Object.keys(RESIDENCE_LABELS) as Residence[]).map((r) => ({ value: r, label: RESIDENCE_LABELS[r] }))} />
           <Input className="mt-2" placeholder={t('주로 활동하는 구역 (예: 신촌 북쪽, 공학관 근처)')} value={zone} onChange={(e) => setZone(e.target.value)} />
-        </Field>
+        </Field>}
         <Field label={t('관심 있는 연구실·동아리')} hint={t('관심 조직의 모집·행사가 먼저 추천돼요.')}>
           <div className="flex flex-wrap gap-2">{orgs.filter((o) => o.schoolId === mySchool).map((o) => <Chip key={o.id} active={orgIds.includes(o.id)} onClick={() => setOrgIds(toggle(orgIds, o.id))}>{o.logo.emoji} {o.name}</Chip>)}</div>
         </Field>

@@ -110,7 +110,7 @@ export function PrivacySettingsPage() {
         <div className="pt-2 px-1 text-[12px] font-bold text-ink-3">{t('프로필 항목별')}</div>
         <p className="text-[12px] text-ink-3">{t('멀티프로필 대신 항목별로 공개 범위를 정해요. 정확한 위치는 어떤 설정에서도 공개되지 않아요.')}</p>
         <div className="card divide-y divide-line">
-          {FIELDS.map((f) => (
+          {FIELDS.filter((f) => !isAlumniStage(me) || !['timetable', 'goals', 'living'].includes(f.key)).map((f) => (
             <div key={f.key} className="flex items-center gap-3 px-4 py-3"><span className="flex-1"><span className="block text-[14px] font-medium">{f.label}</span>{f.desc && <span className="block text-[11px] text-ink-3">{f.desc}</span>}</span><VisibilityPicker compact value={me.fieldVisibility[f.key]} onChange={(vis) => set(f.key, vis)} label={`${f.label}${t(' 공개 범위')}`} /></div>
           ))}
         </div>

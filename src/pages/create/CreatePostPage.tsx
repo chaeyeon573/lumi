@@ -3,7 +3,7 @@ import { t } from '@core/i18n';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Plus, X, Lock, ImageOff, ChevronDown, ChevronUp } from 'lucide-react';
 import type { PostInput } from '@core/api';
-import type { PostType, Visibility } from '@core/types';
+import type { PostAudience, PostType, Visibility } from '@core/types';
 import { TopBar } from '@/components/layout/TopBar';
 import { Button, Field, Input, Textarea, Select, Cover, Toggle, Chip, Avatar, Segmented } from '@/components/ui';
 import { composerPrompts } from '@core/lib/stage';
@@ -11,7 +11,8 @@ import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { ALL_POST_TYPES, POST_TYPE_LABELS, POST_TYPE_EMOJI, TOPIC_TAGS, VISIBILITY_LABELS } from '@core/lib/labels';
-import { POST_VISIBILITIES } from '@core/lib/feed';
+import { POST_VISIBILITIES, defaultAudience } from '@core/lib/feed';
+import { isAlumniStage } from '@core/lib/network';
 import { myGroups } from '@core/lib/meet';
 import { friendsOf } from '@core/lib/relations';
 import { photo } from '@/lib/assets';
@@ -51,7 +52,11 @@ export function CreatePostPage() {
     relatedActivityId: params.get('activity') ?? undefined, relatedOpportunityId: undefined,
     orgId: orgParam && adminOrgs.some((o) => o.id === orgParam) ? orgParam : undefined, anonymous: anonPre,
     postType: prompt?.postType ?? (params.get('type') as PostType | null) ?? 'story', taggedUserIds: [], recruitNext: false, showOnProfile: true, showOnFeed: true,
+    audience: defaultAudience(v.me, prompt?.key),
   });
+  const alumniMe = isAlumniStage(v.me);
+  const AUDIENCES: { value: PostAudience; label: string }[] = [{ value: 'students', label: t('재학생') }, { value: 'alumni', label: t('동문') }, { value: 'all', label: t('모두') }];
+  const audienceHint = (a?: PostAudience) => a === 'alumni' ? t('동문만 봐요') : a === 'students' ? (alumniMe ? t('재학생 공간에 올려요 · 후배들이 봐요') : t('재학생만 봐요')) : t('재학생과 동문 모두 봐요');
   const [tagInput, setTagInput] = useState('');
   const [busy, setBusy] = useState(false);
   const [more, setMore] = useState(!!form.orgId || (form.postType !== 'story' && !prompt));
@@ -107,6 +112,14 @@ export function CreatePostPage() {
           )}
         </Field>
 
+        {form.visibility !== 'group' && !form.orgId && (
+          <Field label={t('올릴 공간')} hint={audienceHint(form.audience)}>
+            <div className="flex gap-1.5" role="radiogroup">
+              {AUDIENCES.map((a) => <Chip key={a.value} active={form.audience === a.value} onClick={() => patch({ audience: a.value })}>{a.label}</Chip>)}
+            </div>
+          </Field>
+        )}
+
         <button type="button" onClick={() => setMore((m) => !m)} className="w-full h-10 rounded-full bg-surface-2 text-[13px] font-semibold text-ink-2 flex items-center justify-center gap-1 press">{more ? <ChevronUp size={15} /> : <ChevronDown size={15} />}{more ? t('접기') : t('더 보기')}</button>
 
         {more && (
@@ -115,7 +128,7 @@ export function CreatePostPage() {
             <Field label={t('주제')}><div className="flex flex-wrap gap-1.5">{TOPIC_TAGS.map((tg) => <Chip key={tg.key} size="sm" active={form.topics?.includes(tg.key)} onClick={() => patch({ topics: toggle(form.topics, tg.key) })}>#{tg.label}</Chip>)}</div></Field>
             <Field label={t('태그 (학교·수업·동아리)')}>
               <div className="flex gap-2"><Input placeholder={t('태그 입력 후 추가')} value={tagInput} onChange={(e) => setTagInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); addTag(); } }} /><Button variant="secondary" onClick={addTag}>{t('추가')}</Button></div>
-              <div className="flex flex-wrap gap-1.5 mt-2">{[...new Set(v.me.timetable.map((c) => c.name))].slice(0, 3).map((c) => <Chip key={c} size="sm" active={form.courseTag === c} onClick={() => patch({ courseTag: form.courseTag === c ? undefined : c })}>📚 {c}</Chip>)}{form.tags.map((tg, i) => <button key={i} onClick={() => patch({ tags: form.tags.filter((_, j) => j !== i) })} className="rounded-lg bg-primary-soft text-primary text-[12px] font-semibold px-2 h-7 flex items-center gap-1">#{tg}<X size={11} /></button>)}</div>
+              <div className="flex flex-wrap gap-1.5 mt-2">{(alumniMe ? [] : [...new Set(v.me.timetable.map((c) => c.name))].slice(0, 3)).map((c) => <Chip key={c} size="sm" active={form.courseTag === c} onClick={() => patch({ courseTag: form.courseTag === c ? undefined : c })}>📚 {c}</Chip>)}{form.tags.map((tg, i) => <button key={i} onClick={() => patch({ tags: form.tags.filter((_, j) => j !== i) })} className="rounded-lg bg-primary-soft text-primary text-[12px] font-semibold px-2 h-7 flex items-center gap-1">#{tg}<X size={11} /></button>)}</div>
             </Field>
             {!anon && (
               <Field label={t('함께한 사람')} hint={t('태그된 사람이 승인해야 그 사람 프로필에도 표시돼요.')}>

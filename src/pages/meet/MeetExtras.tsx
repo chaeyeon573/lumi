@@ -2,10 +2,17 @@ import { useNavigate } from 'react-router-dom';
 import { Vote, BookOpen, Users, ChevronRight } from 'lucide-react';
 import { t } from '@core/i18n';
 import { cn } from '@core/lib/cn';
+import type { StageKind } from '@core/lib/stage';
+import type { Activity } from '@core/types';
+import { isTeamActivity } from '@core/lib/discover';
 
-/** 모임 탭 하단·모임 만들기 폼 아래의 조용한 확장 행 — 같이 계획하기 / Study Crew / 팀원 모집 (기존 기능 유지) */
-export function MeetExtraRows({ className }: { className?: string }) {
+/** 졸업생에게는 수업·Study Crew·팀원 모집·스터디를 보여주지 않는다 (대학원생은 연구·스터디를 그대로) */
+export const hideForAlumni = (a: Activity) => isTeamActivity(a) || a.category === 'study';
+
+/** 모임 탭 하단·모임 만들기 폼 아래의 조용한 확장 행 — 같이 계획하기 / Study Crew / 팀원 모집 (기존 기능 유지). 졸업생에게는 없다 */
+export function MeetExtraRows({ className, kind }: { className?: string; kind?: StageKind }) {
   const nav = useNavigate();
+  if (kind === 'alumni') return null;
   const rows: { key: string; icon: React.ReactNode; title: string; sub: string; to: string }[] = [
     { key: 'together', icon: <Vote size={18} />, title: t('같이 계획하기'), sub: t('시간 투표로 정하기'), to: '/together/new' },
     { key: 'crew', icon: <BookOpen size={18} />, title: t('수업 Study Crew'), sub: t('시간표에서 수업을 골라요'), to: '/timetable' },

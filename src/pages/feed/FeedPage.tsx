@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Image } from 'lucide-react';
+import { Image, X } from 'lucide-react';
 import { t } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { Chip, Button, CardSkeleton, EmptyState, ErrorState, Avatar, Segmented } from '@/components/ui';
@@ -36,9 +36,24 @@ export function FeedPage() {
         <div className="px-4">
           <Composer />
           <Segmented className="mt-3" value={tab} onChange={setTab} options={options} />
+          {kind === 'alumni' && <AlumniSpaceHint />}
           <div className="pt-2"><FeedList tab={tab} /></div>
         </div>
       )}
+    </div>
+  );
+}
+
+/** 졸업생 — 추천 피드에는 재학생 글이 섞이지 않는다는 한 줄. 닫으면 다시 보이지 않는다 */
+const SPACE_HINT_KEY = 'aroundu.feed.alumniSpaceHint';
+function AlumniSpaceHint() {
+  const [show, setShow] = useState(() => { try { return localStorage.getItem(SPACE_HINT_KEY) !== '1'; } catch { return true; } });
+  if (!show) return null;
+  const close = () => { try { localStorage.setItem(SPACE_HINT_KEY, '1'); } catch { /* */ } setShow(false); };
+  return (
+    <div className="mt-2 flex items-center gap-1.5 pl-3 pr-1 text-[12px] text-ink-3">
+      <span className="flex-1 min-w-0">{t('재학생 글은 {where}에서 볼 수 있어요').replace('{where}', `${campusTabLabel('alumni')} › ${t('학교 전체')}`)}</span>
+      <button type="button" onClick={close} aria-label={t('닫기')} className="h-7 w-7 rounded-full grid place-items-center press shrink-0"><X size={13} /></button>
     </div>
   );
 }
@@ -93,7 +108,7 @@ function FeedList({ tab }: { tab: Tab }) {
 
   const row = (p: Post) => p.sponsored
     ? <SponsoredRow key={p.id} post={p} expanded={false} onClick={() => nav(`/feed/${p.id}`)} />
-    : <PostRow key={p.id} post={p} onClick={() => nav(`/feed/${p.id}`)} />;
+    : <PostRow key={p.id} post={p} mixed={tab === 'following' || (tab === 'campus' && scope === 'all')} onClick={() => nav(`/feed/${p.id}`)} />;
 
   const emptyTitle = tab === 'following' ? t('팔로우한 사람·그룹의 글이 아직 없어요') : tab === 'campus' ? (scope === 'alumni' ? t('동문 글이 아직 없어요') : scope === 'grads' ? t('대학원생 글이 아직 없어요') : t('우리 학교 글이 아직 없어요')) : t('아직 올라온 것이 없어요');
 

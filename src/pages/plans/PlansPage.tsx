@@ -12,6 +12,8 @@ import { formatDateTime, todayISO, relativeTime, formatDate } from '@core/lib/fo
 import { isTeamActivity } from '@core/lib/discover';
 import { dday } from '@core/lib/recommend';
 import type { OpportunityIntent, Goal, Activity } from '@core/types';
+import { isAlumniStage } from '@core/lib/network';
+import { NoteBubble } from '@/components/prompts/ConnectNote';
 
 /** Me › My Plans — 받은 초대 / 대기 / 확정 / 관심 행사 / 팀 신청 / Study Crew */
 export function PlansPage() {
@@ -27,6 +29,7 @@ export function PlansPage() {
   const intents = useAppStore((s) => s.opportunityIntents);
   const polls = useAppStore((s) => s.timePolls);
   const me = v.me;
+  const alumni = !!me && isAlumniStage(me);
   const today = todayISO();
   const openPolls = polls.filter((p) => p.status === 'open' && (p.hostId === me.id || p.inviteeIds.includes(me.id)));
   if (status === 'loading') return <div><TopBar back title="My Plans" /><CardSkeleton /></div>;
@@ -63,7 +66,7 @@ export function PlansPage() {
     <div className="min-h-full pb-8">
       <TopBar back title="My Plans" messages />
       <div className="px-4 pt-2 space-y-5">
-        <section>
+        {!alumni && <section>
           <div className="flex items-end justify-between mb-2"><h2 className="text-[15px] font-bold flex items-center gap-1.5"><Vote size={15} className="text-heart" />{t('시간 정하는 중')}<span className="text-[12px] text-ink-3 font-semibold">{openPolls.length}</span></h2><button onClick={() => nav('/together/new')} className="text-[12px] font-semibold text-primary">+ Plan Together</button></div>
           {openPolls.length === 0 ? <div className="card px-4 py-3 text-[12px] text-ink-3">{t('진행 중인 시간 투표가 없어요. 친구들과 만날 시간을 투표로 정해보세요.')}</div> : (
             <div className="card divide-y divide-line">{openPolls.map((p) => { const h = v.userById(p.hostId); const voted = !!p.votes[me.id]; const n = Object.keys(p.votes).length; return (
@@ -73,10 +76,10 @@ export function PlansPage() {
                 {p.hostId === me.id ? <Tag tone="primary" className="h-5">{t('확정하기')}</Tag> : voted ? <Tag tone="mint" className="h-5">{t('투표 완료')}</Tag> : <Tag tone="accent" className="h-5">{t('투표하기')}</Tag>}
               </button>); })}</div>
           )}
-        </section>
+        </section>}
         <Section icon={<Mail size={15} className="text-accent" />} title={t('받은 초대')} count={invites.length + proposalsIn.length + friendReqs.length} empty={t('받은 초대가 없어요.')}>
           {friendReqs.map((r) => { const u = v.userById(r.fromId); return u && (
-            <div key={r.id} className="flex items-center gap-3 px-3.5 py-3"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} /><span className="flex-1 text-[13px]"><b>{u.nickname}</b>{t('님의 친구 요청')}</span><Button size="sm" variant="outline" onClick={() => run(() => api.relationships.respondFriendRequest(r.id, false))}>{t('거절')}</Button><Button size="sm" onClick={() => run(() => api.relationships.respondFriendRequest(r.id, true), t('친구가 되었어요!'))}>{t('수락')}</Button></div>); })}
+            <div key={r.id} className="px-3.5 py-3"><div className="flex items-center gap-3"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} /><span className="flex-1 text-[13px]"><b>{u.nickname}</b>{t('님의 친구 요청')}</span><Button size="sm" variant="outline" onClick={() => run(() => api.relationships.respondFriendRequest(r.id, false))}>{t('거절')}</Button><Button size="sm" onClick={() => run(() => api.relationships.respondFriendRequest(r.id, true), t('친구가 되었어요!'))}>{t('수락')}</Button></div><NoteBubble note={r.note} className="mt-2 pl-12" /></div>); })}
           {proposalsIn.map((p) => { const u = v.userById(p.fromId); return u && (
             <div key={p.id} className="flex items-center gap-3 px-3.5 py-3"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} /><span className="flex-1 min-w-0 text-[13px]"><b>{u.nickname}</b> · {CATEGORY_EMOJI[p.category]} {p.when}<span className="block text-[12px] text-ink-3 truncate">{p.message}</span></span><Button size="sm" variant="outline" onClick={() => run(() => api.proposals.respond(p.id, false))}>{t('이번에는 어려워요')}</Button><Button size="sm" onClick={() => run(() => api.proposals.respond(p.id, true), t('제안을 수락했어요.'))}>{t('수락')}</Button></div>); })}
           {invites.map((a) => <Row key={a.id} a={a} right={<Tag tone="accent" className="h-5">{t('초대')}</Tag>} />)}
@@ -96,13 +99,13 @@ export function PlansPage() {
             </button>
           ))}
         </Section>
-        <Section icon={<Puzzle size={15} className="text-primary" />} title={t('대기 중인 팀 신청')} count={teamPending.length} empty={t('신청한 팀이 없어요. 발견 › 팀에서 역할이 맞는 팀을 찾아보세요.')}>
+        {!alumni && <><Section icon={<Puzzle size={15} className="text-primary" />} title={t('대기 중인 팀 신청')} count={teamPending.length} empty={t('신청한 팀이 없어요. 발견 › 팀에서 역할이 맞는 팀을 찾아보세요.')}>
           {teamPending.map((a) => <Row key={a.id} a={a} right={<Tag tone="gold" className="h-5">{t('대기')}</Tag>} />)}
         </Section>
         <Section icon={<BookOpen size={15} className="text-primary" />} title={t('Study Crew 일정')} count={crews.length} empty={t('참여 중인 Study Crew가 없어요. 시간표에서 수업을 누르면 만들 수 있어요.')}>
           {crews.map((a) => <Row key={a.id} a={a} right={<Tag tone="primary" className="h-5">{a.courseName}</Tag>} />)}
-        </Section>
-        <div className="flex gap-2"><Button full variant="outline" onClick={() => nav('/timetable')}>{t('내 시간표')}</Button><Button full onClick={() => nav('/discover')}>{t('활동 찾기')}</Button></div>
+        </Section></>}
+        <div className="flex gap-2">{!alumni && <Button full variant="outline" onClick={() => nav('/timetable')}>{t('내 시간표')}</Button>}<Button full onClick={() => nav('/meet')}>{t('활동 찾기')}</Button></div>
       </div>
     </div>
   );

@@ -36,6 +36,12 @@ import { SaveButton } from '@/components/people_ActionBar';
 import { StatusPill, StatusPicker } from '@/components/people_StatusPill';
 import { ClosenessTag, closenessText, fmt, useCloseness, useHideWithUndo, type Closeness } from '@/components/people_Network';
 import { UnexpectedCard } from '@/pages/people/UnexpectedPage';
+import { AskAiBar } from '@/components/ai/AskAi';
+import { AvatarStack } from '@/components/people_Mutual';
+import { NoteBubble } from '@/components/prompts/ConnectNote';
+import { secondDegree, type SecondDegree } from '@core/lib/graph';
+import { canShowInPath } from '@core/lib/privacy';
+import { isAlumniStage } from '@core/lib/network';
 
 type Tab = 'recommend' | 'search' | 'connections';
 const TABS: Tab[] = ['recommend', 'search', 'connections'];
@@ -111,6 +117,7 @@ function RecommendTab({ connect, invite, openPaywall, freeFirst }: { connect: (u
 
   return (
     <>
+      <div className="shrink-0 px-4 pb-2.5"><AskAiBar /></div>
       {incoming.length > 0 && (
         <button onClick={() => nav('/people/requests')} className="shrink-0 mx-4 mb-2 h-9 pl-3.5 pr-2.5 rounded-full bg-accent-soft text-primary text-[12px] font-semibold flex items-center gap-1.5 press">
           <span className="truncate flex-1 text-left">{t('혹시 여기에 해당되나요?')} · {incoming.length}{t('건')}</span>
@@ -220,6 +227,8 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
   const around = useMemo(() => aroundToday(snap, me), [snap, me]);
   const visible = (u: User) => !v.isBlocked(u.id) && !hidden.has(u.id);
   const openPeople = around.openNow.filter(visible);
+  // 서로 아는 사람이 있는 2촌 — 공통 연결이 많은 순
+  const second = useMemo(() => secondDegree(snap, me.id, canShowInPath).filter((x) => !v.isBlocked(x.user.id) && !hidden.has(x.user.id)), [snap, me.id, v, hidden]);
   const unexpected = useMemo(() => unexpectedConnections(snap, me, pool, (u) => v.canSeeField(u, 'timetable'), 2), [snap, me, pool, v]);
   const savedCount = (me.savedPeople ?? []).filter((id) => v.visibleUsers.some((u) => u.id === id)).length;
   const shown = near.slice(0, more ? 12 : 4);
@@ -258,13 +267,13 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
       <section aria-labelledby="h-around" className="space-y-2">
         <h2 id="h-around" className="text-[15px] font-bold px-1">{t('이번 주 주변')}</h2>
         <Section loading={secAround.loading} error={secAround.error} onRetry={secAround.retry} skeleton={<SectionSkeleton count={1} />}
-          empty={around.viaFriends.length + around.inCity.length + openPeople.length === 0 && (
+          empty={second.length + around.inCity.length + openPeople.length === 0 && (
             <SectionEmpty emoji="🌤️" title={t('이번 주는 조용해요')} description={t('아무것도 안 해도 괜찮아요. 새로운 사람이 생기면 여기에 보여요.')}
               action={<Button size="sm" variant="outline" icon={<Search size={14} />} onClick={() => nav('/people/find')}>{t('사람 찾아보기')}</Button>} />
           )}>
           <div className="rounded-[24px] bg-gradient-to-br from-[var(--tint)] to-[var(--tint)] p-1.5">
             <div className="rounded-[20px] bg-white/80 divide-y divide-line/70">
-              <AroundRow emoji="🤝" label={t('아는 사람을 통해 이어진 사람')} n={around.viaFriends.length} onClick={() => nav('/people/second')} />
+              <MutualRow list={second} onClick={() => nav('/people/second')} />
               <AroundRow emoji="📍" label={around.city ? fmt(t('이번 주 {city}에 있는 사람'), { city: around.city }) : t('이번 주 같은 도시에 있는 사람')} n={around.inCity.length} onClick={() => nav('/people/around')} />
               <AroundRow emoji="☕" label={t('지금 열려 있는 사람')} n={openPeople.length} onClick={() => nav('/people/around?open=1')} />
             </div>
@@ -343,7 +352,8 @@ function NearCard({ user, reasons, closeness, onHide }: { user: User; reasons: R
   return (
     <div className="rounded-[20px] border border-line bg-white overflow-hidden">
       <div className="px-3 pt-2.5 flex items-center gap-1.5 min-w-0">
-        <ClosenessTag c={closeness} className="shrink-0" />
+        {/* 2촌이면 서로 아는 사람은 아래 얼굴 줄로 보여준다 */}
+        <ClosenessTag c={closeness.degree === 2 ? { ...closeness, mutual: 0 } : closeness} className="shrink-0" />
         <ReasonChips reasons={reasons} max={2} className="flex-nowrap overflow-hidden min-w-0" />
         <span className="flex-1" />
         <button onClick={onHide} aria-label={t('숨기기')} title={t('숨기기')} className="h-7 w-7 rounded-full grid place-items-center text-ink-3 hover:bg-surface-2 shrink-0 press"><EyeOff size={14} /></button>
@@ -359,6 +369,23 @@ function AroundRow({ emoji, label, n, onClick }: { emoji: string; label: string;
       <span className="text-[16px] shrink-0" aria-hidden>{emoji}</span>
       <span className="flex-1 min-w-0 text-[13px] font-semibold text-ink truncate">{label}</span>
       <span className={cn('text-[15px] font-bold shrink-0', n > 0 ? 'text-primary' : 'text-ink-3')}>{n}{t('명')}</span>
+      <ChevronRight size={15} className="text-ink-3 shrink-0" />
+    </button>
+  );
+}
+
+/** 서로 아는 사람이 있어요 — 2촌 얼굴 겹침 + 첫 사람과 누구를 서로 아는지 */
+function MutualRow({ list, onClick }: { list: SecondDegree[]; onClick: () => void }) {
+  const first = list[0];
+  const via = first?.via.slice(0, 2).map((u) => u.nickname).join(', ');
+  return (
+    <button onClick={onClick} className="w-full min-h-[56px] px-3.5 py-2 flex items-center gap-2.5 text-left press">
+      {list.length ? <AvatarStack people={list.map((x) => x.user)} size={28} /> : <span className="text-[16px] shrink-0" aria-hidden>🤝</span>}
+      <span className="flex-1 min-w-0">
+        <span className="block text-[13px] font-semibold text-ink truncate">{t('서로 아는 사람이 있어요')}</span>
+        {first && via && <span className="block text-[11px] text-ink-3 truncate">{fmt(t('{via}님을 통해 {name}님과 이어져요'), { name: first.user.nickname, via })}</span>}
+      </span>
+      <span className={cn('text-[15px] font-bold shrink-0', list.length > 0 ? 'text-primary' : 'text-ink-3')}>{list.length}{t('명')}</span>
       <ChevronRight size={15} className="text-ink-3 shrink-0" />
     </button>
   );
@@ -394,7 +421,7 @@ function RecommendSlide({ user, reasons, onOpen }: { user: User; reasons: Reason
   const [pi, setPi] = useState(0);
   const photos = user.photos?.length ? user.photos : user.avatar.url ? [user.avatar.url] : [];
   const common = commonInterests(v.me, user);
-  const canSeeTT = user.timetable.length > 0 && v.canSeeField(user, 'timetable');
+  const canSeeTT = user.timetable.length > 0 && v.canSeeField(user, 'timetable') && !isAlumniStage(v.me) && !isAlumniStage(user);
   const st = canSeeTT ? statusNow(user.timetable) : null;
   const block = canSeeTT ? freeBlocks(user.timetable, todayIdx()).find((b) => b.end > nowMin()) : null;
   const freeLabel = st?.kind === 'free' && block ? `${t('공강')} ${fmtBlock({ start: Math.max(block.start, nowMin()), end: block.end })}` : user.availability === 'now' ? t('지금 가능') : null;
@@ -660,11 +687,14 @@ function ConnectionsTab() {
           <div className="text-[13px] font-bold text-primary px-1">{t('받은 요청')} {incoming.length} · {t('보낸 요청')} {outgoing.length}</div>
           <div className="mt-2 space-y-1.5">
             {incoming.map(({ r, u }) => (
-              <div key={r.id} className="flex items-center gap-2.5 rounded-2xl bg-white px-3 py-2">
-                <button onClick={() => nav(`/users/${u.id}`)}><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={40} /></button>
-                <div className="flex-1 min-w-0"><button onClick={() => nav(`/users/${u.id}`)} className="text-[14px] font-bold truncate block text-left">{u.nickname}</button><div className="text-[11px] text-ink-3 truncate">{personLine(u, lang)}</div></div>
-                <Button size="sm" variant="outline" loading={busyId === `d${r.id}`} onClick={() => act(`d${r.id}`, () => api.relationships.respondFriendRequest(r.id, false))}>{t('거절')}</Button>
-                <Button size="sm" loading={busyId === `a${r.id}`} onClick={() => act(`a${r.id}`, () => api.relationships.respondFriendRequest(r.id, true), `${u.nickname}${t('님과 연결되었어요.')}`)}>{t('수락')}</Button>
+              <div key={r.id} className="rounded-2xl bg-white px-3 py-2">
+                <div className="flex items-center gap-2.5">
+                  <button onClick={() => nav(`/users/${u.id}`)}><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={40} /></button>
+                  <div className="flex-1 min-w-0"><button onClick={() => nav(`/users/${u.id}`)} className="text-[14px] font-bold truncate block text-left">{u.nickname}</button><div className="text-[11px] text-ink-3 truncate">{personLine(u, lang)}</div></div>
+                  <Button size="sm" variant="outline" loading={busyId === `d${r.id}`} onClick={() => act(`d${r.id}`, () => api.relationships.respondFriendRequest(r.id, false))}>{t('거절')}</Button>
+                  <Button size="sm" loading={busyId === `a${r.id}`} onClick={() => act(`a${r.id}`, () => api.relationships.respondFriendRequest(r.id, true), `${u.nickname}${t('님과 연결되었어요.')}`)}>{t('수락')}</Button>
+                </div>
+                <NoteBubble note={r.note} className="mt-2 pl-[50px]" />
               </div>
             ))}
             {outgoing.map(({ r, u }) => (

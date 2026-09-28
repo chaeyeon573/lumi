@@ -7,9 +7,11 @@ import { useViewer } from '@/hooks/useViewer';
 import { POST_TYPE_LABELS, VISIBILITY_LABELS } from '@core/lib/labels';
 import { relativeTime } from '@core/lib/format';
 import { isBoosted } from '@core/lib/monetization';
+import { postAudienceOf } from '@core/lib/feed';
+import { isAlumniStage } from '@core/lib/network';
 
 /** 피드·검색 공용 게시물 한 줄 — 탭하면 상세(/feed/:id)로. 부스트 글은 Boosted 태그, 공개 범위는 작은 태그(그룹 글은 그룹 이름) */
-export function PostRow({ post: p, onClick }: { post: Post; onClick: () => void }) {
+export function PostRow({ post: p, onClick, mixed }: { post: Post; onClick: () => void; mixed?: boolean }) {
   const v = useViewer();
   const author = v.userById(p.authorId);
   const org = p.orgId ? v.orgById(p.orgId) : undefined;
@@ -17,6 +19,9 @@ export function PostRow({ post: p, onClick }: { post: Post; onClick: () => void 
   const av = p.anonymous ? { emoji: '', hue: 210 } : org ? org.logo : author?.avatar ?? { emoji: '', hue: 200 };
   const name = p.anonymous ? t('익명') : org?.name ?? author?.nickname ?? '';
   const VisIcon = VISIBILITY_ICONS[p.visibility];
+  // 재학생·동문 글이 섞여 보이는 곳에서만, 내 공간이 아닌 글에 작은 표시
+  const aud = mixed && !p.anonymous ? postAudienceOf(p, author) : 'all';
+  const otherSpace = aud !== 'all' && aud !== (isAlumniStage(v.me) ? 'alumni' : 'students');
   const visLabel = p.visibility === 'group' ? (group?.name ?? VISIBILITY_LABELS.group) : VISIBILITY_LABELS[p.visibility];
   return (
     <button onClick={onClick} className="w-full flex items-center gap-3 py-3 text-left press">
@@ -25,6 +30,7 @@ export function PostRow({ post: p, onClick }: { post: Post; onClick: () => void 
         <span className="flex items-center gap-2">
           <span className="text-[15px] font-semibold text-ink truncate">{name}</span>
           {isBoosted(p) && <Tag tone="gold" className="h-5 shrink-0">{t('부스트됨')}</Tag>}
+          {otherSpace && <span className="h-5 px-2 rounded-full bg-surface-2 text-ink-3 text-[10px] font-semibold inline-flex items-center shrink-0">{aud === 'alumni' ? t('동문 글') : t('재학생 글')}</span>}
           {p.postType && p.postType !== 'story' && <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{POST_TYPE_LABELS[p.postType]}</span>}
           <span className="text-[12px] text-ink-3 ml-auto shrink-0">{relativeTime(p.createdAt)}</span>
         </span>

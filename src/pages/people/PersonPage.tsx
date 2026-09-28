@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { t, lang } from '@core/i18n';
 import { Navigate, useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { UserMinus, MessageCircle, MoreHorizontal, Clock, MapPin, Flag, Ban, Sparkles, Users, CalendarPlus, Lock, Mic, Briefcase, X, EyeOff, ChevronRight } from 'lucide-react';
+import { UserMinus, MessageCircle, MoreHorizontal, Clock, MapPin, Flag, Ban, Sparkles, Users, CalendarPlus, Lock, Mic, Briefcase, X, EyeOff, ChevronRight, Handshake } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Avatar, VerifiedBadge, Tag, Button, BottomSheet, Dialog, Textarea, Input, Chip, Cover, EmptyState, VisibilityTag, PrivacyNote, Section, SectionEmpty, SectionSkeleton } from '@/components/ui';
 import { SheetItem } from '@/components/cards/PostCard';
@@ -28,8 +28,13 @@ import { todayISO } from '@core/lib/format';
 import type { ActivityCategory } from '@core/types';
 import { cn } from '@core/lib/cn';
 import { assetUrl } from '@/lib/assets';
+import { fmt } from '@/components/people_Network';
 import type { User } from '@core/types';
-import { PromptAnswerCard, VoicePlayer, PollCard } from '@/components/prompts/PromptComponents';
+import { VoicePlayer, PollCard } from '@/components/prompts/PromptComponents';
+import { HingePromptCard, PromptReplySheet, NoteBubble } from '@/components/prompts/ConnectNote';
+import { MutualLine } from '@/components/people_Mutual';
+import { AskSheet } from '@/pages/people/SecondDegreePage';
+import type { ProfilePrompt } from '@core/types';
 import { questionById } from '@core/data/prompts';
 import { availabilityText, freeBlocks, todayIdx, fmtBlock, overlapBlocks } from '@core/lib/timetable';
 import { matchReasons, shareableReasons } from '@core/lib/recommend';
@@ -56,6 +61,9 @@ export function PersonPage() {
   const [pWhen, setPWhen] = useState(`${todayISO()} 18:00`);
   const [busy, setBusy] = useState(false);
   const [mutualOpen, setMutualOpen] = useState(false);
+  const [introOpen, setIntroOpen] = useState(false);
+  const [replyTo, setReplyTo] = useState<ProfilePrompt | null>(null);
+  const intros = useAppStore((s) => s.introRequests);
   const sec = useSectionState(`person-${id}`);
   useEffect(() => { if (params.get('propose')) setParams({}, { replace: true }); }, [params, setParams]);
 
@@ -80,8 +88,17 @@ export function PersonPage() {
   const path = degree && degree >= 2 ? pathBetween(v.snap, v.me.id, user.id, 3).map((pid) => v.userById(pid)) : [];
   const commonGroups = view.groups ? orgs.filter((o) => { const has = (uid: string) => o.memberIds.includes(uid) || o.adminIds.includes(uid); return has(v.me.id) && has(user.id); }) : [];
   const sameMeets = v.visibleActivities.filter((a) => { const inIt = (uid: string) => a.hostId === uid || v.snap.participations.some((p) => p.activityId === a.id && p.userId === uid && p.status === 'approved'); return inIt(v.me.id) && inIt(user.id); }).slice(0, 3);
-  const overlapEmpty = mutualUsers.length === 0 && commonGroups.length === 0 && common.length === 0 && sameMeets.length === 0;
+  // 서로 아는 사람은 맨 위에 크게 보여주므로 여기서는 나머지 겹치는 것만
+  const overlapEmpty = commonGroups.length === 0 && common.length === 0 && sameMeets.length === 0;
   const see = (f: Parameters<typeof v.canSeeField>[1]) => v.canSeeField(user, f);
+  // 졸업생이 보거나 졸업생을 볼 때는 시간표·공강·학기 목표·생활권을 쓰지 않는다
+  const alumniView = isAlumniStage(v.me) || isAlumniStage(user);
+  const seeTT = see('timetable') && !alumniView;
+  const answered = user.prompts.filter((p) => p.answer.trim());
+  const photosAll = user.photos?.length ? user.photos : user.avatar.url ? [user.avatar.url] : [];
+  const extraPhotos = photosAll.slice(1);
+  const replyState: 'ready' | 'pending' | 'hidden' = inReq ? 'hidden' : cstatus === 'requested' ? 'pending' : cstatus === 'can_request' || cstatus === 'connected' ? 'ready' : 'hidden';
+  const myIntro = intros.find((i) => i.fromId === v.me.id && i.toId === user.id && (i.status === 'pending' || i.status === 'forwarded'));
   const upcoming = v.visibleActivities.filter((a) => a.visibility === 'public' && a.date >= todayISO() && (a.hostId === user.id || v.snap.participations.some((p) => p.activityId === a.id && p.userId === user.id && p.status === 'approved')));
   const hosting = v.visibleActivities.filter((a) => a.hostId === user.id && a.date >= todayISO());
   const userPosts = v.visiblePosts.filter((p) => p.authorId === user.id && p.authorType === 'user' && !p.anonymous);
@@ -90,7 +107,7 @@ export function PersonPage() {
   const sharedOpps = v.snap.opportunityIntents.filter((i) => i.userId === user.id).map((i) => oppsAll.find((o) => o.id === i.opportunityId)).filter((o): o is NonNullable<typeof o> => !!o && o.date !== undefined && o.date >= todayISO());
   const adminOrgs = view.groups ? orgs.filter((o) => o.adminIds.includes(user.id)) : [];
   const pendingProposal = proposals.find((p) => p.fromId === v.me.id && p.toId === user.id && p.status === 'pending');
-  const reasons = shareableReasons(matchReasons(v.me, user, v.snap, see('timetable')));
+  const reasons = shareableReasons(matchReasons(v.me, user, v.snap, seeTT));
   const city = maskedCity(user, view);
   const career = isAlumniStage(user) ? [user.career?.role, view.company ? user.career?.company : undefined, user.career?.industry].filter(Boolean).join(' · ') : '';
   const degreeText = degree === 1 ? t('1촌 · 연결된 사이') : degree === 2 ? `${t('2촌')}${mutualUsers.length ? ` · ${t('공통 연결')} ${mutualUsers.length}${t('명')}` : ''}` : degree === 3 ? t('3촌') : t('아직 이어진 연결이 없어요');
@@ -114,8 +131,9 @@ export function PersonPage() {
           <ReasonChips reasons={reasons} max={3} className="mb-2.5" />
           <div className="flex items-center gap-1.5 flex-wrap">
             <Tag tone={cstatus === 'connected' ? 'mint' : cstatus === 'blocked' ? 'danger' : cstatus === 'requested' ? 'gold' : 'primary'}>{CONNECTION_LABELS[cstatus]}</Tag>
-            <button type="button" onClick={() => mutualUsers.length && setMutualOpen(true)} className={cn('text-[12px] font-semibold text-verify', mutualUsers.length ? 'press' : 'pointer-events-none')}>{degreeText}</button>
+            <span className="text-[12px] font-semibold text-verify">{degree === 2 && mutualUsers.length ? t('2촌') : degreeText}</span>
           </div>
+          {mutualUsers.length > 0 && <MutualLine user={user} size="md" onClick={() => setMutualOpen(true)} className="mt-2.5 w-full rounded-2xl bg-primary-soft/60 px-3 py-2" />}
           {path.length > 0 && (
             <div className="mt-2 flex items-center gap-1 flex-wrap text-[12px]">
               <span className="h-6 px-2 rounded-full bg-surface-2 font-semibold inline-flex items-center">{t('나')}</span>
@@ -134,8 +152,11 @@ export function PersonPage() {
           {user.identityVerified && <div className="mt-3"><VerifiedBadge kind="identity" size={16} label /></div>}
           {!view.full && view.reason && <PrivacyNote text={`${view.reason} · ${t('회사·도시·졸업연도·그룹은 가려져요')}`} className="mt-3" />}
           {inReq && (
-            <div className="mt-3 rounded-xl bg-primary-soft px-3 py-2.5 flex items-center gap-2 text-[13px]"><span className="flex-1 font-semibold text-primary">{user.nickname}{t('님이 연결 요청을 보냈어요')}</span>
-              <Button size="sm" variant="outline" onClick={() => run(() => api.relationships.respondFriendRequest(inReq.id, false))}>{t('거절')}</Button><Button size="sm" onClick={() => run(() => api.relationships.respondFriendRequest(inReq.id, true), `${user.nickname}${t('님과 연결되었어요.')}`)}>{t('수락')}</Button></div>
+            <div className="mt-3 rounded-2xl bg-primary-soft/60 px-3 py-2.5">
+              <NoteBubble note={inReq.note} className="mb-2.5" />
+              <div className="flex items-center gap-2 text-[13px]"><span className="flex-1 font-semibold text-primary">{user.nickname}{t('님이 연결 요청을 보냈어요')}</span>
+                <Button size="sm" variant="outline" onClick={() => run(() => api.relationships.respondFriendRequest(inReq.id, false))}>{t('거절')}</Button><Button size="sm" onClick={() => run(() => api.relationships.respondFriendRequest(inReq.id, true), `${user.nickname}${t('님과 연결되었어요.')}`)}>{t('수락')}</Button></div>
+            </div>
           )}
           {view.full && see('bio') && user.bio && <p className="text-[14px] text-ink-2 leading-relaxed mt-3">{user.bio}</p>}
         </div>
@@ -146,13 +167,6 @@ export function PersonPage() {
           <div className="card p-4">
             <div className="text-[11px] font-bold text-ink-3">{t('둘이 겹치는 것')}</div>
             <div className="mt-2 space-y-2.5">
-              {mutualUsers.length > 0 && (
-                <button type="button" onClick={() => setMutualOpen(true)} className="w-full flex items-center gap-2 text-left press">
-                  <span className="flex -space-x-2">{mutualShown.slice(0, 3).map((m) => <Avatar key={m.id} emoji={m.avatar.emoji} hue={m.avatar.hue} url={m.avatar.url} size={26} className="ring-2 ring-white" />)}</span>
-                  <span className="flex-1 text-[13px] font-semibold text-primary">{t('공통 연결')} {mutualUsers.length}{t('명')}</span>
-                  <ChevronRight size={16} className="text-ink-3" />
-                </button>
-              )}
               {commonGroups.length > 0 && <div className="flex flex-wrap gap-1.5">{commonGroups.map((o) => <button key={o.id} onClick={() => nav(`/orgs/${o.id}`)} className="h-7 px-3 rounded-full bg-primary-soft text-primary text-[12px] font-semibold inline-flex items-center gap-1 press"><Users size={12} />{o.name}</button>)}</div>}
               {common.length > 0 && <div className="flex flex-wrap gap-1.5">{common.map((i) => <span key={i} className="h-7 px-3 rounded-full bg-accent-soft text-primary text-[12px] font-semibold inline-flex items-center">{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</span>)}</div>}
               {sameMeets.length > 0 && <div className="space-y-1">{sameMeets.map((a) => <button key={a.id} onClick={() => nav(`/activities/${a.id}`)} className="w-full flex items-center gap-2 text-[13px] text-left press"><span>{CATEGORY_EMOJI[a.category]}</span><span className="flex-1 truncate text-ink-2">{t('같은 모임')} · {a.title}</span><ChevronRight size={14} className="text-ink-3" /></button>)}</div>}
@@ -160,6 +174,20 @@ export function PersonPage() {
           </div>
           <SmallTables other={user} className="mt-3" />
         </Section>
+
+        {/* 답과 사진을 번갈아 — 답마다 "한마디"로 대화를 연다 (Hinge 느낌) */}
+        {view.full && see('prompts') && (answered.length > 0 || user.voicePrompt || user.poll) && (
+          <div className="space-y-3">
+            {answered.map((p, i) => (
+              <Fragment key={p.questionId}>
+                <HingePromptCard prompt={p} onReply={() => setReplyTo(p)} replyState={replyState} />
+                {extraPhotos[i] && <img src={assetUrl(extraPhotos[i])} alt="" className="w-full aspect-[4/5] object-cover rounded-[20px] border border-line" loading="lazy" />}
+              </Fragment>
+            ))}
+            {user.voicePrompt && <div className="card p-4"><div className="text-[12px] font-bold text-primary flex items-center gap-1"><Mic size={12} />{questionById(user.voicePrompt.questionId)?.text}</div><div className="mt-2 flex"><VoicePlayer duration={user.voicePrompt.durationSec} /></div></div>}
+            {user.poll && <PollCard poll={user.poll} ownerName={user.nickname} myVote={user.poll.votes[v.me.id]} onVote={(i) => run(() => api.users.votePoll(user.id, v.me.id, i), t('투표했어요.'))} />}
+          </div>
+        )}
 
         {hasWants(user.wants) && (
           <div className="card p-4">
@@ -182,24 +210,17 @@ export function PersonPage() {
             <div className="flex gap-2 mt-3">{(common.length ? common : user.interests).slice(0, 3).map((i) => <Button key={i} size="sm" variant="outline" onClick={() => { setPCat(i === 'meal' ? 'meal' : i === 'study' ? 'study' : i === 'exercise' ? 'exercise' : 'coffee'); setPropose(true); }}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]} {t('제안')}</Button>)}</div>
           </div>
         )}
-        {view.full && see('prompts') && (user.prompts.length > 0 || user.voicePrompt || user.poll) && (
-          <div className="space-y-2.5">
-            {user.prompts.filter((p) => p.answer.trim()).map((p) => <PromptAnswerCard key={p.questionId} prompt={p} />)}
-            {user.voicePrompt && <div className="card p-4"><div className="text-[12px] font-bold text-primary flex items-center gap-1"><Mic size={12} />{questionById(user.voicePrompt.questionId)?.text}</div><div className="mt-2 flex"><VoicePlayer duration={user.voicePrompt.durationSec} /></div></div>}
-            {user.poll && <PollCard poll={user.poll} ownerName={user.nickname} myVote={user.poll.votes[v.me.id]} onVote={(i) => run(() => api.users.votePoll(user.id, v.me.id, i), t('투표했어요.'))} />}
-          </div>
-        )}
 
         {view.full && <div className="card p-4 space-y-3">
-          <Block label={t('이번 학기 목표')} visible={see('goals') && user.goals.length > 0}><div className="flex flex-wrap gap-1.5">{user.goals.map((g) => <Tag key={g} tone={v.me.goals.includes(g) ? 'primary' : 'neutral'}>{GOAL_EMOJI[g]} {GOAL_LABELS[g]}</Tag>)}</div></Block>
+          {!alumniView && <Block label={t('이번 학기 목표')} visible={see('goals') && user.goals.length > 0}><div className="flex flex-wrap gap-1.5">{user.goals.map((g) => <Tag key={g} tone={v.me.goals.includes(g) ? 'primary' : 'neutral'}>{GOAL_EMOJI[g]} {GOAL_LABELS[g]}</Tag>)}</div></Block>}
           {(user.lookingFor.length > 0 || user.canOffer.length > 0) && <Block label={t('찾는 사람 · 제공할 수 있는 것')} visible><div className="text-[13px] text-ink-2 space-y-0.5">{user.lookingFor.length > 0 && <div>🔍 {user.lookingFor.map((r) => PERSON_ROLE_LABELS[r]).join(', ')}</div>}{user.canOffer.length > 0 && <div>🛠 {user.canOffer.map((r) => PERSON_ROLE_LABELS[r]).join(', ')}</div>}</div></Block>}
-          {user.living && <Block label={t('생활권')} visible={see('living')}><p className="text-[13px] text-ink-2">{RESIDENCE_LABELS[user.living.residence]} · {user.living.zone}{v.me.living?.zone === user.living.zone && <span className="text-mint font-semibold ml-1">{t('같은 생활권')}</span>}</p></Block>}
+          {user.living && !alumniView && <Block label={t('생활권')} visible={see('living')}><p className="text-[13px] text-ink-2">{RESIDENCE_LABELS[user.living.residence]} · {user.living.zone}{v.me.living?.zone === user.living.zone && <span className="text-mint font-semibold ml-1">{t('같은 생활권')}</span>}</p></Block>}
           <Block label={t('관심사')} visible><div className="flex flex-wrap gap-1.5">{user.interests.map((i) => <Chip key={i} size="sm" active={common.includes(i)}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Chip>)}</div></Block>
           <Block label={t('하고 싶은 활동')} visible={see('freeTime')}>{user.nowWant && <div className="rounded-xl bg-primary-soft text-primary text-[13px] font-semibold px-3 py-2 mb-1.5">“{user.nowWant}”</div>}<p className="text-[13px] text-ink-2">{user.freeTime || t('아직 작성하지 않았어요')}</p></Block>
           <Block label={t('좋아하는 것')} visible={see('likes')}><p className="text-[13px] text-ink-2">{user.likes || '—'}</p></Block>
-          <Block label={t('활동 가능한 시간')} visible={see('timetable') && user.timetable.length > 0 ? true : see('availability') && user.availability !== 'hidden'}>
-            <p className="text-[13px] text-ink-2 flex items-center gap-1"><Clock size={13} className="text-ink-3" />{availabilityText(user, see('timetable')).text}</p>
-            {see('timetable') && user.timetable.length > 0 && (() => { const fb = freeBlocks(user.timetable, todayIdx()); const ov = v.me.timetable.length ? overlapBlocks(freeBlocks(v.me.timetable, todayIdx()), fb) : []; return (
+          <Block label={t('활동 가능한 시간')} visible={seeTT && user.timetable.length > 0 ? true : see('availability') && user.availability !== 'hidden'}>
+            <p className="text-[13px] text-ink-2 flex items-center gap-1"><Clock size={13} className="text-ink-3" />{availabilityText(user, seeTT).text}</p>
+            {seeTT && user.timetable.length > 0 && (() => { const fb = freeBlocks(user.timetable, todayIdx()); const ov = v.me.timetable.length ? overlapBlocks(freeBlocks(v.me.timetable, todayIdx()), fb) : []; return (
               <div className="mt-1.5 flex flex-wrap gap-1">{fb.map((b) => <Tag key={b.start} tone={ov.some((o) => o.start <= b.start && o.end >= b.end) ? 'mint' : 'neutral'}>{fmtBlock(b)}</Tag>)}<span className="text-[11px] text-ink-3 w-full">{t('오늘 공강 · 초록은 나와 겹치는 시간 · 전체 시간표와 강의실은 비공개')}</span></div>
             ); })()}
           </Block>
@@ -250,13 +271,22 @@ export function PersonPage() {
           <SheetItem icon={<Ban size={18} />} label={t('사용자 차단')} danger onClick={() => { setMenu(false); setBlockOpen(true); }} />
         </div>
       </BottomSheet>
-      <BottomSheet open={mutualOpen} onClose={() => setMutualOpen(false)} title={`${t('공통 연결')} ${mutualUsers.length}${t('명')}`}>
+      <BottomSheet open={mutualOpen} onClose={() => setMutualOpen(false)} title={fmt(t('서로 아는 사람 {n}명'), { n: mutualUsers.length })}>
         <div className="space-y-1">
           {mutualShown.map((m) => <button key={m.id} onClick={() => { setMutualOpen(false); nav(`/users/${m.id}`); }} className="w-full flex items-center gap-3 px-2 py-2 rounded-xl text-left press hover:bg-surface-2"><Avatar emoji={m.avatar.emoji} hue={m.avatar.hue} url={m.avatar.url} size={36} /><span className="flex-1 min-w-0"><span className="block text-[14px] font-semibold truncate">{m.nickname}</span><SchoolBadge user={m} size="sm" /></span><ChevronRight size={16} className="text-ink-3" /></button>)}
           {mutualHidden > 0 && <PrivacyNote text={`${t('외')} ${mutualHidden}${t('명은 경로에 이름을 보이지 않게 설정했어요')}`} className="px-2 pt-2" />}
         </div>
-        <p className="mt-3 text-[12px] text-ink-3">{t('공통 연결에게 "연결해줄 수 있나요?"라고 부탁해볼 수도 있어요.')}</p>
+        {!friend && mutualShown.length > 0 && (
+          <div className="mt-3">
+            <p className="text-[12px] text-ink-3 mb-2">{fmt(t('서로 아는 사람에게 {name}님을 소개해 달라고 부탁할 수 있어요'), { name: user.nickname })}</p>
+            {myIntro
+              ? <Button full variant="secondary" disabled icon={<Handshake size={16} />}>{t('소개 부탁을 보냈어요')}</Button>
+              : <Button full icon={<Handshake size={16} />} onClick={() => { setMutualOpen(false); setIntroOpen(true); }}>{t('소개 부탁하기')}</Button>}
+          </div>
+        )}
       </BottomSheet>
+      <AskSheet sd={introOpen ? { user, via: mutualShown, hiddenVia: mutualHidden } : null} onClose={() => setIntroOpen(false)} onDone={() => undefined} />
+      <PromptReplySheet target={replyTo ? { user, prompt: replyTo } : null} onClose={() => setReplyTo(null)} />
       <ReportSheet open={report} onClose={() => setReport(false)} targetType="user" targetId={user.id} />
       <Dialog open={blockOpen} onClose={() => setBlockOpen(false)} title={`${user.nickname}${t('님을 차단할까요?')}`} description={t('서로의 프로필, 활동, 게시물이 보이지 않고 메시지를 주고받을 수 없어요. 상대에게 알림이 가지 않아요.')}>
         <Button variant="outline" full onClick={() => setBlockOpen(false)}>{t('취소')}</Button>

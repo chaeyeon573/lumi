@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
-import { useAppStore } from '@core/store/useAppStore';
+import { useAppStore, useCurrentUser } from '@core/store/useAppStore';
 import { AppShell } from '@/components/layout/AppShell';
 import { ErrorState } from '@/components/ui';
 import { WelcomePage } from '@/pages/onboarding/WelcomePage';
@@ -57,6 +57,14 @@ import { CreateTogetherPage } from '@/pages/together/CreateTogetherPage';
 import { TogetherPage } from '@/pages/together/TogetherPage';
 import { OpportunityDetailPage } from '@/pages/opportunities/OpportunityDetailPage';
 import { ProfileContextPage } from '@/pages/profile/ProfileContextPage';
+import { isAlumniStage } from '@core/lib/network';
+
+/** 졸업생에게는 시간표·수업·같이 계획하기(시간 투표 만들기)가 없다 — 옛 링크로 들어오면 모임으로 */
+function StudentOnly({ children }: { children: React.ReactElement }) {
+  const me = useCurrentUser();
+  if (me && isAlumniStage(me)) return <Navigate to="/meet" replace />;
+  return children;
+}
 
 function RequireAuth() {
   const currentUserId = useAppStore((s) => s.currentUserId);
@@ -153,10 +161,10 @@ export default function App() {
           <Route path="/profile/wants" element={<WantsPage />} />
           <Route path="/profile/status" element={<StatusPage />} />
           <Route path="/profile/status/career" element={<StatusCareerPage />} />
-          <Route path="/timetable" element={<TimetablePage />} />
+          <Route path="/timetable" element={<StudentOnly><TimetablePage /></StudentOnly>} />
           <Route path="/plans" element={<PlansPage />} />
-          <Route path="/classes/:courseName" element={<ClassPage />} />
-          <Route path="/together/new" element={<CreateTogetherPage />} />
+          <Route path="/classes/:courseName" element={<StudentOnly><ClassPage /></StudentOnly>} />
+          <Route path="/together/new" element={<StudentOnly><CreateTogetherPage /></StudentOnly>} />
           <Route path="/together/:id" element={<TogetherPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/map" element={<MapPage />} />

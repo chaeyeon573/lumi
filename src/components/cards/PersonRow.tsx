@@ -5,7 +5,9 @@ import type { User } from '@core/types';
 import type { Reason } from '@core/lib/recommend';
 import { Avatar, Tag } from '@/components/ui';
 import { INTEREST_LABELS } from '@core/lib/labels';
-import { commonInterests, mutualFriends } from '@core/lib/relations';
+import { commonInterests } from '@core/lib/relations';
+import { highlightPrompt } from '@core/lib/prompts-fun';
+import { MutualLine } from '@/components/people_Mutual';
 import { profileView } from '@core/lib/privacy';
 import { degreeOf } from '@core/lib/graph';
 import { useViewer } from '@/hooks/useViewer';
@@ -31,13 +33,14 @@ export function PersonRow({ user, reasons = [], onConnect, busy, compact, action
   const view = profileView(v.snap, v.me, user);
   const city = maskedCity(user, view);
   const degree = connected ? 1 : degreeOf(v.snap, v.me.id, user.id, 2);
-  const mutual = degree === 2 ? mutualFriends(v.snap, v.me.id, user.id).length : 0;
+  // 카드에 한 줄로 보여줄 답 — 나와 겹치는 단어가 있는 답을 먼저
+  const hl = !compact && v.canSeeField(user, 'prompts') ? highlightPrompt(v.me, user) : undefined;
   return (
     <article className={cn('flex items-start gap-3 rounded-[20px] border border-line bg-white p-3', className)}>
       <button onClick={() => nav(`/users/${user.id}`)} className="shrink-0 press" aria-label={user.nickname}><Avatar emoji={user.avatar.emoji} hue={user.avatar.hue} url={user.avatar.url} size={compact ? 44 : 56} /></button>
       <div className="min-w-0 flex-1">
         <ReasonChips reasons={reasons} max={2} className="mb-1" />
-        {degree === 2 && <div className="text-[11px] font-semibold text-verify">{t('2촌')}{mutual ? ` · ${t('공통 연결')} ${mutual}${t('명')}` : ''}</div>}
+        {degree === 2 && <MutualLine user={user} className="mb-0.5" />}
         <div className="flex items-center gap-1.5 min-w-0">
           <button onClick={() => nav(`/users/${user.id}`)} className="text-[15px] font-bold truncate shrink-0 max-w-[70%]">{user.nickname}</button>
           <SchoolBadge user={user} withYear={view.gradYear} size="sm" className="min-w-0" />
@@ -48,6 +51,12 @@ export function PersonRow({ user, reasons = [], onConnect, busy, compact, action
           <div className="text-[12px] text-ink-3 mt-0.5 flex items-center gap-1 flex-wrap">{city && <><MapPin size={11} />{city}{view.city && user.activityCity && user.activityCity !== city ? ` · ${t('활동')} ${user.activityCity}` : ''}</>}
             {(common.length ? common : user.interests).slice(0, 2).map((i) => <Tag key={i} tone={common.includes(i) ? 'primary' : 'neutral'} className="ml-0.5">{INTEREST_LABELS[i]}</Tag>)}
           </div>
+        )}
+        {hl && (
+          <button type="button" onClick={() => nav(`/users/${user.id}`)} className="mt-1.5 w-full text-left rounded-xl bg-primary-soft/50 px-2.5 py-1.5 press">
+            <span className="block text-[10px] font-semibold text-ink-3 truncate">{hl.question}</span>
+            <span className="block text-[12px] text-ink leading-snug line-clamp-1">“{hl.answer}”</span>
+          </button>
         )}
       </div>
       {(onConnect || actions) && (

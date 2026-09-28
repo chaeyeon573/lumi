@@ -17,7 +17,7 @@ import { todayISO, formatTime, formatDate } from '@core/lib/format';
 import { recommendMeets, recommendGroups, myGroups, mySchedule, joinStateOf, GROUP_SCOPE_LABELS, GROUP_SCOPE_EMOJI, scopeOf } from '@core/lib/meet';
 import { cityOf, sameSchool } from '@core/lib/network';
 import type { Activity, Organization, GroupScope } from '@core/types';
-import { MeetExtraRows } from './MeetExtras';
+import { MeetExtraRows, hideForAlumni } from './MeetExtras';
 
 type Tab = 'recommend' | 'groups' | 'schedule';
 /** 이전 주소(?tab=foryou|events|now)는 추천으로 */
@@ -219,7 +219,7 @@ function RecommendTab() {
   const copy = stageCopy(kind);
   // 단계별 정렬: 대학원생은 세미나·스터디, 졸업생은 커피·식사·작은 모임을 먼저 (점수 순서는 유지)
   const recs = useMemo(() => {
-    const r = recommendMeets(v.visibleActivities, v.me, v.users, orgs, participations, 30);
+    const r = recommendMeets(v.visibleActivities, v.me, v.users, orgs, participations, 30).filter((x) => kind !== 'alumni' || !hideForAlumni(x.a));
     const pri = kind === 'grad' ? RESEARCH_CATS : kind === 'alumni' ? ALUMNI_CATS : null;
     return pri ? [...r].sort((a, b) => Number(!pri.has(a.a.category)) - Number(!pri.has(b.a.category))) : r;
   }, [v, orgs, participations, kind]);
@@ -333,7 +333,9 @@ function ScheduleTab({ go }: { go: (tb: Tab) => void }) {
   const nav = useNavigate();
   const v = useViewer();
   const participations = useAppStore((s) => s.participations);
-  const buckets = useMemo(() => mySchedule(v.visibleActivities, v.me, participations), [v, participations]);
+  const alumni = stageKind(v.me) === 'alumni';
+  // 졸업생 일정에는 수업·Study Crew·팀원 모집·스터디를 넣지 않는다
+  const buckets = useMemo(() => mySchedule(alumni ? v.visibleActivities.filter((a) => !hideForAlumni(a)) : v.visibleActivities, v.me, participations), [v, participations, alumni]);
   const total = buckets.reduce((n, b) => n + b.items.length, 0);
   return (
     <div className="space-y-6">
@@ -350,10 +352,12 @@ function ScheduleTab({ go }: { go: (tb: Tab) => void }) {
             <Button size="sm" variant="outline" icon={<Plus size={14} />} onClick={() => nav('/meet/create')}>{t('모임 만들기')}</Button>
           </div>
         )}
-      <section>
-        <SectionLabel>{t('더 할 수 있는 것')}</SectionLabel>
-        <MeetExtraRows />
-      </section>
+      {!alumni && (
+        <section>
+          <SectionLabel>{t('더 할 수 있는 것')}</SectionLabel>
+          <MeetExtraRows />
+        </section>
+      )}
     </div>
   );
 }

@@ -27,6 +27,9 @@ import { OpportunityCard } from '@/components/cards/OpportunityCard';
 import { NowActivityRow } from '@/components/cards/NowActivityRow';
 import { FIRSTRUN_KEY } from '@/pages/onboarding/OnboardingPage';
 import { requestsForMe } from '@core/lib/requests';
+import { AskAiCard } from '@/components/ai/AskAi';
+import { DailyPromptCard } from '@/components/prompts/DailyPrompt';
+import { hideForAlumni } from '@/pages/meet/MeetExtras';
 
 /**
  * Home — "오늘 나에게 뭐가 있나". 게시글 피드가 아니라 지금 내 상황에서 볼 가치가 높은 것 2~4개씩.
@@ -54,6 +57,7 @@ export function HomePage() {
       {status === 'ready' && me && (
         <>
           <Identity me={me} />
+          <AskAiCard kind={kind} className="mx-4 mt-3" />
           <FirstRunCard />
           <AroundTodayCard me={me} snap={snap} />
           <AskedOfMe me={me} snap={snap} />
@@ -260,7 +264,9 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
           : <div className="card divide-y divide-line">{d.meets.map((m) => <MeetRow key={m.a.id} m={m} />)}</div>}
       </Section>
 
-      <MoreSections titles={[t('학교에서 일어나는 것'), d.now.length ? t('지금 열린 만남') : '', d.newPeople.length ? t('새로운 사람') : '', d.opportunities.length ? t('추천 기회') : '']}>
+      <MoreSections titles={[t('오늘의 질문'), t('학교에서 일어나는 것'), d.now.length ? t('지금 열린 만남') : '', d.newPeople.length ? t('새로운 사람') : '', d.opportunities.length ? t('추천 기회') : '']}>
+      <Section title={t('오늘의 질문')}><DailyPromptCard /></Section>
+
       <Section title={t('학교에서 일어나는 것')} action={t('전체보기')} onAction={() => nav('/meet?tab=recommend')}>
         {d.happening.length === 0
           ? <Empty emoji="🏫" title={t('오늘은 학교 행사가 없어요')} description={ctx.campusHappenings.slice(0, 3).join(' · ')} action={t('모임 둘러보기')} onAction={() => nav('/meet?tab=recommend')} />
@@ -324,7 +330,9 @@ function GradHome({ d, me }: { d: GradHomeData; me: User }) {
         </Section>
       )}
 
-      <MoreSections titles={[t('나에게 맞는 모임'), me.timetable.length && d.classes.length ? t('오늘 일정') : '', d.connectNow.length ? t('같은 학교 사람') : '', d.opportunities.length ? t('추천 기회') : '']}>
+      <MoreSections titles={[t('오늘의 질문'), t('나에게 맞는 모임'), me.timetable.length && d.classes.length ? t('오늘 일정') : '', d.connectNow.length ? t('같은 학교 사람') : '', d.opportunities.length ? t('추천 기회') : '']}>
+      <Section title={t('오늘의 질문')}><DailyPromptCard /></Section>
+
       <Section title={t('나에게 맞는 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
         {d.meets.length === 0
           ? <Empty emoji="📅" title={t('맞는 모임이 아직 없어요')} action={t('모임 만들기')} onAction={() => nav('/meet/create')} />
@@ -385,6 +393,8 @@ function AlumniHome({ d, me }: { d: AlumniHome; me: User }) {
   const nav = useNavigate();
   const city = cityOf(me);
   const field = [me.career?.industry, me.career?.role].filter(Boolean).join(' / ');
+  // 졸업생 홈에는 수업·Study Crew·팀원 모집·스터디 모임을 넣지 않는다
+  const thisWeek = d.thisWeek.filter((m) => !hideForAlumni(m.a));
   return (
     <>
       <Section title={t('새로운 사람')} action={t('전체보기')} onAction={() => nav('/people')}>
@@ -400,12 +410,14 @@ function AlumniHome({ d, me }: { d: AlumniHome; me: User }) {
       </Section>
 
       <Section title={t('이번 주 참여 가능한 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
-        {d.thisWeek.length === 0
+        {thisWeek.length === 0
           ? <Empty emoji="📅" title={t('이번 주 모임이 없어요')} action={t('모임 둘러보기')} onAction={() => nav('/meet')} />
-          : <div className="card divide-y divide-line">{d.thisWeek.map((m) => <MeetRow key={m.a.id} m={m} />)}</div>}
+          : <div className="card divide-y divide-line">{thisWeek.map((m) => <MeetRow key={m.a.id} m={m} />)}</div>}
       </Section>
 
-      <MoreSections titles={[t('내 분야 사람'), d.news.length ? t('내 관계망 소식') : '', t('내 그룹'), d.opportunities.length ? t('추천 기회') : '']}>
+      <MoreSections titles={[t('오늘의 질문'), t('내 분야 사람'), d.news.length ? t('내 관계망 소식') : '', t('내 그룹'), d.opportunities.length ? t('추천 기회') : '']}>
+      <Section title={t('오늘의 질문')}><DailyPromptCard /></Section>
+
       <Section title={field ? `${t('내 분야 사람')} · ${field}` : t('내 분야 사람')} action={d.field.length ? t('전체보기') : undefined} onAction={() => nav('/people?tab=search')}>
         {d.field.length === 0
           ? <Empty emoji="💼" title={field ? t('같은 분야 사람이 아직 없어요') : t('직무·업종을 알려주세요')} description={t('같은 분야의 동문과 자연스럽게 이어져요.')} action={t('직무·업종 추가')} onAction={() => nav('/profile/edit')} />

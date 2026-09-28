@@ -9,7 +9,9 @@ import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { commonInterests } from '@core/lib/relations';
 import { cn } from '@core/lib/cn';
-import { PromptAnswerCard } from '@/components/prompts/PromptComponents';
+import { highlightPrompt } from '@core/lib/prompts-fun';
+import { isAlumniStage } from '@core/lib/network';
+import { MutualLine } from '@/components/people_Mutual';
 import { availabilityText } from '@core/lib/timetable';
 import { matchReasons } from '@core/lib/recommend';
 import { CheckCircle2 } from 'lucide-react';
@@ -42,7 +44,10 @@ export function PersonCard({ user, onSkip, compact, className }: Props) {
   const opps = useAppStore((s) => s.opportunities);
   const intents = useAppStore((s) => s.opportunityIntents);
   const reasons = matchReasons(v.me, user, { opportunities: opps, opportunityIntents: intents }, v.canSeeField(user, 'timetable')).filter((r) => r.kind !== 'school');
-  const avail = availabilityText(user, v.canSeeField(user, 'timetable'));
+  // 졸업생끼리는 시간표·공강을 쓰지 않는다
+  const tt = !isAlumniStage(v.me) && !isAlumniStage(user) && v.canSeeField(user, 'timetable');
+  const avail = availabilityText(user, tt);
+  const hl = v.canSeeField(user, 'prompts') ? highlightPrompt(v.me, user) : undefined;
   const showAvail = avail.auto || (v.canSeeField(user, 'availability') && user.availability !== 'hidden');
 
   const like = async () => {
@@ -64,6 +69,7 @@ export function PersonCard({ user, onSkip, compact, className }: Props) {
             {user.identityVerified && <VerifiedBadge kind="identity" />}
           </div>
           <div className="text-[12px] text-ink-3 mt-0.5 truncate">{affiliationText(user)}</div>
+          {!v.isFriend(user.id) && <MutualLine user={user} className="mt-1" />}
         </div>
         {v.canSeeField(user, 'likes') && user.likes && <p className="text-[13px] text-ink-2 line-clamp-2">{user.likes}{t('를 좋아해요.')}</p>}
         <div className="flex flex-wrap gap-1">
@@ -73,11 +79,11 @@ export function PersonCard({ user, onSkip, compact, className }: Props) {
           {common.length > 0 && <Tag tone="mint"><Sparkles size={11} /> {t('공통')} {common.length}</Tag>}
         </div>
         <div className="text-[12px] text-ink-2 space-y-0.5">
-          {showAvail && <div className="flex items-center gap-1"><Clock size={12} className="text-ink-3" />{avail.text}{avail.auto && <span className="text-[10px] text-mint font-semibold ml-0.5">{t('시간표')}</span>}</div>}
+          {showAvail && <div className="flex items-center gap-1"><Clock size={12} className="text-ink-3" />{avail.text}{avail.auto && tt && <span className="text-[10px] text-mint font-semibold ml-0.5">{t('시간표')}</span>}</div>}
           <div className="flex items-center gap-1"><MapPin size={12} className="text-ink-3" />{user.region} {t('근처 ·')} {user.purposes.slice(0, 2).map((p) => PURPOSE_LABELS[p]).join(', ')}</div>
         </div>
         {reasons.length > 0 && <ul className="space-y-0.5">{reasons.slice(0, 2).map((r) => <li key={r.text} className="text-[12px] text-ink-2 flex items-start gap-1"><CheckCircle2 size={12} className="text-primary shrink-0 mt-0.5" /><span className="line-clamp-1">{r.text}</span></li>)}</ul>}
-        {v.canSeeField(user, 'prompts') && user.prompts[0]?.answer ? <PromptAnswerCard prompt={user.prompts[0]} compact />
+        {hl ? <div className="rounded-xl bg-primary-soft px-3 py-2"><div className="text-[11px] font-semibold text-ink-3 truncate">{hl.question}</div><div className="text-[13px] font-semibold text-ink leading-snug line-clamp-2">“{hl.answer}”</div></div>
           : user.nowWant && <div className="rounded-xl bg-primary-soft text-primary text-[13px] font-semibold px-3 py-2">“{user.nowWant}”</div>}
         <div className="mt-auto flex items-center gap-1.5 pt-1">
           <button onClick={like} aria-label={t('관심')} className={cn('h-10 w-10 rounded-xl grid place-items-center press', liked ? 'bg-heart text-white' : 'bg-heart-soft text-heart')}><Heart size={18} fill={liked ? 'currentColor' : 'none'} /></button>

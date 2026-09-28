@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Search, ArrowRight, X, Clock, Star, Lock, Sparkles, SlidersHorizontal, Send, ShieldCheck } from 'lucide-react';
+import { ArrowRight, X, Clock, Star, Lock, Sparkles, SlidersHorizontal, Send, ShieldCheck } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import { TopBar } from '@/components/layout/TopBar';
 import { Button, Input, Section, SectionSkeleton, SectionEmpty, PrivacyNote } from '@/components/ui';
@@ -15,12 +15,13 @@ import { matchScore, shareableReasons, type Reason } from '@core/lib/recommend';
 import { profileView, canShowInPath, type ProfileView } from '@core/lib/privacy';
 import { degreeOf, pathBetween } from '@core/lib/graph';
 import { majorOf } from '@core/lib/network';
-import { mutualFriends } from '@core/lib/relations';
 import { degreeLabel } from '@core/lib/requests';
 import { isPlus, swipesLeft } from '@core/lib/monetization';
 import { PersonRow } from '@/components/cards/PersonRow';
 import { PaywallSheet, type PaywallReason } from '@/components/social/PaywallSheet';
 import type { User } from '@core/types';
+import { stageKind } from '@core/lib/stage';
+import { aiExamples } from '@/components/ai/AskAi';
 
 // ─── 공개 범위를 적용한 사람 행 (자연어 찾기 · 사람 찾아보기 공용) ─────────────
 /** 보기 권한이 없는 항목은 지운 복사본 — PersonRow 가 그대로 그려도 새지 않게 */
@@ -47,14 +48,12 @@ export function MaskedPersonRow({ user, reasons, onConnect, busy }: { user: User
   const masked = maskUser(user, view);
   const rs = reasons.filter((r) => (view.city || (r.kind !== 'city' && r.kind !== 'living')) && (view.groups || r.kind !== 'group'));
   const degree = degreeOf(snap, me.id, user.id, 3);
-  const mutual = mutualFriends(snap, me.id, user.id).length;
   const via = degree && degree >= 2 ? pathBetween(snap, me.id, user.id, 3).map((id) => v.userById(id)).filter((u): u is User => !!u && canShowInPath(u)) : [];
   return (
     <div>
       <PersonRow user={masked} reasons={rs} onConnect={onConnect} busy={busy} compact={!view.city} />
       <div className="px-3 mt-1 flex items-center gap-1 flex-wrap text-[11px] text-ink-3">
         <span className="font-semibold text-ink-2">{degreeLabel(degree, lang)}</span>
-        {mutual > 0 && <span>· {t('공통 연결')} {mutual}{t('명')}</span>}
         {via.length > 0 && <span className="inline-flex items-center gap-0.5">· {t('나')}{via.map((p) => <span key={p.id} className="inline-flex items-center gap-0.5"><ArrowRight size={10} />{p.nickname}</span>)}<ArrowRight size={10} />{user.nickname}</span>}
       </div>
       {!view.full && view.reason && <PrivacyNote className="px-3 mt-0.5" text={view.reason} />}
@@ -134,7 +133,9 @@ export function NaturalSearchPage() {
   const shown = advancedLocked ? results.slice(0, 3) : results;
   const parseFailed = !!parsed && !parsed.chips.some(meaningful);
   const allRemoved = !!parsed && !parseFailed && chips.length === 0;
-  const examples = EXAMPLE_QUERIES[lang === 'en' ? 'en' : 'ko'];
+  // 단계별 예시를 먼저, 그다음 일반 예시
+  const examples = [...new Set([...aiExamples(stageKind(me)), ...EXAMPLE_QUERIES[lang === 'en' ? 'en' : 'ko']])].slice(0, 6);
+  const few = results.length > 0 && results.length < 3;
   const recent = me.recentSearches ?? [];
 
   const go = (text: string) => { const s = text.trim(); if (!s) return; setParams({ q: s }, { replace: !!q }); };
@@ -152,17 +153,17 @@ export function NaturalSearchPage() {
 
   const exampleChips = (
     <div className="flex flex-wrap gap-1.5">
-      {examples.map((x) => <button key={x} onClick={() => go(x)} className="h-8 px-3 rounded-full bg-[#F4F9FF] border border-[var(--tint)] text-[12px] font-semibold text-primary press">{x}</button>)}
+      {examples.map((x) => <button key={x} onClick={() => go(x)} className="h-8 px-3 rounded-full bg-card border border-line text-[12px] font-semibold text-primary press">{x}</button>)}
     </div>
   );
 
   return (
     <div className="min-h-full pb-24 bg-bg">
-      <TopBar back title={t('사람 찾기')} />
+      <TopBar back title={t('AI로 사람 찾기')} />
       <div className="px-4 pt-2">
         <form className="relative" onSubmit={(e) => { e.preventDefault(); go(draft); }}>
-          <Search size={17} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-3" />
-          <Input className="pl-10 pr-12 h-12 rounded-full bg-[#F4F9FF] border-[var(--tint)]" autoFocus={!q} placeholder={t('혹시 찾는 사람이 있나요?')} value={draft} onChange={(e) => setDraft(e.target.value)} enterKeyHint="search" />
+          <Sparkles size={17} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-primary" />
+          <Input className="pl-10 pr-12 h-12 rounded-full bg-primary-soft/50 border-primary-soft" autoFocus={!q} placeholder={t('찾는 사람을 말로 설명해 보세요')} value={draft} onChange={(e) => setDraft(e.target.value)} enterKeyHint="search" />
           <button type="submit" aria-label={t('찾기')} disabled={!draft.trim()} className="absolute right-1.5 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-primary text-white grid place-items-center press disabled:opacity-35"><ArrowRight size={16} /></button>
         </form>
         {!plus && <p className="mt-1.5 ml-3 text-[11px] text-ink-3">{t('오늘 남은 자연어 찾기')} {Math.max(0, FREE_NL_SEARCHES_PER_DAY - used)}/{FREE_NL_SEARCHES_PER_DAY}</p>}
@@ -171,9 +172,10 @@ export function NaturalSearchPage() {
       {/* 아직 입력 전 — 예시 · 최근 검색 */}
       {!q && (
         <div className="px-4 mt-5 space-y-5">
-          <section>
-            <h2 className="text-[13px] font-bold text-ink-2 flex items-center gap-1"><Sparkles size={13} />{t('이렇게 찾아보세요')}</h2>
-            <div className="mt-2">{exampleChips}</div>
+          <section className="rounded-[24px] bg-primary-soft/60 p-4">
+            <h2 className="text-[15px] font-bold text-ink flex items-center gap-1.5"><Sparkles size={15} className="text-primary" />{t('이렇게 말해 보세요')}</h2>
+            <p className="mt-0.5 text-[12px] text-ink-2">{t('학교 · 도시 · 분야 · 관심사를 섞어 한 문장으로 적으면 AI가 조건으로 바꿔 찾아줘요')}</p>
+            <div className="mt-3">{exampleChips}</div>
           </section>
           <section>
             <h2 className="text-[13px] font-bold text-ink-2 flex items-center gap-1"><Clock size={13} />{t('최근 찾은 것')}</h2>
@@ -210,16 +212,19 @@ export function NaturalSearchPage() {
                 <div className="mt-3">{exampleChips}</div>
               </div>
             )}>
-            {/* 읽어낸 조건 */}
-            <div className="flex flex-wrap items-center gap-1.5">
-              <span className="text-[11px] font-bold text-ink-3 mr-0.5">{t('읽어낸 조건')}</span>
-              {chips.map((c) => (
-                <span key={chipKey(c)} className="h-8 pl-3 pr-1 rounded-full bg-primary-soft text-primary text-[12px] font-bold inline-flex items-center gap-1">
-                  {c.label}
-                  <button onClick={() => setRemoved((r) => [...r, chipKey(c)])} aria-label={`${c.label} ${t('빼기')}`} className="h-6 w-6 rounded-full grid place-items-center hover:bg-white/60 press"><X size={12} /></button>
-                </span>
-              ))}
-              {removed.length > 0 && <button onClick={() => setRemoved([])} className="h-8 px-2 text-[12px] font-semibold text-ink-3 underline underline-offset-2 press">{t('처음 조건으로')}</button>}
+            {/* AI가 읽어낸 조건 — 칩을 빼면 바로 다시 찾는다 */}
+            <div className="rounded-[20px] bg-primary-soft/60 p-3.5">
+              <div className="text-[13px] font-bold text-ink flex items-center gap-1.5"><Sparkles size={14} className="text-primary" />{t('AI가 이렇게 이해했어요')}</div>
+              <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                {chips.map((c) => (
+                  <span key={chipKey(c)} className="h-8 pl-3 pr-1 rounded-full bg-card border border-line text-primary text-[12px] font-bold inline-flex items-center gap-1">
+                    {c.label}
+                    <button onClick={() => setRemoved((r) => [...r, chipKey(c)])} aria-label={`${c.label} ${t('빼기')}`} className="h-6 w-6 rounded-full grid place-items-center hover:bg-surface-2 press"><X size={12} /></button>
+                  </span>
+                ))}
+                {removed.length > 0 && <button onClick={() => setRemoved([])} className="h-8 px-2 text-[12px] font-semibold text-ink-3 underline underline-offset-2 press">{t('처음 조건으로')}</button>}
+              </div>
+              <p className="mt-1.5 text-[11px] text-ink-3">{t('틀린 조건은 ✕로 빼면 바로 다시 찾아요')}</p>
             </div>
             {parsed && parsed.dropped.length > 0 && <PrivacyNote className="mt-2" text={t('성별·나이·종교 같은 민감한 조건은 쓰지 않아요')} />}
 
@@ -236,11 +241,7 @@ export function NaturalSearchPage() {
                     </button>
                   ))}
                 </div>
-                <div className="mt-4 rounded-2xl bg-primary text-white p-3.5">
-                  <div className="font-display text-[16px] font-bold">{t('건너건너 물어볼까요?')}</div>
-                  <p className="mt-0.5 text-[12px] text-white/80">{t('아는 사람들의 네트워크에 조용히 물어봐요. 해당되는 사람만 답해요.')}</p>
-                  <Button size="sm" variant="secondary" className="mt-2.5" icon={<Send size={14} />} onClick={askNetwork}>{t('건너건너 물어보기')}</Button>
-                </div>
+                <AskFriendsCard onAsk={askNetwork} />
               </div>
             ) : (
               <>
@@ -264,9 +265,23 @@ export function NaturalSearchPage() {
                     </div>
                   </div>
                 )}
-                <button onClick={askNetwork} className="mt-4 w-full h-11 rounded-full border border-line bg-white text-[13px] font-semibold text-primary inline-flex items-center justify-center gap-1.5 press">
-                  <Send size={14} />{t('건너건너 물어볼까요?')}
-                </button>
+                {few ? (
+                  <div className="mt-4 rounded-[24px] border border-line bg-card p-4">
+                    <div className="text-[14px] font-bold text-ink">{t('조금 더 넓게 찾아볼까요?')}</div>
+                    <div className="mt-2 flex flex-col gap-1.5">
+                      {(chips.length > 1 ? relaxations(chips) : []).map((c) => (
+                        <button key={chipKey(c)} onClick={() => setRemoved((r) => [...r, chipKey(c)])} className="h-10 px-3.5 rounded-full bg-surface-2 text-left text-[13px] font-semibold text-primary flex items-center gap-2 press">
+                          <X size={13} />{lang === 'en' ? `Try again without '${c.label}'` : `'${c.label}' 빼고 다시 찾기`}
+                        </button>
+                      ))}
+                    </div>
+                    <AskFriendsCard onAsk={askNetwork} />
+                  </div>
+                ) : (
+                  <button onClick={askNetwork} className="mt-4 w-full h-11 rounded-full border border-line bg-card text-[13px] font-semibold text-primary inline-flex items-center justify-center gap-1.5 press">
+                    <Send size={14} />{t('지인들에게 물어보기')}
+                  </button>
+                )}
               </>
             )}
           </Section>
@@ -274,6 +289,17 @@ export function NaturalSearchPage() {
       )}
 
       <PaywallSheet open={!!paywall} onClose={() => setPaywall(null)} reason={paywall ?? undefined} />
+    </div>
+  );
+}
+
+/** 결과가 없거나 적을 때 — 지인들에게 조용히 물어보기 */
+function AskFriendsCard({ onAsk }: { onAsk: () => void }) {
+  return (
+    <div className="mt-4 rounded-2xl bg-primary-soft/70 p-3.5">
+      <div className="text-[15px] font-bold text-ink">{t('지인들에게 물어볼까요?')}</div>
+      <p className="mt-0.5 text-[12px] text-ink-2">{t('내 연결에게 조용히 물어봐요. 아는 사람이 있으면 소개해줘요.')}</p>
+      <Button size="sm" className="mt-2.5" icon={<Send size={14} />} onClick={onAsk}>{t('지인들에게 물어보기')}</Button>
     </div>
   );
 }

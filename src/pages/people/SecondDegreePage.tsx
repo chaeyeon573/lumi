@@ -169,7 +169,7 @@ function MutualSheet({ sd, onClose }: { sd: SecondDegree | null; onClose: () => 
 }
 
 /** "연결해줄 수 있나요?" — 공통 연결 고르기 + 한 줄(선택). 연락처는 적을 수 없다 */
-function AskSheet({ sd, onClose, onDone }: { sd: SecondDegree | null; onClose: () => void; onDone: () => void }) {
+export function AskSheet({ sd, onClose, onDone }: { sd: SecondDegree | null; onClose: () => void; onDone: () => void }) {
   const v = useViewer();
   const run = useAppStore((s) => s.run);
   const [viaId, setViaId] = useState<string | null>(null);

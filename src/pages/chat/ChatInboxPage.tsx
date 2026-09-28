@@ -13,6 +13,8 @@ import { relativeTime } from '@core/lib/format';
 import { CATEGORY_EMOJI, CATEGORY_LABELS } from '@core/lib/labels';
 import type { ChatRoom } from '@core/types';
 import { cn } from '@core/lib/cn';
+import { isAlumniStage } from '@core/lib/network';
+import { NoteBubble } from '@/components/prompts/ConnectNote';
 
 type Tab = 'direct' | 'activity' | 'org' | 'requests';
 
@@ -40,7 +42,8 @@ export function ChatInboxPage() {
   const reqCount = inProposals.length + inRequests.length;
   const orgs = useAppStore((s) => s.organizations);
   const snap = useMemo(() => ({ ...v.snap, organizations: orgs }), [v.snap, orgs]);
-  const free = useMemo(() => whosFree(snap, me, (u) => v.canSeeField(u, 'timetable')), [snap, me, v]);
+  // 공강 기반 '지금 시간 되는 사람'은 재학생에게만
+  const free = useMemo(() => (isAlumniStage(me) ? [] : whosFree(snap, me, (u) => v.canSeeField(u, 'timetable'))), [snap, me, v]);
 
   return (
     <div className="min-h-full">
@@ -106,11 +109,14 @@ export function ChatInboxPage() {
           <section>
             <h2 className="text-[14px] font-bold mb-2 flex items-center gap-1.5"><Users size={15} />{t('받은 친구 요청')} {inRequests.length}</h2>
             {inRequests.length === 0 ? <div className="card p-4 text-[13px] text-ink-3">{t('받은 친구 요청이 없어요.')}</div> : inRequests.map((q) => { const u = v.userById(q.fromId); return (
-              <div key={q.id} className="card p-3.5 mb-2 flex items-center gap-3">
-                <button onClick={() => nav(`/users/${q.fromId}`)}><Avatar emoji={u?.avatar.emoji ?? '👤'} hue={u?.avatar.hue ?? 200} url={u?.avatar.url} size={40} /></button>
-                <div className="flex-1 min-w-0"><b className="text-[14px]">{u?.nickname}</b><div className="text-[12px] text-ink-3">{relativeTime(q.createdAt)}</div></div>
-                <Button size="sm" variant="outline" onClick={() => run(() => api.relationships.respondFriendRequest(q.id, false))}>{t('거절')}</Button>
-                <Button size="sm" onClick={() => run(() => api.relationships.respondFriendRequest(q.id, true), `${u?.nickname}${t('님과 친구가 되었어요!')}`)}>{t('수락')}</Button>
+              <div key={q.id} className="card p-3.5 mb-2">
+                <div className="flex items-center gap-3">
+                  <button onClick={() => nav(`/users/${q.fromId}`)}><Avatar emoji={u?.avatar.emoji ?? '👤'} hue={u?.avatar.hue ?? 200} url={u?.avatar.url} size={40} /></button>
+                  <div className="flex-1 min-w-0"><b className="text-[14px]">{u?.nickname}</b><div className="text-[12px] text-ink-3">{relativeTime(q.createdAt)}</div></div>
+                  <Button size="sm" variant="outline" onClick={() => run(() => api.relationships.respondFriendRequest(q.id, false))}>{t('거절')}</Button>
+                  <Button size="sm" onClick={() => run(() => api.relationships.respondFriendRequest(q.id, true), `${u?.nickname}${t('님과 친구가 되었어요!')}`)}>{t('수락')}</Button>
+                </div>
+                <NoteBubble note={q.note} className="mt-2.5 pl-[52px]" />
               </div>
             ); })}
             <p className="text-[11px] text-ink-3 mt-1">{t('거절해도 상대에게 알림이 가지 않아요.')}</p>
