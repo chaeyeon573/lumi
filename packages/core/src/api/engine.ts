@@ -9,7 +9,7 @@ import { todayISO as todayISO_ } from '@core/lib/format';
 import type { Patch, Snapshot, RegisterInput, ActivityInput, PostInput, OpportunityInput, TimePollInput, GroupInput, NetworkRequestInput } from './types';
 import type {
   Activity, ActivityProposal, Availability, ChatRoom, ID, Notification, OpportunityIntent, Participation, Post, User, Opportunity, TimePoll, TimeOption, ReportTargetType, Plan, Stage, Career, BoostTier,
-  Wants, VerificationMethod, PeopleSearch, SavedSearch, Organization, NetworkRequest, RequestResponse, RequestReferral, StatusKind, StatusWhen, UserStatus, PrivacySettings, Trip, IntroRequest, ShareField, Research } from '@core/types';
+  Wants, VerificationMethod, PeopleSearch, SavedSearch, Organization, NetworkRequest, RequestResponse, RequestReferral, StatusKind, StatusWhen, UserStatus, PrivacySettings, Trip, IntroRequest, ShareField, Research, FriendNote, Relationships } from '@core/types';
 import { STAGE_ROLE } from '@core/types';
 import { freeBlocks, jsDayToIdx, toMin } from '@core/lib/timetable';
 import { uid, pairKey } from '@core/lib/format';
@@ -649,13 +649,16 @@ export function createEngine(ctx: EngineContext) {
         }
         return { relationships: r, organizations: orgs, notifications: nts };
       },
-      sendFriendRequest(fromId: ID, toId: ID): Patch {
+      sendFriendRequest(fromId: ID, toId: ID, note?: FriendNote): Patch {
         const r = db().relationships;
+        const text = note?.text?.trim().slice(0, 140);
+        if (text && containsContact(text)) throw new Error(t('연락처는 한마디에 적을 수 없어요.'));
         if (r.friendRequests.some((q) => q.fromId === fromId && q.toId === toId && q.status === 'pending')) return { relationships: r };
         if (r.friends.some((f) => pairKey(f.a, f.b) === pairKey(fromId, toId))) return { relationships: r };
         recordConnect(fromId);
-        const req = { id: uid('fr'), fromId, toId, status: 'pending' as const, createdAt: now() };
+        const req: Relationships['friendRequests'][number] = { id: uid('fr'), fromId, toId, status: 'pending' as const, createdAt: now(), ...(text ? { note: { text, promptId: note?.promptId, quote: note?.quote?.slice(0, 120) } } : {}) };
         r.friendRequests.push(req);
+        if (text) { const from = find(db().users, fromId); ctx.push({ notifications: [notify(toId, { type: 'comment', title: `${from.nickname}${t('님이 한마디와 함께 연결을 요청했어요')}`, body: note?.quote ? `“${note.quote.slice(0, 40)}” — ${text}` : text, link: `/users/${fromId}` })] }); }
         if (AUTO_ACCEPT_FRIEND.has(toId)) later(5000, () => { if (req.status === 'pending') ctx.push(acceptFriend(req.id)); });
         return { relationships: r, users: [find(db().users, fromId)] };
       },

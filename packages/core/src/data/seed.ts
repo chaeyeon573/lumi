@@ -612,7 +612,7 @@ export const relationships: Relationships = {
     { fromId: 'u_jimin', toId: DEMO_USER_ID, targetType: 'user' },
   ],
   friendRequests: [
-    { id: 'fr1', fromId: 'u_minjun', toId: DEMO_USER_ID, status: 'pending', createdAt: isoHoursAgo(2) },
+    { id: 'fr1', fromId: 'u_minjun', toId: DEMO_USER_ID, status: 'pending', createdAt: isoHoursAgo(2), note: { text: '신촌 카페 지도 궁금해요! 러닝 끝나고 갈 곳 하나만 알려주세요', promptId: 'q_ask_me', quote: '리액트, 신촌 카페 지도, 전시 추천' } },
     { id: 'fr2', fromId: DEMO_USER_ID, toId: 'u_dohyun', status: 'pending', createdAt: isoHoursAgo(20) },
   ],
   friends: [
@@ -1011,3 +1011,20 @@ posts.push(
     text: '창업하고 처음으로 일주일 쉬었어요. 쉬어보니 다음에 뭘 만들고 싶은지 오히려 잘 보이네요. 다음 주부터 정문 카페 커피챗 다시 엽니다.', topics: ['update', 'startup'],
     tags: ['근황'], visibility: 'school', likeIds: ['u_jimin', DEMO_USER_ID], savedIds: [], comments: [], createdAt: isoHoursAgo(36) },
 );
+
+// ─── v14: 단계별 프로필 질문 (Hinge식) — 대학원생은 연구실·학회, 졸업생은 퇴근 후·동네 질문 ────────────
+const STAGE_PROMPTS: Record<string, { questionId: string; answer: string }[]> = {
+  u_dohyun: [{ questionId: 'qg_now', answer: '금요일 저녁 클라이밍. 연구 얘기는 안 하기로 해요' }, { questionId: 'qg_waiting', answer: '실험 돌려 놓고 백양로 한 바퀴' }, { questionId: 'q_study_type', answer: '조용히 각자 읽고 30분 토론' }, { questionId: 'qg_explain', answer: '넷플릭스가 다음에 볼 영화를 더 잘 고르게 도와줘요' }],
+  u_b_snu1: [{ questionId: 'qg_now', answer: '관악산 둘레길 걷고 샤로수길에서 밥' }, { questionId: 'qg_lab', answer: '밤 10시에도 불 켜져 있지만 간식은 제일 많은 곳' }, { questionId: 'q_role', answer: '회식 장소 찾는 사람' }, { questionId: 'qg_help', answer: '파이썬 디버깅, 논문 그림 그리기' }],
+  u_b_kaist1: [{ questionId: 'qg_now', answer: '주말에 서울 전시 하나 같이 보기' }, { questionId: 'qg_waiting', answer: '로봇 시뮬레이션 돌려 놓고 탁구 한 판' }, { questionId: 'q_one_line', answer: '로봇 손가락에 진심인 사람' }, { questionId: 'qg_path', answer: '박사 끝나고 회사 연구소냐 창업이냐' }],
+  u_g_yonsei_nlp: [{ questionId: 'qg_now', answer: '논문 리딩 끝나고 신촌에서 떡볶이' }, { questionId: 'qg_lab', answer: '조용하지만 슬랙은 시끄러운 연구실' }, { questionId: 'q_first_meet', answer: '커피 한 잔 하면서 요즘 읽는 논문 하나씩' }, { questionId: 'qg_stuck', answer: '평가 지표가 이상할 때, 다른 분야는 어떻게 하는지' }],
+  u_g_korea_bio: [{ questionId: 'qg_now', answer: '안암에서 저녁 러닝 5km' }, { questionId: 'qg_waiting', answer: '서열 분석 돌려 놓고 개운산 산책' }, { questionId: 'q_role', answer: '말은 적은데 끝까지 남는 사람' }, { questionId: 'qg_explain', answer: '유전자 정보로 어떤 약이 잘 들을지 미리 알아보는 일' }],
+  u_g_snu_econ: [{ questionId: 'qg_now', answer: '박사 진학 고민 같이 나눌 저녁 한 끼' }, { questionId: 'qg_waiting', answer: 'Stata 돌려 놓고 서점 구경' }, { questionId: 'q_emoji', answer: '📊📚🍜' }, { questionId: 'qg_path', answer: '국내 박사, 유학, 취업 셋 다 아직 열어 둠' }],
+  u_taeho: [{ questionId: 'qa_now', answer: '성수에서 아침 커피, 만들고 있는 거 서로 보여주기' }, { questionId: 'qa_hood', answer: '성수. 공장 사이 작은 카페들이 좋아요' }, { questionId: 'q_role', answer: '일 벌이는 사람' }, { questionId: 'qa_ask_me', answer: 'MVP 만들기, 팀 꾸리기, 첫 투자 미팅 준비' }, { questionId: 'qa_again', answer: '교환학생. 그땐 겁나서 못 갔어요' }],
+  u_b_snu2: [{ questionId: 'qa_now', answer: '퇴근하고 서울숲 한 바퀴 뛰기' }, { questionId: 'qa_evening', answer: '화·목은 운동, 나머지는 약속 환영' }, { questionId: 'qa_style', answer: '점심 한 끼. 한 시간이면 충분해요' }, { questionId: 'qa_work', answer: '송금을 3초 더 빠르게 만드는 일을 해요' }],
+  u_a_ny_fin: [{ questionId: 'qa_now', answer: '서울 있는 동안 광화문에서 커피 한 잔' }, { questionId: 'qa_newcomer', answer: '뉴욕 처음 오면 첼시 마켓 말고 그리니치빌리지 산책' }, { questionId: 'qa_style', answer: '30분 커피. 길어지면 더 좋고요' }, { questionId: 'qa_ask_me', answer: '미국 MBA, 뉴욕 금융권 첫 1년' }],
+  u_a_tokyo_pm: [{ questionId: 'qa_now', answer: '도쿄 오면 나카메구로 산책 가이드해 드려요' }, { questionId: 'qa_hood', answer: '나카메구로. 강 따라 걷기 좋아요' }, { questionId: 'qa_learning', answer: '회의 일본어. 아직 반만 들려요' }, { questionId: 'qa_ask_me', answer: '해외 이직, PM 커리어, 일본 생활' }],
+  u_a_seoul_ai: [{ questionId: 'qa_now', answer: '주말 아침 한강 자전거' }, { questionId: 'qa_work', answer: '회사에서 쓰는 AI가 틀린 답을 덜 하도록 만들어요' }, { questionId: 'qa_miss', answer: '새벽 3시 기숙사 야식' }, { questionId: 'qa_ask_me', answer: 'ML 면접, 대학원 갈지 바로 일할지' }],
+  u_a_yonsei_seoul: [{ questionId: 'qa_now', answer: '판교 퇴근길 저녁 한 끼' }, { questionId: 'qa_weekend', answer: '토요일 오전 테니스, 오후엔 무조건 낮잠' }, { questionId: 'q_first_meet', answer: '가볍게 밥 먹고 산책' }, { questionId: 'qa_work', answer: '주문이 몰려도 앱이 안 멈추게 하는 일' }],
+};
+users.forEach((u) => { if (STAGE_PROMPTS[u.id]) u.prompts = STAGE_PROMPTS[u.id]; });

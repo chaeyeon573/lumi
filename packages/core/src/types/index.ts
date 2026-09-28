@@ -484,6 +484,10 @@ export interface Participation {
 export type PostCategory = 'friend' | 'school' | 'club' | 'public';
 /** 게시물 종류: 그냥 이야기 / 질문 / 정보 / 후기 / 같이할 사람 / 소식 */
 export type PostType = 'story' | 'question' | 'info' | 'review' | 'together' | 'news';
+/** 피드 공간 — 재학생 글이 동문 피드에, 동문 근황이 학부생 피드에 섞이지 않게 */
+/** 연결 요청에 붙이는 한마디 — 프로필 답변에 대한 한마디면 promptId·quote 가 붙는다 (Hinge 식) */
+export interface FriendNote { text: string; promptId?: string; quote?: string }
+export type PostAudience = 'students' | 'alumni' | 'all';
 export type BoostTier = 'community' | 'cross';
 
 export interface Post {
@@ -505,6 +509,8 @@ export interface Post {
   /** 익명 게시 — 작성자는 서버에만 저장되고 화면에는 '익명'으로 표시. 익명 글은 텍스트만 가능 */
   anonymous?: boolean;
   postType?: PostType;
+  /** 누구에게 보이는 글인지 — 재학생 · 동문 · 모두. 없으면 작성자 단계로 정한다 (lib/feed postAudienceOf) */
+  audience?: PostAudience;
   /** 주제 태그 키 (일상·수업·진로 …) */
   topics?: string[];
   courseTag?: string;
@@ -529,7 +535,7 @@ export interface Relationships {
   /** 관심 ♥ — 상대에게 공개되지 않음 */
   likes: { fromId: ID; toId: ID; createdAt: string }[];
   follows: { fromId: ID; toId: ID; targetType: 'user' | 'org' }[];
-  friendRequests: { id: ID; fromId: ID; toId: ID; status: 'pending' | 'accepted' | 'declined'; createdAt: string }[];
+  friendRequests: { id: ID; fromId: ID; toId: ID; status: 'pending' | 'accepted' | 'declined'; createdAt: string; note?: FriendNote }[];
   friends: { a: ID; b: ID; since: string }[];
   blocks: { fromId: ID; toId: ID }[];
 }

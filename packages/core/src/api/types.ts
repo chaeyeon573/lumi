@@ -1,7 +1,7 @@
 import type {
   Activity, ActivityProposal, ChatRoom, ID, Notification, Organization, Participation, Post, Relationships, Report, School, User,
   ActivityCategory, Visibility, JoinPolicy, ActivityKind, Place, ReportTargetType, Availability, Opportunity, OpportunityIntentRecord, OpportunityIntent, Role, TimePoll, TimeOption, Plan, Stage, Career, OpenTo, BoostTier,
-  SavedSearch, PeopleSearch, Wants, VerificationMethod, GroupScope, Interest, NetworkRequest, RequestReach, StatusKind, StatusWhen, UserStatus, PrivacySettings, Trip, IntroRequest, ShareField, Research } from '@core/types';
+  SavedSearch, PeopleSearch, Wants, VerificationMethod, GroupScope, Interest, NetworkRequest, RequestReach, StatusKind, StatusWhen, UserStatus, PrivacySettings, Trip, IntroRequest, ShareField, Research, FriendNote } from '@core/types';
 
 /** 클라이언트가 보유하는 전체 데이터 스냅샷 (실제 API에서는 필요한 부분만 내려받도록 분리) */
 export interface Snapshot {
@@ -141,6 +141,7 @@ export interface PostInput {
   orgId?: ID;
   anonymous?: boolean;
   postType?: Post['postType'];
+  audience?: Post['audience'];
   topics?: string[];
   courseTag?: string;
   taggedUserIds?: ID[];
@@ -309,7 +310,7 @@ export interface AroundUApi {
   relationships: {
     toggleLike(fromId: ID, toId: ID): Promise<{ patch: Patch; mutual: boolean }>;
     toggleFollow(fromId: ID, toId: ID, targetType: 'user' | 'org'): Promise<Patch>;
-    sendFriendRequest(fromId: ID, toId: ID): Promise<Patch>;
+    sendFriendRequest(fromId: ID, toId: ID, note?: FriendNote): Promise<Patch>;
     cancelFriendRequest(requestId: ID): Promise<Patch>;
     respondFriendRequest(requestId: ID, accept: boolean): Promise<Patch>;
     unfriend(a: ID, b: ID): Promise<Patch>;

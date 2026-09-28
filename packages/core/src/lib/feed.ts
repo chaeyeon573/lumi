@@ -1,8 +1,34 @@
-import type { Post, User, Organization, Relationships } from '@core/types';
+import type { Post, PostAudience, User, Organization, Relationships } from '@core/types';
 import { sameSchool, isStudentStage, isGradStage, isAlumniStage, sameCity, sameField } from './network';
 import { stageKind, promptStageOf, sameResearch, researchMatchesCareer, type CampusScope } from './stage';
 
 const byNew = (a: Post, b: Post) => b.createdAt.localeCompare(a.createdAt);
+
+/** 모두에게 보이는 글 종류 — 후배 질문 받아요 · 채용 · 학교 소식 */
+const OPEN_TOPICS = ['ama', 'hiring', 'info_scholar'];
+/**
+ * 글이 속한 공간 — 재학생(학부·대학원) / 동문 / 모두.
+ * 작성자가 고른 값이 있으면 그대로, 없으면: 동아리·학교 조직 글과 '후배 질문 받아요'·채용 글은 모두, 그 외에는 작성자 단계.
+ * → 졸업생 피드에 "해커톤 팀 구해요"·"혼밥" 같은 재학생 글이 섞이지 않는다.
+ */
+export function postAudienceOf(p: Post, author?: User): PostAudience {
+  if (p.audience) return p.audience;
+  if (p.authorType === 'org' || p.sponsored) return 'all';
+  if ((p.topics ?? []).some((tp) => OPEN_TOPICS.includes(tp))) return 'all';
+  if (!author) return 'all';
+  return isAlumniStage(author) ? 'alumni' : 'students';
+}
+/** 이 사람의 피드에 보여도 되는 글인가 (팔로잉·내 학교 '학교 전체'는 예외로 모두 보인다) */
+export function inMySpace(p: Post, me: User, author?: User): boolean {
+  const a = postAudienceOf(p, author);
+  if (a === 'all') return true;
+  return a === (isAlumniStage(me) ? 'alumni' : 'students');
+}
+/** 글쓰기 기본 공간 — 단계와 시작점(topic)에 따라 */
+export function defaultAudience(me: User, topic?: string): PostAudience {
+  if (topic && OPEN_TOPICS.includes(topic)) return 'all';
+  return isAlumniStage(me) ? 'alumni' : 'students';
+}
 
 /** 내 학교 — 인증된 학교 구성원·학교 조직의 글. scope: 'students' 재학생(학부+대학원) · 'grads' 대학원생 · 'alumni' 동문 · 'all' 학교 전체 */
 export function feedCampus(posts: Post[], me: User, users: User[], orgs: Organization[], scope: CampusScope = 'all'): Post[] {
@@ -60,7 +86,10 @@ export function feedForYou(posts: Post[], me: User, users: User[], rel: Relation
     s -= Math.min(ageH / 24, 3);
     return s;
   };
-  return [...posts].sort((a, b) => score(b) - score(a));
+  const byId = new Map(users.map((u) => [u.id, u]));
+  // 추천은 내 공간(재학생 / 동문) + 모두에게 쓴 글만. 특정 사람 글을 다 보고 싶으면 팔로잉 탭
+  return posts.filter((p) => inMySpace(p, me, byId.get(p.authorId)))
+    .sort((a, b) => score(b) - score(a));
 }
 
 /** 글쓰기 공개 범위 4종 (v2): 전체 / 내 학교 / 특정 그룹 / 팔로워 */

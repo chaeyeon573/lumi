@@ -85,7 +85,7 @@ export function matchReasons(me: User, other: User, snap: Pick<Snapshot, 'opport
     if (me.living && other.living && me.living.zone === other.living.zone) out.push({ kind: 'living', weight: W.living, text: `${t('같은 생활권이에요 (')}${me.living.zone})` });
   }
   // 목표 · 역할 · 기회 (기존)
-  const goals = me.goals.filter((g) => other.goals.includes(g));
+  const goals = isStudentStage(me) && isStudentStage(other) ? me.goals.filter((g) => other.goals.includes(g)) : [];
   if (goals.length) out.push({ kind: 'goal', weight: W.goal, text: `${t('이번 학기 목표가 같아요: ')}${goals.slice(0, 2).map((g) => GOAL_LABELS[g]).join(', ')}` });
   const myOpps = new Set(snap.opportunityIntents.filter((i) => i.userId === me.id).map((i) => i.opportunityId));
   const shared = snap.opportunityIntents.filter((i) => i.userId === other.id && myOpps.has(i.opportunityId));
