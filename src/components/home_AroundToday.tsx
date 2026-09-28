@@ -32,8 +32,8 @@ export function AroundTodayCard({ me, snap }: { me: User; snap: Snapshot }) {
           <li key={r.key}>
             <button onClick={() => nav(r.to)} className="w-full flex items-center gap-3 py-2.5 text-left press">
               <span className="h-8 w-8 rounded-full bg-accent-soft text-primary grid place-items-center shrink-0"><r.Icon size={15} /></span>
-              <span className="flex-1 min-w-0 text-[14px] text-ink"><span className="truncate">{r.label}</span> <b className="text-ink">{r.n}{t('명')}</b></span>
-              <span className="flex -space-x-2 shrink-0">{r.people.slice(0, 3).map((p) => <Avatar key={p.id} emoji={p.avatar.emoji} hue={p.avatar.hue} url={p.avatar.url} size={24} className="ring-2 ring-white" />)}</span>
+              <span className="flex-1 min-w-0 text-[14px] text-ink leading-snug"><span>{r.label}</span> <b className="text-ink whitespace-nowrap">{r.n}{t('명')}</b></span>
+              <span className="flex -space-x-2 shrink-0 pl-2">{r.people.slice(0, 3).map((p) => <Avatar key={p.id} emoji={p.avatar.emoji} hue={p.avatar.hue} url={p.avatar.url} size={24} className="ring-2 ring-white" />)}</span>
               <ChevronRight size={15} className="text-ink-3 shrink-0" />
             </button>
           </li>

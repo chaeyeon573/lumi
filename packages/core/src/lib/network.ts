@@ -98,7 +98,8 @@ export function contextLine(u: User, lang: 'ko' | 'en'): string {
     const field = [u.career?.industry, u.career?.role].filter(Boolean).join(' / '); if (field) parts.push(field);
   } else {
     parts.push(stageLabel(stageOf(u), lang));
-    const major = majorOf(u); const cy = classYearLabel(u, lang);
+    // 대학원생은 단계("석사")를 이미 앞에 썼으니 과정 표기는 반복하지 않는다
+    const major = majorOf(u); const cy = isGradStage(u) ? '' : classYearLabel(u, lang);
     if (major || cy) parts.push([major, cy].filter(Boolean).join(' '));
   }
   return parts.join(' · ');
