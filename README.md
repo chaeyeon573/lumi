@@ -22,7 +22,7 @@ npm run preview    # 빌드 결과 미리보기
 
 ## 모바일 앱 (Expo) — `apps/mobile`
 
-웹과 같은 도메인 코드(`packages/core`: 타입·API·mock DB·스토어·i18n·추천 로직)를 그대로 쓰는 React Native 앱입니다. **v2 UX(홈 | 사람(추천·찾기·연결) | 모임(추천·그룹·일정) | 피드 | 프로필, `docs/UX-SPEC.md`)는 아직 웹에만 반영됐고, 모바일은 이전 구조(사람 | 발견 | + | 캠퍼스 | 나)입니다 — core 로직(추천·검색·시드)은 공유되며 화면 이식은 다음 라운드.** 화면은 RN으로 다시 그렸고, 웹의 모든 화면(사람·발견·캠퍼스·나 탭, `+` 시트, 사람/활동/조직/공고 상세, 채팅, 알림, 설정, 시간표, 수업 공간, Plan Together, 활동·게시물 만들기, 프로필 편집)이 `apps/mobile/app/**` 에 같은 경로 이름으로 있습니다. 온보딩·지도는 아직 없고 데모 계정으로 바로 들어갑니다.
+웹과 같은 도메인 코드(`packages/core`: 타입·API·mock DB·스토어·i18n·추천 로직)를 그대로 쓰는 React Native 앱입니다. 웹과 같은 5탭(홈 | 사람 | 모임 | 피드 | 프로필), 네트워크 16화면, 단계별 화면(학부생·대학원생·졸업생), AI 사람 찾기, 질문 답변 + 한마디, 피드 공간(재학생·동문·모두)이 모두 들어 있습니다(`apps/mobile/app/**`). 데모 계정으로 바로 들어가고, 설정 › 데모 도구 › 단계 미리보기로 단계를 바꿀 수 있어요.
 
 **폰에서 보기 (Windows PowerShell)** — 다른 작업 세션이 브랜치를 바꿔도 안 깨지도록 `~/AroundU-mobile` 에 따로 클론해서 실행합니다.
 
@@ -30,7 +30,13 @@ npm run preview    # 빌드 결과 미리보기
 .\start-mobile.ps1      # 클론/갱신 → npm install → apps/mobile 에서 expo start --tunnel
 ```
 
-QR이 뜨면 폰의 **Expo Go**(App Store / Play 스토어)로 스캔합니다. tunnel 모드라 같은 Wi-Fi가 아니어도 됩니다.
+**Mac / Linux**
+
+```bash
+bash start-mobile.sh    # 같은 동작 (~/AroundU-mobile)
+```
+
+QR이 뜨면 폰의 **Expo Go**(App Store / Play 스토어)로 스캔합니다(아이폰은 기본 카메라로 스캔). tunnel 모드라 같은 Wi-Fi가 아니어도 됩니다. 준비물: Node.js 20 이상, Git. 처음 한 번은 설치에 몇 분 걸려요.
 
 **브라우저에서 보기** — 같은 RN 코드가 react-native-web으로 돌아갑니다.
 

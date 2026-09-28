@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | `packages/core/src` | 타입 · API 계약 · **엔진(도메인 로직)** · mock/remote API · 스토어 · i18n · 시드 · 순수 헬퍼(`lib/*`) | `@core/...` |
 | `src/` | 웹 앱 (React 19 + Vite + Tailwind v4, react-router v7) — 화면만 | `@/...` |
-| `apps/mobile` | Expo(React Native) 앱 — 화면만, core 공유. **PRD 5탭 구조는 아직 웹만 반영**(모바일은 이전 구조) | `@/...` = `apps/mobile/src` |
+| `apps/mobile` | Expo(React Native) 앱 — 화면만, core 공유. 웹과 같은 5탭·단계별 화면. 폰에서 열기: `start-mobile.ps1`(Windows) · `start-mobile.sh`(Mac) → Expo Go | `@/...` = `apps/mobile/src` |
 | `server/` | Express + Postgres(Railway). 같은 엔진을 서버에서 실행 | — |
 
 ### 반드시 지킬 것
