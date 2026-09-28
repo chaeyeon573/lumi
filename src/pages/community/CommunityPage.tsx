@@ -65,7 +65,7 @@ function FeedTab() {
       <button key={p.id} onClick={() => setOpen(p.id)} className="w-full flex items-center gap-3 py-3 text-left press">
         {p.anonymous ? <span className="h-11 w-11 rounded-full bg-primary-soft grid place-items-center text-primary text-[13px] font-bold">?</span> : <Avatar emoji={av.emoji} hue={av.hue} url={av.url} size={44} />}
         <span className="flex-1 min-w-0">
-          <span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{name}</span>{p.postType && p.postType !== 'story' && <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{POST_TYPE_LABELS[p.postType]}</span>}<span className="text-[12px] text-ink-3 ml-auto shrink-0">{relativeTime(p.createdAt)}</span></span>
+          <span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-ink truncate">{name}</span>{p.postType && p.postType !== 'story' && <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{POST_TYPE_LABELS[p.postType]}</span>}<span className="text-[12px] text-ink-3 ml-auto shrink-0">{relativeTime(p.createdAt)}</span></span>
           <span className="block text-[14px] text-ink-2 truncate mt-0.5">{p.text}</span>
           <span className="flex items-center gap-3 text-[12px] text-ink-3 mt-1"><span className="flex items-center gap-1"><Heart size={12} />{p.likeIds.length}</span><span className="flex items-center gap-1"><MessageCircle size={12} />{p.comments.length}</span></span>
         </span>
@@ -106,7 +106,7 @@ function OpportunitiesTab() {
         <div className="divide-y divide-line">{list.map(({ o }) => (
           <button key={o.id} onClick={() => nav(`/opportunities/${o.id}`)} className="w-full flex items-center gap-3 py-3.5 text-left press">
             <span className="h-11 w-11 rounded-full bg-primary-soft text-primary grid place-items-center text-[12px] font-bold shrink-0">{OPP_TYPE_LABELS[o.type].slice(0, 2)}</span>
-            <span className="flex-1 min-w-0"><span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{o.title}</span><span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{OPP_TYPE_LABELS[o.type]}</span></span><span className="block text-[13px] text-ink-3 truncate mt-0.5">{o.host}{o.deadline ? ` · ${dday(o.deadline)}` : ''}</span></span>
+            <span className="flex-1 min-w-0"><span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-ink truncate">{o.title}</span><span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{OPP_TYPE_LABELS[o.type]}</span></span><span className="block text-[13px] text-ink-3 truncate mt-0.5">{o.host}{o.deadline ? ` · ${dday(o.deadline)}` : ''}</span></span>
             <ArrowRight size={20} className="text-primary shrink-0" />
           </button>
         ))}</div>
@@ -134,7 +134,7 @@ function ClubsTab() {
         <div className="divide-y divide-line">{list.map((o) => (
           <button key={o.id} onClick={() => nav(`/orgs/${o.id}`)} className="w-full flex items-center gap-3 py-3.5 text-left press">
             <Avatar emoji={o.logo.emoji} hue={o.logo.hue} url={o.logo.url} size={44} />
-            <span className="flex-1 min-w-0"><span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{o.name}</span>{o.recruitment?.open && <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{t('모집 중')}</span>}</span><span className="block text-[13px] text-ink-3 truncate mt-0.5">{o.memberIds.length + o.followerIds.length}{lang === 'en' ? ' members' : '명'}</span></span>
+            <span className="flex-1 min-w-0"><span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-ink truncate">{o.name}</span>{o.recruitment?.open && <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{t('모집 중')}</span>}</span><span className="block text-[13px] text-ink-3 truncate mt-0.5">{o.memberIds.length + o.followerIds.length}{lang === 'en' ? ' members' : '명'}</span></span>
             <span className="h-9 w-9 rounded-full grid place-items-center text-primary">{o.recruitment?.open ? <Plus size={20} /> : <ArrowRight size={20} />}</span>
           </button>
         ))}</div>

@@ -74,7 +74,7 @@ export function AroundPage() {
         )}
 
         {/* 내 방문 예정 */}
-        <section className="rounded-[24px] bg-[linear-gradient(135deg,#D2E4FF,#BFF4FF)] p-4">
+        <section className="rounded-[24px] bg-[linear-gradient(135deg,var(--tint),var(--tint))] p-4">
           <div className="flex items-center gap-2">
             <Plane size={16} className="text-primary" />
             <span className="flex-1 text-[14px] font-bold text-primary">{t('내 방문 예정')}</span>

@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { PALETTES, type PaletteId } from '@core/theme/tokens';
+import { PALETTE_IDS, currentPalette, setPalette } from '@/lib/palette';
 import { t, lang, setLang } from '@core/i18n';
 import { ChevronRight, Lock, ShieldAlert, Bell, MapPin, LogOut, RotateCcw, Bug, User, Sparkles, Receipt, GraduationCap, Target, BellRing, Coffee, Bookmark, SplitSquareVertical } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
@@ -24,6 +27,7 @@ export function SettingsPage() {
   const alumni = isAlumniStage(me);
   const plus = me.plan === 'plus';
   const myStatus = activeStatus(me);
+  const [palette, setPaletteState] = useState<PaletteId>(() => currentPalette());
   const items = [
     { Icon: User, label: t('프로필 편집'), desc: t('사진 · 전공 · 거주 도시 · 관심사'), to: '/profile/edit' },
     { Icon: Target, label: t('추천 설정'), desc: t('AroundU가 나를 이해하는 기준'), to: '/profile/wants' },
@@ -117,6 +121,11 @@ export function SettingsPage() {
         {/* ── 데모 도구 ── */}
         <div className="card divide-y divide-line">
           <div className="px-4 pt-3 pb-1 text-[11px] font-bold text-ink-3">{t('데모 도구')}</div>
+          <div className="px-4 py-3">
+            <div className="text-[14px] font-semibold">{t('색 조합')}</div>
+            <div className="text-[12px] text-ink-3 mb-2">{t('옅은 하늘 배경 · 맑은 파랑 버튼 · 짙은 회청 글자 — 세 가지를 비교해 봐요. 이 브라우저에만 저장돼요.')}</div>
+            <Segmented value={palette} onChange={(p) => { setPalette(p); setPaletteState(p); }} options={PALETTE_IDS.map((id) => ({ value: id, label: PALETTES[id].name }))} />
+          </div>
           <div className="px-4 py-3">
             <div className="text-[14px] font-semibold">{t('단계 미리보기')}</div>
             <div className="text-[12px] text-ink-3 mb-2">{t('같은 계정으로 학부생 · 대학원생 · 졸업생 화면을 바꿔 봐요. 연결·기록은 그대로예요.')}</div>

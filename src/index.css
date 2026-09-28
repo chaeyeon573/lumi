@@ -1,46 +1,91 @@
 @import "tailwindcss";
 @import "leaflet/dist/leaflet.css";
 
+/*
+ * 디자인 토큰 v3 (Timeleft 느낌) — 값의 원본은 packages/core/src/theme/tokens.ts. 바꾸면 두 곳을 같이.
+ * 팔레트 3개(mist 기본 · harbor · glacier)는 <html data-palette="…"> 로 바꾼다 (설정 › 데모 도구 › 색 조합).
+ * 쨍한 하늘색 #BFF4FF · 진한 남색 #0F2B48 은 쓰지 않는다. 옅은 하늘 배경 + 맑은 파랑 버튼 + 짙은 회청 글자.
+ */
+:root, :root[data-palette="mist"] {
+  --bg: #F6F9FC; --surface: #FFFFFF; --surface-2: #EEF3F8; --line: #E1E8F0;
+  --tint: #E7F1FB; --tint-2: #D3E5F7;
+  --primary: #2F80ED; --primary-press: #2468C4; --on-primary: #FFFFFF;
+  --ink: #1E2B3A; --ink-2: #4A5A6B; --ink-3: #7E8B9A; --link: #2A6FC9;
+  --ok: #2F8F67; --ok-soft: #E3F4EC; --warn: #B7791F; --warn-soft: #FDF3DC; --danger: #C53D3D; --danger-soft: #FCE8E8;
+  --shadow-rgb: 30, 43, 58;
+}
+:root[data-palette="harbor"] {
+  --bg: #F2F5F8; --surface: #FFFFFF; --surface-2: #E9EEF3; --line: #DCE3EA;
+  --tint: #E3EDF5; --tint-2: #CCDDEC;
+  --primary: #1F6FD6; --primary-press: #1858AD; --on-primary: #FFFFFF;
+  --ink: #25323F; --ink-2: #4E5D6B; --ink-3: #808C98; --link: #1F63BD;
+  --ok: #2E8062; --ok-soft: #E1F1EA; --warn: #A86F1A; --warn-soft: #FAF0DA; --danger: #B93838; --danger-soft: #F9E5E5;
+  --shadow-rgb: 37, 50, 63;
+}
+:root[data-palette="glacier"] {
+  --bg: #F8FBFD; --surface: #FFFFFF; --surface-2: #F0F5F9; --line: #E4EBF1;
+  --tint: #EAF4FB; --tint-2: #D6E9F6;
+  --primary: #3A92F0; --primary-press: #2B78CF; --on-primary: #FFFFFF;
+  --ink: #223243; --ink-2: #51606F; --ink-3: #86929E; --link: #2F7BD0;
+  --ok: #2F8C6A; --ok-soft: #E4F4ED; --warn: #B27A22; --warn-soft: #FCF2DE; --danger: #C24242; --danger-soft: #FBE8E8;
+  --shadow-rgb: 34, 50, 67;
+}
+
 @theme {
-  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-
-  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-
-  /* Pastel Breeze: white canvas, slate cobalt actions, pastel sky blue accents */
-  --color-bg: #FFFFFF;
-  --color-surface: #FFFFFF;
-  --color-surface-2: #F3F4ED;
-  --color-line: #E6E8E1;
-  --color-ink: #1A1C18;
-  --color-ink-2: #43474D;
-  --color-ink-3: #74777E;
-
-  --color-primary: #0F2B48;
-  --color-brand: #00162D;
-  --color-primary-deep: #00162D;
-  --color-primary-soft: #D2E4FF;
-  --color-accent: #A3D5FF;
-  --color-accent-soft: #BFF4FF;
-  --color-mint: #2E7D5B;
-  --color-mint-soft: #DDF3E6;
-  --color-gold: #B8860B;
-  --color-gold-soft: #FFF1C9;
-  --color-danger: #BA1A1A;
-  --color-danger-soft: #FFDAD6;
-  --color-heart: #0F2B48;
-  --color-heart-soft: #A3D5FF;
-  --color-verify: #2E6388;
-  --color-sky: #A3D5FF;
-  --color-sky-soft: #D2E4FF;
+  --font-sans: "Plus Jakarta Sans", "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", sans-serif;
+  --font-display: "Plus Jakarta Sans", "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", sans-serif;
+  --radius-xl2: 20px;
+  --radius-xl3: 28px;
   --color-blush: #F1A7A1;
   --color-peach: #FFD2B5;
   --color-sage: #C7D8B8;
+}
 
-  --radius-xl2: 20px;
-  --radius-xl3: 28px;
-  --shadow-card: 0 12px 32px -4px rgba(15, 43, 72, 0.08);
-  --shadow-float: 0 12px 32px rgba(15, 43, 72, 0.28);
-  --shadow-sheet: 0 -8px 40px rgba(20, 22, 31, 0.14);
+/* 기존 이름(primary · accent-soft …)은 새 의미로 이어 붙인다 — 화면 코드를 바꾸지 않아도 새 팔레트가 적용된다 */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-primary: var(--primary);
+  --color-brand: var(--ink);
+  --color-primary-deep: var(--primary-press);
+  --color-primary-soft: var(--tint);
+  --color-accent: var(--tint-2);
+  --color-accent-soft: var(--tint);
+  --color-mint: var(--ok);
+  --color-mint-soft: var(--ok-soft);
+  --color-gold: var(--warn);
+  --color-gold-soft: var(--warn-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-heart: var(--primary);
+  --color-heart-soft: var(--tint-2);
+  --color-verify: var(--link);
+  --color-sky: var(--tint-2);
+  --color-sky-soft: var(--tint);
+  /* shadcn/ui 이름 */
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--ink);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--ink);
+  --color-primary-foreground: var(--on-primary);
+  --color-secondary: var(--tint);
+  --color-secondary-foreground: var(--primary);
+  --color-muted: var(--surface-2);
+  --color-muted-foreground: var(--ink-3);
+  --color-destructive: var(--danger);
+  --color-border: var(--line);
+  --color-input: var(--line);
+  --color-ring: var(--primary);
+  --shadow-card: 0 1px 2px rgba(var(--shadow-rgb), 0.04), 0 8px 24px -12px rgba(var(--shadow-rgb), 0.10);
+  --shadow-float: 0 10px 30px -8px rgba(var(--shadow-rgb), 0.22);
+  --shadow-sheet: 0 -8px 40px rgba(var(--shadow-rgb), 0.12);
 }
 
 html, body, #root { height: 100%; }
@@ -53,7 +98,7 @@ body {
   overscroll-behavior-y: none;
 }
 @media (min-width: 640px) {
-  body { background: #EEF0EA; }
+  body { background: color-mix(in srgb, var(--bg) 70%, var(--line)); }
 }
 
 * { box-sizing: border-box; }
@@ -68,12 +113,17 @@ input, textarea, select { font: inherit; }
 @utility safe-bottom {
   padding-bottom: max(env(safe-area-inset-bottom), 0px);
 }
+/* 카드 규칙: 반경 20 · 흰 배경 · 1px 선 · 아주 옅은 그림자. 카드 안에 카드를 넣지 않는다 */
 @utility card {
   background: var(--color-surface);
-  border-radius: 24px;
-  border: 1px solid rgba(177, 229, 255, 0.35);
+  border-radius: 20px;
+  border: 1px solid var(--color-line);
   box-shadow: var(--shadow-card);
 }
+/* 글자 규칙 (tokens.ts TYPE) */
+@utility text-display { font-size: 30px; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; }
+@utility text-title { font-size: 22px; line-height: 1.25; font-weight: 700; letter-spacing: -0.02em; }
+@utility text-headline { font-size: 17px; line-height: 1.35; font-weight: 700; letter-spacing: -0.01em; }
 @utility font-display {
   font-family: var(--font-display);
   letter-spacing: -0.02em;
@@ -98,7 +148,7 @@ input, textarea, select { font: inherit; }
 .animate-fade-in { animation: fade-in 180ms ease; }
 .animate-toast-in { animation: toast-in 200ms ease; }
 .skeleton {
-  background: linear-gradient(90deg, #F1E7DA 0%, #FBF5EC 40%, #F1E7DA 80%);
+  background: linear-gradient(90deg, var(--surface-2) 0%, var(--bg) 40%, var(--surface-2) 80%);
   background-size: 800px 100%;
   animation: shimmer 1.4s infinite linear;
   border-radius: 10px;

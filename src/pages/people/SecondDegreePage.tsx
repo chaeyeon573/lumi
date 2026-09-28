@@ -84,7 +84,7 @@ function PathLine({ sd }: { sd: SecondDegree }) {
       <ArrowRight size={13} className="text-ink-3 shrink-0" />
       <span className="flex items-center gap-1 min-w-0">
         {sd.via.slice(0, 2).map((u) => <Avatar key={u.id} emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={20} className="shrink-0" />)}
-        <span className="truncate text-primary">{names || fmt(t('공통 연결 {n}명'), { n: sd.hiddenVia })}{names && extra > 0 ? ` ${fmt(t('외 {n}명'), { n: extra })}` : ''}</span>
+        <span className="truncate text-ink">{names || fmt(t('공통 연결 {n}명'), { n: sd.hiddenVia })}{names && extra > 0 ? ` ${fmt(t('외 {n}명'), { n: extra })}` : ''}</span>
       </span>
       <ArrowRight size={13} className="text-ink-3 shrink-0" />
       <span className="shrink-0">{sd.user.nickname}</span>
@@ -110,7 +110,7 @@ function SecondCard({ sd, asked, onMutual, onAsk, onAsks }: { sd: SecondDegree; 
       <div className="bg-[#F4F9FF] px-3.5 pt-3 pb-2.5 space-y-1.5">
         <div className="flex items-center gap-2">
           <span className="h-6 px-2.5 rounded-full bg-primary text-white text-[11px] font-bold inline-flex items-center shrink-0">{t('2촌')}</span>
-          <button onClick={onMutual} className="h-6 px-2.5 rounded-full bg-white border border-[#D2E4FF] text-primary text-[11px] font-bold inline-flex items-center gap-0.5 press">{fmt(t('공통 연결 {n}명'), { n: total })}<ChevronRight size={12} /></button>
+          <button onClick={onMutual} className="h-6 px-2.5 rounded-full bg-white border border-[var(--tint)] text-primary text-[11px] font-bold inline-flex items-center gap-0.5 press">{fmt(t('공통 연결 {n}명'), { n: total })}<ChevronRight size={12} /></button>
           <span className="flex-1" />
           {canIntro && <Tag tone="mint">{t('소개 가능')}</Tag>}
         </div>
@@ -310,7 +310,7 @@ function AsksTab({ onPeople }: { onPeople: () => void }) {
 
 const MY_STATUS: Record<IntroRequest['status'], { label: string; cls: string }> = {
   pending: { label: t('전달 대기'), cls: 'bg-surface-2 text-ink-2' },
-  forwarded: { label: t('전달됨'), cls: 'bg-[#BFF4FF] text-primary' },
+  forwarded: { label: t('전달됨'), cls: 'bg-accent-soft text-primary' },
   accepted: { label: t('이어짐'), cls: 'bg-primary text-white' },
   passed: { label: t('이번엔 어려웠어요'), cls: 'bg-surface-2 text-ink-3 font-semibold' },
   declined: { label: t('이번엔 어려웠어요'), cls: 'bg-surface-2 text-ink-3 font-semibold' },

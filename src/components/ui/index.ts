@@ -7,3 +7,4 @@ export * from './Field';
 export * from './VisibilityPicker';
 export * from './Toast';
 export * from './SectionState';
+export * as shadcn from './shadcn';

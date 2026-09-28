@@ -84,7 +84,7 @@ export function MaskedPersonCard({ user, top, sub, className }: { user: User; to
 
 /** 카드 맨 위 — 이유/거리 알약 + 상태 */
 export function DegreePill({ text }: { text: string }) {
-  return <span className="h-6 px-2.5 rounded-full bg-[#BFF4FF] text-primary text-[11px] font-bold inline-flex items-center">{text}</span>;
+  return <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-bold inline-flex items-center">{text}</span>;
 }
 
 export { StatusPill };

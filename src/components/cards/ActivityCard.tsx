@@ -63,7 +63,7 @@ export function ActivityCard({ activity: a, variant = 'feed', className, badge }
     return (
       <article className={cn('card p-3.5', className)}>
         <div className="flex gap-3">
-          <button onClick={() => nav(`/activities/${a.id}`)} className="h-11 w-11 rounded-xl grid place-items-center text-[20px] shrink-0" style={{ background: `${color}1A` }}>{CATEGORY_EMOJI[a.category]}</button>
+          <button onClick={() => nav(`/activities/${a.id}`)} className="h-11 w-11 rounded-xl grid place-items-center text-[20px] shrink-0" style={{ background: `color-mix(in srgb, ${color} 10%, transparent)` }}>{CATEGORY_EMOJI[a.category]}</button>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-1.5 flex-wrap"><span className="text-[11px] font-bold" style={{ color }}>{CATEGORY_LABELS[a.category]}</span>{badge && <Tag tone="accent" className="h-5">{badge}</Tag>}{a.official && <Tag tone="gold" className="h-5"><BadgeCheck size={11} /> {t('학교 공식')}</Tag>}<VisibilityTag value={a.visibility} className="ml-auto" /></div>
             <button onClick={() => nav(`/activities/${a.id}`)} className="text-left"><h3 className="text-[15px] font-bold leading-snug mt-0.5">{a.title}</h3></button>

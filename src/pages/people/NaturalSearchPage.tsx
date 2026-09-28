@@ -152,7 +152,7 @@ export function NaturalSearchPage() {
 
   const exampleChips = (
     <div className="flex flex-wrap gap-1.5">
-      {examples.map((x) => <button key={x} onClick={() => go(x)} className="h-8 px-3 rounded-full bg-[#F4F9FF] border border-[#D2E4FF] text-[12px] font-semibold text-primary press">{x}</button>)}
+      {examples.map((x) => <button key={x} onClick={() => go(x)} className="h-8 px-3 rounded-full bg-[#F4F9FF] border border-[var(--tint)] text-[12px] font-semibold text-primary press">{x}</button>)}
     </div>
   );
 
@@ -162,7 +162,7 @@ export function NaturalSearchPage() {
       <div className="px-4 pt-2">
         <form className="relative" onSubmit={(e) => { e.preventDefault(); go(draft); }}>
           <Search size={17} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-3" />
-          <Input className="pl-10 pr-12 h-12 rounded-full bg-[#F4F9FF] border-[#D2E4FF]" autoFocus={!q} placeholder={t('혹시 찾는 사람이 있나요?')} value={draft} onChange={(e) => setDraft(e.target.value)} enterKeyHint="search" />
+          <Input className="pl-10 pr-12 h-12 rounded-full bg-[#F4F9FF] border-[var(--tint)]" autoFocus={!q} placeholder={t('혹시 찾는 사람이 있나요?')} value={draft} onChange={(e) => setDraft(e.target.value)} enterKeyHint="search" />
           <button type="submit" aria-label={t('찾기')} disabled={!draft.trim()} className="absolute right-1.5 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-primary text-white grid place-items-center press disabled:opacity-35"><ArrowRight size={16} /></button>
         </form>
         {!plus && <p className="mt-1.5 ml-3 text-[11px] text-ink-3">{t('오늘 남은 자연어 찾기')} {Math.max(0, FREE_NL_SEARCHES_PER_DAY - used)}/{FREE_NL_SEARCHES_PER_DAY}</p>}
@@ -214,7 +214,7 @@ export function NaturalSearchPage() {
             <div className="flex flex-wrap items-center gap-1.5">
               <span className="text-[11px] font-bold text-ink-3 mr-0.5">{t('읽어낸 조건')}</span>
               {chips.map((c) => (
-                <span key={chipKey(c)} className="h-8 pl-3 pr-1 rounded-full bg-[#D2E4FF] text-primary text-[12px] font-bold inline-flex items-center gap-1">
+                <span key={chipKey(c)} className="h-8 pl-3 pr-1 rounded-full bg-primary-soft text-primary text-[12px] font-bold inline-flex items-center gap-1">
                   {c.label}
                   <button onClick={() => setRemoved((r) => [...r, chipKey(c)])} aria-label={`${c.label} ${t('빼기')}`} className="h-6 w-6 rounded-full grid place-items-center hover:bg-white/60 press"><X size={12} /></button>
                 </span>
@@ -245,7 +245,7 @@ export function NaturalSearchPage() {
             ) : (
               <>
                 <div className="mt-4 flex items-end gap-2">
-                  <h2 className="flex-1 font-display text-[18px] font-bold text-primary leading-tight">{t('가까운 네트워크에서')} {results.length}{t('명을 찾았어요')}</h2>
+                  <h2 className="flex-1 font-display text-[18px] font-bold text-ink leading-tight">{t('가까운 네트워크에서')} {results.length}{t('명을 찾았어요')}</h2>
                   <button onClick={save} disabled={saving} className="h-8 px-3 rounded-full border border-line bg-white text-[12px] font-bold text-primary inline-flex items-center gap-1 press shrink-0">
                     {plus ? <Star size={13} /> : <Lock size={12} />}{t('검색 저장')}
                   </button>
@@ -255,7 +255,7 @@ export function NaturalSearchPage() {
                   {shown.map((x) => <MaskedPersonRow key={x.u.id} user={x.u} reasons={x.reasons} onConnect={connect} busy={busyId === x.u.id} />)}
                 </div>
                 {advancedLocked && results.length > shown.length && (
-                  <div className="mt-3 rounded-[24px] bg-[linear-gradient(120deg,#D2E4FF,#BFF4FF)] p-4">
+                  <div className="mt-3 rounded-[24px] bg-[linear-gradient(120deg,var(--tint),var(--tint))] p-4">
                     <div className="text-[14px] font-bold text-primary">{lang === 'en' ? `${results.length - shown.length} more match these combined conditions` : `조건을 겹친 결과 ${results.length - shown.length}명이 더 있어요`}</div>
                     <p className="mt-0.5 text-[12px] text-ink-2">{t('조건 2개 이상은 AroundU+ 에서 모두 보여요. 조건 하나씩은 무료예요.')}</p>
                     <div className="mt-2.5 flex gap-2">

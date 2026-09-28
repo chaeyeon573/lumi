@@ -112,7 +112,7 @@ function RecommendTab({ connect, invite, openPaywall, freeFirst }: { connect: (u
   return (
     <>
       {incoming.length > 0 && (
-        <button onClick={() => nav('/people/requests')} className="shrink-0 mx-4 mb-2 h-9 pl-3.5 pr-2.5 rounded-full bg-[#BFF4FF] text-primary text-[12px] font-semibold flex items-center gap-1.5 press">
+        <button onClick={() => nav('/people/requests')} className="shrink-0 mx-4 mb-2 h-9 pl-3.5 pr-2.5 rounded-full bg-accent-soft text-primary text-[12px] font-semibold flex items-center gap-1.5 press">
           <span className="truncate flex-1 text-left">{t('혹시 여기에 해당되나요?')} · {incoming.length}{t('건')}</span>
           <span className="shrink-0 flex items-center">{t('보기')}<ChevronRight size={13} /></span>
         </button>
@@ -120,7 +120,7 @@ function RecommendTab({ connect, invite, openPaywall, freeFirst }: { connect: (u
       <div className="shrink-0 px-4 pb-2 flex items-center gap-2">
         <button onClick={() => nav('/profile/wants')} className="flex-1 min-w-0 h-8 pl-3 pr-2 rounded-full bg-surface-2 text-[12px] font-semibold text-ink-2 flex items-center gap-1.5 press">
           {hasWants(me.wants)
-            ? <><span className="text-ink-3 shrink-0">{t('찾는 사람')}:</span><span className="truncate text-primary">{wants}</span><span className="text-ink-3">·</span><span className="text-primary shrink-0 flex items-center gap-0.5"><Pencil size={11} />{t('편집')}</span></>
+            ? <><span className="text-ink-3 shrink-0">{t('찾는 사람')}:</span><span className="truncate text-ink">{wants}</span><span className="text-ink-3">·</span><span className="text-primary shrink-0 flex items-center gap-0.5"><Pencil size={11} />{t('편집')}</span></>
             : <><span className="truncate">{t('찾는 사람을 설정하면 추천이 정확해져요')}</span><span className="text-primary shrink-0 flex items-center">{t('설정')}<ChevronRight size={13} /></span></>}
         </button>
         <button onClick={openPaywall} aria-label="AroundU+" title={t('오늘 연결 요청')} className={cn('h-8 px-3 rounded-full text-[12px] font-bold flex items-center gap-1 shrink-0 press', plus ? 'bg-primary text-white' : left <= 2 ? 'bg-gold-soft text-[#B57A0E]' : 'bg-accent-soft text-primary')}>
@@ -176,7 +176,7 @@ function RecommendDeck({ connect, invite }: { connect: (u: User) => Promise<bool
           <div className={cn('shrink-0 pt-3 pb-1 flex flex-col items-center gap-2 transition-opacity', !current && 'opacity-0 pointer-events-none')}>
             <div className="flex items-center gap-3">
               <button onClick={advance} aria-label={t('패스')} className="h-12 w-12 rounded-full bg-surface-2 text-ink-2 grid place-items-center press"><X size={22} /></button>
-              <Button size="lg" className="px-9 shadow-[0_12px_28px_-8px_rgba(15,43,72,.35)]" icon={<UserPlus size={18} />} loading={busy} disabled={connected || requested} variant={connected || requested ? 'secondary' : 'primary'} onClick={() => current && onConnect(current.user)}>{connected ? t('연결됨') : requested ? t('요청됨') : t('연결')}</Button>
+              <Button size="lg" className="px-9 shadow-[0_12px_28px_-8px_rgba(var(--shadow-rgb),.35)]" icon={<UserPlus size={18} />} loading={busy} disabled={connected || requested} variant={connected || requested ? 'secondary' : 'primary'} onClick={() => current && onConnect(current.user)}>{connected ? t('연결됨') : requested ? t('요청됨') : t('연결')}</Button>
               <button onClick={() => current && invite(current.user)} aria-label={t('만남에 초대')} className="h-12 w-12 rounded-full bg-primary-soft text-primary grid place-items-center press"><CalendarPlus size={20} /></button>
             </div>
             <span className="text-[11px] text-ink-3">{t('패스')} · {t('연결')} · {t('만남에 초대')}</span>
@@ -262,7 +262,7 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
             <SectionEmpty emoji="🌤️" title={t('이번 주는 조용해요')} description={t('아무것도 안 해도 괜찮아요. 새로운 사람이 생기면 여기에 보여요.')}
               action={<Button size="sm" variant="outline" icon={<Search size={14} />} onClick={() => nav('/people/find')}>{t('사람 찾아보기')}</Button>} />
           )}>
-          <div className="rounded-[24px] bg-gradient-to-br from-[#D2E4FF] to-[#BFF4FF] p-1.5">
+          <div className="rounded-[24px] bg-gradient-to-br from-[var(--tint)] to-[var(--tint)] p-1.5">
             <div className="rounded-[20px] bg-white/80 divide-y divide-line/70">
               <AroundRow emoji="🤝" label={t('아는 사람을 통해 이어진 사람')} n={around.viaFriends.length} onClick={() => nav('/people/second')} />
               <AroundRow emoji="📍" label={around.city ? fmt(t('이번 주 {city}에 있는 사람'), { city: around.city }) : t('이번 주 같은 도시에 있는 사람')} n={around.inCity.length} onClick={() => nav('/people/around')} />
@@ -273,6 +273,8 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
         </Section>
       </section>
 
+      {/* 섹션 줄이기 — (c) 열려 있는 사람 · (d) 의외의 연결 · (e) 저장·찾아보기는 한 카드로 접어 둔다. 누르면 그 자리에서 펼친다 */}
+      <HubMore titles={[t('열려 있는 사람'), t('의외의 연결'), t('저장한 사람'), t('혹시 찾는 사람이 있나요?')]}>
       {/* (c) Open To — 상태가 켜진 사람 */}
       <section aria-labelledby="h-open" className="space-y-2">
         <div className="flex items-center gap-2 px-1">
@@ -312,14 +314,27 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
           <ChevronRight size={16} className="text-ink-3" />
         </button>
         <button onClick={() => nav('/people/find')} className="w-full min-h-[52px] px-4 flex items-center gap-3 text-left press">
-          <span className="h-8 w-8 rounded-full bg-[#BFF4FF] text-primary grid place-items-center shrink-0"><Search size={15} /></span>
+          <span className="h-8 w-8 rounded-full bg-accent-soft text-primary grid place-items-center shrink-0"><Search size={15} /></span>
           <span className="flex-1 text-[14px] font-semibold">{t('혹시 찾는 사람이 있나요?')}</span>
           <ChevronRight size={16} className="text-ink-3" />
         </button>
       </section>
+      </HubMore>
       <StatusPicker open={statusOpen} onClose={() => setStatusOpen(false)} />
       {bar}
     </div>
+  );
+}
+
+/** 허브 "더 보기" — 섹션은 2개까지 보이고 나머지는 여기 (기능은 그대로) */
+function HubMore({ titles, children }: { titles: string[]; children: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
+  if (open) return <>{children}<button onClick={() => setOpen(false)} className="w-full h-10 rounded-full text-[13px] font-semibold text-ink-3 press">{t('접기')}</button></>;
+  return (
+    <button onClick={() => setOpen(true)} className="card w-full px-4 py-3.5 flex items-center gap-3 text-left press">
+      <span className="flex-1 min-w-0"><span className="block text-[14px] font-semibold text-ink">{t('더 보기')}</span><span className="block text-[12px] text-ink-3 truncate">{titles.join(' · ')}</span></span>
+      <ChevronDown size={18} className="text-ink-3 shrink-0" />
+    </button>
   );
 }
 
@@ -391,7 +406,7 @@ function RecommendSlide({ user, reasons, onOpen }: { user: User; reasons: Reason
     else onOpen();
   };
   return (
-    <article className="relative h-full shrink-0 snap-center w-full px-4"><div className="h-full rounded-[32px] overflow-hidden bg-white border border-line flex flex-col select-none shadow-[0_16px_36px_-6px_rgba(15,43,72,.12)]">
+    <article className="relative h-full shrink-0 snap-center w-full px-4"><div className="h-full rounded-[32px] overflow-hidden bg-white border border-line flex flex-col select-none shadow-[0_16px_36px_-6px_rgba(var(--shadow-rgb),.12)]">
       <div className="relative shrink-0 h-[46%] bg-primary" onClick={tap}>
         {photos.length > 0 ? <img src={assetUrl(photos[pi])} alt="" className="absolute inset-0 h-full w-full object-cover" draggable={false} /> : <span className="absolute inset-0 grid place-items-center text-[96px]" style={{ background: `linear-gradient(135deg, hsl(${user.avatar.hue} 60% 78%), hsl(${(user.avatar.hue + 40) % 360} 55% 62%))` }}>{user.avatar.emoji}</span>}
         {photos.length > 1 && <div className="absolute top-3 inset-x-4 flex gap-1">{photos.map((_, i) => <span key={i} className={cn('h-[3px] flex-1 rounded-full', i === pi ? 'bg-white' : 'bg-white/40')} />)}</div>}
@@ -469,7 +484,7 @@ function SearchTab({ openPaywall, initial }: { openPaywall: (r: PaywallReason) =
       <div className="px-4 pb-3">
         <div className="relative">
           <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[15px]">💬</span>
-          <Input className="pl-10 pr-12 h-12 rounded-full bg-[#F4F9FF] border-[#D2E4FF]" placeholder={t('혹시 찾는 사람이 있나요? 예: 일본 식품 유통 아는 사람')} value={ask} onChange={(e) => setAsk(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter') submitAsk(); }} />
+          <Input className="pl-10 pr-12 h-12 rounded-full bg-[#F4F9FF] border-[var(--tint)]" placeholder={t('혹시 찾는 사람이 있나요? 예: 일본 식품 유통 아는 사람')} value={ask} onChange={(e) => setAsk(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter') submitAsk(); }} />
           <button onClick={submitAsk} aria-label={t('사람 찾아보기')} disabled={!ask.trim()} className="absolute right-1.5 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full bg-primary text-white grid place-items-center press disabled:opacity-35"><ChevronRight size={18} /></button>
         </div>
         {openAsks > 0 && <button onClick={() => nav('/people/requests?tab=mine')} className="mt-1.5 ml-3 text-[11px] font-semibold text-primary flex items-center gap-0.5 press">{t('내가 찾는 것')} {openAsks}<ChevronRight size={12} /></button>}

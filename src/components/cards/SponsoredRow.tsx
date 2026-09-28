@@ -23,7 +23,7 @@ export function SponsoredRow({ post: p, expanded, onClick }: { post: Post; expan
     <button onClick={onClick} className="w-full flex items-center gap-3 py-3 text-left press">
       {p.media[0] ? <Cover emoji={p.media[0].emoji} hue={p.media[0].hue} url={p.media[0].url} className="h-11 w-11 rounded-full shrink-0" size={18} /> : <span className="h-11 w-11 rounded-full bg-gold-soft shrink-0" />}
       <span className="flex-1 min-w-0">
-        <span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{ad.advertiser}</span><Tag tone="gold">{t('광고')}</Tag></span>
+        <span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-ink truncate">{ad.advertiser}</span><Tag tone="gold">{t('광고')}</Tag></span>
         <span className="block text-[14px] text-ink-2 truncate mt-0.5">{p.text}</span>
       </span>
       <span className="h-8 px-3 rounded-full bg-accent text-primary text-[12px] font-semibold grid place-items-center shrink-0">{ad.cta}</span>

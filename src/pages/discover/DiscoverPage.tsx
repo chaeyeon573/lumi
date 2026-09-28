@@ -47,7 +47,7 @@ export function DiscoverPage() {
         <div className="px-4">
           <div className="h-12 rounded-full bg-surface-2 flex items-center pl-4 pr-1.5 gap-2">
             <span className="h-2 w-2 rounded-full bg-primary" />
-            <span className="flex-1 text-[14px] text-primary font-medium truncate">{me.timetable.length === 0 ? t('시간표를 추가해보세요') : nextFree ? `${lang === 'en' ? 'Free' : '공강'} ${fmtBlock(nextFree)}` : t('오늘 수업 끝')}</span>
+            <span className="flex-1 text-[14px] text-ink font-medium truncate">{me.timetable.length === 0 ? t('시간표를 추가해보세요') : nextFree ? `${lang === 'en' ? 'Free' : '공강'} ${fmtBlock(nextFree)}` : t('오늘 수업 끝')}</span>
             <button onClick={() => (nextFree ? setSlot(nextFree) : nav('/timetable'))} className="h-9 px-4 rounded-full bg-primary text-white text-[13px] font-semibold flex items-center gap-1 press"><Plus size={14} />{nextFree ? t('열기') : t('시간표')}</button>
           </div>
           <div className="mt-3 flex bg-surface-2 rounded-full p-1">{tabs.map(([k, l]) => <button key={k} onClick={() => setTab(k)} className={cn('flex-1 h-9 rounded-full text-[13px] font-semibold transition', tab === k ? 'bg-surface text-primary shadow-sm' : 'text-ink-3')}>{l}</button>)}</div>
@@ -67,7 +67,7 @@ function Row({ avatar, title, sub, action }: { avatar: React.ReactNode; title: s
   return (
     <div className="card rounded-full pl-2.5 pr-2.5 py-2 flex items-center gap-3">
       {avatar}
-      <span className="flex-1 min-w-0"><span className="block text-[15px] font-semibold text-primary truncate">{title}</span><span className="block text-[13px] text-ink-2 truncate">{sub}</span></span>
+      <span className="flex-1 min-w-0"><span className="block text-[15px] font-semibold text-ink truncate">{title}</span><span className="block text-[13px] text-ink-2 truncate">{sub}</span></span>
       {action}
     </div>
   );
@@ -90,24 +90,24 @@ function NowTab() {
   const left = (m: number) => (m >= 60 ? `${Math.round(m / 60)}h` : `${m}m`) + (lang === 'en' ? ' left' : ' 남음');
   return (
     <div>
-      <div className="flex items-end justify-between mb-3"><h2 className="font-display text-[24px] font-bold text-primary">{lang === 'en' ? 'Free Right Now' : '지금 시간 되는 사람'}</h2><span className="text-[13px] text-ink-3">{free.length}{lang === 'en' ? ' friends' : '명'}</span></div>
+      <div className="flex items-end justify-between mb-3"><h2 className="font-display text-[24px] font-bold text-ink">{lang === 'en' ? 'Free Right Now' : '지금 시간 되는 사람'}</h2><span className="text-[13px] text-ink-3">{free.length}{lang === 'en' ? ' friends' : '명'}</span></div>
       {free.length === 0 ? <p className="text-[13px] text-ink-3 mb-6">{t('지금 시간이 비는 사람이 없어요.')}</p> : (
         <div className="flex gap-4 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-7">
           {free.slice(0, 10).map((p) => (
             <button key={p.u.id} onClick={() => nav(`/users/${p.u.id}?propose=1&cat=${p.category ?? 'coffee'}`)} className="flex flex-col items-center gap-1.5 shrink-0 w-[68px]">
               <Avatar emoji={p.u.avatar.emoji} hue={p.u.avatar.hue} url={p.u.avatar.url} size={64} className="ring-2 ring-accent ring-offset-2" />
-              <span className="text-[13px] font-semibold text-primary truncate max-w-full">{p.u.nickname}</span>
+              <span className="text-[13px] font-semibold text-ink truncate max-w-full">{p.u.nickname}</span>
               <span className="text-[11px] text-ink-3 -mt-1">{left(p.minutes)}</span>
             </button>
           ))}
         </div>
       )}
-      <h2 className="font-display text-[24px] font-bold text-primary mb-3">{lang === 'en' ? 'Spontaneous Hangouts' : '지금 열린 활동'}</h2>
+      <h2 className="font-display text-[24px] font-bold text-ink mb-3">{lang === 'en' ? 'Spontaneous Hangouts' : '지금 열린 활동'}</h2>
       <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-4">{NOW_CHIPS.map((c) => <Chip key={c.key} active={chip === c.key} onClick={() => setChip(c.key)}>{c.label}{c.key === 'all' ? ` (${list.length})` : ''}</Chip>)}</div>
       {partner && (
         <button onClick={() => nav(`/activities/${partner.id}`)} className="w-full card rounded-full bg-gold-soft pl-2.5 pr-2.5 py-2 flex items-center gap-3 text-left mb-3 press">
           <span className="h-11 w-11 rounded-full bg-white grid place-items-center text-[20px] shrink-0">🏷️</span>
-          <span className="flex-1 min-w-0"><span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{partner.partner!.name}</span><Tag tone="gold">{t('제휴')}</Tag></span><span className="block text-[13px] text-ink-2 truncate">{partner.partner!.deal}</span></span>
+          <span className="flex-1 min-w-0"><span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-ink truncate">{partner.partner!.name}</span><Tag tone="gold">{t('제휴')}</Tag></span><span className="block text-[13px] text-ink-2 truncate">{partner.partner!.deal}</span></span>
           <span className="h-9 px-4 rounded-full bg-primary text-white text-[13px] font-semibold grid place-items-center shrink-0">{t('쿠폰 보기')}</span>
         </button>
       )}
@@ -137,7 +137,7 @@ function ActivitiesTab() {
   ].sort((a, b) => a.when.localeCompare(b.when));
   return (
     <div>
-      <h2 className="font-display text-[24px] font-bold text-primary mb-3">{lang === 'en' ? 'This Week' : '이번 주'}</h2>
+      <h2 className="font-display text-[24px] font-bold text-ink mb-3">{lang === 'en' ? 'This Week' : '이번 주'}</h2>
       <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-4">{ACTIVITY_CHIPS.map((c) => <Chip key={c.key} active={chip === c.key} onClick={() => setChip(c.key)}>{c.label}</Chip>)}</div>
       {items.length === 0 ? <EmptyState emoji="" title={t('예정된 활동이 없어요')} action={<Button size="sm" onClick={() => nav('/create/activity?kind=group')}>{t('활동 만들기')}</Button>} /> : <div className="space-y-3">{items.map((i) => i.node)}</div>}
     </div>
@@ -166,7 +166,7 @@ function TeamsTab() {
   const shown = items.filter((i) => purpose === 'all' || i.purpose === purpose);
   return (
     <div>
-      <h2 className="font-display text-[24px] font-bold text-primary mb-3">{lang === 'en' ? 'Teams & Crews' : '팀 · Study Crew'}</h2>
+      <h2 className="font-display text-[24px] font-bold text-ink mb-3">{lang === 'en' ? 'Teams & Crews' : '팀 · Study Crew'}</h2>
       <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-4">{TEAM_PURPOSE_CHIPS.map((c) => <Chip key={c.key} active={purpose === c.key} onClick={() => setPurpose(c.key)}>{c.label}</Chip>)}</div>
       {shown.length === 0 ? <EmptyState emoji="" title={t('조건에 맞는 팀이 없어요')} action={<Button size="sm" onClick={() => nav('/create/activity?kind=group&team=1')}>{t('팀원 모집하기')}</Button>} />
         : <div className="space-y-3">{shown.map((i) => {

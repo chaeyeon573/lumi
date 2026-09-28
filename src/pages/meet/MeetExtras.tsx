@@ -16,7 +16,7 @@ export function MeetExtraRows({ className }: { className?: string }) {
       {rows.map((m) => (
         <button key={m.key} onClick={() => nav(m.to)} className="w-full px-3.5 py-3 flex items-center gap-3 text-left press">
           <span className="h-9 w-9 rounded-full bg-primary-soft text-primary grid place-items-center shrink-0">{m.icon}</span>
-          <span className="flex-1 min-w-0"><span className="block text-[14px] font-semibold text-primary truncate">{m.title}</span><span className="block text-[12px] text-ink-3 truncate">{m.sub}</span></span>
+          <span className="flex-1 min-w-0"><span className="block text-[14px] font-semibold text-ink truncate">{m.title}</span><span className="block text-[12px] text-ink-3 truncate">{m.sub}</span></span>
           <ChevronRight size={16} className="text-ink-3 shrink-0" />
         </button>
       ))}

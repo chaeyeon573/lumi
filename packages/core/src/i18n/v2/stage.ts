@@ -85,6 +85,8 @@ export const en_stage: Record<string, string> = {
   '이런 글은 어때요?': 'Ideas for a post',
   '동문 글이 아직 없어요': 'No alumni posts yet',
   '대학원생 글이 아직 없어요': 'No grad student posts yet',
+  '색 조합': 'Color palette',
+  '옅은 하늘 배경 · 맑은 파랑 버튼 · 짙은 회청 글자 — 세 가지를 비교해 봐요. 이 브라우저에만 저장돼요.': 'Pale sky background · clear blue button · slate-blue text — compare three. Saved in this browser only.',
   // 설정 › 데모 도구
   '단계 미리보기': 'Preview by stage',
   '같은 계정으로 학부생 · 대학원생 · 졸업생 화면을 바꿔 봐요. 연결·기록은 그대로예요.': 'Switch the same account between undergrad, grad and alumni screens. Connections and history stay.',

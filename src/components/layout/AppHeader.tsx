@@ -21,10 +21,10 @@ export function AppHeader({ search, right }: { search?: boolean; right?: React.R
     <button onClick={onClick} aria-label={label} className="relative h-10 w-10 rounded-full grid place-items-center text-ink-2 press">{children}{badge ? <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-danger" /> : null}</button>
   );
   return (
-    <header className="sticky top-0 z-30 bg-surface/85 backdrop-blur-xl h-16 pl-4 pr-3 flex items-center gap-1.5">
+    <header className="sticky top-0 z-30 bg-bg/90 backdrop-blur-xl h-16 pl-4 pr-3 flex items-center gap-1.5">
       <span className="font-display text-[22px] font-extrabold tracking-tight text-brand shrink-0">AroundU</span>
-      <button onClick={() => nav('/profile')} aria-label={t('내 학교')} title={school} className="flex items-center gap-1 h-8 pl-2 pr-2.5 rounded-full bg-[#BFF4FF] border border-[#A3D5FF] text-primary text-[12px] font-bold max-w-[128px]">
-        <GraduationCap size={13} className="shrink-0" /><span className="truncate">{school}</span>{verified && <BadgeCheck size={13} className="shrink-0 text-[#2E6388]" aria-label={t('학교 인증')} />}
+      <button onClick={() => nav('/profile')} aria-label={t('내 학교')} title={school} className="flex items-center gap-1 h-8 pl-2 pr-2.5 rounded-full bg-accent-soft text-ink-2 text-[12px] font-semibold max-w-[128px]">
+        <GraduationCap size={13} className="shrink-0" /><span className="truncate">{school}</span>{verified && <BadgeCheck size={13} className="shrink-0 text-verify" aria-label={t('학교 인증')} />}
       </button>
       <span className="flex-1" />
       {right}

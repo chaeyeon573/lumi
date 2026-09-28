@@ -14,6 +14,7 @@ import { todayISO, formatDateTime } from '@core/lib/format';
 import { statusNow, freeBlocks, todayIdx, nowMin, fmtBlock, toHHMM } from '@core/lib/timetable';
 import { profileCompletion, questionById } from '@core/data/prompts';
 import type { User } from '@core/types';
+import { myGroupLists } from '@/v2/myGroups';
 import { tw } from '@/tw';
 import { useViewer } from '@/viewer';
 import { nav } from '@/nav';
@@ -68,7 +69,7 @@ export default function ProfileScreen() {
   const goTo = me.prompts[0];
   const openPolls = polls.filter((p) => p.status === 'open' && (p.hostId === me.id || p.inviteeIds.includes(me.id))).length;
   const saved = intents.filter((i) => i.userId === me.id && (i.saved || i.intent === 'applied')).length;
-  const myOrgs = orgs.filter((o) => o.memberIds.includes(me.id) || o.adminIds.includes(me.id) || o.followerIds.includes(me.id)).length;
+  const myOrgs = myGroupLists(orgs, me.id).total;
   const myPosts = posts.filter((p) => p.authorId === me.id && p.authorType === 'user').sort((a, b) => b.createdAt.localeCompare(a.createdAt));
   const unread = notifications.filter((n) => n.userId === me.id && !n.read).length;
   const student = isStudentStage(me);
@@ -150,7 +151,7 @@ export default function ProfileScreen() {
       {/* ── 카운트: 그룹 · 연결 · 모임 · 글 ── */}
       <View style={tw`mt-4 rounded-[24px] border border-line bg-white px-2 py-3 flex-row`}>
         {[
-          { n: myOrgs, l: t('그룹'), to: '/community?tab=clubs&mine=1' },
+          { n: myOrgs, l: t('그룹'), to: '/profile/groups' },
           { n: friends, l: t('연결'), to: '/profile/friends' },
           { n: meets, l: t('모임'), to: '/plans' },
           { n: myPosts.length, l: t('글'), to: '/feed?tab=following' },
@@ -206,7 +207,7 @@ export default function ProfileScreen() {
           { Icon: BookmarkCheck, label: `${t('저장한 사람')} ${savedPeople}`, sub: t('나만 볼 수 있어요'), to: '/profile/saved' },
           { Icon: ShieldCheck, label: t('공개 범위'), sub: AUDIENCE_LABELS[privacyOf(me).scope], to: '/settings/privacy' },
           { Icon: Target, label: t('목표와 역할'), sub: t('이번 학기 목표 · 생활권 · 찾는 역할'), to: '/profile/context' },
-          { Icon: Building2, label: t('내 그룹'), sub: `${myOrgs}${t('개')}`, to: '/community?tab=clubs&mine=1' },
+          { Icon: Building2, label: t('내 그룹'), sub: `${myOrgs}${t('개')}`, to: '/profile/groups' },
           { Icon: Users, label: t('내 연결'), sub: `${friends}${t('명')}`, to: '/profile/friends' },
           { Icon: Bookmark, label: t('저장·지원 내역'), sub: `${saved}${t('개')}`, to: '/community?tab=opportunities&sub=saved' },
           { Icon: Bell, label: t('알림'), sub: unread ? `${unread}${t('개')}` : t('모두 확인했어요'), to: '/notifications' },

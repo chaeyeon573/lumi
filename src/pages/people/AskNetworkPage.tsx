@@ -161,7 +161,7 @@ export function AskNetworkPage() {
           <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
             <span className="text-[11px] font-bold text-ink-3 mr-0.5">{t('읽어낸 조건')}</span>
             {chips.map((c) => (
-              <span key={chipKey(c)} className="h-7 pl-2.5 pr-0.5 rounded-full bg-[#D2E4FF] text-primary text-[12px] font-bold inline-flex items-center gap-0.5">
+              <span key={chipKey(c)} className="h-7 pl-2.5 pr-0.5 rounded-full bg-primary-soft text-primary text-[12px] font-bold inline-flex items-center gap-0.5">
                 {c.label}
                 <button onClick={() => setRemoved((r) => [...r, chipKey(c)])} aria-label={`${c.label} ${t('빼기')}`} className="h-6 w-6 rounded-full grid place-items-center hover:bg-white/60 press"><X size={11} /></button>
               </span>
@@ -187,7 +187,7 @@ export function AskNetworkPage() {
           {modeFind && (
             <section className="px-4 mt-5">
               <Section loading={sec.loading} error={sec.error} onRetry={sec.retry} skeleton={<SectionSkeleton count={2} />}>
-                <h2 className="font-display text-[18px] font-bold text-primary">{matches.length > 0 ? `${t('가까운 네트워크에서')} ${matches.length}${t('명을 찾았어요')}` : t('가까운 네트워크에서 바로 떠오르는 사람이 없어요')}</h2>
+                <h2 className="font-display text-[18px] font-bold text-ink">{matches.length > 0 ? `${t('가까운 네트워크에서')} ${matches.length}${t('명을 찾았어요')}` : t('가까운 네트워크에서 바로 떠오르는 사람이 없어요')}</h2>
                 {matches.length > 0 && <p className="mt-0.5 text-[12px] text-ink-3">{t('프로필과 연결을 바탕으로 골랐어요')}</p>}
                 {matches.length > 0 && (
                   <div className="mt-3 space-y-3">

@@ -13,9 +13,9 @@ export function SchoolBadge({ user, withYear, size = 'md', className }: { user: 
   const label = withYear ? `${schoolBadge(user, lang)} ${yy(gradYearOf(user))}`.trim() : schoolBadge(user, lang);
   const method = user.verification ? verificationLabel(user.verification.method, lang) : verified ? t('학교 인증') : t('미인증');
   return (
-    <span title={method} className={cn('inline-flex items-center gap-1 font-semibold text-primary', size === 'sm' ? 'text-[12px]' : size === 'lg' ? 'text-[17px]' : 'text-[14px]', className)}>
+    <span title={method} className={cn('inline-flex items-center gap-1 font-semibold text-ink-2', size === 'sm' ? 'text-[12px]' : size === 'lg' ? 'text-[17px]' : 'text-[14px]', className)}>
       <span className="truncate">{label}</span>
-      {verified && <BadgeCheck size={size === 'sm' ? 13 : size === 'lg' ? 18 : 15} className="text-[#2E6388] shrink-0" aria-label={method} />}
+      {verified && <BadgeCheck size={size === 'sm' ? 13 : size === 'lg' ? 18 : 15} className="text-verify shrink-0" aria-label={method} />}
     </span>
   );
 }
@@ -25,7 +25,7 @@ export function SchoolPill({ user, className }: { user: User; className?: string
   const verified = isVerified(user);
   const method = user.verification ? verificationLabel(user.verification.method, lang) : t('학교 인증');
   return (
-    <span title={method} className={cn('inline-flex items-center gap-1 h-6 px-2 rounded-full bg-[#BFF4FF] border border-[#A3D5FF] text-primary text-[11px] font-bold', className)}>
+    <span title={method} className={cn('inline-flex items-center gap-1 h-6 px-2 rounded-full bg-accent-soft border border-accent text-ink-2 text-[11px] font-bold', className)}>
       <span className="truncate max-w-[140px]">{schoolBadge(user, lang)}</span>{verified && <BadgeCheck size={12} />}
     </span>
   );

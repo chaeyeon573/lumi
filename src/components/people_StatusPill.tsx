@@ -25,7 +25,7 @@ export function useVisibleStatuses(user: User): UserStatus[] {
   return [...list].sort((a, b) => a.until.localeCompare(b.until));
 }
 
-const pillCls = (size: 'sm' | 'md') => cn('inline-block align-middle rounded-full bg-accent-soft text-primary font-semibold whitespace-nowrap max-w-full truncate', size === 'sm' ? 'h-6 leading-6 px-2.5 text-[11px]' : 'h-7 leading-7 px-3 text-[12px]');
+const pillCls = (size: 'sm' | 'md') => cn('inline-block align-middle rounded-full bg-accent-soft text-ink-2 font-semibold whitespace-nowrap max-w-full truncate', size === 'sm' ? 'h-6 leading-6 px-2.5 text-[11px]' : 'h-7 leading-7 px-3 text-[12px]');
 
 export function StatusChip({ status, size = 'md', className }: { status: Pick<UserStatus, 'kind' | 'when'>; size?: 'sm' | 'md'; className?: string }) {
   return <span className={cn(pillCls(size), className)}>{statusText(status)}</span>;

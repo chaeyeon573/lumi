@@ -23,7 +23,7 @@ export function PostRow({ post: p, onClick }: { post: Post; onClick: () => void 
       {p.anonymous ? <span className="h-11 w-11 rounded-full bg-primary-soft grid place-items-center text-primary text-[13px] font-bold shrink-0">?</span> : <Avatar emoji={av.emoji} hue={av.hue} url={av.url} size={44} />}
       <span className="flex-1 min-w-0">
         <span className="flex items-center gap-2">
-          <span className="text-[15px] font-semibold text-primary truncate">{name}</span>
+          <span className="text-[15px] font-semibold text-ink truncate">{name}</span>
           {isBoosted(p) && <Tag tone="gold" className="h-5 shrink-0">{t('부스트됨')}</Tag>}
           {p.postType && p.postType !== 'story' && <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{POST_TYPE_LABELS[p.postType]}</span>}
           <span className="text-[12px] text-ink-3 ml-auto shrink-0">{relativeTime(p.createdAt)}</span>

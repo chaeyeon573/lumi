@@ -57,8 +57,8 @@ export function AdvancedExplorePage() {
                 <ul className="mt-2 space-y-1">{mySaved.map((s) => <li key={s.id} className="text-[12px] text-ink-2 flex items-center gap-1.5"><BellOff size={12} className="text-ink-3" />{s.name}</li>)}</ul>
               </div>
             )}
-            <div className="rounded-[24px] bg-[linear-gradient(135deg,#D2E4FF,#BFF4FF)] p-5">
-              <div className="flex items-center gap-2"><Sparkles size={18} className="text-primary" /><span className="font-display text-[20px] font-bold text-primary leading-tight">{t('원하는 사람을 더 정확하게')}</span></div>
+            <div className="rounded-[24px] bg-[linear-gradient(135deg,var(--tint),var(--tint))] p-5">
+              <div className="flex items-center gap-2"><Sparkles size={18} className="text-primary" /><span className="font-display text-[20px] font-bold text-ink leading-tight">{t('원하는 사람을 더 정확하게')}</span></div>
               <ul className="mt-3 space-y-2">{PLUS_PERKS().map((p) => (
                 <li key={p.title} className="flex items-start gap-2.5"><span className="h-5 w-5 rounded-full bg-white grid place-items-center text-primary shrink-0 mt-0.5"><Check size={12} /></span><div><div className="text-[13px] font-semibold">{p.title}</div><div className="text-[12px] text-ink-2">{p.desc}</div></div></li>
               ))}</ul>

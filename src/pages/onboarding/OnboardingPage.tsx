@@ -101,7 +101,7 @@ function Frame({ step, grad, children }: { step: Step; grad?: boolean; children:
 }
 
 function Heading({ title, sub }: { title: string; sub?: string }) {
-  return <div><h2 className="font-display text-[24px] font-bold text-primary leading-tight">{title}</h2>{sub && <p className="text-[13px] text-ink-3 mt-1.5 leading-relaxed">{sub}</p>}</div>;
+  return <div><h2 className="font-display text-[24px] font-bold text-ink leading-tight">{title}</h2>{sub && <p className="text-[13px] text-ink-3 mt-1.5 leading-relaxed">{sub}</p>}</div>;
 }
 
 type StepProps = { form: Draft; patch: (p: Partial<Draft>) => void; next?: () => void };
@@ -247,7 +247,7 @@ function VerifyStep({ form, patch, next }: StepProps) {
   return (
     <>
       <Heading title={t('학교를 인증해주세요')} sub={t('AroundU는 인증된 사람만 만나요. 방법을 하나 골라 완료하면 프로필에 ✓ 배지가 붙어요.')} />
-      <div className="card p-3.5 flex items-center gap-3"><span className="h-10 w-10 rounded-full bg-primary-soft text-primary grid place-items-center shrink-0"><GraduationCap size={18} /></span><div className="flex-1 min-w-0"><b className="text-[14px] block truncate">{form.schoolName}</b><span className="text-[12px] text-ink-3">@{form.emailDomain}</span></div>{done && <BadgeCheck size={20} className="text-[#2E6388]" />}</div>
+      <div className="card p-3.5 flex items-center gap-3"><span className="h-10 w-10 rounded-full bg-primary-soft text-primary grid place-items-center shrink-0"><GraduationCap size={18} /></span><div className="flex-1 min-w-0"><b className="text-[14px] block truncate">{form.schoolName}</b><span className="text-[12px] text-ink-3">@{form.emailDomain}</span></div>{done && <BadgeCheck size={20} className="text-verify" />}</div>
 
       {done ? (
         <div className="rounded-2xl bg-mint-soft text-mint px-4 py-3.5 text-[14px] font-semibold flex items-center gap-2"><Check size={16} />{verificationLabel(form.verification!, lang)} · {t('완료')}</div>

@@ -62,7 +62,7 @@ export function SmallTablesPage() {
     <div className="min-h-full bg-bg pb-10">
       <TopBar back title={t('작은 모임')} />
       <div className="px-4 pt-3 space-y-4">
-        <div className="rounded-[24px] bg-[linear-gradient(135deg,#D2E4FF,#BFF4FF)] p-4">
+        <div className="rounded-[24px] bg-[linear-gradient(135deg,var(--tint),var(--tint))] p-4">
           <div className="flex items-center gap-2 text-primary"><Users size={16} /><span className="text-[15px] font-bold">{t('작은 모임 · 4~6명')}</span></div>
           <p className="text-[13px] text-ink-2 mt-1">{t('4~6명이 모이는 작은 모임이 1:1보다 편해요')}</p>
         </div>
@@ -127,7 +127,7 @@ function TableCard({ r, interested, onInterest, onHide }: { r: SmallTableRec; in
         <span className="h-7 px-2.5 rounded-full bg-primary-soft text-primary text-[12px] font-bold grid place-items-center shrink-0">{filled}/{a.capacity}{t('명')}</span>
       </button>
 
-      <div className="mt-2.5 flex flex-wrap gap-1">{reasons.map((x) => <span key={x} className="h-6 px-2 rounded-full bg-[#BFF4FF] text-primary text-[11px] font-bold inline-flex items-center">{x}</span>)}</div>
+      <div className="mt-2.5 flex flex-wrap gap-1">{reasons.map((x) => <span key={x} className="h-6 px-2 rounded-full bg-accent-soft text-primary text-[11px] font-bold inline-flex items-center">{x}</span>)}</div>
 
       {others.length > 0 && (
         <div className="mt-2 flex items-center gap-2">

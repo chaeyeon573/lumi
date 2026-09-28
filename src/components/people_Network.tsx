@@ -45,7 +45,7 @@ export function closenessText(c: Closeness): string {
 }
 
 export function ClosenessTag({ c, className }: { c: Closeness; className?: string }) {
-  return <span className={cn('h-6 px-2.5 rounded-full bg-white border border-[#D2E4FF] text-primary text-[11px] font-bold inline-flex items-center whitespace-nowrap', className)}>{closenessText(c)}</span>;
+  return <span className={cn('h-6 px-2.5 rounded-full bg-white border border-[var(--tint)] text-primary text-[11px] font-bold inline-flex items-center whitespace-nowrap', className)}>{closenessText(c)}</span>;
 }
 
 /** 공개 범위를 지킨 한 줄 — 회사·졸업연도를 가린 경우 전공/직무만 */
@@ -113,7 +113,7 @@ export function useHideWithUndo() {
   const bar = undo ? createPortal(
     <div key={undo.key} role="status" style={{ transform: 'translateX(-50%)' }} className="absolute left-1/2 bottom-24 z-[1200] h-11 pl-4 pr-1.5 rounded-full bg-ink text-white text-[13px] font-semibold shadow-lg animate-toast-in flex items-center gap-3 max-w-[90%]">
       <span className="truncate">{fmt(t('{name}님을 숨겼어요 · 상대는 몰라요'), { name: undo.user.nickname })}</span>
-      <button onClick={restore} className="h-8 px-3 rounded-full bg-white/15 text-[#BFF4FF] font-bold shrink-0 press">{t('되돌리기')}</button>
+      <button onClick={restore} className="h-8 px-3 rounded-full bg-white/15 text-[var(--tint)] font-bold shrink-0 press">{t('되돌리기')}</button>
     </div>, shellEl()) : null;
   return { hide, bar };
 }

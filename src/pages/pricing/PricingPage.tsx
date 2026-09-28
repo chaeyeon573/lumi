@@ -38,7 +38,7 @@ function SectionHead({ letter, icon, title, subtitle, right }: { letter: string;
       <span className="h-9 w-9 rounded-xl bg-primary-soft text-primary grid place-items-center shrink-0">{icon}</span>
       <div className="min-w-0 flex-1">
         <div className="text-[11px] font-bold text-ink-3 tracking-wide">{letter}</div>
-        <h2 className="font-display text-[19px] font-bold text-primary leading-tight">{title}</h2>
+        <h2 className="font-display text-[19px] font-bold text-ink leading-tight">{title}</h2>
         {subtitle && <p className="text-[12px] text-ink-2 mt-0.5">{subtitle}</p>}
       </div>
       {right}
@@ -132,7 +132,7 @@ export function PricingPage() {
       {/* Hero */}
       <div className="px-4 pt-3 pb-3">
         <div className="flex items-center gap-1.5 mb-2"><Tag tone="gold" className="h-5">{t('투자자용')}</Tag><Tag className="h-5">{t('출시 제안가')}</Tag></div>
-        <h1 className="font-display text-[24px] font-bold text-primary leading-tight">{t('가격과 비즈니스 모델')}</h1>
+        <h1 className="font-display text-[24px] font-bold text-ink leading-tight">{t('가격과 비즈니스 모델')}</h1>
         <p className="text-[13px] text-ink-2 mt-1.5 leading-relaxed">
           {en ? 'Start with your university. Expand your circle. The trusted core is free; revenue comes from expansion, reach and institutions — and every price below comes with its reasoning.'
               : '학교에서 시작해 서클을 넓히세요. 믿을 수 있는 핵심은 무료, 매출은 확장·도달·기관에서 나와요. 아래 모든 가격에는 근거가 있어요.'}
@@ -143,7 +143,7 @@ export function PricingPage() {
             { big: '4%', small: en ? 'MAU → Plus assumed' : 'MAU 중 Plus 전환 가정' },
             { big: en ? '≈ ₩4.7M' : '≈ ₩4.7M', small: en ? 'per campus / month (≈ $3,500)' : '캠퍼스당 월 (≈ $3,500)' },
           ].map((s, i) => (
-            <div key={i} className="rounded-2xl bg-primary-soft px-3 py-2.5"><div className="font-display text-[17px] font-extrabold text-primary tabular-nums leading-tight">{s.big}</div><div className="text-[10.5px] text-ink-2 mt-0.5 leading-snug">{s.small}</div></div>
+            <div key={i} className="rounded-2xl bg-primary-soft px-3 py-2.5"><div className="font-display text-[17px] font-extrabold text-ink tabular-nums leading-tight">{s.big}</div><div className="text-[10.5px] text-ink-2 mt-0.5 leading-snug">{s.small}</div></div>
           ))}
         </div>
       </div>
@@ -165,7 +165,7 @@ export function PricingPage() {
           <div className="space-y-2">
             {REVENUE_STREAMS.map((r) => (
               <div key={r.key} className="card p-3.5 flex gap-3">
-                <span className="h-9 w-9 rounded-xl bg-accent-soft text-primary font-display text-[15px] font-extrabold grid place-items-center shrink-0">{r.key}</span>
+                <span className="h-9 w-9 rounded-xl bg-accent-soft text-ink font-display text-[15px] font-extrabold grid place-items-center shrink-0">{r.key}</span>
                 <div className="min-w-0 flex-1"><b className="text-[14px] block">{L(r.title)}</b><span className="text-[12px] text-ink-2">{L(r.desc)}</span><div className="mt-1.5"><Tag tone="primary" className="h-5">{L(r.product)}</Tag></div></div>
               </div>
             ))}
@@ -330,11 +330,11 @@ export function PricingPage() {
             ))}
             <div className="grid grid-cols-[1.6fr_1fr] items-center px-3.5 py-3 border-t-2 border-line bg-surface-2">
               <b className="text-[13px]">{t('캠퍼스당 월 매출')}</b>
-              <div className="text-right"><b className="font-display text-[18px] text-primary tabular-nums block leading-tight">{UNIT_TOTAL.perCampus.krw}</b><span className="text-[10.5px] text-ink-3 tabular-nums">{UNIT_TOTAL.perCampus.usd}</span></div>
+              <div className="text-right"><b className="font-display text-[18px] text-ink tabular-nums block leading-tight">{UNIT_TOTAL.perCampus.krw}</b><span className="text-[10.5px] text-ink-3 tabular-nums">{UNIT_TOTAL.perCampus.usd}</span></div>
             </div>
             <div className="grid grid-cols-[1.6fr_1fr] items-center px-3.5 py-3 border-t border-line bg-primary-soft">
               <div><b className="text-[13px] block">{t('20개 캠퍼스')}</b><span className="text-[11px] text-ink-2">{en ? '≈ ₩4.7M × 20' : '≈ ₩4.7M × 20'}</span></div>
-              <div className="text-right"><b className="font-display text-[20px] text-primary tabular-nums block leading-tight">{UNIT_TOTAL.campuses20.krw}</b><span className="text-[10.5px] text-ink-2 tabular-nums">{UNIT_TOTAL.campuses20.usd} / {en ? 'month' : '월'}</span></div>
+              <div className="text-right"><b className="font-display text-[20px] text-ink tabular-nums block leading-tight">{UNIT_TOTAL.campuses20.krw}</b><span className="text-[10.5px] text-ink-2 tabular-nums">{UNIT_TOTAL.campuses20.usd} / {en ? 'month' : '월'}</span></div>
             </div>
           </div>
           <div className="flex items-start gap-2 mt-2.5 text-[11px] text-ink-3"><Scale size={13} className="shrink-0 mt-0.5" /><span>{t('가정이며 예측이 아니에요')} · {en ? 'FX ≈ ₩1,340 / $. Before store fees and VAT. Boosts are an order-of-magnitude estimate.' : 'FX ≈ ₩1,340 / $. 스토어 수수료·VAT 전. 부스트는 자릿수 추정.'}</span></div>

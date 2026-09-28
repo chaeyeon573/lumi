@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Settings, Pencil, ShieldCheck, CalendarDays, ChevronRight, Users, CalendarCheck, Bookmark, Building2, FileText, Bell, MapPin, Briefcase, Sparkles, GraduationCap, Quote, Target, MessageSquareText, BookmarkCheck, Coffee, FlaskConical, Lock } from 'lucide-react';
+import { Settings, Pencil, ShieldCheck, CalendarDays, ChevronRight, Users, CalendarCheck, Bookmark, Building2, FileText, Bell, MapPin, Briefcase, Sparkles, GraduationCap, Quote, Target, MessageSquareText, BookmarkCheck, Coffee, FlaskConical, Lock, ChevronDown } from 'lucide-react';
 import { stageKind, stageCopy } from '@core/lib/stage';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
@@ -32,11 +33,29 @@ function headerLine(me: User): string {
 }
 
 function SectionTitle({ icon, children, right }: { icon: React.ReactNode; children: React.ReactNode; right?: React.ReactNode }) {
-  return <div className="flex items-center justify-between"><h2 className="font-display text-[18px] font-bold text-primary flex items-center gap-2">{icon}{children}</h2>{right}</div>;
+  return <div className="flex items-center justify-between"><h2 className="font-display text-[18px] font-bold text-ink flex items-center gap-2">{icon}{children}</h2>{right}</div>;
 }
 function EditLink({ to, label }: { to: string; label?: string }) {
   const nav = useNavigate();
   return <button onClick={() => nav(to)} className="h-8 px-3 rounded-full bg-surface-2 text-[12px] font-bold text-primary flex items-center gap-1 press"><Pencil size={12} />{label ?? t('편집')}</button>;
+}
+
+/** 접어 둔 섹션 — 누르면 그 자리에서 펼친다 */
+function ProfileMore({ titles, children }: { titles: string[]; children: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
+  if (open) return <>{children}<button onClick={() => setOpen(false)} className="w-full h-10 rounded-full text-[13px] font-semibold text-ink-3 press">{t('접기')}</button></>;
+  return (
+    <button onClick={() => setOpen(true)} className="card w-full px-4 py-3.5 flex items-center gap-3 text-left press">
+      <span className="flex-1 min-w-0"><span className="block text-[14px] font-semibold text-ink">{t('더 보기')}</span><span className="block text-[12px] text-ink-3 truncate">{titles.filter(Boolean).join(' · ')}</span></span>
+      <ChevronDown size={18} className="text-ink-3 shrink-0" />
+    </button>
+  );
+}
+
+/** 졸업 시기가 지나면 한 줄로만 먼저 묻는다 */
+function StatusNudge() {
+  const nav = useNavigate();
+  return <button onClick={() => nav('/profile/status')} className="w-full h-12 rounded-full bg-accent-soft pl-4 pr-3 flex items-center gap-2 text-left press"><GraduationCap size={16} className="text-primary shrink-0" /><span className="flex-1 text-[13px] font-semibold text-ink truncate">{t('현재 상태가 바뀌었나요?')}</span><ChevronRight size={15} className="text-ink-3" /></button>;
 }
 
 /** 나 — 헤더 · 현재 · 관심사 · 추천 설정 · 시간표(재학생) · 카운트 · 상태 변경 · 다가오는 만남 · 더 알려주기 · 내 글 (Pastel Breeze) */
@@ -82,7 +101,7 @@ export function ProfilePage() {
 
   const kind = stageKind(me);
   const nowRows: { icon: React.ReactNode; l: string; v?: string }[] = [
-    ...(kind === 'undergrad' ? [{ icon: <GraduationCap size={15} />, l: t('전공'), v: majorOf(me) }, { icon: <GraduationCap size={15} />, l: t('학년'), v: classYearLabel(me, lang) }] : []),
+    ...(kind === 'undergrad' ? [{ icon: <GraduationCap size={15} />, l: t('전공'), v: majorOf(me) }, { icon: <GraduationCap size={15} />, l: lang === 'en' ? 'Class year' : '학년', v: classYearLabel(me, lang) }] : []),
     { icon: <MapPin size={15} />, l: t('거주 도시'), v: homeCity },
     { icon: <MapPin size={15} />, l: t('활동 지역'), v: me.activityCity },
   ];
@@ -98,7 +117,7 @@ export function ProfilePage() {
           <div className="flex items-center gap-4">
             <Avatar emoji={me.avatar.emoji} hue={me.avatar.hue} url={me.avatar.url} size={72} />
             <div className="flex-1 min-w-0">
-              <h1 className="font-display text-[24px] font-bold text-primary leading-tight truncate flex items-center gap-2">{me.nickname}{me.plan === 'plus' && <span className="h-5 px-2 rounded-full bg-primary text-white text-[10px] font-extrabold grid place-items-center">PLUS</span>}</h1>
+              <h1 className="font-display text-[24px] font-bold text-ink leading-tight truncate flex items-center gap-2">{me.nickname}{me.plan === 'plus' && <span className="h-5 px-2 rounded-full bg-primary text-white text-[10px] font-extrabold grid place-items-center">PLUS</span>}</h1>
               {me.affiliation.type === 'university' && <SchoolBadge user={me} className="mt-0.5 max-w-full" />}
               <div className="text-[13px] text-ink-2 leading-snug truncate">{headerLine(me)}</div>
             </div>
@@ -170,6 +189,21 @@ export function ProfilePage() {
           )}
         </section>
 
+        {/* ── 카운트: 그룹 · 연결 · 모임 · 글 ── */}
+        <section className="card px-2 py-3 grid grid-cols-4 text-center">
+          {[
+            { n: myOrgs, l: t('그룹'), go: () => nav('/profile/groups') },
+            { n: friends, l: t('연결'), go: () => nav('/profile/friends') },
+            { n: meets, l: t('모임'), go: () => nav('/plans') },
+            { n: myPosts.length, l: t('글'), go: scrollToPosts },
+          ].map((s) => (
+            <button key={s.l} onClick={s.go} className="py-1 press"><div className="font-display text-[22px] font-bold text-ink">{s.n}</div><div className="text-[12px] text-ink-3">{s.l}</div></button>
+          ))}
+        </section>
+
+        {/* 섹션 줄이기 — 추천 설정 · 시간표 · 상태 변경 · 다가오는 만남 · 더 알려주기는 한 카드로 접어 두고, 누르면 펼친다 */}
+        {suggest && <StatusNudge />}
+        <ProfileMore titles={[t('추천 설정'), student ? t('이번 주 시간표') : '', t('상태'), upcoming.length ? t('다가오는 만남') : '', t('더 알려주기')]}>
         {/* ── 추천 설정 — 나만 보는 추천 기준 (프로필 앞면에 크게 내걸지 않는다) ── */}
         <section className="card p-5">
           <SectionTitle icon={<Target size={17} />} right={<EditLink to="/profile/wants" />}>{t('추천 설정')}</SectionTitle>
@@ -197,7 +231,7 @@ export function ProfilePage() {
         {student && (kind === 'undergrad' || me.timetable.length > 0) && (
           <section className="card p-5">
             <div className="flex items-center justify-between">
-              <h2 className="font-display text-[18px] font-bold text-primary flex items-center gap-2"><CalendarDays size={17} />{t('이번 주 시간표')}</h2>
+              <h2 className="font-display text-[18px] font-bold text-ink flex items-center gap-2"><CalendarDays size={17} />{t('이번 주 시간표')}</h2>
               {me.timetable.length > 0 && <span className={cn('h-7 px-3 rounded-full text-[11px] font-bold flex items-center gap-1', now.kind === 'free' ? 'bg-mint-soft text-mint' : 'bg-surface-2 text-ink-2')}><span className={cn('h-1.5 w-1.5 rounded-full', now.kind === 'free' ? 'bg-mint' : 'bg-ink-3')} />{now.kind === 'free' ? (now.until ? `${t('공강')} · ${toHHMM(now.until)}` : t('오늘 수업 없음')) : now.kind === 'in_class' ? t('수업 중') : t('오늘 수업 끝')}</span>}
             </div>
             {me.timetable.length === 0 ? (
@@ -225,18 +259,6 @@ export function ProfilePage() {
           </section>
         )}
 
-        {/* ── 카운트: 그룹 · 연결 · 모임 · 글 ── */}
-        <section className="card px-2 py-3 grid grid-cols-4 text-center">
-          {[
-            { n: myOrgs, l: t('그룹'), go: () => nav('/profile/groups') },
-            { n: friends, l: t('연결'), go: () => nav('/profile/friends') },
-            { n: meets, l: t('모임'), go: () => nav('/plans') },
-            { n: myPosts.length, l: t('글'), go: scrollToPosts },
-          ].map((s) => (
-            <button key={s.l} onClick={s.go} className="py-1 press"><div className="font-display text-[22px] font-bold text-primary">{s.n}</div><div className="text-[12px] text-ink-3">{s.l}</div></button>
-          ))}
-        </section>
-
         {/* ── 현재 상태가 바뀌었나요? (학생) / 상태: 졸업생 · 변경 (졸업생) ── */}
         {student ? (
           <button onClick={() => nav('/profile/status')} className={cn('card w-full text-left p-4 flex items-center gap-3 press', suggest && 'ring-1 ring-gold/40')} style={suggest ? { background: 'linear-gradient(120deg, #FFF1C9, #FFFFFF)' } : undefined}>
@@ -255,7 +277,7 @@ export function ProfilePage() {
 
         {/* ── 다가오는 만남 ── */}
         <section className="card p-5">
-          <div className="flex items-center justify-between mb-2"><h2 className="font-display text-[18px] font-bold text-primary flex items-center gap-2"><CalendarCheck size={17} />{t('다가오는 만남')}</h2><button onClick={() => nav('/plans')} className="text-[13px] font-semibold text-verify">{t('전체')} ({upcoming.length + openPolls})</button></div>
+          <div className="flex items-center justify-between mb-2"><h2 className="font-display text-[18px] font-bold text-ink flex items-center gap-2"><CalendarCheck size={17} />{t('다가오는 만남')}</h2><button onClick={() => nav('/plans')} className="text-[13px] font-semibold text-verify">{t('전체')} ({upcoming.length + openPolls})</button></div>
           {upcoming.length === 0 && openPolls === 0 ? (
             <div className="text-center py-3">
               <p className="text-[13px] text-ink-3">{t('확정된 약속이 없어요.')}</p>
@@ -266,7 +288,7 @@ export function ProfilePage() {
               {upcoming.slice(0, 3).map((a) => { const pending = participations.some((p) => p.activityId === a.id && p.userId === me.id && p.status === 'pending'); return (
                 <button key={a.id} onClick={() => nav(`/activities/${a.id}`)} className="w-full flex items-center gap-3 py-3 text-left press">
                   <span className="h-10 w-10 rounded-full bg-surface-2 grid place-items-center text-primary"><CalendarCheck size={17} /></span>
-                  <span className="flex-1 min-w-0"><span className="block text-[14px] font-semibold text-primary truncate">{a.title}</span><span className="block text-[12px] text-ink-3">{formatDateTime(a.date, a.startTime)}</span></span>
+                  <span className="flex-1 min-w-0"><span className="block text-[14px] font-semibold text-ink truncate">{a.title}</span><span className="block text-[12px] text-ink-3">{formatDateTime(a.date, a.startTime)}</span></span>
                   <Tag tone={pending ? 'neutral' : 'primary'} className="h-6 rounded-full">{pending ? t('대기') : lang === 'en' ? 'Confirmed' : '확정'}</Tag>
                 </button>
               ); })}
@@ -277,7 +299,7 @@ export function ProfilePage() {
 
         {/* ── 더 알려주기 ── */}
         <section className="space-y-2">
-          <div className="px-1"><h2 className="font-display text-[18px] font-bold text-primary">{t('더 알려주기')}</h2></div>
+          <div className="px-1"><h2 className="font-display text-[18px] font-bold text-ink">{t('더 알려주기')}</h2></div>
           <div className="card divide-y divide-line">
             {[
               { icon: <MessageSquareText size={18} />, label: t('프로필 질문'), sub: `${t('프로필 완성')} ${completion.percent}%`, go: () => nav('/profile/prompts') },
@@ -298,10 +320,12 @@ export function ProfilePage() {
           </div>
         </section>
 
+        </ProfileMore>
+
         {/* ── 내 글 ── */}
         <section id="my-posts" className="scroll-mt-20 space-y-3">
           <div className="flex items-center justify-between px-1">
-            <h2 className="font-display text-[18px] font-bold text-primary flex items-center gap-2"><FileText size={17} />{t('내 글')}</h2>
+            <h2 className="font-display text-[18px] font-bold text-ink flex items-center gap-2"><FileText size={17} />{t('내 글')}</h2>
             <button onClick={() => nav('/feed?tab=following')} className="text-[13px] font-semibold text-verify">{t('전체 보기')}</button>
           </div>
           {myPosts.length === 0 ? (

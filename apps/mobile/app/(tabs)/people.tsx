@@ -46,7 +46,7 @@ const criteriaParam =(c: PeopleSearch) => encodeURIComponent(JSON.stringify(c));
  * 학교로 나누지 않는다: 다른 학교 사람·동문도 무료로 보인다. 유료는 "더 빠르고 정확하게 찾는 기능"뿐.
  */
 export default function PeopleScreen() {
-  const params = useLocalSearchParams<{ tab?: string; free?: string; q?: string }>();
+  const params = useLocalSearchParams<{ tab?: string; free?: string; q?: string; c?: string }>();
   const tab: Tab = TABS.includes(params.tab as Tab) ? (params.tab as Tab) : 'recommend';
   const setTab = (next: Tab) => router.setParams({ tab: next === 'recommend' ? '' : next, free: '' } as never);
   const [paywall, setPaywall] = useState<'limit' | 'open' | null>(null);
@@ -55,7 +55,7 @@ export default function PeopleScreen() {
       <AppHeader search />
       <View style={tw`px-4 pb-2.5`}><Segmented<Tab> value={tab} onChange={setTab} options={[['recommend', t('추천')], ['search', t('찾기')], ['connections', t('연결')]]} /></View>
       {tab === 'recommend' && <RecommendTab openPaywall={() => setPaywall('open')} freeFirst={params.free === '1'} />}
-      {tab === 'search' && <SearchTab key={params.q ?? ''} openPaywall={() => setPaywall('open')} initialQ={params.q} />}
+      {tab === 'search' && <SearchTab key={`${params.q ?? ''}|${params.c ?? ''}`} openPaywall={() => setPaywall('open')} initialQ={params.q} initialC={params.c} />}
       {tab === 'connections' && <ConnectionsTab />}
       <PaywallSheet open={!!paywall} onClose={() => setPaywall(null)} reason={paywall === 'limit' ? 'limit' : undefined} />
     </SafeAreaView>
@@ -340,7 +340,7 @@ type SheetGroup = SearchGroup | 'company';
 interface FRow { key: SheetGroup; label: string; detailed: boolean; summary: (c: PeopleSearch) => string[] }
 const stageLabelOf = (s: Stage) => (s === 'alumni' ? t('졸업생') : s === 'masters' ? t('대학원') : t('학생'));
 
-function SearchTab({ openPaywall, initialQ }: { openPaywall: () => void; initialQ?: string }) {
+function SearchTab({ openPaywall, initialQ, initialC }: { openPaywall: () => void; initialQ?: string; initialC?: string }) {
   const v = useViewer();
   const me = v.me;
   const run = useAppStore((s) => s.run);
@@ -348,7 +348,11 @@ function SearchTab({ openPaywall, initialQ }: { openPaywall: () => void; initial
   const saved = useAppStore((s) => s.savedSearches).filter((s) => s.userId === me.id);
   const openAsks = useAppStore((s) => s.networkRequests).filter((r) => r.authorId === me.id && r.status === 'open').length;
   const plus = isPlus(me);
-  const [c, setC] = useState<PeopleSearch>(() => ({ ...emptySearch(), q: initialQ ?? '' }));
+  const [c, setC] = useState<PeopleSearch>(() => {
+    let from: Partial<PeopleSearch> = {};
+    try { if (initialC) from = JSON.parse(initialC) as Partial<PeopleSearch>; } catch { /* 잘못된 조건은 무시 */ }
+    return { ...emptySearch(), ...from, q: initialQ ?? from.q ?? '' };
+  });
   const [sheet, setSheet] = useState<SheetGroup | null>(null);
   const [savedMenu, setSavedMenu] = useState<SavedSearch | null>(null);
   const [runningId, setRunningId] = useState<string | null>(null);

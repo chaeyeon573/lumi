@@ -26,7 +26,7 @@ export function PlanToggle({ period, onChange }: { period: PlanPeriod; onChange:
       {(['yearly', 'monthly'] as const).map((k) => { const p = plans[k]; const on = period === k; return (
         <button key={k} onClick={() => onChange(k)} className={cn('rounded-2xl border-2 p-3.5 text-left press', on ? 'border-primary bg-primary-soft' : 'border-line bg-white')}>
           <div className="flex items-center gap-2 text-[12px] font-bold text-ink-3">{p.label}{'badge' in p && <span className="h-5 px-2 rounded-full bg-primary text-white text-[10px] font-bold grid place-items-center">{p.badge}</span>}</div>
-          <div className="mt-1 text-[20px] font-extrabold text-primary">{p.price}<span className="text-[12px] font-medium text-ink-3">{p.per}</span></div>
+          <div className="mt-1 text-[20px] font-extrabold text-ink">{p.price}<span className="text-[12px] font-medium text-ink-3">{p.per}</span></div>
         </button>
       ); })}
     </div>
@@ -56,7 +56,7 @@ export function PaywallSheet({ open, onClose, reason }: { open: boolean; onClose
           </div>
         </div>
       )}
-      <div className="flex items-center gap-2"><Sparkles size={18} className="text-primary" /><span className="font-display text-[22px] font-bold text-primary">{t('더 정확한 사람을 더 빠르게')}</span></div>
+      <div className="flex items-center gap-2"><Sparkles size={18} className="text-primary" /><span className="font-display text-[22px] font-bold text-ink">{t('더 정확한 사람을 더 빠르게')}</span></div>
       <p className="text-[13px] text-ink-2 mt-1 leading-relaxed">{t('사람을 만나는 데는 돈을 받지 않아요. 원하는 사람을 더 빠르고 정교하게 찾는 기능만 AroundU+ 예요.')}</p>
       <ul className="mt-3 space-y-2">{PLUS_PERKS().map((p) => (
         <li key={p.title} className="flex items-start gap-3"><span className="h-6 w-6 rounded-full bg-accent-soft grid place-items-center text-primary shrink-0 mt-0.5"><Check size={14} /></span><div><div className="text-[14px] font-semibold">{p.title}</div><div className="text-[12px] text-ink-3">{p.desc}</div></div></li>

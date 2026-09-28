@@ -28,8 +28,8 @@ export function PlusPage() {
     <div className="min-h-full bg-bg pb-10">
       <TopBar back title="AroundU+" />
       <div className="px-4 space-y-4">
-        <div className="rounded-[28px] bg-[linear-gradient(135deg,#D2E4FF,#BFF4FF)] p-5">
-          <div className="flex items-center gap-2"><Sparkles size={18} className="text-primary" /><span className="font-display text-[24px] font-bold text-primary leading-tight">{t('더 정확한 사람을 더 빠르게')}</span></div>
+        <div className="rounded-[28px] bg-[linear-gradient(135deg,var(--tint),var(--tint))] p-5">
+          <div className="flex items-center gap-2"><Sparkles size={18} className="text-primary" /><span className="font-display text-[24px] font-bold text-ink leading-tight">{t('더 정확한 사람을 더 빠르게')}</span></div>
           <p className="text-[13px] text-ink-2 mt-2 leading-relaxed">{t('사람을 만나는 데는 돈을 받지 않아요. 원하는 사람을 더 빠르고 정교하게 찾는 기능만 AroundU+ 예요.')}</p>
           {plus && <Tag tone="primary" className="mt-3"><Check size={11} />{t('이용 중')}</Tag>}
         </div>
@@ -48,7 +48,7 @@ export function PlusPage() {
         </div>
 
         <button onClick={() => nav('/people/advanced')} className="w-full card p-4 flex items-center gap-3 text-left press">
-          <span className="h-10 w-10 rounded-2xl bg-[#BFF4FF] text-primary grid place-items-center shrink-0"><Telescope size={18} /></span>
+          <span className="h-10 w-10 rounded-2xl bg-accent-soft text-primary grid place-items-center shrink-0"><Telescope size={18} /></span>
           <span className="flex-1 min-w-0">
             <span className="block text-[15px] font-bold text-primary">{t('고급 탐색 열기')}</span>
             <span className="block text-[12px] text-ink-2 mt-0.5">{t('조건 겹치기 · 2촌/3촌 필터 · 검색 저장 · 새 사람 알림')}</span>

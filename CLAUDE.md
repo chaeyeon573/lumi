@@ -42,8 +42,8 @@
 **사람을 만나는 데 돈을 받지 않는다.** 무료: 추천 사람 보기, **타학교 사람 보기**, 동문 보기, 기본 검색(키워드 + 필터 1그룹), 기본 연결 요청(하루 30회, `FREE_SWIPES_PER_DAY`), 모임·그룹 참가·생성, Feed 읽기/쓰기, 메시지, 기본 프로필.
 유료(**AroundU+**, 모의 결제): 복수 조건 검색(필터 2그룹 이상), 상세 조건(회사·업종·직무·졸업연도·활동 지역), 검색 저장, 새 사람 알림, 연결 요청 무제한, 고급 추천, 광고 없음. 판정은 `@core/lib/people` `isAdvancedSearch`. 학생·졸업생 같은 기준. 그 외 Boost·Promoted Opportunity·Sponsored Experience·Sponsored Post. 상수·가격은 `@core/lib/monetization`.
 
-## 디자인
-Stitch **Pastel Breeze** 유지 (`design/stitch/DESIGN.md`, 참고 화면 `design/stitch/*.png`): 흰 배경, 알약 모양, 슬레이트 코발트 `#0F2B48` 액션, 파스텔 블루 `#A3D5FF`/`#BFF4FF`/`#D2E4FF`, Plus Jakarta Sans. 글은 최소한으로.
+## 디자인 (v3 — Timeleft 느낌)
+토큰 원본 `packages/core/src/theme/tokens.ts` (웹 `src/index.css` CSS 변수 · 모바일 Tamagui 테마가 같은 값). 옅고 차분한 하늘 배경 + 맑은 파랑 버튼 + 짙은 회청 글자, 색 조합 3개(Mist 기본 · Harbor · Glacier, `data-palette`). **`#BFF4FF`·`#0F2B48` 등 하드코딩 색 금지** — 토큰 클래스(`bg-primary`, `bg-accent-soft`, `text-ink` …)만. 웹 컴포넌트는 **shadcn/ui** (`src/components/ui/shadcn/*`, cn = `@/lib/utils`), 화면은 `@/components/ui` 래퍼를 쓴다. 모바일은 **Tamagui**. 채워진 파랑 버튼은 화면당 하나, 섹션은 화면당 3개까지(나머지는 "더 보기"로 접기, 기능은 유지). 규칙 전체는 UX-SPEC 13절. 글은 최소한으로.
 용어: **Connect · Meet · Invite · Why you might connect**. 하트·"좋아요"·"매칭"·romantic 언어 금지(데이팅 앱 아님). 직함·이력으로 시작하지 않음(LinkedIn 아님).
 
 ## 데모 편의

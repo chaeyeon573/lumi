@@ -245,7 +245,7 @@ function GroupsTab() {
   const chips: { key: GroupChip; label: string }[] = [{ key: 'all', label: t('전체') }, ...(Object.keys(GROUP_SCOPE_LABELS) as GroupScope[]).map((k) => ({ key: k, label: GROUP_SCOPE_LABELS[k] }))];
   return (
     <View>
-      <SectionLabel right={mine.length > 0 ? <Pressable onPress={() => nav('/community?tab=clubs&mine=1')}><Text style={tw`text-[12px] font-semibold text-primary`}>{t('전체 보기')}</Text></Pressable> : undefined}>{t('내 그룹')}</SectionLabel>
+      <SectionLabel right={mine.length > 0 ? <Pressable onPress={() => nav('/profile/groups')}><Text style={tw`text-[12px] font-semibold text-primary`}>{t('전체 보기')}</Text></Pressable> : undefined}>{t('내 그룹')}</SectionLabel>
       {mine.length === 0
         ? <View style={tw`rounded-[24px] border border-line bg-white px-4 py-3`}><Text style={tw`text-[13px] text-ink-3`}>{t('아직 가입한 그룹이 없어요')}</Text></View>
         : (

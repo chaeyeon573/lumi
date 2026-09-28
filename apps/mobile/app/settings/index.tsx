@@ -131,6 +131,11 @@ export default function SettingsScreen() {
             <View style={tw`flex-1 ml-3`}><Text style={tw`text-[14px] font-semibold text-ink`}>{lang === 'en' ? 'Switch demo user' : '데모 사용자 전환'}</Text><Text style={tw`text-[12px] text-ink-3`}>{lang === 'en' ? `Now: ${me.nickname} · browse the app as someone else` : `현재 ${me.nickname} · 다른 사용자 시점으로 둘러봐요`}</Text></View>
             <ChevronRight size={18} color={C.ink3} />
           </Pressable>
+          <Pressable onPress={() => nav('/onboarding')} style={tw`flex-row items-center px-4 py-3.5 border-t border-line`}>
+            <Sparkles size={18} color={C.ink2} />
+            <View style={tw`flex-1 ml-3`}><Text style={tw`text-[14px] font-semibold text-ink`}>{t('새 계정으로 시작하기 (온보딩)')}</Text><Text style={tw`text-[12px] text-ink-3`}>{t('학교 선택부터 가입 과정을 처음부터 둘러봐요')}</Text></View>
+            <ChevronRight size={18} color={C.ink3} />
+          </Pressable>
           <Pressable onPress={() => { api.system.failNext(); showToast(t('다음 요청이 실패해요. 홈으로 돌아가 새로고침해보세요.')); init(); }} style={tw`flex-row items-center px-4 py-3.5 border-t border-line`}>
             <Bug size={18} color={C.ink2} />
             <View style={tw`flex-1 ml-3`}><Text style={tw`text-[14px] font-semibold text-ink`}>{t('오류 상태 미리보기')}</Text><Text style={tw`text-[12px] text-ink-3`}>{t('다음 API 요청 1회를 실패시켜 오류 화면을 확인해요')}</Text></View>

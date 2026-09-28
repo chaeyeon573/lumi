@@ -42,9 +42,9 @@ export function StatusCareerPage() {
     <div className="min-h-full pb-28">
       <TopBar back title={t('졸업 후 정보')} />
       <div className="px-4 py-4 space-y-6">
-        <div className="card p-4 bg-[linear-gradient(120deg,#D2E4FF,#FFFFFF)] flex items-center gap-3">
+        <div className="card p-4 bg-[linear-gradient(120deg,var(--tint),#FFFFFF)] flex items-center gap-3">
           <span className="h-11 w-11 rounded-full bg-white grid place-items-center text-primary shrink-0"><GraduationCap size={22} /></span>
-          <div className="min-w-0"><b className="block text-[14px] text-primary truncate">{alumniBadge} ✓</b><p className="text-[12px] text-ink-2">{t('모두 선택 사항이에요. 적을수록 같은 도시·분야의 동문과 더 정확하게 연결돼요.')}</p></div>
+          <div className="min-w-0"><b className="block text-[14px] text-ink truncate">{alumniBadge} ✓</b><p className="text-[12px] text-ink-2">{t('모두 선택 사항이에요. 적을수록 같은 도시·분야의 동문과 더 정확하게 연결돼요.')}</p></div>
         </div>
 
         <section className="space-y-4">

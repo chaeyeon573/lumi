@@ -38,7 +38,7 @@ export function StatusPage() {
         <div className="px-4 py-4 space-y-4">
           <section className="card p-5 text-center">
             <div className="mx-auto h-20 w-20 rounded-full bg-primary-soft grid place-items-center text-primary"><GraduationCap size={38} /></div>
-            <h1 className="mt-4 font-display text-[22px] font-bold text-primary">{t('졸업생으로 활동 중이에요')}</h1>
+            <h1 className="mt-4 font-display text-[22px] font-bold text-ink">{t('졸업생으로 활동 중이에요')}</h1>
             <p className="mt-1 text-[13px] text-ink-2">{contextLine(me, lang) || stageLabel(stageOf(me), lang)}</p>
             <div className="mt-4 grid grid-cols-2 gap-2 text-left">
               {[{ l: t('상태'), v: stageLabel(stageOf(me), lang) }, { l: t('졸업연도'), v: gradYearOf(me) ? String(gradYearOf(me)) : '—' }, { l: t('거주 도시'), v: cityOf(me) || '—' }, { l: t('직무'), v: me.career?.role || '—' }].map((x) => (
@@ -64,11 +64,11 @@ export function StatusPage() {
         <section className="card p-6 text-center">
           {/* 졸업모자 일러스트 */}
           <div className="relative mx-auto h-28 w-28">
-            <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_30%,#BFF4FF,#D2E4FF)]" />
+            <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_30%,var(--tint),var(--tint))]" />
             <div className="absolute inset-0 grid place-items-center text-primary"><GraduationCap size={56} strokeWidth={1.6} /></div>
             <span className="absolute -top-1 right-1 text-lg">✨</span>
           </div>
-          <h1 className="mt-5 font-display text-[24px] font-bold text-primary">{t('졸업하셨나요?')}</h1>
+          <h1 className="mt-5 font-display text-[24px] font-bold text-ink">{t('졸업하셨나요?')}</h1>
           <p className="mt-1.5 text-[13px] text-ink-2 leading-relaxed">{suggest ? t('졸업 예정연도가 지났어요. 새 계정은 필요 없어요 — 지금 프로필 그대로 이어져요.') : t('새 계정은 필요 없어요. 지금 프로필 그대로 이어져요.')}</p>
           <ul className="mt-5 space-y-2.5 text-left">
             {keeps.map((k) => (
@@ -82,7 +82,7 @@ export function StatusPage() {
         </section>
 
         <section className="card p-5">
-          <div className="flex items-center gap-2"><BookOpen size={17} className="text-primary" /><h2 className="font-display text-[17px] font-bold text-primary">{t('대학원에 진학했어요')}</h2></div>
+          <div className="flex items-center gap-2"><BookOpen size={17} className="text-primary" /><h2 className="font-display text-[17px] font-bold text-ink">{t('대학원에 진학했어요')}</h2></div>
           <p className="mt-1 text-[12px] text-ink-3">{grad ? `${t('현재')}: ${stageLabel(stageOf(me), lang)} · ${t('시간표와 캠퍼스 추천은 그대로예요')}` : t('시간표·캠퍼스 추천은 그대로, 프로필 표시만 바뀌어요.')}</p>
           <div className="mt-3 grid grid-cols-2 gap-2">
             {(['masters', 'phd'] as Stage[]).map((s) => (

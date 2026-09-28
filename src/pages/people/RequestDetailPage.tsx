@@ -64,7 +64,7 @@ function RequesterView({ req }: { req: NetworkRequest }) {
     <div className="min-h-full pb-24 bg-bg">
       <TopBar back title={t('사람 찾아보기')} />
       <div className="px-4 pt-1">
-        <div className="rounded-[24px] bg-[linear-gradient(120deg,#D2E4FF,#FFFFFF)] border border-line p-4">
+        <div className="rounded-[24px] bg-[linear-gradient(120deg,var(--tint),#FFFFFF)] border border-line p-4">
           <div className="flex items-center gap-2">
             {req.status === 'open' ? <Tag tone="primary">{t('찾는 중')}</Tag> : <Tag tone="neutral">{t('그만 찾음')}</Tag>}
             <span className="text-[11px] text-ink-3 truncate flex-1">{reachLabels[req.reach]}</span>
@@ -77,7 +77,7 @@ function RequesterView({ req }: { req: NetworkRequest }) {
 
       <section className="px-4 mt-6">
         <div className="flex items-end justify-between mb-2">
-          <h2 className="font-display text-[18px] font-bold text-primary">{t('AroundU가 찾은 사람')} <span className="text-ink-3 font-semibold text-[15px]">{matches.length}</span></h2>
+          <h2 className="font-display text-[18px] font-bold text-ink">{t('AroundU가 찾은 사람')} <span className="text-ink-3 font-semibold text-[15px]">{matches.length}</span></h2>
         </div>
         {matches.length === 0
           ? <div className="card px-4 py-3 text-[13px] text-ink-3">{t('가까운 네트워크에서 바로 떠오르는 사람이 없어요')}</div>
@@ -86,7 +86,7 @@ function RequesterView({ req }: { req: NetworkRequest }) {
 
       <section className="px-4 mt-6">
         <div className="flex items-end justify-between mb-2">
-          <h2 className="font-display text-[18px] font-bold text-primary">{t('손 든 사람')} <span className="text-ink-3 font-semibold text-[15px]">{raised.length}</span></h2>
+          <h2 className="font-display text-[18px] font-bold text-ink">{t('손 든 사람')} <span className="text-ink-3 font-semibold text-[15px]">{raised.length}</span></h2>
         </div>
         <PrivacyNote className="mb-2" text={t('손 든 사람이 고른 정보만 보여요 · 연락처는 공개되지 않아요')} />
         {raised.length === 0

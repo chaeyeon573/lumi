@@ -5,12 +5,16 @@ import { t } from '@core/i18n';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { ALL_AVAILABILITY, ALL_INTERESTS, ALL_PURPOSES, AVAILABILITY_LABELS, INTEREST_EMOJI, INTEREST_LABELS, PURPOSE_LABELS } from '@core/lib/labels';
-import type { Availability, Interest, ProfileField, Purpose, User } from '@core/types';
+import type { Availability, Career, Interest, ProfileField, Purpose, Research, User } from '@core/types';
+import { isAlumniStage, isGradStage } from '@core/lib/network';
+import { localeContext } from '@core/lib/locale-context';
 import { tw } from '@/tw';
 import { replace } from '@/nav';
 import { useViewer } from '@/viewer';
 import { Screen, Button, Chip, Input, Textarea, Toggle, Segmented } from '@/ui';
 import { VisibilityPicker } from '@/components/b_VisibilityPicker';
+import { ResearchFields } from '@/v2/ResearchFields';
+import { ChipsWithText } from '@/v2/Forms';
 
 const EMOJIS = ['🙂', '😎', '🧑‍💻', '👩‍🎨', '🧑‍🔬', '🏃', '🎸', '📚', '🌱', '🎨', '🚀', '🧗', '☕', '🐱', '🦊', '🎧'];
 /** 웹의 hue 슬라이더(0~359) 대신 30° 간격 색상 견본 */
@@ -38,14 +42,21 @@ export default function EditProfileScreen() {
   const patch = (p: Partial<User>) => setForm((f) => ({ ...f, ...p }));
   const toggle = <T,>(arr: T[], x: T) => (arr.includes(x) ? arr.filter((i) => i !== x) : [...arr, x]);
   const aff = form.affiliation.type === 'university' ? form.affiliation : null;
+  const grad = isGradStage(form);
+  const alumni = isAlumniStage(form);
+  const ctx = localeContext();
+  const setCareer = (k: keyof Career, val: string) => patch({ career: { ...form.career, [k]: val.trim() ? val : undefined } });
 
   const fv = (k: ProfileField) => <VisibilityPicker compact value={form.fieldVisibility[k]} onChange={(vis) => patch({ fieldVisibility: { ...form.fieldVisibility, [k]: vis } })} />;
 
   const save = async () => {
     setBusy(true);
     try {
-      const { id: _id, createdAt: _c, ...rest } = form;
-      await run(() => api.users.update(me.id, rest), t('프로필을 저장했어요.'));
+      const { id: _id, createdAt: _c, verification: _v, research, ...rest } = form;
+      const homeCity = form.homeCity?.trim();
+      await run(() => api.users.update(me.id, { ...rest, homeCity: homeCity || undefined, activityCity: form.activityCity?.trim() || undefined, region: homeCity || form.region }), grad ? undefined : t('프로필을 저장했어요.'));
+      // 연구 정보는 엔진에서 검증 (분야 필수 · 지도교수 기본 비공개)
+      if (grad) await run(() => api.users.setResearch(me.id, research?.field?.trim() ? (research as Research) : null), t('프로필을 저장했어요.'));
       replace('/profile');
     } catch { setBusy(false); }
   };
@@ -64,16 +75,36 @@ export default function EditProfileScreen() {
 
         <Field label={`${t('닉네임')} *`}><Input value={form.nickname} onChangeText={(text) => patch({ nickname: text })} maxLength={12} /></Field>
         <Field label={t('지금 하고 싶은 활동 (한 줄)')} hint={t('홈 추천 카드에 표시돼요')}><Input placeholder={t('예: 오늘 저녁 신촌에서 커피 한 잔?')} value={form.nowWant ?? ''} onChangeText={(text) => patch({ nowWant: text })} /></Field>
+        {/* 대학원생: 연구 (웹 EditProfilePage #research) */}
+        {grad ? (
+          <View style={tw`mb-5 rounded-[24px] border border-line bg-white p-4`}>
+            <Text style={tw`text-[13px] font-bold text-ink`}>{t('연구')}</Text>
+            <Text style={tw`mb-3 text-[12px] text-ink-3`}>{t('같은 연구 분야 사람과 먼저 이어져요.')}</Text>
+            <ResearchFields value={form.research ?? {}} onChange={(r) => patch({ research: r as Research })} />
+          </View>
+        ) : null}
+        {/* 현재: 거주 도시 · 활동 지역 · (졸업생) 하는 일 */}
+        <View style={tw`mb-5 rounded-[24px] border border-line bg-white p-4`}>
+          <Text style={tw`text-[13px] font-bold text-ink`}>{t('현재')}</Text>
+          <Text style={tw`mb-3 text-[12px] text-ink-3`}>{t('도시·생활권 단위만 — GPS 위치는 설정 › 위치에서 따로 다뤄요')}</Text>
+          <ChipsWithText label={t('거주 도시')} hint={t('정확한 주소는 받지 않아요')} options={ctx.cities} value={form.homeCity ?? form.region ?? ''} placeholder={t('도시 이름')} onChange={(homeCity) => patch({ homeCity })} />
+          <ChipsWithText label={t('활동 지역 (선택)')} hint={t('거주지와 다를 수 있어요 — 예: 거주 성남 · 활동 서울')} options={ctx.cities} value={form.activityCity ?? ''} placeholder={t('주로 활동하는 도시')} onChange={(activityCity) => patch({ activityCity })} />
+          {alumni ? (
+            <>
+              <Field label={t('회사 (선택)')}><Input placeholder={t('예: 토스')} value={form.career?.company ?? ''} onChangeText={(s) => setCareer('company', s)} /></Field>
+              <ChipsWithText label={t('업종')} options={ctx.industries} value={form.career?.industry ?? ''} placeholder={t('예: 핀테크')} onChange={(s) => setCareer('industry', s)} />
+              <ChipsWithText label={t('직무')} options={ctx.roles} value={form.career?.role ?? ''} placeholder={t('예: PM')} onChange={(s) => setCareer('role', s)} />
+            </>
+          ) : null}
+        </View>
+
         <Field label={t('자기소개')} right={fv('bio')}><Textarea value={form.bio} onChangeText={(text) => patch({ bio: text })} maxLength={200} /></Field>
         <Field label={t('좋아하는 것')} right={fv('likes')}><Input value={form.likes} onChangeText={(text) => patch({ likes: text })} /></Field>
         <Field label={t('자유시간에 하고 싶은 활동')} right={fv('freeTime')}><Input value={form.freeTime} onChangeText={(text) => patch({ freeTime: text })} /></Field>
         <Field label={t('관심사')} right={fv('interests')}><View style={tw`flex-row flex-wrap`}>{ALL_INTERESTS.map((i) => <View key={i} style={tw`mb-2`}><Chip active={form.interests.includes(i)} onPress={() => patch({ interests: toggle(form.interests, i) as Interest[] })}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Chip></View>)}</View></Field>
         <Field label={t('이용 목적')} right={fv('purposes')}><View style={tw`flex-row flex-wrap`}>{ALL_PURPOSES.map((p) => <View key={p} style={tw`mb-2`}><Chip active={form.purposes.includes(p)} onPress={() => patch({ purposes: toggle(form.purposes, p) as Purpose[] })}>{PURPOSE_LABELS[p]}</Chip></View>)}</View></Field>
         <Field label={t('활동 가능한 시간')} right={fv('availability')}><View style={tw`flex-row flex-wrap`}>{ALL_AVAILABILITY.map((a) => <View key={a} style={tw`mb-2`}><Chip active={form.availability === a} onPress={() => patch({ availability: a as Availability })}>{AVAILABILITY_LABELS[a]}</Chip></View>)}</View></Field>
-        <View style={tw`flex-row`}>
-          <View style={tw`flex-1 mr-1.5`}><Field label={t('키 (선택)')} right={fv('height')}><Input keyboardType="number-pad" placeholder="cm" value={form.height != null ? String(form.height) : ''} onChangeText={(text) => patch({ height: text ? Number(text) : undefined })} /></Field></View>
-          <View style={tw`flex-1 ml-1.5`}><Field label={t('지역')}><Input value={form.region} onChangeText={(text) => patch({ region: text })} /></Field></View>
-        </View>
+        <Field label={t('키 (선택)')} right={fv('height')}><Input keyboardType="number-pad" placeholder="cm" value={form.height != null ? String(form.height) : ''} onChangeText={(text) => patch({ height: text ? Number(text) : undefined })} /></Field>
         <Field label={t('관심 있는 사람의 조건 (선택)')} right={fv('preferredPartner')}><Input value={form.preferredPartner ?? ''} onChangeText={(text) => patch({ preferredPartner: text })} /></Field>
 
         {aff && (

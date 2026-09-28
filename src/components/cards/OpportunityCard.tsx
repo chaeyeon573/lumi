@@ -32,7 +32,7 @@ export function OpportunityCard({ o, reasons, variant = 'feed', className }: { o
   if (variant === 'row') {
     return (
       <button onClick={() => nav(`/opportunities/${o.id}`)} className={cn('card w-full flex gap-3 p-3 text-left press', className)}>
-        <span className="h-[52px] w-[52px] rounded-xl grid place-items-center text-[24px] shrink-0" style={{ background: `${color}1A` }}>{OPP_TYPE_EMOJI[o.type]}</span>
+        <span className="h-[52px] w-[52px] rounded-xl grid place-items-center text-[24px] shrink-0" style={{ background: `color-mix(in srgb, ${color} 10%, transparent)` }}>{OPP_TYPE_EMOJI[o.type]}</span>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-1.5"><span className="text-[11px] font-bold" style={{ color }}>{OPP_TYPE_EMOJI[o.type]} {OPP_TYPE_LABELS[o.type]}</span>{o.deadline && <Tag tone={urgent ? 'danger' : 'neutral'} className="h-5">{dday(o.deadline)}</Tag>}</div>
           <div className="text-[14px] font-bold truncate mt-0.5">{o.title}</div>
@@ -48,7 +48,7 @@ export function OpportunityCard({ o, reasons, variant = 'feed', className }: { o
     <article className={cn('card overflow-hidden', className)}>
       {textMode ? (
         <button onClick={() => nav(`/opportunities/${o.id}`)} className="w-full flex items-center gap-2 px-3.5 pt-3.5 text-left">
-          <span className="h-9 w-9 rounded-xl grid place-items-center text-[18px] shrink-0" style={{ background: `${color}1A` }}>{OPP_TYPE_EMOJI[o.type]}</span>
+          <span className="h-9 w-9 rounded-xl grid place-items-center text-[18px] shrink-0" style={{ background: `color-mix(in srgb, ${color} 10%, transparent)` }}>{OPP_TYPE_EMOJI[o.type]}</span>
           <span className="text-[11px] font-bold" style={{ color }}>{OPP_TYPE_LABELS[o.type]}</span>
           {o.official && <Tag tone="gold" className="h-5"><BadgeCheck size={11} /> {t('공식')}</Tag>}
           {o.deadline && <Tag tone={urgent ? 'danger' : 'neutral'} className="h-5 ml-auto"><AlarmClock size={11} /> {dday(o.deadline)}</Tag>}

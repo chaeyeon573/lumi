@@ -14,8 +14,8 @@ export function ReasonChips({ reasons, max = 3, className, tone = 'light' }: { r
   return (
     <div className={cn('flex flex-wrap gap-1', className)} aria-label={t('추천 이유')}>
       {chips.map((c) => (
-        <span key={c} className={cn('h-6 px-2 rounded-full text-[11px] font-bold inline-flex items-center gap-1', tone === 'solid' ? 'bg-primary text-white' : 'bg-[#BFF4FF] text-primary')}>
-          <CheckCircle2 size={11} />{c}
+        <span key={c} className={cn('h-6 px-2 rounded-full text-[11px] font-bold inline-flex items-center gap-1', tone === 'solid' ? 'bg-primary text-white' : 'bg-accent-soft text-ink-2')}>
+          <CheckCircle2 size={11} className={tone === 'solid' ? '' : 'text-primary'} />{c}
         </span>
       ))}
     </div>

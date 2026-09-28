@@ -99,7 +99,7 @@ function RespondForm({ req, author }: { req: NetworkRequest; author: User }) {
 
   // ─── 요청 요약 (왜 → 얼마나 가까운지 → 경로) ───
   const summary = (
-    <div className={cn('rounded-[24px] border border-line p-4', expired ? 'bg-surface-2/60' : 'bg-[linear-gradient(120deg,#D2E4FF,#FFFFFF)]')}>
+    <div className={cn('rounded-[24px] border border-line p-4', expired ? 'bg-surface-2/60' : 'bg-[linear-gradient(120deg,var(--tint),#FFFFFF)]')}>
       <div className={cn('text-[12px] font-bold', expired ? 'text-ink-3' : 'text-primary')}>{expired ? <span className="inline-flex items-center gap-1"><Clock size={12} />{t('마감된 요청이에요')}</span> : t('혹시 여기에 해당되나요?')}</div>
       <p className={cn('mt-1 text-[16px] font-bold leading-snug', expired ? 'text-ink-3' : 'text-ink')}>{req.text}</p>
       {ctx && <p className="mt-1 text-[12px] text-ink-2">{ctx}</p>}
@@ -126,8 +126,8 @@ function RespondForm({ req, author }: { req: NetworkRequest; author: User }) {
       <div className="min-h-full pb-24 bg-bg">
         <TopBar back title={t('저요')} />
         <div className="px-4 pt-6 text-center">
-          <div className="mx-auto h-16 w-16 rounded-full bg-[#BFF4FF] grid place-items-center text-primary"><CheckCircle2 size={30} /></div>
-          <h1 className="mt-4 font-display text-[20px] font-bold text-primary">{t('손을 들었어요')}</h1>
+          <div className="mx-auto h-16 w-16 rounded-full bg-accent-soft grid place-items-center text-primary"><CheckCircle2 size={30} /></div>
+          <h1 className="mt-4 font-display text-[20px] font-bold text-ink">{t('손을 들었어요')}</h1>
           <p className="mt-1 text-[13px] text-ink-2 leading-relaxed">{t('상대가 대화를 시작하면 알려드려요.')}</p>
         </div>
         <div className="px-4 mt-5">
@@ -198,7 +198,7 @@ function RespondForm({ req, author }: { req: NetworkRequest; author: User }) {
               <div className="mt-2.5 flex flex-wrap gap-1.5">
                 {SHARE_FIELDS.map((f) => { const on = shared.includes(f); return (
                   <button key={f} type="button" role="switch" aria-checked={on} onClick={() => toggleShare(f)}
-                    className={cn('h-8 px-3 rounded-full border text-[12px] font-semibold inline-flex items-center gap-1 press', on ? 'bg-[#D2E4FF] border-[#A3D5FF] text-primary' : 'bg-white border-line text-ink-3')}>
+                    className={cn('h-8 px-3 rounded-full border text-[12px] font-semibold inline-flex items-center gap-1 press', on ? 'bg-primary-soft border-accent text-primary' : 'bg-white border-line text-ink-3')}>
                     {on && <Check size={12} strokeWidth={3} />}{shareFieldLabel(f)}
                   </button>
                 ); })}

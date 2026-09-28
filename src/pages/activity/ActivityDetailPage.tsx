@@ -219,7 +219,7 @@ function SmallTableBlocks({ a, reasons, filled, sharedCount, approvedMe, past, f
       {reasons.length > 0 && (
         <div className="card mt-3 p-4">
           <div className="text-[14px] font-bold flex items-center gap-1.5"><Sparkles size={15} className="text-primary" />{t('왜 나와 맞는지')}</div>
-          <div className="mt-2 flex flex-wrap gap-1">{reasons.map((r) => <span key={r} className="h-6 px-2 rounded-full bg-[#BFF4FF] text-primary text-[11px] font-bold inline-flex items-center">{r}</span>)}</div>
+          <div className="mt-2 flex flex-wrap gap-1">{reasons.map((r) => <span key={r} className="h-6 px-2 rounded-full bg-accent-soft text-primary text-[11px] font-bold inline-flex items-center">{r}</span>)}</div>
         </div>
       )}
 

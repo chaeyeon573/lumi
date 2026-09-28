@@ -20,7 +20,7 @@ export function PlainReasonChips({ reasons, max = 3, className }: { reasons: str
   if (!reasons.length) return null;
   return (
     <div className={cn('flex flex-wrap gap-1', className)}>
-      {reasons.slice(0, max).map((r) => <span key={r} className="h-6 px-2 rounded-full bg-[#BFF4FF] text-primary text-[11px] font-bold inline-flex items-center gap-1"><CheckCircle2 size={11} />{r}</span>)}
+      {reasons.slice(0, max).map((r) => <span key={r} className="h-6 px-2 rounded-full bg-accent-soft text-primary text-[11px] font-bold inline-flex items-center gap-1"><CheckCircle2 size={11} />{r}</span>)}
     </div>
   );
 }

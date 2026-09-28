@@ -101,7 +101,7 @@ export function SavedPeoplePage() {
 
         {active && (
           <div className="flex items-center gap-2 px-1">
-            <span className="flex-1 min-w-0 text-[13px] font-bold text-primary truncate">{active.name}</span>
+            <span className="flex-1 min-w-0 text-[13px] font-bold text-ink truncate">{active.name}</span>
             {active.notify && <span className="text-[11px] text-verify font-semibold flex items-center gap-1"><Bell size={11} />{t('알림 켜짐')}</span>}
             <button onClick={() => setListMenu(true)} className="h-8 w-8 rounded-full grid place-items-center text-ink-2 press hover:bg-surface-2" aria-label={t('목록 설정')}><MoreHorizontal size={18} /></button>
           </div>

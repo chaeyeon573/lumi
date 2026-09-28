@@ -1,6 +1,6 @@
 import { useMemo, useState, type ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Clock, CalendarPlus, ChevronRight, Users, MapPin, X, Sparkles, CalendarDays, Briefcase, RefreshCw } from 'lucide-react';
+import { Clock, CalendarPlus, ChevronRight, ChevronDown, Users, MapPin, X, Sparkles, CalendarDays, Briefcase, RefreshCw } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { CardSkeleton, ErrorState, Button, Avatar, EmptyState } from '@/components/ui';
@@ -27,7 +27,6 @@ import { OpportunityCard } from '@/components/cards/OpportunityCard';
 import { NowActivityRow } from '@/components/cards/NowActivityRow';
 import { FIRSTRUN_KEY } from '@/pages/onboarding/OnboardingPage';
 import { requestsForMe } from '@core/lib/requests';
-import { IncomingRequestCard } from '@/components/people_RequestCard';
 
 /**
  * Home — "오늘 나에게 뭐가 있나". 게시글 피드가 아니라 지금 내 상황에서 볼 가치가 높은 것 2~4개씩.
@@ -113,20 +112,45 @@ function AskedOfMe({ me, snap }: { me: User; snap: Snapshot }) {
   const incoming = useMemo(() => requestsForMe(snap, me), [snap, me]);
   if (incoming.length === 0) return null;
   const first = incoming[0];
+  // 섹션 대신 한 줄 — 누르면 받은 요청으로 (답하지 않아도 괜찮다)
   return (
-    <Section title={t('혹시 여기에 해당되나요?')} action={incoming.length > 1 ? `${t('전체보기')} ${incoming.length}` : undefined} onAction={() => nav('/people/requests')}>
-      <IncomingRequestCard item={first} compact onOpen={() => nav(`/people/requests/${first.req.id}`)} />
-    </Section>
+    <div className="px-4 mt-3">
+      <button onClick={() => nav(incoming.length > 1 ? '/people/requests' : `/people/requests/${first.req.id}`)} className="w-full h-12 rounded-full bg-accent-soft pl-4 pr-3 flex items-center gap-2 text-left press">
+        <span className="flex-1 min-w-0 text-[13px] font-semibold text-ink truncate">{t('혹시 여기에 해당되나요?')} · <span className="font-medium text-ink-2">{first.req.text}</span></span>
+        <span className="text-[12px] font-semibold text-verify shrink-0">{incoming.length > 1 ? `${incoming.length}${lang === 'en' ? '' : '건'}` : t('보기')}</span>
+        <ChevronRight size={15} className="text-ink-3 shrink-0" />
+      </button>
+    </div>
   );
 }
 
 // ─── 공용 조각 ────────────────────────────────────────────────────────────────
+/**
+ * 섹션 줄이기 — 한 화면에 섹션은 3개까지. 나머지는 이 카드 하나로 접어 두고, 누르면 그 자리에서 펼친다 (기능은 그대로).
+ */
+function MoreSections({ titles, children }: { titles: string[]; children: ReactNode }) {
+  const [open, setOpen] = useState(false);
+  const names = titles.filter(Boolean);
+  if (open) return <>{children}<div className="px-4 mt-4"><button onClick={() => setOpen(false)} className="w-full h-10 rounded-full text-[13px] font-semibold text-ink-3 press">{t('접기')}</button></div></>;
+  return (
+    <div className="px-4 mt-7">
+      <button onClick={() => setOpen(true)} className="card w-full px-4 py-3.5 flex items-center gap-3 text-left press">
+        <span className="flex-1 min-w-0">
+          <span className="block text-[14px] font-semibold text-ink">{t('더 보기')}</span>
+          <span className="block text-[12px] text-ink-3 truncate">{names.join(' · ')}</span>
+        </span>
+        <ChevronDown size={18} className="text-ink-3 shrink-0" />
+      </button>
+    </div>
+  );
+}
+
 function Section({ title, action, onAction, children }: { title: string; action?: string; onAction?: () => void; children: ReactNode }) {
   return (
-    <section className="px-4 mt-6">
-      <div className="flex items-end justify-between mb-2">
-        <h2 className="font-display text-[18px] font-bold text-primary">{title}</h2>
-        {action && <button onClick={onAction} className="text-[12px] font-semibold text-primary flex items-center gap-0.5 press">{action}<ChevronRight size={14} /></button>}
+    <section className="px-4 mt-7">
+      <div className="flex items-end justify-between mb-3">
+        <h2 className="font-display text-[20px] leading-tight font-bold text-ink">{title}</h2>
+        {action && <button onClick={onAction} className="text-[13px] font-semibold text-verify flex items-center gap-0.5 press">{action}<ChevronRight size={14} /></button>}
       </div>
       {children}
     </section>
@@ -136,7 +160,7 @@ function Section({ title, action, onAction, children }: { title: string; action?
 function Row({ icon, color, title, sub, right, onClick }: { icon: ReactNode; color: string; title: string; sub: string; right?: ReactNode; onClick: () => void }) {
   return (
     <button onClick={onClick} className="w-full flex items-center gap-3 px-3.5 py-3 text-left press">
-      <span className="h-10 w-10 rounded-xl grid place-items-center text-[18px] shrink-0" style={{ background: `${color}1A` }}>{icon}</span>
+      <span className="h-10 w-10 rounded-xl grid place-items-center text-[18px] shrink-0" style={{ background: `color-mix(in srgb, ${color} 10%, transparent)` }}>{icon}</span>
       <span className="flex-1 min-w-0"><span className="block text-[14px] font-bold truncate">{title}</span><span className="block text-[12px] text-ink-3 truncate">{sub}</span></span>
       {right ?? <ChevronRight size={16} className="text-ink-3 shrink-0" />}
     </button>
@@ -174,11 +198,11 @@ function MeetRow({ m }: { m: RecommendedMeet }) {
   const a = m.a;
   return (
     <div className="flex items-center gap-3 px-3.5 py-3">
-      <button onClick={() => nav(`/activities/${a.id}`)} className="h-10 w-10 rounded-xl grid place-items-center text-[18px] shrink-0 press" style={{ background: `${CATEGORY_COLORS[a.category]}1A` }}>{CATEGORY_EMOJI[a.category]}</button>
+      <button onClick={() => nav(`/activities/${a.id}`)} className="h-10 w-10 rounded-xl grid place-items-center text-[18px] shrink-0 press" style={{ background: `color-mix(in srgb, ${CATEGORY_COLORS[a.category]} 10%, transparent)` }}>{CATEGORY_EMOJI[a.category]}</button>
       <button onClick={() => nav(`/activities/${a.id}`)} className="flex-1 min-w-0 text-left press">
         <span className="block text-[14px] font-bold truncate">{a.title}</span>
         <span className="block text-[12px] text-ink-3 truncate">{formatDate(a.date)} {formatTime(a.startTime)} · {a.place.name}</span>
-        <span className="block text-[11px] font-semibold text-primary truncate mt-0.5">{m.reason} · <Users size={10} className="inline -mt-0.5" /> {v.approvedCount(a.id)}/{a.capacity >= 999 ? '∞' : a.capacity}</span>
+        <span className="block text-[11px] font-semibold text-ink truncate mt-0.5">{m.reason} · <Users size={10} className="inline -mt-0.5" /> {v.approvedCount(a.id)}/{a.capacity >= 999 ? '∞' : a.capacity}</span>
       </button>
       <JoinButton activity={a} size="sm" label={t('참여하기')} className="shrink-0" />
     </div>
@@ -230,6 +254,13 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
           : <PeopleStrip people={d.connectNow} />}
       </Section>
 
+      <Section title={t('나에게 맞는 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
+        {d.meets.length === 0
+          ? <Empty emoji="📅" title={t('맞는 모임이 아직 없어요')} action={t('모임 만들기')} onAction={() => nav('/meet/create')} />
+          : <div className="card divide-y divide-line">{d.meets.map((m) => <MeetRow key={m.a.id} m={m} />)}</div>}
+      </Section>
+
+      <MoreSections titles={[t('학교에서 일어나는 것'), d.now.length ? t('지금 열린 만남') : '', d.newPeople.length ? t('새로운 사람') : '', d.opportunities.length ? t('추천 기회') : '']}>
       <Section title={t('학교에서 일어나는 것')} action={t('전체보기')} onAction={() => nav('/meet?tab=recommend')}>
         {d.happening.length === 0
           ? <Empty emoji="🏫" title={t('오늘은 학교 행사가 없어요')} description={ctx.campusHappenings.slice(0, 3).join(' · ')} action={t('모임 둘러보기')} onAction={() => nav('/meet?tab=recommend')} />
@@ -242,11 +273,6 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
           )}
       </Section>
 
-      <Section title={t('나에게 맞는 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
-        {d.meets.length === 0
-          ? <Empty emoji="📅" title={t('맞는 모임이 아직 없어요')} action={t('모임 만들기')} onAction={() => nav('/meet/create')} />
-          : <div className="card divide-y divide-line">{d.meets.map((m) => <MeetRow key={m.a.id} m={m} />)}</div>}
-      </Section>
 
       {d.now.length > 0 && (
         <Section title={t('지금 열린 만남')} action={t('전체보기')} onAction={() => nav('/meet?tab=now')}>
@@ -265,6 +291,7 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
           <div className="space-y-2">{d.opportunities.map((o) => <OpportunityCard key={o.id} o={o} variant="row" />)}</div>
         </Section>
       )}
+      </MoreSections>
     </>
   );
 }
@@ -297,6 +324,7 @@ function GradHome({ d, me }: { d: GradHomeData; me: User }) {
         </Section>
       )}
 
+      <MoreSections titles={[t('나에게 맞는 모임'), me.timetable.length && d.classes.length ? t('오늘 일정') : '', d.connectNow.length ? t('같은 학교 사람') : '', d.opportunities.length ? t('추천 기회') : '']}>
       <Section title={t('나에게 맞는 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
         {d.meets.length === 0
           ? <Empty emoji="📅" title={t('맞는 모임이 아직 없어요')} action={t('모임 만들기')} onAction={() => nav('/meet/create')} />
@@ -327,6 +355,7 @@ function GradHome({ d, me }: { d: GradHomeData; me: User }) {
           <div className="space-y-2">{d.opportunities.map((o) => <OpportunityCard key={o.id} o={o} variant="row" />)}</div>
         </Section>
       )}
+      </MoreSections>
       <p className="px-6 mt-6 text-center text-[11px] text-ink-3">{t('연구 분야와 연구실은 프로필에서 바꿀 수 있어요. 지도교수는 켤 때만 보여요.')}</p>
     </>
   );
@@ -370,17 +399,19 @@ function AlumniHome({ d, me }: { d: AlumniHome; me: User }) {
           : <PeopleStrip people={d.nearby} />}
       </Section>
 
+      <Section title={t('이번 주 참여 가능한 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
+        {d.thisWeek.length === 0
+          ? <Empty emoji="📅" title={t('이번 주 모임이 없어요')} action={t('모임 둘러보기')} onAction={() => nav('/meet')} />
+          : <div className="card divide-y divide-line">{d.thisWeek.map((m) => <MeetRow key={m.a.id} m={m} />)}</div>}
+      </Section>
+
+      <MoreSections titles={[t('내 분야 사람'), d.news.length ? t('내 관계망 소식') : '', t('내 그룹'), d.opportunities.length ? t('추천 기회') : '']}>
       <Section title={field ? `${t('내 분야 사람')} · ${field}` : t('내 분야 사람')} action={d.field.length ? t('전체보기') : undefined} onAction={() => nav('/people?tab=search')}>
         {d.field.length === 0
           ? <Empty emoji="💼" title={field ? t('같은 분야 사람이 아직 없어요') : t('직무·업종을 알려주세요')} description={t('같은 분야의 동문과 자연스럽게 이어져요.')} action={t('직무·업종 추가')} onAction={() => nav('/profile/edit')} />
           : <PeopleStrip people={d.field} />}
       </Section>
 
-      <Section title={t('이번 주 참여 가능한 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
-        {d.thisWeek.length === 0
-          ? <Empty emoji="📅" title={t('이번 주 모임이 없어요')} action={t('모임 둘러보기')} onAction={() => nav('/meet')} />
-          : <div className="card divide-y divide-line">{d.thisWeek.map((m) => <MeetRow key={m.a.id} m={m} />)}</div>}
-      </Section>
 
       {d.news.length > 0 && (
         <Section title={t('내 관계망 소식')} action={t('전체보기')} onAction={() => nav('/feed?tab=following')}>
@@ -391,7 +422,7 @@ function AlumniHome({ d, me }: { d: AlumniHome; me: User }) {
       <Section title={t('내 그룹')} action={t('전체보기')} onAction={() => nav('/meet?tab=groups')}>
         {d.groups.length === 0
           ? <Empty emoji="👥" title={t('아직 참여한 그룹이 없어요')} action={t('그룹 찾기')} onAction={() => nav('/search?tab=groups')} />
-          : <div className="card divide-y divide-line">{d.groups.map((g) => <Row key={g.id} icon={g.logo.url ? <Avatar emoji={g.logo.emoji} hue={g.logo.hue} url={g.logo.url} size={40} /> : g.logo.emoji} color="#0F2B48" title={g.name} sub={`${ORG_TYPE_LABELS[g.type]} · ${g.memberIds.length}${t('명')}`} onClick={() => nav(`/orgs/${g.id}`)} />)}</div>}
+          : <div className="card divide-y divide-line">{d.groups.map((g) => <Row key={g.id} icon={g.logo.url ? <Avatar emoji={g.logo.emoji} hue={g.logo.hue} url={g.logo.url} size={40} /> : g.logo.emoji} color="var(--primary)" title={g.name} sub={`${ORG_TYPE_LABELS[g.type]} · ${g.memberIds.length}${t('명')}`} onClick={() => nav(`/orgs/${g.id}`)} />)}</div>}
       </Section>
 
       {d.opportunities.length > 0 && (
@@ -399,6 +430,7 @@ function AlumniHome({ d, me }: { d: AlumniHome; me: User }) {
           <div className="space-y-2">{d.opportunities.map((o) => <OpportunityCard key={o.id} o={o} variant="row" />)}</div>
         </Section>
       )}
+      </MoreSections>
       <p className="px-6 mt-6 text-center text-[11px] text-ink-3 flex items-center justify-center gap-1"><MapPin size={11} /><Briefcase size={11} />{t('지역과 분야는 프로필에서 언제든 바꿀 수 있어요.')}</p>
     </>
   );

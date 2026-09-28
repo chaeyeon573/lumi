@@ -4,14 +4,13 @@ import { Image } from 'lucide-react';
 import { t } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { Chip, Button, CardSkeleton, EmptyState, ErrorState, Avatar, Segmented } from '@/components/ui';
-import { VISIBILITY_ICONS } from '@/components/ui/VisibilityPicker';
 import { SponsoredRow } from '@/components/cards/SponsoredRow';
 import { PostRow } from '@/components/feed_PostRow';
 import { injectSponsored, isPlus } from '@core/lib/monetization';
-import { feedForYou, feedCampus, feedFollowing, POST_VISIBILITIES } from '@core/lib/feed';
+import { feedForYou, feedCampus, feedFollowing } from '@core/lib/feed';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
-import { ALL_POST_TYPES, POST_TYPE_LABELS, VISIBILITY_LABELS } from '@core/lib/labels';
+import { ALL_POST_TYPES, POST_TYPE_LABELS } from '@core/lib/labels';
 import type { Post, PostType } from '@core/types';
 import { stageKind, composerPrompts, composerPlaceholder, campusScopes, defaultCampusScope, campusTabLabel, type CampusScope } from '@core/lib/stage';
 
@@ -63,12 +62,10 @@ function Composer() {
         <Avatar emoji={v.me.avatar.emoji} hue={v.me.avatar.hue} url={v.me.avatar.url} size={40} />
         <span className="flex-1 h-10 rounded-full bg-surface-2 px-4 flex items-center text-[14px] text-ink-3 truncate">{composerPlaceholder(kind)}</span>
       </button>
-      <div className="mt-2.5 flex gap-2 overflow-x-auto hide-scrollbar pl-[52px] -mr-3 pr-3">
+      {/* 한 줄: 사진 + 단계별 시작점. 공개 범위는 글쓰기 화면에서 고른다 */}
+      <div className="mt-2.5 flex gap-2 overflow-x-auto hide-scrollbar pl-[52px] -mr-3 pr-3" aria-label={t('이런 글은 어때요?')}>
         <ComposerAction icon={<Image size={14} />} label={t('사진')} to="/create/post?photo=1" />
-        {POST_VISIBILITIES.map((vis) => { const I = VISIBILITY_ICONS[vis]; return <ComposerAction key={vis} icon={<I size={13} />} label={VISIBILITY_LABELS[vis]} to={`/create/post?vis=${vis}`} />; })}
-      </div>
-      <div className="mt-2 flex gap-2 overflow-x-auto hide-scrollbar pl-[52px] -mr-3 pr-3" aria-label={t('이런 글은 어때요?')}>
-        {composerPrompts(kind).map((p) => <ComposerAction key={p.key} icon={<span className="text-[12px]">{p.emoji}</span>} label={p.label} to={`/create/post?type=${p.postType}&topic=${p.key}`} className="!bg-transparent border border-line !h-7 text-ink-2" />)}
+        {composerPrompts(kind).map((p) => <ComposerAction key={p.key} icon={<span className="text-[12px]">{p.emoji}</span>} label={p.label} to={`/create/post?type=${p.postType}&topic=${p.key}`} />)}
       </div>
     </div>
   );

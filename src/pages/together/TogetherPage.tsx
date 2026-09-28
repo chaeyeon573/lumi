@@ -44,7 +44,7 @@ export function TogetherPage() {
       <TopBar back title={lang === 'en' ? 'Plan Together' : '시간 정하기'} />
       <div className="px-4 pt-3 space-y-5">
         <div>
-          <h1 className="font-display text-[30px] font-bold text-primary leading-tight">{poll.title}</h1>
+          <h1 className="font-display text-[30px] font-bold text-ink leading-tight">{poll.title}</h1>
           <div className="mt-1.5 text-[14px] text-ink-2 flex items-center gap-1.5"><MapPin size={15} className="text-verify" />{poll.place?.name ?? CATEGORY_LABELS[poll.category]} · {lang === 'en' ? `${total} friends` : `${total}명`}{open && <span className="text-ink-3"> · {closesIn(poll.closesAt)}</span>}</div>
         </div>
         <div className="rounded-2xl bg-surface-2 px-4 py-3.5 flex items-center gap-3">
@@ -59,7 +59,7 @@ export function TogetherPage() {
               return (
                 <button key={o.id} disabled={!open} onClick={() => setSel((s) => on ? s.filter((x) => x !== o.id) : [...s, o.id])} className={cn('w-full rounded-full pl-2 pr-2 py-2 flex items-center gap-3 text-left transition', on || isDecided ? 'bg-surface card' : 'bg-surface-2')}>
                   <span className={cn('h-11 w-11 rounded-full grid place-items-center shrink-0', on || isDecided ? 'bg-primary text-white' : 'bg-surface text-ink-3')}>{on || isDecided ? <Check size={20} /> : <Plus size={18} />}</span>
-                  <span className="flex-1 min-w-0"><span className="block text-[16px] font-semibold text-primary truncate">{optionLabel(o)}</span><span className={cn('block text-[13px]', top ? 'text-verify' : 'text-ink-3')}>{lang === 'en' ? `${count} friends free` : `${count}명 가능`}{o.suggested ? ` · ${t('공강 겹침')}` : ''}</span></span>
+                  <span className="flex-1 min-w-0"><span className="block text-[16px] font-semibold text-ink truncate">{optionLabel(o)}</span><span className={cn('block text-[13px]', top ? 'text-verify' : 'text-ink-3')}>{lang === 'en' ? `${count} friends free` : `${count}명 가능`}{o.suggested ? ` · ${t('공강 겹침')}` : ''}</span></span>
                   <span className={cn('h-8 px-3 rounded-full text-[12px] font-bold flex items-center gap-1 shrink-0', top ? 'bg-accent text-primary' : 'bg-surface text-ink-2')}><Users size={13} />{count}</span>
                 </button>
               );

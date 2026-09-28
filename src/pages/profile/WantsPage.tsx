@@ -54,7 +54,7 @@ export function WantsPage() {
     <div className="min-h-full pb-28">
       <TopBar back title={t('추천 설정')} />
       <div className="px-4 py-4 space-y-6">
-        <div className="card p-4 bg-[linear-gradient(120deg,#D2E4FF,#FFFFFF)]">
+        <div className="card p-4 bg-[linear-gradient(120deg,var(--tint),#FFFFFF)]">
           <div className="flex items-center gap-2"><Target size={16} className="text-primary" /><b className="text-[14px] text-primary">{t('AroundU가 나를 이해하는 기준')}</b></div>
           <p className="mt-1.5 text-[12px] text-ink-2 leading-relaxed">{t('추천·홈·모임 추천의 우선순위에 바로 반영돼요. 언제든 바꿀 수 있고, 다른 사람에게는 보이지 않아요.')}</p>
         </div>
