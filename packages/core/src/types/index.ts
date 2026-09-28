@@ -269,7 +269,7 @@ export type PeopleWant = 'same_major' | 'same_interest' | 'other_school' | 'seni
 /** 어떤 활동을 하고 싶나 */
 export type ActivityWant = 'coffee' | 'meal' | 'study' | 'exercise' | 'networking' | 'project' | 'research' | 'hobby';
 export interface Wants { people: PeopleWant[]; activities: ActivityWant[] }
-export const ALL_PEOPLE_WANTS: PeopleWant[] = ['same_major', 'same_interest', 'other_school', 'senior_mentor', 'alumni', 'same_city', 'same_field', 'new_people'];
+export const ALL_PEOPLE_WANTS: PeopleWant[] = ['same_major', 'same_interest', 'other_school', 'senior_mentor', 'alumni', 'same_city', 'same_field', 'new_people', 'same_research'];
 export const ALL_ACTIVITY_WANTS: ActivityWant[] = ['coffee', 'meal', 'study', 'exercise', 'networking', 'project', 'research', 'hobby'];
 
 /** 저장한 사람 검색 (AroundU+) — 조건을 저장하고 새 사람 알림을 받는다 */

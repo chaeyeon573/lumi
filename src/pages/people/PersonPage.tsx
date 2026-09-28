@@ -18,6 +18,7 @@ import { useSectionState } from '@/hooks/useSectionState';
 import { profileView, connectionStatus, CONNECTION_LABELS, canShowInPath } from '@core/lib/privacy';
 import { degreeOf, pathBetween } from '@core/lib/graph';
 import { isAlumniStage } from '@core/lib/network';
+import { researchLine } from '@core/lib/stage';
 import { PEOPLE_WANT_LABELS, ACTIVITY_WANT_LABELS, PEOPLE_WANT_EMOJI, ACTIVITY_WANT_EMOJI, hasWants } from '@core/lib/wants';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
@@ -126,6 +127,7 @@ export function PersonPage() {
           <SchoolBadge user={user} withYear={view.gradYear} size="lg" className="mt-1" />
           <div className="text-[14px] text-ink-2 mt-1">{maskedPersonLine(user, view, lang)}</div>
           {career && <div className="text-[13px] text-ink-2 mt-0.5 flex items-center gap-1"><Briefcase size={13} className="text-ink-3" />{career}</div>}
+          {user.research?.field && <div className="text-[13px] text-ink-2 mt-0.5 flex items-center gap-1"><span className="text-[12px]">🔬</span>{researchLine(user, lang, true)}</div>}
           {city && <div className="text-[13px] text-ink-3 mt-0.5 flex items-center gap-1"><MapPin size={13} />{city}{user.activityCity && user.activityCity !== city ? ` · ${t('활동')} ${user.activityCity}` : ''}</div>}
           <StatusPills user={user} className="mt-2.5" />
           {user.interests.length > 0 && <div className="mt-2.5 flex flex-wrap gap-1.5">{[...common, ...user.interests.filter((i) => !common.includes(i))].map((i) => <span key={i} className={cn('h-7 px-3 rounded-full text-[12px] font-semibold inline-flex items-center', common.includes(i) ? 'bg-primary-soft text-primary' : 'bg-surface-2 text-ink-2')}>{INTEREST_LABELS[i]}</span>)}</div>}

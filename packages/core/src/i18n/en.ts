@@ -174,7 +174,7 @@ export const en: Record<string, string> = {
   '요청·승인·마감 알림': 'Requests, approvals, deadlines',
   '메시지': 'Messages',
   '2줄 이내로 짧게': 'Keep it to two lines',
-  '질문': 'Prompt',
+  '질문': 'Question',
   '추가 (': 'add (',
   ' 필수)': ' required)',
   '하나 더 답하기': 'answer one more',

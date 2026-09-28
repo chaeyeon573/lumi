@@ -3,8 +3,11 @@ import { t, lang } from '@core/i18n';
 import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import { Check, GraduationCap, Search, ShieldCheck, Plus, Trash2, Sparkles, MapPin, ChevronRight, ChevronDown, Mail, Briefcase, Upload, BadgeCheck } from 'lucide-react';
 import type { RegisterInput } from '@core/api';
-import type { Course, Interest, School, Stage, Visibility, ProfileField, Goal, VerificationMethod, Wants, PeopleWant, ActivityWant } from '@core/types';
-import { STAGE_ROLE, ALL_PEOPLE_WANTS, ALL_ACTIVITY_WANTS, ALUMNI_VERIFICATIONS } from '@core/types';
+import type { Course, Interest, School, Stage, Visibility, ProfileField, Goal, VerificationMethod, Wants, PeopleWant, ActivityWant, Research } from '@core/types';
+import { STAGE_ROLE, ALUMNI_VERIFICATIONS } from '@core/types';
+import { peopleWantOptions, activityWantOptions } from '@core/lib/wants';
+import type { StageKind } from '@core/lib/stage';
+import { ResearchFields } from '@/components/profile_ResearchFields';
 import { Button, Chip, Field, Input, Select, Segmented, BottomSheet } from '@/components/ui';
 import { TopBar } from '@/components/layout/TopBar';
 import { ONBOARDING_INTERESTS, INTEREST_EMOJI, INTEREST_LABELS, ALL_GOALS, GOAL_EMOJI, GOAL_LABELS } from '@core/lib/labels';
@@ -25,10 +28,13 @@ import { purposesFromOpenTo } from '@/components/profile_OpenToChips';
  * 온보딩 9화면 — 1 Welcome(/welcome) 은 WelcomePage, 2~9 는 여기.
  * 2 school → 3 verify → 4 stage → 5 basic → 6 interests → 7 region → 8 wants → 9 schedule(재학생) | career(졸업생)
  */
-const STEPS = ['school', 'verify', 'stage', 'basic', 'interests', 'region', 'wants', 'schedule', 'career'] as const;
+const STEPS = ['school', 'verify', 'stage', 'basic', 'interests', 'region', 'wants', 'research', 'schedule', 'career'] as const;
 type Step = typeof STEPS[number];
 const TOTAL = 9;
-const STEP_NO: Record<Step, number> = { school: 2, verify: 3, stage: 4, basic: 5, interests: 6, region: 7, wants: 8, schedule: 9, career: 9 };
+/** 대학원생은 8 wants 다음에 9 연구 → 10 시간표(선택) */
+const STEP_NO: Record<Step, number> = { school: 2, verify: 3, stage: 4, basic: 5, interests: 6, region: 7, wants: 8, research: 9, schedule: 9, career: 9 };
+const isGradLike = (s?: Stage) => s === 'masters' || s === 'phd';
+const kindOfStage = (s?: Stage): StageKind => (s === 'alumni' || s === 'professional' ? 'alumni' : isGradLike(s) ? 'grad' : 'undergrad');
 export const FIRSTRUN_KEY = 'aroundu.firstrun';
 
 const EMOJIS = ['🙂', '😎', '🧑‍💻', '👩‍🎨', '🧑‍🔬', '🏃', '🎸', '📚', '🌱', '🎨', '🚀', '🧗', '☕', '🐱', '🦊', '🎧'];
@@ -58,6 +64,7 @@ export function OnboardingPage() {
   const patch = (p: Partial<Draft>) => setForm((f) => ({ ...f, ...p }));
   const go = (step: Step) => nav(`/onboarding/${step}`);
   const alumni = isAlumniLike(form.stage);
+  const grad = isGradLike(form.stage);
 
   return (
     <Routes>
@@ -71,21 +78,23 @@ export function OnboardingPage() {
       <Route path="basic" element={<Frame step="basic"><BasicStep form={form} patch={patch} next={() => go('interests')} /></Frame>} />
       <Route path="interests" element={<Frame step="interests"><InterestsStep form={form} patch={patch} next={() => go('region')} /></Frame>} />
       <Route path="region" element={<Frame step="region"><RegionStep form={form} patch={patch} next={() => go('wants')} /></Frame>} />
-      <Route path="wants" element={<Frame step="wants"><WantsStep form={form} patch={patch} next={() => go(alumni ? 'career' : 'schedule')} /></Frame>} />
-      <Route path="schedule" element={alumni ? <Navigate to="/onboarding/career" replace /> : <Frame step="schedule"><ScheduleStep form={form} patch={patch} /></Frame>} />
+      <Route path="wants" element={<Frame step="wants" grad={grad}><WantsStep form={form} patch={patch} next={() => go(alumni ? 'career' : grad ? 'research' : 'schedule')} /></Frame>} />
+      <Route path="research" element={!grad ? <Navigate to={alumni ? '/onboarding/career' : '/onboarding/schedule'} replace /> : <Frame step="research" grad><ResearchStep form={form} patch={patch} next={() => go('schedule')} /></Frame>} />
+      <Route path="schedule" element={alumni ? <Navigate to="/onboarding/career" replace /> : <Frame step="schedule" grad={grad}><ScheduleStep form={form} patch={patch} /></Frame>} />
       <Route path="career" element={!alumni ? <Navigate to="/onboarding/schedule" replace /> : <Frame step="career"><CareerStep form={form} patch={patch} /></Frame>} />
       <Route path="*" element={<Navigate to="/onboarding/school" replace />} />
     </Routes>
   );
 }
 
-function Frame({ step, children }: { step: Step; children: React.ReactNode }) {
-  const n = STEP_NO[step];
-  const titles: Record<Step, string> = { school: t('학교 선택'), verify: t('학교 인증하기'), stage: t('현재 상태'), basic: t('기본 프로필'), interests: t('관심사'), region: t('지역'), wants: t('찾는 것'), schedule: t('시간표'), career: t('현재 직업') };
+function Frame({ step, grad, children }: { step: Step; grad?: boolean; children: React.ReactNode }) {
+  const n = grad && step === 'schedule' ? 10 : STEP_NO[step];
+  const total = grad ? 10 : TOTAL;
+  const titles: Record<Step, string> = { school: t('학교 선택'), verify: t('학교 인증하기'), stage: t('현재 상태'), basic: t('기본 프로필'), interests: t('관심사'), region: t('지역'), wants: t('찾는 것'), research: t('연구'), schedule: t('시간표'), career: t('현재 직업') };
   return (
     <div className="min-h-full flex flex-col bg-bg">
-      <TopBar back title={<span className="text-[15px]">{titles[step]} <span className="text-ink-3 font-medium">{n}/{TOTAL}</span></span>} />
-      <div className="px-4 pt-1"><div className="h-1.5 rounded-full bg-line overflow-hidden"><div className="h-full bg-primary transition-all" style={{ width: `${(n / TOTAL) * 100}%` }} /></div></div>
+      <TopBar back title={<span className="text-[15px]">{titles[step]} <span className="text-ink-3 font-medium">{n}/{total}</span></span>} />
+      <div className="px-4 pt-1"><div className="h-1.5 rounded-full bg-line overflow-hidden"><div className="h-full bg-primary transition-all" style={{ width: `${(n / total) * 100}%` }} /></div></div>
       <div className="flex-1 px-4 py-5 space-y-5 pb-10">{children}</div>
     </div>
   );
@@ -122,6 +131,7 @@ function useFinish(form: Draft) {
         openTo,
         purposes: purposesFromOpenTo(openTo),
         wants: form.wants,
+        research: isGradLike(input.stage) && input.research?.field?.trim() ? input.research : undefined,
         career: hasCareer ? career : undefined,
         timetable: alumni ? [] : input.timetable,
         ...override,
@@ -418,6 +428,10 @@ function RegionStep({ form, patch, next }: StepProps) {
 // ─── 8. 무엇을 찾고 있나요? — 어떤 사람 · 어떤 활동 ─────────────────────────────
 function WantsStep({ form, patch, next }: StepProps) {
   const w = form.wants;
+  // 단계마다 먼저 보여줄 답이 다르다 (대학원생: 같은 연구 분야 · 졸업생: 같은 지역·분야)
+  const kind = kindOfStage(form.stage);
+  const peopleOpts = peopleWantOptions(kind);
+  const activityOpts = activityWantOptions(kind);
   const toggleP = (p: PeopleWant) => patch({ wants: { ...w, people: w.people.includes(p) ? w.people.filter((x) => x !== p) : [...w.people, p] } });
   const toggleA = (a: ActivityWant) => patch({ wants: { ...w, activities: w.activities.includes(a) ? w.activities.filter((x) => x !== a) : [...w.activities, a] } });
   const valid = w.people.length > 0 && w.activities.length > 0;
@@ -425,13 +439,28 @@ function WantsStep({ form, patch, next }: StepProps) {
     <>
       <Heading title={t('무엇을 찾고 있나요?')} sub={t('추천 사람·모임의 기준이 돼요. 각각 하나 이상 골라주세요.')} />
       <Field label={t('어떤 사람을 만나고 싶나요?')} required right={<span className="text-[12px] text-ink-3">{w.people.length}</span>}>
-        <div className="flex flex-wrap gap-2">{ALL_PEOPLE_WANTS.map((p) => <Chip key={p} active={w.people.includes(p)} onClick={() => toggleP(p)}>{PEOPLE_WANT_EMOJI[p]} {PEOPLE_WANT_LABELS[p]}</Chip>)}</div>
+        <div className="flex flex-wrap gap-2">{peopleOpts.map((p) => <Chip key={p} active={w.people.includes(p)} onClick={() => toggleP(p)}>{PEOPLE_WANT_EMOJI[p]} {PEOPLE_WANT_LABELS[p]}</Chip>)}</div>
       </Field>
       <Field label={t('어떤 활동을 하고 싶나요?')} required right={<span className="text-[12px] text-ink-3">{w.activities.length}</span>}>
-        <div className="flex flex-wrap gap-2">{ALL_ACTIVITY_WANTS.map((a) => <Chip key={a} active={w.activities.includes(a)} onClick={() => toggleA(a)}>{ACTIVITY_WANT_EMOJI[a]} {ACTIVITY_WANT_LABELS[a]}</Chip>)}</div>
+        <div className="flex flex-wrap gap-2">{activityOpts.map((a) => <Chip key={a} active={w.activities.includes(a)} onClick={() => toggleA(a)}>{ACTIVITY_WANT_EMOJI[a]} {ACTIVITY_WANT_LABELS[a]}</Chip>)}</div>
       </Field>
       <p className="text-[12px] text-ink-3 flex items-center gap-1.5"><Sparkles size={13} className="text-primary" />{t('언제든 프로필 › 추천 설정에서 바꿀 수 있어요.')}</p>
       <Button full size="lg" disabled={!valid} onClick={next}>{t('다음')}</Button>
+    </>
+  );
+}
+
+// ─── 9 (대학원생). 연구 — 분야 · 연구실 · N년차 · 세부 주제 · 지도교수(기본 비공개) ─────────
+function ResearchStep({ form, patch, next }: StepProps) {
+  const r: Partial<Research> = form.research ?? {};
+  return (
+    <>
+      <Heading title={t('어떤 연구를 하고 있나요?')} sub={t('같은 분야 사람을 다른 학교 연구실까지 먼저 보여드려요. 분야만 적어도 충분해요.')} />
+      <ResearchFields value={r} onChange={(research) => patch({ research: research as Research })} />
+      <div className="space-y-2 pt-2">
+        <Button full size="lg" disabled={!r.field?.trim()} onClick={next}>{t('다음')}</Button>
+        <Button full size="lg" variant="ghost" onClick={() => { patch({ research: undefined }); next?.(); }}>{t('나중에')}</Button>
+      </div>
     </>
   );
 }

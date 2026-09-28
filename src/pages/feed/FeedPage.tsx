@@ -104,7 +104,7 @@ function FeedList({ tab }: { tab: Tab }) {
     <div>
       {tab === 'campus' && (
         <div className="pt-2">
-          <Segmented className={kind === 'grad' ? 'max-w-[300px]' : 'max-w-[240px]'} value={scope} onChange={setScope} options={campusScopes(kind)} />
+          <Segmented className={kind === 'grad' ? 'w-full' : 'max-w-[260px]'} value={scope} onChange={setScope} options={campusScopes(kind)} />
           <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 py-2">
             <Chip size="sm" active={type === 'all'} onClick={() => setType('all')}>{t('전체')}</Chip>
             {ALL_POST_TYPES.filter((x) => x !== 'news').map((pt) => <Chip key={pt} size="sm" active={type === pt} onClick={() => setType(pt)}>{POST_TYPE_LABELS[pt]}</Chip>)}

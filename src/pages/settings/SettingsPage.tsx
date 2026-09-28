@@ -7,6 +7,7 @@ import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { isAlumniStage, stageLabel, stageOf } from '@core/lib/network';
+import { stageKind, STAGE_KIND_LABELS, type StageKind } from '@core/lib/stage';
 import { activeStatus } from '@core/lib/status';
 import { statusText } from '@/components/people_StatusPill';
 import { PARTIAL_FAIL_KEY } from '@/hooks/useSectionState';
@@ -35,6 +36,15 @@ export function SettingsPage() {
     try {
       for (const s of mine) await run(() => api.searches.run(me.id, s.id));
       showToast(lang === 'en' ? `Re-ran ${mine.length} saved search${mine.length > 1 ? 'es' : ''}. Check notifications.` : `저장 검색 ${mine.length}개를 다시 실행했어요. 알림을 확인해보세요.`, 'success');
+    } catch { /* toast by run */ }
+  };
+  /** 데모: 단계 바꾸기 — 대학원생은 연구 분야 예시를, 졸업생은 하는 일 예시를 함께 넣는다 */
+  const previewStage = async (k: StageKind) => {
+    if (k === stageKind(me)) return;
+    try {
+      if (k === 'undergrad') { await run(() => api.users.setStage(me.id, 'undergrad')); await run(() => api.users.setResearch(me.id, null), t('학부생 화면으로 바꿨어요.')); }
+      if (k === 'grad') { await run(() => api.users.setStage(me.id, 'masters')); await run(() => api.users.setResearch(me.id, { field: 'NLP', lab: lang === 'en' ? 'NLP Lab' : '자연어처리 연구실', year: 2, keywords: ['LLM', lang === 'en' ? 'Evaluation' : '평가'] }), t('대학원생 화면으로 바꿨어요.')); }
+      if (k === 'alumni') await run(() => api.users.setStage(me.id, 'alumni', me.career?.industry ? undefined : (lang === 'en' ? { city: 'San Francisco', company: 'Startup', industry: 'AI', role: 'ML Engineer' } : { city: '서울', company: '스타트업', industry: 'AI', role: 'ML Engineer' })), t('졸업생 화면으로 바꿨어요.'));
     } catch { /* toast by run */ }
   };
   const Row = ({ Icon, label, desc, onClick, tone }: { Icon: typeof User; label: string; desc?: string; onClick: () => void; tone?: 'danger' | 'primary' }) => (
@@ -107,6 +117,11 @@ export function SettingsPage() {
         {/* ── 데모 도구 ── */}
         <div className="card divide-y divide-line">
           <div className="px-4 pt-3 pb-1 text-[11px] font-bold text-ink-3">{t('데모 도구')}</div>
+          <div className="px-4 py-3">
+            <div className="text-[14px] font-semibold">{t('단계 미리보기')}</div>
+            <div className="text-[12px] text-ink-3 mb-2">{t('같은 계정으로 학부생 · 대학원생 · 졸업생 화면을 바꿔 봐요. 연결·기록은 그대로예요.')}</div>
+            <Segmented value={stageKind(me)} onChange={previewStage} options={(['undergrad', 'grad', 'alumni'] as const).map((k) => ({ value: k, label: STAGE_KIND_LABELS()[k] }))} />
+          </div>
           <Row Icon={RotateCcw} label={t('연결 요청 카운트 초기화')} desc={t('오늘 보낸 연결 요청 수를 0으로')} onClick={() => run(() => api.users.update(me.id, { swipes: { date: '1970-01-01', count: 0 } }), t('연결 요청 카운트를 초기화했어요.'))} />
           <Row Icon={RotateCcw} label={t('플랜 초기화')} desc={t('무료 플랜으로')} onClick={() => run(() => api.users.setPlan(me.id, 'free'), t('플랜을 초기화했어요.'))} />
           {alumni && <Row Icon={GraduationCap} label={t('재학생으로 되돌리기')} desc={t('연결·기록은 그대로, 홈이 재학생 기준으로')} onClick={() => run(() => api.users.setStage(me.id, 'undergrad'), t('재학생으로 되돌렸어요.'))} />}

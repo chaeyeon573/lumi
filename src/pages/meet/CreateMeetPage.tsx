@@ -35,7 +35,7 @@ export function CreateMeetPage() {
   const cities = localeContext().cities;
   const myCity = cityOf(v.me);
 
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState(params.get('title') ?? '');
   const [orgId, setOrgId] = useState<string>(orgParam && groups.some((o) => o.id === orgParam) ? orgParam : '');
   const [date, setDate] = useState(params.get('date') ?? todayISO());
   const [startTime, setStart] = useState(params.get('start') ?? '18:00');
@@ -45,7 +45,7 @@ export function CreateMeetPage() {
   const [capacity, setCapacity] = useState(4);
   const [vis, setVis] = useState<MeetVis>(orgId ? 'group' : 'school');
   const [approval, setApproval] = useState(false);
-  const [category, setCategory] = useState<ActivityCategory>('etc');
+  const [category, setCategory] = useState<ActivityCategory>((params.get('category') as ActivityCategory | null) ?? 'etc');
   const [description, setDescription] = useState('');
   const [busy, setBusy] = useState(false);
 

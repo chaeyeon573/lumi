@@ -201,6 +201,8 @@ export function createEngine(ctx: EngineContext) {
         fieldVisibility: input.fieldVisibility,
         settings: { messagePolicy: 'connected', notifications: input.notifications, locationPermission: input.locationPermission },
         stage: input.stage, openTo: input.openTo ?? (input.wants ? openToFromWants(input.wants) : undefined), career: input.career,
+        research: (input.stage === 'masters' || input.stage === 'phd') && input.research?.field?.trim()
+          ? { ...input.research, field: input.research.field.trim().slice(0, 40), showAdvisor: !!input.research.showAdvisor && !!input.research.advisor?.trim() } : undefined,
         createdAt: now(),
       };
       db().users.push(user);

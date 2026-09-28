@@ -8,9 +8,10 @@ import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { ALL_AVAILABILITY, ALL_INTERESTS, ALL_PURPOSES, AVAILABILITY_LABELS, INTEREST_EMOJI, INTEREST_LABELS, PURPOSE_LABELS } from '@core/lib/labels';
-import type { Availability, Interest, ProfileField, Purpose, User, VerificationMethod } from '@core/types';
+import type { Availability, Interest, ProfileField, Purpose, Research, User, VerificationMethod } from '@core/types';
 import { cn } from '@core/lib/cn';
-import { isAlumniStage, verificationLabel } from '@core/lib/network';
+import { isAlumniStage, isGradStage, verificationLabel } from '@core/lib/network';
+import { ResearchFields } from '@/components/profile_ResearchFields';
 import { localeContext } from '@core/lib/locale-context';
 import { OpenToChips } from '@/components/profile_OpenToChips';
 import { CareerFields, ChipsWithText, CityFields } from '@/components/profile_CareerFields';
@@ -33,6 +34,7 @@ export function EditProfilePage() {
   const fv = (k: ProfileField) => <VisibilityPicker compact value={form.fieldVisibility[k]} onChange={(vis) => patch({ fieldVisibility: { ...form.fieldVisibility, [k]: vis } })} />;
   const aff = form.affiliation.type === 'university' ? form.affiliation : null;
   const alumni = isAlumniStage(form);
+  const grad = isGradStage(form);
   const domain = (aff && schools.find((s) => s.id === aff.schoolId)?.emailDomain) || (lang === 'en' ? 'berkeley.edu' : 'yonsei.ac.kr');
   const verifications = ctx.verifications(domain).filter((o) => o.for === (alumni ? 'alumni' : 'student'));
   const thisYear = new Date().getFullYear();
@@ -40,11 +42,13 @@ export function EditProfilePage() {
   const save = async () => {
     setBusy(true);
     try {
-      const { id: _id, createdAt: _c, verification: _v, ...rest } = form;
+      const { id: _id, createdAt: _c, verification: _v, research, ...rest } = form;
       const homeCity = form.homeCity?.trim();
       // 인증 상태는 시트에서 즉시 저장되므로 폼 값으로 덮어쓰지 않는다
       const affiliation = rest.affiliation.type === 'university' && me.affiliation.type === 'university' ? { ...rest.affiliation, emailVerified: me.affiliation.emailVerified || rest.affiliation.emailVerified } : rest.affiliation;
-      await run(() => api.users.update(me.id, { ...rest, affiliation, homeCity: homeCity || undefined, activityCity: form.activityCity?.trim() || undefined, region: homeCity || form.region }), t('프로필을 저장했어요.'));
+      await run(() => api.users.update(me.id, { ...rest, affiliation, homeCity: homeCity || undefined, activityCity: form.activityCity?.trim() || undefined, region: homeCity || form.region }), grad ? undefined : t('프로필을 저장했어요.'));
+      // 연구 정보는 엔진에서 검증 (분야 필수 · 지도교수 기본 비공개)
+      if (grad) await run(() => api.users.setResearch(me.id, research?.field?.trim() ? (research as Research) : null), t('프로필을 저장했어요.'));
       nav('/profile', { replace: true });
     } catch { setBusy(false); }
   };
@@ -94,6 +98,14 @@ export function EditProfilePage() {
             </div>
             <Toggle label={t('학교명 공개')} checked={aff.showSchool} onChange={(val) => patch({ affiliation: { ...aff, showSchool: val } })} />
             <Toggle label={t('학과 공개')} checked={aff.showDepartment} onChange={(val) => patch({ affiliation: { ...aff, showDepartment: val } })} />
+          </div>
+        )}
+
+        {/* ── 대학원생: 연구 ── */}
+        {grad && (
+          <div id="research" className="card p-4 space-y-3 scroll-mt-20">
+            <div><b className="text-[13px]">{t('연구')}</b><div className="text-[12px] text-ink-3">{t('같은 연구 분야 사람과 먼저 이어져요.')}</div></div>
+            <ResearchFields value={form.research ?? {}} onChange={(r) => patch({ research: r as Research })} />
           </div>
         )}
 

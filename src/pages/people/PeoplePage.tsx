@@ -5,6 +5,7 @@ import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { LAST_SEEN_KEY } from '@/components/layout/BottomNav';
 import { CardSkeleton, EmptyState, ErrorState, Button, BottomSheet, Chip, Segmented, Input, Select, Avatar, Tag, Section, SectionEmpty, SectionSkeleton, PrivacyNote } from '@/components/ui';
+import { stageKind, stageCopy } from '@core/lib/stage';
 import { useViewer } from '@/hooks/useViewer';
 import { useSnapshot } from '@/hooks/useSnapshot';
 import { useAppStore } from '@core/store/useAppStore';
@@ -207,7 +208,15 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
 
   const hidden = useMemo(() => new Set(me.hiddenPeople ?? []), [me.hiddenPeople]);
   const pool = useMemo(() => v.visibleUsers.filter((u) => !hidden.has(u.id)), [v.visibleUsers, hidden]);
-  const near = useMemo(() => recommendPeople(snap, me, pool, (u) => v.canSeeField(u, 'timetable'), 12), [snap, me, pool, v]);
+  const kind = stageKind(me);
+  const copy = stageCopy(kind);
+  // 단계별 첫 섹션 — 대학원생은 같은 연구 분야, 졸업생은 같은 도시·분야, 학부생은 같은 학교·공강 순
+  const near = useMemo(() => {
+    const list = recommendPeople(snap, me, pool, (u) => v.canSeeField(u, 'timetable'), 12);
+    const first = kind === 'grad' ? ['research'] : kind === 'alumni' ? ['city', 'field', 'research'] : ['time', 'class', 'major', 'school'];
+    const hit = (r: { reasons: Reason[] }) => (r.reasons.some((x) => first.includes(x.kind)) ? 0 : 1);
+    return [...list].sort((a, b) => hit(a) - hit(b));
+  }, [snap, me, pool, v, kind]);
   const around = useMemo(() => aroundToday(snap, me), [snap, me]);
   const visible = (u: User) => !v.isBlocked(u.id) && !hidden.has(u.id);
   const openPeople = around.openNow.filter(visible);
@@ -228,7 +237,7 @@ function QuietHub({ onDeck }: { onDeck: () => void }) {
       {/* (a) 지금 가까운 사람 */}
       <section aria-labelledby="h-near" className="space-y-2">
         <div className="flex items-center gap-2 px-1">
-          <h2 id="h-near" className="text-[15px] font-bold flex-1">{t('지금 가까운 사람')}</h2>
+          <h2 id="h-near" className="text-[15px] font-bold flex-1 min-w-0">{copy.peopleTitle}{kind === 'grad' && me.research?.field ? ` · ${me.research.field}` : ''}<span className="block text-[11px] font-medium text-ink-3 truncate">{copy.peopleSub}</span></h2>
           <button onClick={onDeck} className="h-7 px-3 rounded-full border border-line bg-white text-[12px] font-semibold text-ink-2 flex items-center gap-1 press"><GalleryHorizontal size={13} />{t('한 장씩 보기')}</button>
         </div>
         <Section loading={secNear.loading} error={secNear.error} onRetry={secNear.retry} skeleton={<SectionSkeleton count={3} />}

@@ -7,6 +7,7 @@ import { Chip, CardSkeleton, EmptyState, ErrorState, Button, Avatar, Tag, Segmen
 import { OpenSlotSheet } from '@/components/social/OpenSlotSheet';
 import { JoinButton } from '@/components/cards/JoinButton';
 import { SchoolBadge } from '@/components/people_SchoolBadge';
+import { stageKind, stageCopy } from '@core/lib/stage';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
@@ -154,19 +155,23 @@ function NowStrip() {
   const nextFree = myFree[0] ? { start: Math.max(myFree[0].start, nowMin()), end: myFree[0].end } : null;
   const partner = v.visibleActivities.find((a) => a.category === 'store_deal' && a.partner && a.date === todayDate);
   const now = useMemo(() => nowActivities(v.visibleActivities, me.id).slice(0, 3), [v, me.id]);
-  if (!nextFree && !partner && now.length === 0) return null;
+  // 공강 바는 학부생에게만, 제휴 카드는 재학생(학부·대학원)에게만. 지금 열린 만남은 모두
+  const kind = stageKind(me);
+  const showFree = kind === 'undergrad' ? nextFree : null;
+  const showPartner = kind !== 'alumni' ? partner : undefined;
+  if (!showFree && !showPartner && now.length === 0) return null;
   return (
     <section className="mb-5">
       <SectionLabel>{t('지금')}</SectionLabel>
       <div className="space-y-2">
-        {nextFree && (
+        {showFree && nextFree && (
           <div className="h-12 rounded-full bg-surface-2 flex items-center pl-4 pr-1.5 gap-2">
             <span className="h-2 w-2 rounded-full bg-primary" />
             <span className="flex-1 text-[14px] text-primary font-medium truncate">{`${lang === 'en' ? 'Free' : '공강'} ${fmtBlock(nextFree)}`}</span>
             <button onClick={() => setSlot(nextFree)} className="h-9 px-4 rounded-full bg-primary text-white text-[13px] font-semibold flex items-center gap-1 press"><Plus size={14} />{t('열기')}</button>
           </div>
         )}
-        {partner && (
+        {showPartner && partner && (
           <button onClick={() => nav(`/activities/${partner.id}`)} className="w-full card rounded-full bg-gold-soft pl-2.5 pr-2.5 py-2 flex items-center gap-3 text-left press">
             <span className="h-11 w-11 rounded-full bg-white grid place-items-center text-[20px] shrink-0">🏷️</span>
             <span className="flex-1 min-w-0"><span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{partner.partner!.name}</span><Tag tone="gold">{t('제휴')}</Tag></span><span className="block text-[13px] text-ink-2 truncate">{partner.partner!.deal}</span></span>
@@ -200,7 +205,9 @@ function NowRow({ a, inMin }: { a: Activity; inMin: number }) {
   );
 }
 
-type RecChip = 'all' | 'school' | 'interest' | 'city';
+type RecChip = 'all' | 'school' | 'interest' | 'city' | 'research';
+const RESEARCH_CATS = new Set(['seminar', 'study']);
+const ALUMNI_CATS = new Set(['networking', 'coffee', 'meal', 'exercise']);
 
 function RecommendTab() {
   const nav = useNavigate();
@@ -208,19 +215,41 @@ function RecommendTab() {
   const orgs = useAppStore((s) => s.organizations);
   const participations = useAppStore((s) => s.participations);
   const [chip, setChip] = useState<RecChip>('all');
-  const recs = useMemo(() => recommendMeets(v.visibleActivities, v.me, v.users, orgs, participations, 30), [v, orgs, participations]);
+  const kind = stageKind(v.me);
+  const copy = stageCopy(kind);
+  // 단계별 정렬: 대학원생은 세미나·스터디, 졸업생은 커피·식사·작은 모임을 먼저 (점수 순서는 유지)
+  const recs = useMemo(() => {
+    const r = recommendMeets(v.visibleActivities, v.me, v.users, orgs, participations, 30);
+    const pri = kind === 'grad' ? RESEARCH_CATS : kind === 'alumni' ? ALUMNI_CATS : null;
+    return pri ? [...r].sort((a, b) => Number(!pri.has(a.a.category)) - Number(!pri.has(b.a.category))) : r;
+  }, [v, orgs, participations, kind]);
   const myCity = cityOf(v.me) ?? '';
   const interestWords = [t('하고 싶은 활동'), t('관심사')];
   const list = recs.filter((r) => {
     if (chip === 'school') { const h = v.userById(r.a.hostId); return !!h && sameSchool(h, v.me); }
     if (chip === 'interest') return interestWords.some((w) => r.reason.includes(w));
     if (chip === 'city') return !!myCity && r.reason.includes(myCity);
+    if (chip === 'research') return RESEARCH_CATS.has(r.a.category);
     return true;
   });
-  const chips: { key: RecChip; label: string }[] = [{ key: 'all', label: t('전체') }, { key: 'school', label: t('내 학교') }, { key: 'interest', label: t('관심사') }, { key: 'city', label: myCity || t('지역') }];
+  const chips: { key: RecChip; label: string }[] = kind === 'grad'
+    ? [{ key: 'all', label: t('전체') }, { key: 'research', label: t('연구·스터디') }, { key: 'school', label: t('내 학교') }, { key: 'interest', label: t('관심사') }, { key: 'city', label: myCity || t('지역') }]
+    : kind === 'alumni'
+      ? [{ key: 'all', label: t('전체') }, { key: 'city', label: myCity || t('지역') }, { key: 'interest', label: t('관심사') }, { key: 'school', label: t('동문') }]
+      : [{ key: 'all', label: t('전체') }, { key: 'school', label: t('내 학교') }, { key: 'interest', label: t('관심사') }, { key: 'city', label: myCity || t('지역') }];
+  const exampleCat = kind === 'grad' ? 'study' : kind === 'alumni' ? 'coffee' : 'meal';
   return (
     <div>
       <NowStrip />
+      {/* 단계별 한 줄 — 무엇을 같이 하기 좋은지 + 바로 만들 수 있는 예시 */}
+      <div className="mb-3">
+        <div className="text-[12px] font-semibold text-ink-3 px-1">{copy.meetHint}</div>
+        <div className="mt-1.5 flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4">
+          {copy.meetExamples.map((ex) => (
+            <button key={ex} onClick={() => nav(`/meet/create?title=${encodeURIComponent(ex)}&category=${exampleCat}`)} className="h-8 px-3 rounded-full border border-dashed border-line text-[12px] font-semibold text-ink-2 flex items-center gap-1 shrink-0 press"><Plus size={12} />{ex}</button>
+          ))}
+        </div>
+      </div>
       <button onClick={() => nav('/meet/tables')} className="mb-4 w-full h-12 rounded-full bg-[#BFF4FF] pl-4 pr-2 flex items-center gap-2 text-left press">
         <Users size={16} className="text-primary shrink-0" />
         <span className="flex-1 min-w-0 text-[14px] font-semibold text-primary truncate">{t('작은 모임 · 4~6명')}</span>

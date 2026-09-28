@@ -36,6 +36,7 @@
 - 네트워크 요청(사람 찾기 › 네트워크에 물어보기)은 `@core/lib/requests`(전달 대상·추천·받은 요청) + `@core/lib/graph`(촌수) + 엔진 `requests.*`. 지인 추천 후보는 본인이 '관심 있어요' 하기 전까지 요청자에게 공개하지 않는다(`server/view.ts sanitizeRequest`).
 - 네트워크 16화면(UX-SPEC 6.7): 사람을 보여줄 때 이유 → 촌수·공통 연결 → 경로 → 프로필 순. 공개 범위는 반드시 `@core/lib/privacy` `profileView`/`connectionStatus` 로 마스킹. 섹션마다 `useSectionState` + `Section/SectionSkeleton/SectionError/SectionEmpty` 로 로딩·부분 오류·빈 상태. 자연어 찾기 `@core/lib/nlsearch`, 2촌·소개 `graph.secondDegree` + 엔진 `intros.*`, 주변·방문 예정 `around.whoIsAround`, 작은 모임 `meet.recommendSmallTables`.
 - 한국/미국 맥락 프리셋은 `@core/lib/locale-context` `localeContext()` (인증 방법·도시·업종·직무·전공·프리셋).
+- **단계별 화면은 세 갈래** `@core/lib/stage` `stageKind(u)` = 학부생 / 대학원생(석·박사) / 졸업생. 홈(`homeToday`/`gradHome`/`alumniHome`), 피드 컴포저 프롬프트·내 학교 범위(`composerPrompts`, `campusScopes`), 사람·모임 문구(`stageCopy`), 찾는 것 순서(`peopleWantOptions`)가 여기서 나온다. 대학원생 연구 정보 `User.research`(지도교수 기본 비공개)는 엔진 `users.setResearch`. 단계 표는 UX-SPEC 2절. 데모: 설정 › 데모 도구 › 단계 미리보기.
 
 ## Free vs Premium (PRD 7·22절 v2 — 절대 유료화 금지 목록)
 **사람을 만나는 데 돈을 받지 않는다.** 무료: 추천 사람 보기, **타학교 사람 보기**, 동문 보기, 기본 검색(키워드 + 필터 1그룹), 기본 연결 요청(하루 30회, `FREE_SWIPES_PER_DAY`), 모임·그룹 참가·생성, Feed 읽기/쓰기, 메시지, 기본 프로필.

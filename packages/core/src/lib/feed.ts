@@ -48,7 +48,7 @@ export function feedForYou(posts: Post[], me: User, users: User[], rel: Relation
     if (p.postType === 'question' || p.postType === 'together') s += 0.5;
     // 단계
     const postStage = promptStageOf(p.topics);
-    if (postStage === myStage) s += 1.5;
+    if (postStage === myStage) s += 2.5;
     else if (myStage === 'alumni' && postStage === 'undergrad') s -= 1.5;
     if (a && stageKind(a) === myStage) s += 1;
     if (a && myStage === 'grad' && (sameResearch(a, me) || researchMatchesCareer(me.research, a.career))) s += 2;

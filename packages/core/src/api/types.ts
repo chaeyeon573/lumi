@@ -36,6 +36,8 @@ export type Patch = Partial<Omit<Snapshot, 'relationships'>> & {
 export interface RegisterInput {
   /** 학교 이메일 — 실제 서버에서는 로그인 식별자로 쓴다 (프로필에는 노출되지 않음) */
   email?: string;
+  /** 대학원생 연구 정보 (선택) */
+  research?: Research;
   nickname: string;
   birthYear: number;
   gender: User['gender'];

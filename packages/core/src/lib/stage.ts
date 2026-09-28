@@ -66,7 +66,7 @@ export type CampusScope = 'students' | 'grads' | 'alumni' | 'all';
 
 export function campusScopes(kind: StageKind): { value: CampusScope; label: string }[] {
   if (kind === 'alumni') return [{ value: 'alumni', label: t('동문') }, { value: 'all', label: t('학교 전체') }];
-  if (kind === 'grad') return [{ value: 'grads', label: t('대학원') }, { value: 'students', label: t('재학생') }, { value: 'all', label: t('학교 전체') }];
+  if (kind === 'grad') return [{ value: 'grads', label: t('대학원 과정') }, { value: 'students', label: t('재학생') }, { value: 'all', label: t('학교 전체') }];
   return [{ value: 'students', label: t('재학생만') }, { value: 'all', label: t('학교 전체') }];
 }
 export const defaultCampusScope = (kind: StageKind): CampusScope => (kind === 'alumni' ? 'alumni' : kind === 'grad' ? 'grads' : 'all');

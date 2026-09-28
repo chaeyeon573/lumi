@@ -7,9 +7,9 @@ import { Button, Field } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
-import { ALL_PEOPLE_WANTS, ALL_ACTIVITY_WANTS } from '@core/types';
 import type { PeopleWant, ActivityWant, Wants } from '@core/types';
-import { PEOPLE_WANT_LABELS, PEOPLE_WANT_EMOJI, ACTIVITY_WANT_LABELS, ACTIVITY_WANT_EMOJI, emptyWants } from '@core/lib/wants';
+import { PEOPLE_WANT_LABELS, PEOPLE_WANT_EMOJI, ACTIVITY_WANT_LABELS, ACTIVITY_WANT_EMOJI, emptyWants, peopleWantOptions, activityWantOptions } from '@core/lib/wants';
+import { stageKind } from '@core/lib/stage';
 import { cn } from '@core/lib/cn';
 
 /** 큰 칩 — 온보딩 "무엇을 찾고 있나요?" 와 같은 모양 (2열, 이모지 + 라벨) */
@@ -59,10 +59,10 @@ export function WantsPage() {
           <p className="mt-1.5 text-[12px] text-ink-2 leading-relaxed">{t('추천·홈·모임 추천의 우선순위에 바로 반영돼요. 언제든 바꿀 수 있고, 다른 사람에게는 보이지 않아요.')}</p>
         </div>
         <Field label={t('어떤 사람을 만나고 싶어요?')} hint={t('1개 이상 골라주세요. 사람 추천과 홈의 "오늘의 사람"에 쓰여요.')}>
-          <WantGrid all={ALL_PEOPLE_WANTS} value={wants.people} labels={PEOPLE_WANT_LABELS} emoji={PEOPLE_WANT_EMOJI} onToggle={togglePeople} />
+          <WantGrid all={peopleWantOptions(stageKind(me))} value={wants.people} labels={PEOPLE_WANT_LABELS} emoji={PEOPLE_WANT_EMOJI} onToggle={togglePeople} />
         </Field>
         <Field label={t('어떤 활동을 하고 싶어요?')} hint={t('1개 이상 골라주세요. 모임 추천과 프로필의 "열려 있어요"에 쓰여요.')}>
-          <WantGrid all={ALL_ACTIVITY_WANTS} value={wants.activities} labels={ACTIVITY_WANT_LABELS} emoji={ACTIVITY_WANT_EMOJI} onToggle={toggleActivity} />
+          <WantGrid all={activityWantOptions(stageKind(me))} value={wants.activities} labels={ACTIVITY_WANT_LABELS} emoji={ACTIVITY_WANT_EMOJI} onToggle={toggleActivity} />
         </Field>
         <p className="text-[12px] text-ink-3 flex items-start gap-1.5"><Sparkles size={13} className="mt-0.5 shrink-0" />{t('고른 기준은 추천 카드의 "왜 연결될 수 있나"에도 그대로 나타나요.')}</p>
       </div>

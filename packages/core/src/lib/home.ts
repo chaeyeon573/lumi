@@ -128,7 +128,14 @@ export function gradHome(snap: Snapshot, me: User, visibleActivities: Activity[]
   const researchWeek = visibleActivities.filter((a) => a.date >= today && a.date <= week && RESEARCH_CATS.has(a.category) && (hostGrad(a) || a.kind === 'org_event'))
     .sort((a, b) => (a.date + a.startTime).localeCompare(b.date + b.startTime)).slice(0, 3);
   const taken = new Set([...researchPeople, ...ahead].map((p) => p.user.id));
-  return { ...base, connectNow: base.connectNow.filter((p) => !taken.has(p.user.id)).slice(0, 3), researchWeek, researchPeople, ahead,
+  // 모임은 세미나·스터디(대학원생이 여는 것) 먼저, 이번 주 연구 일정과 겹치지 않게
+  const weekIds = new Set(researchWeek.map((a) => a.id));
+  // 대학원생이 여는 모임 · 세미나 · 작은 모임을 먼저, 학부생이 여는 시험 스터디는 뒤로
+  const hostUndergrad = (a: Activity) => { const h = snap.users.find((u) => u.id === a.hostId); return !!h && !isGradStage(h) && !isAlumniStage(h); };
+  const gradScore = (a: Activity) => (hostGrad(a) ? 3 : 0) + (a.category === 'seminar' ? 2 : 0) + (a.category === 'networking' || a.category === 'coffee' ? 1 : 0) - (hostUndergrad(a) && a.category === 'study' ? 2 : 0);
+  const meets = recommendMeets(visibleActivities.filter((a) => !weekIds.has(a.id)), me, snap.users, snap.organizations, snap.participations, 12)
+    .map((m, i) => ({ m, s: gradScore(m.a) * 2 - i * 0.2 })).sort((a, b) => b.s - a.s).slice(0, 3).map((x) => x.m);
+  return { ...base, meets, connectNow: base.connectNow.filter((p) => !taken.has(p.user.id)).slice(0, 3), researchWeek, researchPeople, ahead,
     opportunities: base.opportunities.filter((o) => ['lab', 'internship', 'hackathon', 'event', 'scholarship', 'exchange'].includes(o.type)) };
 }
 

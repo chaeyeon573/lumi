@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { Settings, Pencil, ShieldCheck, CalendarDays, ChevronRight, Users, CalendarCheck, Bookmark, Building2, FileText, Bell, MapPin, Briefcase, Sparkles, GraduationCap, Quote, Target, MessageSquareText, BookmarkCheck, Coffee } from 'lucide-react';
+import { Settings, Pencil, ShieldCheck, CalendarDays, ChevronRight, Users, CalendarCheck, Bookmark, Building2, FileText, Bell, MapPin, Briefcase, Sparkles, GraduationCap, Quote, Target, MessageSquareText, BookmarkCheck, Coffee, FlaskConical, Lock } from 'lucide-react';
+import { stageKind, stageCopy } from '@core/lib/stage';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { Avatar, Button, CardSkeleton, ErrorState, Tag } from '@/components/ui';
@@ -79,7 +80,9 @@ export function ProfilePage() {
   const savedPeople = (me.savedPeople ?? []).filter((id) => v.visibleUsers.some((u) => u.id === id)).length;
   const scrollToPosts = () => document.getElementById('my-posts')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
+  const kind = stageKind(me);
   const nowRows: { icon: React.ReactNode; l: string; v?: string }[] = [
+    ...(kind === 'undergrad' ? [{ icon: <GraduationCap size={15} />, l: t('전공'), v: majorOf(me) }, { icon: <GraduationCap size={15} />, l: t('학년'), v: classYearLabel(me, lang) }] : []),
     { icon: <MapPin size={15} />, l: t('거주 도시'), v: homeCity },
     { icon: <MapPin size={15} />, l: t('활동 지역'), v: me.activityCity },
   ];
@@ -122,9 +125,29 @@ export function ProfilePage() {
           <span className="text-[13px] font-bold text-verify shrink-0">{myStatus ? t('바꾸기') : t('켜기')}</span>
         </button>
 
-        {/* ── 현재: 거주 도시 · 활동 지역 · (졸업생) 회사 · 업종 · 직무 ── */}
+        {/* ── 대학원생: 연구 — 분야 · 연구실 · N년차 · 키워드. 지도교수는 켤 때만 다른 사람에게 보인다 ── */}
+        {kind === 'grad' && (
+          <section className="card p-5">
+            <SectionTitle icon={<FlaskConical size={17} />} right={<EditLink to="/profile/edit#research" />}>{t('연구')}</SectionTitle>
+            {!me.research?.field ? (
+              <div className="mt-3 rounded-2xl bg-surface-2 px-4 py-4 text-center">
+                <p className="text-[13px] text-ink-2">{t('연구 분야를 알려주면 다른 학교 연구실까지, 같은 분야 사람을 먼저 보여드려요.')}</p>
+                <Button size="sm" className="mt-3" onClick={() => nav('/profile/edit#research')}>{t('연구 분야 추가')}</Button>
+              </div>
+            ) : (
+              <>
+                <div className="mt-3 text-[15px] font-bold text-ink">{me.research.field}</div>
+                <div className="text-[13px] text-ink-2">{[me.research.lab, me.research.year ? (lang === 'en' ? `Year ${me.research.year}` : `${me.research.year}년차`) : '', stageLabel(stageOf(me), lang)].filter(Boolean).join(' · ')}</div>
+                {(me.research.keywords ?? []).length > 0 && <div className="mt-2 flex flex-wrap gap-1.5">{me.research.keywords!.map((k) => <span key={k} className="h-7 px-3 rounded-full bg-accent-soft text-primary text-[12px] font-semibold flex items-center">{k}</span>)}</div>}
+                <p className="mt-2 text-[11px] text-ink-3 flex items-center gap-1"><Lock size={11} />{me.research.advisor && me.research.showAdvisor ? `${t('지도교수')} ${me.research.advisor} · ${t('공개 중')}` : t('지도교수는 기본으로 나만 봐요')}</p>
+              </>
+            )}
+          </section>
+        )}
+
+        {/* ── 현재 (학부생: 이번 학기): 전공 · 학년 · 거주 도시 · 활동 지역 · (졸업생) 회사 · 업종 · 직무 ── */}
         <section className="card p-5">
-          <SectionTitle icon={<MapPin size={17} />} right={<EditLink to="/profile/edit" />}>{t('현재')}</SectionTitle>
+          <SectionTitle icon={<MapPin size={17} />} right={<EditLink to="/profile/edit" />}>{kind === 'undergrad' ? stageCopy('undergrad').nowTitle : t('현재')}</SectionTitle>
           {nowFilled.length === 0 ? (
             <p className="mt-2 text-[13px] text-ink-3">{alumni ? t('거주 도시와 하는 일을 알려주면 같은 도시·분야의 동문과 더 잘 연결돼요.') : t('거주 도시를 알려주면 같은 지역 사람과 모임이 먼저 보여요.')}</p>
           ) : (
@@ -170,8 +193,8 @@ export function ProfilePage() {
           )}
         </section>
 
-        {/* ── 이번 주 시간표 (재학생·대학원생) ── */}
-        {student && (
+        {/* ── 이번 주 시간표 (학부생 · 대학원생은 시간표가 있을 때만) ── */}
+        {student && (kind === 'undergrad' || me.timetable.length > 0) && (
           <section className="card p-5">
             <div className="flex items-center justify-between">
               <h2 className="font-display text-[18px] font-bold text-primary flex items-center gap-2"><CalendarDays size={17} />{t('이번 주 시간표')}</h2>
