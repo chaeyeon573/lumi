@@ -6,8 +6,12 @@ import { en_meet } from './v2/meet';
 import { en_profile } from './v2/profile';
 import { en_around } from './v2/around';
 import { en_find } from './v2/find';
+import { en_stage } from './v2/stage';
+import { en_mobile } from './v2/mobile';
 
 export const en: Record<string, string> = {
+  // 먼저 둔 사전은 뒤의 같은 키에 덮인다 (기존 번역 우선)
+  ...en_stage, ...en_mobile,
   ...en_common, ...en_onboarding, ...en_people, ...en_meet, ...en_profile, ...en_around, ...en_find,
   '로그인이 필요해요.': 'Please sign in.',
   '입력값을 확인해주세요.': 'Please check your input.',

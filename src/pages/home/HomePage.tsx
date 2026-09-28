@@ -10,7 +10,8 @@ import { AroundTodayCard } from '@/components/home_AroundToday';
 import { useAppStore } from '@core/store/useAppStore';
 import { getPlatform } from '@core/platform';
 import type { Snapshot } from '@core/api';
-import { homeToday, alumniHome, type HomeToday, type AlumniHome, type NetworkNews } from '@core/lib/home';
+import { homeToday, alumniHome, gradHome, type HomeToday, type AlumniHome, type GradHome as GradHomeData, type NetworkNews } from '@core/lib/home';
+import { stageKind, researchLine } from '@core/lib/stage';
 import { isAlumniStage, contextLine, cityOf, personLine, shouldSuggestStatusUpdate } from '@core/lib/network';
 import type { RecommendedPerson } from '@core/lib/people';
 import type { RecommendedMeet } from '@core/lib/meet';
@@ -41,7 +42,9 @@ export function HomePage() {
   const me = v.me as User | undefined;
   const snap: Snapshot = useSnapshot();
   const alumni = !!me && isAlumniStage(me);
-  const student = useMemo(() => (me && !alumni ? homeToday(snap, me, v.visibleActivities, (u) => v.canSeeField(u, 'timetable')) : null), [snap, me, alumni, v]);
+  const kind = me ? stageKind(me) : 'undergrad';
+  const student = useMemo(() => (me && kind === 'undergrad' ? homeToday(snap, me, v.visibleActivities, (u) => v.canSeeField(u, 'timetable')) : null), [snap, me, kind, v]);
+  const grad = useMemo(() => (me && kind === 'grad' ? gradHome(snap, me, v.visibleActivities, (u) => v.canSeeField(u, 'timetable')) : null), [snap, me, kind, v]);
   const alum = useMemo(() => (me && alumni ? alumniHome(snap, me, v.visibleActivities, v.visiblePosts, (u) => v.canSeeField(u, 'timetable')) : null), [snap, me, alumni, v]);
 
   return (
@@ -55,7 +58,7 @@ export function HomePage() {
           <FirstRunCard />
           <AroundTodayCard me={me} snap={snap} />
           <AskedOfMe me={me} snap={snap} />
-          {student ? <StudentHome d={student} me={me} /> : alum ? <AlumniHome d={alum} me={me} /> : null}
+          {student ? <StudentHome d={student} me={me} /> : grad ? <GradHome d={grad} me={me} /> : alum ? <AlumniHome d={alum} me={me} /> : null}
         </>
       )}
     </div>
@@ -74,6 +77,7 @@ function Identity({ me }: { me: User }) {
         <span className="min-w-0 flex-1">
           <SchoolBadge user={me} size="lg" className="block truncate" />
           {line && <span className="block text-[13px] text-ink-2 truncate">{line}</span>}
+          {me.research?.field && <span className="block text-[12px] text-verify font-semibold truncate">🔬 {researchLine(me, lang)}</span>}
         </span>
         <ChevronRight size={16} className="text-ink-3 shrink-0" />
       </button>
@@ -261,6 +265,69 @@ function StudentHome({ d, me }: { d: HomeToday; me: User }) {
           <div className="space-y-2">{d.opportunities.map((o) => <OpportunityCard key={o.id} o={o} variant="row" />)}</div>
         </Section>
       )}
+    </>
+  );
+}
+
+// ─── 대학원생 — 수업·공강보다 연구 분야 · 연구 일정 · 먼저 간 사람 ─────────────────────
+function GradHome({ d, me }: { d: GradHomeData; me: User }) {
+  const nav = useNavigate();
+  const field = me.research?.field;
+  const hasTT = me.timetable.length > 0;
+  return (
+    <>
+      <Section title={t('이번 주 연구 일정')} action={d.researchWeek.length ? t('전체보기') : undefined} onAction={() => nav('/meet?tab=schedule')}>
+        {d.researchWeek.length === 0
+          ? <Empty emoji="📚" title={t('이번 주 세미나·리딩 그룹이 없어요')} description={t('같은 분야 사람과 작게 시작해보세요.')} action={t('리딩 그룹 만들기')} onAction={() => nav('/meet/create?category=study')} />
+          : <div className="card divide-y divide-line">{d.researchWeek.map((a) => <Row key={a.id} icon={CATEGORY_EMOJI[a.category]} color={CATEGORY_COLORS[a.category]} title={a.title} sub={`${formatDate(a.date)} ${formatTime(a.startTime)} · ${a.place.name}`} onClick={() => nav(`/activities/${a.id}`)} />)}</div>}
+      </Section>
+
+      <Section title={field ? `${t('같은 연구 분야')} · ${field}` : t('같은 연구 분야')} action={d.researchPeople.length ? t('전체보기') : undefined} onAction={() => nav(`/people?tab=search${field ? `&q=${encodeURIComponent(field)}` : ''}`)}>
+        {!field
+          ? <Empty emoji="🔬" title={t('연구 분야를 알려주세요')} description={t('다른 학교 연구실까지, 분야가 겹치는 사람을 먼저 보여드려요.')} action={t('연구 분야 추가')} onAction={() => nav('/profile/edit#research')} />
+          : d.researchPeople.length === 0
+            ? <Empty emoji="🔬" title={t('같은 분야 대학원생이 아직 없어요')} action={t('사람 찾아보기')} onAction={() => nav('/people/find')} />
+            : <PeopleStrip people={d.researchPeople} />}
+      </Section>
+
+      {d.ahead.length > 0 && (
+        <Section title={t('먼저 간 사람')} action={t('전체보기')} onAction={() => nav('/people?tab=search')}>
+          <p className="-mt-1 mb-2 text-[12px] text-ink-3">{t('박사과정 · 그 분야에서 일하는 선배 — 진로 이야기를 편하게')}</p>
+          <PeopleStrip people={d.ahead} />
+        </Section>
+      )}
+
+      <Section title={t('나에게 맞는 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
+        {d.meets.length === 0
+          ? <Empty emoji="📅" title={t('맞는 모임이 아직 없어요')} action={t('모임 만들기')} onAction={() => nav('/meet/create')} />
+          : <div className="card divide-y divide-line">{d.meets.map((m) => <MeetRow key={m.a.id} m={m} />)}</div>}
+      </Section>
+
+      {hasTT && d.classes.length > 0 && (
+        <Section title={t('오늘 일정')} action={t('전체보기')} onAction={() => nav('/timetable')}>
+          <div className="card divide-y divide-line">
+            {d.classes.slice(0, 3).map((c) => (
+              <div key={c.id} className="flex items-center gap-3 px-3.5 py-2.5">
+                <span className="w-1 h-8 rounded-full shrink-0" style={{ background: `hsl(${c.hue} 70% 60%)` }} />
+                <span className="flex-1 min-w-0"><span className="block text-[14px] font-bold truncate">{c.name}</span><span className="block text-[12px] text-ink-3">{formatTime(c.start)} – {formatTime(c.end)}</span></span>
+              </div>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {d.connectNow.length > 0 && (
+        <Section title={t('같은 학교 사람')} action={t('전체보기')} onAction={() => nav('/people')}>
+          <PeopleStrip people={d.connectNow} />
+        </Section>
+      )}
+
+      {d.opportunities.length > 0 && (
+        <Section title={t('추천 기회')}>
+          <div className="space-y-2">{d.opportunities.map((o) => <OpportunityCard key={o.id} o={o} variant="row" />)}</div>
+        </Section>
+      )}
+      <p className="px-6 mt-6 text-center text-[11px] text-ink-3">{t('연구 분야와 연구실은 프로필에서 바꿀 수 있어요. 지도교수는 켤 때만 보여요.')}</p>
     </>
   );
 }

@@ -6,6 +6,7 @@ import type { PostInput } from '@core/api';
 import type { PostType, Visibility } from '@core/types';
 import { TopBar } from '@/components/layout/TopBar';
 import { Button, Field, Input, Textarea, Select, Cover, Toggle, Chip, Avatar, Segmented } from '@/components/ui';
+import { composerPrompts } from '@core/lib/stage';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
@@ -41,16 +42,20 @@ export function CreatePostPage() {
   const groupPre = groupParam && groups.some((o) => o.id === groupParam) ? groupParam : undefined;
   const visParam = params.get('vis');
   const anonPre = params.get('anon') === '1';
+  // 피드 컴포저의 단계별 시작점 (수업 질문 · 연구 질문 · 근황 …) — topics 에 키로 저장
+  const topicParam = params.get('topic');
+  const prompt = topicParam ? (['undergrad', 'grad', 'alumni'] as const).flatMap((k) => composerPrompts(k)).find((x) => x.key === topicParam) : undefined;
   const [form, setForm] = useState<PostInput>({
-    text: '', media: params.get('photo') === '1' ? [newPhoto(0)] : [], tags: [], topics: [],
+    text: '', media: params.get('photo') === '1' ? [newPhoto(0)] : [], tags: [], topics: prompt ? [prompt.key] : [],
     visibility: anonPre ? 'school' : groupPre ? 'group' : isPostVis(visParam) ? visParam : 'school', groupId: groupPre,
     relatedActivityId: params.get('activity') ?? undefined, relatedOpportunityId: undefined,
     orgId: orgParam && adminOrgs.some((o) => o.id === orgParam) ? orgParam : undefined, anonymous: anonPre,
-    postType: (params.get('type') as PostType | null) ?? 'story', taggedUserIds: [], recruitNext: false, showOnProfile: true, showOnFeed: true,
+    postType: prompt?.postType ?? (params.get('type') as PostType | null) ?? 'story', taggedUserIds: [], recruitNext: false, showOnProfile: true, showOnFeed: true,
   });
   const [tagInput, setTagInput] = useState('');
   const [busy, setBusy] = useState(false);
-  const [more, setMore] = useState(!!form.orgId || form.postType !== 'story');
+  const [more, setMore] = useState(!!form.orgId || (form.postType !== 'story' && !prompt));
+  const [promptOn, setPromptOn] = useState(!!prompt);
   const patch = (p: Partial<PostInput>) => setForm((f) => ({ ...f, ...p }));
   const toggle = <T,>(arr: T[] | undefined, x: T) => (arr ?? []).includes(x) ? (arr ?? []).filter((y) => y !== x) : [...(arr ?? []), x];
   const anon = !!form.anonymous;
@@ -73,7 +78,13 @@ export function CreatePostPage() {
     <div className="min-h-full pb-28 bg-bg">
       <TopBar back title={form.orgId ? t('조직 소식 작성') : groupName ? `${groupName} · ${t('글쓰기')}` : t('글쓰기')} />
       <div className="px-4 py-4 space-y-5">
-        <Field label={t('내용')} required><Textarea rows={5} className="min-h-[120px]" placeholder={form.postType === 'question' ? t('무엇이 궁금해요?') : form.postType === 'together' ? t('무엇을 같이 하고 싶어요?') : t('무슨 일이 있나요?')} value={form.text} onChange={(e) => patch({ text: e.target.value })} maxLength={500} /></Field>
+        {prompt && promptOn && (
+          <div className="flex items-center gap-2">
+            <span className="h-8 px-3 rounded-full bg-accent-soft text-primary text-[13px] font-semibold flex items-center gap-1.5">{prompt.emoji} {prompt.label}</span>
+            <button type="button" aria-label={t('닫기')} onClick={() => { setPromptOn(false); patch({ topics: (form.topics ?? []).filter((x) => x !== prompt.key), postType: 'story' }); }} className="h-8 w-8 rounded-full grid place-items-center text-ink-3 press"><X size={15} /></button>
+          </div>
+        )}
+        <Field label={t('내용')} required><Textarea rows={5} className="min-h-[120px]" placeholder={prompt && promptOn ? prompt.placeholder : form.postType === 'question' ? t('무엇이 궁금해요?') : form.postType === 'together' ? t('무엇을 같이 하고 싶어요?') : t('무슨 일이 있나요?')} value={form.text} onChange={(e) => patch({ text: e.target.value })} maxLength={500} /></Field>
         <Field label={`${t('사진')} (${form.media.length}/${MAX_PHOTOS})`}>
           {anon ? <div className="rounded-xl bg-surface-2 px-3.5 py-3 text-[12px] text-ink-3 flex items-center gap-2"><ImageOff size={15} />{t('익명 글에는 사진을 붙일 수 없어요. 사진을 올리려면 익명을 끄세요.')}</div> : (<>
             <div className="flex gap-2 overflow-x-auto hide-scrollbar">

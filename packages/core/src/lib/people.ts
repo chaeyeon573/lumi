@@ -9,7 +9,7 @@ import { t } from '@core/i18n';
 import { INTEREST_LABELS } from './labels';
 import { matchScore, shareableReasons, type Reason } from './recommend';
 import { isBlocked } from './relations';
-import { cityOf, gradYearOf, majorOf, schoolIdOf, stageOf, isAlumniStage, shortSchool, citiesOf } from './network';
+import { cityOf, gradYearOf, majorOf, schoolIdOf, stageOf, isAlumniStage, isGradStage, shortSchool, citiesOf } from './network';
 
 export interface RecommendedPerson { user: User; reasons: Reason[]; score: number }
 
@@ -85,7 +85,7 @@ export function matchesSearch(u: User, c: PeopleSearch): boolean {
   if (c.stages.length && !c.stages.includes(normalizeStage(stageOf(u)))) return false;
   if (c.q?.trim()) {
     const q = lc(c.q.trim());
-    const hay = [u.nickname, u.affiliation.type === 'university' ? u.affiliation.schoolName : u.affiliation.companyName, majorOf(u), cityOf(u), u.activityCity, u.career?.company, u.career?.industry, u.career?.role, u.bio, ...u.interests.map((i) => INTEREST_LABELS[i])].filter(Boolean).map(lc);
+    const hay = [u.nickname, u.affiliation.type === 'university' ? u.affiliation.schoolName : u.affiliation.companyName, majorOf(u), cityOf(u), u.activityCity, u.career?.company, u.career?.industry, u.career?.role, u.research?.field, u.research?.lab, ...(u.research?.keywords ?? []), u.bio, ...u.interests.map((i) => INTEREST_LABELS[i])].filter(Boolean).map(lc);
     if (!hay.some((h) => h!.includes(q))) return false;
   }
   return true;
@@ -133,6 +133,23 @@ export function searchPresets(me: User, lang: 'ko' | 'en'): SearchPreset[] {
         { label: `연세대 + 서울 + AI`, criteria: { schools: [mySchool], homeCities: ['서울'], interests: ['ai'] } },
         { label: `Product + 도쿄`, criteria: { roles: ['Product'], homeCities: ['도쿄'] } },
         { label: `동문 + ${city}`, criteria: { schools: [mySchool], stages: ['alumni'], homeCities: [city] } },
+      ];
+  }
+  if (isGradStage(me)) {
+    const field = me.research?.field ?? (lang === 'en' ? 'AI' : 'AI');
+    const industry = lang === 'en' ? 'AI' : 'AI';
+    return lang === 'en'
+      ? [
+        { label: `${field} grad students`, criteria: { q: field, stages: ['masters', 'phd'] } },
+        { label: `Other schools' labs`, criteria: { stages: ['masters', 'phd'] } },
+        { label: `PhDs`, criteria: { stages: ['phd'] } },
+        { label: `Alumni working in ${industry}`, criteria: { stages: ['alumni'], industries: [industry] } },
+      ]
+      : [
+        { label: `${field} 대학원생`, criteria: { q: field, stages: ['masters', 'phd'] } },
+        { label: `다른 학교 연구실`, criteria: { stages: ['masters', 'phd'] } },
+        { label: `박사과정`, criteria: { stages: ['phd'] } },
+        { label: `${industry} 업계 선배`, criteria: { stages: ['alumni'], industries: [industry] } },
       ];
   }
   return lang === 'en'

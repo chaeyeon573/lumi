@@ -1,7 +1,7 @@
 import type {
   Activity, ActivityProposal, ChatRoom, ID, Notification, Organization, Participation, Post, Relationships, Report, School, User,
   ActivityCategory, Visibility, JoinPolicy, ActivityKind, Place, ReportTargetType, Availability, Opportunity, OpportunityIntentRecord, OpportunityIntent, Role, TimePoll, TimeOption, Plan, Stage, Career, OpenTo, BoostTier,
-  SavedSearch, PeopleSearch, Wants, VerificationMethod, GroupScope, Interest, NetworkRequest, RequestReach, StatusKind, StatusWhen, UserStatus, PrivacySettings, Trip, IntroRequest, ShareField } from '@core/types';
+  SavedSearch, PeopleSearch, Wants, VerificationMethod, GroupScope, Interest, NetworkRequest, RequestReach, StatusKind, StatusWhen, UserStatus, PrivacySettings, Trip, IntroRequest, ShareField, Research } from '@core/types';
 
 /** 클라이언트가 보유하는 전체 데이터 스냅샷 (실제 API에서는 필요한 부분만 내려받도록 분리) */
 export interface Snapshot {
@@ -219,6 +219,7 @@ export interface AroundUApi {
     setPlan(id: ID, plan: Plan): Promise<Patch>;
     /** 생애 단계 변경 (재학생 → 졸업생 등). 온보딩 재요구 없음. 연결·글·그룹·인증·활동 기록은 모두 유지 */
     setStage(id: ID, stage: Stage, career?: Career, homeCity?: string, activityCity?: string): Promise<Patch>;
+    setResearch(id: ID, research: Research | null): Promise<Patch>;
     /** 무엇을 찾고 있나 수정 (프로필 › 추천 설정) */
     updateWants(id: ID, wants: Wants): Promise<Patch>;
     /** 학교 인증 완료 (데모: 즉시) */

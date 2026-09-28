@@ -516,7 +516,7 @@ const Y = new Date().getFullYear();
 const V2: Record<string, Partial<User>> = {
   u_me: { homeCity: 'Berkeley', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 30) }, wants: { people: ['same_interest', 'other_school', 'senior_mentor'], activities: ['coffee', 'project', 'study'] } },
   u_jimin: { homeCity: 'Berkeley', gradYear: Y + 1, verification: { method: 'sso', at: isoHoursAgo(24 * 40) }, interests: ['coffee', 'exhibition', 'running', 'startup', 'networking'], wants: { people: ['same_interest', 'new_people'], activities: ['coffee', 'exercise', 'networking'] } },
-  u_dohyun: { homeCity: 'Berkeley', gradYear: Y + 2, verification: { method: 'school_email', at: isoHoursAgo(24 * 100) }, interests: ['research', 'ai', 'exercise', 'coffee'], wants: { people: ['same_major', 'same_interest'], activities: ['study', 'research', 'exercise'] } },
+  u_dohyun: { stage: 'masters', research: { field: 'AI', lab: 'AI Lab', year: 1, keywords: ['LLM', 'Recommender systems'], showAdvisor: false }, homeCity: 'Berkeley', gradYear: Y + 2, verification: { method: 'school_email', at: isoHoursAgo(24 * 100) }, interests: ['research', 'ai', 'exercise', 'coffee'], wants: { people: ['same_research', 'same_major', 'same_interest'], activities: ['study', 'research', 'exercise'] } },
   u_seoyeon: { homeCity: 'Berkeley', gradYear: Y + 2, verification: { method: 'student_id', at: isoHoursAgo(24 * 12) }, interests: ['club', 'music', 'meal', 'walk'], wants: { people: ['same_interest', 'new_people'], activities: ['hobby', 'meal'] } },
   u_minjun: { homeCity: 'San Francisco', activityCity: 'Berkeley', gradYear: Y, verification: { method: 'school_email', at: isoHoursAgo(24 * 60) }, interests: ['running', 'exercise', 'cycling', 'meal'], wants: { people: ['same_city', 'same_interest'], activities: ['exercise', 'meal'] } },
   u_yuna: { homeCity: 'Oakland', activityCity: 'Berkeley', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 50) }, interests: ['study', 'coffee', 'reading', 'research'], wants: { people: ['same_major', 'senior_mentor'], activities: ['study', 'coffee'] } },
@@ -622,3 +622,118 @@ me0.privacy = { scope: 'school_2nd', showCompany: true, showCity: true, showGrad
 export const introRequests: IntroRequest[] = [
   { id: 'ir_seed1', fromId: 'u_hana', viaId: DEMO_USER_ID, toId: 'u_junho', note: 'I would love to help design the band show poster', status: 'pending', createdAt: isoHoursAgo(6) },
 ];
+
+// ─── v2.3 stage content — grad students (research · reading groups · conferences · career paths) · alumni (updates · city meets · AMAs · visits · hiring) ─────
+/** Research info for the existing grad users. The field feeds recommendations (same research field · works in my field); advisor is private by default */
+const RESEARCH: Record<string, User['research']> = {
+  u_b_stan1: { field: 'NLP', lab: 'Language & Agents Lab', advisor: 'Prof. Chen', showAdvisor: false, year: 2, keywords: ['LLM', 'agents', 'tool use'] },
+  u_b_mit1: { field: 'Robotics', lab: 'Robot Learning Lab', advisor: 'Prof. Okafor', showAdvisor: false, year: 5, keywords: ['manipulation', 'reinforcement learning', 'sim2real'] },
+};
+users.forEach((u) => { if (RESEARCH[u.id]) u.research = RESEARCH[u.id]; });
+
+/** Three grad students — same school (Berkeley) NLP master's · Stanford bioinformatics PhD · NYU economics master's */
+users.push(
+  mk({ id: 'u_g_cal_nlp', nickname: 'Chloe', birthYear: 2001, gender: 'female', avatar: { emoji: '📝', hue: 200, photoType: 'face', url: photo('p_x2') }, photos: [photo('p_x2'), photo('c_library')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_berkeley', schoolName: 'UC Berkeley', role: 'graduate', department: 'EECS (MS)', year: 2025, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'masters', region: 'Berkeley',
+    homeCity: 'Berkeley', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 20) },
+    bio: 'Second-year MS working on LLM evaluation. I run a weekly paper reading group.', likes: 'Reading papers, long walks, good notebooks', freeTime: 'Writing up paper notes at a café near Soda',
+    interests: ['research', 'ai', 'reading', 'coffee'], purposes: ['study', 'networking'], goals: ['lab'], lookingFor: ['study_partner', 'teammate'], canOffer: ['research', 'data'], openTo: ['research', 'coffee', 'activities'], fieldVisibility: defaultVisibility('public'), availability: 'afternoon',
+    nowWant: 'Anyone want to talk LLM evals?',
+    wants: { people: ['same_field', 'other_school', 'senior_mentor'], activities: ['research', 'study', 'coffee'] },
+    research: { field: 'NLP', lab: 'Language & Agents Lab', advisor: 'Prof. Ramirez', showAdvisor: false, year: 2, keywords: ['LLM', 'evaluation', 'multilingual'] }, createdAt: isoHoursAgo(24 * 10) }),
+  mk({ id: 'u_g_stan_bio', nickname: 'Ravi', birthYear: 1997, gender: 'male', avatar: { emoji: '🧬', hue: 140, photoType: 'face', url: photo('p_x4') }, photos: [photo('p_x4'), photo('c_beaker')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_stanford', schoolName: 'Stanford University', role: 'graduate', department: 'Biomedical Data Science', year: 2023, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'phd', region: 'Palo Alto',
+    homeCity: 'Palo Alto', gradYear: Y + 2, verification: { method: 'sso', at: isoHoursAgo(24 * 45) },
+    bio: 'Fourth-year PhD using single-cell data to trace disease pathways. Keen to work with labs at other schools.', likes: 'Trail runs, sci-fi, pour-over', freeTime: 'Running the Dish',
+    interests: ['research', 'ai', 'reading', 'running'], purposes: ['networking', 'study'], goals: ['lab'], lookingFor: ['teammate'], canOffer: ['research', 'data'], openTo: ['research', 'coffee', 'networking'], fieldVisibility: defaultVisibility('public'), availability: 'weekend',
+    wants: { people: ['same_field', 'other_school', 'senior_mentor'], activities: ['research', 'study', 'coffee'] },
+    research: { field: 'Bioinformatics', lab: 'Computational Biology Lab', advisor: 'Prof. Lindqvist', showAdvisor: false, year: 4, keywords: ['single-cell', 'genomics', 'ML'] }, createdAt: isoHoursAgo(24 * 12) }),
+  mk({ id: 'u_g_nyu_econ', nickname: 'Nora', birthYear: 2000, gender: 'female', avatar: { emoji: '📊', hue: 40, photoType: 'face', url: photo('p_x1') }, photos: [photo('p_x1'), photo('c_bookshop')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_nyu', schoolName: 'NYU', role: 'graduate', department: 'Economics (MA)', year: 2025, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'masters', region: 'New York',
+    homeCity: 'New York', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 25) },
+    bio: 'Labor economics MA. Finishing up and trying to decide between a PhD and a job.', likes: 'Used bookstores, Stata, dumplings', freeTime: 'Browsing bookstores in the Village',
+    interests: ['research', 'finance', 'reading', 'coffee'], purposes: ['study', 'networking'], goals: ['lab', 'internship'], lookingFor: ['senior', 'study_partner'], canOffer: ['research', 'data'], openTo: ['research', 'coffee', 'mentoring'], fieldVisibility: defaultVisibility('public'), availability: 'after18',
+    wants: { people: ['same_field', 'senior_mentor', 'other_school'], activities: ['research', 'study', 'coffee'] },
+    research: { field: 'Economics', lab: 'Labor Economics Workshop', advisor: 'Prof. Weiss', showAdvisor: false, year: 2, keywords: ['labor', 'causal inference', 'policy evaluation'] }, createdAt: isoHoursAgo(24 * 8) }),
+);
+
+/** Three grad meets + two alumni meets */
+activities.push(
+  { id: 'a_gr_reading', kind: 'group', category: 'study', title: 'NLP paper reading group — LLM evals', description: 'Two papers on LLM evaluation and agents this week. Read ahead, 30 minutes of discussion each. Any school; grad students and curious undergrads welcome.', cover: { emoji: '📚', hue: 200, url: photo('c_library') },
+    hostId: 'u_g_cal_nlp', hostType: 'user', date: T2, startTime: '19:00', endTime: '21:00', place: { name: 'Soda Hall 510', area: 'Berkeley campus', lat: 37.8756, lng: -122.2588 },
+    capacity: 8, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [{ id: 'c20', authorId: 'u_dohyun', text: 'I can present the second paper', createdAt: isoHoursAgo(6) }], createdAt: isoHoursAgo(10) },
+  { id: 'a_gr_conf', kind: 'group', category: 'networking', title: 'Heading to EMNLP — poster run-through & travel plans', description: 'Grad students going to EMNLP this year: everyone presents their poster once, then we sort out hotels and travel. Attending without a paper? Come too.', cover: { emoji: '🎤', hue: 250, url: photo('c_hall') },
+    hostId: 'u_b_stan1', hostType: 'user', date: addDaysISO(6), startTime: '18:30', endTime: '20:30', place: { name: 'Gates Computer Science, Stanford', area: 'Palo Alto', lat: 37.4300, lng: -122.1730 },
+    capacity: 10, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(15) },
+  { id: 'a_gr_career', kind: 'personal', category: 'coffee', title: 'PhD vs industry — grad student coffee', description: 'For people finishing a master’s, or mid-PhD and wondering about industry. One alum who went to industry is joining. Not about reaching a verdict, just sharing what we’ve seen.', cover: { emoji: '🧭', hue: 25, url: photo('c_cafe_laptop') },
+    hostId: 'u_b_mit1', hostType: 'user', date: addDaysISO(3), startTime: '14:00', endTime: '15:30', place: { name: 'Caffe Strada', address: 'Berkeley', area: 'Southside Berkeley', lat: 37.8690, lng: -122.2548 },
+    capacity: 6, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(27) },
+  { id: 'a_al_soma', kind: 'personal', category: 'networking', title: 'After-work coffee in SoMa (4 people)', description: 'A quick coffee after work. Any alum, any school, any field. One hour, that’s it.', cover: { emoji: '☕', hue: 30, url: photo('c_espresso') },
+    hostId: 'u_a_berkeley_sf', hostType: 'user', date: T2, startTime: '18:30', endTime: '19:30', place: { name: 'SoMa café', address: 'San Francisco', area: 'San Francisco', lat: 37.7785, lng: -122.3990 },
+    capacity: 4, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(4) },
+  { id: 'a_al_visit', kind: 'personal', category: 'networking', title: 'In SF this week — NYC finance & grad school coffee', description: 'I’m in town for a week. Cal students and alumni looking at finance in New York or grad school back east, come say hi.', cover: { emoji: '✈️', hue: 205, url: photo('c_city') },
+    hostId: 'u_a_ny_fin', hostType: 'user', date: T4, startTime: '11:00', endTime: '12:30', place: { name: 'Ferry Building', address: 'San Francisco', area: 'San Francisco', lat: 37.7955, lng: -122.3937 },
+    capacity: 5, visibility: 'school', joinPolicy: 'approval', fee: 0, comments: [], createdAt: isoHoursAgo(8) },
+);
+
+participations.push(
+  { id: 'p30', activityId: 'a_gr_reading', userId: 'u_b_stan1', status: 'approved', createdAt: isoHoursAgo(8) },
+  { id: 'p31', activityId: 'a_gr_reading', userId: 'u_dohyun', status: 'approved', createdAt: isoHoursAgo(7) },
+  { id: 'p32', activityId: 'a_gr_reading', userId: 'u_g_stan_bio', status: 'approved', createdAt: isoHoursAgo(5) },
+  { id: 'p33', activityId: 'a_gr_conf', userId: 'u_g_cal_nlp', status: 'approved', createdAt: isoHoursAgo(12) },
+  { id: 'p34', activityId: 'a_gr_conf', userId: 'u_b_mit1', status: 'approved', createdAt: isoHoursAgo(11) },
+  { id: 'p35', activityId: 'a_gr_career', userId: 'u_g_nyu_econ', status: 'approved', createdAt: isoHoursAgo(20) },
+  { id: 'p36', activityId: 'a_gr_career', userId: 'u_g_cal_nlp', status: 'approved', createdAt: isoHoursAgo(18) },
+  { id: 'p37', activityId: 'a_gr_career', userId: 'u_a_sf_ai', status: 'approved', createdAt: isoHoursAgo(16) },
+  { id: 'p38', activityId: 'a_al_soma', userId: 'u_a_sf_ai', status: 'approved', createdAt: isoHoursAgo(3) },
+  { id: 'p39', activityId: 'a_al_soma', userId: 'u_taeho', status: 'approved', createdAt: isoHoursAgo(2) },
+  { id: 'p40', activityId: 'a_al_visit', userId: 'u_woojin', status: 'approved', createdAt: isoHoursAgo(6) },
+  { id: 'p41', activityId: 'a_al_visit', userId: 'u_jimin', status: 'approved', createdAt: isoHoursAgo(5) },
+);
+
+/** Grad posts (research_q · reading · conference · collab · path) + alumni posts (update · city_meet · ama · visit · hiring) */
+posts.push(
+  { id: 'pg1', authorId: 'u_g_cal_nlp', authorType: 'user', postType: 'question', media: [],
+    text: 'What are people using for LLM evals these days? The multiple-choice benchmarks all land within a point of each other, so I’m thinking about building a task-based eval set. Would love to hear from anyone who has made one.', topics: ['research_q', 'ai'],
+    tags: ['LLM', 'evals', 'NLP'], visibility: 'public', likeIds: ['u_b_stan1', 'u_dohyun'], savedIds: [],
+    comments: [{ id: 'pc20', authorId: 'u_b_stan1', text: 'We built ours from failure cases in agent logs. Happy to share our labeling guide', createdAt: isoHoursAgo(3) }], createdAt: isoHoursAgo(5) },
+  { id: 'pg2', authorId: 'u_g_cal_nlp', authorType: 'user', postType: 'together', media: [{ emoji: '📚', hue: 200, url: photo('c_library') }],
+    text: 'Reading group this week: two LLM eval papers, Soda 510. You don’t need to be a grad student, just read one of them before you come.', topics: ['reading', 'ai'],
+    tags: ['readinggroup', 'papers'], visibility: 'school', likeIds: ['u_dohyun', 'u_sua'], savedIds: [], comments: [], relatedActivityId: 'a_gr_reading', createdAt: isoHoursAgo(9) },
+  { id: 'pg3', authorId: 'u_b_stan1', authorType: 'user', postType: 'together', media: [],
+    text: 'Anyone going to EMNLP? Let’s do one poster run-through and figure out hotels and travel together. First conference? Especially welcome.', topics: ['conference', 'ai'],
+    tags: ['EMNLP', 'conference'], visibility: 'public', likeIds: ['u_g_cal_nlp', 'u_b_mit1'], savedIds: [],
+    comments: [{ id: 'pc21', authorId: 'u_g_cal_nlp', text: 'I’m going! Bringing a rough poster draft', createdAt: isoHoursAgo(12) }], relatedActivityId: 'a_gr_conf', createdAt: isoHoursAgo(14) },
+  { id: 'pg4', authorId: 'u_g_stan_bio', authorType: 'user', postType: 'together', media: [],
+    text: 'Looking for a lab to co-build a single-cell preprocessing pipeline with us. Plenty of data on our side, not enough modeling hands. Other schools welcome — one online sync a month.', topics: ['collab', 'research'],
+    tags: ['collaboration', 'bioinformatics'], visibility: 'public', likeIds: ['u_b_mit1'], savedIds: [], comments: [], createdAt: isoHoursAgo(20) },
+  { id: 'pg5', authorId: 'u_g_nyu_econ', authorType: 'user', postType: 'question', media: [],
+    text: 'Finishing my MA and stuck on PhD vs industry. In econ a PhD is five or six years plus a job market that’s its own thing. Would love to hear from people who have made this call.', topics: ['path', 'finance'],
+    tags: ['career', 'phd'], visibility: 'public', likeIds: ['u_g_cal_nlp', 'u_b_stan1', 'u_woojin'], savedIds: [],
+    comments: [
+      { id: 'pc22', authorId: 'u_b_stan2', text: 'I went straight to work after my master’s. The one question that decided it: what do I want an ordinary Tuesday to look like? Happy to chat', createdAt: isoHoursAgo(22) },
+      { id: 'pc23', authorId: 'u_b_mit1', text: 'Come to the coffee in Berkeley, let’s talk it through!', createdAt: isoHoursAgo(21) },
+    ], relatedActivityId: 'a_gr_career', createdAt: isoHoursAgo(28) },
+  { id: 'pa1', authorId: 'u_b_stan2', authorType: 'user', postType: 'story', media: [{ emoji: '🗽', hue: 205, url: photo('c_city') }],
+    text: 'Six months in New York. Still missing subway transfers, but I found a Saturday running group and a bagel place I will defend in any argument. Stanford folks in the city, say hi.', topics: ['update', 'running'],
+    tags: ['nyc', 'update'], visibility: 'public', likeIds: ['u_a_ny_fin', 'u_b_nyu1'], savedIds: [], comments: [], createdAt: isoHoursAgo(6) },
+  { id: 'pa2', authorId: 'u_a_berkeley_sf', authorType: 'user', postType: 'together', media: [{ emoji: '☕', hue: 30, url: photo('c_espresso') }],
+    text: 'Coffee after work in SoMa, day after tomorrow? Any school, any field. Four people max, one hour. I opened a meet.', topics: ['city_meet', 'coffee'],
+    tags: ['soma', 'afterwork'], visibility: 'public', likeIds: ['u_a_sf_ai'], savedIds: [], comments: [], relatedActivityId: 'a_al_soma', createdAt: isoHoursAgo(4) },
+  { id: 'pa3', authorId: 'u_a_sf_ai', authorType: 'user', postType: 'question', media: [],
+    text: 'Lots of students asking me whether to do a PhD or go straight into industry for ML, so I’m taking questions this week. ML interviews, how research works inside a company, model serving — drop them below.', topics: ['ama', 'ai'],
+    tags: ['ama', 'ML'], visibility: 'public', likeIds: ['u_dohyun', 'u_g_cal_nlp', 'u_b_stan1'], savedIds: [],
+    comments: [
+      { id: 'pc24', authorId: 'u_g_cal_nlp', text: 'Can you land a research role without a first-author paper from your master’s?', createdAt: isoHoursAgo(9) },
+      { id: 'pc25', authorId: 'u_a_sf_ai', text: 'Yes. What mattered more was one project you can go really deep on, that someone else can reproduce', createdAt: isoHoursAgo(8) },
+    ], createdAt: isoHoursAgo(11) },
+  { id: 'pa4', authorId: 'u_a_ny_fin', authorType: 'user', postType: 'together', media: [],
+    text: 'In SF from tomorrow for a week. Cal students thinking about finance in New York or grad school out east — grab a coffee with me at the Ferry Building. Opened a meet.', topics: ['visit', 'finance'],
+    tags: ['sfvisit', 'coffeechat'], visibility: 'school', likeIds: ['u_woojin', 'u_taeho'], savedIds: [], comments: [], relatedActivityId: 'a_al_visit', createdAt: isoHoursAgo(8) },
+  { id: 'pa5', authorId: 'u_a_berkeley_sf', authorType: 'user', postType: 'info', media: [],
+    text: 'Our team is looking for a backend engineer. Cal alumni referrals welcome — message me if you’re curious.', topics: ['hiring', 'startup'],
+    tags: ['hiring', 'referrals'], visibility: 'school', likeIds: ['u_taeho'], savedIds: [], comments: [], createdAt: isoHoursAgo(30) },
+  { id: 'pa6', authorId: 'u_taeho', authorType: 'user', postType: 'story', media: [],
+    text: 'Took my first real week off since starting the company. Stepping away made it obvious what I actually want to build next. Coffee chats on Southside start again next week.', topics: ['update', 'startup'],
+    tags: ['update'], visibility: 'school', likeIds: ['u_jimin', DEMO_USER_ID], savedIds: [], comments: [], createdAt: isoHoursAgo(36) },
+);

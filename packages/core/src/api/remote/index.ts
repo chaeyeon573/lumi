@@ -120,7 +120,7 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
       courses: (schoolId, query) => call('catalog/courses', { schoolId, query }),
     },
 
-    users: group('users', ['update', 'setAvailability', 'votePoll', 'recordSwipe', 'setPlan', 'setStage', 'updateWants', 'verify', 'toggleSavePerson', 'setStatus', 'setOpenStatuses', 'setPrivacy', 'setTrips', 'hide', 'pushRecentSearch', 'createSavedList', 'updateSavedList', 'deleteSavedList', 'moveSaved']),
+    users: group('users', ['update', 'setAvailability', 'votePoll', 'recordSwipe', 'setPlan', 'setStage', 'setResearch', 'updateWants', 'verify', 'toggleSavePerson', 'setStatus', 'setOpenStatuses', 'setPrivacy', 'setTrips', 'hide', 'pushRecentSearch', 'createSavedList', 'updateSavedList', 'deleteSavedList', 'moveSaved']),
     searches: group('searches', ['save', 'remove', 'setAlert', 'run']),
     requests: group('requests', ['create', 'close', 'respond', 'report', 'decide', 'refer', 'referralDecide', 'dismiss']),
     intros: group('intros', ['create', 'forward', 'respond']),

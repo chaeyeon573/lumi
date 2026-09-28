@@ -9,7 +9,7 @@ import { todayISO as todayISO_ } from '@core/lib/format';
 import type { Patch, Snapshot, RegisterInput, ActivityInput, PostInput, OpportunityInput, TimePollInput, GroupInput, NetworkRequestInput } from './types';
 import type {
   Activity, ActivityProposal, Availability, ChatRoom, ID, Notification, OpportunityIntent, Participation, Post, User, Opportunity, TimePoll, TimeOption, ReportTargetType, Plan, Stage, Career, BoostTier,
-  Wants, VerificationMethod, PeopleSearch, SavedSearch, Organization, NetworkRequest, RequestResponse, RequestReferral, StatusKind, StatusWhen, UserStatus, PrivacySettings, Trip, IntroRequest, ShareField } from '@core/types';
+  Wants, VerificationMethod, PeopleSearch, SavedSearch, Organization, NetworkRequest, RequestResponse, RequestReferral, StatusKind, StatusWhen, UserStatus, PrivacySettings, Trip, IntroRequest, ShareField, Research } from '@core/types';
 import { STAGE_ROLE } from '@core/types';
 import { freeBlocks, jsDayToIdx, toMin } from '@core/lib/timetable';
 import { uid, pairKey } from '@core/lib/format';
@@ -256,6 +256,18 @@ export function createEngine(ctx: EngineContext) {
           if (!u.gradYear || u.gradYear > new Date().getFullYear()) u.gradYear = new Date().getFullYear();
           if (u.affiliation.type === 'university') u.affiliation.year = u.gradYear;
         }
+        return { users: [u] };
+      },
+      /** 대학원생 연구 정보 — 분야만 필수. 지도교수는 showAdvisor 를 켤 때만 다른 사람에게 보인다. null 이면 지운다 */
+      setResearch(id: ID, research: Research | null): Patch {
+        const u = find(db().users, id);
+        if (!research) { u.research = undefined; return { users: [u] }; }
+        const field = research.field?.trim();
+        if (!field) throw new Error(t('연구 분야를 입력해주세요.'));
+        const clean = (x?: string) => (x?.trim() ? x.trim().slice(0, 40) : undefined);
+        u.research = { field: field.slice(0, 40), lab: clean(research.lab), advisor: clean(research.advisor), showAdvisor: !!research.showAdvisor && !!clean(research.advisor),
+          year: research.year && research.year > 0 && research.year < 15 ? Math.round(research.year) : undefined,
+          keywords: (research.keywords ?? []).map((k) => k.trim()).filter(Boolean).slice(0, 5) };
         return { users: [u] };
       },
       updateWants(id: ID, wants: Wants): Patch {

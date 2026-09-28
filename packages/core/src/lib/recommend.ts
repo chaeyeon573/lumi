@@ -4,7 +4,8 @@ import type { Snapshot } from '@core/api/types';
 import { GOAL_LABELS, PERSON_ROLE_LABELS, INTEREST_LABELS } from './labels';
 import { freeBlocks, overlapBlocks, todayIdx, fmtBlock } from './timetable';
 import { profileCompletion } from '@core/data/prompts';
-import { stageOf, isAlumniStage, isStudentStage, sameSchool, majorOf, sameCity, sameField, cityOf, shortSchool } from './network';
+import { sameResearch, researchMatchesCareer } from './stage';
+import { stageOf, isAlumniStage, isGradStage, isStudentStage, sameSchool, majorOf, sameCity, sameField, cityOf, shortSchool } from './network';
 import { mutualFriends } from './relations';
 
 /**
@@ -12,22 +13,23 @@ import { mutualFriends } from './relations';
  * school 같은 학교 · alumni 같은 학교 동문 · major 같은 전공 · city 같은 지역 · field 같은 분야(업종·직무) · group 같은 그룹 · meet 같은 모임 참여
  * mutual 공통 연결 · interest 관심사 · class 같은 수업 · time 공강 겹침 · living 생활권 · goal 목표 · new 다른 분야(새로운 사람) · opportunity/role 은 카드에 숨김
  */
-export type ReasonKind = 'school' | 'alumni' | 'major' | 'city' | 'field' | 'group' | 'meet' | 'mutual' | 'interest' | 'class' | 'time' | 'living' | 'goal' | 'new' | 'opportunity' | 'role';
+export type ReasonKind = 'school' | 'alumni' | 'major' | 'city' | 'field' | 'group' | 'meet' | 'mutual' | 'interest' | 'class' | 'time' | 'living' | 'goal' | 'new' | 'opportunity' | 'role' | 'research';
 export interface Reason { text: string; weight: number; kind: ReasonKind }
 
 /**
  * 단계별 기본 가중치 — 같은 앱이지만 우선순위만 다르다.
- * 학생: 학교·전공·수업·공강 비중 높음 / 졸업생: 지역·분야·직무 비중 높고 학교는 여러 요소 중 하나로 내려간다.
+ * 학부생: 학교·전공·수업·공강 비중 높음 / 대학원생: 연구 분야가 가장 크고 다른 학교도 가깝게 / 졸업생: 지역·분야·직무 비중 높고 학교는 여러 요소 중 하나로 내려간다.
  */
-export const REASON_WEIGHTS: Record<'student' | 'alumni', Record<ReasonKind, number>> = {
-  student: { school: 3, alumni: 1, major: 3, city: 1, field: 1, group: 2, meet: 2, mutual: 2, interest: 2, class: 3, time: 3, living: 2, goal: 3, new: 1, opportunity: 5, role: 4 },
-  alumni: { school: 2, alumni: 2, major: 1, city: 4, field: 4, group: 2, meet: 2, mutual: 2, interest: 2, class: 0, time: 0, living: 1, goal: 1, new: 1, opportunity: 3, role: 2 },
+export const REASON_WEIGHTS: Record<'student' | 'grad' | 'alumni', Record<ReasonKind, number>> = {
+  student: { school: 3, alumni: 1, major: 3, city: 1, field: 1, group: 2, meet: 2, mutual: 2, interest: 2, class: 3, time: 3, living: 2, goal: 3, new: 1, opportunity: 5, role: 4, research: 2 },
+  grad: { school: 2, alumni: 2, major: 2, city: 1, field: 2, group: 2, meet: 2, mutual: 2, interest: 1.5, class: 1, time: 1, living: 1, goal: 2, new: 2, opportunity: 4, role: 3, research: 5 },
+  alumni: { school: 2, alumni: 2, major: 1, city: 4, field: 4, group: 2, meet: 2, mutual: 2, interest: 2, class: 0, time: 0, living: 1, goal: 1, new: 1, opportunity: 3, role: 2, research: 2 },
 };
-const weightsFor = (s: Stage) => (s === 'alumni' || s === 'professional' ? REASON_WEIGHTS.alumni : REASON_WEIGHTS.student);
+const weightsFor = (s: Stage) => (s === 'alumni' || s === 'professional' ? REASON_WEIGHTS.alumni : s === 'masters' || s === 'phd' ? REASON_WEIGHTS.grad : REASON_WEIGHTS.student);
 
 /** 어떤 사람을 찾는지(wants.people) → 해당 이유의 가중치 ×2 */
 const WANT_KINDS: Record<PeopleWant, ReasonKind[]> = {
-  same_major: ['major'], same_interest: ['interest'], other_school: ['new'], senior_mentor: [], alumni: ['alumni'], same_city: ['city'], same_field: ['field'], new_people: ['new'],
+  same_major: ['major'], same_interest: ['interest'], other_school: ['new'], senior_mentor: [], alumni: ['alumni'], same_city: ['city'], same_field: ['field', 'research'], new_people: ['new'], same_research: ['research'],
 };
 
 const STAGE_RANK: Record<Stage, number> = { undergrad: 0, masters: 1, phd: 2, alumni: 3, professional: 3 };
@@ -51,6 +53,10 @@ export function matchReasons(me: User, other: User, snap: Pick<Snapshot, 'opport
   if (sameCity(me, other)) out.push({ kind: 'city', weight: W.city, text: `${t('같은 지역')} · ${cityOf(other)}` });
   // 분야 (업종·직무)
   if (sameField(me, other)) out.push({ kind: 'field', weight: W.field, text: `${t('같은 분야')} · ${other.career?.industry ?? other.career?.role}` });
+  // 연구 분야 — 대학원생끼리 · 대학원생 ↔ 그 분야에서 일하는 사람
+  if (sameResearch(me, other)) out.push({ kind: 'research', weight: W.research, text: `${t('같은 연구 분야')} · ${other.research!.field}` });
+  else if (me.research && isAlumniStage(other) && researchMatchesCareer(me.research, other.career)) out.push({ kind: 'research', weight: W.research * 0.8, text: `${t('내 연구 분야에서 일해요')} · ${other.career?.role ?? other.career?.industry}` });
+  else if (other.research && isAlumniStage(me) && researchMatchesCareer(other.research, me.career)) out.push({ kind: 'research', weight: W.research, text: `${t('내 분야를 연구해요')} · ${other.research.field}` });
   // 그룹
   const sharedOrg = snap.organizations?.find((o) => o.memberIds.includes(me.id) && o.memberIds.includes(other.id));
   if (sharedOrg) out.push({ kind: 'group', weight: W.group, text: `${t('같은 그룹')} · ${sharedOrg.name}` });
@@ -108,8 +114,10 @@ export function matchReasons(me: User, other: User, snap: Pick<Snapshot, 'opport
   }
   // 표시 순서: 단계별로 사람이 먼저 이해할 맥락부터
   const order: ReasonKind[] = isAlumniStage(me)
-    ? ['city', 'field', 'alumni', 'school', 'mutual', 'group', 'meet', 'interest', 'major', 'new', 'goal', 'living', 'class', 'time', 'opportunity', 'role']
-    : ['school', 'major', 'class', 'time', 'interest', 'group', 'meet', 'mutual', 'city', 'alumni', 'field', 'goal', 'living', 'new', 'opportunity', 'role'];
+    ? ['city', 'field', 'research', 'alumni', 'school', 'mutual', 'group', 'meet', 'interest', 'major', 'new', 'goal', 'living', 'class', 'time', 'opportunity', 'role']
+    : isGradStage(me)
+      ? ['research', 'school', 'major', 'mutual', 'group', 'meet', 'new', 'interest', 'alumni', 'field', 'city', 'goal', 'class', 'time', 'living', 'opportunity', 'role']
+      : ['school', 'major', 'class', 'time', 'interest', 'group', 'meet', 'mutual', 'city', 'alumni', 'research', 'field', 'goal', 'living', 'new', 'opportunity', 'role'];
   const rank = (k: ReasonKind) => order.indexOf(k);
   return out.sort((a, b) => rank(a.kind) - rank(b.kind) || b.weight - a.weight);
 }

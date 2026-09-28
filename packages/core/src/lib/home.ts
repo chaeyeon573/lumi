@@ -11,7 +11,7 @@ import { nowActivities } from './discover';
 import { opportunityScore, daysUntil, type Reason } from './recommend';
 import { recommendPeople, type RecommendedPerson } from './people';
 import { recommendMeets, type RecommendedMeet } from './meet';
-import { myNetwork, sameSchool, sameCity, sameField, cityOf } from './network';
+import { myNetwork, sameSchool, sameCity, sameField, cityOf, isGradStage, isAlumniStage, stageOf } from './network';
 import { friendsOf } from './relations';
 
 export interface HomeToday {
@@ -101,6 +101,35 @@ export function alumniHome(snap: Snapshot, me: User, visibleActivities: Activity
   ].sort((a, b) => b.at.localeCompare(a.at)).slice(0, 3);
   const opportunities = snap.opportunities.filter((o) => ['internship', 'startup', 'lab', 'event', 'hackathon'].includes(o.type) && (!o.deadline || daysUntil(o.deadline) >= 0)).slice(0, 3);
   return { connect, nearby, field, thisWeek, news, groups: myOrgs.slice(0, 3), opportunities };
+}
+
+export interface GradHome extends HomeToday {
+  /** 이번 주 연구 일정 — 세미나 · 리딩 그룹 · 학회 같이 가기 (3) */
+  researchWeek: Activity[];
+  /** 같은 연구 분야 사람 (4) — 다른 학교 연구실 포함 */
+  researchPeople: RecommendedPerson[];
+  /** 먼저 간 사람 (3) — 박사과정 · 그 분야에서 일하는 선배 */
+  ahead: RecommendedPerson[];
+}
+
+const RESEARCH_CATS = new Set(['seminar', 'study']);
+
+/** 대학원생 홈 — 수업·공강보다 연구 분야 · 연구 일정 · 먼저 간 사람 */
+export function gradHome(snap: Snapshot, me: User, visibleActivities: Activity[], canSeeTimetable: (u: User) => boolean): GradHome {
+  const base = homeToday(snap, me, visibleActivities, canSeeTimetable);
+  const ranked = recommendPeople(snap, me, snap.users, canSeeTimetable, 60);
+  const researchPeople = ranked.filter((p) => isGradStage(p.user) && p.reasons.some((r) => r.kind === 'research')).slice(0, 4);
+  if (researchPeople.length < 2) researchPeople.push(...ranked.filter((p) => isGradStage(p.user) && !researchPeople.includes(p)).slice(0, 3 - researchPeople.length));
+  const used = new Set(researchPeople.map((p) => p.user.id));
+  const myRank = stageOf(me) === 'phd' ? 2 : 1;
+  const ahead = ranked.filter((p) => !used.has(p.user.id) && ((isAlumniStage(p.user) && p.reasons.some((r) => r.kind === 'research' || r.kind === 'field' || r.kind === 'alumni')) || (stageOf(p.user) === 'phd' && myRank === 1))).slice(0, 3);
+  const week = addDaysISO(7); const today = todayISO();
+  const hostGrad = (a: Activity) => { const h = snap.users.find((u) => u.id === a.hostId); return !!h && isGradStage(h); };
+  const researchWeek = visibleActivities.filter((a) => a.date >= today && a.date <= week && RESEARCH_CATS.has(a.category) && (hostGrad(a) || a.kind === 'org_event'))
+    .sort((a, b) => (a.date + a.startTime).localeCompare(b.date + b.startTime)).slice(0, 3);
+  const taken = new Set([...researchPeople, ...ahead].map((p) => p.user.id));
+  return { ...base, connectNow: base.connectNow.filter((p) => !taken.has(p.user.id)).slice(0, 3), researchWeek, researchPeople, ahead,
+    opportunities: base.opportunities.filter((o) => ['lab', 'internship', 'hackathon', 'event', 'scholarship', 'exchange'].includes(o.type)) };
 }
 
 export const isInClass = (me: User) => statusNow(me.timetable).kind === 'in_class';

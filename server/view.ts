@@ -12,6 +12,8 @@ function sanitizeUser(u: User, viewerId: ID): User {
   // 요금제·사용량·저장·숨김·최근 검색은 본인만. 방문 예정은 공개 설정이 꺼져 있으면 뺀다
   const { plan: _p, swipes: _s, savedPeople: _sp, savedLists: _sl, hiddenPeople: _hp, hiddenActivities: _ha, recentSearches: _rs, ...rest } = u;
   if (u.privacy && u.privacy.showTrips === false) delete (rest as Partial<User>).trips;
+  // 지도교수는 본인이 켰을 때만
+  if (u.research && !u.research.showAdvisor) rest.research = { ...u.research, advisor: undefined };
   return { ...rest, timetable: u.timetable.map(({ room: _room, ...c }) => c) };
 }
 

@@ -790,7 +790,7 @@ const Y = new Date().getFullYear();
 const V2: Record<string, Partial<User>> = {
   u_me: { homeCity: '서울', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 30) }, wants: { people: ['same_interest', 'other_school', 'senior_mentor'], activities: ['coffee', 'project', 'study'] } },
   u_jimin: { homeCity: '서울', gradYear: Y + 1, verification: { method: 'sso', at: isoHoursAgo(24 * 40) }, interests: ['coffee', 'exhibition', 'running', 'startup', 'networking'], wants: { people: ['same_interest', 'new_people'], activities: ['coffee', 'exercise', 'networking'] } },
-  u_dohyun: { homeCity: '서울', gradYear: Y + 2, verification: { method: 'school_email', at: isoHoursAgo(24 * 100) }, interests: ['research', 'ai', 'exercise', 'coffee'], wants: { people: ['same_major', 'same_interest'], activities: ['study', 'research', 'exercise'] } },
+  u_dohyun: { stage: 'masters', research: { field: 'AI', lab: '인공지능 연구실', year: 1, keywords: ['LLM', '추천 시스템'], showAdvisor: false }, homeCity: '서울', gradYear: Y + 2, verification: { method: 'school_email', at: isoHoursAgo(24 * 100) }, interests: ['research', 'ai', 'exercise', 'coffee'], wants: { people: ['same_research', 'same_major', 'same_interest'], activities: ['study', 'research', 'exercise'] } },
   u_seoyeon: { homeCity: '서울', gradYear: Y + 2, verification: { method: 'student_id', at: isoHoursAgo(24 * 12) }, interests: ['club', 'music', 'meal', 'walk'], wants: { people: ['same_interest', 'new_people'], activities: ['hobby', 'meal'] } },
   u_minjun: { homeCity: '서울', activityCity: '서울', gradYear: Y, verification: { method: 'school_email', at: isoHoursAgo(24 * 60) }, interests: ['running', 'exercise', 'cycling', 'meal'], wants: { people: ['same_city', 'same_interest'], activities: ['exercise', 'meal'] } },
   u_yuna: { homeCity: '인천', activityCity: '서울', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 50) }, interests: ['study', 'coffee', 'reading', 'research'], wants: { people: ['same_major', 'senior_mentor'], activities: ['study', 'coffee'] } },
@@ -896,3 +896,118 @@ me0.privacy = { scope: 'school_2nd', showCompany: true, showCity: true, showGrad
 export const introRequests: IntroRequest[] = [
   { id: 'ir_seed1', fromId: 'u_hana', viaId: DEMO_USER_ID, toId: 'u_junho', note: '밴드 공연 포스터 디자인 도와드리고 싶어요', status: 'pending', createdAt: isoHoursAgo(6) },
 ];
+
+// ─── v2.3 단계별 콘텐츠 — 대학원생(연구·리딩 그룹·학회·진로) · 졸업생(근황·도시 모임·질문 받기·방문·채용) ─────
+/** 기존 대학원생의 연구 정보. 분야는 추천(같은 연구 분야 · 내 분야에서 일해요)에 쓰이고 지도교수는 기본 비공개 */
+const RESEARCH: Record<string, User['research']> = {
+  u_b_snu1: { field: 'NLP', lab: '자연어처리 연구실', advisor: '박성우 교수', showAdvisor: false, year: 2, keywords: ['LLM', '에이전트', '도구 사용'] },
+  u_b_kaist1: { field: '로봇', lab: '로봇 학습 연구실', advisor: '정민호 교수', showAdvisor: false, year: 5, keywords: ['매니퓰레이션', '강화학습', 'sim2real'] },
+};
+users.forEach((u) => { if (RESEARCH[u.id]) u.research = RESEARCH[u.id]; });
+
+/** 대학원생 3명 — 같은 학교(연세) NLP 석사 · 고려대 바이오 박사 · 서울대 경제 석사 */
+users.push(
+  mk({ id: 'u_g_yonsei_nlp', nickname: '채원', birthYear: 2000, gender: 'female', avatar: { emoji: '📝', hue: 200, photoType: 'face', url: photo('p_x2') }, photos: [photo('p_x2'), photo('c_library')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_yonsei', schoolName: '연세대학교', role: 'graduate', department: '컴퓨터과학과', year: 2025, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'masters', region: '신촌',
+    homeCity: '서울', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 20) },
+    bio: '한국어 LLM 평가를 연구하는 석사 2년차. 매주 논문 리딩 그룹 열어요.', likes: '논문 읽기, 필사, 산책', freeTime: '공학관 근처 카페에서 논문 정리',
+    interests: ['research', 'ai', 'reading', 'coffee'], purposes: ['study', 'networking'], goals: ['lab'], lookingFor: ['study_partner', 'teammate'], canOffer: ['research', 'data'], openTo: ['research', 'coffee', 'activities'], fieldVisibility: defaultVisibility('public'), availability: 'afternoon',
+    nowWant: 'LLM 평가 이야기 나눌 분',
+    wants: { people: ['same_field', 'other_school', 'senior_mentor'], activities: ['research', 'study', 'coffee'] },
+    research: { field: 'NLP', lab: '자연어처리 연구실', advisor: '한지수 교수', showAdvisor: false, year: 2, keywords: ['LLM', '평가', '한국어'] }, createdAt: isoHoursAgo(24 * 10) }),
+  mk({ id: 'u_g_korea_bio', nickname: '승민', birthYear: 1997, gender: 'male', avatar: { emoji: '🧬', hue: 140, photoType: 'face', url: photo('p_x4') }, photos: [photo('p_x4'), photo('c_beaker')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_korea', schoolName: '고려대학교', role: 'graduate', department: '생명정보학과', year: 2023, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'phd', region: '안암',
+    homeCity: '서울', gradYear: Y + 2, verification: { method: 'sso', at: isoHoursAgo(24 * 45) },
+    bio: '단일세포 데이터로 질병 경로를 보는 박사 4년차. 다른 학교 연구실과 같이 일해보고 싶어요.', likes: '러닝, SF 소설, 드립 커피', freeTime: '안암 근처 러닝',
+    interests: ['research', 'ai', 'reading', 'running'], purposes: ['networking', 'study'], goals: ['lab'], lookingFor: ['teammate'], canOffer: ['research', 'data'], openTo: ['research', 'coffee', 'networking'], fieldVisibility: defaultVisibility('public'), availability: 'weekend',
+    wants: { people: ['same_field', 'other_school', 'senior_mentor'], activities: ['research', 'study', 'coffee'] },
+    research: { field: '바이오', lab: '계산생물학 연구실', advisor: '오현석 교수', showAdvisor: false, year: 4, keywords: ['단일세포', '유전체', 'ML'] }, createdAt: isoHoursAgo(24 * 12) }),
+  mk({ id: 'u_g_snu_econ', nickname: '다은', birthYear: 2000, gender: 'female', avatar: { emoji: '📊', hue: 40, photoType: 'face', url: photo('p_x1') }, photos: [photo('p_x1'), photo('c_bookshop')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_snu', schoolName: '서울대학교', role: 'graduate', department: '경제학부', year: 2025, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'masters', region: '관악',
+    homeCity: '서울', gradYear: Y + 1, verification: { method: 'school_email', at: isoHoursAgo(24 * 25) },
+    bio: '노동경제 석사. 졸업 앞두고 박사 진학과 취업 사이에서 고민 중이에요.', likes: '서점 구경, 통계 소프트웨어, 떡볶이', freeTime: '관악 근처 독립서점',
+    interests: ['research', 'finance', 'reading', 'coffee'], purposes: ['study', 'networking'], goals: ['lab', 'internship'], lookingFor: ['senior', 'study_partner'], canOffer: ['research', 'data'], openTo: ['research', 'coffee', 'mentoring'], fieldVisibility: defaultVisibility('public'), availability: 'after18',
+    wants: { people: ['same_field', 'senior_mentor', 'other_school'], activities: ['research', 'study', 'coffee'] },
+    research: { field: '경제', lab: '노동경제 워크숍', advisor: '윤재형 교수', showAdvisor: false, year: 2, keywords: ['노동경제', '인과추론', '정책 평가'] }, createdAt: isoHoursAgo(24 * 8) }),
+);
+
+/** 대학원생 모임 3개 + 졸업생 모임 2개 */
+activities.push(
+  { id: 'a_gr_reading', kind: 'group', category: 'study', title: 'NLP 논문 리딩 그룹 — LLM 평가 편', description: '이번 주는 LLM 평가·에이전트 논문 2편. 각자 읽어오고 한 편당 30분 토론. 학교 상관없이 대학원생, 관심 있는 학부생 환영.', cover: { emoji: '📚', hue: 200, url: photo('c_library') },
+    hostId: 'u_g_yonsei_nlp', hostType: 'user', date: T2, startTime: '19:00', endTime: '21:00', place: { name: '제1공학관 세미나실', area: '연세대 공학관 근처', lat: 37.5617, lng: 126.9367 },
+    capacity: 8, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [{ id: 'c20', authorId: 'u_dohyun', text: '두 번째 논문 발제 제가 할게요', createdAt: isoHoursAgo(6) }], createdAt: isoHoursAgo(10) },
+  { id: 'a_gr_conf', kind: 'group', category: 'networking', title: 'EMNLP 가는 사람들 — 포스터 리허설 · 일정 맞추기', description: '올해 EMNLP 가는 대학원생끼리 포스터 한 번씩 발표해보고 숙소·동선 같이 봐요. 발표 없이 참석만 하는 분도 환영.', cover: { emoji: '🎤', hue: 250, url: photo('c_hall') },
+    hostId: 'u_b_snu1', hostType: 'user', date: addDaysISO(6), startTime: '18:30', endTime: '20:30', place: { name: '서울대 302동 세미나실', area: '서울 관악', lat: 37.4488, lng: 126.9526 },
+    capacity: 10, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(15) },
+  { id: 'a_gr_career', kind: 'personal', category: 'coffee', title: '박사 진학 vs 취업 — 대학원생 커피챗', description: '석사 졸업 앞둔 분, 박사 중에 업계를 고민하는 분. 업계로 간 선배도 한 명 와요. 결론 내는 자리가 아니라 경험 나누는 자리예요.', cover: { emoji: '🧭', hue: 25, url: photo('c_cafe_laptop') },
+    hostId: 'u_b_kaist1', hostType: 'user', date: addDaysISO(3), startTime: '14:00', endTime: '15:30', place: { name: '강남역 카페', address: '서울 강남구', area: '서울 강남', lat: 37.4979, lng: 127.0276 },
+    capacity: 6, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(27) },
+  { id: 'a_al_seongsu', kind: 'personal', category: 'networking', title: '퇴근 후 성수 커피 (4명)', description: '일 끝나고 가볍게 커피 한 잔. 졸업생이면 학교·분야 상관없어요. 한 시간만.', cover: { emoji: '☕', hue: 30, url: photo('c_espresso') },
+    hostId: 'u_b_snu2', hostType: 'user', date: T2, startTime: '19:00', endTime: '20:00', place: { name: '성수 카페', address: '서울 성동구', area: '서울 성수', lat: 37.5445, lng: 127.0560 },
+    capacity: 4, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(4) },
+  { id: 'a_al_visit', kind: 'personal', category: 'networking', title: '서울 온 김에 — 뉴욕 금융·유학 커피챗', description: '일주일 서울에 있어요. 뉴욕 금융권이나 미국 대학원 준비하는 연세 후배·동문이면 편하게 오세요.', cover: { emoji: '✈️', hue: 205, url: photo('c_city') },
+    hostId: 'u_a_ny_fin', hostType: 'user', date: T4, startTime: '11:00', endTime: '12:30', place: { name: '광화문 카페', address: '서울 종로구', area: '서울 광화문', lat: 37.5714, lng: 126.9768 },
+    capacity: 5, visibility: 'school', joinPolicy: 'approval', fee: 0, comments: [], createdAt: isoHoursAgo(8) },
+);
+
+participations.push(
+  { id: 'p30', activityId: 'a_gr_reading', userId: 'u_b_snu1', status: 'approved', createdAt: isoHoursAgo(8) },
+  { id: 'p31', activityId: 'a_gr_reading', userId: 'u_dohyun', status: 'approved', createdAt: isoHoursAgo(7) },
+  { id: 'p32', activityId: 'a_gr_reading', userId: 'u_g_korea_bio', status: 'approved', createdAt: isoHoursAgo(5) },
+  { id: 'p33', activityId: 'a_gr_conf', userId: 'u_g_yonsei_nlp', status: 'approved', createdAt: isoHoursAgo(12) },
+  { id: 'p34', activityId: 'a_gr_conf', userId: 'u_b_kaist1', status: 'approved', createdAt: isoHoursAgo(11) },
+  { id: 'p35', activityId: 'a_gr_career', userId: 'u_g_snu_econ', status: 'approved', createdAt: isoHoursAgo(20) },
+  { id: 'p36', activityId: 'a_gr_career', userId: 'u_g_yonsei_nlp', status: 'approved', createdAt: isoHoursAgo(18) },
+  { id: 'p37', activityId: 'a_gr_career', userId: 'u_a_seoul_ai', status: 'approved', createdAt: isoHoursAgo(16) },
+  { id: 'p38', activityId: 'a_al_seongsu', userId: 'u_a_seoul_ai', status: 'approved', createdAt: isoHoursAgo(3) },
+  { id: 'p39', activityId: 'a_al_seongsu', userId: 'u_a_yonsei_seoul', status: 'approved', createdAt: isoHoursAgo(2) },
+  { id: 'p40', activityId: 'a_al_visit', userId: 'u_woojin', status: 'approved', createdAt: isoHoursAgo(6) },
+  { id: 'p41', activityId: 'a_al_visit', userId: 'u_taeho', status: 'approved', createdAt: isoHoursAgo(5) },
+);
+
+/** 대학원생 글 (research_q · reading · conference · collab · path) + 졸업생 글 (update · city_meet · ama · visit · hiring) */
+posts.push(
+  { id: 'pg1', authorId: 'u_g_yonsei_nlp', authorType: 'user', postType: 'question', media: [],
+    text: '한국어 LLM 평가할 때 요즘 뭐 쓰세요? 객관식 벤치마크는 점수가 다 비슷하게 나와서, 실제 태스크 기반 평가셋을 만들까 고민 중이에요. 직접 만들어본 분 경험 듣고 싶어요.', topics: ['research_q', 'ai'],
+    tags: ['LLM', '평가', 'NLP'], visibility: 'public', likeIds: ['u_b_snu1', 'u_dohyun'], savedIds: [],
+    comments: [{ id: 'pc20', authorId: 'u_b_snu1', text: '저희는 에이전트 로그에서 실패 사례 뽑아서 평가셋 만들었어요. 라벨링 가이드 공유드릴게요', createdAt: isoHoursAgo(3) }], createdAt: isoHoursAgo(5) },
+  { id: 'pg2', authorId: 'u_g_yonsei_nlp', authorType: 'user', postType: 'together', media: [{ emoji: '📚', hue: 200, url: photo('c_library') }],
+    text: '이번 주 NLP 리딩 그룹은 LLM 평가 논문 2편. 공학관 세미나실이고, 대학원생 아니어도 한 편 읽어올 수 있으면 환영해요.', topics: ['reading', 'ai'],
+    tags: ['리딩그룹', '논문'], visibility: 'school', likeIds: ['u_dohyun', 'u_sua'], savedIds: [], comments: [], relatedActivityId: 'a_gr_reading', createdAt: isoHoursAgo(9) },
+  { id: 'pg3', authorId: 'u_b_snu1', authorType: 'user', postType: 'together', media: [],
+    text: 'EMNLP 가시는 분 있나요? 포스터 리허설 겸 한 번 모여서 숙소·동선 같이 봐요. 첫 학회라 막막한 분도 환영.', topics: ['conference', 'ai'],
+    tags: ['EMNLP', '학회'], visibility: 'public', likeIds: ['u_g_yonsei_nlp', 'u_b_kaist1'], savedIds: [],
+    comments: [{ id: 'pc21', authorId: 'u_g_yonsei_nlp', text: '저 가요! 포스터 초안 들고 갈게요', createdAt: isoHoursAgo(12) }], relatedActivityId: 'a_gr_conf', createdAt: isoHoursAgo(14) },
+  { id: 'pg4', authorId: 'u_g_korea_bio', authorType: 'user', postType: 'together', media: [],
+    text: '단일세포 데이터 전처리 파이프라인을 같이 정리할 연구실 찾아요. 데이터는 충분한데 모델링 쪽 손이 부족해요. 다른 학교도 좋고, 한 달에 한 번 온라인으로 맞춰봐요.', topics: ['collab', 'research'],
+    tags: ['공동연구', '바이오인포매틱스'], visibility: 'public', likeIds: ['u_b_kaist1'], savedIds: [], comments: [], createdAt: isoHoursAgo(20) },
+  { id: 'pg5', authorId: 'u_g_snu_econ', authorType: 'user', postType: 'question', media: [],
+    text: '석사 졸업 앞두고 박사 진학이냐 취업이냐 고민 중이에요. 경제학은 박사면 유학이 거의 기본이라 더 고민되네요. 먼저 고민해본 분들 이야기 듣고 싶어요.', topics: ['path', 'finance'],
+    tags: ['진로', '박사'], visibility: 'public', likeIds: ['u_g_yonsei_nlp', 'u_b_snu1', 'u_woojin'], savedIds: [],
+    comments: [
+      { id: 'pc22', authorId: 'u_b_snu2', text: '저는 석사 마치고 바로 일했어요. 기준 하나만 꼽으면 "평소 하루가 어떤 모습이었으면 하나"였어요. 커피챗 가능해요', createdAt: isoHoursAgo(22) },
+      { id: 'pc23', authorId: 'u_b_kaist1', text: '강남 커피챗에 오세요. 같이 이야기해요!', createdAt: isoHoursAgo(21) },
+    ], relatedActivityId: 'a_gr_career', createdAt: isoHoursAgo(28) },
+  { id: 'pa1', authorId: 'u_a_tokyo_pm', authorType: 'user', postType: 'story', media: [{ emoji: '🗼', hue: 350, url: photo('c_city') }],
+    text: '도쿄 온 지 1년. 회의 일본어는 아직 반만 들리지만 동네 단골 카페가 생겼어요. 곧 서울 들어가요. 일본 이직 궁금한 분 그때 봬요.', topics: ['update', 'travel'],
+    tags: ['도쿄', '근황'], visibility: 'public', likeIds: ['u_a_ny_fin', 'u_b_snu2'], savedIds: [], comments: [], createdAt: isoHoursAgo(6) },
+  { id: 'pa2', authorId: 'u_b_snu2', authorType: 'user', postType: 'together', media: [{ emoji: '☕', hue: 30, url: photo('c_espresso') }],
+    text: '모레 퇴근 후 성수에서 커피 한 잔 하실 분. 학교·분야 상관없이 4명까지, 한 시간만. 모임 열어뒀어요.', topics: ['city_meet', 'coffee'],
+    tags: ['성수', '퇴근후'], visibility: 'public', likeIds: ['u_a_seoul_ai'], savedIds: [], comments: [], relatedActivityId: 'a_al_seongsu', createdAt: isoHoursAgo(4) },
+  { id: 'pa3', authorId: 'u_a_seoul_ai', authorType: 'user', postType: 'question', media: [],
+    text: '대학원 갈지 바로 일할지 묻는 후배가 요즘 많아서, 이번 주는 질문 받아요. ML 면접 준비, 회사에서 연구하는 방식, 모델 서빙 같은 거 편하게 댓글로 남겨주세요.', topics: ['ama', 'ai'],
+    tags: ['질문받아요', 'ML'], visibility: 'public', likeIds: ['u_dohyun', 'u_g_yonsei_nlp', 'u_b_snu1'], savedIds: [],
+    comments: [
+      { id: 'pc24', authorId: 'u_g_yonsei_nlp', text: '석사 때 1저자 논문이 없어도 리서치 직군 지원할 수 있을까요?', createdAt: isoHoursAgo(9) },
+      { id: 'pc25', authorId: 'u_a_seoul_ai', text: '가능해요. 대신 다른 사람이 재현할 수 있는 프로젝트 하나를 깊게 보여주는 게 더 중요했어요', createdAt: isoHoursAgo(8) },
+    ], createdAt: isoHoursAgo(11) },
+  { id: 'pa4', authorId: 'u_a_ny_fin', authorType: 'user', postType: 'together', media: [],
+    text: '내일부터 일주일 서울에 있어요. 뉴욕 금융권이나 미국 대학원 준비하는 연세 후배들, 광화문에서 커피해요. 모임 열어뒀어요.', topics: ['visit', 'finance'],
+    tags: ['서울방문', '커피챗'], visibility: 'school', likeIds: ['u_woojin', 'u_taeho'], savedIds: [], comments: [], relatedActivityId: 'a_al_visit', createdAt: isoHoursAgo(8) },
+  { id: 'pa5', authorId: 'u_a_yonsei_seoul', authorType: 'user', postType: 'info', media: [],
+    text: '저희 팀에서 백엔드 한 분 찾아요. 연세 동문 추천 환영이고, 궁금하면 편하게 메시지 주세요.', topics: ['hiring', 'startup'],
+    tags: ['채용', '동문추천'], visibility: 'school', likeIds: ['u_taeho'], savedIds: [], comments: [], createdAt: isoHoursAgo(30) },
+  { id: 'pa6', authorId: 'u_taeho', authorType: 'user', postType: 'story', media: [],
+    text: '창업하고 처음으로 일주일 쉬었어요. 쉬어보니 다음에 뭘 만들고 싶은지 오히려 잘 보이네요. 다음 주부터 정문 카페 커피챗 다시 엽니다.', topics: ['update', 'startup'],
+    tags: ['근황'], visibility: 'school', likeIds: ['u_jimin', DEMO_USER_ID], savedIds: [], comments: [], createdAt: isoHoursAgo(36) },
+);

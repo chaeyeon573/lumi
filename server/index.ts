@@ -188,7 +188,7 @@ type Rule = number | ((me: ID, args: unknown[]) => boolean);
 const owner = <T extends { id: ID }>(list: () => T[], pick: (x: T) => ID | undefined) => (me: ID, args: unknown[]) => { const x = list().find((i) => i.id === args[0]); return !!x && pick(x) === me; };
 const activityHost = (me: ID, activityId: unknown) => db.activities.find((a) => a.id === activityId)?.hostId === me;
 const RULES: Record<Group, Record<string, Rule>> = {
-  users: { update: 0, setAvailability: 0, votePoll: 1, recordSwipe: 0, setPlan: 0, setStage: 0, updateWants: 0, verify: 0, toggleSavePerson: 0, setStatus: 0, setOpenStatuses: 0, setPrivacy: 0, setTrips: 0, hide: 0, pushRecentSearch: 0, createSavedList: 0, updateSavedList: 0, deleteSavedList: 0, moveSaved: 0 },
+  users: { update: 0, setAvailability: 0, votePoll: 1, recordSwipe: 0, setPlan: 0, setStage: 0, setResearch: 0, updateWants: 0, verify: 0, toggleSavePerson: 0, setStatus: 0, setOpenStatuses: 0, setPrivacy: 0, setTrips: 0, hide: 0, pushRecentSearch: 0, createSavedList: 0, updateSavedList: 0, deleteSavedList: 0, moveSaved: 0 },
   intros: { create: 0, forward: 1, respond: 1 },
   requests: { create: 0, close: owner(() => db.networkRequests, (r) => r.authorId), respond: 1, report: 1, decide: owner(() => db.networkRequests, (r) => r.authorId), refer: 1, referralDecide: (me, args) => db.networkRequests.find((r) => r.id === args[0])?.referrals.some((x) => x.id === args[1] && x.candidateId === me) ?? false, dismiss: 1 },
   searches: { save: 0, remove: owner(() => db.savedSearches, (s) => s.userId), setAlert: owner(() => db.savedSearches, (s) => s.userId), run: 0 },

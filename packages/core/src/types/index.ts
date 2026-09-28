@@ -135,6 +135,8 @@ export interface User {
   stage?: Stage;
   /** 졸업 후 정보 (Alumni 전환 시 입력) */
   career?: Career;
+  /** 대학원생 연구 정보 — 분야는 추천에 쓰이고, 연구실·지도교수는 본인이 켤 때만 보인다 */
+  research?: Research;
   /** 지금 열려 있는 것 (PRD "Open To") */
   openTo?: OpenTo[];
   /** 오늘 보낸 연결 요청 수 — 무료 플랜 일일 한도 계산용 */
@@ -172,6 +174,8 @@ export interface User {
 export type Plan = 'free' | 'plus';
 export type Stage = 'undergrad' | 'masters' | 'phd' | 'alumni' | 'professional';
 export interface Career { city?: string; company?: string; industry?: string; role?: string }
+/** 대학원생 연구 — field(연구 분야, 예: NLP) · lab(연구실) · advisor(지도교수, 기본 비공개) · year(N년차) · keywords(세부 주제) */
+export interface Research { field: string; lab?: string; advisor?: string; showAdvisor?: boolean; year?: number; keywords?: string[] }
 export type OpenTo = 'coffee' | 'activities' | 'research' | 'networking' | 'mentoring' | 'cofounding';
 export const STAGE_ROLE: Record<Stage, UniversityRole> = { undergrad: 'undergraduate', masters: 'graduate', phd: 'graduate', alumni: 'alumni', professional: 'alumni' };
 
@@ -261,7 +265,7 @@ export interface IntroRequest {
 }
 
 /** 어떤 사람을 만나고 싶나 */
-export type PeopleWant = 'same_major' | 'same_interest' | 'other_school' | 'senior_mentor' | 'alumni' | 'same_city' | 'same_field' | 'new_people';
+export type PeopleWant = 'same_major' | 'same_interest' | 'other_school' | 'senior_mentor' | 'alumni' | 'same_city' | 'same_field' | 'new_people' | 'same_research';
 /** 어떤 활동을 하고 싶나 */
 export type ActivityWant = 'coffee' | 'meal' | 'study' | 'exercise' | 'networking' | 'project' | 'research' | 'hobby';
 export interface Wants { people: PeopleWant[]; activities: ActivityWant[] }
