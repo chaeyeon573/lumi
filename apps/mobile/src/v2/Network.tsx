@@ -147,7 +147,7 @@ export function PathText({ via, to, size = 11 }: { via: User[]; to: string; size
 }
 
 /** 보기 권한이 없는 항목은 지운 복사본 — PersonRow 가 그대로 그려도 새지 않게 */
-function maskUser(u: User, view: ProfileView): User {
+export function maskUser(u: User, view: ProfileView): User {
   return {
     ...u,
     career: u.career ? { ...u.career, company: view.company ? u.career.company : undefined, city: view.city ? u.career.city : undefined } : u.career,

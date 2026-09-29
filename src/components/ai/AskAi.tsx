@@ -3,6 +3,7 @@ import { Sparkles, ArrowRight } from 'lucide-react';
 import { t } from '@core/i18n';
 import type { StageKind } from '@core/lib/stage';
 import { cn } from '@core/lib/cn';
+import { aiQuestionExamples } from '@core/lib/ai-answer';
 
 /** 단계별로 바로 눌러볼 수 있는 예시 문장 — 파서가 조건으로 읽어내는 문장만 고른다 */
 export function aiExamples(kind: StageKind): string[] {
@@ -11,15 +12,19 @@ export function aiExamples(kind: StageKind): string[] {
   return [t('러닝 좋아하는 재학생'), t('창업 관심 있는 재학생'), t('디자인 좋아하는 재학생')];
 }
 
-export const findUrl = (q?: string) => (q ? `/people/find?q=${encodeURIComponent(q)}` : '/people/find');
+/** 홈·사람 탭 예시 — 실제 사용 상황 문장 (AI가 사람·이유·모임으로 답한다) */
+export const aiAskExamples = (kind: StageKind) => aiQuestionExamples(kind);
+
+/** AI에게 묻기 — 대화로 답하는 화면 (/ai). 조건 칩으로 보는 찾기는 /people/find */
+export const findUrl = (q?: string) => (q ? `/ai?q=${encodeURIComponent(q)}` : '/ai');
 
 /** 예시 칩 한 줄 — 누르면 바로 그 문장으로 찾는다 */
 export function AiExampleChips({ kind, className, onPick }: { kind: StageKind; className?: string; onPick?: (q: string) => void }) {
   const nav = useNavigate();
   return (
     <div className={cn('flex gap-1.5 overflow-x-auto hide-scrollbar', className)}>
-      {aiExamples(kind).map((q) => (
-        <button key={q} type="button" onClick={() => (onPick ? onPick(q) : nav(findUrl(q)))} className="h-8 px-3 rounded-full bg-card border border-line text-[12px] font-semibold text-primary whitespace-nowrap shrink-0 press">{q}</button>
+      {(onPick ? aiExamples(kind) : aiAskExamples(kind)).map((q) => (
+        <button key={q} type="button" onClick={() => (onPick ? onPick(q) : nav(findUrl(q)))} className="h-8 px-3 rounded-full bg-card border border-line text-[12px] font-semibold text-primary whitespace-nowrap shrink-0 press max-w-[280px] truncate">{q}</button>
       ))}
     </div>
   );
@@ -33,12 +38,12 @@ export function AskAiCard({ kind, className }: { kind: StageKind; className?: st
       <div className="flex items-start gap-2.5">
         <span className="h-9 w-9 rounded-full bg-card text-primary grid place-items-center shrink-0"><Sparkles size={17} /></span>
         <div className="min-w-0">
-          <h2 className="text-[16px] font-bold text-ink leading-snug">{t('찾는 사람을 말로 설명해 보세요')}</h2>
-          <p className="text-[12px] text-ink-2">{t('AI가 조건을 알아듣고 찾아줘요')}</p>
+          <h2 className="text-[16px] font-bold text-ink leading-snug">{t('AI에게 물어보세요')}</h2>
+          <p className="text-[12px] text-ink-2">{t('필요한 걸 말하면 사람과 모임을 찾아 이유와 함께 답해줘요')}</p>
         </div>
       </div>
       <button type="button" onClick={() => nav(findUrl())} className="mt-3 w-full h-11 rounded-full bg-card border border-line pl-4 pr-1.5 flex items-center gap-2 text-left press">
-        <span className="flex-1 min-w-0 truncate text-[14px] text-ink-3">{t('혹시 찾는 사람이 있나요?')}</span>
+        <span className="flex-1 min-w-0 truncate text-[14px] text-ink-3">{t('무엇이 필요한지 말해 주세요')}</span>
         <span className="h-8 w-8 rounded-full bg-primary-soft text-primary grid place-items-center shrink-0"><ArrowRight size={15} /></span>
       </button>
       <AiExampleChips kind={kind} className="mt-2.5 -mx-4 px-4" />
@@ -53,8 +58,8 @@ export function AskAiBar({ className }: { className?: string }) {
     <button type="button" onClick={() => nav(findUrl())} className={cn('w-full h-12 rounded-full bg-card border border-line pl-3 pr-2 flex items-center gap-2.5 text-left press', className)}>
       <span className="h-8 w-8 rounded-full bg-primary-soft text-primary grid place-items-center shrink-0"><Sparkles size={15} /></span>
       <span className="flex-1 min-w-0">
-        <span className="block text-[14px] font-semibold text-ink truncate">{t('AI에게 찾아달라고 하기')}</span>
-        <span className="block text-[11px] text-ink-3 truncate">{t('예: 러닝 좋아하는 재학생, 뉴욕 금융권 동문')}</span>
+        <span className="block text-[14px] font-semibold text-ink truncate">{t('AI에게 물어보기')}</span>
+        <span className="block text-[11px] text-ink-3 truncate">{t('예: 다음 달 도쿄로 이사하는데 아는 사람이 없어')}</span>
       </span>
       <ArrowRight size={16} className="text-ink-3 shrink-0" />
     </button>

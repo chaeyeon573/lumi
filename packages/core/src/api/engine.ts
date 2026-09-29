@@ -9,7 +9,7 @@ import { todayISO as todayISO_ } from '@core/lib/format';
 import type { Patch, Snapshot, RegisterInput, ActivityInput, PostInput, OpportunityInput, TimePollInput, GroupInput, NetworkRequestInput } from './types';
 import type {
   Activity, ActivityProposal, Availability, ChatRoom, ID, Notification, OpportunityIntent, Participation, Post, User, Opportunity, TimePoll, TimeOption, ReportTargetType, Plan, Stage, Career, BoostTier,
-  Wants, VerificationMethod, PeopleSearch, SavedSearch, Organization, NetworkRequest, RequestResponse, RequestReferral, StatusKind, StatusWhen, UserStatus, PrivacySettings, Trip, IntroRequest, ShareField, Research, FriendNote, Relationships } from '@core/types';
+  Wants, VerificationMethod, PeopleSearch, SavedSearch, Organization, NetworkRequest, RequestResponse, RequestReferral, StatusKind, StatusWhen, UserStatus, PrivacySettings, Trip, IntroRequest, ShareField, Research, FriendNote, Relationships, LifeUpdate } from '@core/types';
 import { STAGE_ROLE } from '@core/types';
 import { freeBlocks, jsDayToIdx, toMin } from '@core/lib/timetable';
 import { uid, pairKey } from '@core/lib/format';
@@ -43,6 +43,22 @@ const AUTO_REQUEST_REFERRERS = ['u_sua', 'u_junho', 'u_seoyeon'];
 
 export const CATEGORY_EMOJI = { coffee: '☕', meal: '🍽️', study: '📖', exercise: '🏃', club: '🎸', performance: '🎤', school_event: '🎓', seminar: '🧪', networking: '🤝', store_deal: '🏷️', etc: '✨' } as const;
 export const OPPORTUNITY_EMOJI = { event: '🎪', club: '🎸', lab: '🔬', internship: '💼', scholarship: '🎓', hackathon: '💡', startup: '🚀', activity: '☕', exchange: '✈️' } as const;
+
+/** 도와줄 수 있어요 · 찾고 있어요 태그 — 공백 정리, 중복 제거, 20자 · 5개까지 */
+function cleanTags(tags: string[]): string[] {
+  const out: string[] = [];
+  for (const x of tags) { const v = String(x ?? '').trim().slice(0, 20); if (v && !out.includes(v)) out.push(v); }
+  return out.slice(0, 5);
+}
+/** 도시·회사가 바뀌면 새 소식을 남긴다 (최근 5개) */
+function noteLifeChanges(u: User, before: { city?: string; company?: string }) {
+  const at = new Date().toISOString();
+  const add: LifeUpdate[] = [];
+  if (u.homeCity && before.city && u.homeCity !== before.city) add.push({ kind: 'moved', value: u.homeCity, at });
+  const co = u.career?.company?.trim();
+  if (co && co !== before.company && !/창업|startup/i.test(co)) add.push({ kind: 'joined', value: co, at });
+  if (add.length) u.updates = [...add, ...(u.updates ?? [])].slice(0, 5);
+}
 
 export function createEngine(ctx: EngineContext) {
   const { t } = ctx;
@@ -220,9 +236,13 @@ export function createEngine(ctx: EngineContext) {
     users: {
       update(id: ID, patch: Partial<User>): Patch {
         const u = find(db().users, id);
-        // id·생성일은 바꿀 수 없다
-        const { id: _i, createdAt: _c, ...rest } = patch;
+        const before = { city: u.homeCity, company: u.career?.company };
+        // id·생성일·새 소식은 직접 바꿀 수 없다
+        const { id: _i, createdAt: _c, updates: _u, ...rest } = patch;
         Object.assign(u, rest);
+        if (rest.helpWith) u.helpWith = cleanTags(rest.helpWith);
+        if (rest.seeking) u.seeking = cleanTags(rest.seeking);
+        noteLifeChanges(u, before);
         return { users: [u] };
       },
       /**
@@ -297,6 +317,7 @@ export function createEngine(ctx: EngineContext) {
       /** 생애 단계 변경 — 졸업 전환은 온보딩을 다시 요구하지 않는다. 연결·글·그룹·학교 인증·활동 기록 모두 유지 */
       setStage(id: ID, stage: Stage, career?: Career, homeCity?: string, activityCity?: string): Patch {
         const u = find(db().users, id);
+        const before = { city: u.homeCity, company: u.career?.company };
         u.stage = stage;
         if (u.affiliation.type === 'university') u.affiliation.role = STAGE_ROLE[stage];
         if (career) u.career = { ...u.career, ...career };
@@ -307,6 +328,7 @@ export function createEngine(ctx: EngineContext) {
           if (!u.gradYear || u.gradYear > new Date().getFullYear()) u.gradYear = new Date().getFullYear();
           if (u.affiliation.type === 'university') u.affiliation.year = u.gradYear;
         }
+        noteLifeChanges(u, before);
         return { users: [u] };
       },
       /** 대학원생 연구 정보 — 분야만 필수. 지도교수는 showAdvisor 를 켤 때만 다른 사람에게 보인다. null 이면 지운다 */

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Settings, Pencil, ShieldCheck, CalendarDays, ChevronRight, Users, CalendarCheck, Bookmark, Building2, FileText, Bell, MapPin, Briefcase, Sparkles, GraduationCap, Target, MessageSquareText, BookmarkCheck, Coffee, FlaskConical, Lock, ChevronDown } from 'lucide-react';
+import { Settings, Pencil, ShieldCheck, CalendarDays, ChevronRight, Users, CalendarCheck, Bookmark, Building2, FileText, Bell, MapPin, Briefcase, Sparkles, GraduationCap, Target, MessageSquareText, BookmarkCheck, Coffee, FlaskConical, Lock, ChevronDown, HandHelping } from 'lucide-react';
 import { stageKind, stageCopy } from '@core/lib/stage';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
@@ -175,6 +175,19 @@ export function ProfilePage() {
             </div>
           )}
           <p className="mt-2 text-[11px] text-ink-3">{t('도시 단위만 표시돼요. 정확한 주소는 받지 않아요.')}</p>
+        </section>
+
+        {/* ── 도와줄 수 있어요 · 찾고 있어요 ── */}
+        <section className="card p-5">
+          <SectionTitle icon={<HandHelping size={17} />} right={<EditLink to="/profile/edit" />}>{t('도와줄 수 있어요 · 찾고 있어요')}</SectionTitle>
+          {!(me.helpWith?.length || me.seeking?.length) ? (
+            <p className="mt-2 text-[13px] text-ink-3">{t('도와줄 수 있는 것과 찾는 것을 적어 두면, AI가 서로 맞는 사람을 이어줘요.')}</p>
+          ) : (
+            <div className="mt-3 space-y-2.5">
+              {!!me.helpWith?.length && <div><div className="text-[11px] font-bold text-ink-3 mb-1">{t('도와줄 수 있어요')}</div><div className="flex flex-wrap gap-1.5">{me.helpWith.map((x) => <span key={x} className="h-7 px-3 rounded-full bg-accent-soft text-primary text-[12px] font-semibold flex items-center">{x}</span>)}</div></div>}
+              {!!me.seeking?.length && <div><div className="text-[11px] font-bold text-ink-3 mb-1">{t('찾고 있어요')}</div><div className="flex flex-wrap gap-1.5">{me.seeking.map((x) => <span key={x} className="h-7 px-3 rounded-full border border-line text-ink text-[12px] font-semibold flex items-center">{x}</span>)}</div></div>}
+            </div>
+          )}
         </section>
 
         {/* ── 관심사 ── */}

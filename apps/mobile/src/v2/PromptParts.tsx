@@ -1,10 +1,10 @@
 /**
- * 대화 거리 — AI 사람 찾기 입구 · 프로필 질문 카드 · 한마디 · 오늘의 질문 · 서로 아는 사람 (웹과 같은 core 헬퍼 `@core/lib/prompts-fun`).
+ * 대화 거리 — 조건 찾기 예시 · 프로필 질문 카드 · 한마디 · 오늘의 질문 · 서로 아는 사람 (웹과 같은 core 헬퍼 `@core/lib/prompts-fun`).
  * 데이팅 앱이 아니다: 하트·좋아요 대신 "한마디", 서로 아는 사람 대신 "서로 아는 사람".
  */
 import { useMemo, useState } from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
-import { Sparkles, Search, ChevronRight, Quote, MessageCircle, Handshake, ArrowRight } from 'lucide-react-native';
+import { Pressable, Text, View } from 'react-native';
+import { Sparkles, ChevronRight, Quote, MessageCircle, Handshake } from 'lucide-react-native';
 import { t, lang } from '@core/i18n';
 import { api } from '@core/api';
 import { useAppStore } from '@core/store/useAppStore';
@@ -26,7 +26,7 @@ import { PrivacyNote } from './SectionState';
 import { fmt } from './personView';
 
 // ─── AI 사람 찾기 ────────────────────────────────────────────────────────────
-/** 단계별 예시 문장 — 누르면 /people/find?q= 로 바로 찾는다 (언어별 데이터셋이라 문장 자체가 언어별) */
+/** 단계별 예시 문장 — 조건 칩 찾기(/people/find) 용. 홈·사람 탭 AI 입구는 AiParts (/ai) (언어별 데이터셋이라 문장 자체가 언어별) */
 const AI_EXAMPLES: Record<'ko' | 'en', Record<StageKind, string[]>> = {
   ko: {
     undergrad: ['같이 클라이밍 갈 공대생', '러닝 좋아하는 같은 전공', '보드게임 같이 할 사람'],
@@ -40,46 +40,6 @@ const AI_EXAMPLES: Record<'ko' | 'en', Record<StageKind, string[]>> = {
   },
 };
 export const aiExamples = (kind: StageKind) => AI_EXAMPLES[lang === 'en' ? 'en' : 'ko'][kind];
-const findWith = (q: string) => nav(`/people/find?q=${encodeURIComponent(q)}`);
-
-/** 홈 상단 카드 — "찾는 사람을 말로 설명해 보세요" + 가짜 입력칸 + 단계별 예시 칩 */
-export function AiSearchCard({ kind }: { kind: StageKind }) {
-  const examples = aiExamples(kind);
-  return (
-    <View style={tw`mt-3 rounded-[24px] bg-primary-soft p-4`}>
-      <View style={tw`flex-row items-center`}>
-        <View style={tw`h-9 w-9 rounded-full bg-white items-center justify-center`}><Sparkles size={17} color={C.primary} /></View>
-        <View style={tw`flex-1 min-w-0 ml-2.5`}>
-          <Text style={tw`text-[15px] font-bold text-ink`}>{t('찾는 사람을 말로 설명해 보세요')}</Text>
-          <Text style={tw`text-[12px] text-ink-2`}>{t('AI가 조건을 알아듣고 찾아줘요')}</Text>
-        </View>
-      </View>
-      <Pressable onPress={() => nav('/people/find')} accessibilityRole="search" accessibilityLabel={t('AI에게 찾아달라고 하기')} style={tw`mt-3 h-12 rounded-full bg-white border border-line flex-row items-center pl-4 pr-1.5`}>
-        <Search size={16} color={C.ink3} />
-        <Text numberOfLines={1} style={tw`flex-1 ml-2 text-[14px] text-ink-3`}>{examples[0]}</Text>
-        <View style={tw`h-9 w-9 rounded-full bg-accent-soft items-center justify-center`}><ArrowRight size={16} color={C.primary} /></View>
-      </Pressable>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={tw`-mx-4 mt-2.5`} contentContainerStyle={tw`px-4`}>
-        {examples.slice(1).map((x) => (
-          <Pressable key={x} onPress={() => findWith(x)} style={tw`h-8 px-3 mr-1.5 rounded-full bg-white justify-center`}>
-            <Text numberOfLines={1} style={tw`text-[12px] font-semibold text-primary`}>{x}</Text>
-          </Pressable>
-        ))}
-      </ScrollView>
-    </View>
-  );
-}
-
-/** 사람 탭 맨 위 — 검색창 모양 입구 */
-export function AiSearchEntry() {
-  return (
-    <Pressable onPress={() => nav('/people/find')} accessibilityRole="search" style={tw`mx-4 mb-2.5 h-11 rounded-full bg-accent-soft pl-3.5 pr-3 flex-row items-center`}>
-      <Sparkles size={16} color={C.primary} />
-      <Text numberOfLines={1} style={tw`flex-1 ml-2 text-[14px] font-semibold text-primary`}>{t('AI에게 찾아달라고 하기')}</Text>
-      <Search size={16} color={C.primary} />
-    </Pressable>
-  );
-}
 
 // ─── 카드에 한 줄 — 이 사람의 답 하나 ───────────────────────────────────────
 /** 사람 카드용 인용 한 줄 (내 답과 겹치는 답을 먼저). 질문 답변을 볼 수 없으면 아무것도 안 그린다 */

@@ -33,6 +33,7 @@ import { SecondDegreePage } from '@/pages/people/SecondDegreePage';
 import { OpenToPage } from '@/pages/profile/OpenToPage';
 import { SavedPeoplePage } from '@/pages/profile/SavedPeoplePage';
 import { NaturalSearchPage } from '@/pages/people/NaturalSearchPage';
+import { AiChatPage } from '@/pages/ai/AiChatPage';
 import { RespondPage } from '@/pages/people/RespondPage';
 import { AdvancedExplorePage } from '@/pages/people/AdvancedExplorePage';
 import { SmallTablesPage } from '@/pages/meet/SmallTablesPage';
@@ -156,6 +157,7 @@ export default function App() {
           <Route path="/profile/open-to" element={<OpenToPage />} />
           <Route path="/profile/saved" element={<SavedPeoplePage />} />
           <Route path="/people/find" element={<NaturalSearchPage />} />
+          <Route path="/ai" element={<AiChatPage />} />
           <Route path="/people/requests/:id/respond" element={<RespondPage />} />
           <Route path="/people/advanced" element={<AdvancedExplorePage />} />
           <Route path="/meet/tables" element={<SmallTablesPage />} />

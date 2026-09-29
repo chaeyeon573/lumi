@@ -10,7 +10,7 @@ export function HSection({ title, action, onAction, children, sub }: { title: st
   return (
     <View style={tw`mt-7`}>
       <View style={tw`flex-row items-end justify-between mb-3`}>
-        <Text numberOfLines={1} style={[tw`flex-1 text-[20px] font-bold text-ink mr-2`, { letterSpacing: -0.4 }]}>{title}</Text>
+        <Text numberOfLines={2} style={[tw`flex-1 text-[20px] font-bold text-ink mr-2`, { letterSpacing: -0.4 }]}>{title}</Text>
         {action ? <Pressable onPress={onAction} hitSlop={6} style={tw`flex-row items-center`}><Text style={tw`text-[13px] font-semibold text-verify`}>{action}</Text><ChevronRight size={14} color={C.verify} /></Pressable> : null}
       </View>
       {sub ? <Text style={tw`-mt-2 mb-3 text-[12px] text-ink-3`}>{sub}</Text> : null}

@@ -13,6 +13,7 @@ import { recommendPeople, type RecommendedPerson } from './people';
 import { recommendMeets, type RecommendedMeet } from './meet';
 import { myNetwork, sameSchool, sameCity, sameField, cityOf, isGradStage, isAlumniStage, stageOf } from './network';
 import { friendsOf } from './relations';
+import { alumniAround, alumniPicks, networkUpdates, newcomerMeets, gradAround, type AlumniAround, type AlumniPick, type NetworkUpdate, type GradAround } from './stage-around';
 
 export interface HomeToday {
   classes: ReturnType<typeof coursesOn>;
@@ -78,6 +79,14 @@ export interface AlumniHome {
   news: NetworkNews[];
   groups: Organization[];
   opportunities: Opportunity[];
+  /** 내 주변 동문 — 내 도시 · 같은 분야 · 서로 아는 사람이 있는 동문 수 */
+  around: AlumniAround;
+  /** 만나볼 만한 동문 (3) — 소개 경로 포함 */
+  picks: AlumniPick[];
+  /** 새 소식 — 이사·입사 (3) */
+  updates: NetworkUpdate[];
+  /** 이 도시에 새로 온 사람 모임 */
+  newcomers: Activity[];
 }
 
 /** 졸업생 홈 — "내 관계망에 지금 어떤 변화가 있는가" */
@@ -100,7 +109,9 @@ export function alumniHome(snap: Snapshot, me: User, visibleActivities: Activity
       .map((a) => ({ kind: 'meet' as const, meet: a, who: a.orgId ? (snap.organizations.find((o) => o.id === a.orgId)?.name ?? '') : (snap.users.find((u) => u.id === a.hostId)?.nickname ?? ''), at: a.createdAt })),
   ].sort((a, b) => b.at.localeCompare(a.at)).slice(0, 3);
   const opportunities = snap.opportunities.filter((o) => ['internship', 'startup', 'lab', 'event', 'hackathon'].includes(o.type) && (!o.deadline || daysUntil(o.deadline) >= 0)).slice(0, 3);
-  return { connect, nearby, field, thisWeek, news, groups: myOrgs.slice(0, 3), opportunities };
+  const newcomers = newcomerMeets(visibleActivities.filter((a) => a.date >= today), me).slice(0, 2);
+  return { connect, nearby, field, thisWeek, news, groups: myOrgs.slice(0, 3), opportunities,
+    around: alumniAround(snap, me), picks: alumniPicks(snap, me, ranked, 3), updates: networkUpdates(snap, me, 3), newcomers };
 }
 
 export interface GradHome extends HomeToday {
@@ -110,6 +121,8 @@ export interface GradHome extends HomeToday {
   researchPeople: RecommendedPerson[];
   /** 먼저 가 본 선배 (3) — 박사과정 · 그 분야에서 일하는 선배 */
   ahead: RecommendedPerson[];
+  /** 내 분야 사람 수 — 같은 연구 분야 · 다른 학교 연구실 · 먼저 가 본 선배 */
+  around: GradAround;
 }
 
 const RESEARCH_CATS = new Set(['seminar', 'study']);
@@ -138,7 +151,7 @@ export function gradHome(snap: Snapshot, me: User, visibleActivities: Activity[]
   const gradScore = (a: Activity) => (hostGrad(a) ? 3 : 0) + (a.category === 'seminar' ? 2 : 0) + (a.category === 'networking' || a.category === 'coffee' ? 1 : 0) - (hostUndergrad(a) && a.category === 'study' ? 2 : 0);
   const meets = recommendMeets(visibleActivities.filter((a) => !weekIds.has(a.id)), me, snap.users, snap.organizations, snap.participations, 12)
     .map((m, i) => ({ m, s: gradScore(m.a) * 2 - i * 0.2 })).sort((a, b) => b.s - a.s).slice(0, 3).map((x) => x.m);
-  return { ...base, meets, connectNow: base.connectNow.filter((p) => !taken.has(p.user.id)).slice(0, 3), researchWeek, researchPeople, ahead,
+  return { ...base, meets, connectNow: base.connectNow.filter((p) => !taken.has(p.user.id)).slice(0, 3), researchWeek, researchPeople, ahead, around: gradAround(snap, me),
     opportunities: base.opportunities.filter((o) => ['lab', 'internship', 'hackathon', 'event', 'scholarship', 'exchange'].includes(o.type)) };
 }
 

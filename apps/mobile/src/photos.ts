@@ -60,5 +60,13 @@ export const PHOTOS: Record<string, number> = {
   'photos/p_x4.jpg': require('../assets/photos/p_x4.jpg'),
   'photos/p_x5.jpg': require('../assets/photos/p_x5.jpg'),
   'photos/p_x6.jpg': require('../assets/photos/p_x6.jpg'),
+  'photos/p_y1.jpg': require('../assets/photos/p_y1.jpg'),
+  'photos/p_y2.jpg': require('../assets/photos/p_y2.jpg'),
+  'photos/p_y3.jpg': require('../assets/photos/p_y3.jpg'),
+  'photos/p_y4.jpg': require('../assets/photos/p_y4.jpg'),
+  'photos/p_y5.jpg': require('../assets/photos/p_y5.jpg'),
+  'photos/p_y6.jpg': require('../assets/photos/p_y6.jpg'),
+  'photos/p_y7.jpg': require('../assets/photos/p_y7.jpg'),
+  'photos/p_y8.jpg': require('../assets/photos/p_y8.jpg'),
   'photos/p_yuna.jpg': require('../assets/photos/p_yuna.jpg'),
 };

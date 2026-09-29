@@ -173,8 +173,17 @@ export interface User {
   trips?: Trip[];
   /** 프로필·네트워크 공개 범위 */
   privacy?: PrivacySettings;
+  /** 도와줄 수 있어요 — 짧은 태그 (예: 창업, 뉴욕 생활, 대학원 준비). 최대 5개 */
+  helpWith?: string[];
+  /** 찾고 있어요 — 짧은 태그 (예: AI 창업자, 테니스 칠 사람). 최대 5개 */
+  seeking?: string[];
+  /** 새 소식 — 이사·입사처럼 관계망에 알릴 만한 변화 (최근 것 먼저). 도시·회사를 바꾸면 엔진이 자동으로 남긴다 */
+  updates?: LifeUpdate[];
   createdAt: string;
 }
+
+/** 새 소식 — moved: 도시를 옮김, joined: 회사에 합류, started: 새 과정·일을 시작 */
+export interface LifeUpdate { kind: 'moved' | 'joined' | 'started'; value: string; at: string }
 
 export type Plan = 'free' | 'plus';
 export type Stage = 'undergrad' | 'masters' | 'phd' | 'alumni' | 'professional';
@@ -459,6 +468,8 @@ export interface Activity {
   opportunityId?: ID;
   /** 시간표 공강에서 열린 활동 */
   openSlot?: boolean;
+  /** 이 도시에 새로 온 사람 환영 모임 (New in town) */
+  newcomers?: boolean;
   /** 제휴 딜(store_deal) — 발견 탭 '참여할 수 있는 모임' 맨 위 제휴 카드 */
   partner?: { name: string; deal: string };
   rolesNeeded?: Role[];

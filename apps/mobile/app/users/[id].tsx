@@ -26,6 +26,7 @@ import { ProposeSheet } from '@/components/a_ProposeSheet';
 import { VoicePlayer, PollCard } from '@/components/a_Prompts';
 import { affiliationText, VerifiedBadge, VisibilityTag, Dialog, ActivityRow } from '@/components/a_shared';
 import { BigPromptCard, NoteSheet, MutualLine, MutualSheet, NoteBubble } from '@/v2/PromptParts';
+import { HelpSeekTags } from '@/v2/HelpSeek';
 
 const W = Dimensions.get('window').width;
 
@@ -162,6 +163,7 @@ export default function PersonScreen() {
 
         <View style={tw`mt-3 card p-4`}>
           {ownerAlumni ? null : <Block label={t('이번 학기 목표')} visible={see('goals') && user.goals.length > 0}><View style={[tw`flex-row flex-wrap`, { gap: 6 }]}>{user.goals.map((g) => <Tag key={g} tone={v.me.goals.includes(g) ? 'primary' : 'neutral'}>{GOAL_EMOJI[g]} {GOAL_LABELS[g]}</Tag>)}</View></Block>}
+          {user.helpWith?.length || user.seeking?.length ? <Block label={t('도와줄 수 있어요 · 찾고 있어요')} visible><HelpSeekTags helpWith={user.helpWith} seeking={user.seeking} highlight={v.me.seeking ?? []} /></Block> : null}
           {(user.lookingFor.length > 0 || user.canOffer.length > 0) && <Block label={t('찾는 사람 · 제공할 수 있는 것')} visible><View>{user.lookingFor.length > 0 && <Text style={tw`text-[13px] text-ink-2`}>🔍 {user.lookingFor.map((r) => PERSON_ROLE_LABELS[r]).join(', ')}</Text>}{user.canOffer.length > 0 && <Text style={tw`text-[13px] text-ink-2 mt-0.5`}>🛠 {user.canOffer.map((r) => PERSON_ROLE_LABELS[r]).join(', ')}</Text>}</View></Block>}
           {user.living && !ownerAlumni && <Block label={t('생활권')} visible={see('living')}><Text style={tw`text-[13px] text-ink-2`}>{RESIDENCE_LABELS[user.living.residence]} · {user.living.zone}{v.me.living?.zone === user.living.zone && <Text style={tw`text-mint font-semibold`}> {t('같은 생활권')}</Text>}</Text></Block>}
           <Block label={t('관심사')} visible><View style={tw`flex-row flex-wrap`}>{user.interests.map((i) => <View key={i} style={tw`mb-2`}><Chip size="sm" active={common.includes(i)}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Chip></View>)}</View></Block>

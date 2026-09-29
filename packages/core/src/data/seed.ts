@@ -6,6 +6,7 @@ import { photo } from '@core/lib/assets';
 const T = todayISO();
 const T1 = addDaysISO(1);
 const T2 = addDaysISO(2);
+const T3 = addDaysISO(3);
 const T4 = addDaysISO(4);
 const T9 = addDaysISO(9);
 /** 지금부터 n분 뒤 (HH:MM) — Now 피드용 예시 활동은 항상 '곧' 시작한다 */
@@ -1028,3 +1029,135 @@ const STAGE_PROMPTS: Record<string, { questionId: string; answer: string }[]> = 
   u_a_yonsei_seoul: [{ questionId: 'qa_now', answer: '판교 퇴근길 저녁 한 끼' }, { questionId: 'qa_weekend', answer: '토요일 오전 테니스, 오후엔 무조건 낮잠' }, { questionId: 'q_first_meet', answer: '가볍게 밥 먹고 산책' }, { questionId: 'qa_work', answer: '주문이 몰려도 앱이 안 멈추게 하는 일' }],
 };
 users.forEach((u) => { if (STAGE_PROMPTS[u.id]) u.prompts = STAGE_PROMPTS[u.id]; });
+
+// ─── v16: AI에게 묻기 — 실제 사용 상황 6가지가 걸리도록 (뉴욕 consumer tech 창업 동문 · 보행 행태 연구 대학원생 · 창업 관심 재학생 ·
+//         도쿄 동문 · 오늘 저녁 같이 먹을 사람 · AI 창업에 필요한 사람 유형) + 동문 새 소식(이사·입사) · 도와줄 수 있어요/찾고 있어요 ────
+const ago = (d: number) => isoHoursAgo(24 * d);
+const alum = (id: string, nickname: string, face: string, emoji: string, hue: number, school: [string, string], department: string, gradYear: number, birthYear: number,
+  city: string, career: { company: string; industry: string; role: string }, extra: Partial<User>): User => mk({
+  id, nickname, birthYear, gender: 'private', avatar: { emoji, hue, photoType: 'face', url: photo(face) }, photos: [photo(face)], identityVerified: true,
+  affiliation: { type: 'university', schoolId: school[0], schoolName: school[1], role: 'alumni', department, year: gradYear, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'alumni',
+  homeCity: city, region: city, gradYear, verification: { method: 'alumni_email', at: ago(40) }, career: { city, ...career },
+  purposes: ['networking'], goals: [], lookingFor: [], canOffer: ['mentor'], fieldVisibility: defaultVisibility('public'), availability: 'after18', createdAt: ago(20), ...extra,
+});
+const YS: [string, string] = ['s_yonsei', '연세대학교'];
+const KU: [string, string] = ['s_korea', '고려대학교'];
+users.push(
+  // 뉴욕 · consumer tech
+  alum('u_a_ny_jiyoon', '지윤', 'p_y1', '🛍️', 330, YS, '경영학과', 2018, 1995, '뉴욕', { company: '루프마켓 (창업)', industry: 'Consumer Tech', role: '창업자' },
+    { bio: '뉴욕에서 중고 거래 앱을 만들고 있어요. 소비자 앱 창업 이야기라면 언제든.', interests: ['startup', 'design', 'running', 'coffee'], openTo: ['coffee', 'cofounding', 'mentoring'],
+      helpWith: ['소비자 앱 창업', '뉴욕 생활', '미국 투자 유치'], seeking: ['디자이너 공동창업자', '뉴욕 러닝 메이트'], updates: [{ kind: 'moved', value: '뉴욕', at: ago(12) }] }),
+  alum('u_a_ny_minsu', '민수', 'p_y2', '🥒', 120, YS, '경제학과', 2019, 1996, '뉴욕', { company: '피클 (창업)', industry: 'Consumer Tech', role: '창업자' },
+    { bio: '대학생 식비 가계부 앱 피클 대표. 브루클린 삽니다.', interests: ['startup', 'finance', 'meal'], openTo: ['coffee', 'networking'],
+      helpWith: ['초기 사용자 모으기', 'Y Combinator 지원'], seeking: ['뉴욕 한국인 창업자'] }),
+  alum('u_a_ny_seoyun', '서윤', 'p_y3', '🎧', 260, YS, '컴퓨터과학과', 2020, 1997, '뉴욕', { company: 'Spotify', industry: 'Consumer Tech', role: 'Product' },
+    { bio: '뉴욕 Spotify PM. 음악 추천 만들어요.', interests: ['music', 'design', 'coffee'], openTo: ['coffee', 'mentoring'], helpWith: ['PM 취업', '미국 빅테크 이직'], seeking: ['주말 전시 같이 볼 사람'] }),
+  // 도쿄
+  alum('u_a_tokyo_daeun', '다은', 'p_y6', '🗾', 10, YS, '국제학부', 2019, 1996, '도쿄', { company: '라인야후', industry: 'IT', role: 'Product' },
+    { bio: '도쿄 3년 차. 새로 온 사람 동네 안내는 제가 할게요.', interests: ['running', 'coffee', 'travel', 'meal'], openTo: ['coffee', 'activities', 'networking'],
+      helpWith: ['도쿄 집 구하기', '일본 취업'], seeking: ['도쿄 러닝 메이트'], updates: [{ kind: 'moved', value: '도쿄', at: ago(25) }] }),
+  alum('u_a_tokyo_junseo', '준서', 'p_y4', '🍣', 200, YS, '경영학과', 2017, 1994, '도쿄', { company: '미쓰비시상사', industry: '무역', role: '해외영업' },
+    { bio: '도쿄 연세 동문 모임 운영해요. 이사 오면 한 번 밥 먹어요.', interests: ['meal', 'travel', 'networking'], openTo: ['coffee', 'networking', 'activities'], helpWith: ['도쿄 정착', '상사 취업'], seeking: [] }),
+  // 서울 · AI 제품 · 투자 · 디자인
+  alum('u_a_seoul_gaeun', '가은', 'p_y8', '🧠', 280, YS, '경영학과', 2020, 1997, '서울', { company: '모티브랩', industry: 'AI', role: 'Product' },
+    { bio: 'AI 글쓰기 도구를 만드는 PM. 사용자가 실제로 쓰는 AI 제품 이야기 좋아해요.', interests: ['ai', 'startup', 'reading', 'coffee'], openTo: ['coffee', 'mentoring'],
+      helpWith: ['AI 제품 기획', 'LLM 평가'], seeking: ['AI 창업 준비하는 후배'], updates: [{ kind: 'joined', value: '모티브랩', at: ago(9) }] }),
+  alum('u_a_seoul_doyoon', '도윤', 'p_y5', '⚙️', 190, YS, '전기전자공학부', 2019, 1996, '서울', { company: '카카오', industry: 'AI', role: 'ML Engineer' },
+    { bio: '추천 모델 만들어요. 주말엔 테니스.', interests: ['ai', 'exercise', 'game'], openTo: ['activities', 'mentoring'], helpWith: ['ML 엔지니어 취업', '추천 시스템'], seeking: ['테니스 칠 사람'],
+      updates: [{ kind: 'joined', value: '카카오', at: ago(4) }] }),
+  alum('u_a_seoul_vc', '승현', 'p_y7', '📈', 45, YS, '경영학과', 2015, 1992, '서울', { company: '한강벤처스', industry: '투자', role: '심사역' },
+    { bio: '초기 AI·소비자 서비스에 투자해요. 창업 준비하는 동문이면 편하게 연락 주세요.', interests: ['startup', 'invest', 'ai', 'coffee'], openTo: ['coffee', 'mentoring', 'networking'],
+      helpWith: ['초기 투자', '사업계획서 피드백', 'AI 스타트업'], seeking: ['창업 준비 중인 동문'] }),
+  alum('u_a_seoul_accel', '예진', 'p_x2', '🚀', 20, KU, '경영학과', 2016, 1993, '서울', { company: '런치패드 액셀러레이터', industry: '투자', role: '액셀러레이터' },
+    { bio: '학생·초기 창업팀 액셀러레이팅. 데모데이 준비 도와드려요.', interests: ['startup', 'networking'], openTo: ['coffee', 'mentoring'], helpWith: ['액셀러레이터 지원', '데모데이'], seeking: [] }),
+  alum('u_a_seoul_hayul', '하율', 'p_x4', '🎨', 300, YS, '디자인예술학부', 2021, 1998, '서울', { company: '당근', industry: 'IT', role: 'Product Designer' },
+    { bio: 'UX 디자이너. 동네 서비스 만들어요.', interests: ['design', 'exhibition', 'photo'], openTo: ['coffee', 'mentoring'], helpWith: ['UX 포트폴리오'], seeking: ['주말 전시 메이트'] }),
+  alum('u_a_seoul_taeyoon', '태윤', 'p_x6', '📦', 230, YS, '통계학과', 2018, 1995, '서울', { company: '쿠팡', industry: 'IT', role: '데이터 분석' },
+    { bio: '싱가포르에서 5년 일하고 서울로 돌아왔어요. 서울 친구 다시 만드는 중.', interests: ['running', 'meal', 'travel'], openTo: ['coffee', 'activities', 'networking'], helpWith: ['싱가포르 취업'], seeking: ['퇴근 후 러닝'],
+      updates: [{ kind: 'moved', value: '서울', at: ago(3) }] }),
+  // 대학원생 — 도시 공간 · 보행 행태
+  mk({ id: 'u_g_urban_chaewon', nickname: '채원', birthYear: 2000, avatar: { emoji: '🗺️', hue: 150, photoType: 'face', url: photo('p_x1') }, photos: [photo('p_x1'), photo('c_city')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_yonsei', schoolName: '연세대학교', role: 'graduate', department: '도시공학과', year: 2025, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'masters',
+    research: { field: '도시계획', lab: '도시데이터 연구실', year: 2, keywords: ['보행 행태', 'pedestrian behavior', '도시 공간', 'GIS'] }, homeCity: '서울', gradYear: Y + 1,
+    bio: '사람들이 어떤 길을 골라 걷는지 연구해요. 신촌 골목 데이터 모으는 중.', interests: ['research', 'walk', 'coffee', 'photo'], openTo: ['research', 'coffee'], fieldVisibility: defaultVisibility('public'),
+    helpWith: ['GIS 분석', 'QGIS'], seeking: ['보행 데이터 같이 볼 사람'], createdAt: ago(15) }),
+  mk({ id: 'u_g_urban_hyunseo', nickname: '현서', birthYear: 1997, avatar: { emoji: '🏙️', hue: 60, photoType: 'face', url: photo('p_x3') }, photos: [photo('p_x3')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_snu', schoolName: '서울대학교', role: 'graduate', department: '환경대학원', year: 2023, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'phd',
+    research: { field: '도시 공간 분석', year: 3, keywords: ['보행자 흐름', 'urban analytics', '공간 데이터'] }, homeCity: '서울', gradYear: Y + 2,
+    bio: '보행자 흐름으로 상권 변화를 봐요. 다른 학교 연구자와 이야기하는 걸 좋아해요.', interests: ['research', 'reading', 'coffee'], openTo: ['research', 'coffee', 'networking'], fieldVisibility: defaultVisibility('public'),
+    helpWith: ['공간 통계', '박사 진학'], seeking: ['공동 연구'], createdAt: ago(30) }),
+  mk({ id: 'u_g_urban_jiho', nickname: '지호', birthYear: 1999, avatar: { emoji: '🚶', hue: 100, photoType: 'face', url: photo('p_x5') }, photos: [photo('p_x5')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_kaist', schoolName: 'KAIST', role: 'graduate', department: '건설및환경공학과', year: 2025, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'masters',
+    research: { field: '교통·모빌리티', year: 1, keywords: ['보행 시뮬레이션', 'agent-based model', '도시 공간'] }, homeCity: '대전', activityCity: '서울', gradYear: Y + 1,
+    bio: '보행자 시뮬레이션 모델 만들어요. 서울 올라가면 연구 얘기 환영.', interests: ['research', 'game', 'running'], openTo: ['research', 'coffee'], fieldVisibility: defaultVisibility('public'), createdAt: ago(10) }),
+  // 재학생 — 창업 관심
+  mk({ id: 'u_s_nayeon', nickname: '나연', birthYear: 2003, avatar: { emoji: '💡', hue: 45, photoType: 'face', url: photo('p_x4') }, photos: [photo('p_x4')], identityVerified: true,
+    affiliation: { type: 'university', schoolId: 's_yonsei', schoolName: '연세대학교', role: 'undergraduate', department: '경영학과', year: 2022, emailVerified: true, showSchool: true, showDepartment: true }, stage: 'undergrad',
+    homeCity: '서울', gradYear: Y + 1, bio: '캠퍼스 중고 거래 아이디어로 팀 꾸리는 중. 개발자 구해요!', interests: ['startup', 'design', 'coffee'], openTo: ['cofounding', 'coffee'],
+    lookingFor: ['developer'], fieldVisibility: defaultVisibility('public'), seeking: ['개발자 팀원'], createdAt: ago(8) }),
+);
+
+// 서로 아는 사람 — 데모 사용자의 연결(서연·준호·수아)을 통해 소개받을 수 있게
+relationships.friends.push(
+  { a: 'u_junho', b: 'u_a_ny_jiyoon', since: ago(200) },
+  { a: 'u_seoyeon', b: 'u_a_tokyo_daeun', since: ago(300) },
+  { a: 'u_sua', b: 'u_a_seoul_vc', since: ago(90) },
+  { a: 'u_seoyeon', b: 'u_a_seoul_gaeun', since: ago(150) },
+  { a: 'u_sua', b: 'u_g_urban_chaewon', since: ago(60) },
+  { a: 'u_junho', b: 'u_a_seoul_taeyoon', since: ago(400) },
+  { a: 'u_seoyeon', b: 'u_s_nayeon', since: ago(40) },
+  { a: 'u_a_ny_jiyoon', b: 'u_a_ny_minsu', since: ago(100) },
+  { a: 'u_a_tokyo_daeun', b: 'u_a_tokyo_junseo', since: ago(100) },
+);
+// 기존 사용자 — 새 소식 · 도와줄 수 있어요 / 찾고 있어요
+const V16: Record<string, Partial<User>> = {
+  u_taeho: { helpWith: ['MVP 만들기', '팀 꾸리기', '첫 투자 미팅'], seeking: ['AI 개발자'] },
+  u_a_yonsei_seoul: { helpWith: ['B2B SaaS 창업', '개발 채용'], seeking: ['백엔드 개발자'], updates: [{ kind: 'moved', value: '성남', at: ago(40) }] },
+  u_a_seoul_ai: { helpWith: ['ML 면접', '대학원 vs 취업'], seeking: ['한강 러닝 크루'] },
+  u_a_ny_fin: { helpWith: ['미국 MBA', '뉴욕 금융권'], seeking: [] },
+  u_a_tokyo_pm: { helpWith: ['해외 이직', '일본 생활'], seeking: [] },
+  u_jimin: { seeking: ['창업 동아리 친구'], helpWith: ['전시 추천'] },
+  u_sua: { seeking: ['같이 창업 공모전 나갈 사람'] },
+  u_seoyeon: { status: { kind: 'meal', when: 'today', until: new Date(Date.now() + 10 * 3600000).toISOString(), setAt: isoHoursAgo(1) } },
+  u_hana: { status: { kind: 'meal', when: 'today', until: new Date(Date.now() + 10 * 3600000).toISOString(), setAt: isoHoursAgo(2) } },
+};
+users.forEach((u) => Object.assign(u, V16[u.id]));
+
+organizations.push(
+  { id: 'o_tokyo_alumni', name: '도쿄 연세 동문 모임', logo: { emoji: '🗼', hue: 350, url: photo('c_city') }, type: 'community', scope: 'city', city: '도쿄', joinPolicy: 'open', interests: ['networking', 'meal'], verified: false,
+    description: '도쿄에 사는 연세 동문·유학생 모임. 새로 이사 온 분은 첫 모임에서 동네 소개해 드려요.', gallery: [], regularActivities: ['월 1회 시부야 저녁'], notices: [],
+    followerIds: [], memberIds: ['u_a_tokyo_junseo', 'u_a_tokyo_daeun'], adminIds: ['u_a_tokyo_junseo'], applicantIds: [] },
+  { id: 'o_startup_club', name: '연세 창업 학회', logo: { emoji: '🚀', hue: 25, url: photo('c_two_laptops') }, type: 'club', scope: 'school', schoolId: 's_yonsei', joinPolicy: 'approval', interests: ['startup'], verified: true,
+    description: '아이디어부터 첫 사용자까지. 매주 목요일 세션, 학기마다 데모데이.', gallery: [], regularActivities: ['매주 목 19:00'], notices: [],
+    followerIds: ['u_jimin'], memberIds: ['u_s_nayeon', 'u_sua'], adminIds: ['u_s_nayeon'], applicantIds: [] },
+);
+activities.push(
+  { id: 'a_tokyo_newcomer', kind: 'group', category: 'meal', title: '도쿄에 새로 온 사람 저녁 (6명)', description: '이번 달 도쿄로 이사 온 동문 환영 저녁. 동네·집·병원 정보 나눠요.', cover: { emoji: '🍜', hue: 350, url: photo('c_hotpot') },
+    hostId: 'u_a_tokyo_junseo', hostType: 'user', orgId: 'o_tokyo_alumni', date: addDaysISO(12), startTime: '19:00', endTime: '21:00', place: { name: '시부야 이자카야', address: '도쿄 시부야구', area: '도쿄 시부야', lat: 35.6595, lng: 139.7005 },
+    capacity: 6, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], newcomers: true, createdAt: ago(2) },
+  { id: 'a_ny_founders', kind: 'personal', category: 'networking', title: '뉴욕 한국인 창업자 브런치 (6명)', description: '뉴욕에서 창업했거나 준비 중인 사람끼리 한 달에 한 번 브런치. 학교 상관없어요.', cover: { emoji: '🥯', hue: 205, url: photo('c_city') },
+    hostId: 'u_a_ny_minsu', hostType: 'user', date: addDaysISO(5), startTime: '11:00', endTime: '12:30', place: { name: '브루클린 카페', address: '뉴욕 브루클린', area: '뉴욕 브루클린', lat: 40.6782, lng: -73.9442 },
+    capacity: 6, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: ago(2) },
+  { id: 'a_seoul_newcomer', kind: 'personal', category: 'meal', title: '서울에 새로 온 동문 저녁 (5명)', description: '해외·지방에서 서울로 막 옮긴 동문끼리 편하게 저녁. 학교 상관없어요.', cover: { emoji: '🍲', hue: 20, url: photo('c_hotpot') },
+    hostId: 'u_a_seoul_taeyoon', hostType: 'user', date: T4, startTime: '19:30', endTime: '21:00', place: { name: '을지로 노포', address: '서울 중구', area: '서울 을지로', lat: 37.566, lng: 126.991 },
+    capacity: 5, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], newcomers: true, createdAt: ago(1) },
+  { id: 'a_dinner_today', kind: 'personal', category: 'meal', title: '오늘 저녁 신촌 같이 밥 (4명)', description: '혼밥 싫은 사람 모여요. 7시 신촌역 근처 국밥집, 한 시간만.', cover: { emoji: '🍚', hue: 30, url: photo('c_hotpot') },
+    hostId: 'u_seoyeon', hostType: 'user', date: todayISO(), startTime: '19:00', endTime: '20:00', place: { name: '신촌 국밥집', address: '서울 서대문구', area: '서울 신촌', lat: 37.5559, lng: 126.9368 },
+    capacity: 4, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(3) },
+  { id: 'a_urban_reading', kind: 'personal', category: 'study', title: '도시 데이터 리딩 그룹 — 보행 행태 논문', description: '보행자 경로 선택 논문 한 편 같이 읽어요. 학교·전공 상관없이 도시 공간 연구하면 환영.', cover: { emoji: '🗺️', hue: 150, url: photo('c_library') },
+    hostId: 'u_g_urban_chaewon', hostType: 'user', date: T2, startTime: '18:30', endTime: '20:00', place: { name: '연세대 공학원', address: '서울 서대문구', area: '서울 신촌', lat: 37.5616, lng: 126.9368 },
+    capacity: 6, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: ago(1) },
+  { id: 'a_startup_session', kind: 'group', category: 'seminar', title: '창업 학회 오픈 세션 — 아이디어 검증하기', description: '비회원도 환영. 이번 학기 창업 준비하는 사람끼리 팀도 만나요.', cover: { emoji: '🚀', hue: 25, url: photo('c_two_laptops') },
+    hostId: 'u_s_nayeon', hostType: 'user', orgId: 'o_startup_club', date: T3, startTime: '19:00', endTime: '21:00', place: { name: '연세대 학생회관', address: '서울 서대문구', area: '서울 신촌', lat: 37.5641, lng: 126.9388 },
+    capacity: 30, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: ago(2) },
+  { id: 'a_ai_founders', kind: 'personal', category: 'networking', title: 'AI 창업 준비하는 사람 커피 (5명)', description: 'AI 제품·창업·투자 쪽 사람들이 30분씩 편하게. 준비 단계여도 환영.', cover: { emoji: '☕', hue: 280, url: photo('c_espresso') },
+    hostId: 'u_a_seoul_vc', hostType: 'user', date: T4, startTime: '08:00', endTime: '09:00', place: { name: '역삼 카페', address: '서울 강남구', area: '서울 역삼', lat: 37.5006, lng: 127.0366 },
+    capacity: 5, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: ago(1) },
+);
+participations.push(
+  { id: 'p_v16_1', activityId: 'a_dinner_today', userId: 'u_hana', status: 'approved', createdAt: isoHoursAgo(2) },
+  { id: 'p_v16_2', activityId: 'a_startup_session', userId: 'u_sua', status: 'approved', createdAt: ago(1) },
+  { id: 'p_v16_3', activityId: 'a_startup_session', userId: 'u_jimin', status: 'approved', createdAt: ago(1) },
+  { id: 'p_v16_4', activityId: 'a_tokyo_newcomer', userId: 'u_a_tokyo_daeun', status: 'approved', createdAt: ago(1) },
+  { id: 'p_v16_5', activityId: 'a_ai_founders', userId: 'u_a_seoul_gaeun', status: 'approved', createdAt: ago(1) },
+);

@@ -79,7 +79,7 @@ export function parseQuery(text: string, schools: School[], lang: 'ko' | 'en', o
   if (y) { const raw = y[0].match(/\d{2,4}/)![0]; const yr = raw.length === 2 ? 2000 + Number(raw) : Number(raw); if (yr > 1980 && yr < 2040) { c.gradYearFrom = yr; c.gradYearTo = yr; chips.push({ kind: 'gradYear', label: String(yr), value: String(yr) }); } }
   // 도시
   for (const city of [...new Set([...ctx.cities, ...EXTRA_CITIES])]) {
-    const re = new RegExp(`(^|[\\s,+/])${city.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(에서|에|의)?(?=[\\s,+/]|$)`, 'i');
+    const re = new RegExp(`(^|[\\s,+/])${city.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(에서|에|의|으로|로)?(?=[\\s,+/]|$)`, 'i');
     if (re.test(rest)) { take(re); const v = CITY_ALIAS[city] ?? city; if (!c.homeCities.includes(v)) { c.homeCities.push(v); chips.push({ kind: 'city', label: v, value: v }); } }
   }
   // 업종

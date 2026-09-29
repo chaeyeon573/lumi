@@ -70,7 +70,8 @@ export default function SettingsScreen() {
     try {
       if (k === 'undergrad') { await run(() => api.users.setStage(me.id, 'undergrad')); await run(() => api.users.setResearch(me.id, null), t('학부생')); }
       else if (k === 'grad') { await run(() => api.users.setStage(me.id, 'masters')); await run(() => api.users.setResearch(me.id, { field: 'NLP', lab: lang === 'en' ? 'NLP Lab' : '자연어처리 연구실', year: 2, keywords: ['LLM', lang === 'en' ? 'Evaluation' : '평가'] }), t('대학원생')); }
-      else await run(() => api.users.setStage(me.id, 'alumni'), t('졸업생'));
+      // 졸업생은 하는 일 예시를 함께 (웹 SettingsPage 와 같다 — 이미 업종이 있으면 그대로)
+      else await run(() => api.users.setStage(me.id, 'alumni', me.career?.industry ? undefined : (lang === 'en' ? { city: 'San Francisco', company: 'Startup', industry: 'AI', role: 'ML Engineer' } : { city: '서울', company: '스타트업', industry: 'AI', role: 'ML Engineer' })), t('졸업생'));
       // 데모 계정은 질문 답변도 그 단계 질문으로
       if (me.id === 'u_me') await run(() => api.users.update(me.id, { prompts: DEMO_STAGE_PROMPTS[lang][k] }));
     } catch { /* toast by run */ }

@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import { Pressable, Text, View } from 'react-native';
-import { Settings, Pencil, ShieldCheck, CalendarDays, ChevronRight, Users, CalendarCheck, Bookmark, Building2, FileText, Bell, MapPin, Briefcase, Sparkles, GraduationCap, Quote, Target, MessageSquareText, BookmarkCheck, Coffee, FlaskConical, Plus, ChevronDown } from 'lucide-react-native';
+import { Settings, Pencil, ShieldCheck, CalendarDays, ChevronRight, Users, CalendarCheck, Bookmark, Building2, FileText, Bell, MapPin, Briefcase, Sparkles, GraduationCap, Quote, Target, MessageSquareText, BookmarkCheck, Coffee, FlaskConical, Plus, ChevronDown, HandHelping } from 'lucide-react-native';
 import { t, lang } from '@core/i18n';
 import { useAppStore } from '@core/store/useAppStore';
 import { INTEREST_LABELS, INTEREST_EMOJI } from '@core/lib/labels';
@@ -25,6 +25,7 @@ import { PostCard } from '@/components/PostCard';
 import { SchoolBadge } from '@/v2/SchoolBadge';
 import { StatusPills } from '@/v2/StatusPill';
 import { BigPromptCard, DailyPromptCard } from '@/v2/PromptParts';
+import { HelpSeekTags } from '@/v2/HelpSeek';
 
 /** 헤더 두 번째 줄 — 학생: "경영학과 · '25 졸업 예정" / 석·박사: "컴퓨터과학과 · 석사 과정" / 졸업생: "2018 졸업 · 서울 · AI / Product" */
 function headerLine(me: User, kind: StageKind): string {
@@ -118,6 +119,14 @@ export default function ProfileScreen() {
 
       {/* ── 단계 카드 ── */}
       {kind === 'undergrad' ? <SemesterCard me={me} /> : kind === 'grad' ? <ResearchCard me={me} /> : <NowCard me={me} />}
+
+      {/* ── 도와줄 수 있어요 · 찾고 있어요 ── */}
+      <Card>
+        <SectionTitle icon={<HandHelping size={17} color={C.primary} />} right={<EditLink to="/profile/edit" />}>{t('도와줄 수 있어요 · 찾고 있어요')}</SectionTitle>
+        {!(me.helpWith?.length || me.seeking?.length)
+          ? <Text style={tw`mt-2 text-[13px] text-ink-3`}>{t('도와줄 수 있는 것과 찾는 것을 적어 두면, AI가 서로 맞는 사람을 이어줘요.')}</Text>
+          : <View style={tw`mt-3`}><HelpSeekTags helpWith={me.helpWith} seeking={me.seeking} /></View>}
+      </Card>
 
       {/* ── 카운트: 그룹 · 연결 · 모임 · 글 ── */}
       <View style={tw`mt-4 card px-2 py-3 flex-row`}>

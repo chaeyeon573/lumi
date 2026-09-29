@@ -15,6 +15,8 @@ import { Screen, Button, Chip, Input, Textarea, Toggle, Segmented } from '@/ui';
 import { VisibilityPicker } from '@/components/b_VisibilityPicker';
 import { ResearchFields } from '@/v2/ResearchFields';
 import { ChipsWithText } from '@/v2/Forms';
+import { TagInput, helpSuggestions } from '@/v2/HelpSeek';
+import { stageKind } from '@core/lib/stage';
 
 const EMOJIS = ['🙂', '😎', '🧑‍💻', '👩‍🎨', '🧑‍🔬', '🏃', '🎸', '📚', '🌱', '🎨', '🚀', '🧗', '☕', '🐱', '🦊', '🎧'];
 /** 웹의 hue 슬라이더(0~359) 대신 30° 간격 색상 견본 */
@@ -102,6 +104,8 @@ export default function EditProfileScreen() {
         <Field label={t('좋아하는 것')} right={fv('likes')}><Input value={form.likes} onChangeText={(text) => patch({ likes: text })} /></Field>
         <Field label={t('자유시간에 하고 싶은 활동')} right={fv('freeTime')}><Input value={form.freeTime} onChangeText={(text) => patch({ freeTime: text })} /></Field>
         <Field label={t('관심사')} right={fv('interests')}><View style={tw`flex-row flex-wrap`}>{ALL_INTERESTS.map((i) => <View key={i} style={tw`mb-2`}><Chip active={form.interests.includes(i)} onPress={() => patch({ interests: toggle(form.interests, i) as Interest[] })}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Chip></View>)}</View></Field>
+        <Field label={t('도와줄 수 있어요')} hint={t('AI가 "이런 걸 물어볼 사람"을 찾을 때 참고해요')}><TagInput value={form.helpWith ?? []} onChange={(helpWith) => patch({ helpWith })} suggestions={helpSuggestions(stageKind(form)).help} /></Field>
+        <Field label={t('찾고 있어요')} hint={t('비슷한 걸 도와줄 수 있는 사람을 먼저 보여드려요')}><TagInput value={form.seeking ?? []} onChange={(seeking) => patch({ seeking })} suggestions={helpSuggestions(stageKind(form)).seek} /></Field>
         <Field label={t('이용 목적')} right={fv('purposes')}><View style={tw`flex-row flex-wrap`}>{ALL_PURPOSES.map((p) => <View key={p} style={tw`mb-2`}><Chip active={form.purposes.includes(p)} onPress={() => patch({ purposes: toggle(form.purposes, p) as Purpose[] })}>{PURPOSE_LABELS[p]}</Chip></View>)}</View></Field>
         <Field label={t('활동 가능한 시간')} right={fv('availability')}><View style={tw`flex-row flex-wrap`}>{ALL_AVAILABILITY.map((a) => <View key={a} style={tw`mb-2`}><Chip active={form.availability === a} onPress={() => patch({ availability: a as Availability })}>{AVAILABILITY_LABELS[a]}</Chip></View>)}</View></Field>
         <Field label={t('키 (선택)')} right={fv('height')}><Input keyboardType="number-pad" placeholder="cm" value={form.height != null ? String(form.height) : ''} onChangeText={(text) => patch({ height: text ? Number(text) : undefined })} /></Field>

@@ -16,7 +16,7 @@
 - **API 메서드 추가·수정은 `packages/core/src/api/engine.ts`** (mock과 서버가 같이 씀). `api/mock/index.ts`, `api/remote/index.ts`에 도메인 로직을 쓰지 않는다. 서버 권한 규칙은 `server/index.ts`의 `RULES`에 메서드마다 한 줄 추가.
 - 타입은 `packages/core/src/types/index.ts`, API 계약은 `packages/core/src/api/types.ts`.
 - core는 브라우저·RN API를 직접 쓰지 않는다. 저장소·환경변수·자산은 `@core/platform`(`getPlatform()`) 어댑터로. (`import.meta`, `localStorage`, `window` 금지)
-- 시드 스키마가 바뀌면 `api/mock/db.ts`의 `DB_VERSION` 을 올린다 (현재 v15).
+- 시드 스키마가 바뀌면 `api/mock/db.ts`의 `DB_VERSION` 을 올린다 (현재 v16).
 - 문구는 한국어 원문을 키로 `t('한국어')`, 영어는 `packages/core/src/i18n/en.ts`(또는 화면 영역별 `i18n/v2/*.ts`)에 추가. 미번역 키 점검: 스크래치패드 `missing.mjs` 패턴(`t()` 키 ↔ `en.ts` 비교).
 - **커밋 전** `npm run typecheck && npm run typecheck:server && npm run build` 모두 통과. 모바일을 건드렸으면 `cd apps/mobile && npx tsc --noEmit && npx expo export --platform ios`.
 - 브랜치는 새로 파지 않고 지정된 작업 브랜치에서 계속. 배포 브랜치(`claude/friendly-euler-emuo1f`, Railway)로는 제품 오너가 합친다.
@@ -36,6 +36,8 @@
 - 네트워크 요청(사람 찾기 › 네트워크에 물어보기)은 `@core/lib/requests`(전달 대상·추천·받은 요청) + `@core/lib/graph`(촌수) + 엔진 `requests.*`. 지인 추천 후보는 본인이 '관심 있어요' 하기 전까지 요청자에게 공개하지 않는다(`server/view.ts sanitizeRequest`).
 - 네트워크 16화면(UX-SPEC 6.7): 사람을 보여줄 때 이유 → 촌수·공통 연결 → 경로 → 프로필 순. 공개 범위는 반드시 `@core/lib/privacy` `profileView`/`connectionStatus` 로 마스킹. 섹션마다 `useSectionState` + `Section/SectionSkeleton/SectionError/SectionEmpty` 로 로딩·부분 오류·빈 상태. 자연어 찾기 `@core/lib/nlsearch`, 2촌·소개 `graph.secondDegree` + 엔진 `intros.*`, 주변·방문 예정 `around.whoIsAround`, 작은 모임 `meet.recommendSmallTables`.
 - 피드 공간 `Post.audience` 재학생/동문/모두 (`@core/lib/feed` `postAudienceOf`·`inMySpace`·`defaultAudience`) — 졸업생 추천 피드에 재학생 글(팀원 모집·혼밥)이 섞이지 않게. 졸업생에게는 시간표·공강·수업·스터디·팀원 모집을 보여주지 않는다.
+- **AI에게 묻기(`/ai?q=`, 핵심 기능)**: `@core/lib/ai-answer` `answerQuery` — 의도(find·research·moving·meal·advice)별로 실제 사람 → 추천 이유 → 공통점·서로 아는 사람(소개 경로) → 관련 모임 → 다음 행동을 대화로 답한다. "누구를 만나야 할지 모를 때"(advice)는 사람 유형부터 제안. 무료는 결과 3명, 나머지는 AroundU+. 홈·사람 탭 AI 카드는 `/ai` 로, 조건 칩 찾기는 `/people/find`. 모바일 `apps/mobile/app/ai.tsx`. 자동 추천("AroundU가 이번 주 만나볼 만한 사람을 찾았어요")은 홈에 보조로만.
+- 단계별 주변은 `@core/lib/stage-around` (`alumniAround`·`alumniPicks`·`networkUpdates`·`gradAround`·`newcomerMeets`). 새 소식 `User.updates`(도시·회사 변경 시 엔진이 자동 기록), 도와줄 수 있어요/찾고 있어요 `User.helpWith`·`User.seeking`(최대 5개), 새로 온 사람 모임 `Activity.newcomers`.
 - 프로필 질문은 단계별 풀(`@core/data/prompts` `textPromptsFor(stageKind)`·`firstPromptIdFor`), 답에 **한마디**와 함께 연결 요청(`sendFriendRequest(from, to, note)`), 오늘의 질문·서로 아는 사람은 `@core/lib/prompts-fun`. AI 찾기(`/people/find`)는 홈·사람 탭 맨 위에 보이게.
 - 한국어 문구는 번역투 금지 — 용어표는 `docs/UX-SPEC.md` 17절 (커피챗→커피 한잔, 공통 연결→서로 아는 사람, 열려 있는→시간 되는/요즘 가능해요, 의외의 연결→다른 학교, 비슷한 사람).
 - 한국/미국 맥락 프리셋은 `@core/lib/locale-context` `localeContext()` (인증 방법·도시·업종·직무·전공·프리셋).

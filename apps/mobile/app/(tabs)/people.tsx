@@ -36,7 +36,8 @@ import { StatusPill } from '@/v2/StatusPill';
 import { SaveButton } from '@/v2/PersonActions';
 import { PeopleDeck } from '@/v2/PeopleDeck';
 import { useCloseness, closenessText, fmt, type Closeness } from '@/v2/personView';
-import { AiSearchEntry, NoteBubble } from '@/v2/PromptParts';
+import { NoteBubble } from '@/v2/PromptParts';
+import { AiAskBar } from '@/v2/AiParts';
 
 type Tab = 'recommend' | 'search' | 'connections';
 const TABS: Tab[] = ['recommend', 'search', 'connections'];
@@ -55,7 +56,7 @@ export default function PeopleScreen() {
   return (
     <SafeAreaView edges={['top']} style={tw`flex-1 bg-white`}>
       <AppHeader search />
-      <AiSearchEntry />
+      <AiAskBar />
       <View style={tw`px-4 pb-2.5`}><Segmented<Tab> value={tab} onChange={setTab} options={[['recommend', t('추천')], ['search', t('찾기')], ['connections', t('연결')]]} /></View>
       {tab === 'recommend' && <RecommendTab openPaywall={() => setPaywall('open')} freeFirst={params.free === '1'} />}
       {tab === 'search' && <SearchTab key={`${params.q ?? ''}|${params.c ?? ''}`} openPaywall={() => setPaywall('open')} initialQ={params.q} initialC={params.c} />}

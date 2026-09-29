@@ -14,6 +14,8 @@ import { isAlumniStage, isGradStage, verificationLabel } from '@core/lib/network
 import { ResearchFields } from '@/components/profile_ResearchFields';
 import { localeContext } from '@core/lib/locale-context';
 import { OpenToChips } from '@/components/profile_OpenToChips';
+import { TagInput, helpSuggestions } from '@/components/profile_TagInput';
+import { stageKind } from '@core/lib/stage';
 import { CareerFields, ChipsWithText, CityFields } from '@/components/profile_CareerFields';
 
 const EMOJIS = ['🙂', '😎', '🧑‍💻', '👩‍🎨', '🧑‍🔬', '🏃', '🎸', '📚', '🌱', '🎨', '🚀', '🧗', '☕', '🐱', '🦊', '🎧'];
@@ -127,6 +129,8 @@ export function EditProfilePage() {
         <Field label={t('자유시간에 하고 싶은 활동')} right={fv('freeTime')}><Input value={form.freeTime} onChange={(e) => patch({ freeTime: e.target.value })} /></Field>
         <Field label={t('관심사')} right={fv('interests')}><div className="flex flex-wrap gap-2">{ALL_INTERESTS.map((i) => <Chip key={i} active={form.interests.includes(i)} onClick={() => patch({ interests: toggle(form.interests, i) as Interest[] })}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Chip>)}</div></Field>
         <Field label={t('요즘 가능해요')} hint={t('요즘 가능한 것 — 사람 카드와 프로필에 보여요')}><OpenToChips value={form.openTo ?? []} onChange={(openTo) => patch({ openTo })} /></Field>
+        <Field label={t('도와줄 수 있어요')} hint={t('AI가 "이런 걸 물어볼 사람"을 찾을 때 참고해요')}><TagInput value={form.helpWith ?? []} onChange={(helpWith) => patch({ helpWith })} suggestions={helpSuggestions(stageKind(form)).help} /></Field>
+        <Field label={t('찾고 있어요')} hint={t('비슷한 걸 도와줄 수 있는 사람을 먼저 보여드려요')}><TagInput value={form.seeking ?? []} onChange={(seeking) => patch({ seeking })} suggestions={helpSuggestions(stageKind(form)).seek} /></Field>
         <Field label={t('이용 목적')} right={fv('purposes')}><div className="flex flex-wrap gap-2">{ALL_PURPOSES.map((p) => <Chip key={p} active={form.purposes.includes(p)} onClick={() => patch({ purposes: toggle(form.purposes, p) as Purpose[] })}>{PURPOSE_LABELS[p]}</Chip>)}</div></Field>
         <Field label={t('활동 가능한 시간')} right={fv('availability')}><div className="flex flex-wrap gap-2">{ALL_AVAILABILITY.map((a) => <Chip key={a} active={form.availability === a} onClick={() => patch({ availability: a as Availability })}>{AVAILABILITY_LABELS[a]}</Chip>)}</div></Field>
         <Field label={t('키 (선택)')} right={fv('height')}><Input type="number" placeholder="cm" value={form.height ?? ''} onChange={(e) => patch({ height: e.target.value ? Number(e.target.value) : undefined })} /></Field>

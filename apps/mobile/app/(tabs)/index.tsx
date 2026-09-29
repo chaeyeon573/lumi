@@ -25,7 +25,10 @@ import { MeetRow } from '@/v2/MeetRow';
 import { NowActivityRow } from '@/v2/NowActivityRow';
 import { AroundTodayCard } from '@/v2/AroundTodayCard';
 import { HSection, CardList, Row, SmallEmpty, MoreSections } from '@/v2/HomeParts';
-import { AiSearchCard } from '@/v2/PromptParts';
+import { AiAskCard, AiPersonCard } from '@/v2/AiParts';
+import { AlumniAroundCard, GradAroundCard, UpdatesList } from '@/v2/StageAround';
+import { aiLine } from '@core/lib/ai-answer';
+import { isStudentOnlyActivity, type RecommendedMeet } from '@core/lib/meet';
 
 /** 가입 직후 1회 보여주는 첫 사용 카드 (웹 OnboardingPage FIRSTRUN_KEY 와 같은 키) */
 const FIRSTRUN_KEY = 'aroundu.firstrun';
@@ -34,7 +37,7 @@ const FIRSTRUN_KEY = 'aroundu.firstrun';
  * Home — "오늘 나에게 뭐가 있나" (웹 HomePage). 게시글 피드가 아니라 지금 내 상황에서 볼 가치가 높은 것 2~4개씩.
  * 섹션은 3개 + "더 보기" 카드 하나 (UX-SPEC 13). 학부생: 오늘 일정 · 지금 가까운 사람 · 나에게 맞는 모임 / 더 보기: 학교에서 일어나는 것 · 곧 시작하는 모임 · 새로운 사람 · 추천 기회
  * 대학원생: 이번 주 연구 일정 · 같은 연구 분야 · 먼저 가 본 선배 / 더 보기: 나에게 맞는 모임 · 오늘 일정 · 같은 학교 사람 · 추천 기회
- * 졸업생: 새로운 사람 · 내 지역 사람 · 이번 주 모임 / 더 보기: 내 분야 사람 · 내 관계망 소식 · 내 그룹 · 추천 기회
+ * 졸업생: 만나볼 만한 사람(소개 경로) · 새 소식 · 이번 주 모임 / 더 보기: 새로운 사람 · 내 지역 사람 · 내 분야 사람 · 내 관계망 소식 · 내 그룹 · 추천 기회
  */
 export default function HomeScreen() {
   const v = useViewer();
@@ -47,9 +50,9 @@ export default function HomeScreen() {
   return (
     <TabScreen header={<AppHeader search />}>
       <Identity me={me} />
-      <AiSearchCard kind={kind} />
+      <AiAskCard kind={kind} />
       <FirstRunCard />
-      <AroundTodayCard me={me} snap={snap} />
+      {alum ? <AlumniAroundCard me={me} d={alum.around} /> : grad ? <GradAroundCard d={grad.around} /> : <AroundTodayCard me={me} snap={snap} />}
       <AskedOfMe me={me} snap={snap} />
       {student ? <StudentHome d={student} me={me} /> : grad ? <GradHome d={grad} me={me} /> : alum ? <AlumniHome d={alum} me={me} /> : null}
       <View style={tw`h-6`} />
@@ -283,8 +286,29 @@ function NewsRow({ n, last }: { n: NetworkNews; last?: boolean }) {
 function AlumniHome({ d, me }: { d: AlumniHomeData; me: User }) {
   const city = cityOf(me);
   const field = [me.career?.industry, me.career?.role].filter(Boolean).join(' / ');
+  // 이 도시에 새로 온 사람 모임을 먼저. 졸업생 홈에는 수업·Study Crew·팀원 모집·스터디 모임을 넣지 않는다
+  const thisWeek: RecommendedMeet[] = [...d.newcomers.filter((a) => !d.thisWeek.some((m) => m.a.id === a.id)).map((a) => ({ a, reason: t('이 도시에 새로 온 사람 환영'), score: 0 }) as RecommendedMeet), ...d.thisWeek.filter((m) => !isStudentOnlyActivity(m.a))].slice(0, 3);
   return (
     <>
+      <HSection title={t('AroundU가 이번 주 만나볼 만한 사람을 찾았어요')} action={t('전체보기')} onAction={() => nav('/people')}>
+        {d.picks.length === 0
+          ? <SmallEmpty emoji="🤝" title={t('아직 추천할 사람이 없어요')} action={t('사람 둘러보기')} onAction={() => nav('/people')} />
+          : <View>{d.picks.map((p) => <AiPersonCard key={p.user.id} p={{ user: p.user, line: aiLine(p.user), why: '', reasons: p.reasons, keywords: (p.user.helpWith ?? []).slice(0, 2), via: p.via, mutualCount: p.mutualCount }} />)}</View>}
+      </HSection>
+
+      {d.updates.length > 0 && (
+        <HSection title={t('새 소식')} action={t('전체보기')} onAction={() => nav('/feed?tab=following')}>
+          <UpdatesList items={d.updates} />
+        </HSection>
+      )}
+
+      <HSection title={t('이번 주 참여 가능한 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
+        {thisWeek.length === 0
+          ? <SmallEmpty emoji="📅" title={t('이번 주 모임이 없어요')} action={t('모임 둘러보기')} onAction={() => nav('/meet')} />
+          : <CardList>{thisWeek.map((m, i) => <MeetRow key={m.a.id} m={m} last={i === thisWeek.length - 1} />)}</CardList>}
+      </HSection>
+
+      <MoreSections titles={[t('새로운 사람'), city ? t('내 지역 사람') : '', t('내 분야 사람'), d.news.length ? t('내 관계망 소식') : '', t('내 그룹'), d.opportunities.length ? t('추천 기회') : '']}>
       <HSection title={t('새로운 사람')} action={t('전체보기')} onAction={() => nav('/people')}>
         {d.connect.length === 0
           ? <SmallEmpty emoji="🤝" title={t('아직 추천할 사람이 없어요')} action={t('사람 둘러보기')} onAction={() => nav('/people')} />
@@ -297,13 +321,6 @@ function AlumniHome({ d, me }: { d: AlumniHomeData; me: User }) {
           : <PeopleStrip people={d.nearby} />}
       </HSection>
 
-      <HSection title={t('이번 주 참여 가능한 모임')} action={t('전체보기')} onAction={() => nav('/meet')}>
-        {d.thisWeek.length === 0
-          ? <SmallEmpty emoji="📅" title={t('이번 주 모임이 없어요')} action={t('모임 둘러보기')} onAction={() => nav('/meet')} />
-          : <CardList>{d.thisWeek.map((m, i) => <MeetRow key={m.a.id} m={m} last={i === d.thisWeek.length - 1} />)}</CardList>}
-      </HSection>
-
-      <MoreSections titles={[t('내 분야 사람'), d.news.length ? t('내 관계망 소식') : '', t('내 그룹'), d.opportunities.length ? t('추천 기회') : '']}>
       <HSection title={field ? `${t('내 분야 사람')} · ${field}` : t('내 분야 사람')} action={d.field.length ? t('전체보기') : undefined} onAction={() => nav('/people?tab=search')}>
         {d.field.length === 0
           ? <SmallEmpty emoji="💼" title={field ? t('같은 분야 사람이 아직 없어요') : t('직무·업종을 알려주세요')} description={t('같은 분야의 동문과 자연스럽게 이어져요.')} action={t('직무·업종 추가')} onAction={() => nav('/profile/edit')} />
