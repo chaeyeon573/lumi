@@ -32,6 +32,8 @@ import { sendMail } from '../mail';
 import { COURSE_SOURCES, resolveCourseSource } from '../sources/courses';
 import { fetchCourseLeaf } from '../sources/catalog';
 import { fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale } from '../sources/opportunities';
+import { fetchDevpost } from '../sources/external';
+import { existsSync } from 'node:fs';
 import { applyRules, checkDrift, spotCheck } from './validate';
 
 const DRY = process.env.AGENT_DRY === '1';
@@ -113,7 +115,7 @@ async function runOpportunities(task: string, schoolId: string, fetcher: () => P
     const items = await fetcher();
     const snap = await store.loadSnapshot();
     const fresh = new Set(items.map((o) => o.id));
-    const prev = (snap?.opportunities ?? []).filter((o) => o.schoolId === schoolId && o.id.startsWith(idPrefix));
+    const prev = (snap?.opportunities ?? []).filter((o) => (o.schoolId ?? '') === schoolId && o.id.startsWith(idPrefix));
     // 저장·Q&A·후기는 유지하고, 목록에서 사라진 것 중 아무도 손대지 않은 것만 지운다
     const merged = items.map((o) => { const p = prev.find((x) => x.id === o.id); return p ? { ...o, qna: p.qna, reviews: p.reviews, createdAt: p.createdAt } : o; });
     const gone = prev.filter((o) => !fresh.has(o.id) && !o.qna.length && !o.reviews.length).map((o) => o.id);
@@ -152,6 +154,9 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
   // 학교 전체 캘린더 (LiveWhale) — 강연·포럼·공연, 6시간마다
   const lw = /^livewhale:(https?:\/\/[^\s]+?)\/?$/.exec(row.events_source ?? '')?.[1];
   if (lw && due(`calendar:${row.id}`, latest.get(`calendar:${row.id}`)?.finishedAt, 6)) out.push(await runOpportunities(`calendar:${row.id}`, row.id, () => fetchLiveWhale(lw, school), `op_${sid}_lw_`));
+  // 마감 달력 CSV (server/data/opportunities-<short>.csv) — 사람이 고친 파일을 매일 반영한다
+  const calFile = path.join(path.dirname(SCHOOLS_CSV), `opportunities-${row.short}.csv`);
+  if (existsSync(calFile) && due(`deadlines:${row.id}`, latest.get(`deadlines:${row.id}`)?.finishedAt, 24)) out.push(await runScript(`deadlines:${row.id}`, 'import:opportunities', calFile, { PRUNE_DEMO: '1' }));
   // 3. 수업
   if (row.courses_source && resolveCourseSource(row.id, row.courses_source)) {
     const lastCourses = latest.get(`courses:${row.courses_source.includes(':') ? row.id : row.courses_source}`);
@@ -210,6 +215,11 @@ if (process.env.AGENT_MODE === 'worker') {
   }
   for (;;) {
     let did = 0;
+    // 학교 밖 기회 (모든 학교 공통) — 12시간마다
+    {
+      const latest = await latestRuns();
+      if (due('external:devpost', latest.get('external:devpost')?.finishedAt, 12)) { const r = [await runOpportunities('external:devpost', '', fetchDevpost, 'op_ext_devpost_')]; did += 1; await notify(r); }
+    }
     for (const row of loadSchools()) {
       const results = await runSchool(row);
       if (results.length) { did += results.length; await notify(results); }
