@@ -128,7 +128,8 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
     if (hoursSince(latest.get(`courses:${row.courses_source}`)?.finishedAt) > 24) out.push(await runCourses(row.courses_source));
   } else {
     // 시간표 소스가 없는 학교: 공개 과목 카탈로그(코드·이름)라도 채운다 — 30일마다. 50개 미만이면 못 읽은 것으로 보고 반영하지 않는다
-    if (row.catalog_url && hoursSince(latest.get(`catalog:${row.id}`)?.finishedAt) > 24 * 30) {
+    const lastCatalog = latest.get(`catalog:${row.id}`);
+    if (row.catalog_url && hoursSince(lastCatalog?.finishedAt) > (lastCatalog?.status === 'applied' ? 24 * 30 : 24)) {
       const startedAt = new Date().toISOString();
       try {
         const r = await fetchCourseLeaf(row.id, row.catalog_url);

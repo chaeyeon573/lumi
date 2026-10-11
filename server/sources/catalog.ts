@@ -27,7 +27,7 @@ async function get(url: string): Promise<string | null> {
 /** 사이트를 조금 돌며 학과 코드 후보를 모은다 */
 export async function discoverSubjects(rootUrl: string, maxPages = 80): Promise<string[]> {
   const root = new URL(rootUrl); const origin = root.origin;
-  const seen = new Set<string>(); const queue = [root.href]; const codes = new Map<string, number>();
+  const seen = new Set<string>(); const queue = [root.href, `${origin}/azindex/`, `${origin}/courses/`]; const codes = new Map<string, number>();
   const interesting = (p: string) => /course|subject|bulletin|catalog|curricul|department|program|azindex|index/i.test(p) && !/\.(pdf|jpg|png|css|js)$/i.test(p) && !/archive|print|search/.test(p);
   while (queue.length && seen.size < maxPages) {
     const url = queue.shift()!; if (seen.has(url)) continue; seen.add(url);
@@ -44,11 +44,15 @@ export async function discoverSubjects(rootUrl: string, maxPages = 80): Promise<
     await new Promise((res) => setTimeout(res, 100));
   }
   const STOP = new Set(['AND', 'THE', 'FOR', 'PDF', 'HTML', 'USA', 'GPA', 'FAQ', 'TBA', 'TBD', 'ACT', 'SAT']);
-  return [...codes.entries()].filter(([c, n]) => n >= 2 && !STOP.has(c)).sort((a, b) => b[1] - a[1]).map(([c]) => c);
+  const found = [...codes.entries()].filter(([c, n]) => n >= 2 && !STOP.has(c)).sort((a, b) => b[1] - a[1]).map(([c]) => c);
+  // 입구를 못 찾은 사이트(Brown 처럼 /courses/ 가 없는 곳)를 위해 흔한 학과 코드도 시도한다 — API 호출 한 번씩이라 싸다
+  return [...new Set([...found, ...SEED_SUBJECTS])];
 }
+/** 미국 대학에서 흔한 학과 코드 — 탐지가 빈약할 때의 보조 */
+const SEED_SUBJECTS = ['CS', 'CSCI', 'COMP', 'CMSC', 'CMPSC', 'EECS', 'ECE', 'EE', 'MATH', 'STAT', 'STATS', 'PHYS', 'PHYSICS', 'CHEM', 'BIO', 'BIOL', 'BIOS', 'ECON', 'PSYC', 'PSYCH', 'SOC', 'SOCI', 'POLS', 'POLI', 'POLISCI', 'GOV', 'GOVT', 'HIST', 'ENGL', 'ENG', 'PHIL', 'PHL', 'LING', 'ANTH', 'ANTHRO', 'ART', 'ARTH', 'MUS', 'MUSIC', 'THEA', 'FREN', 'SPAN', 'GERM', 'CHIN', 'JAPN', 'KORE', 'KOR', 'ARAB', 'RELI', 'REL', 'CLAS', 'ENVS', 'ENVI', 'GEOL', 'EAS', 'EPS', 'ASTR', 'ASTRO', 'NEUR', 'NEURO', 'BUS', 'BUSN', 'MGMT', 'MKTG', 'FIN', 'FINC', 'ACCT', 'ENGR', 'MECH', 'ME', 'CE', 'CEE', 'CHE', 'CHEG', 'BME', 'BIOE', 'MSE', 'AERO', 'AE', 'IE', 'IEOR', 'EDUC', 'EDU', 'NURS', 'PH', 'PUBH', 'HLTH', 'KINE', 'PE', 'COMM', 'JOUR', 'FILM', 'DANC', 'ARCH', 'URBN', 'URBS', 'LAW', 'AFAM', 'AFST', 'AMST', 'WGS', 'WGSS', 'GEOG', 'INTL', 'IR', 'DATA', 'DS', 'INFO', 'IS', 'WRIT', 'LATN', 'GREK', 'ITAL', 'RUSS', 'PORT', 'HEBR', 'HIND', 'ESL'];
 
 /** "AFST 5505a, The Making of … Staff" / "AERO 101. Title. 1 Credits." → 코드·이름·학점 */
-const TITLE_RE = /^\[?\s*([A-Z][A-Z&]{1,5}\s?\d{1,4}[A-Z]{0,4})\s*\]?[.,:\s–-]+\s*(.+?)\s*$/;
+const TITLE_RE = /^\[?\s*([A-Z][A-Z&]{1,5}\s?[A-Z]{0,2}\d{1,4}[A-Z]{0,4})\s*\]?[.,:\s–-]+\s*(.+?)\s*$/;
 function parseBlock(schoolId: string, block: string): CatalogCourse | null {
   const strong = /<strong>([\s\S]*?)<\/strong>/.exec(block)?.[1];
   const titleEl = /class="[^"]*courseblocktitle[^"]*"[^>]*>([\s\S]*?)<\/(?:p|div|h[1-6])>/.exec(block)?.[1];
