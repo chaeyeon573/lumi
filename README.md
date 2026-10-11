@@ -122,7 +122,7 @@ server/             Express API (Railway) — index.ts 라우팅·권한, store.
    | `RESEND_API_KEY`, `MAIL_FROM` | 학교 이메일 인증 코드 발송. 없으면 코드가 화면 힌트에 그대로 표시된다 |
    | `ALLOW_RESET` | 비워두기 (1이면 설정 화면에서 DB 를 시드로 되돌릴 수 있다) |
 
-4. 빌드·시작 명령은 `railway.json` 에 있다 (`npm ci && npm run build` → `npm start`). 헬스체크는 `/api/health`.
+4. 빌드 명령은 `railway.json` 에 (`npm run build`), 시작 명령 `npm start` 와 헬스체크 `/api/health` 는 Railway 서비스 설정에 있다.
 5. 첫 부팅 때 DB 가 비어 있으면 `src/data/seed(.en).ts` + 수업 목록 + 동아리·그리스 조직 목록을 자동으로 넣는다.
 
 로컬에서 서버까지 같이 돌려보려면:
@@ -206,7 +206,7 @@ npm run import:opportunities -- server/data/opportunities-berkeley.csv
 
 ### 데이터 에이전트 (24시간 수집·검증)
 
-사람이 배포 때마다 수집기를 돌리는 대신, Railway **cron 서비스**(`agent`, 같은 리포·브랜치, 설정 파일 `railway.agent.json`, 매일 10:00 UTC = 새벽 3시 PT)가 `npm run agent` 를 실행한다. 변수는 웹 서비스 것을 참조한다 (`DATABASE_URL=${{Postgres.DATABASE_URL}}`, `RESEND_API_KEY=${{AroundU.RESEND_API_KEY}}`, `MAIL_FROM`, `AGENT_NOTIFY_EMAIL`).
+사람이 배포 때마다 수집기를 돌리는 대신, Railway **cron 서비스**(`agent`, 같은 리포·브랜치, Cron Schedule `0 10 * * *` = 매일 새벽 3시 PT, Start Command `npm run agent`, Build Command `npm run typecheck:server`)가 실행한다. 서비스별 시작 명령·헬스체크·cron 은 Railway 서비스 설정에 있고 `railway.json` 은 빌드 설정만 가진다 (Railway 가 서비스별 설정 파일을 더는 받지 않는다). 변수는 웹 서비스 것을 참조한다 (`DATABASE_URL=${{Postgres.DATABASE_URL}}`, `RESEND_API_KEY=${{AroundU.RESEND_API_KEY}}`, `MAIL_FROM`, `AGENT_NOTIFY_EMAIL`).
 
 - 매일: Berkeley · Stanford · MIT 수업 시간표를 원본에서 다시 가져온다
 - 일요일: 동아리 디렉터리(CalLink · Engage · Cardinal Engage · MIT Engage)와 Greek 공식 명단도 다시 가져온다
