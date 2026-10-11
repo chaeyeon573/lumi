@@ -3,6 +3,7 @@
  *   stanford  ExploreCourses XML (키 불필요)
  *   mit       FireRoad API (키 불필요)
  *   berkeley  SIS Class API (키 있으면) → 없으면 공개 Class Schedule(classes.berkeley.edu)
+ *   cornell   Class Roster 공개 JSON API (classes.cornell.edu/api/2.0, 키 불필요)
  * lookup(course) 는 한 과목을 원본에서 다시 읽어 온다 — agent 의 표본 검증용. 없으면 null.
  */
 import type { CatalogCourse } from '@core/api/types';
@@ -200,6 +201,51 @@ async function berkeley(): Promise<CatalogCourse[]> {
   return out;
 }
 
+// ─── Cornell: Class Roster 공개 JSON API (키 불필요) ───────────────────────
+/** 학기 slug: FA26 / SP27. 지정이 없으면 다가오는 정규 학기 */
+function cornellRoster(): string { const d = new Date(); const y = d.getFullYear() % 100; const m = d.getMonth() + 1; return process.env.CORNELL_ROSTER ?? (m >= 10 ? `SP${y + 1}` : m >= 3 ? `FA${y}` : `SP${y}`); }
+interface CornellClass { subject: string; catalogNbr: string; titleLong: string; enrollGroups: { unitsMinimum?: number; classSections: { ssrComponent: string; section: string; meetings: { timeStart?: string; timeEnd?: string; pattern?: string; facilityDescr?: string | null; bldgDescr?: string | null; instructors?: { firstName?: string; lastName?: string }[] }[] }[] }[] }
+async function cornellSubject(roster: string, subject: string): Promise<CatalogCourse[]> {
+  const res = await fetch(`https://classes.cornell.edu/api/2.0/search/classes.json?roster=${roster}&subject=${encodeURIComponent(subject)}`, { headers: { 'user-agent': 'AroundU-importer' } });
+  if (!res.ok) return [];
+  const data = (await res.json()) as { data?: { classes?: CornellClass[] } };
+  const out: CatalogCourse[] = []; const seen = new Set<string>();
+  for (const c of data.data?.classes ?? []) {
+    const code = `${c.subject} ${c.catalogNbr}`; const baseId = courseId('s_cornell', code);
+    const lectures = c.enrollGroups.flatMap((g) => g.classSections.filter((sec) => sec.ssrComponent === 'LEC').map((sec) => ({ g, sec })));
+    const picked = lectures.length ? lectures : c.enrollGroups.flatMap((g) => g.classSections.slice(0, 1).map((sec) => ({ g, sec })));
+    for (const { g, sec } of picked) {
+      const meetings: Meeting[] = []; let location: string | undefined; let instructor: string | undefined;
+      for (const m of sec.meetings) {
+        if (!m.pattern || !m.timeStart || !m.timeEnd) continue;
+        location ||= [m.bldgDescr, m.facilityDescr].filter(Boolean).join(' ') || undefined;
+        instructor ||= m.instructors?.[0] ? `${m.instructors[0].firstName ?? ''} ${m.instructors[0].lastName ?? ''}`.trim() : undefined;
+        for (const day of parseDays(m.pattern)) meetings.push({ day, start: parseTime(m.timeStart), end: parseTime(m.timeEnd) });
+      }
+      if (!meetings.length) continue;
+      const id = seen.has(baseId) ? `${baseId}_${sec.section}` : baseId;
+      if (seen.has(id)) continue; seen.add(id);
+      out.push({ id, schoolId: 's_cornell', code, title: seen.size > 1 && id !== baseId ? `${c.titleLong} (Lec ${sec.section})` : c.titleLong, department: c.subject, instructor, location, meetings: uniq(meetings), term: roster, units: g.unitsMinimum });
+    }
+  }
+  // 섹션이 둘 이상인 과목은 첫 섹션 제목에도 번호를 붙인다
+  for (const c of out) if (out.some((o) => o.id.startsWith(`${c.id}_`))) c.title = `${c.title} (Lec 001)`;
+  return out;
+}
+async function cornell(): Promise<CatalogCourse[]> {
+  const roster = cornellRoster();
+  const res = await fetch(`https://classes.cornell.edu/api/2.0/config/subjects.json?roster=${roster}`, { headers: { 'user-agent': 'AroundU-importer' } });
+  if (!res.ok) throw new Error(`cornell subjects ${roster} → ${res.status}`);
+  const subjects = ((await res.json()) as { data?: { subjects?: { value: string }[] } }).data?.subjects?.map((s) => s.value) ?? [];
+  const out: CatalogCourse[] = [];
+  for (const subj of subjects) { out.push(...(await cornellSubject(roster, subj))); await new Promise((r) => setTimeout(r, 120)); }
+  console.log(`  cornell ${roster}: ${subjects.length} subjects, ${out.length} lectures`);
+  return out;
+}
+async function cornellLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
+  return (await cornellSubject(c.term, c.department)).find((x) => x.id === c.id) ?? null;
+}
+
 // ─── 표본 재확인 (agent) ───────────────────────────────────────────────────
 export interface CourseSource { schoolId: string; fetch(): Promise<CatalogCourse[]>; lookup?(course: CatalogCourse): Promise<CatalogCourse | null> }
 
@@ -226,5 +272,6 @@ export const COURSE_SOURCES: Record<string, CourseSource> = {
   stanford: { schoolId: 's_stanford', fetch: stanford, lookup: stanfordLookup },
   mit: { schoolId: 's_mit', fetch: mit, lookup: mitLookup },
   berkeley: { schoolId: 's_berkeley', fetch: berkeley, lookup: berkeleyLookup },
+  cornell: { schoolId: 's_cornell', fetch: cornell, lookup: cornellLookup },
 };
 export const adapters: Record<string, () => Promise<CatalogCourse[]>> = Object.fromEntries(Object.entries(COURSE_SOURCES).map(([k, v]) => [k, v.fetch]));

@@ -10,6 +10,7 @@ const CODE_RE: Record<string, RegExp> = {
   s_berkeley: /^[A-Z][A-Z &]{1,12} [A-Z]?\d{1,3}[A-Z]{0,3}$/,
   s_stanford: /^[A-Z&]{2,10} \d{1,3}[A-Z]{0,5}$/,
   s_mit: /^[A-Z0-9]{1,5}\.[A-Z0-9]{1,6}$/,
+  s_cornell: /^[A-Z]{2,6} \d{4}$/,
 };
 const toMin = (hhmm: string) => { const [h, m] = hhmm.split(':').map(Number); return h * 60 + m; };
 
