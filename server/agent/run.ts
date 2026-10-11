@@ -121,7 +121,7 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
     out.push(await record({ task: `detect:${row.id}`, schoolId: row.id, status: d ? 'applied' : 'rejected', startedAt, summary: d ? { ...d } : { error: 'no public club directory found (CampusLabs Engage / CampusGroups)', tried: row.orgs_host || 'guessed hosts' } }));
   }
   if (host && platform && hoursSince(latest.get(`orgs:${row.id}`)?.finishedAt) > 24 * 7) {
-    const env: Record<string, string> = platform === 'engage' ? { ENGAGE_HOSTS: `${row.id}=${host}` } : { CAMPUSGROUPS_HOSTS: `${row.id}=${host}` };
+    const env: Record<string, string> = platform === 'engage' ? { ENGAGE_HOSTS: `${row.id}=${host}` } : platform === 'presence' ? { PRESENCE_HOSTS: `${row.id}=${new URL(host).hostname.split('.')[0]}` } : { CAMPUSGROUPS_HOSTS: `${row.id}=${host}` };
     out.push(await runScript(`orgs:${row.id}`, 'fetch:orgs', row.id, env));
   }
   // 3. 수업

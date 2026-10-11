@@ -94,6 +94,32 @@ function mapCampusGroupsOrg(schoolId: ID, host: string, o: CampusGroupsOrg): Org
   };
 }
 
+const PRESENCE_HOSTS: Record<string, string> = {
+  ...(process.env.PRESENCE_HOSTS ? Object.fromEntries(process.env.PRESENCE_HOSTS.split(',').map((p) => p.split('=') as [string, string])) : {}),
+};
+interface PresenceOrg { name: string; uri: string; description?: string; categories?: string[]; memberCount?: number; regularMeetingTime?: string; regularMeetingLocation?: string }
+/** Presence(presence.io) 공개 JSON: api.presence.io/<subdomain>/v1/organizations — 한 번에 전부 온다 */
+async function fetchPresence(sub: string): Promise<PresenceOrg[]> {
+  const res = await fetch(`https://api.presence.io/${sub}/v1/organizations`, { headers: { 'user-agent': 'AroundU-importer', accept: 'application/json' } });
+  if (!res.ok) throw new Error(`presence ${sub} → ${res.status}`);
+  return (await res.json()) as PresenceOrg[];
+}
+function mapPresenceOrg(schoolId: ID, sub: string, o: PresenceOrg): Organization {
+  const cats = o.categories ?? [];
+  const catText = `${cats.join(' ')} ${o.name}`;
+  const type: Organization['type'] = /\b(council|association)\b/i.test(o.name) && /fratern|soror|greek|panhel/i.test(o.name) ? 'council' : GREEK_RE.test(catText) ? 'greek' : COUNCIL_RE.test(catText) ? 'council' : 'club';
+  const meet = [o.regularMeetingTime, o.regularMeetingLocation].filter(Boolean).join(' · ');
+  return {
+    id: `${type === 'greek' ? 'og' : 'oc'}_${schoolId.replace('s_', '')}_ps${o.uri.replace(/[^a-z0-9]+/gi, '_').toLowerCase()}`,
+    name: o.name,
+    logo: { emoji: type === 'club' ? '🎯' : '🏛️', hue: Math.abs([...o.name].reduce((h, ch) => h * 31 + ch.charCodeAt(0), 7)) % 360 },
+    type, schoolId, parent: cats.find((c) => !/undergraduate student organization|graduate student organization/i.test(c)) ?? cats[0], verified: false,
+    description: strip(o.description ?? '').slice(0, 600),
+    gallery: [], regularActivities: meet ? [meet] : [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [],
+    links: [{ label: 'Presence', url: `https://${sub}.presence.io/organization/${o.uri}` }],
+  };
+}
+
 interface EngageOrg { Id: string; Name: string; ShortName?: string; WebsiteKey?: string; Summary?: string; Description?: string; CategoryNames?: string[]; Status?: string }
 
 async function fetchAll(host: string): Promise<EngageOrg[]> {
@@ -153,7 +179,7 @@ function mergeExisting(o: Organization): Organization {
 /** 디렉터리에서 받은 뒤, 같은 학교의 손으로 넣어 둔 추정 항목(디렉터리 링크 없음 · 멤버/관리자 없음 · 이번에 안 맞음)은 지운다. greek 은 fetch-greeks 가 담당 */
 function staleSeed(schoolId: ID, fresh: Organization[]): ID[] {
   const freshIds = new Set(fresh.map((o) => o.id));
-  const hasDirLink = (o: Organization) => !!o.links?.some((l) => /callink\.berkeley\.edu|campuslabs\.com|cardinalengage\.stanford\.edu|engage\.mit\.edu/.test(l.url));
+  const hasDirLink = (o: Organization) => !!o.links?.some((l) => /callink\.berkeley\.edu|campuslabs\.com|campusgroups\.com|cardinalengage\.stanford\.edu|engage\.mit\.edu|presence\.io/.test(l.url));
   return snap.organizations.filter((o) => o.schoolId === schoolId && o.type !== 'greek' && !freshIds.has(o.id) && !hasDirLink(o) && o.memberIds.length === 0 && o.adminIds.length === 0).map((o) => o.id);
 }
 
@@ -190,6 +216,22 @@ for (const [schoolId, host] of Object.entries(CAMPUSGROUPS_HOSTS)) {
   const gone = ratio < 0.8 ? [] : linked.filter((o) => !freshIds.has(o.id) && o.memberIds.length === 0 && o.adminIds.length === 0).map((o) => o.id);
   const stale = [...staleSeed(schoolId, orgs), ...gone];
   console.log(`${orgs.length}개 (greek ${orgs.filter((o) => o.type === 'greek').length})${stale.length ? `, 추정·제외 항목 ${stale.length}개 삭제` : ''}${ratio < 0.8 ? ` — 지난번 ${linked.length}개보다 줄어 삭제는 건너뜀` : ''}`);
+  if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs, removed: { organizations: stale } });
+}
+for (const [schoolId, sub] of Object.entries(PRESENCE_HOSTS)) {
+  if (only && only !== schoolId) continue;
+  const host = `https://${sub}.presence.io`;
+  process.stdout.write(`${schoolId} ← ${host} (Presence) … `);
+  let raw: PresenceOrg[];
+  try { raw = await fetchPresence(sub); } catch (e) { console.log(`실패: ${(e as Error).message}`); continue; }
+  const orgs = raw.filter((o) => o.name && o.uri).map((o) => mapPresenceOrg(schoolId, sub, o)).map(mergeExisting);
+  const linked = snap.organizations.filter((o) => o.schoolId === schoolId && o.links?.some((l) => l.url.startsWith(host)));
+  const ratio = linked.length ? orgs.length / linked.length : 1;
+  if (ratio < 0.5) { console.log(`${orgs.length}개 — 지난번 ${linked.length}개의 절반도 안 돼 반영하지 않음 (사이트 확인 필요)`); process.exitCode = 2; continue; }
+  const stale = staleSeed(schoolId, orgs);
+  const csv = ['school_id,name,type,category,description', ...orgs.map((o) => [o.schoolId, o.name, o.type, o.parent ?? '', o.description].map((v) => `"${String(v).replace(/"/g, '""')}"`).join(','))].join('\n');
+  writeFileSync(path.join(dataDir, `orgs-${schoolId}.csv`), csv);
+  console.log(`${orgs.length}개 (greek ${orgs.filter((o) => o.type === 'greek').length})${stale.length ? `, 추정 항목 ${stale.length}개 삭제` : ''}`);
   if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs, removed: { organizations: stale } });
 }
 console.log(process.env.FETCH_DRY === '1' ? `CSV 만 생성: ${dataDir}` : 'DB 반영 완료');

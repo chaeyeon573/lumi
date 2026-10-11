@@ -5,6 +5,7 @@
  *   berkeley  SIS Class API (키 있으면) → 없으면 공개 Class Schedule(classes.berkeley.edu)
  *   cornell   Class Roster 공개 JSON API (classes.cornell.edu/api/2.0, 키 불필요)
  *   umd       Testudo Schedule of Classes 공개 HTML (app.testudo.umd.edu/soc)
+ *   harvard   my.harvard.edu 공개 과목 검색 + 섹션 조각 (FAS, 진행 중/다음 학기)
  * lookup(course) 는 한 과목을 원본에서 다시 읽어 온다 — agent 의 표본 검증용. 없으면 null.
  */
 import type { CatalogCourse } from '@core/api/types';
@@ -403,14 +404,26 @@ interface B9Section { subject: string; courseNumber: string; courseTitle: string
 function banner9Source(schoolId: string, host: string): CourseSource {
   const H = `${host}/StudentRegistrationSsb/ssb`;
   let cookie = '';
+  // 리다이렉트 중간 응답에서도 세션 쿠키를 받는 학교가 있어(UC Merced) 리다이렉트를 직접 따라가며 쿠키를 모은다
+  const keep = (r: Response) => { const set = r.headers.getSetCookie?.() ?? []; if (!set.length) return; const jar = new Map(cookie.split('; ').filter(Boolean).map((c) => [c.split('=')[0], c] as const)); for (const c of set) { const kv = c.split(';')[0]; jar.set(kv.split('=')[0], kv); } cookie = [...jar.values()].join('; '); };
   async function call(path: string, init: RequestInit = {}): Promise<Response> {
-    const r = await fetch(`${H}${path}`, { ...init, headers: { ...UAH, ...(cookie ? { cookie } : {}), ...(init.headers ?? {}) } });
-    const set = r.headers.getSetCookie?.() ?? []; if (set.length) cookie = [...new Set([...cookie.split('; ').filter(Boolean), ...set.map((c) => c.split(';')[0])])].join('; ');
-    return r;
+    let url = path.startsWith('http') ? path : `${H}${path}`; let req: RequestInit = init;
+    for (let hop = 0; hop < 6; hop++) {
+      const r = await fetch(url, { ...req, redirect: 'manual', headers: { ...UAH, ...(cookie ? { cookie } : {}), ...(req.headers ?? {}) } });
+      keep(r);
+      const loc = r.headers.get('location');
+      if (r.status >= 300 && r.status < 400 && loc) { url = new URL(loc, url).href; req = {}; continue; }
+      return r;
+    }
+    throw new Error(`${host}: too many redirects`);
+  }
+  async function json<T>(path: string): Promise<T> {
+    const r = await call(path); const text = await r.text();
+    try { return JSON.parse(text) as T; } catch { throw new Error(`${host}${path.split('?')[0]} → not JSON (${r.status}): ${text.slice(0, 80)}`); }
   }
   async function term(): Promise<string> {
     if (process.env.BANNER_TERM) return process.env.BANNER_TERM;
-    const terms = (await (await call('/classSearch/getTerms?offset=1&max=20')).json()) as { code: string; description: string }[];
+    const terms = await json<{ code: string; description: string }[]>('/classSearch/getTerms?offset=1&max=20');
     const t = pickTerm(terms.filter((x) => !/summer|winter/i.test(x.description)), (x) => x.description) ?? terms[0]; if (!t) throw new Error(`${host}: no terms`); return t.code;
   }
   function toCourses(secs: B9Section[], termCode: string): CatalogCourse[] {
@@ -438,7 +451,7 @@ function banner9Source(schoolId: string, host: string): CourseSource {
     await call('/term/search?mode=search', { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded' }, body: `term=${termCode}&studyPath=&studyPathText=&startDatepicker=&endDatepicker=` });
     const all: B9Section[] = [];
     for (let offset = 0; offset < 5000; offset += 500) {
-      const d = (await (await call(`/searchResults/searchResults?txt_term=${termCode}&txt_subject=${encodeURIComponent(subject)}&pageOffset=${offset}&pageMaxSize=500&sortColumn=subjectDescription&sortDirection=asc`)).json()) as { data?: B9Section[]; totalCount?: number };
+      const d = await json<{ data?: B9Section[]; totalCount?: number }>(`/searchResults/searchResults?txt_term=${termCode}&txt_subject=${encodeURIComponent(subject)}&pageOffset=${offset}&pageMaxSize=500&sortColumn=subjectDescription&sortDirection=asc`);
       all.push(...(d.data ?? [])); if ((d.data?.length ?? 0) < 500) break;
     }
     return all;
@@ -448,7 +461,8 @@ function banner9Source(schoolId: string, host: string): CourseSource {
     async fetch() {
       const termCode = await term();
       await call('/term/search?mode=search', { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded' }, body: `term=${termCode}&studyPath=&studyPathText=&startDatepicker=&endDatepicker=` });
-      const subjects = (await (await call(`/classSearch/get_subject?searchTerm=&term=${termCode}&offset=1&max=500`)).json()) as { code: string }[];
+      await call('/classSearch/classSearch');
+      const subjects = await json<{ code: string }[]>(`/classSearch/get_subject?searchTerm=&term=${termCode}&offset=1&max=500`);
       const out: CatalogCourse[] = [];
       for (const sub of subjects) { out.push(...toCourses(await searchSubject(termCode, sub.code), termCode)); await new Promise((r) => setTimeout(r, 120)); }
       console.log(`  ${schoolId} banner9 ${termCode}: ${subjects.length} subjects → ${out.length} lectures`);
@@ -458,6 +472,81 @@ function banner9Source(schoolId: string, host: string): CourseSource {
   };
 }
 
+
+// ─── Harvard: my.harvard.edu 공개 과목 검색 (키 불필요) ─────────────────────
+// 검색 결과는 JSON 안에 이스케이프된 HTML 로 오고 15개씩 page=N 으로 넘어간다. term=2026+Fall · school=FAS 필터가 된다.
+// 과목마다 /course/sections/<id>/<offer>/<strm>/<session> 조각에 섹션별 요일(aria-label "Tuesday, selected")·시간·장소·교수가 있다.
+const HV = 'https://my.harvard.edu';
+const hvUnescape = (s: string) => s.replace(/\\"/g, '"').replace(/\\n/g, '\n').replace(/\\\//g, '/').replace(/\\u([0-9a-fA-F]{4})/g, (_, h) => String.fromCharCode(parseInt(h, 16)));
+const hvText = (h: string) => h.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&#039;|&#39;/g, "'").replace(/\s+/g, ' ').trim();
+const HV_DAYS: Record<string, number> = { Monday: 0, Tuesday: 1, Wednesday: 2, Thursday: 3, Friday: 4, Saturday: 5, Sunday: 6 };
+async function hvGet(url: string): Promise<string> {
+  for (let attempt = 0; ; attempt++) {
+    try { const r = await fetch(url, { headers: { 'user-agent': 'Mozilla/5.0 AroundU-importer' } }); if (r.ok) return hvUnescape(await r.text()); if (r.status < 500 || attempt >= 3) throw new Error(`${url} → ${r.status}`); }
+    catch (e) { if (attempt >= 3) throw e; }
+    await new Promise((res) => setTimeout(res, 2000 * 2 ** attempt));
+  }
+}
+function hvTermLabel(): string { if (process.env.HARVARD_TERM) return process.env.HARVARD_TERM; const c = currentSeason(); return `${c.year} ${c.season === 'Summer' ? 'Fall' : c.season}`; }
+interface HvCard { key: string; code: string; title: string; sectionsUrl?: string; inline: string; dept: string }
+function hvCards(html: string): HvCard[] {
+  const out: HvCard[] = [];
+  for (const card of html.split(/data-course-id="/).slice(1)) {
+    const code = hvText(/badge badge-light relative md:-top-0\.5">([\s\S]*?)<\/span>/.exec(card)?.[1] ?? '').replace(/\s+/g, ' ');
+    const title = hvText(/<h2[^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/.exec(card)?.[1] ?? '');
+    const sectionsUrl = /data-url="(\/course\/sections\/[^"]+)"/.exec(card)?.[1];
+    const dept = hvText(/href="\/school\/[A-Z]+"[\s\S]*?<\/a>[\s\S]*?·[\s\S]*?>([^<]{2,60})</.exec(card)?.[1] ?? '') || code.replace(/\s?\d.*$/, '');
+    const key = `${/^(\d+)"/.exec(card)?.[1] ?? code}-${/data-crse-offer-nbr="(\d+)"/.exec(card.slice(0, 200))?.[1] ?? '1'}`;
+    if (code && title) out.push({ key, code, title, sectionsUrl, inline: card, dept });
+  }
+  return out;
+}
+function hvSections(html: string): { no: string; location?: string; instructor?: string; meetings: Meeting[] }[] {
+  const out: { no: string; location?: string; instructor?: string; meetings: Meeting[] }[] = [];
+  // 섹션이 여럿이면 "Section 001" 으로 나뉘고, 하나면 카드에 요일·시간이 바로 있다
+  const parts = /Section \d{3,4}\b/.test(html) ? html.split(/Section (?=\d{3,4}\b)/).slice(1) : [`001 ${html}`];
+  for (const sec of parts) {
+    const no = /^(\d{3,4})/.exec(sec)?.[1] ?? '';
+    const location = hvText(/class="pt-1 font-normal">([\s\S]*?)<\/div>/.exec(sec)?.[1] ?? '');
+    const instructor = hvText(/class="link-body">([\s\S]*?)<\/span>/.exec(sec)?.[1] ?? '') || undefined;
+    const days = [...sec.matchAll(/aria-label="(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday), selected"/g)].map((m) => HV_DAYS[m[1]]);
+    const t = /(\d{1,2}:\d{2}\s*[ap]m)\s*-\s*(\d{1,2}:\d{2}\s*[ap]m)/i.exec(sec);
+    const meetings: Meeting[] = [];
+    if (t && days.length) { try { const st = parseTime(t[1].replace(/\s+/g, '')), en = parseTime(t[2].replace(/\s+/g, '')); for (const d of days) meetings.push({ day: d, start: st, end: en }); } catch { /* odd time */ } }
+    out.push({ no, location: location && !/^TBA$/i.test(location) ? location : undefined, instructor, meetings: uniq(meetings) });
+  }
+  return out;
+}
+async function harvardCourses(cards: HvCard[], term: string): Promise<CatalogCourse[]> {
+  const out: CatalogCourse[] = [];
+  for (const card of cards) {
+    const html = card.sectionsUrl ? await hvGet(`${HV}${card.sectionsUrl}`) : card.inline;
+    const secs = hvSections(html).filter((x) => x.meetings.length);
+    const baseId = courseId('s_harvard', card.code);
+    const taken = new Set(out.map((c) => c.id));
+    secs.forEach((sec, i) => out.push({ id: i === 0 && !taken.has(baseId) ? baseId : `${baseId}_${sec.no}${taken.has(`${baseId}_${sec.no}`) ? `_${card.key}` : ''}`, schoolId: 's_harvard', code: card.code, title: secs.length > 1 ? `${card.title} (Sec ${sec.no})` : card.title, department: card.dept, instructor: sec.instructor, location: sec.location, meetings: sec.meetings, term }));
+    if (card.sectionsUrl) await new Promise((r) => setTimeout(r, 120));
+  }
+  return out;
+}
+async function harvard(): Promise<CatalogCourse[]> {
+  const term = hvTermLabel(); const school = process.env.HARVARD_SCHOOL ?? 'FAS';
+  const cards: HvCard[] = []; const seen = new Set<string>();
+  for (let page = 1; page < 2000; page++) {
+    const pageCards = hvCards(await hvGet(`${HV}/search/?q=&term=${encodeURIComponent(term)}&school=${school}&page=${page}`));
+    if (!pageCards.length) break;
+    const fresh = pageCards.filter((c) => !seen.has(c.key)); fresh.forEach((c) => seen.add(c.key)); cards.push(...fresh);
+    if (!fresh.length) break; // 마지막 페이지를 넘기면 같은 페이지가 반복된다
+    await new Promise((r) => setTimeout(r, 120));
+  }
+  const out = await harvardCourses(cards, term);
+  console.log(`  harvard ${term} ${school}: ${cards.length} courses → ${out.length} sections with times`);
+  return out;
+}
+async function harvardLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
+  const cards = hvCards(await hvGet(`${HV}/search/?q=${encodeURIComponent(c.code)}&term=${encodeURIComponent(c.term)}`)).filter((x) => x.code === c.code);
+  return (await harvardCourses(cards, c.term)).find((x) => x.id === c.id) ?? null;
+}
 
 // ─── 표본 재확인 (agent) ───────────────────────────────────────────────────
 export interface CourseSource { schoolId: string; fetch(): Promise<CatalogCourse[]>; lookup?(course: CatalogCourse): Promise<CatalogCourse | null> }
@@ -487,6 +576,7 @@ export const COURSE_SOURCES: Record<string, CourseSource> = {
   berkeley: { schoolId: 's_berkeley', fetch: berkeley, lookup: berkeleyLookup },
   cornell: { schoolId: 's_cornell', fetch: cornell, lookup: cornellLookup },
   umd: { schoolId: 's_umd', fetch: umd, lookup: umdLookup },
+  harvard: { schoolId: 's_harvard', fetch: harvard, lookup: harvardLookup },
 };
 export const adapters: Record<string, () => Promise<CatalogCourse[]>> = Object.fromEntries(Object.entries(COURSE_SOURCES).map(([k, v]) => [k, v.fetch]));
 

@@ -16,6 +16,8 @@ const CODE_RE: Record<string, RegExp> = {
   s_notredame: /^[A-Z]{2,5} \d{5}[A-Z]?$/,
   s_dartmouth: /^[A-Z]{3,5} \d{1,3}(\.\d{1,2})?$/,
   s_ucr: /^[A-Z]{2,5} \d{1,3}[A-Z]{0,2}$/,
+  s_ucmerced: /^[A-Z]{2,5} \d{1,3}[A-Z]{0,2}$/,
+  s_harvard: /^[A-Z][A-Z&-]{1,11} [A-Z0-9]{1,7}$/,
 };
 const toMin = (hhmm: string) => { const [h, m] = hhmm.split(':').map(Number); return h * 60 + m; };
 
