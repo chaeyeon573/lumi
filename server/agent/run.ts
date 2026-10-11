@@ -109,7 +109,9 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
   // 2. 동아리 디렉터리: 탐지 결과는 detect:<id> 실행 기록에 남겨 재사용한다 (30일마다 다시 탐지)
   let host = latest.get(`detect:${row.id}`)?.summary.host as string | undefined;
   let platform = latest.get(`detect:${row.id}`)?.summary.platform as string | undefined;
-  if (!host || hoursSince(latest.get(`detect:${row.id}`)?.finishedAt) > 24 * 30) {
+  const lastDetect = latest.get(`detect:${row.id}`);
+  // 못 찾았으면 하루 뒤 다시, 찾았으면 30일 뒤 다시 확인한다
+  if (!host || hoursSince(lastDetect?.finishedAt) > (lastDetect?.status === 'applied' ? 24 * 30 : 24)) {
     const startedAt = new Date().toISOString();
     const d = await detectOrgsPlatform(row.short, row.email_domain, row.orgs_host || undefined);
     host = d?.host; platform = d?.platform;

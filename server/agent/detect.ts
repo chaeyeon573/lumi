@@ -26,7 +26,8 @@ export function candidates(short: string, emailDomain: string): { platform: Dete
 }
 
 export async function detectOrgsPlatform(short: string, emailDomain: string, override?: string): Promise<Detected | null> {
-  const list = override ? [{ platform: (/campuslabs\.com\/engage/.test(override) ? 'engage' : 'campusgroups') as Detected['platform'], host: override }] : candidates(short, emailDomain);
+  // 직접 적어 준 주소는 어느 플랫폼인지 모를 수 있다(예: callink.berkeley.edu 는 Engage) — 둘 다 시도한다
+  const list: { platform: Detected['platform']; host: string }[] = override ? [{ platform: 'engage', host: override.replace(/\/+$/, '') }, { platform: 'campusgroups', host: override.replace(/\/+$/, '') }] : candidates(short, emailDomain);
   for (const c of list) {
     if (c.platform === 'engage') {
       const r = await get(`${c.host}/api/discovery/search/organizations?top=1`);
