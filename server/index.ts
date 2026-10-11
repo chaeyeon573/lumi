@@ -250,7 +250,7 @@ app.post('/api/system/reset', auth, wrap(async (req: Req) => {
 
 /** 데이터 에이전트 최근 실행 — 학교별 마지막 결과와 최근 기록 (읽기 전용) */
 app.get('/api/agent/status', wrap(async () => {
-  const runs = await store.listAgentRuns(100);
+  const runs = await store.listAgentRuns(2000);
   const latest: Record<string, { status: string; finishedAt: string; summary: Record<string, unknown> }> = {};
   for (const r of runs) if (!latest[r.task]) latest[r.task] = { status: r.status, finishedAt: r.finishedAt, summary: r.summary };
   return { latest, recent: runs.slice(0, 30) };
