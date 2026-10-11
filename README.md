@@ -206,10 +206,10 @@ npm run import:opportunities -- server/data/opportunities-berkeley.csv
 
 ### 데이터 에이전트 (24시간 수집·검증)
 
-사람이 배포 때마다 수집기를 돌리는 대신, Railway **cron 서비스**(`agent`, 같은 리포·브랜치, Cron Schedule `0 10 * * *` = 매일 새벽 3시 PT, Start Command `npm run agent`, Build Command `npm run typecheck:server`)가 실행한다. 서비스별 시작 명령·헬스체크·cron 은 Railway 서비스 설정에 있고 `railway.json` 은 빌드 설정만 가진다 (Railway 가 서비스별 설정 파일을 더는 받지 않는다). 변수는 웹 서비스 것을 참조한다 (`DATABASE_URL=${{Postgres.DATABASE_URL}}`, `RESEND_API_KEY=${{AroundU.RESEND_API_KEY}}`, `MAIL_FROM`, `AGENT_NOTIFY_EMAIL`).
+사람이 배포 때마다 수집기를 돌리는 대신, Railway 의 **상시 실행 워커 서비스**(`agent`, 같은 리포·브랜치, Start Command `npm run agent:worker`, Build Command `npm run typecheck:server`, 죽으면 자동 재시작)가 `server/data/schools.csv` 의 학교를 계속 돈다. 학교를 한 줄 추가하면 1분 안에 집어 든다. 서비스별 시작 명령·헬스체크·cron 은 Railway 서비스 설정에 있고 `railway.json` 은 빌드 설정만 가진다 (Railway 가 서비스별 설정 파일을 더는 받지 않는다). 변수는 웹 서비스 것을 참조한다 (`DATABASE_URL=${{Postgres.DATABASE_URL}}`, `RESEND_API_KEY=${{AroundU.RESEND_API_KEY}}`, `MAIL_FROM`, `AGENT_NOTIFY_EMAIL`).
 
-- 매일: Berkeley · Stanford · MIT 수업 시간표를 원본에서 다시 가져온다
-- 일요일: 동아리 디렉터리(CalLink · Engage · Cardinal Engage · MIT Engage)와 Greek 공식 명단도 다시 가져온다
+- 새 학교: 앱에 등록 → 동아리 플랫폼 자동 탐지(CampusLabs Engage / CampusGroups, `server/agent/detect.ts`) → 동아리 가져오기 → 수업 어댑터가 없으면 `adapter:<school>` 로 기록하고 운영자에게 메일
+- 있는 학교: 수업 시간표는 하루마다, 동아리는 7일마다 원본에서 다시 가져온다 (Greek 공식 명단은 `npm run fetch:greeks -- <school>` 로 따로)
 - 수업은 **검증을 통과해야만 반영**된다 (`server/agent/validate.ts`): 코드 형식·요일·시간 범위 규칙 → 지난 목록 대비 20% 넘게 줄면 중단 → 무작위 12과목을 원본에서 다시 읽어 시간·강의실 대조(90% 이상 일치)
 - 결과는 `agent_runs` 테이블에 남고 `GET /api/agent/status` 로 본다. 거부·오류는 `AGENT_NOTIFY_EMAIL` 로 메일이 간다
 - 학생 신고 → 원본 대조 → 수정 반영 루프는 아직 없다 (다음 단계)

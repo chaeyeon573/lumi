@@ -20,7 +20,8 @@
     "fetch:courses": "tsx --tsconfig server/tsconfig.json server/scripts/fetch-courses.ts",
     "fetch:greeks": "tsx --tsconfig server/tsconfig.json server/scripts/fetch-greeks.ts",
     "import:opportunities": "tsx --tsconfig server/tsconfig.json server/scripts/import-opportunities.ts",
-    "agent": "tsx --tsconfig server/tsconfig.json server/agent/run.ts"
+    "agent": "tsx --tsconfig server/tsconfig.json server/agent/run.ts",
+    "agent:worker": "AGENT_MODE=worker tsx --tsconfig server/tsconfig.json server/agent/run.ts"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

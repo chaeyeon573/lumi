@@ -1,0 +1,16 @@
+id,name,short,email_domain,region,lat,lng,orgs_host,courses_source
+s_berkeley,UC Berkeley,berkeley,berkeley.edu,Berkeley,37.8719,-122.2585,https://callink.berkeley.edu,berkeley
+s_stanford,Stanford University,stanford,stanford.edu,Palo Alto,37.4275,-122.1697,https://cardinalengage.stanford.edu,stanford
+s_mit,MIT,mit,mit.edu,Cambridge,42.3601,-71.0942,https://engage.mit.edu,mit
+s_sfsu,San Francisco State,sfsu,sfsu.edu,San Francisco,37.7219,-122.4782,https://sfsu.campuslabs.com/engage,
+s_ucla,UCLA,ucla,ucla.edu,Los Angeles,34.0689,-118.4452,,
+s_ucsd,UC San Diego,ucsd,ucsd.edu,La Jolla,32.8801,-117.2340,,
+s_ucdavis,UC Davis,ucdavis,ucdavis.edu,Davis,38.5382,-121.7617,,
+s_uci,UC Irvine,uci,uci.edu,Irvine,33.6405,-117.8443,,
+s_ucsb,UC Santa Barbara,ucsb,ucsb.edu,Santa Barbara,34.4140,-119.8489,,
+s_ucsc,UC Santa Cruz,ucsc,ucsc.edu,Santa Cruz,36.9916,-122.0583,,
+s_ucr,UC Riverside,ucr,ucr.edu,Riverside,33.9737,-117.3281,,
+s_ucmerced,UC Merced,ucmerced,ucmerced.edu,Merced,37.3660,-120.4240,,
+s_sjsu,San Jose State,sjsu,sjsu.edu,San Jose,37.3352,-121.8811,,
+s_scu,Santa Clara University,scu,scu.edu,Santa Clara,37.3496,-121.9390,,
+s_usc,USC,usc,usc.edu,Los Angeles,34.0224,-118.2851,,
