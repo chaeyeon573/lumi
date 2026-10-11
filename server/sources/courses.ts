@@ -4,6 +4,7 @@
  *   mit       FireRoad API (키 불필요)
  *   berkeley  SIS Class API (키 있으면) → 없으면 공개 Class Schedule(classes.berkeley.edu)
  *   cornell   Class Roster 공개 JSON API (classes.cornell.edu/api/2.0, 키 불필요)
+ *   umd       Testudo Schedule of Classes 공개 HTML (app.testudo.umd.edu/soc)
  * lookup(course) 는 한 과목을 원본에서 다시 읽어 온다 — agent 의 표본 검증용. 없으면 null.
  */
 import type { CatalogCourse } from '@core/api/types';
@@ -254,6 +255,73 @@ async function cornellLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   return (await cornellSubject(c.term, c.department)).find((x) => x.id === c.id) ?? null;
 }
 
+// ─── Maryland: Testudo Schedule of Classes (공개 HTML, 키 불필요) ────────────
+const UMD = 'https://app.testudo.umd.edu/soc';
+const umdText = (h: string) => h.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+async function umdGet(url: string): Promise<string> {
+  for (let attempt = 0; ; attempt++) {
+    try { const r = await fetch(url, { headers: { 'user-agent': 'Mozilla/5.0 AroundU-importer' } }); if (r.ok) return await r.text(); if (r.status < 500 || attempt >= 3) throw new Error(`${url} → ${r.status}`); }
+    catch (e) { if (attempt >= 3) throw e; }
+    await new Promise((res) => setTimeout(res, 2000 * 2 ** attempt));
+  }
+}
+/** 학기 id (202608 = Fall 2026, 202701 = Spring 2027): 11월부터는 다음 봄, 그 외엔 진행 중인 학기 */
+function umdTerm(): string { if (process.env.UMD_TERM) return process.env.UMD_TERM; const d = new Date(); const y = d.getFullYear(); const m = d.getMonth() + 1; return m >= 11 ? `${y + 1}01` : m <= 5 ? `${y}01` : `${y}08`; }
+function umdParseSections(html: string, term: string, titles: Map<string, { title: string; units?: number }>): CatalogCourse[] {
+  const out: CatalogCourse[] = []; const seen = new Set<string>();
+  for (const courseHtml of html.split(/<div class="course-sections[^"]*"/).slice(1)) {
+    const courseCode = /name="courseId" value="([A-Z]{4}\d{3}[A-Z]{0,2})"/.exec(courseHtml)?.[1] ?? /class="course-id">\s*([A-Z0-9]+)/.exec(courseHtml)?.[1];
+    if (!courseCode) continue;
+    for (const secHtml of courseHtml.split(/<div class="section delivery-[^"]*"|<div class="section"/).slice(1)) {
+      const sectionNo = umdText(/class="section-id">([\s\S]*?)<\/span>/.exec(secHtml)?.[1] ?? '');
+      const instructor = umdText(/class="section-instructor">([\s\S]*?)<\/span>/.exec(secHtml)?.[1] ?? '') || undefined;
+      const meetings: Meeting[] = []; let location: string | undefined;
+      for (const row of secHtml.split(/<div class="row">/).slice(1)) {
+        if (/class="class-type">/.test(row)) continue; // Discussion / Lab 은 시간표에 넣지 않는다
+        const days = umdText(/class="section-days">([\s\S]*?)<\/span>/.exec(row)?.[1] ?? '');
+        const st = umdText(/class="class-start-time">([\s\S]*?)<\/span>/.exec(row)?.[1] ?? ''); const en = umdText(/class="class-end-time">([\s\S]*?)<\/span>/.exec(row)?.[1] ?? '');
+        if (!days || !st || !en) continue;
+        const bld = umdText(/class="building-code">([\s\S]*?)<\/span>/.exec(row)?.[1] ?? ''); const room = umdText(/class="class-room">([\s\S]*?)<\/span>/.exec(row)?.[1] ?? '');
+        location ||= [bld, room].filter(Boolean).join(' ') || undefined;
+        try { for (const day of parseDays(days)) meetings.push({ day, start: parseTime(st), end: parseTime(en) }); } catch { /* skip odd time text */ }
+      }
+      if (!meetings.length) continue;
+      const baseId = courseId('s_umd', courseCode);
+      const id = seen.has(baseId) ? `${baseId}_${sectionNo}` : baseId;
+      if (seen.has(id)) continue; seen.add(id);
+      const t = titles.get(courseCode);
+      out.push({ id, schoolId: 's_umd', code: courseCode, title: t?.title ?? courseCode, department: courseCode.slice(0, 4), instructor, location, meetings: uniq(meetings), term, units: t?.units });
+    }
+  }
+  for (const c of out) if (out.some((o) => o.id.startsWith(`${c.id}_`))) c.title = `${c.title} (Sec 0101)`;
+  for (const c of out) { const m = /_(\d{4})$/.exec(c.id); if (m) c.title = `${c.title} (Sec ${m[1]})`; }
+  return out;
+}
+async function umd(): Promise<CatalogCourse[]> {
+  const term = umdTerm();
+  const home = await umdGet(`${UMD}/`);
+  const depts = [...new Set([...home.matchAll(/class="prefix-abbrev[^"]*">([A-Z]{4})<\/span>/g)].map((m) => m[1]))];
+  if (!depts.length) throw new Error('umd: no departments on the schedule page');
+  const out: CatalogCourse[] = [];
+  for (const dept of depts) {
+    const list = await umdGet(`${UMD}/search?courseId=${dept}&termId=${term}&_openSectionsOnly=on&courseLevelFilter=ALL&teachingCenter=ALL&_classDay1=on&_classDay2=on&_classDay3=on&_classDay4=on&_classDay5=on`);
+    const titles = new Map<string, { title: string; units?: number }>();
+    for (const m of list.matchAll(/class="course-id">\s*([A-Z]{4}\d{3}[A-Z]{0,2})\s*<[\s\S]*?class="course-title">([\s\S]*?)<\/span>[\s\S]*?class="course-min-credits">\s*(\d+)/g)) titles.set(m[1], { title: umdText(m[2]), units: Number(m[3]) || undefined });
+    const ids = [...titles.keys()];
+    for (let i = 0; i < ids.length; i += 20) {
+      const html = await umdGet(`${UMD}/${term}/sections?courseIds=${ids.slice(i, i + 20).join(',')}`);
+      out.push(...umdParseSections(html, term, titles));
+      await new Promise((r) => setTimeout(r, 150));
+    }
+  }
+  console.log(`  umd ${term}: ${depts.length} departments, ${out.length} lectures`);
+  return out;
+}
+async function umdLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
+  const html = await umdGet(`${UMD}/${c.term}/sections?courseIds=${c.code}`);
+  return umdParseSections(html, c.term, new Map([[c.code, { title: c.title.replace(/ \(Sec \d{4}\)$/, ''), units: c.units }]])).find((x) => x.id === c.id) ?? null;
+}
+
 // ─── 표본 재확인 (agent) ───────────────────────────────────────────────────
 export interface CourseSource { schoolId: string; fetch(): Promise<CatalogCourse[]>; lookup?(course: CatalogCourse): Promise<CatalogCourse | null> }
 
@@ -281,5 +349,6 @@ export const COURSE_SOURCES: Record<string, CourseSource> = {
   mit: { schoolId: 's_mit', fetch: mit, lookup: mitLookup },
   berkeley: { schoolId: 's_berkeley', fetch: berkeley, lookup: berkeleyLookup },
   cornell: { schoolId: 's_cornell', fetch: cornell, lookup: cornellLookup },
+  umd: { schoolId: 's_umd', fetch: umd, lookup: umdLookup },
 };
 export const adapters: Record<string, () => Promise<CatalogCourse[]>> = Object.fromEntries(Object.entries(COURSE_SOURCES).map(([k, v]) => [k, v.fetch]));

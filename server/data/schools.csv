@@ -46,7 +46,7 @@ s_bc,Boston College,bc,bc.edu,Chestnut Hill,42.3355,-71.1685,,,
 s_ucsc,UC Santa Cruz,ucsc,ucsc.edu,Santa Cruz,36.9916,-122.0583,,,https://catalog.ucsc.edu/
 s_osu,Ohio State University,osu,osu.edu,Columbus,40.0067,-83.0305,,,https://courses.osu.edu/
 s_purdue,Purdue University,purdue,purdue.edu,West Lafayette,40.4237,-86.9212,,,
-s_umd,University of Maryland,umd,umd.edu,College Park,38.9869,-76.9426,,,https://academiccatalog.umd.edu/
+s_umd,University of Maryland,umd,umd.edu,College Park,38.9869,-76.9426,,umd,https://academiccatalog.umd.edu/
 s_lehigh,Lehigh University,lehigh,lehigh.edu,Bethlehem,40.6069,-75.3783,,,https://catalog.lehigh.edu/
 s_tamu,Texas A&M University,tamu,tamu.edu,College Station,30.6187,-96.3365,,,https://catalog.tamu.edu/
 s_umn,University of Minnesota,umn,umn.edu,Minneapolis,44.9740,-93.2277,,,https://catalog.umn.edu/
