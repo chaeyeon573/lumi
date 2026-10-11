@@ -1,11 +1,12 @@
 id,name,short,email_domain,region,lat,lng,orgs_host,courses_source,catalog_url
+s_ucmerced,UC Merced,ucmerced,ucmerced.edu,Merced,37.3660,-120.4240,,banner9:https://reg-prod.ec.ucmerced.edu,
+s_harvard,Harvard University,harvard,harvard.edu,Cambridge,42.3770,-71.1167,,harvard,
 s_berkeley,UC Berkeley,berkeley,berkeley.edu,Berkeley,37.8719,-122.2585,https://callink.berkeley.edu,berkeley,
 s_stanford,Stanford University,stanford,stanford.edu,Palo Alto,37.4275,-122.1697,https://cardinalengage.stanford.edu,stanford,
 s_mit,MIT,mit,mit.edu,Cambridge,42.3601,-71.0942,https://engage.mit.edu,mit,
 s_sfsu,San Francisco State,sfsu,sfsu.edu,San Francisco,37.7219,-122.4782,https://sfsu.campuslabs.com/engage,,https://bulletin.sfsu.edu/
 s_ucla,UCLA,ucla,ucla.edu,Los Angeles,34.0689,-118.4452,,,
 s_princeton,Princeton University,princeton,princeton.edu,Princeton,40.3431,-74.6551,,,
-s_harvard,Harvard University,harvard,harvard.edu,Cambridge,42.3770,-71.1167,,harvard,
 s_yale,Yale University,yale,yale.edu,New Haven,41.3163,-72.9223,,,https://catalog.yale.edu/
 s_upenn,University of Pennsylvania,upenn,upenn.edu,Philadelphia,39.9522,-75.1932,,fose:https://courses.upenn.edu,
 s_caltech,Caltech,caltech,caltech.edu,Pasadena,34.1377,-118.1253,,,
@@ -51,4 +52,3 @@ s_lehigh,Lehigh University,lehigh,lehigh.edu,Bethlehem,40.6069,-75.3783,,,https:
 s_tamu,Texas A&M University,tamu,tamu.edu,College Station,30.6187,-96.3365,,,https://catalog.tamu.edu/
 s_umn,University of Minnesota,umn,umn.edu,Minneapolis,44.9740,-93.2277,,,https://catalog.umn.edu/
 s_ucr,UC Riverside,ucr,ucr.edu,Riverside,33.9737,-117.3281,,banner9:https://registrationssb.ucr.edu,https://catalog.ucr.edu/courses/
-s_ucmerced,UC Merced,ucmerced,ucmerced.edu,Merced,37.3660,-120.4240,,banner9:https://reg-prod.ec.ucmerced.edu,

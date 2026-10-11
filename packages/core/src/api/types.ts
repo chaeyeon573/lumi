@@ -134,6 +134,9 @@ export interface CatalogCourse {
   meetings: { day: number; start: string; end: string }[];
   term: string;
   units?: number;
+  /** 과목 공식 상세 페이지 (설명·선수과목·담당). 학교가 공개했으면 실라버스 링크 */
+  url?: string;
+  syllabusUrl?: string;
 }
 
 /** Plan Together 생성 입력 */

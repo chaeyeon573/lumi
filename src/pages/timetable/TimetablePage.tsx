@@ -81,7 +81,7 @@ export function TimetablePage() {
     if (!me || !editing) return;
     const name = `${c.code} ${c.title}`.slice(0, 60);
     const hue = editing.hue;
-    const rows: Course[] = c.meetings.map((m) => ({ id: uid('c'), name, day: m.day, start: m.start, end: m.end, room: c.location, professor: c.instructor, hue }));
+    const rows: Course[] = c.meetings.map((m) => ({ id: uid('c'), name, day: m.day, start: m.start, end: m.end, room: c.location, professor: c.instructor, url: c.url, syllabusUrl: c.syllabusUrl, hue }));
     setBusy(true);
     try { await run(() => api.users.update(me.id, { timetable: [...me.timetable, ...rows] }), `${rows.length}${t('개 수업 시간 추가')}`); setEditing(null); setCatalogQ(''); } catch { /* */ } finally { setBusy(false); }
   };
@@ -205,10 +205,13 @@ export function TimetablePage() {
                 {catalog && catalog.length > 0 && (
                   <div className="max-h-44 overflow-y-auto divide-y divide-line rounded-xl bg-white">
                     {catalog.slice(0, 20).map((c) => (
-                      <button key={c.id} type="button" disabled={busy} onClick={() => addFromCatalog(c)} className="w-full text-left px-3 py-2 press">
-                        <div className="text-[13px] font-semibold">{c.code} <span className="font-medium text-ink-2">{c.title}</span></div>
-                        <div className="text-[11px] text-ink-3">{c.meetings.map((m) => `${DAY_LABELS[m.day]} ${m.start}–${m.end}`).join(' · ')}{c.instructor ? ` · ${c.instructor}` : ''}</div>
-                      </button>
+                      <div key={c.id} className="flex items-start gap-2 px-3 py-2">
+                        <button type="button" disabled={busy} onClick={() => addFromCatalog(c)} className="flex-1 min-w-0 text-left press">
+                          <div className="text-[13px] font-semibold">{c.code} <span className="font-medium text-ink-2">{c.title}</span></div>
+                          <div className="text-[11px] text-ink-3">{c.meetings.length ? c.meetings.map((m) => `${DAY_LABELS[m.day]} ${m.start}–${m.end}`).join(' · ') : t('시간 미정')}{c.location ? ` · ${c.location}` : ''}{c.instructor ? ` · ${c.instructor}` : ''}</div>
+                        </button>
+                        {(c.syllabusUrl || c.url) && <a href={c.syllabusUrl ?? c.url} target="_blank" rel="noreferrer" className="shrink-0 text-[11px] font-semibold text-primary underline pt-0.5">{c.syllabusUrl ? t('실라버스') : t('과목 정보')}</a>}
+                      </div>
                     ))}
                   </div>
                 )}

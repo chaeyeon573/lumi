@@ -55,6 +55,9 @@ export interface Course {
   /** 강의실 — 본인에게만 보이며 절대 공개되지 않는다 */
   room?: string;
   professor?: string;
+  /** 학교 수업 목록에서 추가했으면 과목 상세·실라버스 링크 */
+  url?: string;
+  syllabusUrl?: string;
   hue: number;
 }
 

@@ -41,7 +41,7 @@ async function stanford(): Promise<CatalogCourse[]> {
         for (const day of parseDays(days)) meetings.push({ day, start: parseTime(st.replace(/:00 /, ' ')), end: parseTime(en.replace(/:00 /, ' ')) });
       }
       if (!meetings.length) continue;
-      out.push({ id: courseId('s_stanford', code), schoolId: 's_stanford', code, title: g('title'), department: g('subject'), instructor: instructor || undefined, location: location || undefined, meetings: uniq(meetings), term: `${term} ${g('year') || ''}`.trim(), units: Number(g('unitsMax')) || undefined });
+      out.push({ id: courseId('s_stanford', code), schoolId: 's_stanford', code, title: g('title'), department: g('subject'), instructor: instructor || undefined, location: location || undefined, meetings: uniq(meetings), term: `${term} ${g('year') || ''}`.trim(), units: Number(g('unitsMax')) || undefined, url: `https://explorecourses.stanford.edu/search?view=catalog&q=${encodeURIComponent(code)}` });
     }
     console.log(`  ${subj}: ${out.length}`);
   }
@@ -76,7 +76,7 @@ async function mit(): Promise<CatalogCourse[]> {
   const term = process.env.MIT_TERM ?? 'fall';
   return all.filter((c) => c.schedule && (term === 'fall' ? c.offered_fall !== false : c.offered_spring !== false)).map((c) => {
     const { meetings, location } = mitSchedule(c.schedule!);
-    return { id: courseId('s_mit', c.subject_id), schoolId: 's_mit', code: c.subject_id, title: c.title, department: c.subject_id.split('.')[0], instructor: c.instructors?.[0], location, meetings, term: `${term === 'fall' ? 'Fall' : 'Spring'} ${new Date().getFullYear()}`, units: c.total_units };
+    return { id: courseId('s_mit', c.subject_id), schoolId: 's_mit', code: c.subject_id, title: c.title, department: c.subject_id.split('.')[0], instructor: c.instructors?.[0], location, meetings, term: `${term === 'fall' ? 'Fall' : 'Spring'} ${new Date().getFullYear()}`, units: c.total_units, url: `https://student.mit.edu/catalog/search.cgi?search=${encodeURIComponent(c.subject_id)}` };
   }).filter((c) => c.meetings.length > 0);
 }
 
@@ -134,6 +134,7 @@ async function berkeleyPublic(): Promise<CatalogCourse[]> {
         const subjKey = rawCode.replace(/\s+\S+$/, '');
         const code = `${BERKELEY_ABBR[subjKey] ?? BERKELEY_ABBR[subj] ?? subjKey} ${num.length ? rawCode.slice(subjKey.length).trim() : ''}`.trim();
         const title = text(row.match(/class="st--title"[^>]*>\s*<h2>([\s\S]*?)<\/h2>/)?.[1] ?? '');
+        const contentPath = /href="(\/content\/[^"]+)"/.exec(row)?.[1];
         const instructor = field(row, 'st--instructors') || undefined;
         const department = text(row.match(/offered through[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/)?.[1] ?? '') || subject;
         const units = Number(text(row.match(/class="st--details-unit"[^>]*>([\s\S]*?)<\/div>/)?.[1] ?? '').replace(/Units:\s*/i, '').split(/[^\d.]/)[0]) || undefined;
@@ -153,7 +154,7 @@ async function berkeleyPublic(): Promise<CatalogCourse[]> {
         const first = !byId.has(baseId);
         const id = first ? baseId : `${baseId}_${sectionNo}`;
         if (byId.has(id)) { const prev = byId.get(id)!; prev.meetings = uniq([...prev.meetings, ...meetings]); continue; }
-        const course: CatalogCourse = { id, schoolId: 's_berkeley', code, title, department, instructor, location, meetings: uniq(meetings), term: termLabel, units };
+        const course: CatalogCourse = { id, schoolId: 's_berkeley', code, title, department, instructor, location, meetings: uniq(meetings), term: termLabel, units, url: contentPath ? `${BERKELEY_PUBLIC}${contentPath}` : undefined };
         sectionOf.set(id, sectionNo);
         byId.set(id, course); out.push(course); added++;
       }
@@ -235,7 +236,7 @@ async function cornellSubject(roster: string, subject: string): Promise<CatalogC
       if (!meetings.length) continue;
       const id = seen.has(baseId) ? `${baseId}_${sec.section}` : baseId;
       if (seen.has(id)) continue; seen.add(id);
-      out.push({ id, schoolId: 's_cornell', code, title: seen.size > 1 && id !== baseId ? `${c.titleLong} (Lec ${sec.section})` : c.titleLong, department: c.subject, instructor, location, meetings: uniq(meetings), term: roster, units: g.unitsMinimum });
+      out.push({ id, schoolId: 's_cornell', code, title: seen.size > 1 && id !== baseId ? `${c.titleLong} (Lec ${sec.section})` : c.titleLong, department: c.subject, instructor, location, meetings: uniq(meetings), term: roster, units: g.unitsMinimum, url: `https://classes.cornell.edu/browse/roster/${roster}/class/${c.subject}/${c.catalogNbr}` });
     }
   }
   // 섹션이 둘 이상인 과목은 첫 섹션 제목에도 번호를 붙인다
@@ -293,7 +294,7 @@ function umdParseSections(html: string, term: string, titles: Map<string, { titl
       const id = seen.has(baseId) ? `${baseId}_${sectionNo}` : baseId;
       if (seen.has(id)) continue; seen.add(id);
       const t = titles.get(courseCode);
-      out.push({ id, schoolId: 's_umd', code: courseCode, title: t?.title ?? courseCode, department: courseCode.slice(0, 4), instructor, location, meetings: uniq(meetings), term, units: t?.units });
+      out.push({ id, schoolId: 's_umd', code: courseCode, title: t?.title ?? courseCode, department: courseCode.slice(0, 4), instructor, location, meetings: uniq(meetings), term, units: t?.units, url: `${UMD}/${term}/${courseCode.slice(0, 4)}/${courseCode}` });
     }
   }
   for (const c of out) if (out.some((o) => o.id.startsWith(`${c.id}_`))) c.title = `${c.title} (Sec 0101)`;
@@ -368,7 +369,7 @@ function foseSource(schoolId: string, host: string): CourseSource {
         try { mts = JSON.parse(sec.meetingTimes!) as typeof mts; } catch { return; }
         const meetings = uniq(mts.filter((m) => m.start_time && m.end_time).map((m) => ({ day: Number(m.meet_day), start: hhmm(m.start_time), end: hhmm(m.end_time) })));
         if (!meetings.length) return;
-        out.push({ id: i === 0 ? baseId : `${baseId}_${sec.no}`, schoolId, code, title: picked.length > 1 ? `${sec.title} (Sec ${sec.no})` : sec.title, department: code.replace(/\s?\d.*$/, ''), instructor: sec.instr?.replace(/\//g, ', ') || undefined, meetings, term: srcdb });
+        out.push({ id: i === 0 ? baseId : `${baseId}_${sec.no}`, schoolId, code, title: picked.length > 1 ? `${sec.title} (Sec ${sec.no})` : sec.title, department: code.replace(/\s?\d.*$/, ''), instructor: sec.instr?.replace(/\//g, ', ') || undefined, meetings, term: srcdb, url: `${host}/?details&srcdb=${srcdb}&code=${encodeURIComponent(code)}` });
       });
     }
     return out;
@@ -389,7 +390,11 @@ function foseSource(schoolId: string, host: string): CourseSource {
       const crnByCourseSec = new Map(rows.map((r) => [`${r.code}#${r.no}`, r.crn]));
       for (const c of courses) {
         const no = /_(\w+)$/.exec(c.id)?.[1] ?? rows.find((r) => r.code === c.code && r.meetingTimes)?.no; const crn = crnByCourseSec.get(`${c.code}#${no}`); if (!crn) continue;
-        try { const d = (await fosePost(host, 'details', { group: `code:${c.code}`, key: `crn:${crn}`, srcdb, matched: `crn:${crn}` })) as { meeting_html?: string }; const room = / in <a[^>]*>([^<]+)<\/a>/.exec(d.meeting_html ?? '')?.[1] ?? / in ([^<]+)</.exec(d.meeting_html ?? '')?.[1]; if (room) c.location = room.trim(); } catch { /* no room */ }
+        try {
+          const d = (await fosePost(host, 'details', { group: `code:${c.code}`, key: `crn:${crn}`, srcdb, matched: `crn:${crn}` })) as { meeting_html?: string; syllabus?: string };
+          const room = / in <a[^>]*>([^<]+)<\/a>/.exec(d.meeting_html ?? '')?.[1] ?? / in ([^<]+)</.exec(d.meeting_html ?? '')?.[1]; if (room) c.location = room.trim();
+          const syl = /href="([^"]+)"/.exec(d.syllabus ?? '')?.[1]; if (syl) c.syllabusUrl = new URL(syl, host).href;
+        } catch { /* no room */ }
         await new Promise((res) => setTimeout(res, 80));
       }
       console.log(`  ${schoolId} fose ${srcdb}: ${rows.length} sections → ${courses.length} lectures`);
@@ -440,7 +445,7 @@ function banner9Source(schoolId: string, host: string): CourseSource {
       }
       if (!meetings.length) continue;
       const id = seen.has(baseId) ? `${baseId}_${s.sequenceNumber}` : baseId; if (seen.has(id)) continue; seen.add(id);
-      out.push({ id, schoolId, code, title: s.courseTitle, department: s.subject, instructor: s.faculty?.[0]?.displayName, location, meetings: uniq(meetings), term: termCode, units: s.creditHours ?? s.creditHourLow });
+      out.push({ id, schoolId, code, title: s.courseTitle, department: s.subject, instructor: s.faculty?.[0]?.displayName, location, meetings: uniq(meetings), term: termCode, units: s.creditHours ?? s.creditHourLow, url: `${H}/classSearch/classSearch` });
     }
     for (const c of out) if (out.some((o) => o.id.startsWith(`${c.id}_`))) c.title = `${c.title} (Sec 001)`;
     for (const c of out) { const m = /_(\d{3})$/.exec(c.id); if (m) c.title = `${c.title} (Sec ${m[1]})`; }
@@ -524,23 +529,36 @@ async function harvardCourses(cards: HvCard[], term: string): Promise<CatalogCou
     const secs = hvSections(html).filter((x) => x.meetings.length);
     const baseId = courseId('s_harvard', card.code);
     const taken = new Set(out.map((c) => c.id));
-    secs.forEach((sec, i) => out.push({ id: i === 0 && !taken.has(baseId) ? baseId : `${baseId}_${sec.no}${taken.has(`${baseId}_${sec.no}`) ? `_${card.key}` : ''}`, schoolId: 's_harvard', code: card.code, title: secs.length > 1 ? `${card.title} (Sec ${sec.no})` : card.title, department: card.dept, instructor: sec.instructor, location: sec.location, meetings: sec.meetings, term }));
+    const url = `${HV}/search/?q=${encodeURIComponent(card.code)}&term=${encodeURIComponent(term)}`;
+    secs.forEach((sec, i) => out.push({ id: i === 0 && !taken.has(baseId) ? baseId : `${baseId}_${sec.no}${taken.has(`${baseId}_${sec.no}`) ? `_${card.key}` : ''}`, schoolId: 's_harvard', code: card.code, title: secs.length > 1 ? `${card.title} (Sec ${sec.no})` : card.title, department: card.dept, instructor: sec.instructor, location: sec.location, meetings: sec.meetings, term, url }));
     if (card.sectionsUrl) await new Promise((r) => setTimeout(r, 120));
   }
   return out;
 }
 async function harvard(): Promise<CatalogCourse[]> {
   const term = hvTermLabel(); const school = process.env.HARVARD_SCHOOL ?? 'FAS';
-  const cards: HvCard[] = []; const seen = new Set<string>();
-  for (let page = 1; page < 2000; page++) {
-    const pageCards = hvCards(await hvGet(`${HV}/search/?q=&term=${encodeURIComponent(term)}&school=${school}&page=${page}`));
-    if (!pageCards.length) break;
-    const fresh = pageCards.filter((c) => !seen.has(c.key)); fresh.forEach((c) => seen.add(c.key)); cards.push(...fresh);
-    if (!fresh.length) break; // 마지막 페이지를 넘기면 같은 페이지가 반복된다
-    await new Promise((r) => setTimeout(r, 120));
+  // 전체 검색은 페이지마다 정렬이 흔들려 빠지는 과목이 생긴다 — 전체를 훑어 학과 접두어를 모으고, 학과별 검색(작고 안정적)으로 다시 받는다
+  const cards: HvCard[] = []; const seen = new Set<string>(); const subjects = new Set<string>();
+  const take = (list: HvCard[]) => { for (const c of list) { subjects.add(c.code.split(' ')[0]); if (!seen.has(c.key)) { seen.add(c.key); cards.push(c); } } };
+  const q = (query: string, page: number) => `${HV}/search/?q=${encodeURIComponent(query)}&term=${encodeURIComponent(term)}&school=${school}&page=${page}`;
+  let empty = 0;
+  for (let page = 1; page < 600 && empty < 2; page++) {
+    const pageCards = hvCards(await hvGet(q('', page)));
+    if (!pageCards.length) { empty++; continue; }
+    empty = 0; take(pageCards);
+    await new Promise((r) => setTimeout(r, 100));
+  }
+  for (const subj of subjects) {
+    for (let page = 1; page < 60; page++) {
+      const pageCards = hvCards(await hvGet(q(subj, page))).filter((c) => c.code.split(' ')[0] === subj);
+      if (!pageCards.length) break;
+      const before = seen.size; take(pageCards);
+      if (seen.size === before && page > 1) break;
+      await new Promise((r) => setTimeout(r, 100));
+    }
   }
   const out = await harvardCourses(cards, term);
-  console.log(`  harvard ${term} ${school}: ${cards.length} courses → ${out.length} sections with times`);
+  console.log(`  harvard ${term} ${school}: ${subjects.size} subjects, ${cards.length} courses → ${out.length} sections with times`);
   return out;
 }
 async function harvardLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
@@ -562,7 +580,7 @@ async function mitLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   const x = (await res.json()) as { subject_id: string; title: string; schedule?: string; instructors?: string[]; total_units?: number };
   if (!x.schedule) return null;
   const { meetings, location } = mitSchedule(x.schedule);
-  return { id: c.id, schoolId: 's_mit', code: x.subject_id, title: x.title, department: x.subject_id.split('.')[0], instructor: x.instructors?.[0], location, meetings, term: c.term, units: x.total_units };
+  return { id: c.id, schoolId: 's_mit', code: x.subject_id, title: x.title, department: x.subject_id.split('.')[0], instructor: x.instructors?.[0], location, meetings, term: c.term, units: x.total_units, url: c.url };
 }
 async function berkeleyLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   const subjectName = c.department; // 공개 시간표 어댑터가 department 에 학과 이름을 넣는다

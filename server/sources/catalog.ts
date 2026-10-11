@@ -53,7 +53,7 @@ const SEED_SUBJECTS = ['CS', 'CSCI', 'COMP', 'CMSC', 'CMPSC', 'EECS', 'ECE', 'EE
 
 /** "AFST 5505a, The Making of … Staff" / "AERO 101. Title. 1 Credits." → 코드·이름·학점 */
 const TITLE_RE = /^\[?\s*([A-Z][A-Z&]{1,5}\s?[A-Z]{0,2}\d{1,4}[A-Z]{0,4})\s*\]?[.,:\s–-]+\s*(.+?)\s*$/;
-function parseBlock(schoolId: string, block: string): CatalogCourse | null {
+function parseBlock(schoolId: string, block: string, origin?: string): CatalogCourse | null {
   const strong = /<strong>([\s\S]*?)<\/strong>/.exec(block)?.[1];
   const titleEl = /class="[^"]*courseblocktitle[^"]*"[^>]*>([\s\S]*?)<\/(?:p|div|h[1-6])>/.exec(block)?.[1];
   const detailTitle = /class="[^"]*detail-title[^"]*"[^>]*>([\s\S]*?)<\/(?:span|div)>/.exec(block)?.[1];
@@ -69,7 +69,7 @@ function parseBlock(schoolId: string, block: string): CatalogCourse | null {
   title = title.replace(/[\s.,]*\(?\d+(?:[.,–-]\d+)*\)?\s*(?:units?|credits?|credit hours?|hours?|points?)\.?\s*$/i, '').replace(/[.\s]+$/, '').trim();
   if (!code || !title || title.length < 3) return null;
   const units = /\b(\d+(?:\.\d+)?)(?:\s*[-–]\s*\d+(?:\.\d+)?)?\s*(?:units?|credits?|credit hours?|hours?|points?)\b/i.exec(strip(titleEl ?? block.slice(0, 600)))?.[1];
-  return { id: courseId(schoolId, code), schoolId, code, title: title.slice(0, 140), department: code.replace(/\s?\d.*$/, ''), meetings: [], term: 'catalog', units: units ? Number(units) : undefined };
+  return { id: courseId(schoolId, code), schoolId, code, title: title.slice(0, 140), department: code.replace(/\s?\d.*$/, ''), meetings: [], term: 'catalog', units: units ? Number(units) : undefined, url: origin ? `${origin}/search/?P=${encodeURIComponent(code)}` : undefined };
 }
 
 export interface CatalogResult { courses: CatalogCourse[]; subjects: string[]; subjectsWithCourses: number; root: string }
@@ -84,7 +84,7 @@ export async function fetchCourseLeaf(schoolId: string, rootUrl: string): Promis
     const blocks = xml.split(/<div class="courseblock[^"]*">/).slice(1);
     if (!blocks.length) continue;
     subjectsWithCourses++;
-    for (const b of blocks) { const c = parseBlock(schoolId, b); if (c && !byId.has(c.id)) byId.set(c.id, c); }
+    for (const b of blocks) { const c = parseBlock(schoolId, b, root.origin); if (c && !byId.has(c.id)) byId.set(c.id, c); }
     await new Promise((res) => setTimeout(res, 150));
   }
   return { courses: [...byId.values()], subjects, subjectsWithCourses, root: root.href };
