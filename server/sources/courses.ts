@@ -306,7 +306,8 @@ async function umd(): Promise<CatalogCourse[]> {
   if (!depts.length) throw new Error('umd: no departments on the schedule page');
   const out: CatalogCourse[] = [];
   for (const dept of depts) {
-    const list = await umdGet(`${UMD}/search?courseId=${dept}&termId=${term}&_openSectionsOnly=on&courseLevelFilter=ALL&teachingCenter=ALL&_classDay1=on&_classDay2=on&_classDay3=on&_classDay4=on&_classDay5=on`);
+    // 검색 폼의 필드가 다 있어야 결과를 준다 (빠지면 빈 폼 페이지가 온다)
+    const list = await umdGet(`${UMD}/search?courseId=${dept}&sectionId=&termId=${term}&_openSectionsOnly=on&creditCompare=&credits=&courseLevelFilter=ALL&instructor=&_facetoface=on&_blended=on&_online=on&courseStartCompare=&courseStartHour=&courseStartMin=&courseStartAM=&courseEndHour=&courseEndMin=&courseEndAM=&teachingCenter=ALL&_classDay1=on&_classDay2=on&_classDay3=on&_classDay4=on&_classDay5=on`);
     const titles = new Map<string, { title: string; units?: number }>();
     for (const m of list.matchAll(/class="course-id">\s*([A-Z]{4}\d{3}[A-Z]{0,2})\s*<[\s\S]*?class="course-title">([\s\S]*?)<\/span>[\s\S]*?class="course-min-credits">\s*(\d+)/g)) titles.set(m[1], { title: umdText(m[2]), units: Number(m[3]) || undefined });
     const ids = [...titles.keys()];
