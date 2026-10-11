@@ -1,6 +1,6 @@
-import { useMemo, useRef, useState } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SlidersHorizontal, X, Clock, Zap, Bookmark, Heart, BadgeCheck, Hand } from 'lucide-react';
+import { SlidersHorizontal, X, Clock, Zap, Bookmark, Heart, BadgeCheck, Hand, RotateCcw } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { LAST_SEEN_KEY } from '@/components/layout/BottomNav';
@@ -21,7 +21,7 @@ const EMPTY: Filters = { years: [], sameDept: false, sameClass: false, freeNow: 
 const yearOf = (u: User) => (u.affiliation.type === 'university' ? Math.min(4, Math.max(1, new Date().getFullYear() - u.affiliation.year + 1)) : 0);
 const gradYear = (u: User) => (u.affiliation.type === 'university' ? `'${String(u.affiliation.year + 4).slice(2)}` : '');
 
-/** 사람 — 전체 화면 사진 카드, 옆으로 넘겨 보기 (Pastel Breeze) */
+/** 사람 — 한 번에 한 명. 카드를 끌어 왼쪽=넘기기, 오른쪽=친구로 연결 (Pastel Breeze) */
 export function HomePage() {
   const nav = useNavigate();
   const status = useAppStore((s) => s.status);
@@ -36,7 +36,7 @@ export function HomePage() {
   const [filterOpen, setFilterOpen] = useState(false);
   const [idx, setIdx] = useState(0);
   const [saved, setSaved] = useState<string[]>([]);
-  const scroller = useRef<HTMLDivElement>(null);
+  const [returning, setReturning] = useState(false);
   const myDept = me.affiliation.type === 'university' ? me.affiliation.department : '';
 
   const scored = useMemo(() => v.visibleUsers
@@ -52,15 +52,22 @@ export function HomePage() {
     return true;
   };
   const cards = scored.filter((x) => passes(x.u)).sort((a, b) => b.score - a.score).slice(0, 20);
-  const current = cards[Math.min(idx, Math.max(0, cards.length - 1))];
+  const current = cards[idx];
   try { if (current) localStorage.setItem(LAST_SEEN_KEY, current.u.id); } catch { /* */ }
   const onCampus = v.visibleUsers.filter((u) => u.timetable.length ? statusNow(u.timetable).kind !== 'none' : u.availability !== 'hidden').length * 3 + 6;
 
-  const connect = async (u: User) => {
-    if (v.isFriend(u.id) || v.pendingOut(u.id)) { nav(`/users/${u.id}`); return; }
+  const connect = async (u: User, openIfConnected = true) => {
+    if (v.isFriend(u.id) || v.pendingOut(u.id)) { if (openIfConnected) nav(`/users/${u.id}`); return; }
     try { await run(() => api.relationships.sendFriendRequest(me.id, u.id), `${u.nickname}${t('님에게 친구 요청을 보냈어요.')}`); } catch { /* */ }
   };
-  const reset = () => { setIdx(0); scroller.current?.scrollTo({ left: 0 }); };
+  const reset = () => { setIdx(0); setReturning(false); };
+  const onSwipe = (dir: Dir) => {
+    if (!current) return;
+    if (dir === 'right') void connect(current.u, false);
+    setReturning(false); setIdx((i) => i + 1);
+  };
+  const undo = () => { if (idx > 0) { setReturning(true); setIdx((i) => i - 1); } };
+  const deck = useRef<DeckHandle>(null);
   const chips: { key: string; label: string; clear: () => void }[] = [
     ...f.years.map((y) => ({ key: `y${y}`, label: `${y}${t('학년')}`, clear: () => setF({ ...f, years: f.years.filter((x) => x !== y) }) })),
     ...(f.sameDept ? [{ key: 'dept', label: t('같은 학과'), clear: () => setF({ ...f, sameDept: false }) }] : []),
@@ -82,19 +89,21 @@ export function HomePage() {
       {chips.length > 0 && <div className="shrink-0 flex gap-1.5 overflow-x-auto hide-scrollbar px-4 pb-3">{chips.map((c) => <button key={c.key} onClick={() => { c.clear(); reset(); }} className="h-8 pl-2.5 pr-3 rounded-full bg-accent-soft text-primary text-[12px] font-semibold flex items-center gap-1 shrink-0"><X size={12} />{c.label}</button>)}</div>}
       {status === 'loading' && <CardSkeleton />}
       {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
-      {status === 'ready' && (!current ? (
+      {status === 'ready' && (cards.length === 0 ? (
         <EmptyState emoji="" title={t('이 조건에 맞는 사람이 아직 없어요')} action={<Button size="sm" variant="outline" onClick={() => { setF(EMPTY); reset(); }}>{t('조건 지우기')}</Button>} />
+      ) : !current ? (
+        <EmptyState emoji="" title={lang === 'en' ? "You've seen everyone for now" : '오늘 추천은 여기까지예요'} action={<Button size="sm" variant="outline" onClick={reset}>{lang === 'en' ? 'Start over' : '처음부터 다시 보기'}</Button>} />
       ) : (
         <div className="flex-1 min-h-0 flex flex-col">
-          <div ref={scroller} className="flex-1 min-h-0 flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-3 px-4" onScroll={(e) => { const el = e.currentTarget; setIdx(Math.round(el.scrollLeft / (el.clientWidth - 32 + 12))); }}>
-            {cards.map((c) => <PersonSlide key={c.u.id} user={c.u} reasons={c.reasons} onOpen={() => nav(`/users/${c.u.id}`)} />)}
-          </div>
+          <SwipeDeck ref={deck} key={`${idx}`} top={current} next={cards[idx + 1]} returning={returning} onSwipe={onSwipe} onOpen={(u) => nav(`/users/${u.id}`)} />
           <div className="shrink-0 pt-4 pb-1 flex flex-col items-center gap-3">
-            <div className="flex items-center gap-8">
-              <button onClick={() => setSaved((s) => tog(s, current.u.id))} aria-label={t('나중에 보기')} className={cn('h-[68px] w-[68px] rounded-full grid place-items-center press', saved.includes(current.u.id) ? 'bg-primary text-white' : 'bg-surface-2 text-primary')}><Bookmark size={26} fill={saved.includes(current.u.id) ? 'currentColor' : 'none'} /></button>
-              <button onClick={() => connect(current.u)} aria-label={t('친구로 연결')} className={cn('h-[84px] w-[84px] rounded-full grid place-items-center press shadow-[0_12px_28px_-6px_rgba(15,43,72,.35)]', v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? 'bg-primary text-white' : 'bg-accent text-primary')}>{v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? <Hand size={32} /> : <Heart size={34} />}</button>
+            <div className="flex items-center gap-5">
+              <button onClick={undo} disabled={idx === 0} aria-label={lang === 'en' ? 'Previous' : '이전 카드'} className="h-11 w-11 rounded-full grid place-items-center press bg-surface-2 text-ink-2 disabled:opacity-40"><RotateCcw size={18} /></button>
+              <button onClick={() => deck.current?.fly('left')} aria-label={t('넘기기')} className="h-[68px] w-[68px] rounded-full grid place-items-center press bg-surface-2 text-ink-2"><X size={28} /></button>
+              <button onClick={() => (v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? nav(`/users/${current.u.id}`) : deck.current?.fly('right'))} aria-label={t('친구로 연결')} className={cn('h-[84px] w-[84px] rounded-full grid place-items-center press shadow-[0_12px_28px_-6px_rgba(15,43,72,.35)]', v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? 'bg-primary text-white' : 'bg-accent text-primary')}>{v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? <Hand size={32} /> : <Heart size={34} />}</button>
+              <button onClick={() => setSaved((s) => tog(s, current.u.id))} aria-label={t('나중에 보기')} className={cn('h-11 w-11 rounded-full grid place-items-center press', saved.includes(current.u.id) ? 'bg-primary text-white' : 'bg-surface-2 text-primary')}><Bookmark size={18} fill={saved.includes(current.u.id) ? 'currentColor' : 'none'} /></button>
             </div>
-            <p className="text-[12px] text-ink-3">{lang === 'en' ? 'Swipe to browse · Tap card for details' : '옆으로 넘겨 보기 · 카드를 누르면 프로필'}</p>
+            <p className="text-[12px] text-ink-3">{lang === 'en' ? `${idx + 1} / ${cards.length} · Swipe left to pass, right to connect` : `${idx + 1} / ${cards.length} · 왼쪽으로 넘기기, 오른쪽으로 연결`}</p>
           </div>
         </div>
       ))}
@@ -111,6 +120,90 @@ export function HomePage() {
     </div>
   );
 }
+
+type Dir = 'left' | 'right';
+interface DeckHandle { fly: (dir: Dir) => void }
+type Card = { u: User; reasons: Reason[] };
+const FLY_MS = 280;
+
+/** 카드 덱 — 맨 위 카드를 끌면 기울며 따라오고, 임계값을 넘겨 놓으면 날아간다. 뒤 카드는 끄는 만큼 커진다. */
+const SwipeDeck = forwardRef<DeckHandle, { top: Card; next?: Card; returning: boolean; onSwipe: (dir: Dir) => void; onOpen: (u: User) => void }>(function SwipeDeck({ top, next, returning, onSwipe, onOpen }, ref) {
+  const box = useRef<HTMLDivElement>(null);
+  const start = useRef<{ x: number; y: number } | null>(null);
+  const moved = useRef(false);
+  const [d, setDState] = useState({ x: 0, y: 0 });
+  const dRef = useRef(d);
+  const setD = (next: { x: number; y: number }) => { dRef.current = next; setDState(next); };
+  const flown = useRef(false);
+  const [dragging, setDragging] = useState(false);
+  const [flying, setFlying] = useState<Dir | null>(null);
+  const width = () => box.current?.clientWidth ?? 360;
+  const threshold = () => width() * 0.28;
+
+  const fly = (dir: Dir) => {
+    if (flown.current) return;
+    flown.current = true;
+    setFlying(dir); setDragging(false);
+    setD({ x: (dir === 'right' ? 1 : -1) * width() * 1.5, y: dRef.current.y + 40 });
+    window.setTimeout(() => onSwipe(dir), FLY_MS);
+  };
+  useImperativeHandle(ref, () => ({ fly }));
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.target as HTMLElement | null)?.closest('input,textarea,[contenteditable="true"]')) return;
+      if (e.key === 'ArrowLeft') fly('left');
+      if (e.key === 'ArrowRight') fly('right');
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  });
+
+  useEffect(() => {
+    if (!dragging) return;
+    const move = (e: PointerEvent) => {
+      if (!start.current) return;
+      const x = e.clientX - start.current.x, y = e.clientY - start.current.y;
+      if (Math.abs(x) > 6) moved.current = true;
+      setD({ x, y });
+    };
+    const up = () => {
+      setDragging(false); start.current = null;
+      const { x } = dRef.current;
+      if (Math.abs(x) > threshold()) fly(x > 0 ? 'right' : 'left');
+      else setD({ x: 0, y: 0 });
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+    window.addEventListener('pointercancel', up);
+    return () => { window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); window.removeEventListener('pointercancel', up); };
+  }, [dragging]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const progress = Math.min(1, Math.abs(d.x) / threshold());
+  const stamp = d.x > 0 ? 'right' : d.x < 0 ? 'left' : null;
+  return (
+    <div ref={box} className="relative flex-1 min-h-0 mx-4">
+      {next && (
+        <div className="absolute inset-0" style={{ transform: `scale(${0.94 + 0.06 * (flying ? 1 : progress)}) translateY(${(1 - (flying ? 1 : progress)) * 14}px)`, transition: dragging ? 'none' : `transform ${FLY_MS}ms ease-out`, opacity: 0.6 + 0.4 * (flying ? 1 : progress) }}>
+          <PersonSlide user={next.u} reasons={next.reasons} onOpen={() => {}} />
+        </div>
+      )}
+      <div
+        className={cn('absolute inset-0 touch-pan-y', returning && 'animate-card-return')}
+        style={{ transform: `translate(${d.x}px, ${d.y * 0.25}px) rotate(${d.x / 18}deg)`, transition: dragging ? 'none' : `transform ${FLY_MS}ms cubic-bezier(.2,.8,.2,1)`, cursor: dragging ? 'grabbing' : 'grab' }}
+        onPointerDown={(e) => { if (flying || e.button !== 0) return; start.current = { x: e.clientX - d.x, y: e.clientY - d.y }; moved.current = false; setDragging(true); }}
+        onClickCapture={(e) => { if (moved.current) { e.stopPropagation(); moved.current = false; } }}
+      >
+        <PersonSlide user={top.u} reasons={top.reasons} onOpen={() => onOpen(top.u)} />
+        {stamp && (
+          <span className={cn('pointer-events-none absolute top-16 px-4 py-1.5 rounded-xl border-[3px] text-[22px] font-extrabold tracking-wide bg-white/10 backdrop-blur-sm', stamp === 'right' ? 'left-6 -rotate-12 border-accent text-accent' : 'right-6 rotate-12 border-white text-white')} style={{ opacity: progress }}>
+            {stamp === 'right' ? (lang === 'en' ? 'CONNECT' : '연결') : (lang === 'en' ? 'PASS' : '넘기기')}
+          </span>
+        )}
+      </div>
+    </div>
+  );
+});
 
 /** 카드: 사진 전체 + 아래 그라데이션 위에 이름·학과·찾는 것·칩 3개 */
 export function PersonSlide({ user, reasons, onOpen }: { user: User; reasons: Reason[]; onOpen: () => void }) {
@@ -132,7 +225,7 @@ export function PersonSlide({ user, reasons, onOpen }: { user: User; reasons: Re
     else onOpen();
   };
   return (
-    <article className="relative h-full shrink-0 snap-center rounded-[32px] overflow-hidden bg-primary text-white select-none shadow-[0_16px_36px_-6px_rgba(15,43,72,.12)]" style={{ width: 'calc(100% - 32px)' }}>
+    <article className="relative h-full w-full rounded-[32px] overflow-hidden bg-primary text-white select-none shadow-[0_16px_36px_-6px_rgba(15,43,72,.12)]">
       <div className="absolute inset-0" onClick={tap}>
         {photos.length > 0 ? <img src={assetUrl(photos[pi])} alt="" className="absolute inset-0 h-full w-full object-cover" draggable={false} /> : <span className="absolute inset-0 grid place-items-center text-[96px]">{user.avatar.emoji}</span>}
         <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,43,72,.88)_0%,rgba(15,43,72,.25)_45%,rgba(15,43,72,0)_70%)]" />

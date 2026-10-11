@@ -96,6 +96,9 @@ input, textarea, select { font: inherit; }
 .animate-sheet-up { animation: sheet-up 240ms cubic-bezier(.2,.8,.2,1); }
 .animate-fade-in { animation: fade-in 180ms ease; }
 .animate-toast-in { animation: toast-in 200ms ease; }
+@keyframes card-return { from { transform: translateX(-130%) rotate(-14deg); } to { transform: translateX(0) rotate(0); } }
+.animate-card-return { animation: card-return 320ms cubic-bezier(.2,.8,.2,1); }
+@media (prefers-reduced-motion: reduce) { .animate-card-return { animation: none; } }
 .skeleton {
   background: linear-gradient(90deg, #F1E7DA 0%, #FBF5EC 40%, #F1E7DA 80%);
   background-size: 800px 100%;
