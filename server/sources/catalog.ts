@@ -61,6 +61,8 @@ function parseBlock(schoolId: string, block: string): CatalogCourse | null {
     const m = TITLE_RE.exec(text); if (!m) return null;
     code = m[1].replace(/\s+/g, ' '); title = m[2].replace(/[.\s]+$/, '');
   }
+  // 제목 끝에 붙는 "3 Credits" / "0,3 Credits" / "1-4 Units" 는 학점이지 이름이 아니다
+  title = title.replace(/[\s.,]*\(?\d+(?:[.,–-]\d+)*\)?\s*(?:units?|credits?|credit hours?|hours?|points?)\.?\s*$/i, '').replace(/[.\s]+$/, '').trim();
   if (!code || !title || title.length < 3) return null;
   const units = /\b(\d+(?:\.\d+)?)(?:\s*[-–]\s*\d+(?:\.\d+)?)?\s*(?:units?|credits?|credit hours?|hours?|points?)\b/i.exec(strip(titleEl ?? block.slice(0, 600)))?.[1];
   return { id: courseId(schoolId, code), schoolId, code, title: title.slice(0, 140), department: code.replace(/\s?\d.*$/, ''), meetings: [], term: 'catalog', units: units ? Number(units) : undefined };
