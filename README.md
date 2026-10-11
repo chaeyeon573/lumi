@@ -221,6 +221,7 @@ npm run import:opportunities -- server/data/opportunities-berkeley.csv
   · `banner9:https://registrationssb.ucr.edu` — Ellucian Banner 9 공개 검색 (UC Riverside)
 - 시간표가 비공개인 학교: 공개 과목 카탈로그(`catalog_url`, CourseLeaf 의 ribbit API — 학과당 요청 1번)에서 코드·이름·학점을 30일마다 채운다 (`server/sources/catalog.ts`). 시간은 학생이 넣는다
 - 수업은 **검증을 통과해야만 반영**된다 (`server/agent/validate.ts`): 코드 형식·요일·시간 범위 규칙 → 지난 목록 대비 20% 넘게 줄면 중단 → 무작위 12과목을 원본에서 다시 읽어 시간·강의실 대조(90% 이상 일치)
+- 웹 서버는 워커가 쓰는 동아리·공고·학교·수업 목록을 `DATA_SYNC_SECONDS`(기본 120초)마다 DB 에서 다시 읽어 화면에 밀어 준다 (재배포 없이 반영)
 - 결과는 `agent_runs` 테이블에 남고 `GET /api/agent/status` 로 본다. 거부·오류는 `AGENT_NOTIFY_EMAIL` 로 메일이 간다
 - 학생 신고 → 원본 대조 → 수정 반영 루프는 아직 없다 (다음 단계)
 

@@ -61,6 +61,29 @@ const engine = createEngine({
   push(patch) { void store.applyPatch(patch); broadcast(patch); },
 });
 
+// ─── 데이터 에이전트와 동기화 ────────────────────────────────────────────────
+// 워커(별도 Railway 서비스)는 Postgres 에 동아리·공고·학교·수업 목록을 쓴다. 웹 서버는 켜질 때 한 번만 읽으므로
+// DATA_SYNC_SECONDS(기본 120초)마다 그 컬렉션만 다시 읽고, 바뀐 것은 접속 중인 화면에도 Patch 로 보낸다.
+const WORKER_COLLECTIONS = ['organizations', 'opportunities', 'schools'] as const;
+async function syncFromWorker() {
+  const snap = await store.loadSnapshot(); if (!snap) return;
+  const patch: Patch = {}; const removed: NonNullable<Patch['removed']> = {};
+  for (const c of WORKER_COLLECTIONS) {
+    const before = new Map((db[c] as { id: ID }[]).map((x) => [x.id, JSON.stringify(x)]));
+    const after = snap[c] as { id: ID }[]; const afterIds = new Set(after.map((x) => x.id));
+    const changed = after.filter((x) => before.get(x.id) !== JSON.stringify(x));
+    const gone = [...before.keys()].filter((id) => !afterIds.has(id));
+    if (!changed.length && !gone.length) continue;
+    (db as unknown as Record<string, unknown>)[c] = after;
+    (patch as Record<string, unknown>)[c] = changed;
+    if (gone.length) (removed as Record<string, ID[]>)[c] = gone;
+  }
+  if (Object.keys(removed).length) patch.removed = removed;
+  if (Object.keys(patch).length) { broadcast(patch); console.log(`[sync] ${WORKER_COLLECTIONS.map((c) => `${c} ${((patch as Record<string, unknown[]>)[c] ?? []).length}`).join(', ')}`); }
+  const nextCatalog = await store.loadCatalog(); if (nextCatalog.length) catalog = nextCatalog;
+}
+setInterval(() => { syncFromWorker().catch((e) => console.error('[sync] failed', e)); }, Number(process.env.DATA_SYNC_SECONDS ?? 120) * 1000);
+
 // ─── 앱 ─────────────────────────────────────────────────────────────────
 const app = express();
 app.set('trust proxy', 1);
