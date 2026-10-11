@@ -202,8 +202,16 @@ async function berkeley(): Promise<CatalogCourse[]> {
 }
 
 // ─── Cornell: Class Roster 공개 JSON API (키 불필요) ───────────────────────
-/** 학기 slug: FA26 / SP27. 지정이 없으면 다가오는 정규 학기 */
-function cornellRoster(): string { const d = new Date(); const y = d.getFullYear() % 100; const m = d.getMonth() + 1; return process.env.CORNELL_ROSTER ?? (m >= 10 ? `SP${y + 1}` : m >= 3 ? `FA${y}` : `SP${y}`); }
+/** 학기 slug(FA26 / SP27): 지정이 없으면 Cornell 이 공개한 로스터 중 가장 최근 정규 학기(FA/SP) — 아직 안 올라온 학기를 추측하지 않는다 */
+async function cornellRoster(): Promise<string> {
+  if (process.env.CORNELL_ROSTER) return process.env.CORNELL_ROSTER;
+  const res = await fetch('https://classes.cornell.edu/api/2.0/config/rosters.json', { headers: { 'user-agent': 'AroundU-importer' } });
+  if (!res.ok) throw new Error(`cornell rosters → ${res.status}`);
+  const rosters = ((await res.json()) as { data?: { rosters?: { slug: string }[] } }).data?.rosters?.map((r) => r.slug) ?? [];
+  const regular = rosters.filter((r) => /^(FA|SP)\d{2}$/.test(r));
+  if (!regular.length) throw new Error('cornell: no FA/SP roster published');
+  return regular[regular.length - 1];
+}
 interface CornellClass { subject: string; catalogNbr: string; titleLong: string; enrollGroups: { unitsMinimum?: number; classSections: { ssrComponent: string; section: string; meetings: { timeStart?: string; timeEnd?: string; pattern?: string; facilityDescr?: string | null; bldgDescr?: string | null; instructors?: { firstName?: string; lastName?: string }[] }[] }[] }[] }
 async function cornellSubject(roster: string, subject: string): Promise<CatalogCourse[]> {
   const res = await fetch(`https://classes.cornell.edu/api/2.0/search/classes.json?roster=${roster}&subject=${encodeURIComponent(subject)}`, { headers: { 'user-agent': 'AroundU-importer' } });
@@ -233,7 +241,7 @@ async function cornellSubject(roster: string, subject: string): Promise<CatalogC
   return out;
 }
 async function cornell(): Promise<CatalogCourse[]> {
-  const roster = cornellRoster();
+  const roster = await cornellRoster();
   const res = await fetch(`https://classes.cornell.edu/api/2.0/config/subjects.json?roster=${roster}`, { headers: { 'user-agent': 'AroundU-importer' } });
   if (!res.ok) throw new Error(`cornell subjects ${roster} → ${res.status}`);
   const subjects = ((await res.json()) as { data?: { subjects?: { value: string }[] } }).data?.subjects?.map((s) => s.value) ?? [];
