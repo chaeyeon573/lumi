@@ -33,8 +33,8 @@ s_usc,USC,usc,usc.edu,Los Angeles,34.0224,-118.2851,,,
 s_ufl,University of Florida,ufl,ufl.edu,Gainesville,29.6436,-82.3549,,,https://catalog.ufl.edu/
 s_utexas,UT Austin,utexas,utexas.edu,Austin,30.2849,-97.7341,,,https://catalog.utexas.edu/courses/
 s_gatech,Georgia Tech,gatech,gatech.edu,Atlanta,33.7756,-84.3963,,,https://catalog.gatech.edu/
-s_uci,UC Irvine,uci,uci.edu,Irvine,33.6405,-117.8443,,,
-s_nyu,New York University,nyu,nyu.edu,New York,40.7295,-73.9965,,,
+s_uci,UC Irvine,uci,uci.edu,Irvine,33.6405,-117.8443,,,https://catalogue.uci.edu/
+s_nyu,New York University,nyu,nyu.edu,New York,40.7295,-73.9965,,,https://bulletins.nyu.edu/
 s_ucsb,UC Santa Barbara,ucsb,ucsb.edu,Santa Barbara,34.4140,-119.8489,,,
 s_illinois,University of Illinois Urbana-Champaign,illinois,illinois.edu,Urbana,40.1020,-88.2272,,,https://catalog.illinois.edu/
 s_wisc,University of Wisconsin–Madison,wisc,wisc.edu,Madison,43.0766,-89.4125,,,https://guide.wisc.edu/courses/
@@ -46,7 +46,7 @@ s_bc,Boston College,bc,bc.edu,Chestnut Hill,42.3355,-71.1685,,,
 s_ucsc,UC Santa Cruz,ucsc,ucsc.edu,Santa Cruz,36.9916,-122.0583,,,https://catalog.ucsc.edu/
 s_osu,Ohio State University,osu,osu.edu,Columbus,40.0067,-83.0305,,,https://courses.osu.edu/
 s_purdue,Purdue University,purdue,purdue.edu,West Lafayette,40.4237,-86.9212,,,
-s_umd,University of Maryland,umd,umd.edu,College Park,38.9869,-76.9426,,,
+s_umd,University of Maryland,umd,umd.edu,College Park,38.9869,-76.9426,,,https://academiccatalog.umd.edu/
 s_lehigh,Lehigh University,lehigh,lehigh.edu,Bethlehem,40.6069,-75.3783,,,https://catalog.lehigh.edu/
 s_tamu,Texas A&M University,tamu,tamu.edu,College Station,30.6187,-96.3365,,,https://catalog.tamu.edu/
 s_umn,University of Minnesota,umn,umn.edu,Minneapolis,44.9740,-93.2277,,,https://catalog.umn.edu/
