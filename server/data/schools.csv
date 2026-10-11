@@ -1,53 +1,53 @@
-id,name,short,email_domain,region,lat,lng,orgs_host,courses_source
-s_berkeley,UC Berkeley,berkeley,berkeley.edu,Berkeley,37.8719,-122.2585,https://callink.berkeley.edu,berkeley
-s_stanford,Stanford University,stanford,stanford.edu,Palo Alto,37.4275,-122.1697,https://cardinalengage.stanford.edu,stanford
-s_mit,MIT,mit,mit.edu,Cambridge,42.3601,-71.0942,https://engage.mit.edu,mit
-s_sfsu,San Francisco State,sfsu,sfsu.edu,San Francisco,37.7219,-122.4782,https://sfsu.campuslabs.com/engage,
-s_ucla,UCLA,ucla,ucla.edu,Los Angeles,34.0689,-118.4452,,
-s_princeton,Princeton University,princeton,princeton.edu,Princeton,40.3431,-74.6551,,
-s_harvard,Harvard University,harvard,harvard.edu,Cambridge,42.3770,-71.1167,,
-s_yale,Yale University,yale,yale.edu,New Haven,41.3163,-72.9223,,
-s_upenn,University of Pennsylvania,upenn,upenn.edu,Philadelphia,39.9522,-75.1932,,
-s_caltech,Caltech,caltech,caltech.edu,Pasadena,34.1377,-118.1253,,
-s_duke,Duke University,duke,duke.edu,Durham,36.0014,-78.9382,,
-s_brown,Brown University,brown,brown.edu,Providence,41.8268,-71.4025,,
-s_jhu,Johns Hopkins University,jhu,jhu.edu,Baltimore,39.3299,-76.6205,,
-s_northwestern,Northwestern University,northwestern,northwestern.edu,Evanston,42.0565,-87.6753,,
-s_columbia,Columbia University,columbia,columbia.edu,New York,40.8075,-73.9626,,
-s_cornell,Cornell University,cornell,cornell.edu,Ithaca,42.4534,-76.4735,,
-s_uchicago,University of Chicago,uchicago,uchicago.edu,Chicago,41.7886,-87.5987,,
-s_rice,Rice University,rice,rice.edu,Houston,29.7174,-95.4018,,
-s_dartmouth,Dartmouth College,dartmouth,dartmouth.edu,Hanover,43.7044,-72.2887,,
-s_vanderbilt,Vanderbilt University,vanderbilt,vanderbilt.edu,Nashville,36.1447,-86.8027,,
-s_notredame,University of Notre Dame,nd,nd.edu,Notre Dame,41.7056,-86.2353,,
-s_umich,University of Michigan,umich,umich.edu,Ann Arbor,42.2780,-83.7382,,
-s_georgetown,Georgetown University,georgetown,georgetown.edu,Washington,38.9076,-77.0723,,
-s_unc,UNC Chapel Hill,unc,unc.edu,Chapel Hill,35.9049,-79.0469,,
-s_cmu,Carnegie Mellon University,cmu,cmu.edu,Pittsburgh,40.4433,-79.9436,,
-s_emory,Emory University,emory,emory.edu,Atlanta,33.7925,-84.3240,,
-s_uva,University of Virginia,virginia,virginia.edu,Charlottesville,38.0336,-78.5080,,
-s_wustl,Washington University in St. Louis,wustl,wustl.edu,St. Louis,38.6488,-90.3108,,
-s_ucdavis,UC Davis,ucdavis,ucdavis.edu,Davis,38.5382,-121.7617,,
-s_ucsd,UC San Diego,ucsd,ucsd.edu,La Jolla,32.8801,-117.2340,,
-s_usc,USC,usc,usc.edu,Los Angeles,34.0224,-118.2851,,
-s_ufl,University of Florida,ufl,ufl.edu,Gainesville,29.6436,-82.3549,,
-s_utexas,UT Austin,utexas,utexas.edu,Austin,30.2849,-97.7341,,
-s_gatech,Georgia Tech,gatech,gatech.edu,Atlanta,33.7756,-84.3963,,
-s_uci,UC Irvine,uci,uci.edu,Irvine,33.6405,-117.8443,,
-s_nyu,New York University,nyu,nyu.edu,New York,40.7295,-73.9965,,
-s_ucsb,UC Santa Barbara,ucsb,ucsb.edu,Santa Barbara,34.4140,-119.8489,,
-s_illinois,University of Illinois Urbana-Champaign,illinois,illinois.edu,Urbana,40.1020,-88.2272,,
-s_wisc,University of Wisconsin–Madison,wisc,wisc.edu,Madison,43.0766,-89.4125,,
-s_bu,Boston University,bu,bu.edu,Boston,42.3505,-71.1054,,
-s_rutgers,Rutgers University,rutgers,rutgers.edu,New Brunswick,40.5008,-74.4474,,
-s_tufts,Tufts University,tufts,tufts.edu,Medford,42.4075,-71.1190,,
-s_uw,University of Washington,uw,uw.edu,Seattle,47.6553,-122.3035,,
-s_bc,Boston College,bc,bc.edu,Chestnut Hill,42.3355,-71.1685,,
-s_ucsc,UC Santa Cruz,ucsc,ucsc.edu,Santa Cruz,36.9916,-122.0583,,
-s_osu,Ohio State University,osu,osu.edu,Columbus,40.0067,-83.0305,,
-s_purdue,Purdue University,purdue,purdue.edu,West Lafayette,40.4237,-86.9212,,
-s_umd,University of Maryland,umd,umd.edu,College Park,38.9869,-76.9426,,
-s_lehigh,Lehigh University,lehigh,lehigh.edu,Bethlehem,40.6069,-75.3783,,
-s_tamu,Texas A&M University,tamu,tamu.edu,College Station,30.6187,-96.3365,,
-s_umn,University of Minnesota,umn,umn.edu,Minneapolis,44.9740,-93.2277,,
-s_ucr,UC Riverside,ucr,ucr.edu,Riverside,33.9737,-117.3281,,
+id,name,short,email_domain,region,lat,lng,orgs_host,courses_source,catalog_url
+s_berkeley,UC Berkeley,berkeley,berkeley.edu,Berkeley,37.8719,-122.2585,https://callink.berkeley.edu,berkeley,
+s_stanford,Stanford University,stanford,stanford.edu,Palo Alto,37.4275,-122.1697,https://cardinalengage.stanford.edu,stanford,
+s_mit,MIT,mit,mit.edu,Cambridge,42.3601,-71.0942,https://engage.mit.edu,mit,
+s_sfsu,San Francisco State,sfsu,sfsu.edu,San Francisco,37.7219,-122.4782,https://sfsu.campuslabs.com/engage,,https://bulletin.sfsu.edu/
+s_ucla,UCLA,ucla,ucla.edu,Los Angeles,34.0689,-118.4452,,,
+s_princeton,Princeton University,princeton,princeton.edu,Princeton,40.3431,-74.6551,,,https://catalog.princeton.edu/
+s_harvard,Harvard University,harvard,harvard.edu,Cambridge,42.3770,-71.1167,,,
+s_yale,Yale University,yale,yale.edu,New Haven,41.3163,-72.9223,,,https://catalog.yale.edu/
+s_upenn,University of Pennsylvania,upenn,upenn.edu,Philadelphia,39.9522,-75.1932,,,https://courses.upenn.edu/
+s_caltech,Caltech,caltech,caltech.edu,Pasadena,34.1377,-118.1253,,,https://catalog.caltech.edu/
+s_duke,Duke University,duke,duke.edu,Durham,36.0014,-78.9382,,,
+s_brown,Brown University,brown,brown.edu,Providence,41.8268,-71.4025,,,https://bulletin.brown.edu/
+s_jhu,Johns Hopkins University,jhu,jhu.edu,Baltimore,39.3299,-76.6205,,,https://courses.jhu.edu/
+s_northwestern,Northwestern University,northwestern,northwestern.edu,Evanston,42.0565,-87.6753,,,https://courses.northwestern.edu/
+s_columbia,Columbia University,columbia,columbia.edu,New York,40.8075,-73.9626,,,https://bulletin.columbia.edu/
+s_cornell,Cornell University,cornell,cornell.edu,Ithaca,42.4534,-76.4735,,,
+s_uchicago,University of Chicago,uchicago,uchicago.edu,Chicago,41.7886,-87.5987,,,
+s_rice,Rice University,rice,rice.edu,Houston,29.7174,-95.4018,,,https://catalog.rice.edu/
+s_dartmouth,Dartmouth College,dartmouth,dartmouth.edu,Hanover,43.7044,-72.2887,,,https://courses.dartmouth.edu/
+s_vanderbilt,Vanderbilt University,vanderbilt,vanderbilt.edu,Nashville,36.1447,-86.8027,,,
+s_notredame,University of Notre Dame,nd,nd.edu,Notre Dame,41.7056,-86.2353,,,https://catalog.nd.edu/
+s_umich,University of Michigan,umich,umich.edu,Ann Arbor,42.2780,-83.7382,,,
+s_georgetown,Georgetown University,georgetown,georgetown.edu,Washington,38.9076,-77.0723,,,https://bulletin.georgetown.edu/
+s_unc,UNC Chapel Hill,unc,unc.edu,Chapel Hill,35.9049,-79.0469,,,https://catalog.unc.edu/courses/
+s_cmu,Carnegie Mellon University,cmu,cmu.edu,Pittsburgh,40.4433,-79.9436,,,
+s_emory,Emory University,emory,emory.edu,Atlanta,33.7925,-84.3240,,,https://catalog.emory.edu/courses/
+s_uva,University of Virginia,virginia,virginia.edu,Charlottesville,38.0336,-78.5080,,,
+s_wustl,Washington University in St. Louis,wustl,wustl.edu,St. Louis,38.6488,-90.3108,,,https://bulletin.wustl.edu/
+s_ucdavis,UC Davis,ucdavis,ucdavis.edu,Davis,38.5382,-121.7617,,,https://catalog.ucdavis.edu/
+s_ucsd,UC San Diego,ucsd,ucsd.edu,La Jolla,32.8801,-117.2340,,,https://catalog.ucsd.edu/
+s_usc,USC,usc,usc.edu,Los Angeles,34.0224,-118.2851,,,
+s_ufl,University of Florida,ufl,ufl.edu,Gainesville,29.6436,-82.3549,,,https://catalog.ufl.edu/
+s_utexas,UT Austin,utexas,utexas.edu,Austin,30.2849,-97.7341,,,https://catalog.utexas.edu/courses/
+s_gatech,Georgia Tech,gatech,gatech.edu,Atlanta,33.7756,-84.3963,,,https://catalog.gatech.edu/
+s_uci,UC Irvine,uci,uci.edu,Irvine,33.6405,-117.8443,,,
+s_nyu,New York University,nyu,nyu.edu,New York,40.7295,-73.9965,,,
+s_ucsb,UC Santa Barbara,ucsb,ucsb.edu,Santa Barbara,34.4140,-119.8489,,,https://catalog.ucsb.edu/courses/
+s_illinois,University of Illinois Urbana-Champaign,illinois,illinois.edu,Urbana,40.1020,-88.2272,,,https://catalog.illinois.edu/
+s_wisc,University of Wisconsin–Madison,wisc,wisc.edu,Madison,43.0766,-89.4125,,,https://guide.wisc.edu/courses/
+s_bu,Boston University,bu,bu.edu,Boston,42.3505,-71.1054,,,
+s_rutgers,Rutgers University,rutgers,rutgers.edu,New Brunswick,40.5008,-74.4474,,,https://courses.rutgers.edu/
+s_tufts,Tufts University,tufts,tufts.edu,Medford,42.4075,-71.1190,,,https://courses.tufts.edu/
+s_uw,University of Washington,uw,uw.edu,Seattle,47.6553,-122.3035,,,https://courses.uw.edu/
+s_bc,Boston College,bc,bc.edu,Chestnut Hill,42.3355,-71.1685,,,
+s_ucsc,UC Santa Cruz,ucsc,ucsc.edu,Santa Cruz,36.9916,-122.0583,,,https://catalog.ucsc.edu/
+s_osu,Ohio State University,osu,osu.edu,Columbus,40.0067,-83.0305,,,https://courses.osu.edu/
+s_purdue,Purdue University,purdue,purdue.edu,West Lafayette,40.4237,-86.9212,,,
+s_umd,University of Maryland,umd,umd.edu,College Park,38.9869,-76.9426,,,
+s_lehigh,Lehigh University,lehigh,lehigh.edu,Bethlehem,40.6069,-75.3783,,,https://catalog.lehigh.edu/
+s_tamu,Texas A&M University,tamu,tamu.edu,College Station,30.6187,-96.3365,,,https://catalog.tamu.edu/
+s_umn,University of Minnesota,umn,umn.edu,Minneapolis,44.9740,-93.2277,,,https://catalog.umn.edu/
+s_ucr,UC Riverside,ucr,ucr.edu,Riverside,33.9737,-117.3281,,,https://catalog.ucr.edu/courses/

@@ -210,6 +210,7 @@ npm run import:opportunities -- server/data/opportunities-berkeley.csv
 
 - 새 학교: 앱에 등록 → 동아리 플랫폼 자동 탐지(CampusLabs Engage / CampusGroups, `server/agent/detect.ts`) → 동아리 가져오기 → 수업 어댑터가 없으면 `adapter:<school>` 로 기록하고 운영자에게 메일
 - 있는 학교: 수업 시간표는 하루마다, 동아리는 7일마다 원본에서 다시 가져온다 (Greek 공식 명단은 `npm run fetch:greeks -- <school>` 로 따로)
+- 시간표가 비공개인 학교: 공개 과목 카탈로그(`catalog_url`, CourseLeaf 의 ribbit API — 학과당 요청 1번)에서 코드·이름·학점을 30일마다 채운다 (`server/sources/catalog.ts`). 시간은 학생이 넣는다
 - 수업은 **검증을 통과해야만 반영**된다 (`server/agent/validate.ts`): 코드 형식·요일·시간 범위 규칙 → 지난 목록 대비 20% 넘게 줄면 중단 → 무작위 12과목을 원본에서 다시 읽어 시간·강의실 대조(90% 이상 일치)
 - 결과는 `agent_runs` 테이블에 남고 `GET /api/agent/status` 로 본다. 거부·오류는 `AGENT_NOTIFY_EMAIL` 로 메일이 간다
 - 학생 신고 → 원본 대조 → 수정 반영 루프는 아직 없다 (다음 단계)

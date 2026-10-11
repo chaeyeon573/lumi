@@ -10,7 +10,8 @@
  * 워커가 학교마다 하는 일 (school:<id>)
  *   1. 앱에 학교 등록 (schools 컬렉션 upsert — 가입 화면에서 고를 수 있게)
  *   2. 동아리 플랫폼 자동 탐지(detect.ts) → 찾으면 fetch:orgs 를 그 호스트로 실행 (7일마다 갱신)
- *   3. 수업: 어댑터가 있는 학교(courses_source)는 매일 갱신, 없으면 'adapter needed' 로 한 번 기록해 운영자에게 알린다
+ *   3. 수업: 어댑터가 있는 학교(courses_source)는 매일 갱신. 없으면 공개 카탈로그(catalog_url, CourseLeaf)에서 코드·이름을 30일마다 채우고
+ *      'adapter needed' 를 한 번 기록해 운영자에게 알린다 — 시간은 학생이 넣는다
  *   큐가 비면 AGENT_IDLE_SECONDS(기본 60초) 쉬고 다시 목록을 읽는다 — 학교를 한 줄 추가하면 1분 안에 집어 든다
  *
  * 수업: fetch → 규칙 검사 → 지난 목록 대비 변화량 → 원본 표본 재확인 → 통과하면 replaceCatalog, 아니면 반영 안 함
@@ -29,6 +30,7 @@ import { randomUUID } from 'node:crypto';
 import { createStore, type AgentRun } from '../store';
 import { sendMail } from '../mail';
 import { COURSE_SOURCES } from '../sources/courses';
+import { fetchCourseLeaf } from '../sources/catalog';
 import { applyRules, checkDrift, spotCheck } from './validate';
 
 const DRY = process.env.AGENT_DRY === '1';
@@ -89,7 +91,7 @@ function runScript(task: string, script: string, schoolId: string, extraEnv: Rec
 }
 
 // ─── 학교 단위 작업 (워커) ─────────────────────────────────────────────────
-interface SchoolRow { id: string; name: string; short: string; email_domain: string; region: string; lat: string; lng: string; orgs_host?: string; courses_source?: string }
+interface SchoolRow { id: string; name: string; short: string; email_domain: string; region: string; lat: string; lng: string; orgs_host?: string; courses_source?: string; catalog_url?: string }
 const SCHOOLS_CSV = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', 'schools.csv');
 const loadSchools = () => parseCSV(readFileSync(SCHOOLS_CSV, 'utf8')) as unknown as SchoolRow[];
 const hoursSince = (iso?: string) => iso ? (Date.now() - new Date(iso).getTime()) / 3_600_000 : Infinity;
@@ -124,8 +126,20 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
   // 3. 수업
   if (row.courses_source && COURSE_SOURCES[row.courses_source]) {
     if (hoursSince(latest.get(`courses:${row.courses_source}`)?.finishedAt) > 24) out.push(await runCourses(row.courses_source));
-  } else if (!latest.has(`adapter:${row.id}`)) {
-    out.push(await record({ task: `adapter:${row.id}`, schoolId: row.id, status: 'skipped', startedAt: new Date().toISOString(), summary: { needed: 'course timetable adapter', note: `no known public source for ${row.name} — write one in server/sources/courses.ts and set courses_source in schools.csv` } }));
+  } else {
+    // 시간표 소스가 없는 학교: 공개 과목 카탈로그(코드·이름)라도 채운다 — 30일마다. 50개 미만이면 못 읽은 것으로 보고 반영하지 않는다
+    if (row.catalog_url && hoursSince(latest.get(`catalog:${row.id}`)?.finishedAt) > 24 * 30) {
+      const startedAt = new Date().toISOString();
+      try {
+        const r = await fetchCourseLeaf(row.id, row.catalog_url);
+        const ok = r.courses.length >= 50;
+        if (ok && !DRY) await store.replaceCatalog(row.id, r.courses);
+        out.push(await record({ task: `catalog:${row.id}`, schoolId: row.id, status: ok ? 'applied' : 'rejected', startedAt, summary: { root: r.root, subjects: r.subjects.length, subjectsWithCourses: r.subjectsWithCourses, courses: r.courses.length, sample: r.courses.slice(0, 3).map((c) => `${c.code} ${c.title}`), note: ok ? undefined : 'CourseLeaf ribbit API returned too little — not a CourseLeaf catalog or subject codes not found' } }));
+      } catch (e) {
+        out.push(await record({ task: `catalog:${row.id}`, schoolId: row.id, status: 'error', startedAt, summary: { error: (e as Error).message } }));
+      }
+    }
+    if (!latest.has(`adapter:${row.id}`)) out.push(await record({ task: `adapter:${row.id}`, schoolId: row.id, status: 'skipped', startedAt: new Date().toISOString(), summary: { needed: 'course timetable adapter', note: `no known public timetable source for ${row.name} — catalog (codes/titles) is used meanwhile; students enter times` } }));
   }
   return out;
 }

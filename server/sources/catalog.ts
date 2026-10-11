@@ -1,0 +1,85 @@
+/**
+ * 공개 과목 카탈로그(코드·이름·학점) 수집 — 학기 시간표가 비공개인 학교도 "어떤 수업이 있나"는 공개한다.
+ *
+ * CourseLeaf 카탈로그(미국 대학 다수)는 설치마다 페이지 구조가 달라도 서버 API 는 같다:
+ *   GET <catalog>/ribbit/index.cgi?page=getcourse.rjs&subject=AFST  → 그 학과 전체 과목이 XML(courseblock HTML 포함)로 온다
+ * 학과 코드 목록만 알면 되므로, 사이트를 조금 돌며(상한 있음) 링크·본문에서 "(AFST)" / "AFST 1234" 꼴의 코드를 모은 뒤
+ * 코드마다 한 번씩 API 를 부른다. 결과는 meetings 가 빈 CatalogCourse — 시간은 학생이 넣거나 시간표 소스가 덮어쓴다.
+ */
+import type { CatalogCourse } from '@core/api/types';
+
+const UA = 'Mozilla/5.0 AroundU-importer';
+const strip = (h: string) => h.replace(/<[^>]+>/g, ' ').replace(/&nbsp;|&#160;/g, ' ').replace(/&amp;/g, '&').replace(/&#8203;|​/g, '').replace(/\s+/g, ' ').trim();
+const courseId = (schoolId: string, code: string) => `cc_${schoolId.replace('s_', '')}_${code.toLowerCase().replace(/[^a-z0-9]+/g, '')}`;
+
+async function get(url: string): Promise<string | null> {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const r = await fetch(url, { headers: { 'user-agent': UA }, redirect: 'follow', signal: AbortSignal.timeout(20_000) });
+      if (r.ok) return await r.text();
+      if (r.status < 500) return null;
+    } catch { /* retry */ }
+    await new Promise((res) => setTimeout(res, 1500 * (attempt + 1)));
+  }
+  return null;
+}
+
+/** 사이트를 조금 돌며 학과 코드 후보를 모은다 */
+export async function discoverSubjects(rootUrl: string, maxPages = 80): Promise<string[]> {
+  const root = new URL(rootUrl); const origin = root.origin;
+  const seen = new Set<string>(); const queue = [root.href]; const codes = new Map<string, number>();
+  const interesting = (p: string) => /course|subject|bulletin|catalog|curricul|department|program|azindex|index/i.test(p) && !/\.(pdf|jpg|png|css|js)$/i.test(p) && !/archive|print|search/.test(p);
+  while (queue.length && seen.size < maxPages) {
+    const url = queue.shift()!; if (seen.has(url)) continue; seen.add(url);
+    const html = await get(url); if (!html) continue;
+    for (const m of html.matchAll(/\(([A-Z][A-Z&]{1,5})\)/g)) codes.set(m[1], (codes.get(m[1]) ?? 0) + 3);
+    for (const m of html.matchAll(/title="([A-Z][A-Z&]{1,5})\s\d/g)) codes.set(m[1], (codes.get(m[1]) ?? 0) + 2);
+    for (const m of html.matchAll(/\b([A-Z][A-Z&]{1,5})&#160;\d{2,4}/g)) codes.set(m[1], (codes.get(m[1]) ?? 0) + 1);
+    for (const m of html.matchAll(/href="\/courses\/([a-z]{2,6})\/"/g)) codes.set(m[1].toUpperCase(), (codes.get(m[1].toUpperCase()) ?? 0) + 5);
+    for (const href of html.matchAll(/href="([^"#?]+)"/g)) {
+      let next: URL; try { next = new URL(href[1], url); } catch { continue; }
+      if (next.origin !== origin || seen.has(next.href) || !interesting(next.pathname) || next.pathname.split('/').length > 5) continue;
+      queue.push(next.href);
+    }
+    await new Promise((res) => setTimeout(res, 100));
+  }
+  const STOP = new Set(['AND', 'THE', 'FOR', 'PDF', 'HTML', 'USA', 'GPA', 'FAQ', 'TBA', 'TBD', 'ACT', 'SAT']);
+  return [...codes.entries()].filter(([c, n]) => n >= 2 && !STOP.has(c)).sort((a, b) => b[1] - a[1]).map(([c]) => c);
+}
+
+/** "AFST 5505a, The Making of … Staff" / "AERO 101. Title. 1 Credits." → 코드·이름·학점 */
+const TITLE_RE = /^\[?\s*([A-Z][A-Z&]{1,5}\s?\d{1,4}[A-Z]{0,4})\s*\]?[.,:\s–-]+\s*(.+?)\s*$/;
+function parseBlock(schoolId: string, block: string): CatalogCourse | null {
+  const strong = /<strong>([\s\S]*?)<\/strong>/.exec(block)?.[1];
+  const titleEl = /class="[^"]*courseblocktitle[^"]*"[^>]*>([\s\S]*?)<\/(?:p|div|h[1-6])>/.exec(block)?.[1];
+  const detailTitle = /class="[^"]*detail-title[^"]*"[^>]*>([\s\S]*?)<\/(?:span|div)>/.exec(block)?.[1];
+  const detailCode = /class="[^"]*detail-code[^"]*"[^>]*>([\s\S]*?)<\/(?:span|div)>/.exec(block)?.[1];
+  let code = '', title = '';
+  if (detailCode && detailTitle) { code = strip(detailCode).replace(/\.$/, ''); title = strip(detailTitle).replace(/\.$/, ''); }
+  else {
+    const text = strip(strong ?? titleEl ?? block.slice(0, 400));
+    const m = TITLE_RE.exec(text); if (!m) return null;
+    code = m[1].replace(/\s+/g, ' '); title = m[2].replace(/[.\s]+$/, '');
+  }
+  if (!code || !title || title.length < 3) return null;
+  const units = /\b(\d+(?:\.\d+)?)(?:\s*[-–]\s*\d+(?:\.\d+)?)?\s*(?:units?|credits?|credit hours?|hours?|points?)\b/i.exec(strip(titleEl ?? block.slice(0, 600)))?.[1];
+  return { id: courseId(schoolId, code), schoolId, code, title: title.slice(0, 140), department: code.replace(/\s?\d.*$/, ''), meetings: [], term: 'catalog', units: units ? Number(units) : undefined };
+}
+
+export interface CatalogResult { courses: CatalogCourse[]; subjects: string[]; subjectsWithCourses: number; root: string }
+
+export async function fetchCourseLeaf(schoolId: string, rootUrl: string): Promise<CatalogResult> {
+  const root = new URL(rootUrl);
+  const subjects = await discoverSubjects(root.href);
+  const byId = new Map<string, CatalogCourse>(); let subjectsWithCourses = 0;
+  for (const subj of subjects) {
+    const xml = await get(`${root.origin}/ribbit/index.cgi?page=getcourse.rjs&subject=${encodeURIComponent(subj)}`);
+    if (!xml) continue;
+    const blocks = xml.split(/<div class="courseblock[^"]*">/).slice(1);
+    if (!blocks.length) continue;
+    subjectsWithCourses++;
+    for (const b of blocks) { const c = parseBlock(schoolId, b); if (c && !byId.has(c.id)) byId.set(c.id, c); }
+    await new Promise((res) => setTimeout(res, 150));
+  }
+  return { courses: [...byId.values()], subjects, subjectsWithCourses, root: root.href };
+}
