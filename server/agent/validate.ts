@@ -12,6 +12,10 @@ const CODE_RE: Record<string, RegExp> = {
   s_mit: /^[A-Z0-9]{1,5}\.[A-Z0-9]{1,6}$/,
   s_cornell: /^[A-Z]{2,6} \d{4}$/,
   s_umd: /^[A-Z]{4}\d{3}[A-Z]{0,2}$/,
+  s_upenn: /^[A-Z]{2,5} \d{4}$/,
+  s_notredame: /^[A-Z]{2,5} \d{5}[A-Z]?$/,
+  s_dartmouth: /^[A-Z]{3,5} \d{1,3}(\.\d{1,2})?$/,
+  s_ucr: /^[A-Z]{2,5} \d{1,3}[A-Z]{0,2}$/,
 };
 const toMin = (hhmm: string) => { const [h, m] = hhmm.split(':').map(Number); return h * 60 + m; };
 

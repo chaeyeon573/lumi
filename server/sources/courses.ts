@@ -325,6 +325,140 @@ async function umdLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   return umdParseSections(html, c.term, new Map([[c.code, { title: c.title.replace(/ \(Sec \d{4}\)$/, ''), units: c.units }]])).find((x) => x.id === c.id) ?? null;
 }
 
+// ─── 플랫폼 어댑터: 학교마다 호스트만 다르고 API 가 같은 제품들 ──────────────
+// schools.csv 의 courses_source 에 "fose:https://courses.upenn.edu" / "banner9:https://registrationssb.ucr.edu" 처럼 적는다
+const UAH = { 'user-agent': 'Mozilla/5.0 AroundU-importer' };
+const hhmm = (raw: string) => { const t = raw.trim().padStart(4, '0'); return `${t.slice(0, 2)}:${t.slice(2, 4)}`; };
+/** 지금 학생이 보는 학기: 11월부터는 다음 봄, 1~5월 봄, 6~7월 여름, 8~10월 가을 */
+function currentSeason(): { season: 'Spring' | 'Summer' | 'Fall'; year: number } {
+  const d = new Date(); const y = d.getFullYear(); const m = d.getMonth() + 1;
+  return m >= 11 ? { season: 'Spring', year: y + 1 } : m <= 5 ? { season: 'Spring', year: y } : m <= 7 ? { season: 'Summer', year: y } : { season: 'Fall', year: y };
+}
+function pickTerm<T>(terms: T[], label: (t: T) => string): T | undefined {
+  const cur = currentSeason();
+  const want = terms.find((t) => new RegExp(`${cur.season}\\s.*${cur.year}|${cur.year}.*${cur.season}`, 'i').test(label(t)));
+  return want ?? terms.find((t) => /fall|spring/i.test(label(t))) ?? terms[0];
+}
+
+// Fose (CourseLeaf Section Scheduler 공개 검색: courses.upenn.edu, classsearch.nd.edu, courses.dartmouth.edu …)
+interface FoseRow { code: string; title: string; crn: string; no: string; schd: string; meetingTimes?: string; instr?: string; srcdb: string }
+async function fosePost(host: string, route: string, body: unknown): Promise<unknown> {
+  const r = await fetch(`${host}/api/?page=fose&route=${route}`, { method: 'POST', headers: { ...UAH, 'content-type': 'application/x-www-form-urlencoded' }, body: JSON.stringify(body) });
+  if (!r.ok) throw new Error(`${host} fose ${route} → ${r.status}`);
+  const text = await r.text(); if (!text.trim()) throw new Error(`${host} fose ${route} → empty body (bot check?)`);
+  return JSON.parse(text);
+}
+function foseSource(schoolId: string, host: string): CourseSource {
+  async function term(): Promise<string> {
+    if (process.env.FOSE_SRCDB) return process.env.FOSE_SRCDB;
+    const html = await (await fetch(`${host}/`, { headers: UAH })).text();
+    const opts = [...html.matchAll(/<option value="(\d{4,6})"[^>]*>([^<]+)<\/option>/g)].map((m) => ({ code: m[1], label: m[2].trim() }));
+    const t = pickTerm(opts, (o) => o.label); if (!t) throw new Error(`${host}: no term options on index page`); return t.code;
+  }
+  function rowsToCourses(rows: FoseRow[], srcdb: string): CatalogCourse[] {
+    const byCourse = new Map<string, FoseRow[]>();
+    for (const r of rows) { if (!r.code || !r.meetingTimes) continue; (byCourse.get(r.code) ?? byCourse.set(r.code, []).get(r.code)!).push(r); }
+    const out: CatalogCourse[] = [];
+    for (const [code, secs] of byCourse) {
+      const lectures = secs.filter((x) => /^LEC|^SEM|^LAB$/.test(x.schd) && !/^LAB$/.test(x.schd)); const picked = lectures.length ? lectures : secs.slice(0, 1);
+      const baseId = courseId(schoolId, code);
+      picked.forEach((sec, i) => {
+        let mts: { meet_day: string; start_time: string; end_time: string }[] = [];
+        try { mts = JSON.parse(sec.meetingTimes!) as typeof mts; } catch { return; }
+        const meetings = uniq(mts.filter((m) => m.start_time && m.end_time).map((m) => ({ day: Number(m.meet_day), start: hhmm(m.start_time), end: hhmm(m.end_time) })));
+        if (!meetings.length) return;
+        out.push({ id: i === 0 ? baseId : `${baseId}_${sec.no}`, schoolId, code, title: picked.length > 1 ? `${sec.title} (Sec ${sec.no})` : sec.title, department: code.replace(/\s?\d.*$/, ''), instructor: sec.instr?.replace(/\//g, ', ') || undefined, meetings, term: srcdb });
+      });
+    }
+    return out;
+  }
+  async function search(srcdb: string, criteria: unknown[]): Promise<FoseRow[]> {
+    const d = (await fosePost(host, 'search', { other: { srcdb }, criteria })) as { results?: FoseRow[] };
+    return d.results ?? [];
+  }
+  return {
+    schoolId,
+    async fetch() {
+      const srcdb = await term();
+      // 빈 조건으로 전부 받아 보고, 안 주면 글자별 키워드로 나눠 받아 crn 으로 합친다
+      let rows = await search(srcdb, []);
+      if (rows.length < 50) { const seen = new Map<string, FoseRow>(); for (const k of 'abcdefghijklmnopqrstuvwxyz') { for (const r of await search(srcdb, [{ field: 'keyword', value: k }])) seen.set(r.crn, r); await new Promise((res) => setTimeout(res, 120)); } rows = [...seen.values()]; }
+      const courses = rowsToCourses(rows, srcdb);
+      // 강의실: 섹션마다 details 한 번 (" in <a>ROOM</a>")
+      const crnByCourseSec = new Map(rows.map((r) => [`${r.code}#${r.no}`, r.crn]));
+      for (const c of courses) {
+        const no = /_(\w+)$/.exec(c.id)?.[1] ?? rows.find((r) => r.code === c.code && r.meetingTimes)?.no; const crn = crnByCourseSec.get(`${c.code}#${no}`); if (!crn) continue;
+        try { const d = (await fosePost(host, 'details', { group: `code:${c.code}`, key: `crn:${crn}`, srcdb, matched: `crn:${crn}` })) as { meeting_html?: string }; const room = / in <a[^>]*>([^<]+)<\/a>/.exec(d.meeting_html ?? '')?.[1] ?? / in ([^<]+)</.exec(d.meeting_html ?? '')?.[1]; if (room) c.location = room.trim(); } catch { /* no room */ }
+        await new Promise((res) => setTimeout(res, 80));
+      }
+      console.log(`  ${schoolId} fose ${srcdb}: ${rows.length} sections → ${courses.length} lectures`);
+      return courses;
+    },
+    async lookup(c) { const rows = await search(c.term, [{ field: 'keyword', value: c.code }]); return rowsToCourses(rows.filter((r) => r.code === c.code), c.term).find((x) => x.id === c.id) ?? null; },
+  };
+}
+
+// Banner 9 (Ellucian StudentRegistrationSsb 공개 검색: registrationssb.ucr.edu …)
+interface B9Section { subject: string; courseNumber: string; courseTitle: string; sequenceNumber: string; scheduleTypeDescription?: string; creditHours?: number; creditHourLow?: number; faculty?: { displayName?: string }[]; meetingsFaculty?: { meetingTime?: { beginTime?: string; endTime?: string; monday?: boolean; tuesday?: boolean; wednesday?: boolean; thursday?: boolean; friday?: boolean; saturday?: boolean; sunday?: boolean; building?: string; room?: string; meetingType?: string } }[] }
+function banner9Source(schoolId: string, host: string): CourseSource {
+  const H = `${host}/StudentRegistrationSsb/ssb`;
+  let cookie = '';
+  async function call(path: string, init: RequestInit = {}): Promise<Response> {
+    const r = await fetch(`${H}${path}`, { ...init, headers: { ...UAH, ...(cookie ? { cookie } : {}), ...(init.headers ?? {}) } });
+    const set = r.headers.getSetCookie?.() ?? []; if (set.length) cookie = [...new Set([...cookie.split('; ').filter(Boolean), ...set.map((c) => c.split(';')[0])])].join('; ');
+    return r;
+  }
+  async function term(): Promise<string> {
+    if (process.env.BANNER_TERM) return process.env.BANNER_TERM;
+    const terms = (await (await call('/classSearch/getTerms?offset=1&max=20')).json()) as { code: string; description: string }[];
+    const t = pickTerm(terms.filter((x) => !/summer|winter/i.test(x.description)), (x) => x.description) ?? terms[0]; if (!t) throw new Error(`${host}: no terms`); return t.code;
+  }
+  function toCourses(secs: B9Section[], termCode: string): CatalogCourse[] {
+    const out: CatalogCourse[] = []; const seen = new Set<string>();
+    for (const s of secs) {
+      if (s.scheduleTypeDescription && !/lecture|seminar|lecture\/discussion/i.test(s.scheduleTypeDescription)) continue;
+      const code = `${s.subject} ${s.courseNumber.replace(/^0+(?=\d)/, '')}`; const baseId = courseId(schoolId, code);
+      const meetings: Meeting[] = []; let location: string | undefined;
+      for (const mf of s.meetingsFaculty ?? []) {
+        const m = mf.meetingTime; if (!m?.beginTime || !m.endTime) continue;
+        location ||= [m.building, m.room].filter(Boolean).join(' ') || undefined;
+        const days = [m.monday, m.tuesday, m.wednesday, m.thursday, m.friday, m.saturday, m.sunday];
+        days.forEach((on, day) => { if (on) meetings.push({ day, start: hhmm(m.beginTime!), end: hhmm(m.endTime!) }); });
+      }
+      if (!meetings.length) continue;
+      const id = seen.has(baseId) ? `${baseId}_${s.sequenceNumber}` : baseId; if (seen.has(id)) continue; seen.add(id);
+      out.push({ id, schoolId, code, title: s.courseTitle, department: s.subject, instructor: s.faculty?.[0]?.displayName, location, meetings: uniq(meetings), term: termCode, units: s.creditHours ?? s.creditHourLow });
+    }
+    for (const c of out) if (out.some((o) => o.id.startsWith(`${c.id}_`))) c.title = `${c.title} (Sec 001)`;
+    for (const c of out) { const m = /_(\d{3})$/.exec(c.id); if (m) c.title = `${c.title} (Sec ${m[1]})`; }
+    return out;
+  }
+  async function searchSubject(termCode: string, subject: string): Promise<B9Section[]> {
+    await call('/classSearch/resetDataForm', { method: 'POST' });
+    await call('/term/search?mode=search', { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded' }, body: `term=${termCode}&studyPath=&studyPathText=&startDatepicker=&endDatepicker=` });
+    const all: B9Section[] = [];
+    for (let offset = 0; offset < 5000; offset += 500) {
+      const d = (await (await call(`/searchResults/searchResults?txt_term=${termCode}&txt_subject=${encodeURIComponent(subject)}&pageOffset=${offset}&pageMaxSize=500&sortColumn=subjectDescription&sortDirection=asc`)).json()) as { data?: B9Section[]; totalCount?: number };
+      all.push(...(d.data ?? [])); if ((d.data?.length ?? 0) < 500) break;
+    }
+    return all;
+  }
+  return {
+    schoolId,
+    async fetch() {
+      const termCode = await term();
+      await call('/term/search?mode=search', { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded' }, body: `term=${termCode}&studyPath=&studyPathText=&startDatepicker=&endDatepicker=` });
+      const subjects = (await (await call(`/classSearch/get_subject?searchTerm=&term=${termCode}&offset=1&max=500`)).json()) as { code: string }[];
+      const out: CatalogCourse[] = [];
+      for (const sub of subjects) { out.push(...toCourses(await searchSubject(termCode, sub.code), termCode)); await new Promise((r) => setTimeout(r, 120)); }
+      console.log(`  ${schoolId} banner9 ${termCode}: ${subjects.length} subjects → ${out.length} lectures`);
+      return out;
+    },
+    async lookup(c) { return toCourses(await searchSubject(c.term, c.department), c.term).find((x) => x.id === c.id) ?? null; },
+  };
+}
+
+
 // ─── 표본 재확인 (agent) ───────────────────────────────────────────────────
 export interface CourseSource { schoolId: string; fetch(): Promise<CatalogCourse[]>; lookup?(course: CatalogCourse): Promise<CatalogCourse | null> }
 
@@ -355,3 +489,10 @@ export const COURSE_SOURCES: Record<string, CourseSource> = {
   umd: { schoolId: 's_umd', fetch: umd, lookup: umdLookup },
 };
 export const adapters: Record<string, () => Promise<CatalogCourse[]>> = Object.fromEntries(Object.entries(COURSE_SOURCES).map(([k, v]) => [k, v.fetch]));
+
+/** courses_source 문자열 → 소스. 이름(stanford/mit/…) 이거나 "fose:<host>" / "banner9:<host>" */
+export function resolveCourseSource(schoolId: string, spec: string): CourseSource | undefined {
+  if (COURSE_SOURCES[spec]) return COURSE_SOURCES[spec];
+  const m = /^(fose|banner9):(https?:\/\/[^/\s]+)\/?$/.exec(spec.trim()); if (!m) return undefined;
+  return m[1] === 'fose' ? foseSource(schoolId, m[2]) : banner9Source(schoolId, m[2]);
+}

@@ -29,7 +29,7 @@ import { detectOrgsPlatform } from './detect';
 import { randomUUID } from 'node:crypto';
 import { createStore, type AgentRun } from '../store';
 import { sendMail } from '../mail';
-import { COURSE_SOURCES } from '../sources/courses';
+import { COURSE_SOURCES, resolveCourseSource } from '../sources/courses';
 import { fetchCourseLeaf } from '../sources/catalog';
 import { applyRules, checkDrift, spotCheck } from './validate';
 
@@ -55,10 +55,11 @@ async function record(run: Omit<AgentRun, 'id' | 'finishedAt'>): Promise<AgentRu
   return full;
 }
 
-async function runCourses(key: string): Promise<AgentRun> {
+async function runCourses(key: string, schoolId?: string): Promise<AgentRun> {
   const startedAt = new Date().toISOString();
-  const src = COURSE_SOURCES[key];
-  if (!src) return record({ task: `courses:${key}`, status: 'error', startedAt, summary: { error: `unknown source ${key}` } });
+  const src = schoolId ? resolveCourseSource(schoolId, key) : COURSE_SOURCES[key];
+  const taskName = `courses:${key.includes(':') ? schoolId : key}`;
+  if (!src) return record({ task: taskName, status: 'error', startedAt, summary: { error: `unknown source ${key}` } });
   try {
     const fetched = await src.fetch();
     const rules = applyRules(src.schoolId, fetched);
@@ -72,11 +73,11 @@ async function runCourses(key: string): Promise<AgentRun> {
     if (!drift.ok) reasons.push(drift.note!);
     if (!spot.ok) reasons.push(`spot-check matched ${spot.matched}/${spot.matched + spot.mismatched.length}`);
     const summary = { school: src.schoolId, fetched: fetched.length, kept: rules.kept.length, dropped: rules.dropped.slice(0, 10), dropRate, drift, spotCheck: { ...spot, mismatched: spot.mismatched.slice(0, 10) }, reasons, dry: DRY };
-    if (reasons.length) return record({ task: `courses:${key}`, schoolId: src.schoolId, status: 'rejected', startedAt, summary });
+    if (reasons.length) return record({ task: taskName, schoolId: src.schoolId, status: 'rejected', startedAt, summary });
     if (!DRY) await store.replaceCatalog(src.schoolId, rules.kept);
-    return record({ task: `courses:${key}`, schoolId: src.schoolId, status: 'applied', startedAt, summary });
+    return record({ task: taskName, schoolId: src.schoolId, status: 'applied', startedAt, summary });
   } catch (e) {
-    return record({ task: `courses:${key}`, schoolId: src.schoolId, status: 'error', startedAt, summary: { error: (e as Error).message } });
+    return record({ task: taskName, schoolId: src.schoolId, status: 'error', startedAt, summary: { error: (e as Error).message } });
   }
 }
 
@@ -124,10 +125,10 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
     out.push(await runScript(`orgs:${row.id}`, 'fetch:orgs', row.id, env));
   }
   // 3. 수업
-  if (row.courses_source && COURSE_SOURCES[row.courses_source]) {
-    const lastCourses = latest.get(`courses:${row.courses_source}`);
+  if (row.courses_source && resolveCourseSource(row.id, row.courses_source)) {
+    const lastCourses = latest.get(`courses:${row.courses_source.includes(':') ? row.id : row.courses_source}`);
     // 성공하면 하루마다, 실패·거부면 2시간 뒤 다시 (어댑터를 고치면 곧 반영되도록)
-    if (hoursSince(lastCourses?.finishedAt) > (lastCourses?.status === 'applied' ? 24 : 2)) out.push(await runCourses(row.courses_source));
+    if (hoursSince(lastCourses?.finishedAt) > (lastCourses?.status === 'applied' ? 24 : 2)) out.push(await runCourses(row.courses_source, row.id));
   } else {
     // 시간표 소스가 없는 학교: 공개 과목 카탈로그(코드·이름)라도 채운다 — 30일마다. 50개 미만이면 못 읽은 것으로 보고 반영하지 않는다
     const lastCatalog = latest.get(`catalog:${row.id}`);
@@ -157,7 +158,7 @@ async function notify(results: AgentRun[]) {
 
 async function runTask(t: string): Promise<AgentRun[]> {
   const [kind, arg] = t.split(':');
-  if (kind === 'courses') return [await runCourses(arg)];
+  if (kind === 'courses') { const row = loadSchools().find((r) => r.id === arg); return [row?.courses_source ? await runCourses(row.courses_source, row.id) : await runCourses(arg)]; }
   if (kind === 'orgs') return [await runScript(t, 'fetch:orgs', arg)];
   if (kind === 'greeks') return [await runScript(t, 'fetch:greeks', arg)];
   if (kind === 'school') { const row = loadSchools().find((s) => s.id === arg); return row ? runSchool(row) : [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }

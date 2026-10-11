@@ -7,7 +7,7 @@ s_ucla,UCLA,ucla,ucla.edu,Los Angeles,34.0689,-118.4452,,,
 s_princeton,Princeton University,princeton,princeton.edu,Princeton,40.3431,-74.6551,,,
 s_harvard,Harvard University,harvard,harvard.edu,Cambridge,42.3770,-71.1167,,,
 s_yale,Yale University,yale,yale.edu,New Haven,41.3163,-72.9223,,,https://catalog.yale.edu/
-s_upenn,University of Pennsylvania,upenn,upenn.edu,Philadelphia,39.9522,-75.1932,,,
+s_upenn,University of Pennsylvania,upenn,upenn.edu,Philadelphia,39.9522,-75.1932,,fose:https://courses.upenn.edu,
 s_caltech,Caltech,caltech,caltech.edu,Pasadena,34.1377,-118.1253,,,
 s_duke,Duke University,duke,duke.edu,Durham,36.0014,-78.9382,,,
 s_brown,Brown University,brown,brown.edu,Providence,41.8268,-71.4025,,,https://bulletin.brown.edu/
@@ -17,9 +17,9 @@ s_columbia,Columbia University,columbia,columbia.edu,New York,40.8075,-73.9626,,
 s_cornell,Cornell University,cornell,cornell.edu,Ithaca,42.4534,-76.4735,,cornell,
 s_uchicago,University of Chicago,uchicago,uchicago.edu,Chicago,41.7886,-87.5987,,,
 s_rice,Rice University,rice,rice.edu,Houston,29.7174,-95.4018,,,
-s_dartmouth,Dartmouth College,dartmouth,dartmouth.edu,Hanover,43.7044,-72.2887,,,
+s_dartmouth,Dartmouth College,dartmouth,dartmouth.edu,Hanover,43.7044,-72.2887,,fose:https://courses.dartmouth.edu,
 s_vanderbilt,Vanderbilt University,vanderbilt,vanderbilt.edu,Nashville,36.1447,-86.8027,,,
-s_notredame,University of Notre Dame,nd,nd.edu,Notre Dame,41.7056,-86.2353,,,https://catalog.nd.edu/
+s_notredame,University of Notre Dame,nd,nd.edu,Notre Dame,41.7056,-86.2353,,fose:https://classsearch.nd.edu,https://catalog.nd.edu/
 s_umich,University of Michigan,umich,umich.edu,Ann Arbor,42.2780,-83.7382,,,
 s_georgetown,Georgetown University,georgetown,georgetown.edu,Washington,38.9076,-77.0723,,,https://bulletin.georgetown.edu/
 s_unc,UNC Chapel Hill,unc,unc.edu,Chapel Hill,35.9049,-79.0469,,,https://catalog.unc.edu/courses/
@@ -50,4 +50,4 @@ s_umd,University of Maryland,umd,umd.edu,College Park,38.9869,-76.9426,,umd,http
 s_lehigh,Lehigh University,lehigh,lehigh.edu,Bethlehem,40.6069,-75.3783,,,https://catalog.lehigh.edu/
 s_tamu,Texas A&M University,tamu,tamu.edu,College Station,30.6187,-96.3365,,,https://catalog.tamu.edu/
 s_umn,University of Minnesota,umn,umn.edu,Minneapolis,44.9740,-93.2277,,,https://catalog.umn.edu/
-s_ucr,UC Riverside,ucr,ucr.edu,Riverside,33.9737,-117.3281,,,https://catalog.ucr.edu/courses/
+s_ucr,UC Riverside,ucr,ucr.edu,Riverside,33.9737,-117.3281,,banner9:https://registrationssb.ucr.edu,https://catalog.ucr.edu/courses/
