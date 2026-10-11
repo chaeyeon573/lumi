@@ -206,7 +206,7 @@ npm run import:opportunities -- server/data/opportunities-berkeley.csv
 
 ### 데이터 에이전트 (24시간 수집·검증)
 
-사람이 배포 때마다 수집기를 돌리는 대신, Railway **cron 서비스**(`agent`, 매일 10:00 UTC = 새벽 3시 PT)가 `npm run agent` 를 실행한다.
+사람이 배포 때마다 수집기를 돌리는 대신, Railway **cron 서비스**(`agent`, 같은 리포·브랜치, 설정 파일 `railway.agent.json`, 매일 10:00 UTC = 새벽 3시 PT)가 `npm run agent` 를 실행한다. 변수는 웹 서비스 것을 참조한다 (`DATABASE_URL=${{Postgres.DATABASE_URL}}`, `RESEND_API_KEY=${{AroundU.RESEND_API_KEY}}`, `MAIL_FROM`, `AGENT_NOTIFY_EMAIL`).
 
 - 매일: Berkeley · Stanford · MIT 수업 시간표를 원본에서 다시 가져온다
 - 일요일: 동아리 디렉터리(CalLink · Engage · Cardinal Engage · MIT Engage)와 Greek 공식 명단도 다시 가져온다
