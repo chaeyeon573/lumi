@@ -1,3 +1,3 @@
-id,name,short,email_domain,region,lat,lng,orgs_host,courses_source,catalog_url,research_source
-s_ucmerced,UC Merced,ucmerced,ucmerced.edu,Merced,37.3660,-120.4240,,banner9:https://reg-prod.ec.ucmerced.edu,,
-s_berkeley,UC Berkeley,berkeley,berkeley.edu,Berkeley,37.8719,-122.2585,https://callink.berkeley.edu,berkeley,,urap
+id,name,short,email_domain,region,lat,lng,orgs_host,courses_source,catalog_url,research_source,events_source
+s_ucmerced,UC Merced,ucmerced,ucmerced.edu,Merced,37.3660,-120.4240,,banner9:https://reg-prod.ec.ucmerced.edu,,,
+s_berkeley,UC Berkeley,berkeley,berkeley.edu,Berkeley,37.8719,-122.2585,https://callink.berkeley.edu,berkeley,,,livewhale:https://events.berkeley.edu

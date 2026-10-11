@@ -31,7 +31,7 @@ import { createStore, type AgentRun } from '../store';
 import { sendMail } from '../mail';
 import { COURSE_SOURCES, resolveCourseSource } from '../sources/courses';
 import { fetchCourseLeaf } from '../sources/catalog';
-import { fetchUrap, fetchPresenceEvents } from '../sources/opportunities';
+import { fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale } from '../sources/opportunities';
 import { applyRules, checkDrift, spotCheck } from './validate';
 
 const DRY = process.env.AGENT_DRY === '1';
@@ -93,7 +93,7 @@ function runScript(task: string, script: string, schoolId: string, extraEnv: Rec
 }
 
 // ─── 학교 단위 작업 (워커) ─────────────────────────────────────────────────
-interface SchoolRow { id: string; name: string; short: string; email_domain: string; region: string; lat: string; lng: string; orgs_host?: string; courses_source?: string; catalog_url?: string; research_source?: string }
+interface SchoolRow { id: string; name: string; short: string; email_domain: string; region: string; lat: string; lng: string; orgs_host?: string; courses_source?: string; catalog_url?: string; research_source?: string; events_source?: string }
 const SCHOOLS_CSV = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', 'schools.csv');
 const loadSchools = () => parseCSV(readFileSync(SCHOOLS_CSV, 'utf8')) as unknown as SchoolRow[];
 const hoursSince = (iso?: string) => iso ? (Date.now() - new Date(iso).getTime()) / 3_600_000 : Infinity;
@@ -117,7 +117,7 @@ async function runOpportunities(task: string, schoolId: string, fetcher: () => P
     // 저장·Q&A·후기는 유지하고, 목록에서 사라진 것 중 아무도 손대지 않은 것만 지운다
     const merged = items.map((o) => { const p = prev.find((x) => x.id === o.id); return p ? { ...o, qna: p.qna, reviews: p.reviews, createdAt: p.createdAt } : o; });
     const gone = prev.filter((o) => !fresh.has(o.id) && !o.qna.length && !o.reviews.length).map((o) => o.id);
-    if (prev.length >= 20 && items.length < prev.length * 0.5) return record({ task, schoolId, status: 'rejected', startedAt, summary: { fetched: items.length, before: prev.length, note: 'count fell by more than half — not applied' } });
+    if (prev.length >= 20 && items.length < prev.length * 0.2) return record({ task, schoolId, status: 'rejected', startedAt, summary: { fetched: items.length, before: prev.length, note: 'count fell by more than 80% — source probably broken, not applied' } });
     if (!DRY) await store.applyPatch({ opportunities: merged, removed: { opportunities: gone } });
     return record({ task, schoolId, status: 'applied', startedAt, summary: { fetched: items.length, removed: gone.length, sample: items.slice(0, 3).map((o) => o.title) } });
   } catch (e) { return record({ task, schoolId, status: 'error', startedAt, summary: { error: (e as Error).message } }); }
@@ -145,8 +145,13 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
     out.push(await runScript(`orgs:${row.id}`, 'fetch:orgs', row.id, env));
   }
   // 2b. 기회: 연구(URAP 등, 7일마다) · 행사(Presence, 6시간마다) — 공고(opportunities)로 upsert, 지난 행사는 지운다
-  if (row.research_source === 'urap' && due(`research:${row.id}`, latest.get(`research:${row.id}`)?.finishedAt, 24 * 7)) out.push(await runOpportunities(`research:${row.id}`, row.id, () => fetchUrap(row.id), 'op_berkeley_urap_'));
-  if (platform === 'presence' && host && due(`events:${row.id}`, latest.get(`events:${row.id}`)?.finishedAt, 6)) out.push(await runOpportunities(`events:${row.id}`, row.id, () => fetchPresenceEvents(new URL(host!).hostname.split('.')[0], school), `op_${row.id.replace('s_', '')}_ev_`));
+  // 학생 단체 행사 (Presence / Engage) — 6시간마다
+  const sid = row.id.replace('s_', '');
+  if (platform === 'presence' && host && due(`events:${row.id}`, latest.get(`events:${row.id}`)?.finishedAt, 6)) out.push(await runOpportunities(`events:${row.id}`, row.id, () => fetchPresenceEvents(new URL(host!).hostname.split('.')[0], school), `op_${sid}_ev_`));
+  if (platform === 'engage' && host && due(`events:${row.id}`, latest.get(`events:${row.id}`)?.finishedAt, 6)) out.push(await runOpportunities(`events:${row.id}`, row.id, () => fetchEngageEvents(host!, school), `op_${sid}_eg_`));
+  // 학교 전체 캘린더 (LiveWhale) — 강연·포럼·공연, 6시간마다
+  const lw = /^livewhale:(https?:\/\/[^\s]+?)\/?$/.exec(row.events_source ?? '')?.[1];
+  if (lw && due(`calendar:${row.id}`, latest.get(`calendar:${row.id}`)?.finishedAt, 6)) out.push(await runOpportunities(`calendar:${row.id}`, row.id, () => fetchLiveWhale(lw, school), `op_${sid}_lw_`));
   // 3. 수업
   if (row.courses_source && resolveCourseSource(row.id, row.courses_source)) {
     const lastCourses = latest.get(`courses:${row.courses_source.includes(':') ? row.id : row.courses_source}`);
@@ -199,6 +204,9 @@ if (process.env.AGENT_MODE === 'worker') {
     const hide = (snap?.schools ?? []).filter((x) => !keep.has(x.id)).map((x) => x.id);
     if (hide.length && !DRY) await store.applyPatch({ removed: { schools: hide } });
     console.log(`[agent] schools in app: ${keep.size} (hidden ${hide.length})`);
+    // URAP 프로젝트를 하나하나 공고로 넣던 것은 접었다 (URAP 은 마감 달력의 한 줄로 안내) — 아무도 손대지 않은 것만 지운다
+    const urap = (snap?.opportunities ?? []).filter((o) => o.id.startsWith('op_berkeley_urap_') && !o.qna.length && !o.reviews.length).map((o) => o.id);
+    if (urap.length && !DRY) { await store.applyPatch({ removed: { opportunities: urap } }); console.log(`[agent] removed ${urap.length} URAP project listings`); }
   }
   for (;;) {
     let did = 0;
