@@ -214,6 +214,7 @@ npm run import:opportunities -- server/data/opportunities-berkeley.csv
 - 행사 (`server/sources/opportunities.ts`, 6시간마다 공고로): 학생 단체 행사 — Berkeley CalLink(Engage) 30일 · UC Merced Presence 45일, 학교 캘린더 — `events_source=livewhale:https://events.berkeley.edu` 2주치 중 무료 음식 · 강연/포럼/패널 · 추천 행사만. 무료 음식은 단체 표시나 설명 키워드로 찾아 "🍕 Free food" 를 단다
 - 마감 달력: `server/data/opportunities-<short>.csv` (berkeley · ucmerced) 를 워커가 매일 반영한다 — 파일만 고치면 된다
 - 학교 밖 기회 (모든 학교 공통, 12시간마다): Devpost 해커톤 중 온라인 또는 캘리포니아 대면 (`server/sources/external.ts`)
+- 외부 인턴십 (모든 학교 공통, 12시간마다): 기업 공개 채용 API(Greenhouse · Lever · Ashby)에서 Intern / Co-op 공고, 미국·원격만. 기업 목록은 `server/data/internship-boards.csv`
 - URAP 은 프로젝트를 하나하나 넣지 않고 Berkeley 마감 달력의 한 줄로 안내한다 (워커가 예전에 넣은 URAP 목록을 지운다)
 - 시간표 소스 (`courses_source`): 학교별 어댑터(`stanford` · `mit` · `berkeley` · `cornell` · `umd`) 또는 **플랫폼 어댑터** — 같은 제품을 쓰는 학교는 호스트만 적는다
   · `fose:https://courses.upenn.edu` — CourseLeaf 섹션 스케줄러 공개 검색 (UPenn · Notre Dame · Dartmouth; Brown · Emory · Yale 도 같은 제품이나 봇 차단으로 202 빈 응답)

@@ -32,7 +32,7 @@ import { sendMail } from '../mail';
 import { COURSE_SOURCES, resolveCourseSource } from '../sources/courses';
 import { fetchCourseLeaf } from '../sources/catalog';
 import { fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale } from '../sources/opportunities';
-import { fetchDevpost } from '../sources/external';
+import { fetchDevpost, fetchInternships } from '../sources/external';
 import { existsSync } from 'node:fs';
 import { applyRules, checkDrift, spotCheck } from './validate';
 
@@ -219,6 +219,7 @@ if (process.env.AGENT_MODE === 'worker') {
     {
       const latest = await latestRuns();
       if (due('external:devpost', latest.get('external:devpost')?.finishedAt, 12)) { const r = [await runOpportunities('external:devpost', '', fetchDevpost, 'op_ext_devpost_')]; did += 1; await notify(r); }
+      if (due('external:internships', latest.get('external:internships')?.finishedAt, 12)) { const r = [await runOpportunities('external:internships', '', fetchInternships, 'op_ext_job_')]; did += 1; await notify(r); }
     }
     for (const row of loadSchools()) {
       const results = await runSchool(row);

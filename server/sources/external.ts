@@ -1,8 +1,13 @@
 /**
  * 학교 밖 대학생 대상 기회 — schoolId 없이 넣어 모든 학교 학생에게 보인다.
  *   devpost  Devpost 공개 API (devpost.com/api/hackathons) — 진행 중·예정 해커톤. 온라인 또는 캘리포니아 대면만, 초대제 제외
+ *   jobs     기업 공개 채용 API (Greenhouse · Lever · Ashby) 에서 제목에 Intern / Co-op 이 들어간 공고 — 미국·원격만.
+ *            기업 목록은 server/data/internship-boards.csv (ats,slug,company) — 줄 하나로 추가한다
  * MLH 해커톤 대부분이 Devpost 에도 올라온다.
  */
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import type { Opportunity } from '@core/types';
 
 const UA = { 'user-agent': 'Mozilla/5.0 AroundU-importer', accept: 'application/json' };
@@ -49,5 +54,53 @@ export async function fetchDevpost(maxPages = 40): Promise<Opportunity[]> {
     }
     await new Promise((res) => setTimeout(res, 200));
   }
+  return out;
+}
+
+const INTERN_RE = /\bintern(ship)?s?\b|\bco-?op\b/i;
+// 미국 지명(도시·주 이름)이나 원격이 확인된 공고만 남긴다. 주 약칭은 대문자로 ", CA" 꼴만 인정 (in/or/me 같은 단어와 헷갈리지 않게)
+const US_WORDS = /united states|\busa\b|\bu\.s\.|remote|new york|nyc|san francisco|bay area|seattle|austin|boston|chicago|los angeles|palo alto|mountain view|menlo park|sunnyvale|san jose|san mateo|south san francisco|redwood city|oakland|berkeley|denver|atlanta|miami|washington|philadelphia|pittsburgh|san diego|irvine|portland|salt lake|dallas|houston|phoenix|detroit|ann arbor|minneapolis|nashville|raleigh|columbus|california|texas|massachusetts|virginia|colorado|illinois|florida|georgia|arizona|michigan|ohio|oregon/i;
+const US_STATE = /(?:,|\s)(AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)\b/;
+const isUS = (loc: string) => US_WORDS.test(loc) || US_STATE.test(loc);
+interface Job { id: string; title: string; location: string; url: string; team?: string; updated?: string }
+async function jobsFor(ats: string, slug: string): Promise<Job[]> {
+  const get = async (u: string) => { const r = await fetch(u, { headers: UA }); if (!r.ok) throw new Error(`${ats}/${slug} → ${r.status}`); return r.json() as Promise<unknown>; };
+  if (ats === 'greenhouse') {
+    const d = (await get(`https://boards-api.greenhouse.io/v1/boards/${slug}/jobs`)) as { jobs?: { id: number; title: string; location?: { name?: string }; absolute_url: string; updated_at?: string; departments?: { name: string }[] }[] };
+    return (d.jobs ?? []).map((j) => ({ id: String(j.id), title: j.title, location: j.location?.name ?? '', url: j.absolute_url, team: j.departments?.[0]?.name, updated: j.updated_at }));
+  }
+  if (ats === 'lever') {
+    const d = (await get(`https://api.lever.co/v0/postings/${slug}?mode=json`)) as { id: string; text: string; hostedUrl: string; categories?: { location?: string; team?: string; allLocations?: string[] }; createdAt?: number }[];
+    return d.map((j) => ({ id: j.id, title: j.text, location: j.categories?.allLocations?.join(' / ') || j.categories?.location || '', url: j.hostedUrl, team: j.categories?.team, updated: j.createdAt ? new Date(j.createdAt).toISOString() : undefined }));
+  }
+  if (ats === 'ashby') {
+    const d = (await get(`https://api.ashbyhq.com/posting-api/job-board/${slug}`)) as { jobs?: { id: string; title: string; location?: string; isRemote?: boolean; jobUrl: string; department?: string; publishedAt?: string; secondaryLocations?: { location: string }[] }[] };
+    return (d.jobs ?? []).map((j) => ({ id: j.id, title: j.title, location: [j.location, ...(j.secondaryLocations ?? []).map((x) => x.location), j.isRemote ? 'Remote' : ''].filter(Boolean).join(' / '), url: j.jobUrl, team: j.department, updated: j.publishedAt }));
+  }
+  return [];
+}
+
+export async function fetchInternships(): Promise<Opportunity[]> {
+  const now = new Date().toISOString(); const out: Opportunity[] = [];
+  const file = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', 'internship-boards.csv');
+  const boards = readFileSync(file, 'utf8').trim().split('\n').slice(1).map((l) => l.split(',')).map(([ats, slug, ...name]) => ({ ats, slug, company: name.join(',').trim() }));
+  let failed = 0;
+  for (const b of boards) {
+    let jobs: Job[] = [];
+    try { jobs = await jobsFor(b.ats, b.slug); } catch { failed++; continue; }
+    for (const j of jobs) {
+      if (!INTERN_RE.test(j.title) || /\binternal\b|high school|\bhs\b/i.test(j.title)) continue;
+      if (!isUS(j.location)) continue;
+      out.push({
+        id: `op_ext_job_${b.ats}_${b.slug}_${j.id}`.slice(0, 120), type: 'internship', title: j.title.trim(), host: b.company,
+        description: [j.location, j.team].filter(Boolean).join(' · '), cover: { emoji: '💼', hue: 215 },
+        eligibility: 'See the posting for class year, major and work authorization', sourceUrl: j.url, sourceLabel: `${b.company} careers`,
+        tags: ['internship', b.company, ...(/remote/i.test(j.location) ? ['remote'] : [])], interests: ['startup', 'networking'], goals: ['internship'],
+        official: true, lastVerified: now, qna: [], reviews: [], createdAt: j.updated ?? now,
+      });
+    }
+    await new Promise((res) => setTimeout(res, 150));
+  }
+  if (failed > boards.length / 2) throw new Error(`${failed}/${boards.length} job boards failed`);
   return out;
 }
