@@ -166,8 +166,11 @@ for (const [schoolId, host] of Object.entries(ENGAGE_HOSTS)) {
     .map(mergeExisting);
   const csv = ['school_id,name,type,category,description', ...orgs.map((o) => [o.schoolId, o.name, o.type, o.parent ?? '', o.description].map((v) => `"${String(v).replace(/"/g, '""')}"`).join(','))].join('\n');
   writeFileSync(path.join(dataDir, `orgs-${schoolId}.csv`), csv);
+  const linked = snap.organizations.filter((o) => o.schoolId === schoolId && o.links?.some((l) => l.url.startsWith(host)));
+  const ratio = linked.length ? orgs.length / linked.length : 1;
+  if (ratio < 0.5) { console.log(`${orgs.length}개 — 지난번 ${linked.length}개의 절반도 안 돼 반영하지 않음 (사이트 확인 필요)`); process.exitCode = 2; continue; }
   const stale = staleSeed(schoolId, orgs);
-  console.log(`${orgs.length}개 (greek ${orgs.filter((o) => o.type === 'greek').length})${stale.length ? `, 추정 항목 ${stale.length}개 삭제` : ''}`);
+  console.log(`${orgs.length}개 (greek ${orgs.filter((o) => o.type === 'greek').length})${stale.length ? `, 추정 항목 ${stale.length}개 삭제` : ''}${ratio < 0.8 ? ` — 지난번 ${linked.length}개보다 줄었음` : ''}`);
   if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs, removed: { organizations: stale } });
 }
 for (const [schoolId, host] of Object.entries(CAMPUSGROUPS_HOSTS)) {
@@ -180,9 +183,13 @@ for (const [schoolId, host] of Object.entries(CAMPUSGROUPS_HOSTS)) {
   const csv = ['school_id,name,type,category,description', ...orgs.map((o) => [o.schoolId, o.name, o.type, o.parent ?? '', o.description].map((v) => `"${String(v).replace(/"/g, '""')}"`).join(','))].join('\n');
   writeFileSync(path.join(dataDir, `orgs-${schoolId}.csv`), csv);
   const freshIds = new Set(orgs.map((o) => o.id));
-  const gone = snap.organizations.filter((o) => o.schoolId === schoolId && !freshIds.has(o.id) && o.links?.some((l) => l.url.startsWith(host)) && o.memberIds.length === 0 && o.adminIds.length === 0).map((o) => o.id);
+  const linked = snap.organizations.filter((o) => o.schoolId === schoolId && o.links?.some((l) => l.url.startsWith(host)));
+  // 안전장치: 디렉터리 응답이 지난번보다 크게 줄면 사이트 쪽 문제로 보고 — 20% 넘게 줄면 삭제를 건너뛰고, 50% 넘게 줄면 반영하지 않는다
+  const ratio = linked.length ? orgs.length / linked.length : 1;
+  if (ratio < 0.5) { console.log(`${orgs.length}개 — 지난번 ${linked.length}개의 절반도 안 돼 반영하지 않음 (사이트 확인 필요)`); process.exitCode = 2; continue; }
+  const gone = ratio < 0.8 ? [] : linked.filter((o) => !freshIds.has(o.id) && o.memberIds.length === 0 && o.adminIds.length === 0).map((o) => o.id);
   const stale = [...staleSeed(schoolId, orgs), ...gone];
-  console.log(`${orgs.length}개 (greek ${orgs.filter((o) => o.type === 'greek').length})${stale.length ? `, 추정·제외 항목 ${stale.length}개 삭제` : ''}`);
+  console.log(`${orgs.length}개 (greek ${orgs.filter((o) => o.type === 'greek').length})${stale.length ? `, 추정·제외 항목 ${stale.length}개 삭제` : ''}${ratio < 0.8 ? ` — 지난번 ${linked.length}개보다 줄어 삭제는 건너뜀` : ''}`);
   if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs, removed: { organizations: stale } });
 }
 console.log(process.env.FETCH_DRY === '1' ? `CSV 만 생성: ${dataDir}` : 'DB 반영 완료');
