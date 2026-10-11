@@ -24,7 +24,7 @@ export interface Snapshot {
 /** 변경된 엔티티만 담아 돌려주는 부분 응답. 스토어가 id 기준으로 병합한다. */
 export type Patch = Partial<Omit<Snapshot, 'relationships'>> & {
   relationships?: Relationships;
-  removed?: Partial<Record<'activities' | 'posts' | 'chatRooms' | 'participations' | 'proposals' | 'opportunityIntents' | 'timePolls' | 'organizations' | 'opportunities', ID[]>>;
+  removed?: Partial<Record<'activities' | 'posts' | 'chatRooms' | 'participations' | 'proposals' | 'opportunityIntents' | 'timePolls' | 'organizations' | 'opportunities' | 'schools', ID[]>>;
 };
 
 export interface RegisterInput {

@@ -77,7 +77,7 @@ export const useAppStore = create<AppState>((set, get) => ({
     const s = get();
     set({
       users: upsert(s.users, patch.users),
-      schools: upsert(s.schools, patch.schools),
+      schools: upsert(s.schools, patch.schools, patch.removed?.schools),
       organizations: upsert(s.organizations, patch.organizations, patch.removed?.organizations),
       activities: upsert(s.activities, patch.activities, patch.removed?.activities),
       participations: upsert(s.participations, patch.participations, patch.removed?.participations),

@@ -210,6 +210,8 @@ npm run import:opportunities -- server/data/opportunities-berkeley.csv
 
 - 새 학교: 앱에 등록 → 동아리 플랫폼 자동 탐지(CampusLabs Engage / CampusGroups, `server/agent/detect.ts`) → 동아리 가져오기 → 수업 어댑터가 없으면 `adapter:<school>` 로 기록하고 운영자에게 메일
 - 있는 학교: 수업 시간표는 하루마다, 동아리는 7일마다 원본에서 다시 가져온다 (Greek 공식 명단은 `npm run fetch:greeks -- <school>` 로 따로)
+- **지금 활성 학교는 UC Berkeley · UC Merced 두 곳** (`server/data/schools.csv`). 나머지 51곳은 `server/data/schools-paused.csv` 에 그대로 있고, 줄을 옮기면 다시 켜진다. 워커는 시작할 때 목록에 없는 학교를 앱의 학교 선택지에서 숨긴다 (동아리·수업 데이터는 지우지 않는다)
+- 연구·행사 (`research_source`, Presence): Berkeley URAP 프로젝트 785개를 7일마다(`research:<school>`), Presence 를 쓰는 학교(UC Merced)는 앞으로 45일 행사를 6시간마다(`events:<school>`) 공고로 넣는다 (`server/sources/opportunities.ts`)
 - 시간표 소스 (`courses_source`): 학교별 어댑터(`stanford` · `mit` · `berkeley` · `cornell` · `umd`) 또는 **플랫폼 어댑터** — 같은 제품을 쓰는 학교는 호스트만 적는다
   · `fose:https://courses.upenn.edu` — CourseLeaf 섹션 스케줄러 공개 검색 (UPenn · Notre Dame · Dartmouth; Brown · Emory · Yale 도 같은 제품이나 봇 차단으로 202 빈 응답)
   · `banner9:https://registrationssb.ucr.edu` — Ellucian Banner 9 공개 검색 (UC Riverside)
