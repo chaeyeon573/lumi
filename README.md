@@ -204,6 +204,22 @@ npm run import:opportunities -- server/data/opportunities-berkeley.csv
 
 **사용자** — 실제 사용자는 온보딩으로 들어온다. 초기에 비어 보이지 않도록 시드 사용자가 함께 들어가 있으며, 운영 전에 `src/data/seed.en.ts` 의 `users`/`posts` 를 비우거나 줄이면 된다.
 
+### 데이터 에이전트 (24시간 수집·검증)
+
+사람이 배포 때마다 수집기를 돌리는 대신, Railway **cron 서비스**(`agent`, 매일 10:00 UTC = 새벽 3시 PT)가 `npm run agent` 를 실행한다.
+
+- 매일: Berkeley · Stanford · MIT 수업 시간표를 원본에서 다시 가져온다
+- 일요일: 동아리 디렉터리(CalLink · Engage · Cardinal Engage · MIT Engage)와 Greek 공식 명단도 다시 가져온다
+- 수업은 **검증을 통과해야만 반영**된다 (`server/agent/validate.ts`): 코드 형식·요일·시간 범위 규칙 → 지난 목록 대비 20% 넘게 줄면 중단 → 무작위 12과목을 원본에서 다시 읽어 시간·강의실 대조(90% 이상 일치)
+- 결과는 `agent_runs` 테이블에 남고 `GET /api/agent/status` 로 본다. 거부·오류는 `AGENT_NOTIFY_EMAIL` 로 메일이 간다
+- 학생 신고 → 원본 대조 → 수정 반영 루프는 아직 없다 (다음 단계)
+
+```bash
+npm run agent                          # 오늘 할 일
+npm run agent -- courses:mit           # 한 가지만
+AGENT_DRY=1 npm run agent -- courses:stanford   # 검증까지만, 반영·메일 없음
+```
+
 ### 남은 일 (운영 전)
 
 - `bootstrap()` 이 전체 스냅샷을 내려보낸다. 사용자가 수천 명이 되면 학교·친구 단위로 나눠 내려보내야 한다.

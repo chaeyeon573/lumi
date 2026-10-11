@@ -18,6 +18,8 @@ export const COLLECTIONS: Collection[] = ['users', 'schools', 'organizations', '
 export interface Account { email: string; userId: ID; createdAt: string }
 export interface Session { token: string; userId: ID; createdAt: string }
 export interface EmailCode { email: string; code: string; expiresAt: string }
+/** 데이터 에이전트 실행 기록 — 무엇을 어디서 가져와 검증 결과가 어땠고 반영했는지 */
+export interface AgentRun { id: string; task: string; schoolId?: string; status: 'applied' | 'rejected' | 'error' | 'skipped'; startedAt: string; finishedAt: string; summary: Record<string, unknown> }
 
 export interface Store {
   init(): Promise<void>;
@@ -39,6 +41,8 @@ export interface Store {
   deleteSession(token: string): Promise<void>;
   setCode(c: EmailCode): Promise<void>;
   takeCode(email: string): Promise<EmailCode | null>;
+  recordAgentRun(run: AgentRun): Promise<void>;
+  listAgentRuns(limit?: number): Promise<AgentRun[]>;
 }
 
 // ─── Postgres ────────────────────────────────────────────────────────────
@@ -66,6 +70,7 @@ export class PgStore implements Store {
       CREATE TABLE IF NOT EXISTS accounts (email text PRIMARY KEY, user_id text NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
       CREATE TABLE IF NOT EXISTS sessions (token text PRIMARY KEY, user_id text NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
       CREATE TABLE IF NOT EXISTS email_codes (email text PRIMARY KEY, code text NOT NULL, expires_at timestamptz NOT NULL);
+      CREATE TABLE IF NOT EXISTS agent_runs (id text PRIMARY KEY, task text NOT NULL, school_id text, status text NOT NULL, started_at timestamptz NOT NULL, finished_at timestamptz NOT NULL, summary jsonb NOT NULL);
     `);
   }
 
@@ -149,6 +154,13 @@ export class PgStore implements Store {
   }
   async deleteSession(token: string) { await this.pool.query('DELETE FROM sessions WHERE token = $1', [token]); }
   async setCode(c: EmailCode) { await this.pool.query('INSERT INTO email_codes (email, code, expires_at) VALUES ($1, $2, $3) ON CONFLICT (email) DO UPDATE SET code = EXCLUDED.code, expires_at = EXCLUDED.expires_at', [c.email, c.code, c.expiresAt]); }
+  async recordAgentRun(run: AgentRun) {
+    await this.pool.query('INSERT INTO agent_runs (id, task, school_id, status, started_at, finished_at, summary) VALUES ($1, $2, $3, $4, $5, $6, $7)', [run.id, run.task, run.schoolId ?? null, run.status, run.startedAt, run.finishedAt, JSON.stringify(run.summary)]);
+  }
+  async listAgentRuns(limit = 50) {
+    const { rows } = await this.pool.query<{ id: string; task: string; school_id: string | null; status: AgentRun['status']; started_at: Date; finished_at: Date; summary: Record<string, unknown> }>('SELECT * FROM agent_runs ORDER BY started_at DESC LIMIT $1', [limit]);
+    return rows.map((r) => ({ id: r.id, task: r.task, schoolId: r.school_id ?? undefined, status: r.status, startedAt: new Date(r.started_at).toISOString(), finishedAt: new Date(r.finished_at).toISOString(), summary: r.summary }));
+  }
   async takeCode(email: string) {
     const { rows } = await this.pool.query<{ email: string; code: string; expires_at: Date }>('DELETE FROM email_codes WHERE email = $1 RETURNING *', [email]);
     return rows[0] ? { email: rows[0].email, code: rows[0].code, expiresAt: rows[0].expires_at.toISOString() } : null;
@@ -156,11 +168,11 @@ export class PgStore implements Store {
 }
 
 // ─── 로컬 파일 ───────────────────────────────────────────────────────────
-interface FileData { snapshot: Snapshot | null; catalog: CatalogCourse[]; accounts: Account[]; sessions: Session[]; codes: EmailCode[] }
+interface FileData { snapshot: Snapshot | null; catalog: CatalogCourse[]; accounts: Account[]; sessions: Session[]; codes: EmailCode[]; agentRuns?: AgentRun[] }
 
 export class FileStore implements Store {
   private file: string;
-  private data: FileData = { snapshot: null, catalog: [], accounts: [], sessions: [], codes: [] };
+  private data: FileData = { snapshot: null, catalog: [], accounts: [], sessions: [], codes: [], agentRuns: [] };
   private queue: Promise<unknown> = Promise.resolve();
 
   constructor(file?: string) {
@@ -210,6 +222,8 @@ export class FileStore implements Store {
   async findSession(token: string) { return this.data.sessions.find((s) => s.token === token) ?? null; }
   async deleteSession(token: string) { this.data.sessions = this.data.sessions.filter((s) => s.token !== token); await this.flush(); }
   async setCode(c: EmailCode) { this.data.codes = [...this.data.codes.filter((x) => x.email !== c.email), c]; await this.flush(); }
+  async recordAgentRun(run: AgentRun) { (this.data.agentRuns ??= []).push(run); await this.flush(); }
+  async listAgentRuns(limit = 50) { return [...(this.data.agentRuns ?? [])].reverse().slice(0, limit); }
   async takeCode(email: string) {
     const c = this.data.codes.find((x) => x.email === email) ?? null;
     this.data.codes = this.data.codes.filter((x) => x.email !== email);

@@ -28,3 +28,12 @@ export async function sendCodeMail(to: string, code: string, lang: 'ko' | 'en'):
   }
   return { sent: true };
 }
+
+/** 운영자 알림 등 일반 메일. 설정이 없으면 콘솔에만 찍는다 */
+export async function sendMail(to: string, subject: string, text: string): Promise<boolean> {
+  const key = process.env.RESEND_API_KEY; const from = process.env.MAIL_FROM;
+  if (!key || !from) { console.log(`[mail] (not configured) to=${to} subject=${subject}\n${text}`); return false; }
+  const res = await fetch('https://api.resend.com/emails', { method: 'POST', headers: { authorization: `Bearer ${key}`, 'content-type': 'application/json' }, body: JSON.stringify({ from, to: [to], subject, text }) });
+  if (!res.ok) { console.error('[mail] resend failed', res.status, await res.text().catch(() => '')); return false; }
+  return true;
+}
