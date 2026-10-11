@@ -96,6 +96,9 @@ interface SchoolRow { id: string; name: string; short: string; email_domain: str
 const SCHOOLS_CSV = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', 'schools.csv');
 const loadSchools = () => parseCSV(readFileSync(SCHOOLS_CSV, 'utf8')) as unknown as SchoolRow[];
 const hoursSince = (iso?: string) => iso ? (Date.now() - new Date(iso).getTime()) / 3_600_000 : Infinity;
+/** AGENT_FORCE="courses:harvard,courses:s_ucmerced" — 이 프로세스가 뜬 뒤 한 번은 최근 성공 여부와 상관없이 다시 돌린다 (어댑터를 고친 직후용) */
+const forced = new Set((process.env.AGENT_FORCE ?? '').split(',').map((x) => x.trim()).filter(Boolean));
+const due = (task: string, iso: string | undefined, hours: number) => { if (forced.delete(task)) return true; return hoursSince(iso) > hours; };
 
 async function latestRuns(): Promise<Map<string, AgentRun>> {
   const m = new Map<string, AgentRun>();
@@ -120,7 +123,7 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
     host = d?.host; platform = d?.platform;
     out.push(await record({ task: `detect:${row.id}`, schoolId: row.id, status: d ? 'applied' : 'rejected', startedAt, summary: d ? { ...d } : { error: 'no public club directory found (CampusLabs Engage / CampusGroups)', tried: row.orgs_host || 'guessed hosts' } }));
   }
-  if (host && platform && hoursSince(latest.get(`orgs:${row.id}`)?.finishedAt) > 24 * 7) {
+  if (host && platform && due(`orgs:${row.id}`, latest.get(`orgs:${row.id}`)?.finishedAt, 24 * 7)) {
     const env: Record<string, string> = platform === 'engage' ? { ENGAGE_HOSTS: `${row.id}=${host}` } : platform === 'presence' ? { PRESENCE_HOSTS: `${row.id}=${new URL(host).hostname.split('.')[0]}` } : { CAMPUSGROUPS_HOSTS: `${row.id}=${host}` };
     out.push(await runScript(`orgs:${row.id}`, 'fetch:orgs', row.id, env));
   }
@@ -128,11 +131,12 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
   if (row.courses_source && resolveCourseSource(row.id, row.courses_source)) {
     const lastCourses = latest.get(`courses:${row.courses_source.includes(':') ? row.id : row.courses_source}`);
     // 성공하면 하루마다, 실패·거부면 2시간 뒤 다시 (어댑터를 고치면 곧 반영되도록)
-    if (hoursSince(lastCourses?.finishedAt) > (lastCourses?.status === 'applied' ? 24 : 2)) out.push(await runCourses(row.courses_source, row.id));
+    const coursesTask = `courses:${row.courses_source.includes(':') ? row.id : row.courses_source}`;
+    if (due(coursesTask, lastCourses?.finishedAt, lastCourses?.status === 'applied' ? 24 : 2)) out.push(await runCourses(row.courses_source, row.id));
   } else {
     // 시간표 소스가 없는 학교: 공개 과목 카탈로그(코드·이름)라도 채운다 — 30일마다. 50개 미만이면 못 읽은 것으로 보고 반영하지 않는다
     const lastCatalog = latest.get(`catalog:${row.id}`);
-    if (row.catalog_url && hoursSince(lastCatalog?.finishedAt) > (lastCatalog?.status === 'applied' ? 24 * 30 : 2)) {
+    if (row.catalog_url && due(`catalog:${row.id}`, lastCatalog?.finishedAt, lastCatalog?.status === 'applied' ? 24 * 30 : 2)) {
       const startedAt = new Date().toISOString();
       try {
         const r = await fetchCourseLeaf(row.id, row.catalog_url);
