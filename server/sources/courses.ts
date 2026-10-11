@@ -269,10 +269,10 @@ async function umdGet(url: string): Promise<string> {
 function umdTerm(): string { if (process.env.UMD_TERM) return process.env.UMD_TERM; const d = new Date(); const y = d.getFullYear(); const m = d.getMonth() + 1; return m >= 11 ? `${y + 1}01` : m <= 5 ? `${y}01` : `${y}08`; }
 function umdParseSections(html: string, term: string, titles: Map<string, { title: string; units?: number }>): CatalogCourse[] {
   const out: CatalogCourse[] = []; const seen = new Set<string>();
-  for (const courseHtml of html.split(/<div class="course-sections[^"]*"/).slice(1)) {
-    const courseCode = /name="courseId" value="([A-Z]{4}\d{3}[A-Z]{0,2})"/.exec(courseHtml)?.[1] ?? /class="course-id">\s*([A-Z0-9]+)/.exec(courseHtml)?.[1];
+  for (const courseHtml of html.split(/<div class="sections sixteen colgrid"/).slice(1)) {
+    const courseCode = /id="([A-Z]{4}\d{3}[A-Z]{0,2})"/.exec(courseHtml.slice(0, 300))?.[1] ?? /name="courseId" value="([A-Z]{4}\d{3}[A-Z]{0,2})"/.exec(courseHtml)?.[1];
     if (!courseCode) continue;
-    for (const secHtml of courseHtml.split(/<div class="section delivery-[^"]*"|<div class="section"/).slice(1)) {
+    for (const secHtml of courseHtml.split(/<div class="section delivery-[^"]*"|<div class="section">/).slice(1)) {
       const sectionNo = umdText(/class="section-id">([\s\S]*?)<\/span>/.exec(secHtml)?.[1] ?? '');
       const instructor = umdText(/class="section-instructor">([\s\S]*?)<\/span>/.exec(secHtml)?.[1] ?? '') || undefined;
       const meetings: Meeting[] = []; let location: string | undefined;
