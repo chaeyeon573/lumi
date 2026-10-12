@@ -54,7 +54,6 @@ export function HomePage() {
   const cards = scored.filter((x) => passes(x.u)).sort((a, b) => b.score - a.score).slice(0, 20);
   const current = cards[idx];
   try { if (current) localStorage.setItem(LAST_SEEN_KEY, current.u.id); } catch { /* */ }
-  const onCampus = v.visibleUsers.filter((u) => u.timetable.length ? statusNow(u.timetable).kind !== 'none' : u.availability !== 'hidden').length * 3 + 6;
 
   const connect = async (u: User, openIfConnected = true) => {
     if (v.isFriend(u.id) || v.pendingOut(u.id)) { if (openIfConnected) nav(`/users/${u.id}`); return; }
@@ -80,12 +79,8 @@ export function HomePage() {
 
   return (
     <div className="h-full flex flex-col bg-bg">
-      <AppHeader />
-      <div className="shrink-0 px-4 pt-1 pb-3 flex items-center gap-2">
-        <span className="h-9 px-3.5 rounded-full bg-surface-2 text-[13px] font-medium text-primary flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-primary" />{lang === 'en' ? `${onCampus} students on campus now` : `지금 캠퍼스에 ${onCampus}명`}</span>
-        <span className="flex-1" />
-        <button onClick={() => setFilterOpen(true)} aria-label={t('조건')} className={cn('h-10 w-10 rounded-full grid place-items-center press', chips.length ? 'bg-primary text-white' : 'bg-surface-2 text-ink-2')}><SlidersHorizontal size={18} /></button>
-      </div>
+      <AppHeader right={<button onClick={() => setFilterOpen(true)} aria-label={t('조건')} className={cn('h-10 w-10 rounded-full grid place-items-center press', chips.length ? 'bg-primary text-white' : 'text-ink-2')}><SlidersHorizontal size={20} /></button>} />
+      <div className="h-2 shrink-0" />
       {chips.length > 0 && <div className="shrink-0 flex gap-1.5 overflow-x-auto hide-scrollbar px-4 pb-3">{chips.map((c) => <button key={c.key} onClick={() => { c.clear(); reset(); }} className="h-8 pl-2.5 pr-3 rounded-full bg-accent-soft text-primary text-[12px] font-semibold flex items-center gap-1 shrink-0"><X size={12} />{c.label}</button>)}</div>}
       {status === 'loading' && <CardSkeleton />}
       {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}

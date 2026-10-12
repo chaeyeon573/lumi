@@ -9,7 +9,7 @@ import { profileCompletion } from '@core/data/prompts';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
-import { ALL_GOALS, GOAL_EMOJI, GOAL_LABELS, LOOKING_FOR_ROLES, OFFER_ROLES, PERSON_ROLE_LABELS, RESIDENCE_LABELS, ALL_MEET_PREFS, MEET_PREF_LABELS, MEET_PREF_EMOJI } from '@core/lib/labels';
+import { ALL_GOALS, GOAL_EMOJI, GOAL_LABELS, LOOKING_FOR_ROLES, PERSON_ROLE_LABELS, RESIDENCE_LABELS, ALL_MEET_PREFS, MEET_PREF_LABELS, MEET_PREF_EMOJI } from '@core/lib/labels';
 import type { Goal, Role, Residence, MeetPreference } from '@core/types';
 
 /** 이번 학기 목표·찾는 사람·제공할 수 있는 것·생활권·관심 조직 — 추천의 핵심 입력 */
@@ -21,7 +21,7 @@ export function ProfileContextPage() {
   const me = v.me;
   const [goals, setGoals] = useState<Goal[]>(me.goals);
   const [lookingFor, setLookingFor] = useState<Role[]>(me.lookingFor);
-  const [canOffer, setCanOffer] = useState<Role[]>(me.canOffer);
+  const canOffer = me.canOffer;
   const [residence, setResidence] = useState<Residence>(me.living?.residence ?? 'dorm');
   const [zone, setZone] = useState(me.living?.zone ?? '');
   const [orgIds, setOrgIds] = useState<string[]>(me.interestedOrgIds);
@@ -55,7 +55,6 @@ export function ProfileContextPage() {
           <div className="flex flex-wrap gap-2">{ALL_GOALS.map((g) => <Chip key={g} active={goals.includes(g)} onClick={() => setGoals(toggle(goals, g))}>{GOAL_EMOJI[g]} {GOAL_LABELS[g]}</Chip>)}</div>
         </Field>
         <Field label={t('찾는 사람')}><div className="flex flex-wrap gap-2">{LOOKING_FOR_ROLES.map((r) => <Chip key={r} active={lookingFor.includes(r)} onClick={() => setLookingFor(toggle(lookingFor, r))}>{PERSON_ROLE_LABELS[r]}</Chip>)}</div></Field>
-        <Field label={t('내가 제공할 수 있는 것')} hint={t('팀원·공동창업자 추천의 핵심 데이터예요.')}><div className="flex flex-wrap gap-2">{OFFER_ROLES.map((r) => <Chip key={r} active={canOffer.includes(r)} onClick={() => setCanOffer(toggle(canOffer, r))}>{PERSON_ROLE_LABELS[r]}</Chip>)}</div></Field>
         <Field label={t('생활권')} hint={t('정확한 기숙사 방·주소·실시간 위치는 저장하지 않아요. \'같은 생활권이에요\' 정도만 보여요.')} right={<VisibilityPicker compact value={me.fieldVisibility.living} onChange={(vis) => run(() => api.users.update(me.id, { fieldVisibility: { ...me.fieldVisibility, living: vis } }))} />}>
           <Segmented value={residence} onChange={setResidence} options={(Object.keys(RESIDENCE_LABELS) as Residence[]).map((r) => ({ value: r, label: RESIDENCE_LABELS[r] }))} />
           <Input className="mt-2" placeholder={t('주로 활동하는 구역 (예: 신촌 북쪽, 공학관 근처)')} value={zone} onChange={(e) => setZone(e.target.value)} />

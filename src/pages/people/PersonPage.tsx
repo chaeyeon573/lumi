@@ -132,7 +132,7 @@ export function PersonPage() {
 
         <div className="card p-4 space-y-3">
           <Block label={t('이번 학기 목표')} visible={see('goals') && user.goals.length > 0}><div className="flex flex-wrap gap-1.5">{user.goals.map((g) => <Tag key={g} tone={v.me.goals.includes(g) ? 'primary' : 'neutral'}>{GOAL_EMOJI[g]} {GOAL_LABELS[g]}</Tag>)}</div></Block>
-          {(user.lookingFor.length > 0 || user.canOffer.length > 0) && <Block label={t('찾는 사람 · 제공할 수 있는 것')} visible><div className="text-[13px] text-ink-2 space-y-0.5">{user.lookingFor.length > 0 && <div>🔍 {user.lookingFor.map((r) => PERSON_ROLE_LABELS[r]).join(', ')}</div>}{user.canOffer.length > 0 && <div>🛠 {user.canOffer.map((r) => PERSON_ROLE_LABELS[r]).join(', ')}</div>}</div></Block>}
+          {user.lookingFor.length > 0 && <Block label={t('찾는 사람')} visible><div className="text-[13px] text-ink-2">🔍 {user.lookingFor.map((r) => PERSON_ROLE_LABELS[r]).join(', ')}</div></Block>}
           {user.living && <Block label={t('생활권')} visible={see('living')}><p className="text-[13px] text-ink-2">{RESIDENCE_LABELS[user.living.residence]} · {user.living.zone}{v.me.living?.zone === user.living.zone && <span className="text-mint font-semibold ml-1">{t('같은 생활권')}</span>}</p></Block>}
           <Block label={t('관심사')} visible><div className="flex flex-wrap gap-1.5">{user.interests.map((i) => <Chip key={i} size="sm" active={common.includes(i)}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Chip>)}</div></Block>
           <Block label={t('하고 싶은 활동')} visible={see('freeTime')}>{user.nowWant && <div className="rounded-xl bg-primary-soft text-primary text-[13px] font-semibold px-3 py-2 mb-1.5">“{user.nowWant}”</div>}<p className="text-[13px] text-ink-2">{user.freeTime || t('아직 작성하지 않았어요')}</p></Block>

@@ -18,7 +18,8 @@ import { uid, addDaysISO } from '@core/lib/format';
 import { CATEGORY_COLORS, CATEGORY_EMOJI } from '@core/lib/labels';
 import { cn } from '@core/lib/cn';
 
-const HOUR_PX = 44;
+/** 한 시간 높이 — 에브리타임처럼 크게 (수업 이름·강의실·시간이 한눈에) */
+const HOUR_PX = 62;
 const HUES = [220, 160, 15, 280, 45, 330, 120, 200, 60, 300];
 
 const emptyCourse = (day: number): Course => ({ id: '', name: '', day, start: '10:00', end: '11:15', room: '', hue: HUES[Math.floor(Math.random() * HUES.length)] });
@@ -43,7 +44,10 @@ export function TimetablePage() {
   const today = todayIdx();
   const showWeekend = me.timetable.some((c) => c.day >= 5);
   const days = showWeekend ? [0, 1, 2, 3, 4, 5, 6] : [0, 1, 2, 3, 4];
-  const hours = Array.from({ length: GRID_END - GRID_START }, (_, i) => GRID_START + i);
+  // 보이는 시간 범위: 기본 9~18시, 수업이 더 이르거나 늦으면 늘린다
+  const gStart = Math.max(GRID_START, Math.min(9, ...me.timetable.map((c) => Math.floor(toMin(c.start) / 60))));
+  const gEnd = Math.min(GRID_END, Math.max(18, ...me.timetable.map((c) => Math.ceil(toMin(c.end) / 60))));
+  const hours = Array.from({ length: gEnd - gStart }, (_, i) => gStart + i);
 
   // 이번 주 참가 활동을 요일 블록으로
   const weekActs = useMemo(() => {
@@ -117,6 +121,43 @@ export function TimetablePage() {
           </div>
         )}
 
+        {me.timetable.length === 0 ? (
+          <EmptyState emoji="📅" title={t('시간표가 비어 있어요')} description={t('수업을 추가하면 공강 시간에 맞는 친구와 활동을 추천해요. 강의실과 전체 시간표는 다른 사람에게 공개되지 않아요.')}
+            action={<Button icon={<Plus size={16} />} onClick={() => setEditing(emptyCourse(today < 5 ? today : 0))}>{t('첫 수업 추가')}</Button>} />
+        ) : (
+          <div className="card overflow-hidden -mx-2">
+            <div className="grid" style={{ gridTemplateColumns: `28px repeat(${days.length}, 1fr)` }}>
+              <div />
+              {days.map((d) => <div key={d} className={cn('text-center text-[14px] font-bold py-2.5', d === today ? 'text-primary' : 'text-ink-3')}>{DAY_LABELS[d]}</div>)}
+            </div>
+            <div className="grid border-t border-line" style={{ gridTemplateColumns: `28px repeat(${days.length}, 1fr)`, height: hours.length * HOUR_PX }}>
+              <div className="relative">{hours.map((h, i) => <div key={h} className="absolute right-1 text-[11px] text-ink-3 tabular-nums" style={{ top: i * HOUR_PX + 3 }}>{h}</div>)}</div>
+              {days.map((d) => (
+                <div key={d} className={cn('relative border-l border-line overflow-hidden', d === today && 'bg-primary-soft/30')} onClick={(e) => { const y = e.nativeEvent.offsetY; const min = gStart * 60 + Math.floor(y / HOUR_PX) * 60; const fb = freeBlocks(me.timetable, d).find((b) => b.start <= min && min < b.end); if (fb && me.timetable.length) setSlot({ day: d, block: { start: Math.max(fb.start, Math.floor(min / 30) * 30), end: fb.end } }); else setEditing({ ...emptyCourse(d), start: toHHMM(min), end: toHHMM(min + 75) }); }}>
+                  {hours.map((h, i) => <div key={h} className="absolute left-0 right-0 border-t border-line/70" style={{ top: i * HOUR_PX }} />)}
+                  {me.timetable.filter((c) => c.day === d).map((c) => (
+                    <button key={c.id} onClick={(e) => { e.stopPropagation(); setSpace(c.name); }} className="absolute left-[1px] right-[1px] rounded-md px-1.5 py-1.5 text-left overflow-hidden press"
+                      style={{ top: (toMin(c.start) - gStart * 60) / 60 * HOUR_PX, height: (toMin(c.end) - toMin(c.start)) / 60 * HOUR_PX - 2, background: `hsl(${c.hue} 75% 86%)` }}>
+                      {(() => { const m = /^([A-Z][A-Z&.]*\s*\d+[A-Z]{0,3})\s*(.*)$/.exec(c.name); return m ? <>
+                        <div className="text-[12px] font-extrabold leading-tight [overflow-wrap:anywhere]" style={{ color: `hsl(${c.hue} 55% 25%)` }}>{m[1]}</div>
+                        {m[2] && <div className="text-[10.5px] font-semibold leading-tight line-clamp-3 mt-0.5 [overflow-wrap:anywhere]" style={{ color: `hsl(${c.hue} 50% 28%)` }}>{m[2]}</div>}
+                      </> : <div className="text-[12px] font-extrabold leading-tight line-clamp-3" style={{ color: `hsl(${c.hue} 55% 25%)` }}>{c.name}</div>; })()}
+                      {c.room && <div className="text-[10.5px] font-medium mt-0.5 leading-tight line-clamp-2" style={{ color: `hsl(${c.hue} 35% 35%)` }}>{c.room}</div>}
+                    </button>
+                  ))}
+                  {weekActs.filter((x) => x.day === d).map(({ a }) => (
+                    <button key={a.id} onClick={(e) => { e.stopPropagation(); nav(`/activities/${a.id}`); }} className="absolute left-0.5 right-0.5 rounded-lg px-1.5 py-1 text-left overflow-hidden press border-2 border-dashed"
+                      style={{ top: Math.max(0, (toMin(a.startTime) - gStart * 60) / 60 * HOUR_PX), height: Math.max(22, (toMin(a.endTime) - toMin(a.startTime)) / 60 * HOUR_PX - 2), borderColor: CATEGORY_COLORS[a.category], background: `${CATEGORY_COLORS[a.category]}18` }}>
+                      <div className="text-[11.5px] font-bold leading-tight line-clamp-3" style={{ color: CATEGORY_COLORS[a.category] }}>{CATEGORY_EMOJI[a.category]} {a.title}</div>
+                    </button>
+                  ))}
+                </div>
+              ))}
+            </div>
+            <div className="px-3 py-2 text-[11px] text-ink-3 flex items-center gap-3 border-t border-line"><span><span className="inline-block h-2.5 w-2.5 rounded-sm bg-primary-soft border-l-2 border-primary mr-1 align-middle" />{t('수업')}</span><span><span className="inline-block h-2.5 w-2.5 rounded-sm border-2 border-dashed border-mint mr-1 align-middle" />{t('참가 활동')}</span><span className="ml-auto">{t('수업을 탭하면 수업 공간 · 공강은 활동 열기 · 빈 칸은 수업 추가')}</span></div>
+          </div>
+        )}
+
         {me.timetable.length > 0 && myFree.filter((b) => b.end > nowMin()).length > 0 && (
           <div className="card p-3.5">
             <b className="text-[13px]">{t('오늘 공강에 끼워 넣을 수 있는 것')}</b>
@@ -131,40 +172,6 @@ export function TimetablePage() {
             </div>
           </div>
         )}
-        {me.timetable.length === 0 ? (
-          <EmptyState emoji="📅" title={t('시간표가 비어 있어요')} description={t('수업을 추가하면 공강 시간에 맞는 친구와 활동을 추천해요. 강의실과 전체 시간표는 다른 사람에게 공개되지 않아요.')}
-            action={<Button icon={<Plus size={16} />} onClick={() => setEditing(emptyCourse(today < 5 ? today : 0))}>{t('첫 수업 추가')}</Button>} />
-        ) : (
-          <div className="card overflow-hidden">
-            <div className="grid" style={{ gridTemplateColumns: `34px repeat(${days.length}, 1fr)` }}>
-              <div />
-              {days.map((d) => <div key={d} className={cn('text-center text-[12px] font-bold py-2', d === today ? 'text-primary' : 'text-ink-3')}>{DAY_LABELS[d]}</div>)}
-            </div>
-            <div className="grid border-t border-line" style={{ gridTemplateColumns: `34px repeat(${days.length}, 1fr)`, height: hours.length * HOUR_PX }}>
-              <div className="relative">{hours.map((h, i) => <div key={h} className="absolute right-1.5 text-[10px] text-ink-3 tabular-nums" style={{ top: i * HOUR_PX + 2 }}>{h}</div>)}</div>
-              {days.map((d) => (
-                <div key={d} className={cn('relative border-l border-line', d === today && 'bg-primary-soft/30')} onClick={(e) => { const y = e.nativeEvent.offsetY; const min = GRID_START * 60 + Math.floor(y / HOUR_PX) * 60; const fb = freeBlocks(me.timetable, d).find((b) => b.start <= min && min < b.end); if (fb && me.timetable.length) setSlot({ day: d, block: { start: Math.max(fb.start, Math.floor(min / 30) * 30), end: fb.end } }); else setEditing({ ...emptyCourse(d), start: toHHMM(min), end: toHHMM(min + 75) }); }}>
-                  {hours.map((h, i) => <div key={h} className="absolute left-0 right-0 border-t border-line/70" style={{ top: i * HOUR_PX }} />)}
-                  {me.timetable.filter((c) => c.day === d).map((c) => (
-                    <button key={c.id} onClick={(e) => { e.stopPropagation(); setSpace(c.name); }} className="absolute left-0.5 right-0.5 rounded-lg px-1.5 py-1 text-left overflow-hidden press"
-                      style={{ top: (toMin(c.start) - GRID_START * 60) / 60 * HOUR_PX, height: (toMin(c.end) - toMin(c.start)) / 60 * HOUR_PX - 2, background: `hsl(${c.hue} 80% 90%)`, borderLeft: `3px solid hsl(${c.hue} 70% 55%)` }}>
-                      <div className="text-[10px] font-bold leading-tight line-clamp-2" style={{ color: `hsl(${c.hue} 60% 30%)` }}>{c.name}</div>
-                      {c.room && <div className="text-[9px] text-ink-3 truncate">{c.room}</div>}
-                    </button>
-                  ))}
-                  {weekActs.filter((x) => x.day === d).map(({ a }) => (
-                    <button key={a.id} onClick={(e) => { e.stopPropagation(); nav(`/activities/${a.id}`); }} className="absolute left-0.5 right-0.5 rounded-lg px-1.5 py-1 text-left overflow-hidden press border-2 border-dashed"
-                      style={{ top: Math.max(0, (toMin(a.startTime) - GRID_START * 60) / 60 * HOUR_PX), height: Math.max(22, (toMin(a.endTime) - toMin(a.startTime)) / 60 * HOUR_PX - 2), borderColor: CATEGORY_COLORS[a.category], background: `${CATEGORY_COLORS[a.category]}18` }}>
-                      <div className="text-[10px] font-bold leading-tight line-clamp-2" style={{ color: CATEGORY_COLORS[a.category] }}>{CATEGORY_EMOJI[a.category]} {a.title}</div>
-                    </button>
-                  ))}
-                </div>
-              ))}
-            </div>
-            <div className="px-3 py-2 text-[11px] text-ink-3 flex items-center gap-3 border-t border-line"><span><span className="inline-block h-2.5 w-2.5 rounded-sm bg-primary-soft border-l-2 border-primary mr-1 align-middle" />{t('수업')}</span><span><span className="inline-block h-2.5 w-2.5 rounded-sm border-2 border-dashed border-mint mr-1 align-middle" />{t('참가 활동')}</span><span className="ml-auto">{t('수업을 탭하면 수업 공간 · 공강은 활동 열기 · 빈 칸은 수업 추가')}</span></div>
-          </div>
-        )}
-
         {me.timetable.length > 0 && (
           <div className="card p-4">
             <b className="text-[14px] flex items-center gap-1.5"><Users size={15} className="text-primary" />{t('오늘 공강이 겹치는 친구')}</b>
