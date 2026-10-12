@@ -31,7 +31,7 @@ import { searchCatalog, catalogCourses as builtInCatalog } from '@core/data/cata
 import { createStore } from './store';
 import { snapshotFor, patchFor } from './view';
 import { sendCodeMail, sendMail } from './mail';
-import { migrateDemo, demoUserIdFor } from './demo';
+import { migrateDemo, demoUserIdFor, rollSampleActivities } from './demo';
 import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError } from './ai';
 import type { AiLog } from './store';
 import { loadSeed } from './seed';
@@ -51,7 +51,10 @@ let catalog = await store.loadCatalog();
 if (catalog.length === 0) { catalog = builtInCatalog; await store.upsertCatalog(catalog); console.log(`[seed] ${catalog.length} catalog courses`); }
 
 { const p = migrateDemo(db); if (p) { await store.applyPatch(p); console.log(`[demo] updated ${p.users?.length ?? 0} sample users, hid ${p.removed?.schools?.length ?? 0} schools`); } }
+// 예시 모임 날짜를 오늘 기준으로 — 켜질 때 한 번, 그 뒤 15분마다 (지난 것은 곧 시작하는 시간으로 민다)
+async function rollSamples() { const p = rollSampleActivities(db); if (p) { await store.applyPatch(p); broadcast(p); console.log(`[demo] rolled ${p.activities?.length ?? 0} sample activities`); } }
 const clients = new Map<ID, Set<Response>>();
+await rollSamples();
 
 function broadcast(patch: Patch) {
   for (const [userId, set] of clients) {
@@ -90,6 +93,7 @@ async function syncFromWorker() {
   if (Object.keys(patch).length) { broadcast(patch); console.log(`[sync] ${WORKER_COLLECTIONS.map((c) => `${c} ${((patch as Record<string, unknown[]>)[c] ?? []).length}`).join(', ')}`); }
   const nextCatalog = await store.loadCatalog(); if (nextCatalog.length) catalog = nextCatalog;
 }
+setInterval(() => { rollSamples().catch((e) => console.error('[demo] roll failed', e)); }, 15 * 60 * 1000);
 setInterval(() => { syncFromWorker().catch((e) => console.error('[sync] failed', e)); }, Number(process.env.DATA_SYNC_SECONDS ?? 120) * 1000);
 
 // ─── 앱 ─────────────────────────────────────────────────────────────────

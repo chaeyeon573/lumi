@@ -3,6 +3,7 @@ import { t } from '@core/i18n';
 import { Clock, MapPin, Users, Map as MapIcon, BadgeCheck, Ticket, Lock } from 'lucide-react';
 import type { Activity } from '@core/types';
 import { Avatar, Button, Cover, Tag, VisibilityTag } from '@/components/ui';
+import { SampleTag } from '@/components/ui/SampleTag';
 import { CATEGORY_COLORS, CATEGORY_EMOJI, CATEGORY_LABELS, JOIN_POLICY_LABELS, PERSON_ROLE_LABELS } from '@core/lib/labels';
 import { formatDateTime, formatFee, formatTime } from '@core/lib/format';
 import { useViewer } from '@/hooks/useViewer';
@@ -36,7 +37,7 @@ export function ActivityCard({ activity: a, variant = 'feed', className, badge }
       <button onClick={() => nav(`/activities/${a.id}`)} className={cn('card w-[200px] shrink-0 overflow-hidden text-left press', className)}>
         <Cover emoji={a.cover.emoji} hue={a.cover.hue} url={a.cover.url} className="h-[88px]" size={34} />
         <div className="p-3">
-          <div className="text-[13px] font-bold line-clamp-2 leading-snug">{a.title}</div>
+          <div className="text-[13px] font-bold line-clamp-2 leading-snug">{a.sample && <SampleTag />}{a.title}</div>
           <div className="text-[11px] text-ink-3 mt-1">{formatDateTime(a.date, a.startTime)}</div>
           <div className="text-[11px] text-ink-3 truncate">{a.place.name}</div>
         </div>
@@ -50,7 +51,7 @@ export function ActivityCard({ activity: a, variant = 'feed', className, badge }
         <Cover emoji={a.cover.emoji} hue={a.cover.hue} url={a.cover.url} className="h-[76px] w-[76px] rounded-xl shrink-0" size={32} />
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-1.5"><span className="text-[11px] font-bold" style={{ color }}>{CATEGORY_EMOJI[a.category]} {CATEGORY_LABELS[a.category]}</span>{badge && <Tag tone="accent">{badge}</Tag>}</div>
-          <div className="text-[14px] font-bold truncate mt-0.5">{a.title}</div>
+          <div className="text-[14px] font-bold truncate mt-0.5">{a.sample && <SampleTag />}{a.title}</div>
           <div className="text-[12px] text-ink-3 mt-0.5 flex items-center gap-1"><Clock size={11} />{formatDateTime(a.date, a.startTime)}</div>
           <div className="text-[12px] text-ink-3 flex items-center gap-1 truncate"><MapPin size={11} />{a.place.name}</div>
           <div className="text-[12px] text-ink-2 mt-1 flex items-center gap-2"><span className="flex items-center gap-1"><Users size={11} />{count}/{a.capacity >= 999 ? '∞' : a.capacity}</span><span>{name}</span></div>
@@ -66,7 +67,7 @@ export function ActivityCard({ activity: a, variant = 'feed', className, badge }
           <button onClick={() => nav(`/activities/${a.id}`)} className="h-11 w-11 rounded-xl grid place-items-center text-[20px] shrink-0" style={{ background: `${color}1A` }}>{CATEGORY_EMOJI[a.category]}</button>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-1.5 flex-wrap"><span className="text-[11px] font-bold" style={{ color }}>{CATEGORY_LABELS[a.category]}</span>{badge && <Tag tone="accent" className="h-5">{badge}</Tag>}{a.official && <Tag tone="gold" className="h-5"><BadgeCheck size={11} /> {t('학교 공식')}</Tag>}<VisibilityTag value={a.visibility} className="ml-auto" /></div>
-            <button onClick={() => nav(`/activities/${a.id}`)} className="text-left"><h3 className="text-[15px] font-bold leading-snug mt-0.5">{a.title}</h3></button>
+            <button onClick={() => nav(`/activities/${a.id}`)} className="text-left"><h3 className="text-[15px] font-bold leading-snug mt-0.5">{a.sample && <SampleTag />}{a.title}</h3></button>
           </div>
         </div>
         <p className="text-[13px] text-ink-2 mt-2 line-clamp-2">{a.description}</p>
@@ -105,7 +106,7 @@ export function ActivityCard({ activity: a, variant = 'feed', className, badge }
           {org ? <Avatar emoji={org.logo.emoji} hue={org.logo.hue} url={org.logo.url} size={26} /> : host && <Avatar emoji={host.avatar.emoji} hue={host.avatar.hue} url={host.avatar.url} size={26} />}
           <span className="text-[12px] text-ink-2 font-medium truncate">{name}{org?.verified && <BadgeCheck size={12} className="inline ml-0.5 text-gold" />}</span>
         </div>
-        <button onClick={() => nav(`/activities/${a.id}`)} className="text-left"><h3 className="text-[16px] font-bold leading-snug">{a.title}</h3></button>
+        <button onClick={() => nav(`/activities/${a.id}`)} className="text-left"><h3 className="text-[16px] font-bold leading-snug">{a.sample && <SampleTag />}{a.title}</h3></button>
         <p className="text-[13px] text-ink-2 mt-1 line-clamp-2">{a.description}</p>
         {a.rolesNeeded && a.rolesNeeded.length > 0 && <div className="mt-1.5 flex flex-wrap gap-1 items-center text-[11px] text-ink-3">{t('팀원 모집:')} {a.rolesNeeded.map((r) => <Tag key={r} tone={v.me.canOffer.includes(r) ? 'mint' : 'neutral'} className="h-5">{PERSON_ROLE_LABELS[r]}</Tag>)}</div>}
         <div className="mt-2.5 grid grid-cols-2 gap-x-3 gap-y-1 text-[12px] text-ink-2">

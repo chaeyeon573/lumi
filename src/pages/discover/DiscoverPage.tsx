@@ -5,6 +5,7 @@ import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { AskBar } from '@/components/ai/AskBar';
 import { Chip, CardSkeleton, EmptyState, ErrorState, Button, Avatar } from '@/components/ui';
+import { SampleTag } from '@/components/ui/SampleTag';
 import { OrgCard } from '@/components/cards/OrgCard';
 import { OpenSlotSheet } from '@/components/social/OpenSlotSheet';
 import { JoinButton } from '@/components/cards/JoinButton';
@@ -65,11 +66,11 @@ export function DiscoverPage() {
   );
 }
 
-function Row({ avatar, title, sub, action }: { avatar: React.ReactNode; title: string; sub: string; action: React.ReactNode }) {
+function Row({ avatar, title, sub, action, sample }: { avatar: React.ReactNode; title: string; sub: string; action: React.ReactNode; sample?: boolean }) {
   return (
     <div className="card rounded-full pl-2.5 pr-2.5 py-2 flex items-center gap-3">
       {avatar}
-      <span className="flex-1 min-w-0"><span className="block text-[15px] font-semibold text-primary truncate">{title}</span><span className="block text-[13px] text-ink-2 truncate">{sub}</span></span>
+      <span className="flex-1 min-w-0"><span className="block text-[15px] font-semibold text-primary truncate">{sample && <SampleTag />}{title}</span><span className="block text-[13px] text-ink-2 truncate">{sub}</span></span>
       {action}
     </div>
   );
@@ -107,7 +108,7 @@ function NowTab() {
       {shown.length === 0 ? (
         <EmptyState emoji="" title={t('이 시간에 열린 활동이 없어요')} action={<Button size="sm" onClick={() => nav('/create/activity?kind=personal&now=1')}>{t('즉석 만남')}</Button>} />
       ) : <div className="space-y-3">{shown.map(({ a }) => { const host = v.userById(a.hostId); return (
-        <Row key={a.id} avatar={<button onClick={() => nav(`/activities/${a.id}`)}><Avatar emoji={host?.avatar.emoji ?? '👤'} hue={host?.avatar.hue ?? 200} url={host?.avatar.url} size={44} /></button>} title={a.title} sub={`${formatTime(a.startTime)} · ${a.place.name}`} action={<JoinButton activity={a} size="sm" label={t('참여')} className="bg-accent text-primary shadow-none" />} />
+        <Row key={a.id} sample={a.sample} avatar={<button onClick={() => nav(`/activities/${a.id}`)}><Avatar emoji={host?.avatar.emoji ?? '👤'} hue={host?.avatar.hue ?? 200} url={host?.avatar.url} size={44} /></button>} title={a.title} sub={`${formatTime(a.startTime)} · ${a.place.name}`} action={<JoinButton activity={a} size="sm" label={t('참여')} className="bg-accent text-primary shadow-none" />} />
       ); })}</div>}
     </div>
   );
@@ -141,7 +142,7 @@ function ActivityRow({ a }: { a: Activity }) {
   const v = useViewer(); const nav = useNavigate();
   const host = v.userById(a.hostId); const org = a.orgId ? v.orgById(a.orgId) : undefined;
   const av = org ? org.logo : host?.avatar ?? { emoji: '👤', hue: 200 };
-  return <Row avatar={<button onClick={() => nav(`/activities/${a.id}`)}><Avatar emoji={av.emoji} hue={av.hue} url={av.url} size={44} /></button>} title={a.title} sub={`${formatDate(a.date)} ${formatTime(a.startTime)} · ${CATEGORY_LABELS[a.category]}`} action={<JoinButton activity={a} size="sm" label={t('참여')} className="bg-accent text-primary shadow-none" />} />;
+  return <Row sample={a.sample} avatar={<button onClick={() => nav(`/activities/${a.id}`)}><Avatar emoji={av.emoji} hue={av.hue} url={av.url} size={44} /></button>} title={a.title} sub={`${formatDate(a.date)} ${formatTime(a.startTime)} · ${CATEGORY_LABELS[a.category]}`} action={<JoinButton activity={a} size="sm" label={t('참여')} className="bg-accent text-primary shadow-none" />} />;
 }
 function OppRow({ o }: { o: Opportunity }) {
   const nav = useNavigate();

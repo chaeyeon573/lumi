@@ -268,6 +268,8 @@ export interface Activity {
   hostId: ID;
   hostType: 'user' | 'org';
   orgId?: ID;
+  /** 예시로 넣어 둔 모임 — 날짜가 매일 앞으로 굴러가고 화면에 'Sample'로 표시된다 */
+  sample?: boolean;
   /** ISO date (YYYY-MM-DD) */
   date: string;
   startTime: string;

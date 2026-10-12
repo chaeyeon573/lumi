@@ -3,6 +3,7 @@ import { Lock, Users, ArrowUpRight } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import type { Activity, Opportunity } from '@core/types';
 import { Avatar } from '@/components/ui';
+import { SampleTag } from '@/components/ui/SampleTag';
 import { JoinButton } from '@/components/cards/JoinButton';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
@@ -29,7 +30,7 @@ export function NowCard({ activity: a, inMin }: { activity: Activity; inMin: num
     <article className="rounded-[24px] p-5 flex flex-col min-h-[196px]" style={{ background: CATEGORY_TINT[a.category] }}>
       <button onClick={() => nav(`/activities/${a.id}`)} className="text-left flex-1">
         <div className="flex items-center gap-1.5 text-[12px] font-bold tracking-wide uppercase text-ink/70"><Icon size={14} />{CATEGORY_LABELS[a.category]}</div>
-        <h3 className="font-display text-[24px] leading-[1.15] font-bold mt-2 line-clamp-2">{a.title}</h3>
+        <h3 className="font-display text-[24px] leading-[1.15] font-bold mt-2 line-clamp-2">{a.sample && <SampleTag className="!bg-white/25 !text-current" />}{a.title}</h3>
         <p className="mt-2 text-[14px] text-ink/80 flex items-center gap-1"><b className="text-ink">{when}</b> · {place.name}{place.approximate && <Lock size={12} />}</p>
       </button>
       <div className="mt-4 flex items-center gap-2">
@@ -52,7 +53,7 @@ export function ActivityTile({ activity: a }: { activity: Activity }) {
   return (
     <button onClick={() => nav(`/activities/${a.id}`)} className="rounded-[22px] p-4 text-left flex flex-col aspect-[4/5] press" style={{ background: CATEGORY_TINT[a.category] }}>
       <div className="flex items-center justify-between"><span className="h-8 w-8 rounded-full bg-white/60 grid place-items-center"><Icon size={15} /></span><ArrowUpRight size={16} className="text-ink/50" /></div>
-      <h3 className="font-display text-[19px] leading-[1.15] font-bold mt-auto line-clamp-3">{a.title}</h3>
+      <h3 className="font-display text-[19px] leading-[1.15] font-bold mt-auto line-clamp-3">{a.sample && <SampleTag className="!bg-white/25 !text-current" />}{a.title}</h3>
       <p className="mt-1.5 text-[12px] text-ink/70">{formatDate(a.date)} · {formatTime(a.startTime)}</p>
       <div className="mt-2.5 flex items-center gap-1.5 text-[12px] text-ink/70">{org ? <Avatar emoji={org.logo.emoji} hue={org.logo.hue} url={org.logo.url} size={20} /> : host && <Avatar emoji={host.avatar.emoji} hue={host.avatar.hue} url={host.avatar.url} size={20} />}<span className="truncate">{org?.name ?? host?.nickname}</span></div>
     </button>
@@ -85,7 +86,7 @@ export function TeamRow({ activity: a }: { activity: Activity }) {
     <div className="flex items-center gap-3 py-3.5">
       <span className="h-12 w-12 rounded-2xl grid place-items-center shrink-0" style={{ background: CATEGORY_TINT[a.category] }}><Icon size={18} /></span>
       <button onClick={() => nav(`/activities/${a.id}`)} className="flex-1 min-w-0 text-left">
-        <h3 className="text-[15px] font-bold leading-snug line-clamp-1">{a.title}</h3>
+        <h3 className="text-[15px] font-bold leading-snug line-clamp-1">{a.sample && <SampleTag />}{a.title}</h3>
         <p className={cn('text-[12px] mt-0.5 truncate', fit ? 'text-primary font-semibold' : 'text-ink-3')}>{a.courseName ? `${a.courseName} · ${a.crewType ? CREW_TYPE_LABELS[a.crewType] : ''}` : roles.map((r) => PERSON_ROLE_LABELS[r]).join(' · ')}{fit ? ` · ${t('내 역할')}` : ''}</p>
       </button>
       <JoinButton activity={a} size="sm" label={t('참여')} className="rounded-full" />

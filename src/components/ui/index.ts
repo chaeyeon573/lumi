@@ -6,3 +6,4 @@ export * from './States';
 export * from './Field';
 export * from './VisibilityPicker';
 export * from './Toast';
+export * from './SampleTag';

@@ -9,8 +9,9 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Patch, Snapshot } from '@core/api/types';
-import type { ID, User } from '@core/types';
-import { users as seedUsers, DEMO_USER_ID } from '@core/data/seed.en';
+import type { Activity, ID, User } from '@core/types';
+import { users as seedUsers, activities as seedActivities, DEMO_USER_ID } from '@core/data/seed.en';
+import { todayISO } from '@core/lib/format';
 
 export { DEMO_USER_ID };
 const SEED_IDS = new Set(seedUsers.map((u) => u.id));
@@ -73,4 +74,47 @@ export function migrateDemo(db: Snapshot): Patch | null {
   db.users = users;
   if (hideSchools.length) db.schools = db.schools.filter((s) => !hideSchools.includes(s.id));
   return { users: [...changed.values(), ...added], ...(hideSchools.length ? { removed: { schools: hideSchools } } : {}) };
+}
+
+// ─── 예시 모임 날짜 굴리기 ──────────────────────────────────────────────────
+// 시드 모임은 "오늘·내일·모레…" 기준으로 쓰여 있다. 그대로 두면 날짜가 지나 Discover 가 텅 빈다.
+// 매번 캠퍼스 시간 기준 오늘로 다시 맞추고, 오늘 것 중 이미 끝난 것은 곧 시작하도록 시간을 민다.
+const DAY = 86400000;
+const seedOffset = new Map(seedActivities.map((a) => [a.id, Math.round((Date.parse(a.date) - Date.parse(todayISO())) / DAY)]));
+const toMin = (hhmm: string) => { const [h, m] = hhmm.split(':').map(Number); return h * 60 + m; };
+const toHHMM = (min: number) => `${String(Math.floor(min / 60)).padStart(2, '0')}:${String(min % 60).padStart(2, '0')}`;
+
+function campusNow(tz = 'America/Los_Angeles') {
+  const parts = new Intl.DateTimeFormat('en-CA', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+  const get = (t: string) => parts.find((p) => p.type === t)?.value ?? '00';
+  return { date: `${get('year')}-${get('month')}-${get('day')}`, minutes: Number(get('hour')) * 60 + Number(get('minute')) };
+}
+const addDays = (iso: string, n: number) => new Date(Date.parse(`${iso}T12:00:00Z`) + n * DAY).toISOString().slice(0, 10);
+
+export function rollSampleActivities(db: Snapshot): Patch | null {
+  const now = campusNow();
+  const soon = Math.ceil((now.minutes + 15) / 15) * 15; // 15분 뒤부터
+  const changed: Activity[] = [];
+  let k = 0;
+  for (const a of db.activities) {
+    const offset = seedOffset.get(a.id);
+    if (offset === undefined) continue;
+    let date = addDays(now.date, offset);
+    let start = toMin(a.startTime), end = toMin(a.endTime);
+    const dur = Math.max(30, end - start);
+    // 원래 시간(시드에 적힌 시간)을 기준으로 다시 계산한다 — 지난번에 밀어 둔 시간이 쌓이지 않게
+    const orig = seedActivities.find((x) => x.id === a.id)!;
+    start = toMin(orig.startTime); end = start + Math.max(30, toMin(orig.endTime) - start);
+    if (offset === 0 && end <= now.minutes) {
+      const s2 = soon + (k++ % 4) * 20;
+      if (s2 + dur <= 23 * 60) { start = s2; end = s2 + dur; } else { date = addDays(now.date, 1); }
+    }
+    const next = { ...a, date, startTime: toHHMM(start), endTime: toHHMM(Math.min(end, 23 * 60 + 59)), sample: true };
+    if (next.date !== a.date || next.startTime !== a.startTime || next.endTime !== a.endTime || !a.sample) changed.push(next);
+    void dur;
+  }
+  if (!changed.length) return null;
+  const byId = new Map(changed.map((a) => [a.id, a]));
+  db.activities = db.activities.map((a) => byId.get(a.id) ?? a);
+  return { activities: changed };
 }
