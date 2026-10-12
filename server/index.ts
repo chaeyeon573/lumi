@@ -1,5 +1,5 @@
 /**
- * Heetz API 서버 — Railway 에 배포하는 단일 서비스 (API + 빌드된 프론트엔드 정적 파일).
+ * Lumi API 서버 — Railway 에 배포하는 단일 서비스 (API + 빌드된 프론트엔드 정적 파일).
  *
  *   POST /api/auth/{demo,login,register,logout,me}
  *   POST /api/bootstrap
@@ -32,7 +32,7 @@ import { createStore } from './store';
 import { snapshotFor, patchFor } from './view';
 import { sendCodeMail, sendMail } from './mail';
 import { migrateDemo, demoUserIdFor, rollSampleActivities } from './demo';
-import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError } from './ai';
+import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError, campusToday } from './ai';
 import type { AiLog } from './store';
 import { loadSeed } from './seed';
 
@@ -199,6 +199,30 @@ app.post('/api/bootstrap', auth, wrap(async (req: Req) => {
 /** 인증을 통과한 이메일 (가입 완료 전까지 메모리에만 둔다) */
 const verifiedEmails = new Set<string>();
 
+// 첫 화면 카드 — 이번 주 무료 음식, 가장 가까운 마감, 동아리 수 (로그인 전에도 보인다)
+const SHORT: Record<string, string> = { s_berkeley: 'Cal', s_ucmerced: 'Merced' };
+app.post('/api/schools/highlights', wrap(async (req) => {
+  const sid = String(req.body.schoolId ?? 's_berkeley');
+  if (!db.schools.some((s) => s.id === sid)) return null;
+  const { date: today } = campusToday();
+  const weekEnd = new Date(Date.parse(`${today}T12:00:00Z`) + 7 * 86400000).toISOString().slice(0, 10);
+  const mine = db.opportunities.filter((o) => !o.schoolId || o.schoolId === sid);
+  const nowHHMM = new Intl.DateTimeFormat('en-GB', { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(new Date());
+  const food = mine.filter((o) => o.tags.includes('free food') && o.date && o.date.slice(0, 10) >= today && o.date.slice(0, 10) <= weekEnd)
+    .filter((o) => o.date!.slice(0, 10) > today || !o.startTime || o.startTime >= nowHHMM) // 오늘 이미 시작한 건 빼고
+    .sort((a, b) => (a.date! + (a.startTime ?? '')).localeCompare(b.date! + (b.startTime ?? '')));
+  const open = mine.filter((o) => o.deadline && o.deadline.slice(0, 10) >= today).sort((a, b) => a.deadline!.localeCompare(b.deadline!));
+  const dl = open.find((o) => o.type === 'scholarship' || o.type === 'lab') ?? open[0];
+  return {
+    schoolShort: SHORT[sid] ?? db.schools.find((s) => s.id === sid)!.name,
+    freeFoodThisWeek: food.length,
+    food: food[0] ? { title: food[0].title, date: food[0].date!.slice(0, 10), startTime: food[0].startTime, place: food[0].place?.name } : undefined,
+    deadline: dl ? { title: dl.title, deadline: dl.deadline!.slice(0, 10), host: dl.host } : undefined,
+    clubs: db.organizations.filter((o) => o.schoolId === sid).length,
+    internships: mine.filter((o) => o.type === 'internship').length,
+  };
+}));
+
 app.post('/api/schools/search', wrap(async (req) => engine.schools.search(String(req.body.query ?? ''))));
 
 app.post('/api/schools/send-code', wrap(async (req) => {
@@ -311,7 +335,7 @@ app.post('/api/feedback', auth, wrap(async (req: Req) => {
   const schoolId = user?.affiliation.type === 'university' ? user.affiliation.schoolId : undefined;
   await store.addFeedback({ id: randomBytes(8).toString('hex'), userId: user?.id, schoolId, page, message, createdAt: new Date().toISOString() });
   const to = process.env.FEEDBACK_EMAIL;
-  if (to) void sendMail(to, `[Heetz feedback] ${user?.nickname ?? 'guest'} · ${schoolId ?? '-'}`, `${message}\n\n— ${user ? `${user.nickname} (${user.id})` : 'guest'} · ${schoolId ?? '-'} · ${page}`).catch(() => {});
+  if (to) void sendMail(to, `[Lumi feedback] ${user?.nickname ?? 'guest'} · ${schoolId ?? '-'}`, `${message}\n\n— ${user ? `${user.nickname} (${user.id})` : 'guest'} · ${schoolId ?? '-'} · ${page}`).catch(() => {});
   return { ok: true };
 }));
 app.get('/api/feedback', wrap(async (req) => {

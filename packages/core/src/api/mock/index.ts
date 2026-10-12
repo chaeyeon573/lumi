@@ -85,6 +85,7 @@ export const mockApi: AroundUApi = {
   },
 
   schools: {
+    async highlights() { return null; },
     async search(query) { return request(() => engine.schools.search(query)); },
     async sendVerificationCode(email, schoolId) {
       return request(() => {

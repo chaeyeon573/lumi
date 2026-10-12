@@ -315,7 +315,7 @@ export function StartPage() {
             )}
             {hint && <p className="text-[12px] text-ink-2 -mt-2">{hint}</p>}
             {verified && <div className="rounded-xl bg-mint-soft text-mint text-[13px] font-semibold px-3 py-2.5 flex items-center gap-2"><Check size={16} />{en ? 'Verified — you’ll get a school badge too.' : '인증 완료 — 학교 인증 배지도 붙어요.'}</div>}
-            <Button full size="lg" loading={busy && verified} disabled={!verified} onClick={() => finish(true)}>{en ? 'Start Heetz' : 'Heetz 시작하기'}</Button>
+            <Button full size="lg" loading={busy && verified} disabled={!verified} onClick={() => finish(true)}>{en ? 'Start Lumi' : 'Lumi 시작하기'}</Button>
             <button onClick={() => finish(false)} disabled={busy} className="w-full h-10 text-[13px] font-semibold text-ink-3">{en ? 'Skip for now' : '나중에 할게요'}</button>
           </>
         )}

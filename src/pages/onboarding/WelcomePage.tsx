@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { t, lang, setLang } from '@core/i18n';
+import { t } from '@core/i18n';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Button, BottomSheet, Field, Input } from '@/components/ui';
 import { useAppStore } from '@core/store/useAppStore';
 import { api, apiMode } from '@core/api';
-import { GraduationCap, MapPin, Users, Sparkles, Mail } from 'lucide-react';
+import type { Highlights } from '@core/api/types';
 
 export function WelcomePage() {
   const nav = useNavigate();
@@ -54,40 +54,52 @@ export function WelcomePage() {
     } catch (e) { showToast((e as Error).message, 'error'); setBusy(false); }
   };
 
+  // 첫 화면 카드 — 실제 이번 주 데이터 (데모 링크로 들어온 학교, 기본은 Berkeley)
+  const [hl, setHl] = useState<Highlights | null>(null);
+  useEffect(() => { api.schools.highlights(params.get('demo') === 'ucmerced' ? 's_ucmerced' : 's_berkeley').then(setHl).catch(() => setHl(null)); }, [params]);
+  const day = (iso?: string) => (iso ? new Date(`${iso}T12:00:00`).toLocaleDateString('en-US', { weekday: 'short' }).toUpperCase() : '');
+  const time = (hhmm?: string) => { if (!hhmm) return ''; const [h, m] = hhmm.split(':').map(Number); return `${((h + 11) % 12) + 1}${m ? `:${String(m).padStart(2, '0')}` : ''}${h < 12 ? 'AM' : 'PM'}`; };
+  const daysLeft = hl?.deadline ? Math.max(0, Math.round((Date.parse(`${hl.deadline.deadline}T12:00:00`) - Date.parse(`${new Date().toISOString().slice(0, 10)}T12:00:00`)) / 86400000)) : 0;
+  const school = hl?.schoolShort ?? 'Cal';
+  const band = `🍕 FREE FOOD ✦ ⏰ DEADLINES ✦ 🎸 ${hl ? hl.clubs.toLocaleString('en-US') : '1,500+'} CLUBS ✦ 💼 ${hl?.internships ?? 300} INTERNSHIPS ✦ `;
+
   return (
-    <div className="min-h-full flex flex-col relative bg-[linear-gradient(180deg,#EEF1FF_0%,#F6F7FB_45%)]">
-      <div className="absolute top-4 right-4 flex rounded-full bg-white/80 backdrop-blur p-0.5 text-[12px] font-bold shadow-sm">
-        <button onClick={() => lang !== 'ko' && setLang('ko')} className={`px-3 h-7 rounded-full ${lang === 'ko' ? 'bg-ink text-white' : 'text-ink-2'}`}>한국어</button>
-        <button onClick={() => lang !== 'en' && setLang('en')} className={`px-3 h-7 rounded-full ${lang === 'en' ? 'bg-ink text-white' : 'text-ink-2'}`}>English</button>
+    <div className="min-h-full flex flex-col relative overflow-hidden bg-[#0C0A14] text-[#F4F1FF]">
+      <div className="pointer-events-none absolute -top-32 -left-36 h-[420px] w-[420px] rounded-full bg-[#7B3FF2] opacity-50 blur-[80px]" />
+      <div className="pointer-events-none absolute top-[360px] -right-64 h-[420px] w-[420px] rounded-full bg-[#D4FF3A] opacity-25 blur-[80px]" />
+
+      <div className="relative px-6 pt-12 flex items-center">
+        <span className="font-['Unbounded'] font-extrabold text-[26px] tracking-tight">lumi<span className="text-[#FF3DA8]">.</span></span>
       </div>
-      <div className="flex-1 flex flex-col items-center justify-center px-8 pt-16 text-center">
-        <div className="relative">
-          <div className="h-24 w-24 rounded-[28px] bg-primary grid place-items-center text-white shadow-[var(--shadow-float)]"><MapPin size={46} strokeWidth={2.4} /></div>
-          <span className="absolute -right-3 -top-2 h-10 w-10 rounded-2xl bg-white shadow grid place-items-center text-xl">☕</span>
-          <span className="absolute -left-4 bottom-0 h-10 w-10 rounded-2xl bg-white shadow grid place-items-center text-xl">📚</span>
-        </div>
-        <h1 className="mt-8 text-[30px] font-extrabold tracking-tight">Heetz</h1>
-        <p className="mt-2 text-[15px] text-ink-2 leading-relaxed">{t('학교와 주변에서 일어나는 활동을 발견하고')}<br />{t('사람·동아리·모임과 자연스럽게 연결되는 앱')}</p>
-        <div className="mt-8 grid grid-cols-3 gap-2 w-full">
-          {[{ Icon: Users, t: t('사람'), d: t('누구와') }, { Icon: Sparkles, t: t('활동'), d: t('무엇을') }, { Icon: MapPin, t: t('장소'), d: t('어디서') }].map((x) => (
-            <div key={x.t} className="card p-3 flex flex-col items-center gap-1"><x.Icon size={20} className="text-primary" /><b className="text-[13px]">{x.t}</b><span className="text-[11px] text-ink-3">{x.d}</span></div>
-          ))}
-        </div>
-        <div className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-primary-soft text-primary text-[12px] font-semibold px-3 h-8"><GraduationCap size={14} /> {t('대학생·대학원생·졸업생을 위한 서비스')}</div>
+
+      <div className="relative mt-5 -mx-5 -rotate-3 bg-[#D4FF3A] text-[#0C0A14] py-2 overflow-hidden whitespace-nowrap">
+        <div className="inline-block animate-[marquee_22s_linear_infinite] font-['Unbounded'] font-extrabold text-[13px] tracking-wide">{band.repeat(4)}</div>
       </div>
-      <div className="px-6 pb-10 space-y-2.5 safe-bottom">
-        <Button full size="lg" onClick={() => nav(apiMode === 'remote' ? '/start' : '/onboarding/basic')}>{lang === 'en' ? 'Get started' : '시작하기'}</Button>
-        <Button full size="lg" variant="outline" icon={<Mail size={16} />} onClick={() => setEmailOpen(true)}>{t('이메일로 로그인')}</Button>
-        {apiMode === 'remote' ? (
-          <div>
-            <p className="text-center text-[12px] text-ink-3 pt-1 pb-1.5">{lang === 'en' ? 'Look around with a demo account' : '데모 계정으로 둘러보기'}</p>
-            <div className="flex gap-2">
-              <Button full variant="secondary" onClick={() => login('s_berkeley')} disabled={busy && !emailOpen}>UC Berkeley</Button>
-              <Button full variant="secondary" onClick={() => login('s_ucmerced')} disabled={busy && !emailOpen}>UC Merced</Button>
-            </div>
-          </div>
-        ) : <Button full size="lg" variant="ghost" onClick={() => login()} loading={busy && !emailOpen}>{t('로그인 (데모 계정)')}</Button>}
-        <p className="text-center text-[11px] text-ink-3 pt-1">{t('정확한 위치는 다른 사용자에게 절대 공개되지 않아요.')}</p>
+
+      <h1 className="relative font-['Unbounded'] font-extrabold text-[38px] leading-[1.05] px-6 pt-7">What's on<br />at <span className="text-[#D4FF3A]">{school}</span><br />this week?</h1>
+
+      <div className="relative h-[290px] mt-6 mx-7">
+        <div className="absolute inset-x-0 top-0 rounded-[26px] bg-[#1E1830] border border-[#2E2648] px-5 py-4 -rotate-[4deg]">
+          <div className="text-[11px] font-extrabold tracking-[1.2px] uppercase opacity-65">🍕 Free food{hl?.food ? ` · ${day(hl.food.date)} ${time(hl.food.startTime)}` : ''}</div>
+          <div className="font-['Unbounded'] font-semibold text-[17px] leading-tight mt-1.5 truncate">{hl?.food?.title ?? (hl ? `${hl.freeFoodThisWeek} free food events this week` : 'Free food near you')}</div>
+          <div className="text-[12.5px] opacity-70 mt-1.5 truncate">{hl?.food?.place ? `${hl.food.place} · ` : ''}{hl ? `${hl.freeFoodThisWeek} this week` : 'updated daily'}</div>
+        </div>
+        <div className="absolute inset-x-0 top-[92px] rounded-[26px] bg-[#D4FF3A] text-[#0C0A14] px-5 py-4 rotate-[3deg]">
+          <div className="text-[11px] font-extrabold tracking-[1.2px] uppercase opacity-65">🔥 {hl?.deadline ? (daysLeft === 0 ? 'Closes today' : `Closes in ${daysLeft} day${daysLeft === 1 ? '' : 's'}`) : 'Deadlines'}</div>
+          <div className="font-['Unbounded'] font-semibold text-[17px] leading-tight mt-1.5 truncate">{hl?.deadline?.title ?? 'Scholarships, fellowships & internships'}</div>
+          <div className="text-[12.5px] opacity-70 mt-1.5 truncate">{hl?.deadline ? `${new Date(`${hl.deadline.deadline}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} · tap to save` : 'never miss one'}</div>
+        </div>
+        <div className="absolute inset-x-0 top-[184px] rounded-[26px] bg-[#F4F1FF] text-[#0C0A14] px-5 py-4 -rotate-[2deg]">
+          <div className="text-[11px] font-extrabold tracking-[1.2px] uppercase opacity-65">👋 Free between classes</div>
+          <div className="font-['Unbounded'] font-semibold text-[17px] leading-tight mt-1.5 truncate">See who's free right now</div>
+          <div className="text-[12.5px] opacity-70 mt-1.5">Add your timetable · grab a coffee</div>
+        </div>
+      </div>
+
+      <div className="relative mt-auto px-5 pb-10 pt-6 safe-bottom">
+        <button onClick={() => nav(apiMode === 'remote' ? '/start' : '/onboarding/basic')} className="w-full h-[58px] rounded-full bg-[#D4FF3A] text-[#0C0A14] font-['Unbounded'] font-extrabold text-[17px] press">Get in →</button>
+        <p className="text-center text-[14px] text-[#A79FC4] mt-4">Have an account? <button onClick={() => setEmailOpen(true)} className="font-bold text-[#F4F1FF]">Sign in</button></p>
+        {apiMode !== 'remote' && <button onClick={() => login()} className="block mx-auto mt-2 text-[12px] text-[#A79FC4] underline">{t('로그인 (데모 계정)')}</button>}
       </div>
 
       <BottomSheet open={emailOpen} onClose={() => setEmailOpen(false)} title={t('이메일로 로그인')}>

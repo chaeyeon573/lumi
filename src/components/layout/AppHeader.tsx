@@ -15,7 +15,7 @@ export function AppHeader({ search, right }: { search?: boolean; right?: React.R
   );
   return (
     <header className="sticky top-0 z-30 bg-surface/85 backdrop-blur-xl h-16 pl-4 pr-3 flex items-center gap-1.5">
-      <span className="font-display text-[22px] font-extrabold tracking-tight text-primary shrink-0">Heetz</span>
+      <span className="font-display text-[22px] font-extrabold tracking-tight text-primary shrink-0">Lumi</span>
       <span className="flex-1" />
       {right}
       {search && <Btn onClick={() => nav('/search?tab=people')} label={t('검색')}><Search size={22} /></Btn>}

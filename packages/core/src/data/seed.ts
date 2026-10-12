@@ -360,7 +360,7 @@ export const activities: Activity[] = [
   },
   {
     id: 'a_deal', kind: 'org_event', category: 'store_deal', title: '학생증 제시 시 아메리카노 1+1',
-    description: '정문 앞 카페 오늘 하루 한정 혜택. Heetz 화면 제시.',
+    description: '정문 앞 카페 오늘 하루 한정 혜택. Lumi 화면 제시.',
     cover: { emoji: '🏷️', hue: 50 , url: photo('c_mug') }, hostId: 'u_taeho', hostType: 'user', date: T, startTime: '10:00', endTime: '21:00',
     place: { name: '카페 온도 (연세로)', lat: 37.5580, lng: 126.9360 },
     capacity: 999, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(12),

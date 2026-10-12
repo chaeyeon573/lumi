@@ -151,6 +151,16 @@ export interface TimePollInput {
   closesAt: string;
 }
 
+/** 첫 화면 카드 — 실제 데이터 */
+export interface Highlights {
+  schoolShort: string;
+  freeFoodThisWeek: number;
+  food?: { title: string; date: string; startTime?: string; place?: string };
+  deadline?: { title: string; deadline: string; host: string };
+  clubs: number;
+  internships: number;
+}
+
 /** AI 답변에 붙는 근거 카드 — 서버가 실제로 검색한 항목만 */
 export type AiCard =
   | { kind: 'listing'; id: ID; type: Opportunity['type']; title: string; host: string; date?: string; startTime?: string; deadline?: string; place?: string; benefit?: string; url?: string }
@@ -183,6 +193,8 @@ export interface AroundUApi {
     search(query: string): Promise<School[]>;
     sendVerificationCode(email: string, schoolId: ID): Promise<{ ok: boolean; hint: string }>;
     verifyCode(email: string, code: string): Promise<{ ok: boolean }>;
+    /** 첫 화면에 띄우는 이번 주 하이라이트 (로그인 전에도) — 없으면 null */
+    highlights(schoolId: ID): Promise<Highlights | null>;
   };
 
   catalog: {

@@ -91,7 +91,7 @@ export function PersonPage() {
       <PhotoHero user={user} />
       <div className="px-4 -mt-8 relative space-y-3">
         <div className="card p-4">
-          {user.sample && <div className="mb-2.5 rounded-xl bg-surface-2 px-3 py-2 text-[12px] text-ink-2">{lang === 'en' ? 'Sample profile — a made-up student so you can see how Heetz works.' : '예시 프로필이에요 — 앱이 어떻게 보이는지 보여주려고 만든 가상의 학생이에요.'}</div>}
+          {user.sample && <div className="mb-2.5 rounded-xl bg-surface-2 px-3 py-2 text-[12px] text-ink-2">{lang === 'en' ? 'Sample profile — a made-up student so you can see how Lumi works.' : '예시 프로필이에요 — 앱이 어떻게 보이는지 보여주려고 만든 가상의 학생이에요.'}</div>}
           <div className="flex items-center gap-2 flex-wrap">{user.affiliation.type === 'university' && user.affiliation.emailVerified && <VerifiedBadge kind="school" size={16} label />}{user.identityVerified && <VerifiedBadge kind="identity" size={16} label />}</div>
           {mutual && <div className="mt-3 rounded-xl bg-heart-soft text-ink text-[13px] font-semibold px-3 py-2.5 flex items-center gap-2"><Heart size={15} fill="currentColor" />{t('서로 관심이 있어요. 이제 메시지를 보낼 수 있어요.')}</div>}
           {conn !== 'none' && !mutual && <Tag tone="mint" className="mt-2"><Check size={11} />{{ friend: t('친구'), activity: t('같은 활동 참가자'), proposal: t('활동 제안 수락'), matched: t('매칭') }[conn]}</Tag>}

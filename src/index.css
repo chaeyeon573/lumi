@@ -96,6 +96,7 @@ input, textarea, select { font: inherit; }
 .animate-sheet-up { animation: sheet-up 240ms cubic-bezier(.2,.8,.2,1); }
 .animate-fade-in { animation: fade-in 180ms ease; }
 .animate-toast-in { animation: toast-in 200ms ease; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes card-return { from { transform: translateX(-130%) rotate(-14deg); } to { transform: translateX(0) rotate(0); } }
 .animate-card-return { animation: card-return 320ms cubic-bezier(.2,.8,.2,1); }
 @media (prefers-reduced-motion: reduce) { .animate-card-return { animation: none; } }

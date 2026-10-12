@@ -233,7 +233,7 @@ function ClubsTab() {
 /** 동아리 목록 한 줄 설명 — 학교 공식 목록에서 가져온 동아리는 우리 앱 회원이 0명이라 숫자 대신 종류·소개를 보여준다 */
 function orgSubtitle(o: { type: keyof typeof ORG_TYPE_LABELS; parent?: string; description: string; memberIds: string[]; followerIds: string[] }) {
   const n = o.memberIds.length + o.followerIds.length;
-  if (n > 0) return lang === 'en' ? `${n} on Heetz` : `Heetz에 ${n}명`;
+  if (n > 0) return lang === 'en' ? `${n} on Lumi` : `Lumi에 ${n}명`;
   const desc = o.description.replace(/\s+/g, ' ').trim();
   return [ORG_TYPE_LABELS[o.type], o.parent, desc].filter(Boolean).join(' · ');
 }

@@ -59,7 +59,7 @@ function SplashScreen() {
     <div className="h-full grid place-items-center bg-bg">
       <div className="flex flex-col items-center gap-3">
         <div className="h-16 w-16 rounded-3xl bg-primary grid place-items-center text-white text-3xl shadow-[var(--shadow-float)]">📍</div>
-        <div className="text-[15px] font-bold">Heetz</div>
+        <div className="text-[15px] font-bold">Lumi</div>
         <div className="h-1 w-24 rounded-full bg-line overflow-hidden"><div className="h-full w-1/2 bg-primary animate-pulse" /></div>
       </div>
     </div>
