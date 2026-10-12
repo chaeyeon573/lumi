@@ -151,7 +151,8 @@ export interface TimePollInput {
 
 export interface AroundUApi {
   auth: {
-    loginDemo(): Promise<User>;
+    /** 데모 계정으로 로그인. schoolId 를 주면 그 학교 데모 계정 (서버에 있을 때만) */
+    loginDemo(schoolId?: ID): Promise<User>;
     /** 가입한 학교 이메일로 받은 코드로 로그인 (mock: 123456) */
     loginWithCode(email: string, code: string): Promise<User>;
     register(input: RegisterInput): Promise<User>;
@@ -257,6 +258,8 @@ export interface AroundUApi {
     reset(): Promise<void>;
     /** 데모: 다음 요청 1회를 실패시킨다 (오류 상태 확인용) */
     failNext(): void;
+    /** 써 본 사람이 남기는 의견 — 운영자에게 메일로 간다 */
+    feedback(message: string, page: string): Promise<void>;
   };
 
   /** 서버 푸시(웹소켓 등)를 흉내내는 구독. 실제 API로 교체 시 SSE/WebSocket으로 대체 */

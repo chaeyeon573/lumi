@@ -141,6 +141,9 @@ DATABASE_URL=postgres://... npm run server   # 없으면 server/.data/db.json �
 - 가입: 6단계 온보딩. 학교 이메일로 6자리 코드가 발송되고(10분 유효), 서버가 검증한 이메일만 `emailVerified` 가 된다. 같은 이메일로 두 번 가입할 수 없다.
 - 로그인: 시작 화면 → **이메일로 로그인** → 코드 입력. 토큰은 `localStorage` 에 저장되고 `Authorization: Bearer` 로 전송된다.
 - 데모 계정 로그인은 `ALLOW_DEMO_LOGIN=0` 으로 끌 수 있다.
+- 데모 계정은 학교별로 있다: `u_me`(UC Berkeley), `u_me_ucmerced`(UC Merced, 서버가 켜질 때 `server/demo.ts`가 만든다). 친구에게 보낼 링크는 `/welcome?demo=berkeley`, `/welcome?demo=ucmerced` — 그 학교 데모 계정으로 바로 들어간다. 시드 사용자는 `sample: true` 라 화면에 '예시 프로필'로 표시된다.
+- 화면 오른쪽 '의견' 탭으로 남긴 글은 `feedback` 테이블에 쌓이고 `FEEDBACK_EMAIL`로 메일이 간다. 목록: `GET /api/feedback` (헤더 `x-admin-key: $ADMIN_KEY`).
+- 첫 로딩(`/api/bootstrap`)은 동아리를 내 학교 것 + 내가 속했거나 화면이 참조하는 것만 보낸다 (`server/view.ts`).
 - 모든 RPC 는 서버에서 호출자 검사를 한다 (`server/index.ts` 의 `RULES`): 자기 id 로만 쓰기, 주최자만 승인/거절, 요청 받은 사람만 응답 등.
 - 다른 사용자의 시간표 강의실(`room`)과 남의 알림·신고는 절대 내려보내지 않는다 (`server/view.ts`).
 

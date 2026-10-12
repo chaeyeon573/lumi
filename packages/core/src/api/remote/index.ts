@@ -79,8 +79,8 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
 
   return {
     auth: {
-      async loginDemo() {
-        const r = await call<{ token: string; user: User }>('auth/demo', {});
+      async loginDemo(schoolId) {
+        const r = await call<{ token: string; user: User }>('auth/demo', { schoolId });
         writeToken(r.token, r.user.id);
         return r.user;
       },
@@ -133,6 +133,7 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
     system: {
       async reset() { await call('system/reset', {}); },
       failNext() { failNextRequest = true; },
+      async feedback(message, page) { await call('feedback', { message, page }); },
     },
 
     subscribe(listener) {

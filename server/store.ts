@@ -21,6 +21,8 @@ export interface EmailCode { email: string; code: string; expiresAt: string }
 /** 데이터 에이전트 실행 기록 — 무엇을 어디서 가져와 검증 결과가 어땠고 반영했는지 */
 export interface AgentRun { id: string; task: string; schoolId?: string; status: 'applied' | 'rejected' | 'error' | 'skipped'; startedAt: string; finishedAt: string; summary: Record<string, unknown> }
 
+export interface Feedback { id: string; userId?: ID; schoolId?: ID; page: string; message: string; createdAt: string }
+
 export interface Store {
   init(): Promise<void>;
   /** 저장된 스냅샷. 비어 있으면 null (→ 시드) */
@@ -43,6 +45,8 @@ export interface Store {
   takeCode(email: string): Promise<EmailCode | null>;
   recordAgentRun(run: AgentRun): Promise<void>;
   listAgentRuns(limit?: number): Promise<AgentRun[]>;
+  addFeedback(f: Feedback): Promise<void>;
+  listFeedback(limit?: number): Promise<Feedback[]>;
 }
 
 // ─── Postgres ────────────────────────────────────────────────────────────
@@ -70,6 +74,7 @@ export class PgStore implements Store {
       CREATE TABLE IF NOT EXISTS accounts (email text PRIMARY KEY, user_id text NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
       CREATE TABLE IF NOT EXISTS sessions (token text PRIMARY KEY, user_id text NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
       CREATE TABLE IF NOT EXISTS email_codes (email text PRIMARY KEY, code text NOT NULL, expires_at timestamptz NOT NULL);
+      CREATE TABLE IF NOT EXISTS feedback (id text PRIMARY KEY, user_id text, school_id text, page text NOT NULL, message text NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
       CREATE TABLE IF NOT EXISTS agent_runs (id text PRIMARY KEY, task text NOT NULL, school_id text, status text NOT NULL, started_at timestamptz NOT NULL, finished_at timestamptz NOT NULL, summary jsonb NOT NULL);
     `);
   }
@@ -161,6 +166,13 @@ export class PgStore implements Store {
     const { rows } = await this.pool.query<{ id: string; task: string; school_id: string | null; status: AgentRun['status']; started_at: Date; finished_at: Date; summary: Record<string, unknown> }>('SELECT * FROM agent_runs ORDER BY started_at DESC LIMIT $1', [limit]);
     return rows.map((r) => ({ id: r.id, task: r.task, schoolId: r.school_id ?? undefined, status: r.status, startedAt: new Date(r.started_at).toISOString(), finishedAt: new Date(r.finished_at).toISOString(), summary: r.summary }));
   }
+  async addFeedback(f: Feedback) {
+    await this.pool.query('INSERT INTO feedback (id, user_id, school_id, page, message, created_at) VALUES ($1, $2, $3, $4, $5, $6)', [f.id, f.userId ?? null, f.schoolId ?? null, f.page, f.message, f.createdAt]);
+  }
+  async listFeedback(limit = 200) {
+    const { rows } = await this.pool.query<{ id: string; user_id: string | null; school_id: string | null; page: string; message: string; created_at: Date }>('SELECT * FROM feedback ORDER BY created_at DESC LIMIT $1', [limit]);
+    return rows.map((r) => ({ id: r.id, userId: r.user_id ?? undefined, schoolId: r.school_id ?? undefined, page: r.page, message: r.message, createdAt: new Date(r.created_at).toISOString() }));
+  }
   async takeCode(email: string) {
     const { rows } = await this.pool.query<{ email: string; code: string; expires_at: Date }>('DELETE FROM email_codes WHERE email = $1 RETURNING *', [email]);
     return rows[0] ? { email: rows[0].email, code: rows[0].code, expiresAt: rows[0].expires_at.toISOString() } : null;
@@ -168,7 +180,7 @@ export class PgStore implements Store {
 }
 
 // ─── 로컬 파일 ───────────────────────────────────────────────────────────
-interface FileData { snapshot: Snapshot | null; catalog: CatalogCourse[]; accounts: Account[]; sessions: Session[]; codes: EmailCode[]; agentRuns?: AgentRun[] }
+interface FileData { snapshot: Snapshot | null; catalog: CatalogCourse[]; accounts: Account[]; sessions: Session[]; codes: EmailCode[]; agentRuns?: AgentRun[]; feedback?: Feedback[] }
 
 export class FileStore implements Store {
   private file: string;
@@ -224,6 +236,8 @@ export class FileStore implements Store {
   async setCode(c: EmailCode) { this.data.codes = [...this.data.codes.filter((x) => x.email !== c.email), c]; await this.flush(); }
   async recordAgentRun(run: AgentRun) { (this.data.agentRuns ??= []).push(run); await this.flush(); }
   async listAgentRuns(limit = 50) { return [...(this.data.agentRuns ?? [])].reverse().slice(0, limit); }
+  async addFeedback(f: Feedback) { (this.data.feedback ??= []).push(f); await this.flush(); }
+  async listFeedback(limit = 200) { return [...(this.data.feedback ?? [])].reverse().slice(0, limit); }
   async takeCode(email: string) {
     const c = this.data.codes.find((x) => x.email === email) ?? null;
     this.data.codes = this.data.codes.filter((x) => x.email !== email);

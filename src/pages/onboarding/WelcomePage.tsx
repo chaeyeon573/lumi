@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { t, lang, setLang } from '@core/i18n';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Button, BottomSheet, Field, Input } from '@/components/ui';
 import { useAppStore } from '@core/store/useAppStore';
 import { api, apiMode } from '@core/api';
@@ -17,14 +17,24 @@ export function WelcomePage() {
   const [sent, setSent] = useState(false);
   const [hint, setHint] = useState('');
 
-  const login = async () => {
+  const login = async (schoolId?: string) => {
     setBusy(true);
     try {
-      const user = await api.auth.loginDemo();
+      const user = await api.auth.loginDemo(schoolId);
       await setCurrentUser(user);
       nav('/', { replace: true });
     } catch (e) { showToast((e as Error).message, 'error'); setBusy(false); }
   };
+
+  // 친구에게 보내는 링크: /welcome?demo=berkeley | ucmerced → 그 학교 데모 계정으로 바로 들어간다
+  const [params] = useSearchParams();
+  const autoDemo = useRef(false);
+  useEffect(() => {
+    const d = params.get('demo');
+    if (autoDemo.current || !d) return;
+    autoDemo.current = true;
+    void login(d === 'ucmerced' || d === 'merced' ? 's_ucmerced' : 's_berkeley');
+  }, [params]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const sendCode = async () => {
     setBusy(true);
@@ -68,7 +78,15 @@ export function WelcomePage() {
       <div className="px-6 pb-10 space-y-2.5 safe-bottom">
         <Button full size="lg" onClick={() => nav('/onboarding/basic')}>{t('회원가입')}</Button>
         <Button full size="lg" variant="outline" icon={<Mail size={16} />} onClick={() => setEmailOpen(true)}>{t('이메일로 로그인')}</Button>
-        <Button full size="lg" variant="ghost" onClick={login} loading={busy && !emailOpen}>{t('로그인 (데모 계정)')}</Button>
+        {apiMode === 'remote' ? (
+          <div>
+            <p className="text-center text-[12px] text-ink-3 pt-1 pb-1.5">{lang === 'en' ? 'Look around with a demo account' : '데모 계정으로 둘러보기'}</p>
+            <div className="flex gap-2">
+              <Button full variant="secondary" onClick={() => login('s_berkeley')} disabled={busy && !emailOpen}>UC Berkeley</Button>
+              <Button full variant="secondary" onClick={() => login('s_ucmerced')} disabled={busy && !emailOpen}>UC Merced</Button>
+            </div>
+          </div>
+        ) : <Button full size="lg" variant="ghost" onClick={() => login()} loading={busy && !emailOpen}>{t('로그인 (데모 계정)')}</Button>}
         <p className="text-center text-[11px] text-ink-3 pt-1">{t('정확한 위치는 다른 사용자에게 절대 공개되지 않아요.')}</p>
       </div>
 

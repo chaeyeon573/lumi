@@ -83,6 +83,8 @@ export interface PollPrompt {
 
 export interface User {
   id: ID;
+  /** 예시로 넣어 둔 가상 프로필 — 화면에 '예시 프로필'로 표시한다 */
+  sample?: boolean;
   nickname: string;
   birthYear: number;
   gender: Gender;

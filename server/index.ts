@@ -8,6 +8,8 @@
  *   POST /api/rpc/:group/:method        body: { args: [...] }  → 엔진 메서드 호출, Patch 반환
  *   GET  /api/events?token=…            SSE: 다른 사용자의 변경을 Patch 로 푸시
  *   POST /api/system/reset              ALLOW_RESET=1 일 때만
+ *   POST /api/feedback                  써 본 사람의 의견 → DB + FEEDBACK_EMAIL 로 메일
+ *   GET  /api/feedback                  x-admin-key: ADMIN_KEY 일 때만 목록
  *
  * 환경변수: PORT, DATABASE_URL, AROUNDU_LANG(ko|en), DEMO_AUTOREPLY(1이면 데모 자동응답), ALLOW_DEMO_LOGIN(0이면 비활성),
  *          ALLOW_RESET, RESEND_API_KEY, MAIL_FROM, HIDE_DEV_CODE, CORS_ORIGIN, VERIFY_EMAIL_DOMAIN(0이면 학교 도메인 검사 생략)
@@ -25,7 +27,8 @@ import { createEngine } from '@core/api/engine';
 import { searchCatalog, catalogCourses as builtInCatalog } from '@core/data/catalog/courses';
 import { createStore } from './store';
 import { snapshotFor, patchFor } from './view';
-import { sendCodeMail } from './mail';
+import { sendCodeMail, sendMail } from './mail';
+import { migrateDemo, demoUserIdFor } from './demo';
 import { loadSeed } from './seed';
 
 const PORT = Number(process.env.PORT ?? 8787);
@@ -42,12 +45,12 @@ let db: Snapshot = (await store.loadSnapshot()) ?? await (async () => {
 let catalog = await store.loadCatalog();
 if (catalog.length === 0) { catalog = builtInCatalog; await store.upsertCatalog(catalog); console.log(`[seed] ${catalog.length} catalog courses`); }
 
-const DEMO_USER_ID = 'u_me';
+{ const p = migrateDemo(db); if (p) { await store.applyPatch(p); console.log(`[demo] updated ${p.users?.length ?? 0} sample users, hid ${p.removed?.schools?.length ?? 0} schools`); } }
 const clients = new Map<ID, Set<Response>>();
 
 function broadcast(patch: Patch) {
   for (const [userId, set] of clients) {
-    const p = patchFor(patch, userId);
+    const p = patchFor(patch, userId, db);
     if (!p) continue;
     const line = `event: patch\ndata: ${JSON.stringify(p)}\n\n`;
     for (const res of set) res.write(line);
@@ -119,9 +122,9 @@ const norm = (email: unknown) => String(email ?? '').trim().toLowerCase();
 const CODE_TTL_MS = 10 * 60 * 1000;
 
 // ─── 인증 ────────────────────────────────────────────────────────────────
-app.post('/api/auth/demo', wrap(async () => {
+app.post('/api/auth/demo', wrap(async (req) => {
   if (process.env.ALLOW_DEMO_LOGIN === '0') throw bad(t('데모 계정이 없어요. 회원가입을 이용해주세요.'), 403);
-  const user = db.users.find((u) => u.id === DEMO_USER_ID);
+  const user = db.users.find((u) => u.id === demoUserIdFor(String(req.body?.schoolId ?? '')));
   if (!user) throw bad(t('데모 계정이 없어요. 회원가입을 이용해주세요.'), 404);
   return { token: await issueSession(user.id), user };
 }));
@@ -272,6 +275,23 @@ app.post('/api/system/reset', auth, wrap(async (req: Req) => {
 }));
 
 /** 데이터 에이전트 최근 실행 — 학교별 마지막 결과와 최근 기록 (읽기 전용) */
+// ─── 의견 ──────────────────────────────────────────────────────────────────
+app.post('/api/feedback', auth, wrap(async (req: Req) => {
+  const message = String(req.body.message ?? '').trim().slice(0, 4000);
+  const page = String(req.body.page ?? '').slice(0, 200);
+  if (!message) throw bad(t('입력값을 확인해주세요.'));
+  const user = req.userId ? db.users.find((u) => u.id === req.userId) : undefined;
+  const schoolId = user?.affiliation.type === 'university' ? user.affiliation.schoolId : undefined;
+  await store.addFeedback({ id: randomBytes(8).toString('hex'), userId: user?.id, schoolId, page, message, createdAt: new Date().toISOString() });
+  const to = process.env.FEEDBACK_EMAIL;
+  if (to) void sendMail(to, `[AroundU feedback] ${user?.nickname ?? 'guest'} · ${schoolId ?? '-'}`, `${message}\n\n— ${user ? `${user.nickname} (${user.id})` : 'guest'} · ${schoolId ?? '-'} · ${page}`).catch(() => {});
+  return { ok: true };
+}));
+app.get('/api/feedback', wrap(async (req) => {
+  if (!process.env.ADMIN_KEY || req.headers['x-admin-key'] !== process.env.ADMIN_KEY) throw bad('forbidden', 403);
+  return { feedback: await store.listFeedback(500) };
+}));
+
 app.get('/api/agent/status', wrap(async () => {
   const runs = await store.listAgentRuns(2000);
   const latest: Record<string, { status: string; finishedAt: string; summary: Record<string, unknown> }> = {};

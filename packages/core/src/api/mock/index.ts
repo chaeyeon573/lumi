@@ -123,6 +123,7 @@ export const mockApi: AroundUApi = {
   system: {
     async reset() { db = resetDB(); },
     failNext() { failNextRequest = true; },
+    async feedback(message, page) { console.info('[feedback]', page, message); },
   },
 
   subscribe(listener) {
