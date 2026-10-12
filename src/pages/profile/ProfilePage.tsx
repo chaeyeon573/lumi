@@ -8,11 +8,11 @@ import { useAppStore } from '@core/store/useAppStore';
 import { INTEREST_LABELS } from '@core/lib/labels';
 import { friendsOf } from '@core/lib/relations';
 import { todayISO, formatDateTime } from '@core/lib/format';
-import { DAY_LABELS, toMin, statusNow, freeBlocks, todayIdx, nowMin, fmtBlock, toHHMM } from '@core/lib/timetable';
+import { statusNow, freeBlocks, todayIdx, nowMin, fmtBlock, toHHMM } from '@core/lib/timetable';
 import { profileCompletion, questionById } from '@core/data/prompts';
 import { cn } from '@core/lib/cn';
+import { WeekGrid } from '@/components/timetable/WeekGrid';
 
-const H0 = 9, H1 = 18, PX = 26;
 
 /** 나 — 프로필 카드 · 주간 시간표 · 다가오는 약속 (Pastel Breeze) */
 export function ProfilePage() {
@@ -49,6 +49,24 @@ export function ProfilePage() {
       <AppHeader right={<button onClick={() => nav('/settings')} aria-label={t('설정')} className="h-11 w-11 rounded-full grid place-items-center text-ink-2"><Settings size={21} /></button>} />
       <div className="px-4 space-y-4">
         <section className="card p-5">
+          <div className="flex items-center justify-between">
+            <h2 className="font-display text-[20px] font-bold text-primary flex items-center gap-2"><CalendarDays size={18} />{lang === 'en' ? 'Weekly Schedule' : '내 시간표'}</h2>
+            {me.timetable.length > 0 && <span className={cn('h-7 px-3 rounded-full text-[11px] font-bold flex items-center gap-1', now.kind === 'free' ? 'bg-mint-soft text-mint' : 'bg-surface-2 text-ink-2')}><span className={cn('h-1.5 w-1.5 rounded-full', now.kind === 'free' ? 'bg-mint' : 'bg-ink-3')} />{now.kind === 'free' ? (now.until ? `${t('공강')} · ${toHHMM(now.until)}` : t('오늘 수업 없음')) : now.kind === 'in_class' ? t('수업 중') : t('오늘 수업 끝')}</span>}
+          </div>
+          {me.timetable.length === 0 ? (
+            <Button full variant="secondary" className="mt-4" onClick={() => nav('/timetable')}>{t('시간표 만들기')}</Button>
+          ) : (
+            <>
+              <div className="mt-3 -mx-3 rounded-2xl overflow-hidden border border-line">
+                <WeekGrid courses={me.timetable} days={days} today={todayIdx()} onCourse={(c) => nav(`/classes/${encodeURIComponent(c.name)}`)} onCell={() => nav('/timetable')} />
+              </div>
+              <button onClick={() => nav('/timetable')} className="mt-2 w-full h-10 rounded-xl bg-surface-2 text-[13px] font-semibold text-primary press">{lang === 'en' ? 'Edit timetable' : '시간표 편집'}</button>
+              {nextFree && <div className="mt-3 flex items-center gap-2 text-[13px] text-ink-2"><span className="text-verify">★</span><span className="flex-1 truncate">{lang === 'en' ? `Next free window ${fmtBlock({ start: Math.max(nextFree.start, nowMin()), end: nextFree.end })}` : `다음 공강 ${fmtBlock({ start: Math.max(nextFree.start, nowMin()), end: nextFree.end })}`}</span><Button size="sm" onClick={() => nav('/timetable?open=1')}>{t('열기')}</Button></div>}
+            </>
+          )}
+        </section>
+
+        <section className="card p-5">
           <div className="flex items-center gap-4">
             <Avatar emoji={me.avatar.emoji} hue={me.avatar.hue} url={me.avatar.url} size={72} />
             <div className="flex-1 min-w-0">
@@ -75,34 +93,6 @@ export function ProfilePage() {
           </div>
         </section>
 
-        <section className="card p-5">
-          <div className="flex items-center justify-between">
-            <h2 className="font-display text-[20px] font-bold text-primary flex items-center gap-2"><CalendarDays size={18} />{lang === 'en' ? 'Weekly Schedule' : '내 시간표'}</h2>
-            {me.timetable.length > 0 && <span className={cn('h-7 px-3 rounded-full text-[11px] font-bold flex items-center gap-1', now.kind === 'free' ? 'bg-mint-soft text-mint' : 'bg-surface-2 text-ink-2')}><span className={cn('h-1.5 w-1.5 rounded-full', now.kind === 'free' ? 'bg-mint' : 'bg-ink-3')} />{now.kind === 'free' ? (now.until ? `${t('공강')} · ${toHHMM(now.until)}` : t('오늘 수업 없음')) : now.kind === 'in_class' ? t('수업 중') : t('오늘 수업 끝')}</span>}
-          </div>
-          {me.timetable.length === 0 ? (
-            <Button full variant="secondary" className="mt-4" onClick={() => nav('/timetable')}>{t('시간표 만들기')}</Button>
-          ) : (
-            <>
-              <button onClick={() => nav('/timetable')} className="mt-3 w-full text-left">
-                <div className="grid text-center text-[11px] font-semibold text-ink-3" style={{ gridTemplateColumns: `20px repeat(${days.length}, 1fr)` }}><span />{days.map((d) => <span key={d} className={cn(d === todayIdx() && 'text-primary')}>{DAY_LABELS[d]}</span>)}</div>
-                <div className="grid mt-1" style={{ gridTemplateColumns: `20px repeat(${days.length}, 1fr)`, height: (H1 - H0) * PX }}>
-                  <div className="relative">{Array.from({ length: H1 - H0 }, (_, i) => <span key={i} className="absolute text-[9px] text-ink-3" style={{ top: i * PX }}>{H0 + i}</span>)}</div>
-                  {days.map((d) => (
-                    <div key={d} className={cn('relative border-l border-line/60', d === todayIdx() && 'bg-accent-soft/40')}>
-                      {me.timetable.filter((c) => c.day === d).map((c) => (
-                        <div key={c.id} className="absolute left-0.5 right-0.5 rounded-lg bg-primary-soft text-primary px-1 overflow-hidden" style={{ top: Math.max(0, (toMin(c.start) - H0 * 60) / 60 * PX), height: Math.max(14, (toMin(c.end) - toMin(c.start)) / 60 * PX - 2) }}>
-                          <div className="text-[9px] font-bold leading-tight truncate">{c.name}</div>
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </button>
-              {nextFree && <div className="mt-3 flex items-center gap-2 text-[13px] text-ink-2"><span className="text-verify">★</span><span className="flex-1 truncate">{lang === 'en' ? `Next free window ${fmtBlock({ start: Math.max(nextFree.start, nowMin()), end: nextFree.end })}` : `다음 공강 ${fmtBlock({ start: Math.max(nextFree.start, nowMin()), end: nextFree.end })}`}</span><Button size="sm" onClick={() => nav('/timetable?open=1')}>{t('열기')}</Button></div>}
-            </>
-          )}
-        </section>
 
         <section className="card p-5">
           <div className="flex items-center justify-between mb-2"><h2 className="font-display text-[20px] font-bold text-primary flex items-center gap-2"><CalendarCheck size={18} />{lang === 'en' ? 'Upcoming Hangouts' : '다가오는 약속'}</h2><button onClick={() => nav('/plans')} className="text-[13px] font-semibold text-verify">{t('전체')} ({upcoming.length + openPolls})</button></div>
