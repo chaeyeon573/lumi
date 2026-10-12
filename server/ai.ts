@@ -1,41 +1,59 @@
 /**
- * Heetz AI — Claude 로 세 가지를 한다.
+ * Heetz AI — OpenAI(GPT) 로 세 가지를 한다.
  *  1) ask:      "오늘 무료 음식?" 같은 질문에 우리 데이터만 검색해서 답하고, 근거 카드를 붙인다
  *  2) profile:  가입할 때 자기소개 몇 줄(또는 이력서)을 읽고 관심사·목표를 채운 뒤 동아리·공고를 추천한다
  *  3) starters: 사람 프로필에서 상대가 공개한 것만으로 첫마디를 제안한다
  *
- * ANTHROPIC_API_KEY 가 없으면 꺼진다 (aiEnabled() === false) — 화면은 AI 없이 원래대로 동작한다.
- * 모델은 AI_MODEL (기본 claude-opus-5-5).
+ * 키는 OPENAI_API_KEY (또는 API_KEY). 없으면 꺼진다 (aiEnabled() === false) — 화면은 AI 없이 원래대로 동작한다.
+ * 모델은 AI_MODEL 로 고정할 수 있고, 비어 있으면 키가 쓸 수 있는 모델 중 PREFERRED 순서로 고른다.
  */
-import Anthropic from '@anthropic-ai/sdk';
-import { betaTool } from '@anthropic-ai/sdk/helpers/beta/json-schema';
+import OpenAI from 'openai';
 import type { Snapshot, CatalogCourse } from '@core/api/types';
 import type { Goal, ID, Interest, OpportunityType, Organization, Purpose, Role, User } from '@core/types';
 import { ALL_GOALS, ALL_INTERESTS, ALL_PURPOSES } from '@core/lib/labels';
 import { canViewField, isBlocked } from '@core/lib/relations';
 import { searchActivities, searchClubs, searchCourses, searchListings, schoolOf, type Card } from './ai-search';
 
-const MODEL = process.env.AI_MODEL || 'claude-opus-5-5';
-/** 거절(refusal) 시 서버가 다른 모델로 이어서 답하게 한다 — 이 모델들에서만 받는 옵션 */
-const FALLBACK_MODELS = new Set(['claude-opus-5-5', 'claude-opus-5', 'claude-fable-5-1', 'claude-sonnet-5-5']);
-
-let client: Anthropic | null = null;
-export const aiEnabled = () => !!process.env.ANTHROPIC_API_KEY;
-function ai(): Anthropic {
-  if (!client) client = new Anthropic();
+const apiKey = () => process.env.OPENAI_API_KEY || process.env.API_KEY || '';
+export const aiEnabled = () => apiKey().startsWith('sk-');
+let client: OpenAI | null = null;
+function ai(): OpenAI {
+  if (!client) client = new OpenAI({ apiKey: apiKey() });
   return client;
 }
-let fallbackOk = true;
-const fallbackParams = () => (fallbackOk && FALLBACK_MODELS.has(MODEL) ? { betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' as const } : { betas: [] as string[] });
-/** 계정·모델이 fallbacks 옵션을 받지 않으면(400) 그 옵션만 끄고 한 번 다시 보낸다 */
-async function call<T>(fn: () => Promise<T>): Promise<T> {
-  try { return await fn(); } catch (e) {
-    if (fallbackOk && e instanceof Anthropic.BadRequestError && /fallback/i.test(e.message)) { fallbackOk = false; console.warn('[ai] fallbacks rejected — retrying without', e.message); return fn(); }
-    throw e;
-  }
+
+/** 키로 쓸 수 있는 모델 중 앞에서부터 — 빠르고 싼 것 위주 (학생 질문 답변·짧은 생성) */
+const PREFERRED = ['gpt-5-mini', 'gpt-5.1-mini', 'gpt-4.1-mini', 'gpt-4o-mini', 'gpt-5', 'gpt-4.1', 'gpt-4o'];
+let modelPromise: Promise<string> | null = null;
+function model(): Promise<string> {
+  if (process.env.AI_MODEL) return Promise.resolve(process.env.AI_MODEL);
+  modelPromise ??= (async () => {
+    try {
+      const ids = new Set<string>();
+      for await (const m of ai().models.list()) ids.add(m.id);
+      const pick = PREFERRED.find((id) => ids.has(id)) ?? [...ids].filter((id) => /^gpt-/.test(id) && !/audio|realtime|search|transcribe|tts|image/.test(id)).sort().pop();
+      if (!pick) throw new Error('no chat model available for this key');
+      console.log(`[ai] using model ${pick}`);
+      return pick;
+    } catch (e) { modelPromise = null; throw e; }
+  })();
+  return modelPromise;
 }
 
 export class AiError extends Error { constructor(public status: number, message: string) { super(message); } }
+
+/** 정해진 JSON 모양으로만 답하게 한다 (structured outputs) */
+async function jsonCall(system: string, user: string, name: string, schema: object, refusalMsg: string): Promise<Record<string, unknown>> {
+  const m = await model();
+  const res = await ai().chat.completions.create({
+    model: m, max_completion_tokens: 3000,
+    messages: [{ role: 'system', content: system }, { role: 'user', content: user }],
+    response_format: { type: 'json_schema', json_schema: { name, schema: schema as Record<string, unknown>, strict: true } },
+  });
+  const msg = res.choices[0]?.message;
+  if (!msg || msg.refusal) throw new AiError(422, refusalMsg);
+  try { return JSON.parse(msg.content ?? '') as Record<string, unknown>; } catch { throw new AiError(502, 'Something went wrong — please try again.'); }
+}
 
 /** 캠퍼스 시간대 기준 오늘 (UC 는 전부 태평양 시간) */
 export function campusToday(tz = 'America/Los_Angeles') {
@@ -54,7 +72,6 @@ export function rateLimit(key: string, max: number, windowMs = 60 * 60 * 1000) {
   arr.push(now); hits.set(key, arr);
 }
 
-const textOf = (content: Anthropic.Beta.BetaContentBlock[]) => content.filter((b): b is Anthropic.Beta.BetaTextBlock => b.type === 'text').map((b) => b.text).join('').trim();
 const viewerContext = (u: User, school: string) => {
   const a = u.affiliation;
   const yr = a.type === 'university' ? Math.min(4, Math.max(1, new Date().getFullYear() - a.year + 1)) : undefined;
@@ -79,6 +96,12 @@ How to answer:
 - If a listing's deadline is missing, say "deadline not posted" rather than guessing.
 - Reply in the language the student writes in.`;
 
+interface ToolSpec { name: string; description: string; parameters: Record<string, unknown>; run: (input: Record<string, unknown>) => string }
+const tool = (t: ToolSpec) => t;
+const str = (v: unknown) => (typeof v === 'string' && v.trim() ? v.trim().slice(0, 200) : undefined);
+const num = (v: unknown) => (typeof v === 'number' && Number.isFinite(v) ? v : undefined);
+const arr = (v: unknown) => (Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string') : undefined);
+
 const LISTING_TYPES: OpportunityType[] = ['event', 'internship', 'hackathon', 'scholarship', 'lab', 'exchange', 'startup', 'club', 'activity'];
 const ORG_TYPES: Organization['type'][] = ['club', 'greek', 'lab', 'council', 'department'];
 
@@ -89,10 +112,10 @@ export async function ask(db: Snapshot, catalog: CatalogCourse[], viewer: User, 
   const remember = <T extends { card: Card; forModel: unknown }>(rows: T[]) => { rows.forEach((r) => seen.set(r.card.id, r.card)); return JSON.stringify(rows.length ? rows.map((r) => r.forModel) : { results: [], note: 'No matches. Try other words or fewer filters.' }); };
 
   const tools = [
-    betaTool({
+    tool({
       name: 'search_listings',
       description: 'Search campus events (talks, socials, free food), internships, hackathons/competitions, scholarships, research/RA (lab), exchange programs and startup programs. Returns only upcoming items. Leave query empty to browse by filters.',
-      inputSchema: {
+      parameters: {
         type: 'object',
         properties: {
           query: { type: 'string', description: 'Keywords, e.g. "finance summer analyst", "machine learning", "career fair"' },
@@ -104,12 +127,12 @@ export async function ask(db: Snapshot, catalog: CatalogCourse[], viewer: User, 
         },
         additionalProperties: false,
       },
-      run: async (input) => remember(searchListings(db, viewer, date, input)),
+      run: (input) => remember(searchListings(db, viewer, date, { query: str(input.query), types: arr(input.types) as OpportunityType[], free_food: input.free_food === true, from: str(input.from), to: str(input.to), limit: num(input.limit) })),
     }),
-    betaTool({
+    tool({
       name: 'search_clubs',
       description: "Search the student's school clubs, Greek life (fraternities/sororities), research labs, student government and departments.",
-      inputSchema: {
+      parameters: {
         type: 'object',
         properties: {
           query: { type: 'string', description: 'Keywords, e.g. "climbing", "photography", "consulting", "Korean"' },
@@ -119,48 +142,59 @@ export async function ask(db: Snapshot, catalog: CatalogCourse[], viewer: User, 
         },
         additionalProperties: false,
       },
-      run: async (input) => remember(searchClubs(db, viewer, input)),
+      run: (input) => remember(searchClubs(db, viewer, { query: str(input.query), types: arr(input.types) as Organization['type'][], recruiting_only: input.recruiting_only === true, limit: num(input.limit) })),
     }),
-    betaTool({
+    tool({
       name: 'search_courses',
       description: "Search this term's classes at the student's school: meeting days/times, room, instructor and the official course page or syllabus link.",
-      inputSchema: {
+      parameters: {
         type: 'object',
         properties: { query: { type: 'string', description: 'Course code or words, e.g. "CS 61B", "COMPSCI 61B", "data structures", "intro economics"' }, limit: { type: 'integer', minimum: 1, maximum: 12 } },
         required: ['query'],
         additionalProperties: false,
       },
-      run: async (input) => remember(searchCourses(catalog, viewer, input)),
+      run: (input) => remember(searchCourses(catalog, viewer, { query: str(input.query) ?? '', limit: num(input.limit) })),
     }),
-    betaTool({
+    tool({
       name: 'search_activities',
       description: 'Search upcoming meetups students created in Heetz: study groups ("Study Crew") for a course, coffee, meals, sports, club events.',
-      inputSchema: {
+      parameters: {
         type: 'object',
         properties: { query: { type: 'string', description: 'e.g. "CS 61B study", "coffee", "basketball"' }, limit: { type: 'integer', minimum: 1, maximum: 12 } },
         additionalProperties: false,
       },
-      run: async (input) => remember(searchActivities(db, viewer, date, input)),
+      run: (input) => remember(searchActivities(db, viewer, date, { query: str(input.query), limit: num(input.limit) })),
     }),
   ];
 
-  const messages: Anthropic.Beta.BetaMessageParam[] = history.slice(-8).map((m) => ({ role: m.role, content: m.content }));
-  const final = await call(async () => await ai().beta.messages.toolRunner({
-    model: MODEL,
-    max_tokens: 8000,
-    max_iterations: 6,
-    output_config: { effort: 'low' },
-    ...fallbackParams(),
-    system: [
-      { type: 'text', text: ASK_SYSTEM, cache_control: { type: 'ephemeral' } },
-      { type: 'text', text: `Today is ${weekday}, ${date} (campus time).\nAbout the student:\n${viewerContext(viewer, school)}` },
-    ],
-    tools,
-    messages,
-  }));
-  if (final.stop_reason === 'refusal') return { answer: "Sorry — I can't help with that one. Try asking about events, clubs, classes or opportunities.", cards: [] };
-
-  const raw = textOf(final.content);
+  const byName = new Map(tools.map((t) => [t.name, t]));
+  const messages: OpenAI.Chat.ChatCompletionMessageParam[] = [
+    { role: 'system', content: `${ASK_SYSTEM}\n\nToday is ${weekday}, ${date} (campus time).\nAbout the student:\n${viewerContext(viewer, school)}` },
+    ...history.slice(-8).map((m) => ({ role: m.role, content: m.content })),
+  ];
+  const m = await model();
+  let raw = '';
+  // 도구 호출 루프 — 검색을 몇 번 하고 나면 답을 쓴다 (최대 6 라운드)
+  for (let round = 0; round < 6; round++) {
+    const res = await ai().chat.completions.create({
+      model: m, messages, max_completion_tokens: 4000,
+      tools: tools.map((t) => ({ type: 'function' as const, function: { name: t.name, description: t.description, parameters: t.parameters } })),
+      tool_choice: round === 5 ? 'none' : 'auto',
+    });
+    const msg = res.choices[0]?.message;
+    if (!msg) break;
+    const calls = (msg.tool_calls ?? []).filter((c): c is OpenAI.Chat.ChatCompletionMessageFunctionToolCall => c.type === 'function');
+    if (!calls.length) { raw = (msg.content ?? '').trim(); if (msg.refusal) return { answer: "Sorry — I can't help with that one. Try asking about events, clubs, classes or opportunities.", cards: [] }; break; }
+    messages.push({ role: 'assistant', content: msg.content ?? null, tool_calls: calls });
+    for (const c of calls) {
+      let out: string;
+      try {
+        const t = byName.get(c.function.name);
+        out = t ? t.run(JSON.parse(c.function.arguments || '{}') as Record<string, unknown>) : JSON.stringify({ error: 'unknown tool' });
+      } catch { out = JSON.stringify({ error: 'bad arguments — send valid JSON matching the schema' }); }
+      messages.push({ role: 'tool', tool_call_id: c.id, content: out });
+    }
+  }
   const ids = [...raw.matchAll(/\[\[([^\]\s]+)\]\]/g)].map((m) => m[1]);
   const cards = [...new Set(ids)].map((id) => seen.get(id)).filter((c): c is Card => !!c);
   const answer = raw.replace(/\s*\[\[([^\]\s]+)\]\]/g, '').replace(/\n{3,}/g, '\n\n').trim();
@@ -202,17 +236,7 @@ export interface ProfileDraft {
 }
 
 export async function profileDraft(db: Snapshot, schoolId: string, text: string) {
-  const res = await call(() => ai().beta.messages.create({
-    model: MODEL,
-    max_tokens: 4000,
-    output_config: { effort: 'low', format: { type: 'json_schema', schema: PROFILE_SCHEMA as unknown as Record<string, unknown> } },
-    ...fallbackParams(),
-    system: PROFILE_SYSTEM,
-    messages: [{ role: 'user', content: text }],
-  }));
-  if (res.stop_reason === 'refusal') throw new AiError(422, "Couldn't read that — try a few plain sentences about yourself.");
-  let p: Record<string, unknown>;
-  try { p = JSON.parse(textOf(res.content)); } catch { throw new AiError(502, 'Something went wrong — please try again.'); }
+  const p = await jsonCall(PROFILE_SYSTEM, text, 'profile', PROFILE_SCHEMA, "Couldn't read that — try a few plain sentences about yourself.");
   const pick = <T extends string>(v: unknown, allowed: readonly T[]) => (Array.isArray(v) ? [...new Set(v.filter((x): x is T => allowed.includes(x as T)))] : []);
   const str = (v: unknown, n: number) => (typeof v === 'string' ? v.trim().slice(0, n) : '');
   const draft: ProfileDraft = {
@@ -283,17 +307,9 @@ export async function starters(db: Snapshot, viewer: User, target: User, languag
   const facts = starterFacts(db, viewer, target);
   const key = `${viewer.id}|${target.id}|${language}|${JSON.stringify(facts)}`;
   const hit = starterCache.get(key); if (hit) return { starters: hit, facts };
-  const res = await call(() => ai().beta.messages.create({
-    model: MODEL,
-    max_tokens: 2000,
-    output_config: { effort: 'low', format: { type: 'json_schema', schema: STARTERS_SCHEMA as unknown as Record<string, unknown> } },
-    ...fallbackParams(),
-    system: STARTERS_SYSTEM,
-    messages: [{ role: 'user', content: `Write in ${language === 'ko' ? 'Korean' : 'English'}.\nFacts I'm allowed to use:\n${JSON.stringify(facts, null, 1)}` }],
-  }));
-  if (res.stop_reason === 'refusal') throw new AiError(422, 'No suggestions for this profile.');
+  const out = await jsonCall(STARTERS_SYSTEM, `Write in ${language === 'ko' ? 'Korean' : 'English'}.\nFacts I'm allowed to use:\n${JSON.stringify(facts, null, 1)}`, 'starters', STARTERS_SCHEMA, 'No suggestions for this profile.');
   let list: string[] = [];
-  try { const p = JSON.parse(textOf(res.content)) as { starters?: unknown }; list = Array.isArray(p.starters) ? p.starters.filter((x): x is string => typeof x === 'string').map((s) => s.trim().slice(0, 200)).filter(Boolean).slice(0, 3) : []; } catch { /* */ }
+  try { const p = out as { starters?: unknown }; list = Array.isArray(p.starters) ? p.starters.filter((x): x is string => typeof x === 'string').map((s) => s.trim().slice(0, 200)).filter(Boolean).slice(0, 3) : []; } catch { /* */ }
   if (!list.length) throw new AiError(502, 'Something went wrong — please try again.');
   if (starterCache.size > 2000) starterCache.clear();
   starterCache.set(key, list);

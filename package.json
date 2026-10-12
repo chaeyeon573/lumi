@@ -24,11 +24,11 @@
     "agent:worker": "AGENT_MODE=worker tsx --tsconfig server/tsconfig.json server/agent/run.ts"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.133.0",
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.475.0",
+    "openai": "^7.32.0",
     "pg": "^8.23.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

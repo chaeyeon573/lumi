@@ -143,7 +143,7 @@ DATABASE_URL=postgres://... npm run server   # 없으면 server/.data/db.json �
 - 데모 계정 로그인은 `ALLOW_DEMO_LOGIN=0` 으로 끌 수 있다.
 - 데모 계정은 학교별로 있다: `u_me`(UC Berkeley), `u_me_ucmerced`(UC Merced, 서버가 켜질 때 `server/demo.ts`가 만든다). 친구에게 보낼 링크는 `/welcome?demo=berkeley`, `/welcome?demo=ucmerced` — 그 학교 데모 계정으로 바로 들어간다. 시드 사용자는 `sample: true` 라 화면에 '예시 프로필'로 표시된다.
 - 화면 오른쪽 '의견' 탭으로 남긴 글은 `feedback` 테이블에 쌓이고 `FEEDBACK_EMAIL`로 메일이 간다. 목록: `GET /api/feedback` (헤더 `x-admin-key: $ADMIN_KEY`).
-- **AI** (`server/ai.ts`, `server/ai-search.ts`): `ANTHROPIC_API_KEY` 가 있으면 켜진다 (모델은 `AI_MODEL`, 기본 claude-opus-5-5). ① `/ask` — 우리 데이터(공고·행사·동아리·수업·활동)만 검색해 답하고 근거 카드를 붙인다(검색 결과에 없던 id 는 카드가 안 된다) ② `/start` 가입 2단계 — 자기소개 몇 줄로 전공·학년·목표·관심사를 채우고 동아리·공고를 추천 ③ 사람 프로필의 첫마디 추천 — 상대가 나에게 공개한 필드만 모델에 보낸다. 질문 기록: `GET /api/ai/logs` (`x-admin-key`).
+- **AI** (`server/ai.ts`, `server/ai-search.ts`): OpenAI 키(`OPENAI_API_KEY` 또는 `API_KEY`)가 있으면 켜진다 (모델은 `AI_MODEL`, 비우면 키가 쓸 수 있는 모델 중 gpt-5-mini → gpt-4.1-mini → gpt-4o-mini 순으로 자동 선택). ① `/ask` — 우리 데이터(공고·행사·동아리·수업·활동)만 검색해 답하고 근거 카드를 붙인다(검색 결과에 없던 id 는 카드가 안 된다) ② `/start` 가입 2단계 — 자기소개 몇 줄로 전공·학년·목표·관심사를 채우고 동아리·공고를 추천 ③ 사람 프로필의 첫마디 추천 — 상대가 나에게 공개한 필드만 모델에 보낸다. 질문 기록: `GET /api/ai/logs` (`x-admin-key`).
 - 첫 실행은 `/start` (학교 → 몇 가지 질문 → 이름). 예전 6단계 가입(`/onboarding`)은 그대로 있다. 기본 언어는 영어.
 - 공고 목록 규칙(분야·지역 분류, D-day 배지, 같은 회사 섞기)은 `packages/core/src/lib/listings.ts` 한 곳.
 - 첫 로딩(`/api/bootstrap`)은 동아리를 내 학교 것 + 내가 속했거나 화면이 참조하는 것만 보낸다 (`server/view.ts`).

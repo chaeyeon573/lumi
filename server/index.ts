@@ -10,7 +10,7 @@
  *   POST /api/system/reset              ALLOW_RESET=1 일 때만
  *   POST /api/feedback                  써 본 사람의 의견 → DB + FEEDBACK_EMAIL 로 메일
  *   GET  /api/feedback                  x-admin-key: ADMIN_KEY 일 때만 목록
- *   GET  /api/ai/status                 AI 켜짐 여부 (ANTHROPIC_API_KEY)
+ *   GET  /api/ai/status                 AI 켜짐 여부 (OPENAI_API_KEY 또는 API_KEY)
  *   POST /api/ai/{ask,profile-draft,starters}   server/ai.ts — 질문 답변·대화형 가입·첫마디 제안
  *   GET  /api/ai/logs                   x-admin-key 일 때만 — 학생들이 무엇을 물었는지
  *

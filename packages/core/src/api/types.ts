@@ -278,7 +278,7 @@ export interface AroundUApi {
     feedback(message: string, page: string): Promise<void>;
   };
 
-  /** Claude 기능 — 서버에 ANTHROPIC_API_KEY 가 있을 때만 enabled */
+  /** AI 기능 — 서버에 OpenAI 키(OPENAI_API_KEY 또는 API_KEY)가 있을 때만 enabled */
   ai: {
     status(): Promise<{ enabled: boolean }>;
     ask(messages: { role: 'user' | 'assistant'; content: string }[]): Promise<{ answer: string; cards: AiCard[] }>;

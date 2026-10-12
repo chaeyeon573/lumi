@@ -4,7 +4,7 @@ import { api } from '@core/api';
 let cached: boolean | null = null;
 let pending: Promise<boolean> | null = null;
 
-/** 서버에 AI(ANTHROPIC_API_KEY)가 켜져 있는지 — 한 번만 묻고 기억한다 */
+/** 서버에 AI(OpenAI 키)가 켜져 있는지 — 한 번만 묻고 기억한다 */
 export function useAiEnabled() {
   const [on, setOn] = useState<boolean>(cached ?? false);
   useEffect(() => {
