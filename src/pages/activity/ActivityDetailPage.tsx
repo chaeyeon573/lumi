@@ -55,7 +55,7 @@ export function ActivityDetailPage() {
             <VisibilityTag value={a.visibility} className="ml-auto" />
           </div>
           <h1 className="text-[20px] font-extrabold leading-snug mt-2">{a.sample && <SampleTag />}{a.title}</h1>
-          {a.sample && <p className="text-[12px] text-ink-3 mt-1">{lang === 'en' ? 'Sample meetup — made up to show how AroundU works.' : '예시 모임이에요 — 앱이 어떻게 보이는지 보여주려고 만들었어요.'}</p>}
+          {a.sample && <p className="text-[12px] text-ink-3 mt-1">{lang === 'en' ? 'Sample meetup — made up to show how Heetz works.' : '예시 모임이에요 — 앱이 어떻게 보이는지 보여주려고 만들었어요.'}</p>}
           <p className="text-[14px] text-ink-2 leading-relaxed mt-2 whitespace-pre-wrap">{a.description}</p>
         </div>
 

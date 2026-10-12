@@ -28,7 +28,7 @@ const L = lang === 'en' ? {
   major: 'Major', majorPh: 'e.g. Computer Science', year: 'Year', goals: 'This semester I want to…', interests: 'I’m into…',
   picked: 'Picked for you', pickedSub: 'Tap ♡ to save clubs — you’ll find everything in Campus after you join.',
   nameQ: 'What should we call you?', nameSub: 'This is how classmates will see you. Use a first name or nickname.',
-  name: 'Name', birth: 'Birth year', start: 'Start AroundU', next: 'Next', step: 'Step',
+  name: 'Name', birth: 'Birth year', start: 'Start Heetz', next: 'Next', step: 'Step',
 } : {
   schoolQ: '어느 학교에 다니세요?', schoolSub: '우리 캠퍼스의 행사·동아리·수업을 보여드려요.',
   aboutQ: '어떤 사람인지 알려주세요', aboutSub: '행사·동아리·사람 추천에 써요. 언제든 바꿀 수 있어요.',
@@ -37,7 +37,7 @@ const L = lang === 'en' ? {
   major: '전공', majorPh: '예: 컴퓨터공학', year: '학년', goals: '이번 학기에 하고 싶은 것', interests: '관심 있는 것',
   picked: '추천', pickedSub: '♡ 를 누르면 동아리가 저장돼요. 가입 후 Campus 탭에서 모두 볼 수 있어요.',
   nameQ: '뭐라고 불러드릴까요?', nameSub: '같은 학교 학생들에게 보이는 이름이에요.',
-  name: '이름', birth: '출생 연도', start: 'AroundU 시작하기', next: '다음', step: '단계',
+  name: '이름', birth: '출생 연도', start: 'Heetz 시작하기', next: '다음', step: '단계',
 };
 
 interface Draft { schoolId: string; text: string; department: string; yearInSchool: number; goals: Goal[]; interests: Interest[]; purposes: Purpose[]; lookingFor: Role[]; canOffer: Role[]; bio: string; likes: string; freeTime: string; nickname: string; birthYear: string; savedOrgIds: string[] }

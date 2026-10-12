@@ -2,7 +2,7 @@
  * 공고 목록 규칙 — 분야·지역 분류, 마감 표시, 같은 회사가 줄줄이 붙지 않게 섞기.
  * 서버(수집)와 화면이 같은 분류를 쓰도록 여기 한 곳에 둔다.
  */
-import type { Opportunity } from '@core/types';
+import type { Opportunity, User } from '@core/types';
 import { daysUntil } from './recommend';
 
 export const FIELDS = ['Software', 'Data & AI', 'Hardware', 'Quant & Trading', 'Finance & Consulting', 'Product & Design', 'Business & Marketing', 'Research & Science', 'Other'] as const;
@@ -82,3 +82,24 @@ export function spreadByHost<T extends { host: string }>(items: T[], gap = 3): T
   }
   return out;
 }
+
+// ─── 누구를 위한 공고인가 (대학원생 / 학부생 / 모두) ─────────────────────────
+export type Audience = 'grad' | 'undergrad' | 'all';
+const GRAD_RE = /\bph\.?\s?d\b|ms\s?\/\s?ph\.?d|\bmasters?\b|master'?s\b|graduate students?|doctoral|dissertation|postdoc|\bgsr\b|\bgsi\b/i;
+const UNDERGRAD_RE = /undergrad|bachelor'?s|freshm[ae]n|sophomore|high school|\bfirst[- ]year students?\b/i;
+export function audienceOf(o: Pick<Opportunity, 'title' | 'tags' | 'eligibility' | 'description'>): Audience {
+  if (o.tags.some((t) => /^graduate$/i.test(t))) return 'grad';
+  const text = `${o.title} ${o.eligibility}`;
+  const g = GRAD_RE.test(text), u = UNDERGRAD_RE.test(text);
+  if (g && !u) return 'grad';
+  if (u && !g) return 'undergrad';
+  return 'all';
+}
+export const isGradStudent = (u: Pick<User, 'affiliation'>) => u.affiliation.type === 'university' && u.affiliation.role === 'graduate';
+/** 이 학생에게 맞는 대상인가 (모두 대상이면 맞음) */
+export const audienceFits = (u: Pick<User, 'affiliation'>, o: Pick<Opportunity, 'title' | 'tags' | 'eligibility' | 'description'>) => {
+  const a = audienceOf(o);
+  return a === 'all' || (a === 'grad') === isGradStudent(u);
+};
+/** 세미나·강연 (행사 중 talk 태그) */
+export const isTalk = (o: Pick<Opportunity, 'type' | 'tags' | 'title'>) => o.type === 'event' && (o.tags.includes('talk') || /seminar|colloquium|lecture|talk\b|symposium|workshop/i.test(o.title));

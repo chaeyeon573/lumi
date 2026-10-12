@@ -157,6 +157,9 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
   // 마감 달력 CSV (server/data/opportunities-<short>.csv) — 사람이 고친 파일을 매일 반영한다
   const calFile = path.join(path.dirname(SCHOOLS_CSV), `opportunities-${row.short}.csv`);
   if (existsSync(calFile) && due(`deadlines:${row.id}`, latest.get(`deadlines:${row.id}`)?.finishedAt, 24)) out.push(await runScript(`deadlines:${row.id}`, 'import:opportunities', calFile, { PRUNE_DEMO: '1' }));
+  // 대학원생 펀딩 달력 (펠로우십·여행 지원금·TA/GSR) — server/data/opportunities-grad-<short>.csv
+  const gradFile = path.join(path.dirname(SCHOOLS_CSV), `opportunities-grad-${row.short}.csv`);
+  if (existsSync(gradFile) && due(`grad-deadlines:${row.id}`, latest.get(`grad-deadlines:${row.id}`)?.finishedAt, 24)) out.push(await runScript(`grad-deadlines:${row.id}`, 'import:opportunities', gradFile));
   // 3. 수업
   if (row.courses_source && resolveCourseSource(row.id, row.courses_source)) {
     const lastCourses = latest.get(`courses:${row.courses_source.includes(':') ? row.id : row.courses_source}`);
@@ -219,6 +222,10 @@ if (process.env.AGENT_MODE === 'worker') {
     {
       const latest = await latestRuns();
       if (due('external:devpost', latest.get('external:devpost')?.finishedAt, 12)) { const r = [await runOpportunities('external:devpost', '', fetchDevpost, 'op_ext_devpost_')]; did += 1; await notify(r); }
+      { // 전국 대상 펠로우십 (NSF GRFP 등) — 학교 구분 없이 모두에게
+        const nat = path.join(path.dirname(SCHOOLS_CSV), 'opportunities-grad-national.csv');
+        if (existsSync(nat) && due('grad-deadlines:national', latest.get('grad-deadlines:national')?.finishedAt, 24)) { const r = [await runScript('grad-deadlines:national', 'import:opportunities', nat)]; did += 1; await notify(r); }
+      }
       if (due('external:internships', latest.get('external:internships')?.finishedAt, 12)) { const r = [await runOpportunities('external:internships', '', fetchInternships, 'op_ext_job_')]; did += 1; await notify(r); }
     }
     for (const row of loadSchools()) {

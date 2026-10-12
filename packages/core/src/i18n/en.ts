@@ -1,5 +1,7 @@
 /** 한국어 원문 → 영어. 키는 소스의 한국어 문자열 그대로 */
 export const en: Record<string, string> = {
+  '대학원생 대상': 'For grad students',
+  '같은 대학원생': 'Also a grad student',
   '로그인이 필요해요.': 'Please sign in.',
   '입력값을 확인해주세요.': 'Please check your input.',
   '이미 가입된 이메일이에요. 이메일로 로그인해주세요.': 'That email is already registered. Sign in with email instead.',
@@ -51,7 +53,7 @@ export const en: Record<string, string> = {
   '" 그룹 채팅방에 입장할 수 있어요.': '" group chat is now open to you.',
   '친구 요청이 수락되었어요': 'Friend request accepted',
   '님과 친구가 되었어요. 이제 메시지를 보낼 수 있어요.': ' is now your friend. You can message each other.',
-  'AroundU에 오신 걸 환영해요': 'Welcome to AroundU',
+  'Heetz에 오신 걸 환영해요': 'Welcome to Heetz',
   '학교 주변에서 열리는 활동을 홈에서 확인해보세요.': 'Check out what’s happening around campus on Home.',
   '데모 인증 코드: 123456': 'Demo verification code: 123456',
   ' 이메일만 사용할 수 있어요.': ' email addresses only.',
@@ -714,7 +716,7 @@ export const en: Record<string, string> = {
   '알림 허용': 'Allow notifications',
   '학교 인증 완료 — 배지가 표시돼요': 'School verified — badge enabled',
   '학교 인증은 프로필에서 나중에 완료할 수 있어요': 'You can verify your school later from your profile',
-  'AroundU 시작하기': 'Get started',
+  'Heetz 시작하기': 'Get started',
   '학교와 주변에서 일어나는 활동을 발견하고': 'Find opportunities. Meet people. Make friends.',
   '사람·동아리·모임과 자연스럽게 연결되는 앱': 'Your network doesn’t have to start with networking.',
   '사람': 'People',

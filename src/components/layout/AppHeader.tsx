@@ -16,7 +16,7 @@ export function AppHeader({ search, right }: { search?: boolean; right?: React.R
   );
   return (
     <header className="sticky top-0 z-30 bg-surface/85 backdrop-blur-xl h-16 pl-4 pr-3 flex items-center gap-1.5">
-      <span className="font-display text-[22px] font-extrabold tracking-tight text-primary shrink-0">AroundU</span>
+      <span className="font-display text-[22px] font-extrabold tracking-tight text-primary shrink-0">Heetz</span>
       <button onClick={() => nav('/settings')} className="flex items-center gap-1.5 h-9 pl-2.5 pr-2 rounded-full bg-primary-soft text-primary text-[13px] font-semibold max-w-[118px]"><GraduationCap size={15} /><span className="truncate">{school}</span><ChevronDown size={14} /></button>
       <span className="flex-1" />
       {right}

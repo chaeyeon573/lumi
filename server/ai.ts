@@ -1,5 +1,5 @@
 /**
- * AroundU AI — Claude 로 세 가지를 한다.
+ * Heetz AI — Claude 로 세 가지를 한다.
  *  1) ask:      "오늘 무료 음식?" 같은 질문에 우리 데이터만 검색해서 답하고, 근거 카드를 붙인다
  *  2) profile:  가입할 때 자기소개 몇 줄(또는 이력서)을 읽고 관심사·목표를 채운 뒤 동아리·공고를 추천한다
  *  3) starters: 사람 프로필에서 상대가 공개한 것만으로 첫마디를 제안한다
@@ -67,11 +67,11 @@ const viewerContext = (u: User, school: string) => {
   ].filter(Boolean).join('\n');
 };
 
-// ─── 1) Ask AroundU ─────────────────────────────────────────────────────────
-const ASK_SYSTEM = `You are "Ask AroundU", the assistant inside AroundU, an app for college students to find events, free food, clubs, Greek life, internships, scholarships, research positions, hackathons, classes and study groups at their campus.
+// ─── 1) Ask Heetz ─────────────────────────────────────────────────────────
+const ASK_SYSTEM = `You are "Ask Heetz", the assistant inside Heetz, an app for college students to find events, free food, clubs, Greek life, internships, scholarships, research positions, hackathons, classes and study groups at their campus.
 
 How to answer:
-- Answer ONLY from what the search tools return. Never invent events, dates, deadlines, locations, links, prices or eligibility. If the tools return nothing useful, say plainly that AroundU doesn't have it yet, and suggest a different way to ask or where the student could look (only name a website if a tool result gave its link).
+- Answer ONLY from what the search tools return. Never invent events, dates, deadlines, locations, links, prices or eligibility. If the tools return nothing useful, say plainly that Heetz doesn't have it yet, and suggest a different way to ask or where the student could look (only name a website if a tool result gave its link).
 - Search before answering anything about listings, clubs, courses or activities. Use several searches with different wording if the first one is thin (e.g. "finance" and "investment banking"; "climbing" and "outdoors").
 - Cite every item you mention by putting its id in double brackets right after it, like "Cal Hacks 13.0 [[op_ext_devpost_123]]". The app turns these into tappable cards. Only cite ids that appeared in tool results.
 - Dates: today's date and weekday are given below. Resolve "today", "this weekend", "next week" into from/to dates for the search. Deadlines and dates in results are YYYY-MM-DD; say them in a friendly way ("Fri, Oct 17").
@@ -134,7 +134,7 @@ export async function ask(db: Snapshot, catalog: CatalogCourse[], viewer: User, 
     }),
     betaTool({
       name: 'search_activities',
-      description: 'Search upcoming meetups students created in AroundU: study groups ("Study Crew") for a course, coffee, meals, sports, club events.',
+      description: 'Search upcoming meetups students created in Heetz: study groups ("Study Crew") for a course, coffee, meals, sports, club events.',
       inputSchema: {
         type: 'object',
         properties: { query: { type: 'string', description: 'e.g. "CS 61B study", "coffee", "basketball"' }, limit: { type: 'integer', minimum: 1, maximum: 12 } },
@@ -192,7 +192,7 @@ const PROFILE_SCHEMA = {
   additionalProperties: false,
 } as const;
 
-const PROFILE_SYSTEM = `You turn a college student's short self-description (or pasted résumé) into profile fields for AroundU, a campus app for meeting people and finding events, clubs and opportunities.
+const PROFILE_SYSTEM = `You turn a college student's short self-description (or pasted résumé) into profile fields for Heetz, a campus app for meeting people and finding events, clubs and opportunities.
 Rules: use only what the text says or clearly implies. Never guess gender, age, ethnicity, religion, sexuality or dating intent; never pick dating-related values. Prefer fewer, accurate picks over many. Interests vocabulary: coffee, meal, study, exercise, walk, cycling, shopping, exhibition (arts & shows), club, research, startup, networking, etc. Goal "friends" fits almost everyone who wants to meet people.`;
 
 export interface ProfileDraft {
@@ -248,7 +248,7 @@ const STARTERS_SCHEMA = {
   additionalProperties: false,
 } as const;
 
-const STARTERS_SYSTEM = `You write first messages one college student could send another on AroundU, a campus app for making friends and finding study partners.
+const STARTERS_SYSTEM = `You write first messages one college student could send another on Heetz, a campus app for making friends and finding study partners.
 Write exactly 3 different openers, each under 140 characters: friendly, specific to the shared facts, easy to reply to (end with a question). Casual, not cheesy. No flirting, no compliments on looks, no emojis spam (at most one). Use only the facts given — never imply you saw anything else about them.`;
 
 /** 상대가 나에게 공개한 것만 모은다 (공개 범위를 서버에서 다시 지킨다) */

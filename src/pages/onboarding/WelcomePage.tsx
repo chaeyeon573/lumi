@@ -66,7 +66,7 @@ export function WelcomePage() {
           <span className="absolute -right-3 -top-2 h-10 w-10 rounded-2xl bg-white shadow grid place-items-center text-xl">☕</span>
           <span className="absolute -left-4 bottom-0 h-10 w-10 rounded-2xl bg-white shadow grid place-items-center text-xl">📚</span>
         </div>
-        <h1 className="mt-8 text-[30px] font-extrabold tracking-tight">AroundU</h1>
+        <h1 className="mt-8 text-[30px] font-extrabold tracking-tight">Heetz</h1>
         <p className="mt-2 text-[15px] text-ink-2 leading-relaxed">{t('학교와 주변에서 일어나는 활동을 발견하고')}<br />{t('사람·동아리·모임과 자연스럽게 연결되는 앱')}</p>
         <div className="mt-8 grid grid-cols-3 gap-2 w-full">
           {[{ Icon: Users, t: t('사람'), d: t('누구와') }, { Icon: Sparkles, t: t('활동'), d: t('무엇을') }, { Icon: MapPin, t: t('장소'), d: t('어디서') }].map((x) => (

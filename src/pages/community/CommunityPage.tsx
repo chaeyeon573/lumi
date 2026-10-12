@@ -11,7 +11,7 @@ import { useAppStore } from '@core/store/useAppStore';
 import { ORG_TYPE_LABELS } from '@core/lib/labels';
 import { opportunityScore, daysUntil, isTogetherType } from '@core/lib/recommend';
 import { ALL_POST_TYPES, POST_TYPE_LABELS, OPP_TYPE_LABELS, OPP_TYPE_EMOJI } from '@core/lib/labels';
-import { FIELDS, REGIONS, badgeOf, fieldOf, locationOf, regionsOf, spreadByHost, type Region } from '@core/lib/listings';
+import { FIELDS, REGIONS, audienceOf, badgeOf, fieldOf, isGradStudent, isTalk, locationOf, regionsOf, spreadByHost, type Region } from '@core/lib/listings';
 import { api } from '@core/api';
 import { relativeTime } from '@core/lib/format';
 import { cn } from '@core/lib/cn';
@@ -80,7 +80,7 @@ function FeedTab() {
   );
 }
 
-type Sub = 'foryou' | 'saved' | OpportunityType;
+type Sub = 'foryou' | 'saved' | 'funding' | 'talks' | 'phd' | OpportunityType;
 type Sort = 'foryou' | 'deadline' | 'newest';
 const PAGE = 30;
 const en = lang === 'en';
@@ -105,25 +105,44 @@ function OpportunitiesTab() {
   const savedIds = useMemo(() => new Set(intents.filter((i) => i.userId === me.id && (i.saved || i.intent !== 'interested')).map((i) => i.opportunityId)), [intents, me.id]);
   const scored = useMemo(() => opps.filter((o) => !isTogetherType(o.type) || (o.type === 'hackathon' && !o.rolesNeeded)).filter((o) => !o.schoolId || o.schoolId === mySchool).filter((o) => !o.deadline || daysUntil(o.deadline) >= 0).map((o) => ({ o, ...opportunityScore(me, o, intents) })), [opps, intents, me, mySchool]);
 
+  const grad = isGradStudent(me);
+  // 세미나·강연 — 행사라서 위 목록(정보성 공고)에는 없다. 내 전공 단어가 들어간 것을 먼저
+  const talks = useMemo(() => {
+    if (sub !== 'talks') return [];
+    const dept = me.affiliation.type === 'university' ? me.affiliation.department.toLowerCase().split(/[^a-z]+/).filter((w) => w.length > 3) : [];
+    return opps.filter((o) => isTalk(o) && (!o.schoolId || o.schoolId === mySchool) && o.date && daysUntil(o.date) >= 0)
+      .map((o) => ({ o, score: dept.some((w) => `${o.title} ${o.host}`.toLowerCase().includes(w)) ? 1 : 0 }))
+      .sort((a, b) => b.score - a.score || (a.o.date ?? '').localeCompare(b.o.date ?? '') || (a.o.startTime ?? '').localeCompare(b.o.startTime ?? '')).map((x) => x.o);
+  }, [opps, sub, me, mySchool]);
+
   const list = useMemo(() => {
-    let rows = sub === 'saved' ? scored.filter((x) => savedIds.has(x.o.id)) : sub === 'foryou' ? scored : scored.filter((x) => x.o.type === sub);
+    if (sub === 'talks') return talks;
+    const fits = (o: Opportunity) => audienceOf(o) !== (grad ? 'undergrad' : 'grad');
+    let rows = sub === 'saved' ? scored.filter((x) => savedIds.has(x.o.id))
+      : sub === 'foryou' ? scored
+      : sub === 'funding' ? scored.filter((x) => x.o.type === 'scholarship' && fits(x.o))
+      : sub === 'phd' ? scored.filter((x) => x.o.type === 'internship' && audienceOf(x.o) === 'grad')
+      : sub === 'scholarship' || sub === 'lab' ? scored.filter((x) => x.o.type === sub && fits(x.o))
+      : scored.filter((x) => x.o.type === sub);
     if (field) rows = rows.filter((x) => (x.o.field ?? fieldOf(x.o.title)) === field);
     if (region) rows = rows.filter((x) => regionsOf(x.o).includes(region as Region));
     const due = (o: Opportunity) => o.deadline ?? o.date ?? '9999';
     const posted = (o: Opportunity) => o.postedAt ?? o.createdAt;
     const sorted = [...rows].sort((a, b) => sort === 'deadline' ? due(a.o).localeCompare(due(b.o)) : sort === 'newest' ? posted(b.o).localeCompare(posted(a.o)) : b.score - a.score || due(a.o).localeCompare(due(b.o)));
     return sort === 'deadline' ? sorted.map((x) => x.o) : spreadByHost(sorted.map((x) => x.o));
-  }, [scored, sub, field, region, sort, savedIds]);
+  }, [scored, sub, field, region, sort, savedIds, talks, grad]);
 
   const savedList = useMemo(() => scored.filter((x) => savedIds.has(x.o.id)).map((x) => x.o).sort((a, b) => (a.deadline ?? a.date ?? '9999').localeCompare(b.deadline ?? b.date ?? '9999')), [scored, savedIds]);
   const toggleSave = (o: Opportunity) => run(() => api.opportunities.toggleSave(o.id, me.id), savedIds.has(o.id) ? undefined : (en ? 'Saved — it’s at the top of Notices now.' : '저장했어요 — 공고 맨 위에서 볼 수 있어요.'));
-  const showFilters = sub === 'internship' || sub === 'foryou';
+  const showFilters = sub === 'internship' || sub === 'foryou' || sub === 'phd';
 
   return (
     <div>
       <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2">
         <Chip active={sub === 'foryou'} onClick={() => setSub('foryou')}>{t('전체')}</Chip>
-        {(['internship', 'scholarship', 'lab', 'hackathon', 'exchange'] as OpportunityType[]).map((ty) => <Chip key={ty} active={sub === ty} onClick={() => setSub(ty)}>{OPP_TYPE_LABELS[ty]}</Chip>)}
+        {grad
+          ? ([['funding', en ? 'Funding' : '펀딩'], ['talks', en ? 'Talks & seminars' : '세미나·강연'], ['phd', en ? 'PhD/MS internships' : '대학원 인턴'], ['lab', en ? 'Research & TA' : '연구·TA'], ['internship', OPP_TYPE_LABELS.internship], ['hackathon', OPP_TYPE_LABELS.hackathon]] as [Sub, string][]).map(([k, l]) => <Chip key={k} active={sub === k} onClick={() => setSub(k)}>{l}</Chip>)
+          : (['internship', 'scholarship', 'lab', 'hackathon', 'exchange'] as OpportunityType[]).map((ty) => <Chip key={ty} active={sub === ty} onClick={() => setSub(ty)}>{OPP_TYPE_LABELS[ty]}</Chip>)}
         <Chip active={sub === 'saved'} onClick={() => setSub('saved')}><Star size={13} className="inline -mt-0.5 mr-1" fill={sub === 'saved' ? 'currentColor' : 'none'} />{en ? 'Saved' : '저장'}{savedIds.size ? ` ${savedIds.size}` : ''}</Chip>
       </div>
 
@@ -148,7 +167,7 @@ function OpportunitiesTab() {
               <option value="">{en ? 'Any location' : '지역 전체'}</option>{REGIONS.map((r) => <option key={r} value={r}>{r}</option>)}
             </select>
           </div>
-          {sub === 'internship' && <div className="flex gap-1.5 overflow-x-auto hide-scrollbar -mx-4 px-4">
+          {(sub === 'internship' || sub === 'phd') && <div className="flex gap-1.5 overflow-x-auto hide-scrollbar -mx-4 px-4">
             <Chip size="sm" active={!field} onClick={() => setQ({ field: '' })}>{en ? 'All fields' : '전체 분야'}</Chip>
             {FIELDS.filter((f) => f !== 'Other').map((f) => <Chip key={f} size="sm" active={field === f} onClick={() => setQ({ field: field === f ? '' : f })}>{f}</Chip>)}
           </div>}
@@ -214,7 +233,7 @@ function ClubsTab() {
 /** 동아리 목록 한 줄 설명 — 학교 공식 목록에서 가져온 동아리는 우리 앱 회원이 0명이라 숫자 대신 종류·소개를 보여준다 */
 function orgSubtitle(o: { type: keyof typeof ORG_TYPE_LABELS; parent?: string; description: string; memberIds: string[]; followerIds: string[] }) {
   const n = o.memberIds.length + o.followerIds.length;
-  if (n > 0) return lang === 'en' ? `${n} on AroundU` : `AroundU에 ${n}명`;
+  if (n > 0) return lang === 'en' ? `${n} on Heetz` : `Heetz에 ${n}명`;
   const desc = o.description.replace(/\s+/g, ' ').trim();
   return [ORG_TYPE_LABELS[o.type], o.parent, desc].filter(Boolean).join(' · ');
 }

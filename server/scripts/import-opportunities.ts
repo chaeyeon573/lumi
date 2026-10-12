@@ -36,9 +36,10 @@ const now = new Date().toISOString();
 const rows = parseCSV(readFileSync(file, 'utf8'));
 const out: Opportunity[] = [];
 for (const r of rows) {
-  if (!r.school_id || !r.title || !r.url) { console.warn('skip row (school_id/title/url required):', r.title); continue; }
+  // school_id 가 비면 모든 학교에 보이는 공고 (NSF GRFP 같은 전국 펠로우십)
+  if (!r.title || !r.url) { console.warn('skip row (title/url required):', r.title); continue; }
   const type = (TYPES.includes(r.type as OpportunityType) ? r.type : 'event') as OpportunityType;
-  const id = `op_${r.school_id.replace('s_', '')}_${slug(r.title)}`;
+  const id = `op_${r.school_id ? r.school_id.replace('s_', '') : 'all'}_${slug(r.title)}`;
   const prev = existing.get(id);
   out.push({
     id, type, title: r.title, host: r.host || r.source_label || '', description: r.description || '',
@@ -47,7 +48,7 @@ for (const r of rows) {
     eligibility: r.eligibility || '', benefit: r.benefit || undefined,
     sourceUrl: r.url, sourceLabel: r.source_label || new URL(r.url).hostname,
     tags: list(r.tags ?? ''), interests: [], goals: list(r.goals ?? '') as Goal[],
-    schoolId: r.school_id, official: r.official === '1' || /^true$/i.test(r.official ?? ''),
+    schoolId: r.school_id || undefined, official: r.official === '1' || /^true$/i.test(r.official ?? ''),
     lastVerified: now, qna: prev?.qna ?? [], reviews: prev?.reviews ?? [], createdAt: prev?.createdAt ?? now,
   });
 }

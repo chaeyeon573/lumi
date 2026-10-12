@@ -1,3 +1,4 @@
+import { audienceOf, audienceFits, isGradStudent } from './listings';
 import type { Opportunity, OpportunityIntentRecord, User } from '@core/types';
 import { t } from '@core/i18n';
 import type { Snapshot } from '@core/api/types';
@@ -54,6 +55,8 @@ export const shareableReasons = (rs: Reason[]) => rs.filter((r) => r.kind !== 'r
 /** 추천 점수 = 이유 가중치 합 × 프로필 완성도 보너스 */
 export function matchScore(me: User, other: User, snap: Pick<Snapshot, 'opportunities' | 'opportunityIntents'>, canSeeTimetable: boolean) {
   const reasons = matchReasons(me, other, snap, canSeeTimetable);
+  // 대학원생끼리는 먼저 — 연구실 밖에서 같은 처지의 사람을 만나기 어렵다
+  if (isGradStudent(me) && isGradStudent(other)) reasons.push({ text: t('같은 대학원생'), weight: 3, kind: 'school' });
   const base = reasons.reduce((a, r) => a + r.weight, 0);
   const boost = 1 + profileCompletion(other).percent / 200; // 완성도 100% → 1.5배 노출
   return { score: base * boost, reasons };
@@ -73,6 +76,9 @@ export function opportunityScore(me: User, o: Opportunity, intents: OpportunityI
   const peers = intents.filter((i) => i.opportunityId === o.id && i.userId !== me.id).length;
   s += Math.min(peers, 5) * 0.3;
   if (o.deadline) { const d = daysUntil(o.deadline); if (d >= 0 && d <= 7) { s += 1; } }
+  // 대상(대학원생/학부생)이 맞으면 올리고, 아니면 맨 아래로
+  const aud = audienceOf(o);
+  if (aud !== 'all') { if (audienceFits(me, o)) { s += 4; if (aud === 'grad') reasons.push(t('대학원생 대상')); } else s -= 8; }
   return { score: s, reasons };
 }
 

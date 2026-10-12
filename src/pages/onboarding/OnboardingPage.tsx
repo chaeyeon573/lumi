@@ -253,7 +253,7 @@ function PermissionsStep({ form, patch }: StepProps) {
         <div className="px-1"><Toggle label={t('알림 허용')} checked={form.notifications} onChange={(v) => patch({ notifications: v })} /></div>
       </div>
       <div className="flex items-center gap-2 text-[12px] text-ink-3"><GraduationCap size={14} />{form.emailVerified ? t('학교 인증 완료 — 배지가 표시돼요') : t('학교 인증은 프로필에서 나중에 완료할 수 있어요')}</div>
-      <Button full size="lg" onClick={finish} loading={busy}>{t('AroundU 시작하기')}</Button>
+      <Button full size="lg" onClick={finish} loading={busy}>{t('Heetz 시작하기')}</Button>
     </>
   );
 }

@@ -1,5 +1,5 @@
 /**
- * AroundU API 서버 — Railway 에 배포하는 단일 서비스 (API + 빌드된 프론트엔드 정적 파일).
+ * Heetz API 서버 — Railway 에 배포하는 단일 서비스 (API + 빌드된 프론트엔드 정적 파일).
  *
  *   POST /api/auth/{demo,login,register,logout,me}
  *   POST /api/bootstrap
@@ -293,7 +293,7 @@ app.post('/api/feedback', auth, wrap(async (req: Req) => {
   const schoolId = user?.affiliation.type === 'university' ? user.affiliation.schoolId : undefined;
   await store.addFeedback({ id: randomBytes(8).toString('hex'), userId: user?.id, schoolId, page, message, createdAt: new Date().toISOString() });
   const to = process.env.FEEDBACK_EMAIL;
-  if (to) void sendMail(to, `[AroundU feedback] ${user?.nickname ?? 'guest'} · ${schoolId ?? '-'}`, `${message}\n\n— ${user ? `${user.nickname} (${user.id})` : 'guest'} · ${schoolId ?? '-'} · ${page}`).catch(() => {});
+  if (to) void sendMail(to, `[Heetz feedback] ${user?.nickname ?? 'guest'} · ${schoolId ?? '-'}`, `${message}\n\n— ${user ? `${user.nickname} (${user.id})` : 'guest'} · ${schoolId ?? '-'} · ${page}`).catch(() => {});
   return { ok: true };
 }));
 app.get('/api/feedback', wrap(async (req) => {

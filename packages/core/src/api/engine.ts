@@ -1,5 +1,5 @@
 /**
- * AroundU 도메인 엔진 — 브라우저(mock, localStorage)와 서버(Postgres)가 같은 로직을 공유한다.
+ * Heetz 도메인 엔진 — 브라우저(mock, localStorage)와 서버(Postgres)가 같은 로직을 공유한다.
  *
  * 스냅샷 모양의 in-memory DB(`ctx.db`)를 직접 변경하고, 바뀐 엔티티만 담은 Patch를 돌려준다.
  * 저장(localStorage / DB 영속화), 지연, 세션, 인증은 호출하는 쪽의 책임이다.
@@ -131,7 +131,7 @@ export function createEngine(ctx: EngineContext) {
         createdAt: now(),
       };
       db().users.push(user);
-      notify(user.id, { type: 'nearby_activity', title: t('AroundU에 오신 걸 환영해요'), body: t('학교 주변에서 열리는 활동을 홈에서 확인해보세요.'), link: '/' });
+      notify(user.id, { type: 'nearby_activity', title: t('Heetz에 오신 걸 환영해요'), body: t('학교 주변에서 열리는 활동을 홈에서 확인해보세요.'), link: '/' });
       return user;
     },
 

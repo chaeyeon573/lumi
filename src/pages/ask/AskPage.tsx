@@ -13,8 +13,8 @@ interface Turn { role: 'user' | 'assistant'; content: string; cards?: AiCard[]; 
 const KEY = 'aroundu.ask.turns';
 
 const L = lang === 'en'
-  ? { title: 'Ask AroundU', hello: 'Ask about events, free food, clubs, classes or opportunities at your school.', note: 'Answers come only from AroundU’s listings — check the official page before you apply.', placeholder: 'Ask anything about campus…', thinking: 'Looking through campus listings…', off: 'The assistant isn’t switched on yet.', clear: 'New chat' }
-  : { title: 'Ask AroundU', hello: '우리 학교 행사, 무료 음식, 동아리, 수업, 공고에 대해 물어보세요.', note: 'AroundU에 있는 정보로만 답해요 — 지원 전에는 공식 페이지를 꼭 확인하세요.', placeholder: '캠퍼스에 대해 무엇이든 물어보세요…', thinking: '캠퍼스 정보를 찾는 중…', off: '아직 AI 도우미가 켜져 있지 않아요.', clear: '새 대화' };
+  ? { title: 'Ask Heetz', hello: 'Ask about events, free food, clubs, classes or opportunities at your school.', note: 'Answers come only from Heetz’s listings — check the official page before you apply.', placeholder: 'Ask anything about campus…', thinking: 'Looking through campus listings…', off: 'The assistant isn’t switched on yet.', clear: 'New chat' }
+  : { title: 'Ask Heetz', hello: '우리 학교 행사, 무료 음식, 동아리, 수업, 공고에 대해 물어보세요.', note: 'Heetz에 있는 정보로만 답해요 — 지원 전에는 공식 페이지를 꼭 확인하세요.', placeholder: '캠퍼스에 대해 무엇이든 물어보세요…', thinking: '캠퍼스 정보를 찾는 중…', off: '아직 AI 도우미가 켜져 있지 않아요.', clear: '새 대화' };
 
 const EXAMPLES = lang === 'en'
   ? ['Free food on campus today?', 'Summer internships in finance for a sophomore', 'Clubs for climbing or photography', 'Hackathons I can join this month', 'Any scholarships with deadlines soon?']
@@ -34,7 +34,7 @@ function RichText({ text }: { text: string }) {
   );
 }
 
-/** Ask AroundU — 우리 데이터만 검색해서 답하는 캠퍼스 도우미 */
+/** Ask Heetz — 우리 데이터만 검색해서 답하는 캠퍼스 도우미 */
 export function AskPage() {
   const on = useAiEnabled();
   const v = useViewer();
