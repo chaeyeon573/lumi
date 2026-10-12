@@ -653,6 +653,7 @@ export function createEngine(ctx: EngineContext) {
       },
       markRead(roomId: ID, userId: ID): Patch {
         const room = find(db().chatRooms, roomId);
+        if (!room.memberIds.includes(userId)) throw new Error(t('이 채팅방의 멤버가 아니에요.'));
         room.lastReadAt[userId] = now();
         return { chatRooms: [room] };
       },
