@@ -12,7 +12,8 @@ import type { Snapshot, CatalogCourse } from '@core/api/types';
 import type { Goal, ID, Interest, OpportunityType, Organization, Purpose, Role, User } from '@core/types';
 import { ALL_GOALS, ALL_INTERESTS, ALL_PURPOSES } from '@core/lib/labels';
 import { canViewField, isBlocked } from '@core/lib/relations';
-import { searchActivities, searchClubs, searchCourses, searchListings, schoolOf, type Card } from './ai-search';
+import { recommendFor, searchActivities, searchClubs, searchCourses, searchListings, schoolOf, type Card } from './ai-search';
+import { TOPICS, type RecType, type Topic } from '@core/lib/foryou';
 
 const apiKey = () => process.env.OPENAI_API_KEY || process.env.API_KEY || '';
 export const aiEnabled = () => apiKey().startsWith('sk-');
@@ -89,6 +90,7 @@ const ASK_SYSTEM = `You are "Ask Lumi", the assistant inside Lumi, an app for co
 
 How to answer:
 - Answer ONLY from what the search tools return. Never invent events, dates, deadlines, locations, links, prices or eligibility. If the tools return nothing useful, say plainly that Lumi doesn't have it yet, and suggest a different way to ask or where the student could look (only name a website if a tool result gave its link).
+- When the student asks what fits THEM ("recommend", "for me", "what should I join / apply to / go to", "anything I'd like"), call recommend_for_me first — it ranks by their major, goals, interests and what they saved, the same order the app shows. For each item say in a few words why it fits, using only its why_it_fits reasons. Don't make up other reasons about the student.
 - Search before answering anything about listings, clubs, courses or activities. Use several searches with different wording if the first one is thin (e.g. "finance" and "investment banking"; "climbing" and "outdoors").
 - Cite every item you mention by putting its id in double brackets right after it, like "Cal Hacks 13.0 [[op_ext_devpost_123]]". The app turns these into tappable cards. Only cite ids that appeared in tool results.
 - Dates: today's date and weekday are given below. Resolve "today", "this weekend", "next week" into from/to dates for the search. Deadlines and dates in results are YYYY-MM-DD; say them in a friendly way ("Fri, Oct 17").
@@ -143,6 +145,20 @@ export async function ask(db: Snapshot, catalog: CatalogCourse[], viewer: User, 
         additionalProperties: false,
       },
       run: (input) => remember(searchClubs(db, viewer, { query: str(input.query), types: arr(input.types) as Organization['type'][], recruiting_only: input.recruiting_only === true, limit: num(input.limit) })),
+    }),
+    tool({
+      name: 'recommend_for_me',
+      description: "Personal recommendations for this student: clubs, internships, hackathons, scholarships, research and events ranked by their major, goals, interests and what they've saved or joined. Each result has why_it_fits. Use for any 'what should I…' or 'recommend' question. Narrow with types and/or topic.",
+      parameters: {
+        type: 'object',
+        properties: {
+          types: { type: 'array', items: { type: 'string', enum: [...LISTING_TYPES.filter((x) => x !== 'club' && x !== 'activity'), 'club'] }, description: 'club = clubs/Greek/labs (organizations); others are listings' },
+          topic: { type: 'string', enum: Object.keys(TOPICS), description: 'Only items about this topic, e.g. finance, ai_data, outdoors, arts' },
+          limit: { type: 'integer', minimum: 1, maximum: 10 },
+        },
+        additionalProperties: false,
+      },
+      run: (input) => remember(recommendFor(db, viewer, { types: arr(input.types) as RecType[] | undefined, topic: (str(input.topic) && str(input.topic)! in TOPICS ? str(input.topic) : undefined) as Topic | undefined, limit: num(input.limit) })),
     }),
     tool({
       name: 'search_courses',

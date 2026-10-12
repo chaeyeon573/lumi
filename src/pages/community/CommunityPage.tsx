@@ -9,7 +9,8 @@ import { PostCard } from '@/components/cards/PostCard';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { ORG_TYPE_LABELS } from '@core/lib/labels';
-import { opportunityScore, daysUntil, isTogetherType } from '@core/lib/recommend';
+import { daysUntil, isTogetherType } from '@core/lib/recommend';
+import { scoreListings, scoreClubs, whyLine } from '@core/lib/foryou';
 import { ALL_POST_TYPES, POST_TYPE_LABELS, OPP_TYPE_LABELS, OPP_TYPE_EMOJI } from '@core/lib/labels';
 import { FIELDS, REGIONS, audienceOf, badgeOf, fieldOf, isGradStudent, isTalk, locationOf, regionsOf, spreadByHost, type Region } from '@core/lib/listings';
 import { api } from '@core/api';
@@ -103,7 +104,16 @@ function OpportunitiesTab() {
   const [shown, setShown] = useState(PAGE);
   const mySchool = me.affiliation.type === 'university' ? me.affiliation.schoolId : '';
   const savedIds = useMemo(() => new Set(intents.filter((i) => i.userId === me.id && (i.saved || i.intent !== 'interested')).map((i) => i.opportunityId)), [intents, me.id]);
-  const scored = useMemo(() => opps.filter((o) => !isTogetherType(o.type) || (o.type === 'hackathon' && !o.rolesNeeded)).filter((o) => !o.schoolId || o.schoolId === mySchool).filter((o) => !o.deadline || daysUntil(o.deadline) >= 0).map((o) => ({ o, ...opportunityScore(me, o, intents) })), [opps, intents, me, mySchool]);
+  const orgs = useAppStore((s) => s.organizations);
+  const relationships = useAppStore((s) => s.relationships);
+  const schools = useAppStore((s) => s.schools);
+  // For you — 화면과 Ask Lumi가 같은 엔진(lib/foryou)으로 매긴다. 지원했거나 대상이 아닌 것은 맨 뒤로
+  const scored = useMemo(() => {
+    const rows = opps.filter((o) => !isTogetherType(o.type) || (o.type === 'hackathon' && !o.rolesNeeded)).filter((o) => !o.schoolId || o.schoolId === mySchool).filter((o) => !o.deadline || daysUntil(o.deadline) >= 0);
+    const sc = scoreListings({ opportunities: opps, opportunityIntents: intents, organizations: orgs, relationships, schools }, me, rows);
+    return rows.map((o) => { const r = sc.get(o.id); return { o, score: r?.score ?? -1, why: r ? whyLine(r.reasons, 1) : '' }; });
+  }, [opps, intents, orgs, relationships, schools, me, mySchool]);
+  const whyOf = useMemo(() => new Map(scored.map((x) => [x.o.id, x.why])), [scored]);
 
   const grad = isGradStudent(me);
   // 세미나·강연 — 행사라서 위 목록(정보성 공고)에는 없다. 내 전공 단어가 들어간 것을 먼저
@@ -190,6 +200,7 @@ function OpportunitiesTab() {
                     {o.type === 'internship' ? <span className="h-5 px-2 rounded-full bg-surface-2 text-ink-2 text-[11px] font-semibold inline-flex items-center whitespace-nowrap truncate">{o.field ?? fieldOf(o.title)}</span> : <span className="h-5 px-2 rounded-full bg-surface-2 text-ink-2 text-[11px] font-semibold inline-flex items-center whitespace-nowrap truncate">{OPP_TYPE_LABELS[o.type]}</span>}
                     {o.remote && <span className="h-5 px-2 rounded-full bg-accent-soft text-primary text-[11px] font-semibold inline-flex items-center">Remote</span>}
                   </span>
+                  {sort === 'foryou' && whyOf.get(o.id) && <span className="block text-[12px] text-ink-3 truncate mt-1">✨ {whyOf.get(o.id)}</span>}
                 </span>
               </button>
               <button onClick={() => toggleSave(o)} aria-label={saved ? (en ? 'Remove from saved' : '저장 취소') : (en ? 'Save listing' : '공고 저장')} className={cn('h-10 w-10 rounded-full grid place-items-center shrink-0 press', saved ? 'text-gold' : 'text-ink-3')}><Star size={21} fill={saved ? 'currentColor' : 'none'} /></button>
@@ -213,7 +224,14 @@ function ClubsTab() {
   const [chip, setChip] = useState<typeof CLUB_CHIPS[number]['key']>(params.get('mine') ? 'mine' : 'all');
   const mySchool = v.me.affiliation.type === 'university' ? v.me.affiliation.schoolId : '';
   const mine = (o: typeof orgs[number]) => o.memberIds.includes(v.me.id) || o.adminIds.includes(v.me.id) || o.followerIds.includes(v.me.id);
-  const list = orgs.filter((o) => chip === 'mine' ? mine(o) : (o.schoolId === mySchool || mine(o)) && (chip === 'all' || o.type === chip)).sort((a, b) => Number(!!b.recruitment?.open) - Number(!!a.recruitment?.open));
+  const opportunities = useAppStore((s) => s.opportunities);
+  const intents = useAppStore((s) => s.opportunityIntents);
+  const relationships = useAppStore((s) => s.relationships);
+  const schools = useAppStore((s) => s.schools);
+  const filtered = useMemo(() => orgs.filter((o) => chip === 'mine' ? mine(o) : (o.schoolId === mySchool || mine(o)) && (chip === 'all' || o.type === chip)), [orgs, chip, mySchool, v.me.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  // 내 관심사대로 — 화면과 Ask Lumi가 같은 엔진(lib/foryou)을 쓴다
+  const sc = useMemo(() => scoreClubs({ opportunities, opportunityIntents: intents, organizations: orgs, relationships, schools }, v.me, filtered), [opportunities, intents, orgs, relationships, schools, v.me, filtered]);
+  const list = filtered.map((o) => ({ o, r: sc.get(o.id) })).sort((a, b) => (b.r?.score ?? -1) - (a.r?.score ?? -1) || Number(!!b.o.recruitment?.open) - Number(!!a.o.recruitment?.open)).map((x) => x.o);
   return (
     <div>
       <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2">{CLUB_CHIPS.map((c) => <Chip key={c.key} active={chip === c.key} onClick={() => setChip(c.key)}>{c.label}</Chip>)}</div>
@@ -221,7 +239,7 @@ function ClubsTab() {
         <div className="divide-y divide-line">{list.map((o) => (
           <button key={o.id} onClick={() => nav(`/orgs/${o.id}`)} className="w-full flex items-center gap-3 py-3.5 text-left press">
             <Avatar emoji={o.logo.emoji} hue={o.logo.hue} url={o.logo.url} size={44} />
-            <span className="flex-1 min-w-0"><span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{o.name}</span>{o.recruitment?.open && <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{t('모집 중')}</span>}</span><span className="block text-[13px] text-ink-3 truncate mt-0.5">{orgSubtitle(o)}</span></span>
+            <span className="flex-1 min-w-0"><span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{o.name}</span>{o.recruitment?.open && <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{t('모집 중')}</span>}</span><span className="block text-[13px] text-ink-3 truncate mt-0.5">{orgSubtitle(o)}</span>{chip !== 'mine' && sc.get(o.id)?.reasons.length ? <span className="block text-[12px] text-ink-3 truncate mt-0.5">✨ {whyLine(sc.get(o.id)!.reasons, 1)}</span> : null}</span>
             <span className="h-9 w-9 rounded-full grid place-items-center text-primary">{o.recruitment?.open ? <Plus size={20} /> : <ArrowRight size={20} />}</span>
           </button>
         ))}</div>

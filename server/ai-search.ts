@@ -6,6 +6,7 @@ import type { Snapshot, CatalogCourse, AiCard } from '@core/api/types';
 import type { Opportunity, Organization, OpportunityType, User } from '@core/types';
 import { searchCatalog } from '@core/data/catalog/courses';
 import { canViewActivity, placeLabel } from '@core/lib/relations';
+import { forYou, type RecType, type Topic } from '@core/lib/foryou';
 
 export type Card = AiCard;
 
@@ -94,6 +95,26 @@ export function searchActivities(db: Snapshot, viewer: User, today: string, inpu
     return {
       card: { kind: 'activity', id: a.id, title: a.title, date: a.date, startTime: a.startTime, place, category: a.category } satisfies Card,
       forModel: { id: a.id, title: a.title, category: a.category, date: a.date, start_time: a.startTime, place, about: clip(a.description, 200) },
+    };
+  });
+}
+
+/** 이 학생에게 맞는 추천 — 화면의 For you 순서와 같은 엔진(lib/foryou). 이유도 엔진이 낸 것만 쓴다 */
+export function recommendFor(db: Snapshot, viewer: User, input: { types?: RecType[]; topic?: Topic; limit?: number }) {
+  const limit = Math.min(Math.max(input.limit ?? 6, 1), 10);
+  return forYou(db, viewer, { types: input.types, topic: input.topic, limit }).map((r) => {
+    const why = r.reasons.slice(0, 3).map((x) => x.text);
+    if (r.kind === 'club') {
+      const o = r.item; const url = o.links?.[0]?.url;
+      return {
+        card: { kind: 'club', id: o.id, name: o.name, type: o.type, recruiting: !!o.recruitment?.open, summary: clip(o.description, 140), url } satisfies Card,
+        forModel: { id: o.id, kind: 'club', name: o.name, type: o.type, recruiting: !!o.recruitment?.open, about: clip(o.description, 200), why_it_fits: why, link: url },
+      };
+    }
+    const o = r.item;
+    return {
+      card: { kind: 'listing', id: o.id, type: o.type, title: o.title, host: o.host, date: o.date, startTime: o.startTime, deadline: o.deadline, place: o.place?.name, benefit: o.benefit, url: o.sourceUrl } satisfies Card,
+      forModel: { id: o.id, kind: 'listing', type: o.type, title: o.title, host: o.host, date: o.date, deadline: o.deadline, location: o.location, benefit: o.benefit, why_it_fits: why, link: o.sourceUrl },
     };
   });
 }

@@ -1,0 +1,91 @@
+/**
+ * For you 추천 — 관심사대로 고르는지, 이유가 맞는지, 지원한 것·대상 아닌 것은 빼는지.
+ *   npm test
+ */
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import type { Opportunity, Organization, User } from '@core/types';
+import * as seed from '@core/data/seed.en';
+import { forYou, interestProfile, scoreListings, topicsOfText, whyLine } from '@core/lib/foryou';
+
+const NOW = new Date('2026-10-12T18:00:00Z');
+const base = seed.users.find((u) => u.id === 'u_me')!;
+const person = (dept: string, p: Partial<User> = {}): User => structuredClone({
+  ...base, id: 'u_t', bio: '', likes: '', freeTime: '', nowWant: '', prompts: [], hotTake: undefined, goals: [], interests: [], canOffer: [], lookingFor: [], interestedOrgIds: [], ...p,
+  affiliation: { ...base.affiliation, department: dept, role: 'undergraduate' },
+} as User);
+const opp = (id: string, type: Opportunity['type'], title: string, extra: Partial<Opportunity> = {}): Opportunity => ({
+  id, type, title, host: id, description: '', cover: { emoji: '', hue: 0 }, eligibility: '', sourceUrl: '', sourceLabel: '', tags: [], interests: [], goals: [],
+  lastVerified: '2026-10-01', qna: [], reviews: [], createdAt: '2026-09-01T00:00:00Z', ...extra,
+});
+const club = (id: string, name: string, description: string, extra: Partial<Organization> = {}): Organization => ({
+  id, name, description, logo: { emoji: '', hue: 0 }, type: 'club', schoolId: base.affiliation.type === 'university' ? base.affiliation.schoolId : '', verified: false,
+  gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [], ...extra,
+});
+const snap = (opportunities: Opportunity[], organizations: Organization[] = [], intents: { userId: string; opportunityId: string; intent: 'interested' | 'applied'; saved: boolean }[] = []) => ({
+  opportunities, organizations, schools: seed.schools, relationships: structuredClone(seed.relationships),
+  opportunityIntents: intents.map((i, n) => ({ id: `i${n}`, createdAt: '2026-10-10T00:00:00Z', ...i })),
+});
+
+const ITEMS = [
+  opp('swe', 'internship', 'Software Engineer Intern', { field: 'Software', location: 'San Francisco, CA' }),
+  opp('ib', 'internship', 'Investment Banking Summer Analyst', { field: 'Finance & Consulting', location: 'New York, NY' }),
+  opp('hack', 'hackathon', 'AI Hackathon', { tags: ['hackathon', 'online', 'Machine Learning/AI'], deadline: '2026-10-20T06:59:00Z' }),
+  opp('bio', 'lab', 'Neuroscience research assistant', { description: 'Clinical neuroscience lab' }),
+  opp('gone', 'internship', 'Software Engineer Intern (closed)', { field: 'Software', deadline: '2026-10-01T00:00:00Z' }),
+];
+const CLUBS = [club('c_code', 'Codeology', 'We build software projects and teach web development.'), club('c_hike', 'Cal Hiking and Outdoor Society', 'Hiking, camping and backpacking trips most weekends.'), club('c_fin', 'Undergraduate Finance Association', 'Investment banking and finance recruiting.')];
+
+test('topic matching avoids look-alike words', () => {
+  assert.equal(topicsOfText('learn language skills').outdoors, undefined); // "skill" is not skiing
+  assert.equal(topicsOfText('surface chemistry').outdoors, undefined);
+  assert.ok(topicsOfText('weekend hiking trips').outdoors);
+});
+
+test('a CS student gets software first; a Haas student gets finance first', () => {
+  const s = snap(ITEMS, CLUBS);
+  const cs = forYou(s, person('Computer Science', { goals: ['internship'] }), { now: NOW, mix: false });
+  assert.equal(cs[0].id, 'swe');
+  assert.match(whyLine(cs[0].reasons), /major/i);
+  const haas = forYou(s, person('Business (Haas)', { goals: ['internship'] }), { now: NOW, types: ['internship'], mix: false });
+  assert.equal(haas[0].id, 'ib');
+  const clubs = forYou(s, person('Business (Haas)'), { now: NOW, types: ['club'], mix: false });
+  assert.equal(clubs[0].id, 'c_fin');
+});
+
+test('free-text likes pull in matching clubs', () => {
+  const r = forYou(snap(ITEMS, CLUBS), person('Psychology', { likes: 'hiking and camping on weekends' }), { now: NOW, types: ['club'], mix: false });
+  assert.equal(r[0].id, 'c_hike');
+  assert.match(whyLine(r[0].reasons), /outdoors/i);
+});
+
+test('what you save changes what comes next, and says so', () => {
+  const me = person('Psychology');
+  const before = forYou(snap(ITEMS, CLUBS), me, { now: NOW, types: ['internship', 'lab', 'hackathon'], mix: false });
+  const after = forYou(snap([...ITEMS, opp('ml', 'internship', 'Machine Learning Intern', { field: 'Data & AI' })], CLUBS, [{ userId: me.id, opportunityId: 'hack', intent: 'interested', saved: true }]), me, { now: NOW, types: ['internship'], mix: false });
+  assert.notEqual(before[0]?.id, 'ml');
+  assert.equal(after[0].id, 'ml');
+  assert.match(whyLine(after[0].reasons), /AI Hackathon/);
+});
+
+test('applied, closed and wrong-audience items are left out; joined clubs too', () => {
+  const me = person('Computer Science', { goals: ['internship'] });
+  const grad = opp('phd', 'internship', 'PhD Research Intern', { field: 'Research & Science' });
+  const s = snap([...ITEMS, grad], [...CLUBS.map((c) => (c.id === 'c_code' ? { ...c, memberIds: [me.id] } : c))], [{ userId: me.id, opportunityId: 'swe', intent: 'applied', saved: false }]);
+  const ids = forYou(s, me, { now: NOW }).map((r) => r.id);
+  for (const gone of ['swe', 'gone', 'phd', 'c_code']) assert.ok(!ids.includes(gone), gone);
+  assert.equal(scoreListings(s, me, ITEMS, NOW).get('gone'), null);
+});
+
+test('no signal → still a sensible list (deadline-first), no made-up interest reasons', () => {
+  const r = forYou(snap(ITEMS, CLUBS), person(''), { now: NOW, mix: false });
+  assert.ok(interestProfile(snap(ITEMS, CLUBS), person('')).cold);
+  assert.equal(r[0].id, 'hack');
+  assert.ok(r.every((x) => x.reasons.every((y) => y.kind !== 'topic' && y.kind !== 'major')));
+});
+
+test('mixing keeps one kind from filling the whole top', () => {
+  const many = Array.from({ length: 12 }, (_, i) => opp(`swe${i}`, 'internship', `Software Engineer Intern ${i}`, { field: 'Software', host: `Co${i}` }));
+  const r = forYou(snap([...many, ...ITEMS], CLUBS), person('Computer Science', { goals: ['internship', 'hackathon'] }), { now: NOW, limit: 6 });
+  assert.ok(new Set(r.map((x) => x.type)).size >= 2);
+});
