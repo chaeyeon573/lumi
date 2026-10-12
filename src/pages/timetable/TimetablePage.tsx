@@ -35,6 +35,8 @@ export function TimetablePage() {
   const me = v.me;
   const [editing, setEditing] = useState<Course | null>(null);
   const [catalogQ, setCatalogQ] = useState('');
+  const [dept, setDept] = useState('');
+  const [depts, setDepts] = useState<{ name: string; count: number }[]>([]);
   const [catalog, setCatalog] = useState<CatalogCourse[] | null>(null);
   const [slot, setSlot] = useState<{ day: number; block: { start: number; end: number } } | null>(null);
   const [params, setParams] = useSearchParams();
@@ -76,9 +78,14 @@ export function TimetablePage() {
   useEffect(() => {
     if (!editing || editing.id || !schoolId) { setCatalog(null); return; }
     let alive = true;
-    const h = setTimeout(() => { api.catalog.courses(schoolId, catalogQ).then((r) => { if (alive) setCatalog(r); }).catch(() => { if (alive) setCatalog([]); }); }, 200);
+    const h = setTimeout(() => { api.catalog.courses(schoolId, catalogQ, dept).then((r) => { if (alive) setCatalog(r); }).catch(() => { if (alive) setCatalog([]); }); }, 200);
     return () => { alive = false; clearTimeout(h); };
-  }, [editing, schoolId, catalogQ]);
+  }, [editing, schoolId, catalogQ, dept]);
+  // 학과 목록 — 수업 추가 창을 처음 열 때 한 번
+  useEffect(() => {
+    if (!editing || editing.id || !schoolId || depts.length) return;
+    api.catalog.departments(schoolId).then(setDepts).catch(() => setDepts([]));
+  }, [editing, schoolId, depts.length]);
 
   /** 수업 목록에서 골라 요일별 수업으로 펼쳐 추가 */
   const addFromCatalog = async (c: CatalogCourse) => {
@@ -208,10 +215,17 @@ export function TimetablePage() {
             {!editing.id && schoolId && (
               <div className="rounded-2xl bg-surface-2 p-3 space-y-2">
                 <div className="flex items-center gap-2 text-[13px] font-semibold"><Search size={14} className="text-primary" />{t('학교 수업 목록에서 찾기')}</div>
-                <Input placeholder={t('수업 이름이나 과목 코드로 검색')} value={catalogQ} onChange={(e) => setCatalogQ(e.target.value)} />
+                {depts.length > 1 && (
+                  <select value={dept} onChange={(e) => setDept(e.target.value)} className={cn('w-full h-11 rounded-xl px-3 text-[14px] font-semibold border', dept ? 'bg-primary-soft text-primary border-primary/30' : 'bg-white text-ink-2 border-line')}>
+                    <option value="">{lang === 'en' ? `All departments (${depts.length})` : `전체 학과 (${depts.length})`}</option>
+                    {depts.map((d) => <option key={d.name} value={d.name}>{d.name} · {d.count}</option>)}
+                  </select>
+                )}
+                <Input placeholder={dept ? (lang === 'en' ? `Search in ${dept}…` : `${dept} 안에서 검색…`) : t('수업 이름이나 과목 코드로 검색')} value={catalogQ} onChange={(e) => setCatalogQ(e.target.value)} />
+                {dept && catalog && <div className="text-[11px] text-ink-3">{lang === 'en' ? `${catalog.length} classes in ${dept}` : `${dept} 수업 ${catalog.length}개`}</div>}
                 {catalog && catalog.length > 0 && (
-                  <div className="max-h-44 overflow-y-auto divide-y divide-line rounded-xl bg-white">
-                    {catalog.slice(0, 20).map((c) => (
+                  <div className={cn('overflow-y-auto divide-y divide-line rounded-xl bg-white', dept ? 'max-h-72' : 'max-h-44')}>
+                    {catalog.slice(0, dept ? 400 : 20).map((c) => (
                       <div key={c.id} className="flex items-start gap-2 px-3 py-2">
                         <button type="button" disabled={busy} onClick={() => addFromCatalog(c)} className="flex-1 min-w-0 text-left press">
                           <div className="text-[13px] font-semibold">{c.code} <span className="font-medium text-ink-2">{c.title}</span></div>

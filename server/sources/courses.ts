@@ -405,7 +405,8 @@ function foseSource(schoolId: string, host: string): CourseSource {
 }
 
 // Banner 9 (Ellucian StudentRegistrationSsb 공개 검색: registrationssb.ucr.edu …)
-interface B9Section { subject: string; courseNumber: string; courseTitle: string; sequenceNumber: string; scheduleTypeDescription?: string; creditHours?: number; creditHourLow?: number; faculty?: { displayName?: string }[]; meetingsFaculty?: { meetingTime?: { beginTime?: string; endTime?: string; monday?: boolean; tuesday?: boolean; wednesday?: boolean; thursday?: boolean; friday?: boolean; saturday?: boolean; sunday?: boolean; building?: string; room?: string; meetingType?: string } }[] }
+const decodeEntities = (x: string) => x.replace(/&amp;/g, '&').replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').trim();
+interface B9Section { subject: string; subjectDescription?: string; courseNumber: string; courseTitle: string; sequenceNumber: string; scheduleTypeDescription?: string; creditHours?: number; creditHourLow?: number; faculty?: { displayName?: string }[]; meetingsFaculty?: { meetingTime?: { beginTime?: string; endTime?: string; monday?: boolean; tuesday?: boolean; wednesday?: boolean; thursday?: boolean; friday?: boolean; saturday?: boolean; sunday?: boolean; building?: string; room?: string; meetingType?: string } }[] }
 function banner9Source(schoolId: string, host: string): CourseSource {
   const H = `${host}/StudentRegistrationSsb/ssb`;
   let cookie = '';
@@ -445,7 +446,7 @@ function banner9Source(schoolId: string, host: string): CourseSource {
       }
       if (!meetings.length) continue;
       const id = seen.has(baseId) ? `${baseId}_${s.sequenceNumber}` : baseId; if (seen.has(id)) continue; seen.add(id);
-      out.push({ id, schoolId, code, title: s.courseTitle, department: s.subject, instructor: s.faculty?.[0]?.displayName, location, meetings: uniq(meetings), term: termCode, units: s.creditHours ?? s.creditHourLow, url: `${H}/classSearch/classSearch` });
+      out.push({ id, schoolId, code, title: s.courseTitle, department: s.subjectDescription ? decodeEntities(s.subjectDescription) : s.subject, instructor: s.faculty?.[0]?.displayName, location, meetings: uniq(meetings), term: termCode, units: s.creditHours ?? s.creditHourLow, url: `${H}/classSearch/classSearch` });
     }
     for (const c of out) if (out.some((o) => o.id.startsWith(`${c.id}_`))) c.title = `${c.title} (Sec 001)`;
     for (const c of out) { const m = /_(\d{3})$/.exec(c.id); if (m) c.title = `${c.title} (Sec ${m[1]})`; }
@@ -473,7 +474,8 @@ function banner9Source(schoolId: string, host: string): CourseSource {
       console.log(`  ${schoolId} banner9 ${termCode}: ${subjects.length} subjects → ${out.length} lectures`);
       return out;
     },
-    async lookup(c) { return toCourses(await searchSubject(c.term, c.department), c.term).find((x) => x.id === c.id) ?? null; },
+    // department 에는 학과 이름이 들어가므로 과목 코드 앞부분(예: CSE)으로 다시 찾는다
+    async lookup(c) { return toCourses(await searchSubject(c.term, c.code.split(' ')[0]), c.term).find((x) => x.id === c.id) ?? null; },
   };
 }
 

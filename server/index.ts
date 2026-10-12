@@ -27,7 +27,7 @@ import { t, lang } from '@core/i18n';
 import type { Patch, Snapshot, RegisterInput } from '@core/api/types';
 import type { ID } from '@core/types';
 import { createEngine } from '@core/api/engine';
-import { searchCatalog, catalogCourses as builtInCatalog } from '@core/data/catalog/courses';
+import { searchCatalog, catalogDepartments, catalogCourses as builtInCatalog } from '@core/data/catalog/courses';
 import { createStore } from './store';
 import { snapshotFor, patchFor } from './view';
 import { sendCodeMail, sendMail } from './mail';
@@ -212,7 +212,8 @@ app.post('/api/schools/verify-code', wrap(async (req) => {
 }));
 
 // ─── 수업 목록 ───────────────────────────────────────────────────────────
-app.post('/api/catalog/courses', wrap(async (req) => searchCatalog(catalog, String(req.body.schoolId ?? ''), String(req.body.query ?? ''))));
+app.post('/api/catalog/courses', wrap(async (req) => searchCatalog(catalog, String(req.body.schoolId ?? ''), String(req.body.query ?? ''), 30, String(req.body.department ?? ''))));
+app.post('/api/catalog/departments', wrap(async (req) => catalogDepartments(catalog, String(req.body.schoolId ?? ''))));
 
 // ─── RPC (엔진 메서드) ────────────────────────────────────────────────────
 type Group = 'users' | 'activities' | 'posts' | 'relationships' | 'orgs' | 'opportunities' | 'proposals' | 'together' | 'chats' | 'notifications' | 'reports';

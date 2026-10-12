@@ -185,7 +185,9 @@ export interface AroundUApi {
 
   catalog: {
     /** 학교 수업 검색 (과목 코드·이름·교수) */
-    courses(schoolId: ID, query: string): Promise<CatalogCourse[]>;
+    courses(schoolId: ID, query: string, department?: string): Promise<CatalogCourse[]>;
+    /** 학과(과목 분류) 목록 */
+    departments(schoolId: ID): Promise<{ name: string; count: number }[]>;
   };
 
   users: {

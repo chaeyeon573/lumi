@@ -269,10 +269,11 @@ export const catalogCourses: CatalogCourse[] = [
 ];
 
 /** 코드·이름·학과·교수로 검색. 코드 앞부분 일치를 먼저 보여준다 */
-export function searchCatalog(courses: CatalogCourse[], schoolId: ID, query: string, limit = 30): CatalogCourse[] {
+export function searchCatalog(courses: CatalogCourse[], schoolId: ID, query: string, limit = 30, department = ''): CatalogCourse[] {
   const q = query.trim().toLowerCase().replace(/\s+/g, ' ');
-  const mine = courses.filter((c) => c.schoolId === schoolId);
-  if (!q) return mine.slice(0, limit);
+  const mine = courses.filter((c) => c.schoolId === schoolId && (!department || c.department === department));
+  // 학과를 골랐으면 그 학과 수업을 과목 번호 순으로 전부 (검색어가 있으면 그 안에서 찾기)
+  if (!q) return (department ? [...mine].sort((a, b) => a.code.localeCompare(b.code, 'en', { numeric: true })) : mine).slice(0, department ? 400 : limit);
   const norm = (s: string) => s.toLowerCase().replace(/\s+/g, ' ');
   const compact = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
   const scored = mine.map((c) => {
@@ -288,4 +289,11 @@ export function searchCatalog(courses: CatalogCourse[], schoolId: ID, query: str
   }).filter((x) => x.score > 0);
   scored.sort((a, b) => b.score - a.score || a.c.code.localeCompare(b.c.code));
   return scored.slice(0, limit).map((x) => x.c);
+}
+
+/** 학교의 학과(과목 분류) 목록 — 수업 수와 함께, 이름순 */
+export function catalogDepartments(courses: CatalogCourse[], schoolId: ID): { name: string; count: number }[] {
+  const m = new Map<string, number>();
+  for (const c of courses) if (c.schoolId === schoolId && c.department) m.set(c.department, (m.get(c.department) ?? 0) + 1);
+  return [...m].map(([name, count]) => ({ name, count })).sort((a, b) => a.name.localeCompare(b.name));
 }

@@ -115,7 +115,8 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
     },
 
     catalog: {
-      courses: (schoolId, query) => call('catalog/courses', { schoolId, query }),
+      courses: (schoolId, query, department) => call('catalog/courses', { schoolId, query, department }),
+      departments: (schoolId) => call('catalog/departments', { schoolId }),
     },
 
     users: group('users', ['update', 'setAvailability', 'votePoll']),
