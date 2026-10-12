@@ -136,6 +136,15 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
       async feedback(message, page) { await call('feedback', { message, page }); },
     },
 
+    ai: {
+      async status() {
+        try { const r = await fetch(`${base}/api/ai/status`); return r.ok ? await r.json() as { enabled: boolean } : { enabled: false }; } catch { return { enabled: false }; }
+      },
+      ask: (messages) => call('ai/ask', { messages }),
+      profileDraft: (text, schoolId) => call('ai/profile-draft', { text, schoolId }),
+      starters: (userId, lang) => call('ai/starters', { userId, lang }),
+    },
+
     subscribe(listener) {
       listeners.add(listener);
       if (!source) startEvents();

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { t, lang } from '@core/i18n';
+import { ConversationStarters } from '@/components/ai/Starters';
 import { Navigate, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Heart, UserPlus, MessageCircle, MoreHorizontal, Clock, MapPin, Flag, Ban, Sparkles, Users, CalendarPlus, Check, Lock, Mic } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
@@ -107,6 +108,8 @@ export function PersonPage() {
             </div>
           )}
         </div>
+
+        <ConversationStarters user={user} />
 
         {together && (
           <div className="card p-4 bg-[linear-gradient(120deg,#E1F7F0,#FFFFFF)]">

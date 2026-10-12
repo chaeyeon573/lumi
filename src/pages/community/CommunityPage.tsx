@@ -1,17 +1,21 @@
 import { useMemo, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Plus, ArrowRight, PenSquare, Heart, MessageCircle } from 'lucide-react';
+import { Plus, ArrowRight, PenSquare, Heart, MessageCircle, Star } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
+import { AskBar } from '@/components/ai/AskBar';
 import { Chip, Button, CardSkeleton, EmptyState, ErrorState, Avatar, Cover } from '@/components/ui';
 import { PostCard } from '@/components/cards/PostCard';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
-import { opportunityScore, daysUntil, isTogetherType, dday } from '@core/lib/recommend';
-import { ALL_POST_TYPES, POST_TYPE_LABELS, OPP_TYPE_LABELS } from '@core/lib/labels';
+import { ORG_TYPE_LABELS } from '@core/lib/labels';
+import { opportunityScore, daysUntil, isTogetherType } from '@core/lib/recommend';
+import { ALL_POST_TYPES, POST_TYPE_LABELS, OPP_TYPE_LABELS, OPP_TYPE_EMOJI } from '@core/lib/labels';
+import { FIELDS, REGIONS, badgeOf, fieldOf, locationOf, regionsOf, spreadByHost, type Region } from '@core/lib/listings';
+import { api } from '@core/api';
 import { relativeTime } from '@core/lib/format';
 import { cn } from '@core/lib/cn';
-import type { OpportunityType, OrganizationType, PostType, Post } from '@core/types';
+import type { Opportunity, OpportunityType, OrganizationType, PostType, Post } from '@core/types';
 
 type Tab = 'feed' | 'opportunities' | 'clubs';
 
@@ -33,6 +37,7 @@ export function CommunityPage() {
       {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
       {status === 'ready' && (
         <div className="px-4 pt-4">
+          <AskBar className="mb-4" />
           {tab === 'feed' && <FeedTab />}
           {tab === 'opportunities' && <OpportunitiesTab />}
           {tab === 'clubs' && <ClubsTab />}
@@ -76,34 +81,104 @@ function FeedTab() {
 }
 
 type Sub = 'foryou' | 'saved' | OpportunityType;
+type Sort = 'foryou' | 'deadline' | 'newest';
+const PAGE = 30;
+const en = lang === 'en';
+const BADGE_TONE = { urgent: 'bg-danger text-white', soon: 'bg-danger/10 text-danger', normal: 'bg-primary-soft text-primary', muted: 'bg-surface-2 text-ink-3' } as const;
+
 function OpportunitiesTab() {
   const nav = useNavigate();
   const [params, setParams] = useSearchParams();
   const sub = (params.get('sub') ?? 'foryou') as Sub;
-  const setSub = (s: Sub) => setParams(s === 'foryou' ? { tab: 'opportunities' } : { tab: 'opportunities', sub: s }, { replace: true });
+  const field = params.get('field') ?? '';
+  const region = params.get('region') ?? '';
+  const sort = (params.get('sort') ?? 'foryou') as Sort;
+  const setQ = (p: Record<string, string>) => { const next = new URLSearchParams(params); next.set('tab', 'opportunities'); for (const [k, v] of Object.entries(p)) { if (v) next.set(k, v); else next.delete(k); } setParams(next, { replace: true }); };
+  const setSub = (s: Sub) => setQ({ sub: s === 'foryou' ? '' : s, field: '', region: '', sort: '' });
   const opps = useAppStore((s) => s.opportunities);
   const intents = useAppStore((s) => s.opportunityIntents);
+  const run = useAppStore((s) => s.run);
   const v = useViewer();
   const me = v.me;
+  const [shown, setShown] = useState(PAGE);
   const mySchool = me.affiliation.type === 'university' ? me.affiliation.schoolId : '';
+  const savedIds = useMemo(() => new Set(intents.filter((i) => i.userId === me.id && (i.saved || i.intent !== 'interested')).map((i) => i.opportunityId)), [intents, me.id]);
   const scored = useMemo(() => opps.filter((o) => !isTogetherType(o.type) || (o.type === 'hackathon' && !o.rolesNeeded)).filter((o) => !o.schoolId || o.schoolId === mySchool).filter((o) => !o.deadline || daysUntil(o.deadline) >= 0).map((o) => ({ o, ...opportunityScore(me, o, intents) })), [opps, intents, me, mySchool]);
-  const list = sub === 'foryou' ? [...scored].sort((a, b) => b.score - a.score) : sub === 'saved' ? scored.filter((x) => intents.some((i) => i.opportunityId === x.o.id && i.userId === me.id && (i.saved || i.intent !== 'interested'))) : scored.filter((x) => x.o.type === sub);
+
+  const list = useMemo(() => {
+    let rows = sub === 'saved' ? scored.filter((x) => savedIds.has(x.o.id)) : sub === 'foryou' ? scored : scored.filter((x) => x.o.type === sub);
+    if (field) rows = rows.filter((x) => (x.o.field ?? fieldOf(x.o.title)) === field);
+    if (region) rows = rows.filter((x) => regionsOf(x.o).includes(region as Region));
+    const due = (o: Opportunity) => o.deadline ?? o.date ?? '9999';
+    const posted = (o: Opportunity) => o.postedAt ?? o.createdAt;
+    const sorted = [...rows].sort((a, b) => sort === 'deadline' ? due(a.o).localeCompare(due(b.o)) : sort === 'newest' ? posted(b.o).localeCompare(posted(a.o)) : b.score - a.score || due(a.o).localeCompare(due(b.o)));
+    return sort === 'deadline' ? sorted.map((x) => x.o) : spreadByHost(sorted.map((x) => x.o));
+  }, [scored, sub, field, region, sort, savedIds]);
+
+  const savedList = useMemo(() => scored.filter((x) => savedIds.has(x.o.id)).map((x) => x.o).sort((a, b) => (a.deadline ?? a.date ?? '9999').localeCompare(b.deadline ?? b.date ?? '9999')), [scored, savedIds]);
+  const toggleSave = (o: Opportunity) => run(() => api.opportunities.toggleSave(o.id, me.id), savedIds.has(o.id) ? undefined : (en ? 'Saved — it’s at the top of Notices now.' : '저장했어요 — 공고 맨 위에서 볼 수 있어요.'));
+  const showFilters = sub === 'internship' || sub === 'foryou';
+
   return (
     <div>
       <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2">
         <Chip active={sub === 'foryou'} onClick={() => setSub('foryou')}>{t('전체')}</Chip>
-        {(['scholarship', 'internship', 'lab', 'hackathon', 'exchange'] as OpportunityType[]).map((ty) => <Chip key={ty} active={sub === ty} onClick={() => setSub(ty)}>{OPP_TYPE_LABELS[ty]}</Chip>)}
-        <Chip active={sub === 'saved'} onClick={() => setSub('saved')}>{t('저장')}</Chip>
+        {(['internship', 'scholarship', 'lab', 'hackathon', 'exchange'] as OpportunityType[]).map((ty) => <Chip key={ty} active={sub === ty} onClick={() => setSub(ty)}>{OPP_TYPE_LABELS[ty]}</Chip>)}
+        <Chip active={sub === 'saved'} onClick={() => setSub('saved')}><Star size={13} className="inline -mt-0.5 mr-1" fill={sub === 'saved' ? 'currentColor' : 'none'} />{en ? 'Saved' : '저장'}{savedIds.size ? ` ${savedIds.size}` : ''}</Chip>
       </div>
-      {list.length === 0 ? <EmptyState emoji="" title={t('아직 등록된 기회가 없어요')} /> : (
-        <div className="divide-y divide-line">{list.map(({ o }) => (
-          <button key={o.id} onClick={() => nav(`/opportunities/${o.id}`)} className="w-full flex items-center gap-3 py-3.5 text-left press">
-            <span className="h-11 w-11 rounded-full bg-primary-soft text-primary grid place-items-center text-[12px] font-bold shrink-0">{OPP_TYPE_LABELS[o.type].slice(0, 2)}</span>
-            <span className="flex-1 min-w-0"><span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{o.title}</span><span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{OPP_TYPE_LABELS[o.type]}</span></span><span className="block text-[13px] text-ink-3 truncate mt-0.5">{o.host}{o.deadline ? ` · ${dday(o.deadline)}` : ''}</span></span>
-            <ArrowRight size={20} className="text-primary shrink-0" />
-          </button>
-        ))}</div>
+
+      {sub !== 'saved' && savedList.length > 0 && (
+        <div className="mb-3">
+          <div className="flex items-center justify-between mb-1.5"><b className="text-[13px] flex items-center gap-1"><Star size={13} className="text-gold" fill="currentColor" />{en ? 'Your saved' : '저장한 공고'}</b><button onClick={() => setSub('saved')} className="text-[12px] text-primary font-semibold">{en ? 'See all' : '모두 보기'}</button></div>
+          <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4">{savedList.slice(0, 10).map((o) => { const b = badgeOf(o, en); return (
+            <button key={o.id} onClick={() => nav(`/opportunities/${o.id}`)} className="shrink-0 w-[200px] rounded-2xl bg-surface border border-line p-3 text-left press">
+              <span className={cn('inline-flex h-5 px-2 rounded-full text-[10px] font-bold items-center', BADGE_TONE[b.tone])}>{b.text}</span>
+              <span className="block text-[13px] font-semibold text-primary mt-1.5 line-clamp-2 leading-snug">{o.title}</span>
+              <span className="block text-[11px] text-ink-3 truncate mt-0.5">{o.host}</span>
+            </button>); })}</div>
+        </div>
       )}
+
+      {showFilters && (
+        <div className="space-y-2 mb-2">
+          <div className="flex gap-1.5 overflow-x-auto hide-scrollbar -mx-4 px-4">
+            {(['foryou', 'deadline', 'newest'] as Sort[]).map((k) => <Chip key={k} size="sm" active={sort === k} onClick={() => setQ({ sort: k === 'foryou' ? '' : k })}>{{ foryou: en ? 'For you' : '추천순', deadline: en ? 'Deadline soon' : '마감 임박', newest: en ? 'Newest' : '최신' }[k]}</Chip>)}
+            <span className="w-px bg-line shrink-0 mx-1" />
+            <select value={region} onChange={(e) => setQ({ region: e.target.value })} className={cn('h-8 rounded-full px-3 text-[12px] font-semibold shrink-0', region ? 'bg-primary text-white' : 'bg-surface-2 text-ink-2')}>
+              <option value="">{en ? 'Any location' : '지역 전체'}</option>{REGIONS.map((r) => <option key={r} value={r}>{r}</option>)}
+            </select>
+          </div>
+          {sub === 'internship' && <div className="flex gap-1.5 overflow-x-auto hide-scrollbar -mx-4 px-4">
+            <Chip size="sm" active={!field} onClick={() => setQ({ field: '' })}>{en ? 'All fields' : '전체 분야'}</Chip>
+            {FIELDS.filter((f) => f !== 'Other').map((f) => <Chip key={f} size="sm" active={field === f} onClick={() => setQ({ field: field === f ? '' : f })}>{f}</Chip>)}
+          </div>}
+        </div>
+      )}
+
+      <div className="text-[12px] text-ink-3 mb-1">{en ? `${list.length} listings` : `${list.length}개`}</div>
+      {list.length === 0 ? <EmptyState emoji="" title={sub === 'saved' ? (en ? 'Tap ☆ on a listing to save it here' : '공고의 ☆ 를 누르면 여기에 모여요') : t('아직 등록된 기회가 없어요')} /> : (
+        <div className="divide-y divide-line">{list.slice(0, shown).map((o) => {
+          const b = badgeOf(o, en); const loc = o.type === 'internship' ? locationOf(o) : o.place?.name ?? ''; const saved = savedIds.has(o.id);
+          return (
+            <div key={o.id} className="flex items-start gap-3 py-3">
+              <button onClick={() => nav(`/opportunities/${o.id}`)} className="flex-1 min-w-0 flex items-start gap-3 text-left press">
+                <span className="h-10 w-10 rounded-xl bg-primary-soft grid place-items-center text-[18px] shrink-0">{OPP_TYPE_EMOJI[o.type]}</span>
+                <span className="flex-1 min-w-0">
+                  <span className="block text-[15px] font-semibold text-primary leading-snug line-clamp-2">{o.title}</span>
+                  <span className="block text-[13px] text-ink-2 truncate mt-0.5">{o.host}{loc ? ` · ${loc}` : ''}</span>
+                  <span className="flex items-center gap-1.5 mt-1 overflow-hidden">
+                    <span className={cn('h-5 px-2 rounded-full text-[11px] font-bold inline-flex items-center whitespace-nowrap shrink-0', BADGE_TONE[b.tone])}>{b.text}</span>
+                    {o.type === 'internship' ? <span className="h-5 px-2 rounded-full bg-surface-2 text-ink-2 text-[11px] font-semibold inline-flex items-center whitespace-nowrap truncate">{o.field ?? fieldOf(o.title)}</span> : <span className="h-5 px-2 rounded-full bg-surface-2 text-ink-2 text-[11px] font-semibold inline-flex items-center whitespace-nowrap truncate">{OPP_TYPE_LABELS[o.type]}</span>}
+                    {o.remote && <span className="h-5 px-2 rounded-full bg-accent-soft text-primary text-[11px] font-semibold inline-flex items-center">Remote</span>}
+                  </span>
+                </span>
+              </button>
+              <button onClick={() => toggleSave(o)} aria-label={saved ? (en ? 'Remove from saved' : '저장 취소') : (en ? 'Save listing' : '공고 저장')} className={cn('h-10 w-10 rounded-full grid place-items-center shrink-0 press', saved ? 'text-gold' : 'text-ink-3')}><Star size={21} fill={saved ? 'currentColor' : 'none'} /></button>
+            </div>
+          );
+        })}</div>
+      )}
+      {list.length > shown && <Button full variant="outline" className="mt-3" onClick={() => setShown((n) => n + PAGE)}>{en ? `Show more (${list.length - shown})` : `더 보기 (${list.length - shown})`}</Button>}
     </div>
   );
 }
@@ -127,11 +202,19 @@ function ClubsTab() {
         <div className="divide-y divide-line">{list.map((o) => (
           <button key={o.id} onClick={() => nav(`/orgs/${o.id}`)} className="w-full flex items-center gap-3 py-3.5 text-left press">
             <Avatar emoji={o.logo.emoji} hue={o.logo.hue} url={o.logo.url} size={44} />
-            <span className="flex-1 min-w-0"><span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{o.name}</span>{o.recruitment?.open && <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{t('모집 중')}</span>}</span><span className="block text-[13px] text-ink-3 truncate mt-0.5">{o.memberIds.length + o.followerIds.length}{lang === 'en' ? ' members' : '명'}</span></span>
+            <span className="flex-1 min-w-0"><span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{o.name}</span>{o.recruitment?.open && <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{t('모집 중')}</span>}</span><span className="block text-[13px] text-ink-3 truncate mt-0.5">{orgSubtitle(o)}</span></span>
             <span className="h-9 w-9 rounded-full grid place-items-center text-primary">{o.recruitment?.open ? <Plus size={20} /> : <ArrowRight size={20} />}</span>
           </button>
         ))}</div>
       )}
     </div>
   );
+}
+
+/** 동아리 목록 한 줄 설명 — 학교 공식 목록에서 가져온 동아리는 우리 앱 회원이 0명이라 숫자 대신 종류·소개를 보여준다 */
+function orgSubtitle(o: { type: keyof typeof ORG_TYPE_LABELS; parent?: string; description: string; memberIds: string[]; followerIds: string[] }) {
+  const n = o.memberIds.length + o.followerIds.length;
+  if (n > 0) return lang === 'en' ? `${n} on AroundU` : `AroundU에 ${n}명`;
+  const desc = o.description.replace(/\s+/g, ' ').trim();
+  return [ORG_TYPE_LABELS[o.type], o.parent, desc].filter(Boolean).join(' · ');
 }

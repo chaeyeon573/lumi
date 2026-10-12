@@ -59,6 +59,8 @@ export interface RegisterInput {
   canOffer?: User['canOffer'];
   living?: User['living'];
   meetPreference?: User['meetPreference'];
+  /** 가입하면서 저장한 동아리 */
+  interestedOrgIds?: ID[];
   locationPermission: User['settings']['locationPermission'];
   notifications: boolean;
 }
@@ -147,6 +149,20 @@ export interface TimePollInput {
   inviteeIds: ID[];
   options: Omit<TimeOption, 'id'>[];
   closesAt: string;
+}
+
+/** AI 답변에 붙는 근거 카드 — 서버가 실제로 검색한 항목만 */
+export type AiCard =
+  | { kind: 'listing'; id: ID; type: Opportunity['type']; title: string; host: string; date?: string; startTime?: string; deadline?: string; place?: string; benefit?: string; url?: string }
+  | { kind: 'club'; id: ID; name: string; type: Organization['type']; recruiting: boolean; summary: string; url?: string }
+  | { kind: 'course'; id: ID; code: string; title: string; instructor?: string; location?: string; when: string; term: string; url?: string; syllabusUrl?: string }
+  | { kind: 'activity'; id: ID; title: string; date: string; startTime: string; place: string; category: Activity['category'] };
+
+/** 대화형 가입이 채워 주는 프로필 */
+export interface AiProfileDraft {
+  department: string; role: 'undergraduate' | 'graduate' | 'alumni' | 'unknown'; yearInSchool: number;
+  goals: User['goals']; interests: User['interests']; purposes: User['purposes']; lookingFor: User['lookingFor']; canOffer: User['canOffer'];
+  bio: string; likes: string; freeTime: string;
 }
 
 export interface AroundUApi {
@@ -260,6 +276,14 @@ export interface AroundUApi {
     failNext(): void;
     /** 써 본 사람이 남기는 의견 — 운영자에게 메일로 간다 */
     feedback(message: string, page: string): Promise<void>;
+  };
+
+  /** Claude 기능 — 서버에 ANTHROPIC_API_KEY 가 있을 때만 enabled */
+  ai: {
+    status(): Promise<{ enabled: boolean }>;
+    ask(messages: { role: 'user' | 'assistant'; content: string }[]): Promise<{ answer: string; cards: AiCard[] }>;
+    profileDraft(text: string, schoolId: ID): Promise<{ draft: AiProfileDraft; suggestions: { clubs: AiCard[]; listings: AiCard[] } }>;
+    starters(userId: ID, lang: 'en' | 'ko'): Promise<{ starters: string[] }>;
   };
 
   /** 서버 푸시(웹소켓 등)를 흉내내는 구독. 실제 API로 교체 시 SSE/WebSocket으로 대체 */

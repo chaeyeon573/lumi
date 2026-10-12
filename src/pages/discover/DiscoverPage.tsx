@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Plus } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
+import { AskBar } from '@/components/ai/AskBar';
 import { Chip, CardSkeleton, EmptyState, ErrorState, Button, Avatar } from '@/components/ui';
 import { OrgCard } from '@/components/cards/OrgCard';
 import { OpenSlotSheet } from '@/components/social/OpenSlotSheet';
@@ -45,6 +46,7 @@ export function DiscoverPage() {
       {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
       {status === 'ready' && (
         <div className="px-4">
+          <AskBar className="mb-3" />
           <div className="h-12 rounded-full bg-surface-2 flex items-center pl-4 pr-1.5 gap-2">
             <span className="h-2 w-2 rounded-full bg-primary" />
             <span className="flex-1 text-[14px] text-primary font-medium truncate">{me.timetable.length === 0 ? t('시간표를 추가해보세요') : nextFree ? `${lang === 'en' ? 'Free' : '공강'} ${fmtBlock(nextFree)}` : t('오늘 수업 끝')}</span>

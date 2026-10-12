@@ -125,7 +125,7 @@ export function createEngine(ctx: EngineContext) {
         bio: input.bio, likes: input.likes, freeTime: input.freeTime, height: input.height, availability: input.availability,
         interests: input.interests, purposes: input.purposes, preferredPartner: input.preferredPartner, region: school.region,
         prompts: input.prompts, voicePrompt: input.voicePrompt, poll: input.poll, timetable: input.timetable ?? [],
-        goals: input.goals, lookingFor: input.lookingFor ?? [], canOffer: input.canOffer ?? [], living: input.living, interestedOrgIds: [], meetPreference: input.meetPreference ?? [],
+        goals: input.goals, lookingFor: input.lookingFor ?? [], canOffer: input.canOffer ?? [], living: input.living, interestedOrgIds: (input.interestedOrgIds ?? []).filter((id) => db().organizations.some((o) => o.id === id)).slice(0, 20), meetPreference: input.meetPreference ?? [],
         fieldVisibility: input.fieldVisibility,
         settings: { messagePolicy: 'connected', notifications: input.notifications, locationPermission: input.locationPermission },
         createdAt: now(),

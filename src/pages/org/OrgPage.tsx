@@ -47,7 +47,7 @@ export function OrgPage() {
   const posts = v.visiblePosts.filter((p) => p.orgId === org.id).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
   const room = rooms.find((r) => r.orgId === org.id && r.memberIds.includes(v.me.id));
   const tabs: { key: Tab; label: string; n?: number }[] = [
-    { key: 'about', label: t('소개') }, { key: 'posts', label: t('게시물'), n: posts.length }, { key: 'events', label: t('행사'), n: events.length }, { key: 'recruit', label: t('모집'), n: recruits.length + orgOpps.length + (org.recruitment?.open ? 1 : 0) }, { key: 'members', label: t('멤버'), n: org.memberIds.length },
+    { key: 'about', label: t('소개') }, { key: 'posts', label: t('게시물'), n: posts.length }, { key: 'events', label: t('행사'), n: events.length }, { key: 'recruit', label: t('모집'), n: recruits.length + orgOpps.length + (org.recruitment?.open ? 1 : 0) }, { key: 'members', label: t('멤버'), n: org.memberIds.length || undefined },
   ];
 
   return (
@@ -64,8 +64,8 @@ export function OrgPage() {
             </div>
           </div>
           <div className="flex items-center gap-3 mt-3 text-[12px] text-ink-2">
-            <span className="flex items-center gap-1"><Users size={13} className="text-ink-3" />{t('팔로워')} <b>{org.followerIds.length}</b></span>
-            <span>{t('회원')} <b>{org.memberIds.length}</b></span>
+            {org.followerIds.length > 0 && <span className="flex items-center gap-1"><Users size={13} className="text-ink-3" />{t('팔로워')} <b>{org.followerIds.length}</b></span>}
+            {org.memberIds.length > 0 && <span>{t('회원')} <b>{org.memberIds.length}</b></span>}
             {org.verified ? <Tag tone="gold"><BadgeCheck size={11} /> {t('공식 인증')}</Tag> : <Tag>{t('미인증')}</Tag>}
             {org.recruitment?.open && <Tag tone="accent">{t('모집 중')}</Tag>}
           </div>

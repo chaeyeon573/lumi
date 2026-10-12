@@ -76,7 +76,7 @@ export function WelcomePage() {
         <div className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-primary-soft text-primary text-[12px] font-semibold px-3 h-8"><GraduationCap size={14} /> {t('대학생·대학원생·졸업생을 위한 서비스')}</div>
       </div>
       <div className="px-6 pb-10 space-y-2.5 safe-bottom">
-        <Button full size="lg" onClick={() => nav('/onboarding/basic')}>{t('회원가입')}</Button>
+        <Button full size="lg" onClick={() => nav(apiMode === 'remote' ? '/start' : '/onboarding/basic')}>{lang === 'en' ? 'Get started' : '시작하기'}</Button>
         <Button full size="lg" variant="outline" icon={<Mail size={16} />} onClick={() => setEmailOpen(true)}>{t('이메일로 로그인')}</Button>
         {apiMode === 'remote' ? (
           <div>

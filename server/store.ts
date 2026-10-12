@@ -23,6 +23,8 @@ export interface AgentRun { id: string; task: string; schoolId?: string; status:
 
 export interface Feedback { id: string; userId?: ID; schoolId?: ID; page: string; message: string; createdAt: string }
 
+export interface AiLog { id: string; kind: 'ask' | 'profile' | 'starters'; userId?: ID; schoolId?: ID; input: string; output: string; ok: boolean; createdAt: string }
+
 export interface Store {
   init(): Promise<void>;
   /** 저장된 스냅샷. 비어 있으면 null (→ 시드) */
@@ -47,6 +49,8 @@ export interface Store {
   listAgentRuns(limit?: number): Promise<AgentRun[]>;
   addFeedback(f: Feedback): Promise<void>;
   listFeedback(limit?: number): Promise<Feedback[]>;
+  addAiLog(l: AiLog): Promise<void>;
+  listAiLogs(limit?: number): Promise<AiLog[]>;
 }
 
 // ─── Postgres ────────────────────────────────────────────────────────────
@@ -74,6 +78,7 @@ export class PgStore implements Store {
       CREATE TABLE IF NOT EXISTS accounts (email text PRIMARY KEY, user_id text NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
       CREATE TABLE IF NOT EXISTS sessions (token text PRIMARY KEY, user_id text NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
       CREATE TABLE IF NOT EXISTS email_codes (email text PRIMARY KEY, code text NOT NULL, expires_at timestamptz NOT NULL);
+      CREATE TABLE IF NOT EXISTS ai_logs (id text PRIMARY KEY, kind text NOT NULL, user_id text, school_id text, input text NOT NULL, output text NOT NULL, ok boolean NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
       CREATE TABLE IF NOT EXISTS feedback (id text PRIMARY KEY, user_id text, school_id text, page text NOT NULL, message text NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
       CREATE TABLE IF NOT EXISTS agent_runs (id text PRIMARY KEY, task text NOT NULL, school_id text, status text NOT NULL, started_at timestamptz NOT NULL, finished_at timestamptz NOT NULL, summary jsonb NOT NULL);
     `);
@@ -173,6 +178,13 @@ export class PgStore implements Store {
     const { rows } = await this.pool.query<{ id: string; user_id: string | null; school_id: string | null; page: string; message: string; created_at: Date }>('SELECT * FROM feedback ORDER BY created_at DESC LIMIT $1', [limit]);
     return rows.map((r) => ({ id: r.id, userId: r.user_id ?? undefined, schoolId: r.school_id ?? undefined, page: r.page, message: r.message, createdAt: new Date(r.created_at).toISOString() }));
   }
+  async addAiLog(l: AiLog) {
+    await this.pool.query('INSERT INTO ai_logs (id, kind, user_id, school_id, input, output, ok, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)', [l.id, l.kind, l.userId ?? null, l.schoolId ?? null, l.input, l.output, l.ok, l.createdAt]);
+  }
+  async listAiLogs(limit = 200) {
+    const { rows } = await this.pool.query<{ id: string; kind: AiLog['kind']; user_id: string | null; school_id: string | null; input: string; output: string; ok: boolean; created_at: Date }>('SELECT * FROM ai_logs ORDER BY created_at DESC LIMIT $1', [limit]);
+    return rows.map((r) => ({ id: r.id, kind: r.kind, userId: r.user_id ?? undefined, schoolId: r.school_id ?? undefined, input: r.input, output: r.output, ok: r.ok, createdAt: new Date(r.created_at).toISOString() }));
+  }
   async takeCode(email: string) {
     const { rows } = await this.pool.query<{ email: string; code: string; expires_at: Date }>('DELETE FROM email_codes WHERE email = $1 RETURNING *', [email]);
     return rows[0] ? { email: rows[0].email, code: rows[0].code, expiresAt: rows[0].expires_at.toISOString() } : null;
@@ -180,7 +192,7 @@ export class PgStore implements Store {
 }
 
 // ─── 로컬 파일 ───────────────────────────────────────────────────────────
-interface FileData { snapshot: Snapshot | null; catalog: CatalogCourse[]; accounts: Account[]; sessions: Session[]; codes: EmailCode[]; agentRuns?: AgentRun[]; feedback?: Feedback[] }
+interface FileData { snapshot: Snapshot | null; catalog: CatalogCourse[]; accounts: Account[]; sessions: Session[]; codes: EmailCode[]; agentRuns?: AgentRun[]; feedback?: Feedback[]; aiLogs?: AiLog[] }
 
 export class FileStore implements Store {
   private file: string;
@@ -238,6 +250,8 @@ export class FileStore implements Store {
   async listAgentRuns(limit = 50) { return [...(this.data.agentRuns ?? [])].reverse().slice(0, limit); }
   async addFeedback(f: Feedback) { (this.data.feedback ??= []).push(f); await this.flush(); }
   async listFeedback(limit = 200) { return [...(this.data.feedback ?? [])].reverse().slice(0, limit); }
+  async addAiLog(l: AiLog) { (this.data.aiLogs ??= []).push(l); await this.flush(); }
+  async listAiLogs(limit = 200) { return [...(this.data.aiLogs ?? [])].reverse().slice(0, limit); }
   async takeCode(email: string) {
     const c = this.data.codes.find((x) => x.email === email) ?? null;
     this.data.codes = this.data.codes.filter((x) => x.email !== email);

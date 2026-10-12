@@ -10,6 +10,9 @@
  *   POST /api/system/reset              ALLOW_RESET=1 일 때만
  *   POST /api/feedback                  써 본 사람의 의견 → DB + FEEDBACK_EMAIL 로 메일
  *   GET  /api/feedback                  x-admin-key: ADMIN_KEY 일 때만 목록
+ *   GET  /api/ai/status                 AI 켜짐 여부 (ANTHROPIC_API_KEY)
+ *   POST /api/ai/{ask,profile-draft,starters}   server/ai.ts — 질문 답변·대화형 가입·첫마디 제안
+ *   GET  /api/ai/logs                   x-admin-key 일 때만 — 학생들이 무엇을 물었는지
  *
  * 환경변수: PORT, DATABASE_URL, AROUNDU_LANG(ko|en), DEMO_AUTOREPLY(1이면 데모 자동응답), ALLOW_DEMO_LOGIN(0이면 비활성),
  *          ALLOW_RESET, RESEND_API_KEY, MAIL_FROM, HIDE_DEV_CODE, CORS_ORIGIN, VERIFY_EMAIL_DOMAIN(0이면 학교 도메인 검사 생략)
@@ -29,6 +32,8 @@ import { createStore } from './store';
 import { snapshotFor, patchFor } from './view';
 import { sendCodeMail, sendMail } from './mail';
 import { migrateDemo, demoUserIdFor } from './demo';
+import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError } from './ai';
+import type { AiLog } from './store';
 import { loadSeed } from './seed';
 
 const PORT = Number(process.env.PORT ?? 8787);
@@ -292,6 +297,64 @@ app.get('/api/feedback', wrap(async (req) => {
   return { feedback: await store.listFeedback(500) };
 }));
 
+// ─── AI ───────────────────────────────────────────────────────────────────
+const isAdmin = (req: Request) => !!process.env.ADMIN_KEY && req.headers['x-admin-key'] === process.env.ADMIN_KEY;
+async function logAi(l: Omit<AiLog, 'id' | 'createdAt'>) {
+  try { await store.addAiLog({ ...l, input: l.input.slice(0, 4000), output: l.output.slice(0, 4000), id: randomBytes(8).toString('hex'), createdAt: new Date().toISOString() }); } catch (e) { console.error('[ai] log failed', e); }
+}
+/** AI 호출 오류를 사용자에게 읽히는 문장으로 바꾼다 */
+async function runAi<T>(kind: AiLog['kind'], ctx: { userId?: ID; schoolId?: ID; input: string }, fn: () => Promise<T>, summarize: (r: T) => string): Promise<T> {
+  if (!aiEnabled()) throw bad('AI is not set up yet.', 503);
+  try {
+    const r = await fn();
+    void logAi({ kind, ...ctx, output: summarize(r), ok: true });
+    return r;
+  } catch (e) {
+    void logAi({ kind, ...ctx, output: String((e as Error).message), ok: false });
+    if (e instanceof AiError) throw bad(e.message, e.status);
+    console.error(`[ai] ${kind} failed`, e);
+    throw bad('The assistant is having trouble right now — please try again in a minute.', 502);
+  }
+}
+const schoolIdOf = (u?: { affiliation: { type: string; schoolId?: string } }) => (u?.affiliation.type === 'university' ? u.affiliation.schoolId : undefined);
+
+app.get('/api/ai/status', (_req, res) => { res.json({ enabled: aiEnabled() }); });
+
+app.post('/api/ai/ask', auth, wrap(async (req: Req) => {
+  const me = db.users.find((u) => u.id === requireUser(req))!;
+  const raw = Array.isArray(req.body.messages) ? req.body.messages : [];
+  const history = raw.filter((m: { role?: unknown; content?: unknown }) => (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string' && m.content.trim())
+    .map((m: { role: 'user' | 'assistant'; content: string }) => ({ role: m.role, content: m.content.slice(0, 2000) }));
+  if (!history.length || history[history.length - 1].role !== 'user') throw bad(t('입력값을 확인해주세요.'));
+  rateLimit(`ask:${me.id}`, 40);
+  const question = history[history.length - 1].content;
+  return runAi('ask', { userId: me.id, schoolId: schoolIdOf(me), input: question }, () => ask(db, catalog, me, history), (r) => `${r.answer}\n[cards: ${r.cards.map((c) => c.id).join(', ')}]`);
+}));
+
+app.post('/api/ai/profile-draft', wrap(async (req) => {
+  const text = String(req.body.text ?? '').trim().slice(0, 6000);
+  const schoolId = String(req.body.schoolId ?? '');
+  if (text.length < 10) throw bad('Write a sentence or two about yourself first.');
+  if (!db.schools.some((s) => s.id === schoolId)) throw bad(t('입력값을 확인해주세요.'));
+  rateLimit(`profile:${req.ip}`, 15);
+  return runAi('profile', { schoolId, input: text }, () => profileDraft(db, schoolId, text), (r) => JSON.stringify(r.draft));
+}));
+
+app.post('/api/ai/starters', auth, wrap(async (req: Req) => {
+  const me = db.users.find((u) => u.id === requireUser(req))!;
+  const target = db.users.find((u) => u.id === String(req.body.userId ?? ''));
+  if (!target || target.id === me.id) throw bad(t('입력값을 확인해주세요.'), 404);
+  rateLimit(`starters:${me.id}`, 30);
+  const language = req.body.lang === 'ko' ? 'ko' : 'en';
+  const r = await runAi('starters', { userId: me.id, schoolId: schoolIdOf(me), input: target.id }, () => starters(db, me, target, language), (x) => x.starters.join(' | '));
+  return { starters: r.starters };
+}));
+
+app.get('/api/ai/logs', wrap(async (req) => {
+  if (!isAdmin(req)) throw bad('forbidden', 403);
+  return { logs: await store.listAiLogs(500) };
+}));
+
 app.get('/api/agent/status', wrap(async () => {
   const runs = await store.listAgentRuns(2000);
   const latest: Record<string, { status: string; finishedAt: string; summary: Record<string, unknown> }> = {};
@@ -309,7 +372,7 @@ if (existsSync(dist)) {
 }
 
 app.use((err: unknown, _req: Request, res: Response, _next: NextFunction) => {
-  const status = err instanceof HttpError ? err.status : 500;
+  const status = err instanceof HttpError || err instanceof AiError ? err.status : 500;
   if (status === 500) console.error(err);
   res.status(status).json({ error: err instanceof Error ? err.message : 'error' });
 });

@@ -5,7 +5,9 @@ import { AppShell } from '@/components/layout/AppShell';
 import { ErrorState } from '@/components/ui';
 import { WelcomePage } from '@/pages/onboarding/WelcomePage';
 import { OnboardingPage } from '@/pages/onboarding/OnboardingPage';
+import { StartPage } from '@/pages/onboarding/StartPage';
 import { HomePage } from '@/pages/home/HomePage';
+import { AskPage } from '@/pages/ask/AskPage';
 import { MapPage } from '@/pages/map/MapPage';
 import { CommunityPage } from '@/pages/community/CommunityPage';
 import { ProfilePage } from '@/pages/profile/ProfilePage';
@@ -80,6 +82,7 @@ export default function App() {
         <Route element={<AppShell withNav={false} />}>
           <Route path="/welcome" element={<WelcomePage />} />
           <Route path="/onboarding/*" element={<OnboardingPage />} />
+          <Route path="/start" element={<StartPage />} />
         </Route>
       </Route>
       <Route element={<RequireAuth />}>
@@ -97,6 +100,7 @@ export default function App() {
           <Route path="/together/new" element={<CreateTogetherPage />} />
           <Route path="/together/:id" element={<TogetherPage />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/ask" element={<AskPage />} />
           <Route path="/map" element={<MapPage />} />
           <Route path="/activities/:id" element={<ActivityDetailPage />} />
           <Route path="/activities/:id/edit" element={<CreateActivityPage />} />

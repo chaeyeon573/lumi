@@ -126,6 +126,14 @@ export const mockApi: AroundUApi = {
     async feedback(message, page) { console.info('[feedback]', page, message); },
   },
 
+  // 목업 모드에는 AI 가 없다 — 화면은 AI 없이 동작한다
+  ai: {
+    async status() { return { enabled: false }; },
+    async ask() { throw new Error('AI is not available in demo mode.'); },
+    async profileDraft() { throw new Error('AI is not available in demo mode.'); },
+    async starters() { throw new Error('AI is not available in demo mode.'); },
+  },
+
   subscribe(listener) {
     listeners.add(listener);
     return () => listeners.delete(listener);

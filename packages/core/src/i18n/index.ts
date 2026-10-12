@@ -13,8 +13,9 @@ function readLang(): Lang {
   try {
     const v = getPlatform().getItem(KEY);
     if (v === 'en' || v === 'ko') return v;
-    return getPlatform().locale().toLowerCase().startsWith('ko') ? 'ko' : 'en';
-  } catch { return 'ko'; }
+  } catch { /* */ }
+  // 기본은 영어 — 미국 대학생이 대상이다. 한국어는 사용자가 직접 고른 경우에만
+  return 'en';
 }
 
 export let lang: Lang = readLang();

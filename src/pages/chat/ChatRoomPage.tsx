@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { t } from '@core/i18n';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Send, MoreVertical, Flag, Ban, Users, CalendarDays, LogOut } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Avatar, Button, BottomSheet, Dialog, EmptyState } from '@/components/ui';
@@ -18,7 +18,9 @@ export function ChatRoomPage() {
   const run = useAppStore((s) => s.run);
   const rooms = useAppStore((s) => s.chatRooms);
   const room = rooms.find((r) => r.id === roomId);
-  const [text, setText] = useState('');
+  const [params] = useSearchParams();
+  // 사람 프로필의 '첫마디 추천'에서 고른 문장을 입력창에 넣어 둔다 (보내기는 본인이 누른다)
+  const [text, setText] = useState(() => params.get('draft') ?? '');
   const [menu, setMenu] = useState(false);
   const [report, setReport] = useState(false);
   const [blockOpen, setBlockOpen] = useState(false);

@@ -5,6 +5,7 @@
  *            기업 목록은 server/data/internship-boards.csv (ats,slug,company) — 줄 하나로 추가한다
  * MLH 해커톤 대부분이 Devpost 에도 올라온다.
  */
+import { fieldOf } from '@core/lib/listings';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -94,6 +95,7 @@ export async function fetchInternships(): Promise<Opportunity[]> {
       out.push({
         id: `op_ext_job_${b.ats}_${b.slug}_${j.id}`.slice(0, 120), type: 'internship', title: j.title.trim(), host: b.company,
         description: [j.location, j.team].filter(Boolean).join(' · '), cover: { emoji: '💼', hue: 215 },
+        location: j.location.replace(/\s*[•|/;]\s*/g, ' · ').trim(), remote: /remote/i.test(j.location), field: fieldOf(j.title, j.team), postedAt: j.updated,
         eligibility: 'See the posting for class year, major and work authorization', sourceUrl: j.url, sourceLabel: `${b.company} careers`,
         tags: ['internship', b.company, ...(/remote/i.test(j.location) ? ['remote'] : [])], interests: ['startup', 'networking'], goals: ['internship'],
         official: true, lastVerified: now, qna: [], reviews: [], createdAt: j.updated ?? now,

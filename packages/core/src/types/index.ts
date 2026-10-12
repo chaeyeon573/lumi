@@ -175,6 +175,13 @@ export interface Opportunity {
   interests: Interest[];
   goals: Goal[];
   schoolId?: ID;
+  /** 근무지·장소 (인턴: "San Francisco, CA · New York, NY") */
+  location?: string;
+  remote?: boolean;
+  /** 직무 분야 (인턴) — lib/listings.ts 의 FIELDS */
+  field?: string;
+  /** 회사가 공고를 올린·갱신한 시각 (마감일이 없는 상시 채용) */
+  postedAt?: string;
   official?: boolean;
   lastVerified: string;
   qna: Comment[];
