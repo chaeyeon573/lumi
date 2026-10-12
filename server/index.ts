@@ -207,17 +207,19 @@ app.post('/api/schools/highlights', wrap(async (req) => {
   const { date: today } = campusToday();
   const weekEnd = new Date(Date.parse(`${today}T12:00:00Z`) + 7 * 86400000).toISOString().slice(0, 10);
   const mine = db.opportunities.filter((o) => !o.schoolId || o.schoolId === sid);
+  // 저장된 시각은 UTC — 캠퍼스(태평양) 날짜로 바꿔야 '10/19 23:59 마감'이 10/20 으로 보이지 않는다
+  const pt = (iso: string) => (/T/.test(iso) ? new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(iso)) : iso.slice(0, 10));
   const nowHHMM = new Intl.DateTimeFormat('en-GB', { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(new Date());
-  const food = mine.filter((o) => o.tags.includes('free food') && o.date && o.date.slice(0, 10) >= today && o.date.slice(0, 10) <= weekEnd)
-    .filter((o) => o.date!.slice(0, 10) > today || !o.startTime || o.startTime >= nowHHMM) // 오늘 이미 시작한 건 빼고
+  const food = mine.filter((o) => o.tags.includes('free food') && o.date && pt(o.date) >= today && pt(o.date) <= weekEnd)
+    .filter((o) => pt(o.date!) > today || !o.startTime || o.startTime >= nowHHMM) // 오늘 이미 시작한 건 빼고
     .sort((a, b) => (a.date! + (a.startTime ?? '')).localeCompare(b.date! + (b.startTime ?? '')));
-  const open = mine.filter((o) => o.deadline && o.deadline.slice(0, 10) >= today).sort((a, b) => a.deadline!.localeCompare(b.deadline!));
+  const open = mine.filter((o) => o.deadline && pt(o.deadline) >= today).sort((a, b) => a.deadline!.localeCompare(b.deadline!));
   const dl = open.find((o) => o.type === 'scholarship' || o.type === 'lab') ?? open[0];
   return {
     schoolShort: SHORT[sid] ?? db.schools.find((s) => s.id === sid)!.name,
     freeFoodThisWeek: food.length,
-    food: food[0] ? { title: food[0].title, date: food[0].date!.slice(0, 10), startTime: food[0].startTime, place: food[0].place?.name } : undefined,
-    deadline: dl ? { title: dl.title, deadline: dl.deadline!.slice(0, 10), host: dl.host } : undefined,
+    food: food[0] ? { title: food[0].title, date: pt(food[0].date!), startTime: food[0].startTime, place: food[0].place?.name } : undefined,
+    deadline: dl ? { title: dl.title, deadline: pt(dl.deadline!), host: dl.host } : undefined,
     clubs: db.organizations.filter((o) => o.schoolId === sid).length,
     internships: mine.filter((o) => o.type === 'internship').length,
   };
