@@ -1,8 +1,8 @@
 import { badgeOf, fieldOf, locationOf } from '@core/lib/listings';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { t, lang } from '@core/i18n';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { Clock, MapPin, ExternalLink, Users, Bookmark, Share2, Flag, MoreHorizontal, BadgeCheck, AlarmClock, CalendarPlus, MessageCircle, CheckCircle2 } from 'lucide-react';
+import { Clock, MapPin, ExternalLink, Users, Heart, ArrowUpRight, Share2, Flag, MoreHorizontal, BadgeCheck, AlarmClock, CalendarPlus, MessageCircle, CheckCircle2 } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Avatar, Button, Tag, BottomSheet, Input, Segmented, EmptyState, Select } from '@/components/ui';
 import { SheetItem } from '@/components/cards/PostCard';
@@ -32,6 +32,16 @@ export function OpportunityDetailPage() {
   const [menu, setMenu] = useState(false);
   const [report, setReport] = useState(false);
   const [rsvpOpen, setRsvpOpen] = useState(false);
+  // 공식 사이트로 나갔다가 돌아오면 "지원했나요?"를 묻는다 — 지원 여부는 우리가 알 수 없으니 본인이 표시한다
+  const [askApplied, setAskApplied] = useState(false);
+  const opened = useRef(false);
+  const markOpened = () => { opened.current = true; };
+  useEffect(() => {
+    const back = () => { if (document.visibilityState === 'visible' && opened.current) { opened.current = false; setAskApplied(true); } };
+    document.addEventListener('visibilitychange', back);
+    window.addEventListener('focus', back);
+    return () => { document.removeEventListener('visibilitychange', back); window.removeEventListener('focus', back); };
+  }, []);
   const [text, setText] = useState('');
   const [review, setReview] = useState('');
   const [result, setResult] = useState<'accepted' | 'rejected' | 'attended' | ''>('');
@@ -44,6 +54,8 @@ export function OpportunityDetailPage() {
     .map((x) => ({ ...x, reasons: matchReasons(v.me, x.u, v.snap, v.canSeeField(x.u, 'timetable')) })).sort((a, b) => (Number(b.i.intent === 'solo' || b.i.intent === 'company') - Number(a.i.intent === 'solo' || a.i.intent === 'company')) || b.reasons.length - a.reasons.length);
   const org = o.orgId ? v.orgById(o.orgId) : undefined;
   const together = isTogetherType(o.type);
+  const interestedCount = others.filter((i) => i.saved || i.intent === 'interested').length + (mine?.saved ? 1 : 0);
+  const appliedCount = others.filter((i) => i.intent === 'applied').length + (mine?.intent === 'applied' ? 1 : 0);
   const setIntent = (intent: OpportunityIntent | null, msg?: string) => run(() => api.opportunities.setIntent(o.id, v.me.id, intent), msg);
 
   return (
@@ -59,6 +71,13 @@ export function OpportunityDetailPage() {
           </div>
           <h1 className="text-[20px] font-extrabold leading-snug mt-2">{o.title}</h1>
           <button onClick={() => org && nav(`/orgs/${org.id}`)} className="text-[13px] text-ink-2 mt-0.5 flex items-center gap-1">{o.host}{org && <span className="text-primary text-[12px]">{t('조직 페이지')}</span>}</button>
+          {!together && (
+            <button onClick={() => setParams({ tab: 'people' })} className="mt-3 w-full rounded-xl bg-surface-2 px-3 py-2.5 flex items-center gap-3 text-left press">
+              <span className="flex items-center gap-1 text-[13px]"><Heart size={14} className="text-danger" fill="currentColor" /><b>{interestedCount}</b> {lang === 'en' ? 'interested' : '명 관심'}</span>
+              <span className="flex items-center gap-1 text-[13px]"><CheckCircle2 size={14} className="text-mint" /><b>{appliedCount}</b> {lang === 'en' ? 'applied' : '명 지원'}</span>
+              <span className="ml-auto text-[12px] font-semibold text-primary">{lang === 'en' ? 'See who' : '누군지 보기'}</span>
+            </button>
+          )}
           {together && <div className="mt-3 grid grid-cols-3 gap-2 text-center">
             <div className="rounded-xl bg-surface-2 py-2"><div className="text-[16px] font-extrabold">{others.length}</div><div className="text-[10px] text-ink-3">{t('관심 있는 학생')}</div></div>
             <div className="rounded-xl bg-surface-2 py-2"><div className="text-[16px] font-extrabold">{others.filter((i) => ['going', 'solo', 'company', 'team', 'applied'].includes(i.intent)).length}</div><div className="text-[10px] text-ink-3">{t('참가 예정')}</div></div>
@@ -66,11 +85,22 @@ export function OpportunityDetailPage() {
           </div>}
         </div>
 
-        <Segmented value={tab} onChange={(tb) => setParams({ tab: tb })} options={together ? [{ value: 'info', label: t('상세') }, { value: 'people', label: `${t('함께할 사람 ')}${people.length}` }, { value: 'qna', label: `${t('Q&A·후기 ')}${o.qna.length + o.reviews.length}` }] : [{ value: 'info', label: t('상세') }, { value: 'qna', label: `${t('Q&A·후기 ')}${o.qna.length + o.reviews.length}` }]} />
+        <Segmented value={tab} onChange={(tb) => setParams({ tab: tb })} options={together ? [{ value: 'info', label: t('상세') }, { value: 'people', label: `${t('함께할 사람 ')}${people.length}` }, { value: 'qna', label: `${t('Q&A·후기 ')}${o.qna.length + o.reviews.length}` }] : [{ value: 'info', label: t('상세') }, { value: 'people', label: `${lang === 'en' ? 'People ' : '사람 '}${people.length}` }, { value: 'qna', label: `${t('Q&A·후기 ')}${o.qna.length + o.reviews.length}` }]} />
+
+        {!together && mine?.intent === 'applied' && (
+          <div className="card p-4 border border-mint/40 bg-[linear-gradient(120deg,#E1F7F0,#FFFFFF)]">
+            <b className="text-[14px] flex items-center gap-1.5"><CheckCircle2 size={16} className="text-mint" />{lang === 'en' ? `You applied · ${formatDate(mine.createdAt)}` : `지원 완료 · ${formatDate(mine.createdAt)}`}</b>
+            <p className="text-[12px] text-ink-2 mt-1">{lang === 'en' ? 'It’s saved under Notices › Saved, and classmates can see you applied. When you hear back, leave a quick tip in Q&A — it helps the next person.' : '공고 › 저장에 모아 뒀고, 같은 학교 학생들에게 지원했다고 보여요. 결과가 나오면 Q&A에 짧은 후기를 남겨주세요.'}</p>
+            <div className="flex gap-2 mt-2.5">
+              <Button size="sm" variant="outline" onClick={() => setParams({ tab: 'qna' })}>{lang === 'en' ? 'Leave a tip' : '후기 남기기'}</Button>
+              <Button size="sm" variant="ghost" onClick={() => setIntent('interested', lang === 'en' ? 'Marked as not applied.' : '지원 표시를 지웠어요.')}>{lang === 'en' ? 'Undo' : '취소'}</Button>
+            </div>
+          </div>
+        )}
 
         {tab === 'info' && (
           <>
-            <div className="card p-4"><p className="text-[14px] text-ink-2 leading-relaxed whitespace-pre-wrap">{o.description}</p></div>
+            {!(o.type === 'internship' && o.location) && o.description && <div className="card p-4"><p className="text-[14px] text-ink-2 leading-relaxed whitespace-pre-wrap">{o.description}</p></div>}
             <div className="card divide-y divide-line">
               {o.date && <Row icon={<Clock size={16} />} label={t('일시')} value={formatDateTime(o.date, o.startTime ?? '00:00')} />}
               {o.place && <Row icon={<MapPin size={16} />} label={t('장소')} value={o.place.name} action={<button onClick={() => nav('/map')} className="text-[12px] text-primary font-semibold">{t('지도')}</button>} />}
@@ -80,7 +110,7 @@ export function OpportunityDetailPage() {
               <Row icon={<span>👤</span>} label={t('누구에게 맞는지')} value={o.eligibility} />
               {o.benefit && <Row icon={<span>🎁</span>} label={t('혜택·상금·장학금')} value={o.benefit} />}
               {o.rolesNeeded && <Row icon={<Users size={16} />} label={t('필요한 역할')} value={o.rolesNeeded.map((r) => PERSON_ROLE_LABELS[r]).join(', ') + (o.teamSize ? `${t(' · 팀 ')}${o.teamSize}` : '')} />}
-              {o.sourceUrl && <Row icon={<ExternalLink size={16} />} label={t('공식 출처')} value={o.sourceLabel} sub={`${t('마지막 확인 ')}${formatDate(o.lastVerified)}`} action={<a href={o.sourceUrl} target="_blank" rel="noreferrer" className="text-[12px] text-primary font-semibold">{t('열기')}</a>} />}
+              {o.sourceUrl && <a href={o.sourceUrl} target="_blank" rel="noreferrer" onClick={() => markOpened()} className="block press"><Row icon={<ExternalLink size={16} />} label={t('공식 출처')} value={o.sourceLabel} sub={`${t('마지막 확인 ')}${formatDate(o.lastVerified)}`} action={<span className="h-8 px-3 rounded-full bg-primary-soft text-primary text-[12px] font-bold inline-flex items-center gap-1">{lang === 'en' ? 'View posting' : '공고 보기'}<ArrowUpRight size={13} /></span>} /></a>}
             </div>
             <div className="flex flex-wrap gap-1">{o.tags.map((t) => <Tag key={t}>#{t}</Tag>)}</div>
             {together && <div>
@@ -137,17 +167,28 @@ export function OpportunityDetailPage() {
 
       <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-surface/95 backdrop-blur border-t border-line p-3 safe-bottom z-20">
         <div className="flex gap-2">
-          <button onClick={() => run(() => api.opportunities.toggleSave(o.id, v.me.id), mine?.saved ? undefined : t('저장했어요. 마감 3일 전에 알려드릴게요.'))} className={cn('h-[52px] w-[52px] rounded-2xl grid place-items-center press', mine?.saved ? 'bg-primary text-white' : 'bg-surface-2 text-ink-2')} aria-label={t('저장')}><Bookmark size={20} fill={mine?.saved ? 'currentColor' : 'none'} /></button>
+          <button onClick={() => run(() => api.opportunities.toggleSave(o.id, v.me.id), mine?.saved ? undefined : (lang === 'en' ? 'Added to your interested list — it’s at the top of Notices.' : '관심 목록에 넣었어요 — 공고 맨 위에 보여요.'))} className={cn('h-[52px] w-[52px] rounded-2xl grid place-items-center press', mine?.saved ? 'bg-danger/10 text-danger' : 'bg-surface-2 text-ink-2')} aria-label={lang === 'en' ? 'Interested' : '관심'}><Heart size={22} fill={mine?.saved ? 'currentColor' : 'none'} /></button>
           {together ? (<>
             <Button size="lg" variant={mine ? 'secondary' : 'primary'} className="flex-1" onClick={() => setRsvpOpen(true)}>{mine ? `${RSVP_EMOJI[mine.intent]} ${RSVP_LABELS[mine.intent]}` : t('같이 갈래요')}</Button>
             {mine && (mine.intent === 'solo' || mine.intent === 'company') && <Button size="lg" variant="outline" onClick={() => setParams({ tab: 'people' })} icon={<Users size={18} />}>{t('사람 찾기')}</Button>}
           </>) : (
-            mine?.intent === 'applied' ? <Button size="lg" variant="secondary" className="flex-1" icon={<CheckCircle2 size={18} />} onClick={() => setIntent('interested')}>{t('지원 완료')}</Button>
+            o.sourceUrl ? (
+              <Button size="lg" variant={mine?.intent === 'applied' ? 'secondary' : 'primary'} className="flex-1" icon={mine?.intent === 'applied' ? <CheckCircle2 size={18} /> : undefined} onClick={() => { markOpened(); window.open(o.sourceUrl, '_blank', 'noopener'); }}>
+                {mine?.intent === 'applied' ? (lang === 'en' ? 'Applied · view posting' : '지원 완료 · 공고 보기') : (lang === 'en' ? `Apply on ${o.host.length > 18 ? 'site' : o.host}` : `${o.host.length > 12 ? '공식 사이트' : o.host}에서 지원`)}<ArrowUpRight size={18} className="ml-1" />
+              </Button>
+            ) : mine?.intent === 'applied' ? <Button size="lg" variant="secondary" className="flex-1" icon={<CheckCircle2 size={18} />} onClick={() => setIntent('interested')}>{t('지원 완료')}</Button>
             : <Button size="lg" className="flex-1" onClick={() => setIntent('applied', t('지원 완료로 표시했어요. 후기를 남겨주면 다음 사람에게 도움이 돼요.'))}>{t('지원했어요')}</Button>
           )}
         </div>
       </div>
 
+      <BottomSheet open={askApplied} onClose={() => setAskApplied(false)} title={lang === 'en' ? `Did you apply to ${o.host}?` : `${o.host}에 지원했나요?`}>
+        <p className="text-[13px] text-ink-2 -mt-1 mb-3">{lang === 'en' ? 'We’ll keep it in your list and show classmates who else applied. Only you can change this.' : '내 목록에 남겨 두고, 같이 지원한 학생들을 보여드려요.'}</p>
+        <div className="flex gap-2">
+          <Button full variant="outline" onClick={() => setAskApplied(false)}>{lang === 'en' ? 'Not yet' : '아직이요'}</Button>
+          <Button full icon={<CheckCircle2 size={16} />} onClick={async () => { setAskApplied(false); await setIntent('applied', lang === 'en' ? 'Marked as applied ✓ — see the status card at the top.' : '지원 완료로 표시했어요 ✓'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>{lang === 'en' ? 'Yes, I applied' : '네, 지원했어요'}</Button>
+        </div>
+      </BottomSheet>
       <BottomSheet open={rsvpOpen} onClose={() => setRsvpOpen(false)} title={t('이 행사, 어떻게 할래요?')}>
         <div className="space-y-1.5">
           {(['interested', 'going', 'solo', 'company', 'team', 'applied', 'done'] as OpportunityIntent[]).filter((k) => k !== 'team' || o.rolesNeeded).map((k) => (

@@ -23,7 +23,9 @@ export function Avatar({ emoji, hue, url, size = 44, className, ring }: AvatarPr
         background: `linear-gradient(135deg, hsl(${hue} 85% 88%), hsl(${(hue + 40) % 360} 80% 74%))`,
       }}
     >
-      <span style={{ lineHeight: 1 }}>{emoji}</span>
+      {/^[A-Z0-9ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ•]{1,3}$/.test(emoji)
+        ? <span className="font-display font-extrabold text-primary" style={{ lineHeight: 1, fontSize: size * (emoji.length > 2 ? 0.3 : 0.36) }}>{emoji}</span>
+        : <span style={{ lineHeight: 1 }}>{emoji}</span>}
     </div>
   );
 }

@@ -86,7 +86,7 @@ function mapCampusGroupsOrg(schoolId: ID, host: string, o: CampusGroupsOrg): Org
   return {
     id: `${type === 'greek' ? 'og' : 'oc'}_${schoolId.replace('s_', '')}_cg${o.id}`,
     name: o.name,
-    logo: { emoji: type === 'club' ? '🎯' : '🏛️', hue: Math.abs([...o.name].reduce((h, ch) => h * 31 + ch.charCodeAt(0), 7)) % 360 },
+    logo: { emoji: initials(o.name), hue: Math.abs([...o.name].reduce((h, ch) => h * 31 + ch.charCodeAt(0), 7)) % 360 },
     type, schoolId, parent: o.tags[0] || o.groupType || undefined, verified: false,
     description: o.mission.slice(0, 600),
     gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [],
@@ -112,7 +112,7 @@ function mapPresenceOrg(schoolId: ID, sub: string, o: PresenceOrg): Organization
   return {
     id: `${type === 'greek' ? 'og' : 'oc'}_${schoolId.replace('s_', '')}_ps${o.uri.replace(/[^a-z0-9]+/gi, '_').toLowerCase()}`,
     name: o.name,
-    logo: { emoji: type === 'club' ? '🎯' : '🏛️', hue: Math.abs([...o.name].reduce((h, ch) => h * 31 + ch.charCodeAt(0), 7)) % 360 },
+    logo: { emoji: initials(o.name), hue: Math.abs([...o.name].reduce((h, ch) => h * 31 + ch.charCodeAt(0), 7)) % 360 },
     type, schoolId, parent: cats.find((c) => !/undergraduate student organization|graduate student organization/i.test(c)) ?? cats[0], verified: false,
     description: strip(o.description ?? '').slice(0, 600),
     gallery: [], regularActivities: meet ? [meet] : [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [],
@@ -120,7 +120,7 @@ function mapPresenceOrg(schoolId: ID, sub: string, o: PresenceOrg): Organization
   };
 }
 
-interface EngageOrg { Id: string; Name: string; ShortName?: string; WebsiteKey?: string; Summary?: string; Description?: string; CategoryNames?: string[]; Status?: string }
+interface EngageOrg { Id: string; Name: string; ShortName?: string; WebsiteKey?: string; Summary?: string; Description?: string; CategoryNames?: string[]; Status?: string; ProfilePicture?: string | null }
 
 async function fetchAll(host: string): Promise<EngageOrg[]> {
   const out: EngageOrg[] = [];
@@ -135,6 +135,14 @@ async function fetchAll(host: string): Promise<EngageOrg[]> {
   return out;
 }
 
+/** 로고가 없을 때 쓰는 머리글자 — "Climbing Team of Berkeley" → "CT" (모든 동아리가 같은 🎯 로 보이지 않게) */
+const initials = (name: string) => {
+  const words = name.replace(/[^A-Za-z0-9 ]+/g, ' ').split(/\s+/).filter((w) => w && !/^(of|the|at|and|for|in|uc|cal|berkeley|merced|club|campus|dept)$/i.test(w));
+  const greek = name.match(/[ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ]/g);
+  if (greek && greek.length >= 2) return greek.slice(0, 3).join('');
+  return (words.length ? words : name.split(/\s+/)).slice(0, 2).map((w) => w[0]).join('').toUpperCase() || '•';
+};
+
 const GREEK_RE = /fraternit|sororit|greek|panhellenic|interfraternity|nphc|multicultural greek|fsilg/i;
 const COUNCIL_RE = /student government|senate|associated students|council/i;
 const strip = (html = '') => html.replace(/<[^>]+>/g, ' ').replace(/&nbsp;|&amp;|&quot;|&#39;/g, (m) => ({ '&nbsp;': ' ', '&amp;': '&', '&quot;': '"', '&#39;': "'" }[m] ?? ' ')).replace(/\s+/g, ' ').trim();
@@ -147,7 +155,7 @@ function mapOrg(schoolId: ID, host: string, o: EngageOrg): Organization {
   return {
     id: `${type === 'greek' ? 'og' : 'oc'}_${schoolId.replace('s_', '')}_${(o.WebsiteKey || o.Name).toLowerCase().replace(/[^a-z0-9]+/g, '_')}`,
     name: o.Name,
-    logo: { emoji: type === 'greek' ? '🏛️' : type === 'council' ? '🏛️' : '🎯', hue: Math.abs([...o.Name].reduce((h, ch) => h * 31 + ch.charCodeAt(0), 7)) % 360 },
+    logo: { emoji: initials(o.Name), hue: Math.abs([...o.Name].reduce((h, ch) => h * 31 + ch.charCodeAt(0), 7)) % 360, ...(o.ProfilePicture ? { url: `https://se-images.campuslabs.com/clink/images/${o.ProfilePicture}?preset=small-sq` } : {}) },
     type, schoolId, parent: council ?? cats[0], verified: false,
     description: strip(o.Summary || o.Description || '').slice(0, 600),
     gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [],
@@ -173,7 +181,9 @@ function mergeExisting(o: Organization): Organization {
   if (!prev) return o;
   const links = [...(prev.links ?? []), ...(o.links ?? []).filter((l) => !prev.links?.some((p) => p.url === l.url))];
   if (prev.verified && prev.type === 'greek') return { ...prev, links };
-  return { ...prev, type: o.type, description: o.description || prev.description, links, parent: o.parent ?? prev.parent };
+  // 로고: 디렉터리에 사진이 있으면 그걸로, 없으면 이전 사진(손으로 넣은 것), 그것도 없으면 머리글자
+  const logo = o.logo.url ? o.logo : prev.logo.url ? prev.logo : o.logo;
+  return { ...prev, type: o.type, description: o.description || prev.description, links, parent: o.parent ?? prev.parent, logo };
 }
 
 /** 디렉터리에서 받은 뒤, 같은 학교의 손으로 넣어 둔 추정 항목(디렉터리 링크 없음 · 멤버/관리자 없음 · 이번에 안 맞음)은 지운다. greek 은 fetch-greeks 가 담당 */
