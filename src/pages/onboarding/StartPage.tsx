@@ -14,8 +14,8 @@ import { useAiEnabled } from '@/hooks/useAiEnabled';
 import { DEFAULT_FV } from './OnboardingPage';
 
 const en = lang === 'en';
-type Step = 'school' | 'goals' | 'vibe' | 'friday' | 'meet' | 'major' | 'preview' | 'name';
-const STEPS: Step[] = ['school', 'goals', 'vibe', 'friday', 'meet', 'major', 'preview', 'name'];
+type Step = 'school' | 'goals' | 'vibe' | 'friday' | 'meet' | 'major' | 'preview' | 'name' | 'email';
+const STEPS: Step[] = ['school', 'goals', 'vibe', 'friday', 'meet', 'major', 'preview', 'name', 'email'];
 const KEY = 'aroundu.start.draft';
 
 interface Opt<T> { v: T; emoji: string; en: string; ko: string }
@@ -59,7 +59,7 @@ const MEET_OPTS: Opt<Role>[] = [
 const YEARS = [{ v: 1, en: 'Freshman', ko: '1학년' }, { v: 2, en: 'Sophomore', ko: '2학년' }, { v: 3, en: 'Junior', ko: '3학년' }, { v: 4, en: 'Senior', ko: '4학년' }, { v: 5, en: 'Grad student', ko: '대학원생' }];
 const AVATARS = ['🙂', '😎', '🧑‍💻', '👩‍🎨', '🧑‍🔬', '🏃', '🎸', '📚', '☕', '🌱', '🚀', '🧗', '🐱', '🦊', '🎧', '🍜'];
 
-const Q: Record<Exclude<Step, 'school' | 'preview' | 'name'>, { q: string; sub: string }> = en ? {
+const Q: Record<Exclude<Step, 'school' | 'preview' | 'name' | 'email'>, { q: string; sub: string }> = en ? {
   goals: { q: 'This semester, you’re mostly here to…', sub: 'Pick up to 3.' },
   vibe: { q: 'Your perfect free afternoon?', sub: 'Pick up to 3.' },
   friday: { q: 'Friday night, you’re…', sub: 'Be honest.' },
@@ -73,8 +73,8 @@ const Q: Record<Exclude<Step, 'school' | 'preview' | 'name'>, { q: string; sub: 
   major: { q: '전공이 뭐예요?', sub: '내 분야의 수업·강연·사람을 보여드려요.' },
 };
 
-interface Draft { schoolId: string; text: string; department: string; yearInSchool: number; goals: Goal[]; interests: Interest[]; purposes: Purpose[]; lookingFor: Role[]; canOffer: Role[]; bio: string; likes: string; freeTime: string; nickname: string; birthYear: string; savedOrgIds: string[]; avatar: string; bioEdited: boolean }
-const EMPTY: Draft = { schoolId: '', text: '', department: '', yearInSchool: 0, goals: [], interests: [], purposes: [], lookingFor: [], canOffer: [], bio: '', likes: '', freeTime: '', nickname: '', birthYear: '', savedOrgIds: [], avatar: '🙂', bioEdited: false };
+interface Draft { schoolId: string; text: string; department: string; yearInSchool: number; goals: Goal[]; interests: Interest[]; purposes: Purpose[]; lookingFor: Role[]; canOffer: Role[]; bio: string; likes: string; freeTime: string; nickname: string; birthYear: string; savedOrgIds: string[]; avatar: string; bioEdited: boolean; email: string }
+const EMPTY: Draft = { schoolId: '', text: '', department: '', yearInSchool: 0, goals: [], interests: [], purposes: [], lookingFor: [], canOffer: [], bio: '', likes: '', freeTime: '', nickname: '', birthYear: '', savedOrgIds: [], avatar: '🙂', bioEdited: false, email: '' };
 
 /** 답으로 만든 한 줄 소개 — 사용자가 고칠 수 있다 */
 function draftBio(d: Draft) {
@@ -137,7 +137,23 @@ export function StartPage() {
     } catch (e) { showToast((e as Error).message, 'error'); } finally { setBusy(false); }
   };
 
-  const finish = async () => {
+  // 학교 이메일 (선택) — 코드로 확인한 이메일만 계정에 붙인다. 브라우저를 지우거나 폰을 바꿔도 이메일 코드로 다시 들어온다
+  const [codeSent, setCodeSent] = useState(false);
+  const [code, setCode] = useState('');
+  const [verified, setVerified] = useState(false);
+  const [hint, setHint] = useState('');
+  const sendCode = async () => {
+    setBusy(true); setHint('');
+    try { const r = await api.schools.sendVerificationCode(d.email.trim(), d.schoolId); setHint(r.hint); setCodeSent(r.ok); }
+    catch (e) { setHint((e as Error).message); } finally { setBusy(false); }
+  };
+  const checkCode = async () => {
+    setBusy(true);
+    try { const r = await api.schools.verifyCode(d.email.trim(), code.trim()); if (r.ok) { setVerified(true); setHint(''); } else setHint(en ? 'That code didn’t match. Check the latest email and try again.' : '코드가 맞지 않아요. 가장 최근 메일의 코드를 확인해주세요.'); }
+    catch (e) { setHint((e as Error).message); } finally { setBusy(false); }
+  };
+
+  const finish = async (withEmail: boolean) => {
     setBusy(true);
     try {
       const yr = d.yearInSchool || 1;
@@ -145,7 +161,7 @@ export function StartPage() {
       const user = await api.auth.register({
         nickname: d.nickname.trim(), birthYear: Number(d.birthYear), gender: 'private', avatar: { emoji: d.avatar, hue: 210, photoType: 'face' },
         schoolId: d.schoolId, role: yr >= 5 ? 'graduate' : 'undergraduate', department: d.department.trim(), year: yr >= 5 ? thisYear : thisYear - yr + 1,
-        emailVerified: false, showSchool: true, showDepartment: true,
+        email: withEmail && verified ? d.email.trim() : undefined, emailVerified: withEmail && verified, showSchool: true, showDepartment: true,
         interests: d.interests, purposes: d.purposes.length ? d.purposes : ['friend'], bio: bio.slice(0, 200), likes: d.likes, freeTime: d.freeTime, availability: 'after18',
         fieldVisibility: DEFAULT_FV, prompts: [], goals: d.goals, lookingFor: d.lookingFor, canOffer: d.canOffer, meetPreference: [], interestedOrgIds: d.savedOrgIds,
         locationPermission: 'undecided', notifications: true,
@@ -276,7 +292,31 @@ export function StartPage() {
             <Head q={en ? 'Last one — what should we call you?' : '마지막! 뭐라고 불러드릴까요?'} sub={en ? 'A first name or nickname. This is how classmates will see you.' : '같은 학교 학생들에게 보이는 이름이에요.'} />
             <Field label={en ? 'Name' : '이름'}><Input autoFocus maxLength={20} value={d.nickname} onChange={(e) => patch({ nickname: e.target.value })} /></Field>
             <Field label={en ? 'Birth year' : '출생 연도'}><Input inputMode="numeric" maxLength={4} placeholder="2005" value={d.birthYear} onChange={(e) => patch({ birthYear: e.target.value.replace(/\D/g, '') })} /></Field>
-            <Button full size="lg" loading={busy} disabled={!d.nickname.trim() || !birthOk} onClick={finish}>{en ? 'Start Heetz' : 'Heetz 시작하기'}</Button>
+            <NextBtn ok={!!d.nickname.trim() && birthOk} />
+          </>
+        )}
+
+        {step === 'email' && (
+          <>
+            <Head q={en ? 'Save your account with your school email' : '학교 이메일로 계정을 지켜요'} sub={en ? 'So you can sign back in on a new phone or after clearing your browser. We only send a 6-digit code — no spam.' : '폰을 바꾸거나 브라우저를 지워도 다시 들어올 수 있어요. 6자리 코드만 보내요.'} />
+            <Field label={en ? 'School email' : '학교 이메일'}>
+              <div className="flex gap-2">
+                <Input type="email" inputMode="email" autoComplete="email" disabled={verified} placeholder={school?.emailDomain ? `you@${school.emailDomain}` : 'you@school.edu'} value={d.email} onChange={(e) => { patch({ email: e.target.value }); setCodeSent(false); setVerified(false); setCode(''); }} />
+                {!verified && <Button variant="secondary" loading={busy && !codeSent} disabled={!d.email.includes('@')} onClick={sendCode}>{codeSent ? (en ? 'Resend' : '다시 보내기') : (en ? 'Send code' : '코드 받기')}</Button>}
+              </div>
+            </Field>
+            {codeSent && !verified && (
+              <Field label={en ? '6-digit code' : '6자리 코드'}>
+                <div className="flex gap-2">
+                  <Input inputMode="numeric" autoComplete="one-time-code" maxLength={6} value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, ''))} placeholder="123456" />
+                  <Button loading={busy} disabled={code.length !== 6} onClick={checkCode}>{en ? 'Verify' : '확인'}</Button>
+                </div>
+              </Field>
+            )}
+            {hint && <p className="text-[12px] text-ink-2 -mt-2">{hint}</p>}
+            {verified && <div className="rounded-xl bg-mint-soft text-mint text-[13px] font-semibold px-3 py-2.5 flex items-center gap-2"><Check size={16} />{en ? 'Verified — you’ll get a school badge too.' : '인증 완료 — 학교 인증 배지도 붙어요.'}</div>}
+            <Button full size="lg" loading={busy && verified} disabled={!verified} onClick={() => finish(true)}>{en ? 'Start Heetz' : 'Heetz 시작하기'}</Button>
+            <button onClick={() => finish(false)} disabled={busy} className="w-full h-10 text-[13px] font-semibold text-ink-3">{en ? 'Skip for now' : '나중에 할게요'}</button>
           </>
         )}
       </div>

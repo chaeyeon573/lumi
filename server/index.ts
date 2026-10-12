@@ -162,6 +162,23 @@ app.post('/api/auth/register', wrap(async (req) => {
   return { token: await issueSession(user.id), user };
 }));
 
+// 가입 후에 학교 이메일을 붙인다 (빠른 가입에서 건너뛴 사람) — 코드로 확인한 이메일만
+app.post('/api/auth/attach-email', auth, wrap(async (req: Req) => {
+  const me = requireUser(req);
+  const email = norm(req.body.email);
+  if (!verifiedEmails.has(email)) throw bad(t('인증 코드가 만료되었거나 올바르지 않아요.'));
+  const owner = await store.findAccount(email);
+  if (owner && owner.userId !== me) throw bad(t('이미 가입된 이메일이에요. 이메일로 로그인해주세요.'), 409);
+  if (!owner) await store.createAccount({ email, userId: me, createdAt: new Date().toISOString() });
+  verifiedEmails.delete(email);
+  const user = db.users.find((u) => u.id === me)!;
+  if (user.affiliation.type === 'university' && !user.affiliation.emailVerified) {
+    const patch = engine.users.update(me, { affiliation: { ...user.affiliation, emailVerified: true } });
+    await store.applyPatch(patch); broadcast(patch);
+  }
+  return { user: db.users.find((u) => u.id === me) };
+}));
+
 app.post('/api/auth/logout', auth, wrap(async (req: Req) => {
   const header = req.headers.authorization ?? '';
   if (header.startsWith('Bearer ')) await store.deleteSession(header.slice(7));

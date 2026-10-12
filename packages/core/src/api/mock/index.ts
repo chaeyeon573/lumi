@@ -49,6 +49,7 @@ function wrap<G extends Record<string, (...a: never[]) => unknown>>(group: G) {
 
 export const mockApi: AroundUApi = {
   auth: {
+    async attachEmail() { throw new Error('Not available in demo mode.'); },
     async loginDemo() {
       return request(() => { setSession(DEMO_USER_ID); return engine.find(db.users, DEMO_USER_ID); });
     },

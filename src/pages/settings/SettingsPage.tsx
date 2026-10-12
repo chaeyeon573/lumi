@@ -7,6 +7,7 @@ import { Toggle, Button } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
+import { SchoolEmailCard } from '@/components/settings/SchoolEmailCard';
 
 export function SettingsPage() {
   const nav = useNavigate();
@@ -28,6 +29,7 @@ export function SettingsPage() {
         <div className="card divide-y divide-line">
           {items.map((it) => <button key={it.to} onClick={() => nav(it.to)} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press"><it.Icon size={18} className="text-ink-2" /><span className="flex-1"><span className="block text-[14px] font-semibold">{it.label}</span>{it.desc && <span className="block text-[12px] text-ink-3">{it.desc}</span>}</span><ChevronRight size={18} className="text-ink-3" /></button>)}
         </div>
+        <SchoolEmailCard />
         <div className="card px-4 divide-y divide-line">
           <Toggle label={t('알림')} description={t('참가 승인, 친구 요청 수락, 활동 시작 전 알림')} checked={me.settings.notifications} onChange={(val) => run(() => api.users.update(me.id, { settings: { ...me.settings, notifications: val } }))} />
           <div className="py-3 flex items-start gap-3"><MapPin size={18} className="text-ink-2 mt-0.5" /><div className="flex-1"><div className="text-[14px] font-medium">{t('위치 권한 ·')} {me.settings.locationPermission === 'granted' ? t('허용됨') : me.settings.locationPermission === 'denied' ? t('거부됨') : t('미설정')}</div><div className="text-[12px] text-ink-3 mt-0.5">{t('위치는 주변 활동 추천에만 사용되고, 정확한 위치는 다른 사용자에게 공개되지 않아요.')}</div><Button size="sm" variant="outline" className="mt-2" onClick={() => run(() => api.users.update(me.id, { settings: { ...me.settings, locationPermission: me.settings.locationPermission === 'granted' ? 'denied' : 'granted' } }))}>{me.settings.locationPermission === 'granted' ? t('권한 끄기') : t('권한 허용')}</Button></div></div>

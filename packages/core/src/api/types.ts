@@ -174,6 +174,8 @@ export interface AroundUApi {
     register(input: RegisterInput): Promise<User>;
     logout(): Promise<void>;
     session(): Promise<ID | null>;
+    /** 이미 가입한 계정에 (코드로 확인한) 학교 이메일을 붙인다 — 다른 기기에서 이메일로 로그인할 수 있게 */
+    attachEmail(email: string): Promise<User>;
   };
   bootstrap(viewerId: ID): Promise<Snapshot>;
 

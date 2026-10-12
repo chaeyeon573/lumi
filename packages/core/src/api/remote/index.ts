@@ -94,6 +94,10 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
         writeToken(r.token, r.user.id);
         return r.user;
       },
+      async attachEmail(email) {
+        const r = await call<{ user: User }>('auth/attach-email', { email });
+        return r.user;
+      },
       async logout() {
         try { await call('auth/logout', {}); } catch { /* ignore */ }
         writeToken(null, null);
