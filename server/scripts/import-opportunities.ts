@@ -8,6 +8,7 @@
  *   - type: event | club | lab | internship | scholarship | hackathon | startup | activity | exchange
  *   - deadline / date: YYYY-MM-DD. 모르면 비워 둔다 — 지어내지 말고 description 에 "보통 3월" 처럼 적는다
  *   - id 는 school_id + title 로 만들어지므로 같은 제목을 다시 넣으면 갱신된다 (저장·Q&A·후기는 유지)
+ *   - status=closed 인 줄은 앱에서 내린다 (마감됐거나 다음 회차 날짜가 없는 것 — 줄을 지우기만 하면 DB 에 남는다)
  *   - PRUNE_DEMO=1 이면 CSV 에 있는 학교의 데모 시드 공고(링크가 example.com 이거나 없는 것)와 그에 딸린 저장 기록을 지운다
  */
 import { readFileSync } from 'node:fs';
@@ -35,11 +36,13 @@ const now = new Date().toISOString();
 
 const rows = parseCSV(readFileSync(file, 'utf8'));
 const out: Opportunity[] = [];
+const retired: string[] = [];
 for (const r of rows) {
   // school_id 가 비면 모든 학교에 보이는 공고 (NSF GRFP 같은 전국 펠로우십)
   if (!r.title || !r.url) { console.warn('skip row (title/url required):', r.title); continue; }
   const type = (TYPES.includes(r.type as OpportunityType) ? r.type : 'event') as OpportunityType;
   const id = `op_${r.school_id ? r.school_id.replace('s_', '') : 'all'}_${slug(r.title)}`;
+  if ((r.status ?? '').trim().toLowerCase() === 'closed') { if (existing.has(id)) retired.push(id); continue; }
   const prev = existing.get(id);
   out.push({
     id, type, title: r.title, host: r.host || r.source_label || '', description: r.description || '',
@@ -57,7 +60,8 @@ const schools = new Set(out.map((o) => o.schoolId));
 const demo = process.env.PRUNE_DEMO === '1'
   ? snap.opportunities.filter((o) => o.schoolId && schools.has(o.schoolId) && !out.some((n) => n.id === o.id) && (!o.sourceUrl || /(^|[./])example\.com(\/|$)/.test(o.sourceUrl) || /instagram\.com\/example/.test(o.sourceUrl)))
   : [];
-const demoIds = new Set(demo.map((o) => o.id));
+const demoIds = new Set([...demo.map((o) => o.id), ...retired]);
+if (retired.length) console.log(`closed: ${retired.length} (${retired.map((id) => existing.get(id)?.title).join(' · ')})`);
 const intents = snap.opportunityIntents.filter((i) => demoIds.has(i.opportunityId)).map((i) => i.id);
 if (demo.length) console.log(`prune demo: ${demo.length} opportunities (${demo.map((o) => o.title).join(' · ')}), ${intents.length} intents`);
 await store.applyPatch({ opportunities: out, removed: { opportunities: [...demoIds], opportunityIntents: intents } });

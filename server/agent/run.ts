@@ -226,6 +226,10 @@ if (process.env.AGENT_MODE === 'worker') {
         const nat = path.join(path.dirname(SCHOOLS_CSV), 'opportunities-grad-national.csv');
         if (existsSync(nat) && due('grad-deadlines:national', latest.get('grad-deadlines:national')?.finishedAt, 24)) { const r = [await runScript('grad-deadlines:national', 'import:opportunities', nat)]; did += 1; await notify(r); }
       }
+      { // 전국 대상 학부생 기회 (여름 연구·REU, 장학금, 대회) — 공식 페이지에서 마감을 확인한 것만 server/data/opportunities-national.csv 에 둔다
+        const nat = path.join(path.dirname(SCHOOLS_CSV), 'opportunities-national.csv');
+        if (existsSync(nat) && due('deadlines:national', latest.get('deadlines:national')?.finishedAt, 24)) { const r = [await runScript('deadlines:national', 'import:opportunities', nat)]; did += 1; await notify(r); }
+      }
       if (due('external:internships', latest.get('external:internships')?.finishedAt, 12)) { const r = [await runOpportunities('external:internships', '', fetchInternships, 'op_ext_job_')]; did += 1; await notify(r); }
     }
     for (const row of loadSchools()) {
