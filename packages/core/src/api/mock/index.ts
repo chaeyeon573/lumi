@@ -112,6 +112,7 @@ export const mockApi: AroundUApi = {
   opportunities: wrap(engine.opportunities),
   proposals: wrap(engine.proposals),
   together: wrap(engine.together),
+  games: wrap(engine.games),
   chats: {
     ...wrap(engine.chats),
     // 읽음 처리는 지연 없이

@@ -81,6 +81,31 @@ export interface PollPrompt {
   votes: Record<ID, number>;
 }
 
+// ─── 아이스브레이커 게임 프로필 항목 ─────────────────────────────────────────
+/** "내 답 맞혀봐" 질문 답. answer = GUESS_PICK_QUESTIONS 의 option key */
+export interface PickAnswer {
+  questionId: string;
+  /** 본인에게만 내려간다 — 다른 사람에게는 없다 */
+  answer?: string;
+}
+export interface HotTake { text: string; updatedAt: string }
+export interface TwoTruths {
+  /** 정확히 3개 */
+  statements: string[];
+  /** 거짓 문장의 위치(0~2) — 본인에게만 내려간다 */
+  lieIndex?: number;
+  updatedAt: string;
+}
+export interface EmojiWeek {
+  /** 1~3개 */
+  emojis: string[];
+  /** 뜻 — 본인에게만 내려간다 */
+  meaning?: string;
+  /** 맞히는 사람에게 보여줄 보기(선택). 없으면 EMOJI_WEEK_CHIPS */
+  chips?: string[];
+  updatedAt: string;
+}
+
 export interface User {
   id: ID;
   /** 예시로 넣어 둔 가상 프로필 — 화면에 '예시 프로필'로 표시한다 */
@@ -126,6 +151,15 @@ export interface User {
   openToNew?: boolean;
   /** 오늘의 질문 답변 */
   dailyAnswer?: { questionId: string; answer: string; date: string };
+  /** 아이스브레이커 게임 — "내 답 맞혀봐" 질문 답 (GUESS_PICK_QUESTIONS의 option key).
+   *  공개 범위는 prompts를 따른다. ⚠ 다른 사람에게는 answer가 지워진 채로 내려간다 (questionId만) */
+  pickAnswers?: PickAnswer[];
+  /** 아이스브레이커 — 핫테이크 한 줄 (공개, prompts 공개 범위) */
+  hotTake?: HotTake;
+  /** 아이스브레이커 — 두 개의 진실과 하나의 거짓. ⚠ lieIndex는 본인에게만 내려간다 */
+  twoTruths?: TwoTruths;
+  /** 아이스브레이커 — 이번 주를 이모지 세 개로. ⚠ meaning은 본인에게만 내려간다 (맞혀 본 게임 기록에만 공개) */
+  emojiWeek?: EmojiWeek;
   fieldVisibility: Record<ProfileField, Visibility>;
   settings: {
     messagePolicy: 'connected' | 'friends_only' | 'none';
@@ -411,6 +445,8 @@ export interface ChatMessage {
   text: string;
   createdAt: string;
   system?: boolean;
+  /** 아이스브레이커 결과 메시지 — 화면은 이 게임을 카드로 그린다 */
+  gameId?: ID;
 }
 
 export interface ChatRoom {
@@ -429,7 +465,7 @@ export interface ChatRoom {
 export type NotificationType =
   | 'friend_accepted' | 'mutual_like' | 'participation_approved' | 'participation_rejected'
   | 'participation_request' | 'activity_reminder' | 'comment' | 'like' | 'follow'
-  | 'org_event' | 'nearby_activity' | 'proposal' | 'proposal_result' | 'deadline' | 'opportunity_match' | 'plan_vote' | 'plan_decided';
+  | 'org_event' | 'nearby_activity' | 'proposal' | 'proposal_result' | 'deadline' | 'opportunity_match' | 'plan_vote' | 'plan_decided' | 'game_received' | 'game_result';
 
 export interface Notification {
   id: ID;
@@ -453,3 +489,72 @@ export interface Report {
   reason: string;
   createdAt: string;
 }
+
+// ─── 아이스브레이커 게임 ("Say hi" 대신) ───────────────────────────────────
+export type GameKind = 'this_or_that' | 'guess_pick' | 'hot_take' | 'two_truths' | 'emoji_week';
+/** pending: this_or_that 상대 답 대기 / done: 결과 나옴 / declined: 받은 사람이 넘김 */
+export type GameStatus = 'pending' | 'done' | 'declined';
+/** same/different: this_or_that · right/wrong: guess_pick, two_truths · agree/nope: hot_take · revealed: emoji_week */
+export type GameResult = 'same' | 'different' | 'right' | 'wrong' | 'agree' | 'nope' | 'revealed';
+
+interface GameBase {
+  id: ID;
+  /** 보낸 사람 (맞히는/반응하는 사람) */
+  fromId: ID;
+  /** 받은 사람 (프로필 주인 / this_or_that에서 답하는 사람) */
+  toId: ID;
+  /** 이 두 사람 사이 같은 종류의 몇 번째 판인지 (1부터) */
+  round: number;
+  status: GameStatus;
+  result?: GameResult;
+  /** 결과가 나오면 열리는 1:1 채팅방 */
+  roomId?: ID;
+  createdAt: string;
+  resolvedAt?: string;
+}
+export interface ThisOrThatGame extends GameBase {
+  kind: 'this_or_that';
+  /** THIS_OR_THAT_PAIRS 의 id */
+  pairId: string;
+  /** 보낸 사람의 선택 (0 = a, 1 = b). ⚠ 받은 사람에게는 답하기 전까지 내려가지 않는다 */
+  fromChoice?: 0 | 1;
+  toChoice?: 0 | 1;
+}
+export interface GuessPickGame extends GameBase {
+  kind: 'guess_pick';
+  questionId: string;
+  /** 보낸 사람이 고른 option key */
+  guess: string;
+  /** 받은 사람이 프로필에 저장해 둔 실제 답 (보낼 때 서버가 채운다) */
+  answer: string;
+}
+export interface HotTakeGame extends GameBase {
+  kind: 'hot_take';
+  /** 반응한 시점의 핫테이크 문장 */
+  statement: string;
+  reaction: 'agree' | 'nope';
+  note?: string;
+}
+export interface TwoTruthsGame extends GameBase {
+  kind: 'two_truths';
+  statements: string[];
+  /** 보낸 사람이 거짓이라고 고른 위치 */
+  guessIndex: number;
+  lieIndex: number;
+}
+export interface EmojiWeekGame extends GameBase {
+  kind: 'emoji_week';
+  emojis: string[];
+  /** 보기에서 골랐거나 직접 쓴 추측 */
+  guess: string;
+  meaning: string;
+}
+export type Game = ThisOrThatGame | GuessPickGame | HotTakeGame | TwoTruthsGame | EmojiWeekGame;
+
+/** 게임 보내기 입력 — 정답·실제 문장은 서버가 받은 사람 프로필에서 채운다 */
+export type GameInput =
+  | { kind: 'this_or_that'; pairId: string; choice: 0 | 1 }
+  | { kind: 'guess_pick'; questionId: string; guess: string }
+  | { kind: 'hot_take'; reaction: 'agree' | 'nope'; note?: string }
+  | { kind: 'two_truths'; guessIndex: number }
+  | { kind: 'emoji_week'; guess: string };

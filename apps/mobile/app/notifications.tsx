@@ -29,6 +29,8 @@ const ICONS: Record<NotificationType, { Icon: typeof Heart; bg: string; fg: stri
   opportunity_match: { Icon: Users, bg: C.soft, fg: C.primary },
   plan_vote: { Icon: Vote, bg: C.accentSoft, fg: C.accent },
   plan_decided: { Icon: CalendarCheck, bg: C.mintSoft, fg: C.mint },
+  game_received: { Icon: Sparkles, bg: C.soft, fg: C.primary },
+  game_result: { Icon: Sparkles, bg: C.mintSoft, fg: C.mint },
 };
 
 /** 알림 목록 (웹 NotificationsPage) */

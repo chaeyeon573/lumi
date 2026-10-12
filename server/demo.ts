@@ -2,6 +2,7 @@
  * 데모 계정·예시 프로필 정리 — 친구들에게 링크를 돌릴 때 학교별로 둘러볼 수 있게 한다.
  * - 시드 사용자는 전부 sample=true (화면에 '예시 프로필'로 표시)
  * - 앱에서 내린 학교(Stanford·SF State)에 있던 예시 사용자는 UC Merced 로 옮긴다
+ * - 게임(핫테이크·두 개의 진실·이모지·맞혀봐) 항목이 없는 예시 사용자에게 시드 값을 채운다
  * - UC Merced 데모 계정(u_me_ucmerced)을 기본 데모 계정에서 복제해 만든다
  * 이미 적용된 것은 건드리지 않으므로 서버가 켜질 때마다 돌려도 된다.
  */
@@ -15,6 +16,7 @@ import { todayISO } from '@core/lib/format';
 
 export { DEMO_USER_ID };
 const SEED_IDS = new Set(seedUsers.map((u) => u.id));
+const seedById = new Map(seedUsers.map((u) => [u.id, u]));
 
 const MERCED = { schoolId: 's_ucmerced', schoolName: 'UC Merced', emailDomain: 'ucmerced.edu' };
 /** 예시 사용자 → UC Merced 로 옮길 때의 학과·생활권 (원래 학교 지명이 들어간 문장도 바꾼다) */
@@ -55,6 +57,16 @@ export function migrateDemo(db: Snapshot): Patch | null {
     if (!SEED_IDS.has(u.id)) continue;
     let next = u;
     if (!u.sample) next = { ...next, sample: true };
+    // 아이스브레이커 게임 항목 — 게임 기능 이전에 저장된 예시 사용자에게 시드 값을 한 번 채운다 (이미 있으면 건드리지 않음)
+    const seedU = seedById.get(u.id);
+    if (seedU && !u.hotTake && !u.twoTruths && !u.emojiWeek && !u.pickAnswers) {
+      const fill: Partial<User> = {};
+      if (seedU.hotTake) fill.hotTake = structuredClone(seedU.hotTake);
+      if (seedU.twoTruths) fill.twoTruths = structuredClone(seedU.twoTruths);
+      if (seedU.emojiWeek) fill.emojiWeek = structuredClone(seedU.emojiWeek);
+      if (seedU.pickAnswers) fill.pickAnswers = structuredClone(seedU.pickAnswers);
+      if (Object.keys(fill).length) next = { ...next, ...fill };
+    }
     const move = MOVE_TO_MERCED[u.id];
     if (move && next.affiliation.type === 'university' && next.affiliation.schoolId !== MERCED.schoolId) {
       next = { ...next, affiliation: { ...next.affiliation, schoolId: MERCED.schoolId, schoolName: MERCED.schoolName, department: move.department }, living: next.living ? { ...next.living, zone: move.zone } : next.living, freeTime: move.freeTime ?? next.freeTime };

@@ -8,6 +8,6 @@ export async function loadSeed(): Promise<Snapshot> {
     users: seed.users, schools: seed.schools, organizations: seed.organizations, activities: seed.activities,
     participations: seed.participations, posts: seed.posts, relationships: seed.relationships, proposals: seed.proposals,
     chatRooms: seed.chatRooms, notifications: seed.notifications, reports: [], opportunities: seed.opportunities,
-    opportunityIntents: seed.opportunityIntents, timePolls: seed.timePolls,
+    opportunityIntents: seed.opportunityIntents, timePolls: seed.timePolls, games: [],
   });
 }

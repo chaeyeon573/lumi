@@ -235,6 +235,27 @@ export const users: User[] = [
   }),
 ];
 
+/** 아이스브레이커 게임용 프로필 항목 — 데모에서 바로 해 볼 수 있게 몇 명에게만 */
+const GAME_PROFILES: Record<string, Partial<User>> = {
+  u_jimin: {
+    hotTake: { text: '중도 4층이 웬만한 카페보다 낫다.', updatedAt: isoHoursAgo(30) },
+    twoTruths: { statements: ['🧗 해 뜰 때 안산 정상에 올라가 봤다', '🍕 이번 주 점심값을 한 번도 안 냈다', '🎨 신촌 카페에 내 그림이 걸려 있다'], lieIndex: 1, updatedAt: isoHoursAgo(30) },
+    emojiWeek: { emojis: ['☕', '📉', '🎸'], meaning: '커피 과다, 망한 중간고사, 그리고 금요일 공연으로 회복', chips: ['중간고사 생존 😮‍💨', '카페인 + 공연'], updatedAt: isoHoursAgo(20) },
+    pickAnswers: [{ questionId: 'gp_2am_friday', answer: 'taco_truck' }, { questionId: 'gp_order', answer: 'latte' }, { questionId: 'gp_weekend', answer: 'city' }],
+  },
+  u_seoyeon: {
+    hotTake: { text: '타코는 평일 음식, 라멘은 이벤트.', updatedAt: isoHoursAgo(50) },
+    emojiWeek: { emojis: ['🎸', '🐈', '🌮'], meaning: '밴드 합주, 룸메 고양이 돌보기, 타코 두 번', updatedAt: isoHoursAgo(40) },
+    pickAnswers: [{ questionId: 'gp_2am_friday', answer: 'show' }, { questionId: 'gp_free_afternoon', answer: 'cafe' }],
+  },
+  u_dohyun: {
+    hotTake: { text: '1교시는 법으로 금지해야 한다.', updatedAt: isoHoursAgo(60) },
+    twoTruths: { statements: ['📄 이번 학기 논문 40편 읽었다', '🌙 밤샘을 한 번도 안 해 봤다', '🧩 큐브를 1분 안에 맞춘다'], lieIndex: 1, updatedAt: isoHoursAgo(60) },
+    pickAnswers: [{ questionId: 'gp_finals_fuel', answer: 'coffee' }, { questionId: 'gp_group_role', answer: 'leader' }],
+  },
+};
+for (const u of users) Object.assign(u, GAME_PROFILES[u.id] ?? {});
+
 export const organizations: Organization[] = [
   {
     id: 'o_band', name: '소리울림 (밴드 동아리)', logo: { emoji: '🎸', hue: 280 , url: photo('c_eguitar') }, type: 'club', schoolId: 's_yonsei', verified: true,

@@ -1,6 +1,6 @@
 import type {
   Activity, ActivityProposal, ChatRoom, ID, Notification, Organization, Participation, Post, Relationships, Report, School, User,
-  ActivityCategory, Visibility, JoinPolicy, ActivityKind, Place, ReportTargetType, Availability, Opportunity, OpportunityIntentRecord, OpportunityIntent, Role, TimePoll, TimeOption,
+  ActivityCategory, Visibility, JoinPolicy, ActivityKind, Place, ReportTargetType, Availability, Opportunity, OpportunityIntentRecord, OpportunityIntent, Role, TimePoll, TimeOption, Game, GameInput,
 } from '@core/types';
 
 /** 클라이언트가 보유하는 전체 데이터 스냅샷 (실제 API에서는 필요한 부분만 내려받도록 분리) */
@@ -19,6 +19,8 @@ export interface Snapshot {
   opportunities: Opportunity[];
   opportunityIntents: OpportunityIntentRecord[];
   timePolls: TimePoll[];
+  /** 아이스브레이커 게임 — 서버는 내가 보냈거나 받은 것만, 비밀을 지운 채로 내려준다 */
+  games: Game[];
 }
 
 /** 변경된 엔티티만 담아 돌려주는 부분 응답. 스토어가 id 기준으로 병합한다. */
@@ -269,6 +271,16 @@ export interface AroundUApi {
     /** 확정: 활동을 만들고 그 시간에 표를 던진 사람을 참가자로 초대한다 */
     decide(pollId: ID, optionId: ID): Promise<{ activity: Activity; patch: Patch }>;
     cancel(pollId: ID): Promise<Patch>;
+  };
+
+  /** 아이스브레이커 게임 ("Say hi" 대신). 보낼 수 있는 게임 목록은 @core/lib/icebreakers 의 offeredGames() */
+  games: {
+    /** 게임 보내기. this_or_that은 상대 답을 기다리고(pending), 나머지는 상대 프로필 답으로 바로 결과가 나와 1:1 채팅방이 열린다 */
+    send(fromId: ID, toId: ID, input: GameInput): Promise<{ game: Game; patch: Patch }>;
+    /** 받은 this_or_that에 답하기 → 결과 + 1:1 채팅방 */
+    answer(gameId: ID, userId: ID, choice: 0 | 1): Promise<{ game: Game; patch: Patch }>;
+    /** 받은 게임 넘기기 (보낸 사람에게 알리지 않는다) */
+    decline(gameId: ID, userId: ID): Promise<Patch>;
   };
 
   chats: {

@@ -148,6 +148,31 @@ export const users: User[] = [
   }),
 ];
 
+/** 아이스브레이커 게임용 프로필 항목 — 데모에서 바로 해 볼 수 있게 몇 명에게만 */
+const GAME_PROFILES: Record<string, Partial<User>> = {
+  u_jimin: {
+    hotTake: { text: 'Moffitt 4th floor is better than any café.', updatedAt: isoHoursAgo(30) },
+    twoTruths: { statements: ['🧗 Climbed Indian Rock at sunrise', '🍕 Never paid for lunch this week', '🎨 Has a painting in a café on Telegraph'], lieIndex: 1, updatedAt: isoHoursAgo(30) },
+    emojiWeek: { emojis: ['☕', '📉', '🎸'], meaning: 'Way too much coffee, a midterm that did not go great, and a gig on Friday to make up for it', chips: ['Midterm survived 😮‍💨', 'Caffeine + a gig'], updatedAt: isoHoursAgo(20) },
+    pickAnswers: [{ questionId: 'gp_2am_friday', answer: 'taco_truck' }, { questionId: 'gp_order', answer: 'latte' }, { questionId: 'gp_weekend', answer: 'city' }],
+  },
+  u_seoyeon: {
+    hotTake: { text: 'Tacos are a weekday food. Ramen is an event.', updatedAt: isoHoursAgo(50) },
+    emojiWeek: { emojis: ['🎸', '🐈', '🌮'], meaning: 'Band practice, cat-sitting for my roommate, and taco Tuesday twice', updatedAt: isoHoursAgo(40) },
+    pickAnswers: [{ questionId: 'gp_2am_friday', answer: 'show' }, { questionId: 'gp_free_afternoon', answer: 'cafe' }],
+  },
+  u_dohyun: {
+    hotTake: { text: '8AMs should be illegal.', updatedAt: isoHoursAgo(60) },
+    twoTruths: { statements: ['📄 Read 40 papers this semester', '🌙 Has never pulled an all-nighter', '🧩 Solves a Rubik’s cube in under a minute'], lieIndex: 1, updatedAt: isoHoursAgo(60) },
+    pickAnswers: [{ questionId: 'gp_finals_fuel', answer: 'coffee' }, { questionId: 'gp_group_role', answer: 'leader' }],
+  },
+  u_yuna: {
+    hotTake: { text: 'Group study is just hanging out with extra steps.', updatedAt: isoHoursAgo(80) },
+    pickAnswers: [{ questionId: 'gp_2am_friday', answer: 'studying' }, { questionId: 'gp_finals_fuel', answer: 'playlist' }],
+  },
+};
+for (const u of users) Object.assign(u, GAME_PROFILES[u.id] ?? {});
+
 const demoOrganizations: Organization[] = [
   {
     id: 'o_band', name: 'Cal Indie Collective (band club)', logo: { emoji: '🎸', hue: 280 , url: photo('c_eguitar') }, type: 'club', schoolId: 's_berkeley', verified: true,

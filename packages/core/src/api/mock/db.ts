@@ -32,6 +32,7 @@ function freshDB(): MockDB {
     opportunities: structuredClone(seed.opportunities),
     opportunityIntents: structuredClone(seed.opportunityIntents),
     timePolls: structuredClone(seed.timePolls),
+    games: [],
   };
 }
 
@@ -41,7 +42,7 @@ export function loadDB(): MockDB {
     if (raw) {
       const parsed = JSON.parse(raw) as MockDB;
       // 날짜가 바뀌면 '오늘' 기준 예시 데이터를 다시 만든다
-      if (parsed.version === 6 && parsed.seededOn === new Date().toISOString().slice(0, 10)) return parsed;
+      if (parsed.version === 6 && parsed.seededOn === new Date().toISOString().slice(0, 10)) { parsed.games ??= []; return parsed; }
     }
   } catch { /* ignore */ }
   const db = freshDB();

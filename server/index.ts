@@ -25,11 +25,12 @@ import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { t, lang } from '@core/i18n';
 import type { Patch, Snapshot, RegisterInput } from '@core/api/types';
-import type { ID } from '@core/types';
+import type { Game, ID } from '@core/types';
 import { createEngine } from '@core/api/engine';
 import { searchCatalog, catalogDepartments, catalogCourses as builtInCatalog } from '@core/data/catalog/courses';
 import { createStore } from './store';
 import { snapshotFor, patchFor } from './view';
+import { gameFor } from '@core/lib/icebreakers';
 import { sendCodeMail, sendMail } from './mail';
 import { migrateDemo, demoUserIdFor, rollSampleActivities } from './demo';
 import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError, campusToday } from './ai';
@@ -50,6 +51,7 @@ let db: Snapshot = (await store.loadSnapshot()) ?? await (async () => {
 let catalog = await store.loadCatalog();
 if (catalog.length === 0) { catalog = builtInCatalog; await store.upsertCatalog(catalog); console.log(`[seed] ${catalog.length} catalog courses`); }
 
+db.games ??= []; // 게임 기능 이전에 저장된 스냅샷
 { const p = migrateDemo(db); if (p) { await store.applyPatch(p); console.log(`[demo] updated ${p.users?.length ?? 0} sample users, hid ${p.removed?.schools?.length ?? 0} schools`); } }
 // 예시 모임 날짜를 오늘 기준으로 — 켜질 때 한 번, 그 뒤 15분마다 (지난 것은 곧 시작하는 시간으로 민다)
 async function rollSamples() { const p = rollSampleActivities(db); if (p) { await store.applyPatch(p); broadcast(p); console.log(`[demo] rolled ${p.activities?.length ?? 0} sample activities`); } }
@@ -259,8 +261,8 @@ app.post('/api/catalog/courses', wrap(async (req) => searchCatalog(catalog, Stri
 app.post('/api/catalog/departments', wrap(async (req) => catalogDepartments(catalog, String(req.body.schoolId ?? ''))));
 
 // ─── RPC (엔진 메서드) ────────────────────────────────────────────────────
-type Group = 'users' | 'activities' | 'posts' | 'relationships' | 'orgs' | 'opportunities' | 'proposals' | 'together' | 'chats' | 'notifications' | 'reports';
-const GROUPS: Group[] = ['users', 'activities', 'posts', 'relationships', 'orgs', 'opportunities', 'proposals', 'together', 'chats', 'notifications', 'reports'];
+type Group = 'users' | 'activities' | 'posts' | 'relationships' | 'orgs' | 'opportunities' | 'proposals' | 'together' | 'games' | 'chats' | 'notifications' | 'reports';
+const GROUPS: Group[] = ['users', 'activities', 'posts', 'relationships', 'orgs', 'opportunities', 'proposals', 'together', 'games', 'chats', 'notifications', 'reports'];
 
 /** 호출자가 해당 작업을 할 권한이 있는지. 숫자면 그 위치의 인자가 본인 id 여야 한다 */
 type Rule = number | ((me: ID, args: unknown[]) => boolean);
@@ -285,6 +287,8 @@ const RULES: Record<Group, Record<string, Rule>> = {
   opportunities: { create: 0, setIntent: 1, toggleSave: 1, ask: 1, review: 1 },
   proposals: { create: 0, respond: owner(() => db.proposals, (p) => p.toId) },
   together: { create: 0, vote: 1, addOption: 1, decide: owner(() => db.timePolls, (p) => p.hostId), cancel: owner(() => db.timePolls, (p) => p.hostId) },
+  // 보내는 사람 = 본인, 답하기·넘기기 = 받은 사람 본인 (엔진도 한 번 더 확인한다)
+  games: { send: 0, answer: (me, args) => args[1] === me && owner(() => db.games, (g) => g.toId)(me, args), decline: (me, args) => args[1] === me && owner(() => db.games, (g) => g.toId)(me, args) },
   chats: { send: 1, markRead: 1, openDirect: 0 },
   notifications: { markRead: owner(() => db.notifications, (n) => n.userId), markAllRead: 0 },
   reports: { create: 0 },
@@ -304,7 +308,14 @@ app.post('/api/rpc/:group/:method', auth, wrap(async (req: Req) => {
   const patch: Patch = result && 'patch' in result ? result.patch : (result ?? {});
   void store.applyPatch(patch);
   broadcast(patch);
-  return result ?? {};
+  // 호출한 사람에게 돌려주는 응답도 그 사람 관점으로 거른다 (다른 사람 프로필의 게임 정답·다른 사람 알림이 새지 않게)
+  const mine = patchFor(patch, me, db) ?? {};
+  if (result && 'patch' in result) {
+    const out: Record<string, unknown> = { ...result, patch: mine };
+    if ('game' in result) out.game = gameFor((result as { game: Game }).game, me);
+    return out;
+  }
+  return mine;
 }));
 
 // ─── SSE ─────────────────────────────────────────────────────────────────
@@ -323,6 +334,7 @@ app.post('/api/system/reset', auth, wrap(async (req: Req) => {
   requireUser(req);
   if (process.env.ALLOW_RESET !== '1') throw bad(t('이 서버에서는 초기화할 수 없어요.'), 403);
   db = await loadSeed();
+  db.games ??= [];
   await store.replaceAll(db);
   return {};
 }));

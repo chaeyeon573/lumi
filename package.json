@@ -14,6 +14,7 @@
     "server:dev": "tsx watch --tsconfig server/tsconfig.json server/index.ts",
     "start": "npm run server",
     "typecheck:server": "tsc -p server/tsconfig.json",
+    "test": "AROUNDU_LANG=en tsx --tsconfig server/tsconfig.json --test server/*.test.ts",
     "import:courses": "tsx --tsconfig server/tsconfig.json server/scripts/import-courses.ts",
     "import:orgs": "tsx --tsconfig server/tsconfig.json server/scripts/import-orgs.ts",
     "fetch:orgs": "tsx --tsconfig server/tsconfig.json server/scripts/fetch-orgs.ts",

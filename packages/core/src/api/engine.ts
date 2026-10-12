@@ -7,11 +7,14 @@
 import type { Patch, Snapshot, RegisterInput, ActivityInput, PostInput, OpportunityInput, TimePollInput } from './types';
 import type {
   Activity, ActivityProposal, Availability, ChatRoom, ID, Notification, OpportunityIntent, Participation, Post, User, Opportunity, TimePoll, TimeOption, ReportTargetType,
+  Game, GameInput, GameKind,
 } from '@core/types';
 import { freeBlocks, jsDayToIdx, toMin } from '@core/lib/timetable';
 import { uid, pairKey } from '@core/lib/format';
 import { CATEGORY_LABELS } from '@core/lib/labels';
-import { canMessage } from '@core/lib/relations';
+import { canMessage, canViewField, isBlocked } from '@core/lib/relations';
+import { canSendGame, gameProfileError, gameSummary, guessPickResult, thisOrThatResult, twoTruthsResult, GAME_LABELS, GAME_LIMITS } from '@core/lib/icebreakers';
+import { pairById, guessQuestionById } from '@core/data/icebreakers';
 
 export interface EngineContext {
   /** 변경 가능한 데이터. 엔진은 이 객체를 직접 수정한다 */
@@ -101,6 +104,30 @@ export function createEngine(ctx: EngineContext) {
 
   const later = (ms: number, fn: () => void) => { if (ctx.demo) setTimeout(fn, ms); };
 
+  // ─── 아이스브레이커 게임 ──────────────────────────────────────────────────
+  /** 예전에 저장된 스냅샷에는 games가 없을 수 있다 */
+  const games = (): Game[] => (db().games ??= []);
+  const samePair = (g: Game, a: ID, b: ID) => (g.fromId === a && g.toId === b) || (g.fromId === b && g.toId === a);
+
+  /** 결과를 확정하고 1:1 채팅방을 열어(있으면 재사용) 결과 메시지를 남긴다 — 다른 선택이어도 연다 (그게 대화거리) */
+  function resolveGame(g: Game): ChatRoom {
+    g.status = 'done';
+    g.resolvedAt = now();
+    const room = ensureDirectRoom(g.fromId, g.toId);
+    g.roomId = room.id;
+    room.messages.push({ id: uid('m'), senderId: g.fromId, text: gameSummary(g, db().users), createdAt: now(), system: true, gameId: g.id });
+    return room;
+  }
+
+  function answerThisOrThat(g: Game & { kind: 'this_or_that' }, choice: 0 | 1): Patch {
+    g.toChoice = choice;
+    g.result = thisOrThatResult(g.fromChoice ?? 0, choice);
+    const room = resolveGame(g);
+    const other = find(db().users, g.toId);
+    const nt = notify(g.fromId, { type: 'game_result', title: `${other.nickname}${t('님이 답했어요')}`, body: gameSummary(g, db().users), link: `/chats/${room.id}` });
+    return { games: [g], chatRooms: [room], notifications: [nt] };
+  }
+
   return {
     find,
     notify,
@@ -147,6 +174,12 @@ export function createEngine(ctx: EngineContext) {
         const u = find(db().users, id);
         // id·생성일은 바꿀 수 없다
         const { id: _i, createdAt: _c, ...rest } = patch;
+        const gameErr = gameProfileError(rest);
+        if (gameErr) throw new Error(gameErr);
+        // 게임 항목은 저장 시각을 서버가 찍는다
+        if (rest.hotTake) rest.hotTake = { text: rest.hotTake.text.trim(), updatedAt: now() };
+        if (rest.twoTruths) rest.twoTruths = { statements: rest.twoTruths.statements.map((x) => x.trim()), lieIndex: rest.twoTruths.lieIndex, updatedAt: now() };
+        if (rest.emojiWeek) rest.emojiWeek = { ...rest.emojiWeek, meaning: rest.emojiWeek.meaning?.trim(), updatedAt: now() };
         Object.assign(u, rest);
         return { users: [u] };
       },
@@ -499,6 +532,105 @@ export function createEngine(ctx: EngineContext) {
       },
       cancel(pollId: ID): Patch {
         const p = find(db().timePolls, pollId); p.status = 'cancelled'; return { timePolls: [p] };
+      },
+    },
+
+    games: {
+      send(fromId: ID, toId: ID, input: GameInput): { game: Game; patch: Patch } {
+        const check = canSendGame(db(), fromId, toId);
+        if (!check.ok) throw new Error(check.reason);
+        const me = find(db().users, fromId);
+        const target = find(db().users, toId);
+        const kind = input?.kind as GameKind;
+        if (!GAME_LABELS[kind]) throw new Error(t('입력값을 확인해주세요.'));
+        // 남용 방지
+        const hourAgo = Date.now() - 3600000;
+        if (games().filter((g) => g.fromId === fromId && Date.parse(g.createdAt) > hourAgo).length >= GAME_LIMITS.perHour) throw new Error(t('게임을 너무 많이 보냈어요. 잠시 후 다시 시도해주세요.'));
+        if (games().filter((g) => g.fromId === fromId && g.toId === toId && g.status === 'pending').length >= GAME_LIMITS.pendingPerPair) throw new Error(t('상대가 아직 답하지 않은 게임이 있어요.'));
+        // 게임 2~5는 상대가 프로필에 적어 둔 항목으로 한다 — 볼 수 없는 항목이면 없는 것과 같다
+        if (kind !== 'this_or_that' && !canViewField(db(), me, target, 'prompts')) throw new Error(t('이 사람과는 아직 이 게임을 할 수 없어요.'));
+        const base = { id: uid('g'), fromId, toId, round: games().filter((g) => g.kind === kind && samePair(g, fromId, toId) && g.status !== 'declined').length + 1, createdAt: now() };
+        const already = (pred: (g: Game) => boolean) => games().some((g) => g.fromId === fromId && g.toId === toId && g.kind === kind && g.status === 'done' && pred(g));
+        const replay = t('이미 해 본 게임이에요. 상대가 새로 바꾸면 다시 할 수 있어요.');
+        const unavailable = t('이 사람과는 아직 이 게임을 할 수 없어요.');
+        let game: Game;
+        switch (input.kind) {
+          case 'this_or_that': {
+            if (!pairById(input.pairId) || (input.choice !== 0 && input.choice !== 1)) throw new Error(t('입력값을 확인해주세요.'));
+            game = { ...base, kind: 'this_or_that', status: 'pending', pairId: input.pairId, fromChoice: input.choice };
+            break;
+          }
+          case 'guess_pick': {
+            const q = guessQuestionById(input.questionId);
+            const real = (target.pickAnswers ?? []).find((a) => a.questionId === input.questionId);
+            // 정답은 반드시 상대가 저장한 답 — 없으면 게임을 열지 않는다
+            if (!q || !real?.answer || !q.options.some((o) => o.key === real.answer)) throw new Error(unavailable);
+            if (!q.options.some((o) => o.key === input.guess)) throw new Error(t('입력값을 확인해주세요.'));
+            if (already((g) => g.kind === 'guess_pick' && g.questionId === q.id && g.answer === real.answer)) throw new Error(replay);
+            game = { ...base, kind: 'guess_pick', status: 'done', questionId: q.id, guess: input.guess, answer: real.answer, result: guessPickResult(input.guess, real.answer) };
+            break;
+          }
+          case 'hot_take': {
+            const statement = target.hotTake?.text.trim();
+            if (!statement) throw new Error(unavailable);
+            if (input.reaction !== 'agree' && input.reaction !== 'nope') throw new Error(t('입력값을 확인해주세요.'));
+            const note = typeof input.note === 'string' ? input.note.trim().slice(0, GAME_LIMITS.noteMax) : '';
+            if (already((g) => g.kind === 'hot_take' && g.statement === statement)) throw new Error(replay);
+            game = { ...base, kind: 'hot_take', status: 'done', statement, reaction: input.reaction, ...(note ? { note } : {}), result: input.reaction };
+            break;
+          }
+          case 'two_truths': {
+            const tt = target.twoTruths;
+            if (!tt || tt.statements.length !== 3 || tt.lieIndex === undefined) throw new Error(unavailable);
+            if (!Number.isInteger(input.guessIndex) || input.guessIndex < 0 || input.guessIndex > 2) throw new Error(t('입력값을 확인해주세요.'));
+            if (already((g) => g.kind === 'two_truths' && g.statements.join('\n') === tt.statements.join('\n'))) throw new Error(replay);
+            game = { ...base, kind: 'two_truths', status: 'done', statements: [...tt.statements], guessIndex: input.guessIndex, lieIndex: tt.lieIndex, result: twoTruthsResult(input.guessIndex, tt.lieIndex) };
+            break;
+          }
+          case 'emoji_week': {
+            const ew = target.emojiWeek;
+            if (!ew?.emojis.length || !ew.meaning) throw new Error(unavailable);
+            const guess = typeof input.guess === 'string' ? input.guess.trim().slice(0, GAME_LIMITS.guessMax) : '';
+            if (!guess) throw new Error(t('입력값을 확인해주세요.'));
+            if (already((g) => g.kind === 'emoji_week' && g.emojis.join('') === ew.emojis.join('') && g.meaning === ew.meaning)) throw new Error(replay);
+            game = { ...base, kind: 'emoji_week', status: 'done', emojis: [...ew.emojis], guess, meaning: ew.meaning, result: 'revealed' };
+            break;
+          }
+          default: throw new Error(t('입력값을 확인해주세요.'));
+        }
+        games().unshift(game);
+        if (game.status === 'pending') {
+          const nt = notify(toId, { type: 'game_received', title: t('게임이 도착했어요'), body: `${me.nickname}${t('님이 게임을 보냈어요: ')}${GAME_LABELS[game.kind]}`, link: `/users/${fromId}?game=${game.id}` });
+          // 데모: 예시 사용자는 잠시 후 아무거나 골라 답한다
+          if (target.sample) later(4500, () => {
+            const g = games().find((x) => x.id === game.id);
+            if (!g || g.status !== 'pending' || g.kind !== 'this_or_that') return;
+            ctx.push(answerThisOrThat(g, Math.random() < 0.5 ? 0 : 1));
+          });
+          return { game, patch: { games: [game], notifications: [nt] } };
+        }
+        const room = resolveGame(game);
+        // 프로필 주인에게 누가 어떻게 맞혔는지/반응했는지 알린다
+        const nt = notify(toId, { type: 'game_result', title: `${me.nickname}${t('님이 내 게임을 했어요')}`, body: gameSummary(game, db().users), link: `/chats/${room.id}` });
+        return { game, patch: { games: [game], chatRooms: [room], notifications: [nt] } };
+      },
+      answer(gameId: ID, userId: ID, choice: 0 | 1): { game: Game; patch: Patch } {
+        const g = find(games(), gameId);
+        if (g.toId !== userId) throw new Error(t('권한이 없어요.'));
+        if (g.kind !== 'this_or_that' || g.status !== 'pending') throw new Error(t('이미 끝난 게임이에요.'));
+        if (choice !== 0 && choice !== 1) throw new Error(t('입력값을 확인해주세요.'));
+        // 보낸 뒤에 차단했으면 채팅방을 열지 않는다
+        if (isBlocked(db(), userId, g.fromId)) throw new Error(t('차단된 사용자와는 대화할 수 없어요.'));
+        const patch = answerThisOrThat(g, choice);
+        return { game: g, patch };
+      },
+      decline(gameId: ID, userId: ID): Patch {
+        const g = find(games(), gameId);
+        if (g.toId !== userId) throw new Error(t('권한이 없어요.'));
+        if (g.status !== 'pending') return { games: [g] };
+        g.status = 'declined';
+        g.resolvedAt = now();
+        return { games: [g] };
       },
     },
 

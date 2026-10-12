@@ -132,6 +132,7 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
     opportunities: group('opportunities', ['create', 'setIntent', 'toggleSave', 'ask', 'review']),
     proposals: group('proposals', ['create', 'respond']),
     together: group('together', ['create', 'vote', 'addOption', 'decide', 'cancel']),
+    games: group('games', ['send', 'answer', 'decline']),
     chats: group('chats', ['send', 'markRead', 'openDirect']),
     notifications: group('notifications', ['markRead', 'markAllRead']),
     reports: group('reports', ['create']),
