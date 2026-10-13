@@ -118,12 +118,11 @@ export interface SocialSummary {
   sample: boolean;
   /** 버튼 문구 */
   cta: string;
-  /** 아무도 없을 때 */
+  /** 아무도 없을 때 — 목록은 사람 줄을 아예 숨긴다 ("Be the first"를 줄마다 붙이면 앱이 비어 보인다) */
   first: boolean;
 }
 
 const CTA: Record<WithKind, [string, string]> = { go: ['Go together', '같이 가기'], prep: ['Prep together', '같이 준비'], team: ['Find teammates', '팀원 찾기'] };
-const FIRST: Record<WithKind, [string, string]> = { go: ['Be the first — go together', '첫 번째로 — 같이 가기'], prep: ['Be the first — prep together', '첫 번째로 — 같이 준비'], team: ['Be the first — find a team', '첫 번째로 — 팀 찾기'] };
 
 /** 이름 두 개 + 나머지 숫자: "Lily, Maya +1" (내가 들어 있으면 "You + Lily") */
 function names(people: User[], withMe: boolean, en: boolean): string {
@@ -179,7 +178,7 @@ export function socialSummary(snap: Snap, me: User, o: Opportunity, en = lang ==
   // 이름이 드러나는 사람 중에 예시 프로필이 있으면 표시한다 (얼굴 3명 = 이름이 나오는 사람 포함)
   const sample = faces.some((u) => u.sample);
   const first = group.length === 0;
-  const cta = meIn && kind === 'go' ? (en ? "You're in" : '참여 중') : meIn && kind === 'team' ? (en ? 'Your team list' : '팀 찾기 목록') : (first ? FIRST : CTA)[kind][en ? 0 : 1];
+  const cta = meIn && kind === 'go' ? (en ? "You're in" : '참여 중') : meIn && kind === 'team' ? (en ? 'Your team list' : '팀 찾기 목록') : CTA[kind][en ? 0 : 1];
   return { kind, faces, text, sample, cta, first };
 }
 

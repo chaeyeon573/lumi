@@ -234,11 +234,12 @@ test('social line: blocked people (either way) never show up; sample people are 
   // 같이 가기 모임의 차단된 주최자도 안 보인다
   d.users.find((u) => u.id === 'u_sua')!.sample = true;
   assert.equal(socialSummary(d, me, o, true).sample, true);
-  // 아무도 없으면 첫 번째 버튼
+  // 아무도 없으면 first — 버튼 문구는 그대로 ("Be the first" 같은 빈 자리 문구를 쓰지 않는다)
   const empty = withEvent(d, { id: 'op_empty' });
   const e = socialSummary(d, me, empty, true);
   assert.equal(e.first, true);
-  assert.equal(e.cta, 'Be the first — go together');
+  assert.equal(e.cta, 'Go together');
+  assert.equal(e.text, '');
 });
 
 test('social line: wording by kind', () => {

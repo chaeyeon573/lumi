@@ -129,7 +129,7 @@ export function MeanwhileThisWeek() {
           <span className="block text-[15px] font-bold mt-0.5 line-clamp-2">{pick.title}</span>
           <span className="block text-[12px] text-ink-3 truncate">{pick.place?.name ?? pick.host}</span>
         </button>
-        <PeopleLine o={pick} />
+        <PeopleLine o={pick} quiet={false} />
       </div>
     </section>
   );

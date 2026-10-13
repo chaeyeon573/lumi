@@ -80,7 +80,7 @@ export function GoTogetherSheet({ o, open, onClose, autoJoin = true }: { o: Oppo
           <Person u={me} you label="going" />
         )}
         {people.map(({ u, label }) => <Person key={u.id} u={u} label={label} onOpen={() => { onClose(); nav(`/users/${u.id}`); }} />)}
-        {!crew && people.length === 0 && !busy && <p className="py-3 text-[13px] text-ink-3">{en ? 'Be the first — others who tap Go together join your group.' : '첫 번째로 — 같이 가기를 누르는 사람은 이 모임에 들어와요.'}</p>}
+        {!crew && people.length === 0 && !busy && <p className="py-3 text-[13px] text-ink-3">{en ? 'Tap I’m in — whoever taps Go together next joins you here.' : '갈래요를 누르면, 다음에 같이 가기를 누르는 사람이 여기로 들어와요.'}</p>}
       </div>
 
       <div className="flex flex-wrap gap-2 mt-3">

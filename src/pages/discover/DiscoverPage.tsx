@@ -116,26 +116,56 @@ function NowTab() {
   );
 }
 
+/** 날짜 묶음 — 오늘 · 내일 · 이번 주 · 그 뒤 */
+type Bucket = 'today' | 'tomorrow' | 'week' | 'later';
+const BUCKETS: [Bucket, string, string][] = [['today', 'Today', '오늘'], ['tomorrow', 'Tomorrow', '내일'], ['week', 'This week', '이번 주'], ['later', 'Coming up', '그 뒤']];
+/** 묶음마다 처음에 보여줄 개수 — 나머지는 "모두 보기" */
+const BUCKET_CAP = 4;
+/** 맨 위 몇 개만 아무도 없어도 버튼을 남긴다 (줄마다 버튼이 붙으면 목록이 시끄럽다) */
+const CTA_ROWS = 3;
+const dayDiff = (iso: string, today: string) => Math.round((Date.parse(`${iso}T12:00:00Z`) - Date.parse(`${today}T12:00:00Z`)) / 86400000);
+const bucketOf = (d: number): Bucket => (d <= 0 ? 'today' : d === 1 ? 'tomorrow' : d <= 6 ? 'week' : 'later');
+
 function ActivitiesTab() {
   const v = useViewer();
   const nav = useNavigate();
   const opps = useAppStore((s) => s.opportunities);
   const [chip, setChip] = useState('all');
+  const [open, setOpen] = useState<Partial<Record<Bucket, boolean>>>({});
   const f = ACTIVITY_CHIPS.find((c) => c.key === chip)!;
   const today = todayISO();
   const mySchool = v.me.affiliation.type === 'university' ? v.me.affiliation.schoolId : '';
   const acts = v.visibleActivities.filter((a) => a.date >= today && !isTeamActivity(a) && a.category !== 'store_deal' && (!f.cats || f.cats.includes(a.category)));
   const together = opps.filter((o) => isTogetherType(o.type) && o.type !== 'activity' && (!o.schoolId || o.schoolId === mySchool) && (!o.date || o.date >= today) && (!o.deadline || daysUntil(o.deadline) >= 0) && (chip === 'all' || f.oppTypes?.includes(o.type)));
-  type Item = { when: string; node: React.ReactNode };
+  // 시간이 정해진 것이 먼저 — 하루 종일·시간 미정은 그날 묶음 맨 뒤로
+  const timed = (t?: string) => !!t && t !== '00:00';
+  type Item = { key: string; day: string; timed: boolean; time: string; a?: Activity; o?: Opportunity };
   const items: Item[] = [
-    ...acts.map((a): Item => ({ when: a.date + a.startTime, node: <ActivityRow key={`a_${a.id}`} a={a} /> })),
-    ...together.map((o): Item => ({ when: (o.date ?? o.deadline ?? '9') + (o.startTime ?? ''), node: <OppRow key={`o_${o.id}`} o={o} /> })),
-  ].sort((a, b) => a.when.localeCompare(b.when));
+    ...acts.map((a): Item => ({ key: `a_${a.id}`, day: a.date, timed: timed(a.startTime), time: a.startTime, a })),
+    ...together.map((o): Item => ({ key: `o_${o.id}`, day: o.date ? campusDate(o.date) : (o.deadline ? campusDate(o.deadline) : '9999'), timed: timed(o.startTime), time: o.startTime ?? '', o })),
+  ].sort((x, y) => x.day.localeCompare(y.day) || Number(y.timed) - Number(x.timed) || x.time.localeCompare(y.time));
+  const groups = BUCKETS.map(([b, en, ko]) => ({ b, label: lang === 'en' ? en : ko, list: items.filter((i) => bucketOf(dayDiff(i.day, today)) === b) })).filter((g) => g.list.length);
+  let ctaLeft = CTA_ROWS;
   return (
     <div>
-      <h2 className="font-display text-[24px] font-bold text-primary mb-3">{lang === 'en' ? 'This Week' : '이번 주'}</h2>
-      <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-4">{ACTIVITY_CHIPS.map((c) => <Chip key={c.key} active={chip === c.key} onClick={() => setChip(c.key)}>{c.label}</Chip>)}</div>
-      {items.length === 0 ? <EmptyState emoji="" title={t('예정된 활동이 없어요')} action={<Button size="sm" onClick={() => nav('/create/activity?kind=group')}>{t('활동 만들기')}</Button>} /> : <div className="space-y-3">{items.map((i) => i.node)}</div>}
+      <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2">{ACTIVITY_CHIPS.map((c) => <Chip key={c.key} active={chip === c.key} onClick={() => setChip(c.key)}>{c.label}</Chip>)}</div>
+      {groups.length === 0 ? <EmptyState emoji="" title={t('예정된 활동이 없어요')} action={<Button size="sm" onClick={() => nav('/create/activity?kind=group')}>{t('활동 만들기')}</Button>} /> : groups.map((g) => {
+        const shown = open[g.b] ? g.list : g.list.slice(0, BUCKET_CAP);
+        return (
+          <section key={g.b} className="mt-4">
+            <div className="flex items-end justify-between mb-2.5">
+              <h2 className="font-display text-[20px] font-bold text-primary">{g.label}</h2>
+              <span className="text-[12px] text-ink-3">{g.list.length}</span>
+            </div>
+            <div className="space-y-3">{shown.map((i) => i.a ? <ActivityRow key={i.key} a={i.a} /> : <OppRow key={i.key} o={i.o!} quiet={!(g.b === 'today' || g.b === 'tomorrow') || ctaLeft-- <= 0} />)}</div>
+            {g.list.length > BUCKET_CAP && (
+              <button onClick={() => setOpen((s) => ({ ...s, [g.b]: !s[g.b] }))} className="mt-2.5 w-full h-10 rounded-full bg-surface-2 text-[13px] font-semibold text-ink-2 press">
+                {open[g.b] ? (lang === 'en' ? 'Show less' : '접기') : (lang === 'en' ? `See all ${g.list.length}` : `${g.list.length}개 모두 보기`)}
+              </button>
+            )}
+          </section>
+        );
+      })}
     </div>
   );
 }
@@ -147,7 +177,7 @@ function ActivityRow({ a }: { a: Activity }) {
   return <Row sample={a.sample} avatar={<button onClick={() => nav(`/activities/${a.id}`)}><Avatar emoji={av.emoji} hue={av.hue} url={av.url} size={44} /></button>} title={a.title} sub={`${formatDate(a.date)} ${formatTime(a.startTime)} · ${CATEGORY_LABELS[a.category]}`} action={<JoinButton activity={a} size="sm" label={t('참여')} className="bg-accent text-primary shadow-none" />} />;
 }
 /** 공고 카드 — 제목 아래에 누가 함께하는지와 버튼 하나 (같이 가기·같이 준비·팀원 찾기) */
-function OppRow({ o }: { o: Opportunity }) {
+function OppRow({ o, quiet = true }: { o: Opportunity; quiet?: boolean }) {
   const nav = useNavigate();
   return (
     <div className="card rounded-[24px] px-3 py-2.5">
@@ -155,7 +185,7 @@ function OppRow({ o }: { o: Opportunity }) {
         <span className="h-11 w-11 rounded-full bg-primary-soft text-primary grid place-items-center text-[13px] font-bold shrink-0">{OPP_TYPE_LABELS[o.type].slice(0, 2)}</span>
         <span className="flex-1 min-w-0"><span className="block text-[15px] font-semibold text-primary truncate">{o.title}</span><span className="block text-[13px] text-ink-2 truncate">{[o.date ? `${formatDate(campusDate(o.date))}${o.startTime && o.startTime !== '00:00' ? ` ${formatTime(o.startTime)}` : ''}` : '', o.deadline ? dday(o.deadline) : '', o.place?.name ?? ''].filter(Boolean).join(' · ')}</span></span>
       </button>
-      <PeopleLine o={o} className="pl-[56px]" />
+      <PeopleLine o={o} quiet={quiet} className="pl-[56px]" />
     </div>
   );
 }
