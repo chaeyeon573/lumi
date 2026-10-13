@@ -87,8 +87,10 @@ export function opportunityScore(me: User, o: Opportunity, intents: OpportunityI
 /** 같이 가는 종류(사람 찾기 의미 있음) vs 정보성 공고 */
 export const isTogetherType = (type: import('@core/types').OpportunityType) => ['event', 'club', 'hackathon', 'startup', 'activity'].includes(type);
 
+/** 캠퍼스(버클리) 달력 기준 남은 날 — 시각이 붙은 마감(…T23:59Z)도 그날 날짜로 센다. 반올림하면 내일 마감이 D-2 로 보였다 */
+const campusDay = (d: Date) => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).format(d);
 export function daysUntil(iso: string) {
-  const today = new Date(new Date().toISOString().slice(0, 10));
-  return Math.round((new Date(iso).getTime() - today.getTime()) / 86400000);
+  const day = /T/.test(iso) ? campusDay(new Date(iso)) : iso.slice(0, 10);
+  return Math.round((Date.parse(`${day}T12:00:00Z`) - Date.parse(`${campusDay(new Date())}T12:00:00Z`)) / 86400000);
 }
 export function dday(iso: string) { const d = daysUntil(iso); return d < 0 ? t('마감') : d === 0 ? 'D-Day' : `D-${d}`; }

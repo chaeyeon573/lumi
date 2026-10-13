@@ -185,11 +185,14 @@ function ActivityRow({ a }: { a: Activity }) {
 /** 공고 카드 — 제목 아래에 누가 함께하는지와 버튼 하나 (같이 가기·같이 준비·팀원 찾기) */
 function OppRow({ o, quiet = true }: { o: Opportunity; quiet?: boolean }) {
   const nav = useNavigate();
+  // 이미 시작한 기간(해커톤 제출 기간 등)의 시작일은 지난 날짜라 헷갈린다 — 마감이 있으면 D-day 만 보인다
+  const day = o.date ? campusDate(o.date) : '';
+  const showDate = day && !(o.deadline && day < todayISO());
   return (
     <div className="card rounded-[24px] px-3 py-2.5">
       <button onClick={() => nav(`/opportunities/${o.id}`)} className="w-full flex items-center gap-3 text-left">
         <span className="h-11 w-11 rounded-full bg-primary-soft text-primary grid place-items-center text-[13px] font-bold shrink-0">{OPP_TYPE_LABELS[o.type].slice(0, 2)}</span>
-        <span className="flex-1 min-w-0"><span className="block text-[15px] font-semibold text-primary truncate">{o.title}</span><span className="block text-[13px] text-ink-2 truncate">{[o.date ? `${formatDate(campusDate(o.date))}${o.startTime && o.startTime !== '00:00' ? ` ${formatTime(o.startTime)}` : ''}` : '', o.deadline ? dday(o.deadline) : '', o.place?.name ?? ''].filter(Boolean).join(' · ')}</span></span>
+        <span className="flex-1 min-w-0"><span className="block text-[15px] font-semibold text-primary truncate">{o.title}</span><span className="block text-[13px] text-ink-2 truncate">{[showDate ? `${formatDate(day)}${o.startTime && o.startTime !== '00:00' ? ` ${formatTime(o.startTime)}` : ''}` : '', o.deadline ? dday(o.deadline) : '', o.place?.name ?? ''].filter(Boolean).join(' · ')}</span></span>
       </button>
       <PeopleLine o={o} quiet={quiet} className="pl-[56px]" />
     </div>

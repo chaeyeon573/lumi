@@ -32,7 +32,8 @@ for (const [i, path] of paths.entries()) {
   const name = `${out}/${design}-${i}-${path.replace(/[^a-z0-9]+/gi, '_').replace(/^_|_$/g, '') || 'home'}`;
   await p.screenshot({ path: `${name}.png` });
   await p.screenshot({ path: `${name}-full.png`, fullPage: true });
-  const imgs = await p.evaluate(() => [...document.images].map((im) => im.complete && im.naturalWidth > 0));
+  // 아직 안 불러온 lazy 이미지(complete=false)는 깨진 것으로 세지 않는다
+  const imgs = await p.evaluate(() => [...document.images].map((im) => !im.complete || im.naturalWidth > 0));
   console.log(`\n## ${path}  (images ${imgs.length}, broken ${imgs.filter((x) => !x).length})\n` + (await p.innerText('body')).replace(/\n+/g, ' | ').slice(0, 1500));
 }
 await b.close();
