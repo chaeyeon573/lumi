@@ -7,7 +7,10 @@ import type { Opportunity, Organization, OpportunityType, User } from '@core/typ
 import { searchCatalog, resolveCatalogTerm, catalogTerms, courseTerm } from '@core/data/catalog/courses';
 import { canViewActivity, placeLabel } from '@core/lib/relations';
 import { forYou, type RecType, type Topic } from '@core/lib/foryou';
-import { inCategory, isOfType, locationOf, regionsOf, type Region } from '@core/lib/listings';
+import { campusDate, inCategory, isOfType, locationOf, regionsOf, type Region } from '@core/lib/listings';
+
+/** 모델에게는 캠퍼스 날짜(YYYY-MM-DD)로 준다 — UTC 시각(…T07:59Z)을 주면 앞 10자리를 읽어 하루 늦게 말한다 */
+const day = (iso?: string) => (iso ? campusDate(iso) : undefined);
 
 export type Card = AiCard;
 
@@ -46,7 +49,7 @@ export function searchListings(db: Snapshot, viewer: User, today: string, input:
     .slice(0, limit);
   return rows.map(({ o }) => ({
     card: { kind: 'listing', id: o.id, type: o.type, title: o.title, host: o.host, date: o.date, startTime: o.startTime, deadline: o.deadline, place: o.place?.name, benefit: o.benefit, url: o.sourceUrl } satisfies Card,
-    forModel: { id: o.id, type: o.type, title: o.title, host: o.host, date: o.date, start_time: o.startTime, deadline: o.deadline, place: o.place?.name, location: locationOf(o) || undefined, field: o.field, benefit: o.benefit, tags: o.tags.slice(0, 6), eligibility: clip(o.eligibility, 120), about: clip(o.description, 260), link: o.sourceUrl },
+    forModel: { id: o.id, type: o.type, title: o.title, host: o.host, date: day(o.date), start_time: o.startTime, deadline: day(o.deadline), place: o.place?.name, location: locationOf(o) || undefined, field: o.field, benefit: o.benefit, tags: o.tags.slice(0, 6), eligibility: clip(o.eligibility, 120), about: clip(o.description, 260), link: o.sourceUrl },
   }));
 }
 
@@ -105,8 +108,9 @@ export function searchActivities(db: Snapshot, viewer: User, today: string, inpu
   return rows.map(({ a }) => {
     const place = placeLabel(a, viewer, false).name;
     return {
-      card: { kind: 'activity', id: a.id, title: a.title, date: a.date, startTime: a.startTime, place, category: a.category } satisfies Card,
-      forModel: { id: a.id, title: a.title, category: a.category, date: a.date, start_time: a.startTime, place, about: clip(a.description, 200) },
+      card: { kind: 'activity', id: a.id, title: a.title, date: a.date, startTime: a.startTime, place, category: a.category, ...(a.sample ? { sample: true } : {}) } satisfies Card,
+      // 예시 활동이면 모델에게도 알려 실제 모임처럼 말하지 않게 한다
+      forModel: { id: a.id, title: a.title, category: a.category, date: a.date, start_time: a.startTime, place, about: clip(a.description, 200), ...(a.sample ? { sample_listing: true } : {}) },
     };
   });
 }
@@ -132,7 +136,7 @@ export function recommendFor(db: Snapshot, viewer: User, input: { types?: RecTyp
     const o = r.item;
     return {
       card: { kind: 'listing', id: o.id, type: o.type, title: o.title, host: o.host, date: o.date, startTime: o.startTime, deadline: o.deadline, place: o.place?.name, benefit: o.benefit, url: o.sourceUrl } satisfies Card,
-      forModel: { id: o.id, kind: 'listing', type: o.type, title: o.title, host: o.host, date: o.date, deadline: o.deadline, location: o.location, benefit: o.benefit, why_it_fits: why, link: o.sourceUrl },
+      forModel: { id: o.id, kind: 'listing', type: o.type, title: o.title, host: o.host, date: day(o.date), deadline: day(o.deadline), location: o.location, benefit: o.benefit, why_it_fits: why, link: o.sourceUrl },
     };
   });
 }

@@ -210,7 +210,7 @@ export type AiCard =
   | { kind: 'listing'; id: ID; type: Opportunity['type']; title: string; host: string; date?: string; startTime?: string; deadline?: string; place?: string; benefit?: string; url?: string }
   | { kind: 'club'; id: ID; name: string; type: Organization['type']; recruiting: boolean; summary: string; url?: string }
   | { kind: 'course'; id: ID; code: string; title: string; instructor?: string; location?: string; when: string; term: string; url?: string; syllabusUrl?: string }
-  | { kind: 'activity'; id: ID; title: string; date: string; startTime: string; place: string; category: Activity['category'] };
+  | { kind: 'activity'; id: ID; title: string; date: string; startTime: string; place: string; category: Activity['category']; sample?: boolean };
 
 /** 대화형 가입이 채워 주는 프로필 */
 export interface AiProfileDraft {
