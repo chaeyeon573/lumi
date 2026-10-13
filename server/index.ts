@@ -37,6 +37,7 @@ import { migrateDemo, demoUserIdFor, rollSampleActivities } from './demo';
 import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError, campusToday } from './ai';
 import type { AiLog } from './store';
 import { loadSeed } from './seed';
+import { createCampusData, mountCampusRoutes, mergeWorkerNotifications } from './campus-api';
 import { createClassesEngine } from '@core/api/classes';
 import { CLASSES_RULES, registerClassRoutes, startStudyGroupJob } from './classes';
 
@@ -91,6 +92,9 @@ const classes = createClassesEngine({ get db() { return db; }, t, demo: false, p
 const WORKER_COLLECTIONS = ['organizations', 'opportunities', 'schools'] as const;
 async function syncFromWorker() {
   const snap = await store.loadSnapshot(); if (!snap) return;
+  // 워커가 보낸 좌석 알림 · 학사 일정 · 좌석 수 (server/campus-api.ts)
+  { const p = mergeWorkerNotifications(db, snap.notifications ?? []); if (p) { broadcast(p); console.log(`[sync] seat alerts ${p.notifications!.length}`); } }
+  await campus.refresh();
   const patch: Patch = {}; const removed: NonNullable<Patch['removed']> = {};
   for (const c of WORKER_COLLECTIONS) {
     const before = new Map((db[c] as { id: ID }[]).map((x) => [x.id, JSON.stringify(x)]));
@@ -109,6 +113,9 @@ async function syncFromWorker() {
   if (v !== catalogVersion) { const nextCatalog = await store.loadCatalog(); if (nextCatalog.length) { catalog = nextCatalog; catalogBySchool = bySchool(catalog); catalogVersion = v; console.log(`[sync] catalog ${catalog.length} courses`); } }
 }
 setInterval(() => { rollSamples().catch((e) => console.error('[demo] roll failed', e)); }, 15 * 60 * 1000);
+// 학사 일정 · 좌석 알림 (워커가 쓰고 웹은 읽는다)
+const campus = createCampusData(store);
+await campus.load();
 setInterval(() => { syncFromWorker().catch((e) => console.error('[sync] failed', e)); }, Number(process.env.DATA_SYNC_SECONDS ?? 120) * 1000);
 
 // ─── 앱 ─────────────────────────────────────────────────────────────────
@@ -276,6 +283,9 @@ app.post('/api/catalog/courses', wrap(async (req) => { const s = String(req.body
 app.post('/api/catalog/departments', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const list = schoolCatalog(s); return catalogDepartments(list, s, resolveCatalogTerm(list, s, String(req.body.term ?? ''))); }));
 app.post('/api/catalog/terms', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const list = schoolCatalog(s); return { terms: catalogTerms(list, s), current: resolveCatalogTerm(list, s) }; }));
 
+// ─── 학사 일정 · 좌석 알림 ── /api/academic/dates, /api/seats/{mine,watch,unwatch}
+mountCampusRoutes(app, campus, { auth, wrap, requireUser, bad, user: (id) => db.users.find((u) => u.id === id), catalog: schoolCatalog });
+
 // ─── RPC (엔진 메서드) ────────────────────────────────────────────────────
 type Group = 'users' | 'activities' | 'posts' | 'relationships' | 'orgs' | 'opportunities' | 'proposals' | 'together' | 'games' | 'chats' | 'notifications' | 'reports' | 'classes';
 const GROUPS: Group[] = ['users', 'activities', 'posts', 'relationships', 'orgs', 'opportunities', 'proposals', 'together', 'games', 'chats', 'notifications', 'reports', 'classes'];
@@ -405,7 +415,7 @@ app.post('/api/ai/ask', auth, wrap(async (req: Req) => {
   if (!history.length || history[history.length - 1].role !== 'user') throw bad(t('입력값을 확인해주세요.'));
   rateLimit(`ask:${me.id}`, 40);
   const question = history[history.length - 1].content;
-  return runAi('ask', { userId: me.id, schoolId: schoolIdOf(me), input: question }, () => ask(db, schoolCatalog(schoolIdOf(me) ?? ''), me, history), (r) => `${r.answer}\n[cards: ${r.cards.map((c) => c.id).join(', ')}]`);
+  return runAi('ask', { userId: me.id, schoolId: schoolIdOf(me), input: question }, () => ask(db, schoolCatalog(schoolIdOf(me) ?? ''), me, history, campus.dates(schoolIdOf(me) ?? '')), (r) => `${r.answer}\n[cards: ${r.cards.map((c) => c.id).join(', ')}]`);
 }));
 
 app.post('/api/ai/profile-draft', wrap(async (req) => {

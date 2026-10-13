@@ -12,6 +12,8 @@
  *   2. 동아리 플랫폼 자동 탐지(detect.ts) → 찾으면 fetch:orgs 를 그 호스트로 실행 (7일마다 갱신)
  *   3. 수업: 어댑터가 있는 학교(courses_source)는 매일 갱신. 없으면 공개 카탈로그(catalog_url, CourseLeaf)에서 코드·이름을 30일마다 채우고
  *      'adapter needed' 를 한 번 기록해 운영자에게 알린다 — 시간은 학생이 넣는다
+ *   4. 학사 일정: academic_calendar(ics:…) 가 있으면 매일 ICS + server/data/academic-calendar-<short>.csv 를 academicDates 로 (academic:<id>)
+ *   좌석 알림(seats): 워커 안에서 따로 도는 루프 — 학생이 걸어 둔 수업 페이지만 15분/60분마다 (server/seats.ts). 한 번만: npm run agent -- seats
  *   큐가 비면 AGENT_IDLE_SECONDS(기본 60초) 쉬고 다시 목록을 읽는다 — 학교를 한 줄 추가하면 1분 안에 집어 든다
  *
  * 수업: fetch → 규칙 검사 → 지난 목록 대비 변화량 → 원본 표본 재확인 → 통과하면 replaceCatalog, 아니면 반영 안 함
@@ -35,6 +37,9 @@ import { fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale } from '../sourc
 import { fetchDevpost, fetchInternships } from '../sources/external';
 import { existsSync } from 'node:fs';
 import { applyRules, checkDrift, spotCheck } from './validate';
+import { fetchAcademicCalendar, icsUrlOf } from '../sources/academic-calendar';
+import { DATES, pollSeats, seatWatchLoop } from '../seats';
+import { campusDate, type AcademicDate } from '@core/lib/academic';
 
 const DRY = process.env.AGENT_DRY === '1';
 const NOTIFY = process.env.AGENT_NOTIFY_EMAIL;
@@ -95,7 +100,7 @@ function runScript(task: string, script: string, schoolId: string, extraEnv: Rec
 }
 
 // ─── 학교 단위 작업 (워커) ─────────────────────────────────────────────────
-interface SchoolRow { id: string; name: string; short: string; email_domain: string; region: string; lat: string; lng: string; orgs_host?: string; courses_source?: string; catalog_url?: string; research_source?: string; events_source?: string }
+interface SchoolRow { id: string; name: string; short: string; email_domain: string; region: string; lat: string; lng: string; orgs_host?: string; courses_source?: string; catalog_url?: string; research_source?: string; events_source?: string; academic_calendar?: string }
 const SCHOOLS_CSV = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', 'schools.csv');
 const loadSchools = () => parseCSV(readFileSync(SCHOOLS_CSV, 'utf8')) as unknown as SchoolRow[];
 const hoursSince = (iso?: string) => iso ? (Date.now() - new Date(iso).getTime()) / 3_600_000 : Infinity;
@@ -123,6 +128,28 @@ async function runOpportunities(task: string, schoolId: string, fetcher: () => P
     if (!DRY) await store.applyPatch({ opportunities: merged, removed: { opportunities: gone } });
     return record({ task, schoolId, status: 'applied', startedAt, summary: { fetched: items.length, removed: gone.length, sample: items.slice(0, 3).map((o) => o.title) } });
   } catch (e) { return record({ task, schoolId, status: 'error', startedAt, summary: { error: (e as Error).message } }); }
+}
+
+/** 학사 일정 — ICS + 보충 CSV 를 그 학교 academicDates 로 통째로 바꾼다. 너무 적거나 앞으로의 일정이 없으면 반영하지 않는다 */
+async function runAcademic(row: SchoolRow): Promise<AgentRun> {
+  const startedAt = new Date().toISOString(); const task = `academic:${row.id}`;
+  const url = icsUrlOf(row.academic_calendar);
+  if (!url) return record({ task, schoolId: row.id, status: 'skipped', startedAt, summary: { error: 'no academic_calendar (ics:…) in schools.csv' } });
+  try {
+    const supplement = path.join(path.dirname(SCHOOLS_CSV), `academic-calendar-${row.short}.csv`);
+    const r = await fetchAcademicCalendar(row.id, url, supplement);
+    const today = campusDate();
+    const upcoming = r.dates.filter((d) => d.end >= today);
+    const summary = { events: r.events, fillersSkipped: r.fillers, kept: r.dates.length, supplement: r.supplement, upcoming: upcoming.length, next: upcoming.slice(0, 4).map((d) => `${d.start} ${d.title}`), dry: DRY };
+    if (r.dates.length < 10 || !upcoming.length) return record({ task, schoolId: row.id, status: 'rejected', startedAt, summary: { ...summary, note: 'too few dates or nothing upcoming — calendar probably moved, not applied' } });
+    if (!DRY) {
+      const before = (await store.listDocs<AcademicDate>(DATES)).filter((d) => d.schoolId === row.id);
+      const fresh = new Set(r.dates.map((d) => d.id));
+      await store.putDocs(DATES, r.dates);
+      await store.removeDocs(DATES, before.filter((d) => !fresh.has(d.id)).map((d) => d.id));
+    }
+    return record({ task, schoolId: row.id, status: 'applied', startedAt, summary });
+  } catch (e) { return record({ task, schoolId: row.id, status: 'error', startedAt, summary: { error: (e as Error).message } }); }
 }
 
 async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
@@ -160,6 +187,9 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
   // 대학원생 펀딩 달력 (펠로우십·여행 지원금·TA/GSR) — server/data/opportunities-grad-<short>.csv
   const gradFile = path.join(path.dirname(SCHOOLS_CSV), `opportunities-grad-${row.short}.csv`);
   if (existsSync(gradFile) && due(`grad-deadlines:${row.id}`, latest.get(`grad-deadlines:${row.id}`)?.finishedAt, 24)) out.push(await runScript(`grad-deadlines:${row.id}`, 'import:opportunities', gradFile));
+  // 학사 일정 (수강신청 단계·마감·휴일·기말) — 하루마다, 실패하면 2시간 뒤
+  const lastAcademic = latest.get(`academic:${row.id}`);
+  if (icsUrlOf(row.academic_calendar) && due(`academic:${row.id}`, lastAcademic?.finishedAt, lastAcademic?.status === 'applied' ? 24 : 2)) out.push(await runAcademic(row));
   // 3. 수업
   if (row.courses_source && resolveCourseSource(row.id, row.courses_source)) {
     const lastCourses = latest.get(`courses:${row.courses_source.includes(':') ? row.id : row.courses_source}`);
@@ -198,6 +228,8 @@ async function runTask(t: string): Promise<AgentRun[]> {
   if (kind === 'courses') { const row = loadSchools().find((r) => r.id === arg); return [row?.courses_source ? await runCourses(row.courses_source, row.id) : await runCourses(arg)]; }
   if (kind === 'orgs') return [await runScript(t, 'fetch:orgs', arg)];
   if (kind === 'greeks') return [await runScript(t, 'fetch:greeks', arg)];
+  if (kind === 'academic') { const row = loadSchools().find((r) => r.id === arg); return [row ? await runAcademic(row) : await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
+  if (kind === 'seats') { const startedAt = new Date().toISOString(); const s = await pollSeats(store, { dry: DRY, force: true }); return [await record({ task: 'seats', status: s.errors && !s.fetched ? 'error' : 'applied', startedAt, summary: { ...s } })]; }
   if (kind === 'school') { const row = loadSchools().find((s) => s.id === arg); return row ? runSchool(row) : [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
   return [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'unknown task' } })];
 }
@@ -216,6 +248,8 @@ if (process.env.AGENT_MODE === 'worker') {
     const urap = (snap?.opportunities ?? []).filter((o) => o.id.startsWith('op_berkeley_urap_') && !o.qna.length && !o.reviews.length).map((o) => o.id);
     if (urap.length && !DRY) { await store.applyPatch({ removed: { opportunities: urap } }); console.log(`[agent] removed ${urap.length} URAP project listings`); }
   }
+  // 좌석 알림 루프 — 학교 바퀴와 따로 1분마다 할 일이 있는지 본다 (AGENT_FORCE=seats 면 첫 바퀴는 전부 바로)
+  void seatWatchLoop(store, { dry: DRY, force: () => forced.delete('seats'), record: (status, summary) => record({ task: 'seats', status, startedAt: new Date().toISOString(), summary }) });
   for (;;) {
     let did = 0;
     // 학교 밖 기회 (모든 학교 공통) — 12시간마다

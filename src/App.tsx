@@ -35,6 +35,8 @@ import { CreateTogetherPage } from '@/pages/together/CreateTogetherPage';
 import { TogetherPage } from '@/pages/together/TogetherPage';
 import { OpportunityDetailPage } from '@/pages/opportunities/OpportunityDetailPage';
 import { ProfileContextPage } from '@/pages/profile/ProfileContextPage';
+import { AcademicCalendarPage } from '@/pages/academic/AcademicCalendarPage';
+import { SeatsPage } from '@/pages/seats/SeatsPage';
 import { ClassRoomPage } from '@/pages/classes/ClassRoomPage';
 import { ClassQrPage } from '@/pages/classes/ClassQrPage';
 import { StudyGroupPage } from '@/pages/classes/StudyGroupPage';
@@ -106,6 +108,8 @@ export default function App() {
         </Route>
         <Route element={<AppShell withNav={false} />}>
           <Route path="/timetable" element={<TimetablePage />} />
+          <Route path="/academic-calendar" element={<AcademicCalendarPage />} />
+          <Route path="/seats" element={<SeatsPage />} />
           <Route path="/plans" element={<PlansPage />} />
           <Route path="/classes/:courseName" element={<ClassPage />} />
           <Route path="/study/:id" element={<StudyGroupPage />} />

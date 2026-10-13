@@ -15,6 +15,7 @@ import type { CatalogCourse } from '@core/api/types';
 import { cn } from '@core/lib/cn';
 import type { Opportunity, Organization } from '@core/types';
 import { PeopleLine } from '@/components/together/PeopleLine';
+import { WatchSeatsButton } from '@/components/seats/SeatWatch';
 
 /**
  * 캠퍼스 › 찾기 — 동아리·수업·인턴·연구·장학금·해커톤·행사를 한 줄의 칩으로.
@@ -387,6 +388,7 @@ function ClassesList({ dept, setDept }: { dept: string; setDept: (d: string) => 
                 <span className="block text-[12px] text-ink-3 mt-0.5">{c.meetings.length ? c.meetings.map((m) => `${DAY_LABELS[m.day]} ${m.start}–${m.end}`).join(' · ') : t('시간 미정')}{c.location ? ` · ${c.location}` : ''}</span>
                 {(c.instructor || c.units) && <span className="block text-[12px] text-ink-3 truncate">{[c.instructor, c.units ? (en ? `${c.units} units` : `${c.units}학점`) : ''].filter(Boolean).join(' · ')}</span>}
                 {(c.syllabusUrl || c.url) && <a href={c.syllabusUrl ?? c.url} target="_blank" rel="noreferrer" className="text-[12px] font-semibold text-primary underline">{c.syllabusUrl ? t('실라버스') : t('과목 정보')}</a>}
+                <WatchSeatsButton course={c} className="mt-1.5 flex w-fit" />
               </span>
               {added
                 ? <span className="h-9 px-3 rounded-full bg-surface-2 text-ink-2 text-[12px] font-semibold inline-flex items-center gap-1 shrink-0"><Check size={14} />{en ? 'Added' : '추가됨'}</span>

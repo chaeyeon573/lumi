@@ -110,6 +110,14 @@ export const mockApi: AroundUApi = {
     async terms(schoolId) { return request(() => ({ terms: catalogTerms(catalogCourses, schoolId), current: resolveCatalogTerm(catalogCourses, schoolId) })); },
   },
 
+  // 학사 일정·좌석 알림은 서버(워커)가 공식 원본에서 가져온다 — 예시 모드에서는 비어 있다
+  academic: { async dates() { return { dates: [] }; } },
+  seats: {
+    async mine() { return { watches: [], watchableTerms: [], supported: false }; },
+    async watch() { throw new Error('Seat alerts need the live server.'); },
+    async unwatch() { return { watches: [], watchableTerms: [], supported: false }; },
+  },
+
   users: { ...wrap(engine.users), update: (id, p) => request(() => withRosters(engine.users.update(id, p))) },
   activities: wrap(engine.activities),
   posts: wrap(engine.posts),

@@ -15,6 +15,8 @@ import { canViewField, isBlocked } from '@core/lib/relations';
 import { recommendFor, searchActivities, searchClubs, searchCourses, searchListings, schoolOf, type Card } from './ai-search';
 import type { RecType } from '@core/lib/foryou';
 import { REGIONS, type Region } from '@core/lib/listings';
+import type { AcademicDate, AcademicDateKind } from '@core/lib/academic';
+import { searchAcademicCalendar } from './ai-academic';
 
 const apiKey = () => process.env.OPENAI_API_KEY || process.env.API_KEY || '';
 export const aiEnabled = () => apiKey().startsWith('sk-');
@@ -115,6 +117,7 @@ How to answer:
 - Dates: today's date and weekday are given below. Resolve "today", "this weekend", "next week" into from/to dates for the search. Deadlines and dates in results are YYYY-MM-DD; say them in a friendly way ("Fri, Oct 17").
 - Be brief and scannable: one short sentence, then the items as a list (up to 5, or the grouped plan above), each with the one detail that matters. No long intros or sign-offs. Write titles the way a student would say them (drop "(Summer 2027)", codes and long suffixes).
 - If a listing's deadline is missing, say "deadline not posted" rather than guessing.
+- Academic calendar questions (enrollment phases, add/drop and grading deadlines, holidays, finals, when classes start/end) → search_academic_calendar; answer with the exact date and weekday (and how many days away), name the term, and say it's from the registrar calendar. Never guess a date it didn't return.
 - Reply in the language the student writes in.`;
 
 interface ToolSpec { name: string; description: string; parameters: Record<string, unknown>; run: (input: Record<string, unknown>) => string }
@@ -127,7 +130,7 @@ const region = (v: unknown) => (typeof v === 'string' && (REGIONS as readonly st
 const LISTING_TYPES: OpportunityType[] = ['event', 'internship', 'hackathon', 'scholarship', 'lab', 'exchange', 'startup', 'club', 'activity'];
 const ORG_TYPES: Organization['type'][] = ['club', 'greek', 'lab', 'council', 'department'];
 
-export async function ask(db: Snapshot, catalog: CatalogCourse[], viewer: User, history: { role: 'user' | 'assistant'; content: string }[]): Promise<{ answer: string; cards: Card[] }> {
+export async function ask(db: Snapshot, catalog: CatalogCourse[], viewer: User, history: { role: 'user' | 'assistant'; content: string }[], academicDates: AcademicDate[] = []): Promise<{ answer: string; cards: Card[] }> {
   const school = db.schools.find((s) => s.id === schoolOf(viewer))?.name ?? 'their school';
   const { date, weekday } = campusToday();
   const seen = new Map<ID, Card>();
@@ -201,6 +204,24 @@ export async function ask(db: Snapshot, catalog: CatalogCourse[], viewer: User, 
         const note = r.requestedTermMissing ? `Lumi has no class list for ${str(input.term)} yet — showing ${r.term || 'all terms'} instead.` : r.rows.length ? undefined : 'No matches. Try other words or fewer filters.';
         return JSON.stringify({ term: r.term || 'all terms', terms: r.terms, results: r.rows.map((x) => x.forModel), note });
       },
+    }),
+    tool({
+      name: 'search_academic_calendar',
+      description: "The student's official academic calendar (from the registrar): enrollment phases (Phase 1 / Phase 2 / adjustment period), add/drop and grading-option deadlines, fee deadlines, holidays and breaks, first/last day of classes, RRR week and finals. Returns upcoming dates by default with weekday and days_from_today. Use for any 'when is/does …' question about the school calendar.",
+      parameters: {
+        type: 'object',
+        properties: {
+          query: { type: 'string', description: 'Words from the question, e.g. "phase 1 begins", "last day to drop", "finals", "thanksgiving", "grading option"' },
+          kinds: { type: 'array', items: { type: 'string', enum: ['enrollment', 'deadline', 'holiday', 'finals', 'instruction', 'other'] } },
+          term: { type: 'string', description: 'Optional term label like "Spring 2027" (calendar_terms in the result lists what exists)' },
+          from: { type: 'string', description: 'YYYY-MM-DD' },
+          to: { type: 'string', description: 'YYYY-MM-DD' },
+          include_past: { type: 'boolean', description: 'Also return dates that already passed' },
+          limit: { type: 'integer', minimum: 1, maximum: 20 },
+        },
+        additionalProperties: false,
+      },
+      run: (input) => JSON.stringify(searchAcademicCalendar(academicDates, schoolOf(viewer), date, { query: str(input.query), kinds: arr(input.kinds) as AcademicDateKind[] | undefined, term: str(input.term), from: str(input.from), to: str(input.to), include_past: input.include_past === true, limit: num(input.limit) })),
     }),
     tool({
       name: 'search_activities',

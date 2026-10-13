@@ -17,6 +17,7 @@ import { friendsOf } from '@core/lib/relations';
 import { uid, addDaysISO } from '@core/lib/format';
 import { cn } from '@core/lib/cn';
 import { WeekGrid } from '@/components/timetable/WeekGrid';
+import { WatchSeatsButton } from '@/components/seats/SeatWatch';
 import { ClassmatesNote } from '@/components/classes/ClassLink';
 
 const HUES = [220, 160, 15, 280, 45, 330, 120, 200, 60, 300];
@@ -40,6 +41,7 @@ export function TimetablePage() {
   const [terms, setTerms] = useState<{ terms: string[]; current: string } | null>(null);
   const [term, setTerm] = useState('');
   const [deptsTerm, setDeptsTerm] = useState<string | null>(null);
+  const [wantTerm, setWantTerm] = useState('');
   const [catalog, setCatalog] = useState<CatalogCourse[] | null>(null);
   const [slot, setSlot] = useState<{ day: number; block: { start: number; end: number } } | null>(null);
   const [params, setParams] = useSearchParams();
@@ -67,6 +69,8 @@ export function TimetablePage() {
       if (b) setSlot({ day: today, block: { start: Math.max(b.start, now), end: b.end } });
       setParams({}, { replace: true });
     }
+    // ?add=1&term=Spring 2027 — 수업 추가 창을 그 학기로 바로 연다 (Me › Seat alerts 에서 온다)
+    if (params.get('add')) { setWantTerm(params.get('term') ?? ''); setEditing(emptyCourse(today)); setParams({}, { replace: true }); }
   }, [params]); // eslint-disable-line react-hooks/exhaustive-deps
   const friendIds = friendsOf(v.snap, me.id);
   const overlaps = friendIds.map((fid) => v.userById(fid)!).filter((f) => f && f.timetable.length > 0 && v.canSeeField(f, 'timetable'))
@@ -84,7 +88,7 @@ export function TimetablePage() {
   // 학기 목록 — 수업 추가 창을 처음 열 때 한 번
   useEffect(() => {
     if (!adding || terms) return;
-    api.catalog.terms(schoolId).then((r) => { setTerms(r); setTerm(r.current); }).catch(() => setTerms({ terms: [], current: '' }));
+    api.catalog.terms(schoolId).then((r) => { setTerms(r); setTerm(wantTerm && r.terms.includes(wantTerm) ? wantTerm : r.current); }).catch(() => setTerms({ terms: [], current: '' }));
   }, [adding, schoolId, terms]);
   useEffect(() => {
     if (!adding) { setCatalog(null); return; }
@@ -224,6 +228,7 @@ export function TimetablePage() {
                           <div className="text-[11px] text-ink-3">{c.meetings.length ? c.meetings.map((m) => `${DAY_LABELS[m.day]} ${m.start}–${m.end}`).join(' · ') : t('시간 미정')}{c.location ? ` · ${c.location}` : ''}{c.instructor ? ` · ${c.instructor}` : ''}</div>
                         </button>
                         {(c.syllabusUrl || c.url) && <a href={c.syllabusUrl ?? c.url} target="_blank" rel="noreferrer" className="shrink-0 text-[11px] font-semibold text-primary underline pt-0.5">{c.syllabusUrl ? t('실라버스') : t('과목 정보')}</a>}
+                        <WatchSeatsButton course={c} className="h-7 px-2.5 text-[11px]" />
                       </div>
                     ))}
                   </div>

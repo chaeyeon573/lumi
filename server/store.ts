@@ -53,6 +53,11 @@ export interface Store {
   listFeedback(limit?: number): Promise<Feedback[]>;
   addAiLog(l: AiLog): Promise<void>;
   listAiLogs(limit?: number): Promise<AiLog[]>;
+  /** 화면 스냅샷 밖의 문서 묶음 (학사 일정 academicDates · 좌석 알림 seatWatches/seatStatus) — 전부 읽기 */
+  listDocs<T extends { id: string }>(collection: string): Promise<T[]>;
+  /** id 기준 upsert */
+  putDocs(collection: string, items: { id: string }[]): Promise<void>;
+  removeDocs(collection: string, ids: string[]): Promise<void>;
 }
 
 // ─── Postgres ────────────────────────────────────────────────────────────
@@ -202,6 +207,23 @@ export class PgStore implements Store {
     const { rows } = await this.pool.query<{ id: string; kind: AiLog['kind']; user_id: string | null; school_id: string | null; input: string; output: string; ok: boolean; created_at: Date }>('SELECT * FROM ai_logs ORDER BY created_at DESC LIMIT $1', [limit]);
     return rows.map((r) => ({ id: r.id, kind: r.kind, userId: r.user_id ?? undefined, schoolId: r.school_id ?? undefined, input: r.input, output: r.output, ok: r.ok, createdAt: new Date(r.created_at).toISOString() }));
   }
+  async listDocs<T extends { id: string }>(collection: string) {
+    const { rows } = await this.pool.query<{ data: T }>('SELECT data FROM docs WHERE collection = $1 ORDER BY id', [collection]);
+    return rows.map((r) => r.data);
+  }
+  async putDocs(collection: string, items: { id: string }[]) {
+    if (!items.length) return;
+    await this.serial(async () => {
+      for (let i = 0; i < items.length; i += 500) {
+        const chunk = items.slice(i, i + 500);
+        await this.pool.query('INSERT INTO docs (collection, id, data) SELECT $1, * FROM unnest($2::text[], $3::jsonb[]) ON CONFLICT (collection, id) DO UPDATE SET data = EXCLUDED.data, updated_at = now()', [collection, chunk.map((x) => x.id), chunk.map((x) => JSON.stringify(x))]);
+      }
+    });
+  }
+  async removeDocs(collection: string, ids: string[]) {
+    if (!ids.length) return;
+    await this.serial(() => this.pool.query('DELETE FROM docs WHERE collection = $1 AND id = ANY($2)', [collection, ids]));
+  }
   async takeCode(email: string) {
     const { rows } = await this.pool.query<{ email: string; code: string; expires_at: Date }>('DELETE FROM email_codes WHERE email = $1 RETURNING *', [email]);
     return rows[0] ? { email: rows[0].email, code: rows[0].code, expiresAt: rows[0].expires_at.toISOString() } : null;
@@ -209,7 +231,7 @@ export class PgStore implements Store {
 }
 
 // ─── 로컬 파일 ───────────────────────────────────────────────────────────
-interface FileData { snapshot: Snapshot | null; catalog: CatalogCourse[]; accounts: Account[]; sessions: Session[]; codes: EmailCode[]; agentRuns?: AgentRun[]; feedback?: Feedback[]; aiLogs?: AiLog[] }
+interface FileData { snapshot: Snapshot | null; catalog: CatalogCourse[]; accounts: Account[]; sessions: Session[]; codes: EmailCode[]; agentRuns?: AgentRun[]; feedback?: Feedback[]; aiLogs?: AiLog[]; docs?: Record<string, Record<string, unknown>> }
 
 export class FileStore implements Store {
   private file: string;
@@ -274,6 +296,18 @@ export class FileStore implements Store {
   async listFeedback(limit = 200) { return [...(this.data.feedback ?? [])].reverse().slice(0, limit); }
   async addAiLog(l: AiLog) { (this.data.aiLogs ??= []).push(l); await this.flush(); }
   async listAiLogs(limit = 200) { return [...(this.data.aiLogs ?? [])].reverse().slice(0, limit); }
+  async listDocs<T extends { id: string }>(collection: string) { return Object.values(this.data.docs?.[collection] ?? {}).map((x) => structuredClone(x) as T).sort((a, b) => a.id.localeCompare(b.id)); }
+  async putDocs(collection: string, items: { id: string }[]) {
+    if (!items.length) return;
+    const c = ((this.data.docs ??= {})[collection] ??= {});
+    for (const x of items) c[x.id] = structuredClone(x);
+    await this.flush();
+  }
+  async removeDocs(collection: string, ids: string[]) {
+    const c = this.data.docs?.[collection]; if (!c || !ids.length) return;
+    for (const id of ids) delete c[id];
+    await this.flush();
+  }
   async takeCode(email: string) {
     const c = this.data.codes.find((x) => x.email === email) ?? null;
     this.data.codes = this.data.codes.filter((x) => x.email !== email);

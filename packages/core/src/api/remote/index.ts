@@ -125,6 +125,13 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
       terms: (schoolId) => call('catalog/terms', { schoolId }),
     },
 
+    academic: { dates: (schoolId) => call('academic/dates', { schoolId }) },
+    seats: {
+      mine: () => call('seats/mine', {}),
+      watch: (courseId) => call('seats/watch', { courseId }),
+      unwatch: (id) => call('seats/unwatch', { id }),
+    },
+
     users: group('users', ['update', 'setAvailability', 'votePoll', 'dailyResults']),
     activities: group('activities', ['create', 'update', 'remove', 'join', 'cancel', 'approve', 'reject', 'comment']),
     posts: group('posts', ['create', 'remove', 'toggleLike', 'toggleSave', 'comment', 'approveTag']),

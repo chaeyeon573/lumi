@@ -12,6 +12,8 @@ import { statusNow, freeBlocks, todayIdx, nowMin, fmtBlock, toHHMM } from '@core
 import { profileCompletion, questionById } from '@core/data/prompts';
 import { cn } from '@core/lib/cn';
 import { WeekGrid } from '@/components/timetable/WeekGrid';
+import { KeyDatesCard } from '@/components/academic/KeyDatesCard';
+import { SeatWatchCard } from '@/components/seats/SeatWatch';
 
 
 /** 나 — 프로필 카드 · 주간 시간표 · 다가오는 약속 (Pastel Breeze) */
@@ -48,6 +50,7 @@ export function ProfilePage() {
     <div className="min-h-full pb-8 bg-bg">
       <AppHeader right={<button onClick={() => nav('/settings')} aria-label={t('설정')} className="h-11 w-11 rounded-full grid place-items-center text-ink-2"><Settings size={21} /></button>} />
       <div className="px-4 space-y-4">
+        {me.affiliation.type === 'university' && <KeyDatesCard schoolId={me.affiliation.schoolId} />}
         <section className="card p-5">
           <div className="flex items-center justify-between">
             <h2 className="font-display text-[20px] font-bold text-primary flex items-center gap-2"><CalendarDays size={18} />{lang === 'en' ? 'Weekly Schedule' : '내 시간표'}</h2>
@@ -93,6 +96,8 @@ export function ProfilePage() {
           </div>
         </section>
 
+
+        <SeatWatchCard />
 
         <section className="card p-5">
           <div className="flex items-center justify-between mb-2"><h2 className="font-display text-[20px] font-bold text-primary flex items-center gap-2"><CalendarCheck size={18} />{lang === 'en' ? 'Upcoming Hangouts' : '다가오는 약속'}</h2><button onClick={() => nav('/plans')} className="text-[13px] font-semibold text-verify">{t('전체')} ({upcoming.length + openPolls})</button></div>

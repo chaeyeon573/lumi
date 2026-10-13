@@ -3,6 +3,8 @@ import type {
   ActivityCategory, Visibility, JoinPolicy, ActivityKind, Place, ReportTargetType, Availability, Opportunity, OpportunityIntentRecord, OpportunityIntent, Role, TimePoll, TimeOption, Game, GameInput,
   ClassRoster, StudyGroupResponse,
 } from '@core/types';
+import type { AcademicDate } from '@core/lib/academic';
+import type { SeatWatchView } from '@core/lib/seats';
 
 /** 클라이언트가 보유하는 전체 데이터 스냅샷 (실제 API에서는 필요한 부분만 내려받도록 분리) */
 export interface Snapshot {
@@ -242,6 +244,19 @@ export interface AroundUApi {
     departments(schoolId: ID, term?: string): Promise<{ name: string; count: number }[]>;
     /** 수업 목록이 있는 학기들과 기본(지금) 학기. current 가 '' 면 학기 구분 없이 본다 */
     terms(schoolId: ID): Promise<{ terms: string[]; current: string }>;
+  };
+
+  /** 학사 일정 (registrar 캘린더) — 지난 30일부터. 일정이 없는 학교는 빈 목록 */
+  academic: {
+    dates(schoolId: ID): Promise<{ dates: AcademicDate[] }>;
+  };
+
+  /** 좌석 알림 — 다음 학기 수업의 빈자리를 공개 시간표에서 지켜보고 알림 (수강신청은 학생이 CalCentral 에서) */
+  seats: {
+    mine(): Promise<SeatWatchView>;
+    /** 카탈로그 수업 id 로 건다 */
+    watch(courseId: ID): Promise<SeatWatchView>;
+    unwatch(watchId: ID): Promise<SeatWatchView>;
   };
 
   users: {
