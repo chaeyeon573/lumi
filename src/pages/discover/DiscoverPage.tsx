@@ -19,6 +19,7 @@ import { todayISO, formatTime, formatDate } from '@core/lib/format';
 import { CATEGORY_LABELS, PERSON_ROLE_LABELS, CREW_TYPE_LABELS, OPP_TYPE_LABELS } from '@core/lib/labels';
 import { dday } from '@core/lib/recommend';
 import { cn } from '@core/lib/cn';
+import { RidesEntry } from '@/components/rides/RideBits';
 import type { Activity, Opportunity } from '@core/types';
 import { PeopleLine } from '@/components/together/PeopleLine';
 import { campusDate } from '@core/lib/listings';
@@ -55,6 +56,7 @@ export function DiscoverPage() {
             <span className="flex-1 text-[14px] text-primary font-medium truncate">{me.timetable.length === 0 ? t('시간표를 추가해보세요') : nextFree ? `${lang === 'en' ? 'Free' : '공강'} ${fmtBlock(nextFree)}` : t('오늘 수업 끝')}</span>
             <button onClick={() => (nextFree ? setSlot(nextFree) : nav('/timetable'))} className="h-9 px-4 rounded-full bg-primary text-white text-[13px] font-semibold flex items-center gap-1 press"><Plus size={14} />{nextFree ? t('열기') : t('시간표')}</button>
           </div>
+          <RidesEntry className="mt-3" />
           <div className="mt-3 flex bg-surface-2 rounded-full p-1">{tabs.map(([k, l]) => <button key={k} onClick={() => setTab(k)} className={cn('flex-1 h-9 rounded-full text-[13px] font-semibold transition', tab === k ? 'bg-surface text-primary shadow-sm' : 'text-ink-3')}>{l}</button>)}</div>
           <div className="pt-5">
             {tab === 'now' && <NowTab />}

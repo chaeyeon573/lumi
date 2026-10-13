@@ -141,6 +141,10 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
     proposals: group('proposals', ['create', 'respond']),
     together: group('together', ['create', 'vote', 'addOption', 'decide', 'cancel']),
     games: group('games', ['send', 'answer', 'decline']),
+    rides: {
+      ...group<Omit<AroundUApi['rides'], 'teaser'>>('rides', ['create', 'join', 'leave', 'close', 'reopen', 'cancel', 'update']),
+      teaser: (id) => call('rides/teaser', { id }),
+    },
     chats: group('chats', ['send', 'markRead', 'openDirect']),
     notifications: group('notifications', ['markRead', 'markAllRead']),
     reports: group('reports', ['create']),

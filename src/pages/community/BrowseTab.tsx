@@ -13,6 +13,7 @@ import { DAY_LABELS, COURSE_HUES, clashesWith, coursesFromCatalog, hasCatalogCou
 import { api } from '@core/api';
 import type { CatalogCourse } from '@core/api/types';
 import { cn } from '@core/lib/cn';
+import { RideSeasonBanner } from '@/components/rides/RideBits';
 import type { Opportunity, Organization } from '@core/types';
 import { PeopleLine } from '@/components/together/PeopleLine';
 import { WatchSeatsButton } from '@/components/seats/SeatWatch';
@@ -102,7 +103,9 @@ export function BrowseTab() {
       <div ref={rowRef} className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2" aria-label={L('Browse by category', '종류별로 보기')}>
         {chips.map(([k, l]) => <Chip key={k} active={sub === k} onClick={() => setSub(k)}>{l}</Chip>)}
         <Chip active={sub === 'saved'} onClick={() => setSub('saved')}><Star size={13} className="inline -mt-0.5 mr-1" fill={sub === 'saved' ? 'currentColor' : 'none'} />{L('Saved', '저장')}{savedIds.size ? ` ${savedIds.size}` : ''}</Chip>
+        <Chip onClick={() => nav('/rides')}>🚗 {L('Rides', '같이 타기')}</Chip>
       </div>
+      {sub === 'foryou' && <RideSeasonBanner className="mb-3" />}
       {sub === 'foryou' && <ForYouList rows={rows} savedIds={savedIds} toggleSave={toggleSave} onSaved={() => setSub('saved')} />}
       {sub === 'clubs' && <ClubsList kind={params.get('mine') ? 'mine' : kind} setKind={(k) => setQ({ kind: k, mine: '' })} rows={rows} />}
       {sub === 'classes' && <ClassesList dept={params.get('dept') ?? ''} setDept={(d) => setQ({ dept: d })} />}

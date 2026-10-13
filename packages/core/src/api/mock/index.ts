@@ -5,6 +5,7 @@
 import type { AroundUApi, Patch, Snapshot } from '../types';
 import { t } from '@core/i18n';
 import { createEngine } from '../engine';
+import { createRidesEngine } from '../rides';
 import { loadDB, resetDB, saveDB, getSession, setSession, type MockDB } from './db';
 import { DEMO_USER_ID } from '@core/data/seed';
 import { createClassesEngine } from '../classes';
@@ -29,6 +30,8 @@ const engine = createEngine({
 const classes = createClassesEngine({ get db() { return db; }, t, demo: true, push(patch) { saveDB(db); listeners.forEach((l) => l(patch)); } }, { catalog: (schoolId) => catalogCourses.filter((c) => c.schoolId === schoolId) });
 /** 목업은 모든 데이터를 갖고 있다 — 같은 수업 목록만 서버처럼 계산해 붙인다 */
 const withRosters = (patch: Patch): Patch => { const me = getSession(); return me ? { ...patch, classRosters: classRostersFor(db, me) } : patch; };
+const rides = createRidesEngine({ get db() { return db; }, t, demo: true, push(patch) { saveDB(db); listeners.forEach((l) => l(patch)); } });
+
 const delay = (ms = 350) => new Promise((r) => setTimeout(r, ms + Math.random() * 200));
 
 async function request<T>(fn: () => T): Promise<T> {
@@ -127,6 +130,7 @@ export const mockApi: AroundUApi = {
   proposals: wrap(engine.proposals),
   together: wrap(engine.together),
   games: wrap(engine.games),
+  rides: wrap(rides),
   chats: {
     ...wrap(engine.chats),
     // 읽음 처리는 지연 없이

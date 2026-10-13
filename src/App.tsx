@@ -41,6 +41,10 @@ import { ClassRoomPage } from '@/pages/classes/ClassRoomPage';
 import { ClassQrPage } from '@/pages/classes/ClassQrPage';
 import { StudyGroupPage } from '@/pages/classes/StudyGroupPage';
 import { takeReturnTo } from '@/components/classes/ClassLink';
+import { RidesPage } from '@/pages/rides/RidesPage';
+import { PostRidePage } from '@/pages/rides/PostRidePage';
+import { RideDetailPage } from '@/pages/rides/RideDetailPage';
+import { RideLinkPage } from '@/pages/rides/RideLinkPage';
 
 function RequireAuth() {
   const currentUserId = useAppStore((s) => s.currentUserId);
@@ -116,6 +120,9 @@ export default function App() {
           <Route path="/together/new" element={<CreateTogetherPage />} />
           <Route path="/together/:id" element={<TogetherPage />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/rides" element={<RidesPage />} />
+          <Route path="/rides/new" element={<PostRidePage />} />
+          <Route path="/rides/:id" element={<RideDetailPage />} />
           <Route path="/ask" element={<AskPage />} />
           <Route path="/map" element={<MapPage />} />
           <Route path="/activities/:id" element={<ActivityDetailPage />} />
@@ -138,6 +145,8 @@ export default function App() {
           <Route path="/settings/safety" element={<SafetySettingsPage />} />
         </Route>
       </Route>
+      {/* shareable ride link — teaser when signed out, the ride when signed in */}
+      <Route element={<AppShell withNav={false} />}><Route path="/r/:id" element={<RideLinkPage />} /></Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

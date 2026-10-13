@@ -524,6 +524,8 @@ export interface ChatRoom {
   memberIds: ID[];
   activityId?: ID;
   orgId?: ID;
+  /** ride group chat (lib/rides) */
+  rideId?: ID;
   title?: string;
   messages: ChatMessage[];
   lastReadAt: Record<ID, string>;
@@ -548,7 +550,7 @@ export interface Notification {
 }
 
 // ─── 신고 ─────────────────────────────────────────────────────────────────
-export type ReportTargetType = 'user' | 'activity' | 'post' | 'message';
+export type ReportTargetType = 'user' | 'activity' | 'post' | 'message' | 'ride';
 
 export interface Report {
   id: ID;

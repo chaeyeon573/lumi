@@ -5,6 +5,7 @@ import type {
 } from '@core/types';
 import type { AcademicDate } from '@core/lib/academic';
 import type { SeatWatchView } from '@core/lib/seats';
+import type { Ride, RideInput, RideTeaser } from '@core/lib/rides';
 
 /** 클라이언트가 보유하는 전체 데이터 스냅샷 (실제 API에서는 필요한 부분만 내려받도록 분리) */
 export interface Snapshot {
@@ -26,12 +27,14 @@ export interface Snapshot {
   games: Game[];
   /** 내가 듣는 수업별 같은 수업 학생 — 저장하지 않고 보는 사람마다 서버가 계산한다 (server/view.ts). 패치에 오면 통째로 바꾼다 */
   classRosters?: ClassRoster[];
+  /** Rides (ride share) — server sends my school's rides, riders and chat only to the people in each ride (server/view.ts) */
+  rides?: Ride[];
 }
 
 /** 변경된 엔티티만 담아 돌려주는 부분 응답. 스토어가 id 기준으로 병합한다. */
 export type Patch = Partial<Omit<Snapshot, 'relationships'>> & {
   relationships?: Relationships;
-  removed?: Partial<Record<'activities' | 'posts' | 'chatRooms' | 'participations' | 'proposals' | 'opportunityIntents' | 'timePolls' | 'organizations' | 'opportunities' | 'schools', ID[]>>;
+  removed?: Partial<Record<'activities' | 'posts' | 'chatRooms' | 'participations' | 'proposals' | 'opportunityIntents' | 'timePolls' | 'organizations' | 'opportunities' | 'schools' | 'rides', ID[]>>;
 };
 
 export interface RegisterInput {
@@ -342,6 +345,18 @@ export interface AroundUApi {
     answer(gameId: ID, userId: ID, choice: 0 | 1): Promise<{ game: Game; patch: Patch }>;
     /** 받은 게임 넘기기 (보낸 사람에게 알리지 않는다) */
     decline(gameId: ID, userId: ID): Promise<Patch>;
+  };
+
+  /** Ride share — post, join, leave; the host can close, reopen, edit or cancel. teaser() works signed out */
+  rides: {
+    create(hostId: ID, input: RideInput): Promise<{ ride: Ride; patch: Patch }>;
+    join(rideId: ID, userId: ID): Promise<{ ride: Ride; roomId: ID; patch: Patch }>;
+    leave(rideId: ID, userId: ID): Promise<Patch>;
+    close(rideId: ID, hostId: ID): Promise<Patch>;
+    reopen(rideId: ID, hostId: ID): Promise<Patch>;
+    cancel(rideId: ID, hostId: ID): Promise<Patch>;
+    update(rideId: ID, hostId: ID, changes: Partial<Pick<RideInput, 'seats' | 'estTotal' | 'note' | 'start' | 'end'>>): Promise<Patch>;
+    teaser(rideId: ID): Promise<RideTeaser | null>;
   };
 
   chats: {

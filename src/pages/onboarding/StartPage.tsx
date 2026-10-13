@@ -12,6 +12,7 @@ import { Button, Field, Input, Textarea } from '@/components/ui';
 import { TopBar } from '@/components/layout/TopBar';
 import { useAiEnabled } from '@/hooks/useAiEnabled';
 import { DEFAULT_FV } from './OnboardingPage';
+import { takeReturnTo } from '@/lib/returnTo';
 
 const en = lang === 'en';
 type Step = 'school' | 'goals' | 'vibe' | 'friday' | 'meet' | 'major' | 'preview' | 'name' | 'email';
@@ -168,7 +169,7 @@ export function StartPage() {
       });
       sessionStorage.removeItem(KEY);
       await setCurrentUser(user);
-      nav('/', { replace: true });
+      nav(takeReturnTo(), { replace: true });
     } catch (e) { showToast((e as Error).message, 'error'); setBusy(false); }
   };
 

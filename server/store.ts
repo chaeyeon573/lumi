@@ -13,7 +13,7 @@ import type { Patch, Snapshot, CatalogCourse } from '@core/api/types';
 import type { ID } from '@core/types';
 
 export type Collection = Exclude<keyof Snapshot, 'relationships'>;
-export const COLLECTIONS: Collection[] = ['users', 'schools', 'organizations', 'activities', 'participations', 'posts', 'proposals', 'chatRooms', 'notifications', 'reports', 'opportunities', 'opportunityIntents', 'timePolls', 'games'];
+export const COLLECTIONS: Collection[] = ['users', 'schools', 'organizations', 'activities', 'participations', 'posts', 'proposals', 'chatRooms', 'notifications', 'reports', 'opportunities', 'opportunityIntents', 'timePolls', 'games', 'rides'];
 
 export interface Account { email: string; userId: ID; createdAt: string }
 export interface Session { token: string; userId: ID; createdAt: string }
@@ -119,7 +119,7 @@ export class PgStore implements Store {
       try {
         await client.query('BEGIN');
         await client.query('DELETE FROM docs');
-        for (const c of COLLECTIONS) for (const item of snapshot[c] as { id: ID }[]) await client.query('INSERT INTO docs (collection, id, data) VALUES ($1, $2, $3)', [c, item.id, JSON.stringify(item)]);
+        for (const c of COLLECTIONS) for (const item of (snapshot[c] ?? []) as { id: ID }[]) await client.query('INSERT INTO docs (collection, id, data) VALUES ($1, $2, $3)', [c, item.id, JSON.stringify(item)]);
         await client.query('INSERT INTO docs (collection, id, data) VALUES ($1, $2, $3)', ['relationships', 'singleton', JSON.stringify(snapshot.relationships)]);
         await client.query('COMMIT');
       } catch (e) { await client.query('ROLLBACK'); throw e; } finally { client.release(); }
@@ -257,7 +257,7 @@ export class FileStore implements Store {
   async applyPatch(patch: Patch) {
     const snap = this.data.snapshot ?? emptySnapshot();
     for (const c of COLLECTIONS) {
-      const list = snap[c] as { id: ID }[];
+      const list = (snap[c] ?? []) as { id: ID }[];
       const byId = new Map(list.map((i) => [i.id, i]));
       for (const item of (patch[c] ?? []) as { id: ID }[]) byId.set(item.id, structuredClone(item));
       for (const id of patch.removed?.[c as keyof NonNullable<Patch['removed']>] ?? []) byId.delete(id);
@@ -320,7 +320,7 @@ export function emptySnapshot(): Snapshot {
   return {
     users: [], schools: [], organizations: [], activities: [], participations: [], posts: [],
     relationships: { likes: [], follows: [], friendRequests: [], friends: [], blocks: [] },
-    proposals: [], chatRooms: [], notifications: [], reports: [], opportunities: [], opportunityIntents: [], timePolls: [], games: [],
+    proposals: [], chatRooms: [], notifications: [], reports: [], opportunities: [], opportunityIntents: [], timePolls: [], games: [], rides: [],
   };
 }
 

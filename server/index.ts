@@ -33,6 +33,7 @@ import { snapshotFor, patchFor } from './view';
 import { TOGETHER_RULES, ruleAllows } from './together-rules';
 import { gameFor } from '@core/lib/icebreakers';
 import { sendCodeMail, sendMail } from './mail';
+import { registerRideRoutes } from './rides';
 import { migrateDemo, demoUserIdFor, rollSampleActivities } from './demo';
 import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError, campusToday } from './ai';
 import type { AiLog } from './store';
@@ -216,6 +217,9 @@ app.post('/api/bootstrap', auth, wrap(async (req: Req) => {
   if (hk.proposals?.length) void store.applyPatch(hk);
   return snapshotFor(db, me);
 }));
+
+// ─── 같이 타기 (rides) — /api/rpc/rides/*, /api/rides/teaser, /r/:id 공유 링크 (server/rides.ts) ─────────
+registerRideRoutes(app, { db: () => db, auth, push(patch) { void store.applyPatch(patch); broadcast(patch); } });
 
 // ─── 학교·이메일 인증 ─────────────────────────────────────────────────────
 /** 인증을 통과한 이메일 (가입 완료 전까지 메모리에만 둔다) */

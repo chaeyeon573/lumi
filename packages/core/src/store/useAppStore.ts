@@ -89,6 +89,7 @@ export const useAppStore = create<AppState>((set, get) => ({
       opportunities: upsert(s.opportunities, patch.opportunities, patch.removed?.opportunities),
       opportunityIntents: upsert(s.opportunityIntents, patch.opportunityIntents, patch.removed?.opportunityIntents),
       timePolls: upsert(s.timePolls, patch.timePolls, patch.removed?.timePolls),
+      rides: patch.rides || patch.removed?.rides ? upsert(s.rides ?? [], patch.rides, patch.removed?.rides) : s.rides,
       games: upsert(s.games ?? [], patch.games),
       // 같은 수업 목록은 서버가 보는 사람마다 통째로 다시 계산해 보낸다
       classRosters: patch.classRosters ?? s.classRosters,

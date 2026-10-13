@@ -17,6 +17,7 @@ import type { Activity, ActivityProposal, ChatRoom, Game, ID, Organization, Part
 import { gameFor, stripGameSecrets } from '@core/lib/icebreakers';
 import { canViewField } from '@core/lib/relations';
 import { buildClassIndex, classRostersFor, schoolOf, type ClassIndex } from '@core/lib/classmates';
+import { ridesFor, ridesPatchFor } from '@core/lib/rides';
 
 /**
  * 오늘의 질문 답은 '지금 시간 되는지'와 같은 성격이라 availability 공개 범위를 따른다 (차단 관계면 안 보인다).
@@ -93,6 +94,7 @@ export function snapshotFor(db: Snapshot, viewerId: ID): Snapshot {
     games: gamesFor(db.games, viewerId),
     chatRooms: db.chatRooms.filter(inRoom(viewerId)),
     proposals: db.proposals.filter(inProposal(viewerId)),
+    rides: ridesFor(db, viewerId), // my school only · blocks both ways · riders & chat only to people in the ride
   };
 }
 
@@ -113,6 +115,7 @@ export function patchFor(patch: Patch, viewerId: ID, db?: Snapshot): Patch | nul
     if (left.length) out.removed = { ...out.removed, chatRooms: [...(out.removed?.chatRooms ?? []), ...left] };
   }
   if (patch.proposals) out.proposals = patch.proposals.filter(inProposal(viewerId));
+  if (patch.rides) { const r = db ? ridesPatchFor(db, patch.rides, viewerId) : { rides: [], removed: [] }; out.rides = r.rides; if (r.removed.length) out.removed = { ...out.removed, rides: [...(out.removed?.rides ?? []), ...r.removed] }; }
   const hasContent = Object.entries(out).some(([k, v]) => (k === 'relationships' ? !!v : k === 'removed' ? !!v && Object.values(v).some((ids) => ids && ids.length) : Array.isArray(v) && v.length > 0));
   return hasContent ? out : null;
 }

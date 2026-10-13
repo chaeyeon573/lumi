@@ -39,7 +39,7 @@ export function SafetySettingsPage() {
         <div className="card p-4">
           <b className="text-[14px] flex items-center gap-1.5"><Flag size={16} className="text-accent" />{t('신고 내역')} {myReports.length}</b>
           {myReports.length === 0 ? <p className="text-[12px] text-ink-3 mt-2">{t('신고 내역이 없어요.')}</p> : (
-            <div className="mt-2 space-y-2">{myReports.map((r) => <div key={r.id} className="text-[12px]"><Tag>{{ user: t('사용자'), activity: t('활동'), post: t('게시물'), message: t('메시지') }[r.targetType]}</Tag> <span className="text-ink-2">{r.reason}</span> <span className="text-ink-3">· {relativeTime(r.createdAt)} {t('· 검토 중')}</span></div>)}</div>
+            <div className="mt-2 space-y-2">{myReports.map((r) => <div key={r.id} className="text-[12px]"><Tag>{{ user: t('사용자'), activity: t('활동'), post: t('게시물'), message: t('메시지'), ride: 'Ride' }[r.targetType]}</Tag> <span className="text-ink-2">{r.reason}</span> <span className="text-ink-3">· {relativeTime(r.createdAt)} {t('· 검토 중')}</span></div>)}</div>
           )}
         </div>
         <p className="text-[11px] text-ink-3 text-center">{t('활동 주최자·참가자 평가와 후기는 다음 버전에서 추가될 예정이에요.')}</p>

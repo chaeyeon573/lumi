@@ -6,6 +6,7 @@ import { useAppStore } from '@core/store/useAppStore';
 import { api, apiMode } from '@core/api';
 import type { Highlights } from '@core/api/types';
 import { useDesign } from '@/lib/design';
+import { takeReturnTo } from '@/lib/returnTo';
 
 export function WelcomePage() {
   const nav = useNavigate();
@@ -23,7 +24,7 @@ export function WelcomePage() {
     try {
       const user = await api.auth.loginDemo(schoolId);
       await setCurrentUser(user);
-      nav('/', { replace: true });
+      nav(takeReturnTo(), { replace: true });
     } catch (e) { showToast((e as Error).message, 'error'); setBusy(false); }
   };
 
@@ -51,7 +52,7 @@ export function WelcomePage() {
     try {
       const user = await api.auth.loginWithCode(email.trim(), code.trim());
       await setCurrentUser(user);
-      nav('/', { replace: true });
+      nav(takeReturnTo(), { replace: true });
     } catch (e) { showToast((e as Error).message, 'error'); setBusy(false); }
   };
 

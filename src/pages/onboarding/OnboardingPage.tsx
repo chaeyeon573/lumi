@@ -13,6 +13,7 @@ import { useAppStore } from '@core/store/useAppStore';
 import { cn } from '@core/lib/cn';
 import { PromptEditor, VoicePromptEditor, PollEditor } from '@/components/prompts/PromptComponents';
 import { REQUIRED_TEXT_PROMPTS, promptsSatisfyRules, FIRST_PROMPT_ID } from '@core/data/prompts';
+import { takeReturnTo } from '@/lib/returnTo';
 
 const STEPS = ['basic', 'school', 'interests', 'profile', 'prompts', 'permissions'] as const;
 type Step = typeof STEPS[number];
@@ -236,7 +237,7 @@ function PermissionsStep({ form, patch }: StepProps) {
       const user = await api.auth.register({ ...input, email: input.email.trim() || undefined, preferredPartner: input.preferredPartner || undefined });
       sessionStorage.removeItem(KEY);
       await setCurrentUser(user);
-      nav('/', { replace: true });
+      nav(takeReturnTo(), { replace: true });
     } catch (e) { showToast((e as Error).message, 'error'); setBusy(false); }
   };
   return (

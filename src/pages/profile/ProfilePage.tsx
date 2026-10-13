@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Settings, Pencil, ShieldCheck, BadgeCheck, CalendarDays, ChevronRight, Users, CalendarCheck, Bookmark, Building2, Quote } from 'lucide-react';
+import { Settings, Pencil, ShieldCheck, BadgeCheck, CalendarDays, ChevronRight, Users, CalendarCheck, Bookmark, Building2, Quote, Car } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { Avatar, Button, CardSkeleton, ErrorState, Tag } from '@/components/ui';
@@ -14,6 +14,7 @@ import { cn } from '@core/lib/cn';
 import { WeekGrid } from '@/components/timetable/WeekGrid';
 import { KeyDatesCard } from '@/components/academic/KeyDatesCard';
 import { SeatWatchCard } from '@/components/seats/SeatWatch';
+import { campusToday } from '@core/lib/rides';
 
 
 /** 나 — 프로필 카드 · 주간 시간표 · 다가오는 약속 (Pastel Breeze) */
@@ -28,6 +29,7 @@ export function ProfilePage() {
   const polls = useAppStore((s) => s.timePolls);
   const intents = useAppStore((s) => s.opportunityIntents);
   const orgs = useAppStore((s) => s.organizations);
+  const rides = useAppStore((s) => s.rides);
   const me = v.me;
   if (status === 'loading') return <div><AppHeader /><CardSkeleton count={2} /></div>;
   if (status === 'error') return <div><AppHeader /><ErrorState message={error ?? undefined} onRetry={init} /></div>;
@@ -44,6 +46,7 @@ export function ProfilePage() {
   const openPolls = polls.filter((p) => p.status === 'open' && (p.hostId === me.id || p.inviteeIds.includes(me.id))).length;
   const saved = intents.filter((i) => i.userId === me.id && (i.saved || i.intent === 'applied')).length;
   const myOrgs = orgs.filter((o) => o.memberIds.includes(me.id) || o.adminIds.includes(me.id)).length;
+  const myRides = (rides ?? []).filter((r) => r.status !== 'cancelled' && r.date >= campusToday() && (r.hostId === me.id || r.memberIds.includes(me.id))).length;
   const dept = me.affiliation.type === 'university' ? `${me.affiliation.department} • ${me.affiliation.schoolName}` : '';
 
   return (
@@ -119,6 +122,7 @@ export function ProfilePage() {
             { icon: <Users size={18} />, label: t('친구'), sub: `${friends}${t('명')}`, to: '/profile/friends' },
             { icon: <CalendarCheck size={18} />, label: 'My Plans', sub: openPolls ? `${t('시간 정하는 중')} ${openPolls}` : t('초대·대기·확정'), to: '/plans' },
             { icon: <Bookmark size={18} />, label: t('저장·지원 내역'), sub: `${saved}${t('개')}`, to: '/community?tab=opportunities&sub=saved' },
+            { icon: <Car size={18} />, label: 'My rides', sub: myRides ? `${myRides} upcoming` : 'Airports, groceries, SF, Tahoe', to: '/rides?mine=1' },
             { icon: <Building2 size={18} />, label: t('가입한 단체'), sub: `${myOrgs}${t('개')}`, to: '/community?tab=opportunities&sub=clubs&kind=mine' },
           ].map((r) => (
             <button key={r.label} onClick={() => nav(r.to)} className="w-full flex items-center gap-3 px-4 py-3 text-left press">
