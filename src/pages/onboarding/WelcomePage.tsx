@@ -5,6 +5,7 @@ import { Button, BottomSheet, Field, Input } from '@/components/ui';
 import { useAppStore } from '@core/store/useAppStore';
 import { api, apiMode } from '@core/api';
 import type { Highlights } from '@core/api/types';
+import { useDesign } from '@/lib/design';
 
 export function WelcomePage() {
   const nav = useNavigate();
@@ -61,10 +62,44 @@ export function WelcomePage() {
   const time = (hhmm?: string) => { if (!hhmm) return ''; const [h, m] = hhmm.split(':').map(Number); return `${((h + 11) % 12) + 1}${m ? `:${String(m).padStart(2, '0')}` : ''}${h < 12 ? 'AM' : 'PM'}`; };
   const daysLeft = hl?.deadline ? Math.max(0, Math.round((Date.parse(`${hl.deadline.deadline}T12:00:00`) - Date.parse(`${new Date().toISOString().slice(0, 10)}T12:00:00`)) / 86400000)) : 0;
   const school = hl?.schoolShort ?? 'Cal';
+  const v2 = useDesign() === 'v2';
   const band = `🍕 FREE FOOD ✦ ⏰ DEADLINES ✦ 🎸 ${hl ? hl.clubs.toLocaleString('en-US') : '1,500+'} CLUBS ✦ 💼 ${hl?.internships ?? 300} INTERNSHIPS ✦ `;
 
   return (
-    <div className="min-h-full flex flex-col relative overflow-hidden bg-[#0C0A14] text-[#F4F1FF]">
+    <div className={`min-h-full flex flex-col relative overflow-hidden ${v2 ? 'bg-[#08070C]' : 'bg-[#0C0A14]'} text-[#F4F1FF]`}>
+      {v2 ? <>
+      {/* Lumi v2 "z1" — 핑크 글로우, 라임 띠, 카드 순서: 무료 음식(어두움) → 지금 시간 되는 사람(핑크) → 마감(종이) */}
+      <div className="pointer-events-none absolute -top-56 -left-48 h-[600px] w-[600px] rounded-full bg-[#FF3DA8] opacity-40 blur-[90px]" />
+      <div className="pointer-events-none absolute top-[420px] -right-64 h-[420px] w-[420px] rounded-full bg-[#D4FF3A] opacity-[.14] blur-[80px]" />
+
+      <div className="relative px-6 pt-12 flex items-center">
+        <span className="font-['Unbounded'] font-extrabold text-[26px] tracking-tight">lumi<span className="text-[#FF3DA8]">.</span></span>
+      </div>
+
+      <div className="relative mt-5 -mx-5 -rotate-3 bg-[#D4FF3A] text-[#0C0A14] py-2 overflow-hidden whitespace-nowrap">
+        <div className="inline-block animate-[marquee_22s_linear_infinite] font-['Unbounded'] font-extrabold text-[13px] tracking-wide">{band.repeat(4)}</div>
+      </div>
+
+      <h1 className="relative font-['Unbounded'] font-extrabold text-[38px] leading-[1.05] px-6 pt-7">What's on<br /><span className="text-[#D4FF3A]">campus</span><br />this week?</h1>
+
+      <div className="relative h-[290px] mt-6 mx-7">
+        <div className="absolute inset-x-0 top-0 rounded-[26px] bg-[#16131F] border border-[#2A2433] px-5 py-4 -rotate-[4deg]">
+          <div className="text-[11px] font-extrabold tracking-[1.2px] uppercase opacity-65">🍕 Free food{hl?.food ? ` · ${day(hl.food.date)} ${time(hl.food.startTime)}` : ''}</div>
+          <div className="font-['Unbounded'] font-semibold text-[17px] leading-tight mt-1.5 truncate">{hl?.food?.title ?? (hl ? `${hl.freeFoodThisWeek} free food events this week` : 'Free food near you')}</div>
+          <div className="text-[12.5px] opacity-70 mt-1.5 truncate">{hl?.food?.place ? `${hl.food.place} · ` : ''}{hl ? `${hl.freeFoodThisWeek} this week` : 'updated daily'}</div>
+        </div>
+        <div className="absolute inset-x-0 top-[92px] rounded-[26px] bg-[#FF3DA8] text-white px-5 py-4 rotate-[2deg] shadow-[0_18px_40px_-12px_rgba(255,61,168,.55)]">
+          <div className="text-[11px] font-extrabold tracking-[1.2px] uppercase opacity-80">👋 Free between classes</div>
+          <div className="font-['Unbounded'] font-semibold text-[17px] leading-tight mt-1.5 truncate">See who's free right now</div>
+          <div className="text-[12.5px] opacity-90 mt-1.5">Add your timetable · grab a coffee</div>
+        </div>
+        <div className="absolute inset-x-0 top-[184px] rounded-[26px] bg-[#F4F1FF] text-[#0C0A14] px-5 py-4 -rotate-[2deg]">
+          <div className="text-[11px] font-extrabold tracking-[1.2px] uppercase opacity-65">🔥 {hl?.deadline ? (daysLeft === 0 ? 'Closes today' : `Closes in ${daysLeft} day${daysLeft === 1 ? '' : 's'}`) : 'Deadlines'}</div>
+          <div className="font-['Unbounded'] font-semibold text-[17px] leading-tight mt-1.5 truncate">{hl?.deadline?.title ?? 'Scholarships, fellowships & internships'}</div>
+          <div className="text-[12.5px] opacity-70 mt-1.5 truncate">{hl?.deadline ? `${new Date(`${hl.deadline.deadline}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} · tap to save` : 'never miss one'}</div>
+        </div>
+      </div>
+      </> : <>
       <div className="pointer-events-none absolute -top-32 -left-36 h-[420px] w-[420px] rounded-full bg-[#7B3FF2] opacity-50 blur-[80px]" />
       <div className="pointer-events-none absolute top-[360px] -right-64 h-[420px] w-[420px] rounded-full bg-[#D4FF3A] opacity-25 blur-[80px]" />
 
@@ -95,6 +130,8 @@ export function WelcomePage() {
           <div className="text-[12.5px] opacity-70 mt-1.5">Add your timetable · grab a coffee</div>
         </div>
       </div>
+
+      </>}
 
       <div className="relative mt-auto px-5 pb-10 pt-6 safe-bottom">
         <button onClick={() => nav(apiMode === 'remote' ? '/start' : '/onboarding/basic')} className="w-full h-[58px] rounded-full bg-[#D4FF3A] text-[#0C0A14] font-['Unbounded'] font-extrabold text-[17px] press">Get in →</button>

@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { Toast } from '@/components/ui';
 import { BottomNav } from './BottomNav';
 import { FeedbackTab } from './FeedbackTab';
+import { DesignToggle } from './DesignToggle';
 
 /** 모바일 프레임. 데스크톱에서는 가운데 430px 폭으로 고정된다. */
 export function AppShell({ withNav = true }: { withNav?: boolean }) {
@@ -13,6 +14,7 @@ export function AppShell({ withNav = true }: { withNav?: boolean }) {
         </div>
         {withNav && <BottomNav />}
         {withNav && <FeedbackTab />}
+        <DesignToggle withNav={withNav} />
         <Toast />
       </div>
     </div>

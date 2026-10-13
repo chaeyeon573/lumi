@@ -15,13 +15,14 @@ export function AppHeader({ search, right }: { search?: boolean; right?: React.R
   );
   return (
     <header className="sticky top-0 z-30 bg-surface/85 backdrop-blur-xl h-16 pl-4 pr-3 flex items-center gap-1.5">
-      <span className="font-display text-[22px] font-extrabold tracking-tight text-primary shrink-0">Lumi</span>
+      <span className="font-display text-[22px] font-extrabold tracking-tight text-primary shrink-0 v2:hidden">Lumi</span>
+      <span className="hidden v2:inline font-['Unbounded'] text-[22px] font-extrabold tracking-tight text-ink shrink-0">lumi<span className="text-pink-400">.</span></span>
       <span className="flex-1" />
       {right}
       {search && <Btn onClick={() => nav('/search?tab=people')} label={t('검색')}><Search size={22} /></Btn>}
       <Btn onClick={() => nav('/notifications')} badge={counts.bell} label={t('알림')}><Bell size={22} /></Btn>
       <Btn onClick={() => nav('/chats')} badge={counts.chats} label={t('메시지')}><MessageCircle size={22} /></Btn>
-      <button onClick={() => nav('/profile')} aria-label={t('프로필')} className="ml-1 shrink-0">{v.me.avatar.url ? <Avatar emoji={v.me.avatar.emoji} hue={v.me.avatar.hue} url={v.me.avatar.url} size={32} /> : <span className="h-8 w-8 rounded-full bg-primary text-white grid place-items-center"><User size={17} /></span>}</button>
+      <button onClick={() => nav('/profile')} aria-label={t('프로필')} className="ml-1 shrink-0">{v.me.avatar.url ? <Avatar emoji={v.me.avatar.emoji} hue={v.me.avatar.hue} url={v.me.avatar.url} size={32} /> : <span className="h-8 w-8 rounded-full bg-primary text-white v2:text-on-primary grid place-items-center"><User size={17} /></span>}</button>
     </header>
   );
 }

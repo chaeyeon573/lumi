@@ -15,7 +15,7 @@ export function FeedbackTab() {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <button onClick={() => setOpen(true)} aria-label={L.tab} className="absolute right-3 bottom-[84px] z-20 h-8 pl-2.5 pr-3 rounded-full bg-primary/90 backdrop-blur text-white text-[11px] font-bold flex items-center gap-1 shadow-[0_6px_16px_-4px_rgba(15,43,72,.35)] press"><MessageSquareText size={13} />{L.tab}</button>
+      <button onClick={() => setOpen(true)} aria-label={L.tab} className="absolute right-3 bottom-[84px] z-20 h-8 pl-2.5 pr-3 rounded-full bg-primary/90 backdrop-blur text-white text-[11px] font-bold flex items-center gap-1 shadow-[0_6px_16px_-4px_rgba(15,43,72,.35)] press v2:bg-surface-2/90 v2:text-ink-2 v2:border v2:border-line v2:shadow-[0_6px_16px_-4px_rgba(0,0,0,.6)]"><MessageSquareText size={13} />{L.tab}</button>
       <FeedbackSheet open={open} onClose={() => setOpen(false)} />
     </>
   );

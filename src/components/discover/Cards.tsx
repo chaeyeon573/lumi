@@ -27,9 +27,9 @@ export function NowCard({ activity: a, inMin }: { activity: Activity; inMin: num
   const faces = [a.hostId, ...approved.map((p) => p.userId)].slice(0, 4).map((id) => v.userById(id)).filter(Boolean);
   const Icon = CATEGORY_ICON[a.category];
   return (
-    <article className="rounded-[24px] p-5 flex flex-col min-h-[196px]" style={{ background: CATEGORY_TINT[a.category] }}>
+    <article className="rounded-[24px] p-5 flex flex-col min-h-[196px] v2:bg-pink-900! v2:border v2:border-pink-800" style={{ background: CATEGORY_TINT[a.category] }}>
       <button onClick={() => nav(`/activities/${a.id}`)} className="text-left flex-1">
-        <div className="flex items-center gap-1.5 text-[12px] font-bold tracking-wide uppercase text-ink/70"><Icon size={14} />{CATEGORY_LABELS[a.category]}</div>
+        <div className="flex items-center gap-1.5 text-[12px] font-bold tracking-wide uppercase text-ink/70 v2:text-pink-300"><Icon size={14} />{CATEGORY_LABELS[a.category]}</div>
         <h3 className="font-display text-[24px] leading-[1.15] font-bold mt-2 line-clamp-2">{a.sample && <SampleTag className="!bg-white/25 !text-current" />}{a.title}</h3>
         <p className="mt-2 text-[14px] text-ink/80 flex items-center gap-1"><b className="text-ink">{when}</b> · {place.name}{place.approximate && <Lock size={12} />}</p>
       </button>
@@ -51,8 +51,8 @@ export function ActivityTile({ activity: a }: { activity: Activity }) {
   const org = a.orgId ? v.orgById(a.orgId) : undefined;
   const Icon = CATEGORY_ICON[a.category];
   return (
-    <button onClick={() => nav(`/activities/${a.id}`)} className="rounded-[22px] p-4 text-left flex flex-col aspect-[4/5] press" style={{ background: CATEGORY_TINT[a.category] }}>
-      <div className="flex items-center justify-between"><span className="h-8 w-8 rounded-full bg-white/60 grid place-items-center"><Icon size={15} /></span><ArrowUpRight size={16} className="text-ink/50" /></div>
+    <button onClick={() => nav(`/activities/${a.id}`)} className="rounded-[22px] p-4 text-left flex flex-col aspect-[4/5] press v2:bg-surface! v2:border v2:border-line" style={{ background: CATEGORY_TINT[a.category] }}>
+      <div className="flex items-center justify-between"><span className="h-8 w-8 rounded-full bg-white/60 grid place-items-center v2:bg-surface-2 v2:text-pink-300"><Icon size={15} /></span><ArrowUpRight size={16} className="text-ink/50" /></div>
       <h3 className="font-display text-[19px] leading-[1.15] font-bold mt-auto line-clamp-3">{a.sample && <SampleTag className="!bg-white/25 !text-current" />}{a.title}</h3>
       <p className="mt-1.5 text-[12px] text-ink/70">{formatDate(a.date)} · {formatTime(a.startTime)}</p>
       <div className="mt-2.5 flex items-center gap-1.5 text-[12px] text-ink/70">{org ? <Avatar emoji={org.logo.emoji} hue={org.logo.hue} url={org.logo.url} size={20} /> : host && <Avatar emoji={host.avatar.emoji} hue={host.avatar.hue} url={host.avatar.url} size={20} />}<span className="truncate">{org?.name ?? host?.nickname}</span></div>
@@ -66,8 +66,8 @@ export function OpportunityTile({ o }: { o: Opportunity }) {
   const n = intents.filter((i) => i.opportunityId === o.id).length;
   const Icon = OPP_ICON[o.type];
   return (
-    <button onClick={() => nav(`/opportunities/${o.id}`)} className="rounded-[22px] p-4 text-left flex flex-col aspect-[4/5] press bg-surface-2" style={{ background: `${OPP_TINT[o.type]}66` }}>
-      <div className="flex items-center justify-between"><span className="h-8 w-8 rounded-full bg-white/70 grid place-items-center"><Icon size={15} /></span>{o.deadline && <span className="text-[11px] font-bold text-ink/60">{dday(o.deadline)}</span>}</div>
+    <button onClick={() => nav(`/opportunities/${o.id}`)} className="rounded-[22px] p-4 text-left flex flex-col aspect-[4/5] press bg-surface-2 v2:bg-surface! v2:border v2:border-line" style={{ background: `${OPP_TINT[o.type]}66` }}>
+      <div className="flex items-center justify-between"><span className="h-8 w-8 rounded-full bg-white/70 grid place-items-center v2:bg-surface-2 v2:text-pink-300"><Icon size={15} /></span>{o.deadline && <span className="text-[11px] font-bold text-ink/60 v2:text-night v2:bg-lime-400 v2:rounded-md v2:px-1.5 v2:h-5 v2:grid v2:place-items-center">{dday(o.deadline)}</span>}</div>
       <h3 className="font-display text-[19px] leading-[1.15] font-bold mt-auto line-clamp-3">{o.title}</h3>
       <p className="mt-1.5 text-[12px] text-ink/70">{o.date ? `${formatDate(o.date)} · ` : ''}{OPP_TYPE_LABELS[o.type]}</p>
       <p className="mt-2.5 text-[12px] text-ink/70 flex items-center gap-1"><Users size={12} />{n}{t('명 관심')}</p>
@@ -84,7 +84,7 @@ export function TeamRow({ activity: a }: { activity: Activity }) {
   const Icon = CATEGORY_ICON[a.category];
   return (
     <div className="flex items-center gap-3 py-3.5">
-      <span className="h-12 w-12 rounded-2xl grid place-items-center shrink-0" style={{ background: CATEGORY_TINT[a.category] }}><Icon size={18} /></span>
+      <span className="h-12 w-12 rounded-2xl grid place-items-center shrink-0 v2:bg-surface-2! v2:text-pink-300" style={{ background: CATEGORY_TINT[a.category] }}><Icon size={18} /></span>
       <button onClick={() => nav(`/activities/${a.id}`)} className="flex-1 min-w-0 text-left">
         <h3 className="text-[15px] font-bold leading-snug line-clamp-1">{a.sample && <SampleTag />}{a.title}</h3>
         <p className={cn('text-[12px] mt-0.5 truncate', fit ? 'text-primary font-semibold' : 'text-ink-3')}>{a.courseName ? `${a.courseName} · ${a.crewType ? CREW_TYPE_LABELS[a.crewType] : ''}` : roles.map((r) => PERSON_ROLE_LABELS[r]).join(' · ')}{fit ? ` · ${t('내 역할')}` : ''}</p>
@@ -100,7 +100,7 @@ export function OpportunityRow({ o }: { o: Opportunity }) {
   const Icon = OPP_ICON[o.type];
   return (
     <button onClick={() => nav(`/opportunities/${o.id}`)} className="w-full flex items-center gap-3 py-3.5 text-left press">
-      <span className="h-12 w-12 rounded-2xl grid place-items-center shrink-0" style={{ background: `${OPP_TINT[o.type]}99` }}><Icon size={18} /></span>
+      <span className="h-12 w-12 rounded-2xl grid place-items-center shrink-0 v2:bg-surface-2! v2:text-pink-300" style={{ background: `${OPP_TINT[o.type]}99` }}><Icon size={18} /></span>
       <span className="flex-1 min-w-0"><h3 className="text-[15px] font-bold leading-snug line-clamp-1">{o.title}</h3><p className="text-[12px] text-ink-3 mt-0.5 truncate">{(o.rolesNeeded ?? []).map((r) => PERSON_ROLE_LABELS[r]).join(' · ') || OPP_TYPE_LABELS[o.type]}</p></span>
       {o.deadline && <span className="text-[12px] font-bold text-ink-3">{dday(o.deadline)}</span>}
     </button>

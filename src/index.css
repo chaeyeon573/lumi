@@ -35,11 +35,74 @@
   --color-peach: #FFD2B5;
   --color-sage: #C7D8B8;
 
+  /* 의미 토큰 — 기본(classic)에서는 위 값과 같아서 화면이 그대로다. v2에서 따로 갈린다 */
+  --color-title: #0F2B48;          /* text-primary 가 실제로 쓰는 색: 제목·링크 */
+  --text-color-primary: var(--color-title);
+  --color-on-primary: #FFFFFF;     /* bg-primary 위 글자 */
+
+  /* Lumi v2 스케일 (docs/design/lumi-v2) — classic 화면은 쓰지 않는다 */
+  --color-pink-900: #2A0E20;
+  --color-pink-800: #5C1640;
+  --color-pink-600: #C42683;
+  --color-pink-400: #FF3DA8;
+  --color-pink-300: #FF7AC0;
+  --color-pink-200: #FFB3D9;
+  --color-pink-100: #FFE0F0;
+  --color-lime-900: #1C220A;
+  --color-lime-800: #4A5A12;
+  --color-lime-600: #A9CC1F;
+  --color-lime-400: #D4FF3A;
+  --color-lime-200: #E6FF8F;
+  --color-lime-100: #F4FFD1;
+  --color-night: #0C0A14;          /* 라임 위 글자 */
+
   --radius-xl2: 20px;
   --radius-xl3: 28px;
   --shadow-card: 0 12px 32px -4px rgba(15, 43, 72, 0.08);
   --shadow-float: 0 12px 32px rgba(15, 43, 72, 0.28);
   --shadow-sheet: 0 -8px 40px rgba(20, 22, 31, 0.14);
+}
+
+/* ─── 디자인 스위치: <html data-design="v2"> (src/lib/design.ts) ───────────────
+   토큰만 갈아 끼워 모든 화면이 한꺼번에 바뀐다. classic은 위 @theme 값 그대로. */
+@custom-variant v2 (&:where([data-design="v2"], [data-design="v2"] *));
+
+:root[data-design="v2"] {
+  color-scheme: dark;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-display: "Unbounded", "Inter", -apple-system, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+
+  --color-bg: #08070C;
+  --color-surface: #16131F;
+  --color-surface-2: #1F1B2B;
+  --color-line: #2A2433;
+  --color-ink: #F4F1FF;
+  --color-ink-2: #A79FC4;
+  --color-ink-3: #6E6889;
+
+  /* primary = 라임 버튼(한 화면에 하나), 제목·링크(text-primary)는 밝은 글자로 */
+  --color-primary: #D4FF3A;
+  --color-primary-deep: #A9CC1F;
+  --color-primary-soft: #2A0E20;
+  --color-title: #F4F1FF;
+  --color-on-primary: #0C0A14;
+
+  /* 핑크는 어두운 틴트 + 작은 라벨로 */
+  --color-accent: #FF3DA8;
+  --color-accent-soft: #2A0E20;
+  --color-heart: #FF3DA8;
+  --color-heart-soft: #2A0E20;
+  --color-verify: #FF7AC0;
+  --color-mint: #D4FF3A;
+  --color-mint-soft: #1C220A;
+  --color-gold: #FFC94D;
+  --color-gold-soft: #2A2410;
+  --color-danger: #FF5C7A;
+  --color-danger-soft: #3A1020;
+
+  --shadow-card: none;
+  --shadow-float: 0 10px 28px rgba(0, 0, 0, 0.5);
+  --shadow-sheet: 0 -8px 40px rgba(0, 0, 0, 0.6);
 }
 
 html, body, #root { height: 100%; }
@@ -53,6 +116,7 @@ body {
 }
 @media (min-width: 640px) {
   body { background: #EEF0EA; }
+  [data-design="v2"] body { background: #000000; }
 }
 
 * { box-sizing: border-box; }
@@ -131,3 +195,22 @@ input, textarea, select { font: inherit; }
   white-space: nowrap; font-size: 11px; font-weight: 600; color: #4B5060;
   background: rgba(255,255,255,.85); padding: 2px 7px; border-radius: 8px; border: 1px solid #E6E8EF;
 }
+
+/* ─── v2: 토큰만으로 안 갈리는 곳 (화면 파일을 건드리지 않고 대비만 맞춘다) ─── */
+[data-design="v2"] .card { border-color: var(--color-line); }
+/* Unbounded는 넓다 — 같은 font-size로도 제목이 두 줄이 되지 않게 x-height 기준으로 줄인다 */
+[data-design="v2"] .font-display { font-size-adjust: ex-height 0.5; letter-spacing: -0.01em; }
+/* 라임·밝은 바탕 위 흰 글자 → 어두운 글자
+   (자기 v2 글자색을 따로 정한 요소는 건드리지 않는다) */
+[data-design="v2"] :is(.bg-primary, .bg-mint).text-white:not([class*="v2:text-"]) { color: var(--color-on-primary); }
+[data-design="v2"] .bg-ink.text-white:not([class*="v2:text-"]) { color: var(--color-bg); }
+/* 밝은 그라데이션 카드(오늘의 질문·모집 공고 등) → 어두운 표면 */
+[data-design="v2"] [class*="bg-[linear-gradient(120deg,#"] { background-image: none; background-color: var(--color-surface-2); }
+[data-design="v2"] .bg-white:is(.rounded-xl, .shadow-lg),
+[data-design="v2"] :is([class*="bg-white/8"], [class*="bg-white/9"]) { background-color: rgb(22 19 31 / .85); }
+[data-design="v2"] .ring-white { --tw-ring-color: var(--color-surface); }
+[data-design="v2"] .text-\[\#B57A0E\] { color: var(--color-gold); }
+/* 제목 옆 아이콘은 핑크 300 (작은 라벨·아이콘) */
+[data-design="v2"] svg.text-primary { color: var(--color-pink-300); }
+[data-design="v2"] .skeleton { background: linear-gradient(90deg, #16131F 0%, #221D2E 40%, #16131F 80%); background-size: 800px 100%; }
+[data-design="v2"] .au-landmark { color: var(--color-ink-2); background: rgba(22,19,31,.85); border-color: var(--color-line); }

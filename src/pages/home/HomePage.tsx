@@ -95,7 +95,7 @@ export function HomePage() {
             <div className="flex items-center gap-5">
               <button onClick={undo} disabled={idx === 0} aria-label={lang === 'en' ? 'Previous' : '이전 카드'} className="h-11 w-11 rounded-full grid place-items-center press bg-surface-2 text-ink-2 disabled:opacity-40"><RotateCcw size={18} /></button>
               <button onClick={() => deck.current?.fly('left')} aria-label={t('넘기기')} className="h-[68px] w-[68px] rounded-full grid place-items-center press bg-surface-2 text-ink-2"><X size={28} /></button>
-              <button onClick={() => (v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? nav(`/users/${current.u.id}`) : deck.current?.fly('right'))} aria-label={t('친구로 연결')} className={cn('h-[84px] w-[84px] rounded-full grid place-items-center press shadow-[0_12px_28px_-6px_rgba(15,43,72,.35)]', v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? 'bg-primary text-white' : 'bg-accent text-primary')}>{v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? <Hand size={32} /> : <Heart size={34} />}</button>
+              <button onClick={() => (v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? nav(`/users/${current.u.id}`) : deck.current?.fly('right'))} aria-label={t('친구로 연결')} className={cn('h-[84px] w-[84px] rounded-full grid place-items-center press shadow-[0_12px_28px_-6px_rgba(15,43,72,.35)]', v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? 'bg-primary text-white' : 'bg-accent text-primary v2:bg-lime-400 v2:text-night v2:shadow-[0_12px_28px_-8px_rgba(212,255,58,.35)]')}>{v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? <Hand size={32} /> : <Heart size={34} />}</button>
               <button onClick={() => setSaved((s) => tog(s, current.u.id))} aria-label={t('나중에 보기')} className={cn('h-11 w-11 rounded-full grid place-items-center press', saved.includes(current.u.id) ? 'bg-primary text-white' : 'bg-surface-2 text-primary')}><Bookmark size={18} fill={saved.includes(current.u.id) ? 'currentColor' : 'none'} /></button>
             </div>
             <p className="text-[12px] text-ink-3">{lang === 'en' ? `${idx + 1} / ${cards.length} · Swipe left to pass, right to connect` : `${idx + 1} / ${cards.length} · 왼쪽으로 넘기기, 오른쪽으로 연결`}</p>
@@ -220,20 +220,20 @@ export function PersonSlide({ user, reasons, onOpen }: { user: User; reasons: Re
     else onOpen();
   };
   return (
-    <article className="relative h-full w-full rounded-[32px] overflow-hidden bg-primary text-white select-none shadow-[0_16px_36px_-6px_rgba(15,43,72,.12)]">
+    <article className="relative h-full w-full rounded-[32px] overflow-hidden bg-primary text-[#fff] select-none shadow-[0_16px_36px_-6px_rgba(15,43,72,.12)] v2:bg-surface v2:border v2:border-line v2:shadow-none">
       <div className="absolute inset-0" onClick={tap}>
         {photos.length > 0 ? <img src={assetUrl(photos[pi])} alt="" className="absolute inset-0 h-full w-full object-cover" draggable={false} /> : <span className="absolute inset-0 grid place-items-center text-[96px]">{user.avatar.emoji}</span>}
-        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,43,72,.88)_0%,rgba(15,43,72,.25)_45%,rgba(15,43,72,0)_70%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,43,72,.88)_0%,rgba(15,43,72,.25)_45%,rgba(15,43,72,0)_70%)] v2:bg-[linear-gradient(to_top,rgba(8,7,12,.95)_0%,rgba(8,7,12,.45)_45%,rgba(8,7,12,0)_70%)]" />
       </div>
       {photos.length > 1 && <div className="absolute top-3 inset-x-4 flex gap-1">{photos.map((_, i) => <span key={i} className={cn('h-[3px] flex-1 rounded-full', i === pi ? 'bg-white' : 'bg-white/40')} />)}</div>}
-      {freeLabel && <span className="absolute top-6 left-4 h-8 pl-3 pr-3.5 rounded-full bg-white/85 backdrop-blur text-primary text-[12px] font-semibold flex items-center gap-1.5"><Clock size={14} className="text-verify" />{freeLabel}</span>}
-      {user.affiliation.type === 'university' && user.affiliation.emailVerified && <span className="absolute top-6 right-4 h-8 w-8 rounded-full bg-white/85 backdrop-blur grid place-items-center"><BadgeCheck size={16} className="text-verify" /></span>}
+      {freeLabel && <span className="absolute top-6 left-4 h-8 pl-3 pr-3.5 rounded-full bg-[#fff]/85 backdrop-blur text-primary text-[12px] font-semibold flex items-center gap-1.5 v2:bg-lime-900/90 v2:text-lime-400 v2:border v2:border-lime-800"><Clock size={14} className="text-verify v2:text-lime-400" />{freeLabel}</span>}
+      {user.affiliation.type === 'university' && user.affiliation.emailVerified && <span className="absolute top-6 right-4 h-8 w-8 rounded-full bg-[#fff]/85 backdrop-blur grid place-items-center v2:bg-surface/85"><BadgeCheck size={16} className="text-verify" /></span>}
       <div className="absolute inset-x-0 bottom-0 p-6 pointer-events-none">
         {user.sample && <span className="inline-flex mb-1.5 h-6 px-2.5 rounded-full bg-white/20 backdrop-blur text-[11px] font-semibold items-center">{lang === 'en' ? 'Sample profile' : '예시 프로필'}</span>}
-        <div className="flex items-baseline gap-2"><h2 className="font-display text-[30px] leading-tight font-bold">{user.nickname}</h2><span className="text-[22px] opacity-90">{new Date().getFullYear() - user.birthYear + 1}</span></div>
-        <div className="text-[15px] text-accent">{dept}{gradYear(user) ? ` • ${user.affiliation.type === 'university' && user.affiliation.showSchool ? user.affiliation.schoolName.replace(/대학교|University|UC /g, '').trim() : ''} ${gradYear(user)}` : ''}</div>
-        {(want || reason) && <div className="mt-2.5 inline-flex items-center gap-2 max-w-full h-9 px-3.5 rounded-full bg-white/15 backdrop-blur text-[13px] font-medium"><Zap size={15} className="text-accent shrink-0" /><span className="truncate">{want ?? reason?.text}</span></div>}
-        <div className="mt-3 flex flex-wrap gap-1.5">{(common.length ? common : user.interests).slice(0, 3).map((i) => <span key={i} className="h-8 px-3.5 rounded-full bg-primary-soft text-primary text-[12px] font-semibold flex items-center">{INTEREST_LABELS[i]}</span>)}</div>
+        <div className="flex items-baseline gap-2"><h2 className="font-display text-[30px] leading-tight font-bold v2:font-extrabold v2:text-[28px]">{user.nickname}</h2><span className="text-[22px] opacity-90 v2:font-display v2:text-[20px] v2:opacity-60">{new Date().getFullYear() - user.birthYear + 1}</span></div>
+        <div className="text-[15px] text-accent v2:text-ink-2 v2:text-[14px]">{dept}{gradYear(user) ? ` • ${user.affiliation.type === 'university' && user.affiliation.showSchool ? user.affiliation.schoolName.replace(/대학교|University|UC /g, '').trim() : ''} ${gradYear(user)}` : ''}</div>
+        {(want || reason) && <div className="mt-2.5 inline-flex items-center gap-2 max-w-full h-9 px-3.5 rounded-full bg-white/15 backdrop-blur text-[13px] font-medium v2:bg-pink-900/90 v2:border v2:border-pink-800"><Zap size={15} className="text-accent shrink-0 v2:text-pink-300" /><span className="truncate">{want ?? reason?.text}</span></div>}
+        <div className="mt-3 flex flex-wrap gap-1.5">{(common.length ? common : user.interests).slice(0, 3).map((i) => <span key={i} className="h-8 px-3.5 rounded-full bg-primary-soft text-primary text-[12px] font-semibold flex items-center v2:bg-surface-2/90 v2:text-ink v2:border v2:border-line">{INTEREST_LABELS[i]}</span>)}</div>
       </div>
     </article>
   );

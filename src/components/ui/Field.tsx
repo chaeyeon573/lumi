@@ -15,7 +15,7 @@ export function Field({ label, hint, children, right, required }: { label: strin
   );
 }
 
-const base = 'w-full bg-surface border border-[#B1E5FF] rounded-2xl px-3.5 text-[14px] text-ink placeholder:text-ink-3 focus:outline-none focus:border-primary focus:bg-surface transition';
+const base = 'w-full bg-surface border border-[#B1E5FF] v2:border-line rounded-2xl px-3.5 text-[14px] text-ink placeholder:text-ink-3 focus:outline-none focus:border-primary focus:bg-surface transition';
 
 export function Input({ className, ...rest }: InputHTMLAttributes<HTMLInputElement>) {
   return <input className={cn(base, 'h-11', className)} {...rest} />;
@@ -53,7 +53,7 @@ export function Segmented<T extends string>({ value, onChange, options, classNam
     <div className={cn('flex bg-surface-2 rounded-full p-1 gap-1', className)}>
       {options.map((o) => (
         <button key={o.value} type="button" onClick={() => onChange(o.value)}
-          className={cn('flex-1 h-9 rounded-full text-[13px] font-semibold transition', value === o.value ? 'bg-primary text-white' : 'text-ink-2')}>
+          className={cn('flex-1 h-9 rounded-full text-[13px] font-semibold transition', value === o.value ? 'bg-primary text-white v2:bg-lime-900 v2:text-lime-400' : 'text-ink-2')}>
           {o.label}
         </button>
       ))}

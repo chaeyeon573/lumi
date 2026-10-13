@@ -60,7 +60,7 @@ export function BottomNav() {
           {items.slice(0, 2).map((it) => <NavItem key={it.to} {...it} />)}
           <div className="grid place-items-center">
             <button onClick={() => setOpen(true)} aria-label={t('만들기')}
-              className="-mt-6 h-[60px] w-[60px] rounded-full bg-primary text-white grid place-items-center shadow-[var(--shadow-float)] press">
+              className="-mt-6 h-[60px] w-[60px] rounded-full bg-primary text-white grid place-items-center shadow-[var(--shadow-float)] press v2:bg-surface-2 v2:text-lime-400 v2:border v2:border-line">
               <Plus size={28} strokeWidth={2.4} />
             </button>
           </div>
@@ -86,8 +86,8 @@ export function BottomNav() {
 
 function NavItem({ to, label, Icon }: { to: string; label: string; Icon: typeof Users }) {
   return (
-    <NavLink to={to} end={to === '/'} className={({ isActive }) => cn('flex flex-col items-center justify-center gap-1 h-full text-[11px] font-semibold', isActive ? 'text-primary' : 'text-ink-3')}>
-      {({ isActive }) => (<><Icon size={24} strokeWidth={isActive ? 2.4 : 1.8} />{label}</>)}
+    <NavLink to={to} end={to === '/'} className={({ isActive }) => cn('flex flex-col items-center justify-center gap-1 v2:gap-0.5 h-full text-[11px] font-semibold', isActive ? 'text-primary' : 'text-ink-3')}>
+      {({ isActive }) => (<><Icon size={24} strokeWidth={isActive ? 2.4 : 1.8} />{label}{isActive && <span className="hidden v2:block h-1 w-1 rounded-full bg-lime-400" />}</>)}
     </NavLink>
   );
 }

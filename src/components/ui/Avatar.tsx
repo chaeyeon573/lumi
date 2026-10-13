@@ -27,7 +27,7 @@ export function Avatar({ emoji, hue, url, size = 44, className, ring }: AvatarPr
       }}
     >
       {/^[A-Z0-9ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ•]{1,3}$/.test(emoji)
-        ? <span className="font-display font-extrabold text-primary" style={{ lineHeight: 1, fontSize: size * (emoji.length > 2 ? 0.3 : 0.36) }}>{emoji}</span>
+        ? <span className="font-display font-extrabold text-primary v2:text-night" style={{ lineHeight: 1, fontSize: size * (emoji.length > 2 ? 0.3 : 0.36) }}>{emoji}</span>
         : <span style={{ lineHeight: 1 }}>{emoji}</span>}
     </div>
   );

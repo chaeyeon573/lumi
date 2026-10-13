@@ -20,7 +20,7 @@ export function Chip({ active, onClick, children, className, color, size = 'md' 
       className={cn(
         'inline-flex items-center gap-1 rounded-full border font-medium whitespace-nowrap press',
         size === 'md' ? 'h-9 px-3.5 text-[13px]' : 'h-7 px-2.5 text-[12px]',
-        active ? 'bg-primary text-white border-primary' : 'bg-surface-2 text-ink border-transparent',
+        active ? 'bg-primary text-white border-primary v2:bg-lime-900 v2:text-lime-400 v2:border-lime-800' : 'bg-surface-2 text-ink border-transparent v2:text-ink-2',
         !onClick && 'pointer-events-none',
         className,
       )}
@@ -37,10 +37,10 @@ export function ChipRow({ children, className }: { children: ReactNode; classNam
 export function Tag({ children, tone = 'neutral', className }: { children: ReactNode; tone?: 'neutral' | 'primary' | 'mint' | 'gold' | 'danger' | 'accent' | 'heart'; className?: string }) {
   const tones = {
     neutral: 'bg-surface-2 text-ink-2',
-    primary: 'bg-primary-soft text-primary',
+    primary: 'bg-primary-soft text-primary v2:text-pink-300',
     mint: 'bg-mint-soft text-mint',
     gold: 'bg-gold-soft text-[#B57A0E]',
-    danger: 'bg-danger-soft text-danger',
+    danger: 'bg-danger-soft text-danger v2:bg-lime-400 v2:text-night', // D-day(마감 임박) 배지 — v2에서는 라임
     accent: 'bg-accent-soft text-accent',
     heart: 'bg-heart-soft text-heart',
   };

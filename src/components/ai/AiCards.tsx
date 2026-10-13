@@ -22,7 +22,7 @@ export function AiCardView({ card, compact }: { card: AiCard; compact?: boolean 
           <span className="block text-[12px] text-ink-3 mt-0.5 truncate">{[OPP_TYPE_LABELS[card.type], card.host, card.date ? `${fmtDate(card.date)}${card.startTime ? ` ${card.startTime}` : ''}` : '', card.place].filter(Boolean).join(' · ')}</span>
           {!compact && card.benefit && <span className="block text-[12px] text-ink-2 mt-0.5 truncate">{card.benefit}</span>}
         </span>
-        {card.deadline && <span className={cn('h-6 px-2 rounded-full text-[11px] font-bold shrink-0 grid place-items-center', soon ? 'bg-danger/10 text-danger' : 'bg-surface-2 text-ink-2')}>{dday(card.deadline)}</span>}
+        {card.deadline && <span className={cn('h-6 px-2 rounded-full text-[11px] font-bold shrink-0 grid place-items-center', soon ? 'bg-danger/10 text-danger v2:bg-lime-400 v2:text-night' : 'bg-surface-2 text-ink-2')}>{dday(card.deadline)}</span>}
       </button>
     );
   }
