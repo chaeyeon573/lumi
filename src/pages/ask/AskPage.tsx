@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowUp, Sparkles } from 'lucide-react';
+import { ArrowUp, Sparkles, Square } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { api } from '@core/api';
 import type { AiCard } from '@core/api/types';
@@ -17,8 +17,8 @@ const L = lang === 'en'
   : { title: 'Ask Lumi', hello: '우리 학교 행사, 무료 음식, 동아리, 수업, 공고에 대해 물어보세요.', note: 'Lumi에 있는 정보로만 답해요 — 지원 전에는 공식 페이지를 꼭 확인하세요.', placeholder: '캠퍼스에 대해 무엇이든 물어보세요…', thinking: '캠퍼스 정보를 찾는 중…', off: '아직 AI 도우미가 켜져 있지 않아요.', clear: '새 대화' };
 
 const EXAMPLES = lang === 'en'
-  ? ['Free food on campus today?', 'Summer internships in finance for a sophomore', 'Clubs for climbing or photography', 'Hackathons I can join this month', 'Any scholarships with deadlines soon?']
-  : ['오늘 캠퍼스에 무료 음식 있어?', '2학년이 지원할 수 있는 금융 여름 인턴', '클라이밍이나 사진 동아리', '이번 달에 나갈 수 있는 해커톤', '마감 임박한 장학금 있어?'];
+  ? ['I want to get into AI research — where do I start?', 'Internships near Berkeley for a sophomore', 'Hackathons I can still sign up for', 'Scholarships I can apply to this month', 'Free food on campus today?']
+  : ['AI 연구 해보고 싶어, 뭐부터 하면 돼?', '버클리 근처 인턴십 있어?', '아직 신청할 수 있는 해커톤', '이번 달에 지원할 수 있는 장학금', '오늘 캠퍼스에 무료 음식 있어?'];
 
 /** **굵게** 와 줄머리 '- ' 정도만 그린다 */
 function RichText({ text }: { text: string }) {
@@ -41,22 +41,42 @@ export function AskPage() {
   const [turns, setTurns] = useState<Turn[]>(() => { try { return JSON.parse(sessionStorage.getItem(KEY) ?? '[]'); } catch { return []; } });
   const [text, setText] = useState('');
   const [busy, setBusy] = useState(false);
+  // 생각하는 동안 보낸 질문 — 지금 답이 끝나면 이어서 묻는다
+  const [queue, setQueue] = useState<string[]>([]);
+  const runId = useRef(0);
   const end = useRef<HTMLDivElement>(null);
   useEffect(() => { try { sessionStorage.setItem(KEY, JSON.stringify(turns.slice(-20))); } catch { /* */ } end.current?.scrollIntoView({ behavior: 'smooth', block: 'end' }); }, [turns, busy]);
 
-  const send = async (q: string) => {
-    const question = q.trim();
-    if (!question || busy) return;
-    const next: Turn[] = [...turns, { role: 'user', content: question }];
-    setTurns(next); setText(''); setBusy(true);
+  const ask = async (upto: Turn[]) => {
+    const id = ++runId.current;
+    setBusy(true);
     try {
-      const history = next.filter((x) => !x.error).map((x) => ({ role: x.role, content: x.content }));
+      const history = upto.filter((x) => !x.error).map((x) => ({ role: x.role, content: x.content }));
       const r = await api.ai.ask(history);
+      if (id !== runId.current) return; // 멈춘 질문의 답은 버린다
       setTurns((cur) => [...cur, { role: 'assistant', content: r.answer, cards: r.cards }]);
     } catch (e) {
+      if (id !== runId.current) return;
       setTurns((cur) => [...cur, { role: 'assistant', content: (e as Error).message, error: true }]);
-    } finally { setBusy(false); }
+    } finally { if (id === runId.current) setBusy(false); }
   };
+  const send = (q: string) => {
+    const question = q.trim();
+    if (!question) return;
+    setText('');
+    setTurns((cur) => [...cur, { role: 'user', content: question }]);
+    if (busy) { setQueue((x) => [...x, question]); return; }
+    void ask([...turns, { role: 'user', content: question }]);
+  };
+  const stop = () => { runId.current++; setBusy(false); setQueue([]); };
+  // 답이 끝나면 기다리던 질문을 이어서 — 그 질문까지의 대화만 보낸다
+  useEffect(() => {
+    if (busy || !queue.length) return;
+    const [q, ...rest] = queue;
+    setQueue(rest);
+    const i = turns.map((x) => x.role === 'user' && x.content === q).lastIndexOf(true);
+    void ask(i >= 0 ? turns.slice(0, i + 1) : [...turns, { role: 'user', content: q }]);
+  }, [busy, queue]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const school = v.me.affiliation.type === 'university' ? v.me.affiliation.schoolName : '';
   return (
@@ -80,7 +100,7 @@ export function AskPage() {
               {m.cards?.map((c) => <AiCardView key={`${c.kind}:${c.id}`} card={c} />)}
             </div>
           ))}
-          {busy && <div className="flex items-center gap-2 text-[13px] text-ink-3"><span className="h-2 w-2 rounded-full bg-primary animate-pulse" />{L.thinking}</div>}
+          {busy && <div className="flex items-center gap-2 text-[13px] text-ink-3"><span className="h-2 w-2 rounded-full bg-primary animate-pulse" />{L.thinking}{queue.length > 0 && <span>· {lang === 'en' ? `${queue.length} more queued` : `다음 질문 ${queue.length}개 대기 중`}</span>}</div>}
         </div>
         <div ref={end} />
       </div>
@@ -88,7 +108,9 @@ export function AskPage() {
         <form onSubmit={(e) => { e.preventDefault(); void send(text); }} className="flex items-end gap-2">
           <textarea rows={1} value={text} disabled={!on} onChange={(e) => setText(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey && !e.nativeEvent.isComposing) { e.preventDefault(); void send(text); } }} placeholder={L.placeholder}
             className="flex-1 resize-none max-h-32 min-h-[44px] rounded-2xl bg-surface-2 px-4 py-2.5 text-[15px] outline-none" />
-          <button type="submit" disabled={!on || busy || !text.trim()} aria-label="Send" className="h-11 w-11 rounded-full bg-primary text-white grid place-items-center press disabled:opacity-40"><ArrowUp size={20} /></button>
+          {busy && !text.trim()
+            ? <button type="button" onClick={stop} aria-label={lang === 'en' ? 'Stop' : '멈추기'} className="h-11 w-11 rounded-full bg-surface-2 text-ink grid place-items-center press"><Square size={16} fill="currentColor" /></button>
+            : <button type="submit" disabled={!on || !text.trim()} aria-label="Send" className="h-11 w-11 rounded-full bg-primary text-white grid place-items-center press disabled:opacity-40"><ArrowUp size={20} /></button>}
         </form>
         <p className="text-[11px] text-ink-3 mt-1.5 px-1">{L.note}</p>
       </div>

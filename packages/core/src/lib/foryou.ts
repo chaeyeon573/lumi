@@ -228,9 +228,9 @@ function topicReasons(p: InterestProfile, item: Vec): { sim: number; reasons: Re
   return { sim, reasons: out.filter((r, i) => out.findIndex((x) => x.text === r.text) === i) };
 }
 
-interface Ctx { snap: Snap; me: User; p: InterestProfile; now: Date; friends: Set<ID>; peersBy: Map<ID, ID[]>; coSaved: Map<ID, number>; homeRegion?: string }
+interface Ctx { snap: Snap; me: User; p: InterestProfile; now: Date; friends: Set<ID>; peersBy: Map<ID, ID[]>; coSaved: Map<ID, number>; homeRegion?: string; q?: Ask }
 
-function context(snap: Snap, me: User, now: Date): Ctx {
+function context(snap: Snap, me: User, now: Date, ask?: { query?: string; region?: Region }): Ctx {
   const p = interestProfile(snap, me, now);
   const friends = new Set(snap.relationships.friends.filter((f) => f.a === me.id || f.b === me.id).map((f) => (f.a === me.id ? f.b : f.a)));
   const peersBy = new Map<ID, ID[]>();
@@ -244,8 +244,43 @@ function context(snap: Snap, me: User, now: Date): Ctx {
   const school = snap.schools.find((s) => s.id === sid);
   const homeRegion = school && /berkeley|stanford|san francisco|santa clara|bay area|oakland|san jose/i.test(`${school.name} ${school.region}`) ? 'Bay Area'
     : school && /los angeles|ucla|usc|irvine|san diego/i.test(`${school.name} ${school.region}`) ? 'Los Angeles' : undefined;
-  return { snap, me, p, now, friends, peersBy, coSaved, homeRegion };
+  const q = ask?.query || ask?.region ? parseAsk(ask.query ?? '', homeRegion as Region | undefined, ask.region) : undefined;
+  return { snap, me, p, now, friends, peersBy, coSaved, homeRegion, q };
 }
+
+// ─── 학생이 방금 말한 것 ("AI 연구 해보고 싶어", "internship near berkeley") ─────────
+/** 말한 관심이 추천의 주인공이다 — 프로필(전공·저장)은 순서를 살짝 거드는 정도로만 */
+export interface Ask { vec: Vec; words: string[]; region?: Region; topics: Topic[] }
+const ASK_STOP = new Set(('a an the and or of for to in on at by with about any some me my i im i\'m is are be want wanna would like love get into find show give looking look need help can could should what which where how do does doing '
+  + 'near nearby around close campus school here area local job jobs intern interns internship internships hackathon hackathons competition competitions club clubs scholarship scholarships '
+  + 'research ra lab labs program programs opportunity opportunities position positions summer fall spring 2026 2027 student students undergrad undergraduate for you recommend recommendation something stuff things '
+  + '나 저 좀 쪽 관련 하고 싶어 싶은데 하고싶어 추천 해줘 인턴 인턴십 해커톤 동아리 장학금 연구 같은 거 것').split(/\s+/));
+const KO_TOPIC: [RegExp, string][] = [[/금융|투자|은행/, 'finance'], [/컨설팅/, 'consulting'], [/인공지능|머신러닝|데이터/, 'machine learning data'], [/개발|코딩|소프트웨어/, 'software'], [/디자인/, 'design'], [/창업|스타트업/, 'startup'], [/의료|의대|바이오|생명/, 'health biology'], [/마케팅/, 'marketing'], [/연구/, 'research'], [/게임/, 'gaming'], [/음악|밴드/, 'music'], [/운동|스포츠/, 'sports'], [/등산|하이킹|아웃도어/, 'hiking outdoor'], [/정책|법/, 'policy law'], [/환경|기후/, 'climate environment'], [/사진|영상|영화/, 'film photography'], [/퀀트|트레이딩/, 'quant trading']];
+export function parseAsk(text: string, homeRegion?: Region, region?: Region): Ask {
+  const t = text.toLowerCase();
+  let r = region;
+  if (!r && /\bnear (campus|me|school|here|us)\b|\bnearby\b|\blocal\b|근처|가까운/.test(t)) r = homeRegion;
+  if (!r) r = regionsOf({ location: t, remote: false, description: '', type: 'internship' })[0];
+  const ko = KO_TOPIC.filter(([re]) => re.test(text)).map(([, en]) => en).join(' ');
+  const vec = unit(topicsOfText(`${t} ${ko}`));
+  const placeWords = /^(berkeley|bay|sf|san|francisco|oakland|palo|alto|remote|new|york|nyc|seattle|boston|chicago|los|angeles|la|texas|austin)$/;
+  const words = [...new Set(`${t} ${ko}`.replace(/[^a-z0-9가-힣+#&\s-]/g, ' ').split(/\s+/).filter((w) => w.length > 1 && !ASK_STOP.has(w) && !placeWords.test(w)))].slice(0, 8);
+  return { vec, words, region: r, topics: TOPIC_KEYS.filter((k) => (vec[k] ?? 0) > 0.25) };
+}
+/** 말한 관심과 얼마나 맞는지. 하나도 안 맞으면 null — 금융을 물었는데 개발 인턴이 나오지 않게 */
+function askMatch(q: Ask, item: Vec, text: string): { score: number; reasons: Reason[] } | null {
+  const hasTopic = TOPIC_KEYS.some((k) => q.vec[k]);
+  if (!hasTopic && !q.words.length) return { score: 0, reasons: [] };
+  const sim = dot(q.vec, unit(item));
+  const low = text.toLowerCase();
+  const hits = q.words.filter((w) => low.includes(w));
+  const score = sim * 10 + Math.min(hits.length, 3) * 2.5;
+  if (score < 2) return null;
+  const shared = q.topics.filter((k) => (item[k] ?? 0) > 0).map(topicLabel);
+  const text1 = shared.length ? say(`About ${shared.slice(0, 2).join(' & ')}`, `${shared.slice(0, 2).join('·')} 분야`) : say(`Mentions “${hits[0]}”`, `“${hits[0]}” 관련`);
+  return { score, reasons: [{ kind: 'topic', w: score, text: text1 }] };
+}
+const listingText = (o: Opportunity) => `${o.title} ${o.tags.join(' ')} ${o.host} ${o.field ?? ''} ${o.location ?? ''} ${o.description.slice(0, 500)}`;
 
 function typeBoost(c: Ctx, t: RecType): number { return Math.min(c.p.types[t] ?? 0, 3); }
 
@@ -258,9 +293,20 @@ function scoreListing(c: Ctx, o: Opportunity): Scored | null {
   const aud = audienceOf(o);
   if (aud !== 'all' && !audienceFits(me, o)) return null;
 
-  const { sim, reasons } = topicReasons(c.p, itemVecRaw(o));
-  let s = sim * 10 + typeBoost(c, o.type);
-  const why = [...reasons];
+  if (c.q?.region) {
+    // "near Berkeley" — 그 지역이거나 우리 학교 공고, Remote 를 물으면 원격만
+    const rs = regionsOf({ ...o, location: o.location ?? (o.type === 'hackathon' ? o.description.split(' · ')[0] : undefined) });
+    const local = !!o.schoolId && c.q.region === c.homeRegion;
+    if (!rs.includes(c.q.region) && !local) return null;
+  }
+  const base = topicReasons(c.p, itemVecRaw(o));
+  let s: number; let why: Reason[];
+  if (c.q) {
+    const m = askMatch(c.q, itemVecRaw(o), listingText(o)); if (!m) return null;
+    // 말한 것이 주인공 — 프로필은 3 정도만, 이유도 전공 한 줄만
+    s = m.score + base.sim * 3; why = [...m.reasons, ...base.reasons.filter((r) => r.kind === 'major').map((r) => ({ ...r, w: r.w * 0.2 }))];
+  } else { s = base.sim * 10; why = [...base.reasons]; }
+  s += typeBoost(c, o.type);
   if (aud === 'grad') { s += 1; why.push({ kind: 'grad', w: 1, text: say('For grad students', '대학원생 대상') }); }
   if (o.deadline) {
     const d = daysTo(o.deadline, now);
@@ -297,9 +343,13 @@ function scoreClub(c: Ctx, o: Organization): Scored | null {
   if (o.parent && NOT_A_CLUB.test(o.parent)) return null;
   const gradOrg = /graduate student organizations|\bgraduate\b|\bph\.?d|\bmba\b/i.test(`${o.parent ?? ''} ${o.name}`);
   if (gradOrg && !isGradStudent(me)) return null;
-  const { sim, reasons } = topicReasons(c.p, orgVecRaw(o));
-  let s = sim * 10 + typeBoost(c, 'club');
-  const why = [...reasons];
+  const base = topicReasons(c.p, orgVecRaw(o));
+  let s: number; let why: Reason[];
+  if (c.q && (c.q.words.length || c.q.topics.length)) {
+    const m = askMatch(c.q, orgVecRaw(o), `${o.name} ${o.description.slice(0, 600)} ${o.regularActivities.join(' ')}`); if (!m) return null;
+    s = m.score + base.sim * 3; why = [...m.reasons];
+  } else { s = base.sim * 10; why = [...base.reasons]; }
+  s += typeBoost(c, 'club');
   if (gradOrg) { s += 0.8; why.push({ kind: 'grad', w: 0.8, text: say('Grad students', '대학원생 모임') }); }
   if (o.recruitment?.open) { s += 1.5; why.push({ kind: 'recruiting', w: 1.5, text: say('Recruiting now', '지금 모집 중') }); }
   const fr = [...o.memberIds, ...o.followerIds].filter((u) => c.friends.has(u)).length;
@@ -323,12 +373,16 @@ export interface ForYouOptions {
   now?: Date;
   /** 같은 회사·같은 종류가 연달아 나오지 않게 섞기 (기본 true) */
   mix?: boolean;
+  /** 학생이 말한 관심 그대로 ("AI research", "금융 인턴", "climate tech") — 주어지면 이것이 순위의 중심이 된다 */
+  query?: string;
+  /** 지역 (query 의 "near Berkeley" 에서도 읽는다) */
+  region?: Region;
 }
 
 /** 이 사람에게 추천할 공고·동아리, 점수 높은 순 + 이유 */
 export function forYou(snap: Snap, me: User, opts: ForYouOptions = {}): Rec[] {
   const now = opts.now ?? new Date();
-  const c = context(snap, me, now);
+  const c = context(snap, me, now, { query: opts.query, region: opts.region });
   const want = (t: RecType) => !opts.types?.length || opts.types.includes(t);
   const out: Rec[] = [];
   for (const o of snap.opportunities) {
@@ -345,7 +399,14 @@ export function forYou(snap: Snap, me: User, opts: ForYouOptions = {}): Rec[] {
   }
   out.sort((a, b) => b.score - a.score || a.id.localeCompare(b.id));
   const mixed = opts.mix === false ? out : mix(out);
-  return opts.limit ? mixed.slice(0, opts.limit) : mixed;
+  const top = opts.limit ? mixed.slice(0, opts.limit) : mixed;
+  // 같은 이유가 줄줄이 반복되지 않게 ("Like X you saved" × 5) — 같은 문장은 두 번까지만
+  const seenWhy = new Map<string, number>();
+  for (const r of top) {
+    const keep = r.reasons.filter((x) => { const n = seenWhy.get(x.text) ?? 0; if (x.kind === 'deadline' || x.kind === 'soon') return true; if (n >= 2) return false; seenWhy.set(x.text, n + 1); return true; });
+    r.reasons = keep;
+  }
+  return top;
 }
 
 /** 이미 걸러 둔 목록(화면의 필터 결과)을 이 사람 기준으로 매긴다. 추천 대상이 아닌 것(지원함·대상 아님)은 null */

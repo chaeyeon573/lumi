@@ -7,6 +7,7 @@ import type { Opportunity, Organization, OpportunityType, User } from '@core/typ
 import { searchCatalog } from '@core/data/catalog/courses';
 import { canViewActivity, placeLabel } from '@core/lib/relations';
 import { forYou, type RecType, type Topic } from '@core/lib/foryou';
+import { locationOf, regionsOf, type Region } from '@core/lib/listings';
 
 export type Card = AiCard;
 
@@ -26,7 +27,7 @@ function score(q: string[], fields: [string | undefined, number][]) {
 export const schoolOf = (u: User) => (u.affiliation.type === 'university' ? u.affiliation.schoolId : '');
 
 /** 공고·행사 (장학금·인턴·연구·해커톤·교환·행사). 지난 것은 뺀다 */
-export function searchListings(db: Snapshot, viewer: User, today: string, input: { query?: string; types?: OpportunityType[]; free_food?: boolean; from?: string; to?: string; limit?: number }) {
+export function searchListings(db: Snapshot, viewer: User, today: string, input: { query?: string; types?: OpportunityType[]; free_food?: boolean; from?: string; to?: string; region?: Region; limit?: number }) {
   const school = schoolOf(viewer);
   const q = words(input.query ?? '');
   const limit = Math.min(Math.max(input.limit ?? 8, 1), 15);
@@ -37,13 +38,14 @@ export function searchListings(db: Snapshot, viewer: User, today: string, input:
     .filter((o) => !input.free_food || o.tags.includes('free food'))
     .filter((o) => { const d = when(o); return !d || d >= today; })
     .filter((o) => { const d = o.date ?? o.deadline; if (!d) return !input.from && !input.to; return (!input.from || d >= input.from) && (!input.to || d <= input.to); })
-    .map((o) => ({ o, s: score(q, [[o.title, 5], [o.host, 3], [o.tags.join(' '), 3], [o.eligibility, 1], [o.description, 1], [o.benefit, 2]]) }))
+    .filter((o) => !input.region || regionsOf(o).includes(input.region) || (!!o.schoolId && input.region === 'Bay Area'))
+    .map((o) => ({ o, s: score(q, [[o.title, 5], [o.host, 3], [o.tags.join(' '), 3], [o.field, 3], [locationOf(o), 2], [o.eligibility, 1], [o.description, 1], [o.benefit, 2]]) }))
     .filter((x) => x.s > 0)
     .sort((a, b) => b.s - a.s || when(a.o).localeCompare(when(b.o)) || a.o.title.localeCompare(b.o.title))
     .slice(0, limit);
   return rows.map(({ o }) => ({
     card: { kind: 'listing', id: o.id, type: o.type, title: o.title, host: o.host, date: o.date, startTime: o.startTime, deadline: o.deadline, place: o.place?.name, benefit: o.benefit, url: o.sourceUrl } satisfies Card,
-    forModel: { id: o.id, type: o.type, title: o.title, host: o.host, date: o.date, start_time: o.startTime, deadline: o.deadline, place: o.place?.name, benefit: o.benefit, tags: o.tags.slice(0, 6), eligibility: clip(o.eligibility, 120), about: clip(o.description, 260), link: o.sourceUrl },
+    forModel: { id: o.id, type: o.type, title: o.title, host: o.host, date: o.date, start_time: o.startTime, deadline: o.deadline, place: o.place?.name, location: locationOf(o) || undefined, field: o.field, benefit: o.benefit, tags: o.tags.slice(0, 6), eligibility: clip(o.eligibility, 120), about: clip(o.description, 260), link: o.sourceUrl },
   }));
 }
 
@@ -100,9 +102,9 @@ export function searchActivities(db: Snapshot, viewer: User, today: string, inpu
 }
 
 /** 이 학생에게 맞는 추천 — 화면의 For you 순서와 같은 엔진(lib/foryou). 이유도 엔진이 낸 것만 쓴다 */
-export function recommendFor(db: Snapshot, viewer: User, input: { types?: RecType[]; topic?: Topic; limit?: number }) {
+export function recommendFor(db: Snapshot, viewer: User, input: { types?: RecType[]; topic?: Topic; interest?: string; region?: Region; limit?: number }) {
   const limit = Math.min(Math.max(input.limit ?? 6, 1), 10);
-  return forYou(db, viewer, { types: input.types, topic: input.topic, limit }).map((r) => {
+  return forYou(db, viewer, { types: input.types, topic: input.topic, query: input.interest, region: input.region, limit }).map((r) => {
     const why = r.reasons.slice(0, 3).map((x) => x.text);
     if (r.kind === 'club') {
       const o = r.item; const url = o.links?.[0]?.url;

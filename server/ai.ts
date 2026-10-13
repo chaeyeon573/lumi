@@ -13,7 +13,8 @@ import type { Goal, ID, Interest, OpportunityType, Organization, Purpose, Role, 
 import { ALL_GOALS, ALL_INTERESTS, ALL_PURPOSES } from '@core/lib/labels';
 import { canViewField, isBlocked } from '@core/lib/relations';
 import { recommendFor, searchActivities, searchClubs, searchCourses, searchListings, schoolOf, type Card } from './ai-search';
-import { TOPICS, type RecType, type Topic } from '@core/lib/foryou';
+import type { RecType } from '@core/lib/foryou';
+import { REGIONS, type Region } from '@core/lib/listings';
 
 const apiKey = () => process.env.OPENAI_API_KEY || process.env.API_KEY || '';
 export const aiEnabled = () => apiKey().startsWith('sk-');
@@ -23,8 +24,10 @@ function ai(): OpenAI {
   return client;
 }
 
-/** 키로 쓸 수 있는 모델 중 앞에서부터 — 빠르고 싼 것 위주 (학생 질문 답변·짧은 생성) */
-const PREFERRED = ['gpt-5-mini', 'gpt-5.1-mini', 'gpt-4.1-mini', 'gpt-4o-mini', 'gpt-5', 'gpt-4.1', 'gpt-4o'];
+/** 키로 쓸 수 있는 모델 중 앞에서부터 — 답의 질이 먼저다 (mini 는 질문 의도를 자주 놓쳤다). 바꾸려면 AI_MODEL */
+const PREFERRED = ['gpt-5.1', 'gpt-5', 'gpt-4.1', 'gpt-4o', 'gpt-5-mini', 'gpt-4.1-mini', 'gpt-4o-mini'];
+/** 추론 모델(gpt-5·o-시리즈)은 생각을 짧게 — 학생이 기다리지 않게 */
+const reasoningOpts = (m: string) => (/^(gpt-5|o\d)/.test(m) ? { reasoning_effort: 'low' as const } : {});
 let modelPromise: Promise<string> | null = null;
 function model(): Promise<string> {
   if (process.env.AI_MODEL) return Promise.resolve(process.env.AI_MODEL);
@@ -47,7 +50,7 @@ export class AiError extends Error { constructor(public status: number, message:
 async function jsonCall(system: string, user: string, name: string, schema: object, refusalMsg: string): Promise<Record<string, unknown>> {
   const m = await model();
   const res = await ai().chat.completions.create({
-    model: m, max_completion_tokens: 3000,
+    model: m, max_completion_tokens: 3000, ...reasoningOpts(m),
     messages: [{ role: 'system', content: system }, { role: 'user', content: user }],
     response_format: { type: 'json_schema', json_schema: { name, schema: schema as Record<string, unknown>, strict: true } },
   });
@@ -77,7 +80,7 @@ const viewerContext = (u: User, school: string) => {
   const a = u.affiliation;
   const yr = a.type === 'university' ? Math.min(4, Math.max(1, new Date().getFullYear() - a.year + 1)) : undefined;
   return [
-    `School: ${school}`,
+    `School: ${school} (campus region for "near campus": ${/berkeley|stanford|san francisco|santa clara|san jose/i.test(school) ? 'Bay Area' : /los angeles|ucla|usc|irvine|san diego/i.test(school) ? 'Los Angeles' : 'unknown'})`,
     a.type === 'university' && a.department ? `Major: ${a.department}` : '',
     yr ? `Year: ${a.type === 'university' && a.role === 'graduate' ? 'graduate student' : `${yr}${['st', 'nd', 'rd', 'th'][yr - 1]} year`}` : '',
     u.interests.length ? `Interests: ${u.interests.join(', ')}` : '',
@@ -88,13 +91,19 @@ const viewerContext = (u: User, school: string) => {
 // ─── 1) Ask Lumi ─────────────────────────────────────────────────────────
 const ASK_SYSTEM = `You are "Ask Lumi", the assistant inside Lumi, an app for college students to find events, free food, clubs, Greek life, internships, scholarships, research positions, hackathons, classes and study groups at their campus.
 
+How to think:
+- First work out what the student actually wants: a kind of thing (internship, research, class, club, hackathon, scholarship, event), a field or interest ("AI research", "finance", "climate"), a place ("near Berkeley", "remote", "NYC"), a time ("this weekend"). Then pick the tools and arguments that match ALL of those — e.g. "internship near berkeley" → recommend_for_me(types:["internship"], region:"Bay Area"); "I want a finance internship" → recommend_for_me(types:["internship"], interest:"finance").
+- Big goals ("I want to get into AI research", "how do I get into consulting?") deserve a small plan from real items: call recommend_for_me with interest set to their goal for several kinds (lab, internship, hackathon, club, scholarship) and search_courses for 2–3 relevant classes, then answer grouped by kind (📚 Classes, 🔬 Research, 💼 Internships, 🏆 Competitions, 🎸 Clubs, 🎓 Funding), 1–3 items each, skipping empty groups, and end with one concrete next step.
+- If results don't fit what was asked (wrong field, wrong place, wrong kind), search again with other words or arguments instead of presenting them. Better to say "Lumi doesn't have X near campus yet — here are remote ones" than to show unrelated items.
+- If the request is too vague to search well ("what should I do?"), ask one short question with 3–4 options first.
+
 How to answer:
 - Answer ONLY from what the search tools return. Never invent events, dates, deadlines, locations, links, prices or eligibility. If the tools return nothing useful, say plainly that Lumi doesn't have it yet, and suggest a different way to ask or where the student could look (only name a website if a tool result gave its link).
-- When the student asks what fits THEM ("recommend", "for me", "what should I join / apply to / go to", "anything I'd like"), call recommend_for_me first — it ranks by their major, goals, interests and what they saved, the same order the app shows. For each item say in a few words why it fits, using only its why_it_fits reasons. Don't make up other reasons about the student.
+- When the student asks what fits THEM ("recommend", "for me", "what should I join / apply to / go to", "anything I'd like", "I want …"), use recommend_for_me — pass their own words as interest whenever they named a field or goal. For each item give the one detail that matters (deadline, place, what you'd do) and why it fits, using its why_it_fits; don't repeat the same reason for every item, and don't make up facts about the student.
 - Search before answering anything about listings, clubs, courses or activities. Use several searches with different wording if the first one is thin (e.g. "finance" and "investment banking"; "climbing" and "outdoors").
 - Cite every item you mention by putting its id in double brackets right after it, like "Cal Hacks 13.0 [[op_ext_devpost_123]]". The app turns these into tappable cards. Only cite ids that appeared in tool results.
 - Dates: today's date and weekday are given below. Resolve "today", "this weekend", "next week" into from/to dates for the search. Deadlines and dates in results are YYYY-MM-DD; say them in a friendly way ("Fri, Oct 17").
-- Be brief and scannable: one short sentence, then up to 5 items as a list, each with the one detail that matters (time, deadline, or why it fits). No long intros or sign-offs.
+- Be brief and scannable: one short sentence, then the items as a list (up to 5, or the grouped plan above), each with the one detail that matters. No long intros or sign-offs. Write titles the way a student would say them (drop "(Summer 2027)", codes and long suffixes).
 - If a listing's deadline is missing, say "deadline not posted" rather than guessing.
 - Reply in the language the student writes in.`;
 
@@ -103,6 +112,7 @@ const tool = (t: ToolSpec) => t;
 const str = (v: unknown) => (typeof v === 'string' && v.trim() ? v.trim().slice(0, 200) : undefined);
 const num = (v: unknown) => (typeof v === 'number' && Number.isFinite(v) ? v : undefined);
 const arr = (v: unknown) => (Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string') : undefined);
+const region = (v: unknown) => (typeof v === 'string' && (REGIONS as readonly string[]).includes(v) ? (v as Region) : undefined);
 
 const LISTING_TYPES: OpportunityType[] = ['event', 'internship', 'hackathon', 'scholarship', 'lab', 'exchange', 'startup', 'club', 'activity'];
 const ORG_TYPES: Organization['type'][] = ['club', 'greek', 'lab', 'council', 'department'];
@@ -125,11 +135,12 @@ export async function ask(db: Snapshot, catalog: CatalogCourse[], viewer: User, 
           free_food: { type: 'boolean', description: 'Only events that mention free food' },
           from: { type: 'string', description: 'Earliest date YYYY-MM-DD (event date, or deadline for applications)' },
           to: { type: 'string', description: 'Latest date YYYY-MM-DD' },
+          region: { type: 'string', enum: [...REGIONS], description: 'Where (internships, in-person hackathons). "near campus" for this student = their campus region' },
           limit: { type: 'integer', minimum: 1, maximum: 15 },
         },
         additionalProperties: false,
       },
-      run: (input) => remember(searchListings(db, viewer, date, { query: str(input.query), types: arr(input.types) as OpportunityType[], free_food: input.free_food === true, from: str(input.from), to: str(input.to), limit: num(input.limit) })),
+      run: (input) => remember(searchListings(db, viewer, date, { query: str(input.query), types: arr(input.types) as OpportunityType[], free_food: input.free_food === true, from: str(input.from), to: str(input.to), region: region(input.region), limit: num(input.limit) })),
     }),
     tool({
       name: 'search_clubs',
@@ -148,17 +159,18 @@ export async function ask(db: Snapshot, catalog: CatalogCourse[], viewer: User, 
     }),
     tool({
       name: 'recommend_for_me',
-      description: "Personal recommendations for this student: clubs, internships, hackathons, scholarships, research and events ranked by their major, goals, interests and what they've saved or joined. Each result has why_it_fits. Use for any 'what should I…' or 'recommend' question. Narrow with types and/or topic.",
+      description: "Personal recommendations for this student: clubs, internships, hackathons/competitions, scholarships, research/RA and events. With `interest`, results are about that interest first (the student's profile only breaks ties); without it, ranked by their major, goals and what they saved. Each result has why_it_fits. Use for any 'what should I…', 'I want…' or 'recommend' question.",
       parameters: {
         type: 'object',
         properties: {
-          types: { type: 'array', items: { type: 'string', enum: [...LISTING_TYPES.filter((x) => x !== 'club' && x !== 'activity'), 'club'] }, description: 'club = clubs/Greek/labs (organizations); others are listings' },
-          topic: { type: 'string', enum: Object.keys(TOPICS), description: 'Only items about this topic, e.g. finance, ai_data, outdoors, arts' },
+          interest: { type: 'string', description: "The field or goal in the student's own words, e.g. \"AI research\", \"finance\", \"climate tech\", \"pre-med\", \"game dev\". Leave out only when they gave none." },
+          types: { type: 'array', items: { type: 'string', enum: [...LISTING_TYPES.filter((x) => x !== 'club' && x !== 'activity'), 'club'] }, description: 'club = clubs/Greek/labs (organizations); lab = research/RA; hackathon = hackathons and competitions' },
+          region: { type: 'string', enum: [...REGIONS], description: 'Only items in this place. "near campus"/"near Berkeley" = the campus region' },
           limit: { type: 'integer', minimum: 1, maximum: 10 },
         },
         additionalProperties: false,
       },
-      run: (input) => remember(recommendFor(db, viewer, { types: arr(input.types) as RecType[] | undefined, topic: (str(input.topic) && str(input.topic)! in TOPICS ? str(input.topic) : undefined) as Topic | undefined, limit: num(input.limit) })),
+      run: (input) => remember(recommendFor(db, viewer, { types: arr(input.types) as RecType[] | undefined, interest: str(input.interest), region: region(input.region), limit: num(input.limit) })),
     }),
     tool({
       name: 'search_courses',
@@ -193,7 +205,7 @@ export async function ask(db: Snapshot, catalog: CatalogCourse[], viewer: User, 
   // 도구 호출 루프 — 검색을 몇 번 하고 나면 답을 쓴다 (최대 6 라운드)
   for (let round = 0; round < 6; round++) {
     const res = await ai().chat.completions.create({
-      model: m, messages, max_completion_tokens: 4000,
+      model: m, messages, max_completion_tokens: 4000, ...reasoningOpts(m),
       tools: tools.map((t) => ({ type: 'function' as const, function: { name: t.name, description: t.description, parameters: t.parameters } })),
       tool_choice: round === 5 ? 'none' : 'auto',
     });

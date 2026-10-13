@@ -6,7 +6,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import type { Opportunity, Organization, User } from '@core/types';
 import * as seed from '@core/data/seed.en';
-import { forYou, interestProfile, scoreListings, topicsOfText, whyLine } from '@core/lib/foryou';
+import { forYou, interestProfile, parseAsk, scoreListings, topicsOfText, whyLine } from '@core/lib/foryou';
 
 const NOW = new Date('2026-10-12T18:00:00Z');
 const base = seed.users.find((u) => u.id === 'u_me')!;
@@ -88,4 +88,30 @@ test('mixing keeps one kind from filling the whole top', () => {
   const many = Array.from({ length: 12 }, (_, i) => opp(`swe${i}`, 'internship', `Software Engineer Intern ${i}`, { field: 'Software', host: `Co${i}` }));
   const r = forYou(snap([...many, ...ITEMS], CLUBS), person('Computer Science', { goals: ['internship', 'hackathon'] }), { now: NOW, limit: 6 });
   assert.ok(new Set(r.map((x) => x.type)).size >= 2);
+});
+
+test('what the student says leads: a CS student asking for finance gets finance, not software', () => {
+  const me = person('Computer Science', { goals: ['internship'] });
+  const r = forYou(snap(ITEMS, CLUBS), me, { now: NOW, types: ['internship'], query: 'I want a finance internship', mix: false });
+  assert.equal(r[0].id, 'ib');
+  assert.ok(!r.some((x) => x.id === 'swe'), 'software intern should not match a finance ask');
+  assert.match(whyLine(r[0].reasons), /finance/i);
+  const ko = forYou(snap(ITEMS, CLUBS), me, { now: NOW, types: ['internship'], query: '나 금융 쪽 인턴 하고 싶어', mix: false });
+  assert.equal(ko[0]?.id, 'ib');
+});
+
+test('"near berkeley" keeps Bay Area items only', () => {
+  const me = person('Computer Science', { goals: ['internship'] });
+  const r = forYou(snap(ITEMS, CLUBS), me, { now: NOW, types: ['internship'], query: 'internship near berkeley', mix: false });
+  assert.deepEqual(r.map((x) => x.id), ['swe']);
+  assert.equal(parseAsk('any internships near campus?', 'Bay Area').region, 'Bay Area');
+  assert.equal(parseAsk('remote data internships').region, 'Remote');
+});
+
+test('the same reason is not repeated for every item', () => {
+  const me = person('Computer Science');
+  const many = Array.from({ length: 6 }, (_, i) => opp(`s${i}`, 'internship', `Software Engineer Intern ${i}`, { field: 'Software', host: `Co${i}` }));
+  const r = forYou(snap(many), me, { now: NOW, limit: 6 });
+  const major = r.filter((x) => x.reasons.some((y) => y.kind === 'major')).length;
+  assert.ok(major <= 2, `major reason shown ${major} times`);
 });
