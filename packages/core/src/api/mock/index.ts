@@ -7,6 +7,8 @@ import { t } from '@core/i18n';
 import { createEngine } from '../engine';
 import { loadDB, resetDB, saveDB, getSession, setSession, type MockDB } from './db';
 import { DEMO_USER_ID } from '@core/data/seed';
+import { createClassesEngine } from '../classes';
+import { classRostersFor } from '@core/lib/classmates';
 import { catalogCourses, searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm } from '@core/data/catalog/courses';
 
 let db: MockDB = loadDB();
@@ -24,6 +26,9 @@ const engine = createEngine({
   push(patch) { saveDB(db); listeners.forEach((l) => l(patch)); },
 });
 
+const classes = createClassesEngine({ get db() { return db; }, t, demo: true, push(patch) { saveDB(db); listeners.forEach((l) => l(patch)); } }, { catalog: (schoolId) => catalogCourses.filter((c) => c.schoolId === schoolId) });
+/** 목업은 모든 데이터를 갖고 있다 — 같은 수업 목록만 서버처럼 계산해 붙인다 */
+const withRosters = (patch: Patch): Patch => { const me = getSession(); return me ? { ...patch, classRosters: classRostersFor(db, me) } : patch; };
 const delay = (ms = 350) => new Promise((r) => setTimeout(r, ms + Math.random() * 200));
 
 async function request<T>(fn: () => T): Promise<T> {
@@ -80,7 +85,7 @@ export const mockApi: AroundUApi = {
       engine.find(db.users, viewerId);
       engine.housekeeping();
       const { version: _v, seededOn: _s, ...snapshot } = db;
-      return structuredClone(snapshot);
+      return { ...structuredClone(snapshot), classRosters: classRostersFor(db, viewerId) };
     });
   },
 
@@ -105,7 +110,7 @@ export const mockApi: AroundUApi = {
     async terms(schoolId) { return request(() => ({ terms: catalogTerms(catalogCourses, schoolId), current: resolveCatalogTerm(catalogCourses, schoolId) })); },
   },
 
-  users: wrap(engine.users),
+  users: { ...wrap(engine.users), update: (id, p) => request(() => withRosters(engine.users.update(id, p))) },
   activities: wrap(engine.activities),
   posts: wrap(engine.posts),
   relationships: wrap(engine.relationships),
@@ -124,6 +129,11 @@ export const mockApi: AroundUApi = {
     async markAllRead(userId) { const p = engine.notifications.markAllRead(userId); saveDB(db); return p; },
   },
   reports: wrap(engine.reports),
+  classes: {
+    room: (school, code) => request(() => classes.room(school, code)),
+    respond: (activityId, userId, response, preferred) => request(() => classes.respond(activityId, userId, response, preferred)),
+    setPartner: (userId, key, note) => request(() => withRosters(classes.setPartner(userId, key, note))),
+  },
 
   system: {
     async reset() { db = resetDB(); },

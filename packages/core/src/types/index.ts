@@ -58,6 +58,12 @@ export interface Course {
   /** 학교 수업 목록에서 추가했으면 과목 상세·실라버스 링크 */
   url?: string;
   syllabusUrl?: string;
+  /** 학교 수업 목록에서 추가한 과목 코드 ("CS 61A") — 없으면 이름 앞부분에서 읽는다 (lib/classmates) */
+  code?: string;
+  /** 학기 라벨 ("Fall 2026") — 없으면 지금 학기로 본다 */
+  term?: string;
+  /** 분반·디스커션 ("DIS 104") — 수업 목록이 알려 준 경우에만. 지어내지 않는다 */
+  section?: string;
   hue: number;
 }
 
@@ -160,6 +166,12 @@ export interface User {
   twoTruths?: TwoTruths;
   /** 아이스브레이커 — 이번 주를 이모지 세 개로. ⚠ meaning은 본인에게만 내려간다 (맞혀 본 게임 기록에만 공개) */
   emojiWeek?: EmojiWeek;
+  /** 같은 수업 학생에게 '이 수업 듣는다'만 보이기 (기본 켜짐). 끄면 나도 같은 수업 학생 목록을 못 본다 */
+  showToClassmates?: boolean;
+  /** 스터디 그룹 제안을 받지 않을 수업 (classKey) */
+  studyGroupOptOut?: string[];
+  /** 프로젝트 파트너 찾기 — 같은 수업 학생에게만 보인다. 짝을 찾았거나 학기가 지나면 빠진다 */
+  partnerSearch?: PartnerSearch[];
   fieldVisibility: Record<ProfileField, Visibility>;
   settings: {
     messagePolicy: 'connected' | 'friends_only' | 'none';
@@ -333,7 +345,60 @@ export interface Activity {
   comments: Comment[];
   /** 학교 공식 행사 여부 */
   official?: boolean;
+  /** Lumi 가 같은 수업 학생끼리 공강이 겹쳐 제안한 스터디 그룹 — 초대받은 사람에게만 내려간다 */
+  studyGroup?: StudyGroupInfo;
   createdAt: string;
+}
+
+// ─── 같은 수업 (classmates) ──────────────────────────────────────────────────
+/** 프로젝트 파트너 찾기 목록에 올린 기록 */
+export interface PartnerSearch {
+  /** classKey — 학교|코드|학기 */
+  key: string;
+  code: string;
+  term: string;
+  /** 한 줄 소개 ("works early", "pair programming in person") */
+  note?: string;
+  since: string;
+}
+
+export type StudyGroupResponse = 'in' | 'other' | 'no';
+
+export interface StudyGroupInfo {
+  key: string;
+  code: string;
+  term: string;
+  /** 제안받은 사람 (3~4명) */
+  invitedIds: ID[];
+  responses: Record<ID, StudyGroupResponse>;
+  /** 다른 시간을 고른 사람 → 고른 시간 */
+  preferred?: Record<ID, { day: number; start: string; end: string }>;
+  /** 같은 사람들이 모두 비는 다른 시간 (다른 시간 고르기용) */
+  alternatives: { day: number; start: string; end: string }[];
+  /** suggested: 답 기다리는 중 · formed: 2명 이상 수락해 실제 모임이 됨 · expired: 날짜가 지났다 */
+  status: 'suggested' | 'formed' | 'expired';
+  /** 알고 있는 시험이 가까워서 만든 제안이면 그 시험 */
+  exam?: { label: string; date: string };
+}
+
+/** 내가 듣는 수업 하나의 같은 수업 학생 목록 — 서버가 그 수업 학생에게만 만들어 보낸다 */
+export interface ClassRoster {
+  /** classKey */
+  id: string;
+  schoolId: ID;
+  code: string;
+  term: string;
+  /** 내 시간표의 수업 이름 */
+  name: string;
+  mySection?: string;
+  /** 나를 뺀, 나에게 보여도 되는 같은 수업 학생 (차단 관계·숨김 제외) */
+  members: { userId: ID; section?: string }[];
+  /** 나를 포함한 인원 (보이는 사람만) */
+  count: number;
+  /** 프로젝트 파트너를 찾는 사람 — overlap: 나와 같이 비는 시간 요약 */
+  partners: { userId: ID; note?: string; since: string; overlap: { day: number; start: string; end: string }[] }[];
+  /** 내가 숨김 상태면 목록 대신 이 표시만 */
+  hidden?: boolean;
 }
 
 export type CrewType = 'exam' | 'assignment' | 'review' | 'project';
@@ -469,7 +534,7 @@ export interface ChatRoom {
 export type NotificationType =
   | 'friend_accepted' | 'mutual_like' | 'participation_approved' | 'participation_rejected'
   | 'participation_request' | 'activity_reminder' | 'comment' | 'like' | 'follow'
-  | 'org_event' | 'nearby_activity' | 'proposal' | 'proposal_result' | 'deadline' | 'opportunity_match' | 'plan_vote' | 'plan_decided' | 'game_received' | 'game_result';
+  | 'org_event' | 'nearby_activity' | 'proposal' | 'proposal_result' | 'deadline' | 'opportunity_match' | 'plan_vote' | 'plan_decided' | 'game_received' | 'game_result' | 'study_group';
 
 export interface Notification {
   id: ID;

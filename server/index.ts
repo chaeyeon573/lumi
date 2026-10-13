@@ -37,6 +37,8 @@ import { migrateDemo, demoUserIdFor, rollSampleActivities } from './demo';
 import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError, campusToday } from './ai';
 import type { AiLog } from './store';
 import { loadSeed } from './seed';
+import { createClassesEngine } from '@core/api/classes';
+import { CLASSES_RULES, registerClassRoutes, startStudyGroupJob } from './classes';
 
 const PORT = Number(process.env.PORT ?? 8787);
 const store = createStore();
@@ -78,6 +80,10 @@ const engine = createEngine({
   demo: process.env.DEMO_AUTOREPLY === '1',
   push(patch) { void store.applyPatch(patch); broadcast(patch); },
 });
+
+// 같은 수업 — 스터디 그룹 제안·파트너 목록 (server/classes.ts)
+const pushPatch = (patch: Patch) => { void store.applyPatch(patch); broadcast(patch); };
+const classes = createClassesEngine({ get db() { return db; }, t, demo: false, push: pushPatch }, { catalog: (schoolId) => catalogBySchool.get(schoolId) ?? [] });
 
 // ─── 데이터 에이전트와 동기화 ────────────────────────────────────────────────
 // 워커(별도 Railway 서비스)는 Postgres 에 동아리·공고·학교·수업 목록을 쓴다. 웹 서버는 켜질 때 한 번만 읽으므로
@@ -271,8 +277,8 @@ app.post('/api/catalog/departments', wrap(async (req) => { const s = String(req.
 app.post('/api/catalog/terms', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const list = schoolCatalog(s); return { terms: catalogTerms(list, s), current: resolveCatalogTerm(list, s) }; }));
 
 // ─── RPC (엔진 메서드) ────────────────────────────────────────────────────
-type Group = 'users' | 'activities' | 'posts' | 'relationships' | 'orgs' | 'opportunities' | 'proposals' | 'together' | 'games' | 'chats' | 'notifications' | 'reports';
-const GROUPS: Group[] = ['users', 'activities', 'posts', 'relationships', 'orgs', 'opportunities', 'proposals', 'together', 'games', 'chats', 'notifications', 'reports'];
+type Group = 'users' | 'activities' | 'posts' | 'relationships' | 'orgs' | 'opportunities' | 'proposals' | 'together' | 'games' | 'chats' | 'notifications' | 'reports' | 'classes';
+const GROUPS: Group[] = ['users', 'activities', 'posts', 'relationships', 'orgs', 'opportunities', 'proposals', 'together', 'games', 'chats', 'notifications', 'reports', 'classes'];
 
 /** 호출자가 해당 작업을 할 권한이 있는지. 숫자면 그 위치의 인자가 본인 id 여야 한다 */
 type Rule = number | ((me: ID, args: unknown[]) => boolean);
@@ -302,6 +308,7 @@ const RULES: Record<Group, Record<string, Rule>> = {
   chats: { send: 1, markRead: 1, openDirect: 0 },
   notifications: { markRead: owner(() => db.notifications, (n) => n.userId), markAllRead: 0 },
   reports: { create: 0 },
+  ...CLASSES_RULES,
 };
 
 app.post('/api/rpc/:group/:method', auth, wrap(async (req: Req) => {
@@ -313,7 +320,7 @@ app.post('/api/rpc/:group/:method', auth, wrap(async (req: Req) => {
   const rule = RULES[group][method];
   const allowed = ruleAllows(rule, me, args);
   if (!allowed) throw bad(t('권한이 없어요.'), 403);
-  const fn = (engine[group] as Record<string, (...a: unknown[]) => unknown>)[method];
+  const fn = ((group === 'classes' ? classes : engine[group]) as Record<string, (...a: unknown[]) => unknown>)[method];
   const result = fn(...args) as Patch | { patch: Patch } | undefined;
   const patch: Patch = result && 'patch' in result ? result.patch : (result ?? {});
   void store.applyPatch(patch);
@@ -435,6 +442,9 @@ app.get('/api/health', (_req, res) => { res.json({ ok: true, users: db.users.len
 
 // ─── 정적 파일 (빌드된 프론트엔드) ─────────────────────────────────────────
 const dist = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist');
+// /c/<학교>/<과목> 공유 링크 — 정적 파일보다 먼저 (미리보기용 OG 태그를 넣는다)
+registerClassRoutes(app, { classes, dist, push: pushPatch });
+startStudyGroupJob({ classes, dist, push: pushPatch });
 if (existsSync(dist)) {
   app.use(express.static(dist, { index: 'index.html', maxAge: '1h' }));
   app.get(/^(?!\/api\/).*/, (_req, res) => { res.sendFile(path.join(dist, 'index.html')); });

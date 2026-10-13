@@ -11,6 +11,7 @@ import { api } from '@core/api';
 import { INTEREST_LABELS, GOAL_LABELS, ALL_INTERESTS, ALL_GOALS } from '@core/lib/labels';
 import { commonInterests } from '@core/lib/relations';
 import { matchScore, shareableReasons, type Reason } from '@core/lib/recommend';
+import { sharedClassWith } from '@core/lib/classmates';
 import { statusNow, freeBlocks, todayIdx, nowMin, fmtBlock } from '@core/lib/timetable';
 import { assetUrl } from '@/lib/assets';
 import { cn } from '@core/lib/cn';
@@ -40,12 +41,12 @@ export function HomePage() {
   const myDept = me.affiliation.type === 'university' ? me.affiliation.department : '';
 
   const scored = useMemo(() => v.visibleUsers
-    .map((u) => ({ u, ...matchScore(me, u, { opportunities: opps, opportunityIntents: intents }, v.canSeeField(u, 'timetable')) }))
+    .map((u) => ({ u, ...matchScore(me, u, { opportunities: opps, opportunityIntents: intents, classRosters: v.snap.classRosters }, v.canSeeField(u, 'timetable')) }))
     .map((x) => ({ ...x, score: x.score + commonInterests(me, x.u).length * 0.5 })), [v, me, opps, intents]);
   const passes = (u: User) => {
     if (f.years.length && !f.years.includes(yearOf(u))) return false;
     if (f.sameDept && !(u.affiliation.type === 'university' && u.affiliation.department === myDept)) return false;
-    if (f.sameClass && !u.timetable.some((c) => me.timetable.some((m) => m.name === c.name))) return false;
+    if (f.sameClass && !sharedClassWith(v.snap.classRosters, u.id)) return false;
     if (f.freeNow && !((u.timetable.length && v.canSeeField(u, 'timetable')) ? statusNow(u.timetable).kind === 'free' : u.availability === 'now')) return false;
     if (f.interests.length && !f.interests.some((i) => u.interests.includes(i))) return false;
     if (f.goals.length && !f.goals.some((g) => u.goals.includes(g))) return false;

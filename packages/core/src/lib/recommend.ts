@@ -1,5 +1,6 @@
 import { audienceOf, audienceFits, isGradStudent } from './listings';
-import type { Opportunity, OpportunityIntentRecord, User } from '@core/types';
+import type { ClassRoster, Opportunity, OpportunityIntentRecord, User } from '@core/types';
+import { sharedClassWith } from './classmates';
 import { t } from '@core/i18n';
 import type { Snapshot } from '@core/api/types';
 import { GOAL_LABELS, PERSON_ROLE_LABELS, INTEREST_LABELS } from './labels';
@@ -9,7 +10,9 @@ import { profileCompletion } from '@core/data/prompts';
 export interface Reason { text: string; weight: number; kind: 'opportunity' | 'goal' | 'role' | 'time' | 'school' | 'living' | 'interest' | 'class' | 'new' }
 
 /** 두 사람이 왜 잘 맞는지 — 카드에 이유를 그대로 보여준다 */
-export function matchReasons(me: User, other: User, snap: Pick<Snapshot, 'opportunities' | 'opportunityIntents'>, canSeeTimetable: boolean): Reason[] {
+/** classRosters: 서버가 보내 준 같은 수업 목록 — 다른 사람의 수업 이름은 내려오지 않으므로 '같은 수업'은 이것으로만 안다 */
+type ReasonSnap = Pick<Snapshot, 'opportunities' | 'opportunityIntents'> & { classRosters?: ClassRoster[] };
+export function matchReasons(me: User, other: User, snap: ReasonSnap, canSeeTimetable: boolean): Reason[] {
   const out: Reason[] = [];
   const myOpps = new Set(snap.opportunityIntents.filter((i) => i.userId === me.id).map((i) => i.opportunityId));
   const shared = snap.opportunityIntents.filter((i) => i.userId === other.id && myOpps.has(i.opportunityId));
@@ -30,9 +33,8 @@ export function matchReasons(me: User, other: User, snap: Pick<Snapshot, 'opport
   if (me.living && other.living && me.living.zone === other.living.zone) out.push({ kind: 'living', weight: 2, text: `${t('같은 생활권이에요 (')}${me.living.zone})` });
   const interests = me.interests.filter((i) => other.interests.includes(i));
   if (interests.length >= 2) out.push({ kind: 'interest', weight: 2, text: `${interests.slice(0, 3).map((i) => INTEREST_LABELS[i]).join('·')}${t('에 관심')}` });
-  const myCourses = new Set(me.timetable.map((c) => c.name));
-  const sharedCourse = other.timetable.find((c) => myCourses.has(c.name));
-  if (sharedCourse) out.push({ kind: 'class', weight: 3, text: `${t('같은 수업을 들어요: ')}${sharedCourse.name}` });
+  const sharedCourse = sharedClassWith(snap.classRosters, other.id);
+  if (sharedCourse) out.push({ kind: 'class', weight: 3, text: `${t('같은 수업을 들어요: ')}${sharedCourse.code}` });
   if (me.affiliation.type === 'university' && other.affiliation.type === 'university') {
     if (me.affiliation.schoolId === other.affiliation.schoolId) out.push({ kind: 'school', weight: 1, text: t('같은 학교') });
     if (me.affiliation.department !== other.affiliation.department && interests.length === 0) out.push({ kind: 'new', weight: 1, text: `${t('다른 분야 (')}${other.affiliation.department})` });
@@ -53,7 +55,7 @@ export function matchReasons(me: User, other: User, snap: Pick<Snapshot, 'opport
 export const shareableReasons = (rs: Reason[]) => rs.filter((r) => r.kind !== 'role' && r.kind !== 'opportunity' && r.kind !== 'school');
 
 /** 추천 점수 = 이유 가중치 합 × 프로필 완성도 보너스 */
-export function matchScore(me: User, other: User, snap: Pick<Snapshot, 'opportunities' | 'opportunityIntents'>, canSeeTimetable: boolean) {
+export function matchScore(me: User, other: User, snap: ReasonSnap, canSeeTimetable: boolean) {
   const reasons = matchReasons(me, other, snap, canSeeTimetable);
   // 대학원생끼리는 먼저 — 연구실 밖에서 같은 처지의 사람을 만나기 어렵다
   if (isGradStudent(me) && isGradStudent(other)) reasons.push({ text: t('같은 대학원생'), weight: 3, kind: 'school' });

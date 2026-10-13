@@ -137,6 +137,10 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
     chats: group('chats', ['send', 'markRead', 'openDirect']),
     notifications: group('notifications', ['markRead', 'markAllRead']),
     reports: group('reports', ['create']),
+    classes: {
+      room: (school, code) => call('classes/room', { school, code }),
+      ...group<Pick<AroundUApi['classes'], 'respond' | 'setPartner'>>('classes', ['respond', 'setPartner']),
+    },
 
     system: {
       async reset() { await call('system/reset', {}); },

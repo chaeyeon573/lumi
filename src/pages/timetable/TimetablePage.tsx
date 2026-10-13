@@ -17,6 +17,7 @@ import { friendsOf } from '@core/lib/relations';
 import { uid, addDaysISO } from '@core/lib/format';
 import { cn } from '@core/lib/cn';
 import { WeekGrid } from '@/components/timetable/WeekGrid';
+import { ClassmatesNote } from '@/components/classes/ClassLink';
 
 const HUES = [220, 160, 15, 280, 45, 330, 120, 200, 60, 300];
 
@@ -202,6 +203,7 @@ export function TimetablePage() {
             {!editing.id && schoolId && (
               <div className="rounded-2xl bg-surface-2 p-3 space-y-2">
                 <div className="flex items-center gap-2 text-[13px] font-semibold"><Search size={14} className="text-primary" />{t('학교 수업 목록에서 찾기')}</div>
+                <ClassmatesNote />
                 {termOptions.length > 1 && (
                   <Segmented className="bg-surface" value={term} onChange={setTerm} options={termOptions.map((x) => ({ value: x, label: x }))} />
                 )}

@@ -23,7 +23,7 @@ interface AppState extends Snapshot {
 const empty: Snapshot = {
   users: [], schools: [], organizations: [], activities: [], participations: [], posts: [],
   relationships: { likes: [], follows: [], friendRequests: [], friends: [], blocks: [] },
-  proposals: [], chatRooms: [], notifications: [], reports: [], opportunities: [], opportunityIntents: [], timePolls: [], games: [],
+  proposals: [], chatRooms: [], notifications: [], reports: [], opportunities: [], opportunityIntents: [], timePolls: [], games: [], classRosters: [],
 };
 
 function upsert<T extends { id: ID }>(list: T[], items?: T[], removed?: ID[]) {
@@ -50,7 +50,7 @@ export const useAppStore = create<AppState>((set, get) => ({
       const sessionId = await api.auth.session();
       if (!sessionId) { set({ status: 'ready', currentUserId: null }); return; }
       const snapshot = await api.bootstrap(sessionId);
-      set({ ...snapshot, games: snapshot.games ?? [], currentUserId: sessionId, status: 'ready' });
+      set({ ...snapshot, games: snapshot.games ?? [], classRosters: snapshot.classRosters ?? [], currentUserId: sessionId, status: 'ready' });
       unsubscribe?.();
       unsubscribe = api.subscribe((patch) => get().applyPatch(patch));
     } catch (e) {
@@ -61,7 +61,7 @@ export const useAppStore = create<AppState>((set, get) => ({
   async setCurrentUser(user) {
     set({ status: 'loading' });
     const snapshot = await api.bootstrap(user.id);
-    set({ ...snapshot, games: snapshot.games ?? [], currentUserId: user.id, status: 'ready' });
+    set({ ...snapshot, games: snapshot.games ?? [], classRosters: snapshot.classRosters ?? [], currentUserId: user.id, status: 'ready' });
     unsubscribe?.();
     unsubscribe = api.subscribe((patch) => get().applyPatch(patch));
   },
@@ -90,6 +90,8 @@ export const useAppStore = create<AppState>((set, get) => ({
       opportunityIntents: upsert(s.opportunityIntents, patch.opportunityIntents, patch.removed?.opportunityIntents),
       timePolls: upsert(s.timePolls, patch.timePolls, patch.removed?.timePolls),
       games: upsert(s.games ?? [], patch.games),
+      // 같은 수업 목록은 서버가 보는 사람마다 통째로 다시 계산해 보낸다
+      classRosters: patch.classRosters ?? s.classRosters,
       relationships: patch.relationships ? structuredClone(patch.relationships) : s.relationships,
     });
   },

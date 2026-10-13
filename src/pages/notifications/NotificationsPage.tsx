@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { t } from '@core/i18n';
-import { UserCheck, Heart, CalendarCheck, CalendarX, Inbox, Clock, MessageSquare, ThumbsUp, UserPlus, Megaphone, MapPin, Sparkles, CheckCheck, AlarmClock, Users, Vote } from 'lucide-react';
+import { UserCheck, Heart, CalendarCheck, CalendarX, Inbox, Clock, MessageSquare, ThumbsUp, UserPlus, Megaphone, MapPin, Sparkles, CheckCheck, AlarmClock, Users, Vote, BookOpen } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Button, EmptyState, CardSkeleton, ErrorState } from '@/components/ui';
 import { useAppStore } from '@core/store/useAppStore';
@@ -28,6 +28,7 @@ const ICONS: Record<NotificationType, { Icon: typeof Heart; cls: string }> = {
   plan_vote: { Icon: Vote, cls: 'bg-accent-soft text-accent' },
   plan_decided: { Icon: CalendarCheck, cls: 'bg-mint-soft text-mint' },
   game_received: { Icon: Sparkles, cls: 'bg-primary-soft text-primary' },
+  study_group: { Icon: BookOpen, cls: 'bg-primary-soft text-primary' },
   game_result: { Icon: Sparkles, cls: 'bg-mint-soft text-mint' },
 };
 

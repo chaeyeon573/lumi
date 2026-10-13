@@ -42,7 +42,7 @@ export function PersonPage() {
   const [pCat, setPCat] = useState<ActivityCategory>((params.get('cat') as ActivityCategory) || 'coffee');
   const oppsAll = useAppStore((s) => s.opportunities);
   const oppRef = params.get('opp') ? oppsAll.find((o) => o.id === params.get('opp')) : undefined;
-  const [pMsg, setPMsg] = useState(oppRef ? (lang === 'en' ? `Want to go to ${oppRef.title} together?` : `${oppRef.title} 같이 갈래요?`) : '');
+  const [pMsg, setPMsg] = useState(oppRef ? (lang === 'en' ? `Want to go to ${oppRef.title} together?` : `${oppRef.title} 같이 갈래요?`) : (params.get('msg') ?? '').slice(0, 200));
   const [pWhen, setPWhen] = useState(`${todayISO()} 18:00`);
   const [busy, setBusy] = useState(false);
   useEffect(() => { if (params.get('propose')) setParams({}, { replace: true }); }, [params, setParams]);

@@ -18,9 +18,10 @@ export function useViewer() {
   const opportunityIntents = useAppStore((s) => s.opportunityIntents);
   const timePolls = useAppStore((s) => s.timePolls);
   const currentUserId = useAppStore((s) => s.currentUserId);
+  const classRosters = useAppStore((s) => s.classRosters);
 
   return useMemo(() => {
-    const snap = { users, relationships, participations, proposals, activities, opportunities, opportunityIntents, timePolls };
+    const snap = { users, relationships, participations, proposals, activities, opportunities, opportunityIntents, timePolls, classRosters };
     const me = users.find((u) => u.id === currentUserId) as User;
     const userById = (id: ID) => users.find((u) => u.id === id);
     const orgById = (id: ID) => organizations.find((o) => o.id === id);
@@ -28,7 +29,8 @@ export function useViewer() {
     const blockedByIds = new Set(relationships.blocks.filter((b) => b.toId === me?.id).map((b) => b.fromId));
     const hidden = (id: ID) => blockedIds.has(id) || blockedByIds.has(id);
 
-    const visibleActivities: Activity[] = me ? activities.filter((a) => !hidden(a.hostId) && canViewActivity(snap, me, a)) : [];
+    // Lumi 가 제안만 한 스터디 그룹(아직 2명이 수락하지 않음)은 목록에 섞지 않는다 — /study/:id 와 수업 방에서만
+    const visibleActivities: Activity[] = me ? activities.filter((a) => !hidden(a.hostId) && a.studyGroup?.status !== 'suggested' && a.studyGroup?.status !== 'expired' && canViewActivity(snap, me, a)) : [];
     const visiblePosts: Post[] = me ? posts.filter((p) => !hidden(p.authorId) && canViewPost(snap, me, p)) : [];
     const visibleUsers: User[] = me ? users.filter((u) => u.id !== me.id && !hidden(u.id)) : [];
 
@@ -51,5 +53,5 @@ export function useViewer() {
       hasBlocked: (to: ID) => hasBlocked(snap, me.id, to),
       isBlocked: (to: ID) => isBlocked(snap, me.id, to),
     };
-  }, [users, relationships, participations, proposals, activities, posts, organizations, opportunities, opportunityIntents, timePolls, currentUserId]);
+  }, [users, relationships, participations, proposals, activities, posts, organizations, opportunities, opportunityIntents, timePolls, currentUserId, classRosters]);
 }

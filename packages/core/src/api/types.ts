@@ -1,6 +1,7 @@
 import type {
   Activity, ActivityProposal, ChatRoom, ID, Notification, Organization, Participation, Post, Relationships, Report, School, User,
   ActivityCategory, Visibility, JoinPolicy, ActivityKind, Place, ReportTargetType, Availability, Opportunity, OpportunityIntentRecord, OpportunityIntent, Role, TimePoll, TimeOption, Game, GameInput,
+  ClassRoster, StudyGroupResponse,
 } from '@core/types';
 
 /** 클라이언트가 보유하는 전체 데이터 스냅샷 (실제 API에서는 필요한 부분만 내려받도록 분리) */
@@ -21,6 +22,8 @@ export interface Snapshot {
   timePolls: TimePoll[];
   /** 아이스브레이커 게임 — 서버는 내가 보냈거나 받은 것만, 비밀을 지운 채로 내려준다 */
   games: Game[];
+  /** 내가 듣는 수업별 같은 수업 학생 — 저장하지 않고 보는 사람마다 서버가 계산한다 (server/view.ts). 패치에 오면 통째로 바꾼다 */
+  classRosters?: ClassRoster[];
 }
 
 /** 변경된 엔티티만 담아 돌려주는 부분 응답. 스토어가 id 기준으로 병합한다. */
@@ -150,6 +153,30 @@ export interface CatalogCourse {
   /** 과목 공식 상세 페이지 (설명·선수과목·담당). 학교가 공개했으면 실라버스 링크 */
   url?: string;
   syllabusUrl?: string;
+  /** 학교가 공개한 시험 일정만 (없으면 비워 둔다 — 지어내지 않는다). 스터디 그룹 제안을 시험 주에 앞당긴다 */
+  exams?: { label: string; date: string }[];
+}
+
+/** 수업 방 공개 정보 (/c/<학교>/<코드>) — 로그인 전에도 보이므로 인원 수만, 사람은 없다 */
+export interface ClassRoomInfo {
+  schoolId: ID;
+  schoolName: string;
+  /** URL 의 학교 부분 ("berkeley") */
+  schoolSlug: string;
+  /** URL 의 과목 부분 ("cs61a") */
+  codeSlug: string;
+  code: string;
+  term: string;
+  title?: string;
+  instructor?: string;
+  meetings: { day: number; start: string; end: string }[];
+  url?: string;
+  /** 지금 학기 수업 목록에 있는지 */
+  inCatalog: boolean;
+  /** 같은 수업 Lumi 학생 수 (보이기를 켠 실제 학생만, 예시 프로필 제외) */
+  count: number;
+  /** 수업 목록 원본 (내 시간표에 추가할 때) */
+  catalogCourse?: CatalogCourse;
 }
 
 /** Plan Together 생성 입력 */
@@ -331,6 +358,16 @@ export interface AroundUApi {
     ask(messages: { role: 'user' | 'assistant'; content: string }[]): Promise<{ answer: string; cards: AiCard[] }>;
     profileDraft(text: string, schoolId: ID): Promise<{ draft: AiProfileDraft; suggestions: { clubs: AiCard[]; listings: AiCard[] } }>;
     starters(userId: ID, lang: 'en' | 'ko'): Promise<{ starters: string[] }>;
+  };
+
+  /** 같은 수업 (classmates) — 목록은 snapshot.classRosters 로 온다 */
+  classes: {
+    /** 수업 방 공개 정보 — 로그인 없이도 된다 */
+    room(schoolSlug: string, codeSlug: string): Promise<ClassRoomInfo | null>;
+    /** Lumi 가 제안한 스터디 그룹에 답하기 (in · other · no). other 면 preferred 에 원하는 시간 */
+    respond(activityId: ID, userId: ID, response: StudyGroupResponse, preferred?: { day: number; start: string; end: string }): Promise<Patch>;
+    /** 파트너 찾기 목록에 올리기(note 는 한 줄) · null 이면 내리기 (짝을 찾았어요) */
+    setPartner(userId: ID, classKey: string, note: string | null): Promise<Patch>;
   };
 
   /** 서버 푸시(웹소켓 등)를 흉내내는 구독. 실제 API로 교체 시 SSE/WebSocket으로 대체 */

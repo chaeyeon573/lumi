@@ -35,6 +35,10 @@ import { CreateTogetherPage } from '@/pages/together/CreateTogetherPage';
 import { TogetherPage } from '@/pages/together/TogetherPage';
 import { OpportunityDetailPage } from '@/pages/opportunities/OpportunityDetailPage';
 import { ProfileContextPage } from '@/pages/profile/ProfileContextPage';
+import { ClassRoomPage } from '@/pages/classes/ClassRoomPage';
+import { ClassQrPage } from '@/pages/classes/ClassQrPage';
+import { StudyGroupPage } from '@/pages/classes/StudyGroupPage';
+import { takeReturnTo } from '@/components/classes/ClassLink';
 
 function RequireAuth() {
   const currentUserId = useAppStore((s) => s.currentUserId);
@@ -43,6 +47,8 @@ function RequireAuth() {
   if (status === 'idle' || status === 'loading') return <SplashScreen />;
   if (status === 'error') return <FullError />;
   if (!currentUserId) return <Navigate to="/welcome" replace state={{ from: location }} />;
+  // 수업 링크로 들어와 가입·로그인했으면 그 수업 방으로
+  if (location.pathname === '/') { const back = takeReturnTo(); if (back) return <Navigate to={back} replace />; }
   return <Outlet />;
 }
 
@@ -85,6 +91,11 @@ export default function App() {
           <Route path="/start" element={<StartPage />} />
         </Route>
       </Route>
+      {/* 수업 공유 링크 — 로그인 전에도 열린다 (인원 수만) */}
+      <Route element={<AppShell withNav={false} />}>
+        <Route path="/c/:school/:code" element={<ClassRoomPage />} />
+      </Route>
+      <Route path="/c/:school/:code/qr" element={<ClassQrPage />} />
       <Route element={<RequireAuth />}>
         <Route element={<AppShell />}>
           <Route path="/" element={<HomePage />} />
@@ -97,6 +108,7 @@ export default function App() {
           <Route path="/timetable" element={<TimetablePage />} />
           <Route path="/plans" element={<PlansPage />} />
           <Route path="/classes/:courseName" element={<ClassPage />} />
+          <Route path="/study/:id" element={<StudyGroupPage />} />
           <Route path="/together/new" element={<CreateTogetherPage />} />
           <Route path="/together/:id" element={<TogetherPage />} />
           <Route path="/search" element={<SearchPage />} />

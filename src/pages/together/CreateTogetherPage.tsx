@@ -32,7 +32,7 @@ export function CreateTogetherPage() {
   const [category, setCategory] = useState<ActivityCategory>((params.get('cat') as ActivityCategory) || 'meal');
   const [title, setTitle] = useState('');
   const [placeName, setPlaceName] = useState('');
-  const [invitees, setInvitees] = useState<string[]>(inviteParam && v.userById(inviteParam) ? [inviteParam] : []);
+  const [invitees, setInvitees] = useState<string[]>((inviteParam ?? '').split(',').filter((id) => id && v.userById(id)));
   const [options, setOptions] = useState<Opt[]>([]);
   const [custom, setCustom] = useState<Opt>({ date: addDaysISO(1), startTime: '18:00', endTime: '19:30' });
   const [hours, setHours] = useState(48);

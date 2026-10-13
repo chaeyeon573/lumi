@@ -41,7 +41,7 @@ export function PersonCard({ user, onSkip, compact, className }: Props) {
   const common = commonInterests(v.me, user);
   const opps = useAppStore((s) => s.opportunities);
   const intents = useAppStore((s) => s.opportunityIntents);
-  const reasons = matchReasons(v.me, user, { opportunities: opps, opportunityIntents: intents }, v.canSeeField(user, 'timetable')).filter((r) => r.kind !== 'school');
+  const reasons = matchReasons(v.me, user, { opportunities: opps, opportunityIntents: intents, classRosters: v.snap.classRosters }, v.canSeeField(user, 'timetable')).filter((r) => r.kind !== 'school');
   const avail = availabilityText(user, v.canSeeField(user, 'timetable'));
   const showAvail = avail.auto || (v.canSeeField(user, 'availability') && user.availability !== 'hidden');
 
