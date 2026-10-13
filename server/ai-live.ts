@@ -4,7 +4,7 @@
  */
 import type { User } from '@core/types';
 import { campusClock, addDaysISO, fmtClock, fmtRange } from '@core/lib/campusclock';
-import { ALLERGEN_LABELS, DIET_LABELS, dishMatches, hoursOf, isDietFilter, openState, sortLocations, currentMeal, type DietFilter, type DiningDay, type DiningLocation, type MealKey, type MealPeriod, type OpenState } from '@core/lib/dining';
+import { ALLERGEN_LABELS, DIET_LABELS, dishMatches, hoursOf, isDietFilter, isMainStation, openState, sortLocations, currentMeal, type DietFilter, type DiningDay, type DiningLocation, type MealKey, type MealPeriod, type OpenState } from '@core/lib/dining';
 import { CROWD_LABELS, crowdLevel, type GymSpaceView } from '@core/lib/gym';
 import { liveServices } from './campus-live';
 
@@ -29,7 +29,7 @@ const dishOut = (d: { name: string; diets: string[]; allergens: string[] }) => {
 };
 
 function mealOut(m: MealPeriod, filters: DietFilter[], query: string, perStation: number) {
-  const stations = m.stations.map((s) => ({ station: s.name, dishes: s.dishes.filter((d) => dishMatches(d, filters) && (!query || norm(d.name).includes(query))) }))
+  const stations = [...m.stations].sort((x, y) => Number(!isMainStation(x.name)) - Number(!isMainStation(y.name))).map((s) => ({ station: s.name, dishes: s.dishes.filter((d) => dishMatches(d, filters) && (!query || norm(d.name).includes(query))) }))
     .filter((s) => s.dishes.length)
     .map((s) => ({ station: s.station, dishes: s.dishes.slice(0, perStation).map(dishOut), ...(s.dishes.length > perStation ? { more: s.dishes.length - perStation } : {}) }));
   return { meal: m.label, time: m.start && m.end ? fmtRange({ start: m.start, end: m.end }) : 'time not listed', stations };

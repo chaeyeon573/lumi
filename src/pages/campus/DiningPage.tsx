@@ -6,7 +6,7 @@ import { Chip, CardSkeleton, EmptyState, ErrorState, Tag } from '@/components/ui
 import { useAppStore } from '@core/store/useAppStore';
 import { cn } from '@core/lib/cn';
 import { fmtClock, fmtRange } from '@core/lib/campusclock';
-import { ALLERGEN_LABELS, DIET_FILTERS, MEAL_LABELS, currentMeal, dishKey, dishMatches, hoursOf, openState, sortLocations, type DietFilter, type DiningLocation, type Dish, type MealKey } from '@core/lib/dining';
+import { ALLERGEN_LABELS, DIET_FILTERS, MEAL_LABELS, currentMeal, dishKey, dishMatches, hoursOf, isMainStation, openState, sortLocations, type DietFilter, type DiningLocation, type Dish, type MealKey } from '@core/lib/dining';
 import { campusLive, type DiningResponse, type Favorite } from '@/lib/campusLive';
 
 const FILTER_KEY = 'lumi.dining.filters';
@@ -70,7 +70,8 @@ export function DiningPage() {
   const tomorrow = data.dates?.find((d) => d > data.today);
   const state = loc && isToday ? openState(loc, nowMin) : null;
   const hours = loc ? hoursOf(loc) : null;
-  const stations = meal?.stations.map((s) => ({ name: s.name, dishes: s.dishes.filter((d) => dishMatches(d, filters)) })).filter((s) => s.dishes.length) ?? [];
+  // 메인 코너 먼저 (샐러드 바·디저트 같은 상시 코너는 뒤로), 같은 종류 안에서는 원본 순서
+  const stations = [...(meal?.stations ?? [])].sort((x, y) => Number(!isMainStation(x.name)) - Number(!isMainStation(y.name))).map((s) => ({ name: s.name, dishes: s.dishes.filter((d) => dishMatches(d, filters)) })).filter((s) => s.dishes.length);
 
   return (
     <div className="min-h-full pb-10 bg-bg">
