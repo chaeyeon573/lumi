@@ -101,7 +101,7 @@ export function ClassRoomPage() {
         ) : mine ? (
           // ─── 듣는 사람 ───
           <>
-            <Header info={mine.term === info.term ? info : { ...info, term: mine.term, instructor: undefined, meetings: mine.meetings.map((c) => ({ day: c.day, start: c.start, end: c.end })) }} />
+            <Header info={mine.term === info.term && info.meetings.length ? info : { ...info, term: mine.term, instructor: mine.term === info.term ? info.instructor : undefined, meetings: mine.meetings.map((c) => ({ day: c.day, start: c.start, end: c.end })) }} />
             <div className="flex gap-2 flex-wrap"><CopyClassLink compact schoolId={info.schoolId} code={info.code} /><QrLinkButton schoolId={info.schoolId} code={info.code} /></div>
             <ClassRoom enrollment={mine} roster={roster} />
           </>

@@ -129,7 +129,8 @@ export function ClassRoom({ enrollment, roster, onGo }: { enrollment: Enrollment
               {freeAfter.slice(0, 8).map(({ u, days }) => (
                 <button key={u.id} onClick={() => ask(u, en ? `Grab coffee after ${code} on ${DAYS[days[0]]}?` : `${code} 끝나고 커피 할래요?`)} className="flex flex-col items-center gap-1 shrink-0 w-[68px]">
                   <Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={56} />
-                  <span className="text-[12px] text-ink truncate max-w-full">{u.sample && <SampleTag />}{u.nickname}</span>
+                  <span className="text-[12px] text-ink truncate max-w-full">{u.nickname}</span>
+                  {u.sample && <SampleTag className="mr-0" />}
                   <span className="text-[10.5px] text-ink-3">{days.map((d) => DAYS[d]).join('/')}</span>
                 </button>
               ))}
