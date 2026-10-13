@@ -10,7 +10,7 @@ import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { ORG_TYPE_LABELS } from '@core/lib/labels';
 import { daysUntil, isTogetherType } from '@core/lib/recommend';
-import { scoreListings, scoreClubs, whyLine } from '@core/lib/foryou';
+import { scoreListings, scoreClubs, whyLine, limitRepeats } from '@core/lib/foryou';
 import { ALL_POST_TYPES, POST_TYPE_LABELS, OPP_TYPE_LABELS, OPP_TYPE_EMOJI } from '@core/lib/labels';
 import { FIELDS, REGIONS, audienceOf, badgeOf, fieldOf, isGradStudent, isTalk, locationOf, regionsOf, spreadByHost, type Region } from '@core/lib/listings';
 import { api } from '@core/api';
@@ -111,9 +111,8 @@ function OpportunitiesTab() {
   const scored = useMemo(() => {
     const rows = opps.filter((o) => !isTogetherType(o.type) || (o.type === 'hackathon' && !o.rolesNeeded)).filter((o) => !o.schoolId || o.schoolId === mySchool).filter((o) => !o.deadline || daysUntil(o.deadline) >= 0);
     const sc = scoreListings({ opportunities: opps, opportunityIntents: intents, organizations: orgs, relationships, schools }, me, rows);
-    return rows.map((o) => { const r = sc.get(o.id); return { o, score: r?.score ?? -1, why: r ? whyLine(r.reasons, 1) : '' }; });
+    return rows.map((o) => { const r = sc.get(o.id); return { o, score: r?.score ?? -1, reasons: r?.reasons ?? [] }; });
   }, [opps, intents, orgs, relationships, schools, me, mySchool]);
-  const whyOf = useMemo(() => new Map(scored.map((x) => [x.o.id, x.why])), [scored]);
 
   const grad = isGradStudent(me);
   // 세미나·강연 — 행사라서 위 목록(정보성 공고)에는 없다. 내 전공 단어가 들어간 것을 먼저
@@ -142,6 +141,13 @@ function OpportunitiesTab() {
     return sort === 'deadline' ? sorted.map((x) => x.o) : spreadByHost(sorted.map((x) => x.o));
   }, [scored, sub, field, region, sort, savedIds, talks, grad]);
 
+  // 보이는 순서대로 — 같은 이유는 두 번까지만
+  const whyOf = useMemo(() => {
+    const byId = new Map(scored.map((x) => [x.o.id, x.reasons]));
+    const rows = list.slice(0, shown);
+    const kept = limitRepeats(rows.map((o) => byId.get(o.id) ?? []));
+    return new Map(rows.map((o, i) => [o.id, whyLine(kept[i], 1)]));
+  }, [scored, list, shown]);
   const savedList = useMemo(() => scored.filter((x) => savedIds.has(x.o.id)).map((x) => x.o).sort((a, b) => (a.deadline ?? a.date ?? '9999').localeCompare(b.deadline ?? b.date ?? '9999')), [scored, savedIds]);
   const toggleSave = (o: Opportunity) => run(() => api.opportunities.toggleSave(o.id, me.id), savedIds.has(o.id) ? undefined : (en ? 'Saved — it’s at the top of Notices now.' : '저장했어요 — 공고 맨 위에서 볼 수 있어요.'));
   const showFilters = sub === 'internship' || sub === 'foryou' || sub === 'phd';
@@ -232,6 +238,7 @@ function ClubsTab() {
   // 내 관심사대로 — 화면과 Ask Lumi가 같은 엔진(lib/foryou)을 쓴다
   const sc = useMemo(() => scoreClubs({ opportunities, opportunityIntents: intents, organizations: orgs, relationships, schools }, v.me, filtered), [opportunities, intents, orgs, relationships, schools, v.me, filtered]);
   const list = filtered.map((o) => ({ o, r: sc.get(o.id) })).sort((a, b) => (b.r?.score ?? -1) - (a.r?.score ?? -1) || Number(!!b.o.recruitment?.open) - Number(!!a.o.recruitment?.open)).map((x) => x.o);
+  const clubWhy = useMemo(() => { const kept = limitRepeats(list.map((o) => sc.get(o.id)?.reasons ?? [])); return new Map(list.map((o, i) => [o.id, whyLine(kept[i], 1)])); }, [list, sc]);
   return (
     <div>
       <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2">{CLUB_CHIPS.map((c) => <Chip key={c.key} active={chip === c.key} onClick={() => setChip(c.key)}>{c.label}</Chip>)}</div>
@@ -239,7 +246,7 @@ function ClubsTab() {
         <div className="divide-y divide-line">{list.map((o) => (
           <button key={o.id} onClick={() => nav(`/orgs/${o.id}`)} className="w-full flex items-center gap-3 py-3.5 text-left press">
             <Avatar emoji={o.logo.emoji} hue={o.logo.hue} url={o.logo.url} size={44} />
-            <span className="flex-1 min-w-0"><span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{o.name}</span>{o.recruitment?.open && <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{t('모집 중')}</span>}</span><span className="block text-[13px] text-ink-3 truncate mt-0.5">{orgSubtitle(o)}</span>{chip !== 'mine' && sc.get(o.id)?.reasons.length ? <span className="block text-[12px] text-ink-3 truncate mt-0.5">✨ {whyLine(sc.get(o.id)!.reasons, 1)}</span> : null}</span>
+            <span className="flex-1 min-w-0"><span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{o.name}</span>{o.recruitment?.open && <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{t('모집 중')}</span>}</span><span className="block text-[13px] text-ink-3 truncate mt-0.5">{orgSubtitle(o)}</span>{chip !== 'mine' && clubWhy.get(o.id) ? <span className="block text-[12px] text-ink-3 truncate mt-0.5">✨ {clubWhy.get(o.id)}</span> : null}</span>
             <span className="h-9 w-9 rounded-full grid place-items-center text-primary">{o.recruitment?.open ? <Plus size={20} /> : <ArrowRight size={20} />}</span>
           </button>
         ))}</div>

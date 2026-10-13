@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BadgeCheck, ShieldCheck } from 'lucide-react';
 import { t } from '@core/i18n';
 import { cn } from '@core/lib/cn';
@@ -14,7 +15,9 @@ interface AvatarProps {
 }
 
 export function Avatar({ emoji, hue, url, size = 44, className, ring }: AvatarProps) {
-  if (url) return <img src={assetUrl(url)} alt="" width={size} height={size} className={cn('shrink-0 rounded-full object-cover select-none', ring && 'ring-2 ring-white shadow-sm', className)} style={{ width: size, height: size }} />;
+  // 이미지가 안 열리면(외부 로고가 내려갔거나 막혔을 때) 깨진 아이콘 대신 이니셜·이모지로
+  const [broken, setBroken] = useState(false);
+  if (url && !broken) return <img src={assetUrl(url)} alt="" width={size} height={size} loading="lazy" onError={() => setBroken(true)} className={cn('shrink-0 rounded-full object-cover select-none', ring && 'ring-2 ring-white shadow-sm', className)} style={{ width: size, height: size }} />;
   return (
     <div
       className={cn('shrink-0 grid place-items-center rounded-full select-none', ring && 'ring-2 ring-white shadow-sm', className)}

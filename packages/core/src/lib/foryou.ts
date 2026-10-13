@@ -28,7 +28,7 @@ export const TOPICS = {
   business: { en: 'business & marketing', ko: '비즈니스·마케팅', re: /business|marketing|\bsales\b|\bbrand|real estate|e-?commerce|growth marketing/g },
   startup: { en: 'startups', ko: '창업', re: /start-?ups?\b|founders?\b|entrepreneur|incubator|accelerator|\bpitch/g },
   design: { en: 'design & product', ko: '디자인·프로덕트', re: /design|\bux\b|\bui\b|product manag|\bpm\b|figma|architecture/g },
-  research: { en: 'research', ko: '연구', re: /research|\blabs?\b|scientist|\bph\.?d|fellowship|colloquium|seminar|academic|thesis|journal club/g },
+  research: { en: 'research', ko: '연구', re: /research|\blabs?\b|scientist|\bph\.?d|colloquium|seminar|thesis|journal club/g },
   bio_health: { en: 'bio & health', ko: '바이오·의료', re: /\bbio|medic|pre-?med|health|clinical|neuro|genom|pharm|nursing|dental|chemistry|mycolog|life science/g },
   physics: { en: 'physics & astronomy', ko: '물리·천문', re: /physic|astronom|astrophys|cosmolog|quantum|optics|particle|condensed matter|planetary/g },
   chemistry: { en: 'chemistry & materials', ko: '화학·재료', re: /chemi|materials science|polymer|catalys|biochem/g },
@@ -403,12 +403,7 @@ export function forYou(snap: Snap, me: User, opts: ForYouOptions = {}): Rec[] {
   out.sort((a, b) => b.score - a.score || a.id.localeCompare(b.id));
   const mixed = opts.mix === false ? out : mix(out);
   const top = opts.limit ? mixed.slice(0, opts.limit) : mixed;
-  // 같은 이유가 줄줄이 반복되지 않게 ("Like X you saved" × 5) — 같은 문장은 두 번까지만
-  const seenWhy = new Map<string, number>();
-  for (const r of top) {
-    const keep = r.reasons.filter((x) => { const n = seenWhy.get(x.text) ?? 0; if (x.kind === 'deadline' || x.kind === 'soon') return true; if (n >= 2) return false; seenWhy.set(x.text, n + 1); return true; });
-    r.reasons = keep;
-  }
+  limitRepeats(top.map((r) => r.reasons)).forEach((rs, i) => { top[i].reasons = rs; });
   return top;
 }
 
@@ -443,6 +438,16 @@ function mix<T extends { score: number; type: RecType; kind: string; item: { nam
     out.push(pick!.q.splice(pick!.i, 1)[0]);
   }
   return out;
+}
+
+/** 목록 위에서부터 보며 같은 이유 문장은 두 번까지만 남긴다 ("Like X, which you're in" × 20 방지). 마감·날짜는 매번 다르니 그대로 */
+export function limitRepeats(lists: Reason[][], max = 2): Reason[][] {
+  const seen = new Map<string, number>();
+  return lists.map((rs) => rs.filter((x) => {
+    if (x.kind === 'deadline' || x.kind === 'soon') return true;
+    const n = seen.get(x.text) ?? 0; if (n >= max) return false;
+    seen.set(x.text, n + 1); return true;
+  }));
 }
 
 /** 카드·AI에 쓸 짧은 이유 한 줄 (가장 큰 이유 1~2개) */

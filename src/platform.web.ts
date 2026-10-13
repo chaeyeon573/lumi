@@ -7,5 +7,6 @@ setPlatform({
   removeItem: (k) => { try { localStorage.removeItem(k); } catch { /* */ } },
   reload: () => window.location.reload(),
   locale: () => navigator.language,
-  asset: (path) => `${import.meta.env.BASE_URL}${path}`,
+  // 바깥 주소(동아리 로고 등)는 그대로 — 앞에 BASE_URL 을 붙이면 "/https://…" 가 되어 깨진다
+  asset: (path) => (/^(https?:|data:|blob:)/.test(path) ? path : `${import.meta.env.BASE_URL}${path}`),
 });
