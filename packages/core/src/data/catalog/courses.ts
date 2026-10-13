@@ -7,6 +7,7 @@
  */
 import type { CatalogCourse } from '@core/api/types';
 import type { ID } from '@core/types';
+import { currentTerm, normalizeTermLabel, termLabel, termOrder } from '@core/lib/terms';
 
 /** 요일 패턴 → 요일 인덱스(0=월) */
 const PATTERNS: Record<string, number[]> = {
@@ -268,10 +269,30 @@ export const catalogCourses: CatalogCourse[] = [
   ...expand('s_sfsu', TERM, sfsu),
 ];
 
-/** 코드·이름·학과·교수로 검색. 코드 앞부분 일치를 먼저 보여준다 */
-export function searchCatalog(courses: CatalogCourse[], schoolId: ID, query: string, limit = 30, department = ''): CatalogCourse[] {
+/** 수업의 학기 라벨 ("Fall 2026") — 옛 행은 원본 코드로 저장돼 있어 맞춰 읽는다 */
+export const courseTerm = (c: CatalogCourse) => normalizeTermLabel(c.term ?? '');
+
+/** 학교에 수업이 있는 학기들 (오래된 것부터). 시간 없는 공개 카탈로그('catalog') 같은 라벨은 빼지 않는다 */
+export function catalogTerms(courses: CatalogCourse[], schoolId: ID): string[] {
+  const s = new Set<string>();
+  for (const c of courses) if (c.schoolId === schoolId) s.add(courseTerm(c));
+  return [...s].sort((a, b) => termOrder(a) - termOrder(b) || a.localeCompare(b));
+}
+
+/**
+ * 어느 학기 목록을 보여줄지: 요청한 학기 → 없으면 지금 학기(있으면) → 그것도 없으면 '' (학기 구분 없이 전부).
+ * 지금 학기 수업이 없는 학교(쿼터제 Autumn, 공개 카탈로그만 있는 학교, 아직 옛 코드로 저장된 행)는 예전처럼 전부 보여준다.
+ */
+export function resolveCatalogTerm(courses: CatalogCourse[], schoolId: ID, requested = '', now: Date = new Date()): string {
+  if (requested.trim()) return requested.trim();
+  const cur = termLabel(currentTerm(now));
+  return catalogTerms(courses, schoolId).includes(cur) ? cur : '';
+}
+
+/** 코드·이름·학과·교수로 검색. 코드 앞부분 일치를 먼저 보여준다. term 을 주면 그 학기 수업만 */
+export function searchCatalog(courses: CatalogCourse[], schoolId: ID, query: string, limit = 30, department = '', term = ''): CatalogCourse[] {
   const q = query.trim().toLowerCase().replace(/\s+/g, ' ');
-  const mine = courses.filter((c) => c.schoolId === schoolId && (!department || c.department === department));
+  const mine = courses.filter((c) => c.schoolId === schoolId && (!department || c.department === department) && (!term || courseTerm(c) === term));
   // 학과를 골랐으면 그 학과 수업을 과목 번호 순으로 전부 (검색어가 있으면 그 안에서 찾기)
   if (!q) return (department ? [...mine].sort((a, b) => a.code.localeCompare(b.code, 'en', { numeric: true })) : mine).slice(0, department ? 400 : limit);
   const norm = (s: string) => s.toLowerCase().replace(/\s+/g, ' ');
@@ -291,9 +312,9 @@ export function searchCatalog(courses: CatalogCourse[], schoolId: ID, query: str
   return scored.slice(0, limit).map((x) => x.c);
 }
 
-/** 학교의 학과(과목 분류) 목록 — 수업 수와 함께, 이름순 */
-export function catalogDepartments(courses: CatalogCourse[], schoolId: ID): { name: string; count: number }[] {
+/** 학교의 학과(과목 분류) 목록 — 수업 수와 함께, 이름순. term 을 주면 그 학기 기준 */
+export function catalogDepartments(courses: CatalogCourse[], schoolId: ID, term = ''): { name: string; count: number }[] {
   const m = new Map<string, number>();
-  for (const c of courses) if (c.schoolId === schoolId && c.department) m.set(c.department, (m.get(c.department) ?? 0) + 1);
+  for (const c of courses) if (c.schoolId === schoolId && c.department && (!term || courseTerm(c) === term)) m.set(c.department, (m.get(c.department) ?? 0) + 1);
   return [...m].map(([name, count]) => ({ name, count })).sort((a, b) => a.name.localeCompare(b.name));
 }

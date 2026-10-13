@@ -184,14 +184,23 @@ export async function ask(db: Snapshot, catalog: CatalogCourse[], viewer: User, 
     }),
     tool({
       name: 'search_courses',
-      description: "Search this term's classes at the student's school: meeting days/times, room, instructor and the official course page or syllabus link.",
+      description: "Search classes at the student's school: meeting days/times, room, instructor and the official course page or syllabus link. Searches the CURRENT term unless you pass term; the result says which term was searched (term) and which terms Lumi has (terms) — always say the term in your answer (e.g. \"Fall 2026\"). Pass term only when the student asks about another term (\"next semester\", \"Spring 2027\"), using a value from terms; never guess a term that isn't listed.",
       parameters: {
         type: 'object',
-        properties: { query: { type: 'string', description: 'Course code or words, e.g. "CS 61B", "COMPSCI 61B", "data structures", "intro economics"' }, limit: { type: 'integer', minimum: 1, maximum: 12 } },
+        properties: {
+          query: { type: 'string', description: 'Course code or words, e.g. "CS 61B", "COMPSCI 61B", "data structures", "intro economics"' },
+          term: { type: 'string', description: 'Optional term label like "Spring 2027". Omit for the current term.' },
+          limit: { type: 'integer', minimum: 1, maximum: 12 },
+        },
         required: ['query'],
         additionalProperties: false,
       },
-      run: (input) => remember(searchCourses(catalog, viewer, { query: str(input.query) ?? '', limit: num(input.limit) })),
+      run: (input) => {
+        const r = searchCourses(catalog, viewer, { query: str(input.query) ?? '', limit: num(input.limit), term: str(input.term) });
+        r.rows.forEach((x) => seen.set(x.card.id, x.card));
+        const note = r.requestedTermMissing ? `Lumi has no class list for ${str(input.term)} yet — showing ${r.term || 'all terms'} instead.` : r.rows.length ? undefined : 'No matches. Try other words or fewer filters.';
+        return JSON.stringify({ term: r.term || 'all terms', terms: r.terms, results: r.rows.map((x) => x.forModel), note });
+      },
     }),
     tool({
       name: 'search_activities',

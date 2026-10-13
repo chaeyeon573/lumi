@@ -8,7 +8,7 @@ import { Plus, Trash2, Lock, Users, CalendarPlus, ChevronRight, Sparkles, Search
 import type { Course } from '@core/types';
 import type { CatalogCourse } from '@core/api/types';
 import { TopBar } from '@/components/layout/TopBar';
-import { Button, BottomSheet, Field, Input, Select, Tag, VisibilityPicker, EmptyState, CardSkeleton, ErrorState, Avatar } from '@/components/ui';
+import { Button, BottomSheet, Field, Input, Select, Segmented, Tag, VisibilityPicker, EmptyState, CardSkeleton, ErrorState, Avatar } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
@@ -35,6 +35,10 @@ export function TimetablePage() {
   const [catalogQ, setCatalogQ] = useState('');
   const [dept, setDept] = useState('');
   const [depts, setDepts] = useState<{ name: string; count: number }[]>([]);
+  // 학기: 지금 학기가 기본, 다음 학기 시간표도 미리 볼 수 있다 ('' = 학기 구분 없는 학교)
+  const [terms, setTerms] = useState<{ terms: string[]; current: string } | null>(null);
+  const [term, setTerm] = useState('');
+  const [deptsTerm, setDeptsTerm] = useState<string | null>(null);
   const [catalog, setCatalog] = useState<CatalogCourse[] | null>(null);
   const [slot, setSlot] = useState<{ day: number; block: { start: number; end: number } } | null>(null);
   const [params, setParams] = useSearchParams();
@@ -69,17 +73,31 @@ export function TimetablePage() {
   const bestBlock = overlaps.length ? overlaps.flatMap((o) => o.blocks).sort((a, b) => (b.end - b.start) - (a.end - a.start))[0] : null;
 
   const schoolId = me?.affiliation.type === 'university' ? me.affiliation.schoolId : '';
+  const adding = !!editing && !editing.id && !!schoolId;
+  // 스위치에는 지금 학기와 그다음 학기만 ("Fall 2026 | Spring 2027")
+  const termOptions = useMemo(() => {
+    if (!terms?.current) return [];
+    const i = terms.terms.indexOf(terms.current);
+    return i < 0 ? [] : terms.terms.slice(i, i + 2).filter((x) => /^(Spring|Summer|Fall|Winter|Autumn) \d{4}$/.test(x));
+  }, [terms]);
+  // 학기 목록 — 수업 추가 창을 처음 열 때 한 번
   useEffect(() => {
-    if (!editing || editing.id || !schoolId) { setCatalog(null); return; }
+    if (!adding || terms) return;
+    api.catalog.terms(schoolId).then((r) => { setTerms(r); setTerm(r.current); }).catch(() => setTerms({ terms: [], current: '' }));
+  }, [adding, schoolId, terms]);
+  useEffect(() => {
+    if (!adding) { setCatalog(null); return; }
+    if (!terms) return;
     let alive = true;
-    const h = setTimeout(() => { api.catalog.courses(schoolId, catalogQ, dept).then((r) => { if (alive) setCatalog(r); }).catch(() => { if (alive) setCatalog([]); }); }, 200);
+    const h = setTimeout(() => { api.catalog.courses(schoolId, catalogQ, dept, term || undefined).then((r) => { if (alive) setCatalog(r); }).catch(() => { if (alive) setCatalog([]); }); }, 200);
     return () => { alive = false; clearTimeout(h); };
-  }, [editing, schoolId, catalogQ, dept]);
-  // 학과 목록 — 수업 추가 창을 처음 열 때 한 번
+  }, [adding, schoolId, catalogQ, dept, term, terms]);
+  // 학과 목록 — 고른 학기 기준 (학기를 바꾸면 다시). 그 학기에 없는 학과를 골라 두었으면 풀어 준다
   useEffect(() => {
-    if (!editing || editing.id || !schoolId || depts.length) return;
-    api.catalog.departments(schoolId).then(setDepts).catch(() => setDepts([]));
-  }, [editing, schoolId, depts.length]);
+    if (!adding || !terms || deptsTerm === term) return;
+    setDeptsTerm(term);
+    api.catalog.departments(schoolId, term || undefined).then((r) => { setDepts(r); setDept((d) => (d && !r.some((x) => x.name === d) ? '' : d)); }).catch(() => setDepts([]));
+  }, [adding, schoolId, term, terms, deptsTerm]);
 
   /** 수업 목록에서 골라 요일별 수업으로 펼쳐 추가 */
   const addFromCatalog = async (c: CatalogCourse) => {
@@ -184,6 +202,9 @@ export function TimetablePage() {
             {!editing.id && schoolId && (
               <div className="rounded-2xl bg-surface-2 p-3 space-y-2">
                 <div className="flex items-center gap-2 text-[13px] font-semibold"><Search size={14} className="text-primary" />{t('학교 수업 목록에서 찾기')}</div>
+                {termOptions.length > 1 && (
+                  <Segmented className="bg-surface" value={term} onChange={setTerm} options={termOptions.map((x) => ({ value: x, label: x }))} />
+                )}
                 {depts.length > 1 && (
                   <select value={dept} onChange={(e) => setDept(e.target.value)} className={cn('w-full h-11 rounded-xl px-3 text-[14px] font-semibold border', dept ? 'bg-primary-soft text-primary border-primary/30' : 'bg-white text-ink-2 border-line')}>
                     <option value="">{lang === 'en' ? `All departments (${depts.length})` : `전체 학과 (${depts.length})`}</option>

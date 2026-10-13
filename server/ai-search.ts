@@ -4,7 +4,7 @@
  */
 import type { Snapshot, CatalogCourse, AiCard } from '@core/api/types';
 import type { Opportunity, Organization, OpportunityType, User } from '@core/types';
-import { searchCatalog } from '@core/data/catalog/courses';
+import { searchCatalog, resolveCatalogTerm, catalogTerms, courseTerm } from '@core/data/catalog/courses';
 import { canViewActivity, placeLabel } from '@core/lib/relations';
 import { forYou, type RecType, type Topic } from '@core/lib/foryou';
 import { inCategory, isOfType, locationOf, regionsOf, type Region } from '@core/lib/listings';
@@ -74,13 +74,22 @@ export function searchClubs(db: Snapshot, viewer: User, input: { query?: string;
 
 const meetingText = (c: CatalogCourse) => c.meetings.length ? c.meetings.map((m) => `${DAYS[m.day] ?? '?'} ${m.start}-${m.end}`).join(', ') : 'Time TBA';
 
-/** 이번 학기 수업 (시간·강의실·교수·과목 링크) */
-export function searchCourses(catalog: CatalogCourse[], viewer: User, input: { query: string; limit?: number }) {
+/**
+ * 이번 학기 수업 (시간·강의실·교수·과목 링크). term 을 안 주면 지금 학기 — 어느 학기를 찾았는지(term)와
+ * 그 학교에 있는 학기들(terms)을 같이 돌려줘 Lumi 가 "Fall 2026 기준"이라고 말할 수 있게 한다.
+ */
+export function searchCourses(catalog: CatalogCourse[], viewer: User, input: { query: string; limit?: number; term?: string }, now: Date = new Date()) {
   const limit = Math.min(Math.max(input.limit ?? 6, 1), 12);
-  return searchCatalog(catalog, schoolOf(viewer), input.query, limit).map((c) => ({
-    card: { kind: 'course', id: c.id, code: c.code, title: c.title, instructor: c.instructor, location: c.location, when: meetingText(c), term: c.term, url: c.url, syllabusUrl: c.syllabusUrl } satisfies Card,
-    forModel: { id: c.id, code: c.code, title: c.title, instructor: c.instructor, location: c.location, meets: meetingText(c), term: c.term, units: c.units, link: c.url, syllabus: c.syllabusUrl },
+  const school = schoolOf(viewer);
+  const terms = catalogTerms(catalog, school);
+  // 모르는 학기를 달라고 하면 (아직 안 올라온 학기 등) 지금 학기로 찾는다 — terms 를 보고 Lumi 가 설명한다
+  const asked = input.term && terms.includes(input.term) ? input.term : '';
+  const term = resolveCatalogTerm(catalog, school, asked, now);
+  const rows = searchCatalog(catalog, school, input.query, limit, '', term).map((c) => ({
+    card: { kind: 'course', id: c.id, code: c.code, title: c.title, instructor: c.instructor, location: c.location, when: meetingText(c), term: courseTerm(c), url: c.url, syllabusUrl: c.syllabusUrl } satisfies Card,
+    forModel: { id: c.id, code: c.code, title: c.title, instructor: c.instructor, location: c.location, meets: meetingText(c), term: courseTerm(c), units: c.units, link: c.url, syllabus: c.syllabusUrl },
   }));
+  return { term, terms, requestedTermMissing: !!input.term && !asked, rows };
 }
 
 /** 학생들이 만든 활동 (스터디 크루·밥·커피 모임) — 볼 권한이 있는 것만, 장소는 공개 범위대로 */

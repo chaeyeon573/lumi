@@ -7,7 +7,7 @@ import { t } from '@core/i18n';
 import { createEngine } from '../engine';
 import { loadDB, resetDB, saveDB, getSession, setSession, type MockDB } from './db';
 import { DEMO_USER_ID } from '@core/data/seed';
-import { catalogCourses, searchCatalog, catalogDepartments } from '@core/data/catalog/courses';
+import { catalogCourses, searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm } from '@core/data/catalog/courses';
 
 let db: MockDB = loadDB();
 let failNextRequest = false;
@@ -100,8 +100,9 @@ export const mockApi: AroundUApi = {
   },
 
   catalog: {
-    async courses(schoolId, query, department) { return request(() => searchCatalog(catalogCourses, schoolId, query, 30, department ?? '')); },
-    async departments(schoolId) { return request(() => catalogDepartments(catalogCourses, schoolId)); },
+    async courses(schoolId, query, department, term) { return request(() => searchCatalog(catalogCourses, schoolId, query, 30, department ?? '', resolveCatalogTerm(catalogCourses, schoolId, term))); },
+    async departments(schoolId, term) { return request(() => catalogDepartments(catalogCourses, schoolId, resolveCatalogTerm(catalogCourses, schoolId, term))); },
+    async terms(schoolId) { return request(() => ({ terms: catalogTerms(catalogCourses, schoolId), current: resolveCatalogTerm(catalogCourses, schoolId) })); },
   },
 
   users: wrap(engine.users),

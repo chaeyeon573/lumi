@@ -4,7 +4,7 @@
  *   POST /api/auth/{demo,login,register,logout,me}
  *   POST /api/bootstrap
  *   POST /api/schools/{search,send-code,verify-code}
- *   POST /api/catalog/courses
+ *   POST /api/catalog/{courses,departments,terms}   term 생략 = 지금 학기 (Fall 2026 …)
  *   POST /api/rpc/:group/:method        body: { args: [...] }  → 엔진 메서드 호출, Patch 반환
  *   GET  /api/events?token=…            SSE: 다른 사용자의 변경을 Patch 로 푸시
  *   POST /api/system/reset              ALLOW_RESET=1 일 때만
@@ -24,10 +24,10 @@ import path from 'node:path';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { t, lang } from '@core/i18n';
-import type { Patch, Snapshot, RegisterInput } from '@core/api/types';
+import type { Patch, Snapshot, RegisterInput, CatalogCourse } from '@core/api/types';
 import type { Game, ID } from '@core/types';
 import { createEngine } from '@core/api/engine';
-import { searchCatalog, catalogDepartments, catalogCourses as builtInCatalog } from '@core/data/catalog/courses';
+import { searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm, catalogCourses as builtInCatalog } from '@core/data/catalog/courses';
 import { createStore } from './store';
 import { snapshotFor, patchFor } from './view';
 import { gameFor } from '@core/lib/icebreakers';
@@ -50,6 +50,10 @@ let db: Snapshot = (await store.loadSnapshot()) ?? await (async () => {
 })();
 let catalog = await store.loadCatalog();
 if (catalog.length === 0) { catalog = builtInCatalog; await store.upsertCatalog(catalog); console.log(`[seed] ${catalog.length} catalog courses`); }
+// 학교별로 나눠 둔다 — 검색할 때마다 전체(수만 개)를 훑지 않게
+const bySchool = (list: CatalogCourse[]) => { const m = new Map<string, CatalogCourse[]>(); for (const c of list) (m.get(c.schoolId) ?? m.set(c.schoolId, []).get(c.schoolId)!).push(c); return m; };
+let catalogBySchool = bySchool(catalog);
+let catalogVersion = await store.catalogVersion();
 
 db.games ??= []; // 게임 기능 이전에 저장된 스냅샷
 { const p = migrateDemo(db); if (p) { await store.applyPatch(p); console.log(`[demo] updated ${p.users?.length ?? 0} sample users, hid ${p.removed?.schools?.length ?? 0} schools`); } }
@@ -93,7 +97,9 @@ async function syncFromWorker() {
   }
   if (Object.keys(removed).length) patch.removed = removed;
   if (Object.keys(patch).length) { broadcast(patch); console.log(`[sync] ${WORKER_COLLECTIONS.map((c) => `${c} ${((patch as Record<string, unknown[]>)[c] ?? []).length}`).join(', ')}`); }
-  const nextCatalog = await store.loadCatalog(); if (nextCatalog.length) catalog = nextCatalog;
+  // 수업 목록은 크다 (학교 × 2학기) — 바뀌었을 때만 다시 읽는다
+  const v = await store.catalogVersion();
+  if (v !== catalogVersion) { const nextCatalog = await store.loadCatalog(); if (nextCatalog.length) { catalog = nextCatalog; catalogBySchool = bySchool(catalog); catalogVersion = v; console.log(`[sync] catalog ${catalog.length} courses`); } }
 }
 setInterval(() => { rollSamples().catch((e) => console.error('[demo] roll failed', e)); }, 15 * 60 * 1000);
 setInterval(() => { syncFromWorker().catch((e) => console.error('[sync] failed', e)); }, Number(process.env.DATA_SYNC_SECONDS ?? 120) * 1000);
@@ -257,8 +263,11 @@ app.post('/api/schools/verify-code', wrap(async (req) => {
 }));
 
 // ─── 수업 목록 ───────────────────────────────────────────────────────────
-app.post('/api/catalog/courses', wrap(async (req) => searchCatalog(catalog, String(req.body.schoolId ?? ''), String(req.body.query ?? ''), 30, String(req.body.department ?? ''))));
-app.post('/api/catalog/departments', wrap(async (req) => catalogDepartments(catalog, String(req.body.schoolId ?? ''))));
+// term 을 안 주면 지금 학기 (그 학교에 지금 학기 수업이 없으면 학기 구분 없이)
+const schoolCatalog = (schoolId: string) => catalogBySchool.get(schoolId) ?? [];
+app.post('/api/catalog/courses', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const list = schoolCatalog(s); return searchCatalog(list, s, String(req.body.query ?? ''), 30, String(req.body.department ?? ''), resolveCatalogTerm(list, s, String(req.body.term ?? ''))); }));
+app.post('/api/catalog/departments', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const list = schoolCatalog(s); return catalogDepartments(list, s, resolveCatalogTerm(list, s, String(req.body.term ?? ''))); }));
+app.post('/api/catalog/terms', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const list = schoolCatalog(s); return { terms: catalogTerms(list, s), current: resolveCatalogTerm(list, s) }; }));
 
 // ─── RPC (엔진 메서드) ────────────────────────────────────────────────────
 type Group = 'users' | 'activities' | 'posts' | 'relationships' | 'orgs' | 'opportunities' | 'proposals' | 'together' | 'games' | 'chats' | 'notifications' | 'reports';
@@ -388,7 +397,7 @@ app.post('/api/ai/ask', auth, wrap(async (req: Req) => {
   if (!history.length || history[history.length - 1].role !== 'user') throw bad(t('입력값을 확인해주세요.'));
   rateLimit(`ask:${me.id}`, 40);
   const question = history[history.length - 1].content;
-  return runAi('ask', { userId: me.id, schoolId: schoolIdOf(me), input: question }, () => ask(db, catalog, me, history), (r) => `${r.answer}\n[cards: ${r.cards.map((c) => c.id).join(', ')}]`);
+  return runAi('ask', { userId: me.id, schoolId: schoolIdOf(me), input: question }, () => ask(db, schoolCatalog(schoolIdOf(me) ?? ''), me, history), (r) => `${r.answer}\n[cards: ${r.cards.map((c) => c.id).join(', ')}]`);
 }));
 
 app.post('/api/ai/profile-draft', wrap(async (req) => {

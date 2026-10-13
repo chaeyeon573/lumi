@@ -165,8 +165,8 @@ DATABASE_URL=... npm run import:courses -- fall2026-berkeley.csv
 ```bash
 npm run fetch:courses -- stanford      # ExploreCourses XML, 키 불필요
 npm run fetch:courses -- mit           # FireRoad API, 키 불필요
-npm run fetch:courses -- berkeley     # 키 없으면 공개 Class Schedule(classes.berkeley.edu) 을 읽는다 — 33개 학과, 강의(LEC)만
-BERKELEY_TERM="Spring 2027" BERKELEY_PUBLIC_SUBJECTS="Computer Science|Mathematics" npm run fetch:courses -- berkeley   # 학기·학과 지정 (| 구분)
+npm run fetch:courses -- berkeley     # 키 없으면 공개 Class Schedule(classes.berkeley.edu) 을 읽는다 — 지금 학기 + 다음 학기, 그 학기 학과 전부, 강의(LEC)·세미나(SEM)
+BERKELEY_TERM="Fall 2026|Spring 2027" BERKELEY_PUBLIC_SUBJECTS="Computer Science|Mathematics" npm run fetch:courses -- berkeley   # 학기·학과 지정 (| 구분)
 BERKELEY_APP_ID=… BERKELEY_APP_KEY=… BERKELEY_TERM_ID=2268 npm run fetch:courses -- berkeley   # SIS Class API 키가 있으면 그쪽을 쓴다 (api-central.berkeley.edu)
 ```
 

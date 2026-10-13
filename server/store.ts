@@ -37,6 +37,8 @@ export interface Store {
   upsertCatalog(courses: CatalogCourse[]): Promise<void>;
   /** 한 학교의 수업 목록을 통째로 바꾼다 — 실제 학기 데이터를 넣을 때 내장 예시·지난 학기 행을 남기지 않는다 */
   replaceCatalog(schoolId: ID, courses: CatalogCourse[]): Promise<void>;
+  /** 수업 목록이 바뀌었는지 싸게 확인하는 값 (개수 + 마지막 갱신 시각) — 웹 서버가 바뀔 때만 다시 읽는다 */
+  catalogVersion(): Promise<string>;
 
   findAccount(email: string): Promise<Account | null>;
   createAccount(a: Account): Promise<void>;
@@ -54,6 +56,17 @@ export interface Store {
 }
 
 // ─── Postgres ────────────────────────────────────────────────────────────
+/** 수업 행을 500개씩 한 번에 넣는다 (학교 하나가 1만 행을 넘기도 한다) */
+async function insertCatalog(client: pg.PoolClient, courses: CatalogCourse[]) {
+  for (let i = 0; i < courses.length; i += 500) {
+    const chunk = courses.slice(i, i + 500);
+    await client.query(
+      'INSERT INTO catalog_courses (id, school_id, data) SELECT * FROM unnest($1::text[], $2::text[], $3::jsonb[]) ON CONFLICT (id) DO UPDATE SET data = EXCLUDED.data, school_id = EXCLUDED.school_id, updated_at = now()',
+      [chunk.map((c) => c.id), chunk.map((c) => c.schoolId), chunk.map((c) => JSON.stringify(c))],
+    );
+  }
+}
+
 export class PgStore implements Store {
   private pool: pg.Pool;
   private queue: Promise<unknown> = Promise.resolve();
@@ -130,13 +143,17 @@ export class PgStore implements Store {
     const { rows } = await this.pool.query<{ data: CatalogCourse }>('SELECT data FROM catalog_courses ORDER BY id');
     return rows.map((r) => r.data);
   }
+  async catalogVersion() {
+    const { rows } = await this.pool.query<{ v: string }>("SELECT count(*)::text || ':' || coalesce(max(updated_at)::text, '') AS v FROM catalog_courses");
+    return rows[0]?.v ?? '';
+  }
   async replaceCatalog(schoolId: ID, courses: CatalogCourse[]) {
     await this.serial(async () => {
       const client = await this.pool.connect();
       try {
         await client.query('BEGIN');
         await client.query('DELETE FROM catalog_courses WHERE school_id = $1 AND NOT (id = ANY($2))', [schoolId, courses.map((c) => c.id)]);
-        for (const c of courses) await client.query('INSERT INTO catalog_courses (id, school_id, data) VALUES ($1, $2, $3) ON CONFLICT (id) DO UPDATE SET data = EXCLUDED.data, school_id = EXCLUDED.school_id, updated_at = now()', [c.id, c.schoolId, JSON.stringify(c)]);
+        await insertCatalog(client, courses);
         await client.query('COMMIT');
       } catch (e) { await client.query('ROLLBACK'); throw e; } finally { client.release(); }
     });
@@ -146,7 +163,7 @@ export class PgStore implements Store {
       const client = await this.pool.connect();
       try {
         await client.query('BEGIN');
-        for (const c of courses) await client.query('INSERT INTO catalog_courses (id, school_id, data) VALUES ($1, $2, $3) ON CONFLICT (id) DO UPDATE SET data = EXCLUDED.data, school_id = EXCLUDED.school_id, updated_at = now()', [c.id, c.schoolId, JSON.stringify(c)]);
+        await insertCatalog(client, courses);
         await client.query('COMMIT');
       } catch (e) { await client.query('ROLLBACK'); throw e; } finally { client.release(); }
     });
@@ -229,15 +246,20 @@ export class FileStore implements Store {
     await this.flush();
   }
   async loadCatalog() { return this.data.catalog; }
+  private catalogRev = 0;
+  async catalogVersion() { return `${this.data.catalog.length}:${this.catalogRev}`; }
   async replaceCatalog(schoolId: ID, courses: CatalogCourse[]) {
-    const keep = new Set(courses.map((c) => c.id));
-    this.data.catalog = [...this.data.catalog.filter((c) => c.schoolId !== schoolId || keep.has(c.id)), ...courses.filter((c) => !this.data.catalog.some((x) => x.id === c.id))].map((c) => courses.find((n) => n.id === c.id) ?? c);
+    const next = new Map(courses.map((c) => [c.id, c]));
+    const had = new Set(this.data.catalog.map((c) => c.id));
+    this.data.catalog = [...this.data.catalog.filter((c) => c.schoolId !== schoolId || next.has(c.id)).map((c) => next.get(c.id) ?? c), ...courses.filter((c) => !had.has(c.id))];
+    this.catalogRev++;
     await this.flush();
   }
   async upsertCatalog(courses: CatalogCourse[]) {
     const byId = new Map(this.data.catalog.map((c) => [c.id, c]));
     courses.forEach((c) => byId.set(c.id, c));
     this.data.catalog = [...byId.values()];
+    this.catalogRev++;
     await this.flush();
   }
   async findAccount(email: string) { return this.data.accounts.find((a) => a.email === email) ?? null; }

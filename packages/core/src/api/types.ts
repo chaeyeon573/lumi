@@ -136,7 +136,10 @@ export interface CatalogCourse {
   location?: string;
   /** 요일 0=월 … 6=일 */
   meetings: { day: number; start: string; end: string }[];
+  /** 학기 라벨 "Fall 2026" (옛 행은 원본 코드일 수 있다 — 읽을 때 normalizeTermLabel) */
   term: string;
+  /** 원본 사이트의 학기 코드 (FA26 · 202608 · 202630 …) — 표본 재확인용. 라벨과 같으면 생략 */
+  termCode?: string;
   units?: number;
   /** 과목 공식 상세 페이지 (설명·선수과목·담당). 학교가 공개했으면 실라버스 링크 */
   url?: string;
@@ -201,9 +204,11 @@ export interface AroundUApi {
 
   catalog: {
     /** 학교 수업 검색 (과목 코드·이름·교수) */
-    courses(schoolId: ID, query: string, department?: string): Promise<CatalogCourse[]>;
-    /** 학과(과목 분류) 목록 */
-    departments(schoolId: ID): Promise<{ name: string; count: number }[]>;
+    courses(schoolId: ID, query: string, department?: string, term?: string): Promise<CatalogCourse[]>;
+    /** 학과(과목 분류) 목록 — term 을 안 주면 지금 학기 */
+    departments(schoolId: ID, term?: string): Promise<{ name: string; count: number }[]>;
+    /** 수업 목록이 있는 학기들과 기본(지금) 학기. current 가 '' 면 학기 구분 없이 본다 */
+    terms(schoolId: ID): Promise<{ terms: string[]; current: string }>;
   };
 
   users: {
