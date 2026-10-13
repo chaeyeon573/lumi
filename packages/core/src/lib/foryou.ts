@@ -15,7 +15,7 @@
 import type { Snapshot } from '@core/api/types';
 import type { ID, Opportunity, OpportunityType, Organization, User } from '@core/types';
 import { lang } from '@core/i18n';
-import { audienceOf, audienceFits, isGradStudent, regionsOf, type Region } from './listings';
+import { audienceOf, audienceFits, isGradStudent, isOfType, regionsOf, type Region } from './listings';
 
 // ─── 주제 ─────────────────────────────────────────────────────────────────
 export const TOPICS = {
@@ -291,7 +291,7 @@ function scoreListing(c: Ctx, o: Opportunity): Scored | null {
   const { me, now } = c;
   if (c.p.seen.has(o.id)) return null;
   if (o.deadline && daysTo(o.deadline, now) < 0) return null;
-  if (o.date && daysTo(o.date, now) < 0) return null;
+  if (o.date && !o.deadline && daysTo(o.date, now) < 0) return null; // 시작한 해커톤도 제출 마감 전이면 남긴다
   if (o.schoolId && me.affiliation.type === 'university' && o.schoolId !== me.affiliation.schoolId) return null;
   const aud = audienceOf(o);
   if (aud !== 'all' && !audienceFits(me, o)) return null;
@@ -388,8 +388,10 @@ export function forYou(snap: Snap, me: User, opts: ForYouOptions = {}): Rec[] {
   const c = context(snap, me, now, { query: opts.query, region: opts.region });
   const want = (t: RecType) => !opts.types?.length || opts.types.includes(t);
   const out: Rec[] = [];
+  // 종류는 분류(categoriesOf)로 — "장학금"을 찾으면 연구비 지원(lab)도, "연구"를 찾으면 연구 펠로십(scholarship)도
+  const wantListing = (o: Opportunity) => !opts.types?.length || opts.types.some((t) => isOfType(o, t));
   for (const o of snap.opportunities) {
-    if (!want(o.type)) continue;
+    if (!wantListing(o)) continue;
     if (o.type === 'activity') continue;
     const r = scoreListing(c, o); if (!r) continue;
     if (opts.topic && !(itemVecRaw(o)[opts.topic])) continue;

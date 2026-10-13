@@ -1,4 +1,6 @@
 import type { Course, User } from '@core/types';
+import type { CatalogCourse } from '@core/api/types';
+import { uid } from './format';
 import { t } from '@core/i18n';
 import { AVAILABILITY_LABELS } from './labels';
 
@@ -79,3 +81,19 @@ export function availabilityText(u: Pick<User, 'timetable' | 'availability'>, ca
 
 export function fmtBlock(b: Block) { return `${toHHMM(b.start)}–${toHHMM(b.end)}`; }
 export function fmtHours(b: Block) { const h = (b.end - b.start) / 60; return h % 1 === 0 ? `${h}${t('시간')}` : `${h.toFixed(1)}${t('시간')}`; }
+
+// ─── 학교 수업 목록 → 내 시간표 ─────────────────────────────────────────────
+/** 시간표 블록 색 */
+export const COURSE_HUES = [220, 160, 15, 280, 45, 330, 120, 200, 60, 300];
+/** 시간표에 들어가는 수업 이름 — 같은 과목을 두 번 넣었는지도 이 이름으로 본다 */
+export const catalogCourseName = (c: Pick<CatalogCourse, 'code' | 'title'>) => `${c.code} ${c.title}`.slice(0, 60);
+/** 수업 목록의 한 과목을 요일별 시간표 줄로 펼친다 (시간표 화면의 "수업 목록에서 찾기"와 같은 규칙) */
+export function coursesFromCatalog(c: CatalogCourse, hue = COURSE_HUES[0]): Course[] {
+  const name = catalogCourseName(c);
+  return c.meetings.map((m) => ({ id: uid('c'), name, day: m.day, start: m.start, end: m.end, room: c.location, professor: c.instructor, url: c.url, syllabusUrl: c.syllabusUrl, hue }));
+}
+export const hasCatalogCourse = (timetable: Course[], c: Pick<CatalogCourse, 'code' | 'title'>) => timetable.some((x) => x.name === catalogCourseName(c));
+/** 이미 있는 수업과 겹치는 시간 (추가 전에 알려 주기용) */
+export function clashesWith(timetable: Course[], c: Pick<CatalogCourse, 'meetings'>): Course[] {
+  return timetable.filter((x) => c.meetings.some((m) => m.day === x.day && toMin(m.start) < toMin(x.end) && toMin(x.start) < toMin(m.end)));
+}

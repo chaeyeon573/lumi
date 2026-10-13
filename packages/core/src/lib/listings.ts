@@ -2,7 +2,7 @@
  * 공고 목록 규칙 — 분야·지역 분류, 마감 표시, 같은 회사가 줄줄이 붙지 않게 섞기.
  * 서버(수집)와 화면이 같은 분류를 쓰도록 여기 한 곳에 둔다.
  */
-import type { Opportunity, User } from '@core/types';
+import type { Opportunity, OpportunityType, Organization, User } from '@core/types';
 import { daysUntil } from './recommend';
 
 export const FIELDS = ['Software', 'Data & AI', 'Hardware', 'Quant & Trading', 'Finance & Consulting', 'Product & Design', 'Business & Marketing', 'Research & Science', 'Other'] as const;
@@ -50,6 +50,9 @@ export function locationOf(o: Pick<Opportunity, 'location' | 'description' | 'ty
   return '';
 }
 
+/** 캠퍼스(태평양) 날짜 YYYY-MM-DD — 날짜만 있으면 그대로 */
+export const campusDate = (iso: string) => (/T/.test(iso) ? new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(iso)) : iso.slice(0, 10));
+
 /** 목록 오른쪽 배지 — 마감 D-day, 없으면 행사 날짜, 없으면 올라온 지 며칠 */
 export function badgeOf(o: Pick<Opportunity, 'deadline' | 'date' | 'postedAt' | 'createdAt' | 'type'>, en: boolean): { text: string; tone: 'urgent' | 'soon' | 'normal' | 'muted' } {
   if (o.deadline) {
@@ -58,8 +61,10 @@ export function badgeOf(o: Pick<Opportunity, 'deadline' | 'date' | 'postedAt' | 
     return { text: d === 0 ? 'D-Day' : `D-${d}`, tone: d <= 3 ? 'urgent' : d <= 14 ? 'soon' : 'normal' };
   }
   if (o.date) {
-    const d = daysUntil(o.date);
-    return { text: d === 0 ? (en ? 'Today' : '오늘') : d === 1 ? (en ? 'Tomorrow' : '내일') : new Date(`${o.date}T12:00:00`).toLocaleDateString(en ? 'en-US' : 'ko-KR', { month: 'short', day: 'numeric' }), tone: d <= 1 ? 'soon' : 'normal' };
+    // 학교 행사 목록의 날짜는 UTC 시각("2026-10-16T02:00Z")으로 온다 — 캠퍼스(태평양) 날짜로 읽어야 저녁 행사가 다음 날로 밀리지 않는다
+    const day = campusDate(o.date);
+    const d = Math.round((Date.parse(`${day}T12:00:00Z`) - Date.parse(`${campusDate(new Date().toISOString())}T12:00:00Z`)) / 86400000);
+    return { text: d === 0 ? (en ? 'Today' : '오늘') : d === 1 ? (en ? 'Tomorrow' : '내일') : new Date(`${day}T12:00:00`).toLocaleDateString(en ? 'en-US' : 'ko-KR', { month: 'short', day: 'numeric' }), tone: d <= 1 ? 'soon' : 'normal' };
   }
   if (o.type === 'internship') {
     const posted = o.postedAt ?? o.createdAt;
@@ -103,3 +108,68 @@ export const audienceFits = (u: Pick<User, 'affiliation'>, o: Pick<Opportunity, 
 };
 /** 세미나·강연 (행사 중 talk 태그) */
 export const isTalk = (o: Pick<Opportunity, 'type' | 'tags' | 'title'>) => o.type === 'event' && (o.tags.includes('talk') || /seminar|colloquium|lecture|talk\b|symposium|workshop/i.test(o.title));
+
+// ─── 분류 (한 공고가 여러 칸에 들어갈 수 있다) ─────────────────────────────
+/**
+ * 캠퍼스 › 찾기 칩과 Ask Lumi 검색이 같이 쓰는 분류.
+ * `type`은 수집할 때 하나만 고른 값이라, 연구 장학금(SURF)은 scholarship인데 연구 칸에도, 연구비 지원(UROC Funding Awards)은
+ * lab인데 장학금 칸에도 보여야 한다 — 그래서 칩은 type 대신 이 함수로 거른다.
+ */
+export type Category = 'internship' | 'research' | 'scholarship' | 'hackathon' | 'event' | 'free_food' | 'startup' | 'exchange' | 'club';
+const TYPE_CATEGORY: Record<OpportunityType, Category | null> = {
+  internship: 'internship', lab: 'research', scholarship: 'scholarship', hackathon: 'hackathon', event: 'event', startup: 'startup', exchange: 'exchange', club: 'club', activity: null,
+};
+const FUNDING_RE = /\b(funding|funds?|awards?|grants?|fellowships?|stipends?|scholarships?)\b/i;
+const CONTEST_RE = /\b(contest|competition|challenge|pitch)/i;
+type Classifiable = Pick<Opportunity, 'type' | 'title' | 'tags'>;
+const hasTag = (o: Pick<Opportunity, 'tags'>, ...tags: string[]) => o.tags.some((t) => tags.includes(t.toLowerCase()));
+
+export function categoriesOf(o: Classifiable): Category[] {
+  const base = TYPE_CATEGORY[o.type];
+  if (!base) return [];
+  const out = new Set<Category>([base]);
+  // 연구 장학금·연구 펠로십 (SURF, GRFP, UROC DSIG Research Fellowship) → 연구 칸에도
+  if (o.type === 'scholarship' && (hasTag(o, 'research') || /\bresearch\b/i.test(o.title))) out.add('research');
+  // 연구비·연구 펠로십을 주는 연구 프로그램 (UROC Research Funding Awards) → 장학금 칸에도
+  if (o.type === 'lab' && FUNDING_RE.test(`${o.title} ${o.tags.join(' ')}`)) out.add('scholarship');
+  // 창업 공모전 (Big Ideas Contest) → 해커톤·공모전 칸에도
+  if (o.type === 'startup' && CONTEST_RE.test(o.title)) out.add('hackathon');
+  // 해외 인턴십을 함께 뽑는 교환·연수 → 인턴 칸에도 (행사인 커리어 페어는 제외)
+  if (o.type !== 'event' && o.type !== 'internship' && hasTag(o, 'internship')) out.add('internship');
+  if (o.type === 'event' && hasTag(o, 'free food')) out.add('free_food');
+  return [...out];
+}
+export const inCategory = (o: Classifiable, c: Category) => categoriesOf(o).includes(c);
+/** "이 type의 것"을 찾을 때 — 같은 칸에 분류되는 다른 type도 포함 (AI 검색·For you 종류 필터) */
+export const isOfType = (o: Classifiable, t: OpportunityType) => o.type === t || (!!TYPE_CATEGORY[t] && inCategory(o, TYPE_CATEGORY[t]!));
+
+/** 행사 안의 작은 분류 — 데이터의 태그에서만 (지어내지 않는다) */
+export type EventKind = 'talk' | 'social' | 'career' | 'free_food';
+export function eventKindsOf(o: Classifiable): EventKind[] {
+  if (o.type !== 'event') return [];
+  const out: EventKind[] = [];
+  if (isTalk(o) || hasTag(o, 'talk', 'academic', 'lectures')) out.push('talk');
+  if (hasTag(o, 'social')) out.push('social');
+  if (hasTag(o, 'career fair', 'recruiting') || /\bcareer\b|networking|info(rmation)? session/i.test(o.title)) out.push('career');
+  if (hasTag(o, 'free food')) out.push('free_food');
+  return out;
+}
+
+// ─── 공고 ↔ 동아리 ────────────────────────────────────────────────────────
+/** 학교 행사 목록에서 온 동아리 모임(“General Meeting”)은 orgId가 없다 — 같은 학교의 같은 이름 단체로 잇는다 */
+const orgKey = (s: string) => s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+type OrgLike = Pick<Organization, 'id' | 'name' | 'schoolId'>;
+type Hosted = Pick<Opportunity, 'orgId' | 'host' | 'schoolId'>;
+/** 단체 목록으로 색인을 한 번 만들고, 공고마다 주최 단체를 찾는다 (목록 전체에 쓸 때) */
+export function orgLinker<T extends OrgLike>(orgs: T[]): (o: Hosted) => T | undefined {
+  const byId = new Map(orgs.map((x) => [x.id, x]));
+  const byName = new Map<string, T>();
+  for (const x of orgs) { const k = `${x.schoolId}|${orgKey(x.name)}`; if (!byName.has(k)) byName.set(k, x); }
+  return (o) => (o.orgId ? byId.get(o.orgId) : o.schoolId ? byName.get(`${o.schoolId}|${orgKey(o.host)}`) : undefined);
+}
+export const orgOfListing = <T extends OrgLike>(o: Hosted, orgs: T[]) => orgLinker(orgs)(o);
+/** 이 단체가 주최하는 공고·행사 */
+export function listingsOfOrg<T extends Hosted>(org: OrgLike, opps: T[]): T[] {
+  const k = orgKey(org.name);
+  return opps.filter((o) => o.orgId === org.id || (!o.orgId && o.schoolId === org.schoolId && orgKey(o.host) === k));
+}

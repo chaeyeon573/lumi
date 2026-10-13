@@ -1,4 +1,4 @@
-import { badgeOf, fieldOf, locationOf } from '@core/lib/listings';
+import { badgeOf, fieldOf, locationOf, orgOfListing } from '@core/lib/listings';
 import { useEffect, useRef, useState } from 'react';
 import { t, lang } from '@core/i18n';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
@@ -28,6 +28,7 @@ export function OpportunityDetailPage() {
   const run = useAppStore((s) => s.run);
   const showToast = useAppStore((s) => s.showToast);
   const opps = useAppStore((s) => s.opportunities);
+  const orgs = useAppStore((s) => s.organizations);
   const o = opps.find((x) => x.id === id);
   const [menu, setMenu] = useState(false);
   const [report, setReport] = useState(false);
@@ -52,7 +53,8 @@ export function OpportunityDetailPage() {
   const teamActs = v.visibleActivities.filter((a) => a.opportunityId === o.id);
   const people = others.map((i) => ({ i, u: v.userById(i.userId)! })).filter((x) => x.u && !v.isBlocked(x.u.id))
     .map((x) => ({ ...x, reasons: matchReasons(v.me, x.u, v.snap, v.canSeeField(x.u, 'timetable')) })).sort((a, b) => (Number(b.i.intent === 'solo' || b.i.intent === 'company') - Number(a.i.intent === 'solo' || a.i.intent === 'company')) || b.reasons.length - a.reasons.length);
-  const org = o.orgId ? v.orgById(o.orgId) : undefined;
+  // 학교 행사 목록에서 온 동아리 모임은 orgId가 없다 — 같은 학교의 같은 이름 단체로 잇는다
+  const org = orgOfListing(o, orgs);
   const together = isTogetherType(o.type);
   const interestedCount = others.filter((i) => i.saved || i.intent === 'interested').length + (mine?.saved ? 1 : 0);
   const appliedCount = others.filter((i) => i.intent === 'applied').length + (mine?.intent === 'applied' ? 1 : 0);

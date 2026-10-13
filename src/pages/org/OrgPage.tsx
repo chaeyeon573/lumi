@@ -15,6 +15,8 @@ import { api } from '@core/api';
 import { ORG_TYPE_LABELS } from '@core/lib/labels';
 import { relativeTime, todayISO } from '@core/lib/format';
 import { isTeamActivity } from '@core/lib/discover';
+import { listingsOfOrg } from '@core/lib/listings';
+import { daysUntil } from '@core/lib/recommend';
 
 type Tab = 'about' | 'posts' | 'events' | 'recruit' | 'members';
 
@@ -43,11 +45,14 @@ export function OrgPage() {
   const orgActs = v.visibleActivities.filter((a) => a.orgId === org.id && a.date >= today);
   const events = orgActs.filter((a) => !isTeamActivity(a));
   const recruits = orgActs.filter(isTeamActivity);
-  const orgOpps = opps.filter((o) => o.orgId === org.id);
+  // 이 단체가 올린 공고 + 학교 행사 목록에서 이 단체 이름으로 올라온 모임·행사 (General Meeting 등)
+  const hosted = listingsOfOrg(org, opps);
+  const listedEvents = hosted.filter((o) => o.type === 'event' && o.date && daysUntil(o.date) >= 0).sort((a, b) => `${a.date} ${a.startTime ?? ''}`.localeCompare(`${b.date} ${b.startTime ?? ''}`));
+  const orgOpps = hosted.filter((o) => o.type !== 'event');
   const posts = v.visiblePosts.filter((p) => p.orgId === org.id).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
   const room = rooms.find((r) => r.orgId === org.id && r.memberIds.includes(v.me.id));
   const tabs: { key: Tab; label: string; n?: number }[] = [
-    { key: 'about', label: t('소개') }, { key: 'posts', label: t('게시물'), n: posts.length }, { key: 'events', label: t('행사'), n: events.length }, { key: 'recruit', label: t('모집'), n: recruits.length + orgOpps.length + (org.recruitment?.open ? 1 : 0) }, { key: 'members', label: t('멤버'), n: org.memberIds.length || undefined },
+    { key: 'about', label: t('소개') }, { key: 'posts', label: t('게시물'), n: posts.length }, { key: 'events', label: t('행사'), n: events.length + listedEvents.length }, { key: 'recruit', label: t('모집'), n: recruits.length + orgOpps.length + (org.recruitment?.open ? 1 : 0) }, { key: 'members', label: t('멤버'), n: org.memberIds.length || undefined },
   ];
 
   return (
@@ -99,7 +104,7 @@ export function OrgPage() {
           </div>
         )}
         {tab === 'posts' && <div className="mt-3 space-y-3">{posts.length === 0 ? <EmptyState emoji="📝" title={t('아직 게시물이 없어요')} description={isAdmin ? t('소식을 올리면 Feed에도 함께 보여요.') : undefined} action={isAdmin ? <Button size="sm" onClick={() => setPost(true)}>{t('소식 올리기')}</Button> : undefined} /> : posts.map((p) => <PostCard key={p.id} post={p} />)}</div>}
-        {tab === 'events' && <div className="mt-3 space-y-2">{events.length === 0 ? <EmptyState emoji="🎪" title={t('예정된 행사가 없어요')} description={t('행사를 올리면 발견 › 활동에도 보여요.')} action={isAdmin ? <Button size="sm" onClick={() => nav(`/create/activity?kind=org_event&org=${org.id}&cat=performance`)}>{t('행사 만들기')}</Button> : undefined} /> : events.map((a) => <ActivityCard key={a.id} activity={a} variant="row" />)}</div>}
+        {tab === 'events' && <div className="mt-3 space-y-2">{listedEvents.map((o) => <OpportunityCard key={o.id} o={o} variant="row" />)}{events.length === 0 && listedEvents.length > 0 ? null : events.length === 0 ? <EmptyState emoji="🎪" title={t('예정된 행사가 없어요')} description={t('행사를 올리면 발견 › 활동에도 보여요.')} action={isAdmin ? <Button size="sm" onClick={() => nav(`/create/activity?kind=org_event&org=${org.id}&cat=performance`)}>{t('행사 만들기')}</Button> : undefined} /> : events.map((a) => <ActivityCard key={a.id} activity={a} variant="row" />)}</div>}
         {tab === 'recruit' && (
           <div className="mt-3 space-y-3">
             {org.recruitment && (

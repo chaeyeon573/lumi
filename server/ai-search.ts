@@ -7,7 +7,7 @@ import type { Opportunity, Organization, OpportunityType, User } from '@core/typ
 import { searchCatalog } from '@core/data/catalog/courses';
 import { canViewActivity, placeLabel } from '@core/lib/relations';
 import { forYou, type RecType, type Topic } from '@core/lib/foryou';
-import { locationOf, regionsOf, type Region } from '@core/lib/listings';
+import { inCategory, isOfType, locationOf, regionsOf, type Region } from '@core/lib/listings';
 
 export type Card = AiCard;
 
@@ -34,9 +34,10 @@ export function searchListings(db: Snapshot, viewer: User, today: string, input:
   const when = (o: Opportunity) => o.date ?? o.deadline ?? '';
   const rows = db.opportunities
     .filter((o) => !o.schoolId || o.schoolId === school)
-    .filter((o) => !input.types?.length || input.types.includes(o.type))
-    .filter((o) => !input.free_food || o.tags.includes('free food'))
-    .filter((o) => { const d = when(o); return !d || d >= today; })
+    // 분류는 categoriesOf 기준 — 연구 장학금은 lab 검색에도, 연구비 지원은 scholarship 검색에도 나온다 (캠퍼스 › 찾기 칩과 같은 분류)
+    .filter((o) => !input.types?.length || input.types.some((t) => isOfType(o, t)))
+    .filter((o) => !input.free_food || inCategory(o, 'free_food'))
+    .filter((o) => { const d = o.deadline ?? when(o); return !d || d >= today; }) // 시작한 해커톤도 제출 마감 전이면
     .filter((o) => { const d = o.date ?? o.deadline; if (!d) return !input.from && !input.to; return (!input.from || d >= input.from) && (!input.to || d <= input.to); })
     .filter((o) => !input.region || regionsOf(o).includes(input.region) || (!!o.schoolId && input.region === 'Bay Area'))
     .map((o) => ({ o, s: score(q, [[o.title, 5], [o.host, 3], [o.tags.join(' '), 3], [o.field, 3], [locationOf(o), 2], [o.eligibility, 1], [o.description, 1], [o.benefit, 2]]) }))
@@ -108,7 +109,8 @@ export function recommendFor(db: Snapshot, viewer: User, input: { types?: RecTyp
   const KINDS: RecType[] = ['lab', 'internship', 'hackathon', 'scholarship', 'club', 'event'];
   const recs = input.types?.length
     ? forYou(db, viewer, { types: input.types, topic: input.topic, query: input.interest, region: input.region, limit })
-    : KINDS.flatMap((k) => forYou(db, viewer, { types: [k], topic: input.topic, query: input.interest, region: input.region, limit: 2 }));
+    : KINDS.flatMap((k) => forYou(db, viewer, { types: [k], topic: input.topic, query: input.interest, region: input.region, limit: 2 }))
+      .filter((r, i, xs) => xs.findIndex((x) => x.id === r.id) === i); // 한 공고가 두 종류에 들 수 있다 (연구 장학금 = 연구 + 장학금)
   return recs.map((r) => {
     const why = r.reasons.slice(0, 3).map((x) => x.text);
     if (r.kind === 'club') {

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { t } from '@core/i18n';
+import { t, lang } from '@core/i18n';
 import { Bookmark, Clock, MapPin, Users, ExternalLink, BadgeCheck, AlarmClock } from 'lucide-react';
 import type { Opportunity } from '@core/types';
 import { Cover, Tag, Button } from '@/components/ui';
@@ -11,6 +11,7 @@ import { useAppStore } from '@core/store/useAppStore';
 import { useViewer } from '@/hooks/useViewer';
 import { api } from '@core/api';
 import { cn } from '@core/lib/cn';
+import { badgeOf } from '@core/lib/listings';
 
 export function useOppState(o: Opportunity) {
   const intents = useAppStore((s) => s.opportunityIntents);
@@ -34,7 +35,7 @@ export function OpportunityCard({ o, reasons, variant = 'feed', className }: { o
       <button onClick={() => nav(`/opportunities/${o.id}`)} className={cn('card w-full flex gap-3 p-3 text-left press', className)}>
         <span className="h-[52px] w-[52px] rounded-xl grid place-items-center text-[24px] shrink-0" style={{ background: `${color}1A` }}>{OPP_TYPE_EMOJI[o.type]}</span>
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-1.5"><span className="text-[11px] font-bold" style={{ color }}>{OPP_TYPE_EMOJI[o.type]} {OPP_TYPE_LABELS[o.type]}</span>{o.deadline && <Tag tone={urgent ? 'danger' : 'neutral'} className="h-5">{dday(o.deadline)}</Tag>}</div>
+          <div className="flex items-center gap-1.5"><span className="text-[11px] font-bold" style={{ color }}>{OPP_TYPE_EMOJI[o.type]} {OPP_TYPE_LABELS[o.type]}</span>{o.deadline && <Tag tone={urgent ? 'danger' : 'neutral'} className="h-5">{dday(o.deadline)}</Tag>}{!o.deadline && o.date && <Tag tone="primary" className="h-5">{badgeOf(o, lang === 'en').text}{o.startTime ? ` · ${o.startTime}` : ''}</Tag>}</div>
           <div className="text-[14px] font-bold truncate mt-0.5">{o.title}</div>
           <div className="text-[12px] text-ink-3 truncate">{o.host}</div>
           <div className="text-[12px] text-ink-2 mt-1 flex items-center gap-2">{isTogetherType(o.type) ? <><span className="flex items-center gap-1"><Users size={11} />{others.length}{t('명 관심')}</span>{matchCount > 0 && <span className="text-primary font-semibold">{t('나와 맞는')} {matchCount}{t('명')}</span>}</> : <>{o.benefit && <span className="truncate">🎁 {o.benefit}</span>}</>}</div>
