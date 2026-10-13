@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SlidersHorizontal, X, Clock, Zap, Bookmark, Heart, BadgeCheck, Hand, RotateCcw } from 'lucide-react';
+import { SlidersHorizontal, X, Clock, Zap, Bookmark, BadgeCheck, Hand, RotateCcw } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { LAST_SEEN_KEY } from '@/components/layout/BottomNav';
@@ -92,14 +92,14 @@ export function HomePage() {
       ) : (
         <div className="flex-1 min-h-0 flex flex-col">
           <SwipeDeck ref={deck} key={`${idx}`} top={current} next={cards[idx + 1]} returning={returning} onSwipe={onSwipe} onOpen={(u) => nav(`/users/${u.id}`)} />
-          <div className="shrink-0 pt-4 pb-1 flex flex-col items-center gap-3">
+          <div className="shrink-0 pt-4 pb-7 flex flex-col items-center gap-3">
             <div className="flex items-center gap-5">
               <button onClick={undo} disabled={idx === 0} aria-label={lang === 'en' ? 'Previous' : '이전 카드'} className="h-11 w-11 rounded-full grid place-items-center press bg-surface-2 text-ink-2 disabled:opacity-40"><RotateCcw size={18} /></button>
               <button onClick={() => deck.current?.fly('left')} aria-label={t('넘기기')} className="h-[68px] w-[68px] rounded-full grid place-items-center press bg-surface-2 text-ink-2"><X size={28} /></button>
-              <button onClick={() => (v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? nav(`/users/${current.u.id}`) : deck.current?.fly('right'))} aria-label={t('친구로 연결')} className={cn('h-[84px] w-[84px] rounded-full grid place-items-center press shadow-[0_12px_28px_-6px_rgba(15,43,72,.35)]', v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? 'bg-primary text-white' : 'bg-accent text-primary v2:bg-lime-400 v2:text-night v2:shadow-[0_12px_28px_-8px_rgba(212,255,58,.35)]')}>{v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? <Hand size={32} /> : <Heart size={34} />}</button>
+              <button onClick={() => (v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? nav(`/users/${current.u.id}`) : deck.current?.fly('right'))} aria-label={t('친구로 연결')} className={cn('h-[84px] w-[84px] rounded-full grid place-items-center press shadow-[0_12px_28px_-6px_rgba(15,43,72,.35)]', v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? 'bg-primary text-white' : 'bg-accent text-primary v2:bg-lime-400 v2:text-night v2:shadow-[0_12px_28px_-8px_rgba(212,255,58,.35)]')}><Hand size={32} /></button>
               <button onClick={() => setSaved((s) => tog(s, current.u.id))} aria-label={t('나중에 보기')} className={cn('h-11 w-11 rounded-full grid place-items-center press', saved.includes(current.u.id) ? 'bg-primary text-white' : 'bg-surface-2 text-primary')}><Bookmark size={18} fill={saved.includes(current.u.id) ? 'currentColor' : 'none'} /></button>
             </div>
-            <p className="text-[12px] text-ink-3">{lang === 'en' ? `${idx + 1} / ${cards.length} · Swipe left to pass, right to connect` : `${idx + 1} / ${cards.length} · 왼쪽으로 넘기기, 오른쪽으로 연결`}</p>
+            <p className="text-[12px] text-ink-3">{idx + 1} / {cards.length}</p>
           </div>
         </div>
       ))}

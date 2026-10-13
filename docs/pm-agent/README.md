@@ -39,7 +39,7 @@
    문구, 정렬, 빈 상태, 반복, 깨진 이미지, 마감 지난 데이터(`status=closed`, 출처 URL 로 마감 확인 후), Ask Lumi 프롬프트·검색 개선.
    고친 뒤 반드시:
    - `npx tsc -b` 와 `npm test` 통과
-   - 로컬에서 확인: `npx vite --port 5173 &` 후 `node docs/pm-agent/shoot.mjs /tmp/after v2 "<paths>"` (base 기본값 = 로컬, /api 는 라이브)
+   - 로컬에서 확인: `VITE_API_MODE=remote npx vite --port 5173 &` (이 변수가 없으면 mock 데이터라 라이브와 다르게 보인다) 후 `node docs/pm-agent/shoot.mjs /tmp/after v2 "<paths>"` (base 기본값 = 로컬, /api 는 라이브)
    - 고치기 전/후 스크린샷을 둘 다 본다
 5. **큰 것은 묻는다** — 새 기능, 화면 구조 변경, 앱 본질에 닿는 것, 데이터 소스 추가, 다른 세션이
    작업 중인 영역(아래). `docs/pm-agent/QUESTIONS.md` 맨 위에 추가한다:
