@@ -120,6 +120,24 @@ const berkeleyGet = async (url: string): Promise<string> => {
     await new Promise((res) => setTimeout(res, 2000 * 2 ** attempt));
   }
 };
+/**
+ * 오래 걸리는 가져오기의 중간 결과 — 워커는 배포마다 다시 뜨는데 Berkeley 전체는 한 시간 넘게 걸린다.
+ * 다 읽은 묶음(학기 × 시작 시간대)을 저장해 두고, 다시 뜨면 읽은 묶음은 건너뛴다. run.ts 가 store 로 연결한다 (없으면 매번 처음부터)
+ */
+export interface ImportCheckpoint { load(key: string): Promise<unknown>; save(key: string, value: unknown): Promise<void> }
+let checkpoint: ImportCheckpoint | undefined;
+export const useImportCheckpoint = (c: ImportCheckpoint) => { checkpoint = c; };
+
+/** 목록 한 페이지 — berkeleyGet 의 재시도(약 1분)로도 504 면 1분씩 쉬며 세 번 더. 50쪽짜리 묶음이 한 쪽 때문에 처음부터 다시 읽히지 않게 */
+async function berkeleyPage(url: string): Promise<string> {
+  for (let round = 0; ; round++) {
+    try { return await berkeleyGet(url); } catch (e) {
+      if (round >= 3) throw e;
+      console.warn(`  ${url.replace(BERKELEY_PUBLIC, '')}: ${(e as Error).message.split(' → ').pop()} — 1분 뒤 다시`);
+      await new Promise((res) => setTimeout(res, 60_000));
+    }
+  }
+}
 interface BerkeleyIndex { terms: Map<string, string>; subjects: Map<string, string> }
 /** 홈페이지·학기 학과 필터는 무겁다 (2MB · 700KB) — 한 번 가져오기와 그 뒤 표본 재확인(12번)이 같이 쓰게 6시간 기억한다. 빈 결과는 기억하지 않는다 */
 const berkeleyMemo = new Map<string, { at: number; value: unknown }>();
@@ -184,12 +202,21 @@ async function berkeleyTerm(idx: BerkeleyIndex, termLabel: string, only?: string
       ? facets.times.map((t) => ({ label: `start ${t.id}:00`, query: `f%5B0%5D=term%3A${termId}&f%5B1%5D=start_time%3A${t.id}`, count: t.count }))
       : [...(facets.subjects.size ? facets.subjects.keys() : idx.subjects.keys())].map(subjectListing).filter((l): l is NonNullable<typeof l> => !!l);
   const field = (row: string, cls: string) => text(row.match(new RegExp(`class="${cls}"[^>]*>([\\s\\S]*?)</div>`))?.[1] ?? '');
+  type Section = { baseId: string; sectionNo: string; course: CatalogCourse };
   /** 과목·섹션별 한 줄 (교차 개설로 두 번 나오면 시간만 합친다) */
-  const sections = new Map<string, { baseId: string; sectionNo: string; course: CatalogCourse }>();
-  const read = async (l: Listing) => {
-    let added = 0; let seen = 0;
+  const sections = new Map<string, Section>();
+  const merge = (list: Section[]) => {
+    for (const x of list) {
+      const key = `${x.baseId}#${x.sectionNo}`; const prev = sections.get(key);
+      if (prev) prev.course.meetings = uniq([...prev.course.meetings, ...x.course.meetings]); else sections.set(key, x);
+    }
+  };
+  /** 한 묶음을 끝까지 읽어 그 묶음의 섹션들을 돌려준다 */
+  const read = async (l: Listing): Promise<Section[]> => {
+    const mine = new Map<string, Section>();
+    let seen = 0;
     for (let page = 0; page < 400 && seen < l.count; page++) {
-      const html = await berkeleyGet(`${BERKELEY_PUBLIC}/search/class?${l.query}&page=${page}`);
+      const html = await berkeleyPage(`${BERKELEY_PUBLIC}/search/class?${l.query}&page=${page}`);
       const rows = html.split(/<div class="views-row[^"]*">/).slice(1);
       if (!rows.length) break;
       seen += rows.length;
@@ -222,22 +249,31 @@ async function berkeleyTerm(idx: BerkeleyIndex, termLabel: string, only?: string
         const sectionNo = text(row.match(/class="st--section-count"[^>]*>([\s\S]*?)<\/span>/)?.[1] ?? '') || '001';
         const baseId = courseId('s_berkeley', code);
         const key = `${baseId}#${sectionNo}`;
-        const prev = sections.get(key);
+        const prev = mine.get(key);
         if (prev) { prev.course.meetings = uniq([...prev.course.meetings, ...meetings]); continue; }
-        sections.set(key, { baseId, sectionNo, course: { id: baseId, schoolId: 's_berkeley', code, title, department, instructor, location, meetings: uniq(meetings), term: termLabel, units, url: contentPath ? `${BERKELEY_PUBLIC}${contentPath}` : undefined } });
-        added++;
+        mine.set(key, { baseId, sectionNo, course: { id: baseId, schoolId: 's_berkeley', code, title, department, instructor, location, meetings: uniq(meetings), term: termLabel, units, url: contentPath ? `${BERKELEY_PUBLIC}${contentPath}` : undefined } });
       }
     }
-    console.log(`  ${termLabel} · ${l.label}: ${added}`);
+    console.log(`  ${termLabel} · ${l.label}: ${mine.size}`);
+    return [...mine.values()];
+  };
+  /** 전체 가져오기만 중간 저장한다 (표본 재확인은 짧다) */
+  const readSaved = async (l: Listing) => {
+    const key = `berkeley:${termId}:${l.query}`;
+    const saved = !only && checkpoint ? ((await checkpoint.load(key).catch(() => undefined)) as Section[] | undefined) : undefined;
+    if (saved?.length) { console.log(`  ${termLabel} · ${l.label}: ${saved.length} (saved earlier)`); merge(saved); return; }
+    const got = await read(l);
+    if (!only && checkpoint) await checkpoint.save(key, structuredClone(got)).catch((e) => console.warn(`  checkpoint save failed: ${(e as Error).message}`));
+    merge(got);
   };
   const failed: Listing[] = [];
   for (const l of listings) {
-    try { await read(l); } catch (e) { console.warn(`  ${termLabel} · ${l.label}: ${(e as Error).message} — 끝에 한 번 더`); failed.push(l); }
+    try { await readSaved(l); } catch (e) { console.warn(`  ${termLabel} · ${l.label}: ${(e as Error).message} — 끝에 한 번 더`); failed.push(l); }
   }
-  // 사이트가 잠깐 바빠(504) 못 읽은 묶음은 1분 쉬었다가 한 번 더. 그래도 안 되면 이번 가져오기는 실패로 끝낸다 — 한 묶음이 통째로 빠진 목록을 반영하지 않는다
+  // 사이트가 오래 바빠(504) 못 읽은 묶음은 1분 쉬었다가 한 번 더. 그래도 안 되면 이번 가져오기는 실패로 끝낸다 — 한 묶음이 통째로 빠진 목록을 반영하지 않는다
   if (failed.length) {
     await new Promise((res) => setTimeout(res, 60_000));
-    for (const l of failed) await read(l);
+    for (const l of failed) await readSaved(l);
   }
   // id: 섹션 번호가 가장 작은 섹션이 기본 id. 강의 섹션이 둘 이상이면 제목에 섹션 번호를 붙여 구분한다
   const byBase = new Map<string, { baseId: string; sectionNo: string; course: CatalogCourse }[]>();

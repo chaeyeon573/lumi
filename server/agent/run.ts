@@ -31,7 +31,7 @@ import { detectOrgsPlatform } from './detect';
 import { randomUUID } from 'node:crypto';
 import { createStore, type AgentRun } from '../store';
 import { sendMail } from '../mail';
-import { COURSE_SOURCES, resolveCourseSource } from '../sources/courses';
+import { COURSE_SOURCES, resolveCourseSource, useImportCheckpoint } from '../sources/courses';
 import { fetchCourseLeaf } from '../sources/catalog';
 import { fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale } from '../sources/opportunities';
 import { fetchDevpost, fetchInternships } from '../sources/external';
@@ -48,6 +48,25 @@ const GREEK_SCHOOLS = (process.env.AGENT_GREEK_SCHOOLS ?? 's_berkeley,s_stanford
 
 const store = createStore();
 await store.init();
+
+// 수업 가져오기 중간 저장 (Berkeley 처럼 한 시간 넘게 걸리는 것) — 배포로 워커가 다시 떠도 12시간 안에 읽은 묶음은 다시 읽지 않는다
+{
+  type Saved = { id: string; at: string; value: unknown };
+  let saved: Map<string, Saved> | undefined;
+  useImportCheckpoint({
+    async load(key) {
+      saved ??= new Map((await store.listDocs<Saved>('importCheckpoints')).map((d) => [d.id, d]));
+      const d = saved.get(key);
+      return d && Date.now() - new Date(d.at).getTime() < 12 * 3_600_000 ? d.value : undefined;
+    },
+    async save(key, value) {
+      if (DRY) return;
+      const d: Saved = { id: key, at: new Date().toISOString(), value };
+      (saved ??= new Map()).set(key, d);
+      await store.putDocs('importCheckpoints', [d]);
+    },
+  });
+}
 
 function todaysTasks(): string[] {
   const tasks = Object.keys(COURSE_SOURCES).map((k) => `courses:${k}`);
