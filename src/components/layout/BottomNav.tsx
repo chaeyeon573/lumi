@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { t } from '@core/i18n';
+import { t, lang } from '@core/i18n';
 import { NavLink, useLocation, useNavigate, useParams } from 'react-router-dom';
-import { Plus, User, Users, Compass, CalendarPlus, Image, Lightbulb, Zap, BookOpen, Vote, Building2 } from 'lucide-react';
+import { Plus, User, Users, Compass, CalendarPlus, Image, Lightbulb, Zap, BookOpen, Vote, Building2, Link2 } from 'lucide-react';
 import { cn } from '@core/lib/cn';
 import { BottomSheet } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
@@ -43,6 +43,7 @@ export function BottomNav() {
   const options = [
     { key: 'now', label: t('즉석 만남'), desc: invitee ? `${invitee.nickname}${t('님을 바로 초대해요')}` : t('30분 뒤 밥·커피·산책 — 시간 맞는 사람에게 바로 보여요'), Icon: Zap, path: `/create/activity?kind=personal&now=1${invitee ? `&invite=${invitee.id}` : ''}`, color: 'bg-accent-soft text-accent' },
     { key: 'activity', label: t('활동·약속 만들기'), desc: t('점심·운동·전시·모임 — 날짜와 장소를 정해서'), Icon: CalendarPlus, path: `/create/activity?kind=${invitee ? 'personal' : 'group'}${invitee ? `&invite=${invitee.id}` : ''}`, color: 'bg-primary-soft text-primary' },
+    { key: 'plan', label: lang === 'en' ? 'Ask friends with a link' : '링크로 친구에게 묻기', desc: lang === 'en' ? 'Set a time or let them pick — friends answer without the app' : '시간을 정하거나 같이 고르기 — 친구는 앱 없이 답해요', Icon: Link2, path: '/plans/new', color: 'bg-primary-soft text-primary' },
     { key: 'together', label: t('같이 시간 정하기 (Plan Together)'), desc: invitee ? `${invitee.nickname}${t('님과 후보 시간 투표로 약속 잡기')}` : t('친구들에게 후보 시간을 보내고 겹치는 시간으로 확정'), Icon: Vote, path: `/together/new${invitee ? `?invite=${invitee.id}` : ''}`, color: 'bg-heart-soft text-heart' },
     { key: 'crew', label: t('Study Crew 만들기'), desc: classHere ? `${classHere} · ${t('같은 수업 학생에게만 보여요')}` : t('시험·과제·팀플 — 같은 수업 학생에게만 보여요'), Icon: BookOpen, path: classHere ? `/create/activity?crew=${encodeURIComponent(classHere)}` : '', color: 'bg-mint-soft text-mint' },
     { key: 'team', label: t('팀원 모집하기'), desc: oppHere ? `${oppHere.title} · ${t('필요한 역할을 미리 채워요')}` : t('해커톤·창업·프로젝트에 필요한 역할 모집'), Icon: Lightbulb, path: `/create/activity?kind=group&team=1${oppHere ? `&opportunity=${oppHere.id}` : ''}`, color: 'bg-gold-soft text-[#B57A0E]' },

@@ -6,6 +6,7 @@ import type {
 import type { AcademicDate } from '@core/lib/academic';
 import type { SeatWatchView } from '@core/lib/seats';
 import type { Ride, RideInput, RideTeaser } from '@core/lib/rides';
+import type { PlansApi } from './plans';
 
 /** 클라이언트가 보유하는 전체 데이터 스냅샷 (실제 API에서는 필요한 부분만 내려받도록 분리) */
 export interface Snapshot {
@@ -336,6 +337,9 @@ export interface AroundUApi {
     decide(pollId: ID, optionId: ID): Promise<{ activity: Activity; patch: Patch }>;
     cancel(pollId: ID): Promise<Patch>;
   };
+
+  /** 링크로 묻는 약속 (/p/<id>) — Plan Together 를 그대로 쓰고 계정 없는 친구도 답한다 (@core/api/plans) */
+  plans: PlansApi;
 
   /** 아이스브레이커 게임 ("Say hi" 대신). 보낼 수 있는 게임 목록은 @core/lib/icebreakers 의 offeredGames() */
   games: {

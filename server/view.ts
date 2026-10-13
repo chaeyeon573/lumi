@@ -11,11 +11,13 @@
  * - 같은 수업 학생: 수업별 목록(classRosters)을 그 수업을 듣는 사람에게만 계산해 보낸다 (@core/lib/classmates).
  *   다른 사람의 '보이기' 설정·스터디 그룹 거절 목록·파트너 찾기 기록은 지운다
  * - Lumi 가 제안한 스터디 그룹(activity.studyGroup)과 그 참가 기록은 초대받은 사람에게만
+ * - 링크로 묻는 약속(timePoll.link)은 주최자와 Lumi 로 답한 사람에게만, 손님 토큰 해시는 절대 안 보낸다
  */
 import type { Patch, Snapshot } from '@core/api/types';
-import type { Activity, ActivityProposal, ChatRoom, Game, ID, Organization, Participation, User } from '@core/types';
+import type { Activity, ActivityProposal, ChatRoom, Game, ID, Organization, Participation, TimePoll, User } from '@core/types';
 import { gameFor, stripGameSecrets } from '@core/lib/icebreakers';
 import { canViewField } from '@core/lib/relations';
+import { planVisibleTo, stripPlanSecrets } from '@core/lib/plans';
 import { buildClassIndex, classRostersFor, schoolOf, type ClassIndex } from '@core/lib/classmates';
 import { ridesFor, ridesPatchFor } from '@core/lib/rides';
 
@@ -80,6 +82,8 @@ function rostersPatch(patch: Patch, viewerId: ID, db: Snapshot) {
   return rosters.length || (patch.users ?? []).some((u) => u.id === viewerId) ? rosters : undefined;
 }
 const inProposal = (viewerId: ID) => (p: ActivityProposal) => p.fromId === viewerId || p.toId === viewerId;
+/** 링크 약속(/p/<id>)은 주최자와 Lumi 로 답한 사람에게만, 손님 토큰 해시는 지운다 (@core/lib/plans) */
+const pollsFor = (polls: TimePoll[] | undefined, viewerId: ID) => (polls ?? []).filter((p) => planVisibleTo(p, viewerId)).map(stripPlanSecrets);
 
 export function snapshotFor(db: Snapshot, viewerId: ID): Snapshot {
   return {
@@ -95,6 +99,7 @@ export function snapshotFor(db: Snapshot, viewerId: ID): Snapshot {
     chatRooms: db.chatRooms.filter(inRoom(viewerId)),
     proposals: db.proposals.filter(inProposal(viewerId)),
     rides: ridesFor(db, viewerId), // my school only · blocks both ways · riders & chat only to people in the ride
+    timePolls: pollsFor(db.timePolls, viewerId),
   };
 }
 
@@ -116,6 +121,7 @@ export function patchFor(patch: Patch, viewerId: ID, db?: Snapshot): Patch | nul
   }
   if (patch.proposals) out.proposals = patch.proposals.filter(inProposal(viewerId));
   if (patch.rides) { const r = db ? ridesPatchFor(db, patch.rides, viewerId) : { rides: [], removed: [] }; out.rides = r.rides; if (r.removed.length) out.removed = { ...out.removed, rides: [...(out.removed?.rides ?? []), ...r.removed] }; }
+  if (patch.timePolls) out.timePolls = pollsFor(patch.timePolls, viewerId);
   const hasContent = Object.entries(out).some(([k, v]) => (k === 'relationships' ? !!v : k === 'removed' ? !!v && Object.values(v).some((ids) => ids && ids.length) : Array.isArray(v) && v.length > 0));
   return hasContent ? out : null;
 }

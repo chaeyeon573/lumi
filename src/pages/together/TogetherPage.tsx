@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { Check, Plus, Users, ArrowRight, MapPin } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import { TopBar } from '@/components/layout/TopBar';
@@ -26,6 +26,8 @@ export function TogetherPage() {
   const [custom, setCustom] = useState({ date: addDaysISO(1), startTime: '18:00', endTime: '19:30' });
   const [busy, setBusy] = useState(false);
   useEffect(() => { if (poll) setSel(poll.votes[me.id] ?? []); }, [poll?.id, poll?.votes[me.id]?.length]); // eslint-disable-line react-hooks/exhaustive-deps
+  // 링크로 묻는 약속은 /p/<id> 화면에서
+  if (poll?.link) return <Navigate to={`/p/${poll.id}`} replace />;
   if (!poll) return <div className="min-h-full"><TopBar back title="Plan Together" /><EmptyState emoji="" title={t('투표를 찾을 수 없어요')} /></div>;
   const isHost = poll.hostId === me.id;
   if (!isHost && !poll.inviteeIds.includes(me.id)) return <div className="min-h-full"><TopBar back title="Plan Together" /><EmptyState emoji="" title={t('초대받은 사람만 볼 수 있어요')} /></div>;

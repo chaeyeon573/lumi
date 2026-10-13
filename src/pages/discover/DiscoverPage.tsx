@@ -23,6 +23,7 @@ import { RidesEntry } from '@/components/rides/RideBits';
 import type { Activity, Opportunity } from '@core/types';
 import { PeopleLine } from '@/components/together/PeopleLine';
 import { LiveCards } from '@/components/campus/LiveCards';
+import { AskFriendsCard } from '@/components/plans/AskFriendsCard';
 import { campusDate } from '@core/lib/listings';
 
 type Tab = 'now' | 'activities' | 'teams';
@@ -58,6 +59,7 @@ export function DiscoverPage() {
             <button onClick={() => (nextFree ? setSlot(nextFree) : nav('/timetable'))} className="h-9 px-4 rounded-full bg-primary text-white text-[13px] font-semibold flex items-center gap-1 press"><Plus size={14} />{nextFree ? t('열기') : t('시간표')}</button>
           </div>
           <RidesEntry className="mt-3" />
+          <AskFriendsCard className="mt-3" />
           <div className="mt-3 flex bg-surface-2 rounded-full p-1">{tabs.map(([k, l]) => <button key={k} onClick={() => setTab(k)} className={cn('flex-1 h-9 rounded-full text-[13px] font-semibold transition', tab === k ? 'bg-surface text-primary shadow-sm' : 'text-ink-3')}>{l}</button>)}</div>
           <div className="pt-5">
             {tab === 'now' && <NowTab />}

@@ -6,6 +6,7 @@
  * - `subscribe()` 는 SSE(`/api/events`)로 서버 푸시(Patch)를 받는다.
  */
 import type { AroundUApi, Patch, Snapshot } from '../types';
+import type { PublicPlan } from '@core/lib/plans';
 import type { ID, User } from '@core/types';
 import { t, lang } from '@core/i18n';
 
@@ -140,6 +141,12 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
     opportunities: group('opportunities', ['create', 'setIntent', 'toggleSave', 'ask', 'review', 'goTogether', 'leaveTogether', 'lookForTeam']),
     proposals: group('proposals', ['create', 'respond']),
     together: group('together', ['create', 'vote', 'addOption', 'decide', 'cancel']),
+    plans: {
+      ...group<Omit<AroundUApi['plans'], 'view' | 'guestRespond'>>('plans', ['create', 'respond', 'lock', 'edit', 'close', 'removeResponse']),
+      // 공개 — 로그인 없이도 (로그인했으면 Authorization 으로 나를 알아본다). 손님 토큰은 본문으로만 (주소에 넣지 않는다)
+      view: async (id, token) => (await call<{ plan: PublicPlan | null }>(`plans/${encodeURIComponent(id)}/view`, { token })).plan,
+      guestRespond: (id, answer, token) => call(`plans/${encodeURIComponent(id)}/respond`, { answer, token }),
+    },
     games: group('games', ['send', 'answer', 'decline']),
     rides: {
       ...group<Omit<AroundUApi['rides'], 'teaser'>>('rides', ['create', 'join', 'leave', 'close', 'reopen', 'cancel', 'update']),

@@ -503,6 +503,42 @@ export interface TimePoll {
   activityId?: ID;
   closesAt: string;
   createdAt: string;
+  /** 링크로 묻는 약속 (/p/<id>) — 있으면 계정 없는 친구도 링크로 답한다. 규칙은 @core/lib/plans */
+  link?: PlanLink;
+}
+
+// ─── 링크로 묻는 약속 (Plans) ─────────────────────────────────────────────
+/** fixed: 시간을 정해 두고 갈게요/아마도/못 가요 · vote: 후보 시간(2~6개) 중 되는 것 모두 */
+export type PlanMode = 'fixed' | 'vote';
+export type PlanRsvp = 'going' | 'maybe' | 'no';
+export interface PlanPlaceOption { id: ID; name: string }
+/** 링크로 받은 답 하나. Lumi 사용자는 userId, 계정 없는 사람은 이 기기의 비밀 토큰(해시만 저장)으로 알아본다 */
+export interface PlanResponse {
+  id: ID;
+  /** 이름(첫 단어만) — Lumi 사용자는 비워 두고 보여줄 때 닉네임에서 만든다 */
+  name: string;
+  userId?: ID;
+  /** 손님 토큰의 해시 — 절대 내려보내지 않는다 (server/view.ts, publicPlan 이 지운다) */
+  tokenHash?: string;
+  rsvp?: PlanRsvp;
+  optionIds?: ID[];
+  placeIds?: ID[];
+  createdAt: string;
+  updatedAt: string;
+}
+export interface PlanLink {
+  mode: PlanMode;
+  emoji: string;
+  note?: string;
+  /** 장소 후보 (vote 모드에서 고를 수 있게) — 비어 있으면 poll.place 하나 */
+  placeOptions?: PlanPlaceOption[];
+  responses: PlanResponse[];
+  decidedPlaceId?: ID;
+  /** 주최자가 답 받기를 닫았는지 */
+  closed?: boolean;
+  lockedAt?: string;
+  /** 시작 전 알림을 보낸 시각 (한 번만) */
+  remindedAt?: string;
 }
 
 // ─── 채팅 ─────────────────────────────────────────────────────────────────

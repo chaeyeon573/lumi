@@ -39,6 +39,7 @@ import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError, campusToday
 import type { AiLog } from './store';
 import { loadSeed } from './seed';
 import { startCampusLive } from './campus-live';
+import { registerPlanRoutes } from './plans';
 import { createCampusData, mountCampusRoutes, mergeWorkerNotifications } from './campus-api';
 import { createClassesEngine } from '@core/api/classes';
 import { CLASSES_RULES, registerClassRoutes, startStudyGroupJob } from './classes';
@@ -290,6 +291,13 @@ app.post('/api/catalog/terms', wrap(async (req) => { const s = String(req.body.s
 
 // ─── 학사 일정 · 좌석 알림 ── /api/academic/dates, /api/seats/{mine,watch,unwatch}
 mountCampusRoutes(app, campus, { auth, wrap, requireUser, bad, user: (id) => db.users.find((u) => u.id === id), catalog: schoolCatalog });
+
+// ─── 링크로 묻는 약속 /p/<id> ─────────────────────────────────────────────
+// 공개 페이지(OG)·손님 답·.ics·RPC plans.* (server/plans.ts) — 일반 RPC·정적 파일보다 먼저 등록한다
+registerPlanRoutes(app, {
+  db: () => db, auth, push: (p) => { void store.applyPatch(p); broadcast(p); }, patchFor: (p, me) => patchFor(p, me, db),
+  dist: path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist'),
+});
 
 // ─── RPC (엔진 메서드) ────────────────────────────────────────────────────
 type Group = 'users' | 'activities' | 'posts' | 'relationships' | 'orgs' | 'opportunities' | 'proposals' | 'together' | 'games' | 'chats' | 'notifications' | 'reports' | 'classes';

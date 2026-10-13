@@ -28,7 +28,7 @@ export function PlansPage() {
   const polls = useAppStore((s) => s.timePolls);
   const me = v.me;
   const today = todayISO();
-  const openPolls = polls.filter((p) => p.status === 'open' && (p.hostId === me.id || p.inviteeIds.includes(me.id)));
+  const openPolls = polls.filter((p) => p.status === 'open' && (p.hostId === me.id || p.inviteeIds.includes(me.id) || !!p.link?.responses.some((r) => r.userId === me.id)));
   if (status === 'loading') return <div><TopBar back title="My Plans" /><CardSkeleton /></div>;
   if (status === 'error') return <div><TopBar back title="My Plans" /><ErrorState message={error ?? undefined} onRetry={init} /></div>;
 
@@ -67,9 +67,9 @@ export function PlansPage() {
           <div className="flex items-end justify-between mb-2"><h2 className="text-[15px] font-bold flex items-center gap-1.5"><Vote size={15} className="text-heart" />{t('시간 정하는 중')}<span className="text-[12px] text-ink-3 font-semibold">{openPolls.length}</span></h2><button onClick={() => nav('/together/new')} className="text-[12px] font-semibold text-primary">+ Plan Together</button></div>
           {openPolls.length === 0 ? <div className="card px-4 py-3 text-[12px] text-ink-3">{t('진행 중인 시간 투표가 없어요. 친구들과 만날 시간을 투표로 정해보세요.')}</div> : (
             <div className="card divide-y divide-line">{openPolls.map((p) => { const h = v.userById(p.hostId); const voted = !!p.votes[me.id]; const n = Object.keys(p.votes).length; return (
-              <button key={p.id} onClick={() => nav(`/together/${p.id}`)} className="w-full flex items-center gap-3 px-3.5 py-3 text-left press">
+              <button key={p.id} onClick={() => nav(p.link ? `/p/${p.id}` : `/together/${p.id}`)} className="w-full flex items-center gap-3 px-3.5 py-3 text-left press">
                 <span className="h-10 w-10 rounded-xl bg-heart-soft text-heart grid place-items-center"><Vote size={18} /></span>
-                <span className="flex-1 min-w-0"><b className="text-[13px] block truncate">{p.title}</b><span className="text-[12px] text-ink-3">{p.hostId === me.id ? t('내가 주최') : h?.nickname} · {lang === 'en' ? `${n}/${p.inviteeIds.length + 1} voted · ${p.options.length} options` : `${n}/${p.inviteeIds.length + 1}명 투표 · 후보 ${p.options.length}개`}</span></span>
+                <span className="flex-1 min-w-0"><b className="text-[13px] block truncate">{p.title}</b><span className="text-[12px] text-ink-3">{p.hostId === me.id ? t('내가 주최') : h?.nickname} · {p.link ? (lang === 'en' ? `link · ${p.link.responses.length} answered` : `링크 · ${p.link.responses.length}명 답함`) : lang === 'en' ? `${n}/${p.inviteeIds.length + 1} voted · ${p.options.length} options` : `${n}/${p.inviteeIds.length + 1}명 투표 · 후보 ${p.options.length}개`}</span></span>
                 {p.hostId === me.id ? <Tag tone="primary" className="h-5">{t('확정하기')}</Tag> : voted ? <Tag tone="mint" className="h-5">{t('투표 완료')}</Tag> : <Tag tone="accent" className="h-5">{t('투표하기')}</Tag>}
               </button>); })}</div>
           )}

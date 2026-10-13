@@ -33,6 +33,8 @@ import { PlansPage } from '@/pages/plans/PlansPage';
 import { ClassPage } from '@/pages/classes/ClassPage';
 import { CreateTogetherPage } from '@/pages/together/CreateTogetherPage';
 import { TogetherPage } from '@/pages/together/TogetherPage';
+import { PlanPage } from '@/pages/plans/PlanPage';
+import { CreatePlanPage } from '@/pages/plans/CreatePlanPage';
 import { OpportunityDetailPage } from '@/pages/opportunities/OpportunityDetailPage';
 import { ProfileContextPage } from '@/pages/profile/ProfileContextPage';
 import { AcademicCalendarPage } from '@/pages/academic/AcademicCalendarPage';
@@ -121,6 +123,7 @@ export default function App() {
           <Route path="/study/:id" element={<StudyGroupPage />} />
           <Route path="/together/new" element={<CreateTogetherPage />} />
           <Route path="/together/:id" element={<TogetherPage />} />
+          <Route path="/plans/new" element={<CreatePlanPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/rides" element={<RidesPage />} />
           <Route path="/rides/new" element={<PostRidePage />} />
@@ -151,6 +154,10 @@ export default function App() {
       </Route>
       {/* shareable ride link — teaser when signed out, the ride when signed in */}
       <Route element={<AppShell withNav={false} />}><Route path="/r/:id" element={<RideLinkPage />} /></Route>
+      {/* 링크로 묻는 약속 — 앱·계정 없이도 열린다 (로그인했으면 내 이름으로) */}
+      <Route element={<AppShell withNav={false} />}>
+        <Route path="/p/:id" element={<PlanPage />} />
+      </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

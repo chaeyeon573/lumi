@@ -6,6 +6,7 @@ import type { AroundUApi, Patch, Snapshot } from '../types';
 import { t } from '@core/i18n';
 import { createEngine } from '../engine';
 import { createRidesEngine } from '../rides';
+import { createPlansEngine } from '../plans';
 import { loadDB, resetDB, saveDB, getSession, setSession, type MockDB } from './db';
 import { DEMO_USER_ID } from '@core/data/seed';
 import { createClassesEngine } from '../classes';
@@ -31,6 +32,9 @@ const classes = createClassesEngine({ get db() { return db; }, t, demo: true, pu
 /** 목업은 모든 데이터를 갖고 있다 — 같은 수업 목록만 서버처럼 계산해 붙인다 */
 const withRosters = (patch: Patch): Patch => { const me = getSession(); return me ? { ...patch, classRosters: classRostersFor(db, me) } : patch; };
 const rides = createRidesEngine({ get db() { return db; }, t, demo: true, push(patch) { saveDB(db); listeners.forEach((l) => l(patch)); } });
+
+/** 링크로 묻는 약속 — 목업은 손님 토큰을 해시 없이 둔다 (이 브라우저 안에서만 쓴다) */
+const plans = createPlansEngine({ get db() { return db; }, t, demo: false, push(patch) { saveDB(db); listeners.forEach((l) => l(patch)); } }, { hash: (token) => `mock:${token}` });
 
 const delay = (ms = 350) => new Promise((r) => setTimeout(r, ms + Math.random() * 200));
 
@@ -129,6 +133,12 @@ export const mockApi: AroundUApi = {
   opportunities: wrap(engine.opportunities),
   proposals: wrap(engine.proposals),
   together: wrap(engine.together),
+  plans: {
+    ...wrap({ create: plans.create, respond: plans.respond, lock: plans.lock, edit: plans.edit, close: plans.close, removeResponse: plans.removeResponse }),
+    // 목업에는 서버가 없다 — 공개 화면도 이 브라우저의 데이터로 (로그인했으면 나로)
+    view: (id, token) => request(() => plans.view(id, { userId: getSession() ?? undefined, token })),
+    guestRespond: (id, answer, token) => request(() => { const r = plans.guestRespond(id, answer, token); return { token: r.token, plan: plans.view(id, { token: r.token })! }; }),
+  },
   games: wrap(engine.games),
   rides: wrap(rides),
   chats: {
