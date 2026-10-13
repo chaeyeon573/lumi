@@ -15,6 +15,7 @@ import { canViewField, isBlocked } from '@core/lib/relations';
 import { recommendFor, searchActivities, searchClubs, searchCourses, searchListings, schoolOf, type Card } from './ai-search';
 import type { RecType } from '@core/lib/foryou';
 import { REGIONS, type Region } from '@core/lib/listings';
+import { liveTools, LIVE_PROMPT } from './ai-live';
 import type { AcademicDate, AcademicDateKind } from '@core/lib/academic';
 import { searchAcademicCalendar } from './ai-academic';
 
@@ -118,6 +119,7 @@ How to answer:
 - Be brief and scannable: one short sentence, then the items as a list (up to 5, or the grouped plan above), each with the one detail that matters. No long intros or sign-offs. Write titles the way a student would say them (drop "(Summer 2027)", codes and long suffixes).
 - If a listing's deadline is missing, say "deadline not posted" rather than guessing.
 - Academic calendar questions (enrollment phases, add/drop and grading deadlines, holidays, finals, when classes start/end) → search_academic_calendar; answer with the exact date and weekday (and how many days away), name the term, and say it's from the registrar calendar. Never guess a date it didn't return.
+${LIVE_PROMPT}
 - Reply in the language the student writes in.`;
 
 interface ToolSpec { name: string; description: string; parameters: Record<string, unknown>; run: (input: Record<string, unknown>) => string }
@@ -233,6 +235,7 @@ export async function ask(db: Snapshot, catalog: CatalogCourse[], viewer: User, 
       },
       run: (input) => remember(searchActivities(db, viewer, date, { query: str(input.query), limit: num(input.limit) })),
     }),
+    ...liveTools(viewer),
   ];
 
   const byName = new Map(tools.map((t) => [t.name, t]));

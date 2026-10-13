@@ -40,6 +40,8 @@ import { SeatsPage } from '@/pages/seats/SeatsPage';
 import { ClassRoomPage } from '@/pages/classes/ClassRoomPage';
 import { ClassQrPage } from '@/pages/classes/ClassQrPage';
 import { StudyGroupPage } from '@/pages/classes/StudyGroupPage';
+import { DiningPage } from '@/pages/campus/DiningPage';
+import { GymPage } from '@/pages/campus/GymPage';
 import { takeReturnTo } from '@/components/classes/ClassLink';
 import { RidesPage } from '@/pages/rides/RidesPage';
 import { PostRidePage } from '@/pages/rides/PostRidePage';
@@ -124,6 +126,8 @@ export default function App() {
           <Route path="/rides/new" element={<PostRidePage />} />
           <Route path="/rides/:id" element={<RideDetailPage />} />
           <Route path="/ask" element={<AskPage />} />
+          <Route path="/dining" element={<DiningPage />} />
+          <Route path="/gym" element={<GymPage />} />
           <Route path="/map" element={<MapPage />} />
           <Route path="/activities/:id" element={<ActivityDetailPage />} />
           <Route path="/activities/:id/edit" element={<CreateActivityPage />} />

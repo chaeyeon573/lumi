@@ -103,7 +103,8 @@ export class PgStore implements Store {
   }
 
   async loadSnapshot(): Promise<Snapshot | null> {
-    const { rows } = await this.pool.query<{ collection: string; id: string; data: unknown }>('SELECT collection, id, data FROM docs');
+    // 화면 스냅샷 컬렉션만 — 같은 표에 사는 다른 문서(학식 메뉴·체육관 기록·학사 일정 등)는 각자 listDocs 로 읽는다
+    const { rows } = await this.pool.query<{ collection: string; id: string; data: unknown }>('SELECT collection, id, data FROM docs WHERE collection = ANY($1)', [[...COLLECTIONS, 'relationships']]);
     if (rows.length === 0) return null;
     const snap = emptySnapshot();
     for (const r of rows) {
@@ -118,7 +119,7 @@ export class PgStore implements Store {
       const client = await this.pool.connect();
       try {
         await client.query('BEGIN');
-        await client.query('DELETE FROM docs');
+        await client.query('DELETE FROM docs WHERE collection = ANY($1)', [[...COLLECTIONS, 'relationships']]);
         for (const c of COLLECTIONS) for (const item of (snapshot[c] ?? []) as { id: ID }[]) await client.query('INSERT INTO docs (collection, id, data) VALUES ($1, $2, $3)', [c, item.id, JSON.stringify(item)]);
         await client.query('INSERT INTO docs (collection, id, data) VALUES ($1, $2, $3)', ['relationships', 'singleton', JSON.stringify(snapshot.relationships)]);
         await client.query('COMMIT');

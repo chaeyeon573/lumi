@@ -1,0 +1,58 @@
+{
+ "id": "dsp_1160333760881754703",
+ "created_at": "2023-02-10T21:52:06.589000",
+ "name": "CMS Fitness Center",
+ "screen_type": "TV",
+ "display_type": "DEDICATED_SPACE",
+ "dedicated_space": {
+  "id": "spc_1160313045122023975",
+  "name": "CMS Fitness Center",
+  "space_type": "space",
+  "current_count": 0,
+  "ancestry": [
+   {
+    "id": "spc_1160312564056326694",
+    "name": "Recwell Fitness Facility at CMS"
+   },
+   {
+    "id": "spc_1320127864120542151",
+    "name": "CMS"
+   },
+   {
+    "id": "spc_863126228683456998",
+    "name": "Berkeley"
+   },
+   {
+    "id": "spc_1124427023511454256",
+    "name": "UC Berkeley Portfolio"
+   }
+  ],
+  "time_zone": "America/Los_Angeles",
+  "daily_reset": "01:00:00",
+  "capacity": 55,
+  "target_capacity": null,
+  "safe_threshold_mode": "UTILIZATION_PERC_LEGAL",
+  "safe_threshold_value": 1.0,
+  "safe_capacity": 53
+ },
+ "dedicated_space_id": "spc_1160313045122023975",
+ "list_spaces": [],
+ "list_space_ids": [],
+ "list_space_title": null,
+ "directory_mode": "CAPACITY",
+ "analytics_time": "TODAY",
+ "token": "shr_REDACTED",
+ "message": "Welcome to the RS Weight Room at CMS. Please wait in line when the display indicates 100% capacity.     \nHealth Reminders: Cover abrasions and cuts before working out. Please wear closed-toed shoes and place all bags in a locker. \nAlways wipe down equipment after use. \nWash hands for 20 seconds after working out.",
+ "contact_email": "recsports@berkeley.edu",
+ "display_wait_time": false,
+ "display_count": false,
+ "sidebar_mode": "MESSAGE",
+ "linked_display_id": "dsp_1160333760881754703",
+ "linked_display_token": "shr_REDACTED",
+ "display_trend": false,
+ "black_and_white_mode": false,
+ "at_or_above_threshold_text": "Wait",
+ "below_threshold_text": "Go",
+ "display_occupancy_metric": true,
+ "user_id": "usr_863121275206238566"
+}

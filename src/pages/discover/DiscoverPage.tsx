@@ -22,6 +22,7 @@ import { cn } from '@core/lib/cn';
 import { RidesEntry } from '@/components/rides/RideBits';
 import type { Activity, Opportunity } from '@core/types';
 import { PeopleLine } from '@/components/together/PeopleLine';
+import { LiveCards } from '@/components/campus/LiveCards';
 import { campusDate } from '@core/lib/listings';
 
 type Tab = 'now' | 'activities' | 'teams';
@@ -95,6 +96,7 @@ function NowTab() {
   const left = (m: number) => (m >= 60 ? `${Math.round(m / 60)}h` : `${m}m`) + (lang === 'en' ? ' left' : ' 남음');
   return (
     <div>
+      <LiveCards className="mb-6" />
       <div className="flex items-end justify-between mb-3"><h2 className="font-display text-[24px] font-bold text-primary">{lang === 'en' ? 'Free Right Now' : '지금 시간 되는 사람'}</h2><span className="text-[13px] text-ink-3">{free.length}{lang === 'en' ? ' friends' : '명'}</span></div>
       {free.length === 0 ? <p className="text-[13px] text-ink-3 mb-6">{t('지금 시간이 비는 사람이 없어요.')}</p> : (
         <div className="flex gap-4 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-7">

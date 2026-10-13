@@ -38,6 +38,7 @@ import { migrateDemo, demoUserIdFor, rollSampleActivities } from './demo';
 import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError, campusToday } from './ai';
 import type { AiLog } from './store';
 import { loadSeed } from './seed';
+import { startCampusLive } from './campus-live';
 import { createCampusData, mountCampusRoutes, mergeWorkerNotifications } from './campus-api';
 import { createClassesEngine } from '@core/api/classes';
 import { CLASSES_RULES, registerClassRoutes, startStudyGroupJob } from './classes';
@@ -453,6 +454,9 @@ app.get('/api/agent/status', wrap(async () => {
   return { latest, recent: runs.slice(0, 30) };
 }));
 app.get('/api/health', (_req, res) => { res.json({ ok: true, users: db.users.length, lang, store: process.env.DATABASE_URL ? 'postgres' : 'file' }); });
+
+// ─── 오늘의 학식 · 체육관 혼잡도 (server/campus-live.ts) — 웹 서버 한 곳에서 가져오고 알림을 보낸다 ─────
+await startCampusLive(app, { store, auth, wrap, requireUser, bad, user: (id) => db.users.find((u) => u.id === id), notify: (notes) => { db.notifications.push(...notes); const p: Patch = { notifications: notes }; void store.applyPatch(p); broadcast(p); } });
 
 // ─── 정적 파일 (빌드된 프론트엔드) ─────────────────────────────────────────
 const dist = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist');
