@@ -104,7 +104,12 @@ export function searchActivities(db: Snapshot, viewer: User, today: string, inpu
 /** 이 학생에게 맞는 추천 — 화면의 For you 순서와 같은 엔진(lib/foryou). 이유도 엔진이 낸 것만 쓴다 */
 export function recommendFor(db: Snapshot, viewer: User, input: { types?: RecType[]; topic?: Topic; interest?: string; region?: Region; limit?: number }) {
   const limit = Math.min(Math.max(input.limit ?? 6, 1), 10);
-  return forYou(db, viewer, { types: input.types, topic: input.topic, query: input.interest, region: input.region, limit }).map((r) => {
+  // 종류를 안 정했으면 종류마다 2개씩 — 한 종류(동아리·세미나)가 자리를 다 차지해서 REU 같은 답을 놓치지 않게
+  const KINDS: RecType[] = ['lab', 'internship', 'hackathon', 'scholarship', 'club', 'event'];
+  const recs = input.types?.length
+    ? forYou(db, viewer, { types: input.types, topic: input.topic, query: input.interest, region: input.region, limit })
+    : KINDS.flatMap((k) => forYou(db, viewer, { types: [k], topic: input.topic, query: input.interest, region: input.region, limit: 2 }));
+  return recs.map((r) => {
     const why = r.reasons.slice(0, 3).map((x) => x.text);
     if (r.kind === 'club') {
       const o = r.item; const url = o.links?.[0]?.url;

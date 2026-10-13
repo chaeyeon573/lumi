@@ -30,6 +30,9 @@ export const TOPICS = {
   design: { en: 'design & product', ko: '디자인·프로덕트', re: /design|\bux\b|\bui\b|product manag|\bpm\b|figma|architecture/g },
   research: { en: 'research', ko: '연구', re: /research|\blabs?\b|scientist|\bph\.?d|fellowship|colloquium|seminar|academic|thesis|journal club/g },
   bio_health: { en: 'bio & health', ko: '바이오·의료', re: /\bbio|medic|pre-?med|health|clinical|neuro|genom|pharm|nursing|dental|chemistry|mycolog|life science/g },
+  physics: { en: 'physics & astronomy', ko: '물리·천문', re: /physic|astronom|astrophys|cosmolog|quantum|optics|particle|condensed matter|planetary/g },
+  chemistry: { en: 'chemistry & materials', ko: '화학·재료', re: /chemi|materials science|polymer|catalys|biochem/g },
+  math: { en: 'math', ko: '수학', re: /\bmath|statistic|probabilit|topolog|algebra|combinator|theoretical computer|discrete math/g },
   policy_law: { en: 'policy & law', ko: '정책·법', re: /policy|\blaw\b|legal|pre-?law|government|politic|debate|model un|\bmun\b|election|voting|civic|international relations/g },
   impact: { en: 'social impact', ko: '사회공헌', re: /volunteer|\bservice\b|nonprofit|social good|social impact|sustainab|climate|environment|tutor|mentor|education|justice|outreach|food bank|equity/g },
   media: { en: 'media & writing', ko: '미디어·글', re: /journalis|newspaper|magazine|writing|writers?\b|podcast|radio|\bfilm|video|photograph|\bmedia\b|editorial|publication|poetry|literature/g },
@@ -253,9 +256,9 @@ function context(snap: Snap, me: User, now: Date, ask?: { query?: string; region
 export interface Ask { vec: Vec; words: string[]; region?: Region; topics: Topic[] }
 const ASK_STOP = new Set(('a an the and or of for to in on at by with about any some me my i im i\'m is are be want wanna would like love get into find show give looking look need help can could should what which where how do does doing '
   + 'near nearby around close campus school here area local job jobs intern interns internship internships hackathon hackathons competition competitions club clubs scholarship scholarships '
-  + 'research ra lab labs program programs opportunity opportunities position positions summer fall spring 2026 2027 student students undergrad undergraduate for you recommend recommendation something stuff things '
+  + 'research ra lab labs program programs opportunity opportunities position positions fall spring 2026 2027 student students undergrad undergraduate for you recommend recommendation something stuff things '
   + '나 저 좀 쪽 관련 하고 싶어 싶은데 하고싶어 추천 해줘 인턴 인턴십 해커톤 동아리 장학금 연구 같은 거 것').split(/\s+/));
-const KO_TOPIC: [RegExp, string][] = [[/금융|투자|은행/, 'finance'], [/컨설팅/, 'consulting'], [/인공지능|머신러닝|데이터/, 'machine learning data'], [/개발|코딩|소프트웨어/, 'software'], [/디자인/, 'design'], [/창업|스타트업/, 'startup'], [/의료|의대|바이오|생명/, 'health biology'], [/마케팅/, 'marketing'], [/연구/, 'research'], [/게임/, 'gaming'], [/음악|밴드/, 'music'], [/운동|스포츠/, 'sports'], [/등산|하이킹|아웃도어/, 'hiking outdoor'], [/정책|법/, 'policy law'], [/환경|기후/, 'climate environment'], [/사진|영상|영화/, 'film photography'], [/퀀트|트레이딩/, 'quant trading']];
+const KO_TOPIC: [RegExp, string][] = [[/물리|천문/, 'physics astronomy'], [/화학/, 'chemistry'], [/수학|통계/, 'math statistics'], [/여름/, 'summer'], [/금융|투자|은행/, 'finance'], [/컨설팅/, 'consulting'], [/인공지능|머신러닝|데이터/, 'machine learning data'], [/개발|코딩|소프트웨어/, 'software'], [/디자인/, 'design'], [/창업|스타트업/, 'startup'], [/의료|의대|바이오|생명/, 'health biology'], [/마케팅/, 'marketing'], [/연구/, 'research'], [/게임/, 'gaming'], [/음악|밴드/, 'music'], [/운동|스포츠/, 'sports'], [/등산|하이킹|아웃도어/, 'hiking outdoor'], [/정책|법/, 'policy law'], [/환경|기후/, 'climate environment'], [/사진|영상|영화/, 'film photography'], [/퀀트|트레이딩/, 'quant trading']];
 export function parseAsk(text: string, homeRegion?: Region, region?: Region): Ask {
   const t = text.toLowerCase();
   let r = region;

@@ -24,24 +24,34 @@ function ai(): OpenAI {
   return client;
 }
 
-/** 키로 쓸 수 있는 모델 중 앞에서부터 — 답의 질이 먼저다 (mini 는 질문 의도를 자주 놓쳤다). 바꾸려면 AI_MODEL */
-const PREFERRED = ['gpt-5.1', 'gpt-5', 'gpt-4.1', 'gpt-4o', 'gpt-5-mini', 'gpt-4.1-mini', 'gpt-4o-mini'];
-/** 추론 모델(gpt-5·o-시리즈)은 생각을 짧게 — 학생이 기다리지 않게 */
-const reasoningOpts = (m: string) => (/^(gpt-5|o\d)/.test(m) ? { reasoning_effort: 'low' as const } : {});
+/** 쓸 모델 — 키로 쓸 수 있는 것 중 **가장 최신 플래그십**(gpt-6 > gpt-5.2 > gpt-5.1 …)을 자동으로 고른다.
+ *  mini·nano·pro·audio 같은 변형과 날짜 스냅샷은 뺀다. 바꾸려면 AI_MODEL. 새 모델이 나오면 재시작 때 알아서 올라간다 */
+const FALLBACK = ['gpt-4.1', 'gpt-4o', 'gpt-4.1-mini', 'gpt-4o-mini'];
+const versionOf = (id: string) => { const m = /^gpt-(\d+)(?:\.(\d+))?$/.exec(id); return m ? Number(m[1]) + Number(m[2] ?? 0) / 100 : -1; };
+export const pickModel = (ids: string[]) => ids.filter((id) => versionOf(id) >= 0).sort((a, b) => versionOf(b) - versionOf(a))[0] ?? FALLBACK.find((id) => ids.includes(id));
+/** 추론 모델(gpt-5 이후·o-시리즈)은 생각을 짧게 — 학생이 기다리지 않게 */
+const reasoningOpts = (m: string) => (/^(gpt-([5-9]|\d\d)|o\d)/.test(m) ? { reasoning_effort: 'low' as const } : {});
 let modelPromise: Promise<string> | null = null;
 function model(): Promise<string> {
   if (process.env.AI_MODEL) return Promise.resolve(process.env.AI_MODEL);
   modelPromise ??= (async () => {
     try {
-      const ids = new Set<string>();
-      for await (const m of ai().models.list()) ids.add(m.id);
-      const pick = PREFERRED.find((id) => ids.has(id)) ?? [...ids].filter((id) => /^gpt-/.test(id) && !/audio|realtime|search|transcribe|tts|image/.test(id)).sort().pop();
+      const ids: string[] = [];
+      for await (const m of ai().models.list()) ids.push(m.id);
+      const pick = pickModel(ids);
       if (!pick) throw new Error('no chat model available for this key');
-      console.log(`[ai] using model ${pick}`);
+      console.log(`[ai] using model ${pick} (newest of: ${ids.filter((id) => versionOf(id) >= 0).sort((a, b) => versionOf(b) - versionOf(a)).slice(0, 6).join(', ')})`);
       return pick;
     } catch (e) { modelPromise = null; throw e; }
   })();
   return modelPromise;
+}
+/** 모델이 reasoning_effort 를 모르면 빼고 한 번 더 */
+async function complete(params: OpenAI.Chat.ChatCompletionCreateParamsNonStreaming) {
+  try { return await ai().chat.completions.create(params); } catch (e) {
+    if ('reasoning_effort' in params && /reasoning/i.test(String((e as Error).message))) { const { reasoning_effort: _r, ...rest } = params; return ai().chat.completions.create(rest); }
+    throw e;
+  }
 }
 
 export class AiError extends Error { constructor(public status: number, message: string) { super(message); } }
@@ -49,7 +59,7 @@ export class AiError extends Error { constructor(public status: number, message:
 /** 정해진 JSON 모양으로만 답하게 한다 (structured outputs) */
 async function jsonCall(system: string, user: string, name: string, schema: object, refusalMsg: string): Promise<Record<string, unknown>> {
   const m = await model();
-  const res = await ai().chat.completions.create({
+  const res = await complete({
     model: m, max_completion_tokens: 3000, ...reasoningOpts(m),
     messages: [{ role: 'system', content: system }, { role: 'user', content: user }],
     response_format: { type: 'json_schema', json_schema: { name, schema: schema as Record<string, unknown>, strict: true } },
@@ -204,7 +214,7 @@ export async function ask(db: Snapshot, catalog: CatalogCourse[], viewer: User, 
   let raw = '';
   // 도구 호출 루프 — 검색을 몇 번 하고 나면 답을 쓴다 (최대 6 라운드)
   for (let round = 0; round < 6; round++) {
-    const res = await ai().chat.completions.create({
+    const res = await complete({
       model: m, messages, max_completion_tokens: 4000, ...reasoningOpts(m),
       tools: tools.map((t) => ({ type: 'function' as const, function: { name: t.name, description: t.description, parameters: t.parameters } })),
       tool_choice: round === 5 ? 'none' : 'auto',
