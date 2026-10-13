@@ -97,7 +97,7 @@ async function mit(): Promise<CatalogCourse[]> {
  *   - 학과: 전부. 학기 검색의 시작 시간대 필터로 읽어 시간이 정해진 수업만 받는다 (BERKELEY_PUBLIC_SUBJECTS 로 학과를 좁히면 학과별로, 이름에 쉼표가 있어 | 로 구분)
  *   - 검색 결과는 수업마다 대표 섹션(강의 LEC · 세미나 SEM · 리시테이션 REC …) 한 줄 — 딸린 토론·랩 섹션은 없다. 개별 연구(IND)와 시간이 없는 줄은 뺀다
  *   - 코드는 학생들이 부르는 약칭으로 (COMPSCI 61A → CS 61A) — 내장 예시 목록의 id 와 같아져 그대로 덮어쓴다
- * 요청마다 250ms 쉬고 5xx·타임아웃은 다시 시도한다 — 두 학기 전부면 요청 400번 안팎 (워커가 하루 한 번).
+ * 요청마다 250ms 쉬고 5xx·타임아웃은 다시 시도한다 — 두 학기 전부면 요청 400번 안팎, 묶음 3개를 나란히 읽는다 (워커가 하루 한 번).
  * 학교 사이트는 캐시가 식은 페이지에 40초쯤 걸리기도 해서 요청 하나를 2분까지 기다린다
  */
 const BERKELEY_PUBLIC = 'https://classes.berkeley.edu';
@@ -267,9 +267,15 @@ async function berkeleyTerm(idx: BerkeleyIndex, termLabel: string, only?: string
     merge(got);
   };
   const failed: Listing[] = [];
-  for (const l of listings) {
-    try { await readSaved(l); } catch (e) { console.warn(`  ${termLabel} · ${l.label}: ${(e as Error).message} — 끝에 한 번 더`); failed.push(l); }
-  }
+  // 묶음 몇 개를 나란히 읽는다 (BERKELEY_LANES, 기본 3) — 묶음 안의 페이지는 하나씩, 요청마다 쉬는 것도 그대로. 페이지 하나에 30~40초 걸려 한 줄로는 몇 시간이 걸린다
+  const lanes = Math.max(1, Math.min(Number(process.env.BERKELEY_LANES ?? 3) || 1, listings.length));
+  let next = 0;
+  await Promise.all(Array.from({ length: lanes }, async () => {
+    while (next < listings.length) {
+      const l = listings[next++];
+      try { await readSaved(l); } catch (e) { console.warn(`  ${termLabel} · ${l.label}: ${(e as Error).message} — 끝에 한 번 더`); failed.push(l); }
+    }
+  }));
   // 사이트가 오래 바빠(504) 못 읽은 묶음은 1분 쉬었다가 한 번 더. 그래도 안 되면 이번 가져오기는 실패로 끝낸다 — 한 묶음이 통째로 빠진 목록을 반영하지 않는다
   if (failed.length) {
     await new Promise((res) => setTimeout(res, 60_000));
