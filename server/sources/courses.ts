@@ -94,11 +94,10 @@ async function mit(): Promise<CatalogCourse[]> {
 /**
  * 학교가 공개로 운영하는 Class Schedule 사이트를 읽는다. 서버 렌더링이라 검색 결과 HTML 을 그대로 파싱한다.
  *   - 학기: 지금 학기 + 다음 학기 (BERKELEY_TERM="Fall 2026|Spring 2027" 로 지정 가능). 다음 학기가 아직 안 올라왔으면 건너뛴다
- *   - subject: 그 학기 검색 결과의 학과 필터에 있는 학과 전부 (Fall 2026 기준 177개 · BERKELEY_PUBLIC_SUBJECTS 로 좁힐 수 있다, 이름에 쉼표가 있어 | 로 구분)
- *     필터에 적힌 줄 수만큼만 페이지를 읽는다 (한 페이지 18줄) — 수업 없는 학과·빈 마지막 페이지를 요청하지 않는다
- *   - 한 과목에 강의(LEC)·토론(DIS)·랩(LAB) 섹션이 여럿이면 강의만 시간표에 넣는다 (세미나 SEM 수업도 넣는다)
+ *   - 학과: 전부. 학기 검색의 시작 시간대 필터로 읽어 시간이 정해진 수업만 받는다 (BERKELEY_PUBLIC_SUBJECTS 로 학과를 좁히면 학과별로, 이름에 쉼표가 있어 | 로 구분)
+ *   - 검색 결과는 수업마다 대표 섹션(강의 LEC · 세미나 SEM · 리시테이션 REC …) 한 줄 — 딸린 토론·랩 섹션은 없다. 개별 연구(IND)와 시간이 없는 줄은 뺀다
  *   - 코드는 학생들이 부르는 약칭으로 (COMPSCI 61A → CS 61A) — 내장 예시 목록의 id 와 같아져 그대로 덮어쓴다
- * 요청마다 250ms 쉬고 5xx·타임아웃은 다시 시도한다 — 두 학기 전부면 요청 900번 안팎 (워커가 하루 한 번).
+ * 요청마다 250ms 쉬고 5xx·타임아웃은 다시 시도한다 — 두 학기 전부면 요청 400번 안팎 (워커가 하루 한 번).
  * 학교 사이트는 캐시가 식은 페이지에 40초쯤 걸리기도 해서 요청 하나를 2분까지 기다린다
  */
 const BERKELEY_PUBLIC = 'https://classes.berkeley.edu';
@@ -142,45 +141,62 @@ async function berkeleyIndexFresh(): Promise<BerkeleyIndex> {
   return { terms, subjects };
 }
 /** 한 학기 검색 결과의 학과 필터: 학과 이름 → { subject id, 그 학기 줄 수 }. 못 읽으면 빈 Map (홈페이지 학과 전부로 대신한다) */
-const berkeleyTermSubjects = (termId: string) => remembered(`subjects:${termId}`, () => berkeleyTermSubjectsFresh(termId), (x) => x.size > 0);
-async function berkeleyTermSubjectsFresh(termId: string): Promise<Map<string, { id: string; count: number }>> {
-  const out = new Map<string, { id: string; count: number }>();
-  // 학기 전체 검색 첫 페이지는 무거워서 사이트가 바쁘면 504 가 잦다 — 못 읽어도 실패로 보지 않고 홈페이지 학과 전부로 간다
+interface BerkeleyFacets { subjects: Map<string, { id: string; count: number }>; times: { id: string; count: number }[] }
+const berkeleyFacets = (termId: string) => remembered(`facets:${termId}`, () => berkeleyFacetsFresh(termId), (x) => x.subjects.size > 0);
+/**
+ * 한 학기 검색 결과의 필터: 학과 이름 → { subject id, 줄 수 } · 시작 시간대(8·10·12·14·16·18시) → 줄 수.
+ * 못 읽으면 빈 값 (홈페이지 학과 전부를 빈 페이지가 나올 때까지 읽는다)
+ */
+async function berkeleyFacetsFresh(termId: string): Promise<BerkeleyFacets> {
+  const out: BerkeleyFacets = { subjects: new Map(), times: [] };
+  // 학기 전체 검색 첫 페이지는 무거워서 사이트가 바쁘면 504 가 잦다 — 못 읽어도 실패로 보지 않는다
   let html: string;
-  try { html = await berkeleyGet(`${BERKELEY_PUBLIC}/search/class?f%5B0%5D=term%3A${termId}`); } catch (e) { console.warn(`  berkeley term ${termId} 학과 필터 못 읽음 (${(e as Error).message}) → 홈페이지 학과 전부`); return out; }
+  try { html = await berkeleyGet(`${BERKELEY_PUBLIC}/search/class?f%5B0%5D=term%3A${termId}`); } catch (e) { console.warn(`  berkeley term ${termId} 필터 못 읽음 (${(e as Error).message}) → 홈페이지 학과 전부`); return out; }
   for (const m of html.matchAll(/<a href="[^"]*subject_area%3A(\d+)"[^>]*data-drupal-facet-item-count="(\d+)"[^>]*>([\s\S]*?)<\/a>/g)) {
-    out.set(text(m[3]).replace(/\s*\(\d+\)\s*$/, ''), { id: m[1], count: Number(m[2]) });
+    out.subjects.set(text(m[3]).replace(/\s*\(\d+\)\s*$/, ''), { id: m[1], count: Number(m[2]) });
   }
+  const times = new Map<string, number>();
+  for (const m of html.matchAll(/<a href="[^"]*start_time%3A(\d+)"[^>]*data-drupal-facet-item-count="(\d+)"/g)) times.set(m[1], Number(m[2]));
+  out.times = [...times].map(([id, count]) => ({ id, count }));
   return out;
 }
 const berkeleyTermLabels = () => process.env.BERKELEY_TERM?.split('|').map((x) => x.trim()).filter(Boolean) ?? catalogTermLabels();
 
-/** 한 학기 · 주어진 학과들의 강의. id 는 학기 꼬리표 붙이기 전 */
+/**
+ * 한 학기의 강의. id 는 학기 꼬리표 붙이기 전.
+ *   - 전체 가져오기: 시작 시간대 필터(6묶음)로 읽는다 — 시간이 정해진 수업만 나오므로(Fall 2026: 6,145줄 중 3,444줄) 학과별로 읽을 때의 절반 이하 요청.
+ *     사이트가 바쁘면 페이지 하나에 30초씩 걸려서 요청 수가 곧 걸리는 시간이다. 시간대 필터를 못 읽으면 학과별로 읽는다
+ *   - only(학과 이름들): 표본 재확인용 — 그 학과만 학과 필터로 읽는다
+ * 같은 과목의 강의 섹션이 여럿이면 섹션 번호가 가장 작은 것이 기본 id, 나머지는 _<섹션> — 읽는 순서와 상관없이 같은 id 가 나온다 (표본 재확인이 학과로 다시 읽어도 맞는다)
+ */
 async function berkeleyTerm(idx: BerkeleyIndex, termLabel: string, only?: string[]): Promise<CatalogCourse[]> {
   const termId = idx.terms.get(termLabel);
   if (!termId) throw new Error(`classes.berkeley.edu 에 "${termLabel}" 학기가 없어요 (BERKELEY_TERM 으로 지정)`);
-  // 그 학기에 수업이 있는 학과와 줄 수. 필터를 못 읽으면 홈페이지 학과 전부를 빈 페이지가 나올 때까지 읽는다
-  const termSubjects = await berkeleyTermSubjects(termId);
-  const counted = termSubjects.size > 0;
-  const lookupSubject = (name: string) => termSubjects.get(name) ?? (counted ? undefined : idx.subjects.has(name) ? { id: idx.subjects.get(name)!, count: Infinity } : undefined);
-  const subjects = only ?? (counted ? [...termSubjects.keys()] : [...idx.subjects.keys()]);
-  const out: CatalogCourse[] = [];
-  const byId = new Map<string, CatalogCourse>();
-  const sectionOf = new Map<string, string>();
+  const facets = await berkeleyFacets(termId);
+  const subjectListing = (name: string) => {
+    const sub = facets.subjects.get(name) ?? (!facets.subjects.size && idx.subjects.has(name) ? { id: idx.subjects.get(name)!, count: Infinity } : undefined);
+    return sub && { label: name, query: `f%5B0%5D=subject_area%3A${sub.id}&f%5B1%5D=term%3A${termId}`, count: sub.count, dept: name };
+  };
+  type Listing = { label: string; query: string; count: number; dept?: string };
+  const listings: Listing[] = only
+    ? only.map((name) => { const l = subjectListing(name); if (!l) console.warn(`  ${termLabel} · ${name}: 이 학기 학과 필터에 없음 (건너뜀)`); return l; }).filter((l): l is NonNullable<typeof l> => !!l)
+    : facets.times.length
+      ? facets.times.map((t) => ({ label: `start ${t.id}:00`, query: `f%5B0%5D=term%3A${termId}&f%5B1%5D=start_time%3A${t.id}`, count: t.count }))
+      : [...(facets.subjects.size ? facets.subjects.keys() : idx.subjects.keys())].map(subjectListing).filter((l): l is NonNullable<typeof l> => !!l);
   const field = (row: string, cls: string) => text(row.match(new RegExp(`class="${cls}"[^>]*>([\\s\\S]*?)</div>`))?.[1] ?? '');
-  /** 교차 개설 과목이 두 학과 검색에 같은 코드·섹션으로 또 나오면 한 줄로 */
-  const bySection = new Map<string, string>();
-  let withClasses = 0;
-  const readSubject = async (subject: string, sub: { id: string; count: number }) => {
-    let added = 0; let read = 0;
-    for (let page = 0; page < 200 && read < sub.count; page++) {
-      const html = await berkeleyGet(`${BERKELEY_PUBLIC}/search/class?f%5B0%5D=subject_area%3A${sub.id}&f%5B1%5D=term%3A${termId}&page=${page}`);
+  /** 과목·섹션별 한 줄 (교차 개설로 두 번 나오면 시간만 합친다) */
+  const sections = new Map<string, { baseId: string; sectionNo: string; course: CatalogCourse }>();
+  const read = async (l: Listing) => {
+    let added = 0; let seen = 0;
+    for (let page = 0; page < 400 && seen < l.count; page++) {
+      const html = await berkeleyGet(`${BERKELEY_PUBLIC}/search/class?${l.query}&page=${page}`);
       const rows = html.split(/<div class="views-row[^"]*">/).slice(1);
       if (!rows.length) break;
-      read += rows.length;
+      seen += rows.length;
       for (const row of rows) {
         const component = text(row.match(/class="st--section-code"[^>]*>([\s\S]*?)<\/span>/)?.[1] ?? '');
-        if (component && component !== 'LEC' && component !== 'SEM') continue; // 강의·세미나만 (토론·랩 섹션은 빼고)
+        // 검색 결과는 수업마다 대표 섹션 한 줄이다 (토론·랩 같은 딸린 섹션은 안 나온다). 대표 섹션이 랩·리시테이션인 수업(ARABIC 1A REC 등)도 수업이므로 넣고, 개별 연구(IND)만 뺀다
+        if (component === 'IND') continue;
         const rawCode = text(row.match(/class="st--section-name"[^>]*>([\s\S]*?)<\/span>/)?.[1] ?? '');
         if (!rawCode) continue;
         const [subj, ...num] = rawCode.split(' ');
@@ -190,7 +206,7 @@ async function berkeleyTerm(idx: BerkeleyIndex, termLabel: string, only?: string
         const title = BERKELEY_FORMERLY[code] && title0 ? `${title0} (formerly ${BERKELEY_FORMERLY[code]})` : title0;
         const contentPath = /href="(\/content\/[^"]+)"/.exec(row)?.[1];
         const instructor = field(row, 'st--instructors') || undefined;
-        const department = text(row.match(/offered through[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/)?.[1] ?? '') || subject;
+        const department = text(row.match(/offered through[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/)?.[1] ?? '') || l.dept || subjKey;
         const units = Number(text(row.match(/class="st--details-unit"[^>]*>([\s\S]*?)<\/div>/)?.[1] ?? '').replace(/Units:\s*/i, '').split(/[^\d.]/)[0]) || undefined;
         const meetings: Meeting[] = []; let location: string | undefined;
         for (const det of row.split(/class="st--meeting-details"/).slice(1)) {
@@ -202,38 +218,40 @@ async function berkeleyTerm(idx: BerkeleyIndex, termLabel: string, only?: string
           for (const day of parseDays(days)) meetings.push({ day, start: parseTime(tm[1]), end: parseTime(tm[2]) });
         }
         if (!meetings.length) continue;
-        // 강의 섹션이 여러 개인 과목(KOREAN 1A 001~007 등)은 섹션마다 한 줄 — 학생이 자기 섹션을 고른다. 첫 섹션은 기본 id 로 내장 예시를 덮어쓴다.
+        // 강의 섹션이 여러 개인 과목(KOREAN 1A 001~007 등)은 섹션마다 한 줄 — 학생이 자기 섹션을 고른다
         const sectionNo = text(row.match(/class="st--section-count"[^>]*>([\s\S]*?)<\/span>/)?.[1] ?? '') || '001';
         const baseId = courseId('s_berkeley', code);
-        const same = bySection.get(`${baseId}#${sectionNo}`);
-        if (same) { const prev = byId.get(same)!; prev.meetings = uniq([...prev.meetings, ...meetings]); continue; }
-        const first = !byId.has(baseId);
-        const id = first ? baseId : `${baseId}_${sectionNo}`;
-        if (byId.has(id)) { const prev = byId.get(id)!; prev.meetings = uniq([...prev.meetings, ...meetings]); continue; }
-        bySection.set(`${baseId}#${sectionNo}`, id);
-        const course: CatalogCourse = { id, schoolId: 's_berkeley', code, title, department, instructor, location, meetings: uniq(meetings), term: termLabel, units, url: contentPath ? `${BERKELEY_PUBLIC}${contentPath}` : undefined };
-        sectionOf.set(id, sectionNo);
-        byId.set(id, course); out.push(course); added++;
+        const key = `${baseId}#${sectionNo}`;
+        const prev = sections.get(key);
+        if (prev) { prev.course.meetings = uniq([...prev.course.meetings, ...meetings]); continue; }
+        sections.set(key, { baseId, sectionNo, course: { id: baseId, schoolId: 's_berkeley', code, title, department, instructor, location, meetings: uniq(meetings), term: termLabel, units, url: contentPath ? `${BERKELEY_PUBLIC}${contentPath}` : undefined } });
+        added++;
       }
     }
-    if (added) { withClasses++; console.log(`  ${termLabel} · ${subject}: ${added}`); }
+    console.log(`  ${termLabel} · ${l.label}: ${added}`);
   };
-  const failed: string[] = [];
-  for (const subject of subjects) {
-    const sub = lookupSubject(subject);
-    if (!sub) { if (only) console.warn(`  ${termLabel} · ${subject}: 이 학기 학과 필터에 없음 (건너뜀)`); continue; }
-    try { await readSubject(subject, sub); } catch (e) { console.warn(`  ${termLabel} · ${subject}: ${(e as Error).message} — 끝에 한 번 더`); failed.push(subject); }
+  const failed: Listing[] = [];
+  for (const l of listings) {
+    try { await read(l); } catch (e) { console.warn(`  ${termLabel} · ${l.label}: ${(e as Error).message} — 끝에 한 번 더`); failed.push(l); }
   }
-  // 사이트가 잠깐 바빠(504) 못 읽은 학과는 1분 쉬었다가 한 번 더. 그래도 안 되면 이번 가져오기는 실패로 끝낸다 — 학과 하나가 통째로 빠진 목록을 반영하지 않는다
+  // 사이트가 잠깐 바빠(504) 못 읽은 묶음은 1분 쉬었다가 한 번 더. 그래도 안 되면 이번 가져오기는 실패로 끝낸다 — 한 묶음이 통째로 빠진 목록을 반영하지 않는다
   if (failed.length) {
     await new Promise((res) => setTimeout(res, 60_000));
-    for (const subject of failed) await readSubject(subject, lookupSubject(subject)!);
+    for (const l of failed) await read(l);
   }
-  console.log(`  berkeley ${termLabel}: ${withClasses}/${subjects.length} subjects with lectures, ${out.length} lectures`);
-  // 같은 과목에 강의 섹션이 둘 이상이면 제목에 섹션 번호를 붙여 구분한다
-  const siblings = new Map<string, number>();
-  for (const c of out) { const base = c.id.replace(/_\d{3}$/, ''); siblings.set(base, (siblings.get(base) ?? 0) + 1); }
-  for (const c of out) { const base = c.id.replace(/_\d{3}$/, ''); if ((siblings.get(base) ?? 0) > 1) c.title = `${c.title} (Lec ${sectionOf.get(c.id) ?? '001'})`; }
+  // id: 섹션 번호가 가장 작은 섹션이 기본 id. 강의 섹션이 둘 이상이면 제목에 섹션 번호를 붙여 구분한다
+  const byBase = new Map<string, { baseId: string; sectionNo: string; course: CatalogCourse }[]>();
+  for (const x of sections.values()) (byBase.get(x.baseId) ?? byBase.set(x.baseId, []).get(x.baseId)!).push(x);
+  const out: CatalogCourse[] = [];
+  for (const group of byBase.values()) {
+    group.sort((a, b) => a.sectionNo.localeCompare(b.sectionNo, 'en', { numeric: true }));
+    group.forEach((x, i) => {
+      x.course.id = i === 0 ? x.baseId : `${x.baseId}_${x.sectionNo}`;
+      if (group.length > 1) x.course.title = `${x.course.title} (Lec ${x.sectionNo})`;
+      out.push(x.course);
+    });
+  }
+  console.log(`  berkeley ${termLabel}: ${listings.length} listings, ${out.length} lectures`);
   return out;
 }
 
