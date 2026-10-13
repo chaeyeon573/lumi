@@ -14,6 +14,7 @@ import { api } from '@core/api';
 import type { CatalogCourse } from '@core/api/types';
 import { cn } from '@core/lib/cn';
 import type { Opportunity, Organization } from '@core/types';
+import { PeopleLine } from '@/components/together/PeopleLine';
 
 /**
  * 캠퍼스 › 찾기 — 동아리·수업·인턴·연구·장학금·해커톤·행사를 한 줄의 칩으로.
@@ -246,7 +247,8 @@ function ListingRow({ o, why, saved, toggleSave, club, onClub, showType = true }
   const loc = o.type === 'internship' ? locationOf(o) : o.place?.name ?? '';
   const time = o.type === 'event' && o.startTime ? o.startTime : '';
   return (
-    <div className="flex items-start gap-3 py-3">
+    <div className="py-3">
+    <div className="flex items-start gap-3">
       <button onClick={() => nav(`/opportunities/${o.id}`)} className="flex-1 min-w-0 flex items-start gap-3 text-left press">
         <span className="h-10 w-10 rounded-xl bg-primary-soft grid place-items-center text-[18px] shrink-0">{OPP_TYPE_EMOJI[o.type]}</span>
         <span className="flex-1 min-w-0">
@@ -264,6 +266,9 @@ function ListingRow({ o, why, saved, toggleSave, club, onClub, showType = true }
       {club && onClub
         ? <button onClick={onClub} aria-label={en ? `Open ${club.name}` : `${club.name} 페이지`} className="h-10 w-10 rounded-full grid place-items-center shrink-0 press"><Avatar emoji={club.logo.emoji} hue={club.logo.hue} url={club.logo.url} size={28} /></button>
         : <button onClick={() => toggleSave(o)} aria-label={saved ? (en ? 'Remove from saved' : '저장 취소') : (en ? 'Save listing' : '공고 저장')} className={cn('h-10 w-10 rounded-full grid place-items-center shrink-0 press', saved ? 'text-gold' : 'text-ink-3')}><Star size={21} fill={saved ? 'currentColor' : 'none'} /></button>}
+    </div>
+      {/* 모든 공고는 사람으로 이어진다 — 누가 가는지/저장했는지 + 같이 가기·같이 준비·팀원 찾기 */}
+      <PeopleLine o={o} className="pl-[52px]" />
     </div>
   );
 }

@@ -13,6 +13,10 @@ import { relativeTime } from '@core/lib/format';
 import { cn } from '@core/lib/cn';
 import type { PostType, Post } from '@core/types';
 import { BrowseTab } from './BrowseTab';
+import { TodaysQuestion, QuietInvite, MeanwhileThisWeek } from '@/components/together/FeedExtras';
+
+/** 이보다 글이 적으면 피드가 조용하다 — 초대 카드와 맨 아래 "이번 주" 하나를 보여준다 */
+const QUIET_POSTS = 5;
 
 type Tab = 'feed' | 'opportunities';
 
@@ -48,12 +52,15 @@ export function CommunityPage() {
   );
 }
 
+/** 피드는 사람만 — 공고를 자동으로 글처럼 올리지 않는다. 맨 위 오늘의 질문, 조용하면 초대 + 맨 아래 이번 주 하나 */
 function FeedTab() {
   const nav = useNavigate();
   const v = useViewer();
   const [type, setType] = useState<PostType | 'all' | 'anon'>('all');
   const [open, setOpen] = useState<string | null>(null);
-  const posts = v.visiblePosts.filter((p) => p.showOnFeed !== false)
+  const feed = v.visiblePosts.filter((p) => p.showOnFeed !== false);
+  const quiet = feed.length < QUIET_POSTS;
+  const posts = feed
     .filter((p) => type === 'all' ? true : type === 'anon' ? p.anonymous : p.postType === type && !p.anonymous)
     .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
   const row = (p: Post) => {
@@ -75,8 +82,11 @@ function FeedTab() {
   };
   return (
     <div>
+      <TodaysQuestion />
       <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2"><Chip active={type === 'all'} onClick={() => setType('all')}>{t('전체')}</Chip>{ALL_POST_TYPES.filter((x) => x !== 'news').map((pt) => <Chip key={pt} active={type === pt} onClick={() => setType(pt)}>{POST_TYPE_LABELS[pt]}</Chip>)}<Chip active={type === 'anon'} onClick={() => setType('anon')}>{t('익명')}</Chip></div>
       {posts.length === 0 ? <EmptyState emoji="" title={t('아직 올라온 것이 없어요')} action={<Button onClick={() => nav('/create/post')}>{t('게시물 작성')}</Button>} /> : <div className="divide-y divide-line">{posts.map(row)}</div>}
+      {quiet && <QuietInvite />}
+      {quiet && <MeanwhileThisWeek />}
     </div>
   );
 }

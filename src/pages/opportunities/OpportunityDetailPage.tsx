@@ -18,6 +18,7 @@ import type { OpportunityIntent } from '@core/types';
 import { formatDate, formatDateTime, relativeTime } from '@core/lib/format';
 import { dday, daysUntil, matchReasons, isTogetherType } from '@core/lib/recommend';
 import { cn } from '@core/lib/cn';
+import { WithPeopleSection } from '@/components/together/WithPeople';
 
 export function OpportunityDetailPage() {
   const { id } = useParams();
@@ -86,6 +87,9 @@ export function OpportunityDetailPage() {
             <button onClick={() => setParams({ tab: 'people' })} className="rounded-xl bg-primary-soft py-2 press"><div className="text-[16px] font-extrabold text-primary">{others.filter((i) => i.intent === 'solo' || i.intent === 'company' || i.intent === 'team').length}</div><div className="text-[10px] text-primary">{t('같이 갈 사람 찾는 중')}</div></button>
           </div>}
         </div>
+
+        {/* 정보는 이유, 사람이 핵심 — 누가 같이 가는지·준비하는지·팀을 찾는지 */}
+        <WithPeopleSection o={o} />
 
         <Segmented value={tab} onChange={(tb) => setParams({ tab: tb })} options={together ? [{ value: 'info', label: t('상세') }, { value: 'people', label: `${t('함께할 사람 ')}${people.length}` }, { value: 'qna', label: `${t('Q&A·후기 ')}${o.qna.length + o.reviews.length}` }] : [{ value: 'info', label: t('상세') }, { value: 'people', label: `${lang === 'en' ? 'People ' : '사람 '}${people.length}` }, { value: 'qna', label: `${t('Q&A·후기 ')}${o.qna.length + o.reviews.length}` }]} />
 

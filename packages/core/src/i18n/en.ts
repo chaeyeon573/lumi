@@ -1396,4 +1396,8 @@ export const en: Record<string, string> = {
   '핫테이크': 'Hot take',
   '두 개의 진실과 하나의 거짓': '2 truths & a lie',
   '이모지로 본 한 주': 'Week in 3 emojis',
+  '같이 가기는 날짜와 시간이 정해진 행사에서만 열 수 있어요.': 'Go together works for events with a set date and time.',
+  '다른 학교 행사예요.': "That event is at another campus.",
+  '같이 가요 · ': 'Go together · ',
+  '행사 시작 전에 만나서 같이 들어가요. 처음 가는 사람도 환영이에요.': 'Meet a few minutes before it starts and walk in together. First-timers welcome.',
 };

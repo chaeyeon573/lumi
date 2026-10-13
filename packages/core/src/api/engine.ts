@@ -4,10 +4,10 @@
  * 스냅샷 모양의 in-memory DB(`ctx.db`)를 직접 변경하고, 바뀐 엔티티만 담은 Patch를 돌려준다.
  * 저장(localStorage / DB 영속화), 지연, 세션, 인증은 호출하는 쪽의 책임이다.
  */
-import type { Patch, Snapshot, RegisterInput, ActivityInput, PostInput, OpportunityInput, TimePollInput } from './types';
+import type { Patch, Snapshot, RegisterInput, ActivityInput, PostInput, OpportunityInput, TimePollInput, GoTogetherResult, DailyResults } from './types';
 import type {
   Activity, ActivityProposal, Availability, ChatRoom, ID, Notification, OpportunityIntent, Participation, Post, User, Opportunity, TimePoll, TimeOption, ReportTargetType,
-  Game, GameInput, GameKind,
+  Game, GameInput, GameKind, Role,
 } from '@core/types';
 import { freeBlocks, jsDayToIdx, toMin } from '@core/lib/timetable';
 import { uid, pairKey } from '@core/lib/format';
@@ -15,6 +15,9 @@ import { CATEGORY_LABELS } from '@core/lib/labels';
 import { canMessage, canViewField, isBlocked } from '@core/lib/relations';
 import { canSendGame, gameProfileError, gameSummary, guessPickResult, thisOrThatResult, twoTruthsResult, GAME_LABELS, GAME_LIMITS } from '@core/lib/icebreakers';
 import { pairById, guessQuestionById } from '@core/data/icebreakers';
+import { DAILY_QUESTIONS, PERSON_ROLE_LABELS } from '@core/lib/labels';
+import { campusDate } from '@core/lib/listings';
+import { canGoTogether, campusToday, crewMembers, crewsFor, dailyTally, meetTimeFor, DAILY_MIN_ANSWERS, MEETUP_CAPACITY } from '@core/lib/withpeople';
 
 export interface EngineContext {
   /** 변경 가능한 데이터. 엔진은 이 객체를 직접 수정한다 */
@@ -128,7 +131,27 @@ export function createEngine(ctx: EngineContext) {
     return { games: [g], chatRooms: [room], notifications: [nt] };
   }
 
-  return {
+  /** 두 Patch 를 합친다 — 같은 id 는 뒤의 것이 이긴다 */
+  function mergePatch(a: Patch, b: Patch): Patch {
+    const out: Record<string, unknown> = { ...a };
+    for (const [k, v] of Object.entries(b)) {
+      if (v === undefined) continue;
+      if (k === 'removed') {
+        const r: Record<string, ID[]> = { ...(out.removed as Record<string, ID[]> | undefined) };
+        for (const [rk, ids] of Object.entries(v as Record<string, ID[]>)) r[rk] = [...new Set([...(r[rk] ?? []), ...ids])];
+        out.removed = r;
+      } else if (Array.isArray(v)) {
+        const prev = (out[k] as { id: ID }[] | undefined) ?? [];
+        const byId = new Map(prev.map((x) => [x.id, x]));
+        for (const x of v as { id: ID }[]) byId.set(x.id, x);
+        out[k] = [...byId.values()];
+      } else out[k] = v;
+    }
+    return out as Patch;
+  }
+  const schoolOf = (u: User) => (u.affiliation.type === 'university' ? u.affiliation.schoolId : '');
+
+  const api = {
     find,
     notify,
 
@@ -191,6 +214,14 @@ export function createEngine(ctx: EngineContext) {
         if (!u.poll) throw new Error(t('투표형 질문이 없어요.'));
         u.poll.votes[voterId] = optionIndex;
         return { users: [u] };
+      },
+      /** 오늘의 질문 집계 — 같은 학교, 예시 프로필 제외(본인은 포함). DAILY_MIN_ANSWERS 미만이면 비율 없이 몇 명인지만 */
+      dailyResults(viewerId: ID, questionId: string, date: string): DailyResults {
+        const me = find(db().users, viewerId);
+        if (!DAILY_QUESTIONS.some((q) => q.id === questionId) || !/^\d{4}-\d{2}-\d{2}$/.test(String(date))) throw new Error(t('입력값을 확인해주세요.'));
+        const school = schoolOf(me);
+        const { total, counts } = school ? dailyTally(db().users, school, questionId, date, viewerId) : { total: 0, counts: {} };
+        return { questionId, date, total, min: DAILY_MIN_ANSWERS, counts: total >= DAILY_MIN_ANSWERS ? counts : null, patch: {} };
       },
     },
 
@@ -441,6 +472,83 @@ export function createEngine(ctx: EngineContext) {
       review(opportunityId: ID, authorId: ID, text: string, result?: 'accepted' | 'rejected' | 'attended'): Patch {
         const o = find(db().opportunities, opportunityId); o.reviews.unshift({ id: uid('r'), authorId, text, result, createdAt: now() }); return { opportunities: [o] };
       },
+
+      /**
+       * 같이 가기 — 한 번 누르면: 이 행사에 연결된 같이 가기 모임이 있으면 들어가고, 없거나 다 찼으면 새로 연다.
+       * 만나는 시각은 행사 시작 몇 분 전, 장소는 행사 장소. 내 상태는 '갈 예정'. 이미 들어가 있으면 그 모임을 그대로 돌려준다 (두 번 눌러도 하나).
+       * 볼 수 없는 모임(공개 범위·차단)에는 들어가지 않는다.
+       */
+      goTogether(opportunityId: ID, userId: ID): GoTogetherResult {
+        const o = find(db().opportunities, opportunityId);
+        const me = find(db().users, userId);
+        if (!canGoTogether(o)) throw new Error(t('같이 가기는 날짜와 시간이 정해진 행사에서만 열 수 있어요.'));
+        if (o.schoolId && o.schoolId !== schoolOf(me)) throw new Error(t('다른 학교 행사예요.'));
+        const crews = crewsFor(db(), me, o.id, 'go').filter((a) => a.date >= campusToday());
+        let a = crews.find((x) => crewMembers(db(), x).includes(userId));
+        let patch: Patch = {};
+        let created = false;
+        if (!a) {
+          const open = crews.filter((x) => x.joinPolicy === 'open' && db().participations.filter((p) => p.activityId === x.id && p.status === 'approved').length < x.capacity)
+            .sort((x, y) => x.createdAt.localeCompare(y.createdAt))[0];
+          if (open) {
+            a = open;
+            patch = api.activities.join(open.id, userId);
+          } else {
+            const date = campusDate(o.date!);
+            const freeFood = o.tags.some((tg) => tg.toLowerCase() === 'free food');
+            const r = api.activities.create(userId, {
+              kind: 'group', category: freeFood ? 'meal' : 'school_event',
+              title: `${t('같이 가요 · ')}${o.title}`.slice(0, 120),
+              description: `${t('행사 시작 전에 만나서 같이 들어가요. 처음 가는 사람도 환영이에요.')}`,
+              cover: { emoji: '🙋', hue: o.cover?.hue ?? 200 },
+              date, startTime: meetTimeFor(o.startTime!), endTime: o.startTime!,
+              place: o.place ?? { name: o.location || t('장소 미정'), lat: 0, lng: 0 },
+              capacity: MEETUP_CAPACITY, fee: 0, joinPolicy: 'open',
+              visibility: schoolOf(me) ? 'school' : 'public',
+              opportunityId: o.id, listingCrew: 'go',
+            });
+            a = r.activity; patch = r.patch; created = true;
+          }
+        }
+        patch = mergePatch(patch, api.opportunities.setIntent(o.id, userId, 'going'));
+        const room = ensureActivityRoom(a);
+        patch = mergePatch(patch, { activities: [a], chatRooms: [room] });
+        return { activity: a, created, roomId: room.id, patch };
+      },
+
+      /** 같이 가기 → 아마도: 모임에서 빠지고 상태는 '관심'. 주최자가 빠지면 다음 사람에게 넘기고, 혼자였으면 모임을 닫는다 */
+      leaveTogether(opportunityId: ID, userId: ID): Patch {
+        find(db().opportunities, opportunityId);
+        let patch: Patch = {};
+        for (const a of db().activities.filter((x) => x.opportunityId === opportunityId && x.listingCrew === 'go')) {
+          if (a.hostId === userId) {
+            const next = db().participations.filter((p) => p.activityId === a.id && p.status === 'approved' && p.userId !== userId).sort((x, y) => x.createdAt.localeCompare(y.createdAt))[0];
+            if (!next) { patch = mergePatch(patch, api.activities.remove(a.id)); continue; }
+            a.hostId = next.userId;
+            next.status = 'cancelled'; // 주최자는 참가 기록 없이 모임에 있다
+            const room = db().chatRooms.find((r) => r.type === 'activity' && r.activityId === a.id);
+            if (room) room.memberIds = room.memberIds.filter((m) => m !== userId);
+            patch = mergePatch(patch, { activities: [a], participations: [next], chatRooms: room ? [room] : [] });
+          } else if (db().participations.some((p) => p.activityId === a.id && p.userId === userId && (p.status === 'approved' || p.status === 'pending'))) {
+            patch = mergePatch(patch, api.activities.cancel(a.id, userId));
+          }
+        }
+        const mine = db().opportunityIntents.find((i) => i.opportunityId === opportunityId && i.userId === userId);
+        if (!mine || mine.intent !== 'interested') patch = mergePatch(patch, api.opportunities.setIntent(opportunityId, userId, 'interested'));
+        return patch;
+      },
+
+      /** 팀원 찾기 목록에 나를 올린다 — intent team + 이 공고에서 찾는 역할 (최대 4개, Role 값만) */
+      lookForTeam(opportunityId: ID, userId: ID, roles: Role[]): Patch {
+        find(db().opportunities, opportunityId);
+        find(db().users, userId);
+        const list = Array.isArray(roles) ? roles : [];
+        if (list.length > 4 || list.some((r) => typeof r !== 'string' || !(r in PERSON_ROLE_LABELS))) throw new Error(t('입력값을 확인해주세요.'));
+        const patch = api.opportunities.setIntent(opportunityId, userId, 'team');
+        const rec = db().opportunityIntents.find((i) => i.opportunityId === opportunityId && i.userId === userId)!;
+        rec.roles = [...new Set(list)];
+        return mergePatch(patch, { opportunityIntents: [rec] });
+      },
     },
 
     proposals: {
@@ -684,6 +792,7 @@ export function createEngine(ctx: EngineContext) {
       },
     },
   };
+  return api;
 }
 
 export type Engine = ReturnType<typeof createEngine>;

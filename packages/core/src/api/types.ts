@@ -86,6 +86,7 @@ export interface ActivityInput {
   invitedIds?: ID[];
   orgId?: ID;
   opportunityId?: ID;
+  listingCrew?: Activity['listingCrew'];
   rolesNeeded?: Role[];
   openSlot?: boolean;
   courseName?: string;
@@ -110,6 +111,11 @@ export interface PostInput {
   showOnProfile?: boolean;
   showOnFeed?: boolean;
 }
+
+/** 같이 가기 결과 — created: 내가 새로 열었는지 (아니면 있던 모임에 들어감) */
+export interface GoTogetherResult { activity: Activity; created: boolean; roomId: ID; patch: Patch }
+/** 오늘의 질문 집계 — counts 는 total >= min 일 때만 */
+export interface DailyResults { questionId: string; date: string; total: number; min: number; counts: Record<string, number> | null; patch: Patch }
 
 /** 기회 공유 — 링크와 제목만으로 등록하고 나머지는 나중에 채운다 */
 export interface OpportunityInput {
@@ -216,6 +222,8 @@ export interface AroundUApi {
     setAvailability(id: ID, availability: Availability): Promise<Patch>;
     /** 다른 사용자의 투표형 질문에 한 표 */
     votePoll(ownerId: ID, voterId: ID, optionIndex: number): Promise<Patch>;
+    /** 오늘의 질문 — 같은 학교 답 집계. 5명 미만이면 counts 없이 total 만 (개인의 답은 내려가지 않는다) */
+    dailyResults(viewerId: ID, questionId: string, date: string): Promise<DailyResults>;
   };
 
   activities: {
@@ -261,6 +269,12 @@ export interface AroundUApi {
     toggleSave(opportunityId: ID, userId: ID): Promise<Patch>;
     ask(opportunityId: ID, authorId: ID, text: string): Promise<Patch>;
     review(opportunityId: ID, authorId: ID, text: string, result?: 'accepted' | 'rejected' | 'attended'): Promise<Patch>;
+    /** 같이 가기 — 이 행사에 연결된 작은 모임에 들어가거나(있으면) 새로 연다. 내 상태는 '갈 예정', 모임 그룹 채팅방을 돌려준다 */
+    goTogether(opportunityId: ID, userId: ID): Promise<GoTogetherResult>;
+    /** 같이 가기 → "아마도": 모임에서 빠지고 상태를 '관심'으로 */
+    leaveTogether(opportunityId: ID, userId: ID): Promise<Patch>;
+    /** 팀원 찾기 목록에 나를 올린다 (intent team + 이 공고에서 찾는 역할) */
+    lookForTeam(opportunityId: ID, userId: ID, roles: Role[]): Promise<Patch>;
   };
 
   proposals: {

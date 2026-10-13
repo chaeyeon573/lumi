@@ -30,6 +30,7 @@ import { createEngine } from '@core/api/engine';
 import { searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm, catalogCourses as builtInCatalog } from '@core/data/catalog/courses';
 import { createStore } from './store';
 import { snapshotFor, patchFor } from './view';
+import { TOGETHER_RULES, ruleAllows } from './together-rules';
 import { gameFor } from '@core/lib/icebreakers';
 import { sendCodeMail, sendMail } from './mail';
 import { migrateDemo, demoUserIdFor, rollSampleActivities } from './demo';
@@ -278,7 +279,7 @@ type Rule = number | ((me: ID, args: unknown[]) => boolean);
 const owner = <T extends { id: ID }>(list: () => T[], pick: (x: T) => ID | undefined) => (me: ID, args: unknown[]) => { const x = list().find((i) => i.id === args[0]); return !!x && pick(x) === me; };
 const activityHost = (me: ID, activityId: unknown) => db.activities.find((a) => a.id === activityId)?.hostId === me;
 const RULES: Record<Group, Record<string, Rule>> = {
-  users: { update: 0, setAvailability: 0, votePoll: 1 },
+  users: { update: 0, setAvailability: 0, votePoll: 1, ...TOGETHER_RULES.users },
   activities: {
     create: 0, update: owner(() => db.activities, (a) => a.hostId), remove: owner(() => db.activities, (a) => a.hostId), join: 1, cancel: 1,
     approve: (me, args) => { const p = db.participations.find((x) => x.id === args[0]); return !!p && activityHost(me, p.activityId); },
@@ -293,7 +294,7 @@ const RULES: Record<Group, Record<string, Rule>> = {
     unfriend: (me, args) => args[0] === me || args[1] === me,
   },
   orgs: { apply: 1 },
-  opportunities: { create: 0, setIntent: 1, toggleSave: 1, ask: 1, review: 1 },
+  opportunities: { create: 0, setIntent: 1, toggleSave: 1, ask: 1, review: 1, ...TOGETHER_RULES.opportunities },
   proposals: { create: 0, respond: owner(() => db.proposals, (p) => p.toId) },
   together: { create: 0, vote: 1, addOption: 1, decide: owner(() => db.timePolls, (p) => p.hostId), cancel: owner(() => db.timePolls, (p) => p.hostId) },
   // 보내는 사람 = 본인, 답하기·넘기기 = 받은 사람 본인 (엔진도 한 번 더 확인한다)
@@ -310,7 +311,7 @@ app.post('/api/rpc/:group/:method', auth, wrap(async (req: Req) => {
   const args: unknown[] = Array.isArray(req.body.args) ? req.body.args : [];
   if (!GROUPS.includes(group) || !(method in RULES[group])) throw bad('Unknown method', 404);
   const rule = RULES[group][method];
-  const allowed = typeof rule === 'number' ? args[rule] === me : rule(me, args);
+  const allowed = ruleAllows(rule, me, args);
   if (!allowed) throw bad(t('권한이 없어요.'), 403);
   const fn = (engine[group] as Record<string, (...a: unknown[]) => unknown>)[method];
   const result = fn(...args) as Patch | { patch: Patch } | undefined;

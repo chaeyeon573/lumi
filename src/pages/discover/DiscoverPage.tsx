@@ -20,6 +20,8 @@ import { CATEGORY_LABELS, PERSON_ROLE_LABELS, CREW_TYPE_LABELS, OPP_TYPE_LABELS 
 import { dday } from '@core/lib/recommend';
 import { cn } from '@core/lib/cn';
 import type { Activity, Opportunity } from '@core/types';
+import { PeopleLine } from '@/components/together/PeopleLine';
+import { campusDate } from '@core/lib/listings';
 
 type Tab = 'now' | 'activities' | 'teams';
 
@@ -144,9 +146,18 @@ function ActivityRow({ a }: { a: Activity }) {
   const av = org ? org.logo : host?.avatar ?? { emoji: '👤', hue: 200 };
   return <Row sample={a.sample} avatar={<button onClick={() => nav(`/activities/${a.id}`)}><Avatar emoji={av.emoji} hue={av.hue} url={av.url} size={44} /></button>} title={a.title} sub={`${formatDate(a.date)} ${formatTime(a.startTime)} · ${CATEGORY_LABELS[a.category]}`} action={<JoinButton activity={a} size="sm" label={t('참여')} className="bg-accent text-primary shadow-none" />} />;
 }
+/** 공고 카드 — 제목 아래에 누가 함께하는지와 버튼 하나 (같이 가기·같이 준비·팀원 찾기) */
 function OppRow({ o }: { o: Opportunity }) {
   const nav = useNavigate();
-  return <Row avatar={<span className="h-11 w-11 rounded-full bg-primary-soft text-primary grid place-items-center text-[13px] font-bold">{OPP_TYPE_LABELS[o.type].slice(0, 2)}</span>} title={o.title} sub={`${o.date ? formatDate(o.date) : ''}${o.deadline ? ` · ${dday(o.deadline)}` : ''}`} action={<Button size="sm" variant="secondary" onClick={() => nav(`/opportunities/${o.id}`)}>{t('보기')}</Button>} />;
+  return (
+    <div className="card rounded-[24px] px-3 py-2.5">
+      <button onClick={() => nav(`/opportunities/${o.id}`)} className="w-full flex items-center gap-3 text-left">
+        <span className="h-11 w-11 rounded-full bg-primary-soft text-primary grid place-items-center text-[13px] font-bold shrink-0">{OPP_TYPE_LABELS[o.type].slice(0, 2)}</span>
+        <span className="flex-1 min-w-0"><span className="block text-[15px] font-semibold text-primary truncate">{o.title}</span><span className="block text-[13px] text-ink-2 truncate">{[o.date ? `${formatDate(campusDate(o.date))}${o.startTime && o.startTime !== '00:00' ? ` ${formatTime(o.startTime)}` : ''}` : '', o.deadline ? dday(o.deadline) : '', o.place?.name ?? ''].filter(Boolean).join(' · ')}</span></span>
+      </button>
+      <PeopleLine o={o} className="pl-[56px]" />
+    </div>
+  );
 }
 
 function TeamsTab() {

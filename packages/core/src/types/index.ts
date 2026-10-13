@@ -230,6 +230,8 @@ export interface OpportunityIntentRecord {
   userId: ID;
   intent: OpportunityIntent;
   saved: boolean;
+  /** intent 가 team 일 때 — 이 공고에서 찾는 역할 (없으면 프로필의 lookingFor) */
+  roles?: Role[];
   createdAt: string;
 }
 
@@ -319,6 +321,8 @@ export interface Activity {
   invitedIds?: ID[];
   /** 기회에서 시작된 활동 (같이 지원·팀 모집) */
   opportunityId?: ID;
+  /** 공고에서 열린 모임의 종류 — go: 행사에 같이 가기 (만나서 같이 들어가는 작은 모임) · prep: 같이 준비 (면접·지원서) */
+  listingCrew?: 'go' | 'prep';
   /** 시간표 공강에서 열린 활동 */
   openSlot?: boolean;
   rolesNeeded?: Role[];
