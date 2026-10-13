@@ -26,6 +26,9 @@ export function parseDevpostDates(s: string): { start?: Date; end?: Date } {
 interface DevpostHackathon { id: number; title: string; url: string; open_state: string; invite_only?: boolean; displayed_location?: { location?: string }; submission_period_dates?: string; prize_amount?: string; themes?: { name: string }[]; organization_name?: string; registrations_count?: number }
 const CA_RE = /online|california|\bca\b|berkeley|san francisco|stanford|palo alto|san jose|merced|los angeles|san diego|oakland|bay area|santa clara|irvine|davis|santa cruz|sacramento/i;
 
+// 주최자 칸에 'nill', 'N/A' 같은 자리 채움 글자를 적은 해커톤이 있다 — 그럴 땐 없는 것으로 본다
+const realName = (s?: string) => { const v = text(s ?? ''); return v && !/^(nil+|null|none|n\/?a|tbd|-+|\.+)$/i.test(v) ? v : undefined; };
+
 export async function fetchDevpost(maxPages = 40): Promise<Opportunity[]> {
   const now = new Date().toISOString(); const out: Opportunity[] = []; const seen = new Set<number>();
   for (let page = 1; page <= maxPages; page++) {
@@ -43,7 +46,7 @@ export async function fetchDevpost(maxPages = 40): Promise<Opportunity[]> {
       const online = /online/i.test(where);
       const prize = text(h.prize_amount ?? '');
       out.push({
-        id: `op_ext_devpost_${h.id}`, type: 'hackathon', title: text(h.title), host: text(h.organization_name ?? 'Devpost'),
+        id: `op_ext_devpost_${h.id}`, type: 'hackathon', title: text(h.title), host: realName(h.organization_name) ?? 'Devpost',
         description: `${online ? 'Online' : where} hackathon · ${h.submission_period_dates ?? ''}${h.registrations_count ? ` · ${h.registrations_count} registered` : ''}`,
         cover: { emoji: '💡', hue: 230 }, deadline: end?.toISOString(), date: start?.toISOString(),
         place: online ? undefined : { name: where, lat: 37.8719, lng: -122.2585 },

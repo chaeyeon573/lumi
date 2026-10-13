@@ -316,7 +316,8 @@ function scoreListing(c: Ctx, o: Opportunity): Scored | null {
     if (d <= 3) { s += 1.5; why.push({ kind: 'deadline', w: 1.5, text: d === 0 ? say('Closes today', '오늘 마감') : say(`Closes in ${d} day${d === 1 ? '' : 's'}`, `${d}일 뒤 마감`) }); }
     else if (d <= 14) { s += 0.8; why.push({ kind: 'deadline', w: 0.8, text: say(`Closes in ${d} days`, `${d}일 뒤 마감`) }); }
   }
-  if (o.date) { const d = daysTo(o.date, now); if (d <= 7) { s += 1 - d * 0.08; why.push({ kind: 'soon', w: 0.9, text: d === 0 ? say('Today', '오늘') : d === 1 ? say('Tomorrow', '내일') : say('This week', '이번 주') }); } }
+  // 이미 시작한 것(제출 기간 중인 해커톤)은 '이번 주'가 아니다 — 남은 날은 위의 마감 이유가 말한다
+  if (o.date) { const d = daysTo(o.date, now); if (d >= 0 && d <= 7) { s += 1 - d * 0.08; why.push({ kind: 'soon', w: 0.9, text: d === 0 ? say('Today', '오늘') : d === 1 ? say('Tomorrow', '내일') : say('This week', '이번 주') }); } }
   const posted = o.postedAt ?? (o.type === 'internship' ? o.createdAt : undefined);
   if (posted) { const age = (now.getTime() - new Date(posted).getTime()) / day; if (age <= 3) { s += 1.2; why.push({ kind: 'new', w: 1.2, text: say('Just posted', '방금 올라왔어요') }); } else if (age <= 7) s += 0.5; }
   if (o.type === 'hackathon' && /in.?person/i.test(o.tags.join(' ')) && !o.schoolId) {

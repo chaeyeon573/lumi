@@ -115,3 +115,10 @@ test('the same reason is not repeated for every item', () => {
   const major = r.filter((x) => x.reasons.some((y) => y.kind === 'major')).length;
   assert.ok(major <= 2, `major reason shown ${major} times`);
 });
+
+test('a hackathon already in its submission window is not called "This week"', () => {
+  const started = opp('run', 'hackathon', 'Ongoing Hackathon', { tags: ['hackathon', 'online'], date: '2026-09-20T12:00:00Z', deadline: '2026-11-01T23:59:00Z' });
+  const r = forYou(snap([started]), person('Computer Science'), { now: NOW, mix: false });
+  assert.equal(r[0].id, 'run');
+  assert.ok(!r[0].reasons.some((x) => x.kind === 'soon'));
+});
