@@ -157,20 +157,24 @@ export function classRoomInfo(db: Pick<Snapshot, 'users' | 'schools'>, catalog: 
   const school = db.schools.find((s) => s.id === schoolId);
   const slug = codeSlug(codeSlugIn);
   if (!school || !slug) return null;
-  const cc = findCatalogCourse(catalog, schoolId, slug, now);
+  const found = findCatalogCourse(catalog, schoolId, slug, now);
   const cur = nowTermLabel(now);
-  const ccTerm = cc ? normalizeTermLabel(cc.term ?? '') : '';
-  // 학기 구분이 없는 공개 카탈로그('catalog' 같은 라벨)는 지금 학기로 본다
-  const term = cc && /^(Spring|Summer|Fall|Winter|Autumn) \d{4}$/.test(ccTerm) ? ccTerm : cur;
   const idx = index ?? buildClassIndex(db.users, now);
+  const ccTerm = found ? normalizeTermLabel(found.term ?? '') : '';
+  const seasonal = /^(Spring|Summer|Fall|Winter|Autumn) \d{4}$/.test(ccTerm);
+  // 지금 학기가 기본. 수업 목록에 지금 학기가 없고(다음 학기만 올라온 학교) 지금 학기로 듣는 사람도 없을 때만 목록의 학기로.
+  // 학기 구분이 없는 공개 카탈로그('catalog' 같은 라벨)는 지금 학기로 본다
+  const term = !found || !seasonal || ccTerm === cur || (idx.get(`${schoolId}|${slug}|${cur}`) ?? []).length ? cur : ccTerm;
+  // 다른 학기 행이면 제목만 쓴다 (교수·시간은 학기마다 다르다)
+  const cc = found && (!seasonal || ccTerm === term) ? found : undefined;
   const key = `${schoolId}|${slug}|${term}`;
   const count = (idx.get(key) ?? []).filter((m) => !m.sample).length;
-  const enrolled = !cc && count === 0 ? undefined : db.users.find((u) => enrollments(u, now).some((e) => e.key === key));
-  if (!cc && !enrolled) return null;
-  const code = cc ? normalizeCode(cc.code) : enrollments(enrolled!, now).find((e) => e.key === key)?.code ?? codeFromSlug(slug);
+  const enrolled = cc || !(idx.get(key) ?? []).length ? undefined : db.users.find((u) => enrollments(u, now).some((e) => e.key === key));
+  if (!found && !enrolled) return null;
+  const code = found ? normalizeCode(found.code) : enrollments(enrolled!, now).find((e) => e.key === key)?.code ?? codeFromSlug(slug);
   return {
     schoolId, schoolName: school.name, schoolSlug: schoolSlug(schoolId), codeSlug: slug, code, term,
-    title: cc?.title, instructor: cc?.instructor, meetings: cc?.meetings ?? [], url: cc?.url, inCatalog: !!cc, count, catalogCourse: cc,
+    title: found?.title, instructor: cc?.instructor, meetings: cc?.meetings ?? [], url: (cc ?? found)?.url, inCatalog: !!cc, count, catalogCourse: cc,
   };
 }
 

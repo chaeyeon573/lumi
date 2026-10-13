@@ -199,3 +199,14 @@ test('class link preview: counts only, no names', () => {
   for (const n of ['Ana', 'Ben', 'Cleo', 'Dev']) assert.ok(!html.includes(n));
   assert.equal(classRoomInfo(d, catalogCourses, 'nowhere', 'cs61a'), null);
 });
+
+test('class room term: current term unless the catalog only has another term and nobody takes it now', () => {
+  const d = db();
+  const spring = catalogCourses.filter((c) => c.schoolId === 's_berkeley' && c.code === 'CS 61A').map((c) => ({ ...c, term: 'Spring 2099', instructor: 'Someone Else' }));
+  const now = classRoomInfo(d, spring, 'berkeley', 'cs61a')!;
+  assert.equal(now.term, TERM, 'students take it this term → this term');
+  assert.equal(now.instructor, undefined, 'no instructor/times from another term');
+  assert.equal(now.title, 'The Structure and Interpretation of Computer Programs');
+  d.users = d.users.filter((u) => !enrollments(u).some((e) => e.key === KEY));
+  assert.equal(classRoomInfo(d, spring, 'berkeley', 'cs61a')!.term, 'Spring 2099');
+});

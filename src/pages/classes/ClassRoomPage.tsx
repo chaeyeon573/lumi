@@ -15,7 +15,7 @@ import { TopBar } from '@/components/layout/TopBar';
 import { Button, CardSkeleton, EmptyState } from '@/components/ui';
 import { ClassRoom } from '@/components/classes/ClassRoom';
 import { CopyClassLink, QrLinkButton, rememberReturnTo } from '@/components/classes/ClassLink';
-import { classKey, enrollments } from '@core/lib/classmates';
+import { classKey, codeSlug, enrollments } from '@core/lib/classmates';
 import { coursesFromCatalog, clashesWith, COURSE_HUES } from '@core/lib/timetable';
 import { clockLabel } from '@core/api/classes';
 
@@ -55,8 +55,13 @@ export function ClassRoomPage() {
   useEffect(() => { if (info) document.title = info.count > 0 ? `${info.code} on Lumi — ${info.count} classmate${info.count === 1 ? '' : 's'}` : `${info.code} on Lumi`; }, [info]);
 
   const key = info ? classKey(info.schoolId, info.code, info.term) : '';
-  const mine = useMemo(() => (me && key ? enrollments(me).find((e) => e.key === key) : undefined), [me, key]);
-  const roster = rosters?.find((r) => r.id === key);
+  // 같은 과목을 다른 학기로 넣어 둔 사람도 자기 수업 방으로 (예: 다음 학기 시간표)
+  const mine = useMemo(() => {
+    if (!me || !info) return undefined;
+    const list = enrollments(me);
+    return list.find((e) => e.key === key) ?? list.find((e) => e.schoolId === info.schoolId && codeSlug(e.code) === info.codeSlug);
+  }, [me, key, info]);
+  const roster = rosters?.find((r) => r.id === (mine?.key ?? key));
   const mySchool = me?.affiliation.type === 'university' ? me.affiliation.schoolId : '';
 
   const join = () => { rememberReturnTo(`/c/${school}/${code}`); nav(apiMode === 'remote' ? '/start' : '/welcome'); };
@@ -96,7 +101,7 @@ export function ClassRoomPage() {
         ) : mine ? (
           // ─── 듣는 사람 ───
           <>
-            <Header info={info} />
+            <Header info={mine.term === info.term ? info : { ...info, term: mine.term, instructor: undefined, meetings: mine.meetings.map((c) => ({ day: c.day, start: c.start, end: c.end })) }} />
             <div className="flex gap-2 flex-wrap"><CopyClassLink compact schoolId={info.schoolId} code={info.code} /><QrLinkButton schoolId={info.schoolId} code={info.code} /></div>
             <ClassRoom enrollment={mine} roster={roster} />
           </>
