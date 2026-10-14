@@ -32,7 +32,7 @@ changes what Lumi collects or who receives it, update the page, this file, and t
 | "Fill in my profile" | Free text or pasted résumé at sign-up (`/api/ai/profile-draft`, no account yet, IP rate-limited) | `ai_logs` (no user id) | **OpenAI** (the text). |
 | Conversation starters | `/api/ai/starters` | `ai_logs` (input = target user id) | **OpenAI**: facts about the *other* person that they let the viewer see (`starterFacts`: nickname, department, shared classes/interests/goals/clubs, bio, likes, free time, prompt answers, now-want). |
 | Feedback | Feedback button → `POST /api/feedback` (message + current path) | Postgres `feedback` | **Resend** → `FEEDBACK_EMAIL` (includes nickname + user id). |
-| Notifications | In-app (`notifications` collection, SSE `/api/events`). **iPhone app only, opt-in:** push via the Expo Push API → APNs (`server/push.ts`) — the device's Expo push token is stored per user, the push carries the notification title/body and an in-app path. Token deleted on sign-out on that device, on DeviceNotRegistered, and on account deletion. Email is used only for sign-in codes. | `docs` (`notifications`, `pushTokens`) | **Expo** (push service) and **Apple** (APNs): push token + notification title/text. |
+| Notifications | In-app (`notifications` collection, SSE `/api/events`). **iPhone app only, opt-in:** push via the Expo Push API → APNs (`server/push.ts`) — the device's Expo push token is stored per user, the push carries the notification title/body and an in-app path. **New chat messages** also push (`server/chat-push.ts`): the sender's first name, the room/meetup title for group chats, and the first ~100 characters of the message (or "N new messages"), at most one per room per 30 s; not while that chat is open (the open screen reports the room id to the server, kept in memory ~40 s), never to blocked pairs, suspended or demo accounts. Token deleted on sign-out on that device, on DeviceNotRegistered, and on account deletion. Email is used only for sign-in codes. | `docs` (`notifications`, `pushTokens`); which chat is open: server memory only | **Expo** (push service) and **Apple** (APNs): push token + notification title/text, including chat message previews. |
 | Analytics / ads | **None.** No analytics, crash-reporting or ad SDK in `src/`, `packages/core`, `apps/mobile`. No tracking cookies. | — | — |
 | Server logs | `console.log/error` → Railway logs. Errors and Resend failures; no request logger. `[mail] (not configured) code for <email>` is printed only when Resend is not configured. | Railway | Railway |
 | Browser storage | `localStorage`: session token, design, language, dining filters, last-seen card, plan guest token + name; `sessionStorage`: sign-up draft, Ask Lumi conversation, return path | Device | — |
@@ -72,7 +72,7 @@ Answer **"No"** to "used to track you" for every type below.
 | Location → Precise / Coarse | No (no device location is read; places are chosen from presets) | — | — | — |
 | Sensitive Info | No (no field asks for race, religion, orientation, etc.; `gender` is fixed to "private" in production) | — | — | — |
 | Contacts | No | — | — | — |
-| User Content → **Emails or Text Messages** | Yes (in-app chat messages) | Yes | No | App Functionality |
+| User Content → **Emails or Text Messages** | Yes (in-app chat messages; previews pass through Expo/APNs as push text) | Yes | No | App Functionality |
 | User Content → Photos or Videos | No | — | — | — |
 | User Content → Audio Data | No | — | — | — |
 | User Content → Gameplay Content | No (icebreaker answers declared under Other User Content) | — | — | — |
@@ -105,8 +105,12 @@ is not what ships.) Any added SDK (crash reporting, analytics) changes these ans
 > Lumi is a campus app for UC Berkeley students to find events, clubs, classmates and people to do things with.
 >
 > **Sign-in:** Lumi normally signs students in with a one-time code sent to their school (@berkeley.edu) email.
-> For review: [DEMO LOGIN — to be set, see open items]. You can also create an account without a school email:
-> tap **Get in**, answer the short questions, and on the last step tap **Skip for now**.
+> For review, use this account (no email is sent to it): on the welcome screen tap **Sign in**, enter
+> **[REVIEW_LOGIN_EMAIL]**, tap **Send code**, then enter the code **[REVIEW_LOGIN_CODE]** and tap **Sign in**.
+> It is a regular UC Berkeley student account with a verified school email, so you see what a real student sees.
+> To see the app filled with sample people, meetups and chats, open **https://heetz.up.railway.app/welcome?demo=berkeley**
+> on the device (it opens in the app) — that shared demo account is labelled "Sample". You can also create an
+> account without a school email: tap **Get in**, answer the short questions, and on the last step tap **Skip for now**.
 >
 > **Report and block:** On any person's profile, tap ⋯ → **Report user** or **Block**. Posts, meetups,
 > listings and rides have a ⋯/flag menu with **Report**. In a chat, tap ⋯ → Report / Block. Blocked users can't
@@ -114,8 +118,8 @@ is not what ships.) Any added SDK (crash reporting, analytics) changes these ans
 > content / ban users under our zero-tolerance Terms of Use (https://<host>/terms).
 >
 > **Delete account:** Settings (profile → gear) → **Delete account** → type DELETE to confirm. The account,
-> sign-in email, profile, posts and messages are deleted immediately. (The shared demo account can't be
-> deleted — to try deletion, create an account with Get in → Skip for now.)
+> sign-in email, profile, posts and messages are deleted immediately. The review account above can be deleted
+> too (signing in with it again afterwards creates a fresh one); the shared demo account can't.
 >
 > **Terms:** Users agree to the Terms of Use and Privacy Policy when they start sign-up (links on the welcome
 > screen and the last sign-up step), and can read them any time in Settings.
@@ -124,8 +128,8 @@ is not what ships.) Any added SDK (crash reporting, analytics) changes these ans
 > after your first action (e.g. joining a meetup) or from Settings → Notifications → Push notifications.
 > It is for users 16+; ride sharing is 18+.
 >
-> **iPhone features:** besides the shared web content, the app uses native push notifications (tapping one opens
-> the right screen), the iOS share sheet for class/plan/ride links, universal links (lumi links shared in group
+> **iPhone features:** besides the shared web content, the app uses native push notifications — new chat messages
+> and activity updates; tapping one opens that chat or screen — the iOS share sheet for class/plan/ride links, universal links (lumi links shared in group
 > chats open in the app), haptics, swipe-back navigation, pull-to-refresh and an offline screen.
 
 ---
@@ -144,8 +148,12 @@ is not what ships.) Any added SDK (crash reporting, analytics) changes these ans
 2. **Reports reach nobody.** `reports.create` only writes to the DB; there is no alert email and no admin
    list/action endpoint on this branch, so the "review within 24 hours" promise (Terms, review notes) can't be
    kept. Needed: report alert (e.g. Resend to an ops address), an admin view, and remove-content / suspend-user.
-3. **Reviewer login.** Sign-in needs a code sent to a school inbox; Apple can't receive one. Needed: a review
-   account (e.g. env-configured review email + fixed code) — then fill the review notes above.
+3. ~~**Reviewer login.**~~ Done: Railway `REVIEW_LOGIN_EMAIL` + `REVIEW_LOGIN_CODE` (6 digits) — that address
+   signs in with that code, no mail sent (`server/review-login.ts`; constant-time compare, 10 wrong codes per
+   address / 15 min and 50 in total / hour → 429, `[review]` log lines never contain the code). The account is
+   created on first use as a normal, school-verified UC Berkeley account. Unset → the address is ordinary. Put the
+   real values only into App Store Connect, never into this file or the repo. Choose an address on a domain you
+   control (it never receives mail from Lumi) and a code that isn't guessable.
 4. **Sessions never expire** (`sessions` table has no TTL). Consider expiry and a "sign out everywhere".
 5. **Retention periods** for AI logs, feedback and server logs are not defined — the policy says "kept to fix
    problems" and "for a limited time"; set real numbers and automate deletion.

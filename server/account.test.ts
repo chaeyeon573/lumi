@@ -35,6 +35,7 @@ const Z = 'u_zdel_7f3a9c';      // the person deleting their account
 const NICK = 'Zephyrine';
 const LILY = 'u_sua';           // sample profile, Berkeley
 const MAYA = 'u_jimin';         // sample profile, Berkeley
+const KEEP = 'u_zkeep_9d1e';     // a real account that keeps its push token
 const EMAIL = 'zephyrine@berkeley.edu';
 const TODAY = new Date().toISOString().slice(0, 10);
 const day = (n: number) => new Date(Date.now() + n * 86400000).toISOString().slice(0, 10);
@@ -53,6 +54,8 @@ async function setup() {
   const me = structuredClone(db.users.find((u) => u.id === 'u_me')!) as User;
   const z: User = { ...me, id: Z, nickname: NICK, sample: undefined, bio: 'zephyrine-bio', dailyAnswer: { questionId: 'q1', answer: 'yes', date: TODAY }, partnerSearch: [{ key: 's_berkeley|CS 61A|Fall 2026', code: 'CS 61A', term: 'Fall 2026', note: 'zephyrine pairs', since: TODAY }], photos: ['photos/c_cafe_laptop.jpg'], createdAt: new Date().toISOString() };
   db.users.push(z);
+  // another real (non-sample) account with an iPhone — sample profiles can't hold push tokens (server/push.ts)
+  db.users.push({ ...me, id: KEEP, nickname: 'Keeper', sample: undefined, createdAt: new Date().toISOString() });
 
   const engine = createEngine({ db, t, demo: false, push: () => {} });
   const rides = createRidesEngine({ db, t, demo: false, push: () => {} }, { today: () => TODAY });
@@ -143,7 +146,7 @@ async function setup() {
   const gym = createGym({ store, notify, userExists }); await gym.load();
   const push = createPush({ store, db: () => db, fetch: (async () => { throw new Error('no network in tests'); }) as typeof fetch, log: () => {} }); await push.load();
   await push.register(Z, 'ExponentPushToken[zdel-phone-0001]', 'ios', '1.0.0');
-  await push.register(MAYA, 'ExponentPushToken[maya-phone-0001]', 'ios', '1.0.0');
+  await push.register(KEEP, 'ExponentPushToken[keep-phone-0001]', 'ios', '1.0.0');
 
   // ── server: the same auth rule as server/index.ts ────────────────────────
   const broadcasts: Patch[] = []; const disconnected: ID[] = [];
@@ -225,7 +228,7 @@ test('delete: every trace of the person is gone from the snapshot, the store and
     assert.deepEqual(Object.keys((await again.listDocs<SeatStatusDoc>('seatStatus'))[0].notified), [MAYA]);
     assert.equal((await again.listDocs('diningFavorites')).length, 0);
     assert.equal((await again.listDocs('gymAlerts')).length, 0);
-    assert.deepEqual((await again.listDocs<{ id: string; userId: string }>('pushTokens')).map((d) => d.userId), [MAYA], 'their iPhone push token is gone, others stay');
+    assert.deepEqual((await again.listDocs<{ id: string; userId: string }>('pushTokens')).map((d) => d.userId), [KEEP], 'their iPhone push token is gone, others stay');
     assert.equal(r.body.deleted?.pushTokens, 1);
     // and the services' in-memory copies
     assert.equal(campus.myWatchCount(Z), 0);

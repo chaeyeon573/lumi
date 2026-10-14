@@ -385,6 +385,8 @@ export interface AroundUApi {
   push: {
     register(token: string, device: { platform: 'ios' | 'android'; appVersion?: string }): Promise<{ registered: boolean }>;
     unregister(token: string): Promise<void>;
+    /** the chat room open on this screen (null = none) — no chat push for it while open (server/chat-push.ts). Never throws */
+    viewing(roomId: ID | null): Promise<void>;
   };
 
   system: {

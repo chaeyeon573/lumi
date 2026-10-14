@@ -169,6 +169,13 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
     push: {
       register: (token, device) => call<{ registered: boolean }>('push/register', { token, ...device }),
       async unregister(token) { await call('push/unregister', { token }); },
+      // keepalive: still delivered when the page is being hidden or closed. Not through call() — a failure here
+      // must never sign the person out or show an error
+      async viewing(roomId) {
+        const token = readToken();
+        if (!token) return;
+        try { await fetch(`${base}/api/chats/viewing`, { method: 'POST', keepalive: true, headers: { 'content-type': 'application/json', authorization: `Bearer ${token}` }, body: JSON.stringify({ roomId }) }); } catch { /* offline */ }
+      },
     },
 
     system: {
