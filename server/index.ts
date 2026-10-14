@@ -37,6 +37,7 @@ import { gameFor } from '@core/lib/icebreakers';
 import { sendCodeMail, sendMail } from './mail';
 import { registerRideRoutes } from './rides';
 import { migrateDemo, demoUserIdFor, rollSampleActivities } from './demo';
+import { hiddenSamplesFor, sampleFreeFor, SAMPLE_OPPORTUNITY_IDS, SAMPLE_ORG_IDS } from './samples';
 import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError, campusToday, forgetStarters } from './ai';
 import { registerAccountRoutes } from './account';
 import type { AiLog } from './store';
@@ -238,7 +239,8 @@ app.post('/api/schools/highlights', wrap(async (req) => {
   if (!db.schools.some((s) => s.id === sid)) return null;
   const { date: today } = campusToday();
   const weekEnd = new Date(Date.parse(`${today}T12:00:00Z`) + 7 * 86400000).toISOString().slice(0, 10);
-  const mine = db.opportunities.filter((o) => !o.schoolId || o.schoolId === sid);
+  // 로그인 전 첫 화면 — 데모용 시드 공고·동아리는 숫자에도 넣지 않는다 (server/samples.ts)
+  const mine = db.opportunities.filter((o) => (!o.schoolId || o.schoolId === sid) && !SAMPLE_OPPORTUNITY_IDS.has(o.id));
   // 저장된 시각은 UTC — 캠퍼스(태평양) 날짜로 바꿔야 '10/19 23:59 마감'이 10/20 으로 보이지 않는다
   const pt = (iso: string) => (/T/.test(iso) ? new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(iso)) : iso.slice(0, 10));
   const nowHHMM = new Intl.DateTimeFormat('en-GB', { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(new Date());
@@ -252,7 +254,7 @@ app.post('/api/schools/highlights', wrap(async (req) => {
     freeFoodThisWeek: food.length,
     food: food[0] ? { title: food[0].title, date: pt(food[0].date!), startTime: food[0].startTime, place: food[0].place?.name } : undefined,
     deadline: dl ? { title: dl.title, deadline: pt(dl.deadline!), host: dl.host } : undefined,
-    clubs: db.organizations.filter((o) => o.schoolId === sid).length,
+    clubs: db.organizations.filter((o) => o.schoolId === sid && !SAMPLE_ORG_IDS.has(o.id)).length,
     internships: mine.filter((o) => o.type === 'internship').length,
   };
 }));
@@ -445,7 +447,7 @@ app.post('/api/ai/ask', auth, wrap(async (req: Req) => {
   if (!history.length || history[history.length - 1].role !== 'user') throw bad(t('입력값을 확인해주세요.'));
   rateLimit(`ask:${me.id}`, 40);
   const question = history[history.length - 1].content;
-  return runAi('ask', { userId: me.id, schoolId: schoolIdOf(me), input: question }, () => ask(db, schoolCatalog(schoolIdOf(me) ?? ''), me, history, campus.dates(schoolIdOf(me) ?? '')), (r) => `${r.answer}\n[cards: ${r.cards.map((c) => c.id).join(', ')}]`);
+  return runAi('ask', { userId: me.id, schoolId: schoolIdOf(me), input: question }, () => ask(sampleFreeFor(db, me), schoolCatalog(schoolIdOf(me) ?? ''), me, history, campus.dates(schoolIdOf(me) ?? '')), (r) => `${r.answer}\n[cards: ${r.cards.map((c) => c.id).join(', ')}]`);
 }));
 
 app.post('/api/ai/profile-draft', wrap(async (req) => {
@@ -454,13 +456,16 @@ app.post('/api/ai/profile-draft', wrap(async (req) => {
   if (text.length < 10) throw bad('Write a sentence or two about yourself first.');
   if (!db.schools.some((s) => s.id === schoolId)) throw bad(t('입력값을 확인해주세요.'));
   rateLimit(`profile:${req.ip}`, 15);
-  return runAi('profile', { schoolId, input: text }, () => profileDraft(db, schoolId, text), (r) => JSON.stringify(r.draft));
+  // 가입 중인 실제 학생 — 예시 동아리·공고를 추천하지 않는다
+  return runAi('profile', { schoolId, input: text }, () => profileDraft(sampleFreeFor(db), schoolId, text), (r) => JSON.stringify(r.draft));
 }));
 
 app.post('/api/ai/starters', auth, wrap(async (req: Req) => {
   const me = db.users.find((u) => u.id === requireUser(req))!;
   const target = db.users.find((u) => u.id === String(req.body.userId ?? ''));
   if (!target || target.id === me.id) throw bad(t('입력값을 확인해주세요.'), 404);
+  // 실제 계정은 예시 프로필을 볼 수 없다 (데모 계정은 자기 학교 예시만)
+  if (hiddenSamplesFor(db, me).users.has(target.id)) throw bad(t('입력값을 확인해주세요.'), 404);
   rateLimit(`starters:${me.id}`, 30);
   const language = req.body.lang === 'ko' ? 'ko' : 'en';
   const r = await runAi('starters', { userId: me.id, schoolId: schoolIdOf(me), input: target.id }, () => starters(db, me, target, language), (x) => x.starters.join(' | '));

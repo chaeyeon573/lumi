@@ -25,8 +25,9 @@ export function CardSkeleton({ count = 3 }: { count?: number }) {
 export function EmptyState({ emoji = '🌱', title, description, action, className }: { emoji?: string; title: string; description?: string; action?: ReactNode; className?: string }) {
   return (
     <div className={cn('flex flex-col items-center justify-center text-center px-8 py-14', className)}>
-      <div className="h-16 w-16 rounded-3xl bg-surface-2 grid place-items-center text-3xl">{emoji}</div>
-      <h3 className="mt-4 text-[16px] font-bold">{title}</h3>
+      {/* emoji="" = 아이콘 없이 문장만 (빈 회색 상자가 깨진 그림처럼 보였다) */}
+      {emoji && <div className="h-16 w-16 rounded-3xl bg-surface-2 grid place-items-center text-3xl mb-4">{emoji}</div>}
+      <h3 className="text-[16px] font-bold">{title}</h3>
       {description && <p className="mt-1.5 text-[13px] text-ink-3 leading-relaxed">{description}</p>}
       {action && <div className="mt-5">{action}</div>}
     </div>

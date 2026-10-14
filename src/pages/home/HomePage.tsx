@@ -15,6 +15,7 @@ import { sharedClassWith } from '@core/lib/classmates';
 import { statusNow, freeBlocks, todayIdx, nowMin, fmtBlock } from '@core/lib/timetable';
 import { assetUrl } from '@/lib/assets';
 import { cn } from '@core/lib/cn';
+import { useInvite } from '@/components/together/FeedExtras';
 import type { User, Interest, Goal } from '@core/types';
 
 interface Filters { years: number[]; sameDept: boolean; sameClass: boolean; freeNow: boolean; interests: Interest[]; goals: Goal[] }
@@ -68,6 +69,7 @@ export function HomePage() {
   };
   const undo = () => { if (idx > 0) { setReturning(true); setIdx((i) => i - 1); } };
   const deck = useRef<DeckHandle>(null);
+  const invite = useInvite();
   const chips: { key: string; label: string; clear: () => void }[] = [
     ...f.years.map((y) => ({ key: `y${y}`, label: `${y}${t('학년')}`, clear: () => setF({ ...f, years: f.years.filter((x) => x !== y) }) })),
     ...(f.sameDept ? [{ key: 'dept', label: t('같은 학과'), clear: () => setF({ ...f, sameDept: false }) }] : []),
@@ -85,7 +87,11 @@ export function HomePage() {
       {chips.length > 0 && <div className="shrink-0 flex gap-1.5 overflow-x-auto hide-scrollbar px-4 pb-3">{chips.map((c) => <button key={c.key} onClick={() => { c.clear(); reset(); }} className="h-8 pl-2.5 pr-3 rounded-full bg-accent-soft text-primary text-[12px] font-semibold flex items-center gap-1 shrink-0"><X size={12} />{c.label}</button>)}</div>}
       {status === 'loading' && <CardSkeleton />}
       {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
-      {status === 'ready' && (cards.length === 0 ? (
+      {status === 'ready' && (v.visibleUsers.length === 0 ? (
+        // 학교에 아직 다른 학생이 없다 — 지어낸 사람을 채우지 않고, 사람을 데려오는 버튼 하나
+        <EmptyState emoji="👋" title={lang === 'en' ? 'Students from your campus show up here' : '같은 학교 학생들이 여기에 보여요'} description={lang === 'en' ? 'Bring your floor or your class along.' : '같은 층이나 수업 사람들을 불러오세요.'}
+          action={<Button size="sm" onClick={() => void invite(me.timetable.length ? 'class' : 'floor')}>{lang === 'en' ? 'Invite friends' : '친구 초대'}</Button>} />
+      ) : cards.length === 0 ? (
         <EmptyState emoji="" title={t('이 조건에 맞는 사람이 아직 없어요')} action={<Button size="sm" variant="outline" onClick={() => { setF(EMPTY); reset(); }}>{t('조건 지우기')}</Button>} />
       ) : !current ? (
         <EmptyState emoji="" title={lang === 'en' ? "You've seen everyone for now" : '오늘 추천은 여기까지예요'} action={<Button size="sm" variant="outline" onClick={reset}>{lang === 'en' ? 'Start over' : '처음부터 다시 보기'}</Button>} />

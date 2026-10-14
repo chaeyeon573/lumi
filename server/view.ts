@@ -12,6 +12,8 @@
  *   다른 사람의 '보이기' 설정·스터디 그룹 거절 목록·파트너 찾기 기록은 지운다
  * - Lumi 가 제안한 스터디 그룹(activity.studyGroup)과 그 참가 기록은 초대받은 사람에게만
  * - 링크로 묻는 약속(timePoll.link)은 주최자와 Lumi 로 답한 사람에게만, 손님 토큰 해시는 절대 안 보낸다
+ * - 예시(sample) 콘텐츠는 데모 계정에게만, 그것도 자기 학교 것만 (server/samples.ts). 실제 계정의 스냅샷·패치에는
+ *   예시 프로필·모임·글·같이 타기·약속·동아리·공고가 하나도 없고, 수업 명단도 예시를 뺀 사람들로 계산한다
  */
 import type { Patch, Snapshot } from '@core/api/types';
 import type { Activity, ActivityProposal, ChatRoom, Game, ID, Organization, Participation, TimePoll, User } from '@core/types';
@@ -20,6 +22,7 @@ import { canViewField } from '@core/lib/relations';
 import { planVisibleTo, stripPlanSecrets } from '@core/lib/plans';
 import { buildClassIndex, classRostersFor, schoolOf, type ClassIndex } from '@core/lib/classmates';
 import { ridesFor, ridesPatchFor } from '@core/lib/rides';
+import { hiddenSamplesFor, stripRelationships, stripSamples, type HiddenSamples } from './samples';
 
 /**
  * 오늘의 질문 답은 '지금 시간 되는지'와 같은 성격이라 availability 공개 범위를 따른다 (차단 관계면 안 보인다).
@@ -67,17 +70,31 @@ function participationOk(db: Snapshot | undefined, viewerId: ID, extra: Activity
   const hidden = new Set([...(db?.activities ?? []), ...extra].filter((a) => a.studyGroup && !a.studyGroup.invitedIds.includes(viewerId)).map((a) => a.id));
   return (p: Participation) => !hidden.has(p.activityId);
 }
-/** 패치 하나를 모든 접속자에게 거를 때 수업 색인은 한 번만 만든다 */
-const indexCache = new WeakMap<Patch, ClassIndex>();
-function rostersPatch(patch: Patch, viewerId: ID, db: Snapshot) {
+/**
+ * 패치 하나를 모든 접속자에게 거를 때 숨길 예시·수업 색인은 한 번만 만든다.
+ * 실제 계정은 모두 같은 것을 숨기고, 데모 계정은 학교마다 다르다 → 키: 'real' | 'demo:<학교>'
+ */
+type PerPatch = { hidden?: HiddenSamples; idx?: ClassIndex };
+const patchCache = new WeakMap<Patch, Map<string, PerPatch>>();
+const viewKey = (viewer?: User) => (viewer?.sample ? `demo:${schoolOf(viewer)}` : 'real');
+function cacheFor(patch: Patch, viewer?: User): PerPatch {
+  let m = patchCache.get(patch);
+  if (!m) { m = new Map(); patchCache.set(patch, m); }
+  const k = viewKey(viewer);
+  let c = m.get(k);
+  if (!c) { c = {}; m.set(k, c); }
+  return c;
+}
+function rostersPatch(patch: Patch, viewerId: ID, db: Snapshot, hidden: HiddenSamples, cache: PerPatch) {
   const viewer = db.users.find((u) => u.id === viewerId);
   if (!viewer) return undefined;
   const school = schoolOf(viewer);
   const touches = !!patch.relationships || (patch.users ?? []).some((u) => u.id === viewerId || (!!school && schoolOf(u) === school));
   if (!touches) return undefined;
-  let idx = indexCache.get(patch);
-  if (!idx) { idx = buildClassIndex(db.users); indexCache.set(patch, idx); }
-  const rosters = classRostersFor(db, viewerId, new Date(), idx);
+  // 수업 명단은 이 사람이 볼 수 있는 사람들로만 (실제 계정에게 예시 프로필이 같은 수업 학생으로 나오지 않게)
+  const base = hidden.none ? db : { users: db.users.filter((u) => !hidden.users.has(u.id)), relationships: stripRelationships(db.relationships, hidden.users) };
+  const idx = (cache.idx ??= buildClassIndex(base.users));
+  const rosters = classRostersFor(base, viewerId, new Date(), idx);
   // 수업이 없는 사람에게는 보내지 않는다 (본인 시간표가 바뀐 경우는 빈 목록으로 지운다)
   return rosters.length || (patch.users ?? []).some((u) => u.id === viewerId) ? rosters : undefined;
 }
@@ -85,7 +102,9 @@ const inProposal = (viewerId: ID) => (p: ActivityProposal) => p.fromId === viewe
 /** 링크 약속(/p/<id>)은 주최자와 Lumi 로 답한 사람에게만, 손님 토큰 해시는 지운다 (@core/lib/plans) */
 const pollsFor = (polls: TimePoll[] | undefined, viewerId: ID) => (polls ?? []).filter((p) => planVisibleTo(p, viewerId)).map(stripPlanSecrets);
 
-export function snapshotFor(db: Snapshot, viewerId: ID): Snapshot {
+export function snapshotFor(full: Snapshot, viewerId: ID): Snapshot {
+  // 예시 콘텐츠를 먼저 뺀다 — 아래의 동아리·수업 명단·같이 타기 계산도 뺀 데이터로 한다
+  const db = stripSamples(full, hiddenSamplesFor(full, full.users.find((u) => u.id === viewerId)));
   return {
     ...db,
     organizations: db.organizations.filter(orgFilter(db, viewerId)),
@@ -103,13 +122,18 @@ export function snapshotFor(db: Snapshot, viewerId: ID): Snapshot {
   };
 }
 
-export function patchFor(patch: Patch, viewerId: ID, db?: Snapshot): Patch | null {
+export function patchFor(original: Patch, viewerId: ID, db?: Snapshot): Patch | null {
+  // 예시 콘텐츠를 먼저 뺀다 (db 가 없으면 누가 데모 계정인지 알 수 없어 그대로)
+  const viewer = db?.users.find((u) => u.id === viewerId);
+  const cache = cacheFor(original, viewer);
+  const hidden = db ? (cache.hidden ??= hiddenSamplesFor(db, viewer)) : undefined;
+  const patch = hidden ? stripSamples(original, hidden) : original;
   const out: Patch = { ...patch };
   if (patch.organizations && db) out.organizations = patch.organizations.filter(orgFilter(db, viewerId));
   if (patch.users) out.users = patch.users.map((u) => sanitizeUser(u, viewerId, db));
   if (patch.activities) out.activities = patch.activities.filter(studyGroupOk(viewerId));
   if (patch.participations) out.participations = patch.participations.filter(participationOk(db, viewerId, patch.activities));
-  if (db) { const r = rostersPatch(patch, viewerId, db); if (r) out.classRosters = r; else delete out.classRosters; } else delete out.classRosters;
+  if (db && hidden) { const r = rostersPatch(patch, viewerId, db, hidden, cache); if (r) out.classRosters = r; else delete out.classRosters; } else delete out.classRosters;
   if (patch.notifications) out.notifications = patch.notifications.filter((n) => n.userId === viewerId);
   if (patch.reports) out.reports = patch.reports.filter((r) => r.reporterId === viewerId);
   if (patch.games) out.games = gamesFor(patch.games, viewerId);

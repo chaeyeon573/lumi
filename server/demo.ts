@@ -5,6 +5,7 @@
  * - 게임(핫테이크·두 개의 진실·이모지·맞혀봐) 항목이 없는 예시 사용자에게 시드 값을 채운다
  * - UC Merced 데모 계정(u_me_ucmerced)을 기본 데모 계정에서 복제해 만든다
  * 이미 적용된 것은 건드리지 않으므로 서버가 켜질 때마다 돌려도 된다.
+ * 예시 사용자·모임은 데모 계정에게만, 그 학교 것만 내려간다 — 실제 계정은 받지 않는다 (server/samples.ts, server/view.ts)
  */
 import { readFileSync } from 'node:fs';
 import path from 'node:path';

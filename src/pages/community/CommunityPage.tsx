@@ -83,8 +83,9 @@ function FeedTab() {
   return (
     <div>
       <TodaysQuestion />
-      <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2"><Chip active={type === 'all'} onClick={() => setType('all')}>{t('전체')}</Chip>{ALL_POST_TYPES.filter((x) => x !== 'news').map((pt) => <Chip key={pt} active={type === pt} onClick={() => setType(pt)}>{POST_TYPE_LABELS[pt]}</Chip>)}<Chip active={type === 'anon'} onClick={() => setType('anon')}>{t('익명')}</Chip></div>
-      {posts.length === 0 ? <EmptyState emoji="" title={t('아직 올라온 것이 없어요')} action={<Button onClick={() => nav('/create/post')}>{t('게시물 작성')}</Button>} /> : <div className="divide-y divide-line">{posts.map(row)}</div>}
+      {/* 글이 하나도 없으면 칩 줄·"아직 없어요" 없이 아래 초대 카드 하나만 (빈 문구가 두 번 겹쳤다). 글쓰기는 위 연필 버튼 */}
+      {feed.length > 0 && <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2"><Chip active={type === 'all'} onClick={() => setType('all')}>{t('전체')}</Chip>{ALL_POST_TYPES.filter((x) => x !== 'news').map((pt) => <Chip key={pt} active={type === pt} onClick={() => setType(pt)}>{POST_TYPE_LABELS[pt]}</Chip>)}<Chip active={type === 'anon'} onClick={() => setType('anon')}>{t('익명')}</Chip></div>}
+      {feed.length === 0 ? null : posts.length === 0 ? <EmptyState emoji="" title={t('아직 올라온 것이 없어요')} action={<Button onClick={() => nav('/create/post')}>{t('게시물 작성')}</Button>} /> : <div className="divide-y divide-line">{posts.map(row)}</div>}
       {quiet && <QuietInvite />}
       {quiet && <MeanwhileThisWeek />}
     </div>

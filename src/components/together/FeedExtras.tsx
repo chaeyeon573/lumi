@@ -75,12 +75,12 @@ export function TodaysQuestion() {
   );
 }
 
-/** 피드가 조용할 때 — 사람을 데려오는 카드 */
-export function QuietInvite() {
+/** 같은 층·같은 수업 사람에게 Lumi 링크 보내기 (공유 시트, 없으면 복사) — 피드·사람 탭이 비었을 때 */
+export function useInvite() {
   const v = useViewer();
   const showToast = useAppStore((s) => s.showToast);
   const cls = v.me.timetable[0]?.name;
-  const invite = async (who: 'floor' | 'class') => {
+  return async (who: 'floor' | 'class') => {
     const url = `${window.location.origin}/welcome`;
     const text = en ? (who === 'class' && cls ? `Our ${cls} section is on Lumi — come find people to study and hang out with: ${url}` : `I'm on Lumi — come find people on our floor to do campus things with: ${url}`)
       : (who === 'class' && cls ? `${cls} 수업 사람들 Lumi에 있어요 — 같이 공부하고 놀 사람 찾기: ${url}` : `Lumi에서 같은 층 사람들이랑 같이 다닐 사람 찾아요: ${url}`);
@@ -90,6 +90,13 @@ export function QuietInvite() {
       showToast(en ? 'Invite copied — paste it in your group chat.' : '초대 문구를 복사했어요.', 'success');
     } catch { /* 공유 취소 */ }
   };
+}
+
+/** 피드가 조용할 때 — 사람을 데려오는 카드 */
+export function QuietInvite() {
+  const v = useViewer();
+  const cls = v.me.timetable[0]?.name;
+  const invite = useInvite();
   return (
     <section className="card p-4 my-3 flex gap-3 items-start">
       <span className="h-10 w-10 rounded-full bg-surface-2 grid place-items-center text-primary shrink-0"><Mail size={18} /></span>

@@ -57,8 +57,9 @@ test('membership: only people in the course get its list, and nothing else from 
   const a = snapshotFor(d, 'u_a');
   const r = a.classRosters!.find((x) => x.id === KEY)!;
   assert.ok(r, 'Ana gets the CS 61A roster');
-  assert.deepEqual(r.members.map((m) => m.userId).sort(), ['u_b', 'u_c', 'u_d', 'u_s']);
-  assert.equal(r.count, 5);
+  // Sample Sam is a sample profile — real accounts never get sample people in a roster or its count (server/samples.ts)
+  assert.deepEqual(r.members.map((m) => m.userId).sort(), ['u_b', 'u_c', 'u_d']);
+  assert.equal(r.count, 4);
   assert.equal(r.members.find((m) => m.userId === 'u_b')?.section, 'DIS 104', 'section only when the catalog entry has one');
   assert.equal(r.members.find((m) => m.userId === 'u_d')?.section, undefined, 'no invented section');
   // Xena (ECON 1 only) never gets the CS 61A list
