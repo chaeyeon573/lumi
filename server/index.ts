@@ -34,7 +34,8 @@ import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { t, lang } from '@core/i18n';
 import type { Patch, Snapshot, RegisterInput, CatalogCourse } from '@core/api/types';
-import type { Game, ID } from '@core/types';
+import type { Game, ID, User } from '@core/types';
+import { sanitizeSelfUpdate } from '@core/lib/selfupdate';
 import { createEngine } from '@core/api/engine';
 import { searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm, catalogCourses as builtInCatalog } from '@core/data/catalog/courses';
 import { createStore } from './store';
@@ -412,6 +413,8 @@ app.post('/api/rpc/:group/:method', auth, wrap(async (req: Req) => {
   const rule = RULES[group][method];
   const allowed = ruleAllows(rule, me, args);
   if (!allowed) throw bad(t('권한이 없어요.'), 403);
+  // 자기 프로필 수정으로 서버 전용 값(인증·예시·정지)을 바꾸지 못하게
+  if (group === 'users' && method === 'update') { const u = db.users.find((x) => x.id === me); if (u) args[1] = sanitizeSelfUpdate(u, args[1] as Partial<User>); }
   const fn = ((group === 'classes' ? classes : engine[group]) as Record<string, (...a: unknown[]) => unknown>)[method];
   const result = fn(...args) as Patch | { patch: Patch } | undefined;
   const patch: Patch = result && 'patch' in result ? result.patch : (result ?? {});

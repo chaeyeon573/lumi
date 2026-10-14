@@ -65,10 +65,10 @@ export function EditProfilePage() {
             <Toggle label={t('학교명 공개')} checked={aff.showSchool} onChange={(val) => patch({ affiliation: { ...aff, showSchool: val } })} />
             <Toggle label={t('학과 공개')} checked={aff.showDepartment} onChange={(val) => patch({ affiliation: { ...aff, showDepartment: val } })} />
             {/* 데모용 즉시 인증·본인 인증 토글 — iPhone 앱에서는 숨긴다 (학교 이메일은 설정 → 학교 이메일 카드에서 코드로 인증) */}
-            {!aff.emailVerified && !isNativeShell() && <div className="py-3"><Button size="sm" variant="secondary" onClick={() => patch({ affiliation: { ...aff, emailVerified: true } })}>{t('학교 이메일 인증하기 (데모: 즉시 완료)')}</Button></div>}
+            {!aff.emailVerified && !isNativeShell() && me.sample && <div className="py-3"><Button size="sm" variant="secondary" onClick={() => patch({ affiliation: { ...aff, emailVerified: true } })}>{t('학교 이메일 인증하기 (데모: 즉시 완료)')}</Button></div>}
           </div>
         )}
-        {!isNativeShell() && <div className="card px-4"><Toggle label={t('본인 인증')} description={form.identityVerified ? t('인증 완료 — 프로필에 배지가 표시돼요') : t('데모에서는 토글로 인증 상태를 바꿀 수 있어요')} checked={form.identityVerified} onChange={(val) => patch({ identityVerified: val })} /></div>}
+        {!isNativeShell() && me.sample && <div className="card px-4"><Toggle label={t('본인 인증')} description={form.identityVerified ? t('인증 완료 — 프로필에 배지가 표시돼요') : t('데모에서는 토글로 인증 상태를 바꿀 수 있어요')} checked={form.identityVerified} onChange={(val) => patch({ identityVerified: val })} /></div>}
       </div>
       <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-surface/95 backdrop-blur border-t border-line p-3 safe-bottom z-20"><Button full size="lg" loading={busy} disabled={form.nickname.trim().length < 2} onClick={save}>{t('저장')}</Button></div>
     </div>
