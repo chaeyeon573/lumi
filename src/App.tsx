@@ -49,6 +49,7 @@ import { RidesPage } from '@/pages/rides/RidesPage';
 import { PostRidePage } from '@/pages/rides/PostRidePage';
 import { RideDetailPage } from '@/pages/rides/RideDetailPage';
 import { RideLinkPage } from '@/pages/rides/RideLinkPage';
+import { PrivacyPage, TermsPage } from '@/pages/legal/LegalPages';
 
 function RequireAuth() {
   const currentUserId = useAppStore((s) => s.currentUserId);
@@ -157,6 +158,11 @@ export default function App() {
       {/* 링크로 묻는 약속 — 앱·계정 없이도 열린다 (로그인했으면 내 이름으로) */}
       <Route element={<AppShell withNav={false} />}>
         <Route path="/p/:id" element={<PlanPage />} />
+      </Route>
+      {/* Privacy Policy · Terms of Use — public, signed in or not (App Store Connect links here; server/legal.ts) */}
+      <Route element={<AppShell withNav={false} />}>
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

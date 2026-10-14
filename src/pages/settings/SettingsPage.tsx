@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { t, lang, setLang } from '@core/i18n';
 import { Segmented } from '@/components/ui';
-import { ChevronRight, Lock, ShieldAlert, Bell, MapPin, LogOut, RotateCcw, Bug, User } from 'lucide-react';
+import { ChevronRight, Lock, ShieldAlert, Bell, MapPin, LogOut, RotateCcw, Bug, User, FileText } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Toggle, Button } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
@@ -40,6 +40,10 @@ export function SettingsPage() {
           <div className="text-[14px] font-medium mb-2">{t('언어')}</div>
           <Segmented value={lang} onChange={(v) => v !== lang && setLang(v)} options={[{ value: 'ko', label: '한국어' }, { value: 'en', label: 'English' }]} />
           <p className="text-[12px] text-ink-3 mt-2">{t('언어를 바꾸면 데모 데이터도 해당 언어의 캠퍼스로 바뀌어요.')}</p>
+        </div>
+        {/* Privacy Policy · Terms of Use — public pages (src/pages/legal) */}
+        <div className="card divide-y divide-line">
+          {[{ to: '/privacy', label: 'Privacy Policy' }, { to: '/terms', label: 'Terms of Use' }].map((it) => <button key={it.to} onClick={() => nav(it.to)} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press"><FileText size={18} className="text-ink-2" /><span className="flex-1 text-[14px] font-semibold">{it.label}</span><ChevronRight size={18} className="text-ink-3" /></button>)}
         </div>
         <div className="card divide-y divide-line">
           <button onClick={async () => { await logout(); nav('/welcome', { replace: true }); }} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press"><LogOut size={18} className="text-ink-2" /><span className="flex-1 text-[14px] font-semibold">{t('로그아웃')}</span></button>

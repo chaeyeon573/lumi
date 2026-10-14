@@ -14,6 +14,7 @@
  *   GET  /api/ai/status                 AI 켜짐 여부 (OPENAI_API_KEY 또는 API_KEY)
  *   POST /api/ai/{ask,profile-draft,starters}   server/ai.ts — 질문 답변·대화형 가입·첫마디 제안
  *   GET  /api/ai/logs                   x-admin-key 일 때만 — 학생들이 무엇을 물었는지
+ *   GET  /api/legal, /privacy, /terms   공개 법적 페이지 (server/legal.ts) — LEGAL_NAME · PRIVACY_CONTACT_EMAIL
  *
  * 환경변수: PORT, DATABASE_URL, AROUNDU_LANG(ko|en), DEMO_AUTOREPLY(1이면 데모 자동응답), ALLOW_DEMO_LOGIN(0이면 비활성),
  *          ALLOW_RESET, RESEND_API_KEY, MAIL_FROM, HIDE_DEV_CODE, CORS_ORIGIN, VERIFY_EMAIL_DOMAIN(0이면 학교 도메인 검사 생략)
@@ -45,6 +46,7 @@ import { registerPlanRoutes } from './plans';
 import { createCampusData, mountCampusRoutes, mergeWorkerNotifications } from './campus-api';
 import { createClassesEngine } from '@core/api/classes';
 import { CLASSES_RULES, registerClassRoutes, startStudyGroupJob } from './classes';
+import { registerLegalRoutes } from './legal';
 
 const PORT = Number(process.env.PORT ?? 8787);
 const store = createStore();
@@ -485,6 +487,8 @@ await startCampusLive(app, { store, auth, wrap, requireUser, bad, user: (id) => 
 const dist = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist');
 // /c/<학교>/<과목> 공유 링크 — 정적 파일보다 먼저 (미리보기용 OG 태그를 넣는다)
 registerClassRoutes(app, { classes, dist, push: pushPatch });
+// /privacy · /terms — public, no sign-in (server/legal.ts)
+registerLegalRoutes(app, { dist });
 startStudyGroupJob({ classes, dist, push: pushPatch });
 if (existsSync(dist)) {
   app.use(express.static(dist, { index: 'index.html', maxAge: '1h' }));
