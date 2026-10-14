@@ -39,9 +39,11 @@ changes what Lumi collects or who receives it, update the page, this file, and t
 | Fonts | `index.html` loads Google Fonts | — | Google sees IP. |
 | Public data the server reads | Cal Dining (`server/sources/cal-dining.ts`), Density RSF crowd meter (`server/sources/density.ts`), Berkeley classes / SIS, academic calendar ICS, Devpost, Greenhouse/Lever boards | — | Nothing about users is sent to these. |
 
-**Account deletion** — "Settings → Delete account" (being added in parallel; see `packages/core/src/lib/account.ts`
-for what is erased, and `server/store.ts` `forgetUser` for login email, sessions, codes, AI logs and feedback).
-Verify the policy wording in `/privacy` §5 against the final implementation before submitting.
+**Account deletion** — "Settings → Delete account" (commit 8103874, `POST /api/auth/delete-account`):
+`packages/core/src/lib/account.ts` `eraseUser` erases the profile and content (1:1 chats deleted for both sides,
+their group-chat messages deleted, hosted meetups/plans/rides cancelled with an unnamed notice, reports they filed
+kept as `u_deleted`), and `server/store.ts` `forgetUser` deletes login email, sessions, codes, AI logs and feedback.
+`/privacy` §5 matches this. Shared demo accounts and sample profiles cannot be deleted (403).
 
 **Age** — Lumi is 18+ (Terms §1, Privacy §7). Reason: in-person meetups and ride sharing with strangers, and a
 college audience. Sign-up (`src/pages/onboarding/StartPage.tsx`) now rejects birth years later than
@@ -108,7 +110,8 @@ permissions. Any added SDK (push, crash reporting, analytics) changes these answ
 > content / ban users under our zero-tolerance Terms of Use (https://<host>/terms).
 >
 > **Delete account:** Settings (profile → gear) → **Delete account** → type DELETE to confirm. The account,
-> sign-in email, profile, posts and messages are deleted immediately.
+> sign-in email, profile, posts and messages are deleted immediately. (The shared demo account can't be
+> deleted — to try deletion, create an account with Get in → Skip for now.)
 >
 > **Terms:** Users agree to the Terms of Use and Privacy Policy when they start sign-up (links on the welcome
 > screen and the last sign-up step), and can read them any time in Settings.
