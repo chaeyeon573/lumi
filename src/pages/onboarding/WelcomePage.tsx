@@ -7,6 +7,7 @@ import { api, apiMode } from '@core/api';
 import type { Highlights } from '@core/api/types';
 import { useDesign } from '@/lib/design';
 import { takeReturnTo } from '@/lib/returnTo';
+import { todayISO } from '@core/lib/format';
 
 /**
  * Sign-in sheet state survives leaving the app to read the code in Mail: iOS may unload the iPhone app's WebView
@@ -79,7 +80,7 @@ export function WelcomePage() {
   useEffect(() => { api.schools.highlights(params.get('demo') === 'ucmerced' ? 's_ucmerced' : 's_berkeley').then(setHl).catch(() => setHl(null)); }, [params]);
   const day = (iso?: string) => (iso ? new Date(`${iso}T12:00:00`).toLocaleDateString('en-US', { weekday: 'short' }).toUpperCase() : '');
   const time = (hhmm?: string) => { if (!hhmm) return ''; const [h, m] = hhmm.split(':').map(Number); return `${((h + 11) % 12) + 1}${m ? `:${String(m).padStart(2, '0')}` : ''}${h < 12 ? 'AM' : 'PM'}`; };
-  const daysLeft = hl?.deadline ? Math.max(0, Math.round((Date.parse(`${hl.deadline.deadline}T12:00:00`) - Date.parse(`${new Date().toISOString().slice(0, 10)}T12:00:00`)) / 86400000)) : 0;
+  const daysLeft = hl?.deadline ? Math.max(0, Math.round((Date.parse(`${hl.deadline.deadline}T12:00:00`) - Date.parse(`${todayISO()}T12:00:00`)) / 86400000)) : 0;
   const school = hl?.schoolShort ?? 'Cal';
   const v2 = useDesign() === 'v2';
   const band = `🍕 FREE FOOD ✦ ⏰ DEADLINES ✦ 🎸 ${hl ? hl.clubs.toLocaleString('en-US') : '1,500+'} CLUBS ✦ 💼 ${hl?.internships ?? 300} INTERNSHIPS ✦ `;
