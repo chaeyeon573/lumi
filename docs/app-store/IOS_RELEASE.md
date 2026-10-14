@@ -63,6 +63,8 @@ Railway → the web service → **Variables**:
 | `IOS_BUNDLE_ID` | the same bundle id as `eas.json` | same |
 | `EXPO_ACCESS_TOKEN` | *(optional)* | Only if you turn on "Enhanced push security" for the project on expo.dev (expo.dev → Account → Access tokens). Leave empty otherwise. |
 | `PUSH_DISABLED` | *(leave empty)* | `1` stops sending pushes (emergency switch). |
+| `REVIEW_LOGIN_EMAIL` | an address you control, e.g. `appreview@yourdomain.com` | App Review sign-in (`server/review-login.ts`). This address never gets mail; it signs in with the code below. |
+| `REVIEW_LOGIN_CODE` | **exactly 6 digits**, not guessable | The fixed code for that address. Paste both only into App Store Connect → App Review Information (notes in `APP_PRIVACY.md` §3 use the placeholders). Remove both after approval if you like — the address then behaves like any other. |
 
 Redeploy, then check:
 ```powershell
@@ -128,8 +130,9 @@ encryption question on each build.
    - **Beta App Review Information** → sign-in required: **Yes** → demo account + **Notes**: paste
      `docs/app-store/APP_PRIVACY.md` §3 "Notes for App Review" (it covers sign-in, report/block, account
      deletion and the iPhone-specific features).
-     ⚠ Open item there: a reviewer login that doesn't need a @berkeley.edu inbox. Until it exists, tell the
-     reviewer to use **Get in → Skip for now** (account without school email).
+     Sign-in: set `REVIEW_LOGIN_EMAIL` / `REVIEW_LOGIN_CODE` on Railway (§3) and replace `[REVIEW_LOGIN_EMAIL]` /
+     `[REVIEW_LOGIN_CODE]` in the pasted notes with the real values (only in App Store Connect). Before submitting,
+     try it once on the phone: Sign in → the address → Send code → the code → you land on People.
    - Submit for review. When approved: **Enable Public Link** → share the link with friends. They install
      TestFlight, open the link, done. Builds expire after 90 days.
 3. Next builds: `eas build -p ios --profile production` then `eas submit -p ios --latest`, add the build to the
@@ -151,8 +154,12 @@ To test: sign in on the iPhone with account A, allow notifications, then from an
 account B follow A or approve A's join request — A's phone should buzz within seconds. Railway logs show
 `[push] …` lines (tokens are always shortened).
 
-Not pushed today: **chat messages** (they don't create in-app notifications — they only show as unread in the
-inbox). Decide if new messages should notify; it is a server-side change only.
+**Chat messages** push too (`server/chat-push.ts`) — 1:1, meetup/group, ride and study-group chats: "Lily" /
+"are you still coming?" (group chats: room title / "Lily: …"), tap opens that chat. At most one push per chat per
+30 s per person, then one "N new messages" push that replaces it on the lock screen (`collapseId`), stacked per
+chat (`threadId`). No push while that chat is open on any of the person's screens, for messages already read, to
+blocked pairs, suspended accounts or demo accounts. There is no per-chat mute yet — Settings → Notifications off
+stops all pushes.
 
 ## 9. Device checklist (things that cannot be verified without an iPhone)
 
@@ -168,6 +175,13 @@ inbox). Decide if new messages should notify; it is a server-side change only.
       `KeyboardAvoidingView` in `apps/shell/App.tsx` can be switched off to get Safari's behaviour).
 - [ ] Status bar readable in Classic (dark text) and New design (light text).
 - [ ] Push: prompt appears after the first action (not at launch), arrives, tap opens the right screen.
+- [ ] Chat push: B sends A three quick messages while A's app is in the background → one push, ~30 s later it is
+      replaced by "3 new messages"; tap opens the chat. With the chat open on A's phone → no push. Lock A's phone
+      with the chat open, wait ~40 s, send again → push arrives (the app's "I'm viewing" signal expired).
+- [ ] Sign in with the review account (§7): code entry stays in the app; switching to Mail and back keeps the
+      typed e-mail and the code field.
+- [ ] No "Design: Classic ⇄ New" or "Feedback" pills, no "Demo tools", location row or "mock API" text anywhere;
+      Settings → Send feedback works.
 - [ ] Settings → Delete account works and the app returns to the welcome screen.
 
 ## 10. If App Review cites guideline 4.2 (Minimum Functionality)
@@ -179,9 +193,12 @@ links, haptics, offline handling, Keychain login and in-app browser — the revi
    (Settings → Notifications → Push notifications; share a plan → iOS share sheet; tap a push → opens that
    screen; airplane mode → offline screen), and say the content is personalized, real-time campus data for
    signed-in students, not a website mirror. Make sure the demo account works and has activity.
-2. **Make the app look finished for review**: hide the web-only testing UI — the floating
-   "Design: Classic ⇄ New" pill, "Demo tools" in Settings, and the "Lumi MVP · mock API" footer text — or
-   reviewers read it as a prototype (guideline 2.1). Pick one design as the default.
+2. **Make the app look finished for review**: done inside the app (`isNativeShell()`), unchanged in browsers —
+   no floating "Design: Classic ⇄ New" pill, no floating Feedback pill (Settings → **Send feedback** instead),
+   no "Demo tools", no location-permission row (the app reads no location), no "demo" hints (language note,
+   cover/photo hints, instant school-email verify, ID-verified toggle, the voice prompt that doesn't record),
+   footer shows "Lumi for iPhone <version>". ⚠ Still open: **pick one design as the default** — in the app
+   people stay on whatever design the device last had (default Classic) since the pill is gone.
 3. If rejected again, add native features that matter for the use case, in this order of effort:
    native "Add to Calendar" for plans/meetups (expo-calendar), local reminders before a meetup starts
    (scheduled local notifications), a home-screen quick action ("Ask Lumi", "My plans"), a native tab bar.
@@ -200,6 +217,8 @@ links, haptics, offline handling, Keychain login and in-app browser — the revi
 | `apps/shell/src/bridge.ts` | `window.LumiNative` injected script + message protocol |
 | `src/lib/native.ts`, `src/components/native/*` | web side: share/haptics/push helpers, soft push prompt, pull-to-refresh |
 | `server/push.ts` | token storage (`pushTokens` docs), Expo Push sending, receipts |
+| `server/chat-push.ts` | chat message push: who gets it, wording, 30 s per-chat limit + summary, "viewing this chat" |
+| `server/review-login.ts` | App Review sign-in (`REVIEW_LOGIN_EMAIL` / `REVIEW_LOGIN_CODE`) |
 | `server/app-links.ts` | apple-app-site-association |
 | `apps/shell/scripts/render-icons.mjs` | regenerates the icon and splash images |
 

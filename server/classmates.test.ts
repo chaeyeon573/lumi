@@ -227,3 +227,11 @@ test('class lists are only for students with a verified school email', () => {
   assert.ok(!(buildClassIndex(d.users).get(KEY) ?? []).some((m) => m.userId === 'u_b'));
   assert.ok(!planStudyGroups(d).some((g) => g.userIds.includes('u_b')));
 });
+
+test('study groups never include a suspended account', () => {
+  const d = db();
+  d.users.find((u) => u.id === 'u_c')!.suspended = { at: new Date().toISOString(), by: 'test', reason: 'test' };
+  assert.ok(!planStudyGroups(d, new Date()).some((g) => g.userIds.includes('u_c')));
+  const p = engine(d).runStudyGroups(new Date());
+  assert.ok(!(p.notifications ?? []).some((n) => n.userId === 'u_c'));
+});

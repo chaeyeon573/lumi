@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { TopBar } from '@/components/layout/TopBar';
 import { Button, Field, VisibilityPicker } from '@/components/ui';
 import { PromptEditor, VoicePromptEditor, PollEditor, CompletionMeter } from '@/components/prompts/PromptComponents';
+import { isNativeShell } from '@/lib/native';
 import { profileCompletion, REQUIRED_TEXT_PROMPTS, promptsSatisfyRules } from '@core/data/prompts';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
@@ -39,7 +40,8 @@ export function EditPromptsPage() {
       <div className="px-4 py-4 space-y-5">
         <div className="card p-4"><div className="text-[12px] font-semibold text-ink-3 mb-2">{t('프로필 완성도')}</div><CompletionMeter {...preview} /></div>
         <Field label={`${t('텍스트 질문 (')}${answered}/${REQUIRED_TEXT_PROMPTS}${t(' 필수, 최대 6개)')}`} required><PromptEditor value={prompts} onChange={setPrompts} /></Field>
-        <Field label={t('음성 질문 (선택)')}><VoicePromptEditor value={voice} onChange={setVoice} /></Field>
+        {/* 음성 질문은 실제로 녹음하지 않는 데모 — iPhone 앱에서는 숨긴다 (App Review 2.1) */}
+        {!isNativeShell() && <Field label={t('음성 질문 (선택)')}><VoicePromptEditor value={voice} onChange={setVoice} /></Field>}
         <Field label={t('투표형 질문 (선택)')} hint={t('방문자가 한 표씩 던질 수 있어요. 질문을 바꾸면 기존 투표는 사라져요.')}><PollEditor value={poll} onChange={setPoll} /></Field>
       </div>
       <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-surface/95 backdrop-blur border-t border-line p-3 safe-bottom z-20">

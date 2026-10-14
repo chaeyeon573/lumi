@@ -232,7 +232,8 @@ export function planStudyGroups(db: Pick<Snapshot, 'users' | 'relationships' | '
   const days = Array.from({ length: 6 }, (_, i) => addDays(today, i + 1)).filter((d) => weekdayIdx(d) < 5);
   const byKey = new Map<string, { e: Enrollment; u: User }[]>();
   for (const u of db.users) {
-    if (u.sample || !showsToClassmates(u) || !verifiedForClassmates(u)) continue;
+    // 예시 프로필·정지된 계정은 스터디 그룹 추천에 넣지 않는다 (server/moderation.ts)
+    if (u.sample || u.suspended || !showsToClassmates(u) || !verifiedForClassmates(u)) continue;
     for (const e of enrollments(u, now)) {
       if (e.term !== cur || (u.studyGroupOptOut ?? []).includes(e.key)) continue;
       (byKey.get(e.key) ?? byKey.set(e.key, []).get(e.key)!).push({ e, u });

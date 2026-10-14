@@ -32,7 +32,7 @@ import { createHash, randomBytes, timingSafeEqual } from 'node:crypto';
 import type { Patch, Snapshot } from '@core/api/types';
 import type { Activity, ChatRoom, Comment, ID, Post, Report, ReportLogEntry, ReportTargetType, User } from '@core/types';
 import { DEMO_USER_ID } from '@core/data/seed.en';
-import { stripRelationships } from './samples';
+import { sampleFreeFor, stripRelationships } from './samples';
 import { legalConfig } from './legal';
 import { adminPageHtml } from './moderation-page';
 
@@ -239,6 +239,15 @@ export const moderateView = <T extends Viewable>(src: T, viewerId: ID, db: Db): 
 /** patch for one viewer, in place on the already-filtered `out` (server/view.ts patchFor) */
 export function moderatePatch(out: Patch, viewerId: ID, db: Db): void {
   Object.assign(out, filterFor(out, viewerId, moderationState(db), true));
+}
+
+/**
+ * The data Ask Lumi, sign-up suggestions and recommendations (lib/foryou via server/ai-search.ts) work from:
+ * no sample content for real accounts (server/samples.ts) and nothing moderation hides from this viewer —
+ * suspended people, their meetups/rides/posts/comments/messages, auto-hidden posts. No viewer (sign-up) = hide all.
+ */
+export function aiViewFor(full: Snapshot, viewer?: User): Snapshot {
+  return moderateView(sampleFreeFor(full, viewer), viewer?.id ?? '', full);
 }
 
 // ─── filing a report ────────────────────────────────────────────────────────

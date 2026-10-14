@@ -13,6 +13,7 @@ import { ALL_POST_TYPES, POST_TYPE_LABELS, POST_TYPE_EMOJI, TOPIC_TAGS } from '@
 import { friendsOf } from '@core/lib/relations';
 import { photo } from '@/lib/assets';
 import { cn } from '@core/lib/cn';
+import { isNativeShell } from '@/lib/native';
 
 const EMOJIS = ['📷', '☕', '🍜', '📚', '🏃', '🎸', '🎨', '🌅', '🐈', '🎤', '💻', '🌸'];
 /** 데모용 샘플 사진 — 실제 서비스에서는 카메라·앨범 업로드 */
@@ -53,7 +54,7 @@ export function CreatePostPage() {
       <div className="px-4 py-4 space-y-5">
         {!form.orgId && <div className="card px-4"><Toggle label={t('익명으로 올리기')} description={t('이름과 사진 대신 "익명"으로 표시돼요. 익명은 글만 올릴 수 있고 학교명만 보여요. 신고 시 운영진이 확인할 수 있어요.')} checked={anon} onChange={(val) => patch({ anonymous: val, orgId: val ? undefined : form.orgId, media: val ? [] : form.media })} /></div>}
         <Field label={t('종류')} required><div className="flex flex-wrap gap-1.5">{ALL_POST_TYPES.filter((pt) => form.orgId ? true : pt !== 'news').map((pt) => <Chip key={pt} size="sm" active={form.postType === pt} onClick={() => patch({ postType: pt })}>{POST_TYPE_EMOJI[pt]} {POST_TYPE_LABELS[pt]}</Chip>)}</div></Field>
-        <Field label={`${t('사진')} (${form.media.length}/${MAX_PHOTOS})`} hint={anon ? undefined : t('캠퍼스 생활·활동 중심으로. 데모에서는 샘플 사진이나 이모지 카드로 대체해요.')}>
+        <Field label={`${t('사진')} (${form.media.length}/${MAX_PHOTOS})`} hint={anon || isNativeShell() ? undefined : t('캠퍼스 생활·활동 중심으로. 데모에서는 샘플 사진이나 이모지 카드로 대체해요.')}>
           {anon ? <div className="rounded-xl bg-surface-2 px-3.5 py-3 text-[12px] text-ink-3 flex items-center gap-2"><ImageOff size={15} />{t('익명 글에는 사진을 붙일 수 없어요. 사진을 올리려면 익명을 끄세요.')}</div> : (<>
             <div className="flex gap-2 overflow-x-auto hide-scrollbar">
               {form.media.map((m, i) => (

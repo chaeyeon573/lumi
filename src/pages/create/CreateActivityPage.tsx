@@ -22,6 +22,7 @@ import type { Role } from '@core/types';
 import { todayISO } from '@core/lib/format';
 import { friendsOf } from '@core/lib/relations';
 import { cn } from '@core/lib/cn';
+import { isNativeShell } from '@/lib/native';
 
 const COVER_HUES = [30, 220, 135, 285, 15, 175, 355, 100, 50, 235];
 
@@ -124,7 +125,7 @@ export function CreateActivityPage() {
         </Field>}
         <Field label={t('제목')} required><Input placeholder={t('예: 오늘 오후 6시 신촌에서 커피 마실 사람?')} value={form.title} onChange={(e) => patch({ title: e.target.value })} maxLength={60} /></Field>
         <Field label={t('설명')} required><Textarea placeholder={t('예: 창업이나 AI에 관심 있는 분이면 좋아요. 최대 4명.')} value={form.description} onChange={(e) => patch({ description: e.target.value })} maxLength={500} /></Field>
-        <Field label={t('대표 이미지')} hint={t('데모에서는 색상과 이모지로 대표 이미지를 만들어요.')}>
+        <Field label={t('대표 이미지')} hint={isNativeShell() ? undefined : t('데모에서는 색상과 이모지로 대표 이미지를 만들어요.')}>
           <div className="flex items-center gap-3">
             <div className="h-16 w-16 rounded-2xl grid place-items-center text-3xl shrink-0" style={{ background: `linear-gradient(135deg, hsl(${form.cover.hue} 80% 92%), hsl(${(form.cover.hue + 50) % 360} 70% 68%))` }}>{form.cover.emoji}</div>
             <div className="flex flex-wrap gap-1.5">{COVER_HUES.map((h) => <button key={h} type="button" onClick={() => patch({ cover: { ...form.cover, hue: h } })} className={cn('h-7 w-7 rounded-full', form.cover.hue === h && 'ring-2 ring-offset-2 ring-ink')} style={{ background: `hsl(${h} 75% 70%)` }} aria-label={`${t('색상 ')}${h}`} />)}</div>

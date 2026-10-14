@@ -29,6 +29,18 @@ export function ChatRoomPage() {
 
   useEffect(() => { if (room) api.chats.markRead(room.id, v.me.id).then((p) => useAppStore.getState().applyPatch(p)); }, [room?.id, count]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { bottomRef.current?.scrollIntoView({ block: 'end' }); }, [count]);
+  // 이 방을 보고 있는 동안에는 이 방의 새 메시지 푸시를 보내지 않는다 (server/chat-push.ts) — 화면이 숨으면(앱이 백그라운드로) 바로 끈다
+  const openId = room?.id;
+  useEffect(() => {
+    if (!openId) return;
+    const say = () => { void api.push.viewing(document.visibilityState === 'hidden' ? null : openId); };
+    const off = () => { void api.push.viewing(null); };
+    say();
+    const beat = window.setInterval(() => { if (document.visibilityState !== 'hidden') say(); }, 15_000);
+    document.addEventListener('visibilitychange', say);
+    window.addEventListener('pagehide', off);
+    return () => { window.clearInterval(beat); document.removeEventListener('visibilitychange', say); window.removeEventListener('pagehide', off); off(); };
+  }, [openId]);
 
   if (!room || !room.memberIds.includes(v.me.id)) return <div className="min-h-full"><TopBar back title={t('채팅')} /><EmptyState emoji="🔒" title={t('입장할 수 없는 채팅방이에요')} description={t('참가 승인이 완료되면 그룹 채팅방에 입장할 수 있어요.')} /></div>;
 

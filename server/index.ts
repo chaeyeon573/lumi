@@ -20,6 +20,8 @@
  *
  * 환경변수: PORT, DATABASE_URL, AROUNDU_LANG(ko|en), DEMO_AUTOREPLY(1이면 데모 자동응답), ALLOW_DEMO_LOGIN(0이면 비활성),
  *          ALLOW_RESET, RESEND_API_KEY, MAIL_FROM, HIDE_DEV_CODE, CORS_ORIGIN, VERIFY_EMAIL_DOMAIN(0이면 학교 도메인 검사 생략)
+ *          REVIEW_LOGIN_EMAIL + REVIEW_LOGIN_CODE(6자리) — App Review 로그인 (server/review-login.ts). 없으면 그 주소도 평범한 주소
+ *   POST /api/chats/viewing            지금 열려 있는 채팅방 → 그 방의 새 메시지 푸시를 보내지 않는다 (server/chat-push.ts)
  *
  * 신고·운영 (server/moderation.ts): POST /api/rpc/reports/create → 저장 + FEEDBACK_EMAIL 알림 + 3명 신고 시 자동 숨김,
  *   GET /admin/reports (관리 화면, ADMIN_KEY 입력), /api/admin/reports·/api/admin/users/:id/… (x-admin-key) — 기각·삭제·정지·정지 해제
@@ -32,7 +34,8 @@ import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { t, lang } from '@core/i18n';
 import type { Patch, Snapshot, RegisterInput, CatalogCourse } from '@core/api/types';
-import type { Game, ID } from '@core/types';
+import type { Game, ID, User } from '@core/types';
+import { sanitizeSelfUpdate } from '@core/lib/selfupdate';
 import { createEngine } from '@core/api/engine';
 import { searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm, catalogCourses as builtInCatalog } from '@core/data/catalog/courses';
 import { createStore } from './store';
@@ -42,7 +45,7 @@ import { gameFor } from '@core/lib/icebreakers';
 import { sendCodeMail, sendMail } from './mail';
 import { registerRideRoutes } from './rides';
 import { migrateDemo, demoUserIdFor, rollSampleActivities } from './demo';
-import { hiddenSamplesFor, sampleFreeFor, SAMPLE_OPPORTUNITY_IDS, SAMPLE_ORG_IDS } from './samples';
+import { hiddenSamplesFor, SAMPLE_OPPORTUNITY_IDS, SAMPLE_ORG_IDS } from './samples';
 import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError, campusToday, forgetStarters } from './ai';
 import { registerAccountRoutes } from './account';
 import type { AiLog } from './store';
@@ -53,10 +56,11 @@ import { createCampusData, mountCampusRoutes, mergeWorkerNotifications } from '.
 import { createClassesEngine } from '@core/api/classes';
 import { CLASSES_RULES, registerClassRoutes, startStudyGroupJob } from './classes';
 import { registerLegalRoutes } from './legal';
-import { registerModerationRoutes, sessionAuth, signInBlock, suspendedMessage } from './moderation';
+import { aiViewFor, isSuspended, registerModerationRoutes, sessionAuth, signInBlock, suspendedMessage } from './moderation';
 import { createPush, registerPushRoutes } from './push';
 import { registerAppLinkRoutes } from './app-links';
 import { PROTECTED_IDS } from './account';
+import { createReviewLogin, reviewConfig, ReviewLoginError } from './review-login';
 
 const PORT = Number(process.env.PORT ?? 8787);
 const store = createStore();
@@ -82,7 +86,8 @@ db.games ??= []; // 게임 기능 이전에 저장된 스냅샷
 async function rollSamples() { const p = rollSampleActivities(db); if (p) { await store.applyPatch(p); broadcast(p); console.log(`[demo] rolled ${p.activities?.length ?? 0} sample activities`); } }
 const clients = new Map<ID, Set<Response>>();
 // iPhone app push (server/push.ts) — every broadcast Patch with a new notification → Expo Push API
-const push = createPush({ store, db: () => db, allow: (id) => !PROTECTED_IDS.has(id), accessToken: process.env.EXPO_ACCESS_TOKEN, disabled: process.env.PUSH_DISABLED === '1' });
+// suspended and sample accounts are refused inside push.ts too; the shared demo logins are in PROTECTED_IDS
+const push = createPush({ store, db: () => db, allow: (id) => !PROTECTED_IDS.has(id) && !isSuspended(db.users.find((u) => u.id === id)), accessToken: process.env.EXPO_ACCESS_TOKEN, disabled: process.env.PUSH_DISABLED === '1' });
 await push.load();
 setInterval(() => { void push.checkReceipts(); }, 15 * 60 * 1000).unref();
 await rollSamples();
@@ -171,6 +176,16 @@ async function issueSession(userId: ID) {
 const norm = (email: unknown) => String(email ?? '').trim().toLowerCase();
 const CODE_TTL_MS = 10 * 60 * 1000;
 
+// App Review sign-in — REVIEW_LOGIN_EMAIL + REVIEW_LOGIN_CODE (server/review-login.ts). Unset → that address is ordinary.
+const reviewLogin = createReviewLogin({
+  config: reviewConfig(), db: () => db,
+  findAccount: (email) => store.findAccount(email), createAccount: (a) => store.createAccount(a),
+  register: (input) => engine.register(input),
+  async saved(user) { const p: Patch = { users: [user], notifications: db.notifications.filter((n) => n.userId === user.id) }; await store.applyPatch(p); broadcast(p); },
+  wrongCode: t('인증 코드가 만료되었거나 올바르지 않아요.'),
+});
+const reviewErr = (e: unknown) => (e instanceof ReviewLoginError ? bad(e.message, e.status) : e);
+
 // ─── 인증 ────────────────────────────────────────────────────────────────
 app.post('/api/auth/demo', wrap(async (req) => {
   if (process.env.ALLOW_DEMO_LOGIN === '0') throw bad(t('데모 계정이 없어요. 회원가입을 이용해주세요.'), 403);
@@ -183,6 +198,11 @@ app.post('/api/auth/demo', wrap(async (req) => {
 app.post('/api/auth/login', wrap(async (req) => {
   const email = norm(req.body.email);
   const code = String(req.body.code ?? '').trim();
+  if (reviewLogin.matches(email)) {
+    const user = await reviewLogin.signIn(code, req.ip ?? '-').catch((e) => { throw reviewErr(e); });
+    { const blocked = signInBlock(user); if (blocked) throw bad(blocked, 403); }
+    return { token: await issueSession(user.id), user };
+  }
   const saved = await store.takeCode(email);
   if (!saved || saved.code !== code || new Date(saved.expiresAt).getTime() < Date.now()) throw bad(t('인증 코드가 만료되었거나 올바르지 않아요.'));
   const account = await store.findAccount(email);
@@ -278,6 +298,8 @@ app.post('/api/schools/send-code', wrap(async (req) => {
   const email = norm(req.body.email);
   const school = db.schools.find((s) => s.id === req.body.schoolId);
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return { ok: false, hint: t('이메일 형식을 확인해주세요.') };
+  // App Review 주소 — 메일을 보내지 않는다. 코드는 리뷰 노트에 있다 (server/review-login.ts)
+  if (reviewLogin.matches(email)) return { ok: true, hint: t('인증 코드를 보냈어요. 메일함을 확인해주세요.') };
   if (school && process.env.VERIFY_EMAIL_DOMAIN !== '0' && !email.endsWith(`@${school.emailDomain}`) && !email.endsWith(`.${school.emailDomain}`)) {
     return { ok: false, hint: `@${school.emailDomain}${t(' 이메일만 사용할 수 있어요.')}` };
   }
@@ -291,6 +313,12 @@ app.post('/api/schools/send-code', wrap(async (req) => {
 app.post('/api/schools/verify-code', wrap(async (req) => {
   const email = norm(req.body.email);
   const code = String(req.body.code ?? '').trim();
+  if (reviewLogin.matches(email)) {
+    let ok: boolean;
+    try { ok = reviewLogin.verify(code, req.ip ?? '-'); } catch (e) { throw reviewErr(e); }
+    if (ok) verifiedEmails.add(email);
+    return { ok };
+  }
   const saved = await store.takeCode(email);
   const ok = !!saved && saved.code === code && new Date(saved.expiresAt).getTime() >= Date.now();
   if (ok) {
@@ -385,6 +413,8 @@ app.post('/api/rpc/:group/:method', auth, wrap(async (req: Req) => {
   const rule = RULES[group][method];
   const allowed = ruleAllows(rule, me, args);
   if (!allowed) throw bad(t('권한이 없어요.'), 403);
+  // 자기 프로필 수정으로 서버 전용 값(인증·예시·정지)을 바꾸지 못하게
+  if (group === 'users' && method === 'update') { const u = db.users.find((x) => x.id === me); if (u) args[1] = sanitizeSelfUpdate(u, args[1] as Partial<User>); }
   const fn = ((group === 'classes' ? classes : engine[group]) as Record<string, (...a: unknown[]) => unknown>)[method];
   const result = fn(...args) as Patch | { patch: Patch } | undefined;
   const patch: Patch = result && 'patch' in result ? result.patch : (result ?? {});
@@ -470,7 +500,7 @@ app.post('/api/ai/ask', auth, wrap(async (req: Req) => {
   if (!history.length || history[history.length - 1].role !== 'user') throw bad(t('입력값을 확인해주세요.'));
   rateLimit(`ask:${me.id}`, 40);
   const question = history[history.length - 1].content;
-  return runAi('ask', { userId: me.id, schoolId: schoolIdOf(me), input: question }, () => ask(sampleFreeFor(db, me), schoolCatalog(schoolIdOf(me) ?? ''), me, history, campus.dates(schoolIdOf(me) ?? '')), (r) => `${r.answer}\n[cards: ${r.cards.map((c) => c.id).join(', ')}]`);
+  return runAi('ask', { userId: me.id, schoolId: schoolIdOf(me), input: question }, () => ask(aiViewFor(db, me), schoolCatalog(schoolIdOf(me) ?? ''), me, history, campus.dates(schoolIdOf(me) ?? '')), (r) => `${r.answer}\n[cards: ${r.cards.map((c) => c.id).join(', ')}]`);
 }));
 
 app.post('/api/ai/profile-draft', wrap(async (req) => {
@@ -480,7 +510,7 @@ app.post('/api/ai/profile-draft', wrap(async (req) => {
   if (!db.schools.some((s) => s.id === schoolId)) throw bad(t('입력값을 확인해주세요.'));
   rateLimit(`profile:${req.ip}`, 15);
   // 가입 중인 실제 학생 — 예시 동아리·공고를 추천하지 않는다
-  return runAi('profile', { schoolId, input: text }, () => profileDraft(sampleFreeFor(db), schoolId, text), (r) => JSON.stringify(r.draft));
+  return runAi('profile', { schoolId, input: text }, () => profileDraft(aiViewFor(db), schoolId, text), (r) => JSON.stringify(r.draft));
 }));
 
 app.post('/api/ai/starters', auth, wrap(async (req: Req) => {
@@ -489,9 +519,11 @@ app.post('/api/ai/starters', auth, wrap(async (req: Req) => {
   if (!target || target.id === me.id) throw bad(t('입력값을 확인해주세요.'), 404);
   // 실제 계정은 예시 프로필을 볼 수 없다 (데모 계정은 자기 학교 예시만)
   if (hiddenSamplesFor(db, me).users.has(target.id)) throw bad(t('입력값을 확인해주세요.'), 404);
+  // 정지된 사람은 다른 사람에게 보이지 않는다 (server/moderation.ts) — 첫마디 제안도 없다
+  if (isSuspended(target)) throw bad(t('입력값을 확인해주세요.'), 404);
   rateLimit(`starters:${me.id}`, 30);
   const language = req.body.lang === 'ko' ? 'ko' : 'en';
-  const r = await runAi('starters', { userId: me.id, schoolId: schoolIdOf(me), input: target.id }, () => starters(db, me, target, language), (x) => x.starters.join(' | '));
+  const r = await runAi('starters', { userId: me.id, schoolId: schoolIdOf(me), input: target.id }, () => starters(aiViewFor(db, me), me, target, language), (x) => x.starters.join(' | '));
   return { starters: r.starters };
 }));
 

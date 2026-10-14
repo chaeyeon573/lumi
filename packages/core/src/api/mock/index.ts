@@ -178,6 +178,7 @@ export const mockApi: AroundUApi = {
   push: {
     async register() { return { registered: false }; },
     async unregister() { /* */ },
+    async viewing() { /* */ },
   },
 
   system: {
