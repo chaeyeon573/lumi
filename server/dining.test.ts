@@ -163,6 +163,12 @@ test('Ask Lumi dining_today answers only from the menu, says when it has none', 
   const vegan = diningAnswer(day, { location: 'Crossroads', meal: 'dinner', diet: ['vegan'], isToday: true, nowMin: 17 * 60, date: day.date, sourceUrl: '' });
   assert.ok(vegan.results[0].meals[0].stations.every((s) => s.dishes.every((d) => /Vegan/.test(d))));
   assert.match(diningAnswer(day, { location: 'Hogwarts', isToday: true, nowMin: 0, date: day.date, sourceUrl: '' }).note ?? '', /No dining location/);
+  // 'vegan food at the dining halls today?' — 장소 이름이 아닌 말은 모든 곳으로 (전엔 '없는 장소'라고 해서 비건이 없다고 답했다)
+  for (const place of ['dining halls', 'the dining hall', 'campus', 'all cafes']) {
+    const any = diningAnswer(day, { location: place, diet: ['vegan'], isToday: true, nowMin: 17 * 60, date: day.date, sourceUrl: '' });
+    assert.doesNotMatch(any.note ?? '', /No dining location/, place);
+    assert.ok(any.results.length >= 1, place);
+  }
   assert.match(diningAnswer(undefined, { isToday: true, nowMin: 0, date: '2026-10-13', sourceUrl: 'https://dining.berkeley.edu/menus/' }).note ?? '', /don't guess/);
 });
 

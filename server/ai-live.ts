@@ -15,8 +15,11 @@ const norm = (s: string) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g
 const schoolOf = (u: User) => (u.affiliation.type === 'university' ? u.affiliation.schoolId ?? '' : '');
 
 /** "crossroads" · "cafe 3" · "café 3" · "ckc" → 장소 */
+/** 'dining halls', 'campus', 'all cafes' 처럼 특정 장소가 아닌 말 — 모든 곳으로 본다 (전엔 '없는 장소'로 답해 비건 메뉴가 없다고 했다) */
+export const isAnyPlace = (q: string) => !norm(q).replace(/\b(the|dining|halls?|commons|campus|all|any|every|cafes?|places?|locations?|today|at|in|on)\b/g, '').trim();
+
 export function findLocation(day: DiningDay, q: string): DiningLocation | undefined {
-  const n = norm(q).replace(/\b(the|dining|hall|commons)\b/g, '').trim();
+  const n = norm(q).replace(/\b(the|dining|halls?|commons)\b/g, '').trim();
   if (!n) return undefined;
   const alias: Record<string, string> = { ckc: 'clark kerr', c3: 'cafe 3', gbc: 'golden bear', mlk: 'student union', lxd: 'local x design' };
   const want = alias[n] ?? n;
@@ -41,7 +44,7 @@ export function diningAnswer(day: DiningDay | undefined, input: { location?: str
   const filters = input.diet ?? [];
   const query = input.query ? norm(input.query) : '';
   let locs = sortLocations(day.locations);
-  if (input.location) {
+  if (input.location && !isAnyPlace(input.location)) {
     const hit = findLocation(day, input.location);
     if (!hit) return { date: day.date, results: [], note: `No dining location called "${input.location}" on this day. Places with menus: ${locs.map((l) => l.name).join(', ')}.`, source };
     locs = [hit];
