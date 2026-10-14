@@ -2,6 +2,7 @@
  * Lumi API 서버 — Railway 에 배포하는 단일 서비스 (API + 빌드된 프론트엔드 정적 파일).
  *
  *   POST /api/auth/{demo,login,register,logout,me}
+ *   POST /api/auth/delete-account      본인 계정 영구 삭제 { confirm: 'DELETE' } (server/account.ts) — 데모·예시 계정은 거절
  *   POST /api/bootstrap
  *   POST /api/schools/{search,send-code,verify-code}
  *   POST /api/catalog/{courses,departments,terms}   term 생략 = 지금 학기 (Fall 2026 …)
@@ -35,10 +36,11 @@ import { gameFor } from '@core/lib/icebreakers';
 import { sendCodeMail, sendMail } from './mail';
 import { registerRideRoutes } from './rides';
 import { migrateDemo, demoUserIdFor, rollSampleActivities } from './demo';
-import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError, campusToday } from './ai';
+import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError, campusToday, forgetStarters } from './ai';
+import { registerAccountRoutes } from './account';
 import type { AiLog } from './store';
 import { loadSeed } from './seed';
-import { startCampusLive } from './campus-live';
+import { startCampusLive, liveServices } from './campus-live';
 import { registerPlanRoutes } from './plans';
 import { createCampusData, mountCampusRoutes, mergeWorkerNotifications } from './campus-api';
 import { createClassesEngine } from '@core/api/classes';
@@ -281,6 +283,19 @@ app.post('/api/schools/verify-code', wrap(async (req) => {
   }
   return { ok };
 }));
+
+// ─── 계정 삭제 — POST /api/auth/delete-account (server/account.ts) ──────────────
+registerAccountRoutes(app, {
+  db: () => db, store, auth,
+  broadcast(patch) { broadcast(patch); },
+  disconnect(userId) { for (const res of clients.get(userId) ?? []) res.end(); clients.delete(userId); },
+  forget: [
+    (id) => campus.forgetUser(id),
+    (id) => liveServices()?.dining.forgetUser(id),
+    (id) => liveServices()?.gym.forgetUser(id),
+    (id, emails) => { emails.forEach((e) => verifiedEmails.delete(e)); forgetStarters(id); },
+  ],
+});
 
 // ─── 수업 목록 ───────────────────────────────────────────────────────────
 // term 을 안 주면 지금 학기 (그 학교에 지금 학기 수업이 없으면 학기 구분 없이)

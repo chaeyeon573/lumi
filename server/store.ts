@@ -58,6 +58,8 @@ export interface Store {
   /** id 기준 upsert */
   putDocs(collection: string, items: { id: string }[]): Promise<void>;
   removeDocs(collection: string, ids: string[]): Promise<void>;
+  /** 계정 삭제 — 이 사람의 로그인 이메일·세션·인증 코드·AI 질문 기록·의견을 지운다. 지운 이메일을 돌려준다 (server/account.ts) */
+  forgetUser(userId: ID): Promise<{ emails: string[] }>;
 }
 
 // ─── Postgres ────────────────────────────────────────────────────────────
@@ -225,6 +227,23 @@ export class PgStore implements Store {
     if (!ids.length) return;
     await this.serial(() => this.pool.query('DELETE FROM docs WHERE collection = $1 AND id = ANY($2)', [collection, ids]));
   }
+  async forgetUser(userId: ID) {
+    return this.serial(async () => {
+      const client = await this.pool.connect();
+      try {
+        await client.query('BEGIN');
+        const { rows } = await client.query<{ email: string }>('DELETE FROM accounts WHERE user_id = $1 RETURNING email', [userId]);
+        const emails = rows.map((r) => r.email);
+        await client.query('DELETE FROM sessions WHERE user_id = $1', [userId]);
+        if (emails.length) await client.query('DELETE FROM email_codes WHERE email = ANY($1)', [emails]);
+        // 그 사람이 물은 것 + 다른 사람이 그 사람 프로필로 받은 첫마디 제안 (input = 상대 id)
+        await client.query("DELETE FROM ai_logs WHERE user_id = $1 OR (kind = 'starters' AND input = $1)", [userId]);
+        await client.query('DELETE FROM feedback WHERE user_id = $1', [userId]);
+        await client.query('COMMIT');
+        return { emails };
+      } catch (e) { await client.query('ROLLBACK'); throw e; } finally { client.release(); }
+    });
+  }
   async takeCode(email: string) {
     const { rows } = await this.pool.query<{ email: string; code: string; expires_at: Date }>('DELETE FROM email_codes WHERE email = $1 RETURNING *', [email]);
     return rows[0] ? { email: rows[0].email, code: rows[0].code, expiresAt: rows[0].expires_at.toISOString() } : null;
@@ -308,6 +327,16 @@ export class FileStore implements Store {
     const c = this.data.docs?.[collection]; if (!c || !ids.length) return;
     for (const id of ids) delete c[id];
     await this.flush();
+  }
+  async forgetUser(userId: ID) {
+    const emails = this.data.accounts.filter((a) => a.userId === userId).map((a) => a.email);
+    this.data.accounts = this.data.accounts.filter((a) => a.userId !== userId);
+    this.data.sessions = this.data.sessions.filter((x) => x.userId !== userId);
+    this.data.codes = this.data.codes.filter((c) => !emails.includes(c.email));
+    this.data.aiLogs = (this.data.aiLogs ?? []).filter((l) => l.userId !== userId && !(l.kind === 'starters' && l.input === userId));
+    this.data.feedback = (this.data.feedback ?? []).filter((f) => f.userId !== userId);
+    await this.flush();
+    return { emails };
   }
   async takeCode(email: string) {
     const c = this.data.codes.find((x) => x.email === email) ?? null;

@@ -101,6 +101,18 @@ export function createCampusData(store: Store) {
       return true;
     },
     myWatchCount: (userId: ID) => watches.filter((w) => w.userId === userId).length,
+    /** 계정 삭제 — 이 사람의 관심 수업과 좌석 알림 기록(누구에게 언제 알렸는지)을 지운다 */
+    async forgetUser(userId: ID) {
+      const mine = watches.filter((w) => w.userId === userId).map((w) => w.id);
+      watches = watches.filter((w) => w.userId !== userId);
+      await store.removeDocs(WATCHES, mine);
+      // 워커가 쓴 기록도 다시 읽어서 지운다 (메모리 사본이 오래됐을 수 있다)
+      const stored = await store.listDocs<SeatStatusDoc>(STATUS);
+      const touched = stored.filter((st) => st.notified && userId in st.notified).map((st) => { const { [userId]: _n, ...rest } = st.notified; return { ...st, notified: rest }; });
+      touched.forEach((st) => statuses.set(st.id, st));
+      await store.putDocs(STATUS, touched);
+      return { seatWatches: mine.length };
+    },
   };
   return svc;
 }

@@ -8,6 +8,7 @@ import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { SchoolEmailCard } from '@/components/settings/SchoolEmailCard';
+import { DeleteAccountCard } from '@/components/settings/DeleteAccountCard';
 
 export function SettingsPage() {
   const nav = useNavigate();
@@ -43,6 +44,7 @@ export function SettingsPage() {
         <div className="card divide-y divide-line">
           <button onClick={async () => { await logout(); nav('/welcome', { replace: true }); }} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press"><LogOut size={18} className="text-ink-2" /><span className="flex-1 text-[14px] font-semibold">{t('로그아웃')}</span></button>
         </div>
+        <DeleteAccountCard />
         <div className="card divide-y divide-line">
           <div className="px-4 pt-3 pb-1 text-[11px] font-bold text-ink-3">{t('데모 도구')}</div>
           <button onClick={() => { api.system.failNext(); showToast(t('다음 요청이 실패해요. 홈으로 돌아가 새로고침해보세요.')); init(); }} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press"><Bug size={18} className="text-ink-2" /><span className="flex-1"><span className="block text-[14px] font-semibold">{t('오류 상태 미리보기')}</span><span className="block text-[12px] text-ink-3">{t('다음 API 요청 1회를 실패시켜 오류 화면을 확인해요')}</span></span></button>

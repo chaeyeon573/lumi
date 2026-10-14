@@ -35,7 +35,8 @@ export interface Snapshot {
 /** 변경된 엔티티만 담아 돌려주는 부분 응답. 스토어가 id 기준으로 병합한다. */
 export type Patch = Partial<Omit<Snapshot, 'relationships'>> & {
   relationships?: Relationships;
-  removed?: Partial<Record<'activities' | 'posts' | 'chatRooms' | 'participations' | 'proposals' | 'opportunityIntents' | 'timePolls' | 'organizations' | 'opportunities' | 'schools' | 'rides', ID[]>>;
+  /** users · games · notifications: only when an account is deleted (lib/account) */
+  removed?: Partial<Record<'activities' | 'posts' | 'chatRooms' | 'participations' | 'proposals' | 'opportunityIntents' | 'timePolls' | 'organizations' | 'opportunities' | 'schools' | 'rides' | 'users' | 'games' | 'notifications', ID[]>>;
 };
 
 export interface RegisterInput {
@@ -230,6 +231,8 @@ export interface AroundUApi {
     session(): Promise<ID | null>;
     /** 이미 가입한 계정에 (코드로 확인한) 학교 이메일을 붙인다 — 다른 기기에서 이메일로 로그인할 수 있게 */
     attachEmail(email: string): Promise<User>;
+    /** Permanently delete my account and personal data (App Store 5.1.1(v)). `confirm` must be "DELETE". Signs out. Demo/sample accounts are refused */
+    deleteAccount(confirm: string): Promise<void>;
   };
   bootstrap(viewerId: ID): Promise<Snapshot>;
 

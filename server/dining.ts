@@ -154,8 +154,15 @@ export function createDining(deps: DiningDeps) {
     return favoritesOf(userId);
   }
 
+  /** 계정 삭제 — 즐겨찾기 문서(df_<userId>)를 지운다 */
+  async function forgetUser(userId: ID) {
+    const had = favs.delete(userId);
+    await deps.store.removeDocs(FAVORITES, [favId(userId)]);
+    return { diningFavorites: had ? 1 : 0 };
+  }
+
   return {
-    load, refresh, tick, setFavorite, favoritesOf,
+    load, refresh, tick, setFavorite, favoritesOf, forgetUser,
     supported: (schoolId: string) => !!DINING_SOURCES[schoolId],
     source: (schoolId: string) => DINING_SOURCES[schoolId],
     day: (schoolId: string, date: string) => days.get(dayId(schoolId, date)),

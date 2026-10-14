@@ -374,6 +374,8 @@ export function starterFacts(db: Snapshot, viewer: User, target: User) {
 }
 
 const starterCache = new Map<string, string[]>();
+/** 계정 삭제 — 이 사람이 받았거나 이 사람 프로필로 만든 첫마디 제안을 잊는다 */
+export function forgetStarters(userId: ID) { for (const k of [...starterCache.keys()]) { const [a, b] = k.split('|'); if (a === userId || b === userId) starterCache.delete(k); } }
 export async function starters(db: Snapshot, viewer: User, target: User, language: 'en' | 'ko') {
   if (isBlocked(db, viewer.id, target.id)) throw new AiError(404, 'Not available.');
   const facts = starterFacts(db, viewer, target);

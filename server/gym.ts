@@ -182,8 +182,17 @@ export function createGym(deps: GymDeps) {
     return mine(userId);
   }
 
+  /** 계정 삭제 — 이 사람의 혼잡도 알림을 모두 지운다 */
+  async function forgetUser(userId: ID) {
+    const ids = mine(userId).map((a) => a.id);
+    ids.forEach((id) => alerts.delete(id));
+    for (const k of [...firedToday.keys()]) if (k.startsWith(`${userId}_`)) firedToday.delete(k);
+    await deps.store.removeDocs(GYM_ALERTS, ids);
+    return { gymAlerts: ids.length };
+  }
+
   return {
-    load, poll, views, setAlert, removeAlert, alertsOf: mine,
+    load, poll, views, setAlert, removeAlert, alertsOf: mine, forgetUser,
     supported: (schoolId: string) => !!GYM_SOURCES[schoolId],
     source: (schoolId: string) => GYM_SOURCES[schoolId],
     /** 운영 확인용 — 토큰은 넣지 않는다 */

@@ -104,6 +104,12 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
         writeToken(null, null);
         stopEvents();
       },
+      async deleteAccount(confirm) {
+        await call('auth/delete-account', { confirm });
+        // 서버가 세션을 모두 지웠다 — 이 기기의 토큰과 실시간 연결도 정리한다
+        writeToken(null, null);
+        stopEvents();
+      },
       session,
     },
 

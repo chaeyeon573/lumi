@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { t } from '@core/i18n';
 import { api, type Patch, type Snapshot } from '@core/api';
 import type { ID, User } from '@core/types';
+import { mergePatch } from './merge';
 
 type Status = 'idle' | 'loading' | 'ready' | 'error';
 
@@ -14,6 +15,8 @@ interface AppState extends Snapshot {
   init(): Promise<void>;
   setCurrentUser(user: User): Promise<void>;
   logout(): Promise<void>;
+  /** Permanently delete my account (typed confirmation), then sign out locally */
+  deleteAccount(confirm: string): Promise<void>;
   applyPatch(patch: Patch): void;
   /** API 호출 → 패치 병합 → 토스트. 실패 시 오류 토스트를 띄우고 throw */
   run<T extends Patch | { patch: Patch }>(fn: () => Promise<T>, successMsg?: string): Promise<T>;
@@ -25,14 +28,6 @@ const empty: Snapshot = {
   relationships: { likes: [], follows: [], friendRequests: [], friends: [], blocks: [] },
   proposals: [], chatRooms: [], notifications: [], reports: [], opportunities: [], opportunityIntents: [], timePolls: [], games: [], classRosters: [],
 };
-
-function upsert<T extends { id: ID }>(list: T[], items?: T[], removed?: ID[]) {
-  if (!items && !removed) return list;
-  const byId = new Map(list.map((i) => [i.id, i]));
-  items?.forEach((i) => byId.set(i.id, i));
-  removed?.forEach((id) => byId.delete(id));
-  return [...byId.values()];
-}
 
 let unsubscribe: (() => void) | null = null;
 let toastSeq = 0;
@@ -73,28 +68,15 @@ export const useAppStore = create<AppState>((set, get) => ({
     set({ ...empty, currentUserId: null, status: 'ready' });
   },
 
+  async deleteAccount(confirm) {
+    await api.auth.deleteAccount(confirm);
+    unsubscribe?.();
+    unsubscribe = null;
+    set({ ...empty, currentUserId: null, status: 'ready' });
+  },
+
   applyPatch(patch) {
-    const s = get();
-    set({
-      users: upsert(s.users, patch.users),
-      schools: upsert(s.schools, patch.schools, patch.removed?.schools),
-      organizations: upsert(s.organizations, patch.organizations, patch.removed?.organizations),
-      activities: upsert(s.activities, patch.activities, patch.removed?.activities),
-      participations: upsert(s.participations, patch.participations, patch.removed?.participations),
-      posts: upsert(s.posts, patch.posts, patch.removed?.posts),
-      proposals: upsert(s.proposals, patch.proposals, patch.removed?.proposals),
-      chatRooms: upsert(s.chatRooms, patch.chatRooms, patch.removed?.chatRooms),
-      notifications: upsert(s.notifications, patch.notifications),
-      reports: upsert(s.reports, patch.reports),
-      opportunities: upsert(s.opportunities, patch.opportunities, patch.removed?.opportunities),
-      opportunityIntents: upsert(s.opportunityIntents, patch.opportunityIntents, patch.removed?.opportunityIntents),
-      timePolls: upsert(s.timePolls, patch.timePolls, patch.removed?.timePolls),
-      rides: patch.rides || patch.removed?.rides ? upsert(s.rides ?? [], patch.rides, patch.removed?.rides) : s.rides,
-      games: upsert(s.games ?? [], patch.games),
-      // 같은 수업 목록은 서버가 보는 사람마다 통째로 다시 계산해 보낸다
-      classRosters: patch.classRosters ?? s.classRosters,
-      relationships: patch.relationships ? structuredClone(patch.relationships) : s.relationships,
-    });
+    set(mergePatch(get(), patch));
   },
 
   async run(fn, successMsg) {
