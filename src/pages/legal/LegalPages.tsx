@@ -180,9 +180,11 @@ export function TermsPage() {
 
       <H>3. Reporting and blocking</H>
       <UL>
-        <li><B>Report</B> a person, post, message, meetup or ride from its menu (⋯ or the flag). Reports go to our team, not to the person you report.</li>
+        <li><B>Report</B> a person, post, comment, message, meetup or ride from its menu (⋯ or the flag). Reports go to our team, not to the person you report.</li>
         <li><B>Block</B> someone from their profile or your chat with them. You won't see each other or be able to message each other.</li>
         <li>We review reports within 24 hours. We may remove content, and suspend or permanently ban accounts. If there's a threat to someone's safety, we may contact the authorities.</li>
+        <li>When 3 different people report the same post or comment, it's hidden from everyone except the person who wrote it until we've reviewed it.</li>
+        <li>A suspended account can't sign in or post, and its profile and content are hidden from everyone else.</li>
         <li>In an emergency, call 911 (or UCPD at Berkeley) first.</li>
       </UL>
 

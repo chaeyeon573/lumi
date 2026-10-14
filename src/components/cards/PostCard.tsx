@@ -34,6 +34,7 @@ export function PostCard({ post: p, className }: { post: Post; className?: strin
   const [comments, setComments] = useState(false);
   const [menu, setMenu] = useState(false);
   const [report, setReport] = useState(false);
+  const [reportComment, setReportComment] = useState<string | null>(null);
   const [text, setText] = useState('');
   const [slide, setSlide] = useState(0);
   const isMine = p.authorId === v.me.id;
@@ -95,7 +96,7 @@ export function PostCard({ post: p, className }: { post: Post; className?: strin
           <div className="mt-3 border-t border-line pt-3 space-y-2">
             {p.comments.length === 0 && <p className="text-[12px] text-ink-3">{t('첫 댓글을 남겨보세요.')}</p>}
             {p.comments.map((c) => { const u = v.userById(c.authorId); const cAnon = anon; return (
-              <div key={c.id} className="flex gap-2 text-[13px]"><Avatar emoji={cAnon ? '🫥' : (u?.avatar.emoji ?? '👤')} hue={cAnon ? 220 : (u?.avatar.hue ?? 200)} url={cAnon ? undefined : u?.avatar.url} size={24} /><div><b className="mr-1">{cAnon ? (c.authorId === p.authorId ? t('글쓴이') : t('익명')) : u?.nickname}</b>{c.text}<span className="text-ink-3 text-[11px] ml-1.5">{relativeTime(c.createdAt)}</span></div></div>
+              <div key={c.id} className="flex gap-2 text-[13px]"><Avatar emoji={cAnon ? '🫥' : (u?.avatar.emoji ?? '👤')} hue={cAnon ? 220 : (u?.avatar.hue ?? 200)} url={cAnon ? undefined : u?.avatar.url} size={24} /><div><b className="mr-1">{cAnon ? (c.authorId === p.authorId ? t('글쓴이') : t('익명')) : u?.nickname}</b>{c.text}<span className="text-ink-3 text-[11px] ml-1.5">{relativeTime(c.createdAt)}</span>{c.authorId !== v.me.id && <button onClick={() => setReportComment(c.id)} className="ml-1.5 align-middle text-ink-3" aria-label={t('신고하기')}><Flag size={11} /></button>}</div></div>
             ); })}
             <form className="flex gap-2 pt-1" onSubmit={async (e) => { e.preventDefault(); if (!text.trim()) return; await run(() => api.posts.comment(p.id, v.me.id, text.trim())); setText(''); }}>
               <Input placeholder={t('댓글 달기…')} value={text} onChange={(e) => setText(e.target.value)} className="h-10" />
@@ -112,6 +113,7 @@ export function PostCard({ post: p, className }: { post: Post; className?: strin
         </div>
       </BottomSheet>
       <ReportSheet open={report} onClose={() => setReport(false)} targetType="post" targetId={p.id} />
+      <ReportSheet open={!!reportComment} onClose={() => setReportComment(null)} targetType="comment" targetId={reportComment ?? ''} />
     </article>
   );
 }

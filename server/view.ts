@@ -14,6 +14,8 @@
  * - 링크로 묻는 약속(timePoll.link)은 주최자와 Lumi 로 답한 사람에게만, 손님 토큰 해시는 절대 안 보낸다
  * - 예시(sample) 콘텐츠는 데모 계정에게만, 그것도 자기 학교 것만 (server/samples.ts). 실제 계정의 스냅샷·패치에는
  *   예시 프로필·모임·글·같이 타기·약속·동아리·공고가 하나도 없고, 수업 명단도 예시를 뺀 사람들로 계산한다
+ * - 운영 조치 (server/moderation.ts): 정지된 계정과 그 콘텐츠는 다른 사람에게 안 보이고, 실제 계정 3명 이상이 신고한
+ *   글·댓글은 작성자 외에게 숨긴다. 신고는 낸 사람에게만, 운영 기록(log·excerpt·targetOwnerId)은 지운 채로
  */
 import type { Patch, Snapshot } from '@core/api/types';
 import type { Activity, ActivityProposal, ChatRoom, Game, ID, Organization, Participation, TimePoll, User } from '@core/types';
@@ -23,6 +25,7 @@ import { planVisibleTo, stripPlanSecrets } from '@core/lib/plans';
 import { buildClassIndex, classRostersFor, schoolOf, type ClassIndex } from '@core/lib/classmates';
 import { ridesFor, ridesPatchFor } from '@core/lib/rides';
 import { hiddenSamplesFor, stripRelationships, stripSamples, type HiddenSamples } from './samples';
+import { moderatePatch, moderateView } from './moderation';
 
 /**
  * 오늘의 질문 답은 '지금 시간 되는지'와 같은 성격이라 availability 공개 범위를 따른다 (차단 관계면 안 보인다).
@@ -105,7 +108,8 @@ const pollsFor = (polls: TimePoll[] | undefined, viewerId: ID) => (polls ?? []).
 export function snapshotFor(full: Snapshot, viewerId: ID): Snapshot {
   // 예시 콘텐츠를 먼저 뺀다 — 아래의 동아리·수업 명단·같이 타기 계산도 뺀 데이터로 한다
   const db = stripSamples(full, hiddenSamplesFor(full, full.users.find((u) => u.id === viewerId)));
-  return {
+  // 신고·정지 (server/moderation.ts) — 정지된 사람과 그 콘텐츠, 신고가 쌓여 숨긴 글·댓글을 뺀다
+  return moderateView({
     ...db,
     organizations: db.organizations.filter(orgFilter(db, viewerId)),
     users: db.users.map((u) => sanitizeUser(u, viewerId, db)),
@@ -119,7 +123,7 @@ export function snapshotFor(full: Snapshot, viewerId: ID): Snapshot {
     proposals: db.proposals.filter(inProposal(viewerId)),
     rides: ridesFor(db, viewerId), // my school only · blocks both ways · riders & chat only to people in the ride
     timePolls: pollsFor(db.timePolls, viewerId),
-  };
+  }, viewerId, full);
 }
 
 export function patchFor(original: Patch, viewerId: ID, db?: Snapshot): Patch | null {
@@ -146,6 +150,8 @@ export function patchFor(original: Patch, viewerId: ID, db?: Snapshot): Patch | 
   if (patch.proposals) out.proposals = patch.proposals.filter(inProposal(viewerId));
   if (patch.rides) { const r = db ? ridesPatchFor(db, patch.rides, viewerId) : { rides: [], removed: [] }; out.rides = r.rides; if (r.removed.length) out.removed = { ...out.removed, rides: [...(out.removed?.rides ?? []), ...r.removed] }; }
   if (patch.timePolls) out.timePolls = pollsFor(patch.timePolls, viewerId);
+  // 신고·정지 (server/moderation.ts) — 새로 숨겨진 것은 removed.* 로 보내 열린 화면에서도 사라지게
+  if (db) moderatePatch(out, viewerId, db);
   const hasContent = Object.entries(out).some(([k, v]) => (k === 'relationships' ? !!v : k === 'removed' ? !!v && Object.values(v).some((ids) => ids && ids.length) : Array.isArray(v) && v.length > 0));
   return hasContent ? out : null;
 }

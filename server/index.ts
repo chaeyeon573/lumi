@@ -18,6 +18,9 @@
  *
  * 환경변수: PORT, DATABASE_URL, AROUNDU_LANG(ko|en), DEMO_AUTOREPLY(1이면 데모 자동응답), ALLOW_DEMO_LOGIN(0이면 비활성),
  *          ALLOW_RESET, RESEND_API_KEY, MAIL_FROM, HIDE_DEV_CODE, CORS_ORIGIN, VERIFY_EMAIL_DOMAIN(0이면 학교 도메인 검사 생략)
+ *
+ * 신고·운영 (server/moderation.ts): POST /api/rpc/reports/create → 저장 + FEEDBACK_EMAIL 알림 + 3명 신고 시 자동 숨김,
+ *   GET /admin/reports (관리 화면, ADMIN_KEY 입력), /api/admin/reports·/api/admin/users/:id/… (x-admin-key) — 기각·삭제·정지·정지 해제
  */
 import express, { type Request, type Response, type NextFunction } from 'express';
 import cors from 'cors';
@@ -48,6 +51,7 @@ import { createCampusData, mountCampusRoutes, mergeWorkerNotifications } from '.
 import { createClassesEngine } from '@core/api/classes';
 import { CLASSES_RULES, registerClassRoutes, startStudyGroupJob } from './classes';
 import { registerLegalRoutes } from './legal';
+import { registerModerationRoutes, sessionAuth, signInBlock, suspendedMessage } from './moderation';
 
 const PORT = Number(process.env.PORT ?? 8787);
 const store = createStore();
@@ -135,19 +139,14 @@ app.use(express.json({ limit: '2mb' }));
 class HttpError extends Error { constructor(public status: number, message: string) { super(message); } }
 const bad = (msg: string, status = 400) => new HttpError(status, msg);
 
-type Req = Request & { userId?: ID };
-async function auth(req: Req, _res: Response, next: NextFunction) {
-  try {
-    const header = req.headers.authorization ?? '';
-    const token = header.startsWith('Bearer ') ? header.slice(7) : (req.query.token as string | undefined);
-    if (token) {
-      const s = await store.findSession(token);
-      if (s && db.users.some((u) => u.id === s.userId)) req.userId = s.userId;
-    }
-    next();
-  } catch (e) { next(e); }
-}
-const requireUser = (req: Req): ID => { if (!req.userId) throw bad(t('로그인이 필요해요.'), 401); return req.userId; };
+type Req = Request & { userId?: ID; suspended?: boolean };
+/** 세션 토큰 → req.userId. 정지된 계정의 토큰은 사용자로 풀리지 않는다 (req.suspended) — server/moderation.ts */
+const auth = sessionAuth({ db: () => db, findSession: (token) => store.findSession(token) });
+const requireUser = (req: Req): ID => {
+  if (req.suspended) throw bad(suspendedMessage(), 403);
+  if (!req.userId) throw bad(t('로그인이 필요해요.'), 401);
+  return req.userId;
+};
 const wrap = (fn: (req: Req, res: Response) => Promise<unknown> | unknown) => async (req: Req, res: Response, next: NextFunction) => {
   try { const out = await fn(req, res); if (!res.headersSent) res.json(out ?? {}); } catch (e) { next(e); }
 };
@@ -165,6 +164,7 @@ app.post('/api/auth/demo', wrap(async (req) => {
   if (process.env.ALLOW_DEMO_LOGIN === '0') throw bad(t('데모 계정이 없어요. 회원가입을 이용해주세요.'), 403);
   const user = db.users.find((u) => u.id === demoUserIdFor(String(req.body?.schoolId ?? '')));
   if (!user) throw bad(t('데모 계정이 없어요. 회원가입을 이용해주세요.'), 404);
+  { const blocked = signInBlock(user); if (blocked) throw bad(blocked, 403); }
   return { token: await issueSession(user.id), user };
 }));
 
@@ -176,6 +176,7 @@ app.post('/api/auth/login', wrap(async (req) => {
   const account = await store.findAccount(email);
   const user = account ? db.users.find((u) => u.id === account.userId) : undefined;
   if (!user) throw bad(t('이 이메일로 가입된 계정이 없어요.'), 404);
+  { const blocked = signInBlock(user); if (blocked) throw bad(blocked, 403); }
   return { token: await issueSession(user.id), user };
 }));
 
@@ -316,6 +317,12 @@ mountCampusRoutes(app, campus, { auth, wrap, requireUser, bad, user: (id) => db.
 registerPlanRoutes(app, {
   db: () => db, auth, push: (p) => { void store.applyPatch(p); broadcast(p); }, patchFor: (p, me) => patchFor(p, me, db),
   dist: path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist'),
+});
+
+// ─── 신고·운영 — /api/rpc/reports/create (일반 RPC보다 먼저), /admin/reports, /api/admin/* (server/moderation.ts) ─────
+registerModerationRoutes(app, {
+  db: () => db, auth, push: pushPatch, patchFor: (p, me) => patchFor(p, me, db), sendMail,
+  disconnect(userId) { for (const res of clients.get(userId) ?? []) res.end(); clients.delete(userId); },
 });
 
 // ─── RPC (엔진 메서드) ────────────────────────────────────────────────────

@@ -10,6 +10,7 @@ const REASONS: Record<ReportTargetType, string[]> = {
   user: [t('사칭 또는 허위 프로필'), t('괴롭힘·혐오 발언'), t('성적으로 부적절한 행동'), t('스팸·광고'), t('기타')],
   activity: [t('허위·사기성 활동'), t('부적절한 내용'), t('유료 광고·영업'), t('안전이 우려되는 활동'), t('기타')],
   post: [t('부적절한 콘텐츠'), t('혐오·차별 표현'), t('스팸·광고'), t('개인정보 노출'), t('기타')],
+  comment: [t('괴롭힘·혐오 발언'), t('부적절한 콘텐츠'), t('스팸·광고'), t('개인정보 노출'), t('기타')],
   message: [t('괴롭힘·위협'), t('성적 메시지'), t('스팸·사기'), t('기타')],
   ride: ['Unsafe driving or behavior', 'Asked for money up front or scam', 'Not a student / fake post', 'Harassment', 'Other'],
 };

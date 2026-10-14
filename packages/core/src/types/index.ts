@@ -178,6 +178,8 @@ export interface User {
     notifications: boolean;
     locationPermission: 'granted' | 'denied' | 'undecided';
   };
+  /** 운영자가 정지한 계정 — 로그인·글쓰기가 막히고 다른 사람에게서 그 사람과 콘텐츠가 숨겨진다 (server/moderation.ts). 서버 전용 */
+  suspended?: { at: string; by: string; reason: string; reportId?: ID };
   createdAt: string;
 }
 
@@ -588,7 +590,18 @@ export interface Notification {
 }
 
 // ─── 신고 ─────────────────────────────────────────────────────────────────
-export type ReportTargetType = 'user' | 'activity' | 'post' | 'message' | 'ride';
+/** message: 채팅방 id (또는 메시지 id) · comment: 글·모임 댓글 id · activity: 모임 또는 공고 id */
+export type ReportTargetType = 'user' | 'activity' | 'post' | 'comment' | 'message' | 'ride';
+/** open: 검토 대기 · dismissed: 문제없음 · actioned: 삭제·정지 조치함 (server/moderation.ts) */
+export type ReportStatus = 'open' | 'dismissed' | 'actioned';
+/** 신고에 남기는 운영 기록 — 누가 언제 무엇을 했는지 */
+export interface ReportLogEntry {
+  at: string;
+  /** 운영자 이름 (관리 화면에서 입력) 또는 'system' */
+  by: string;
+  action: 'auto_hidden' | 'dismissed' | 'removed' | 'suspended' | 'unsuspended';
+  note?: string;
+}
 
 export interface Report {
   id: ID;
@@ -597,6 +610,14 @@ export interface Report {
   targetId: ID;
   reason: string;
   createdAt: string;
+  /** 없으면 open (예전 신고) */
+  status?: ReportStatus;
+  /** ⚠ 아래는 서버 전용 — 신고한 사람에게는 지워서 내려간다 (server/moderation.ts) */
+  log?: ReportLogEntry[];
+  /** 신고 당시 내용 일부 (작성자가 지워도 검토할 수 있게) */
+  excerpt?: string;
+  /** 신고 당시 콘텐츠 주인 */
+  targetOwnerId?: ID;
 }
 
 // ─── 아이스브레이커 게임 ("Say hi" 대신) ───────────────────────────────────
