@@ -41,7 +41,7 @@ export default function CreateTogetherScreen() {
 
   const people = [me, ...invitees.map((id) => v.userById(id)!).filter(Boolean)];
   const suggestions = useMemo(() => suggestOptions(people, (u) => u.id === me.id || v.canSeeField(u, 'timetable')), [people, v, me.id]); // eslint-disable-line react-hooks/exhaustive-deps
-  const withTT = people.filter((u) => u.timetable.length && (u.id === me.id || v.canSeeField(u, 'timetable'))).length;
+  const withTT = people.filter((u) => u.timetable?.length && (u.id === me.id || v.canSeeField(u, 'timetable'))).length;
   const chosen = new Set(options.map(key));
   const toggleOpt = (o: Opt) => setOptions((os) => chosen.has(key(o)) ? os.filter((x) => key(x) !== key(o)) : [...os, o]);
   const valid = title.trim().length >= 2 && invitees.length > 0 && options.length >= 2;

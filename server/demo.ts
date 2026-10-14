@@ -36,7 +36,7 @@ function mercedDemo(base: User): User {
   u.bio = 'CS student at UC Merced. Building side projects and always down for coffee with new people.';
   u.freeTime = 'Coding at the library or walking around Lake Yosemite';
   u.nowWant = 'Coffee near campus tonight?';
-  u.prompts = u.prompts.map((p, i) => ({ ...p, answer: ['Coffee and talk side projects', 'Kolligian Library by the windows', 'React, best cafés downtown, hiking picks'][i] ?? p.answer }));
+  u.prompts = (u.prompts ?? []).map((p, i) => ({ ...p, answer: ['Coffee and talk side projects', 'Kolligian Library by the windows', 'React, best cafés downtown, hiking picks'][i] ?? p.answer }));
   u.timetable = [];
   if (u.living) u.living = { ...u.living, zone: 'Merced' };
   u.interestedOrgIds = [];
@@ -80,7 +80,7 @@ export function migrateDemo(db: Snapshot): Patch | null {
 
   const users = [...db.users.map((u) => changed.get(u.id) ?? u), ...added];
   const active = activeSchoolIds();
-  const withUsers = new Set(users.map((u) => (u.affiliation.type === 'university' ? u.affiliation.schoolId : '')));
+  const withUsers = new Set(users.map((u) => (u.affiliation.type === 'university' ? u.affiliation.schoolId ?? '' : '')));
   const hideSchools = active.size ? db.schools.filter((s) => !active.has(s.id) && !withUsers.has(s.id)).map((s) => s.id) : [];
 
   if (!changed.size && !added.length && !hideSchools.length) return null;

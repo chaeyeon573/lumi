@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useAppStore } from '@core/store/useAppStore';
-import type { Activity, ID, Post, User } from '@core/types';
+import type { Activity, ID, Post, Self, User } from '@core/types';
 import {
   canMessage, canViewActivity, canViewField, canViewPost, connectionState, iLike, isFollowing, isFriend, isMutualLike, pendingRequestFrom, hasBlocked, isBlocked,
 } from '@core/lib/relations';
@@ -21,12 +21,12 @@ export function useViewer() {
 
   return useMemo(() => {
     const snap = { users, relationships, participations, proposals, activities, opportunities, opportunityIntents, timePolls };
-    const me = users.find((u) => u.id === currentUserId) as User;
-    const userById = (id: ID) => users.find((u) => u.id === id);
+    const me = users.find((u) => u.id === currentUserId) as Self;
+    const userById = (id?: ID) => (id ? users.find((u) => u.id === id) : undefined);
     const orgById = (id: ID) => organizations.find((o) => o.id === id);
     const blockedIds = new Set(relationships.blocks.filter((b) => b.fromId === me?.id).map((b) => b.toId));
     const blockedByIds = new Set(relationships.blocks.filter((b) => b.toId === me?.id).map((b) => b.fromId));
-    const hidden = (id: ID) => blockedIds.has(id) || blockedByIds.has(id);
+    const hidden = (id?: ID) => !!id && (blockedIds.has(id) || blockedByIds.has(id));
 
     const visibleActivities: Activity[] = me ? activities.filter((a) => !hidden(a.hostId) && canViewActivity(snap, me, a)) : [];
     const visiblePosts: Post[] = me ? posts.filter((p) => !hidden(p.authorId) && canViewPost(snap, me, p)) : [];

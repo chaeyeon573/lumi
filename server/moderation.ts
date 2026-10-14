@@ -79,7 +79,7 @@ export function locate(db: Db, type: ReportTargetType, id: ID): TargetInfo {
   switch (type) {
     case 'user': {
       const u = db.users.find((x) => x.id === id);
-      return u ? out('user', u.id, [u.nickname, u.bio, u.nowWant, ...u.prompts.map((p) => p.answer)].filter(Boolean).join(' · ')) : { exists: false, excerpt: '' };
+      return u ? out('user', u.id, [u.nickname, u.bio, u.nowWant, ...(u.prompts ?? []).map((p) => p.answer)].filter(Boolean).join(' · ')) : { exists: false, excerpt: '' };
     }
     case 'post': {
       const p = db.posts.find((x) => x.id === id);

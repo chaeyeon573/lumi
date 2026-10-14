@@ -31,8 +31,8 @@ export function whosFree(snap: Snap, me: User, canSeeTimetable: (u: User) => boo
     const e = whosFreeEligible(snap, me, u);
     if (!e.ok) continue;
     let status = ''; let until: number | null = null; let minutes = 0;
-    if (u.timetable.length && canSeeTimetable(u)) {
-      const s = statusNow(u.timetable);
+    if (u.timetable?.length && canSeeTimetable(u)) {
+      const s = statusNow(u.timetable ?? []);
       if (s.kind === 'in_class') continue;
       if (s.kind === 'free') { until = s.until; minutes = s.until ? s.until - now : 240; status = s.until ? `${Math.floor(minutes / 60) ? `${Math.floor(minutes / 60)}${t('시간')} ` : ''}${minutes % 60 ? `${minutes % 60}${t('분')}` : ''} ${t('공강')}`.trim() : t('오늘 수업 없음'); }
       else if (s.kind === 'done') { status = t('오늘 수업 끝'); minutes = 300; }
@@ -84,7 +84,7 @@ export function planFeed(snap: Snap, me: User, visibleActivities: Activity[]): P
   }
   for (const u of snap.users) {
     if (u.id === me.id || !friends.has(u.id)) continue;
-    const g = u.goals.find((x) => ['hobby', 'start_club', 'startup', 'hackathon'].includes(x));
+    const g = (u.goals ?? []).find((x) => ['hobby', 'start_club', 'startup', 'hackathon'].includes(x));
     if (g) items.push({ kind: 'goal', id: `g_${u.id}`, user: u, text: g, when: u.createdAt });
   }
   return items.sort((a, b) => b.when.localeCompare(a.when));
@@ -93,7 +93,7 @@ export function planFeed(snap: Snap, me: User, visibleActivities: Activity[]): P
 /** 집계된 캠퍼스 움직임 — 개인 위치는 절대 노출하지 않는다 */
 export function campusPulse(snap: Snap, schoolId: string, visibleActivities: Activity[]) {
   const students = snap.users.filter((u) => u.affiliation.type === 'university' && u.affiliation.schoolId === schoolId);
-  const freeNow = students.filter((u) => u.timetable.length ? statusNow(u.timetable).kind === 'free' : u.availability === 'now').length;
+  const freeNow = students.filter((u) => u.timetable?.length ? statusNow(u.timetable ?? []).kind === 'free' : u.availability === 'now').length;
   const today = todayISO();
   const lunch = visibleActivities.filter((a) => a.date === today && (a.category === 'meal' || a.category === 'coffee')).length;
   const teams = visibleActivities.filter((a) => a.rolesNeeded && a.rolesNeeded.length > 0 && a.date >= today).length;

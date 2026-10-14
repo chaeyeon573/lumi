@@ -16,11 +16,18 @@
  *   예시 프로필·모임·글·같이 타기·약속·동아리·공고가 하나도 없고, 수업 명단도 예시를 뺀 사람들로 계산한다
  * - 운영 조치 (server/moderation.ts): 정지된 계정과 그 콘텐츠는 다른 사람에게 안 보이고, 실제 계정 3명 이상이 신고한
  *   글·댓글은 작성자 외에게 숨긴다. 신고는 낸 사람에게만, 운영 기록(log·excerpt·targetOwnerId)은 지운 채로
+ * - 다른 사람 프로필은 공개 범위가 허락하는 항목만 (@core/lib/privacy profileFor) — 닫힌 항목은 키째 빠진다.
+ *   나를 차단한 사람은 아예 안 보낸다. 관계는 내가 한 쪽인 것만 (relationshipsFor), 함께 아는 친구는 수만
+ * - 게시물·활동은 공개 범위 안의 것만 (예전엔 친구 공개 글도 모두에게 내려갔다). 익명 글은 글쓴이 id 를 지우고,
+ *   누가 공감·저장했는지 대신 내 것 + 공감 수 (postFor)
+ * - 참가 기록: 내 것 + 내가 연 활동의 것 + 다른 사람은 승인된 것만(신청 메시지 없이)
+ * - 동아리 지원자 목록은 운영진과 본인에게만, 다른 사람의 저장(saved)은 안 보낸다, 시간 투표는 초대받은 사람에게만
  */
 import type { Patch, Snapshot } from '@core/api/types';
-import type { Activity, ActivityProposal, ChatRoom, Game, ID, Organization, Participation, TimePoll, User } from '@core/types';
-import { gameFor, stripGameSecrets } from '@core/lib/icebreakers';
-import { canViewField } from '@core/lib/relations';
+import type { Activity, ActivityProposal, ChatRoom, Game, ID, Organization, Participation, Post, TimePoll, User } from '@core/types';
+import { gameFor } from '@core/lib/icebreakers';
+import { canViewActivity, canViewPost } from '@core/lib/relations';
+import { blockedBy, intentFor, postFor, profileFor, relationshipsFor } from '@core/lib/privacy';
 import { planVisibleTo, stripPlanSecrets } from '@core/lib/plans';
 import { buildClassIndex, classRostersFor, schoolOf, type ClassIndex } from '@core/lib/classmates';
 import { ridesFor, ridesPatchFor } from '@core/lib/rides';
@@ -28,29 +35,72 @@ import { hiddenSamplesFor, stripRelationships, stripSamples, type HiddenSamples 
 import { moderatePatch, moderateView } from './moderation';
 
 /**
- * 오늘의 질문 답은 '지금 시간 되는지'와 같은 성격이라 availability 공개 범위를 따른다 (차단 관계면 안 보인다).
- * 학교 전체 비율은 엔진의 users.dailyResults 가 5명 이상일 때만 집계로 내려준다.
+ * 다른 사람 프로필 — 공개 범위 밖 항목은 키째 빠진다 (@core/lib/privacy). 시간표는 바쁜 시간 블록만, 오늘의 질문 답은
+ * availability 공개 범위 안에서만 (학교 전체 비율은 엔진의 users.dailyResults 가 5명 이상일 때만 집계로).
+ * 나를 차단한 사람은 null (아예 안 보낸다). 보는 사람을 모르면(db 없음) 본인 것 말고는 보내지 않는다
  */
-function canSeeDaily(db: Snapshot | undefined, viewerId: ID, u: User): boolean {
-  if (!u.dailyAnswer || !db) return false;
-  const viewer = db.users.find((x) => x.id === viewerId);
-  return !!viewer && canViewField(db, viewer, u, 'availability');
-}
-
-/** 다른 사람의 시간표 — 공개 범위 안이면 바쁜 시간 블록만, 아니면 빈 목록. 수업 이름·강의실·교수·링크·분반은 절대 안 보낸다 */
-function busyOnly(u: User, viewerId: ID, db?: Snapshot): User['timetable'] {
-  const viewer = db?.users.find((x) => x.id === viewerId);
-  if (!db || !viewer || !u.timetable.length || !canViewField(db, viewer, u, 'timetable')) return [];
-  return u.timetable.map((c) => ({ id: c.id, name: '', day: c.day, start: c.start, end: c.end, hue: c.hue }));
-}
-
-function sanitizeUser(u: User, viewerId: ID, db?: Snapshot): User {
+function sanitizeUser(u: User, viewerId: ID, db?: Snapshot): User | null {
   if (u.id === viewerId) return u;
-  const { showToClassmates: _s, studyGroupOptOut: _o, partnerSearch: _p, ...rest } = u;
-  const out: User = { ...stripGameSecrets(rest as User, viewerId), timetable: busyOnly(u, viewerId, db) };
-  if (out.dailyAnswer && !canSeeDaily(db, viewerId, u)) delete out.dailyAnswer;
+  const viewer = db?.users.find((x) => x.id === viewerId);
+  if (!db || !viewer || blockedBy(db, viewerId, u.id)) return null;
+  return profileFor(db, viewer, u);
+}
+const usersFor = (list: User[], viewerId: ID, db?: Snapshot) => list.map((u) => sanitizeUser(u, viewerId, db)).filter((u): u is User => !!u);
+
+/**
+ * 게시물: 글쓴이 본인이거나 공개 범위 안 (차단은 양쪽 다 안 보인다). 공감·저장은 내 것만, 익명 글은 글쓴이를 지운다
+ */
+function postsFor(list: Post[], viewerId: ID, db?: Snapshot): Post[] {
+  const viewer = db?.users.find((x) => x.id === viewerId);
+  if (!db || !viewer) return [];
+  return list.filter((p) => p.authorId === viewerId || canViewPost(db, viewer, p)).map((p) => postFor(p, viewerId, db.users.find((u) => u.id === p.authorId)));
+}
+
+/** 내가 관련된 활동 — 공개 범위가 바뀌었거나 친구가 끊겨도 내 모임은 보인다 */
+function involvedActivities(db: Snapshot, viewerId: ID): Set<ID> {
+  const ids = new Set<ID>();
+  for (const p of db.participations) if (p.userId === viewerId) ids.add(p.activityId);
+  for (const r of db.chatRooms) if (r.activityId && r.memberIds.includes(viewerId)) ids.add(r.activityId);
+  for (const t of db.timePolls) if (t.activityId && pollOk(viewerId)(t)) ids.add(t.activityId);
+  return ids;
+}
+/**
+ * 활동: 연 사람·참가자·초대받은 사람·공개 범위 안의 사람에게만. Lumi 가 제안한 스터디 그룹은 초대받은 사람에게만.
+ * 다른 사람에게는 초대 명단·'선택한 사람' 명단에서 나 말고는 지운다
+ */
+function activityCheck(db: Snapshot | undefined, viewerId: ID) {
+  const viewer = db?.users.find((x) => x.id === viewerId);
+  const involved = db ? involvedActivities(db, viewerId) : new Set<ID>();
+  return (a: Activity) => !!db && !!viewer && studyGroupOk(viewerId)(a)
+    && (a.hostId === viewerId || involved.has(a.id) || !!a.studyGroup || canViewActivity(db, viewer, a));
+}
+function activityFor(a: Activity, viewerId: ID): Activity {
+  if (a.hostId === viewerId) return a;
+  const out = { ...a };
+  if (a.invitedIds) out.invitedIds = a.invitedIds.filter((id) => id === viewerId);
+  if (a.visibility === 'selected' && a.visibilityTargets) out.visibilityTargets = a.visibilityTargets.filter((id) => id === viewerId);
   return out;
 }
+const activitiesFor = (list: Activity[], viewerId: ID, db?: Snapshot) => { const ok = activityCheck(db, viewerId); return list.filter(ok).map((a) => activityFor(a, viewerId)); };
+
+/** 참가 기록: 내 것, 내가 연 활동의 것, 그 밖에는 내가 볼 수 있는 활동의 승인된 참가만 (신청 메시지는 연 사람만 본다) */
+function participationsFor(list: Participation[], viewerId: ID, db?: Snapshot, extra: Activity[] = []): Participation[] {
+  if (!db) return list.filter((p) => p.userId === viewerId);
+  const byId = new Map([...db.activities, ...extra].map((a) => [a.id, a]));
+  const ok = activityCheck(db, viewerId);
+  const seen = new Map<ID, boolean>();
+  const visible = (id: ID) => { let v = seen.get(id); if (v === undefined) { const a = byId.get(id); v = !!a && ok(a); seen.set(id, v); } return v; };
+  const out: Participation[] = [];
+  for (const p of list) {
+    if (p.userId === viewerId || byId.get(p.activityId)?.hostId === viewerId) out.push(p);
+    else if (p.status === 'approved' && visible(p.activityId)) { const { message: _m, ...rest } = p; out.push(rest); }
+  }
+  return out;
+}
+
+/** 동아리 지원자 명단은 운영진에게만 — 다른 사람에게는 나만 남긴다 */
+const orgFor = (viewerId: ID) => (o: Organization): Organization =>
+  o.adminIds.includes(viewerId) ? o : { ...o, applicantIds: o.applicantIds.filter((id) => id === viewerId) };
 
 /** 이 사용자에게 보낼 동아리인지 */
 export function orgFilter(db: Snapshot, viewerId: ID): (o: Organization) => boolean {
@@ -69,10 +119,6 @@ export const gamesFor = (games: Game[] | undefined, viewerId: ID): Game[] => (ga
 const inRoom = (viewerId: ID) => (r: ChatRoom) => r.memberIds.includes(viewerId);
 /** Lumi 가 제안한 스터디 그룹은 초대받은 사람에게만 (누가 어떤 수업에서 언제 비는지가 담겨 있다) */
 const studyGroupOk = (viewerId: ID) => (a: Activity) => !a.studyGroup || a.studyGroup.invitedIds.includes(viewerId);
-function participationOk(db: Snapshot | undefined, viewerId: ID, extra: Activity[] = []) {
-  const hidden = new Set([...(db?.activities ?? []), ...extra].filter((a) => a.studyGroup && !a.studyGroup.invitedIds.includes(viewerId)).map((a) => a.id));
-  return (p: Participation) => !hidden.has(p.activityId);
-}
 /**
  * 패치 하나를 모든 접속자에게 거를 때 숨길 예시·수업 색인은 한 번만 만든다.
  * 실제 계정은 모두 같은 것을 숨기고, 데모 계정은 학교마다 다르다 → 키: 'real' | 'demo:<학교>'
@@ -102,19 +148,45 @@ function rostersPatch(patch: Patch, viewerId: ID, db: Snapshot, hidden: HiddenSa
   return rosters.length || (patch.users ?? []).some((u) => u.id === viewerId) ? rosters : undefined;
 }
 const inProposal = (viewerId: ID) => (p: ActivityProposal) => p.fromId === viewerId || p.toId === viewerId;
-/** 링크 약속(/p/<id>)은 주최자와 Lumi 로 답한 사람에게만, 손님 토큰 해시는 지운다 (@core/lib/plans) */
-const pollsFor = (polls: TimePoll[] | undefined, viewerId: ID) => (polls ?? []).filter((p) => planVisibleTo(p, viewerId)).map(stripPlanSecrets);
+/**
+ * 시간 투표는 주최자·초대받은 사람·표를 던진 사람에게만 (예전엔 링크가 없는 투표가 모두에게 내려갔다).
+ * 링크 약속(/p/<id>)은 주최자와 Lumi 로 답한 사람에게만, 손님 토큰 해시는 지운다 (@core/lib/plans)
+ */
+function pollOk(viewerId: ID) {
+  return (p: TimePoll) => planVisibleTo(p, viewerId) && (!!p.link || p.hostId === viewerId || p.inviteeIds.includes(viewerId) || p.votes[viewerId] !== undefined);
+}
+const pollsFor = (polls: TimePoll[] | undefined, viewerId: ID) => (polls ?? []).filter(pollOk(viewerId)).map(stripPlanSecrets);
+const intentsFor = (list: Snapshot['opportunityIntents'], viewerId: ID) => list.map((i) => intentFor(i, viewerId)).filter((i): i is NonNullable<typeof i> => !!i);
+
+/**
+ * 관계가 바뀐 패치(친구·팔로우·차단)에서 내가 당사자면, 상대의 글·활동을 다시 맞춘다 — 이제 보이는 것은 보내고
+ * 안 보이게 된 것은 지운다. 익명 글은 건드리지 않는다 (관계가 바뀐 순간 생기고 사라지면 누가 썼는지 드러난다)
+ */
+function refreshAround(others: ID[], viewerId: ID, db: Snapshot, hidden: HiddenSamples) {
+  const viewer = db.users.find((u) => u.id === viewerId);
+  const set = new Set(others);
+  const posts = db.posts.filter((p) => !!p.authorId && set.has(p.authorId) && !p.anonymous && !hidden.posts.has(p.id));
+  const acts = db.activities.filter((a) => set.has(a.hostId) && !hidden.activities.has(a.id));
+  const pOk = (p: Post) => !!viewer && canViewPost(db, viewer, p);
+  const aOk = activityCheck(db, viewerId);
+  return { posts: posts.filter(pOk), hiddenPosts: posts.filter((p) => !pOk(p)).map((p) => p.id), activities: acts.filter(aOk), hiddenActivities: acts.filter((a) => !aOk(a)).map((a) => a.id) };
+}
+const mergeById = <T extends { id: ID }>(a: T[] | undefined, b: T[]) => [...(a ?? []), ...b.filter((x) => !(a ?? []).some((y) => y.id === x.id))];
 
 export function snapshotFor(full: Snapshot, viewerId: ID): Snapshot {
   // 예시 콘텐츠를 먼저 뺀다 — 아래의 동아리·수업 명단·같이 타기 계산도 뺀 데이터로 한다
-  const db = stripSamples(full, hiddenSamplesFor(full, full.users.find((u) => u.id === viewerId)));
-  // 신고·정지 (server/moderation.ts) — 정지된 사람과 그 콘텐츠, 신고가 쌓여 숨긴 글·댓글을 뺀다
+  // 신고·정지 (server/moderation.ts) — 정지된 사람과 그 콘텐츠, 신고가 쌓여 숨긴 글·댓글을 뺀다.
+  // 공개 범위로 거르기 전에 한 번 먼저 — 익명 글은 거른 뒤에는 글쓴이 id 가 없어 정지된 사람의 글인지 알 수 없다
+  const db = moderateView(stripSamples(full, hiddenSamplesFor(full, full.users.find((u) => u.id === viewerId))), viewerId, full);
   return moderateView({
     ...db,
-    organizations: db.organizations.filter(orgFilter(db, viewerId)),
-    users: db.users.map((u) => sanitizeUser(u, viewerId, db)),
-    activities: db.activities.filter(studyGroupOk(viewerId)),
-    participations: db.participations.filter(participationOk(db, viewerId)),
+    organizations: db.organizations.filter(orgFilter(db, viewerId)).map(orgFor(viewerId)),
+    users: usersFor(db.users, viewerId, db),
+    relationships: relationshipsFor(db.relationships, viewerId),
+    posts: postsFor(db.posts, viewerId, db),
+    opportunityIntents: intentsFor(db.opportunityIntents, viewerId),
+    activities: activitiesFor(db.activities, viewerId, db),
+    participations: participationsFor(db.participations, viewerId, db),
     classRosters: classRostersFor(db, viewerId),
     notifications: db.notifications.filter((n) => n.userId === viewerId),
     reports: db.reports.filter((r) => r.reporterId === viewerId),
@@ -131,12 +203,34 @@ export function patchFor(original: Patch, viewerId: ID, db?: Snapshot): Patch | 
   const viewer = db?.users.find((u) => u.id === viewerId);
   const cache = cacheFor(original, viewer);
   const hidden = db ? (cache.hidden ??= hiddenSamplesFor(db, viewer)) : undefined;
-  const patch = hidden ? stripSamples(original, hidden) : original;
+  let patch = hidden ? stripSamples(original, hidden) : original;
+  // 신고·정지는 공개 범위로 거르기 전에도 한 번 (익명 글·댓글은 거른 뒤에는 글쓴이 id 가 없다). 끝에서 한 번 더 (다시 맞춘 글·활동)
+  if (db) { const m: Patch = { ...patch }; moderatePatch(m, viewerId, db); patch = m; }
   const out: Patch = { ...patch };
-  if (patch.organizations && db) out.organizations = patch.organizations.filter(orgFilter(db, viewerId));
-  if (patch.users) out.users = patch.users.map((u) => sanitizeUser(u, viewerId, db));
-  if (patch.activities) out.activities = patch.activities.filter(studyGroupOk(viewerId));
-  if (patch.participations) out.participations = patch.participations.filter(participationOk(db, viewerId, patch.activities));
+  if (patch.organizations) out.organizations = db ? patch.organizations.filter(orgFilter(db, viewerId)).map(orgFor(viewerId)) : [];
+  if (patch.users) {
+    out.users = usersFor(patch.users, viewerId, db);
+    // 관계가 바뀐 패치(엔진이 두 당사자를 users 로 같이 보낸다): 나를 차단한 사람은 화면에서 지우고, 내가 당사자면 상대의 글·활동을 다시 맞춘다
+    if (patch.relationships && db) {
+      const gone = patch.users.filter((u) => u.id !== viewerId && blockedBy(db, viewerId, u.id)).map((u) => u.id);
+      const others = patch.users.some((u) => u.id === viewerId) ? patch.users.map((u) => u.id).filter((id) => id !== viewerId) : [];
+      if (gone.length || others.length) {
+        const r = refreshAround([...others, ...gone], viewerId, db, hidden ?? hiddenSamplesFor(db, viewer));
+        const removed = { ...out.removed };
+        if (gone.length) removed.users = [...(removed.users ?? []), ...gone];
+        if (r.hiddenPosts.length) removed.posts = [...(removed.posts ?? []), ...r.hiddenPosts];
+        if (r.hiddenActivities.length) removed.activities = [...(removed.activities ?? []), ...r.hiddenActivities];
+        if (Object.keys(removed).length) out.removed = removed;
+        if (r.posts.length) patch = { ...patch, posts: mergeById(patch.posts, r.posts) };
+        if (r.activities.length) patch = { ...patch, activities: mergeById(patch.activities, r.activities) };
+      }
+    }
+  }
+  if (patch.relationships) out.relationships = relationshipsFor(patch.relationships, viewerId);
+  if (patch.posts) out.posts = postsFor(patch.posts, viewerId, db);
+  if (patch.opportunityIntents) out.opportunityIntents = intentsFor(patch.opportunityIntents, viewerId);
+  if (patch.activities) out.activities = activitiesFor(patch.activities, viewerId, db);
+  if (patch.participations) out.participations = participationsFor(patch.participations, viewerId, db, patch.activities);
   if (db && hidden) { const r = rostersPatch(patch, viewerId, db, hidden, cache); if (r) out.classRosters = r; else delete out.classRosters; } else delete out.classRosters;
   if (patch.notifications) out.notifications = patch.notifications.filter((n) => n.userId === viewerId);
   if (patch.reports) out.reports = patch.reports.filter((r) => r.reporterId === viewerId);

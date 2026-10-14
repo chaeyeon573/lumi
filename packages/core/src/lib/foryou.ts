@@ -133,11 +133,11 @@ export function interestProfile(snap: Snap, me: User, now = new Date()): Interes
     const dept = me.affiliation.department;
     for (const [re, v] of DEPT) if (re.test(dept)) { feed(v, 'major', dept, 1.2); break; }
   }
-  for (const g of me.goals) { const x = GOAL[g]; if (!x) continue; if (x.topics) feed(x.topics, 'goal', g); for (const [k, w] of Object.entries(x.types ?? {})) types[k as RecType] = (types[k as RecType] ?? 0) + w!; }
-  for (const i of me.interests) if (INTEREST[i]) feed(INTEREST[i], 'interest', i, 0.8);
+  for (const g of me.goals ?? []) { const x = GOAL[g]; if (!x) continue; if (x.topics) feed(x.topics, 'goal', g); for (const [k, w] of Object.entries(x.types ?? {})) types[k as RecType] = (types[k as RecType] ?? 0) + w!; }
+  for (const i of me.interests ?? []) if (INTEREST[i]) feed(INTEREST[i], 'interest', i, 0.8);
   for (const r of me.canOffer) if (ROLE[r]) feed(ROLE[r], 'role', r, 0.8);
   for (const r of me.lookingFor) if (ROLE[r]) feed(ROLE[r], 'role', r, 0.4);
-  const about = [me.bio, me.likes, me.freeTime, me.nowWant, ...me.prompts.map((p) => p.answer), me.hotTake?.text].filter(Boolean).join(' · ');
+  const about = [me.bio, me.likes, me.freeTime, me.nowWant, ...(me.prompts ?? []).map((p) => p.answer), me.hotTake?.text].filter(Boolean).join(' · ');
   feed(topicsOfText(about), 'about', '', 0.7);
 
   // 행동 — 저장·지원한 공고, 가입·팔로우한 조직. 오래된 것은 덜
@@ -154,7 +154,7 @@ export function interestProfile(snap: Snap, me: User, now = new Date()): Interes
     const ty: RecType = o.type; types[ty] = (types[ty] ?? 0) + 0.4 * w;
   }
   for (const org of snap.organizations) {
-    const w = org.memberIds.includes(me.id) || org.adminIds.includes(me.id) ? 2 : org.followerIds.includes(me.id) || org.applicantIds.includes(me.id) || me.interestedOrgIds.includes(org.id) ? 1.4 : 0;
+    const w = org.memberIds.includes(me.id) || org.adminIds.includes(me.id) ? 2 : org.followerIds.includes(me.id) || org.applicantIds.includes(me.id) || !!me.interestedOrgIds?.includes(org.id) ? 1.4 : 0;
     if (!w) continue;
     seen.add(org.id);
     feed(orgVecRaw(org), 'club', org.name, w * 0.6);

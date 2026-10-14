@@ -21,10 +21,10 @@ changes what Lumi collects or who receives it, update the page, this file, and t
 | Profile | `RegisterInput` / `users.update` (`packages/core/src/types/index.ts` `User`) — nickname, birth year (age is shown on profile cards: `PersonPage.tsx`, `HomePage.tsx`), school, role, major, year, emoji avatar + color, bio, likes, free time, interests, purposes, goals, looking-for / can-offer roles, prompt answers, icebreaker answers, "now want", daily answer, housing type + zone, optional height, `gender` (sign-up sets `'private'`; no production screen asks for it) | Postgres `docs` (`users`) | Other signed-in users (see §4 gap 1). OpenAI for AI features (below). |
 | Photos | **None uploaded.** Avatars are emoji + hue. `avatar.url`/`photos` are only bundled stock images on sample profiles (`apps/mobile/src/photos.ts`, `public/photos`). No `<input type=file>`, camera or photo-library code exists. | — | — |
 | Voice prompt | UI timer only — stores `durationSec`, no audio (`src/components/prompts/PromptComponents.tsx`) | `users` | — |
-| Timetable | Courses added by the student (name, days/times, room, instructor, section, term) | `users.timetable` | Others get busy blocks only — names/rooms stripped (`server/view.ts` `busyOnly`). Class rosters show "takes this class" to verified classmates unless `showToClassmates` is off. |
+| Timetable | Courses added by the student (name, days/times, room, instructor, section, term) | `users.timetable` | Others get busy blocks only, and only within `fieldVisibility.timetable` — names/rooms stripped (`packages/core/src/lib/privacy.ts` `profileFor`, applied in `server/view.ts`). Class rosters show "takes this class" to verified classmates unless `showToClassmates` is off. |
 | Location | **No device location.** No `navigator.geolocation`, no expo-location. `settings.locationPermission` is just a stored preference toggle (`SettingsPage.tsx`). Event/ride places are picked from presets or typed. | — | Map tiles from CARTO (`src/pages/map/MapPage.tsx` `TILE_URL`) — CARTO sees IP + map area viewed. |
 | Posts, comments, meetups, participations, proposals, plans/votes, rides (preset pickup, destination, time, seats, optional cost + note), chats/messages, friend requests, follows, likes, saves, RSVPs, icebreaker games | RPC `POST /api/rpc/:group/:method` | Postgres `docs` | Other users per feature. Messages are stored in plain text (not end-to-end encrypted). |
-| Anonymous posts | `post.anonymous` | `posts.authorId` is stored | UI hides the author; see §4 gap 1. |
+| Anonymous posts | `post.anonymous` | `posts.authorId` is stored | Server removes `authorId` (and commenters' ids) for everyone but the author — `privacy.ts` `postFor`. Only the school name is sent. |
 | Blocks, reports | `relationships.block`, `reports.create` (`packages/core/src/api/engine.ts`) | `docs` | Reports go to the DB only (see §4 gap 2). |
 | Seat alerts, dining favorites, gym alerts | `server/seats.ts`, `server/dining.ts`, `server/gym.ts` | `docs` (`seatWatches`, `diningFavorites`, `gymAlerts`) | — (delivered as in-app notifications) |
 | Link-plan guests (`/p/<id>`) | First name typed by a person without an account + random device token, stored hashed (`packages/core/src/types` `PlanResponse.tokenHash`, `server/plans.ts`) | `timePolls` | Host and Lumi responders (never the hash). |
@@ -123,11 +123,15 @@ permissions. Any added SDK (push, crash reporting, analytics) changes these answ
 
 ## 4. Gaps found in the audit (fix before launch)
 
-1. **Visibility is enforced only in the UI.** `server/view.ts` `snapshotFor` sends every user's full profile
-   (bio, likes, prompts, birth year, height, settings…) to every signed-in user regardless of
-   `fieldVisibility`, sends the whole `relationships` object (including private "likes" and other people's
-   blocks), and sends `authorId` of anonymous posts. The Privacy Policy says sections are shown only to the
-   audience you choose and anonymous posts don't show your name — the server must strip these per viewer.
+1. ~~**Visibility is enforced only in the UI.**~~ Fixed: `server/view.ts` now applies
+   `packages/core/src/lib/privacy.ts` to every snapshot and patch — profile sections outside `fieldVisibility`
+   aren't sent (key absent), nor gender, saved clubs, meet preferences or settings; hidden school/major are
+   dropped; relationships are only the viewer's own (received likes only when mutual, blocks only the viewer's,
+   people who blocked the viewer aren't sent); anonymous posts lose `authorId`; likes/saves are the viewer's own
+   plus a count; posts/meetups outside their visibility, other people's pending requests, club applicants,
+   others' saved listings and other people's time polls aren't sent. Tests: `server/privacy.test.ts`.
+   Still always visible by design: nickname, avatar, age (birth year), year, region, looking-for/can-offer
+   roles, "now want", and club member/follower lists.
 2. **Reports reach nobody.** `reports.create` only writes to the DB; there is no alert email and no admin
    list/action endpoint on this branch, so the "review within 24 hours" promise (Terms, review notes) can't be
    kept. Needed: report alert (e.g. Resend to an ops address), an admin view, and remove-content / suspend-user.

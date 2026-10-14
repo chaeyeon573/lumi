@@ -7,7 +7,7 @@ import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { ALL_AVAILABILITY, ALL_INTERESTS, ALL_PURPOSES, AVAILABILITY_LABELS, INTEREST_EMOJI, INTEREST_LABELS, PURPOSE_LABELS } from '@core/lib/labels';
-import type { Availability, Interest, ProfileField, Purpose, User } from '@core/types';
+import type { Availability, Interest, ProfileField, Purpose, Self } from '@core/types';
 import { cn } from '@core/lib/cn';
 
 const EMOJIS = ['🙂', '😎', '🧑‍💻', '👩‍🎨', '🧑‍🔬', '🏃', '🎸', '📚', '🌱', '🎨', '🚀', '🧗', '☕', '🐱', '🦊', '🎧'];
@@ -17,9 +17,9 @@ export function EditProfilePage() {
   const v = useViewer();
   const run = useAppStore((s) => s.run);
   const me = v.me;
-  const [form, setForm] = useState<User>(() => structuredClone(me));
+  const [form, setForm] = useState<Self>(() => structuredClone(me));
   const [busy, setBusy] = useState(false);
-  const patch = (p: Partial<User>) => setForm((f) => ({ ...f, ...p }));
+  const patch = (p: Partial<Self>) => setForm((f) => ({ ...f, ...p }));
   const toggle = <T,>(arr: T[], x: T) => (arr.includes(x) ? arr.filter((i) => i !== x) : [...arr, x]);
   const fv = (k: ProfileField) => <VisibilityPicker compact value={form.fieldVisibility[k]} onChange={(vis) => patch({ fieldVisibility: { ...form.fieldVisibility, [k]: vis } })} />;
   const aff = form.affiliation.type === 'university' ? form.affiliation : null;

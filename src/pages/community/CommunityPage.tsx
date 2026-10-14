@@ -12,6 +12,7 @@ import { ALL_POST_TYPES, POST_TYPE_LABELS } from '@core/lib/labels';
 import { relativeTime } from '@core/lib/format';
 import { cn } from '@core/lib/cn';
 import type { PostType, Post } from '@core/types';
+import { likeCount } from '@core/lib/privacy';
 import { BrowseTab } from './BrowseTab';
 import { TodaysQuestion, QuietInvite, MeanwhileThisWeek } from '@/components/together/FeedExtras';
 
@@ -74,7 +75,7 @@ function FeedTab() {
         <span className="flex-1 min-w-0">
           <span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{name}</span>{p.postType && p.postType !== 'story' && <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{POST_TYPE_LABELS[p.postType]}</span>}<span className="text-[12px] text-ink-3 ml-auto shrink-0">{relativeTime(p.createdAt)}</span></span>
           <span className="block text-[14px] text-ink-2 truncate mt-0.5">{p.text}</span>
-          <span className="flex items-center gap-3 text-[12px] text-ink-3 mt-1"><span className="flex items-center gap-1"><Heart size={12} />{p.likeIds.length}</span><span className="flex items-center gap-1"><MessageCircle size={12} />{p.comments.length}</span></span>
+          <span className="flex items-center gap-3 text-[12px] text-ink-3 mt-1"><span className="flex items-center gap-1"><Heart size={12} />{likeCount(p)}</span><span className="flex items-center gap-1"><MessageCircle size={12} />{p.comments.length}</span></span>
         </span>
         {p.media[0] && <Cover emoji={p.media[0].emoji} hue={p.media[0].hue} url={p.media[0].url} className="h-14 w-14 rounded-2xl shrink-0" size={20} />}
       </button>

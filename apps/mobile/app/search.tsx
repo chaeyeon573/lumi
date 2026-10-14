@@ -22,7 +22,7 @@ export default function SearchScreen() {
   const orgs = useAppStore((s) => s.organizations);
   const norm = q.trim().toLowerCase();
   const acts = v.visibleActivities.filter((a) => !norm || a.title.toLowerCase().includes(norm) || a.description.toLowerCase().includes(norm) || a.place.name.toLowerCase().includes(norm));
-  const people = v.visibleUsers.filter((u) => !norm || u.nickname.includes(norm) || (u.affiliation.type === 'university' && u.affiliation.department.includes(norm)) || u.interests.some((i) => INTEREST_LABELS[i].includes(norm)));
+  const people = v.visibleUsers.filter((u) => !norm || u.nickname.includes(norm) || (u.affiliation.type === 'university' && !!u.affiliation.department?.includes(norm)) || (u.interests ?? []).some((i) => INTEREST_LABELS[i].includes(norm)));
   const orgList = orgs.filter((o) => !norm || o.name.toLowerCase().includes(norm) || o.description.includes(norm));
   return (
     <Screen title={t('검색')} right={<IconBtn onPress={() => nav('/chats')}><MessageCircle size={22} color={C.ink2} /></IconBtn>}>

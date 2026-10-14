@@ -63,8 +63,8 @@ export function ClassRoom({ enrollment, roster, onGo }: { enrollment: Enrollment
   const freeAfter = useMemo(() => {
     const meetings = enrollment.meetings;
     return members.flatMap(({ u }) => {
-      if (!u.timetable.length || !v.canSeeField(u, 'timetable')) return [];
-      const days = [...new Set(meetings.filter((c) => freeBlocks(u.timetable, c.day).some((b) => b.start <= toMin(c.end) && b.end - toMin(c.end) >= 60)).map((c) => c.day))];
+      if (!u.timetable?.length || !v.canSeeField(u, 'timetable')) return [];
+      const days = [...new Set(meetings.filter((c) => freeBlocks(u.timetable ?? [], c.day).some((b) => b.start <= toMin(c.end) && b.end - toMin(c.end) >= 60)).map((c) => c.day))];
       return days.length ? [{ u, days }] : [];
     });
   }, [members, enrollment, v]);

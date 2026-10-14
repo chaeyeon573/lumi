@@ -233,7 +233,7 @@ export function rideTitle(r: Pick<Ride, 'kind' | 'schoolId' | 'to' | 'toCustom' 
 }
 
 // ─── Who can use rides ───────────────────────────────────────────────────────
-export const schoolOf = (u?: Pick<User, 'affiliation'>) => (u?.affiliation.type === 'university' ? u.affiliation.schoolId : '');
+export const schoolOf = (u?: Pick<User, 'affiliation'>) => (u?.affiliation.type === 'university' ? u.affiliation.schoolId ?? '' : '');
 /** The "verified student" mark: school email checked by the server, not a sample profile */
 export const isVerifiedStudent = (u?: Pick<User, 'affiliation' | 'sample'>) => !!u && u.affiliation.type === 'university' && u.affiliation.emailVerified && !u.sample;
 

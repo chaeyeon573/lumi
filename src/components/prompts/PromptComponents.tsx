@@ -5,6 +5,7 @@ import type { PollPrompt, ProfilePrompt, VoicePrompt } from '@core/types';
 import { BottomSheet, Chip, Textarea, Tag } from '@/components/ui';
 import { TEXT_PROMPTS, VOICE_PROMPTS, POLL_PROMPTS, PROMPT_CATEGORY_LABELS, questionById, pollById, MAX_TEXT_PROMPTS, REQUIRED_TEXT_PROMPTS, REQUIRED_SLOTS, FIRST_PROMPT_ID, slotCategories, normalizePrompts, type PromptCategory } from '@core/data/prompts';
 import { cn } from '@core/lib/cn';
+import { pollCounts } from '@core/lib/privacy';
 
 // ─── 텍스트 질문 편집 ──────────────────────────────────────────────────────
 export function PromptEditor({ value, onChange }: { value: ProfilePrompt[]; onChange: (v: ProfilePrompt[]) => void }) {
@@ -150,7 +151,8 @@ export function PollEditor({ value, onChange }: { value?: PollPrompt; onChange: 
 /** 다른 사람 프로필에서 보는 투표 카드 */
 export function PollCard({ poll, ownerName, myVote, onVote, isMine }: { poll: PollPrompt; ownerName: string; myVote?: number; onVote?: (i: number) => void; isMine?: boolean }) {
   const q = pollById(poll.questionId);
-  const counts = poll.options.map((_, i) => Object.values(poll.votes).filter((v) => v === i).length);
+  // 다른 사람 투표는 서버가 집계(tally)만 보낸다 — 누가 무엇을 골랐는지는 오지 않는다
+  const counts = pollCounts(poll);
   const total = counts.reduce((a, b) => a + b, 0);
   const voted = myVote !== undefined || isMine;
   return (

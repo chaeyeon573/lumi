@@ -11,8 +11,8 @@ export function affiliationText(u: User, showSchoolOverride?: boolean) {
   if (u.affiliation.type !== 'university') return u.affiliation.companyName;
   const a = u.affiliation;
   const parts: string[] = [];
-  if (showSchoolOverride ?? a.showSchool) parts.push(a.schoolName);
-  if (a.showDepartment) parts.push(a.department);
+  if ((showSchoolOverride ?? a.showSchool) && a.schoolName) parts.push(a.schoolName);
+  if (a.showDepartment && a.department) parts.push(a.department);
   parts.push(ROLE_LABELS[a.role]);
   return parts.join(' · ');
 }

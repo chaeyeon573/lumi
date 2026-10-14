@@ -24,23 +24,23 @@ export function matchReasons(me: User, other: User, snap: ReasonSnap, canSeeTime
   if (roleMatch.length) out.push({ kind: 'role', weight: 4, text: `${t('당신이 찾는 ')}${PERSON_ROLE_LABELS[roleMatch[0]]}${t(' 역할을 할 수 있어요')}` });
   const roleMatch2 = me.canOffer.filter((r) => other.lookingFor.includes(r));
   if (roleMatch2.length) out.push({ kind: 'role', weight: 3, text: `${PERSON_ROLE_LABELS[roleMatch2[0]]}${t('을(를) 찾고 있어요')}` });
-  const goals = me.goals.filter((g) => other.goals.includes(g));
+  const goals = (me.goals ?? []).filter((g) => (other.goals ?? []).includes(g));
   if (goals.length) out.push({ kind: 'goal', weight: 3, text: `${t('이번 학기 목표가 같아요: ')}${goals.slice(0, 2).map((g) => GOAL_LABELS[g]).join(', ')}` });
-  if (canSeeTimetable && me.timetable.length && other.timetable.length) {
+  if (canSeeTimetable && me.timetable?.length && other.timetable?.length) {
     const ov = overlapBlocks(freeBlocks(me.timetable, todayIdx()), freeBlocks(other.timetable, todayIdx()));
     if (ov.length) { const b = ov.sort((a, c) => (c.end - c.start) - (a.end - a.start))[0]; out.push({ kind: 'time', weight: 3, text: `${t('오늘 ')}${fmtBlock(b)}${t(' 공강이 겹쳐요')}` }); }
   }
   if (me.living && other.living && me.living.zone === other.living.zone) out.push({ kind: 'living', weight: 2, text: `${t('같은 생활권이에요 (')}${me.living.zone})` });
-  const interests = me.interests.filter((i) => other.interests.includes(i));
+  const interests = (me.interests ?? []).filter((i) => (other.interests ?? []).includes(i));
   if (interests.length >= 2) out.push({ kind: 'interest', weight: 2, text: `${interests.slice(0, 3).map((i) => INTEREST_LABELS[i]).join('·')}${t('에 관심')}` });
   const sharedCourse = sharedClassWith(snap.classRosters, other.id);
   if (sharedCourse) out.push({ kind: 'class', weight: 3, text: `${t('같은 수업을 들어요: ')}${sharedCourse.code}` });
   if (me.affiliation.type === 'university' && other.affiliation.type === 'university') {
-    if (me.affiliation.schoolId === other.affiliation.schoolId) out.push({ kind: 'school', weight: 1, text: t('같은 학교') });
-    if (me.affiliation.department !== other.affiliation.department && interests.length === 0) out.push({ kind: 'new', weight: 1, text: `${t('다른 분야 (')}${other.affiliation.department})` });
+    if (me.affiliation.schoolId && me.affiliation.schoolId === other.affiliation.schoolId) out.push({ kind: 'school', weight: 1, text: t('같은 학교') });
+    if (me.affiliation.department && other.affiliation.department && me.affiliation.department !== other.affiliation.department && interests.length === 0) out.push({ kind: 'new', weight: 1, text: `${t('다른 분야 (')}${other.affiliation.department})` });
   }
   // 어떤 사람을 만나고 싶은지에 따라 가중치 조정
-  const pref = me.meetPreference;
+  const pref = me.meetPreference ?? [];
   if (pref.length) {
     const boost: Record<string, number> = { same_hobby: pref.includes('same_hobby') ? 2 : 1, same_class: pref.includes('same_class') ? 2 : 1, same_goal: pref.includes('same_goal') ? 2 : 1, same_living: pref.includes('same_living') ? 2 : 1, new_people: pref.includes('new_people') ? 2 : 1 };
     const kindToPref: Record<string, string> = { interest: 'same_hobby', class: 'same_class', goal: 'same_goal', opportunity: 'same_goal', role: 'same_goal', living: 'same_living', new: 'new_people' };
@@ -68,12 +68,12 @@ export function matchScore(me: User, other: User, snap: ReasonSnap, canSeeTimeta
 export function opportunityScore(me: User, o: Opportunity, intents: OpportunityIntentRecord[]) {
   let s = 0;
   const reasons: string[] = [];
-  const g = o.goals.filter((x) => me.goals.includes(x));
+  const g = o.goals.filter((x) => (me.goals ?? []).includes(x));
   if (g.length) { s += 5; reasons.push(`${t('목표: ')}${GOAL_LABELS[g[0]]}`); }
-  const it = o.interests.filter((x) => me.interests.includes(x));
+  const it = o.interests.filter((x) => (me.interests ?? []).includes(x));
   if (it.length) { s += 2 * it.length; reasons.push(`${t('관심사: ')}${it.map((i) => INTEREST_LABELS[i]).join('·')}`); }
   if (o.rolesNeeded?.some((r) => me.canOffer.includes(r))) { s += 3; reasons.push(`${PERSON_ROLE_LABELS[o.rolesNeeded.find((r) => me.canOffer.includes(r))!]}${t(' 역할 필요')}`); }
-  if (o.orgId && me.interestedOrgIds.includes(o.orgId)) { s += 4; reasons.push(t('관심 조직')); }
+  if (o.orgId && me.interestedOrgIds?.includes(o.orgId)) { s += 4; reasons.push(t('관심 조직')); }
   if (o.schoolId && me.affiliation.type === 'university' && o.schoolId === me.affiliation.schoolId) s += 1;
   const peers = intents.filter((i) => i.opportunityId === o.id && i.userId !== me.id).length;
   s += Math.min(peers, 5) * 0.3;

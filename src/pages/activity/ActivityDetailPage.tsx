@@ -81,7 +81,7 @@ export function ActivityDetailPage() {
         <div className="card mt-3 overflow-hidden">
           <div className="h-[160px]">
             <MapContainer center={[a.place.lat, a.place.lng]} zoom={16} className={`h-full w-full z-0 ${TILES_ENABLED ? '' : 'no-tiles'}`} zoomControl={false} dragging={false} scrollWheelZoom={false} doubleClickZoom={false} attributionControl={false}>
-              {TILES_ENABLED ? <TileLayer url={TILE_URL} /> : <LandmarkLayer schoolId={host?.affiliation.type === 'university' ? host.affiliation.schoolId : (lang === 'en' ? 's_berkeley' : 's_yonsei')} />}
+              {TILES_ENABLED ? <TileLayer url={TILE_URL} /> : <LandmarkLayer schoolId={(host?.affiliation.type === 'university' ? host.affiliation.schoolId : undefined) ?? (lang === 'en' ? 's_berkeley' : 's_yonsei')} />}
               <Marker position={[a.place.lat, a.place.lng]} icon={L.divIcon({ className: 'leaflet-div-icon', html: `<div class="au-marker" style="background:${color}"><span>${CATEGORY_EMOJI[a.category]}</span></div>`, iconSize: [36, 36], iconAnchor: [18, 34] })} />
             </MapContainer>
           </div>

@@ -47,7 +47,7 @@ export const codeFromSlug = (slug: string) => { const m = /^([a-z&]+)(c?\d.*)$/i
 /** 어느 쪽이든 차단했으면 true */
 const isBlocked = (db: Pick<Snapshot, 'relationships'>, a: ID, b: ID) => db.relationships.blocks.some((x) => (x.fromId === a && x.toId === b) || (x.fromId === b && x.toId === a));
 
-export const schoolOf = (u: Pick<User, 'affiliation'>): ID => (u.affiliation.type === 'university' ? u.affiliation.schoolId : '');
+export const schoolOf = (u: Pick<User, 'affiliation'>): ID => (u.affiliation.type === 'university' ? u.affiliation.schoolId ?? '' : '');
 export const showsToClassmates = (u: Pick<User, 'showToClassmates'>) => u.showToClassmates !== false;
 /** 학교 이메일을 인증한 학생만 같은 수업 명단에 들어가고 명단을 본다 — 아무나 수업을 추가해 명단을 엿보지 못하게. 예시 프로필은 데모용으로 허용 */
 export const verifiedForClassmates = (u: Pick<User, 'affiliation' | 'sample'>) => u.affiliation.type === 'university' && (!!u.affiliation.emailVerified || !!u.sample);
@@ -59,7 +59,7 @@ export function enrollments(u: Pick<User, 'affiliation' | 'timetable'>, now: Dat
   const schoolId = schoolOf(u);
   if (!schoolId) return [];
   const out = new Map<string, Enrollment>();
-  for (const c of u.timetable) {
+  for (const c of u.timetable ?? []) {
     const code = courseCodeOf(c);
     if (!code) continue;
     const term = courseTermOf(c, now);
@@ -72,7 +72,7 @@ export function enrollments(u: Pick<User, 'affiliation' | 'timetable'>, now: Dat
 }
 
 /** 같은 학기 수업만으로 하루 공강 (다음 학기 수업이 섞여 있어도 이번 학기 기준) */
-const termCourses = (u: Pick<User, 'timetable'>, term: string, now: Date) => u.timetable.filter((c) => courseTermOf(c, now) === term);
+const termCourses = (u: Pick<User, 'timetable'>, term: string, now: Date) => (u.timetable ?? []).filter((c) => courseTermOf(c, now) === term);
 
 // ─── 수업별 학생 목록 ───────────────────────────────────────────────────────
 export interface ClassMember { userId: ID; section?: string; sample: boolean }
@@ -131,7 +131,7 @@ export function classRostersFor(db: RosterDb, viewerId: ID, now: Date = new Date
 
 /** 내 시간표의 수업 이름 → 그 수업 목록 */
 export function rosterForCourse(rosters: ClassRoster[] | undefined, me: Pick<User, 'affiliation' | 'timetable'>, courseName: string, now: Date = new Date()): ClassRoster | undefined {
-  const c = me.timetable.find((x) => x.name === courseName);
+  const c = me.timetable?.find((x) => x.name === courseName);
   const code = c && courseCodeOf(c);
   if (!c || !code) return undefined;
   return rosters?.find((r) => r.id === classKey(schoolOf(me), code, courseTermOf(c, now)));

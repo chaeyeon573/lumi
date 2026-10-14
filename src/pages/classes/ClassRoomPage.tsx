@@ -9,6 +9,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { BookOpen, Coffee, Handshake, Lock } from 'lucide-react';
 import { lang } from '@core/i18n';
 import type { ClassRoomInfo } from '@core/api/types';
+import type { Self } from '@core/types';
 import { api, apiMode } from '@core/api';
 import { useAppStore } from '@core/store/useAppStore';
 import { TopBar } from '@/components/layout/TopBar';
@@ -47,7 +48,7 @@ export function ClassRoomPage() {
   const users = useAppStore((s) => s.users);
   const rosters = useAppStore((s) => s.classRosters);
   const run = useAppStore((s) => s.run);
-  const me = users.find((u) => u.id === meId);
+  const me = users.find((u) => u.id === meId) as Self | undefined;
   const [info, setInfo] = useState<ClassRoomInfo | null | undefined>(undefined);
   const [busy, setBusy] = useState(false);
 

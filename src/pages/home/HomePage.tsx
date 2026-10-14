@@ -48,9 +48,9 @@ export function HomePage() {
     if (f.years.length && !f.years.includes(yearOf(u))) return false;
     if (f.sameDept && !(u.affiliation.type === 'university' && u.affiliation.department === myDept)) return false;
     if (f.sameClass && !sharedClassWith(v.snap.classRosters, u.id)) return false;
-    if (f.freeNow && !((u.timetable.length && v.canSeeField(u, 'timetable')) ? statusNow(u.timetable).kind === 'free' : u.availability === 'now')) return false;
-    if (f.interests.length && !f.interests.some((i) => u.interests.includes(i))) return false;
-    if (f.goals.length && !f.goals.some((g) => u.goals.includes(g))) return false;
+    if (f.freeNow && !((u.timetable?.length && v.canSeeField(u, 'timetable')) ? statusNow(u.timetable ?? []).kind === 'free' : u.availability === 'now')) return false;
+    if (f.interests.length && !f.interests.some((i) => u.interests?.includes(i))) return false;
+    if (f.goals.length && !f.goals.some((g) => u.goals?.includes(g))) return false;
     return true;
   };
   const cards = scored.filter((x) => passes(x.u)).sort((a, b) => b.score - a.score).slice(0, 20);
@@ -213,12 +213,12 @@ export function PersonSlide({ user, reasons, onOpen }: { user: User; reasons: Re
   const [pi, setPi] = useState(0);
   const photos = user.photos?.length ? user.photos : user.avatar.url ? [user.avatar.url] : [];
   const common = commonInterests(v.me, user);
-  const want = v.canSeeField(user, 'prompts') && user.prompts[0]?.answer ? user.prompts[0].answer : user.nowWant;
+  const want = v.canSeeField(user, 'prompts') && user.prompts?.[0]?.answer ? user.prompts[0].answer : user.nowWant;
   const reason = shareableReasons(reasons)[0];
   const dept = user.affiliation.type === 'university' && user.affiliation.showDepartment ? user.affiliation.department : '';
-  const canSeeTT = user.timetable.length > 0 && v.canSeeField(user, 'timetable');
-  const st = canSeeTT ? statusNow(user.timetable) : null;
-  const block = canSeeTT ? freeBlocks(user.timetable, todayIdx()).find((b) => b.end > nowMin()) : null;
+  const canSeeTT = !!user.timetable?.length && v.canSeeField(user, 'timetable');
+  const st = canSeeTT ? statusNow(user.timetable ?? []) : null;
+  const block = canSeeTT ? freeBlocks(user.timetable ?? [], todayIdx()).find((b) => b.end > nowMin()) : null;
   const freeLabel = st?.kind === 'free' && block ? `${t('공강')} ${fmtBlock({ start: Math.max(block.start, nowMin()), end: block.end })}` : user.availability === 'now' ? t('지금 가능') : null;
   const tap = (e: React.MouseEvent<HTMLDivElement>) => {
     const r = e.currentTarget.getBoundingClientRect(); const x = e.clientX - r.left;
@@ -238,9 +238,9 @@ export function PersonSlide({ user, reasons, onOpen }: { user: User; reasons: Re
       <div className="absolute inset-x-0 bottom-0 p-6 pointer-events-none">
         {user.sample && <span className="inline-flex mb-1.5 h-6 px-2.5 rounded-full bg-white/20 backdrop-blur text-[11px] font-semibold items-center">{lang === 'en' ? 'Sample profile' : '예시 프로필'}</span>}
         <div className="flex items-baseline gap-2"><h2 className="font-display text-[30px] leading-tight font-bold v2:font-extrabold v2:text-[28px]">{user.nickname}</h2><span className="text-[22px] opacity-90 v2:font-display v2:text-[20px] v2:opacity-60">{new Date().getFullYear() - user.birthYear + 1}</span></div>
-        <div className="text-[15px] text-accent v2:text-ink-2 v2:text-[14px]">{dept}{gradYear(user) ? ` • ${user.affiliation.type === 'university' && user.affiliation.showSchool ? user.affiliation.schoolName.replace(/대학교|University|UC /g, '').trim() : ''} ${gradYear(user)}` : ''}</div>
+        <div className="text-[15px] text-accent v2:text-ink-2 v2:text-[14px]">{dept}{gradYear(user) ? ` • ${user.affiliation.type === 'university' && user.affiliation.showSchool && user.affiliation.schoolName ? user.affiliation.schoolName.replace(/대학교|University|UC /g, '').trim() : ''} ${gradYear(user)}` : ''}</div>
         {(want || reason) && <div className="mt-2.5 inline-flex items-center gap-2 max-w-full h-9 px-3.5 rounded-full bg-white/15 backdrop-blur text-[13px] font-medium v2:bg-pink-900/90 v2:border v2:border-pink-800"><Zap size={15} className="text-accent shrink-0 v2:text-pink-300" /><span className="truncate">{want ?? reason?.text}</span></div>}
-        <div className="mt-3 flex flex-wrap gap-1.5">{(common.length ? common : user.interests).slice(0, 3).map((i) => <span key={i} className="h-8 px-3.5 rounded-full bg-primary-soft text-primary text-[12px] font-semibold flex items-center v2:bg-surface-2/90 v2:text-ink v2:border v2:border-line">{INTEREST_LABELS[i]}</span>)}</div>
+        <div className="mt-3 flex flex-wrap gap-1.5">{(common.length ? common : user.interests ?? []).slice(0, 3).map((i) => <span key={i} className="h-8 px-3.5 rounded-full bg-primary-soft text-primary text-[12px] font-semibold flex items-center v2:bg-surface-2/90 v2:text-ink v2:border v2:border-line">{INTEREST_LABELS[i]}</span>)}</div>
       </div>
     </article>
   );

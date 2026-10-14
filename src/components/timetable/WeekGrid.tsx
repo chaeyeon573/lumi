@@ -4,7 +4,7 @@ import { CATEGORY_COLORS, CATEGORY_EMOJI } from '@core/lib/labels';
 import { cn } from '@core/lib/cn';
 import { useDesign } from '@/lib/design';
 
-type Course = User['timetable'][number];
+type Course = NonNullable<User['timetable']>[number];
 /** 한 시간 높이 — 에브리타임처럼 크게 (수업 이름·강의실·시간이 한눈에) */
 const HOUR_PX = 62;
 

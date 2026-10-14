@@ -102,8 +102,13 @@ export function createEngine(ctx: EngineContext) {
     // 수락된 경우에만 요청자에게 알림
     const other = find(db().users, req.toId);
     const nts = [notify(req.fromId, { type: 'friend_accepted', title: t('친구 요청이 수락되었어요'), body: `${other.nickname}${t('님과 친구가 되었어요. 이제 메시지를 보낼 수 있어요.')}`, link: `/users/${other.id}` })];
-    return { relationships: r, notifications: nts };
+    return { relationships: r, notifications: nts, users: pair(req.fromId, req.toId) };
   }
+  /**
+   * 친구·팔로우·차단이 바뀌면 두 사람 프로필도 같이 보낸다 — 서버는 보는 사람마다 공개 범위를 다시 계산해
+   * 새로 열린 항목을 보내고 닫힌 항목은 지운다 (server/view.ts · lib/privacy)
+   */
+  function pair(a: ID, b: ID): User[] { return db().users.filter((u) => u.id === a || u.id === b); }
 
   const later = (ms: number, fn: () => void) => { if (ctx.demo) setTimeout(fn, ms); };
 
@@ -149,7 +154,7 @@ export function createEngine(ctx: EngineContext) {
     }
     return out as Patch;
   }
-  const schoolOf = (u: User) => (u.affiliation.type === 'university' ? u.affiliation.schoolId : '');
+  const schoolOf = (u: User) => (u.affiliation.type === 'university' ? u.affiliation.schoolId ?? '' : '');
 
   const api = {
     find,
@@ -195,8 +200,8 @@ export function createEngine(ctx: EngineContext) {
     users: {
       update(id: ID, patch: Partial<User>): Patch {
         const u = find(db().users, id);
-        // id·생성일은 바꿀 수 없다
-        const { id: _i, createdAt: _c, ...rest } = patch;
+        // id·생성일은 바꿀 수 없다. 서버가 보는 사람마다 계산해 붙이는 값(viewable·함께 아는 친구 수)은 저장하지 않는다
+        const { id: _i, createdAt: _c, viewable: _v, mutualFriendCount: _m, ...rest } = patch;
         const gameErr = gameProfileError(rest);
         if (gameErr) throw new Error(gameErr);
         // 게임 항목은 저장 시각을 서버가 찍는다
@@ -379,7 +384,7 @@ export function createEngine(ctx: EngineContext) {
           const me = find(db().users, fromId);
           nts.push(notify(toId, { type: 'follow', title: t('새 팔로워'), body: `${me.nickname}${t('님이 회원님을 팔로우하기 시작했어요.')}`, link: `/users/${fromId}` }));
         }
-        return { relationships: r, organizations: orgs, notifications: nts };
+        return { relationships: r, organizations: orgs, notifications: nts, ...(targetType === 'user' ? { users: pair(fromId, toId) } : {}) };
       },
       sendFriendRequest(fromId: ID, toId: ID): Patch {
         const r = db().relationships;
@@ -404,7 +409,7 @@ export function createEngine(ctx: EngineContext) {
         const r = db().relationships;
         const k = pairKey(a, b);
         r.friends = r.friends.filter((f) => pairKey(f.a, f.b) !== k);
-        return { relationships: r };
+        return { relationships: r, users: pair(a, b) };
       },
       block(fromId: ID, toId: ID): Patch {
         const r = db().relationships;
@@ -414,12 +419,12 @@ export function createEngine(ctx: EngineContext) {
         r.follows = r.follows.filter((f) => !(f.fromId === fromId && f.toId === toId) && !(f.fromId === toId && f.toId === fromId));
         r.likes = r.likes.filter((l) => !(l.fromId === fromId && l.toId === toId) && !(l.fromId === toId && l.toId === fromId));
         r.friendRequests = r.friendRequests.filter((q) => pairKey(q.fromId, q.toId) !== k);
-        return { relationships: r };
+        return { relationships: r, users: pair(fromId, toId) };
       },
       unblock(fromId: ID, toId: ID): Patch {
         const r = db().relationships;
         r.blocks = r.blocks.filter((b) => !(b.fromId === fromId && b.toId === toId));
-        return { relationships: r };
+        return { relationships: r, users: pair(fromId, toId) };
       },
     },
 
@@ -596,7 +601,7 @@ export function createEngine(ctx: EngineContext) {
           if (poll.status !== 'open' || poll.votes[inviteeId]) return;
           const u = db().users.find((x) => x.id === inviteeId); if (!u) return;
           const ok = poll.options.filter((o) => {
-            if (!u.timetable.length) return Math.random() < 0.6;
+            if (!u.timetable?.length) return Math.random() < 0.6;
             const day = jsDayToIdx(new Date(`${o.date}T12:00:00`).getDay());
             return freeBlocks(u.timetable, day).some((b) => b.start <= toMin(o.startTime) && b.end >= toMin(o.endTime));
           }).map((o) => o.id);

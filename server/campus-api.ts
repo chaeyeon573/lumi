@@ -31,7 +31,7 @@ export interface CampusDeps {
 }
 
 const MAX_WATCHES = 25;
-const schoolOfUser = (u?: User) => (u?.affiliation.type === 'university' ? u.affiliation.schoolId : '');
+const schoolOfUser = (u?: User) => (u?.affiliation.type === 'university' ? u.affiliation.schoolId ?? '' : '');
 
 export function createCampusData(store: Store) {
   let dates: AcademicDate[] = [];

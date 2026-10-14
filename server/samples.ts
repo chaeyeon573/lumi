@@ -60,7 +60,7 @@ export function hiddenSamplesFor(db: Pick<Snapshot, 'users' | 'activities' | 'po
   const opportunities = demo ? NONE : SAMPLE_OPPORTUNITY_IDS;
   const activities = new Set(db.activities.filter((a) => users.has(a.hostId) || (!demo && !!a.sample) || (!!a.orgId && organizations.has(a.orgId))).map((a) => a.id));
   const rides = new Set((db.rides ?? []).filter((r) => users.has(r.hostId) || (!demo && !!r.sample)).map((r) => r.id));
-  const posts = new Set(db.posts.filter((p) => users.has(p.authorId) || (!!p.orgId && organizations.has(p.orgId))).map((p) => p.id));
+  const posts = new Set(db.posts.filter((p) => (!!p.authorId && users.has(p.authorId)) || (!!p.orgId && organizations.has(p.orgId))).map((p) => p.id));
   const timePolls = new Set(db.timePolls.filter((p) => users.has(p.hostId)).map((p) => p.id));
   const chatRooms = new Set(db.chatRooms.filter((r) => (!!r.activityId && activities.has(r.activityId)) || (!!r.orgId && organizations.has(r.orgId))
     || (!!r.rideId && rides.has(r.rideId)) || (r.type === 'direct' && r.memberIds.some((m) => users.has(m)))).map((r) => r.id));
@@ -71,7 +71,7 @@ export function hiddenSamplesFor(db: Pick<Snapshot, 'users' | 'activities' | 'po
 // ─── 거르기 ────────────────────────────────────────────────────────────────
 /** 바뀐 것이 없으면 같은 배열을 돌려준다 (5만 개 동아리를 매번 복사하지 않게) */
 const dropIds = (ids: ID[] | undefined, h: Set<ID>): ID[] | undefined => (ids?.some((id) => h.has(id)) ? ids.filter((id) => !h.has(id)) : ids);
-const dropAuthored = <T extends Pick<Comment, 'authorId'>>(list: T[], h: Set<ID>) => (list.some((c) => h.has(c.authorId)) ? list.filter((c) => !h.has(c.authorId)) : list);
+const dropAuthored = <T extends Pick<Comment, 'authorId'>>(list: T[], h: Set<ID>) => (list.some((c) => !!c.authorId && h.has(c.authorId)) ? list.filter((c) => !c.authorId || !h.has(c.authorId)) : list);
 function dropKeys<V>(rec: Record<ID, V>, h: Set<ID>): Record<ID, V> {
   if (!Object.keys(rec).some((k) => h.has(k))) return rec;
   return Object.fromEntries(Object.entries(rec).filter(([k]) => !h.has(k)));
@@ -116,7 +116,7 @@ export function stripSamples<T extends Partial<Snapshot> & Pick<Patch, 'removed'
   }
   if (src.participations) out.participations = src.participations.filter((p) => !U.has(p.userId) && !h.activities.has(p.activityId));
   if (src.posts) {
-    out.posts = src.posts.filter((p) => !h.posts.has(p.id) && !U.has(p.authorId) && !(p.orgId && h.organizations.has(p.orgId))).map((p) => {
+    out.posts = src.posts.filter((p) => !h.posts.has(p.id) && !(p.authorId && U.has(p.authorId)) && !(p.orgId && h.organizations.has(p.orgId))).map((p) => {
       const next = { ...p, likeIds: dropIds(p.likeIds, U)!, savedIds: dropIds(p.savedIds, U)!, comments: dropAuthored(p.comments, U), taggedUserIds: dropIds(p.taggedUserIds, U), tagApprovedIds: dropIds(p.tagApprovedIds, U) };
       if (p.relatedActivityId && h.activities.has(p.relatedActivityId)) delete next.relatedActivityId;
       if (p.relatedOpportunityId && h.opportunities.has(p.relatedOpportunityId)) delete next.relatedOpportunityId;

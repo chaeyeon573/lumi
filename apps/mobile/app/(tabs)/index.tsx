@@ -50,10 +50,10 @@ export default function PeopleScreen() {
   const passes = (u: User) => {
     if (f.years.length && !f.years.includes(yearOf(u))) return false;
     if (f.sameDept && !(u.affiliation.type === 'university' && u.affiliation.department === myDept)) return false;
-    if (f.sameClass && !u.timetable.some((c) => me.timetable.some((m) => m.name === c.name))) return false;
-    if (f.freeNow && !((u.timetable.length && v.canSeeField(u, 'timetable')) ? statusNow(u.timetable).kind === 'free' : u.availability === 'now')) return false;
-    if (f.interests.length && !f.interests.some((i) => u.interests.includes(i))) return false;
-    if (f.goals.length && !f.goals.some((g) => u.goals.includes(g))) return false;
+    if (f.sameClass && !(u.timetable ?? []).some((c) => me.timetable.some((m) => m.name === c.name))) return false;
+    if (f.freeNow && !((u.timetable?.length && v.canSeeField(u, 'timetable')) ? statusNow(u.timetable ?? []).kind === 'free' : u.availability === 'now')) return false;
+    if (f.interests.length && !f.interests.some((i) => (u.interests ?? []).includes(i))) return false;
+    if (f.goals.length && !f.goals.some((g) => (u.goals ?? []).includes(g))) return false;
     return true;
   };
   const cards = scored.filter((x) => passes(x.u)).sort((a, b) => b.score - a.score).slice(0, 20);
@@ -70,7 +70,7 @@ export default function PeopleScreen() {
   const current = cards[idx];
   if (current) getPlatform().setItem(LAST_SEEN_KEY, current.u.id);
   const exhausted = !current && cards.length > 0;
-  const onCampus = v.visibleUsers.filter((u) => u.timetable.length ? statusNow(u.timetable).kind !== 'none' : u.availability !== 'hidden').length * 3 + 6;
+  const onCampus = v.visibleUsers.filter((u) => u.timetable?.length ? statusNow(u.timetable ?? []).kind !== 'none' : u.availability !== 'hidden').length * 3 + 6;
 
   const message = async (u: User) => {
     if (!v.canMessage(u.id).ok) { nav(`/users/${u.id}`); return; }
@@ -149,14 +149,14 @@ function PersonSlide({ user, reasons, interactive = true }: { user: User; reason
   const [pi, setPi] = useState(0);
   const photos = user.photos?.length ? user.photos : user.avatar.url ? [user.avatar.url] : [];
   const common = commonInterests(v.me, user);
-  const want = v.canSeeField(user, 'prompts') && user.prompts[0]?.answer ? user.prompts[0].answer : user.nowWant;
+  const want = v.canSeeField(user, 'prompts') && user.prompts?.[0]?.answer ? user.prompts[0].answer : user.nowWant;
   const reason = shareableReasons(reasons)[0];
   const dept = user.affiliation.type === 'university' && user.affiliation.showDepartment ? user.affiliation.department : '';
-  const school = user.affiliation.type === 'university' && user.affiliation.showSchool ? user.affiliation.schoolName.replace(/대학교|University|UC /g, '').trim() : '';
-  const canSeeTT = user.timetable.length > 0 && v.canSeeField(user, 'timetable');
-  const st = canSeeTT ? statusNow(user.timetable) : null;
-  const block = canSeeTT ? freeBlocks(user.timetable, todayIdx()).find((b) => b.end > nowMin()) : null;
-  const freeLabel = block ? `${t('공강')} ${fmtBlock({ start: st?.kind === 'free' ? Math.max(block.start, nowMin()) : block.start, end: block.end })}` : user.availability !== 'hidden' ? AVAILABILITY_LABELS[user.availability] : null;
+  const school = user.affiliation.type === 'university' && user.affiliation.showSchool && user.affiliation.schoolName ? user.affiliation.schoolName.replace(/대학교|University|UC /g, '').trim() : '';
+  const canSeeTT = !!user.timetable?.length && v.canSeeField(user, 'timetable');
+  const st = canSeeTT ? statusNow(user.timetable ?? []) : null;
+  const block = canSeeTT ? freeBlocks(user.timetable ?? [], todayIdx()).find((b) => b.end > nowMin()) : null;
+  const freeLabel = block ? `${t('공강')} ${fmtBlock({ start: st?.kind === 'free' ? Math.max(block.start, nowMin()) : block.start, end: block.end })}` : user.availability && user.availability !== 'hidden' ? AVAILABILITY_LABELS[user.availability] : null;
   const tap = (x: number) => {
     if (justDragged()) return;
     if (photos.length > 1 && x < CARD_W * 0.3) setPi((p) => (p - 1 + photos.length) % photos.length);
@@ -196,7 +196,7 @@ function PersonSlide({ user, reasons, interactive = true }: { user: User; reason
           </View>
         )}
         <View style={[tw`mt-3 flex-row flex-wrap`, { gap: 6 }]}>
-          {(common.length ? common : user.interests).slice(0, 3).map((i) => (
+          {(common.length ? common : user.interests ?? []).slice(0, 3).map((i) => (
             <View key={i} style={tw`h-8 px-3.5 rounded-full bg-primary-soft items-center justify-center`}><Text style={tw`text-[12px] font-semibold text-primary`}>{INTEREST_LABELS[i]}</Text></View>
           ))}
         </View>

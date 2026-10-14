@@ -97,9 +97,9 @@ export function PrivacyPage() {
 
       <H>3. Who can see what</H>
       <UL>
-        <li><B>Other Lumi users</B> see your name, avatar and the profile sections you allow. You choose who sees each section in <B>Settings → Visibility</B>.</li>
+        <li><B>Other Lumi users</B> see your name, avatar, age, year, general area, what you'd like to do right now, the roles you're looking for or can offer, and the profile sections you allow. You choose who sees each section in <B>Settings → Visibility</B>, and can hide your school name and major. Sections someone isn't allowed to see aren't sent to their app at all.</li>
         <li><B>Your timetable:</B> others only see when you're busy or free, never your class names or rooms. Classmates in the same class can see that you take it, unless you turn that off.</li>
-        <li><B>Anonymous posts</B> don't show your name to other users. We still know who wrote them so we can act on reports.</li>
+        <li><B>Anonymous posts</B> don't show your name to other users, and their app isn't told who wrote them (comments on anonymous posts are anonymous too). We still know who wrote them so we can act on reports.</li>
         <li><B>Messages</B> are visible to the people in that chat. They're stored on our servers and aren't end-to-end encrypted, so we can review them when someone reports a problem.</li>
         <li><B>Your email address</B> is never shown to other users.</li>
       </UL>

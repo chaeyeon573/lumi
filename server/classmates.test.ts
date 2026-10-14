@@ -69,13 +69,13 @@ test('membership: only people in the course get its list, and nothing else from 
   for (const viewer of ['u_a', 'u_x', 'u_me']) {
     const s = snapshotFor(d, viewer);
     for (const u of s.users) if (u.id !== viewer) {
-      assert.ok(u.timetable.every((c) => !c.name && !c.room && !c.professor && !c.code && !c.section && !c.url), `${viewer} saw ${u.id}'s course details`);
+      assert.ok((u.timetable ?? []).every((c) => !c.name && !c.room && !c.professor && !c.code && !c.section && !c.url), `${viewer} saw ${u.id}'s course details`);
       assert.equal(u.partnerSearch, undefined); assert.equal(u.showToClassmates, undefined); assert.equal(u.studyGroupOptOut, undefined);
     }
   }
-  // timetable hidden (friends only, not friends) → not even busy blocks
+  // timetable hidden (friends only, not friends) → not even busy blocks (the key isn't sent at all)
   const bOnlyFriends = snapshotFor(d, 'u_x').users.find((u) => u.id === 'u_b')!;
-  assert.deepEqual(bOnlyFriends.timetable, []);
+  assert.equal('timetable' in bOnlyFriends, false);
 });
 
 test('opt-out: "Show me to classmates" off hides me everywhere and hides the list from me', () => {
@@ -102,11 +102,11 @@ test('blocks: blocked pairs never see each other or get grouped', () => {
 test('patches: a timetable change refreshes rosters for classmates only', () => {
   const d = db();
   const u = d.users.find((x) => x.id === 'u_x')!;
-  u.timetable = [...u.timetable, ...cs61a()];
+  u.timetable = [...(u.timetable ?? []), ...cs61a()];
   const patch = { users: [u] };
   const forA = patchFor(patch, 'u_a', d)!;
   assert.ok(forA.classRosters!.find((r) => r.id === KEY)!.members.some((m) => m.userId === 'u_x'));
-  assert.ok(forA.users!.every((x) => x.timetable.every((c) => !c.name)));
+  assert.ok(forA.users!.every((x) => (x.timetable ?? []).every((c) => !c.name)));
 });
 
 test('study groups: 3–4 free classmates, sample/opted-out excluded, then rate-limited', () => {

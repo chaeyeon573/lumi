@@ -1,5 +1,5 @@
 import type {
-  Activity, ActivityProposal, ChatRoom, ID, Notification, Organization, Participation, Post, Relationships, Report, School, User,
+  Activity, ActivityProposal, ChatRoom, ID, Notification, Organization, Participation, Post, Relationships, Report, School, User, Self,
   ActivityCategory, Visibility, JoinPolicy, ActivityKind, Place, ReportTargetType, Availability, Opportunity, OpportunityIntentRecord, OpportunityIntent, Role, TimePoll, TimeOption, Game, GameInput,
   ClassRoster, StudyGroupResponse,
 } from '@core/types';
@@ -44,7 +44,7 @@ export interface RegisterInput {
   email?: string;
   nickname: string;
   birthYear: number;
-  gender: User['gender'];
+  gender: Self['gender'];
   avatar: User['avatar'];
   schoolId: ID;
   role: 'undergraduate' | 'graduate' | 'alumni';
@@ -53,8 +53,8 @@ export interface RegisterInput {
   emailVerified: boolean;
   showSchool: boolean;
   showDepartment: boolean;
-  interests: User['interests'];
-  purposes: User['purposes'];
+  interests: Self['interests'];
+  purposes: Self['purposes'];
   bio: string;
   likes: string;
   freeTime: string;
@@ -62,18 +62,18 @@ export interface RegisterInput {
   availability: Availability;
   preferredPartner?: string;
   fieldVisibility: User['fieldVisibility'];
-  prompts: User['prompts'];
+  prompts: Self['prompts'];
   voicePrompt?: User['voicePrompt'];
   poll?: User['poll'];
-  timetable?: User['timetable'];
-  goals: User['goals'];
+  timetable?: Self['timetable'];
+  goals: Self['goals'];
   lookingFor?: User['lookingFor'];
   canOffer?: User['canOffer'];
   living?: User['living'];
-  meetPreference?: User['meetPreference'];
+  meetPreference?: Self['meetPreference'];
   /** 가입하면서 저장한 동아리 */
   interestedOrgIds?: ID[];
-  locationPermission: User['settings']['locationPermission'];
+  locationPermission: Self['settings']['locationPermission'];
   notifications: boolean;
 }
 
@@ -216,7 +216,7 @@ export type AiCard =
 /** 대화형 가입이 채워 주는 프로필 */
 export interface AiProfileDraft {
   department: string; role: 'undergraduate' | 'graduate' | 'alumni' | 'unknown'; yearInSchool: number;
-  goals: User['goals']; interests: User['interests']; purposes: User['purposes']; lookingFor: User['lookingFor']; canOffer: User['canOffer'];
+  goals: Self['goals']; interests: Self['interests']; purposes: Self['purposes']; lookingFor: User['lookingFor']; canOffer: User['canOffer'];
   bio: string; likes: string; freeTime: string;
 }
 
