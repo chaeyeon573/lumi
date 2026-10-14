@@ -399,6 +399,8 @@ export interface ClassRoster {
   partners: { userId: ID; note?: string; since: string; overlap: { day: number; start: string; end: string }[] }[];
   /** 내가 숨김 상태면 목록 대신 이 표시만 */
   hidden?: boolean;
+  /** 학교 이메일 미인증 — 명단 대신 인증 안내만 */
+  unverified?: boolean;
 }
 
 export type CrewType = 'exam' | 'assignment' | 'review' | 'project';

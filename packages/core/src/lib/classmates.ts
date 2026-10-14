@@ -49,6 +49,8 @@ const isBlocked = (db: Pick<Snapshot, 'relationships'>, a: ID, b: ID) => db.rela
 
 export const schoolOf = (u: Pick<User, 'affiliation'>): ID => (u.affiliation.type === 'university' ? u.affiliation.schoolId : '');
 export const showsToClassmates = (u: Pick<User, 'showToClassmates'>) => u.showToClassmates !== false;
+/** 학교 이메일을 인증한 학생만 같은 수업 명단에 들어가고 명단을 본다 — 아무나 수업을 추가해 명단을 엿보지 못하게. 예시 프로필은 데모용으로 허용 */
+export const verifiedForClassmates = (u: Pick<User, 'affiliation' | 'sample'>) => u.affiliation.type === 'university' && (!!u.affiliation.emailVerified || !!u.sample);
 
 export interface Enrollment { key: string; schoolId: ID; code: string; term: string; name: string; section?: string; meetings: Course[] }
 
@@ -80,7 +82,7 @@ export type ClassIndex = Map<string, ClassMember[]>;
 export function buildClassIndex(users: User[], now: Date = new Date()): ClassIndex {
   const idx: ClassIndex = new Map();
   for (const u of users) {
-    if (!showsToClassmates(u)) continue;
+    if (!showsToClassmates(u) || !verifiedForClassmates(u)) continue;
     for (const e of enrollments(u, now)) (idx.get(e.key) ?? idx.set(e.key, []).get(e.key)!).push({ userId: u.id, section: e.section, sample: !!u.sample });
   }
   return idx;
@@ -107,6 +109,7 @@ export function classRostersFor(db: RosterDb, viewerId: ID, now: Date = new Date
   if (!me) return [];
   const mine = enrollments(me, now);
   if (!mine.length) return [];
+  if (!verifiedForClassmates(me)) return mine.map((e) => ({ id: e.key, schoolId: e.schoolId, code: e.code, term: e.term, name: e.name, mySection: e.section, members: [], count: 0, partners: [], unverified: true }));
   if (!showsToClassmates(me)) return mine.map((e) => ({ id: e.key, schoolId: e.schoolId, code: e.code, term: e.term, name: e.name, mySection: e.section, members: [], count: 0, partners: [], hidden: true }));
   const idx = index ?? buildClassIndex(db.users, now);
   const byId = new Map(db.users.map((u) => [u.id, u]));
@@ -229,7 +232,7 @@ export function planStudyGroups(db: Pick<Snapshot, 'users' | 'relationships' | '
   const days = Array.from({ length: 6 }, (_, i) => addDays(today, i + 1)).filter((d) => weekdayIdx(d) < 5);
   const byKey = new Map<string, { e: Enrollment; u: User }[]>();
   for (const u of db.users) {
-    if (u.sample || !showsToClassmates(u)) continue;
+    if (u.sample || !showsToClassmates(u) || !verifiedForClassmates(u)) continue;
     for (const e of enrollments(u, now)) {
       if (e.term !== cur || (u.studyGroupOptOut ?? []).includes(e.key)) continue;
       (byKey.get(e.key) ?? byKey.set(e.key, []).get(e.key)!).push({ e, u });

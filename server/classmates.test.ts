@@ -210,3 +210,19 @@ test('class room term: current term unless the catalog only has another term and
   d.users = d.users.filter((u) => !enrollments(u).some((e) => e.key === KEY));
   assert.equal(classRoomInfo(d, spring, 'berkeley', 'cs61a')!.term, 'Spring 2099');
 });
+
+test('class lists are only for students with a verified school email', () => {
+  const d = db();
+  const ben = d.users.find((u) => u.id === 'u_b')!;
+  ben.affiliation = { ...ben.affiliation, emailVerified: false } as User['affiliation'];
+  // 미인증이면 명단을 받지 못한다
+  const r = snapshotFor(d, 'u_b').classRosters!.find((x) => x.id === KEY)!;
+  assert.equal(r.unverified, true);
+  assert.deepEqual(r.members, []);
+  assert.deepEqual(r.partners, []);
+  // 남의 명단에도, 인원 수에도, 스터디 그룹에도 들어가지 않는다
+  const a = snapshotFor(d, 'u_a').classRosters!.find((x) => x.id === KEY)!;
+  assert.ok(!a.members.some((m) => m.userId === 'u_b'));
+  assert.ok(!(buildClassIndex(d.users).get(KEY) ?? []).some((m) => m.userId === 'u_b'));
+  assert.ok(!planStudyGroups(d).some((g) => g.userIds.includes('u_b')));
+});

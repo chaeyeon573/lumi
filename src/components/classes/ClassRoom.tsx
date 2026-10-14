@@ -18,6 +18,7 @@ import { freeBlocks, toMin } from '@core/lib/timetable';
 import { clockLabel, slotLabel } from '@core/api/classes';
 import { formatDate } from '@core/lib/format';
 import { cn } from '@core/lib/cn';
+import { SchoolEmailCard } from '@/components/settings/SchoolEmailCard';
 import { CopyClassLink, QrLinkButton } from './ClassLink';
 
 const en = lang === 'en';
@@ -82,6 +83,17 @@ export function ClassRoom({ enrollment, roster, onGo }: { enrollment: Enrollment
     setBusy(true);
     try { await run(() => api.classes.setPartner(me.id, enrollment.key, n), n === null ? (en ? 'Removed you from the list' : '목록에서 내렸어요') : (en ? `You're on the ${code} partner list` : '파트너 찾기 목록에 올렸어요')); setAdding(false); setNote(''); } catch { /* toast */ } finally { setBusy(false); }
   };
+
+  if (roster?.unverified) return (
+    <div className="space-y-4">
+      <div className="rounded-2xl bg-surface-2 border border-line p-4">
+        <div className="flex items-center gap-2 text-[15px] font-bold text-ink"><Lock size={16} />{en ? `Verify your school email to see who's in ${code}` : `학교 이메일을 인증하면 ${code} 학생이 보여요`}</div>
+        <p className="text-[13px] text-ink-2 mt-1">{en ? 'Class lists are only for verified students, so nobody can add a class just to look at who takes it.' : '수업 명단은 인증한 학생에게만 보여요. 아무나 수업을 추가해 명단을 보지 못하게요.'}</p>
+      </div>
+      <SchoolEmailCard />
+      <div className="flex gap-2"><CopyClassLink compact schoolId={enrollment.schoolId} code={code} /><QrLinkButton schoolId={enrollment.schoolId} code={code} /></div>
+    </div>
+  );
 
   if (roster?.hidden) return (
     <div className="space-y-4">
