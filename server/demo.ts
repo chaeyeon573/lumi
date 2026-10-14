@@ -52,6 +52,9 @@ function activeSchoolIds(): Set<string> {
   } catch { return new Set(); }
 }
 
+/** 지금 4학년이 졸업하는 해 — 학년은 가을(8월)에 바뀐다 */
+export const seniorClassYear = (now = new Date()) => (now.getUTCMonth() >= 7 ? now.getUTCFullYear() + 1 : now.getUTCFullYear());
+
 export function migrateDemo(db: Snapshot): Patch | null {
   const changed = new Map<ID, User>();
   for (const u of db.users) {
@@ -71,6 +74,11 @@ export function migrateDemo(db: Snapshot): Patch | null {
     const move = MOVE_TO_MERCED[u.id];
     if (move && next.affiliation.type === 'university' && next.affiliation.schoolId !== MERCED.schoolId) {
       next = { ...next, affiliation: { ...next.affiliation, schoolId: MERCED.schoolId, schoolName: MERCED.schoolName, department: move.department }, living: next.living ? { ...next.living, zone: move.zone } : next.living, freeTime: move.freeTime ?? next.freeTime };
+    }
+    // 시드는 몇 해 전에 쓰여서 이미 졸업한 학번('25)이 있다 — 예시 학부생이 졸업생이면 올해 4학년으로 올린다
+    const seniors = seniorClassYear();
+    if (next.affiliation.type === 'university' && next.affiliation.role === 'undergraduate' && next.affiliation.year + 4 < seniors) {
+      next = { ...next, affiliation: { ...next.affiliation, year: seniors - 4 } };
     }
     if (next !== u) changed.set(u.id, next);
   }
