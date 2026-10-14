@@ -241,8 +241,12 @@ export const isVerifiedStudent = (u?: Pick<User, 'affiliation' | 'sample'>) => !
  * Students of a school with a verified school email can post and join.
  * Sample/demo profiles are allowed so the demo works — their rides are labelled Sample.
  */
-export function rideEligibility(u?: Pick<User, 'affiliation' | 'sample'>): { ok: boolean; reason?: string } {
+/** Rides put people in a car with strangers, so they stay 18+ even though Lumi itself is 16+ (birth year only — a floor, not proof) */
+export const RIDE_MIN_AGE = 18;
+export const isAdultByYear = (birthYear?: number, now = new Date()) => !!birthYear && now.getFullYear() - birthYear >= RIDE_MIN_AGE;
+export function rideEligibility(u?: Pick<User, 'affiliation' | 'sample' | 'birthYear'>): { ok: boolean; reason?: string; minor?: boolean } {
   if (!u || u.affiliation.type !== 'university') return { ok: false, reason: 'Rides are for students — sign in with your school account.' };
+  if (!u.sample && !isAdultByYear(u.birthYear)) return { ok: false, minor: true, reason: `Rides are for students ${RIDE_MIN_AGE} and older.` };
   if (!u.affiliation.emailVerified && !u.sample) return { ok: false, reason: 'Verify your school email to post or join rides — it keeps rides to students from your campus.' };
   return { ok: true };
 }

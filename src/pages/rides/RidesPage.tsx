@@ -46,7 +46,7 @@ export function RidesPage() {
       <TopBar back title="Rides" />
       <div className="px-4 pt-2">
         <Segmented value={view} onChange={(x) => set({ mine: x === 'mine' ? '1' : '', filter: '', to: '' })} options={[{ value: 'all', label: 'Find a ride' }, { value: 'mine', label: 'My rides' }]} />
-        {!eligible.ok && <div className="mt-3"><p className="text-[13px] text-ink-2 mb-2">{eligible.reason}</p><SchoolEmailCard /></div>}
+        {!eligible.ok && <div className="mt-3"><p className="text-[13px] text-ink-2 mb-2">{eligible.reason}</p>{!eligible.minor && <SchoolEmailCard />}</div>}
 
         {view === 'all' && (
           <>

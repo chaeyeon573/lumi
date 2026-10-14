@@ -138,7 +138,7 @@ export function RideDetailPage() {
           room && r.status !== 'cancelled' ? <Button size="lg" className="flex-1" icon={<MessageCircle size={18} />} onClick={() => nav(`/chats/${room.id}`)}>Open ride chat</Button> : <Button size="lg" className="flex-1" variant="outline" onClick={() => nav('/rides')}>Find another ride</Button>
         ) : (
           <Button size="lg" className="flex-1" loading={busy} disabled={!eligible.ok || r.status !== 'open' || isFull(r) || past} onClick={join}>
-            {!eligible.ok ? 'Verify your school email to join' : past ? 'This ride has left' : r.status !== 'open' ? 'Closed' : isFull(r) ? 'Full' : r.kind === 'looking' ? `Team up with ${firstName(host)}` : `Join · ${seatsText(r)}`}
+            {!eligible.ok ? (eligible.minor ? 'Rides are 18+' : 'Verify your school email to join') : past ? 'This ride has left' : r.status !== 'open' ? 'Closed' : isFull(r) ? 'Full' : r.kind === 'looking' ? `Team up with ${firstName(host)}` : `Join · ${seatsText(r)}`}
           </Button>
         )}
       </div>

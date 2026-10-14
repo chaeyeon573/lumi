@@ -133,7 +133,7 @@ export function PrivacyPage() {
       </UL>
 
       <H>7. Age</H>
-      <P>Lumi is for college students who are <B>18 or older</B>. It isn't meant for anyone under 18, and it is not directed to children under 13. If we learn that someone under 18 has an account, we'll delete it. If you think a child has given us information, contact <Contact cfg={cfg} />.</P>
+      <P>Lumi is for college students who are <B>16 or older</B> (some students start college at 16). It isn't meant for anyone under 16, and it is not directed to children under 13. If we learn that someone under 16 has an account, we'll delete it. Ride sharing is limited to students 18 and older. If you think a child has given us information, contact <Contact cfg={cfg} />.</P>
 
       <H>8. Security</H>
       <P>Lumi uses HTTPS, one-time sign-in codes instead of passwords, and random session tokens. No system is perfectly secure, so please tell us right away if you notice a problem.</P>
@@ -160,7 +160,7 @@ export function TermsPage() {
 
       <H>1. Who can use Lumi</H>
       <UL>
-        <li>You must be <B>18 or older</B> and a current, incoming or former student of a school on Lumi.</li>
+        <li>You must be <B>16 or older</B> and a current, incoming or former student of a school on Lumi. Ride sharing is only for users 18 and older.</li>
         <li>Use your real school email, keep one account, and don't pretend to be someone else.</li>
         <li>You're responsible for what happens on your account. Keep your email account secure.</li>
       </UL>

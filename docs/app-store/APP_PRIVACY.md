@@ -45,12 +45,13 @@ their group-chat messages deleted, hosted meetups/plans/rides cancelled with an 
 kept as `u_deleted`), and `server/store.ts` `forgetUser` deletes login email, sessions, codes, AI logs and feedback.
 `/privacy` §5 matches this. Shared demo accounts and sample profiles cannot be deleted (403).
 
-**Age** — Lumi is 18+ (Terms §1, Privacy §7). Reason: in-person meetups and ride sharing with strangers, and a
-college audience. Sign-up (`src/pages/onboarding/StartPage.tsx`) now rejects birth years later than
-`currentYear − 18` (birth year only, so some 17-year-olds born late in the year can pass; the Terms make 18+ a
-condition). Alternative if incoming 17-year-old freshmen must be allowed: 17+ with a parental-consent clause —
-an owner decision. App Store age rating questionnaire: answer for user-generated content, messaging and
-in-person meetings — expect 18+.
+**Age** — Lumi is 16+ (Terms §1, Privacy §7), owner decision 2026-10-14: some freshmen start college at 16.
+Sign-up (`src/pages/onboarding/StartPage.tsx`) rejects birth years later than `currentYear − 16` (birth year
+only, so a floor, not proof). Ride sharing stays 18+ (`rideEligibility` in `packages/core/src/lib/rides.ts`,
+checked on the server when posting or joining). No federal parental-consent requirement applies at 13+ (COPPA is
+under 13), but state minor/social-media laws (incl. California) change often — have a lawyer confirm before
+public launch. App Store age rating questionnaire: answer for user-generated content, messaging and in-person
+meetings; the resulting rating may be higher than 16+, which limits downloads on phones with parental controls.
 
 ---
 
@@ -116,7 +117,7 @@ permissions. Any added SDK (push, crash reporting, analytics) changes these answ
 > **Terms:** Users agree to the Terms of Use and Privacy Policy when they start sign-up (links on the welcome
 > screen and the last sign-up step), and can read them any time in Settings.
 >
-> Lumi does not use location, camera, photos, contacts or push notifications. It is for users 18+.
+> Lumi does not use location, camera, photos, contacts or push notifications. It is for users 16+; ride sharing is 18+.
 
 ---
 

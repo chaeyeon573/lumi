@@ -49,7 +49,7 @@ export function PostRidePage() {
   const matches = useMemo(() => (draftReady ? matchRides({ rides: allRides, relationships }, { schoolId: school, to: form.to, toCustom: form.toCustom, date: form.date, start: form.start }, v.me.id, today) : []),
     [draftReady, allRides, relationships, school, form.to, form.toCustom, form.date, form.start, v.me.id, today]);
 
-  if (!eligible.ok) return <div className="min-h-full"><TopBar back title="Post a ride" /><EmptyState emoji="🎓" title="Students only" description={eligible.reason} action={<Button onClick={() => nav('/settings')}>Verify school email</Button>} /></div>;
+  if (!eligible.ok) return <div className="min-h-full"><TopBar back title="Post a ride" /><EmptyState emoji="🎓" title={eligible.minor ? '18 and older' : 'Students only'} description={eligible.reason} action={eligible.minor ? undefined : <Button onClick={() => nav('/settings')}>Verify school email</Button>} /></div>;
 
   const fullCount = form.kind === 'looking' ? form.seats + 1 : form.seats + 1;
   const submit = async () => {

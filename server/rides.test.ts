@@ -10,7 +10,7 @@ import type { User } from '@core/types';
 import * as seed from '@core/data/seed.en';
 import { t } from '@core/i18n';
 import { createRidesEngine, RideError } from '@core/api/rides';
-import {
+import { rideEligibility,
   bannerSeason, fareText, matchRides, rideSeasons, rideTitle, ridesMatch, seatsLeft, upcomingSeason, validateRideInput, type Ride, type RideInput,
 } from '@core/lib/rides';
 import { snapshotFor, patchFor } from './view';
@@ -252,4 +252,12 @@ test('sample rides: added once, labelled, weekly ones roll forward', () => {
   assert.equal(ensureSampleRides(db, TODAY), null);
   const later = ensureSampleRides(db, '2026-10-30');
   assert.ok(later?.rides?.every((r) => r.date >= '2026-10-30'));
+});
+
+test('rides stay 18+ even though Lumi is 16+', () => {
+  const now = new Date();
+  const base = { affiliation: { type: 'university', schoolId: 's_berkeley', schoolName: 'UC Berkeley', emailVerified: true } } as unknown as Parameters<typeof rideEligibility>[0] & object;
+  assert.equal(rideEligibility({ ...base, birthYear: now.getFullYear() - 16 }).ok, false);
+  assert.equal(rideEligibility({ ...base, birthYear: now.getFullYear() - 16 }).minor, true);
+  assert.equal(rideEligibility({ ...base, birthYear: now.getFullYear() - 20 }).ok, true);
 });
