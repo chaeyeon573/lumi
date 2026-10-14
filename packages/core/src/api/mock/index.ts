@@ -174,6 +174,12 @@ export const mockApi: AroundUApi = {
     setPartner: (userId, key, note) => request(() => withRosters(classes.setPartner(userId, key, note))),
   },
 
+  // 목업 모드에는 푸시 서버가 없다
+  push: {
+    async register() { return { registered: false }; },
+    async unregister() { /* */ },
+  },
+
   system: {
     async reset() { db = resetDB(); },
     failNext() { failNextRequest = true; },

@@ -381,6 +381,12 @@ export interface AroundUApi {
     create(reporterId: ID, targetType: ReportTargetType, targetId: ID, reason: string): Promise<Patch>;
   };
 
+  /** iPhone app push token (apps/shell → server/push.ts). unregister works signed out (sign-out, logout on a shared phone) */
+  push: {
+    register(token: string, device: { platform: 'ios' | 'android'; appVersion?: string }): Promise<{ registered: boolean }>;
+    unregister(token: string): Promise<void>;
+  };
+
   system: {
     reset(): Promise<void>;
     /** 데모: 다음 요청 1회를 실패시킨다 (오류 상태 확인용) */

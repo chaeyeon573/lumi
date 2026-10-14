@@ -32,7 +32,7 @@ changes what Lumi collects or who receives it, update the page, this file, and t
 | "Fill in my profile" | Free text or pasted résumé at sign-up (`/api/ai/profile-draft`, no account yet, IP rate-limited) | `ai_logs` (no user id) | **OpenAI** (the text). |
 | Conversation starters | `/api/ai/starters` | `ai_logs` (input = target user id) | **OpenAI**: facts about the *other* person that they let the viewer see (`starterFacts`: nickname, department, shared classes/interests/goals/clubs, bio, likes, free time, prompt answers, now-want). |
 | Feedback | Feedback button → `POST /api/feedback` (message + current path) | Postgres `feedback` | **Resend** → `FEEDBACK_EMAIL` (includes nickname + user id). |
-| Notifications | In-app only (`notifications` collection, SSE `/api/events`). **No push** (no APNs/expo-notifications/Web Push code). Email is used only for sign-in codes. | `docs` | — |
+| Notifications | In-app (`notifications` collection, SSE `/api/events`). **iPhone app only, opt-in:** push via the Expo Push API → APNs (`server/push.ts`) — the device's Expo push token is stored per user, the push carries the notification title/body and an in-app path. Token deleted on sign-out on that device, on DeviceNotRegistered, and on account deletion. Email is used only for sign-in codes. | `docs` (`notifications`, `pushTokens`) | **Expo** (push service) and **Apple** (APNs): push token + notification title/text. |
 | Analytics / ads | **None.** No analytics, crash-reporting or ad SDK in `src/`, `packages/core`, `apps/mobile`. No tracking cookies. | — | — |
 | Server logs | `console.log/error` → Railway logs. Errors and Resend failures; no request logger. `[mail] (not configured) code for <email>` is printed only when Resend is not configured. | Railway | Railway |
 | Browser storage | `localStorage`: session token, design, language, dining filters, last-seen card, plan guest token + name; `sessionStorage`: sign-up draft, Ask Lumi conversation, return path | Device | — |
@@ -81,7 +81,7 @@ Answer **"No"** to "used to track you" for every type below.
 | Browsing History | No | — | — | — |
 | **Search History** | Yes (Ask Lumi questions are logged) | Yes | No | App Functionality, Analytics (we read logs to improve answers) |
 | Identifiers → **User ID** | Yes (account id, session token) | Yes | No | App Functionality |
-| Identifiers → Device ID | No (no device or advertising id; the link-plan guest token is random per plan and stored hashed) | — | — | — |
+| Identifiers → Device ID | **Yes, conservatively** — iPhone app, only after the person turns on push: the Expo push token (a per-install device token). No advertising id. (The link-plan guest token is random per plan and stored hashed.) Many apps don't declare push tokens; declaring it is the safe answer. | Yes | No | App Functionality |
 | Purchases | No | — | — | — |
 | Usage Data → Product Interaction | No (saves/RSVPs are user content; no interaction analytics) | — | — | — |
 | Usage Data → Advertising Data, Other | No | — | — | — |
@@ -91,9 +91,12 @@ Answer **"No"** to "used to track you" for every type below.
 Third-party processors to keep in mind when answering "third-party partners": Railway (hosting/DB), Resend
 (email), OpenAI (AI features). Google Fonts and CARTO receive IP addresses only when loading fonts/tiles.
 
-If App Store Connect asks about data used by the app's **native wrapper** (e.g. an Expo build), re-check: the
-Expo app in `apps/mobile` currently runs on mock data, uses AsyncStorage and `expo-localization`, and requests no
-permissions. Any added SDK (push, crash reporting, analytics) changes these answers.
+The iPhone app is `apps/shell` (Expo): the live web app in a WebView plus native push (expo-notifications → Expo
+Push → APNs), share sheet, haptics and an in-app Safari view for other sites. It asks for **one** permission —
+notifications, only after the person's first action or from Settings → Notifications — and declares no other
+usage strings (no camera/photos/location/contacts/mic/Face ID). It keeps a copy of the session token in the iOS
+Keychain so people stay signed in. No analytics or crash SDK. (`apps/mobile` is the old mock-data prototype and
+is not what ships.) Any added SDK (crash reporting, analytics) changes these answers.
 
 ---
 
@@ -117,7 +120,13 @@ permissions. Any added SDK (push, crash reporting, analytics) changes these answ
 > **Terms:** Users agree to the Terms of Use and Privacy Policy when they start sign-up (links on the welcome
 > screen and the last sign-up step), and can read them any time in Settings.
 >
-> Lumi does not use location, camera, photos, contacts or push notifications. It is for users 16+; ride sharing is 18+.
+> Lumi does not use location, camera, photos or contacts. Push notifications are optional: the app offers them
+> after your first action (e.g. joining a meetup) or from Settings → Notifications → Push notifications.
+> It is for users 16+; ride sharing is 18+.
+>
+> **iPhone features:** besides the shared web content, the app uses native push notifications (tapping one opens
+> the right screen), the iOS share sheet for class/plan/ride links, universal links (lumi links shared in group
+> chats open in the app), haptics, swipe-back navigation, pull-to-refresh and an offline screen.
 
 ---
 

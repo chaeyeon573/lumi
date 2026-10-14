@@ -83,8 +83,8 @@ export function PrivacyPage() {
       <P><B>Link plans.</B> If someone without an account answers a plan through a shared link, we store the first name they type and a scrambled (hashed) token that lets their device change the answer later.</P>
       <P><B>AI features.</B> Questions you ask Ask Lumi and its answers, text you paste to fill in your profile at sign-up, and conversation starters we suggest. We keep a log of these to fix problems and prevent abuse.</P>
       <P><B>Feedback.</B> Anything you send with the Feedback button, plus the screen you were on.</P>
-      <P><B>Technical.</B> Our hosting provider keeps standard server logs (such as IP address, the page or request, time and errors). Lumi doesn't use analytics or advertising tools and doesn't use cookies to track you. Your browser stores your sign-in token and a few settings (like design, language and filters) on your device.</P>
-      <P><B>What we don't collect.</B> Lumi doesn't read your device's location (GPS), contacts, photos, camera or microphone. Maps show places for events and rides, not where you are. We don't send push notifications; notifications appear inside the app, and the only emails we send you are sign-in codes.</P>
+      <P><B>Technical.</B> Our hosting provider keeps standard server logs (such as IP address, the page or request, time and errors). Lumi doesn't use analytics or advertising tools and doesn't use cookies to track you. Your browser stores your sign-in token and a few settings (like design, language and filters) on your device. If you turn on notifications in the iPhone app, we store a push token for that device so we can send them; it's deleted when you sign out on that device or delete your account.</P>
+      <P><B>What we don't collect.</B> Lumi doesn't read your device's location (GPS), contacts, photos, camera or microphone. Maps show places for events and rides, not where you are. Notifications appear inside the app; in the iPhone app you can also choose to get them as push notifications (off until you say yes, and you can turn them off in Settings). The only emails we send you are sign-in codes.</P>
 
       <H>2. How we use it</H>
       <UL>
@@ -110,6 +110,7 @@ export function PrivacyPage() {
         <li><B>Railway</B> (United States) — hosts the app and its database. Everything described above is stored there.</li>
         <li><B>Resend</B> — sends sign-in code emails, so it receives your email address and the code. It also delivers feedback notices to our team.</li>
         <li><B>OpenAI</B> — powers Ask Lumi, "fill in my profile" at sign-up, and conversation starters. It receives: your question and your recent Ask Lumi conversation along with your school, major, year, interests and goals; the text you paste at sign-up; and, for conversation starters, only the profile details the other person lets you see (such as their name, major, shared classes, interests and bio). Please don't put sensitive personal information into these features.</li>
+        <li><B>Expo</B> and <B>Apple</B> — if you turn on push notifications in the iPhone app, the notification's title and text and your device's push token pass through Expo's push service to Apple, which delivers them to your phone.</li>
         <li><B>Google Fonts</B> and <B>CARTO</B> (map images) — the app loads fonts and map tiles from them, so they see your IP address and, for CARTO, the map area you're viewing.</li>
       </UL>
       <P>Lumi also reads public information — Cal Dining menus, the RSF crowd meter, class schedules, academic calendars and public listings — from those websites. We don't send them anything about you.</P>
@@ -119,7 +120,7 @@ export function PrivacyPage() {
       <UL>
         <li>We keep your account information until you delete your account.</li>
         <li>Sign-in codes expire after 10 minutes.</li>
-        <li>When you delete your account (<B>Settings → Delete account</B>), we delete your sign-in email, your profile and timetable, your posts and comments, your connections, and your messages — 1:1 chats with you are removed for both people. Meetups, plans and rides you host are cancelled, and the people in them get a notice that doesn't name you. You're signed out everywhere. Reports you filed are kept without your name; reports about you are kept for safety review.</li>
+        <li>When you delete your account (<B>Settings → Delete account</B>), we delete your sign-in email, your profile and timetable, your posts and comments, your connections, and your messages — 1:1 chats with you are removed for both people. Meetups, plans and rides you host are cancelled, and the people in them get a notice that doesn't name you. You're signed out everywhere and your devices' push tokens are deleted. Reports you filed are kept without your name; reports about you are kept for safety review.</li>
         <li>Ask Lumi logs and feedback are kept to fix problems and prevent abuse, and are deleted with your account. Text you paste into "fill in my profile" during sign-up is logged before you have an account, so it isn't linked to you — email <Contact cfg={cfg} /> if you want it removed.</li>
         <li>Server logs are kept by our hosting provider for a limited time.</li>
       </UL>

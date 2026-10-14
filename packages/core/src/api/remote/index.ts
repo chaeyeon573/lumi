@@ -166,6 +166,11 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
       ...group<Pick<AroundUApi['classes'], 'respond' | 'setPartner'>>('classes', ['respond', 'setPartner']),
     },
 
+    push: {
+      register: (token, device) => call<{ registered: boolean }>('push/register', { token, ...device }),
+      async unregister(token) { await call('push/unregister', { token }); },
+    },
+
     system: {
       async reset() { await call('system/reset', {}); },
       failNext() { failNextRequest = true; },

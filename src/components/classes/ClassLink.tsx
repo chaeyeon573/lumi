@@ -6,6 +6,7 @@ import type { ID } from '@core/types';
 import { classPath } from '@core/lib/classmates';
 import { useAppStore } from '@core/store/useAppStore';
 import { cn } from '@core/lib/cn';
+import { shareOrCopy } from '@/lib/native';
 
 const en = lang === 'en';
 
@@ -25,12 +26,12 @@ export function CopyClassLink({ schoolId, code, className, compact }: { schoolId
   const [done, setDone] = useState(false);
   const copy = async () => {
     const url = classUrl(schoolId, code);
-    try {
-      if (navigator.share && /Mobi|Android|iPhone/i.test(navigator.userAgent)) { await navigator.share({ title: `${code} on Lumi`, url }); return; }
-      await navigator.clipboard.writeText(url);
+    // iPhone 앱·휴대폰은 공유 시트, 데스크톱은 복사 (src/lib/native.ts)
+    const r = await shareOrCopy({ title: `${code} on Lumi`, url }, { webSheet: 'mobile' });
+    if (r === 'copied') {
       setDone(true); setTimeout(() => setDone(false), 2000);
       toast(en ? 'Class link copied — paste it in your class Discord or GroupMe' : '수업 링크를 복사했어요', 'success');
-    } catch { toast(url, 'info'); }
+    } else if (r === 'failed') toast(url, 'info');
   };
   if (compact) return (
     <button onClick={copy} className={cn('h-9 px-3.5 rounded-full bg-surface-2 border border-line text-ink text-[13px] font-semibold inline-flex items-center gap-1.5 press', className)}>

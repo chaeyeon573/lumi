@@ -9,6 +9,8 @@ import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { SchoolEmailCard } from '@/components/settings/SchoolEmailCard';
 import { DeleteAccountCard } from '@/components/settings/DeleteAccountCard';
+import { PushSettingRow } from '@/components/native/PushSettingRow';
+import { appVersionLabel } from '@/lib/native';
 
 export function SettingsPage() {
   const nav = useNavigate();
@@ -34,6 +36,8 @@ export function SettingsPage() {
         <div className="card px-4 divide-y divide-line">
           <Toggle label={t('알림')} description={t('참가 승인, 친구 요청 수락, 활동 시작 전 알림')} checked={me.settings.notifications} onChange={(val) => run(() => api.users.update(me.id, { settings: { ...me.settings, notifications: val } }))} />
           <div className="py-3 flex items-start gap-3"><MapPin size={18} className="text-ink-2 mt-0.5" /><div className="flex-1"><div className="text-[14px] font-medium">{t('위치 권한 ·')} {me.settings.locationPermission === 'granted' ? t('허용됨') : me.settings.locationPermission === 'denied' ? t('거부됨') : t('미설정')}</div><div className="text-[12px] text-ink-3 mt-0.5">{t('위치는 주변 활동 추천에만 사용되고, 정확한 위치는 다른 사용자에게 공개되지 않아요.')}</div><Button size="sm" variant="outline" className="mt-2" onClick={() => run(() => api.users.update(me.id, { settings: { ...me.settings, locationPermission: me.settings.locationPermission === 'granted' ? 'denied' : 'granted' } }))}>{me.settings.locationPermission === 'granted' ? t('권한 끄기') : t('권한 허용')}</Button></div></div>
+          {/* iPhone 앱에서만 — 이 기기의 푸시 권한 */}
+          <PushSettingRow />
           <div className="py-3 flex items-center gap-3"><Bell size={18} className="text-ink-2" /><span className="flex-1 text-[14px] font-medium">{t('알림 확인')}</span><Button size="sm" variant="ghost" onClick={() => nav('/notifications')}>{t('열기')}</Button></div>
         </div>
         <div className="card px-4 py-3">
@@ -54,7 +58,7 @@ export function SettingsPage() {
           <button onClick={() => { api.system.failNext(); showToast(t('다음 요청이 실패해요. 홈으로 돌아가 새로고침해보세요.')); init(); }} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press"><Bug size={18} className="text-ink-2" /><span className="flex-1"><span className="block text-[14px] font-semibold">{t('오류 상태 미리보기')}</span><span className="block text-[12px] text-ink-3">{t('다음 API 요청 1회를 실패시켜 오류 화면을 확인해요')}</span></span></button>
           <button onClick={async () => { await api.system.reset(); await logout(); nav('/welcome', { replace: true }); showToast(t('데모 데이터를 초기화했어요.')); }} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press"><RotateCcw size={18} className="text-danger" /><span className="flex-1"><span className="block text-[14px] font-semibold text-danger">{t('데모 데이터 초기화')}</span><span className="block text-[12px] text-ink-3">{t('모든 변경 사항을 지우고 예시 데이터로 되돌려요')}</span></span></button>
         </div>
-        <p className="text-center text-[11px] text-ink-3">Lumi MVP · mock API (localStorage)</p>
+        <p className="text-center text-[11px] text-ink-3">{appVersionLabel() ? `Lumi for iPhone ${appVersionLabel()}` : 'Lumi MVP · mock API (localStorage)'}</p>
       </div>
     </div>
   );

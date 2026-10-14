@@ -11,6 +11,7 @@ import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { cn } from '@core/lib/cn';
+import { shareOrCopy } from '@/lib/native';
 import {
   campusToday, clock, dayLabel, destLabel, fareText, isFull, matchRides, pickupLabel, rideEligibility, rideTitle, seatsLeft, seatsText, whenLabel,
   MAX_NOTE, RIDE_KIND_EMOJI, RIDE_KIND_LABELS, SAFETY_NOTE, type Ride,
@@ -55,10 +56,8 @@ export function RideDetailPage() {
 
   const share = async () => {
     const url = rideLink(r.id);
-    try {
-      if (navigator.share) { await navigator.share({ title: rideTitle(r), url }); return; }
-      await navigator.clipboard.writeText(url); showToast('Link copied — paste it in your group chat.', 'success');
-    } catch { /* cancelled */ }
+    // share sheet (iPhone app / phone browsers), else copy — src/lib/native.ts
+    if (await shareOrCopy({ title: rideTitle(r), url }) === 'copied') showToast('Link copied — paste it in your group chat.', 'success');
   };
   const act = async (fn: () => Promise<unknown>) => { setBusy(true); try { await fn(); } catch { /* toast shown */ } finally { setBusy(false); } };
   const join = () => act(async () => { await run(() => api.rides.join(r.id, v.me.id), `You're in — the ride chat is open.`); });

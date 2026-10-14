@@ -55,7 +55,7 @@
   },
   "workspaces": [
     "packages/*",
-    "apps/*"
+    "apps/mobile"
   ],
   "engines": {
     "node": ">=20"

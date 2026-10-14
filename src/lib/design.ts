@@ -39,6 +39,8 @@ export function initDesign() {
 }
 
 export function getDesign(): Design { return current; }
+/** 화면 바탕색 — 브라우저 theme-color, iPhone 앱 상태 표시줄·바탕 (src/components/native) */
+export const themeColor = (d: Design) => THEME_COLOR[d];
 
 export function setDesign(d: Design) {
   current = d;

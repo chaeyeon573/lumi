@@ -16,7 +16,8 @@
  * - Outside the snapshot, in the store: login email (accounts), every session token, pending email codes,
  *   AI question logs (and starter suggestions generated from their profile), feedback rows → store.forgetUser.
  * - Doc collections: seatWatches + their entries in seatStatus.notified (campus-api), diningFavorites (dining),
- *   gymAlerts (gym) → each service's forgetUser, which also clears its in-memory copy.
+ *   gymAlerts (gym), pushTokens (push — the iPhone app's device tokens) → each service's forgetUser, which also
+ *   clears its in-memory copy.
  * - In memory: verified-email set, AI starter cache, open SSE streams → `forget` hooks / disconnect.
  * - Kept: reports *about* them (opaque target id, reporter's own words — needed for safety review),
  *   reports they filed (reporter replaced with "u_deleted"). Photos are not uploaded anywhere — avatars are

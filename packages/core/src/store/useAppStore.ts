@@ -13,6 +13,8 @@ interface AppState extends Snapshot {
   toast: { id: number; text: string; tone: 'info' | 'success' | 'error' } | null;
 
   init(): Promise<void>;
+  /** Re-fetch everything without the loading screen (pull-to-refresh in the iPhone app) */
+  refresh(): Promise<void>;
   setCurrentUser(user: User): Promise<void>;
   logout(): Promise<void>;
   /** Permanently delete my account (typed confirmation), then sign out locally */
@@ -50,6 +52,17 @@ export const useAppStore = create<AppState>((set, get) => ({
       unsubscribe = api.subscribe((patch) => get().applyPatch(patch));
     } catch (e) {
       set({ status: 'error', error: (e as Error).message });
+    }
+  },
+
+  async refresh() {
+    const id = get().currentUserId;
+    if (!id || get().status !== 'ready') return;
+    try {
+      const snapshot = await api.bootstrap(id);
+      set({ ...snapshot, games: snapshot.games ?? [], classRosters: snapshot.classRosters ?? [] });
+    } catch (e) {
+      get().showToast((e as Error).message || t('문제가 발생했어요.'), 'error');
     }
   },
 

@@ -12,6 +12,7 @@ import { badgeOf, campusDate } from '@core/lib/listings';
 import { canGoTogether, campusToday, goingPeople, percentages } from '@core/lib/withpeople';
 import { cn } from '@core/lib/cn';
 import { PeopleLine } from './PeopleLine';
+import { shareOrCopy } from '@/lib/native';
 
 const en = lang === 'en';
 
@@ -84,11 +85,8 @@ export function useInvite() {
     const url = `${window.location.origin}/welcome`;
     const text = en ? (who === 'class' && cls ? `Our ${cls} section is on Lumi — come find people to study and hang out with: ${url}` : `I'm on Lumi — come find people on our floor to do campus things with: ${url}`)
       : (who === 'class' && cls ? `${cls} 수업 사람들 Lumi에 있어요 — 같이 공부하고 놀 사람 찾기: ${url}` : `Lumi에서 같은 층 사람들이랑 같이 다닐 사람 찾아요: ${url}`);
-    try {
-      if (navigator.share) { await navigator.share({ text }); return; }
-      await navigator.clipboard.writeText(text);
-      showToast(en ? 'Invite copied — paste it in your group chat.' : '초대 문구를 복사했어요.', 'success');
-    } catch { /* 공유 취소 */ }
+    // 공유 시트 (iPhone 앱·휴대폰 브라우저), 없으면 복사 — src/lib/native.ts
+    if (await shareOrCopy({ text, copy: text }) === 'copied') showToast(en ? 'Invite copied — paste it in your group chat.' : '초대 문구를 복사했어요.', 'success');
   };
 }
 

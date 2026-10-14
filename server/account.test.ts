@@ -27,6 +27,7 @@ import { registerAccountRoutes, PROTECTED_IDS } from './account';
 import { createCampusData } from './campus-api';
 import { createDining, type FavoriteDoc } from './dining';
 import { createGym } from './gym';
+import { createPush } from './push';
 import { hashToken } from './plans';
 import type { SeatStatusDoc, SeatWatchDoc } from './seats';
 
@@ -140,6 +141,9 @@ async function setup() {
   const userExists = (id: ID) => db.users.some((u) => u.id === id);
   const dining = createDining({ store, notify, userExists }); await dining.load();
   const gym = createGym({ store, notify, userExists }); await gym.load();
+  const push = createPush({ store, db: () => db, fetch: (async () => { throw new Error('no network in tests'); }) as typeof fetch, log: () => {} }); await push.load();
+  await push.register(Z, 'ExponentPushToken[zdel-phone-0001]', 'ios', '1.0.0');
+  await push.register(MAYA, 'ExponentPushToken[maya-phone-0001]', 'ios', '1.0.0');
 
   // ── server: the same auth rule as server/index.ts ────────────────────────
   const broadcasts: Patch[] = []; const disconnected: ID[] = [];
@@ -151,7 +155,7 @@ async function setup() {
   };
   registerAccountRoutes(app, {
     db: () => db, store, auth, broadcast: (p) => broadcasts.push(p), disconnect: (id) => disconnected.push(id),
-    forget: [(id) => campus.forgetUser(id), (id) => dining.forgetUser(id), (id) => gym.forgetUser(id)],
+    forget: [(id) => campus.forgetUser(id), (id) => dining.forgetUser(id), (id) => gym.forgetUser(id), (id) => push.forgetUser(id)],
   });
   const server = app.listen(0);
   const base = `http://127.0.0.1:${(server.address() as AddressInfo).port}`;
@@ -159,7 +163,7 @@ async function setup() {
     const r = await fetch(`${base}/api/auth/delete-account`, { method: 'POST', headers: { 'content-type': 'application/json', ...(token ? { authorization: `Bearer ${token}` } : {}) }, body: JSON.stringify({ confirm }) });
     return { status: r.status, body: await r.json() as { ok?: boolean; error?: string; deleted?: Record<string, number> } };
   };
-  return { db, store, file, server, del, broadcasts, disconnected, campus, dining, gym, ids: { hosted: hosted.id, other: other.id, otherRoom: otherRoom.id, dm: dm.id, zPlan: zPlan.id, mayaPlan: mayaPlan.id, zRide: zRide.id, mayaRide: mayaRide.id, mayaPost: mayaPost.id, org: org.id, opp: opp.id } };
+  return { db, store, file, server, del, broadcasts, disconnected, campus, dining, gym, push, ids: { hosted: hosted.id, other: other.id, otherRoom: otherRoom.id, dm: dm.id, zPlan: zPlan.id, mayaPlan: mayaPlan.id, zRide: zRide.id, mayaRide: mayaRide.id, mayaPost: mayaPost.id, org: org.id, opp: opp.id } };
 }
 
 /** db without the reports that are about Z (those are kept on purpose) */
@@ -175,7 +179,7 @@ test('the footprint is real before deletion (so the "gone" checks below mean som
 });
 
 test('delete: every trace of the person is gone from the snapshot, the store and the doc collections', async () => {
-  const { db, file, server, del, disconnected, campus, dining, gym, ids } = await setup();
+  const { db, file, server, del, disconnected, campus, dining, gym, push, ids } = await setup();
   try {
     const r = await del('tok_z');
     assert.equal(r.status, 200, r.body.error);
@@ -221,10 +225,13 @@ test('delete: every trace of the person is gone from the snapshot, the store and
     assert.deepEqual(Object.keys((await again.listDocs<SeatStatusDoc>('seatStatus'))[0].notified), [MAYA]);
     assert.equal((await again.listDocs('diningFavorites')).length, 0);
     assert.equal((await again.listDocs('gymAlerts')).length, 0);
+    assert.deepEqual((await again.listDocs<{ id: string; userId: string }>('pushTokens')).map((d) => d.userId), [MAYA], 'their iPhone push token is gone, others stay');
+    assert.equal(r.body.deleted?.pushTokens, 1);
     // and the services' in-memory copies
     assert.equal(campus.myWatchCount(Z), 0);
     assert.deepEqual(dining.favoritesOf(Z), []);
     assert.deepEqual(gym.alertsOf(Z), []);
+    assert.deepEqual(push.tokensOf(Z), []);
     assert.ok(!(await again.loadSnapshot())!.users.some((u) => u.id === Z));
     assert.ok((await again.findSession('tok_lily')), 'other people’s sessions untouched');
 

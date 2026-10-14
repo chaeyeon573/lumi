@@ -15,6 +15,8 @@
  *   POST /api/ai/{ask,profile-draft,starters}   server/ai.ts — 질문 답변·대화형 가입·첫마디 제안
  *   GET  /api/ai/logs                   x-admin-key 일 때만 — 학생들이 무엇을 물었는지
  *   GET  /api/legal, /privacy, /terms   공개 법적 페이지 (server/legal.ts) — LEGAL_NAME · PRIVACY_CONTACT_EMAIL
+ *   POST /api/push/{register,unregister}  iPhone 앱 푸시 토큰 (server/push.ts) — EXPO_ACCESS_TOKEN(선택), PUSH_DISABLED=1
+ *   GET  /.well-known/apple-app-site-association  유니버설 링크 (server/app-links.ts) — APPLE_TEAM_ID + IOS_BUNDLE_ID 없으면 404
  *
  * 환경변수: PORT, DATABASE_URL, AROUNDU_LANG(ko|en), DEMO_AUTOREPLY(1이면 데모 자동응답), ALLOW_DEMO_LOGIN(0이면 비활성),
  *          ALLOW_RESET, RESEND_API_KEY, MAIL_FROM, HIDE_DEV_CODE, CORS_ORIGIN, VERIFY_EMAIL_DOMAIN(0이면 학교 도메인 검사 생략)
@@ -52,6 +54,9 @@ import { createClassesEngine } from '@core/api/classes';
 import { CLASSES_RULES, registerClassRoutes, startStudyGroupJob } from './classes';
 import { registerLegalRoutes } from './legal';
 import { registerModerationRoutes, sessionAuth, signInBlock, suspendedMessage } from './moderation';
+import { createPush, registerPushRoutes } from './push';
+import { registerAppLinkRoutes } from './app-links';
+import { PROTECTED_IDS } from './account';
 
 const PORT = Number(process.env.PORT ?? 8787);
 const store = createStore();
@@ -76,9 +81,14 @@ db.games ??= []; // 게임 기능 이전에 저장된 스냅샷
 // 예시 모임 날짜를 오늘 기준으로 — 켜질 때 한 번, 그 뒤 15분마다 (지난 것은 곧 시작하는 시간으로 민다)
 async function rollSamples() { const p = rollSampleActivities(db); if (p) { await store.applyPatch(p); broadcast(p); console.log(`[demo] rolled ${p.activities?.length ?? 0} sample activities`); } }
 const clients = new Map<ID, Set<Response>>();
+// iPhone app push (server/push.ts) — every broadcast Patch with a new notification → Expo Push API
+const push = createPush({ store, db: () => db, allow: (id) => !PROTECTED_IDS.has(id), accessToken: process.env.EXPO_ACCESS_TOKEN, disabled: process.env.PUSH_DISABLED === '1' });
+await push.load();
+setInterval(() => { void push.checkReceipts(); }, 15 * 60 * 1000).unref();
 await rollSamples();
 
 function broadcast(patch: Patch) {
+  void push.onPatch(patch);
   for (const [userId, set] of clients) {
     const p = patchFor(patch, userId, db);
     if (!p) continue;
@@ -135,6 +145,8 @@ const app = express();
 app.set('trust proxy', 1);
 app.use(cors({ origin: process.env.CORS_ORIGIN?.split(',').map((s) => s.trim()) ?? true, credentials: false }));
 app.use(express.json({ limit: '2mb' }));
+// /.well-known/apple-app-site-association — before static files and the SPA catch-all (server/app-links.ts)
+registerAppLinkRoutes(app);
 
 class HttpError extends Error { constructor(public status: number, message: string) { super(message); } }
 const bad = (msg: string, status = 400) => new HttpError(status, msg);
@@ -299,8 +311,12 @@ registerAccountRoutes(app, {
     (id) => liveServices()?.dining.forgetUser(id),
     (id) => liveServices()?.gym.forgetUser(id),
     (id, emails) => { emails.forEach((e) => verifiedEmails.delete(e)); forgetStarters(id); },
+    (id) => push.forgetUser(id),
   ],
 });
+
+// ─── 푸시 토큰 — POST /api/push/{register,unregister} (server/push.ts) ─────────────
+registerPushRoutes(app, push, { auth });
 
 // ─── 수업 목록 ───────────────────────────────────────────────────────────
 // term 을 안 주면 지금 학기 (그 학교에 지금 학기 수업이 없으면 학기 구분 없이)
