@@ -326,7 +326,7 @@ export const activities: Activity[] = [
     comments: [{ id: 'c5', authorId: 'u_hana', text: 'I do design and I’m interested!', createdAt: isoHoursAgo(1) }], createdAt: isoHoursAgo(26),
   },
   {
-    id: 'a_now_lunch', openSlot: true, kind: 'personal', category: 'meal', title: 'Hate eating alone — lunch at Crossroads?', description: 'Free period, heading to Crossroads. Anyone welcome, up to 4.',
+    id: 'a_now_lunch', openSlot: true, kind: 'personal', category: 'meal', title: 'Hate eating alone — grab a bite at Crossroads?', description: 'Free period, heading to Crossroads. Anyone welcome, up to 4.',
     cover: { emoji: '🍱', hue: 30 , url: photo('c_burrito') }, hostId: 'u_sua', hostType: 'user', date: T, startTime: nowPlus(25), endTime: nowPlus(85),
     place: { name: 'Crossroads dining', area: 'Near Unit 2', lat: 37.8672, lng: -122.2560 }, capacity: 4, visibility: 'school', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoMinutesAgo(8),
   },

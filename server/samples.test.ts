@@ -167,3 +167,12 @@ test('sample undergrads are not already graduated', () => {
   assert.equal(seniorClassYear(new Date('2026-10-14T00:00:00Z')), 2027);
   assert.equal(seniorClassYear(new Date('2027-03-01T00:00:00Z')), 2027);
 });
+
+test('sample activity wording follows the seed after a roll (live DBs keep old titles otherwise)', () => {
+  const db = world();
+  const a = db.activities.find((x) => x.id === 'a_now_lunch')!;
+  a.title = 'Hate eating alone — lunch at Crossroads?';
+  rollSampleActivities(db);
+  assert.equal(db.activities.find((x) => x.id === 'a_now_lunch')!.title, seed.activities.find((x) => x.id === 'a_now_lunch')!.title);
+  assert.doesNotMatch(db.activities.find((x) => x.id === 'a_now_lunch')!.title, /lunch/i);
+});

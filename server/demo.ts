@@ -130,8 +130,9 @@ export function rollSampleActivities(db: Snapshot): Patch | null {
       const s2 = soon + (k++ % 4) * 20;
       if (s2 + dur <= 23 * 60) { start = s2; end = s2 + dur; } else { date = addDays(now.date, 1); }
     }
-    const next = { ...a, date, startTime: toHHMM(start), endTime: toHHMM(Math.min(end, 23 * 60 + 59)), sample: true };
-    if (next.date !== a.date || next.startTime !== a.startTime || next.endTime !== a.endTime || !a.sample) changed.push(next);
+    // 제목·설명도 시드를 따른다 — 시간이 굴러가므로 시각에 묶인 말("lunch")을 고치면 라이브에도 닿게
+    const next = { ...a, title: orig.title, description: orig.description, date, startTime: toHHMM(start), endTime: toHHMM(Math.min(end, 23 * 60 + 59)), sample: true };
+    if (next.date !== a.date || next.startTime !== a.startTime || next.endTime !== a.endTime || next.title !== a.title || next.description !== a.description || !a.sample) changed.push(next);
     void dur;
   }
   if (!changed.length) return null;
