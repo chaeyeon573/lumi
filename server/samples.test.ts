@@ -11,7 +11,7 @@ import * as seed from '@core/data/seed.en';
 import { t } from '@core/i18n';
 import { createEngine } from '@core/api/engine';
 import { snapshotFor, patchFor } from './view';
-import { migrateDemo, rollSampleActivities, demoUserIdFor } from './demo';
+import { migrateDemo, rollSampleActivities, demoUserIdFor, seniorClassYear } from './demo';
 import { ensureSampleRides } from './rides';
 import { SAMPLE_OPPORTUNITY_IDS, SAMPLE_ORG_IDS, hiddenSamplesFor, sampleFreeFor } from './samples';
 import { searchActivities, searchClubs, searchListings } from './ai-search';
@@ -158,4 +158,12 @@ test('Ask Lumi: a real account\'s searches never return sample meetups, demo clu
   // starters: a sample profile is not someone a real account can open
   assert.ok(hiddenSamplesFor(db, real).users.has('u_jimin'));
   assert.ok(!hiddenSamplesFor(db, demo).users.has('u_jimin'));
+});
+
+test('sample undergrads are not already graduated', () => {
+  const db = world();
+  const old = db.users.filter((u) => u.sample && u.affiliation.type === 'university' && u.affiliation.role === 'undergraduate' && u.affiliation.year + 4 < seniorClassYear());
+  assert.deepEqual(old.map((u) => u.nickname), []);
+  assert.equal(seniorClassYear(new Date('2026-10-14T00:00:00Z')), 2027);
+  assert.equal(seniorClassYear(new Date('2027-03-01T00:00:00Z')), 2027);
 });

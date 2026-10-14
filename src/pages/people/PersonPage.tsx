@@ -87,7 +87,7 @@ export function PersonPage() {
   };
 
   return (
-    <div className="min-h-full pb-28">
+    <div className="min-h-full pb-44">
       <TopBar back title="" transparent className="absolute left-0 right-0" right={<button onClick={() => setMenu(true)} className="h-10 w-10 grid place-items-center rounded-full bg-white/80 backdrop-blur" aria-label={t('더보기')}><MoreHorizontal size={20} /></button>} />
       <PhotoHero user={user} />
       <div className="px-4 -mt-8 relative space-y-3">
@@ -164,14 +164,15 @@ export function PersonPage() {
       </div>
 
       <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-surface/95 backdrop-blur border-t border-line p-3 safe-bottom z-20">
-        <div className="flex gap-2">
+        {/* 버튼이 넷이면 좁은 폰에서 넘친다 — 주 버튼은 자리가 모자라면 아래 줄 전체를 쓴다 (잘리지 않게) */}
+        <div className="flex flex-wrap gap-2">
           <button onClick={like} aria-label={t('관심')} className={cn('h-[52px] w-[52px] rounded-2xl grid place-items-center press', liked ? 'bg-heart text-white' : 'bg-heart-soft text-heart')}><Heart size={22} fill={liked ? 'currentColor' : 'none'} /></button>
           <Button size="lg" variant={following ? 'secondary' : 'outline'} onClick={() => run(() => api.relationships.toggleFollow(v.me.id, user.id, 'user'))}>{following ? t('팔로잉') : t('팔로우')}</Button>
           {friend ? <Button size="lg" variant="secondary" icon={<Check size={16} />} disabled>{t('친구')}</Button>
             : outReq ? <Button size="lg" variant="outline" onClick={() => run(() => api.relationships.cancelFriendRequest(outReq.id), t('요청을 취소했어요.'))}>{t('요청 취소')}</Button>
             : <Button size="lg" variant="outline" icon={<UserPlus size={16} />} onClick={() => run(() => api.relationships.sendFriendRequest(v.me.id, user.id), t('친구 요청을 보냈어요.'))}>{t('친구 요청')}</Button>}
-          {msg.ok ? <Button size="lg" className="flex-1" icon={<MessageCircle size={18} />} onClick={openChat}>{t('메시지')}</Button>
-            : <Button size="lg" className="flex-1" icon={<CalendarPlus size={18} />} onClick={() => setPropose(true)} disabled={!!pendingProposal}>{pendingProposal ? t('제안 대기 중') : t('활동 제안')}</Button>}
+          {msg.ok ? <Button size="lg" className="flex-1 min-w-[150px]" icon={<MessageCircle size={18} />} onClick={openChat}>{t('메시지')}</Button>
+            : <Button size="lg" className="flex-1 min-w-[150px]" icon={<CalendarPlus size={18} />} onClick={() => setPropose(true)} disabled={!!pendingProposal}>{pendingProposal ? t('제안 대기 중') : t('활동 제안')}</Button>}
         </div>
         {!msg.ok && <p className="text-[11px] text-ink-3 mt-2 text-center flex items-center justify-center gap-1"><Lock size={11} />{msg.reason}</p>}
       </div>
@@ -206,7 +207,7 @@ function PhotoHero({ user }: { user: User }) {
   const photos = user.photos?.length ? user.photos : user.avatar.url ? [user.avatar.url] : [];
   const tap = (e: React.MouseEvent<HTMLDivElement>) => { const r = e.currentTarget.getBoundingClientRect(); const x = e.clientX - r.left; if (photos.length < 2) return; setPi((p) => (x < r.width / 2 ? (p - 1 + photos.length) % photos.length : (p + 1) % photos.length)); };
   return (
-    <div className="relative h-[440px] bg-ink text-white select-none" onClick={tap} style={{ background: `linear-gradient(135deg, hsl(${user.avatar.hue} 60% 75%), hsl(${(user.avatar.hue + 40) % 360} 55% 60%))` }}>
+    <div className="relative h-[440px] bg-ink text-white v2:text-white select-none" onClick={tap} style={{ background: `linear-gradient(135deg, hsl(${user.avatar.hue} 60% 75%), hsl(${(user.avatar.hue + 40) % 360} 55% 60%))` }}>
       {photos.length ? <img src={assetUrl(photos[pi])} alt="" className="absolute inset-0 h-full w-full object-cover" draggable={false} /> : <span className="absolute inset-0 grid place-items-center text-[120px]">{user.avatar.emoji}</span>}
       <div className="absolute inset-x-0 top-0 h-32 bg-[linear-gradient(to_bottom,rgba(0,0,0,.5),rgba(0,0,0,0))]" />
       <div className="absolute inset-x-0 bottom-0 h-[55%] bg-[linear-gradient(to_top,rgba(20,14,10,.9),rgba(20,14,10,.3)_60%,rgba(0,0,0,0))]" />
