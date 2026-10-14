@@ -21,14 +21,16 @@ const v2Block = (name: string) => V2_BLOCKS[[...name].reduce((h, ch) => (h * 31 
 
 /**
  * 주간 시간표 격자 — 시간표 화면과 Me 탭이 같은 것을 쓴다.
- * 보이는 시간 범위는 기본 9~18시, 수업이 더 이르거나 늦으면 늘린다.
+ * 보이는 시간 범위는 기본 9~18시, 수업·활동이 더 이르거나 늦으면 늘린다.
  */
 export function WeekGrid({ courses, acts = [], days, today, onCourse, onActivity, onCell }: {
   courses: Course[]; acts?: { a: Activity; day: number }[]; days: number[]; today: number;
   onCourse: (c: Course) => void; onActivity?: (a: Activity) => void; onCell: (day: number, minute: number) => void;
 }) {
-  const gStart = Math.max(GRID_START, Math.min(9, ...courses.map((c) => Math.floor(toMin(c.start) / 60))));
-  const gEnd = Math.min(GRID_END, Math.max(18, ...courses.map((c) => Math.ceil(toMin(c.end) / 60))));
+  // 이번 주 활동(저녁 7시 달리기 등)도 범위에 넣는다 — 안 그러면 격자 밖으로 잘려 안 보인다
+  const spans = [...courses.map((c) => [c.start, c.end]), ...acts.map(({ a }) => [a.startTime, a.endTime])];
+  const gStart = Math.max(GRID_START, Math.min(9, ...spans.map(([s]) => Math.floor(toMin(s) / 60))));
+  const gEnd = Math.min(GRID_END, Math.max(18, ...spans.map(([, e]) => Math.ceil(toMin(e) / 60))));
   const hours = Array.from({ length: gEnd - gStart }, (_, i) => gStart + i);
   const v2 = useDesign() === 'v2';
   const now = nowMin();
@@ -49,8 +51,8 @@ export function WeekGrid({ courses, acts = [], days, today, onCourse, onActivity
                     <button key={c.id} onClick={(e) => { e.stopPropagation(); onCourse(c); }} className="absolute left-[1px] right-[1px] rounded-md px-1.5 py-1.5 text-left overflow-hidden press v2:rounded-[4px] v2:px-2"
                       style={{ top: (toMin(c.start) - gStart * 60) / 60 * HOUR_PX, height: (toMin(c.end) - toMin(c.start)) / 60 * HOUR_PX - 2, background: k ? k.bg : `hsl(${c.hue} 75% 86%)` }}>
                       {(() => { const m = /^([A-Z][A-Z&.]*\s*\d+[A-Z]{0,3})\s*(.*)$/.exec(c.name); return m ? <>
-                        <div className="text-[12px] font-extrabold leading-tight [overflow-wrap:anywhere] v2:text-[13px]" style={{ color: code }}>{m[1]}</div>
-                        {m[2] && <div className="text-[10.5px] font-semibold leading-tight line-clamp-3 mt-0.5 [overflow-wrap:anywhere]" style={{ color: sub }}>{m[2]}</div>}
+                        <div className="text-[12px] font-extrabold leading-tight [overflow-wrap:anywhere] hyphens-auto v2:text-[13px]" style={{ color: code }}>{m[1]}</div>
+                        {m[2] && <div className="text-[10.5px] font-semibold leading-tight line-clamp-3 mt-0.5 [overflow-wrap:anywhere] hyphens-auto" style={{ color: sub }}>{m[2]}</div>}
                       </> : <div className="text-[12px] font-extrabold leading-tight line-clamp-3 v2:text-[13px]" style={{ color: code }}>{c.name}</div>; })()}
                       {c.room && <div className="text-[10.5px] font-medium mt-0.5 leading-tight line-clamp-2 v2:text-[11px]" style={{ color: k ? k.sub : `hsl(${c.hue} 35% 35%)` }}>{c.room}</div>}
                     </button>

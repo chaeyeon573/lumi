@@ -597,7 +597,7 @@ export function createEngine(ctx: EngineContext) {
           const u = db().users.find((x) => x.id === inviteeId); if (!u) return;
           const ok = poll.options.filter((o) => {
             if (!u.timetable.length) return Math.random() < 0.6;
-            const day = jsDayToIdx(new Date(o.date).getDay());
+            const day = jsDayToIdx(new Date(`${o.date}T12:00:00`).getDay());
             return freeBlocks(u.timetable, day).some((b) => b.start <= toMin(o.startTime) && b.end >= toMin(o.endTime));
           }).map((o) => o.id);
           poll.votes[inviteeId] = ok.length ? ok : [poll.options[0].id];

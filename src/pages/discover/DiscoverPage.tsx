@@ -12,7 +12,7 @@ import { JoinButton } from '@/components/cards/JoinButton';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { nowActivities, ACTIVITY_CHIPS, TEAM_PURPOSE_CHIPS, teamItems, isTeamActivity } from '@core/lib/discover';
-import { freeBlocks, todayIdx, fmtBlock, nowMin, toHHMM } from '@core/lib/timetable';
+import { freeBlocks, todayIdx, fmtBlock, nowMin, toHHMM, toMin } from '@core/lib/timetable';
 import { whosFree } from '@core/lib/social';
 import { isTogetherType, daysUntil } from '@core/lib/recommend';
 import { todayISO, formatTime, formatDate } from '@core/lib/format';
@@ -149,7 +149,10 @@ function ActivitiesTab() {
   const items: Item[] = [
     ...acts.map((a): Item => ({ key: `a_${a.id}`, day: a.date, timed: timed(a.startTime), time: a.startTime, a })),
     ...together.map((o): Item => ({ key: `o_${o.id}`, day: o.date ? campusDate(o.date) : (o.deadline ? campusDate(o.deadline) : '9999'), timed: timed(o.startTime), time: o.startTime ?? '', o })),
-  ].sort((x, y) => x.day.localeCompare(y.day) || Number(y.timed) - Number(x.timed) || x.time.localeCompare(y.time));
+  ]
+    // 오늘 이미 시작한 지 한 시간이 넘은 것은 뺀다 — 저녁에 '오늘' 맨 위에 아침 8:30 행사가 남아 있으면 이상하다
+    .filter((i) => !(i.day === today && i.timed && toMin(i.time) < nowMin() - 60))
+    .sort((x, y) => x.day.localeCompare(y.day) || Number(y.timed) - Number(x.timed) || x.time.localeCompare(y.time));
   const groups = BUCKETS.map(([b, en, ko]) => ({ b, label: lang === 'en' ? en : ko, list: items.filter((i) => bucketOf(dayDiff(i.day, today)) === b) })).filter((g) => g.list.length);
   let ctaLeft = CTA_ROWS;
   return (

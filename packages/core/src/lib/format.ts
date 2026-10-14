@@ -1,11 +1,13 @@
 import { t, lang, locale } from '@core/i18n';
 
-export const todayISO = () => new Date().toISOString().slice(0, 10);
+/** 그 기기 달력의 날짜 — toISOString()(UTC)을 쓰면 버클리에서 오후 5시부터 '오늘'이 내일이 된다. 서버(UTC)에서는 같다 */
+const localISO = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+export const todayISO = () => localISO(new Date());
 
 export function addDaysISO(days: number, from = new Date()) {
   const d = new Date(from);
   d.setDate(d.getDate() + days);
-  return d.toISOString().slice(0, 10);
+  return localISO(d);
 }
 
 export function isThisWeek(dateISO: string) {
@@ -19,7 +21,8 @@ export function formatDate(dateISO: string) {
   const today = todayISO();
   if (dateISO === today) return t('오늘');
   if (dateISO === addDaysISO(1)) return t('내일');
-  const d = new Date(dateISO);
+  // 'YYYY-MM-DD' 만 주면 UTC 자정으로 읽혀 미국에서는 하루 전 요일·날짜가 나온다 — 그날 정오로 읽는다
+  const d = new Date(`${dateISO.slice(0, 10)}T12:00:00`);
   if (lang === 'en') return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', weekday: 'short' });
   const weekdays = ['일', '월', '화', '수', '목', '금', '토'];
   return `${d.getMonth() + 1}월 ${d.getDate()}일 (${weekdays[d.getDay()]})`;

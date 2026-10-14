@@ -10,7 +10,8 @@ const LIVE = 'https://heetz.up.railway.app';
 const paths = (pathsArg ?? '/,/discover,/discover?tab=activities,/community,/community?tab=clubs,/timetable,/ask').split(',');
 const local = !base.startsWith(LIVE);
 const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
-const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 });
+// 학생이 보는 그대로 — 컨테이너는 UTC 라서 시간대를 버클리로 맞춘다 (안 그러면 저녁에 '내일' 시간표가 보인다)
+const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, timezoneId: 'America/Los_Angeles', locale: 'en-US' });
 await ctx.route('**/*', async (route) => {
   const r = route.request(); const u = new URL(r.url());
   if (u.pathname.startsWith('/api/events')) return route.abort(); // SSE — 'load' 가 안 끝난다

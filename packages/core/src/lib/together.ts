@@ -41,7 +41,7 @@ export function tally(poll: TimePoll): { rows: OptionTally[]; best?: OptionTally
 /** 내 시간표 기준 이 시간이 공강인지 */
 export function myStatusFor(me: User, o: TimeOption): 'free' | 'class' | 'unknown' {
   if (!me.timetable.length) return 'unknown';
-  const day = jsDayToIdx(new Date(o.date).getDay());
+  const day = jsDayToIdx(new Date(`${o.date}T12:00:00`).getDay());
   return freeBlocks(me.timetable, day).some((b) => b.start <= toMin(o.startTime) && b.end >= toMin(o.endTime)) ? 'free' : 'class';
 }
 

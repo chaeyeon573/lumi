@@ -54,10 +54,9 @@ export function TimetablePage() {
 
   // 이번 주 참가 활동을 요일 블록으로
   const weekActs = useMemo(() => {
-    const monday = new Date(); monday.setDate(monday.getDate() - today);
-    const start = monday.toISOString().slice(0, 10); const end = addDaysISO(6, monday);
+    const start = addDaysISO(-today); const end = addDaysISO(6 - today);
     return v.visibleActivities.filter((a) => a.date >= start && a.date <= end && (a.hostId === me.id || participations.some((p) => p.activityId === a.id && p.userId === me.id && p.status === 'approved')))
-      .map((a) => ({ a, day: jsDayToIdx(new Date(a.date).getDay()) }));
+      .map((a) => ({ a, day: jsDayToIdx(new Date(`${a.date}T12:00:00`).getDay()) }));
   }, [v.visibleActivities, participations, me.id, today]);
 
   const now = statusNow(me.timetable);
@@ -73,8 +72,10 @@ export function TimetablePage() {
     if (params.get('add')) { setWantTerm(params.get('term') ?? ''); setEditing(emptyCourse(today)); setParams({}, { replace: true }); }
   }, [params]); // eslint-disable-line react-hooks/exhaustive-deps
   const friendIds = friendsOf(v.snap, me.id);
+  // 이미 지난 공강은 "같이 뭐 할래?"가 될 수 없다 — 지금(15분 단위로 올림)부터 남은 시간만, 30분 이상인 것만
+  const ahead = (bs: { start: number; end: number }[]) => { const n = Math.ceil(nowMin() / 15) * 15; return bs.map((b) => ({ start: Math.max(b.start, n), end: b.end })).filter((b) => b.end - b.start >= 30); };
   const overlaps = friendIds.map((fid) => v.userById(fid)!).filter((f) => f && f.timetable.length > 0 && v.canSeeField(f, 'timetable'))
-    .map((f) => ({ f, blocks: overlapBlocks(myFree, freeBlocks(f.timetable, today)) })).filter((x) => x.blocks.length > 0);
+    .map((f) => ({ f, blocks: ahead(overlapBlocks(myFree, freeBlocks(f.timetable, today))) })).filter((x) => x.blocks.length > 0);
   const bestBlock = overlaps.length ? overlaps.flatMap((o) => o.blocks).sort((a, b) => (b.end - b.start) - (a.end - a.start))[0] : null;
 
   const schoolId = me?.affiliation.type === 'university' ? me.affiliation.schoolId : '';
