@@ -330,11 +330,17 @@ function ClubRow({ o, why, events }: { o: Organization; why: string; events?: Op
 }
 
 /** 동아리 목록 한 줄 설명 — 학교 공식 목록에서 가져온 동아리는 우리 앱 회원이 0명이라 숫자 대신 종류·소개를 보여준다 */
-function orgSubtitle(o: { type: keyof typeof ORG_TYPE_LABELS; parent?: string; description: string; memberIds: string[]; followerIds: string[] }) {
+function orgSubtitle(o: { name: string; type: keyof typeof ORG_TYPE_LABELS; parent?: string; description: string; memberIds: string[]; followerIds: string[] }) {
   const n = o.memberIds.length + o.followerIds.length;
   if (n > 0) return lang === 'en' ? `${n} on Lumi` : `Lumi에 ${n}명`;
-  const desc = o.description.replace(/\s+/g, ' ').trim();
-  return [ORG_TYPE_LABELS[o.type], o.parent, desc].filter(Boolean).join(' · ');
+  // 한 줄에 무엇을 하는 곳인지가 보이게 — 소개 먼저('Our mission is to …' 같은 머리말은 뺀다), 소개가 없을 때만 종류·학교 분류
+  const esc = o.name.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const desc = o.description.replace(/\s+/g, ' ').trim()
+    // 'The X (ABC) program aims to …' 처럼 이름을 되풀이하는 머리말
+    .replace(new RegExp(`^(the )?${esc}( \\([^)]{1,15}\\))?,?( (program|club|organization|society))?( (is|aims|seeks|strives|exists))?( (a|an|to))? `, 'i'), '')
+    .replace(/^(our|the|its) (mission|purpose|goal|aim)( of [^,]{1,60})? is to /i, '');
+  if (desc) return desc.charAt(0).toUpperCase() + desc.slice(1);
+  return [ORG_TYPE_LABELS[o.type], o.parent].filter(Boolean).join(' · ');
 }
 
 // ─── 수업 — 이번 학기 수업 목록 (학과 + 검색) → 내 시간표에 추가 ─────────────────
