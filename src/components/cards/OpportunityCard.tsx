@@ -18,7 +18,7 @@ export function useOppState(o: Opportunity) {
   const v = useViewer();
   const mine = intents.find((i) => i.opportunityId === o.id && i.userId === v.me.id);
   const others = intents.filter((i) => i.opportunityId === o.id && i.userId !== v.me.id);
-  const matchCount = others.filter((i) => { const u = v.userById(i.userId); return u && (o.rolesNeeded ? u.canOffer.some((r) => v.me.lookingFor.includes(r)) || v.me.canOffer.some((r) => u.lookingFor.includes(r)) : v.me.interests.some((x) => u.interests.includes(x))); }).length;
+  const matchCount = others.filter((i) => { const u = v.userById(i.userId); return u && (o.rolesNeeded ? u.canOffer.some((r) => v.me.lookingFor.includes(r)) || v.me.canOffer.some((r) => u.lookingFor.includes(r)) : v.me.interests.some((x) => !!u.interests?.includes(x))); }).length;
   return { mine, others, matchCount };
 }
 

@@ -61,7 +61,8 @@ export function PersonPage() {
   const conn = v.connection(user.id);
   const msg = v.canMessage(user.id);
   const common = commonInterests(v.me, user);
-  const mutualF = mutualFriends(v.snap, v.me.id, user.id);
+  // 다른 사람의 친구 목록은 오지 않는다 — 서버가 함께 아는 친구 수만 붙여 보낸다 (오프라인 데모는 직접 센다)
+  const mutualF = user.mutualFriendCount ?? mutualFriends(v.snap, v.me.id, user.id).length;
   const see = (f: Parameters<typeof v.canSeeField>[1]) => v.canSeeField(user, f);
   const upcoming = v.visibleActivities.filter((a) => a.visibility === 'public' && a.date >= todayISO() && (a.hostId === user.id || v.snap.participations.some((p) => p.activityId === a.id && p.userId === user.id && p.status === 'approved')));
   const hosting = v.visibleActivities.filter((a) => a.hostId === user.id && a.date >= todayISO());
@@ -101,10 +102,10 @@ export function PersonPage() {
           )}
           {see('bio') && user.bio && <p className="text-[14px] text-ink-2 leading-relaxed mt-3">{user.bio}</p>}
           {reasons.length > 0 && <ul className="mt-3 space-y-1 rounded-xl bg-surface-2 px-3 py-2.5">{reasons.slice(0, 4).map((r) => <li key={r.text} className="text-[12px] text-ink-2 flex items-start gap-1.5"><Check size={12} className="text-primary shrink-0 mt-0.5" />{r.text}</li>)}</ul>}
-          {(common.length > 0 || mutualF.length > 0) && (
+          {(common.length > 0 || mutualF > 0) && (
             <div className="mt-3 flex flex-wrap gap-1.5">
               {common.length > 0 && <Tag tone="primary"><Sparkles size={11} /> {t('공통 관심사')} {common.map((i) => INTEREST_LABELS[i]).join(', ')}</Tag>}
-              {mutualF.length > 0 && <Tag tone="mint"><Users size={11} /> {t('함께 아는 친구')} {mutualF.length}{t('명')}</Tag>}
+              {mutualF > 0 && <Tag tone="mint"><Users size={11} /> {t('함께 아는 친구')} {mutualF}{t('명')}</Tag>}
             </div>
           )}
         </div>
@@ -119,31 +120,31 @@ export function PersonPage() {
               {sharedOpps.map((o) => <button key={o.id} onClick={() => nav(`/opportunities/${o.id}`)} className="w-full flex items-center gap-2 text-[13px] text-left press"><span>🎪</span><span className="flex-1 truncate">{o.title}</span><span className="text-[11px] text-primary font-semibold">{t('같이 가기')}</span></button>)}
               {hosting.length === 0 && sharedOpps.length === 0 && <p className="text-[12px] text-ink-2">{t('아직 열린 활동은 없어요. 공통 관심사로 커피나 점심을 제안해보세요.')}</p>}
             </div>
-            <div className="flex gap-2 mt-3">{(common.length ? common : user.interests).slice(0, 3).map((i) => <Button key={i} size="sm" variant="outline" onClick={() => { setPCat(i === 'meal' ? 'meal' : i === 'study' ? 'study' : i === 'exercise' ? 'exercise' : 'coffee'); setPropose(true); }}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]} {t('제안')}</Button>)}</div>
+            <div className="flex gap-2 mt-3">{(common.length ? common : user.interests ?? []).slice(0, 3).map((i) => <Button key={i} size="sm" variant="outline" onClick={() => { setPCat(i === 'meal' ? 'meal' : i === 'study' ? 'study' : i === 'exercise' ? 'exercise' : 'coffee'); setPropose(true); }}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]} {t('제안')}</Button>)}</div>
           </div>
         )}
-        {see('prompts') && (user.prompts.length > 0 || user.voicePrompt || user.poll) && (
+        {see('prompts') && (!!user.prompts?.length || user.voicePrompt || user.poll) && (
           <div className="space-y-2.5">
-            {user.prompts.filter((p) => p.answer.trim()).map((p) => <PromptAnswerCard key={p.questionId} prompt={p} />)}
+            {(user.prompts ?? []).filter((p) => p.answer.trim()).map((p) => <PromptAnswerCard key={p.questionId} prompt={p} />)}
             {user.voicePrompt && <div className="card p-4"><div className="text-[12px] font-bold text-primary flex items-center gap-1"><Mic size={12} />{questionById(user.voicePrompt.questionId)?.text}</div><div className="mt-2 flex"><VoicePlayer duration={user.voicePrompt.durationSec} /></div></div>}
             {user.poll && <PollCard poll={user.poll} ownerName={user.nickname} myVote={user.poll.votes[v.me.id]} onVote={(i) => run(() => api.users.votePoll(user.id, v.me.id, i), t('투표했어요.'))} />}
           </div>
         )}
 
         <div className="card p-4 space-y-3">
-          <Block label={t('이번 학기 목표')} visible={see('goals') && user.goals.length > 0}><div className="flex flex-wrap gap-1.5">{user.goals.map((g) => <Tag key={g} tone={v.me.goals.includes(g) ? 'primary' : 'neutral'}>{GOAL_EMOJI[g]} {GOAL_LABELS[g]}</Tag>)}</div></Block>
+          <Block label={t('이번 학기 목표')} visible={see('goals') && !!user.goals?.length}><div className="flex flex-wrap gap-1.5">{(user.goals ?? []).map((g) => <Tag key={g} tone={v.me.goals.includes(g) ? 'primary' : 'neutral'}>{GOAL_EMOJI[g]} {GOAL_LABELS[g]}</Tag>)}</div></Block>
           {user.lookingFor.length > 0 && <Block label={t('찾는 사람')} visible><div className="text-[13px] text-ink-2">🔍 {user.lookingFor.map((r) => PERSON_ROLE_LABELS[r]).join(', ')}</div></Block>}
           {user.living && <Block label={t('생활권')} visible={see('living')}><p className="text-[13px] text-ink-2">{RESIDENCE_LABELS[user.living.residence]} · {user.living.zone}{v.me.living?.zone === user.living.zone && <span className="text-mint font-semibold ml-1">{t('같은 생활권')}</span>}</p></Block>}
-          <Block label={t('관심사')} visible><div className="flex flex-wrap gap-1.5">{user.interests.map((i) => <Chip key={i} size="sm" active={common.includes(i)}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Chip>)}</div></Block>
+          <Block label={t('관심사')} visible={see('interests')}><div className="flex flex-wrap gap-1.5">{(user.interests ?? []).map((i) => <Chip key={i} size="sm" active={common.includes(i)}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Chip>)}</div></Block>
           <Block label={t('하고 싶은 활동')} visible={see('freeTime')}>{user.nowWant && <div className="rounded-xl bg-primary-soft text-primary text-[13px] font-semibold px-3 py-2 mb-1.5">“{user.nowWant}”</div>}<p className="text-[13px] text-ink-2">{user.freeTime || t('아직 작성하지 않았어요')}</p></Block>
           <Block label={t('좋아하는 것')} visible={see('likes')}><p className="text-[13px] text-ink-2">{user.likes || '—'}</p></Block>
-          <Block label={t('활동 가능한 시간')} visible={see('timetable') && user.timetable.length > 0 ? true : see('availability') && user.availability !== 'hidden'}>
+          <Block label={t('활동 가능한 시간')} visible={see('timetable') && !!user.timetable?.length ? true : see('availability') && user.availability !== 'hidden'}>
             <p className="text-[13px] text-ink-2 flex items-center gap-1"><Clock size={13} className="text-ink-3" />{availabilityText(user, see('timetable')).text}</p>
-            {see('timetable') && user.timetable.length > 0 && (() => { const fb = freeBlocks(user.timetable, todayIdx()); const ov = v.me.timetable.length ? overlapBlocks(freeBlocks(v.me.timetable, todayIdx()), fb) : []; return (
+            {see('timetable') && !!user.timetable?.length && (() => { const fb = freeBlocks(user.timetable ?? [], todayIdx()); const ov = v.me.timetable.length ? overlapBlocks(freeBlocks(v.me.timetable, todayIdx()), fb) : []; return (
               <div className="mt-1.5 flex flex-wrap gap-1">{fb.map((b) => <Tag key={b.start} tone={ov.some((o) => o.start <= b.start && o.end >= b.end) ? 'mint' : 'neutral'}>{fmtBlock(b)}</Tag>)}<span className="text-[11px] text-ink-3 w-full">{t('오늘 공강 · 초록은 나와 겹치는 시간 · 전체 시간표와 강의실은 비공개')}</span></div>
             ); })()}
           </Block>
-          <Block label={t('이용 목적')} visible={see('purposes')}><div className="flex flex-wrap gap-1.5">{user.purposes.map((p) => <Tag key={p}>{PURPOSE_LABELS[p]}</Tag>)}</div></Block>
+          <Block label={t('이용 목적')} visible={see('purposes')}><div className="flex flex-wrap gap-1.5">{(user.purposes ?? []).map((p) => <Tag key={p}>{PURPOSE_LABELS[p]}</Tag>)}</div></Block>
           <Block label={t('지역')} visible><p className="text-[13px] text-ink-2 flex items-center gap-1"><MapPin size={13} className="text-ink-3" />{user.region} {t('근처')} <span className="text-ink-3 text-[11px]">{t('· 정확한 위치는 공개되지 않아요')}</span></p></Block>
           {see('height') && user.height && <Block label={t('키')} visible><p className="text-[13px] text-ink-2">{user.height}cm</p></Block>}
         </div>

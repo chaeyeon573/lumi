@@ -12,6 +12,7 @@ import { ALL_POST_TYPES, POST_TYPE_LABELS } from '@core/lib/labels';
 import { relativeTime } from '@core/lib/format';
 import { cn } from '@core/lib/cn';
 import type { PostType, Post } from '@core/types';
+import { likeCount } from '@core/lib/privacy';
 import { BrowseTab } from './BrowseTab';
 import { TodaysQuestion, QuietInvite, MeanwhileThisWeek } from '@/components/together/FeedExtras';
 
@@ -74,7 +75,7 @@ function FeedTab() {
         <span className="flex-1 min-w-0">
           <span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{name}</span>{p.postType && p.postType !== 'story' && <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{POST_TYPE_LABELS[p.postType]}</span>}<span className="text-[12px] text-ink-3 ml-auto shrink-0">{relativeTime(p.createdAt)}</span></span>
           <span className="block text-[14px] text-ink-2 truncate mt-0.5">{p.text}</span>
-          <span className="flex items-center gap-3 text-[12px] text-ink-3 mt-1"><span className="flex items-center gap-1"><Heart size={12} />{p.likeIds.length}</span><span className="flex items-center gap-1"><MessageCircle size={12} />{p.comments.length}</span></span>
+          <span className="flex items-center gap-3 text-[12px] text-ink-3 mt-1"><span className="flex items-center gap-1"><Heart size={12} />{likeCount(p)}</span><span className="flex items-center gap-1"><MessageCircle size={12} />{p.comments.length}</span></span>
         </span>
         {p.media[0] && <Cover emoji={p.media[0].emoji} hue={p.media[0].hue} url={p.media[0].url} className="h-14 w-14 rounded-2xl shrink-0" size={20} />}
       </button>
@@ -83,8 +84,9 @@ function FeedTab() {
   return (
     <div>
       <TodaysQuestion />
-      <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2"><Chip active={type === 'all'} onClick={() => setType('all')}>{t('전체')}</Chip>{ALL_POST_TYPES.filter((x) => x !== 'news').map((pt) => <Chip key={pt} active={type === pt} onClick={() => setType(pt)}>{POST_TYPE_LABELS[pt]}</Chip>)}<Chip active={type === 'anon'} onClick={() => setType('anon')}>{t('익명')}</Chip></div>
-      {posts.length === 0 ? <EmptyState emoji="" title={t('아직 올라온 것이 없어요')} action={<Button onClick={() => nav('/create/post')}>{t('게시물 작성')}</Button>} /> : <div className="divide-y divide-line">{posts.map(row)}</div>}
+      {/* 글이 하나도 없으면 칩 줄·"아직 없어요" 없이 아래 초대 카드 하나만 (빈 문구가 두 번 겹쳤다). 글쓰기는 위 연필 버튼 */}
+      {feed.length > 0 && <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2"><Chip active={type === 'all'} onClick={() => setType('all')}>{t('전체')}</Chip>{ALL_POST_TYPES.filter((x) => x !== 'news').map((pt) => <Chip key={pt} active={type === pt} onClick={() => setType(pt)}>{POST_TYPE_LABELS[pt]}</Chip>)}<Chip active={type === 'anon'} onClick={() => setType('anon')}>{t('익명')}</Chip></div>}
+      {feed.length === 0 ? null : posts.length === 0 ? <EmptyState emoji="" title={t('아직 올라온 것이 없어요')} action={<Button onClick={() => nav('/create/post')}>{t('게시물 작성')}</Button>} /> : <div className="divide-y divide-line">{posts.map(row)}</div>}
       {quiet && <QuietInvite />}
       {quiet && <MeanwhileThisWeek />}
     </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Check, GraduationCap, Heart, Sparkles } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { api } from '@core/api';
@@ -174,7 +174,8 @@ export function StartPage() {
   };
 
   const birth = Number(d.birthYear);
-  const birthOk = birth >= 1950 && birth <= new Date().getFullYear() - 15;
+  // Lumi is 16+ (Terms of Use · /terms) — some freshmen start college at 16. Birth year only, so this is a floor, not proof
+  const birthOk = birth >= 1950 && birth <= new Date().getFullYear() - 16;
   const school = schools.find((s) => s.id === d.schoolId);
   const Head = ({ q, sub }: { q: string; sub: string }) => <div><h2 className="text-[26px] font-extrabold leading-tight">{q}</h2><p className="text-[14px] text-ink-3 mt-1">{sub}</p></div>;
   const NextBtn = ({ ok, text }: { ok: boolean; text?: string }) => <Button full size="lg" disabled={!ok} onClick={next}>{text ?? (en ? 'Next' : '다음')}</Button>;
@@ -293,6 +294,7 @@ export function StartPage() {
             <Head q={en ? 'Last one — what should we call you?' : '마지막! 뭐라고 불러드릴까요?'} sub={en ? 'A first name or nickname. This is how classmates will see you.' : '같은 학교 학생들에게 보이는 이름이에요.'} />
             <Field label={en ? 'Name' : '이름'}><Input autoFocus maxLength={20} value={d.nickname} onChange={(e) => patch({ nickname: e.target.value })} /></Field>
             <Field label={en ? 'Birth year' : '출생 연도'}><Input inputMode="numeric" maxLength={4} placeholder="2005" value={d.birthYear} onChange={(e) => patch({ birthYear: e.target.value.replace(/\D/g, '') })} /></Field>
+            {d.birthYear.length === 4 && !birthOk && <p className="text-[12px] text-danger -mt-2">{en ? 'Lumi is for college students 16 and older.' : 'Lumi는 만 16세 이상 대학생을 위한 앱이에요.'}</p>}
             <NextBtn ok={!!d.nickname.trim() && birthOk} />
           </>
         )}
@@ -318,6 +320,7 @@ export function StartPage() {
             {verified && <div className="rounded-xl bg-mint-soft text-mint text-[13px] font-semibold px-3 py-2.5 flex items-center gap-2"><Check size={16} />{en ? 'Verified — you’ll get a school badge too.' : '인증 완료 — 학교 인증 배지도 붙어요.'}</div>}
             <Button full size="lg" loading={busy && verified} disabled={!verified} onClick={() => finish(true)}>{en ? 'Start Lumi' : 'Lumi 시작하기'}</Button>
             <button onClick={() => finish(false)} disabled={busy} className="w-full h-10 text-[13px] font-semibold text-ink-3">{en ? 'Skip for now' : '나중에 할게요'}</button>
+            <p className="text-center text-[12px] text-ink-3">{en ? 'By starting Lumi you confirm you’re 16 or older and agree to the ' : 'Lumi를 시작하면 만 16세 이상이며 다음에 동의하는 것으로 봐요: '}<Link to="/terms" className="text-primary font-semibold underline">{en ? 'Terms of Use' : '이용약관'}</Link>{en ? ' and ' : ', '}<Link to="/privacy" className="text-primary font-semibold underline">{en ? 'Privacy Policy' : '개인정보처리방침'}</Link>.</p>
           </>
         )}
       </div>

@@ -22,10 +22,12 @@ export type UniversityRole = 'undergraduate' | 'graduate' | 'alumni';
 
 export interface UniversityAffiliation {
   type: 'university';
-  schoolId: ID;
-  schoolName: string;
+  /** ⚠ 다른 사람 프로필에서는 showSchool 이 꺼져 있고 다른 학교면 서버가 보내지 않는다 (lib/privacy) */
+  schoolId?: ID;
+  schoolName?: string;
   role: UniversityRole;
-  department: string;
+  /** ⚠ 다른 사람 프로필에서는 showDepartment 가 꺼져 있으면 서버가 보내지 않는다 */
+  department?: string;
   /** 입학 또는 졸업 연도 */
   year: number;
   emailVerified: boolean;
@@ -42,6 +44,8 @@ export interface CompanyAffiliation {
 }
 
 export type Affiliation = UniversityAffiliation | CompanyAffiliation;
+/** 본인 소속 — 항상 다 있다 */
+export type FullAffiliation = (UniversityAffiliation & { schoolId: ID; schoolName: string; department: string }) | CompanyAffiliation;
 
 export type ProfileField = 'bio' | 'likes' | 'freeTime' | 'height' | 'availability' | 'preferredPartner' | 'purposes' | 'interests' | 'posts' | 'prompts' | 'timetable' | 'goals' | 'living';
 
@@ -84,7 +88,10 @@ export interface PollPrompt {
   options: string[];
   /** 본인이 고른 답 */
   ownChoice: number;
+  /** ⚠ 다른 사람 프로필에서는 내 표만 남는다 — 집계는 tally */
   votes: Record<ID, number>;
+  /** 서버가 다른 사람 프로필에 붙인다: 보기별 표 수 */
+  tally?: number[];
 }
 
 // ─── 아이스브레이커 게임 프로필 항목 ─────────────────────────────────────────
@@ -118,32 +125,32 @@ export interface User {
   sample?: boolean;
   nickname: string;
   birthYear: number;
-  gender: Gender;
+  gender?: Gender;
   avatar: { emoji: string; hue: number; photoType: 'face' | 'masked' | 'back'; url?: string };
   /** 프로필 사진 여러 장 (첫 장은 avatar.url) */
   photos?: string[];
   identityVerified: boolean;
   affiliation: Affiliation;
-  bio: string;
-  likes: string;
-  freeTime: string;
+  bio?: string;
+  likes?: string;
+  freeTime?: string;
   height?: number;
-  availability: Availability;
-  interests: Interest[];
-  purposes: Purpose[];
+  availability?: Availability;
+  interests?: Interest[];
+  purposes?: Purpose[];
   preferredPartner?: string;
   /** 정확한 위치 대신 대략적인 지역 */
   region: string;
   /** 지금 하고 싶은 활동 (한 줄) */
   nowWant?: string;
   /** 프로필 질문 답변 (텍스트 3개 필수) */
-  prompts: ProfilePrompt[];
+  prompts?: ProfilePrompt[];
   voicePrompt?: VoicePrompt;
   poll?: PollPrompt;
   /** 시간표 — 다른 사용자에게는 공강 여부만 공개된다 */
-  timetable: Course[];
+  timetable?: Course[];
   /** 이번 학기 목표 */
-  goals: Goal[];
+  goals?: Goal[];
   /** 찾는 사람 */
   lookingFor: Role[];
   /** 내가 제공할 수 있는 것 */
@@ -151,8 +158,8 @@ export interface User {
   /** 생활권 — 정확한 주소·방은 저장하지 않는다 */
   living?: { residence: Residence; zone: string };
   /** 관심 있는 연구실·조직 */
-  interestedOrgIds: ID[];
-  meetPreference: MeetPreference[];
+  interestedOrgIds?: ID[];
+  meetPreference?: MeetPreference[];
   /** Who's free에서 친구가 아닌 사람에게도 보이기 */
   openToNew?: boolean;
   /** 오늘의 질문 답변 */
@@ -175,11 +182,26 @@ export interface User {
   fieldVisibility: Record<ProfileField, Visibility>;
   settings: {
     messagePolicy: 'connected' | 'friends_only' | 'none';
-    notifications: boolean;
-    locationPermission: 'granted' | 'denied' | 'undecided';
+    /** 본인에게만 내려간다 */
+    notifications?: boolean;
+    locationPermission?: 'granted' | 'denied' | 'undecided';
   };
+  /** 운영자가 정지한 계정 — 로그인·글쓰기가 막히고 다른 사람에게서 그 사람과 콘텐츠가 숨겨진다 (server/moderation.ts). 서버 전용 */
+  suspended?: { at: string; by: string; reason: string; reportId?: ID };
   createdAt: string;
+  /** 서버가 다른 사람 프로필에 붙인다: 이 보는 사람에게 열린 항목 (lib/privacy). 본인 프로필·오프라인 데모에는 없다 */
+  viewable?: ProfileField[];
+  /** 서버가 다른 사람 프로필에 붙인다: 나와 함께 아는 친구 수 (0이면 없다) */
+  mutualFriendCount?: number;
 }
+
+/**
+ * 다른 사람에게 보낼 때 공개 범위·개인 설정에 따라 빠질 수 있는 항목 (lib/privacy · server/view.ts).
+ * 본인 프로필(Self)에는 항상 있다.
+ */
+export type WithheldKey = 'bio' | 'likes' | 'freeTime' | 'availability' | 'interests' | 'purposes' | 'prompts' | 'timetable' | 'goals' | 'interestedOrgIds' | 'meetPreference' | 'gender';
+/** 내 프로필 — 서버가 아무것도 빼지 않는다 */
+export type Self = Omit<User, WithheldKey | 'affiliation' | 'settings'> & Required<Pick<User, WithheldKey>> & { affiliation: FullAffiliation; settings: Required<User['settings']> };
 
 export interface School {
   id: ID;
@@ -241,7 +263,8 @@ export interface OpportunityIntentRecord {
   opportunityId: ID;
   userId: ID;
   intent: OpportunityIntent;
-  saved: boolean;
+  /** ⚠ 본인에게만 내려간다 */
+  saved?: boolean;
   /** intent 가 team 일 때 — 이 공고에서 찾는 역할 (없으면 프로필의 lookingFor) */
   roles?: Role[];
   createdAt: string;
@@ -301,7 +324,10 @@ export interface Place {
 
 export interface Comment {
   id: ID;
-  authorId: ID;
+  /** ⚠ 익명 글의 댓글은 본인 것 말고는 서버가 지운다 (lib/privacy) */
+  authorId?: ID;
+  /** 익명 글에서 글쓴이가 단 댓글 — 서버가 표시한다 */
+  byAuthor?: boolean;
   text: string;
   createdAt: string;
 }
@@ -423,15 +449,21 @@ export type PostType = 'story' | 'question' | 'info' | 'review' | 'together' | '
 
 export interface Post {
   id: ID;
-  authorId: ID;
+  /** ⚠ 익명 글은 글쓴이 본인에게만 내려간다 — 다른 사람에게는 없다 (lib/privacy) */
+  authorId?: ID;
   authorType: 'user' | 'org';
   orgId?: ID;
   media: { emoji: string; hue: number; url?: string }[];
   text: string;
   tags: string[];
   visibility: Visibility;
+  /** ⚠ 서버는 보는 사람 본인 id만 남긴다 (누가 공감·저장했는지는 비공개) — 개수는 likeCount */
   likeIds: ID[];
   savedIds: ID[];
+  /** 서버가 붙인다: 공감 수 */
+  likeCount?: number;
+  /** 익명 글 — 서버가 붙이는 글쓴이 학교명 (글쓴이 id 대신) */
+  anonSchool?: string;
   comments: Comment[];
   relatedActivityId?: ID;
   relatedOpportunityId?: ID;
@@ -588,7 +620,18 @@ export interface Notification {
 }
 
 // ─── 신고 ─────────────────────────────────────────────────────────────────
-export type ReportTargetType = 'user' | 'activity' | 'post' | 'message' | 'ride';
+/** message: 채팅방 id (또는 메시지 id) · comment: 글·모임 댓글 id · activity: 모임 또는 공고 id */
+export type ReportTargetType = 'user' | 'activity' | 'post' | 'comment' | 'message' | 'ride';
+/** open: 검토 대기 · dismissed: 문제없음 · actioned: 삭제·정지 조치함 (server/moderation.ts) */
+export type ReportStatus = 'open' | 'dismissed' | 'actioned';
+/** 신고에 남기는 운영 기록 — 누가 언제 무엇을 했는지 */
+export interface ReportLogEntry {
+  at: string;
+  /** 운영자 이름 (관리 화면에서 입력) 또는 'system' */
+  by: string;
+  action: 'auto_hidden' | 'dismissed' | 'removed' | 'suspended' | 'unsuspended';
+  note?: string;
+}
 
 export interface Report {
   id: ID;
@@ -597,6 +640,14 @@ export interface Report {
   targetId: ID;
   reason: string;
   createdAt: string;
+  /** 없으면 open (예전 신고) */
+  status?: ReportStatus;
+  /** ⚠ 아래는 서버 전용 — 신고한 사람에게는 지워서 내려간다 (server/moderation.ts) */
+  log?: ReportLogEntry[];
+  /** 신고 당시 내용 일부 (작성자가 지워도 검토할 수 있게) */
+  excerpt?: string;
+  /** 신고 당시 콘텐츠 주인 */
+  targetOwnerId?: ID;
 }
 
 // ─── 아이스브레이커 게임 ("Say hi" 대신) ───────────────────────────────────

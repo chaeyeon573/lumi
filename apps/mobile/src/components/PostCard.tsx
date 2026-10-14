@@ -10,6 +10,7 @@ import { POST_TYPE_LABELS, topicLabel } from '@core/lib/labels';
 import { tw } from '@/tw';
 import { useViewer } from '@/viewer';
 import { nav } from '@/nav';
+import { likeCount } from '@core/lib/privacy';
 import { Avatar, Cover, Button, BottomSheet, Input, C } from '@/ui';
 
 /** 게시물 카드 (펼친 상태): 작성자 · 본문 · 공감/댓글/저장 · 댓글 */
@@ -45,7 +46,7 @@ export function PostCard({ post: p }: { post: Post }) {
         <Text style={tw`${p.media.length ? 'text-[15px]' : 'text-[17px]'} text-ink leading-6`}>{p.text}</Text>
         {tags.length ? <Text style={tw`mt-1 text-[12px] text-primary`}>{tags.join(' ')}</Text> : null}
         <View style={tw`flex-row items-center mt-2 -ml-1`}>
-          <Pressable onPress={() => run(() => api.posts.toggleLike(p.id, v.me.id))} style={tw`h-9 px-2 flex-row items-center`}><Heart size={20} color={liked ? C.danger : C.ink2} fill={liked ? C.danger : 'none'} /><Text style={tw`ml-1 text-[13px] font-semibold text-ink-2`}>{p.likeIds.length}</Text></Pressable>
+          <Pressable onPress={() => run(() => api.posts.toggleLike(p.id, v.me.id))} style={tw`h-9 px-2 flex-row items-center`}><Heart size={20} color={liked ? C.danger : C.ink2} fill={liked ? C.danger : 'none'} /><Text style={tw`ml-1 text-[13px] font-semibold text-ink-2`}>{likeCount(p)}</Text></Pressable>
           <Pressable onPress={() => setComments((c) => !c)} style={tw`h-9 px-2 flex-row items-center`}><MessageCircle size={20} color={C.ink2} /><Text style={tw`ml-1 text-[13px] font-semibold text-ink-2`}>{p.comments.length}</Text></Pressable>
           <View style={tw`flex-1`} />
           <Pressable onPress={() => run(() => api.posts.toggleSave(p.id, v.me.id), saved ? undefined : t('저장했어요'))} style={tw`h-9 px-2`}><Bookmark size={20} color={saved ? C.primary : C.ink2} fill={saved ? C.primary : 'none'} /></Pressable>
@@ -54,7 +55,7 @@ export function PostCard({ post: p }: { post: Post }) {
           <View style={tw`mt-2 border-t border-line pt-3`}>
             {p.comments.length === 0 ? <Text style={tw`text-[12px] text-ink-3`}>{t('첫 댓글을 남겨보세요.')}</Text> : null}
             {p.comments.map((c) => { const u = v.userById(c.authorId); return (
-              <View key={c.id} style={tw`flex-row mb-2`}><Avatar emoji={anon ? '🫥' : (u?.avatar.emoji ?? '👤')} hue={anon ? 220 : (u?.avatar.hue ?? 200)} url={anon ? undefined : u?.avatar.url} size={24} /><Text style={tw`flex-1 ml-2 text-[13px] text-ink`}><Text style={tw`font-bold`}>{anon ? (c.authorId === p.authorId ? t('글쓴이') : t('익명')) : u?.nickname} </Text>{c.text}<Text style={tw`text-ink-3 text-[11px]`}>  {relativeTime(c.createdAt)}</Text></Text></View>
+              <View key={c.id} style={tw`flex-row mb-2`}><Avatar emoji={anon ? '🫥' : (u?.avatar.emoji ?? '👤')} hue={anon ? 220 : (u?.avatar.hue ?? 200)} url={anon ? undefined : u?.avatar.url} size={24} /><Text style={tw`flex-1 ml-2 text-[13px] text-ink`}><Text style={tw`font-bold`}>{anon ? (c.byAuthor || (!!c.authorId && c.authorId === p.authorId) ? t('글쓴이') : t('익명')) : u?.nickname} </Text>{c.text}<Text style={tw`text-ink-3 text-[11px]`}>  {relativeTime(c.createdAt)}</Text></Text></View>
             ); })}
             <View style={tw`flex-row items-center mt-1`}>
               <Input placeholder={t('댓글 달기…')} value={text} onChangeText={setText} style={tw`flex-1 h-10`} />

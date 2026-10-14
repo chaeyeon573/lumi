@@ -13,6 +13,7 @@ import { useViewer } from '@/viewer';
 import { nav } from '@/nav';
 import { TabScreen, AppHeader, IconBtn, UnderlineTabs, Chip, ChipRow, ListRow, Avatar, Cover, Tag, Button, Empty, C } from '@/ui';
 import { PostCard } from '@/components/PostCard';
+import { likeCount } from '@core/lib/privacy';
 
 type Tab = 'feed' | 'opportunities' | 'clubs';
 
@@ -58,7 +59,7 @@ function FeedTab() {
             <View style={tw`flex-1`} /><Text style={tw`text-[12px] text-ink-3`}>{relativeTime(p.createdAt)}</Text>
           </View>
           <Text numberOfLines={1} style={tw`text-[14px] text-ink-2 mt-0.5`}>{p.text}</Text>
-          <View style={tw`flex-row items-center mt-1`}><Heart size={12} color={C.ink3} /><Text style={tw`ml-1 mr-3 text-[12px] text-ink-3`}>{p.likeIds.length}</Text><MessageCircle size={12} color={C.ink3} /><Text style={tw`ml-1 text-[12px] text-ink-3`}>{p.comments.length}</Text></View>
+          <View style={tw`flex-row items-center mt-1`}><Heart size={12} color={C.ink3} /><Text style={tw`ml-1 mr-3 text-[12px] text-ink-3`}>{likeCount(p)}</Text><MessageCircle size={12} color={C.ink3} /><Text style={tw`ml-1 text-[12px] text-ink-3`}>{p.comments.length}</Text></View>
         </View>
         {p.media[0] ? <Cover emoji={p.media[0].emoji} hue={p.media[0].hue} url={p.media[0].url} size={56} style={tw`ml-3`} /> : null}
       </Pressable>

@@ -5,6 +5,7 @@
  * - 게임(핫테이크·두 개의 진실·이모지·맞혀봐) 항목이 없는 예시 사용자에게 시드 값을 채운다
  * - UC Merced 데모 계정(u_me_ucmerced)을 기본 데모 계정에서 복제해 만든다
  * 이미 적용된 것은 건드리지 않으므로 서버가 켜질 때마다 돌려도 된다.
+ * 예시 사용자·모임은 데모 계정에게만, 그 학교 것만 내려간다 — 실제 계정은 받지 않는다 (server/samples.ts, server/view.ts)
  */
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
@@ -35,7 +36,7 @@ function mercedDemo(base: User): User {
   u.bio = 'CS student at UC Merced. Building side projects and always down for coffee with new people.';
   u.freeTime = 'Coding at the library or walking around Lake Yosemite';
   u.nowWant = 'Coffee near campus tonight?';
-  u.prompts = u.prompts.map((p, i) => ({ ...p, answer: ['Coffee and talk side projects', 'Kolligian Library by the windows', 'React, best cafés downtown, hiking picks'][i] ?? p.answer }));
+  u.prompts = (u.prompts ?? []).map((p, i) => ({ ...p, answer: ['Coffee and talk side projects', 'Kolligian Library by the windows', 'React, best cafés downtown, hiking picks'][i] ?? p.answer }));
   u.timetable = [];
   if (u.living) u.living = { ...u.living, zone: 'Merced' };
   u.interestedOrgIds = [];
@@ -79,7 +80,7 @@ export function migrateDemo(db: Snapshot): Patch | null {
 
   const users = [...db.users.map((u) => changed.get(u.id) ?? u), ...added];
   const active = activeSchoolIds();
-  const withUsers = new Set(users.map((u) => (u.affiliation.type === 'university' ? u.affiliation.schoolId : '')));
+  const withUsers = new Set(users.map((u) => (u.affiliation.type === 'university' ? u.affiliation.schoolId ?? '' : '')));
   const hideSchools = active.size ? db.schools.filter((s) => !active.has(s.id) && !withUsers.has(s.id)).map((s) => s.id) : [];
 
   if (!changed.size && !added.length && !hideSchools.length) return null;

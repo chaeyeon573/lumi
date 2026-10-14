@@ -35,7 +35,7 @@ let services: { dining: DiningService; gym: GymService } | null = null;
 /** Ask Lumi 도구가 같은 데이터를 본다 (server/ai-live.ts) */
 export const liveServices = () => services;
 
-const schoolOf = (u?: User) => (u?.affiliation.type === 'university' ? u.affiliation.schoolId : '');
+const schoolOf = (u?: User) => (u?.affiliation.type === 'university' ? u.affiliation.schoolId ?? '' : '');
 const hits = new Map<string, number[]>();
 function limited(key: string, max: number, windowMs = 3_600_000) {
   const t = Date.now(); const xs = (hits.get(key) ?? []).filter((x) => t - x < windowMs);

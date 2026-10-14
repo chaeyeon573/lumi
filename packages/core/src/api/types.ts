@@ -1,5 +1,5 @@
 import type {
-  Activity, ActivityProposal, ChatRoom, ID, Notification, Organization, Participation, Post, Relationships, Report, School, User,
+  Activity, ActivityProposal, ChatRoom, ID, Notification, Organization, Participation, Post, Relationships, Report, School, User, Self,
   ActivityCategory, Visibility, JoinPolicy, ActivityKind, Place, ReportTargetType, Availability, Opportunity, OpportunityIntentRecord, OpportunityIntent, Role, TimePoll, TimeOption, Game, GameInput,
   ClassRoster, StudyGroupResponse,
 } from '@core/types';
@@ -35,7 +35,8 @@ export interface Snapshot {
 /** 변경된 엔티티만 담아 돌려주는 부분 응답. 스토어가 id 기준으로 병합한다. */
 export type Patch = Partial<Omit<Snapshot, 'relationships'>> & {
   relationships?: Relationships;
-  removed?: Partial<Record<'activities' | 'posts' | 'chatRooms' | 'participations' | 'proposals' | 'opportunityIntents' | 'timePolls' | 'organizations' | 'opportunities' | 'schools' | 'rides', ID[]>>;
+  /** users · games · notifications: only when an account is deleted (lib/account) */
+  removed?: Partial<Record<'activities' | 'posts' | 'chatRooms' | 'participations' | 'proposals' | 'opportunityIntents' | 'timePolls' | 'organizations' | 'opportunities' | 'schools' | 'rides' | 'users' | 'games' | 'notifications', ID[]>>;
 };
 
 export interface RegisterInput {
@@ -43,7 +44,7 @@ export interface RegisterInput {
   email?: string;
   nickname: string;
   birthYear: number;
-  gender: User['gender'];
+  gender: Self['gender'];
   avatar: User['avatar'];
   schoolId: ID;
   role: 'undergraduate' | 'graduate' | 'alumni';
@@ -52,8 +53,8 @@ export interface RegisterInput {
   emailVerified: boolean;
   showSchool: boolean;
   showDepartment: boolean;
-  interests: User['interests'];
-  purposes: User['purposes'];
+  interests: Self['interests'];
+  purposes: Self['purposes'];
   bio: string;
   likes: string;
   freeTime: string;
@@ -61,18 +62,18 @@ export interface RegisterInput {
   availability: Availability;
   preferredPartner?: string;
   fieldVisibility: User['fieldVisibility'];
-  prompts: User['prompts'];
+  prompts: Self['prompts'];
   voicePrompt?: User['voicePrompt'];
   poll?: User['poll'];
-  timetable?: User['timetable'];
-  goals: User['goals'];
+  timetable?: Self['timetable'];
+  goals: Self['goals'];
   lookingFor?: User['lookingFor'];
   canOffer?: User['canOffer'];
   living?: User['living'];
-  meetPreference?: User['meetPreference'];
+  meetPreference?: Self['meetPreference'];
   /** 가입하면서 저장한 동아리 */
   interestedOrgIds?: ID[];
-  locationPermission: User['settings']['locationPermission'];
+  locationPermission: Self['settings']['locationPermission'];
   notifications: boolean;
 }
 
@@ -215,7 +216,7 @@ export type AiCard =
 /** 대화형 가입이 채워 주는 프로필 */
 export interface AiProfileDraft {
   department: string; role: 'undergraduate' | 'graduate' | 'alumni' | 'unknown'; yearInSchool: number;
-  goals: User['goals']; interests: User['interests']; purposes: User['purposes']; lookingFor: User['lookingFor']; canOffer: User['canOffer'];
+  goals: Self['goals']; interests: Self['interests']; purposes: Self['purposes']; lookingFor: User['lookingFor']; canOffer: User['canOffer'];
   bio: string; likes: string; freeTime: string;
 }
 
@@ -230,6 +231,8 @@ export interface AroundUApi {
     session(): Promise<ID | null>;
     /** 이미 가입한 계정에 (코드로 확인한) 학교 이메일을 붙인다 — 다른 기기에서 이메일로 로그인할 수 있게 */
     attachEmail(email: string): Promise<User>;
+    /** Permanently delete my account and personal data (App Store 5.1.1(v)). `confirm` must be "DELETE". Signs out. Demo/sample accounts are refused */
+    deleteAccount(confirm: string): Promise<void>;
   };
   bootstrap(viewerId: ID): Promise<Snapshot>;
 
@@ -376,6 +379,12 @@ export interface AroundUApi {
 
   reports: {
     create(reporterId: ID, targetType: ReportTargetType, targetId: ID, reason: string): Promise<Patch>;
+  };
+
+  /** iPhone app push token (apps/shell → server/push.ts). unregister works signed out (sign-out, logout on a shared phone) */
+  push: {
+    register(token: string, device: { platform: 'ios' | 'android'; appVersion?: string }): Promise<{ registered: boolean }>;
+    unregister(token: string): Promise<void>;
   };
 
   system: {

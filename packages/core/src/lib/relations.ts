@@ -56,23 +56,25 @@ export function canMessage(s: Rel & { activities?: Activity[] }, from: ID, to: I
 
 // ─── 공개 범위 ────────────────────────────────────────────────────────────
 function sameSchool(a: User, b: User) {
-  return a.affiliation.type === 'university' && b.affiliation.type === 'university' && a.affiliation.schoolId === b.affiliation.schoolId;
+  return a.affiliation.type === 'university' && b.affiliation.type === 'university' && !!a.affiliation.schoolId && a.affiliation.schoolId === b.affiliation.schoolId;
 }
-function dept(u: User) { return u.affiliation.type === 'university' ? u.affiliation.department : ''; }
+function dept(u: User) { return u.affiliation.type === 'university' ? u.affiliation.department ?? '' : ''; }
 
 export function canView(s: Rel, viewer: User, ownerId: ID, visibility: Visibility, targets?: string[]): boolean {
   if (viewer.id === ownerId) return true;
   if (isBlocked(s, viewer.id, ownerId)) return false;
   const owner = s.users.find((u) => u.id === ownerId);
   if (!owner) return visibility === 'public';
+  // 서버가 이 사람 관점으로 거른 프로필이면(lib/privacy) 그 사람의 글·활동도 서버가 이미 이 규칙으로 걸러 보냈다
+  if (owner.viewable) return true;
   switch (visibility) {
     case 'public': return true;
     case 'school': return sameSchool(viewer, owner);
     case 'department': {
       if (!sameSchool(viewer, owner)) return false;
-      if (!targets?.length) return dept(viewer) === dept(owner);
+      if (!targets?.length) return !!dept(viewer) && dept(viewer) === dept(owner);
       // 'course:<수업명>' 타깃은 같은 수업을 듣는 사람에게만
-      return targets.some((tg) => tg.startsWith('course:') ? viewer.timetable.some((c) => c.name === tg.slice(7)) : tg === dept(viewer));
+      return targets.some((tg) => tg.startsWith('course:') ? (viewer.timetable ?? []).some((c) => c.name === tg.slice(7)) : tg === dept(viewer));
     }
     case 'friends': return isFriend(s, viewer.id, ownerId);
     case 'followers': return isFollowing(s, viewer.id, ownerId) || isFriend(s, viewer.id, ownerId);
@@ -84,11 +86,12 @@ export function canView(s: Rel, viewer: User, ownerId: ID, visibility: Visibilit
 export const canViewActivity = (s: Rel, viewer: User, a: Activity) =>
   canView(s, viewer, a.hostId, a.visibility, a.visibilityTargets) || (a.joinPolicy === 'invite' && (a.invitedIds ?? []).includes(viewer.id));
 
-export const canViewPost = (s: Rel, viewer: User, p: Post) => canView(s, viewer, p.authorId, p.visibility);
+/** 글쓴이가 없는 글은 서버가 익명 글의 글쓴이를 지운 것 — 공개 범위는 서버가 이미 확인했다 */
+export const canViewPost = (s: Rel, viewer: User, p: Post) => !p.authorId || canView(s, viewer, p.authorId, p.visibility);
 
 /** 같은 수업을 듣는 사람 (시간표 공개 범위를 지킨다) */
 export const classmates = (s: Rel, viewer: User, courseName: string, canSee: (u: User) => boolean) =>
-  s.users.filter((u) => u.id !== viewer.id && !isBlocked(s, viewer.id, u.id) && sameSchool(viewer, u) && u.timetable.some((c) => c.name === courseName) && canSee(u));
+  s.users.filter((u) => u.id !== viewer.id && !isBlocked(s, viewer.id, u.id) && sameSchool(viewer, u) && (u.timetable ?? []).some((c) => c.name === courseName) && canSee(u));
 
 /** 활동 장소 표시 — 승인제는 승인 전까지 대략적인 위치만 */
 export function placeLabel(a: Activity, viewer: User, approved: boolean): { name: string; approximate: boolean } {
@@ -96,8 +99,9 @@ export function placeLabel(a: Activity, viewer: User, approved: boolean): { name
   return { name: a.place.area ?? `${a.place.name.split(' ')[0]} ${t('근처')}`, approximate: true };
 }
 
+/** 서버가 보낸 다른 사람 프로필은 viewable(서버가 lib/privacy 로 계산한 열린 항목)을 따른다 */
 export const canViewField = (s: Rel, viewer: User, owner: User, field: ProfileField) =>
-  canView(s, viewer, owner.id, owner.fieldVisibility[field]);
+  viewer.id === owner.id || (owner.viewable ? owner.viewable.includes(field) : canView(s, viewer, owner.id, owner.fieldVisibility[field]));
 
 export function visibilityDescription(v: Visibility) {
   switch (v) {
@@ -112,7 +116,7 @@ export function visibilityDescription(v: Visibility) {
 }
 
 export function commonInterests(a: User, b: User) {
-  return a.interests.filter((i) => b.interests.includes(i));
+  return (a.interests ?? []).filter((i) => (b.interests ?? []).includes(i));
 }
 
 export function mutualFriends(s: Rel, a: ID, b: ID) {

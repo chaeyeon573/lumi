@@ -11,6 +11,7 @@ import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { cn } from '@core/lib/cn';
+import { shareOrCopy } from '@/lib/native';
 import {
   campusToday, clock, dayLabel, destLabel, fareText, isFull, matchRides, pickupLabel, rideEligibility, rideTitle, seatsLeft, seatsText, whenLabel,
   MAX_NOTE, RIDE_KIND_EMOJI, RIDE_KIND_LABELS, SAFETY_NOTE, type Ride,
@@ -55,10 +56,8 @@ export function RideDetailPage() {
 
   const share = async () => {
     const url = rideLink(r.id);
-    try {
-      if (navigator.share) { await navigator.share({ title: rideTitle(r), url }); return; }
-      await navigator.clipboard.writeText(url); showToast('Link copied — paste it in your group chat.', 'success');
-    } catch { /* cancelled */ }
+    // share sheet (iPhone app / phone browsers), else copy — src/lib/native.ts
+    if (await shareOrCopy({ title: rideTitle(r), url }) === 'copied') showToast('Link copied — paste it in your group chat.', 'success');
   };
   const act = async (fn: () => Promise<unknown>) => { setBusy(true); try { await fn(); } catch { /* toast shown */ } finally { setBusy(false); } };
   const join = () => act(async () => { await run(() => api.rides.join(r.id, v.me.id), `You're in — the ride chat is open.`); });
@@ -138,7 +137,7 @@ export function RideDetailPage() {
           room && r.status !== 'cancelled' ? <Button size="lg" className="flex-1" icon={<MessageCircle size={18} />} onClick={() => nav(`/chats/${room.id}`)}>Open ride chat</Button> : <Button size="lg" className="flex-1" variant="outline" onClick={() => nav('/rides')}>Find another ride</Button>
         ) : (
           <Button size="lg" className="flex-1" loading={busy} disabled={!eligible.ok || r.status !== 'open' || isFull(r) || past} onClick={join}>
-            {!eligible.ok ? 'Verify your school email to join' : past ? 'This ride has left' : r.status !== 'open' ? 'Closed' : isFull(r) ? 'Full' : r.kind === 'looking' ? `Team up with ${firstName(host)}` : `Join · ${seatsText(r)}`}
+            {!eligible.ok ? (eligible.minor ? 'Rides are 18+' : 'Verify your school email to join') : past ? 'This ride has left' : r.status !== 'open' ? 'Closed' : isFull(r) ? 'Full' : r.kind === 'looking' ? `Team up with ${firstName(host)}` : `Join · ${seatsText(r)}`}
           </Button>
         )}
       </div>

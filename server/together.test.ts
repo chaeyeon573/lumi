@@ -205,9 +205,9 @@ test('today\'s question: individual answers only reach people who can see that p
   assert.equal(has('u_me'), true);
   d.relationships.blocks.push({ fromId: sofia.id, toId: 'u_me' });
   assert.equal(has('u_me'), false);             // 차단
-  // 패치도 같은 규칙 (db 없이 오면 지운다)
-  assert.equal(patchFor({ users: [sofia] }, 'u_me', d)?.users?.[0].dailyAnswer, undefined);
-  assert.equal(patchFor({ users: [sofia] }, 'u_me')?.users?.[0].dailyAnswer, undefined);
+  // 패치도 같은 규칙 (나를 차단한 사람은 아예 안 온다, db 없이 오면 지운다)
+  assert.equal(patchFor({ users: [sofia] }, 'u_me', d)?.users?.[0]?.dailyAnswer, undefined);
+  assert.equal(patchFor({ users: [sofia] }, 'u_me')?.users?.[0]?.dailyAnswer, undefined);
 });
 
 // ─── 의사 표시 공개 범위 ──────────────────────────────────────────────────

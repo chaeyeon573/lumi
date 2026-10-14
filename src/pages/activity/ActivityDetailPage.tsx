@@ -28,6 +28,7 @@ export function ActivityDetailPage() {
   const a = v.visibleActivities.find((x) => x.id === id);
   const [menu, setMenu] = useState(false);
   const [report, setReport] = useState(false);
+  const [reportComment, setReportComment] = useState<string | null>(null);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [text, setText] = useState('');
 
@@ -80,7 +81,7 @@ export function ActivityDetailPage() {
         <div className="card mt-3 overflow-hidden">
           <div className="h-[160px]">
             <MapContainer center={[a.place.lat, a.place.lng]} zoom={16} className={`h-full w-full z-0 ${TILES_ENABLED ? '' : 'no-tiles'}`} zoomControl={false} dragging={false} scrollWheelZoom={false} doubleClickZoom={false} attributionControl={false}>
-              {TILES_ENABLED ? <TileLayer url={TILE_URL} /> : <LandmarkLayer schoolId={host?.affiliation.type === 'university' ? host.affiliation.schoolId : (lang === 'en' ? 's_berkeley' : 's_yonsei')} />}
+              {TILES_ENABLED ? <TileLayer url={TILE_URL} /> : <LandmarkLayer schoolId={(host?.affiliation.type === 'university' ? host.affiliation.schoolId : undefined) ?? (lang === 'en' ? 's_berkeley' : 's_yonsei')} />}
               <Marker position={[a.place.lat, a.place.lng]} icon={L.divIcon({ className: 'leaflet-div-icon', html: `<div class="au-marker" style="background:${color}"><span>${CATEGORY_EMOJI[a.category]}</span></div>`, iconSize: [36, 36], iconAnchor: [18, 34] })} />
             </MapContainer>
           </div>
@@ -100,7 +101,7 @@ export function ActivityDetailPage() {
           <b className="text-[14px]">{t('댓글 또는 질문')} {a.comments.length}</b>
           <div className="mt-3 space-y-3">
             {a.comments.map((c) => { const u = v.userById(c.authorId); return (
-              <div key={c.id} className="flex gap-2.5"><Avatar emoji={u?.avatar.emoji ?? '👤'} hue={u?.avatar.hue ?? 200} url={u?.avatar.url} size={30} /><div className="flex-1"><div className="text-[12px]"><b>{u?.nickname}</b>{c.authorId === a.hostId && <Tag tone="primary" className="ml-1 h-5">{t('주최자')}</Tag>}<span className="text-ink-3 ml-1.5">{relativeTime(c.createdAt)}</span></div><p className="text-[13px] text-ink-2 mt-0.5">{c.text}</p></div></div>
+              <div key={c.id} className="flex gap-2.5"><Avatar emoji={u?.avatar.emoji ?? '👤'} hue={u?.avatar.hue ?? 200} url={u?.avatar.url} size={30} /><div className="flex-1"><div className="text-[12px]"><b>{u?.nickname}</b>{c.authorId === a.hostId && <Tag tone="primary" className="ml-1 h-5">{t('주최자')}</Tag>}<span className="text-ink-3 ml-1.5">{relativeTime(c.createdAt)}</span>{c.authorId !== v.me.id && <button onClick={() => setReportComment(c.id)} className="ml-1.5 align-middle text-ink-3" aria-label={t('신고하기')}><Flag size={11} /></button>}</div><p className="text-[13px] text-ink-2 mt-0.5">{c.text}</p></div></div>
             ); })}
             {a.comments.length === 0 && <p className="text-[12px] text-ink-3">{t('궁금한 점을 주최자에게 물어보세요.')}</p>}
           </div>
@@ -125,6 +126,7 @@ export function ActivityDetailPage() {
         </div>
       </BottomSheet>
       <ReportSheet open={report} onClose={() => setReport(false)} targetType="activity" targetId={a.id} />
+      <ReportSheet open={!!reportComment} onClose={() => setReportComment(null)} targetType="comment" targetId={reportComment ?? ''} />
       <Dialog open={confirmDelete} onClose={() => setConfirmDelete(false)} title={t('활동을 삭제할까요?')} description={t('참가자와 그룹 채팅방도 함께 사라져요. 되돌릴 수 없어요.')}>
         <Button variant="outline" full onClick={() => setConfirmDelete(false)}>{t('취소')}</Button>
         <Button variant="danger" full onClick={async () => { await run(() => api.activities.remove(a.id), t('활동을 삭제했어요.')); nav('/', { replace: true }); }}>{t('삭제')}</Button>

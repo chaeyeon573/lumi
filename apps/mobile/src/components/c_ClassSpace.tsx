@@ -16,7 +16,7 @@ export function ClassSpaceContent({ courseName, onEdit, onClose }: { courseName:
   const me = v.me;
   const mine = me.timetable.filter((c) => c.name === courseName);
   const mates = classmates(v.snap, me, courseName, (u) => v.canSeeField(u, 'timetable'));
-  const freeMates = mates.filter((u) => statusNow(u.timetable).kind !== 'in_class');
+  const freeMates = mates.filter((u) => statusNow(u.timetable ?? []).kind !== 'in_class');
   const crews = v.visibleActivities.filter((a) => a.courseName === courseName && a.date >= todayISO());
   const go = (p: string) => { onClose?.(); nav(p); };
   const times = [...new Set(mine.map((c) => DAY_LABELS[c.day]))].join('') + (mine[0] ? ` ${formatTime(mine[0].start)}` : '');

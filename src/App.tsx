@@ -49,6 +49,9 @@ import { RidesPage } from '@/pages/rides/RidesPage';
 import { PostRidePage } from '@/pages/rides/PostRidePage';
 import { RideDetailPage } from '@/pages/rides/RideDetailPage';
 import { RideLinkPage } from '@/pages/rides/RideLinkPage';
+import { PrivacyPage, TermsPage } from '@/pages/legal/LegalPages';
+import { NativeBridge } from '@/components/native/NativeBridge';
+import { isNativeShell } from '@/lib/native';
 
 function RequireAuth() {
   const currentUserId = useAppStore((s) => s.currentUserId);
@@ -93,6 +96,9 @@ export default function App() {
   useEffect(() => { init(); }, [init]);
 
   return (
+    <>
+    {/* iPhone 앱(apps/shell) 안에서만 — 딥링크·푸시·상태 표시줄 */}
+    {isNativeShell() && <NativeBridge />}
     <Routes>
       <Route element={<RedirectIfAuthed />}>
         <Route element={<AppShell withNav={false} />}>
@@ -158,7 +164,13 @@ export default function App() {
       <Route element={<AppShell withNav={false} />}>
         <Route path="/p/:id" element={<PlanPage />} />
       </Route>
+      {/* Privacy Policy · Terms of Use — public, signed in or not (App Store Connect links here; server/legal.ts) */}
+      <Route element={<AppShell withNav={false} />}>
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
+      </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
+    </>
   );
 }

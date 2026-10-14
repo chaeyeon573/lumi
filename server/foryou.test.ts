@@ -19,7 +19,7 @@ const opp = (id: string, type: Opportunity['type'], title: string, extra: Partia
   lastVerified: '2026-10-01', qna: [], reviews: [], createdAt: '2026-09-01T00:00:00Z', ...extra,
 });
 const club = (id: string, name: string, description: string, extra: Partial<Organization> = {}): Organization => ({
-  id, name, description, logo: { emoji: '', hue: 0 }, type: 'club', schoolId: base.affiliation.type === 'university' ? base.affiliation.schoolId : '', verified: false,
+  id, name, description, logo: { emoji: '', hue: 0 }, type: 'club', schoolId: base.affiliation.type === 'university' ? base.affiliation.schoolId ?? '' : '', verified: false,
   gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [], ...extra,
 });
 const snap = (opportunities: Opportunity[], organizations: Organization[] = [], intents: { userId: string; opportunityId: string; intent: 'interested' | 'applied'; saved: boolean }[] = []) => ({

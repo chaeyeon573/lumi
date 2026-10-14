@@ -66,8 +66,8 @@ export default function TimetableScreen() {
     }
   }, [params.open]); // eslint-disable-line react-hooks/exhaustive-deps
   const friendIds = friendsOf(v.snap, me.id);
-  const overlaps = friendIds.map((fid) => v.userById(fid)!).filter((f) => f && f.timetable.length > 0 && v.canSeeField(f, 'timetable'))
-    .map((f) => ({ f, blocks: overlapBlocks(myFree, freeBlocks(f.timetable, today)) })).filter((x) => x.blocks.length > 0);
+  const overlaps = friendIds.map((fid) => v.userById(fid)!).filter((f) => f && !!f.timetable?.length && v.canSeeField(f, 'timetable'))
+    .map((f) => ({ f, blocks: overlapBlocks(myFree, freeBlocks(f.timetable ?? [], today)) })).filter((x) => x.blocks.length > 0);
   const bestBlock = overlaps.length ? overlaps.flatMap((o) => o.blocks).sort((a, b) => (b.end - b.start) - (a.end - a.start))[0] : null;
 
   const save = async () => {

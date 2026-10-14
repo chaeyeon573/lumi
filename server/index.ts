@@ -2,6 +2,7 @@
  * Lumi API 서버 — Railway 에 배포하는 단일 서비스 (API + 빌드된 프론트엔드 정적 파일).
  *
  *   POST /api/auth/{demo,login,register,logout,me}
+ *   POST /api/auth/delete-account      본인 계정 영구 삭제 { confirm: 'DELETE' } (server/account.ts) — 데모·예시 계정은 거절
  *   POST /api/bootstrap
  *   POST /api/schools/{search,send-code,verify-code}
  *   POST /api/catalog/{courses,departments,terms}   term 생략 = 지금 학기 (Fall 2026 …)
@@ -13,9 +14,15 @@
  *   GET  /api/ai/status                 AI 켜짐 여부 (OPENAI_API_KEY 또는 API_KEY)
  *   POST /api/ai/{ask,profile-draft,starters}   server/ai.ts — 질문 답변·대화형 가입·첫마디 제안
  *   GET  /api/ai/logs                   x-admin-key 일 때만 — 학생들이 무엇을 물었는지
+ *   GET  /api/legal, /privacy, /terms   공개 법적 페이지 (server/legal.ts) — LEGAL_NAME · PRIVACY_CONTACT_EMAIL
+ *   POST /api/push/{register,unregister}  iPhone 앱 푸시 토큰 (server/push.ts) — EXPO_ACCESS_TOKEN(선택), PUSH_DISABLED=1
+ *   GET  /.well-known/apple-app-site-association  유니버설 링크 (server/app-links.ts) — APPLE_TEAM_ID + IOS_BUNDLE_ID 없으면 404
  *
  * 환경변수: PORT, DATABASE_URL, AROUNDU_LANG(ko|en), DEMO_AUTOREPLY(1이면 데모 자동응답), ALLOW_DEMO_LOGIN(0이면 비활성),
  *          ALLOW_RESET, RESEND_API_KEY, MAIL_FROM, HIDE_DEV_CODE, CORS_ORIGIN, VERIFY_EMAIL_DOMAIN(0이면 학교 도메인 검사 생략)
+ *
+ * 신고·운영 (server/moderation.ts): POST /api/rpc/reports/create → 저장 + FEEDBACK_EMAIL 알림 + 3명 신고 시 자동 숨김,
+ *   GET /admin/reports (관리 화면, ADMIN_KEY 입력), /api/admin/reports·/api/admin/users/:id/… (x-admin-key) — 기각·삭제·정지·정지 해제
  */
 import express, { type Request, type Response, type NextFunction } from 'express';
 import cors from 'cors';
@@ -35,14 +42,21 @@ import { gameFor } from '@core/lib/icebreakers';
 import { sendCodeMail, sendMail } from './mail';
 import { registerRideRoutes } from './rides';
 import { migrateDemo, demoUserIdFor, rollSampleActivities } from './demo';
-import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError, campusToday } from './ai';
+import { hiddenSamplesFor, sampleFreeFor, SAMPLE_OPPORTUNITY_IDS, SAMPLE_ORG_IDS } from './samples';
+import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError, campusToday, forgetStarters } from './ai';
+import { registerAccountRoutes } from './account';
 import type { AiLog } from './store';
 import { loadSeed } from './seed';
-import { startCampusLive } from './campus-live';
+import { startCampusLive, liveServices } from './campus-live';
 import { registerPlanRoutes } from './plans';
 import { createCampusData, mountCampusRoutes, mergeWorkerNotifications } from './campus-api';
 import { createClassesEngine } from '@core/api/classes';
 import { CLASSES_RULES, registerClassRoutes, startStudyGroupJob } from './classes';
+import { registerLegalRoutes } from './legal';
+import { registerModerationRoutes, sessionAuth, signInBlock, suspendedMessage } from './moderation';
+import { createPush, registerPushRoutes } from './push';
+import { registerAppLinkRoutes } from './app-links';
+import { PROTECTED_IDS } from './account';
 
 const PORT = Number(process.env.PORT ?? 8787);
 const store = createStore();
@@ -67,9 +81,14 @@ db.games ??= []; // 게임 기능 이전에 저장된 스냅샷
 // 예시 모임 날짜를 오늘 기준으로 — 켜질 때 한 번, 그 뒤 15분마다 (지난 것은 곧 시작하는 시간으로 민다)
 async function rollSamples() { const p = rollSampleActivities(db); if (p) { await store.applyPatch(p); broadcast(p); console.log(`[demo] rolled ${p.activities?.length ?? 0} sample activities`); } }
 const clients = new Map<ID, Set<Response>>();
+// iPhone app push (server/push.ts) — every broadcast Patch with a new notification → Expo Push API
+const push = createPush({ store, db: () => db, allow: (id) => !PROTECTED_IDS.has(id), accessToken: process.env.EXPO_ACCESS_TOKEN, disabled: process.env.PUSH_DISABLED === '1' });
+await push.load();
+setInterval(() => { void push.checkReceipts(); }, 15 * 60 * 1000).unref();
 await rollSamples();
 
 function broadcast(patch: Patch) {
+  void push.onPatch(patch);
   for (const [userId, set] of clients) {
     const p = patchFor(patch, userId, db);
     if (!p) continue;
@@ -126,23 +145,20 @@ const app = express();
 app.set('trust proxy', 1);
 app.use(cors({ origin: process.env.CORS_ORIGIN?.split(',').map((s) => s.trim()) ?? true, credentials: false }));
 app.use(express.json({ limit: '2mb' }));
+// /.well-known/apple-app-site-association — before static files and the SPA catch-all (server/app-links.ts)
+registerAppLinkRoutes(app);
 
 class HttpError extends Error { constructor(public status: number, message: string) { super(message); } }
 const bad = (msg: string, status = 400) => new HttpError(status, msg);
 
-type Req = Request & { userId?: ID };
-async function auth(req: Req, _res: Response, next: NextFunction) {
-  try {
-    const header = req.headers.authorization ?? '';
-    const token = header.startsWith('Bearer ') ? header.slice(7) : (req.query.token as string | undefined);
-    if (token) {
-      const s = await store.findSession(token);
-      if (s && db.users.some((u) => u.id === s.userId)) req.userId = s.userId;
-    }
-    next();
-  } catch (e) { next(e); }
-}
-const requireUser = (req: Req): ID => { if (!req.userId) throw bad(t('로그인이 필요해요.'), 401); return req.userId; };
+type Req = Request & { userId?: ID; suspended?: boolean };
+/** 세션 토큰 → req.userId. 정지된 계정의 토큰은 사용자로 풀리지 않는다 (req.suspended) — server/moderation.ts */
+const auth = sessionAuth({ db: () => db, findSession: (token) => store.findSession(token) });
+const requireUser = (req: Req): ID => {
+  if (req.suspended) throw bad(suspendedMessage(), 403);
+  if (!req.userId) throw bad(t('로그인이 필요해요.'), 401);
+  return req.userId;
+};
 const wrap = (fn: (req: Req, res: Response) => Promise<unknown> | unknown) => async (req: Req, res: Response, next: NextFunction) => {
   try { const out = await fn(req, res); if (!res.headersSent) res.json(out ?? {}); } catch (e) { next(e); }
 };
@@ -160,6 +176,7 @@ app.post('/api/auth/demo', wrap(async (req) => {
   if (process.env.ALLOW_DEMO_LOGIN === '0') throw bad(t('데모 계정이 없어요. 회원가입을 이용해주세요.'), 403);
   const user = db.users.find((u) => u.id === demoUserIdFor(String(req.body?.schoolId ?? '')));
   if (!user) throw bad(t('데모 계정이 없어요. 회원가입을 이용해주세요.'), 404);
+  { const blocked = signInBlock(user); if (blocked) throw bad(blocked, 403); }
   return { token: await issueSession(user.id), user };
 }));
 
@@ -171,6 +188,7 @@ app.post('/api/auth/login', wrap(async (req) => {
   const account = await store.findAccount(email);
   const user = account ? db.users.find((u) => u.id === account.userId) : undefined;
   if (!user) throw bad(t('이 이메일로 가입된 계정이 없어요.'), 404);
+  { const blocked = signInBlock(user); if (blocked) throw bad(blocked, 403); }
   return { token: await issueSession(user.id), user };
 }));
 
@@ -234,7 +252,8 @@ app.post('/api/schools/highlights', wrap(async (req) => {
   if (!db.schools.some((s) => s.id === sid)) return null;
   const { date: today } = campusToday();
   const weekEnd = new Date(Date.parse(`${today}T12:00:00Z`) + 7 * 86400000).toISOString().slice(0, 10);
-  const mine = db.opportunities.filter((o) => !o.schoolId || o.schoolId === sid);
+  // 로그인 전 첫 화면 — 데모용 시드 공고·동아리는 숫자에도 넣지 않는다 (server/samples.ts)
+  const mine = db.opportunities.filter((o) => (!o.schoolId || o.schoolId === sid) && !SAMPLE_OPPORTUNITY_IDS.has(o.id));
   // 저장된 시각은 UTC — 캠퍼스(태평양) 날짜로 바꿔야 '10/19 23:59 마감'이 10/20 으로 보이지 않는다
   const pt = (iso: string) => (/T/.test(iso) ? new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(iso)) : iso.slice(0, 10));
   const nowHHMM = new Intl.DateTimeFormat('en-GB', { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(new Date());
@@ -248,7 +267,7 @@ app.post('/api/schools/highlights', wrap(async (req) => {
     freeFoodThisWeek: food.length,
     food: food[0] ? { title: food[0].title, date: pt(food[0].date!), startTime: food[0].startTime, place: food[0].place?.name } : undefined,
     deadline: dl ? { title: dl.title, deadline: pt(dl.deadline!), host: dl.host } : undefined,
-    clubs: db.organizations.filter((o) => o.schoolId === sid).length,
+    clubs: db.organizations.filter((o) => o.schoolId === sid && !SAMPLE_ORG_IDS.has(o.id)).length,
     internships: mine.filter((o) => o.type === 'internship').length,
   };
 }));
@@ -282,6 +301,23 @@ app.post('/api/schools/verify-code', wrap(async (req) => {
   return { ok };
 }));
 
+// ─── 계정 삭제 — POST /api/auth/delete-account (server/account.ts) ──────────────
+registerAccountRoutes(app, {
+  db: () => db, store, auth,
+  broadcast(patch) { broadcast(patch); },
+  disconnect(userId) { for (const res of clients.get(userId) ?? []) res.end(); clients.delete(userId); },
+  forget: [
+    (id) => campus.forgetUser(id),
+    (id) => liveServices()?.dining.forgetUser(id),
+    (id) => liveServices()?.gym.forgetUser(id),
+    (id, emails) => { emails.forEach((e) => verifiedEmails.delete(e)); forgetStarters(id); },
+    (id) => push.forgetUser(id),
+  ],
+});
+
+// ─── 푸시 토큰 — POST /api/push/{register,unregister} (server/push.ts) ─────────────
+registerPushRoutes(app, push, { auth });
+
 // ─── 수업 목록 ───────────────────────────────────────────────────────────
 // term 을 안 주면 지금 학기 (그 학교에 지금 학기 수업이 없으면 학기 구분 없이)
 const schoolCatalog = (schoolId: string) => catalogBySchool.get(schoolId) ?? [];
@@ -297,6 +333,12 @@ mountCampusRoutes(app, campus, { auth, wrap, requireUser, bad, user: (id) => db.
 registerPlanRoutes(app, {
   db: () => db, auth, push: (p) => { void store.applyPatch(p); broadcast(p); }, patchFor: (p, me) => patchFor(p, me, db),
   dist: path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist'),
+});
+
+// ─── 신고·운영 — /api/rpc/reports/create (일반 RPC보다 먼저), /admin/reports, /api/admin/* (server/moderation.ts) ─────
+registerModerationRoutes(app, {
+  db: () => db, auth, push: pushPatch, patchFor: (p, me) => patchFor(p, me, db), sendMail,
+  disconnect(userId) { for (const res of clients.get(userId) ?? []) res.end(); clients.delete(userId); },
 });
 
 // ─── RPC (엔진 메서드) ────────────────────────────────────────────────────
@@ -428,7 +470,7 @@ app.post('/api/ai/ask', auth, wrap(async (req: Req) => {
   if (!history.length || history[history.length - 1].role !== 'user') throw bad(t('입력값을 확인해주세요.'));
   rateLimit(`ask:${me.id}`, 40);
   const question = history[history.length - 1].content;
-  return runAi('ask', { userId: me.id, schoolId: schoolIdOf(me), input: question }, () => ask(db, schoolCatalog(schoolIdOf(me) ?? ''), me, history, campus.dates(schoolIdOf(me) ?? '')), (r) => `${r.answer}\n[cards: ${r.cards.map((c) => c.id).join(', ')}]`);
+  return runAi('ask', { userId: me.id, schoolId: schoolIdOf(me), input: question }, () => ask(sampleFreeFor(db, me), schoolCatalog(schoolIdOf(me) ?? ''), me, history, campus.dates(schoolIdOf(me) ?? '')), (r) => `${r.answer}\n[cards: ${r.cards.map((c) => c.id).join(', ')}]`);
 }));
 
 app.post('/api/ai/profile-draft', wrap(async (req) => {
@@ -437,13 +479,16 @@ app.post('/api/ai/profile-draft', wrap(async (req) => {
   if (text.length < 10) throw bad('Write a sentence or two about yourself first.');
   if (!db.schools.some((s) => s.id === schoolId)) throw bad(t('입력값을 확인해주세요.'));
   rateLimit(`profile:${req.ip}`, 15);
-  return runAi('profile', { schoolId, input: text }, () => profileDraft(db, schoolId, text), (r) => JSON.stringify(r.draft));
+  // 가입 중인 실제 학생 — 예시 동아리·공고를 추천하지 않는다
+  return runAi('profile', { schoolId, input: text }, () => profileDraft(sampleFreeFor(db), schoolId, text), (r) => JSON.stringify(r.draft));
 }));
 
 app.post('/api/ai/starters', auth, wrap(async (req: Req) => {
   const me = db.users.find((u) => u.id === requireUser(req))!;
   const target = db.users.find((u) => u.id === String(req.body.userId ?? ''));
   if (!target || target.id === me.id) throw bad(t('입력값을 확인해주세요.'), 404);
+  // 실제 계정은 예시 프로필을 볼 수 없다 (데모 계정은 자기 학교 예시만)
+  if (hiddenSamplesFor(db, me).users.has(target.id)) throw bad(t('입력값을 확인해주세요.'), 404);
   rateLimit(`starters:${me.id}`, 30);
   const language = req.body.lang === 'ko' ? 'ko' : 'en';
   const r = await runAi('starters', { userId: me.id, schoolId: schoolIdOf(me), input: target.id }, () => starters(db, me, target, language), (x) => x.starters.join(' | '));
@@ -470,6 +515,8 @@ await startCampusLive(app, { store, auth, wrap, requireUser, bad, user: (id) => 
 const dist = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist');
 // /c/<학교>/<과목> 공유 링크 — 정적 파일보다 먼저 (미리보기용 OG 태그를 넣는다)
 registerClassRoutes(app, { classes, dist, push: pushPatch });
+// /privacy · /terms — public, no sign-in (server/legal.ts)
+registerLegalRoutes(app, { dist });
 startStudyGroupJob({ classes, dist, push: pushPatch });
 if (existsSync(dist)) {
   app.use(express.static(dist, { index: 'index.html', maxAge: '1h' }));

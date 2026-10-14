@@ -4,6 +4,7 @@ import { lang } from '@core/i18n';
 import type { ID } from '@core/types';
 import { useAppStore } from '@core/store/useAppStore';
 import { cn } from '@core/lib/cn';
+import { canShareSheet, shareOrCopy } from '@/lib/native';
 
 const en = lang === 'en';
 
@@ -28,7 +29,7 @@ export function SharePlanButtons({ id, title, className }: { id: ID; title: stri
   const toast = useAppStore((s) => s.showToast);
   const [copied, setCopied] = useState(false);
   const url = planUrl(id);
-  const canShare = typeof navigator !== 'undefined' && !!navigator.share;
+  const canShare = canShareSheet();
   const copy = async () => {
     try {
       await navigator.clipboard.writeText(url);
@@ -37,7 +38,8 @@ export function SharePlanButtons({ id, title, className }: { id: ID; title: stri
     } catch { toast(url, 'info'); }
   };
   const share = async () => {
-    try { await navigator.share({ title, text: title, url }); } catch { /* 닫음 */ }
+    // iPhone 앱이면 iOS 공유 시트, 브라우저면 navigator.share (src/lib/native.ts)
+    if (await shareOrCopy({ title, text: title, url }) === 'copied') toast(en ? 'Link copied — paste it in your group chat' : '링크를 복사했어요 — 단톡방에 붙여 넣으세요', 'success');
   };
   return (
     <div className={cn('flex gap-2', className)}>

@@ -58,7 +58,7 @@ export default function PersonScreen() {
   const conn = v.connection(user.id);
   const msg = v.canMessage(user.id);
   const common = commonInterests(v.me, user);
-  const mutualF = mutualFriends(v.snap, v.me.id, user.id);
+  const mutualF = user.mutualFriendCount ?? mutualFriends(v.snap, v.me.id, user.id).length;
   const see = (f: Parameters<typeof v.canSeeField>[1]) => v.canSeeField(user, f);
   const upcoming = v.visibleActivities.filter((a) => a.visibility === 'public' && a.date >= todayISO() && (a.hostId === user.id || v.snap.participations.some((p) => p.activityId === a.id && p.userId === user.id && p.status === 'approved')));
   const hosting = v.visibleActivities.filter((a) => a.hostId === user.id && a.date >= todayISO());
@@ -111,10 +111,10 @@ export default function PersonScreen() {
           )}
           {see('bio') && user.bio ? <Text style={tw`text-[14px] text-ink-2 leading-6 mt-3`}>{user.bio}</Text> : null}
           {reasons.length > 0 && <View style={tw`mt-3 rounded-xl bg-surface-2 px-3 py-2.5`}>{reasons.slice(0, 4).map((r) => <View key={r.text} style={tw`flex-row items-start mb-1`}><Check size={12} color={C.primary} style={{ marginTop: 2 }} /><Text style={tw`ml-1.5 text-[12px] text-ink-2 shrink`}>{r.text}</Text></View>)}</View>}
-          {(common.length > 0 || mutualF.length > 0) && (
+          {(common.length > 0 || mutualF > 0) && (
             <View style={[tw`mt-3 flex-row flex-wrap`, { gap: 6 }]}>
               {common.length > 0 && <Tag tone="primary">✨ {t('공통 관심사')} {common.map((i) => INTEREST_LABELS[i]).join(', ')}</Tag>}
-              {mutualF.length > 0 && <Tag tone="mint">👥 {t('함께 아는 친구')} {mutualF.length}{t('명')}</Tag>}
+              {mutualF > 0 && <Tag tone="mint">👥 {t('함께 아는 친구')} {mutualF}{t('명')}</Tag>}
             </View>
           )}
         </View>
@@ -127,32 +127,32 @@ export default function PersonScreen() {
               {sharedOpps.map((o) => <Pressable key={o.id} onPress={() => nav(`/opportunities/${o.id}`)} style={tw`flex-row items-center mb-1.5`}><Text style={tw`text-[13px]`}>🎪</Text><Text numberOfLines={1} style={tw`flex-1 mx-2 text-[13px] text-ink`}>{o.title}</Text><Text style={tw`text-[11px] text-primary font-semibold`}>{t('같이 가기')}</Text></Pressable>)}
               {hosting.length === 0 && sharedOpps.length === 0 && <Text style={tw`text-[12px] text-ink-2`}>{t('아직 열린 활동은 없어요. 공통 관심사로 커피나 점심을 제안해보세요.')}</Text>}
             </View>
-            <View style={[tw`flex-row flex-wrap mt-3`, { gap: 8 }]}>{(common.length ? common : user.interests).slice(0, 3).map((i) => <Button key={i} size="sm" variant="outline" onPress={() => { setPCat(i === 'meal' ? 'meal' : i === 'study' ? 'study' : i === 'exercise' ? 'exercise' : 'coffee'); setPropose(true); }}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]} {t('제안')}</Button>)}</View>
+            <View style={[tw`flex-row flex-wrap mt-3`, { gap: 8 }]}>{(common.length ? common : user.interests ?? []).slice(0, 3).map((i) => <Button key={i} size="sm" variant="outline" onPress={() => { setPCat(i === 'meal' ? 'meal' : i === 'study' ? 'study' : i === 'exercise' ? 'exercise' : 'coffee'); setPropose(true); }}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]} {t('제안')}</Button>)}</View>
           </View>
         )}
 
-        {see('prompts') && (user.prompts.length > 0 || user.voicePrompt || user.poll) && (
+        {see('prompts') && ((user.prompts ?? []).length > 0 || user.voicePrompt || user.poll) && (
           <View style={tw`mt-3`}>
-            {user.prompts.filter((p) => p.answer.trim()).map((p) => <View key={p.questionId} style={tw`mb-2.5`}><PromptAnswerCard prompt={p} /></View>)}
+            {(user.prompts ?? []).filter((p) => p.answer.trim()).map((p) => <View key={p.questionId} style={tw`mb-2.5`}><PromptAnswerCard prompt={p} /></View>)}
             {user.voicePrompt && <View style={tw`rounded-[24px] border border-line bg-white p-4 mb-2.5`}><View style={tw`flex-row items-center`}><Mic size={12} color={C.primary} /><Text style={tw`ml-1 text-[12px] font-bold text-primary`}>{questionById(user.voicePrompt.questionId)?.text}</Text></View><View style={tw`mt-2 flex-row`}><VoicePlayer duration={user.voicePrompt.durationSec} /></View></View>}
             {user.poll && <PollCard poll={user.poll} ownerName={user.nickname} myVote={user.poll.votes[v.me.id]} onVote={(i) => run(() => api.users.votePoll(user.id, v.me.id, i), t('투표했어요.'))} />}
           </View>
         )}
 
         <View style={tw`mt-3 rounded-[24px] border border-line bg-white p-4`}>
-          <Block label={t('이번 학기 목표')} visible={see('goals') && user.goals.length > 0}><View style={[tw`flex-row flex-wrap`, { gap: 6 }]}>{user.goals.map((g) => <Tag key={g} tone={v.me.goals.includes(g) ? 'primary' : 'neutral'}>{GOAL_EMOJI[g]} {GOAL_LABELS[g]}</Tag>)}</View></Block>
+          <Block label={t('이번 학기 목표')} visible={see('goals') && !!user.goals?.length}><View style={[tw`flex-row flex-wrap`, { gap: 6 }]}>{(user.goals ?? []).map((g) => <Tag key={g} tone={v.me.goals.includes(g) ? 'primary' : 'neutral'}>{GOAL_EMOJI[g]} {GOAL_LABELS[g]}</Tag>)}</View></Block>
           {(user.lookingFor.length > 0 || user.canOffer.length > 0) && <Block label={t('찾는 사람 · 제공할 수 있는 것')} visible><View>{user.lookingFor.length > 0 && <Text style={tw`text-[13px] text-ink-2`}>🔍 {user.lookingFor.map((r) => PERSON_ROLE_LABELS[r]).join(', ')}</Text>}{user.canOffer.length > 0 && <Text style={tw`text-[13px] text-ink-2 mt-0.5`}>🛠 {user.canOffer.map((r) => PERSON_ROLE_LABELS[r]).join(', ')}</Text>}</View></Block>}
           {user.living && <Block label={t('생활권')} visible={see('living')}><Text style={tw`text-[13px] text-ink-2`}>{RESIDENCE_LABELS[user.living.residence]} · {user.living.zone}{v.me.living?.zone === user.living.zone && <Text style={tw`text-mint font-semibold`}> {t('같은 생활권')}</Text>}</Text></Block>}
-          <Block label={t('관심사')} visible><View style={tw`flex-row flex-wrap`}>{user.interests.map((i) => <View key={i} style={tw`mb-2`}><Chip size="sm" active={common.includes(i)}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Chip></View>)}</View></Block>
+          <Block label={t('관심사')} visible><View style={tw`flex-row flex-wrap`}>{(user.interests ?? []).map((i) => <View key={i} style={tw`mb-2`}><Chip size="sm" active={common.includes(i)}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Chip></View>)}</View></Block>
           <Block label={t('하고 싶은 활동')} visible={see('freeTime')}>{user.nowWant ? <View style={tw`rounded-xl bg-primary-soft px-3 py-2 mb-1.5`}><Text style={tw`text-primary text-[13px] font-semibold`}>“{user.nowWant}”</Text></View> : null}<Text style={tw`text-[13px] text-ink-2`}>{user.freeTime || t('아직 작성하지 않았어요')}</Text></Block>
           <Block label={t('좋아하는 것')} visible={see('likes')}><Text style={tw`text-[13px] text-ink-2`}>{user.likes || '—'}</Text></Block>
-          <Block label={t('활동 가능한 시간')} visible={see('timetable') && user.timetable.length > 0 ? true : see('availability') && user.availability !== 'hidden'}>
+          <Block label={t('활동 가능한 시간')} visible={see('timetable') && !!user.timetable?.length ? true : see('availability') && user.availability !== 'hidden'}>
             <View style={tw`flex-row items-center`}><Clock size={13} color={C.ink3} /><Text style={tw`ml-1 text-[13px] text-ink-2`}>{availabilityText(user, see('timetable')).text}</Text></View>
-            {see('timetable') && user.timetable.length > 0 && (() => { const fb = freeBlocks(user.timetable, todayIdx()); const ov = v.me.timetable.length ? overlapBlocks(freeBlocks(v.me.timetable, todayIdx()), fb) : []; return (
+            {see('timetable') && !!user.timetable?.length && (() => { const fb = freeBlocks(user.timetable ?? [], todayIdx()); const ov = v.me.timetable.length ? overlapBlocks(freeBlocks(v.me.timetable, todayIdx()), fb) : []; return (
               <View style={[tw`mt-1.5 flex-row flex-wrap`, { gap: 4 }]}>{fb.map((b) => <Tag key={b.start} tone={ov.some((o) => o.start <= b.start && o.end >= b.end) ? 'mint' : 'neutral'}>{fmtBlock(b)}</Tag>)}<Text style={tw`text-[11px] text-ink-3 w-full`}>{t('오늘 공강 · 초록은 나와 겹치는 시간 · 전체 시간표와 강의실은 비공개')}</Text></View>
             ); })()}
           </Block>
-          <Block label={t('이용 목적')} visible={see('purposes')}><View style={[tw`flex-row flex-wrap`, { gap: 6 }]}>{user.purposes.map((p) => <Tag key={p}>{PURPOSE_LABELS[p]}</Tag>)}</View></Block>
+          <Block label={t('이용 목적')} visible={see('purposes')}><View style={[tw`flex-row flex-wrap`, { gap: 6 }]}>{(user.purposes ?? []).map((p) => <Tag key={p}>{PURPOSE_LABELS[p]}</Tag>)}</View></Block>
           <Block label={t('지역')} visible><View style={tw`flex-row items-center flex-wrap`}><MapPin size={13} color={C.ink3} /><Text style={tw`ml-1 text-[13px] text-ink-2`}>{user.region} {t('근처')} <Text style={tw`text-ink-3 text-[11px]`}>{t('· 정확한 위치는 공개되지 않아요')}</Text></Text></View></Block>
           {see('height') && user.height ? <Block label={t('키')} visible last><Text style={tw`text-[13px] text-ink-2`}>{user.height}cm</Text></Block> : null}
         </View>

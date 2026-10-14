@@ -63,8 +63,8 @@ export function ClassRoom({ enrollment, roster, onGo }: { enrollment: Enrollment
   const freeAfter = useMemo(() => {
     const meetings = enrollment.meetings;
     return members.flatMap(({ u }) => {
-      if (!u.timetable.length || !v.canSeeField(u, 'timetable')) return [];
-      const days = [...new Set(meetings.filter((c) => freeBlocks(u.timetable, c.day).some((b) => b.start <= toMin(c.end) && b.end - toMin(c.end) >= 60)).map((c) => c.day))];
+      if (!u.timetable?.length || !v.canSeeField(u, 'timetable')) return [];
+      const days = [...new Set(meetings.filter((c) => freeBlocks(u.timetable ?? [], c.day).some((b) => b.start <= toMin(c.end) && b.end - toMin(c.end) >= 60)).map((c) => c.day))];
       return days.length ? [{ u, days }] : [];
     });
   }, [members, enrollment, v]);
@@ -75,6 +75,8 @@ export function ClassRoom({ enrollment, roster, onGo }: { enrollment: Enrollment
   const suggested = activities.filter((a) => a.studyGroup?.key === enrollment.key && a.studyGroup.invitedIds.includes(me.id) && a.studyGroup.status !== 'expired' && a.date >= today);
   const crews = v.visibleActivities.filter((a) => !a.studyGroup && a.category === 'study' && a.courseName && (a.courseName === enrollment.name || codeFromName(a.courseName) === code) && a.date >= today);
   const mySearch = me.partnerSearch?.find((p) => p.key === enrollment.key);
+  /** 같은 수업에 (보이는) 다른 학생이 아직 없다 */
+  const alone = members.length === 0;
   const partners = (roster?.partners ?? []).map((p) => ({ p, u: v.userById(p.userId), section: roster?.members.find((m) => m.userId === p.userId)?.section })).filter((x) => !!x.u) as { p: ClassRoster['partners'][number]; u: User; section?: string }[];
   const optedOut = (me.studyGroupOptOut ?? []).includes(enrollment.key);
   const ask = (u: User, msg: string) => go(`/users/${u.id}?propose=1&cat=study&msg=${encodeURIComponent(msg)}`);
@@ -119,7 +121,8 @@ export function ClassRoom({ enrollment, roster, onGo }: { enrollment: Enrollment
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-2">
+      {/* 아직 나 혼자면 빈 칸으로 이어지는 바로가기·사람 줄을 두지 않는다 (PRODUCT_TASTE — 사람이 있을 때만 사람 줄) */}
+      {alone ? null : <div className="grid grid-cols-3 gap-2">
         {[
           { id: 'free', icon: <Coffee size={17} />, label: en ? 'Free after class' : '수업 후 공강' },
           { id: 'study', icon: <BookOpen size={17} />, label: en ? 'Study groups' : '스터디 그룹' },
@@ -129,9 +132,9 @@ export function ClassRoom({ enrollment, roster, onGo }: { enrollment: Enrollment
             <span className="text-primary">{x.icon}</span>{x.label}
           </button>
         ))}
-      </div>
+      </div>}
 
-      <Section id="cr-free" icon={<Coffee size={16} className="text-primary" />} title={en ? `Free after ${code}` : `${code} 끝나고 비는 사람`}>
+      {!alone && <Section id="cr-free" icon={<Coffee size={16} className="text-primary" />} title={en ? `Free after ${code}` : `${code} 끝나고 비는 사람`}>
         {freeAfter.length === 0 ? (
           <p className="text-[13px] text-ink-3">{en ? 'Nobody who shares their free time with you is free right after. Everyone else keeps their schedule private.' : '공강을 공개한 같은 수업 학생 중 수업 직후에 비는 사람이 아직 없어요.'}</p>
         ) : (
@@ -149,7 +152,7 @@ export function ClassRoom({ enrollment, roster, onGo }: { enrollment: Enrollment
             </div>
           </div>
         )}
-      </Section>
+      </Section>}
 
       <Section id="cr-study" icon={<BookOpen size={16} className="text-primary" />} title={en ? 'Study groups' : '스터디 그룹'}
         right={<button onClick={() => go(`/create/activity?crew=${encodeURIComponent(enrollment.name)}`)} className="text-[13px] font-semibold text-primary flex items-center gap-1"><Plus size={14} />{en ? 'Start one' : '만들기'}</button>}>
@@ -167,7 +170,7 @@ export function ClassRoom({ enrollment, roster, onGo }: { enrollment: Enrollment
               </div>
             );
           })}
-          {!suggested.length && !crews.length && <p className="text-[13px] text-ink-3">{en ? `No ${code} study groups yet. Lumi suggests one when 3–4 of you are free at the same time — or start one.` : '아직 없어요. 3~4명이 같은 시간에 비면 Lumi가 제안해요.'}</p>}
+          {!suggested.length && !crews.length && <p className="text-[13px] text-ink-3">{en ? `Lumi suggests a group when 3–4 of you are free at the same time.` : '3~4명이 같은 시간에 비면 Lumi가 제안해요.'}</p>}
           <Toggle checked={!optedOut} onChange={(on) => run(() => api.users.update(me.id, { studyGroupOptOut: on ? (me.studyGroupOptOut ?? []).filter((k) => k !== enrollment.key) : [...(me.studyGroupOptOut ?? []), enrollment.key] }))}
             label={en ? `Lumi can suggest ${code} study groups` : `${code} 스터디 그룹 제안 받기`} description={en ? 'At most one a week for this class. Only the people in the group see it.' : '이 수업은 일주일에 한 번까지. 그룹 사람에게만 보여요.'} />
         </div>
@@ -207,8 +210,8 @@ export function ClassRoom({ enrollment, roster, onGo }: { enrollment: Enrollment
         </div>
       </Section>
 
-      <Section icon={<span className="text-primary">👋</span>} title={en ? 'Classmates' : '같은 수업 학생'} right={<span className="text-[12.5px] text-ink-3">{members.length}</span>}>
-        {members.length === 0 ? <p className="text-[13px] text-ink-3">{en ? `No one else from ${code} is on Lumi yet — share the class link.` : '아직 없어요. 수업 링크를 공유해 보세요.'}</p> : (
+      {!alone && <Section icon={<span className="text-primary">👋</span>} title={en ? 'Classmates' : '같은 수업 학생'} right={<span className="text-[12.5px] text-ink-3">{members.length}</span>}>
+        {(
           <div className="divide-y divide-line">
             {members.slice(0, 30).map(({ m, u }) => (
               <button key={u.id} onClick={() => go(`/users/${u.id}`)} className="w-full flex items-center gap-3 py-2.5 text-left">
@@ -223,7 +226,7 @@ export function ClassRoom({ enrollment, roster, onGo }: { enrollment: Enrollment
             {members.length > 30 && <div className="py-2 text-[12.5px] text-ink-3">{en ? `and ${members.length - 30} more` : `외 ${members.length - 30}명`}</div>}
           </div>
         )}
-      </Section>
+      </Section>}
 
       <div className="space-y-2">
         <CopyClassLink schoolId={enrollment.schoolId} code={code} />

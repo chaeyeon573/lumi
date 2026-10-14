@@ -12,7 +12,7 @@ export interface LiveTool { name: string; description: string; parameters: Recor
 
 const MEALS: (MealKey | 'now')[] = ['now', 'breakfast', 'brunch', 'lunch', 'dinner', 'late_night', 'all_day'];
 const norm = (s: string) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
-const schoolOf = (u: User) => (u.affiliation.type === 'university' ? u.affiliation.schoolId : '');
+const schoolOf = (u: User) => (u.affiliation.type === 'university' ? u.affiliation.schoolId ?? '' : '');
 
 /** "crossroads" · "cafe 3" · "café 3" · "ckc" → 장소 */
 export function findLocation(day: DiningDay, q: string): DiningLocation | undefined {

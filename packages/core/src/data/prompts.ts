@@ -100,15 +100,15 @@ export function promptsSatisfyRules(prompts: { questionId: string; answer: strin
 }
 
 /** 프로필 완성도 계산 */
-export function profileCompletion(u: { prompts: { answer: string }[]; voicePrompt?: unknown; poll?: unknown; bio: string; interests: unknown[]; likes: string; freeTime: string; timetable?: unknown[]; goals?: unknown[]; lookingFor?: unknown[]; canOffer?: unknown[]; living?: unknown }) {
+export function profileCompletion(u: { prompts?: { answer: string }[]; voicePrompt?: unknown; poll?: unknown; bio?: string; interests?: unknown[]; likes?: string; freeTime?: string; timetable?: unknown[]; goals?: unknown[]; lookingFor?: unknown[]; canOffer?: unknown[]; living?: unknown }) {
   const items = [
     { key: 'photo', label: t('프로필 사진'), done: true },
-    { key: 'bio', label: t('자기소개'), done: u.bio.trim().length > 0 },
-    { key: 'interests', label: t('관심사'), done: u.interests.length > 0 },
-    { key: 'prompts', label: `${t('질문 답변 ')}${REQUIRED_TEXT_PROMPTS}${t('개')}`, done: u.prompts.filter((p) => p.answer.trim()).length >= REQUIRED_TEXT_PROMPTS },
+    { key: 'bio', label: t('자기소개'), done: !!u.bio?.trim() },
+    { key: 'interests', label: t('관심사'), done: !!u.interests?.length },
+    { key: 'prompts', label: `${t('질문 답변 ')}${REQUIRED_TEXT_PROMPTS}${t('개')}`, done: (u.prompts ?? []).filter((p) => p.answer.trim()).length >= REQUIRED_TEXT_PROMPTS },
     { key: 'voice', label: t('음성 질문'), done: !!u.voicePrompt },
     { key: 'poll', label: t('투표형 질문'), done: !!u.poll },
-    { key: 'likes', label: t('좋아하는 것'), done: u.likes.trim().length > 0 },
+    { key: 'likes', label: t('좋아하는 것'), done: !!u.likes?.trim() },
     { key: 'timetable', label: t('시간표'), done: (u.timetable?.length ?? 0) > 0 },
     { key: 'goals', label: t('이번 학기 목표'), done: (u.goals?.length ?? 0) > 0 },
     { key: 'roles', label: t('찾는 사람·제공할 수 있는 것'), done: (u.lookingFor?.length ?? 0) > 0 && (u.canOffer?.length ?? 0) > 0 },

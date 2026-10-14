@@ -8,7 +8,11 @@ import { createEngine } from '../engine';
 import { createRidesEngine } from '../rides';
 import { createPlansEngine } from '../plans';
 import { loadDB, resetDB, saveDB, getSession, setSession, type MockDB } from './db';
-import { DEMO_USER_ID } from '@core/data/seed';
+import { DEMO_USER_ID, users as seedUsers } from '@core/data/seed';
+import { eraseUser, isProtectedAccount, deleteConfirmOk, DELETE_CONFIRM_WORD, DEMO_DELETE_REFUSED } from '@core/lib/account';
+
+/** 목업의 예시 사용자(데모 계정 포함)는 지울 수 없다 */
+const MOCK_PROTECTED = new Set<string>([DEMO_USER_ID, ...seedUsers.map((u) => u.id)]);
 import { createClassesEngine } from '../classes';
 import { classRostersFor } from '@core/lib/classmates';
 import { catalogCourses, searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm } from '@core/data/catalog/courses';
@@ -84,6 +88,19 @@ export const mockApi: AroundUApi = {
       });
     },
     async logout() { setSession(null); },
+    async deleteAccount(confirm) {
+      return request(() => {
+        const me = getSession();
+        const user = me ? db.users.find((u) => u.id === me) : undefined;
+        if (!user) throw new Error(t('로그인이 필요해요.'));
+        if (!deleteConfirmOk(confirm)) throw new Error(`Type ${DELETE_CONFIRM_WORD} to confirm.`);
+        if (isProtectedAccount(user, MOCK_PROTECTED)) throw new Error(DEMO_DELETE_REFUSED);
+        const { patch } = eraseUser(db, user.id);
+        writeEmails(Object.fromEntries(Object.entries(readEmails()).filter(([, id]) => id !== user.id)));
+        setSession(null);
+        listeners.forEach((l) => l(patch));
+      });
+    },
     async session() { return getSession(); },
   },
 
@@ -155,6 +172,12 @@ export const mockApi: AroundUApi = {
     room: (school, code) => request(() => classes.room(school, code)),
     respond: (activityId, userId, response, preferred) => request(() => classes.respond(activityId, userId, response, preferred)),
     setPartner: (userId, key, note) => request(() => withRosters(classes.setPartner(userId, key, note))),
+  },
+
+  // 목업 모드에는 푸시 서버가 없다
+  push: {
+    async register() { return { registered: false }; },
+    async unregister() { /* */ },
   },
 
   system: {

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { t } from '@core/i18n';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Button, BottomSheet, Field, Input } from '@/components/ui';
 import { useAppStore } from '@core/store/useAppStore';
 import { api, apiMode } from '@core/api';
@@ -139,6 +139,7 @@ export function WelcomePage() {
         <button onClick={() => nav(apiMode === 'remote' ? '/start' : '/onboarding/basic')} className="w-full h-[58px] rounded-full bg-[#D4FF3A] text-[#0C0A14] font-['Unbounded'] font-extrabold text-[17px] press">Get in →</button>
         <p className="text-center text-[14px] text-[#A79FC4] mt-4">Have an account? <button onClick={() => setEmailOpen(true)} className="font-bold text-[#F4F1FF]">Sign in</button></p>
         {apiMode !== 'remote' && <button onClick={() => login()} className="block mx-auto mt-2 text-[12px] text-[#A79FC4] underline">{t('로그인 (데모 계정)')}</button>}
+        <p className="text-center text-[12px] text-[#A79FC4] mt-4">By continuing you agree to the <Link to="/terms" className="underline text-[#F4F1FF]">Terms of Use</Link> and <Link to="/privacy" className="underline text-[#F4F1FF]">Privacy Policy</Link>.</p>
       </div>
 
       <BottomSheet open={emailOpen} onClose={() => setEmailOpen(false)} title={t('이메일로 로그인')}>

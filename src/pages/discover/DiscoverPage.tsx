@@ -99,8 +99,9 @@ function NowTab() {
   return (
     <div>
       <LiveCards className="mb-6" />
-      <div className="flex items-end justify-between mb-3"><h2 className="font-display text-[24px] font-bold text-primary">{lang === 'en' ? 'Free Right Now' : '지금 시간 되는 사람'}</h2><span className="text-[13px] text-ink-3">{free.length}{lang === 'en' ? ' friends' : '명'}</span></div>
-      {free.length === 0 ? <p className="text-[13px] text-ink-3 mb-6">{t('지금 시간이 비는 사람이 없어요.')}</p> : (
+      {/* 사람이 실제로 있을 때만 사람 줄 (PRODUCT_TASTE — "0 friends · No one is free" 빈자리 줄을 두지 않는다) */}
+      {free.length > 0 && <>
+        <div className="flex items-end justify-between mb-3"><h2 className="font-display text-[24px] font-bold text-primary">{lang === 'en' ? 'Free Right Now' : '지금 시간 되는 사람'}</h2><span className="text-[13px] text-ink-3">{free.length}{lang === 'en' ? (free.length === 1 ? ' friend' : ' friends') : '명'}</span></div>
         <div className="flex gap-4 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-7">
           {free.slice(0, 10).map((p) => (
             <button key={p.u.id} onClick={() => nav(`/users/${p.u.id}?propose=1&cat=${p.category ?? 'coffee'}`)} className="flex flex-col items-center gap-1.5 shrink-0 w-[68px]">
@@ -110,11 +111,12 @@ function NowTab() {
             </button>
           ))}
         </div>
-      )}
+      </>}
       <h2 className="font-display text-[24px] font-bold text-primary mb-3">{lang === 'en' ? 'Spontaneous Hangouts' : '지금 열린 활동'}</h2>
-      <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-4">{NOW_CHIPS.map((c) => <Chip key={c.key} active={chip === c.key} onClick={() => setChip(c.key)}>{c.label}{c.key === 'all' ? ` (${list.length})` : ''}</Chip>)}</div>
+      {/* 하나도 없으면 "All (0)" 칩 줄 없이 문장 하나 + 버튼 */}
+      {list.length > 0 && <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-4">{NOW_CHIPS.map((c) => <Chip key={c.key} active={chip === c.key} onClick={() => setChip(c.key)}>{c.label}{c.key === 'all' ? ` (${list.length})` : ''}</Chip>)}</div>}
       {shown.length === 0 ? (
-        <EmptyState emoji="" title={t('이 시간에 열린 활동이 없어요')} action={<Button size="sm" onClick={() => nav('/create/activity?kind=personal&now=1')}>{t('즉석 만남')}</Button>} />
+        <EmptyState emoji="" className="py-8" title={t('이 시간에 열린 활동이 없어요')} action={<Button size="sm" onClick={() => nav('/create/activity?kind=personal&now=1')}>{t('즉석 만남')}</Button>} />
       ) : <div className="space-y-3">{shown.map(({ a }) => { const host = v.userById(a.hostId); return (
         <Row key={a.id} sample={a.sample} avatar={<button onClick={() => nav(`/activities/${a.id}`)}><Avatar emoji={host?.avatar.emoji ?? '👤'} hue={host?.avatar.hue ?? 200} url={host?.avatar.url} size={44} /></button>} title={a.title} sub={`${formatTime(a.startTime)} · ${a.place.name}`} action={<JoinButton activity={a} size="sm" label={t('참여')} className="bg-accent text-primary shadow-none" />} />
       ); })}</div>}

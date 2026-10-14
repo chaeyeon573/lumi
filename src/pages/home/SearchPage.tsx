@@ -19,7 +19,7 @@ export function SearchPage() {
   const orgs = useAppStore((s) => s.organizations);
   const norm = q.trim().toLowerCase();
   const acts = v.visibleActivities.filter((a) => !norm || a.title.toLowerCase().includes(norm) || a.description.toLowerCase().includes(norm) || a.place.name.toLowerCase().includes(norm));
-  const people = v.visibleUsers.filter((u) => !norm || u.nickname.includes(norm) || (u.affiliation.type === 'university' && u.affiliation.department.includes(norm)) || u.interests.some((i) => INTEREST_LABELS[i].includes(norm)));
+  const people = v.visibleUsers.filter((u) => !norm || u.nickname.includes(norm) || (u.affiliation.type === 'university' && !!u.affiliation.department?.includes(norm)) || !!u.interests?.some((i) => INTEREST_LABELS[i].includes(norm)));
   const orgList = orgs.filter((o) => !norm || o.name.toLowerCase().includes(norm) || o.description.includes(norm));
   return (
     <div className="min-h-full">

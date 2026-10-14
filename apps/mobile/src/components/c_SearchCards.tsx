@@ -19,8 +19,8 @@ export function affiliationText(u: User, showSchoolOverride?: boolean) {
   if (u.affiliation.type !== 'university') return u.affiliation.companyName;
   const a = u.affiliation;
   const parts: string[] = [];
-  if (showSchoolOverride ?? a.showSchool) parts.push(a.schoolName);
-  if (a.showDepartment) parts.push(a.department);
+  if ((showSchoolOverride ?? a.showSchool) && a.schoolName) parts.push(a.schoolName);
+  if (a.showDepartment && a.department) parts.push(a.department);
   parts.push(ROLE_LABELS[a.role]);
   return parts.join(' · ');
 }
@@ -37,7 +37,7 @@ export function PersonCard({ user }: { user: User }) {
   const reasons = matchReasons(v.me, user, { opportunities: opps, opportunityIntents: intents }, v.canSeeField(user, 'timetable')).filter((r) => r.kind !== 'school');
   const avail = availabilityText(user, v.canSeeField(user, 'timetable'));
   const showAvail = avail.auto || (v.canSeeField(user, 'availability') && user.availability !== 'hidden');
-  const prompt = v.canSeeField(user, 'prompts') && user.prompts[0]?.answer ? user.prompts[0] : null;
+  const prompt = v.canSeeField(user, 'prompts') && user.prompts?.[0]?.answer ? user.prompts[0] : null;
 
   const like = async () => {
     const res = await run(() => api.relationships.toggleLike(v.me.id, user.id));
@@ -57,12 +57,12 @@ export function PersonCard({ user }: { user: User }) {
         <Text numberOfLines={1} style={tw`text-[12px] text-ink-3 mt-0.5`}>{affiliationText(user)}</Text>
         {v.canSeeField(user, 'likes') && user.likes ? <Text numberOfLines={2} style={tw`text-[13px] text-ink-2 mt-2`}>{user.likes}{t('를 좋아해요.')}</Text> : null}
         <View style={tw`flex-row flex-wrap mt-2`}>
-          {(common.length ? common : user.interests.slice(0, 3)).slice(0, 3).map((i) => <View key={i} style={tw`mr-1 mb-1`}><Tag tone={common.includes(i) ? 'primary' : 'neutral'}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Tag></View>)}
+          {(common.length ? common : (user.interests ?? []).slice(0, 3)).slice(0, 3).map((i) => <View key={i} style={tw`mr-1 mb-1`}><Tag tone={common.includes(i) ? 'primary' : 'neutral'}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Tag></View>)}
           {common.length > 0 && <View style={tw`mr-1 mb-1`}><Tag tone="mint">✨ {t('공통')} {common.length}</Tag></View>}
         </View>
         <View style={tw`mt-1`}>
           {showAvail && <View style={tw`flex-row items-center mb-0.5`}><Clock size={12} color={C.ink3} /><Text style={tw`ml-1 text-[12px] text-ink-2`}>{avail.text}</Text>{avail.auto && <Text style={tw`ml-1 text-[10px] font-semibold text-mint`}>{t('시간표')}</Text>}</View>}
-          <View style={tw`flex-row items-center`}><MapPin size={12} color={C.ink3} /><Text numberOfLines={1} style={tw`ml-1 flex-1 text-[12px] text-ink-2`}>{user.region} {t('근처 ·')} {user.purposes.slice(0, 2).map((p) => PURPOSE_LABELS[p]).join(', ')}</Text></View>
+          <View style={tw`flex-row items-center`}><MapPin size={12} color={C.ink3} /><Text numberOfLines={1} style={tw`ml-1 flex-1 text-[12px] text-ink-2`}>{user.region} {t('근처 ·')} {(user.purposes ?? []).slice(0, 2).map((p) => PURPOSE_LABELS[p]).join(', ')}</Text></View>
         </View>
         {reasons.length > 0 && <View style={tw`mt-1.5`}>{reasons.slice(0, 2).map((r) => <View key={r.text} style={tw`flex-row items-start mb-0.5`}><CheckCircle2 size={12} color={C.primary} style={tw`mt-0.5`} /><Text numberOfLines={1} style={tw`ml-1 flex-1 text-[12px] text-ink-2`}>{r.text}</Text></View>)}</View>}
         {prompt ? <View style={tw`mt-2 rounded-xl bg-surface-2 px-3 py-2`}><Text style={tw`text-[11px] font-bold text-primary`}>{questionById(prompt.questionId)?.text}</Text><Text numberOfLines={2} style={tw`text-[13px] font-semibold text-ink mt-0.5`}>{prompt.answer}</Text></View>

@@ -27,7 +27,7 @@ function score(q: string[], fields: [string | undefined, number][]) {
   return s;
 }
 
-export const schoolOf = (u: User) => (u.affiliation.type === 'university' ? u.affiliation.schoolId : '');
+export const schoolOf = (u: User) => (u.affiliation.type === 'university' ? u.affiliation.schoolId ?? '' : '');
 
 /** 공고·행사 (장학금·인턴·연구·해커톤·교환·행사). 지난 것은 뺀다 */
 export function searchListings(db: Snapshot, viewer: User, today: string, input: { query?: string; types?: OpportunityType[]; free_food?: boolean; from?: string; to?: string; region?: Region; limit?: number }) {

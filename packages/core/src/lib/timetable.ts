@@ -73,11 +73,11 @@ export function statusLabel(s: NowStatus): string {
 
 /** 카드·프로필에 보여줄 활동 가능 시간. 시간표가 있으면 자동 계산, 없으면 수동 설정 */
 export function availabilityText(u: Pick<User, 'timetable' | 'availability'>, canSeeTimetable: boolean): { text: string; auto: boolean } {
-  if (canSeeTimetable && u.timetable.length > 0) {
+  if (canSeeTimetable && u.timetable?.length) {
     const s = statusNow(u.timetable);
     if (s.kind !== 'none') return { text: statusLabel(s), auto: true };
   }
-  return { text: AVAILABILITY_LABELS[u.availability], auto: false };
+  return { text: u.availability ? AVAILABILITY_LABELS[u.availability] : '', auto: false };
 }
 
 export function fmtBlock(b: Block) { return `${toHHMM(b.start)}–${toHHMM(b.end)}`; }

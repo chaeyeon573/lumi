@@ -21,8 +21,8 @@ export function affiliationText(u: User, showSchoolOverride?: boolean) {
   if (u.affiliation.type !== 'university') return u.affiliation.companyName;
   const a = u.affiliation;
   const parts: string[] = [];
-  if (showSchoolOverride ?? a.showSchool) parts.push(a.schoolName);
-  if (a.showDepartment) parts.push(a.department);
+  if ((showSchoolOverride ?? a.showSchool) && a.schoolName) parts.push(a.schoolName);
+  if (a.showDepartment && a.department) parts.push(a.department);
   parts.push(ROLE_LABELS[a.role]);
   return parts.join(' · ');
 }
@@ -127,7 +127,7 @@ export function OppRow({ o }: { o: Opportunity }) {
   const intents = useAppStore((s) => s.opportunityIntents);
   const v = useViewer();
   const others = intents.filter((i) => i.opportunityId === o.id && i.userId !== v.me.id);
-  const matchCount = others.filter((i) => { const u = v.userById(i.userId); return u && (o.rolesNeeded ? u.canOffer.some((r) => v.me.lookingFor.includes(r)) || v.me.canOffer.some((r) => u.lookingFor.includes(r)) : v.me.interests.some((x) => u.interests.includes(x))); }).length;
+  const matchCount = others.filter((i) => { const u = v.userById(i.userId); return u && (o.rolesNeeded ? u.canOffer.some((r) => v.me.lookingFor.includes(r)) || v.me.canOffer.some((r) => u.lookingFor.includes(r)) : v.me.interests.some((x) => (u.interests ?? []).includes(x))); }).length;
   const color = OPP_TYPE_COLORS[o.type];
   const urgent = !!o.deadline && daysUntil(o.deadline) <= 7 && daysUntil(o.deadline) >= 0;
   return (

@@ -11,7 +11,9 @@ import OpenAI from 'openai';
 import type { Snapshot, CatalogCourse } from '@core/api/types';
 import type { Goal, ID, Interest, OpportunityType, Organization, Purpose, Role, User } from '@core/types';
 import { ALL_GOALS, ALL_INTERESTS, ALL_PURPOSES } from '@core/lib/labels';
-import { canViewField, isBlocked } from '@core/lib/relations';
+import { isBlocked } from '@core/lib/relations';
+import { profileFor } from '@core/lib/privacy';
+import { classRostersFor } from '@core/lib/classmates';
 import { recommendFor, searchActivities, searchClubs, searchCourses, searchListings, schoolOf, type Card } from './ai-search';
 import type { RecType } from '@core/lib/foryou';
 import { REGIONS, type Region } from '@core/lib/listings';
@@ -96,8 +98,8 @@ const viewerContext = (u: User, school: string) => {
     `School: ${school} (campus region for "near campus": ${/berkeley|stanford|san francisco|santa clara|san jose/i.test(school) ? 'Bay Area' : /los angeles|ucla|usc|irvine|san diego/i.test(school) ? 'Los Angeles' : 'unknown'})`,
     a.type === 'university' && a.department ? `Major: ${a.department}` : '',
     yr ? `Year: ${a.type === 'university' && a.role === 'graduate' ? 'graduate student' : `${yr}${['st', 'nd', 'rd', 'th'][yr - 1]} year`}` : '',
-    u.interests.length ? `Interests: ${u.interests.join(', ')}` : '',
-    u.goals.length ? `Goals this semester: ${u.goals.join(', ')}` : '',
+    u.interests?.length ? `Interests: ${u.interests.join(', ')}` : '',
+    u.goals?.length ? `Goals this semester: ${u.goals.join(', ')}` : '',
   ].filter(Boolean).join('\n');
 };
 
@@ -347,33 +349,37 @@ const STARTERS_SCHEMA = {
 const STARTERS_SYSTEM = `You write first messages one college student could send another on Lumi, a campus app for making friends and finding study partners.
 Write exactly 3 different openers, each under 140 characters: friendly, specific to the shared facts, easy to reply to (end with a question). Casual, not cheesy. No flirting, no compliments on looks, no emojis spam (at most one). Use only the facts given — never imply you saw anything else about them.`;
 
-/** 상대가 나에게 공개한 것만 모은다 (공개 범위를 서버에서 다시 지킨다) */
+/**
+ * 상대가 나에게 공개한 것만 모은다 — 내 화면이 받는 것과 같은 프로필(@core/lib/privacy profileFor)에서만 읽는다.
+ * 같은 수업은 같은 수업 학생 명단(숨김·차단·인증을 지킨다)에 서로 있을 때만
+ */
 export function starterFacts(db: Snapshot, viewer: User, target: User) {
-  const see = (f: Parameters<typeof canViewField>[3]) => canViewField(db, viewer, target, f);
-  const ta = target.affiliation, va = viewer.affiliation;
-  const myCourses = new Set(viewer.timetable.map((c) => c.name));
-  const sharedCourses = see('timetable') ? [...new Set(target.timetable.map((c) => c.name).filter((n) => myCourses.has(n)))] : [];
-  const sharedInterests = see('interests') ? target.interests.filter((i) => viewer.interests.includes(i)) : [];
-  const sharedGoals = see('goals') ? target.goals.filter((g) => viewer.goals.includes(g) && g !== 'dating') : [];
+  const seen = profileFor(db, viewer, target);
+  const ta = seen.affiliation, va = viewer.affiliation;
+  const sharedCourses = [...new Set(classRostersFor(db, viewer.id).filter((r) => r.members.some((m) => m.userId === target.id)).map((r) => r.code))];
+  const sharedInterests = (seen.interests ?? []).filter((i) => (viewer.interests ?? []).includes(i));
+  const sharedGoals = (seen.goals ?? []).filter((g) => (viewer.goals ?? []).includes(g) && g !== 'dating');
   const sharedOrgs = db.organizations.filter((o) => o.memberIds.includes(viewer.id) && o.memberIds.includes(target.id)).map((o) => o.name);
-  const sameDept = ta.type === 'university' && va.type === 'university' && ta.showDepartment && ta.department && ta.department === va.department ? ta.department : '';
+  const sameDept = ta.type === 'university' && va.type === 'university' && ta.department && ta.department === va.department ? ta.department : '';
   return {
-    their_name: target.nickname,
-    their_department: ta.type === 'university' && ta.showDepartment ? ta.department : undefined,
+    their_name: seen.nickname,
+    their_department: ta.type === 'university' ? ta.department : undefined,
     same_department: sameDept || undefined,
     shared_classes: sharedCourses.length ? sharedCourses : undefined,
     shared_interests: sharedInterests.length ? sharedInterests : undefined,
     shared_goals: sharedGoals.length ? sharedGoals : undefined,
     shared_clubs: sharedOrgs.length ? sharedOrgs : undefined,
-    their_bio: see('bio') && target.bio ? target.bio : undefined,
-    their_likes: see('likes') && target.likes ? target.likes : undefined,
-    their_free_time: see('freeTime') && target.freeTime ? target.freeTime : undefined,
-    their_prompt_answers: see('prompts') ? target.prompts.filter((p) => p.answer.trim()).slice(0, 3).map((p) => p.answer) : undefined,
-    what_they_want_now: target.nowWant || undefined,
+    their_bio: seen.bio || undefined,
+    their_likes: seen.likes || undefined,
+    their_free_time: seen.freeTime || undefined,
+    their_prompt_answers: seen.prompts ? seen.prompts.filter((p) => p.answer.trim()).slice(0, 3).map((p) => p.answer) : undefined,
+    what_they_want_now: seen.nowWant || undefined,
   };
 }
 
 const starterCache = new Map<string, string[]>();
+/** 계정 삭제 — 이 사람이 받았거나 이 사람 프로필로 만든 첫마디 제안을 잊는다 */
+export function forgetStarters(userId: ID) { for (const k of [...starterCache.keys()]) { const [a, b] = k.split('|'); if (a === userId || b === userId) starterCache.delete(k); } }
 export async function starters(db: Snapshot, viewer: User, target: User, language: 'en' | 'ko') {
   if (isBlocked(db, viewer.id, target.id)) throw new AiError(404, 'Not available.');
   const facts = starterFacts(db, viewer, target);

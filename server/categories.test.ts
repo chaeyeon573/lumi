@@ -14,7 +14,7 @@ import { forYou } from '@core/lib/foryou';
 import { recommendFor, searchListings } from './ai-search';
 
 const me = seed.users.find((u) => u.id === 'u_me')!;
-const SCHOOL = me.affiliation.type === 'university' ? me.affiliation.schoolId : '';
+const SCHOOL = me.affiliation.type === 'university' ? me.affiliation.schoolId ?? '' : '';
 const opp = (id: string, type: Opportunity['type'], title: string, tags: string[] = [], extra: Partial<Opportunity> = {}): Opportunity => ({
   id, type, title, tags, host: id, description: '', cover: { emoji: '', hue: 0 }, eligibility: '', sourceUrl: '', sourceLabel: '', interests: [], goals: [],
   lastVerified: '2026-10-01', qna: [], reviews: [], createdAt: '2026-09-01T00:00:00Z', ...extra,

@@ -924,6 +924,8 @@ export const en: Record<string, string> = {
   '신고 내역이 없어요.': 'No reports.',
   '사용자': 'User',
   '· 검토 중': '· under review',
+  '· 검토 완료': '· reviewed',
+  '댓글': 'Comment',
   '활동 주최자·참가자 평가와 후기는 다음 버전에서 추가될 예정이에요.': 'Host and participant ratings are planned for a future version.',
   '프로필 항목별 공개 범위': 'Per-field visibility',
   '차단 목록, 메시지 수신 제한, 신고 내역': 'Blocked users, message limits, reports',
