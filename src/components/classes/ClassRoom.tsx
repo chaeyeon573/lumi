@@ -122,9 +122,10 @@ export function ClassRoom({ enrollment, roster, onGo }: { enrollment: Enrollment
       </div>
 
       {/* 아직 나 혼자면 빈 칸으로 이어지는 바로가기·사람 줄을 두지 않는다 (PRODUCT_TASTE — 사람이 있을 때만 사람 줄) */}
-      {alone ? null : <div className="grid grid-cols-3 gap-2">
+      {/* 수업 직후 비는 사람이 없으면 그 칸·바로가기를 두지 않는다 (빈자리 문구 대신) */}
+      {alone ? null : <div className={cn('grid gap-2', freeAfter.length ? 'grid-cols-3' : 'grid-cols-2')}>
         {[
-          { id: 'free', icon: <Coffee size={17} />, label: en ? 'Free after class' : '수업 후 공강' },
+          ...(freeAfter.length ? [{ id: 'free', icon: <Coffee size={17} />, label: en ? 'Free after class' : '수업 후 공강' }] : []),
           { id: 'study', icon: <BookOpen size={17} />, label: en ? 'Study groups' : '스터디 그룹' },
           { id: 'partners', icon: <Handshake size={17} />, label: en ? 'Project partner' : '프로젝트 파트너' },
         ].map((x) => (
@@ -134,24 +135,20 @@ export function ClassRoom({ enrollment, roster, onGo }: { enrollment: Enrollment
         ))}
       </div>}
 
-      {!alone && <Section id="cr-free" icon={<Coffee size={16} className="text-primary" />} title={en ? `Free after ${code}` : `${code} 끝나고 비는 사람`}>
-        {freeAfter.length === 0 ? (
-          <p className="text-[13px] text-ink-3">{en ? 'Nobody who shares their free time with you is free right after. Everyone else keeps their schedule private.' : '공강을 공개한 같은 수업 학생 중 수업 직후에 비는 사람이 아직 없어요.'}</p>
-        ) : (
-          <div className="space-y-2">
-            <p className="text-[13px] text-ink-2">{en ? `${freeAfter.length} free right after it, ${afterDays} ${endLabel}` : `${freeAfter.length}명이 수업 끝나고 비어요 (${afterDays} ${endLabel})`}</p>
-            <div className="flex gap-3 overflow-x-auto hide-scrollbar pb-1">
-              {freeAfter.slice(0, 8).map(({ u, days }) => (
-                <button key={u.id} onClick={() => ask(u, en ? `Grab coffee after ${code} on ${DAYS[days[0]]}?` : `${code} 끝나고 커피 할래요?`)} className="flex flex-col items-center gap-1 shrink-0 w-[68px]">
-                  <Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={56} />
-                  <span className="text-[12px] text-ink truncate max-w-full">{u.nickname}</span>
-                  {u.sample && <SampleTag className="mr-0" />}
-                  <span className="text-[10.5px] text-ink-3">{days.map((d) => DAYS[d]).join('/')}</span>
-                </button>
-              ))}
-            </div>
+      {!alone && freeAfter.length > 0 && <Section id="cr-free" icon={<Coffee size={16} className="text-primary" />} title={en ? `Free after ${code}` : `${code} 끝나고 비는 사람`}>
+        <div className="space-y-2">
+          <p className="text-[13px] text-ink-2">{en ? `${freeAfter.length} free right after it, ${afterDays} ${endLabel}` : `${freeAfter.length}명이 수업 끝나고 비어요 (${afterDays} ${endLabel})`}</p>
+          <div className="flex gap-3 overflow-x-auto hide-scrollbar pb-1">
+            {freeAfter.slice(0, 8).map(({ u, days }) => (
+              <button key={u.id} onClick={() => ask(u, en ? `Grab coffee after ${code} on ${DAYS[days[0]]}?` : `${code} 끝나고 커피 할래요?`)} className="flex flex-col items-center gap-1 shrink-0 w-[68px]">
+                <Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={56} />
+                <span className="text-[12px] text-ink truncate max-w-full">{u.nickname}</span>
+                {u.sample && <SampleTag className="mr-0" />}
+                <span className="text-[10.5px] text-ink-3">{days.map((d) => DAYS[d]).join('/')}</span>
+              </button>
+            ))}
           </div>
-        )}
+        </div>
       </Section>}
 
       <Section id="cr-study" icon={<BookOpen size={16} className="text-primary" />} title={en ? 'Study groups' : '스터디 그룹'}
