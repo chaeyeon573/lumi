@@ -92,7 +92,10 @@ export async function fetchEngageEvents(host: string, school: Pick<School, 'id' 
     const v = d.value ?? []; all.push(...v); if (v.length < 100) break;
     await new Promise((r) => setTimeout(r, 150));
   }
-  return all.filter((e) => new Date(e.startsOn).getTime() <= until).map((e) => {
+  // 여러 단체가 함께 여는 행사는 id 만 다르고 같은 것이 두 번 온다 (Real Talk Buddies Kick-Off) — 이름·시작 시각·장소가 같으면 하나만
+  const seen = new Set<string>();
+  const once = (e: EngageEvent) => { const k = `${e.name.trim().toLowerCase()}#${e.startsOn}#${(e.location ?? '').trim().toLowerCase()}`; if (seen.has(k)) return false; seen.add(k); return true; };
+  return all.filter((e) => new Date(e.startsOn).getTime() <= until).filter(once).map((e) => {
     const start = new Date(e.startsOn); const desc = text(e.description ?? '');
     const food = (e.benefitNames ?? []).includes('Free Food') || hasFreeFood(e.name, desc);
     const stuff = (e.benefitNames ?? []).includes('Free Stuff');

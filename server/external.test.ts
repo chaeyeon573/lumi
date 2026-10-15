@@ -18,3 +18,15 @@ test('imported items that repeat a curated title are dropped; their own earlier 
   ];
   assert.deepEqual(dropDuplicateTitles(fetched, existing, 'op_ext_devpost_').map((o) => o.id), ['op_ext_devpost_1', 'op_ext_devpost_3']);
 });
+
+test('CalLink (Engage) events co-hosted by two orgs come once', async () => {
+  const { fetchEngageEvents } = await import('./sources/opportunities');
+  const soon = new Date(Date.now() + 86_400_000).toISOString();
+  const ev = (id: string, org: string) => ({ id, name: 'Real Talk Buddies Kick-Off', organizationName: org, location: 'Mulford Hall', startsOn: soon, endsOn: soon, benefitNames: ['Free Food'] });
+  const real = globalThis.fetch;
+  globalThis.fetch = (async () => new Response(JSON.stringify({ value: [ev('1', 'Real Talk Buddies'), ev('2', 'ASUC'), { ...ev('3', 'X'), name: 'Other event' }] }))) as typeof fetch;
+  try {
+    const out = await fetchEngageEvents('https://callink.berkeley.edu', { id: 's_berkeley', center: { lat: 0, lng: 0 } });
+    assert.deepEqual(out.map((o) => o.title).sort(), ['Other event', 'Real Talk Buddies Kick-Off']);
+  } finally { globalThis.fetch = real; }
+});
