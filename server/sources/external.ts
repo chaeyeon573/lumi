@@ -109,3 +109,11 @@ export async function fetchInternships(): Promise<Opportunity[]> {
   if (failed > boards.length / 2) throw new Error(`${failed}/${boards.length} job boards failed`);
   return out;
 }
+
+/** 자동으로 가져온 공고 중 이미 다른 출처(직접 확인한 CSV 등)에 같은 제목이 있는 것은 뺀다 — 같은 해커톤이 두 줄로 보였다 (Technica 2026) */
+const titleKey = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '');
+export function dropDuplicateTitles<T extends { id: string; title: string }>(items: T[], existing: { id: string; title: string }[], idPrefix: string): T[] {
+  const taken = new Set(existing.filter((o) => !o.id.startsWith(idPrefix)).map((o) => titleKey(o.title)));
+  return items.filter((o) => !taken.has(titleKey(o.title)));
+}
+
