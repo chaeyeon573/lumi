@@ -40,8 +40,9 @@ export function searchListings(db: Snapshot, viewer: User, today: string, input:
     // 분류는 categoriesOf 기준 — 연구 장학금은 lab 검색에도, 연구비 지원은 scholarship 검색에도 나온다 (캠퍼스 › 찾기 칩과 같은 분류)
     .filter((o) => !input.types?.length || input.types.some((t) => isOfType(o, t)))
     .filter((o) => !input.free_food || inCategory(o, 'free_food'))
-    .filter((o) => { const d = o.deadline ?? when(o); return !d || d >= today; }) // 시작한 해커톤도 제출 마감 전이면
-    .filter((o) => { const d = o.date ?? o.deadline; if (!d) return !input.from && !input.to; return (!input.from || d >= input.from) && (!input.to || d <= input.to); })
+    // 날짜는 캠퍼스 날짜(YYYY-MM-DD)로 비교한다 — 시각이 붙은 ISO('2026-10-15T22:00Z')를 그대로 'to: 2026-10-15'와 견주면 그날 행사가 다 빠졌다 ('오늘 공짜 음식' → 없음)
+    .filter((o) => { const d = day(o.deadline ?? when(o)); return !d || d >= today; }) // 시작한 해커톤도 제출 마감 전이면
+    .filter((o) => { const d = day(o.date ?? o.deadline); if (!d) return !input.from && !input.to; return (!input.from || d >= input.from) && (!input.to || d <= input.to); })
     .filter((o) => !input.region || regionsOf(o).includes(input.region) || (!!o.schoolId && input.region === 'Bay Area'))
     .map((o) => ({ o, s: score(q, [[o.title, 5], [o.host, 3], [o.tags.join(' '), 3], [o.field, 3], [locationOf(o), 2], [o.eligibility, 1], [o.description, 1], [o.benefit, 2]]) }))
     .filter((x) => x.s > 0)
