@@ -3,6 +3,7 @@ import { t } from '@core/i18n';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Send, MoreVertical, Flag, Ban, Users, CalendarDays, LogOut } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
+import { SampleTag } from '@/components/ui/SampleTag';
 import { Avatar, Button, BottomSheet, Dialog, EmptyState } from '@/components/ui';
 import { SheetItem } from '@/components/cards/PostCard';
 import { ReportSheet } from '@/components/cards/ReportSheet';
@@ -58,7 +59,7 @@ export function ChatRoomPage() {
 
   return (
     <div className="h-full flex flex-col">
-      <TopBar back title={<button className="text-left" onClick={() => (other ? nav(`/users/${other.id}`) : activity ? nav(`/activities/${activity.id}`) : room.rideId ? nav(`/rides/${room.rideId}`) : undefined)}><span className="block truncate">{title}</span>{room.type !== 'direct' && <span className="block text-[11px] text-ink-3 font-medium">{t('멤버')} {room.memberIds.length}{t('명')}</span>}</button>}
+      <TopBar back title={<button className="text-left" onClick={() => (other ? nav(`/users/${other.id}`) : activity ? nav(`/activities/${activity.id}`) : room.rideId ? nav(`/rides/${room.rideId}`) : undefined)}><span className="block truncate">{other?.sample && <SampleTag />}{title}</span>{room.type !== 'direct' && <span className="block text-[11px] text-ink-3 font-medium">{t('멤버')} {room.memberIds.length}{t('명')}</span>}</button>}
         right={<button onClick={() => setMenu(true)} className="h-10 w-10 grid place-items-center rounded-full" aria-label={t('메뉴')}><MoreVertical size={20} /></button>} />
       <div className="flex-1 overflow-y-auto hide-scrollbar px-4 py-3 space-y-2">
         {activity && <button onClick={() => nav(`/activities/${activity.id}`)} className="w-full card p-3 flex items-center gap-3 text-left press mb-2"><span className="h-9 w-9 rounded-xl bg-primary-soft text-primary grid place-items-center"><CalendarDays size={18} /></span><span className="flex-1 min-w-0"><b className="text-[13px] block truncate">{activity.title}</b><span className="text-[11px] text-ink-3">{activity.place.name} · {activity.date} {activity.startTime}</span></span></button>}
