@@ -126,3 +126,11 @@ test('a hackathon that already started stays listed until its submission deadlin
   assert.ok(ids.includes('live') && !ids.includes('over'), ids.join(','));
   assert.deepEqual(searchListings(db([live, over]), me, '2026-10-12', { types: ['hackathon'] }).map((r) => r.card.id), ['live']);
 });
+
+test('"free food today" finds events later today (ISO times compared as campus dates)', () => {
+  // 오후 3시(PT) 행사 = 2026-10-15T22:00Z — 예전엔 'to: 2026-10-15' 보다 큰 문자열이라 빠졌다
+  const food = opp('food', 'event', 'Open source meetup', ['event', 'free food'], { schoolId: SCHOOL, date: '2026-10-15T22:00:00.000Z', startTime: '15:00' });
+  const late = opp('late', 'event', 'Late talk', ['event', 'free food'], { schoolId: SCHOOL, date: '2026-10-16T04:30:00.000Z', startTime: '21:30' }); // 같은 날 PT 밤
+  const ids = searchListings(db([food, late]), me, '2026-10-15', { free_food: true, from: '2026-10-15', to: '2026-10-15' }).map((r) => r.card.id).sort();
+  assert.deepEqual(ids, ['food', 'late']);
+});
