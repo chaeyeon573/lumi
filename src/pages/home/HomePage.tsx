@@ -20,7 +20,9 @@ import type { User, Interest, Goal } from '@core/types';
 
 interface Filters { years: number[]; sameDept: boolean; sameClass: boolean; freeNow: boolean; interests: Interest[]; goals: Goal[] }
 const EMPTY: Filters = { years: [], sameDept: false, sameClass: false, freeNow: false, interests: [], goals: [] };
-const yearOf = (u: User) => (u.affiliation.type === 'university' ? Math.min(4, Math.max(1, new Date().getFullYear() - u.affiliation.year + 1)) : 0);
+/** 몇 학년인지 — 학년은 가을(8월)에 바뀐다. 달력 연도로 세면 1~7월에 한 학년 높게 나왔다 */
+const academicYear = (d = new Date()) => (d.getMonth() >= 7 ? d.getFullYear() : d.getFullYear() - 1);
+const yearOf = (u: User) => (u.affiliation.type === 'university' ? Math.min(4, Math.max(1, academicYear() - u.affiliation.year + 1)) : 0);
 const gradYear = (u: User) => (u.affiliation.type === 'university' ? `'${String(u.affiliation.year + 4).slice(2)}` : '');
 
 /** 사람 — 한 번에 한 명. 카드를 끌어 왼쪽=넘기기, 오른쪽=친구로 연결 (Pastel Breeze) */
@@ -71,7 +73,7 @@ export function HomePage() {
   const deck = useRef<DeckHandle>(null);
   const invite = useInvite();
   const chips: { key: string; label: string; clear: () => void }[] = [
-    ...f.years.map((y) => ({ key: `y${y}`, label: `${y}${t('학년')}`, clear: () => setF({ ...f, years: f.years.filter((x) => x !== y) }) })),
+    ...f.years.map((y) => ({ key: `y${y}`, label: yearLabel(y), clear: () => setF({ ...f, years: f.years.filter((x) => x !== y) }) })),
     ...(f.sameDept ? [{ key: 'dept', label: t('같은 학과'), clear: () => setF({ ...f, sameDept: false }) }] : []),
     ...(f.sameClass ? [{ key: 'class', label: t('같은 수업'), clear: () => setF({ ...f, sameClass: false }) }] : []),
     ...(f.freeNow ? [{ key: 'free', label: t('지금 공강'), clear: () => setF({ ...f, freeNow: false }) }] : []),
@@ -112,7 +114,7 @@ export function HomePage() {
 
       <BottomSheet open={filterOpen} onClose={() => setFilterOpen(false)} title={t('조건')} tall>
         <div className="space-y-4">
-          <div><div className="text-[12px] font-bold text-ink-3 mb-1.5">{t('학년')}</div><div className="flex gap-1.5">{[1, 2, 3, 4].map((y) => <Chip key={y} size="sm" active={f.years.includes(y)} onClick={() => setF({ ...f, years: tog(f.years, y) })}>{y}{t('학년')}</Chip>)}</div></div>
+          <div><div className="text-[12px] font-bold text-ink-3 mb-1.5">{lang === 'en' ? 'Year' : '학년'}</div><div className="flex flex-wrap gap-1.5">{[1, 2, 3, 4].map((y) => <Chip key={y} size="sm" active={f.years.includes(y)} onClick={() => setF({ ...f, years: tog(f.years, y) })}>{yearLabel(y)}</Chip>)}</div></div>
           <div><div className="text-[12px] font-bold text-ink-3 mb-1.5">{t('관계')}</div><div className="flex flex-wrap gap-1.5"><Chip size="sm" active={f.sameDept} onClick={() => setF({ ...f, sameDept: !f.sameDept })}>{t('같은 학과')}</Chip><Chip size="sm" active={f.sameClass} onClick={() => setF({ ...f, sameClass: !f.sameClass })}>{t('같은 수업')}</Chip><Chip size="sm" active={f.freeNow} onClick={() => setF({ ...f, freeNow: !f.freeNow })}>{t('지금 공강')}</Chip></div></div>
           <div><div className="text-[12px] font-bold text-ink-3 mb-1.5">{t('관심사')}</div><div className="flex flex-wrap gap-1.5">{ALL_INTERESTS.map((i) => <Chip key={i} size="sm" active={f.interests.includes(i)} onClick={() => setF({ ...f, interests: tog(f.interests, i) })}>{INTEREST_LABELS[i]}</Chip>)}</div></div>
           <div><div className="text-[12px] font-bold text-ink-3 mb-1.5">{t('이번 학기 목표')}</div><div className="flex flex-wrap gap-1.5">{ALL_GOALS.map((g) => <Chip key={g} size="sm" active={f.goals.includes(g)} onClick={() => setF({ ...f, goals: tog(f.goals, g) })}>{GOAL_LABELS[g]}</Chip>)}</div></div>
@@ -122,6 +124,9 @@ export function HomePage() {
     </div>
   );
 }
+
+/** 학년 칩 — 영어는 'Freshman…' (예전엔 '1yr') */
+const yearLabel = (y: number) => (lang === 'en' ? ['Freshman', 'Sophomore', 'Junior', 'Senior'][y - 1] ?? `Year ${y}` : `${y}학년`);
 
 type Dir = 'left' | 'right';
 interface DeckHandle { fly: (dir: Dir) => void }
