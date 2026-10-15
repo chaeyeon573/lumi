@@ -83,7 +83,7 @@ function draftBio(d: Draft) {
   const who = [yr ? label(yr) : '', d.department].filter(Boolean).join(en ? ' in ' : ' ');
   const goals = d.goals.slice(0, 2).map((g) => label(GOAL_OPTS.find((o) => o.v === g)!).toLowerCase());
   const into = d.interests.slice(0, 2).map((i) => label(VIBE_OPTS.find((o) => o.v === i)!).toLowerCase());
-  if (en) return [who && `${who}.`, goals.length && `Here to ${goals.join(' and ')}.`, into.length && `Ask me about ${into.join(' or ')}.`].filter(Boolean).join(' ');
+  if (en) return [who && `${who}.`, goals.length && `Here to ${goals.join(' and ')}.`, into.length && `Free time: ${into.join(' or ')}.`].filter(Boolean).join(' ');
   return [who && `${who}.`, goals.length && `이번 학기 목표: ${goals.join(', ')}.`, into.length && `좋아하는 것: ${into.join(', ')}.`].filter(Boolean).join(' ');
 }
 
@@ -258,9 +258,9 @@ export function StartPage() {
             <div className="rounded-3xl bg-primary text-white p-5 shadow-[0_16px_36px_-8px_rgba(15,43,72,.35)]">
               <div className="flex items-center gap-3">
                 <span className="h-14 w-14 rounded-2xl bg-white/15 grid place-items-center text-[30px]">{d.avatar}</span>
-                <div className="min-w-0"><b className="block text-[18px] truncate">{d.nickname || (en ? 'You' : '나')}</b><span className="block text-[13px] text-accent truncate">{[d.department, label(YEARS.find((y) => y.v === d.yearInSchool) ?? { en: '', ko: '' }), school?.name].filter(Boolean).join(' · ')}</span></div>
+                <div className="min-w-0"><b className="block text-[18px] truncate">{d.nickname || (en ? 'You' : '나')}</b><span className="block text-[13px] text-accent v2:text-night/70 truncate">{[d.department, label(YEARS.find((y) => y.v === d.yearInSchool) ?? { en: '', ko: '' }), school?.name].filter(Boolean).join(' · ')}</span></div>
               </div>
-              <p className="mt-3 text-[14px] leading-relaxed text-white/90">{bio}</p>
+              <p className="mt-3 text-[14px] leading-relaxed text-white/90 v2:text-night/80">{bio}</p>
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {d.goals.map((g) => { const o = GOAL_OPTS.find((x) => x.v === g); return o && <span key={g} className="h-7 px-2.5 rounded-full bg-white/15 text-[12px] font-semibold flex items-center gap-1">{o.emoji} {label(o)}</span>; })}
                 {d.interests.map((i) => { const o = VIBE_OPTS.find((x) => x.v === i); return o && <span key={i} className="h-7 px-2.5 rounded-full bg-accent-soft text-primary text-[12px] font-semibold flex items-center gap-1">{o.emoji} {label(o)}</span>; })}
@@ -291,7 +291,7 @@ export function StartPage() {
 
         {step === 'name' && (
           <>
-            <Head q={en ? 'Last one — what should we call you?' : '마지막! 뭐라고 불러드릴까요?'} sub={en ? 'A first name or nickname. This is how classmates will see you.' : '같은 학교 학생들에게 보이는 이름이에요.'} />
+            <Head q={en ? 'Almost done — what should we call you?' : '거의 다 왔어요! 뭐라고 불러드릴까요?'} sub={en ? 'A first name or nickname. This is how classmates will see you.' : '같은 학교 학생들에게 보이는 이름이에요.'} />
             <Field label={en ? 'Name' : '이름'}><Input autoFocus maxLength={20} value={d.nickname} onChange={(e) => patch({ nickname: e.target.value })} /></Field>
             <Field label={en ? 'Birth year' : '출생 연도'}><Input inputMode="numeric" maxLength={4} placeholder="2005" value={d.birthYear} onChange={(e) => patch({ birthYear: e.target.value.replace(/\D/g, '') })} /></Field>
             {d.birthYear.length === 4 && !birthOk && <p className="text-[12px] text-danger -mt-2">{en ? 'Lumi is for college students 16 and older.' : 'Lumi는 만 16세 이상 대학생을 위한 앱이에요.'}</p>}
