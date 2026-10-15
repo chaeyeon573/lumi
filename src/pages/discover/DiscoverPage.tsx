@@ -196,7 +196,8 @@ function OppRow({ o, quiet = true }: { o: Opportunity; quiet?: boolean }) {
   return (
     <div className="card rounded-[24px] px-3 py-2.5">
       <button onClick={() => nav(`/opportunities/${o.id}`)} className="w-full flex items-center gap-3 text-left">
-        <span className="h-11 w-11 rounded-full bg-primary-soft text-primary grid place-items-center text-[13px] font-bold shrink-0">{OPP_TYPE_LABELS[o.type].slice(0, 2)}</span>
+        {/* 종류 이름 앞 두 글자('Ca', 'Ha')는 뜻이 없다 — 공고마다 붙은 이모지(🎪 행사, 💡 해커톤…)를 쓴다 */}
+        <span className={cn('h-11 w-11 rounded-full bg-primary-soft text-primary grid place-items-center font-bold shrink-0', o.cover?.emoji ? 'text-[20px]' : 'text-[13px]')}>{o.cover?.emoji || OPP_TYPE_LABELS[o.type].slice(0, 2)}</span>
         <span className="flex-1 min-w-0"><span className="block text-[15px] font-semibold text-primary truncate">{o.title}</span><span className="block text-[13px] text-ink-2 truncate">{[showDate ? `${formatDate(day)}${o.startTime && o.startTime !== '00:00' ? ` ${formatTime(o.startTime)}` : ''}` : '', o.deadline ? dday(o.deadline) : '', o.place?.name ?? ''].filter(Boolean).join(' · ')}</span></span>
       </button>
       <PeopleLine o={o} quiet={quiet} className="pl-[56px]" />
