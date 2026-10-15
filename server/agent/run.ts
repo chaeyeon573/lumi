@@ -34,7 +34,7 @@ import { sendMail } from '../mail';
 import { COURSE_SOURCES, resolveCourseSource, useImportCheckpoint } from '../sources/courses';
 import { fetchCourseLeaf } from '../sources/catalog';
 import { fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale } from '../sources/opportunities';
-import { fetchDevpost, fetchInternships } from '../sources/external';
+import { dropDuplicateTitles, fetchDevpost, fetchInternships } from '../sources/external';
 import { existsSync } from 'node:fs';
 import { applyRules, checkDrift, spotCheck } from './validate';
 import { fetchAcademicCalendar, icsUrlOf } from '../sources/academic-calendar';
@@ -136,8 +136,10 @@ async function latestRuns(): Promise<Map<string, AgentRun>> {
 async function runOpportunities(task: string, schoolId: string, fetcher: () => Promise<import('@core/types').Opportunity[]>, idPrefix: string): Promise<AgentRun> {
   const startedAt = new Date().toISOString();
   try {
-    const items = await fetcher();
     const snap = await store.loadSnapshot();
+    // 해커톤은 행사 이름이 곧 그 행사라 제목으로 겹침을 거른다 (인턴은 'Software Engineer Intern' 처럼 회사마다 같은 제목이라 하지 않는다)
+    const fetched = await fetcher();
+    const items = idPrefix === 'op_ext_devpost_' ? dropDuplicateTitles(fetched, snap?.opportunities ?? [], idPrefix) : fetched;
     const fresh = new Set(items.map((o) => o.id));
     const prev = (snap?.opportunities ?? []).filter((o) => (o.schoolId ?? '') === schoolId && o.id.startsWith(idPrefix));
     // 저장·Q&A·후기는 유지하고, 목록에서 사라진 것 중 아무도 손대지 않은 것만 지운다
