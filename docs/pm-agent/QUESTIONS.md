@@ -2,6 +2,10 @@
 
 사장님께 결정을 받아야 하는 것. 최신이 위. 답은 각 항목 아래에 `**답:** …` 으로 적어 주시면 다음 실행이 따른다.
 
+## 2026-10-15 15:40 UTC · Teams/해커톤 — 고등학생 대회가 섞임
+**무엇이 어색한가:** Devpost 자동 가져오기로 **고등학생 전용** 해커톤이 또 들어왔다: “Girls Who Code HHS Hackathon 2026”(참가 자격 “Ages 14 to 18 only… enrolled in high school”), 지난번 “WarriorHacks 2.0”(Westwood High School). 제목·주최명에 ‘high school’이 없으면 지금 거름망을 통과한다. Devpost 목록 API 에는 나이·자격 칸이 없다(확인함).
+**제안:** A) 가져올 때 해커톤 페이지를 하나씩 열어 “Who can participate”에 18세 이하·high school 이 있으면 뺀다(12시간마다 ~100쪽, 서버 작업). B) 지금처럼 두고 보일 때마다 손으로 거른다. C) Devpost 가져오기를 끄고 직접 확인한 목록만.  — 추천: A, 학부생에게 고등학생 대회가 보이는 건 기준(대상 안 맞는 공고 금지)에 어긋난다.
+
 ## 2026-10-14 06:40 UTC · Feed·채팅 — 예시 글이 3주째 그대로
 **무엇이 어색한가:** Feed 글이 전부 “Sep 23 / Sep 22”(3주 전)인데 내용은 “Hosting a coffee meetup here **tonight**”, “BOGO lattes **today**”, “Fall show **in 2 days**!”, “Open seminar **tomorrow** 4pm”이다. DM 목록도 마지막 메시지가 Sep 22~23. 예시 활동은 서버가 켜질 때마다 오늘 날짜로 옮기는데(server/demo.ts), 예시 글·대화는 안 옮겨서 앱이 3주 동안 아무도 안 쓴 것처럼 보인다.
 **제안:** A) 예시 활동처럼 예시 글·예시 대화 시각도 서버 시작 때 “최근 며칠”로 옮기기(라이브 DB 의 예시 데이터만 바뀜, server/demo.ts). B) 시간에 묶인 문구(tonight/today/in 2 days)만 시간 없는 문장으로 고치기. C) 그대로.  — 추천: A, 활동과 같은 방식이라 일관되고 Feed 가 살아 보인다.
