@@ -234,6 +234,9 @@ export function PersonSlide({ user, reasons, plan, onOpen }: { user: User; reaso
   const ground = shareableReasons(reasons).find((r) => r.kind !== 'interest' && r.kind !== 'new');
   const reason = shareableReasons(reasons)[0];
   const left = plan ? plan.capacity - v.approvedCount(plan.id) : 0;
+  // 이미 시작한 계획(11시~5시 동아리 부스)은 'Today 11 AM' 이면 지난 것처럼 보인다 → '지금 · 5시까지'
+  const started = !!plan && plan.date === todayISO() && toMin(plan.startTime) <= nowMin();
+  const planWhen = !plan ? '' : started ? (lang === 'en' ? `Now · until ${formatTime(plan.endTime)}` : `지금 · ${formatTime(plan.endTime)}까지`) : `${formatDate(plan.date)} ${formatTime(plan.startTime)}`;
   const dept = user.affiliation.type === 'university' && user.affiliation.showDepartment ? user.affiliation.department : '';
   const canSeeTT = !!user.timetable?.length && v.canSeeField(user, 'timetable');
   const st = canSeeTT ? statusNow(user.timetable ?? []) : null;
@@ -261,7 +264,7 @@ export function PersonSlide({ user, reasons, plan, onOpen }: { user: User; reaso
         {plan ? (
           <div className="mt-2.5 rounded-2xl bg-white/15 backdrop-blur px-3.5 py-2.5 v2:bg-pink-900/90 v2:border v2:border-pink-800">
             <div className="flex items-center gap-2 text-[14px] font-semibold"><CalendarDays size={15} className="text-accent shrink-0 v2:text-pink-300" /><span className="truncate">{plan.title}</span></div>
-            <div className="mt-0.5 pl-[23px] text-[12px] opacity-85 truncate">{[`${formatDate(plan.date)} ${formatTime(plan.startTime)}`, plan.place.name, left > 0 && left <= 10 ? (lang === 'en' ? `${left} spot${left === 1 ? '' : 's'} left` : `${left}자리 남음`) : ''].filter(Boolean).join(' · ')}</div>
+            <div className="mt-0.5 pl-[23px] text-[12px] opacity-85 truncate">{[planWhen, plan.place.name, left > 0 && left <= 10 ? (lang === 'en' ? `${left} spot${left === 1 ? '' : 's'} left` : `${left}자리 남음`) : ''].filter(Boolean).join(' · ')}</div>
           </div>
         ) : (want || reason) && <div className="mt-2.5 inline-flex items-center gap-2 max-w-full h-9 px-3.5 rounded-full bg-white/15 backdrop-blur text-[13px] font-medium v2:bg-pink-900/90 v2:border v2:border-pink-800"><Zap size={15} className="text-accent shrink-0 v2:text-pink-300" /><span className="truncate">{want ?? reason?.text}</span></div>}
         {ground && (plan || want) && <div className="mt-2 flex items-center gap-1.5 text-[12.5px] font-medium opacity-90"><Users size={14} className="shrink-0 text-accent v2:text-lime-400" /><span className="truncate">{ground.text}</span></div>}
