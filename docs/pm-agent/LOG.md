@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-16 16:20 UTC (버클리 금 09:20) · 36회차 · 초점: 설정
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- 고침 (SettingsPage.tsx): 라이브 설정 맨 아래에 “Demo tools — Preview error state / Reset demo data”와 “Lumi MVP · mock API (localStorage)”가 보였다. 라이브는 실제 서버라 초기화는 서버에서 막혀 있고(ALLOW_RESET) 누르면 오류만 난다 → 실제 서버 모드에서는 데모 도구를 숨기고 아래 글씨는 “Lumi”. (라이브에서 버튼은 누르지 않음.)
+- 메모: “Switching language also switches the demo campus and sample data.” 도 데모용 문구 — 실제 계정에서도 맞는지 확인 못 함, 그대로.
+- 검증: tsc, npm test 198, 로컬(라이브 API) v2·classic 전/후.
+
 ## 2026-10-16 15:20 UTC (버클리 금 08:20) · 35회차 · 초점: 알림
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - 발견: 알림 9개가 전부 Sep 21~23 — “Deadline in 4 days”(장학금)도 3주 전. 예시 글·대화와 같은 문제(5번 답 A 와 같은 갈래).
