@@ -29,8 +29,38 @@ const CA_RE = /online|california|\bca\b|berkeley|san francisco|stanford|palo alt
 // 주최자 칸에 'nill', 'N/A' 같은 자리 채움 글자를 적은 해커톤이 있다 — 그럴 땐 없는 것으로 본다
 const realName = (s?: string) => { const v = text(s ?? ''); return v && !/^(nil+|null|none|n\/?a|tbd|-+|\.+)$/i.test(v) ? v : undefined; };
 
+/**
+ * 해커톤 페이지의 'Who can participate' 칸 — 목록 API 에는 나이·자격 칸이 없어서 제목에 'high school'이 없으면
+ * 고등학생 대회(“Ages 14 to 18 only”)가 그대로 들어왔다. 나이 상한이 18 이하이거나 고등·중학생 전용이면 true.
+ */
+export function youthOnly(page: string): boolean {
+  const t = text(page.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, ' ')).replace(/&#39;|&rsquo;/g, "'");
+  const i = t.search(/who can participate/i);
+  if (i < 0) return false;
+  const block = t.slice(i, i + 400).split(/view full rules/i)[0];
+  const range = block.match(/ages?\s+(\d{1,2})\s*(?:to|-|–)\s*(\d{1,2})/i);
+  if (range && Number(range[2]) <= 18) return true;
+  // 'High school and college students' 처럼 대학생도 되는 것은 남긴다 — '…만' 일 때만
+  return /(high|middle|secondary) school(ers| students)? only|only (open to )?(high|middle|secondary) school|k-12 (students )?only/i.test(block);
+}
+const youthChecked = new Map<number, boolean>(); // 서버가 켜져 있는 동안 해커톤마다 한 번만 연다
+/** 페이지를 못 열면(Cloudflare 'Just a moment' 등) 지금처럼 남기고, 이번 가져오기에서는 더 열지 않는다 — 다음 때 다시 본다 */
+async function isYouthOnly(h: DevpostHackathon, state: { blocked: boolean }): Promise<boolean> {
+  const known = youthChecked.get(h.id);
+  if (known !== undefined || state.blocked) return known ?? false;
+  try {
+    await new Promise((res) => setTimeout(res, 1500)); // 천천히 — 몰아서 열면 막힌다
+    const r = await fetch(h.url, { headers: { 'user-agent': UA['user-agent'], accept: 'text/html' } });
+    const page = r.ok ? await r.text() : '';
+    if (!/who can participate/i.test(page)) { state.blocked = true; return false; }
+    const v = youthOnly(page);
+    youthChecked.set(h.id, v);
+    return v;
+  } catch { state.blocked = true; return false; }
+}
+
 export async function fetchDevpost(maxPages = 40): Promise<Opportunity[]> {
-  const now = new Date().toISOString(); const out: Opportunity[] = []; const seen = new Set<number>();
+  const now = new Date().toISOString(); const out: Opportunity[] = []; const seen = new Set<number>(); const pageState = { blocked: false };
   for (let page = 1; page <= maxPages; page++) {
     const r = await fetch(`https://devpost.com/api/hackathons?status[]=upcoming&status[]=open&order_by=deadline&page=${page}`, { headers: UA });
     if (!r.ok) throw new Error(`devpost page ${page} → ${r.status}`);
@@ -42,6 +72,7 @@ export async function fetchDevpost(maxPages = 40): Promise<Opportunity[]> {
       if (h.invite_only || !CA_RE.test(where)) continue;
       // 대학생 대상이 아닌 고등학생·청소년 대회는 뺀다
       if (/high school|middle school|k-12|\bhs\b|secondary school|teen|youth|kids/i.test(`${h.title} ${h.organization_name ?? ''}`)) continue;
+      if (await isYouthOnly(h, pageState)) continue;
       const { start, end } = parseDevpostDates(h.submission_period_dates ?? '');
       const online = /online/i.test(where);
       const prize = text(h.prize_amount ?? '');
