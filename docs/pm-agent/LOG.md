@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-16 22:20 UTC (버클리 금 15:20) · 42회차 · 초점: People 첫 화면 (새 카드, 로컬)
+- 질문 새 답 없음, 배포 브랜치 변화 없음(1+3 카드는 아직 라이브에 없음 — 로컬에서 봄).
+- 고침 (HomePage.tsx): 오후 3시에 Jordan 카드의 계획이 “Club recruiting tables · Today 11 AM” — 11시~5시 진행 중인데 지난 것처럼 보임 → 시작한 계획은 “Now · until 5 PM”(한국어 “지금 · 오후 5시까지”).
+- 확인: Maya 카드 “Today 6 PM · Caffe Strada · 2 spots left” + “In your class: UGBA 105” + “I'm in” — v2·classic 정상. 제목 “… at 6 today?” 는 seed 수정(de6a3af) 배포 뒤 바뀜.
+- 검증: tsc, npm test 198, 로컬(라이브 API) v2·classic.
+
 ## 2026-10-16 21:20 UTC (버클리 금 14:20) · 41회차 · 초점: 데이터 신선도
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - CSV 전부: 마감 지난 열린 줄 없음, 마감 없이 날짜만 지난 줄도 없음. 이번 주 마감은 NSF GRFP(10/19, 대학원) 하나.
