@@ -7,7 +7,7 @@ import { TopBar } from '@/components/layout/TopBar';
 import { Toggle, Button } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
-import { api } from '@core/api';
+import { api, apiMode } from '@core/api';
 import { SchoolEmailCard } from '@/components/settings/SchoolEmailCard';
 import { DeleteAccountCard } from '@/components/settings/DeleteAccountCard';
 import { PushSettingRow } from '@/components/native/PushSettingRow';
@@ -63,12 +63,13 @@ export function SettingsPage() {
           <button onClick={async () => { await logout(); nav('/welcome', { replace: true }); }} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press"><LogOut size={18} className="text-ink-2" /><span className="flex-1 text-[14px] font-semibold">{t('로그아웃')}</span></button>
         </div>
         <DeleteAccountCard />
-        {!inApp && <div className="card divide-y divide-line">
+        {/* 데모 도구는 mock(브라우저 저장) 모드에서만 — 실제 서버에서는 초기화가 막혀 있어(ALLOW_RESET) 눌러도 오류만 난다 */}
+        {!inApp && apiMode !== 'remote' && <div className="card divide-y divide-line">
           <div className="px-4 pt-3 pb-1 text-[11px] font-bold text-ink-3">{t('데모 도구')}</div>
           <button onClick={() => { api.system.failNext(); showToast(t('다음 요청이 실패해요. 홈으로 돌아가 새로고침해보세요.')); init(); }} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press"><Bug size={18} className="text-ink-2" /><span className="flex-1"><span className="block text-[14px] font-semibold">{t('오류 상태 미리보기')}</span><span className="block text-[12px] text-ink-3">{t('다음 API 요청 1회를 실패시켜 오류 화면을 확인해요')}</span></span></button>
           <button onClick={async () => { await api.system.reset(); await logout(); nav('/welcome', { replace: true }); showToast(t('데모 데이터를 초기화했어요.')); }} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press"><RotateCcw size={18} className="text-danger" /><span className="flex-1"><span className="block text-[14px] font-semibold text-danger">{t('데모 데이터 초기화')}</span><span className="block text-[12px] text-ink-3">{t('모든 변경 사항을 지우고 예시 데이터로 되돌려요')}</span></span></button>
         </div>}
-        <p className="text-center text-[11px] text-ink-3">{appVersionLabel() ? `Lumi for iPhone ${appVersionLabel()}` : 'Lumi MVP · mock API (localStorage)'}</p>
+        <p className="text-center text-[11px] text-ink-3">{appVersionLabel() ? `Lumi for iPhone ${appVersionLabel()}` : apiMode === 'remote' ? 'Lumi' : 'Lumi MVP · mock API (localStorage)'}</p>
         {inApp && <FeedbackSheet open={feedback} onClose={() => setFeedback(false)} />}
       </div>
     </div>
