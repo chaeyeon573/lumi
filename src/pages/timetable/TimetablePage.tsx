@@ -154,7 +154,7 @@ export function TimetablePage() {
             <WeekGrid courses={me.timetable} acts={weekActs} days={days} today={today}
               onCourse={(c) => setSpace(c.name)} onActivity={(a) => nav(`/activities/${a.id}`)}
               onCell={(d, min) => { const fb = freeBlocks(me.timetable, d).find((b) => b.start <= min && min < b.end); if (fb && me.timetable.length) setSlot({ day: d, block: { start: Math.max(fb.start, Math.floor(min / 30) * 30), end: fb.end } }); else setEditing({ ...emptyCourse(d), start: toHHMM(min), end: toHHMM(min + 75) }); }} />
-            <div className="px-3 py-2 text-[11px] text-ink-3 flex items-center gap-3 border-t border-line"><span><span className="inline-block h-2.5 w-2.5 rounded-sm bg-primary-soft border-l-2 border-primary mr-1 align-middle" />{t('수업')}</span><span><span className="inline-block h-2.5 w-2.5 rounded-sm border-2 border-dashed border-mint mr-1 align-middle" />{t('참가 활동')}</span><span className="ml-auto">{t('수업을 탭하면 수업 공간 · 공강은 활동 열기 · 빈 칸은 수업 추가')}</span></div>
+            <div className="px-3 py-2 text-[11px] text-ink-3 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-line"><span className="whitespace-nowrap"><span className="inline-block h-3 w-3 rounded-[3px] bg-primary/60 v2:bg-ink-2 mr-1 align-middle" />{t('수업')}</span><span className="whitespace-nowrap"><span className="inline-block h-3 w-3 rounded-[3px] border-2 border-dashed border-mint mr-1 align-middle" />{t('참가 활동')}</span><span className="basis-full">{t('수업을 탭하면 수업 공간 · 공강은 활동 열기 · 빈 칸은 수업 추가')}</span></div>
           </div>
         )}
 
