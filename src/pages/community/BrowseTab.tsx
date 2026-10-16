@@ -340,7 +340,9 @@ function orgSubtitle(o: { name: string; type: keyof typeof ORG_TYPE_LABELS; pare
   const desc = o.description.replace(/\s+/g, ' ').trim()
     // 'The X (ABC) program aims to …' 처럼 이름을 되풀이하는 머리말
     .replace(new RegExp(`^(the )?${esc}( \\([^)]{1,15}\\))?,?( (program|club|organization|society))?( (is|aims|seeks|strives|exists))?( (a|an|to))? `, 'i'), '')
-    .replace(/^(our|the|its) (mission|purpose|goal|aim)( of [^,]{1,60})? is to /i, '');
+    .replace(/^(our|the|its) (mission|purpose|goal|aim)( of [^,]{1,60})? is to /i, '')
+    // 사명문 꼴 'To provide …' → 'Provide …' (동사로 시작)
+    .replace(/^to (?=[a-z]+ )/i, '');
   if (desc) return desc.charAt(0).toUpperCase() + desc.slice(1);
   return [ORG_TYPE_LABELS[o.type], o.parent].filter(Boolean).join(' · ');
 }

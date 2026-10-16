@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-16 13:25 UTC (버클리 금 06:25) · 33회차 · 초점: Campus › Browse › 동아리
+- 질문 새 답 없음, 배포 브랜치 변화 없음(라이브 동아리 줄은 아직 “Clubs · Academic Student Organizations · Our mission is…” — 소개 먼저 수정은 배포 대기).
+- 1562곳, 이유 줄 같은 말 최대 2번(기준 지킴), v2·classic 이상 없음.
+- 고침 (BrowseTab.tsx): 소개가 사명문 꼴 “To provide full stack…” 로 시작 → “Provide full stack…”.
+- 메모: “UnifIBD(염증성 장질환) — Like Vision & Language Lab” 같은 약한 이유는 그대로(지난 메모).
+- 검증: tsc, npm test 198, 로컬(라이브 API) v2·classic.
+
 ## 2026-10-16 12:25 UTC (버클리 금 05:25) · 32회차 · 초점: 수업 페이지 (CS 186)
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - 같은 수업 2명(나 포함)·수업 끝나고 공강 1명·스터디 그룹 1(예시 표시)·프로젝트 파트너 — 정상.
