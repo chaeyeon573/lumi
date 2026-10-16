@@ -83,12 +83,12 @@ export function WelcomePage() {
   const daysLeft = hl?.deadline ? Math.max(0, Math.round((Date.parse(`${hl.deadline.deadline}T12:00:00`) - Date.parse(`${todayISO()}T12:00:00`)) / 86400000)) : 0;
   const school = hl?.schoolShort ?? 'Cal';
   const v2 = useDesign() === 'v2';
-  const band = `🍕 FREE FOOD ✦ ⏰ DEADLINES ✦ 🎸 ${hl ? hl.clubs.toLocaleString('en-US') : '1,500+'} CLUBS ✦ 💼 ${hl?.internships ?? 300} INTERNSHIPS ✦ `;
+  const band = `👋 WHO'S FREE NOW ✦ 🍕 FREE FOOD ✦ ⏰ DEADLINES ✦ 🎸 ${hl ? hl.clubs.toLocaleString('en-US') : '1,500+'} CLUBS ✦ 💼 ${hl?.internships ?? 300} INTERNSHIPS ✦ `;
 
   return (
     <div className={`min-h-full flex flex-col relative overflow-hidden ${v2 ? 'bg-[#08070C]' : 'bg-[#0C0A14]'} text-[#F4F1FF]`}>
       {v2 ? <>
-      {/* Lumi v2 "z1" — 핑크 글로우, 라임 띠, 카드 순서: 무료 음식(어두움) → 지금 시간 되는 사람(핑크) → 마감(종이) */}
+      {/* Lumi v2 "z1" — 핑크 글로우, 라임 띠, 카드 순서: 지금 시간 되는 사람(핑크) → 무료 음식(어두움) → 마감(종이). 사람이 먼저 — 같이 할 사람을 찾는 앱 */}
       <div className="pointer-events-none absolute -top-56 -left-48 h-[600px] w-[600px] rounded-full bg-[#FF3DA8] opacity-40 blur-[90px]" />
       <div className="pointer-events-none absolute top-[420px] -right-64 h-[420px] w-[420px] rounded-full bg-[#D4FF3A] opacity-[.14] blur-[80px]" />
 
@@ -100,20 +100,20 @@ export function WelcomePage() {
         <div className="inline-block animate-[marquee_22s_linear_infinite] font-['Unbounded'] font-extrabold text-[13px] tracking-wide">{band.repeat(4)}</div>
       </div>
 
-      <h1 className="relative font-['Unbounded'] font-extrabold text-[38px] leading-[1.05] px-6 pt-7">What's on<br /><span className="text-[#D4FF3A]">campus</span><br />this week?</h1>
+      <h1 className="relative font-['Unbounded'] font-extrabold text-[38px] leading-[1.05] px-6 pt-7">Who's free<br />on <span className="text-[#D4FF3A]">campus</span><br />right now?</h1>
 
-      <div className="relative h-[290px] mt-6 mx-7">
-        <div className="absolute inset-x-0 top-0 rounded-[26px] bg-[#16131F] border border-[#2A2433] px-5 py-4 -rotate-[4deg]">
+      <div className="relative h-[306px] mt-6 mx-7">
+        <div className="absolute inset-x-0 top-0 rounded-[26px] bg-[#FF3DA8] text-white px-5 py-4 -rotate-[4deg] shadow-[0_18px_40px_-12px_rgba(255,61,168,.55)]">
+          <div className="text-[11px] font-extrabold tracking-[1.2px] uppercase opacity-80">👋 Free between classes</div>
+          <div className="font-['Unbounded'] font-semibold text-[17px] leading-tight mt-1.5 truncate">Find someone for lunch</div>
+          <div className="text-[12.5px] opacity-90 mt-1.5">Add your timetable · see who's free</div>
+        </div>
+        <div className="absolute inset-x-0 top-[100px] rounded-[26px] bg-[#16131F] border border-[#2A2433] px-5 py-4 rotate-[2deg]">
           <div className="text-[11px] font-extrabold tracking-[1.2px] uppercase opacity-65">🍕 Free food{hl?.food ? ` · ${day(hl.food.date)} ${time(hl.food.startTime)}` : ''}</div>
           <div className="font-['Unbounded'] font-semibold text-[17px] leading-tight mt-1.5 truncate">{hl?.food?.title ?? (hl ? `${hl.freeFoodThisWeek} free food events this week` : 'Free food near you')}</div>
           <div className="text-[12.5px] opacity-70 mt-1.5 truncate">{hl?.food?.place ? `${hl.food.place} · ` : ''}{hl ? `${hl.freeFoodThisWeek} this week` : 'updated daily'}</div>
         </div>
-        <div className="absolute inset-x-0 top-[92px] rounded-[26px] bg-[#FF3DA8] text-white px-5 py-4 rotate-[2deg] shadow-[0_18px_40px_-12px_rgba(255,61,168,.55)]">
-          <div className="text-[11px] font-extrabold tracking-[1.2px] uppercase opacity-80">👋 Free between classes</div>
-          <div className="font-['Unbounded'] font-semibold text-[17px] leading-tight mt-1.5 truncate">See who's free right now</div>
-          <div className="text-[12.5px] opacity-90 mt-1.5">Add your timetable · grab a coffee</div>
-        </div>
-        <div className="absolute inset-x-0 top-[184px] rounded-[26px] bg-[#F4F1FF] text-[#0C0A14] px-5 py-4 -rotate-[2deg]">
+        <div className="absolute inset-x-0 top-[200px] rounded-[26px] bg-[#F4F1FF] text-[#0C0A14] px-5 py-4 -rotate-[2deg]">
           <div className="text-[11px] font-extrabold tracking-[1.2px] uppercase opacity-65">🔥 {hl?.deadline ? (daysLeft === 0 ? 'Closes today' : `Closes in ${daysLeft} day${daysLeft === 1 ? '' : 's'}`) : 'Deadlines'}</div>
           <div className="font-['Unbounded'] font-semibold text-[17px] leading-tight mt-1.5 truncate">{hl?.deadline?.title ?? 'Scholarships, fellowships & internships'}</div>
           <div className="text-[12.5px] opacity-70 mt-1.5 truncate">{hl?.deadline ? `${new Date(`${hl.deadline.deadline}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} · tap to save` : 'never miss one'}</div>
@@ -131,23 +131,23 @@ export function WelcomePage() {
         <div className="inline-block animate-[marquee_22s_linear_infinite] font-['Unbounded'] font-extrabold text-[13px] tracking-wide">{band.repeat(4)}</div>
       </div>
 
-      <h1 className="relative font-['Unbounded'] font-extrabold text-[38px] leading-[1.05] px-6 pt-7">What's on<br />at <span className="text-[#D4FF3A]">{school}</span><br />this week?</h1>
+      <h1 className="relative font-['Unbounded'] font-extrabold text-[38px] leading-[1.05] px-6 pt-7">Who's free<br />at <span className="text-[#D4FF3A]">{school}</span><br />right now?</h1>
 
-      <div className="relative h-[290px] mt-6 mx-7">
-        <div className="absolute inset-x-0 top-0 rounded-[26px] bg-[#1E1830] border border-[#2E2648] px-5 py-4 -rotate-[4deg]">
+      <div className="relative h-[306px] mt-6 mx-7">
+        <div className="absolute inset-x-0 top-0 rounded-[26px] bg-[#F4F1FF] text-[#0C0A14] px-5 py-4 -rotate-[4deg]">
+          <div className="text-[11px] font-extrabold tracking-[1.2px] uppercase opacity-65">👋 Free between classes</div>
+          <div className="font-['Unbounded'] font-semibold text-[17px] leading-tight mt-1.5 truncate">Find someone for lunch</div>
+          <div className="text-[12.5px] opacity-70 mt-1.5">Add your timetable · see who's free</div>
+        </div>
+        <div className="absolute inset-x-0 top-[100px] rounded-[26px] bg-[#1E1830] border border-[#2E2648] px-5 py-4 rotate-[3deg]">
           <div className="text-[11px] font-extrabold tracking-[1.2px] uppercase opacity-65">🍕 Free food{hl?.food ? ` · ${day(hl.food.date)} ${time(hl.food.startTime)}` : ''}</div>
           <div className="font-['Unbounded'] font-semibold text-[17px] leading-tight mt-1.5 truncate">{hl?.food?.title ?? (hl ? `${hl.freeFoodThisWeek} free food events this week` : 'Free food near you')}</div>
           <div className="text-[12.5px] opacity-70 mt-1.5 truncate">{hl?.food?.place ? `${hl.food.place} · ` : ''}{hl ? `${hl.freeFoodThisWeek} this week` : 'updated daily'}</div>
         </div>
-        <div className="absolute inset-x-0 top-[92px] rounded-[26px] bg-[#D4FF3A] text-[#0C0A14] px-5 py-4 rotate-[3deg]">
+        <div className="absolute inset-x-0 top-[200px] rounded-[26px] bg-[#D4FF3A] text-[#0C0A14] px-5 py-4 -rotate-[2deg]">
           <div className="text-[11px] font-extrabold tracking-[1.2px] uppercase opacity-65">🔥 {hl?.deadline ? (daysLeft === 0 ? 'Closes today' : `Closes in ${daysLeft} day${daysLeft === 1 ? '' : 's'}`) : 'Deadlines'}</div>
           <div className="font-['Unbounded'] font-semibold text-[17px] leading-tight mt-1.5 truncate">{hl?.deadline?.title ?? 'Scholarships, fellowships & internships'}</div>
           <div className="text-[12.5px] opacity-70 mt-1.5 truncate">{hl?.deadline ? `${new Date(`${hl.deadline.deadline}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} · tap to save` : 'never miss one'}</div>
-        </div>
-        <div className="absolute inset-x-0 top-[184px] rounded-[26px] bg-[#F4F1FF] text-[#0C0A14] px-5 py-4 -rotate-[2deg]">
-          <div className="text-[11px] font-extrabold tracking-[1.2px] uppercase opacity-65">👋 Free between classes</div>
-          <div className="font-['Unbounded'] font-semibold text-[17px] leading-tight mt-1.5 truncate">See who's free right now</div>
-          <div className="text-[12.5px] opacity-70 mt-1.5">Add your timetable · grab a coffee</div>
         </div>
       </div>
 
