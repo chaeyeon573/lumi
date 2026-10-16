@@ -12,6 +12,7 @@ import { FIELDS, REGIONS, audienceOf, badgeOf, categoriesOf, eventKindsOf, field
 import { DAY_LABELS, COURSE_HUES, clashesWith, coursesFromCatalog, hasCatalogCourse } from '@core/lib/timetable';
 import { api } from '@core/api';
 import type { CatalogCourse } from '@core/api/types';
+import { formatTime } from '@core/lib/format';
 import { cn } from '@core/lib/cn';
 import { RideSeasonBanner } from '@/components/rides/RideBits';
 import type { Opportunity, Organization } from '@core/types';
@@ -249,7 +250,8 @@ function ListingRow({ o, why, saved, toggleSave, club, onClub, showType = true }
   const nav = useNavigate();
   const b = badgeOf(o, en);
   const loc = o.type === 'internship' ? locationOf(o) : o.place?.name ?? '';
-  const time = o.type === 'event' && o.startTime ? o.startTime : '';
+  // 다른 화면(활동·Discover)과 같은 '10 AM' 꼴 — 자정(00:00)은 시각 없는 행사
+  const time = o.type === 'event' && o.startTime && o.startTime !== '00:00' ? formatTime(o.startTime) : '';
   return (
     <div className="py-3">
     <div className="flex items-start gap-3">
