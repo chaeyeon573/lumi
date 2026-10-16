@@ -183,6 +183,7 @@ test('sample posts and chats move to recent times; real posts and chats someone 
   const ago = (iso: string) => new Date(Date.parse(iso) - WEEKS).toISOString();
   // 3주 전에 시드된 라이브 DB 와 같은 상태
   db.posts = db.posts.map((p) => ({ ...p, createdAt: ago(p.createdAt), comments: p.comments.map((c) => ({ ...c, createdAt: ago(c.createdAt) })) }));
+  db.notifications = db.notifications.map((n) => ({ ...n, createdAt: ago(n.createdAt) }));
   db.chatRooms = db.chatRooms.map((r) => ({ ...r, createdAt: ago(r.createdAt), messages: r.messages.map((m) => ({ ...m, createdAt: ago(m.createdAt) })), lastReadAt: Object.fromEntries(Object.entries(r.lastReadAt).map(([k, v]) => [k, ago(v)])) }));
   const realPost = { ...structuredClone(db.posts[0]), id: 'po_real', authorId: REAL, createdAt: ago(new Date().toISOString()), comments: [] };
   db.posts.push(realPost);
@@ -191,7 +192,9 @@ test('sample posts and chats move to recent times; real posts and chats someone 
   const before = structuredClone(joined);
 
   const patch = rollSampleContent(db);
-  assert.ok(patch?.posts?.length && patch.chatRooms?.length);
+  assert.ok(patch?.posts?.length && patch.chatRooms?.length && patch.notifications?.length);
+  const deadline = db.notifications.find((n) => n.id === 'nt9')!; // 'Deadline in 4 days' — 10분 전
+  assert.ok((Date.now() - Date.parse(deadline.createdAt)) / 60000 < 11);
   const hoursAgo = (iso: string) => (Date.now() - Date.parse(iso)) / 3600000;
   const coffee = db.posts.find((p) => p.id === 'po1')!; // "Hosting a coffee meetup here tonight" — 2시간 전
   assert.ok(Math.abs(hoursAgo(coffee.createdAt) - 2) < 0.1, `po1 is ${hoursAgo(coffee.createdAt)}h old`);

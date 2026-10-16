@@ -86,7 +86,7 @@ db.games ??= []; // 게임 기능 이전에 저장된 스냅샷
 async function rollSamples() {
   const p = rollSampleActivities(db); if (p) { await store.applyPatch(p); broadcast(p); console.log(`[demo] rolled ${p.activities?.length ?? 0} sample activities`); }
   // 예시 글·대화 시각도 지금 기준으로 (3주 전 날짜에 "tonight" 이 붙어 보이지 않게)
-  const c = rollSampleContent(db); if (c) { await store.applyPatch(c); broadcast(c); console.log(`[demo] rolled ${c.posts?.length ?? 0} sample posts, ${c.chatRooms?.length ?? 0} sample chats`); }
+  const c = rollSampleContent(db); if (c) { await store.applyPatch(c); broadcast(c); console.log(`[demo] rolled ${c.posts?.length ?? 0} sample posts, ${c.chatRooms?.length ?? 0} sample chats, ${c.notifications?.length ?? 0} sample notifications`); }
 }
 const clients = new Map<ID, Set<Response>>();
 // iPhone app push (server/push.ts) — every broadcast Patch with a new notification → Expo Push API
