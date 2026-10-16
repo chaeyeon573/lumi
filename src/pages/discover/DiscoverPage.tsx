@@ -205,6 +205,7 @@ function OppRow({ o, quiet = true }: { o: Opportunity; quiet?: boolean }) {
   );
 }
 
+const OPP_CAP = 3;
 function TeamsTab() {
   const v = useViewer();
   const nav = useNavigate();
@@ -213,7 +214,13 @@ function TeamsTab() {
   const [purpose, setPurpose] = useState('all');
   const mySchool = v.me.affiliation.type === 'university' ? v.me.affiliation.schoolId : '';
   const items = useMemo(() => teamItems(v.visibleActivities, opps.filter((o) => !o.schoolId || o.schoolId === mySchool), orgs.filter((o) => o.schoolId === mySchool), v.me.id, v.approvedCount), [v, opps, orgs, mySchool]);
-  const shown = items.filter((i) => purpose === 'all' || i.purpose === purpose);
+  // 사람(팀원 모집·크루·동아리)이 먼저, 공고(해커톤 등)는 마감 가까운 순 — '전체'에서는 3개만 보이고 나머지는 Campus 로
+  const deadlineOf = (i: (typeof items)[number]) => (i.kind === 'opp' ? i.opp.deadline ?? '9999' : '');
+  const filtered = items.filter((i) => purpose === 'all' || i.purpose === purpose);
+  const people = filtered.filter((i) => i.kind !== 'opp');
+  const listings = filtered.filter((i) => i.kind === 'opp' && i.open).sort((x, y) => deadlineOf(x).localeCompare(deadlineOf(y)));
+  const shown = [...people, ...(purpose === 'all' ? listings.slice(0, OPP_CAP) : listings)];
+  const more = purpose === 'all' ? listings.length - OPP_CAP : 0;
   return (
     <div>
       <h2 className="font-display text-[24px] font-bold text-primary mb-3">{lang === 'en' ? 'Teams & Crews' : '팀 · Study Crew'}</h2>
@@ -226,6 +233,7 @@ function TeamsTab() {
           const sub = a.courseName ? `${a.courseName} · ${a.crewType ? CREW_TYPE_LABELS[a.crewType] : ''}` : (a.rolesNeeded ?? []).map((r) => PERSON_ROLE_LABELS[r]).join(' · ');
           return <Row key={i.id} avatar={<button onClick={() => nav(`/activities/${a.id}`)}><Avatar emoji={host?.avatar.emoji ?? '👤'} hue={host?.avatar.hue ?? 200} url={host?.avatar.url} size={44} /></button>} title={a.title} sub={`${formatDate(a.date)} ${formatTime(a.startTime)} · ${sub}`} action={<JoinButton activity={a} size="sm" label={t('참여')} className="bg-accent text-primary shadow-none" />} />;
         })}</div>}
+      {more > 0 && <button onClick={() => nav('/community?tab=opportunities&sub=hackathon')} className="mt-3 w-full h-10 rounded-full bg-surface-2 text-[13px] font-semibold text-ink-2 press">{lang === 'en' ? `See all ${listings.length} hackathons & competitions` : `해커톤·공모전 ${listings.length}개 모두 보기`}</button>}
       <span className="hidden">{toHHMM(0)}</span>
     </div>
   );
