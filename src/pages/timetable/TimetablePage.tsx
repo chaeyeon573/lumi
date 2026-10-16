@@ -239,10 +239,10 @@ export function TimetablePage() {
               </div>
             )}
             <Field label={t('과목명')} required><Input autoFocus placeholder={t('예: 데이터베이스')} value={editing.name} onChange={(e) => setEditing({ ...editing, name: e.target.value })} /></Field>
-            <div className="grid grid-cols-3 gap-2">
-              <Field label={t('요일')} required><Select value={editing.day} onChange={(e) => setEditing({ ...editing, day: Number(e.target.value) })}>{DAY_LABELS.map((d, i) => <option key={d} value={i}>{d}{t('요일')}</option>)}</Select></Field>
-              <Field label={t('시작')} required><Input type="time" value={editing.start} onChange={(e) => setEditing({ ...editing, start: e.target.value })} /></Field>
-              <Field label={t('종료')} required><Input type="time" value={editing.end} onChange={(e) => setEditing({ ...editing, end: e.target.value })} /></Field>
+            <div className="grid grid-cols-2 gap-2">
+              <div className="col-span-2"><Field label={t('요일')} required><Select value={editing.day} onChange={(e) => setEditing({ ...editing, day: Number(e.target.value) })}>{DAY_LABELS.map((d, i) => <option key={d} value={i}>{lang === 'en' ? d : `${d}요일`}</option>)}</Select></Field></div>
+              <Field label={t('시작')} required><Input type="time" value={editing.start} onChange={(e) => setEditing({ ...editing, start: e.target.value })} className="min-w-0" /></Field>
+              <Field label={t('종료')} required><Input type="time" value={editing.end} onChange={(e) => setEditing({ ...editing, end: e.target.value })} className="min-w-0" /></Field>
             </div>
             <div className="grid grid-cols-2 gap-2">
               <Field label={t('강의실 (나만 보기)')}><Input placeholder={t('예: 공학관 B103')} value={editing.room ?? ''} onChange={(e) => setEditing({ ...editing, room: e.target.value })} /></Field>
