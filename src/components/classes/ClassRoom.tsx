@@ -15,15 +15,16 @@ import { Avatar, Button, Input, SampleTag, Toggle } from '@/components/ui';
 import { JoinButton } from '@/components/cards/JoinButton';
 import { codeFromName, campusDateOf, type Enrollment } from '@core/lib/classmates';
 import { freeBlocks, toMin } from '@core/lib/timetable';
-import { clockLabel, slotLabel } from '@core/api/classes';
-import { formatDate } from '@core/lib/format';
+import { slotLabel } from '@core/api/classes';
+import { formatDate, formatTime } from '@core/lib/format';
 import { cn } from '@core/lib/cn';
 import { SchoolEmailCard } from '@/components/settings/SchoolEmailCard';
 import { CopyClassLink, QrLinkButton } from './ClassLink';
 
 const en = lang === 'en';
 const DAYS = en ? ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] : ['월', '화', '수', '목', '금', '토', '일'];
-const hm = (hhmm: string) => clockLabel(hhmm, en);
+// 앱의 다른 시각과 같은 꼴 ('11 AM' · '오전 11시') — 같은 화면 위쪽(수업 시간)이 이미 그렇다
+const hm = (hhmm: string) => formatTime(hhmm);
 
 /** 겹쳐 쌓은 아바타 */
 export function AvatarStack({ users, size = 30, max = 5 }: { users: User[]; size?: number; max?: number }) {
