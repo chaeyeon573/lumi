@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-16 20:20 UTC (버클리 금 13:20) · 40회차 · 초점: Rides(같이 타기)
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- 목록: 5개(Costco·Trader Joe's·OAK·SFO 2) 모두 예시 표시, 추수감사절 띠, 안전 안내 — v2·classic 이상 없음.
+- 고침 (RideBits.tsx): Discover 의 Rides 줄이 “5 open · airports, Trader Joe's, Costco, SF, Tahoe” 고정 문구라 없는 행선지(SF·Tahoe)도 열려 있는 것처럼 보였다 → 열린 차가 실제로 가는 곳 “5 open · Costco Richmond, Trader Joe's, OAK…”. 열린 차가 없을 때만 예시 행선지.
+- 메모: Rides 안의 시각은 “11am” 꼴(자체 clock) — 다른 화면 “11 AM”과 다르지만 이 화면 안에서는 일관.
+- 검증: tsc, npm test 198, 로컬(라이브 API) v2·classic.
+
 ## 2026-10-16 19:20 UTC (버클리 금 12:20) · 39회차 · 초점: Ask Lumi (한국어 4개)
 - 질문 새 답 없음, 배포 브랜치 변화 없음. 속도 36~40초 그대로.
 - 잘 됨: 이번 주말 해커톤 5개(날짜·장소·마감), 체육관 지금 RSF 54%·CMS 0%(5분 전), 오늘 저녁 밥 → 실제 없음 + 예시 하나.

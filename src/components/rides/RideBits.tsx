@@ -109,7 +109,10 @@ export function RidesEntry({ className, compact }: { className?: string; compact
   const rides = useRides();
   const today = campusToday();
   const school = schoolOf(v.me);
-  const open = rides.filter((r) => r.status === 'open' && r.date >= today && !isFull(r)).length;
+  const openRides = rides.filter((r) => r.status === 'open' && r.date >= today && !isFull(r));
+  const open = openRides.length;
+  // 열린 차가 가는 곳을 그대로 — 예전엔 'airports, Trader Joe's, Costco, SF, Tahoe' 고정 문구라 없는 행선지(SF·Tahoe)도 있어 보였다
+  const dests = [...new Set(openRides.sort((a, b) => a.date.localeCompare(b.date)).map(destLabel))];
   const season = bannerSeason(school, today, useRideCalendar(school));
   if (season) {
     const airport = rides.filter((r) => r.status === 'open' && ['sfo', 'oak', 'sjc'].includes(r.to) && r.date >= season.showFrom && r.date <= season.breakEnd).length;
@@ -130,7 +133,7 @@ export function RidesEntry({ className, compact }: { className?: string; compact
       <span className="h-10 w-10 rounded-full bg-primary-soft text-primary grid place-items-center shrink-0"><Car size={19} /></span>
       <span className="flex-1 min-w-0">
         <span className="block text-[14px] font-bold text-ink">Rides</span>
-        <span className="block text-[12.5px] text-ink-2 truncate">{open ? `${open} open · ` : ''}airports, Trader Joe's, Costco, SF, Tahoe</span>
+        <span className="block text-[12.5px] text-ink-2 truncate">{open ? `${open} open · ${dests.slice(0, 3).join(', ')}${dests.length > 3 ? '…' : ''}` : "Airports, Trader Joe's, Costco, SF, Tahoe"}</span>
       </span>
       <ChevronRight size={18} className="text-ink-3 shrink-0" />
     </button>
