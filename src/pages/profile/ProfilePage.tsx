@@ -8,7 +8,7 @@ import { useAppStore } from '@core/store/useAppStore';
 import { INTEREST_LABELS } from '@core/lib/labels';
 import { friendsOf } from '@core/lib/relations';
 import { todayISO, formatDateTime } from '@core/lib/format';
-import { statusNow, freeBlocks, todayIdx, nowMin, fmtBlock, toHHMM } from '@core/lib/timetable';
+import { statusNow, statusLabel, freeBlocks, todayIdx, nowMin, fmtBlock } from '@core/lib/timetable';
 import { profileCompletion, questionById } from '@core/data/prompts';
 import { cn } from '@core/lib/cn';
 import { WeekGrid } from '@/components/timetable/WeekGrid';
@@ -56,8 +56,8 @@ export function ProfilePage() {
         {me.affiliation.type === 'university' && <KeyDatesCard schoolId={me.affiliation.schoolId} />}
         <section className="card p-5">
           <div className="flex items-center justify-between">
-            <h2 className="font-display text-[20px] font-bold text-primary flex items-center gap-2"><CalendarDays size={18} />{lang === 'en' ? 'Weekly Schedule' : '내 시간표'}</h2>
-            {me.timetable.length > 0 && <span className={cn('h-7 px-3 rounded-full text-[11px] font-bold flex items-center gap-1', now.kind === 'free' ? 'bg-mint-soft text-mint' : 'bg-surface-2 text-ink-2')}><span className={cn('h-1.5 w-1.5 rounded-full', now.kind === 'free' ? 'bg-mint' : 'bg-ink-3')} />{now.kind === 'free' ? (now.until ? `${t('공강')} · ${toHHMM(now.until)}` : t('오늘 수업 없음')) : now.kind === 'in_class' ? t('수업 중') : t('오늘 수업 끝')}</span>}
+            <h2 className="font-display text-[20px] font-bold text-primary flex items-center gap-2 whitespace-nowrap"><CalendarDays size={18} />{lang === 'en' ? 'Schedule' : '내 시간표'}</h2>
+            {me.timetable.length > 0 && <span className={cn('h-7 px-3 rounded-full text-[11px] font-bold flex items-center gap-1 whitespace-nowrap shrink-0', now.kind === 'free' ? 'bg-mint-soft text-mint' : 'bg-surface-2 text-ink-2')}><span className={cn('h-1.5 w-1.5 rounded-full', now.kind === 'free' ? 'bg-mint' : 'bg-ink-3')} />{now.kind === 'free' ? statusLabel(now) : now.kind === 'in_class' ? t('수업 중') : t('오늘 수업 끝')}</span>}
           </div>
           {me.timetable.length === 0 ? (
             <Button full variant="secondary" className="mt-4" onClick={() => nav('/timetable')}>{t('시간표 만들기')}</Button>
