@@ -1,4 +1,4 @@
-import { badgeOf, fieldOf, locationOf, orgOfListing } from '@core/lib/listings';
+import { badgeOf, campusDate, fieldOf, locationOf, orgOfListing } from '@core/lib/listings';
 import { useEffect, useRef, useState } from 'react';
 import { t, lang } from '@core/i18n';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
@@ -70,7 +70,7 @@ export function OpportunityDetailPage() {
           <div className="flex flex-wrap items-center gap-1.5">
             <span className="rounded-lg px-2 h-6 inline-flex items-center text-[11px] font-bold text-white" style={{ background: color }}>{OPP_TYPE_EMOJI[o.type]} {OPP_TYPE_LABELS[o.type]}</span>
             {o.official && <Tag tone="gold"><BadgeCheck size={11} /> {t('공식')}</Tag>}
-            {o.deadline && <Tag tone={daysUntil(o.deadline) <= 7 ? 'danger' : 'neutral'} className="ml-auto"><AlarmClock size={11} /> {dday(o.deadline)} · {formatDate(o.deadline)} {t('마감')}</Tag>}
+            {o.deadline && <Tag tone={daysUntil(o.deadline) <= 7 ? 'danger' : 'neutral'} className="ml-auto"><AlarmClock size={11} /> {dday(o.deadline)} · {lang === 'en' ? `due ${formatDate(campusDate(o.deadline))}` : `${formatDate(campusDate(o.deadline))} 마감`}</Tag>}
           </div>
           <h1 className="text-[20px] font-extrabold leading-snug mt-2">{o.title}</h1>
           <button onClick={() => org && nav(`/orgs/${org.id}`)} className="text-[13px] text-ink-2 mt-0.5 flex items-center gap-1">{o.host}{org && <span className="text-primary text-[12px]">{t('조직 페이지')}</span>}</button>

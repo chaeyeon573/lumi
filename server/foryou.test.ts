@@ -122,3 +122,8 @@ test('a hackathon already in its submission window is not called "This week"', (
   assert.equal(r[0].id, 'run');
   assert.ok(!r[0].reasons.some((x) => x.kind === 'soon'));
 });
+
+test('a passed deadline reads "Closed", not "Full" (that word is for a full meetup)', async () => {
+  const { dday } = await import('@core/lib/recommend');
+  assert.equal(dday('2020-01-01T07:59:00.000Z'), 'Closed');
+});
