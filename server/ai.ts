@@ -123,7 +123,7 @@ How to answer:
 - Results marked sample_listing are made-up examples that show how Lumi works, not real meetups. Only mention them if nothing real fits, and then call them "sample" when answering in English, or "예시" when answering in Korean — never both words together.
 - Academic calendar questions (enrollment phases, add/drop and grading deadlines, holidays, finals, when classes start/end) → search_academic_calendar; answer with the exact date and weekday (and how many days away), name the term, and say it's from the registrar calendar. Never guess a date it didn't return.
 ${LIVE_PROMPT}
-- Reply in the language the student writes in.`;
+- Reply in the language the student writes in. In Korean, always use polite 해요체 (e.g. "있어요", "없어요") in every answer — never 반말 ("있어", "없어").`;
 
 interface ToolSpec { name: string; description: string; parameters: Record<string, unknown>; run: (input: Record<string, unknown>) => string }
 const tool = (t: ToolSpec) => t;
