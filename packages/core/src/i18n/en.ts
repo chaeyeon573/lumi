@@ -846,7 +846,7 @@ export const en: Record<string, string> = {
   '가면': 'Masked',
   '닉네임': 'Nickname',
   '지금 하고 싶은 활동 (한 줄)': 'What I want to do right now (one line)',
-  '홈 추천 카드에 표시돼요': 'Shown on your card on Home',
+  '사람 탭 카드에 표시돼요': 'Shown on your card in People',
   '예: 오늘 저녁 신촌에서 커피 한 잔?': 'e.g. Coffee near campus tonight?',
   '학교 정보': 'School',
   '학교 인증 완료': 'School verified',

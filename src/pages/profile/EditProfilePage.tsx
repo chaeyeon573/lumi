@@ -47,7 +47,7 @@ export function EditProfilePage() {
         </div>
         <div className="grid grid-cols-8 gap-1.5">{EMOJIS.map((e) => <button key={e} type="button" onClick={() => patch({ avatar: { ...form.avatar, emoji: e } })} className={cn('h-10 rounded-xl text-xl', form.avatar.emoji === e ? 'bg-primary-soft ring-2 ring-primary' : 'bg-surface-2')}>{e}</button>)}</div>
         <Field label={t('닉네임')} required><Input value={form.nickname} onChange={(e) => patch({ nickname: e.target.value })} maxLength={12} /></Field>
-        <Field label={t('지금 하고 싶은 활동 (한 줄)')} hint={t('홈 추천 카드에 표시돼요')}><Input placeholder={t('예: 오늘 저녁 신촌에서 커피 한 잔?')} value={form.nowWant ?? ''} onChange={(e) => patch({ nowWant: e.target.value })} /></Field>
+        <Field label={t('지금 하고 싶은 활동 (한 줄)')} hint={t('사람 탭 카드에 표시돼요')}><Input placeholder={t('예: 오늘 저녁 신촌에서 커피 한 잔?')} value={form.nowWant ?? ''} onChange={(e) => patch({ nowWant: e.target.value })} /></Field>
         <Field label={t('자기소개')} right={fv('bio')}><Textarea value={form.bio} onChange={(e) => patch({ bio: e.target.value })} maxLength={200} /></Field>
         <Field label={t('좋아하는 것')} right={fv('likes')}><Input value={form.likes} onChange={(e) => patch({ likes: e.target.value })} /></Field>
         <Field label={t('자유시간에 하고 싶은 활동')} right={fv('freeTime')}><Input value={form.freeTime} onChange={(e) => patch({ freeTime: e.target.value })} /></Field>
