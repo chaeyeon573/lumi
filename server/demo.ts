@@ -11,8 +11,8 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Patch, Snapshot } from '@core/api/types';
-import type { Activity, ChatRoom, ID, Post, User } from '@core/types';
-import { users as seedUsers, activities as seedActivities, posts as seedPosts, chatRooms as seedRooms, DEMO_USER_ID } from '@core/data/seed.en';
+import type { Activity, ChatRoom, ID, Notification, Post, User } from '@core/types';
+import { users as seedUsers, activities as seedActivities, posts as seedPosts, chatRooms as seedRooms, notifications as seedNotifications, DEMO_USER_ID } from '@core/data/seed.en';
 import { todayISO } from '@core/lib/format';
 
 export { DEMO_USER_ID };
@@ -148,6 +148,7 @@ export function rollSampleActivities(db: Snapshot): Patch | null {
 const LOADED_AT = Date.now();
 const ageOf = (iso: string) => LOADED_AT - Date.parse(iso);
 const postAge = new Map(seedPosts.map((p) => [p.id, ageOf(p.createdAt)]));
+const notificationAge = new Map(seedNotifications.map((n) => [n.id, ageOf(n.createdAt)]));
 const commentAge = new Map(seedPosts.flatMap((p) => p.comments.map((c) => [c.id, ageOf(c.createdAt)] as const)));
 const seedRoomById = new Map(seedRooms.map((r) => [r.id, r]));
 const STALE_MS = 60 * 60 * 1000; // 한 시간 넘게 밀렸을 때만 — 15분마다 모든 글을 다시 보내지 않게
@@ -169,9 +170,18 @@ export function rollSampleContent(db: Snapshot, now = Date.now()): Patch | null 
     if (delta < STALE_MS) continue;
     chatRooms.push({ ...r, createdAt: shift(r.createdAt, delta), messages: r.messages.map((m) => ({ ...m, createdAt: shift(m.createdAt, delta) })), lastReadAt: Object.fromEntries(Object.entries(r.lastReadAt).map(([k, v]) => [k, shift(v, delta)])) });
   }
-  if (!posts.length && !chatRooms.length) return null;
+  // 데모 계정의 예시 알림도 — 'Deadline in 4 days' 가 Sep 23 으로 찍혀 있으면 앱이 멈춘 것처럼 보인다
+  const notifications: Notification[] = [];
+  for (const n of db.notifications) {
+    const age = notificationAge.get(n.id);
+    if (age === undefined || now - age - Date.parse(n.createdAt) < STALE_MS) continue;
+    notifications.push({ ...n, createdAt: new Date(now - age).toISOString() });
+  }
+  if (!posts.length && !chatRooms.length && !notifications.length) return null;
   const byPost = new Map(posts.map((p) => [p.id, p])), byRoom = new Map(chatRooms.map((r) => [r.id, r]));
   db.posts = db.posts.map((p) => byPost.get(p.id) ?? p);
   db.chatRooms = db.chatRooms.map((r) => byRoom.get(r.id) ?? r);
-  return { ...(posts.length ? { posts } : {}), ...(chatRooms.length ? { chatRooms } : {}) };
+  const byNote = new Map(notifications.map((n) => [n.id, n]));
+  db.notifications = db.notifications.map((n) => byNote.get(n.id) ?? n);
+  return { ...(posts.length ? { posts } : {}), ...(chatRooms.length ? { chatRooms } : {}), ...(notifications.length ? { notifications } : {}) };
 }
