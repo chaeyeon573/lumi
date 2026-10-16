@@ -1,7 +1,7 @@
 import { audienceOf, audienceFits, isGradStudent } from './listings';
 import type { ClassRoster, Opportunity, OpportunityIntentRecord, User } from '@core/types';
 import { sharedClassWith } from './classmates';
-import { t } from '@core/i18n';
+import { t, lang } from '@core/i18n';
 import type { Snapshot } from '@core/api/types';
 import { GOAL_LABELS, PERSON_ROLE_LABELS, INTEREST_LABELS } from './labels';
 import { freeBlocks, overlapBlocks, todayIdx, fmtBlock } from './timetable';
@@ -93,4 +93,5 @@ export function daysUntil(iso: string) {
   const day = /T/.test(iso) ? campusDay(new Date(iso)) : iso.slice(0, 10);
   return Math.round((Date.parse(`${day}T12:00:00Z`) - Date.parse(`${campusDay(new Date())}T12:00:00Z`)) / 86400000);
 }
-export function dday(iso: string) { const d = daysUntil(iso); return d < 0 ? t('마감') : d === 0 ? 'D-Day' : `D-${d}`; }
+// 지난 마감은 영어로 'Closed' — t('마감')은 정원 찬 모임의 'Full' 로 번역돼 있다
+export function dday(iso: string) { const d = daysUntil(iso); return d < 0 ? (lang === 'en' ? 'Closed' : '마감') : d === 0 ? 'D-Day' : `D-${d}`; }

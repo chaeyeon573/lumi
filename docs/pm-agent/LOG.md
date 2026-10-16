@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-16 10:20 UTC (버클리 금 03:20) · 30회차 · 초점: 공고 상세 화면 (장학금·행사)
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- 고침: 상세 위쪽 마감 표시가 “D-10 · Tue, Oct 27 Full” — 마감은 10/26 오후 8:59 PT 인데 UTC 날짜(27일)를 썼고, ‘마감’이 영어로 ‘Full’(정원 찬 모임용 번역)로 나왔다 → “D-10 · due Mon, Oct 26” (OpportunityDetailPage.tsx). 마감 지난 D-day 도 영어로 ‘Full’ → ‘Closed’ (recommend.ts dday + 테스트, 고치기 전 실패/후 통과).
+- 행사 상세(Book Launch, 오늘 11 AM, International House) 정상.
+- 메모: 상세의 빈 칸 문구 “Nobody has saved this yet…”, “No one has said they’re going yet.”, “None yet. Open a prep room…” — PRODUCT_TASTE 의 ‘빈 칸 채움 문구’에 가깝다. 버튼 설명 역할도 해서 이번엔 그대로.
+- 검증: tsc(앱·서버), npm test 198, 로컬(라이브 API) v2·classic 전/후.
+
 ## 2026-10-16 09:20 UTC (버클리 금 02:20) · 29회차 · 초점: Discover › Activities
 - 질문 새 답 없음, 배포 브랜치 변화 없음(“Ca”/“Ha” 동그라미 등 lumi-pm 수정은 아직 라이브에 없음).
 - Today 27 · Tomorrow 11 · This week 92 · Coming up 154 — 지난 시각 없음, 예시 표시 정상, v2·classic 이상 없음. 이번엔 고칠 것 없음.
