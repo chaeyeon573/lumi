@@ -253,7 +253,7 @@ export const organizations: Organization[] = [
 
 export const activities: Activity[] = [
   {
-    id: 'a_coffee_sinchon', kind: 'personal', category: 'coffee', title: 'Coffee on Southside at 6 today?', description: 'Anyone into startups or AI. Casual chat. Up to 4, Berkeley students only.',
+    id: 'a_coffee_sinchon', kind: 'personal', category: 'coffee', title: 'Coffee on Southside at 6', description: 'Anyone into startups or AI. Casual chat. Up to 4, Berkeley students only.',
     cover: { emoji: '☕', hue: 30 , url: photo('c_espresso') }, hostId: 'u_jimin', hostType: 'user', date: T, startTime: '18:00', endTime: '19:30',
     place: { name: 'Caffe Strada', address: 'College Ave & Bancroft', lat: 37.8690, lng: -122.2547 },
     capacity: 4, visibility: 'school', joinPolicy: 'open', fee: 0, comments: [{ id: 'c1', authorId: 'u_sua', text: 'Is it okay if I’m just getting into startups?', createdAt: isoMinutesAgo(40) }, { id: 'c2', authorId: 'u_jimin', text: 'Totally! Come by :)', createdAt: isoMinutesAgo(35) }], createdAt: isoHoursAgo(2),
