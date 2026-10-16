@@ -44,7 +44,7 @@ import { TOGETHER_RULES, ruleAllows } from './together-rules';
 import { gameFor } from '@core/lib/icebreakers';
 import { sendCodeMail, sendMail } from './mail';
 import { registerRideRoutes } from './rides';
-import { migrateDemo, demoUserIdFor, rollSampleActivities } from './demo';
+import { migrateDemo, demoUserIdFor, rollSampleActivities, rollSampleContent } from './demo';
 import { hiddenSamplesFor, SAMPLE_OPPORTUNITY_IDS, SAMPLE_ORG_IDS } from './samples';
 import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError, campusToday, forgetStarters } from './ai';
 import { registerAccountRoutes } from './account';
@@ -83,7 +83,11 @@ let catalogVersion = await store.catalogVersion();
 db.games ??= []; // 게임 기능 이전에 저장된 스냅샷
 { const p = migrateDemo(db); if (p) { await store.applyPatch(p); console.log(`[demo] updated ${p.users?.length ?? 0} sample users, hid ${p.removed?.schools?.length ?? 0} schools`); } }
 // 예시 모임 날짜를 오늘 기준으로 — 켜질 때 한 번, 그 뒤 15분마다 (지난 것은 곧 시작하는 시간으로 민다)
-async function rollSamples() { const p = rollSampleActivities(db); if (p) { await store.applyPatch(p); broadcast(p); console.log(`[demo] rolled ${p.activities?.length ?? 0} sample activities`); } }
+async function rollSamples() {
+  const p = rollSampleActivities(db); if (p) { await store.applyPatch(p); broadcast(p); console.log(`[demo] rolled ${p.activities?.length ?? 0} sample activities`); }
+  // 예시 글·대화 시각도 지금 기준으로 (3주 전 날짜에 "tonight" 이 붙어 보이지 않게)
+  const c = rollSampleContent(db); if (c) { await store.applyPatch(c); broadcast(c); console.log(`[demo] rolled ${c.posts?.length ?? 0} sample posts, ${c.chatRooms?.length ?? 0} sample chats`); }
+}
 const clients = new Map<ID, Set<Response>>();
 // iPhone app push (server/push.ts) — every broadcast Patch with a new notification → Expo Push API
 // suspended and sample accounts are refused inside push.ts too; the shared demo logins are in PROTECTED_IDS

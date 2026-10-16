@@ -11,8 +11,8 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Patch, Snapshot } from '@core/api/types';
-import type { Activity, ID, User } from '@core/types';
-import { users as seedUsers, activities as seedActivities, DEMO_USER_ID } from '@core/data/seed.en';
+import type { Activity, ChatRoom, ID, Post, User } from '@core/types';
+import { users as seedUsers, activities as seedActivities, posts as seedPosts, chatRooms as seedRooms, DEMO_USER_ID } from '@core/data/seed.en';
 import { todayISO } from '@core/lib/format';
 
 export { DEMO_USER_ID };
@@ -139,4 +139,39 @@ export function rollSampleActivities(db: Snapshot): Patch | null {
   const byId = new Map(changed.map((a) => [a.id, a]));
   db.activities = db.activities.map((a) => byId.get(a.id) ?? a);
   return { activities: changed };
+}
+
+// ─── 예시 글·대화 시각 굴리기 ───────────────────────────────────────────────
+// 시드 글·대화는 "2시간 전·어제" 기준으로 쓰여 있다("tonight", "today"). 저장된 시각이 그대로면 몇 주 뒤엔
+// "Sep 23 · Hosting a coffee meetup tonight" 처럼 보인다 → 시드에 적힌 '몇 시간 전'을 지금 기준으로 다시 맞춘다.
+// 시드에 없는 글·댓글·메시지(실제 사람이 쓴 것)는 건드리지 않는다. 데모 계정에 누가 메시지를 보탠 대화는 통째로 둔다.
+const LOADED_AT = Date.now();
+const ageOf = (iso: string) => LOADED_AT - Date.parse(iso);
+const postAge = new Map(seedPosts.map((p) => [p.id, ageOf(p.createdAt)]));
+const commentAge = new Map(seedPosts.flatMap((p) => p.comments.map((c) => [c.id, ageOf(c.createdAt)] as const)));
+const seedRoomById = new Map(seedRooms.map((r) => [r.id, r]));
+const STALE_MS = 60 * 60 * 1000; // 한 시간 넘게 밀렸을 때만 — 15분마다 모든 글을 다시 보내지 않게
+const shift = (iso: string, ms: number) => new Date(Date.parse(iso) + ms).toISOString();
+
+export function rollSampleContent(db: Snapshot, now = Date.now()): Patch | null {
+  const posts: Post[] = [];
+  for (const p of db.posts) {
+    const age = postAge.get(p.id);
+    if (age === undefined || now - age - Date.parse(p.createdAt) < STALE_MS) continue;
+    posts.push({ ...p, createdAt: new Date(now - age).toISOString(), comments: p.comments.map((c) => { const a = commentAge.get(c.id); return a === undefined ? c : { ...c, createdAt: new Date(now - a).toISOString() }; }) });
+  }
+  const chatRooms: ChatRoom[] = [];
+  for (const r of db.chatRooms) {
+    const orig = seedRoomById.get(r.id);
+    if (!orig || !r.messages.length || r.messages.length !== orig.messages.length || r.messages.some((m, i) => m.id !== orig.messages[i].id)) continue;
+    const last = orig.messages[orig.messages.length - 1];
+    const delta = now - ageOf(last.createdAt) - Date.parse(r.messages[r.messages.length - 1].createdAt);
+    if (delta < STALE_MS) continue;
+    chatRooms.push({ ...r, createdAt: shift(r.createdAt, delta), messages: r.messages.map((m) => ({ ...m, createdAt: shift(m.createdAt, delta) })), lastReadAt: Object.fromEntries(Object.entries(r.lastReadAt).map(([k, v]) => [k, shift(v, delta)])) });
+  }
+  if (!posts.length && !chatRooms.length) return null;
+  const byPost = new Map(posts.map((p) => [p.id, p])), byRoom = new Map(chatRooms.map((r) => [r.id, r]));
+  db.posts = db.posts.map((p) => byPost.get(p.id) ?? p);
+  db.chatRooms = db.chatRooms.map((r) => byRoom.get(r.id) ?? r);
+  return { ...(posts.length ? { posts } : {}), ...(chatRooms.length ? { chatRooms } : {}) };
 }

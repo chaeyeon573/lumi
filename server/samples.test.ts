@@ -11,7 +11,7 @@ import * as seed from '@core/data/seed.en';
 import { t } from '@core/i18n';
 import { createEngine } from '@core/api/engine';
 import { snapshotFor, patchFor } from './view';
-import { migrateDemo, rollSampleActivities, demoUserIdFor, seniorClassYear } from './demo';
+import { migrateDemo, rollSampleActivities, rollSampleContent, demoUserIdFor, seniorClassYear } from './demo';
 import { ensureSampleRides } from './rides';
 import { SAMPLE_OPPORTUNITY_IDS, SAMPLE_ORG_IDS, hiddenSamplesFor, sampleFreeFor } from './samples';
 import { searchActivities, searchClubs, searchListings } from './ai-search';
@@ -175,4 +175,33 @@ test('sample activity wording follows the seed after a roll (live DBs keep old t
   rollSampleActivities(db);
   assert.equal(db.activities.find((x) => x.id === 'a_now_lunch')!.title, seed.activities.find((x) => x.id === 'a_now_lunch')!.title);
   assert.doesNotMatch(db.activities.find((x) => x.id === 'a_now_lunch')!.title, /lunch/i);
+});
+
+test('sample posts and chats move to recent times; real posts and chats someone joined stay put', () => {
+  const db = world();
+  const WEEKS = 21 * 86400000;
+  const ago = (iso: string) => new Date(Date.parse(iso) - WEEKS).toISOString();
+  // 3주 전에 시드된 라이브 DB 와 같은 상태
+  db.posts = db.posts.map((p) => ({ ...p, createdAt: ago(p.createdAt), comments: p.comments.map((c) => ({ ...c, createdAt: ago(c.createdAt) })) }));
+  db.chatRooms = db.chatRooms.map((r) => ({ ...r, createdAt: ago(r.createdAt), messages: r.messages.map((m) => ({ ...m, createdAt: ago(m.createdAt) })), lastReadAt: Object.fromEntries(Object.entries(r.lastReadAt).map(([k, v]) => [k, ago(v)])) }));
+  const realPost = { ...structuredClone(db.posts[0]), id: 'po_real', authorId: REAL, createdAt: ago(new Date().toISOString()), comments: [] };
+  db.posts.push(realPost);
+  const joined = db.chatRooms.find((r) => r.id === 'cr_junho')!;
+  joined.messages.push({ id: 'm_visitor', senderId: DEMO, text: 'hi', createdAt: ago(new Date().toISOString()) });
+  const before = structuredClone(joined);
+
+  const patch = rollSampleContent(db);
+  assert.ok(patch?.posts?.length && patch.chatRooms?.length);
+  const hoursAgo = (iso: string) => (Date.now() - Date.parse(iso)) / 3600000;
+  const coffee = db.posts.find((p) => p.id === 'po1')!; // "Hosting a coffee meetup here tonight" — 2시간 전
+  assert.ok(Math.abs(hoursAgo(coffee.createdAt) - 2) < 0.1, `po1 is ${hoursAgo(coffee.createdAt)}h old`);
+  assert.ok(Math.abs(hoursAgo(coffee.comments[0].createdAt) - 50 / 60) < 0.1);
+  const tacos = db.chatRooms.find((r) => r.id === 'cr_seoyeon')!; // 마지막 메시지 2시간 전, 순서·간격 그대로
+  assert.ok(Math.abs(hoursAgo(tacos.messages.at(-1)!.createdAt) - 2) < 0.1);
+  assert.ok(Math.abs(hoursAgo(tacos.messages[0].createdAt) - 3) < 0.1);
+  assert.ok(Date.parse(tacos.lastReadAt[DEMO]) < Date.parse(tacos.messages.at(-1)!.createdAt), 'the last message stays unread');
+  assert.equal(db.posts.find((p) => p.id === 'po_real')!.createdAt, realPost.createdAt);
+  assert.deepEqual(db.chatRooms.find((r) => r.id === 'cr_junho'), before);
+  // 바로 다시 돌리면 바뀔 게 없다 (15분마다 모든 글을 다시 보내지 않는다)
+  assert.equal(rollSampleContent(db), null);
 });
