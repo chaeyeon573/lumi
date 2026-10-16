@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SlidersHorizontal, X, Clock, Zap, Bookmark, BadgeCheck, Hand, RotateCcw } from 'lucide-react';
+import { SlidersHorizontal, X, Clock, Zap, Bookmark, BadgeCheck, Hand, RotateCcw, CalendarDays, Users } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { LAST_SEEN_KEY } from '@/components/layout/BottomNav';
@@ -12,11 +12,13 @@ import { INTEREST_LABELS, GOAL_LABELS, ALL_INTERESTS, ALL_GOALS } from '@core/li
 import { commonInterests } from '@core/lib/relations';
 import { matchScore, shareableReasons, type Reason } from '@core/lib/recommend';
 import { sharedClassWith } from '@core/lib/classmates';
-import { statusNow, freeBlocks, todayIdx, nowMin, fmtBlock } from '@core/lib/timetable';
+import { statusNow, freeBlocks, todayIdx, nowMin, fmtBlock, toMin } from '@core/lib/timetable';
+import { formatDate, formatTime, todayISO } from '@core/lib/format';
+import { JoinButton } from '@/components/cards/JoinButton';
 import { assetUrl } from '@/lib/assets';
 import { cn } from '@core/lib/cn';
 import { useInvite } from '@/components/together/FeedExtras';
-import type { User, Interest, Goal } from '@core/types';
+import type { Activity, User, Interest, Goal } from '@core/types';
 
 interface Filters { years: number[]; sameDept: boolean; sameClass: boolean; freeNow: boolean; interests: Interest[]; goals: Goal[] }
 const EMPTY: Filters = { years: [], sameDept: false, sameClass: false, freeNow: false, interests: [], goals: [] };
@@ -43,9 +45,17 @@ export function HomePage() {
   const [returning, setReturning] = useState(false);
   const myDept = me.affiliation.type === 'university' ? me.affiliation.department : '';
 
+  // 그 사람이 이미 열어 둔 계획 — 카드에서 '같이 하자'고 먼저 청하는 대신 열린 자리에 '나도 갈래' 하고 끼게 한다
+  const planOf = useMemo(() => {
+    const today = todayISO(); const now = nowMin();
+    const open = v.visibleActivities
+      .filter((a) => (a.date > today || (a.date === today && toMin(a.endTime) > now)) && v.approvedCount(a.id) < a.capacity && (a.joinPolicy !== 'invite' || (a.invitedIds ?? []).includes(me.id)))
+      .sort((a, b) => a.date.localeCompare(b.date) || a.startTime.localeCompare(b.startTime));
+    return (u: User) => open.find((a) => a.hostId === u.id);
+  }, [v, me.id]);
   const scored = useMemo(() => v.visibleUsers
-    .map((u) => ({ u, ...matchScore(me, u, { opportunities: opps, opportunityIntents: intents, classRosters: v.snap.classRosters }, v.canSeeField(u, 'timetable')) }))
-    .map((x) => ({ ...x, score: x.score + commonInterests(me, x.u).length * 0.5 })), [v, me, opps, intents]);
+    .map((u) => ({ u, plan: planOf(u), ...matchScore(me, u, { opportunities: opps, opportunityIntents: intents, classRosters: v.snap.classRosters }, v.canSeeField(u, 'timetable')) }))
+    .map((x) => ({ ...x, score: x.score + commonInterests(me, x.u).length * 0.5 + (x.plan ? 3 : 0) })), [v, me, opps, intents, planOf]);
   const passes = (u: User) => {
     if (f.years.length && !f.years.includes(yearOf(u))) return false;
     if (f.sameDept && !(u.affiliation.type === 'university' && u.affiliation.department === myDept)) return false;
@@ -104,7 +114,8 @@ export function HomePage() {
             <div className="flex items-center gap-5">
               <button onClick={undo} disabled={idx === 0} aria-label={lang === 'en' ? 'Previous' : '이전 카드'} className="h-11 w-11 rounded-full grid place-items-center press bg-surface-2 text-ink-2 disabled:opacity-40"><RotateCcw size={18} /></button>
               <button onClick={() => deck.current?.fly('left')} aria-label={t('넘기기')} className="h-[68px] w-[68px] rounded-full grid place-items-center press bg-surface-2 text-ink-2"><X size={28} /></button>
-              <button onClick={() => (v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? nav(`/users/${current.u.id}`) : deck.current?.fly('right'))} aria-label={t('친구로 연결')} className={cn('h-[84px] w-[84px] rounded-full grid place-items-center press shadow-[0_12px_28px_-6px_rgba(15,43,72,.35)]', v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? 'bg-primary text-white' : 'bg-accent text-primary v2:bg-lime-400 v2:text-night v2:shadow-[0_12px_28px_-8px_rgba(212,255,58,.35)]')}><Hand size={32} /></button>
+              {current.plan && current.plan.hostId !== me.id ? <JoinButton activity={current.plan} size="lg" label={lang === 'en' ? "I'm in" : '나도 갈래'} className="h-[68px] px-7 rounded-full text-[16px]" />
+              : <button onClick={() => (v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? nav(`/users/${current.u.id}`) : deck.current?.fly('right'))} aria-label={t('친구로 연결')} className={cn('h-[84px] w-[84px] rounded-full grid place-items-center press shadow-[0_12px_28px_-6px_rgba(15,43,72,.35)]', v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? 'bg-primary text-white' : 'bg-accent text-primary v2:bg-lime-400 v2:text-night v2:shadow-[0_12px_28px_-8px_rgba(212,255,58,.35)]')}><Hand size={32} /></button>}
               <button onClick={() => setSaved((s) => tog(s, current.u.id))} aria-label={t('나중에 보기')} className={cn('h-11 w-11 rounded-full grid place-items-center press', saved.includes(current.u.id) ? 'bg-primary text-white' : 'bg-surface-2 text-primary')}><Bookmark size={18} fill={saved.includes(current.u.id) ? 'currentColor' : 'none'} /></button>
             </div>
             <p className="text-[12px] text-ink-3">{idx + 1} / {cards.length}</p>
@@ -130,7 +141,7 @@ const yearLabel = (y: number) => (lang === 'en' ? ['Freshman', 'Sophomore', 'Jun
 
 type Dir = 'left' | 'right';
 interface DeckHandle { fly: (dir: Dir) => void }
-type Card = { u: User; reasons: Reason[] };
+type Card = { u: User; reasons: Reason[]; plan?: Activity };
 const FLY_MS = 280;
 
 /** 카드 덱 — 맨 위 카드를 끌면 기울며 따라오고, 임계값을 넘겨 놓으면 날아간다. 뒤 카드는 끄는 만큼 커진다. */
@@ -192,7 +203,7 @@ const SwipeDeck = forwardRef<DeckHandle, { top: Card; next?: Card; returning: bo
     <div ref={box} className="relative flex-1 min-h-0 mx-4">
       {next && (
         <div className="absolute inset-0" style={{ transform: `scale(${0.94 + 0.06 * (flying ? 1 : progress)}) translateY(${(1 - (flying ? 1 : progress)) * 14}px)`, transition: dragging ? 'none' : `transform ${FLY_MS}ms ease-out`, opacity: 0.6 + 0.4 * (flying ? 1 : progress) }}>
-          <PersonSlide user={next.u} reasons={next.reasons} onOpen={() => {}} />
+          <PersonSlide user={next.u} reasons={next.reasons} plan={next.plan} onOpen={() => {}} />
         </div>
       )}
       <div
@@ -201,7 +212,7 @@ const SwipeDeck = forwardRef<DeckHandle, { top: Card; next?: Card; returning: bo
         onPointerDown={(e) => { if (flying || e.button !== 0) return; start.current = { x: e.clientX - d.x, y: e.clientY - d.y }; moved.current = false; setDragging(true); }}
         onClickCapture={(e) => { if (moved.current) { e.stopPropagation(); moved.current = false; } }}
       >
-        <PersonSlide user={top.u} reasons={top.reasons} onOpen={() => onOpen(top.u)} />
+        <PersonSlide user={top.u} reasons={top.reasons} plan={top.plan} onOpen={() => onOpen(top.u)} />
         {stamp && (
           <span className={cn('pointer-events-none absolute top-16 px-4 py-1.5 rounded-xl border-[3px] text-[22px] font-extrabold tracking-wide bg-white/10 backdrop-blur-sm', stamp === 'right' ? 'left-6 -rotate-12 border-accent text-accent' : 'right-6 rotate-12 border-white text-white')} style={{ opacity: progress }}>
             {stamp === 'right' ? (lang === 'en' ? 'CONNECT' : '연결') : (lang === 'en' ? 'PASS' : '넘기기')}
@@ -213,13 +224,16 @@ const SwipeDeck = forwardRef<DeckHandle, { top: Card; next?: Card; returning: bo
 });
 
 /** 카드: 사진 전체 + 아래 그라데이션 위에 이름·학과·찾는 것·칩 3개 */
-export function PersonSlide({ user, reasons, onOpen }: { user: User; reasons: Reason[]; onOpen: () => void }) {
+export function PersonSlide({ user, reasons, plan, onOpen }: { user: User; reasons: Reason[]; plan?: Activity; onOpen: () => void }) {
   const v = useViewer();
   const [pi, setPi] = useState(0);
   const photos = user.photos?.length ? user.photos : user.avatar.url ? [user.avatar.url] : [];
   const common = commonInterests(v.me, user);
   const want = v.canSeeField(user, 'prompts') && user.prompts?.[0]?.answer ? user.prompts[0].answer : user.nowWant;
+  // 말을 꺼낼 이유 한 줄 — 같은 수업·겹치는 공강·같은 생활권처럼 둘이 함께 가진 것 (관심사는 아래 칩에 이미 있다)
+  const ground = shareableReasons(reasons).find((r) => r.kind !== 'interest' && r.kind !== 'new');
   const reason = shareableReasons(reasons)[0];
+  const left = plan ? plan.capacity - v.approvedCount(plan.id) : 0;
   const dept = user.affiliation.type === 'university' && user.affiliation.showDepartment ? user.affiliation.department : '';
   const canSeeTT = !!user.timetable?.length && v.canSeeField(user, 'timetable');
   const st = canSeeTT ? statusNow(user.timetable ?? []) : null;
@@ -244,7 +258,13 @@ export function PersonSlide({ user, reasons, onOpen }: { user: User; reasons: Re
         {user.sample && <span className="inline-flex mb-1.5 h-6 px-2.5 rounded-full bg-white/20 backdrop-blur text-[11px] font-semibold items-center">{lang === 'en' ? 'Sample profile' : '예시 프로필'}</span>}
         <div className="flex items-baseline gap-2"><h2 className="font-display text-[30px] leading-tight font-bold v2:font-extrabold v2:text-[28px]">{user.nickname}</h2><span className="text-[22px] opacity-90 v2:font-display v2:text-[20px] v2:opacity-60">{new Date().getFullYear() - user.birthYear + 1}</span></div>
         <div className="text-[15px] text-accent v2:text-ink-2 v2:text-[14px]">{dept}{gradYear(user) ? ` • ${user.affiliation.type === 'university' && user.affiliation.showSchool && user.affiliation.schoolName ? user.affiliation.schoolName.replace(/대학교|University|UC /g, '').trim() : ''} ${gradYear(user)}` : ''}</div>
-        {(want || reason) && <div className="mt-2.5 inline-flex items-center gap-2 max-w-full h-9 px-3.5 rounded-full bg-white/15 backdrop-blur text-[13px] font-medium v2:bg-pink-900/90 v2:border v2:border-pink-800"><Zap size={15} className="text-accent shrink-0 v2:text-pink-300" /><span className="truncate">{want ?? reason?.text}</span></div>}
+        {plan ? (
+          <div className="mt-2.5 rounded-2xl bg-white/15 backdrop-blur px-3.5 py-2.5 v2:bg-pink-900/90 v2:border v2:border-pink-800">
+            <div className="flex items-center gap-2 text-[14px] font-semibold"><CalendarDays size={15} className="text-accent shrink-0 v2:text-pink-300" /><span className="truncate">{plan.title}</span></div>
+            <div className="mt-0.5 pl-[23px] text-[12px] opacity-85 truncate">{[`${formatDate(plan.date)} ${formatTime(plan.startTime)}`, plan.place.name, left > 0 && left <= 10 ? (lang === 'en' ? `${left} spot${left === 1 ? '' : 's'} left` : `${left}자리 남음`) : ''].filter(Boolean).join(' · ')}</div>
+          </div>
+        ) : (want || reason) && <div className="mt-2.5 inline-flex items-center gap-2 max-w-full h-9 px-3.5 rounded-full bg-white/15 backdrop-blur text-[13px] font-medium v2:bg-pink-900/90 v2:border v2:border-pink-800"><Zap size={15} className="text-accent shrink-0 v2:text-pink-300" /><span className="truncate">{want ?? reason?.text}</span></div>}
+        {ground && (plan || want) && <div className="mt-2 flex items-center gap-1.5 text-[12.5px] font-medium opacity-90"><Users size={14} className="shrink-0 text-accent v2:text-lime-400" /><span className="truncate">{ground.text}</span></div>}
         <div className="mt-3 flex flex-wrap gap-1.5">{(common.length ? common : user.interests ?? []).slice(0, 3).map((i) => <span key={i} className="h-8 px-3.5 rounded-full bg-primary-soft text-primary text-[12px] font-semibold flex items-center v2:bg-surface-2/90 v2:text-ink v2:border v2:border-line">{INTEREST_LABELS[i]}</span>)}</div>
       </div>
     </article>
