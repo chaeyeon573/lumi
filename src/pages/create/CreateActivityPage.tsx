@@ -11,10 +11,10 @@ import { TopBar } from '@/components/layout/TopBar';
 import { Button, Chip, Field, Input, Textarea, Select, VisibilityList, EmptyState, Avatar } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
-import { api } from '@core/api';
+import { api, apiMode } from '@core/api';
 import { ALL_CATEGORIES, CATEGORY_COLORS, CATEGORY_EMOJI, CATEGORY_LABELS, JOIN_POLICY_LABELS, KIND_LABELS, ALL_CREW_TYPES, CREW_TYPE_LABELS, CREW_TYPE_EMOJI, MODE_LABELS } from '@core/lib/labels';
 import { nowMin, toHHMM, todayIdx, toMin } from '@core/lib/timetable';
-import { addDaysISO } from '@core/lib/format';
+import { addDaysISO, formatDate, formatTime } from '@core/lib/format';
 import type { CrewType } from '@core/types';
 import { PLACE_PRESETS } from '@core/data/places';
 import { LOOKING_FOR_ROLES, OFFER_ROLES, PERSON_ROLE_LABELS } from '@core/lib/labels';
@@ -79,7 +79,10 @@ export function CreateActivityPage() {
   if (editing && editing.hostId !== v.me.id) return <div className="min-h-full"><TopBar back title={t('활동 수정')} /><EmptyState emoji="🔒" title={t('주최자만 수정할 수 있어요')} /></div>;
 
   const valid = form.title.trim().length >= 2 && form.description.trim().length > 0 && form.place.name && form.capacity > 0 && form.startTime < form.endTime;
-  const preview = `${form.date === todayISO() ? t('오늘') : form.date} ${form.startTime} ${form.place.name}${t('에서 ')}${form.title || '…'}`;
+  // 영어는 '오늘 18:00 Doe Library 에서 …' 어순을 그대로 옮기면 'Today 18:00 Doe Library at …' 가 된다 — 날짜·시각·장소·제목 순으로
+  const preview = lang === 'en'
+    ? [`${formatDate(form.date)} ${formatTime(form.startTime)}`, form.place.name, form.title || '…'].filter(Boolean).join(' · ')
+    : `${formatDate(form.date)} ${formatTime(form.startTime)} ${form.place.name}${t('에서 ')}${form.title || '…'}`;
 
   const submit = async () => {
     setBusy(true);
@@ -125,7 +128,7 @@ export function CreateActivityPage() {
         </Field>}
         <Field label={t('제목')} required><Input placeholder={t('예: 오늘 오후 6시 신촌에서 커피 마실 사람?')} value={form.title} onChange={(e) => patch({ title: e.target.value })} maxLength={60} /></Field>
         <Field label={t('설명')} required><Textarea placeholder={t('예: 창업이나 AI에 관심 있는 분이면 좋아요. 최대 4명.')} value={form.description} onChange={(e) => patch({ description: e.target.value })} maxLength={500} /></Field>
-        <Field label={t('대표 이미지')} hint={isNativeShell() ? undefined : t('데모에서는 색상과 이모지로 대표 이미지를 만들어요.')}>
+        <Field label={t('대표 이미지')} hint={isNativeShell() || apiMode === 'remote' ? undefined : t('데모에서는 색상과 이모지로 대표 이미지를 만들어요.')}>
           <div className="flex items-center gap-3">
             <div className="h-16 w-16 rounded-2xl grid place-items-center text-3xl shrink-0" style={{ background: `linear-gradient(135deg, hsl(${form.cover.hue} 80% 92%), hsl(${(form.cover.hue + 50) % 360} 70% 68%))` }}>{form.cover.emoji}</div>
             <div className="flex flex-wrap gap-1.5">{COVER_HUES.map((h) => <button key={h} type="button" onClick={() => patch({ cover: { ...form.cover, hue: h } })} className={cn('h-7 w-7 rounded-full', form.cover.hue === h && 'ring-2 ring-offset-2 ring-ink')} style={{ background: `hsl(${h} 75% 70%)` }} aria-label={`${t('색상 ')}${h}`} />)}</div>

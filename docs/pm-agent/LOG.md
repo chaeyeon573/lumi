@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-16 17:20 UTC (버클리 금 10:20) · 37회차 · 초점: 활동 만들기
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- 고침 (CreateActivityPage.tsx): 미리보기가 한국어 어순 그대로 “Today 18:00 Doe Library at …” → “Today 6 PM · Doe Library · 제목”(한국어는 “오늘 오후 6시 Doe Library에서 …”). 대표 이미지 아래 “In this demo the cover is a color plus an emoji.” — 실제 서버에서는 숨김.
+- 메모: 음성 답 아래 “데모에서는 실제 음성 대신 녹음 길이만 저장돼요” 같은 데모 안내가 프로필 편집 쪽에도 있다 — 실제 동작이 그런지 확인 못 해 그대로.
+- 검증: tsc, npm test 198, 로컬(라이브 API) v2·classic 전/후.
+
 ## 2026-10-16 16:20 UTC (버클리 금 09:20) · 36회차 · 초점: 설정
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - 고침 (SettingsPage.tsx): 라이브 설정 맨 아래에 “Demo tools — Preview error state / Reset demo data”와 “Lumi MVP · mock API (localStorage)”가 보였다. 라이브는 실제 서버라 초기화는 서버에서 막혀 있고(ALLOW_RESET) 누르면 오류만 난다 → 실제 서버 모드에서는 데모 도구를 숨기고 아래 글씨는 “Lumi”. (라이브에서 버튼은 누르지 않음.)
