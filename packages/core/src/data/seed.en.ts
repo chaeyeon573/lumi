@@ -253,7 +253,7 @@ export const organizations: Organization[] = [
 
 export const activities: Activity[] = [
   {
-    id: 'a_coffee_sinchon', kind: 'personal', category: 'coffee', title: 'Coffee on Southside at 6', description: 'Anyone into startups or AI. Casual chat. Up to 4, Berkeley students only.',
+    id: 'a_coffee_sinchon', kind: 'personal', category: 'coffee', title: 'Coffee on Southside', description: 'Anyone into startups or AI. Casual chat. Up to 4, Berkeley students only.',
     cover: { emoji: '☕', hue: 30 , url: photo('c_espresso') }, hostId: 'u_jimin', hostType: 'user', date: T, startTime: '18:00', endTime: '19:30',
     place: { name: 'Caffe Strada', address: 'College Ave & Bancroft', lat: 37.8690, lng: -122.2547 },
     capacity: 4, visibility: 'school', joinPolicy: 'open', fee: 0, comments: [{ id: 'c1', authorId: 'u_sua', text: 'Is it okay if I’m just getting into startups?', createdAt: isoMinutesAgo(40) }, { id: 'c2', authorId: 'u_jimin', text: 'Totally! Come by :)', createdAt: isoMinutesAgo(35) }], createdAt: isoHoursAgo(2),
@@ -270,7 +270,7 @@ export const activities: Activity[] = [
     comments: [{ id: 'c3', authorId: 'u_hana', text: 'Can students from other schools come?', createdAt: isoHoursAgo(3) }, { id: 'c4', authorId: 'u_junho', text: 'Yes! Everyone welcome.', createdAt: isoHoursAgo(2) }], createdAt: isoHoursAgo(48),
   },
   {
-    id: 'a_running', kind: 'group', category: 'exercise', title: '7pm run (5k)', description: 'Start at Edwards Track, loop around campus. 10-min miles, beginners welcome. Burritos after.',
+    id: 'a_running', kind: 'group', category: 'exercise', title: 'Easy 5k run', description: 'Start at Edwards Track, loop around campus. 10-min miles, beginners welcome. Burritos after.',
     cover: { emoji: '🏃', hue: 135 , url: photo('c_road_sunset') }, hostId: 'u_minjun', hostType: 'user', orgId: 'o_run', date: T, startTime: '19:00', endTime: '20:00',
     place: { name: 'Edwards Track', lat: 37.8697, lng: -122.2645 }, capacity: 10, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(6),
   },
@@ -300,7 +300,7 @@ export const activities: Activity[] = [
     place: { name: 'Downtown Berkeley BART', lat: 37.8701, lng: -122.2681 }, capacity: 3, visibility: 'public', joinPolicy: 'approval', fee: 25, conditions: 'Museum ticket on you', comments: [], createdAt: isoHoursAgo(9),
   },
   {
-    id: 'a_walk', openSlot: true, kind: 'personal', category: 'etc', title: 'Walk across the Glade right now', description: 'Clear my head after class. Easy conversation.',
+    id: 'a_walk', openSlot: true, kind: 'personal', category: 'etc', title: 'Walk across the Glade', description: 'Clear my head after class. Easy conversation.',
     cover: { emoji: '🚶', hue: 100 , url: photo('c_bench') }, hostId: 'u_sua', hostType: 'user', date: T, startTime: '15:30', endTime: '16:00',
     place: { name: 'Memorial Glade', lat: 37.8730, lng: -122.2596 }, capacity: 2, visibility: 'department', visibilityTargets: ['Computer Science'], joinPolicy: 'open', fee: 0, comments: [], createdAt: isoMinutesAgo(25),
   },

@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-16 14:20 UTC (버클리 금 07:20) · 34회차 · 초점: Discover › Now
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- 학식 지금(Café 3·Clark Kerr +3, 아침), 체육관 39%, 지금 공강 친구 6, 즉석 모임 6 — v2·classic 이상 없음.
+- 고침 (seed.en.ts): 예시 모임은 지난 시간이면 곧 시작하도록 시각이 굴러가는데 제목에 시각이 박혀 어긋남 — “Walk across the Glade right now”(오후 3:30), “7pm run (5k)”, “Coffee on Southside at 6” → 시각 없는 제목. 다음 롤 때 라이브 반영(배포 후). 라이브에는 아직 “lunch at Crossroads?” 오전 7:20 도 그대로(10회차 수정 배포 대기).
+- 메모: 아침 7시대에 “Free 09:00–11:00” — 공강 계산이 9시부터라 그 전은 안 셈.
+- 검증: tsc, npm test 198.
+
 ## 2026-10-16 13:25 UTC (버클리 금 06:25) · 33회차 · 초점: Campus › Browse › 동아리
 - 질문 새 답 없음, 배포 브랜치 변화 없음(라이브 동아리 줄은 아직 “Clubs · Academic Student Organizations · Our mission is…” — 소개 먼저 수정은 배포 대기).
 - 1562곳, 이유 줄 같은 말 최대 2번(기준 지킴), v2·classic 이상 없음.
