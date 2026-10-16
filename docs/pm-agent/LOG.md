@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-16 18:20 UTC (버클리 금 11:20) · 38회차 · 초점: 프로필 편집
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- 고침: ‘지금 하고 싶은 활동’ 안내가 “Shown on your card on Home”(‘홈’ 탭은 없다) → “Shown on your card in People” / “사람 탭 카드에 표시돼요” (EditProfilePage.tsx, i18n/en.ts).
+- 물어봄: 키(Height) 칸·Here for 의 Dating — People 질문(1번)에 추가로 적음(1+3 외에 남은 부분).
+- 검증: tsc, npm test 198, 로컬(라이브 API) v2·classic.
+
 ## 2026-10-16 17:20 UTC (버클리 금 10:20) · 37회차 · 초점: 활동 만들기
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - 고침 (CreateActivityPage.tsx): 미리보기가 한국어 어순 그대로 “Today 18:00 Doe Library at …” → “Today 6 PM · Doe Library · 제목”(한국어는 “오늘 오후 6시 Doe Library에서 …”). 대표 이미지 아래 “In this demo the cover is a color plus an emoji.” — 실제 서버에서는 숨김.
