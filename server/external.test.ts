@@ -4,7 +4,7 @@
  */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { dropDuplicateTitles } from './sources/external';
+import { dropDuplicateTitles, youthOnly } from './sources/external';
 
 test('imported items that repeat a curated title are dropped; their own earlier copies are not counted', () => {
   const existing = [
@@ -29,4 +29,16 @@ test('CalLink (Engage) events co-hosted by two orgs come once', async () => {
     const out = await fetchEngageEvents('https://callink.berkeley.edu', { id: 's_berkeley', center: { lat: 0, lng: 0 } });
     assert.deepEqual(out.map((o) => o.title).sort(), ['Other event', 'Real Talk Buddies Kick-Off']);
   } finally { globalThis.fetch = real; }
+});
+
+test('hackathons whose page says high school only (ages up to 18) are recognised; college-eligible ones are not', () => {
+  const page = (items: string) => `<html><script>var x = "Who can participate";</script><h2>Who can participate</h2><ul>${items}</ul><a href="/rules">View full rules</a><p>Ages 10 to 12 workshop later</p></html>`;
+  // Girls Who Code HHS Hackathon 2026 — 실제 페이지 문구
+  assert.equal(youthOnly(page('<li>Ages 14 to 18 only</li><li>Students only</li><li>All countries/territories, excluding standard exceptions</li>')), true);
+  assert.equal(youthOnly(page('<li>High school students only</li>')), true);
+  assert.equal(youthOnly(page('<li>Ages 18+ only</li><li>Students only</li>')), false);
+  assert.equal(youthOnly(page('<li>Ages 13+ only</li>')), false);
+  assert.equal(youthOnly(page('<li>Ages 16 to 24 only</li>')), false);
+  assert.equal(youthOnly(page('<li>High school and college students</li>')), false);
+  assert.equal(youthOnly('<html>Just a moment...</html>'), false);
 });
