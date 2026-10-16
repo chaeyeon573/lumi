@@ -11,6 +11,15 @@ import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { cn } from '@core/lib/cn';
+import { formatDate, formatDateTime, formatTime } from '@core/lib/format';
+
+/** 메시지 사이 시각 줄 — 날이 바뀌거나 한 시간 넘게 비었을 때만 ("Today 6:42 PM") */
+const HOUR = 3600000;
+function stamp(iso: string) {
+  const d = new Date(iso);
+  const day = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  return { day, label: formatDateTime(day, `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`) };
+}
 
 export function ChatRoomPage() {
   const { roomId } = useParams();
@@ -62,20 +71,26 @@ export function ChatRoomPage() {
       <TopBar back title={<button className="text-left" onClick={() => (other ? nav(`/users/${other.id}`) : activity ? nav(`/activities/${activity.id}`) : room.rideId ? nav(`/rides/${room.rideId}`) : undefined)}><span className="block truncate">{other?.sample && <SampleTag />}{title}</span>{room.type !== 'direct' && <span className="block text-[11px] text-ink-3 font-medium">{t('멤버')} {room.memberIds.length}{t('명')}</span>}</button>}
         right={<button onClick={() => setMenu(true)} className="h-10 w-10 grid place-items-center rounded-full" aria-label={t('메뉴')}><MoreVertical size={20} /></button>} />
       <div className="flex-1 overflow-y-auto hide-scrollbar px-4 py-3 space-y-2">
-        {activity && <button onClick={() => nav(`/activities/${activity.id}`)} className="w-full card p-3 flex items-center gap-3 text-left press mb-2"><span className="h-9 w-9 rounded-xl bg-primary-soft text-primary grid place-items-center"><CalendarDays size={18} /></span><span className="flex-1 min-w-0"><b className="text-[13px] block truncate">{activity.title}</b><span className="text-[11px] text-ink-3">{activity.place.name} · {activity.date} {activity.startTime}</span></span></button>}
+        {activity && <button onClick={() => nav(`/activities/${activity.id}`)} className="w-full card p-3 flex items-center gap-3 text-left press mb-2"><span className="h-9 w-9 rounded-xl bg-primary-soft text-primary grid place-items-center"><CalendarDays size={18} /></span><span className="flex-1 min-w-0"><b className="text-[13px] block truncate">{activity.title}</b><span className="text-[11px] text-ink-3">{activity.place.name} · {formatDate(activity.date)} {formatTime(activity.startTime)}</span></span></button>}
         {room.messages.length === 0 && <div className="text-center text-[12px] text-ink-3 py-8">{t('대화를 시작해보세요. 차단·신고는 오른쪽 위 메뉴에서 할 수 있어요.')}</div>}
         {room.messages.map((m, i) => {
           if (m.system) return <div key={m.id} className="text-center text-[11px] text-ink-3 py-1">{m.text}</div>;
           const mine = m.senderId === v.me.id;
           const u = v.userById(m.senderId);
           const showName = !mine && room.type !== 'direct' && room.messages[i - 1]?.senderId !== m.senderId;
+          const prev = room.messages[i - 1];
+          const at = stamp(m.createdAt);
+          const showStamp = !prev || stamp(prev.createdAt).day !== at.day || Date.parse(m.createdAt) - Date.parse(prev.createdAt) > HOUR;
           return (
-            <div key={m.id} className={cn('flex gap-2 items-end', mine ? 'justify-end' : 'justify-start')}>
+            <div key={m.id}>
+            {showStamp && <div className="text-center text-[11px] text-ink-3 pt-2 pb-1">{at.label}</div>}
+            <div className={cn('flex gap-2 items-end', mine ? 'justify-end' : 'justify-start')}>
               {!mine && <Avatar emoji={u?.avatar.emoji ?? '👤'} hue={u?.avatar.hue ?? 200} url={u?.avatar.url} size={28} className={cn(room.messages[i + 1]?.senderId === m.senderId && 'invisible')} />}
               <div className={cn('max-w-[72%]', mine && 'text-right')}>
                 {showName && <div className="text-[11px] text-ink-3 mb-0.5 ml-1">{u?.nickname}</div>}
                 <div className={cn('inline-block px-3.5 py-2 rounded-2xl text-[14px] leading-relaxed text-left', mine ? 'bg-primary text-white rounded-br-md' : 'bg-surface border border-line rounded-bl-md')}>{m.text}</div>
               </div>
+            </div>
             </div>
           );
         })}
