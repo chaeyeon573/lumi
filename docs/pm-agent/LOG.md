@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-17 05:20 UTC (버클리 금 22:20) · 49회차 · 초점: 활동 상세 → Discover 버튼
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- 발견·고침 ①: Discover(Activities·Now·Teams)·수업 화면의 활동 줄 버튼이 영어로 전부 “Joined” — 안 들어간 활동인데도. 버튼 이름 t('참여')의 영어 번역이 ‘Joined’ 였다(상세 화면은 “Join now”). → ‘Join’ (i18n/en.ts, t('참여')는 이 버튼에만 쓰임). 로컬 확인: Activities 버튼 Join 5 · Invite only 1.
+- 발견·고침 ②: 예시 모임 상세의 댓글이 “Sep 23” — 예시 글·알림처럼 시드의 ‘몇 시간 전’으로 다시 맞춤 (server/demo.ts rollSampleActivities + 테스트, 고치기 전 실패/후 통과). 배포 뒤 반영.
+- 검증: tsc(앱·서버), npm test 199, 로컬(라이브 API) v2·classic.
+
 ## 2026-10-17 04:20 UTC (버클리 금 21:20) · 48회차 · 초점: 표시(Tag) 대비
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - 고침 (Chip.tsx Tag): classic 의 accent 표시가 연한 하늘색 글자(#A3D5FF) on 연한 하늘색 바탕(#BFF4FF) — ‘Vote’, ‘Fall recruiting’, ‘모집 중’, ‘초대’, 활동 카드 배지가 거의 안 보였다 → classic 은 남색 글자, v2 는 그대로 핑크. 한 곳(공용 Tag)이라 모든 화면에 같이 적용.

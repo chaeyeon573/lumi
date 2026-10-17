@@ -208,3 +208,13 @@ test('sample posts and chats move to recent times; real posts and chats someone 
   // 바로 다시 돌리면 바뀔 게 없다 (15분마다 모든 글을 다시 보내지 않는다)
   assert.equal(rollSampleContent(db), null);
 });
+
+test('sample meetup comments move to recent times too', () => {
+  const db = world();
+  const show = db.activities.find((a) => a.id === 'a_band_show')!;
+  show.comments = show.comments.map((c) => ({ ...c, createdAt: new Date(Date.parse(c.createdAt) - 21 * 86400000).toISOString() }));
+  const patch = rollSampleActivities(db);
+  assert.ok(patch?.activities?.some((a) => a.id === 'a_band_show'));
+  const reply = db.activities.find((a) => a.id === 'a_band_show')!.comments.find((c) => c.id === 'c4')!;
+  assert.ok((Date.now() - Date.parse(reply.createdAt)) / 3600000 < 2.2, 'reply is about 2 hours old');
+});

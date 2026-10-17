@@ -102,6 +102,8 @@ export function migrateDemo(db: Snapshot): Patch | null {
 // 매번 캠퍼스 시간 기준 오늘로 다시 맞추고, 오늘 것 중 이미 끝난 것은 곧 시작하도록 시간을 민다.
 const DAY = 86400000;
 const seedOffset = new Map(seedActivities.map((a) => [a.id, Math.round((Date.parse(a.date) - Date.parse(todayISO())) / DAY)]));
+// 예시 모임 댓글('Yes! Everyone welcome.')도 시드의 '몇 시간 전'으로 — 그대로 두면 Sep 23 으로 찍힌다
+const activityCommentAge = new Map(seedActivities.flatMap((a) => (a.comments ?? []).map((c) => [c.id, Date.now() - Date.parse(c.createdAt)] as const)));
 const toMin = (hhmm: string) => { const [h, m] = hhmm.split(':').map(Number); return h * 60 + m; };
 const toHHMM = (min: number) => `${String(Math.floor(min / 60)).padStart(2, '0')}:${String(min % 60).padStart(2, '0')}`;
 
@@ -131,8 +133,16 @@ export function rollSampleActivities(db: Snapshot): Patch | null {
       if (s2 + dur <= 23 * 60) { start = s2; end = s2 + dur; } else { date = addDays(now.date, 1); }
     }
     // 제목·설명도 시드를 따른다 — 시간이 굴러가므로 시각에 묶인 말("lunch")을 고치면 라이브에도 닿게
-    const next = { ...a, title: orig.title, description: orig.description, date, startTime: toHHMM(start), endTime: toHHMM(Math.min(end, 23 * 60 + 59)), sample: true };
-    if (next.date !== a.date || next.startTime !== a.startTime || next.endTime !== a.endTime || next.title !== a.title || next.description !== a.description || !a.sample) changed.push(next);
+    const nowMs = Date.now();
+    let staleComment = false;
+    const comments = (a.comments ?? []).map((c) => {
+      const age = activityCommentAge.get(c.id);
+      if (age === undefined || Math.abs(nowMs - age - Date.parse(c.createdAt)) < 60 * 60 * 1000) return c;
+      staleComment = true;
+      return { ...c, createdAt: new Date(nowMs - age).toISOString() };
+    });
+    const next = { ...a, title: orig.title, description: orig.description, date, startTime: toHHMM(start), endTime: toHHMM(Math.min(end, 23 * 60 + 59)), sample: true, comments };
+    if (next.date !== a.date || next.startTime !== a.startTime || next.endTime !== a.endTime || next.title !== a.title || next.description !== a.description || !a.sample || staleComment) changed.push(next);
     void dur;
   }
   if (!changed.length) return null;
