@@ -120,7 +120,7 @@ export function ProfilePage() {
         <div className="card divide-y divide-line">
           {[
             { icon: <Users size={18} />, label: t('친구'), sub: `${friends}${t('명')}`, to: '/profile/friends' },
-            { icon: <CalendarCheck size={18} />, label: 'My Plans', sub: openPolls ? `${t('시간 정하는 중')} ${openPolls}` : t('초대·대기·확정'), to: '/plans' },
+            { icon: <CalendarCheck size={18} />, label: lang === 'en' ? 'My Plans' : '내 약속', sub: openPolls ? `${t('시간 정하는 중')} ${openPolls}` : t('초대·대기·확정'), to: '/plans' },
             { icon: <Bookmark size={18} />, label: t('저장·지원 내역'), sub: `${saved}${t('개')}`, to: '/community?tab=opportunities&sub=saved' },
             { icon: <Car size={18} />, label: 'My rides', sub: myRides ? `${myRides} upcoming` : 'Airports, groceries, SF, Tahoe', to: '/rides?mine=1' },
             { icon: <Building2 size={18} />, label: t('가입한 단체'), sub: `${myOrgs}${t('개')}`, to: '/community?tab=opportunities&sub=clubs&kind=mine' },
