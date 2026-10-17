@@ -17,16 +17,18 @@ const L = lang === 'en'
   : { title: 'Ask Lumi', hello: '우리 학교 행사, 무료 음식, 동아리, 수업, 공고에 대해 물어보세요.', note: 'Lumi에 있는 정보로만 답해요 — 지원 전에는 공식 페이지를 꼭 확인하세요.', placeholder: '캠퍼스에 대해 무엇이든 물어보세요…', thinking: '캠퍼스 정보를 찾는 중…', off: '아직 AI 도우미가 켜져 있지 않아요.', clear: '새 대화' };
 
 const EXAMPLES = lang === 'en'
-  ? ['I want to get into AI research — where do I start?', 'Internships near Berkeley for a sophomore', 'Hackathons I can still sign up for', 'Scholarships I can apply to this month', 'Free food on campus today?']
-  : ['AI 연구 해보고 싶어, 뭐부터 하면 돼?', '버클리 근처 인턴십 있어?', '아직 신청할 수 있는 해커톤', '이번 달에 지원할 수 있는 장학금', '오늘 캠퍼스에 무료 음식 있어?'];
+  ? ['I want to get into AI research — where do I start?', 'Internships open to undergrads', 'Hackathons I can still sign up for', 'Scholarships I can apply to this month', 'Free food on campus today?']
+  : ['AI 연구 해보고 싶어, 뭐부터 하면 돼?', '학부생이 지원할 수 있는 인턴십', '아직 신청할 수 있는 해커톤', '이번 달에 지원할 수 있는 장학금', '오늘 캠퍼스에 무료 음식 있어?'];
 
-/** **굵게** 와 줄머리 '- ' 정도만 그린다 */
-function RichText({ text }: { text: string }) {
+/** **굵게** 와 줄머리 '- ' 정도만 그린다. 따옴표로만 된 줄머리(“Free food next week?”)는 누르면 그 질문을 보낸다 */
+function RichText({ text, onAsk }: { text: string; onAsk?: (q: string) => void }) {
   return (
     <div className="space-y-1.5 text-[14px] leading-relaxed text-ink">
       {text.split('\n').filter((l, i, a) => l.trim() || (i > 0 && a[i - 1].trim())).map((line, i) => {
         const bullet = /^\s*([-*•]|\d+\.)\s+/.test(line);
         const body = line.replace(/^\s*([-*•]|\d+\.)\s+/, '');
+        const quoted = bullet && onAsk ? body.trim().match(/^[“"](.+?)[”"]$/)?.[1] : undefined;
+        if (quoted) return <button key={i} type="button" onClick={() => onAsk!(quoted)} className="block text-left rounded-xl border border-line px-3 py-1.5 text-primary press">{quoted}</button>;
         const parts = body.split(/(\*\*[^*]+\*\*)/g).map((p, j) => (p.startsWith('**') && p.endsWith('**') ? <b key={j}>{p.slice(2, -2)}</b> : <span key={j}>{p}</span>));
         return line.trim() ? <p key={i} className={cn(bullet && 'pl-4 relative before:content-["•"] before:absolute before:left-1 before:text-ink-3')}>{parts}</p> : <div key={i} className="h-1" />;
       })}
@@ -96,7 +98,7 @@ export function AskPage() {
             <div key={i} className="flex justify-end"><div className="max-w-[85%] rounded-2xl rounded-br-md bg-primary text-white px-3.5 py-2.5 text-[14px] whitespace-pre-wrap">{m.content}</div></div>
           ) : (
             <div key={i} className="space-y-2">
-              <div className={cn('rounded-2xl rounded-bl-md px-3.5 py-3', m.error ? 'bg-danger/10 text-danger text-[14px]' : 'bg-surface border border-line')}>{m.error ? m.content : <RichText text={m.content} />}</div>
+              <div className={cn('rounded-2xl rounded-bl-md px-3.5 py-3', m.error ? 'bg-danger/10 text-danger text-[14px]' : 'bg-surface border border-line')}>{m.error ? m.content : <RichText text={m.content} onAsk={send} />}</div>
               {m.cards?.map((c) => <AiCardView key={`${c.kind}:${c.id}`} card={c} />)}
             </div>
           ))}

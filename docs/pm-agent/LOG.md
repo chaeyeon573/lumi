@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-17 19:20 UTC (버클리 토 12:20) · 63회차 · 초점: Ask Lumi
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- 첫 화면(v2·classic) + 실제 질문 1개 “Anything fun to do this weekend with free food?” (41초). 답은 정직함 — 이번 주말 무료 음식 목록 없음 + “Try asking:” 질문 3개.
+- 고침 ①: 답 끝의 “Try asking:” 따옴표 질문들이 그냥 글자라 눌러지지 않았다 → 따옴표로만 된 줄머리는 누르면 그 질문을 바로 보내는 버튼으로 (AskPage.tsx RichText). 확인은 AI 를 다시 부르지 않고 ask 응답을 같은 글로 바꿔 넣어서(스텁) — 눌러서 두 번째 질문이 가는 것까지 v2·classic.
+- 고침 ②: 시작 질문 “Internships near Berkeley for a sophomore” 가 모든 학교·학년에 고정 → “Internships open to undergrads” / “학부생이 지원할 수 있는 인턴십”.
+- 검증: tsc, npm test 202 통과.
+
 ## 2026-10-17 18:20 UTC (버클리 토 11:20) · 62회차 · 초점: 시간표 › 수업 시트(CS 186)
 - 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 시간 한도로 꺼져 다시 켬)
 - 시간표에서 CS 186 을 눌러 수업 시트(같이 듣는 사람·수업 끝나고 비는 사람·스터디 그룹)를 v2·classic 로 봄. 내용·사생활 안내 이상 없음.
