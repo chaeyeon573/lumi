@@ -95,7 +95,7 @@ function NowTab() {
   const shown = list.filter((x) => !cats || cats.includes(x.a.category));
   const snap = useMemo(() => ({ ...v.snap, organizations: orgs }), [v.snap, orgs]);
   const free = useMemo(() => whosFree(snap, v.me, (u) => v.canSeeField(u, 'timetable')), [snap, v]);
-  const left = (m: number) => (m >= 60 ? `${Math.round(m / 60)}h` : `${m}m`) + (lang === 'en' ? ' left' : ' 남음');
+  const left = (m: number) => (lang === 'en' ? (m >= 60 ? `${Math.round(m / 60)}h` : `${m}m`) + ' left' : (m >= 60 ? `${Math.round(m / 60)}시간` : `${m}분`) + ' 남음');
   return (
     <div>
       <LiveCards className="mb-6" />

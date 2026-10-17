@@ -29,8 +29,8 @@ export function PlansPage() {
   const me = v.me;
   const today = todayISO();
   const openPolls = polls.filter((p) => p.status === 'open' && (p.hostId === me.id || p.inviteeIds.includes(me.id) || !!p.link?.responses.some((r) => r.userId === me.id)));
-  if (status === 'loading') return <div><TopBar back title="My Plans" /><CardSkeleton /></div>;
-  if (status === 'error') return <div><TopBar back title="My Plans" /><ErrorState message={error ?? undefined} onRetry={init} /></div>;
+  if (status === 'loading') return <div><TopBar back title={lang === 'en' ? 'My Plans' : '내 약속'} /><CardSkeleton /></div>;
+  if (status === 'error') return <div><TopBar back title={lang === 'en' ? 'My Plans' : '내 약속'} /><ErrorState message={error ?? undefined} onRetry={init} /></div>;
 
   const upcoming = v.visibleActivities.filter((a) => a.date >= today).sort((a, b) => (a.date + a.startTime).localeCompare(b.date + b.startTime));
   const myPending = participations.filter((p) => p.userId === me.id && p.status === 'pending');
@@ -62,10 +62,10 @@ export function PlansPage() {
 
   return (
     <div className="min-h-full pb-8">
-      <TopBar back title="My Plans" messages />
+      <TopBar back title={lang === 'en' ? 'My Plans' : '내 약속'} messages />
       <div className="px-4 pt-2 space-y-5">
         <section>
-          <div className="flex items-end justify-between mb-2"><h2 className="text-[15px] font-bold flex items-center gap-1.5"><Vote size={15} className="text-heart" />{t('시간 정하는 중')}<span className="text-[12px] text-ink-3 font-semibold">{openPolls.length}</span></h2><button onClick={() => nav('/together/new')} className="text-[12px] font-semibold text-primary">+ Plan Together</button></div>
+          <div className="flex items-end justify-between mb-2"><h2 className="text-[15px] font-bold flex items-center gap-1.5"><Vote size={15} className="text-heart" />{t('시간 정하는 중')}<span className="text-[12px] text-ink-3 font-semibold">{openPolls.length}</span></h2><button onClick={() => nav('/together/new')} className="text-[12px] font-semibold text-primary">+ {lang === 'en' ? 'Plan Together' : '시간 정하기'}</button></div>
           {openPolls.length === 0 ? <div className="card px-4 py-3 text-[12px] text-ink-3">{t('진행 중인 시간 투표가 없어요. 친구들과 만날 시간을 투표로 정해보세요.')}</div> : (
             <div className="card divide-y divide-line">{openPolls.map((p) => { const h = v.userById(p.hostId); const voted = !!p.votes[me.id]; const n = Object.keys(p.votes).length; return (
               <button key={p.id} onClick={() => nav(p.link ? `/p/${p.id}` : `/together/${p.id}`)} className="w-full flex items-center gap-3 px-3.5 py-3 text-left press">
