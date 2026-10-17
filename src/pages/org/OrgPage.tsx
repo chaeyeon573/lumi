@@ -96,11 +96,10 @@ export function OrgPage() {
                 </div>
               ) : null}
             </div>
-            <div className="card p-4"><b className="text-[14px]">{t('사진과 영상')}</b><div className="flex gap-2 overflow-x-auto hide-scrollbar mt-3">{org.gallery.map((g, i) => <div key={i} className="shrink-0 w-[120px]"><Cover emoji={g.emoji} hue={g.hue} url={g.url} className="h-[120px] rounded-xl" size={40} /><div className="text-[11px] text-ink-3 mt-1 text-center">{g.caption}</div></div>)}</div></div>
-            <div className="card p-4"><b className="text-[14px] flex items-center gap-1.5"><CalendarDays size={15} className="text-primary" />{t('정기 활동')}</b><ul className="mt-2 space-y-1.5">{org.regularActivities.map((r) => <li key={r} className="text-[13px] text-ink-2 flex gap-2"><span className="text-primary">•</span>{r}</li>)}</ul></div>
-            <div className="card p-4"><b className="text-[14px]">{t('공지사항')}</b>
-              {org.notices.length === 0 && <p className="text-[13px] text-ink-3 mt-2">{t('공지가 없어요.')}</p>}
-              <div className="mt-2 space-y-3">{org.notices.map((n) => <div key={n.id}><div className="text-[13px] font-semibold">{n.title}</div><div className="text-[12px] text-ink-2">{n.body}</div><div className="text-[11px] text-ink-3">{relativeTime(n.createdAt)}</div></div>)}</div></div>
+            {org.gallery.length > 0 && <div className="card p-4"><b className="text-[14px]">{t('사진과 영상')}</b><div className="flex gap-2 overflow-x-auto hide-scrollbar mt-3">{org.gallery.map((g, i) => <div key={i} className="shrink-0 w-[120px]"><Cover emoji={g.emoji} hue={g.hue} url={g.url} className="h-[120px] rounded-xl" size={40} /><div className="text-[11px] text-ink-3 mt-1 text-center">{g.caption}</div></div>)}</div></div>}
+            {org.regularActivities.length > 0 && <div className="card p-4"><b className="text-[14px] flex items-center gap-1.5"><CalendarDays size={15} className="text-primary" />{t('정기 활동')}</b><ul className="mt-2 space-y-1.5">{org.regularActivities.map((r) => <li key={r} className="text-[13px] text-ink-2 flex gap-2"><span className="text-primary">•</span>{r}</li>)}</ul></div>}
+            {org.notices.length > 0 && <div className="card p-4"><b className="text-[14px]">{t('공지사항')}</b>
+              <div className="mt-2 space-y-3">{org.notices.map((n) => <div key={n.id}><div className="text-[13px] font-semibold">{n.title}</div><div className="text-[12px] text-ink-2">{n.body}</div><div className="text-[11px] text-ink-3">{relativeTime(n.createdAt)}</div></div>)}</div></div>}
           </div>
         )}
         {tab === 'posts' && <div className="mt-3 space-y-3">{posts.length === 0 ? <EmptyState emoji="📝" title={t('아직 게시물이 없어요')} description={isAdmin ? t('소식을 올리면 Feed에도 함께 보여요.') : undefined} action={isAdmin ? <Button size="sm" onClick={() => setPost(true)}>{t('소식 올리기')}</Button> : undefined} /> : posts.map((p) => <PostCard key={p.id} post={p} />)}</div>}
