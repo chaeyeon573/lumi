@@ -107,7 +107,7 @@ export const en: Record<string, string> = {
   '님을 팔로우해요': ' followed',
   '를 좋아해요.': ' — into that.',
   '공통': 'shared',
-  '시간표': 'timetable',
+  '시간표': 'Timetable',
   '근처 ·': 'area ·',
   '관심': 'Like',
   '같이하기': 'Do it together',
