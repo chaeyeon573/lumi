@@ -13,7 +13,7 @@ import { api } from '@core/api';
 import { cn } from '@core/lib/cn';
 import { shareOrCopy } from '@/lib/native';
 import {
-  campusToday, clock, dayLabel, destLabel, fareText, isFull, matchRides, pickupLabel, rideEligibility, rideTitle, seatsLeft, seatsText, whenLabel,
+  campusToday, destLabel, fareText, isFull, matchRides, pickupLabel, rideEligibility, rideTitle, seatsLeft, seatsText, whenLabel,
   MAX_NOTE, RIDE_KIND_EMOJI, RIDE_KIND_LABELS, SAFETY_NOTE, type Ride,
 } from '@core/lib/rides';
 
@@ -100,7 +100,7 @@ export function RideDetailPage() {
         </div>
 
         <div className="card mt-3 divide-y divide-line">
-          <Row icon={<Clock size={16} />} label="Leaving" value={`${dayLabel(r.date)} · ${clock(r.start)}${r.end !== r.start ? `–${clock(r.end)}` : ''}`} />
+          <Row icon={<Clock size={16} />} label="Leaving" value={whenLabel(r)} />
           <Row icon={<MapPin size={16} />} label="Pickup (public spot)" value={pickupLabel(r)} />
           <Row icon={<Users size={16} />} label="Seats" value={r.kind === 'looking' ? `${r.seats} ${r.seats === 1 ? 'person needs' : 'people need'} a ride · ${seatsText(r)}` : `${r.seats} total · ${seatsText(r)}`} />
           {r.note && <Row icon={<StickyNote size={16} />} label="Note" value={`“${r.note}”`} />}
