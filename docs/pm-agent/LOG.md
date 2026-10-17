@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-17 13:20 UTC (버클리 토 06:20) · 57회차 · 초점: 글쓰기·Plan Together 만들기
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- /create/post: 이상 없음(관련 기회는 기본 드롭다운이라 목록이 길어도 화면은 안 길어짐). 사진 칸·#Dating 은 이미 질문함.
+- 고침: /together/new 에서 친구를 아직 안 골랐을 때 “Suggested from 1 timetables” + 시간마다 “Free overlap” — 복수형이 틀리고, 내 시간표 하나뿐이라 ‘겹침’도 아님. → 1개일 땐 “Free in your timetable”(‘내 시간표의 공강’), 겹침 표시는 2개 이상일 때만 (CreateTogetherPage.tsx). 친구를 고르면 “Suggested from 2 timetables · Free overlap” 그대로.
+- 검증: tsc, npm test 202 통과, 로컬 v2·classic 전후 확인.
+
 ## 2026-10-17 12:20 UTC (버클리 토 05:20) · 56회차 · 초점: 활동 만들기(+) 화면
 - 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 시간 한도로 꺼져 다시 켬)
 - /create/activity 를 v2·classic 로 봄 (만들기 버튼은 안 누름 — 라이브 DB).

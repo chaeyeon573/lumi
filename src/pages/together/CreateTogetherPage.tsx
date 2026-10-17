@@ -70,10 +70,10 @@ export function CreateTogetherPage() {
         <Field label={t('언제 (후보 시간)')} required hint={t('2개 이상 골라주세요. 초대받은 사람이 되는 시간에 모두 표를 던져요.')}>
           {suggestions.length > 0 && (
             <div className="mb-2">
-              <div className="text-[11px] font-bold text-mint flex items-center gap-1 mb-1.5"><Sparkles size={11} />{lang === 'en' ? `Suggested from ${withTT} timetables` : `시간표 ${withTT}개의 공강이 겹치는 시간`}</div>
+              <div className="text-[11px] font-bold text-mint flex items-center gap-1 mb-1.5"><Sparkles size={11} />{withTT > 1 ? (lang === 'en' ? `Suggested from ${withTT} timetables` : `시간표 ${withTT}개의 공강이 겹치는 시간`) : (lang === 'en' ? 'Free in your timetable' : '내 시간표의 공강')}</div>
               <div className="space-y-1.5">{suggestions.map((o) => (
                 <button key={key(o)} type="button" onClick={() => toggleOpt(o)} className={cn('w-full flex items-center gap-2 rounded-xl px-3 h-11 text-[13px] border text-left press', chosen.has(key(o)) ? 'border-primary bg-primary-soft' : 'border-line bg-surface')}>
-                  <Clock size={14} className="text-ink-3" /><span className="flex-1">{optionLabel(o)}</span><Tag tone="mint" className="h-5"><Users size={10} /> {t('공강 겹침')}</Tag>
+                  <Clock size={14} className="text-ink-3" /><span className="flex-1">{optionLabel(o)}</span>{withTT > 1 && <Tag tone="mint" className="h-5"><Users size={10} /> {t('공강 겹침')}</Tag>}
                   <span className={cn('h-4 w-4 rounded border-2 grid place-items-center', chosen.has(key(o)) ? 'border-primary bg-primary' : 'border-line')} />
                 </button>
               ))}</div>
