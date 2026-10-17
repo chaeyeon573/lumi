@@ -889,7 +889,7 @@ export const en: Record<string, string> = {
   '시간표 만들기': 'Build your timetable',
   ' (시간표 없는 날 기준)': ' (days without classes)',
   '만든 활동': 'Hosting',
-  '참여': 'Joined',
+  '참여': 'Join',
   '만든 활동이 없어요': 'Nothing hosted yet',
   '참여한 활동이 없어요': 'Nothing joined yet',
   '지도에서 찾기': 'Find on map',
