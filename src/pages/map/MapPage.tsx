@@ -37,13 +37,13 @@ function markerIcon(a: Activity, selected: boolean) {
 
 function inRange(a: Activity, range: TimeRange) {
   const today = todayISO();
-  if (range === 'today') return a.date === today;
-  if (range === 'week') return isThisWeek(a.date);
-  // now: 오늘이면서 종료 전
-  if (a.date !== today) return false;
   const now = new Date();
   const hhmm = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-  return a.endTime >= hhmm;
+  // 이미 끝난 활동은 어느 범위에서도 빼고(오늘 오전 10시 모임이 오후에 ‘Today 10 AM’ 으로 남지 않게), 그다음 범위
+  if (a.date < today || (a.date === today && a.endTime < hhmm)) return false;
+  if (range === 'today') return a.date === today;
+  if (range === 'week') return isThisWeek(a.date);
+  return a.date === today; // now: 오늘이면서 종료 전
 }
 
 export function MapPage() {
@@ -74,7 +74,8 @@ export function MapPage() {
   const filtered = useMemo(() => v.visibleActivities
     .filter((a) => inRange(a, range) || a.id === focus)
     .filter((a) => cats.length === 0 || cats.includes(a.category))
-    .filter((a) => !q || a.title.includes(q) || a.place.name.includes(q)), [v.visibleActivities, range, cats, q, focus]);
+    .filter((a) => !q || a.title.includes(q) || a.place.name.includes(q))
+    .sort((x, y) => `${x.date} ${x.startTime}`.localeCompare(`${y.date} ${y.startTime}`)), [v.visibleActivities, range, cats, q, focus]);
   const inView = useMemo(() => (bounds && !listMode ? filtered.filter((a) => bounds.contains([a.place.lat, a.place.lng])) : filtered), [filtered, bounds, listMode]);
   const selected = filtered.find((a) => a.id === selectedId) ?? null;
   const toggleCat = (c: ActivityCategory) => setCats((s) => (s.includes(c) ? s.filter((x) => x !== c) : [...s, c]));
