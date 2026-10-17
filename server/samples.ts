@@ -40,6 +40,8 @@ export interface HiddenSamples {
   posts: Set<ID>;
   timePolls: Set<ID>;
   chatRooms: Set<ID>;
+  /** 숨긴 예시 프로필의 이름 — 데모 계정의 예시 알림 글(“Hannah and Lily asked to join”)에 나오면 그 알림을 뺀다 */
+  names: string[];
   /** 데모 계정 — 자기 학교 예시는 그대로 본다 */
   demo: boolean;
   /** 숨길 것이 하나도 없다 (데모 계정이 자기 학교 예시만 있는 데이터를 볼 때) */
@@ -65,7 +67,8 @@ export function hiddenSamplesFor(db: Pick<Snapshot, 'users' | 'activities' | 'po
   const chatRooms = new Set(db.chatRooms.filter((r) => (!!r.activityId && activities.has(r.activityId)) || (!!r.orgId && organizations.has(r.orgId))
     || (!!r.rideId && rides.has(r.rideId)) || (r.type === 'direct' && r.memberIds.some((m) => users.has(m)))).map((r) => r.id));
   const none = demo && !users.size && !activities.size && !rides.size && !posts.size && !timePolls.size && !chatRooms.size;
-  return { users, activities, organizations, opportunities, rides, posts, timePolls, chatRooms, demo, none };
+  const names = demo ? db.users.filter((u) => users.has(u.id)).map((u) => u.nickname) : [];
+  return { users, activities, organizations, opportunities, rides, posts, timePolls, chatRooms, names, demo, none };
 }
 
 // ─── 거르기 ────────────────────────────────────────────────────────────────
@@ -81,6 +84,11 @@ function linksHidden(link: string | undefined, h: HiddenSamples): boolean {
   if (!link) return false;
   return link.split(/[/?&=#]/).some((seg) => !!seg && (h.users.has(seg) || h.activities.has(seg) || h.organizations.has(seg) || h.opportunities.has(seg)
     || h.rides.has(seg) || h.posts.has(seg) || h.timePolls.has(seg) || h.chatRooms.has(seg)));
+}
+
+/** 데모 계정만 — 실제 계정의 알림은 실제 사람 이름이라, 예시 프로필과 이름이 같아도 건드리지 않는다 */
+function namesHidden(text: string, h: HiddenSamples): boolean {
+  return h.demo && h.names.some((name) => new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`).test(text));
 }
 
 export function stripRelationships(r: Relationships, u: Set<ID>, orgs: ReadonlySet<ID> = NONE): Relationships {
@@ -131,7 +139,7 @@ export function stripSamples<T extends Partial<Snapshot> & Pick<Patch, 'removed'
         ? { ...r, memberIds: r.memberIds.filter((m) => !U.has(m)), messages: r.messages.filter((m) => !U.has(m.senderId)), lastReadAt: dropKeys(r.lastReadAt, U) }
         : r));
   }
-  if (src.notifications) out.notifications = src.notifications.filter((n) => !linksHidden(n.link, h));
+  if (src.notifications) out.notifications = src.notifications.filter((n) => !linksHidden(n.link, h) && !namesHidden(`${n.title} ${n.body}`, h));
   if (src.opportunities) {
     out.opportunities = src.opportunities.filter((o) => !h.opportunities.has(o.id) && !(o.orgId && h.organizations.has(o.orgId))).map((o) => {
       const qna = dropAuthored(o.qna, U), reviews = dropAuthored(o.reviews, U);
