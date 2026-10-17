@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-17 16:20 UTC (버클리 토 09:20) · 60회차 · 초점: 동아리 목록·단체 페이지
+- 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 시간 한도로 꺼져 다시 켬)
+- Campus › Clubs(1,562개), Mine, Likelion at Berkeley 페이지를 v2·classic 로 봄 (Follow·Ask to join 은 안 누름).
+- 고침: 프로필 ‘My groups’ 줄은 0 인데 누르면 열리는 Clubs › Mine 에는 2개(팔로우한 Cal Indie Collective·Vision & Language Lab). 프로필은 가입·운영만, Mine 은 팔로우까지 셌다 → 프로필도 Mine 과 같은 기준으로 (ProfilePage.tsx). 한국어 이름도 ‘가입한 단체’ → ‘내 단체’(팔로우 포함이라) (en.ts 키 한 줄).
+- 메모(작음, 다음에): 사진 없는 동아리 페이지 커버가 UC 문장(seal) 작은 이미지를 크게 늘려 흐릿하게 보임.
+- 검증: tsc, npm test 202 통과, 로컬 v2·classic·한국어 확인(My groups 2 / 내 단체 2개).
+
 ## 2026-10-17 15:20 UTC (버클리 토 08:20) · 59회차 · 초점: 같이 타기 상세·올리기
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - 상세(Maya → OAK, Daniel → Costco)와 /rides/new 를 v2·classic 로 봄 (Join·Post ride 는 안 누름).

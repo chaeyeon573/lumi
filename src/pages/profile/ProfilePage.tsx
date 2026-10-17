@@ -45,7 +45,8 @@ export function ProfilePage() {
   const days = [0, 1, 2, 3, 4];
   const openPolls = polls.filter((p) => p.status === 'open' && (p.hostId === me.id || p.inviteeIds.includes(me.id))).length;
   const saved = intents.filter((i) => i.userId === me.id && (i.saved || i.intent === 'applied')).length;
-  const myOrgs = orgs.filter((o) => o.memberIds.includes(me.id) || o.adminIds.includes(me.id)).length;
+  // Campus › Clubs › Mine 과 같은 기준(가입·운영·팔로우) — 이 줄을 누르면 그 목록이 열린다
+  const myOrgs = orgs.filter((o) => o.memberIds.includes(me.id) || o.adminIds.includes(me.id) || o.followerIds.includes(me.id)).length;
   const myRides = (rides ?? []).filter((r) => r.status !== 'cancelled' && r.date >= campusToday() && (r.hostId === me.id || r.memberIds.includes(me.id))).length;
   const dept = me.affiliation.type === 'university' ? `${me.affiliation.department} • ${me.affiliation.schoolName}` : '';
 
@@ -123,7 +124,7 @@ export function ProfilePage() {
             { icon: <CalendarCheck size={18} />, label: lang === 'en' ? 'My Plans' : '내 약속', sub: openPolls ? `${t('시간 정하는 중')} ${openPolls}` : t('초대·대기·확정'), to: '/plans' },
             { icon: <Bookmark size={18} />, label: t('저장·지원 내역'), sub: `${saved}${t('개')}`, to: '/community?tab=opportunities&sub=saved' },
             { icon: <Car size={18} />, label: 'My rides', sub: myRides ? `${myRides} upcoming` : 'Airports, groceries, SF, Tahoe', to: '/rides?mine=1' },
-            { icon: <Building2 size={18} />, label: t('가입한 단체'), sub: `${myOrgs}${t('개')}`, to: '/community?tab=opportunities&sub=clubs&kind=mine' },
+            { icon: <Building2 size={18} />, label: t('내 단체'), sub: `${myOrgs}${t('개')}`, to: '/community?tab=opportunities&sub=clubs&kind=mine' },
           ].map((r) => (
             <button key={r.label} onClick={() => nav(r.to)} className="w-full flex items-center gap-3 px-4 py-3 text-left press">
               <span className="h-10 w-10 rounded-full bg-surface-2 grid place-items-center text-primary">{r.icon}</span>
