@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-10-17 04:20 UTC (버클리 금 21:20) · 48회차 · 초점: 표시(Tag) 대비
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- 고침 (Chip.tsx Tag): classic 의 accent 표시가 연한 하늘색 글자(#A3D5FF) on 연한 하늘색 바탕(#BFF4FF) — ‘Vote’, ‘Fall recruiting’, ‘모집 중’, ‘초대’, 활동 카드 배지가 거의 안 보였다 → classic 은 남색 글자, v2 는 그대로 핑크. 한 곳(공용 Tag)이라 모든 화면에 같이 적용.
+- 검증: tsc, npm test 198, 로컬(라이브 API) v2·classic — My Plans·Teams 전/후.
+
 ## 2026-10-17 03:20 UTC (버클리 금 20:20) · 47회차 · 초점: My Plans
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - 고침 (PlansPage.tsx): 6칸 중 5칸이 “0 · No invites.”, “No requests waiting for approval.”, “No events marked yet.” 등 빈 칸 채움 문구 — 비어 있는 칸은 숨기고, ‘확정된 약속’만 비어도 남겨 다음 할 일(발견 탭) 안내. 지금 데모 계정은 “시간 정하는 중 1 · 확정된 약속 1”만 보인다.
