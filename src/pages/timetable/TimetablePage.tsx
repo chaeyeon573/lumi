@@ -198,7 +198,8 @@ export function TimetablePage() {
         <p className="text-[11px] text-ink-3 flex items-start gap-1.5 px-1"><Lock size={12} className="shrink-0 mt-0.5" />{t('다른 사용자에게는 전체 시간표가 아닌 공강 여부만 보여요. 강의실은 어떤 설정에서도 공개되지 않아요.')}</p>
       </div>
 
-      <BottomSheet open={!!space} onClose={() => setSpace(null)} title={space ?? ''} tall>
+      {/* 제목은 비워 둔다 — 안에 큰 과목 코드·이름이 바로 나와 “CS 186 Databases” 가 두 번 보였다 (닫기 X 는 남는다) */}
+      <BottomSheet open={!!space} onClose={() => setSpace(null)} title="" tall>
         {space && <ClassSpaceContent courseName={space} onClose={() => setSpace(null)} onEdit={() => { const c = me.timetable.find((x) => x.name === space); setSpace(null); if (c) setEditing(c); }} />}
       </BottomSheet>
       <OpenSlotSheet open={!!slot} onClose={() => setSlot(null)} day={slot?.day ?? today} block={slot?.block ?? null} />
