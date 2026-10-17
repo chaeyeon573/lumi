@@ -94,19 +94,21 @@ export function ChatInboxPage() {
       )}
       {status === 'ready' && tab === 'requests' && (
         <div className="px-4 py-3 space-y-4">
-          <section>
+          {/* 받은 게 없으면 빈 칸 두 개(“0”) 대신 한 줄 */}
+          {inProposals.length === 0 && inRequests.length === 0 && <div className="card p-4 text-[13px] text-ink-3">{t('받은 요청이 없어요.')}</div>}
+          {inProposals.length > 0 && <section>
             <h2 className="text-[14px] font-bold mb-2 flex items-center gap-1.5"><Inbox size={15} />{t('받은 활동 제안')} {inProposals.length}</h2>
-            {inProposals.length === 0 ? <div className="card p-4 text-[13px] text-ink-3">{t('받은 제안이 없어요.')}</div> : inProposals.map((p) => { const u = v.userById(p.fromId); return (
+            {inProposals.map((p) => { const u = v.userById(p.fromId); return (
               <div key={p.id} className="card p-3.5 mb-2">
                 <button onClick={() => nav(`/users/${p.fromId}`)} className="flex items-center gap-3 text-left w-full"><Avatar emoji={u?.avatar.emoji ?? '👤'} hue={u?.avatar.hue ?? 200} url={u?.avatar.url} size={40} /><div className="flex-1"><b className="text-[14px]">{u?.nickname}</b><div className="text-[12px] text-ink-3">{CATEGORY_EMOJI[p.category]} {CATEGORY_LABELS[p.category]} · {p.when}</div></div><Tag>{relativeTime(p.createdAt)}</Tag></button>
                 <p className="mt-2 rounded-xl bg-surface-2 px-3 py-2 text-[13px]">“{p.message}”</p>
                 <div className="flex gap-2 mt-3"><Button full variant="outline" icon={<X size={15} />} onClick={() => run(() => api.proposals.respond(p.id, false))}>{t('이번에는 어려워요')}</Button><Button full icon={<Check size={15} />} onClick={async () => { await run(() => api.proposals.respond(p.id, true), t('제안을 수락했어요. 대화를 시작해요!')); setParams({ tab: 'direct' }); }}>{t('좋아요')}</Button></div>
               </div>
             ); })}
-          </section>
-          <section>
+          </section>}
+          {inRequests.length > 0 && <section>
             <h2 className="text-[14px] font-bold mb-2 flex items-center gap-1.5"><Users size={15} />{t('받은 친구 요청')} {inRequests.length}</h2>
-            {inRequests.length === 0 ? <div className="card p-4 text-[13px] text-ink-3">{t('받은 친구 요청이 없어요.')}</div> : inRequests.map((q) => { const u = v.userById(q.fromId); return (
+            {inRequests.map((q) => { const u = v.userById(q.fromId); return (
               <div key={q.id} className="card p-3.5 mb-2 flex items-center gap-3">
                 <button onClick={() => nav(`/users/${q.fromId}`)}><Avatar emoji={u?.avatar.emoji ?? '👤'} hue={u?.avatar.hue ?? 200} url={u?.avatar.url} size={40} /></button>
                 <div className="flex-1 min-w-0"><b className="text-[14px]">{u?.nickname}</b><div className="text-[12px] text-ink-3">{relativeTime(q.createdAt)}</div></div>
@@ -115,7 +117,7 @@ export function ChatInboxPage() {
               </div>
             ); })}
             <p className="text-[11px] text-ink-3 mt-1">{t('거절해도 상대에게 알림이 가지 않아요.')}</p>
-          </section>
+          </section>}
           {(outProposals.length > 0 || outRequests.length > 0) && (
             <section>
               <h2 className="text-[14px] font-bold mb-2 flex items-center gap-1.5"><MessageCircle size={15} />{t('보낸 요청')}</h2>

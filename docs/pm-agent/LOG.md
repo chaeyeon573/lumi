@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-17 09:20 UTC (버클리 토 02:20) · 53회차 · 초점: 채팅 목록·1:1 대화방
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- DM 목록(Direct·Groups·Requests)과 Sofia 대화방을 v2·classic 로 봄. 예시 대화 날짜 “Sep 23”은 c986455(예시 대화 시간 다시 맞추기) 배포 전이라 그대로 — 배포 뒤 확인.
+- 고침: Requests 탭에 받은 게 없으면 “Proposals received 0 / No proposals yet.” + “Friend requests 0 / No friend requests.” 빈 상자 두 개가 위를 차지 → 받은 게 없으면 “No requests waiting for you.” 한 줄, 있는 쪽만 제목+개수로 (ChatInboxPage.tsx, en.ts 한 줄).
+- 질문 추가: Design 비교 알약이 채팅방 날짜 줄·검색창을 가림 → 없애기/설정으로 옮기기 중 정해 달라고 QUESTIONS.md.
+- 검증: tsc, npm test 199 통과, 로컬 v2·classic 전후 스크린샷.
+
 ## 2026-10-17 08:20 UTC (버클리 토 01:20) · 52회차 · 초점: 처음 온 사람 — Welcome → 가입 단계
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - 로그아웃 상태 Welcome·가입 1~8단계를 v2·classic 로 찍어 봄 (9단계 학교 메일 인증은 실제 메일이 가서 안 들어감).
