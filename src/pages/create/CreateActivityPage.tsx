@@ -134,8 +134,9 @@ export function CreateActivityPage() {
             <div className="flex flex-wrap gap-1.5">{COVER_HUES.map((h) => <button key={h} type="button" onClick={() => patch({ cover: { ...form.cover, hue: h } })} className={cn('h-7 w-7 rounded-full', form.cover.hue === h && 'ring-2 ring-offset-2 ring-ink')} style={{ background: `hsl(${h} 75% 70%)` }} aria-label={`${t('색상 ')}${h}`} />)}</div>
           </div>
         </Field>
-        <div className="grid grid-cols-3 gap-2">
-          <Field label={t('날짜')} required><Input type="date" min={todayISO()} value={form.date} onChange={(e) => patch({ date: e.target.value })} /></Field>
+        {/* 날짜를 한 줄로 — 세 칸에 나누면 “10/17/2(” 처럼 잘리고 시간의 AM/PM 이 가려져 6 PM 이 06:00 으로 보인다 */}
+        <Field label={t('날짜')} required><Input type="date" min={todayISO()} value={form.date} onChange={(e) => patch({ date: e.target.value })} /></Field>
+        <div className="grid grid-cols-2 gap-2">
           <Field label={t('시작')} required><Input type="time" value={form.startTime} onChange={(e) => patch({ startTime: e.target.value })} /></Field>
           <Field label={t('종료')} required><Input type="time" value={form.endTime} onChange={(e) => patch({ endTime: e.target.value })} /></Field>
         </div>
