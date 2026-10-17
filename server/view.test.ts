@@ -39,3 +39,13 @@ test('patch: outsiders get nothing, someone who left gets a removal', () => {
   assert.deepEqual(left?.chatRooms, []);
   assert.deepEqual(left?.removed?.chatRooms, ['r_ab']);
 });
+
+test('snapshot: a notification about an opportunity that is gone is dropped (it would open “not found”)', () => {
+  const d = db();
+  // 데모 계정(sample) — 예시 공고를 숨기지 않으니, 공고가 실제로 없어진 경우만 남는다
+  d.users = d.users.map((u) => (u.id === 'u_me' ? { ...u, sample: true } : u));
+  d.opportunities = d.opportunities.filter((o) => o.id !== 'op_scholarship');
+  const ids = snapshotFor(d, 'u_me').notifications.map((n) => n.id);
+  assert.ok(!ids.includes('nt9'), 'deadline notice for a removed listing');
+  assert.ok(ids.includes('nt10') && ids.includes('nt1'), 'other notices stay');
+});

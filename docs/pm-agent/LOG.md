@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-17 10:20 UTC (버클리 토 03:20) · 54회차 · 초점: 알림 화면 — 눌렀을 때 가는 곳
+- 질문 새 답 없음, 배포 브랜치 변화 없음. (컨테이너 재시작으로 로컬 vite 다시 켬)
+- 예시 계정 알림 9개를 v2·classic 로 보고 하나씩 눌러 봄.
+- 발견·고침: “Deadline in 4 days”(Cal Alumni Leadership Scholarship)·“People to team up with”(AI Campus Hackathon) 두 알림이 눌러 보면 “Opportunity not found” — 라이브 데이터에 그 공고가 없다(예시로 지어낸 공고라 없는 게 맞음). → 서버가 알림을 내려줄 때 가리키는 공고(/opportunities/:id)가 없으면 뺀다 (server/view.ts goneOpportunity + view.test.ts, 고치기 전 실패/후 통과). 실제 사용자의 마감·삭제된 공고 알림도 같이 정리됨. 배포 뒤 반영.
+- 남은 것: “New proposal — Lily proposed an algorithms study session.” 을 누르면 Requests 가 비어 있음(예시 제안이 시드 후 47시간에 만료). “2 join requests (Hannah and Lily)” 는 관리 화면에 대기 1명(Lily). 둘 다 예시 데이터 시간 문제 — 다음에 rollSampleContent 로 같이 맞출지 본다.
+- 검증: 서버 타입체크, tsc, npm test 200 통과.
+
 ## 2026-10-17 09:20 UTC (버클리 토 02:20) · 53회차 · 초점: 채팅 목록·1:1 대화방
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - DM 목록(Direct·Groups·Requests)과 Sofia 대화방을 v2·classic 로 봄. 예시 대화 날짜 “Sep 23”은 c986455(예시 대화 시간 다시 맞추기) 배포 전이라 그대로 — 배포 뒤 확인.
