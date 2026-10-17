@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-17 14:20 UTC (버클리 토 07:20) · 58회차 · 초점: Rides 목록·내 같이 타기
+- 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 시간 한도로 꺼져 다시 켬)
+- /rides, /rides?mine=1 을 v2·classic 로 봄. 목록·날짜 묶음·가격 이상 없음.
+- 고침: My rides 에 지난·취소된 것이 있는데 위에 “No rides yet” — 앞뒤가 안 맞음 → 지난 것이 있으면 “No upcoming rides” (RidesPage.tsx).
+- 발견(질문에 추가): Design 알약이 Rides 상단의 **My rides** 탭을 덮어 누를 수 없음 → 기존 Design 알약 질문에 덧붙임.
+- 검증: tsc, npm test 202 통과, 로컬 v2·classic 전후 확인.
+
 ## 2026-10-17 13:20 UTC (버클리 토 06:20) · 57회차 · 초점: 글쓰기·Plan Together 만들기
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - /create/post: 이상 없음(관련 기회는 기본 드롭다운이라 목록이 길어도 화면은 안 길어짐). 사진 칸·#Dating 은 이미 질문함.
