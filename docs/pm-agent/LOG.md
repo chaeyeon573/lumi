@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-17 00:20 UTC (버클리 금 17:20) · 44회차 · 초점: 동아리 상세 (SESE)
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- 고침 (OrgPage.tsx): CalLink 에서 온 동아리 대부분은 사진·정기 활동·공지가 없는데 빈 카드 “Photos & videos”, “Regular activities”와 “Announcements — No announcements.”(빈 칸 채움 문구)가 그대로 → 내용이 있을 때만 보임. 내용 있는 동아리(Cal Indie Collective)는 그대로 셋 다 보임.
+- 메모: 아무도 Lumi 에 없는 디렉터리 동아리에 “Ask to join” 버튼 — 눌러도 승인할 사람이 없다. “Unverified” 배지도 학생 눈엔 의심스러워 보일 수 있다. 크기 보고 다음에.
+- 검증: tsc, npm test 198, 로컬(라이브 API) v2·classic.
+
 ## 2026-10-16 23:20 UTC (버클리 금 16:20) · 43회차 · 초점: Feed 글쓰기
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - 물어봄(QUESTIONS 맨 위): 사진 칸 + 가 샘플 사진을 붙임 — 실제 학생 글에 남의 사진. 추천 A(웹에선 사진 칸 숨기기).
