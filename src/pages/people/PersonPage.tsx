@@ -73,6 +73,7 @@ export function PersonPage() {
   const adminOrgs = orgs.filter((o) => o.adminIds.includes(user.id));
   const pendingProposal = proposals.find((p) => p.fromId === v.me.id && p.toId === user.id && p.status === 'pending');
   const reasons = shareableReasons(matchReasons(v.me, user, v.snap, see('timetable')));
+  const why = common.length > 0 ? reasons.filter((r) => r.kind !== 'interest') : reasons;
 
   const like = async () => {
     const res = await run(() => api.relationships.toggleLike(v.me.id, user.id));
@@ -101,7 +102,8 @@ export function PersonPage() {
               <Button size="sm" variant="outline" onClick={() => run(() => api.relationships.respondFriendRequest(inReq.id, false))}>{t('거절')}</Button><Button size="sm" onClick={() => run(() => api.relationships.respondFriendRequest(inReq.id, true), t('친구가 되었어요!'))}>{t('수락')}</Button></div>
           )}
           {see('bio') && user.bio && <p className="text-[14px] text-ink-2 leading-relaxed mt-3">{user.bio}</p>}
-          {reasons.length > 0 && <ul className="mt-3 space-y-1 rounded-xl bg-surface-2 px-3 py-2.5">{reasons.slice(0, 4).map((r) => <li key={r.text} className="text-[12px] text-ink-2 flex items-start gap-1.5"><Check size={12} className="text-primary shrink-0 mt-0.5" />{r.text}</li>)}</ul>}
+          {/* 관심사는 아래 ‘공통 관심사’ 태그가 전부 보여 준다 — 목록에도 넣으면 같은 말이 두 번(그것도 3개만) */}
+          {why.length > 0 && <ul className="mt-3 space-y-1 rounded-xl bg-surface-2 px-3 py-2.5">{why.slice(0, 4).map((r) => <li key={r.text} className="text-[12px] text-ink-2 flex items-start gap-1.5"><Check size={12} className="text-primary shrink-0 mt-0.5" />{r.text}</li>)}</ul>}
           {(common.length > 0 || mutualF > 0) && (
             <div className="mt-3 flex flex-wrap gap-1.5">
               {common.length > 0 && <Tag tone="primary"><Sparkles size={11} /> {t('공통 관심사')} {common.map((i) => INTEREST_LABELS[i]).join(', ')}</Tag>}

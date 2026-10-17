@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-17 20:20 UTC (버클리 토 13:20) · 64회차 · 초점: 다른 사람 프로필(Maya, Daniel)
+- 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 시간 한도로 끝에 꺼짐 — 다음 실행에서 다시 켬)
+- /users/u_jimin, u_dohyun 를 v2·classic 로 봄. 큰 얼굴 사진·나이·하트·Dating 은 사람 탭 질문(키·Dating 추가분)과 같은 건이라 손 안 댐.
+- 고침: 공통점 목록에 “Coffee·Startup·Arts & shows in common”, 바로 아래 태그에 “Shared interests Coffee, Startup, Arts & shows, Workout” — 같은 말 두 번(위는 3개만). 태그가 보일 땐 목록에서 관심사 줄을 뺌 (PersonPage.tsx). 수업·목표 줄은 그대로.
+- 검증: tsc, npm test 202 통과, 로컬 v2·classic 전후 확인.
+
 ## 2026-10-17 19:20 UTC (버클리 토 12:20) · 63회차 · 초점: Ask Lumi
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - 첫 화면(v2·classic) + 실제 질문 1개 “Anything fun to do this weekend with free food?” (41초). 답은 정직함 — 이번 주말 무료 음식 목록 없음 + “Try asking:” 질문 3개.
