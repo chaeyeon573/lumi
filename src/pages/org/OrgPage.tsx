@@ -58,7 +58,8 @@ export function OrgPage() {
   return (
     <div className="min-h-full pb-8">
       <TopBar back title={org.name} messages right={isAdmin ? <Button size="sm" variant="ghost" icon={<PenSquare size={15} />} onClick={() => setPost(true)}>{t('올리기')}</Button> : undefined} />
-      <Cover emoji={org.logo.emoji} hue={org.logo.hue} url={org.logo.url} className="h-[140px]" size={60} />
+      {/* 커버는 갤러리 첫 사진 — 없으면 색 띠만. 작은 정사각 로고(학교 문장 등)를 가로로 늘리면 흐릿하게 깨진다 */}
+      <Cover emoji="" hue={org.logo.hue} url={org.gallery.find((g) => g.url)?.url} className="h-[140px]" size={60} />
       <div className="px-4 -mt-8 relative">
         <div className="card p-4">
           <div className="flex items-start gap-3">
