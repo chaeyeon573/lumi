@@ -1289,7 +1289,7 @@ export const en: Record<string, string> = {
   '마감순': 'By deadline',
   '저장·지원 내역': 'Saved & applications',
   '관심 행사': 'events',
-  '가입한 단체': 'My groups',
+  '내 단체': 'My groups',
   '지금 시간이 비는 사람이 없어요.': 'No one is free right now.',
   '보기': 'View',
   '수업 중': 'In class',
