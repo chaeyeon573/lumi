@@ -43,7 +43,11 @@ export function PersonPage() {
   const oppsAll = useAppStore((s) => s.opportunities);
   const oppRef = params.get('opp') ? oppsAll.find((o) => o.id === params.get('opp')) : undefined;
   const [pMsg, setPMsg] = useState(oppRef ? (lang === 'en' ? `Want to go to ${oppRef.title} together?` : `${oppRef.title} 같이 갈래요?`) : (params.get('msg') ?? '').slice(0, 200));
-  const [pWhen, setPWhen] = useState(`${todayISO()} 18:00`);
+  // 상대가 그대로 읽는 글이라 “2026-10-17 18:00” 대신 “Sat 6 PM” / “토요일 오후 6시” (수락 메시지 “See you Sat 6 PM :)” 에도 들어간다)
+  const [pWhen, setPWhen] = useState(() => {
+    const day = new Date(`${todayISO()}T12:00`).toLocaleDateString(lang === 'en' ? 'en-US' : 'ko-KR', { weekday: lang === 'en' ? 'short' : 'long' });
+    return lang === 'en' ? `${day} 6 PM` : `${day} 오후 6시`;
+  });
   const [busy, setBusy] = useState(false);
   useEffect(() => { if (params.get('propose')) setParams({}, { replace: true }); }, [params, setParams]);
 
