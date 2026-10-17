@@ -85,7 +85,7 @@ export function MapPage() {
   return (
     <div className="h-full flex flex-col">
       <TopBar back
-        title={<button className="flex items-center gap-1 text-[16px]" onClick={() => setSchoolOpen(true)}>📍 {school.name} <span className="text-ink-3 text-[13px] font-medium">{school.region}</span> <ChevronDown size={16} className="text-ink-3" /></button>}
+        title={<button className="flex items-center gap-1 text-[16px]" onClick={() => setSchoolOpen(true)}>📍 {school.name} {!school.name.includes(school.region) && <span className="text-ink-3 text-[13px] font-medium">{school.region}</span>} <ChevronDown size={16} className="text-ink-3" /></button>}
         messages
       />
       <div className="px-4 pt-2 pb-2 space-y-2 bg-bg">
