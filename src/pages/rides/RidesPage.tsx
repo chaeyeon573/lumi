@@ -60,7 +60,7 @@ export function RidesPage() {
 
         <div className="mt-4 space-y-5">
           {upcoming.length === 0 && (
-            <EmptyState emoji={view === 'mine' ? '🚗' : '🛣️'} title={view === 'mine' ? 'No rides yet' : toLabel ? `No rides to ${toLabel} yet` : 'No rides here yet'}
+            <EmptyState emoji={view === 'mine' ? '🚗' : '🛣️'} title={view === 'mine' ? (past.length ? 'No upcoming rides' : 'No rides yet') : toLabel ? `No rides to ${toLabel} yet` : 'No rides here yet'}
               description={view === 'mine' ? 'Rides you post or join show up here.' : 'Post yours — students leaving within 90 minutes of you will see it as a match.'}
               action={eligible.ok ? <Button size="sm" onClick={() => nav(`/rides/new${to ? `?to=${to}` : ''}`)}>Post a ride</Button> : undefined} />
           )}
