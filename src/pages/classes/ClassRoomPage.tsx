@@ -87,8 +87,11 @@ export function ClassRoomPage() {
           <>
             <Header info={info} />
             <div className="rounded-3xl bg-surface-2 border border-line p-5">
-              <div className="text-[40px] font-extrabold text-ink leading-none">{info.count}</div>
-              <div className="mt-1 text-[14px] text-ink-2">{en ? `${info.code} student${info.count === 1 ? '' : 's'} already on Lumi` : `명의 ${info.code} 학생이 Lumi에 있어요`}</div>
+              {/* 아직 아무도 없으면 큰 '0' 대신 수업 방 이름만 — 0명은 '빈 앱'으로 읽힌다 */}
+              {info.count > 0 ? <>
+                <div className="text-[40px] font-extrabold text-ink leading-none">{info.count}</div>
+                <div className="mt-1 text-[14px] text-ink-2">{en ? `${info.code} student${info.count === 1 ? '' : 's'} already on Lumi` : `명의 ${info.code} 학생이 Lumi에 있어요`}</div>
+              </> : <div className="text-[20px] font-extrabold text-ink">{en ? `The ${info.code} class room` : `${info.code} 수업 방`}</div>}
               <ul className="mt-4 space-y-2.5 text-[14px] text-ink">
                 <li className="flex items-center gap-2.5"><BookOpen size={16} className="text-primary" />{en ? 'Get matched into a study group of 3–4' : '3~4명 스터디 그룹 자동 매칭'}</li>
                 <li className="flex items-center gap-2.5"><Handshake size={16} className="text-primary" />{en ? 'Find a project partner' : '프로젝트 파트너 찾기'}</li>
@@ -111,8 +114,10 @@ export function ClassRoomPage() {
           <>
             <Header info={info} />
             <div className="rounded-3xl bg-surface-2 border border-line p-5">
-              <div className="text-[34px] font-extrabold text-ink leading-none">{info.count}</div>
-              <div className="mt-1 text-[14px] text-ink-2">{en ? `${info.code} student${info.count === 1 ? '' : 's'} on Lumi` : `명의 ${info.code} 학생`}</div>
+              {info.count > 0 ? <>
+                <div className="text-[34px] font-extrabold text-ink leading-none">{info.count}</div>
+                <div className="mt-1 text-[14px] text-ink-2">{en ? `${info.code} student${info.count === 1 ? '' : 's'} on Lumi` : `명의 ${info.code} 학생`}</div>
+              </> : <div className="text-[18px] font-extrabold text-ink">{en ? `The ${info.code} class room` : `${info.code} 수업 방`}</div>}
               <p className="mt-3 text-[13px] text-ink-3">{mySchool === info.schoolId
                 ? (en ? `Add ${info.code} to your timetable to see classmates, study groups and project partners. They'll only see that you take it.` : '시간표에 추가하면 같은 수업 학생·스터디 그룹·파트너가 보여요.')
                 : (en ? `This class room is for ${info.schoolName} students.` : `${info.schoolName} 학생을 위한 수업 방이에요.`)}</p>
