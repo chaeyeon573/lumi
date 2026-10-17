@@ -218,3 +218,29 @@ test('sample meetup comments move to recent times too', () => {
   const reply = db.activities.find((a) => a.id === 'a_band_show')!.comments.find((c) => c.id === 'c4')!;
   assert.ok((Date.now() - Date.parse(reply.createdAt)) / 3600000 < 2.2, 'reply is about 2 hours old');
 });
+
+test('demo account: no sample notice names a sample person it can\'t see ("Hannah and Lily asked to join" with only Lily there)', () => {
+  const db = world();
+  const s = snapshotFor(db, DEMO);
+  const hidden = db.users.filter((u) => u.sample && !s.users.some((x) => x.id === u.id)).map((u) => u.nickname);
+  assert.ok(hidden.includes('Hannah'), 'the Berkeley deck hides Hannah (otherwise this proves nothing)');
+  const named = s.notifications.filter((n) => hidden.some((name) => new RegExp(`\\b${name}\\b`).test(`${n.title} ${n.body}`)));
+  assert.deepEqual(named.map((n) => n.id), []);
+  assert.ok(s.notifications.some((n) => n.id === 'nt5'), 'notices about people it can see stay ("Maya started following you")');
+});
+
+test('the sample proposal does not expire on a long-running server (the "New proposal" notice would open an empty list)', () => {
+  const db = world();
+  const WEEKS = 21 * 86400000;
+  const ago = (iso: string) => new Date(Date.parse(iso) - WEEKS).toISOString();
+  db.proposals = db.proposals.map((p) => ({ ...p, status: 'expired' as const, createdAt: ago(p.createdAt), expiresAt: ago(p.expiresAt) }));
+  const patch = rollSampleContent(db);
+  assert.ok(patch?.proposals?.length);
+  const pr = db.proposals.find((p) => p.id === 'pr1')!;
+  assert.equal(pr.status, 'pending');
+  assert.ok(Date.parse(pr.expiresAt) > Date.now() + 40 * 3600000);
+  // 데모 방문자가 이미 답한 제안은 그대로
+  db.proposals = db.proposals.map((p) => ({ ...p, status: 'declined' as const, createdAt: ago(p.createdAt), expiresAt: ago(p.expiresAt) }));
+  rollSampleContent(db);
+  assert.equal(db.proposals.find((p) => p.id === 'pr1')!.status, 'declined');
+});
