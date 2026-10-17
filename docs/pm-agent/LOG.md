@@ -2,6 +2,14 @@
 
 최신이 위.
 
+## 2026-10-17 15:20 UTC (버클리 토 08:20) · 59회차 · 초점: 같이 타기 상세·올리기
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- 상세(Maya → OAK, Daniel → Costco)와 /rides/new 를 v2·classic 로 봄 (Join·Post ride 는 안 누름).
+- 고침: 상세 위쪽 “Leave Tue Nov 24 · 6–6:30pm” 과 아래 ‘Leaving’ 줄 “Tue Nov 24 · 6pm–6:30pm” 이 같은 시간을 다르게 씀 → 아래도 같은 whenLabel 로 (RideDetailPage.tsx, 안 쓰게 된 import 2개 정리).
+- 이상 없음: 올리기 화면 날짜(한 줄)·시간(두 칸) 잘림 없음, 안전 안내·가격 안내 문구.
+- 메모: Design 알약이 상세 제목(“Maya → OAK”)도 가림 — 기존 질문과 같은 건.
+- 검증: tsc, npm test 202 통과, 로컬 v2·classic 전후 확인.
+
 ## 2026-10-17 14:20 UTC (버클리 토 07:20) · 58회차 · 초점: Rides 목록·내 같이 타기
 - 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 시간 한도로 꺼져 다시 켬)
 - /rides, /rides?mine=1 을 v2·classic 로 봄. 목록·날짜 묶음·가격 이상 없음.
