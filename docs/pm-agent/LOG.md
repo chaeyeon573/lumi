@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-17 01:20 UTC (버클리 금 18:20) · 45회차 · 초점: 수업 링크 공개 페이지 (/c/berkeley/cs186, 로그인 전)
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- 고침 (ClassRoomPage.tsx): 수업 단톡방에 링크를 받은 학생이 처음 보는 화면에 큰 “0 · CS 186 students already on Lumi” — 빈 앱으로 읽힘 → 0명이면 숫자 대신 “The CS 186 class room”(한국어 “CS 186 수업 방”), 1명 이상이면 숫자 그대로. 같은 학교·아직 안 듣는 사람 화면도 같게.
+- 메모: 수업 시간 “9:30am–10:59am”(학교 자료의 10:59 그대로).
+- 검증: tsc, npm test 198, 로컬(라이브 API) v2·classic 전/후.
+
 ## 2026-10-17 00:20 UTC (버클리 금 17:20) · 44회차 · 초점: 동아리 상세 (SESE)
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - 고침 (OrgPage.tsx): CalLink 에서 온 동아리 대부분은 사진·정기 활동·공지가 없는데 빈 카드 “Photos & videos”, “Regular activities”와 “Announcements — No announcements.”(빈 칸 채움 문구)가 그대로 → 내용이 있을 때만 보임. 내용 있는 동아리(Cal Indie Collective)는 그대로 셋 다 보임.
