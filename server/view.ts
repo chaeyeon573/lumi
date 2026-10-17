@@ -173,6 +173,12 @@ function refreshAround(others: ID[], viewerId: ID, db: Snapshot, hidden: HiddenS
 }
 const mergeById = <T extends { id: ID }>(a: T[] | undefined, b: T[]) => [...(a ?? []), ...b.filter((x) => !(a ?? []).some((y) => y.id === x.id))];
 
+/** 알림이 가리키는 공고(/opportunities/:id)가 없어졌는지 — 마감·삭제된 공고 알림은 눌러도 “찾을 수 없어요”만 나온다 */
+function goneOpportunity(link: string | undefined, db: Pick<Snapshot, 'opportunities'>): boolean {
+  const id = link?.match(/^\/opportunities\/([^/?#]+)/)?.[1];
+  return !!id && !db.opportunities.some((o) => o.id === id);
+}
+
 export function snapshotFor(full: Snapshot, viewerId: ID): Snapshot {
   // 예시 콘텐츠를 먼저 뺀다 — 아래의 동아리·수업 명단·같이 타기 계산도 뺀 데이터로 한다
   // 신고·정지 (server/moderation.ts) — 정지된 사람과 그 콘텐츠, 신고가 쌓여 숨긴 글·댓글을 뺀다.
@@ -188,7 +194,7 @@ export function snapshotFor(full: Snapshot, viewerId: ID): Snapshot {
     activities: activitiesFor(db.activities, viewerId, db),
     participations: participationsFor(db.participations, viewerId, db),
     classRosters: classRostersFor(db, viewerId),
-    notifications: db.notifications.filter((n) => n.userId === viewerId),
+    notifications: db.notifications.filter((n) => n.userId === viewerId && !goneOpportunity(n.link, db)),
     reports: db.reports.filter((r) => r.reporterId === viewerId),
     games: gamesFor(db.games, viewerId),
     chatRooms: db.chatRooms.filter(inRoom(viewerId)),
