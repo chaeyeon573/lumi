@@ -471,6 +471,7 @@ export const en: Record<string, string> = {
   '대화를 시작해보세요': 'Say hello',
   '받은 활동 제안': 'Proposals received',
   '받은 제안이 없어요.': 'No proposals yet.',
+  '받은 요청이 없어요.': 'No requests waiting for you.',
   '이번에는 어려워요': 'Not this time',
   '제안을 수락했어요. 대화를 시작해요!': 'Accepted! Start chatting.',
   '좋아요': 'Sounds good',
