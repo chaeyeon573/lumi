@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-18 21:20 UTC (버클리 일 14:20) · 89회차 · 초점: 프로필 › 친구 목록
+- 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 다시 켬)
+- /profile/friends(친구 3명)를 v2·classic 로 봄.
+- 고침: 세 명 모두 예시 프로필인데, 홈·같이 타기·채팅과 달리 이 목록에만 ‘SAMPLE’ 표시가 없었다 → 이름 앞에 SampleTag (ProfileListPage.tsx — 팔로워·팔로잉·좋아요 목록도 같은 화면이라 같이 적용).
+- 메모: Sofia 는 학과 없이 “UC Berkeley · Undergrad”(데이터).
+- 검증: tsc, npm test 209 통과, 로컬 v2·classic 전후 확인.
+
 ## 2026-10-18 20:20 UTC (버클리 일 13:20) · 88회차 · 초점: Ask Lumi 추천(recommendFor)이 같은 엔진 변경을 잘 따르는지
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - 라이브 스냅샷으로 server/ai-search recommendFor 를 node 에서 직접 돌림(AI 호출 없음). 87회차에 행사에서 research 주제를 뺀 뒤에도 “research talks / research seminars” 질문은 단어 일치(“Mentions “seminars””)로 세미나를 잘 찾음 — 회귀 없음.
