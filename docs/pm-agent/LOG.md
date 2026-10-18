@@ -2,6 +2,14 @@
 
 최신이 위.
 
+## 2026-10-18 00:20 UTC (버클리 토 17:20) · 68회차 · 초점: 설정 › 계정·안전 / 공개 범위
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- /settings/safety, /settings/privacy 를 v2·classic 로 봄 (설정 바꾸는 버튼은 안 누름).
+- 고침: “Blocked users 0” + 바로 아래 “No blocked users.” — 0 이면 숫자는 빼고 문장만 (신고 내역도 같게). 맨 아래 “Host and participant ratings are planned for a future version.” — 학생에게 미완성 앱처럼 읽히는 개발 메모라 뺌 (SafetySettingsPage.tsx).
+- 발견(사장님 손 필요 → QUESTIONS.md): 공용 데모 계정 My reports 에 “TEST report filed by Claude to verify the alert e-mail; please dismiss” 가 남아 데모 보는 모든 사람에게 보임. 라이브 DB 라 PM agent 는 못 지움.
+- 공개 범위 화면: 이상 없음(Height 는 기존 질문 건).
+- 검증: tsc, npm test 202 통과, 로컬 v2·classic 전후 확인.
+
 ## 2026-10-17 23:20 UTC (버클리 토 16:20) · 67회차 · 초점: 66회차 메모 두 개
 - 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 시간 한도로 꺼져 다시 켬)
 - 고침: 지도 맨 위 “📍 UC Berkeley Berkeley” — 학교 이름에 지역 이름이 이미 들어 있으면 지역은 안 붙임 (MapPage.tsx). 이제 “📍 UC Berkeley”. 다른 학교(지역이 이름에 없을 때)는 그대로.

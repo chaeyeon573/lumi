@@ -31,18 +31,17 @@ export function SafetySettingsPage() {
           <Segmented value={me.settings.messagePolicy} onChange={(val) => run(() => api.users.update(me.id, { settings: { ...me.settings, messagePolicy: val } }), t('메시지 수신 설정을 바꿨어요.'))} options={[{ value: 'connected', label: t('연결된 사람') }, { value: 'friends_only', label: t('친구만') }, { value: 'none', label: t('받지 않음') }]} />
         </div>
         <div className="card p-4">
-          <b className="text-[14px] flex items-center gap-1.5"><Ban size={16} className="text-danger" />{t('차단한 사용자')} {blocked.length}</b>
+          <b className="text-[14px] flex items-center gap-1.5"><Ban size={16} className="text-danger" />{t('차단한 사용자')} {blocked.length > 0 && blocked.length}</b>
           {blocked.length === 0 ? <p className="text-[12px] text-ink-3 mt-2">{t('차단한 사용자가 없어요.')}</p> : (
             <div className="mt-2 divide-y divide-line">{blocked.map((u) => u && <div key={u.id} className="flex items-center gap-3 py-2.5"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} /><b className="flex-1 text-[14px]">{u.nickname}</b><Button size="sm" variant="outline" onClick={() => run(() => api.relationships.unblock(me.id, u.id), t('차단을 해제했어요.'))}>{t('차단 해제')}</Button></div>)}</div>
           )}
         </div>
         <div className="card p-4">
-          <b className="text-[14px] flex items-center gap-1.5"><Flag size={16} className="text-accent" />{t('신고 내역')} {myReports.length}</b>
+          <b className="text-[14px] flex items-center gap-1.5"><Flag size={16} className="text-accent" />{t('신고 내역')} {myReports.length > 0 && myReports.length}</b>
           {myReports.length === 0 ? <p className="text-[12px] text-ink-3 mt-2">{t('신고 내역이 없어요.')}</p> : (
             <div className="mt-2 space-y-2">{myReports.map((r) => <div key={r.id} className="text-[12px]"><Tag>{{ user: t('사용자'), activity: t('활동'), post: t('게시물'), comment: t('댓글'), message: t('메시지'), ride: 'Ride' }[r.targetType]}</Tag> <span className="text-ink-2">{r.reason}</span> <span className="text-ink-3">· {relativeTime(r.createdAt)} {!r.status || r.status === 'open' ? t('· 검토 중') : t('· 검토 완료')}</span></div>)}</div>
           )}
         </div>
-        <p className="text-[11px] text-ink-3 text-center">{t('활동 주최자·참가자 평가와 후기는 다음 버전에서 추가될 예정이에요.')}</p>
       </div>
     </div>
   );
