@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-18 19:20 UTC (버클리 일 12:20) · 87회차 · 초점: 86회차 남은 것 — ‘연구’ 로만 맞는 행사
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- 남아 있던 “Zonian Archaeology”(주최 Archaeological Research Facility)·“Graduate Research Seminar”(화학과)가 CS 학생에게 “Similar to Vision & Language Lab”. 주제 벡터를 찍어 보니 고고학은 research 하나뿐, 화학은 research+생물·화학.
+- 먼저 행사 주최 이름 가중치를 낮춰 봤는데 안 빠져서 되돌림. 고침: 행사는 ‘연구’ 라는 말만으로 맞추지 않고(research 주제를 행사 벡터에서 뺌) 분야(소프트웨어·AI·생물…)로 맞춘다 (foryou.ts itemVecRaw). 86회차 테스트에 두 경우 추가(고치기 전 실패/후 통과).
+- 결과(라이브 스냅샷): 고고학·화학 세미나 빠짐, EECS 강연·AI·예술·음악 행사는 남음.
+- 검증: tsc, 서버 타입체크, npm test 208 통과. (화면은 86회차와 같은 For you 목록 — 로컬 확인은 node 계산으로 대신)
+
 ## 2026-10-18 18:20 UTC (버클리 일 11:20) · 86회차 · 초점: For you 의 “This week” 줄
 - 질문 새 답 없음, 배포 브랜치 변화 없음. (컨테이너 재시작 뒤 vite 다시 켬)
 - 85회차에 동아리에 붙은 줄 알았던 “This week” 는 실제로는 학과 세미나·행사(라이브 스냅샷을 node 로 돌려 확인). CS 학생 For you 에 식물 면역·미토콘드리아·인구학·고고학 세미나가 이유 “This week” 하나로 들어와 있었다.

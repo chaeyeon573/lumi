@@ -191,6 +191,8 @@ function itemVecRaw(o: Opportunity): Vec {
   if (o.field && FIELD_TOPIC[o.field]) for (const [t, w] of Object.entries(FIELD_TOPIC[o.field])) add(v, t as Topic, w!);
   if (o.type === 'hackathon') add(v, 'software', 0.8);
   if (o.type === 'lab') add(v, 'research', 1.5);
+  // 행사는 ‘연구’ 라는 말만으로 맞추지 않는다 — 고고학·화학 연구 세미나가 AI 연구를 좋아하는 학생에게 다 가지 않게. 분야(소프트웨어·AI·생물…)로 맞춘다
+  if (o.type === 'event') delete v.research;
   vecCache.set(o, v); return v;
 }
 function orgVecRaw(o: Organization): Vec {
