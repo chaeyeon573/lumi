@@ -2,6 +2,14 @@
 
 최신이 위.
 
+## 2026-10-18 04:20 UTC (버클리 토 21:20) · 72회차 · 초점: (조사만) RSF 운영 시간 출처
+- 질문 새 답 없음, 배포 브랜치 변화 없음. 코드 변경 없음.
+- 지금 쓰는 Density 데이터(server/sources/density)에는 운영 시간이 없다(time_zone 뿐).
+- 찾은 출처: RecWell 의 공식 “RSF Hours” 페이지는 Berkeley 이벤트 캘린더(LiveWhale) 위젯으로 시간을 그린다 → 같은 데이터가 JSON 으로 있음:
+  `https://events.berkeley.edu/live/json/events/tag/RSF` — 하루 한 건 “Building Hours - RSF”, `date_iso`(열림)·`date2_iso`(닫힘), 앞으로 20일치. 예: 일 10/18 08:00–23:00, 토 10/24 08:00–18:00. 휴관일(추수감사절·성탄·새해)은 그날 항목이 없는 식으로 보임(확인 필요).
+- 확인된 문제: 어제(토) 저녁 7:18 Discover 헬스장 카드 “RSF Weight Rooms 0% · Quiet” — 토요일은 오후 6시 마감이라 실제로는 문 닫은 시간.
+- 다음 할 일(작은 작업으로 가능해 보임): 서버가 이 JSON 을 하루 몇 번 받아 캐시 → 카드·/gym 에 “Closed · opens 8 AM” / “Open until 11 PM”. Memorial Stadium Fitness Center 도 같은 방식인지 확인(tag 다를 수 있음).
+
 ## 2026-10-18 03:20 UTC (버클리 토 20:20) · 71회차 · 초점: Discover 헬스장·식당 카드 → /gym, /dining
 - 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 시간 한도로 꺼져 다시 켬)
 - 헬스장 카드 “RSF Weight Rooms 0% · Quiet”(토요일 저녁): 데이터에 운영 시간이 없어 ‘문 닫음’과 ‘한산’을 구분 못 함. 운영 시간을 지어 넣을 수 없어 이번엔 손대지 않음 — 공식 운영 시간 출처를 붙이는 일은 작은 수정이 아님(다음 후보).
