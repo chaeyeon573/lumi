@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-18 11:20 UTC (버클리 일 04:20) · 79회차 · 초점: 공고 상세(인턴십)
+- 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 시간 한도로 꺼져 다시 켬)
+- Internships 목록 → Coinbase “User Research Intern” 상세를 v2·classic 로 봄 (저장·지원 버튼은 안 누름). 위치·분야·마감(“Not posted — companies usually close once roles fill”)·공식 출처·확인 날짜 이상 없음.
+- 고침: 아무도 저장 안 한 공고에 “0 interested · 0 applied · See who” + 바로 아래 “Nobody has saved this yet…” + 탭 “People 0” — 같은 ‘아무도 없음’을 세 번. 둘 다 0 이면 숫자 줄을 숨김 (OpportunityDetailPage.tsx). 한 명이라도 있으면 그대로.
+- 검증: tsc, npm test 203 통과, 로컬 v2·classic 전후 확인.
+
 ## 2026-10-18 10:20 UTC (버클리 일 03:20) · 78회차 · 초점: 한국어 글쓰기·피드
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - 한국어 /create/post·/community: 문구 이상 없음(사진 칸·#연애 는 기존 질문 건, 예시 글 날짜 “9월 23일”은 배포 대기 중인 c986455 로 해결).
