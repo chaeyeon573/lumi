@@ -26,6 +26,10 @@ export interface GymSpaceView {
   percent?: number;
   /** 마지막으로 읽은 시각 (live 가 아니면 그 시각만 알려 준다) */
   updatedAt?: string;
+  /** 오늘 운영 시간(공식 출처가 있을 때만, ISO) — 없으면 모른다 */
+  hours?: { open: string; close: string } | null;
+  /** 지금 문을 열었나 — 운영 시간을 알 때만. false 면 0% 는 ‘한산’이 아니라 ‘닫힘’ */
+  open?: boolean;
   /** 오늘 시간대별 평균 % + 같은 요일 평소 % (기록이 7일 이상일 때) */
   today: GymHourBar[];
   usualNow: number | null;
@@ -136,8 +140,9 @@ export function normalizeAlert(input: { below?: unknown; days?: unknown; start?:
 }
 
 /** 지금 알려야 하나 — 살아 있는 숫자, 고른 요일·시간 안, 기준 미만, 그 알림은 하루 한 번까지 */
-export function alertDue(a: GymAlert, clock: CampusClock, view: Pick<GymSpaceView, 'status' | 'percent'>): boolean {
+export function alertDue(a: GymAlert, clock: CampusClock, view: Pick<GymSpaceView, 'status' | 'percent' | 'open'>): boolean {
   if (!a.enabled || view.status !== 'live' || view.percent == null) return false;
+  if (view.open === false) return false; // 문 닫은 시간의 0% 로 “지금 한산해요”를 보내지 않는다
   if (!a.days.includes(clock.weekday)) return false;
   if (clock.min < toMin(a.start) || clock.min >= toMin(a.end)) return false;
   if (a.lastFiredDate === clock.date) return false;
