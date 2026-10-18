@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-10-18 08:20 UTC (버클리 일 01:20) · 76회차 · 초점: 자정 넘긴 직후 홈·Discover·시간표
+- 질문 새 답 없음, 배포 브랜치 변화 없음. 코드 변경 없음.
+- 일요일 새벽 1:17 에 홈·Discover·시간표를 봄: 공강 “09:00–21:00”(오늘 남은 시간이라 맞음), Discover 오늘 활동 7:20 AM~6 PM, 시간표 “Sun · No classes today”, 친구 공강 09:00–21:00 — 날짜 넘어간 직후에도 어긋난 곳 없음.
+- 그대로 보이는 것(이미 고쳐 둠, 배포 대기): 예시 “Hate eating alone — lunch at Crossroads? · 7:20 AM”(시드 제목은 “grab a bite”), 헬스장 “0% · Quiet”(새벽 1시 — 73~75회차 운영 시간 작업이 배포되면 “Closed · Opens 8 AM”).
+
 ## 2026-10-18 07:20 UTC (버클리 일 00:20) · 75회차 · 초점: /gym 화면에 운영 시간
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - /api/gym/now 는 이미 views() 전체를 보내서 open·hours 가 따라옴 → 화면만 (GymPage.tsx 한 파일): 닫힌 시간엔 태그 “Closed”(Quiet 대신), 갱신 줄 앞에 “Today 8 AM–11 PM”(휴관일은 “Closed today”). 운영 시간 출처 없는 CMS 는 그대로.
