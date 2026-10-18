@@ -150,7 +150,7 @@ export function DiningPage() {
                   {!loc.about && !loc.meals.some((m) => m.stations.length) && <div className="card px-4 py-4 text-[13px] text-ink-3">No menu posted for this {isToday ? 'day' : 'day yet'}.</div>}
                   {stations.map((s) => (
                     <div key={s.name} className="card overflow-hidden">
-                      <h3 className="px-4 pt-3 pb-1 text-[12px] font-bold uppercase tracking-wide text-ink-3">{s.name}</h3>
+                      <h3 className="px-4 pt-3 pb-1 text-[12px] font-bold uppercase tracking-wide text-ink-3">{s.name.replace(/_/g, ' ')}</h3>
                       <ul className="divide-y divide-line">
                         {s.dishes.map((d) => {
                           const fav = favKeys.has(dishKey(d.name));
