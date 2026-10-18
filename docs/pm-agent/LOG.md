@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-18 12:20 UTC (버클리 일 05:20) · 80회차 · 초점: 인턴십 지역 필터
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- Internships ?region=Bay Area / Remote 를 확인. Bay Area(SF·Emeryville·Mountain View·San Mateo)는 맞음, 회사가 겹쳐 보이는 건 서로 다른 직무라 정상.
+- 고침: Remote 에 “Perplexity · Berlin · Remote”, “Belgrade · Remote” — 그 나라 원격이라 버클리 학생은 못 하는 자리. → ‘Remote’ 는 원격만 적혀 있거나, 같이 적힌 곳이 미국(지역 규칙·US/USA/United States·“, CA” 같은 주 약자)일 때만 (packages/core/src/lib/listings.ts regionsOf). 테스트 추가(server/categories.test.ts: Berlin·Belgrade·London 은 빠지고 Remote/US·Foster City·New York·Denver, CO·Portland, United States 는 남음, 고치기 전 실패/후 통과). Remote 12 → 10개.
+- 검증: tsc, 서버 타입체크, npm test 204 통과, 로컬 v2·classic 확인.
+
 ## 2026-10-18 11:20 UTC (버클리 일 04:20) · 79회차 · 초점: 공고 상세(인턴십)
 - 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 시간 한도로 꺼져 다시 켬)
 - Internships 목록 → Coinbase “User Research Intern” 상세를 v2·classic 로 봄 (저장·지원 버튼은 안 누름). 위치·분야·마감(“Not posted — companies usually close once roles fill”)·공식 출처·확인 날짜 이상 없음.
