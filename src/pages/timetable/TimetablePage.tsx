@@ -158,11 +158,12 @@ export function TimetablePage() {
           </div>
         )}
 
-        {me.timetable.length > 0 && myFree.filter((b) => b.end > nowMin()).length > 0 && (
+        {/* 지난 시간은 잘라서 — 저녁 6시에 “09:00–21:00” 이 아니라 “18:30–21:00” (아래 친구 카드와 같은 기준) */}
+        {me.timetable.length > 0 && ahead(myFree).length > 0 && (
           <div className="card p-3.5">
             <b className="text-[13px]">{t('오늘 공강에 끼워 넣을 수 있는 것')}</b>
             <div className="mt-2 space-y-1.5">
-              {myFree.filter((b) => b.end > nowMin()).slice(0, 3).map((b) => { const sg = slotSuggestions({ ...v.snap, organizations: orgs }, me, v.visibleActivities, b, today, (u) => v.canSeeField(u, 'timetable')); return (
+              {ahead(myFree).slice(0, 3).map((b) => { const sg = slotSuggestions({ ...v.snap, organizations: orgs }, me, v.visibleActivities, b, today, (u) => v.canSeeField(u, 'timetable')); return (
                 <button key={b.start} onClick={() => setSlot({ day: today, block: b })} className="w-full flex items-center gap-3 rounded-xl bg-surface-2 px-3 py-2.5 text-left press">
                   <span className="text-[12px] font-bold text-mint tabular-nums">{fmtBlock(b)}</span>
                   <span className="flex-1 text-[12px] text-ink-2 truncate">{lang === 'en' ? `${sg.people.length} free · ${sg.acts.length} nearby` : `시간 맞는 사람 ${sg.people.length}명 · 근처 활동 ${sg.acts.length}개`}</span>
