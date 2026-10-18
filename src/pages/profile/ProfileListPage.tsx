@@ -2,7 +2,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { t } from '@core/i18n';
 import { Heart } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
-import { Avatar, EmptyState, VerifiedBadge } from '@/components/ui';
+import { Avatar, EmptyState, SampleTag, VerifiedBadge } from '@/components/ui';
 import { affiliationText } from '@/components/cards/PersonCard';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
@@ -28,7 +28,7 @@ export function ProfileListPage() {
               const u = v.userById(id); const o = orgs.find((x) => x.id === id);
               if (o) return <button key={id} onClick={() => nav(`/orgs/${id}`)} className="w-full flex items-center gap-3 px-3.5 py-3 text-left press"><Avatar emoji={o.logo.emoji} hue={o.logo.hue} url={o.logo.url} size={40} className="!rounded-xl" /><div className="flex-1"><b className="text-[14px]">{o.name}</b><div className="text-[12px] text-ink-3">{t('조직')}</div></div></button>;
               if (!u) return null;
-              return <button key={id} onClick={() => nav(`/users/${id}`)} className="w-full flex items-center gap-3 px-3.5 py-3 text-left press"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={40} /><div className="flex-1 min-w-0"><b className="text-[14px] flex items-center gap-1">{u.nickname}{u.affiliation.type === 'university' && u.affiliation.emailVerified && <VerifiedBadge />}</b><div className="text-[12px] text-ink-3 truncate">{affiliationText(u)}</div></div>{list === 'likes' && v.isMutual(id) && <span className="text-[11px] font-bold text-heart">{t('매칭')}</span>}</button>;
+              return <button key={id} onClick={() => nav(`/users/${id}`)} className="w-full flex items-center gap-3 px-3.5 py-3 text-left press"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={40} /><div className="flex-1 min-w-0"><b className="text-[14px] flex items-center gap-1">{u.sample && <SampleTag />}{u.nickname}{u.affiliation.type === 'university' && u.affiliation.emailVerified && <VerifiedBadge />}</b><div className="text-[12px] text-ink-3 truncate">{affiliationText(u)}</div></div>{list === 'likes' && v.isMutual(id) && <span className="text-[11px] font-bold text-heart">{t('매칭')}</span>}</button>;
             })}
           </div>
         )}
