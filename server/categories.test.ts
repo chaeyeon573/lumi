@@ -8,7 +8,7 @@ import assert from 'node:assert/strict';
 import type { Snapshot } from '@core/api/types';
 import type { Opportunity, Organization } from '@core/types';
 import * as seed from '@core/data/seed.en';
-import { categoriesOf, eventKindsOf, inCategory, isOfType, listingsOfOrg, orgLinker, orgOfListing, regionsOf } from '@core/lib/listings';
+import { categoriesOf, eventKindsOf, inCategory, isOfType, listingsOfOrg, orgLinker, orgOfListing, regionsOf, fieldOf } from '@core/lib/listings';
 import { coursesFromCatalog, clashesWith, hasCatalogCourse } from '@core/lib/timetable';
 import { forYou } from '@core/lib/foryou';
 import { recommendFor, searchListings } from './ai-search';
@@ -147,4 +147,20 @@ test('internship region "Remote" — only remote a US student can take (not "Ber
   assert.deepEqual(r('Belgrade · Remote'), []);
   assert.deepEqual(r('London, UK', true), []);
   assert.deepEqual(r('San Francisco, CA', true), ['Bay Area', 'Remote']);
+});
+
+test('internship field: aerospace roles are Hardware, user/UX research is Product & Design', () => {
+  assert.equal(fieldOf('2027 Flight Test Engineer Intern'), 'Hardware');
+  assert.equal(fieldOf('Propulsion Engineering Intern'), 'Hardware');
+  assert.equal(fieldOf('Avionics Software Intern'), 'Hardware');
+  assert.equal(fieldOf('User Research Intern'), 'Product & Design');
+  assert.equal(fieldOf('UX Research Intern'), 'Product & Design');
+  assert.equal(fieldOf('Software Engineer, Internship - Production Infrastructure'), 'Software');
+  assert.equal(fieldOf('Campus UI Software Engineer (Intern)'), 'Software');
+  assert.equal(fieldOf('[Summer 2027] Product Management Intern'), 'Product & Design');
+  assert.equal(fieldOf('2027 Product Designer Intern'), 'Product & Design');
+  // 그대로인 것
+  assert.equal(fieldOf('Software Engineer Intern (Summer 2027)'), 'Software');
+  assert.equal(fieldOf('Internship - Machine Learning Research Engineer'), 'Data & AI');
+  assert.equal(fieldOf('Research Engineer Co-op'), 'Research & Science');
 });
