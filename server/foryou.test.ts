@@ -127,3 +127,16 @@ test('a passed deadline reads "Closed", not "Full" (that word is for a full meet
   const { dday } = await import('@core/lib/recommend');
   assert.equal(dday('2020-01-01T07:59:00.000Z'), 'Closed');
 });
+
+test("another department's award sinks below general ones for a CS student", () => {
+  const items = [
+    opp('psy', 'scholarship', 'Swan Award for Undergraduate Research (Psychology)', { host: 'UC Berkeley Department of Psychology', tags: ['research', 'scholarship'], deadline: '2026-10-30T06:59:00Z' }),
+    opp('gw', 'scholarship', 'Barry Goldwater Scholarship', { host: 'Goldwater Foundation', tags: ['research', 'scholarship', 'STEM'], deadline: '2026-12-01T06:59:00Z' }),
+    opp('mmuf', 'scholarship', 'Mellon Mays Undergraduate Fellowship', { host: 'UC Berkeley Division of Arts & Humanities', tags: ['research', 'scholarship'], deadline: '2026-12-01T06:59:00Z' }),
+    opp('eecs', 'scholarship', 'EECS Undergraduate Research Award', { host: 'UC Berkeley Department of Electrical Engineering and Computer Sciences', tags: ['research', 'scholarship'], deadline: '2026-12-01T06:59:00Z' }),
+  ];
+  const cs = forYou(snap(items), person('Computer Science', { goals: ['scholarship'] }), { now: NOW, types: ['scholarship'], mix: false }).map((r) => r.id);
+  assert.ok(cs.indexOf('psy') > cs.indexOf('gw') && cs.indexOf('mmuf') > cs.indexOf('gw'), cs.join(','));
+  const psych = forYou(snap(items), person('Psychology', { goals: ['scholarship'] }), { now: NOW, types: ['scholarship'], mix: false }).map((r) => r.id);
+  assert.equal(psych[0], 'psy', 'a psych major still gets it first');
+});

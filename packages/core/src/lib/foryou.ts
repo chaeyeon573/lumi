@@ -310,6 +310,15 @@ function scoreListing(c: Ctx, o: Opportunity): Scored | null {
     s = m.score + base.sim * 3; why = [...m.reasons, ...base.reasons.filter((r) => r.kind === 'major').map((r) => ({ ...r, w: r.w * 0.2 }))];
   } else { s = base.sim * 10; why = [...base.reasons]; }
   s += typeBoost(c, o.type);
+  // 다른 학과·학부가 주는 상·장학금(“Department of Psychology”, “Division of Arts & Humanities”)은 내 전공과 단어가 하나도 안 겹치면 아래로 — 숨기진 않는다(전공 무관인 것도 있다)
+  const dept = /\b(?:Department|Division) of ([A-Za-z ,&]+)/i.exec(o.host)?.[1];
+  const myDept = me.affiliation.type === 'university' ? me.affiliation.department ?? '' : '';
+  if (dept && myDept) {
+    const words = (x: string) => x.toLowerCase().split(/[^a-z]+/).filter((w) => w.length > 3 && !['and', 'with'].includes(w)).map((w) => w.slice(0, 6));
+    const mine = new Set(words(myDept));
+    if (!words(dept).some((w) => mine.has(w))) s -= 3;
+    else { s += 1.5; why.push({ kind: 'major', w: 1.5, text: say('From your department', '내 학과') }); }
+  }
   if (aud === 'grad') { s += 1; why.push({ kind: 'grad', w: 1, text: say('For grad students', '대학원생 대상') }); }
   if (o.deadline) {
     const d = daysTo(o.deadline, now);
