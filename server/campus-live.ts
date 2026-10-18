@@ -100,7 +100,7 @@ export async function startCampusLive(app: Express, deps: CampusLiveDeps) {
     const d = dSrc ? dining.now(schoolId, id) : null;
     return {
       dining: dSrc ? { available: !!d, ...(d ?? {}), attribution: dSrc.attribution } : null,
-      gym: gSrc ? { spaces: gym.views(schoolId).map((v) => ({ id: v.id, name: v.name, status: v.status, percent: v.percent, updatedAt: v.updatedAt })), attribution: gSrc.attribution } : null,
+      gym: gSrc ? { spaces: gym.views(schoolId).map((v) => ({ id: v.id, name: v.name, status: v.status, percent: v.percent, updatedAt: v.updatedAt, open: v.open, hours: v.hours })), attribution: gSrc.attribution } : null,
     };
   }));
 

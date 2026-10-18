@@ -20,6 +20,9 @@ export function LiveCards({ className }: { className?: string }) {
   const d = now.dining; const g = now.gym;
   const gymMain = g?.spaces.find((s) => /rsf|weight/i.test(s.name)) ?? g?.spaces[0];
   const live = gymMain?.status === 'live' && gymMain.percent != null;
+  // 운영 시간을 알 때 문 닫은 시간이면 0% 를 ‘Quiet’ 로 보이지 않는다 — “Closed · opens 8 AM” / “Closed for today”
+  const closed = gymMain?.open === false;
+  const opensAt = closed && gymMain?.hours && Date.now() < Date.parse(gymMain.hours.open) ? new Date(gymMain.hours.open).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/Los_Angeles' }).replace(':00', '') : null;
   return (
     <div className={cn('grid grid-cols-2 gap-2.5', className)}>
       {d && (
@@ -41,8 +44,9 @@ export function LiveCards({ className }: { className?: string }) {
           {gymMain ? (
             <>
               <span className="mt-1 text-[12px] text-ink-2 truncate">{gymMain.name}</span>
-              {live ? <span className="font-display text-[30px] font-bold leading-none mt-1 tabular-nums">{gymMain.percent}%</span> : <span className="mt-1 text-[14px] font-bold text-ink-3">Unavailable</span>}
-              <span className="mt-auto pt-1.5 text-[12px] text-ink-3">{live ? `${CROWD_LABELS[crowdLevel(gymMain.percent!)]} · ${agoLabel(gymMain.updatedAt)}` : 'Live count not readable now'}</span>
+              {closed ? <span className="font-display text-[24px] font-bold leading-none mt-1.5">Closed</span>
+                : live ? <span className="font-display text-[30px] font-bold leading-none mt-1 tabular-nums">{gymMain.percent}%</span> : <span className="mt-1 text-[14px] font-bold text-ink-3">Unavailable</span>}
+              <span className="mt-auto pt-1.5 text-[12px] text-ink-3">{closed ? (opensAt ? `Opens ${opensAt}` : 'Closed for today') : live ? `${CROWD_LABELS[crowdLevel(gymMain.percent!)]} · ${agoLabel(gymMain.updatedAt)}` : 'Live count not readable now'}</span>
             </>
           ) : <span className="mt-2 text-[13px] text-ink-3">Crowd meter unavailable</span>}
         </button>

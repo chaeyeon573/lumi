@@ -38,7 +38,7 @@ export type GymAlertView = Omit<GymAlert, 'userId'>;
 export interface GymResponse { supported: boolean; spaces: GymSpaceView[]; alerts: GymAlertView[]; source?: { label: string; url: string; attribution: string } }
 export interface CampusNow {
   dining: (Partial<DiningNow> & { available: boolean; attribution: string }) | null;
-  gym: { spaces: Pick<GymSpaceView, 'id' | 'name' | 'status' | 'percent' | 'updatedAt'>[]; attribution: string } | null;
+  gym: { spaces: Pick<GymSpaceView, 'id' | 'name' | 'status' | 'percent' | 'updatedAt' | 'open' | 'hours'>[]; attribution: string } | null;
 }
 
 export const campusLive = {
