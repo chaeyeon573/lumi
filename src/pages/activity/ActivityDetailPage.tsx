@@ -151,7 +151,7 @@ function PersonPill({ id, label }: { id: string; label?: string }) {
   if (!u) return null;
   return (
     <button onClick={() => nav(`/users/${id}`)} className="flex items-center gap-1.5 rounded-full bg-surface-2 pl-1 pr-3 h-8 text-[12px] font-semibold press">
-      <Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={24} />{u.nickname}{label && <span className="text-primary">{label}</span>}
+      <Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={24} />{u.sample && <SampleTag className="h-4 mr-0 px-1 text-[9px]" />}{u.nickname}{label && <span className="text-primary">{label}</span>}
     </button>
   );
 }

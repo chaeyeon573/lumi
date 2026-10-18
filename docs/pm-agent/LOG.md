@@ -2,6 +2,14 @@
 
 최신이 위.
 
+## 2026-10-18 22:20 UTC (버클리 일 15:20) · 90회차 · 초점: 사람 목록의 예시 표시(89회차 이어서)
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- PRODUCT_TASTE “예시 프로필은 sample 표시를 단다” 기준으로, 사람 이름이 나오는데 sample 확인이 없는 화면을 찾음.
+- 고침 ①: 활동 상세의 참가자 칩(“Ethan host · Maya”)과 참가자 관리 화면(대기 요청·참가자)에 SAMPLE 표시 (ActivityDetailPage.tsx·ManageActivityPage.tsx).
+- 고침 ②: 참가자 관리 맨 위 요약이 “Approve 1 / cap 4 · pending 1” — 버튼 말(Approve)을 상태로 씀 → “Approved 1 / cap 4” / “승인됨 1 / 모집 4” (ManageActivityPage.tsx, en.ts 한 줄).
+- 남은 후보(다음): 시간표의 ‘공강 겹치는 친구’, 동아리 회원 목록, 검색 결과.
+- 검증: tsc, npm test 209 통과, 로컬 v2·classic·한국어 확인.
+
 ## 2026-10-18 21:20 UTC (버클리 일 14:20) · 89회차 · 초점: 프로필 › 친구 목록
 - 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 다시 켬)
 - /profile/friends(친구 3명)를 v2·classic 로 봄.
