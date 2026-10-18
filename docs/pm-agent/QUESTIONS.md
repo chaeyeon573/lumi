@@ -2,6 +2,10 @@
 
 사장님께 결정을 받아야 하는 것. 최신이 위. 답은 각 항목 아래에 `**답:** …` 으로 적어 주시면 다음 실행이 따른다.
 
+## 2026-10-18 · Teams — 다른 지역 대면 해커톤
+**무엇이 어색한가:** Discover › Teams 의 해커톤 3칸(마감 가까운 순)에 버클리 학생이 갈 수 없는 대면 해커톤이 섞인다 — 오늘 기준 “ZotHacks 2026 · UC Irvine – Student Center”, “InnovateLA x Dual-Use Hackathon · USC” (둘 다 D-Day). Teams 는 ‘같이 나갈 사람 찾기’ 자리라, 6시간 거리 대면 행사는 팀을 꾸릴 일이 거의 없다.
+**제안:** A) Teams 3칸은 온라인 + 베이 지역 대면만, 나머지는 “모두 보기”(Campus › 해커톤)에 그대로. B) 지역 표시만 더 눈에 띄게(“In person · Irvine”). C) 그대로.  — 추천: A.
+
 ## 2026-10-18 · (사장님 손이 필요한 일) 데모 계정에 남은 테스트 신고
 **무엇이 어색한가:** 공용 버클리 데모 계정(Alex)의 설정 › Account & safety › My reports 에 “Post · Other — TEST report filed by Claude to verify the alert e-mail; please dismiss · reviewed” 가 보인다. 신고 알림 메일을 시험하려고 넣은 것으로 보이는데, 데모를 둘러보는 모든 사람이 이 줄을 본다.
 **제안:** 관리자 화면(또는 DB)에서 이 신고 한 건을 지워 주세요. PM agent 는 라이브 DB·관리자 API 를 건드리지 않는 규칙이라 직접 못 지운다.
