@@ -9,11 +9,13 @@ export const FIELDS = ['Software', 'Data & AI', 'Hardware', 'Quant & Trading', '
 export type Field = typeof FIELDS[number];
 
 const FIELD_RULES: [Field, RegExp][] = [
+  // 사용자 리서치는 연구가 아니라 제품 쪽 — ‘research’ 규칙보다 먼저
+  ['Product & Design', /user research|ux research|design research/i],
   ['Quant & Trading', /\bquant|trading|trader\b/i],
   ['Data & AI', /\bdata\b|machine learning|\bml\b|\bai\b|analytics|data scien|\bnlp\b|computer vision|deep learning/i],
-  ['Hardware', /hardware|electrical|mechanical|fpga|robotic|firmware|embedded|asic|silicon|manufacturing/i],
+  ['Hardware', /hardware|electrical|mechanical|fpga|robotic|firmware|embedded|asic|silicon|manufacturing|aerospace|flight|propulsion|avionics|spacecraft/i],
   ['Research & Science', /research|scientist|biolog|chemi|\blab\b|clinical|bioinformatic|genomic/i],
-  ['Product & Design', /product|design|\bux\b|\bui\b/i],
+  ['Product & Design', /\bproducts?\b|design|\bux\b/i], // “Production Infrastructure”·“UI Software Engineer” 는 개발
   ['Finance & Consulting', /financ|investment|summer analyst|consult|accounting|banking|economic|strategy|portfolio|capital markets|restructuring|\brisk\b|credit|brokerage|treasury|tax\b/i],
   ['Business & Marketing', /marketing|sales|business|operations|growth|communication|partnership|people|recruit|legal|policy|content|editorial|journalis|social media|vendor|special projects|programs?\b|workplace|employee|learning & development|alumni|events?\b/i],
   ['Software', /software|\bswe\b|engineer|developer|frontend|front-end|backend|back-end|full.?stack|mobile|ios|android|infrastructure|platform|security|devops|\bsre\b/i],

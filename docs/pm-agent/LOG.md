@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-18 13:20 UTC (버클리 일 06:20) · 81회차 · 초점: 인턴십 분야 필터
+- 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 시간 한도로 꺼져 다시 켬)
+- 분야별 목록을 훑음. 잘못 분류된 것: “Flight Test Engineer Intern”(Anduril) → Software, “User Research Intern”(Coinbase) → Research & Science, “Software Engineer – Production Infrastructure”(Palantir) → Product & Design(‘Production’ 안의 product), “Campus UI Software Engineer”(Jump) → Product & Design(‘UI’).
+- 고침 (packages/core/src/lib/listings.ts FIELD_RULES): 항공·비행(aerospace·flight·propulsion·avionics·spacecraft)은 Hardware, user/UX/design research 는 Product & Design(연구 규칙보다 먼저), Product 는 단어 그대로(“product(s)”)만, ‘UI’ 단독 규칙 뺌. 테스트(server/categories.test.ts) 추가, 고치기 전 실패/후 통과.
+- 반영 시점: 분야는 서버가 공고를 모을 때마다(server/sources/external.ts) 새로 계산해 넣으므로 배포 뒤 첫 수집부터 화면에 반영. 로컬(라이브 데이터)에선 아직 옛 분야.
+- 검증: tsc, npm test 205 통과.
+
 ## 2026-10-18 12:20 UTC (버클리 일 05:20) · 80회차 · 초점: 인턴십 지역 필터
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - Internships ?region=Bay Area / Remote 를 확인. Bay Area(SF·Emeryville·Mountain View·San Mateo)는 맞음, 회사가 겹쳐 보이는 건 서로 다른 직무라 정상.
