@@ -8,7 +8,7 @@ import assert from 'node:assert/strict';
 import type { Snapshot } from '@core/api/types';
 import type { Opportunity, Organization } from '@core/types';
 import * as seed from '@core/data/seed.en';
-import { categoriesOf, eventKindsOf, inCategory, isOfType, listingsOfOrg, orgLinker, orgOfListing } from '@core/lib/listings';
+import { categoriesOf, eventKindsOf, inCategory, isOfType, listingsOfOrg, orgLinker, orgOfListing, regionsOf } from '@core/lib/listings';
 import { coursesFromCatalog, clashesWith, hasCatalogCourse } from '@core/lib/timetable';
 import { forYou } from '@core/lib/foryou';
 import { recommendFor, searchListings } from './ai-search';
@@ -133,4 +133,18 @@ test('"free food today" finds events later today (ISO times compared as campus d
   const late = opp('late', 'event', 'Late talk', ['event', 'free food'], { schoolId: SCHOOL, date: '2026-10-16T04:30:00.000Z', startTime: '21:30' }); // 같은 날 PT 밤
   const ids = searchListings(db([food, late]), me, '2026-10-15', { free_food: true, from: '2026-10-15', to: '2026-10-15' }).map((r) => r.card.id).sort();
   assert.deepEqual(ids, ['food', 'late']);
+});
+
+test('internship region "Remote" — only remote a US student can take (not "Berlin · Remote")', () => {
+  const r = (location: string, remote = false) => regionsOf({ location, remote, description: '', type: 'internship' } as Opportunity);
+  assert.deepEqual(r('Remote'), ['Remote']);
+  assert.deepEqual(r('Remote, US'), ['Remote']);
+  assert.deepEqual(r('Foster City, CA · Remote'), ['Bay Area', 'Remote']);
+  assert.deepEqual(r('New York, NY (HQ) · Remote'), ['New York', 'Remote']);
+  assert.deepEqual(r('Denver, CO · Remote'), ['Remote']);
+  assert.deepEqual(r('Remote · Portland, United States'), ['Remote']);
+  assert.deepEqual(r('Berlin · Remote'), []);
+  assert.deepEqual(r('Belgrade · Remote'), []);
+  assert.deepEqual(r('London, UK', true), []);
+  assert.deepEqual(r('San Francisco, CA', true), ['Bay Area', 'Remote']);
 });

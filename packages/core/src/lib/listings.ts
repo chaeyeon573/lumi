@@ -36,11 +36,18 @@ const REGION_RULES: [Region, RegExp][] = [
   ['Texas', /austin|dallas|houston|texas|, tx\b/i],
   ['Remote', /remote/i],
 ];
+// 미국 안이라는 표시 — “Remote, US”, “Denver, CO”, “United States”
+const US_WORD = /\b(us|usa|u\.s\.|united states)\b/i;
+const US_STATE = /,\s*(AL|AK|AZ|AR|CA|CO|CT|DE|DC|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY)\b/;
 export const regionsOf = (o: Pick<Opportunity, 'location' | 'remote' | 'description' | 'type'>): Region[] => {
   const loc = locationOf(o);
   const out = REGION_RULES.filter(([, re]) => re.test(loc)).map(([r]) => r);
   if (o.remote && !out.includes('Remote')) out.push('Remote');
-  return out;
+  // ‘Remote’ 는 미국에서 할 수 있는 것만 — “Berlin · Remote” 는 그 나라 원격이라 버클리 학생에겐 아니다.
+  // 원격 말고 다른 곳이 적혀 있으면 그곳이 미국(지역 규칙·US 표시)일 때만
+  const others = loc.split(/[·;|]|\s-\s/).map((x) => x.trim()).filter((x) => x && !/^remote\b/i.test(x));
+  const usOk = !others.length || out.some((r) => r !== 'Remote') || others.some((x) => US_WORD.test(x) || US_STATE.test(x));
+  return usOk ? out : out.filter((r) => r !== 'Remote');
 };
 
 /** 근무지 — 예전 수집분은 설명 첫 줄에 들어 있었다 */
