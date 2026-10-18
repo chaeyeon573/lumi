@@ -2,6 +2,15 @@
 
 최신이 위.
 
+## 2026-10-18 05:20 UTC (버클리 토 22:20) · 73회차 · 초점: RSF 운영 시간 붙이기 ①(서버)
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- 72회차에 찾은 공식 출처(events.berkeley.edu LiveWhale JSON, “Building Hours - RSF”)를 서버에 붙임. 화면까지 한 번에 하면 5파일이라 둘로 나눔(README: 작은 수정 1~3파일).
+  - server/gym.ts: parseBuildingHours + fetchRsfHours, 6시간 캐시(실패 시 30분 뒤 재시도, 못 받아도 혼잡도는 그대로), views() 가 RSF 공간에 hours·open 을 붙임. 받아 둔 기간 안인데 그날 항목이 없으면 휴관(open=false), 출처 없는 공간(CMS)은 모름(undefined).
+  - packages/core/src/lib/gym.ts: GymSpaceView 에 hours·open. alertDue — 문 닫은 시간엔 “지금 한산해요(0%)” 알림을 안 보냄(지금은 사용자가 고른 시간대면 닫힌 시간에도 0% 로 울릴 수 있었다).
+  - 테스트(gym.test.ts): JSON 파싱, 토 19:18 닫힘·알림 없음, 일 10:00 열림, 목록 안 빠진 날=휴관, 캐시. 기존 서비스 테스트는 네트워크를 안 타게 hours 를 끔.
+- 다음(②): /api/campus/live 응답·client 타입에 open·hours 를 싣고 Discover 카드에 “Closed · opens 8 AM”.
+- 검증: 서버 타입체크, tsc, npm test 203 통과. 화면 변화 없음(서버만).
+
 ## 2026-10-18 04:20 UTC (버클리 토 21:20) · 72회차 · 초점: (조사만) RSF 운영 시간 출처
 - 질문 새 답 없음, 배포 브랜치 변화 없음. 코드 변경 없음.
 - 지금 쓰는 Density 데이터(server/sources/density)에는 운영 시간이 없다(time_zone 뿐).

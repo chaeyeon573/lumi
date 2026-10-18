@@ -13,7 +13,7 @@ import { fileURLToPath } from 'node:url';
 import { parseCrowdMeterPage, parseDensityDisplay, DensityError, type DensityDisplay } from './sources/density';
 import { percentOf, crowdLevel, isFresh, gymView, usualByHour, alertDue, normalizeAlert, type GymAlert, type GymDayDoc } from '@core/lib/gym';
 import { addDaysISO, campusClock } from '@core/lib/campusclock';
-import { addSample, backoffMinutes, createGym, GYM_SOURCES } from './gym';
+import { addSample, backoffMinutes, createGym, GYM_SOURCES, parseBuildingHours } from './gym';
 import { gymAnswer } from './ai-live';
 import { FileStore } from './store';
 
@@ -107,7 +107,7 @@ test('service: one request per space per poll, records, re-reads the page on 403
   const store = new FileStore(file); await store.init();
   const real = GYM_SOURCES.s_berkeley;
   let discovers = 0; const reads: string[] = []; let count = 20; let fail403 = false;
-  GYM_SOURCES.s_berkeley = { ...real, discover: async () => { discovers++; return [{ displayId: RSF, token: `shr_T${discovers}`, title: 'Weightroom' }, { displayId: CMS, token: `shr_T${discovers}` }]; },
+  GYM_SOURCES.s_berkeley = { ...real, hours: undefined, discover: async () => { discovers++; return [{ displayId: RSF, token: `shr_T${discovers}`, title: 'Weightroom' }, { displayId: CMS, token: `shr_T${discovers}` }]; },
     read: async (d: DensityDisplay) => { reads.push(`${d.displayId}:${d.token}`); if (fail403 && d.displayId === RSF) throw new DensityError(403, 'density → HTTP 403'); return parseDensityDisplay({ ...json(d.displayId), dedicated_space: { ...json(d.displayId).dedicated_space, current_count: count } }, d.displayId); } };
   try {
     // 화요일 18:00 PT
@@ -164,4 +164,47 @@ test('Ask Lumi gym_crowd: numbers only when live', () => {
   assert.match(JSON.stringify(r.results[0]), /Not enough history yet/);
   assert.equal(gymAnswer([{ ...base, id: RSF, name: 'RSF Weight Rooms', status: 'live', count: 45, percent: 30 }, { ...base, id: CMS, name: 'CMS Fitness Center', status: 'live', count: 5, percent: 9 }], 'rsf', '', nowMs).results.length, 1);
   assert.match(gymAnswer([], undefined, '', nowMs).note ?? '', /never guess/);
+});
+
+test('RSF hours: parsed from the events calendar JSON; closed → no "quiet" at 0% and no crowd alert', async () => {
+  const feed = { data: [
+    { title: 'Building Hours - RSF', date_iso: '2026-10-17T08:00:00-07:00', date2_iso: '2026-10-17T18:00:00-07:00' },
+    { title: 'Building Hours - RSF', date_iso: '2026-10-18T08:00:00-07:00', date2_iso: '2026-10-18T23:00:00-07:00' },
+    { title: 'Building Hours - RSF', date_iso: '2026-10-20T07:00:00-07:00', date2_iso: '2026-10-20T23:00:00-07:00' },
+    { title: 'Lap Swim', date_iso: '2026-10-18T09:00:00-07:00', date2_iso: '2026-10-18T10:00:00-07:00' },
+  ] };
+  const days = parseBuildingHours(feed);
+  assert.deepEqual(days.map((d) => d.date), ['2026-10-17', '2026-10-18', '2026-10-20']);
+  assert.deepEqual(parseBuildingHours({ nope: 1 }), []);
+
+  const file = path.join(mkdtempSync(path.join(os.tmpdir(), 'lumi-gym-')), 'db.json');
+  const store = new FileStore(file); await store.init();
+  const real = GYM_SOURCES.s_berkeley;
+  let hourFetches = 0;
+  GYM_SOURCES.s_berkeley = { ...real, hours: async () => { hourFetches++; return days; },
+    discover: async () => [{ displayId: RSF, token: 'shr_T', title: 'Weightroom' }, { displayId: CMS, token: 'shr_T' }],
+    read: async (d: DensityDisplay) => parseDensityDisplay({ ...json(d.displayId), dedicated_space: { ...json(d.displayId).dedicated_space, current_count: 0 } }, d.displayId) };
+  try {
+    // 토요일 19:18 PT — RSF 는 18시에 닫았다
+    let now = new Date('2026-10-18T02:18:00Z');
+    const sent: unknown[] = [];
+    const gym = createGym({ store, notify: (n) => sent.push(...n), userExists: () => true, now: () => now });
+    await gym.load();
+    await gym.setAlert('u1', 's_berkeley', { displayId: RSF, below: 30, days: [6], start: '17:00', end: '22:00' });
+    await gym.poll(); await gym.poll();
+    assert.equal(hourFetches, 1, 'hours are cached (6 h), not fetched every poll');
+    const rsf = () => gym.views('s_berkeley').find((x) => x.id === RSF)!;
+    assert.equal(rsf().open, false);
+    assert.equal(rsf().hours?.close, '2026-10-17T18:00:00-07:00');
+    assert.equal(gym.views('s_berkeley').find((x) => x.id === CMS)!.open, undefined, 'no hours source for this space → unknown, not closed');
+    assert.equal(sent.length, 0, 'no "quiet now" alert while closed');
+    // 일요일 10:00 PT — 열림
+    now = new Date('2026-10-18T17:00:00Z');
+    await gym.poll();
+    assert.equal(rsf().open, true);
+    // 월요일(목록 안인데 항목 없음) → 휴관
+    now = new Date('2026-10-19T17:00:00Z');
+    await gym.poll();
+    assert.equal(rsf().open, false); assert.equal(rsf().hours, null);
+  } finally { GYM_SOURCES.s_berkeley = real; }
 });

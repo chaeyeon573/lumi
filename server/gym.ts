@@ -21,9 +21,30 @@ import { RECWELL_CROWD_PAGE, DensityError, fetchCrowdMeterPage, fetchDensityDisp
 export const GYM_DAYS = 'gymDays';
 export const GYM_ALERTS = 'gymAlerts';
 
-export interface GymSource { page: string; label: string; attribution: string; discover(): Promise<DensityDisplay[]>; read(d: DensityDisplay): Promise<DensityReading> }
+export interface GymSource {
+  page: string; label: string; attribution: string; discover(): Promise<DensityDisplay[]>; read(d: DensityDisplay): Promise<DensityReading>;
+  /** 공식 운영 시간 (있는 학교만) — 이름이 hoursFor 에 맞는 공간에 붙인다 */
+  hours?(): Promise<BuildingDay[]>; hoursFor?: RegExp;
+}
+
+// ─── 운영 시간 ─────────────────────────────────────────────────────────────
+// RecWell 의 “RSF Hours” 페이지가 그리는 Berkeley 이벤트 캘린더(LiveWhale)의 JSON — 하루 한 건 “Building Hours - RSF”
+export const RSF_HOURS_URL = 'https://events.berkeley.edu/live/json/events/tag/RSF';
+export interface BuildingDay { date: string; open: string; close: string }
+export function parseBuildingHours(json: unknown, title = /^Building Hours\b/i): BuildingDay[] {
+  const data = (json as { data?: { title?: string; date_iso?: string; date2_iso?: string }[] })?.data;
+  if (!Array.isArray(data)) return [];
+  return data.filter((e) => title.test(e.title ?? '') && e.date_iso && e.date2_iso && !Number.isNaN(Date.parse(e.date_iso)) && !Number.isNaN(Date.parse(e.date2_iso)))
+    .map((e) => ({ date: e.date_iso!.slice(0, 10), open: e.date_iso!, close: e.date2_iso! }));
+}
+async function fetchRsfHours(): Promise<BuildingDay[]> {
+  const res = await fetch(RSF_HOURS_URL, { headers: { 'user-agent': 'Mozilla/5.0 (Lumi campus app)' }, signal: AbortSignal.timeout(20_000) });
+  if (!res.ok) throw new Error(`RSF hours → HTTP ${res.status}`);
+  return parseBuildingHours(await res.json());
+}
+
 export const GYM_SOURCES: Record<string, GymSource> = {
-  s_berkeley: { page: RECWELL_CROWD_PAGE, label: 'RecWell crowd meter', attribution: GYM_ATTRIBUTION, discover: () => fetchCrowdMeterPage(RECWELL_CROWD_PAGE), read: fetchDensityDisplay },
+  s_berkeley: { page: RECWELL_CROWD_PAGE, label: 'RecWell crowd meter', attribution: GYM_ATTRIBUTION, discover: () => fetchCrowdMeterPage(RECWELL_CROWD_PAGE), read: fetchDensityDisplay, hours: fetchRsfHours, hoursFor: /\brsf\b|weight room/i },
 };
 
 const DAILY_ALERT_CAP = 3;
@@ -50,7 +71,7 @@ export function gymAlertMessage(a: GymAlert, view: GymSpaceView): { title: strin
 }
 
 interface SpaceState { name: string; capacity: number; last?: { at: number; count: number }; fails: number; nextTryAt: number; lastError?: string }
-interface SchoolState { displays: DensityDisplay[]; scrapedAt: number; lastScrapeAttempt: number; needRescrape: boolean; spaces: Map<string, SpaceState>; order: string[]; lastError?: string }
+interface SchoolState { displays: DensityDisplay[]; scrapedAt: number; lastScrapeAttempt: number; needRescrape: boolean; spaces: Map<string, SpaceState>; order: string[]; lastError?: string; hours?: { at: number; days: BuildingDay[]; hoursFor?: RegExp }; hoursTriedAt?: number }
 
 export interface GymDeps { store: Store; notify(notes: Notification[]): void; userExists(id: ID): boolean; now?: () => Date }
 
@@ -91,6 +112,12 @@ export function createGym(deps: GymDeps) {
   async function pollSchool(schoolId: string, src: GymSource) {
     const s = st(schoolId);
     if (!s.displays.length || s.needRescrape || ms() - s.scrapedAt > 24 * 3_600_000) await discover(schoolId, src);
+    // 운영 시간은 6시간마다 (실패하면 30분 뒤 다시) — 못 받아도 혼잡도는 그대로 돈다
+    if (src.hours && (!s.hours || ms() - s.hours.at > 6 * 3_600_000) && ms() - (s.hoursTriedAt ?? 0) > 30 * 60_000) {
+      s.hoursTriedAt = ms();
+      try { const days = await src.hours(); if (days.length) s.hours = { at: ms(), days, hoursFor: src.hoursFor }; }
+      catch (e) { console.error(`[gym] ${schoolId} hours:`, (e as Error).message); }
+    }
     const n = now(); const clock = campusClock(n); const changed: GymDayDoc[] = [];
     for (const d of s.displays) {
       const sp = s.spaces.get(d.displayId) ?? { name: d.title ?? d.displayId, capacity: 0, fails: 0, nextTryAt: 0 };
@@ -126,8 +153,19 @@ export function createGym(deps: GymDeps) {
       const sp = s.spaces.get(id);
       if (!sp || !sp.capacity) return null;
       const hist = [...history.values()].filter((d) => d.displayId === id);
-      return gymView({ displayId: id, name: sp.name, capacity: sp.capacity, last: sp.last, history: hist, clock, nowMs: n.getTime(), hourOf });
+      const view = gymView({ displayId: id, name: sp.name, capacity: sp.capacity, last: sp.last, history: hist, clock, nowMs: n.getTime(), hourOf });
+      return { ...view, ...openState(s, sp.name, clock.date, n.getTime()) };
     }).filter((v): v is GymSpaceView => !!v);
+  }
+
+  /** 오늘 운영 시간과 지금 열었는지 — 받아 둔 기간 안의 날인데 항목이 없으면 휴관일 */
+  function openState(s: SchoolState, name: string, date: string, nowMs: number): Pick<GymSpaceView, 'hours' | 'open'> {
+    const h = s.hours; if (!h?.hoursFor?.test(name) || !h.days.length) return {};
+    const dates = h.days.map((d) => d.date).sort();
+    if (date < dates[0] || date > dates[dates.length - 1]) return {};
+    const today = h.days.find((d) => d.date === date);
+    if (!today) return { hours: null, open: false };
+    return { hours: { open: today.open, close: today.close }, open: nowMs >= Date.parse(today.open) && nowMs < Date.parse(today.close) };
   }
 
   async function runAlerts(schoolId: string) {
