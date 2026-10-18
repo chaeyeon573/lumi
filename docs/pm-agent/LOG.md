@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-18 15:20 UTC (버클리 일 08:20) · 83회차 · 초점: Events·Free food 탭 (+ 82회차 수정 점검)
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- Events(199개)·Free food(7개): 날짜·시간 “Tomorrow · 8 AM”, “Oct 21 · 4 PM” 이상 없음.
+- 고침(82회차 내 수정의 부작용): ‘For you’ 에서 “DOE SULI — U.S. Department of Energy Office of Science” 에 “From your department” — 연방 부처 이름의 ‘Science’ 가 Computer Science 와 겹쳐서. → 학과 규칙은 우리 학교 공고(schoolId 같음)에만, 흔한 말(science·studies·engineering·arts)은 비교에서 뺌 (foryou.ts). 테스트에 DOE 경우 추가, 고치기 전 실패/후 통과. 장학금 순서(Goldwater·Caltech SURF·Penn REU)는 그대로.
+- 검증: tsc, 서버 타입체크, npm test 206 통과, 로컬 v2·classic 확인.
+
 ## 2026-10-18 14:20 UTC (버클리 일 07:20) · 82회차 · 초점: 장학금·연구 탭 ‘For you’ 순서
 - 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 다시 켬)
 - Scholarships·Research & RA 를 봄. 마감 D-n 표시 이상 없음.

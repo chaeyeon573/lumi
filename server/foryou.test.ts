@@ -130,13 +130,17 @@ test('a passed deadline reads "Closed", not "Full" (that word is for a full meet
 
 test("another department's award sinks below general ones for a CS student", () => {
   const items = [
-    opp('psy', 'scholarship', 'Swan Award for Undergraduate Research (Psychology)', { host: 'UC Berkeley Department of Psychology', tags: ['research', 'scholarship'], deadline: '2026-10-30T06:59:00Z' }),
+    opp('psy', 'scholarship', 'Swan Award for Undergraduate Research (Psychology)', { schoolId: base.affiliation.type === 'university' ? base.affiliation.schoolId : undefined, host: 'UC Berkeley Department of Psychology', tags: ['research', 'scholarship'], deadline: '2026-10-30T06:59:00Z' }),
     opp('gw', 'scholarship', 'Barry Goldwater Scholarship', { host: 'Goldwater Foundation', tags: ['research', 'scholarship', 'STEM'], deadline: '2026-12-01T06:59:00Z' }),
-    opp('mmuf', 'scholarship', 'Mellon Mays Undergraduate Fellowship', { host: 'UC Berkeley Division of Arts & Humanities', tags: ['research', 'scholarship'], deadline: '2026-12-01T06:59:00Z' }),
-    opp('eecs', 'scholarship', 'EECS Undergraduate Research Award', { host: 'UC Berkeley Department of Electrical Engineering and Computer Sciences', tags: ['research', 'scholarship'], deadline: '2026-12-01T06:59:00Z' }),
+    opp('mmuf', 'scholarship', 'Mellon Mays Undergraduate Fellowship', { schoolId: base.affiliation.type === 'university' ? base.affiliation.schoolId : undefined, host: 'UC Berkeley Division of Arts & Humanities', tags: ['research', 'scholarship'], deadline: '2026-12-01T06:59:00Z' }),
+    opp('eecs', 'scholarship', 'EECS Undergraduate Research Award', { schoolId: base.affiliation.type === 'university' ? base.affiliation.schoolId : undefined, host: 'UC Berkeley Department of Electrical Engineering and Computer Sciences', tags: ['research', 'scholarship'], deadline: '2026-12-01T06:59:00Z' }),
   ];
   const cs = forYou(snap(items), person('Computer Science', { goals: ['scholarship'] }), { now: NOW, types: ['scholarship'], mix: false }).map((r) => r.id);
   assert.ok(cs.indexOf('psy') > cs.indexOf('gw') && cs.indexOf('mmuf') > cs.indexOf('gw'), cs.join(','));
+  // 연방 ‘Department of Energy … Office of Science’ 는 우리 학과가 아니다 — ‘science’ 한 단어로 ‘내 학과’가 되면 안 된다
+  const doe = opp('doe', 'lab', 'DOE Science Undergraduate Laboratory Internships (SULI)', { host: 'U.S. Department of Energy Office of Science', deadline: '2026-12-01T06:59:00Z' });
+  const r = forYou(snap([doe]), person('Computer Science'), { now: NOW, mix: false })[0];
+  assert.ok(!r || !r.reasons.some((x) => /your department/i.test(x.text)), JSON.stringify(r?.reasons));
   const psych = forYou(snap(items), person('Psychology', { goals: ['scholarship'] }), { now: NOW, types: ['scholarship'], mix: false }).map((r) => r.id);
   assert.equal(psych[0], 'psy', 'a psych major still gets it first');
 });
