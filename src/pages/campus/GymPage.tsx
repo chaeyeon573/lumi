@@ -46,11 +46,15 @@ export function GymPage() {
 function SpaceCard({ s, alert, onAlert }: { s: GymSpaceView; alert?: GymAlertView; onAlert: () => void }) {
   const live = s.status === 'live' && s.percent != null;
   const level = live ? crowdLevel(s.percent!) : null;
+  // 공식 운영 시간을 알 때만 (RSF) — 닫힌 시간엔 0% 를 ‘Quiet’ 대신 ‘Closed’
+  const closed = s.open === false;
+  const clock = (iso: string) => new Date(iso).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/Los_Angeles' }).replace(':00', '');
+  const hoursLine = s.hours ? `Today ${clock(s.hours.open)}–${clock(s.hours.close)}` : s.hours === null ? 'Closed today' : '';
   return (
     <section className="card px-4 pt-4 pb-3.5">
       <div className="flex items-center gap-2">
         <h2 className="flex-1 text-[15px] font-bold">{s.name}</h2>
-        {live ? <Tag tone={LEVEL_TONE[level!]}>{CROWD_LABELS[level!]}</Tag> : <Tag>Unavailable</Tag>}
+        {closed ? <Tag>Closed</Tag> : live ? <Tag tone={LEVEL_TONE[level!]}>{CROWD_LABELS[level!]}</Tag> : <Tag>Unavailable</Tag>}
       </div>
       {live ? (
         <>
@@ -61,7 +65,7 @@ function SpaceCard({ s, alert, onAlert }: { s: GymSpaceView; alert?: GymAlertVie
           <div className="mt-3 h-2 rounded-full bg-surface-2 overflow-hidden" role="meter" aria-valuemin={0} aria-valuemax={100} aria-valuenow={s.percent} aria-label={`${s.name} ${s.percent}% full`}>
             <div className="h-full rounded-full bg-primary" style={{ width: `${Math.min(100, s.percent!)}%` }} />
           </div>
-          <p className="mt-2 text-[12px] text-ink-3">Updated {agoLabel(s.updatedAt)}{s.usualNow != null ? ` · usually ${s.usualNow}% at this hour` : ''}</p>
+          <p className="mt-2 text-[12px] text-ink-3">{hoursLine && <>{hoursLine} · </>}Updated {agoLabel(s.updatedAt)}{s.usualNow != null ? ` · usually ${s.usualNow}% at this hour` : ''}</p>
         </>
       ) : (
         <div className="mt-2 rounded-xl bg-surface-2 px-3 py-3 flex items-start gap-2.5">
