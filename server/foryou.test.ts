@@ -154,3 +154,14 @@ test('a club is named as the reason only for what it is mainly about (a business
   assert.ok(r, 'still recommended');
   assert.ok(!r.reasons.some((x) => /Alpha Kappa Psi/.test(x.text)), JSON.stringify(r.reasons));
 });
+
+test('an event that matches nothing about you is not in For you just because it is this week', () => {
+  const ev = (id: string, title: string, host: string) => opp(id, 'event', title, { host, date: '2026-10-14T19:00:00.000Z', startTime: '12:00' });
+  const items = [
+    ev('plant', 'PMB Seminar: immune recognition and signaling by cell surface receptors in plants', 'Rausser College of Natural Resources'),
+    ev('cs', 'EECS Colloquium: Compiler 2.0 — building compilers with machine learning', 'Electrical Engineering & Computer Sciences'),
+  ];
+  const ids = forYou(snap(items), person('Computer Science', { goals: ['internship'] }), { now: NOW, types: ['event'], mix: false }).map((r) => r.id);
+  assert.ok(ids.includes('cs'), ids.join(','));
+  assert.ok(!ids.includes('plant'), ids.join(','));
+});
