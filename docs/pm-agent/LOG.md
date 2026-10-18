@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-18 06:20 UTC (버클리 토 23:20) · 74회차 · 초점: RSF 운영 시간 붙이기 ②(화면)
+- 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 다시 켬)
+- 73회차 서버 작업에 이어: /api/campus/now 의 헬스장 공간에 open·hours 를 싣고(server/campus-live.ts), client 타입(src/lib/campusLive.ts), Discover ‘GYM NOW’ 카드가 닫힌 시간엔 “Closed · Opens 8 AM”(오늘 열 시간이 남았을 때) 또는 “Closed · Closed for today” (LiveCards.tsx). 열려 있을 땐 그대로 “0% · Quiet · 3 min ago”.
+- 확인: 라이브 서버는 아직 hours 를 안 보내므로, 스크린샷 스크립트에서 /api/campus/now 응답에 open/hours 를 넣어(닫힘·열림 두 경우) v2·classic 확인. 실제로는 배포 뒤 라이브에서 다시 확인.
+- 검증: 서버 타입체크, tsc, npm test 203 통과.
+
 ## 2026-10-18 05:20 UTC (버클리 토 22:20) · 73회차 · 초점: RSF 운영 시간 붙이기 ①(서버)
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - 72회차에 찾은 공식 출처(events.berkeley.edu LiveWhale JSON, “Building Hours - RSF”)를 서버에 붙임. 화면까지 한 번에 하면 5파일이라 둘로 나눔(README: 작은 수정 1~3파일).
