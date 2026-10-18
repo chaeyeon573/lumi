@@ -8,7 +8,7 @@ import { Plus, Trash2, Lock, Users, CalendarPlus, ChevronRight, Sparkles, Search
 import type { Course } from '@core/types';
 import type { CatalogCourse } from '@core/api/types';
 import { TopBar } from '@/components/layout/TopBar';
-import { Button, BottomSheet, Field, Input, Select, Segmented, Tag, VisibilityPicker, EmptyState, CardSkeleton, ErrorState, Avatar } from '@/components/ui';
+import { Button, BottomSheet, Field, Input, Select, Segmented, Tag, VisibilityPicker, EmptyState, CardSkeleton, ErrorState, Avatar, SampleTag } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
@@ -185,7 +185,7 @@ export function TimetablePage() {
                   {overlaps.map(({ f, blocks }) => (
                     <button key={f.id} onClick={() => nav(`/users/${f.id}`)} className="w-full flex items-center gap-3 py-2.5 text-left press">
                       <Avatar emoji={f.avatar.emoji} hue={f.avatar.hue} url={f.avatar.url} size={36} />
-                      <span className="flex-1 min-w-0"><b className="text-[13px]">{f.nickname}</b><span className="block text-[12px] text-ink-3 truncate">{blocks.map((b) => `${fmtBlock(b)} (${fmtHours(b)})`).join(' · ')}</span></span>
+                      <span className="flex-1 min-w-0"><b className="text-[13px]">{f.sample && <SampleTag />}{f.nickname}</b><span className="block text-[12px] text-ink-3 truncate">{blocks.map((b) => `${fmtBlock(b)} (${fmtHours(b)})`).join(' · ')}</span></span>
                       <ChevronRight size={16} className="text-ink-3" />
                     </button>
                   ))}

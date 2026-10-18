@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { t } from '@core/i18n';
 import { Heart, UserPlus, Clock, MapPin, X, Sparkles } from 'lucide-react';
 import type { User } from '@core/types';
-import { Portrait, VerifiedBadge, Tag, Button } from '@/components/ui';
+import { Portrait, VerifiedBadge, Tag, Button, SampleTag } from '@/components/ui';
 import { INTEREST_EMOJI, INTEREST_LABELS, PURPOSE_LABELS, ROLE_LABELS } from '@core/lib/labels';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
@@ -60,7 +60,7 @@ export function PersonCard({ user, onSkip, compact, className }: Props) {
       <div className="p-3.5 flex-1 flex flex-col gap-2">
         <div>
           <div className="flex items-center gap-1.5">
-            <button onClick={() => nav(`/users/${user.id}`)} className="text-[16px] font-bold">{user.nickname}</button>
+            <button onClick={() => nav(`/users/${user.id}`)} className="text-[16px] font-bold">{user.sample && <SampleTag />}{user.nickname}</button>
             {user.affiliation.type === 'university' && user.affiliation.emailVerified && <VerifiedBadge kind="school" />}
             {user.identityVerified && <VerifiedBadge kind="identity" />}
           </div>

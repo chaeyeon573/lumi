@@ -3,7 +3,7 @@ import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { t } from '@core/i18n';
 import { BadgeCheck, Users, Megaphone, CalendarDays, Bell, MessageCircle, ExternalLink, ShieldCheck, PenSquare, Crown } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
-import { Avatar, Button, Cover, Tag, EmptyState, Chip, ChipRow } from '@/components/ui';
+import { Avatar, Button, Cover, Tag, EmptyState, Chip, ChipRow, SampleTag } from '@/components/ui';
 import { ActivityCard } from '@/components/cards/ActivityCard';
 import { TeamCard } from '@/components/cards/TeamCard';
 import { PostCard } from '@/components/cards/PostCard';
@@ -124,7 +124,7 @@ export function OrgPage() {
             {[...org.adminIds, ...org.memberIds.filter((m) => !org.adminIds.includes(m))].map((mid) => { const u = v.userById(mid); return u && (
               <button key={mid} onClick={() => nav(`/users/${mid}`)} className="w-full flex items-center gap-3 px-3.5 py-3 text-left press">
                 <Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={40} />
-                <span className="flex-1 min-w-0"><b className="text-[13px] flex items-center gap-1">{u.nickname}{org.adminIds.includes(mid) && <Crown size={12} className="text-gold" />}</b><span className="block text-[11px] text-ink-3 truncate">{u.affiliation.type === 'university' && u.affiliation.showDepartment ? u.affiliation.department : ''}</span></span>
+                <span className="flex-1 min-w-0"><b className="text-[13px] flex items-center gap-1">{u.sample && <SampleTag className="mr-0" />}{u.nickname}{org.adminIds.includes(mid) && <Crown size={12} className="text-gold" />}</b><span className="block text-[11px] text-ink-3 truncate">{u.affiliation.type === 'university' && u.affiliation.showDepartment ? u.affiliation.department : ''}</span></span>
                 {org.adminIds.includes(mid) && <Tag tone="gold" className="h-5">{t('운영진')}</Tag>}
               </button>); })}
             <div className="px-3.5 py-3 text-[12px] text-ink-3">{t('팔로워')} {org.followerIds.length} · {t('회원 목록은 조직 설정에 따라 비공개일 수 있어요.')}</div>
