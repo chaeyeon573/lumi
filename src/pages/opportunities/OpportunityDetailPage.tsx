@@ -74,7 +74,8 @@ export function OpportunityDetailPage() {
           </div>
           <h1 className="text-[20px] font-extrabold leading-snug mt-2">{o.title}</h1>
           <button onClick={() => org && nav(`/orgs/${org.id}`)} className="text-[13px] text-ink-2 mt-0.5 flex items-center gap-1">{o.host}{org && <span className="text-primary text-[12px]">{t('조직 페이지')}</span>}</button>
-          {!together && (
+          {/* 둘 다 0 이면 숫자 줄은 숨긴다 — 바로 아래 ‘Do it with people’ 이 “아직 아무도 저장 안 했어요”를 말로 한다 */}
+          {!together && (interestedCount > 0 || appliedCount > 0) && (
             <button onClick={() => setParams({ tab: 'people' })} className="mt-3 w-full rounded-xl bg-surface-2 px-3 py-2.5 flex items-center gap-3 text-left press">
               <span className="flex items-center gap-1 text-[13px]"><Heart size={14} className="text-danger" fill="currentColor" /><b>{interestedCount}</b> {lang === 'en' ? 'interested' : '명 관심'}</span>
               <span className="flex items-center gap-1 text-[13px]"><CheckCircle2 size={14} className="text-mint" /><b>{appliedCount}</b> {lang === 'en' ? 'applied' : '명 지원'}</span>
