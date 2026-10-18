@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-18 14:20 UTC (버클리 일 07:20) · 82회차 · 초점: 장학금·연구 탭 ‘For you’ 순서
+- 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 다시 켬)
+- Scholarships·Research & RA 를 봄. 마감 D-n 표시 이상 없음.
+- 고침: CS 학생의 Scholarships ‘For you’ 1·2위가 “Swan Award … (Psychology)”(심리학과)·“Mellon Mays”(인문학부) — 다른 학과 전용에 가까운 상이 맨 위. → 주최가 “Department of X / Division of X” 이고 내 전공과 겹치는 단어가 없으면 점수 -3(숨기진 않음), 겹치면 +1.5 와 이유 “From your department / 내 학과” (packages/core/src/lib/foryou.ts). 테스트(server/foryou.test.ts) 추가, 고치기 전 실패/후 통과. 이제 1위부터 Goldwater·Caltech SURF·Penn REU·NOAA.
+- 검증: tsc, 서버 타입체크, npm test 206 통과, 로컬 v2·classic 전후 확인.
+
 ## 2026-10-18 13:20 UTC (버클리 일 06:20) · 81회차 · 초점: 인턴십 분야 필터
 - 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 시간 한도로 꺼져 다시 켬)
 - 분야별 목록을 훑음. 잘못 분류된 것: “Flight Test Engineer Intern”(Anduril) → Software, “User Research Intern”(Coinbase) → Research & Science, “Software Engineer – Production Infrastructure”(Palantir) → Product & Design(‘Production’ 안의 product), “Campus UI Software Engineer”(Jump) → Product & Design(‘UI’).
