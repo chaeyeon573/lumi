@@ -146,3 +146,11 @@ test("another department's award sinks below general ones for a CS student", () 
   const psych = forYou(snap(items), person('Psychology', { goals: ['scholarship'] }), { now: NOW, types: ['scholarship'], mix: false }).map((r) => r.id);
   assert.equal(psych[0], 'psy', 'a psych major still gets it first');
 });
+
+test('a club is named as the reason only for what it is mainly about (a business frat is not why a computing job shows up)', () => {
+  const akp = club('c_akp', 'Alpha Kappa Psi', 'Professional business fraternity: consulting, finance and marketing case nights. Members also join research talks.', { followerIds: ['u_t'] });
+  const job = opp('lbl', 'lab', 'Computing Sciences summer student research positions', { host: 'Lawrence Berkeley National Laboratory', deadline: '2026-12-01T06:59:00Z' });
+  const r = forYou(snap([job], [akp]), person('Computer Science'), { now: NOW, types: ['lab'], mix: false })[0];
+  assert.ok(r, 'still recommended');
+  assert.ok(!r.reasons.some((x) => /Alpha Kappa Psi/.test(x.text)), JSON.stringify(r.reasons));
+});
