@@ -2,6 +2,14 @@
 
 최신이 위.
 
+## 2026-10-18 16:20 UTC (버클리 일 09:20) · 84회차 · 초점: Startups·Study abroad 탭
+- 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 시간 한도로 꺼져 다시 켬)
+- 두 탭 모두 1개씩(SkyDeck Batch 24, Berkeley Study Abroad). 
+- 고침 ①: “1 listings” → “1 listing” (BrowseTab.tsx).
+- 고침 ②: Study abroad 이유가 “✨ Matches your interest in sports & fitness” — 설명의 “info sessions are running now” 의 running 을 달리기로 읽음. → 운동 규칙의 running 은 뒤에 now·until·for… 가 오면 안 셈 (foryou.ts), 테스트 추가(고치기 전 실패/후 통과). 이제 그 이유 줄 없음.
+- 메모: 두 탭이 한 개뿐 — 데이터가 얇음(지어내지 않음). 창업·교환학생 공식 출처를 더 붙일지는 나중 후보.
+- 검증: tsc, npm test 206 통과, 로컬 v2·classic 확인.
+
 ## 2026-10-18 15:20 UTC (버클리 일 08:20) · 83회차 · 초점: Events·Free food 탭 (+ 82회차 수정 점검)
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - Events(199개)·Free food(7개): 날짜·시간 “Tomorrow · 8 AM”, “Oct 21 · 4 PM” 이상 없음.

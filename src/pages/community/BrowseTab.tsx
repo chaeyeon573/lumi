@@ -233,7 +233,7 @@ function ListingList({ sub, kind, field, region, sort, setQ, rows, grad, savedId
         </div>
       )}
 
-      <div className="text-[12px] text-ink-3 mb-1">{isEvents ? (en ? `${list.length} upcoming` : `다가오는 행사 ${list.length}개`) : (en ? `${list.length} listings` : `${list.length}개`)}</div>
+      <div className="text-[12px] text-ink-3 mb-1">{isEvents ? (en ? `${list.length} upcoming` : `다가오는 행사 ${list.length}개`) : (en ? `${list.length} listing${list.length === 1 ? '' : 's'}` : `${list.length}개`)}</div>
       {list.length === 0 ? <EmptyState emoji="" title={sub === 'saved' ? (en ? 'Tap ☆ on a listing to save it here' : '공고의 ☆ 를 누르면 여기에 모여요') : isEvents ? (en ? 'Nothing coming up here yet' : '다가오는 행사가 아직 없어요') : t('아직 등록된 기회가 없어요')} /> : (
         <div className="divide-y divide-line">{list.slice(0, shown).map((o) => {
           const club = isEvents ? hostOrg(o) : undefined;
