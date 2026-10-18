@@ -40,6 +40,8 @@ test('topic matching avoids look-alike words', () => {
   assert.equal(topicsOfText('learn language skills').outdoors, undefined); // "skill" is not skiing
   assert.equal(topicsOfText('surface chemistry').outdoors, undefined);
   assert.ok(topicsOfText('weekend hiking trips').outdoors);
+  assert.equal(topicsOfText('Summer Global Internships info sessions are running now.').sports, undefined); // "running now" is not jogging
+  assert.ok(topicsOfText('Easy 5k running group').sports);
 });
 
 test('a CS student gets software first; a Haas student gets finance first', () => {
