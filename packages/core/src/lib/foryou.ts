@@ -28,7 +28,7 @@ export const TOPICS = {
   business: { en: 'business & marketing', ko: '비즈니스·마케팅', re: /business|marketing|\bsales\b|\bbrand|real estate|e-?commerce|growth marketing/g },
   startup: { en: 'startups', ko: '창업', re: /start-?ups?\b|founders?\b|entrepreneur|incubator|accelerator|\bpitch/g },
   design: { en: 'design & product', ko: '디자인·프로덕트', re: /design|\bux\b|\bui\b|product manag|\bpm\b|figma|architecture/g },
-  research: { en: 'research', ko: '연구', re: /research|\blabs?\b|scientist|\bph\.?d|colloquium|seminar|thesis|journal club/g },
+  research: { en: 'research', ko: '연구', re: /research|\blabs?\b|scientist|\bph\.?d|thesis|journal club/g }, // ‘seminar·colloquium’ 은 형식이지 분야가 아니다 — 식물·인구학 세미나가 다 ‘연구’로 CS 학생에게 오지 않게
   bio_health: { en: 'bio & health', ko: '바이오·의료', re: /\bbio|medic|pre-?med|health|clinical|neuro|genom|pharm|nursing|dental|chemistry|mycolog|life science/g },
   physics: { en: 'physics & astronomy', ko: '물리·천문', re: /physic|astronom|astrophys|cosmolog|quantum|optics|particle|condensed matter|planetary/g },
   chemistry: { en: 'chemistry & materials', ko: '화학·재료', re: /chemi|materials science|polymer|catalys|biochem/g },
@@ -310,6 +310,8 @@ function scoreListing(c: Ctx, o: Opportunity): Scored | null {
     if (!rs.includes(c.q.region) && !local) return null;
   }
   const base = topicReasons(c.p, itemVecRaw(o));
+  // 관심이 있는 사람에게 아무것도 안 맞는 학과 세미나가 ‘이번 주’라는 이유 하나로 들어오지 않게 (신호가 거의 없을 땐 그대로)
+  if (!c.q && !c.p.cold && o.type === 'event' && !base.reasons.length) return null; // 겹침이 이유 한 줄도 못 될 만큼 작으면(‘seminar’→연구 정도) 빼기
   let s: number; let why: Reason[];
   if (c.q) {
     const m = askMatch(c.q, itemVecRaw(o), listingText(o)); if (!m) return null;
