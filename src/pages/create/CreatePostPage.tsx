@@ -27,7 +27,11 @@ export function CreatePostPage() {
   const v = useViewer();
   const run = useAppStore((s) => s.run);
   const orgs = useAppStore((s) => s.organizations);
-  const opps = useAppStore((s) => s.opportunities);
+  const allOpps = useAppStore((s) => s.opportunities);
+  const intents = useAppStore((s) => s.opportunityIntents);
+  // 관련 기회는 내가 저장·표시한 것만 — 전체 수백 개(같은 제목 “Gathering” 여러 개)를 드롭다운에 넣으면 고를 수가 없다
+  const myOppIds = new Set(intents.filter((i) => i.userId === v.me.id).map((i) => i.opportunityId));
+  const opps = allOpps.filter((o) => myOppIds.has(o.id));
   const myOrgs = orgs.filter((o) => o.adminIds.includes(v.me.id));
   const myActs = v.visibleActivities.filter((a) => a.hostId === v.me.id || v.myParticipation(a.id)?.status === 'approved');
   const friends = useMemo(() => friendsOf(v.snap, v.me.id).map((id) => v.userById(id)!).filter(Boolean), [v]);
@@ -79,7 +83,7 @@ export function CreatePostPage() {
         )}
         <div className="grid grid-cols-2 gap-2">
           <Field label={t('참여한 활동')}><Select value={form.relatedActivityId ?? ''} onChange={(e) => patch({ relatedActivityId: e.target.value || undefined })}><option value="">{t('연결 안 함')}</option>{myActs.map((a) => <option key={a.id} value={a.id}>{a.title}</option>)}</Select></Field>
-          <Field label={t('관련 기회')}><Select value={form.relatedOpportunityId ?? ''} onChange={(e) => patch({ relatedOpportunityId: e.target.value || undefined })}><option value="">{t('연결 안 함')}</option>{opps.map((o) => <option key={o.id} value={o.id}>{o.title}</option>)}</Select></Field>
+          {opps.length > 0 && <Field label={t('관련 기회')}><Select value={form.relatedOpportunityId ?? ''} onChange={(e) => patch({ relatedOpportunityId: e.target.value || undefined })}><option value="">{t('연결 안 함')}</option>{opps.map((o) => <option key={o.id} value={o.id}>{o.title}</option>)}</Select></Field>}
         </div>
         {!anon && <div className="card px-4"><Toggle label={t('다음 활동 같이할 사람 모집')} description={t('게시물에 "다음에는 같이하기" 버튼이 강조돼요.')} checked={!!form.recruitNext} onChange={(val) => patch({ recruitNext: val })} /></div>}
         {myOrgs.length > 0 && !anon && <Field label={t('조직 이름으로 게시')}><Select value={form.orgId ?? ''} onChange={(e) => patch({ orgId: e.target.value || undefined, postType: e.target.value ? 'news' : form.postType })}><option value="">{t('내 이름으로')}</option>{myOrgs.map((o) => <option key={o.id} value={o.id}>{o.name}</option>)}</Select></Field>}
