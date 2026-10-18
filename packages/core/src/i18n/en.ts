@@ -445,6 +445,7 @@ export const en: Record<string, string> = {
   '주최자만 볼 수 있어요': 'Only the host can see this',
   '수정': 'Edit',
   '승인': 'Approve',
+  '승인됨': 'Approved',
   '/ 모집': '/ cap',
   '· 대기': '· pending',
   '그룹 채팅 열기': 'Open group chat',
