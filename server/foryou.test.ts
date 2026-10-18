@@ -160,8 +160,10 @@ test('an event that matches nothing about you is not in For you just because it 
   const items = [
     ev('plant', 'PMB Seminar: immune recognition and signaling by cell surface receptors in plants', 'Rausser College of Natural Resources'),
     ev('cs', 'EECS Colloquium: Compiler 2.0 — building compilers with machine learning', 'Electrical Engineering & Computer Sciences'),
+    ev('arch', 'Zonian Archaeology: Sovereign Soil in Panamá', 'Archaeological Research Facility'),
+    ev('chem', 'Graduate Research Seminar: protein chemistry', 'College of Chemistry'),
   ];
-  const ids = forYou(snap(items), person('Computer Science', { goals: ['internship'] }), { now: NOW, types: ['event'], mix: false }).map((r) => r.id);
+  const ids = forYou(snap(items, [club('c_lab', 'Vision Lab', 'AI research lab', { type: 'lab', followerIds: ['u_t'] })]), person('Computer Science', { goals: ['internship'] }), { now: NOW, types: ['event'], mix: false }).map((r) => r.id);
   assert.ok(ids.includes('cs'), ids.join(','));
-  assert.ok(!ids.includes('plant'), ids.join(','));
+  assert.ok(!ids.includes('plant') && !ids.includes('arch') && !ids.includes('chem'), ids.join(','));
 });
