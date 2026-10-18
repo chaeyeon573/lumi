@@ -127,7 +127,14 @@ export function interestProfile(snap: Snap, me: User, now = new Date()): Interes
   const sources: Partial<Record<Topic, Source[]>> = {};
   const types: Partial<Record<RecType, number>> = {};
   const feed = (v: Vec, kind: SourceKind, label: string, k = 1) => {
-    for (const t of TOPIC_KEYS) if (v[t]) { const w = v[t]! * k; add(raw, t, w); (sources[t] ??= []).push({ kind, label, w }); }
+    // 동아리·저장한 것은 그 주된 주제(가장 강한 주제의 3/4 이상)에서만 ‘이유’의 출처가 된다 —
+    // 경영 동아리 소개에 ‘research’ 한 번 나왔다고 컴퓨팅 연구직이 “Similar to Alpha Kappa Psi” 가 되지 않게. 점수(raw)는 그대로
+    const top = Math.max(0, ...TOPIC_KEYS.map((t) => v[t] ?? 0));
+    for (const t of TOPIC_KEYS) if (v[t]) {
+      const w = v[t]! * k; add(raw, t, w);
+      if ((kind === 'club' || kind === 'saved') && v[t]! < top * 0.75) continue;
+      (sources[t] ??= []).push({ kind, label, w });
+    }
   };
   if (me.affiliation.type === 'university' && me.affiliation.department) {
     const dept = me.affiliation.department;

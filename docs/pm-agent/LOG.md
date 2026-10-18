@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-18 17:20 UTC (버클리 일 10:20) · 85회차 · 초점: For you 이유 줄 전체 점검
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- For you 목록의 ✨ 이유 줄을 항목과 짝지어 전부 봄(라이브 스냅샷을 받아 node 로도 같은 계산).
+- 고침: “Berkeley Lab Computing Sciences summer student positions” 의 이유가 “Similar to Alpha Kappa Psi”(경영 동아리). AKP 의 상위 분류 “Academic Student Organizations” 가 research 를 조금(0.4) 주는데, 그게 research 주제의 출처가 됨. → 동아리·저장한 것은 그 주된 주제(가장 강한 주제의 3/4 이상)에서만 이유의 출처가 되고, 점수 계산은 그대로 (foryou.ts interestProfile feed). 테스트 추가(고치기 전 실패/후 통과). 이제 research 이유는 Vision & Language Lab 에서만.
+- 그대로 둔 것: Research Experience Pathways·PASAE 의 “Similar to Alpha Kappa Psi” — ‘career’ 주제로 이어진 것이라 말이 됨.
+- 검증: tsc, 서버 타입체크, npm test 207 통과, 로컬 v2·classic 확인.
+
 ## 2026-10-18 16:20 UTC (버클리 일 09:20) · 84회차 · 초점: Startups·Study abroad 탭
 - 질문 새 답 없음, 배포 브랜치 변화 없음. (vite 시간 한도로 꺼져 다시 켬)
 - 두 탭 모두 1개씩(SkyDeck Batch 24, Berkeley Study Abroad). 
