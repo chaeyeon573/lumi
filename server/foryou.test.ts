@@ -167,3 +167,9 @@ test('an event that matches nothing about you is not in For you just because it 
   assert.ok(ids.includes('cs'), ids.join(','));
   assert.ok(!ids.includes('plant') && !ids.includes('arch') && !ids.includes('chem'), ids.join(','));
 });
+
+test('"this week" in a question is a time, not a search word (no "Mentions “this”")', () => {
+  const words = parseAsk('research seminars this week').words;
+  assert.ok(!words.includes('this') && !words.includes('week'), words.join(','));
+  assert.ok(words.includes('seminars'));
+});
