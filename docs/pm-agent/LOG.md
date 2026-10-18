@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-18 20:20 UTC (버클리 일 13:20) · 88회차 · 초점: Ask Lumi 추천(recommendFor)이 같은 엔진 변경을 잘 따르는지
+- 질문 새 답 없음, 배포 브랜치 변화 없음.
+- 라이브 스냅샷으로 server/ai-search recommendFor 를 node 에서 직접 돌림(AI 호출 없음). 87회차에 행사에서 research 주제를 뺀 뒤에도 “research talks / research seminars” 질문은 단어 일치(“Mentions “seminars””)로 세미나를 잘 찾음 — 회귀 없음.
+- 고침: “research seminars this week” 에 이유 “Mentions “this”” — ‘this·week’ 가 검색어로 들어가 미술 강연 같은 엉뚱한 행사가 섞임. → 질문의 시간·채움말(this·that·today·tonight·tomorrow·week·weekend·month·now·soon·upcoming·next·anything·fun…)을 검색어에서 뺌 (foryou.ts ASK_STOP). 테스트 추가(고치기 전 실패/후 통과). 이제 결과가 전부 세미나.
+- 검증: tsc, 서버 타입체크, npm test 209 통과. (Ask 화면은 서버 계산이라 배포 뒤 라이브에서 확인)
+
 ## 2026-10-18 19:20 UTC (버클리 일 12:20) · 87회차 · 초점: 86회차 남은 것 — ‘연구’ 로만 맞는 행사
 - 질문 새 답 없음, 배포 브랜치 변화 없음.
 - 남아 있던 “Zonian Archaeology”(주최 Archaeological Research Facility)·“Graduate Research Seminar”(화학과)가 CS 학생에게 “Similar to Vision & Language Lab”. 주제 벡터를 찍어 보니 고고학은 research 하나뿐, 화학은 research+생물·화학.
