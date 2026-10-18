@@ -217,8 +217,8 @@ function topicReasons(p: InterestProfile, item: Vec): { sim: number; reasons: Re
     const src = (p.sources[t] ?? []).slice().sort((a, b) => b.w - a.w)[0];
     const w = c * 10;
     if (src?.kind === 'major') out.push({ kind: 'major', w, text: src.label.length <= 22 ? say(`Fits your major (${src.label})`, `전공(${src.label})과 맞아요`) : say('Fits your major', '전공과 맞아요') });
-    else if (src?.kind === 'saved') out.push({ kind: 'saved', w, text: say(`Like “${short(src.label)}” you saved`, `저장한 “${short(src.label, 20)}”와 비슷해요`) });
-    else if (src?.kind === 'club') out.push({ kind: 'club', w, text: say(`Like ${short(src.label)}, which you're in`, `${short(src.label, 20)}와 비슷해요`) });
+    else if (src?.kind === 'saved') out.push({ kind: 'saved', w, text: say(`Like “${short(src.label)}” you saved`, `저장한 “${short(src.label, 24)}” 같은 곳`) });
+    else if (src?.kind === 'club') out.push({ kind: 'club', w, text: say(`Similar to ${short(src.label)}`, `${short(src.label, 24)} 같은 곳`) /* 가입뿐 아니라 팔로우·관심 표시한 단체도 여기로 온다 — ‘which you're in’ 은 틀릴 수 있다 */ });
     else out.push({ kind: 'topic', w, text: say(`Matches your interest in ${topicLabel(t)}`, `${topicLabel(t)} 관심사와 맞아요`) });
   }
   // "관심사 A와 맞아요 · 관심사 B와 맞아요" → 한 문장으로
