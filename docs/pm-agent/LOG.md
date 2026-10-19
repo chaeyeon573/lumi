@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-19 (사장님 지시) · Ask Lumi 빼기
+
+- 사장님 결정: "Ask Lumi는 걍 빼라". Discover·Browse 위의 Ask Lumi 입구(AskBar)와 /ask 화면(AskPage)을 지움. /ask 로 들어오면 Discover 로 보냄(예전 링크가 깨지지 않게). PRODUCT_TASTE "원하지 않은 것"에 적음.
+- 남긴 것: 서버의 /api/ai/ask 와 가입 때 "프로필 채우기"·대화 첫마디(Starters)는 그대로 — 같은 AI 를 쓰지만 Ask Lumi 화면이 아님. 개인정보처리방침의 Ask Lumi 문장은 그대로(다음에 정리).
+- Discover 맨 위 카드가 헤더에 붙지 않게 위 여백 pt-3.
+- 검증: `npx tsc -b` 통과, `npm test` 210/210. v2·classic 에서 Discover·Browse 에 Ask Lumi 없음, /ask → Discover 확인.
+
 ## 2026-10-19 09:17 UTC (버클리 월 02:17) · 97회차 · 초점: 로그인 전 첫 화면(/welcome·/start) v2
 
 - 새 사장님 답 없음. 배포 브랜치 8bfd353 그대로(95·96회차는 아직 안 올라감). 버클리 새벽 2시라 아침 식당·체육관 확인은 다음으로.

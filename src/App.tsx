@@ -7,7 +7,6 @@ import { WelcomePage } from '@/pages/onboarding/WelcomePage';
 import { OnboardingPage } from '@/pages/onboarding/OnboardingPage';
 import { StartPage } from '@/pages/onboarding/StartPage';
 import { HomePage } from '@/pages/home/HomePage';
-import { AskPage } from '@/pages/ask/AskPage';
 import { MapPage } from '@/pages/map/MapPage';
 import { CommunityPage } from '@/pages/community/CommunityPage';
 import { ProfilePage } from '@/pages/profile/ProfilePage';
@@ -134,7 +133,7 @@ export default function App() {
           <Route path="/rides" element={<RidesPage />} />
           <Route path="/rides/new" element={<PostRidePage />} />
           <Route path="/rides/:id" element={<RideDetailPage />} />
-          <Route path="/ask" element={<AskPage />} />
+          <Route path="/ask" element={<Navigate to="/discover" replace />} />
           <Route path="/dining" element={<DiningPage />} />
           <Route path="/gym" element={<GymPage />} />
           <Route path="/map" element={<MapPage />} />

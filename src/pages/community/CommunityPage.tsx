@@ -3,7 +3,6 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { PenSquare, Heart, MessageCircle } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
-import { AskBar } from '@/components/ai/AskBar';
 import { Chip, Button, CardSkeleton, EmptyState, ErrorState, Avatar, Cover } from '@/components/ui';
 import { PostCard } from '@/components/cards/PostCard';
 import { SampleTag } from '@/components/ui/SampleTag';
@@ -45,7 +44,6 @@ export function CommunityPage() {
       {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
       {status === 'ready' && (
         <div className="px-4 pt-4">
-          <AskBar className="mb-4" />
           {tab === 'feed' && <FeedTab />}
           {tab === 'opportunities' && !legacyClubs && <BrowseTab />}
         </div>
