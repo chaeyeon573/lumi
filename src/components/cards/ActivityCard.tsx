@@ -74,7 +74,7 @@ export function ActivityCard({ activity: a, variant = 'feed', className, badge }
         <div className="mt-2 space-y-0.5 text-[12px] text-ink-2">
           <div className="flex items-center gap-1"><Clock size={12} className="text-ink-3" />{formatDateTime(a.date, a.startTime)} – {formatTime(a.endTime)}</div>
           <div className="flex items-center gap-1 truncate"><MapPin size={12} className="text-ink-3" />{a.place.name}</div>
-          <div className="flex items-center gap-1"><Users size={12} className="text-ink-3" />{count}{t('명 참가 · 모집')} {a.capacity >= 999 ? t('제한 없음') : `${a.capacity}${t('명')}`} · <Ticket size={12} className="text-ink-3" />{formatFee(a.fee)}{a.joinPolicy !== 'open' && <> · <Lock size={11} />{JOIN_POLICY_LABELS[a.joinPolicy].replace(t(' 참가'), '')}</>}</div>
+          <div className="flex items-center gap-1"><Users size={12} className="text-ink-3" />{count}{a.capacity >= 999 ? t('명 참가 · 인원 제한 없음') : `${t('명 참가 · 모집')} ${a.capacity}${t('명')}`} · <Ticket size={12} className="text-ink-3" />{formatFee(a.fee)}{a.joinPolicy !== 'open' && <> · <Lock size={11} />{JOIN_POLICY_LABELS[a.joinPolicy].replace(t(' 참가'), '')}</>}</div>
         </div>
         <div className="mt-3 flex items-center gap-2">
           <button onClick={() => nav(org ? `/orgs/${org.id}` : `/users/${a.hostId}`)} className="flex items-center gap-1.5 min-w-0">
@@ -112,7 +112,7 @@ export function ActivityCard({ activity: a, variant = 'feed', className, badge }
         <div className="mt-2.5 grid grid-cols-2 gap-x-3 gap-y-1 text-[12px] text-ink-2">
           <span className="flex items-center gap-1 truncate"><Clock size={12} className="text-ink-3" />{formatDateTime(a.date, a.startTime)}</span>
           <span className="flex items-center gap-1 truncate"><MapPin size={12} className="text-ink-3" />{a.place.name}</span>
-          <span className="flex items-center gap-1"><Users size={12} className="text-ink-3" />{count}{t('명 참가 · 모집')} {a.capacity >= 999 ? t('제한 없음') : `${a.capacity}${t('명')}`}</span>
+          <span className="flex items-center gap-1"><Users size={12} className="text-ink-3" />{count}{a.capacity >= 999 ? t('명 참가 · 인원 제한 없음') : `${t('명 참가 · 모집')} ${a.capacity}${t('명')}`}</span>
           <span className="flex items-center gap-1 truncate"><Ticket size={12} className="text-ink-3" />{formatFee(a.fee)}{a.joinPolicy !== 'open' && <> · <Lock size={11} />{JOIN_POLICY_LABELS[a.joinPolicy].replace(t(' 참가'), '')}</>}</span>
         </div>
         <div className="mt-3 flex gap-2">

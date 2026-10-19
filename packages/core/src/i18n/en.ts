@@ -74,6 +74,8 @@ export const en: Record<string, string> = {
   '팀원 모집:': 'Looking for:',
   '명 참가 · 모집': ' joined · cap',
   '제한 없음': 'no limit',
+  '명 참가 중 · 인원 제한 없음': ' joined · no limit',
+  '명 참가 · 인원 제한 없음': ' joined · no limit',
   '명': '',
   ' 참가': ' joined',
   '지도': 'Map',
