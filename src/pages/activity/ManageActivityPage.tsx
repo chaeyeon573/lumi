@@ -28,7 +28,7 @@ export function ManageActivityPage() {
     <div className="min-h-full pb-8">
       <TopBar back title={t('참가자 관리')} right={<Button size="sm" variant="ghost" icon={<Pencil size={14} />} onClick={() => nav(`/activities/${a.id}/edit`)}>{t('수정')}</Button>} />
       <div className="px-4 pt-2">
-        <div className="card p-4"><b className="text-[15px]">{a.title}</b><div className="text-[12px] text-ink-3 mt-1">{t('승인됨')} {approved.length} {t('/ 모집')} {a.capacity >= 999 ? t('제한 없음') : a.capacity} {t('· 대기')} {pending.length}</div>
+        <div className="card p-4"><b className="text-[15px]">{a.title}</b><div className="text-[12px] text-ink-3 mt-1">{t('승인됨')} {approved.length} {a.capacity < 999 && <>{t('/ 모집')} {a.capacity} </>}{t('· 대기')} {pending.length}</div>
           {room && <Button size="sm" variant="secondary" className="mt-3" icon={<MessageCircle size={14} />} onClick={() => nav(`/chats/${room.id}`)}>{t('그룹 채팅 열기')}</Button>}</div>
 
         <h2 className="text-[15px] font-bold mt-5 mb-2">{t('참가 요청')} {pending.length}</h2>

@@ -11,8 +11,8 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Patch, Snapshot } from '@core/api/types';
-import type { Activity, ActivityProposal, ChatRoom, ID, Notification, Post, User } from '@core/types';
-import { users as seedUsers, activities as seedActivities, posts as seedPosts, chatRooms as seedRooms, notifications as seedNotifications, proposals as seedProposals, DEMO_USER_ID } from '@core/data/seed.en';
+import type { Activity, ActivityProposal, ChatRoom, ID, Notification, Participation, Post, User } from '@core/types';
+import { users as seedUsers, activities as seedActivities, posts as seedPosts, chatRooms as seedRooms, notifications as seedNotifications, proposals as seedProposals, participations as seedParticipations, DEMO_USER_ID } from '@core/data/seed.en';
 import { todayISO } from '@core/lib/format';
 
 export { DEMO_USER_ID };
@@ -160,6 +160,7 @@ const ageOf = (iso: string) => LOADED_AT - Date.parse(iso);
 const postAge = new Map(seedPosts.map((p) => [p.id, ageOf(p.createdAt)]));
 const notificationAge = new Map(seedNotifications.map((n) => [n.id, ageOf(n.createdAt)]));
 const commentAge = new Map(seedPosts.flatMap((p) => p.comments.map((c) => [c.id, ageOf(c.createdAt)] as const)));
+const participationAge = new Map(seedParticipations.map((p) => [p.id, ageOf(p.createdAt)]));
 const seedRoomById = new Map(seedRooms.map((r) => [r.id, r]));
 const proposalAge = new Map(seedProposals.map((p) => [p.id, { age: ageOf(p.createdAt), ttl: Date.parse(p.expiresAt) - Date.parse(p.createdAt) }]));
 const STALE_MS = 60 * 60 * 1000; // 한 시간 넘게 밀렸을 때만 — 15분마다 모든 글을 다시 보내지 않게
@@ -188,6 +189,13 @@ export function rollSampleContent(db: Snapshot, now = Date.now()): Patch | null 
     if (age === undefined || now - age - Date.parse(n.createdAt) < STALE_MS) continue;
     notifications.push({ ...n, createdAt: new Date(now - age).toISOString() });
   }
+  // 예시 참가 요청 — 관리 화면에 '20분 전' 요청이 'Sep 23' 으로 보이면 아무도 안 쓰는 앱 같다
+  const participations: Participation[] = [];
+  for (const p of db.participations) {
+    const age = participationAge.get(p.id);
+    if (age === undefined || now - age - Date.parse(p.createdAt) < STALE_MS) continue;
+    participations.push({ ...p, createdAt: new Date(now - age).toISOString() });
+  }
   // 예시 1:1 제안 — 시드 후 47시간이면 만료돼 “New proposal” 알림이 빈 목록을 연다. 만료된 것만 다시 기다림으로(답한 것은 그대로)
   const proposals: ActivityProposal[] = [];
   for (const p of db.proposals) {
@@ -196,7 +204,7 @@ export function rollSampleContent(db: Snapshot, now = Date.now()): Patch | null 
     const createdAt = now - seedP.age;
     proposals.push({ ...p, status: 'pending', createdAt: new Date(createdAt).toISOString(), expiresAt: new Date(createdAt + seedP.ttl).toISOString() });
   }
-  if (!posts.length && !chatRooms.length && !notifications.length && !proposals.length) return null;
+  if (!posts.length && !chatRooms.length && !notifications.length && !proposals.length && !participations.length) return null;
   const byPost = new Map(posts.map((p) => [p.id, p])), byRoom = new Map(chatRooms.map((r) => [r.id, r]));
   db.posts = db.posts.map((p) => byPost.get(p.id) ?? p);
   db.chatRooms = db.chatRooms.map((r) => byRoom.get(r.id) ?? r);
@@ -204,5 +212,7 @@ export function rollSampleContent(db: Snapshot, now = Date.now()): Patch | null 
   db.notifications = db.notifications.map((n) => byNote.get(n.id) ?? n);
   const byProposal = new Map(proposals.map((p) => [p.id, p]));
   db.proposals = db.proposals.map((p) => byProposal.get(p.id) ?? p);
-  return { ...(posts.length ? { posts } : {}), ...(chatRooms.length ? { chatRooms } : {}), ...(notifications.length ? { notifications } : {}), ...(proposals.length ? { proposals } : {}) };
+  const byPart = new Map(participations.map((p) => [p.id, p]));
+  db.participations = db.participations.map((p) => byPart.get(p.id) ?? p);
+  return { ...(participations.length ? { participations } : {}), ...(posts.length ? { posts } : {}), ...(chatRooms.length ? { chatRooms } : {}), ...(notifications.length ? { notifications } : {}), ...(proposals.length ? { proposals } : {}) };
 }

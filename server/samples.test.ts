@@ -244,3 +244,14 @@ test('the sample proposal does not expire on a long-running server (the "New pro
   rollSampleContent(db);
   assert.equal(db.proposals.find((p) => p.id === 'pr1')!.status, 'declined');
 });
+
+test('sample join requests keep their "20 min ago" age instead of the day the server first loaded', () => {
+  const db = world();
+  const WEEKS = 21 * 86400000;
+  db.participations = db.participations.map((p) => ({ ...p, createdAt: new Date(Date.parse(p.createdAt) - WEEKS).toISOString() }));
+  const patch = rollSampleContent(db);
+  assert.ok(patch?.participations?.length);
+  const p10 = db.participations.find((p) => p.id === 'p10')!;
+  assert.ok(Date.now() - Date.parse(p10.createdAt) < 2 * 3600000, 'p10 was asked 20 minutes before seed time');
+  assert.equal(rollSampleContent(db), null, 'nothing to roll right after');
+});
