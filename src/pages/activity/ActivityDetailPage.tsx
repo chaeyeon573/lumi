@@ -72,7 +72,7 @@ export function ActivityDetailPage() {
         <div className="card mt-3 divide-y divide-line">
           <Row icon={<Clock size={16} />} label={t('날짜와 시간')} value={`${formatDate(a.date)} ${formatTime(a.startTime)} – ${formatTime(a.endTime)}`} />
           <Row icon={<MapPin size={16} />} label={t('장소')} value={a.place.name} sub={a.place.address} />
-          <Row icon={<Users size={16} />} label={t('모집 인원')} value={`${approved.length}${t('명 참가 중 · 모집 ')}${a.capacity >= 999 ? t('제한 없음') : `${a.capacity}${t('명')}`}`} />
+          <Row icon={<Users size={16} />} label={t('모집 인원')} value={a.capacity >= 999 ? `${approved.length}${t('명 참가 중 · 인원 제한 없음')}` : `${approved.length}${t('명 참가 중 · 모집 ')}${a.capacity}${t('명')}`} />
           <Row icon={<Ticket size={16} />} label={t('참가 비용')} value={formatFee(a.fee)} />
           <Row icon={<Lock size={16} />} label={t('참가 방식')} value={JOIN_POLICY_LABELS[a.joinPolicy]} />
           {a.conditions && <Row icon={<ShieldCheck size={16} />} label={t('참가 조건')} value={a.conditions} />}

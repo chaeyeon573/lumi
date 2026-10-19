@@ -2,6 +2,14 @@
 
 최신이 위.
 
+## 2026-10-19 00:17 UTC (버클리 일 17:17) · 92회차 · 초점: 모임 상세·참가 인원 표시
+
+- 새 사장님 답 없음(QUESTIONS 답: 7개 그대로). 배포 브랜치 295a5f2 그대로.
+- 고침: 인원 제한 없는 모임(정원 999 이상)이 영어로 "0 joined · cap no limit" 으로 읽혀 어색했다 → "0 joined · no limit" / "0명 참가 중 · 인원 제한 없음". 상세(ActivityDetailPage)와 카드(ActivityCard 두 곳) 같이. 정원 있는 모임은 그대로("1 joined · cap 200").
+- 검증: `npx tsc -b` 통과, `npm test` 209/209. v2·classic 영어로 a_festival 상세 "0 joined · no limit", 한국어 v2 a_festival "0명 참가 중 · 인원 제한 없음", a_band_show "1명 참가 중 · 모집 200명" 확인.
+- 메모(데이터, 안 고침): 학교 공식 행사 'Homecoming kickoff' 주최자가 학생(Jordan)으로 나옴. a_band_show 댓글 날짜가 Sep 23(행사 날짜만 다시 맞춰지고 댓글 날짜는 그대로). 관리 화면(ManageActivityPage) "/ cap no limit" 문구는 다음에.
+- 다음 초점: 관리 화면 인원 문구와 행사 댓글 날짜(rollSampleContent 가 댓글도 다시 맞추는지).
+
 ## 2026-10-18 23:17 UTC (버클리 일 16:17) · 91회차 · 초점: 남은 사람 목록의 예시 표시
 
 - 고침: 시간표 '공강 겹치는 친구'(TimetablePage), 동아리 회원 목록(OrgPage), 사람 카드(PersonCard — 검색 '사람' 결과가 이걸 씀)에 예시 프로필이면 SAMPLE 표시. PRODUCT_TASTE "예시 프로필은 sample 표시를 단다".
