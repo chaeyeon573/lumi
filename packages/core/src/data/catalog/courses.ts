@@ -286,7 +286,11 @@ export function catalogTerms(courses: CatalogCourse[], schoolId: ID): string[] {
 export function resolveCatalogTerm(courses: CatalogCourse[], schoolId: ID, requested = '', now: Date = new Date()): string {
   if (requested.trim()) return requested.trim();
   const cur = termLabel(currentTerm(now));
-  return catalogTerms(courses, schoolId).includes(cur) ? cur : '';
+  const terms = catalogTerms(courses, schoolId);
+  if (terms.includes(cur)) return cur;
+  // 쿼터제(Stanford)는 가을 학기를 Autumn 이라 부른다
+  const autumn = cur.replace(/^Fall /, 'Autumn ');
+  return terms.includes(autumn) ? autumn : '';
 }
 
 /** 코드·이름·학과·교수로 검색. 코드 앞부분 일치를 먼저 보여준다. term 을 주면 그 학기 수업만 */

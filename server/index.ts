@@ -355,7 +355,8 @@ registerPushRoutes(app, push, { auth });
 // term 을 안 주면 지금 학기 (그 학교에 지금 학기 수업이 없으면 학기 구분 없이)
 const schoolCatalog = (schoolId: string) => catalogBySchool.get(schoolId) ?? [];
 const readSections = createSectionReader();
-app.post('/api/catalog/courses', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const list = schoolCatalog(s); return searchCatalog(list, s, String(req.body.query ?? ''), 30, String(req.body.department ?? ''), resolveCatalogTerm(list, s, String(req.body.term ?? ''))); }));
+// 딸린 섹션(c.sections)은 빼고 보낸다 — 학과 목록 400줄에 섹션 수십 개씩이면 너무 크다. 고를 때 /api/catalog/sections 로
+app.post('/api/catalog/courses', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const list = schoolCatalog(s); return searchCatalog(list, s, String(req.body.query ?? ''), 30, String(req.body.department ?? ''), resolveCatalogTerm(list, s, String(req.body.term ?? ''))).map(({ sections: _sections, ...c }) => c); }));
 app.post('/api/catalog/departments', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const list = schoolCatalog(s); return catalogDepartments(list, s, resolveCatalogTerm(list, s, String(req.body.term ?? ''))); }));
 app.post('/api/catalog/terms', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const list = schoolCatalog(s); return { terms: catalogTerms(list, s), current: resolveCatalogTerm(list, s) }; }));
 // 강의에 딸린 토론·랩 — 학생이 그 수업을 넣을 때 학교 시간표에서 읽어 온다 (6시간 기억)

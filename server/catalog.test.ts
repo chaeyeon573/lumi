@@ -30,6 +30,12 @@ test('term labels: legacy source codes read as "Fall 2026"; slugs for ids', () =
   assert.equal(normalizeTermLabel('FA26'), 'Fall 2026');
   assert.equal(normalizeTermLabel('SP27'), 'Spring 2027');
   assert.equal(normalizeTermLabel('202630'), '202630');
+  assert.equal(normalizeTermLabel('2026-2027 Autumn'), 'Autumn 2026', 'Stanford quarters: autumn is the first year');
+  assert.equal(normalizeTermLabel('Autumn 2026-2027'), 'Autumn 2026', 'rows saved before the fix');
+  assert.equal(normalizeTermLabel('2026-2027 Winter'), 'Winter 2027');
+  assert.equal(normalizeTermLabel('202608'), 'Fall 2026', 'UMD term id');
+  assert.equal(normalizeTermLabel('202701'), 'Spring 2027');
+  assert.equal(normalizeTermLabel('202610'), '202610', 'a Banner code, not a month');
   assert.equal(termSlug('Spring 2027'), 'sp27');
   assert.equal(termSlug('Fall 2026'), 'fa26');
 });
@@ -71,8 +77,8 @@ test('departments and terms are per term; schools without the current term show 
   // Cornell 옛 행(FA26)도 Fall 2026 으로 읽힌다
   assert.equal(courseTerm(CATALOG[7]), 'Fall 2026');
   assert.equal(resolveCatalogTerm(CATALOG, 's_cornell', '', at('2026-10-12')), 'Fall 2026');
-  // 쿼터제(Autumn) — 지금 학기 라벨이 없으면 학기 구분 없이
-  assert.equal(resolveCatalogTerm(CATALOG, 's_stanford', '', at('2026-10-12')), '');
+  // 쿼터제(Stanford)는 가을을 Autumn 이라 부른다 — 지금 학기로 본다 (겨울·봄 쿼터와 섞이지 않게)
+  assert.equal(resolveCatalogTerm(CATALOG, 's_stanford', '', at('2026-10-12')), 'Autumn 2026');
   assert.equal(searchCatalog(CATALOG, 's_stanford', 'CS', 30, '', '').length, 1);
 });
 

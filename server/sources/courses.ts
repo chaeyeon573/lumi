@@ -8,7 +8,7 @@
  *   harvard   my.harvard.edu 공개 과목 검색 + 섹션 조각 (FAS, 진행 중/다음 학기)
  * lookup(course) 는 한 과목을 원본에서 다시 읽어 온다 — agent 의 표본 검증용. 없으면 null.
  */
-import type { CatalogCourse } from '@core/api/types';
+import type { CatalogCourse, CatalogSection } from '@core/api/types';
 import { parseDays, parseTime } from '../scripts/csv';
 import { catalogTermLabels, currentTerm, normalizeTermLabel, termLabel, termSlug } from '@core/lib/terms';
 
@@ -26,33 +26,65 @@ const tagTerm = (courses: CatalogCourse[], label: string, now = new Date()): Cat
 };
 
 // ─── Stanford: ExploreCourses XML ──────────────────────────────────────────
-async function stanford(): Promise<CatalogCourse[]> {
-  const term = process.env.STANFORD_TERM ?? 'Autumn'; // Autumn | Winter | Spring | Summer
-  const subjects = (process.env.STANFORD_SUBJECTS ?? 'CS,MATH,STATS,ECON,PSYCH,BIO,CHEM,PHYSICS,EE,ME,MS&E,ENGR,POLISCI,HISTORY,ENGLISH,MUSIC,ARTSTUDI,SYMSYS,PWR,KORLANG').split(',');
+/**
+ * 과목마다 그 학년도의 모든 섹션이 온다 (Autumn·Winter·Spring, 강의 LEC + 토론 DIS · 랩 LAB …).
+ *   - 쿼터마다 한 줄: 그 쿼터의 강의 섹션 시간이 시간표, 같은 쿼터의 토론·랩은 sections 로 (학생이 고른다)
+ *   - 강의 섹션이 여럿이면 섹션마다 한 줄 (첫 섹션이 기본 id, 나머지는 _<섹션>) — Berkeley 와 같은 규칙
+ *   - 학기 라벨은 "2026-2027 Autumn" → "Autumn 2026" (normalizeTermLabel). 지금 쿼터가 아닌 줄은 id 에 꼬리표
+ */
+export function stanfordCourses(xml: string, subj: string, now = new Date()): CatalogCourse[] {
+  const unesc = (x: string) => x.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'");
+  const g = (tag: string, src: string) => unesc(src.match(new RegExp(`<${tag}>([\\s\\S]*?)<\\/${tag}>`))?.[1]?.trim() ?? '');
   const out: CatalogCourse[] = [];
-  for (const subj of subjects) {
-    const url = `https://explorecourses.stanford.edu/search?view=xml-20200810&filter-coursestatus-Active=on&filter-term-${term}=on&q=${encodeURIComponent(subj)}`;
-    const xml = await (await fetch(url, { headers: { 'user-agent': 'AroundU-importer' } })).text();
-    for (const c of xml.matchAll(/<course>([\s\S]*?)<\/course>/g)) {
-      const b = c[1];
-      const unesc = (x: string) => x.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'");
-      const g = (tag: string, src = b) => unesc(src.match(new RegExp(`<${tag}>([\\s\\S]*?)<\\/${tag}>`))?.[1]?.trim() ?? '');
-      const subject = g('subject'); if (subject !== subj) continue;
-      const code = `${subject} ${g('code')}`;
+  const current = normalizeTermLabel(termLabel(currentTerm(now))).replace(/^Fall /, 'Autumn ');
+  for (const c of xml.matchAll(/<course>([\s\S]*?)<\/course>/g)) {
+    const b = c[1];
+    const subject = g('subject', b); if (subject !== subj) continue;
+    const code = `${subject} ${g('code', b)}`;
+    const title = g('title', b);
+    type Sec = { term: string; component: string; no: string; meetings: Meeting[]; location?: string; instructor?: string };
+    const secs: Sec[] = [];
+    for (const m of b.matchAll(/<section>([\s\S]*?)<\/section>/g)) {
+      const sec = m[1];
       const meetings: Meeting[] = []; let location = ''; let instructor = '';
-      // 섹션이 여러 개(강의 + 토론·랩)면 강의(LEC) 섹션 하나만 시간표에 넣는다. 강의가 없으면 첫 섹션.
-      const sections = [...b.matchAll(/<section>([\s\S]*?)<\/section>/g)].map((m) => m[1]);
-      const lecture = sections.find((sec) => /<component>LEC<\/component>/.test(sec)) ?? sections[0] ?? b;
-      for (const s of lecture.matchAll(/<schedule>([\s\S]*?)<\/schedule>/g)) {
-        const days = g('days', s[1]); const st = g('startTime', s[1]); const en = g('endTime', s[1]);
+      for (const sch of sec.matchAll(/<schedule>([\s\S]*?)<\/schedule>/g)) {
+        const days = g('days', sch[1]).replace(/\s+/g, ' '); const st = g('startTime', sch[1]); const en = g('endTime', sch[1]);
         if (!days || !st || !en) continue;
-        location ||= g('location', s[1]);
-        instructor ||= g('name', s[1]);
+        location ||= g('location', sch[1]);
+        instructor ||= g('name', sch[1]);
         for (const day of parseDays(days)) meetings.push({ day, start: parseTime(st.replace(/:00 /, ' ')), end: parseTime(en.replace(/:00 /, ' ')) });
       }
       if (!meetings.length) continue;
-      out.push({ id: courseId('s_stanford', code), schoolId: 's_stanford', code, title: g('title'), department: g('subject'), instructor: instructor || undefined, location: location || undefined, meetings: uniq(meetings), term: `${term} ${g('year') || ''}`.trim(), units: Number(g('unitsMax')) || undefined, url: `https://explorecourses.stanford.edu/search?view=catalog&q=${encodeURIComponent(code)}` });
+      secs.push({ term: normalizeTermLabel(g('term', sec)), component: g('component', sec), no: g('sectionNumber', sec), meetings: uniq(meetings), location: location || undefined, instructor: instructor || undefined });
     }
+    for (const term of [...new Set(secs.map((x) => x.term))]) {
+      const inTerm = secs.filter((x) => x.term === term);
+      const lectures = inTerm.filter((x) => x.component === 'LEC');
+      const mains = (lectures.length ? lectures : [inTerm[0]]).sort((a, b2) => a.no.localeCompare(b2.no, 'en', { numeric: true }));
+      const extras = inTerm.filter((x) => !mains.includes(x) && x.component !== 'LEC');
+      const sections: CatalogSection[] | undefined = extras.length
+        ? extras.map((x) => ({ label: `${x.component} ${x.no}`, kind: x.component, meetings: x.meetings, location: x.location }))
+          .sort((a, b2) => a.kind.localeCompare(b2.kind) || a.label.localeCompare(b2.label, 'en', { numeric: true }))
+        : undefined;
+      const baseId = courseId('s_stanford', code);
+      const slug = term === current ? '' : `_${termSlug(term)}`;
+      mains.forEach((lec, i) => out.push({
+        id: `${baseId}${i === 0 ? '' : `_${lec.no}`}${slug}`, schoolId: 's_stanford', code, title: mains.length > 1 ? `${title} (Sec ${lec.no})` : title, department: subject,
+        instructor: lec.instructor, location: lec.location, meetings: lec.meetings, term, units: Number(g('unitsMax', b)) || undefined,
+        url: `https://explorecourses.stanford.edu/search?view=catalog&q=${encodeURIComponent(code)}`, ...(sections ? { sections } : {}),
+      }));
+    }
+  }
+  return out;
+}
+async function stanford(): Promise<CatalogCourse[]> {
+  const subjects = (process.env.STANFORD_SUBJECTS ?? 'CS,MATH,STATS,ECON,PSYCH,BIO,CHEM,PHYSICS,EE,ME,MS&E,ENGR,POLISCI,HISTORY,ENGLISH,MUSIC,ARTSTUDI,SYMSYS,PWR,KORLANG').split(',');
+  const out: CatalogCourse[] = [];
+  for (const subj of subjects) {
+    // 학기 필터 없이 — 한 번에 그 학년도 세 쿼터가 다 온다
+    const url = `https://explorecourses.stanford.edu/search?view=xml-20200810&filter-coursestatus-Active=on&q=${encodeURIComponent(subj)}`;
+    const xml = await (await fetch(url, { headers: { 'user-agent': 'AroundU-importer' } })).text();
+    out.push(...stanfordCourses(xml, subj));
     console.log(`  ${subj}: ${out.length}`);
   }
   return out;
@@ -735,7 +767,7 @@ export interface CourseSource { schoolId: string; fetch(): Promise<CatalogCourse
 async function stanfordLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   const subj = c.code.split(' ')[0];
   const prevEnv = process.env.STANFORD_SUBJECTS; process.env.STANFORD_SUBJECTS = subj;
-  try { return (await stanford()).find((x) => x.code === c.code) ?? null; } finally { if (prevEnv === undefined) delete process.env.STANFORD_SUBJECTS; else process.env.STANFORD_SUBJECTS = prevEnv; }
+  try { const all = await stanford(); return all.find((x) => x.id === c.id) ?? all.find((x) => x.code === c.code) ?? null; } finally { if (prevEnv === undefined) delete process.env.STANFORD_SUBJECTS; else process.env.STANFORD_SUBJECTS = prevEnv; }
 }
 async function mitLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   const res = await fetch(`https://fireroad.mit.edu/courses/lookup/${encodeURIComponent(c.code)}?full=true`, { headers: { 'user-agent': 'AroundU-importer' } });

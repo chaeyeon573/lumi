@@ -1,0 +1,1380 @@
+<xml><courses><course>
+	        	<year>2026-2027</year>
+	        	<subject>CS</subject>
+	        	<code>106A</code>
+				<title>Programming Methodology</title>
+				<description></description>
+				<gers>GER:DB-EngrAppSci, WAY-FR</gers>
+				<repeatable>false</repeatable>
+				<grading>Letter or Credit/No Credit</grading>
+				<unitsMin>3</unitsMin>
+				<unitsMax>5</unitsMax>
+				<remote>false</remote>
+				<learningObjectives>
+					
+						<learningObjective>
+							<requirementCode>WAY-FR</requirementCode>
+							<description></description>
+						</learningObjective>
+					
+				</learningObjectives>
+				<sections>
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						<section>
+							<classId>1838</classId>
+							<term>2026-2027 Autumn</term>
+							<termId>1272</termId>
+							<subject>CS</subject>
+	        				<code>106A</code>
+							<units></units>
+							<sectionNumber>33</sectionNumber>
+							<component>DIS</component>
+							<numEnrolled>0</numEnrolled>
+							<maxEnrolled>15</maxEnrolled>
+							<numWaitlist>0</numWaitlist>
+							<maxWaitlist>0</maxWaitlist>
+							<enrollStatus>Open</enrollStatus>
+							<addConsent>N</addConsent>
+							<dropConsent>N</dropConsent>
+							<instructionMode>P</instructionMode>
+							<courseId>105644</courseId>
+							<schedules>
+								
+									<schedule>
+										
+										<startDate>Sep 22, 2026</startDate>
+										<endDate>Dec 4, 2026</endDate>
+										<startTime>7:30:00 PM</startTime>
+										<endTime>8:20:00 PM</endTime>
+										<location>Lathrop 017</location>
+										<days>
+											
+											
+											
+											
+											Thursday
+											
+											
+										</days>
+										<instructors>
+											
+										</instructors>
+									</schedule>
+								
+							</schedules>
+							<currentClassSize>0</currentClassSize>
+							<maxClassSize>15</maxClassSize>
+							<currentWaitlistSize>0</currentWaitlistSize>
+							<maxWaitlistSize>0</maxWaitlistSize>
+							<notes></notes>
+							<attributes>
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>SPR</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>WIN</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>SUM</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>AUT</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+							</attributes>
+						</section>
+					
+						<section>
+							<classId>1835</classId>
+							<term>2026-2027 Autumn</term>
+							<termId>1272</termId>
+							<subject>CS</subject>
+	        				<code>106A</code>
+							<units></units>
+							<sectionNumber>31</sectionNumber>
+							<component>DIS</component>
+							<numEnrolled>0</numEnrolled>
+							<maxEnrolled>15</maxEnrolled>
+							<numWaitlist>0</numWaitlist>
+							<maxWaitlist>0</maxWaitlist>
+							<enrollStatus>Open</enrollStatus>
+							<addConsent>N</addConsent>
+							<dropConsent>N</dropConsent>
+							<instructionMode>P</instructionMode>
+							<courseId>105644</courseId>
+							<schedules>
+								
+									<schedule>
+										
+										<startDate>Sep 22, 2026</startDate>
+										<endDate>Dec 4, 2026</endDate>
+										<startTime>6:30:00 PM</startTime>
+										<endTime>7:20:00 PM</endTime>
+										<location>Thornton 207</location>
+										<days>
+											
+											
+											
+											
+											Thursday
+											
+											
+										</days>
+										<instructors>
+											
+										</instructors>
+									</schedule>
+								
+							</schedules>
+							<currentClassSize>0</currentClassSize>
+							<maxClassSize>15</maxClassSize>
+							<currentWaitlistSize>0</currentWaitlistSize>
+							<maxWaitlistSize>0</maxWaitlistSize>
+							<notes></notes>
+							<attributes>
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>SPR</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>WIN</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>SUM</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>AUT</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+							</attributes>
+						</section>
+					
+						<section>
+							<classId>1834</classId>
+							<term>2026-2027 Autumn</term>
+							<termId>1272</termId>
+							<subject>CS</subject>
+	        				<code>106A</code>
+							<units></units>
+							<sectionNumber>30</sectionNumber>
+							<component>DIS</component>
+							<numEnrolled>0</numEnrolled>
+							<maxEnrolled>15</maxEnrolled>
+							<numWaitlist>0</numWaitlist>
+							<maxWaitlist>0</maxWaitlist>
+							<enrollStatus>Open</enrollStatus>
+							<addConsent>N</addConsent>
+							<dropConsent>N</dropConsent>
+							<instructionMode>P</instructionMode>
+							<courseId>105644</courseId>
+							<schedules>
+								
+									<schedule>
+										
+										<startDate>Sep 22, 2026</startDate>
+										<endDate>Dec 4, 2026</endDate>
+										<startTime>6:30:00 PM</startTime>
+										<endTime>7:20:00 PM</endTime>
+										<location>Lathrop 294</location>
+										<days>
+											
+											
+											
+											
+											Thursday
+											
+											
+										</days>
+										<instructors>
+											
+										</instructors>
+									</schedule>
+								
+							</schedules>
+							<currentClassSize>0</currentClassSize>
+							<maxClassSize>15</maxClassSize>
+							<currentWaitlistSize>0</currentWaitlistSize>
+							<maxWaitlistSize>0</maxWaitlistSize>
+							<notes></notes>
+							<attributes>
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>SPR</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>WIN</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>SUM</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>AUT</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+							</attributes>
+						</section>
+					
+						<section>
+							<classId>1832</classId>
+							<term>2026-2027 Autumn</term>
+							<termId>1272</termId>
+							<subject>CS</subject>
+	        				<code>106A</code>
+							<units></units>
+							<sectionNumber>28</sectionNumber>
+							<component>DIS</component>
+							<numEnrolled>0</numEnrolled>
+							<maxEnrolled>15</maxEnrolled>
+							<numWaitlist>0</numWaitlist>
+							<maxWaitlist>0</maxWaitlist>
+							<enrollStatus>Open</enrollStatus>
+							<addConsent>N</addConsent>
+							<dropConsent>N</dropConsent>
+							<instructionMode>P</instructionMode>
+							<courseId>105644</courseId>
+							<schedules>
+								
+									<schedule>
+										
+										<startDate>Sep 22, 2026</startDate>
+										<endDate>Dec 4, 2026</endDate>
+										<startTime>5:30:00 PM</startTime>
+										<endTime>6:20:00 PM</endTime>
+										<location>Lathrop 290</location>
+										<days>
+											
+											
+											
+											
+											Thursday
+											
+											
+										</days>
+										<instructors>
+											
+										</instructors>
+									</schedule>
+								
+							</schedules>
+							<currentClassSize>0</currentClassSize>
+							<maxClassSize>15</maxClassSize>
+							<currentWaitlistSize>0</currentWaitlistSize>
+							<maxWaitlistSize>0</maxWaitlistSize>
+							<notes></notes>
+							<attributes>
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>SPR</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>WIN</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>SUM</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>AUT</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+							</attributes>
+						</section>
+					
+						<section>
+							<classId>1830</classId>
+							<term>2026-2027 Autumn</term>
+							<termId>1272</termId>
+							<subject>CS</subject>
+	        				<code>106A</code>
+							<units></units>
+							<sectionNumber>26</sectionNumber>
+							<component>DIS</component>
+							<numEnrolled>0</numEnrolled>
+							<maxEnrolled>15</maxEnrolled>
+							<numWaitlist>0</numWaitlist>
+							<maxWaitlist>0</maxWaitlist>
+							<enrollStatus>Open</enrollStatus>
+							<addConsent>N</addConsent>
+							<dropConsent>N</dropConsent>
+							<instructionMode>P</instructionMode>
+							<courseId>105644</courseId>
+							<schedules>
+								
+									<schedule>
+										
+										<startDate>Sep 22, 2026</startDate>
+										<endDate>Dec 4, 2026</endDate>
+										<startTime>5:30:00 PM</startTime>
+										<endTime>6:20:00 PM</endTime>
+										<location>STLC 105</location>
+										<days>
+											
+											
+											
+											
+											Thursday
+											
+											
+										</days>
+										<instructors>
+											
+										</instructors>
+									</schedule>
+								
+							</schedules>
+							<currentClassSize>0</currentClassSize>
+							<maxClassSize>15</maxClassSize>
+							<currentWaitlistSize>0</currentWaitlistSize>
+							<maxWaitlistSize>0</maxWaitlistSize>
+							<notes></notes>
+							<attributes>
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>SPR</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>WIN</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>SUM</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>AUT</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+							</attributes>
+						</section>
+					
+						<section>
+							<classId>1848</classId>
+							<term>2026-2027 Autumn</term>
+							<termId>1272</termId>
+							<subject>CS</subject>
+	        				<code>106A</code>
+							<units></units>
+							<sectionNumber>43</sectionNumber>
+							<component>DIS</component>
+							<numEnrolled>0</numEnrolled>
+							<maxEnrolled>15</maxEnrolled>
+							<numWaitlist>0</numWaitlist>
+							<maxWaitlist>0</maxWaitlist>
+							<enrollStatus>Open</enrollStatus>
+							<addConsent>N</addConsent>
+							<dropConsent>N</dropConsent>
+							<instructionMode>P</instructionMode>
+							<courseId>105644</courseId>
+							<schedules>
+								
+									<schedule>
+										
+										<startDate>Sep 22, 2026</startDate>
+										<endDate>Dec 4, 2026</endDate>
+										<startTime>11:30:00 AM</startTime>
+										<endTime>12:20:00 PM</endTime>
+										<location>ANKO 008</location>
+										<days>
+											
+											
+											
+											
+											
+											Friday
+											
+										</days>
+										<instructors>
+											
+										</instructors>
+									</schedule>
+								
+							</schedules>
+							<currentClassSize>0</currentClassSize>
+							<maxClassSize>15</maxClassSize>
+							<currentWaitlistSize>0</currentWaitlistSize>
+							<maxWaitlistSize>0</maxWaitlistSize>
+							<notes></notes>
+							<attributes>
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>SPR</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>WIN</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>SUM</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>AUT</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+							</attributes>
+						</section>
+					
+						
+					
+						
+					
+						<section>
+							<classId>1877</classId>
+							<term>2026-2027 Winter</term>
+							<termId>1274</termId>
+							<subject>CS</subject>
+	        				<code>106A</code>
+							<units>3-5</units>
+							<sectionNumber>01</sectionNumber>
+							<component>LEC</component>
+							<numEnrolled>0</numEnrolled>
+							<maxEnrolled>500</maxEnrolled>
+							<numWaitlist>0</numWaitlist>
+							<maxWaitlist>0</maxWaitlist>
+							<enrollStatus>Open</enrollStatus>
+							<addConsent>N</addConsent>
+							<dropConsent>N</dropConsent>
+							<instructionMode>P</instructionMode>
+							<courseId>105644</courseId>
+							<schedules>
+								
+									<schedule>
+										
+										<startDate>Jan 4, 2027</startDate>
+										<endDate>Mar 12, 2027</endDate>
+										<startTime>12:30:00 PM</startTime>
+										<endTime>1:20:00 PM</endTime>
+										<location></location>
+										<days>
+											
+											Monday
+											
+											Wednesday
+											
+											Friday
+											
+										</days>
+										<instructors>
+											
+												<instructor>
+													<name>Parlante, N.</name>
+													<firstName>Nick</firstName>
+													<middleName></middleName>
+													<lastName>Parlante</lastName>
+													<sunet>nick</sunet>
+													<role>PI</role>
+												</instructor>
+											
+										</instructors>
+									</schedule>
+								
+							</schedules>
+							<currentClassSize>0</currentClassSize>
+							<maxClassSize>500</maxClassSize>
+							<currentWaitlistSize>0</currentWaitlistSize>
+							<maxWaitlistSize>0</maxWaitlistSize>
+							<notes>Do not enroll in discussion sections in Axess. The first week of class, students sign up for discussion sections via CS198 website. Discussion section assignments received during second week of class when sections start. May be taken for 3 units by graduate students.</notes>
+							<attributes>
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>SPR</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>WIN</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>SUM</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>AUT</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+							</attributes>
+						</section>
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						<section>
+							<classId>1801</classId>
+							<term>2026-2027 Autumn</term>
+							<termId>1272</termId>
+							<subject>CS</subject>
+	        				<code>106A</code>
+							<units>3-5</units>
+							<sectionNumber>01</sectionNumber>
+							<component>LEC</component>
+							<numEnrolled>431</numEnrolled>
+							<maxEnrolled>999</maxEnrolled>
+							<numWaitlist>0</numWaitlist>
+							<maxWaitlist>0</maxWaitlist>
+							<enrollStatus>Open</enrollStatus>
+							<addConsent>N</addConsent>
+							<dropConsent>N</dropConsent>
+							<instructionMode>P</instructionMode>
+							<courseId>105644</courseId>
+							<schedules>
+								
+									<schedule>
+										
+										<startDate>Sep 22, 2026</startDate>
+										<endDate>Dec 4, 2026</endDate>
+										<startTime>11:30:00 AM</startTime>
+										<endTime>12:20:00 PM</endTime>
+										<location>Hewlett Teaching Center 200</location>
+										<days>
+											
+											Monday
+											
+											Wednesday
+											
+											Friday
+											
+										</days>
+										<instructors>
+											
+												<instructor>
+													<name>Parlante, N.</name>
+													<firstName>Nick</firstName>
+													<middleName></middleName>
+													<lastName>Parlante</lastName>
+													<sunet>nick</sunet>
+													<role>PI</role>
+												</instructor>
+											
+												<instructor>
+													<name>Mlauzi, I.</name>
+													<firstName>Iddah</firstName>
+													<middleName>Ashley Kudakwashe</middleName>
+													<lastName>Mlauzi</lastName>
+													<sunet>iddah</sunet>
+													<role>TA</role>
+												</instructor>
+											
+												<instructor>
+													<name>Belay, E.</name>
+													<firstName>Ezana</firstName>
+													<middleName></middleName>
+													<lastName>Belay</lastName>
+													<sunet>ezbelay</sunet>
+													<role>TA</role>
+												</instructor>
+											
+										</instructors>
+									</schedule>
+								
+							</schedules>
+							<currentClassSize>431</currentClassSize>
+							<maxClassSize>999</maxClassSize>
+							<currentWaitlistSize>0</currentWaitlistSize>
+							<maxWaitlistSize>0</maxWaitlistSize>
+							<notes>May be taken for 3 units by graduate students. Do not enroll in discussion sections in Axess. The first week of class, students sign up for discussion sections via CS198 website. Discussion section assignments received during second week of class when sections start.</notes>
+							<attributes>
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>SPR</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>WIN</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>SUM</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+										<attribute>
+											<name>NQTR</name>
+											<value>AUT</value>
+											<description></description>
+											<catalogPrint>true</catalogPrint>
+											<schedulePrint>false</schedulePrint>
+										</attribute>
+									
+								
+									
+								
+									
+								
+									
+								
+									
+								
+							</attributes>
+						</section>
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+				</sections>
+				<administrativeInformation>
+					<courseId>105644</courseId>
+					<effectiveStatus>A</effectiveStatus>
+					<offerNumber>1</offerNumber>
+					<academicGroup>ENGR</academicGroup>
+					<academicOrganization>COMPUTSCI</academicOrganization>
+					<academicCareer>UG</academicCareer>
+					<finalExamFlag>Y</finalExamFlag>
+					<catalogPrint>Y</catalogPrint>
+					<schedulePrint>Y</schedulePrint>
+					<maxUnitsRepeat>5</maxUnitsRepeat>
+					<maxTimesRepeat>1</maxTimesRepeat>
+				</administrativeInformation>
+				<attributes>
+					
+						
+							<attribute>
+								<name>NQTR</name>
+								<value>SPR</value>
+								<description></description>
+								<catalogPrint>true</catalogPrint>
+								<schedulePrint>false</schedulePrint>
+							</attribute>
+						
+					
+						
+							<attribute>
+								<name>NQTR</name>
+								<value>WIN</value>
+								<description></description>
+								<catalogPrint>true</catalogPrint>
+								<schedulePrint>false</schedulePrint>
+							</attribute>
+						
+					
+						
+							<attribute>
+								<name>NQTR</name>
+								<value>SUM</value>
+								<description></description>
+								<catalogPrint>true</catalogPrint>
+								<schedulePrint>false</schedulePrint>
+							</attribute>
+						
+					
+						
+							<attribute>
+								<name>NQTR</name>
+								<value>AUT</value>
+								<description></description>
+								<catalogPrint>true</catalogPrint>
+								<schedulePrint>false</schedulePrint>
+							</attribute>
+						
+					
+						
+					
+						
+					
+						
+					
+						
+					
+				</attributes>
+				<tags>
+					
+					<tag>
+						<organization>SYMSYS</organization>
+						<name>core</name>
+					</tag>
+					
+					<tag>
+						<organization>VPUE</organization>
+						<name>ug-intro-service</name>
+					</tag>
+					
+					<tag>
+						<organization>VPUE</organization>
+						<name>cc-ff</name>
+					</tag>
+					
+					<tag>
+						<organization>STS</organization>
+						<name>cm-tech</name>
+					</tag>
+					
+					<tag>
+						<organization>STS</organization>
+						<name>io-tech</name>
+					</tag>
+					
+					<tag>
+						<organization>STS</organization>
+						<name>pp-tech</name>
+					</tag>
+					
+					<tag>
+						<organization>STATS</organization>
+						<name>ms_reqprog</name>
+					</tag>
+					
+					<tag>
+						<organization>MCS</organization>
+						<name>cs_core_req</name>
+					</tag>
+					
+					<tag>
+						<organization>MCS</organization>
+						<name>minor_core_req</name>
+					</tag>
+					
+					<tag>
+						<organization>EDUC</organization>
+						<name>alluniversityabove100</name>
+					</tag>
+					
+					<tag>
+						<organization>EDUC</organization>
+						<name>alluniversity</name>
+					</tag>
+					
+					<tag>
+						<organization>STATS</organization>
+						<name>ds_minor_core</name>
+					</tag>
+					
+					<tag>
+						<organization>ENGLISH</organization>
+						<name>dh-minor</name>
+					</tag>
+					
+					<tag>
+						<organization>INTLPOL</organization>
+						<name>cyber</name>
+					</tag>
+					
+					<tag>
+						<organization>STS</organization>
+						<name>sddi-tech</name>
+					</tag>
+					
+					<tag>
+						<organization>HUMBIO</organization>
+						<name>breadth</name>
+					</tag>
+					
+					<tag>
+						<organization>PUBLPOL</organization>
+						<name>found-comp</name>
+					</tag>
+					
+					<tag>
+						<organization>PUBLPOL</organization>
+						<name>ug-comp</name>
+					</tag>
+					
+					<tag>
+						<organization>SUMSESS</organization>
+						<name>DCI</name>
+					</tag>
+					
+					<tag>
+						<organization>STS</organization>
+						<name>crs-tech</name>
+					</tag>
+					
+					<tag>
+						<organization>STS</organization>
+						<name>lsh-tech</name>
+					</tag>
+					
+				</tags>
+		    </course></courses></xml>

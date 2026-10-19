@@ -5,6 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { CatalogCourse } from '@core/api/types';
 import { associatedIdFromPage, createSectionReader, parseAssociatedSections } from './sections';
+import { stanfordCourses } from './sources/courses';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fx = (f: string) => readFileSync(path.join(here, 'fixtures', f), 'utf8');
@@ -62,4 +63,23 @@ test('section reader: a failed read is an empty list (the class still adds), ret
   t += 11 * 60_000;
   assert.equal((await read(course({ sourceId: '517627' }))).length, 3);
   assert.equal(n, 2);
+});
+
+test('Stanford: one row per quarter with that quarter’s lecture time; its discussions come along as sections', () => {
+  const rows = stanfordCourses(fx('stanford-explorecourses-cs-106a-161.xml'), 'CS', new Date('2026-10-19T12:00:00Z'));
+  assert.deepEqual(rows.map((c) => [c.id, c.term]), [['cc_stanford_cs106a', 'Autumn 2026'], ['cc_stanford_cs106a_wi27', 'Winter 2027']], 'the Winter lecture is not mixed into Autumn');
+  const aut = rows[0];
+  assert.deepEqual(aut.meetings, [{ day: 0, start: '11:30', end: '12:20' }, { day: 2, start: '11:30', end: '12:20' }, { day: 4, start: '11:30', end: '12:20' }]);
+  assert.equal(aut.location, 'Hewlett Teaching Center 200');
+  assert.equal(aut.sections?.length, 6);
+  assert.ok(aut.sections!.every((s) => s.kind === 'DIS' && /^DIS \d+$/.test(s.label) && s.meetings.length));
+  assert.equal(rows[1].sections, undefined, 'no Winter discussions in this sample');
+});
+
+test('section reader: courses that came with sections are answered without asking any site', async () => {
+  let asked = 0;
+  const read = createSectionReader(async () => { asked++; return ''; });
+  const s = [{ label: 'DIS 26', kind: 'DIS', meetings: [{ day: 3, start: '17:30', end: '18:20' }] }];
+  assert.deepEqual(await read(course({ id: 'cc_stanford_cs106a', schoolId: 's_stanford', sections: s })), s);
+  assert.equal(asked, 0);
 });

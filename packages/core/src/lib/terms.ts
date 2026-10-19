@@ -47,6 +47,12 @@ export function normalizeTermLabel(raw: string): string {
   if (m) return `${m[2][0].toUpperCase()}${m[2].slice(1).toLowerCase()} ${m[1]}`;
   m = /^(SP|SU|FA|WI)(\d{2})$/i.exec(s);
   if (m) return `${SEASONS[m[1].toUpperCase()]} 20${m[2]}`;
+  // Stanford 학년도 쿼터: "2026-2027 Autumn" / "Autumn 2026-2027" → 가을은 앞 해, 겨울·봄·여름은 뒤 해
+  m = /^(?:(\d{4})-(\d{4})\s+(Autumn|Winter|Spring|Summer)|(Autumn|Winter|Spring|Summer)\s+(\d{4})-(\d{4}))$/i.exec(s);
+  if (m) { const q = (m[3] ?? m[4]).toLowerCase(); const y1 = m[1] ?? m[5], y2 = m[2] ?? m[6]; return `${q[0].toUpperCase()}${q.slice(1)} ${q === 'autumn' ? y1 : y2}`; }
+  // UMD 학기 id (연도 + 시작 달): 202601 봄 · 202605 여름 · 202608 가을 · 202612 겨울. Banner 의 202610·202630 같은 코드는 건드리지 않는다
+  m = /^(\d{4})(01|05|08|12)$/.exec(s);
+  if (m) return `${({ '01': 'Spring', '05': 'Summer', '08': 'Fall', '12': 'Winter' } as Record<string, string>)[m[2]]} ${m[1]}`;
   return s;
 }
 

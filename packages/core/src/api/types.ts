@@ -164,6 +164,8 @@ export interface CatalogCourse {
   exams?: { label: string; date: string }[];
   /** 원본 사이트의 수업 번호 (Berkeley: classes.berkeley.edu 의 node id) — 딸린 토론·랩 섹션을 찾을 때 쓴다 */
   sourceId?: string;
+  /** 가져올 때 원본에 같이 있던 딸린 섹션 (Stanford·MIT) — 없으면 Berkeley 처럼 고를 때 읽어 온다. 검색 결과로는 내려보내지 않는다 */
+  sections?: CatalogSection[];
 }
 
 /** 강의에 딸린 토론·랩 섹션 하나 (Berkeley "DIS 118" · "LAB 119L") — 학교 공개 시간표에 있는 것만, 지어내지 않는다 */

@@ -1,5 +1,6 @@
 /**
  * 강의에 딸린 토론·랩 섹션 (Berkeley DIS · LAB …) — 학생이 수업을 시간표에 넣을 때 그 수업 것만 읽어 온다.
+ * (Stanford·MIT 처럼 목록 원본에 섹션이 같이 오는 학교는 가져올 때 CatalogCourse.sections 에 넣어 두고 그대로 돌려준다.)
  *
  * 원본: classes.berkeley.edu/sections/associated/<node id> — 수업 페이지가 "Associated Sections" 칸을 채울 때 부르는 주소.
  *   섹션마다 "COMPSCI 61A 118" · "118 DIS" · Days · Time · Place 가 한 덩어리로 온다.
@@ -75,6 +76,7 @@ export function createSectionReader(get: Fetch = defaultFetch, now = () => Date.
     return parseAssociatedSections(await get(`${BERKELEY_PUBLIC}/sections/associated/${id}`));
   };
   return async (c: CatalogCourse): Promise<CatalogSection[]> => {
+    if (c.sections) return c.sections; // 가져올 때 같이 받아 둔 학교 (Stanford·MIT)
     if (c.schoolId !== 's_berkeley') return [];
     const hit = memo.get(c.id);
     if (hit && now() - hit.at < (hit.ok ? KEEP_MS : RETRY_MS)) return hit.value;
