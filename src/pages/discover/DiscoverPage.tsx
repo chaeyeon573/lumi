@@ -105,6 +105,7 @@ function NowTab() {
             <button key={p.u.id} onClick={() => nav(`/users/${p.u.id}?propose=1&cat=${p.category ?? 'coffee'}`)} className="flex flex-col items-center gap-1.5 shrink-0 w-[68px]">
               <Avatar emoji={p.u.avatar.emoji} hue={p.u.avatar.hue} url={p.u.avatar.url} size={64} className="ring-2 ring-accent ring-offset-2" />
               <span className="text-[13px] font-semibold text-primary truncate max-w-full">{p.u.nickname}</span>
+              {p.u.sample && <SampleTag className="h-4 mr-0 px-1 text-[9px] -mt-1" />}
               {/* 끝나는 시각을 알 때만 ‘4h left’ — 모를 때 minutes 는 정렬용 자리값(240·300·60)이라 그대로 쓰면 지어낸 숫자가 된다 */}
               {p.until ? <span className="text-[11px] text-ink-3 -mt-1">{left(p.minutes)}</span> : null}
             </button>
