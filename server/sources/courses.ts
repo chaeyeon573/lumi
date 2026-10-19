@@ -232,6 +232,7 @@ async function berkeleyTerm(idx: BerkeleyIndex, termLabel: string, only?: string
         const title0 = text(row.match(/class="st--title"[^>]*>\s*<h2>([\s\S]*?)<\/h2>/)?.[1] ?? '');
         const title = BERKELEY_FORMERLY[code] && title0 ? `${title0} (formerly ${BERKELEY_FORMERLY[code]})` : title0;
         const contentPath = /href="(\/content\/[^"]+)"/.exec(row)?.[1];
+        const sourceId = /data-history-node-id="(\d+)"/.exec(row)?.[1];
         const instructor = field(row, 'st--instructors') || undefined;
         const department = text(row.match(/offered through[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/)?.[1] ?? '') || l.dept || subjKey;
         const units = Number(text(row.match(/class="st--details-unit"[^>]*>([\s\S]*?)<\/div>/)?.[1] ?? '').replace(/Units:\s*/i, '').split(/[^\d.]/)[0]) || undefined;
@@ -251,7 +252,7 @@ async function berkeleyTerm(idx: BerkeleyIndex, termLabel: string, only?: string
         const key = `${baseId}#${sectionNo}`;
         const prev = mine.get(key);
         if (prev) { prev.course.meetings = uniq([...prev.course.meetings, ...meetings]); continue; }
-        mine.set(key, { baseId, sectionNo, course: { id: baseId, schoolId: 's_berkeley', code, title, department, instructor, location, meetings: uniq(meetings), term: termLabel, units, url: contentPath ? `${BERKELEY_PUBLIC}${contentPath}` : undefined } });
+        mine.set(key, { baseId, sectionNo, course: { id: baseId, schoolId: 's_berkeley', code, title, department, instructor, location, meetings: uniq(meetings), term: termLabel, units, url: contentPath ? `${BERKELEY_PUBLIC}${contentPath}` : undefined, sourceId } });
       }
     }
     console.log(`  ${termLabel} · ${l.label}: ${mine.size}`);

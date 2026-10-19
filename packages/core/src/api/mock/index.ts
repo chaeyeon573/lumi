@@ -132,6 +132,8 @@ export const mockApi: AroundUApi = {
     async courses(schoolId, query, department, term) { return request(() => searchCatalog(catalogCourses, schoolId, query, 30, department ?? '', resolveCatalogTerm(catalogCourses, schoolId, term))); },
     async departments(schoolId, term) { return request(() => catalogDepartments(catalogCourses, schoolId, resolveCatalogTerm(catalogCourses, schoolId, term))); },
     async terms(schoolId) { return request(() => ({ terms: catalogTerms(catalogCourses, schoolId), current: resolveCatalogTerm(catalogCourses, schoolId) })); },
+    // 데모(오프라인)에는 학교 시간표가 없다 — 토론·랩은 실제 서버에서만
+    async sections() { return request(() => []); },
   },
 
   // 학사 일정·좌석 알림은 서버(워커)가 공식 원본에서 가져온다 — 예시 모드에서는 비어 있다

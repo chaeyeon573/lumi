@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { t, lang } from '@core/i18n';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { OpenSlotSheet } from '@/components/social/OpenSlotSheet';
@@ -6,7 +6,7 @@ import { ClassSpaceContent } from '@/pages/classes/ClassPage';
 import { slotSuggestions } from '@core/lib/social';
 import { Plus, Trash2, Lock, Users, CalendarPlus, ChevronRight, Sparkles, Search } from 'lucide-react';
 import type { Course } from '@core/types';
-import type { CatalogCourse } from '@core/api/types';
+import type { CatalogCourse, CatalogSection } from '@core/api/types';
 import { TopBar } from '@/components/layout/TopBar';
 import { Button, BottomSheet, Field, Input, Select, Segmented, Tag, VisibilityPicker, EmptyState, CardSkeleton, ErrorState, Avatar, SampleTag } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
@@ -17,6 +17,7 @@ import { friendsOf } from '@core/lib/relations';
 import { uid, addDaysISO } from '@core/lib/format';
 import { cn } from '@core/lib/cn';
 import { WeekGrid } from '@/components/timetable/WeekGrid';
+import { SectionPicker } from '@/components/timetable/SectionPicker';
 import { WatchSeatsButton } from '@/components/seats/SeatWatch';
 import { ClassmatesNote } from '@/components/classes/ClassLink';
 
@@ -43,6 +44,9 @@ export function TimetablePage() {
   const [deptsTerm, setDeptsTerm] = useState<string | null>(null);
   const [wantTerm, setWantTerm] = useState('');
   const [catalog, setCatalog] = useState<CatalogCourse[] | null>(null);
+  /** 수업 목록에서 고른 강의 — 딸린 토론·랩을 고르는 중 (sections null = 읽는 중) */
+  const [picking, setPicking] = useState<{ c: CatalogCourse; sections: CatalogSection[] | null } | null>(null);
+  const pickingId = useRef('');
   const [slot, setSlot] = useState<{ day: number; block: { start: number; end: number } } | null>(null);
   const [params, setParams] = useSearchParams();
   const [space, setSpace] = useState<string | null>(null);
@@ -105,15 +109,29 @@ export function TimetablePage() {
     api.catalog.departments(schoolId, term || undefined).then((r) => { setDepts(r); setDept((d) => (d && !r.some((x) => x.name === d) ? '' : d)); }).catch(() => setDepts([]));
   }, [adding, schoolId, term, terms, deptsTerm]);
 
-  /** 수업 목록에서 골라 요일별 수업으로 펼쳐 추가 */
-  const addFromCatalog = async (c: CatalogCourse) => {
+  /** 수업 목록에서 골라 요일별 수업으로 펼쳐 추가 — 고른 토론·랩도 같은 이름으로 (section 에 "DIS 118") */
+  const addFromCatalog = async (c: CatalogCourse, chosen: CatalogSection[] = []) => {
     if (!me || !editing) return;
     const name = `${c.code} ${c.title}`.slice(0, 60);
     const hue = editing.hue;
-    const rows: Course[] = c.meetings.map((m) => ({ id: uid('c'), name, day: m.day, start: m.start, end: m.end, room: c.location, professor: c.instructor, url: c.url, syllabusUrl: c.syllabusUrl, hue }));
+    const rows: Course[] = [
+      ...c.meetings.map((m) => ({ id: uid('c'), name, day: m.day, start: m.start, end: m.end, room: c.location, professor: c.instructor, url: c.url, syllabusUrl: c.syllabusUrl, hue })),
+      ...chosen.flatMap((s) => s.meetings.map((m) => ({ id: uid('c'), name, day: m.day, start: m.start, end: m.end, room: s.location, url: c.url, syllabusUrl: c.syllabusUrl, section: s.label, hue }))),
+    ];
     setBusy(true);
-    try { await run(() => api.users.update(me.id, { timetable: [...me.timetable, ...rows] }), `${rows.length}${t('개 수업 시간 추가')}`); setEditing(null); setCatalogQ(''); } catch { /* */ } finally { setBusy(false); }
+    try { await run(() => api.users.update(me.id, { timetable: [...me.timetable, ...rows] }), `${rows.length}${t('개 수업 시간 추가')}`); setEditing(null); setPicking(null); pickingId.current = ''; setCatalogQ(''); } catch { /* */ } finally { setBusy(false); }
   };
+  /** 강의를 고르면 딸린 토론·랩부터 읽는다 — 없으면(다른 학교·못 읽음) 예전처럼 바로 넣는다 */
+  const pickFromCatalog = async (c: CatalogCourse) => {
+    if (!schoolId) return addFromCatalog(c);
+    pickingId.current = c.id;
+    setPicking({ c, sections: null });
+    const sections = await api.catalog.sections(schoolId, c.id).catch(() => [] as CatalogSection[]);
+    if (pickingId.current !== c.id) return; // 그새 닫았거나 다른 수업을 골랐다
+    if (!sections.length) { setPicking(null); pickingId.current = ''; return addFromCatalog(c); }
+    setPicking({ c, sections });
+  };
+  const closeEditor = () => { setEditing(null); setPicking(null); pickingId.current = ''; };
 
   const save = async () => {
     if (!editing || !editing.name.trim() || toMin(editing.start) >= toMin(editing.end)) return;
@@ -204,8 +222,11 @@ export function TimetablePage() {
         {space && <ClassSpaceContent courseName={space} onClose={() => setSpace(null)} onEdit={() => { const c = me.timetable.find((x) => x.name === space); setSpace(null); if (c) setEditing(c); }} />}
       </BottomSheet>
       <OpenSlotSheet open={!!slot} onClose={() => setSlot(null)} day={slot?.day ?? today} block={slot?.block ?? null} />
-      <BottomSheet open={!!editing} onClose={() => setEditing(null)} title={editing?.id ? t('수업 수정') : t('수업 추가')}>
-        {editing && (
+      <BottomSheet open={!!editing} onClose={closeEditor} title={editing?.id ? t('수업 수정') : t('수업 추가')}>
+        {editing && picking && (
+          <SectionPicker course={picking.c} sections={picking.sections} timetable={me.timetable} busy={busy} onBack={() => { setPicking(null); pickingId.current = ''; }} onAdd={(chosen) => addFromCatalog(picking.c, chosen)} />
+        )}
+        {editing && !picking && (
           <div className="space-y-4">
             {!editing.id && schoolId && (
               <div className="rounded-2xl bg-surface-2 p-3 space-y-2">
@@ -226,7 +247,7 @@ export function TimetablePage() {
                   <div className={cn('overflow-y-auto divide-y divide-line rounded-xl bg-white', dept ? 'max-h-72' : 'max-h-44')}>
                     {catalog.slice(0, dept ? 400 : 20).map((c) => (
                       <div key={c.id} className="flex items-start gap-2 px-3 py-2">
-                        <button type="button" disabled={busy} onClick={() => addFromCatalog(c)} className="flex-1 min-w-0 text-left press">
+                        <button type="button" disabled={busy} onClick={() => pickFromCatalog(c)} className="flex-1 min-w-0 text-left press">
                           <div className="text-[13px] font-semibold">{c.code} <span className="font-medium text-ink-2">{c.title}</span></div>
                           <div className="text-[11px] text-ink-3">{c.meetings.length ? c.meetings.map((m) => `${DAY_LABELS[m.day]} ${m.start}–${m.end}`).join(' · ') : t('시간 미정')}{c.location ? ` · ${c.location}` : ''}{c.instructor ? ` · ${c.instructor}` : ''}</div>
                         </button>

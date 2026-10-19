@@ -162,6 +162,18 @@ export interface CatalogCourse {
   syllabusUrl?: string;
   /** 학교가 공개한 시험 일정만 (없으면 비워 둔다 — 지어내지 않는다). 스터디 그룹 제안을 시험 주에 앞당긴다 */
   exams?: { label: string; date: string }[];
+  /** 원본 사이트의 수업 번호 (Berkeley: classes.berkeley.edu 의 node id) — 딸린 토론·랩 섹션을 찾을 때 쓴다 */
+  sourceId?: string;
+}
+
+/** 강의에 딸린 토론·랩 섹션 하나 (Berkeley "DIS 118" · "LAB 119L") — 학교 공개 시간표에 있는 것만, 지어내지 않는다 */
+export interface CatalogSection {
+  /** "DIS 118" — 시간표 수업의 section 으로 그대로 저장한다 */
+  label: string;
+  /** DIS · LAB · REC … */
+  kind: string;
+  meetings: { day: number; start: string; end: string }[];
+  location?: string;
 }
 
 /** 수업 방 공개 정보 (/c/<학교>/<코드>) — 로그인 전에도 보이므로 인원 수만, 사람은 없다 */
@@ -251,6 +263,8 @@ export interface AroundUApi {
     departments(schoolId: ID, term?: string): Promise<{ name: string; count: number }[]>;
     /** 수업 목록이 있는 학기들과 기본(지금) 학기. current 가 '' 면 학기 구분 없이 본다 */
     terms(schoolId: ID): Promise<{ terms: string[]; current: string }>;
+    /** 강의에 딸린 토론·랩 섹션 — 학교 시간표에서 그때 읽어 온다. 없거나 못 읽으면 빈 목록 */
+    sections(schoolId: ID, courseId: ID): Promise<CatalogSection[]>;
   };
 
   /** 학사 일정 (registrar 캘린더) — 지난 30일부터. 일정이 없는 학교는 빈 목록 */

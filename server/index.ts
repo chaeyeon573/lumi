@@ -5,7 +5,7 @@
  *   POST /api/auth/delete-account      본인 계정 영구 삭제 { confirm: 'DELETE' } (server/account.ts) — 데모·예시 계정은 거절
  *   POST /api/bootstrap
  *   POST /api/schools/{search,send-code,verify-code}
- *   POST /api/catalog/{courses,departments,terms}   term 생략 = 지금 학기 (Fall 2026 …)
+ *   POST /api/catalog/{courses,departments,terms,sections}   term 생략 = 지금 학기 (Fall 2026 …)
  *   POST /api/rpc/:group/:method        body: { args: [...] }  → 엔진 메서드 호출, Patch 반환
  *   GET  /api/events?token=…            SSE: 다른 사용자의 변경을 Patch 로 푸시
  *   POST /api/system/reset              ALLOW_RESET=1 일 때만
@@ -37,6 +37,7 @@ import type { Patch, Snapshot, RegisterInput, CatalogCourse } from '@core/api/ty
 import type { Game, ID, User } from '@core/types';
 import { sanitizeSelfUpdate } from '@core/lib/selfupdate';
 import { createEngine } from '@core/api/engine';
+import { createSectionReader } from './sections';
 import { searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm, catalogCourses as builtInCatalog } from '@core/data/catalog/courses';
 import { createStore } from './store';
 import { snapshotFor, patchFor } from './view';
@@ -353,9 +354,12 @@ registerPushRoutes(app, push, { auth });
 // ─── 수업 목록 ───────────────────────────────────────────────────────────
 // term 을 안 주면 지금 학기 (그 학교에 지금 학기 수업이 없으면 학기 구분 없이)
 const schoolCatalog = (schoolId: string) => catalogBySchool.get(schoolId) ?? [];
+const readSections = createSectionReader();
 app.post('/api/catalog/courses', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const list = schoolCatalog(s); return searchCatalog(list, s, String(req.body.query ?? ''), 30, String(req.body.department ?? ''), resolveCatalogTerm(list, s, String(req.body.term ?? ''))); }));
 app.post('/api/catalog/departments', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const list = schoolCatalog(s); return catalogDepartments(list, s, resolveCatalogTerm(list, s, String(req.body.term ?? ''))); }));
 app.post('/api/catalog/terms', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const list = schoolCatalog(s); return { terms: catalogTerms(list, s), current: resolveCatalogTerm(list, s) }; }));
+// 강의에 딸린 토론·랩 — 학생이 그 수업을 넣을 때 학교 시간표에서 읽어 온다 (6시간 기억)
+app.post('/api/catalog/sections', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const c = schoolCatalog(s).find((x) => x.id === String(req.body.courseId ?? '')); return c ? readSections(c) : []; }));
 
 // ─── 학사 일정 · 좌석 알림 ── /api/academic/dates, /api/seats/{mine,watch,unwatch}
 mountCampusRoutes(app, campus, { auth, wrap, requireUser, bad, user: (id) => db.users.find((u) => u.id === id), catalog: schoolCatalog });

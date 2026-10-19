@@ -54,7 +54,7 @@ export function WeekGrid({ courses, acts = [], days, today, onCourse, onActivity
                         <div className="text-[12px] font-extrabold leading-tight [overflow-wrap:anywhere] hyphens-auto v2:text-[13px]" style={{ color: code }}>{m[1]}</div>
                         {m[2] && <div className="text-[10.5px] font-semibold leading-tight line-clamp-3 mt-0.5 [overflow-wrap:anywhere] hyphens-auto" style={{ color: sub }}>{m[2]}</div>}
                       </> : <div className="text-[12px] font-extrabold leading-tight line-clamp-3 v2:text-[13px]" style={{ color: code }}>{c.name}</div>; })()}
-                      {c.room && <div className="text-[10.5px] font-medium mt-0.5 leading-tight line-clamp-2 v2:text-[11px]" style={{ color: k ? k.sub : `hsl(${c.hue} 35% 35%)` }}>{c.room}</div>}
+                      {(c.section || c.room) && <div className="text-[10.5px] font-medium mt-0.5 leading-tight line-clamp-2 v2:text-[11px]" style={{ color: k ? k.sub : `hsl(${c.hue} 35% 35%)` }}>{[c.section, c.room].filter(Boolean).join(' · ')}</div>}
                     </button>
                   ); })}
                   {acts.filter((x) => x.day === d).map(({ a }) => (
