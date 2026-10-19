@@ -1,5 +1,13 @@
-/** 캠퍼스(태평양) 시각 — 식당 영업시간·체육관 알림 창은 전부 캠퍼스 시간으로 본다 */
+/** 캠퍼스(태평양) 시각 — 식당 영업시간·체육관 알림 창은 전부 캠퍼스 시간으로 본다 (식당·체육관은 Berkeley 것뿐) */
 export const CAMPUS_TZ = 'America/Los_Angeles';
+
+/**
+ * 지금 보는 학교의 시간대 — "오늘"·"지금 공강"·행사 날짜를 이 시간대로 센다 (동부 학교는 America/New_York).
+ * 앱은 로그인한 학생의 학교로 맞춘다(setSchoolTz). 서버는 학교가 여럿이라 학교마다 tz 를 직접 넘긴다.
+ */
+let currentSchoolTz = CAMPUS_TZ;
+export const schoolTz = () => currentSchoolTz;
+export function setSchoolTz(tz?: string) { currentSchoolTz = tz || CAMPUS_TZ; }
 
 export interface CampusClock {
   /** YYYY-MM-DD */

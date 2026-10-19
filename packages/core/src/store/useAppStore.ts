@@ -3,6 +3,7 @@ import { t } from '@core/i18n';
 import { api, type Patch, type Snapshot } from '@core/api';
 import type { ID, User } from '@core/types';
 import { mergePatch } from './merge';
+import { setSchoolTz } from '@core/lib/campusclock';
 
 type Status = 'idle' | 'loading' | 'ready' | 'error';
 
@@ -114,3 +115,10 @@ export const useAppStore = create<AppState>((set, get) => ({
 
 /** 현재 로그인 사용자 (없으면 null) */
 export const useCurrentUser = () => useAppStore((s) => s.users.find((u) => u.id === s.currentUserId) ?? null);
+
+// 로그인한 학생의 학교 시간대로 "오늘"·"지금"을 센다 (동부 학교). 상태가 바뀔 때마다 — 화면이 다시 그려지기 전에 맞춰진다
+useAppStore.subscribe((s) => {
+  const me = s.users.find((u) => u.id === s.currentUserId);
+  const sid = me?.affiliation.type === 'university' ? me.affiliation.schoolId : '';
+  setSchoolTz(s.schools.find((x) => x.id === sid)?.tz);
+});

@@ -6,6 +6,7 @@ import type { Snapshot } from '@core/api/types';
 import { GOAL_LABELS, PERSON_ROLE_LABELS, INTEREST_LABELS } from './labels';
 import { freeBlocks, overlapBlocks, todayIdx, fmtBlock } from './timetable';
 import { profileCompletion } from '@core/data/prompts';
+import { schoolTz } from './campusclock';
 
 export interface Reason { text: string; weight: number; kind: 'opportunity' | 'goal' | 'role' | 'time' | 'school' | 'living' | 'interest' | 'class' | 'new' }
 
@@ -88,7 +89,7 @@ export function opportunityScore(me: User, o: Opportunity, intents: OpportunityI
 export const isTogetherType = (type: import('@core/types').OpportunityType) => ['event', 'club', 'hackathon', 'startup', 'activity'].includes(type);
 
 /** 캠퍼스(버클리) 달력 기준 남은 날 — 시각이 붙은 마감(…T23:59Z)도 그날 날짜로 센다. 반올림하면 내일 마감이 D-2 로 보였다 */
-const campusDay = (d: Date) => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).format(d);
+const campusDay = (d: Date) => new Intl.DateTimeFormat('en-CA', { timeZone: schoolTz(), year: 'numeric', month: '2-digit', day: '2-digit' }).format(d);
 export function daysUntil(iso: string) {
   const day = /T/.test(iso) ? campusDay(new Date(iso)) : iso.slice(0, 10);
   return Math.round((Date.parse(`${day}T12:00:00Z`) - Date.parse(`${campusDay(new Date())}T12:00:00Z`)) / 86400000);

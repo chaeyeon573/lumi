@@ -15,6 +15,7 @@
  * Dates are campus calendar dates (YYYY-MM-DD, Pacific) and times are HH:MM campus time.
  */
 import type { ID, Relationships, User } from '@core/types';
+import { schoolTz } from './campusclock';
 
 export type RideKind = 'driving' | 'splitting' | 'looking';
 export type RideStatus = 'open' | 'closed' | 'cancelled';
@@ -169,10 +170,10 @@ export const filterGroupOf = (r: Pick<Ride, 'schoolId' | 'to' | 'toCustom'>) => 
 // ─── Time ────────────────────────────────────────────────────────────────────
 export const CAMPUS_TZ = 'America/Los_Angeles';
 export function campusToday(now: Date = new Date()): string {
-  return new Intl.DateTimeFormat('en-CA', { timeZone: CAMPUS_TZ, year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
+  return new Intl.DateTimeFormat('en-CA', { timeZone: schoolTz(), year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
 }
 export function campusNowHHMM(now: Date = new Date()): string {
-  return new Intl.DateTimeFormat('en-GB', { timeZone: CAMPUS_TZ, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(now);
+  return new Intl.DateTimeFormat('en-GB', { timeZone: schoolTz(), hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(now);
 }
 const DAY = 86_400_000;
 export const addDays = (d: string, n: number) => new Date(Date.parse(`${d}T12:00:00Z`) + n * DAY).toISOString().slice(0, 10);

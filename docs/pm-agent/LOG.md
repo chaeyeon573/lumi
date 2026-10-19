@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-19 (사장님 지시) · 다른 학교는 보류 — 버클리만
+
+- 사장님: "지금 그냥 버클리만 해보자". 새 학교는 열지 않음 (schools.csv 그대로: Berkeley·Merced).
+- 그 전에 해 둔 밑작업은 버클리 동작을 바꾸지 않아 저장해 둠: 학교별 시간대(School.tz, 없으면 태평양 — 앱은 로그인한 학교 시간대로 "오늘"을 셈), 행사 가져오기의 학교 이름·시간대(BU 행사가 "CalLink"·태평양 시간으로 찍히지 않게), Localist 캘린더 어댑터(Stanford·MIT·Northeastern 용, 지금은 아무 학교도 안 씀).
+- 나중에 다른 학교를 열 때 할 일: schools.csv 에 줄 추가(tz 열 포함, 예 America/New_York), events_source=localist:<주소>. 조사 결과는 위 Stanford 기록에.
+- 검증: tsc·typecheck:server, `npm test` 219/219. 버클리 Discover·시간표·라이드 화면 그대로.
+
 ## 2026-10-19 (사장님 지시) · Stanford 수업·섹션, 학기 라벨
 
 - 사장님: "스탠포드도 구현해보고, 하버드처럼 동부에 여러 학교 붙어 있는 곳도 해보자".

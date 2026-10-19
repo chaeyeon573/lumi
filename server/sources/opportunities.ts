@@ -4,6 +4,7 @@
  *   presence   Presence 공개 행사 (api.presence.io/<sub>/v1/events) — UC Merced
  *   engage     CampusLabs Engage 학생 단체 행사 (/api/discovery/event/search) — Berkeley CalLink. 단체가 "Free Food" 를 표시한다
  *   livewhale  학교 전체 캘린더 LiveWhale JSON (/live/json/events/…) — events.berkeley.edu. 2주치 중 무료 음식 · 강연/포럼/패널 · 추천 행사만, 온라인 전용 제외
+ *   localist   학교 전체 캘린더 Localist (/api/2/events) — Stanford·MIT·Northeastern. LiveWhale 과 같은 규칙
  * 무료 음식은 표시(benefitNames) 또는 제목·설명의 키워드로 찾아 benefit 에 "🍕 Free food" 를 단다 — 카드에 그대로 보인다
  * 본문을 옮기지 않고 제목·주최·한 줄 요약·원문 링크만 넣는다.
  */
@@ -22,7 +23,9 @@ async function get(url: string): Promise<string> {
 const FOOD_RE = /free (food|lunch|dinner|breakfast|pizza|snacks?|boba|coffee|donuts?|tacos?|meal)|food (will be|is) (provided|served)|refreshments|light (snacks|bites|lunch)|pizza|boba|donuts?|bagels?|snacks (provided|served)|lunch (provided|served)|dinner (provided|served)|reception to follow|\bbites\b/i;
 export const hasFreeFood = (...texts: (string | undefined)[]) => FOOD_RE.test(texts.filter(Boolean).join(' '));
 const TALK_RE = /lecture|talk|forum|panel|seminar|symposium|colloquium|discussion|conversation|keynote|book (talk|launch)|q&a|town hall/i;
-const laTime = (d: Date) => new Intl.DateTimeFormat('en-GB', { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', hour12: false }).format(d);
+/** 행사 시작 시각을 그 학교 벽시계로 ("18:30") — 동부 학교는 America/New_York */
+const localTime = (d: Date, tz = 'America/Los_Angeles') => new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }).format(d);
+type EventSchool = Pick<School, 'id' | 'center'> & Partial<Pick<School, 'name' | 'tz'>>;
 const base = (o: Partial<Opportunity> & Pick<Opportunity, 'id' | 'type' | 'title' | 'host' | 'sourceUrl' | 'sourceLabel' | 'schoolId'>, now: string): Opportunity => ({
   description: '', cover: { emoji: o.type === 'lab' ? '🔬' : '📅', hue: o.type === 'lab' ? 175 : 200 }, eligibility: '', tags: [], interests: [], goals: [],
   official: true, lastVerified: now, qna: [], reviews: [], createdAt: now, ...o,
@@ -63,14 +66,14 @@ export async function fetchUrap(schoolId = 's_berkeley'): Promise<Opportunity[]>
 }
 
 interface PresenceEvent { uri: string; eventName: string; organizationName?: string; description?: string; location?: string; startDateTimeUtc: string; endDateTimeUtc?: string; hasEventEnded?: boolean }
-export async function fetchPresenceEvents(sub: string, school: Pick<School, 'id' | 'center'>, horizonDays = 45): Promise<Opportunity[]> {
+export async function fetchPresenceEvents(sub: string, school: EventSchool, horizonDays = 45): Promise<Opportunity[]> {
   const now = new Date(); const nowIso = now.toISOString(); const until = now.getTime() + horizonDays * 86_400_000;
   const events = JSON.parse(await get(`https://api.presence.io/${sub}/v1/events`)) as PresenceEvent[];
   return events
     .filter((e) => !e.hasEventEnded && e.startDateTimeUtc && new Date(e.startDateTimeUtc).getTime() >= now.getTime() - 3_600_000 && new Date(e.startDateTimeUtc).getTime() <= until)
     .map((e) => {
       const start = new Date(e.startDateTimeUtc);
-      const local = new Intl.DateTimeFormat('en-GB', { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', hour12: false }).format(start);
+      const local = localTime(start, school.tz);
       return base({
         id: `op_${school.id.replace('s_', '')}_ev_${slug(e.uri)}`, type: 'event', title: e.eventName, host: e.organizationName ?? 'Campus event', schoolId: school.id,
         description: text(e.description ?? '').slice(0, 280), date: start.toISOString(), startTime: local,
@@ -84,7 +87,7 @@ export async function fetchPresenceEvents(sub: string, school: Pick<School, 'id'
 }
 
 interface EngageEvent { id: string; name: string; organizationName?: string; description?: string; location?: string; startsOn: string; endsOn?: string; benefitNames?: string[]; theme?: string }
-export async function fetchEngageEvents(host: string, school: Pick<School, 'id' | 'center'>, horizonDays = 30): Promise<Opportunity[]> {
+export async function fetchEngageEvents(host: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> {
   const nowIso = new Date().toISOString(); const until = Date.now() + horizonDays * 86_400_000;
   const all: EngageEvent[] = [];
   for (let skip = 0; skip < 3000; skip += 100) {
@@ -101,18 +104,18 @@ export async function fetchEngageEvents(host: string, school: Pick<School, 'id' 
     const stuff = (e.benefitNames ?? []).includes('Free Stuff');
     return base({
       id: `op_${school.id.replace('s_', '')}_eg_${e.id}`, type: 'event', title: e.name.trim(), host: (e.organizationName ?? 'Student organization').replace(/^Campus Dept \| /, ''), schoolId: school.id,
-      description: desc.slice(0, 280), date: start.toISOString(), startTime: laTime(start),
+      description: desc.slice(0, 280), date: start.toISOString(), startTime: localTime(start, school.tz),
       place: e.location && !/^TBA$/i.test(e.location) ? { name: e.location, lat: school.center.lat, lng: school.center.lng } : undefined,
       eligibility: 'Open to students', benefit: food ? '🍕 Free food' : stuff ? '🎁 Free stuff' : undefined,
       cover: food ? { emoji: '🍕', hue: 25 } : { emoji: TALK_RE.test(e.name) ? '🎤' : '📅', hue: 200 },
       tags: ['event', ...(food ? ['free food'] : []), ...(stuff ? ['free stuff'] : []), ...(TALK_RE.test(e.name) ? ['talk'] : []), ...(e.theme ? [e.theme.toLowerCase()] : [])],
-      interests: ['club'], goals: [], sourceUrl: `${host}/event/${e.id}`, sourceLabel: 'CalLink',
+      interests: ['club'], goals: [], sourceUrl: `${host}/event/${e.id}`, sourceLabel: school.id === 's_berkeley' ? 'CalLink' : 'Student org events',
     }, nowIso);
   });
 }
 
 interface LwEvent { id: number; title: string; url: string; date_iso: string; is_canceled?: number | boolean; is_all_day?: number | boolean; is_starred?: number | boolean; is_online?: number | boolean; location?: string; summary?: string; event_types?: string[]; group_title?: string; cost?: string }
-export async function fetchLiveWhale(base_: string, school: Pick<School, 'id' | 'center'>, horizonDays = 14): Promise<Opportunity[]> {
+export async function fetchLiveWhale(base_: string, school: EventSchool, horizonDays = 14): Promise<Opportunity[]> {
   const nowIso = new Date().toISOString(); const out: Opportunity[] = []; const seen = new Set<number>(); const seenTitleDay = new Set<string>();
   const fields = 'response_fields/location,summary,event_types,group_title,cost';
   // 날짜 범위는 끝 날짜가 다음 날이어야 그날 행사가 다 온다 (같은 날이면 일부만). 하루 100개가 넘으니 ?page=N 으로 넘긴다
@@ -137,17 +140,63 @@ export async function fetchLiveWhale(base_: string, school: Pick<School, 'id' | 
       const titleDay = `${title.toLowerCase()}#${day}`; if (seenTitleDay.has(titleDay)) continue; seenTitleDay.add(titleDay);
       const start = new Date(e.date_iso);
       out.push(base({
-        id: `op_${school.id.replace('s_', '')}_lw_${e.id}`, type: 'event', title, host: e.group_title ? text(e.group_title) : 'UC Berkeley', schoolId: school.id,
-        description: summary.slice(0, 280), date: start.toISOString(), startTime: e.is_all_day ? undefined : laTime(start),
+        id: `op_${school.id.replace('s_', '')}_lw_${e.id}`, type: 'event', title, host: e.group_title ? text(e.group_title) : school.name ?? 'Campus', schoolId: school.id,
+        description: summary.slice(0, 280), date: start.toISOString(), startTime: e.is_all_day ? undefined : localTime(start, school.tz),
         place: e.location ? { name: text(e.location), lat: school.center.lat, lng: school.center.lng } : undefined,
         eligibility: e.cost && !/free/i.test(e.cost) ? `Cost: ${text(e.cost)}` : 'Open to the campus community',
         benefit: food ? '🍕 Free food' : undefined,
         cover: food ? { emoji: '🍕', hue: 25 } : { emoji: talk ? '🎤' : '📅', hue: 200 },
         tags: ['event', ...(food ? ['free food'] : []), ...(talk ? ['talk'] : []), ...types.slice(0, 3).map((t) => t.toLowerCase())],
-        interests: talk ? ['research', 'study'] : ['club'], goals: [], sourceUrl: e.url, sourceLabel: 'UC Berkeley Events',
+        interests: talk ? ['research', 'study'] : ['club'], goals: [], sourceUrl: e.url, sourceLabel: school.name ? `${school.name} Events` : 'Campus events',
       }, nowIso));
     }
     await new Promise((r) => setTimeout(r, 120));
   }
   return out;
+}
+
+interface LcInstance { event_instance: { start: string; end?: string | null; all_day?: boolean } }
+interface LcEvent { id: number; title: string; url?: string; localist_url: string; location_name?: string; room_number?: string | null; experience?: string; free?: boolean; featured?: boolean; status?: string; ticket_cost?: string | null; event_instances?: LcInstance[]; filters?: { event_types?: { name: string }[] }; departments?: { name: string }[]; description_text?: string }
+/**
+ * 학교 전체 캘린더 Localist (/api/2/events) — Stanford·MIT·Northeastern 이 쓴다. LiveWhale 과 같은 규칙:
+ * 2주치 중 무료 음식 · 강연/세미나/패널 · 학교가 추천한 행사만, 온라인 전용 제외. 반복 행사는 다음 한 번만
+ */
+export function localistToOpportunities(events: LcEvent[], school: EventSchool, now = new Date(), horizonDays = 14): Opportunity[] {
+  const nowIso = now.toISOString(); const until = now.getTime() + horizonDays * 86_400_000;
+  const out: Opportunity[] = []; const seenTitleDay = new Set<string>();
+  for (const e of events) {
+    if (e.status && e.status !== 'live') continue;
+    if (e.experience === 'virtual' || /^exhibit\b/i.test(e.title)) continue;
+    const next = (e.event_instances ?? []).map((x) => x.event_instance).filter((x) => Date.parse(x.end ?? x.start) >= now.getTime() && Date.parse(x.start) <= until).sort((a, b) => Date.parse(a.start) - Date.parse(b.start))[0];
+    if (!next) continue;
+    const title = text(e.title); const summary = text(e.description_text ?? '');
+    const types = (e.filters?.event_types ?? []).map((t) => t.name);
+    const food = hasFreeFood(title, summary); const talk = TALK_RE.test(title) || types.some((t) => /lecture|seminar|panel|colloquium|talk/i.test(t));
+    if (!food && !talk && !e.featured) continue;
+    const start = new Date(next.start);
+    const day = new Intl.DateTimeFormat('en-CA', { timeZone: school.tz ?? 'America/Los_Angeles' }).format(start);
+    const titleDay = `${title.toLowerCase()}#${day}`; if (seenTitleDay.has(titleDay)) continue; seenTitleDay.add(titleDay);
+    const place = [text(e.location_name ?? ''), text(e.room_number ?? '')].filter(Boolean).join(', ');
+    out.push(base({
+      id: `op_${school.id.replace('s_', '')}_lc_${e.id}`, type: 'event', title, host: e.departments?.[0]?.name ? text(e.departments[0].name) : school.name ?? 'Campus', schoolId: school.id,
+      description: summary.slice(0, 280), date: start.toISOString(), startTime: next.all_day ? undefined : localTime(start, school.tz),
+      place: place ? { name: place, lat: school.center.lat, lng: school.center.lng } : undefined,
+      eligibility: e.ticket_cost && !/free/i.test(e.ticket_cost) ? `Cost: ${text(e.ticket_cost)}` : 'Open to the campus community',
+      benefit: food ? '🍕 Free food' : undefined,
+      cover: food ? { emoji: '🍕', hue: 25 } : { emoji: talk ? '🎤' : '📅', hue: 200 },
+      tags: ['event', ...(food ? ['free food'] : []), ...(talk ? ['talk'] : []), ...types.slice(0, 3).map((t) => t.toLowerCase())],
+      interests: talk ? ['research', 'study'] : ['club'], goals: [], sourceUrl: e.localist_url, sourceLabel: school.name ? `${school.name} Events` : 'Campus events',
+    }, nowIso));
+  }
+  return out;
+}
+export async function fetchLocalist(base_: string, school: EventSchool, horizonDays = 14): Promise<Opportunity[]> {
+  const all: LcEvent[] = [];
+  for (let page = 1; page <= 20; page++) {
+    const d = JSON.parse(await get(`${base_}/api/2/events?days=${horizonDays}&pp=100&page=${page}`)) as { events?: { event: LcEvent }[]; page?: { total?: number } };
+    all.push(...(d.events ?? []).map((x) => x.event));
+    if (!d.page?.total || page >= d.page.total) break;
+    await new Promise((r) => setTimeout(r, 150));
+  }
+  return localistToOpportunities(all, school, new Date(), horizonDays);
 }

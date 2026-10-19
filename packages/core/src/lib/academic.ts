@@ -8,6 +8,7 @@
  * 날짜는 캠퍼스 달력 날짜(YYYY-MM-DD, 태평양 시간)다. end 는 마지막 날을 포함한다.
  */
 import type { ID } from '@core/types';
+import { schoolTz } from './campusclock';
 
 export type AcademicDateKind = 'enrollment' | 'deadline' | 'holiday' | 'finals' | 'instruction' | 'other';
 
@@ -37,8 +38,8 @@ export interface AcademicDate {
 
 export const CAMPUS_TZ = 'America/Los_Angeles';
 
-/** 캠퍼스(태평양) 기준 오늘 YYYY-MM-DD */
-export function campusDate(now: Date = new Date(), tz = CAMPUS_TZ): string {
+/** 캠퍼스(학교 시간대) 기준 오늘 YYYY-MM-DD */
+export function campusDate(now: Date = new Date(), tz = schoolTz()): string {
   return new Intl.DateTimeFormat('en-CA', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
 }
 

@@ -1,0 +1,680 @@
+{
+"events": [
+{
+"event": {
+"id": 53286190140712,
+"title": "October Museum Minis: Storytime at the Anderson",
+"url": "",
+"localist_url": "https://events.stanford.edu/event/october-museum-minis-storytime-at-the-anderson",
+"location_name": "Anderson Collection",
+"room_number": "The Denning Family Resource Center ",
+"location": "",
+"experience": "inperson",
+"free": true,
+"featured": false,
+"status": "live",
+"ticket_cost": "Free ",
+"event_instances": [
+{
+"event_instance": {
+"id": 53286218830295,
+"event_id": 53286190140712,
+"start": "2026-10-19T11:15:00-07:00",
+"end": "2026-10-19T12:15:00-07:00",
+"ranking": 0.22,
+"all_day": false,
+"num_attending": 0
+}
+}
+],
+"filters": {
+"event_audience": [
+{
+"name": "Everyone",
+"id": 37146718530202
+}
+],
+"event_subject": [
+{
+"name": "Arts/Media",
+"id": 37093209005248
+}
+],
+"event_types": [
+{
+"name": "Social Event/Reception",
+"id": 37952570042720
+}
+]
+},
+"departments": [
+{
+"id": 37955139504704,
+"name": "Anderson Collection at Stanford University"
+}
+],
+"description_text": "Museum Minis is a welcoming monthly storytime at the Anderson Collection for children ages 0\u20135 and their caregivers. Each session features two engaging, age-appropriate books inspired by the essential elements of art\u2014line, color, shape, and texture\u2014introducing young children to these ideas and connecting them to artworks in the museum\u2019s collection. Together, families are invited to look closely, n"
+}
+},
+{
+"event": {
+"id": 53552386783151,
+"title": "Stanford Energy Seminar | Powering What\u2019s Next: Real Estate\u2019s Role in the Energy Transition | Susan Uthayakumar, Prologis",
+"url": "https://energy.stanford.edu/events/energy-seminar/about-energy-seminar",
+"localist_url": "https://events.stanford.edu/event/stanford-energy-seminar-10192026",
+"location_name": "Shriram Center",
+"room_number": "104",
+"location": "",
+"experience": "hybrid",
+"free": false,
+"featured": false,
+"status": "live",
+"ticket_cost": "",
+"event_instances": [
+{
+"event_instance": {
+"id": 53552389970246,
+"event_id": 53552386783151,
+"start": "2026-10-19T16:30:00-07:00",
+"end": "2026-10-19T17:20:00-07:00",
+"ranking": 80.24,
+"all_day": false,
+"num_attending": 0
+}
+}
+],
+"filters": {
+"event_audience": [
+{
+"name": "Everyone",
+"id": 37146718530202
+},
+{
+"name": "Students",
+"id": 37006980803119
+}
+],
+"event_subject": [
+{
+"name": "Environment/Sustainability",
+"id": 37952873731600
+},
+{
+"name": "Engineering/Technology",
+"id": 37952873729551
+},
+{
+"name": "Business",
+"id": 37952873721356
+}
+],
+"event_types": [
+{
+"name": "Lecture/Presentation/Talk",
+"id": 37952570034524
+}
+]
+},
+"departments": [
+{
+"id": 37955143163132,
+"name": "Precourt Institute for Energy"
+}
+],
+"description_text": "The Stanford Energy Seminar has been a mainstay of energy engagement at Stanford for nearly 20 years and is one of the flagship programs of the Precourt Institute for Energy. We aim to bring a wide variety of perspectives to the Stanford community \u2013 academics, entrepreneurs, utilities, non-profits, and more. \n\nAbout the talk\n\nThe buildings that move the world\u2019s goods are becoming an essential part"
+}
+},
+{
+"event": {
+"id": 54138556327672,
+"title": "OCD Awareness Event",
+"url": "https://med.stanford.edu/ocd-research/media.html",
+"localist_url": "https://events.stanford.edu/event/ocd-awareness-event-4220",
+"location_name": "Center for Academic Medicine, Grand Rounds Room",
+"room_number": null,
+"location": "Center for Academic Medicine, Grand Rounds Room",
+"experience": "inperson",
+"free": true,
+"featured": false,
+"status": "live",
+"ticket_cost": "Free",
+"event_instances": [
+{
+"event_instance": {
+"id": 54138556328697,
+"event_id": 54138556327672,
+"start": "2026-10-19T17:30:00-07:00",
+"end": "2026-10-19T20:30:00-07:00",
+"ranking": 0.22,
+"all_day": false,
+"num_attending": 0
+}
+}
+],
+"filters": {
+"event_audience": [
+{
+"name": "Everyone",
+"id": 37146718530202
+}
+],
+"event_subject": [
+{
+"name": "Health/Wellness",
+"id": 37093217343447
+},
+{
+"name": "Medicine",
+"id": 37952873742869
+}
+],
+"event_types": [
+{
+"name": "Lecture/Presentation/Talk",
+"id": 37952570034524
+}
+]
+},
+"departments": [
+{
+"id": 37955143300374,
+"name": "Psychiatry & Behavioral Sciences"
+}
+],
+"description_text": "All are welcome to Stanford's 10th annual obsessive-compulsive disorder awareness event, which brings together individuals with lived experience, researchers, and advocates for an evening of connection, education, and support. We are thrilled to welcome Uma R. Chatterjee, MS, MHPS, OCD neuroscientist and lived experience advocate at the University of Wisconsin, as our keynote speaker. The evening "
+}
+},
+{
+"event": {
+"id": 54241361470068,
+"title": "ESE Seminar - In\u00eas Azevedo",
+"url": null,
+"localist_url": "https://events.stanford.edu/event/ese-seminar-ines-azevedo-what-is-the-stanford-woods-institute-for-the-environment-a-journey-into-the-worlds-most-pressing-environmental-problems",
+"location_name": "Green Earth Sciences Building",
+"room_number": "104",
+"location": "",
+"experience": "inperson",
+"free": false,
+"featured": false,
+"status": "live",
+"ticket_cost": null,
+"event_instances": [
+{
+"event_instance": {
+"id": 54241361472117,
+"event_id": 54241361470068,
+"start": "2026-10-19T12:30:00-07:00",
+"end": "2026-10-19T13:20:00-07:00",
+"ranking": 0.22,
+"all_day": false,
+"num_attending": 0
+}
+}
+],
+"filters": {
+"event_audience": [
+{
+"name": "Everyone",
+"id": 37146718530202
+}
+],
+"event_subject": [
+{
+"name": "Environment/Sustainability",
+"id": 37952873731600
+}
+],
+"event_types": [
+{
+"name": "Class/Seminar",
+"id": 37952570025304
+}
+]
+},
+"departments": [
+{
+"id": 37955141572552,
+"name": "Energy Science & Engineering"
+}
+],
+"description_text": "Fireside Chat:\n\n\"What is the Stanford Woods Institute for the Environment? A journey into the World's most pressing environmental problems\"\n\nBio\n\nIn\u00eas M.L. Azevedo is Professor in the Department of Energy Science & Engineering at Stanford University. She is the Director of the Woods Institute for the Environment and serves as Senior Fellow for the Precourt Institute for Energy. She also holds a co"
+}
+},
+{
+"event": {
+"id": 53755889500809,
+"title": "Curator Led Talk | surfacing",
+"url": "https://anderson.stanford.edu/exhibitions/patty-chang-surfacing/",
+"localist_url": "https://events.stanford.edu/event/curator-led-talk-surfacing-oct",
+"location_name": "Anderson Collection",
+"room_number": "Wisch Family Gallery",
+"location": "",
+"experience": "inperson",
+"free": true,
+"featured": false,
+"status": "live",
+"ticket_cost": "Free",
+"event_instances": [
+{
+"event_instance": {
+"id": 53755903728192,
+"event_id": 53755889500809,
+"start": "2026-10-19T13:00:00-07:00",
+"end": "2026-10-19T14:00:00-07:00",
+"ranking": 80.24,
+"all_day": false,
+"num_attending": 0
+}
+}
+],
+"filters": {
+"event_audience": [
+{
+"name": "Everyone",
+"id": 37146718530202
+}
+],
+"event_subject": [
+{
+"name": "Arts/Media",
+"id": 37093209005248
+}
+],
+"event_types": [
+{
+"name": "Tour",
+"id": 37952570044769
+}
+]
+},
+"departments": [
+{
+"id": 37955139504704,
+"name": "Anderson Collection at Stanford University"
+}
+],
+"description_text": "Join Kelsey Chen, Exhibition Co-Curator, on this special tour of surfacing.  \n\nRSVP HERE\n\npatty chang: surfacing engages the ocean as a physical, geopolitical, and symbolic space. The exhibition culminates a year-long residency through the Denning Visiting Artist program, during which Chang was embedded at Stanford\u2019s Hopkins Marine Station. Incorporating fish specimens, archaeological remains, arc"
+}
+},
+{
+"event": {
+"id": 53947940289112,
+"title": "Biology Seminar Series: Mercedes Paredes \u201cThe Dynamic Neonatal Brain: Postnatal Neurodevelopmental Processes and Implications in Disease \"",
+"url": null,
+"localist_url": "https://events.stanford.edu/event/biology-seminar-series-mercedes-paredes-the-dynamic-neonatal-brain-postnatal-neurodevelopmental-processes-and-implications-in-disease",
+"location_name": "Clark Center",
+"room_number": "Clark Auditorium",
+"location": "",
+"experience": "inperson",
+"free": false,
+"featured": false,
+"status": "live",
+"ticket_cost": null,
+"event_instances": [
+{
+"event_instance": {
+"id": 53947940290137,
+"event_id": 53947940289112,
+"start": "2026-10-19T16:00:00-07:00",
+"end": "2026-10-19T17:00:00-07:00",
+"ranking": 0.22,
+"all_day": false,
+"num_attending": 0
+}
+}
+],
+"filters": {
+"event_audience": [
+{
+"name": "General Public",
+"id": 37006980816438
+}
+],
+"event_subject": [
+{
+"name": "Science",
+"id": 37952873746967
+}
+],
+"event_types": [
+{
+"name": "Class/Seminar",
+"id": 37952570025304
+}
+]
+},
+"departments": [
+{
+"id": 37955140957006,
+"name": "Department of Biology"
+}
+],
+"description_text": ""
+}
+},
+{
+"event": {
+"id": 53047985797143,
+"title": "CBD 2026: Lectio Divina (Becoming Chanting), Dental Floss, and AI: How Contemplation Happens and Why It Matters When Your Intelligence Is Not Artificial  with Carmen Acevedo Butcher, PhD",
+"url": "https://med.stanford.edu/contemplation/summit.html",
+"localist_url": "https://events.stanford.edu/event/cbd-2026-lecto-divinia-becoming-chanting-dental-floss-and-ai-with-carmen-acevedo-butcher",
+"location_name": "",
+"room_number": null,
+"location": "",
+"experience": "virtual",
+"free": false,
+"featured": false,
+"status": "live",
+"ticket_cost": null,
+"event_instances": [
+{
+"event_instance": {
+"id": 53048005291018,
+"event_id": 53047985797143,
+"start": "2026-10-19T07:30:00-07:00",
+"end": "2026-10-19T08:15:00-07:00",
+"ranking": 0.22,
+"all_day": false,
+"num_attending": 0
+}
+}
+],
+"filters": {
+"event_audience": [
+{
+"name": "Everyone",
+"id": 37146718530202
+}
+],
+"event_subject": [
+{
+"name": "Humanities",
+"id": 37952873733649
+},
+{
+"name": "Religion/Spirituality",
+"id": 37952873744918
+},
+{
+"name": "Science",
+"id": 37952873746967
+},
+{
+"name": "Career Development",
+"id": 37952873725453
+},
+{
+"name": "Education",
+"id": 37952873727502
+},
+{
+"name": "Environment/Sustainability",
+"id": 37952873731600
+},
+{
+"name": "Social Justice/Human Rights",
+"id": 37952873749016
+},
+{
+"name": "Public Service/Government",
+"id": 38406817012010
+},
+{
+"name": "Working at Stanford",
+"id": 38448283385146
+},
+{
+"name": "Engineering/Technology",
+"id": 37952873729551
+}
+],
+"event_types": [
+{
+"name": "Lecture/Presentation/Talk",
+"id": 37952570034524
+}
+]
+},
+"departments": [
+{
+"id": 37955140736804,
+"name": "Contemplation by Design"
+},
+{
+"id": 37955144952386,
+"name": "Stanford Prevention Research Center"
+},
+{
+"id": 38943468244180,
+"name": "Stanford University School of Medicine"
+}
+],
+"description_text": "Lectio divina, or \u201csacred reading,\u201d and dyslexia are word siblings, as lectio and dyslexia both come from the ancient root *leg- \u201cto collect or gather.\u201d As someone with dyslexia and as a survivor of trauma, Carmen has found the ancient monastic practice of steeping in sacred texts an always accessible, lifelong balm for collecting and connecting with her inner wholeness and resting in her gentlest"
+}
+},
+{
+"event": {
+"id": 53985933928414,
+"title": "Benefits Open Enrollment Session",
+"url": "https://cardinalatwork.stanford.edu/benefits-rewards/open-enrollment",
+"localist_url": "https://events.stanford.edu/event/benefits-open-enrollment-session-3818",
+"location_name": "",
+"room_number": null,
+"location": "",
+"experience": "virtual",
+"free": false,
+"featured": false,
+"status": "live",
+"ticket_cost": null,
+"event_instances": [
+{
+"event_instance": {
+"id": 53985933929439,
+"event_id": 53985933928414,
+"start": "2026-10-19T09:00:00-07:00",
+"end": "2026-10-19T10:00:00-07:00",
+"ranking": 0.22,
+"all_day": false,
+"num_attending": 0
+}
+}
+],
+"filters": {
+"event_audience": [
+{
+"name": "Faculty",
+"id": 37006980810291
+},
+{
+"name": "Staff",
+"id": 37006980812340
+}
+],
+"event_subject": [
+{
+"name": "Health/Wellness",
+"id": 37093217343447
+}
+],
+"event_types": [
+{
+"name": "Lecture/Presentation/Talk",
+"id": 37952570034524
+}
+]
+},
+"departments": [
+{
+"id": 38448274348972,
+"name": "University Human Resources"
+}
+],
+"description_text": "Hear from the Stanford Benefits team about what's changing with your benefits in 2027 and get your questions answered in real-time."
+}
+},
+{
+"event": {
+"id": 54126932427481,
+"title": " New FusionGO app",
+"url": "https://rec.stanford.edu/#:~:text=Download%20the%20new%20FusionGO%20app%20on%20the%20Apple%20App%20Store%20or%20Google%20Play%20Store%20today!",
+"localist_url": "https://events.stanford.edu/event/new-fusiongo-app",
+"location_name": "",
+"room_number": null,
+"location": "",
+"experience": "inperson",
+"free": false,
+"featured": false,
+"status": "live",
+"ticket_cost": null,
+"event_instances": [
+{
+"event_instance": {
+"id": 54126932446950,
+"event_id": 54126932427481,
+"start": "2026-10-19T00:00:00-07:00",
+"end": null,
+"ranking": 0.06,
+"all_day": true,
+"num_attending": 0
+}
+}
+],
+"filters": {
+"event_audience": [
+{
+"name": "Affiliates",
+"id": 37006980814389
+},
+{
+"name": "Everyone",
+"id": 37146718530202
+}
+],
+"event_subject": [
+{
+"name": "Health/Wellness",
+"id": 37093217343447
+}
+]
+},
+"departments": [
+{
+"id": 39140182872016,
+"name": "Stanford Recreation and Wellness"
+}
+],
+"description_text": "We\u2019ve moved to a new FusionGO app \u2013 your all-in-one pass for quick facility access, live class schedules, membership management, program sign-ups, and more! \n\nDownload the new FusionGO app on the Apple App Store or Google Play Store today!"
+}
+},
+{
+"event": {
+"id": 53870860475719,
+"title": "Autumn Quarter: MD/MSPA \u2013 Drop deadline for clerkships for Period 6.",
+"url": null,
+"localist_url": "https://events.stanford.edu/event/mdmspa-drop-deadline-for-clerkships-for-period-6",
+"location_name": "",
+"room_number": null,
+"location": "",
+"experience": "inperson",
+"free": false,
+"featured": false,
+"status": "live",
+"ticket_cost": null,
+"event_instances": [
+{
+"event_instance": {
+"id": 53870860475720,
+"event_id": 53870860475719,
+"start": "2026-10-19T00:00:00-07:00",
+"end": null,
+"ranking": 0.22,
+"all_day": true,
+"num_attending": 0
+}
+}
+],
+"filters": {
+"event_audience": [
+{
+"name": "Everyone",
+"id": 37146718530202
+}
+],
+"event_types": [
+{
+"name": "Academic Dates",
+"id": 39324630417361
+}
+]
+},
+"departments": [
+{
+"id": 37955142858948,
+"name": "Office of Medical Student Affairs"
+}
+],
+"description_text": ""
+}
+},
+{
+"event": {
+"id": 53870191823442,
+"title": "Autumn Quarter: MD/MSPA \u2013 First day of clerkships for Period 5.",
+"url": null,
+"localist_url": "https://events.stanford.edu/event/mdmspa-first-day-of-clerkships-for-period-5-4293",
+"location_name": "",
+"room_number": null,
+"location": "",
+"experience": "inperson",
+"free": false,
+"featured": false,
+"status": "live",
+"ticket_cost": null,
+"event_instances": [
+{
+"event_instance": {
+"id": 53870191824467,
+"event_id": 53870191823442,
+"start": "2026-10-19T00:00:00-07:00",
+"end": null,
+"ranking": 0.22,
+"all_day": true,
+"num_attending": 0
+}
+}
+],
+"filters": {
+"event_audience": [
+{
+"name": "Everyone",
+"id": 37146718530202
+}
+],
+"event_subject": [
+{
+"name": "Medicine",
+"id": 37952873742869
+}
+],
+"event_types": [
+{
+"name": "Academic Dates",
+"id": 39324630417361
+}
+]
+},
+"departments": [
+{
+"id": 37955142858948,
+"name": "Office of Medical Student Affairs"
+}
+],
+"description_text": ""
+}
+}
+],
+"page": {
+"current": 1,
+"total": 1
+}
+}

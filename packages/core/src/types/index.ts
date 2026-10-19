@@ -209,6 +209,8 @@ export interface School {
   emailDomain: string;
   region: string;
   center: { lat: number; lng: number };
+  /** IANA 시간대 ("America/New_York") — 없으면 태평양. "오늘"·"지금 공강"·행사 시각을 이 시간대로 센다 */
+  tz?: string;
 }
 
 // ─── 기회 (행사·동아리 모집·연구실·인턴·장학금·해커톤·창업) ─────────────────

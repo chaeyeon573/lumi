@@ -4,6 +4,7 @@
  */
 import type { Opportunity, OpportunityType, Organization, User } from '@core/types';
 import { daysUntil } from './recommend';
+import { schoolTz } from './campusclock';
 
 export const FIELDS = ['Software', 'Data & AI', 'Hardware', 'Quant & Trading', 'Finance & Consulting', 'Product & Design', 'Business & Marketing', 'Research & Science', 'Other'] as const;
 export type Field = typeof FIELDS[number];
@@ -59,8 +60,8 @@ export function locationOf(o: Pick<Opportunity, 'location' | 'description' | 'ty
   return '';
 }
 
-/** 캠퍼스(태평양) 날짜 YYYY-MM-DD — 날짜만 있으면 그대로 */
-export const campusDate = (iso: string) => (/T/.test(iso) ? new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(iso)) : iso.slice(0, 10));
+/** 캠퍼스(학교 시간대) 날짜 YYYY-MM-DD — 날짜만 있으면 그대로 */
+export const campusDate = (iso: string) => (/T/.test(iso) ? new Intl.DateTimeFormat('en-CA', { timeZone: schoolTz(), year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(iso)) : iso.slice(0, 10));
 
 /** 목록 오른쪽 배지 — 마감 D-day, 없으면 행사 날짜, 없으면 올라온 지 며칠 */
 export function badgeOf(o: Pick<Opportunity, 'deadline' | 'date' | 'postedAt' | 'createdAt' | 'type'>, en: boolean): { text: string; tone: 'urgent' | 'soon' | 'normal' | 'muted' } {

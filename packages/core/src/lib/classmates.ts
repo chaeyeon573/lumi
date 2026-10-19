@@ -12,6 +12,7 @@ import type { CatalogCourse, ClassRoomInfo, Snapshot } from '@core/api/types';
 import type { Activity, ClassRoster, Course, ID, User } from '@core/types';
 import { currentTerm, normalizeTermLabel, termLabel, termOrder } from './terms';
 import { freeBlocks, overlapBlocks, toHHMM, toMin, type Block } from './timetable';
+import { schoolTz } from './campusclock';
 
 // ─── 코드·학기·키 ───────────────────────────────────────────────────────────
 /** "CS 61A" → "cs61a" (URL·키용) */
@@ -196,8 +197,8 @@ export interface PlanOptions {
   maxSize?: number;
 }
 const DAY_MS = 86400000;
-/** 캠퍼스(태평양) 날짜 "YYYY-MM-DD" */
-export const campusDateOf = (d: Date) => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).format(d);
+/** 캠퍼스(학교 시간대) 날짜 "YYYY-MM-DD" */
+export const campusDateOf = (d: Date) => new Intl.DateTimeFormat('en-CA', { timeZone: schoolTz(), year: 'numeric', month: '2-digit', day: '2-digit' }).format(d);
 const weekdayIdx = (iso: string) => (new Date(`${iso}T12:00:00Z`).getUTCDay() + 6) % 7;
 const addDays = (iso: string, n: number) => new Date(Date.parse(`${iso}T12:00:00Z`) + n * DAY_MS).toISOString().slice(0, 10);
 

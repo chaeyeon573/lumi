@@ -14,6 +14,7 @@ import type { Activity, ID, Opportunity, OpportunityIntent, OpportunityIntentRec
 import { lang } from '@core/i18n';
 import { categoriesOf, campusDate } from './listings';
 import { canViewActivity, isBlocked, isFriend } from './relations';
+import { schoolTz } from './campusclock';
 
 /** go = 행사·무료 음식 (같이 가기) · prep = 인턴·장학금·연구 (같이 준비) · team = 해커톤·공모전 (팀원 찾기) */
 export type WithKind = 'go' | 'prep' | 'team';
@@ -43,7 +44,7 @@ export const campusToday = () => campusDate(new Date().toISOString());
 
 /** 지금 캠퍼스 시각 (분) */
 export function campusNowMin(): number {
-  const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+  const parts = new Intl.DateTimeFormat('en-GB', { timeZone: schoolTz(), hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
   const get = (k: string) => Number(parts.find((p) => p.type === k)?.value ?? 0);
   return get('hour') * 60 + get('minute');
 }

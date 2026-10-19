@@ -33,7 +33,7 @@ import { createStore, type AgentRun } from '../store';
 import { sendMail } from '../mail';
 import { COURSE_SOURCES, resolveCourseSource, useImportCheckpoint } from '../sources/courses';
 import { fetchCourseLeaf } from '../sources/catalog';
-import { fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale } from '../sources/opportunities';
+import { fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale, fetchLocalist } from '../sources/opportunities';
 import { dropDuplicateTitles, fetchDevpost, fetchInternships } from '../sources/external';
 import { existsSync } from 'node:fs';
 import { applyRules, checkDrift, spotCheck } from './validate';
@@ -119,7 +119,7 @@ function runScript(task: string, script: string, schoolId: string, extraEnv: Rec
 }
 
 // ─── 학교 단위 작업 (워커) ─────────────────────────────────────────────────
-interface SchoolRow { id: string; name: string; short: string; email_domain: string; region: string; lat: string; lng: string; orgs_host?: string; courses_source?: string; catalog_url?: string; research_source?: string; events_source?: string; academic_calendar?: string }
+interface SchoolRow { id: string; name: string; short: string; email_domain: string; region: string; lat: string; lng: string; orgs_host?: string; courses_source?: string; catalog_url?: string; research_source?: string; events_source?: string; academic_calendar?: string; tz?: string }
 const SCHOOLS_CSV = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', 'schools.csv');
 const loadSchools = () => parseCSV(readFileSync(SCHOOLS_CSV, 'utf8')) as unknown as SchoolRow[];
 const hoursSince = (iso?: string) => iso ? (Date.now() - new Date(iso).getTime()) / 3_600_000 : Infinity;
@@ -177,7 +177,7 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
   const out: AgentRun[] = [];
   const latest = await latestRuns();
   // 1. 앱에 학교 등록
-  const school: School = { id: row.id, name: row.name, emailDomain: row.email_domain, region: row.region, center: { lat: Number(row.lat), lng: Number(row.lng) } };
+  const school: School = { id: row.id, name: row.name, emailDomain: row.email_domain, region: row.region, center: { lat: Number(row.lat), lng: Number(row.lng) }, ...(row.tz ? { tz: row.tz } : {}) };
   if (!DRY) await store.applyPatch({ schools: [school] });
   // 2. 동아리 디렉터리: 탐지 결과는 detect:<id> 실행 기록에 남겨 재사용한다 (30일마다 다시 탐지)
   let host = latest.get(`detect:${row.id}`)?.summary.host as string | undefined;
@@ -202,6 +202,9 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
   // 학교 전체 캘린더 (LiveWhale) — 강연·포럼·공연, 6시간마다
   const lw = /^livewhale:(https?:\/\/[^\s]+?)\/?$/.exec(row.events_source ?? '')?.[1];
   if (lw && due(`calendar:${row.id}`, latest.get(`calendar:${row.id}`)?.finishedAt, 6)) out.push(await runOpportunities(`calendar:${row.id}`, row.id, () => fetchLiveWhale(lw, school), `op_${sid}_lw_`));
+  // 학교 전체 캘린더 (Localist) — Stanford·MIT·Northeastern
+  const lc = /^localist:(https?:\/\/[^\s]+?)\/?$/.exec(row.events_source ?? '')?.[1];
+  if (lc && due(`calendar:${row.id}`, latest.get(`calendar:${row.id}`)?.finishedAt, 6)) out.push(await runOpportunities(`calendar:${row.id}`, row.id, () => fetchLocalist(lc, school), `op_${sid}_lc_`));
   // 마감 달력 CSV (server/data/opportunities-<short>.csv) — 사람이 고친 파일을 매일 반영한다
   const calFile = path.join(path.dirname(SCHOOLS_CSV), `opportunities-${row.short}.csv`);
   if (existsSync(calFile) && due(`deadlines:${row.id}`, latest.get(`deadlines:${row.id}`)?.finishedAt, 24)) out.push(await runScript(`deadlines:${row.id}`, 'import:opportunities', calFile, { PRUNE_DEMO: '1' }));

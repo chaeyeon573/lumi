@@ -274,14 +274,16 @@ const verifiedEmails = new Set<string>();
 const SHORT: Record<string, string> = { s_berkeley: 'Cal', s_ucmerced: 'Merced' };
 app.post('/api/schools/highlights', wrap(async (req) => {
   const sid = String(req.body.schoolId ?? 's_berkeley');
-  if (!db.schools.some((s) => s.id === sid)) return null;
-  const { date: today } = campusToday();
+  const school = db.schools.find((s) => s.id === sid);
+  if (!school) return null;
+  const tz = school.tz ?? 'America/Los_Angeles';
+  const { date: today } = campusToday(tz);
   const weekEnd = new Date(Date.parse(`${today}T12:00:00Z`) + 7 * 86400000).toISOString().slice(0, 10);
   // 로그인 전 첫 화면 — 데모용 시드 공고·동아리는 숫자에도 넣지 않는다 (server/samples.ts)
   const mine = db.opportunities.filter((o) => (!o.schoolId || o.schoolId === sid) && !SAMPLE_OPPORTUNITY_IDS.has(o.id));
-  // 저장된 시각은 UTC — 캠퍼스(태평양) 날짜로 바꿔야 '10/19 23:59 마감'이 10/20 으로 보이지 않는다
-  const pt = (iso: string) => (/T/.test(iso) ? new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(iso)) : iso.slice(0, 10));
-  const nowHHMM = new Intl.DateTimeFormat('en-GB', { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(new Date());
+  // 저장된 시각은 UTC — 그 학교 시간대 날짜로 바꿔야 '10/19 23:59 마감'이 10/20 으로 보이지 않는다
+  const pt = (iso: string) => (/T/.test(iso) ? new Intl.DateTimeFormat('en-CA', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(iso)) : iso.slice(0, 10));
+  const nowHHMM = new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(new Date());
   const food = mine.filter((o) => o.tags.includes('free food') && o.date && pt(o.date) >= today && pt(o.date) <= weekEnd)
     .filter((o) => pt(o.date!) > today || !o.startTime || o.startTime >= nowHHMM) // 오늘 이미 시작한 건 빼고
     .sort((a, b) => (a.date! + (a.startTime ?? '')).localeCompare(b.date! + (b.startTime ?? '')));

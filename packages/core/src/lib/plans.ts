@@ -8,6 +8,7 @@
  */
 import type { ID, PlanMode, PlanResponse, PlanRsvp, TimeOption, TimePoll, User } from '@core/types';
 import { lang } from '@core/i18n';
+import { schoolTz } from './campusclock';
 
 export const PLAN_LIMITS = {
   titleMax: 80,
@@ -22,7 +23,7 @@ export const PLAN_LIMITS = {
 } as const;
 
 /** 캠퍼스 시간대 — 약속 시간(date + HH:MM)은 이 시간대의 벽시계 시간이다 */
-export const campusTz = () => (lang === 'en' ? 'America/Los_Angeles' : 'Asia/Seoul');
+export const campusTz = () => (lang === 'en' ? schoolTz() : 'Asia/Seoul');
 
 // ─── 입력 정리 ────────────────────────────────────────────────────────────
 /** HTML 태그·꺾쇠·제어 문자를 지우고 공백을 하나로 (multiline 이면 줄바꿈은 두 줄까지 남긴다). 욕설 검사는 하지 않는다 */
