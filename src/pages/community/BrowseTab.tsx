@@ -79,6 +79,8 @@ export function BrowseTab() {
     const sc = scoreListings(snap, me, base);
     return base.map((o) => { const r = sc.get(o.id); return { o, score: r?.score ?? -1, reasons: r?.reasons ?? [], cats: categoriesOf(o) }; });
   }, [opps, snap, me, mySchool]);
+  // 칩 숫자는 목록에 실제로 뜨는 것만 — 마감됐거나 내려간 공고까지 세면 'Saved 1' 을 눌렀는데 빈 목록이 나온다
+  const savedOpen = useMemo(() => rows.filter((r) => savedIds.has(r.o.id)).length, [rows, savedIds]);
   const counts = useMemo(() => { const c: Partial<Record<Category, number>> = {}; for (const r of rows) for (const k of r.cats) c[k] = (c[k] ?? 0) + 1; return c; }, [rows]);
   const toggleSave = (o: Opportunity) => run(() => api.opportunities.toggleSave(o.id, me.id), savedIds.has(o.id) ? undefined : (en ? 'Saved — find it under ☆ Saved.' : '저장했어요 — ☆ 저장에서 볼 수 있어요.'));
 
@@ -103,7 +105,7 @@ export function BrowseTab() {
     <div>
       <div ref={rowRef} className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2" aria-label={L('Browse by category', '종류별로 보기')}>
         {chips.map(([k, l]) => <Chip key={k} active={sub === k} onClick={() => setSub(k)}>{l}</Chip>)}
-        <Chip active={sub === 'saved'} onClick={() => setSub('saved')}><Star size={13} className="inline -mt-0.5 mr-1" fill={sub === 'saved' ? 'currentColor' : 'none'} />{L('Saved', '저장')}{savedIds.size ? ` ${savedIds.size}` : ''}</Chip>
+        <Chip active={sub === 'saved'} onClick={() => setSub('saved')}><Star size={13} className="inline -mt-0.5 mr-1" fill={sub === 'saved' ? 'currentColor' : 'none'} />{L('Saved', '저장')}{savedOpen ? ` ${savedOpen}` : ''}</Chip>
         <Chip onClick={() => nav('/rides')}>🚗 {L('Rides', '같이 타기')}</Chip>
       </div>
       {sub === 'foryou' && <RideSeasonBanner className="mb-3" />}

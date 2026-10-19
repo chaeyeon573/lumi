@@ -2,6 +2,14 @@
 
 최신이 위.
 
+## 2026-10-19 03:17 UTC (버클리 일 20:17) · 95회차 · 초점: 저장(Saved) 목록
+
+- 새 사장님 답 없음. 배포 브랜치가 8bfd353 "New design (v2) is the default" 로 움직임(사장님 결정, design.ts 기본값 v2·저장 키 lumi.design.2). 병합함. lumi-pm 수정들은 여전히 배포 안 됨. 실행 이름이 "3시간마다"로 바뀜.
+- 고침: Browse 의 "☆ Saved 1" 칩을 누르면 "0 listings · Tap ☆ …" 빈 목록. 데모 계정이 저장한 공고가 마감됐거나 라이브에 없어서 목록에선 빠지는데 칩 숫자는 저장 기록을 그대로 셌다 → 칩 숫자를 목록에 실제로 뜨는 것만 세게(BrowseTab). Me 화면 "Saved & applications 1" 도 같은 이유로 빈 목록을 열었다 → 같은 규칙(활동·동아리 제외, 마감/날짜 지난 것·없는 공고 제외)으로 센다(ProfilePage).
+- 검증: `npx tsc -b` 통과, `npm test` 210/210. v2·classic 에서 칩 "Saved"(숫자 없음) + 빈 목록 안내, Me "Saved & applications 0", 한국어 "저장·지원 내역 0개" 확인.
+- 메모: index.html 의 apple-mobile-web-app-status-bar-style 이 "default"(흰 상태바)인데 기본 디자인이 어두운 v2 가 됨 — 홈 화면에 추가한 아이폰에서 상단이 흰 띠로 보일 수 있음. 배포 파일이라 다음에 확인.
+- 다음 초점: v2 가 기본이 됐으니 처음 들어오는 사람(로그인 전 /welcome·/start) 화면을 v2 로 다시 보기.
+
 ## 2026-10-19 02:17 UTC (버클리 일 19:17) · 94회차 · 초점: 알림 목록
 
 - 새 사장님 답 없음. 배포 브랜치 295a5f2 그대로.

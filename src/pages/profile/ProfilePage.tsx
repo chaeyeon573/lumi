@@ -15,6 +15,7 @@ import { WeekGrid } from '@/components/timetable/WeekGrid';
 import { KeyDatesCard } from '@/components/academic/KeyDatesCard';
 import { SeatWatchCard } from '@/components/seats/SeatWatch';
 import { campusToday } from '@core/lib/rides';
+import { daysUntil } from '@core/lib/recommend';
 
 
 /** 나 — 프로필 카드 · 주간 시간표 · 다가오는 약속 (Pastel Breeze) */
@@ -28,6 +29,7 @@ export function ProfilePage() {
   const participations = useAppStore((s) => s.participations);
   const polls = useAppStore((s) => s.timePolls);
   const intents = useAppStore((s) => s.opportunityIntents);
+  const opps = useAppStore((s) => s.opportunities);
   const orgs = useAppStore((s) => s.organizations);
   const rides = useAppStore((s) => s.rides);
   const me = v.me;
@@ -44,7 +46,9 @@ export function ProfilePage() {
   const nextFree = freeBlocks(me.timetable, todayIdx()).find((b) => b.end > nowMin());
   const days = [0, 1, 2, 3, 4];
   const openPolls = polls.filter((p) => p.status === 'open' && (p.hostId === me.id || p.inviteeIds.includes(me.id))).length;
-  const saved = intents.filter((i) => i.userId === me.id && (i.saved || i.intent === 'applied')).length;
+  // 저장 목록(Browse ☆)에 실제로 뜨는 것만 센다 — 마감됐거나 내려간 공고까지 세면 '1개'를 눌렀는데 빈 목록이 나온다
+  const openOpp = new Set(opps.filter((o) => o.type !== 'activity' && o.type !== 'club' && (o.deadline ? daysUntil(o.deadline) >= 0 : !o.date || daysUntil(o.date) >= 0)).map((o) => o.id));
+  const saved = intents.filter((i) => i.userId === me.id && (i.saved || i.intent === 'applied') && openOpp.has(i.opportunityId)).length;
   // Campus › Clubs › Mine 과 같은 기준(가입·운영·팔로우) — 이 줄을 누르면 그 목록이 열린다
   const myOrgs = orgs.filter((o) => o.memberIds.includes(me.id) || o.adminIds.includes(me.id) || o.followerIds.includes(me.id)).length;
   const myRides = (rides ?? []).filter((r) => r.status !== 'cancelled' && r.date >= campusToday() && (r.hostId === me.id || r.memberIds.includes(me.id))).length;
