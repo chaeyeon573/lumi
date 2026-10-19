@@ -51,7 +51,7 @@ export function NotificationsPage() {
       {status === 'loading' && <CardSkeleton count={3} />}
       {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
       {status === 'ready' && (list.length === 0 ? <EmptyState emoji="🔔" title={t('알림이 없어요')} description={t('참가 승인, 친구 요청 수락, 활동 시작 전 알림이 여기에 표시돼요.')} /> : (
-        <div className="px-4 py-3 card divide-y divide-line">
+        <div className="px-4 py-3"><div className="card divide-y divide-line overflow-hidden">
           {list.map((n) => { const { Icon, cls } = ICONS[n.type]; return (
             <button key={n.id} onClick={async () => { if (!n.read) await run(() => api.notifications.markRead(n.id)); if (n.link) nav(n.link); }} className={cn('w-full flex items-start gap-3 px-3.5 py-3 text-left press', !n.read && 'bg-primary-soft/40')}>
               <span className={cn('h-10 w-10 rounded-xl grid place-items-center shrink-0', cls)}><Icon size={18} /></span>
@@ -59,7 +59,7 @@ export function NotificationsPage() {
               {!n.read && <span className="h-2 w-2 rounded-full bg-accent mt-2" />}
             </button>
           ); })}
-        </div>
+        </div></div>
       ))}
     </div>
   );
