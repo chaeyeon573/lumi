@@ -258,7 +258,7 @@ export function StartPage() {
             <div className="rounded-3xl bg-primary text-white p-5 shadow-[0_16px_36px_-8px_rgba(15,43,72,.35)]">
               <div className="flex items-center gap-3">
                 <span className="h-14 w-14 rounded-2xl bg-white/15 grid place-items-center text-[30px]">{d.avatar}</span>
-                <div className="min-w-0"><b className="block text-[18px] truncate">{d.nickname || (en ? 'You' : '나')}</b><span className="block text-[13px] text-accent v2:text-night/70 truncate">{[d.department, label(YEARS.find((y) => y.v === d.yearInSchool) ?? { en: '', ko: '' }), school?.name].filter(Boolean).join(' · ')}</span></div>
+                <div className="min-w-0"><b className="block text-[18px] truncate">{d.nickname || (en ? 'You' : '나')}</b><span className="block text-[13px] leading-snug text-accent v2:text-night/70 line-clamp-2">{[d.department, label(YEARS.find((y) => y.v === d.yearInSchool) ?? { en: '', ko: '' }), school?.name].filter(Boolean).join(' · ')}</span></div>
               </div>
               <p className="mt-3 text-[14px] leading-relaxed text-white/90 v2:text-night/80">{bio}</p>
               <div className="mt-3 flex flex-wrap gap-1.5">

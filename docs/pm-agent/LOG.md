@@ -2,6 +2,15 @@
 
 최신이 위.
 
+## 2026-10-19 09:17 UTC (버클리 월 02:17) · 97회차 · 초점: 로그인 전 첫 화면(/welcome·/start) v2
+
+- 새 사장님 답 없음. 배포 브랜치 8bfd353 그대로(95·96회차는 아직 안 올라감). 버클리 새벽 2시라 아침 식당·체육관 확인은 다음으로.
+- 본 것: /welcome(v2 "Who's free on campus right now?" / classic "at Cal"), 카드 3장(점심 친구 · 무료 음식 Mon 8AM · 오늘 마감 NSF GRFP Oct 19) 정상. /start 1~8단계 v2·classic 문구·버튼 정상(9단계 실제 이메일 전에서 멈춤).
+- 고침: 7단계 "Here's your profile" 카드에서 학교 이름이 "Computer Science · Junior · UC Berk…" 로 잘림 — 카드에 자리가 있는데 한 줄로 자르고 있었음 → 두 줄까지 보이게(StartPage.tsx, truncate → line-clamp-2).
+- 검증: `npx tsc -b` 통과, `npm test` 210/210. v2·classic 7단계 스크린샷에서 "Computer Science · Junior · UC Berkeley" 전부 보임.
+- 메모(안 고침): /welcome 에서 디자인 전환 버튼이 위쪽 띠(1,558 CLUBS…)를 가림 — 이미 QUESTIONS 에 있는 '디자인 버튼이 내용 가림' 건과 같음.
+- 다음 초점: 버클리 오전(다음 실행 12:17 UTC = 05:17 PT 는 아직 이름, 그 다음 15:17 UTC = 08:17 PT)에 식당·체육관 카드 "opens" 표시.
+
 ## 2026-10-19 06:19 UTC (버클리 일 23:19) · 96회차 · 초점: 배포 뒤 라이브 확인 + Discover 식당 카드
 
 - 새 사장님 답 없음. 배포 브랜치에 lumi-pm 작업이 거의 다 올라감(4415c92 까지 — 51~94회차). 95회차(Saved 숫자)만 아직 안 올라감.
