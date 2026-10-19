@@ -30,10 +30,11 @@ export function LiveCards({ className }: { className?: string }) {
           <span className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide text-ink-3"><Utensils size={13} />Dining now<ChevronRight size={13} className="ml-auto" /></span>
           {!d.available ? <span className="mt-2 text-[13px] text-ink-3">Menus unavailable right now</span> : (
             <>
+              {/* 오늘 다 닫았으면 이미 끝난 저녁 메뉴는 안 보인다 — ‘Closed for today’ 아래 ‘…, dinner’ 는 아직 먹을 수 있는 것처럼 읽힌다 */}
               <span className="mt-1.5 text-[14px] font-bold leading-snug line-clamp-2">
                 {d.open?.length ? `${d.open.slice(0, 2).map((o) => o.name).join(', ')}${d.open.length > 2 ? ` +${d.open.length - 2}` : ''} open` : d.next ? `${d.next.name} opens ${fmtClock(d.next.opensAt)}` : 'Closed for today'}
               </span>
-              {d.highlight && <span className="mt-auto pt-1.5 text-[12px] text-ink-2 leading-snug line-clamp-2">{d.highlight.favorite && <Star size={11} className="inline -mt-0.5 mr-0.5 fill-current text-[#B57A0E] v2:text-lime-400" />}<b className="font-semibold">{d.highlight.dish}</b> · {d.highlight.location}, {d.highlight.meal.toLowerCase()}</span>}
+              {d.highlight && (d.open?.length || d.next) && <span className="mt-auto pt-1.5 text-[12px] text-ink-2 leading-snug line-clamp-2">{d.highlight.favorite && <Star size={11} className="inline -mt-0.5 mr-0.5 fill-current text-[#B57A0E] v2:text-lime-400" />}<b className="font-semibold">{d.highlight.dish}</b> · {d.highlight.location}, {d.highlight.meal.toLowerCase()}</span>}
             </>
           )}
         </button>

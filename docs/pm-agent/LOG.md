@@ -2,6 +2,15 @@
 
 최신이 위.
 
+## 2026-10-19 06:19 UTC (버클리 일 23:19) · 96회차 · 초점: 배포 뒤 라이브 확인 + Discover 식당 카드
+
+- 새 사장님 답 없음. 배포 브랜치에 lumi-pm 작업이 거의 다 올라감(4415c92 까지 — 51~94회차). 95회차(Saved 숫자)만 아직 안 올라감.
+- 라이브에서 확인(v2, https://heetz.up.railway.app): 알림 시간이 "1h ago·3h ago·10h ago·2d ago" 로 바뀜, 숨긴 예시 사람(Hannah)·없는 장학금 마감 알림 사라짐. 관리 화면 참가 요청 "37m ago". 공연 모임 댓글 "2h ago". RSF 체육관 "Closed · Today 8 AM–11 PM"(밤 11:19), Discover 체육관 카드 "Closed". 전부 기대대로.
+- 고침: Discover '식당 지금' 카드가 "Closed for today" 아래에 "Jasmine Rice · Café 3, dinner" — 이미 끝난 저녁 메뉴가 아직 먹을 수 있는 것처럼 보임 → 연 곳도 다음에 열 곳도 없으면 메뉴 줄을 숨김(LiveCards.tsx).
+- 검증: `npx tsc -b` 통과, `npm test` 210/210. 로컬 v2·classic 에서 "DINING NOW | Closed for today" 만 나오는 것 확인.
+- 메모(안 고침): 체육관 카드가 닫힌 시간에 "Closed" + "Closed for today" 두 번. CMS Fitness Center 는 운영 시간 자료가 없어 밤 11시에도 "Quiet 0%".
+- 다음 초점: 아침(버클리 오전)에 식당·체육관 카드가 "opens 7 AM" 처럼 맞게 나오는지, 그리고 /welcome·/start 첫 화면 v2.
+
 ## 2026-10-19 03:17 UTC (버클리 일 20:17) · 95회차 · 초점: 저장(Saved) 목록
 
 - 새 사장님 답 없음. 배포 브랜치가 8bfd353 "New design (v2) is the default" 로 움직임(사장님 결정, design.ts 기본값 v2·저장 키 lumi.design.2). 병합함. lumi-pm 수정들은 여전히 배포 안 됨. 실행 이름이 "3시간마다"로 바뀜.
