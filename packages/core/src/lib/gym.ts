@@ -110,7 +110,8 @@ export function gymView(input: { displayId: string; name: string; capacity: numb
   const first = Math.min(GYM_FIRST_HOUR, ...[...hours.keys()]);
   for (let h = first; h <= GYM_LAST_HOUR; h++) today.push({ hour: h, percent: hours.get(h) ?? null, usual: usual.get(h) ?? null });
   const live = !!last && isFresh(last.at, nowMs);
-  const historyDays = new Set(history.filter((d) => d.samples.length).map((d) => d.date)).size;
+  // 지난 날만 센다 — '평소' 선은 오늘을 빼고 7일이 차야 나온다. 오늘까지 세면 "7/7 days" 인데 선이 없는 날이 생긴다
+  const historyDays = new Set(history.filter((d) => d.date < clock.date && d.samples.length).map((d) => d.date)).size;
   return {
     id: displayId, name, capacity,
     status: live ? 'live' : 'unavailable',

@@ -65,7 +65,7 @@ test('view: live only when fresh; stale shows unavailable with no number; usual 
   const live = gymView({ displayId: RSF, name: 'RSF Weight Rooms', capacity: 100, last: { at: nowMs - 5 * 60_000, count: 50 }, history: [today], clock, nowMs, hourOf: utcHour });
   assert.equal(live.status, 'live'); assert.equal(live.percent, 50); assert.equal(live.count, 50);
   assert.equal(live.today.find((h) => h.hour === 17)?.percent, 50);
-  assert.equal(live.usualNow, null); assert.equal(live.historyDays, 1);
+  assert.equal(live.usualNow, null); assert.equal(live.historyDays, 0, 'today does not count toward the 7 days');
   const stale = gymView({ displayId: RSF, name: 'RSF Weight Rooms', capacity: 100, last: { at: nowMs - 40 * 60_000, count: 50 }, history: [today], clock, nowMs, hourOf: utcHour });
   assert.equal(stale.status, 'unavailable');
   assert.equal(stale.percent, undefined); assert.equal(stale.count, undefined);
@@ -73,10 +73,13 @@ test('view: live only when fresh; stale shows unavailable with no number; usual 
   // 지난 7일 + 오늘 — 지난주 화요일 18시는 80%
   const past = Array.from({ length: 7 }, (_, i) => addDaysISO('2026-10-13', -(i + 1))).map((d) => doc(d, [[sec(`${d}T18:10:00Z`), d === '2026-10-06' ? 80 : 20]]));
   assert.equal(usualByHour(past.slice(0, 6), '2026-10-13', utcHour).size, 0, 'needs 7 days');
+  const sixPlusToday = gymView({ displayId: RSF, name: 'x', capacity: 100, last: { at: nowMs, count: 30 }, history: [...past.slice(0, 6), today], clock, nowMs, hourOf: utcHour });
+  assert.equal(sixPlusToday.usualNow, null);
+  assert.equal(sixPlusToday.historyDays, 6, 'shows 6/7 while the line is still missing (it said 7/7 before)');
   const usual = usualByHour(past, '2026-10-13', utcHour);
   assert.equal(usual.get(18), 80, 'same weekday only');
   const v = gymView({ displayId: RSF, name: 'x', capacity: 100, last: { at: nowMs, count: 30 }, history: [...past, today], clock, nowMs, hourOf: utcHour });
-  assert.equal(v.usualNow, 80); assert.equal(v.historyDays, 8);
+  assert.equal(v.usualNow, 80); assert.equal(v.historyDays, 7);
 });
 
 test('alerts: live, in the window, under the level, once a day', () => {
