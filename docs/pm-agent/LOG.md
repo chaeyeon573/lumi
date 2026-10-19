@@ -2,6 +2,14 @@
 
 최신이 위.
 
+## 2026-10-19 12:26 UTC (버클리 월 05:26) · 초점: 30명 출시 흐름 — 약속 잡기·+ 메뉴
+
+- 새 사장님 답 없음. 배포 브랜치 8bfd353 그대로 (lumi-pm 의 섹션 고르기·Ask Lumi 빼기 등은 아직 배포 안 됨).
+- 본 것(v2·classic): People 첫 화면, /plans/new("Ask friends" 링크로 묻기), /together/new("Plan Together"). 문구·레이아웃 이상 없음. 저장 버튼은 안 누름.
+- 큰 것 → QUESTIONS: 약속 잡기가 두 갈래(링크로 묻기 vs Plan Together)이고, Plan Together 는 시간표를 모아 시간을 추천 — PRODUCT_TASTE "원하지 않은 것"과 부딪힘. 추천 A(출시용으로 Plan Together 입구 감추기).
+- 고친 것 없음 (결정이 필요한 것이라).
+- 다음 초점: 채팅 목록·채팅방 첫 메시지 흐름, 친구 추가 화면.
+
 ## 2026-10-19 (사장님 지시) · 다른 학교는 보류 — 버클리만
 
 - 사장님: "지금 그냥 버클리만 해보자". 새 학교는 열지 않음 (schools.csv 그대로: Berkeley·Merced).

@@ -2,6 +2,10 @@
 
 사장님께 결정을 받아야 하는 것. 최신이 위. 답은 각 항목 아래에 `**답:** …` 으로 적어 주시면 다음 실행이 따른다.
 
+## 2026-10-19 · 약속 잡기가 두 개 — "Ask friends with a link" 와 "Plan Together"
+**무엇이 어색한가:** + 버튼 메뉴가 7개(즉석 만남·활동 만들기·링크로 묻기·Plan Together·Study Crew·팀원 모집·게시물)인데, "링크로 친구에게 묻기"(/plans/new)와 "같이 시간 정하기 (Plan Together)"(/together/new)가 거의 같은 일을 한다. 처음 쓰는 30명은 어느 걸 눌러야 할지 헷갈린다. 게다가 Plan Together 는 "친구를 고르면 공강이 겹치는 시간을 추천해 줄게요"(시간표를 모아 시간 추천) — PRODUCT_TASTE 의 "원하지 않은 것"(시간표를 모아 시간을 골라주는 기능, 계획은 링크로 간단히)과 부딪힌다. Plans 화면·스터디 그룹("Vote on a time with them")에서도 이쪽으로 간다.
+**제안:** A) 출시용으로 Plan Together 입구를 감추고 "링크로 묻기" 하나로 (스터디 그룹 버튼도 링크로 묻기로). B) 둘 다 두되 Plan Together 의 시간표 추천만 끈다. C) 그대로. — 추천: A (Discover 첫 화면의 "Ask friends with one link" 와 같은 하나의 길).
+
 ## 2026-10-18 · Teams — 다른 지역 대면 해커톤
 **무엇이 어색한가:** Discover › Teams 의 해커톤 3칸(마감 가까운 순)에 버클리 학생이 갈 수 없는 대면 해커톤이 섞인다 — 오늘 기준 “ZotHacks 2026 · UC Irvine – Student Center”, “InnovateLA x Dual-Use Hackathon · USC” (둘 다 D-Day). Teams 는 ‘같이 나갈 사람 찾기’ 자리라, 6시간 거리 대면 행사는 팀을 꾸릴 일이 거의 없다.
 **제안:** A) Teams 3칸은 온라인 + 베이 지역 대면만, 나머지는 “모두 보기”(Campus › 해커톤)에 그대로. B) 지역 표시만 더 눈에 띄게(“In person · Irvine”). C) 그대로.  — 추천: A.
