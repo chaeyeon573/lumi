@@ -14,6 +14,7 @@ import { CATEGORY_EMOJI, CATEGORY_LABELS } from '@core/lib/labels';
 import type { ChatRoom } from '@core/types';
 import { cn } from '@core/lib/cn';
 import { SampleTag } from '@/components/ui/SampleTag';
+import { proposalWhen } from '@core/lib/plans';
 
 type Tab = 'direct' | 'activity' | 'org' | 'requests';
 
@@ -100,7 +101,7 @@ export function ChatInboxPage() {
             <h2 className="text-[14px] font-bold mb-2 flex items-center gap-1.5"><Inbox size={15} />{t('받은 활동 제안')} {inProposals.length}</h2>
             {inProposals.map((p) => { const u = v.userById(p.fromId); return (
               <div key={p.id} className="card p-3.5 mb-2">
-                <button onClick={() => nav(`/users/${p.fromId}`)} className="flex items-center gap-3 text-left w-full"><Avatar emoji={u?.avatar.emoji ?? '👤'} hue={u?.avatar.hue ?? 200} url={u?.avatar.url} size={40} /><div className="flex-1"><b className="text-[14px]">{u?.nickname}</b><div className="text-[12px] text-ink-3">{CATEGORY_EMOJI[p.category]} {CATEGORY_LABELS[p.category]} · {p.when}</div></div><Tag>{relativeTime(p.createdAt)}</Tag></button>
+                <button onClick={() => nav(`/users/${p.fromId}`)} className="flex items-center gap-3 text-left w-full"><Avatar emoji={u?.avatar.emoji ?? '👤'} hue={u?.avatar.hue ?? 200} url={u?.avatar.url} size={40} /><div className="flex-1"><b className="text-[14px]">{u?.nickname}</b><div className="text-[12px] text-ink-3">{CATEGORY_EMOJI[p.category]} {CATEGORY_LABELS[p.category]} · {proposalWhen(p.when)}</div></div><Tag>{relativeTime(p.createdAt)}</Tag></button>
                 <p className="mt-2 rounded-xl bg-surface-2 px-3 py-2 text-[13px]">“{p.message}”</p>
                 <div className="flex gap-2 mt-3"><Button full variant="outline" icon={<X size={15} />} onClick={() => run(() => api.proposals.respond(p.id, false))}>{t('이번에는 어려워요')}</Button><Button full icon={<Check size={15} />} onClick={async () => { await run(() => api.proposals.respond(p.id, true), t('제안을 수락했어요. 대화를 시작해요!')); setParams({ tab: 'direct' }); }}>{t('좋아요')}</Button></div>
               </div>

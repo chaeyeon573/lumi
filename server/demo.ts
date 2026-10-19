@@ -162,7 +162,9 @@ const notificationAge = new Map(seedNotifications.map((n) => [n.id, ageOf(n.crea
 const commentAge = new Map(seedPosts.flatMap((p) => p.comments.map((c) => [c.id, ageOf(c.createdAt)] as const)));
 const participationAge = new Map(seedParticipations.map((p) => [p.id, ageOf(p.createdAt)]));
 const seedRoomById = new Map(seedRooms.map((r) => [r.id, r]));
-const proposalAge = new Map(seedProposals.map((p) => [p.id, { age: ageOf(p.createdAt), ttl: Date.parse(p.expiresAt) - Date.parse(p.createdAt) }]));
+// when("2026-10-21 19:00")은 보낸 날로부터 며칠 뒤인지 기억한다 — 다시 살릴 때 제안 날짜도 같이 옮긴다 (안 그러면 '19h ago' 에 지난달 날짜)
+const whenDays = (when: string, from: string) => { const d = /^(\d{4}-\d{2}-\d{2})/.exec(when)?.[1]; return d ? Math.round((Date.parse(`${d}T12:00:00Z`) - Date.parse(`${from.slice(0, 10)}T12:00:00Z`)) / 86_400_000) : null; };
+const proposalAge = new Map(seedProposals.map((p) => [p.id, { age: ageOf(p.createdAt), ttl: Date.parse(p.expiresAt) - Date.parse(p.createdAt), whenDays: whenDays(p.when, p.createdAt) }]));
 const STALE_MS = 60 * 60 * 1000; // 한 시간 넘게 밀렸을 때만 — 15분마다 모든 글을 다시 보내지 않게
 const shift = (iso: string, ms: number) => new Date(Date.parse(iso) + ms).toISOString();
 
@@ -178,9 +180,12 @@ export function rollSampleContent(db: Snapshot, now = Date.now()): Patch | null 
     const orig = seedRoomById.get(r.id);
     if (!orig || !r.messages.length || r.messages.length !== orig.messages.length || r.messages.some((m, i) => m.id !== orig.messages[i].id)) continue;
     const last = orig.messages[orig.messages.length - 1];
-    const delta = now - ageOf(last.createdAt) - Date.parse(r.messages[r.messages.length - 1].createdAt);
-    if (delta < STALE_MS) continue;
-    chatRooms.push({ ...r, createdAt: shift(r.createdAt, delta), messages: r.messages.map((m) => ({ ...m, createdAt: shift(m.createdAt, delta) })), lastReadAt: Object.fromEntries(Object.entries(r.lastReadAt).map(([k, v]) => [k, shift(v, delta)])) });
+    let delta = now - ageOf(last.createdAt) - Date.parse(r.messages[r.messages.length - 1].createdAt);
+    // 문구도 시드를 따른다 — 시드 문구를 고치면(숨긴 예시 사람 이름 빼기 등) 라이브 예시 대화에도 닿게
+    const staleText = r.messages.some((m, i) => m.text !== orig.messages[i].text);
+    if (delta < STALE_MS && !staleText) continue;
+    if (delta < STALE_MS) delta = 0;
+    chatRooms.push({ ...r, createdAt: shift(r.createdAt, delta), messages: r.messages.map((m, i) => ({ ...m, text: orig.messages[i].text, createdAt: shift(m.createdAt, delta) })), lastReadAt: Object.fromEntries(Object.entries(r.lastReadAt).map(([k, v]) => [k, shift(v, delta)])) });
   }
   // 데모 계정의 예시 알림도 — 'Deadline in 4 days' 가 Sep 23 으로 찍혀 있으면 앱이 멈춘 것처럼 보인다
   const notifications: Notification[] = [];
@@ -200,9 +205,13 @@ export function rollSampleContent(db: Snapshot, now = Date.now()): Patch | null 
   const proposals: ActivityProposal[] = [];
   for (const p of db.proposals) {
     const seedP = proposalAge.get(p.id);
-    if (!seedP || !(p.status === 'expired' || (p.status === 'pending' && Date.parse(p.expiresAt) < now))) continue;
+    const whenDate = /^(\d{4}-\d{2}-\d{2})/.exec(p.when)?.[1];
+    const whenPast = p.status === 'pending' && !!whenDate && whenDate < new Date(now).toISOString().slice(0, 10);
+    if (!seedP || !(p.status === 'expired' || (p.status === 'pending' && Date.parse(p.expiresAt) < now) || whenPast)) continue;
     const createdAt = now - seedP.age;
-    proposals.push({ ...p, status: 'pending', createdAt: new Date(createdAt).toISOString(), expiresAt: new Date(createdAt + seedP.ttl).toISOString() });
+    const created = new Date(createdAt).toISOString();
+    const when = seedP.whenDays != null && whenDate ? `${new Date(Date.parse(`${created.slice(0, 10)}T12:00:00Z`) + seedP.whenDays * 86_400_000).toISOString().slice(0, 10)}${p.when.slice(10)}` : p.when;
+    proposals.push({ ...p, status: 'pending', when, createdAt: created, expiresAt: new Date(createdAt + seedP.ttl).toISOString() });
   }
   if (!posts.length && !chatRooms.length && !notifications.length && !proposals.length && !participations.length) return null;
   const byPost = new Map(posts.map((p) => [p.id, p])), byRoom = new Map(chatRooms.map((r) => [r.id, r]));

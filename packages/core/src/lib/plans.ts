@@ -110,6 +110,11 @@ export function dayLabel(date: string, en = lang === 'en'): string {
 export function whenLabel(o: Pick<TimeOption, 'date' | 'startTime' | 'endTime'>, en = lang === 'en'): string {
   return `${dayLabel(o.date, en)} · ${clock(o.startTime, en)}–${clock(o.endTime, en)}`;
 }
+/** 1:1 제안 시각 "2026-10-22 19:00" → "Thu, Oct 22 · 7pm". 자유 문구("이번 주 저녁")는 그대로 */
+export function proposalWhen(when: string, en = lang === 'en'): string {
+  const m = /^(\d{4}-\d{2}-\d{2})[ T](\d{2}:\d{2})$/.exec(when.trim());
+  return m ? `${dayLabel(m[1], en)} · ${clock(m[2], en)}` : when;
+}
 /** "Thu 2pm" — 미리보기처럼 짧게 */
 export const shortWhen = (o: Pick<TimeOption, 'date' | 'startTime'>, en = lang === 'en') => `${weekday(o.date, en)} ${clock(o.startTime, en)}`;
 

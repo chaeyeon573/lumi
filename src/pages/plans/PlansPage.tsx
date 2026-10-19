@@ -12,6 +12,7 @@ import { formatDateTime, todayISO, relativeTime, formatDate } from '@core/lib/fo
 import { isTeamActivity } from '@core/lib/discover';
 import { dday } from '@core/lib/recommend';
 import type { OpportunityIntent, Goal, Activity } from '@core/types';
+import { proposalWhen } from '@core/lib/plans';
 
 /** Me › My Plans — 받은 초대 / 대기 / 확정 / 관심 행사 / 팀 신청 / Study Crew */
 export function PlansPage() {
@@ -79,7 +80,7 @@ export function PlansPage() {
           {friendReqs.map((r) => { const u = v.userById(r.fromId); return u && (
             <div key={r.id} className="flex items-center gap-3 px-3.5 py-3"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} /><span className="flex-1 text-[13px]"><b>{u.nickname}</b>{t('님의 친구 요청')}</span><Button size="sm" variant="outline" onClick={() => run(() => api.relationships.respondFriendRequest(r.id, false))}>{t('거절')}</Button><Button size="sm" onClick={() => run(() => api.relationships.respondFriendRequest(r.id, true), t('친구가 되었어요!'))}>{t('수락')}</Button></div>); })}
           {proposalsIn.map((p) => { const u = v.userById(p.fromId); return u && (
-            <div key={p.id} className="flex items-center gap-3 px-3.5 py-3"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} /><span className="flex-1 min-w-0 text-[13px]"><b>{u.nickname}</b> · {CATEGORY_EMOJI[p.category]} {p.when}<span className="block text-[12px] text-ink-3 truncate">{p.message}</span></span><Button size="sm" variant="outline" onClick={() => run(() => api.proposals.respond(p.id, false))}>{t('이번에는 어려워요')}</Button><Button size="sm" onClick={() => run(() => api.proposals.respond(p.id, true), t('제안을 수락했어요.'))}>{t('수락')}</Button></div>); })}
+            <div key={p.id} className="flex items-center gap-3 px-3.5 py-3"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} /><span className="flex-1 min-w-0 text-[13px]"><b>{u.nickname}</b> · {CATEGORY_EMOJI[p.category]} {proposalWhen(p.when)}<span className="block text-[12px] text-ink-3 truncate">{p.message}</span></span><Button size="sm" variant="outline" onClick={() => run(() => api.proposals.respond(p.id, false))}>{t('이번에는 어려워요')}</Button><Button size="sm" onClick={() => run(() => api.proposals.respond(p.id, true), t('제안을 수락했어요.'))}>{t('수락')}</Button></div>); })}
           {invites.map((a) => <Row key={a.id} a={a} right={<Tag tone="accent" className="h-5">{t('초대')}</Tag>} />)}
         </Section>
         <Section icon={<Clock size={15} className="text-gold" />} title={t('참가 신청 대기')} count={pendingActs.filter((a) => !isTeamActivity(a)).length} empty={t('승인을 기다리는 신청이 없어요.')}>

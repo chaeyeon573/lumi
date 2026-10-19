@@ -255,3 +255,31 @@ test('sample join requests keep their "20 min ago" age instead of the day the se
   assert.ok(Date.now() - Date.parse(p10.createdAt) < 2 * 3600000, 'p10 was asked 20 minutes before seed time');
   assert.equal(rollSampleContent(db), null, 'nothing to roll right after');
 });
+
+test('sample chat wording follows the seed (a hidden sample name in an old message is replaced on live)', () => {
+  const db = world();
+  const room = db.chatRooms.find((r) => r.id === 'cr_junho')!;
+  room.messages = room.messages.map((m) => (m.id === 'm5' ? { ...m, text: 'Thank you!! Bringing Hannah' } : m));
+  const patch = rollSampleContent(db);
+  assert.ok(patch?.chatRooms?.some((r) => r.id === 'cr_junho'));
+  const after = db.chatRooms.find((r) => r.id === 'cr_junho')!;
+  assert.equal(after.messages.find((m) => m.id === 'm5')!.text, 'Thank you!! Bringing a friend');
+  assert.equal(after.messages.at(-1)!.createdAt, room.messages.at(-1)!.createdAt, 'times are fresh already, so only the text changes');
+  assert.equal(rollSampleContent(db), null);
+});
+
+test('a revived sample proposal also moves the time it proposes (no "19h ago · Sep 25 7 PM")', () => {
+  const db = world();
+  const seedPr = db.proposals.find((p) => p.id === 'pr1')!;
+  const lead = Math.round((Date.parse(`${seedPr.when.slice(0, 10)}T12:00:00Z`) - Date.parse(`${seedPr.createdAt.slice(0, 10)}T12:00:00Z`)) / 86_400_000);
+  // 라이브와 같은 상태: 다시 살아나 아직 기다림인데, 제안 날짜는 3주 전 그대로
+  db.proposals = db.proposals.map((p) => (p.id === 'pr1' ? { ...p, when: `2026-09-25${p.when.slice(10)}` } : p));
+  const patch = rollSampleContent(db);
+  assert.ok(patch?.proposals?.some((p) => p.id === 'pr1'));
+  const pr = db.proposals.find((p) => p.id === 'pr1')!;
+  const today = new Date().toISOString().slice(0, 10);
+  assert.ok(pr.when.slice(0, 10) >= today, `${pr.when} is not in the past`);
+  assert.equal(Math.round((Date.parse(`${pr.when.slice(0, 10)}T12:00:00Z`) - Date.parse(`${pr.createdAt.slice(0, 10)}T12:00:00Z`)) / 86_400_000), lead, 'same gap as in the seed');
+  assert.equal(pr.when.slice(10), seedPr.when.slice(10), 'same time of day');
+  assert.equal(rollSampleContent(db), null);
+});

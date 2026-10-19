@@ -13,7 +13,7 @@ import type { Snapshot } from '@core/api/types';
 import type { ID, TimePoll } from '@core/types';
 import * as seed from '@core/data/seed.en';
 import { createPlansEngine, type PlanInput } from '@core/api/plans';
-import { cleanText, firstName, isPlanId, newPlanId, planIcs, planMeta, publicPlan, zonedToUtc, PLAN_LIMITS } from '@core/lib/plans';
+import { cleanText, firstName, isPlanId, newPlanId, planIcs, planMeta, publicPlan, zonedToUtc, PLAN_LIMITS, proposalWhen } from '@core/lib/plans';
 import { snapshotFor, patchFor } from './view';
 import { hashToken, planPageHtml, registerPlanRoutes, resetPlanLimits, PLAN_RATE } from './plans';
 
@@ -354,4 +354,9 @@ test('http: signed-out view, the /p/<id> page with OG tags, and the .ics downloa
     assert.match(ics.headers.get('content-disposition') ?? '', /boba-after-midterms\.ics/);
     assert.match(await ics.text(), /BEGIN:VEVENT/);
   } finally { s.close(); }
+});
+
+test('1:1 proposal time reads like the rest of the app', () => {
+  assert.equal(proposalWhen('2026-10-22 19:00', true), 'Thu, Oct 22 · 7pm');
+  assert.equal(proposalWhen('this weekend', true), 'this weekend', 'free text stays as written');
 });
