@@ -20,6 +20,7 @@ import { WeekGrid } from '@/components/timetable/WeekGrid';
 import { SectionPicker } from '@/components/timetable/SectionPicker';
 import { WatchSeatsButton } from '@/components/seats/SeatWatch';
 import { ClassmatesNote } from '@/components/classes/ClassLink';
+import { fmtClock } from '@core/lib/campusclock';
 
 const HUES = [220, 160, 15, 280, 45, 330, 120, 200, 60, 300];
 
@@ -158,7 +159,7 @@ export function TimetablePage() {
             <span className={cn('h-2.5 w-2.5 rounded-full shrink-0', now.kind === 'in_class' ? 'bg-gold' : 'bg-mint')} />
             <div className="flex-1 min-w-0">
               <b className="text-[14px]">{lang === 'en' ? `${DAY_LABELS[today]} · ${statusLabel(now)}` : `${DAY_LABELS[today]}요일 · ${statusLabel(now)}`}</b>
-              <div className="text-[12px] text-ink-3 truncate">{now.kind === 'in_class' ? `${now.course.name}${now.course.room ? ` · ${now.course.room}` : ''}` : now.kind === 'free' && now.next ? `${t('다음 수업 ')}${now.next.start} ${now.next.name}` : t('오늘 남은 시간은 자유예요')}</div>
+              <div className="text-[12px] text-ink-3 truncate">{now.kind === 'in_class' ? `${now.course.name}${now.course.room ? ` · ${now.course.room}` : ''}` : now.kind === 'free' && now.next ? `${t('다음 수업 ')}${lang === 'en' ? fmtClock(now.next.start) : now.next.start} ${now.next.name}` : t('오늘 남은 시간은 자유예요')}</div>
             </div>
             <Tag>{me.timetable.length}{t('개 수업')}</Tag>
           </div>

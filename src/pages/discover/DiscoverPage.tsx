@@ -54,7 +54,8 @@ export function DiscoverPage() {
           <div className="h-12 rounded-full bg-surface-2 flex items-center pl-4 pr-1.5 gap-2">
             <span className="h-2 w-2 rounded-full bg-primary" />
             <span className="flex-1 text-[14px] text-primary font-medium truncate">{me.timetable.length === 0 ? t('시간표를 추가해보세요') : nextFree ? `${lang === 'en' ? 'Free' : '공강'} ${fmtBlock(nextFree)}` : t('오늘 수업 끝')}</span>
-            <button onClick={() => (nextFree ? setSlot(nextFree) : nav('/timetable'))} className="h-9 px-4 rounded-full bg-primary text-white text-[13px] font-semibold flex items-center gap-1 press"><Plus size={14} />{nextFree ? t('열기') : t('시간표')}</button>
+            {/* 시간표가 없으면 '하루 종일 빔'으로 계산돼 "열기"가 떴다 — 문구("시간표를 추가해보세요")와 맞게 시간표로 */}
+            <button onClick={() => (me.timetable.length && nextFree ? setSlot(nextFree) : nav('/timetable'))} className="h-9 px-4 rounded-full bg-primary text-white text-[13px] font-semibold flex items-center gap-1 press"><Plus size={14} />{me.timetable.length === 0 ? (lang === 'en' ? 'Add' : '추가') : nextFree ? t('열기') : t('시간표')}</button>
           </div>
           <RidesEntry className="mt-3" />
           <AskFriendsCard className="mt-3" />
