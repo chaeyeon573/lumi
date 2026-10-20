@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-20 09:18 UTC (버클리 화 02:18) · 초점: "Invite friends" 가 보내는 문구
+
+- 새 사장님 답 없음. 배포 브랜치 8bfd353 그대로.
+- 고침: 초대 문구가 사실과 달랐다 — 수업판 "Our CS 186 Databases section is on Lumi"(내가 있다는 것만으로 우리 수업 사람들이 있다고 말함), 기본판 "people on our floor"(기숙사라고 가정). → "I'm on Lumi — it shows who in CS 186 is free between classes. Join so we can find each other: …/welcome" / "I'm on Lumi — see who's free between classes and where the free food is on campus. Join me: …". 한국어도 같은 뜻으로. 과목 코드만 씀(FeedExtras useInvite — People 끝 화면·피드 조용할 때 카드가 같이 씀).
+- 검증: `npx tsc -b`, `npm test` 222/222. People 끝 화면에서 Invite friends 를 눌러 복사된 문구 확인(브라우저 클립보드를 가로채서 읽음, 아무것도 안 보냄).
+- 다음 초점: Me 화면 첫 채우기(프로필 완성도·시간표 넣기 안내).
+
 ## 2026-10-20 06:19 UTC (버클리 월 23:19) · 초점: People 카드 넘기기
 
 - 새 사장님 답 없음. 배포 브랜치 8bfd353 그대로.
