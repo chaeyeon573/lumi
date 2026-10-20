@@ -63,10 +63,12 @@ export function statusNow(courses: Course[], day = todayIdx(), min = nowMin()): 
   return { kind: 'free', until: null };
 }
 
+/** 영어는 "3 PM" (앱의 다른 시각과 같게), 한국어는 "15:00" */
+const hhmmLabel = (min: number) => (lang === 'en' ? fmtClock(toHHMM(min)) : toHHMM(min));
 export function statusLabel(s: NowStatus): string {
   switch (s.kind) {
-    case 'in_class': return `${t('수업 중 · ')}${toHHMM(s.until)}${t('까지')}`;
-    case 'free': return s.until ? `${t('공강 · ')}${toHHMM(s.until)}${t('까지')}` : t('오늘 수업 없음');
+    case 'in_class': return `${t('수업 중 · ')}${hhmmLabel(s.until)}${t('까지')}`;
+    case 'free': return s.until ? `${t('공강 · ')}${hhmmLabel(s.until)}${t('까지')}` : t('오늘 수업 없음');
     case 'done': return t('오늘 수업 끝');
     case 'none': return '';
   }
