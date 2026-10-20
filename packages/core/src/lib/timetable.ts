@@ -1,7 +1,8 @@
 import type { Course, User } from '@core/types';
 import type { CatalogCourse } from '@core/api/types';
 import { uid } from './format';
-import { t } from '@core/i18n';
+import { t, lang } from '@core/i18n';
+import { fmtClock } from './campusclock';
 import { AVAILABILITY_LABELS } from './labels';
 import { normalizeTermLabel } from './terms';
 
@@ -80,7 +81,14 @@ export function availabilityText(u: Pick<User, 'timetable' | 'availability'>, ca
   return { text: u.availability ? AVAILABILITY_LABELS[u.availability] : '', auto: false };
 }
 
-export function fmtBlock(b: Block) { return `${toHHMM(b.start)}–${toHHMM(b.end)}`; }
+/**
+ * 빈 시간 "11:25 AM–1 PM" (한국어는 "11:25–13:00"). 지금부터 시작하는 블록은 시작이 매분 바뀌어 "14:59" 처럼 보였다 —
+ * 시작을 5분 단위로 올린다 (어차피 지금은 비어 있다)
+ */
+export function fmtBlock(b: Block) {
+  const start = Math.min(Math.ceil(b.start / 5) * 5, b.end);
+  return lang === 'en' ? `${fmtClock(toHHMM(start))}–${fmtClock(toHHMM(b.end))}` : `${toHHMM(start)}–${toHHMM(b.end)}`;
+}
 export function fmtHours(b: Block) { const h = (b.end - b.start) / 60; return h % 1 === 0 ? `${h}${t('시간')}` : `${h.toFixed(1)}${t('시간')}`; }
 
 // ─── 학교 수업 목록 → 내 시간표 ─────────────────────────────────────────────
