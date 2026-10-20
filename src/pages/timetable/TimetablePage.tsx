@@ -120,7 +120,10 @@ export function TimetablePage() {
       ...chosen.flatMap((s) => s.meetings.map((m) => ({ id: uid('c'), name, day: m.day, start: m.start, end: m.end, room: s.location, url: c.url, syllabusUrl: c.syllabusUrl, section: s.label, hue }))),
     ];
     setBusy(true);
-    try { await run(() => api.users.update(me.id, { timetable: [...me.timetable, ...rows] }), `${rows.length}${t('개 수업 시간 추가')}`); setEditing(null); setPicking(null); pickingId.current = ''; setCatalogQ(''); } catch { /* */ } finally { setBusy(false); }
+    // "4 meeting times added" 는 무엇을 넣었는지 말하지 않는다 — 과목·고른 섹션을 그대로
+    const added = [c.code, ...chosen.map((x) => x.label)];
+    const msg = lang === 'en' ? `${c.code} added${chosen.length ? ` with ${chosen.map((x) => x.label).join(' + ')}` : ''}` : `${added.join(' · ')} 추가했어요`;
+    try { await run(() => api.users.update(me.id, { timetable: [...me.timetable, ...rows] }), msg); setEditing(null); setPicking(null); pickingId.current = ''; setCatalogQ(''); } catch { /* */ } finally { setBusy(false); }
   };
   /** 강의를 고르면 딸린 토론·랩부터 읽는다 — 없으면(다른 학교·못 읽음) 예전처럼 바로 넣는다 */
   const pickFromCatalog = async (c: CatalogCourse) => {
