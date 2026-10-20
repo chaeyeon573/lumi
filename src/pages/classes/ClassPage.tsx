@@ -26,7 +26,12 @@ export function ClassSpaceContent({ courseName, onEdit, onClose }: { courseName:
   const code = first ? courseCodeOf(first) : null;
   const enrollment = code ? enrollments(me).find((e) => e.key === classKey(schoolOf(me), code, courseTermOf(first))) : undefined;
   const roster = enrollment && rosters?.find((r) => r.id === enrollment.key);
-  const times = [...new Set(mine.map((c) => DAY_LABELS[c.day]))].join(lang === 'en' ? '/' : '') + (first ? ` ${formatTime(first.start)}` : '');
+  // 강의 요일·시각과 디스커션·랩 요일·시각을 따로 (CS 61A: "Mon/Wed/Fri 12 PM · DIS 118 Thu 12:30 PM")
+  const days = (rows: typeof mine) => [...new Set([...rows].sort((a, b) => a.day - b.day).map((c) => DAY_LABELS[c.day]))].join(lang === 'en' ? '/' : '') + (rows[0] ? ` ${formatTime(rows[0].start)}` : '');
+  const lecture = mine.filter((c) => !c.section);
+  const sections = [...new Set(mine.filter((c) => c.section).map((c) => c.section!))].map((s) => `${s} ${days(mine.filter((c) => c.section === s))}`);
+  const lead = lecture[0] ?? first;
+  const times = [lecture.length ? days(lecture) : '', ...sections].filter(Boolean).join(' · ');
   const title = code && courseName.startsWith(code) ? courseName.slice(code.length).trim() : courseName;
   return (
     <div className="space-y-5">
@@ -34,7 +39,7 @@ export function ClassSpaceContent({ courseName, onEdit, onClose }: { courseName:
         <div className="min-w-0">
           <h2 className="font-display text-[28px] font-bold text-ink leading-none">{code ?? courseName.split(' ').slice(0, 2).join(' ')}</h2>
           {title && title !== code && <div className="mt-1.5 text-[13.5px] text-ink-2 truncate">{title}</div>}
-          <div className="mt-0.5 text-[13px] text-ink-3">{first?.room ? `${first.room} · ` : ''}{times}{enrollment?.section ? ` · ${enrollment.section}` : ''}</div>
+          <div className="mt-0.5 text-[13px] text-ink-3">{lead?.room ? `${lead.room} · ` : ''}{times}</div>
         </div>
         {roster && !roster.hidden && <span className="h-9 px-3 rounded-full bg-surface-2 text-ink text-[13px] font-semibold flex items-center gap-1.5 shrink-0"><Users size={15} />{roster.count}</span>}
       </div>
