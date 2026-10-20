@@ -106,7 +106,9 @@ export function HomePage() {
       ) : cards.length === 0 ? (
         <EmptyState emoji="" title={t('이 조건에 맞는 사람이 아직 없어요')} action={<Button size="sm" variant="outline" onClick={() => { setF(EMPTY); reset(); }}>{t('조건 지우기')}</Button>} />
       ) : !current ? (
-        <EmptyState emoji="" title={lang === 'en' ? "You've seen everyone for now" : '오늘 추천은 여기까지예요'} action={<Button size="sm" variant="outline" onClick={reset}>{lang === 'en' ? 'Start over' : '처음부터 다시 보기'}</Button>} />
+        // 끝까지 넘겼을 때 막다른 길이 되지 않게 — 사람이 적은 첫 주엔 여기가 제일 자주 보인다. 친구를 부르는 게 다음 할 일
+        <EmptyState emoji="" title={lang === 'en' ? "You've seen everyone for now" : '오늘 추천은 여기까지예요'} description={lang === 'en' ? 'Lumi gets better with every friend who joins.' : '친구가 들어올수록 볼 사람이 늘어요.'}
+          action={<div className="flex gap-2 justify-center"><Button size="sm" onClick={() => void invite(me.timetable.length ? 'class' : 'floor')}>{lang === 'en' ? 'Invite friends' : '친구 초대'}</Button><Button size="sm" variant="outline" onClick={reset}>{lang === 'en' ? 'Start over' : '처음부터 다시 보기'}</Button></div>} />
       ) : (
         <div className="flex-1 min-h-0 flex flex-col">
           <SwipeDeck ref={deck} key={`${idx}`} top={current} next={cards[idx + 1]} returning={returning} onSwipe={onSwipe} onOpen={(u) => nav(`/users/${u.id}`)} />

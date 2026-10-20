@@ -2,6 +2,14 @@
 
 최신이 위.
 
+## 2026-10-20 06:19 UTC (버클리 월 23:19) · 초점: People 카드 넘기기
+
+- 새 사장님 답 없음. 배포 브랜치 8bfd353 그대로.
+- 본 것(v2·classic): 카드(사진·Sample profile·학과·같이 갈 모임·같은 수업·관심사), ✕ 로 8장 끝까지 넘김(✕ 는 화면에서만 — 오른쪽(연결)은 친구 요청을 보내므로 안 누름).
+- 고침: 끝까지 넘기면 "You've seen everyone for now · Start over" 뿐인 막다른 화면. 사람이 적은 첫 주엔 여기가 제일 자주 보이는 화면 → "Lumi gets better with every friend who joins." + "Invite friends"(이미 있는 초대 기능) + "Start over" (HomePage).
+- 검증: `npx tsc -b`, `npm test` 222/222. v2·classic 끝 화면 확인.
+- 다음 초점: Me 화면(30명이 자기 프로필·시간표를 처음 채우는 곳)과 "Invite friends" 가 보내는 문구.
+
 ## 2026-10-20 03:17 UTC (버클리 월 20:17) · 초점: 빈 시간 표기
 
 - 새 사장님 답 없음. 배포 브랜치 8bfd353 그대로.
