@@ -170,13 +170,13 @@ export function PersonPage() {
       </div>
 
       <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-surface/95 backdrop-blur border-t border-line p-3 safe-bottom z-20">
-        {/* 버튼이 넷이면 좁은 폰에서 넘친다 — 주 버튼은 자리가 모자라면 아래 줄 전체를 쓴다 (잘리지 않게) */}
+        {/* 버튼이 넷이면 좁은 폰에서 넘친다 — 주 버튼은 자리가 모자라면 아래 줄 전체를 쓴다 (잘리지 않게). 윗줄 버튼도 늘려 오른쪽이 비지 않게 */}
         <div className="flex flex-wrap gap-2">
           <button onClick={like} aria-label={t('관심')} className={cn('h-[52px] w-[52px] rounded-2xl grid place-items-center press', liked ? 'bg-heart text-white' : 'bg-heart-soft text-heart')}><Heart size={22} fill={liked ? 'currentColor' : 'none'} /></button>
-          <Button size="lg" variant={following ? 'secondary' : 'outline'} onClick={() => run(() => api.relationships.toggleFollow(v.me.id, user.id, 'user'))}>{following ? t('팔로잉') : t('팔로우')}</Button>
-          {friend ? <Button size="lg" variant="secondary" icon={<Check size={16} />} disabled>{t('친구')}</Button>
-            : outReq ? <Button size="lg" variant="outline" onClick={() => run(() => api.relationships.cancelFriendRequest(outReq.id), t('요청을 취소했어요.'))}>{t('요청 취소')}</Button>
-            : <Button size="lg" variant="outline" icon={<UserPlus size={16} />} onClick={() => run(() => api.relationships.sendFriendRequest(v.me.id, user.id), t('친구 요청을 보냈어요.'))}>{t('친구 요청')}</Button>}
+          <Button size="lg" className="flex-1" variant={following ? 'secondary' : 'outline'} onClick={() => run(() => api.relationships.toggleFollow(v.me.id, user.id, 'user'))}>{following ? t('팔로잉') : t('팔로우')}</Button>
+          {friend ? <Button size="lg" className="flex-1" variant="secondary" icon={<Check size={16} />} disabled>{t('친구')}</Button>
+            : outReq ? <Button size="lg" className="flex-1" variant="outline" onClick={() => run(() => api.relationships.cancelFriendRequest(outReq.id), t('요청을 취소했어요.'))}>{t('요청 취소')}</Button>
+            : <Button size="lg" className="flex-1" variant="outline" icon={<UserPlus size={16} />} onClick={() => run(() => api.relationships.sendFriendRequest(v.me.id, user.id), t('친구 요청을 보냈어요.'))}>{t('친구 요청')}</Button>}
           {msg.ok ? <Button size="lg" className="flex-1 min-w-[150px]" icon={<MessageCircle size={18} />} onClick={openChat}>{t('메시지')}</Button>
             : <Button size="lg" className="flex-1 min-w-[150px]" icon={<CalendarPlus size={18} />} onClick={() => setPropose(true)} disabled={!!pendingProposal}>{pendingProposal ? t('제안 대기 중') : t('활동 제안')}</Button>}
         </div>
