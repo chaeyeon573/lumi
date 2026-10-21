@@ -91,7 +91,12 @@ export function fmtBlock(b: Block) {
   const start = Math.min(Math.ceil(b.start / 5) * 5, b.end);
   return lang === 'en' ? `${fmtClock(toHHMM(start))}–${fmtClock(toHHMM(b.end))}` : `${toHHMM(start)}–${toHHMM(b.end)}`;
 }
-export function fmtHours(b: Block) { const h = (b.end - b.start) / 60; return h % 1 === 0 ? `${h}${t('시간')}` : `${h.toFixed(1)}${t('시간')}`; }
+/** 빈 시간 길이 — 30분 단위로 ("6h", "1.5h", "30 min"). 수업이 :59 에 끝나 361분이 "6.0h" 로 보이던 것 */
+export function fmtHours(b: Block) {
+  const m = Math.max(30, Math.round((b.end - b.start) / 30) * 30);
+  if (m < 60) return lang === 'en' ? `${m} min` : `${m}분`;
+  return `${m / 60}${t('시간')}`;
+}
 
 // ─── 학교 수업 목록 → 내 시간표 ─────────────────────────────────────────────
 /** 시간표 블록 색 */

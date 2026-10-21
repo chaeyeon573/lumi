@@ -82,6 +82,8 @@ export function TimetablePage() {
   const overlaps = friendIds.map((fid) => v.userById(fid)!).filter((f) => f && !!f.timetable?.length && v.canSeeField(f, 'timetable'))
     .map((f) => ({ f, blocks: ahead(overlapBlocks(myFree, freeBlocks(f.timetable ?? [], today))) })).filter((x) => x.blocks.length > 0);
   const bestBlock = overlaps.length ? overlaps.flatMap((o) => o.blocks).sort((a, b) => (b.end - b.start) - (a.end - a.start))[0] : null;
+  // 만들기 버튼은 화면에 보이는 시작(5분 단위로 올림)부터 90분 — :59 에 끝나는 수업 뒤 “3 PM–4:29 PM” 이 되지 않게
+  const bestSlot = bestBlock && (() => { const start = Math.min(Math.ceil(bestBlock.start / 5) * 5, bestBlock.end); return { start, end: Math.min(bestBlock.end, start + 90) }; })();
 
   const schoolId = me?.affiliation.type === 'university' ? me.affiliation.schoolId : '';
   const adding = !!editing && !editing.id && !!schoolId;
@@ -212,7 +214,7 @@ export function TimetablePage() {
                     </button>
                   ))}
                 </div>
-                {bestBlock && <Button full size="sm" className="mt-2" icon={<CalendarPlus size={15} />} onClick={() => nav(`/create/activity?kind=personal&start=${toHHMM(bestBlock.start)}&end=${toHHMM(Math.min(bestBlock.end, bestBlock.start + 90))}`)}>{fmtBlock({ start: bestBlock.start, end: Math.min(bestBlock.end, bestBlock.start + 90) })} {t('활동 만들기')}</Button>}
+                {bestSlot && <Button full size="sm" className="mt-2" icon={<CalendarPlus size={15} />} onClick={() => nav(`/create/activity?kind=personal&start=${toHHMM(bestSlot.start)}&end=${toHHMM(bestSlot.end)}`)}>{fmtBlock(bestSlot)} {t('활동 만들기')}</Button>}
               </>
             )}
           </div>
