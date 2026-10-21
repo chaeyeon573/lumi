@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-21 21:17 UTC (버클리 수 14:17) · 초점: Discover › Activities 와 활동 상세
+- 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음(참여 요청 안 누름).
+- 찍어 봄: /discover?tab=activities, /activities/a_band_show, /activities/a_startup_chat (v2·classic). 날짜 묶음·참가 수·주최 표시·댓글 정상.
+- 고침: 수업 중(14:17, 다음 공강 15:00)인데 Discover 맨 위 줄이 초록 점 + “Free 3 PM–9 PM” 이라 지금 비어 있는 것처럼 읽혔다 → 지금 수업 중이면 회색 점 + “Next free 3 PM–9 PM” / “다음 공강 15:00–21:00” (DiscoverPage.tsx).
+- 확인: tsc, 테스트 222 통과, v2·classic·한국어.
+
 ## 2026-10-21 18:17 UTC (버클리 수 11:17) · 초점: 시간표 — 친구와 겹치는 공강
 - 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄: /timetable 아래 “Friends free when you are today” (v2·classic·한국어).
