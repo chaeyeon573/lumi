@@ -184,7 +184,7 @@ function MarkerSummary({ activity: a, onDetail, count }: { activity: Activity; o
       <div className="mt-3 grid grid-cols-2 gap-y-1 text-[13px] text-ink-2">
         <span className="flex items-center gap-1"><Clock size={13} className="text-ink-3" />{formatDateTime(a.date, a.startTime)}</span>
         <span className="flex items-center gap-1 truncate"><MapPin size={13} className="text-ink-3" />{a.place.name}</span>
-        <span className="flex items-center gap-1"><Users size={13} className="text-ink-3" />{count}/{a.capacity >= 999 ? '∞' : a.capacity}{t('명')}</span>
+        <span className="flex items-center gap-1"><Users size={13} className="text-ink-3" />{a.capacity >= 999 ? `${count}${t('명 참가')}` : `${count}/${a.capacity}${t('명')}`}</span>
         <span>{formatFee(a.fee)}</span>
       </div>
       <div className="mt-4 flex gap-2">
