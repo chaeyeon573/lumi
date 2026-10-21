@@ -48,7 +48,8 @@ export function SettingsPage() {
         <div className="card px-4 py-3">
           <div className="text-[14px] font-medium mb-2">{t('언어')}</div>
           <Segmented value={lang} onChange={(v) => v !== lang && setLang(v)} options={[{ value: 'ko', label: '한국어' }, { value: 'en', label: 'English' }]} />
-          {!inApp && <p className="text-[12px] text-ink-3 mt-2">{t('언어를 바꾸면 데모 데이터도 해당 언어의 캠퍼스로 바뀌어요.')}</p>}
+          {/* 캠퍼스가 언어 따라 바뀌는 건 예시 데이터(mock)뿐 — 실제 서버에선 화면 글자만 바뀐다 */}
+          {apiMode === 'mock' && <p className="text-[12px] text-ink-3 mt-2">{t('언어를 바꾸면 데모 데이터도 해당 언어의 캠퍼스로 바뀌어요.')}</p>}
         </div>
         {/* Privacy Policy · Terms of Use — public pages (src/pages/legal) */}
         {inApp && (
