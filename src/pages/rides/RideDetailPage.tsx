@@ -89,7 +89,7 @@ export function RideDetailPage() {
               <div key={i} className="flex flex-col items-center w-[64px]"><span className="h-[54px] w-[54px] rounded-full border-2 border-dashed border-line grid place-items-center text-ink-3 text-[18px]">+</span><span className="mt-1 text-[12px] text-ink-3">Open</span></div>
             ))}
           </div>
-          {!inRide && <p className="text-[12px] text-ink-3 mt-3">Riders' names show once you join.</p>}
+          {!inRide && (left !== null || r.memberCount > 0) && <p className="text-[12px] text-ink-3 mt-3">Riders' names show once you join.</p>}
         </div>
 
         {/* split */}
@@ -102,7 +102,7 @@ export function RideDetailPage() {
         <div className="card mt-3 divide-y divide-line">
           <Row icon={<Clock size={16} />} label="Leaving" value={whenLabel(r)} />
           <Row icon={<MapPin size={16} />} label="Pickup (public spot)" value={pickupLabel(r)} />
-          <Row icon={<Users size={16} />} label="Seats" value={r.kind === 'looking' ? `${r.seats} ${r.seats === 1 ? 'person needs' : 'people need'} a ride · ${seatsText(r)}` : `${r.seats} total · ${seatsText(r)}`} />
+          <Row icon={<Users size={16} />} label="Seats" value={r.kind === 'looking' ? `${r.seats} ${r.seats === 1 ? 'person needs' : 'people need'} a ride` : `${r.seats} total · ${seatsText(r)}`} />
           {r.note && <Row icon={<StickyNote size={16} />} label="Note" value={`“${r.note}”`} />}
         </div>
 

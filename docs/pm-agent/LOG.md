@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-21 06:18 UTC (버클리 화 23:18) · 초점: Rides
+- 사장님 답: 아직 없음 (데모 계정 A/B/C 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄: /rides, /rides/new, 카풀 상세 3개(운전·태워 줄 사람 찾기·Uber 나누기) (v2·classic). 목록·글쓰기·가격 안내 정상. 상단 알약이 “My rides” 를 가리는 건 기존 질문(10/17).
+- 고침: “태워 줄 사람 찾는” 글 상세의 Seats 줄이 “1 person needs a ride · 1 person” 으로 같은 말을 두 번 → “1 person needs a ride”. 빈 자리 칸이 없는 글에 “Riders' names show once you join.” 이 붙던 것도 뺌 (RideDetailPage.tsx).
+- 확인: tsc, 테스트 222 통과.
+
 ## 2026-10-21 03:18 UTC (버클리 화 20:18) · 초점: 오래 안 본 화면 — 식당·좌석 알림·학사력·지도
 - 사장님 답: 아직 없음 (데모 계정 A/B/C 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄: /dining, /seats, /academic-calendar, /map (v2·classic). 식당 메뉴·학사력 D-day 정상, 좌석 알림 빈 화면 안내 정상.
