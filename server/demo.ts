@@ -164,7 +164,7 @@ const participationAge = new Map(seedParticipations.map((p) => [p.id, ageOf(p.cr
 const seedRoomById = new Map(seedRooms.map((r) => [r.id, r]));
 // when("2026-10-21 19:00")은 보낸 날로부터 며칠 뒤인지 기억한다 — 다시 살릴 때 제안 날짜도 같이 옮긴다 (안 그러면 '19h ago' 에 지난달 날짜)
 const whenDays = (when: string, from: string) => { const d = /^(\d{4}-\d{2}-\d{2})/.exec(when)?.[1]; return d ? Math.round((Date.parse(`${d}T12:00:00Z`) - Date.parse(`${from.slice(0, 10)}T12:00:00Z`)) / 86_400_000) : null; };
-const proposalAge = new Map(seedProposals.map((p) => [p.id, { age: ageOf(p.createdAt), ttl: Date.parse(p.expiresAt) - Date.parse(p.createdAt), whenDays: whenDays(p.when, p.createdAt) }]));
+const proposalAge = new Map(seedProposals.map((p) => [p.id, { age: ageOf(p.createdAt), ttl: Date.parse(p.expiresAt) - Date.parse(p.createdAt), whenDays: whenDays(p.when, p.createdAt), message: p.message }]));
 const STALE_MS = 60 * 60 * 1000; // 한 시간 넘게 밀렸을 때만 — 15분마다 모든 글을 다시 보내지 않게
 const shift = (iso: string, ms: number) => new Date(Date.parse(iso) + ms).toISOString();
 
@@ -211,7 +211,8 @@ export function rollSampleContent(db: Snapshot, now = Date.now()): Patch | null 
     const createdAt = now - seedP.age;
     const created = new Date(createdAt).toISOString();
     const when = seedP.whenDays != null && whenDate ? `${new Date(Date.parse(`${created.slice(0, 10)}T12:00:00Z`) + seedP.whenDays * 86_400_000).toISOString().slice(0, 10)}${p.when.slice(10)}` : p.when;
-    proposals.push({ ...p, status: 'pending', when, createdAt: created, expiresAt: new Date(createdAt + seedP.ttl).toISOString() });
+    // 날짜를 옮기니 문구도 시드 것으로 (요일을 말하지 않는다)
+    proposals.push({ ...p, status: 'pending', when, message: seedP.message, createdAt: created, expiresAt: new Date(createdAt + seedP.ttl).toISOString() });
   }
   if (!posts.length && !chatRooms.length && !notifications.length && !proposals.length && !participations.length) return null;
   const byPost = new Map(posts.map((p) => [p.id, p])), byRoom = new Map(chatRooms.map((r) => [r.id, r]));

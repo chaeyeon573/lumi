@@ -602,7 +602,7 @@ export const relationships: Relationships = {
 
 export const proposals: ActivityProposal[] = [
   {
-    id: 'pr1', fromId: 'u_sua', toId: DEMO_USER_ID, category: 'study', message: '이번 주 목요일 저녁에 알고리즘 같이 풀어요!', when: `${T2} 19:00`,
+    id: 'pr1', fromId: 'u_sua', toId: DEMO_USER_ID, category: 'study', message: '그날 저녁에 알고리즘 같이 풀어요!', when: `${T2} 19:00`,
     status: 'pending', createdAt: isoHoursAgo(1), expiresAt: new Date(Date.now() + 47 * 3600000).toISOString(),
   },
 ];

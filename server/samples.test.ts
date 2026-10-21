@@ -273,7 +273,7 @@ test('a revived sample proposal also moves the time it proposes (no "19h ago · 
   const seedPr = db.proposals.find((p) => p.id === 'pr1')!;
   const lead = Math.round((Date.parse(`${seedPr.when.slice(0, 10)}T12:00:00Z`) - Date.parse(`${seedPr.createdAt.slice(0, 10)}T12:00:00Z`)) / 86_400_000);
   // 라이브와 같은 상태: 다시 살아나 아직 기다림인데, 제안 날짜는 3주 전 그대로
-  db.proposals = db.proposals.map((p) => (p.id === 'pr1' ? { ...p, when: `2026-09-25${p.when.slice(10)}` } : p));
+  db.proposals = db.proposals.map((p) => (p.id === 'pr1' ? { ...p, when: `2026-09-25${p.when.slice(10)}`, message: 'Algorithms session Thursday evening?' } : p));
   const patch = rollSampleContent(db);
   assert.ok(patch?.proposals?.some((p) => p.id === 'pr1'));
   const pr = db.proposals.find((p) => p.id === 'pr1')!;
@@ -281,5 +281,7 @@ test('a revived sample proposal also moves the time it proposes (no "19h ago · 
   assert.ok(pr.when.slice(0, 10) >= today, `${pr.when} is not in the past`);
   assert.equal(Math.round((Date.parse(`${pr.when.slice(0, 10)}T12:00:00Z`) - Date.parse(`${pr.createdAt.slice(0, 10)}T12:00:00Z`)) / 86_400_000), lead, 'same gap as in the seed');
   assert.equal(pr.when.slice(10), seedPr.when.slice(10), 'same time of day');
+  assert.equal(pr.message, seedPr.message, 'old text that named a weekday is replaced with the seed text');
+  assert.ok(!/monday|tuesday|wednesday|thursday|friday|saturday|sunday/i.test(pr.message), 'the date moves, so the message must not name a weekday');
   assert.equal(rollSampleContent(db), null);
 });

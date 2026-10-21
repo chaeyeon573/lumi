@@ -407,7 +407,7 @@ export const relationships: Relationships = {
 };
 
 export const proposals: ActivityProposal[] = [
-  { id: 'pr1', fromId: 'u_sua', toId: DEMO_USER_ID, category: 'study', message: 'Algorithms session Thursday evening?', when: `${T2} 19:00`, status: 'pending', createdAt: isoHoursAgo(1), expiresAt: new Date(Date.now() + 47 * 3600000).toISOString() },
+  { id: 'pr1', fromId: 'u_sua', toId: DEMO_USER_ID, category: 'study', message: 'Algorithms study session that evening?', when: `${T2} 19:00`, status: 'pending', createdAt: isoHoursAgo(1), expiresAt: new Date(Date.now() + 47 * 3600000).toISOString() },
 ];
 
 export const chatRooms: ChatRoom[] = [
