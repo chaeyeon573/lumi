@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { t } from '@core/i18n';
 import { useNavigate } from 'react-router-dom';
 import { TopBar } from '@/components/layout/TopBar';
-import { Button, Chip, Field, Input, Textarea, Toggle, VisibilityPicker, Segmented } from '@/components/ui';
+import { Button, Chip, Field, Input, Textarea, Toggle, VisibilityPicker, Segmented, Avatar } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
@@ -39,9 +39,11 @@ export function EditProfilePage() {
       <TopBar back title={t('프로필 편집')} />
       <div className="px-4 py-4 space-y-5">
         <div className="flex items-center gap-4">
-          <div className="h-20 w-20 rounded-3xl grid place-items-center text-4xl shrink-0" style={{ background: `linear-gradient(135deg, hsl(${form.avatar.hue} 85% 88%), hsl(${(form.avatar.hue + 40) % 360} 80% 74%))` }}>{form.avatar.emoji}</div>
+          <Avatar emoji={form.avatar.emoji} hue={form.avatar.hue} url={form.avatar.url} size={80} className="!rounded-3xl text-4xl" />
           <div className="flex-1">
-            <Segmented value={form.avatar.photoType} onChange={(t) => patch({ avatar: { ...form.avatar, photoType: t } })} options={[{ value: 'face', label: t('얼굴') }, { value: 'masked', label: t('가면') }, { value: 'back', label: t('뒷모습') }]} />
+            {/* 얼굴·가면·뒷모습은 사진 위에 붙는 표시 — 이모지 아바타에는 뜻이 없다 */}
+            {form.avatar.url && <Segmented value={form.avatar.photoType} onChange={(t) => patch({ avatar: { ...form.avatar, photoType: t } })} options={[{ value: 'face', label: t('얼굴') }, { value: 'masked', label: t('가면') }, { value: 'back', label: t('뒷모습') }]} />}
+            {!form.avatar.url && <div className="text-[12px] font-semibold text-ink-3">{t('배경 색상')}</div>}
             <input type="range" min={0} max={359} value={form.avatar.hue} onChange={(e) => patch({ avatar: { ...form.avatar, hue: Number(e.target.value) } })} className="w-full mt-2 accent-primary" aria-label={t('배경 색상')} />
           </div>
         </div>
