@@ -19,7 +19,6 @@ import { slotLabel } from '@core/api/classes';
 import { formatDate, formatTime } from '@core/lib/format';
 import { cn } from '@core/lib/cn';
 import { SchoolEmailCard } from '@/components/settings/SchoolEmailCard';
-import { CopyClassLink, QrLinkButton } from './ClassLink';
 
 const en = lang === 'en';
 const DAYS = en ? ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] : ['월', '화', '수', '목', '금', '토', '일'];
@@ -94,7 +93,6 @@ export function ClassRoom({ enrollment, roster, onGo }: { enrollment: Enrollment
         <p className="text-[13px] text-ink-2 mt-1">{en ? 'Class lists are only for verified students, so nobody can add a class just to look at who takes it.' : '수업 명단은 인증한 학생에게만 보여요. 아무나 수업을 추가해 명단을 보지 못하게요.'}</p>
       </div>
       <SchoolEmailCard />
-      <div className="flex gap-2"><CopyClassLink compact schoolId={enrollment.schoolId} code={code} /><QrLinkButton schoolId={enrollment.schoolId} code={code} /></div>
     </div>
   );
 
@@ -105,7 +103,6 @@ export function ClassRoom({ enrollment, roster, onGo }: { enrollment: Enrollment
         <p className="text-[13px] text-ink-2 mt-1">{en ? 'Turn this on to see who else is in your classes. They only see that you take the same class — nothing else from your timetable.' : '켜면 같은 수업 학생을 볼 수 있어요. 상대에게는 같은 수업을 듣는다는 것만 보여요.'}</p>
         <Button className="mt-3" size="sm" onClick={() => run(() => api.users.update(me.id, { showToClassmates: true }))}>{en ? 'Show me to classmates' : '같은 수업 학생에게 보이기'}</Button>
       </div>
-      <div className="flex gap-2"><CopyClassLink compact schoolId={enrollment.schoolId} code={code} /><QrLinkButton schoolId={enrollment.schoolId} code={code} /></div>
     </div>
   );
 
@@ -227,8 +224,6 @@ export function ClassRoom({ enrollment, roster, onGo }: { enrollment: Enrollment
       </Section>}
 
       <div className="space-y-2">
-        <CopyClassLink schoolId={enrollment.schoolId} code={code} />
-        <div className="flex gap-2"><QrLinkButton schoolId={enrollment.schoolId} code={code} /></div>
         <Toggle checked={me.showToClassmates !== false} onChange={(on) => run(() => api.users.update(me.id, { showToClassmates: on }))}
           label={en ? 'Show me to classmates' : '같은 수업 학생에게 보이기'}
           description={en ? 'People in the same class see that you take it — nothing else from your timetable. Off = you won’t see them either.' : '같은 수업 학생에게 이 수업을 듣는다는 것만 보여요. 끄면 나도 목록을 못 봐요.'} />
