@@ -36,7 +36,7 @@ export const TOPICS = {
   policy_law: { en: 'policy & law', ko: '정책·법', re: /policy|\blaw\b|legal|pre-?law|government|politic|debate|model un|\bmun\b|election|voting|civic|international relations/g },
   impact: { en: 'social impact', ko: '사회공헌', re: /volunteer|\bservice\b|nonprofit|social good|social impact|sustainab|climate|environment|tutor|mentor|education|justice|outreach|food bank|equity/g },
   media: { en: 'media & writing', ko: '미디어·글', re: /journalis|newspaper|magazine|writing|writers?\b|podcast|radio|\bfilm|video|photograph|\bmedia\b|editorial|publication|poetry|literature/g },
-  arts: { en: 'arts & music', ko: '예술·음악', re: /\barts?\b|music|\bband\b|choir|a cappella|orchestra|\bdanc|theat|drama|comedy|improv|paint|drawing|gallery|exhibit|museum|fashion|singing|jazz|\bdj\b/g },
+  arts: { en: 'arts & music', ko: '예술·음악', re: /\barts?\b|music|\bband\b|choir|a cappella|orchestra|\bdanc|theat|drama|comedy|\bimprov\b|paint|drawing|gallery|exhibit|museum|fashion|singing|jazz|\bdj\b/g },
   outdoors: { en: 'outdoors', ko: '아웃도어', re: /hiking|outdoor|climbing|camping|backpacking|surfing|surfers?\b|surf club|\bski(ing|ers?)?\b|snowboard|sailing|kayak|\btrails?\b|boulder/g },
   sports: { en: 'sports & fitness', ko: '운동', re: /sports?\b|basketball|soccer|football|volleyball|tennis|badminton|\brunning\b(?!\s+(?:now|until|through|late|out|on|for|a\b|the\b|this|these|smoothly))|run club|marathon|fitness|\bgym\b|yoga|martial|boxing|\bswim|cycling|frisbee|lacrosse|baseball|rugby|intramural/g },
   games: { en: 'games', ko: '게임', re: /gaming|e-?sports|video games?|league of legends|valorant|call of duty|\bchess|board games?|poker|smash bros|pok[eé]mon|anime|tabletop|dungeons/g },

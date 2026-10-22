@@ -173,3 +173,8 @@ test('"this week" in a question is a time, not a search word (no "Mentions “th
   assert.ok(!words.includes('this') && !words.includes('week'), words.join(','));
   assert.ok(words.includes('seminars'));
 });
+
+test('"improve" is not improv: a consulting club is not an arts club', () => {
+  assert.equal(topicsOfText('We strive to improve a business’ potential and keep improving lives').arts, undefined);
+  assert.ok(topicsOfText('Weekly improv comedy shows').arts);
+});
