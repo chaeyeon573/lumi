@@ -93,6 +93,13 @@ export async function fetchDevpost(maxPages = 40): Promise<Opportunity[]> {
 }
 
 const INTERN_RE = /\bintern(ship)?s?\b|\bco-?op\b|summer (analyst|associate)/i;
+/** 학생용 인턴·코업 공고 제목인가 — “Staff Credit Policy Analyst – Condo, Co-op & Project Review”(집 ‘co-op’, 정규직)가 인턴으로 들어왔다 */
+export function isInternTitle(title: string): boolean {
+  if (!INTERN_RE.test(title) || /\binternal\b|high school|\bhs\b|^interested in/i.test(title)) return false;
+  if (/\bintern(ship)?s?\b/i.test(title)) return true;
+  // ‘co-op’ 만 걸린 제목: 주택 조합(condo·housing) 이나 경력직 직함이면 학생 코업이 아니다
+  return !/\bcondo|housing|\b(staff|senior|sr\.?|principal|lead|manager|director|head)\b/i.test(title);
+}
 // 미국 지명(도시·주 이름)이나 원격이 확인된 공고만 남긴다. 주 약칭은 대문자로 ", CA" 꼴만 인정 (in/or/me 같은 단어와 헷갈리지 않게)
 const US_WORDS = /united states|\busa\b|\bu\.s\.|remote|new york|nyc|san francisco|bay area|seattle|austin|boston|chicago|los angeles|palo alto|mountain view|menlo park|sunnyvale|san jose|san mateo|south san francisco|redwood city|oakland|berkeley|denver|atlanta|miami|washington|philadelphia|pittsburgh|san diego|irvine|portland|salt lake|dallas|houston|phoenix|detroit|ann arbor|minneapolis|nashville|raleigh|columbus|california|texas|massachusetts|virginia|colorado|illinois|florida|georgia|arizona|michigan|ohio|oregon/i;
 const US_STATE = /(?:,|\s)(AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)\b/;
@@ -124,7 +131,7 @@ export async function fetchInternships(): Promise<Opportunity[]> {
     let jobs: Job[] = [];
     try { jobs = await jobsFor(b.ats, b.slug); } catch { failed++; continue; }
     for (const j of jobs) {
-      if (!INTERN_RE.test(j.title) || /\binternal\b|high school|\bhs\b|^interested in/i.test(j.title)) continue;
+      if (!isInternTitle(j.title)) continue;
       if (!isUS(j.location)) continue;
       out.push({
         id: `op_ext_job_${b.ats}_${b.slug}_${j.id}`.slice(0, 120), type: 'internship', title: j.title.trim(), host: b.company,

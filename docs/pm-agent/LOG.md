@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-22 03:17 UTC (버클리 수 20:17) · 초점: 인턴 공고 — 다른 학교 전용·학생용이 아닌 것
+- 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 라이브 인턴 304개(자동 가져오기 302) 제목을 셈: 다른 학교·학기 이름은 “(IAP)” 1개뿐(지난번 메모, 그대로 둠). Toronto 2개는 근무지. Winter 2027 co-op 19개는 학기를 쉬고 가는 학생용이라 둠. PhD 68개는 학부생 화면에서 이미 따로 거름.
+- 고침: 정규직 “Staff Credit Policy Analyst – Condo, Co-op & Project Review”(주택 ‘co-op’)가 ‘co-op’ 글자 때문에 인턴으로 들어왔다 → 제목에 intern 이 없고 co-op 만 있을 때 condo·housing·staff·senior·manager 등이 있으면 뺀다 (external.ts `isInternTitle`, 테스트 추가). 지금 라이브 302개에 돌려 보면 정확히 이 1개만 빠진다. 다음 가져오기부터 반영(배포 후).
+- 확인: 서버 타입, 테스트 223 통과.
+
 ## 2026-10-22 00:17 UTC (버클리 수 17:17) · 초점: Campus › Browse (장학금·인턴·무료 음식)
 - 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄: /opportunities, Scholarships·Internships·Free food 칩 (v2). 장학금 25개 모두 D-9 이상(마감 지난 것 없음), 무료 음식 8개 모두 오늘 이후, 인턴 306개.

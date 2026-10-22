@@ -4,7 +4,7 @@
  */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { dropDuplicateTitles, youthOnly } from './sources/external';
+import { dropDuplicateTitles, isInternTitle, youthOnly } from './sources/external';
 
 test('imported items that repeat a curated title are dropped; their own earlier copies are not counted', () => {
   const existing = [
@@ -41,4 +41,9 @@ test('hackathons whose page says high school only (ages up to 18) are recognised
   assert.equal(youthOnly(page('<li>Ages 16 to 24 only</li>')), false);
   assert.equal(youthOnly(page('<li>High school and college students</li>')), false);
   assert.equal(youthOnly('<html>Just a moment...</html>'), false);
+});
+
+test('internship titles: interns and student co-ops in; staff jobs that mention a housing co-op out', () => {
+  for (const t of ['Software Engineering Intern - Summer 2027', 'Winter 2027 Propulsion Engineer Co-op', 'Firmware Engineer Co-Op', 'Summer Analyst', 'PhD Machine Learning Software Engineer Intern (Summer 2027)']) assert.ok(isInternTitle(t), t);
+  for (const t of ['Staff Credit Policy Analyst – Condo, Co-op & Project Review', 'Senior Manager, Co-op Programs', 'Internal Tools Engineer', 'High School Intern Program']) assert.ok(!isInternTitle(t), t);
 });
