@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-22 00:17 UTC (버클리 수 17:17) · 초점: Campus › Browse (장학금·인턴·무료 음식)
+- 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄: /opportunities, Scholarships·Internships·Free food 칩 (v2). 장학금 25개 모두 D-9 이상(마감 지난 것 없음), 무료 음식 8개 모두 오늘 이후, 인턴 306개.
+- 확인만: 장학금 칩에 연구 펠로십(SURF·REU 등)이 같이 나오는 건 의도(돈 받는 연구 = 펀딩, listings.ts `categoriesOf`).
+- 메모: 인턴 “For you” 맨 위 “Micro-Intern: Research Technology Developer (IAP)”(Point72/Cubist, 뉴욕, 1월 근무). 공고 본문을 직접 읽음 — 학교 제한은 적혀 있지 않지만 IAP 는 MIT 1월 학기 이름이고 버클리 봄 학기와 겹친다. 대상이 MIT 학생일 가능성이 크지만 확인할 수 없어 빼지 않음. 같은 회사가 학교별 공고(IIT Hyderabad 등)를 따로 낸다 — 제목에 다른 학교 이름·학기 이름이 있으면 거르는 규칙은 다음에 본다.
+- 고친 것 없음.
+
 ## 2026-10-21 21:17 UTC (버클리 수 14:17) · 초점: Discover › Activities 와 활동 상세
 - 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음(참여 요청 안 누름).
 - 찍어 봄: /discover?tab=activities, /activities/a_band_show, /activities/a_startup_chat (v2·classic). 날짜 묶음·참가 수·주최 표시·댓글 정상.
