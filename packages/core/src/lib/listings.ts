@@ -81,7 +81,8 @@ export function badgeOf(o: Pick<Opportunity, 'deadline' | 'date' | 'postedAt' | 
     const days = Math.max(0, Math.floor((Date.now() - new Date(posted).getTime()) / 86400000));
     return { text: en ? (days === 0 ? 'New today' : days < 30 ? `Posted ${days}d ago` : 'Rolling') : (days === 0 ? '오늘 올라옴' : days < 30 ? `${days}일 전` : '상시'), tone: days <= 3 ? 'soon' : 'muted' };
   }
-  return { text: en ? 'No deadline' : '마감 미정', tone: 'muted' };
+  // 마감이 안 알려진 것 — “No deadline” 은 마감이 없다(상시)로 읽혔다. URAP·REU 는 마감이 곧 나온다
+  return { text: en ? 'Deadline TBA' : '마감 미정', tone: 'muted' };
 }
 
 /**
