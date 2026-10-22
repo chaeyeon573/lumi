@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { t } from '@core/i18n';
+import { t, lang } from '@core/i18n';
 import { BadgeCheck, Users, Megaphone, CalendarDays, Bell, MessageCircle, ExternalLink, ShieldCheck, PenSquare, Crown } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Avatar, Button, Cover, Tag, EmptyState, Chip, ChipRow, SampleTag } from '@/components/ui';
@@ -17,6 +17,7 @@ import { relativeTime, todayISO } from '@core/lib/format';
 import { isTeamActivity } from '@core/lib/discover';
 import { listingsOfOrg } from '@core/lib/listings';
 import { daysUntil } from '@core/lib/recommend';
+import { isSampleOrg } from '@core/lib/sampleorgs';
 
 type Tab = 'about' | 'posts' | 'events' | 'recruit' | 'members';
 
@@ -37,6 +38,7 @@ export function OrgPage() {
   const org = orgs.find((o) => o.id === id);
   if (!org) return <div className="min-h-full"><TopBar back title={t('조직')} /><EmptyState emoji="🏛️" title={t('조직을 찾을 수 없어요')} /></div>;
   const school = schools.find((s) => s.id === org.schoolId);
+  const sample = isSampleOrg(org.id);
   const following = v.isFollowing(org.id);
   const isMember = org.memberIds.includes(v.me.id);
   const isAdmin = org.adminIds.includes(v.me.id);
@@ -65,14 +67,15 @@ export function OrgPage() {
           <div className="flex items-start gap-3">
             <Avatar emoji={org.logo.emoji} hue={org.logo.hue} url={org.logo.url} size={64} className="!rounded-2xl ring-4 ring-white -mt-10" />
             <div className="flex-1 min-w-0">
-              <h1 className="text-[18px] font-extrabold flex items-center gap-1 leading-tight">{org.name}{org.verified && <BadgeCheck size={18} className="text-gold shrink-0" />}</h1>
+              <h1 className="text-[18px] font-extrabold flex items-center gap-1 leading-tight">{sample && <SampleTag />}{org.name}{org.verified && !sample && <BadgeCheck size={18} className="text-gold shrink-0" />}</h1>
               <div className="text-[12px] text-ink-3 mt-0.5">{school?.name}{org.parent ? ` · ${org.parent}` : ''} · {ORG_TYPE_LABELS[org.type]}</div>
+              {sample && <div className="text-[12px] text-ink-3 mt-1">{lang === 'en' ? 'Sample club — made up to show how Lumi works.' : '예시 동아리 — Lumi 사용법을 보여 주려고 만든 거예요.'}</div>}
             </div>
           </div>
           <div className="flex items-center gap-3 mt-3 text-[12px] text-ink-2">
             {org.followerIds.length > 0 && <span className="flex items-center gap-1"><Users size={13} className="text-ink-3" />{t('팔로워')} <b>{org.followerIds.length}</b></span>}
             {org.memberIds.length > 0 && <span>{t('회원')} <b>{org.memberIds.length}</b></span>}
-            {org.verified ? <Tag tone="gold"><BadgeCheck size={11} /> {t('공식 인증')}</Tag> : <Tag>{t('미인증')}</Tag>}
+            {sample ? null : org.verified ? <Tag tone="gold"><BadgeCheck size={11} /> {t('공식 인증')}</Tag> : <Tag>{t('미인증')}</Tag>}
             {org.recruitment?.open && <Tag tone="accent">{t('모집 중')}</Tag>}
           </div>
           <div className="flex gap-2 mt-4">

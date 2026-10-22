@@ -14,6 +14,7 @@ import { cn } from '@core/lib/cn';
 import { likeCount } from '@core/lib/privacy';
 import { ReportSheet } from '@/components/cards/ReportSheet';
 import { SampleTag } from '@/components/ui/SampleTag';
+import { isSampleOrg } from '@core/lib/sampleorgs';
 
 export function PostCard({ post: p, className }: { post: Post; className?: string }) {
   const nav = useNavigate();
@@ -58,7 +59,7 @@ export function PostCard({ post: p, className }: { post: Post; className?: strin
       <div className="flex items-center gap-2.5 px-3.5 py-3">
         <button onClick={goAuthor}><Avatar emoji={avatar.emoji} hue={avatar.hue} url={avatar.url} size={36} /></button>
         <div className="flex-1 min-w-0">
-          <button onClick={goAuthor} className="text-[15px] font-bold truncate flex items-center gap-1">{author?.sample && <SampleTag className="mr-0" />}{displayName}{org?.verified && <BadgeCheck size={13} className="text-gold" />}</button>
+          <button onClick={goAuthor} className="text-[15px] font-bold truncate flex items-center gap-1">{author?.sample && <SampleTag className="mr-0" />}{displayName}{org?.verified && !isSampleOrg(org.id) && <BadgeCheck size={13} className="text-gold" />}</button>
           <div className="text-[12px] text-ink-3">{anonSchool && <>{anonSchool} · </>}{relativeTime(p.createdAt)}{p.postType && p.postType !== 'story' && <> · {POST_TYPE_LABELS[p.postType]}</>}</div>
         </div>
         {!isMine && !anon && (

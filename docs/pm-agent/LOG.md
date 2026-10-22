@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-22 09:17 UTC (버클리 목 02:17) · 초점: 동아리 탭·동아리 상세
+- 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄: Campus › Clubs(1562개), /orgs/o_band, /orgs/o_startup (v2·classic).
+- 고침: 지어낸 예시 동아리(Cal Indie Collective, Stats Undergrad Association, Vision & Language Lab)가 SAMPLE 표시 없이 금색 체크 + “Officially verified” 를 달고 나왔다 — “데이터를 지어내지 않는다”와 정면 충돌. 이제 예시 동아리(시드 id)는 SAMPLE 표시 + “Sample club — made up to show how Lumi works.” 이고, 상세·동아리 카드·글·활동 카드 어디에도 인증 배지를 안 단다 (sampleorgs.ts 새 파일, OrgPage, OrgCard, PostCard, ActivityCard). 진짜 동아리(학교 목록에서 가져온 oc_·og_ 1558개)는 그대로.
+- 메모: 예시 동아리의 Instagram·Website 버튼은 example.com 으로 간다(가짜 주소라 해는 없음). 추천 이유 “Similar to Cal Indie Collective (band club)” 가 Beta Corporate Solutions 같은 무관한 동아리에 붙는다 — 다음에 본다.
+- 확인: tsc, 테스트 223 통과.
+
 ## 2026-10-22 06:19 UTC (버클리 수 23:19) · 초점: 연구·RA·장학금 목록 — 마감·대상
 - 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 확인: 라이브 연구·장학 92개를 마감·대상으로 훑음. 마감 지난 것은 NSF GRFP(10/20) 1개 — 화면에선 이미 빠짐(BrowseTab 마감 필터). UC Merced 전용 18개·대학원 전용은 버클리 학부생 화면에 안 나옴. 장학금 25·연구 40 모두 마감 전이거나 미정.

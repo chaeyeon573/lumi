@@ -9,6 +9,7 @@ import { formatDateTime, formatFee, formatTime } from '@core/lib/format';
 import { useViewer } from '@/hooks/useViewer';
 import { cn } from '@core/lib/cn';
 import { JoinButton } from '@/components/cards/JoinButton';
+import { isSampleOrg } from '@core/lib/sampleorgs';
 
 interface Props {
   activity: Activity;
@@ -79,7 +80,7 @@ export function ActivityCard({ activity: a, variant = 'feed', className, badge }
         <div className="mt-3 flex items-center gap-2">
           <button onClick={() => nav(org ? `/orgs/${org.id}` : `/users/${a.hostId}`)} className="flex items-center gap-1.5 min-w-0">
             {org ? <Avatar emoji={org.logo.emoji} hue={org.logo.hue} url={org.logo.url} size={24} /> : host && <Avatar emoji={host.avatar.emoji} hue={host.avatar.hue} url={host.avatar.url} size={24} />}
-            <span className="text-[12px] text-ink-2 font-medium truncate">{name}{org?.verified && <BadgeCheck size={12} className="inline ml-0.5 text-gold" />}</span>
+            <span className="text-[12px] text-ink-2 font-medium truncate">{name}{org?.verified && !isSampleOrg(org.id) && <BadgeCheck size={12} className="inline ml-0.5 text-gold" />}</span>
           </button>
           <span className="flex-1" />
           <JoinButton activity={a} size="sm" />
@@ -104,7 +105,7 @@ export function ActivityCard({ activity: a, variant = 'feed', className, badge }
       <div className="p-3.5">
         <div className="flex items-center gap-2 mb-2">
           {org ? <Avatar emoji={org.logo.emoji} hue={org.logo.hue} url={org.logo.url} size={26} /> : host && <Avatar emoji={host.avatar.emoji} hue={host.avatar.hue} url={host.avatar.url} size={26} />}
-          <span className="text-[12px] text-ink-2 font-medium truncate">{name}{org?.verified && <BadgeCheck size={12} className="inline ml-0.5 text-gold" />}</span>
+          <span className="text-[12px] text-ink-2 font-medium truncate">{name}{org?.verified && !isSampleOrg(org.id) && <BadgeCheck size={12} className="inline ml-0.5 text-gold" />}</span>
         </div>
         <button onClick={() => nav(`/activities/${a.id}`)} className="text-left"><h3 className="text-[16px] font-bold leading-snug">{a.sample && <SampleTag />}{a.title}</h3></button>
         <p className="text-[13px] text-ink-2 mt-1 line-clamp-2">{a.description}</p>
