@@ -236,7 +236,7 @@ function TeamsTab() {
           const sub = a.courseName ? `${a.courseName} · ${a.crewType ? CREW_TYPE_LABELS[a.crewType] : ''}` : (a.rolesNeeded ?? []).map((r) => PERSON_ROLE_LABELS[r]).join(' · ');
           return <Row key={i.id} avatar={<button onClick={() => nav(`/activities/${a.id}`)}><Avatar emoji={host?.avatar.emoji ?? '👤'} hue={host?.avatar.hue ?? 200} url={host?.avatar.url} size={44} /></button>} title={a.title} sub={`${formatDate(a.date)} ${formatTime(a.startTime)} · ${sub}`} action={<JoinButton activity={a} size="sm" label={t('참여')} className="bg-accent text-primary shadow-none" />} />;
         })}</div>}
-      {more > 0 && <button onClick={() => nav('/community?tab=opportunities&sub=hackathon')} className="mt-3 w-full h-10 rounded-full bg-surface-2 text-[13px] font-semibold text-ink-2 press">{lang === 'en' ? `See all ${listings.length} hackathons & competitions` : `해커톤·공모전 ${listings.length}개 모두 보기`}</button>}
+      {more > 0 && <button onClick={() => nav('/community?tab=opportunities&sub=hackathon')} className="mt-3 w-full h-10 rounded-full bg-surface-2 text-[13px] font-semibold text-ink-2 press">{/* 숫자는 빼 둔다 — 여기는 팀원 모집 칸이 있는 공고만 세고(75), 가는 곳(Campus › 해커톤)은 해커톤을 다 센다(102) */}{lang === 'en' ? 'See all hackathons & competitions' : '해커톤·공모전 모두 보기'}</button>}
       <span className="hidden">{toHHMM(0)}</span>
     </div>
   );

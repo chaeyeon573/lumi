@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-22 15:17 UTC (버클리 목 08:17) · 초점: 해커톤 — Teams 탭과 Campus › 해커톤
+- 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄: /discover?tab=teams, Campus › Hackathons (v2·classic).
+- 고침: Teams 의 “See all 75 hackathons & competitions” 를 누르면 “102 listings” — 숫자가 안 맞는다. Teams 는 팀원 모집 칸이 있는 공고(해커톤·스타트업·연구)만 세고, 가는 곳은 해커톤 전체를 센다. 버튼에서 숫자를 뺌 → “See all hackathons & competitions” (DiscoverPage.tsx).
+- 라이브: 고등학생 전용 “Girls Who Code HHS Hackathon 2026” 이 아직 목록에 있다 — 거르는 코드(30ade64)는 배포 대기라서. 배포되면 다음 Devpost 가져오기에서 빠진다.
+- 확인: tsc, 테스트 224 통과.
+
 ## 2026-10-22 12:19 UTC (버클리 목 05:19) · 초점: 동아리 추천 이유
 - 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 원인 찾음: “Similar to Cal Indie Collective (band club)” 가 경영 컨설팅(Beta Corporate Solutions)·IBD 환자회(UnifIBD)에 붙었다. 주제 사전의 예술 단어 ‘improv’(즉흥연기)가 **improve·improving** 에 걸려 이 동아리들이 ‘예술’로 분류됐다.
