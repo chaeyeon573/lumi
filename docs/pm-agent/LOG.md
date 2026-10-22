@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-22 18:17 UTC (버클리 목 11:17) · 초점: 다른 지역 대면 해커톤 세기 + 약속·체육관
+- 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 셈: 팀원 모집 칸이 있는 마감 전 해커톤 75개 — 마감 가까운 15개는 모두 온라인, 온라인도 베이 지역도 아닌 대면은 2개(H.A.R.D. Hack 2027 “University of California - Jacobs Hall” 등). 10/18 질문에 “지금은 급하지 않음” 추가.
+- 찍어 봄: /plans, /plans/new, /gym (v2). 약속 화면의 “Fri, Sep 25 · Algorithms session Thursday evening?” 은 배포 대기 중인 수정(245882c·4b3e832)으로 사라질 것. 체육관 CMS Fitness Center 가 이제 41/55 로 실제 숫자를 읽는다 → “CMS 0명” 메모 닫음.
+- 고친 것 없음.
+
 ## 2026-10-22 15:17 UTC (버클리 목 08:17) · 초점: 해커톤 — Teams 탭과 Campus › 해커톤
 - 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄: /discover?tab=teams, Campus › Hackathons (v2·classic).
