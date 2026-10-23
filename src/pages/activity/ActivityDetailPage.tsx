@@ -52,7 +52,7 @@ export function ActivityDetailPage() {
           <div className="flex flex-wrap items-center gap-1.5">
             <span className="rounded-lg px-2 h-6 inline-flex items-center text-[11px] font-bold text-white" style={{ background: color }}>{CATEGORY_EMOJI[a.category]} {CATEGORY_LABELS[a.category]}</span>
             <Tag>{KIND_LABELS[a.kind]}</Tag>
-            {a.official && <Tag tone="gold"><BadgeCheck size={11} /> {t('학교 공식')}</Tag>}
+            {(a.official && !a.sample) && <Tag tone="gold"><BadgeCheck size={11} /> {t('학교 공식')}</Tag>}
             <VisibilityTag value={a.visibility} className="ml-auto" />
           </div>
           <h1 className="text-[20px] font-extrabold leading-snug mt-2">{a.sample && <SampleTag />}{a.title}</h1>

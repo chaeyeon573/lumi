@@ -110,7 +110,7 @@ export function MapPage() {
             <div className="h-full overflow-y-auto hide-scrollbar px-4 py-3 space-y-3">
               <div className="text-[12px] text-ink-3 flex items-center gap-1"><MapPin size={12} />{lang === 'en' ? `${inView.length} activities near ${school.name}` : `${school.name} 근처 활동 ${inView.length}개`} · {t('장소만 표시, 사람 위치는 비공개')}</div>
               {inView.length === 0 ? <EmptyState emoji="🗺️" title={t('이 영역에 활동이 없어요')} description={t('지도를 옮기거나 시간 범위를 넓혀보세요.')} action={<Button size="sm" onClick={() => nav('/create/activity?kind=personal')}>{t('여기서 활동 만들기')}</Button>} /> :
-                inView.map((a) => <ActivityCard key={a.id} activity={a} variant="row" badge={a.official ? t('학교 공식') : undefined} />)}
+                inView.map((a) => <ActivityCard key={a.id} activity={a} variant="row" badge={(a.official && !a.sample) ? t('학교 공식') : undefined} />)}
             </div>
           ) : (
             <>
@@ -176,7 +176,7 @@ function MarkerSummary({ activity: a, onDetail, count }: { activity: Activity; o
       <div className="flex gap-3">
         <Cover emoji={a.cover.emoji} hue={a.cover.hue} url={a.cover.url} className="h-[72px] w-[72px] rounded-2xl shrink-0" size={30} />
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-1.5"><span className="text-[11px] font-bold" style={{ color: CATEGORY_COLORS[a.category] }}>{CATEGORY_EMOJI[a.category]} {CATEGORY_LABELS[a.category]}</span>{a.official && <Tag tone="gold">{t('학교 공식')}</Tag>}</div>
+          <div className="flex items-center gap-1.5"><span className="text-[11px] font-bold" style={{ color: CATEGORY_COLORS[a.category] }}>{CATEGORY_EMOJI[a.category]} {CATEGORY_LABELS[a.category]}</span>{(a.official && !a.sample) && <Tag tone="gold">{t('학교 공식')}</Tag>}</div>
           <h3 className="text-[16px] font-bold leading-snug mt-0.5">{a.title}</h3>
           <div className="text-[12px] text-ink-3 mt-1">{name}</div>
         </div>

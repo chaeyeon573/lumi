@@ -290,7 +290,7 @@ export const activities: Activity[] = [
     place: { name: 'Sproul Plaza', lat: 37.8697, lng: -122.2594 }, capacity: 999, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(30),
   },
   {
-    id: 'a_festival', kind: 'org_event', category: 'school_event', title: 'Homecoming kickoff', description: 'Official campus event at the Greek Theatre. Bring your student ID.',
+    id: 'a_festival', kind: 'org_event', category: 'school_event', title: 'Homecoming kickoff', description: 'Campus event at the Greek Theatre. Bring your student ID.',
     cover: { emoji: '🎓', hue: 355 , url: photo('c_tents') }, hostId: 'u_junho', hostType: 'org', official: true, date: T4, startTime: '17:00', endTime: '22:00',
     place: { name: 'Greek Theatre', lat: 37.8735, lng: -122.2541 }, capacity: 3000, visibility: 'school', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(100),
   },

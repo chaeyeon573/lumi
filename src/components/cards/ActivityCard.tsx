@@ -23,7 +23,8 @@ export function useHostInfo(a: Activity) {
   const v = useViewer();
   const host = v.userById(a.hostId);
   const org = a.orgId ? v.orgById(a.orgId) : undefined;
-  return { host, org, name: a.official ? t('학교 공식') : org?.name ?? host?.nickname ?? t('알 수 없음') };
+  // 예시 활동은 ‘학교 공식’ 이 아니다 — 지어낸 행사에 공식 표시를 달지 않는다
+  return { host, org, name: (a.official && !a.sample) ? t('학교 공식') : org?.name ?? host?.nickname ?? t('알 수 없음') };
 }
 
 export function ActivityCard({ activity: a, variant = 'feed', className, badge }: Props) {
@@ -67,7 +68,7 @@ export function ActivityCard({ activity: a, variant = 'feed', className, badge }
         <div className="flex gap-3">
           <button onClick={() => nav(`/activities/${a.id}`)} className="h-11 w-11 rounded-xl grid place-items-center text-[20px] shrink-0" style={{ background: `${color}1A` }}>{CATEGORY_EMOJI[a.category]}</button>
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-1.5 flex-wrap"><span className="text-[11px] font-bold" style={{ color }}>{CATEGORY_LABELS[a.category]}</span>{badge && <Tag tone="accent" className="h-5">{badge}</Tag>}{a.official && <Tag tone="gold" className="h-5"><BadgeCheck size={11} /> {t('학교 공식')}</Tag>}<VisibilityTag value={a.visibility} className="ml-auto" /></div>
+            <div className="flex items-center gap-1.5 flex-wrap"><span className="text-[11px] font-bold" style={{ color }}>{CATEGORY_LABELS[a.category]}</span>{badge && <Tag tone="accent" className="h-5">{badge}</Tag>}{(a.official && !a.sample) && <Tag tone="gold" className="h-5"><BadgeCheck size={11} /> {t('학교 공식')}</Tag>}<VisibilityTag value={a.visibility} className="ml-auto" /></div>
             <button onClick={() => nav(`/activities/${a.id}`)} className="text-left"><h3 className="text-[15px] font-bold leading-snug mt-0.5">{a.sample && <SampleTag />}{a.title}</h3></button>
           </div>
         </div>
@@ -97,7 +98,7 @@ export function ActivityCard({ activity: a, variant = 'feed', className, badge }
           <div className="absolute top-3 left-3 flex gap-1.5">
             <span className="rounded-lg px-2 h-6 inline-flex items-center text-[11px] font-bold text-white" style={{ background: color }}>{CATEGORY_EMOJI[a.category]} {CATEGORY_LABELS[a.category]}</span>
             {badge && <Tag tone="accent">{badge}</Tag>}
-            {a.official && <Tag tone="gold"><BadgeCheck size={11} /> {t('학교 공식')}</Tag>}
+            {(a.official && !a.sample) && <Tag tone="gold"><BadgeCheck size={11} /> {t('학교 공식')}</Tag>}
           </div>
           <div className="absolute bottom-3 right-3"><VisibilityTag value={a.visibility} className="bg-white/85 rounded-lg px-1.5 h-6 backdrop-blur" /></div>
         </div>

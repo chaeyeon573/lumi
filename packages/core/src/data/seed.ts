@@ -360,7 +360,7 @@ export const activities: Activity[] = [
   },
   {
     id: 'a_festival', kind: 'org_event', category: 'school_event', title: '2026 가을 아카라카 사전 행사',
-    description: '학교 공식 행사. 노천극장에서 진행되는 사전 축제. 학생증 지참.',
+    description: '노천극장에서 진행되는 사전 축제. 학생증 지참.',
     cover: { emoji: '🎓', hue: 355 , url: photo('c_tents') }, hostId: 'u_junho', hostType: 'org', official: true, date: T4, startTime: '17:00', endTime: '22:00',
     place: { name: '노천극장', lat: 37.5668, lng: 126.9385 },
     capacity: 3000, visibility: 'school', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(100),

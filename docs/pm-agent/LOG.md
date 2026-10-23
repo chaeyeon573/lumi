@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-23 00:17 UTC (버클리 목 17:17) · 초점: 동아리 글·검색
+- 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄: /orgs/o_band?tab=posts, /search, /activities/a_festival (v2·classic). 프로필·동아리 글 카드(PostCard)는 종류를 둘째 줄에 써서 이름 잘림 없음.
+- 고침: 예시 활동 “Homecoming kickoff” 가 검색·지도·카드·상세에서 금색 “Official / 학교 공식” 표시를 달고 소개도 “Official campus event…” — 지어낸 행사를 학교 공식처럼 보인다. 예시 활동에는 공식 표시를 안 달고(ActivityCard, ActivityDetailPage, MapPage), 시드 소개에서 “Official/학교 공식” 을 뺌(seed.en.ts, seed.ts — 라이브 문구는 다음 예시 날짜 옮길 때 바뀜).
+- 메모: 라이브 DB 에 시드로 만든 공고 2개가 남아 있다 — “Stripe summer internship”(Stripe, example.com), “California Civic Data Challenge”(State of California, example.com). 둘 다 마감이 지나 화면엔 안 나온다. 실제 회사·기관 이름을 단 지어낸 공고라 사장님이 관리 화면에서 지우면 깔끔(PM agent 는 라이브 DB 를 안 건드림).
+- 확인: tsc, 테스트 224 통과.
+
 ## 2026-10-22 21:17 UTC (버클리 목 14:17) · 초점: Feed 와 글쓰기 화면
 - 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음(글 안 올림).
 - 찍어 봄: /community(Feed), /create/post (v2·classic). 예시 글 시각·“Fall show in 2 days” 는 활동 날짜(토 10/24)와 맞음. 글쓰기의 샘플 사진 안내는 10/16 질문 그대로. 글 주제에 #Dating 이 있다 — 10/16 Dating 질문과 같이 정하면 됨.
