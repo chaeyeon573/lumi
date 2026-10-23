@@ -180,7 +180,7 @@ const demoOrganizations: Organization[] = [
     gallery: [{ emoji: '🎤', hue: 280, caption: 'Spring show' , url: photo('c_stage') }, { emoji: '🥁', hue: 300, caption: 'Rehearsal room' , url: photo('c_drum') }, { emoji: '🎹', hue: 260, caption: 'Welcome night' , url: photo('c_piano') }],
     regularActivities: ['Tue/Thu jams (MLK Student Union basement)', 'Show every semester', 'Winter retreat'],
     recruitment: { title: 'Fall recruiting', period: `${T} – ${T9}`, open: true },
-    notices: [{ id: 'n1', title: 'Fall show rehearsal', body: 'Thursday 7pm, student union basement', createdAt: isoHoursAgo(5) }],
+    notices: [{ id: 'n1', title: 'Fall show rehearsal', body: 'The night before the show, 7pm, student union basement', createdAt: isoHoursAgo(5) }],
     links: [{ label: 'Instagram', url: 'https://instagram.com/example' }, { label: 'Website', url: 'https://example.com/band' }],
     dues: '$20 / semester', joinProcess: 'Come to a jam, no audition',
     followerIds: ['u_seoyeon', 'u_hana', DEMO_USER_ID], memberIds: ['u_junho', 'u_seoyeon'], adminIds: ['u_junho'], applicantIds: [],
@@ -415,7 +415,7 @@ export const chatRooms: ChatRoom[] = [
   { id: 'cr_junho', type: 'direct', memberIds: [DEMO_USER_ID, 'u_junho'], createdAt: isoHoursAgo(24 * 60), messages: [{ id: 'm4', senderId: 'u_junho', text: 'Saved you two tickets for the show', createdAt: isoHoursAgo(26) }, { id: 'm5', senderId: DEMO_USER_ID, text: 'Thank you!! Bringing a friend', createdAt: isoHoursAgo(25) }], lastReadAt: { [DEMO_USER_ID]: isoHoursAgo(25), u_junho: isoHoursAgo(25) } },
   { id: 'cr_running', type: 'activity', activityId: 'a_running', memberIds: ['u_minjun', 'u_jimin', DEMO_USER_ID], title: '7pm run (5k)', createdAt: isoHoursAgo(6), messages: [{ id: 'm6', senderId: 'u_minjun', text: 'Meet at the track entrance at 6:50!', createdAt: isoHoursAgo(1.5) }, { id: 'm7', senderId: 'u_jimin', text: 'Bringing water', createdAt: isoHoursAgo(1) }], lastReadAt: { [DEMO_USER_ID]: isoHoursAgo(3) } },
   { id: 'cr_mine', type: 'activity', activityId: 'a_mine', memberIds: [DEMO_USER_ID, 'u_dohyun'], title: 'React side project — looking for teammates', createdAt: isoHoursAgo(5), messages: [{ id: 'm8', senderId: 'u_dohyun', text: 'I can take the backend. Python ok?', createdAt: isoHoursAgo(4) }], lastReadAt: { [DEMO_USER_ID]: isoHoursAgo(4) } },
-  { id: 'cr_band', type: 'org', orgId: 'o_band', memberIds: ['u_junho', 'u_seoyeon', 'u_hana', DEMO_USER_ID], title: 'Cal Indie Collective followers', createdAt: isoHoursAgo(24 * 10), messages: [{ id: 'm9', senderId: 'u_junho', text: '[Notice] Fall show rehearsal Thursday 7pm. Followers welcome to watch!', createdAt: isoHoursAgo(5) }], lastReadAt: { [DEMO_USER_ID]: isoHoursAgo(6) } },
+  { id: 'cr_band', type: 'org', orgId: 'o_band', memberIds: ['u_junho', 'u_seoyeon', 'u_hana', DEMO_USER_ID], title: 'Cal Indie Collective followers', createdAt: isoHoursAgo(24 * 10), messages: [{ id: 'm9', senderId: 'u_junho', text: '[Notice] Fall show rehearsal the night before the show, 7pm. Followers welcome to watch!', createdAt: isoHoursAgo(5) }], lastReadAt: { [DEMO_USER_ID]: isoHoursAgo(6) } },
 ];
 
 export const notifications: Notification[] = [

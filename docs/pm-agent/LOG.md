@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-23 09:17 UTC (버클리 금 02:17) · 초점: 채팅방 안 (예시 사람·동아리 단톡)
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음(메시지 안 보냄, 읽음 표시 요청도 막힘).
+- 찍어 봄: /chats/cr_junho, /chats/cr_band, /chats/cr_a7txlmqtfn (v2·classic). “Bringing Hannah” 는 배포 대기 수정(245882c)으로 사라질 것. 빈 1:1 방 안내(“Say hello. Block and report…”) 정상.
+- 고침: 동아리 단톡 공지 “[Notice] Fall show rehearsal Thursday 7pm” 이 목 21:17 에 와 있다 — 예시 시각은 계속 옮겨지는데 요일이 박혀 있어 이미 지난 리허설을 알리는 꼴. 공연 날짜(토)도 옮겨지므로 “the night before the show, 7pm” 으로, 동아리 공지 본문도 같게 (seed.en.ts, seed.ts — 채팅 문구는 다음 옮길 때 시드 문구로 바뀜). 시드의 다른 요일·tonight 문구도 훑음 — 라이브에 들어간 것은 시각이 함께 움직여 맞다.
+- 확인: tsc, 테스트 224 통과.
+
 ## 2026-10-23 06:21 UTC (버클리 목 23:21) · 초점: People 카드
 - 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating·예시 할인 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄: / (People 덱), /users/u_jimin (v2·classic). 계획 있는 사람(Jordan·Maya)이 먼저, 계획 카드·“In your class” 공통점 한 줄 정상. 나이(“Maya 24”)는 10/13 질문 그대로.

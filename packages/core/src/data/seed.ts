@@ -263,7 +263,7 @@ export const organizations: Organization[] = [
     gallery: [{ emoji: '🎤', hue: 280, caption: '봄 정기공연' , url: photo('c_stage') }, { emoji: '🥁', hue: 300, caption: '합주실' , url: photo('c_drum') }, { emoji: '🎹', hue: 260, caption: '신입생 환영회' , url: photo('c_piano') }],
     regularActivities: ['매주 화·목 합주 (학생회관 지하)', '학기별 정기공연', '방학 합숙'],
     recruitment: { title: '2학기 신입회원 모집', period: `${T} ~ ${T9}`, open: true },
-    notices: [{ id: 'n1', title: '정기공연 리허설 안내', body: '이번 주 목요일 저녁 7시 학생회관 지하 합주실', createdAt: isoHoursAgo(5) }],
+    notices: [{ id: 'n1', title: '정기공연 리허설 안내', body: '공연 전날 저녁 7시 학생회관 지하 합주실', createdAt: isoHoursAgo(5) }],
     followerIds: ['u_seoyeon', 'u_hana', DEMO_USER_ID], memberIds: ['u_junho', 'u_seoyeon'], adminIds: ['u_junho'], applicantIds: [],
   },
   {
@@ -643,7 +643,7 @@ export const chatRooms: ChatRoom[] = [
   {
     id: 'cr_band', type: 'org', orgId: 'o_band', memberIds: ['u_junho', 'u_seoyeon', 'u_hana', DEMO_USER_ID], title: '소리울림 팔로워 채널', createdAt: isoHoursAgo(24 * 10),
     messages: [
-      { id: 'm9', senderId: 'u_junho', text: '[공지] 정기공연 리허설 목요일 7시. 팔로워분들 관람 환영!', createdAt: isoHoursAgo(5) },
+      { id: 'm9', senderId: 'u_junho', text: '[공지] 정기공연 리허설은 공연 전날 저녁 7시. 팔로워분들 관람 환영!', createdAt: isoHoursAgo(5) },
     ],
     lastReadAt: { [DEMO_USER_ID]: isoHoursAgo(6) },
   },
