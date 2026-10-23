@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-23 12:23 UTC (버클리 금 05:23) · 초점: 식당 — 내일 탭·식단 필터
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄: /dining (v2·classic). 새벽이라 Café 3 “Opens 7 AM”, 아침 메뉴. Vegan 필터 — 비건 표시 메뉴만 남음. No nuts — 아몬드 등 견과 들어간 메뉴 빠짐. 알레르기 문구 “Diet and allergen tags come from Cal Dining” 정상.
+- 확인만: “Tomorrow” 탭은 Cal Dining 이 내일 메뉴를 올렸을 때만 나온다(DiningPage `data.dates`) — 지금은 없어서 안 보임, 의도대로.
+- 고친 것 없음.
+
 ## 2026-10-23 09:17 UTC (버클리 금 02:17) · 초점: 채팅방 안 (예시 사람·동아리 단톡)
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음(메시지 안 보냄, 읽음 표시 요청도 막힘).
 - 찍어 봄: /chats/cr_junho, /chats/cr_band, /chats/cr_a7txlmqtfn (v2·classic). “Bringing Hannah” 는 배포 대기 수정(245882c)으로 사라질 것. 빈 1:1 방 안내(“Say hello. Block and report…”) 정상.
