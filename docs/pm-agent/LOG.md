@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-23 03:17 UTC (버클리 목 20:17) · 초점: 예시 데이터에 남은 실제 기관·‘공식’ 표현
+- 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 셈: 라이브에 들어간 시드 — 공고 2(op_intern “Stripe…”, op_contest “California Civic Data Challenge”, 둘 다 마감 지나 숨겨짐), 동아리 4(모두 이제 SAMPLE, 인증 배지 없음), 활동 17(모두 SAMPLE). 시드의 실제 이름 공고(SkyDeck × Google 해커톤, Cal Alumni 장학금, Kappa Delta Chi·Theta Tau 모집, ASUC 홈커밍)는 라이브엔 없고 오프라인 데모(mock)에만 있다.
+- 물어봄: 예시 할인 “BOGO lattes” 가 실제 카페(Café Milano) 이름을 쓴다 — 없앨지 (QUESTIONS.md).
+- 고친 것 없음.
+
 ## 2026-10-23 00:17 UTC (버클리 목 17:17) · 초점: 동아리 글·검색
 - 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄: /orgs/o_band?tab=posts, /search, /activities/a_festival (v2·classic). 프로필·동아리 글 카드(PostCard)는 종류를 둘째 줄에 써서 이름 잘림 없음.

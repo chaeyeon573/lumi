@@ -2,6 +2,11 @@
 
 사장님께 결정을 받아야 하는 것. 최신이 위. 답은 각 항목 아래에 `**답:** …` 으로 적어 주시면 다음 실행이 따른다.
 
+## 2026-10-23 · 예시 ‘할인’ 이 실제 가게 이름을 쓴다 (Café Milano)
+**무엇이 어색한가:** 라이브 예시 활동 “Buy-one-get-one lattes with student ID” 의 장소가 **Café Milano**(텔레그래프의 실제 카페)다. SAMPLE 표시는 있지만, 지도·검색·Discover 에서 “오늘 학생증 보여 주면 1+1” 로 보여서 학생이 실제 가게에 가서 요구할 수 있다. 지어낸 할인을 실제 가게 이름에 붙인 것 — “데이터를 지어내지 않는다”에 걸린다. (예시 모임 장소로 Caffe Strada·Blue Bottle 을 쓰는 건 장소일 뿐이라 문제 없음.)
+**제안:** A) 예시 할인 활동을 아예 없앤다(시드에서 빼고, 서버가 예시 날짜를 옮길 때 이 한 건을 숨김 — 코드 작은 변경, 배포 후 라이브에서 사라짐). B) 장소를 “A café on Telegraph” 처럼 이름 없는 곳으로 바꾸고 날짜 옮길 때 장소도 시드 것으로 맞춤. C) 그대로. — 추천: A, 할인은 진짜 가게와 약속이 생기기 전까지 예시로도 안 보이는 게 안전하다.
+**같이:** 라이브 DB 에 실제 회사·기관 이름을 단 시드 공고 2개(“Stripe summer internship”, “California Civic Data Challenge”, 둘 다 example.com 링크, 마감 지나 화면엔 안 보임)가 남아 있다 — 관리 화면에서 지워 주시면 깔끔.
+
 ## 2026-10-21 · 개인정보처리방침에 아직 Ask Lumi 가 있음
 **무엇이 어색한가:** Ask Lumi 화면은 뺐는데(9b9b41a, 배포 대기) 개인정보처리방침(/privacy) 4곳이 아직 Ask Lumi 를 설명한다 — “Questions you ask Ask Lumi…”, “OpenAI — powers Ask Lumi…”, “Ask Lumi logs… are kept”, “Ask Lumi and other AI suggestions can make mistakes”. 서버의 질문 받는 주소(`opportunities.ask`)도 아직 살아 있어 화면 없이도 부를 수는 있다. 지금까지 쌓인 Ask Lumi 기록도 서버에 남아 있다.
 **제안:** A) 서버의 Ask 주소를 닫고, 방침에서 Ask Lumi 설명을 빼되 “예전에 쓴 Ask Lumi 기록은 계정 삭제 때 같이 지운다” 한 줄만 남기고 ‘Last updated’ 날짜 갱신(코드 작은 변경, 문구는 사장님 확인). B) 방침은 그대로(기능이 다시 올 수 있으니). — 추천: A, 없는 기능을 방침이 설명하면 학생이 헷갈리고, 법 문서는 실제와 같아야 한다. 법 문서라 제가 혼자 고치지 않았다.
