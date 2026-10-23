@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-10-23 21:18 UTC (버클리 금 14:18) · 초점: 가입 흐름 — Classic·한국어
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음(가입 안 함, 쓰기 주소 모두 막힘).
+- 찍어 봄: /start 1~8단계 Classic(영어), v2(한국어). 두 경우 모두 학교→목표→오후→금요일 밤→만날 사람→전공·학년→미리보기→이름까지 정상, 한국어 번역 빠진 곳 없음(비교용 Design 알약만 영어).
+- 고친 것 없음.
+
 ## 2026-10-23 18:17 UTC (버클리 금 11:17) · 초점: 가입 2~8단계 (가입은 안 함)
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 막기 넓힘: /api/rpc/ 밖에도 쓰기·메일·비용이 드는 주소가 있다 — /api/auth/(register·login·logout·attach-email), /api/schools/(send-code·verify-code), /api/feedback, /api/ai/*, /api/system/*(초기화!). 작업 폴더 스크립트 35개와 docs/pm-agent/shoot.mjs 모두 이것도 막게 함. 읽기용 POST(/api/bootstrap, /api/schools/search·highlights, /api/catalog/*)는 그대로 통과.
