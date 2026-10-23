@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-23 18:17 UTC (버클리 금 11:17) · 초점: 가입 2~8단계 (가입은 안 함)
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 막기 넓힘: /api/rpc/ 밖에도 쓰기·메일·비용이 드는 주소가 있다 — /api/auth/(register·login·logout·attach-email), /api/schools/(send-code·verify-code), /api/feedback, /api/ai/*, /api/system/*(초기화!). 작업 폴더 스크립트 35개와 docs/pm-agent/shoot.mjs 모두 이것도 막게 함. 읽기용 POST(/api/bootstrap, /api/schools/search·highlights, /api/catalog/*)는 그대로 통과.
+- 찍어 봄(v2, 새 방문자): 1 학교 → 2 목표(3개까지) → 3 쉬는 오후 → 4 금요일 밤(고르면 바로 넘어감) → 5 만나고 싶은 사람 → 6 전공·학년(전공 비워도 진행) → 7 프로필 미리보기(“Freshman. Here to make new friends. Free time: café hopping.”) → 8 이름·출생 연도. 8단계에서 멈춤(이름을 넣지 않음). 다 정상 동작.
+- 메모: 7단계 미리보기 카드에서 목표 칩은 연한색, 관심 칩은 진한색이라 하나만 골라진 것처럼 보인다(v2). 작음 — 디자인 질문(10/17)과 같이.
+- 고친 것 없음(스크립트 안전장치만).
+
 ## 2026-10-23 15:18 UTC (버클리 금 08:18) · 초점: 처음 온 사람 — /welcome → /start
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - ⚠️ 발견·고침: 내 화면 찍기 스크립트 중 18개(fresh.mjs·st.mjs 등, 작업 폴더)와 저장소의 docs/pm-agent/shoot.mjs 에 /api/rpc/ 막기가 빠져 있었다 — 10/20 사고 뒤 “전부 막음” 이라고 적었지만 일부만 막았던 것. 이번 실행에서 막기 없는 스크립트로 쓰기 화면을 누른 적은 없다(오늘은 /welcome·/start 만, 누르기 없음). 전부 막기를 넣고 shoot.mjs 로 채팅방을 열어 읽음 표시 요청 2건이 “BLOCKED WRITE” 로 막히는 것 확인.
