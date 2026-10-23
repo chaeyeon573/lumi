@@ -61,8 +61,8 @@ export function PersonCard({ user, onSkip, compact, className }: Props) {
         <div>
           <div className="flex items-center gap-1.5">
             <button onClick={() => nav(`/users/${user.id}`)} className="text-[16px] font-bold">{user.sample && <SampleTag />}{user.nickname}</button>
-            {user.affiliation.type === 'university' && user.affiliation.emailVerified && <VerifiedBadge kind="school" />}
-            {user.identityVerified && <VerifiedBadge kind="identity" />}
+            {!user.sample && user.affiliation.type === 'university' && user.affiliation.emailVerified && <VerifiedBadge kind="school" />}
+            {!user.sample && user.identityVerified && <VerifiedBadge kind="identity" />}
           </div>
           <div className="text-[12px] text-ink-3 mt-0.5 truncate">{affiliationText(user)}</div>
         </div>

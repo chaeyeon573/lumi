@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-23 06:21 UTC (버클리 목 23:21) · 초점: People 카드
+- 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating·예시 할인 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄: / (People 덱), /users/u_jimin (v2·classic). 계획 있는 사람(Jordan·Maya)이 먼저, 계획 카드·“In your class” 공통점 한 줄 정상. 나이(“Maya 24”)는 10/13 질문 그대로.
+- 고침: 지어낸 예시 프로필(Sample profile)에 학교 인증 배지(카드 오른쪽 위 체크)와 프로필의 “School verified · ID verified” 가 붙어 있었다 — 어제 고친 예시 동아리 ‘Officially verified’ 와 같은 문제. 예시 사람에게는 인증 표시를 안 단다 (PersonCard, HomePage, PersonPage, ProfileListPage). Rides 는 원래 이렇게 하고 있었다(StudentMark).
+- 확인: tsc, 테스트 224 통과, v2·classic.
+
 ## 2026-10-23 03:17 UTC (버클리 목 20:17) · 초점: 예시 데이터에 남은 실제 기관·‘공식’ 표현
 - 사장님 답: 아직 없음 (데모 계정 A/B/C·개인정보처리방침·키/Dating 포함). 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 셈: 라이브에 들어간 시드 — 공고 2(op_intern “Stripe…”, op_contest “California Civic Data Challenge”, 둘 다 마감 지나 숨겨짐), 동아리 4(모두 이제 SAMPLE, 인증 배지 없음), 활동 17(모두 SAMPLE). 시드의 실제 이름 공고(SkyDeck × Google 해커톤, Cal Alumni 장학금, Kappa Delta Chi·Theta Tau 모집, ASUC 홈커밍)는 라이브엔 없고 오프라인 데모(mock)에만 있다.
