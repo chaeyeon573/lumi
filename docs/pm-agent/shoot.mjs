@@ -15,6 +15,8 @@ const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, deviceSc
 await ctx.route('**/*', async (route) => {
   const r = route.request(); const u = new URL(r.url());
   if (u.pathname.startsWith('/api/events')) return route.abort(); // SSE — 'load' 가 안 끝난다
+  // 라이브 DB 에 쓰지 않는다 — 앱의 쓰기·읽음 표시는 모두 /api/rpc/ 로 간다 (10/20 데모 계정 사고: 좁은 필터가 /api/rpc/users/update 를 놓침)
+  if (/\/api\/rpc\//.test(u.pathname)) { console.log('BLOCKED WRITE', u.pathname); return route.fulfill({ status: 200, contentType: 'application/json', body: '{}' }); }
   if (local && u.origin === base && !u.pathname.startsWith('/api')) return route.continue();
   const target = local && u.origin === base ? LIVE + u.pathname + u.search : r.url();
   try {

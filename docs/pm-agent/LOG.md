@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-23 15:18 UTC (버클리 금 08:18) · 초점: 처음 온 사람 — /welcome → /start
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- ⚠️ 발견·고침: 내 화면 찍기 스크립트 중 18개(fresh.mjs·st.mjs 등, 작업 폴더)와 저장소의 docs/pm-agent/shoot.mjs 에 /api/rpc/ 막기가 빠져 있었다 — 10/20 사고 뒤 “전부 막음” 이라고 적었지만 일부만 막았던 것. 이번 실행에서 막기 없는 스크립트로 쓰기 화면을 누른 적은 없다(오늘은 /welcome·/start 만, 누르기 없음). 전부 막기를 넣고 shoot.mjs 로 채팅방을 열어 읽음 표시 요청 2건이 “BLOCKED WRITE” 로 막히는 것 확인.
+- 찍어 봄: /welcome, /start (처음 온 사람, v2·classic). 첫 화면 “Who's free on campus right now?”·점심 카드·무료 음식·마감 순 정상.
+- 물어봄: 1단계 학교 고르기에 UC Merced 가 나온다 — 출시 동안 숨길지 (QUESTIONS.md).
+
 ## 2026-10-23 12:23 UTC (버클리 금 05:23) · 초점: 식당 — 내일 탭·식단 필터
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄: /dining (v2·classic). 새벽이라 Café 3 “Opens 7 AM”, 아침 메뉴. Vegan 필터 — 비건 표시 메뉴만 남음. No nuts — 아몬드 등 견과 들어간 메뉴 빠짐. 알레르기 문구 “Diet and allergen tags come from Cal Dining” 정상.
