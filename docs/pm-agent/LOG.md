@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-24 06:17 UTC (버클리 금 23:17) · 초점: 늦은 밤 — Discover·식당·체육관
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄: /discover, /dining, /gym (v2·classic). “Done with classes”, 식당 “Closed for today”(지난 저녁 메뉴 안 보임), 즉석 모임 “Nothing open in this window”, RSF “Closed · 0/150 · Today 7 AM–11 PM”, CMS 13/55 정상.
+- 고침: Discover 체육관 카드가 큰 글씨 “Closed” 아래 작은 글씨로 “Closed for today” 를 또 썼다 → 오늘 운영 시간 “Today 7 AM–11 PM” (LiveCards.tsx). 열기 전(새벽)은 원래대로 “Opens 7 AM”.
+- 확인: tsc, 테스트 225 통과, v2·classic.
+
 ## 2026-10-24 03:17 UTC (버클리 금 20:17) · 초점: 금요일 밤 — Discover·식당
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄: /discover, /dining (v2·classic). 식당 “Café 3 · Open until 9 PM”·저녁 메뉴, 체육관 43%, 지금 공강인 친구 6명 정상.
