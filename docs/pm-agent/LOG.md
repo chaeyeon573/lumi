@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-24 18:18 UTC (버클리 토 11:18) · 초점: 주말 Discover › Activities
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄: /discover?tab=activities (v2·classic). 오늘 11·내일 4·이번 주 119·그 뒤 151, 학교 행사·게임 나이트·해커톤 섞여 정상.
+- 고침: ‘Today’ 칸 맨 위에 “Cleantech Hackathon at Stanford · Fri, Oct 23” — 어제 오후 시작한 이틀짜리 행사가 오늘 칸에 어제 날짜로. 날짜가 “2026-10-24T06:59Z”(= 10/23 밤 PT)로 저장돼 있는데, 거르는 곳은 문자열(UTC 날짜)로, 보여 주는 곳은 캠퍼스 날짜로 읽어 서로 달랐다. 거르는 곳도 캠퍼스 날짜로 (DiscoverPage, 같은 패턴인 PlansPage·PersonPage 도).
+- 확인: tsc, 테스트 226 통과, v2·classic.
+
 ## 2026-10-24 15:17 UTC (버클리 토 08:17) · 초점: 주말 아침 식당 — Discover 식당 카드
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄: /discover, /dining (v2·classic). “No classes today”(어제 수정), 식당 Café 3 “Opens 11 AM · Brunch”, 체육관 23% 정상. 즉석 모임이 이제 8:45 AM 부터 — 아침이라 자연스러움(새벽 문제는 배포 대기 수정으로 해결).

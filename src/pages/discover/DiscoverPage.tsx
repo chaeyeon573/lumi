@@ -149,7 +149,8 @@ function ActivitiesTab() {
   const today = todayISO();
   const mySchool = v.me.affiliation.type === 'university' ? v.me.affiliation.schoolId : '';
   const acts = v.visibleActivities.filter((a) => a.date >= today && !isTeamActivity(a) && a.category !== 'store_deal' && (!f.cats || f.cats.includes(a.category)));
-  const together = opps.filter((o) => isTogetherType(o.type) && o.type !== 'activity' && (!o.schoolId || o.schoolId === mySchool) && (!o.date || o.date >= today) && (!o.deadline || daysUntil(o.deadline) >= 0) && (chip === 'all' || f.oppTypes?.includes(o.type)));
+  // 날짜는 캠퍼스 날짜로 비교 — “2026-10-24T06:59Z”(= 10/23 밤 PT)를 문자열로 비교하면 어제 행사가 ‘Today’ 칸에 “Fri, Oct 23” 으로 남았다
+  const together = opps.filter((o) => isTogetherType(o.type) && o.type !== 'activity' && (!o.schoolId || o.schoolId === mySchool) && (!o.date || campusDate(o.date) >= today) && (!o.deadline || daysUntil(o.deadline) >= 0) && (chip === 'all' || f.oppTypes?.includes(o.type)));
   // 시간이 정해진 것이 먼저 — 하루 종일·시간 미정은 그날 묶음 맨 뒤로
   const timed = (t?: string) => !!t && t !== '00:00';
   type Item = { key: string; day: string; timed: boolean; time: string; a?: Activity; o?: Opportunity };

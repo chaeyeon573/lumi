@@ -24,6 +24,7 @@ import { questionById } from '@core/data/prompts';
 import { availabilityText, freeBlocks, todayIdx, fmtBlock, overlapBlocks } from '@core/lib/timetable';
 import { matchReasons, shareableReasons } from '@core/lib/recommend';
 import { GOAL_EMOJI, GOAL_LABELS, PERSON_ROLE_LABELS, RESIDENCE_LABELS } from '@core/lib/labels';
+import { campusDate } from '@core/lib/listings';
 
 export function PersonPage() {
   const { id } = useParams();
@@ -73,7 +74,7 @@ export function PersonPage() {
   const userPosts = v.visiblePosts.filter((p) => p.authorId === user.id && p.authorType === 'user' && !p.anonymous);
   const taggedPosts = v.visiblePosts.filter((p) => p.authorId !== user.id && (p.taggedUserIds ?? []).includes(user.id) && (p.tagApprovedIds ?? []).includes(user.id) && p.media.length > 0);
   const together = params.get('tab') === 'together';
-  const sharedOpps = v.snap.opportunityIntents.filter((i) => i.userId === user.id).map((i) => oppsAll.find((o) => o.id === i.opportunityId)).filter((o): o is NonNullable<typeof o> => !!o && o.date !== undefined && o.date >= todayISO());
+  const sharedOpps = v.snap.opportunityIntents.filter((i) => i.userId === user.id).map((i) => oppsAll.find((o) => o.id === i.opportunityId)).filter((o): o is NonNullable<typeof o> => !!o && o.date !== undefined && campusDate(o.date) >= todayISO());
   const adminOrgs = orgs.filter((o) => o.adminIds.includes(user.id));
   const pendingProposal = proposals.find((p) => p.fromId === v.me.id && p.toId === user.id && p.status === 'pending');
   const reasons = shareableReasons(matchReasons(v.me, user, v.snap, see('timetable')));

@@ -13,6 +13,7 @@ import { isTeamActivity } from '@core/lib/discover';
 import { dday } from '@core/lib/recommend';
 import type { OpportunityIntent, Goal, Activity } from '@core/types';
 import { proposalWhen } from '@core/lib/plans';
+import { campusDate } from '@core/lib/listings';
 
 /** Me › My Plans — 받은 초대 / 대기 / 확정 / 관심 행사 / 팀 신청 / Study Crew */
 export function PlansPage() {
@@ -41,7 +42,7 @@ export function PlansPage() {
   const proposalsIn = proposals.filter((p) => p.toId === me.id && p.status === 'pending');
   const friendReqs = v.snap.relationships.friendRequests.filter((r) => r.toId === me.id && r.status === 'pending');
   const myIntents = intents.filter((i) => i.userId === me.id).map((i) => ({ i, o: opps.find((o) => o.id === i.opportunityId)! })).filter((x) => x.o);
-  const events = myIntents.filter((x) => x.o.date && x.o.date >= today && ['interested', 'going', 'solo', 'company'].includes(x.i.intent));
+  const events = myIntents.filter((x) => x.o.date && campusDate(x.o.date) >= today && ['interested', 'going', 'solo', 'company'].includes(x.i.intent));
   const teamPending = pendingActs.filter(isTeamActivity);
   const crews = confirmed.filter((a) => a.courseName);
   const plain = confirmed.filter((a) => !a.courseName);
