@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-24 12:17 UTC (버클리 토 05:17) · 초점: 주말 아침 Discover·시간표
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄: /discover, /timetable (v2·classic). 시간표 “Sat · No classes today · The rest of today is yours” 정상.
+- 고침: 같은 토요일 Discover 맨 위는 “Next free 9 AM–9 PM” — 수업 없는 날에 ‘다음 공강’ 은 어색하고 9–9 는 시간표 칸의 범위일 뿐. 오늘 수업이 하나도 없으면 “No classes today / 오늘 수업 없음” + Open (DiscoverPage.tsx).
+- 라이브: 즉석 모임 예시가 아직 “Crossroads 5:45 AM”, “Strada 6:05 AM” — 어제 고친 서버 코드(d702fef)가 배포 대기라서.
+- 확인: tsc, 테스트 226 통과, v2·classic.
+
 ## 2026-10-24 09:17 UTC (버클리 토 02:17) · 초점: 새벽 — 문 여는 시각 표시
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄: /discover, /dining, /gym (v2·classic). 체육관 카드 “Closed · Opens 8 AM”(토요일 8–6 맞음), 식당 “The Den opens 7 AM”, Café 3 “Opens 11 AM · Brunch” 정상.
