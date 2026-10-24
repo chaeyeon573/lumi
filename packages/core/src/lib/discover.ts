@@ -2,6 +2,7 @@ import type { Activity, ActivityCategory, Organization, Opportunity, Role } from
 import { t } from '@core/i18n';
 import { toMin, nowMin } from './timetable';
 import { todayISO } from './format';
+import { campusDate } from './listings';
 
 /** 팀 성격의 활동: 역할 모집이 있거나 Study Crew */
 export const isTeamActivity = (a: Activity) => (a.rolesNeeded?.length ?? 0) > 0 || !!a.courseName;
@@ -58,7 +59,7 @@ export function teamItems(acts: Activity[], opps: Opportunity[], orgs: Organizat
   const today = todayISO();
   const out: TeamItem[] = [];
   acts.filter((a) => isTeamActivity(a) && a.date >= today).forEach((a) => out.push({ kind: 'activity', id: `a_${a.id}`, when: a.createdAt, activity: a, purpose: activityPurpose(a), roles: a.rolesNeeded ?? [], mode: a.mode, open: approvedCount(a.id) < a.capacity && a.hostId !== meId }));
-  opps.filter((o) => (o.rolesNeeded?.length ?? 0) > 0).forEach((o) => out.push({ kind: 'opp', id: `o_${o.id}`, when: o.createdAt, opp: o, purpose: o.type === 'startup' ? 'startup' : o.type === 'lab' ? 'research' : 'hackathon', roles: o.rolesNeeded ?? [], open: !o.deadline || o.deadline >= today }));
+  opps.filter((o) => (o.rolesNeeded?.length ?? 0) > 0).forEach((o) => out.push({ kind: 'opp', id: `o_${o.id}`, when: o.createdAt, opp: o, purpose: o.type === 'startup' ? 'startup' : o.type === 'lab' ? 'research' : 'hackathon', roles: o.rolesNeeded ?? [], open: !o.deadline || campusDate(o.deadline) >= today }));
   orgs.filter((o) => o.recruitment?.open).forEach((o) => out.push({ kind: 'org', id: `g_${o.id}`, when: o.notices[0]?.createdAt ?? '', org: o, purpose: 'club', roles: [], open: true }));
   return out.sort((x, y) => y.when.localeCompare(x.when));
 }

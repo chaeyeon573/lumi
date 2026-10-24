@@ -139,6 +139,8 @@ export function rollSampleActivities(db: Snapshot, at?: { date: string; minutes:
     }
     // “지금 바로” 예시(시드 시각 = 서버가 켜진 시각 + 몇 분)는 새벽에 켜지면 새벽 시각을 갖는다 — 끝나지 않았어도 아침 전이면 아침으로
     if (start < earliest) { const d = earliest - start; start += d; end += d; }
+    // 반대로 서버가 저녁에 켜졌으면 시드 시각 자체가 밤이다 — 마감 뒤로 넘치면 아침 시각으로, 오늘 그 시각이 지났으면 내일
+    if (end > latestEnd) { start = earliest; end = earliest + dur; if (date === now.date && end <= now.minutes) date = addDays(now.date, 1); }
     // 제목·설명도 시드를 따른다 — 시간이 굴러가므로 시각에 묶인 말("lunch")을 고치면 라이브에도 닿게
     const nowMs = Date.now();
     let staleComment = false;
