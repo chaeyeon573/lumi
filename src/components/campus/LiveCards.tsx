@@ -37,7 +37,7 @@ export function LiveCards({ className }: { className?: string }) {
               <span className="mt-1.5 text-[14px] font-bold leading-snug line-clamp-2">
                 {d.open?.length ? `${d.open.slice(0, 2).map((o) => o.name).join(', ')}${d.open.length > 2 ? ` +${d.open.length - 2}` : ''} open` : d.next ? `${d.next.name} opens ${fmtClock(d.next.opensAt)}` : 'Closed for today'}
               </span>
-              {d.highlight && (d.open?.length || d.next) && <span className="mt-auto pt-1.5 text-[12px] text-ink-2 leading-snug line-clamp-2">{d.highlight.favorite && <Star size={11} className="inline -mt-0.5 mr-0.5 fill-current text-[#B57A0E] v2:text-lime-400" />}<b className="font-semibold">{d.highlight.dish}</b> · {d.highlight.location}, {d.highlight.meal.toLowerCase()}</span>}
+              {d.highlight && (d.open?.length || d.next) && <span className="mt-auto pt-1.5 text-[12px] text-ink-2 leading-snug line-clamp-2">{d.highlight.favorite && <Star size={11} className="inline -mt-0.5 mr-0.5 fill-current text-[#B57A0E] v2:text-lime-400" />}<b className="font-semibold">{d.highlight.dish}</b> · {d.highlight.location}, {d.highlight.meal.toLowerCase()}{d.highlight.opensAt ? ` from ${fmtClock(d.highlight.opensAt)}` : ''}</span>}
             </>
           )}
         </button>

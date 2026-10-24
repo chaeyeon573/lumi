@@ -141,7 +141,8 @@ export interface DiningNow {
   date: string;
   open: { id: string; name: string; kind: LocationKind; closesAt?: string; meal?: string }[];
   next?: { id: string; name: string; opensAt: string };
-  highlight?: { dish: string; location: string; locationId: string; meal: string; favorite: boolean };
+  /** opensAt: 그 식당이 아직 안 열었으면 여는 시각 — “The Den open” 아래 Café 3 메뉴가 지금 먹을 수 있는 것처럼 읽히지 않게 */
+  highlight?: { dish: string; location: string; locationId: string; meal: string; favorite: boolean; opensAt?: string };
   favoritesToday: { dish: string; where: string }[];
 }
 export function diningNow(day: DiningDay, clock: Pick<CampusClock, 'min'>, favoriteKeys: string[] = []): DiningNow {
@@ -164,6 +165,11 @@ export function diningNow(day: DiningDay, clock: Pick<CampusClock, 'min'>, favor
       const st = meal?.stations.find((s) => isMainStation(s.name) && s.dishes.length) ?? meal?.stations.find((s) => s.dishes.length);
       if (meal && st) { highlight = { dish: st.dishes[0].name, location: l.name, locationId: l.id, meal: meal.label, favorite: false }; break; }
     }
+  }
+  if (highlight && !open.some((o) => o.id === highlight!.locationId)) {
+    const l = locs.find((x) => x.id === highlight!.locationId);
+    const at = l && openState(l, clock.min).opensAt;
+    if (at) highlight = { ...highlight, opensAt: at };
   }
   return { date: day.date, open, next: next ? { id: next.l.id, name: next.l.name, opensAt: next.s.opensAt! } : undefined, highlight, favoritesToday };
 }

@@ -100,6 +100,8 @@ test('open now, current meal, and the Discover highlight (a main dish, not the s
   const early = diningNow(day, { min: 4 * 60 });
   assert.equal(early.open.length, 0);
   assert.equal(early.next?.opensAt, '07:00');
+  assert.ok(early.highlight?.opensAt, 'a dish from a hall that has not opened says when it opens');
+  assert.equal(now.highlight?.opensAt, undefined, 'an open hall needs no time');
   assert.equal(findLocation(day, 'ckc')?.name, 'Clark Kerr');
   assert.equal(findLocation(day, 'cafe 3')?.name, 'Café 3');
 });

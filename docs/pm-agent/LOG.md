@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-24 15:17 UTC (버클리 토 08:17) · 초점: 주말 아침 식당 — Discover 식당 카드
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄: /discover, /dining (v2·classic). “No classes today”(어제 수정), 식당 Café 3 “Opens 11 AM · Brunch”, 체육관 23% 정상. 즉석 모임이 이제 8:45 AM 부터 — 아침이라 자연스러움(새벽 문제는 배포 대기 수정으로 해결).
+- 고침: Discover 식당 카드 “Bear Market, The Den open” 바로 아래 “Halal Chimichuri Grilled Tri Tip · Café 3, brunch” — Café 3 은 11시에 연다. 지금 먹을 수 있는 메뉴처럼 읽힌다. 대표 메뉴의 식당이 아직 안 열었으면 여는 시각을 붙인다 → “… · Café 3, brunch from 11 AM” (dining.ts `diningNow` 가 opensAt 를 넘기고 LiveCards 가 표시, 테스트 추가). 계산이 서버에서 되므로 라이브는 배포 후 반영.
+- 확인: tsc, 서버 타입, 테스트 226 통과.
+
 ## 2026-10-24 12:17 UTC (버클리 토 05:17) · 초점: 주말 아침 Discover·시간표
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄: /discover, /timetable (v2·classic). 시간표 “Sat · No classes today · The rest of today is yours” 정상.
