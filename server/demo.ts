@@ -114,8 +114,8 @@ function campusNow(tz = 'America/Los_Angeles') {
 }
 const addDays = (iso: string, n: number) => new Date(Date.parse(`${iso}T12:00:00Z`) + n * DAY).toISOString().slice(0, 10);
 
-export function rollSampleActivities(db: Snapshot): Patch | null {
-  const now = campusNow();
+export function rollSampleActivities(db: Snapshot, at?: { date: string; minutes: number }): Patch | null {
+  const now = at ?? campusNow();
   const soon = Math.ceil((now.minutes + 15) / 15) * 15; // 15분 뒤부터
   const changed: Activity[] = [];
   let k = 0;
@@ -128,9 +128,11 @@ export function rollSampleActivities(db: Snapshot): Patch | null {
     // 원래 시간(시드에 적힌 시간)을 기준으로 다시 계산한다 — 지난번에 밀어 둔 시간이 쌓이지 않게
     const orig = seedActivities.find((x) => x.id === a.id)!;
     start = toMin(orig.startTime); end = start + Math.max(30, toMin(orig.endTime) - start);
+    // 학생식당 모임은 식당이 닫기(21시) 전에 끝나야 한다 — 밤 9:05 “Crossroads 에서 같이 먹어요” 가 되지 않게. 늦으면 내일 원래 시각으로
+    const latestEnd = orig.category === 'meal' && /dining/i.test(orig.place.name) ? 21 * 60 : 23 * 60;
     if (offset === 0 && end <= now.minutes) {
       const s2 = soon + (k++ % 4) * 20;
-      if (s2 + dur <= 23 * 60) { start = s2; end = s2 + dur; } else { date = addDays(now.date, 1); }
+      if (s2 + dur <= latestEnd) { start = s2; end = s2 + dur; } else { date = addDays(now.date, 1); }
     }
     // 제목·설명도 시드를 따른다 — 시간이 굴러가므로 시각에 묶인 말("lunch")을 고치면 라이브에도 닿게
     const nowMs = Date.now();

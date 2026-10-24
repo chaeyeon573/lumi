@@ -12,6 +12,7 @@ import { t } from '@core/i18n';
 import { createEngine } from '@core/api/engine';
 import { snapshotFor, patchFor } from './view';
 import { migrateDemo, rollSampleActivities, rollSampleContent, demoUserIdFor, seniorClassYear } from './demo';
+import { todayISO } from '@core/lib/format';
 import { ensureSampleRides } from './rides';
 import { SAMPLE_OPPORTUNITY_IDS, SAMPLE_ORG_IDS, hiddenSamplesFor, sampleFreeFor } from './samples';
 import { searchActivities, searchClubs, searchListings } from './ai-search';
@@ -284,4 +285,15 @@ test('a revived sample proposal also moves the time it proposes (no "19h ago · 
   assert.equal(pr.message, seedPr.message, 'old text that named a weekday is replaced with the seed text');
   assert.ok(!/monday|tuesday|wednesday|thursday|friday|saturday|sunday/i.test(pr.message), 'the date moves, so the message must not name a weekday');
   assert.equal(rollSampleContent(db), null);
+});
+
+test('a sample meal at a dining hall is never rolled past closing (no 9:05 PM "grab a bite at Crossroads")', () => {
+  const db = world();
+  const late = rollSampleActivities(db, { date: todayISO(), minutes: 20 * 60 + 20 });
+  const lunch = (late?.activities ?? db.activities).find((a) => a.id === 'a_now_lunch')!;
+  const end = Number(lunch.endTime.slice(0, 2)) * 60 + Number(lunch.endTime.slice(3));
+  assert.ok(lunch.date > todayISO() || end <= 21 * 60, `${lunch.date} ${lunch.startTime}–${lunch.endTime}`);
+  const early = rollSampleActivities(world(), { date: todayISO(), minutes: 12 * 60 });
+  const l2 = (early?.activities ?? []).find((a) => a.id === 'a_now_lunch');
+  if (l2) assert.equal(l2.date, todayISO(), 'at noon it still happens today');
 });

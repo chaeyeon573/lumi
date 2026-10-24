@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-24 03:17 UTC (버클리 금 20:17) · 초점: 금요일 밤 — Discover·식당
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄: /discover, /dining (v2·classic). 식당 “Café 3 · Open until 9 PM”·저녁 메뉴, 체육관 43%, 지금 공강인 친구 6명 정상.
+- 고침: Discover “Spontaneous Hangouts” 에 예시 “Hate eating alone — grab a bite at Crossroads? · 9:05 PM” — 학생식당이 9시에 닫은 뒤다. 예시 시각을 옮기는 서버 코드가 오늘 끝난 모임을 “지금부터 15분 뒤”로 밀면서 장소 영업시간을 안 봤다. 학생식당 식사 모임은 21시 전에 끝나야 하고, 늦으면 내일로 (server/demo.ts `rollSampleActivities`, 테스트 추가 — 고치기 전엔 실패, 후엔 통과 확인).
+- 확인: 서버 타입, 테스트 225 통과.
+
 ## 2026-10-24 00:17 UTC (버클리 금 17:17) · 초점: 시간표 수업 칸을 눌렀을 때 뜨는 창
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄: /timetable → CS 61A, CS 186 칸 (v2·classic). 창 제목 아래 시간 “Mon/Wed/Fri 12 PM · DIS 118 Thu 12:30 PM”(10/20 수정 반영), 링크·QR 위 한 줄(10/21 수정 반영), 수업 끝나고 비는 친구(“1 free right after it, Mon/Wed 11 AM”)·스터디 그룹·파트너 정상. 친구 공강 길이 “(3.5h)”.
