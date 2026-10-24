@@ -129,11 +129,16 @@ export function rollSampleActivities(db: Snapshot, at?: { date: string; minutes:
     const orig = seedActivities.find((x) => x.id === a.id)!;
     start = toMin(orig.startTime); end = start + Math.max(30, toMin(orig.endTime) - start);
     // 학생식당 모임은 식당이 닫기(21시) 전에 끝나야 한다 — 밤 9:05 “Crossroads 에서 같이 먹어요” 가 되지 않게. 늦으면 내일 원래 시각으로
-    const latestEnd = orig.category === 'meal' && /dining/i.test(orig.place.name) ? 21 * 60 : 23 * 60;
+    const atDiningHall = orig.category === 'meal' && /dining/i.test(orig.place.name);
+    const latestEnd = atDiningHall ? 21 * 60 : 23 * 60;
+    // 새벽에 굴리면 “2:55 AM 같이 먹어요” 가 된다 — 아침(식당 모임은 점심) 전이면 그 시각부터
+    const earliest = atDiningHall ? 11 * 60 + 30 : 8 * 60;
     if (offset === 0 && end <= now.minutes) {
-      const s2 = soon + (k++ % 4) * 20;
+      const s2 = Math.max(soon, earliest) + (k++ % 4) * 20;
       if (s2 + dur <= latestEnd) { start = s2; end = s2 + dur; } else { date = addDays(now.date, 1); }
     }
+    // “지금 바로” 예시(시드 시각 = 서버가 켜진 시각 + 몇 분)는 새벽에 켜지면 새벽 시각을 갖는다 — 끝나지 않았어도 아침 전이면 아침으로
+    if (start < earliest) { const d = earliest - start; start += d; end += d; }
     // 제목·설명도 시드를 따른다 — 시간이 굴러가므로 시각에 묶인 말("lunch")을 고치면 라이브에도 닿게
     const nowMs = Date.now();
     let staleComment = false;

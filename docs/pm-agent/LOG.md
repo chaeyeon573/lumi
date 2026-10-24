@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-24 09:17 UTC (버클리 토 02:17) · 초점: 새벽 — 문 여는 시각 표시
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄: /discover, /dining, /gym (v2·classic). 체육관 카드 “Closed · Opens 8 AM”(토요일 8–6 맞음), 식당 “The Den opens 7 AM”, Café 3 “Opens 11 AM · Brunch” 정상.
+- 고침: Discover 즉석 모임에 예시 “Hate eating alone — grab a bite at Crossroads? · 2:55 AM”, “Coffee at Strada · 3:20 AM”. 예시 시각을 옮기는 코드가 ①끝난 모임을 ‘지금+15분’으로 밀고 ②“지금 바로” 예시는 서버가 켜진 시각(UTC)+몇 분을 그대로 써서 새벽 시각이 된다. 이제 예시 모임은 아침 8시 전에 두지 않고(학생식당 식사는 11:30 이후·21시 전), 늦으면 다음 날로 (server/demo.ts). 테스트: 하루 24시간 매 시각 굴려 봐도 새벽 시각·식당 마감 뒤가 없음 — 고친 코드를 빼면 실패하는 것 확인.
+- 확인: 서버 타입, 테스트 226 통과.
+
 ## 2026-10-24 06:17 UTC (버클리 금 23:17) · 초점: 늦은 밤 — Discover·식당·체육관
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄: /discover, /dining, /gym (v2·classic). “Done with classes”, 식당 “Closed for today”(지난 저녁 메뉴 안 보임), 즉석 모임 “Nothing open in this window”, RSF “Closed · 0/150 · Today 7 AM–11 PM”, CMS 13/55 정상.

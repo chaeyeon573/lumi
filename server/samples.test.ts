@@ -297,3 +297,18 @@ test('a sample meal at a dining hall is never rolled past closing (no 9:05 PM "g
   const l2 = (early?.activities ?? []).find((a) => a.id === 'a_now_lunch');
   if (l2) assert.equal(l2.date, todayISO(), 'at noon it still happens today');
 });
+
+test('sample meetups are never placed in the small hours, and dining-hall meals stay inside dining hours, at any time of day', () => {
+  // 시드의 “지금 바로” 시각은 서버가 켜진 시각(UTC) + 몇 분이라 새벽 시각이 될 수 있다 — 하루 24시간 어느 때 굴려도
+  for (let h = 0; h < 24; h++) {
+    const db = world();
+    const r = rollSampleActivities(db, { date: todayISO(), minutes: h * 60 + 17 });
+    const after = new Map((r?.activities ?? []).map((x) => [x.id, x]));
+    for (const a of db.activities.map((x) => after.get(x.id) ?? x)) {
+      if (a.date !== todayISO()) continue;
+      const start = Number(a.startTime.slice(0, 2)) * 60 + Number(a.startTime.slice(3));
+      assert.ok(start >= 8 * 60, `${h}:17 → ${a.title} at ${a.startTime}`);
+      if (a.category === 'meal' && /dining/i.test(a.place.name)) assert.ok(a.endTime <= '21:00', `${h}:17 → ${a.title} until ${a.endTime}`);
+    }
+  }
+});
