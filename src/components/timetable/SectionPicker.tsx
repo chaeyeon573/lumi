@@ -4,13 +4,13 @@ import { lang } from '@core/i18n';
 import type { Course } from '@core/types';
 import type { CatalogCourse, CatalogSection } from '@core/api/types';
 import { Button, Input } from '@/components/ui';
-import { DAY_LABELS, toMin } from '@core/lib/timetable';
+import { meetingsLabel, toMin } from '@core/lib/timetable';
 import { cn } from '@core/lib/cn';
 
 const en = lang === 'en';
 const KIND: Record<string, [string, string]> = { DIS: ['Discussion', '디스커션'], LAB: ['Lab', '랩'], REC: ['Recitation', '리시테이션'], SEM: ['Seminar', '세미나'] };
 const kindName = (k: string) => (KIND[k] ? KIND[k][en ? 0 : 1] : k);
-const when = (ms: { day: number; start: string; end: string }[]) => ms.map((m) => `${DAY_LABELS[m.day]} ${m.start}–${m.end}`).join(' · ');
+const when = meetingsLabel;
 
 /**
  * 수업 목록에서 고른 강의에 딸린 토론·랩 고르기 — 종류마다 하나씩 (모르면 비워 두고 강의만 넣는다).

@@ -7,6 +7,9 @@ import { AVAILABILITY_LABELS } from './labels';
 import { normalizeTermLabel } from './terms';
 
 export const DAY_LABELS = [t('월'), t('화'), t('수'), t('목'), t('금'), t('토'), t('일')];
+/** 수업 목록·섹션의 요일·시각 — 영어는 12시간(“Mon 3 PM–3:59 PM”), 한국어는 24시간. 다른 화면의 “3 PM” 과 맞춘다 */
+export const meetingsLabel = (ms: { day: number; start: string; end: string }[]) =>
+  ms.map((m) => `${DAY_LABELS[m.day]} ${lang === 'en' ? `${fmtClock(m.start)}–${fmtClock(m.end)}` : `${m.start}–${m.end}`}`).join(' · ');
 export const GRID_START = 9;   // 09:00
 export const GRID_END = 21;    // 21:00
 

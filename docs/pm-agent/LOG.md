@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-25 18:17 UTC (버클리 일 11:17) · 초점: 수강신청 전날 — 수업 찾기·좌석 알림 직전까지
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음(Watch seats 안 누름).
+- 찍어 봄: 시간표 › + Class › Spring 2027 › “CS 61B” 검색 (v2·classic). 결과 “CS 61B Data Structures · Dwinelle 155 · Manuel A Sabin · Course info · Watch seats” 정상.
+- 고침: 수업 목록 줄의 시각이 영어 화면에서도 “Mon 15:00–15:59” (24시간) — 앱 다른 곳은 “3 PM”. 영어는 “Mon 3 PM–3:59 PM”, 한국어는 그대로 24시간 (timetable.ts `meetingsLabel` 새로, 시간표 수업 추가·Campus › Classes·섹션 고르기 세 곳이 같이 씀).
+- 확인: tsc, 테스트 226 통과, v2·classic, 한국어 시간표 오류 없음.
+
 ## 2026-10-25 15:18 UTC (버클리 일 08:18) · 초점: 일요일 아침 식당 + 내일 수강신청
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄: /discover, /dining, /academic-calendar (v2·classic). 식당 “Bear Market, The Den open”, Café 3 “Opens 11 AM · Brunch”, 체육관 14% Quiet, 학사력 “Phase 1 enrollment begins · Mon, Oct 26 · D-1” 정상.

@@ -12,7 +12,7 @@ import { Button, BottomSheet, Field, Input, Select, Segmented, Tag, VisibilityPi
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
-import { DAY_LABELS, toMin, toHHMM, freeBlocks, overlapBlocks, statusNow, statusLabel, todayIdx, jsDayToIdx, fmtBlock, fmtHours, nowMin } from '@core/lib/timetable';
+import { DAY_LABELS, toMin, toHHMM, freeBlocks, overlapBlocks, statusNow, statusLabel, todayIdx, jsDayToIdx, fmtBlock, fmtHours, nowMin, meetingsLabel } from '@core/lib/timetable';
 import { friendsOf } from '@core/lib/relations';
 import { uid, addDaysISO } from '@core/lib/format';
 import { cn } from '@core/lib/cn';
@@ -255,7 +255,7 @@ export function TimetablePage() {
                       <div key={c.id} className="flex items-start gap-2 px-3 py-2">
                         <button type="button" disabled={busy} onClick={() => pickFromCatalog(c)} className="flex-1 min-w-0 text-left press">
                           <div className="text-[13px] font-semibold">{c.code} <span className="font-medium text-ink-2">{c.title}</span></div>
-                          <div className="text-[11px] text-ink-3">{c.meetings.length ? c.meetings.map((m) => `${DAY_LABELS[m.day]} ${m.start}–${m.end}`).join(' · ') : t('시간 미정')}{c.location ? ` · ${c.location}` : ''}{c.instructor ? ` · ${c.instructor}` : ''}</div>
+                          <div className="text-[11px] text-ink-3">{c.meetings.length ? meetingsLabel(c.meetings) : t('시간 미정')}{c.location ? ` · ${c.location}` : ''}{c.instructor ? ` · ${c.instructor}` : ''}</div>
                         </button>
                         {(c.syllabusUrl || c.url) && <a href={c.syllabusUrl ?? c.url} target="_blank" rel="noreferrer" className="shrink-0 text-[11px] font-semibold text-primary underline pt-0.5">{c.syllabusUrl ? t('실라버스') : t('과목 정보')}</a>}
                         <WatchSeatsButton course={c} className="h-7 px-2.5 text-[11px]" />

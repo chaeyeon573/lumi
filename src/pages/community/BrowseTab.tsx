@@ -9,7 +9,7 @@ import { ORG_TYPE_LABELS, OPP_TYPE_LABELS, OPP_TYPE_EMOJI } from '@core/lib/labe
 import { daysUntil } from '@core/lib/recommend';
 import { forYou, scoreListings, scoreClubs, whyLine, limitRepeats, type Reason } from '@core/lib/foryou';
 import { FIELDS, REGIONS, audienceOf, badgeOf, categoriesOf, eventKindsOf, fieldOf, isGradStudent, locationOf, orgLinker, regionsOf, spreadByHost, type Category, type EventKind, type Region } from '@core/lib/listings';
-import { DAY_LABELS, COURSE_HUES, clashesWith, coursesFromCatalog, hasCatalogCourse } from '@core/lib/timetable';
+import { COURSE_HUES, meetingsLabel, clashesWith, coursesFromCatalog, hasCatalogCourse } from '@core/lib/timetable';
 import { api } from '@core/api';
 import type { CatalogCourse } from '@core/api/types';
 import { formatTime } from '@core/lib/format';
@@ -400,7 +400,7 @@ function ClassesList({ dept, setDept }: { dept: string; setDept: (d: string) => 
             <div key={c.id} className="flex items-start gap-3 py-3">
               <span className="flex-1 min-w-0">
                 <span className="block text-[15px] font-semibold text-primary leading-snug">{c.code} <span className="font-medium text-ink-2">{c.title}</span></span>
-                <span className="block text-[12px] text-ink-3 mt-0.5">{c.meetings.length ? c.meetings.map((m) => `${DAY_LABELS[m.day]} ${m.start}–${m.end}`).join(' · ') : t('시간 미정')}{c.location ? ` · ${c.location}` : ''}</span>
+                <span className="block text-[12px] text-ink-3 mt-0.5">{c.meetings.length ? meetingsLabel(c.meetings) : t('시간 미정')}{c.location ? ` · ${c.location}` : ''}</span>
                 {(c.instructor || c.units) && <span className="block text-[12px] text-ink-3 truncate">{[c.instructor, c.units ? (en ? `${c.units} units` : `${c.units}학점`) : ''].filter(Boolean).join(' · ')}</span>}
                 {(c.syllabusUrl || c.url) && <a href={c.syllabusUrl ?? c.url} target="_blank" rel="noreferrer" className="text-[12px] font-semibold text-primary underline">{c.syllabusUrl ? t('실라버스') : t('과목 정보')}</a>}
                 <WatchSeatsButton course={c} className="mt-1.5 flex w-fit" />
