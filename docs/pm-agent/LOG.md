@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-25 15:18 UTC (버클리 일 08:18) · 초점: 일요일 아침 식당 + 내일 수강신청
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄: /discover, /dining, /academic-calendar (v2·classic). 식당 “Bear Market, The Den open”, Café 3 “Opens 11 AM · Brunch”, 체육관 14% Quiet, 학사력 “Phase 1 enrollment begins · Mon, Oct 26 · D-1” 정상.
+- 물어봄: 내일 수강신청 시작(D-1)이 Discover 에 안 보임 — 2일 안 학사 일정 띠를 넣을지 (QUESTIONS.md).
+- 고친 것 없음.
+
 ## 2026-10-25 12:18 UTC (버클리 일 05:18) · 초점: 예시 없는 실제 학생 — 시간표·Me·채팅
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄(예시 뺀 응답, v2·classic): 시간표 “Sun · No classes today · The rest of today is yours”, 친구 공강 칸은 친구가 없으면 안 나옴. Me 는 학사 일정(D-1 수강신청 시작 등)·내 시간표로 채워져 비어 보이지 않음.
