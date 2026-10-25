@@ -1148,7 +1148,7 @@ export const en: Record<string, string> = {
   '공강에 할 일 찾기': 'Find something for the free period',
   '팀': 'Teams',
   '혼밥 싫을 때, 커피 한 잔, 산책 30분 — 얼굴보다 활동이 먼저 보여요.': 'Don\'t want to eat alone, a coffee, a 30-minute walk — activities first, faces second.',
-  '이 시간에 열린 활동이 없어요': 'Nothing open in this window',
+  '이 시간에 열린 활동이 없어요': 'No hangouts open right now — start one?',
   '시간 범위를 넓히거나 직접 열어보세요. 30분 뒤 밥 한 끼도 충분해요.': 'Widen the time range or open one yourself. Lunch in 30 minutes is enough.',
   '승인제 활동은 승인 전까지 대략적인 위치만 보여요.': 'Approval-based activities show only an approximate location until you\'re approved.',
   '예정된 활동이 없어요': 'No upcoming activities',

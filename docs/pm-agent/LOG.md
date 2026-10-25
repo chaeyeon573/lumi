@@ -2,6 +2,14 @@
 
 최신이 위.
 
+## 2026-10-25 09:17 UTC (버클리 일 02:17) · 초점: 예시가 안 보이는 실제 학생의 주말 화면
+- ⚠️ 지난 실행(06:17 UTC)은 시작 직후 명령 실행 권한 확인이 응답하지 않아(자동 판정 오류) 화면 찍기·테스트·커밋·push 를 못 했다. 그때 LOG 도 못 남겨 여기 적는다. 고친 것·라이브 쓰기 없음.
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 방법: 화면 찍기 스크립트가 /api/bootstrap 응답에서 예시 사람·예시 모임·예시 글·예시 카풀을 빼고 보여 준다(실제 학생 계정과 같은 모양, 작업 폴더 empty.mjs NO_SAMPLES).
+- 찍어 봄(v2·classic): Discover Now — 식당·체육관 카드 + “Spontaneous Hangouts” 빈 칸. Activities — 오늘 1(해커톤)·내일 24(학교 행사). People — “Students from your campus show up here · Bring your floor or your class along · Invite friends”. 빈 화면들이 다 다음 행동(모임 열기·친구 초대)으로 이어져 괜찮다.
+- 고침: 즉석 모임 빈 칸 문구 “Nothing open in this window” — ‘window’ 가 무슨 뜻인지 모호 → “No hangouts open right now — start one?” + Instant meetup (en.ts).
+- 확인: tsc, 테스트 226 통과, v2·classic.
+
 ## 2026-10-25 03:17 UTC (버클리 토 20:17) · 초점: 토요일 저녁 Discover
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음. 테스트 226 통과(이 시각에도).
 - 찍어 봄: /discover, Activities 탭 (v2·classic). 식당 “Café 3, Clark Kerr +4 open · Halal Beef Fajitas”, 체육관 “Closed · Today 8 AM–6 PM”(토 8–6 맞음), “No classes today”.
