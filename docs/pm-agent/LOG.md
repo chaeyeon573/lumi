@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-10-25 21:17 UTC (버클리 일 14:17) · 초점: 좌석 알림 화면 (/seats)
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음(알림 안 걸음).
+- 찍어 봄: /seats (v2·classic) — “No classes watched yet · Watch a Spring 2027 class from Timetable › Add class · Find a class”. Find a class 를 누르면 시간표 수업 추가가 열리고 Spring 2027 이 이미 골라져 있다. 목록 시각도 어제 수정대로 “Tue 2 PM–3:29 PM”. 수업마다 Watch seats 버튼. 흐름 정상.
+- 고친 것 없음.
+
 ## 2026-10-25 18:17 UTC (버클리 일 11:17) · 초점: 수강신청 전날 — 수업 찾기·좌석 알림 직전까지
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음(Watch seats 안 누름).
 - 찍어 봄: 시간표 › + Class › Spring 2027 › “CS 61B” 검색 (v2·classic). 결과 “CS 61B Data Structures · Dwinelle 155 · Manuel A Sabin · Course info · Watch seats” 정상.
