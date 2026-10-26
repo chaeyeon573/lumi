@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-26 06:21 UTC (버클리 일 23:21) · 초점: 그리스 단체 상세 → ⚠️ 내 10/22 수정의 잘못 발견·수정
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로(그래서 라이브에는 영향 없었음). 라이브에 쓴 것 없음.
+- 발견: 진짜 단체 Tri Delta(og_berkeley_delta_delta_delta) 상세가 “SAMPLE · Sample club — made up…” 이고 인증 배지가 빠져 있었다. 원인은 10/22 내가 만든 sampleorgs.ts — 시드의 organizations 목록에 학교 동아리 목록(catalog, 1,500여 개 oc_·og_)도 섞여 있는데 그걸 다 ‘예시’로 잡았다. 그때 o_band 만 확인하고 진짜 동아리를 확인하지 않았다. 배포 전이라 학생에게 보인 적은 없다.
+- 고침: 서버(server/samples.ts)와 같은 규칙 — catalog 에 있는 id 는 뺀다. 이제 예시는 시드 7개(o_band·o_stat·o_ailab·o_startup·o_run·o_sorority·o_frat)뿐. 앱 목록이 서버 목록과 같고 oc_/og_ 가 없다는 테스트 추가. Tri Delta 는 다시 “Officially verified”, o_band 는 SAMPLE (v2·classic).
+- 확인: tsc, 서버 타입, 테스트 227 통과.
+
 ## 2026-10-26 03:18 UTC (실행 05:57, 버클리 일 22:57) · 초점: Campus › Clubs › Greek
 - 작업 프로세스가 재시작돼 이번 실행이 2시간 39분 늦게 시작됐다(그 사이 알림이 쌓였다가 한 건으로 옴). 저장소·스크립트는 그대로였다.
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.

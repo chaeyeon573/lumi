@@ -312,3 +312,9 @@ test('sample meetups are never placed in the small hours, and dining-hall meals 
     }
   }
 });
+
+test('the app marks only made-up clubs as SAMPLE — never a real club from the school catalog (oc_/og_)', async () => {
+  const { SAMPLE_ORG_IDS: appIds } = await import('@core/lib/sampleorgs');
+  assert.deepEqual([...appIds].sort(), [...SAMPLE_ORG_IDS].sort(), 'same rule as the server');
+  assert.ok([...appIds].every((id) => !/^o[cg]_/.test(id)));
+});
