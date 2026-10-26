@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-26 00:18 UTC (버클리 일 17:18) · 초점: 앱 밖 사람이 받는 공유 링크 (/r/카풀, /p/약속)
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄(로그인 안 한 새 방문자, v2·classic): /r/rd_sample_sfo_lily — “UC BERKELEY · RIDE SHARE · SAMPLE Ride to SFO · Wed Nov 25 · 9:30am–10am · 3 seats left · Lily · Splitting an Uber/Lyft · Students only… Sign in to join”. 픽업 장소·비용은 로그인 뒤에만 — 안전 안내 정상. /p/(없는 약속) — “This plan isn’t here · Open Lumi” 정상.
+- 메모: 카풀 시각만 “9:30am–10am” 소문자 표기(카풀 화면 전체가 같은 짧은 표기라 그대로).
+- 고친 것 없음.
+
 ## 2026-10-25 21:17 UTC (버클리 일 14:17) · 초점: 좌석 알림 화면 (/seats)
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음(알림 안 걸음).
 - 찍어 봄: /seats (v2·classic) — “No classes watched yet · Watch a Spring 2027 class from Timetable › Add class · Find a class”. Find a class 를 누르면 시간표 수업 추가가 열리고 Spring 2027 이 이미 골라져 있다. 목록 시각도 어제 수정대로 “Tue 2 PM–3:29 PM”. 수업마다 Watch seats 버튼. 흐름 정상.
