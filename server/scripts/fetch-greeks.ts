@@ -48,7 +48,8 @@ const COUNCIL_JOIN: Record<Council, string> = {
 
 interface Row { council: Council; name: string; websiteKey?: string; address?: string; kind: 'Fraternity' | 'Sorority' | 'Independent living group'; policy?: string; svsh?: string; intro?: string; url?: string; website?: string }
 
-const strip = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/&nbsp;|&amp;|&quot;|&#39;|&#8217;/g, (m) => ({ '&nbsp;': ' ', '&amp;': '&', '&quot;': '"', '&#39;': "'", '&#8217;': '’' }[m] ?? ' ')).replace(/\s+/g, ' ').trim();
+// 숫자 문자 참조(&#8212; 등)도 푼다 — 주소 칸의 “&#8212;”(=—, 주소 없음)가 “Chapter house: &#8212;.” 로 화면에 나왔다
+const strip = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/&nbsp;|&amp;|&quot;|&#39;|&#8217;/g, (m) => ({ '&nbsp;': ' ', '&amp;': '&', '&quot;': '"', '&#39;': "'", '&#8217;': '’' }[m] ?? ' ')).replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n))).replace(/\s+/g, ' ').trim();
 
 /** 카운슬별 <h2> 아래 첫 <table> 을 읽는다. 헤더 이름으로 열을 찾아 카운슬마다 열 수가 달라도 견딘다. */
 function parse(html: string): Row[] {
@@ -76,8 +77,9 @@ function parse(html: string): Row[] {
       const svsh = iSvsh >= 0 ? strip(cells[iSvsh] ?? '') : '';
       out.push({
         council, name, websiteKey,
-        address: addr && addr !== '—' && !/^n\/?a$/i.test(addr) ? addr : undefined,
-        kind: /sorority/i.test(kindText) ? 'Sorority' : 'Fraternity',
+        address: addr && !/^[—–-]$/.test(addr) && !/^n\/?a$/i.test(addr) ? addr : undefined,
+        // Panhellenic 챕터(Tri Delta 등)는 표에 ‘Fraternity’(women's fraternity)로 적혀 있지만 학생들에게는 소로리티다 — Stanford 와 같은 규칙
+        kind: /sorority/i.test(kindText) || council === 'Panhellenic' ? 'Sorority' : 'Fraternity',
         policy: policy && !/^~?see .* policy$/i.test(policy) ? policy.replace(/^~/, '') : undefined,
         svsh: svsh || undefined,
       });

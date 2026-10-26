@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-26 03:18 UTC (실행 05:57, 버클리 일 22:57) · 초점: Campus › Clubs › Greek
+- 작업 프로세스가 재시작돼 이번 실행이 2시간 39분 늦게 시작됐다(그 사이 알림이 쌓였다가 한 건으로 옴). 저장소·스크립트는 그대로였다.
+- 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄: Greek 칩(84개, v2). 
+- 고침(라이브 그리스 단체 86개 중): ① 25개 소개에 “Chapter house: &#8212;.” — 학교 표의 ‘주소 없음(—)’이 문자 참조 그대로 들어왔다. ② Panhellenic 챕터 12개 중 4개(Tri Delta 등)가 “Fraternity” — 표에는 women's fraternity 로 적혀 있지만 학생들에겐 소로리티. 가져오기 스크립트에서 숫자 문자 참조를 풀고 ‘—’ 주소는 비우며, Panhellenic 은 Sorority 로 (server/scripts/fetch-greeks.ts). 저장 없는 시험 모드(FETCH_DRY, 로컬 파일 저장소 — DATABASE_URL 없음)로 실제 학교 페이지를 다시 읽어 확인: 62개, 문자 참조 0, Panhellenic 12개 모두 Sorority. 라이브 데이터는 배포 뒤 매주 자동 가져오기(agent greeks:s_berkeley) 때 바뀐다.
+- 확인: 서버 타입, 테스트 226 통과.
+
 ## 2026-10-26 00:18 UTC (버클리 일 17:18) · 초점: 앱 밖 사람이 받는 공유 링크 (/r/카풀, /p/약속)
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄(로그인 안 한 새 방문자, v2·classic): /r/rd_sample_sfo_lily — “UC BERKELEY · RIDE SHARE · SAMPLE Ride to SFO · Wed Nov 25 · 9:30am–10am · 3 seats left · Lily · Splitting an Uber/Lyft · Students only… Sign in to join”. 픽업 장소·비용은 로그인 뒤에만 — 안전 안내 정상. /p/(없는 약속) — “This plan isn’t here · Open Lumi” 정상.
