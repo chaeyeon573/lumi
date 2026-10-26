@@ -70,7 +70,8 @@ export function statusNow(courses: Course[], day = todayIdx(), min = nowMin()): 
 const hhmmLabel = (min: number) => (lang === 'en' ? fmtClock(toHHMM(min)) : toHHMM(min));
 export function statusLabel(s: NowStatus): string {
   switch (s.kind) {
-    case 'in_class': return `${t('수업 중 · ')}${hhmmLabel(s.until)}${t('까지')}`;
+    // 버클리 수업은 “2:59 PM” 처럼 :59 에 끝나게 적힌다 — 다음 공강 “3 PM” 과 맞게 정시로
+    case 'in_class': return `${t('수업 중 · ')}${hhmmLabel(s.until % 60 === 59 ? s.until + 1 : s.until)}${t('까지')}`;
     case 'free': return s.until ? `${t('공강 · ')}${hhmmLabel(s.until)}${t('까지')}` : t('오늘 수업 없음');
     case 'done': return t('오늘 수업 끝');
     case 'none': return '';
