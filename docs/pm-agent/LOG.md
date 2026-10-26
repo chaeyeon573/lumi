@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-26 12:23 UTC (버클리 월 05:23) · 초점: 수강신청 첫날 아침
+- 사장님 답: 아직 없음. 배포 브랜치가 6fb846e 로 바뀜 — 다른 세션의 “Agent mail: 같은 실패는 하루 한 번” 커밋 1개뿐, 내 작업(claude/lumi-pm)은 여전히 배포 대기(160개). 그 커밋을 합침, 테스트 231 통과. 라이브에 쓴 것 없음.
+- 찍어 봄(v2·classic): Me ‘Key dates’ 와 학사력 — “Phase 1 enrollment begins · Mon, Oct 26 · Today” 정상(D-Day 표시는 ‘Today’). 시간표 “Mon · Free until 10 AM · Next: 10 AM CS 186”.
+- 고침: 같은 시각 Discover 맨 위는 “Next free 9 AM–10 AM”(회색 점) — 첫 수업 전 새벽인데 수업 중인 것처럼(9시는 시간표 칸 시작일 뿐). 지금 수업 중일 때만 ‘Next free’, 첫 수업 전이면 시간표와 같은 “Free until 10 AM” (DiscoverPage.tsx).
+- 확인: tsc, 테스트 231 통과, v2·classic.
+
 ## 2026-10-26 09:17 UTC (버클리 월 02:17) · 초점: 최근 수정들을 진짜 데이터로 다시 확인
 - 사장님 답: 아직 없음. 배포 브랜치 8bfd353 그대로. 라이브에 쓴 것 없음.
 - 확인(v2·classic, 화면 요소를 셈): 검색 › Orgs — 금색 인증 배지 63개(라이브 인증 66곳 − 예시 3곳과 일치), SAMPLE 4개(라이브 예시 동아리 4곳). Discover Teams·Activities 의 SAMPLE 은 예시 모임에만. 지난밤 고친 예시 동아리 판정이 진짜 동아리를 건드리지 않음을 숫자로 확인.
