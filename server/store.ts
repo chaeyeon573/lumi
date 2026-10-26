@@ -49,6 +49,8 @@ export interface Store {
   takeCode(email: string): Promise<EmailCode | null>;
   recordAgentRun(run: AgentRun): Promise<void>;
   listAgentRuns(limit?: number): Promise<AgentRun[]>;
+  /** 작업별 가장 최근 실행 하나씩 — 자주 도는 작업(좌석 알림 등)이 최근 N개를 채워도 드문 작업의 기록이 밀려나지 않게 */
+  latestAgentRuns(): Promise<AgentRun[]>;
   addFeedback(f: Feedback): Promise<void>;
   listFeedback(limit?: number): Promise<Feedback[]>;
   addAiLog(l: AiLog): Promise<void>;
@@ -196,6 +198,10 @@ export class PgStore implements Store {
     const { rows } = await this.pool.query<{ id: string; task: string; school_id: string | null; status: AgentRun['status']; started_at: Date; finished_at: Date; summary: Record<string, unknown> }>('SELECT * FROM agent_runs ORDER BY started_at DESC LIMIT $1', [limit]);
     return rows.map((r) => ({ id: r.id, task: r.task, schoolId: r.school_id ?? undefined, status: r.status, startedAt: new Date(r.started_at).toISOString(), finishedAt: new Date(r.finished_at).toISOString(), summary: r.summary }));
   }
+  async latestAgentRuns() {
+    const { rows } = await this.pool.query<{ id: string; task: string; school_id: string | null; status: AgentRun['status']; started_at: Date; finished_at: Date; summary: Record<string, unknown> }>('SELECT DISTINCT ON (task) * FROM agent_runs ORDER BY task, finished_at DESC');
+    return rows.map((r) => ({ id: r.id, task: r.task, schoolId: r.school_id ?? undefined, status: r.status, startedAt: new Date(r.started_at).toISOString(), finishedAt: new Date(r.finished_at).toISOString(), summary: r.summary }));
+  }
   async addFeedback(f: Feedback) {
     await this.pool.query('INSERT INTO feedback (id, user_id, school_id, page, message, created_at) VALUES ($1, $2, $3, $4, $5, $6)', [f.id, f.userId ?? null, f.schoolId ?? null, f.page, f.message, f.createdAt]);
   }
@@ -312,6 +318,7 @@ export class FileStore implements Store {
   async setCode(c: EmailCode) { this.data.codes = [...this.data.codes.filter((x) => x.email !== c.email), c]; await this.flush(); }
   async recordAgentRun(run: AgentRun) { (this.data.agentRuns ??= []).push(run); await this.flush(); }
   async listAgentRuns(limit = 50) { return [...(this.data.agentRuns ?? [])].reverse().slice(0, limit); }
+  async latestAgentRuns() { const m = new Map<string, AgentRun>(); for (const r of this.data.agentRuns ?? []) { const p = m.get(r.task); if (!p || p.finishedAt <= r.finishedAt) m.set(r.task, r); } return [...m.values()]; }
   async addFeedback(f: Feedback) { (this.data.feedback ??= []).push(f); await this.flush(); }
   async listFeedback(limit = 200) { return [...(this.data.feedback ?? [])].reverse().slice(0, limit); }
   async addAiLog(l: AiLog) { (this.data.aiLogs ??= []).push(l); await this.flush(); }
