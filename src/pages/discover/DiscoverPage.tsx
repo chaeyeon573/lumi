@@ -46,6 +46,8 @@ export function DiscoverPage() {
   const inClassNow = me.timetable.some((c) => c.day === today && toMin(c.start) <= nowMin() && nowMin() < toMin(c.end));
   const freeLater = !!myFree[0] && myFree[0].start > nowMin() && inClassNow;
   const nextFree = myFree[0] ? { start: freeLater ? myFree[0].start : nowMin(), end: myFree[0].end } : null;
+  // 다음 수업이 있는 공강이면 시간표와 같은 말 — “Free until 12 PM” (Discover 만 “Free 11:20 AM–12 PM” 이던 것)
+  const nowStatus = statusNow(me.timetable);
   // 오늘 수업이 하나도 없으면(주말 등) “Next free 9 AM–9 PM” 대신 “No classes today” — 시간표 화면과 같은 말
   const noClassToday = me.timetable.length > 0 && !me.timetable.some((c) => c.day === today);
   const tabs: [Tab, string][] = [['now', lang === 'en' ? 'Now' : 'Now'], ['activities', t('활동')], ['teams', t('팀')]];
@@ -59,7 +61,7 @@ export function DiscoverPage() {
         <div className="px-4 pt-3">
           <div className="h-12 rounded-full bg-surface-2 flex items-center pl-4 pr-1.5 gap-2">
             <span className={cn('h-2 w-2 rounded-full', freeLater && !noClassToday ? 'bg-ink-3' : 'bg-primary')} />
-            <span className="flex-1 text-[14px] text-primary font-medium truncate">{me.timetable.length === 0 ? t('시간표를 추가해보세요') : noClassToday && nextFree ? t('오늘 수업 없음') : nextFree && !freeLater && nextFree.start < myFree[0]!.start ? statusLabel(statusNow(me.timetable)) : nextFree ? `${lang === 'en' ? (freeLater ? 'Next free' : 'Free') : (freeLater ? '다음 공강' : '공강')} ${fmtBlock(nextFree)}` : t('오늘 수업 끝')}</span>
+            <span className="flex-1 text-[14px] text-primary font-medium truncate">{me.timetable.length === 0 ? t('시간표를 추가해보세요') : noClassToday && nextFree ? t('오늘 수업 없음') : nextFree && !freeLater && nowStatus.kind === 'free' && nowStatus.until ? statusLabel(nowStatus) : nextFree ? `${lang === 'en' ? (freeLater ? 'Next free' : 'Free') : (freeLater ? '다음 공강' : '공강')} ${fmtBlock(nextFree)}` : t('오늘 수업 끝')}</span>
             {/* 시간표가 없으면 '하루 종일 빔'으로 계산돼 "열기"가 떴다 — 문구("시간표를 추가해보세요")와 맞게 시간표로 */}
             <button onClick={() => (me.timetable.length && nextFree ? setSlot(nextFree) : nav('/timetable'))} className="h-9 px-4 rounded-full bg-primary text-white text-[13px] font-semibold flex items-center gap-1 press"><Plus size={14} />{me.timetable.length === 0 ? (lang === 'en' ? 'Add' : '추가') : nextFree ? t('열기') : t('시간표')}</button>
           </div>

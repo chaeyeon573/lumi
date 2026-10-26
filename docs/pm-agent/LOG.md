@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-26 18:17 UTC (버클리 월 11:17) · 초점: 수업 사이 공강의 맨 위 줄
+- 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로. 라이브에 쓴 것 없음.
+- 찍어 봄(v2·classic·한국어): 시간표 “Mon · Free until 12 PM · Next: 12 PM CS 61A”, 식당 점심, 체육관 62%.
+- 고침: 같은 순간 Discover 맨 위는 “Free 11:20 AM–12 PM” — 시간표와 말이 달랐다. 다음 수업이 있는 공강이면 시간표와 같은 “Free until 12 PM / 공강 · 12:00까지” (DiscoverPage.tsx). 오늘 수업이 끝난 뒤의 긴 공강은 지금처럼 “Free 3 PM–9 PM”.
+- 확인: tsc, 테스트 231 통과.
+
 ## 2026-10-26 15:19 UTC (버클리 월 08:19) · 초점: 월요일 아침 Discover
 - 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로(내 작업 161개 대기). 라이브에 쓴 것 없음.
 - 찍어 봄(v2·classic): 맨 위 “Free until 10 AM”(어제 수정 확인), 식당 “Café 3, Clark Kerr +8 open · Scrambled Eggs · breakfast”, 체육관 57% Moderate, “Free Right Now 6 friends”(남은 공강 “3h left”·“40m left”), 즉석 모임 10:35 AM 부터. 모두 정상.
