@@ -31,6 +31,7 @@ import { detectOrgsPlatform } from './detect';
 import { randomUUID } from 'node:crypto';
 import { createStore, type AgentRun } from '../store';
 import { sendMail } from '../mail';
+import { MAIL_LOG, logEntries, pickToMail, type MailLogDoc } from './notify-throttle';
 import { COURSE_SOURCES, resolveCourseSource, useImportCheckpoint } from '../sources/courses';
 import { fetchCourseLeaf } from '../sources/catalog';
 import { fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale } from '../sources/opportunities';
@@ -129,7 +130,7 @@ const due = (task: string, iso: string | undefined, hours: number) => { if (forc
 
 async function latestRuns(): Promise<Map<string, AgentRun>> {
   const m = new Map<string, AgentRun>();
-  for (const r of await store.listAgentRuns(500)) if (!m.has(r.task)) m.set(r.task, r);
+  for (const r of await store.latestAgentRuns()) m.set(r.task, r);
   return m;
 }
 
@@ -241,7 +242,12 @@ async function notify(results: AgentRun[]) {
   const line = (r: AgentRun) => `${r.status.toUpperCase().padEnd(8)} ${r.task.padEnd(22)} ${JSON.stringify(r.summary).slice(0, 400)}`;
   const report = results.map(line).join('\n');
   console.log(`[agent] done: ${results.length} tasks, ${bad.length} need attention\n${report}`);
-  if (NOTIFY && !DRY && bad.length) await sendMail(NOTIFY, `[AroundU agent] ${bad.length} item(s) need attention`, `${bad.map(line).join('\n')}\n\nAll tasks:\n${report}`);
+  if (!NOTIFY || DRY || !bad.length) return;
+  // 같은 실패는 하루 한 번, 메일은 한 시간에 한 통까지 (notify-throttle.ts)
+  const send = pickToMail(bad, await store.listDocs<MailLogDoc>(MAIL_LOG));
+  if (!send.length) { console.log(`[agent] mail skipped — ${bad.length} item(s) already reported or mailed within the hour`); return; }
+  await sendMail(NOTIFY, `[AroundU agent] ${send.length} item(s) need attention`, `${send.map(line).join('\n')}\n\nAll tasks:\n${report}`);
+  await store.putDocs(MAIL_LOG, logEntries(send));
 }
 
 async function runTask(t: string): Promise<AgentRun[]> {
@@ -293,7 +299,8 @@ if (process.env.AGENT_MODE === 'worker') {
       if (process.env.AGENT_ONCE === '1') continue;
     }
     if (process.env.AGENT_ONCE === '1') break;
-    if (!did) await new Promise((r) => setTimeout(r, idle));
+    // 할 일이 없으면 쉬고, 있었더라도 잠깐은 쉰다 — 실패한 작업이 곧바로 다시 '할 일'로 잡혀 쉬지 않고 도는 일이 없게
+    await new Promise((r) => setTimeout(r, did ? Math.min(idle, 30_000) : idle));
   }
   process.exit(0);
 }
