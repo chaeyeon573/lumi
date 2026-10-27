@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-27 18:17 UTC (버클리 화 11:17) · 초점: 계정 삭제 창
+- 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로. 라이브에 쓴 것 없음(삭제 안 누름, DELETE 입력 안 함).
+- 찍어 봄(v2·classic): Settings › Delete account → “Delete your account?” + 지워지는 것 목록(프로필·사진·시간표, 친구·팔로우, 글·댓글·메시지(1:1 은 양쪽), 내가 연 모임·약속·카풀은 취소되고 참가자에게 알림, 좌석·식당·체육관 알림, 로그인 이메일·세션·Ask Lumi 기록) + “Reports you filed stay… with your name removed” + “Type DELETE to confirm”. 개인정보처리방침과 같은 내용.
+- 확인(코드): 공용 데모 계정·예시 프로필은 서버가 403 으로 막고(account.ts `PROTECTED_IDS`), 창 안에 “This is a shared demo account — it can’t be deleted…” 를 보여 준다.
+- 고친 것 없음.
+
 ## 2026-10-27 15:22 UTC (버클리 화 08:22) · 초점: 신고가 들어간 뒤 — 관리자 쪽 (코드)
 - 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로. 라이브에 쓴 것 없음.
 - 코드로 확인(server/moderation.ts): 신고 저장(내용 사본 포함) → FEEDBACK_EMAIL 로 알림 메일(Resend) → 실제 계정 3명이 같은 글·댓글을 신고하면 작성자 빼고 숨김 → /admin/reports 에서 ADMIN_KEY 로 무시·삭제·정지. 정지는 지우지 않고 숨김, 해제하면 돌아온다. App Store 1.2(24시간 안 처리)를 염두에 둔 구조라 출시용으로 충분.
