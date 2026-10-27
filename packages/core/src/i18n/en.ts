@@ -147,6 +147,7 @@ export const en: Record<string, string> = {
   '신고가 접수되었어요. 검토 후 조치할게요.': 'Report received. We’ll review it and take action.',
   '신고하기': 'Report',
   '신고 내용은 상대에게 공개되지 않아요.': 'The person you report won’t see this.',
+  '채팅방 사람들은 신고한 걸 알 수 없어요.': 'No one in this chat will see that you reported it.',
   '추가 설명 (선택)': 'More details (optional)',
   '신고 제출': 'Submit report',
   '홈': 'Home',

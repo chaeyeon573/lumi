@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-27 09:17 UTC (버클리 화 02:17) · 초점: 신고 창
+- 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로. 라이브에 쓴 것 없음(Submit report 안 누름).
+- 찍어 봄(v2·classic): 1:1 신고 — 사칭/괴롭힘·혐오/성적 행동/스팸/기타 + 자세히(선택) + Submit report. 단톡 신고 — 괴롭힘·위협/성적 메시지/스팸·사기/기타. 이유를 고르기 전엔 보내기가 꺼져 있음. 정상.
+- 고침: 단톡방 신고 창 안내가 1:1 과 같은 “The person you report won’t see this.” — 단톡방엔 ‘그 사람’ 이 없다. 단톡방은 “No one in this chat will see that you reported it. / 채팅방 사람들은 신고한 걸 알 수 없어요.” (ReportSheet.tsx, en.ts).
+- 확인: tsc, 테스트 231 통과.
+
 ## 2026-10-27 06:18 UTC (버클리 월 23:18) · 초점: 여러 명 채팅방 (동아리·활동)
 - 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로. 라이브에 쓴 것 없음(보내기·신고·나가기 안 누름).
 - 찍어 봄(v2·classic): 동아리 단톡(cr_band) 메뉴 “Members Jordan, Sofia, Alex · Report chat”. 내가 연 활동 단톡(cr_mine) 메뉴는 멤버 목록뿐, 남이 연 활동 단톡(UGBA 105)은 멤버 + “Leave activity”.

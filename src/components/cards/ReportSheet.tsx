@@ -31,7 +31,8 @@ export function ReportSheet({ open, onClose, targetType, targetId }: { open: boo
   };
   return (
     <BottomSheet open={open} onClose={onClose} title={t('신고하기')}>
-      <p className="text-[13px] text-ink-3">{t('신고 내용은 상대에게 공개되지 않아요.')}</p>
+      {/* 단톡방 신고는 ‘상대’ 가 한 명이 아니다 */}
+      <p className="text-[13px] text-ink-3">{targetType === 'message' ? t('채팅방 사람들은 신고한 걸 알 수 없어요.') : t('신고 내용은 상대에게 공개되지 않아요.')}</p>
       <div className="mt-3 space-y-1.5">
         {REASONS[targetType].map((r) => (
           <button key={r} onClick={() => setReason(r)} className={cn('w-full text-left rounded-xl px-3.5 h-11 text-[14px] font-medium border', reason === r ? 'border-primary bg-primary-soft' : 'border-line')}>{r}</button>
