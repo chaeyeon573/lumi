@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-10-27 03:17 UTC (버클리 월 20:17) · 초점: 1:1 채팅방 — 입력칸·신고·차단 메뉴
+- 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로. 라이브에 쓴 것 없음(보내기·신고·차단 안 누름).
+- 찍어 봄(v2·classic): /chats/cr_junho — SAMPLE Jordan, 메시지 2개, “Type a message…” + 보내기. 오른쪽 위 ⋮ 메뉴 → “Report user · Block user” 정상. 비교용 Design 알약이 시각 줄(“Sun, Oct 25 5:57 PM”)을 가린다 — 10/17 질문과 같은 문제. “Bringing Hannah” 는 배포 대기 수정으로 바뀔 것.
+- 고친 것 없음.
+
 ## 2026-10-27 00:17 UTC (버클리 월 17:17) · 초점: 의견 보내기(Feedback) 창
 - 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로. 라이브에 쓴 것 없음(보내기 안 누름, /api/feedback 은 막혀 있음).
 - 찍어 봄(v2·classic): Feedback 알약 → “Tell us what you think · What did you look for and not find? What would make you open this again next week? Anything confusing?” + 입력칸 + Send. 질문이 30명 출시 반응 모으기에 맞다. Discover 맨 위 “Free 5:20 PM–9 PM”(수업 끝난 뒤 긴 공강), 시간표 칸 안에는 시각이 없어 :59 문제 없음.
