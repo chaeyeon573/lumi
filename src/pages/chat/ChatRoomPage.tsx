@@ -107,7 +107,8 @@ export function ChatRoomPage() {
           {other && <SheetItem icon={<Flag size={18} />} label={t('사용자 신고')} danger onClick={() => { setMenu(false); setReport(true); }} />}
           {other && <SheetItem icon={<Ban size={18} />} label={blocked ? t('차단 해제') : t('사용자 차단')} danger onClick={() => { setMenu(false); blocked ? run(() => api.relationships.unblock(v.me.id, other.id), t('차단을 해제했어요.')) : setBlockOpen(true); }} />}
           {activity && activity.hostId !== v.me.id && <SheetItem icon={<LogOut size={18} />} label={t('활동 나가기')} danger onClick={async () => { setMenu(false); await run(() => api.activities.cancel(activity.id, v.me.id), t('활동에서 나갔어요.')); nav('/chats?tab=activity'); }} />}
-          {!other && !activity && <SheetItem icon={<Flag size={18} />} label={t('채팅방 신고')} danger onClick={() => { setMenu(false); setReport(true); }} />}
+          {/* 활동 단톡방에도 신고 — 모임 채팅에서 괴롭힘이 있어도 이 메뉴엔 ‘나가기’ 뿐이었다 */}
+          {!other && <SheetItem icon={<Flag size={18} />} label={t('채팅방 신고')} danger onClick={() => { setMenu(false); setReport(true); }} />}
         </div>
       </BottomSheet>
       {other && <ReportSheet open={report} onClose={() => setReport(false)} targetType="user" targetId={other.id} />}

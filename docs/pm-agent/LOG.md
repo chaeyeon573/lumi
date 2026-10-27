@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-27 06:18 UTC (버클리 월 23:18) · 초점: 여러 명 채팅방 (동아리·활동)
+- 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로. 라이브에 쓴 것 없음(보내기·신고·나가기 안 누름).
+- 찍어 봄(v2·classic): 동아리 단톡(cr_band) 메뉴 “Members Jordan, Sofia, Alex · Report chat”. 내가 연 활동 단톡(cr_mine) 메뉴는 멤버 목록뿐, 남이 연 활동 단톡(UGBA 105)은 멤버 + “Leave activity”.
+- 고침(안전): 활동 단톡방에는 ‘채팅방 신고’가 없었다 — 모임 채팅에서 괴롭힘이 있어도 메뉴엔 나가기뿐. 1:1 이 아닌 모든 단톡방에 ‘Report chat’ (ChatRoomPage.tsx). 동아리 단톡과 같은 신고 창(message 신고)을 쓴다.
+- 메모: 동아리 단톡 공지 “Thursday 7pm” 은 배포 대기 수정(b08716d)으로 바뀔 것.
+- 확인: tsc, 테스트 231 통과.
+
 ## 2026-10-27 03:17 UTC (버클리 월 20:17) · 초점: 1:1 채팅방 — 입력칸·신고·차단 메뉴
 - 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로. 라이브에 쓴 것 없음(보내기·신고·차단 안 누름).
 - 찍어 봄(v2·classic): /chats/cr_junho — SAMPLE Jordan, 메시지 2개, “Type a message…” + 보내기. 오른쪽 위 ⋮ 메뉴 → “Report user · Block user” 정상. 비교용 Design 알약이 시각 줄(“Sun, Oct 25 5:57 PM”)을 가린다 — 10/17 질문과 같은 문제. “Bringing Hannah” 는 배포 대기 수정으로 바뀔 것.
