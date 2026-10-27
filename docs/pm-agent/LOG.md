@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-10-27 21:17 UTC (버클리 화 14:17) · 초점: 다시 로그인하는 화면
+- 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로. 라이브에 쓴 것 없음(코드 보내기 안 누름, send-code·login 은 막혀 있음).
+- 찍어 봄(로그인 안 한 방문자, v2·classic): /welcome 아래 “Have an account? Sign in” → 아래에서 올라오는 창 “Sign in with email · School email (you@school.edu) · Send code · We'll send a code to the school email you signed up with · Sign in”. 정상. 첫 화면 카드도 지금 날짜에 맞음(무료 음식 수 4PM 1건 + 이번 주 6, 마감 2일 남은 장학금).
+- 고친 것 없음.
+
 ## 2026-10-27 18:17 UTC (버클리 화 11:17) · 초점: 계정 삭제 창
 - 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로. 라이브에 쓴 것 없음(삭제 안 누름, DELETE 입력 안 함).
 - 찍어 봄(v2·classic): Settings › Delete account → “Delete your account?” + 지워지는 것 목록(프로필·사진·시간표, 친구·팔로우, 글·댓글·메시지(1:1 은 양쪽), 내가 연 모임·약속·카풀은 취소되고 참가자에게 알림, 좌석·식당·체육관 알림, 로그인 이메일·세션·Ask Lumi 기록) + “Reports you filed stay… with your name removed” + “Type DELETE to confirm”. 개인정보처리방침과 같은 내용.
