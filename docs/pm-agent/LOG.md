@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-10-27 00:17 UTC (버클리 월 17:17) · 초점: 의견 보내기(Feedback) 창
+- 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로. 라이브에 쓴 것 없음(보내기 안 누름, /api/feedback 은 막혀 있음).
+- 찍어 봄(v2·classic): Feedback 알약 → “Tell us what you think · What did you look for and not find? What would make you open this again next week? Anything confusing?” + 입력칸 + Send. 질문이 30명 출시 반응 모으기에 맞다. Discover 맨 위 “Free 5:20 PM–9 PM”(수업 끝난 뒤 긴 공강), 시간표 칸 안에는 시각이 없어 :59 문제 없음.
+- 고친 것 없음.
+
 ## 2026-10-26 21:18 UTC (버클리 월 14:18) · 초점: 수업 중일 때
 - 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로. 라이브에 쓴 것 없음.
 - 찍어 봄(v2·classic·한국어): Discover “Next free 3 PM–9 PM”(회색 점, 수업 중이라 맞음), 식당 점심, 체육관 68% Busy. 시간표 칸 창(CS 186) 정상.
