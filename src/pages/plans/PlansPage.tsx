@@ -51,7 +51,7 @@ export function PlansPage() {
     <button onClick={() => nav(`/activities/${a.id}`)} className="w-full flex items-center gap-3 px-3.5 py-3 text-left press">
       <span className="h-10 w-10 rounded-xl bg-surface-2 grid place-items-center text-[18px]">{a.courseName ? '📚' : CATEGORY_EMOJI[a.category]}</span>
       <span className="flex-1 min-w-0"><b className="text-[13px] block truncate">{a.title}</b><span className="text-[12px] text-ink-3">{formatDateTime(a.date, a.startTime)} · {a.place.name}</span></span>
-      {right ?? (a.hostId === me.id && <Tag className="h-5">{t('주최')}</Tag>)}
+      <span className="shrink-0 max-w-[40%] flex justify-end">{right ?? (a.hostId === me.id && <Tag className="h-5">{t('주최')}</Tag>)}</span>
     </button>
   );
   // 빈 칸은 숨긴다 — '0 · 받은 초대가 없어요' 같은 줄이 다섯 개 쌓이면 빈 앱처럼 보인다. 확정된 약속(keep)만 비어도 남겨 다음 할 일을 알려 준다
@@ -81,7 +81,7 @@ export function PlansPage() {
           {friendReqs.map((r) => { const u = v.userById(r.fromId); return u && (
             <div key={r.id} className="flex items-center gap-3 px-3.5 py-3"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} /><span className="flex-1 text-[13px]"><b>{u.nickname}</b>{t('님의 친구 요청')}</span><Button size="sm" variant="outline" onClick={() => run(() => api.relationships.respondFriendRequest(r.id, false))}>{t('거절')}</Button><Button size="sm" onClick={() => run(() => api.relationships.respondFriendRequest(r.id, true), t('친구가 되었어요!'))}>{t('수락')}</Button></div>); })}
           {proposalsIn.map((p) => { const u = v.userById(p.fromId); return u && (
-            <div key={p.id} className="flex items-center gap-3 px-3.5 py-3"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} /><span className="flex-1 min-w-0 text-[13px]"><b>{u.nickname}</b> · {CATEGORY_EMOJI[p.category]} {proposalWhen(p.when)}<span className="block text-[12px] text-ink-3 truncate">{p.message}</span></span><Button size="sm" variant="outline" onClick={() => run(() => api.proposals.respond(p.id, false))}>{t('이번에는 어려워요')}</Button><Button size="sm" onClick={() => run(() => api.proposals.respond(p.id, true), t('제안을 수락했어요.'))}>{t('수락')}</Button></div>); })}
+            <div key={p.id} className="px-3.5 py-3"><div className="flex items-center gap-3"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} /><span className="flex-1 min-w-0 text-[13px]"><b>{u.nickname}</b> · {CATEGORY_EMOJI[p.category]} {proposalWhen(p.when)}<span className="block text-[12px] text-ink-3 truncate">{p.message}</span></span></div><div className="flex justify-end gap-2 mt-2"><Button size="sm" variant="outline" onClick={() => run(() => api.proposals.respond(p.id, false))}>{t('이번에는 어려워요')}</Button><Button size="sm" onClick={() => run(() => api.proposals.respond(p.id, true), t('제안을 수락했어요.'))}>{t('수락')}</Button></div></div>); })}
           {invites.map((a) => <Row key={a.id} a={a} right={<Tag tone="accent" className="h-5">{t('초대')}</Tag>} />)}
         </Section>
         <Section icon={<Clock size={15} className="text-gold" />} title={t('참가 신청 대기')} count={pendingActs.filter((a) => !isTeamActivity(a)).length} empty={t('승인을 기다리는 신청이 없어요.')}>
@@ -103,7 +103,7 @@ export function PlansPage() {
           {teamPending.map((a) => <Row key={a.id} a={a} right={<Tag tone="gold" className="h-5">{t('대기')}</Tag>} />)}
         </Section>
         <Section icon={<BookOpen size={15} className="text-primary" />} title={t('Study Crew 일정')} count={crews.length} empty={t('참여 중인 Study Crew가 없어요. 시간표에서 수업을 누르면 만들 수 있어요.')}>
-          {crews.map((a) => <Row key={a.id} a={a} right={<Tag tone="primary" className="h-5">{a.courseName}</Tag>} />)}
+          {crews.map((a) => <Row key={a.id} a={a} right={<Tag tone="primary" className="h-5 max-w-full"><span className="truncate">{a.courseName}</span></Tag>} />)}
         </Section>
         <div className="flex gap-2"><Button full variant="outline" onClick={() => nav('/timetable')}>{t('내 시간표')}</Button><Button full onClick={() => nav('/discover')}>{t('활동 찾기')}</Button></div>
       </div>

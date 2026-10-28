@@ -56,7 +56,7 @@ export function ActivityCard({ activity: a, variant = 'feed', className, badge }
           <div className="text-[14px] font-bold truncate mt-0.5">{a.sample && <SampleTag />}{a.title}</div>
           <div className="text-[12px] text-ink-3 mt-0.5 flex items-center gap-1"><Clock size={11} />{formatDateTime(a.date, a.startTime)}</div>
           <div className="text-[12px] text-ink-3 flex items-center gap-1 truncate"><MapPin size={11} />{a.place.name}</div>
-          <div className="text-[12px] text-ink-2 mt-1 flex items-center gap-2"><span className="flex items-center gap-1"><Users size={11} />{a.capacity >= 999 ? `${count}${t('명 참가')}` : `${count}/${a.capacity}`}</span><span>{name}</span></div>
+          <div className="text-[12px] text-ink-2 mt-1 flex items-center gap-2 min-w-0"><span className="flex items-center gap-1 shrink-0 whitespace-nowrap"><Users size={11} />{a.capacity >= 999 ? `${count}${t('명 참가')}` : `${count}/${a.capacity}`}</span><span className="truncate">{name}</span></div>
         </div>
       </button>
     );
