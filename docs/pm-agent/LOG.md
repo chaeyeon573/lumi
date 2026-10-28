@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-10-28 00:17 UTC (버클리 화 17:17) · 초점: 배포 대기분이 실제로 배포될 수 있는지
+- 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로. 라이브에 쓴 것 없음.
+- 확인: 배포 브랜치 대비 claude/lumi-pm 은 파일 80개(+3,687 / −321). 합친 상태에서 앱 타입(tsc)·서버 타입·테스트 231·프로덕션 빌드(vite build, remote 모드) 모두 통과. 메인 번들 1,229.9 kB(배포 브랜치 1,233.3 kB — 오히려 3 kB 작음, Ask Lumi 화면을 뺀 영향). 충돌·빌드 실패 없음 — 사장님이 합치면 그대로 배포 가능한 상태.
+- 고친 것 없음.
+
 ## 2026-10-27 21:17 UTC (버클리 화 14:17) · 초점: 다시 로그인하는 화면
 - 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로. 라이브에 쓴 것 없음(코드 보내기 안 누름, send-code·login 은 막혀 있음).
 - 찍어 봄(로그인 안 한 방문자, v2·classic): /welcome 아래 “Have an account? Sign in” → 아래에서 올라오는 창 “Sign in with email · School email (you@school.edu) · Send code · We'll send a code to the school email you signed up with · Sign in”. 정상. 첫 화면 카드도 지금 날짜에 맞음(무료 음식 수 4PM 1건 + 이번 주 6, 마감 2일 남은 장학금).
