@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-28 03:40 UTC · 🚀 배포 — 사장님 허락으로 claude/lumi-pm → claude/friendly-euler-emuo1f
+- 사장님 채팅 “push허락함요” (이번 한 번). 합친 상태에서 앱 타입·서버 타입·테스트 232·프로덕션 빌드 통과 확인 후 fast-forward push: 6fb846e..1542420 (175커밋, 강제 push 아님).
+- Railway 가 4분 30초 뒤 새 번들(index-Chee_vtk.js, 로컬 빌드와 같은 이름)로 바뀜.
+- 라이브 확인(쓰기 전부 막은 스크립트, v2): 예시 동아리 o_band “SAMPLE · Sample club”, 진짜 Tri Delta “Officially verified”(SAMPLE 아님), 채팅 “Bringing a friend”(예전 Hannah), 예시 제안 “Fri, Oct 30 · Algorithms study session that evening?”(예전 9/25), /ask → Discover, Teams “See all hackathons & competitions”. 오늘 밤 즉석 모임에 식당 마감 뒤 “Crossroads 9:05 PM” 없음.
+- 아직 데이터 쪽은 다음 가져오기 때 바뀜: 그리스 단체 “Fraternity/&#8212;”(주 1회), 인턴 중복·주택 co-op(12시간), 고등학생 해커톤(Devpost 다음 회차).
+
 ## 2026-10-28 03:17 UTC (버클리 화 20:17) · 초점: 새로 들어온 공고·행사 훑기 (매일)
 - 사장님 답: 아직 없음. 배포 브랜치 6fb846e 그대로. 라이브에 쓴 것 없음.
 - 셈: 버클리 학생이 보는 공고 725개(인턴 317·행사 217·해커톤 110·장학 41·연구 38). 10/26 이후 새로 55개(행사 42·해커톤 6·인턴 6·연구 1). 새 것 중 다른 학교 전용·고등학생 대상·빈 제목 없음. 새 해커톤 6개 모두 온라인.
