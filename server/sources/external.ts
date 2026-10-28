@@ -145,7 +145,13 @@ export async function fetchInternships(): Promise<Opportunity[]> {
     await new Promise((res) => setTimeout(res, 150));
   }
   if (failed > boards.length / 2) throw new Error(`${failed}/${boards.length} job boards failed`);
-  return out;
+  return dedupeJobs(out);
+}
+
+/** 같은 회사가 같은 제목·같은 근무지로 자리를 여러 개 올리면(Samsara “… Intern - Phoenix” ×4) 목록에는 하나만 */
+export function dedupeJobs<T extends Pick<Opportunity, 'host' | 'title' | 'location'>>(list: T[]): T[] {
+  const seen = new Set<string>();
+  return list.filter((o) => { const k = `${o.host}|${o.title.trim().toLowerCase()}|${(o.location ?? '').toLowerCase()}`; if (seen.has(k)) return false; seen.add(k); return true; });
 }
 
 /** 자동으로 가져온 공고 중 이미 다른 출처(직접 확인한 CSV 등)에 같은 제목이 있는 것은 뺀다 — 같은 해커톤이 두 줄로 보였다 (Technica 2026) */

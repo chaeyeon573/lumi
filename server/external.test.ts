@@ -4,7 +4,7 @@
  */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { dropDuplicateTitles, isInternTitle, youthOnly } from './sources/external';
+import { dedupeJobs, dropDuplicateTitles, isInternTitle, youthOnly } from './sources/external';
 
 test('imported items that repeat a curated title are dropped; their own earlier copies are not counted', () => {
   const existing = [
@@ -46,4 +46,10 @@ test('hackathons whose page says high school only (ages up to 18) are recognised
 test('internship titles: interns and student co-ops in; staff jobs that mention a housing co-op out', () => {
   for (const t of ['Software Engineering Intern - Summer 2027', 'Winter 2027 Propulsion Engineer Co-op', 'Firmware Engineer Co-Op', 'Summer Analyst', 'PhD Machine Learning Software Engineer Intern (Summer 2027)']) assert.ok(isInternTitle(t), t);
   for (const t of ['Staff Credit Policy Analyst – Condo, Co-op & Project Review', 'Senior Manager, Co-op Programs', 'Internal Tools Engineer', 'High School Intern Program']) assert.ok(!isInternTitle(t), t);
+});
+
+test('one company posting the same internship title in the same city several times shows once', () => {
+  const j = (title: string, location: string, host = 'Samsara') => ({ host, title, location });
+  const out = dedupeJobs([j('ADR Intern - Phoenix', 'Phoenix, AZ'), j('ADR Intern - Phoenix', 'Phoenix, AZ'), j('ADR Intern - Phoenix ', 'phoenix, az'), j('ADR Intern - Atlanta', 'Atlanta, GA'), j('ADR Intern - Phoenix', 'Phoenix, AZ', 'Other Co')]);
+  assert.equal(out.length, 3);
 });
