@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Users, CalendarCheck, Send, ChevronRight, Clock, Mail, Heart, BookOpen, Puzzle, Vote } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Avatar, Button, Tag, CardSkeleton, ErrorState } from '@/components/ui';
+import { SampleTag } from '@/components/ui/SampleTag';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
@@ -50,7 +51,7 @@ export function PlansPage() {
   const Row = ({ a, right }: { a: Activity; right?: React.ReactNode }) => (
     <button onClick={() => nav(`/activities/${a.id}`)} className="w-full flex items-center gap-3 px-3.5 py-3 text-left press">
       <span className="h-10 w-10 rounded-xl bg-surface-2 grid place-items-center text-[18px]">{a.courseName ? '📚' : CATEGORY_EMOJI[a.category]}</span>
-      <span className="flex-1 min-w-0"><b className="text-[13px] block truncate">{a.title}</b><span className="text-[12px] text-ink-3">{formatDateTime(a.date, a.startTime)} · {a.place.name}</span></span>
+      <span className="flex-1 min-w-0"><b className="text-[13px] block truncate">{a.sample && <SampleTag />}{a.title}</b><span className="text-[12px] text-ink-3">{formatDateTime(a.date, a.startTime)} · {a.place.name}</span></span>
       <span className="shrink-0 max-w-[40%] flex justify-end">{right ?? (a.hostId === me.id && <Tag className="h-5">{t('주최')}</Tag>)}</span>
     </button>
   );
@@ -72,16 +73,16 @@ export function PlansPage() {
             <div className="card divide-y divide-line">{openPolls.map((p) => { const h = v.userById(p.hostId); const voted = !!p.votes[me.id]; const n = Object.keys(p.votes).length; return (
               <button key={p.id} onClick={() => nav(p.link ? `/p/${p.id}` : `/together/${p.id}`)} className="w-full flex items-center gap-3 px-3.5 py-3 text-left press">
                 <span className="h-10 w-10 rounded-xl bg-heart-soft text-heart grid place-items-center"><Vote size={18} /></span>
-                <span className="flex-1 min-w-0"><b className="text-[13px] block truncate">{p.title}</b><span className="text-[12px] text-ink-3">{p.hostId === me.id ? t('내가 주최') : h?.nickname} · {p.link ? (lang === 'en' ? `link · ${p.link.responses.length} answered` : `링크 · ${p.link.responses.length}명 답함`) : lang === 'en' ? `${n}/${p.inviteeIds.length + 1} voted · ${p.options.length} options` : `${n}/${p.inviteeIds.length + 1}명 투표 · 후보 ${p.options.length}개`}</span></span>
+                <span className="flex-1 min-w-0"><b className="text-[13px] block truncate">{h?.sample && <SampleTag />}{p.title}</b><span className="text-[12px] text-ink-3">{p.hostId === me.id ? t('내가 주최') : h?.nickname} · {p.link ? (lang === 'en' ? `link · ${p.link.responses.length} answered` : `링크 · ${p.link.responses.length}명 답함`) : lang === 'en' ? `${n}/${p.inviteeIds.length + 1} voted · ${p.options.length} options` : `${n}/${p.inviteeIds.length + 1}명 투표 · 후보 ${p.options.length}개`}</span></span>
                 {p.hostId === me.id ? <Tag tone="primary" className="h-5">{t('확정하기')}</Tag> : voted ? <Tag tone="mint" className="h-5">{t('투표 완료')}</Tag> : <Tag tone="accent" className="h-5">{t('투표하기')}</Tag>}
               </button>); })}</div>
           )}
         </section>
         <Section icon={<Mail size={15} className="text-accent" />} title={t('받은 초대')} count={invites.length + proposalsIn.length + friendReqs.length} empty={t('받은 초대가 없어요.')}>
           {friendReqs.map((r) => { const u = v.userById(r.fromId); return u && (
-            <div key={r.id} className="flex items-center gap-3 px-3.5 py-3"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} /><span className="flex-1 text-[13px]"><b>{u.nickname}</b>{t('님의 친구 요청')}</span><Button size="sm" variant="outline" onClick={() => run(() => api.relationships.respondFriendRequest(r.id, false))}>{t('거절')}</Button><Button size="sm" onClick={() => run(() => api.relationships.respondFriendRequest(r.id, true), t('친구가 되었어요!'))}>{t('수락')}</Button></div>); })}
+            <div key={r.id} className="flex items-center gap-3 px-3.5 py-3"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} /><span className="flex-1 text-[13px]">{u.sample && <SampleTag />}<b>{u.nickname}</b>{t('님의 친구 요청')}</span><Button size="sm" variant="outline" onClick={() => run(() => api.relationships.respondFriendRequest(r.id, false))}>{t('거절')}</Button><Button size="sm" onClick={() => run(() => api.relationships.respondFriendRequest(r.id, true), t('친구가 되었어요!'))}>{t('수락')}</Button></div>); })}
           {proposalsIn.map((p) => { const u = v.userById(p.fromId); return u && (
-            <div key={p.id} className="px-3.5 py-3"><div className="flex items-center gap-3"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} /><span className="flex-1 min-w-0 text-[13px]"><b>{u.nickname}</b> · {CATEGORY_EMOJI[p.category]} {proposalWhen(p.when)}<span className="block text-[12px] text-ink-3 truncate">{p.message}</span></span></div><div className="flex justify-end gap-2 mt-2"><Button size="sm" variant="outline" onClick={() => run(() => api.proposals.respond(p.id, false))}>{t('이번에는 어려워요')}</Button><Button size="sm" onClick={() => run(() => api.proposals.respond(p.id, true), t('제안을 수락했어요.'))}>{t('수락')}</Button></div></div>); })}
+            <div key={p.id} className="px-3.5 py-3"><div className="flex items-center gap-3"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} /><span className="flex-1 min-w-0 text-[13px]">{u.sample && <SampleTag />}<b>{u.nickname}</b> · {CATEGORY_EMOJI[p.category]} {proposalWhen(p.when)}<span className="block text-[12px] text-ink-3 truncate">{p.message}</span></span></div><div className="flex justify-end gap-2 mt-2"><Button size="sm" variant="outline" onClick={() => run(() => api.proposals.respond(p.id, false))}>{t('이번에는 어려워요')}</Button><Button size="sm" onClick={() => run(() => api.proposals.respond(p.id, true), t('제안을 수락했어요.'))}>{t('수락')}</Button></div></div>); })}
           {invites.map((a) => <Row key={a.id} a={a} right={<Tag tone="accent" className="h-5">{t('초대')}</Tag>} />)}
         </Section>
         <Section icon={<Clock size={15} className="text-gold" />} title={t('참가 신청 대기')} count={pendingActs.filter((a) => !isTeamActivity(a)).length} empty={t('승인을 기다리는 신청이 없어요.')}>
@@ -103,7 +104,8 @@ export function PlansPage() {
           {teamPending.map((a) => <Row key={a.id} a={a} right={<Tag tone="gold" className="h-5">{t('대기')}</Tag>} />)}
         </Section>
         <Section icon={<BookOpen size={15} className="text-primary" />} title={t('Study Crew 일정')} count={crews.length} empty={t('참여 중인 Study Crew가 없어요. 시간표에서 수업을 누르면 만들 수 있어요.')}>
-          {crews.map((a) => <Row key={a.id} a={a} right={<Tag tone="primary" className="h-5 max-w-full"><span className="truncate">{a.courseName}</span></Tag>} />)}
+          {/* 제목이 이미 수업 번호로 시작하면(‘UGBA 105 project crew’) 같은 말을 또 붙이지 않는다 — 제목이 잘린다 */}
+          {crews.map((a) => <Row key={a.id} a={a} right={a.title.startsWith(a.courseName!.split(' ').slice(0, 2).join(' ')) ? <span /> : <Tag tone="primary" className="h-5 max-w-full"><span className="truncate">{a.courseName}</span></Tag>} />)}
         </Section>
         <div className="flex gap-2"><Button full variant="outline" onClick={() => nav('/timetable')}>{t('내 시간표')}</Button><Button full onClick={() => nav('/discover')}>{t('활동 찾기')}</Button></div>
       </div>
