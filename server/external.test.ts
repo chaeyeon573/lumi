@@ -4,7 +4,7 @@
  */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { dedupeJobs, dropDuplicateTitles, isInternTitle, youthOnly } from './sources/external';
+import { dedupeJobs, dropDuplicateTitles, isChallengePage, isInternTitle, youthOnly } from './sources/external';
 
 test('imported items that repeat a curated title are dropped; their own earlier copies are not counted', () => {
   const existing = [
@@ -52,4 +52,9 @@ test('one company posting the same internship title in the same city several tim
   const j = (title: string, location: string, host = 'Samsara') => ({ host, title, location });
   const out = dedupeJobs([j('ADR Intern - Phoenix', 'Phoenix, AZ'), j('ADR Intern - Phoenix', 'Phoenix, AZ'), j('ADR Intern - Phoenix ', 'phoenix, az'), j('ADR Intern - Atlanta', 'Atlanta, GA'), j('ADR Intern - Phoenix', 'Phoenix, AZ', 'Other Co')]);
   assert.equal(out.length, 3);
+});
+
+test('a Cloudflare check page stops the youth check for this run; an ordinary page without the box does not', () => {
+  assert.ok(isChallengePage('<title>Just a moment...</title><script src="/cdn-cgi/challenge-platform/h/b"></script>'));
+  assert.ok(!isChallengePage('<html><h1>My Hackathon</h1><p>Prizes</p></html>'));
 });

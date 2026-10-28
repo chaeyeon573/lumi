@@ -43,6 +43,8 @@ export function youthOnly(page: string): boolean {
   // 'High school and college students' 처럼 대학생도 되는 것은 남긴다 — '…만' 일 때만
   return /(high|middle|secondary) school(ers| students)? only|only (open to )?(high|middle|secondary) school|k-12 (students )?only/i.test(block);
 }
+/** Cloudflare 등 사람 확인 화면 */
+export const isChallengePage = (page: string) => /just a moment|cf-chl|challenge-platform|attention required/i.test(page);
 const youthChecked = new Map<number, boolean>(); // 서버가 켜져 있는 동안 해커톤마다 한 번만 연다
 /** 페이지를 못 열면(Cloudflare 'Just a moment' 등) 지금처럼 남기고, 이번 가져오기에서는 더 열지 않는다 — 다음 때 다시 본다 */
 async function isYouthOnly(h: DevpostHackathon, state: { blocked: boolean }): Promise<boolean> {
@@ -52,7 +54,10 @@ async function isYouthOnly(h: DevpostHackathon, state: { blocked: boolean }): Pr
     await new Promise((res) => setTimeout(res, 1500)); // 천천히 — 몰아서 열면 막힌다
     const r = await fetch(h.url, { headers: { 'user-agent': UA['user-agent'], accept: 'text/html' } });
     const page = r.ok ? await r.text() : '';
-    if (!/who can participate/i.test(page)) { state.blocked = true; return false; }
+    // 진짜로 막혔을 때(응답 실패·Cloudflare 확인 화면)만 이번 회차를 멈춘다. 형식이 다른 페이지 하나 때문에
+    // 나머지 100여 개 확인을 다 건너뛰어 고등학생 해커톤이 남았다(10/28) — 그 하나만 ‘모름’으로 넘어간다
+    if (!r.ok || isChallengePage(page)) { state.blocked = true; return false; }
+    if (!/who can participate/i.test(page)) { youthChecked.set(h.id, false); return false; }
     const v = youthOnly(page);
     youthChecked.set(h.id, v);
     return v;
