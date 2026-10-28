@@ -8,6 +8,7 @@ import { Clock, MapPin, Users, Ticket, Lock, Share2, Flag, MoreHorizontal, Penci
 import { TopBar } from '@/components/layout/TopBar';
 import { Avatar, Button, Cover, Tag, VisibilityTag, BottomSheet, Dialog, Input, EmptyState } from '@/components/ui';
 import { SampleTag } from '@/components/ui/SampleTag';
+import { isSampleOrg } from '@core/lib/sampleorgs';
 import { JoinButton } from '@/components/cards/JoinButton';
 import { SheetItem } from '@/components/cards/PostCard';
 import { ReportSheet } from '@/components/cards/ReportSheet';
@@ -38,6 +39,8 @@ export function ActivityDetailPage() {
   const org = a.orgId ? v.orgById(a.orgId) : undefined;
   const approved = participations.filter((p) => p.activityId === a.id && p.status === 'approved');
   const isHost = a.hostId === v.me.id;
+  // 예시 동아리·예시 사람이 연 모임엔 '인증' 체크 대신 예시 표시 — 지어낸 주최자가 확인된 것처럼 보이지 않게
+  const hostSample = org ? isSampleOrg(org.id) : !!host?.sample;
   const mine = v.myParticipation(a.id);
   const room = rooms.find((r) => r.activityId === a.id);
   const canChat = room && (isHost || mine?.status === 'approved');
@@ -64,7 +67,7 @@ export function ActivityDetailPage() {
           {org ? <Avatar emoji={org.logo.emoji} hue={org.logo.hue} url={org.logo.url} size={44} className="!rounded-xl" /> : host && <Avatar emoji={host.avatar.emoji} hue={host.avatar.hue} url={host.avatar.url} size={44} />}
           <div className="flex-1 min-w-0">
             <div className="text-[11px] text-ink-3">{t('주최자')}</div>
-            <div className="text-[14px] font-bold flex items-center gap-1 truncate">{org?.name ?? host?.nickname}{(org?.verified || (host?.affiliation.type === 'university' && host.affiliation.emailVerified)) && <BadgeCheck size={13} className="text-verify" />}</div>
+            <div className="text-[14px] font-bold flex items-center gap-1 truncate">{hostSample && <SampleTag className="mr-0 shrink-0" />}<span className="truncate">{org?.name ?? host?.nickname}</span>{!hostSample && (org?.verified || (host?.affiliation.type === 'university' && host.affiliation.emailVerified)) && <BadgeCheck size={13} className="text-verify shrink-0" />}</div>
             {!org && host && host.affiliation.type === 'university' && <div className="text-[12px] text-ink-3 truncate">{host.affiliation.showSchool ? host.affiliation.schoolName : ''} {host.affiliation.showDepartment ? host.affiliation.department : ''}</div>}
           </div>
         </button>
