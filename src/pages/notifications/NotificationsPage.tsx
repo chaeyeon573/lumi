@@ -7,6 +7,8 @@ import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { relativeTime } from '@core/lib/format';
 import type { NotificationType } from '@core/types';
+import { SampleTag } from '@/components/ui/SampleTag';
+import { isSampleNotification } from '@core/lib/sampleorgs';
 import { cn } from '@core/lib/cn';
 
 const ICONS: Record<NotificationType, { Icon: typeof Heart; cls: string }> = {
@@ -55,7 +57,7 @@ export function NotificationsPage() {
           {list.map((n) => { const { Icon, cls } = ICONS[n.type]; return (
             <button key={n.id} onClick={async () => { if (!n.read) await run(() => api.notifications.markRead(n.id)); if (n.link) nav(n.link); }} className={cn('w-full flex items-start gap-3 px-3.5 py-3 text-left press', !n.read && 'bg-primary-soft/40')}>
               <span className={cn('h-10 w-10 rounded-xl grid place-items-center shrink-0', cls)}><Icon size={18} /></span>
-              <span className="flex-1 min-w-0"><span className="block text-[14px] font-semibold">{n.title}</span><span className="block text-[13px] text-ink-2 leading-snug mt-0.5">{n.body}</span><span className="block text-[11px] text-ink-3 mt-1">{relativeTime(n.createdAt)}</span></span>
+              <span className="flex-1 min-w-0"><span className="block text-[14px] font-semibold">{isSampleNotification(n.id) && <SampleTag />}{n.title}</span><span className="block text-[13px] text-ink-2 leading-snug mt-0.5">{n.body}</span><span className="block text-[11px] text-ink-3 mt-1">{relativeTime(n.createdAt)}</span></span>
               {!n.read && <span className="h-2 w-2 rounded-full bg-accent mt-2" />}
             </button>
           ); })}

@@ -1,5 +1,5 @@
-import { organizations as seedKo } from '@core/data/seed';
-import { organizations as seedEn } from '@core/data/seed.en';
+import { organizations as seedKo, notifications as seedNotesKo } from '@core/data/seed';
+import { organizations as seedEn, notifications as seedNotesEn } from '@core/data/seed.en';
 import { catalogOrganizations } from '@core/data/catalog/orgs';
 
 /**
@@ -11,3 +11,7 @@ export const SAMPLE_ORG_IDS: ReadonlySet<string> = new Set([...seedKo, ...seedEn
 
 /** 지어낸 동아리인가 — “Officially verified” 배지를 달면 진짜처럼 보인다 */
 export const isSampleOrg = (orgId: string) => SAMPLE_ORG_IDS.has(orgId);
+
+/** 시드 알림(nt1…) — 전부 예시 사람·모임 이야기다. 진짜 알림 id 는 uid('nt') 라 ‘nt_’ 로 시작해 겹치지 않는다 */
+const SAMPLE_NOTE_IDS: ReadonlySet<string> = new Set([...seedNotesKo, ...seedNotesEn].map((n) => n.id));
+export const isSampleNotification = (id: string) => SAMPLE_NOTE_IDS.has(id);

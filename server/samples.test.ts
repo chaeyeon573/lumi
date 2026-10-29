@@ -318,3 +318,11 @@ test('the app marks only made-up clubs as SAMPLE — never a real club from the 
   assert.deepEqual([...appIds].sort(), [...SAMPLE_ORG_IDS].sort(), 'same rule as the server');
   assert.ok([...appIds].every((id) => !/^o[cg]_/.test(id)));
 });
+
+test('seed notifications are marked SAMPLE, a real one (uid nt_…) never is', async () => {
+  const { isSampleNotification } = await import('@core/lib/sampleorgs');
+  const { uid } = await import('@core/lib/format');
+  assert.ok(isSampleNotification('nt1') && isSampleNotification('nt7'));
+  assert.ok(!isSampleNotification(uid('nt')));
+  assert.ok(!isSampleNotification('n_seat_abc'));
+});
