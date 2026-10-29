@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-10-29 12:37 UTC (버클리 목 05:37) · 초점: 목요일 이른 아침 Discover·식당
+- 사장님 답: 아직 없음. 배포 브랜치 1542420 그대로. 라이브에 쓴 것 없음. (실행이 예정 12:17 보다 20분 늦게 시작)
+- v2·classic /discover, /dining: 식당 카드 “Café 3 opens 7 AM · Scrambled Eggs, breakfast from 7 AM”, 체육관 “Closed · Opens 7 AM”, /dining 은 아침 메뉴부터. 즉석 모임은 8 AM 부터(새벽 시각 없음), 전부 SAMPLE. 어제 고친 날짜 계산 이후 표기 어긋남 없음.
+- 고친 것 없음.
+
 ## 2026-10-29 09:17 UTC (버클리 목 02:17) · 초점: Campus › Startups·Study abroad·Scholarships (10/18 뒤로 처음)
 - 사장님 답: 아직 없음. 배포 브랜치 1542420 그대로. 라이브에 쓴 것 없음.
 - Startups·Study abroad: 여전히 1개씩(SkyDeck, Berkeley Study Abroad). 지어내지 않음.
