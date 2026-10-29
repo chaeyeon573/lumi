@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-29 21:17 UTC (버클리 목 14:17) · 초점: 좌석 알림·수업 공간(CS 186)
+- 사장님 답: 아직 없음. 배포 브랜치 1542420 그대로. 라이브에 쓴 것 없음.
+- /seats(빈 상태 “Watch a Spring 2027 class…”·Find a class), /classes/CS 186 Databases v2·classic 정상. 예시 Will·예시 Study Crew 에 SAMPLE, “Free after CS 186 · Mon/Wed 11 AM” 수업 시각과 맞음.
+- 작은 메모: v2 Study Crew 줄은 버튼이 넓어 “4 spots / left” 가 두 줄 — 읽는 데 문제 없어 그대로.
+- 고친 것 없음.
+
 ## 2026-10-29 18:18 UTC (버클리 목 11:18) · 초점: 활동 만들기·글쓰기 화면 (10/22 뒤로 처음, 제출은 안 함)
 - 사장님 답: 아직 없음. 배포 브랜치 1542420 그대로. 라이브에 쓴 것 없음.
 - /create/activity, /create/post v2·classic: 항목·기본값(오늘 6–7:30 PM, Doe Library)·공개 범위 설명 정상.
