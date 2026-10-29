@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-29 06:18 UTC (버클리 수 23:18) · 초점: 설정·공개 범위·계정 안전 (10/21 뒤로 처음)
+- 사장님 답: 아직 없음. 배포 브랜치 1542420 그대로. 라이브에 쓴 것 없음.
+- /settings, /settings/privacy, /settings/safety 를 v2·classic 으로 봄. 목록·공개 범위 칩·메시지 제한·차단 목록 정상, 글자 잘림 없음.
+- 그대로 남은 것: 데모 계정 My reports 의 “TEST report filed by Claude…” 줄 — 10/18 질문(사장님 손 필요, 라이브 DB) 그대로. Height “Only me” 는 10/16 키·데이팅 질문과 같은 건.
+- 고친 것 없음.
+
 ## 2026-10-29 03:18 UTC (버클리 수 20:18) · 초점: 알림 화면 (10/21 뒤로 처음)
 - 사장님 답: 아직 없음. 배포 브랜치 1542420 그대로. 라이브에 쓴 것 없음.
 - 고침: 데모 계정 알림 4개(Lily 제안, Maya 팔로우, Blue Bottle 모임, Cal Indie 공연)가 전부 예시 사람·모임 이야기인데 SAMPLE 표시가 없어 진짜 알림처럼 보였다 → 시드 알림 id(nt1…nt9)면 SAMPLE/예시 (sampleorgs.ts `isSampleNotification`, NotificationsPage.tsx). 진짜 알림 id 는 uid('nt') = ‘nt_…’ 또는 ‘n_seat_…’ 라 겹치지 않음 — 테스트 추가.
