@@ -39,6 +39,8 @@ export function OrgPage() {
   if (!org) return <div className="min-h-full"><TopBar back title={t('조직')} /><EmptyState emoji="🏛️" title={t('조직을 찾을 수 없어요')} /></div>;
   const school = schools.find((s) => s.id === org.schoolId);
   const sample = isSampleOrg(org.id);
+  // 예시 동아리의 링크(instagram.com/example 등)는 남의 실제 페이지로 간다 — 예시엔 바깥 링크를 달지 않는다
+  const links = sample ? [] : org.links ?? [];
   const following = v.isFollowing(org.id);
   const isMember = org.memberIds.includes(v.me.id);
   const isAdmin = org.adminIds.includes(v.me.id);
@@ -91,9 +93,9 @@ export function OrgPage() {
         {tab === 'about' && (
           <div className="mt-3 space-y-3">
             <div className="card p-4"><p className="text-[14px] text-ink-2 leading-relaxed">{org.description}</p>
-              {(org.links?.length || org.dues || org.joinProcess || org.policyNote) ? (
+              {(links.length || org.dues || org.joinProcess || org.policyNote) ? (
                 <div className="mt-3 space-y-2 border-t border-line pt-3">
-                  {org.links && org.links.length > 0 && <div className="flex flex-wrap gap-1.5">{org.links.map((l) => <a key={l.url} href={l.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 h-8 px-3 rounded-lg bg-surface-2 text-[12px] font-semibold text-ink-2"><ExternalLink size={12} />{l.label}</a>)}</div>}
+                  {links.length > 0 && <div className="flex flex-wrap gap-1.5">{links.map((l) => <a key={l.url} href={l.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 h-8 px-3 rounded-lg bg-surface-2 text-[12px] font-semibold text-ink-2"><ExternalLink size={12} />{l.label}</a>)}</div>}
                   {org.joinProcess && <div className="text-[13px]"><span className="text-ink-3">{t('가입 절차')} · </span>{org.joinProcess}</div>}
                   {org.dues && <div className="text-[13px]"><span className="text-ink-3">{t('회비')} · </span>{org.dues}</div>}
                   {org.policyNote && <div className="rounded-xl bg-gold-soft px-3 py-2 text-[12px] text-ink-2 flex gap-2"><ShieldCheck size={14} className="text-[#B57A0E] shrink-0 mt-0.5" /><span><b>{t('학교 정책 안내')}</b> · {org.policyNote}</span></div>}

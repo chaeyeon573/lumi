@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-29 15:20 UTC (버클리 목 08:20) · 초점: 다른 사람 프로필(Maya)·예시 동아리 상세(Cal Indie)
+- 사장님 답: 아직 없음. 배포 브랜치 1542420 그대로. 라이브에 쓴 것 없음.
+- 프로필·동아리 상세 v2·classic 정상(SAMPLE 표시, 공통 수업·관심사, 활동 카드).
+- 고침: 예시 동아리 4곳의 바깥 링크가 instagram.com/example · discord.gg/example · notion.so/example · example.com — 누르면 우리와 상관없는 남의 실제 계정·페이지로 간다 → 예시 동아리에는 링크 칩을 안 보임 (OrgPage.tsx). 진짜 동아리(예: Ai Robotics @ Berkeley 의 Directory)는 그대로.
+- 메모: 예시 동아리 공지 날짜가 9/22 — 예시라 그대로.
+- 확인: 앱·서버 타입, 테스트 235 통과.
+
 ## 2026-10-29 12:37 UTC (버클리 목 05:37) · 초점: 목요일 이른 아침 Discover·식당
 - 사장님 답: 아직 없음. 배포 브랜치 1542420 그대로. 라이브에 쓴 것 없음. (실행이 예정 12:17 보다 20분 늦게 시작)
 - v2·classic /discover, /dining: 식당 카드 “Café 3 opens 7 AM · Scrambled Eggs, breakfast from 7 AM”, 체육관 “Closed · Opens 7 AM”, /dining 은 아침 메뉴부터. 즉석 모임은 8 AM 부터(새벽 시각 없음), 전부 SAMPLE. 어제 고친 날짜 계산 이후 표기 어긋남 없음.
