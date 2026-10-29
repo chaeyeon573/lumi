@@ -15,7 +15,7 @@
 import type { Snapshot } from '@core/api/types';
 import type { ID, Opportunity, OpportunityType, Organization, User } from '@core/types';
 import { lang } from '@core/i18n';
-import { audienceOf, audienceFits, isGradStudent, isOfType, regionsOf, type Region } from './listings';
+import { audienceOf, audienceFits, campusDate, isGradStudent, isOfType, regionsOf, type Region } from './listings';
 
 // ─── 주제 ─────────────────────────────────────────────────────────────────
 export const TOPICS = {
@@ -210,7 +210,8 @@ export interface Reason { kind: 'topic' | 'major' | 'saved' | 'club' | 'goal' | 
 export interface Scored { score: number; reasons: Reason[] }
 
 const day = 86400000;
-const daysTo = (iso: string, now: Date) => Math.round((new Date(iso.slice(0, 10)).getTime() - new Date(now.toISOString().slice(0, 10)).getTime()) / day);
+// 버클리 달력으로 센다 — UTC 날짜로 세면 저녁·새벽에 목록의 D-day 배지(daysUntil)와 하루 어긋난다(“D-1 · Closes in 2 days”)
+const daysTo = (iso: string, now: Date) => Math.round((Date.parse(`${campusDate(iso)}T12:00:00Z`) - Date.parse(`${campusDate(now.toISOString())}T12:00:00Z`)) / day);
 const en = () => lang === 'en';
 const say = (e: string, k: string) => (en() ? e : k);
 const short = (s: string, n = 34) => (s.length > n ? `${s.slice(0, n - 1)}…` : s);

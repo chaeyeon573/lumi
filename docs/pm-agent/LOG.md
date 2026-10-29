@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-29 09:17 UTC (버클리 목 02:17) · 초점: Campus › Startups·Study abroad·Scholarships (10/18 뒤로 처음)
+- 사장님 답: 아직 없음. 배포 브랜치 1542420 그대로. 라이브에 쓴 것 없음.
+- Startups·Study abroad: 여전히 1개씩(SkyDeck, Berkeley Study Abroad). 지어내지 않음.
+- 고침: Scholarships 에서 Swan Award 가 “D-1” 인데 이유 줄은 “✨ Closes in 2 days”. 마감 10/30 23:59 PDT(=UTC 10/31 06:59). 배지는 버클리 달력으로 세는데 For you 이유(foryou.ts `daysTo`)는 UTC 날짜로 세서, 버클리 저녁 5시~자정에 하루 어긋났다 → 버클리 달력으로 (campusDate). 테스트 추가(고치기 전 실패/후 통과). 같은 함수를 쓰는 “Today/Tomorrow” 이유도 같이 맞음.
+- 확인: v2·classic Scholarships·Hackathons 의 D-n 과 “Closes in n days” 전부 일치. 앱·서버 타입, 테스트 235 통과.
+- 라이브: Girls Who Code HHS 해커톤 아직 있음 — 10/28 수정이 배포 전이라 예상대로.
+
 ## 2026-10-29 06:18 UTC (버클리 수 23:18) · 초점: 설정·공개 범위·계정 안전 (10/21 뒤로 처음)
 - 사장님 답: 아직 없음. 배포 브랜치 1542420 그대로. 라이브에 쓴 것 없음.
 - /settings, /settings/privacy, /settings/safety 를 v2·classic 으로 봄. 목록·공개 범위 칩·메시지 제한·차단 목록 정상, 글자 잘림 없음.
