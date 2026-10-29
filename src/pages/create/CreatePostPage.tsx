@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { t } from '@core/i18n';
+import { t, lang } from '@core/i18n';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Plus, X, Lock, ImageOff } from 'lucide-react';
 import type { PostInput } from '@core/api';
@@ -13,6 +13,7 @@ import { ALL_POST_TYPES, POST_TYPE_LABELS, POST_TYPE_EMOJI, TOPIC_TAGS } from '@
 import { friendsOf } from '@core/lib/relations';
 import { photo } from '@/lib/assets';
 import { cn } from '@core/lib/cn';
+import { SampleTag } from '@/components/ui/SampleTag';
 import { isNativeShell } from '@/lib/native';
 
 const EMOJIS = ['📷', '☕', '🍜', '📚', '🏃', '🎸', '🎨', '🌅', '🐈', '🎤', '💻', '🌸'];
@@ -78,11 +79,11 @@ export function CreatePostPage() {
         </Field>
         {!anon && (
           <Field label={t('함께한 사람')} hint={t('태그된 사람이 승인해야 그 사람 프로필에도 표시돼요.')}>
-            <div className="flex flex-wrap gap-1.5">{friends.map((f) => <Chip key={f.id} size="sm" active={form.taggedUserIds?.includes(f.id)} onClick={() => patch({ taggedUserIds: toggle(form.taggedUserIds, f.id) })}><Avatar emoji={f.avatar.emoji} hue={f.avatar.hue} url={f.avatar.url} size={18} /> {f.nickname}</Chip>)}{friends.length === 0 && <span className="text-[12px] text-ink-3">{t('친구가 없어요')}</span>}</div>
+            <div className="flex flex-wrap gap-1.5">{friends.map((f) => <Chip key={f.id} size="sm" active={form.taggedUserIds?.includes(f.id)} onClick={() => patch({ taggedUserIds: toggle(form.taggedUserIds, f.id) })}><Avatar emoji={f.avatar.emoji} hue={f.avatar.hue} url={f.avatar.url} size={18} /> {f.sample && <SampleTag className="h-4 mr-0 px-1 text-[9px]" />}{f.nickname}</Chip>)}{friends.length === 0 && <span className="text-[12px] text-ink-3">{t('친구가 없어요')}</span>}</div>
           </Field>
         )}
         <div className="grid grid-cols-2 gap-2">
-          <Field label={t('참여한 활동')}><Select value={form.relatedActivityId ?? ''} onChange={(e) => patch({ relatedActivityId: e.target.value || undefined })}><option value="">{t('연결 안 함')}</option>{myActs.map((a) => <option key={a.id} value={a.id}>{a.title}</option>)}</Select></Field>
+          <Field label={t('참여한 활동')}><Select value={form.relatedActivityId ?? ''} onChange={(e) => patch({ relatedActivityId: e.target.value || undefined })}><option value="">{t('연결 안 함')}</option>{myActs.map((a) => <option key={a.id} value={a.id}>{a.title}{a.sample ? (lang === 'en' ? ' (sample)' : ' (예시)') : ''}</option>)}</Select></Field>
           {opps.length > 0 && <Field label={t('관련 기회')}><Select value={form.relatedOpportunityId ?? ''} onChange={(e) => patch({ relatedOpportunityId: e.target.value || undefined })}><option value="">{t('연결 안 함')}</option>{opps.map((o) => <option key={o.id} value={o.id}>{o.title}</option>)}</Select></Field>}
         </div>
         {!anon && <div className="card px-4"><Toggle label={t('다음 활동 같이할 사람 모집')} description={t('게시물에 "다음에는 같이하기" 버튼이 강조돼요.')} checked={!!form.recruitNext} onChange={(val) => patch({ recruitNext: val })} /></div>}
