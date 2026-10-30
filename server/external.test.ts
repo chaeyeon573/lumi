@@ -58,3 +58,15 @@ test('a Cloudflare check page stops the youth check for this run; an ordinary pa
   assert.ok(isChallengePage('<title>Just a moment...</title><script src="/cdn-cgi/challenge-platform/h/b"></script>'));
   assert.ok(!isChallengePage('<html><h1>My Hackathon</h1><p>Prizes</p></html>'));
 });
+
+test('Workday postings: link, id and a short “+N more” location; non-tech titles get a real field', async () => {
+  const { workdayJob } = await import('./sources/external');
+  const { fieldOf } = await import('@core/lib/listings');
+  const one = workdayJob({ title: 'Content Research Intern, Spring 2027', externalPath: '/job/Burbank-CA-USA/Content-Research-Intern_10132345', locationsText: 'Burbank, CA, USA', bulletFields: ['10132345'] }, 'disney.wd5.myworkdayjobs.com', 'disneycareer');
+  assert.deepEqual([one.id, one.location, one.url], ['10132345', 'Burbank, CA, USA', 'https://disney.wd5.myworkdayjobs.com/en-US/disneycareer/job/Burbank-CA-USA/Content-Research-Intern_10132345']);
+  const many = workdayJob({ title: 'Store Executive Intern', externalPath: '/job/x_R1', locationsText: '4 Locations' }, 'target.wd5.myworkdayjobs.com', 'targetcareers', '200 W Orangethorpe Ave, Fullerton, CA 92832-2900, United States of America');
+  assert.equal(many.location, 'Fullerton, CA 92832-2900, United States of America (+3 more)');
+  assert.equal(fieldOf('Store Executive Intern (Store Leadership Intern)'), 'Business & Marketing');
+  assert.equal(fieldOf('Brand Management Intern (MBA - Summer 2027)'), 'Business & Marketing');
+  assert.equal(fieldOf('R&D Intern (Summer 2027)'), 'Research & Science');
+});

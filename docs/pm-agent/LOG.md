@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-30 06:19 UTC (버클리 목 23:19) · 초점: 사장님 큰 작업 ① 인턴 분야 다양화 — 1단계
+- 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로(10/30 작업분 aa70712 은 배포 대기). 라이브에 쓴 것 없음.
+- 조사: 지금 인턴 출처 79곳은 Greenhouse·Lever·Ashby 게시판 — 테크·퀀트 위주. 테크 아닌 회사 49곳을 같은 방식으로 찔러 봄 → 대부분 404 거나 인턴 0 (Ogilvy 9개는 전부 해외). 테크 아닌 큰 회사는 **Workday** 를 쓰고, Workday 공개 검색 API 는 로그인 없이 열림(확인).
+- 추가: Workday 가져오기(`workdayJobs`, ‘intern’ 검색 → 인턴 제목만 → “N Locations” 는 상세로 나라 확인) + 실제로 지금 미국 인턴이 있는 8곳: Disney(24: 방송·엔터·세무), Target(29: 매장 리더십), Fidelity, Pfizer, Gilead(14), Clorox(7: 브랜드·R&D·재무), Humana(6), Adobe. 분야 규칙에 brand·merchandis·retail·store leadership → Business & Marketing, R&D → Research.
+- 확인: 실제 API 로 4곳 가져와 봄(Disney 24·Target 29·Clorox 7·Humana 6). 테스트 추가, 238 통과. 배포 + 다음 인턴 가져오기(12시간) 뒤 라이브에 보임.
+- 다음 단계(에이전트): Workday 주소(host·tenant·site)를 회사 채용 페이지에서 자동으로 찾아 분야별(금융·컨설팅·광고·미디어·소비재·헬스케어·비영리·정부) 목록을 늘린다. 이번에 site 이름을 짐작해 본 30곳 중 20곳이 422/404 — 짐작 말고 찾기가 필요.
+
 ## 2026-10-30 · 사장님과 대화 — 배포 + 질문 답 + 작업
 - 🚀 배포(사장님 “push허락함요”): lumi-pm → friendly-euler-emuo1f fast-forward 1542420..b158d1d (17커밋). 3분 뒤 새 번들 index-mNnWVo_n.js 라이브. 라이브 화면(쓰기 막고) My Plans·알림·활동 상세·예시 동아리 확인.
 - 데모 시간표 복구(사장님 B 허락, 라이브 쓰기 1회): CS 61A 4줄만 빼서 15→11줄, 확인.

@@ -124,7 +124,45 @@ async function jobsFor(ats: string, slug: string): Promise<Job[]> {
     const d = (await get(`https://api.ashbyhq.com/posting-api/job-board/${slug}`)) as { jobs?: { id: string; title: string; location?: string; isRemote?: boolean; jobUrl: string; department?: string; publishedAt?: string; secondaryLocations?: { location: string }[] }[] };
     return (d.jobs ?? []).map((j) => ({ id: j.id, title: j.title, location: [j.location, ...(j.secondaryLocations ?? []).map((x) => x.location), j.isRemote ? 'Remote' : ''].filter(Boolean).join(' / '), url: j.jobUrl, team: j.department, updated: j.publishedAt }));
   }
+  if (ats === 'workday') return workdayJobs(slug);
   return [];
+}
+
+/**
+ * Workday 공개 채용 검색 — 테크가 아닌 큰 회사(디즈니·타깃 등)는 Greenhouse 가 아니라 Workday 를 쓴다. 로그인 없이 열린다.
+ * slug = "host~tenant~site" (예: disney.wd5.myworkdayjobs.com~disney~disneycareer). 'intern' 으로 찾고, “4 Locations” 처럼
+ * 근무지가 묶인 인턴 공고만 상세를 한 번 더 열어 나라를 확인한다.
+ */
+interface WdPosting { title: string; externalPath: string; locationsText?: string; bulletFields?: string[] }
+export function workdayJob(p: WdPosting, host: string, site: string, country = ''): Job {
+  // “4 Locations” 는 상세의 첫 근무지 + 나머지 개수로 (주소 전체는 너무 길다 — 도시·주까지만)
+  const many = /^(\d+) Locations$/i.exec(p.locationsText ?? '');
+  const first = country.split(',').map((x) => x.trim()).filter((x) => x && !/^\d/.test(x)).slice(-3).join(', ');
+  const location = many && first ? `${first} (+${Number(many[1]) - 1} more)` : [p.locationsText ?? '', country].filter(Boolean).join(', ');
+  return { id: p.bulletFields?.[0] ?? p.externalPath.split('_').pop() ?? p.externalPath, title: p.title, location, url: `https://${host}/en-US/${site}${p.externalPath}` };
+}
+export async function workdayJobs(slug: string): Promise<Job[]> {
+  const [host, tenant, site] = slug.split('~');
+  const api = `https://${host}/wday/cxs/${tenant}/${site}`;
+  const out: Job[] = []; let total = 0;
+  for (let offset = 0; offset < 200; offset += 20) {
+    const r = await fetch(`${api}/jobs`, { method: 'POST', headers: { ...UA, 'content-type': 'application/json', accept: 'application/json' }, body: JSON.stringify({ appliedFacets: {}, limit: 20, offset, searchText: 'intern' }) });
+    if (!r.ok) throw new Error(`workday/${tenant} → ${r.status}`);
+    const d = (await r.json()) as { total?: number; jobPostings?: WdPosting[] };
+    if (offset === 0) total = d.total ?? 0; // 총 개수는 첫 쪽에만 온다(다음 쪽은 0)
+    const list = d.jobPostings ?? [];
+    for (const p of list) {
+      if (!isInternTitle(p.title)) continue;
+      let country = '';
+      if (!isUS(p.locationsText ?? '')) {
+        try { const x = (await (await fetch(`${api}${p.externalPath}`, { headers: { ...UA, accept: 'application/json' } })).json()) as { jobPostingInfo?: { location?: string; country?: { descriptor?: string } } }; country = [x.jobPostingInfo?.location, x.jobPostingInfo?.country?.descriptor].filter(Boolean).join(', '); } catch { /* 모르면 뺀다 */ }
+      }
+      out.push(workdayJob(p, host, site, country));
+    }
+    if (list.length < 20 || offset + 20 >= total) break;
+    await new Promise((res) => setTimeout(res, 150));
+  }
+  return out;
 }
 
 export async function fetchInternships(): Promise<Opportunity[]> {
