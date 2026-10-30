@@ -113,3 +113,9 @@ test('OURS import never shows a scholarship twice: adopts moved Berkeley rows, l
   ]);
   assert.deepEqual(out.map((o: { id: string }) => o.id), ['op_berkeley_barry_goldwater_scholarship_berkeley_campus_nomination', 'op_ours_luce']);
 });
+
+test('SmartRecruiters postings map to a public job link and a readable US location', async () => {
+  const { smartRecruitersJob } = await import('./sources/external');
+  const j = smartRecruitersJob({ id: '744000158746786', name: 'Personal Trainer Internship, NYC', releasedDate: '2026-10-30T13:40:48Z', location: { fullLocation: 'New York, NY, United States', country: 'us', remote: false }, department: { label: 'Clubs' } }, 'Equinox');
+  assert.deepEqual([j.url, j.location, j.team], ['https://jobs.smartrecruiters.com/Equinox/744000158746786', 'New York, NY, United States', 'Clubs']);
+});

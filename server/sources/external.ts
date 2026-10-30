@@ -1,7 +1,7 @@
 /**
  * 학교 밖 대학생 대상 기회 — schoolId 없이 넣어 모든 학교 학생에게 보인다.
  *   devpost  Devpost 공개 API (devpost.com/api/hackathons) — 진행 중·예정 해커톤. 온라인 또는 캘리포니아 대면만, 초대제 제외
- *   jobs     기업 공개 채용 API (Greenhouse · Lever · Ashby) 에서 제목에 Intern / Co-op 이 들어간 공고 — 미국·원격만.
+ *   jobs     기업 공개 채용 API (Greenhouse · Lever · Ashby · Workday · SmartRecruiters) 에서 제목에 Intern / Co-op 이 들어간 공고 — 미국·원격만.
  *            기업 목록은 server/data/internship-boards.csv (ats,slug,company) — 줄 하나로 추가한다
  * MLH 해커톤 대부분이 Devpost 에도 올라온다.
  */
@@ -125,6 +125,16 @@ async function jobsFor(ats: string, slug: string): Promise<Job[]> {
     return (d.jobs ?? []).map((j) => ({ id: j.id, title: j.title, location: [j.location, ...(j.secondaryLocations ?? []).map((x) => x.location), j.isRemote ? 'Remote' : ''].filter(Boolean).join(' / '), url: j.jobUrl, team: j.department, updated: j.publishedAt }));
   }
   if (ats === 'workday') return workdayJobs(slug);
+  if (ats === 'smartrecruiters') {
+    // SmartRecruiters 공개 API — Bosch·Equinox 같은 테크 아닌 회사도 쓴다. 'intern' 으로 찾고 100개씩 넘긴다
+    const out: Job[] = [];
+    for (let offset = 0; offset < 500; offset += 100) {
+      const d = (await get(`https://api.smartrecruiters.com/v1/companies/${slug}/postings?q=intern&limit=100&offset=${offset}`)) as { totalFound?: number; content?: { id: string; name: string; releasedDate?: string; location?: { fullLocation?: string; city?: string; region?: string; country?: string; remote?: boolean }; department?: { label?: string } }[] };
+      for (const j of d.content ?? []) out.push(smartRecruitersJob(j, slug));
+      if ((d.content ?? []).length < 100 || offset + 100 >= (d.totalFound ?? 0)) break;
+    }
+    return out;
+  }
   return [];
 }
 
@@ -133,6 +143,11 @@ async function jobsFor(ats: string, slug: string): Promise<Job[]> {
  * slug = "host~tenant~site" (예: disney.wd5.myworkdayjobs.com~disney~disneycareer). 'intern' 으로 찾고, “4 Locations” 처럼
  * 근무지가 묶인 인턴 공고만 상세를 한 번 더 열어 나라를 확인한다.
  */
+export function smartRecruitersJob(j: { id: string; name: string; releasedDate?: string; location?: { fullLocation?: string; city?: string; region?: string; country?: string; remote?: boolean }; department?: { label?: string } }, company: string): Job {
+  const l = j.location ?? {};
+  const where = l.fullLocation || [l.city, l.region, l.country?.toUpperCase() === 'US' ? 'United States' : l.country].filter(Boolean).join(', ');
+  return { id: j.id, title: j.name, location: [where, l.remote ? 'Remote' : ''].filter(Boolean).join(' / '), url: `https://jobs.smartrecruiters.com/${company}/${j.id}`, team: j.department?.label, updated: j.releasedDate };
+}
 interface WdPosting { title: string; externalPath: string; locationsText?: string; bulletFields?: string[] }
 export function workdayJob(p: WdPosting, host: string, site: string, country = ''): Job {
   // “4 Locations” 는 상세의 첫 근무지 + 나머지 개수로 (주소 전체는 너무 길다 — 도시·주까지만)
