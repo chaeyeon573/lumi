@@ -4,11 +4,12 @@ import { useSyncExternalStore } from 'react';
  * 디자인 스위치 — 지금 디자인(classic)과 Lumi v2(docs/design/lumi-v2)를 같은 링크에서 비교한다.
  * - 아무 주소에 `?design=v2` / `?design=classic` 을 붙이면 바뀌고 이 브라우저에 기억된다.
  * - <html data-design="v2"> 로 걸리고, src/index.css 가 그 아래에서 토큰을 갈아 끼운다.
- * 기본값은 v2 (2026-10-19 사장님 결정). 예전에 고른 값은 키를 바꿔 한 번 비운다 — 비교하느라 classic 에 묶인 브라우저가 많았다.
+ * 기본값은 v2 (2026-10-19 사장님 결정). 2026-10-30 사장님 결정: New(v2) 하나로 정하고 화면의 비교 알약은 없앤다 —
+ * 예전에 classic 을 고른 브라우저도 v2 로 오게 키를 다시 바꾼다. ?design=classic 은 내부 비교용으로만 남는다.
  */
 export type Design = 'classic' | 'v2';
 
-const KEY = 'lumi.design.2';
+const KEY = 'lumi.design.3';
 const THEME_COLOR: Record<Design, string> = { classic: '#FFFFFF', v2: '#08070C' };
 const listeners = new Set<() => void>();
 let current: Design = 'v2';

@@ -5,11 +5,10 @@ import { PullToRefresh } from '@/components/native/PullToRefresh';
 import { Toast } from '@/components/ui';
 import { BottomNav } from './BottomNav';
 import { FeedbackTab } from './FeedbackTab';
-import { DesignToggle } from './DesignToggle';
 
 /**
  * 모바일 프레임. 데스크톱에서는 가운데 430px 폭으로 고정된다.
- * iPhone 앱 안에서는 테스트용 떠 있는 알약(디자인 비교 · 의견)을 그리지 않는다 — App Review 2.1/4.2.
+ * iPhone 앱 안에서는 테스트용 떠 있는 알약(의견)을 그리지 않는다 — App Review 2.1/4.2.
  * 의견은 설정 → '의견 보내기'로 보낸다 (SettingsPage).
  */
 export function AppShell({ withNav = true }: { withNav?: boolean }) {
@@ -24,7 +23,6 @@ export function AppShell({ withNav = true }: { withNav?: boolean }) {
         </div>
         {withNav && <BottomNav />}
         {withNav && !inApp && <FeedbackTab />}
-        {!inApp && <DesignToggle withNav={withNav} />}
         <Toast />
       </div>
     </div>

@@ -200,7 +200,6 @@ function ProfileStep({ form, patch, next }: StepProps) {
         <div className="flex flex-wrap gap-2">{ALL_AVAILABILITY.map((a) => <Chip key={a} active={form.availability === a} onClick={() => patch({ availability: a as Availability })}>{AVAILABILITY_LABELS[a]}</Chip>)}</div>
       </Field>
       <div className="grid grid-cols-2 gap-3">
-        <Field label={t('키 (선택)')} right={fv('height')}><Input type="number" placeholder="cm" value={form.height ?? ''} onChange={(e) => patch({ height: e.target.value ? Number(e.target.value) : undefined })} /></Field>
         <Field label={t('이용 목적 공개')} right={fv('purposes')}><div className="h-11 flex items-center text-[13px] text-ink-3">{form.purposes.map((p) => PURPOSE_LABELS[p]).join(', ')}</div></Field>
       </div>
       <Field label={t('관심 있는 사람의 조건 (선택)')} right={fv('preferredPartner')}><Input placeholder={t('예: 창업이나 AI에 관심 있는 분')} value={form.preferredPartner ?? ''} onChange={(e) => patch({ preferredPartner: e.target.value })} /></Field>

@@ -55,6 +55,10 @@ function activeSchoolIds(): Set<string> {
 /** 지금 4학년이 졸업하는 해 — 학년은 가을(8월)에 바뀐다 */
 export const seniorClassYear = (now = new Date()) => (now.getUTCMonth() >= 7 ? now.getUTCFullYear() + 1 : now.getUTCFullYear());
 
+/** 시드에서 빠진 예시 id — 예전에 라이브 DB 에 들어간 것까지 지운다 */
+export const RETIRED_SAMPLE_ACTIVITIES: ReadonlySet<ID> = new Set(['a_deal']);
+export const RETIRED_SAMPLE_POSTS: ReadonlySet<ID> = new Set(['po8']);
+
 export function migrateDemo(db: Snapshot): Patch | null {
   const changed = new Map<ID, User>();
   for (const u of db.users) {
@@ -91,10 +95,17 @@ export function migrateDemo(db: Snapshot): Patch | null {
   const withUsers = new Set(users.map((u) => (u.affiliation.type === 'university' ? u.affiliation.schoolId ?? '' : '')));
   const hideSchools = active.size ? db.schools.filter((s) => !active.has(s.id) && !withUsers.has(s.id)).map((s) => s.id) : [];
 
-  if (!changed.size && !added.length && !hideSchools.length) return null;
+  // 시드에서 뺀 예시 — 라이브 DB 에 남은 것도 지운다 (2026-10-30: 실제 가게 이름(Café Milano)을 단 지어낸 1+1 할인과 그 홍보 글)
+  const goneActs = db.activities.filter((a) => RETIRED_SAMPLE_ACTIVITIES.has(a.id)).map((a) => a.id);
+  const gonePosts = db.posts.filter((p) => RETIRED_SAMPLE_POSTS.has(p.id)).map((p) => p.id);
+
+  if (!changed.size && !added.length && !hideSchools.length && !goneActs.length && !gonePosts.length) return null;
   db.users = users;
   if (hideSchools.length) db.schools = db.schools.filter((s) => !hideSchools.includes(s.id));
-  return { users: [...changed.values(), ...added], ...(hideSchools.length ? { removed: { schools: hideSchools } } : {}) };
+  if (goneActs.length) db.activities = db.activities.filter((a) => !RETIRED_SAMPLE_ACTIVITIES.has(a.id));
+  if (gonePosts.length) db.posts = db.posts.filter((p) => !RETIRED_SAMPLE_POSTS.has(p.id));
+  const removed = { ...(hideSchools.length ? { schools: hideSchools } : {}), ...(goneActs.length ? { activities: goneActs } : {}), ...(gonePosts.length ? { posts: gonePosts } : {}) };
+  return { users: [...changed.values(), ...added], ...(Object.keys(removed).length ? { removed } : {}) };
 }
 
 // ─── 예시 모임 날짜 굴리기 ──────────────────────────────────────────────────

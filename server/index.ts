@@ -82,7 +82,7 @@ let catalogBySchool = bySchool(catalog);
 let catalogVersion = await store.catalogVersion();
 
 db.games ??= []; // 게임 기능 이전에 저장된 스냅샷
-{ const p = migrateDemo(db); if (p) { await store.applyPatch(p); console.log(`[demo] updated ${p.users?.length ?? 0} sample users, hid ${p.removed?.schools?.length ?? 0} schools`); } }
+{ const p = migrateDemo(db); if (p) { await store.applyPatch(p); console.log(`[demo] updated ${p.users?.length ?? 0} sample users, hid ${p.removed?.schools?.length ?? 0} schools, retired ${(p.removed?.activities?.length ?? 0) + (p.removed?.posts?.length ?? 0)} sample items`); } }
 // 예시 모임 날짜를 오늘 기준으로 — 켜질 때 한 번, 그 뒤 15분마다 (지난 것은 곧 시작하는 시간으로 민다)
 async function rollSamples() {
   const p = rollSampleActivities(db); if (p) { await store.applyPatch(p); broadcast(p); console.log(`[demo] rolled ${p.activities?.length ?? 0} sample activities`); }

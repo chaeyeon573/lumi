@@ -380,13 +380,6 @@ export const activities: Activity[] = [
     capacity: 2, visibility: 'department', visibilityTargets: ['컴퓨터과학과'], joinPolicy: 'open', fee: 0, comments: [], createdAt: isoMinutesAgo(25),
   },
   {
-    id: 'a_deal', kind: 'org_event', category: 'store_deal', title: '학생증 제시 시 아메리카노 1+1',
-    description: '정문 앞 카페 오늘 하루 한정 혜택. Lumi 화면 제시.',
-    cover: { emoji: '🏷️', hue: 50 , url: photo('c_mug') }, hostId: 'u_taeho', hostType: 'user', date: T, startTime: '10:00', endTime: '21:00',
-    place: { name: '카페 온도 (연세로)', lat: 37.5580, lng: 126.9360 },
-    capacity: 999, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(12),
-  },
-  {
     id: 'a_friends_dinner', kind: 'group', category: 'meal', title: '친구들끼리 저녁 (마라탕)',
     description: '친구 공개. 시험 끝난 기념 마라탕!',
     cover: { emoji: '🍜', hue: 10 , url: photo('c_hotpot') }, hostId: 'u_seoyeon', hostType: 'user', date: T1, startTime: '19:00', endTime: '20:30',
@@ -558,12 +551,6 @@ export const posts: Post[] = [
     tags: ['전시', '성수', '후기'], visibility: 'public', likeIds: ['u_jimin', 'u_seoyeon'], savedIds: [],
     comments: [{ id: 'pc3', authorId: 'u_seoyeon', text: '사진 너무 예뻐요', createdAt: isoHoursAgo(20) }],
     relatedActivityId: 'a_exhibit', createdAt: isoHoursAgo(22),
-  },
-  {
-    id: 'po8', authorId: 'u_taeho', authorType: 'user', postType: 'info', media: [{ emoji: '🏷️', hue: 50 , url: photo('c_mug') }],
-    text: '연세로 카페 온도, 오늘 학생증 보여주면 아메리카노 1+1이래요. 학교 주변 정보 공유!',
-    tags: ['학교주변', '혜택'], visibility: 'public', likeIds: ['u_sua', 'u_jimin', 'u_minjun', 'u_yuna'], savedIds: [],
-    comments: [], relatedActivityId: 'a_deal', createdAt: isoHoursAgo(11),
   },
   {
     id: 'po9', authorId: DEMO_USER_ID, authorType: 'user', media: [{ emoji: '💻', hue: 235 , url: photo('c_laptop') }],

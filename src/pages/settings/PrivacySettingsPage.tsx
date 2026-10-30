@@ -17,7 +17,6 @@ const FIELDS: { key: ProfileField; label: string; desc?: string }[] = [
   { key: 'living', label: t('생활권'), desc: t('기숙사·자취·통학과 대략적인 구역만') },
   { key: 'timetable', label: t('시간표 공강 여부'), desc: t('전체 시간표와 강의실은 공개되지 않고 공강 시간만 보여요') },
   { key: 'purposes', label: t('이용 목적') },
-  { key: 'height', label: t('키') },
   { key: 'preferredPartner', label: t('관심 있는 사람의 조건') },
   { key: 'posts', label: t('사진과 게시물 그리드') },
 ];

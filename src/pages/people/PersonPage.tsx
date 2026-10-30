@@ -153,7 +153,7 @@ export function PersonPage() {
           </Block>
           <Block label={t('이용 목적')} visible={see('purposes')}><div className="flex flex-wrap gap-1.5">{(user.purposes ?? []).map((p) => <Tag key={p}>{PURPOSE_LABELS[p]}</Tag>)}</div></Block>
           <Block label={t('지역')} visible><p className="text-[13px] text-ink-2 flex items-center gap-1"><MapPin size={13} className="text-ink-3" />{user.region} {t('근처')} <span className="text-ink-3 text-[11px]">{t('· 정확한 위치는 공개되지 않아요')}</span></p></Block>
-          {see('height') && user.height && <Block label={t('키')} visible><p className="text-[13px] text-ink-2">{user.height}cm</p></Block>}
+          {/* 키는 2026-10-30 사장님 결정으로 화면에서 뺐다(데이팅 앱 신호) — 저장된 값은 남아 있다 */}
         </div>
 
         {(see('posts') ? userPosts.length > 0 : true) && (

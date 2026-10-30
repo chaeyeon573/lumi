@@ -12,6 +12,7 @@ import { Button, Field, Input, Textarea } from '@/components/ui';
 import { TopBar } from '@/components/layout/TopBar';
 import { useAiEnabled } from '@/hooks/useAiEnabled';
 import { DEFAULT_FV } from './OnboardingPage';
+import { ComingSoonSchools } from './ComingSoonSchools';
 import { takeReturnTo } from '@/lib/returnTo';
 
 const en = lang === 'en';
@@ -197,6 +198,7 @@ export function StartPage() {
                 </button>
               ))}
             </div>
+            <ComingSoonSchools openNames={schools.map((s) => s.name)} />
           </>
         )}
 

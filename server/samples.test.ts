@@ -326,3 +326,16 @@ test('seed notifications are marked SAMPLE, a real one (uid nt_…) never is', a
   assert.ok(!isSampleNotification(uid('nt')));
   assert.ok(!isSampleNotification('n_seat_abc'));
 });
+
+test('the made-up BOGO deal at a real café (a_deal) and its post are gone — also from a DB that still has them', () => {
+  const db = world();
+  assert.ok(!db.activities.some((a) => a.id === 'a_deal') && !db.posts.some((p) => p.id === 'po8'), 'not in the seed any more');
+  const old = structuredClone(db);
+  old.activities.push({ ...structuredClone(db.activities[0]), id: 'a_deal', place: { name: 'Café Milano', lat: 0, lng: 0 } });
+  old.posts.push({ ...structuredClone(db.posts[0]), id: 'po8' });
+  const p = migrateDemo(old)!;
+  assert.deepEqual(p.removed?.activities, ['a_deal']);
+  assert.deepEqual(p.removed?.posts, ['po8']);
+  assert.ok(!old.activities.some((a) => a.id === 'a_deal') && !old.posts.some((x) => x.id === 'po8'));
+  assert.equal(migrateDemo(old), null, 'runs once');
+});

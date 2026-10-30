@@ -305,11 +305,6 @@ export const activities: Activity[] = [
     place: { name: 'Memorial Glade', lat: 37.8730, lng: -122.2596 }, capacity: 2, visibility: 'department', visibilityTargets: ['Computer Science'], joinPolicy: 'open', fee: 0, comments: [], createdAt: isoMinutesAgo(25),
   },
   {
-    id: 'a_deal', kind: 'org_event', category: 'store_deal', title: 'Buy-one-get-one lattes with student ID', description: 'Today only at the café on Telegraph. Show this screen.',
-    cover: { emoji: '🏷️', hue: 50 , url: photo('c_mug') }, hostId: 'u_taeho', hostType: 'user', date: T, startTime: '10:00', endTime: '21:00',
-    place: { name: 'Café Milano', lat: 37.8681, lng: -122.2590 }, capacity: 999, visibility: 'public', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(12),
-  },
-  {
     id: 'a_friends_dinner', kind: 'group', category: 'meal', title: 'Friends dinner (tacos)', description: 'Friends only. Post-midterm tacos!',
     cover: { emoji: '🌮', hue: 10 , url: photo('c_burrito') }, hostId: 'u_seoyeon', hostType: 'user', date: T1, startTime: '19:00', endTime: '20:30',
     place: { name: 'Taqueria on Durant', lat: 37.8676, lng: -122.2580 }, capacity: 5, visibility: 'friends', joinPolicy: 'open', fee: 0, comments: [], createdAt: isoHoursAgo(4),
@@ -394,7 +389,6 @@ export const posts: Post[] = [
   { id: 'po5', authorId: 'u_dohyun', authorType: 'org', postType: 'news', orgId: 'o_ailab', media: [{ emoji: '🧠', hue: 175 , url: photo('c_abstract1') }], text: 'Open seminar tomorrow 4pm at Soda Hall. Multimodal LLM review + apprentice Q&A. No background needed.', tags: ['AI', 'seminar', 'lab'], visibility: 'public', likeIds: ['u_sua', DEMO_USER_ID], savedIds: ['u_sua'], comments: [], relatedActivityId: 'a_ai_seminar', createdAt: isoHoursAgo(12) },
   { id: 'po6', authorId: 'u_yuna', authorType: 'user', postType: 'info', media: [{ emoji: '📚', hue: 45 , url: photo('c_library') }], text: 'Doe 4th floor window seats: no glare after 2pm, perfect for laptops. (Berkeley only)', tags: ['doelibrary', 'study'], visibility: 'school', likeIds: ['u_woojin'], savedIds: [], comments: [], createdAt: isoHoursAgo(15) },
   { id: 'po7', authorId: 'u_hana', authorType: 'user', postType: 'review', media: [{ emoji: '🎨', hue: 335 , url: photo('c_art') }, { emoji: '📷', hue: 320 , url: photo('c_chair') }], text: 'Last week at SFMOMA. Going again this weekend — I opened an activity if you want to come!', tags: ['exhibit', 'sf', 'review'], visibility: 'public', likeIds: ['u_jimin', 'u_seoyeon'], savedIds: [], comments: [{ id: 'pc3', authorId: 'u_seoyeon', text: 'Gorgeous photos', createdAt: isoHoursAgo(20) }], relatedActivityId: 'a_exhibit', createdAt: isoHoursAgo(22) },
-  { id: 'po8', authorId: 'u_taeho', authorType: 'user', postType: 'info', media: [{ emoji: '🏷️', hue: 50 , url: photo('c_mug') }], text: 'Café Milano: BOGO lattes with a student ID today. Sharing the local intel!', tags: ['nearcampus', 'deal'], visibility: 'public', likeIds: ['u_sua', 'u_jimin', 'u_minjun', 'u_yuna'], savedIds: [], comments: [], relatedActivityId: 'a_deal', createdAt: isoHoursAgo(11) },
   { id: 'po9', authorId: DEMO_USER_ID, authorType: 'user', media: [{ emoji: '💻', hue: 235 , url: photo('c_laptop') }], text: 'Recruiting for a side project! Building a campus app in React.', tags: ['sideproject', 'react'], visibility: 'school', likeIds: ['u_sua', 'u_hana'], savedIds: [], comments: [], relatedActivityId: 'a_mine', createdAt: isoHoursAgo(26) },
 ];
 

@@ -57,7 +57,6 @@ export function EditProfilePage() {
         <Field label={t('이용 목적')} right={fv('purposes')}><div className="flex flex-wrap gap-2">{ALL_PURPOSES.map((p) => <Chip key={p} active={form.purposes.includes(p)} onClick={() => patch({ purposes: toggle(form.purposes, p) as Purpose[] })}>{PURPOSE_LABELS[p]}</Chip>)}</div></Field>
         <Field label={t('활동 가능한 시간')} right={fv('availability')}><div className="flex flex-wrap gap-2">{ALL_AVAILABILITY.map((a) => <Chip key={a} active={form.availability === a} onClick={() => patch({ availability: a as Availability })}>{AVAILABILITY_LABELS[a]}</Chip>)}</div></Field>
         <div className="grid grid-cols-2 gap-3">
-          <Field label={t('키 (선택)')} right={fv('height')}><Input type="number" placeholder="cm" value={form.height ?? ''} onChange={(e) => patch({ height: e.target.value ? Number(e.target.value) : undefined })} /></Field>
           <Field label={t('지역')}><Input value={form.region} onChange={(e) => patch({ region: e.target.value })} /></Field>
         </div>
         <Field label={t('관심 있는 사람의 조건 (선택)')} right={fv('preferredPartner')}><Input value={form.preferredPartner ?? ''} onChange={(e) => patch({ preferredPartner: e.target.value })} /></Field>
