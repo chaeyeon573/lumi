@@ -21,6 +21,7 @@
  * 결과는 agent_runs 에 남고(/api/agent/status), 거부·오류는 AGENT_NOTIFY_EMAIL 로 메일을 보낸다.
  * Railway 에서는 cron 서비스로 매일 한 번 실행된다 (Start Command: npm run agent). 실행이 끝나면 프로세스가 종료돼야 한다.
  */
+import { fetchOursScholarships } from '../sources/ours';
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
@@ -294,6 +295,8 @@ if (process.env.AGENT_MODE === 'worker') {
         const nat = path.join(path.dirname(SCHOOLS_CSV), 'opportunities-national.csv');
         if (existsSync(nat) && due('deadlines:national', latest.get('deadlines:national')?.finishedAt, 24)) { const r = [await runScript('deadlines:national', 'import:opportunities', nat)]; did += 1; await notify(r); }
       }
+      // 버클리 OURS 장학금 — 공식 페이지의 ‘Next Campus Deadline’ 을 하루 한 번 읽는다 (server/sources/ours.ts)
+      if (due('scholarships:ours', latest.get('scholarships:ours')?.finishedAt, 24)) { const opps = (await store.loadSnapshot())?.opportunities ?? []; const r = [await runOpportunities('scholarships:ours', 's_berkeley', () => fetchOursScholarships(new Date(), opps), 'op_ours_')]; did += 1; await notify(r); }
       if (due('external:internships', latest.get('external:internships')?.finishedAt, 12)) { const r = [await runOpportunities('external:internships', '', fetchInternships, 'op_ext_job_')]; did += 1; await notify(r); }
     }
     for (const row of loadSchools()) {

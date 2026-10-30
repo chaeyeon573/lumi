@@ -70,3 +70,19 @@ test('Workday postings: link, id and a short “+N more” location; non-tech ti
   assert.equal(fieldOf('Brand Management Intern (MBA - Summer 2027)'), 'Business & Marketing');
   assert.equal(fieldOf('R&D Intern (Summer 2027)'), 'Research & Science');
 });
+
+test('OURS scholarship pages: every deadline wording on the site is read in Berkeley time; a month without a day is not', async () => {
+  const { oursDeadline, oursPageToOpportunity } = await import('./sources/ours');
+  assert.equal(oursDeadline('Next Campus Deadline: Noon, December 14, 2026 UCB recipients!'), '2026-12-14T20:00:00.000Z');
+  assert.equal(oursDeadline('Next deadline: January 31, 2027, 9:00 pm – application now open!'), '2027-02-01T05:00:00.000Z');
+  assert.equal(oursDeadline('Next campus deadline (for 2027–2028 cohort): November 23, 2026 – 12:00 noon (Pacific) – application'), '2026-11-23T20:00:00.000Z');
+  assert.equal(oursDeadline('Campus Deadline: December 9, 2026, Noon, 12:00 p.m. Campus Instructions'), '2026-12-09T20:00:00.000Z');
+  assert.equal(oursDeadline('Next Campus Deadline: November 2, 2026 Princeton'), '2026-11-03T07:59:00.000Z');
+  assert.equal(oursDeadline('Next Campus Deadline: October 2027 UCB recipients!'), undefined);
+  const now = new Date('2026-10-30T09:00:00Z');
+  assert.equal(oursPageToOpportunity({ slug: 'guidance', link: 'x', title: 'Guidance', html: 'Next deadline: December 1, 2026' }, now), null, 'help pages are not scholarships');
+  assert.equal(oursPageToOpportunity({ slug: 'churchill', link: 'x', title: 'Churchill', html: 'Next Campus Deadline: October 2027' }, now), null, 'no day → not listed');
+  const g = oursPageToOpportunity({ slug: 'goldwater', link: 'https://scholarships.berkeley.edu/goldwater/', title: 'Goldwater Scholarship', html: '<p>Next Campus Deadline: Noon, December 14, 2026 UCB recipients! The Barry M. Goldwater Scholarship provides $7,500 per year.</p>' }, now)!;
+  assert.equal(g.description, 'The Barry M. Goldwater Scholarship provides $7,500 per year.');
+  assert.equal(g.schoolId, 's_berkeley');
+});
