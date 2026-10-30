@@ -119,3 +119,18 @@ test('SmartRecruiters postings map to a public job link and a readable US locati
   const j = smartRecruitersJob({ id: '744000158746786', name: 'Personal Trainer Internship, NYC', releasedDate: '2026-10-30T13:40:48Z', location: { fullLocation: 'New York, NY, United States', country: 'us', remote: false }, department: { label: 'Clubs' } }, 'Equinox');
   assert.deepEqual([j.url, j.location, j.team], ['https://jobs.smartrecruiters.com/Equinox/744000158746786', 'New York, NY, United States', 'Clubs']);
 });
+
+test('club sites: only profile links the club itself put on its page, CalLink kept last', async () => {
+  const { socialLinksIn, withSiteLinks } = await import('./sources/orgsites');
+  const html = `<a href="https://www.instagram.com/cal_noteworthy/embed">x</a><a href="http://instagram.com/p/AbC123/">post</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=x">share</a><a href="https://www.facebook.com/Noteworthy">fb</a><a href="https://discord.gg/Dabsz3Jpe8">d</a>`;
+  assert.deepEqual(socialLinksIn(html), [
+    { label: 'Instagram', url: 'https://www.instagram.com/cal_noteworthy' },
+    { label: 'Facebook', url: 'https://www.facebook.com/Noteworthy' },
+    { label: 'Discord', url: 'https://discord.gg/Dabsz3Jpe8' },
+  ]);
+  const org = { id: 'oc_berkeley_noteworthy', links: [{ label: 'Directory', url: 'https://callink.berkeley.edu/organization/noteworthy' }] } as never;
+  const next = withSiteLinks(org, 'https://noteworthy.studentorg.berkeley.edu/', socialLinksIn(html))!;
+  assert.deepEqual(next.links!.map((l: { label: string }) => l.label), ['Website', 'Instagram', 'Facebook', 'Discord', 'Directory']);
+  assert.equal(withSiteLinks(next, 'https://noteworthy.studentorg.berkeley.edu/', socialLinksIn(html)), null, 'no change → no write');
+});

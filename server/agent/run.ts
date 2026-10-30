@@ -23,6 +23,7 @@
  */
 import { fetchOursScholarships } from '../sources/ours';
 import { fetchStudyAbroad } from '../sources/studyabroad';
+import { findStudentOrgSites } from '../sources/orgsites';
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
@@ -300,6 +301,16 @@ if (process.env.AGENT_MODE === 'worker') {
       if (due('scholarships:ours', latest.get('scholarships:ours')?.finishedAt, 24)) { const opps = (await store.loadSnapshot())?.opportunities ?? []; const r = [await runOpportunities('scholarships:ours', 's_berkeley', () => fetchOursScholarships(new Date(), opps), 'op_ours_')]; did += 1; await notify(r); }
       // 버클리 교환·해외 프로그램 (UCEAP·Global Internships 등) — 공식 목록의 학기별 마감 (server/sources/studyabroad.ts)
       if (due('exchange:berkeley', latest.get('exchange:berkeley')?.finishedAt, 24)) { const r = [await runOpportunities('exchange:berkeley', 's_berkeley', () => fetchStudyAbroad(), 'op_sa_')]; did += 1; await notify(r); }
+      // 버클리 동아리 공식 사이트(<이름>.studentorg.berkeley.edu)·소셜 링크 — 일주일에 한 번 (server/sources/orgsites.ts)
+      if (due('orgsites:s_berkeley', latest.get('orgsites:s_berkeley')?.finishedAt, 24 * 7)) {
+        const startedAt = new Date().toISOString();
+        try {
+          const changed = await findStudentOrgSites((await store.loadSnapshot())?.organizations ?? []);
+          if (!DRY && changed.length) await store.applyPatch({ organizations: changed });
+          await notify([await record({ task: 'orgsites:s_berkeley', schoolId: 's_berkeley', status: 'applied', startedAt, summary: { fetched: changed.length, sample: changed.slice(0, 3).map((o) => o.name) } })]);
+        } catch (e) { await notify([await record({ task: 'orgsites:s_berkeley', schoolId: 's_berkeley', status: 'error', startedAt, summary: { error: (e as Error).message } })]); }
+        did += 1;
+      }
       if (due('external:internships', latest.get('external:internships')?.finishedAt, 12)) { const r = [await runOpportunities('external:internships', '', fetchInternships, 'op_ext_job_')]; did += 1; await notify(r); }
     }
     for (const row of loadSchools()) {

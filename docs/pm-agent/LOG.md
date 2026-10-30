@@ -2,6 +2,14 @@
 
 최신이 위.
 
+## 2026-10-30 21:17 UTC (버클리 금 14:17) · 초점: 사장님 큰 작업 ③ 동아리 웹사이트·인스타
+- 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로. 라이브에 쓴 것 없음.
+- 방법: 검색으로 비슷한 계정을 고르면 틀리기 쉽다 → 버클리 동아리 공식 사이트 `<CalLink 이름>.studentorg.berkeley.edu` 가 열리면 웹사이트로 넣고, **동아리가 그 사이트에 직접 걸어 둔** 인스타·페이스북·디스코드·링크드인·TikTok·Linktree 만 가져온다(게시물·공유 버튼 링크는 계정 주소로 줄이거나 뺌). 서버가 일주일에 한 번 다시 확인(server/sources/orgsites.ts, agent run.ts).
+- 실제로 1,472개 전부 확인(평범한 요청): 82곳에 웹사이트, 46곳은 소셜까지 (예: Noteworthy → 웹사이트·Facebook·Instagram·TikTok, Blockchain at Berkeley → @calblockchain·LinkedIn·Facebook).
+- 화면: 링크 칩 순서 웹사이트·소셜 먼저, CalLink(“Directory”) 는 맨 뒤 + “· CalNet login” 표시(OrgPage.tsx). 동아리 일요일 가져오기(fetch-orgs)는 기존 링크를 앞에 두고 덧붙이므로 지워지지 않음(확인).
+- 한계: 나머지 ~1,390곳은 studentorg 사이트가 없거나 다른 주소 — 다음 단계는 검색 + 사이트 안 링크 확인(사람이 볼 것은 QUESTIONS 로).
+- 테스트 243 통과. 로컬에 끼워 넣어 Noteworthy·Haas Consulting 화면 확인.
+
 ## 2026-10-30 18:17 UTC (버클리 금 11:17) · 초점: 사장님 큰 작업 ① 인턴 다양화 — 2단계
 - 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로. 라이브에 쓴 것 없음.
 - ⛔ 막힘(우회 안 함): Workday 기본 채용 주소를 회사 이름만으로 알아내려고 브라우저처럼 꾸민 요청(User-Agent·Accept)을 보내려 했더니 실행 권한 판정이 “봇 확인 우회”로 거부. 그 방법은 쓰지 않는다. 웹 검색으로도 Workday 주소는 안 나옴(구인 사이트·블로그만).
