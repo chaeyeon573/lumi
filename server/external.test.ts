@@ -86,3 +86,20 @@ test('OURS scholarship pages: every deadline wording on the site is read in Berk
   assert.equal(g.description, 'The Barry M. Goldwater Scholarship provides $7,500 per year.');
   assert.equal(g.schoolId, 's_berkeley');
 });
+
+test('Study Abroad list rows: program + term, the earlier of the two deadlines (Berkeley time), sponsor and eligibility', async () => {
+  const { parseStudyAbroadRows } = await import('./sources/studyabroad');
+  const { readFileSync } = await import('node:fs');
+  const html = readFileSync(new URL('./fixtures/studyabroad-rows.html', import.meta.url), 'utf8');
+  const rows = parseStudyAbroadRows(html, new Date('2026-10-30T12:00:00Z'));
+  assert.equal(rows.length, 3);
+  const ba = rows.find((o) => /Buenos Aires/.test(o.title))!;
+  assert.equal(ba.title, 'Global Internships: Buenos Aires, Argentina (Summer)');
+  assert.equal(ba.host, 'Berkeley Global Internships');
+  assert.equal(ba.deadline, '2027-01-14T07:59:00.000Z', '01/13 23:59 PT — the earlier of 01/13 and 01/14');
+  assert.equal(ba.sourceUrl, 'https://studyabroad.berkeley.edu/program/globalinternships/buenos-aires');
+  assert.match(ba.eligibility, /Soph, Jr, Sr · GPA \+2\.0/);
+  assert.match(ba.description, /Buenos Aires · Central & South America · Taught in English · Applications open 12\/1\/2026/);
+  assert.equal(ba.type, 'exchange');
+  assert.equal(parseStudyAbroadRows(html, new Date('2027-02-01T00:00:00Z')).length, 0, 'past deadlines are dropped');
+});

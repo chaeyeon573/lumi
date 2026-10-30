@@ -22,6 +22,7 @@
  * Railway 에서는 cron 서비스로 매일 한 번 실행된다 (Start Command: npm run agent). 실행이 끝나면 프로세스가 종료돼야 한다.
  */
 import { fetchOursScholarships } from '../sources/ours';
+import { fetchStudyAbroad } from '../sources/studyabroad';
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
@@ -297,6 +298,8 @@ if (process.env.AGENT_MODE === 'worker') {
       }
       // 버클리 OURS 장학금 — 공식 페이지의 ‘Next Campus Deadline’ 을 하루 한 번 읽는다 (server/sources/ours.ts)
       if (due('scholarships:ours', latest.get('scholarships:ours')?.finishedAt, 24)) { const opps = (await store.loadSnapshot())?.opportunities ?? []; const r = [await runOpportunities('scholarships:ours', 's_berkeley', () => fetchOursScholarships(new Date(), opps), 'op_ours_')]; did += 1; await notify(r); }
+      // 버클리 교환·해외 프로그램 (UCEAP·Global Internships 등) — 공식 목록의 학기별 마감 (server/sources/studyabroad.ts)
+      if (due('exchange:berkeley', latest.get('exchange:berkeley')?.finishedAt, 24)) { const r = [await runOpportunities('exchange:berkeley', 's_berkeley', () => fetchStudyAbroad(), 'op_sa_')]; did += 1; await notify(r); }
       if (due('external:internships', latest.get('external:internships')?.finishedAt, 12)) { const r = [await runOpportunities('external:internships', '', fetchInternships, 'op_ext_job_')]; did += 1; await notify(r); }
     }
     for (const row of loadSchools()) {

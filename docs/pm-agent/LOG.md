@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-30 12:28 UTC (버클리 금 05:28) · 초점: 사장님 큰 작업 ② — 교환학생(Study abroad) 채우기
+- 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로(aa70712 이후 4커밋 배포 대기). 라이브에 쓴 것 없음.
+- 추가: Berkeley Study Abroad 공식 목록(studyabroad.berkeley.edu/explore/programs, 로그인 없음, 12쪽) 가져오기 — server/sources/studyabroad.ts, 하루 1번. 줄 하나 = 프로그램 한 학기: 마감(그날 23:59 PT)·지원 시작일·지역·언어·학년·GPA·후원 기관, 링크는 그 프로그램 공식 페이지(UCEAP 는 uceap.universityofcalifornia.edu). 마감 없는·지난 줄은 뺀다.
+- 실제 사이트로 돌려 봄: 318개(UCEAP 299 · Berkeley Global Internships 15 · Independent 3 · Summer Abroad 1). Study abroad 탭이 1 → 318 (배포 + 첫 가져오기 뒤).
+- 발견: 사이트가 한 줄에 마감을 두 번 쓰고 하루씩 다르다(표 01/13, 설명 01/14) → 더 이른 날을 쓴다(놓치지 않게).
+- 확인: 테스트(실제 줄 3개로 만든 fixture) 추가, 240 통과.
+
 ## 2026-10-30 09:19 UTC (버클리 금 02:19) · 초점: 사장님 큰 작업 ② 장학금·연구·교환 채우기 — 1단계(출처 찾기 + 장학금)
 - 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로(aa70712·03642e2 배포 대기). 라이브에 쓴 것 없음.
 - 로그인 없이 읽히는 버클리 공식 목록 확인: ① OURS 장학금 scholarships.berkeley.edu (WordPress 공개 API, 장학금 페이지 ~38개, 본문에 “Next Campus Deadline: …”) ② URAP 연구 견습 urapprojects.berkeley.edu/list.php (공개, 지금은 Fall 마감이라 0개 — Spring 목록 올라오면 가져올 수 있음) ③ 교환 studyabroad.berkeley.edu/explore/programs (공개 목록, 프로그램 페이지마다 마감).
