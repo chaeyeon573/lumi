@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-30 15:22 UTC (버클리 금 08:22) · 초점: 배포 전 점검 — 새 장학금·교환 데이터를 화면에 넣어 보기
+- 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로. 라이브에 쓴 것 없음(가져온 데이터는 로컬 화면에만 끼워 넣음).
+- ⚠️ 정정: 지난 실행에 “OURS 장학금 9 → 17” 이라 적었는데 틀렸다. 늘어난 8개는 이미 전국 CSV(op_all_…)에 있던 것이라 화면에 **두 줄**로 나왔다(CBYX·Hollings·Lafayette·Princeton in Asia·FAO Schwarz·Huntington·Hertz·CLS·Goldwater 여름 인턴).
+- 고침: OURS 가져오기는 버클리 CSV 에서 옮긴 8개(Goldwater·Truman·Boren·Gaither·Yenching·Udall·Strauss·David-Weill)만 이어받아 마감을 공식 페이지대로 매일 맞추고, 전국 CSV 가 가진 것은 건드리지 않는다(`mergeWithExisting`, 테스트). 실제 효과 = 새 장학금 0개, 8개 마감 정확도(Goldwater 12/14·Truman 12/16).
+- 고침: 교환 목록에서 “Find an Independent Program, Planned Leave of Absence”(휴학 신청 안내) 줄을 뺌.
+- 확인: Study abroad 탭 319개 표시·D-day·후원 기관 정상. 테스트 241 통과.
+
 ## 2026-10-30 12:28 UTC (버클리 금 05:28) · 초점: 사장님 큰 작업 ② — 교환학생(Study abroad) 채우기
 - 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로(aa70712 이후 4커밋 배포 대기). 라이브에 쓴 것 없음.
 - 추가: Berkeley Study Abroad 공식 목록(studyabroad.berkeley.edu/explore/programs, 로그인 없음, 12쪽) 가져오기 — server/sources/studyabroad.ts, 하루 1번. 줄 하나 = 프로그램 한 학기: 마감(그날 23:59 PT)·지원 시작일·지역·언어·학년·GPA·후원 기관, 링크는 그 프로그램 공식 페이지(UCEAP 는 uceap.universityofcalifornia.edu). 마감 없는·지난 줄은 뺀다.

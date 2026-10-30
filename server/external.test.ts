@@ -103,3 +103,13 @@ test('Study Abroad list rows: program + term, the earlier of the two deadlines (
   assert.equal(ba.type, 'exchange');
   assert.equal(parseStudyAbroadRows(html, new Date('2027-02-01T00:00:00Z')).length, 0, 'past deadlines are dropped');
 });
+
+test('OURS import never shows a scholarship twice: adopts moved Berkeley rows, leaves national-CSV ones alone', async () => {
+  const { mergeWithExisting } = await import('./sources/ours');
+  const mk = (slug: string) => ({ id: `op_ours_${slug}`, sourceUrl: `https://scholarships.berkeley.edu/${slug}/` }) as never;
+  const out = mergeWithExisting([mk('goldwater'), mk('cbyx'), mk('hollings-scholarship'), mk('luce')], [
+    { id: 'op_berkeley_barry_goldwater_scholarship_berkeley_campus_nomination', sourceUrl: 'https://scholarships.berkeley.edu/goldwater/' },
+    { id: 'op_all_congress_bundestag_youth_exchange', sourceUrl: 'https://scholarships.berkeley.edu/cbyx/' },
+  ]);
+  assert.deepEqual(out.map((o: { id: string }) => o.id), ['op_berkeley_barry_goldwater_scholarship_berkeley_campus_nomination', 'op_ours_luce']);
+});

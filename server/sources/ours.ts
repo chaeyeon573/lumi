@@ -57,12 +57,32 @@ export function oursPageToOpportunity(p: { slug: string; link: string; title: st
   };
 }
 
-/** existing: 지금 DB 의 공고 — 같은 페이지를 손으로 넣어 둔 항목이 있으면 그 id 를 이어받는다(학생들의 저장·Q&A 유지) */
+/**
+ * 이미 전국 목록(server/data/opportunities-national.csv, id op_all_…)에 다른 공식 링크로 들어가 있는 같은 프로그램 — 두 줄로 보이지 않게 OURS 쪽을 넣지 않는다.
+ * (Hollings → noaa.gov, Hertz → hertzfoundation.org, CLS → clscholarship.org, Goldwater 여름 인턴 → goldwaterinternship.gov)
+ */
+export const NATIONAL_TWINS: ReadonlySet<string> = new Set(['hollings-scholarship', 'hertz', 'cls', 'goldwater-summer-research-internship-program']);
+
+/**
+ * existing: 지금 DB 의 공고. 같은 OURS 페이지를 가리키는 항목이 있으면 —
+ *  · 버클리 CSV 에서 옮겨 온 것(op_berkeley_…)은 id 를 이어받는다(저장·Q&A 유지, 이제 이 가져오기만 고친다)
+ *  · 전국 CSV 것(op_all_…)은 그 CSV 가 계속 고치므로 건드리지 않는다(두 가져오기가 번갈아 덮어쓰지 않게)
+ */
+export function mergeWithExisting(list: Opportunity[], existing: Pick<Opportunity, 'id' | 'sourceUrl'>[]): Opportunity[] {
+  const key = (u: string) => u.replace(/\/$/, '');
+  const byUrl = new Map(existing.filter((o) => o.sourceUrl.startsWith(SITE)).map((o) => [key(o.sourceUrl), o.id]));
+  return list.flatMap((o) => {
+    if (NATIONAL_TWINS.has(o.id.replace(/^op_ours_/, ''))) return [];
+    const id = byUrl.get(key(o.sourceUrl));
+    if (id?.startsWith('op_all_')) return [];
+    return [id ? { ...o, id } : o];
+  });
+}
+
 export async function fetchOursScholarships(now = new Date(), existing: Pick<Opportunity, 'id' | 'sourceUrl'>[] = []): Promise<Opportunity[]> {
-  const byUrl = new Map(existing.filter((o) => o.sourceUrl.startsWith(SITE)).map((o) => [o.sourceUrl.replace(/\/$/, ''), o.id]));
   const r = await fetch(`${SITE}/wp-json/wp/v2/pages?per_page=100&_fields=slug,link,title,content`, { headers: { 'user-agent': 'Mozilla/5.0 AroundU-importer', accept: 'application/json' } });
   if (!r.ok) throw new Error(`ours → ${r.status}`);
   const pages = (await r.json()) as { slug: string; link: string; title: { rendered: string }; content: { rendered: string } }[];
-  return pages.map((p) => oursPageToOpportunity({ slug: p.slug, link: p.link, title: p.title.rendered, html: p.content.rendered }, now)).filter((o): o is Opportunity => !!o)
-    .map((o) => { const id = byUrl.get(o.sourceUrl.replace(/\/$/, '')); return id ? { ...o, id } : o; });
+  const list = pages.map((p) => oursPageToOpportunity({ slug: p.slug, link: p.link, title: p.title.rendered, html: p.content.rendered }, now)).filter((o): o is Opportunity => !!o);
+  return mergeWithExisting(list, existing);
 }

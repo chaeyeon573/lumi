@@ -27,7 +27,8 @@ export function parseStudyAbroadRows(html: string, now = new Date()): Opportunit
     // 마감 두 곳(표 칸·설명) 중 이른 날, 그날 23:59 버클리
     const dates = [mdy(cell(row, 'field-deadline')), mdy(field(text, 'Deadline') ?? '')].filter((x): x is NonNullable<typeof x> => !!x).map((x) => pacificToIso(x.y, x.m, x.d, 23, 59)).sort();
     const deadline = dates[0];
-    if (!name || !deadline || Date.parse(deadline) < now.getTime()) continue;
+    // “Find an Independent Program / Planned Leave of Absence” 는 프로그램이 아니라 휴학 신청 안내다
+    if (!name || /^find an independent program/i.test(name) || !deadline || Date.parse(deadline) < now.getTime()) continue;
     const open = mdy(cell(row, 'field-app-open-date') || field(text, 'Application Open') || '');
     const sponsor = cell(row, 'field-sponsor') || field(text, 'Sponsor') || 'Berkeley Study Abroad';
     const region = field(text, 'Region'); const city = field(text, 'City'); const gpa = field(text, 'GPA'); const level = field(text, 'Class Level'); const lang = field(text, 'Language');
