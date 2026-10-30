@@ -44,3 +44,17 @@ test('the app counts "today" in the viewer’s school time zone', () => {
   assert.equal(campusDate(iso), '2026-10-20', 'default stays Pacific');
   assert.equal(normalizeTermLabel('Autumn 2026'), 'Autumn 2026');
 });
+
+test('“No … Seminar Today” and cancelled notices are not events; &#160; is decoded', async () => {
+  const { isNoticeNotEvent } = await import('./sources/opportunities');
+  assert.ok(isNoticeNotEvent('No Bioengineering Seminar Today'));
+  assert.ok(isNoticeNotEvent('CANCELLED: Topology Seminar'));
+  assert.ok(!isNoticeNotEvent('Spectral Theory Seminar: If it looks like a duck…'));
+  assert.ok(!isNoticeNotEvent('Nobel Laureate Talk'));
+  const talk = localistToOpportunities(events, stanford, NOW).find((o) => /Seminar/.test(o.title))!;
+  const src = events.find((e: { title: string }) => e.title === talk.title) as unknown as { title: string; description_text?: string };
+  const copies = [{ ...src, id: 1, title: 'No Bioengineering Seminar Today' }, { ...src, id: 2, description_text: 'Honors those who served.&#160;Join us.' }];
+  const ops = localistToOpportunities(copies as never[], stanford, NOW);
+  assert.ok(!ops.some((o) => /^No /.test(o.title)));
+  assert.ok(ops.some((o) => o.description.includes('served. Join us.')));
+});

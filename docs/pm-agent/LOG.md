@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-10-30 00:18 UTC (버클리 목 17:18) · 초점: 새로 들어온 공고·행사 훑기 (10/29 가져오기 뒤)
+- 사장님 답: 아직 없음. 배포 브랜치 1542420 그대로. 라이브에 쓴 것 없음(읽기만).
+- 라이브 셈: 인턴 311(같은 회사·제목·장소 중복 0), 행사 347, 해커톤 109, 장학금 49, 연구 43. 30시간 안에 새로 들어온 것 20개.
+- 고침(가져오기): 버클리 행사에 “No Bioengineering Seminar Today”(11/4·11/11) — 세미나가 **없다는** 알림이 행사로 2개 들어옴 → ‘No … today/this week/tonight’·‘Cancelled/Postponed’ 제목은 행사로 안 넣음(`isNoticeNotEvent`, LiveWhale·Localist 둘 다). 설명에 “&#160;” 가 그대로 남던 것(Veterans Day) → 숫자 문자 코드 풀기. 테스트 추가(고치기 전 실패/후 통과). 배포 + 다음 행사 가져오기 뒤 반영.
+- 확인(화면): 버클리 사용자 Events·Scholarships·Hackathons·Activities 에 UC Merced 행사(데이터엔 s_ucmerced 165개)·마감 지난 5개(Princeton in Africa, NSF GRFP, Micro Mouse, 예시 Stripe·Civic Data) 안 보임.
+- 확인: 앱·서버 타입, 테스트 236 통과.
+
 ## 2026-10-29 21:17 UTC (버클리 목 14:17) · 초점: 좌석 알림·수업 공간(CS 186)
 - 사장님 답: 아직 없음. 배포 브랜치 1542420 그대로. 라이브에 쓴 것 없음.
 - /seats(빈 상태 “Watch a Spring 2027 class…”·Find a class), /classes/CS 186 Databases v2·classic 정상. 예시 Will·예시 Study Crew 에 SAMPLE, “Free after CS 186 · Mon/Wed 11 AM” 수업 시각과 맞음.

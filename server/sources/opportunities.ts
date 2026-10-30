@@ -11,7 +11,7 @@
 import type { Opportunity, School } from '@core/types';
 
 const UA = { 'user-agent': 'Mozilla/5.0 AroundU-importer' };
-const text = (raw: unknown) => (Array.isArray(raw) ? raw.join(', ') : raw == null ? '' : String(raw)).replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&#039;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, ' ').trim();
+const text = (raw: unknown) => (Array.isArray(raw) ? raw.join(', ') : raw == null ? '' : String(raw)).replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&#039;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&#(\d+);/g, (_, n) => (n === '160' ? ' ' : String.fromCodePoint(Number(n)))).replace(/\s+/g, ' ').trim();
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '').slice(0, 60);
 async function get(url: string): Promise<string> {
   for (let attempt = 0; ; attempt++) {
@@ -114,6 +114,8 @@ export async function fetchEngageEvents(host: string, school: EventSchool, horiz
   });
 }
 
+/** 행사가 아니라 ‘오늘 세미나 없음’·‘취소’ 같은 알림 — 행사 목록에 넣으면 그날 뭔가 있는 것처럼 보인다 */
+export const isNoticeNotEvent = (title: string) => /^no\b.*\b(today|this week|tonight)\b|\b(cancell?ed|postponed)\b/i.test(title);
 interface LwEvent { id: number; title: string; url: string; date_iso: string; is_canceled?: number | boolean; is_all_day?: number | boolean; is_starred?: number | boolean; is_online?: number | boolean; location?: string; summary?: string; event_types?: string[]; group_title?: string; cost?: string }
 export async function fetchLiveWhale(base_: string, school: EventSchool, horizonDays = 14): Promise<Opportunity[]> {
   const nowIso = new Date().toISOString(); const out: Opportunity[] = []; const seen = new Set<number>(); const seenTitleDay = new Set<string>();
@@ -130,7 +132,7 @@ export async function fetchLiveWhale(base_: string, school: EventSchool, horizon
     }
     for (const e of items) {
       if (!e.date_iso?.startsWith(day)) continue; // 다음 날 0시 행사는 다음 반복에서
-      if (seen.has(e.id) || e.is_canceled || /^exhibit\b/i.test(e.title)) continue; seen.add(e.id);
+      if (seen.has(e.id) || e.is_canceled || /^exhibit\b/i.test(e.title) || isNoticeNotEvent(text(e.title))) continue; seen.add(e.id);
       const title = text(e.title); const summary = text(e.summary ?? ''); const types = (Array.isArray(e.event_types) ? e.event_types : []).map((t) => String(t));
       const food = hasFreeFood(title, summary); const talk = TALK_RE.test(title) || types.some((t) => /lecture|seminar|panel|colloquium|talk/i.test(t));
       // 학생에게 의미 있는 것만: 무료 음식 · 강연/포럼/패널 · 학교가 추천한 대표 행사. 온라인 전용과 같은 날 같은 제목의 반복은 뺀다
@@ -166,7 +168,7 @@ export function localistToOpportunities(events: LcEvent[], school: EventSchool, 
   const out: Opportunity[] = []; const seenTitleDay = new Set<string>();
   for (const e of events) {
     if (e.status && e.status !== 'live') continue;
-    if (e.experience === 'virtual' || /^exhibit\b/i.test(e.title)) continue;
+    if (e.experience === 'virtual' || /^exhibit\b/i.test(e.title) || isNoticeNotEvent(text(e.title))) continue;
     const next = (e.event_instances ?? []).map((x) => x.event_instance).filter((x) => Date.parse(x.end ?? x.start) >= now.getTime() && Date.parse(x.start) <= until).sort((a, b) => Date.parse(a.start) - Date.parse(b.start))[0];
     if (!next) continue;
     const title = text(e.title); const summary = text(e.description_text ?? '');
