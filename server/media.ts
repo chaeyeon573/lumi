@@ -6,6 +6,7 @@
  */
 import { randomBytes } from 'node:crypto';
 import type { MediaFile } from './store';
+import type { ID } from '@core/types';
 
 export const MAX_MEDIA_BYTES = 1_200_000;
 export const MAX_MEDIA_PER_DAY = 40;
@@ -32,3 +33,14 @@ export function acceptUpload(ownerId: string, raw: unknown, now = new Date()): {
 
 /** 오늘(UTC 0시부터) — 하루 한도를 세는 시작점 */
 export const dayStart = (now = new Date()) => new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate())).toISOString();
+
+/**
+ * 이 사진을 지금 보여 줘도 되나 — 사진 주소만 알면 열리므로, 글이 지워지거나(운영자·작성자·계정 삭제) 신고로 숨겨지거나
+ * 작성자가 정지되면 사진도 닫는다. 아직 글에 붙기 전(쓰는 중 미리보기)인 사진은 올린 지 2시간 동안만 — 갓 올린 글을 지워도 사진은 늦어도 2시간 뒤 닫힌다.
+ */
+export function mediaVisible(id: string, uploadedAt: string, posts: { authorId?: ID; media: { url?: string }[]; id: ID }[], blocked: { hidden: Map<ID, ID>; suspended: Set<ID> }, now = new Date()): boolean {
+  const url = `api/media/${id}`;
+  const using = posts.filter((p) => p.media.some((m) => m.url === url));
+  if (!using.length) return now.getTime() - Date.parse(uploadedAt) < 2 * 3600_000;
+  return using.some((p) => !blocked.hidden.has(p.id) && !(p.authorId && blocked.suspended.has(p.authorId)));
+}

@@ -57,11 +57,11 @@ import { createCampusData, mountCampusRoutes, mergeWorkerNotifications } from '.
 import { createClassesEngine } from '@core/api/classes';
 import { CLASSES_RULES, registerClassRoutes, startStudyGroupJob } from './classes';
 import { registerLegalRoutes } from './legal';
-import { aiViewFor, isSuspended, registerModerationRoutes, sessionAuth, signInBlock, suspendedMessage } from './moderation';
+import { aiViewFor, isSuspended, moderationState, registerModerationRoutes, sessionAuth, signInBlock, suspendedMessage } from './moderation';
 import { createPush, registerPushRoutes } from './push';
 import { registerAppLinkRoutes } from './app-links';
 import { PROTECTED_IDS } from './account';
-import { acceptUpload, dayStart, MAX_MEDIA_PER_DAY } from './media';
+import { acceptUpload, dayStart, MAX_MEDIA_PER_DAY, mediaVisible } from './media';
 import { createReviewLogin, reviewConfig, ReviewLoginError } from './review-login';
 
 const PORT = Number(process.env.PORT ?? 8787);
@@ -476,9 +476,10 @@ app.post('/api/media', auth, wrap(async (req: Req) => {
 app.get('/api/media/:id', wrap(async (req, res) => {
   const id = String(req.params.id);
   const m = /^[a-f0-9]{24}$/.test(id) ? await store.getMedia(id) : null;
-  if (!m) throw bad('not found', 404);
+  // 지워진·신고로 숨겨진·정지된 사람의 글에 붙은 사진은 닫는다. 지운 뒤 늦어도 1시간이면 브라우저에서도 사라지게 캐시는 짧게
+  if (!m || !mediaVisible(m.id, m.createdAt, db.posts, moderationState(db))) throw bad('not found', 404);
   res.setHeader('content-type', m.mime);
-  res.setHeader('cache-control', 'public, max-age=31536000, immutable');
+  res.setHeader('cache-control', 'public, max-age=3600');
   res.setHeader('x-content-type-options', 'nosniff');
   res.end(m.data);
 }));

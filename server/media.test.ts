@@ -33,3 +33,16 @@ test('photos are stored outside the snapshot, counted per day, and deleted with 
   await store.forgetUser('u1');
   assert.equal(await store.getMedia(r.file.id), null);
 });
+
+test('a photo closes when its post is deleted, auto-hidden by reports, or its author is suspended', async () => {
+  const { mediaVisible } = await import('./media');
+  const now = new Date('2026-10-31T12:00:00Z');
+  const post = { id: 'p1', authorId: 'u1', media: [{ url: 'api/media/abc' }] };
+  const open = { hidden: new Map(), suspended: new Set<string>() };
+  assert.equal(mediaVisible('abc', '2026-10-01T00:00:00Z', [post], open, now), true, 'on a live post');
+  assert.equal(mediaVisible('abc', '2026-10-01T00:00:00Z', [], open, now), false, 'post deleted');
+  assert.equal(mediaVisible('abc', '2026-10-31T11:00:00Z', [], open, now), true, 'just uploaded, still composing');
+  assert.equal(mediaVisible('abc', '2026-10-31T09:00:00Z', [], open, now), false, 'unattached for over 2 hours');
+  assert.equal(mediaVisible('abc', '2026-10-01T00:00:00Z', [post], { hidden: new Map([['p1', 'u1']]), suspended: new Set() }, now), false, 'hidden by 3 reports');
+  assert.equal(mediaVisible('abc', '2026-10-01T00:00:00Z', [post], { hidden: new Map(), suspended: new Set(['u1']) }, now), false, 'author suspended');
+});
