@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-10-31 21:17 UTC (버클리 토 14:17) · 초점: 동아리 공식 사이트 더 넣기
+- 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로. 라이브에 쓴 것 없음.
+- 직접 열어 제목으로 확인한 4곳 추가(org-sites-berkeley.csv, 이제 11곳): Data Science Society(dssberkeley.org → @dssberkeley·LinkedIn), Engineers Without Borders(ewb.berkeley.edu), SWE(swe.berkeley.edu → @ucb_swe·TikTok·LinkedIn·Facebook), Hackathons at Berkeley(hackberkeley.org → @calhacks·Facebook).
+- 넣지 않음: Daily Cal(Cloudflare 확인 화면 — 우회 안 함), CSUA·WiCSE·KASA·Cal in the Capital(주소가 안 열림 — 짐작 주소는 안 넣음).
+
 ## 2026-10-31 18:18 UTC (버클리 토 11:18) · 초점: 동아리 링크 2단계 — studentorg 주소를 안 쓰는 인기 동아리
 - 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로. 라이브에 쓴 것 없음.
 - 추가: 확인한 공식 사이트 목록 server/data/org-sites-berkeley.csv (org_id,site,checked,evidence) — 주간 동아리 링크 작업이 이 사이트도 열어 동아리가 걸어 둔 소셜만 가져온다. 7곳: CHAOS(chaosberkeley.org → Discord·Facebook·@chaosberkeley), Blueprint(@calblueprint), Codeology, Berkeley Consulting(@berkeleyconsulting), ML@B(@mlberkeley), UPE, Berkeley Forum(@berkeleyforum). 각 사이트는 직접 열어 제목·내용으로 그 동아리임을 확인.
