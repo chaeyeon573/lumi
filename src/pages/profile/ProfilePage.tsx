@@ -15,6 +15,7 @@ import { WeekGrid } from '@/components/timetable/WeekGrid';
 import { KeyDatesCard } from '@/components/academic/KeyDatesCard';
 import { SeatWatchCard } from '@/components/seats/SeatWatch';
 import { campusToday } from '@core/lib/rides';
+import { SampleTag } from '@/components/ui/SampleTag';
 import { daysUntil } from '@core/lib/recommend';
 
 
@@ -114,7 +115,7 @@ export function ProfilePage() {
               {upcoming.slice(0, 3).map((a) => { const pending = participations.some((p) => p.activityId === a.id && p.userId === me.id && p.status === 'pending'); return (
                 <button key={a.id} onClick={() => nav(`/activities/${a.id}`)} className="w-full flex items-center gap-3 py-3 text-left press">
                   <span className="h-10 w-10 rounded-full bg-surface-2 grid place-items-center text-primary"><CalendarCheck size={17} /></span>
-                  <span className="flex-1 min-w-0"><span className="block text-[14px] font-semibold text-primary truncate">{a.title}</span><span className="block text-[12px] text-ink-3">{formatDateTime(a.date, a.startTime)}</span></span>
+                  <span className="flex-1 min-w-0"><span className="block text-[14px] font-semibold text-primary truncate">{a.sample && <SampleTag />}{a.title}</span><span className="block text-[12px] text-ink-3">{formatDateTime(a.date, a.startTime)}</span></span>
                   <Tag tone={pending ? 'neutral' : 'primary'} className="h-6 rounded-full">{pending ? t('대기') : lang === 'en' ? 'Confirmed' : '확정'}</Tag>
                 </button>
               ); })}
