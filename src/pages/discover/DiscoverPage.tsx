@@ -133,9 +133,9 @@ function NowTab() {
   );
 }
 
-/** 날짜 묶음 — 오늘 · 내일 · 이번 주 · 그 뒤 */
+/** 날짜 묶음 — 오늘 · 내일 · 일주일 안(6일 뒤까지 — 토요일에 보면 다음 주 평일이 들어가서 ‘이번 주’라 부르지 않는다) · 그 뒤 */
 type Bucket = 'today' | 'tomorrow' | 'week' | 'later';
-const BUCKETS: [Bucket, string, string][] = [['today', 'Today', '오늘'], ['tomorrow', 'Tomorrow', '내일'], ['week', 'This week', '이번 주'], ['later', 'Coming up', '그 뒤']];
+const BUCKETS: [Bucket, string, string][] = [['today', 'Today', '오늘'], ['tomorrow', 'Tomorrow', '내일'], ['week', 'Next 7 days', '일주일 안'], ['later', 'Coming up', '그 뒤']];
 /** 묶음마다 처음에 보여줄 개수 — 나머지는 "모두 보기" */
 const BUCKET_CAP = 4;
 /** 맨 위 몇 개만 아무도 없어도 버튼을 남긴다 (줄마다 버튼이 붙으면 목록이 시끄럽다) */
