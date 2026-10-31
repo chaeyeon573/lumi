@@ -23,7 +23,7 @@
  */
 import { fetchOursScholarships } from '../sources/ours';
 import { fetchStudyAbroad } from '../sources/studyabroad';
-import { findStudentOrgSites } from '../sources/orgsites';
+import { findStudentOrgSites, knownSites } from '../sources/orgsites';
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
@@ -305,7 +305,8 @@ if (process.env.AGENT_MODE === 'worker') {
       if (due('orgsites:s_berkeley', latest.get('orgsites:s_berkeley')?.finishedAt, 24 * 7)) {
         const startedAt = new Date().toISOString();
         try {
-          const changed = await findStudentOrgSites((await store.loadSnapshot())?.organizations ?? []);
+          const listFile = path.join(path.dirname(SCHOOLS_CSV), 'org-sites-berkeley.csv');
+          const changed = await findStudentOrgSites((await store.loadSnapshot())?.organizations ?? [], 12, existsSync(listFile) ? knownSites(readFileSync(listFile, 'utf8')) : new Map());
           if (!DRY && changed.length) await store.applyPatch({ organizations: changed });
           await notify([await record({ task: 'orgsites:s_berkeley', schoolId: 's_berkeley', status: 'applied', startedAt, summary: { fetched: changed.length, sample: changed.slice(0, 3).map((o) => o.name) } })]);
         } catch (e) { await notify([await record({ task: 'orgsites:s_berkeley', schoolId: 's_berkeley', status: 'error', startedAt, summary: { error: (e as Error).message } })]); }

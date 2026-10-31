@@ -9,7 +9,7 @@ import type { Organization } from '@core/types';
 const PLATFORMS: [string, RegExp][] = [
   ['Instagram', /^https?:\/\/(?:www\.)?instagram\.com\/([A-Za-z0-9_.]+)\/?$/],
   ['Discord', /^https?:\/\/(?:www\.)?(?:discord\.gg\/[A-Za-z0-9-]+|discord\.com\/invite\/[A-Za-z0-9-]+)\/?$/],
-  ['Facebook', /^https?:\/\/(?:www\.)?facebook\.com\/(?!sharer|share|dialog|plugins|tr\b)[A-Za-z0-9_.\-/]+$/],
+  ['Facebook', /^https?:\/\/(?:www\.)?facebook\.com\/(?!sharer|share|dialog|plugins|tr\b|\d{4}\/)[A-Za-z0-9_.\-/]+$/],
   ['LinkedIn', /^https?:\/\/(?:www\.)?linkedin\.com\/company\/[A-Za-z0-9_\-]+\/?$/],
   ['TikTok', /^https?:\/\/(?:www\.)?tiktok\.com\/@[A-Za-z0-9_.]+\/?$/],
   ['Linktree', /^https?:\/\/(?:www\.)?linktr\.ee\/[A-Za-z0-9_.]+\/?$/],
@@ -32,7 +32,7 @@ export function socialLinksIn(html: string): { label: string; url: string }[] {
 /** CalLink 버튼은 그대로 두되 맨 뒤로, 웹사이트·소셜을 앞에 */
 export function withSiteLinks(org: Organization, site: string, social: { label: string; url: string }[]): Organization | null {
   const old = org.links ?? [];
-  const keep = old.filter((l) => !/studentorg\.berkeley\.edu|instagram\.com|facebook\.com|discord\.(gg|com)|linkedin\.com|tiktok\.com|linktr\.ee/.test(l.url));
+  const keep = old.filter((l) => l.label !== 'Website' && !/studentorg\.berkeley\.edu|instagram\.com|facebook\.com|discord\.(gg|com)|linkedin\.com|tiktok\.com|linktr\.ee/.test(l.url));
   const next = [{ label: 'Website', url: site }, ...social, ...keep];
   if (JSON.stringify(next) === JSON.stringify(old)) return null;
   return { ...org, links: next };
@@ -40,18 +40,28 @@ export function withSiteLinks(org: Organization, site: string, social: { label: 
 
 const keyOf = (o: Organization) => (o.links ?? []).map((l) => /callink\.berkeley\.edu\/organization\/([a-z0-9-]+)\/?$/i.exec(l.url)?.[1]).find(Boolean)?.toLowerCase();
 
+/**
+ * studentorg 주소를 안 쓰는 동아리 — 사람이(또는 PM agent 가) 공식 사이트임을 확인한 주소 목록 (server/data/org-sites-berkeley.csv: org_id,site,checked,evidence).
+ * 소셜 링크는 똑같이 그 사이트에 동아리가 걸어 둔 것만 가져온다.
+ */
+export function knownSites(csv: string): Map<string, string> {
+  const rows = csv.trim().split('\n').slice(1).map((l) => l.split(','));
+  return new Map(rows.filter((r) => r[0] && /^https:\/\//.test(r[1] ?? '')).map((r) => [r[0].trim(), r[1].trim()]));
+}
+
 /** 바뀐 동아리만 돌려준다. 사이트가 없거나 안 열리면 건드리지 않는다 */
-export async function findStudentOrgSites(orgs: Organization[], concurrency = 12): Promise<Organization[]> {
-  const todo = orgs.filter((o) => o.schoolId === 's_berkeley' && keyOf(o));
+export async function findStudentOrgSites(orgs: Organization[], concurrency = 12, known: Map<string, string> = new Map()): Promise<Organization[]> {
+  const todo = orgs.filter((o) => o.schoolId === 's_berkeley' && (known.has(o.id) || keyOf(o)));
   const out: Organization[] = []; let i = 0;
   const worker = async () => {
     while (i < todo.length) {
       const o = todo[i++];
       try {
-        const r = await fetch(`https://${keyOf(o)}.studentorg.berkeley.edu/`, { signal: AbortSignal.timeout(8000) });
+        const listed = known.get(o.id);
+        const r = await fetch(listed ?? `https://${keyOf(o)}.studentorg.berkeley.edu/`, { signal: AbortSignal.timeout(8000) });
         if (!r.ok) continue;
-        const site = r.url.replace(/\/+$/, '/');
-        if (!/\.studentorg\.berkeley\.edu\//.test(site)) continue; // 다른 곳으로 넘어가면 그 동아리 사이트인지 모른다
+        const site = listed ?? r.url.replace(/\/+$/, '/');
+        if (!listed && !/\.studentorg\.berkeley\.edu\//.test(site)) continue; // 다른 곳으로 넘어가면 그 동아리 사이트인지 모른다
         const next = withSiteLinks(o, site, socialLinksIn(await r.text()));
         if (next) out.push(next);
       } catch { /* 없으면 그대로 */ }

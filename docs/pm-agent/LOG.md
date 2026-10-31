@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-10-31 18:18 UTC (버클리 토 11:18) · 초점: 동아리 링크 2단계 — studentorg 주소를 안 쓰는 인기 동아리
+- 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로. 라이브에 쓴 것 없음.
+- 추가: 확인한 공식 사이트 목록 server/data/org-sites-berkeley.csv (org_id,site,checked,evidence) — 주간 동아리 링크 작업이 이 사이트도 열어 동아리가 걸어 둔 소셜만 가져온다. 7곳: CHAOS(chaosberkeley.org → Discord·Facebook·@chaosberkeley), Blueprint(@calblueprint), Codeology, Berkeley Consulting(@berkeleyconsulting), ML@B(@mlberkeley), UPE, Berkeley Forum(@berkeleyforum). 각 사이트는 직접 열어 제목·내용으로 그 동아리임을 확인.
+- ⚠️ 걸러냄: 검색이 Berkeley Investment Group 사이트라던 berkeleyinvestment.com 은 열어 보니 부동산·투자 블로그(/realestate/ 등)로 동아리 사이트가 아님 → 넣지 않음.
+- 고침: 페이지 코드 안의 `facebook.com/2008/fbml`(기술 주소)이 Facebook 링크로 잡히던 것 → 거름. 테스트 247 통과.
+
 ## 2026-10-31 15:17 UTC (버클리 토 08:17) · 초점: 채팅 목록 (10/27 뒤로 처음)
 - 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로. 라이브에 쓴 것 없음.
 - /chats v2·classic: “Free right now” 6명·대화 3개 모두 SAMPLE, “2h ago / 1d ago” 시간, 탭(Direct·Activities·Groups·Requests 1) 정상. 고친 것 없음.

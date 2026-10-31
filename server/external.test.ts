@@ -123,7 +123,7 @@ test('SmartRecruiters postings map to a public job link and a readable US locati
 test('club sites: only profile links the club itself put on its page, CalLink kept last', async () => {
   const { socialLinksIn, withSiteLinks } = await import('./sources/orgsites');
   const html = `<a href="https://www.instagram.com/cal_noteworthy/embed">x</a><a href="http://instagram.com/p/AbC123/">post</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=x">share</a><a href="https://www.facebook.com/Noteworthy">fb</a><a href="https://discord.gg/Dabsz3Jpe8">d</a>`;
+    <html xmlns:fb="http://www.facebook.com/2008/fbml"><a href="https://www.facebook.com/sharer/sharer.php?u=x">share</a><a href="https://www.facebook.com/Noteworthy">fb</a><a href="https://discord.gg/Dabsz3Jpe8">d</a>`;
   assert.deepEqual(socialLinksIn(html), [
     { label: 'Instagram', url: 'https://www.instagram.com/cal_noteworthy' },
     { label: 'Facebook', url: 'https://www.facebook.com/Noteworthy' },
@@ -133,4 +133,10 @@ test('club sites: only profile links the club itself put on its page, CalLink ke
   const next = withSiteLinks(org, 'https://noteworthy.studentorg.berkeley.edu/', socialLinksIn(html))!;
   assert.deepEqual(next.links!.map((l: { label: string }) => l.label), ['Website', 'Instagram', 'Facebook', 'Discord', 'Directory']);
   assert.equal(withSiteLinks(next, 'https://noteworthy.studentorg.berkeley.edu/', socialLinksIn(html)), null, 'no change → no write');
+});
+
+test('hand-checked club sites list: org id → https site (rows without a site are ignored)', async () => {
+  const { knownSites } = await import('./sources/orgsites');
+  const m = knownSites('org_id,site,checked,evidence\noc_berkeley_x,https://x.org/,2026-10-31,title\noc_berkeley_y,,2026-10-31,none\n');
+  assert.deepEqual([...m], [['oc_berkeley_x', 'https://x.org/']]);
 });
