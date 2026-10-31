@@ -62,7 +62,14 @@ export interface Store {
   removeDocs(collection: string, ids: string[]): Promise<void>;
   /** 계정 삭제 — 이 사람의 로그인 이메일·세션·인증 코드·AI 질문 기록·의견을 지운다. 지운 이메일을 돌려준다 (server/account.ts) */
   forgetUser(userId: ID): Promise<{ emails: string[] }>;
+  /** 사용자가 올린 사진 — 스냅샷 밖 (스냅샷이 무거워지지 않게). server/media.ts */
+  putMedia(m: MediaFile): Promise<void>;
+  getMedia(id: string): Promise<MediaFile | null>;
+  /** since 이후 이 사람이 올린 사진 수 — 하루 한도 */
+  countMediaSince(ownerId: ID, since: string): Promise<number>;
 }
+
+export interface MediaFile { id: string; ownerId: ID; mime: string; data: Buffer; createdAt: string }
 
 // ─── Postgres ────────────────────────────────────────────────────────────
 /** 수업 행을 500개씩 한 번에 넣는다 (학교 하나가 1만 행을 넘기도 한다) */
@@ -101,6 +108,8 @@ export class PgStore implements Store {
       CREATE TABLE IF NOT EXISTS sessions (token text PRIMARY KEY, user_id text NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
       CREATE TABLE IF NOT EXISTS email_codes (email text PRIMARY KEY, code text NOT NULL, expires_at timestamptz NOT NULL);
       CREATE TABLE IF NOT EXISTS ai_logs (id text PRIMARY KEY, kind text NOT NULL, user_id text, school_id text, input text NOT NULL, output text NOT NULL, ok boolean NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
+      CREATE TABLE IF NOT EXISTS media (id text PRIMARY KEY, owner_id text NOT NULL, mime text NOT NULL, data bytea NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
+      CREATE INDEX IF NOT EXISTS media_owner ON media (owner_id, created_at);
       CREATE TABLE IF NOT EXISTS feedback (id text PRIMARY KEY, user_id text, school_id text, page text NOT NULL, message text NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
       CREATE TABLE IF NOT EXISTS agent_runs (id text PRIMARY KEY, task text NOT NULL, school_id text, status text NOT NULL, started_at timestamptz NOT NULL, finished_at timestamptz NOT NULL, summary jsonb NOT NULL);
     `);
@@ -245,10 +254,23 @@ export class PgStore implements Store {
         // 그 사람이 물은 것 + 다른 사람이 그 사람 프로필로 받은 첫마디 제안 (input = 상대 id)
         await client.query("DELETE FROM ai_logs WHERE user_id = $1 OR (kind = 'starters' AND input = $1)", [userId]);
         await client.query('DELETE FROM feedback WHERE user_id = $1', [userId]);
+        await client.query('DELETE FROM media WHERE owner_id = $1', [userId]);
         await client.query('COMMIT');
         return { emails };
       } catch (e) { await client.query('ROLLBACK'); throw e; } finally { client.release(); }
     });
+  }
+  async putMedia(m: MediaFile) {
+    await this.pool.query('INSERT INTO media (id, owner_id, mime, data, created_at) VALUES ($1, $2, $3, $4, $5)', [m.id, m.ownerId, m.mime, m.data, m.createdAt]);
+  }
+  async getMedia(id: string) {
+    const { rows } = await this.pool.query<{ id: string; owner_id: string; mime: string; data: Buffer; created_at: Date }>('SELECT * FROM media WHERE id = $1', [id]);
+    const r = rows[0];
+    return r ? { id: r.id, ownerId: r.owner_id, mime: r.mime, data: r.data, createdAt: new Date(r.created_at).toISOString() } : null;
+  }
+  async countMediaSince(ownerId: ID, since: string) {
+    const { rows } = await this.pool.query<{ n: string }>('SELECT count(*) AS n FROM media WHERE owner_id = $1 AND created_at >= $2', [ownerId, since]);
+    return Number(rows[0]?.n ?? 0);
   }
   async takeCode(email: string) {
     const { rows } = await this.pool.query<{ email: string; code: string; expires_at: Date }>('DELETE FROM email_codes WHERE email = $1 RETURNING *', [email]);
@@ -257,7 +279,7 @@ export class PgStore implements Store {
 }
 
 // ─── 로컬 파일 ───────────────────────────────────────────────────────────
-interface FileData { snapshot: Snapshot | null; catalog: CatalogCourse[]; accounts: Account[]; sessions: Session[]; codes: EmailCode[]; agentRuns?: AgentRun[]; feedback?: Feedback[]; aiLogs?: AiLog[]; docs?: Record<string, Record<string, unknown>> }
+interface FileData { snapshot: Snapshot | null; catalog: CatalogCourse[]; accounts: Account[]; sessions: Session[]; codes: EmailCode[]; agentRuns?: AgentRun[]; feedback?: Feedback[]; aiLogs?: AiLog[]; docs?: Record<string, Record<string, unknown>>; media?: { id: string; ownerId: ID; mime: string; data: string; createdAt: string }[] }
 
 export class FileStore implements Store {
   private file: string;
@@ -342,9 +364,14 @@ export class FileStore implements Store {
     this.data.codes = this.data.codes.filter((c) => !emails.includes(c.email));
     this.data.aiLogs = (this.data.aiLogs ?? []).filter((l) => l.userId !== userId && !(l.kind === 'starters' && l.input === userId));
     this.data.feedback = (this.data.feedback ?? []).filter((f) => f.userId !== userId);
+    this.data.media = (this.data.media ?? []).filter((m) => m.ownerId !== userId);
     await this.flush();
     return { emails };
   }
+  // 로컬 개발용 — 사진을 base64 로 db.json 에 둔다
+  async putMedia(m: MediaFile) { (this.data.media ??= []).push({ ...m, data: m.data.toString('base64') }); await this.flush(); }
+  async getMedia(id: string) { const m = (this.data.media ?? []).find((x) => x.id === id); return m ? { ...m, data: Buffer.from(m.data, 'base64') } : null; }
+  async countMediaSince(ownerId: ID, since: string) { return (this.data.media ?? []).filter((m) => m.ownerId === ownerId && m.createdAt >= since).length; }
   async takeCode(email: string) {
     const c = this.data.codes.find((x) => x.email === email) ?? null;
     this.data.codes = this.data.codes.filter((x) => x.email !== email);

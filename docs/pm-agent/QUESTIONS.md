@@ -2,6 +2,12 @@
 
 사장님께 결정을 받아야 하는 것. 최신이 위. 답은 각 항목 아래에 `**답:** …` 으로 적어 주시면 다음 실행이 따른다.
 
+## 2026-10-31 · 사진 올리기를 만들었는데 — 개인정보처리방침 문장 하나를 바꿔야 배포할 수 있어요
+**무엇:** 사장님 답(B, 진짜 사진 올리기)대로 만들었다(배포 대기). 글쓰기 ＋ → 휴대폰 사진첩 → 올리기 전에 긴 변 1600px로 줄이고 위치정보(EXIF) 제거 → 서버 Postgres 의 사진 표(스냅샷과 따로)에 저장. 한 장 1.2MB, 하루 40장, JPEG·PNG·WebP 만(파일 내용으로 확인), 계정 삭제 때 같이 지움. 로컬 서버로 끝까지 확인(올리기·보이기·가짜 파일 거절).
+**걸리는 것:** 개인정보처리방침(src/pages/legal/LegalPages.tsx) “What we don't collect” 에 “Lumi doesn't read your device's … photos, camera …” 가 있다 — 사진 올리기가 배포되면 사실과 다르다. 법 문서라 제가 혼자 고치지 않았다.
+**제안 문구:** ① “What you create and do” 에 “Photos you choose to attach to a post. We shrink them and remove location data (EXIF) on your device before upload.” 추가 ② “What we don't collect” 의 “photos, camera” 를 “your photo library (only the photos you pick are uploaded), camera” 로 ③ 계정 삭제 문단에 “and photos you uploaded” 추가 ④ Last updated 날짜.
+**선택:** A) 이 문구로 고치고 사진 올리기와 같이 배포(추천) B) 문구를 사장님이 직접 C) 사진 올리기는 배포에서 빼고 나중에.
+
 ## 2026-10-25 · 내일 수강신청 시작인데 Discover 에는 안 보인다
 **무엇이 어색한가:** 내일(10/26 월) 버클리 Spring 2027 **Phase 1 수강신청 시작**(D-1)이다. 학사 일정은 Me 화면 ‘Key dates’ 와 /academic-calendar 에만 있고, 학생이 가장 자주 여는 Discover·People 에는 안 보인다. 수강신청은 Lumi 의 좌석 알림(/seats)·같은 수업 친구와 바로 이어지는 순간이다.
 **제안:** A) 중요한 학사 일정이 2일 안에 있으면 Discover 맨 위 줄 아래에 한 줄 띠(“Phase 1 enrollment opens tomorrow · Watch seats →”, 좌석 알림으로) — 화면 하나, 작은 변경. B) 알림(푸시·알림함)으로만. C) 그대로(Me 에만). — 추천: A, 출시 직후 학생들이 앱을 열 이유가 되는 날이다.

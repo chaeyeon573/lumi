@@ -183,6 +183,7 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
       async reset() { await call('system/reset', {}); },
       failNext() { failNextRequest = true; },
       async feedback(message, page) { await call('feedback', { message, page }); },
+      async uploadPhoto(dataUrl) { const r = await call<{ url: string }>('media', { data: dataUrl }); return { url: r.url }; },
     },
 
     ai: {

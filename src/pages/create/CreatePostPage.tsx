@@ -11,14 +11,11 @@ import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
 import { ALL_POST_TYPES, POST_TYPE_LABELS, POST_TYPE_EMOJI, TOPIC_TAGS } from '@core/lib/labels';
 import { friendsOf } from '@core/lib/relations';
-import { photo } from '@/lib/assets';
 import { cn } from '@core/lib/cn';
 import { SampleTag } from '@/components/ui/SampleTag';
 import { isNativeShell } from '@/lib/native';
+import { shrinkPhoto } from '@/lib/photoUpload';
 
-const EMOJIS = ['📷', '☕', '🍜', '📚', '🏃', '🎸', '🎨', '🌅', '🐈', '🎤', '💻', '🌸'];
-/** 데모용 샘플 사진 — 실제 서비스에서는 카메라·앨범 업로드 */
-const SAMPLE_PHOTOS = ['c_cafe_laptop', 'c_espresso', 'c_library', 'c_road_sunset', 'c_stage', 'c_bench', 'c_pizza', 'c_meadow'];
 const MAX_PHOTOS = 4;
 
 /** 개인 포스트: 사진 1~4장 + 짧은 글, 종류·주제·함께한 사람·관련 활동, 공개 범위와 노출 위치 */
@@ -37,6 +34,17 @@ export function CreatePostPage() {
   const myActs = v.visibleActivities.filter((a) => a.hostId === v.me.id || v.myParticipation(a.id)?.status === 'approved');
   const friends = useMemo(() => friendsOf(v.snap, v.me.id).map((id) => v.userById(id)!).filter(Boolean), [v]);
   const orgParam = params.get('org');
+  const showToast = useAppStore((x) => x.showToast);
+  const [uploading, setUploading] = useState(false);
+  // 학생 본인 사진 — 줄여서(위치정보 제거) 올린 뒤 주소를 글에 붙인다 (src/lib/photoUpload.ts, server/media.ts)
+  const addPhoto = async (file: File) => {
+    setUploading(true);
+    try {
+      const { url } = await api.system.uploadPhoto(await shrinkPhoto(file));
+      setForm((x) => ({ ...x, media: [...x.media, { emoji: '📷', hue: 210, url }].slice(0, MAX_PHOTOS) }));
+    } catch (e) { showToast((e as Error).message && !/too large/.test((e as Error).message) ? (e as Error).message : t('사진을 올리지 못했어요. 다시 시도해 주세요.')); }
+    finally { setUploading(false); }
+  };
   const [form, setForm] = useState<PostInput>({
     text: '', media: [], tags: [], topics: [], visibility: 'school', relatedActivityId: params.get('activity') ?? undefined, relatedOpportunityId: undefined,
     orgId: orgParam && myOrgs.some((o) => o.id === orgParam) ? orgParam : undefined, anonymous: params.get('anon') === '1',
@@ -59,16 +67,20 @@ export function CreatePostPage() {
       <div className="px-4 py-4 space-y-5">
         {!form.orgId && <div className="card px-4"><Toggle label={t('익명으로 올리기')} description={t('이름과 사진 대신 "익명"으로 표시돼요. 익명은 글만 올릴 수 있고 학교명만 보여요. 신고 시 운영진이 확인할 수 있어요.')} checked={anon} onChange={(val) => patch({ anonymous: val, orgId: val ? undefined : form.orgId, media: val ? [] : form.media })} /></div>}
         <Field label={t('종류')} required><div className="flex flex-wrap gap-1.5">{ALL_POST_TYPES.filter((pt) => form.orgId ? true : pt !== 'news').map((pt) => <Chip key={pt} size="sm" active={form.postType === pt} onClick={() => patch({ postType: pt })}>{POST_TYPE_EMOJI[pt]} {POST_TYPE_LABELS[pt]}</Chip>)}</div></Field>
-        <Field label={`${t('사진')} (${form.media.length}/${MAX_PHOTOS})`} hint={anon || isNativeShell() ? undefined : t('캠퍼스 생활·활동 중심으로. 데모에서는 샘플 사진이나 이모지 카드로 대체해요.')}>
+        <Field label={`${t('사진')} (${form.media.length}/${MAX_PHOTOS})`} hint={anon || isNativeShell() ? undefined : t('캠퍼스 생활·활동 사진을 올려 주세요. 사진 속 위치 정보는 지워서 올려요.')}>
           {anon ? <div className="rounded-xl bg-surface-2 px-3.5 py-3 text-[12px] text-ink-3 flex items-center gap-2"><ImageOff size={15} />{t('익명 글에는 사진을 붙일 수 없어요. 사진을 올리려면 익명을 끄세요.')}</div> : (<>
             <div className="flex gap-2 overflow-x-auto hide-scrollbar">
               {form.media.map((m, i) => (
                 <div key={i} className="relative shrink-0"><Cover emoji={m.emoji} hue={m.hue} url={m.url} className="h-24 w-24 rounded-2xl" size={36} />
                   <button onClick={() => patch({ media: form.media.filter((_, j) => j !== i) })} className="absolute -top-1.5 -right-1.5 h-6 w-6 rounded-full bg-ink text-white grid place-items-center"><X size={12} /></button></div>
               ))}
-              {form.media.length < MAX_PHOTOS && <button onClick={() => patch({ media: [...form.media, { emoji: EMOJIS[form.media.length % EMOJIS.length], hue: (form.media.length * 70 + 30) % 360, url: photo(SAMPLE_PHOTOS[(form.media.length + SAMPLE_PHOTOS.length - 1) % SAMPLE_PHOTOS.length]) }] })} className="h-24 w-24 rounded-2xl border-2 border-dashed border-line grid place-items-center text-ink-3 shrink-0"><Plus size={22} /></button>}
+              {form.media.length < MAX_PHOTOS && (
+                <label className={cn('h-24 w-24 rounded-2xl border-2 border-dashed border-line grid place-items-center text-ink-3 shrink-0 press', uploading ? 'opacity-60' : 'cursor-pointer')} aria-label={t('사진')}>
+                  {uploading ? <span className="text-[11px] text-center px-1">{t('사진 올리는 중…')}</span> : <Plus size={22} />}
+                  <input type="file" accept="image/*" className="hidden" disabled={uploading} onChange={(e) => { const f = e.target.files?.[0]; e.target.value = ''; if (f) void addPhoto(f); }} />
+                </label>
+              )}
             </div>
-            {form.media.length > 0 && <div className="flex flex-wrap gap-1.5 mt-2">{SAMPLE_PHOTOS.map((name) => <button key={name} onClick={() => patch({ media: form.media.map((m, i) => (i === form.media.length - 1 ? { ...m, url: photo(name) } : m)) })} className={cn('h-10 w-10 rounded-lg overflow-hidden', form.media[form.media.length - 1]?.url === photo(name) && 'ring-2 ring-primary')}><Cover emoji="" hue={0} url={photo(name)} className="h-full w-full" /></button>)}{EMOJIS.slice(0, 6).map((e) => <button key={e} onClick={() => patch({ media: form.media.map((m, i) => (i === form.media.length - 1 ? { ...m, emoji: e, url: undefined } : m)) })} className={cn('h-10 w-10 rounded-lg text-lg', !form.media[form.media.length - 1]?.url && form.media[form.media.length - 1]?.emoji === e ? 'bg-primary-soft ring-2 ring-primary' : 'bg-surface-2')}>{e}</button>)}</div>}
           </>)}
         </Field>
         <Field label={t('내용')} required><Textarea placeholder={form.postType === 'question' ? t('무엇이 궁금해요?') : form.postType === 'together' ? t('무엇을 같이 하고 싶어요?') : t('무슨 일이 있었나요?')} value={form.text} onChange={(e) => patch({ text: e.target.value })} maxLength={500} /></Field>

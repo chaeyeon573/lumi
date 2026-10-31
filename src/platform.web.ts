@@ -8,5 +8,6 @@ setPlatform({
   reload: () => window.location.reload(),
   locale: () => navigator.language,
   // 바깥 주소(동아리 로고 등)는 그대로 — 앞에 BASE_URL 을 붙이면 "/https://…" 가 되어 깨진다
-  asset: (path) => (/^(https?:|data:|blob:)/.test(path) ? path : `${import.meta.env.BASE_URL}${path}`),
+  // 학생이 올린 사진(api/media/…)은 API 서버에서 — 앱(iPhone)에서는 VITE_API_URL 이 서버 주소다
+  asset: (path) => (/^(https?:|data:|blob:)/.test(path) ? path : path.startsWith('api/media/') ? `${(import.meta.env.VITE_API_URL || '').replace(/\/$/, '')}/${path}` : `${import.meta.env.BASE_URL}${path}`),
 });

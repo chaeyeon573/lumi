@@ -61,6 +61,7 @@ import { aiViewFor, isSuspended, registerModerationRoutes, sessionAuth, signInBl
 import { createPush, registerPushRoutes } from './push';
 import { registerAppLinkRoutes } from './app-links';
 import { PROTECTED_IDS } from './account';
+import { acceptUpload, dayStart, MAX_MEDIA_PER_DAY } from './media';
 import { createReviewLogin, reviewConfig, ReviewLoginError } from './review-login';
 
 const PORT = Number(process.env.PORT ?? 8787);
@@ -463,6 +464,25 @@ app.post('/api/system/reset', auth, wrap(async (req: Req) => {
 }));
 
 /** 데이터 에이전트 최근 실행 — 학교별 마지막 결과와 최근 기록 (읽기 전용) */
+// ─── 사진 (글에 붙는 학생 본인 사진, server/media.ts) ──────────────────────────
+app.post('/api/media', auth, wrap(async (req: Req) => {
+  const me = requireUser(req);
+  if ((await store.countMediaSince(me, dayStart())) >= MAX_MEDIA_PER_DAY) throw bad(t('오늘은 사진을 더 올릴 수 없어요.'), 429);
+  const r = acceptUpload(me, req.body?.data);
+  if ('error' in r) throw bad(r.error);
+  await store.putMedia(r.file);
+  return { id: r.file.id, url: `api/media/${r.file.id}` };
+}));
+app.get('/api/media/:id', wrap(async (req, res) => {
+  const id = String(req.params.id);
+  const m = /^[a-f0-9]{24}$/.test(id) ? await store.getMedia(id) : null;
+  if (!m) throw bad('not found', 404);
+  res.setHeader('content-type', m.mime);
+  res.setHeader('cache-control', 'public, max-age=31536000, immutable');
+  res.setHeader('x-content-type-options', 'nosniff');
+  res.end(m.data);
+}));
+
 // ─── 의견 ──────────────────────────────────────────────────────────────────
 app.post('/api/feedback', auth, wrap(async (req: Req) => {
   const message = String(req.body.message ?? '').trim().slice(0, 4000);

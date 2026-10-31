@@ -20,8 +20,8 @@
  *   clears its in-memory copy.
  * - In memory: verified-email set, AI starter cache, open SSE streams → `forget` hooks / disconnect.
  * - Kept: reports *about* them (opaque target id, reporter's own words — needed for safety review),
- *   reports they filed (reporter replaced with "u_deleted"). Photos are not uploaded anywhere — avatars are
- *   bundled stock images or a URL on the profile, which is deleted with it. Feedback already e-mailed to
+ *   reports they filed (reporter replaced with "u_deleted"). Photos they uploaded to posts (media table,
+ *   server/media.ts) are deleted by store.forgetUser. Avatars are bundled stock images or a URL on the profile. Feedback already e-mailed to
  *   FEEDBACK_EMAIL cannot be recalled from the inbox.
  */
 import type { Express, Request, Response, NextFunction } from 'express';

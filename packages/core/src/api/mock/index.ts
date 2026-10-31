@@ -187,6 +187,8 @@ export const mockApi: AroundUApi = {
     async reset() { db = resetDB(); },
     failNext() { failNextRequest = true; },
     async feedback(message, page) { console.info('[feedback]', page, message); },
+    // 목업에는 서버가 없다 — 이 기기 안에서만 보이는 data: URL 그대로
+    async uploadPhoto(dataUrl) { return { url: dataUrl }; },
   },
 
   // 목업 모드에는 AI 가 없다 — 화면은 AI 없이 동작한다

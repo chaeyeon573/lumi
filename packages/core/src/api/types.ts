@@ -411,6 +411,8 @@ export interface AroundUApi {
     failNext(): void;
     /** 써 본 사람이 남기는 의견 — 운영자에게 메일로 간다 */
     feedback(message: string, page: string): Promise<void>;
+    /** 사진 한 장 올리기 — 줄인 사진의 data: URL 을 받아 글에 붙일 주소를 돌려준다 (server/media.ts) */
+    uploadPhoto(dataUrl: string): Promise<{ url: string }>;
   };
 
   /** AI 기능 — 서버에 OpenAI 키(OPENAI_API_KEY 또는 API_KEY)가 있을 때만 enabled */
