@@ -22,6 +22,9 @@ import { isSampleOrg } from '@core/lib/sampleorgs';
 type Tab = 'about' | 'posts' | 'events' | 'recruit' | 'members';
 
 /** 조직 페이지: 소개 | 게시물 | 행사 | 모집 | 멤버 */
+// 링크 이름은 데이터에 영어로 저장돼 있다 — 한국어 화면에서 일반 단어만 바꾼다 (Instagram 같은 서비스 이름은 그대로)
+const LINK_LABEL_KO: Record<string, string> = { Website: '웹사이트', Directory: '동아리 명부', 'Lab website': '연구실 웹사이트' };
+
 export function OrgPage() {
   const { id } = useParams();
   const nav = useNavigate();
@@ -95,7 +98,7 @@ export function OrgPage() {
             <div className="card p-4"><p className="text-[14px] text-ink-2 leading-relaxed">{org.description}</p>
               {(links.length || org.dues || org.joinProcess || org.policyNote) ? (
                 <div className="mt-3 space-y-2 border-t border-line pt-3">
-                  {links.length > 0 && <div className="flex flex-wrap gap-1.5">{links.map((l) => <a key={l.url} href={l.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 h-8 px-3 rounded-lg bg-surface-2 text-[12px] font-semibold text-ink-2"><ExternalLink size={12} />{l.label}{/callink\.berkeley\.edu/.test(l.url) && <span className="font-normal text-ink-3">· {lang === 'en' ? 'CalNet login' : 'CalNet 로그인'}</span>}</a>)}</div>}
+                  {links.length > 0 && <div className="flex flex-wrap gap-1.5">{links.map((l) => <a key={l.url} href={l.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 h-8 px-3 rounded-lg bg-surface-2 text-[12px] font-semibold text-ink-2"><ExternalLink size={12} />{lang === 'en' ? l.label : (LINK_LABEL_KO[l.label] ?? l.label)}{/callink\.berkeley\.edu/.test(l.url) && <span className="font-normal text-ink-3">· {lang === 'en' ? 'CalNet login' : 'CalNet 로그인'}</span>}</a>)}</div>}
                   {org.joinProcess && <div className="text-[13px]"><span className="text-ink-3">{t('가입 절차')} · </span>{org.joinProcess}</div>}
                   {org.dues && <div className="text-[13px]"><span className="text-ink-3">{t('회비')} · </span>{org.dues}</div>}
                   {org.policyNote && <div className="rounded-xl bg-gold-soft px-3 py-2 text-[12px] text-ink-2 flex gap-2"><ShieldCheck size={14} className="text-[#B57A0E] shrink-0 mt-0.5" /><span><b>{t('학교 정책 안내')}</b> · {org.policyNote}</span></div>}
