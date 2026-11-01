@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-11-01 00:17 UTC (버클리 토 17:17) · 초점: 토요일 저녁 Discover + 일요일 가져오기 대기
+- 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로. 라이브에 쓴 것 없음.
+- 그리스: UTC 일요일이 막 시작 — 주간 가져오기 아직 전(&# 25곳, Panhellenic 을 fraternity 로 쓴 설명 5곳 그대로). 다음 실행에서 다시 셈. Girls Who Code HHS 해커톤은 수정이 배포 전이라 그대로.
+- Discover(토 17:17): 식당 6곳 운영·저녁 메뉴, 체육관 79% Busy, 즉석 모임 5개 모두 SAMPLE·지난 시각 없음. 고친 것 없음.
+- README: 화면 보기를 v2 기준으로(Classic 은 10/30 사장님 결정으로 학생에게 안 보임 — 비교할 때만).
+
 ## 2026-10-31 21:17 UTC (버클리 토 14:17) · 초점: 동아리 공식 사이트 더 넣기
 - 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로. 라이브에 쓴 것 없음.
 - 직접 열어 제목으로 확인한 4곳 추가(org-sites-berkeley.csv, 이제 11곳): Data Science Society(dssberkeley.org → @dssberkeley·LinkedIn), Engineers Without Borders(ewb.berkeley.edu), SWE(swe.berkeley.edu → @ucb_swe·TikTok·LinkedIn·Facebook), Hackathons at Berkeley(hackberkeley.org → @calhacks·Facebook).
