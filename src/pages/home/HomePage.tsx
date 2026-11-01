@@ -243,7 +243,10 @@ export function PersonSlide({ user, reasons, plan, onOpen }: { user: User; reaso
   const canSeeTT = !!user.timetable?.length && v.canSeeField(user, 'timetable');
   const st = canSeeTT ? statusNow(user.timetable ?? []) : null;
   const block = canSeeTT ? freeBlocks(user.timetable ?? [], todayIdx()).find((b) => b.end > nowMin()) : null;
-  const freeLabel = st?.kind === 'free' && block ? `${t('공강')} ${fmtBlock({ start: Math.max(block.start, nowMin()), end: block.end })}` : user.availability === 'now' ? t('지금 가능') : null;
+  // 지금 비어 있으면 ‘지금 → 다음 수업’ — 아침 9시 전에 “free 9 AM–11 AM”(시간표 칸 시작) 으로 보이거나,
+  // 30분 안 되는 틈(10:50–11)에 다음 큰 공강(12–2 PM)이 나오던 것. Discover 의 “Free until …” 과 같은 시각
+  const freeEnd = st?.kind === 'free' ? (st.until ?? block?.end ?? null) : null;
+  const freeLabel = freeEnd && freeEnd > nowMin() ? `${t('공강')} ${fmtBlock({ start: nowMin(), end: freeEnd })}` : user.availability === 'now' ? t('지금 가능') : null;
   const tap = (e: React.MouseEvent<HTMLDivElement>) => {
     const r = e.currentTarget.getBoundingClientRect(); const x = e.clientX - r.left;
     if (photos.length > 1 && x < r.width * 0.3) setPi((p) => (p - 1 + photos.length) % photos.length);

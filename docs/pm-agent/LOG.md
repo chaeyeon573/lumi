@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-11-01 21:17 UTC (버클리 일 13:17 PST) · 초점: 월요일 아침 Discover·People (겨울 시간 첫 수업일)
+- 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로. 라이브에 쓴 것 없음. calendar:s_berkeley 여전히 error(배포 전).
+- 브라우저 시계를 월 11/2 08:30 PST 로 두고 라이브 데이터로 봄: Discover “Free until 10 AM”, Activities Today 32 → Tomorrow 15 → Next 7 days(수요일부터) 정상. (식당·체육관 칸은 서버 시각이라 일요일 값 — 시뮬레이션 한계)
+- 고침: People 카드의 공강 표시가 아침 9시 전에 “free 9 AM–11 AM”(시간표 칸 시작)으로 나오던 것 → “free 8:30 AM–11 AM”(지금 → 다음 수업). 30분 안 되는 틈에는 다음 큰 공강을 보여 주던 것도 같이(HomePage.tsx). 249 통과.
+
 ## 2026-11-01 18:17 UTC (버클리 일 10:17 PST) · 초점: 동아리 공식 사이트 더 (공학·학술)
 - 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로. 라이브에 쓴 것 없음.
 - 직접 열어 제목으로 확인한 4곳 추가(org-sites-berkeley.csv, 이제 15곳): BMUN(@berkeleymun), STAC(Facebook·LinkedIn), Formula SAE(@calformularacing·Facebook·LinkedIn), CalSol(@berkeleycalsol·Facebook).
