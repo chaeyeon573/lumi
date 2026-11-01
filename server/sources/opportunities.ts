@@ -8,10 +8,11 @@
  * 무료 음식은 표시(benefitNames) 또는 제목·설명의 키워드로 찾아 benefit 에 "🍕 Free food" 를 단다 — 카드에 그대로 보인다
  * 본문을 옮기지 않고 제목·주최·한 줄 요약·원문 링크만 넣는다.
  */
+import { decodeNumericEntities } from './entities';
 import type { Opportunity, School } from '@core/types';
 
 const UA = { 'user-agent': 'Mozilla/5.0 AroundU-importer' };
-const text = (raw: unknown) => (Array.isArray(raw) ? raw.join(', ') : raw == null ? '' : String(raw)).replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&#039;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&#(\d+);/g, (_, n) => (n === '160' ? ' ' : String.fromCodePoint(Number(n)))).replace(/\s+/g, ' ').trim();
+const text = (raw: unknown) => (Array.isArray(raw) ? raw.join(', ') : raw == null ? '' : String(raw)).replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&#039;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&#(x[0-9a-f]+|\d+);/gi, (m) => decodeNumericEntities(m)).replace(/\s+/g, ' ').trim();
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '').slice(0, 60);
 async function get(url: string): Promise<string> {
   for (let attempt = 0; ; attempt++) {

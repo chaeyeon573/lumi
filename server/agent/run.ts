@@ -188,7 +188,8 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
   let platform = latest.get(`detect:${row.id}`)?.summary.platform as string | undefined;
   const lastDetect = latest.get(`detect:${row.id}`);
   // 못 찾았으면 하루 뒤 다시, 찾았으면 30일 뒤 다시 확인한다
-  if (!host || hoursSince(lastDetect?.finishedAt) > (lastDetect?.status === 'applied' ? 24 * 30 : 24)) {
+  // `!host ||` 를 앞에 두면 못 찾은 학교(CalLink 가 로그인으로 닫힌 버클리)는 바퀴마다(30초) 다시 탐지했다 — 기록이 없을 때만 바로
+  if (!lastDetect || hoursSince(lastDetect.finishedAt) > (lastDetect.status === 'applied' ? 24 * 30 : 24)) {
     const startedAt = new Date().toISOString();
     const d = await detectOrgsPlatform(row.short, row.email_domain, row.orgs_host || undefined);
     host = d?.host; platform = d?.platform;
@@ -301,6 +302,8 @@ if (process.env.AGENT_MODE === 'worker') {
       if (due('scholarships:ours', latest.get('scholarships:ours')?.finishedAt, 24)) { const opps = (await store.loadSnapshot())?.opportunities ?? []; const r = [await runOpportunities('scholarships:ours', 's_berkeley', () => fetchOursScholarships(new Date(), opps), 'op_ours_')]; did += 1; await notify(r); }
       // 버클리 교환·해외 프로그램 (UCEAP·Global Internships 등) — 공식 목록의 학기별 마감 (server/sources/studyabroad.ts)
       if (due('exchange:berkeley', latest.get('exchange:berkeley')?.finishedAt, 24)) { const r = [await runOpportunities('exchange:berkeley', 's_berkeley', () => fetchStudyAbroad(), 'op_sa_')]; did += 1; await notify(r); }
+      // Greek 명단 — 일주일에 한 번. 예전엔 `npm run agent` 를 일요일에 따로 돌릴 때만 가져와서 상시 워커만 있으면 안 돌았다
+      for (const g of GREEK_SCHOOLS) if (due(`greeks:${g}`, latest.get(`greeks:${g}`)?.finishedAt, 24 * 7)) { const r = [await runScript(`greeks:${g}`, 'fetch:greeks', g)]; did += 1; await notify(r); }
       // 버클리 동아리 공식 사이트(<이름>.studentorg.berkeley.edu)·소셜 링크 — 일주일에 한 번 (server/sources/orgsites.ts)
       if (due('orgsites:s_berkeley', latest.get('orgsites:s_berkeley')?.finishedAt, 24 * 7)) {
         const startedAt = new Date().toISOString();

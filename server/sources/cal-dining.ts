@@ -11,6 +11,7 @@
  * 그래서: 장소 목록·오늘 영업시간은 페이지에서, 메뉴는 XML 에서. XML 을 못 읽으면 오늘 메뉴는 페이지의 것을 쓴다.
  * 정중하게: 요청은 하나씩, 사이 0.8초. 하루 몇 번만 (server/dining.ts 의 일정).
  */
+import { charFromCode } from './entities';
 import type { Allergen, DietTag, DiningDay, DiningLocation, MealPeriod, Station, TimeRange, LocationKind } from '@core/lib/dining';
 import { mealOf } from '@core/lib/dining';
 
@@ -24,7 +25,7 @@ const HALLS = new Set(['Cafe 3', 'Clark Kerr Campus', 'Crossroads', 'Foothill'])
 // ─── 작은 도구 ────────────────────────────────────────────────────────────────
 const ENT: Record<string, string> = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ', ndash: '–', mdash: '—', hellip: '…', rsquo: '’', lsquo: '‘', rdquo: '”', ldquo: '“', eacute: 'é', egrave: 'è', ntilde: 'ñ', reg: '®', trade: '™' };
 export const decode = (s: string) => s.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e: string) => {
-  if (e[0] === '#') { const n = e[1] === 'x' || e[1] === 'X' ? parseInt(e.slice(2), 16) : Number(e.slice(1)); return Number.isFinite(n) ? String.fromCodePoint(n) : m; }
+  if (e[0] === '#') { const n = e[1] === 'x' || e[1] === 'X' ? parseInt(e.slice(2), 16) : Number(e.slice(1)); return Number.isFinite(n) ? charFromCode(n) : m; }
   return ENT[e.toLowerCase()] ?? m;
 }).replace(/\s+/g, ' ').trim();
 const strip = (s: string) => decode(s.replace(/<[^>]*>/g, ' '));

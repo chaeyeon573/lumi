@@ -20,6 +20,7 @@
  *   - 시작용으로 손으로 넣어 둔 Berkeley greek 추정 항목(링크 없음·멤버 없음·공식 목록에 없음)은 지운다.
  *     CalLink 에서 온 professional/service 계열 greek 은 링크가 있으므로 남는다.
  */
+import { decodeNumericEntities } from '../sources/entities';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -49,7 +50,7 @@ const COUNCIL_JOIN: Record<Council, string> = {
 interface Row { council: Council; name: string; websiteKey?: string; address?: string; kind: 'Fraternity' | 'Sorority' | 'Independent living group'; policy?: string; svsh?: string; intro?: string; url?: string; website?: string }
 
 // 숫자 문자 참조(&#8212; 등)도 푼다 — 주소 칸의 “&#8212;”(=—, 주소 없음)가 “Chapter house: &#8212;.” 로 화면에 나왔다
-const strip = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/&nbsp;|&amp;|&quot;|&#39;|&#8217;/g, (m) => ({ '&nbsp;': ' ', '&amp;': '&', '&quot;': '"', '&#39;': "'", '&#8217;': '’' }[m] ?? ' ')).replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n))).replace(/\s+/g, ' ').trim();
+const strip = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/&nbsp;|&amp;|&quot;|&#39;|&#8217;/g, (m) => ({ '&nbsp;': ' ', '&amp;': '&', '&quot;': '"', '&#39;': "'", '&#8217;': '’' }[m] ?? ' ')).replace(/&#(x[0-9a-f]+|\d+);/gi, (m) => decodeNumericEntities(m)).replace(/\s+/g, ' ').trim();
 
 /** 카운슬별 <h2> 아래 첫 <table> 을 읽는다. 헤더 이름으로 열을 찾아 카운슬마다 열 수가 달라도 견딘다. */
 function parse(html: string): Row[] {

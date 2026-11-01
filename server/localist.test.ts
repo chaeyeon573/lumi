@@ -58,3 +58,13 @@ test('“No … Seminar Today” and cancelled notices are not events; &#160; is
   assert.ok(!ops.some((o) => /^No /.test(o.title)));
   assert.ok(ops.some((o) => o.description.includes('served. Join us.')));
 });
+
+test('a broken numeric entity (&#551899002633743;) no longer stops the whole events import', async () => {
+  const { decodeNumericEntities, charFromCode } = await import('./sources/entities');
+  assert.equal(decodeNumericEntities('A&#8211;B &#x2019; &#551899002633743; &#160;C'), 'A–B ’   C'.replace(' C', ' C'));
+  assert.equal(charFromCode(0x110000), '');
+  assert.equal(charFromCode(0xd800), '');
+  const talk = localistToOpportunities(events, stanford, NOW).find((o) => /Seminar/.test(o.title))!;
+  const src = events.find((e: { title: string }) => e.title === talk.title) as unknown as { title: string; description_text?: string };
+  assert.doesNotThrow(() => localistToOpportunities([{ ...src, description_text: 'Broken &#551899002633743; char' }] as never[], stanford, NOW));
+});

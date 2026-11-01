@@ -3,6 +3,7 @@
  * 페이지 본문에 “Next Campus Deadline: Noon, December 14, 2026” / “Next deadline: January 31, 2027, 9:00 pm” 처럼 적혀 있다.
  * 마감을 읽지 못했거나 이미 지난 장학금은 넣지 않는다(지어내지 않는다). 손으로 넣은 CSV 의 같은 페이지(url)는 이 가져오기가 대신한다.
  */
+import { decodeNumericEntities } from './entities';
 import type { Opportunity } from '@core/types';
 
 const SITE = 'https://scholarships.berkeley.edu';
@@ -10,7 +11,7 @@ const SITE = 'https://scholarships.berkeley.edu';
 const NOT_SCHOLARSHIP = new Set(['search', 'scholarship-databases', 'recent-graduates-alumni', 'scholarships-by-4th-5th-year', 'scholarships-by-3rd-year', 'scholarships-by-2nd-year', 'scholarships-by-1st-year', 'test-query', 'international-and-undocumented-students', 'guidance', 'on-campus-resources', 'scholarships', 'requirements', 'news', 'home', 'people']);
 const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
 
-const plain = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/&#8211;|&ndash;/g, '–').replace(/&#8217;|&rsquo;/g, '’').replace(/&amp;/g, '&').replace(/&nbsp;|&#160;/g, ' ').replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n))).replace(/\s+/g, ' ').trim();
+const plain = (html: string) => html.replace(/<[^>]+>/g, ' ').replace(/&#8211;|&ndash;/g, '–').replace(/&#8217;|&rsquo;/g, '’').replace(/&amp;/g, '&').replace(/&nbsp;|&#160;/g, ' ').replace(/&#(x[0-9a-f]+|\d+);/gi, (m) => decodeNumericEntities(m)).replace(/\s+/g, ' ').trim();
 
 /** 버클리 벽시계 시각 → UTC ISO (여름·겨울 시간 모두) */
 export function pacificToIso(y: number, m: number, d: number, hh: number, mm: number): string {
