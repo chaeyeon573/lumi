@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-11-01 18:17 UTC (버클리 일 10:17 PST) · 초점: 동아리 공식 사이트 더 (공학·학술)
+- 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로. 라이브에 쓴 것 없음.
+- 직접 열어 제목으로 확인한 4곳 추가(org-sites-berkeley.csv, 이제 15곳): BMUN(@berkeleymun), STAC(Facebook·LinkedIn), Formula SAE(@calformularacing·Facebook·LinkedIn), CalSol(@berkeleycalsol·Facebook).
+- 넣지 않음: STAR·Formula Electric·Cal Animage Alpha·AAA(짐작 주소가 안 열림), VEX U(열리지만 제목이 비어 확인 못 함).
+
 ## 2026-11-01 15:17 UTC (버클리 일 07:17 PST) · 초점: 겨울 시간 첫날 — Rides·수업 공간·시간표
 - 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로. 라이브에 쓴 것 없음.
 - Rides: 날짜 묶음 Today(Emma → Trader Joe's, Sun 4pm)·Sat Nov 7·Tue Nov 24, 추수감사절 안내 정상. 수업 공간 CS 186 “Mon/Wed 10 AM · 수업 뒤 11 AM” 정상. 시간표 “Sun · No classes today”·11줄 정상. 고친 것 없음.
