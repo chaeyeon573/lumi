@@ -140,3 +140,10 @@ test('hand-checked club sites list: org id → https site (rows without a site a
   const m = knownSites('org_id,site,checked,evidence\noc_berkeley_x,https://x.org/,2026-10-31,title\noc_berkeley_y,,2026-10-31,none\n');
   assert.deepEqual([...m], [['oc_berkeley_x', 'https://x.org/']]);
 });
+
+test('Berkeley 23:59 is 06:59Z in summer and 07:59Z in winter (DST ends Nov 1)', async () => {
+  const { pacificToIso } = await import('./sources/ours');
+  assert.equal(pacificToIso(2026, 9, 30, 23, 59), '2026-10-31T06:59:00.000Z');
+  assert.equal(pacificToIso(2026, 10, 15, 23, 59), '2026-11-16T07:59:00.000Z');
+  assert.equal(pacificToIso(2027, 2, 20, 23, 59), '2027-03-21T06:59:00.000Z', 'DST starts Mar 14 2027');
+});

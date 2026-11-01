@@ -11,6 +11,7 @@
  *   - status=closed 인 줄은 앱에서 내린다 (마감됐거나 다음 회차 날짜가 없는 것 — 줄을 지우기만 하면 DB 에 남는다)
  *   - PRUNE_DEMO=1 이면 CSV 에 있는 학교의 데모 시드 공고(링크가 example.com 이거나 없는 것)와 그에 딸린 저장 기록을 지운다
  */
+import { pacificToIso } from '../sources/ours';
 import { readFileSync } from 'node:fs';
 import type { Opportunity, OpportunityType, Goal } from '@core/types';
 import { createStore, emptySnapshot } from '../store';
@@ -26,7 +27,8 @@ const COVER: Record<OpportunityType, { emoji: string; hue: number }> = {
 const TYPES = Object.keys(COVER) as OpportunityType[];
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '').slice(0, 60);
 const list = (s: string) => s.split(',').map((x) => x.trim()).filter(Boolean);
-const iso = (s: string) => { if (!s) return undefined; if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) throw new Error(`bad date (YYYY-MM-DD): ${s}`); return new Date(`${s}T23:59:00-07:00`).toISOString(); };
+// 그날 23:59 버클리 시각 — ‘-07:00’ 고정이면 겨울(11월~3월, UTC−8)엔 밤 10:59 에 닫혔다
+const iso = (s: string) => { if (!s) return undefined; if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) throw new Error(`bad date (YYYY-MM-DD): ${s}`); const [y, m, d] = s.split('-').map(Number); return pacificToIso(y, m - 1, d, 23, 59); };
 
 const store = createStore();
 await store.init();
