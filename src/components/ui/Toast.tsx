@@ -7,8 +7,10 @@ export function Toast() {
   const nav = useNavigate();
   if (!toast) return null;
   const { action } = toast;
+  // -translate-x-1/2: 등장 애니메이션이 끝나면 transform 이 풀려 토스트가 오른쪽으로 밀려나 있었다. w-max: 왼쪽 50% 자리 폭에 갇혀 글자가 세로로 쌓이던 것
   return (
-    <div key={toast.id} role="status" className={cn('absolute left-1/2 bottom-24 z-[1200] px-4 py-2.5 rounded-xl text-[13px] font-semibold text-white shadow-lg animate-toast-in max-w-[85%] text-center',
+    <div key={toast.id} role="status" className={cn(
+      'absolute left-1/2 -translate-x-1/2 bottom-24 z-[1200] w-max max-w-[calc(100%-32px)] px-4 py-2.5 rounded-xl text-[13px] font-semibold text-white shadow-lg animate-toast-in text-center',
       action && 'flex items-center gap-3 text-left pr-2 py-2',
       toast.tone === 'error' ? 'bg-danger' : toast.tone === 'success' ? 'bg-mint' : 'bg-ink')}>
       <span className={cn(action && 'flex-1 min-w-0')}>{toast.text}</span>
