@@ -175,7 +175,7 @@ export function interestProfile(snap: Snap, me: User, now = new Date()): Interes
 const FIELD_TOPIC: Record<string, Vec> = {
   'Software': { software: 2 }, 'Data & AI': { ai_data: 2 }, 'Hardware': { hardware: 2 }, 'Quant & Trading': { quant: 2, finance: 0.6 },
   'Finance & Consulting': { finance: 1.5, consulting: 1.2 }, 'Product & Design': { design: 2 }, 'Business & Marketing': { business: 2 },
-  'Research & Science': { research: 2 },
+  'Research & Science': { research: 2 }, 'Policy & Law': { policy_law: 2 }, 'Media & Writing': { media: 2 }, 'Nonprofit & Education': { impact: 2 }, 'Health': { research: 0.8, impact: 1 },
 };
 const PARENT_TOPIC: [RegExp, Vec][] = [
   [/engineering|computer science/i, { software: 0.6, hardware: 0.6 }], [/professional/i, { career: 0.8 }], [/service/i, { impact: 1 }],

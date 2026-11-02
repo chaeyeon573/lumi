@@ -8,7 +8,7 @@ import assert from 'node:assert/strict';
 import type { Snapshot } from '@core/api/types';
 import type { Opportunity, Organization } from '@core/types';
 import * as seed from '@core/data/seed.en';
-import { categoriesOf, eventKindsOf, inCategory, isOfType, listingsOfOrg, orgLinker, orgOfListing, regionsOf, fieldOf } from '@core/lib/listings';
+import { categoriesOf, eventKindsOf, inCategory, isOfType, listingsOfOrg, orgLinker, orgOfListing, regionsOf, fieldOf, listingField } from '@core/lib/listings';
 import { coursesFromCatalog, clashesWith, hasCatalogCourse } from '@core/lib/timetable';
 import { forYou } from '@core/lib/foryou';
 import { recommendFor, searchListings } from './ai-search';
@@ -163,4 +163,19 @@ test('internship field: aerospace roles are Hardware, user/UX research is Produc
   assert.equal(fieldOf('Software Engineer Intern (Summer 2027)'), 'Software');
   assert.equal(fieldOf('Internship - Machine Learning Research Engineer'), 'Data & AI');
   assert.equal(fieldOf('Research Engineer Co-op'), 'Research & Science');
+});
+
+test('internship fields: humanities & social-science roles get their own fields, tech roles at government/media stay tech', () => {
+  assert.equal(fieldOf('Local Government, Politics Intern - Summer 2027'), 'Policy & Law');
+  assert.equal(fieldOf('Legal Intern'), 'Policy & Law');
+  assert.equal(fieldOf('Policy Analyst Intern'), 'Policy & Law');
+  assert.equal(fieldOf('Breaking News Intern - Summer 2027'), 'Media & Writing');
+  assert.equal(fieldOf('Communications Intern'), 'Media & Writing');
+  assert.equal(fieldOf('Houston Chronicle Visuals Internship'), 'Media & Writing');
+  assert.equal(fieldOf('Education Programs Intern'), 'Nonprofit & Education');
+  assert.equal(fieldOf('Public Health Intern'), 'Health');
+  assert.equal(fieldOf('Forward Deployed Software Engineer, Internship - US Government'), 'Software');
+  assert.equal(fieldOf('Tax Information Reporting Intern'), 'Finance & Consulting');
+  assert.equal(listingField({ title: 'Intern', field: 'Research & Science' }), 'Research & Science');
+  assert.equal(listingField({ title: 'Legal Intern', field: 'Business & Marketing' }), 'Policy & Law');
 });

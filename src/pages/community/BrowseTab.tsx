@@ -8,7 +8,7 @@ import { useAppStore } from '@core/store/useAppStore';
 import { ORG_TYPE_LABELS, OPP_TYPE_LABELS, OPP_TYPE_EMOJI } from '@core/lib/labels';
 import { daysUntil } from '@core/lib/recommend';
 import { forYou, scoreListings, scoreClubs, whyLine, limitRepeats, type Reason } from '@core/lib/foryou';
-import { FIELDS, REGIONS, audienceOf, badgeOf, categoriesOf, eventKindsOf, fieldOf, isGradStudent, locationOf, orgLinker, regionsOf, spreadByHost, type Category, type EventKind, type Region } from '@core/lib/listings';
+import { FIELDS, REGIONS, audienceOf, badgeOf, categoriesOf, eventKindsOf, isGradStudent, listingField, locationOf, orgLinker, regionsOf, spreadByHost, type Category, type EventKind, type Region } from '@core/lib/listings';
 import { COURSE_HUES, meetingsLabel, clashesWith, coursesFromCatalog, hasCatalogCourse } from '@core/lib/timetable';
 import { api } from '@core/api';
 import type { CatalogCourse } from '@core/api/types';
@@ -178,11 +178,22 @@ function ListingList({ sub, kind, field, region, sort, setQ, rows, grad, savedId
     const has = new Set(inChip.flatMap((r) => eventKindsOf(r.o)));
     return (['talk', 'social', 'career', 'free_food'] as EventKind[]).filter((k) => has.has(k));
   }, [inChip, sub]);
+  // 분야별 개수 — 지역·PhD 고르기는 반영하고 분야 고르기는 빼고 센다(칩마다 ‘이 분야를 누르면 몇 개’)
+  const fieldCounts = useMemo(() => {
+    const m = new Map<string, number>();
+    if (sub !== 'internship') return m;
+    for (const r of inChip) {
+      if (kind === 'phd' && audienceOf(r.o) !== 'grad') continue;
+      if (region && !regionsOf(r.o).includes(region as Region)) continue;
+      const f = listingField(r.o); m.set(f, (m.get(f) ?? 0) + 1);
+    }
+    return m;
+  }, [inChip, sub, kind, region]); // eslint-disable-line react-hooks/exhaustive-deps
   const list = useMemo(() => {
     let xs = inChip;
     if (sub === 'event' && kind) xs = xs.filter((r) => eventKindsOf(r.o).includes(kind as EventKind));
     if (sub === 'internship' && kind === 'phd') xs = xs.filter((r) => audienceOf(r.o) === 'grad');
-    if (field) xs = xs.filter((r) => (r.o.field ?? fieldOf(r.o.title)) === field);
+    if (field) xs = xs.filter((r) => listingField(r.o) === field);
     if (region) xs = xs.filter((r) => regionsOf(r.o).includes(region as Region));
     const when = (o: Opportunity) => `${o.date ?? o.deadline ?? '9999'} ${o.startTime ?? ''}`;
     if (isEvents) {
@@ -228,9 +239,10 @@ function ListingList({ sub, kind, field, region, sort, setQ, rows, grad, savedId
               </select>
             </>}
           </div>
-          {sub === 'internship' && <div className="flex gap-1.5 overflow-x-auto hide-scrollbar -mx-4 px-4">
-            <Chip size="sm" active={!field} onClick={() => setQ({ field: '' })}>{en ? 'All fields' : '전체 분야'}</Chip>
-            {FIELDS.filter((f) => f !== 'Other').map((f) => <Chip key={f} size="sm" active={field === f} onClick={() => setQ({ field: field === f ? '' : f })}>{f}</Chip>)}
+          {/* 분야는 한눈에 — 옆으로 넘기는 한 줄 대신 줄바꿈해서 모두, 개수와 함께. 공고가 없는 분야는 흐리게(눌러도 0개) */}
+          {sub === 'internship' && <div className="flex flex-wrap gap-1.5">
+            <Chip size="sm" active={!field} onClick={() => setQ({ field: '' })}>{en ? 'All fields' : '전체 분야'} {[...fieldCounts.values()].reduce((a, b) => a + b, 0)}</Chip>
+            {FIELDS.map((f) => { const n = fieldCounts.get(f) ?? 0; return <Chip key={f} size="sm" active={field === f} className={cn(!n && field !== f && 'opacity-45')} onClick={() => setQ({ field: field === f ? '' : f })}>{f} <span className="opacity-70">{n}</span></Chip>; })}
           </div>}
         </div>
       )}
@@ -265,7 +277,7 @@ function ListingRow({ o, why, saved, toggleSave, club, onClub, showType = true }
           <span className="flex items-center gap-1.5 mt-1 overflow-hidden">
             <span className={cn('h-5 px-2 rounded-full text-[11px] font-bold inline-flex items-center whitespace-nowrap shrink-0', BADGE_TONE[b.tone])}>{b.text}{time ? ` · ${time}` : ''}</span>
             {o.tags.includes('free food') && <span className="h-5 px-2 rounded-full bg-accent-soft text-primary text-[11px] font-semibold inline-flex items-center whitespace-nowrap shrink-0">{en ? 'Free food' : '무료 음식'}</span>}
-            {showType && <span className="h-5 px-2 rounded-full bg-surface-2 text-ink-2 text-[11px] font-semibold inline-flex items-center whitespace-nowrap truncate">{o.type === 'internship' ? o.field ?? fieldOf(o.title) : OPP_TYPE_LABELS[o.type]}</span>}
+            {showType && <span className="h-5 px-2 rounded-full bg-surface-2 text-ink-2 text-[11px] font-semibold inline-flex items-center whitespace-nowrap truncate">{o.type === 'internship' ? listingField(o) : OPP_TYPE_LABELS[o.type]}</span>}
             {o.remote && <span className="h-5 px-2 rounded-full bg-accent-soft text-primary text-[11px] font-semibold inline-flex items-center">Remote</span>}
           </span>
           {why && <span className="block text-[12px] text-ink-3 truncate mt-1">✨ {why}</span>}

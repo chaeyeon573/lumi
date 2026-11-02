@@ -6,7 +6,8 @@ import type { Opportunity, OpportunityType, Organization, User } from '@core/typ
 import { daysUntil } from './recommend';
 import { schoolTz } from './campusclock';
 
-export const FIELDS = ['Software', 'Data & AI', 'Hardware', 'Quant & Trading', 'Finance & Consulting', 'Product & Design', 'Business & Marketing', 'Research & Science', 'Other'] as const;
+// 문과·사회과학 학생 칸(정책·법, 언론·글, 비영리·교육, 보건)이 없어서 그쪽 공고가 Business 나 Other 에 묻혔다 (2026-11-02 사장님)
+export const FIELDS = ['Software', 'Data & AI', 'Hardware', 'Quant & Trading', 'Finance & Consulting', 'Product & Design', 'Business & Marketing', 'Policy & Law', 'Media & Writing', 'Nonprofit & Education', 'Health', 'Research & Science', 'Other'] as const;
 export type Field = typeof FIELDS[number];
 
 const FIELD_RULES: [Field, RegExp][] = [
@@ -18,13 +19,27 @@ const FIELD_RULES: [Field, RegExp][] = [
   ['Research & Science', /research|r&d|scientist|biolog|chemi|\blab\b|clinical|bioinformatic|genomic/i],
   ['Product & Design', /\bproducts?\b|design|\bux\b/i], // “Production Infrastructure”·“UI Software Engineer” 는 개발
   ['Finance & Consulting', /financ|investment|summer analyst|consult|accounting|banking|economic|strategy|portfolio|capital markets|restructuring|\brisk\b|credit|brokerage|treasury|tax\b/i],
-  ['Business & Marketing', /marketing|sales|business|brand|merchandis|retail|store (leadership|executive|manager)|operations|growth|communication|partnership|people|recruit|legal|policy|content|editorial|journalis|social media|vendor|special projects|programs?\b|workplace|employee|learning & development|alumni|events?\b/i],
+  // 문과 쪽 — 금융(‘Tax … Reporting’) 다음, 경영·개발 전. 개발·디자인 제목(“Software Engineer, US Government”)은 fieldOf 가 건너뛴다
+  ['Policy & Law', /\bpolicy\b|public policy|government|legislat|congress|\blegal\b|\blaw\b|paralegal|litigation|civil (rights|liberties)|advocacy|public affairs|regulatory|compliance|political|campaign|election|international affairs|diplomac/i],
+  ['Media & Writing', /\bnews\b|photo|visuals|audience|sports|creative services|\bvideo\b|\bfilm\b|entertainment|publicity|journalis|editorial|\beditor\b|reporter|reporting|newsroom|writer|writing|copywrit|publishing|podcast|broadcast|video produc|\bmedia\b|communications?\b|public relations|\bpr\b|social media|content/i],
+  ['Nonprofit & Education', /nonprofit|non-profit|education|teach|tutor|curriculum|community|outreach|volunteer|philanthrop|fundrais|development associate|social impact|youth|museum|library|arts? (admin|program)/i],
+  ['Health', /\bhealth|public health|medical|hospital|patient|nurs|pharma(?!ceutical engineer)|clinical operations|epidemiolog/i],
+  ['Business & Marketing', /marketing|sales|business|brand|merchandis|retail|store (leadership|executive|manager)|operations|growth|partnership|people|recruit|vendor|special projects|programs?\b|workplace|employee|learning & development|alumni|events?\b/i],
   ['Software', /software|\bswe\b|engineer|developer|frontend|front-end|backend|back-end|full.?stack|mobile|ios|android|infrastructure|platform|security|devops|\bsre\b/i],
 ];
+const HUMANITIES = new Set<Field>(['Policy & Law', 'Media & Writing', 'Nonprofit & Education', 'Health']);
+const TECH_TITLE = /engineer|developer|software|designer|scientist|\bdata\b/i;
 export function fieldOf(title: string, team = ''): Field {
-  for (const [f, re] of FIELD_RULES) if (re.test(title)) return f;
-  for (const [f, re] of FIELD_RULES) if (re.test(team)) return f;
+  const ok = (f: Field) => !HUMANITIES.has(f) || !TECH_TITLE.test(title);
+  for (const [f, re] of FIELD_RULES) if (re.test(title) && ok(f)) return f;
+  for (const [f, re] of FIELD_RULES) if (re.test(team) && ok(f)) return f;
   return 'Other';
+}
+
+/** 화면에 보이는 인턴 분야 — 제목으로 지금 규칙을 먼저(새 분야가 다음 가져오기 전에도 맞게), 못 고르면 가져올 때 팀 이름까지 보고 정한 값 */
+export function listingField(o: Pick<Opportunity, 'title' | 'field'>): Field {
+  const f = fieldOf(o.title);
+  return f !== 'Other' ? f : ((FIELDS as readonly string[]).includes(o.field ?? '') ? o.field as Field : 'Other');
 }
 
 export const REGIONS = ['Bay Area', 'Los Angeles', 'Seattle', 'New York', 'Boston', 'Chicago', 'Texas', 'Remote'] as const;
