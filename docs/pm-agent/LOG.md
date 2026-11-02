@@ -1544,3 +1544,8 @@
 - Student governments hand-checked on official sites: ASSU, ASUCD, UCSC SUA, SCU ASG, ASUSF Senate (website only; no Instagram unless the official site links it).
 - Already in the live DB before this change (worker ran the earlier list at ~12:20 UTC): Stanford classes 2,439 rows (Stanford had 744 before), MIT/Stanford clubs. Not deleted — live DB deletes need owner OK.
 - Recipe table: docs/pm-agent/DATA_SOURCES.md.
+
+## 2026-11-02 12:40 UTC — routine run
+- Verified on live agent status: calendar:s_berkeley applied at 10:25 with the fixed code (182 events, 50 old removed — the 04:22 error is gone); external:internships applied 10:25 (453 postings, now with posting text for work-authorization labels); USAJobs 129 at 06:03.
+- Focus this run = today's owner requests (onboarding, Social tab, Bay Area data); screens were checked in classic + v2 during those changes, PAGE ERROR 0.
+- Open for owner: delete East Coast class rows already in the live DB (Cornell 9,518 · UPenn 7,492 · Harvard 2,764 · Dartmouth 1,346)? Home/Explore/Schedule to the latest mockup?
