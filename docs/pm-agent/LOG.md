@@ -1591,3 +1591,8 @@
 - Spot check, 5 clubs: 2 OK; 1 dead link (UC Davis AACF wixsite → 404); 2 SJSU entries were school offices ("Alumni Engagement", "Leadership and Career Certificate Program"), not clubs. Fixes: Website links that return 404/410 (or Wix "404 Error" page) are dropped (UC Davis 7, SJSU 1); CampusGroups "College/Department/Program" groups skipped unless student government (SJSU 440 → 388, Associated Students kept). Facebook pages/<name>/<id> links keep the id.
 - Spot check, 5 Berkeley classes (JOURN 219, RHETOR R1A, CDSS 198, FOLKLOR C262A, PHYSICS 153) against classes.berkeley.edu: time and room match 5/5.
 - Checks: tsc, server typecheck, tests 283/283, build.
+
+## 2026-11-02 16:04 UTC — routine run
+- Queue: 5 more Stanford official sites (Marching Band lsjumb.stanford.edu, BASES, Ram's Head, Debate Society, Stanford Finance) → org-links-stanford.csv; Stanford now 12/733 with a public site. No official page found for Korean-American Student Association and Gospel Choir (skipped, not guessed).
+- Spot check 5 clubs (UCSC KGD, SCU Sunrise, USF Society of Architecture Students, SFSU Journalism Club, UC Davis Imani Clinic): 4/4 found on their official public lists; UC Davis's list needs login, so only its links are checkable (none for this club).
+- Spot check 5 courses (UC Davis ANS 099, GEO 200DN, NAS 110D; SFSU ITEC 711, ENGR 694): code and title match the official catalogs 5/5.
