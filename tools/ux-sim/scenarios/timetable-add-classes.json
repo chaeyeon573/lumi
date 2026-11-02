@@ -1,0 +1,29 @@
+{
+  "id": "timetable-add-classes",
+  "title": "Put my classes into my timetable",
+  "goal": "You want the app to know your schedule so it can show who's free when you are. Add MATH 1A (Calculus) to your timetable in the app.",
+  "startUrl": "/",
+  "setup": {
+    "auth": "demo",
+    "school": "berkeley"
+  },
+  "success": {
+    "description": "MATH 1A shows up in the timetable grid (checked on /timetable with no search sheet open).",
+    "all": [
+      {
+        "urlMatches": "^/timetable"
+      },
+      {
+        "textMatches": "MATH 1A"
+      },
+      {
+        "textAbsent": "Find in course catalog"
+      }
+    ]
+  },
+  "personas": [
+    "diego-transfer-commuter",
+    "minji-freshman-17",
+    "marcus-senior-lowtech"
+  ]
+}

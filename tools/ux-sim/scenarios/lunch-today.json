@@ -1,0 +1,26 @@
+{
+  "id": "lunch-today",
+  "title": "Find someone to get lunch with today",
+  "goal": "It's a weekday and you'd rather not eat lunch alone again. Use the app to find someone (or a group) to get lunch with today, and let them know you're in.",
+  "startUrl": "/",
+  "setup": {
+    "auth": "demo",
+    "school": "berkeley"
+  },
+  "success": {
+    "description": "Joined or requested to join a meal plan / sent a lunch invite: the button now reads as joined/requested, or a chat with the plan opened.",
+    "any": [
+      {
+        "textMatches": "You're in|You’re in|Requested|Request sent|Going|Joined|Waiting for (the )?host"
+      },
+      {
+        "urlMatches": "^/chats/"
+      }
+    ]
+  },
+  "personas": [
+    "minji-freshman-17",
+    "diego-transfer-commuter",
+    "aisha-firstgen-anxious"
+  ]
+}

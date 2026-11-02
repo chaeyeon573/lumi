@@ -1,0 +1,367 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-02T06:39:07.705Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "runs": [
+    {
+      "runId": "smoke-minji-lunch-today",
+      "persona": "minji-freshman-17",
+      "scenario": "lunch-today",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 1,
+      "actions": 5,
+      "mode": "local",
+      "commit": "f1e3d87f2f23-dirty-1f8877b9",
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Harness heuristic, not a measurement: 1 severity≥3 event(s), objective frustration 0.50/4.5, 2 confused note(s).",
+        "basis": [
+          0,
+          2
+        ],
+        "source": "harness-heuristic"
+      },
+      "runFile": "ux-sim/runs/smoke-minji-lunch-today/run.json",
+      "report": "ux-sim/runs/smoke-minji-lunch-today/report.md"
+    }
+  ],
+  "findings": [
+    {
+      "fingerprint": "0ad866e92107",
+      "title": "Confusing UI on / — “I'm in”",
+      "screen": "/",
+      "frictionType": "ux_confusion",
+      "keyElement": "im in",
+      "keyElementLabel": "I'm in",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "smoke-minji-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "smoke-minji-lunch-today",
+          "persona": "minji-freshman-17",
+          "scenario": "lunch-today",
+          "step": 0,
+          "severity": 3,
+          "quote": "헐 big face photo… is this a dating app? And 'I'm in' — in what, coffee with Maya or matching with her?",
+          "evidence": [
+            "ux-sim/runs/smoke-minji-lunch-today/shots/000-start.jpg",
+            "ux-sim/runs/smoke-minji-lunch-today/shots/000-start-som.jpg"
+          ],
+          "url": "/",
+          "wish": "say what I'm joining, like 'Join coffee'"
+        }
+      ],
+      "wishes": [
+        "say what I'm joining, like 'Join coffee'"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “I'm in” on / does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “say what I'm joining, like 'Join coffee'”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "7550a9defad6",
+      "title": "Confusing UI on / — “Joined · Leave”",
+      "screen": "/",
+      "frictionType": "ux_confusion",
+      "keyElement": "joined leave",
+      "keyElementLabel": "Joined · Leave",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "smoke-minji-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "smoke-minji-lunch-today",
+          "persona": "minji-freshman-17",
+          "scenario": "lunch-today",
+          "step": 2,
+          "severity": 2,
+          "quote": "뭐지… where is the group chat? and the button now says 'Joined · Leave' — if I tap it again do I leave??",
+          "evidence": [
+            "ux-sim/runs/smoke-minji-lunch-today/shots/002-click.jpg",
+            "ux-sim/runs/smoke-minji-lunch-today/shots/002-click-som.jpg"
+          ],
+          "url": "/",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Joined · Leave” on / does before people tap it — plain-word label, visible result, or a one-line hint."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "6a00d05d782f",
+      "title": "Hard to find on /chats?tab=activity — “Activities”",
+      "screen": "/chats?tab=activity",
+      "frictionType": "discoverability",
+      "keyElement": "activities",
+      "keyElementLabel": "Activities",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "smoke-minji-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "smoke-minji-lunch-today",
+          "persona": "minji-freshman-17",
+          "scenario": "lunch-today",
+          "step": 6,
+          "severity": 2,
+          "quote": "oh there it is, under Activities. took me a while",
+          "evidence": [
+            "ux-sim/runs/smoke-minji-lunch-today/shots/006-click.jpg",
+            "ux-sim/runs/smoke-minji-lunch-today/shots/006-click-som.jpg"
+          ],
+          "url": "/chats?tab=activity",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for (“Activities”) where they looked (/chats?tab=activity); label icon-only controls."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "35bbfcd3c5af",
+      "title": "Missing / empty content on /chats/:id",
+      "screen": "/chats/:id",
+      "frictionType": "content_gap",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "smoke-minji-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "smoke-minji-lunch-today",
+          "persona": "minji-freshman-17",
+          "scenario": "lunch-today",
+          "step": 8,
+          "severity": 2,
+          "quote": "ok I'm in the chat. but it's coffee tomorrow, not lunch today… nobody for lunch today?",
+          "evidence": [
+            "ux-sim/runs/smoke-minji-lunch-today/shots/008-click.jpg",
+            "ux-sim/runs/smoke-minji-lunch-today/shots/008-click-som.jpg"
+          ],
+          "url": "/chats/cr_91ft7d1h6a",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /chats/:id is really missing (or only missing in the test environment); avoid showing empty sections."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    }
+  ],
+  "environmentLimited": [],
+  "falseSuccesses": [],
+  "autoChecks": [
+    {
+      "route": "/chats",
+      "device": "phone",
+      "smallTapTargetsMax": 7,
+      "examples": [
+        {
+          "id": 17,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 27,
+          "name": "Direct",
+          "w": 56,
+          "h": 28
+        },
+        {
+          "id": 28,
+          "name": "Activities",
+          "w": 75,
+          "h": 28
+        },
+        {
+          "id": 29,
+          "name": "Groups",
+          "w": 64,
+          "h": 28
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/smoke-minji-lunch-today/shots/005-click.jpg"
+    },
+    {
+      "route": "/chats?tab=activity",
+      "device": "phone",
+      "smallTapTargetsMax": 7,
+      "examples": [
+        {
+          "id": 17,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 27,
+          "name": "Direct",
+          "w": 56,
+          "h": 28
+        },
+        {
+          "id": 28,
+          "name": "Activities",
+          "w": 75,
+          "h": 28
+        },
+        {
+          "id": 29,
+          "name": "Groups",
+          "w": 64,
+          "h": 28
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/smoke-minji-lunch-today/shots/006-click.jpg"
+    },
+    {
+      "route": "/",
+      "device": "phone",
+      "smallTapTargetsMax": 6,
+      "examples": [
+        {
+          "id": 1,
+          "name": "Filters",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 4,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 14,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/smoke-minji-lunch-today/shots/000-start.jpg"
+    },
+    {
+      "route": "/chats/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 3,
+      "examples": [
+        {
+          "id": 17,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 36,
+          "name": "Menu",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 15,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/smoke-minji-lunch-today/shots/008-click.jpg"
+    }
+  ]
+}

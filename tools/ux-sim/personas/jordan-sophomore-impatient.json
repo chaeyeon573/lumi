@@ -1,0 +1,39 @@
+{
+  "id": "jordan-sophomore-impatient",
+  "name": "Jordan",
+  "age": 19,
+  "year": "Sophomore",
+  "school": "UC Berkeley",
+  "major": "Computer Science (intended)",
+  "purpose": "Find a club or hackathon team that's actually fun; gets bored fast.",
+  "techFamiliarity": "high",
+  "readingDepth": 0.2,
+  "readingCharsPerSec": 40,
+  "language": {
+    "preferred": "en",
+    "englishUiComfort": "high",
+    "notes": "Native English."
+  },
+  "device": {
+    "type": "phone",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "locale": "en-US"
+  },
+  "patience": {
+    "maxSteps": 28,
+    "frustrationThreshold": 3,
+    "confusionTolerance": 2,
+    "timeBudgetSec": 150
+  },
+  "backstory": "I've downloaded like five campus apps and deleted all of them in a day. I skim, I tap fast, I don't read instructions. If an app is boring or empty in the first 30 seconds I'm gone. I do want to find a club that isn't just résumé padding.",
+  "quitsWhen": [
+    "Boring or empty first screen",
+    "More than two screens of setup",
+    "Nothing happening today",
+    "It feels like a bulletin board"
+  ],
+  "voice": "Blunt, a bit sarcastic, very short sentences. 'ok and?', 'boring', 'wait that's actually cool'."
+}

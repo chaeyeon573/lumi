@@ -1,0 +1,6 @@
+# ux-sim results. Runs and reports are small enough to commit when they are evidence; the local stack's data is not.
+stack/
+runs/*/stack/
+runs/*/session.json
+runs/*/session.log
+runs/*/session-config.json

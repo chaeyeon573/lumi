@@ -1,0 +1,180 @@
+#!/usr/bin/env node
+// ux-sim — AI simulated user testing for Lumi. The "brain" is a Claude session playing a persona; this CLI is its hands
+// and eyes (a real Chromium). No API key is needed. See docs/ux-sim/README.md and docs/ux-sim/PERSONA_RUN.md.
+import path from 'node:path';
+import { spawn } from 'node:child_process';
+import { existsSync, readdirSync, openSync, writeFileSync } from 'node:fs';
+import { parseArgs } from '../lib/args.mjs';
+import { RUNS_DIR, HARNESS_DIR, ensureDir, rel } from '../lib/paths.mjs';
+import { persona as loadPersona, scenario as loadScenario, personas, scenarios, readJson, sleep, SEVERITY, FEELINGS, FRICTION_TYPES } from '../lib/util.mjs';
+import { up as stackUp, down as stackDown } from '../lib/stack.mjs';
+
+const BOOL = ['submit', 'allow-live', 'all', 'json', 'autoreply', 'environment-limited', 'rebuild', 'reseed', 'dev', 'keep-stack'];
+const argv = process.argv.slice(2);
+const cmd = argv[0];
+const o = parseArgs(argv.slice(1), BOOL);
+const print = (x) => console.log(typeof x === 'string' ? x : JSON.stringify(x, null, 2));
+const die = (m) => { console.error(`ux-sim: ${m}`); process.exit(1); };
+
+const HELP = `ux-sim — AI simulated user testing (a Claude session plays the persona; this CLI drives the browser)
+
+Session
+  ux-sim start --persona <id> --scenario <id> [--run-id ID]      default target: a fresh LOCAL stack of this worktree
+        [--worktree DIR] [--port N] [--autoreply]                   (server + built web, seeded data file in the run dir)
+        [--base-url URL [--allow-live]]                             any URL; non-localhost needs --allow-live (writes blocked)
+  ux-sim observe                                   numbered elements, visible text, screenshot + set-of-marks screenshot
+  ux-sim click <id>            [--expect "<what I think will happen>" --confidence 0.7]
+  ux-sim tap <x> <y>           tap a point on the screenshot (for things that have no number)
+  ux-sim type <id> "<text>" [--submit]   ux-sim select <id> "<option>"
+  ux-sim scroll up|down        ux-sim swipe left|right|up|down     ux-sim back
+  ux-sim goto <path>           only the scenario start URL, "/", or an address shown on screen
+  ux-sim wait <ms>             (max 10000)
+  ux-sim note --feeling ${FEELINGS.join('|')} --thought "<persona voice>"
+        [--friction ${FRICTION_TYPES.join('|')} --severity 1-4 [--element <id>] [--wish "<what I wanted>"]]
+        [--mismatch yes|no --actual "<what happened>"] [--environment-limited --env-reason "..."]
+  ux-sim finish --outcome success|abandoned|failed|timeout --reason "<persona voice>"
+        [--dropoff low|medium|high --dropoff-why "..." --dropoff-basis 3,5]
+  ux-sim status | sessions     every step command takes --run <run-id> (needed when several sessions are open)
+
+Analysis
+  ux-sim list                                      personas, scenarios and which persona runs which scenario
+  ux-sim brief --persona <id> --scenario <id>      the in-character briefing a persona agent gets
+  ux-sim report <run-dir...> | --all [--out DIR]   per-run report.md + ux-sim/reports/<date>/summary.md + findings.json
+  ux-sim compare --before <runs...> --after <runs...> [--out DIR]
+  ux-sim issues <findings.json> [--out FILE]       issue-candidates.json (nothing is posted)
+  ux-sim validate <run.json|findings.json...>
+
+Severity: ${Object.entries(SEVERITY).map(([k, v]) => `${k} ${v}`).join('\n          ')}`;
+
+// ─── run selection ───────────────────────────────────────────────────────────
+const alive = (pid) => { try { process.kill(pid, 0); return true; } catch { return false; } };
+function activeSessions() {
+  if (!existsSync(RUNS_DIR)) return [];
+  return readdirSync(RUNS_DIR).map((id) => path.join(RUNS_DIR, id, 'session.json')).filter(existsSync).map((f) => readJson(f)).filter((s) => alive(s.pid));
+}
+function pickSession() {
+  const id = o.run ?? process.env.UX_SIM_RUN;
+  const act = activeSessions();
+  if (id) { const s = act.find((x) => x.runId === id); if (!s) die(`no open session for run "${id}" (finished, or never started). Open: ${act.map((x) => x.runId).join(', ') || 'none'}`); return s; }
+  if (act.length === 1) return act[0];
+  if (!act.length) die('no open session — run `ux-sim start …` first');
+  die(`several sessions are open — pass --run <id>: ${act.map((x) => x.runId).join(', ')}`);
+}
+async function send(session, c, args = {}) {
+  const res = await fetch(`http://127.0.0.1:${session.port}/`, { method: 'POST', body: JSON.stringify({ cmd: c, args }), signal: AbortSignal.timeout(180_000) });
+  const out = await res.json();
+  if (!res.ok) { print(out); process.exit(2); }
+  return out;
+}
+
+// ─── briefing ────────────────────────────────────────────────────────────────
+function brief(p, s) {
+  return {
+    youAre: `${p.name}, ${p.age}. ${p.year}${p.major ? `, ${p.major}` : ''} at ${p.school}.`,
+    backstory: p.backstory,
+    whyYouOpenedTheApp: s.goal,
+    yourPurpose: p.purpose,
+    techFamiliarity: p.techFamiliarity,
+    language: p.language,
+    device: `${p.device.type} ${p.device.viewport.width}x${p.device.viewport.height}`,
+    howYouTalk: p.voice,
+    youQuitWhen: p.quitsWhen,
+    patience: `about ${p.patience.maxSteps} actions; you lose patience after repeated dead ends (the harness counts them); ~${p.patience.confusionTolerance} confusing moments is usually your limit`,
+    rules: 'Stay in character. Use only this CLI. Never read the app\'s source or docs, never use devtools/JS, never type an address you have not seen on screen. Log feelings and friction honestly — boredom, no reason to stay and empty screens count, not only bugs.',
+  };
+}
+
+// ─── commands ────────────────────────────────────────────────────────────────
+async function start() {
+  if (!o.persona || !o.scenario) die('start needs --persona <id> --scenario <id> (see `ux-sim list`)');
+  const p = loadPersona(o.persona);
+  const s = loadScenario(o.scenario);
+  const stamp = new Date().toISOString().replace(/[-:]/g, '').replace('T', '-').slice(0, 13);
+  const runId = o['run-id'] ?? `${stamp}-${p.id}-${s.id}-${Math.random().toString(36).slice(2, 6)}`;
+  if (!/^[\w.-]+$/.test(runId)) die('run id may contain letters, digits, - _ . only');
+  const runDir = path.join(RUNS_DIR, runId);
+  if (existsSync(path.join(runDir, 'run.json'))) die(`run ${runId} already exists`);
+  ensureDir(runDir);
+  let target;
+  if (o['base-url']) {
+    const u = new URL(o['base-url']);
+    const local = ['localhost', '127.0.0.1', '[::1]'].includes(u.hostname);
+    if (!local && !o['allow-live']) die(`${u.origin} is not local. Real sign-ups/posts there are seen by real students — pass --allow-live to run with the write guard (mutating /api calls blocked), or omit --base-url to test a fresh local stack.`);
+    target = { mode: local ? 'custom' : 'live', baseUrl: u.origin };
+  } else {
+    process.stderr.write('starting a fresh local stack for this run …\n');
+    const info = await stackUp({ worktree: o.worktree, port: o.port, dataFile: path.join(runDir, 'stack', 'db.json'), log: path.join(runDir, 'stack', 'server.log'), rebuild: !!o.rebuild, reseed: !!o.reseed, autoreply: !!o.autoreply });
+    target = { mode: 'local', baseUrl: info.baseUrl, stack: { port: info.port, worktree: info.worktree, commit: info.commit, stamp: info.stamp, dirty: info.dirty, dataFile: rel(info.dataFile), template: rel(info.template), log: rel(info.log), owned: !o['keep-stack'], autoreply: !!o.autoreply } };
+  }
+  const cfg = { runId, persona: p, scenario: s, target };
+  writeFileSync(path.join(runDir, 'session-config.json'), JSON.stringify(cfg, null, 2));
+  const log = openSync(path.join(runDir, 'session.log'), 'a');
+  const child = spawn(process.execPath, [path.join(HARNESS_DIR, 'lib', 'session-server.mjs'), runDir], { detached: true, stdio: ['ignore', log, log], cwd: HARNESS_DIR });
+  child.unref();
+  const t0 = Date.now();
+  while (Date.now() - t0 < 120_000) {
+    if (existsSync(path.join(runDir, 'session.json'))) break;
+    if (existsSync(path.join(runDir, 'run.json')) && readJson(path.join(runDir, 'run.json')).status === 'finished') break;
+    if (!alive(child.pid)) break;
+    await sleep(300);
+  }
+  if (!existsSync(path.join(runDir, 'session.json'))) {
+    if (target.stack?.owned) stackDown(target.stack.port);
+    die(`session did not start — see ${rel(path.join(runDir, 'session.log'))}`);
+  }
+  const session = readJson(path.join(runDir, 'session.json'));
+  const first = await send(session, 'init');
+  print({ runId, run: `--run ${runId}`, target: { mode: target.mode, baseUrl: target.baseUrl }, brief: brief(p, s), observation: first });
+}
+
+function list() {
+  const ps = personas(); const ss = scenarios();
+  const lines = ['PERSONAS'];
+  for (const p of ps) lines.push(`  ${p.id.padEnd(27)} ${p.age}  ${p.device.type.padEnd(7)} ${p.language.preferred}  tech:${p.techFamiliarity.padEnd(6)} steps:${p.patience.maxSteps}  — ${p.purpose}`);
+  lines.push('', 'SCENARIOS');
+  for (const s of ss) lines.push(`  ${s.id.padEnd(26)} start ${s.startUrl.padEnd(10)} auth:${(s.setup?.auth ?? 'none').padEnd(5)} — ${s.title}`);
+  lines.push('', 'MATRIX (persona × scenario)');
+  const w = Math.max(...ss.map((s) => s.id.length));
+  lines.push(`  ${''.padEnd(w)}  ${ps.map((p) => p.id.split('-')[0].slice(0, 7).padEnd(7)).join(' ')}`);
+  for (const s of ss) lines.push(`  ${s.id.padEnd(w)}  ${ps.map((p) => ((s.personas ?? []).includes(p.id) ? '   x   ' : '   .   ')).join(' ')}`);
+  lines.push('', 'Run one cell:  ux-sim start --persona <persona> --scenario <scenario>');
+  print(lines.join('\n'));
+}
+
+const positional = o._;
+try {
+  switch (cmd) {
+    case 'start': await start(); break;
+    case 'observe': print(await send(pickSession(), 'observe')); break;
+    case 'status': print(await send(pickSession(), 'status')); break;
+    case 'sessions': print(activeSessions()); break;
+    case 'click': print(await send(pickSession(), 'click', { id: positional[0], expect: o.expect, confidence: o.confidence })); break;
+    case 'tap': if (positional.length < 2) die('tap <x> <y>  (screenshot pixels, for things without a number)'); print(await send(pickSession(), 'tap', { x: positional[0], y: positional[1], expect: o.expect, confidence: o.confidence })); break;
+    case 'type': if (positional.length < 2) die('type <id> "<text>" [--submit]'); print(await send(pickSession(), 'type', { id: positional[0], text: positional[1], submit: !!o.submit, expect: o.expect, confidence: o.confidence })); break;
+    case 'select': print(await send(pickSession(), 'select', { id: positional[0], option: positional[1], expect: o.expect, confidence: o.confidence })); break;
+    case 'scroll': print(await send(pickSession(), 'scroll', { direction: positional[0] ?? 'down', expect: o.expect, confidence: o.confidence })); break;
+    case 'swipe': print(await send(pickSession(), 'swipe', { direction: positional[0], expect: o.expect, confidence: o.confidence })); break;
+    case 'back': print(await send(pickSession(), 'back', { expect: o.expect, confidence: o.confidence })); break;
+    case 'goto': print(await send(pickSession(), 'goto', { url: positional[0], expect: o.expect, confidence: o.confidence })); break;
+    case 'wait': print(await send(pickSession(), 'wait', { ms: positional[0] })); break;
+    case 'note': { const { _, run: _r, ...a } = o; print(await send(pickSession(), 'note', a)); break; }
+    case 'finish': { const { _, run: _r, ...a } = o; print(await send(pickSession(), 'finish', a)); break; }
+    case 'list': list(); break;
+    case 'brief': print(brief(loadPersona(o.persona), loadScenario(o.scenario))); break;
+    case 'report': { const { report } = await import('../lib/report.mjs'); print(await report(positional, { all: !!o.all, out: o.out })); break; }
+    case 'compare': { const { compare } = await import('../lib/compare.mjs'); print(await compare([].concat(o.before ?? [], ...splitAfter('--before')), [].concat(o.after ?? [], ...splitAfter('--after')), { out: o.out })); break; }
+    case 'issues': { const { issues } = await import('../lib/issues.mjs'); print(await issues(positional[0], { out: o.out })); break; }
+    case 'validate': case 'validate-config': { const { validateFiles, validateConfig } = await import('../lib/validate.mjs'); print(cmd === 'validate' ? validateFiles(positional) : validateConfig()); break; }
+    case undefined: case 'help': case '--help': case '-h': print(HELP); break;
+    default: die(`unknown command "${cmd}"\n\n${HELP}`);
+  }
+} catch (e) { die(e.message); }
+
+/** `--before a b c --after d e` → the extra positional values that followed a flag (shell globs expand to many words). */
+function splitAfter(flag) {
+  const i = argv.indexOf(flag);
+  if (i < 0) return [];
+  const out = [];
+  for (let j = i + 2; j < argv.length && !argv[j].startsWith('--'); j++) out.push(argv[j]);
+  return out;
+}

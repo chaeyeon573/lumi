@@ -1,0 +1,49 @@
+{
+  "id": "ride-sfo-thanksgiving",
+  "title": "Share a ride to SFO for Thanksgiving",
+  "goal": "You fly out of SFO the Wednesday before Thanksgiving (Nov 25) in the morning. Find other students to split a ride to the airport with — join one, or post yours so others can find you.",
+  "startUrl": "/",
+  "setup": {
+    "auth": "demo",
+    "school": "berkeley"
+  },
+  "success": {
+    "description": "Joined/requested an SFO ride or posted one (a ride page to SFO is open, or the list shows you in a ride).",
+    "any": [
+      {
+        "all": [
+          {
+            "urlMatches": "^/rides/(?!new)[^/?]+"
+          },
+          {
+            "textMatches": "SFO"
+          },
+          {
+            "textMatches": "You're in|You’re in|Requested|Joined|Your ride|Leave|Cancel ride"
+          }
+        ]
+      },
+      {
+        "all": [
+          {
+            "urlMatches": "^/rides"
+          },
+          {
+            "textMatches": "My rides"
+          },
+          {
+            "textMatches": "You're in|You’re in|Requested|Joined"
+          },
+          {
+            "textMatches": "SFO"
+          }
+        ]
+      }
+    ]
+  },
+  "personas": [
+    "seoyeon-exchange-korean",
+    "diego-transfer-commuter",
+    "priya-phd-desktop"
+  ]
+}

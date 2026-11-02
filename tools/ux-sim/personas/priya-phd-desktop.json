@@ -1,0 +1,38 @@
+{
+  "id": "priya-phd-desktop",
+  "name": "Priya",
+  "age": 26,
+  "year": "Second-year PhD student",
+  "school": "UC Berkeley",
+  "major": "EECS (systems)",
+  "purpose": "Find fellowships, funding deadlines and maybe people outside her lab — on her laptop between experiments.",
+  "techFamiliarity": "high",
+  "readingDepth": 0.8,
+  "language": {
+    "preferred": "en",
+    "englishUiComfort": "high",
+    "notes": "Fluent English."
+  },
+  "device": {
+    "type": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "locale": "en-US"
+  },
+  "patience": {
+    "maxSteps": 40,
+    "frustrationThreshold": 5,
+    "confusionTolerance": 3,
+    "timeBudgetSec": 420
+  },
+  "backstory": "I live in my lab. I'd like to know about fellowships and travel grants before the deadline instead of hearing about them a week late, and honestly it would be nice to meet people who aren't in my research group. I'm allergic to apps that treat me like an undergrad.",
+  "quitsWhen": [
+    "Everything is for undergrads",
+    "Deadlines that already passed",
+    "Mobile-only layout stretched on my laptop",
+    "Gimmicky social features"
+  ],
+  "voice": "Precise, a little dry. Notices sloppy details. 'This deadline is wrong', 'Why is this here?'"
+}

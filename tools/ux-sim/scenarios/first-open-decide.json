@@ -1,0 +1,25 @@
+{
+  "id": "first-open-decide",
+  "title": "First open: what is this app, and is it worth signing up?",
+  "goal": "A friend sent you a link to this app. You have never seen it before. Figure out what it is for, and decide whether you want to make an account. If it seems worth it, sign up with your school e-mail.",
+  "startUrl": "/welcome",
+  "setup": {
+    "auth": "none"
+  },
+  "success": {
+    "description": "Signed up and landed inside the app (the signed-in home or any main tab).",
+    "all": [
+      {
+        "urlMatches": "^/(discover|community|profile)?(\\?.*)?$"
+      }
+    ]
+  },
+  "personas": [
+    "minji-freshman-17",
+    "jordan-sophomore-impatient",
+    "marcus-senior-lowtech",
+    "aisha-firstgen-anxious",
+    "seoyeon-exchange-korean"
+  ],
+  "expectedMinActions": 20
+}

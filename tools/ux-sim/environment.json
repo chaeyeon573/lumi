@@ -1,0 +1,45 @@
+{
+  "$comment": "Known environment limits. The harness copies the matching block into run.json (environment.knownLimits) and marks friction events environment_limited when they match. Keep reasons short — they show up in reports.",
+  "local": {
+    "summary": "Local stack: this worktree's server + built web app, fresh seeded FileStore per run, no secrets, no worker.",
+    "knownLimits": [
+      "Dining menus and RSF gym crowd levels need live campus sources (the local stack runs with CAMPUS_LIVE=0) — empty or missing data there is not a UX bug.",
+      "AI features (Ask Lumi, AI profile draft on /start, conversation starters) need an OpenAI key; none is configured locally.",
+      "Course catalog is the built-in sample list (~210 courses, typical times). Live has the real Berkeley Class Schedule from the data worker.",
+      "Opportunities are only the CSV rows in server/data (deadline calendar). Live also has worker-fetched internships (Greenhouse/Lever/Ashby), Devpost hackathons and CalLink/campus events.",
+      "No e-mail is sent: the sign-up / sign-in code is shown on screen in the hint (live sends a real e-mail).",
+      "Real-time updates (SSE) work locally; other people never reply unless the stack was started with --autoreply."
+    ],
+    "routes": [
+      { "match": "^/(dining|gym)(/|\\?|$)", "reason": "Dining/gym need live campus sources (CAMPUS_LIVE=0 locally)." }
+    ],
+    "requests": [
+      { "match": "/api/ai/", "reason": "AI endpoints need an OpenAI key (not configured locally)." }
+    ],
+    "contentCaveats": [
+      { "route": "^/(community|discover|opportunities)", "types": ["content_gap"], "reason": "Local stack has only CSV opportunities; live also has worker-fetched internships, hackathons and campus events — check on live before acting." },
+      { "route": "^/(timetable|classes|c/)", "types": ["content_gap"], "reason": "Local course catalog is the built-in sample list, not the real Berkeley schedule." }
+    ]
+  },
+  "live": {
+    "summary": "Live production site with the ux-sim write guard: every mutating /api request except demo login and read-only calls is blocked and answered with 403.",
+    "knownLimits": [
+      "Writes are blocked: signing up, joining, posting, saving, messaging, RSVPs, timetable edits and read-receipts all fail with a ux-sim guard error. Anything that breaks right after a blocked request is environment-limited.",
+      "Real-time updates (SSE /api/events) are disabled.",
+      "The shared demo account (u_me) is used for signed-in scenarios; its data is sample data and may have been changed by other demo visitors.",
+      "AI endpoints are blocked (they cost money and are logged)."
+    ],
+    "routes": [],
+    "requests": [
+      { "match": "/api/ai/", "reason": "AI endpoints are blocked in live mode." }
+    ],
+    "contentCaveats": []
+  },
+  "custom": {
+    "summary": "A --base-url on localhost that ux-sim did not start (e.g. your own dev server). No guard; assume a disposable store.",
+    "knownLimits": ["Unknown setup — record what you started and with which data."],
+    "routes": [],
+    "requests": [],
+    "contentCaveats": []
+  }
+}

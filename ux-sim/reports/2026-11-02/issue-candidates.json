@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-11-02T06:39:07.923Z",
+  "source": "ux-sim/reports/2026-11-02/findings.json",
+  "rule": "severity ≥ 3 or ≥ 2 personas; environment-limited events excluded",
+  "dedupe": "search existing issues for the body marker <!-- ux-sim:fp=<fingerprint> --> before creating",
+  "note": "Candidates only — ux-sim never creates issues.",
+  "candidates": [
+    {
+      "fingerprint": "0ad866e92107",
+      "title": "[ux-sim] Confusing UI on / — “I'm in”",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nConfusing UI on `/` around “I'm in”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **minji-freshman-17** · `lunch-today` · run `smoke-minji-lunch-today` step 0 · sev 3 — “헐 big face photo… is this a dating app? And 'I'm in' — in what, coffee with Maya or matching with her?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/shots/000-start-som.jpg)\n\nRuns: [`smoke-minji-lunch-today`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/report.md)\n\n### Personas affected\n\n`minji-freshman-17`\n\n### Suggestion (hypothesis)\n\nMake it obvious what “I'm in” on / does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “say what I'm joining, like 'Join coffee'”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=0ad866e92107 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "ux_confusion"
+      ],
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "severityMax": 3,
+      "personaCount": 1
+    }
+  ]
+}

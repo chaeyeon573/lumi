@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/chaeyeon573/AroundU/tools/ux-sim/schema/findings.schema.json",
+  "title": "ux-sim findings",
+  "description": "Friction events clustered across simulated personas. AI simulation — hypotheses, not measured user behaviour.",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAt", "disclaimer", "runs", "findings", "environmentLimited"],
+  "definitions": {
+    "severity": { "type": "integer", "minimum": 1, "maximum": 4 },
+    "event": {
+      "type": "object",
+      "required": ["runId", "persona", "scenario", "step", "severity", "quote", "evidence"],
+      "properties": {
+        "runId": { "type": "string" }, "persona": { "type": "string" }, "scenario": { "type": "string" },
+        "step": { "type": "integer", "minimum": 0 }, "severity": { "$ref": "#/definitions/severity" },
+        "quote": { "type": "string" }, "evidence": { "type": "array", "items": { "type": "string" } },
+        "url": { "type": "string" }, "wish": { "type": ["string", "null"] }
+      }
+    }
+  },
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "generatedAt": { "type": "string" },
+    "disclaimer": { "type": "string", "pattern": "hypothes" },
+    "runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["runId", "persona", "scenario", "outcome", "goalAchieved", "mode", "runFile"],
+        "properties": { "outcome": { "enum": ["success", "false_success", "abandoned", "failed", "timeout"] }, "goalAchieved": { "type": "boolean" }, "mode": { "enum": ["local", "live", "custom"] } }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["fingerprint", "title", "screen", "frictionType", "personas", "scenarios", "runs", "occurrences", "severityMax", "severityMedian", "events", "suggestedImprovement", "hypothesisNote"],
+        "properties": {
+          "fingerprint": { "type": "string", "pattern": "^[0-9a-f]{12}$" },
+          "title": { "type": "string" },
+          "screen": { "type": "string" },
+          "frictionType": { "enum": ["bug", "ux_confusion", "onboarding", "discoverability", "motivation", "content_gap", "performance", "trust_privacy", "copy"] },
+          "keyElement": { "type": ["string", "null"], "description": "normalized key used in the fingerprint" },
+          "keyElementLabel": { "type": ["string", "null"], "description": "the element text as the persona saw it" },
+          "personas": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "personaCount": { "type": "integer", "minimum": 1 },
+          "scenarios": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "scenarioCount": { "type": "integer", "minimum": 1 },
+          "runs": { "type": "array", "items": { "type": "string" } },
+          "occurrences": { "type": "integer", "minimum": 1 },
+          "severityMax": { "$ref": "#/definitions/severity" },
+          "severityMedian": { "type": "number", "minimum": 1, "maximum": 4 },
+          "events": { "type": "array", "items": { "$ref": "#/definitions/event" }, "minItems": 1 },
+          "wishes": { "type": "array", "items": { "type": "string" } },
+          "environmentCaveats": { "type": "array", "items": { "type": "string" } },
+          "suggestedImprovement": { "type": "object", "required": ["kind", "text"], "properties": { "kind": { "const": "hypothesis" }, "text": { "type": "string" } } },
+          "hypothesisNote": { "type": "string" }
+        }
+      }
+    },
+    "environmentLimited": { "type": "array", "items": { "type": "object", "required": ["runId", "step", "type", "reason"] } },
+    "autoChecks": { "type": "array" },
+    "falseSuccesses": { "type": "array" }
+  }
+}

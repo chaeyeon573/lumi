@@ -1,0 +1,27 @@
+{
+  "id": "cold-start-hangout",
+  "title": "Brand-new account: find someone on campus to hang out with this week",
+  "goal": "You just heard about this app and want someone on campus to hang out with this week. Make an account with your school e-mail, then use the app to find a person or plan you could join this week and tell them you're in.",
+  "startUrl": "/welcome",
+  "setup": {
+    "auth": "none",
+    "notes": "Fresh account: sample profiles are shown only to demo accounts, so a new real user sees what a real first-week student sees (cold start)."
+  },
+  "success": {
+    "description": "Signed up AND joined/requested a plan or sent a friend request / message to someone.",
+    "any": [
+      {
+        "textMatches": "You're in|You’re in|Joined · Leave|Request sent|Requested"
+      },
+      {
+        "urlMatches": "^/chats/[^/?]+"
+      }
+    ]
+  },
+  "expectedMinActions": 22,
+  "personas": [
+    "minji-freshman-17",
+    "diego-transfer-commuter",
+    "jordan-sophomore-impatient"
+  ]
+}
