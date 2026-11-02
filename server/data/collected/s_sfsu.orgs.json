@@ -112,6 +112,14 @@
    {
     "label": "X",
     "url": "http://twitter.com/ActiveMindsSFSU"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/activeminds.sfstate/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/activeminds.sfstate"
    }
   ]
  },
@@ -306,7 +314,7 @@
   ]
  },
  {
-  "id": "og_sfsu_alphagammadelta",
+  "id": "og_sfsu_alpha_gamma_delta",
   "name": "Alpha Gamma Delta",
   "logo": {
    "emoji": "AG",
@@ -319,12 +327,18 @@
   "verified": false,
   "description": "Alpha Gamma Delta is an international women's fraternity that promotes academic excellence, philanthropic giving, ongoing leadership and personal development and above all, a spirit of loving sisterhood. Guided by our Purpose, Alpha Gamma Deltas strive...",
   "gallery": [],
-  "regularActivities": [],
+  "regularActivities": [
+   "Chapter meetings",
+   "Philanthropy events",
+   "Socials & formals"
+  ],
   "notices": [],
   "followerIds": [],
   "memberIds": [],
   "adminIds": [],
   "applicantIds": [],
+  "joinProcess": "Formal recruitment (fall) or continuous open bidding",
+  "policyNote": "Register through the Panhellenic Council before formal recruitment. Dues and housing vary by chapter.",
   "links": [
    {
     "label": "Directory",
@@ -371,11 +385,15 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/akaetasigma1908/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/akasorority1908"
    }
   ]
  },
  {
-  "id": "oc_sfsu_alpha_kappa_delta_phi",
+  "id": "og_sfsu_alpha_kappa_delta_phi",
   "name": "alpha Kappa Delta Phi",
   "logo": {
    "emoji": "AK",
@@ -384,15 +402,22 @@
   },
   "type": "club",
   "schoolId": "s_sfsu",
+  "parent": "MGC",
   "verified": false,
   "description": "alpha Kappa Delta Phi Sorority, Inc. is a newly established, Asian-interest organization on our campus. Our pillars are centralized around scholarship, leadership, Asian-awareness, philanthropy, and sisterhood.",
   "gallery": [],
-  "regularActivities": [],
+  "regularActivities": [
+   "Chapter meetings",
+   "Philanthropy events",
+   "Socials & formals"
+  ],
   "notices": [],
   "followerIds": [],
   "memberIds": [],
   "adminIds": [],
   "applicantIds": [],
+  "joinProcess": "Interest meeting → application/interview",
+  "policyNote": "Multicultural Greek Council member. Intake process varies by chapter.",
   "links": [
    {
     "label": "Directory",
@@ -409,7 +434,7 @@
   ]
  },
  {
-  "id": "oc_sfsu_alpha_kappa_psi",
+  "id": "og_sfsu_alpha_kappa_psi",
   "name": "Alpha Kappa Psi",
   "logo": {
    "emoji": "AK",
@@ -418,15 +443,22 @@
   },
   "type": "club",
   "schoolId": "s_sfsu",
+  "parent": "Professional",
   "verified": false,
   "description": "The World's Oldest & Largest Professional Business Fraternity, Inclusive Of All Genders & Majors. Founded in 1904, the organization now has over 298,000 initiated members at 219 universities. Our chapter, which stands at 34 active members...",
   "gallery": [],
-  "regularActivities": [],
+  "regularActivities": [
+   "Career workshops",
+   "Alumni panels",
+   "Chapter meetings"
+  ],
   "notices": [],
   "followerIds": [],
   "memberIds": [],
   "adminIds": [],
   "applicantIds": [],
+  "joinProcess": "Interest meeting → application/interview",
+  "policyNote": "Professional fraternity — open to all genders. Membership is by application and interview.",
   "links": [
    {
     "label": "Directory",
@@ -477,6 +509,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/xirhoalphas/?hl=en"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/1906apanetwork"
    }
   ]
  },
@@ -540,7 +576,7 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/alpha-pi-sigma-sorority-inc"
    },
    {
-    "label": "Website",
+    "label": "Instagram",
     "url": "https://www.instagram.com/sfsualphapisigma/"
    }
   ]
@@ -679,6 +715,14 @@
    {
     "label": "YouTube",
     "url": "https://www.youtube.com/@SFSUAnimeFX"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/animefx/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/groups/132580738835"
    }
   ]
  },
@@ -868,6 +912,10 @@
    {
     "label": "Website",
     "url": "http://aspire.sfsu.edu/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/aapisfsu/"
    }
   ]
  },
@@ -1028,6 +1076,10 @@
    {
     "label": "Website",
     "url": "https://asi.sfsu.edu/art-gallery/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/as_artgallery_sfsu/"
    }
   ]
  },
@@ -1084,6 +1136,10 @@
    {
     "label": "Website",
     "url": "https://asi.sfsu.edu/ecec/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/as_ecec_sfsu/"
    }
   ]
  },
@@ -1114,6 +1170,10 @@
    {
     "label": "Website",
     "url": "https://asi.sfsu.edu/eros/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/as_eros_sfsu/"
    }
   ]
  },
@@ -1144,6 +1204,10 @@
    {
     "label": "Website",
     "url": "https://asi.sfsu.edu/erc/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/as_erc_sfsu/"
    }
   ]
  },
@@ -1174,6 +1238,10 @@
    {
     "label": "Website",
     "url": "https://asi.sfsu.edu/lrc/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/as_lrc_sfsu/"
    }
   ]
  },
@@ -1234,6 +1302,10 @@
    {
     "label": "Website",
     "url": "https://asi.sfsu.edu/project-connect/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/as_project.connect_sfsu/"
    }
   ]
  },
@@ -1298,6 +1370,14 @@
    {
     "label": "X",
     "url": "http://twitter.com/as_qtrc"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/as_qtrc_sfsu/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/as.qtrc.sfsu"
    }
   ]
  },
@@ -1328,6 +1408,10 @@
    {
     "label": "Website",
     "url": "https://asi.sfsu.edu/rack-n-cue/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/as_rackncue_sfsu/"
    }
   ]
  },
@@ -1358,6 +1442,10 @@
    {
     "label": "Website",
     "url": "https://asi.sfsu.edu/romc/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/as_romc_sfsu/"
    }
   ]
  },
@@ -1389,6 +1477,10 @@
    {
     "label": "Website",
     "url": "https://asi.sfsu.edu/the-depot/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/as_thedepot_sfsu/"
    }
   ]
  },
@@ -1419,6 +1511,10 @@
    {
     "label": "Website",
     "url": "https://asi.sfsu.edu/womens-center/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/as_womenscenter_sfsu/"
    }
   ]
  },
@@ -1449,6 +1545,10 @@
    {
     "label": "Website",
     "url": "https://linktr.ee/acm.sfsu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/acm.sfsu/"
    }
   ]
  },
@@ -1558,6 +1658,10 @@
    {
     "label": "Website",
     "url": "https://basicneeds.sfsu.edu/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/foodsheltersuccess/"
    }
   ]
  },
@@ -1586,8 +1690,8 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/bosa"
    },
    {
-    "label": "Website",
-    "url": "https://www.instagram.com/projectbosa?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr"
+    "label": "Instagram",
+    "url": "https://www.instagram.com/projectbosa/"
    }
   ]
  },
@@ -1696,10 +1800,13 @@
   },
   "type": "club",
   "schoolId": "s_sfsu",
+  "parent": "Cultural",
   "verified": false,
   "description": "The Black Student Union is an Organization dedicated to unifying, uplifting and empowering Black People on and off campus.",
   "gallery": [],
-  "regularActivities": [],
+  "regularActivities": [
+   "General meetings"
+  ],
   "notices": [],
   "followerIds": [],
   "memberIds": [],
@@ -1711,7 +1818,7 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/black-student-union"
    },
    {
-    "label": "Website",
+    "label": "Instagram",
     "url": "https://www.instagram.com/sfsubsu/"
    }
   ]
@@ -1743,6 +1850,10 @@
    {
     "label": "Website",
     "url": "https://equity.sfsu.edu/Black-Unity-Center"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/blackunitysfsu/"
    }
   ]
  },
@@ -1773,6 +1884,14 @@
    {
     "label": "Website",
     "url": "https://braven.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/bebraven/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/BeBraven"
    }
   ]
  },
@@ -1801,7 +1920,7 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/brownissuesatsfstate"
    },
    {
-    "label": "Website",
+    "label": "Instagram",
     "url": "https://www.instagram.com/brownissues_sfsu/"
    }
   ]
@@ -1833,6 +1952,14 @@
    {
     "label": "Website",
     "url": "https://cob.sfsu.edu/initiatives-centers/student-engagement/mentorship-program"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfstatecob/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/SFStateCoB"
    }
   ]
  },
@@ -1867,6 +1994,14 @@
    {
     "label": "X",
     "url": "http://twitter.com/Sfsu_campusrec"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfsu_campusrec/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/SFSUcampusrec"
    }
   ]
  },
@@ -1996,6 +2131,10 @@
    {
     "label": "Instagram",
     "url": "https://instagram.com/xposf?igshid=YmMyMTA2M2Y="
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/xposf"
    }
   ]
  },
@@ -2085,7 +2224,7 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/cinemacollective"
    },
    {
-    "label": "Website",
+    "label": "Instagram",
     "url": "https://www.instagram.com/cinemacollective_sfsu/"
    }
   ]
@@ -2277,6 +2416,10 @@
    {
     "label": "Website",
     "url": "https://caps.sfsu.edu/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfsucaps/"
    }
   ]
  },
@@ -2549,7 +2692,7 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/delta-kappa-alpha"
    },
    {
-    "label": "Website",
+    "label": "Instagram",
     "url": "https://www.instagram.com/dkasfsu/"
    },
    {
@@ -2597,7 +2740,7 @@
   ]
  },
  {
-  "id": "og_sfsu_sfsudsp_org",
+  "id": "og_sfsu_delta_sigma_pi",
   "name": "Delta Sigma Pi",
   "logo": {
    "emoji": "DS",
@@ -2610,12 +2753,18 @@
   "verified": false,
   "description": "As the foremost professional fraternity for men and women, Delta Sigma Pi develops principled business leaders for the future by providing a lifetime of opportunity for our members.",
   "gallery": [],
-  "regularActivities": [],
+  "regularActivities": [
+   "Career workshops",
+   "Alumni panels",
+   "Chapter meetings"
+  ],
   "notices": [],
   "followerIds": [],
   "memberIds": [],
   "adminIds": [],
   "applicantIds": [],
+  "joinProcess": "Interest meeting → application/interview",
+  "policyNote": "Professional fraternity — open to all genders. Membership is by application and interview.",
   "links": [
    {
     "label": "Directory",
@@ -2754,6 +2903,14 @@
    {
     "label": "Website",
     "url": "http://drc.sfsu.edu/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfsudrc/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/SFSUDRC"
    }
   ]
  },
@@ -2836,6 +2993,10 @@
    {
     "label": "Website",
     "url": "https://eop.sfsu.edu/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfstateeop/"
    }
   ]
  },
@@ -3015,12 +3176,8 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/fashion-network-association"
    },
    {
-    "label": "Website",
-    "url": "https://www.instagram.com/fnasf/"
-   },
-   {
     "label": "Instagram",
-    "url": "https://www.instagram.com/fnasf?igsh=NTc4MTIwNjQ2YQ=="
+    "url": "https://www.instagram.com/fnasf/"
    }
   ]
  },
@@ -3179,6 +3336,10 @@
    {
     "label": "Website",
     "url": "https://linktr.ee/finsfsu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/fin.sfsu/"
    }
   ]
  },
@@ -3664,8 +3825,8 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/girls-craft-club"
    },
    {
-    "label": "Website",
-    "url": "https://www.instagram.com/girls.craftclub?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr"
+    "label": "Instagram",
+    "url": "https://www.instagram.com/girls.craftclub/"
    }
   ]
  },
@@ -3983,7 +4144,7 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/improving-dreams-equity-access-and-success"
    },
    {
-    "label": "Website",
+    "label": "Instagram",
     "url": "https://www.instagram.com/ideassfsu/"
    },
    {
@@ -4175,6 +4336,10 @@
    {
     "label": "Website",
     "url": "https://linktr.ee/ite.sfsu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ite.sfsu/"
    }
   ]
  },
@@ -4236,6 +4401,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsuieec/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/sfsuieec"
    }
   ]
  },
@@ -4334,6 +4503,14 @@
    {
     "label": "Website",
     "url": "https://www.iotaphitheta.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ipt1963/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/ipt1963"
    }
   ]
  },
@@ -4394,6 +4571,14 @@
    {
     "label": "Website",
     "url": "https://library.sfsu.edu/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfstatelibrary/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/sfstatelibrary"
    }
   ]
  },
@@ -4455,6 +4640,10 @@
    {
     "label": "Website",
     "url": "https://linktr.ee/SFSUJSAcareer"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/jsacareer_sfsu/"
    }
   ]
  },
@@ -4482,10 +4671,6 @@
    {
     "label": "Directory",
     "url": "https://sfsu.campuslabs.com/engage/organization/japanese-student-association"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.instagram.com/jsa_sfsu"
    },
    {
     "label": "Instagram",
@@ -4575,12 +4760,18 @@
   "verified": false,
   "description": "Kappa Sigma is focused upon the Four Pillars of Fellowship, Leadership, Scholarship and Service. As a values-based men’s fraternity, Kappa Sigma strictly forbids hazing and fosters meaningful college experiences by offering progressive membership devel...",
   "gallery": [],
-  "regularActivities": [],
+  "regularActivities": [
+   "Chapter meetings",
+   "Philanthropy events",
+   "Socials & formals"
+  ],
   "notices": [],
   "followerIds": [],
   "memberIds": [],
   "adminIds": [],
   "applicantIds": [],
+  "joinProcess": "Rush week → bid",
+  "policyNote": "Recruitment runs through the Interfraternity Council. Dry recruitment and anti-hazing policies apply.",
   "links": [
    {
     "label": "Directory",
@@ -4774,6 +4965,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsulambdas/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/lambdathetanu86"
    }
   ]
  },
@@ -4862,8 +5057,8 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/latino-greek-council"
    },
    {
-    "label": "Website",
-    "url": "https://www.instagram.com/lgc_sfsu?igsh=MzRlODBiNWFlZA=="
+    "label": "Instagram",
+    "url": "https://www.instagram.com/lgc_sfsu/"
    }
   ]
  },
@@ -4894,6 +5089,10 @@
    {
     "label": "Website",
     "url": "https://linktr.ee/ltn_film_club"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/ltnxfc/"
    }
   ]
  },
@@ -5159,7 +5358,7 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/mediacreativesociety"
    },
    {
-    "label": "Website",
+    "label": "Instagram",
     "url": "https://www.instagram.com/mcs.sfsu/"
    }
   ]
@@ -5191,6 +5390,14 @@
    {
     "label": "Website",
     "url": "https://www.medlifemovement.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/medlifemovement/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/TheMEDLIFEMovement"
    }
   ]
  },
@@ -5309,8 +5516,8 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/mma-club-sfsu"
    },
    {
-    "label": "Website",
-    "url": "https://www.instagram.com/sfsu_mma_club?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfsu_mma_club/"
    }
   ]
  },
@@ -5466,12 +5673,8 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/msa"
    },
    {
-    "label": "Website",
-    "url": "https://www.instagram.com/msasfsu/"
-   },
-   {
     "label": "Instagram",
-    "url": "https://instagram.com/msasfsu"
+    "url": "https://www.instagram.com/msasfsu/"
    },
    {
     "label": "Facebook",
@@ -5544,6 +5747,10 @@
    {
     "label": "LinkedIn",
     "url": "https://www.linkedin.com/company/nabainc/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/onenaba"
    }
   ]
  },
@@ -5647,6 +5854,10 @@
    {
     "label": "LinkedIn",
     "url": "https://linkedin.com/in/nsbe-at-san-francisco-state-university-b282171ba"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/NSBE1975"
    }
   ]
  },
@@ -5681,6 +5892,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/nsslha_sfsu?igsh=NTc4MTIwNjQ2YQ=="
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/nsslha"
    }
   ]
  },
@@ -5712,6 +5927,10 @@
    {
     "label": "Website",
     "url": "https://linktr.ee/netimpactsfsu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/netimpact.sfsu/"
    }
   ]
  },
@@ -5804,8 +6023,8 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/nu-alpha-kappa-fraternity-inc"
    },
    {
-    "label": "Website",
-    "url": "https://www.instagram.com/sfsunaks"
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfsunaks/"
    }
   ]
  },
@@ -5878,6 +6097,10 @@
    {
     "label": "Facebook",
     "url": "https://www.facebook.com/sustainsfstate/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sustainsfstate/"
    }
   ]
  },
@@ -6054,6 +6277,14 @@
    {
     "label": "Website",
     "url": "https://www.perfectpair.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/perfectpairorg/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/perfectpairorg"
    }
   ]
  },
@@ -6084,6 +6315,10 @@
    {
     "label": "Website",
     "url": "https://phialpha.org/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/PhiAlphaHS"
    }
   ]
  },
@@ -6172,6 +6407,10 @@
    {
     "label": "Website",
     "url": "https://linktr.ee/phi.club"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/phi.club/"
    }
   ]
  },
@@ -6202,6 +6441,10 @@
    {
     "label": "Website",
     "url": "https://linktr.ee/pickleball.sfsu"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/pickleball.sfsu/"
    }
   ]
  },
@@ -6232,6 +6475,10 @@
    {
     "label": "Website",
     "url": "https://www.pacesfsu.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/pacesfsu1967/"
    }
   ]
  },
@@ -6587,7 +6834,7 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/public-health-organization-of-graduate-students"
    },
    {
-    "label": "Website",
+    "label": "Instagram",
     "url": "https://www.instagram.com/phogsatsfsu/"
    }
   ]
@@ -6651,7 +6898,7 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/qcc"
    },
    {
-    "label": "Website",
+    "label": "Instagram",
     "url": "https://www.instagram.com/queercinemacoalition/"
    }
   ]
@@ -6947,6 +7194,10 @@
    {
     "label": "Website",
     "url": "https://www.sfstategators.com/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/SFStateWRSTL"
    }
   ]
  },
@@ -6981,6 +7232,10 @@
    {
     "label": "Facebook",
     "url": "http://www.facebook.com/sfstatepd"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfstatepd/"
    }
   ]
  },
@@ -7037,6 +7292,14 @@
    {
     "label": "Website",
     "url": "https://sfyd.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfyoungdems/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/SFYoungDemocrats"
    }
   ]
  },
@@ -7050,10 +7313,14 @@
   },
   "type": "club",
   "schoolId": "s_sfsu",
+  "parent": "Technology",
   "verified": false,
   "description": "Our organization’s purpose is to plan and host California's most talented collegiate hackers, designers, and developers, to a 48-hour hackathon. SF Hacks is meant to give students an environment for maximum innovation, collaboration, and education.",
   "gallery": [],
-  "regularActivities": [],
+  "regularActivities": [
+   "Workshops",
+   "Spring hackathon"
+  ],
   "notices": [],
   "followerIds": [],
   "memberIds": [],
@@ -7106,6 +7373,14 @@
    {
     "label": "Website",
     "url": "https://sfstate.sodexomyway.com/en-us/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfstatediningservices/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/sfstatediningservices"
    }
   ]
  },
@@ -7162,6 +7437,10 @@
    {
     "label": "Website",
     "url": "https://linktr.ee/sfsu_artclub"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfsu_artclub/"
    }
   ]
  },
@@ -7216,8 +7495,8 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/--"
    },
    {
-    "label": "Website",
-    "url": "https://instagram.com/sfsufuturedentists?igshid=OGQ5ZDc2ODk2ZA=="
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfsufuturedentists/"
    }
   ]
  },
@@ -7329,7 +7608,7 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/women-s-volleyball"
    },
    {
-    "label": "Website",
+    "label": "Instagram",
     "url": "https://www.instagram.com/sfsuclub_wvb/"
    }
   ]
@@ -7426,7 +7705,7 @@
  },
  {
   "id": "og_sfsu_sigma_lambda_gamma",
-  "name": "Sigma Lambda Gamma National Sorority Incorporated",
+  "name": "Sigma Lambda Gamma",
   "logo": {
    "emoji": "SL",
    "hue": 248,
@@ -7438,12 +7717,18 @@
   "verified": false,
   "description": "Sigma Lambda Gamma strives to be the premier organization committed to providing a mechanism of empowerment to all women through our five principles Academics, Community Service, Cultural Awareness, Social Interaction, and Morals & Ethics.",
   "gallery": [],
-  "regularActivities": [],
+  "regularActivities": [
+   "Chapter meetings",
+   "Philanthropy events",
+   "Socials & formals"
+  ],
   "notices": [],
   "followerIds": [],
   "memberIds": [],
   "adminIds": [],
   "applicantIds": [],
+  "joinProcess": "Interest meeting → application/interview",
+  "policyNote": "Multicultural Greek Council member. Intake process varies by chapter.",
   "links": [
    {
     "label": "Directory",
@@ -7456,7 +7741,7 @@
   ]
  },
  {
-  "id": "oc_sfsu_sopi",
+  "id": "og_sfsu_sigma_omicron_pi",
   "name": "Sigma Omicron Pi",
   "logo": {
    "emoji": "SO",
@@ -7465,15 +7750,22 @@
   },
   "type": "club",
   "schoolId": "s_sfsu",
+  "parent": "MGC",
   "verified": false,
   "description": "The sisterhood of ΣΟΠ was founded in 1930 to further the awareness of women in Asian culture. As strong women participating in various social, academic, and community activities, we maintain our objectives of unity, friendship, leadership, and communit...",
   "gallery": [],
-  "regularActivities": [],
+  "regularActivities": [
+   "Chapter meetings",
+   "Philanthropy events",
+   "Socials & formals"
+  ],
   "notices": [],
   "followerIds": [],
   "memberIds": [],
   "adminIds": [],
   "applicantIds": [],
+  "joinProcess": "Interest meeting → application/interview",
+  "policyNote": "Multicultural Greek Council member. Intake process varies by chapter.",
   "links": [
    {
     "label": "Directory",
@@ -7482,6 +7774,14 @@
    {
     "label": "Website",
     "url": "https://sfsopi.carrd.co/?utm_source=ig&utm_medium=social&utm_content=link_in_bio#"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfsopi/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/sf.sopi"
    }
   ]
  },
@@ -7513,6 +7813,14 @@
    {
     "label": "Website",
     "url": "https://sigmapialpha.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sigmapialpha_sororityinc/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/sigmapialpha"
    }
   ]
  },
@@ -7541,7 +7849,7 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/sikh-student-association"
    },
    {
-    "label": "Website",
+    "label": "Instagram",
     "url": "https://www.instagram.com/sfsu_ssa/"
    }
   ]
@@ -7714,7 +8022,7 @@
     "url": "https://sfsu.campuslabs.com/engage/organization/society-of-automotive-engineers"
    },
    {
-    "label": "Website",
+    "label": "Instagram",
     "url": "https://www.instagram.com/goldengate_racing/"
    }
   ]
@@ -7929,6 +8237,10 @@
    {
     "label": "Website",
     "url": "https://www.seaonc.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/seaoncalifornia/"
    }
   ]
  },
@@ -8180,6 +8492,10 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/sfsu_space/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/SFSU.Observatory"
    }
   ]
  },
@@ -8210,6 +8526,10 @@
    {
     "label": "Website",
     "url": "https://studyabroad.sfsu.edu/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sfstateabroad/"
    }
   ]
  },
@@ -8327,6 +8647,10 @@
    {
     "label": "Website",
     "url": "http://tbpsfsu.wixsite.com/caag"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/tbpsfsu/"
    }
   ]
  },
@@ -8535,6 +8859,14 @@
    {
     "label": "Website",
     "url": "https://www.tpusa.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/turningpointusa/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/turningpointusa"
    }
   ]
  },
@@ -8566,6 +8898,14 @@
    {
     "label": "Website",
     "url": "https://tutoring.sfsu.edu/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/tascatsfsu/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/TASCatSFSU"
    }
   ]
  },
@@ -8877,6 +9217,14 @@
    {
     "label": "Website",
     "url": "https://zphib1920.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/zphibinc1920/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/ZPHIBHQ"
    }
   ]
  }

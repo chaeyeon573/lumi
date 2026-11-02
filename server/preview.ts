@@ -7,6 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Organization } from '@core/types';
 import { parseCSV } from './scripts/csv';
+import { publicLinks } from '@core/lib/orglinks';
 
 const DATA = path.join(path.dirname(fileURLToPath(import.meta.url)), 'data');
 const COLLECTED = path.join(DATA, 'collected');
@@ -19,7 +20,7 @@ const readJson = <T>(file: string): T | undefined => { try { return JSON.parse(r
 export interface PreviewSchool { id: string; name: string; region: string; orgs: number; withLinks: number; collectedAt?: string; probe?: { status?: string; source?: string; sampled?: number; checkedAt?: string } }
 export interface PreviewOrg { id: string; name: string; type: Organization['type']; category?: string; description: string; links: { label: string; url: string }[]; logo: Organization['logo'] }
 
-const hasOwnLink = (o: Organization) => !!o.links?.some((l) => l.label !== 'Directory' && !/Engage$/.test(l.label) && l.label !== 'Penn Clubs');
+const hasOwnLink = (o: Organization) => publicLinks(o.links).some((l) => ['Website', 'Instagram', 'Facebook'].includes(l.label));
 
 export function previewSchools(): PreviewSchool[] {
   return rows().map((r) => {
@@ -34,7 +35,7 @@ export function previewSchool(id: string): { school: PreviewSchool; orgs: Previe
   if (!ID_RE.test(id)) return null;
   const school = previewSchools().find((s) => s.id === id);
   if (!school) return null;
-  const orgs = (readJson<Organization[]>(path.join(COLLECTED, `${id}.orgs.json`)) ?? []).map((o) => ({ id: o.id, name: o.name, type: o.type, category: o.parent, description: o.description, links: o.links ?? [], logo: o.logo }));
+  const orgs = (readJson<Organization[]>(path.join(COLLECTED, `${id}.orgs.json`)) ?? []).map((o) => ({ id: o.id, name: o.name, type: o.type, category: o.parent, description: o.description, links: publicLinks(o.links), logo: o.logo }));
   const probe = readJson<Record<string, unknown>>(path.join(COLLECTED, `${id}.probe.json`));
   return { school, orgs, probe };
 }

@@ -28,6 +28,8 @@ import { fetchResearchUnits, mergeResearchUnits } from '../sources/researchunits
 import { coopsFromCsv, COOP_PREFIX } from '../sources/coops';
 import { fetchUsaJobs } from '../sources/usajobs';
 import { studentGovToOrg, type StudentGovRow } from '../sources/orglinks';
+import { enrichFromWebsites } from '../sources/sitesocial';
+import { publicLinks } from '@core/lib/orglinks';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
@@ -141,6 +143,14 @@ const COLLECTED_DIR = path.join(DATA_DIR, 'collected');
 const GOV_CSV = path.join(DATA_DIR, 'student-governments.csv');
 const normName = (n: string) => n.toLowerCase().replace(/\([^)]*\)/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
 /** collect:<id> — 동아리(+손으로 확인한 학생회)를 server/data/collected/<id>.orgs.json 에, 수업 표본 결과를 <id>.probe.json 에. DB 에는 쓰지 않는다 */
+/** 공개 웹 페이지 한 장 (10초, 500KB 까지). 실패하면 '' */
+async function fetchPublicPage(url: string): Promise<string> {
+  try {
+    const r = await fetch(url, { headers: { 'user-agent': 'Mozilla/5.0 (compatible; Lumi-campus-directory/1.0)', accept: 'text/html' }, redirect: 'follow', signal: AbortSignal.timeout(10_000) });
+    if (!r.ok || !/html/i.test(r.headers.get('content-type') ?? '')) return '';
+    return (await r.text()).slice(0, 500_000);
+  } catch { return ''; }
+}
 async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
   const out: AgentRun[] = [];
   const d = await detectOrgsPlatform(row.short, row.email_domain, row.orgs_host || undefined);
@@ -156,6 +166,15 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
     if (add.length) { mkdirSync(COLLECTED_DIR, { recursive: true }); writeFileSync(file, `${JSON.stringify([...list, ...add].sort((a, b) => a.name.localeCompare(b.name)), null, 1)}\n`); }
   }
   // railway 칸에 probe 가 있으면(이 컨테이너에서 원본에 못 닿음) 수업 표본은 Railway 가 한다
+  // 단체 웹사이트 첫 페이지에서 공식 인스타·페북 찾기 (학교 로그인 페이지 대신 공개 링크 — 2026-11-02 사장님)
+  if (existsSync(file)) {
+    const startedAt = new Date().toISOString();
+    const list = JSON.parse(readFileSync(file, 'utf8')) as Organization[];
+    const r = await enrichFromWebsites(list, fetchPublicPage);
+    writeFileSync(file, `${JSON.stringify(r.orgs, null, 1)}\n`);
+    const pub = r.orgs.filter((o) => publicLinks(o.links).some((l) => ['Website', 'Instagram', 'Facebook'].includes(l.label))).length;
+    out.push(await record({ task: `collect-social:${row.id}`, schoolId: row.id, status: 'applied', startedAt, summary: { orgs: r.orgs.length, sitesRead: r.checked, gainedSocial: r.found, withPublicLink: pub, schoolFooterAccountsDropped: r.droppedShared.slice(0, 10) } }));
+  }
   if ((row.courses_source || row.catalog_url) && !(row.railway ?? '').split('|').includes('probe')) {
     const probe = await runCourseProbe(row);
     mkdirSync(COLLECTED_DIR, { recursive: true });

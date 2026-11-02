@@ -1,3 +1,4 @@
+import { publicLinks } from '@core/lib/orglinks';
 import { useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { t, lang } from '@core/i18n';
@@ -43,7 +44,8 @@ export function OrgPage() {
   const school = schools.find((s) => s.id === org.schoolId);
   const sample = isSampleOrg(org.id);
   // 예시 동아리의 링크(instagram.com/example 등)는 남의 실제 페이지로 간다 — 예시엔 바깥 링크를 달지 않는다
-  const links = sample ? [] : org.links ?? [];
+  // 학교 로그인 뒤 페이지(CalLink·CampusGroups)는 빼고 공개 링크만
+  const links = sample ? [] : publicLinks(org.links);
   const following = v.isFollowing(org.id);
   const isMember = org.memberIds.includes(v.me.id);
   const isAdmin = org.adminIds.includes(v.me.id);
@@ -98,7 +100,7 @@ export function OrgPage() {
             <div className="card p-4"><p className="text-[14px] text-ink-2 leading-relaxed">{org.description}</p>
               {(links.length || org.dues || org.joinProcess || org.policyNote) ? (
                 <div className="mt-3 space-y-2 border-t border-line pt-3">
-                  {links.length > 0 && <div className="flex flex-wrap gap-1.5">{links.map((l) => <a key={l.url} href={l.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 h-8 px-3 rounded-lg bg-surface-2 text-[12px] font-semibold text-ink-2"><ExternalLink size={12} />{lang === 'en' ? l.label : (LINK_LABEL_KO[l.label] ?? l.label)}{/callink\.berkeley\.edu/.test(l.url) && <span className="font-normal text-ink-3">· {lang === 'en' ? 'CalNet login' : 'CalNet 로그인'}</span>}</a>)}</div>}
+                  {links.length > 0 && <div className="flex flex-wrap gap-1.5">{links.map((l) => <a key={l.url} href={l.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 h-8 px-3 rounded-lg bg-surface-2 text-[12px] font-semibold text-ink-2"><ExternalLink size={12} />{lang === 'en' ? l.label : (LINK_LABEL_KO[l.label] ?? l.label)}</a>)}</div>}
                   {org.joinProcess && <div className="text-[13px]"><span className="text-ink-3">{t('가입 절차')} · </span>{org.joinProcess}</div>}
                   {org.dues && <div className="text-[13px]"><span className="text-ink-3">{t('회비')} · </span>{org.dues}</div>}
                   {org.policyNote && <div className="rounded-xl bg-gold-soft px-3 py-2 text-[12px] text-ink-2 flex gap-2"><ShieldCheck size={14} className="text-[#B57A0E] shrink-0 mt-0.5" /><span><b>{t('학교 정책 안내')}</b> · {org.policyNote}</span></div>}

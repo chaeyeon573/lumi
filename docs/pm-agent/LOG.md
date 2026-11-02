@@ -1572,3 +1572,10 @@
 - Pages /preview (school list: groups, with links, class recipe status) and /preview/:id (search, All/Clubs/Greek/Student government, description on tap, Directory/Instagram/Website links, class sample). Not linked from the app; the design toggle is hidden there.
 - Checked locally with the real server (file store): list + UCSC + SFSU in v2 and classic, PAGE ERROR 0. Test: server/preview.test.ts.
 - Next (owner): when a school looks right in preview → open it (option B: move row to schools.csv + import-collected).
+
+## 2026-11-02 — Public links only (owner: "Directory needs a school login — not OK")
+- Checked: CampusGroups club pages (Stanford Cardinal Engage, UC Davis AggieLife, SJSU SAMMY, MIT, Dartmouth) and Berkeley CalLink all redirect to a school login. Engage org pages (SF State) and the UCSC/SCU/USF list pages are public.
+- packages/core/src/lib/orglinks.ts `publicLinks`: login-only links are hidden on the org page and in /preview (kept in data for import bookkeeping). Order Website → Instagram → Facebook.
+- server/sources/sitesocial.ts: for clubs with their own website, read the site's first page and take its Instagram/Facebook profile links; a "Website" that is itself a Facebook/Instagram page is relabelled; accounts that appear on 3+ club sites of one school are treated as the school footer and dropped (SF State: sfstatecares, sanfranciscostate…). Part of `collect:<id>`.
+- After: SF State 214/290 with a public link (IG 171, FB 48) · UC Davis 172/532 (IG 77, FB 49) · SJSU 107/440 · USF 138/152 · UCSC 109/110 · Santa Clara 1/163 · Stanford 0/733. Spot check of 12 random new links: all the club's own accounts (one is the national parent org's account).
+- Stanford and Santa Clara have no public links in their directories → queued: small hand-checked batches per run via web search (DATA_SOURCES queue).
