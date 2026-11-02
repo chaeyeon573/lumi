@@ -6,6 +6,7 @@ import { useSyncExternalStore } from 'react';
  * - <html data-design="v2"> 로 걸리고, src/index.css 가 그 아래에서 토큰을 갈아 끼운다.
  * 기본값은 v2 (2026-10-19 사장님 결정). 2026-10-30 사장님 결정: New(v2) 하나로 정하고 화면의 비교 알약은 없앤다 —
  * 예전에 classic 을 고른 브라우저도 v2 로 오게 키를 다시 바꾼다. ?design=classic 은 내부 비교용으로만 남는다.
+ * 2026-11-02: 떠 있는 비교 알약은 버튼을 가려서 뺐고, 웹에서는 설정 → 디자인 한 줄에서 바꾼다 (SettingsPage).
  */
 export type Design = 'classic' | 'v2';
 

@@ -13,6 +13,7 @@ import { DeleteAccountCard } from '@/components/settings/DeleteAccountCard';
 import { PushSettingRow } from '@/components/native/PushSettingRow';
 import { appVersionLabel, isNativeShell } from '@/lib/native';
 import { FeedbackSheet } from '@/components/layout/FeedbackTab';
+import { setDesign, useDesign, type Design } from '@/lib/design';
 
 export function SettingsPage() {
   const nav = useNavigate();
@@ -22,9 +23,11 @@ export function SettingsPage() {
   const init = useAppStore((s) => s.init);
   const showToast = useAppStore((s) => s.showToast);
   const me = v.me;
-  // iPhone 앱: 데모 도구·가짜 위치 권한·데모 안내 문구를 숨기고(App Review 2.1), 떠 있는 '의견' 버튼 대신 여기서 의견을 보낸다
+  // iPhone 앱: 데모 도구·가짜 위치 권한·데모 안내 문구·디자인 비교를 숨긴다(App Review 2.1).
+  // 의견은 웹·앱 모두 여기서 보낸다 — 예전의 떠 있는 '의견'·'Design' 알약은 화면의 버튼을 가려서 뺐다 (AppShell)
   const inApp = isNativeShell();
   const [feedback, setFeedback] = useState(false);
+  const design = useDesign();
   const items = [
     { Icon: User, label: t('프로필 편집'), to: '/profile/edit' },
     { Icon: Lock, label: t('공개 범위 설정'), desc: t('프로필 항목별 공개 범위'), to: '/settings/privacy' },
@@ -51,12 +54,17 @@ export function SettingsPage() {
           {/* 캠퍼스가 언어 따라 바뀌는 건 예시 데이터(mock)뿐 — 실제 서버에선 화면 글자만 바뀐다 */}
           {apiMode === 'mock' && <p className="text-[12px] text-ink-3 mt-2">{t('언어를 바꾸면 데모 데이터도 해당 언어의 캠퍼스로 바뀌어요.')}</p>}
         </div>
-        {/* Privacy Policy · Terms of Use — public pages (src/pages/legal) */}
-        {inApp && (
-          <div className="card divide-y divide-line">
-            <button onClick={() => setFeedback(true)} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press"><MessageSquareText size={18} className="text-ink-2" /><span className="flex-1"><span className="block text-[14px] font-semibold">{lang === 'en' ? 'Send feedback' : '의견 보내기'}</span><span className="block text-[12px] text-ink-3">{lang === 'en' ? 'Ideas, bugs, anything confusing — we read every message' : '아이디어·버그·헷갈린 점 — 하나도 빠짐없이 읽어요'}</span></span><ChevronRight size={18} className="text-ink-3" /></button>
+        {/* 디자인 — 기본은 New. 웹에서만 (iPhone 앱은 한 디자인) */}
+        {!inApp && (
+          <div className="card px-4 py-3">
+            <div className="text-[14px] font-medium mb-2">{lang === 'en' ? 'Design' : '디자인'}</div>
+            <Segmented value={design} onChange={(d: Design) => d !== design && setDesign(d)} options={[{ value: 'v2', label: lang === 'en' ? 'New' : '새 디자인' }, { value: 'classic', label: lang === 'en' ? 'Classic' : '클래식' }]} />
           </div>
         )}
+        <div className="card divide-y divide-line">
+          <button onClick={() => setFeedback(true)} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press"><MessageSquareText size={18} className="text-ink-2" /><span className="flex-1"><span className="block text-[14px] font-semibold">{lang === 'en' ? 'Send feedback' : '의견 보내기'}</span><span className="block text-[12px] text-ink-3">{lang === 'en' ? 'Ideas, bugs, anything confusing — we read every message' : '아이디어·버그·헷갈린 점 — 하나도 빠짐없이 읽어요'}</span></span><ChevronRight size={18} className="text-ink-3" /></button>
+        </div>
+        {/* Privacy Policy · Terms of Use — public pages (src/pages/legal) */}
         <div className="card divide-y divide-line">
           {[{ to: '/privacy', label: 'Privacy Policy' }, { to: '/terms', label: 'Terms of Use' }].map((it) => <button key={it.to} onClick={() => nav(it.to)} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press"><FileText size={18} className="text-ink-2" /><span className="flex-1 text-[14px] font-semibold">{it.label}</span><ChevronRight size={18} className="text-ink-3" /></button>)}
         </div>
@@ -71,7 +79,7 @@ export function SettingsPage() {
           <button onClick={async () => { await api.system.reset(); await logout(); nav('/welcome', { replace: true }); showToast(t('데모 데이터를 초기화했어요.')); }} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press"><RotateCcw size={18} className="text-danger" /><span className="flex-1"><span className="block text-[14px] font-semibold text-danger">{t('데모 데이터 초기화')}</span><span className="block text-[12px] text-ink-3">{t('모든 변경 사항을 지우고 예시 데이터로 되돌려요')}</span></span></button>
         </div>}
         <p className="text-center text-[11px] text-ink-3">{appVersionLabel() ? `Lumi for iPhone ${appVersionLabel()}` : apiMode === 'remote' ? 'Lumi' : 'Lumi MVP · mock API (localStorage)'}</p>
-        {inApp && <FeedbackSheet open={feedback} onClose={() => setFeedback(false)} />}
+        <FeedbackSheet open={feedback} onClose={() => setFeedback(false)} />
       </div>
     </div>
   );

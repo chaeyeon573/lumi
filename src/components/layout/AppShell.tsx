@@ -4,14 +4,12 @@ import { isNativeShell } from '@/lib/native';
 import { PullToRefresh } from '@/components/native/PullToRefresh';
 import { Toast } from '@/components/ui';
 import { BottomNav } from './BottomNav';
-import { FeedbackTab } from './FeedbackTab';
-import { DesignToggle } from './DesignToggle';
 import { lang } from '@core/i18n';
 
 /**
  * 모바일 프레임. 데스크톱에서는 가운데 430px 폭으로 고정된다.
- * iPhone 앱 안에서는 테스트용 떠 있는 알약(디자인 비교 · 의견)을 그리지 않는다 — App Review 2.1/4.2.
- * 의견은 설정 → '의견 보내기'로 보낸다 (SettingsPage).
+ * 떠 있는 알약(디자인 비교 · 의견)은 두지 않는다 — 'Edit timetable'·'My rides'·채팅 날짜 줄을 가렸다 (2026-11-02 ux-sim).
+ * 디자인 바꾸기와 의견 보내기는 설정에 한 줄씩 있다 (SettingsPage). 주소의 ?design= 비교는 그대로 된다 (src/lib/design.ts).
  */
 export function AppShell({ withNav = true }: { withNav?: boolean }) {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -32,9 +30,6 @@ export function AppShell({ withNav = true }: { withNav?: boolean }) {
           <Outlet />
         </div>
         {withNav && <BottomNav />}
-        {withNav && !inApp && <FeedbackTab />}
-        {/* 2026-11-02 사장님: 디자인 비교 알약은 그대로 둔다 */}
-        {!inApp && <DesignToggle withNav={withNav} />}
         <Toast />
       </div>
     </div>
