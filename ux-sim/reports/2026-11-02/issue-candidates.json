@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T06:39:07.923Z",
+  "generatedAt": "2026-11-02T06:44:16.727Z",
   "source": "ux-sim/reports/2026-11-02/findings.json",
   "rule": "severity ≥ 3 or ≥ 2 personas; environment-limited events excluded",
   "dedupe": "search existing issues for the body marker <!-- ux-sim:fp=<fingerprint> --> before creating",
@@ -8,14 +8,214 @@
     {
       "fingerprint": "0ad866e92107",
       "title": "[ux-sim] Confusing UI on / — “I'm in”",
-      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nConfusing UI on `/` around “I'm in”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **minji-freshman-17** · `lunch-today` · run `smoke-minji-lunch-today` step 0 · sev 3 — “헐 big face photo… is this a dating app? And 'I'm in' — in what, coffee with Maya or matching with her?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/shots/000-start-som.jpg)\n\nRuns: [`smoke-minji-lunch-today`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/report.md)\n\n### Personas affected\n\n`minji-freshman-17`\n\n### Suggestion (hypothesis)\n\nMake it obvious what “I'm in” on / does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “say what I'm joining, like 'Join coffee'”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=0ad866e92107 -->",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nConfusing UI on `/` around “I'm in”. Seen by **5 simulated persona(s)** across 4 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 2.\n\n### Evidence\n\n- **aisha-firstgen-anxious** · `find-a-club` · run `baseline-aisha-find-a-club` step 0 · sev 2 — “Wait, the first thing I see is a big photo of a stranger named Maya and an 'I'm in' button. I came to find a club… is this a dating thing? I don't want to accidentally tap 'I'm in' and sign up for coffee with someone I don't know.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/000-start-som.jpg)\n- **diego-transfer-commuter** · `lunch-today` · run `baseline-diego-lunch-today` step 0 · sev 2 — “OK, a big face photo first thing. Coffee tomorrow at 6 isn't lunch today. Is this a dating thing or a plans thing? I just want lunch people.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/000-start-som.jpg)\n- **priya-phd-desktop** · `internship-near-berkeley` · run `baseline-priya-internship-near-berkeley` step 0 · sev 2 — “I'm on a 1440px laptop and I get a phone-width column with a giant face photo and an 'I'm in' button. Is this a dating app? I came for internships.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/shots/000-start-som.jpg)\n- **seoyeon-exchange-korean** · `ride-sfo-thanksgiving` · run `baseline-seoyeon-ride-sfo-thanksgiving` step 0 · sev 2 — “어... 큰 얼굴 사진? 데이트 앱인가? 공항 가는 차 찾으려고 왔는데 커피 약속이 나와요. 영어만 있고... 한국어 설정 어디 있지?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/000-start-som.jpg)\n- **minji-freshman-17** · `lunch-today` · run `smoke-minji-lunch-today` step 0 · sev 3 — “헐 big face photo… is this a dating app? And 'I'm in' — in what, coffee with Maya or matching with her?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/shots/000-start-som.jpg)\n\nRuns: [`baseline-aisha-find-a-club`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/report.md), [`baseline-diego-lunch-today`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/report.md), [`baseline-priya-internship-near-berkeley`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/report.md), [`baseline-seoyeon-ride-sfo-thanksgiving`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/report.md), [`smoke-minji-lunch-today`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/report.md)\n\n### Personas affected\n\n`aisha-firstgen-anxious`, `diego-transfer-commuter`, `priya-phd-desktop`, `seoyeon-exchange-korean`, `minji-freshman-17`\n\n### Suggestion (hypothesis)\n\nMake it obvious what “I'm in” on / does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “Tell me what this home screen is for, and that 'I'm in' joins a coffee meetup, not something public”; “show me what's happening today, not one person's face”; “A desktop layout and a home screen that tells me what this app is for, not a swipe card”; “첫 화면에 '무엇을 찾나요?' 같은 선택이나 라이드 쉐어 바로가기”; “say what I'm joining, like 'Join coffee'”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=0ad866e92107 -->",
       "labels": [
         "ux-sim",
         "severity:3",
         "ux_confusion"
       ],
       "personas": [
+        "aisha-firstgen-anxious",
+        "diego-transfer-commuter",
+        "priya-phd-desktop",
+        "seoyeon-exchange-korean",
         "minji-freshman-17"
+      ],
+      "severityMax": 3,
+      "personaCount": 5
+    },
+    {
+      "fingerprint": "2535ac3580a9",
+      "title": "[ux-sim] Missing / empty content on /welcome",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nMissing / empty content on `/welcome`. Seen by **2 simulated persona(s)** across 2 scenario(s); severity max **1** (Minor — noticed it, cosmetic or a small annoyance; did not slow me down.), median 1.\n\n### Evidence\n\n- **marcus-senior-lowtech** · `first-open-decide` · run `baseline-marcus-first-open-decide` step 0 · sev 1 — “0 free food events this week. Why show me a zero? Makes it look like nobody uses it.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-marcus-first-open-decide/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-marcus-first-open-decide/shots/000-start-som.jpg)\n- **minji-freshman-17** · `cold-start-hangout` · run `baseline-minji-cold-start-hangout` step 0 · sev 1 — “오 'Find someone for lunch' — 딱 내가 원하는 거. but '0 free food events' 좀 썰렁하고, 'Closes today' 인데 Nov 1? 뭐지. 한국어 옵션은 안 보임.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/000-start-som.jpg)\n\nRuns: [`baseline-marcus-first-open-decide`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-marcus-first-open-decide/report.md), [`baseline-minji-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/report.md)\n\n### Personas affected\n\n`marcus-senior-lowtech`, `minji-freshman-17`\n\n### Suggestion (hypothesis)\n\nCheck whether the data on /welcome is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “hide the free-food card when it's 0, not advertise emptiness”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=2535ac3580a9 -->",
+      "labels": [
+        "ux-sim",
+        "severity:1",
+        "content_gap"
+      ],
+      "personas": [
+        "marcus-senior-lowtech",
+        "minji-freshman-17"
+      ],
+      "severityMax": 1,
+      "personaCount": 2
+    },
+    {
+      "fingerprint": "19ddc8a230f0",
+      "title": "[ux-sim] Onboarding friction on /create/activity — “Open now”",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nOnboarding friction on `/create/activity` around “Open now”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **4** (Blocker — I could not continue, gave up, or would stop using the app here.), median 4.\n\n### Evidence\n\n- **diego-transfer-commuter** · `lunch-today` · run `baseline-diego-lunch-today` step 12 · sev 4 — “'Instant'? This is a whole event form. Title, description, color, capacity... and it says 11 PM? I want lunch in 20 minutes. I don't have time for this, and nobody's even on here to see it.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/012-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/012-click-som.jpg)\n\nRuns: [`baseline-diego-lunch-today`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/report.md)\n\n### Personas affected\n\n`diego-transfer-commuter`\n\n### Suggestion (hypothesis)\n\nShorten or explain this sign-up step (/create/activity); ask only what is needed now and let the rest wait until it is useful. Personas said they wanted: “one tap: 'Lunch now near me' with time and place prefilled, and show me who sees it”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=19ddc8a230f0 -->",
+      "labels": [
+        "ux-sim",
+        "severity:4",
+        "onboarding"
+      ],
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "severityMax": 4,
+      "personaCount": 1
+    },
+    {
+      "fingerprint": "835a3b1ce765",
+      "title": "[ux-sim] Missing / empty content on /discover?tab=activities — “Create activity”",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nMissing / empty content on `/discover?tab=activities` around “Create activity”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **4** (Blocker — I could not continue, gave up, or would stop using the app here.), median 4.\n\n### Evidence\n\n- **minji-freshman-17** · `cold-start-hangout` · run `baseline-minji-cold-start-hangout` step 43 · sev 4 — “역시 없음. 내가 만들라고? 17살 신입이 모르는 사람들한테 먼저 밥 먹자고 하는 거 너무 어색해. 그만할래” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/043-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/043-click-som.jpg)\n\nRuns: [`baseline-minji-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/report.md)\n\n### Personas affected\n\n`minji-freshman-17`\n\n### Environment caveat\n\n- Local stack has only CSV opportunities; live also has worker-fetched internships, hackathons and campus events — check on live before acting.\n\n### Suggestion (hypothesis)\n\nCheck whether the data on /discover?tab=activities is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “at least one real plan from someone in my dorm/class I could say 'I'm in' to”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=835a3b1ce765 -->",
+      "labels": [
+        "ux-sim",
+        "severity:4",
+        "content_gap"
+      ],
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "severityMax": 4,
+      "personaCount": 1
+    },
+    {
+      "fingerprint": "629b9d57dee9",
+      "title": "[ux-sim] Bug on /community?tab=opportunities — “🏃 Berkeley Running Club Casual and comp”",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nBug on `/community?tab=opportunities` around “🏃 Berkeley Running Club Casual and comp”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **aisha-firstgen-anxious** · `find-a-club` · run `baseline-aisha-find-a-club` step 23 · sev 3 — “Wait, did that do something? Nothing opened. Did I just join it by accident?? There's no message either way. That's exactly what makes me nervous.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/023-wait.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/023-wait-som.jpg)\n\nRuns: [`baseline-aisha-find-a-club`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/report.md)\n\n### Personas affected\n\n`aisha-firstgen-anxious`\n\n### Suggestion (hypothesis)\n\nReproduce from the evidence steps on /community?tab=opportunities (around “🏃 Berkeley Running Club Casual and comp”) and fix it; add a regression check for that screen. Personas said they wanted: “Tapping a club should open its page, or at least show something happened”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=629b9d57dee9 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "bug"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "severityMax": 3,
+      "personaCount": 1
+    },
+    {
+      "fingerprint": "7a02ada3f324",
+      "title": "[ux-sim] Unclear wording on /orgs/:id?tab=recruit — “Recruiting”",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nUnclear wording on `/orgs/:id?tab=recruit` around “Recruiting”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **aisha-firstgen-anxious** · `find-a-club` · run `baseline-aisha-find-a-club` step 28 · sev 3 — “Wait, so they're not recruiting… but I can ask to join? Does that mean I'm too late for this year? Or that it's open anyway? I really don't want to send a request to a club that's closed and look dumb.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/028-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/028-click-som.jpg)\n\nRuns: [`baseline-aisha-find-a-club`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/report.md)\n\n### Personas affected\n\n`aisha-firstgen-anxious`\n\n### Suggestion (hypothesis)\n\nRewrite “Recruiting” on /orgs/:id?tab=recruit in plain language (and check the Korean UI). Personas said they wanted: “Explain what 'not recruiting' means for a casual running club — can I still just come to a group run?”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=7a02ada3f324 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "copy"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "severityMax": 3,
+      "personaCount": 1
+    },
+    {
+      "fingerprint": "0ba11b71e564",
+      "title": "[ux-sim] Missing / empty content on /discover — “Instant meetup”",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nMissing / empty content on `/discover` around “Instant meetup”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **diego-transfer-commuter** · `lunch-today` · run `baseline-diego-lunch-today` step 10 · sev 3 — “Empty. And '7 friends'? I don't have friends on here, those are sample people. Nobody's actually around. Fine, Instant meetup is right there, I'll give it one shot.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/010-scroll.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/010-scroll-som.jpg)\n\nRuns: [`baseline-diego-lunch-today`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/report.md)\n\n### Personas affected\n\n`diego-transfer-commuter`\n\n### Environment caveat\n\n- Local stack has only CSV opportunities; live also has worker-fetched internships, hackathons and campus events — check on live before acting.\n\n### Suggestion (hypothesis)\n\nCheck whether the data on /discover is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “real people free for lunch near me today, or at least other transfers”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=0ba11b71e564 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "content_gap"
+      ],
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "severityMax": 3,
+      "personaCount": 1
+    },
+    {
+      "fingerprint": "94527b529e80",
+      "title": "[ux-sim] Trust / privacy worry on /start — “Next”",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nTrust / privacy worry on `/start` around “Next”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **marcus-senior-lowtech** · `first-open-decide` · run `baseline-marcus-first-open-decide` step 9 · sev 3 — “Your perfect free afternoon? Long walks? This is a dating profile question. I said I want an internship, why does it need my hobbies? And I can't skip it, Next is grayed out.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-marcus-first-open-decide/shots/009-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-marcus-first-open-decide/shots/009-click-som.jpg)\n\nRuns: [`baseline-marcus-first-open-decide`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-marcus-first-open-decide/report.md)\n\n### Personas affected\n\n`marcus-senior-lowtech`\n\n### Suggestion (hypothesis)\n\nExplain who will see what when tapping “Next” on /start before asking for it. Personas said they wanted: “Let me skip this, or tell me why you need it for internships”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=94527b529e80 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "trust_privacy"
+      ],
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "severityMax": 3,
+      "personaCount": 1
+    },
+    {
+      "fingerprint": "67ca16898d6c",
+      "title": "[ux-sim] Missing / empty content on / — “Invite friends”",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nMissing / empty content on `/` around “Invite friends”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **minji-freshman-17** · `cold-start-hangout` · run `baseline-minji-cold-start-hangout` step 37 · sev 3 — “헐 아무도 없어. 9단계 다 했는데 빈 화면... 초대할 친구가 없어서 이 앱 깐 건데” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/037-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/037-click-som.jpg)\n\nRuns: [`baseline-minji-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/report.md)\n\n### Personas affected\n\n`minji-freshman-17`\n\n### Suggestion (hypothesis)\n\nCheck whether the data on / is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “show plans or anyone at all, not ask me to bring friends I don't have”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=67ca16898d6c -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "content_gap"
+      ],
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "severityMax": 3,
+      "personaCount": 1
+    },
+    {
+      "fingerprint": "05ee6a888ab7",
+      "title": "[ux-sim] No reason to stay on /discover?tab=activities — “💡 ARC Prize 2026 D-1”",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nNo reason to stay on `/discover?tab=activities` around “💡 ARC Prize 2026 D-1”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **minji-freshman-17** · `cold-start-hangout` · run `baseline-minji-cold-start-hangout` step 41 · sev 3 — “해커톤...? 난 밥 같이 먹을 사람 찾는 건데. 'Food & café' 하나만 더 눌러보고 없으면 끝” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/041-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/041-click-som.jpg)\n\nRuns: [`baseline-minji-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/report.md)\n\n### Personas affected\n\n`minji-freshman-17`\n\n### Suggestion (hypothesis)\n\nGive a reason to stay on /discover?tab=activities: show real people or things happening now (or a clear next step) instead of empty or generic content. Personas said they wanted: “show casual plans from real students (lunch, café) first, not competitions”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=05ee6a888ab7 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "motivation"
+      ],
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "severityMax": 3,
+      "personaCount": 1
+    },
+    {
+      "fingerprint": "3cd806167637",
+      "title": "[ux-sim] Missing / empty content on /community?tab=opportunities — “Software 0”",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nMissing / empty content on `/community?tab=opportunities` around “Software 0”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **priya-phd-desktop** · `internship-near-berkeley` · run `baseline-priya-internship-near-berkeley` step 9 · sev 3 — “Eight listings, zero software, zero research — for an EECS PhD at Berkeley. And why is a Bundestag exchange the top 'internship'? It's tagged Scholarships.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/shots/009-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/shots/009-click-som.jpg)\n\nRuns: [`baseline-priya-internship-near-berkeley`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/report.md)\n\n### Personas affected\n\n`priya-phd-desktop`\n\n### Environment caveat\n\n- Local stack has only CSV opportunities; live also has worker-fetched internships, hackathons and campus events — check on live before acting.\n\n### Suggestion (hypothesis)\n\nCheck whether the data on /community?tab=opportunities is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “Real software/research internships, and category filters that match what's in the list”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=3cd806167637 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "content_gap"
+      ],
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "severityMax": 3,
+      "personaCount": 1
+    },
+    {
+      "fingerprint": "c4d7ce393786",
+      "title": "[ux-sim] Bug on /community?tab=opportunities — “Location”",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nBug on `/community?tab=opportunities` around “Location”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **priya-phd-desktop** · `internship-near-berkeley` · run `baseline-priya-internship-near-berkeley` step 14 · sev 3 — “Zero in the Bay Area? Stripe is literally in SF. Either the filter is broken or nothing has a location. Either way I can't trust it.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/shots/014-select.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/shots/014-select-som.jpg)\n\nRuns: [`baseline-priya-internship-near-berkeley`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/report.md)\n\n### Personas affected\n\n`priya-phd-desktop`\n\n### Suggestion (hypothesis)\n\nReproduce from the evidence steps on /community?tab=opportunities (around “Location”) and fix it; add a regression check for that screen. Personas said they wanted: “Listings tagged with real locations so the Bay Area filter actually returns Bay Area roles”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=c4d7ce393786 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "bug"
+      ],
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "severityMax": 3,
+      "personaCount": 1
+    },
+    {
+      "fingerprint": "22e5ff1db700",
+      "title": "[ux-sim] Bug on /rides/:id",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nBug on `/rides/:id`. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **seoyeon-exchange-korean** · `ride-sfo-thanksgiving` · run `baseline-seoyeon-ride-sfo-thanksgiving` step 29 · sev 3 — “어?! 메모 쓰고 있었는데 'Post ride' 안 눌렀는데 벌써 올라갔어요. 그리고 제 메모(비행기 11시, 짐 하나)가 화면에 안 보여요. 저장 안 된 건가?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/029-type.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/029-type-som.jpg)\n\nRuns: [`baseline-seoyeon-ride-sfo-thanksgiving`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/report.md)\n\n### Personas affected\n\n`seoyeon-exchange-korean`\n\n### Suggestion (hypothesis)\n\nReproduce from the evidence steps on /rides/:id and fix it; add a regression check for that screen. Personas said they wanted: “메모 입력 중에는 제출되지 않고, 'Post ride'를 눌러야 올라가게”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=22e5ff1db700 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "bug"
+      ],
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "severityMax": 3,
+      "personaCount": 1
+    },
+    {
+      "fingerprint": "95e8f1e4f9d1",
+      "title": "[ux-sim] Bug on /rides/:id — “You Host”",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nBug on `/rides/:id` around “You Host”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **seoyeon-exchange-korean** · `ride-sfo-thanksgiving` · run `baseline-seoyeon-ride-sfo-thanksgiving` step 29 · sev 3 — “그리고 내 라이드인데 '예시'랑 'Sample ride — made up to show how rides work'라고 써 있어요. 내 게 진짜로 올라간 거 맞아요? 다른 사람들도 가짜라고 생각할 것 같아요.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/029-type.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/029-type-som.jpg)\n\nRuns: [`baseline-seoyeon-ride-sfo-thanksgiving`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/report.md)\n\n### Personas affected\n\n`seoyeon-exchange-korean`\n\n### Suggestion (hypothesis)\n\nReproduce from the evidence steps on /rides/:id (around “You Host”) and fix it; add a regression check for that screen. Personas said they wanted: “내가 올린 라이드에는 '예시/Sample' 표시가 없어야 함”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=95e8f1e4f9d1 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "bug"
+      ],
+      "personas": [
+        "seoyeon-exchange-korean"
       ],
       "severityMax": 3,
       "personaCount": 1

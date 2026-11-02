@@ -1,8 +1,190 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-02T06:39:07.705Z",
+  "generatedAt": "2026-11-02T06:44:16.494Z",
   "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
   "runs": [
+    {
+      "runId": "baseline-aisha-find-a-club",
+      "persona": "aisha-firstgen-anxious",
+      "scenario": "find-a-club",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 16,
+      "actions": 18,
+      "mode": "local",
+      "commit": "60c0cc288e13",
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "high",
+        "rationale": "The app first showed me a stranger's face and fraternity rush, picked clubs for a 'Computer Science' major I'm not, a club tap did nothing, and the club page contradicts itself (not recruiting vs Ask to join, no events vs runs twice a week). I got there, but I don't trust it to tell me the rules, which is the whole reason I needed it.",
+        "basis": [
+          1,
+          7,
+          16,
+          22,
+          26,
+          29,
+          30
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/baseline-aisha-find-a-club/run.json",
+      "report": "ux-sim/runs/baseline-aisha-find-a-club/report.md"
+    },
+    {
+      "runId": "baseline-diego-lunch-today",
+      "persona": "diego-transfer-commuter",
+      "scenario": "lunch-today",
+      "outcome": "abandoned",
+      "reportedOutcome": "abandoned",
+      "goalAchieved": true,
+      "stepsToGoal": 2,
+      "actions": 6,
+      "mode": "local",
+      "commit": "60c0cc288e13",
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "high",
+        "rationale": "Opened it between classes for lunch today; got a face card for tomorrow's coffee, an all-tomorrow list, an empty hangouts section and a long form. Rides caught my eye, but nothing proved there are real people around today.",
+        "basis": [
+          4,
+          6,
+          10,
+          12
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/baseline-diego-lunch-today/run.json",
+      "report": "ux-sim/runs/baseline-diego-lunch-today/report.md"
+    },
+    {
+      "runId": "baseline-marcus-first-open-decide",
+      "persona": "marcus-senior-lowtech",
+      "scenario": "first-open-decide",
+      "outcome": "abandoned",
+      "reportedOutcome": "abandoned",
+      "goalAchieved": false,
+      "stepsToGoal": null,
+      "actions": 4,
+      "mode": "local",
+      "commit": "60c0cc288e13",
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "high",
+        "rationale": "Never saw any internship content before being walked through personal-taste questions; front page pitches lunch buddies and shows '0 free food', and internships are only a ticker mention. Nothing gave him a reason to trust it or come back.",
+        "basis": [
+          0,
+          3,
+          9
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/baseline-marcus-first-open-decide/run.json",
+      "report": "ux-sim/runs/baseline-marcus-first-open-decide/report.md"
+    },
+    {
+      "runId": "baseline-minji-cold-start-hangout",
+      "persona": "minji-freshman-17",
+      "scenario": "cold-start-hangout",
+      "outcome": "abandoned",
+      "reportedOutcome": "abandoned",
+      "goalAchieved": false,
+      "stepsToGoal": null,
+      "actions": 27,
+      "mode": "local",
+      "commit": "60c0cc288e13",
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "high",
+        "rationale": "The promise on the welcome screen ('Find someone for lunch') was what got her through a 9-step quiz; the payoff was three empty screens and a 'create one yourself' ask, which a shy 17-year-old won't do. Nothing to come back for.",
+        "basis": [
+          37,
+          41,
+          43
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/baseline-minji-cold-start-hangout/run.json",
+      "report": "ux-sim/runs/baseline-minji-cold-start-hangout/report.md"
+    },
+    {
+      "runId": "baseline-minji-timetable-add-classes",
+      "persona": "minji-freshman-17",
+      "scenario": "timetable-add-classes",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 5,
+      "actions": 5,
+      "mode": "local",
+      "commit": "60c0cc288e13",
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Adding the class was fast and the privacy line reassured her, but the first screen felt like a dating app (big face, age) and her timetable was pre-filled with someone else's upper-div CS classes, so she isn't sure the app is really 'hers' yet",
+        "basis": [
+          1,
+          3,
+          11
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/baseline-minji-timetable-add-classes/run.json",
+      "report": "ux-sim/runs/baseline-minji-timetable-add-classes/report.md"
+    },
+    {
+      "runId": "baseline-priya-internship-near-berkeley",
+      "persona": "priya-phd-desktop",
+      "scenario": "internship-near-berkeley",
+      "outcome": "abandoned",
+      "reportedOutcome": "abandoned",
+      "goalAchieved": false,
+      "stepsToGoal": null,
+      "actions": 7,
+      "mode": "local",
+      "commit": "60c0cc288e13",
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "high",
+        "rationale": "First screen is a dating-style swipe card in a phone column on my laptop; the career content is hidden and thin, and the location filter is empty for the Bay Area. Nothing signals this app is for grad students.",
+        "basis": [
+          0,
+          9,
+          14,
+          16
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/baseline-priya-internship-near-berkeley/run.json",
+      "report": "ux-sim/runs/baseline-priya-internship-near-berkeley/report.md"
+    },
+    {
+      "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+      "persona": "seoyeon-exchange-korean",
+      "scenario": "ride-sfo-thanksgiving",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 8,
+      "actions": 16,
+      "mode": "local",
+      "commit": "60c0cc288e13",
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Korean switch and the Thanksgiving airport banner made posting easy, but the Rides screens fall back to English, every visible ride is fake, and my own post is labelled 'Sample' with my note lost — I'd check back once to see if anyone joined, and leave if nobody does.",
+        "basis": [
+          13,
+          18,
+          30,
+          31
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/run.json",
+      "report": "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/report.md"
+    },
     {
       "runId": "smoke-minji-lunch-today",
       "persona": "minji-freshman-17",
@@ -37,20 +219,87 @@
       "keyElement": "im in",
       "keyElementLabel": "I'm in",
       "personas": [
+        "aisha-firstgen-anxious",
+        "diego-transfer-commuter",
+        "priya-phd-desktop",
+        "seoyeon-exchange-korean",
         "minji-freshman-17"
       ],
-      "personaCount": 1,
+      "personaCount": 5,
       "scenarios": [
-        "lunch-today"
+        "find-a-club",
+        "lunch-today",
+        "internship-near-berkeley",
+        "ride-sfo-thanksgiving"
       ],
-      "scenarioCount": 1,
+      "scenarioCount": 4,
       "runs": [
+        "baseline-aisha-find-a-club",
+        "baseline-diego-lunch-today",
+        "baseline-priya-internship-near-berkeley",
+        "baseline-seoyeon-ride-sfo-thanksgiving",
         "smoke-minji-lunch-today"
       ],
-      "occurrences": 1,
+      "occurrences": 5,
       "severityMax": 3,
-      "severityMedian": 3,
+      "severityMedian": 2,
       "events": [
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 0,
+          "severity": 2,
+          "quote": "Wait, the first thing I see is a big photo of a stranger named Maya and an 'I'm in' button. I came to find a club… is this a dating thing? I don't want to accidentally tap 'I'm in' and sign up for coffee with someone I don't know.",
+          "evidence": [
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/000-start.jpg",
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/000-start-som.jpg"
+          ],
+          "url": "/",
+          "wish": "Tell me what this home screen is for, and that 'I'm in' joins a coffee meetup, not something public"
+        },
+        {
+          "runId": "baseline-diego-lunch-today",
+          "persona": "diego-transfer-commuter",
+          "scenario": "lunch-today",
+          "step": 0,
+          "severity": 2,
+          "quote": "OK, a big face photo first thing. Coffee tomorrow at 6 isn't lunch today. Is this a dating thing or a plans thing? I just want lunch people.",
+          "evidence": [
+            "ux-sim/runs/baseline-diego-lunch-today/shots/000-start.jpg",
+            "ux-sim/runs/baseline-diego-lunch-today/shots/000-start-som.jpg"
+          ],
+          "url": "/",
+          "wish": "show me what's happening today, not one person's face"
+        },
+        {
+          "runId": "baseline-priya-internship-near-berkeley",
+          "persona": "priya-phd-desktop",
+          "scenario": "internship-near-berkeley",
+          "step": 0,
+          "severity": 2,
+          "quote": "I'm on a 1440px laptop and I get a phone-width column with a giant face photo and an 'I'm in' button. Is this a dating app? I came for internships.",
+          "evidence": [
+            "ux-sim/runs/baseline-priya-internship-near-berkeley/shots/000-start.jpg",
+            "ux-sim/runs/baseline-priya-internship-near-berkeley/shots/000-start-som.jpg"
+          ],
+          "url": "/",
+          "wish": "A desktop layout and a home screen that tells me what this app is for, not a swipe card"
+        },
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 0,
+          "severity": 2,
+          "quote": "어... 큰 얼굴 사진? 데이트 앱인가? 공항 가는 차 찾으려고 왔는데 커피 약속이 나와요. 영어만 있고... 한국어 설정 어디 있지?",
+          "evidence": [
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/000-start.jpg",
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/000-start-som.jpg"
+          ],
+          "url": "/",
+          "wish": "첫 화면에 '무엇을 찾나요?' 같은 선택이나 라이드 쉐어 바로가기"
+        },
         {
           "runId": "smoke-minji-lunch-today",
           "persona": "minji-freshman-17",
@@ -67,12 +316,1605 @@
         }
       ],
       "wishes": [
+        "Tell me what this home screen is for, and that 'I'm in' joins a coffee meetup, not something public",
+        "show me what's happening today, not one person's face",
+        "A desktop layout and a home screen that tells me what this app is for, not a swipe card",
+        "첫 화면에 '무엇을 찾나요?' 같은 선택이나 라이드 쉐어 바로가기",
         "say what I'm joining, like 'Join coffee'"
       ],
       "environmentCaveats": [],
       "suggestedImprovement": {
         "kind": "hypothesis",
-        "text": "Make it obvious what “I'm in” on / does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “say what I'm joining, like 'Join coffee'”."
+        "text": "Make it obvious what “I'm in” on / does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “Tell me what this home screen is for, and that 'I'm in' joins a coffee meetup, not something public”; “show me what's happening today, not one person's face”; “A desktop layout and a home screen that tells me what this app is for, not a swipe card”; “첫 화면에 '무엇을 찾나요?' 같은 선택이나 라이드 쉐어 바로가기”; “say what I'm joining, like 'Join coffee'”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "2535ac3580a9",
+      "title": "Missing / empty content on /welcome",
+      "screen": "/welcome",
+      "frictionType": "content_gap",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "marcus-senior-lowtech",
+        "minji-freshman-17"
+      ],
+      "personaCount": 2,
+      "scenarios": [
+        "first-open-decide",
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 2,
+      "runs": [
+        "baseline-marcus-first-open-decide",
+        "baseline-minji-cold-start-hangout"
+      ],
+      "occurrences": 2,
+      "severityMax": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "baseline-marcus-first-open-decide",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "first-open-decide",
+          "step": 0,
+          "severity": 1,
+          "quote": "0 free food events this week. Why show me a zero? Makes it look like nobody uses it.",
+          "evidence": [
+            "ux-sim/runs/baseline-marcus-first-open-decide/shots/000-start.jpg",
+            "ux-sim/runs/baseline-marcus-first-open-decide/shots/000-start-som.jpg"
+          ],
+          "url": "/welcome",
+          "wish": null
+        },
+        {
+          "runId": "baseline-minji-cold-start-hangout",
+          "persona": "minji-freshman-17",
+          "scenario": "cold-start-hangout",
+          "step": 0,
+          "severity": 1,
+          "quote": "오 'Find someone for lunch' — 딱 내가 원하는 거. but '0 free food events' 좀 썰렁하고, 'Closes today' 인데 Nov 1? 뭐지. 한국어 옵션은 안 보임.",
+          "evidence": [
+            "ux-sim/runs/baseline-minji-cold-start-hangout/shots/000-start.jpg",
+            "ux-sim/runs/baseline-minji-cold-start-hangout/shots/000-start-som.jpg"
+          ],
+          "url": "/welcome",
+          "wish": "hide the free-food card when it's 0, not advertise emptiness"
+        }
+      ],
+      "wishes": [
+        "hide the free-food card when it's 0, not advertise emptiness"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /welcome is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “hide the free-food card when it's 0, not advertise emptiness”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "19ddc8a230f0",
+      "title": "Onboarding friction on /create/activity — “Open now”",
+      "screen": "/create/activity",
+      "frictionType": "onboarding",
+      "keyElement": "open now",
+      "keyElementLabel": "Open now",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-diego-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 4,
+      "severityMedian": 4,
+      "events": [
+        {
+          "runId": "baseline-diego-lunch-today",
+          "persona": "diego-transfer-commuter",
+          "scenario": "lunch-today",
+          "step": 12,
+          "severity": 4,
+          "quote": "'Instant'? This is a whole event form. Title, description, color, capacity... and it says 11 PM? I want lunch in 20 minutes. I don't have time for this, and nobody's even on here to see it.",
+          "evidence": [
+            "ux-sim/runs/baseline-diego-lunch-today/shots/012-click.jpg",
+            "ux-sim/runs/baseline-diego-lunch-today/shots/012-click-som.jpg"
+          ],
+          "url": "/create/activity?kind=personal&now=1",
+          "wish": "one tap: 'Lunch now near me' with time and place prefilled, and show me who sees it"
+        }
+      ],
+      "wishes": [
+        "one tap: 'Lunch now near me' with time and place prefilled, and show me who sees it"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Shorten or explain this sign-up step (/create/activity); ask only what is needed now and let the rest wait until it is useful. Personas said they wanted: “one tap: 'Lunch now near me' with time and place prefilled, and show me who sees it”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "835a3b1ce765",
+      "title": "Missing / empty content on /discover?tab=activities — “Create activity”",
+      "screen": "/discover?tab=activities",
+      "frictionType": "content_gap",
+      "keyElement": "create activity",
+      "keyElementLabel": "Create activity",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-minji-cold-start-hangout"
+      ],
+      "occurrences": 1,
+      "severityMax": 4,
+      "severityMedian": 4,
+      "events": [
+        {
+          "runId": "baseline-minji-cold-start-hangout",
+          "persona": "minji-freshman-17",
+          "scenario": "cold-start-hangout",
+          "step": 43,
+          "severity": 4,
+          "quote": "역시 없음. 내가 만들라고? 17살 신입이 모르는 사람들한테 먼저 밥 먹자고 하는 거 너무 어색해. 그만할래",
+          "evidence": [
+            "ux-sim/runs/baseline-minji-cold-start-hangout/shots/043-click.jpg",
+            "ux-sim/runs/baseline-minji-cold-start-hangout/shots/043-click-som.jpg"
+          ],
+          "url": "/discover?tab=activities",
+          "wish": "at least one real plan from someone in my dorm/class I could say 'I'm in' to"
+        }
+      ],
+      "wishes": [
+        "at least one real plan from someone in my dorm/class I could say 'I'm in' to"
+      ],
+      "environmentCaveats": [
+        "Local stack has only CSV opportunities; live also has worker-fetched internships, hackathons and campus events — check on live before acting."
+      ],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /discover?tab=activities is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “at least one real plan from someone in my dorm/class I could say 'I'm in' to”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "629b9d57dee9",
+      "title": "Bug on /community?tab=opportunities — “🏃 Berkeley Running Club Casual and comp”",
+      "screen": "/community?tab=opportunities",
+      "frictionType": "bug",
+      "keyElement": "berkeley running club casual and",
+      "keyElementLabel": "🏃 Berkeley Running Club Casual and comp",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-aisha-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 23,
+          "severity": 3,
+          "quote": "Wait, did that do something? Nothing opened. Did I just join it by accident?? There's no message either way. That's exactly what makes me nervous.",
+          "evidence": [
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/023-wait.jpg",
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/023-wait-som.jpg"
+          ],
+          "url": "/community?tab=opportunities&sub=clubs&kind=club",
+          "wish": "Tapping a club should open its page, or at least show something happened"
+        }
+      ],
+      "wishes": [
+        "Tapping a club should open its page, or at least show something happened"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Reproduce from the evidence steps on /community?tab=opportunities (around “🏃 Berkeley Running Club Casual and comp”) and fix it; add a regression check for that screen. Personas said they wanted: “Tapping a club should open its page, or at least show something happened”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "7a02ada3f324",
+      "title": "Unclear wording on /orgs/:id?tab=recruit — “Recruiting”",
+      "screen": "/orgs/:id?tab=recruit",
+      "frictionType": "copy",
+      "keyElement": "recruiting",
+      "keyElementLabel": "Recruiting",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-aisha-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 28,
+          "severity": 3,
+          "quote": "Wait, so they're not recruiting… but I can ask to join? Does that mean I'm too late for this year? Or that it's open anyway? I really don't want to send a request to a club that's closed and look dumb.",
+          "evidence": [
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/028-click.jpg",
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/028-click-som.jpg"
+          ],
+          "url": "/orgs/oc_berkeley_berkeley_running_club?tab=recruit",
+          "wish": "Explain what 'not recruiting' means for a casual running club — can I still just come to a group run?"
+        }
+      ],
+      "wishes": [
+        "Explain what 'not recruiting' means for a casual running club — can I still just come to a group run?"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite “Recruiting” on /orgs/:id?tab=recruit in plain language (and check the Korean UI). Personas said they wanted: “Explain what 'not recruiting' means for a casual running club — can I still just come to a group run?”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "0ba11b71e564",
+      "title": "Missing / empty content on /discover — “Instant meetup”",
+      "screen": "/discover",
+      "frictionType": "content_gap",
+      "keyElement": "instant meetup",
+      "keyElementLabel": "Instant meetup",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-diego-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "baseline-diego-lunch-today",
+          "persona": "diego-transfer-commuter",
+          "scenario": "lunch-today",
+          "step": 10,
+          "severity": 3,
+          "quote": "Empty. And '7 friends'? I don't have friends on here, those are sample people. Nobody's actually around. Fine, Instant meetup is right there, I'll give it one shot.",
+          "evidence": [
+            "ux-sim/runs/baseline-diego-lunch-today/shots/010-scroll.jpg",
+            "ux-sim/runs/baseline-diego-lunch-today/shots/010-scroll-som.jpg"
+          ],
+          "url": "/discover",
+          "wish": "real people free for lunch near me today, or at least other transfers"
+        }
+      ],
+      "wishes": [
+        "real people free for lunch near me today, or at least other transfers"
+      ],
+      "environmentCaveats": [
+        "Local stack has only CSV opportunities; live also has worker-fetched internships, hackathons and campus events — check on live before acting."
+      ],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /discover is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “real people free for lunch near me today, or at least other transfers”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "94527b529e80",
+      "title": "Trust / privacy worry on /start — “Next”",
+      "screen": "/start",
+      "frictionType": "trust_privacy",
+      "keyElement": "next",
+      "keyElementLabel": "Next",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-marcus-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "baseline-marcus-first-open-decide",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "first-open-decide",
+          "step": 9,
+          "severity": 3,
+          "quote": "Your perfect free afternoon? Long walks? This is a dating profile question. I said I want an internship, why does it need my hobbies? And I can't skip it, Next is grayed out.",
+          "evidence": [
+            "ux-sim/runs/baseline-marcus-first-open-decide/shots/009-click.jpg",
+            "ux-sim/runs/baseline-marcus-first-open-decide/shots/009-click-som.jpg"
+          ],
+          "url": "/start",
+          "wish": "Let me skip this, or tell me why you need it for internships"
+        }
+      ],
+      "wishes": [
+        "Let me skip this, or tell me why you need it for internships"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Explain who will see what when tapping “Next” on /start before asking for it. Personas said they wanted: “Let me skip this, or tell me why you need it for internships”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "67ca16898d6c",
+      "title": "Missing / empty content on / — “Invite friends”",
+      "screen": "/",
+      "frictionType": "content_gap",
+      "keyElement": "invite friends",
+      "keyElementLabel": "Invite friends",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-minji-cold-start-hangout"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "baseline-minji-cold-start-hangout",
+          "persona": "minji-freshman-17",
+          "scenario": "cold-start-hangout",
+          "step": 37,
+          "severity": 3,
+          "quote": "헐 아무도 없어. 9단계 다 했는데 빈 화면... 초대할 친구가 없어서 이 앱 깐 건데",
+          "evidence": [
+            "ux-sim/runs/baseline-minji-cold-start-hangout/shots/037-click.jpg",
+            "ux-sim/runs/baseline-minji-cold-start-hangout/shots/037-click-som.jpg"
+          ],
+          "url": "/",
+          "wish": "show plans or anyone at all, not ask me to bring friends I don't have"
+        }
+      ],
+      "wishes": [
+        "show plans or anyone at all, not ask me to bring friends I don't have"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on / is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “show plans or anyone at all, not ask me to bring friends I don't have”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "05ee6a888ab7",
+      "title": "No reason to stay on /discover?tab=activities — “💡 ARC Prize 2026 D-1”",
+      "screen": "/discover?tab=activities",
+      "frictionType": "motivation",
+      "keyElement": "arc prize d",
+      "keyElementLabel": "💡 ARC Prize 2026 D-1",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-minji-cold-start-hangout"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "baseline-minji-cold-start-hangout",
+          "persona": "minji-freshman-17",
+          "scenario": "cold-start-hangout",
+          "step": 41,
+          "severity": 3,
+          "quote": "해커톤...? 난 밥 같이 먹을 사람 찾는 건데. 'Food & café' 하나만 더 눌러보고 없으면 끝",
+          "evidence": [
+            "ux-sim/runs/baseline-minji-cold-start-hangout/shots/041-click.jpg",
+            "ux-sim/runs/baseline-minji-cold-start-hangout/shots/041-click-som.jpg"
+          ],
+          "url": "/discover?tab=activities",
+          "wish": "show casual plans from real students (lunch, café) first, not competitions"
+        }
+      ],
+      "wishes": [
+        "show casual plans from real students (lunch, café) first, not competitions"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Give a reason to stay on /discover?tab=activities: show real people or things happening now (or a clear next step) instead of empty or generic content. Personas said they wanted: “show casual plans from real students (lunch, café) first, not competitions”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "3cd806167637",
+      "title": "Missing / empty content on /community?tab=opportunities — “Software 0”",
+      "screen": "/community?tab=opportunities",
+      "frictionType": "content_gap",
+      "keyElement": "software",
+      "keyElementLabel": "Software 0",
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-priya-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "baseline-priya-internship-near-berkeley",
+          "persona": "priya-phd-desktop",
+          "scenario": "internship-near-berkeley",
+          "step": 9,
+          "severity": 3,
+          "quote": "Eight listings, zero software, zero research — for an EECS PhD at Berkeley. And why is a Bundestag exchange the top 'internship'? It's tagged Scholarships.",
+          "evidence": [
+            "ux-sim/runs/baseline-priya-internship-near-berkeley/shots/009-click.jpg",
+            "ux-sim/runs/baseline-priya-internship-near-berkeley/shots/009-click-som.jpg"
+          ],
+          "url": "/community?tab=opportunities&sub=internship",
+          "wish": "Real software/research internships, and category filters that match what's in the list"
+        }
+      ],
+      "wishes": [
+        "Real software/research internships, and category filters that match what's in the list"
+      ],
+      "environmentCaveats": [
+        "Local stack has only CSV opportunities; live also has worker-fetched internships, hackathons and campus events — check on live before acting."
+      ],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /community?tab=opportunities is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “Real software/research internships, and category filters that match what's in the list”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "c4d7ce393786",
+      "title": "Bug on /community?tab=opportunities — “Location”",
+      "screen": "/community?tab=opportunities",
+      "frictionType": "bug",
+      "keyElement": "location",
+      "keyElementLabel": "Location",
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-priya-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "baseline-priya-internship-near-berkeley",
+          "persona": "priya-phd-desktop",
+          "scenario": "internship-near-berkeley",
+          "step": 14,
+          "severity": 3,
+          "quote": "Zero in the Bay Area? Stripe is literally in SF. Either the filter is broken or nothing has a location. Either way I can't trust it.",
+          "evidence": [
+            "ux-sim/runs/baseline-priya-internship-near-berkeley/shots/014-select.jpg",
+            "ux-sim/runs/baseline-priya-internship-near-berkeley/shots/014-select-som.jpg"
+          ],
+          "url": "/community?tab=opportunities&sub=internship&region=Bay+Area",
+          "wish": "Listings tagged with real locations so the Bay Area filter actually returns Bay Area roles"
+        }
+      ],
+      "wishes": [
+        "Listings tagged with real locations so the Bay Area filter actually returns Bay Area roles"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Reproduce from the evidence steps on /community?tab=opportunities (around “Location”) and fix it; add a regression check for that screen. Personas said they wanted: “Listings tagged with real locations so the Bay Area filter actually returns Bay Area roles”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "22e5ff1db700",
+      "title": "Bug on /rides/:id",
+      "screen": "/rides/:id",
+      "frictionType": "bug",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-seoyeon-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 29,
+          "severity": 3,
+          "quote": "어?! 메모 쓰고 있었는데 'Post ride' 안 눌렀는데 벌써 올라갔어요. 그리고 제 메모(비행기 11시, 짐 하나)가 화면에 안 보여요. 저장 안 된 건가?",
+          "evidence": [
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/029-type.jpg",
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/029-type-som.jpg"
+          ],
+          "url": "/rides/rd_ewpjgm7292",
+          "wish": "메모 입력 중에는 제출되지 않고, 'Post ride'를 눌러야 올라가게"
+        }
+      ],
+      "wishes": [
+        "메모 입력 중에는 제출되지 않고, 'Post ride'를 눌러야 올라가게"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Reproduce from the evidence steps on /rides/:id and fix it; add a regression check for that screen. Personas said they wanted: “메모 입력 중에는 제출되지 않고, 'Post ride'를 눌러야 올라가게”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "95e8f1e4f9d1",
+      "title": "Bug on /rides/:id — “You Host”",
+      "screen": "/rides/:id",
+      "frictionType": "bug",
+      "keyElement": "you host",
+      "keyElementLabel": "You Host",
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-seoyeon-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 29,
+          "severity": 3,
+          "quote": "그리고 내 라이드인데 '예시'랑 'Sample ride — made up to show how rides work'라고 써 있어요. 내 게 진짜로 올라간 거 맞아요? 다른 사람들도 가짜라고 생각할 것 같아요.",
+          "evidence": [
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/029-type.jpg",
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/029-type-som.jpg"
+          ],
+          "url": "/rides/rd_ewpjgm7292",
+          "wish": "내가 올린 라이드에는 '예시/Sample' 표시가 없어야 함"
+        }
+      ],
+      "wishes": [
+        "내가 올린 라이드에는 '예시/Sample' 표시가 없어야 함"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Reproduce from the evidence steps on /rides/:id (around “You Host”) and fix it; add a regression check for that screen. Personas said they wanted: “내가 올린 라이드에는 '예시/Sample' 표시가 없어야 함”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "97dda824b2fb",
+      "title": "Onboarding friction on /start",
+      "screen": "/start",
+      "frictionType": "onboarding",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-minji-cold-start-hangout"
+      ],
+      "occurrences": 2,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-minji-cold-start-hangout",
+          "persona": "minji-freshman-17",
+          "scenario": "cold-start-hangout",
+          "step": 2,
+          "severity": 2,
+          "quote": "학교 고르기 ok, 근데 1/9?? 9단계나... 아 귀찮아",
+          "evidence": [
+            "ux-sim/runs/baseline-minji-cold-start-hangout/shots/002-click.jpg",
+            "ux-sim/runs/baseline-minji-cold-start-hangout/shots/002-click-som.jpg"
+          ],
+          "url": "/start",
+          "wish": "fewer steps before I see anything"
+        },
+        {
+          "runId": "baseline-minji-cold-start-hangout",
+          "persona": "minji-freshman-17",
+          "scenario": "cold-start-hangout",
+          "step": 12,
+          "severity": 2,
+          "quote": "4/9... 성격 테스트야 뭐야. 친구 찾으려고 왔는데 아직 아무 사람도 못 봄",
+          "evidence": [
+            "ux-sim/runs/baseline-minji-cold-start-hangout/shots/012-click.jpg",
+            "ux-sim/runs/baseline-minji-cold-start-hangout/shots/012-click-som.jpg"
+          ],
+          "url": "/start",
+          "wish": "show me people/plans before the personality quiz"
+        }
+      ],
+      "wishes": [
+        "fewer steps before I see anything",
+        "show me people/plans before the personality quiz"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Shorten or explain this sign-up step (/start); ask only what is needed now and let the rest wait until it is useful. Personas said they wanted: “fewer steps before I see anything”; “show me people/plans before the personality quiz”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "046dd034f3ea",
+      "title": "No reason to stay on /discover?tab=activities — “🌸 Kappa Delta Chi fall formal recruitme”",
+      "screen": "/discover?tab=activities",
+      "frictionType": "motivation",
+      "keyElement": "kappa delta chi fall formal",
+      "keyElementLabel": "🌸 Kappa Delta Chi fall formal recruitme",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-aisha-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 6,
+          "severity": 2,
+          "quote": "Fraternity rush, sorority 'formal recruitment', and below it 'fall recruiting' for the indie music club… Wait, does that mean every club makes you try out or apply? That's exactly what I was scared of. And 'Go together' with 'Maya going' — would that message Maya?",
+          "evidence": [
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/006-scroll.jpg",
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/006-scroll-som.jpg"
+          ],
+          "url": "/discover?tab=activities",
+          "wish": "Show me clubs that are open to anyone, and say clearly which ones need an application"
+        }
+      ],
+      "wishes": [
+        "Show me clubs that are open to anyone, and say clearly which ones need an application"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Give a reason to stay on /discover?tab=activities: show real people or things happening now (or a clear next step) instead of empty or generic content. Personas said they wanted: “Show me clubs that are open to anyone, and say clearly which ones need an application”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "05a4cd303317",
+      "title": "Trust / privacy worry on /community?tab=opportunities — “💻 Codebase Software consulting club shi”",
+      "screen": "/community?tab=opportunities",
+      "frictionType": "trust_privacy",
+      "keyElement": "codebase software consulting club shipping",
+      "keyElementLabel": "💻 Codebase Software consulting club shi",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-aisha-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 15,
+          "severity": 2,
+          "quote": "Okay, a club list, good. But wait — 'Fits your major (Computer Science)'? I'm Public Health. Where did it get that? And the 'For you' picks are all fraternities and résumé clubs. That's literally the opposite of what I want.",
+          "evidence": [
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/015-click.jpg",
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/015-click-som.jpg"
+          ],
+          "url": "/community?tab=opportunities&sub=clubs",
+          "wish": "Use my real major, or ask me what I'm into, instead of guessing wrong"
+        }
+      ],
+      "wishes": [
+        "Use my real major, or ask me what I'm into, instead of guessing wrong"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Explain who will see what when tapping “💻 Codebase Software consulting club shi” on /community?tab=opportunities before asking for it. Personas said they wanted: “Use my real major, or ask me what I'm into, instead of guessing wrong”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "70dba2bfe887",
+      "title": "Hard to find on /community?tab=opportunities — “🏃 Berkeley Running Club Casual and comp”",
+      "screen": "/community?tab=opportunities",
+      "frictionType": "discoverability",
+      "keyElement": "berkeley running club casual and",
+      "keyElementLabel": "🏃 Berkeley Running Club Casual and comp",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-aisha-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 20,
+          "severity": 2,
+          "quote": "Nothing for Public Health or health equity, which is what I'd have searched for if there was a search box. But 'Berkeley Running Club — casual runners, group runs from Sather Gate' sounds low-pressure. 'Casual' is the word I needed. Let me just open it — I hope tapping the row only opens the page and doesn't join me.",
+          "evidence": [
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/020-scroll.jpg",
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/020-scroll-som.jpg"
+          ],
+          "url": "/community?tab=opportunities&sub=clubs&kind=club",
+          "wish": "A search box or interest filter (like health, volunteering, beginner-friendly / no application) instead of scrolling 39 clubs"
+        }
+      ],
+      "wishes": [
+        "A search box or interest filter (like health, volunteering, beginner-friendly / no application) instead of scrolling 39 clubs"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for (“🏃 Berkeley Running Club Casual and comp”) where they looked (/community?tab=opportunities); label icon-only controls. Personas said they wanted: “A search box or interest filter (like health, volunteering, beginner-friendly / no application) instead of scrolling 39 clubs”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "f8d64b1d499a",
+      "title": "Confusing UI on /orgs/:id — “Ask to join”",
+      "screen": "/orgs/:id",
+      "frictionType": "ux_confusion",
+      "keyElement": "ask to join",
+      "keyElementLabel": "Ask to join",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-aisha-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 26,
+          "severity": 2,
+          "quote": "Oh good, this is the page. Group runs Tue/Thu at 5pm — that sounds like I could just show up? But then why is it 'Ask to join'… does that mean I have to apply? Would it message someone? And 'Unverified' — is this even the real club?",
+          "evidence": [
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/026-tap.jpg",
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/026-tap-som.jpg"
+          ],
+          "url": "/orgs/oc_berkeley_berkeley_running_club",
+          "wish": "Say plainly: 'Open to everyone — just show up to a group run' or 'Requires application', and what 'Ask to join' sends and to whom"
+        }
+      ],
+      "wishes": [
+        "Say plainly: 'Open to everyone — just show up to a group run' or 'Requires application', and what 'Ask to join' sends and to whom"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Ask to join” on /orgs/:id does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “Say plainly: 'Open to everyone — just show up to a group run' or 'Requires application', and what 'Ask to join' sends and to whom”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "919841c6195c",
+      "title": "Missing / empty content on /orgs/:id?tab=events — “Events”",
+      "screen": "/orgs/:id?tab=events",
+      "frictionType": "content_gap",
+      "keyElement": "events",
+      "keyElementLabel": "Events",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-aisha-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 30,
+          "severity": 2,
+          "quote": "No events, but they run twice a week? And 'events you post' — I'm not in charge of this club, why is it talking to me like I am? Members says 3 on Lumi… it feels kind of empty.",
+          "evidence": [
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/030-click.jpg",
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/030-click-som.jpg"
+          ],
+          "url": "/orgs/oc_berkeley_berkeley_running_club?tab=events",
+          "wish": "Show the regular Tue/Thu group runs as events I can see, and who's going"
+        }
+      ],
+      "wishes": [
+        "Show the regular Tue/Thu group runs as events I can see, and who's going"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /orgs/:id?tab=events is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “Show the regular Tue/Thu group runs as events I can see, and who's going”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "8b511219f08e",
+      "title": "Missing / empty content on /discover?tab=activities — “Join”",
+      "screen": "/discover?tab=activities",
+      "frictionType": "content_gap",
+      "keyElement": "join",
+      "keyElementLabel": "Join",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-diego-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-diego-lunch-today",
+          "persona": "diego-transfer-commuter",
+          "scenario": "lunch-today",
+          "step": 4,
+          "severity": 2,
+          "quote": "Tomorrow, tomorrow, tomorrow. I need lunch TODAY. 'Hate eating alone' is literally me, but it's tomorrow.",
+          "evidence": [
+            "ux-sim/runs/baseline-diego-lunch-today/shots/004-click.jpg",
+            "ux-sim/runs/baseline-diego-lunch-today/shots/004-click-som.jpg"
+          ],
+          "url": "/discover?tab=activities",
+          "wish": "a Today section first, or tell me nothing is on today and let me start one"
+        }
+      ],
+      "wishes": [
+        "a Today section first, or tell me nothing is on today and let me start one"
+      ],
+      "environmentCaveats": [
+        "Local stack has only CSV opportunities; live also has worker-fetched internships, hackathons and campus events — check on live before acting."
+      ],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /discover?tab=activities is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “a Today section first, or tell me nothing is on today and let me start one”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "7608eb4350f5",
+      "title": "Confusing UI on /create/activity",
+      "screen": "/create/activity",
+      "frictionType": "ux_confusion",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-diego-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-diego-lunch-today",
+          "persona": "diego-transfer-commuter",
+          "scenario": "lunch-today",
+          "step": 12,
+          "severity": 2,
+          "quote": "Why's the start 11:00 PM on 11/01? It's lunchtime. Is this even today's date?",
+          "evidence": [
+            "ux-sim/runs/baseline-diego-lunch-today/shots/012-click.jpg",
+            "ux-sim/runs/baseline-diego-lunch-today/shots/012-click-som.jpg"
+          ],
+          "url": "/create/activity?kind=personal&now=1",
+          "wish": "prefill the next half hour, today"
+        }
+      ],
+      "wishes": [
+        "prefill the next half hour, today"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what the main control on /create/activity does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “prefill the next half hour, today”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "518c68aff2a6",
+      "title": "Confusing UI on /welcome",
+      "screen": "/welcome",
+      "frictionType": "ux_confusion",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-marcus-first-open-decide"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-marcus-first-open-decide",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "first-open-decide",
+          "step": 0,
+          "severity": 2,
+          "quote": "Who's free on campus right now? Find someone for lunch? Pink and black... this looks more like a hangout or dating thing than an internship app. I saw '4 internships' scroll by in that yellow strip, that's all.",
+          "evidence": [
+            "ux-sim/runs/baseline-marcus-first-open-decide/shots/000-start.jpg",
+            "ux-sim/runs/baseline-marcus-first-open-decide/shots/000-start-som.jpg"
+          ],
+          "url": "/welcome",
+          "wish": "Tell me plainly what this app is for before asking me to get in"
+        }
+      ],
+      "wishes": [
+        "Tell me plainly what this app is for before asking me to get in"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what the main control on /welcome does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “Tell me plainly what this app is for before asking me to get in”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "e2f05b7465c0",
+      "title": "Trust / privacy worry on /start — “2005”",
+      "screen": "/start",
+      "frictionType": "trust_privacy",
+      "keyElement": null,
+      "keyElementLabel": "2005",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-minji-cold-start-hangout"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-minji-cold-start-hangout",
+          "persona": "minji-freshman-17",
+          "scenario": "cold-start-hangout",
+          "step": 25,
+          "severity": 2,
+          "quote": "birth year 왜 필요해? 내가 17살인 거 다른 사람이 보면 좀... 누가 보는 건지 안 써있음",
+          "evidence": [
+            "ux-sim/runs/baseline-minji-cold-start-hangout/shots/025-click.jpg",
+            "ux-sim/runs/baseline-minji-cold-start-hangout/shots/025-click-som.jpg"
+          ],
+          "url": "/start",
+          "wish": "say who sees my age / why it's needed"
+        }
+      ],
+      "wishes": [
+        "say who sees my age / why it's needed"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Explain who will see what when tapping “2005” on /start before asking for it. Personas said they wanted: “say who sees my age / why it's needed”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "b4fb9cc452bd",
+      "title": "Trust / privacy worry on / — “I'm in”",
+      "screen": "/",
+      "frictionType": "trust_privacy",
+      "keyElement": "im in",
+      "keyElementLabel": "I'm in",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-minji-timetable-add-classes"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-minji-timetable-add-classes",
+          "persona": "minji-freshman-17",
+          "scenario": "timetable-add-classes",
+          "step": 0,
+          "severity": 2,
+          "quote": "헐 첫 화면이 큰 얼굴 사진에 'Maya 24'... 데이팅앱이야? 나 시간표 넣으러 온 건데 어디서 하지",
+          "evidence": [
+            "ux-sim/runs/baseline-minji-timetable-add-classes/shots/000-start.jpg",
+            "ux-sim/runs/baseline-minji-timetable-add-classes/shots/000-start-som.jpg"
+          ],
+          "url": "/",
+          "wish": "first screen should not feel like a dating app; show where my schedule goes"
+        }
+      ],
+      "wishes": [
+        "first screen should not feel like a dating app; show where my schedule goes"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Explain who will see what when tapping “I'm in” on / before asking for it. Personas said they wanted: “first screen should not feel like a dating app; show where my schedule goes”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "42a356712fc4",
+      "title": "Confusing UI on /profile — “CS 186 Databases Soda 306”",
+      "screen": "/profile",
+      "frictionType": "ux_confusion",
+      "keyElement": "cs databases soda",
+      "keyElementLabel": "CS 186 Databases Soda 306",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-minji-timetable-add-classes"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-minji-timetable-add-classes",
+          "persona": "minji-freshman-17",
+          "scenario": "timetable-add-classes",
+          "step": 2,
+          "severity": 2,
+          "quote": "뭐지? 이거 내 시간표 아닌데... CS 169 Capstone? 나 1학년인데. 누구 시간표야",
+          "evidence": [
+            "ux-sim/runs/baseline-minji-timetable-add-classes/shots/002-click.jpg",
+            "ux-sim/runs/baseline-minji-timetable-add-classes/shots/002-click-som.jpg"
+          ],
+          "url": "/profile",
+          "wish": "start me with an empty timetable or tell me these are sample classes"
+        }
+      ],
+      "wishes": [
+        "start me with an empty timetable or tell me these are sample classes"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “CS 186 Databases Soda 306” on /profile does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “start me with an empty timetable or tell me these are sample classes”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "804158f27f39",
+      "title": "Bug on /profile — “Edit timetable”",
+      "screen": "/profile",
+      "frictionType": "bug",
+      "keyElement": "edit timetable",
+      "keyElementLabel": "Edit timetable",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-minji-timetable-add-classes"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-minji-timetable-add-classes",
+          "persona": "minji-freshman-17",
+          "scenario": "timetable-add-classes",
+          "step": 2,
+          "severity": 2,
+          "quote": "아래 'Edit timetable' 버튼이 Design/Feedback 버튼에 가려져서 글자가 'timetable'만 보여",
+          "evidence": [
+            "ux-sim/runs/baseline-minji-timetable-add-classes/shots/002-click.jpg",
+            "ux-sim/runs/baseline-minji-timetable-add-classes/shots/002-click-som.jpg"
+          ],
+          "url": "/profile",
+          "wish": "floating Design/Feedback pills should not cover the Edit timetable button"
+        }
+      ],
+      "wishes": [
+        "floating Design/Feedback pills should not cover the Edit timetable button"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Reproduce from the evidence steps on /profile (around “Edit timetable”) and fix it; add a regression check for that screen. Personas said they wanted: “floating Design/Feedback pills should not cover the Edit timetable button”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "4d28c4b04f0f",
+      "title": "No reason to stay on /",
+      "screen": "/",
+      "frictionType": "motivation",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-priya-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-priya-internship-near-berkeley",
+          "persona": "priya-phd-desktop",
+          "scenario": "internship-near-berkeley",
+          "step": 0,
+          "severity": 2,
+          "quote": "Phone layout floating in black on my laptop. Not a great sign, but I'll give it a minute.",
+          "evidence": [
+            "ux-sim/runs/baseline-priya-internship-near-berkeley/shots/000-start.jpg",
+            "ux-sim/runs/baseline-priya-internship-near-berkeley/shots/000-start-som.jpg"
+          ],
+          "url": "/",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Give a reason to stay on /: show real people or things happening now (or a clear next step) instead of empty or generic content."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "b9d1ee526d80",
+      "title": "Hard to find on /discover — “Discover”",
+      "screen": "/discover",
+      "frictionType": "discoverability",
+      "keyElement": "discover",
+      "keyElementLabel": "Discover",
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-priya-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-priya-internship-near-berkeley",
+          "persona": "priya-phd-desktop",
+          "scenario": "internship-near-berkeley",
+          "step": 3,
+          "severity": 2,
+          "quote": "'Done with classes', Costco rides, spontaneous hangouts. This is an undergrad social app. Where would career stuff even live?",
+          "evidence": [
+            "ux-sim/runs/baseline-priya-internship-near-berkeley/shots/003-click.jpg",
+            "ux-sim/runs/baseline-priya-internship-near-berkeley/shots/003-click-som.jpg"
+          ],
+          "url": "/discover",
+          "wish": "Discover should surface opportunities (internships, fellowships), not just hangouts"
+        }
+      ],
+      "wishes": [
+        "Discover should surface opportunities (internships, fellowships), not just hangouts"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for (“Discover”) where they looked (/discover); label icon-only controls. Personas said they wanted: “Discover should surface opportunities (internships, fellowships), not just hangouts”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "c95418137653",
+      "title": "Unclear wording on /community — “Campus”",
+      "screen": "/community",
+      "frictionType": "copy",
+      "keyElement": "campus",
+      "keyElementLabel": "Campus",
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-priya-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-priya-internship-near-berkeley",
+          "persona": "priya-phd-desktop",
+          "scenario": "internship-near-berkeley",
+          "step": 5,
+          "severity": 2,
+          "quote": "'Campus' is a gossip feed, not campus resources. Label is misleading. Maybe 'Browse' has the actual directory.",
+          "evidence": [
+            "ux-sim/runs/baseline-priya-internship-near-berkeley/shots/005-click.jpg",
+            "ux-sim/runs/baseline-priya-internship-near-berkeley/shots/005-click-som.jpg"
+          ],
+          "url": "/community",
+          "wish": "Call it Feed/Community if it's a feed; put career resources somewhere labelled"
+        }
+      ],
+      "wishes": [
+        "Call it Feed/Community if it's a feed; put career resources somewhere labelled"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite “Campus” on /community in plain language (and check the Korean UI). Personas said they wanted: “Call it Feed/Community if it's a feed; put career resources somewhere labelled”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "47e37bf98fc5",
+      "title": "Bug on /discover",
+      "screen": "/discover",
+      "frictionType": "bug",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-priya-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-priya-internship-near-berkeley",
+          "persona": "priya-phd-desktop",
+          "scenario": "internship-near-berkeley",
+          "step": 16,
+          "severity": 2,
+          "quote": "Back took me out of the whole section. Now I have to click through Campus, Browse, Internships again. Sloppy.",
+          "evidence": [
+            "ux-sim/runs/baseline-priya-internship-near-berkeley/shots/016-back.jpg",
+            "ux-sim/runs/baseline-priya-internship-near-berkeley/shots/016-back-som.jpg"
+          ],
+          "url": "/discover",
+          "wish": "Back should return to the previous filter state, not two sections ago"
+        }
+      ],
+      "wishes": [
+        "Back should return to the previous filter state, not two sections ago"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Reproduce from the evidence steps on /discover and fix it; add a regression check for that screen. Personas said they wanted: “Back should return to the previous filter state, not two sections ago”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "3767af082cbb",
+      "title": "Unclear wording on /rides — “Post my ride”",
+      "screen": "/rides",
+      "frictionType": "copy",
+      "keyElement": "post my ride",
+      "keyElementLabel": "Post my ride",
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-seoyeon-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 12,
+          "severity": 2,
+          "quote": "어... 한국어로 바꿨는데 여기는 다 영어예요. 'Thanksgiving break... Split a ride to the airport' 이건 알겠어요. 바로 내 상황! 근데 '±90 min'... 90분 앞뒤로 매칭해준다는 뜻인가?",
+          "evidence": [
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/012-click.jpg",
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/012-click-som.jpg"
+          ],
+          "url": "/rides",
+          "wish": "라이드 화면도 한국어로"
+        }
+      ],
+      "wishes": [
+        "라이드 화면도 한국어로"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite “Post my ride” on /rides in plain language (and check the Korean UI). Personas said they wanted: “라이드 화면도 한국어로”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "19b334efe1e1",
+      "title": "Trust / privacy worry on /rides — “🚕 Lily → SFO 예시Wed 9:30am · from Unit 2”",
+      "screen": "/rides",
+      "frictionType": "trust_privacy",
+      "keyElement": "lily sfo 예시wed am from",
+      "keyElementLabel": "🚕 Lily → SFO 예시Wed 9:30am · from Unit 2",
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-seoyeon-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 15,
+          "severity": 2,
+          "quote": "오! 수요일 11월 25일, SFO 두 개 있어요. Lily 9:30am, 30달러씩. 근데 '예시'라고 써 있는데... 진짜 사람이 아니고 예시라는 건가요? 헷갈려요.",
+          "evidence": [
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/015-click.jpg",
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/015-click-som.jpg"
+          ],
+          "url": "/rides?to=sfo&filter=airports",
+          "wish": "'예시'가 무슨 뜻인지 (샘플 게시물인지) 설명"
+        }
+      ],
+      "wishes": [
+        "'예시'가 무슨 뜻인지 (샘플 게시물인지) 설명"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Explain who will see what when tapping “🚕 Lily → SFO 예시Wed 9:30am · from Unit 2” on /rides before asking for it. Personas said they wanted: “'예시'가 무슨 뜻인지 (샘플 게시물인지) 설명”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "678d90435f16",
+      "title": "Missing / empty content on /rides/:id — “Lily Host”",
+      "screen": "/rides/:id",
+      "frictionType": "content_gap",
+      "keyElement": "lily host",
+      "keyElementLabel": "Lily Host",
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-seoyeon-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 17,
+          "severity": 2,
+          "quote": "아... 'made up'? 가짜 예시였어요. 정보는 깔끔한데 진짜 사람이 아니면 같이 못 가요. 진짜 수요일 SFO 가는 사람은 아무도 없는 거네요. 그럼 내가 올려야겠어요.",
+          "evidence": [
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/017-click.jpg",
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/017-click-som.jpg"
+          ],
+          "url": "/rides/rd_sample_sfo_lily",
+          "wish": "진짜 학생 라이드, 아니면 처음부터 '예시'임을 목록에서 분명히"
+        }
+      ],
+      "wishes": [
+        "진짜 학생 라이드, 아니면 처음부터 '예시'임을 목록에서 분명히"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /rides/:id is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “진짜 학생 라이드, 아니면 처음부터 '예시'임을 목록에서 분명히”."
       },
       "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
     },
@@ -210,11 +2052,867 @@
         "text": "Check whether the data on /chats/:id is really missing (or only missing in the test environment); avoid showing empty sections."
       },
       "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "170d7ebbd91e",
+      "title": "Bug on /community — “Campus”",
+      "screen": "/community",
+      "frictionType": "bug",
+      "keyElement": "campus",
+      "keyElementLabel": "Campus",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-aisha-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 9,
+          "severity": 1,
+          "quote": "Oh, this is like a feed. And I'm somehow at the bottom already? I don't see a title or anything. There's a club post from Cal Indie Collective though. Let me scroll up and see what's on top.",
+          "evidence": [
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/009-click.jpg",
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/009-click-som.jpg"
+          ],
+          "url": "/community",
+          "wish": "Open Campus at the top so I can see what the page is"
+        }
+      ],
+      "wishes": [
+        "Open Campus at the top so I can see what the page is"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Reproduce from the evidence steps on /community (around “Campus”) and fix it; add a regression check for that screen. Personas said they wanted: “Open Campus at the top so I can see what the page is”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "16221f83094a",
+      "title": "Trust / privacy worry on /community?tab=opportunities — “D-5 Cal Alumni Leadership Scholarship Ca”",
+      "screen": "/community?tab=opportunities",
+      "frictionType": "trust_privacy",
+      "keyElement": "d cal alumni leadership scholarship",
+      "keyElementLabel": "D-5 Cal Alumni Leadership Scholarship Ca",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-aisha-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 13,
+          "severity": 1,
+          "quote": "There's a 'Clubs' button, okay good. But wait — 'Your saved'? I didn't save a scholarship or a lab. Did someone set this up for me? Weird, but I'll ignore it and tap Clubs.",
+          "evidence": [
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/013-click.jpg",
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/013-click-som.jpg"
+          ],
+          "url": "/community?tab=opportunities",
+          "wish": "Don't show me saved things I never saved"
+        }
+      ],
+      "wishes": [
+        "Don't show me saved things I never saved"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Explain who will see what when tapping “D-5 Cal Alumni Leadership Scholarship Ca” on /community?tab=opportunities before asking for it. Personas said they wanted: “Don't show me saved things I never saved”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "52228e162ff2",
+      "title": "Unclear wording on /community?tab=opportunities — “Clubs”",
+      "screen": "/community?tab=opportunities",
+      "frictionType": "copy",
+      "keyElement": "clubs",
+      "keyElementLabel": "Clubs",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-aisha-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 17,
+          "severity": 1,
+          "quote": "Okay, that worked — though there are two buttons both called 'Clubs' right on top of each other, which threw me for a second. Still mostly consulting and VC stuff at the top. Let me scroll.",
+          "evidence": [
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/017-click.jpg",
+            "ux-sim/runs/baseline-aisha-find-a-club/shots/017-click-som.jpg"
+          ],
+          "url": "/community?tab=opportunities&sub=clubs&kind=club",
+          "wish": "Call the second one something different, like 'Student clubs (not Greek)'"
+        }
+      ],
+      "wishes": [
+        "Call the second one something different, like 'Student clubs (not Greek)'"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite “Clubs” on /community?tab=opportunities in plain language (and check the Korean UI). Personas said they wanted: “Call the second one something different, like 'Student clubs (not Greek)'”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "e53f5b5080fe",
+      "title": "Unclear wording on /start",
+      "screen": "/start",
+      "frictionType": "copy",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-minji-cold-start-hangout"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "baseline-minji-cold-start-hangout",
+          "persona": "minji-freshman-17",
+          "scenario": "cold-start-hangout",
+          "step": 22,
+          "severity": 1,
+          "quote": "오 얼굴사진 대신 이모지! 이건 좋다, 데이팅앱 느낌 없음. 근데 'Freshman in Undeclared' 문장 좀 이상함ㅋ",
+          "evidence": [
+            "ux-sim/runs/baseline-minji-cold-start-hangout/shots/022-click.jpg",
+            "ux-sim/runs/baseline-minji-cold-start-hangout/shots/022-click-som.jpg"
+          ],
+          "url": "/start",
+          "wish": "say 'Undeclared freshman'"
+        }
+      ],
+      "wishes": [
+        "say 'Undeclared freshman'"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite the wording on /start in plain language (and check the Korean UI). Personas said they wanted: “say 'Undeclared freshman'”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "b0c7ae9a3276",
+      "title": "Hard to find on /settings — “한국어”",
+      "screen": "/settings",
+      "frictionType": "discoverability",
+      "keyElement": "한국어",
+      "keyElementLabel": "한국어",
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-seoyeon-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 6,
+          "severity": 1,
+          "quote": "한국어로 바뀌었어요! 이제 훨씬 편해요. 근데 언어 설정이 설정 안쪽 깊이 있어서 처음엔 몰랐을 거예요.",
+          "evidence": [
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/006-click.jpg",
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/006-click-som.jpg"
+          ],
+          "url": "/settings",
+          "wish": "첫 화면이나 가입할 때 언어 선택"
+        }
+      ],
+      "wishes": [
+        "첫 화면이나 가입할 때 언어 선택"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for (“한국어”) where they looked (/settings); label icon-only controls. Personas said they wanted: “첫 화면이나 가입할 때 언어 선택”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "54cd78cb05b4",
+      "title": "Unclear wording on /discover — “Rides 5 open · Costco Richmond, Trader J”",
+      "screen": "/discover",
+      "frictionType": "copy",
+      "keyElement": "rides open costco richmond trader",
+      "keyElementLabel": "Rides 5 open · Costco Richmond, Trader J",
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-seoyeon-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 10,
+          "severity": 1,
+          "quote": "Rides! 자동차 아이콘. 이거다! 근데 'Rides'만 영어로 남아 있네요. OAK는... 오클랜드 공항?",
+          "evidence": [
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/010-click.jpg",
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/010-click-som.jpg"
+          ],
+          "url": "/discover",
+          "wish": "'라이드/카풀'로 번역"
+        }
+      ],
+      "wishes": [
+        "'라이드/카풀'로 번역"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite “Rides 5 open · Costco Richmond, Trader J” on /discover in plain language (and check the Korean UI). Personas said they wanted: “'라이드/카풀'로 번역”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "39327c8d79c3",
+      "title": "Bug on /rides — “My rides”",
+      "screen": "/rides",
+      "frictionType": "bug",
+      "keyElement": "my rides",
+      "keyElementLabel": "My rides",
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-seoyeon-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 12,
+          "severity": 1,
+          "quote": "'My rides' 버튼 위에 'Design: Classic New' 같은 게 겹쳐서 가려져 있어요.",
+          "evidence": [
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/012-click.jpg",
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/012-click-som.jpg"
+          ],
+          "url": "/rides",
+          "wish": "겹치지 않게"
+        }
+      ],
+      "wishes": [
+        "겹치지 않게"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Reproduce from the evidence steps on /rides (around “My rides”) and fix it; add a regression check for that screen. Personas said they wanted: “겹치지 않게”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "207925697696",
+      "title": "Unclear wording on /rides/new — “Fewer”",
+      "screen": "/rides/new",
+      "frictionType": "copy",
+      "keyElement": "fewer",
+      "keyElementLabel": "Fewer",
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "baseline-seoyeon-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 27,
+          "severity": 1,
+          "quote": "좋아요. 'People to split with 3'... 나 빼고 3명? 나 포함? 잘 모르겠지만 그냥 둘게요. 가격은 모르니까 비워요 — 'We never guess prices' 좋네요.",
+          "evidence": [
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/027-type.jpg",
+            "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/027-type-som.jpg"
+          ],
+          "url": "/rides/new?to=sfo&date=2026-11-25",
+          "wish": "'나를 포함해서 몇 명'인지 명확하게"
+        }
+      ],
+      "wishes": [
+        "'나를 포함해서 몇 명'인지 명확하게"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite “Fewer” on /rides/new in plain language (and check the Korean UI). Personas said they wanted: “'나를 포함해서 몇 명'인지 명확하게”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
     }
   ],
   "environmentLimited": [],
   "falseSuccesses": [],
   "autoChecks": [
+    {
+      "route": "/create/activity",
+      "device": "phone",
+      "smallTapTargetsMax": 27,
+      "examples": [
+        {
+          "id": 63,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 67,
+          "name": "🏃 Workout",
+          "w": 102,
+          "h": 36
+        },
+        {
+          "id": 68,
+          "name": "🎸 Clubs",
+          "w": 85,
+          "h": 36
+        },
+        {
+          "id": 69,
+          "name": "🎤 Show",
+          "w": 84,
+          "h": 36
+        },
+        {
+          "id": 70,
+          "name": "🤝 Networking",
+          "w": 122,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/baseline-diego-lunch-today/shots/012-click.jpg"
+    },
+    {
+      "route": "/rides/new",
+      "device": "phone",
+      "smallTapTargetsMax": 21,
+      "examples": [
+        {
+          "id": 49,
+          "name": "뒤로",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 122,
+          "name": "Unit 1",
+          "w": 64,
+          "h": 36
+        },
+        {
+          "id": 123,
+          "name": "Unit 2",
+          "w": 67,
+          "h": 36
+        },
+        {
+          "id": 124,
+          "name": "Unit 3",
+          "w": 67,
+          "h": 36
+        },
+        {
+          "id": 125,
+          "name": "Blackwell Hall",
+          "w": 116,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/020-click.jpg"
+    },
+    {
+      "route": "/discover?tab=activities",
+      "device": "phone",
+      "smallTapTargetsMax": 18,
+      "examples": [
+        {
+          "id": 2,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 4,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 16,
+          "name": "Timetable",
+          "w": 113,
+          "h": 36
+        },
+        {
+          "id": 18,
+          "name": "I set the time",
+          "w": 161,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/baseline-aisha-find-a-club/shots/004-click.jpg"
+    },
+    {
+      "route": "/community?tab=opportunities",
+      "device": "phone",
+      "smallTapTargetsMax": 17,
+      "examples": [
+        {
+          "id": 2,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 4,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 65,
+          "name": "Feed",
+          "w": 38,
+          "h": 44
+        },
+        {
+          "id": 87,
+          "name": "For you",
+          "w": 76,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/baseline-aisha-find-a-club/shots/013-click.jpg"
+    },
+    {
+      "route": "/community",
+      "device": "phone",
+      "smallTapTargetsMax": 16,
+      "examples": [
+        {
+          "id": 2,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 4,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 14,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        },
+        {
+          "id": 15,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/baseline-aisha-find-a-club/shots/009-click.jpg"
+    },
+    {
+      "route": "/rides",
+      "device": "phone",
+      "smallTapTargetsMax": 13,
+      "examples": [
+        {
+          "id": 49,
+          "name": "뒤로",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 96,
+          "name": "Find a ride",
+          "w": 173,
+          "h": 36
+        },
+        {
+          "id": 97,
+          "name": "My rides",
+          "w": 173,
+          "h": 36
+        },
+        {
+          "id": 98,
+          "name": "SFO",
+          "w": 60,
+          "h": 36
+        },
+        {
+          "id": 99,
+          "name": "OAK",
+          "w": 63,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/012-click.jpg"
+    },
+    {
+      "route": "/discover",
+      "device": "phone",
+      "smallTapTargetsMax": 12,
+      "examples": [
+        {
+          "id": 2,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 4,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 16,
+          "name": "Timetable",
+          "w": 113,
+          "h": 36
+        },
+        {
+          "id": 18,
+          "name": "I set the time",
+          "w": 161,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/baseline-aisha-find-a-club/shots/002-click.jpg"
+    },
+    {
+      "route": "/orgs/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 8,
+      "examples": [
+        {
+          "id": 206,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 209,
+          "name": "About",
+          "w": 56,
+          "h": 28
+        },
+        {
+          "id": 210,
+          "name": "Post",
+          "w": 47,
+          "h": 28
+        },
+        {
+          "id": 94,
+          "name": "Events",
+          "w": 61,
+          "h": 28
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/baseline-aisha-find-a-club/shots/026-tap.jpg"
+    },
+    {
+      "route": "/orgs/:id?tab=recruit",
+      "device": "phone",
+      "smallTapTargetsMax": 8,
+      "examples": [
+        {
+          "id": 206,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 209,
+          "name": "About",
+          "w": 56,
+          "h": 28
+        },
+        {
+          "id": 210,
+          "name": "Post",
+          "w": 47,
+          "h": 28
+        },
+        {
+          "id": 94,
+          "name": "Events",
+          "w": 61,
+          "h": 28
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/baseline-aisha-find-a-club/shots/028-click.jpg"
+    },
+    {
+      "route": "/orgs/:id?tab=events",
+      "device": "phone",
+      "smallTapTargetsMax": 8,
+      "examples": [
+        {
+          "id": 206,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 209,
+          "name": "About",
+          "w": 56,
+          "h": 28
+        },
+        {
+          "id": 210,
+          "name": "Post",
+          "w": 47,
+          "h": 28
+        },
+        {
+          "id": 94,
+          "name": "Events",
+          "w": 61,
+          "h": 28
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/baseline-aisha-find-a-club/shots/030-click.jpg"
+    },
+    {
+      "route": "/start",
+      "device": "phone",
+      "smallTapTargetsMax": 8,
+      "examples": [
+        {
+          "id": 6,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 9,
+          "name": "Stanford University",
+          "w": 148,
+          "h": 36
+        },
+        {
+          "id": 10,
+          "name": "UCLA",
+          "w": 62,
+          "h": 36
+        },
+        {
+          "id": 11,
+          "name": "USC",
+          "w": 54,
+          "h": 36
+        },
+        {
+          "id": 12,
+          "name": "UC San Diego",
+          "w": 112,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/baseline-marcus-first-open-decide/shots/003-click.jpg"
+    },
+    {
+      "route": "/",
+      "device": "phone",
+      "smallTapTargetsMax": 7,
+      "examples": [
+        {
+          "id": 1,
+          "name": "Filters",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 4,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 14,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/baseline-aisha-find-a-club/shots/000-start.jpg"
+    },
     {
       "route": "/chats",
       "device": "phone",
@@ -296,16 +2994,10 @@
       "evidence": "ux-sim/runs/smoke-minji-lunch-today/shots/006-click.jpg"
     },
     {
-      "route": "/",
+      "route": "/profile",
       "device": "phone",
       "smallTapTargetsMax": 6,
       "examples": [
-        {
-          "id": 1,
-          "name": "Filters",
-          "w": 40,
-          "h": 40
-        },
         {
           "id": 2,
           "name": "Notifications",
@@ -325,6 +3017,12 @@
           "h": 32
         },
         {
+          "id": 24,
+          "name": "Edit timetable",
+          "w": 316,
+          "h": 40
+        },
+        {
           "id": 14,
           "name": "Feedback",
           "w": 93,
@@ -333,7 +3031,143 @@
       ],
       "horizontalOverflowPxMax": 0,
       "brokenImagesMax": 0,
-      "evidence": "ux-sim/runs/smoke-minji-lunch-today/shots/000-start.jpg"
+      "evidence": "ux-sim/runs/baseline-minji-timetable-add-classes/shots/002-click.jpg"
+    },
+    {
+      "route": "/settings",
+      "device": "phone",
+      "smallTapTargetsMax": 6,
+      "examples": [
+        {
+          "id": 37,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 41,
+          "name": "Turn off",
+          "w": 84,
+          "h": 36
+        },
+        {
+          "id": 42,
+          "name": "Open",
+          "w": 66,
+          "h": 36
+        },
+        {
+          "id": 43,
+          "name": "한국어",
+          "w": 156,
+          "h": 36
+        },
+        {
+          "id": 44,
+          "name": "English",
+          "w": 156,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/004-click.jpg"
+    },
+    {
+      "route": "/welcome",
+      "device": "phone",
+      "smallTapTargetsMax": 4,
+      "examples": [
+        {
+          "id": 2,
+          "name": "Sign in",
+          "w": 46,
+          "h": 21
+        },
+        {
+          "id": 3,
+          "name": "Terms of Use",
+          "w": 76,
+          "h": 15
+        },
+        {
+          "id": 4,
+          "name": "Privacy Policy",
+          "w": 180,
+          "h": 33
+        },
+        {
+          "id": 5,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/baseline-marcus-first-open-decide/shots/000-start.jpg"
+    },
+    {
+      "route": "/timetable",
+      "device": "phone",
+      "smallTapTargetsMax": 4,
+      "examples": [
+        {
+          "id": 37,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 38,
+          "name": "Friends",
+          "w": 92,
+          "h": 28
+        },
+        {
+          "id": 39,
+          "name": "Class",
+          "w": 88,
+          "h": 36
+        },
+        {
+          "id": 15,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/baseline-minji-timetable-add-classes/shots/005-click.jpg"
+    },
+    {
+      "route": "/rides/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 3,
+      "examples": [
+        {
+          "id": 49,
+          "name": "뒤로",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 115,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 15,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/017-click.jpg"
     },
     {
       "route": "/chats/:id",
