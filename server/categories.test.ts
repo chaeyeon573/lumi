@@ -8,7 +8,7 @@ import assert from 'node:assert/strict';
 import type { Snapshot } from '@core/api/types';
 import type { Opportunity, Organization } from '@core/types';
 import * as seed from '@core/data/seed.en';
-import { categoriesOf, eventKindsOf, inCategory, isOfType, listingsOfOrg, orgLinker, orgOfListing, regionsOf, fieldOf, listingField, audienceOf } from '@core/lib/listings';
+import { categoriesOf, eventKindsOf, inCategory, isOfType, listingsOfOrg, locationOf, orgLinker, orgOfListing, regionsOf, fieldOf, listingField, audienceOf } from '@core/lib/listings';
 import { coursesFromCatalog, clashesWith, hasCatalogCourse } from '@core/lib/timetable';
 import { forYou } from '@core/lib/foryou';
 import { recommendFor, searchListings } from './ai-search';
@@ -147,6 +147,26 @@ test('internship region "Remote" — only remote a US student can take (not "Ber
   assert.deepEqual(r('Belgrade · Remote'), []);
   assert.deepEqual(r('London, UK', true), []);
   assert.deepEqual(r('San Francisco, CA', true), ['Bay Area', 'Remote']);
+});
+
+test('internship region without a location field: place (name or Bay Area coordinates), title and tags count; title "Remote" does not', () => {
+  const o = (extra: Partial<Opportunity>) => ({ location: undefined, remote: false, description: '', type: 'internship', ...extra } as Opportunity);
+  // the sample Stripe listing: no location, a sentence as description, an info session at the student union (ux-sim baseline-priya step 14)
+  assert.deepEqual(regionsOf(o({ title: 'Stripe summer internship', description: '12-week paid internship. Resume → take-home → interviews.', place: { name: 'MLK Student Union', lat: 37.8692, lng: -122.2598 } })), ['Bay Area']);
+  assert.deepEqual(regionsOf(o({ title: 'Summer analyst — San Francisco office' })), ['Bay Area']);
+  assert.deepEqual(regionsOf(o({ title: 'Policy internship', tags: ['internship', 'Seattle'] })), ['Seattle']);
+  assert.deepEqual(regionsOf(o({ title: 'LANL Remote Sensing Summer School' })), []);
+  assert.deepEqual(regionsOf(o({ title: 'Berkeley Study Abroad — Summer 2027 & Global Internships', tags: ['UC Berkeley'] })), []); // the school's name, not the city
+  assert.deepEqual(regionsOf(o({ title: 'Data intern', place: { name: 'Times Square office', lat: 40.758, lng: -73.985 } })), []);
+  // an explicit location wins over the fallbacks
+  assert.deepEqual(regionsOf(o({ location: 'Austin, TX', title: 'Berkeley alumni internship', place: { name: 'MLK Student Union', lat: 37.8692, lng: -122.2598 } })), ['Texas']);
+});
+
+test('locationOf: a description\'s first sentence is not a location; the old "City, ST · …" first segment still is', () => {
+  const o = (description: string) => ({ description, type: 'internship' } as Opportunity);
+  assert.equal(locationOf(o('12-week paid internship. Resume → take-home → interviews.')), '');
+  assert.equal(locationOf(o('San Francisco, CA · Full-time · Engineering')), 'San Francisco, CA');
+  assert.equal(locationOf(o('New York, NY')), 'New York, NY');
 });
 
 test('internship field: aerospace roles are Hardware, user/UX research is Product & Design', () => {

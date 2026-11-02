@@ -57,21 +57,39 @@ const REGION_RULES: [Region, RegExp][] = [
 // 미국 안이라는 표시 — “Remote, US”, “Denver, CO”, “United States”
 const US_WORD = /\b(us|usa|u\.s\.|united states)\b/i;
 const US_STATE = /,\s*(AL|AK|AZ|AR|CA|CO|CT|DE|DC|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY)\b/;
-export const regionsOf = (o: Pick<Opportunity, 'location' | 'remote' | 'description' | 'type'>): Region[] => {
-  const loc = locationOf(o);
-  const out = REGION_RULES.filter(([, re]) => re.test(loc)).map(([r]) => r);
+type RegionInput = Pick<Opportunity, 'location' | 'remote' | 'description' | 'type'> & Partial<Pick<Opportunity, 'place' | 'title' | 'tags'>>;
+export const regionsOf = (o: RegionInput): Region[] => {
+  // 근무지가 없으면 다른 단서로 — 장소(설명회 장소 등, 좌표가 베이 지역이면 Bay Area), 제목·태그에 적힌 도시.
+  // 예전엔 근무지 칸만 봐서 SF 회사 공고도 'Bay Area'에서 0개가 나왔다 (ux-sim baseline-priya step 14)
+  const known = locationOf(o);
+  const loc = known || fallbackPlaceText(o);
+  // 제목·태그의 ‘remote’ 는 근무 방식이 아닐 수 있다(“Remote Sensing Summer School”) — 원격은 근무지 칸·remote 표시로만
+  const out = REGION_RULES.filter(([r, re]) => re.test(loc) && (known || r !== 'Remote')).map(([r]) => r);
   if (o.remote && !out.includes('Remote')) out.push('Remote');
   // ‘Remote’ 는 미국에서 할 수 있는 것만 — “Berlin · Remote” 는 그 나라 원격이라 버클리 학생에겐 아니다.
   // 원격 말고 다른 곳이 적혀 있으면 그곳이 미국(지역 규칙·US 표시)일 때만
-  const others = loc.split(/[·;|]|\s-\s/).map((x) => x.trim()).filter((x) => x && !/^remote\b/i.test(x));
+  const others = known.split(/[·;|]|\s-\s/).map((x) => x.trim()).filter((x) => x && !/^remote\b/i.test(x));
   const usOk = !others.length || out.some((r) => r !== 'Remote') || others.some((x) => US_WORD.test(x) || US_STATE.test(x));
   return usOk ? out : out.filter((r) => r !== 'Remote');
 };
+// 베이 지역 대략의 네모 (Santa Rosa ~ Gilroy, 바다 ~ Livermore 동쪽)
+const inBayArea = (lat: number, lng: number) => lat >= 36.9 && lat <= 38.6 && lng >= -123.2 && lng <= -121.2;
+function fallbackPlaceText(o: RegionInput): string {
+  const parts: string[] = [];
+  if (o.place) { parts.push(o.place.name); if (Number.isFinite(o.place.lat) && Number.isFinite(o.place.lng) && (o.place.lat || o.place.lng) && inBayArea(o.place.lat, o.place.lng)) parts.push('Bay Area'); }
+  // 제목·태그의 ‘Berkeley’ 는 대개 학교 이름이다(“Berkeley Study Abroad — Global Internships”) — 도시로 세지 않는다
+  const text = [o.title ?? '', ...(o.tags ?? [])].join(' · ').replace(/\b(uc |cal )?berkeley\b/gi, '');
+  if (text.trim()) parts.push(text);
+  return parts.join(' · ');
+}
 
-/** 근무지 — 예전 수집분은 설명 첫 줄에 들어 있었다 */
+/** 근무지 — 예전 수집분은 설명 첫 줄에 들어 있었다 (“San Francisco, CA · …”). 첫 줄이 문장이면(“12-week paid internship. …”) 근무지가 아니다 */
 export function locationOf(o: Pick<Opportunity, 'location' | 'description' | 'type'>): string {
   if (o.location) return o.location;
-  if (o.type === 'internship') return o.description.split(' · ')[0].replace(/\s*[•|]\s*/g, ' · ').trim();
+  if (o.type === 'internship') {
+    const first = o.description.split(' · ')[0].replace(/\s*[•|]\s*/g, ' · ').trim();
+    if (first && first.length <= 60 && !/[.!?](\s|$)/.test(first)) return first;
+  }
   return '';
 }
 

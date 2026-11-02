@@ -189,6 +189,17 @@ function ListingList({ sub, kind, field, region, sort, setQ, rows, grad, savedId
     }
     return m;
   }, [inChip, sub, kind, region]); // eslint-disable-line react-hooks/exhaustive-deps
+  // 지역별 개수 — 분야·PhD 고르기는 반영하고 지역 고르기는 빼고 센다(‘Bay Area 를 고르면 몇 개’). 0개 지역은 고를 때 미리 보인다
+  const regionCounts = useMemo(() => {
+    const m = new Map<Region, number>();
+    if (sub !== 'internship') return m;
+    for (const r of inChip) {
+      if (kind === 'phd' && audienceOf(r.o) !== 'grad') continue;
+      if (field && listingField(r.o) !== field) continue;
+      for (const g of regionsOf(r.o)) m.set(g, (m.get(g) ?? 0) + 1);
+    }
+    return m;
+  }, [inChip, sub, kind, field]);
   const list = useMemo(() => {
     let xs = inChip;
     if (sub === 'event' && kind) xs = xs.filter((r) => eventKindsOf(r.o).includes(kind as EventKind));
@@ -235,7 +246,7 @@ function ListingList({ sub, kind, field, region, sort, setQ, rows, grad, savedId
             {sub === 'internship' && <>
               <span className="w-px bg-line shrink-0 mx-1" />
               <select value={region} onChange={(e) => setQ({ region: e.target.value })} aria-label={en ? 'Location' : '지역'} className={cn('h-8 rounded-full px-3 text-[12px] font-semibold shrink-0', region ? 'bg-primary text-white' : 'bg-surface-2 text-ink-2')}>
-                <option value="">{en ? 'Any location' : '지역 전체'}</option>{REGIONS.map((r) => <option key={r} value={r}>{r}</option>)}
+                <option value="">{en ? 'Any location' : '지역 전체'}</option>{REGIONS.map((r) => <option key={r} value={r}>{r} ({regionCounts.get(r) ?? 0})</option>)}
               </select>
             </>}
           </div>
