@@ -42,10 +42,14 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     bundleIdentifier: BUNDLE_ID,
     supportsTablet: false,
     associatedDomains: ASSOCIATED.map((h: string) => `applinks:${h}`),
-    // No usage-description strings on purpose: the app asks for no camera/photos/location/mic/contacts.
-    // (Push permission needs none.) Add one only together with the feature that uses it — e.g. if the web app ever
-    // gets an <input type="file">, WKWebView offers "Take Photo" → NSCameraUsageDescription + NSPhotoLibraryUsageDescription.
-    infoPlist: { ITSAppUsesNonExemptEncryption: false },
+    // Usage strings only for features that use them. Post photos (2026-11-02): the web app's <input type="file" accept="image/*">
+    // makes WKWebView offer "Photo Library" and "Take Photo" — without these two strings iOS kills the app on tap.
+    // No location/mic/contacts strings: the photo is redrawn on the device (location data removed) before upload.
+    infoPlist: {
+      ITSAppUsesNonExemptEncryption: false,
+      NSPhotoLibraryUsageDescription: 'Lumi uses the photos you pick to add them to your post. Only the photos you choose are uploaded.',
+      NSCameraUsageDescription: 'Lumi uses the camera when you choose to take a photo for your post.',
+    },
   },
   plugins: [
     ['expo-splash-screen', { image: './assets/splash-icon.png', imageWidth: 200, resizeMode: 'contain', backgroundColor: '#08070C' }],

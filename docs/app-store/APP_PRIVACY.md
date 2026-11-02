@@ -19,7 +19,7 @@ changes what Lumi collects or who receives it, update the page, this file, and t
 | School email | Sign-up "email" step / sign-in sheet → `POST /api/schools/send-code`, `/api/auth/register`, `/api/auth/attach-email` (`server/index.ts`) | Postgres `accounts` (email ↔ user id), `email_codes` (6-digit code, 10-min TTL) — `server/store.ts` | **Resend** (sends the code, `server/mail.ts`). Never sent to other users (not on the `User` object). Optional: "Skip for now" creates an account with no email. |
 | Session token | `issueSession()` — 32 random bytes | Postgres `sessions` (no expiry today); browser `localStorage` `aroundu.remote.token.v1` (`packages/core/src/api/remote/index.ts`) | — |
 | Profile | `RegisterInput` / `users.update` (`packages/core/src/types/index.ts` `User`) — nickname, birth year (age is shown on profile cards: `PersonPage.tsx`, `HomePage.tsx`), school, role, major, year, emoji avatar + color, bio, likes, free time, interests, purposes, goals, looking-for / can-offer roles, prompt answers, icebreaker answers, "now want", daily answer, housing type + zone, optional height, `gender` (sign-up sets `'private'`; no production screen asks for it) | Postgres `docs` (`users`) | Other signed-in users (see §4 gap 1). OpenAI for AI features (below). |
-| Photos | **None uploaded.** Avatars are emoji + hue. `avatar.url`/`photos` are only bundled stock images on sample profiles (`apps/mobile/src/photos.ts`, `public/photos`). No `<input type=file>`, camera or photo-library code exists. | — | — |
+| Photos | **Post photos the user picks** (since 2026-11-02): `<input type=file accept=image/*>` on Create post → shrunk to 1600px and redrawn on the device (location/EXIF removed) → `/api/media` (server/media.ts, Postgres `media` table), deleted with the account. Avatars are still emoji + hue; sample profiles use bundled stock images. | Yes | No |
 | Voice prompt | UI timer only — stores `durationSec`, no audio (`src/components/prompts/PromptComponents.tsx`) | `users` | — |
 | Timetable | Courses added by the student (name, days/times, room, instructor, section, term) | `users.timetable` | Others get busy blocks only, and only within `fieldVisibility.timetable` — names/rooms stripped (`packages/core/src/lib/privacy.ts` `profileFor`, applied in `server/view.ts`). Class rosters show "takes this class" to verified classmates unless `showToClassmates` is off. |
 | Location | **No device location.** No `navigator.geolocation`, no expo-location. `settings.locationPermission` is just a stored preference toggle (`SettingsPage.tsx`). Event/ride places are picked from presets or typed. | — | Map tiles from CARTO (`src/pages/map/MapPage.tsx` `TILE_URL`) — CARTO sees IP + map area viewed. |
@@ -73,7 +73,7 @@ Answer **"No"** to "used to track you" for every type below.
 | Sensitive Info | No (no field asks for race, religion, orientation, etc.; `gender` is fixed to "private" in production) | — | — | — |
 | Contacts | No | — | — | — |
 | User Content → **Emails or Text Messages** | Yes (in-app chat messages; previews pass through Expo/APNs as push text) | Yes | No | App Functionality |
-| User Content → Photos or Videos | No | — | — | — |
+| User Content → **Photos or Videos** | Yes (photos a user attaches to a post; location data removed on the device first) | Yes | No | App Functionality |
 | User Content → Audio Data | No | — | — | — |
 | User Content → Gameplay Content | No (icebreaker answers declared under Other User Content) | — | — | — |
 | User Content → **Customer Support** | Yes (Feedback button) | Yes (when signed in) | No | App Functionality, Analytics (product improvement) |
@@ -92,9 +92,9 @@ Third-party processors to keep in mind when answering "third-party partners": Ra
 (email), OpenAI (AI features). Google Fonts and CARTO receive IP addresses only when loading fonts/tiles.
 
 The iPhone app is `apps/shell` (Expo): the live web app in a WebView plus native push (expo-notifications → Expo
-Push → APNs), share sheet, haptics and an in-app Safari view for other sites. It asks for **one** permission —
-notifications, only after the person's first action or from Settings → Notifications — and declares no other
-usage strings (no camera/photos/location/contacts/mic/Face ID). It keeps a copy of the session token in the iOS
+Push → APNs), share sheet, haptics and an in-app Safari view for other sites. It asks for notifications only after the person's first action or from Settings → Notifications, and declares
+two more usage strings since bridge v2 (2026-11-02): photo library and camera, used only when someone taps the
+photo box on Create post (iOS shows the system picker). No location/contacts/mic/Face ID. It keeps a copy of the session token in the iOS
 Keychain so people stay signed in. No analytics or crash SDK. (`apps/mobile` is the old mock-data prototype and
 is not what ships.) Any added SDK (crash reporting, analytics) changes these answers.
 
@@ -124,7 +124,8 @@ is not what ships.) Any added SDK (crash reporting, analytics) changes these ans
 > **Terms:** Users agree to the Terms of Use and Privacy Policy when they start sign-up (links on the welcome
 > screen and the last sign-up step), and can read them any time in Settings.
 >
-> Lumi does not use location, camera, photos or contacts. Push notifications are optional: the app offers them
+> Lumi does not use location or contacts. Photos and the camera are used only when you add a photo to a post
+> (Create post → photo box); location data is removed from the photo on the device before upload. Push notifications are optional: the app offers them
 > after your first action (e.g. joining a meetup) or from Settings → Notifications → Push notifications.
 > It is for users 16+; ride sharing is 18+.
 >

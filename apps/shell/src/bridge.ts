@@ -11,7 +11,8 @@
  * The same script keeps a copy of the web app's session token in the iOS Keychain (expo-secure-store) and puts
  * it back if WebKit ever cleared the page's localStorage, so people stay signed in across relaunches.
  */
-export const BRIDGE_VERSION = 1;
+/** 1 = first release · 2 = the app declares photo/camera usage strings, so the web app may show its photo picker */
+export const BRIDGE_VERSION = 2;
 /** localStorage keys the web app uses for its session (packages/core/src/api/remote/index.ts) */
 export const SESSION_KEYS = { token: 'aroundu.remote.token.v1', user: 'aroundu.remote.user.v1' } as const;
 

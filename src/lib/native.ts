@@ -46,6 +46,8 @@ declare global {
 
 export const native = (): LumiNativeApi | undefined => (typeof window !== 'undefined' && window.LumiNative?.isNative ? window.LumiNative : undefined);
 export const isNativeShell = () => !!native();
+/** 사진 고르기를 보여 줘도 되나 — 웹은 언제나. iPhone 앱은 사진·카메라 권한 문구가 든 빌드(bridgeVersion 2)부터: 그 전 앱은 누르면 꺼진다 */
+export const canPickPhotos = () => { const n = native(); return !n || n.bridgeVersion >= 2; };
 
 /** Share sheet available here? (iPhone app always; browsers that have navigator.share) */
 export const canShareSheet = () => isNativeShell() || (typeof navigator !== 'undefined' && !!navigator.share);
