@@ -156,6 +156,10 @@
    {
     "label": "Website",
     "url": "https://sjsu.siggraph.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/sjsucomputergraphics/"
    }
   ]
  },
@@ -502,6 +506,32 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/akbayansjsu/"
+   }
+  ]
+ },
+ {
+  "id": "oc_sjsu_cg36139",
+  "name": "All Court Volleyball",
+  "logo": {
+   "emoji": "AC",
+   "hue": 160
+  },
+  "type": "club",
+  "schoolId": "s_sjsu",
+  "parent": "SI RSO Club Sports",
+  "verified": false,
+  "description": "The mission of All Court Volleyball is to create an inclusive and welcoming environment where students of all skill levels can enjoy playing volleyball, participate in open-gym events, develop their skills, and build community without pressure to compete or be highly experienced.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36139"
    }
   ]
  },
@@ -1460,6 +1490,36 @@
    {
     "label": "Website",
     "url": "https://www.sjsu.edu/as/departments/transportation-solutions/index.php"
+   }
+  ]
+ },
+ {
+  "id": "oc_sjsu_cg35488",
+  "name": "Baja Spartan Racing",
+  "logo": {
+   "emoji": "BS",
+   "hue": 16
+  },
+  "type": "club",
+  "schoolId": "s_sjsu",
+  "parent": "SI RSO Special Interest",
+  "verified": false,
+  "description": "Baja Spartan Racing is a student-led organization dedicated to designing and building off-road vehicles to compete in an annual collegiate design competition hosted by the Society of Automotive Engineers (SAE). We provide practical, hands-on experience in research, testing, design, and manufacturing. Baja Spartan Racing works to inspire students from diverse backgrounds to pursue STEM careers through community outreach, campus events, and collaborations with student diversity organizations.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35488"
+   },
+   {
+    "label": "Website",
+    "url": "https://sjsubajasae.com/"
    }
   ]
  },
@@ -3912,14 +3972,6 @@
    {
     "label": "Website",
     "url": "https://grupofolkloricolunaysol.weebly.com/"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/gflssjsu/"
-   },
-   {
-    "label": "Facebook",
-    "url": "https://www.facebook.com/GFLSdeSJSU"
    }
   ]
  },
@@ -8138,6 +8190,58 @@
   ]
  },
  {
+  "id": "oc_sjsu_cg35727",
+  "name": "Skateboarding Club",
+  "logo": {
+   "emoji": "S",
+   "hue": 176
+  },
+  "type": "club",
+  "schoolId": "s_sjsu",
+  "parent": "SI RSO Special Interest",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35727"
+   }
+  ]
+ },
+ {
+  "id": "oc_sjsu_cg35735",
+  "name": "Society of Latino Engineers and Scientists",
+  "logo": {
+   "emoji": "SL",
+   "hue": 280
+  },
+  "type": "club",
+  "schoolId": "s_sjsu",
+  "parent": "SI RSO Academic",
+  "verified": false,
+  "description": "The Society of Latino Engineers and Scientists (SOLES), a dual student chapter of MAES (Latinos in Engineering and Science) and SHPE (Society of Hispanic Professional Engineers), is a recognized student organization associated with the Charles W. Davidson College of Engineering at San Jose State University. SOLES members are in direct exposure to professional development through informational sessions from industry partners, opportunities to attend national conferences from MAES and SHPE, and gain industry exposure through company tours/panels.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35735"
+   }
+  ]
+ },
+ {
   "id": "oc_sjsu_cg35736",
   "name": "Society of Manufacturing Engineers",
   "logo": {
@@ -8220,6 +8324,32 @@
    {
     "label": "Instagram",
     "url": "https://www.instagram.com/swe.sjsu/"
+   }
+  ]
+ },
+ {
+  "id": "oc_sjsu_cg35922",
+  "name": "Spartan Army Club",
+  "logo": {
+   "emoji": "SA",
+   "hue": 336
+  },
+  "type": "club",
+  "schoolId": "s_sjsu",
+  "parent": "SI RSO Special Interest",
+  "verified": false,
+  "description": "Build a strong, united community on campus for ROTC Army cadets, providing the support needed to succeed in academic and military life.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35922"
    }
   ]
  },
@@ -8380,6 +8510,32 @@
    {
     "label": "Website",
     "url": "https://sites.google.com/view/sda-sjsu"
+   }
+  ]
+ },
+ {
+  "id": "oc_sjsu_cg36138",
+  "name": "Spartan Events Management Club",
+  "logo": {
+   "emoji": "SE",
+   "hue": 88
+  },
+  "type": "club",
+  "schoolId": "s_sjsu",
+  "parent": "SI RSO Academic",
+  "verified": false,
+  "description": "Our mission is to inspire and empower the next generation of event professionals by turning classroom knowledge into real-world experiences, building industry connections, and creating opportunities to lead. We strive to provide students with hands-on experience in event planning and management, allowing them to develop valuable professional skills, gain confidence, and apply what they learn in the classroom to real-life situations. Through networking, collaboration, and involvement in industry events, we aim to connect students with fellow HTEM individuals, industry professionals, and organiz",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36138"
    }
   ]
  },
@@ -9895,7 +10051,7 @@
    },
    {
     "label": "Facebook",
-    "url": "https://www.facebook.com/pages/Theta-Chi-Fraternity"
+    "url": "https://www.facebook.com/pages/Theta-Chi-Fraternity/21251014534"
    }
   ]
  },
@@ -10466,10 +10622,6 @@
    {
     "label": "Website",
     "url": "http://wibsjsu.com/"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/sjsuwib/"
    }
   ]
  },
@@ -10496,58 +10648,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35817"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg35928",
-  "name": "Women in Cybersecurity, San Jose State University Student Chapter",
-  "logo": {
-   "emoji": "WC",
-   "hue": 112
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "SI RSO Academic",
-  "verified": false,
-  "description": "The mission of WiCyS SJSU is to empower and support women and underrepresented groups in cybersecurity through professional development, technical learning, mentorship, networking, and community building.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35928"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg35960",
-  "name": "Women in Data Science",
-  "logo": {
-   "emoji": "WD",
-   "hue": 40
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "SI RSO Academic",
-  "verified": false,
-  "description": "To cultivate the next generation of Data Science and AI leaders by providing resources for upskilling, networking, mentorship, and growth opportunities, from students to professionals.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35960"
    }
   ]
  }

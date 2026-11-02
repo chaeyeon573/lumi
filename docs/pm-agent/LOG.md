@@ -1635,3 +1635,7 @@
 - Queue (Berkeley links): same check on Berkeley's other student web hosting, ocf.berkeley.edu/~<CalLink id>: 14 answered, 6 were empty "Index of" folders (skipped) → 8 real sites (CURIE, Upsilon Pi Epsilon, WYSE, Mahjong Club, ASUC SUPERB, BSHA, CALICO, Poker at Berkeley) + 3 social links (UPE, SUPERB). Public Health student groups page → Public Health Advocate, Suitcase Clinic. CDSS student page lists EECS groups already covered.
 - Spot check clubs: UCSC Pagkakaisa Dance Troupe, Slug Fund; SFSU AS Richard Oakes Multicultural Center, Basic Needs Center — on the official lists 4/4; Stanford GSB Coffee Club has no public link yet (expected, Stanford queue).
 - Spot check classes blocked: classes.berkeley.edu now answers 403 to this container (after many reads today). Not a data problem; the Railway worker reads it from its own address. Will retry next run with fewer requests.
+
+## 2026-11-02 23:33 UTC — routine run
+- Re-collected the 7 Bay Area files with the new club-relevance rule for social links (personal profiles dropped): SF State 212/290 with a public link (5 dead sites removed), UC Davis 165/532, SJSU 84/392, USF 138/152, Stanford 41/733, UCSC 109/110, Santa Clara (names only).
+- Spot check classes via web fetch (classes.berkeley.edu still 403 to this container): ANTHRO 127A, MONGOLN C117, MELC 157, CHEM 3A, MUSIC 143 — day, time, room and instructor match 5/5.
