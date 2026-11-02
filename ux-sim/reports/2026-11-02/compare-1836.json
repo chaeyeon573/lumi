@@ -1,0 +1,950 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-02T18:36:36.614Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "before": [
+    "cmp1-base-cold-start-hangout-minji",
+    "cmp1-base-find-a-club-aisha",
+    "cmp1-base-first-open-decide-marcus",
+    "cmp1-base-internship-near-berkeley-priya",
+    "cmp1-base-lunch-today-diego",
+    "cmp1-base-ride-sfo-thanksgiving-seoyeon",
+    "cmp1-base-timetable-add-classes-minji"
+  ],
+  "after": [
+    "cmp1-fix-cold-start-hangout-minji",
+    "cmp1-fix-find-a-club-aisha",
+    "cmp1-fix-first-open-decide-marcus",
+    "cmp1-fix-internship-near-berkeley-priya",
+    "cmp1-fix-lunch-today-diego",
+    "cmp1-fix-ride-sfo-thanksgiving-seoyeon",
+    "cmp1-fix-timetable-add-classes-minji"
+  ],
+  "sides": {
+    "before": {
+      "label": "base",
+      "runs": [
+        "cmp1-base-cold-start-hangout-minji",
+        "cmp1-base-find-a-club-aisha",
+        "cmp1-base-first-open-decide-marcus",
+        "cmp1-base-internship-near-berkeley-priya",
+        "cmp1-base-lunch-today-diego",
+        "cmp1-base-ride-sfo-thanksgiving-seoyeon",
+        "cmp1-base-timetable-add-classes-minji"
+      ],
+      "appCommits": [
+        "7af1c8ef2cfd"
+      ],
+      "worktrees": [
+        "/home/user/lumi-base"
+      ],
+      "harness": [
+        "6f174347960d"
+      ],
+      "auth": [
+        "none",
+        "fresh"
+      ],
+      "catalog": [
+        "cached"
+      ],
+      "events": [
+        "snapshot fa9ccb47"
+      ],
+      "modes": [
+        "local"
+      ]
+    },
+    "after": {
+      "label": "fix",
+      "runs": [
+        "cmp1-fix-cold-start-hangout-minji",
+        "cmp1-fix-find-a-club-aisha",
+        "cmp1-fix-first-open-decide-marcus",
+        "cmp1-fix-internship-near-berkeley-priya",
+        "cmp1-fix-lunch-today-diego",
+        "cmp1-fix-ride-sfo-thanksgiving-seoyeon",
+        "cmp1-fix-timetable-add-classes-minji"
+      ],
+      "appCommits": [
+        "1a1a69501453"
+      ],
+      "worktrees": [
+        "/home/user/lumi-fix"
+      ],
+      "harness": [
+        "6f174347960d"
+      ],
+      "auth": [
+        "none",
+        "fresh"
+      ],
+      "catalog": [
+        "cached"
+      ],
+      "events": [
+        "snapshot fa9ccb47"
+      ],
+      "modes": [
+        "local"
+      ]
+    }
+  },
+  "warnings": [],
+  "pairs": [
+    {
+      "persona": "aisha-firstgen-anxious",
+      "scenario": "find-a-club",
+      "before": {
+        "runs": [
+          "cmp1-base-find-a-club-aisha"
+        ],
+        "outcomes": [
+          "success"
+        ],
+        "goalAchieved": 1,
+        "actionsToGoal": 4,
+        "friction": {
+          "ux_confusion": 2,
+          "discoverability": 1,
+          "motivation": 1,
+          "content_gap": 4,
+          "trust_privacy": 1,
+          "copy": 2
+        },
+        "frustration": 2.5
+      },
+      "after": {
+        "runs": [
+          "cmp1-fix-find-a-club-aisha"
+        ],
+        "outcomes": [
+          "abandoned"
+        ],
+        "goalAchieved": 1,
+        "actionsToGoal": 9,
+        "friction": {
+          "ux_confusion": 3,
+          "discoverability": 2,
+          "content_gap": 1,
+          "trust_privacy": 1
+        },
+        "frustration": 1.5
+      },
+      "change": "worse (more actions to goal)"
+    },
+    {
+      "persona": "diego-transfer-commuter",
+      "scenario": "lunch-today",
+      "before": {
+        "runs": [
+          "cmp1-base-lunch-today-diego"
+        ],
+        "outcomes": [
+          "success"
+        ],
+        "goalAchieved": 1,
+        "actionsToGoal": 1,
+        "friction": {
+          "bug": 1,
+          "ux_confusion": 1,
+          "motivation": 1
+        },
+        "frustration": 0.5
+      },
+      "after": {
+        "runs": [
+          "cmp1-fix-lunch-today-diego"
+        ],
+        "outcomes": [
+          "success"
+        ],
+        "goalAchieved": 1,
+        "actionsToGoal": 1,
+        "friction": {
+          "ux_confusion": 2
+        },
+        "frustration": 0.5
+      },
+      "change": "same"
+    },
+    {
+      "persona": "marcus-senior-lowtech",
+      "scenario": "first-open-decide",
+      "before": {
+        "runs": [
+          "cmp1-base-first-open-decide-marcus"
+        ],
+        "outcomes": [
+          "abandoned"
+        ],
+        "goalAchieved": 0,
+        "actionsToGoal": null,
+        "friction": {
+          "onboarding": 1,
+          "trust_privacy": 3
+        },
+        "frustration": 1
+      },
+      "after": {
+        "runs": [
+          "cmp1-fix-first-open-decide-marcus"
+        ],
+        "outcomes": [
+          "abandoned"
+        ],
+        "goalAchieved": 1,
+        "actionsToGoal": 13,
+        "friction": {
+          "ux_confusion": 1,
+          "onboarding": 2,
+          "discoverability": 2,
+          "motivation": 1,
+          "trust_privacy": 1
+        },
+        "frustration": 2.5
+      },
+      "change": "better (goal reached more often)"
+    },
+    {
+      "persona": "minji-freshman-17",
+      "scenario": "cold-start-hangout",
+      "before": {
+        "runs": [
+          "cmp1-base-cold-start-hangout-minji"
+        ],
+        "outcomes": [
+          "abandoned"
+        ],
+        "goalAchieved": 0,
+        "actionsToGoal": null,
+        "friction": {
+          "onboarding": 1,
+          "content_gap": 1,
+          "trust_privacy": 1,
+          "copy": 1
+        },
+        "frustration": 2
+      },
+      "after": {
+        "runs": [
+          "cmp1-fix-cold-start-hangout-minji"
+        ],
+        "outcomes": [
+          "success"
+        ],
+        "goalAchieved": 1,
+        "actionsToGoal": 26,
+        "friction": {
+          "onboarding": 4,
+          "content_gap": 2
+        },
+        "frustration": 3.5
+      },
+      "change": "better (goal reached more often)"
+    },
+    {
+      "persona": "minji-freshman-17",
+      "scenario": "timetable-add-classes",
+      "before": {
+        "runs": [
+          "cmp1-base-timetable-add-classes-minji"
+        ],
+        "outcomes": [
+          "success"
+        ],
+        "goalAchieved": 1,
+        "actionsToGoal": 7,
+        "friction": {
+          "ux_confusion": 1,
+          "performance": 1,
+          "copy": 1
+        },
+        "frustration": 1
+      },
+      "after": {
+        "runs": [
+          "cmp1-fix-timetable-add-classes-minji"
+        ],
+        "outcomes": [
+          "success"
+        ],
+        "goalAchieved": 1,
+        "actionsToGoal": 7,
+        "friction": {
+          "ux_confusion": 2,
+          "discoverability": 1,
+          "performance": 1
+        },
+        "frustration": 1
+      },
+      "change": "same"
+    },
+    {
+      "persona": "priya-phd-desktop",
+      "scenario": "internship-near-berkeley",
+      "before": {
+        "runs": [
+          "cmp1-base-internship-near-berkeley-priya"
+        ],
+        "outcomes": [
+          "success"
+        ],
+        "goalAchieved": 1,
+        "actionsToGoal": 5,
+        "friction": {
+          "motivation": 2,
+          "content_gap": 2
+        },
+        "frustration": 1.5
+      },
+      "after": {
+        "runs": [
+          "cmp1-fix-internship-near-berkeley-priya"
+        ],
+        "outcomes": [
+          "success"
+        ],
+        "goalAchieved": 1,
+        "actionsToGoal": 7,
+        "friction": {
+          "bug": 1,
+          "discoverability": 2,
+          "motivation": 1,
+          "content_gap": 1
+        },
+        "frustration": 1.5
+      },
+      "change": "worse (more actions to goal)"
+    },
+    {
+      "persona": "seoyeon-exchange-korean",
+      "scenario": "ride-sfo-thanksgiving",
+      "before": {
+        "runs": [
+          "cmp1-base-ride-sfo-thanksgiving-seoyeon"
+        ],
+        "outcomes": [
+          "success"
+        ],
+        "goalAchieved": 1,
+        "actionsToGoal": 8,
+        "friction": {
+          "bug": 1,
+          "copy": 2
+        },
+        "frustration": 0
+      },
+      "after": {
+        "runs": [
+          "cmp1-fix-ride-sfo-thanksgiving-seoyeon"
+        ],
+        "outcomes": [
+          "success"
+        ],
+        "goalAchieved": 1,
+        "actionsToGoal": 9,
+        "friction": {
+          "copy": 3
+        },
+        "frustration": 0.5
+      },
+      "change": "worse (more actions to goal)"
+    }
+  ],
+  "findings": {
+    "resolved": [
+      {
+        "fingerprint": "67ca16898d6c",
+        "title": "Missing / empty content on / — “Invite friends”",
+        "severityMax": 3,
+        "personas": [
+          "minji-freshman-17",
+          "aisha-firstgen-anxious"
+        ],
+        "scenarios": [
+          "cold-start-hangout",
+          "find-a-club"
+        ]
+      },
+      {
+        "fingerprint": "37ba6e6b85d0",
+        "title": "Trust / privacy worry on /start — “🎉 Out with people”",
+        "severityMax": 4,
+        "personas": [
+          "marcus-senior-lowtech"
+        ],
+        "scenarios": [
+          "first-open-decide"
+        ]
+      },
+      {
+        "fingerprint": "d80495a57f74",
+        "title": "Trust / privacy worry on /orgs/:id — “Ask to join”",
+        "severityMax": 3,
+        "personas": [
+          "aisha-firstgen-anxious"
+        ],
+        "scenarios": [
+          "find-a-club"
+        ]
+      },
+      {
+        "fingerprint": "b671f45c6bb2",
+        "title": "Confusing UI on /orgs/:id?tab=recruit — “Recruiting”",
+        "severityMax": 3,
+        "personas": [
+          "aisha-firstgen-anxious"
+        ],
+        "scenarios": [
+          "find-a-club"
+        ]
+      },
+      {
+        "fingerprint": "94527b529e80",
+        "title": "Trust / privacy worry on /start — “Next”",
+        "severityMax": 3,
+        "personas": [
+          "marcus-senior-lowtech"
+        ],
+        "scenarios": [
+          "first-open-decide"
+        ]
+      },
+      {
+        "fingerprint": "fe75fc995a42",
+        "title": "Onboarding friction on /start — “e.g. Computer Science”",
+        "severityMax": 2,
+        "personas": [
+          "minji-freshman-17"
+        ],
+        "scenarios": [
+          "cold-start-hangout"
+        ]
+      },
+      {
+        "fingerprint": "919841c6195c",
+        "title": "Missing / empty content on /orgs/:id?tab=events — “Events”",
+        "severityMax": 2,
+        "personas": [
+          "aisha-firstgen-anxious"
+        ],
+        "scenarios": [
+          "find-a-club"
+        ]
+      },
+      {
+        "fingerprint": "6de492d10b73",
+        "title": "Missing / empty content on /orgs/:id?tab=members — “Members”",
+        "severityMax": 2,
+        "personas": [
+          "aisha-firstgen-anxious"
+        ],
+        "scenarios": [
+          "find-a-club"
+        ]
+      },
+      {
+        "fingerprint": "bbab628dceb5",
+        "title": "Hard to find on /community?tab=opportunities — “Show more (7)”",
+        "severityMax": 2,
+        "personas": [
+          "aisha-firstgen-anxious"
+        ],
+        "scenarios": [
+          "find-a-club"
+        ]
+      },
+      {
+        "fingerprint": "68c8e67b425d",
+        "title": "Missing / empty content on /orgs/:id — “About”",
+        "severityMax": 2,
+        "personas": [
+          "aisha-firstgen-anxious"
+        ],
+        "scenarios": [
+          "find-a-club"
+        ]
+      },
+      {
+        "fingerprint": "c001ec879684",
+        "title": "Trust / privacy worry on /welcome",
+        "severityMax": 2,
+        "personas": [
+          "marcus-senior-lowtech"
+        ],
+        "scenarios": [
+          "first-open-decide"
+        ]
+      },
+      {
+        "fingerprint": "c839eaceb32e",
+        "title": "Unclear wording on /rides — “Find a ride”",
+        "severityMax": 2,
+        "personas": [
+          "seoyeon-exchange-korean"
+        ],
+        "scenarios": [
+          "ride-sfo-thanksgiving"
+        ]
+      },
+      {
+        "fingerprint": "e53f5b5080fe",
+        "title": "Unclear wording on /start",
+        "severityMax": 1,
+        "personas": [
+          "minji-freshman-17"
+        ],
+        "scenarios": [
+          "cold-start-hangout"
+        ]
+      },
+      {
+        "fingerprint": "f4cafbbabf74",
+        "title": "No reason to stay on /community?tab=opportunities — “For you”",
+        "severityMax": 1,
+        "personas": [
+          "aisha-firstgen-anxious"
+        ],
+        "scenarios": [
+          "find-a-club"
+        ]
+      },
+      {
+        "fingerprint": "52228e162ff2",
+        "title": "Unclear wording on /community?tab=opportunities — “Clubs”",
+        "severityMax": 1,
+        "personas": [
+          "aisha-firstgen-anxious"
+        ],
+        "scenarios": [
+          "find-a-club"
+        ]
+      },
+      {
+        "fingerprint": "892104e2a76a",
+        "title": "Unclear wording on /community?tab=opportunities — “Associations”",
+        "severityMax": 1,
+        "personas": [
+          "aisha-firstgen-anxious"
+        ],
+        "scenarios": [
+          "find-a-club"
+        ]
+      },
+      {
+        "fingerprint": "bc1b938d7552",
+        "title": "Missing / empty content on /community?tab=opportunities — “🔬 Syracuse iSchool ASSURE-REU: Text Ana”",
+        "severityMax": 1,
+        "personas": [
+          "priya-phd-desktop"
+        ],
+        "scenarios": [
+          "internship-near-berkeley"
+        ]
+      },
+      {
+        "fingerprint": "5a069545d718",
+        "title": "No reason to stay on /opportunities/:id — “Start a prep crew e.g. Interview prep · ”",
+        "severityMax": 1,
+        "personas": [
+          "priya-phd-desktop"
+        ],
+        "scenarios": [
+          "internship-near-berkeley"
+        ]
+      },
+      {
+        "fingerprint": "0f09a767aea4",
+        "title": "Missing / empty content on /opportunities/:id — “Official source Lyft careers Last verifi”",
+        "severityMax": 1,
+        "personas": [
+          "priya-phd-desktop"
+        ],
+        "scenarios": [
+          "internship-near-berkeley"
+        ]
+      },
+      {
+        "fingerprint": "5b3363c14dd9",
+        "title": "No reason to stay on / — “I'm in”",
+        "severityMax": 1,
+        "personas": [
+          "diego-transfer-commuter"
+        ],
+        "scenarios": [
+          "lunch-today"
+        ]
+      },
+      {
+        "fingerprint": "44271af15761",
+        "title": "Bug on /chats/:id — “Switch to the classic design”",
+        "severityMax": 1,
+        "personas": [
+          "diego-transfer-commuter"
+        ],
+        "scenarios": [
+          "lunch-today"
+        ]
+      },
+      {
+        "fingerprint": "39327c8d79c3",
+        "title": "Bug on /rides — “My rides”",
+        "severityMax": 1,
+        "personas": [
+          "seoyeon-exchange-korean"
+        ],
+        "scenarios": [
+          "ride-sfo-thanksgiving"
+        ]
+      },
+      {
+        "fingerprint": "1ffc6e246d69",
+        "title": "Unclear wording on /timetable — “MATH 51 Calculus I (formerly MATH 1A) (L”",
+        "severityMax": 1,
+        "personas": [
+          "minji-freshman-17"
+        ],
+        "scenarios": [
+          "timetable-add-classes"
+        ]
+      }
+    ],
+    "notRetested": [],
+    "stillPresent": [
+      {
+        "fingerprint": "97dda824b2fb",
+        "title": "Onboarding friction on /start",
+        "severityMax": 2,
+        "personas": [
+          "minji-freshman-17",
+          "marcus-senior-lowtech"
+        ],
+        "scenarios": [
+          "cold-start-hangout",
+          "first-open-decide"
+        ],
+        "severityMaxBefore": 2
+      },
+      {
+        "fingerprint": "f634db6cc171",
+        "title": "Confusing UI on /timetable — “MATH 51 Calculus I (formerly MATH 1A) (L”",
+        "severityMax": 2,
+        "personas": [
+          "minji-freshman-17"
+        ],
+        "scenarios": [
+          "timetable-add-classes"
+        ],
+        "severityMaxBefore": 1
+      },
+      {
+        "fingerprint": "e2f05b7465c0",
+        "title": "Trust / privacy worry on /start",
+        "severityMax": 2,
+        "personas": [
+          "marcus-senior-lowtech"
+        ],
+        "scenarios": [
+          "first-open-decide"
+        ],
+        "severityMaxBefore": 2
+      },
+      {
+        "fingerprint": "51aeaa92565b",
+        "title": "Confusing UI on /chats — “Direct”",
+        "severityMax": 2,
+        "personas": [
+          "diego-transfer-commuter"
+        ],
+        "scenarios": [
+          "lunch-today"
+        ],
+        "severityMaxBefore": 2
+      },
+      {
+        "fingerprint": "e8b25109cb47",
+        "title": "Confusing UI on /community?tab=opportunities — “🤖 Machine Learning at Berkeley Undergra”",
+        "severityMax": 1,
+        "personas": [
+          "aisha-firstgen-anxious"
+        ],
+        "scenarios": [
+          "find-a-club"
+        ],
+        "severityMaxBefore": 1
+      },
+      {
+        "fingerprint": "4d28c4b04f0f",
+        "title": "No reason to stay on /",
+        "severityMax": 1,
+        "personas": [
+          "priya-phd-desktop"
+        ],
+        "scenarios": [
+          "internship-near-berkeley"
+        ],
+        "severityMaxBefore": 2
+      },
+      {
+        "fingerprint": "f21a384a224b",
+        "title": "Unclear wording on /profile — “Find a class to watch”",
+        "severityMax": 1,
+        "personas": [
+          "seoyeon-exchange-korean"
+        ],
+        "scenarios": [
+          "ride-sfo-thanksgiving"
+        ],
+        "severityMaxBefore": 1
+      },
+      {
+        "fingerprint": "a8499911c15f",
+        "title": "Slow on /timetable — “Add lecture only”",
+        "severityMax": 1,
+        "personas": [
+          "minji-freshman-17"
+        ],
+        "scenarios": [
+          "timetable-add-classes"
+        ],
+        "severityMaxBefore": 2
+      }
+    ],
+    "new": [
+      {
+        "fingerprint": "f0b0e987903d",
+        "title": "Hard to find on /community — “Campus”",
+        "severityMax": 2,
+        "personas": [
+          "aisha-firstgen-anxious",
+          "priya-phd-desktop"
+        ],
+        "scenarios": [
+          "find-a-club",
+          "internship-near-berkeley"
+        ]
+      },
+      {
+        "fingerprint": "30bfb5a984ca",
+        "title": "Missing / empty content on / — “People”",
+        "severityMax": 3,
+        "personas": [
+          "minji-freshman-17"
+        ],
+        "scenarios": [
+          "cold-start-hangout"
+        ]
+      },
+      {
+        "fingerprint": "ab8767625de9",
+        "title": "Confusing UI on /orgs/:id — “Get updates”",
+        "severityMax": 3,
+        "personas": [
+          "aisha-firstgen-anxious"
+        ],
+        "scenarios": [
+          "find-a-club"
+        ]
+      },
+      {
+        "fingerprint": "8a0bf61f729f",
+        "title": "Onboarding friction on /start — “Skip”",
+        "severityMax": 2,
+        "personas": [
+          "minji-freshman-17"
+        ],
+        "scenarios": [
+          "cold-start-hangout"
+        ]
+      },
+      {
+        "fingerprint": "acb4cc579834",
+        "title": "Missing / empty content on / — “🐱 You going”",
+        "severityMax": 2,
+        "personas": [
+          "minji-freshman-17"
+        ],
+        "scenarios": [
+          "cold-start-hangout"
+        ]
+      },
+      {
+        "fingerprint": "706b176473be",
+        "title": "Hard to find on /discover — “Teams”",
+        "severityMax": 2,
+        "personas": [
+          "aisha-firstgen-anxious"
+        ],
+        "scenarios": [
+          "find-a-club"
+        ]
+      },
+      {
+        "fingerprint": "3b5ac628f93c",
+        "title": "Missing / empty content on /community?tab=opportunities — “📊 Berkeley Consulting Undergraduate man”",
+        "severityMax": 2,
+        "personas": [
+          "aisha-firstgen-anxious"
+        ],
+        "scenarios": [
+          "find-a-club"
+        ]
+      },
+      {
+        "fingerprint": "518c68aff2a6",
+        "title": "Confusing UI on /welcome",
+        "severityMax": 2,
+        "personas": [
+          "marcus-senior-lowtech"
+        ],
+        "scenarios": [
+          "first-open-decide"
+        ]
+      },
+      {
+        "fingerprint": "d9636172c04a",
+        "title": "Hard to find on / — “Discover”",
+        "severityMax": 2,
+        "personas": [
+          "marcus-senior-lowtech"
+        ],
+        "scenarios": [
+          "first-open-decide"
+        ]
+      },
+      {
+        "fingerprint": "b9d1ee526d80",
+        "title": "Hard to find on /discover — “Discover”",
+        "severityMax": 2,
+        "personas": [
+          "marcus-senior-lowtech"
+        ],
+        "scenarios": [
+          "first-open-decide"
+        ]
+      },
+      {
+        "fingerprint": "43ed8165cecc",
+        "title": "Hard to find on /community?tab=opportunities — “Browse”",
+        "severityMax": 2,
+        "personas": [
+          "priya-phd-desktop"
+        ],
+        "scenarios": [
+          "internship-near-berkeley"
+        ]
+      },
+      {
+        "fingerprint": "6d922472ea26",
+        "title": "Missing / empty content on /opportunities/:id — “Details”",
+        "severityMax": 2,
+        "personas": [
+          "priya-phd-desktop"
+        ],
+        "scenarios": [
+          "internship-near-berkeley"
+        ]
+      },
+      {
+        "fingerprint": "8551c6209604",
+        "title": "Confusing UI on / — “Go together”",
+        "severityMax": 1,
+        "personas": [
+          "aisha-firstgen-anxious"
+        ],
+        "scenarios": [
+          "find-a-club"
+        ]
+      },
+      {
+        "fingerprint": "942b79d6055c",
+        "title": "Trust / privacy worry on /community?tab=opportunities — “🥾 Cal Hiking and Outdoor Society (CHAOS”",
+        "severityMax": 1,
+        "personas": [
+          "aisha-firstgen-anxious"
+        ],
+        "scenarios": [
+          "find-a-club"
+        ]
+      },
+      {
+        "fingerprint": "f3a9ac15eb35",
+        "title": "Onboarding friction on /start — “Back”",
+        "severityMax": 1,
+        "personas": [
+          "marcus-senior-lowtech"
+        ],
+        "scenarios": [
+          "first-open-decide"
+        ]
+      },
+      {
+        "fingerprint": "f98a48434400",
+        "title": "No reason to stay on /start — “🧭 Upperclassmen who’ve been there”",
+        "severityMax": 1,
+        "personas": [
+          "marcus-senior-lowtech"
+        ],
+        "scenarios": [
+          "first-open-decide"
+        ]
+      },
+      {
+        "fingerprint": "c4d7ce393786",
+        "title": "Bug on /community?tab=opportunities — “Location”",
+        "severityMax": 1,
+        "personas": [
+          "priya-phd-desktop"
+        ],
+        "scenarios": [
+          "internship-near-berkeley"
+        ]
+      },
+      {
+        "fingerprint": "ca00bd1ad3db",
+        "title": "Confusing UI on /",
+        "severityMax": 1,
+        "personas": [
+          "diego-transfer-commuter"
+        ],
+        "scenarios": [
+          "lunch-today"
+        ]
+      },
+      {
+        "fingerprint": "b94b701b00c1",
+        "title": "Unclear wording on /profile — “My rides Airports, groceries, SF, Tahoe”",
+        "severityMax": 1,
+        "personas": [
+          "seoyeon-exchange-korean"
+        ],
+        "scenarios": [
+          "ride-sfo-thanksgiving"
+        ]
+      },
+      {
+        "fingerprint": "dcaa93c37b46",
+        "title": "Unclear wording on /chats/:id — “🚕 SFO · Wed Nov 25 8:30am 멤버 2명”",
+        "severityMax": 1,
+        "personas": [
+          "seoyeon-exchange-korean"
+        ],
+        "scenarios": [
+          "ride-sfo-thanksgiving"
+        ]
+      },
+      {
+        "fingerprint": "a3de046c1163",
+        "title": "Hard to find on / — “Add classes”",
+        "severityMax": 1,
+        "personas": [
+          "minji-freshman-17"
+        ],
+        "scenarios": [
+          "timetable-add-classes"
+        ]
+      }
+    ]
+  }
+}

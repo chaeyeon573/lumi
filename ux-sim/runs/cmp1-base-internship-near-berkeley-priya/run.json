@@ -1,0 +1,1593 @@
+{
+  "schemaVersion": 1,
+  "runId": "cmp1-base-internship-near-berkeley-priya",
+  "status": "finished",
+  "createdAt": "2026-11-02T18:34:06.256Z",
+  "finishedAt": "2026-11-02T18:35:13.826Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "persona": {
+    "id": "priya-phd-desktop",
+    "name": "Priya",
+    "age": 26,
+    "year": "Second-year PhD student",
+    "school": "UC Berkeley",
+    "major": "EECS (systems)",
+    "account": {
+      "$comment": "Profile for auth: fresh — the harness registers this account through the app's own sign-up API (lib/account.mjs). nickname defaults to name, birthYear to this year − age.",
+      "nickname": "Priya",
+      "department": "EECS",
+      "yearInSchool": 6,
+      "role": "graduate",
+      "goals": [
+        "scholarship",
+        "friends"
+      ],
+      "interests": [
+        "coffee",
+        "research"
+      ],
+      "purposes": [
+        "networking",
+        "friend"
+      ],
+      "lookingFor": [
+        "friend",
+        "mentor"
+      ]
+    },
+    "purpose": "Find fellowships, funding deadlines and maybe people outside her lab — on her laptop between experiments.",
+    "techFamiliarity": "high",
+    "readingDepth": 0.8,
+    "language": {
+      "preferred": "en",
+      "englishUiComfort": "high",
+      "notes": "Fluent English."
+    },
+    "device": {
+      "type": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en-US"
+    },
+    "patience": {
+      "maxSteps": 40,
+      "frustrationThreshold": 5,
+      "confusionTolerance": 3,
+      "timeBudgetSec": 420
+    },
+    "backstory": "I live in my lab. I'd like to know about fellowships and travel grants before the deadline instead of hearing about them a week late, and honestly it would be nice to meet people who aren't in my research group. I'm allergic to apps that treat me like an undergrad.",
+    "quitsWhen": [
+      "Everything is for undergrads",
+      "Deadlines that already passed",
+      "Mobile-only layout stretched on my laptop",
+      "Gimmicky social features"
+    ],
+    "voice": "Precise, a little dry. Notices sloppy details. 'This deadline is wrong', 'Why is this here?'"
+  },
+  "scenario": {
+    "id": "internship-near-berkeley",
+    "title": "Find an internship near Berkeley",
+    "goal": "You need a paid internship (summer or part-time) somewhere near Berkeley / the Bay Area. Use the app to find one that looks real and open, and open its details so you know how to apply.",
+    "startUrl": "/",
+    "setup": {
+      "auth": "fresh",
+      "school": "berkeley"
+    },
+    "success": {
+      "description": "An internship listing's detail page is open (reached by the persona — the run starts on /).",
+      "all": [
+        {
+          "urlMatches": "^/opportunities/[^/?]+"
+        },
+        {
+          "textMatches": "\\bintern(ship)?s?\\b"
+        }
+      ]
+    }
+  },
+  "target": {
+    "mode": "local",
+    "baseUrl": "http://localhost:35167",
+    "stack": {
+      "catalog": {
+        "kind": "cached",
+        "source": "berkeley course adapter (server/sources/courses.ts) via server/scripts/fetch-courses.ts",
+        "schoolId": "s_berkeley",
+        "courses": 6588,
+        "terms": [
+          "Fall 2026",
+          "Spring 2027"
+        ],
+        "fetchedAt": "2026-11-02T06:52:47.693Z"
+      },
+      "events": {
+        "kind": "cached",
+        "source": "https://heetz.up.railway.app POST /api/auth/demo + POST /api/bootstrap (read-only), worker-fetched opportunities",
+        "baseUrl": "https://heetz.up.railway.app",
+        "fetchedAt": "2026-11-02T07:25:30.398Z",
+        "stamp": "fa9ccb47",
+        "opportunities": 1119,
+        "updatedExisting": 123,
+        "byType": {
+          "lab": 38,
+          "scholarship": 62,
+          "internship": 454,
+          "hackathon": 102,
+          "event": 146,
+          "exchange": 316,
+          "startup": 1
+        },
+        "eventsThisWeek": 103,
+        "freeFoodThisWeek": 7
+      },
+      "port": 35167,
+      "worktree": "/home/user/lumi-base",
+      "commit": "7af1c8ef2cfdca1f25394e13a5e1f34c845f25f1",
+      "stamp": "7af1c8ef2cfd",
+      "dirty": false,
+      "dataFile": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/stack/db.json",
+      "template": "ux-sim/stack/templates/lumi-base-7af1c8ef2cfd-catf079553d-evfa9ccb47.json",
+      "log": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/stack/server.log",
+      "owned": true,
+      "autoreply": false
+    },
+    "liveGuard": {
+      "enabled": false
+    }
+  },
+  "auth": {
+    "mode": "fresh",
+    "userId": "u_7bx9qrlfac",
+    "email": "priya.riyale4d@berkeley.edu",
+    "sample": false,
+    "emailVerified": true,
+    "profile": {
+      "nickname": "Priya",
+      "birthYear": 2000,
+      "department": "EECS",
+      "yearInSchool": 6,
+      "role": "graduate",
+      "year": 2026,
+      "gender": "private",
+      "goals": [
+        "scholarship",
+        "friends"
+      ],
+      "interests": [
+        "coffee",
+        "research"
+      ],
+      "purposes": [
+        "networking",
+        "friend"
+      ],
+      "lookingFor": [
+        "friend",
+        "mentor"
+      ],
+      "likes": "",
+      "bio": "",
+      "language": "en",
+      "appLanguage": null,
+      "schoolId": "s_berkeley"
+    },
+    "createdVia": "POST /api/schools/send-code → /api/schools/verify-code → /api/auth/register"
+  },
+  "harness": {
+    "hash": "6f174347960d",
+    "commit": "29aa633114d3a6233c4828a1d8cf59485768bd2a",
+    "dirty": false
+  },
+  "environment": {
+    "summary": "Local stack: this worktree's server + built web app, fresh seeded FileStore per run, no secrets, no worker.",
+    "knownLimits": [
+      "Dining menus and RSF gym crowd levels need live campus sources (the local stack runs with CAMPUS_LIVE=0) — empty or missing data there is not a UX bug.",
+      "AI features (Ask Lumi, AI profile draft on /start, conversation starters) need an OpenAI key; none is configured locally.",
+      "Course catalog is the real Berkeley Class Schedule (6588 courses, Fall 2026 + Spring 2027), fetched 2026-11-02 with the worker's adapter. Seat counts and very recent changes may differ from live.",
+      "Campus events, free food, internships, hackathons and scholarships are a read-only snapshot of live (1119 real items, 103 events this week, taken 2026-11-02 07:25 UTC) plus the CSV calendar. Nothing new appears during the run; Q&A and reviews are empty.",
+      "No e-mail is sent: the sign-up / sign-in code is shown on screen in the hint (live sends a real e-mail).",
+      "Real-time updates (SSE) work locally; other people never reply unless the stack was started with --autoreply.",
+      "Signed in as a brand-new real (non-sample, e-mail-verified) account made for this run. Other students exist only if the scenario seeds peers (local fixtures); sample profiles are hidden from real accounts, as on live."
+    ],
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "locale": "en-US",
+    "timezone": "America/Los_Angeles",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "browserVersion": "153.0.8010.12"
+  },
+  "limits": {
+    "maxSteps": 40,
+    "frustrationThreshold": 5,
+    "confusionTolerance": 3,
+    "timeBudgetSec": 420,
+    "weights": {
+      "failed": 1,
+      "no_effect": 1,
+      "repeated": 0.75,
+      "backtrack": 0.5,
+      "mismatch": 0.5
+    }
+  },
+  "counters": {
+    "actions": 6,
+    "frustration": 1.5,
+    "confusionNotes": 1,
+    "simTimeSec": 89.24
+  },
+  "steps": [
+    {
+      "index": 0,
+      "at": "2026-11-02T18:34:08.701Z",
+      "kind": "start",
+      "command": "start",
+      "args": {
+        "persona": "priya-phd-desktop",
+        "scenario": "internship-near-berkeley",
+        "auth": "fresh"
+      },
+      "latencyMs": 1749,
+      "urlBefore": null,
+      "setupNotes": [
+        "signed in as a brand-new verified account priya.riyale4d@berkeley.edu (Priya, EECS, born 2000)"
+      ],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:35167/",
+      "route": "/",
+      "screenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/000-start.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/000-start-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 12,
+        "newElementIds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "elements": [
+          "[1]<button> Filters",
+          "[2]<button> Notifications",
+          "[3]<button> Messages",
+          "[4]<button> Me",
+          "[5]<button> Invite friends",
+          "[6]<a selected> People",
+          "[7]<a> Discover",
+          "[8]<button> Create",
+          "[9]<a> Campus",
+          "[10]<a> Me",
+          "[11]<button> Feedback",
+          "[12]<button> Switch to the classic design"
+        ],
+        "text": "lumi | . | 👋 | Students from your campus show up here | Bring your floor or your class along. | Invite friends | People | Discover | Campus | Me | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "5b53f52af8dba0dd80dfcc1635bbbd617480a96a",
+        "simReadSec": 5
+      },
+      "checks": {
+        "smallTapTargets": [],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 768
+      }
+    },
+    {
+      "index": 1,
+      "at": "2026-11-02T18:34:19.321Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "feeling": "frustrated",
+        "thought": "A phone-width column in the middle of my 1440 screen with black bars on both sides. And the first thing it asks is to invite my floor. I don't have a floor. Not promising.",
+        "friction": "motivation",
+        "severity": "2",
+        "wish": "a proper desktop layout and something useful on the first screen instead of an empty invite prompt"
+      },
+      "about": 0,
+      "feeling": "frustrated",
+      "thought": "A phone-width column in the middle of my 1440 screen with black bars on both sides. And the first thing it asks is to invite my floor. I don't have a floor. Not promising.",
+      "urlAfter": "http://localhost:35167/",
+      "route": "/",
+      "frictionId": "f1"
+    },
+    {
+      "index": 2,
+      "at": "2026-11-02T18:34:21.866Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 9,
+        "expect": "campus resources: maybe careers, internships, deadlines",
+        "confidence": "0.5"
+      },
+      "urlBefore": "http://localhost:35167/",
+      "target": {
+        "id": 9,
+        "tag": "a",
+        "role": "link",
+        "name": "Campus",
+        "href": "/community",
+        "box": {
+          "x": 763,
+          "y": 836,
+          "w": 86,
+          "h": 64
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "campus resources: maybe careers, internships, deadlines",
+        "confidence": 0.5
+      },
+      "latencyMs": 1149,
+      "tapPoint": {
+        "x": 806,
+        "y": 868,
+        "centre": true
+      },
+      "actionNumber": 1,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:35167/community",
+      "route": "/community",
+      "screenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/002-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/002-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 23,
+        "newElementIds": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "elements": [
+          "[13]<button> Write",
+          "[2]<button> Notifications",
+          "[3]<button> Messages",
+          "[4]<button> Me",
+          "[14]<button> Feed",
+          "[15]<button> Browse",
+          "[16]<button> Lunch",
+          "[17]<button> A nap",
+          "[18]<button> Café",
+          "[19]<button> Workout",
+          "[20]<button> Meet someone new",
+          "[21]<button> Invite your floor",
+          "[22]<button> Invite your class",
+          "[23]<button> See all",
+          "[24]<button> FREE FOOD · TODAY · 13:00 Tenants’ Rights Workshop MLK bNorth, suite 82D",
+          "[25]<button> Go together",
+          "[6]<a> People",
+          "[7]<a> Discover",
+          "[8]<button> Create",
+          "[9]<a selected> Campus",
+          "[10]<a> Me",
+          "[11]<button> Feedback",
+          "[12]<button> Switch to the classic design"
+        ],
+        "text": "lumi | . | Feed | Browse | Today's question · 1 tap | If you suddenly had two free hours today? | Lunch | A nap | Café | Workout | Meet someone new | Tap one — results show once 5 people at your school answer. | Feed is quiet — bring your people | Invite your floor or your class. Their posts show up here first. | Invite your floor | Invite your class | Meanwhile, this week | See all | Free food · Today · 13:00 | Tenants’ Rights Workshop | MLK bNorth, suite 82D | Go together | People | Discover | Campus | Me | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "bfa6c26cc43f2ed6041afd16a9e0304b5aa3dad7",
+        "simReadSec": 13.7
+      },
+      "checks": {
+        "smallTapTargets": [],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 768
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "Campus is a social feed: a 'nap or café' poll, invite prompts and a free-food workshop. No careers or deadlines visible.",
+        "feeling": "bored",
+        "note": "Today's question: nap or café. Right. 'Browse' might be the actual directory; I'll try that before writing this off."
+      }
+    },
+    {
+      "index": 3,
+      "at": "2026-11-02T18:34:28.663Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "Campus is a social feed: a 'nap or café' poll, invite prompts and a free-food workshop. No careers or deadlines visible.",
+        "feeling": "bored",
+        "thought": "Today's question: nap or café. Right. 'Browse' might be the actual directory; I'll try that before writing this off."
+      },
+      "about": 2,
+      "feeling": "bored",
+      "thought": "Today's question: nap or café. Right. 'Browse' might be the actual directory; I'll try that before writing this off.",
+      "urlAfter": "http://localhost:35167/community",
+      "route": "/community"
+    },
+    {
+      "index": 4,
+      "at": "2026-11-02T18:34:28.840Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 15,
+        "expect": "a list of categories, maybe jobs/internships or deadlines",
+        "confidence": "0.4"
+      },
+      "urlBefore": "http://localhost:35167/community",
+      "target": {
+        "id": 15,
+        "tag": "button",
+        "role": "button",
+        "name": "Browse",
+        "box": {
+          "x": 587,
+          "y": 64,
+          "w": 58,
+          "h": 44
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "a list of categories, maybe jobs/internships or deadlines",
+        "confidence": 0.4
+      },
+      "latencyMs": 1740,
+      "tapPoint": {
+        "x": 615.7,
+        "y": 86,
+        "centre": true
+      },
+      "actionNumber": 2,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:35167/community?tab=opportunities",
+      "route": "/community?tab=opportunities",
+      "screenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/004-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/004-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 23,
+        "newElementIds": [],
+        "elements": [
+          "[13]<button> Write",
+          "[2]<button> Notifications",
+          "[3]<button> Messages",
+          "[4]<button> Me",
+          "[14]<button> Feed",
+          "[15]<button> Browse",
+          "[16]<button> Lunch",
+          "[17]<button> A nap",
+          "[18]<button> Café",
+          "[19]<button> Workout",
+          "[20]<button> Meet someone new",
+          "[21]<button> Invite your floor",
+          "[22]<button> Invite your class",
+          "[23]<button> See all",
+          "[24]<button> FREE FOOD · TODAY · 13:00 Tenants’ Rights Workshop MLK bNorth, suite 82D",
+          "[25]<button> Go together",
+          "[6]<a> People",
+          "[7]<a> Discover",
+          "[8]<button> Create",
+          "[9]<a selected> Campus",
+          "[10]<a> Me",
+          "[11]<button> Feedback",
+          "[12]<button> Switch to the classic design"
+        ],
+        "text": "lumi | . | Feed | Browse | Today's question · 1 tap | If you suddenly had two free hours today? | Lunch | A nap | Café | Workout | Meet someone new | Tap one — results show once 5 people at your school answer. | Feed is quiet — bring your people | Invite your floor or your class. Their posts show up here first. | Invite your floor | Invite your class | Meanwhile, this week | See all | Free food · Today · 13:00 | Tenants’ Rights Workshop | MLK bNorth, suite 82D | Go together | People | Discover | Campus | Me | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "8651f0c59ec9c80f83c1e5fec5b97d7a9411c53f",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 768
+      },
+      "signals": [],
+      "frustrationAfter": 0.5,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Browse shows a list with chips For you / Clubs / Classes / Internships / Research; top two are PhD ML intern roles at Lyft (SF) and Waymo (Mountain View).",
+        "feeling": "curious",
+        "note": "OK, this is actually relevant. 'PhD Machine Learning Software Engineer Intern' at Lyft in SF. Someone thought about grad students."
+      }
+    },
+    {
+      "index": 5,
+      "at": "2026-11-02T18:34:37.007Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Browse shows a list with chips For you / Clubs / Classes / Internships / Research; top two are PhD ML intern roles at Lyft (SF) and Waymo (Mountain View).",
+        "feeling": "curious",
+        "thought": "OK, this is actually relevant. 'PhD Machine Learning Software Engineer Intern' at Lyft in SF. Someone thought about grad students."
+      },
+      "about": 4,
+      "feeling": "curious",
+      "thought": "OK, this is actually relevant. 'PhD Machine Learning Software Engineer Intern' at Lyft in SF. Someone thought about grad students.",
+      "urlAfter": "http://localhost:35167/community?tab=opportunities",
+      "route": "/community?tab=opportunities"
+    },
+    {
+      "index": 6,
+      "at": "2026-11-02T18:34:37.280Z",
+      "kind": "observe",
+      "command": "observe",
+      "args": {},
+      "urlBefore": "http://localhost:35167/community?tab=opportunities",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:35167/community?tab=opportunities",
+      "route": "/community?tab=opportunities",
+      "screenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/006-observe.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/006-observe-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 84,
+        "newElementIds": [
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97
+        ],
+        "elements": [
+          "[2]<button> Notifications",
+          "[3]<button> Messages",
+          "[4]<button> Me",
+          "[14]<button> Feed",
+          "[15]<button> Browse",
+          "[26]<button> For you",
+          "[27]<button> Clubs",
+          "[28]<button> Classes",
+          "[29]<button> Internships",
+          "[30]<button> Research & TA",
+          "[31]<button> Funding",
+          "[32]<button> Hackathons",
+          "[33]<button> Events",
+          "[34]<button> Free food",
+          "[35]<button> Startups",
+          "[39]<button> 💼 PhD Machine Learning Software Engineer Intern (Summer 2027) Lyft · San Francisco, CA Po",
+          "[40]<button> Save listing",
+          "[41]<button> 💼 2027 Summer Intern, MS/PhD, Software Engineer, Simulation Evaluation ML Model Waymo · M",
+          "[42]<button> Save listing",
+          "[43]<button> 💡 Hack the Feed: Creator Tools Hackathon Oriane, GMI Cloud & Lovable Nov 6 Hackathons & c",
+          "[44]<button> Save listing",
+          "[45]<button> 🔬 Syracuse iSchool ASSURE-REU: Text Analytics for Social Scientists 2027 Syracuse Univers",
+          "[46]<button> Save listing",
+          "[47]<button> 🎓 Society of Women Engineers (SWE) Collegiate/Graduate Scholarships 2027–28 Society of Wo",
+          "[48]<button> Save listing",
+          "[6]<a> People",
+          "[7]<a> Discover",
+          "[8]<button> Create",
+          "[9]<a selected> Campus",
+          "[10]<a> Me",
+          "[11]<button> Feedback",
+          "[12]<button> Switch to the classic design",
+          "[36]<button> Study abroad  (off screen)",
+          "[37]<button> Saved  (off screen)",
+          "[38]<button> 🚗 Rides  (off screen)",
+          "[49]<button> 💼 [2027] Data Scientist - PhD Intern Roblox · San Mateo, CA, United States Posted 2d ago   ↓ below",
+          "[50]<button> Save listing  ↓ below",
+          "[51]<button> 💡 SF Frontier Hackathon: Build your Autonomous Code Factory Obvious Nov 13 Hackathons & c  ↓ below",
+          "[52]<button> Save listing  ↓ below",
+          "[53]<button> 💡 Remote Control AI avacado D-3 Hackathons & contests ✨ Closes in 3 days  ↓ below",
+          "[54]<button> Save listing  ↓ below",
+          "[55]<button> 🎓 DOE Office of Science Graduate Student Research (SCGSR) — thesis research at a national  ↓ below",
+          "[56]<button> Save listing  ↓ below",
+          "[57]<button> 💼 2027 Summer Intern, MS/PhD, Software Engineer, Sys Intel & Machine Learning Waymo · Mou  ↓ below",
+          "[58]<button> Save listing  ↓ below",
+          "[59]<button> 💼 Software Engineer (Machine Learning) Intern (Summer 2027) Affirm · San Francisco, Calif  ↓ below",
+          "[60]<button> Save listing  ↓ below",
+          "[61]<button> 💡 Neural Storm JNTUH D-2 Hackathons & contests ✨ Closes in 2 days  ↓ below",
+          "[62]<button> Save listing  ↓ below",
+          "[63]<button> 🔬 USC Institute for Creative Technologies REU 2027 USC Institute for Creative Technologie  ↓ below",
+          "[64]<button> Save listing  ↓ below",
+          "[65]<button> 💡 Syntax Summit Student Organization D-73 Hackathons & contests  ↓ below",
+          "[66]<button> Save listing  ↓ below",
+          "[67]<button> 💼 2027 Summer Intern, MS/PhD, Software Engineer, Eval Data Infra Waymo · Mountain View, C  ↓ below",
+          "[68]<button> Save listing  ↓ below",
+          "[69]<button> 🎪 EECS Colloquium: Quantum Interconnects and Modularity via Waveguide QED Electrical Engi  ↓ below",
+          "[70]<button> Save listing  ↓ below",
+          "[71]<button> 💡 DeveloperWeek 2027 Hackathon DevNetwork D-101 Hackathons & contests  ↓ below",
+          "[72]<button> Save listing  ↓ below",
+          "[73]<button> 🎓 Jane Street Graduate Research Fellowship — 2027 Jane Street D-12 Scholarships ✨ Closes   ↓ below",
+          "[74]<button> Save listing  ↓ below",
+          "[75]<button> 💼 2027 Summer Intern, MS/PhD, Software Engineer, ML Frameworks and Efficiency Waymo · Mou  ↓ below",
+          "[76]<button> Save listing  ↓ below",
+          "[77]<button> 💼 2027 Summer Internship - MS/PhD Data Scientist, Proprietary Research Point72 · New York  ↓ below",
+          "[78]<button> Save listing  ↓ below",
+          "[79]<button> 💡 Meta VR Start Developer Competition 2026 Meta D-16 Hackathons & contests  ↓ below",
+          "[80]<button> Save listing  ↓ below",
+          "[81]<button> 💡 Mathematics for systems security Software Engineering Club (DEV) D-13 Hackathons & cont  ↓ below",
+          "[82]<button> Save listing  ↓ below",
+          "[83]<button> 🔬 Berkeley Lab Computing Sciences summer student positions (Summer 2027) Lawrence Berkele  ↓ below",
+          "[84]<button> Save listing  ↓ below",
+          "[85]<button> 💼 2027 Summer Intern, MS/PhD, Sensor Performance Engineer Intern Waymo · Mountain View, C  ↓ below"
+        ],
+        "text": "lumi | . | Feed | Browse | For you | Clubs | Classes | Internships | Research & TA | Funding | Hackathons | Events | Free food | Startups | Clubs, listings and events picked for you | 💼 | PhD Machine Learning Software Engineer Intern (Summer 2027) | Lyft | · San Francisco, CA | Posted 13d ago | Data & AI | ✨ | Fits your major (EECS) | 💼 | 2027 Summer Intern, MS/PhD, Software Engineer, Simulation Evaluation ML Model | Waymo | · Mountain View, California, USA | Posted 11d ago | Data & AI | ✨ | Fits your major (EECS) | 💡 | Hack the Feed: Creator Tools Hackathon | Oriane, GMI Cloud & Lovable | Nov 6 | Hackathons & contests | ✨ | In person, Bay Area | 🔬 | Syracuse iSchool ASSURE-REU: Text Analytics for Social Scientists 2027 | Syracuse University School of Information Studies (NSF/DoD) | D-6 | Research / RA | ✨ | Matches your interest in research | 🎓 | Society of Women Engineers (SWE) Collegiate/Graduate Scholarships 2027–28 | D-98 | Scholarships | 💼 | 2027 Summer Intern, MS/PhD, Software/ML Engineer, Simulation | People | Discover | Campus | Me | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 3019
+        },
+        "fingerprint": "32811151f95e8d26ef6193a9b9a2a3cb7e4cebb1",
+        "simReadSec": 29.1
+      },
+      "checks": {
+        "smallTapTargets": [],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 768
+      }
+    },
+    {
+      "index": 7,
+      "at": "2026-11-02T18:34:42.150Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "feeling": "neutral",
+        "thought": "Mixed bag. Lyft and Waymo PhD interns are great, but why is a Syracuse REU — an undergrad program — 'matching my interest in research'? Same feed has free-food chips. I'll filter to Internships.",
+        "friction": "content_gap",
+        "severity": "1",
+        "element": "45",
+        "wish": "don't recommend undergrad-only REUs to a PhD student"
+      },
+      "about": 6,
+      "feeling": "neutral",
+      "thought": "Mixed bag. Lyft and Waymo PhD interns are great, but why is a Syracuse REU — an undergrad program — 'matching my interest in research'? Same feed has free-food chips. I'll filter to Internships.",
+      "urlAfter": "http://localhost:35167/community?tab=opportunities",
+      "route": "/community?tab=opportunities",
+      "frictionId": "f2"
+    },
+    {
+      "index": 8,
+      "at": "2026-11-02T18:34:42.409Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 29,
+        "expect": "list narrows to internships only, hopefully with location info",
+        "confidence": "0.8"
+      },
+      "urlBefore": "http://localhost:35167/community?tab=opportunities",
+      "target": {
+        "id": 29,
+        "tag": "button",
+        "role": "button",
+        "name": "Internships",
+        "box": {
+          "x": 766,
+          "y": 124,
+          "w": 99,
+          "h": 36
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "list narrows to internships only, hopefully with location info",
+        "confidence": 0.8
+      },
+      "latencyMs": 869,
+      "tapPoint": {
+        "x": 815.7,
+        "y": 142,
+        "centre": true
+      },
+      "actionNumber": 3,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:35167/community?tab=opportunities&sub=internship",
+      "route": "/community?tab=opportunities",
+      "screenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/008-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/008-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 104,
+        "newElementIds": [
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138
+        ],
+        "elements": [
+          "[2]<button> Notifications",
+          "[3]<button> Messages",
+          "[4]<button> Me",
+          "[14]<button> Feed",
+          "[15]<button> Browse",
+          "[26]<button> For you",
+          "[27]<button> Clubs",
+          "[28]<button> Classes",
+          "[29]<button> Internships",
+          "[30]<button> Research & TA",
+          "[31]<button> Funding",
+          "[32]<button> Hackathons",
+          "[33]<button> Events",
+          "[34]<button> Free food",
+          "[35]<button> Startups",
+          "[36]<button> Study abroad",
+          "[98]<button> All internships",
+          "[99]<button> PhD/MS internships",
+          "[100]<button> For you",
+          "[101]<button> Deadline soon",
+          "[102]<button> Newest",
+          "[103]<select> Location",
+          "[104]<button> All fields 459",
+          "[105]<button> Software 110",
+          "[106]<button> Data & AI 72",
+          "[107]<button> Hardware 19",
+          "[108]<button> Quant & Trading 23",
+          "[109]<button> Finance & Consulting 28",
+          "[110]<button> Product & Design 19",
+          "[111]<button> Business & Marketing 42",
+          "[112]<button> Policy & Law 63",
+          "[113]<button> Media & Writing 6",
+          "[114]<button> Nonprofit & Education 13",
+          "[115]<button> Health 0",
+          "[116]<button> Research & Science 41",
+          "[117]<button> Other 23",
+          "[75]<button> 💼 2027 Summer Intern, MS/PhD, Software Engineer, ML Frameworks and Efficiency Waymo · Mou",
+          "[40]<button> Save listing",
+          "[39]<button> 💼 PhD Machine Learning Software Engineer Intern (Summer 2027) Lyft · San Francisco, CA Po",
+          "[42]<button> Save listing",
+          "[49]<button> 💼 [2027] Data Scientist - PhD Intern Roblox · San Mateo, CA, United States Posted 2d ago ",
+          "[44]<button> Save listing",
+          "[6]<a> People",
+          "[7]<a> Discover",
+          "[8]<button> Create",
+          "[9]<a selected> Campus",
+          "[10]<a> Me",
+          "[11]<button> Feedback",
+          "[12]<button> Switch to the classic design",
+          "[37]<button> Saved  (off screen)",
+          "[38]<button> 🚗 Rides  (off screen)",
+          "[41]<button> 💼 2027 Summer Intern, MS/PhD, Software Engineer, Simulation Evaluation ML Model Waymo · M  ↓ below",
+          "[46]<button> Save listing  ↓ below",
+          "[77]<button> 💼 2027 Summer Internship - MS/PhD Data Scientist, Proprietary Research Point72 · New York  ↓ below",
+          "[48]<button> Save listing  ↓ below",
+          "[87]<button> 💼 Software Engineering Intern (Summer 2027) Scale AI · San Francisco, CA Posted 11d ago S  ↓ below",
+          "[50]<button> Save listing  ↓ below",
+          "[118]<button> 💼 PhD Data Scientist, Intern Stripe · New York, Seattle, South San Francisco HQ Posted 4d  ↓ below",
+          "[52]<button> Save listing  ↓ below",
+          "[119]<button> 💼 2027 Summer Intern, MS/PhD, Software/ML Engineer, Simulation Waymo · Mountain View, Cal  ↓ below",
+          "[54]<button> Save listing  ↓ below",
+          "[120]<button> 💼 PhD Intern, Software Engineer - Graphics (2027) Figma · San Francisco, CA · New York, N  ↓ below",
+          "[56]<button> Save listing  ↓ below",
+          "[121]<button> 💼 PhD Machine Learning Internship 2027 (USA) Pinterest · San Francisco, CA, US · Palo Alt  ↓ below",
+          "[58]<button> Save listing  ↓ below",
+          "[122]<button> 💼 PhD Machine Learning Engineer, Intern Stripe · San Francisco, New York City, Seattle Po  ↓ below",
+          "[60]<button> Save listing  ↓ below",
+          "[57]<button> 💼 2027 Summer Intern, MS/PhD, Software Engineer, Sys Intel & Machine Learning Waymo · Mou  ↓ below",
+          "[62]<button> Save listing  ↓ below",
+          "[123]<button> 💼 PhD Intern, Security Engineer (2027) Figma · San Francisco, CA · New York, NY Posted 4d  ↓ below",
+          "[64]<button> Save listing  ↓ below",
+          "[124]<button> 💼 PhD Data Science Internship 2027 (USA) Pinterest · San Francisco, CA, US · Palo Alto, C  ↓ below",
+          "[66]<button> Save listing  ↓ below",
+          "[125]<button> 💼 Software Engineer Intern (Summer 2027) Affirm · San Francisco, California, United State  ↓ below",
+          "[68]<button> Save listing  ↓ below",
+          "[67]<button> 💼 2027 Summer Intern, MS/PhD, Software Engineer, Eval Data Infra Waymo · Mountain View, C  ↓ below",
+          "[70]<button> Save listing  ↓ below",
+          "[126]<button> 💼 [Summer 2027] Software Engineer Intern Roblox · San Mateo, CA, United States New today   ↓ below",
+          "[72]<button> Save listing  ↓ below",
+          "[127]<button> 💼 PhD Intern, AI Applied Scientist (2027) Figma · San Francisco, CA · New York, NY Posted  ↓ below",
+          "[74]<button> Save listing  ↓ below",
+          "[128]<button> 💼 Software Engineer, AI Platform - Intern Nuro · Mountain View, California (HQ) Posted 7d  ↓ below",
+          "[76]<button> Save listing  ↓ below",
+          "[85]<button> 💼 2027 Summer Intern, MS/PhD, Sensor Performance Engineer Intern Waymo · Mountain View, C  ↓ below",
+          "[78]<button> Save listing  ↓ below",
+          "[129]<button> 💼 Hardware Machine Learning PhD Research Internship IMC Trading · Chicago, United States   ↓ below",
+          "[80]<button> Save listing  ↓ below",
+          "[130]<button> 💼 Micro-Intern: Research Technology Developer (IAP) Point72 · New York Posted 2d ago Rese  ↓ below",
+          "[82]<button> Save listing  ↓ below"
+        ],
+        "text": "lumi | . | Feed | Browse | For you | Clubs | Classes | Internships | Research & TA | Funding | Hackathons | Events | Free food | Startups | Study abroad | All internships | PhD/MS internships | For you | Deadline soon | Newest | All fields | 459 | Software | 110 | Data & AI (×4 on screen) | 72 | Hardware | 19 | Quant & Trading | 23 | Finance & Consulting | 28 | Product & Design | 19 | Business & Marketing | 42 | Policy & Law | 63 | Media & Writing | 6 | Nonprofit & Education | 13 | Health | 0 | Research & Science | 41 | Other | 23 | 459 listings | 💼 | 2027 Summer Intern, MS/PhD, Software Engineer, ML Frameworks and Efficiency | Waymo | · Mountain View, CA, USA | Posted 9d ago | Data & AI | ✨ | Fits your major (EECS) | 💼 | PhD Machine Learning Software Engineer Intern (Summer 2027) | Lyft | · San Francisco, CA | Posted 13d ago | ✨ | Fits your major (EECS) | [2027] Data Scientist - PhD Intern | Posted 2d ago | ✨ | Matches your interest in research | 💼 | Software Engineer (Machine Learning) Intern (Summer 2027) | People | Discover | Campus | Me | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 3001
+        },
+        "fingerprint": "3db9b9260836f2046c9ea704481660118ad2522c",
+        "simReadSec": 17
+      },
+      "checks": {
+        "smallTapTargets": [],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 768
+      },
+      "signals": [],
+      "frustrationAfter": 0.5,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Internships tab: 459 listings, sub-filters (PhD/MS internships, Deadline soon), a Location dropdown and a wall of field chips.",
+        "feeling": "curious",
+        "note": "A Location dropdown and a PhD/MS filter — good. The chip wall is a lot, but fine. Nothing says paid vs unpaid though."
+      }
+    },
+    {
+      "index": 9,
+      "at": "2026-11-02T18:34:49.812Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Internships tab: 459 listings, sub-filters (PhD/MS internships, Deadline soon), a Location dropdown and a wall of field chips.",
+        "feeling": "curious",
+        "thought": "A Location dropdown and a PhD/MS filter — good. The chip wall is a lot, but fine. Nothing says paid vs unpaid though."
+      },
+      "about": 8,
+      "feeling": "curious",
+      "thought": "A Location dropdown and a PhD/MS filter — good. The chip wall is a lot, but fine. Nothing says paid vs unpaid though.",
+      "urlAfter": "http://localhost:35167/community?tab=opportunities&sub=internship",
+      "route": "/community?tab=opportunities"
+    },
+    {
+      "index": 10,
+      "at": "2026-11-02T18:34:50.011Z",
+      "kind": "action",
+      "command": "select",
+      "args": {
+        "id": 103,
+        "option": "Bay Area",
+        "expect": "list filters to Bay Area internships",
+        "confidence": "0.6"
+      },
+      "urlBefore": "http://localhost:35167/community?tab=opportunities&sub=internship",
+      "target": {
+        "id": 103,
+        "tag": "select",
+        "role": "combobox",
+        "name": "Location",
+        "box": {
+          "x": 788,
+          "y": 204,
+          "w": 138,
+          "h": 32
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "list filters to Bay Area internships",
+        "confidence": 0.6
+      },
+      "latencyMs": 831,
+      "actionNumber": 4,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:35167/community?tab=opportunities&sub=internship&region=Bay+Area",
+      "route": "/community?tab=opportunities",
+      "screenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/010-select.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/010-select-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 104,
+        "newElementIds": [
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159
+        ],
+        "elements": [
+          "[2]<button> Notifications",
+          "[3]<button> Messages",
+          "[4]<button> Me",
+          "[14]<button> Feed",
+          "[15]<button> Browse",
+          "[26]<button> For you",
+          "[27]<button> Clubs",
+          "[28]<button> Classes",
+          "[29]<button> Internships",
+          "[30]<button> Research & TA",
+          "[31]<button> Funding",
+          "[32]<button> Hackathons",
+          "[33]<button> Events",
+          "[34]<button> Free food",
+          "[35]<button> Startups",
+          "[36]<button> Study abroad",
+          "[98]<button> All internships",
+          "[99]<button> PhD/MS internships",
+          "[100]<button> For you",
+          "[101]<button> Deadline soon",
+          "[102]<button> Newest",
+          "[103]<select> Location",
+          "[139]<button> All fields 131",
+          "[140]<button> Software 42",
+          "[141]<button> Data & AI 44",
+          "[142]<button> Hardware 5",
+          "[143]<button> Quant & Trading 1",
+          "[144]<button> Finance & Consulting 4",
+          "[145]<button> Product & Design 8",
+          "[146]<button> Business & Marketing 1",
+          "[147]<button> Policy & Law 0",
+          "[148]<button> Media & Writing 1",
+          "[149]<button> Nonprofit & Education 0",
+          "[115]<button> Health 0",
+          "[150]<button> Research & Science 17",
+          "[151]<button> Other 8",
+          "[75]<button> 💼 2027 Summer Intern, MS/PhD, Software Engineer, ML Frameworks and Efficiency Waymo · Mou",
+          "[40]<button> Save listing",
+          "[39]<button> 💼 PhD Machine Learning Software Engineer Intern (Summer 2027) Lyft · San Francisco, CA Po",
+          "[42]<button> Save listing",
+          "[49]<button> 💼 [2027] Data Scientist - PhD Intern Roblox · San Mateo, CA, United States Posted 2d ago ",
+          "[44]<button> Save listing",
+          "[6]<a> People",
+          "[7]<a> Discover",
+          "[8]<button> Create",
+          "[9]<a selected> Campus",
+          "[10]<a> Me",
+          "[11]<button> Feedback",
+          "[12]<button> Switch to the classic design",
+          "[37]<button> Saved  (off screen)",
+          "[38]<button> 🚗 Rides  (off screen)",
+          "[41]<button> 💼 2027 Summer Intern, MS/PhD, Software Engineer, Simulation Evaluation ML Model Waymo · M  ↓ below",
+          "[46]<button> Save listing  ↓ below",
+          "[87]<button> 💼 Software Engineering Intern (Summer 2027) Scale AI · San Francisco, CA Posted 11d ago S  ↓ below",
+          "[48]<button> Save listing  ↓ below",
+          "[118]<button> 💼 PhD Data Scientist, Intern Stripe · New York, Seattle, South San Francisco HQ Posted 4d  ↓ below",
+          "[50]<button> Save listing  ↓ below",
+          "[120]<button> 💼 PhD Intern, Software Engineer - Graphics (2027) Figma · San Francisco, CA · New York, N  ↓ below",
+          "[52]<button> Save listing  ↓ below",
+          "[119]<button> 💼 2027 Summer Intern, MS/PhD, Software/ML Engineer, Simulation Waymo · Mountain View, Cal  ↓ below",
+          "[54]<button> Save listing  ↓ below",
+          "[121]<button> 💼 PhD Machine Learning Internship 2027 (USA) Pinterest · San Francisco, CA, US · Palo Alt  ↓ below",
+          "[56]<button> Save listing  ↓ below",
+          "[122]<button> 💼 PhD Machine Learning Engineer, Intern Stripe · San Francisco, New York City, Seattle Po  ↓ below",
+          "[58]<button> Save listing  ↓ below",
+          "[123]<button> 💼 PhD Intern, Security Engineer (2027) Figma · San Francisco, CA · New York, NY Posted 4d  ↓ below",
+          "[60]<button> Save listing  ↓ below",
+          "[57]<button> 💼 2027 Summer Intern, MS/PhD, Software Engineer, Sys Intel & Machine Learning Waymo · Mou  ↓ below",
+          "[62]<button> Save listing  ↓ below",
+          "[124]<button> 💼 PhD Data Science Internship 2027 (USA) Pinterest · San Francisco, CA, US · Palo Alto, C  ↓ below",
+          "[64]<button> Save listing  ↓ below",
+          "[125]<button> 💼 Software Engineer Intern (Summer 2027) Affirm · San Francisco, California, United State  ↓ below",
+          "[66]<button> Save listing  ↓ below",
+          "[126]<button> 💼 [Summer 2027] Software Engineer Intern Roblox · San Mateo, CA, United States New today   ↓ below",
+          "[68]<button> Save listing  ↓ below",
+          "[67]<button> 💼 2027 Summer Intern, MS/PhD, Software Engineer, Eval Data Infra Waymo · Mountain View, C  ↓ below",
+          "[70]<button> Save listing  ↓ below",
+          "[127]<button> 💼 PhD Intern, AI Applied Scientist (2027) Figma · San Francisco, CA · New York, NY Posted  ↓ below",
+          "[72]<button> Save listing  ↓ below",
+          "[128]<button> 💼 Software Engineer, AI Platform - Intern Nuro · Mountain View, California (HQ) Posted 7d  ↓ below",
+          "[74]<button> Save listing  ↓ below",
+          "[152]<button> 💼 Software Engineer Intern 2027 (USA) Pinterest · San Francisco, CA, US · Remote, US Post  ↓ below",
+          "[76]<button> Save listing  ↓ below",
+          "[85]<button> 💼 2027 Summer Intern, MS/PhD, Sensor Performance Engineer Intern Waymo · Mountain View, C  ↓ below",
+          "[78]<button> Save listing  ↓ below",
+          "[131]<button> 💼 PhD Intern, Data Science (2027) Figma · San Francisco, CA · New York, NY Posted 6d ago   ↓ below",
+          "[80]<button> Save listing  ↓ below",
+          "[153]<button> 💼 Software Engineering Internship - San Francisco Samsara · San Francisco - SF9 Posted 3d  ↓ below",
+          "[82]<button> Save listing  ↓ below"
+        ],
+        "text": "lumi | . | Feed | Browse | For you | Clubs | Classes | Internships | Research & TA | Funding | Hackathons | Events | Free food | Startups | Study abroad | All internships | PhD/MS internships | For you | Deadline soon | Newest | All fields | 131 | Software | 42 | Data & AI (×4 on screen) | 44 | Hardware | 5 | Quant & Trading | 1 | Finance & Consulting | 4 | Product & Design | 8 | Business & Marketing | 1 | Policy & Law | 0 | Media & Writing | 1 | Nonprofit & Education | 0 | Health | 0 | Research & Science | 17 | Other | 8 | 131 listings | 💼 | 2027 Summer Intern, MS/PhD, Software Engineer, ML Frameworks and Efficiency | Waymo | · Mountain View, CA, USA | Posted 9d ago | Data & AI | ✨ | Fits your major (EECS) | 💼 | PhD Machine Learning Software Engineer Intern (Summer 2027) | Lyft | · San Francisco, CA | Posted 13d ago | ✨ | Fits your major (EECS) | [2027] Data Scientist - PhD Intern | Posted 2d ago | ✨ | Matches your interest in research | 💼 | Software Engineer (Machine Learning) Intern (Summer 2027) | People | Discover | Campus | Me | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 3022
+        },
+        "fingerprint": "98e11bf6a5acd9de914e001165e075e46f0901b1",
+        "simReadSec": 1.2
+      },
+      "checks": {
+        "smallTapTargets": [],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 768
+      },
+      "signals": [],
+      "frustrationAfter": 0.5,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Bay Area filter worked: 459 -> 131 listings, counts updated per field.",
+        "feeling": "delighted",
+        "note": "Bay Area is an actual option and the counts update. This is better than the career-center site. Lyft in SF is a BART ride away — opening that."
+      }
+    },
+    {
+      "index": 11,
+      "at": "2026-11-02T18:34:55.501Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Bay Area filter worked: 459 -> 131 listings, counts updated per field.",
+        "feeling": "delighted",
+        "thought": "Bay Area is an actual option and the counts update. This is better than the career-center site. Lyft in SF is a BART ride away — opening that."
+      },
+      "about": 10,
+      "feeling": "delighted",
+      "thought": "Bay Area is an actual option and the counts update. This is better than the career-center site. Lyft in SF is a BART ride away — opening that.",
+      "urlAfter": "http://localhost:35167/community?tab=opportunities&sub=internship&region=Bay+Area",
+      "route": "/community?tab=opportunities"
+    },
+    {
+      "index": 12,
+      "at": "2026-11-02T18:34:55.776Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 39,
+        "expect": "details page for the Lyft PhD ML intern role with pay, deadline and an apply link",
+        "confidence": "0.6"
+      },
+      "urlBefore": "http://localhost:35167/community?tab=opportunities&sub=internship&region=Bay+Area",
+      "target": {
+        "id": 39,
+        "tag": "button",
+        "role": "button",
+        "name": "💼 PhD Machine Learning Software Engineer Intern (Summer 2027) Lyft · San Francisco, CA Po",
+        "box": {
+          "x": 521,
+          "y": 638,
+          "w": 346,
+          "h": 109
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "details page for the Lyft PhD ML intern role with pay, deadline and an apply link",
+        "confidence": 0.6
+      },
+      "latencyMs": 863,
+      "tapPoint": {
+        "x": 694,
+        "y": 692.8,
+        "centre": true
+      },
+      "actionNumber": 5,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:35167/opportunities/op_ext_job_greenhouse_lyft_8817974002",
+      "route": "/opportunities/:id",
+      "screenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/012-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/012-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 12,
+        "newElementIds": [
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170
+        ],
+        "elements": [
+          "[160]<button> Back",
+          "[161]<button> More",
+          "[162]<button> Lyft",
+          "[163]<button> Start one",
+          "[164]<button> Start a prep crew e.g. Interview prep · Thu 7pm — people who saved this can join",
+          "[165]<button> Details",
+          "[166]<button> People 0",
+          "[167]<button> Q&A 0",
+          "[169]<button> Interested",
+          "[170]<button> Apply on Lyft",
+          "[12]<button> Switch to the classic design",
+          "[168]<a> Official source Lyft careers Last verified Sun, Nov 1 View posting  ↓ below"
+        ],
+        "text": "💼 | Internships | Official | PhD Machine Learning Software Engineer Intern (Summer 2027) | Lyft | Do it with people | Nobody has saved this yet. Save it and classmates who do will show up here. | Prep crews | Start one | Start a prep crew | e.g. Interview prep · Thu 7pm — people who saved this can join | Details | People 0 | Q&A 0 | Location | San Francisco, CA | 🧭 | Field | Data & AI | Deadline | Not posted — companies usually close once roles fill. Posted 13d ago. | Apply on Lyft | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 245
+        },
+        "fingerprint": "06a609dbdab0cc0e8eee92e38d20f0e70d5e9869",
+        "simReadSec": 11.4
+      },
+      "checks": {
+        "smallTapTargets": [],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 768
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 0.5,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "Detail page shows location, field, deadline ('Not posted') and an 'Apply on Lyft' button, but no pay/compensation. Above the facts is a 'Do it with people' / 'Prep crews' block.",
+        "feeling": "neutral",
+        "note": "Apply link and an honest 'deadline not posted' — fine. But nothing about pay, which is the one thing I asked for, and 'Start a prep crew' sits above the actual details. I don't need a crew to apply to Lyft."
+      }
+    },
+    {
+      "index": 13,
+      "at": "2026-11-02T18:35:03.466Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "Detail page shows location, field, deadline ('Not posted') and an 'Apply on Lyft' button, but no pay/compensation. Above the facts is a 'Do it with people' / 'Prep crews' block.",
+        "feeling": "neutral",
+        "thought": "Apply link and an honest 'deadline not posted' — fine. But nothing about pay, which is the one thing I asked for, and 'Start a prep crew' sits above the actual details. I don't need a crew to apply to Lyft.",
+        "friction": "motivation",
+        "severity": "1",
+        "element": "164",
+        "wish": "put the job facts (pay, deadline, location) first; social stuff below"
+      },
+      "about": 12,
+      "feeling": "neutral",
+      "thought": "Apply link and an honest 'deadline not posted' — fine. But nothing about pay, which is the one thing I asked for, and 'Start a prep crew' sits above the actual details. I don't need a crew to apply to Lyft.",
+      "urlAfter": "http://localhost:35167/opportunities/op_ext_job_greenhouse_lyft_8817974002",
+      "route": "/opportunities/:id",
+      "frictionId": "f3"
+    },
+    {
+      "index": 14,
+      "at": "2026-11-02T18:35:03.688Z",
+      "kind": "action",
+      "command": "scroll",
+      "args": {
+        "direction": "down",
+        "expect": "more details: description, maybe pay, the official source",
+        "confidence": "0.5"
+      },
+      "urlBefore": "http://localhost:35167/opportunities/op_ext_job_greenhouse_lyft_8817974002",
+      "intent": {
+        "expectedOutcome": "more details: description, maybe pay, the official source",
+        "confidence": 0.5
+      },
+      "latencyMs": 1356,
+      "actionNumber": 6,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:35167/opportunities/op_ext_job_greenhouse_lyft_8817974002",
+      "route": "/opportunities/:id",
+      "screenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/014-scroll.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/014-scroll-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 12,
+        "newElementIds": [],
+        "elements": [
+          "[160]<button> Back",
+          "[161]<button> More",
+          "[162]<button> Lyft",
+          "[163]<button> Start one",
+          "[164]<button> Start a prep crew e.g. Interview prep · Thu 7pm — people who saved this can join",
+          "[165]<button> Details",
+          "[166]<button> People 0",
+          "[167]<button> Q&A 0",
+          "[168]<a> Official source Lyft careers Last verified Sun, Nov 1 View posting",
+          "[169]<button> Interested",
+          "[170]<button> Apply on Lyft",
+          "[12]<button> Switch to the classic design"
+        ],
+        "text": "PhD Machine Learning Software Engineer Intern (Summer 2027) | Lyft | Do it with people | Nobody has saved this yet. Save it and classmates who do will show up here. | Prep crews | Start one | Start a prep crew | e.g. Interview prep · Thu 7pm — people who saved this can join | Details | People 0 | Q&A 0 | Location | San Francisco, CA | 🧭 | Field | Data & AI | Deadline | Not posted — companies usually close once roles fill. Posted 13d ago. | 👤 | Who it’s for | See the posting for class year, major and work authorization | Official source | Lyft careers | Last verified Sun, Nov 1 | View posting | # | internship | # | Lyft | Apply on Lyft | Design: | Classic | New",
+        "scroll": {
+          "top": 245,
+          "max": 245
+        },
+        "fingerprint": "c319dc20aae36ed4ad0c4db5d6a165acd948a32c",
+        "simReadSec": 5.1
+      },
+      "checks": {
+        "smallTapTargets": [],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 768
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 1,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "Bottom shows 'Who it's for: see the posting', Official source: Lyft careers, Last verified Sun Nov 1, View posting link. No description or pay.",
+        "feeling": "neutral",
+        "note": "'Last verified yesterday' with a link to Lyft's own careers page — that's what I need to trust it's open. No pay stated; I know Lyft PhD interns are paid, but an undergrad wouldn't. Thin, but enough to apply."
+      }
+    },
+    {
+      "index": 15,
+      "at": "2026-11-02T18:35:09.590Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "Bottom shows 'Who it's for: see the posting', Official source: Lyft careers, Last verified Sun Nov 1, View posting link. No description or pay.",
+        "feeling": "neutral",
+        "thought": "'Last verified yesterday' with a link to Lyft's own careers page — that's what I need to trust it's open. No pay stated; I know Lyft PhD interns are paid, but an undergrad wouldn't. Thin, but enough to apply.",
+        "friction": "content_gap",
+        "severity": "1",
+        "element": "168",
+        "wish": "show pay range and a short description when the posting has them"
+      },
+      "about": 14,
+      "feeling": "neutral",
+      "thought": "'Last verified yesterday' with a link to Lyft's own careers page — that's what I need to trust it's open. No pay stated; I know Lyft PhD interns are paid, but an undergrad wouldn't. Thin, but enough to apply.",
+      "urlAfter": "http://localhost:35167/opportunities/op_ext_job_greenhouse_lyft_8817974002",
+      "route": "/opportunities/:id",
+      "frictionId": "f4"
+    },
+    {
+      "index": 16,
+      "at": "2026-11-02T18:35:13.726Z",
+      "kind": "finish",
+      "command": "finish",
+      "args": {
+        "outcome": "success",
+        "reason": "Found Lyft's PhD ML SWE intern (Summer 2027) in SF via Campus > Browse > Internships > Bay Area; it's verified yesterday from Lyft careers and has an Apply on Lyft link. No pay listed, but it's clearly a real, open role.",
+        "dropoff": "medium",
+        "dropoff-why": "The Browse/Internships list with a Bay Area filter and PhD roles is genuinely useful and better than the career site, but I only found it by guessing past an empty invite screen and a nap/café poll, on a phone-width column on my laptop; I'd come back for funding deadlines only if I remember the Browse tab exists.",
+        "dropoff-basis": "0,2,4,10"
+      },
+      "urlBefore": "http://localhost:35167/opportunities/op_ext_job_greenhouse_lyft_8817974002",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:35167/opportunities/op_ext_job_greenhouse_lyft_8817974002",
+      "route": "/opportunities/:id",
+      "screenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/016-finish.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/016-finish-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 12,
+        "newElementIds": [],
+        "elements": [
+          "[160]<button> Back",
+          "[161]<button> More",
+          "[162]<button> Lyft",
+          "[163]<button> Start one",
+          "[164]<button> Start a prep crew e.g. Interview prep · Thu 7pm — people who saved this can join",
+          "[165]<button> Details",
+          "[166]<button> People 0",
+          "[167]<button> Q&A 0",
+          "[168]<a> Official source Lyft careers Last verified Sun, Nov 1 View posting",
+          "[169]<button> Interested",
+          "[170]<button> Apply on Lyft",
+          "[12]<button> Switch to the classic design"
+        ],
+        "text": "PhD Machine Learning Software Engineer Intern (Summer 2027) | Lyft | Do it with people | Nobody has saved this yet. Save it and classmates who do will show up here. | Prep crews | Start one | Start a prep crew | e.g. Interview prep · Thu 7pm — people who saved this can join | Details | People 0 | Q&A 0 | Location | San Francisco, CA | 🧭 | Field | Data & AI | Deadline | Not posted — companies usually close once roles fill. Posted 13d ago. | 👤 | Who it’s for | See the posting for class year, major and work authorization | Official source | Lyft careers | Last verified Sun, Nov 1 | View posting | # | internship | # | Lyft | Apply on Lyft | Design: | Classic | New",
+        "scroll": {
+          "top": 245,
+          "max": 245
+        },
+        "fingerprint": "c319dc20aae36ed4ad0c4db5d6a165acd948a32c",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 768
+      }
+    }
+  ],
+  "frictionEvents": [
+    {
+      "id": "f1",
+      "step": 0,
+      "noteStep": 1,
+      "type": "motivation",
+      "severity": 2,
+      "feeling": "frustrated",
+      "quote": "A phone-width column in the middle of my 1440 screen with black bars on both sides. And the first thing it asks is to invite my floor. I don't have a floor. Not promising.",
+      "url": "/",
+      "route": "/",
+      "element": null,
+      "key": null,
+      "wish": "a proper desktop layout and something useful on the first screen instead of an empty invite prompt",
+      "evidence": [
+        "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/000-start.jpg",
+        "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/000-start-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f2",
+      "step": 6,
+      "noteStep": 7,
+      "type": "content_gap",
+      "severity": 1,
+      "feeling": "neutral",
+      "quote": "Mixed bag. Lyft and Waymo PhD interns are great, but why is a Syracuse REU — an undergrad program — 'matching my interest in research'? Same feed has free-food chips. I'll filter to Internships.",
+      "url": "/community?tab=opportunities",
+      "route": "/community?tab=opportunities",
+      "element": {
+        "id": 45,
+        "role": "button",
+        "name": "🔬 Syracuse iSchool ASSURE-REU: Text Analytics for Social Scientists 2027 Syracuse Univers"
+      },
+      "key": null,
+      "wish": "don't recommend undergrad-only REUs to a PhD student",
+      "evidence": [
+        "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/006-observe.jpg",
+        "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/006-observe-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f3",
+      "step": 12,
+      "noteStep": 13,
+      "type": "motivation",
+      "severity": 1,
+      "feeling": "neutral",
+      "quote": "Apply link and an honest 'deadline not posted' — fine. But nothing about pay, which is the one thing I asked for, and 'Start a prep crew' sits above the actual details. I don't need a crew to apply to Lyft.",
+      "url": "/opportunities/op_ext_job_greenhouse_lyft_8817974002",
+      "route": "/opportunities/:id",
+      "element": {
+        "id": 164,
+        "role": "button",
+        "name": "Start a prep crew e.g. Interview prep · Thu 7pm — people who saved this can join"
+      },
+      "key": null,
+      "wish": "put the job facts (pay, deadline, location) first; social stuff below",
+      "evidence": [
+        "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/012-click.jpg",
+        "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/012-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f4",
+      "step": 14,
+      "noteStep": 15,
+      "type": "content_gap",
+      "severity": 1,
+      "feeling": "neutral",
+      "quote": "'Last verified yesterday' with a link to Lyft's own careers page — that's what I need to trust it's open. No pay stated; I know Lyft PhD interns are paid, but an undergrad wouldn't. Thin, but enough to apply.",
+      "url": "/opportunities/op_ext_job_greenhouse_lyft_8817974002",
+      "route": "/opportunities/:id",
+      "element": {
+        "id": 168,
+        "role": "link",
+        "name": "Official source Lyft careers Last verified Sun, Nov 1 View posting"
+      },
+      "key": null,
+      "wish": "show pay range and a short description when the posting has them",
+      "evidence": [
+        "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/014-scroll.jpg",
+        "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/014-scroll-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    }
+  ],
+  "autoChecks": [],
+  "outcome": "success",
+  "reportedOutcome": "success",
+  "outcomeReason": "Found Lyft's PhD ML SWE intern (Summer 2027) in SF via Campus > Browse > Internships > Bay Area; it's verified yesterday from Lyft careers and has an Apply on Lyft link. No pay listed, but it's clearly a real, open role.",
+  "endedBy": "persona",
+  "goalAchieved": true,
+  "goalFirstMetAtStep": 12,
+  "stepsToGoal": 5,
+  "goalEvidence": {
+    "step": 12,
+    "url": "/opportunities/op_ext_job_greenhouse_lyft_8817974002",
+    "matched": [
+      {
+        "urlMatches": "^/opportunities/[^/?]+"
+      },
+      {
+        "textMatches": "\\bintern(ship)?s?\\b"
+      }
+    ],
+    "screenshot": "ux-sim/runs/cmp1-base-internship-near-berkeley-priya/shots/012-click.jpg"
+  },
+  "falseSuccess": false,
+  "unnoticedSuccess": false,
+  "successCheck": {
+    "evaluatedFrom": "first persona action (never the start screen)",
+    "recordChecks": "none"
+  },
+  "patienceExhaustedAtStep": null,
+  "actionsAfterPatienceExhausted": 0,
+  "overrodePatience": false,
+  "abandonPoint": null,
+  "dropoffRisk": {
+    "kind": "hypothesis",
+    "level": "medium",
+    "rationale": "The Browse/Internships list with a Bay Area filter and PhD roles is genuinely useful and better than the career site, but I only found it by guessing past an empty invite screen and a nap/café poll, on a phone-width column on my laptop; I'd come back for funding deadlines only if I remember the Browse tab exists.",
+    "basis": [
+      0,
+      2,
+      4,
+      10
+    ],
+    "source": "persona-agent"
+  }
+}

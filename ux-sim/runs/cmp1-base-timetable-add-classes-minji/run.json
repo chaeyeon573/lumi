@@ -1,0 +1,1835 @@
+{
+  "schemaVersion": 1,
+  "runId": "cmp1-base-timetable-add-classes-minji",
+  "status": "finished",
+  "createdAt": "2026-11-02T18:34:00.447Z",
+  "finishedAt": "2026-11-02T18:35:23.441Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "persona": {
+    "id": "minji-freshman-17",
+    "name": "Minji",
+    "age": 17,
+    "year": "First-year (started college a year early)",
+    "school": "UC Berkeley",
+    "major": "Undeclared, leaning Data Science",
+    "account": {
+      "$comment": "Profile for auth: fresh — the harness registers this account through the app's own sign-up API (lib/account.mjs). nickname defaults to name, birthYear to this year − age.",
+      "nickname": "Minji",
+      "department": "Undeclared",
+      "yearInSchool": 1,
+      "goals": [
+        "friends",
+        "lunch"
+      ],
+      "interests": [
+        "meal",
+        "coffee"
+      ],
+      "purposes": [
+        "friend"
+      ],
+      "lookingFor": [
+        "friend"
+      ]
+    },
+    "purpose": "Make a couple of friends to eat with — she eats most meals alone in her dorm room.",
+    "techFamiliarity": "high",
+    "readingDepth": 0.3,
+    "readingCharsPerSec": 30,
+    "language": {
+      "preferred": "ko",
+      "englishUiComfort": "medium",
+      "notes": "Moved from Seoul in August. Reads English fine but slowly; would switch an app to Korean if she noticed the option. Types in Korean or short English."
+    },
+    "device": {
+      "type": "phone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "locale": "ko-KR"
+    },
+    "patience": {
+      "maxSteps": 40,
+      "frustrationThreshold": 4.5,
+      "confusionTolerance": 3,
+      "timeBudgetSec": 300
+    },
+    "backstory": "I'm 17 and everyone on my floor is 18 or 19 and already seems to have a group. I use Instagram and KakaoTalk all day, so I'm fast with apps, but I hate apps that feel like dating apps or ask for too much about me. If I see people from my dorm or my classes I'd say hi. I'm a bit worried about being younger than everyone.",
+    "quitsWhen": [
+      "It looks like a dating app or wants a big face photo",
+      "Nobody seems to be around my age or in my dorm",
+      "It asks for lots of personal info before showing me anything",
+      "Walls of English text"
+    ],
+    "voice": "Short, casual, sometimes mixes Korean words (헐, 뭐지, 아 귀찮아). Honest about feeling awkward."
+  },
+  "scenario": {
+    "id": "timetable-add-classes",
+    "title": "Put my classes into my timetable",
+    "goal": "You want the app to know your schedule so it can show who's free when you are. Add your calculus class — Calculus I, which you know as MATH 1A — to your timetable in the app.",
+    "startUrl": "/",
+    "setup": {
+      "auth": "fresh",
+      "notes": "Fresh account with an empty timetable. Berkeley renumbered MATH 1A to MATH 51 (\"formerly MATH 1A\"); the real catalog (local-stack catalog fetch) has MATH 51, the built-in sample has MATH 1A — the check accepts either."
+    },
+    "success": {
+      "description": "The persona's own timetable (server-side) gained Calculus I (MATH 51 / MATH 1A) during the run.",
+      "all": [
+        {
+          "record": {
+            "collection": "users",
+            "where": {
+              "id": "$me",
+              "timetable": {
+                "re": "MATH ?(1A|51)\\b|Calculus I\\b"
+              }
+            },
+            "fresh": "changed",
+            "description": "Calculus I is in my saved timetable"
+          }
+        }
+      ]
+    }
+  },
+  "target": {
+    "mode": "local",
+    "baseUrl": "http://localhost:45239",
+    "stack": {
+      "catalog": {
+        "kind": "cached",
+        "source": "berkeley course adapter (server/sources/courses.ts) via server/scripts/fetch-courses.ts",
+        "schoolId": "s_berkeley",
+        "courses": 6588,
+        "terms": [
+          "Fall 2026",
+          "Spring 2027"
+        ],
+        "fetchedAt": "2026-11-02T06:52:47.693Z"
+      },
+      "events": {
+        "kind": "cached",
+        "source": "https://heetz.up.railway.app POST /api/auth/demo + POST /api/bootstrap (read-only), worker-fetched opportunities",
+        "baseUrl": "https://heetz.up.railway.app",
+        "fetchedAt": "2026-11-02T07:25:30.398Z",
+        "stamp": "fa9ccb47",
+        "opportunities": 1119,
+        "updatedExisting": 123,
+        "byType": {
+          "lab": 38,
+          "scholarship": 62,
+          "internship": 454,
+          "hackathon": 102,
+          "event": 146,
+          "exchange": 316,
+          "startup": 1
+        },
+        "eventsThisWeek": 103,
+        "freeFoodThisWeek": 7
+      },
+      "port": 45239,
+      "worktree": "/home/user/lumi-base",
+      "commit": "7af1c8ef2cfdca1f25394e13a5e1f34c845f25f1",
+      "stamp": "7af1c8ef2cfd",
+      "dirty": false,
+      "dataFile": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/stack/db.json",
+      "template": "ux-sim/stack/templates/lumi-base-7af1c8ef2cfd-catf079553d-evfa9ccb47.json",
+      "log": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/stack/server.log",
+      "owned": true,
+      "autoreply": false
+    },
+    "liveGuard": {
+      "enabled": false
+    }
+  },
+  "auth": {
+    "mode": "fresh",
+    "userId": "u_yug1gnlbhw",
+    "email": "minji.injila5l@berkeley.edu",
+    "sample": false,
+    "emailVerified": true,
+    "profile": {
+      "nickname": "Minji",
+      "birthYear": 2009,
+      "department": "Undeclared",
+      "yearInSchool": 1,
+      "role": "undergraduate",
+      "year": 2026,
+      "gender": "private",
+      "goals": [
+        "friends",
+        "lunch"
+      ],
+      "interests": [
+        "meal",
+        "coffee"
+      ],
+      "purposes": [
+        "friend"
+      ],
+      "lookingFor": [
+        "friend"
+      ],
+      "likes": "",
+      "bio": "",
+      "language": "ko",
+      "appLanguage": null,
+      "schoolId": "s_berkeley"
+    },
+    "createdVia": "POST /api/schools/send-code → /api/schools/verify-code → /api/auth/register"
+  },
+  "harness": {
+    "hash": "6f174347960d",
+    "commit": "29aa633114d3a6233c4828a1d8cf59485768bd2a",
+    "dirty": false
+  },
+  "environment": {
+    "summary": "Local stack: this worktree's server + built web app, fresh seeded FileStore per run, no secrets, no worker.",
+    "knownLimits": [
+      "Dining menus and RSF gym crowd levels need live campus sources (the local stack runs with CAMPUS_LIVE=0) — empty or missing data there is not a UX bug.",
+      "AI features (Ask Lumi, AI profile draft on /start, conversation starters) need an OpenAI key; none is configured locally.",
+      "Course catalog is the real Berkeley Class Schedule (6588 courses, Fall 2026 + Spring 2027), fetched 2026-11-02 with the worker's adapter. Seat counts and very recent changes may differ from live.",
+      "Campus events, free food, internships, hackathons and scholarships are a read-only snapshot of live (1119 real items, 103 events this week, taken 2026-11-02 07:25 UTC) plus the CSV calendar. Nothing new appears during the run; Q&A and reviews are empty.",
+      "No e-mail is sent: the sign-up / sign-in code is shown on screen in the hint (live sends a real e-mail).",
+      "Real-time updates (SSE) work locally; other people never reply unless the stack was started with --autoreply.",
+      "Signed in as a brand-new real (non-sample, e-mail-verified) account made for this run. Other students exist only if the scenario seeds peers (local fixtures); sample profiles are hidden from real accounts, as on live."
+    ],
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "locale": "ko-KR",
+    "timezone": "America/Los_Angeles",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+    "browserVersion": "153.0.8010.12"
+  },
+  "limits": {
+    "maxSteps": 40,
+    "frustrationThreshold": 4.5,
+    "confusionTolerance": 3,
+    "timeBudgetSec": 300,
+    "weights": {
+      "failed": 1,
+      "no_effect": 1,
+      "repeated": 0.75,
+      "backtrack": 0.5,
+      "mismatch": 0.5
+    }
+  },
+  "counters": {
+    "actions": 7,
+    "frustration": 1,
+    "confusionNotes": 1,
+    "simTimeSec": 49.507
+  },
+  "steps": [
+    {
+      "index": 0,
+      "at": "2026-11-02T18:34:03.561Z",
+      "kind": "start",
+      "command": "start",
+      "args": {
+        "persona": "minji-freshman-17",
+        "scenario": "timetable-add-classes",
+        "auth": "fresh"
+      },
+      "latencyMs": 2237,
+      "urlBefore": null,
+      "setupNotes": [
+        "signed in as a brand-new verified account minji.injila5l@berkeley.edu (Minji, Undeclared, born 2009)"
+      ],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45239/",
+      "route": "/",
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/000-start.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/000-start-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 12,
+        "newElementIds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "elements": [
+          "[1]<button> Filters",
+          "[2]<button> Notifications",
+          "[3]<button> Messages",
+          "[4]<button> Me",
+          "[5]<button> Invite friends",
+          "[6]<a selected> People",
+          "[7]<a> Discover",
+          "[8]<button> Create",
+          "[9]<a> Campus",
+          "[10]<a> Me",
+          "[11]<button> Feedback",
+          "[12]<button> Switch to the classic design"
+        ],
+        "text": "lumi | . | 👋 | Students from your campus show up here | Bring your floor or your class along. | Invite friends | People | Discover | Campus | Me | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "ceadf8797b056d35f1312a693f044211fb9f26eb",
+        "simReadSec": 1.6
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 1,
+            "name": "Filters",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 2,
+            "name": "Notifications",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 3,
+            "name": "Messages",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 4,
+            "name": "Me",
+            "w": 32,
+            "h": 32
+          },
+          {
+            "id": 5,
+            "name": "Invite friends",
+            "w": 116,
+            "h": 36
+          },
+          {
+            "id": 11,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 12,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 452
+      }
+    },
+    {
+      "index": 1,
+      "at": "2026-11-02T18:34:17.967Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "feeling": "neutral",
+        "thought": "아무도 없네… empty. 시간표는 어디 있지? Me 아니면 Campus?"
+      },
+      "about": 0,
+      "feeling": "neutral",
+      "thought": "아무도 없네… empty. 시간표는 어디 있지? Me 아니면 Campus?",
+      "urlAfter": "http://localhost:45239/",
+      "route": "/"
+    },
+    {
+      "index": 2,
+      "at": "2026-11-02T18:34:18.099Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 10,
+        "expect": "my profile, maybe schedule/timetable there",
+        "confidence": "0.5"
+      },
+      "urlBefore": "http://localhost:45239/",
+      "target": {
+        "id": 10,
+        "tag": "a",
+        "role": "link",
+        "name": "Me",
+        "href": "/profile",
+        "box": {
+          "x": 312,
+          "y": 780,
+          "w": 78,
+          "h": 64
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "my profile, maybe schedule/timetable there",
+        "confidence": 0.5
+      },
+      "latencyMs": 1108,
+      "tapPoint": {
+        "x": 351,
+        "y": 812,
+        "centre": true
+      },
+      "actionNumber": 1,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45239/profile",
+      "route": "/profile",
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/002-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/002-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 23,
+        "newElementIds": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "elements": [
+          "[13]<button> Settings",
+          "[2]<button> Notifications",
+          "[3]<button> Messages",
+          "[4]<button> Me",
+          "[14]<button> Build your timetable",
+          "[15]<button> 0 Friends",
+          "[16]<button> 0 Hangouts",
+          "[17]<button> 27% Profile",
+          "[18]<button> Edit profile",
+          "[19]<button> Visibility",
+          "[20]<button> Find a class to watch",
+          "[6]<a> People",
+          "[7]<a> Discover",
+          "[8]<button> Create",
+          "[9]<a> Campus",
+          "[10]<a selected> Me",
+          "[11]<button> Feedback",
+          "[12]<button> Switch to the classic design",
+          "[21]<button> Friends 0  ↓ below",
+          "[22]<button> My Plans Invites · pending · confirmed  ↓ below",
+          "[23]<button> Saved & applications 0  ↓ below",
+          "[24]<button> My rides Airports, groceries, SF, Tahoe  ↓ below",
+          "[25]<button> My groups 0  ↓ below"
+        ],
+        "text": "lumi | . | Schedule | Build your timetable | 🙂 | Minji | Undeclared • UC Berkeley | Campus verified | 0 | Friends | 0 | Hangouts | 27% | Profile | # | Food | # | Coffee | Edit profile | Visibility | Seat alerts | Watch a Spring 2027 class and Lumi tells you when seats open, the waitlist moves, or it’s almost full. | Find a class to watch | Seat numbers come from the public class schedule and may lag. Lumi can’t enroll for you — use CalCentral. | Upcoming Hangouts | All | ( | 0 | ) | No confirmed plans yet. | People | Discover | Campus | Me | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 443
+        },
+        "fingerprint": "fdfabe7d72e6731098c698b032882ae38375d856",
+        "simReadSec": 4.5
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 2,
+            "name": "Notifications",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 3,
+            "name": "Messages",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 4,
+            "name": "Me",
+            "w": 32,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Find a class to watch",
+            "w": 165,
+            "h": 36
+          },
+          {
+            "id": 11,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 12,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 452
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Me page has Schedule card with 'Build your timetable' right on top",
+        "feeling": "delighted",
+        "note": "오 바로 있네 Schedule. 좋아"
+      }
+    },
+    {
+      "index": 3,
+      "at": "2026-11-02T18:34:23.095Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Me page has Schedule card with 'Build your timetable' right on top",
+        "feeling": "delighted",
+        "thought": "오 바로 있네 Schedule. 좋아"
+      },
+      "about": 2,
+      "feeling": "delighted",
+      "thought": "오 바로 있네 Schedule. 좋아",
+      "urlAfter": "http://localhost:45239/profile",
+      "route": "/profile"
+    },
+    {
+      "index": 4,
+      "at": "2026-11-02T18:34:23.237Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 14,
+        "expect": "timetable editor where I can search for a class",
+        "confidence": "0.8"
+      },
+      "urlBefore": "http://localhost:45239/profile",
+      "target": {
+        "id": 14,
+        "tag": "button",
+        "role": "button",
+        "name": "Build your timetable",
+        "box": {
+          "x": 37,
+          "y": 131,
+          "w": 316,
+          "h": 44
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "timetable editor where I can search for a class",
+        "confidence": 0.8
+      },
+      "latencyMs": 867,
+      "tapPoint": {
+        "x": 195,
+        "y": 153,
+        "centre": true
+      },
+      "actionNumber": 2,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45239/timetable",
+      "route": "/timetable",
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/004-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/004-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 5,
+        "newElementIds": [
+          26,
+          27,
+          28,
+          29
+        ],
+        "elements": [
+          "[26]<button> Back",
+          "[27]<button> Friends",
+          "[28]<button> Class",
+          "[29]<button> Add first class",
+          "[12]<button> Switch to the classic design"
+        ],
+        "text": "Timetable | Friends | Class | 📅 | Your timetable is empty | Add classes to get friends and activities that fit your free periods. Rooms and your full schedule stay private. | Add first class | Others only see when you’re free, never your full schedule. Rooms are never shared. | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "e58c4e3df3997a97037a0f55708be3bc98502dac",
+        "simReadSec": 2.6
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 26,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 27,
+            "name": "Friends",
+            "w": 92,
+            "h": 28
+          },
+          {
+            "id": 28,
+            "name": "Class",
+            "w": 88,
+            "h": 36
+          },
+          {
+            "id": 12,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 452
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Empty timetable with big 'Add first class' button and privacy note",
+        "feeling": "neutral",
+        "note": "ok 비어있고 Add first class. privacy 문구 좋네, 내 시간표 다 안 보인대"
+      }
+    },
+    {
+      "index": 5,
+      "at": "2026-11-02T18:34:28.661Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Empty timetable with big 'Add first class' button and privacy note",
+        "feeling": "neutral",
+        "thought": "ok 비어있고 Add first class. privacy 문구 좋네, 내 시간표 다 안 보인대"
+      },
+      "about": 4,
+      "feeling": "neutral",
+      "thought": "ok 비어있고 Add first class. privacy 문구 좋네, 내 시간표 다 안 보인대",
+      "urlAfter": "http://localhost:45239/timetable",
+      "route": "/timetable"
+    },
+    {
+      "index": 6,
+      "at": "2026-11-02T18:34:28.789Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 29,
+        "expect": "a search box to type MATH 1A",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:45239/timetable",
+      "target": {
+        "id": 29,
+        "tag": "button",
+        "role": "button",
+        "name": "Add first class",
+        "box": {
+          "x": 114,
+          "y": 317,
+          "w": 162,
+          "h": 44
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "a search box to type MATH 1A",
+        "confidence": 0.7
+      },
+      "latencyMs": 865,
+      "tapPoint": {
+        "x": 195,
+        "y": 339.4,
+        "centre": true
+      },
+      "actionNumber": 3,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45239/timetable",
+      "route": "/timetable",
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/006-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/006-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 62,
+        "newElementIds": [
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91
+        ],
+        "elements": [
+          "[30]<button> Close",
+          "[31]<button> Fall 2026",
+          "[32]<button> Spring 2027",
+          "[33]<select> All departments (100)",
+          "[34]<input> Search by course name or code",
+          "[35]<button> CS 61A The Structure and Interpretation of Computer Programs Mon 12 PM–12:59 PM · Wed 12 P",
+          "[36]<a> Course info",
+          "[37]<button> CS 61B Data Structures Mon 2 PM–2:59 PM · Wed 2 PM–2:59 PM · Fri 2 PM–2:59 PM · Wheeler 15",
+          "[38]<a> Course info",
+          "[39]<button> CS 61C Great Ideas of Computer Architecture (Machine Structures) Mon 11 AM–11:59 AM · Wed ",
+          "[40]<a> Course info",
+          "[41]<button> CS 70 Discrete Mathematics and Probability Theory Tue 3:30 PM–4:59 PM · Thu 3:30 PM–4:59 P",
+          "[42]<a> Course info",
+          "[75]<input> e.g. Databases",
+          "[76]<select> Mon",
+          "[43]<button> CS 161 Computer Security Mon 12 PM–12:59 PM · Wed 12 PM–12:59 PM · Fri 12 PM–12:59 PM · Ph  ↓ below",
+          "[44]<a> Course info  ↓ below",
+          "[77]<input type=time> (no label) value=\"10:00\"  ↓ below",
+          "[78]<input type=time> (no label) value=\"11:15\"  ↓ below",
+          "[45]<button> CS 162 Operating Systems and System Programming Tue 2 PM–3:29 PM · Thu 2 PM–3:29 PM · The   ↓ below",
+          "[46]<a> Course info  ↓ below",
+          "[79]<input> e.g. Soda 306  ↓ below",
+          "[80]<input> (no label)  ↓ below",
+          "[81]<button> Color 220  ↓ below",
+          "[82]<button> Color 160  ↓ below",
+          "[83]<button> Color 15  ↓ below",
+          "[84]<button> Color 280  ↓ below",
+          "[85]<button> Color 45  ↓ below",
+          "[86]<button> Color 330  ↓ below",
+          "[87]<button> Color 120  ↓ below",
+          "[88]<button> Color 200  ↓ below",
+          "[89]<button> Color 60  ↓ below",
+          "[90]<button> Color 300  ↓ below",
+          "[47]<button> CS 164 Programming Languages and Compilers Mon 5 PM–6:29 PM · Wed 5 PM–6:29 PM · The Gatew  ↓ below",
+          "[48]<a> Course info  ↓ below",
+          "[91]<button disabled> Add  ↓ below",
+          "[49]<button> CS 168 Introduction to the Internet: Architecture and Protocols Tue 11 AM–12:29 PM · Thu 1  ↓ below",
+          "[50]<a> Course info  ↓ below",
+          "[51]<button> CS 169A Introduction to Software Engineering Tue 11 AM–12:29 PM · Thu 11 AM–12:29 PM · The  ↓ below",
+          "[52]<a> Course info  ↓ below",
+          "[53]<button> CS 170 Efficient Algorithms and Intractable Problems Tue 9:30 AM–10:59 AM · Thu 9:30 AM–10  ↓ below",
+          "[54]<a> Course info  ↓ below",
+          "[55]<button> CS 186 Introduction to Database Systems Mon 9:30 AM–10:59 AM · Wed 9:30 AM–10:59 AM · The   ↓ below",
+          "[56]<a> Course info  ↓ below",
+          "[57]<button> CS 188 Introduction to Artificial Intelligence Mon 2 PM–3:29 PM · Wed 2 PM–3:29 PM · The G  ↓ below",
+          "[58]<a> Course info  ↓ below",
+          "[59]<button> CS 189 Introduction to Machine Learning Tue 5 PM–6:29 PM · Thu 5 PM–6:29 PM · Dwinelle 155  ↓ below",
+          "[60]<a> Course info  ↓ below",
+          "[61]<button> CS 282A Designing, Visualizing and Understanding Deep Neural Networks Tue 9:30 AM–10:59 AM  ↓ below",
+          "[62]<a> Course info  ↓ below",
+          "[63]<button> DATA C8 Foundations of Data Science (Lec 001) Mon 10 AM–10:59 AM · Wed 10 AM–10:59 AM · Fr  ↓ below",
+          "[64]<a> Course info  ↓ below",
+          "[65]<button> DATA C100 Principles & Techniques of Data Science Tue 12:30 PM–1:59 PM · Thu 12:30 PM–1:59  ↓ below",
+          "[66]<a> Course info  ↓ below",
+          "[67]<button> DATA C140 Probability for Data Science Tue 2 PM–3:29 PM · Thu 2 PM–3:29 PM · Dwinelle 155   ↓ below"
+        ],
+        "text": "Timetable | Friends | Class | 📅 | Design: | Classic | New | Add class | Find in course catalog | Classmates in the same class can see you take it — nothing else from your timetable. | Fall 2026 | Spring 2027 | CS 61A | The Structure and Interpretation of Computer Programs | Mon 12 PM–12:59 PM · Wed 12 PM–12:59 PM · Fri 12 PM–12:59 PM | · Wheeler 150 | · Kay Ousterhout, John DeNero | Course info (×4 on screen) | CS 61B | Data Structures | Mon 2 PM–2:59 PM · Wed 2 PM–2:59 PM · Fri 2 PM–2:59 PM | · Wheeler 150 | · Joshua A Hug, Manuel A Sabin | Course info | CS 61C | Great Ideas of Computer Architecture (Machine Structures) | CS 70 | Discrete Mathematics and Probability Theory | Enter manually | ↓ | Course | * | Day | *",
+        "scroll": {
+          "top": 0,
+          "max": 308
+        },
+        "fingerprint": "7ade9dee811cdb3aabcc58d966c5a77dd2e66866",
+        "simReadSec": 6.2
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 30,
+            "name": "Close",
+            "w": 32,
+            "h": 32
+          },
+          {
+            "id": 31,
+            "name": "Fall 2026",
+            "w": 157,
+            "h": 36
+          },
+          {
+            "id": 32,
+            "name": "Spring 2027",
+            "w": 157,
+            "h": 36
+          },
+          {
+            "id": 36,
+            "name": "Course info",
+            "w": 62,
+            "h": 19
+          },
+          {
+            "id": 38,
+            "name": "Course info",
+            "w": 62,
+            "h": 19
+          },
+          {
+            "id": 40,
+            "name": "Course info",
+            "w": 62,
+            "h": 19
+          },
+          {
+            "id": 42,
+            "name": "Course info",
+            "w": 62,
+            "h": 19
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 452
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Add class sheet with catalog search box and Fall 2026 selected",
+        "feeling": "curious",
+        "note": "검색창 있다. MATH 1A 치면 되겠지"
+      }
+    },
+    {
+      "index": 7,
+      "at": "2026-11-02T18:34:34.193Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Add class sheet with catalog search box and Fall 2026 selected",
+        "feeling": "curious",
+        "thought": "검색창 있다. MATH 1A 치면 되겠지"
+      },
+      "about": 6,
+      "feeling": "curious",
+      "thought": "검색창 있다. MATH 1A 치면 되겠지",
+      "urlAfter": "http://localhost:45239/timetable",
+      "route": "/timetable"
+    },
+    {
+      "index": 8,
+      "at": "2026-11-02T18:34:34.497Z",
+      "kind": "action",
+      "command": "type",
+      "args": {
+        "id": 34,
+        "text": "MATH 1A",
+        "submit": false,
+        "expect": "Calculus I / MATH 1A shows in the list",
+        "confidence": "0.75"
+      },
+      "urlBefore": "http://localhost:45239/timetable",
+      "target": {
+        "id": 34,
+        "tag": "input",
+        "role": "textbox",
+        "name": "Search by course name or code",
+        "box": {
+          "x": 32,
+          "y": 423,
+          "w": 326,
+          "h": 44
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "Calculus I / MATH 1A shows in the list",
+        "confidence": 0.75
+      },
+      "latencyMs": 1124,
+      "tapPoint": {
+        "x": 195,
+        "y": 445.3,
+        "centre": true
+      },
+      "actionNumber": 4,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45239/timetable",
+      "route": "/timetable",
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/008-type.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/008-type-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 26,
+        "newElementIds": [
+          92,
+          93,
+          94,
+          95
+        ],
+        "elements": [
+          "[30]<button> Close",
+          "[31]<button> Fall 2026",
+          "[32]<button> Spring 2027",
+          "[33]<select> All departments (100)",
+          "[34]<input> Search by course name or code value=\"MATH 1A\"",
+          "[92]<button> MATH 51 Calculus I (formerly MATH 1A) (Lec 001) Tue 9:30 AM–10:59 AM · Thu 9:30 AM–10:59 A",
+          "[93]<a> Course info",
+          "[94]<button> MATH 51 Calculus I (formerly MATH 1A) (Lec 002) Tue 8 AM–9:29 AM · Thu 8 AM–9:29 AM · Whee",
+          "[95]<a> Course info",
+          "[75]<input> e.g. Databases",
+          "[76]<select> Mon",
+          "[77]<input type=time> (no label) value=\"10:00\"  ↓ below",
+          "[78]<input type=time> (no label) value=\"11:15\"  ↓ below",
+          "[79]<input> e.g. Soda 306  ↓ below",
+          "[80]<input> (no label)  ↓ below",
+          "[81]<button> Color 220  ↓ below",
+          "[82]<button> Color 160  ↓ below",
+          "[83]<button> Color 15  ↓ below",
+          "[84]<button> Color 280  ↓ below",
+          "[85]<button> Color 45  ↓ below",
+          "[86]<button> Color 330  ↓ below",
+          "[87]<button> Color 120  ↓ below",
+          "[88]<button> Color 200  ↓ below",
+          "[89]<button> Color 60  ↓ below",
+          "[90]<button> Color 300  ↓ below",
+          "[91]<button disabled> Add  ↓ below"
+        ],
+        "text": "Timetable | Friends | Class | 📅 | Design: | Classic | New | Add class | Find in course catalog | Classmates in the same class can see you take it — nothing else from your timetable. | Fall 2026 | Spring 2027 | MATH 51 | Calculus I (formerly MATH 1A) (Lec 001) | Tue 9:30 AM–10:59 AM · Thu 9:30 AM–10:59 AM | · Wheeler 150 | · Alexander Paulin | Course info | MATH 51 | Calculus I (formerly MATH 1A) (Lec 002) | Tue 8 AM–9:29 AM · Thu 8 AM–9:29 AM | · Wheeler 150 | · Alexander Paulin | Course info | Enter manually | ↓ | Course | * | Day | *",
+        "scroll": {
+          "top": 0,
+          "max": 308
+        },
+        "fingerprint": "19e50fe3e79de4a6bc775dafaaed0e16bb375e24",
+        "simReadSec": 2.1
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 30,
+            "name": "Close",
+            "w": 32,
+            "h": 32
+          },
+          {
+            "id": 31,
+            "name": "Fall 2026",
+            "w": 157,
+            "h": 36
+          },
+          {
+            "id": 32,
+            "name": "Spring 2027",
+            "w": 157,
+            "h": 36
+          },
+          {
+            "id": 93,
+            "name": "Course info",
+            "w": 62,
+            "h": 19
+          },
+          {
+            "id": 95,
+            "name": "Course info",
+            "w": 62,
+            "h": 19
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 452
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "Shows MATH 51 'Calculus I (formerly MATH 1A)' — two lectures, Lec 001 and Lec 002",
+        "feeling": "neutral",
+        "note": "MATH 51? 뭐지… 아 formerly MATH 1A 써있네 다행. 근데 Lec 001/002 두 개… 나 화목 9:30 거 맞지?"
+      }
+    },
+    {
+      "index": 9,
+      "at": "2026-11-02T18:34:44.360Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "Shows MATH 51 'Calculus I (formerly MATH 1A)' — two lectures, Lec 001 and Lec 002",
+        "feeling": "neutral",
+        "thought": "MATH 51? 뭐지… 아 formerly MATH 1A 써있네 다행. 근데 Lec 001/002 두 개… 나 화목 9:30 거 맞지?",
+        "friction": "copy",
+        "severity": "1",
+        "element": "92",
+        "wish": "say 'same class, two time slots — pick yours'"
+      },
+      "about": 8,
+      "feeling": "neutral",
+      "thought": "MATH 51? 뭐지… 아 formerly MATH 1A 써있네 다행. 근데 Lec 001/002 두 개… 나 화목 9:30 거 맞지?",
+      "urlAfter": "http://localhost:45239/timetable",
+      "route": "/timetable",
+      "frictionId": "f1"
+    },
+    {
+      "index": 10,
+      "at": "2026-11-02T18:34:44.508Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 92,
+        "expect": "MATH 51 Lec 001 gets added to my timetable (or fills the form)",
+        "confidence": "0.6"
+      },
+      "urlBefore": "http://localhost:45239/timetable",
+      "target": {
+        "id": 92,
+        "tag": "button",
+        "role": "button",
+        "name": "MATH 51 Calculus I (formerly MATH 1A) (Lec 001) Tue 9:30 AM–10:59 AM · Thu 9:30 AM–10:59 A",
+        "box": {
+          "x": 44,
+          "y": 483,
+          "w": 232,
+          "h": 72
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "MATH 51 Lec 001 gets added to my timetable (or fills the form)",
+        "confidence": 0.6
+      },
+      "latencyMs": 7416,
+      "tapPoint": {
+        "x": 160.2,
+        "y": 519.3,
+        "centre": true
+      },
+      "actionNumber": 5,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45239/timetable",
+      "route": "/timetable",
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/010-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/010-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 3,
+        "newElementIds": [
+          26,
+          96
+        ],
+        "elements": [
+          "[30]<button> Close",
+          "[26]<button> Back",
+          "[96]<button disabled> Add lecture only"
+        ],
+        "text": "Timetable | Friends | Class | 📅 | Your timetable is empty | Add classes to get friends and activities that fit your free periods. Rooms and your full schedule stay private. | Add first class | Others only see when you’re free, never your full schedule. Rooms are never shared. | Design: | Classic | New | Add class | MATH 51 | Calculus I (formerly MATH 1A) (Lec 001) | Lecture | · | Tue 9:30 AM–10:59 AM · Thu 9:30 AM–10:59 AM | · Wheeler 150 | Finding discussion and lab sections… | Back | Add lecture only",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "b85bd6f2370c3e46166983f3d18a5f8daf900a01",
+        "simReadSec": 3.1
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 30,
+            "name": "Close",
+            "w": 32,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 452
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 0.5,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "Not added yet — sheet says 'Finding discussion and lab sections…', Add button greyed out, took a while",
+        "feeling": "neutral",
+        "note": "아 섹션 찾는 중… 좀 느리네. discussion 섹션도 고르라는 건가"
+      }
+    },
+    {
+      "index": 11,
+      "at": "2026-11-02T18:34:56.317Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "Not added yet — sheet says 'Finding discussion and lab sections…', Add button greyed out, took a while",
+        "feeling": "neutral",
+        "thought": "아 섹션 찾는 중… 좀 느리네. discussion 섹션도 고르라는 건가"
+      },
+      "about": 10,
+      "feeling": "neutral",
+      "thought": "아 섹션 찾는 중… 좀 느리네. discussion 섹션도 고르라는 건가",
+      "urlAfter": "http://localhost:45239/timetable",
+      "route": "/timetable"
+    },
+    {
+      "index": 12,
+      "at": "2026-11-02T18:34:56.446Z",
+      "kind": "action",
+      "command": "wait",
+      "args": {
+        "ms": "2000"
+      },
+      "urlBefore": "http://localhost:45239/timetable",
+      "latencyMs": 9338,
+      "actionNumber": 6,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45239/timetable",
+      "route": "/timetable",
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/012-wait.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/012-wait-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 3,
+        "newElementIds": [],
+        "elements": [
+          "[30]<button> Close",
+          "[26]<button> Back",
+          "[96]<button disabled> Add lecture only"
+        ],
+        "text": "Timetable | Friends | Class | 📅 | Your timetable is empty | Add classes to get friends and activities that fit your free periods. Rooms and your full schedule stay private. | Add first class | Others only see when you’re free, never your full schedule. Rooms are never shared. | Design: | Classic | New | Add class | MATH 51 | Calculus I (formerly MATH 1A) (Lec 001) | Lecture | · | Tue 9:30 AM–10:59 AM · Thu 9:30 AM–10:59 AM | · Wheeler 150 | Finding discussion and lab sections… | Back | Add lecture only",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "b85bd6f2370c3e46166983f3d18a5f8daf900a01",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 30,
+            "name": "Close",
+            "w": 32,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 452
+      },
+      "signals": [],
+      "frustrationAfter": 1
+    },
+    {
+      "index": 13,
+      "at": "2026-11-02T18:35:08.741Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "feeling": "frustrated",
+        "thought": "아직도 Finding…? 버튼도 회색이라 'lecture only'도 못 누름. 아 귀찮아",
+        "friction": "performance",
+        "severity": "2",
+        "element": "96",
+        "wish": "let me add the lecture now while it loads sections"
+      },
+      "about": 12,
+      "feeling": "frustrated",
+      "thought": "아직도 Finding…? 버튼도 회색이라 'lecture only'도 못 누름. 아 귀찮아",
+      "urlAfter": "http://localhost:45239/timetable",
+      "route": "/timetable",
+      "frictionId": "f2"
+    },
+    {
+      "index": 14,
+      "at": "2026-11-02T18:35:08.895Z",
+      "kind": "action",
+      "command": "wait",
+      "args": {
+        "ms": "3000"
+      },
+      "urlBefore": "http://localhost:45239/timetable",
+      "latencyMs": 6419,
+      "actionNumber": 7,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45239/timetable",
+      "route": "/timetable",
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/014-wait.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/014-wait-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 7,
+        "newElementIds": [
+          27,
+          28,
+          97,
+          98,
+          99,
+          12
+        ],
+        "elements": [
+          "[26]<button> Back",
+          "[27]<button> Friends",
+          "[28]<button> Class",
+          "[97]<button> MATH 51 Calculus I (formerly MATH 1A) (Lec 001) Wheeler 150",
+          "[98]<button> MATH 51 Calculus I (formerly MATH 1A) (Lec 001) Wheeler 150",
+          "[12]<button> Switch to the classic design",
+          "[99]<button> 10:45 AM–9 PM 0 free · 0 nearby Open  ↓ below"
+        ],
+        "text": "Timetable | Friends | Class | Mon · No classes today | The rest of today is yours | 2 | classes | Mon | Tue | Wed | Thu | Fri | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | MATH 51 | Calculus I (formerly MATH 1A) (Lec 001) | Wheeler 150 | MATH 51 | Calculus I (formerly MATH 1A) (Lec 001) | Wheeler 150 | Class | Activity | Tap a class for its space · a free period to open an activity · empty for a new class | Design: | Classic | New | MATH 51 added",
+        "scroll": {
+          "top": 0,
+          "max": 254
+        },
+        "fingerprint": "95aa1d5ba86664f6c8dd1b0a53ae7094c5f40f94",
+        "simReadSec": 2.4
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 26,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 27,
+            "name": "Friends",
+            "w": 92,
+            "h": 28
+          },
+          {
+            "id": 28,
+            "name": "Class",
+            "w": 88,
+            "h": 36
+          },
+          {
+            "id": 12,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 452
+      },
+      "signals": [],
+      "frustrationAfter": 1
+    },
+    {
+      "index": 15,
+      "at": "2026-11-02T18:35:23.237Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "feeling": "delighted",
+        "thought": "오 들어갔다! 화·목 MATH 51 보이네. 근데 나 아무것도 안 눌렀는데 혼자 추가됨? 그리고 '2 classes'… 수학 하나인데",
+        "friction": "ux_confusion",
+        "severity": "1",
+        "element": "97",
+        "wish": "tell me it'll add automatically if there are no sections; count it as 1 class"
+      },
+      "about": 14,
+      "feeling": "delighted",
+      "thought": "오 들어갔다! 화·목 MATH 51 보이네. 근데 나 아무것도 안 눌렀는데 혼자 추가됨? 그리고 '2 classes'… 수학 하나인데",
+      "urlAfter": "http://localhost:45239/timetable",
+      "route": "/timetable",
+      "frictionId": "f3"
+    },
+    {
+      "index": 16,
+      "at": "2026-11-02T18:35:23.367Z",
+      "kind": "finish",
+      "command": "finish",
+      "args": {
+        "outcome": "success",
+        "reason": "MATH 1A(이제 MATH 51) 화목 9:30 수업 시간표에 들어간 거 확인했어. 섹션 찾는다고 좀 오래 기다린 거 빼면 쉬웠음.",
+        "dropoff": "medium",
+        "dropoff-why": "Timetable was easy and felt private, but the home People screen was empty and nothing showed anyone free when I am, so no reason yet to come back for finding meal friends.",
+        "dropoff-basis": "0,14"
+      },
+      "urlBefore": "http://localhost:45239/timetable",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:45239/timetable",
+      "route": "/timetable",
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/016-finish.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/016-finish-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 7,
+        "newElementIds": [],
+        "elements": [
+          "[26]<button> Back",
+          "[27]<button> Friends",
+          "[28]<button> Class",
+          "[97]<button> MATH 51 Calculus I (formerly MATH 1A) (Lec 001) Wheeler 150",
+          "[98]<button> MATH 51 Calculus I (formerly MATH 1A) (Lec 001) Wheeler 150",
+          "[12]<button> Switch to the classic design",
+          "[99]<button> 10:45 AM–9 PM 0 free · 0 nearby Open  ↓ below"
+        ],
+        "text": "Timetable | Friends | Class | Mon · No classes today | The rest of today is yours | 2 | classes | Mon | Tue | Wed | Thu | Fri | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | MATH 51 | Calculus I (formerly MATH 1A) (Lec 001) | Wheeler 150 | MATH 51 | Calculus I (formerly MATH 1A) (Lec 001) | Wheeler 150 | Class | Activity | Tap a class for its space · a free period to open an activity · empty for a new class | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 254
+        },
+        "fingerprint": "7420d3f097e2f336f2cedf0884ce7e9d101446ce",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 26,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 27,
+            "name": "Friends",
+            "w": 92,
+            "h": 28
+          },
+          {
+            "id": 28,
+            "name": "Class",
+            "w": 88,
+            "h": 36
+          },
+          {
+            "id": 12,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 452
+      }
+    }
+  ],
+  "frictionEvents": [
+    {
+      "id": "f1",
+      "step": 8,
+      "noteStep": 9,
+      "type": "copy",
+      "severity": 1,
+      "feeling": "neutral",
+      "quote": "MATH 51? 뭐지… 아 formerly MATH 1A 써있네 다행. 근데 Lec 001/002 두 개… 나 화목 9:30 거 맞지?",
+      "url": "/timetable",
+      "route": "/timetable",
+      "element": {
+        "id": 92,
+        "role": "button",
+        "name": "MATH 51 Calculus I (formerly MATH 1A) (Lec 001) Tue 9:30 AM–10:59 AM · Thu 9:30 AM–10:59 A"
+      },
+      "key": null,
+      "wish": "say 'same class, two time slots — pick yours'",
+      "evidence": [
+        "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/008-type.jpg",
+        "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/008-type-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f2",
+      "step": 12,
+      "noteStep": 13,
+      "type": "performance",
+      "severity": 2,
+      "feeling": "frustrated",
+      "quote": "아직도 Finding…? 버튼도 회색이라 'lecture only'도 못 누름. 아 귀찮아",
+      "url": "/timetable",
+      "route": "/timetable",
+      "element": {
+        "id": 96,
+        "role": "button",
+        "name": "Add lecture only"
+      },
+      "key": null,
+      "wish": "let me add the lecture now while it loads sections",
+      "evidence": [
+        "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/012-wait.jpg",
+        "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/012-wait-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f3",
+      "step": 14,
+      "noteStep": 15,
+      "type": "ux_confusion",
+      "severity": 1,
+      "feeling": "delighted",
+      "quote": "오 들어갔다! 화·목 MATH 51 보이네. 근데 나 아무것도 안 눌렀는데 혼자 추가됨? 그리고 '2 classes'… 수학 하나인데",
+      "url": "/timetable",
+      "route": "/timetable",
+      "element": {
+        "id": 97,
+        "role": "button",
+        "name": "MATH 51 Calculus I (formerly MATH 1A) (Lec 001) Wheeler 150"
+      },
+      "key": null,
+      "wish": "tell me it'll add automatically if there are no sections; count it as 1 class",
+      "evidence": [
+        "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/014-wait.jpg",
+        "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/014-wait-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    }
+  ],
+  "autoChecks": [
+    {
+      "step": 0,
+      "route": "/",
+      "smallTapTargets": 7,
+      "smallTapTargetExamples": [
+        {
+          "id": 1,
+          "name": "Filters",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 4,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 5,
+          "name": "Invite friends",
+          "w": 116,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/000-start.jpg"
+    },
+    {
+      "step": 2,
+      "route": "/profile",
+      "smallTapTargets": 6,
+      "smallTapTargetExamples": [
+        {
+          "id": 2,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 4,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 20,
+          "name": "Find a class to watch",
+          "w": 165,
+          "h": 36
+        },
+        {
+          "id": 11,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/002-click.jpg"
+    },
+    {
+      "step": 4,
+      "route": "/timetable",
+      "smallTapTargets": 4,
+      "smallTapTargetExamples": [
+        {
+          "id": 26,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 27,
+          "name": "Friends",
+          "w": 92,
+          "h": 28
+        },
+        {
+          "id": 28,
+          "name": "Class",
+          "w": 88,
+          "h": 36
+        },
+        {
+          "id": 12,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/004-click.jpg"
+    },
+    {
+      "step": 6,
+      "route": "/timetable",
+      "smallTapTargets": 7,
+      "smallTapTargetExamples": [
+        {
+          "id": 30,
+          "name": "Close",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 31,
+          "name": "Fall 2026",
+          "w": 157,
+          "h": 36
+        },
+        {
+          "id": 32,
+          "name": "Spring 2027",
+          "w": 157,
+          "h": 36
+        },
+        {
+          "id": 36,
+          "name": "Course info",
+          "w": 62,
+          "h": 19
+        },
+        {
+          "id": 38,
+          "name": "Course info",
+          "w": 62,
+          "h": 19
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/006-click.jpg"
+    },
+    {
+      "step": 8,
+      "route": "/timetable",
+      "smallTapTargets": 5,
+      "smallTapTargetExamples": [
+        {
+          "id": 30,
+          "name": "Close",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 31,
+          "name": "Fall 2026",
+          "w": 157,
+          "h": 36
+        },
+        {
+          "id": 32,
+          "name": "Spring 2027",
+          "w": 157,
+          "h": 36
+        },
+        {
+          "id": 93,
+          "name": "Course info",
+          "w": 62,
+          "h": 19
+        },
+        {
+          "id": 95,
+          "name": "Course info",
+          "w": 62,
+          "h": 19
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/008-type.jpg"
+    },
+    {
+      "step": 10,
+      "route": "/timetable",
+      "smallTapTargets": 1,
+      "smallTapTargetExamples": [
+        {
+          "id": 30,
+          "name": "Close",
+          "w": 32,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/010-click.jpg"
+    },
+    {
+      "step": 12,
+      "route": "/timetable",
+      "smallTapTargets": 1,
+      "smallTapTargetExamples": [
+        {
+          "id": 30,
+          "name": "Close",
+          "w": 32,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/012-wait.jpg"
+    },
+    {
+      "step": 14,
+      "route": "/timetable",
+      "smallTapTargets": 4,
+      "smallTapTargetExamples": [
+        {
+          "id": 26,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 27,
+          "name": "Friends",
+          "w": 92,
+          "h": 28
+        },
+        {
+          "id": 28,
+          "name": "Class",
+          "w": 88,
+          "h": 36
+        },
+        {
+          "id": 12,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/014-wait.jpg"
+    },
+    {
+      "step": 16,
+      "route": "/timetable",
+      "smallTapTargets": 4,
+      "smallTapTargetExamples": [
+        {
+          "id": 26,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 27,
+          "name": "Friends",
+          "w": 92,
+          "h": 28
+        },
+        {
+          "id": 28,
+          "name": "Class",
+          "w": 88,
+          "h": 36
+        },
+        {
+          "id": 12,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/016-finish.jpg"
+    }
+  ],
+  "outcome": "success",
+  "reportedOutcome": "success",
+  "outcomeReason": "MATH 1A(이제 MATH 51) 화목 9:30 수업 시간표에 들어간 거 확인했어. 섹션 찾는다고 좀 오래 기다린 거 빼면 쉬웠음.",
+  "endedBy": "persona",
+  "goalAchieved": true,
+  "goalFirstMetAtStep": 14,
+  "stepsToGoal": 7,
+  "goalEvidence": {
+    "step": 14,
+    "url": "/timetable",
+    "matched": [
+      {
+        "record": "users",
+        "where": {
+          "id": "$me",
+          "timetable": {
+            "re": "MATH ?(1A|51)\\b|Calculus I\\b"
+          }
+        },
+        "description": "Calculus I is in my saved timetable"
+      }
+    ],
+    "screenshot": "ux-sim/runs/cmp1-base-timetable-add-classes-minji/shots/014-wait.jpg"
+  },
+  "falseSuccess": false,
+  "unnoticedSuccess": false,
+  "successCheck": {
+    "evaluatedFrom": "first persona action (never the start screen)",
+    "recordChecks": "local data file"
+  },
+  "patienceExhaustedAtStep": null,
+  "actionsAfterPatienceExhausted": 0,
+  "overrodePatience": false,
+  "abandonPoint": null,
+  "dropoffRisk": {
+    "kind": "hypothesis",
+    "level": "medium",
+    "rationale": "Timetable was easy and felt private, but the home People screen was empty and nothing showed anyone free when I am, so no reason yet to come back for finding meal friends.",
+    "basis": [
+      0,
+      14
+    ],
+    "source": "persona-agent"
+  }
+}

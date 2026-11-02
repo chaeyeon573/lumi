@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "kind": "ux-sim-analysis",
+  "date": "2026-11-02",
+  "generatedAt": "2026-11-02T18:36:45.644Z",
+  "author": "TODO: orchestrating Claude session (link)",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "sources": {
+    "findings": "ux-sim/reports/2026-11-02-cmp1/findings.json",
+    "runs": [
+      "cmp1-base-cold-start-hangout-minji",
+      "cmp1-base-find-a-club-aisha",
+      "cmp1-base-first-open-decide-marcus",
+      "cmp1-base-internship-near-berkeley-priya",
+      "cmp1-base-lunch-today-diego",
+      "cmp1-base-ride-sfo-thanksgiving-seoyeon",
+      "cmp1-base-timetable-add-classes-minji",
+      "cmp1-fix-cold-start-hangout-minji",
+      "cmp1-fix-find-a-club-aisha",
+      "cmp1-fix-first-open-decide-marcus",
+      "cmp1-fix-internship-near-berkeley-priya",
+      "cmp1-fix-lunch-today-diego",
+      "cmp1-fix-ride-sfo-thanksgiving-seoyeon",
+      "cmp1-fix-timetable-add-classes-minji"
+    ],
+    "harness": "6f174347960d",
+    "appCommits": [
+      "7af1c8ef2cfd",
+      "1a1a69501453"
+    ]
+  },
+  "problems": [],
+  "dismissed": [],
+  "harnessIssues": [],
+  "notes": "TODO — group these 52 heuristic findings into problems (or dismiss them), then delete this note and save as analysis.json:\n67ca16898d6c | sev 3 | 2p | Missing / empty content on / — “Invite friends”\n97dda824b2fb | sev 2 | 2p | Onboarding friction on /start\ne2f05b7465c0 | sev 2 | 2p | Trust / privacy worry on /start — “2005”\nf0b0e987903d | sev 2 | 2p | Hard to find on /community — “Campus”\n37ba6e6b85d0 | sev 4 | 1p | Trust / privacy worry on /start — “🎉 Out with people”\nd80495a57f74 | sev 3 | 1p | Trust / privacy worry on /orgs/:id — “Ask to join”\nb671f45c6bb2 | sev 3 | 1p | Confusing UI on /orgs/:id?tab=recruit — “Recruiting”\n94527b529e80 | sev 3 | 1p | Trust / privacy worry on /start — “Next”\n30bfb5a984ca | sev 3 | 1p | Missing / empty content on / — “People”\nab8767625de9 | sev 3 | 1p | Confusing UI on /orgs/:id — “Get updates”\nf634db6cc171 | sev 2 | 1p | Confusing UI on /timetable — “MATH 51 Calculus I (formerly MATH 1A) (L”\n4d28c4b04f0f | sev 2 | 1p | No reason to stay on /\n51aeaa92565b | sev 2 | 1p | Confusing UI on /chats — “Direct”\na8499911c15f | sev 2 | 1p | Slow on /timetable — “Add lecture only”\nfe75fc995a42 | sev 2 | 1p | Onboarding friction on /start — “e.g. Computer Science”\n919841c6195c | sev 2 | 1p | Missing / empty content on /orgs/:id?tab=events — “Events”\n6de492d10b73 | sev 2 | 1p | Missing / empty content on /orgs/:id?tab=members — “Members”\nbbab628dceb5 | sev 2 | 1p | Hard to find on /community?tab=opportunities — “Show more (7)”\n68c8e67b425d | sev 2 | 1p | Missing / empty content on /orgs/:id — “About”\nc001ec879684 | sev 2 | 1p | Trust / privacy worry on /welcome\nc839eaceb32e | sev 2 | 1p | Unclear wording on /rides — “Find a ride”\n8a0bf61f729f | sev 2 | 1p | Onboarding friction on /start — “Skip”\nacb4cc579834 | sev 2 | 1p | Missing / empty content on / — “🐱 You going”\n706b176473be | sev 2 | 1p | Hard to find on /discover — “Teams”\n3b5ac628f93c | sev 2 | 1p | Missing / empty content on /community?tab=opportunities — “📊 Berkeley Consulting Undergraduate man”\n518c68aff2a6 | sev 2 | 1p | Confusing UI on /welcome\nd9636172c04a | sev 2 | 1p | Hard to find on / — “Discover”\nb9d1ee526d80 | sev 2 | 1p | Hard to find on /discover — “Discover”\n43ed8165cecc | sev 2 | 1p | Hard to find on /community?tab=opportunities — “Browse”\n6d922472ea26 | sev 2 | 1p | Missing / empty content on /opportunities/:id — “Details”\ne8b25109cb47 | sev 1 | 1p | Confusing UI on /community?tab=opportunities — “🤖 Machine Learning at Berkeley Undergra”\nf21a384a224b | sev 1 | 1p | Unclear wording on /profile — “Find a class to watch”\ne53f5b5080fe | sev 1 | 1p | Unclear wording on /start\nf4cafbbabf74 | sev 1 | 1p | No reason to stay on /community?tab=opportunities — “For you”\n52228e162ff2 | sev 1 | 1p | Unclear wording on /community?tab=opportunities — “Clubs”\n892104e2a76a | sev 1 | 1p | Unclear wording on /community?tab=opportunities — “Associations”\nbc1b938d7552 | sev 1 | 1p | Missing / empty content on /community?tab=opportunities — “🔬 Syracuse iSchool ASSURE-REU: Text Ana”\n5a069545d718 | sev 1 | 1p | No reason to stay on /opportunities/:id — “Start a prep crew e.g. Interview prep · ”\n0f09a767aea4 | sev 1 | 1p | Missing / empty content on /opportunities/:id — “Official source Lyft careers Last verifi”\n5b3363c14dd9 | sev 1 | 1p | No reason to stay on / — “I'm in”\n44271af15761 | sev 1 | 1p | Bug on /chats/:id — “Switch to the classic design”\n39327c8d79c3 | sev 1 | 1p | Bug on /rides — “My rides”\n1ffc6e246d69 | sev 1 | 1p | Unclear wording on /timetable — “MATH 51 Calculus I (formerly MATH 1A) (L”\n8551c6209604 | sev 1 | 1p | Confusing UI on / — “Go together”\n942b79d6055c | sev 1 | 1p | Trust / privacy worry on /community?tab=opportunities — “🥾 Cal Hiking and Outdoor Society (CHAOS”\nf3a9ac15eb35 | sev 1 | 1p | Onboarding friction on /start — “Back”\nf98a48434400 | sev 1 | 1p | No reason to stay on /start — “🧭 Upperclassmen who’ve been there”\nc4d7ce393786 | sev 1 | 1p | Bug on /community?tab=opportunities — “Location”\nca00bd1ad3db | sev 1 | 1p | Confusing UI on /\nb94b701b00c1 | sev 1 | 1p | Unclear wording on /profile — “My rides Airports, groceries, SF, Tahoe”\ndcaa93c37b46 | sev 1 | 1p | Unclear wording on /chats/:id — “🚕 SFO · Wed Nov 25 8:30am 멤버 2명”\na3de046c1163 | sev 1 | 1p | Hard to find on / — “Add classes”"
+}

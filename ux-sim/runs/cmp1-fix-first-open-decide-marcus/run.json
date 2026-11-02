@@ -1,0 +1,2961 @@
+{
+  "schemaVersion": 1,
+  "runId": "cmp1-fix-first-open-decide-marcus",
+  "status": "finished",
+  "createdAt": "2026-11-02T18:33:28.942Z",
+  "finishedAt": "2026-11-02T18:35:40.394Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "persona": {
+    "id": "marcus-senior-lowtech",
+    "name": "Marcus",
+    "age": 22,
+    "year": "Senior",
+    "school": "UC Berkeley",
+    "major": "History",
+    "account": {
+      "$comment": "Profile for auth: fresh — the harness registers this account through the app's own sign-up API (lib/account.mjs). nickname defaults to name, birthYear to this year − age.",
+      "nickname": "Marcus",
+      "department": "History",
+      "yearInSchool": 4,
+      "goals": [
+        "internship"
+      ],
+      "interests": [
+        "walk"
+      ],
+      "purposes": [
+        "networking"
+      ],
+      "lookingFor": [
+        "senior"
+      ]
+    },
+    "purpose": "Find a paid internship or job lead near Berkeley for after graduation; skeptical of new apps.",
+    "techFamiliarity": "low",
+    "readingDepth": 0.7,
+    "readingCharsPerSec": 20,
+    "language": {
+      "preferred": "en",
+      "englishUiComfort": "high",
+      "notes": "Native English; not used to app conventions like swipe cards or icon-only buttons."
+    },
+    "device": {
+      "type": "phone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "locale": "en-US"
+    },
+    "patience": {
+      "maxSteps": 36,
+      "frustrationThreshold": 4,
+      "confusionTolerance": 2,
+      "timeBudgetSec": 360
+    },
+    "backstory": "I mostly use my phone for texting, email and Handshake when the career center tells me to. My little sister said this app has internships. I'm not giving my info to some random app unless it's clearly legit. Icons without words lose me.",
+    "quitsWhen": [
+      "It wants my info before I know what it is",
+      "Icons with no labels",
+      "I can't find the internship part",
+      "It looks like a dating or party app"
+    ],
+    "voice": "Plain, slightly skeptical, polite. 'I don't get what this button does', 'Is this legit?'"
+  },
+  "scenario": {
+    "id": "first-open-decide",
+    "title": "First open: what is this app, and is it worth signing up?",
+    "goal": "A friend sent you a link to this app. You have never seen it before. Figure out what it is for, and decide whether you want to make an account. If it seems worth it, sign up with your school e-mail.",
+    "startUrl": "/welcome",
+    "setup": {
+      "auth": "none",
+      "notes": "Signed out: the persona decides whether to sign up. Success needs an account created during the run."
+    },
+    "success": {
+      "description": "Signed up during the run (a new account exists and the browser is signed in to it) and landed inside the app (signed-in home or a main tab).",
+      "all": [
+        {
+          "record": {
+            "collection": "users",
+            "where": {
+              "id": "$me"
+            },
+            "fresh": "created",
+            "description": "the account the browser is signed in to was created during this run"
+          }
+        },
+        {
+          "urlMatches": "^/(discover|community|profile)?(\\?.*)?$"
+        }
+      ]
+    }
+  },
+  "target": {
+    "mode": "local",
+    "baseUrl": "http://localhost:42653",
+    "stack": {
+      "catalog": {
+        "kind": "cached",
+        "source": "berkeley course adapter (server/sources/courses.ts) via server/scripts/fetch-courses.ts",
+        "schoolId": "s_berkeley",
+        "courses": 6588,
+        "terms": [
+          "Fall 2026",
+          "Spring 2027"
+        ],
+        "fetchedAt": "2026-11-02T06:52:47.693Z"
+      },
+      "events": {
+        "kind": "cached",
+        "source": "https://heetz.up.railway.app POST /api/auth/demo + POST /api/bootstrap (read-only), worker-fetched opportunities",
+        "baseUrl": "https://heetz.up.railway.app",
+        "fetchedAt": "2026-11-02T07:25:30.398Z",
+        "stamp": "fa9ccb47",
+        "opportunities": 1119,
+        "updatedExisting": 123,
+        "byType": {
+          "lab": 38,
+          "scholarship": 62,
+          "internship": 454,
+          "hackathon": 102,
+          "event": 146,
+          "exchange": 316,
+          "startup": 1
+        },
+        "eventsThisWeek": 103,
+        "freeFoodThisWeek": 7
+      },
+      "port": 42653,
+      "worktree": "/home/user/lumi-fix",
+      "commit": "1a1a695014537a2e51ef7b6231ac34e154c9b5af",
+      "stamp": "1a1a69501453",
+      "dirty": false,
+      "dataFile": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/stack/db.json",
+      "template": "ux-sim/stack/templates/lumi-fix-1a1a69501453-catf079553d-evfa9ccb47.json",
+      "log": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/stack/server.log",
+      "owned": true,
+      "autoreply": false
+    },
+    "liveGuard": {
+      "enabled": false
+    }
+  },
+  "auth": {
+    "mode": "none",
+    "userId": null,
+    "note": "signed out — the persona signs up (or not) in the app"
+  },
+  "harness": {
+    "hash": "6f174347960d",
+    "commit": "29aa633114d3a6233c4828a1d8cf59485768bd2a",
+    "dirty": false
+  },
+  "environment": {
+    "summary": "Local stack: this worktree's server + built web app, fresh seeded FileStore per run, no secrets, no worker.",
+    "knownLimits": [
+      "Dining menus and RSF gym crowd levels need live campus sources (the local stack runs with CAMPUS_LIVE=0) — empty or missing data there is not a UX bug.",
+      "AI features (Ask Lumi, AI profile draft on /start, conversation starters) need an OpenAI key; none is configured locally.",
+      "Course catalog is the real Berkeley Class Schedule (6588 courses, Fall 2026 + Spring 2027), fetched 2026-11-02 with the worker's adapter. Seat counts and very recent changes may differ from live.",
+      "Campus events, free food, internships, hackathons and scholarships are a read-only snapshot of live (1119 real items, 103 events this week, taken 2026-11-02 07:25 UTC) plus the CSV calendar. Nothing new appears during the run; Q&A and reviews are empty.",
+      "No e-mail is sent: the sign-up / sign-in code is shown on screen in the hint (live sends a real e-mail).",
+      "Real-time updates (SSE) work locally; other people never reply unless the stack was started with --autoreply."
+    ],
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "locale": "en-US",
+    "timezone": "America/Los_Angeles",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+    "browserVersion": "153.0.8010.12"
+  },
+  "limits": {
+    "maxSteps": 36,
+    "frustrationThreshold": 4,
+    "confusionTolerance": 2,
+    "timeBudgetSec": 360,
+    "weights": {
+      "failed": 1,
+      "no_effect": 1,
+      "repeated": 0.75,
+      "backtrack": 0.5,
+      "mismatch": 0.5
+    }
+  },
+  "counters": {
+    "actions": 15,
+    "frustration": 2.5,
+    "confusionNotes": 2,
+    "simTimeSec": 147.56699999999998
+  },
+  "steps": [
+    {
+      "index": 0,
+      "at": "2026-11-02T18:33:43.720Z",
+      "kind": "start",
+      "command": "start",
+      "args": {
+        "persona": "marcus-senior-lowtech",
+        "scenario": "first-open-decide",
+        "auth": "none"
+      },
+      "latencyMs": 3163,
+      "urlBefore": null,
+      "setupNotes": [],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/welcome",
+      "route": "/welcome",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/000-start.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/000-start-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 4,
+        "newElementIds": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "elements": [
+          "[1]<button> Get in →",
+          "[2]<button> Sign in",
+          "[3]<a> Terms of Use",
+          "[4]<a> Privacy Policy"
+        ],
+        "text": "lumi | . | 👋 WHO'S FREE NOW ✦ 🍕 FREE FOOD ✦ ⏰ DEADLINES ✦ 🎸 94 CLUBS ✦ 💼 457 INTERNSHIPS ✦ 👋 WHO'S FREE NOW ✦ 🍕 FREE FOOD ✦ ⏰ DEADLINES ✦ 🎸 94 CLUBS ✦ 💼 457 INTERNSHIPS ✦ 👋 WHO'S FREE NOW ✦ 🍕 FREE FOOD ✦ ⏰ DEADLINES ✦ 🎸 94 CLUBS ✦ 💼 457 INTERNSHIPS ✦ 👋 WHO'S FREE NOW ✦ 🍕 FREE FOOD ✦ ⏰ DEADLINES ✦ 🎸 94 CLUBS ✦ 💼 457 INTERNSHIPS ✦ | Who's free | on | campus | right now? | 👋 Free between classes | Find someone for lunch | Add your timetable · see who's free | 🍕 Free food | · MON 1PM | Tenants’ Rights Workshop | MLK bNorth, suite 82D · | 6 this week | 🔥 | Closes today | Michel David-Weill Scholarship (Sciences Po) (Berkeley campus deadline) | Nov 2 · tap to save | Get in → | Have an account? | Sign in | By continuing you agree to the | Terms of Use | and | Privacy Policy | .",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "d6ee87e2adfe4fdf48d079b9814060dcd6f09cdd",
+        "simReadSec": 26.2
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 2,
+            "name": "Sign in",
+            "w": 46,
+            "h": 21
+          },
+          {
+            "id": 3,
+            "name": "Terms of Use",
+            "w": 76,
+            "h": 15
+          },
+          {
+            "id": 4,
+            "name": "Privacy Policy",
+            "w": 180,
+            "h": 33
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      }
+    },
+    {
+      "index": 1,
+      "at": "2026-11-02T18:33:57.106Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "feeling": "confused",
+        "thought": "Who's free on campus right now? Find someone for lunch? Sounds kind of like a meetup or dating thing. I did catch '457 internships' scrolling past in that yellow strip, but it moves too fast to read. Is this legit, and where's the job stuff?",
+        "friction": "ux_confusion",
+        "severity": "2",
+        "wish": "Tell me plainly up top what the app is for, including internships, not just a moving ticker"
+      },
+      "about": 0,
+      "feeling": "confused",
+      "thought": "Who's free on campus right now? Find someone for lunch? Sounds kind of like a meetup or dating thing. I did catch '457 internships' scrolling past in that yellow strip, but it moves too fast to read. Is this legit, and where's the job stuff?",
+      "urlAfter": "http://localhost:42653/welcome",
+      "route": "/welcome",
+      "frictionId": "f1"
+    },
+    {
+      "index": 2,
+      "at": "2026-11-02T18:34:01.478Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 1,
+        "expect": "It asks me to make an account or enter my email right away",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:42653/welcome",
+      "target": {
+        "id": 1,
+        "tag": "button",
+        "role": "button",
+        "name": "Get in →",
+        "box": {
+          "x": 20,
+          "y": 697,
+          "w": 350,
+          "h": 58
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "It asks me to make an account or enter my email right away",
+        "confidence": 0.7
+      },
+      "latencyMs": 1791,
+      "tapPoint": {
+        "x": 195,
+        "y": 726,
+        "centre": true
+      },
+      "actionNumber": 1,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/002-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/002-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 9,
+        "newElementIds": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "elements": [
+          "[5]<button> Back",
+          "[6]<button> UC Berkeley Berkeley",
+          "[7]<input> Search schools",
+          "[8]<button> Stanford University",
+          "[9]<button> UCLA",
+          "[10]<button> USC",
+          "[11]<button> UC San Diego",
+          "[12]<button> UC Irvine",
+          "[13]<button> UC Davis"
+        ],
+        "text": "1 | / | 7 | Which school do you go to? | You’ll see events, clubs and classes from your campus. | UC Berkeley | Berkeley | Another school? | Lumi is starting at UC Berkeley. Pick your school and we’ll email you when it opens. | Stanford University | UCLA | USC | UC San Diego | UC Irvine | UC Davis",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "ae78e08ad966aea76f09c085ab3ed285f85fcb51",
+        "simReadSec": 9.5
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 5,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 8,
+            "name": "Stanford University",
+            "w": 148,
+            "h": 36
+          },
+          {
+            "id": 9,
+            "name": "UCLA",
+            "w": 62,
+            "h": 36
+          },
+          {
+            "id": 10,
+            "name": "USC",
+            "w": 54,
+            "h": 36
+          },
+          {
+            "id": 11,
+            "name": "UC San Diego",
+            "w": 112,
+            "h": 36
+          },
+          {
+            "id": 12,
+            "name": "UC Irvine",
+            "w": 84,
+            "h": 36
+          },
+          {
+            "id": 13,
+            "name": "UC Davis",
+            "w": 83,
+            "h": 36
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "No email yet, just asks which school. But '1/7' at top means seven screens of setup.",
+        "feeling": "neutral",
+        "note": "OK, picking my school is harmless. Seven steps though, that's a lot before I even know what this is."
+      }
+    },
+    {
+      "index": 3,
+      "at": "2026-11-02T18:34:11.606Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "No email yet, just asks which school. But '1/7' at top means seven screens of setup.",
+        "feeling": "neutral",
+        "thought": "OK, picking my school is harmless. Seven steps though, that's a lot before I even know what this is.",
+        "friction": "onboarding",
+        "severity": "1",
+        "element": "5",
+        "wish": "Let me look around before a 7-step setup"
+      },
+      "about": 2,
+      "feeling": "neutral",
+      "thought": "OK, picking my school is harmless. Seven steps though, that's a lot before I even know what this is.",
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start",
+      "frictionId": "f2"
+    },
+    {
+      "index": 4,
+      "at": "2026-11-02T18:34:12.309Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 6,
+        "expect": "Goes to the next setup step",
+        "confidence": "0.8"
+      },
+      "urlBefore": "http://localhost:42653/start",
+      "target": {
+        "id": 6,
+        "tag": "button",
+        "role": "button",
+        "name": "UC Berkeley Berkeley",
+        "box": {
+          "x": 20,
+          "y": 215,
+          "w": 350,
+          "h": 84
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "Goes to the next setup step",
+        "confidence": 0.8
+      },
+      "latencyMs": 891,
+      "tapPoint": {
+        "x": 195,
+        "y": 257,
+        "centre": true
+      },
+      "actionNumber": 2,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/004-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/004-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 10,
+        "newElementIds": [
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "elements": [
+          "[5]<button> Back",
+          "[14]<button> 🙌 Make new friends",
+          "[15]<button> 💼 Land an internship",
+          "[16]<button> 🔬 Get into research",
+          "[17]<button> 💡 Win a hackathon",
+          "[18]<button> 🎓 Find funding",
+          "[19]<button> 🎸 Join a club",
+          "[20]<button> 🚀 Build something",
+          "[21]<button> 🍱 Never eat alone",
+          "[22]<button disabled> Next"
+        ],
+        "text": "2 | / | 7 | This semester, you’re mostly here to… | Pick up to 3. | 🙌 | Make new friends | 💼 | Land an internship | 🔬 | Get into research | 💡 | Win a hackathon | 🎓 | Find funding | 🎸 | Join a club | 🚀 | Build something | 🍱 | Never eat alone | Next",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "237425b4375b06de2b10054f81dfecf0c4b3eb9a",
+        "simReadSec": 7.3
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 5,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      },
+      "signals": [],
+      "frustrationAfter": 0.5,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Step 2/7 asks what I'm here for; 'Land an internship' is an option",
+        "feeling": "curious",
+        "note": "OK, 'Land an internship' with words next to it. That's what I came for. Good sign they take it seriously."
+      }
+    },
+    {
+      "index": 5,
+      "at": "2026-11-02T18:34:18.420Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Step 2/7 asks what I'm here for; 'Land an internship' is an option",
+        "feeling": "curious",
+        "thought": "OK, 'Land an internship' with words next to it. That's what I came for. Good sign they take it seriously."
+      },
+      "about": 4,
+      "feeling": "curious",
+      "thought": "OK, 'Land an internship' with words next to it. That's what I came for. Good sign they take it seriously.",
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start"
+    },
+    {
+      "index": 6,
+      "at": "2026-11-02T18:34:18.599Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 15,
+        "expect": "Internship gets highlighted, Next turns on",
+        "confidence": "0.8"
+      },
+      "urlBefore": "http://localhost:42653/start",
+      "target": {
+        "id": 15,
+        "tag": "button",
+        "role": "button",
+        "name": "💼 Land an internship",
+        "box": {
+          "x": 200,
+          "y": 194,
+          "w": 170,
+          "h": 71
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "Internship gets highlighted, Next turns on",
+        "confidence": 0.8
+      },
+      "latencyMs": 846,
+      "tapPoint": {
+        "x": 285,
+        "y": 229.3,
+        "centre": true
+      },
+      "actionNumber": 3,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/006-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/006-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 10,
+        "newElementIds": [],
+        "elements": [
+          "[5]<button> Back",
+          "[14]<button> 🙌 Make new friends",
+          "[15]<button> 💼 Land an internship",
+          "[16]<button> 🔬 Get into research",
+          "[17]<button> 💡 Win a hackathon",
+          "[18]<button> 🎓 Find funding",
+          "[19]<button> 🎸 Join a club",
+          "[20]<button> 🚀 Build something",
+          "[21]<button> 🍱 Never eat alone",
+          "[22]<button> Next"
+        ],
+        "text": "2 | / | 7 | This semester, you’re mostly here to… | Pick up to 3. | 🙌 | Make new friends | 💼 | Land an internship | 🔬 | Get into research | 💡 | Win a hackathon | 🎓 | Find funding | 🎸 | Join a club | 🚀 | Build something | 🍱 | Never eat alone | Next",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "f70132ff2f4dfaac28ef83682ecab7e3fbb1cc2e",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 5,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      },
+      "signals": [],
+      "frustrationAfter": 0.5,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Next became enabled after picking internship",
+        "feeling": "neutral",
+        "note": "Fine, that worked."
+      }
+    },
+    {
+      "index": 7,
+      "at": "2026-11-02T18:34:22.938Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Next became enabled after picking internship",
+        "feeling": "neutral",
+        "thought": "Fine, that worked."
+      },
+      "about": 6,
+      "feeling": "neutral",
+      "thought": "Fine, that worked.",
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start"
+    },
+    {
+      "index": 8,
+      "at": "2026-11-02T18:34:23.281Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 22,
+        "expect": "Next setup question",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:42653/start",
+      "target": {
+        "id": 22,
+        "tag": "button",
+        "role": "button",
+        "name": "Next",
+        "box": {
+          "x": 20,
+          "y": 514,
+          "w": 350,
+          "h": 52
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "Next setup question",
+        "confidence": 0.7
+      },
+      "latencyMs": 881,
+      "tapPoint": {
+        "x": 195,
+        "y": 539.5,
+        "centre": true
+      },
+      "actionNumber": 4,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/008-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/008-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 8,
+        "newElementIds": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "elements": [
+          "[5]<button> Back",
+          "[23]<input> e.g. Computer Science",
+          "[24]<button> Freshman",
+          "[25]<button> Sophomore",
+          "[26]<button> Junior",
+          "[27]<button> Senior",
+          "[28]<button> Grad student",
+          "[22]<button disabled> Next"
+        ],
+        "text": "3 | / | 7 | What do you study? | So we can show classes, talks and people in your field. | Major | Year | Freshman | Sophomore | Junior | Senior | Grad student | Next",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "6ae756f205b05ea9efc4f22e15e89f3e331a1e9a",
+        "simReadSec": 4.7
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 5,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      },
+      "signals": [],
+      "frustrationAfter": 0.5,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Asks major and year, says why",
+        "feeling": "neutral",
+        "note": "Major and year isn't really private. At least it tells me why it wants it. Still haven't seen a single internship though."
+      }
+    },
+    {
+      "index": 9,
+      "at": "2026-11-02T18:34:30.089Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Asks major and year, says why",
+        "feeling": "neutral",
+        "thought": "Major and year isn't really private. At least it tells me why it wants it. Still haven't seen a single internship though."
+      },
+      "about": 8,
+      "feeling": "neutral",
+      "thought": "Major and year isn't really private. At least it tells me why it wants it. Still haven't seen a single internship though.",
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start"
+    },
+    {
+      "index": 10,
+      "at": "2026-11-02T18:34:30.553Z",
+      "kind": "action",
+      "command": "type",
+      "args": {
+        "id": 23,
+        "text": "History",
+        "submit": false
+      },
+      "urlBefore": "http://localhost:42653/start",
+      "target": {
+        "id": 23,
+        "tag": "input",
+        "role": "textbox",
+        "name": "e.g. Computer Science",
+        "box": {
+          "x": 20,
+          "y": 208,
+          "w": 350,
+          "h": 44
+        },
+        "inViewport": true
+      },
+      "latencyMs": 875,
+      "tapPoint": {
+        "x": 195,
+        "y": 230,
+        "centre": true
+      },
+      "actionNumber": 5,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/010-type.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/010-type-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 8,
+        "newElementIds": [],
+        "elements": [
+          "[5]<button> Back",
+          "[23]<input> e.g. Computer Science value=\"History\"",
+          "[24]<button> Freshman",
+          "[25]<button> Sophomore",
+          "[26]<button> Junior",
+          "[27]<button> Senior",
+          "[28]<button> Grad student",
+          "[22]<button disabled> Next"
+        ],
+        "text": "3 | / | 7 | What do you study? | So we can show classes, talks and people in your field. | Major | Year | Freshman | Sophomore | Junior | Senior | Grad student | Next",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "6c5fcc2dcb035640d1f23f14ef368e72d1272125",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 5,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      },
+      "signals": [],
+      "frustrationAfter": 0.5
+    },
+    {
+      "index": 11,
+      "at": "2026-11-02T18:34:33.446Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 27
+      },
+      "urlBefore": "http://localhost:42653/start",
+      "target": {
+        "id": 27,
+        "tag": "button",
+        "role": "button",
+        "name": "Senior",
+        "box": {
+          "x": 20,
+          "y": 350,
+          "w": 80,
+          "h": 44
+        },
+        "inViewport": true
+      },
+      "latencyMs": 856,
+      "tapPoint": {
+        "x": 59.9,
+        "y": 371.5,
+        "centre": true
+      },
+      "actionNumber": 6,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/011-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/011-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 8,
+        "newElementIds": [],
+        "elements": [
+          "[5]<button> Back",
+          "[23]<input> e.g. Computer Science value=\"History\"",
+          "[24]<button> Freshman",
+          "[25]<button> Sophomore",
+          "[26]<button> Junior",
+          "[27]<button> Senior",
+          "[28]<button> Grad student",
+          "[22]<button> Next"
+        ],
+        "text": "3 | / | 7 | What do you study? | So we can show classes, talks and people in your field. | Major | Year | Freshman | Sophomore | Junior | Senior | Grad student | Next",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "f73a382fe001cd1128a9072fac1c64815319d30e",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 5,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      },
+      "signals": [],
+      "frustrationAfter": 0.5
+    },
+    {
+      "index": 12,
+      "at": "2026-11-02T18:34:36.755Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 22,
+        "expect": "Another setup question",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:42653/start",
+      "target": {
+        "id": 22,
+        "tag": "button",
+        "role": "button",
+        "name": "Next",
+        "box": {
+          "x": 20,
+          "y": 414,
+          "w": 350,
+          "h": 52
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "Another setup question",
+        "confidence": 0.7
+      },
+      "latencyMs": 840,
+      "tapPoint": {
+        "x": 195,
+        "y": 439.5,
+        "centre": true
+      },
+      "actionNumber": 7,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/012-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/012-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 8,
+        "newElementIds": [
+          29,
+          30,
+          31,
+          32,
+          33,
+          34
+        ],
+        "elements": [
+          "[5]<button> Back",
+          "[29]<button> 🤝 New friends",
+          "[30]<button> 📚 Study buddies",
+          "[31]<button> 🧩 Project teammates",
+          "[32]<button> 🚀 A co-founder",
+          "[33]<button> 🧭 Upperclassmen who’ve been there",
+          "[22]<button disabled> Next",
+          "[34]<button> Skip"
+        ],
+        "text": "4 | / | 7 | Who’d you love to meet? | Optional · pick any. We use it to suggest people. | 🤝 | New friends | 📚 | Study buddies | 🧩 | Project teammates | 🚀 | A co-founder | 🧭 | Upperclassmen who’ve been there | Next | Skip",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "7aa21fe8fe290abb48cb6c7bb11f7ba858ec161b",
+        "simReadSec": 6.4
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 5,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      },
+      "signals": [],
+      "frustrationAfter": 0.5,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Another question, about who I want to meet; it's optional",
+        "feeling": "bored",
+        "note": "I'm a senior, I'm not looking to meet people, I want a job. Nothing here like 'recruiters' or 'alumni'. Glad there's a Skip."
+      }
+    },
+    {
+      "index": 13,
+      "at": "2026-11-02T18:34:43.994Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Another question, about who I want to meet; it's optional",
+        "feeling": "bored",
+        "thought": "I'm a senior, I'm not looking to meet people, I want a job. Nothing here like 'recruiters' or 'alumni'. Glad there's a Skip.",
+        "friction": "motivation",
+        "severity": "1",
+        "element": "33",
+        "wish": "An option like alumni or people hiring, for seniors job hunting"
+      },
+      "about": 12,
+      "feeling": "bored",
+      "thought": "I'm a senior, I'm not looking to meet people, I want a job. Nothing here like 'recruiters' or 'alumni'. Glad there's a Skip.",
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start",
+      "frictionId": "f3"
+    },
+    {
+      "index": 14,
+      "at": "2026-11-02T18:34:44.272Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 34,
+        "expect": "Next step, hopefully closer to seeing internships",
+        "confidence": "0.6"
+      },
+      "urlBefore": "http://localhost:42653/start",
+      "target": {
+        "id": 34,
+        "tag": "button",
+        "role": "button",
+        "name": "Skip",
+        "box": {
+          "x": 20,
+          "y": 584,
+          "w": 350,
+          "h": 44
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "Next step, hopefully closer to seeing internships",
+        "confidence": 0.6
+      },
+      "latencyMs": 1126,
+      "tapPoint": {
+        "x": 195,
+        "y": 605.5,
+        "centre": true
+      },
+      "actionNumber": 8,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/014-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/014-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 19,
+        "newElementIds": [
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52
+        ],
+        "elements": [
+          "[5]<button> Back",
+          "[35]<button> 🙂",
+          "[36]<button> 😎",
+          "[37]<button> 🧑‍💻",
+          "[38]<button> 👩‍🎨",
+          "[39]<button> 🧑‍🔬",
+          "[40]<button> 🏃",
+          "[41]<button> 🎸",
+          "[42]<button> 📚",
+          "[43]<button> ☕",
+          "[44]<button> 🌱",
+          "[45]<button> 🚀",
+          "[46]<button> 🧗",
+          "[47]<button> 🐱",
+          "[48]<button> 🦊",
+          "[49]<button> 🎧",
+          "[50]<button> 🍜",
+          "[51]<textarea> (no label) value=\"Senior in History. Here to land an inter\"",
+          "[52]<button> Looks good"
+        ],
+        "text": "5 | / | 7 | Here’s your profile ✨ | Tweak anything. Classmates see this on your card. | 🙂 | You | History · Senior · UC Berkeley | Senior in History. Here to land an internship. | 💼 | Land an internship | Pick an avatar | 🙂 | 😎 | 🧑‍💻 | 👩‍🎨 | 🧑‍🔬 | 🏃 | 🎸 | 📚 | ☕ | 🌱 | 🚀 | 🧗 | 🐱 | 🦊 | 🎧 | 🍜 | Your one-liner | Looks good",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "7b86bfbcd8195d3d4b56f2ef97ad9c0d21a4e487",
+        "simReadSec": 9.5
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 5,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 0.5,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "Not internships yet: it built me a profile card that 'classmates see'",
+        "feeling": "neutral",
+        "note": "Wait, it's already making a profile card that other people see? I haven't even seen what's in here. At least it's just an emoji and not my photo. 'Here to land an internship' — fine, that's true."
+      }
+    },
+    {
+      "index": 15,
+      "at": "2026-11-02T18:34:53.469Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "Not internships yet: it built me a profile card that 'classmates see'",
+        "feeling": "neutral",
+        "thought": "Wait, it's already making a profile card that other people see? I haven't even seen what's in here. At least it's just an emoji and not my photo. 'Here to land an internship' — fine, that's true.",
+        "friction": "trust_privacy",
+        "severity": "2",
+        "element": "51",
+        "wish": "Show me the internships first, then ask me to make a public profile"
+      },
+      "about": 14,
+      "feeling": "neutral",
+      "thought": "Wait, it's already making a profile card that other people see? I haven't even seen what's in here. At least it's just an emoji and not my photo. 'Here to land an internship' — fine, that's true.",
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start",
+      "frictionId": "f4"
+    },
+    {
+      "index": 16,
+      "at": "2026-11-02T18:34:53.654Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 52,
+        "expect": "Next step, maybe the email/sign-up part",
+        "confidence": "0.6"
+      },
+      "urlBefore": "http://localhost:42653/start",
+      "target": {
+        "id": 52,
+        "tag": "button",
+        "role": "button",
+        "name": "Looks good",
+        "box": {
+          "x": 20,
+          "y": 691,
+          "w": 350,
+          "h": 52
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "Next step, maybe the email/sign-up part",
+        "confidence": 0.6
+      },
+      "latencyMs": 863,
+      "tapPoint": {
+        "x": 195,
+        "y": 717.3,
+        "centre": true
+      },
+      "actionNumber": 9,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/016-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/016-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 4,
+        "newElementIds": [
+          53,
+          54,
+          22
+        ],
+        "elements": [
+          "[5]<button> Back",
+          "[53]<input> (no label)",
+          "[54]<input> 2005",
+          "[22]<button disabled> Next"
+        ],
+        "text": "6 | / | 7 | Almost done — what should we call you? | A first name or nickname. This is how classmates will see you. | Name | Birth year | Only you see this — it’s not on your profile. It’s used to check Lumi’s 16+ rule (18+ for rides). | Next",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "8f123e48aebb43d852fce425a962ed3614ec5e43",
+        "simReadSec": 7.8
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 5,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 1,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "Not email yet; asks first name and birth year, explains birth year is private",
+        "feeling": "neutral",
+        "note": "Now name and birth year, and I still haven't seen one internship. This is the kind of thing where I'd normally close it. They do say birth year is private, and it's just a first name. 'Rides'? Didn't know this did rides. OK, one more step, it says almost done."
+      }
+    },
+    {
+      "index": 17,
+      "at": "2026-11-02T18:35:01.686Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "Not email yet; asks first name and birth year, explains birth year is private",
+        "feeling": "neutral",
+        "thought": "Now name and birth year, and I still haven't seen one internship. This is the kind of thing where I'd normally close it. They do say birth year is private, and it's just a first name. 'Rides'? Didn't know this did rides. OK, one more step, it says almost done.",
+        "friction": "onboarding",
+        "severity": "2",
+        "element": "54",
+        "wish": "Let me peek at the internships before asking my name and age"
+      },
+      "about": 16,
+      "feeling": "neutral",
+      "thought": "Now name and birth year, and I still haven't seen one internship. This is the kind of thing where I'd normally close it. They do say birth year is private, and it's just a first name. 'Rides'? Didn't know this did rides. OK, one more step, it says almost done.",
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start",
+      "frictionId": "f5"
+    },
+    {
+      "index": 18,
+      "at": "2026-11-02T18:35:01.849Z",
+      "kind": "action",
+      "command": "type",
+      "args": {
+        "id": 53,
+        "text": "Marcus",
+        "submit": false
+      },
+      "urlBefore": "http://localhost:42653/start",
+      "target": {
+        "id": 53,
+        "tag": "input",
+        "role": "textbox",
+        "name": "",
+        "box": {
+          "x": 20,
+          "y": 241,
+          "w": 350,
+          "h": 44
+        },
+        "inViewport": true
+      },
+      "latencyMs": 861,
+      "tapPoint": {
+        "x": 195,
+        "y": 262.5,
+        "centre": true
+      },
+      "actionNumber": 10,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/018-type.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/018-type-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 4,
+        "newElementIds": [],
+        "elements": [
+          "[5]<button> Back",
+          "[53]<input> (no label) value=\"Marcus\"",
+          "[54]<input> 2005",
+          "[22]<button disabled> Next"
+        ],
+        "text": "6 | / | 7 | Almost done — what should we call you? | A first name or nickname. This is how classmates will see you. | Name | Birth year | Only you see this — it’s not on your profile. It’s used to check Lumi’s 16+ rule (18+ for rides). | Next",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "4a4ba50b21d68bcb209b4843a941220fef3e54f1",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 5,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      },
+      "signals": [],
+      "frustrationAfter": 1.5
+    },
+    {
+      "index": 19,
+      "at": "2026-11-02T18:35:04.608Z",
+      "kind": "action",
+      "command": "type",
+      "args": {
+        "id": 54,
+        "text": "2004",
+        "submit": false
+      },
+      "urlBefore": "http://localhost:42653/start",
+      "target": {
+        "id": 54,
+        "tag": "input",
+        "role": "textbox",
+        "name": "2005",
+        "box": {
+          "x": 20,
+          "y": 330,
+          "w": 350,
+          "h": 44
+        },
+        "inViewport": true
+      },
+      "latencyMs": 861,
+      "tapPoint": {
+        "x": 195,
+        "y": 352,
+        "centre": true
+      },
+      "actionNumber": 11,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/019-type.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/019-type-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 4,
+        "newElementIds": [],
+        "elements": [
+          "[5]<button> Back",
+          "[53]<input> (no label) value=\"Marcus\"",
+          "[54]<input> 2005 value=\"2004\"",
+          "[22]<button> Next"
+        ],
+        "text": "6 | / | 7 | Almost done — what should we call you? | A first name or nickname. This is how classmates will see you. | Name | Birth year | Only you see this — it’s not on your profile. It’s used to check Lumi’s 16+ rule (18+ for rides). | Next",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "b1032c4b16f91f5a1dd37e5bceb89345f3ca8ada",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 5,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      },
+      "signals": [],
+      "frustrationAfter": 1.5
+    },
+    {
+      "index": 20,
+      "at": "2026-11-02T18:35:07.372Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 22,
+        "expect": "Last step: asks for my school email",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:42653/start",
+      "target": {
+        "id": 22,
+        "tag": "button",
+        "role": "button",
+        "name": "Next",
+        "box": {
+          "x": 20,
+          "y": 442,
+          "w": 350,
+          "h": 52
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "Last step: asks for my school email",
+        "confidence": 0.7
+      },
+      "latencyMs": 845,
+      "tapPoint": {
+        "x": 195,
+        "y": 468,
+        "centre": true
+      },
+      "actionNumber": 12,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/020-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/020-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 7,
+        "newElementIds": [
+          55,
+          56,
+          57,
+          58,
+          3,
+          4
+        ],
+        "elements": [
+          "[5]<button> Back",
+          "[55]<input type=email> you@berkeley.edu",
+          "[56]<button disabled> Send code",
+          "[57]<button disabled> Start Lumi",
+          "[58]<button> Skip for now",
+          "[3]<a> Terms of Use",
+          "[4]<a> Privacy Policy"
+        ],
+        "text": "7 | / | 7 | Save your account with your school email | So you can sign back in on a new phone or after clearing your browser. We only send a 6-digit code — no spam. | School email | Send code | Start Lumi | Skip for now | By starting Lumi you confirm you’re 16 or older and agree to the | Terms of Use | and | Privacy Policy | .",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "972e8a162f78ab526bc9f33e4acb7b61150932be",
+        "simReadSec": 10.4
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 5,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 58,
+            "name": "Skip for now",
+            "w": 350,
+            "h": 40
+          },
+          {
+            "id": 3,
+            "name": "Terms of Use",
+            "w": 77,
+            "h": 15
+          },
+          {
+            "id": 4,
+            "name": "Privacy Policy",
+            "w": 81,
+            "h": 15
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      },
+      "signals": [],
+      "frustrationAfter": 1.5,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Asks for school email with a 6-digit code, and there's a 'Skip for now'",
+        "feeling": "curious",
+        "note": "Good, they let me skip. I'm not giving my email until I've actually seen these 457 internships. If they're real, I'll come back and save it."
+      }
+    },
+    {
+      "index": 21,
+      "at": "2026-11-02T18:35:15.110Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Asks for school email with a 6-digit code, and there's a 'Skip for now'",
+        "feeling": "curious",
+        "thought": "Good, they let me skip. I'm not giving my email until I've actually seen these 457 internships. If they're real, I'll come back and save it."
+      },
+      "about": 20,
+      "feeling": "curious",
+      "thought": "Good, they let me skip. I'm not giving my email until I've actually seen these 457 internships. If they're real, I'll come back and save it.",
+      "urlAfter": "http://localhost:42653/start",
+      "route": "/start"
+    },
+    {
+      "index": 22,
+      "at": "2026-11-02T18:35:15.304Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 58,
+        "expect": "Finally get into the app and see what's in it",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:42653/start",
+      "target": {
+        "id": 58,
+        "tag": "button",
+        "role": "button",
+        "name": "Skip for now",
+        "box": {
+          "x": 20,
+          "y": 398,
+          "w": 350,
+          "h": 40
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "Finally get into the app and see what's in it",
+        "confidence": 0.7
+      },
+      "latencyMs": 961,
+      "tapPoint": {
+        "x": 195,
+        "y": 417.5,
+        "centre": true
+      },
+      "actionNumber": 13,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/",
+      "route": "/",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/022-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/022-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 21,
+        "newElementIds": [
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79
+        ],
+        "elements": [
+          "[59]<button> Filters",
+          "[60]<button> Notifications",
+          "[61]<button> Messages",
+          "[62]<button> Me",
+          "[63]<button> See all",
+          "[64]<button> 🍕 FREE FOOD Tenants’ Rights Workshop Today 1 PM · MLK bNorth, suite 82D",
+          "[65]<button> Go together",
+          "[66]<button> 🍕 FREE FOOD UC Berkeley IEOR Night at INFORMS 2026 Today 8 PM · Marriott Marquis San Fran",
+          "[67]<button> Go together",
+          "[68]<button> 🍕 FREE FOOD EECS Colloquium: Quantum Interconnects and Modularity via Waveguide QED Wed, ",
+          "[69]<button> Go together",
+          "[70]<button> 📅 CAMPUS EVENT MUSIC IN MLK Thu, Nov 5 12 PM · MLK Activity Zone Area/ Lower Sproul",
+          "[71]<button> Go together",
+          "[72]<button> 🍕 FREE FOOD Pathways For AANHPI Community Health (PACH) Thu, Nov 5 5 PM · Berkeley Way We",
+          "[73]<button> Go together",
+          "[75]<a selected> People",
+          "[76]<a> Discover",
+          "[77]<button> Create",
+          "[78]<a> Campus",
+          "[79]<a> Me",
+          "[74]<button> Add classes  ↓ below"
+        ],
+        "text": "lumi | . | This week on campus | See all | Tap Go together — others going can join you. | 🍕 | Free food (×4 on screen) | Tenants’ Rights Workshop | Today 1 PM · MLK bNorth, suite 82D | Go together (×5 on screen) | 🍕 | Free food | UC Berkeley IEOR Night at INFORMS 2026 | Today 8 PM · Marriott Marquis San Francisco | Go together | 🍕 | EECS Colloquium: Quantum Interconnects and Modularity via Waveguide QED | Wed, Nov 4 4 PM · Gateway 1220 | 📅 | Campus event | MUSIC IN MLK | Thu, Nov 5 12 PM · MLK Activity Zone Area/ Lower Sproul | 🍕 | Pathways For AANHPI Community Health (PACH) | Thu, Nov 5 5 PM · Berkeley Way West, Bayer Room 5430 | Classmates show up here as they join Lumi. Add your classes so they can find you. | People | Discover | Campus | Me",
+        "scroll": {
+          "top": 0,
+          "max": 181
+        },
+        "fingerprint": "1f5117a3dfbb03e3975ba0acda3207854af6d15a",
+        "simReadSec": 25.4
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 59,
+            "name": "Filters",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 60,
+            "name": "Notifications",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 61,
+            "name": "Messages",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 62,
+            "name": "Me",
+            "w": 32,
+            "h": 32
+          },
+          {
+            "id": 63,
+            "name": "See all",
+            "w": 41,
+            "h": 20
+          },
+          {
+            "id": 65,
+            "name": "Go together",
+            "w": 98,
+            "h": 32
+          },
+          {
+            "id": 67,
+            "name": "Go together",
+            "w": 98,
+            "h": 32
+          },
+          {
+            "id": 69,
+            "name": "Go together",
+            "w": 98,
+            "h": 32
+          },
+          {
+            "id": 71,
+            "name": "Go together",
+            "w": 98,
+            "h": 32
+          },
+          {
+            "id": 73,
+            "name": "Go together",
+            "w": 98,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 1.5,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "Got in, but the home screen is campus events and free food, no internships, even though I picked 'Land an internship'",
+        "feeling": "neutral",
+        "note": "I told it I'm here for internships and the first thing I see is a pizza workshop and a quantum physics talk. Those four icons at the top, no idea what they do. The bottom ones have words at least. Where are the 457 internships?"
+      }
+    },
+    {
+      "index": 23,
+      "at": "2026-11-02T18:35:25.533Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "Got in, but the home screen is campus events and free food, no internships, even though I picked 'Land an internship'",
+        "feeling": "neutral",
+        "thought": "I told it I'm here for internships and the first thing I see is a pizza workshop and a quantum physics talk. Those four icons at the top, no idea what they do. The bottom ones have words at least. Where are the 457 internships?",
+        "friction": "discoverability",
+        "severity": "2",
+        "element": "76",
+        "wish": "Since I picked internships, show internships first on home"
+      },
+      "about": 22,
+      "feeling": "neutral",
+      "thought": "I told it I'm here for internships and the first thing I see is a pizza workshop and a quantum physics talk. Those four icons at the top, no idea what they do. The bottom ones have words at least. Where are the 457 internships?",
+      "urlAfter": "http://localhost:42653/",
+      "route": "/",
+      "frictionId": "f6"
+    },
+    {
+      "index": 24,
+      "at": "2026-11-02T18:35:25.710Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 76,
+        "expect": "Some kind of browse page, maybe with internships and jobs",
+        "confidence": "0.5"
+      },
+      "urlBefore": "http://localhost:42653/",
+      "target": {
+        "id": 76,
+        "tag": "a",
+        "role": "link",
+        "name": "Discover",
+        "href": "/discover",
+        "box": {
+          "x": 78,
+          "y": 780,
+          "w": 78,
+          "h": 64
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "Some kind of browse page, maybe with internships and jobs",
+        "confidence": 0.5
+      },
+      "latencyMs": 864,
+      "tapPoint": {
+        "x": 117,
+        "y": 812,
+        "centre": true
+      },
+      "actionNumber": 14,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/discover",
+      "route": "/discover",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/024-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/024-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 18,
+        "newElementIds": [
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89
+        ],
+        "elements": [
+          "[60]<button> Notifications",
+          "[61]<button> Messages",
+          "[62]<button> Me",
+          "[80]<button> Add",
+          "[81]<button> Rides Airports, Trader Joe's, Costco, SF, Tahoe",
+          "[82]<button> I set the time",
+          "[83]<button> Decide together",
+          "[84]<button> Now",
+          "[85]<button> Activities",
+          "[86]<button> Teams",
+          "[87]<button> Dining now",
+          "[88]<button> Gym now",
+          "[89]<button> Instant meetup",
+          "[75]<a> People",
+          "[76]<a selected> Discover",
+          "[77]<button> Create",
+          "[78]<a> Campus",
+          "[79]<a> Me"
+        ],
+        "text": "lumi | . | Add your timetable | Add | Rides | Airports, Trader Joe's, Costco, SF, Tahoe | Ask friends with one link | They answer without the app | I set the time | Decide together | Now | Activities | Teams | Dining now | Menus unavailable right now | Gym now | Crowd meter unavailable | Spontaneous Hangouts | No hangouts open right now — start one? | Instant meetup | People | Discover | Campus | Me",
+        "scroll": {
+          "top": 0,
+          "max": 68
+        },
+        "fingerprint": "5916c61f45d82802d99f84adfb488dc9ac0589a9",
+        "simReadSec": 11.3
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 60,
+            "name": "Notifications",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 61,
+            "name": "Messages",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 62,
+            "name": "Me",
+            "w": 32,
+            "h": 32
+          },
+          {
+            "id": 80,
+            "name": "Add",
+            "w": 75,
+            "h": 36
+          },
+          {
+            "id": 82,
+            "name": "I set the time",
+            "w": 161,
+            "h": 40
+          },
+          {
+            "id": 83,
+            "name": "Decide together",
+            "w": 161,
+            "h": 40
+          },
+          {
+            "id": 84,
+            "name": "Now",
+            "w": 117,
+            "h": 36
+          },
+          {
+            "id": 85,
+            "name": "Activities",
+            "w": 117,
+            "h": 36
+          },
+          {
+            "id": 86,
+            "name": "Teams",
+            "w": 117,
+            "h": 36
+          },
+          {
+            "id": 89,
+            "name": "Instant meetup",
+            "w": 128,
+            "h": 36
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 2,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "Discover is rides, hangouts, gym and dining — nothing about jobs",
+        "feeling": "frustrated",
+        "note": "Rides to Costco, spontaneous hangouts... this is a social app. Still no internships. One more place to try, 'Campus', then I'm done."
+      }
+    },
+    {
+      "index": 25,
+      "at": "2026-11-02T18:35:33.595Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "Discover is rides, hangouts, gym and dining — nothing about jobs",
+        "feeling": "frustrated",
+        "thought": "Rides to Costco, spontaneous hangouts... this is a social app. Still no internships. One more place to try, 'Campus', then I'm done.",
+        "friction": "discoverability",
+        "severity": "2",
+        "element": "76",
+        "wish": "A tab that just says Internships or Jobs"
+      },
+      "about": 24,
+      "feeling": "frustrated",
+      "thought": "Rides to Costco, spontaneous hangouts... this is a social app. Still no internships. One more place to try, 'Campus', then I'm done.",
+      "urlAfter": "http://localhost:42653/discover",
+      "route": "/discover",
+      "frictionId": "f7"
+    },
+    {
+      "index": 26,
+      "at": "2026-11-02T18:35:33.817Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 78,
+        "expect": "Campus stuff, maybe deadlines and internships",
+        "confidence": "0.5"
+      },
+      "urlBefore": "http://localhost:42653/discover",
+      "target": {
+        "id": 78,
+        "tag": "a",
+        "role": "link",
+        "name": "Campus",
+        "href": "/community",
+        "box": {
+          "x": 234,
+          "y": 780,
+          "w": 78,
+          "h": 64
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "Campus stuff, maybe deadlines and internships",
+        "confidence": 0.5
+      },
+      "latencyMs": 856,
+      "tapPoint": {
+        "x": 273,
+        "y": 812,
+        "centre": true
+      },
+      "afterPatienceExhausted": true,
+      "actionNumber": 15,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/community",
+      "route": "/community",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/026-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/026-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 21,
+        "newElementIds": [
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          63,
+          100,
+          65
+        ],
+        "elements": [
+          "[90]<button> Write",
+          "[60]<button> Notifications",
+          "[61]<button> Messages",
+          "[62]<button> Me",
+          "[91]<button> Feed",
+          "[92]<button> Browse",
+          "[93]<button> Lunch",
+          "[94]<button> A nap",
+          "[95]<button> Café",
+          "[96]<button> Workout",
+          "[97]<button> Meet someone new",
+          "[98]<button> Invite your floor",
+          "[99]<button> Invite your class",
+          "[63]<button> See all",
+          "[100]<button> FREE FOOD · TODAY · 13:00 Tenants’ Rights Workshop MLK bNorth, suite 82D",
+          "[65]<button> Go together",
+          "[75]<a> People",
+          "[76]<a> Discover",
+          "[77]<button> Create",
+          "[78]<a selected> Campus",
+          "[79]<a> Me"
+        ],
+        "text": "lumi | . | Feed | Browse | Today's question · 1 tap | If you suddenly had two free hours today? | Lunch | A nap | Café | Workout | Meet someone new | Tap one — results show once 5 people at your school answer. | Feed is quiet — bring your people | Invite your floor or your class. Their posts show up here first. | Invite your floor | Invite your class | Meanwhile, this week | See all | Free food · Today · 13:00 | Tenants’ Rights Workshop | MLK bNorth, suite 82D | Go together | People | Discover | Campus | Me",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "ae480de9ac7d8e9bff28e5688f1a804916438813",
+        "simReadSec": 15
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 60,
+            "name": "Notifications",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 61,
+            "name": "Messages",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 62,
+            "name": "Me",
+            "w": 32,
+            "h": 32
+          },
+          {
+            "id": 91,
+            "name": "Feed",
+            "w": 38,
+            "h": 44
+          },
+          {
+            "id": 93,
+            "name": "Lunch",
+            "w": 158,
+            "h": 40
+          },
+          {
+            "id": 94,
+            "name": "A nap",
+            "w": 158,
+            "h": 40
+          },
+          {
+            "id": 95,
+            "name": "Café",
+            "w": 158,
+            "h": 40
+          },
+          {
+            "id": 96,
+            "name": "Workout",
+            "w": 158,
+            "h": 40
+          },
+          {
+            "id": 97,
+            "name": "Meet someone new",
+            "w": 158,
+            "h": 40
+          },
+          {
+            "id": 98,
+            "name": "Invite your floor",
+            "w": 121,
+            "h": 32
+          },
+          {
+            "id": 99,
+            "name": "Invite your class",
+            "w": 126,
+            "h": 32
+          },
+          {
+            "id": 63,
+            "name": "See all",
+            "w": 38,
+            "h": 18
+          },
+          {
+            "id": 65,
+            "name": "Go together",
+            "w": 98,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      },
+      "signals": [],
+      "frustrationAfter": 2.5
+    },
+    {
+      "index": 27,
+      "at": "2026-11-02T18:35:40.316Z",
+      "kind": "finish",
+      "command": "finish",
+      "args": {
+        "outcome": "abandoned",
+        "reason": "My sister said this had internships, and the front page said 457, but after seven setup screens I got free pizza, rides to Costco, hangouts and a 'quiet feed'. I never found a single internship, so I'm not giving it my school email.",
+        "dropoff": "high",
+        "dropoff-why": "Picked 'Land an internship' in setup, then home, Discover and Campus all showed social/event content with no visible path to jobs; the app reads as a social app, not a job tool, so a skeptical senior won't come back or sign up.",
+        "dropoff-basis": "22,24,26"
+      },
+      "urlBefore": "http://localhost:42653/community",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:42653/community",
+      "route": "/community",
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/027-finish.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/027-finish-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 21,
+        "newElementIds": [],
+        "elements": [
+          "[90]<button> Write",
+          "[60]<button> Notifications",
+          "[61]<button> Messages",
+          "[62]<button> Me",
+          "[91]<button> Feed",
+          "[92]<button> Browse",
+          "[93]<button> Lunch",
+          "[94]<button> A nap",
+          "[95]<button> Café",
+          "[96]<button> Workout",
+          "[97]<button> Meet someone new",
+          "[98]<button> Invite your floor",
+          "[99]<button> Invite your class",
+          "[63]<button> See all",
+          "[100]<button> FREE FOOD · TODAY · 13:00 Tenants’ Rights Workshop MLK bNorth, suite 82D",
+          "[65]<button> Go together",
+          "[75]<a> People",
+          "[76]<a> Discover",
+          "[77]<button> Create",
+          "[78]<a selected> Campus",
+          "[79]<a> Me"
+        ],
+        "text": "lumi | . | Feed | Browse | Today's question · 1 tap | If you suddenly had two free hours today? | Lunch | A nap | Café | Workout | Meet someone new | Tap one — results show once 5 people at your school answer. | Feed is quiet — bring your people | Invite your floor or your class. Their posts show up here first. | Invite your floor | Invite your class | Meanwhile, this week | See all | Free food · Today · 13:00 | Tenants’ Rights Workshop | MLK bNorth, suite 82D | Go together | People | Discover | Campus | Me",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "ae480de9ac7d8e9bff28e5688f1a804916438813",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 60,
+            "name": "Notifications",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 61,
+            "name": "Messages",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 62,
+            "name": "Me",
+            "w": 32,
+            "h": 32
+          },
+          {
+            "id": 91,
+            "name": "Feed",
+            "w": 38,
+            "h": 44
+          },
+          {
+            "id": 93,
+            "name": "Lunch",
+            "w": 158,
+            "h": 40
+          },
+          {
+            "id": 94,
+            "name": "A nap",
+            "w": 158,
+            "h": 40
+          },
+          {
+            "id": 95,
+            "name": "Café",
+            "w": 158,
+            "h": 40
+          },
+          {
+            "id": 96,
+            "name": "Workout",
+            "w": 158,
+            "h": 40
+          },
+          {
+            "id": 97,
+            "name": "Meet someone new",
+            "w": 158,
+            "h": 40
+          },
+          {
+            "id": 98,
+            "name": "Invite your floor",
+            "w": 121,
+            "h": 32
+          },
+          {
+            "id": 99,
+            "name": "Invite your class",
+            "w": 126,
+            "h": 32
+          },
+          {
+            "id": 63,
+            "name": "See all",
+            "w": 38,
+            "h": 18
+          },
+          {
+            "id": 65,
+            "name": "Go together",
+            "w": 98,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 1251
+      }
+    }
+  ],
+  "frictionEvents": [
+    {
+      "id": "f1",
+      "step": 0,
+      "noteStep": 1,
+      "type": "ux_confusion",
+      "severity": 2,
+      "feeling": "confused",
+      "quote": "Who's free on campus right now? Find someone for lunch? Sounds kind of like a meetup or dating thing. I did catch '457 internships' scrolling past in that yellow strip, but it moves too fast to read. Is this legit, and where's the job stuff?",
+      "url": "/welcome",
+      "route": "/welcome",
+      "element": null,
+      "key": null,
+      "wish": "Tell me plainly up top what the app is for, including internships, not just a moving ticker",
+      "evidence": [
+        "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/000-start.jpg",
+        "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/000-start-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f2",
+      "step": 2,
+      "noteStep": 3,
+      "type": "onboarding",
+      "severity": 1,
+      "feeling": "neutral",
+      "quote": "OK, picking my school is harmless. Seven steps though, that's a lot before I even know what this is.",
+      "url": "/start",
+      "route": "/start",
+      "element": {
+        "id": 5,
+        "role": "button",
+        "name": "Back"
+      },
+      "key": null,
+      "wish": "Let me look around before a 7-step setup",
+      "evidence": [
+        "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/002-click.jpg",
+        "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/002-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f3",
+      "step": 12,
+      "noteStep": 13,
+      "type": "motivation",
+      "severity": 1,
+      "feeling": "bored",
+      "quote": "I'm a senior, I'm not looking to meet people, I want a job. Nothing here like 'recruiters' or 'alumni'. Glad there's a Skip.",
+      "url": "/start",
+      "route": "/start",
+      "element": {
+        "id": 33,
+        "role": "button",
+        "name": "🧭 Upperclassmen who’ve been there"
+      },
+      "key": null,
+      "wish": "An option like alumni or people hiring, for seniors job hunting",
+      "evidence": [
+        "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/012-click.jpg",
+        "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/012-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f4",
+      "step": 14,
+      "noteStep": 15,
+      "type": "trust_privacy",
+      "severity": 2,
+      "feeling": "neutral",
+      "quote": "Wait, it's already making a profile card that other people see? I haven't even seen what's in here. At least it's just an emoji and not my photo. 'Here to land an internship' — fine, that's true.",
+      "url": "/start",
+      "route": "/start",
+      "element": {
+        "id": 51,
+        "role": "textbox",
+        "name": ""
+      },
+      "key": null,
+      "wish": "Show me the internships first, then ask me to make a public profile",
+      "evidence": [
+        "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/014-click.jpg",
+        "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/014-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f5",
+      "step": 16,
+      "noteStep": 17,
+      "type": "onboarding",
+      "severity": 2,
+      "feeling": "neutral",
+      "quote": "Now name and birth year, and I still haven't seen one internship. This is the kind of thing where I'd normally close it. They do say birth year is private, and it's just a first name. 'Rides'? Didn't know this did rides. OK, one more step, it says almost done.",
+      "url": "/start",
+      "route": "/start",
+      "element": {
+        "id": 54,
+        "role": "textbox",
+        "name": "2005"
+      },
+      "key": null,
+      "wish": "Let me peek at the internships before asking my name and age",
+      "evidence": [
+        "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/016-click.jpg",
+        "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/016-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f6",
+      "step": 22,
+      "noteStep": 23,
+      "type": "discoverability",
+      "severity": 2,
+      "feeling": "neutral",
+      "quote": "I told it I'm here for internships and the first thing I see is a pizza workshop and a quantum physics talk. Those four icons at the top, no idea what they do. The bottom ones have words at least. Where are the 457 internships?",
+      "url": "/",
+      "route": "/",
+      "element": {
+        "id": 76,
+        "role": "link",
+        "name": "Discover"
+      },
+      "key": null,
+      "wish": "Since I picked internships, show internships first on home",
+      "evidence": [
+        "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/022-click.jpg",
+        "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/022-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f7",
+      "step": 24,
+      "noteStep": 25,
+      "type": "discoverability",
+      "severity": 2,
+      "feeling": "frustrated",
+      "quote": "Rides to Costco, spontaneous hangouts... this is a social app. Still no internships. One more place to try, 'Campus', then I'm done.",
+      "url": "/discover",
+      "route": "/discover",
+      "element": {
+        "id": 76,
+        "role": "link",
+        "name": "Discover"
+      },
+      "key": null,
+      "wish": "A tab that just says Internships or Jobs",
+      "evidence": [
+        "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/024-click.jpg",
+        "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/024-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    }
+  ],
+  "autoChecks": [
+    {
+      "step": 0,
+      "route": "/welcome",
+      "smallTapTargets": 3,
+      "smallTapTargetExamples": [
+        {
+          "id": 2,
+          "name": "Sign in",
+          "w": 46,
+          "h": 21
+        },
+        {
+          "id": 3,
+          "name": "Terms of Use",
+          "w": 76,
+          "h": 15
+        },
+        {
+          "id": 4,
+          "name": "Privacy Policy",
+          "w": 180,
+          "h": 33
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/000-start.jpg"
+    },
+    {
+      "step": 2,
+      "route": "/start",
+      "smallTapTargets": 7,
+      "smallTapTargetExamples": [
+        {
+          "id": 5,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 8,
+          "name": "Stanford University",
+          "w": 148,
+          "h": 36
+        },
+        {
+          "id": 9,
+          "name": "UCLA",
+          "w": 62,
+          "h": 36
+        },
+        {
+          "id": 10,
+          "name": "USC",
+          "w": 54,
+          "h": 36
+        },
+        {
+          "id": 11,
+          "name": "UC San Diego",
+          "w": 112,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/002-click.jpg"
+    },
+    {
+      "step": 4,
+      "route": "/start",
+      "smallTapTargets": 1,
+      "smallTapTargetExamples": [
+        {
+          "id": 5,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/004-click.jpg"
+    },
+    {
+      "step": 6,
+      "route": "/start",
+      "smallTapTargets": 1,
+      "smallTapTargetExamples": [
+        {
+          "id": 5,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/006-click.jpg"
+    },
+    {
+      "step": 8,
+      "route": "/start",
+      "smallTapTargets": 1,
+      "smallTapTargetExamples": [
+        {
+          "id": 5,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/008-click.jpg"
+    },
+    {
+      "step": 10,
+      "route": "/start",
+      "smallTapTargets": 1,
+      "smallTapTargetExamples": [
+        {
+          "id": 5,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/010-type.jpg"
+    },
+    {
+      "step": 11,
+      "route": "/start",
+      "smallTapTargets": 1,
+      "smallTapTargetExamples": [
+        {
+          "id": 5,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/011-click.jpg"
+    },
+    {
+      "step": 12,
+      "route": "/start",
+      "smallTapTargets": 1,
+      "smallTapTargetExamples": [
+        {
+          "id": 5,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/012-click.jpg"
+    },
+    {
+      "step": 14,
+      "route": "/start",
+      "smallTapTargets": 1,
+      "smallTapTargetExamples": [
+        {
+          "id": 5,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/014-click.jpg"
+    },
+    {
+      "step": 16,
+      "route": "/start",
+      "smallTapTargets": 1,
+      "smallTapTargetExamples": [
+        {
+          "id": 5,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/016-click.jpg"
+    },
+    {
+      "step": 18,
+      "route": "/start",
+      "smallTapTargets": 1,
+      "smallTapTargetExamples": [
+        {
+          "id": 5,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/018-type.jpg"
+    },
+    {
+      "step": 19,
+      "route": "/start",
+      "smallTapTargets": 1,
+      "smallTapTargetExamples": [
+        {
+          "id": 5,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/019-type.jpg"
+    },
+    {
+      "step": 20,
+      "route": "/start",
+      "smallTapTargets": 4,
+      "smallTapTargetExamples": [
+        {
+          "id": 5,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 58,
+          "name": "Skip for now",
+          "w": 350,
+          "h": 40
+        },
+        {
+          "id": 3,
+          "name": "Terms of Use",
+          "w": 77,
+          "h": 15
+        },
+        {
+          "id": 4,
+          "name": "Privacy Policy",
+          "w": 81,
+          "h": 15
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/020-click.jpg"
+    },
+    {
+      "step": 22,
+      "route": "/",
+      "smallTapTargets": 10,
+      "smallTapTargetExamples": [
+        {
+          "id": 59,
+          "name": "Filters",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 60,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 61,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 62,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 63,
+          "name": "See all",
+          "w": 41,
+          "h": 20
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/022-click.jpg"
+    },
+    {
+      "step": 24,
+      "route": "/discover",
+      "smallTapTargets": 10,
+      "smallTapTargetExamples": [
+        {
+          "id": 60,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 61,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 62,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 80,
+          "name": "Add",
+          "w": 75,
+          "h": 36
+        },
+        {
+          "id": 82,
+          "name": "I set the time",
+          "w": 161,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/024-click.jpg"
+    },
+    {
+      "step": 26,
+      "route": "/community",
+      "smallTapTargets": 13,
+      "smallTapTargetExamples": [
+        {
+          "id": 60,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 61,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 62,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 91,
+          "name": "Feed",
+          "w": 38,
+          "h": 44
+        },
+        {
+          "id": 93,
+          "name": "Lunch",
+          "w": 158,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/026-click.jpg"
+    },
+    {
+      "step": 27,
+      "route": "/community",
+      "smallTapTargets": 13,
+      "smallTapTargetExamples": [
+        {
+          "id": 60,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 61,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 62,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 91,
+          "name": "Feed",
+          "w": 38,
+          "h": 44
+        },
+        {
+          "id": 93,
+          "name": "Lunch",
+          "w": 158,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/027-finish.jpg"
+    }
+  ],
+  "outcome": "abandoned",
+  "reportedOutcome": "abandoned",
+  "outcomeReason": "My sister said this had internships, and the front page said 457, but after seven setup screens I got free pizza, rides to Costco, hangouts and a 'quiet feed'. I never found a single internship, so I'm not giving it my school email.",
+  "endedBy": "persona",
+  "goalAchieved": true,
+  "goalFirstMetAtStep": 22,
+  "stepsToGoal": 13,
+  "goalEvidence": {
+    "step": 22,
+    "url": "/",
+    "matched": [
+      {
+        "record": "users",
+        "where": {
+          "id": "$me"
+        },
+        "description": "the account the browser is signed in to was created during this run"
+      },
+      {
+        "urlMatches": "^/(discover|community|profile)?(\\?.*)?$"
+      }
+    ],
+    "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/022-click.jpg"
+  },
+  "falseSuccess": false,
+  "unnoticedSuccess": true,
+  "successCheck": {
+    "evaluatedFrom": "first persona action (never the start screen)",
+    "recordChecks": "local data file"
+  },
+  "patienceExhaustedAtStep": 25,
+  "actionsAfterPatienceExhausted": 1,
+  "overrodePatience": true,
+  "abandonPoint": {
+    "step": 26,
+    "url": "/community",
+    "route": "/community",
+    "screenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/027-finish.jpg",
+    "annotatedScreenshot": "ux-sim/runs/cmp1-fix-first-open-decide-marcus/shots/027-finish-som.jpg"
+  },
+  "dropoffRisk": {
+    "kind": "hypothesis",
+    "level": "high",
+    "rationale": "Picked 'Land an internship' in setup, then home, Discover and Campus all showed social/event content with no visible path to jobs; the app reads as a social app, not a job tool, so a skeptical senior won't come back or sign up.",
+    "basis": [
+      22,
+      24,
+      26
+    ],
+    "source": "persona-agent"
+  }
+}
