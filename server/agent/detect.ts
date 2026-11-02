@@ -3,7 +3,7 @@
  * 미국 대학 대부분이 CampusLabs Engage 또는 CampusGroups 를 쓴다 — 짧은 이름으로 만든 후보 주소를 찔러 보고,
  * 실제 목록이 1개 이상 읽히는 쪽을 고른다 (로그인 페이지로 넘어가는 200 은 걸러진다).
  */
-export interface Detected { platform: 'engage' | 'campusgroups' | 'presence'; host: string; sample: number }
+export interface Detected { platform: 'engage' | 'campusgroups' | 'presence' | 'pennclubs'; host: string; sample: number }
 
 const UA = 'Mozilla/5.0 AroundU-importer';
 async function get(url: string): Promise<{ ok: boolean; status: number; text: string; url: string }> {
@@ -28,6 +28,11 @@ export function candidates(short: string, emailDomain: string): { platform: Dete
 }
 
 export async function detectOrgsPlatform(short: string, emailDomain: string, override?: string): Promise<Detected | null> {
+  // Penn Clubs (UPenn) — 공개 JSON 목록
+  if (override && /pennclubs\.com/.test(override)) {
+    const host = override.replace(/\/+$/, ''); const r = await get(`${host}/api/clubs/?format=json`);
+    try { const n = r.ok ? (JSON.parse(r.text) as unknown[]).length : 0; return n > 0 ? { platform: 'pennclubs', host, sample: n } : null; } catch { return null; }
+  }
   // 직접 적어 준 주소는 어느 플랫폼인지 모를 수 있다(예: callink.berkeley.edu 는 Engage) — 둘 다 시도한다
   const list: { platform: Detected['platform']; host: string }[] = override ? [{ platform: 'engage', host: override.replace(/\/+$/, '') }, { platform: 'campusgroups', host: override.replace(/\/+$/, '') }] : candidates(short, emailDomain);
   for (const c of list) {

@@ -1527,3 +1527,11 @@
 - MIT: fireroad only publishes the current term's times → Fall 2026 only (label fixed to follow the date, was hard-coded "fall"); Spring appears when MIT posts it. Not invented.
 - Blocked here: from this container UPenn/Dartmouth/Notre Dame/Stanford/Harvard class sites fail TLS through the proxy, so those adapters could not be tried live from here; they run on Railway. Results show in /api/agent/status (courses:*, detect:*, orgs:*).
 - Checks: tsc, server typecheck, tests 268/268, build; agent DRY lookup of a collect-school row OK.
+
+## 2026-11-02 — Clubs, student government and their links for the 7 collect schools
+- Owner: clubs too, student body orgs, and links (Instagram, Facebook, official site).
+- Club directories per school (checked live here): Notre Dame = Engage nd.campuslabs.com (540), UPenn = Penn Clubs public JSON (511, new adapter), Dartmouth = CampusGroups dartmouthgroups.dartmouth.edu (255), MIT = engage.mit.edu (379), Stanford = cardinalengage, Cornell = cornell.campusgroups.com. Hosts set in schools-collect.csv. Harvard's directory (soco.college.harvard.edu) needs a Harvard login → no club list.
+- Links (server/sources/orglinks.ts): Engage org detail socialMedia → Website/Instagram/Facebook/LinkedIn/X/YouTube (ND: 407 of 540 have at least one); Penn Clubs detail → website/instagram/facebook/linkedin/X/YouTube/TikTok; CampusGroups list gives each group's own website link (social icons on its club pages load by script, not available).
+- Student government = type council. Rule widened (Undergraduate Assembly, Graduate Student Government, Student Assembly, Senate, class councils…); Dartmouth's "Council on Student Organizations" group type no longer turns every club into a council (was 189 → 7). Found: ND Student Government/Senate + Graduate Student Government, Penn UA + GAPSA, MIT UA.
+- Not in any directory → server/data/student-governments.csv, checked on the official sites: Harvard Undergraduate Association (thehua.org), Dartmouth Student Government (sg.dartmouth.edu + Instagram). Worker adds them weekly (studentgov:<id>).
+- Tests: server/orglinks.test.ts. Checks: tsc, server typecheck, tests 274/274, build; FETCH_DRY runs for ND, UPenn, Dartmouth, MIT OK.

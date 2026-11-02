@@ -20,6 +20,7 @@
  *    학교가 UI 를 바꾸면 필드명이 달라질 수 있다 → 그럴 땐 아래 mapOrg 만 고치면 된다.
  */
 import { decodeNumericEntities } from '../sources/entities';
+import { COUNCIL_RE, notCouncil, campusGroupsWebsite, engageLinks, pennClubToOrg, type EngageSocial, type PennClub } from '../sources/orglinks';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -37,8 +38,16 @@ const CAMPUSGROUPS_HOSTS: Record<string, string> = {
   s_mit: 'https://engage.mit.edu',
   ...(process.env.CAMPUSGROUPS_HOSTS ? Object.fromEntries(process.env.CAMPUSGROUPS_HOSTS.split(',').map((p) => p.split('=') as [string, string])) : {}),
 };
+/** Penn Clubs (UPenn 공식 디렉터리) — PENNCLUBS_HOSTS="s_upenn=https://pennclubs.com" */
+const PENNCLUBS_HOSTS: Record<string, string> = process.env.PENNCLUBS_HOSTS ? Object.fromEntries(process.env.PENNCLUBS_HOSTS.split(',').map((p) => p.split('=') as [string, string])) : {};
 
-interface CampusGroupsOrg { id: string; name: string; groupType: string; tags: string[]; mission: string }
+/** 목록을 n 개씩 나란히 — 상세 페이지를 하나씩 더 읽을 때 (사이트에 무리가 없게 사이마다 쉰다) */
+async function eachLimited<T>(items: T[], n: number, fn: (x: T) => Promise<void>) {
+  let i = 0;
+  await Promise.all(Array.from({ length: n }, async () => { while (i < items.length) { const x = items[i++]; try { await fn(x); } catch { /* 한 곳 실패는 건너뛴다 */ } await new Promise((r) => setTimeout(r, 120)); } }));
+}
+
+interface CampusGroupsOrg { id: string; name: string; groupType: string; tags: string[]; mission: string; website?: string }
 
 /** CampusGroups club_signup 목록: <li class="list-group-item"> 마다 club_id · 이름 · "그룹유형 - 태그, 태그" · Mission 본문 */
 /** 5xx·네트워크 오류는 2s·4s·8s 로 세 번 더 시도한다 (MIT Engage 가 가끔 503 을 준다) */
@@ -71,7 +80,7 @@ async function fetchCampusGroups(host: string): Promise<CampusGroupsOrg[]> {
       const catLine = strip(/<p class="h5 media-heading grey-element">([\s\S]*?)<\/p>/.exec(it)?.[1] ?? '');
       const [groupType, tagText = ''] = catLine.split(/\s+-\s+/, 2);
       const mission = strip(new RegExp(`id="club_${id}"[^>]*>\\s*<strong>Mission</strong><br>([\\s\\S]*?)</p>`).exec(it)?.[1] ?? '');
-      out.push({ id, name, groupType: groupType.trim(), tags: tagText.split(',').map((t) => t.trim()).filter(Boolean), mission });
+      out.push({ id, name, groupType: groupType.trim(), tags: tagText.split(',').map((t) => t.trim()).filter(Boolean), mission, website: campusGroupsWebsite(it, host) });
     }
     void added;
     await new Promise((r) => setTimeout(r, 200));
@@ -82,7 +91,7 @@ async function fetchCampusGroups(host: string): Promise<CampusGroupsOrg[]> {
 /** 학교 부서·행정 조직·기숙사 단위는 학생 단체가 아니라 뺀다 */
 const CAMPUSGROUPS_SKIP = /^(Campus Departments|Residential Life)$/i;
 function mapCampusGroupsOrg(schoolId: ID, host: string, o: CampusGroupsOrg): Organization {
-  const catText = `${o.groupType} ${o.tags.join(' ')} ${o.name}`;
+  const catText = notCouncil(`${o.groupType} ${o.tags.join(' ')} ${o.name}`);
   const type: Organization['type'] = /\b(council|association)\b/i.test(o.name) && /fratern|soror|greek|panhel|living group|fsilg/i.test(o.name) ? 'council' : GREEK_RE.test(catText) ? 'greek' : COUNCIL_RE.test(catText) || /^Associated Students/i.test(o.groupType) ? 'council' : 'club';
   return {
     id: `${type === 'greek' ? 'og' : 'oc'}_${schoolId.replace('s_', '')}_cg${o.id}`,
@@ -91,7 +100,7 @@ function mapCampusGroupsOrg(schoolId: ID, host: string, o: CampusGroupsOrg): Org
     type, schoolId, parent: o.tags[0] || o.groupType || undefined, verified: false,
     description: o.mission.slice(0, 600),
     gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [],
-    links: [{ label: schoolId === 's_mit' ? 'MIT Engage' : 'Cardinal Engage', url: `${host}/student_community?club_id=${o.id}` }],
+    links: [{ label: schoolId === 's_mit' ? 'MIT Engage' : schoolId === 's_stanford' ? 'Cardinal Engage' : 'Directory', url: `${host}/student_community?club_id=${o.id}` }, ...(o.website ? [{ label: 'Website', url: o.website }] : [])],
   };
 }
 
@@ -145,7 +154,6 @@ const initials = (name: string) => {
 };
 
 const GREEK_RE = /fraternit|sororit|greek|panhellenic|interfraternity|nphc|multicultural greek|fsilg/i;
-const COUNCIL_RE = /student government|senate|associated students|council/i;
 // 명단 이름·소개에 HTML 글자 코드가 그대로 온다(“Entrepreneurship &amp; Technology”, “&#8212;”, “&#43;”) — 화면에 그대로 보이던 것
 const strip = (html = '') => decodeNumericEntities(html.replace(/<[^>]+>/g, ' ').replace(/&nbsp;|&amp;|&quot;|&#39;/g, (m) => ({ '&nbsp;': ' ', '&amp;': '&', '&quot;': '"', '&#39;': "'" }[m] ?? ' '))).replace(/\s+/g, ' ').trim();
 
@@ -193,7 +201,7 @@ function mergeExisting(o: Organization): Organization {
 /** 디렉터리에서 받은 뒤, 같은 학교의 손으로 넣어 둔 추정 항목(디렉터리 링크 없음 · 멤버/관리자 없음 · 이번에 안 맞음)은 지운다. greek 은 fetch-greeks 가 담당 */
 function staleSeed(schoolId: ID, fresh: Organization[]): ID[] {
   const freshIds = new Set(fresh.map((o) => o.id));
-  const hasDirLink = (o: Organization) => !!o.links?.some((l) => /callink\.berkeley\.edu|campuslabs\.com|campusgroups\.com|cardinalengage\.stanford\.edu|engage\.mit\.edu|presence\.io/.test(l.url));
+  const hasDirLink = (o: Organization) => !!o.links?.some((l) => /callink\.berkeley\.edu|campuslabs\.com|campusgroups\.com|cardinalengage\.stanford\.edu|engage\.mit\.edu|presence\.io|pennclubs\.com|dartmouthgroups\.dartmouth\.edu/.test(l.url));
   return snap.organizations.filter((o) => o.schoolId === schoolId && o.type !== 'greek' && !freshIds.has(o.id) && !hasDirLink(o) && o.memberIds.length === 0 && o.adminIds.length === 0).map((o) => o.id);
 }
 
@@ -202,8 +210,16 @@ for (const [schoolId, host] of Object.entries(ENGAGE_HOSTS)) {
   process.stdout.write(`${schoolId} ← ${host} … `);
   let raw: EngageOrg[];
   try { raw = await fetchAll(host); } catch (e) { console.log(`실패: ${(e as Error).message}`); continue; }
-  const orgs = raw.filter((o) => !o.Status || /active/i.test(o.Status)).map((o) => mapOrg(schoolId, host, o))
+  const active = raw.filter((o) => !o.Status || /active/i.test(o.Status));
+  // 상세에서 공식 사이트·인스타·페북 등 (socialMedia) — 공개 값만
+  const social = new Map<string, ReturnType<typeof engageLinks>>();
+  await eachLimited(active.filter((o) => o.WebsiteKey), 4, async (o) => {
+    const res = await fetch(`${host}/api/discovery/organization/bykey/${encodeURIComponent(o.WebsiteKey!)}`, { headers: { accept: 'application/json', 'user-agent': 'AroundU-importer' } });
+    if (res.ok) social.set(o.Id, engageLinks(((await res.json()) as { socialMedia?: EngageSocial }).socialMedia));
+  });
+  const orgs = active.map((o) => { const m = mapOrg(schoolId, host, o); const extra = social.get(o.Id) ?? []; return extra.length ? { ...m, links: [...(m.links ?? []), ...extra] } : m; })
     .map(mergeExisting);
+  console.log(`링크 있는 곳 ${[...social.values()].filter((l) => l.length).length}/${active.length} · `);
   const csv = ['school_id,name,type,category,description', ...orgs.map((o) => [o.schoolId, o.name, o.type, o.parent ?? '', o.description].map((v) => `"${String(v).replace(/"/g, '""')}"`).join(','))].join('\n');
   writeFileSync(path.join(dataDir, `orgs-${schoolId}.csv`), csv);
   const linked = snap.organizations.filter((o) => o.schoolId === schoolId && o.links?.some((l) => l.url.startsWith(host)));
@@ -247,6 +263,22 @@ for (const [schoolId, sub] of Object.entries(PRESENCE_HOSTS)) {
   writeFileSync(path.join(dataDir, `orgs-${schoolId}.csv`), csv);
   console.log(`${orgs.length}개 (greek ${orgs.filter((o) => o.type === 'greek').length})${stale.length ? `, 추정 항목 ${stale.length}개 삭제` : ''}`);
   if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs, removed: { organizations: stale } });
+}
+for (const [schoolId, host] of Object.entries(PENNCLUBS_HOSTS)) {
+  if (only && only !== schoolId) continue;
+  process.stdout.write(`${schoolId} ← ${host} (Penn Clubs) … `);
+  let list: PennClub[];
+  try { list = JSON.parse(await getWithRetry(`${host}/api/clubs/?format=json`)) as PennClub[]; } catch (e) { console.log(`실패: ${(e as Error).message}`); continue; }
+  const live = list.filter((c) => c.active !== false && c.approved !== false && c.code && c.name);
+  const detailed: PennClub[] = [];
+  await eachLimited(live, 4, async (c) => { detailed.push({ ...c, ...(JSON.parse(await getWithRetry(`${host}/api/clubs/${encodeURIComponent(c.code)}/?format=json`)) as PennClub) }); });
+  const byCode = new Map(detailed.map((c) => [c.code, c]));
+  const orgs = live.map((c) => pennClubToOrg(byCode.get(c.code) ?? c, schoolId)).map(mergeExisting);
+  const linked = snap.organizations.filter((o) => o.schoolId === schoolId && o.links?.some((l) => l.url.startsWith(host)));
+  const ratio = linked.length ? orgs.length / linked.length : 1;
+  if (ratio < 0.5) { console.log(`${orgs.length}개 — 지난번 ${linked.length}개의 절반도 안 돼 반영하지 않음 (사이트 확인 필요)`); process.exitCode = 2; continue; }
+  console.log(`${orgs.length}개 (학생회 ${orgs.filter((o) => o.type === 'council').length}, 링크 상세 ${detailed.length})`);
+  if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs });
 }
 console.log(process.env.FETCH_DRY === '1' ? `CSV 만 생성: ${dataDir}` : 'DB 반영 완료');
 process.exit(0);

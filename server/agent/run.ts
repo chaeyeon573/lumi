@@ -27,6 +27,7 @@ import { findStudentOrgSites, knownSites } from '../sources/orgsites';
 import { fetchResearchUnits, mergeResearchUnits } from '../sources/researchunits';
 import { coopsFromCsv, COOP_PREFIX } from '../sources/coops';
 import { fetchUsaJobs } from '../sources/usajobs';
+import { studentGovToOrg, type StudentGovRow } from '../sources/orglinks';
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
@@ -207,8 +208,18 @@ async function runSchool(row: SchoolRow, listed = true): Promise<AgentRun[]> {
     out.push(await record({ task: `detect:${row.id}`, schoolId: row.id, status: d ? 'applied' : 'rejected', startedAt, summary: d ? { ...d } : { error: 'no public club directory found (CampusLabs Engage / CampusGroups)', tried: row.orgs_host || 'guessed hosts' } }));
   }
   if (host && platform && due(`orgs:${row.id}`, latest.get(`orgs:${row.id}`)?.finishedAt, 24 * 7)) {
-    const env: Record<string, string> = platform === 'engage' ? { ENGAGE_HOSTS: `${row.id}=${host}` } : platform === 'presence' ? { PRESENCE_HOSTS: `${row.id}=${new URL(host).hostname.split('.')[0]}` } : { CAMPUSGROUPS_HOSTS: `${row.id}=${host}` };
+    const env: Record<string, string> = platform === 'pennclubs' ? { PENNCLUBS_HOSTS: `${row.id}=${host}` } : platform === 'engage' ? { ENGAGE_HOSTS: `${row.id}=${host}` } : platform === 'presence' ? { PRESENCE_HOSTS: `${row.id}=${new URL(host).hostname.split('.')[0]}` } : { CAMPUSGROUPS_HOSTS: `${row.id}=${host}` };
     out.push(await runScript(`orgs:${row.id}`, 'fetch:orgs', row.id, env));
+  }
+  // 2a. 학생회 — 디렉터리에 없는 학교는 손으로 확인한 공식 학생회(server/data/student-governments.csv)를 7일마다 넣는다 (멤버·팔로워는 그대로)
+  const govFile = path.join(path.dirname(SCHOOLS_CSV), 'student-governments.csv');
+  const govRows = existsSync(govFile) ? (parseCSV(readFileSync(govFile, 'utf8')) as unknown as StudentGovRow[]).filter((r) => r.school_id === row.id) : [];
+  if (govRows.length && due(`studentgov:${row.id}`, latest.get(`studentgov:${row.id}`)?.finishedAt, 24 * 7)) {
+    const startedAt = new Date().toISOString();
+    const snapOrgs = new Map(((await store.loadSnapshot())?.organizations ?? []).map((o) => [o.id, o]));
+    const organizations = govRows.map(studentGovToOrg).map((o) => { const prev = snapOrgs.get(o.id); return prev ? { ...prev, name: o.name, description: o.description, links: o.links, type: o.type, verified: true } : o; });
+    if (!DRY) await store.applyPatch({ organizations });
+    out.push(await record({ task: `studentgov:${row.id}`, schoolId: row.id, status: 'applied', startedAt, summary: { names: organizations.map((o) => o.name) } }));
   }
   // 2b. 기회: 연구(URAP 등, 7일마다) · 행사(Presence, 6시간마다) — 공고(opportunities)로 upsert, 지난 행사는 지운다
   // 학생 단체 행사 (Presence / Engage) — 6시간마다
