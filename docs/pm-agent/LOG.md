@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-11-02 · 사장님 요청 — 대학원생 연구 기회
+- 공식 페이지 확인 후 추가(연구 칸): LLNL Data Science Summer Institute(2027/1/15, 대학원·학부 고학년), Los Alamos Dynamics Summer School(1차 11/14, 최종 2027/1/2 5PM MST, 3·4학년·대학원 1년차), LANL Remote Sensing Summer School(2027/1/10, 대학원생만, 유급).
+- 이미 있는 NASA OSTEM(3/1)·Berkeley Lab Computing Sciences 는 대학원생에게도 보임(대상 ‘모두’ 확인).
+- 넣지 않음: 스미소니언(10/15 마감), LANL 다른 여름학교(페이지가 2026 날짜 그대로), 2027 날짜가 제3자 사이트에만 있는 것.
+- 259 통과.
+
 ## 2026-11-02 06:20 UTC (버클리 일 22:20 PST) · 초점: 오늘 배포한 연구소·USAJobs·장학금이 라이브 화면에 맞게 보이는지
 - 사장님 새 답 없음. 라이브: 연구실 126(연구소 125 + 예시 1), 인턴 457(Policy & Law 76), 장학금 25.
 - 고침: 연방 일자리를 제목으로 못 고르면 전부 Policy & Law 로 넣었다(“Inpainting at the WWII Memorial”, “Student Trainee (Contracting)”) → “Student Trainee (…)” 괄호 안을 먼저 보고, 기관으로 고를 때는 정책·법 기관만 Policy & Law, 국립공원·박물관은 Nonprofit & Education, 그 밖은 Other. 계약·예산·인사·물류는 Business. “Law Student”·MBA 공고는 대학원생 대상으로. 테스트 2개, 259 통과, 빌드·화면 오류 0.
