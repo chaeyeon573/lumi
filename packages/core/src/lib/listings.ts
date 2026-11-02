@@ -25,7 +25,7 @@ const FIELD_RULES: [Field, RegExp][] = [
   ['Nonprofit & Education', /nonprofit|non-profit|education|teach|tutor|curriculum|community|outreach|volunteer|philanthrop|fundrais|development associate|social impact|youth|museum|library|arts? (admin|program)/i],
   ['Health', /\bhealth|public health|medical|hospital|patient|nurs|pharma(?!ceutical engineer)|clinical operations|epidemiolog/i],
   ['Business & Marketing', /marketing|sales|business|brand|merchandis|retail|store (leadership|executive|manager)|operations|growth|partnership|people|recruit|vendor|special projects|programs?\b|workplace|employee|learning & development|alumni|events?\b/i],
-  ['Software', /software|\bswe\b|engineer|developer|frontend|front-end|backend|back-end|full.?stack|mobile|ios|android|infrastructure|platform|security|devops|\bsre\b/i],
+  ['Software', /software|information technology|computer scien|\bswe\b|engineer|developer|frontend|front-end|backend|back-end|full.?stack|mobile|ios|android|infrastructure|platform|security|devops|\bsre\b/i],
 ];
 const HUMANITIES = new Set<Field>(['Policy & Law', 'Media & Writing', 'Nonprofit & Education', 'Health']);
 const TECH_TITLE = /engineer|developer|software|designer|scientist|\bdata\b/i;

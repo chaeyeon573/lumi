@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-11-02 · 사장님 요청 — USAJobs(연방정부 학생 채용) 연결
+- 배포: 0fe6400(UCDC·Cal in Local Government) — 사장님 허락.
+- 사장님이 Railway 에 키를 넣음(저는 값을 보지 않음). server/sources/usajobs.ts: 공식 API(GET data.usajobs.gov/api/Search, HiringPath=student)에서 Pathways 학생 채용 → 인턴. 캘리포니아·D.C.·원격·여러 지역만, 마감 지난 것 제외, 급여 표시, 분야는 제목 → 없으면 기관(보건·교육·그 밖은 Policy & Law). 키(USAJOBS_API_KEY·USAJOBS_EMAIL)가 있는 서비스에서만 12시간마다. 키 없이 부르면 401 확인(주소 맞음). 테스트 2개, 257 통과.
+- 배포 뒤 /api/agent/status 의 external:usajobs 로 실제 개수 확인할 것.
+
 ## 2026-11-02 06:00 UTC · 사장님 요청 — 버클리 공식 프로그램(문과·공공) 넣기
 - 배포: 51332a6(연구소 125곳, 인턴 문과 분야) — 사장님 허락.
 - 공식 페이지를 직접 열어 확인: IGS/Matsui(Cal-in-Sacramento·Pathways·Gardner·Schaeffer·Democracy Camp), Public Service Center 17개 프로그램, UCDC. 대부분 가을 마감이 이미 지남(Gardner 10/20, Democracy Camp 11/1, CITC 닫힘) → 넣지 않음.

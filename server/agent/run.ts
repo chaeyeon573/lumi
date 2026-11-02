@@ -25,6 +25,7 @@ import { fetchOursScholarships } from '../sources/ours';
 import { fetchStudyAbroad } from '../sources/studyabroad';
 import { findStudentOrgSites, knownSites } from '../sources/orgsites';
 import { fetchResearchUnits, mergeResearchUnits } from '../sources/researchunits';
+import { fetchUsaJobs } from '../sources/usajobs';
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
@@ -327,6 +328,8 @@ if (process.env.AGENT_MODE === 'worker') {
         } catch (e) { await notify([await record({ task: 'labs:s_berkeley', schoolId: 's_berkeley', status: 'error', startedAt, summary: { error: (e as Error).message } })]); }
         did += 1;
       }
+      // 연방정부 학생 채용(USAJOBS Pathways) — 키가 이 서비스에 있을 때만, 12시간마다 (server/sources/usajobs.ts)
+      if (process.env.USAJOBS_API_KEY && due('external:usajobs', latest.get('external:usajobs')?.finishedAt, 12)) { const r = [await runOpportunities('external:usajobs', '', () => fetchUsaJobs(), 'op_usajobs_')]; did += 1; await notify(r); }
       if (due('external:internships', latest.get('external:internships')?.finishedAt, 12)) { const r = [await runOpportunities('external:internships', '', fetchInternships, 'op_ext_job_')]; did += 1; await notify(r); }
     }
     for (const row of loadSchools()) {
