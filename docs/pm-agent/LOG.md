@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-11-02 · 사장님 요청 — 대학원생 장학금 더
+- 버클리 Graduate Division 펠로십 18개 추가(STEM Diversity $20k, Rosenfeld $10k, Lindheim $10k, Mentored Research Award, Lurcy $30k, Brett, CEND, Chowdhury, GIAS, Trujillo, Luce Indigenous $50k, Greater Good, Alexander, Fahey, Bancroft, Private Law, Singh $36k, Soong). 페이지마다 열어 확인 — 마감은 “1월 15일”처럼 연도가 없어서 날짜 미정으로 두고 설명에 페이지 표기를 그대로 적음(NDSEG 처럼 지난 정보가 섞여 있어 연도를 짐작하지 않음).
+- 전국: Boren Fellowship(대학원) 2027/1/20 — 공식 borenawards.org 확인.
+- 넣지 않음: AAUW(9/30 마감), HSF(2027 일정 아직 없음), D&C Fellows(페이지 날짜가 지난 해).
+- 대학원생 공고: 장학금 25 + 연구 겸 장학금 6 + 연구 2 (로컬 가져오기). 257 통과.
+
 ## 2026-11-02 · 사장님 요청 — 대학원생 공고
 - USAJobs 첫 실행: 129개(06:03), 연구소 125곳 반영(05:49).
 - 대학원생: 공식 페이지에서 확인한 것만 — DOE SCGSR(11/4 5PM ET, 박사과정 국립연구소 연구), DOE CSGF·NNSA SSGF 2027(지금 접수 중, 마감은 신청 사이트에만 → 날짜 미정), AAAS Mass Media(1/4, 대학원·학부 고학년, 인턴 › Media & Writing), 버클리 대학원 Conference Travel Grant 가을 마감 12/1(페이지 기준으로 고침).
