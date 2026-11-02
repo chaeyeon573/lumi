@@ -25,6 +25,7 @@ import { fetchOursScholarships } from '../sources/ours';
 import { fetchStudyAbroad } from '../sources/studyabroad';
 import { findStudentOrgSites, knownSites } from '../sources/orgsites';
 import { fetchResearchUnits, mergeResearchUnits } from '../sources/researchunits';
+import { coopsFromCsv, COOP_PREFIX } from '../sources/coops';
 import { fetchUsaJobs } from '../sources/usajobs';
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
@@ -326,6 +327,18 @@ if (process.env.AGENT_MODE === 'worker') {
           if (!DRY && (organizations.length || removed.length)) await store.applyPatch({ organizations, removed: { organizations: removed } });
           await notify([await record({ task: 'labs:s_berkeley', schoolId: 's_berkeley', status: 'applied', startedAt, summary: { fetched: fresh.length, changed: organizations.length, removed: removed.length, sample: fresh.slice(0, 3).map((o) => o.name) } })]);
         } catch (e) { await notify([await record({ task: 'labs:s_berkeley', schoolId: 's_berkeley', status: 'error', startedAt, summary: { error: (e as Error).message } })]); }
+        did += 1;
+      }
+      // Berkeley Student Cooperative 하우스 — 공식 사이트에서 확인한 목록(server/data/coops-berkeley.csv)을 Co-op 조직으로. 일주일에 한 번
+      if (due('coops:s_berkeley', latest.get('coops:s_berkeley')?.finishedAt, 24 * 7)) {
+        const startedAt = new Date().toISOString();
+        try {
+          const file = path.join(path.dirname(SCHOOLS_CSV), 'coops-berkeley.csv');
+          const fresh = existsSync(file) ? coopsFromCsv(readFileSync(file, 'utf8')) : [];
+          const { organizations, removed } = mergeResearchUnits(fresh, (await store.loadSnapshot())?.organizations ?? [], COOP_PREFIX);
+          if (!DRY && (organizations.length || removed.length)) await store.applyPatch({ organizations, removed: { organizations: removed } });
+          await notify([await record({ task: 'coops:s_berkeley', schoolId: 's_berkeley', status: 'applied', startedAt, summary: { fetched: fresh.length, changed: organizations.length, removed: removed.length } })]);
+        } catch (e) { await notify([await record({ task: 'coops:s_berkeley', schoolId: 's_berkeley', status: 'error', startedAt, summary: { error: (e as Error).message } })]); }
         did += 1;
       }
       // 연방정부 학생 채용(USAJOBS Pathways) — 키가 이 서비스에 있을 때만, 12시간마다 (server/sources/usajobs.ts)

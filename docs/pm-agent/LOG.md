@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-11-02 · 사장님 답 — Co-ops 칸 (BSC 하우스 목록)
+- Berkeley Student Cooperative 공식 사이트(bsc.coop/housing/our-houses-apartments)에서 하우스·아파트 20곳과 각 집 소개 첫 문장을 확인 → server/data/coops-berkeley.csv(확인일 포함). 사이트가 서버 자동 요청(Node)을 503 으로 막아서 우회하지 않고 확인한 목록을 저장소에 둠. 워커가 일주일마다 CSV → 조직(type: coop, 공식). 테스트 2개.
+- 조직 분류에 Co-op housing 추가, Explore › Clubs & Groups 칩 Co-ops, Explore › Events 조직 행사 칸 Co-ops 필터.
+- 266 통과, 빌드 정상.
+
 ## 2026-11-02 · 사장님 시안 3단계 — 조직 행사로 시작하는 유입
 - 운영진: Profile › My Organizations(운영 중·회원) → Create Event(사진·행사 이름·조직(운영진인 조직만)·설명·일시·장소·공개 범위 Public(Explore)/Members only(그 조직 회원만)) → “Event Created!” Share Link · View Event · View Organization (+ 인스타·단톡방 안내). 조직 페이지 Events 칸에 운영진용 Create Event.
 - 학생: Explore › Events 맨 위 “From clubs & Greek life”(All·Clubs·Greek, 실제 조직 행사만, 없으면 숨김). 행사 상세 RSVP → “You’re going! Added to your Schedule.” · View Organization. 참석한 행사는 Schedule(내 약속)에 보인다.

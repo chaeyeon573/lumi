@@ -78,22 +78,23 @@ export function ExploreSectionPage() {
 function OrgEvents() {
   const v = useViewer();
   const orgs = useAppStore((s) => s.organizations);
-  const [f, setF] = useState<'' | 'clubs' | 'greek'>('');
+  const [f, setF] = useState<'' | 'clubs' | 'greek' | 'coop'>('');
   const today = todayISO();
   const list = useMemo(() => v.visibleActivities
     .filter((a) => a.kind === 'org_event' && a.orgId)
     .filter((a) => a.date > today || (a.date === today && toMin(a.endTime || a.startTime) > nowMin()))
     .sort((a, b) => `${a.date} ${a.startTime}`.localeCompare(`${b.date} ${b.startTime}`)), [v, today]);
   const typeOf = (id?: string) => orgs.find((o) => o.id === id)?.type;
-  const shown = list.filter((a) => !f || (f === 'greek' ? typeOf(a.orgId) === 'greek' : typeOf(a.orgId) !== 'greek'));
+  const shown = list.filter((a) => !f || (f === 'clubs' ? !['greek', 'coop'].includes(typeOf(a.orgId) ?? '') : typeOf(a.orgId) === f));
   if (!list.length) return null;
   return (
     <section className="mb-5">
-      <h2 className="text-[17px] font-bold mb-2">{en ? 'From clubs & Greek life' : '동아리·Greek 행사'}</h2>
+      <h2 className="text-[17px] font-bold mb-2">{en ? 'From clubs, Greek life & co-ops' : '동아리·Greek·코업 행사'}</h2>
       <div className="flex gap-1.5 mb-2.5">
         <Chip size="sm" active={!f} onClick={() => setF('')}>{en ? 'All' : '전체'}</Chip>
         <Chip size="sm" active={f === 'clubs'} onClick={() => setF('clubs')}>{en ? 'Clubs' : '동아리'}</Chip>
         <Chip size="sm" active={f === 'greek'} onClick={() => setF('greek')}>Greek</Chip>
+        <Chip size="sm" active={f === 'coop'} onClick={() => setF('coop')}>{en ? 'Co-ops' : '코업'}</Chip>
       </div>
       <div className="space-y-2.5">{shown.slice(0, 5).map((a) => <MeetupRow key={a.id} a={a} />)}</div>
       {shown.length === 0 && <p className="text-[13px] text-ink-3">{en ? 'Nothing here yet.' : '아직 없어요.'}</p>}

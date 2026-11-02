@@ -284,7 +284,8 @@ export type Residence = 'dorm' | 'offcampus' | 'commute';
 export type MeetPreference = 'same_hobby' | 'same_class' | 'same_goal' | 'same_living' | 'new_people';
 
 // ─── 조직 (동아리·학과·연구실·학생회) ──────────────────────────────────────
-export type OrganizationType = 'club' | 'department' | 'lab' | 'council' | 'greek';
+/** coop: 학생 협동조합 하우스 (Berkeley Student Cooperative 등, 2026-11-02) */
+export type OrganizationType = 'club' | 'department' | 'lab' | 'council' | 'greek' | 'coop';
 
 export interface Organization {
   id: ID;

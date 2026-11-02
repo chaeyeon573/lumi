@@ -1,4 +1,4 @@
-import { t } from '@core/i18n';
+import { t, lang } from '@core/i18n';
 import type {
   ActivityCategory, Availability, Interest, JoinPolicy, Purpose, UniversityRole, Visibility, OrganizationType, ActivityKind, Gender, Goal, Role, Residence, OpportunityType, MeetPreference,
 } from '@core/types';
@@ -47,7 +47,7 @@ export const JOIN_POLICY_LABELS: Record<JoinPolicy, string> = {
 };
 
 export const ROLE_LABELS: Record<UniversityRole, string> = { undergraduate: t('학부생'), graduate: t('대학원생'), alumni: t('졸업생') };
-export const ORG_TYPE_LABELS: Record<OrganizationType, string> = { club: t('동아리'), department: t('학과'), lab: t('연구실·RA'), council: t('학생회'), greek: t('소셜 조직 (Greek)') };
+export const ORG_TYPE_LABELS: Record<OrganizationType, string> = { club: t('동아리'), department: t('학과'), lab: t('연구실·RA'), council: t('학생회'), greek: t('소셜 조직 (Greek)'), coop: lang === 'en' ? 'Co-op housing' : '협동조합 하우스' };
 export const KIND_LABELS: Record<ActivityKind, string> = { personal: t('개인 활동'), group: t('그룹 모임'), org_event: t('동아리·학교 행사') };
 export const GENDER_LABELS: Record<Gender, string> = { female: t('여성'), male: t('남성'), other: t('기타'), private: t('비공개') };
 
