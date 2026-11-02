@@ -24,6 +24,7 @@
 import { fetchOursScholarships } from '../sources/ours';
 import { fetchStudyAbroad } from '../sources/studyabroad';
 import { findStudentOrgSites, knownSites } from '../sources/orgsites';
+import { fetchResearchUnits, mergeResearchUnits } from '../sources/researchunits';
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
@@ -313,6 +314,17 @@ if (process.env.AGENT_MODE === 'worker') {
           if (!DRY && changed.length) await store.applyPatch({ organizations: changed });
           await notify([await record({ task: 'orgsites:s_berkeley', schoolId: 's_berkeley', status: 'applied', startedAt, summary: { fetched: changed.length, sample: changed.slice(0, 3).map((o) => o.name) } })]);
         } catch (e) { await notify([await record({ task: 'orgsites:s_berkeley', schoolId: 's_berkeley', status: 'error', startedAt, summary: { error: (e as Error).message } })]); }
+        did += 1;
+      }
+      // 버클리 공식 연구소 목록(VCR Research Units) → Campus › 동아리 › 연구실 — 일주일에 한 번 (server/sources/researchunits.ts)
+      if (due('labs:s_berkeley', latest.get('labs:s_berkeley')?.finishedAt, 24 * 7)) {
+        const startedAt = new Date().toISOString();
+        try {
+          const fresh = await fetchResearchUnits();
+          const { organizations, removed } = mergeResearchUnits(fresh, (await store.loadSnapshot())?.organizations ?? []);
+          if (!DRY && (organizations.length || removed.length)) await store.applyPatch({ organizations, removed: { organizations: removed } });
+          await notify([await record({ task: 'labs:s_berkeley', schoolId: 's_berkeley', status: 'applied', startedAt, summary: { fetched: fresh.length, changed: organizations.length, removed: removed.length, sample: fresh.slice(0, 3).map((o) => o.name) } })]);
+        } catch (e) { await notify([await record({ task: 'labs:s_berkeley', schoolId: 's_berkeley', status: 'error', startedAt, summary: { error: (e as Error).message } })]); }
         did += 1;
       }
       if (due('external:internships', latest.get('external:internships')?.finishedAt, 12)) { const r = [await runOpportunities('external:internships', '', fetchInternships, 'op_ext_job_')]; did += 1; await notify(r); }
