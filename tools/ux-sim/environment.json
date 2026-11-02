@@ -28,7 +28,8 @@
         "types": [
           "content_gap"
         ],
-        "reason": "Local stack has only CSV opportunities; live also has worker-fetched internships, hackathons and campus events — check on live before acting."
+        "reason": "Local stack has only CSV opportunities; live also has worker-fetched internships, hackathons and campus events — check on live before acting.",
+        "when": "eventsMissing"
       },
       {
         "route": "^/(timetable|classes|c/)",
@@ -48,7 +49,8 @@
       ],
       "reason": "Local stack used the built-in sample course catalog (e.g. MATH 1A); live has the imported current-term Berkeley schedule (e.g. MATH 51), so course names and codes differ. Run `local-stack catalog fetch` and re-run."
     },
-    "$catalogComment": "The 'Course catalog' knownLimits line is replaced per run by lib/session-server.mjs knownLimits(): real catalog (cached with `local-stack catalog fetch`) or built-in sample."
+    "$catalogComment": "The 'Course catalog' knownLimits line is replaced per run by lib/session-server.mjs knownLimits(): real catalog (cached with `local-stack catalog fetch`) or built-in sample.",
+    "$eventsComment": "The 'Opportunities are only the CSV rows' line and the community/discover caveat are replaced/dropped per run when the template has a live events snapshot (`local-stack events fetch`)."
   },
   "live": {
     "summary": "Live production site with the ux-sim write guard: every mutating /api request except demo login and read-only calls is blocked and answered with 403.",

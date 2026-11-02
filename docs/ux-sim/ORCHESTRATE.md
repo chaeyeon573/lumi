@@ -19,6 +19,7 @@ All commands below run from the harness checkout (the `claude/ux-sim` worktree).
 cd tools/ux-sim && npm ci && npm test && cd ../..   # harness deps + unit tests (incl. a Chromium hit-point check)
 tools/ux-sim/bin/local-stack catalog fetch           # ~5 min: real Berkeley catalog, same adapter as the live worker
 tools/ux-sim/bin/local-stack catalog status          # cache present + not stale → templates use it
+tools/ux-sim/bin/local-stack events fetch            # ~10 s, read-only on live: real events / free food / listings (refresh weekly)
 (cd tools/ux-sim && npm run smoke)                   # one scripted fresh-account run end to end (~1–3 min)
 ```
 
@@ -128,6 +129,7 @@ git -C $H worktree add ../lumi-base main          # version A (any commit / bran
 git -C $H worktree add ../lumi-fix  claude/ux-fix-1   # version B
 cd $H
 tools/ux-sim/bin/local-stack catalog status       # the catalog cache is shared → both sides get the same real catalog
+tools/ux-sim/bin/local-stack events status        # same for the live events snapshot (fetch BEFORE the batch, not between sides)
 tools/ux-sim/bin/batch-plan --scenario lunch-today --repeat 2 --worktree ../lumi-base --batch cmp1-base
 tools/ux-sim/bin/batch-plan --scenario lunch-today --repeat 2 --worktree ../lumi-fix  --batch cmp1-fix
 # run every planned line (one subagent each, PERSONA_RUN.md). Each `ux-sim start … --worktree <dir>`:
@@ -145,6 +147,7 @@ What makes the two sides comparable, and what `compare` checks (it prints warnin
 | harness (personas, scenarios, checks, patience) | run both sides from the same `tools/ux-sim` checkout; `run.json` → `harness.hash` | hashes differ or are unknown |
 | accounts | `auth` from the scenario (fresh + same peers) | auth modes differ |
 | course catalog | shared cache in `$H/ux-sim/stack/catalog` (`--catalog cached` to force it) | catalog kinds differ |
+| events / listings | shared live snapshot in `$H/ux-sim/stack/events` — do not refetch between the two sides | snapshot stamps differ |
 | target | local stacks on both sides (never `--base-url` for a compare: a stack you started is not reset) | modes differ |
 | app version | that is the variable — `target.stack.stamp` per side | both sides have the same stamp |
 | clock | run both sides in the same hour, ideally interleaved cell by cell | — (check `createdAt`) |

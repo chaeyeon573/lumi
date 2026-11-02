@@ -51,13 +51,14 @@ export async function compare(before, after, { out, labels = {} } = {}) {
     harness: [...new Set(runs.map((r) => r.harness?.hash ?? 'unknown'))],
     auth: [...new Set(runs.map((r) => r.auth?.mode ?? r.scenario.setup?.auth ?? 'unknown'))],
     catalog: [...new Set(runs.map((r) => r.target.stack?.catalog?.kind ?? 'unknown'))],
+    events: [...new Set(runs.map((r) => (r.target.stack?.events?.kind === 'cached' ? `snapshot ${r.target.stack.events.stamp}` : r.target.stack?.events?.kind ?? 'unknown')))],
     modes: [...new Set(runs.map((r) => r.target.mode))],
   });
   const sb = side(B, labels.before); const sa = side(A, labels.after);
   const warnings = [];
   const same = (k) => JSON.stringify([...sb[k]].sort()) === JSON.stringify([...sa[k]].sort());
   if (!same('harness') || sb.harness.length > 1 || sb.harness.includes('unknown')) warnings.push(`harness differs or is unknown (before ${sb.harness.join(',')} · after ${sa.harness.join(',')}) — a change in outcome may come from the harness, not the app. Re-run both sides with the same tools/ux-sim checkout.`);
-  for (const k of ['auth', 'catalog', 'modes']) if (!same(k)) warnings.push(`${k} differs between sides (before ${sb[k].join(',')} · after ${sa[k].join(',')})`);
+  for (const k of ['auth', 'catalog', 'events', 'modes']) if (!same(k)) warnings.push(`${k} differs between sides (before ${sb[k].join(',')} · after ${sa[k].join(',')})`);
   if (JSON.stringify(sb.appCommits) === JSON.stringify(sa.appCommits)) warnings.push(`both sides ran the same app version (${sb.appCommits.join(',')}) — this compares repeat runs, not two versions`);
   const unpaired = pairs.filter((p) => !p.before.runs.length || !p.after.runs.length).map((p) => `${p.persona} × ${p.scenario}`);
   if (unpaired.length) warnings.push(`cells on one side only (not compared): ${unpaired.join(', ')}`);

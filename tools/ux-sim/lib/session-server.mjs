@@ -77,6 +77,12 @@ function knownLimits() {
     ? `Course catalog is the built-in sample list (~210 courses, e.g. MATH 1A; ${catalog?.why ?? 'no cached real catalog'}). Live has the imported current-term Berkeley schedule (e.g. MATH 51) — course-name findings on timetable/class screens are marked environment-limited.`
     : `Course catalog is the real Berkeley Class Schedule (${catalog.courses} courses, ${(catalog.terms ?? []).join(' + ')}), fetched ${String(catalog.fetchedAt).slice(0, 10)} with the worker's adapter. Seat counts and very recent changes may differ from live.`;
   if (i >= 0) k[i] = line; else k.push(line);
+  const ev = target.stack?.events;
+  const j = k.findIndex((x) => /^Opportunities are only the CSV rows/.test(x));
+  if (ev?.kind === 'cached') {
+    const line = `Campus events, free food, internships, hackathons and scholarships are a read-only snapshot of live (${ev.opportunities} real items, ${ev.eventsThisWeek} events this week, taken ${String(ev.fetchedAt).slice(0, 16).replace('T', ' ')} UTC) plus the CSV calendar. Nothing new appears during the run; Q&A and reviews are empty.`;
+    if (j >= 0) k[j] = line; else k.push(line);
+  }
   if (authMode === 'fresh') k.push('Signed in as a brand-new real (non-sample, e-mail-verified) account made for this run. Other students exist only if the scenario seeds peers (local fixtures); sample profiles are hidden from real accounts, as on live.');
   return k;
 }
@@ -583,7 +589,7 @@ function note(a) {
     if (!envLimited && about.environmentHits?.length) { envLimited = true; envReason = about.environmentHits[0].reason; }
     const cat = env.catalogBuiltin;
     if (!envLimited && catalogBuiltin && cat && new RegExp(cat.route).test(path0) && cat.types.includes(a.friction)) { envLimited = true; envReason = cat.reason; }
-    const caveat = (env.contentCaveats ?? []).find((c) => c.types.includes(a.friction) && new RegExp(c.route).test(path0) && (c.when !== 'catalogBuiltin' || catalogBuiltin));
+    const caveat = (env.contentCaveats ?? []).find((c) => c.types.includes(a.friction) && new RegExp(c.route).test(path0) && (c.when !== 'catalogBuiltin' || catalogBuiltin) && (c.when !== 'eventsMissing' || target.stack?.events?.kind !== 'cached'));
     const ev = {
       id: `f${run.frictionEvents.length + 1}`, step: about.index, noteStep: step.index, type: a.friction, severity: sev, feeling: a.feeling,
       quote: step.thought, url: (about.urlAfter ?? '').replace(base.origin, ''), route,

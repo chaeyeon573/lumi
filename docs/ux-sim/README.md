@@ -48,6 +48,7 @@ ux-sim/stack/             build/template cache, catalog/ (cached real course cat
 ```bash
 cd tools/ux-sim && npm ci          # playwright-core + ajv only. Chromium: /opt/pw-browsers/chromium (UX_SIM_CHROMIUM to override)
 tools/ux-sim/bin/local-stack catalog fetch   # once (~5 min): the real Berkeley course catalog, same adapter as the worker
+tools/ux-sim/bin/local-stack events fetch    # weekly (~10 s): live events / free food / listings, read-only
 cd tools/ux-sim && npm test && npm run smoke  # unit tests; then one scripted fresh-account run end to end (~1–3 min)
 ```
 
@@ -103,7 +104,17 @@ its own:
    `--catalog builtin` / `UX_SIM_CATALOG=builtin`, or a cache older than 30 days) the built-in sample catalog is used
    (MATH 1A instead of MATH 51); `run.json` → `target.stack.catalog.kind` says which, and course-name friction on
    timetable/class screens is then marked environment-limited automatically.
-5. **Account (`setup.auth`, override with `start --auth`).**
+5. **Live events snapshot.** A fresh real account would otherwise see no campus events or free food locally: sample
+   events are hidden from real accounts, and the worker that fetches CalLink / UC Berkeley Events / careers boards does
+   not run. `local-stack events fetch` reads the **live** server once, read-only — `POST /api/auth/demo` (a demo session
+   token) and `POST /api/bootstrap`, nothing else, never a write — and keeps Berkeley + national real opportunities
+   (events from yesterday to 3 weeks ahead, free food, internships, hackathons, scholarships, labs, study abroad). Sample
+   and example.com demo rows are dropped, Q&A and reviews are emptied (no other students' words in fixtures). The result
+   is cached in `ux-sim/stack/events/s_berkeley.json` (git-ignored); every new template upserts it (template name carries
+   `-ev<stamp>`), so both sides of a compare get identical real content. `run.json` → `target.stack.events` records the
+   snapshot (`kind`, `fetchedAt`, `stamp`, counts). Snapshots older than 7 days are not used (`--events cached` /
+   `UX_SIM_EVENTS=cached` forces, `none` skips); without one the old "CSV only" limit applies.
+6. **Account (`setup.auth`, override with `start --auth`).**
    - **`fresh` (default)** — before step 0 the harness registers a brand-new **real** account through the app's own API,
      the same calls the sign-up screen makes: `POST /api/schools/send-code` → `/api/schools/verify-code` (the code comes
      from the on-screen dev hint, or the data file) → `/api/auth/register`. It is school-e-mail-verified, not a sample
@@ -126,6 +137,7 @@ tools/ux-sim/bin/local-stack up [--worktree ../other-worktree] [--port 8800] [--
 tools/ux-sim/bin/local-stack status
 tools/ux-sim/bin/local-stack down --port 8800 | --all
 tools/ux-sim/bin/local-stack catalog fetch | status
+tools/ux-sim/bin/local-stack events fetch [--live-url URL] | status
 ux-sim start … --worktree ../other-worktree   # test another branch's code with THIS harness (before/after: ORCHESTRATE.md)
 ux-sim start … --base-url http://localhost:8800   # a stack you started yourself (mode "custom", nothing is reset)
 ```
@@ -166,7 +178,7 @@ These limits are listed in `tools/ux-sim/environment.json` and copied into every
 | Ask Lumi, AI profile draft on `/start`, conversation starters | off | needs an OpenAI key |
 | Course catalog | the real Berkeley schedule **if cached** (`local-stack catalog fetch`), else ~210 built-in sample courses | live has the worker's daily import |
 | Other students | none, unless the scenario seeds `peers` | live has real students |
-| Internships / hackathons / campus events / free food | only the CSV deadline calendar | live also has worker-fetched Greenhouse/Lever/Ashby internships, Devpost, CalLink and campus events |
+| Internships / hackathons / campus events / free food | a live snapshot **if cached** (`local-stack events fetch`) + the CSV calendar, else only the CSV calendar | live updates continuously from the worker |
 | E-mail codes | shown on screen | no mail provider |
 | Other people replying | nobody, unless `--autoreply` | production runs with `DEMO_AUTOREPLY=0` |
 

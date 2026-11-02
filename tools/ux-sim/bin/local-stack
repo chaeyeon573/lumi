@@ -5,19 +5,24 @@
 //   local-stack status
 //   local-stack catalog fetch [--worktree DIR]   run the worktree's Berkeley course adapter once and cache it (~5 min)
 //   local-stack catalog status
-import { up, down, status, fetchCatalog, catalogCache, catalogPlan } from '../lib/stack.mjs';
+//   local-stack events fetch [--worktree DIR] [--live-url URL]   read live events/listings once (demo sign-in + bootstrap only)
+//   local-stack events status
+import { up, down, status, fetchCatalog, catalogCache, catalogPlan, fetchEvents, eventsCache, eventsPlan } from '../lib/stack.mjs';
 import { parseArgs } from '../lib/args.mjs';
 
 const USAGE = `local-stack up [--worktree DIR] [--port N] [--data-file PATH] [--rebuild] [--reseed] [--dev [--web-port N]] [--autoreply] [--catalog auto|cached|builtin]
 local-stack down --port N | --all
 local-stack status
 local-stack catalog fetch [--worktree DIR]    cache the real Berkeley Class Schedule (same adapter as the worker, ~5 min)
-local-stack catalog status`;
+local-stack catalog status
+local-stack events fetch [--worktree DIR] [--live-url URL]   cache live public events / free food / listings (read-only: demo sign-in + bootstrap)
+local-stack events status
+up also takes --events auto|cached|none`;
 
 const { _: [cmd = 'help', sub], ...o } = parseArgs(process.argv.slice(2), ['rebuild', 'reseed', 'dev', 'autoreply', 'keep', 'all']);
 try {
   if (cmd === 'up') {
-    const info = await up({ worktree: o.worktree, port: o.port, dataFile: o['data-file'], rebuild: !!o.rebuild, reseed: !!o.reseed, dev: !!o.dev, webPort: o['web-port'], autoreply: !!o.autoreply, keep: !!o.keep, catalog: o.catalog });
+    const info = await up({ worktree: o.worktree, port: o.port, dataFile: o['data-file'], rebuild: !!o.rebuild, reseed: !!o.reseed, dev: !!o.dev, webPort: o['web-port'], autoreply: !!o.autoreply, keep: !!o.keep, catalog: o.catalog, events: o.events });
     console.log(JSON.stringify(info, null, 2));
     process.exit(0);
   } else if (cmd === 'down') {
@@ -29,6 +34,9 @@ try {
   } else if (cmd === 'catalog') {
     if (sub === 'fetch') console.log(JSON.stringify(fetchCatalog({ worktree: o.worktree, school: o.school ?? 'berkeley' }), null, 2));
     else console.log(JSON.stringify({ cache: catalogCache('berkeley'), nextTemplateUses: catalogPlan(o.catalog) }, null, 2));
+  } else if (cmd === 'events') {
+    if (sub === 'fetch') console.log(JSON.stringify(await fetchEvents({ worktree: o.worktree, baseUrl: o['live-url'] }), null, 2));
+    else console.log(JSON.stringify({ cache: eventsCache('berkeley'), nextTemplateUses: eventsPlan(o.events) }, null, 2));
   } else {
     console.log(USAGE);
   }

@@ -22,6 +22,7 @@ Session
   ux-sim start --persona <id> --scenario <id> [--run-id ID]      default target: a fresh LOCAL stack of this worktree
         [--worktree DIR] [--port N] [--autoreply]                   (server + built web, seeded data file in the run dir)
         [--auth fresh|demo|none] [--catalog auto|cached|builtin]    default auth = the scenario's (fresh: a new real account)
+        [--events auto|cached|none]                                 live events snapshot in the template (local-stack events fetch)
         [--base-url URL [--allow-live]]                             any URL; non-localhost needs --allow-live (writes blocked)
   ux-sim observe                                   numbered elements, visible text, screenshot + set-of-marks screenshot
   ux-sim click <id>            [--expect "<what I think will happen>" --confidence 0.7]
@@ -117,8 +118,8 @@ async function start() {
     if (!local && auth === 'fresh') die(`scenario ${s.id} signs in with a brand-new account (auth: fresh) — that would create a real account on ${u.origin}. Pass --auth demo (shared sample account) or --auth none.`);
   } else {
     process.stderr.write('starting a fresh local stack for this run …\n');
-    const info = await stackUp({ catalog: o.catalog, worktree: o.worktree, port: o.port, dataFile: path.join(runDir, 'stack', 'db.json'), log: path.join(runDir, 'stack', 'server.log'), rebuild: !!o.rebuild, reseed: !!o.reseed, autoreply: !!o.autoreply });
-    target = { mode: 'local', baseUrl: info.baseUrl, apiUrl: info.apiUrl, stack: { catalog: info.catalog, port: info.port, worktree: info.worktree, commit: info.commit, stamp: info.stamp, dirty: info.dirty, dataFile: rel(info.dataFile), template: rel(info.template), log: rel(info.log), owned: !o['keep-stack'], autoreply: !!o.autoreply } };
+    const info = await stackUp({ catalog: o.catalog, events: o.events, worktree: o.worktree, port: o.port, dataFile: path.join(runDir, 'stack', 'db.json'), log: path.join(runDir, 'stack', 'server.log'), rebuild: !!o.rebuild, reseed: !!o.reseed, autoreply: !!o.autoreply });
+    target = { mode: 'local', baseUrl: info.baseUrl, apiUrl: info.apiUrl, stack: { catalog: info.catalog, events: info.events, port: info.port, worktree: info.worktree, commit: info.commit, stamp: info.stamp, dirty: info.dirty, dataFile: rel(info.dataFile), template: rel(info.template), log: rel(info.log), owned: !o['keep-stack'], autoreply: !!o.autoreply } };
   }
   const cfg = { runId, persona: p, scenario: s, target, auth, harness: harnessVersion() };
   writeFileSync(path.join(runDir, 'session-config.json'), JSON.stringify(cfg, null, 2));
