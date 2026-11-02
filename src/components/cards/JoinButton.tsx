@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { t } from '@core/i18n';
+import { t, lang } from '@core/i18n';
 import { useNavigate } from 'react-router-dom';
 import { Check, Clock, Settings2 } from 'lucide-react';
 import type { Activity } from '@core/types';
@@ -13,6 +13,7 @@ export function JoinButton({ activity: a, className, size = 'md', label }: { act
   const v = useViewer();
   const nav = useNavigate();
   const run = useAppStore((s) => s.run);
+  const showToast = useAppStore((s) => s.showToast);
   const [open, setOpen] = useState(false);
   const [msg, setMsg] = useState('');
   const [busy, setBusy] = useState(false);
@@ -25,7 +26,11 @@ export function JoinButton({ activity: a, className, size = 'md', label }: { act
   const submit = async (message?: string) => {
     setBusy(true);
     try {
-      await run(() => api.activities.join(a.id, v.me.id, message), a.joinPolicy === 'open' ? t('참가했어요! 그룹 채팅방이 열렸어요.') : t('참가 신청을 보냈어요. 승인되면 알려드릴게요.'));
+      const patch = await run(() => api.activities.join(a.id, v.me.id, message));
+      // 바로 참가면 패치에 그 활동의 채팅방이 온다 — 토스트의 버튼이 그 방을 연다 (방을 못 찾으면 활동 화면의 채팅 칸으로)
+      const room = patch.chatRooms?.find((r) => r.activityId === a.id) ?? useAppStore.getState().chatRooms.find((r) => r.activityId === a.id && r.memberIds.includes(v.me.id));
+      if (a.joinPolicy === 'open') showToast(t('참가했어요! 그룹 채팅방이 열렸어요.'), 'success', { label: lang === 'en' ? 'Open chat' : '채팅 열기', to: room ? `/chats/${room.id}` : `/activities/${a.id}` });
+      else showToast(t('참가 신청을 보냈어요. 승인되면 알려드릴게요.'), 'success');
       setOpen(false); setMsg('');
     } catch { /* toast shown */ } finally { setBusy(false); }
   };

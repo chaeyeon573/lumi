@@ -11,7 +11,7 @@ interface AppState extends Snapshot {
   status: Status;
   error: string | null;
   currentUserId: ID | null;
-  toast: { id: number; text: string; tone: 'info' | 'success' | 'error' } | null;
+  toast: { id: number; text: string; tone: 'info' | 'success' | 'error'; action?: ToastAction } | null;
 
   init(): Promise<void>;
   /** Re-fetch everything without the loading screen (pull-to-refresh in the iPhone app) */
@@ -23,8 +23,12 @@ interface AppState extends Snapshot {
   applyPatch(patch: Patch): void;
   /** API 호출 → 패치 병합 → 토스트. 실패 시 오류 토스트를 띄우고 throw */
   run<T extends Patch | { patch: Patch }>(fn: () => Promise<T>, successMsg?: string): Promise<T>;
-  showToast(text: string, tone?: 'info' | 'success' | 'error'): void;
+  /** action: 토스트 안의 버튼 하나 — 예) 참가 직후 "Open chat" → 그 채팅방. 버튼이 있으면 조금 더 오래 떠 있다 */
+  showToast(text: string, tone?: 'info' | 'success' | 'error', action?: ToastAction): void;
 }
+
+/** 토스트 버튼 — 누르면 이 경로로 간다 (웹·앱 공통이라 함수 대신 경로) */
+export interface ToastAction { label: string; to: string }
 
 const empty: Snapshot = {
   users: [], schools: [], organizations: [], activities: [], participations: [], posts: [],
@@ -106,10 +110,10 @@ export const useAppStore = create<AppState>((set, get) => ({
     }
   },
 
-  showToast(text, tone = 'info') {
+  showToast(text, tone = 'info', action) {
     const id = ++toastSeq;
-    set({ toast: { id, text, tone } });
-    setTimeout(() => { if (get().toast?.id === id) set({ toast: null }); }, 2600);
+    set({ toast: { id, text, tone, action } });
+    setTimeout(() => { if (get().toast?.id === id) set({ toast: null }); }, action ? 6000 : 2600);
   },
 }));
 
