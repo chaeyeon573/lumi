@@ -28,11 +28,12 @@ import { fetchResearchUnits, mergeResearchUnits } from '../sources/researchunits
 import { coopsFromCsv, COOP_PREFIX } from '../sources/coops';
 import { fetchUsaJobs } from '../sources/usajobs';
 import { studentGovToOrg, type StudentGovRow } from '../sources/orglinks';
+import { mkdirSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import type { School } from '@core/types';
+import type { Organization, School } from '@core/types';
 import type { CatalogCourse } from '@core/api/types';
 import { parseCSV } from '../scripts/csv';
 import { detectOrgsPlatform } from './detect';
@@ -129,8 +130,51 @@ function runScript(task: string, script: string, schoolId: string, extraEnv: Rec
   return record({ task, schoolId, status: failed ? 'error' : 'applied', startedAt, summary: { exit: r.status, lines, dry: DRY } });
 }
 
+/** 탐지한 동아리 플랫폼 → fetch:orgs 에 넘길 환경 변수 */
+function orgsEnv(id: string, platform: string, host: string): Record<string, string> {
+  return platform === 'pennclubs' ? { PENNCLUBS_HOSTS: `${id}=${host}` } : platform === 'facetwp' ? { FACETWP_HOSTS: `${id}=${host}` } : platform === 'accordion' ? { ACCORDION_HOSTS: `${id}=${host}` } : platform === 'drupalcards' ? { DRUPALCARDS_HOSTS: `${id}=${host}` } : platform === 'engage' ? { ENGAGE_HOSTS: `${id}=${host}` } : platform === 'presence' ? { PRESENCE_HOSTS: `${id}=${new URL(host).hostname.split('.')[0]}` } : { CAMPUSGROUPS_HOSTS: `${id}=${host}` };
+}
+
+// ─── 아직 안 연 학교: 파일로 모으기 (2026-11-02 사장님: Railway 비용 — 기본은 PM 에이전트가 파일로, 거기서 못 닿는 것만 Railway) ───
+const DATA_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data');
+const COLLECTED_DIR = path.join(DATA_DIR, 'collected');
+const GOV_CSV = path.join(DATA_DIR, 'student-governments.csv');
+const normName = (n: string) => n.toLowerCase().replace(/\([^)]*\)/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+/** collect:<id> — 동아리(+손으로 확인한 학생회)를 server/data/collected/<id>.orgs.json 에, 수업 표본 결과를 <id>.probe.json 에. DB 에는 쓰지 않는다 */
+async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
+  const out: AgentRun[] = [];
+  const d = await detectOrgsPlatform(row.short, row.email_domain, row.orgs_host || undefined);
+  const file = path.join(COLLECTED_DIR, `${row.id}.orgs.json`);
+  if (d) out.push(await runScript(`collect-orgs:${row.id}`, 'fetch:orgs', row.id, { ...orgsEnv(row.id, d.platform, d.host), FETCH_DRY: '1', ORGS_JSON_DIR: COLLECTED_DIR }));
+  else out.push(await record({ task: `collect-orgs:${row.id}`, schoolId: row.id, status: 'rejected', startedAt: new Date().toISOString(), summary: { error: 'no public club directory found', tried: row.orgs_host || 'guessed hosts' } }));
+  // 학생회: 디렉터리에 없을 때만 더한다
+  const govRows = existsSync(GOV_CSV) ? (parseCSV(readFileSync(GOV_CSV, 'utf8')) as unknown as StudentGovRow[]).filter((r) => r.school_id === row.id) : [];
+  if (govRows.length) {
+    const list: Organization[] = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : [];
+    const names = new Set(list.map((o) => normName(o.name)));
+    const add = govRows.map(studentGovToOrg).filter((o) => !names.has(normName(o.name)) && !list.some((x) => x.id === o.id));
+    if (add.length) { mkdirSync(COLLECTED_DIR, { recursive: true }); writeFileSync(file, `${JSON.stringify([...list, ...add].sort((a, b) => a.name.localeCompare(b.name)), null, 1)}\n`); }
+  }
+  // railway 칸에 probe 가 있으면(이 컨테이너에서 원본에 못 닿음) 수업 표본은 Railway 가 한다
+  if ((row.courses_source || row.catalog_url) && !(row.railway ?? '').split('|').includes('probe')) {
+    const probe = await runCourseProbe(row);
+    mkdirSync(COLLECTED_DIR, { recursive: true });
+    writeFileSync(path.join(COLLECTED_DIR, `${row.id}.probe.json`), `${JSON.stringify({ checkedAt: probe.finishedAt, status: probe.status, ...probe.summary }, null, 1)}\n`);
+    out.push(probe);
+  }
+  return out;
+}
+/** import-collected:<id> — 학교를 열 때 파일로 모아 둔 동아리를 DB 에 한 번에 */
+async function importCollected(id: string): Promise<AgentRun> {
+  const startedAt = new Date().toISOString(); const file = path.join(COLLECTED_DIR, `${id}.orgs.json`);
+  if (!existsSync(file)) return record({ task: `import-collected:${id}`, schoolId: id, status: 'skipped', startedAt, summary: { error: `no ${file}` } });
+  const organizations = JSON.parse(readFileSync(file, 'utf8')) as Organization[];
+  if (!DRY) await store.applyPatch({ organizations });
+  return record({ task: `import-collected:${id}`, schoolId: id, status: 'applied', startedAt, summary: { organizations: organizations.length, dry: DRY } });
+}
+
 // ─── 학교 단위 작업 (워커) ─────────────────────────────────────────────────
-interface SchoolRow { id: string; name: string; short: string; email_domain: string; region: string; lat: string; lng: string; orgs_host?: string; courses_source?: string; catalog_url?: string; research_source?: string; events_source?: string; academic_calendar?: string; tz?: string }
+interface SchoolRow { id: string; name: string; short: string; email_domain: string; region: string; lat: string; lng: string; orgs_host?: string; courses_source?: string; catalog_url?: string; research_source?: string; events_source?: string; academic_calendar?: string; tz?: string; railway?: string }
 const SCHOOLS_CSV = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', 'schools.csv');
 const loadSchools = () => parseCSV(readFileSync(SCHOOLS_CSV, 'utf8')) as unknown as SchoolRow[];
 /**
@@ -195,7 +239,14 @@ async function runAcademic(row: SchoolRow): Promise<AgentRun> {
 async function runSchool(row: SchoolRow, listed = true): Promise<AgentRun[]> {
   const out: AgentRun[] = [];
   const latest = await latestRuns();
-  // 1. 앱에 학교 등록 — 데이터만 모으는 학교(schools-collect.csv)는 등록하지 않는다
+  // 0. 아직 안 연 학교: Railway 는 railway 칸에 적힌 일만 (PM 에이전트가 못 닿는 원본) — 나머지는 에이전트가 파일로 모은다
+  if (!listed) {
+    const jobs = (row.railway ?? '').split('|').map((x) => x.trim()).filter(Boolean);
+    const lastProbe = latest.get(`probe:${row.id}`);
+    if (jobs.includes('probe') && (row.courses_source || row.catalog_url) && due(`probe:${row.id}`, lastProbe?.finishedAt, lastProbe?.status === 'applied' ? 24 * 7 : 24)) out.push(await runCourseProbe(row));
+    return out;
+  }
+  // 1. 앱에 학교 등록
   const school: School = { id: row.id, name: row.name, emailDomain: row.email_domain, region: row.region, center: { lat: Number(row.lat), lng: Number(row.lng) }, ...(row.tz ? { tz: row.tz } : {}) };
   if (listed && !DRY) await store.applyPatch({ schools: [school] });
   // 2. 동아리 디렉터리: 탐지 결과는 detect:<id> 실행 기록에 남겨 재사용한다 (30일마다 다시 탐지)
@@ -211,7 +262,7 @@ async function runSchool(row: SchoolRow, listed = true): Promise<AgentRun[]> {
     out.push(await record({ task: `detect:${row.id}`, schoolId: row.id, status: d ? 'applied' : 'rejected', startedAt, summary: d ? { ...d } : { error: 'no public club directory found (CampusLabs Engage / CampusGroups)', tried: row.orgs_host || 'guessed hosts' } }));
   }
   if (host && platform && due(`orgs:${row.id}`, latest.get(`orgs:${row.id}`)?.finishedAt, 24 * 7)) {
-    const env: Record<string, string> = platform === 'pennclubs' ? { PENNCLUBS_HOSTS: `${row.id}=${host}` } : platform === 'facetwp' ? { FACETWP_HOSTS: `${row.id}=${host}` } : platform === 'accordion' ? { ACCORDION_HOSTS: `${row.id}=${host}` } : platform === 'drupalcards' ? { DRUPALCARDS_HOSTS: `${row.id}=${host}` } : platform === 'engage' ? { ENGAGE_HOSTS: `${row.id}=${host}` } : platform === 'presence' ? { PRESENCE_HOSTS: `${row.id}=${new URL(host).hostname.split('.')[0]}` } : { CAMPUSGROUPS_HOSTS: `${row.id}=${host}` };
+    const env = orgsEnv(row.id, platform, host);
     out.push(await runScript(`orgs:${row.id}`, 'fetch:orgs', row.id, env));
   }
   // 2a. 학생회 — 디렉터리에 없는 학교는 손으로 확인한 공식 학생회(server/data/student-governments.csv)를 7일마다 넣는다 (멤버·팔로워는 그대로)
@@ -324,6 +375,8 @@ async function runTask(t: string): Promise<AgentRun[]> {
   if (kind === 'greeks') return [await runScript(t, 'fetch:greeks', arg)];
   if (kind === 'academic') { const row = findRow(arg); return [row ? await runAcademic(row) : await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
   if (kind === 'seats') { const startedAt = new Date().toISOString(); const s = await pollSeats(store, { dry: DRY, force: true }); return [await record({ task: 'seats', status: s.errors && !s.fetched ? 'error' : 'applied', startedAt, summary: { ...s } })]; }
+  if (kind === 'collect') { const row = findRow(arg); return row ? runCollect(row) : [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv / schools-collect.csv' } })]; }
+  if (kind === 'import-collected') return [await importCollected(arg)];
   if (kind === 'probe') { const row = findRow(arg); return [row ? await runCourseProbe(row) : await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv / schools-collect.csv' } })]; }
   if (kind === 'school') { const row = findRow(arg); return row ? runSchool(row, loadSchools().some((x) => x.id === arg)) : [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
   return [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'unknown task' } })];

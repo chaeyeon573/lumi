@@ -182,6 +182,16 @@ function mapOrg(schoolId: ID, host: string, o: EngageOrg): Organization {
 }
 
 type ID = string;
+/**
+ * 아직 안 연 학교: DB 대신 파일로 (ORGS_JSON_DIR=server/data/collected) — 학교를 열 때 `npm run agent -- import-collected:<id>` 로 한 번에 넣는다.
+ * 2026-11-02 사장님: Railway 적재 비용을 아끼고, 나중에 빨리 끌어오게
+ */
+function saveCollected(schoolId: string, orgs: Organization[]) {
+  const dir = process.env.ORGS_JSON_DIR; if (!dir) return;
+  mkdirSync(dir, { recursive: true });
+  const clean = [...orgs].sort((a, b) => a.name.localeCompare(b.name)).map((o) => ({ ...o, followerIds: [], memberIds: [], adminIds: [], applicantIds: [] }));
+  writeFileSync(path.join(dir, `${schoolId}.orgs.json`), `${JSON.stringify(clean, null, 1)}\n`);
+}
 const only = process.argv[2];
 const dataDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '.data');
 mkdirSync(dataDir, { recursive: true });
@@ -235,6 +245,7 @@ for (const [schoolId, host] of Object.entries(ENGAGE_HOSTS)) {
   if (ratio < 0.5) { console.log(`${orgs.length}개 — 지난번 ${linked.length}개의 절반도 안 돼 반영하지 않음 (사이트 확인 필요)`); process.exitCode = 2; continue; }
   const stale = staleSeed(schoolId, orgs);
   console.log(`${orgs.length}개 (greek ${orgs.filter((o) => o.type === 'greek').length})${stale.length ? `, 추정 항목 ${stale.length}개 삭제` : ''}${ratio < 0.8 ? ` — 지난번 ${linked.length}개보다 줄었음` : ''}`);
+  saveCollected(schoolId, orgs);
   if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs, removed: { organizations: stale } });
 }
 for (const [schoolId, host] of Object.entries(CAMPUSGROUPS_HOSTS)) {
@@ -254,6 +265,7 @@ for (const [schoolId, host] of Object.entries(CAMPUSGROUPS_HOSTS)) {
   const gone = ratio < 0.8 ? [] : linked.filter((o) => !freshIds.has(o.id) && o.memberIds.length === 0 && o.adminIds.length === 0).map((o) => o.id);
   const stale = [...staleSeed(schoolId, orgs), ...gone];
   console.log(`${orgs.length}개 (greek ${orgs.filter((o) => o.type === 'greek').length})${stale.length ? `, 추정·제외 항목 ${stale.length}개 삭제` : ''}${ratio < 0.8 ? ` — 지난번 ${linked.length}개보다 줄어 삭제는 건너뜀` : ''}`);
+  saveCollected(schoolId, orgs);
   if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs, removed: { organizations: stale } });
 }
 for (const [schoolId, sub] of Object.entries(PRESENCE_HOSTS)) {
@@ -270,6 +282,7 @@ for (const [schoolId, sub] of Object.entries(PRESENCE_HOSTS)) {
   const csv = ['school_id,name,type,category,description', ...orgs.map((o) => [o.schoolId, o.name, o.type, o.parent ?? '', o.description].map((v) => `"${String(v).replace(/"/g, '""')}"`).join(','))].join('\n');
   writeFileSync(path.join(dataDir, `orgs-${schoolId}.csv`), csv);
   console.log(`${orgs.length}개 (greek ${orgs.filter((o) => o.type === 'greek').length})${stale.length ? `, 추정 항목 ${stale.length}개 삭제` : ''}`);
+  saveCollected(schoolId, orgs);
   if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs, removed: { organizations: stale } });
 }
 for (const [schoolId, host] of Object.entries(PENNCLUBS_HOSTS)) {
@@ -286,6 +299,7 @@ for (const [schoolId, host] of Object.entries(PENNCLUBS_HOSTS)) {
   const ratio = linked.length ? orgs.length / linked.length : 1;
   if (ratio < 0.5) { console.log(`${orgs.length}개 — 지난번 ${linked.length}개의 절반도 안 돼 반영하지 않음 (사이트 확인 필요)`); process.exitCode = 2; continue; }
   console.log(`${orgs.length}개 (학생회 ${orgs.filter((o) => o.type === 'council').length}, 링크 상세 ${detailed.length})`);
+  saveCollected(schoolId, orgs);
   if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs });
 }
 for (const [schoolId, url] of Object.entries(FACETWP_HOSTS)) {
@@ -300,6 +314,7 @@ for (const [schoolId, url] of Object.entries(FACETWP_HOSTS)) {
   const csv = ['school_id,name,type,category,description', ...orgs.map((o) => [o.schoolId, o.name, o.type, o.parent ?? '', o.description].map((v) => `"${String(v).replace(/"/g, '""')}"`).join(','))].join('\n');
   writeFileSync(path.join(dataDir, `orgs-${schoolId}.csv`), csv);
   console.log(`${orgs.length}개 (링크 있는 곳 ${cards.filter((c) => c.links.length).length})`);
+  saveCollected(schoolId, orgs);
   if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs });
 }
 for (const [schoolId, url] of Object.entries(ACCORDION_HOSTS)) {
@@ -314,6 +329,7 @@ for (const [schoolId, url] of Object.entries(ACCORDION_HOSTS)) {
   const csv = ['school_id,name,type,category,description', ...orgs.map((o) => [o.schoolId, o.name, o.type, o.parent ?? '', o.description].map((v) => `"${String(v).replace(/"/g, '""')}"`).join(','))].join('\n');
   writeFileSync(path.join(dataDir, `orgs-${schoolId}.csv`), csv);
   console.log(`${orgs.length}개 (분류 ${new Set(list.map((x) => x.category)).size})`);
+  saveCollected(schoolId, orgs);
   if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs });
 }
 for (const [schoolId, base] of Object.entries(DRUPALCARDS_HOSTS)) {
@@ -337,6 +353,7 @@ for (const [schoolId, base] of Object.entries(DRUPALCARDS_HOSTS)) {
   const csv = ['school_id,name,type,category,description', ...orgs.map((o) => [o.schoolId, o.name, o.type, o.parent ?? '', o.description].map((v) => `"${String(v).replace(/"/g, '""')}"`).join(','))].join('\n');
   writeFileSync(path.join(dataDir, `orgs-${schoolId}.csv`), csv);
   console.log(`${orgs.length}개 (분류 페이지 ${pages.length}, 링크 있는 곳 ${cards.filter((c) => c.links.length).length})`);
+  saveCollected(schoolId, orgs);
   if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs });
 }
 console.log(process.env.FETCH_DRY === '1' ? `CSV 만 생성: ${dataDir}` : 'DB 반영 완료');

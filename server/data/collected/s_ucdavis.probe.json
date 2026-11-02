@@ -1,0 +1,20 @@
+{
+ "checkedAt": "2026-11-02T13:26:18.551Z",
+ "status": "applied",
+ "stored": false,
+ "source": "catalog:https://catalog.ucdavis.edu/",
+ "sampled": 107,
+ "withTimes": 0,
+ "terms": [
+  "catalog"
+ ],
+ "sample": [
+  "SSC 092 · Soil Science Internship · catalog",
+  "SSC 202 · Topics in Advanced Soil Chemistry · catalog",
+  "AVS 192 · Internship in Avian Sciences · catalog",
+  "AVS 115 · Raptor Biology · catalog",
+  "BCB 290 · Seminar · catalog",
+  "LAT 103 · Vergil: Aeneid · catalog"
+ ],
+ "spotCheck": "no lookup (catalog codes/titles only)"
+}

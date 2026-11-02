@@ -1,5 +1,11 @@
 # Bay Area schools — where each kind of data comes from (checked 2026-11-02)
 
+**Where the data lives (owner, 2026-11-02 — Railway cost):** schools that aren't open are collected by the PM agent (this routine, not Railway) into
+`server/data/collected/<school>.orgs.json` (clubs + student government + links) and `<school>.probe.json` (class recipe sample). Nothing goes into the live DB.
+Run: `npm run agent -- collect:s_ucsc`. Only what the agent can't reach from its container runs on Railway — the `railway` column in schools-collect.csv
+(today: Stanford class probe, because explorecourses.stanford.edu fails TLS from the container); Railway records only the probe result, no data.
+Opening a school: move its row to schools.csv, then `npm run agent -- import-collected:<id>` loads the clubs in one go; the worker then loads classes with the same recipe.
+
 Rule (owner, 2026-11-02): focus on Bay Area. **Clubs, student government, events and their links are loaded now** (unstructured, need to be gathered one by one).
 **Class timetables are NOT loaded for schools that aren't open yet** (storage cost). For those the agent only reads a small sample every week
 (`probe:<school>` in /api/agent/status, `stored: false`) to prove the recipe still works. Opening a school = move its row from
@@ -25,7 +31,9 @@ Notes
 
 ## Data work queue (the PM agent picks the top open item itself every run — owner 2026-11-02: "don't make me ask, keep filling")
 Order: Bay Area schools only. Never invent data; only official/public sources; verify with a real sample before wiring; never bulk-store timetables for schools that aren't open.
-- [ ] Check on the live agent status that orgs for s_ucsc / s_scu / s_usf / s_sjsu / s_ucdavis / s_sfsu loaded (counts match this table)
+- [x] Collected to files 2026-11-02 13:28 UTC: Stanford 733 · SF State 290 (218 with social/site links) · SJSU 440 · UC Davis 532 · UCSC 110 · Santa Clara 163 · USF 152 (incl. hand-checked student governments where the directory lacks them)
+- [ ] Re-collect weekly (`collect:<id>` for each row) and commit only real changes
+- [ ] Stanford class probe result on Railway (`probe:s_stanford` in /api/agent/status)
 - [ ] SJSU class schedule recipe (sjsu.edu/classes/schedules/<term>.php) — test from the server via probe
 - [ ] UCSC class schedule recipe (pisa.ucsc.edu class search)
 - [ ] Event calendars: UC Davis, UC Santa Cruz, Santa Clara, USF

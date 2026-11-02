@@ -1559,3 +1559,10 @@
 - SJSU classes: sjsu.edu not reachable from this container (TLS / 503) → next run, test on the server.
 - Checks: tsc, server typecheck, tests 277/277, build; agent DRY runs for s_ucsc, s_scu, s_usf OK.
 - SJSU events: events.sjsu.edu Localist API (checked: 211 items in 14 days; 9 kept after the student-event filter).
+
+## 2026-11-02 — Closed schools collected to files, not the live DB (owner: Railway cost)
+- `npm run agent -- collect:<id>` (run by the PM agent in its own container): club directory → server/data/collected/<id>.orgs.json (with links, members/followers empty), hand-checked student governments added only if the directory lacks them, class recipe sample → <id>.probe.json. No DB writes.
+- Railway worker now does nothing for closed schools except jobs in the new `railway` column of schools-collect.csv (today: Stanford class probe — explorecourses fails TLS here). Records the result only.
+- Opening a school: move its row to schools.csv, then `import-collected:<id>`.
+- First collection: Stanford 733 · SFSU 290 · SJSU 440 · UC Davis 532 · UCSC 110 · Santa Clara 163 · USF 152 (≈2 MB of JSON in the repo).
+- Note: between 12:20 and this change the worker already wrote some Bay Area/East Coast data to the live DB; left as is (owner: don't delete).
