@@ -1,0 +1,119 @@
+{
+  "generatedAt": "2026-11-02T19:59:11.612Z",
+  "source": "ux-sim/reports/2026-11-02-sched/analysis.json",
+  "layer": "curated (analysis.json)",
+  "rule": "not environment-limited, and severity ≥ 3 or ≥ 2 personas, unless the problem sets file: true|false",
+  "dedupe": "before creating, search existing issues for <!-- ux-sim:problem=<key> --> and for any <!-- ux-sim:fp=<fingerprint> --> marker; update the match instead of duplicating",
+  "note": "Candidates only — ux-sim never creates issues.",
+  "coverage": {
+    "findings": 14,
+    "grouped": 14,
+    "dismissed": 0,
+    "unassigned": []
+  },
+  "warnings": [],
+  "candidates": [
+    {
+      "key": "signup-asks-too-much-too-early",
+      "fingerprints": [
+        "4b8a0b8abefa",
+        "e2f05b7465c0"
+      ],
+      "title": "[ux-sim] Sign-up asks 5+ question screens (birth year, tour, two interest pickers) before an account or a person",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nBoth cold-start personas came for the welcome promise \"Who's free on campus right now?\" and met a long /start flow: name + birth year, \"What brings you to Lumi?\", a \"Here's what you get\" tour, school + status, then a second interest picker \"What would you like to discover?\". Jordan quit on that second picker without ever reaching the e-mail step; Diego got through but spent most of his patience there.\n\nSeverity **4** (Blocker — I could not continue, gave up, or would stop using the app here.) · analyst confidence high · **2 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\n/start front-loads profiling (two overlapping interest pickers plus a tour with nothing to do) and puts the school e-mail — the one step that creates the account — last. The progress bar makes the remaining length visible, which reads as \"still far from the payoff\".\n\n### Evidence\n\n- run `sched-20261102-1925-jordan-cold-start-hangout` step 15 — “I already told you what I want two screens ago. another picker? nope.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/shots/015-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/shots/015-click-som.jpg)\n- run `sched-20261102-1925-jordan-cold-start-hangout` step 8 — “a feature list? I don't care. third screen and I still don't have an account.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/shots/008-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/shots/008-click-som.jpg)\n- run `sched-20261102-1925-jordan-cold-start-hangout` step 1 — “birth year? why. whatever, fast enough.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/shots/001-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/shots/001-click-som.jpg)\n- run `sched-20261102-1925-diego-cold-start-hangout` step 15 — “Seriously, another one? I'm 11 taps in and still no email, no people. I'm a transfer, I'm not part of any of these yet. This is eating my break.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/015-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/015-click-som.jpg)\n- run `sched-20261102-1925-diego-cold-start-hangout` step 8 — “A feature tour screen, and that progress bar says I'm only like 3 of 8 steps in. I haven't even given my email yet. Hurry up.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/008-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/008-click-som.jpg)\n\nRuns: [`sched-20261102-1925-jordan-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/report.md), [`sched-20261102-1925-diego-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/report.md)\n\n### Who\n\nPersonas: `jordan-sophomore-impatient`, `diego-transfer-commuter` · scenarios: `cold-start-hangout`\n\n### Environment note\n\nSame /start flow on live; nothing here depends on the local stack.\n\n### Suggested fix (hypothesis)\n\nMerge the two interest pickers into one (or drop \"What would you like to discover?\"), make the feature tour skippable or remove it, and ask school e-mail + name first; collect birth year and interests later, when they are used.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=signup-asks-too-much-too-early -->\n<!-- ux-sim:fp=4b8a0b8abefa -->\n<!-- ux-sim:fp=e2f05b7465c0 -->",
+      "labels": [
+        "ux-sim",
+        "severity:4",
+        "onboarding",
+        "trust_privacy"
+      ],
+      "personas": [
+        "jordan-sophomore-impatient",
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "severity": 4
+    },
+    {
+      "key": "cold-start-nobody-here",
+      "fingerprints": [
+        "9c8f7a48cd72",
+        "779192749ab1",
+        "e8a18a957944"
+      ],
+      "title": "[ux-sim] A brand-new account finds nobody to meet: Meetups and \"Who's free right now\" are empty",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nAfter sign-up Diego looked for anyone to hang out with this week. Home read as an events directory; Meetups said \"No meetups yet\"; \"Who's free right now\" said \"No hangouts open right now — start one?\"; the activities list offered seminars and a study-abroad week with nobody attached.\n\nSeverity **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.) · analyst confidence medium · **1 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nSame as the pilot: no fallback for an empty campus besides \"host it yourself\". The welcome promise (\"Who's free on campus right now?\") sets an expectation of people that the first in-app screens cannot meet.\n\n### Evidence\n\n- run `sched-20261102-1925-diego-cold-start-hangout` step 24 — “No meetups yet. Great, nobody's here. I don't want to host, I want to join something.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/024-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/024-click-som.jpg)\n- run `sched-20261102-1925-diego-cold-start-hangout` step 22 — “The welcome page promised who's free right now, this is an events directory.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/022-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/022-click-som.jpg)\n- run `sched-20261102-1925-diego-cold-start-hangout` step 27 — “These are faculty seminars, not hangouts. 'Go together' with who? Nobody's attached to them.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/027-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/027-click-som.jpg)\n\nRuns: [`sched-20261102-1925-diego-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/report.md)\n\n### Who\n\nPersonas: `diego-transfer-commuter` · scenarios: `cold-start-hangout`\n\n### Environment note\n\nThe local stack has no other students (live has some), so emptiness is stronger here. The empty state and the welcome copy are real for any quiet campus/hour; check on live at a quiet hour.\n\n### Suggested fix (hypothesis)\n\nWhen there are no people/plans, show the welcome promise honestly (\"nobody posted yet today\") with a one-tap low-pressure signal (\"I'm free for lunch / coffee this week — count me in\") instead of a host form; soften the welcome headline if the people count is low.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=cold-start-nobody-here -->\n<!-- ux-sim:fp=9c8f7a48cd72 -->\n<!-- ux-sim:fp=779192749ab1 -->\n<!-- ux-sim:fp=e8a18a957944 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "content_gap",
+        "motivation",
+        "ux_confusion"
+      ],
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "severity": 3
+    },
+    {
+      "key": "go-together-joins-without-asking",
+      "fingerprints": [
+        "d5bb5e7aa5b0"
+      ],
+      "title": "[ux-sim] \"Go together\" marks you as going in one tap and says \"together\" when you are the only one",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nDiego tapped \"Go together\" on a study-abroad week only to see who else was going. The sheet immediately showed \"You — going\", \"1 person is going\" and a toast \"You're going to 2026 Berkeley Study Abroad Week together.\" He felt signed up without being asked, alone, and quit. Server-side the tap created a plan under his name.\n\nSeverity **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.) · analyst confidence medium · **1 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\n\"Go together\" is both the preview and the commit action: there is no step between \"show me who's going\" and \"I'm in\", and the copy says \"together\" even when the count is 1 (himself).\n\n### Evidence\n\n- run `sched-20261102-1925-diego-cold-start-hangout` step 29 — “Together with who? It's just me. And it already put me as going without asking — I only wanted to look.” _(Sheet shows \"You — going\", \"1 person is going\" and the toast; the run's success check matched \"posted a plan\" at this step.)_ [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/029-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/029-click-som.jpg)\n\nRuns: [`sched-20261102-1925-diego-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/report.md)\n\n### Who\n\nPersonas: `diego-transfer-commuter` · scenarios: `cold-start-hangout`\n\n### Environment note\n\nButton behaviour is app code; on live other students may already be attached, but the one-tap commit is the same.\n\n### Suggested fix (hypothesis)\n\nMake the first tap open the \"Go together?\" sheet with who is going and an explicit \"I'm in\" button; when you would be the first, say \"Be the first — others can join you\" instead of \"together\".\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=go-together-joins-without-asking -->\n<!-- ux-sim:fp=d5bb5e7aa5b0 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "ux_confusion"
+      ],
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "severity": 3
+    },
+    {
+      "key": "club-join-status-unclear",
+      "fingerprints": [
+        "b671f45c6bb2",
+        "5b407b25b343",
+        "128764b1d764"
+      ],
+      "title": "[ux-sim] Club says \"Not recruiting right now\" under a big \"Ask to join\"; after tapping, nothing says what happens next",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nBoth find-a-club personas reached a club quickly, then hit the contradiction on the Recruiting tab. \"Ask to join\" sends straight away (\"Application sent\", button turns \"Applied\") with no word on who reads it or what happens next.\n\nSeverity **2** (Moderate — slowed me down or made me hesitate; I recovered on my own.) · analyst confidence high · **2 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nThe primary CTA is always \"Ask to join\" regardless of the club's recruiting state, and the success state has no next-step copy.\n\n### Evidence\n\n- run `sched-20261102-1925-jordan-find-a-club` step 8 — “wait. not recruiting but ask to join? which is it.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-jordan-find-a-club/shots/008-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-jordan-find-a-club/shots/008-click-som.jpg)\n- run `sched-20261102-1925-minji-find-a-club` step 14 — “뭐지? recruiting 안 한다면서 Ask to join은 왜 있어? 눌러도 되는 거야?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-minji-find-a-club/shots/014-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-minji-find-a-club/shots/014-click-som.jpg)\n- run `sched-20261102-1925-jordan-find-a-club` step 10 — “ok, fast, I like that. but applied to who? will anyone answer? they're 'not recruiting'.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-jordan-find-a-club/shots/010-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-jordan-find-a-club/shots/010-click-som.jpg)\n- run `sched-20261102-1925-minji-find-a-club` step 16 — “오 바로 됐네, 개인정보 안 물어봐서 좋아. 근데 언제 연락 와? 누가 봐?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-minji-find-a-club/shots/016-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-minji-find-a-club/shots/016-click-som.jpg)\n\nRuns: [`sched-20261102-1925-jordan-find-a-club`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-jordan-find-a-club/report.md), [`sched-20261102-1925-minji-find-a-club`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261102-1925-minji-find-a-club/report.md)\n\n### Who\n\nPersonas: `jordan-sophomore-impatient`, `minji-freshman-17` · scenarios: `find-a-club`\n\n### Environment note\n\nSame UI on live.\n\n### Suggested fix (hypothesis)\n\nWhen a club is not recruiting, label the button \"Ask to be notified / Say hi\" (or explain \"you can still ask — officers review requests\"), and after sending say who receives it and where the reply will show up.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=club-join-status-unclear -->\n<!-- ux-sim:fp=b671f45c6bb2 -->\n<!-- ux-sim:fp=5b407b25b343 -->\n<!-- ux-sim:fp=128764b1d764 -->",
+      "labels": [
+        "ux-sim",
+        "severity:2",
+        "ux_confusion"
+      ],
+      "personas": [
+        "jordan-sophomore-impatient",
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "find-a-club"
+      ],
+      "severity": 2
+    }
+  ],
+  "skipped": [
+    {
+      "key": "club-page-looks-empty",
+      "title": "Club pages look empty and unofficial: an \"Unverified\" badge, a two-line About, no events, 0 followers",
+      "why": "file: false"
+    },
+    {
+      "key": "club-list-starts-with-greek-life",
+      "title": "The club list opens with a long run of sororities; friendly social clubs only appear after scrolling",
+      "why": "severity < 3 and a single persona"
+    }
+  ]
+}

@@ -1,0 +1,1298 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-02T19:59:11.371Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "runs": [
+    {
+      "runId": "sched-20261102-1925-diego-cold-start-hangout",
+      "persona": "diego-transfer-commuter",
+      "scenario": "cold-start-hangout",
+      "outcome": "abandoned",
+      "reportedOutcome": "abandoned",
+      "goalAchieved": true,
+      "stepsToGoal": 21,
+      "actions": 21,
+      "frictionCount": 6,
+      "maxSeverity": 3,
+      "mode": "local",
+      "auth": "none",
+      "commit": "6d64c5686fb8",
+      "harness": "6f174347960d",
+      "catalog": "builtin",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "high",
+        "rationale": "Promised 'who's free now' but showed no people; meetups and hangouts were empty and the only joinable things were faculty seminars with nobody going — no reason to reopen between classes.",
+        "basis": [
+          16,
+          22,
+          24,
+          26,
+          29
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/run.json",
+      "report": "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/report.md"
+    },
+    {
+      "runId": "sched-20261102-1925-jordan-cold-start-hangout",
+      "persona": "jordan-sophomore-impatient",
+      "scenario": "cold-start-hangout",
+      "outcome": "abandoned",
+      "reportedOutcome": "abandoned",
+      "goalAchieved": false,
+      "stepsToGoal": null,
+      "actions": 10,
+      "frictionCount": 4,
+      "maxSeverity": 4,
+      "mode": "local",
+      "auth": "none",
+      "commit": "6d64c5686fb8",
+      "harness": "6f174347960d",
+      "catalog": "builtin",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "high",
+        "rationale": "Promised 'who's free right now' on the welcome screen but buried it behind a long onboarding; Jordan quits on >2 setup screens",
+        "basis": [
+          5,
+          8,
+          15
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/run.json",
+      "report": "ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/report.md"
+    },
+    {
+      "runId": "sched-20261102-1925-jordan-find-a-club",
+      "persona": "jordan-sophomore-impatient",
+      "scenario": "find-a-club",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 2,
+      "actions": 5,
+      "frictionCount": 4,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "6d64c5686fb8",
+      "harness": "6f174347960d",
+      "catalog": "builtin",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Getting to a club was fast and the 'fits your major' tags were nice, but the club page was empty (no events, not recruiting, unverified) so there's nothing pulling me back unless they actually reply.",
+        "basis": [
+          4,
+          6,
+          8,
+          10
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261102-1925-jordan-find-a-club/run.json",
+      "report": "ux-sim/runs/sched-20261102-1925-jordan-find-a-club/report.md"
+    },
+    {
+      "runId": "sched-20261102-1925-minji-find-a-club",
+      "persona": "minji-freshman-17",
+      "scenario": "find-a-club",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 4,
+      "actions": 7,
+      "frictionCount": 5,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "6d64c5686fb8",
+      "harness": "6f174347960d",
+      "catalog": "builtin",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Finding a club was fast and didn't ask for personal info, but the club looks empty (0 followers) and there's no sign of people my age or what happens next",
+        "basis": [
+          12,
+          14,
+          16
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261102-1925-minji-find-a-club/run.json",
+      "report": "ux-sim/runs/sched-20261102-1925-minji-find-a-club/report.md"
+    }
+  ],
+  "totals": {
+    "runs": 4,
+    "findings": 14,
+    "frictionEvents": 19,
+    "environmentLimitedEvents": 0,
+    "maxSeverity": 4,
+    "bySeverity": {
+      "1": 4,
+      "2": 10,
+      "3": 4,
+      "4": 1
+    },
+    "multiPersonaFindings": 2,
+    "singletonFindings": 12
+  },
+  "findings": [
+    {
+      "fingerprint": "4b8a0b8abefa",
+      "title": "Onboarding friction on /start — “Continue”",
+      "screen": "/start",
+      "frictionType": "onboarding",
+      "keyElement": "continue",
+      "keyElementLabel": "Continue",
+      "personas": [
+        "diego-transfer-commuter",
+        "jordan-sophomore-impatient"
+      ],
+      "personaCount": 2,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261102-1925-diego-cold-start-hangout",
+        "sched-20261102-1925-jordan-cold-start-hangout"
+      ],
+      "occurrences": 5,
+      "severityMax": 4,
+      "maxSeverity": 4,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "sched-20261102-1925-diego-cold-start-hangout",
+          "persona": "diego-transfer-commuter",
+          "scenario": "cold-start-hangout",
+          "step": 8,
+          "severity": 2,
+          "quote": "A feature tour screen, and that progress bar says I'm only like 3 of 8 steps in. I haven't even given my email yet. Hurry up.",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/008-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/008-click-som.jpg"
+          ],
+          "url": "/start",
+          "wish": "let me sign up first, skip the tour"
+        },
+        {
+          "runId": "sched-20261102-1925-diego-cold-start-hangout",
+          "persona": "diego-transfer-commuter",
+          "scenario": "cold-start-hangout",
+          "step": 15,
+          "severity": 3,
+          "quote": "Seriously, another one? I'm 11 taps in and still no email, no people. I'm a transfer, I'm not part of any of these yet. This is eating my break.",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/015-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/015-click-som.jpg"
+          ],
+          "url": "/start",
+          "wish": "ask the school email up front, and let me see who's free before all these questionnaires"
+        },
+        {
+          "runId": "sched-20261102-1925-jordan-cold-start-hangout",
+          "persona": "jordan-sophomore-impatient",
+          "scenario": "cold-start-hangout",
+          "step": 5,
+          "severity": 2,
+          "quote": "second setup screen. clock's ticking.",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/shots/005-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/shots/005-click-som.jpg"
+          ],
+          "url": "/start",
+          "wish": "let me in first, ask later"
+        },
+        {
+          "runId": "sched-20261102-1925-jordan-cold-start-hangout",
+          "persona": "jordan-sophomore-impatient",
+          "scenario": "cold-start-hangout",
+          "step": 8,
+          "severity": 3,
+          "quote": "a feature list? I don't care. third screen and I still don't have an account.",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/shots/008-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/shots/008-click-som.jpg"
+          ],
+          "url": "/start",
+          "wish": "skip the tour"
+        },
+        {
+          "runId": "sched-20261102-1925-jordan-cold-start-hangout",
+          "persona": "jordan-sophomore-impatient",
+          "scenario": "cold-start-hangout",
+          "step": 15,
+          "severity": 4,
+          "quote": "I already told you what I want two screens ago. another picker? nope.",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/shots/015-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/shots/015-click-som.jpg"
+          ],
+          "url": "/start",
+          "wish": "one interests screen max, then show me who's free"
+        }
+      ],
+      "wishes": [
+        "let me sign up first, skip the tour",
+        "ask the school email up front, and let me see who's free before all these questionnaires",
+        "let me in first, ask later",
+        "skip the tour",
+        "one interests screen max, then show me who's free"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Shorten or explain this sign-up step (/start); ask only what is needed now and let the rest wait until it is useful. Personas said they wanted: “let me sign up first, skip the tour”; “ask the school email up front, and let me see who's free before all these questionnaires”; “let me in first, ask later”; “skip the tour”; “one interests screen max, then show me who's free”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "128764b1d764",
+      "title": "Confusing UI on /orgs/:id?tab=recruit — “Applied”",
+      "screen": "/orgs/:id?tab=recruit",
+      "frictionType": "ux_confusion",
+      "keyElement": "applied",
+      "keyElementLabel": "Applied",
+      "personas": [
+        "jordan-sophomore-impatient",
+        "minji-freshman-17"
+      ],
+      "personaCount": 2,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261102-1925-jordan-find-a-club",
+        "sched-20261102-1925-minji-find-a-club"
+      ],
+      "occurrences": 2,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261102-1925-jordan-find-a-club",
+          "persona": "jordan-sophomore-impatient",
+          "scenario": "find-a-club",
+          "step": 10,
+          "severity": 1,
+          "quote": "ok, fast, I like that. but applied to who? will anyone answer? they're 'not recruiting'.",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-jordan-find-a-club/shots/010-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-jordan-find-a-club/shots/010-click-som.jpg"
+          ],
+          "url": "/orgs/oc_berkeley_cal_esports?tab=recruit",
+          "wish": "say who gets it and when I'd hear back"
+        },
+        {
+          "runId": "sched-20261102-1925-minji-find-a-club",
+          "persona": "minji-freshman-17",
+          "scenario": "find-a-club",
+          "step": 16,
+          "severity": 1,
+          "quote": "오 바로 됐네, 개인정보 안 물어봐서 좋아. 근데 언제 연락 와? 누가 봐?",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-minji-find-a-club/shots/016-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-minji-find-a-club/shots/016-click-som.jpg"
+          ],
+          "url": "/orgs/oc_berkeley_korean_student_association_ksa_?tab=recruit",
+          "wish": "say what happens next, e.g. 'KSA officers will message you'"
+        }
+      ],
+      "wishes": [
+        "say who gets it and when I'd hear back",
+        "say what happens next, e.g. 'KSA officers will message you'"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Applied” on /orgs/:id?tab=recruit does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “say who gets it and when I'd hear back”; “say what happens next, e.g. 'KSA officers will message you'”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "9c8f7a48cd72",
+      "title": "Missing / empty content on /meet/meetups",
+      "screen": "/meet/meetups",
+      "frictionType": "content_gap",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261102-1925-diego-cold-start-hangout"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "maxSeverity": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "sched-20261102-1925-diego-cold-start-hangout",
+          "persona": "diego-transfer-commuter",
+          "scenario": "cold-start-hangout",
+          "step": 24,
+          "severity": 3,
+          "quote": "No meetups yet. Great, nobody's here. I don't want to host, I want to join something. 'Who's free right now' is down there, last shot.",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/024-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/024-click-som.jpg"
+          ],
+          "url": "/meet/meetups",
+          "wish": "at least one plan this week I could just join"
+        }
+      ],
+      "wishes": [
+        "at least one plan this week I could just join"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /meet/meetups is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “at least one plan this week I could just join”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "d5bb5e7aa5b0",
+      "title": "Confusing UI on /meet/more?tab=activities — “🙂 You going”",
+      "screen": "/meet/more?tab=activities",
+      "frictionType": "ux_confusion",
+      "keyElement": "you going",
+      "keyElementLabel": "🙂 You going",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261102-1925-diego-cold-start-hangout"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "maxSeverity": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "sched-20261102-1925-diego-cold-start-hangout",
+          "persona": "diego-transfer-commuter",
+          "scenario": "cold-start-hangout",
+          "step": 29,
+          "severity": 3,
+          "quote": "Together with who? It's just me. And it already put me as going without asking — I only wanted to look. A study abroad week isn't hanging out, and nobody else is here. I'm out.",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/029-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/029-click-som.jpg"
+          ],
+          "url": "/meet/more?tab=activities",
+          "wish": "show who else is going before signing me up; don't say 'together' when it's only me"
+        }
+      ],
+      "wishes": [
+        "show who else is going before signing me up; don't say 'together' when it's only me"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “🙂 You going” on /meet/more?tab=activities does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “show who else is going before signing me up; don't say 'together' when it's only me”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "779192749ab1",
+      "title": "Confusing UI on / — “Meetups”",
+      "screen": "/",
+      "frictionType": "ux_confusion",
+      "keyElement": "meetups",
+      "keyElementLabel": "Meetups",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261102-1925-diego-cold-start-hangout"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261102-1925-diego-cold-start-hangout",
+          "persona": "diego-transfer-commuter",
+          "scenario": "cold-start-hangout",
+          "step": 22,
+          "severity": 2,
+          "quote": "The welcome page promised who's free right now, this is an events directory. Meetups sounds closest to hanging out, I'll try that.",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/022-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/022-click-som.jpg"
+          ],
+          "url": "/",
+          "wish": "show the 'who's free now' thing the welcome screen sold me"
+        }
+      ],
+      "wishes": [
+        "show the 'who's free now' thing the welcome screen sold me"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Meetups” on / does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “show the 'who's free now' thing the welcome screen sold me”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "e8a18a957944",
+      "title": "No reason to stay on /meet/more?tab=activities — “Go together”",
+      "screen": "/meet/more?tab=activities",
+      "frictionType": "motivation",
+      "keyElement": "go together",
+      "keyElementLabel": "Go together",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261102-1925-diego-cold-start-hangout"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261102-1925-diego-cold-start-hangout",
+          "persona": "diego-transfer-commuter",
+          "scenario": "cold-start-hangout",
+          "step": 27,
+          "severity": 2,
+          "quote": "These are faculty seminars, not hangouts. 'Go together' with who? Nobody's attached to them. I'd be starting a plan alone again.",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/027-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/027-click-som.jpg"
+          ],
+          "url": "/meet/more?tab=activities",
+          "wish": "show me which students are going, so I can say I'm in"
+        }
+      ],
+      "wishes": [
+        "show me which students are going, so I can say I'm in"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Give a reason to stay on /meet/more?tab=activities: show real people or things happening now (or a clear next step) instead of empty or generic content. Personas said they wanted: “show me which students are going, so I can say I'm in”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "68c8e67b425d",
+      "title": "Missing / empty content on /orgs/:id — “About”",
+      "screen": "/orgs/:id",
+      "frictionType": "content_gap",
+      "keyElement": "about",
+      "keyElementLabel": "About",
+      "personas": [
+        "jordan-sophomore-impatient"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261102-1925-jordan-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261102-1925-jordan-find-a-club",
+          "persona": "jordan-sophomore-impatient",
+          "scenario": "find-a-club",
+          "step": 4,
+          "severity": 2,
+          "quote": "ok and? when are community nights? 'unverified' — is this even real?",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-jordan-find-a-club/shots/004-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-jordan-find-a-club/shots/004-click-som.jpg"
+          ],
+          "url": "/orgs/oc_berkeley_cal_esports",
+          "wish": "show when they meet next and how many people are in it"
+        }
+      ],
+      "wishes": [
+        "show when they meet next and how many people are in it"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /orgs/:id is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “show when they meet next and how many people are in it”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "919841c6195c",
+      "title": "Missing / empty content on /orgs/:id?tab=events — “Events”",
+      "screen": "/orgs/:id?tab=events",
+      "frictionType": "content_gap",
+      "keyElement": "events",
+      "keyElementLabel": "Events",
+      "personas": [
+        "jordan-sophomore-impatient"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261102-1925-jordan-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261102-1925-jordan-find-a-club",
+          "persona": "jordan-sophomore-impatient",
+          "scenario": "find-a-club",
+          "step": 6,
+          "severity": 2,
+          "quote": "nothing. and why is it telling me about events I post? I'm not running this club.",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-jordan-find-a-club/shots/006-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-jordan-find-a-club/shots/006-click-som.jpg"
+          ],
+          "url": "/orgs/oc_berkeley_cal_esports?tab=events",
+          "wish": "show past/recurring meetups so it doesn't look dead"
+        }
+      ],
+      "wishes": [
+        "show past/recurring meetups so it doesn't look dead"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /orgs/:id?tab=events is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “show past/recurring meetups so it doesn't look dead”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "b671f45c6bb2",
+      "title": "Confusing UI on /orgs/:id?tab=recruit — “Recruiting”",
+      "screen": "/orgs/:id?tab=recruit",
+      "frictionType": "ux_confusion",
+      "keyElement": "recruiting",
+      "keyElementLabel": "Recruiting",
+      "personas": [
+        "jordan-sophomore-impatient"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261102-1925-jordan-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261102-1925-jordan-find-a-club",
+          "persona": "jordan-sophomore-impatient",
+          "scenario": "find-a-club",
+          "step": 8,
+          "severity": 2,
+          "quote": "wait. not recruiting but ask to join? which is it.",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-jordan-find-a-club/shots/008-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-jordan-find-a-club/shots/008-click-som.jpg"
+          ],
+          "url": "/orgs/oc_berkeley_cal_esports?tab=recruit",
+          "wish": "tell me if Ask to join still works when they're not recruiting"
+        }
+      ],
+      "wishes": [
+        "tell me if Ask to join still works when they're not recruiting"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Recruiting” on /orgs/:id?tab=recruit does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “tell me if Ask to join still works when they're not recruiting”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "637f00dc9f90",
+      "title": "No reason to stay on /explore/clubs — “All”",
+      "screen": "/explore/clubs",
+      "frictionType": "motivation",
+      "keyElement": "all",
+      "keyElementLabel": "All",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261102-1925-minji-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261102-1925-minji-find-a-club",
+          "persona": "minji-freshman-17",
+          "scenario": "find-a-club",
+          "step": 4,
+          "severity": 2,
+          "quote": "All 눌렀는데 sorority만 계속 나와. 그리스 문자 너무 많아... I'm 17, I don't want rush stuff",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-minji-find-a-club/shots/004-observe.jpg",
+            "ux-sim/runs/sched-20261102-1925-minji-find-a-club/shots/004-observe-som.jpg"
+          ],
+          "url": "/explore/clubs",
+          "wish": "show regular clubs / interests first, not a wall of Greek life"
+        }
+      ],
+      "wishes": [
+        "show regular clubs / interests first, not a wall of Greek life"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Give a reason to stay on /explore/clubs: show real people or things happening now (or a clear next step) instead of empty or generic content. Personas said they wanted: “show regular clubs / interests first, not a wall of Greek life”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "6de492d10b73",
+      "title": "Missing / empty content on /orgs/:id?tab=members — “Members”",
+      "screen": "/orgs/:id?tab=members",
+      "frictionType": "content_gap",
+      "keyElement": "members",
+      "keyElementLabel": "Members",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261102-1925-minji-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261102-1925-minji-find-a-club",
+          "persona": "minji-freshman-17",
+          "scenario": "find-a-club",
+          "step": 12,
+          "severity": 2,
+          "quote": "헐 0명... 아무도 없어? 이거 진짜 활동하는 거 맞나",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-minji-find-a-club/shots/012-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-minji-find-a-club/shots/012-click-som.jpg"
+          ],
+          "url": "/orgs/oc_berkeley_korean_student_association_ksa_?tab=members",
+          "wish": "see roughly how many people / some freshmen are in it"
+        }
+      ],
+      "wishes": [
+        "see roughly how many people / some freshmen are in it"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /orgs/:id?tab=members is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “see roughly how many people / some freshmen are in it”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "5b407b25b343",
+      "title": "Confusing UI on /orgs/:id?tab=recruit — “Ask to join”",
+      "screen": "/orgs/:id?tab=recruit",
+      "frictionType": "ux_confusion",
+      "keyElement": "ask to join",
+      "keyElementLabel": "Ask to join",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261102-1925-minji-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261102-1925-minji-find-a-club",
+          "persona": "minji-freshman-17",
+          "scenario": "find-a-club",
+          "step": 14,
+          "severity": 2,
+          "quote": "뭐지? recruiting 안 한다면서 Ask to join은 왜 있어? 눌러도 되는 거야?",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-minji-find-a-club/shots/014-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-minji-find-a-club/shots/014-click-som.jpg"
+          ],
+          "url": "/orgs/oc_berkeley_korean_student_association_ksa_?tab=recruit",
+          "wish": "tell me if I can still join now, or when the next intake is"
+        }
+      ],
+      "wishes": [
+        "tell me if I can still join now, or when the next intake is"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Ask to join” on /orgs/:id?tab=recruit does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “tell me if I can still join now, or when the next intake is”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "e2f05b7465c0",
+      "title": "Trust / privacy worry on /start — “2005”",
+      "screen": "/start",
+      "frictionType": "trust_privacy",
+      "keyElement": null,
+      "keyElementLabel": "2005",
+      "personas": [
+        "jordan-sophomore-impatient"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261102-1925-jordan-cold-start-hangout"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261102-1925-jordan-cold-start-hangout",
+          "persona": "jordan-sophomore-impatient",
+          "scenario": "cold-start-hangout",
+          "step": 1,
+          "severity": 1,
+          "quote": "birth year? why. whatever, fast enough.",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/shots/001-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-jordan-cold-start-hangout/shots/001-click-som.jpg"
+          ],
+          "url": "/start",
+          "wish": "say why you need my birth year"
+        }
+      ],
+      "wishes": [
+        "say why you need my birth year"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Explain who will see what when tapping “2005” on /start before asking for it. Personas said they wanted: “say why you need my birth year”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "66b726f72e19",
+      "title": "Trust / privacy worry on /orgs/:id",
+      "screen": "/orgs/:id",
+      "frictionType": "trust_privacy",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261102-1925-minji-find-a-club"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261102-1925-minji-find-a-club",
+          "persona": "minji-freshman-17",
+          "scenario": "find-a-club",
+          "step": 10,
+          "severity": 1,
+          "quote": "깔끔하다, 글 짧아서 좋아. 근데 'Unverified'... 뭐지? 진짜 KSA 맞아?",
+          "evidence": [
+            "ux-sim/runs/sched-20261102-1925-minji-find-a-club/shots/010-click.jpg",
+            "ux-sim/runs/sched-20261102-1925-minji-find-a-club/shots/010-click-som.jpg"
+          ],
+          "url": "/orgs/oc_berkeley_korean_student_association_ksa_",
+          "wish": "explain what Unverified means or show it's the real club"
+        }
+      ],
+      "wishes": [
+        "explain what Unverified means or show it's the real club"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Explain who will see what on /orgs/:id before asking for it. Personas said they wanted: “explain what Unverified means or show it's the real club”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    }
+  ],
+  "environmentLimited": [],
+  "falseSuccesses": [],
+  "autoChecks": [
+    {
+      "route": "/meet/more?tab=activities",
+      "device": "phone",
+      "smallTapTargetsMax": 18,
+      "examples": [
+        {
+          "id": 68,
+          "name": "Create",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 69,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 49,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 70,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 82,
+          "name": "Add",
+          "w": 75,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/027-click.jpg"
+    },
+    {
+      "route": "/meet/more",
+      "device": "phone",
+      "smallTapTargetsMax": 13,
+      "examples": [
+        {
+          "id": 68,
+          "name": "Create",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 69,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 49,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 70,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 82,
+          "name": "Add",
+          "w": 75,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/026-click.jpg"
+    },
+    {
+      "route": "/meet/meetups",
+      "device": "phone",
+      "smallTapTargetsMax": 10,
+      "examples": [
+        {
+          "id": 68,
+          "name": "Create",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 69,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 49,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 70,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 71,
+          "name": "For You",
+          "w": 85,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/024-click.jpg"
+    },
+    {
+      "route": "/explore/clubs",
+      "device": "phone",
+      "smallTapTargetsMax": 9,
+      "examples": [
+        {
+          "id": 9,
+          "name": "See all",
+          "w": 62,
+          "h": 21
+        },
+        {
+          "id": 18,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        },
+        {
+          "id": 19,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261102-1925-jordan-find-a-club/shots/001-click.jpg"
+    },
+    {
+      "route": "/start",
+      "device": "phone",
+      "smallTapTargetsMax": 8,
+      "examples": [
+        {
+          "id": 6,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 5,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/001-click.jpg"
+    },
+    {
+      "route": "/orgs/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 8,
+      "examples": [
+        {
+          "id": 20,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 60,
+          "name": "About",
+          "w": 56,
+          "h": 28
+        },
+        {
+          "id": 61,
+          "name": "Post",
+          "w": 47,
+          "h": 28
+        },
+        {
+          "id": 3,
+          "name": "Events",
+          "w": 61,
+          "h": 28
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261102-1925-jordan-find-a-club/shots/004-click.jpg"
+    },
+    {
+      "route": "/orgs/:id?tab=events",
+      "device": "phone",
+      "smallTapTargetsMax": 8,
+      "examples": [
+        {
+          "id": 20,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 60,
+          "name": "About",
+          "w": 56,
+          "h": 28
+        },
+        {
+          "id": 61,
+          "name": "Post",
+          "w": 47,
+          "h": 28
+        },
+        {
+          "id": 3,
+          "name": "Events",
+          "w": 61,
+          "h": 28
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261102-1925-jordan-find-a-club/shots/006-click.jpg"
+    },
+    {
+      "route": "/orgs/:id?tab=recruit",
+      "device": "phone",
+      "smallTapTargetsMax": 8,
+      "examples": [
+        {
+          "id": 20,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 60,
+          "name": "About",
+          "w": 56,
+          "h": 28
+        },
+        {
+          "id": 61,
+          "name": "Post",
+          "w": 47,
+          "h": 28
+        },
+        {
+          "id": 3,
+          "name": "Events",
+          "w": 61,
+          "h": 28
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261102-1925-jordan-find-a-club/shots/008-click.jpg"
+    },
+    {
+      "route": "/orgs/:id?tab=members",
+      "device": "phone",
+      "smallTapTargetsMax": 8,
+      "examples": [
+        {
+          "id": 22,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 93,
+          "name": "About",
+          "w": 56,
+          "h": 28
+        },
+        {
+          "id": 94,
+          "name": "Post",
+          "w": 47,
+          "h": 28
+        },
+        {
+          "id": 3,
+          "name": "Events",
+          "w": 61,
+          "h": 28
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261102-1925-minji-find-a-club/shots/012-click.jpg"
+    },
+    {
+      "route": "/welcome",
+      "device": "phone",
+      "smallTapTargetsMax": 4,
+      "examples": [
+        {
+          "id": 2,
+          "name": "Sign in",
+          "w": 46,
+          "h": 21
+        },
+        {
+          "id": 3,
+          "name": "Terms of Use",
+          "w": 76,
+          "h": 15
+        },
+        {
+          "id": 4,
+          "name": "Privacy Policy",
+          "w": 180,
+          "h": 33
+        },
+        {
+          "id": 5,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/000-start.jpg"
+    },
+    {
+      "route": "/",
+      "device": "phone",
+      "smallTapTargetsMax": 3,
+      "examples": [
+        {
+          "id": 56,
+          "name": "See all",
+          "w": 62,
+          "h": 21
+        },
+        {
+          "id": 67,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        },
+        {
+          "id": 5,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261102-1925-diego-cold-start-hangout/shots/022-click.jpg"
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "kind": "ux-sim-analysis",
+  "date": "2026-11-02",
+  "generatedAt": "2026-11-02T19:57:59.580Z",
+  "author": "Scheduled orchestrating Claude session (https://claude.ai/code/session_01VX4jQF3M6doYf7VDXmTdrm)",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "sources": {
+    "findings": "ux-sim/reports/2026-11-02-sched/findings.json",
+    "runs": [
+      "sched-20261102-1925-diego-cold-start-hangout",
+      "sched-20261102-1925-jordan-cold-start-hangout",
+      "sched-20261102-1925-jordan-find-a-club",
+      "sched-20261102-1925-minji-find-a-club"
+    ],
+    "harness": "6f174347960d",
+    "appCommits": [
+      "6d64c5686fb8"
+    ]
+  },
+  "problems": [
+    {
+      "key": "signup-asks-too-much-too-early",
+      "title": "Sign-up asks 5+ question screens (birth year, tour, two interest pickers) before an account or a person",
+      "summary": "Both cold-start personas came for the welcome promise \"Who's free on campus right now?\" and met a long /start flow: name + birth year, \"What brings you to Lumi?\", a \"Here's what you get\" tour, school + status, then a second interest picker \"What would you like to discover?\". Jordan quit on that second picker without ever reaching the e-mail step; Diego got through but spent most of his patience there.",
+      "rootCauseHypothesis": "/start front-loads profiling (two overlapping interest pickers plus a tour with nothing to do) and puts the school e-mail — the one step that creates the account — last. The progress bar makes the remaining length visible, which reads as \"still far from the payoff\".",
+      "severity": 4,
+      "confidence": "high",
+      "frictionTypes": [
+        "onboarding",
+        "trust_privacy"
+      ],
+      "personas": [
+        "jordan-sophomore-impatient",
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261102-1925-jordan-cold-start-hangout",
+          "step": 15,
+          "quote": "I already told you what I want two screens ago. another picker? nope."
+        },
+        {
+          "runId": "sched-20261102-1925-jordan-cold-start-hangout",
+          "step": 8,
+          "quote": "a feature list? I don't care. third screen and I still don't have an account."
+        },
+        {
+          "runId": "sched-20261102-1925-jordan-cold-start-hangout",
+          "step": 1,
+          "quote": "birth year? why. whatever, fast enough."
+        },
+        {
+          "runId": "sched-20261102-1925-diego-cold-start-hangout",
+          "step": 15,
+          "quote": "Seriously, another one? I'm 11 taps in and still no email, no people. I'm a transfer, I'm not part of any of these yet. This is eating my break."
+        },
+        {
+          "runId": "sched-20261102-1925-diego-cold-start-hangout",
+          "step": 8,
+          "quote": "A feature tour screen, and that progress bar says I'm only like 3 of 8 steps in. I haven't even given my email yet. Hurry up."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": "Same /start flow on live; nothing here depends on the local stack.",
+      "suggestedFix": "Merge the two interest pickers into one (or drop \"What would you like to discover?\"), make the feature tour skippable or remove it, and ask school e-mail + name first; collect birth year and interests later, when they are used.",
+      "fingerprints": [
+        "4b8a0b8abefa",
+        "e2f05b7465c0"
+      ]
+    },
+    {
+      "key": "cold-start-nobody-here",
+      "title": "A brand-new account finds nobody to meet: Meetups and \"Who's free right now\" are empty",
+      "summary": "After sign-up Diego looked for anyone to hang out with this week. Home read as an events directory; Meetups said \"No meetups yet\"; \"Who's free right now\" said \"No hangouts open right now — start one?\"; the activities list offered seminars and a study-abroad week with nobody attached.",
+      "rootCauseHypothesis": "Same as the pilot: no fallback for an empty campus besides \"host it yourself\". The welcome promise (\"Who's free on campus right now?\") sets an expectation of people that the first in-app screens cannot meet.",
+      "severity": 3,
+      "confidence": "medium",
+      "frictionTypes": [
+        "content_gap",
+        "motivation",
+        "ux_confusion"
+      ],
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261102-1925-diego-cold-start-hangout",
+          "step": 24,
+          "quote": "No meetups yet. Great, nobody's here. I don't want to host, I want to join something."
+        },
+        {
+          "runId": "sched-20261102-1925-diego-cold-start-hangout",
+          "step": 22,
+          "quote": "The welcome page promised who's free right now, this is an events directory."
+        },
+        {
+          "runId": "sched-20261102-1925-diego-cold-start-hangout",
+          "step": 27,
+          "quote": "These are faculty seminars, not hangouts. 'Go together' with who? Nobody's attached to them."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": "The local stack has no other students (live has some), so emptiness is stronger here. The empty state and the welcome copy are real for any quiet campus/hour; check on live at a quiet hour.",
+      "suggestedFix": "When there are no people/plans, show the welcome promise honestly (\"nobody posted yet today\") with a one-tap low-pressure signal (\"I'm free for lunch / coffee this week — count me in\") instead of a host form; soften the welcome headline if the people count is low.",
+      "fingerprints": [
+        "9c8f7a48cd72",
+        "779192749ab1",
+        "e8a18a957944"
+      ]
+    },
+    {
+      "key": "go-together-joins-without-asking",
+      "title": "\"Go together\" marks you as going in one tap and says \"together\" when you are the only one",
+      "summary": "Diego tapped \"Go together\" on a study-abroad week only to see who else was going. The sheet immediately showed \"You — going\", \"1 person is going\" and a toast \"You're going to 2026 Berkeley Study Abroad Week together.\" He felt signed up without being asked, alone, and quit. Server-side the tap created a plan under his name.",
+      "rootCauseHypothesis": "\"Go together\" is both the preview and the commit action: there is no step between \"show me who's going\" and \"I'm in\", and the copy says \"together\" even when the count is 1 (himself).",
+      "severity": 3,
+      "confidence": "medium",
+      "frictionTypes": [
+        "ux_confusion"
+      ],
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261102-1925-diego-cold-start-hangout",
+          "step": 29,
+          "quote": "Together with who? It's just me. And it already put me as going without asking — I only wanted to look.",
+          "note": "Sheet shows \"You — going\", \"1 person is going\" and the toast; the run's success check matched \"posted a plan\" at this step."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": "Button behaviour is app code; on live other students may already be attached, but the one-tap commit is the same.",
+      "suggestedFix": "Make the first tap open the \"Go together?\" sheet with who is going and an explicit \"I'm in\" button; when you would be the first, say \"Be the first — others can join you\" instead of \"together\".",
+      "fingerprints": [
+        "d5bb5e7aa5b0"
+      ]
+    },
+    {
+      "key": "club-join-status-unclear",
+      "title": "Club says \"Not recruiting right now\" under a big \"Ask to join\"; after tapping, nothing says what happens next",
+      "summary": "Both find-a-club personas reached a club quickly, then hit the contradiction on the Recruiting tab. \"Ask to join\" sends straight away (\"Application sent\", button turns \"Applied\") with no word on who reads it or what happens next.",
+      "rootCauseHypothesis": "The primary CTA is always \"Ask to join\" regardless of the club's recruiting state, and the success state has no next-step copy.",
+      "severity": 2,
+      "confidence": "high",
+      "frictionTypes": [
+        "ux_confusion"
+      ],
+      "personas": [
+        "jordan-sophomore-impatient",
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "find-a-club"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261102-1925-jordan-find-a-club",
+          "step": 8,
+          "quote": "wait. not recruiting but ask to join? which is it."
+        },
+        {
+          "runId": "sched-20261102-1925-minji-find-a-club",
+          "step": 14,
+          "quote": "뭐지? recruiting 안 한다면서 Ask to join은 왜 있어? 눌러도 되는 거야?"
+        },
+        {
+          "runId": "sched-20261102-1925-jordan-find-a-club",
+          "step": 10,
+          "quote": "ok, fast, I like that. but applied to who? will anyone answer? they're 'not recruiting'."
+        },
+        {
+          "runId": "sched-20261102-1925-minji-find-a-club",
+          "step": 16,
+          "quote": "오 바로 됐네, 개인정보 안 물어봐서 좋아. 근데 언제 연락 와? 누가 봐?"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": "Same UI on live.",
+      "suggestedFix": "When a club is not recruiting, label the button \"Ask to be notified / Say hi\" (or explain \"you can still ask — officers review requests\"), and after sending say who receives it and where the reply will show up.",
+      "fingerprints": [
+        "b671f45c6bb2",
+        "5b407b25b343",
+        "128764b1d764"
+      ]
+    },
+    {
+      "key": "club-page-looks-empty",
+      "title": "Club pages look empty and unofficial: an \"Unverified\" badge, a two-line About, no events, 0 followers",
+      "summary": "Jordan found Cal Esports' About to be two words with no times and \"No upcoming events\" plus a line aimed at club admins; Minji saw KSA with 0 followers and an unexplained \"Unverified\" badge and wondered if it was real or active.",
+      "rootCauseHypothesis": "Clubs imported from official lists have little content until officers claim them; the page shows the gaps (and admin-facing copy) to visitors instead of a visitor-friendly fallback (official link, last activity, what \"Unverified\" means).",
+      "severity": 2,
+      "confidence": "medium",
+      "frictionTypes": [
+        "content_gap",
+        "trust_privacy"
+      ],
+      "personas": [
+        "jordan-sophomore-impatient",
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "find-a-club"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261102-1925-jordan-find-a-club",
+          "step": 4,
+          "quote": "ok and? when are community nights? 'unverified' — is this even real?"
+        },
+        {
+          "runId": "sched-20261102-1925-jordan-find-a-club",
+          "step": 6,
+          "quote": "nothing. and why is it telling me about events I post? I'm not running this club."
+        },
+        {
+          "runId": "sched-20261102-1925-minji-find-a-club",
+          "step": 12,
+          "quote": "헐 0명... 아무도 없어? 이거 진짜 활동하는 거 맞나"
+        },
+        {
+          "runId": "sched-20261102-1925-minji-find-a-club",
+          "step": 10,
+          "quote": "깔끔하다, 글 짧아서 좋아. 근데 'Unverified'... 뭐지? 진짜 KSA 맞아?"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": "\"0 followers\" is partly the local stack (no other students); thin About, no events and the Unverified badge come from the imported club data and are likely the same on live — check a few club pages on live before filing.",
+      "suggestedFix": "Explain \"Unverified\" in one line (e.g. \"from the official club list, not yet claimed\"), link the club's official page, hide the admin-only \"Events you post…\" line from visitors, and hide a 0 follower count.",
+      "file": false,
+      "fingerprints": [
+        "68c8e67b425d",
+        "919841c6195c",
+        "6de492d10b73",
+        "66b726f72e19"
+      ]
+    },
+    {
+      "key": "club-list-starts-with-greek-life",
+      "title": "The club list opens with a long run of sororities; friendly social clubs only appear after scrolling",
+      "summary": "Minji (17, looking for somewhere she would feel welcome) opened Clubs & Groups and saw Panhellenic sororities first under \"All\"; KSA, board games and anime clubs appeared only after scrolling.",
+      "rootCauseHypothesis": "Default ordering looks alphabetical/by source list rather than by the user's interests or by \"welcoming / social\" category.",
+      "severity": 2,
+      "confidence": "low",
+      "frictionTypes": [
+        "motivation"
+      ],
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "find-a-club"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261102-1925-minji-find-a-club",
+          "step": 4,
+          "quote": "All 눌렀는데 sorority만 계속 나와. 그리스 문자 너무 많아... I'm 17, I don't want rush stuff"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": "Club list comes from the same imported data as live.",
+      "suggestedFix": "Sort \"All\" by the user's interests / the existing \"Matches your interest\" tag first, or group Greek life under its own chip.",
+      "fingerprints": [
+        "637f00dc9f90"
+      ]
+    }
+  ],
+  "dismissed": [],
+  "harnessIssues": [
+    {
+      "title": "cold-start success check counted an accidental one-tap \"Go together\" as participation",
+      "detail": "sched-…-diego-cold-start-hangout: goalAchieved=true (\"posted a plan\") at step 29, but the persona abandoned and did not mean to join; the tap committed without a confirm step. The record is real (an app problem, see go-together-joins-without-asking), but the run should read as an unnoticed/unwanted success, not a met goal. Consider requiring the persona not to abandon on the same step, or flagging goal-met-then-abandoned.",
+      "runs": [
+        "sched-20261102-1925-diego-cold-start-hangout"
+      ]
+    },
+    {
+      "title": "local-stack catalog fetch hung for 30+ minutes and was killed",
+      "detail": "`local-stack catalog fetch --worktree ../lumi-live` printed nothing and did not finish within the 30-minute background limit; this batch used the built-in catalog (no timetable cell was run, so no impact). Add a timeout + progress output to catalog fetch.",
+      "runs": []
+    }
+  ]
+}
