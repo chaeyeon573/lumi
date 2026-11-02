@@ -31,7 +31,8 @@ export function CommunityPage() {
     if (legacyClubs) setParams({ tab: 'opportunities', sub: 'clubs', ...(params.get('mine') ? { kind: 'mine' } : {}) }, { replace: true });
   }, [legacyClubs]); // eslint-disable-line react-hooks/exhaustive-deps
   const tab: Tab = params.get('tab') === 'opportunities' || legacyClubs ? 'opportunities' : 'feed';
-  const setTab = (tb: Tab) => setParams(tb === 'feed' ? {} : { tab: tb }, { replace: true });
+  // 탭은 방문 기록에 남긴다 — 뒤로 가기가 Campus 를 건너뛰고 Discover 로 가지 않게 (ux-sim baseline-priya step 16)
+  const setTab = (tb: Tab) => { if (tb !== tab) setParams(tb === 'feed' ? {} : { tab: tb }); };
   const status = useAppStore((s) => s.status);
   const error = useAppStore((s) => s.error);
   const init = useAppStore((s) => s.init);

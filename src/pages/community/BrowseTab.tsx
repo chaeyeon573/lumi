@@ -23,6 +23,7 @@ import { WatchSeatsButton } from '@/components/seats/SeatWatch';
  * 캠퍼스 › 찾기 — 동아리·수업·인턴·연구·장학금·해커톤·행사를 한 줄의 칩으로.
  * 칸은 type이 아니라 categoriesOf()로 나눈다 → 한 공고가 여러 칸에 들어갈 수 있다 (연구 장학금은 연구·장학금 둘 다).
  * URL: ?tab=opportunities&sub=<칩>&kind=<작은 칩> (+ 인턴: field·region·sort, 수업: dept)
+ * 칩·필터를 바꿀 때마다 방문 기록에 남긴다 — 뒤로 가기가 바로 앞 필터 상태로 돌아간다 (예전엔 replace 라 Campus 를 통째로 건너뛰었다)
  */
 export type BrowseChip = 'foryou' | 'clubs' | 'classes' | 'internship' | 'research' | 'scholarship' | 'hackathon' | 'event' | 'free_food' | 'startup' | 'exchange' | 'saved';
 const CHIP_KEYS: BrowseChip[] = ['foryou', 'clubs', 'classes', 'internship', 'research', 'scholarship', 'hackathon', 'event', 'free_food', 'startup', 'exchange', 'saved'];
@@ -55,7 +56,7 @@ export function BrowseTab() {
   const field = params.get('field') ?? '';
   const region = params.get('region') ?? '';
   const sort = (params.get('sort') ?? 'foryou') as Sort;
-  const setQ = (p: Record<string, string>) => { const next = new URLSearchParams(params); next.set('tab', 'opportunities'); for (const [k, v] of Object.entries(p)) { if (v) next.set(k, v); else next.delete(k); } setParams(next, { replace: true }); };
+  const setQ = (p: Record<string, string>) => { const next = new URLSearchParams(params); next.set('tab', 'opportunities'); for (const [k, v] of Object.entries(p)) { if (v) next.set(k, v); else next.delete(k); } if (next.toString() !== params.toString()) setParams(next); };
   const setSub = (s: BrowseChip) => setQ({ sub: s === 'foryou' ? '' : s, kind: '', field: '', region: '', sort: '', dept: '', mine: '' });
 
   const opps = useAppStore((s) => s.opportunities);
