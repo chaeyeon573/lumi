@@ -5,6 +5,25 @@
   "year": "Exchange student (one semester, from Yonsei)",
   "school": "UC Berkeley",
   "major": "Business Administration",
+  "account": {
+    "$comment": "Profile for auth: fresh — the harness registers this account through the app's own sign-up API (lib/account.mjs). nickname defaults to name, birthYear to this year − age.",
+    "nickname": "Seoyeon",
+    "department": "Business Administration",
+    "yearInSchool": 3,
+    "goals": [
+      "friends"
+    ],
+    "interests": [
+      "coffee",
+      "shopping"
+    ],
+    "purposes": [
+      "friend"
+    ],
+    "lookingFor": [
+      "friend"
+    ]
+  },
   "purpose": "Get to SFO cheaply for Thanksgiving travel and meet other students doing the same; prefers Korean.",
   "techFamiliarity": "medium",
   "readingDepth": 0.6,

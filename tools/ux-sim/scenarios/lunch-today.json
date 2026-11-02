@@ -4,17 +4,124 @@
   "goal": "It's a weekday and you'd rather not eat lunch alone again. Use the app to find someone (or a group) to get lunch with today, and let them know you're in.",
   "startUrl": "/",
   "setup": {
-    "auth": "demo",
-    "school": "berkeley"
-  },
-  "success": {
-    "description": "Joined or requested to join a meal plan / sent a lunch invite: the button now reads as joined/requested, or a chat with the plan opened.",
-    "any": [
+    "auth": "fresh",
+    "notes": "A brand-new real account (not the shared demo). Two other real students (local fixtures, not samples) have posted lunch plans for today, so there is someone to join — as on live, where real students post plans.",
+    "peers": [
       {
-        "textMatches": "You're in|You’re in|Requested|Request sent|Going|Joined|Waiting for (the )?host"
+        "nickname": "Hana",
+        "department": "Cognitive Science",
+        "yearInSchool": 2,
+        "age": 19,
+        "activity": {
+          "category": "meal",
+          "emoji": "🍱",
+          "title": "Lunch at Crossroads — anyone want to join?",
+          "description": "Grabbing lunch between classes. Happy to meet new people!",
+          "startTime": "12:30",
+          "endTime": "13:15",
+          "place": {
+            "name": "Crossroads Dining Commons",
+            "area": "Unit 1 / Southside",
+            "lat": 37.8667,
+            "lng": -122.256
+          },
+          "capacity": 4,
+          "joinPolicy": "open"
+        }
       },
       {
-        "urlMatches": "^/chats/"
+        "nickname": "Leo",
+        "department": "Economics",
+        "yearInSchool": 3,
+        "age": 21,
+        "activity": {
+          "category": "meal",
+          "emoji": "🌯",
+          "title": "Quick burrito on Bancroft",
+          "description": "30 min, then I have section.",
+          "startTime": "13:00",
+          "endTime": "13:40",
+          "place": {
+            "name": "Bancroft Way",
+            "area": "Southside",
+            "lat": 37.8686,
+            "lng": -122.2595
+          },
+          "capacity": 3,
+          "joinPolicy": "approval"
+        }
+      }
+    ]
+  },
+  "success": {
+    "description": "During the run the persona's own account joined/requested one of today's lunch plans, posted its own meal plan for today, or messaged in a lunch plan's chat.",
+    "any": [
+      {
+        "record": {
+          "collection": "participations",
+          "where": {
+            "userId": "$me",
+            "activityId": {
+              "in": "$peerActivities"
+            }
+          },
+          "description": "joined or asked to join a peer's lunch plan"
+        }
+      },
+      {
+        "record": {
+          "collection": "participations",
+          "where": {
+            "userId": "$me"
+          },
+          "description": "joined or asked to join a plan"
+        }
+      },
+      {
+        "record": {
+          "collection": "activities",
+          "where": {
+            "hostId": "$me",
+            "date": "$today",
+            "category": {
+              "re": "^(meal|coffee)$"
+            }
+          },
+          "description": "posted a meal/coffee plan for today"
+        }
+      },
+      {
+        "record": {
+          "collection": "activities",
+          "where": {
+            "hostId": "$me",
+            "date": "$today",
+            "title": {
+              "re": "lunch|eat|food|bite|meal|점심|밥"
+            }
+          },
+          "description": "posted a lunch plan for today"
+        }
+      },
+      {
+        "record": {
+          "collection": "chatRooms",
+          "where": {
+            "memberIds": {
+              "has": "$me"
+            },
+            "messages": {
+              "some": {
+                "senderId": "$me",
+                "system": {
+                  "exists": false
+                }
+              }
+            }
+          },
+          "fresh": "changed",
+          "description": "sent a message in a chat"
+        }
       }
     ]
   },

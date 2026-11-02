@@ -4,13 +4,21 @@
   "version": "0.1.0",
   "description": "AI simulated user testing harness for Lumi — a Claude session plays a persona and drives a real browser through this CLI. No API key needed.",
   "type": "module",
-  "bin": { "ux-sim": "bin/ux-sim", "local-stack": "bin/local-stack" },
+  "bin": {
+    "ux-sim": "bin/ux-sim",
+    "local-stack": "bin/local-stack",
+    "batch-plan": "bin/batch-plan"
+  },
   "scripts": {
-    "check": "node bin/ux-sim validate-config"
+    "test": "node --test test/*.test.mjs",
+    "check": "node bin/ux-sim validate-config",
+    "smoke": "node test/smoke.mjs"
   },
   "dependencies": {
     "ajv": "8.17.1",
     "playwright-core": "1.64.0"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

@@ -5,6 +5,27 @@
   "year": "First-year (first in her family to go to college)",
   "school": "UC Berkeley",
   "major": "Public Health (intended)",
+  "account": {
+    "$comment": "Profile for auth: fresh — the harness registers this account through the app's own sign-up API (lib/account.mjs). nickname defaults to name, birthYear to this year − age.",
+    "nickname": "Aisha",
+    "department": "Public Health",
+    "yearInSchool": 1,
+    "goals": [
+      "friends",
+      "join_club"
+    ],
+    "interests": [
+      "club",
+      "walk"
+    ],
+    "purposes": [
+      "friend",
+      "club"
+    ],
+    "lookingFor": [
+      "friend"
+    ]
+  },
   "purpose": "Find a club where she'd feel welcome and people to go to events with; careful and patient but anxious about doing it wrong.",
   "techFamiliarity": "medium",
   "readingDepth": 0.9,

@@ -11,15 +11,44 @@
       "Real-time updates (SSE) work locally; other people never reply unless the stack was started with --autoreply."
     ],
     "routes": [
-      { "match": "^/(dining|gym)(/|\\?|$)", "reason": "Dining/gym need live campus sources (CAMPUS_LIVE=0 locally)." }
+      {
+        "match": "^/(dining|gym)(/|\\?|$)",
+        "reason": "Dining/gym need live campus sources (CAMPUS_LIVE=0 locally)."
+      }
     ],
     "requests": [
-      { "match": "/api/ai/", "reason": "AI endpoints need an OpenAI key (not configured locally)." }
+      {
+        "match": "/api/ai/",
+        "reason": "AI endpoints need an OpenAI key (not configured locally)."
+      }
     ],
     "contentCaveats": [
-      { "route": "^/(community|discover|opportunities)", "types": ["content_gap"], "reason": "Local stack has only CSV opportunities; live also has worker-fetched internships, hackathons and campus events — check on live before acting." },
-      { "route": "^/(timetable|classes|c/)", "types": ["content_gap"], "reason": "Local course catalog is the built-in sample list, not the real Berkeley schedule." }
-    ]
+      {
+        "route": "^/(community|discover|opportunities)",
+        "types": [
+          "content_gap"
+        ],
+        "reason": "Local stack has only CSV opportunities; live also has worker-fetched internships, hackathons and campus events — check on live before acting."
+      },
+      {
+        "route": "^/(timetable|classes|c/)",
+        "types": [
+          "content_gap"
+        ],
+        "when": "catalogBuiltin",
+        "reason": "Local course catalog is the built-in sample list, not the real Berkeley schedule."
+      }
+    ],
+    "catalogBuiltin": {
+      "route": "^/(timetable|classes|c/)",
+      "types": [
+        "content_gap",
+        "copy",
+        "discoverability"
+      ],
+      "reason": "Local stack used the built-in sample course catalog (e.g. MATH 1A); live has the imported current-term Berkeley schedule (e.g. MATH 51), so course names and codes differ. Run `local-stack catalog fetch` and re-run."
+    },
+    "$catalogComment": "The 'Course catalog' knownLimits line is replaced per run by lib/session-server.mjs knownLimits(): real catalog (cached with `local-stack catalog fetch`) or built-in sample."
   },
   "live": {
     "summary": "Live production site with the ux-sim write guard: every mutating /api request except demo login and read-only calls is blocked and answered with 403.",
@@ -31,13 +60,18 @@
     ],
     "routes": [],
     "requests": [
-      { "match": "/api/ai/", "reason": "AI endpoints are blocked in live mode." }
+      {
+        "match": "/api/ai/",
+        "reason": "AI endpoints are blocked in live mode."
+      }
     ],
     "contentCaveats": []
   },
   "custom": {
     "summary": "A --base-url on localhost that ux-sim did not start (e.g. your own dev server). No guard; assume a disposable store.",
-    "knownLimits": ["Unknown setup — record what you started and with which data."],
+    "knownLimits": [
+      "Unknown setup — record what you started and with which data."
+    ],
     "routes": [],
     "requests": [],
     "contentCaveats": []

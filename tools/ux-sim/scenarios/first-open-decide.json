@@ -4,11 +4,22 @@
   "goal": "A friend sent you a link to this app. You have never seen it before. Figure out what it is for, and decide whether you want to make an account. If it seems worth it, sign up with your school e-mail.",
   "startUrl": "/welcome",
   "setup": {
-    "auth": "none"
+    "auth": "none",
+    "notes": "Signed out: the persona decides whether to sign up. Success needs an account created during the run."
   },
   "success": {
-    "description": "Signed up and landed inside the app (the signed-in home or any main tab).",
+    "description": "Signed up during the run (a new account exists and the browser is signed in to it) and landed inside the app (signed-in home or a main tab).",
     "all": [
+      {
+        "record": {
+          "collection": "users",
+          "where": {
+            "id": "$me"
+          },
+          "fresh": "created",
+          "description": "the account the browser is signed in to was created during this run"
+        }
+      },
       {
         "urlMatches": "^/(discover|community|profile)?(\\?.*)?$"
       }

@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/chaeyeon573/AroundU/tools/ux-sim/schema/analysis.schema.json",
+  "title": "ux-sim curated analysis",
+  "description": "The second, curated layer over findings.json. An orchestrating Claude session reads findings.json and the per-run reports and writes the PROBLEMS it sees: a plain-language title, a root-cause hypothesis, who was affected, evidence, severity, whether it is an environment limit, a suggested fix, and which heuristic fingerprints it groups. `ux-sim issues --analysis` turns problems into issue candidates. AI simulation — hypotheses, not measured user behaviour. See docs/ux-sim/ORCHESTRATE.md.",
+  "type": "object",
+  "required": ["schemaVersion", "kind", "date", "generatedAt", "author", "disclaimer", "sources", "problems"],
+  "additionalProperties": false,
+  "definitions": {
+    "severity": { "type": "integer", "minimum": 1, "maximum": 4, "description": "1 minor · 2 moderate · 3 major · 4 blocker (same scale as run.json)" },
+    "fingerprint": { "type": "string", "pattern": "^[0-9a-f]{12}$" },
+    "evidence": {
+      "type": "object",
+      "required": ["runId", "step"],
+      "additionalProperties": false,
+      "properties": {
+        "runId": { "type": "string", "pattern": "^[\\w.-]+$" },
+        "step": { "type": "integer", "minimum": 0 },
+        "screenshot": { "type": "string", "description": "repo-relative path; filled from run.json when omitted" },
+        "quote": { "type": "string", "description": "persona words, verbatim from the run" },
+        "note": { "type": "string", "description": "what the analyst saw at this step (screen, request, harness signal)" }
+      }
+    }
+  },
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "kind": { "const": "ux-sim-analysis" },
+    "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "generatedAt": { "type": "string" },
+    "author": { "type": "string", "minLength": 1, "description": "who wrote it, e.g. 'orchestrating Claude session <link>'" },
+    "disclaimer": { "type": "string", "pattern": "hypothes" },
+    "sources": {
+      "type": "object",
+      "required": ["findings", "runs"],
+      "additionalProperties": false,
+      "properties": {
+        "findings": { "type": "string", "description": "repo-relative path of the findings.json this analysis curates" },
+        "runs": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "harness": { "type": ["string", "null"], "description": "harness content hash of the runs (run.json harness.hash)" },
+        "appCommits": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "problems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "title", "summary", "rootCauseHypothesis", "severity", "personas", "scenarios", "evidence", "environmentLimited", "suggestedFix", "fingerprints"],
+        "additionalProperties": false,
+        "properties": {
+          "key": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$", "description": "stable slug for dedupe across dates (keep it when re-analysing the same problem)" },
+          "title": { "type": "string", "minLength": 8, "maxLength": 120, "description": "plain language, what a student experiences — not 'Confusing UI on /'" },
+          "summary": { "type": "string", "minLength": 1 },
+          "rootCauseHypothesis": { "type": "string", "minLength": 1, "description": "why it happens — a hypothesis, name the screen/copy/flow" },
+          "severity": { "$ref": "#/definitions/severity" },
+          "confidence": { "enum": ["low", "medium", "high"], "description": "how sure the analyst is that this is one real problem (not how many users hit it)" },
+          "frictionTypes": { "type": "array", "items": { "enum": ["bug", "ux_confusion", "onboarding", "discoverability", "motivation", "content_gap", "performance", "trust_privacy", "copy"] } },
+          "personas": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "scenarios": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "evidence": { "type": "array", "items": { "$ref": "#/definitions/evidence" }, "minItems": 1 },
+          "environmentLimited": { "type": "boolean", "description": "true when it only happens because of the test environment (local stack, live guard, demo account) — never filed" },
+          "environmentNote": { "type": ["string", "null"] },
+          "suggestedFix": { "type": "string", "minLength": 1, "description": "a hypothesis, the smallest change worth trying" },
+          "fingerprints": { "type": "array", "items": { "$ref": "#/definitions/fingerprint" }, "description": "heuristic findings.json clusters this problem groups (empty only for problems seen in run reports but not logged as friction, e.g. a false success)" },
+          "file": { "type": "boolean", "description": "force (true) or suppress (false) an issue candidate; default rule: severity ≥ 3 or ≥ 2 personas, never when environmentLimited" },
+          "relatedIssues": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "dismissed": {
+      "type": "array",
+      "description": "heuristic fingerprints deliberately not turned into problems (noise, persona over-reading, duplicate of another problem's evidence)",
+      "items": { "type": "object", "required": ["fingerprints", "reason"], "additionalProperties": false, "properties": { "fingerprints": { "type": "array", "items": { "$ref": "#/definitions/fingerprint" }, "minItems": 1 }, "reason": { "type": "string", "minLength": 1 } } }
+    },
+    "harnessIssues": {
+      "type": "array",
+      "description": "problems with the harness or scenario, not the app (loose success check, persona broke a rule)",
+      "items": { "type": "object", "required": ["title", "detail"], "additionalProperties": false, "properties": { "title": { "type": "string" }, "detail": { "type": "string" }, "runs": { "type": "array", "items": { "type": "string" } } } }
+    },
+    "notes": { "type": "string" }
+  }
+}

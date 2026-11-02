@@ -10,7 +10,7 @@ import { cluster, DISCLAIMER } from './findings.mjs';
 const load = (inputs) => resolveRuns(inputs).map((f) => readJson(f)).filter((r) => r.status === 'finished');
 const median = (xs) => { if (!xs.length) return null; const s = [...xs].sort((a, b) => a - b); const m = Math.floor(s.length / 2); return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
 
-export async function compare(before, after, { out } = {}) {
+export async function compare(before, after, { out, labels = {} } = {}) {
   if (!before.length || !after.length) throw new Error('compare needs --before <runs…> and --after <runs…> (run dirs, or folders of runs)');
   const B = load(before); const A = load(after);
   const key = (r) => `${r.persona.id} × ${r.scenario.id}`;
@@ -42,12 +42,31 @@ export async function compare(before, after, { out } = {}) {
     stillPresent: fa.filter((f) => beforeFp.has(f.fingerprint)).map((f) => ({ ...brief(f), severityMaxBefore: fb.find((x) => x.fingerprint === f.fingerprint).severityMax })),
     new: fa.filter((f) => !beforeFp.has(f.fingerprint)).map(brief),
   };
-  const data = { schemaVersion: 1, generatedAt: new Date().toISOString(), disclaimer: DISCLAIMER, before: B.map((r) => r.runId), after: A.map((r) => r.runId), pairs, findings };
+  // what was compared: the app commit per side, and whether both sides ran the same harness/accounts/catalog
+  const side = (runs, label) => ({
+    label: label ?? null,
+    runs: runs.map((r) => r.runId),
+    appCommits: [...new Set(runs.map((r) => r.target.stack?.stamp ?? r.target.baseUrl))],
+    worktrees: [...new Set(runs.map((r) => r.target.stack?.worktree).filter(Boolean))],
+    harness: [...new Set(runs.map((r) => r.harness?.hash ?? 'unknown'))],
+    auth: [...new Set(runs.map((r) => r.auth?.mode ?? r.scenario.setup?.auth ?? 'unknown'))],
+    catalog: [...new Set(runs.map((r) => r.target.stack?.catalog?.kind ?? 'unknown'))],
+    modes: [...new Set(runs.map((r) => r.target.mode))],
+  });
+  const sb = side(B, labels.before); const sa = side(A, labels.after);
+  const warnings = [];
+  const same = (k) => JSON.stringify([...sb[k]].sort()) === JSON.stringify([...sa[k]].sort());
+  if (!same('harness') || sb.harness.length > 1 || sb.harness.includes('unknown')) warnings.push(`harness differs or is unknown (before ${sb.harness.join(',')} · after ${sa.harness.join(',')}) — a change in outcome may come from the harness, not the app. Re-run both sides with the same tools/ux-sim checkout.`);
+  for (const k of ['auth', 'catalog', 'modes']) if (!same(k)) warnings.push(`${k} differs between sides (before ${sb[k].join(',')} · after ${sa[k].join(',')})`);
+  if (JSON.stringify(sb.appCommits) === JSON.stringify(sa.appCommits)) warnings.push(`both sides ran the same app version (${sb.appCommits.join(',')}) — this compares repeat runs, not two versions`);
+  const unpaired = pairs.filter((p) => !p.before.runs.length || !p.after.runs.length).map((p) => `${p.persona} × ${p.scenario}`);
+  if (unpaired.length) warnings.push(`cells on one side only (not compared): ${unpaired.join(', ')}`);
+  const data = { schemaVersion: 1, generatedAt: new Date().toISOString(), disclaimer: DISCLAIMER, before: B.map((r) => r.runId), after: A.map((r) => r.runId), sides: { before: sb, after: sa }, warnings, pairs, findings };
   const dir = ensureDir(path.resolve(out ?? path.join(REPORTS_DIR, today())));
   const stamp = new Date().toISOString().slice(11, 16).replace(':', '');
   const jf = path.join(dir, `compare-${stamp}.json`); const mf = path.join(dir, `compare-${stamp}.md`);
   writeFileSync(jf, JSON.stringify(data, null, 2));
-  const L = [`# ux-sim compare — ${data.generatedAt.slice(0, 16).replace('T', ' ')} UTC`, '', `> **${DISCLAIMER}** One run per cell is an anecdote, not a trend — re-run a cell a few times before trusting a change.`, '', `Before: ${B.length} run(s) · After: ${A.length} run(s)`, '', '## Persona × scenario', '', '| persona | scenario | before | after | actions to goal (before → after) | friction before → after | change |', '|---|---|---|---|---|---|---|'];
+  const L = [`# ux-sim compare — ${data.generatedAt.slice(0, 16).replace('T', ' ')} UTC`, '', `> **${DISCLAIMER}** One run per cell is an anecdote, not a trend — re-run a cell a few times before trusting a change.`, '', `Before${sb.label ? ` (${sb.label})` : ''}: ${B.length} run(s), app ${sb.appCommits.join(', ')} · After${sa.label ? ` (${sa.label})` : ''}: ${A.length} run(s), app ${sa.appCommits.join(', ')} · harness ${[...new Set([...sb.harness, ...sa.harness])].join(', ')}`, '', ...(warnings.length ? ['**Warnings**', '', ...warnings.map((w) => `- ⚠ ${w}`), ''] : []), '## Persona × scenario', '', '| persona | scenario | before | after | actions to goal (before → after) | friction before → after | change |', '|---|---|---|---|---|---|---|'];
   const fr = (o) => Object.entries(o).map(([k, v]) => `${k} ${v}`).join(', ') || '—';
   for (const p of pairs) L.push(`| ${p.persona} | ${p.scenario} | ${p.before.outcomes.join(', ') || '—'} | ${p.after.outcomes.join(', ') || '—'} | ${p.before.actionsToGoal ?? '—'} → ${p.after.actionsToGoal ?? '—'} | ${fr(p.before.friction)} → ${fr(p.after.friction)} | ${p.change} |`);
   for (const [name, list] of [['Resolved (not seen again in re-tested scenarios)', findings.resolved], ['Still present', findings.stillPresent], ['New', findings.new], ['Not re-tested (scenario not in the after set)', findings.notRetested]]) {
@@ -55,5 +74,5 @@ export async function compare(before, after, { out } = {}) {
     for (const f of list) L.push(`- \`${f.fingerprint}\` ${f.title} — sev ${f.severityMaxBefore !== undefined ? `${f.severityMaxBefore} → ` : ''}${f.severityMax}, ${f.personas.join(', ')}`);
   }
   writeFileSync(mf, L.join('\n') + '\n');
-  return { compare: rel(mf), json: rel(jf), pairs: pairs.length, resolved: findings.resolved.length, stillPresent: findings.stillPresent.length, new: findings.new.length };
+  return { compare: rel(mf), json: rel(jf), warnings, pairs: pairs.length, resolved: findings.resolved.length, stillPresent: findings.stillPresent.length, new: findings.new.length };
 }

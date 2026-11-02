@@ -5,6 +5,29 @@
   "year": "Second-year PhD student",
   "school": "UC Berkeley",
   "major": "EECS (systems)",
+  "account": {
+    "$comment": "Profile for auth: fresh — the harness registers this account through the app's own sign-up API (lib/account.mjs). nickname defaults to name, birthYear to this year − age.",
+    "nickname": "Priya",
+    "department": "EECS",
+    "yearInSchool": 6,
+    "role": "graduate",
+    "goals": [
+      "scholarship",
+      "friends"
+    ],
+    "interests": [
+      "coffee",
+      "research"
+    ],
+    "purposes": [
+      "networking",
+      "friend"
+    ],
+    "lookingFor": [
+      "friend",
+      "mentor"
+    ]
+  },
   "purpose": "Find fellowships, funding deadlines and maybe people outside her lab — on her laptop between experiments.",
   "techFamiliarity": "high",
   "readingDepth": 0.8,

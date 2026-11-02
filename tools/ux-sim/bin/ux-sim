@@ -6,7 +6,7 @@ import { spawn } from 'node:child_process';
 import { existsSync, readdirSync, openSync, writeFileSync } from 'node:fs';
 import { parseArgs } from '../lib/args.mjs';
 import { RUNS_DIR, HARNESS_DIR, ensureDir, rel } from '../lib/paths.mjs';
-import { persona as loadPersona, scenario as loadScenario, personas, scenarios, readJson, sleep, SEVERITY, FEELINGS, FRICTION_TYPES } from '../lib/util.mjs';
+import { persona as loadPersona, scenario as loadScenario, personas, scenarios, readJson, sleep, SEVERITY, FEELINGS, FRICTION_TYPES, harnessVersion } from '../lib/util.mjs';
 import { up as stackUp, down as stackDown } from '../lib/stack.mjs';
 
 const BOOL = ['submit', 'allow-live', 'all', 'json', 'autoreply', 'environment-limited', 'rebuild', 'reseed', 'dev', 'keep-stack'];
@@ -21,6 +21,7 @@ const HELP = `ux-sim — AI simulated user testing (a Claude session plays the p
 Session
   ux-sim start --persona <id> --scenario <id> [--run-id ID]      default target: a fresh LOCAL stack of this worktree
         [--worktree DIR] [--port N] [--autoreply]                   (server + built web, seeded data file in the run dir)
+        [--auth fresh|demo|none] [--catalog auto|cached|builtin]    default auth = the scenario's (fresh: a new real account)
         [--base-url URL [--allow-live]]                             any URL; non-localhost needs --allow-live (writes blocked)
   ux-sim observe                                   numbered elements, visible text, screenshot + set-of-marks screenshot
   ux-sim click <id>            [--expect "<what I think will happen>" --confidence 0.7]
@@ -40,9 +41,13 @@ Analysis
   ux-sim list                                      personas, scenarios and which persona runs which scenario
   ux-sim brief --persona <id> --scenario <id>      the in-character briefing a persona agent gets
   ux-sim report <run-dir...> | --all [--out DIR]   per-run report.md + ux-sim/reports/<date>/summary.md + findings.json
-  ux-sim compare --before <runs...> --after <runs...> [--out DIR]
-  ux-sim issues <findings.json> [--out FILE]       issue-candidates.json (nothing is posted)
-  ux-sim validate <run.json|findings.json...>
+  ux-sim compare --before <runs...> --after <runs...> [--before-label base --after-label fix] [--out DIR]
+  ux-sim analysis init <findings.json>             analysis.draft.json for the orchestrating session to curate (ORCHESTRATE.md)
+  ux-sim analysis check <analysis.json>            schema + evidence refs + which fingerprints are not grouped/dismissed
+  ux-sim issues --analysis <analysis.json>         issue-candidates.json from curated problems (preferred; nothing is posted)
+  ux-sim issues <findings.json> [--out FILE]       issue-candidates.json from heuristic clusters (nothing is posted)
+  ux-sim batch-plan --all | --scenario a,b | --persona x | --rotate N [--repeat K] [--worktree DIR] [--json]
+  ux-sim validate <run.json|findings.json|analysis.json...>   ux-sim validate-config
 
 Severity: ${Object.entries(SEVERITY).map(([k, v]) => `${k} ${v}`).join('\n          ')}`;
 
@@ -68,8 +73,14 @@ async function send(session, c, args = {}) {
 }
 
 // ─── briefing ────────────────────────────────────────────────────────────────
-function brief(p, s) {
+function brief(p, s, auth = s.setup?.auth ?? 'fresh') {
+  const account = {
+    fresh: `You already made an account with your school e-mail (it's brand new — nothing on it yet) and you are signed in.`,
+    none: 'You do not have an account and are not signed in.',
+    demo: 'You are signed in (the app opened straight into an account).',
+  }[auth];
   return {
+    account,
     youAre: `${p.name}, ${p.age}. ${p.year}${p.major ? `, ${p.major}` : ''} at ${p.school}.`,
     backstory: p.backstory,
     whyYouOpenedTheApp: s.goal,
@@ -95,18 +106,21 @@ async function start() {
   const runDir = path.join(RUNS_DIR, runId);
   if (existsSync(path.join(runDir, 'run.json'))) die(`run ${runId} already exists`);
   ensureDir(runDir);
+  const auth = o.auth ?? s.setup?.auth ?? 'fresh';
+  if (!['fresh', 'demo', 'none'].includes(auth)) die('--auth must be fresh|demo|none');
   let target;
   if (o['base-url']) {
     const u = new URL(o['base-url']);
     const local = ['localhost', '127.0.0.1', '[::1]'].includes(u.hostname);
     if (!local && !o['allow-live']) die(`${u.origin} is not local. Real sign-ups/posts there are seen by real students — pass --allow-live to run with the write guard (mutating /api calls blocked), or omit --base-url to test a fresh local stack.`);
     target = { mode: local ? 'custom' : 'live', baseUrl: u.origin };
+    if (!local && auth === 'fresh') die(`scenario ${s.id} signs in with a brand-new account (auth: fresh) — that would create a real account on ${u.origin}. Pass --auth demo (shared sample account) or --auth none.`);
   } else {
     process.stderr.write('starting a fresh local stack for this run …\n');
-    const info = await stackUp({ worktree: o.worktree, port: o.port, dataFile: path.join(runDir, 'stack', 'db.json'), log: path.join(runDir, 'stack', 'server.log'), rebuild: !!o.rebuild, reseed: !!o.reseed, autoreply: !!o.autoreply });
-    target = { mode: 'local', baseUrl: info.baseUrl, stack: { port: info.port, worktree: info.worktree, commit: info.commit, stamp: info.stamp, dirty: info.dirty, dataFile: rel(info.dataFile), template: rel(info.template), log: rel(info.log), owned: !o['keep-stack'], autoreply: !!o.autoreply } };
+    const info = await stackUp({ catalog: o.catalog, worktree: o.worktree, port: o.port, dataFile: path.join(runDir, 'stack', 'db.json'), log: path.join(runDir, 'stack', 'server.log'), rebuild: !!o.rebuild, reseed: !!o.reseed, autoreply: !!o.autoreply });
+    target = { mode: 'local', baseUrl: info.baseUrl, apiUrl: info.apiUrl, stack: { catalog: info.catalog, port: info.port, worktree: info.worktree, commit: info.commit, stamp: info.stamp, dirty: info.dirty, dataFile: rel(info.dataFile), template: rel(info.template), log: rel(info.log), owned: !o['keep-stack'], autoreply: !!o.autoreply } };
   }
-  const cfg = { runId, persona: p, scenario: s, target };
+  const cfg = { runId, persona: p, scenario: s, target, auth, harness: harnessVersion() };
   writeFileSync(path.join(runDir, 'session-config.json'), JSON.stringify(cfg, null, 2));
   const log = openSync(path.join(runDir, 'session.log'), 'a');
   const child = spawn(process.execPath, [path.join(HARNESS_DIR, 'lib', 'session-server.mjs'), runDir], { detached: true, stdio: ['ignore', log, log], cwd: HARNESS_DIR });
@@ -124,7 +138,7 @@ async function start() {
   }
   const session = readJson(path.join(runDir, 'session.json'));
   const first = await send(session, 'init');
-  print({ runId, run: `--run ${runId}`, target: { mode: target.mode, baseUrl: target.baseUrl }, brief: brief(p, s), observation: first });
+  print({ runId, run: `--run ${runId}`, target: { mode: target.mode, baseUrl: target.baseUrl }, auth, brief: brief(p, s, auth), observation: first });
 }
 
 function list() {
@@ -132,7 +146,7 @@ function list() {
   const lines = ['PERSONAS'];
   for (const p of ps) lines.push(`  ${p.id.padEnd(27)} ${p.age}  ${p.device.type.padEnd(7)} ${p.language.preferred}  tech:${p.techFamiliarity.padEnd(6)} steps:${p.patience.maxSteps}  — ${p.purpose}`);
   lines.push('', 'SCENARIOS');
-  for (const s of ss) lines.push(`  ${s.id.padEnd(26)} start ${s.startUrl.padEnd(10)} auth:${(s.setup?.auth ?? 'none').padEnd(5)} — ${s.title}`);
+  for (const s of ss) lines.push(`  ${s.id.padEnd(26)} start ${s.startUrl.padEnd(10)} auth:${(s.setup?.auth ?? 'fresh').padEnd(5)} — ${s.title}`);
   lines.push('', 'MATRIX (persona × scenario)');
   const w = Math.max(...ss.map((s) => s.id.length));
   lines.push(`  ${''.padEnd(w)}  ${ps.map((p) => p.id.split('-')[0].slice(0, 7).padEnd(7)).join(' ')}`);
@@ -160,10 +174,19 @@ try {
     case 'note': { const { _, run: _r, ...a } = o; print(await send(pickSession(), 'note', a)); break; }
     case 'finish': { const { _, run: _r, ...a } = o; print(await send(pickSession(), 'finish', a)); break; }
     case 'list': list(); break;
-    case 'brief': print(brief(loadPersona(o.persona), loadScenario(o.scenario))); break;
+    case 'brief': print(brief(loadPersona(o.persona), loadScenario(o.scenario), o.auth)); break;
     case 'report': { const { report } = await import('../lib/report.mjs'); print(await report(positional, { all: !!o.all, out: o.out })); break; }
-    case 'compare': { const { compare } = await import('../lib/compare.mjs'); print(await compare([].concat(o.before ?? [], ...splitAfter('--before')), [].concat(o.after ?? [], ...splitAfter('--after')), { out: o.out })); break; }
-    case 'issues': { const { issues } = await import('../lib/issues.mjs'); print(await issues(positional[0], { out: o.out })); break; }
+    case 'compare': { const { compare } = await import('../lib/compare.mjs'); print(await compare([].concat(o.before ?? [], ...splitAfter('--before')), [].concat(o.after ?? [], ...splitAfter('--after')), { out: o.out, labels: { before: o['before-label'], after: o['after-label'] } })); break; }
+    case 'issues': { const { issues } = await import('../lib/issues.mjs'); print(await issues(positional[0], { out: o.out, analysis: o.analysis })); break; }
+    case 'analysis': {
+      const { scaffoldAnalysis, checkAnalysis } = await import('../lib/issues.mjs');
+      const [sub, file] = positional;
+      if (sub === 'init' && file) print(scaffoldAnalysis(file, { out: o.out }));
+      else if (sub === 'check' && file) { const r = checkAnalysis(file); print(r); if (!r.valid) process.exit(1); }
+      else die('analysis init <findings.json> [--out FILE]  |  analysis check <analysis.json>');
+      break;
+    }
+    case 'batch-plan': { const { plan, planText } = await import('../lib/batch.mjs'); const p = plan(o); print(o.json ? p : planText(p)); break; }
     case 'validate': case 'validate-config': { const { validateFiles, validateConfig } = await import('../lib/validate.mjs'); print(cmd === 'validate' ? validateFiles(positional) : validateConfig()); break; }
     case undefined: case 'help': case '--help': case '-h': print(HELP); break;
     default: die(`unknown command "${cmd}"\n\n${HELP}`);

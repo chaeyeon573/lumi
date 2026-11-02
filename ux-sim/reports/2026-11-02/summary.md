@@ -2,20 +2,44 @@
 
 > **AI simulation — hypotheses, not measured user behaviour.** AI personas drove a real browser. Counts are simulated personas, never rates; every risk below is a hypothesis to check with real students.
 
-8 run(s) · 45 finding(s) · 0 environment-limited event(s) kept out of findings.
+## Curated problems (analysis.json)
+
+_Written by orchestrating Claude session (harness-improvement pass, https://claude.ai/code/session_01Fy5mmf17fdkKuHwrxbkNpM) — curated from the pilot's findings.json and run reports. Heuristic clusters are below._
+
+| sev | problem | personas | env-limited | fingerprints |
+|---|---|---|---|---|
+| 4 | **A brand-new account finds nobody to meet and is pushed to create plans itself** — Sample profiles are (correctly) hidden from real accounts, and there is no fallback content for an empty campus: no public campus events, no 'people who also wa | 2 | no | `835a3b1ce765` `67ca16898d6c` `05ee6a888ab7` `0ba11b71e564` |
+| 3 | **The first screen looks like a dating app: one big face photo and an "I'm in" button** — The signed-in home is a single swipe card centred on a person (photo, name, age) rather than on the plan; the plan title is secondary text. Nothing on the scree | 6 | no | `0ad866e92107` `b4fb9cc452bd` `518c68aff2a6` |
+| 3 | **Shared demo account shows someone else's timetable, major, saved items and tags own posts 'Sample'** — The pilot signed signed-in scenarios into the shared sample account (auth: demo). | 3 | yes | `42a356712fc4` `05a4cd303317` `16221f83094a` `95e8f1e4f9d1` `19b334efe1e1` `678d90435f16` |
+| 3 | **Sign-up asks nine personal questions (hobbies, birth year) before showing anything** — The quiz front-loads recommendation inputs; the value (people, plans) is shown only after the last step, and visibility of each answer is not stated. | 2 | no | `97dda824b2fb` `94527b529e80` `e2f05b7465c0` |
+| 3 | **After "I'm in" it is unclear what you joined and where its chat is** — The button names an attitude, not an action on a thing; the success toast points to a chat that is not on screen and has no direct link. | 1 | no | `7550a9defad6` `6a00d05d782f` |
+| 3 | **"Instant meetup" opens a full event form** — Instant meetup reuses the generic create-activity form with every field visible. | 1 | no | `19ddc8a230f0` |
+| 3 | **Tapping a club in the list did nothing visible** — Either the card's tap handler did not navigate, or the tap landed on a nested control (save/bookmark) inside the card that changed state without feedback — the  | 1 | no | `629b9d57dee9` |
+| 3 | **Club pages don't say plainly whether and how you can join** — Recruiting status, join policy and the empty-state copy are written for club officers, not for prospective members. | 1 | no | `7a02ada3f324` `f8d64b1d499a` `919841c6195c` `52228e162ff2` `046dd034f3ea` |
+| 3 | **Internship list looked thin and the Bay Area filter returned nothing** — Local stack has only the CSV deadline calendar (no worker-fetched Greenhouse/Lever/Ashby internships), many without a location. | 1 | yes | `3cd806167637` `c4d7ce393786` |
+| 2 | **The floating Design/Feedback pills cover real buttons** — Fixed-position pills without reserved space at the bottom of screens that end with a button. | 2 | no | `804158f27f39` `39327c8d79c3` |
+| 2 | **Career content is hard to find and 'Campus' / back navigation mislead** — Opportunities live under Campus → Browse → Internships with no entry point named for careers; Back pops the section instead of the filter. | 1 | no | `b9d1ee526d80` `c95418137653` `47e37bf98fc5` |
+| 2 | **On a laptop the app is a phone-width column floating in black** — The web app renders the mobile shell at all widths. | 1 | no | `4d28c4b04f0f` |
+| 2 | **There is no way to search clubs by interest or major** — The club list is browse-only (category chips + recommendations); recommendations used the demo account's CS major. | 1 | no | `70dba2bfe887` |
+| 2 | **Korean is hard to find and parts of the app stay in English** — Language lives in Settings only; the Rides screens are missing translations. | 1 | no | `3767af082cbb` `54cd78cb05b4` `b0c7ae9a3276` |
+| 1 | **Welcome screen advertises '0 free food events this week'** — The highlight card renders even when the count is zero; locally there are no worker-fetched events. | 2 | yes | `2535ac3580a9` |
+
+8 run(s) · 45 finding(s) (2 seen by ≥ 2 personas, 42 single events) · max severity **4** · severity 1/2/3/4: 10 / 28 / 11 / 2 · 0 environment-limited event(s) kept out of findings.
+
+_These clusters are mechanical (screen + type + element). The curated problem list is `analysis.json` next to this file, written by the orchestrating session — see docs/ux-sim/ORCHESTRATE.md._
 
 ## Runs
 
-| persona | scenario | outcome | goal check | actions | drop-off risk (hypothesis) | report |
-|---|---|---|---|---|---|---|
-| aisha-firstgen-anxious | find-a-club | success | met (16 actions) | 18 | high — The app first showed me a stranger's face and fraternity rush, picked clubs for a 'Computer Science' major I'm not, a club tap did nothing,  | [report](../../runs/baseline-aisha-find-a-club/report.md) |
-| diego-transfer-commuter | lunch-today | abandoned | met (2 actions) | 6 | high — Opened it between classes for lunch today; got a face card for tomorrow's coffee, an all-tomorrow list, an empty hangouts section and a long | [report](../../runs/baseline-diego-lunch-today/report.md) |
-| marcus-senior-lowtech | first-open-decide | abandoned | not met | 4 | high — Never saw any internship content before being walked through personal-taste questions; front page pitches lunch buddies and shows '0 free fo | [report](../../runs/baseline-marcus-first-open-decide/report.md) |
-| minji-freshman-17 | cold-start-hangout | abandoned | not met | 27 | high — The promise on the welcome screen ('Find someone for lunch') was what got her through a 9-step quiz; the payoff was three empty screens and  | [report](../../runs/baseline-minji-cold-start-hangout/report.md) |
-| minji-freshman-17 | timetable-add-classes | success | met (5 actions) | 5 | medium — Adding the class was fast and the privacy line reassured her, but the first screen felt like a dating app (big face, age) and her timetable  | [report](../../runs/baseline-minji-timetable-add-classes/report.md) |
-| priya-phd-desktop | internship-near-berkeley | abandoned | not met | 7 | high — First screen is a dating-style swipe card in a phone column on my laptop; the career content is hidden and thin, and the location filter is  | [report](../../runs/baseline-priya-internship-near-berkeley/report.md) |
-| seoyeon-exchange-korean | ride-sfo-thanksgiving | success | met (8 actions) | 16 | medium — Korean switch and the Thanksgiving airport banner made posting easy, but the Rides screens fall back to English, every visible ride is fake, | [report](../../runs/baseline-seoyeon-ride-sfo-thanksgiving/report.md) |
-| minji-freshman-17 | lunch-today | success | met (1 actions) | 5 | medium — Harness heuristic, not a measurement: 1 severity≥3 event(s), objective frustration 0.50/4.5, 2 confused note(s). | [report](../../runs/smoke-minji-lunch-today/report.md) |
+| persona | scenario | auth | outcome | goal check | actions | friction (max sev) | drop-off risk (hypothesis) | report |
+|---|---|---|---|---|---|---|---|---|
+| aisha-firstgen-anxious | find-a-club | demo | success | met (16 actions) | 18 | 11 (3) | high — The app first showed me a stranger's face and fraternity rush, picked clubs for a 'Computer Science' major I'm not, a club tap did nothing,  | [report](../../runs/baseline-aisha-find-a-club/report.md) |
+| diego-transfer-commuter | lunch-today | demo | abandoned | met (2 actions) | 6 | 5 (4) | high — Opened it between classes for lunch today; got a face card for tomorrow's coffee, an all-tomorrow list, an empty hangouts section and a long | [report](../../runs/baseline-diego-lunch-today/report.md) |
+| marcus-senior-lowtech | first-open-decide | none | abandoned | not met | 4 | 3 (3) | high — Never saw any internship content before being walked through personal-taste questions; front page pitches lunch buddies and shows '0 free fo | [report](../../runs/baseline-marcus-first-open-decide/report.md) |
+| minji-freshman-17 | cold-start-hangout | none | abandoned | not met | 27 | 8 (4) | high — The promise on the welcome screen ('Find someone for lunch') was what got her through a 9-step quiz; the payoff was three empty screens and  | [report](../../runs/baseline-minji-cold-start-hangout/report.md) |
+| minji-freshman-17 | timetable-add-classes | demo | success | met (5 actions) | 5 | 3 (2) | medium — Adding the class was fast and the privacy line reassured her, but the first screen felt like a dating app (big face, age) and her timetable  | [report](../../runs/baseline-minji-timetable-add-classes/report.md) |
+| priya-phd-desktop | internship-near-berkeley | demo | abandoned | not met | 7 | 7 (3) | high — First screen is a dating-style swipe card in a phone column on my laptop; the career content is hidden and thin, and the location filter is  | [report](../../runs/baseline-priya-internship-near-berkeley/report.md) |
+| seoyeon-exchange-korean | ride-sfo-thanksgiving | demo | success | met (8 actions) | 16 | 10 (3) | medium — Korean switch and the Thanksgiving airport banner made posting easy, but the Rides screens fall back to English, every visible ride is fake, | [report](../../runs/baseline-seoyeon-ride-sfo-thanksgiving/report.md) |
+| minji-freshman-17 | lunch-today | demo | success | met (1 actions) | 5 | 4 (3) | medium — Harness heuristic, not a measurement: 1 severity≥3 event(s), objective frustration 0.50/4.5, 2 confused note(s). | [report](../../runs/smoke-minji-lunch-today/report.md) |
 
 ## Findings
 

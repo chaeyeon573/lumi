@@ -4,40 +4,55 @@
   "goal": "You fly out of SFO the Wednesday before Thanksgiving (Nov 25) in the morning. Find other students to split a ride to the airport with — join one, or post yours so others can find you.",
   "startUrl": "/",
   "setup": {
-    "auth": "demo",
-    "school": "berkeley"
+    "auth": "fresh",
+    "notes": "Fresh account, so the persona's own ride is not tagged Sample. One other real student (local fixture) has posted an SFO ride for Nov 25 morning.",
+    "peers": [
+      {
+        "nickname": "Jun",
+        "department": "Mechanical Engineering",
+        "yearInSchool": 2,
+        "age": 20,
+        "ride": {
+          "kind": "splitting",
+          "from": "unit2",
+          "to": "sfo",
+          "date": "2026-11-25",
+          "start": "08:30",
+          "end": "09:30",
+          "seats": 3,
+          "note": "Flight at noon, one suitcase."
+        }
+      }
+    ]
   },
   "success": {
-    "description": "Joined/requested an SFO ride or posted one (a ride page to SFO is open, or the list shows you in a ride).",
+    "description": "During the run the persona posted an SFO ride on Nov 25, or joined/requested someone's SFO ride (server-side).",
     "any": [
       {
-        "all": [
-          {
-            "urlMatches": "^/rides/(?!new)[^/?]+"
+        "record": {
+          "collection": "rides",
+          "where": {
+            "hostId": "$me",
+            "to": "sfo",
+            "date": {
+              "re": "-11-25$"
+            }
           },
-          {
-            "textMatches": "SFO"
-          },
-          {
-            "textMatches": "You're in|You’re in|Requested|Joined|Your ride|Leave|Cancel ride"
-          }
-        ]
+          "description": "posted a ride to SFO on Nov 25"
+        }
       },
       {
-        "all": [
-          {
-            "urlMatches": "^/rides"
+        "record": {
+          "collection": "rides",
+          "where": {
+            "to": "sfo",
+            "memberIds": {
+              "has": "$me"
+            }
           },
-          {
-            "textMatches": "My rides"
-          },
-          {
-            "textMatches": "You're in|You’re in|Requested|Joined"
-          },
-          {
-            "textMatches": "SFO"
-          }
-        ]
+          "fresh": "changed",
+          "description": "joined someone's SFO ride"
+        }
       }
     ]
   },

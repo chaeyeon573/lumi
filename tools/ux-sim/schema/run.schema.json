@@ -4,85 +4,420 @@
   "title": "ux-sim run",
   "description": "One AI-simulated user session (persona × scenario). AI simulation — hypotheses, not measured user behaviour.",
   "type": "object",
-  "required": ["schemaVersion", "runId", "status", "createdAt", "disclaimer", "persona", "scenario", "target", "environment", "limits", "counters", "steps", "frictionEvents", "outcome", "goalAchieved", "abandonPoint", "dropoffRisk"],
+  "required": [
+    "schemaVersion",
+    "runId",
+    "status",
+    "createdAt",
+    "disclaimer",
+    "persona",
+    "scenario",
+    "target",
+    "environment",
+    "limits",
+    "counters",
+    "steps",
+    "frictionEvents",
+    "outcome",
+    "goalAchieved",
+    "abandonPoint",
+    "dropoffRisk"
+  ],
   "definitions": {
-    "stepRef": { "type": "integer", "minimum": 0 },
-    "frictionType": { "enum": ["bug", "ux_confusion", "onboarding", "discoverability", "motivation", "content_gap", "performance", "trust_privacy", "copy"] },
-    "feeling": { "enum": ["confused", "frustrated", "bored", "neutral", "curious", "delighted"] },
+    "stepRef": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "frictionType": {
+      "enum": [
+        "bug",
+        "ux_confusion",
+        "onboarding",
+        "discoverability",
+        "motivation",
+        "content_gap",
+        "performance",
+        "trust_privacy",
+        "copy"
+      ]
+    },
+    "feeling": {
+      "enum": [
+        "confused",
+        "frustrated",
+        "bored",
+        "neutral",
+        "curious",
+        "delighted"
+      ]
+    },
     "severity": {
-      "type": "integer", "minimum": 1, "maximum": 4,
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4,
       "description": "1 minor (noticed, did not slow me) · 2 moderate (slowed me / hesitation, recovered) · 3 major (real confusion, wrong path, nearly gave up) · 4 blocker (could not continue / would leave the app here)"
     },
     "hypothesis": {
       "type": "object",
-      "required": ["kind", "level", "rationale", "basis"],
+      "required": [
+        "kind",
+        "level",
+        "rationale",
+        "basis"
+      ],
       "properties": {
-        "kind": { "const": "hypothesis" },
-        "level": { "enum": ["low", "medium", "high"] },
-        "rationale": { "type": "string", "minLength": 1 },
-        "basis": { "type": "array", "items": { "$ref": "#/definitions/stepRef" } },
-        "source": { "enum": ["persona-agent", "harness-heuristic"] }
+        "kind": {
+          "const": "hypothesis"
+        },
+        "level": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "basis": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/stepRef"
+          }
+        },
+        "source": {
+          "enum": [
+            "persona-agent",
+            "harness-heuristic"
+          ]
+        }
       },
-      "not": { "anyOf": [{ "required": ["percent"] }, { "required": ["rate"] }, { "required": ["probability"] }] },
+      "not": {
+        "anyOf": [
+          {
+            "required": [
+              "percent"
+            ]
+          },
+          {
+            "required": [
+              "rate"
+            ]
+          },
+          {
+            "required": [
+              "probability"
+            ]
+          }
+        ]
+      },
       "additionalProperties": false
     },
     "element": {
-      "type": ["object", "null"],
-      "properties": { "id": { "type": "integer" }, "role": { "type": "string" }, "name": { "type": ["string", "null"] }, "icon": { "type": ["string", "null"] } }
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "role": {
+          "type": "string"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "icon": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
     }
   },
   "properties": {
-    "schemaVersion": { "const": 1 },
-    "runId": { "type": "string", "pattern": "^[\\w.-]+$" },
-    "status": { "enum": ["running", "finished"] },
-    "createdAt": { "type": "string" },
-    "finishedAt": { "type": ["string", "null"] },
-    "disclaimer": { "type": "string", "pattern": "hypothes" },
+    "schemaVersion": {
+      "const": 1
+    },
+    "runId": {
+      "type": "string",
+      "pattern": "^[\\w.-]+$"
+    },
+    "status": {
+      "enum": [
+        "running",
+        "finished"
+      ]
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "finishedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "disclaimer": {
+      "type": "string",
+      "pattern": "hypothes"
+    },
     "persona": {
       "type": "object",
-      "required": ["id", "name", "age", "techFamiliarity", "language", "device", "patience", "backstory", "quitsWhen"],
+      "required": [
+        "id",
+        "name",
+        "age",
+        "techFamiliarity",
+        "language",
+        "device",
+        "patience",
+        "backstory",
+        "quitsWhen"
+      ],
       "properties": {
-        "id": { "type": "string" }, "name": { "type": "string" }, "age": { "type": "integer", "minimum": 13 },
-        "techFamiliarity": { "enum": ["low", "medium", "high"] },
-        "device": { "type": "object", "required": ["type", "viewport"], "properties": { "type": { "enum": ["phone", "desktop", "tablet"] }, "viewport": { "type": "object", "required": ["width", "height"] } } },
-        "patience": { "type": "object", "required": ["maxSteps", "frustrationThreshold", "confusionTolerance", "timeBudgetSec"] }
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer",
+          "minimum": 13
+        },
+        "techFamiliarity": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "device": {
+          "type": "object",
+          "required": [
+            "type",
+            "viewport"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "phone",
+                "desktop",
+                "tablet"
+              ]
+            },
+            "viewport": {
+              "type": "object",
+              "required": [
+                "width",
+                "height"
+              ]
+            }
+          }
+        },
+        "patience": {
+          "type": "object",
+          "required": [
+            "maxSteps",
+            "frustrationThreshold",
+            "confusionTolerance",
+            "timeBudgetSec"
+          ]
+        }
       }
     },
-    "scenario": { "type": "object", "required": ["id", "goal", "startUrl", "success"] },
+    "scenario": {
+      "type": "object",
+      "required": [
+        "id",
+        "goal",
+        "startUrl",
+        "success"
+      ]
+    },
     "target": {
       "type": "object",
-      "required": ["mode", "baseUrl", "liveGuard"],
+      "required": [
+        "mode",
+        "baseUrl",
+        "liveGuard"
+      ],
       "properties": {
-        "mode": { "enum": ["local", "live", "custom"] },
-        "baseUrl": { "type": "string" },
-        "liveGuard": { "type": "object", "required": ["enabled"] }
+        "mode": {
+          "enum": [
+            "local",
+            "live",
+            "custom"
+          ]
+        },
+        "baseUrl": {
+          "type": "string"
+        },
+        "liveGuard": {
+          "type": "object",
+          "required": [
+            "enabled"
+          ]
+        }
       }
     },
-    "environment": { "type": "object", "required": ["knownLimits", "viewport"] },
-    "limits": { "type": "object", "required": ["maxSteps", "frustrationThreshold", "confusionTolerance", "timeBudgetSec", "weights"] },
-    "counters": { "type": "object", "required": ["actions", "frustration", "confusionNotes", "simTimeSec"] },
+    "environment": {
+      "type": "object",
+      "required": [
+        "knownLimits",
+        "viewport"
+      ]
+    },
+    "limits": {
+      "type": "object",
+      "required": [
+        "maxSteps",
+        "frustrationThreshold",
+        "confusionTolerance",
+        "timeBudgetSec",
+        "weights"
+      ]
+    },
+    "counters": {
+      "type": "object",
+      "required": [
+        "actions",
+        "frustration",
+        "confusionNotes",
+        "simTimeSec"
+      ]
+    },
     "steps": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["index", "at", "kind", "command"],
+        "required": [
+          "index",
+          "at",
+          "kind",
+          "command"
+        ],
         "properties": {
-          "index": { "$ref": "#/definitions/stepRef" },
-          "kind": { "enum": ["start", "observe", "action", "note", "finish"] },
-          "command": { "type": "string" },
-          "urlBefore": { "type": ["string", "null"] },
-          "urlAfter": { "type": ["string", "null"] },
-          "latencyMs": { "type": "integer", "minimum": 0 },
-          "screenshot": { "type": "string" },
-          "annotatedScreenshot": { "type": "string" },
-          "target": { "type": "object" },
-          "intent": { "type": "object", "required": ["expectedOutcome"], "properties": { "expectedOutcome": { "type": "string" }, "confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 } } },
-          "reflection": { "type": "object", "required": ["mismatch"], "properties": { "mismatch": { "type": "boolean" } } },
-          "consoleErrors": { "type": "array", "items": { "type": "string" } },
-          "failedRequests": { "type": "array", "items": { "type": "object", "required": ["url", "status"] } },
-          "blockedRequests": { "type": "array" },
-          "signals": { "type": "array", "items": { "type": "object", "required": ["type", "weight"], "properties": { "type": { "enum": ["failed", "no_effect", "repeated", "backtrack", "mismatch"] } } } },
-          "feeling": { "$ref": "#/definitions/feeling" }
+          "index": {
+            "$ref": "#/definitions/stepRef"
+          },
+          "kind": {
+            "enum": [
+              "start",
+              "observe",
+              "action",
+              "note",
+              "finish"
+            ]
+          },
+          "command": {
+            "type": "string"
+          },
+          "urlBefore": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "urlAfter": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "latencyMs": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "screenshot": {
+            "type": "string"
+          },
+          "annotatedScreenshot": {
+            "type": "string"
+          },
+          "target": {
+            "type": "object"
+          },
+          "intent": {
+            "type": "object",
+            "required": [
+              "expectedOutcome"
+            ],
+            "properties": {
+              "expectedOutcome": {
+                "type": "string"
+              },
+              "confidence": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          },
+          "reflection": {
+            "type": "object",
+            "required": [
+              "mismatch"
+            ],
+            "properties": {
+              "mismatch": {
+                "type": "boolean"
+              }
+            }
+          },
+          "consoleErrors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "failedRequests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "url",
+                "status"
+              ]
+            }
+          },
+          "blockedRequests": {
+            "type": "array"
+          },
+          "signals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "type",
+                "weight"
+              ],
+              "properties": {
+                "type": {
+                  "enum": [
+                    "failed",
+                    "no_effect",
+                    "repeated",
+                    "backtrack",
+                    "mismatch"
+                  ]
+                }
+              }
+            }
+          },
+          "feeling": {
+            "$ref": "#/definitions/feeling"
+          }
         }
       }
     },
@@ -90,40 +425,292 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "step", "type", "severity", "quote", "route", "evidence", "environmentLimited"],
+        "required": [
+          "id",
+          "step",
+          "type",
+          "severity",
+          "quote",
+          "route",
+          "evidence",
+          "environmentLimited"
+        ],
         "properties": {
-          "id": { "type": "string" },
-          "step": { "$ref": "#/definitions/stepRef" },
-          "type": { "$ref": "#/definitions/frictionType" },
-          "severity": { "$ref": "#/definitions/severity" },
-          "feeling": { "$ref": "#/definitions/feeling" },
-          "quote": { "type": "string", "minLength": 1 },
-          "route": { "type": "string" },
-          "element": { "$ref": "#/definitions/element" },
-          "evidence": { "type": "array", "items": { "type": "string" } },
-          "environmentLimited": { "type": "boolean" },
-          "environmentLimitedReason": { "type": ["string", "null"] },
-          "environmentCaveat": { "type": ["string", "null"] }
+          "id": {
+            "type": "string"
+          },
+          "step": {
+            "$ref": "#/definitions/stepRef"
+          },
+          "type": {
+            "$ref": "#/definitions/frictionType"
+          },
+          "severity": {
+            "$ref": "#/definitions/severity"
+          },
+          "feeling": {
+            "$ref": "#/definitions/feeling"
+          },
+          "quote": {
+            "type": "string",
+            "minLength": 1
+          },
+          "route": {
+            "type": "string"
+          },
+          "element": {
+            "$ref": "#/definitions/element"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "environmentLimited": {
+            "type": "boolean"
+          },
+          "environmentLimitedReason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "environmentCaveat": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         }
       }
     },
-    "autoChecks": { "type": "array" },
-    "outcome": { "enum": ["success", "false_success", "abandoned", "failed", "timeout", null] },
-    "reportedOutcome": { "enum": ["success", "abandoned", "failed", "timeout", null] },
-    "outcomeReason": { "type": ["string", "null"] },
-    "endedBy": { "type": ["string", "null"] },
-    "goalAchieved": { "type": "boolean" },
-    "goalFirstMetAtStep": { "type": ["integer", "null"] },
-    "stepsToGoal": { "type": ["integer", "null"] },
-    "falseSuccess": { "type": "boolean" },
-    "abandonPoint": {
-      "oneOf": [
-        { "type": "null" },
-        { "type": "object", "required": ["step", "screenshot"], "properties": { "step": { "$ref": "#/definitions/stepRef" }, "screenshot": { "type": ["string", "null"] } } }
+    "autoChecks": {
+      "type": "array"
+    },
+    "outcome": {
+      "enum": [
+        "success",
+        "false_success",
+        "abandoned",
+        "failed",
+        "timeout",
+        null
       ]
     },
-    "dropoffRisk": { "oneOf": [{ "type": "null" }, { "$ref": "#/definitions/hypothesis" }] }
+    "reportedOutcome": {
+      "enum": [
+        "success",
+        "abandoned",
+        "failed",
+        "timeout",
+        null
+      ]
+    },
+    "outcomeReason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "endedBy": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "persona | harness:frustration | harness:max_steps | harness:time_budget | harness:patience | harness:idle | harness:killed | harness:setup_error"
+    },
+    "goalAchieved": {
+      "type": "boolean"
+    },
+    "goalFirstMetAtStep": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "stepsToGoal": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "falseSuccess": {
+      "type": "boolean"
+    },
+    "abandonPoint": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "step",
+            "screenshot"
+          ],
+          "properties": {
+            "step": {
+              "$ref": "#/definitions/stepRef"
+            },
+            "screenshot": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "dropoffRisk": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/hypothesis"
+        }
+      ]
+    },
+    "auth": {
+      "type": "object",
+      "required": [
+        "mode"
+      ],
+      "description": "How the persona was signed in. fresh = a brand-new real (non-sample, e-mail-verified) account registered through the app's API before the persona started; demo = the shared sample account; none = signed out. Runs before 2026-11-02 have no auth block (they used scenario.setup.auth).",
+      "properties": {
+        "mode": {
+          "enum": [
+            "fresh",
+            "demo",
+            "none"
+          ]
+        },
+        "userId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "email": {
+          "type": "string"
+        },
+        "sample": {
+          "type": "boolean"
+        },
+        "emailVerified": {
+          "type": "boolean"
+        },
+        "profile": {
+          "type": "object"
+        },
+        "peers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "userId",
+              "nickname"
+            ]
+          }
+        }
+      },
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "fresh"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "mode",
+          "userId",
+          "email",
+          "sample",
+          "emailVerified"
+        ],
+        "properties": {
+          "sample": {
+            "const": false
+          },
+          "emailVerified": {
+            "const": true
+          }
+        }
+      }
+    },
+    "harness": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "hash": {
+          "type": "string"
+        },
+        "commit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dirty": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "goalEvidence": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "what satisfied the success check first, at which step (never the start screen)",
+      "properties": {
+        "step": {
+          "type": "integer"
+        },
+        "matched": {
+          "type": "array"
+        }
+      }
+    },
+    "patienceExhaustedAtStep": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "actionsAfterPatienceExhausted": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "overrodePatience": {
+      "type": "boolean",
+      "description": "the persona acted after the harness said its patience was exhausted (one action is allowed to finish a goal; a second ends the run)"
+    }
   },
-  "if": { "properties": { "status": { "const": "finished" } } },
-  "then": { "properties": { "outcome": { "not": { "const": null } }, "dropoffRisk": { "$ref": "#/definitions/hypothesis" } } }
+  "if": {
+    "properties": {
+      "status": {
+        "const": "finished"
+      }
+    }
+  },
+  "then": {
+    "properties": {
+      "outcome": {
+        "not": {
+          "const": null
+        }
+      },
+      "dropoffRisk": {
+        "$ref": "#/definitions/hypothesis"
+      }
+    }
+  }
 }

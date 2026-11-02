@@ -1,23 +1,27 @@
 {
   "id": "timetable-add-classes",
   "title": "Put my classes into my timetable",
-  "goal": "You want the app to know your schedule so it can show who's free when you are. Add MATH 1A (Calculus) to your timetable in the app.",
+  "goal": "You want the app to know your schedule so it can show who's free when you are. Add your calculus class — Calculus I, which you know as MATH 1A — to your timetable in the app.",
   "startUrl": "/",
   "setup": {
-    "auth": "demo",
-    "school": "berkeley"
+    "auth": "fresh",
+    "notes": "Fresh account with an empty timetable. Berkeley renumbered MATH 1A to MATH 51 (\"formerly MATH 1A\"); the real catalog (local-stack catalog fetch) has MATH 51, the built-in sample has MATH 1A — the check accepts either."
   },
   "success": {
-    "description": "MATH 1A shows up in the timetable grid (checked on /timetable with no search sheet open).",
+    "description": "The persona's own timetable (server-side) gained Calculus I (MATH 51 / MATH 1A) during the run.",
     "all": [
       {
-        "urlMatches": "^/timetable"
-      },
-      {
-        "textMatches": "MATH 1A"
-      },
-      {
-        "textAbsent": "Find in course catalog"
+        "record": {
+          "collection": "users",
+          "where": {
+            "id": "$me",
+            "timetable": {
+              "re": "MATH ?(1A|51)\\b|Calculus I\\b"
+            }
+          },
+          "fresh": "changed",
+          "description": "Calculus I is in my saved timetable"
+        }
       }
     ]
   },

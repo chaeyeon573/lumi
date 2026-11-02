@@ -8,13 +8,75 @@
     "notes": "Fresh account: sample profiles are shown only to demo accounts, so a new real user sees what a real first-week student sees (cold start)."
   },
   "success": {
-    "description": "Signed up AND joined/requested a plan or sent a friend request / message to someone.",
+    "description": "Signed up during the run AND, as that new account, joined/requested a plan, hosted one, sent a friend request or sent a chat message.",
+    "all": [
+      {
+        "record": {
+          "collection": "users",
+          "where": {
+            "id": "$me"
+          },
+          "fresh": "created",
+          "description": "the account the browser is signed in to was created during this run"
+        }
+      }
+    ],
     "any": [
       {
-        "textMatches": "You're in|You’re in|Joined · Leave|Request sent|Requested"
+        "record": {
+          "collection": "participations",
+          "where": {
+            "userId": "$me"
+          },
+          "description": "joined or asked to join a plan"
+        }
       },
       {
-        "urlMatches": "^/chats/[^/?]+"
+        "record": {
+          "collection": "activities",
+          "where": {
+            "hostId": "$me"
+          },
+          "description": "posted a plan"
+        }
+      },
+      {
+        "record": {
+          "collection": "relationships.friendRequests",
+          "where": {
+            "fromId": "$me"
+          },
+          "description": "sent a friend request"
+        }
+      },
+      {
+        "record": {
+          "collection": "timePolls",
+          "where": {
+            "hostId": "$me"
+          },
+          "description": "started a when-are-you-free poll"
+        }
+      },
+      {
+        "record": {
+          "collection": "chatRooms",
+          "where": {
+            "memberIds": {
+              "has": "$me"
+            },
+            "messages": {
+              "some": {
+                "senderId": "$me",
+                "system": {
+                  "exists": false
+                }
+              }
+            }
+          },
+          "fresh": "changed",
+          "description": "sent a chat message"
+        }
       }
     ]
   },

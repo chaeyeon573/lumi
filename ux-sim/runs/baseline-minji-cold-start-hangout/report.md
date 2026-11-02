@@ -8,6 +8,7 @@
 | Scenario | **Brand-new account: find someone on campus to hang out with this week** — You just heard about this app and want someone on campus to hang out with this week. Make an account with your school e-mail, then use the app to find a person or plan you could join this week and tell them you're in. (`cold-start-hangout`) |
 | Target | local · http://localhost:40213 · worktree commit `60c0cc288e13` |
 | Outcome | **abandoned** · ended by persona |
+| Account | signed out at start |
 | Goal check (fixed, by harness) | not met — _Signed up AND joined/requested a plan or sent a friend request / message to someone._ |
 | Persona's reason | “9단계나 다 하고 계정 만들었는데 People은 텅 비었고, Discover엔 해커톤만, Food & café는 'No upcoming activities'. 같이 밥 먹을 사람이나 약속이 하나도 없어서 그만둠.” |
 | Effort | 27/40 actions · objective frustration 4.50/4.5 · 5 confused note(s) · ~57s simulated |

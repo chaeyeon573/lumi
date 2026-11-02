@@ -5,6 +5,24 @@
   "year": "Senior",
   "school": "UC Berkeley",
   "major": "History",
+  "account": {
+    "$comment": "Profile for auth: fresh — the harness registers this account through the app's own sign-up API (lib/account.mjs). nickname defaults to name, birthYear to this year − age.",
+    "nickname": "Marcus",
+    "department": "History",
+    "yearInSchool": 4,
+    "goals": [
+      "internship"
+    ],
+    "interests": [
+      "walk"
+    ],
+    "purposes": [
+      "networking"
+    ],
+    "lookingFor": [
+      "senior"
+    ]
+  },
   "purpose": "Find a paid internship or job lead near Berkeley for after graduation; skeptical of new apps.",
   "techFamiliarity": "low",
   "readingDepth": 0.7,

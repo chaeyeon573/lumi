@@ -5,6 +5,28 @@
   "year": "Junior (transfer from Laney College)",
   "school": "UC Berkeley",
   "major": "Civil Engineering",
+  "account": {
+    "$comment": "Profile for auth: fresh — the harness registers this account through the app's own sign-up API (lib/account.mjs). nickname defaults to name, birthYear to this year − age.",
+    "nickname": "Diego",
+    "department": "Civil Engineering",
+    "yearInSchool": 3,
+    "goals": [
+      "friends",
+      "lunch"
+    ],
+    "interests": [
+      "study",
+      "meal"
+    ],
+    "purposes": [
+      "study",
+      "friend"
+    ],
+    "lookingFor": [
+      "study_partner",
+      "friend"
+    ]
+  },
   "purpose": "Find study partners for his classes and a cheap way to get places — he commutes from Oakland and has no car.",
   "techFamiliarity": "medium",
   "readingDepth": 0.5,

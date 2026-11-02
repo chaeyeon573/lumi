@@ -1,0 +1,749 @@
+{
+  "schemaVersion": 1,
+  "kind": "ux-sim-analysis",
+  "date": "2026-11-02",
+  "generatedAt": "2026-11-02T07:08:19.741988Z",
+  "author": "orchestrating Claude session (harness-improvement pass, https://claude.ai/code/session_01Fy5mmf17fdkKuHwrxbkNpM) — curated from the pilot's findings.json and run reports",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "sources": {
+    "findings": "ux-sim/reports/2026-11-02/findings.json",
+    "runs": [
+      "baseline-aisha-find-a-club",
+      "baseline-diego-lunch-today",
+      "baseline-marcus-first-open-decide",
+      "baseline-minji-cold-start-hangout",
+      "baseline-minji-timetable-add-classes",
+      "baseline-priya-internship-near-berkeley",
+      "baseline-seoyeon-ride-sfo-thanksgiving",
+      "smoke-minji-lunch-today"
+    ],
+    "harness": null,
+    "appCommits": [
+      "60c0cc288e13",
+      "f1e3d87f2f23-dirty-1f8877b9"
+    ]
+  },
+  "problems": [
+    {
+      "key": "first-screen-reads-as-dating",
+      "title": "The first screen looks like a dating app: one big face photo and an \"I'm in\" button",
+      "summary": "Six of the seven personas opened the app and their first reaction was \"is this a dating app?\" — a full-height photo of one person with name and age, and a lime \"I'm in\" button, whatever they came for (clubs, internships, rides, lunch).",
+      "rootCauseHypothesis": "The signed-in home is a single swipe card centred on a person (photo, name, age) rather than on the plan; the plan title is secondary text. Nothing on the screen says it is about plans with classmates.",
+      "severity": 3,
+      "confidence": "high",
+      "frictionTypes": [
+        "trust_privacy",
+        "ux_confusion"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious",
+        "diego-transfer-commuter",
+        "priya-phd-desktop",
+        "seoyeon-exchange-korean",
+        "minji-freshman-17",
+        "marcus-senior-lowtech"
+      ],
+      "scenarios": [
+        "find-a-club",
+        "lunch-today",
+        "internship-near-berkeley",
+        "ride-sfo-thanksgiving",
+        "timetable-add-classes",
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "step": 0,
+          "quote": "Wait, the first thing I see is a big photo of a stranger named Maya and an 'I'm in' button. I came to find a club… is this a dating thing? I don't want to accidentally tap 'I'm in' and sign up for coffee with someone I don't know."
+        },
+        {
+          "runId": "baseline-diego-lunch-today",
+          "step": 0,
+          "quote": "OK, a big face photo first thing. Coffee tomorrow at 6 isn't lunch today. Is this a dating thing or a plans thing? I just want lunch people."
+        },
+        {
+          "runId": "baseline-priya-internship-near-berkeley",
+          "step": 0,
+          "quote": "I'm on a 1440px laptop and I get a phone-width column with a giant face photo and an 'I'm in' button. Is this a dating app? I came for internships."
+        },
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "step": 0,
+          "quote": "어... 큰 얼굴 사진? 데이트 앱인가? 공항 가는 차 찾으려고 왔는데 커피 약속이 나와요. 영어만 있고... 한국어 설정 어디 있지?"
+        },
+        {
+          "runId": "smoke-minji-lunch-today",
+          "step": 0,
+          "quote": "헐 big face photo… is this a dating app? And 'I'm in' — in what, coffee with Maya or matching with her?"
+        },
+        {
+          "runId": "baseline-minji-timetable-add-classes",
+          "step": 0,
+          "quote": "헐 첫 화면이 큰 얼굴 사진에 'Maya 24'... 데이팅앱이야? 나 시간표 넣으러 온 건데 어디서 하지"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": "Pilot runs used the shared demo account, so the face was a sample profile (Maya). The layout is the same for real accounts — re-check with auth: fresh runs.",
+      "suggestedFix": "Lead the card with the plan (\"Lunch at Crossroads · today 12:30 · 3 spots\") and make the person secondary (smaller avatar, no age on the card); show 2–3 plans as a list on first open instead of one full-screen face.",
+      "fingerprints": [
+        "0ad866e92107",
+        "b4fb9cc452bd",
+        "518c68aff2a6"
+      ]
+    },
+    {
+      "key": "im-in-unclear-what-and-where",
+      "title": "After \"I'm in\" it is unclear what you joined and where its chat is",
+      "summary": "Personas tapped \"I'm in\" without knowing whether it joins a plan or matches with the person; afterwards the button turns into \"Joined · Leave\" (does tapping again leave?) and the promised group chat is hidden under Messages → Activities.",
+      "rootCauseHypothesis": "The button names an attitude, not an action on a thing; the success toast points to a chat that is not on screen and has no direct link.",
+      "severity": 3,
+      "confidence": "medium",
+      "frictionTypes": [
+        "discoverability",
+        "ux_confusion"
+      ],
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "lunch-today"
+      ],
+      "evidence": [
+        {
+          "runId": "smoke-minji-lunch-today",
+          "step": 0,
+          "quote": "헐 big face photo… is this a dating app? And 'I'm in' — in what, coffee with Maya or matching with her?"
+        },
+        {
+          "runId": "smoke-minji-lunch-today",
+          "step": 2,
+          "quote": "뭐지… where is the group chat? and the button now says 'Joined · Leave' — if I tap it again do I leave??"
+        },
+        {
+          "runId": "smoke-minji-lunch-today",
+          "step": 6,
+          "quote": "oh there it is, under Activities. took me a while"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Name the action with the plan (\"Join lunch\"), keep the joined state as a non-destructive label with a separate Leave, and put an \"Open chat\" button on the card/toast.",
+      "fingerprints": [
+        "7550a9defad6",
+        "6a00d05d782f"
+      ]
+    },
+    {
+      "key": "cold-start-nobody-here",
+      "title": "A brand-new account finds nobody to meet and is pushed to create plans itself",
+      "summary": "After a 9-step sign-up the fresh account saw empty People/Discover screens; the only offers were \"Invite friends\", hackathons and \"Create activity\". The 17-year-old persona quit rather than invite strangers first.",
+      "rootCauseHypothesis": "Sample profiles are (correctly) hidden from real accounts, and there is no fallback content for an empty campus: no public campus events, no 'people who also want lunch' signal, no low-pressure first step.",
+      "severity": 4,
+      "confidence": "high",
+      "frictionTypes": [
+        "content_gap",
+        "motivation"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "cold-start-hangout",
+        "lunch-today"
+      ],
+      "evidence": [
+        {
+          "runId": "baseline-minji-cold-start-hangout",
+          "step": 43,
+          "quote": "역시 없음. 내가 만들라고? 17살 신입이 모르는 사람들한테 먼저 밥 먹자고 하는 거 너무 어색해. 그만할래"
+        },
+        {
+          "runId": "baseline-minji-cold-start-hangout",
+          "step": 37,
+          "quote": "헐 아무도 없어. 9단계 다 했는데 빈 화면... 초대할 친구가 없어서 이 앱 깐 건데"
+        },
+        {
+          "runId": "baseline-minji-cold-start-hangout",
+          "step": 41,
+          "quote": "해커톤...? 난 밥 같이 먹을 사람 찾는 건데. 'Food & café' 하나만 더 눌러보고 없으면 끝"
+        },
+        {
+          "runId": "baseline-diego-lunch-today",
+          "step": 10,
+          "quote": "Empty. And '7 friends'? I don't have friends on here, those are sample people. Nobody's actually around. Fine, Instant meetup is right there, I'll give it one shot."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": "Local stack has no other real students; live has some. The empty state itself is real for any new campus or quiet hour.",
+      "suggestedFix": "For empty campuses show low-pressure, real things first (campus events, club tables, 'n students want lunch buddies this week — tap to be counted'), and make 'host' a one-tap templated plan rather than the default answer.",
+      "fingerprints": [
+        "835a3b1ce765",
+        "67ca16898d6c",
+        "05ee6a888ab7",
+        "0ba11b71e564"
+      ]
+    },
+    {
+      "key": "signup-asks-too-much-too-early",
+      "title": "Sign-up asks nine personal questions (hobbies, birth year) before showing anything",
+      "summary": "Personas hit a 1/9 progress bar and personality-style questions (\"your perfect free afternoon\") before seeing any people or content; birth year has no explanation of who sees it; the internship-minded senior could not skip.",
+      "rootCauseHypothesis": "The quiz front-loads recommendation inputs; the value (people, plans) is shown only after the last step, and visibility of each answer is not stated.",
+      "severity": 3,
+      "confidence": "medium",
+      "frictionTypes": [
+        "onboarding",
+        "trust_privacy"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "marcus-senior-lowtech"
+      ],
+      "scenarios": [
+        "cold-start-hangout",
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "baseline-minji-cold-start-hangout",
+          "step": 2,
+          "quote": "학교 고르기 ok, 근데 1/9?? 9단계나... 아 귀찮아"
+        },
+        {
+          "runId": "baseline-minji-cold-start-hangout",
+          "step": 12,
+          "quote": "4/9... 성격 테스트야 뭐야. 친구 찾으려고 왔는데 아직 아무 사람도 못 봄"
+        },
+        {
+          "runId": "baseline-marcus-first-open-decide",
+          "step": 9,
+          "quote": "Your perfect free afternoon? Long walks? This is a dating profile question. I said I want an internship, why does it need my hobbies? And I can't skip it, Next is grayed out."
+        },
+        {
+          "runId": "baseline-minji-cold-start-hangout",
+          "step": 25,
+          "quote": "birth year 왜 필요해? 내가 17살인 거 다른 사람이 보면 좀... 누가 보는 건지 안 써있음"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Ask school + e-mail + name first and land in the app; collect interests later in context. Say next to birth year who sees it (\"only your age range, never the year\") and allow skipping the vibe questions.",
+      "fingerprints": [
+        "97dda824b2fb",
+        "94527b529e80",
+        "e2f05b7465c0"
+      ]
+    },
+    {
+      "key": "instant-meetup-is-a-full-form",
+      "title": "\"Instant meetup\" opens a full event form",
+      "summary": "The lunch persona chose \"Instant meetup\" expecting a one-tap \"lunch in 20 minutes\" and got title, description, colour, capacity and date fields.",
+      "rootCauseHypothesis": "Instant meetup reuses the generic create-activity form with every field visible.",
+      "severity": 3,
+      "confidence": "medium",
+      "frictionTypes": [
+        "onboarding"
+      ],
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "lunch-today"
+      ],
+      "evidence": [
+        {
+          "runId": "baseline-diego-lunch-today",
+          "step": 12,
+          "quote": "'Instant'? This is a whole event form. Title, description, color, capacity... and it says 11 PM? I want lunch in 20 minutes. I don't have time for this, and nobody's even on here to see it."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": "The persona also objected to an 11 PM default start — correct, because the pilot ran at 23:00 Pacific; only the form length is the finding.",
+      "suggestedFix": "A 3-field quick form: what (lunch / coffee / study chips), when (now / in 30 min / at 12:30), where (recent places); everything else defaulted and editable after posting.",
+      "fingerprints": [
+        "19ddc8a230f0"
+      ]
+    },
+    {
+      "key": "floating-pills-cover-buttons",
+      "title": "The floating Design/Feedback pills cover real buttons",
+      "summary": "On a phone the 'Design: Classic / New' and 'Feedback' pills sit on top of 'Edit timetable' and 'My rides', so only part of the label shows.",
+      "rootCauseHypothesis": "Fixed-position pills without reserved space at the bottom of screens that end with a button.",
+      "severity": 2,
+      "confidence": "high",
+      "frictionTypes": [
+        "bug"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "seoyeon-exchange-korean"
+      ],
+      "scenarios": [
+        "timetable-add-classes",
+        "ride-sfo-thanksgiving"
+      ],
+      "evidence": [
+        {
+          "runId": "baseline-minji-timetable-add-classes",
+          "step": 2,
+          "quote": "아래 'Edit timetable' 버튼이 Design/Feedback 버튼에 가려져서 글자가 'timetable'만 보여"
+        },
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "step": 12,
+          "quote": "'My rides' 버튼 위에 'Design: Classic New' 같은 게 겹쳐서 가려져 있어요."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Reserve bottom padding equal to the pills' height on every screen, or move the pills into Settings/Me for real accounts.",
+      "fingerprints": [
+        "804158f27f39",
+        "39327c8d79c3"
+      ]
+    },
+    {
+      "key": "career-content-buried",
+      "title": "Career content is hard to find and 'Campus' / back navigation mislead",
+      "summary": "The PhD persona looked for internships under Discover (rides, hangouts), found 'Campus' to be a feed, and Back from a filtered list threw her out of the section.",
+      "rootCauseHypothesis": "Opportunities live under Campus → Browse → Internships with no entry point named for careers; Back pops the section instead of the filter.",
+      "severity": 2,
+      "confidence": "medium",
+      "frictionTypes": [
+        "bug",
+        "copy",
+        "discoverability"
+      ],
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "evidence": [
+        {
+          "runId": "baseline-priya-internship-near-berkeley",
+          "step": 3,
+          "quote": "'Done with classes', Costco rides, spontaneous hangouts. This is an undergrad social app. Where would career stuff even live?"
+        },
+        {
+          "runId": "baseline-priya-internship-near-berkeley",
+          "step": 5,
+          "quote": "'Campus' is a gossip feed, not campus resources. Label is misleading. Maybe 'Browse' has the actual directory."
+        },
+        {
+          "runId": "baseline-priya-internship-near-berkeley",
+          "step": 16,
+          "quote": "Back took me out of the whole section. Now I have to click through Campus, Browse, Internships again. Sloppy."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Add a visible 'Internships & funding' entry (home chip or Campus tab), and keep filters in the URL so Back returns to the list.",
+      "fingerprints": [
+        "b9d1ee526d80",
+        "c95418137653",
+        "47e37bf98fc5"
+      ]
+    },
+    {
+      "key": "desktop-phone-column",
+      "title": "On a laptop the app is a phone-width column floating in black",
+      "summary": "The desktop persona saw a 390 px column on a 1440 px screen and read it as unfinished.",
+      "rootCauseHypothesis": "The web app renders the mobile shell at all widths.",
+      "severity": 2,
+      "confidence": "medium",
+      "frictionTypes": [
+        "motivation"
+      ],
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "evidence": [
+        {
+          "runId": "baseline-priya-internship-near-berkeley",
+          "step": 0,
+          "quote": "Phone layout floating in black on my laptop. Not a great sign, but I'll give it a minute."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "At ≥ 1024 px widen lists into two columns (or at least frame the column with useful side content such as deadlines).",
+      "fingerprints": [
+        "4d28c4b04f0f"
+      ]
+    },
+    {
+      "key": "club-tap-silent",
+      "title": "Tapping a club in the list did nothing visible",
+      "summary": "The anxious first-year tapped the Running Club card, nothing opened and no message appeared, and she worried she had joined by accident.",
+      "rootCauseHypothesis": "Either the card's tap handler did not navigate, or the tap landed on a nested control (save/bookmark) inside the card that changed state without feedback — the screen changed a little but no page opened.",
+      "severity": 3,
+      "confidence": "low",
+      "frictionTypes": [
+        "bug"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "find-a-club"
+      ],
+      "evidence": [
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "step": 22,
+          "note": "click on the Running Club card: URL unchanged, harness recorded a mismatch but no no-effect signal (something on screen changed)"
+        },
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "step": 23,
+          "quote": "Wait, did that do something? Nothing opened. Did I just join it by accident?? There's no message either way. That's exactly what makes me nervous."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Reproduce from run baseline-aisha-find-a-club step 22; make the whole card open the club page, give nested controls their own visible feedback, and never change membership from a list tap.",
+      "fingerprints": [
+        "629b9d57dee9"
+      ]
+    },
+    {
+      "key": "club-join-status-unclear",
+      "title": "Club pages don't say plainly whether and how you can join",
+      "summary": "'Not recruiting' next to 'Ask to join', an empty Events tab that talks as if you run the club, and two 'Clubs' buttons left the persona unsure if she was too late or allowed to show up.",
+      "rootCauseHypothesis": "Recruiting status, join policy and the empty-state copy are written for club officers, not for prospective members.",
+      "severity": 3,
+      "confidence": "medium",
+      "frictionTypes": [
+        "content_gap",
+        "copy",
+        "motivation",
+        "ux_confusion"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "find-a-club"
+      ],
+      "evidence": [
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "step": 28,
+          "quote": "Wait, so they're not recruiting… but I can ask to join? Does that mean I'm too late for this year? Or that it's open anyway? I really don't want to send a request to a club that's closed and look dumb."
+        },
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "step": 26,
+          "quote": "Oh good, this is the page. Group runs Tue/Thu at 5pm — that sounds like I could just show up? But then why is it 'Ask to join'… does that mean I have to apply? Would it message someone? And 'Unverified' — is this even the real club?"
+        },
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "step": 30,
+          "quote": "No events, but they run twice a week? And 'events you post' — I'm not in charge of this club, why is it talking to me like I am? Members says 3 on Lumi… it feels kind of empty."
+        },
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "step": 17,
+          "quote": "Okay, that worked — though there are two buttons both called 'Clubs' right on top of each other, which threw me for a second. Still mostly consulting and VC stuff at the top. Let me scroll."
+        },
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "step": 6,
+          "quote": "Fraternity rush, sorority 'formal recruitment', and below it 'fall recruiting' for the indie music club… Wait, does that mean every club makes you try out or apply? That's exactly what I was scared of. And 'Go together' with 'Maya going' — would that message Maya?"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "One plain line at the top of every club page: 'Open — just show up Tue/Thu 5pm' / 'Applications closed until spring' / 'Ask to join: the officers reply within N days'; member-facing empty states.",
+      "fingerprints": [
+        "7a02ada3f324",
+        "f8d64b1d499a",
+        "919841c6195c",
+        "52228e162ff2",
+        "046dd034f3ea"
+      ]
+    },
+    {
+      "key": "no-club-search",
+      "title": "There is no way to search clubs by interest or major",
+      "summary": "The Public Health first-year found nothing for health equity in the club list and said she would have searched if there were a search box; the 'For you' picks matched a major she does not have.",
+      "rootCauseHypothesis": "The club list is browse-only (category chips + recommendations); recommendations used the demo account's CS major.",
+      "severity": 2,
+      "confidence": "medium",
+      "frictionTypes": [
+        "discoverability"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "find-a-club"
+      ],
+      "evidence": [
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "step": 20,
+          "quote": "Nothing for Public Health or health equity, which is what I'd have searched for if there was a search box. But 'Berkeley Running Club — casual runners, group runs from Sather Gate' sounds low-pressure. 'Casual' is the word I needed. Let me just open it — I hope tapping the row only opens the page an"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": "Recommendations were for the demo account's major; the missing search box is real.",
+      "suggestedFix": "Add a search field over club names/descriptions/tags at the top of the club list.",
+      "fingerprints": [
+        "70dba2bfe887"
+      ]
+    },
+    {
+      "key": "korean-hard-to-find-and-partial",
+      "title": "Korean is hard to find and parts of the app stay in English",
+      "summary": "The Korean exchange student found the language switch only deep in Settings; after switching, Rides and its banner stayed in English.",
+      "rootCauseHypothesis": "Language lives in Settings only; the Rides screens are missing translations.",
+      "severity": 2,
+      "confidence": "medium",
+      "frictionTypes": [
+        "copy",
+        "discoverability"
+      ],
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "evidence": [
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "step": 12,
+          "quote": "어... 한국어로 바꿨는데 여기는 다 영어예요. 'Thanksgiving break... Split a ride to the airport' 이건 알겠어요. 바로 내 상황! 근데 '±90 min'... 90분 앞뒤로 매칭해준다는 뜻인가?"
+        },
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "step": 10,
+          "quote": "Rides! 자동차 아이콘. 이거다! 근데 'Rides'만 영어로 남아 있네요. OAK는... 오클랜드 공항?"
+        },
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "step": 6,
+          "quote": "한국어로 바뀌었어요! 이제 훨씬 편해요. 근데 언어 설정이 설정 안쪽 깊이 있어서 처음엔 몰랐을 거예요."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Offer the language switch on /welcome (and when the browser locale is ko), and complete the Rides strings.",
+      "fingerprints": [
+        "3767af082cbb",
+        "54cd78cb05b4",
+        "b0c7ae9a3276"
+      ]
+    },
+    {
+      "key": "demo-account-artifacts",
+      "title": "Shared demo account shows someone else's timetable, major, saved items and tags own posts 'Sample'",
+      "summary": "With the demo account personas saw Alex's CS timetable, 'fits your major (Computer Science)', saved items they never saved, sample rides 'made up to show how rides work', and their own new ride tagged Sample.",
+      "rootCauseHypothesis": "The pilot put every signed-in scenario on the shared sample account (auth: demo).",
+      "severity": 3,
+      "confidence": "medium",
+      "frictionTypes": [
+        "bug",
+        "content_gap",
+        "trust_privacy",
+        "ux_confusion"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "aisha-firstgen-anxious",
+        "seoyeon-exchange-korean"
+      ],
+      "scenarios": [
+        "timetable-add-classes",
+        "find-a-club",
+        "ride-sfo-thanksgiving"
+      ],
+      "evidence": [
+        {
+          "runId": "baseline-minji-timetable-add-classes",
+          "step": 2,
+          "quote": "뭐지? 이거 내 시간표 아닌데... CS 169 Capstone? 나 1학년인데. 누구 시간표야"
+        },
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "step": 15,
+          "quote": "Okay, a club list, good. But wait — 'Fits your major (Computer Science)'? I'm Public Health. Where did it get that? And the 'For you' picks are all fraternities and résumé clubs. That's literally the opposite of what I want."
+        },
+        {
+          "runId": "baseline-aisha-find-a-club",
+          "step": 13,
+          "quote": "There's a 'Clubs' button, okay good. But wait — 'Your saved'? I didn't save a scholarship or a lab. Did someone set this up for me? Weird, but I'll ignore it and tap Clubs."
+        },
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "step": 29,
+          "quote": "그리고 내 라이드인데 '예시'랑 'Sample ride — made up to show how rides work'라고 써 있어요. 내 게 진짜로 올라간 거 맞아요? 다른 사람들도 가짜라고 생각할 것 같아요."
+        },
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "step": 15,
+          "quote": "오! 수요일 11월 25일, SFO 두 개 있어요. Lily 9:30am, 30달러씩. 근데 '예시'라고 써 있는데... 진짜 사람이 아니고 예시라는 건가요? 헷갈려요."
+        },
+        {
+          "runId": "baseline-seoyeon-ride-sfo-thanksgiving",
+          "step": 17,
+          "quote": "아... 'made up'? 가짜 예시였어요. 정보는 깔끔한데 진짜 사람이 아니면 같이 못 가요. 진짜 수요일 SFO 가는 사람은 아무도 없는 거네요. 그럼 내가 올려야겠어요."
+        }
+      ],
+      "environmentLimited": true,
+      "environmentNote": "Artifact of the shared demo account, not something a real student sees.",
+      "suggestedFix": "Harness: scenarios now default to auth: fresh (a new real account per run) — re-run these cells; nothing to change in the app.",
+      "fingerprints": [
+        "42a356712fc4",
+        "05a4cd303317",
+        "16221f83094a",
+        "95e8f1e4f9d1",
+        "19b334efe1e1",
+        "678d90435f16"
+      ]
+    },
+    {
+      "key": "welcome-zero-free-food",
+      "title": "Welcome screen advertises '0 free food events this week'",
+      "summary": "Two personas read the zero as 'nobody uses this'.",
+      "rootCauseHypothesis": "The highlight card renders even when the count is zero; locally there are no worker-fetched events.",
+      "severity": 1,
+      "confidence": "medium",
+      "frictionTypes": [
+        "content_gap"
+      ],
+      "personas": [
+        "marcus-senior-lowtech",
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "first-open-decide",
+        "cold-start-hangout"
+      ],
+      "evidence": [
+        {
+          "runId": "baseline-marcus-first-open-decide",
+          "step": 0,
+          "quote": "0 free food events this week. Why show me a zero? Makes it look like nobody uses it."
+        },
+        {
+          "runId": "baseline-minji-cold-start-hangout",
+          "step": 0,
+          "quote": "오 'Find someone for lunch' — 딱 내가 원하는 거. but '0 free food events' 좀 썰렁하고, 'Closes today' 인데 Nov 1? 뭐지. 한국어 옵션은 안 보임."
+        }
+      ],
+      "environmentLimited": true,
+      "environmentNote": "Local stack has only the CSV calendar — free-food events come from the live worker. Confirm the zero on live before acting.",
+      "suggestedFix": "Hide a highlight whose count is 0 (show the next deadline or club count instead). Check on live first.",
+      "fingerprints": [
+        "2535ac3580a9"
+      ]
+    },
+    {
+      "key": "internship-list-thin-locally",
+      "title": "Internship list looked thin and the Bay Area filter returned nothing",
+      "summary": "The EECS PhD saw eight listings, zero software, and zero results for the Bay Area location filter.",
+      "rootCauseHypothesis": "Local stack has only the CSV deadline calendar (no worker-fetched Greenhouse/Lever/Ashby internships), many without a location.",
+      "severity": 3,
+      "confidence": "medium",
+      "frictionTypes": [
+        "bug",
+        "content_gap"
+      ],
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "evidence": [
+        {
+          "runId": "baseline-priya-internship-near-berkeley",
+          "step": 9,
+          "quote": "Eight listings, zero software, zero research — for an EECS PhD at Berkeley. And why is a Bundestag exchange the top 'internship'? It's tagged Scholarships."
+        },
+        {
+          "runId": "baseline-priya-internship-near-berkeley",
+          "step": 14,
+          "quote": "Zero in the Bay Area? Stripe is literally in SF. Either the filter is broken or nothing has a location. Either way I can't trust it."
+        }
+      ],
+      "environmentLimited": true,
+      "environmentNote": "Environment-limited until checked on live.",
+      "suggestedFix": "Re-run internship-near-berkeley in live mode (read-only) to see whether the filter is really empty there; if it is, the filter needs location data or a 'Remote / unknown' bucket.",
+      "fingerprints": [
+        "3cd806167637",
+        "c4d7ce393786"
+      ]
+    }
+  ],
+  "dismissed": [
+    {
+      "fingerprints": [
+        "22e5ff1db700"
+      ],
+      "reason": "Harness bug, not the app: the harness tapped the centre of the half-covered Note textarea, which was under the fixed 'Post ride' bar, so the ride was posted early and the note lost. Fixed (dom.hitPoint); confirmed the field is fully visible above the bar when scrolled (see harnessIssues)."
+    },
+    {
+      "fingerprints": [
+        "8b511219f08e",
+        "7608eb4350f5",
+        "35bbfcd3c5af"
+      ],
+      "reason": "Clock: the pilot ran at ~23:00 Pacific, so 'today' plans were over and defaults said 11 PM. Not a product finding; run lunch scenarios at 10:00–13:00 Pacific."
+    },
+    {
+      "fingerprints": [
+        "170d7ebbd91e",
+        "e53f5b5080fe",
+        "207925697696",
+        "16221f83094a"
+      ],
+      "reason": "Single sev-1 observations (scroll position on the feed, an odd onboarding sentence, 'people to split with' count) — keep as leads, not problems. 16221f83094a is also grouped under demo-account-artifacts."
+    }
+  ],
+  "harnessIssues": [
+    {
+      "title": "lunch-today success check passed on seed text",
+      "detail": "textMatches 'Joined|Going|You're in' matched sample content, so baseline-diego-lunch-today reported goalAchieved at step 4 without joining anything. Checks now require a server-side record of the persona's own action, and the start screen never counts.",
+      "runs": [
+        "baseline-diego-lunch-today",
+        "smoke-minji-lunch-today"
+      ]
+    },
+    {
+      "title": "Ride form posted while typing the note",
+      "detail": "type tapped the element's geometric centre; a fixed bar covered it. Now taps a point where the element is on top and refuses to type if the field did not get focus. Repro: npm run smoke (step 7 records tapPoint centre:false).",
+      "runs": [
+        "baseline-seoyeon-ride-sfo-thanksgiving"
+      ]
+    },
+    {
+      "title": "Shared demo account",
+      "detail": "Signed-in scenarios used the sample demo account (someone else's data, own posts tagged Sample). Default is now auth: fresh.",
+      "runs": [
+        "baseline-aisha-find-a-club",
+        "baseline-diego-lunch-today",
+        "baseline-minji-timetable-add-classes",
+        "baseline-priya-internship-near-berkeley",
+        "baseline-seoyeon-ride-sfo-thanksgiving",
+        "smoke-minji-lunch-today"
+      ]
+    },
+    {
+      "title": "Built-in course catalog",
+      "detail": "Timetable scenario searched MATH 1A in the built-in catalog; live has MATH 51 ('formerly MATH 1A'). Templates now import the cached real catalog (local-stack catalog fetch).",
+      "runs": [
+        "baseline-minji-timetable-add-classes"
+      ]
+    }
+  ],
+  "notes": "First curated pass. Severity is the analyst's judgement of the problem for the personas who hit it; persona counts are simulated personas, never rates."
+}

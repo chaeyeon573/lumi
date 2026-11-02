@@ -4,7 +4,7 @@ import { existsSync, readdirSync, writeFileSync, statSync } from 'node:fs';
 import { RUNS_DIR, REPORTS_DIR, REPO_ROOT, ensureDir, rel, today } from './paths.mjs';
 import { readJson, SEVERITY } from './util.mjs';
 import { validate } from './validate.mjs';
-import { cluster, DISCLAIMER, TYPE_LABEL } from './findings.mjs';
+import { cluster, DISCLAIMER, TYPE_LABEL, maxSeverity, severityHistogram } from './findings.mjs';
 
 const esc = (s) => String(s ?? '').replace(/\|/g, '\\|').replace(/\n+/g, ' ');
 /** link from a markdown file to a repo-relative path */
@@ -40,7 +40,10 @@ export function runReport(run, runFile) {
   L.push(`| Scenario | **${esc(s.title ?? s.id)}** — ${esc(s.goal)} (\`${s.id}\`) |`);
   L.push(`| Target | ${run.target.mode} · ${run.target.baseUrl}${run.target.stack ? ` · worktree commit \`${run.target.stack.stamp}\`` : ''}${run.target.liveGuard?.enabled ? ' · **live write guard on**' : ''} |`);
   L.push(`| Outcome | **${run.outcome}**${run.reportedOutcome && run.reportedOutcome !== run.outcome ? ` (persona said ${run.reportedOutcome})` : ''} · ended by ${run.endedBy} |`);
-  L.push(`| Goal check (fixed, by harness) | ${run.goalAchieved ? `met at step ${run.goalFirstMetAtStep} after ${run.stepsToGoal} action(s)` : 'not met'} — _${esc(s.success?.description ?? '')}_ |`);
+  const am = run.auth?.mode ?? run.scenario.setup?.auth ?? null;
+  L.push(`| Account | ${am === 'fresh' ? `fresh real account \`${esc(run.auth.email)}\` (${esc(run.auth.profile?.nickname)}, ${esc(run.auth.profile?.department)}, born ${run.auth.profile?.birthYear}; sample: ${run.auth.sample})${run.auth.peers?.length ? ` · peers seeded: ${run.auth.peers.map((x) => esc(x.nickname)).join(', ')}` : ''}` : am === 'demo' ? 'shared demo account (sample profile with someone else\'s data)' : am === 'none' ? 'signed out at start' : '—'} |`);
+  L.push(`| Goal check (fixed, by harness) | ${run.goalAchieved ? `met at step ${run.goalFirstMetAtStep} after ${run.stepsToGoal} action(s)${run.goalEvidence?.matched?.length ? ` — evidence: ${run.goalEvidence.matched.map((m) => esc(m.description ?? m.record ?? JSON.stringify(m))).join('; ')}` : ''}` : 'not met'} — _${esc(s.success?.description ?? '')}_ |`);
+  if (run.patienceExhaustedAtStep !== null && run.patienceExhaustedAtStep !== undefined) L.push(`| Patience | exhausted at step ${run.patienceExhaustedAtStep}; ${run.actionsAfterPatienceExhausted} action(s) after${run.overrodePatience ? ' — **overrodePatience**' : ''} |`);
   if (run.falseSuccess) L.push('| ⚠ false success | The persona believed it succeeded but the scenario check did not pass. |');
   if (run.unnoticedSuccess) L.push('| ⚠ unnoticed success | The check passed but the persona did not realise it had succeeded. |');
   L.push(`| Persona's reason | “${esc(run.outcomeReason)}” |`);
@@ -118,7 +121,19 @@ export async function report(inputs, { all, out } = {}) {
   const { findings, environmentLimited } = cluster(runs.map((r) => r.run));
   const data = {
     schemaVersion: 1, generatedAt: new Date().toISOString(), disclaimer: DISCLAIMER,
-    runs: runs.map(({ run, file }) => ({ runId: run.runId, persona: run.persona.id, scenario: run.scenario.id, outcome: run.outcome, reportedOutcome: run.reportedOutcome, goalAchieved: run.goalAchieved, stepsToGoal: run.stepsToGoal, actions: run.counters.actions, mode: run.target.mode, commit: run.target.stack?.stamp ?? null, dropoffRisk: run.dropoffRisk, runFile: rel(file), report: rel(path.join(path.dirname(file), 'report.md')) })),
+    runs: runs.map(({ run, file }) => {
+      const ux = run.frictionEvents.filter((f) => !f.environmentLimited);
+      return {
+        runId: run.runId, persona: run.persona.id, scenario: run.scenario.id, outcome: run.outcome, reportedOutcome: run.reportedOutcome, goalAchieved: run.goalAchieved, stepsToGoal: run.stepsToGoal, actions: run.counters.actions,
+        frictionCount: ux.length, maxSeverity: maxSeverity(ux.map((f) => f.severity)),
+        mode: run.target.mode, auth: run.auth?.mode ?? run.scenario.setup?.auth ?? null, commit: run.target.stack?.stamp ?? null, harness: run.harness?.hash ?? null, catalog: run.target.stack?.catalog?.kind ?? null,
+        overrodePatience: !!run.overrodePatience, dropoffRisk: run.dropoffRisk, runFile: rel(file), report: rel(path.join(path.dirname(file), 'report.md')),
+      };
+    }),
+    totals: (() => {
+      const ux = runs.flatMap(({ run }) => run.frictionEvents.filter((f) => !f.environmentLimited).map((f) => f.severity));
+      return { runs: runs.length, findings: findings.length, frictionEvents: ux.length, environmentLimitedEvents: environmentLimited.length, maxSeverity: maxSeverity(ux), bySeverity: severityHistogram(ux), multiPersonaFindings: findings.filter((f) => f.personaCount >= 2).length, singletonFindings: findings.filter((f) => f.occurrences === 1).length };
+    })(),
     findings, environmentLimited,
     falseSuccesses: runs.filter(({ run }) => run.falseSuccess).map(({ run }) => run.runId),
     autoChecks: aggregateChecks(runs.map((r) => r.run)),
@@ -128,7 +143,9 @@ export async function report(inputs, { all, out } = {}) {
   const fj = path.join(dir, 'findings.json');
   writeFileSync(fj, JSON.stringify(data, null, 2));
   const sm = path.join(dir, 'summary.md');
-  writeFileSync(sm, summaryMd(data, sm));
+  const af = path.join(dir, 'analysis.json');
+  const analysis = existsSync(af) ? readJson(af) : null;
+  writeFileSync(sm, summaryMd(data, sm, analysis));
   return { reports, summary: rel(sm), findings: rel(fj), runs: runs.length, findingsCount: findings.length, environmentLimited: environmentLimited.length, problems };
 }
 
@@ -146,12 +163,18 @@ function aggregateChecks(runs) {
   return [...m.values()].sort((a, b) => b.smallTapTargetsMax - a.smallTapTargetsMax);
 }
 
-function summaryMd(d, sm) {
+function summaryMd(d, sm, analysis) {
   const L = [];
   L.push(`# ux-sim summary — ${d.generatedAt.slice(0, 10)}`, '', `> **${DISCLAIMER}** AI personas drove a real browser. Counts are simulated personas, never rates; every risk below is a hypothesis to check with real students.`, '');
-  L.push(`${d.runs.length} run(s) · ${d.findings.length} finding(s) · ${d.environmentLimited.length} environment-limited event(s) kept out of findings.`, '');
-  L.push('## Runs', '', '| persona | scenario | outcome | goal check | actions | drop-off risk (hypothesis) | report |', '|---|---|---|---|---|---|---|');
-  for (const r of d.runs) L.push(`| ${r.persona} | ${r.scenario} | ${r.outcome}${r.reportedOutcome && r.reportedOutcome !== r.outcome ? ` (said ${r.reportedOutcome})` : ''} | ${r.goalAchieved ? `met (${r.stepsToGoal} actions)` : 'not met'} | ${r.actions} | ${r.dropoffRisk ? `${r.dropoffRisk.level} — ${esc(r.dropoffRisk.rationale).slice(0, 140)}` : '—'} | [report](${linkFrom(sm, r.report)}) |`);
+  if (analysis?.problems?.length) {
+    L.push('## Curated problems (analysis.json)', '', `_Written by ${esc(analysis.author)}. Heuristic clusters are below._`, '', '| sev | problem | personas | env-limited | fingerprints |', '|---|---|---|---|---|');
+    for (const p of [...analysis.problems].sort((a, b) => b.severity - a.severity || b.personas.length - a.personas.length)) L.push(`| ${p.severity} | **${esc(p.title)}** — ${esc(p.rootCauseHypothesis).slice(0, 160)} | ${p.personas.length} | ${p.environmentLimited ? 'yes' : 'no'} | ${p.fingerprints.map((f) => `\`${f}\``).join(' ')} |`);
+    L.push('');
+  }
+  L.push(`${d.runs.length} run(s) · ${d.findings.length} finding(s) (${d.totals.multiPersonaFindings} seen by ≥ 2 personas, ${d.totals.singletonFindings} single events) · max severity **${d.totals.maxSeverity ?? '—'}** · severity 1/2/3/4: ${[1, 2, 3, 4].map((k) => d.totals.bySeverity[k]).join(' / ')} · ${d.environmentLimited.length} environment-limited event(s) kept out of findings.`, '');
+  L.push('_These clusters are mechanical (screen + type + element). The curated problem list is `analysis.json` next to this file, written by the orchestrating session — see docs/ux-sim/ORCHESTRATE.md._', '');
+  L.push('## Runs', '', '| persona | scenario | auth | outcome | goal check | actions | friction (max sev) | drop-off risk (hypothesis) | report |', '|---|---|---|---|---|---|---|---|---|');
+  for (const r of d.runs) L.push(`| ${r.persona} | ${r.scenario} | ${r.auth ?? '—'} | ${r.outcome}${r.reportedOutcome && r.reportedOutcome !== r.outcome ? ` (said ${r.reportedOutcome})` : ''}${r.overrodePatience ? ' ⚠ overrode patience' : ''} | ${r.goalAchieved ? `met (${r.stepsToGoal} actions)` : 'not met'} | ${r.actions} | ${r.frictionCount} (${r.maxSeverity ?? '—'}) | ${r.dropoffRisk ? `${r.dropoffRisk.level} — ${esc(r.dropoffRisk.rationale).slice(0, 140)}` : '—'} | [report](${linkFrom(sm, r.report)}) |`);
   L.push('');
   if (d.falseSuccesses.length) L.push(`**False successes** (persona believed it was done, the fixed check disagreed): ${d.falseSuccesses.map((x) => `\`${x}\``).join(', ')}`, '');
   L.push('## Findings', '', '_Clustered by screen + friction type + key element. Sorted by number of personas, then severity._', '');

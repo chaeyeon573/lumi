@@ -220,3 +220,30 @@ export function scrollState() {
   }
   return Math.round((document.scrollingElement || document.documentElement).scrollTop);
 }
+
+/**
+ * Where a person would tap to hit `el`: a point inside its on-screen box where `el` (or something inside it) is the
+ * topmost element. Tapping the geometric centre is wrong when a sticky bar or sheet covers part of the element — the
+ * pilot's ride form was posted because the centre of a half-covered Note textarea was under the sticky "Post ride"
+ * button. Tries the centre first, then a grid over the visible part; returns null when every point is covered.
+ */
+export function hitPoint(el) {
+  if (!el || !el.isConnected) return null;
+  const vw = window.innerWidth; const vh = window.innerHeight;
+  const r = el.getBoundingClientRect();
+  const x0 = Math.max(r.left, 0); const x1 = Math.min(r.right, vw);
+  const y0 = Math.max(r.top, 0); const y1 = Math.min(r.bottom, vh);
+  if (x1 - x0 < 1 || y1 - y0 < 1) return null;
+  const ours = (h) => !!h && (h === el || el.contains(h) || (h.tagName === 'LABEL' && h.control === el));
+  const pts = [[(r.left + r.right) / 2, (r.top + r.bottom) / 2]];
+  const N = 5;
+  for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) pts.push([x0 + ((i + 0.5) * (x1 - x0)) / N, y0 + ((j + 0.5) * (y1 - y0)) / N]);
+  let topmost = null;
+  for (const [x, y] of pts) {
+    if (x < x0 || x > x1 - 0.5 || y < y0 || y > y1 - 0.5) continue;
+    const h = document.elementFromPoint(x, y);
+    if (ours(h)) return { x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10, centre: pts[0][0] === x && pts[0][1] === y };
+    if (!topmost && h) topmost = (h.innerText || h.getAttribute('aria-label') || h.tagName).replace(/\s+/g, ' ').trim().slice(0, 60);
+  }
+  return { x: null, y: null, coveredBy: topmost };
+}

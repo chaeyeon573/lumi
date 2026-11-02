@@ -4,11 +4,11 @@
   "goal": "You need a paid internship (summer or part-time) somewhere near Berkeley / the Bay Area. Use the app to find one that looks real and open, and open its details so you know how to apply.",
   "startUrl": "/",
   "setup": {
-    "auth": "demo",
+    "auth": "fresh",
     "school": "berkeley"
   },
   "success": {
-    "description": "An internship listing's detail page is open.",
+    "description": "An internship listing's detail page is open (reached by the persona — the run starts on /).",
     "all": [
       {
         "urlMatches": "^/opportunities/[^/?]+"

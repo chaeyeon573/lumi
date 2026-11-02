@@ -40,7 +40,9 @@ $UX start --persona <persona> --scenario <scenario>
 The output gives you:
 
 - `runId`;
-- `brief`: who you are, your backstory, why you opened the app, what makes you quit, and how you talk;
+- `brief`: who you are, your backstory, why you opened the app, what makes you quit, how you talk, and whether you
+  already have an account (`account`) — usually you do: a brand-new one, made with your school e-mail, with nothing on
+  it yet. For sign-up scenarios you start signed out;
 - `observation`: the first screen.
 
 Read the brief and become that person. Do not look at anything else about the scenario.
@@ -91,6 +93,15 @@ Repeat until you reach your goal, give up, or the harness ends the session:
    - `timeout` when actions or time are spent.
 
    If you would honestly give up before that, give up.
+
+   **When a response carries `patienceExhausted`** (you have logged as many confused/frustrated moments as this persona
+   tolerates), the persona is done. Your next command must be
+   `finish --outcome abandoned` — **unless** you are in the middle of the action that completes the goal and it needs
+   **at most one more action** (the form is filled and only "Post" is left; the plan is open and "Join" is the next tap).
+   "The goal was probably one or two taps away" is not that exception: the persona would not know, and that is the
+   finding. If you take the one allowed action, the harness records `overrodePatience: true` in `run.json` (and the
+   report flags it); then finish right away — with `success` if it worked, `abandoned` if not. A second action after
+   exhaustion is refused and the harness ends the run as `abandoned` (`endedBy: harness:patience`).
 
 ## 4. Friction types (`--friction`)
 
@@ -182,12 +193,12 @@ Do not run `report` yourself unless you were asked to.
 ## 8. Example (abridged)
 
 ```text
-$UX start --persona minji-freshman-17 --scenario lunch-today      → runId smoke-…; card "Maya 24 … Coffee on Southside", [7]<button> I'm in
+$UX start --persona minji-freshman-17 --scenario lunch-today      → runId R; account: signed in (brand new); card "Hana 20 … Lunch at Crossroads — anyone want to join?", [7]<button> I'm in
 (Read annotated screenshot: big face photo, "I'm in" in lime.)
 $UX note --run R --feeling confused --thought "헐 big face photo… dating app? 'I'm in' — in what?" --friction ux_confusion --severity 3 --element 7 --wish "say what I'm joining"
-$UX click 7 --run R --expect "I join Maya's coffee plan" --confidence 0.5     → "Joined · Leave", toast "You're in! The group chat is open."
+$UX click 7 --run R --expect "I join Hana's lunch" --confidence 0.5            → "Joined · Leave", toast "You're in! The group chat is open."
 $UX note --run R --mismatch yes --actual "says chat is open but I'm still on the card" --feeling confused --thought "where's the chat?" --friction ux_confusion --severity 2 --element 16
 $UX click 3 --run R --expect "messages"                                       → /chats
-$UX click 28 --run R --expect "the coffee group chat"                         → Activities tab, "Coffee on Southside"
-$UX finish --run R --outcome success --reason "Joined a coffee plan and found its chat — not lunch today, though."
+$UX click 28 --run R --expect "the lunch group chat"                          → Activities tab, "Lunch at Crossroads"
+$UX finish --run R --outcome success --reason "Joined Hana's lunch at Crossroads and found its chat."
 ```

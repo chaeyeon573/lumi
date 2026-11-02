@@ -1,17 +1,31 @@
 {
-  "generatedAt": "2026-11-02T06:44:16.727Z",
-  "source": "ux-sim/reports/2026-11-02/findings.json",
-  "rule": "severity ≥ 3 or ≥ 2 personas; environment-limited events excluded",
-  "dedupe": "search existing issues for the body marker <!-- ux-sim:fp=<fingerprint> --> before creating",
+  "generatedAt": "2026-11-02T07:08:52.955Z",
+  "source": "ux-sim/reports/2026-11-02/analysis.json",
+  "layer": "curated (analysis.json)",
+  "rule": "not environment-limited, and severity ≥ 3 or ≥ 2 personas, unless the problem sets file: true|false",
+  "dedupe": "before creating, search existing issues for <!-- ux-sim:problem=<key> --> and for any <!-- ux-sim:fp=<fingerprint> --> marker; update the match instead of duplicating",
   "note": "Candidates only — ux-sim never creates issues.",
+  "coverage": {
+    "findings": 45,
+    "grouped": 38,
+    "dismissed": 8,
+    "unassigned": []
+  },
+  "warnings": [],
   "candidates": [
     {
-      "fingerprint": "0ad866e92107",
-      "title": "[ux-sim] Confusing UI on / — “I'm in”",
-      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nConfusing UI on `/` around “I'm in”. Seen by **5 simulated persona(s)** across 4 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 2.\n\n### Evidence\n\n- **aisha-firstgen-anxious** · `find-a-club` · run `baseline-aisha-find-a-club` step 0 · sev 2 — “Wait, the first thing I see is a big photo of a stranger named Maya and an 'I'm in' button. I came to find a club… is this a dating thing? I don't want to accidentally tap 'I'm in' and sign up for coffee with someone I don't know.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/000-start-som.jpg)\n- **diego-transfer-commuter** · `lunch-today` · run `baseline-diego-lunch-today` step 0 · sev 2 — “OK, a big face photo first thing. Coffee tomorrow at 6 isn't lunch today. Is this a dating thing or a plans thing? I just want lunch people.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/000-start-som.jpg)\n- **priya-phd-desktop** · `internship-near-berkeley` · run `baseline-priya-internship-near-berkeley` step 0 · sev 2 — “I'm on a 1440px laptop and I get a phone-width column with a giant face photo and an 'I'm in' button. Is this a dating app? I came for internships.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/shots/000-start-som.jpg)\n- **seoyeon-exchange-korean** · `ride-sfo-thanksgiving` · run `baseline-seoyeon-ride-sfo-thanksgiving` step 0 · sev 2 — “어... 큰 얼굴 사진? 데이트 앱인가? 공항 가는 차 찾으려고 왔는데 커피 약속이 나와요. 영어만 있고... 한국어 설정 어디 있지?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/000-start-som.jpg)\n- **minji-freshman-17** · `lunch-today` · run `smoke-minji-lunch-today` step 0 · sev 3 — “헐 big face photo… is this a dating app? And 'I'm in' — in what, coffee with Maya or matching with her?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/shots/000-start-som.jpg)\n\nRuns: [`baseline-aisha-find-a-club`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/report.md), [`baseline-diego-lunch-today`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/report.md), [`baseline-priya-internship-near-berkeley`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/report.md), [`baseline-seoyeon-ride-sfo-thanksgiving`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/report.md), [`smoke-minji-lunch-today`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/report.md)\n\n### Personas affected\n\n`aisha-firstgen-anxious`, `diego-transfer-commuter`, `priya-phd-desktop`, `seoyeon-exchange-korean`, `minji-freshman-17`\n\n### Suggestion (hypothesis)\n\nMake it obvious what “I'm in” on / does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “Tell me what this home screen is for, and that 'I'm in' joins a coffee meetup, not something public”; “show me what's happening today, not one person's face”; “A desktop layout and a home screen that tells me what this app is for, not a swipe card”; “첫 화면에 '무엇을 찾나요?' 같은 선택이나 라이드 쉐어 바로가기”; “say what I'm joining, like 'Join coffee'”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=0ad866e92107 -->",
+      "key": "first-screen-reads-as-dating",
+      "fingerprints": [
+        "0ad866e92107",
+        "b4fb9cc452bd",
+        "518c68aff2a6"
+      ],
+      "title": "[ux-sim] The first screen looks like a dating app: one big face photo and an \"I'm in\" button",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nSix of the seven personas opened the app and their first reaction was \"is this a dating app?\" — a full-height photo of one person with name and age, and a lime \"I'm in\" button, whatever they came for (clubs, internships, rides, lunch).\n\nSeverity **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.) · analyst confidence high · **6 simulated persona(s)** across 6 scenario(s).\n\n### Root cause (hypothesis)\n\nThe signed-in home is a single swipe card centred on a person (photo, name, age) rather than on the plan; the plan title is secondary text. Nothing on the screen says it is about plans with classmates.\n\n### Evidence\n\n- run `baseline-aisha-find-a-club` step 0 — “Wait, the first thing I see is a big photo of a stranger named Maya and an 'I'm in' button. I came to find a club… is this a dating thing? I don't want to accidentally tap 'I'm in' and sign up for coffee with someone I don't know.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/000-start-som.jpg)\n- run `baseline-diego-lunch-today` step 0 — “OK, a big face photo first thing. Coffee tomorrow at 6 isn't lunch today. Is this a dating thing or a plans thing? I just want lunch people.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/000-start-som.jpg)\n- run `baseline-priya-internship-near-berkeley` step 0 — “I'm on a 1440px laptop and I get a phone-width column with a giant face photo and an 'I'm in' button. Is this a dating app? I came for internships.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/shots/000-start-som.jpg)\n- run `baseline-seoyeon-ride-sfo-thanksgiving` step 0 — “어... 큰 얼굴 사진? 데이트 앱인가? 공항 가는 차 찾으려고 왔는데 커피 약속이 나와요. 영어만 있고... 한국어 설정 어디 있지?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/000-start-som.jpg)\n- run `smoke-minji-lunch-today` step 0 — “헐 big face photo… is this a dating app? And 'I'm in' — in what, coffee with Maya or matching with her?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/shots/000-start-som.jpg)\n- run `baseline-minji-timetable-add-classes` step 0 — “헐 첫 화면이 큰 얼굴 사진에 'Maya 24'... 데이팅앱이야? 나 시간표 넣으러 온 건데 어디서 하지” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-timetable-add-classes/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-timetable-add-classes/shots/000-start-som.jpg)\n\nRuns: [`baseline-aisha-find-a-club`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/report.md), [`baseline-diego-lunch-today`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/report.md), [`baseline-priya-internship-near-berkeley`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/report.md), [`baseline-seoyeon-ride-sfo-thanksgiving`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/report.md), [`smoke-minji-lunch-today`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/report.md), [`baseline-minji-timetable-add-classes`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-timetable-add-classes/report.md)\n\n### Who\n\nPersonas: `aisha-firstgen-anxious`, `diego-transfer-commuter`, `priya-phd-desktop`, `seoyeon-exchange-korean`, `minji-freshman-17`, `marcus-senior-lowtech` · scenarios: `find-a-club`, `lunch-today`, `internship-near-berkeley`, `ride-sfo-thanksgiving`, `timetable-add-classes`, `first-open-decide`\n\n### Environment note\n\nPilot runs used the shared demo account, so the face was a sample profile (Maya). The layout is the same for real accounts — re-check with auth: fresh runs.\n\n### Suggested fix (hypothesis)\n\nLead the card with the plan (\"Lunch at Crossroads · today 12:30 · 3 spots\") and make the person secondary (smaller avatar, no age on the card); show 2–3 plans as a list on first open instead of one full-screen face.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=first-screen-reads-as-dating -->\n<!-- ux-sim:fp=0ad866e92107 -->\n<!-- ux-sim:fp=b4fb9cc452bd -->\n<!-- ux-sim:fp=518c68aff2a6 -->",
       "labels": [
         "ux-sim",
         "severity:3",
+        "trust_privacy",
         "ux_confusion"
       ],
       "personas": [
@@ -19,61 +33,142 @@
         "diego-transfer-commuter",
         "priya-phd-desktop",
         "seoyeon-exchange-korean",
-        "minji-freshman-17"
+        "minji-freshman-17",
+        "marcus-senior-lowtech"
       ],
-      "severityMax": 3,
-      "personaCount": 5
+      "scenarios": [
+        "find-a-club",
+        "lunch-today",
+        "internship-near-berkeley",
+        "ride-sfo-thanksgiving",
+        "timetable-add-classes",
+        "first-open-decide"
+      ],
+      "severity": 3
     },
     {
-      "fingerprint": "2535ac3580a9",
-      "title": "[ux-sim] Missing / empty content on /welcome",
-      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nMissing / empty content on `/welcome`. Seen by **2 simulated persona(s)** across 2 scenario(s); severity max **1** (Minor — noticed it, cosmetic or a small annoyance; did not slow me down.), median 1.\n\n### Evidence\n\n- **marcus-senior-lowtech** · `first-open-decide` · run `baseline-marcus-first-open-decide` step 0 · sev 1 — “0 free food events this week. Why show me a zero? Makes it look like nobody uses it.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-marcus-first-open-decide/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-marcus-first-open-decide/shots/000-start-som.jpg)\n- **minji-freshman-17** · `cold-start-hangout` · run `baseline-minji-cold-start-hangout` step 0 · sev 1 — “오 'Find someone for lunch' — 딱 내가 원하는 거. but '0 free food events' 좀 썰렁하고, 'Closes today' 인데 Nov 1? 뭐지. 한국어 옵션은 안 보임.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/000-start-som.jpg)\n\nRuns: [`baseline-marcus-first-open-decide`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-marcus-first-open-decide/report.md), [`baseline-minji-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/report.md)\n\n### Personas affected\n\n`marcus-senior-lowtech`, `minji-freshman-17`\n\n### Suggestion (hypothesis)\n\nCheck whether the data on /welcome is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “hide the free-food card when it's 0, not advertise emptiness”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=2535ac3580a9 -->",
+      "key": "im-in-unclear-what-and-where",
+      "fingerprints": [
+        "7550a9defad6",
+        "6a00d05d782f"
+      ],
+      "title": "[ux-sim] After \"I'm in\" it is unclear what you joined and where its chat is",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nPersonas tapped \"I'm in\" without knowing whether it joins a plan or matches with the person; afterwards the button turns into \"Joined · Leave\" (does tapping again leave?) and the promised group chat is hidden under Messages → Activities.\n\nSeverity **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.) · analyst confidence medium · **1 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nThe button names an attitude, not an action on a thing; the success toast points to a chat that is not on screen and has no direct link.\n\n### Evidence\n\n- run `smoke-minji-lunch-today` step 0 — “헐 big face photo… is this a dating app? And 'I'm in' — in what, coffee with Maya or matching with her?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/shots/000-start-som.jpg)\n- run `smoke-minji-lunch-today` step 2 — “뭐지… where is the group chat? and the button now says 'Joined · Leave' — if I tap it again do I leave??” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/shots/002-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/shots/002-click-som.jpg)\n- run `smoke-minji-lunch-today` step 6 — “oh there it is, under Activities. took me a while” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/shots/006-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/shots/006-click-som.jpg)\n\nRuns: [`smoke-minji-lunch-today`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/smoke-minji-lunch-today/report.md)\n\n### Who\n\nPersonas: `minji-freshman-17` · scenarios: `lunch-today`\n\n### Suggested fix (hypothesis)\n\nName the action with the plan (\"Join lunch\"), keep the joined state as a non-destructive label with a separate Leave, and put an \"Open chat\" button on the card/toast.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=im-in-unclear-what-and-where -->\n<!-- ux-sim:fp=7550a9defad6 -->\n<!-- ux-sim:fp=6a00d05d782f -->",
       "labels": [
         "ux-sim",
-        "severity:1",
-        "content_gap"
+        "severity:3",
+        "discoverability",
+        "ux_confusion"
       ],
       "personas": [
-        "marcus-senior-lowtech",
         "minji-freshman-17"
       ],
-      "severityMax": 1,
-      "personaCount": 2
+      "scenarios": [
+        "lunch-today"
+      ],
+      "severity": 3
     },
     {
-      "fingerprint": "19ddc8a230f0",
-      "title": "[ux-sim] Onboarding friction on /create/activity — “Open now”",
-      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nOnboarding friction on `/create/activity` around “Open now”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **4** (Blocker — I could not continue, gave up, or would stop using the app here.), median 4.\n\n### Evidence\n\n- **diego-transfer-commuter** · `lunch-today` · run `baseline-diego-lunch-today` step 12 · sev 4 — “'Instant'? This is a whole event form. Title, description, color, capacity... and it says 11 PM? I want lunch in 20 minutes. I don't have time for this, and nobody's even on here to see it.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/012-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/012-click-som.jpg)\n\nRuns: [`baseline-diego-lunch-today`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/report.md)\n\n### Personas affected\n\n`diego-transfer-commuter`\n\n### Suggestion (hypothesis)\n\nShorten or explain this sign-up step (/create/activity); ask only what is needed now and let the rest wait until it is useful. Personas said they wanted: “one tap: 'Lunch now near me' with time and place prefilled, and show me who sees it”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=19ddc8a230f0 -->",
+      "key": "cold-start-nobody-here",
+      "fingerprints": [
+        "835a3b1ce765",
+        "67ca16898d6c",
+        "05ee6a888ab7",
+        "0ba11b71e564"
+      ],
+      "title": "[ux-sim] A brand-new account finds nobody to meet and is pushed to create plans itself",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nAfter a 9-step sign-up the fresh account saw empty People/Discover screens; the only offers were \"Invite friends\", hackathons and \"Create activity\". The 17-year-old persona quit rather than invite strangers first.\n\nSeverity **4** (Blocker — I could not continue, gave up, or would stop using the app here.) · analyst confidence high · **2 simulated persona(s)** across 2 scenario(s).\n\n### Root cause (hypothesis)\n\nSample profiles are (correctly) hidden from real accounts, and there is no fallback content for an empty campus: no public campus events, no 'people who also want lunch' signal, no low-pressure first step.\n\n### Evidence\n\n- run `baseline-minji-cold-start-hangout` step 43 — “역시 없음. 내가 만들라고? 17살 신입이 모르는 사람들한테 먼저 밥 먹자고 하는 거 너무 어색해. 그만할래” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/043-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/043-click-som.jpg)\n- run `baseline-minji-cold-start-hangout` step 37 — “헐 아무도 없어. 9단계 다 했는데 빈 화면... 초대할 친구가 없어서 이 앱 깐 건데” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/037-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/037-click-som.jpg)\n- run `baseline-minji-cold-start-hangout` step 41 — “해커톤...? 난 밥 같이 먹을 사람 찾는 건데. 'Food & café' 하나만 더 눌러보고 없으면 끝” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/041-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/041-click-som.jpg)\n- run `baseline-diego-lunch-today` step 10 — “Empty. And '7 friends'? I don't have friends on here, those are sample people. Nobody's actually around. Fine, Instant meetup is right there, I'll give it one shot.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/010-scroll.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/010-scroll-som.jpg)\n\nRuns: [`baseline-minji-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/report.md), [`baseline-diego-lunch-today`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/report.md)\n\n### Who\n\nPersonas: `minji-freshman-17`, `diego-transfer-commuter` · scenarios: `cold-start-hangout`, `lunch-today`\n\n### Environment note\n\nLocal stack has no other real students; live has some. The empty state itself is real for any new campus or quiet hour.\n\n### Suggested fix (hypothesis)\n\nFor empty campuses show low-pressure, real things first (campus events, club tables, 'n students want lunch buddies this week — tap to be counted'), and make 'host' a one-tap templated plan rather than the default answer.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=cold-start-nobody-here -->\n<!-- ux-sim:fp=835a3b1ce765 -->\n<!-- ux-sim:fp=67ca16898d6c -->\n<!-- ux-sim:fp=05ee6a888ab7 -->\n<!-- ux-sim:fp=0ba11b71e564 -->",
       "labels": [
         "ux-sim",
         "severity:4",
+        "content_gap",
+        "motivation"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "cold-start-hangout",
+        "lunch-today"
+      ],
+      "severity": 4
+    },
+    {
+      "key": "signup-asks-too-much-too-early",
+      "fingerprints": [
+        "97dda824b2fb",
+        "94527b529e80",
+        "e2f05b7465c0"
+      ],
+      "title": "[ux-sim] Sign-up asks nine personal questions (hobbies, birth year) before showing anything",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nPersonas hit a 1/9 progress bar and personality-style questions (\"your perfect free afternoon\") before seeing any people or content; birth year has no explanation of who sees it; the internship-minded senior could not skip.\n\nSeverity **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.) · analyst confidence medium · **2 simulated persona(s)** across 2 scenario(s).\n\n### Root cause (hypothesis)\n\nThe quiz front-loads recommendation inputs; the value (people, plans) is shown only after the last step, and visibility of each answer is not stated.\n\n### Evidence\n\n- run `baseline-minji-cold-start-hangout` step 2 — “학교 고르기 ok, 근데 1/9?? 9단계나... 아 귀찮아” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/002-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/002-click-som.jpg)\n- run `baseline-minji-cold-start-hangout` step 12 — “4/9... 성격 테스트야 뭐야. 친구 찾으려고 왔는데 아직 아무 사람도 못 봄” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/012-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/012-click-som.jpg)\n- run `baseline-marcus-first-open-decide` step 9 — “Your perfect free afternoon? Long walks? This is a dating profile question. I said I want an internship, why does it need my hobbies? And I can't skip it, Next is grayed out.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-marcus-first-open-decide/shots/009-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-marcus-first-open-decide/shots/009-click-som.jpg)\n- run `baseline-minji-cold-start-hangout` step 25 — “birth year 왜 필요해? 내가 17살인 거 다른 사람이 보면 좀... 누가 보는 건지 안 써있음” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/025-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/025-click-som.jpg)\n\nRuns: [`baseline-minji-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/report.md), [`baseline-marcus-first-open-decide`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-marcus-first-open-decide/report.md)\n\n### Who\n\nPersonas: `minji-freshman-17`, `marcus-senior-lowtech` · scenarios: `cold-start-hangout`, `first-open-decide`\n\n### Suggested fix (hypothesis)\n\nAsk school + e-mail + name first and land in the app; collect interests later in context. Say next to birth year who sees it (\"only your age range, never the year\") and allow skipping the vibe questions.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=signup-asks-too-much-too-early -->\n<!-- ux-sim:fp=97dda824b2fb -->\n<!-- ux-sim:fp=94527b529e80 -->\n<!-- ux-sim:fp=e2f05b7465c0 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "onboarding",
+        "trust_privacy"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "marcus-senior-lowtech"
+      ],
+      "scenarios": [
+        "cold-start-hangout",
+        "first-open-decide"
+      ],
+      "severity": 3
+    },
+    {
+      "key": "instant-meetup-is-a-full-form",
+      "fingerprints": [
+        "19ddc8a230f0"
+      ],
+      "title": "[ux-sim] \"Instant meetup\" opens a full event form",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nThe lunch persona chose \"Instant meetup\" expecting a one-tap \"lunch in 20 minutes\" and got title, description, colour, capacity and date fields.\n\nSeverity **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.) · analyst confidence medium · **1 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nInstant meetup reuses the generic create-activity form with every field visible.\n\n### Evidence\n\n- run `baseline-diego-lunch-today` step 12 — “'Instant'? This is a whole event form. Title, description, color, capacity... and it says 11 PM? I want lunch in 20 minutes. I don't have time for this, and nobody's even on here to see it.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/012-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/012-click-som.jpg)\n\nRuns: [`baseline-diego-lunch-today`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/report.md)\n\n### Who\n\nPersonas: `diego-transfer-commuter` · scenarios: `lunch-today`\n\n### Environment note\n\nThe persona also objected to an 11 PM default start — correct, because the pilot ran at 23:00 Pacific; only the form length is the finding.\n\n### Suggested fix (hypothesis)\n\nA 3-field quick form: what (lunch / coffee / study chips), when (now / in 30 min / at 12:30), where (recent places); everything else defaulted and editable after posting.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=instant-meetup-is-a-full-form -->\n<!-- ux-sim:fp=19ddc8a230f0 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
         "onboarding"
       ],
       "personas": [
         "diego-transfer-commuter"
       ],
-      "severityMax": 4,
-      "personaCount": 1
+      "scenarios": [
+        "lunch-today"
+      ],
+      "severity": 3
     },
     {
-      "fingerprint": "835a3b1ce765",
-      "title": "[ux-sim] Missing / empty content on /discover?tab=activities — “Create activity”",
-      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nMissing / empty content on `/discover?tab=activities` around “Create activity”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **4** (Blocker — I could not continue, gave up, or would stop using the app here.), median 4.\n\n### Evidence\n\n- **minji-freshman-17** · `cold-start-hangout` · run `baseline-minji-cold-start-hangout` step 43 · sev 4 — “역시 없음. 내가 만들라고? 17살 신입이 모르는 사람들한테 먼저 밥 먹자고 하는 거 너무 어색해. 그만할래” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/043-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/043-click-som.jpg)\n\nRuns: [`baseline-minji-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/report.md)\n\n### Personas affected\n\n`minji-freshman-17`\n\n### Environment caveat\n\n- Local stack has only CSV opportunities; live also has worker-fetched internships, hackathons and campus events — check on live before acting.\n\n### Suggestion (hypothesis)\n\nCheck whether the data on /discover?tab=activities is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “at least one real plan from someone in my dorm/class I could say 'I'm in' to”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=835a3b1ce765 -->",
+      "key": "floating-pills-cover-buttons",
+      "fingerprints": [
+        "804158f27f39",
+        "39327c8d79c3"
+      ],
+      "title": "[ux-sim] The floating Design/Feedback pills cover real buttons",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nOn a phone the 'Design: Classic / New' and 'Feedback' pills sit on top of 'Edit timetable' and 'My rides', so only part of the label shows.\n\nSeverity **2** (Moderate — slowed me down or made me hesitate; I recovered on my own.) · analyst confidence high · **2 simulated persona(s)** across 2 scenario(s).\n\n### Root cause (hypothesis)\n\nFixed-position pills without reserved space at the bottom of screens that end with a button.\n\n### Evidence\n\n- run `baseline-minji-timetable-add-classes` step 2 — “아래 'Edit timetable' 버튼이 Design/Feedback 버튼에 가려져서 글자가 'timetable'만 보여” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-timetable-add-classes/shots/002-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-timetable-add-classes/shots/002-click-som.jpg)\n- run `baseline-seoyeon-ride-sfo-thanksgiving` step 12 — “'My rides' 버튼 위에 'Design: Classic New' 같은 게 겹쳐서 가려져 있어요.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/012-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/012-click-som.jpg)\n\nRuns: [`baseline-minji-timetable-add-classes`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-timetable-add-classes/report.md), [`baseline-seoyeon-ride-sfo-thanksgiving`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/report.md)\n\n### Who\n\nPersonas: `minji-freshman-17`, `seoyeon-exchange-korean` · scenarios: `timetable-add-classes`, `ride-sfo-thanksgiving`\n\n### Suggested fix (hypothesis)\n\nReserve bottom padding equal to the pills' height on every screen, or move the pills into Settings/Me for real accounts.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=floating-pills-cover-buttons -->\n<!-- ux-sim:fp=804158f27f39 -->\n<!-- ux-sim:fp=39327c8d79c3 -->",
       "labels": [
         "ux-sim",
-        "severity:4",
-        "content_gap"
+        "severity:2",
+        "bug"
       ],
       "personas": [
-        "minji-freshman-17"
+        "minji-freshman-17",
+        "seoyeon-exchange-korean"
       ],
-      "severityMax": 4,
-      "personaCount": 1
+      "scenarios": [
+        "timetable-add-classes",
+        "ride-sfo-thanksgiving"
+      ],
+      "severity": 2
     },
     {
-      "fingerprint": "629b9d57dee9",
-      "title": "[ux-sim] Bug on /community?tab=opportunities — “🏃 Berkeley Running Club Casual and comp”",
-      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nBug on `/community?tab=opportunities` around “🏃 Berkeley Running Club Casual and comp”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **aisha-firstgen-anxious** · `find-a-club` · run `baseline-aisha-find-a-club` step 23 · sev 3 — “Wait, did that do something? Nothing opened. Did I just join it by accident?? There's no message either way. That's exactly what makes me nervous.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/023-wait.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/023-wait-som.jpg)\n\nRuns: [`baseline-aisha-find-a-club`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/report.md)\n\n### Personas affected\n\n`aisha-firstgen-anxious`\n\n### Suggestion (hypothesis)\n\nReproduce from the evidence steps on /community?tab=opportunities (around “🏃 Berkeley Running Club Casual and comp”) and fix it; add a regression check for that screen. Personas said they wanted: “Tapping a club should open its page, or at least show something happened”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=629b9d57dee9 -->",
+      "key": "club-tap-silent",
+      "fingerprints": [
+        "629b9d57dee9"
+      ],
+      "title": "[ux-sim] Tapping a club in the list did nothing visible",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nThe anxious first-year tapped the Running Club card, nothing opened and no message appeared, and she worried she had joined by accident.\n\nSeverity **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.) · analyst confidence low · **1 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nEither the card's tap handler did not navigate, or the tap landed on a nested control (save/bookmark) inside the card that changed state without feedback — the screen changed a little but no page opened.\n\n### Evidence\n\n- run `baseline-aisha-find-a-club` step 22 _(click on the Running Club card: URL unchanged, harness recorded a mismatch but no no-effect signal (something on screen changed))_ [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/022-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/022-click-som.jpg)\n- run `baseline-aisha-find-a-club` step 23 — “Wait, did that do something? Nothing opened. Did I just join it by accident?? There's no message either way. That's exactly what makes me nervous.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/023-wait.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/023-wait-som.jpg)\n\nRuns: [`baseline-aisha-find-a-club`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/report.md)\n\n### Who\n\nPersonas: `aisha-firstgen-anxious` · scenarios: `find-a-club`\n\n### Suggested fix (hypothesis)\n\nReproduce from run baseline-aisha-find-a-club step 22; make the whole card open the club page, give nested controls their own visible feedback, and never change membership from a list tap.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=club-tap-silent -->\n<!-- ux-sim:fp=629b9d57dee9 -->",
       "labels": [
         "ux-sim",
         "severity:3",
@@ -82,143 +177,74 @@
       "personas": [
         "aisha-firstgen-anxious"
       ],
-      "severityMax": 3,
-      "personaCount": 1
+      "scenarios": [
+        "find-a-club"
+      ],
+      "severity": 3
     },
     {
-      "fingerprint": "7a02ada3f324",
-      "title": "[ux-sim] Unclear wording on /orgs/:id?tab=recruit — “Recruiting”",
-      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nUnclear wording on `/orgs/:id?tab=recruit` around “Recruiting”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **aisha-firstgen-anxious** · `find-a-club` · run `baseline-aisha-find-a-club` step 28 · sev 3 — “Wait, so they're not recruiting… but I can ask to join? Does that mean I'm too late for this year? Or that it's open anyway? I really don't want to send a request to a club that's closed and look dumb.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/028-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/028-click-som.jpg)\n\nRuns: [`baseline-aisha-find-a-club`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/report.md)\n\n### Personas affected\n\n`aisha-firstgen-anxious`\n\n### Suggestion (hypothesis)\n\nRewrite “Recruiting” on /orgs/:id?tab=recruit in plain language (and check the Korean UI). Personas said they wanted: “Explain what 'not recruiting' means for a casual running club — can I still just come to a group run?”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=7a02ada3f324 -->",
+      "key": "club-join-status-unclear",
+      "fingerprints": [
+        "7a02ada3f324",
+        "f8d64b1d499a",
+        "919841c6195c",
+        "52228e162ff2",
+        "046dd034f3ea"
+      ],
+      "title": "[ux-sim] Club pages don't say plainly whether and how you can join",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\n'Not recruiting' next to 'Ask to join', an empty Events tab that talks as if you run the club, and two 'Clubs' buttons left the persona unsure if she was too late or allowed to show up.\n\nSeverity **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.) · analyst confidence medium · **1 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nRecruiting status, join policy and the empty-state copy are written for club officers, not for prospective members.\n\n### Evidence\n\n- run `baseline-aisha-find-a-club` step 28 — “Wait, so they're not recruiting… but I can ask to join? Does that mean I'm too late for this year? Or that it's open anyway? I really don't want to send a request to a club that's closed and look dumb.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/028-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/028-click-som.jpg)\n- run `baseline-aisha-find-a-club` step 26 — “Oh good, this is the page. Group runs Tue/Thu at 5pm — that sounds like I could just show up? But then why is it 'Ask to join'… does that mean I have to apply? Would it message someone? And 'Unverified' — is this even the real club?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/026-tap.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/026-tap-som.jpg)\n- run `baseline-aisha-find-a-club` step 30 — “No events, but they run twice a week? And 'events you post' — I'm not in charge of this club, why is it talking to me like I am? Members says 3 on Lumi… it feels kind of empty.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/030-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/030-click-som.jpg)\n- run `baseline-aisha-find-a-club` step 17 — “Okay, that worked — though there are two buttons both called 'Clubs' right on top of each other, which threw me for a second. Still mostly consulting and VC stuff at the top. Let me scroll.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/017-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/017-click-som.jpg)\n- run `baseline-aisha-find-a-club` step 6 — “Fraternity rush, sorority 'formal recruitment', and below it 'fall recruiting' for the indie music club… Wait, does that mean every club makes you try out or apply? That's exactly what I was scared of. And 'Go together' with 'Maya going' — would that message Maya?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/006-scroll.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/shots/006-scroll-som.jpg)\n\nRuns: [`baseline-aisha-find-a-club`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-aisha-find-a-club/report.md)\n\n### Who\n\nPersonas: `aisha-firstgen-anxious` · scenarios: `find-a-club`\n\n### Suggested fix (hypothesis)\n\nOne plain line at the top of every club page: 'Open — just show up Tue/Thu 5pm' / 'Applications closed until spring' / 'Ask to join: the officers reply within N days'; member-facing empty states.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=club-join-status-unclear -->\n<!-- ux-sim:fp=7a02ada3f324 -->\n<!-- ux-sim:fp=f8d64b1d499a -->\n<!-- ux-sim:fp=919841c6195c -->\n<!-- ux-sim:fp=52228e162ff2 -->\n<!-- ux-sim:fp=046dd034f3ea -->",
       "labels": [
         "ux-sim",
         "severity:3",
-        "copy"
+        "content_gap",
+        "copy",
+        "motivation",
+        "ux_confusion"
       ],
       "personas": [
         "aisha-firstgen-anxious"
       ],
-      "severityMax": 3,
-      "personaCount": 1
+      "scenarios": [
+        "find-a-club"
+      ],
+      "severity": 3
+    }
+  ],
+  "skipped": [
+    {
+      "key": "career-content-buried",
+      "title": "Career content is hard to find and 'Campus' / back navigation mislead",
+      "why": "severity < 3 and a single persona"
     },
     {
-      "fingerprint": "0ba11b71e564",
-      "title": "[ux-sim] Missing / empty content on /discover — “Instant meetup”",
-      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nMissing / empty content on `/discover` around “Instant meetup”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **diego-transfer-commuter** · `lunch-today` · run `baseline-diego-lunch-today` step 10 · sev 3 — “Empty. And '7 friends'? I don't have friends on here, those are sample people. Nobody's actually around. Fine, Instant meetup is right there, I'll give it one shot.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/010-scroll.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/shots/010-scroll-som.jpg)\n\nRuns: [`baseline-diego-lunch-today`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-diego-lunch-today/report.md)\n\n### Personas affected\n\n`diego-transfer-commuter`\n\n### Environment caveat\n\n- Local stack has only CSV opportunities; live also has worker-fetched internships, hackathons and campus events — check on live before acting.\n\n### Suggestion (hypothesis)\n\nCheck whether the data on /discover is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “real people free for lunch near me today, or at least other transfers”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=0ba11b71e564 -->",
-      "labels": [
-        "ux-sim",
-        "severity:3",
-        "content_gap"
-      ],
-      "personas": [
-        "diego-transfer-commuter"
-      ],
-      "severityMax": 3,
-      "personaCount": 1
+      "key": "desktop-phone-column",
+      "title": "On a laptop the app is a phone-width column floating in black",
+      "why": "severity < 3 and a single persona"
     },
     {
-      "fingerprint": "94527b529e80",
-      "title": "[ux-sim] Trust / privacy worry on /start — “Next”",
-      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nTrust / privacy worry on `/start` around “Next”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **marcus-senior-lowtech** · `first-open-decide` · run `baseline-marcus-first-open-decide` step 9 · sev 3 — “Your perfect free afternoon? Long walks? This is a dating profile question. I said I want an internship, why does it need my hobbies? And I can't skip it, Next is grayed out.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-marcus-first-open-decide/shots/009-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-marcus-first-open-decide/shots/009-click-som.jpg)\n\nRuns: [`baseline-marcus-first-open-decide`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-marcus-first-open-decide/report.md)\n\n### Personas affected\n\n`marcus-senior-lowtech`\n\n### Suggestion (hypothesis)\n\nExplain who will see what when tapping “Next” on /start before asking for it. Personas said they wanted: “Let me skip this, or tell me why you need it for internships”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=94527b529e80 -->",
-      "labels": [
-        "ux-sim",
-        "severity:3",
-        "trust_privacy"
-      ],
-      "personas": [
-        "marcus-senior-lowtech"
-      ],
-      "severityMax": 3,
-      "personaCount": 1
+      "key": "no-club-search",
+      "title": "There is no way to search clubs by interest or major",
+      "why": "severity < 3 and a single persona"
     },
     {
-      "fingerprint": "67ca16898d6c",
-      "title": "[ux-sim] Missing / empty content on / — “Invite friends”",
-      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nMissing / empty content on `/` around “Invite friends”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **minji-freshman-17** · `cold-start-hangout` · run `baseline-minji-cold-start-hangout` step 37 · sev 3 — “헐 아무도 없어. 9단계 다 했는데 빈 화면... 초대할 친구가 없어서 이 앱 깐 건데” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/037-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/037-click-som.jpg)\n\nRuns: [`baseline-minji-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/report.md)\n\n### Personas affected\n\n`minji-freshman-17`\n\n### Suggestion (hypothesis)\n\nCheck whether the data on / is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “show plans or anyone at all, not ask me to bring friends I don't have”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=67ca16898d6c -->",
-      "labels": [
-        "ux-sim",
-        "severity:3",
-        "content_gap"
-      ],
-      "personas": [
-        "minji-freshman-17"
-      ],
-      "severityMax": 3,
-      "personaCount": 1
+      "key": "korean-hard-to-find-and-partial",
+      "title": "Korean is hard to find and parts of the app stay in English",
+      "why": "severity < 3 and a single persona"
     },
     {
-      "fingerprint": "05ee6a888ab7",
-      "title": "[ux-sim] No reason to stay on /discover?tab=activities — “💡 ARC Prize 2026 D-1”",
-      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nNo reason to stay on `/discover?tab=activities` around “💡 ARC Prize 2026 D-1”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **minji-freshman-17** · `cold-start-hangout` · run `baseline-minji-cold-start-hangout` step 41 · sev 3 — “해커톤...? 난 밥 같이 먹을 사람 찾는 건데. 'Food & café' 하나만 더 눌러보고 없으면 끝” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/041-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/shots/041-click-som.jpg)\n\nRuns: [`baseline-minji-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-minji-cold-start-hangout/report.md)\n\n### Personas affected\n\n`minji-freshman-17`\n\n### Suggestion (hypothesis)\n\nGive a reason to stay on /discover?tab=activities: show real people or things happening now (or a clear next step) instead of empty or generic content. Personas said they wanted: “show casual plans from real students (lunch, café) first, not competitions”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=05ee6a888ab7 -->",
-      "labels": [
-        "ux-sim",
-        "severity:3",
-        "motivation"
-      ],
-      "personas": [
-        "minji-freshman-17"
-      ],
-      "severityMax": 3,
-      "personaCount": 1
+      "key": "demo-account-artifacts",
+      "title": "Shared demo account shows someone else's timetable, major, saved items and tags own posts 'Sample'",
+      "why": "environment-limited"
     },
     {
-      "fingerprint": "3cd806167637",
-      "title": "[ux-sim] Missing / empty content on /community?tab=opportunities — “Software 0”",
-      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nMissing / empty content on `/community?tab=opportunities` around “Software 0”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **priya-phd-desktop** · `internship-near-berkeley` · run `baseline-priya-internship-near-berkeley` step 9 · sev 3 — “Eight listings, zero software, zero research — for an EECS PhD at Berkeley. And why is a Bundestag exchange the top 'internship'? It's tagged Scholarships.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/shots/009-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/shots/009-click-som.jpg)\n\nRuns: [`baseline-priya-internship-near-berkeley`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/report.md)\n\n### Personas affected\n\n`priya-phd-desktop`\n\n### Environment caveat\n\n- Local stack has only CSV opportunities; live also has worker-fetched internships, hackathons and campus events — check on live before acting.\n\n### Suggestion (hypothesis)\n\nCheck whether the data on /community?tab=opportunities is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “Real software/research internships, and category filters that match what's in the list”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=3cd806167637 -->",
-      "labels": [
-        "ux-sim",
-        "severity:3",
-        "content_gap"
-      ],
-      "personas": [
-        "priya-phd-desktop"
-      ],
-      "severityMax": 3,
-      "personaCount": 1
+      "key": "welcome-zero-free-food",
+      "title": "Welcome screen advertises '0 free food events this week'",
+      "why": "environment-limited"
     },
     {
-      "fingerprint": "c4d7ce393786",
-      "title": "[ux-sim] Bug on /community?tab=opportunities — “Location”",
-      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nBug on `/community?tab=opportunities` around “Location”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **priya-phd-desktop** · `internship-near-berkeley` · run `baseline-priya-internship-near-berkeley` step 14 · sev 3 — “Zero in the Bay Area? Stripe is literally in SF. Either the filter is broken or nothing has a location. Either way I can't trust it.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/shots/014-select.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/shots/014-select-som.jpg)\n\nRuns: [`baseline-priya-internship-near-berkeley`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-priya-internship-near-berkeley/report.md)\n\n### Personas affected\n\n`priya-phd-desktop`\n\n### Suggestion (hypothesis)\n\nReproduce from the evidence steps on /community?tab=opportunities (around “Location”) and fix it; add a regression check for that screen. Personas said they wanted: “Listings tagged with real locations so the Bay Area filter actually returns Bay Area roles”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=c4d7ce393786 -->",
-      "labels": [
-        "ux-sim",
-        "severity:3",
-        "bug"
-      ],
-      "personas": [
-        "priya-phd-desktop"
-      ],
-      "severityMax": 3,
-      "personaCount": 1
-    },
-    {
-      "fingerprint": "22e5ff1db700",
-      "title": "[ux-sim] Bug on /rides/:id",
-      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nBug on `/rides/:id`. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **seoyeon-exchange-korean** · `ride-sfo-thanksgiving` · run `baseline-seoyeon-ride-sfo-thanksgiving` step 29 · sev 3 — “어?! 메모 쓰고 있었는데 'Post ride' 안 눌렀는데 벌써 올라갔어요. 그리고 제 메모(비행기 11시, 짐 하나)가 화면에 안 보여요. 저장 안 된 건가?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/029-type.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/029-type-som.jpg)\n\nRuns: [`baseline-seoyeon-ride-sfo-thanksgiving`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/report.md)\n\n### Personas affected\n\n`seoyeon-exchange-korean`\n\n### Suggestion (hypothesis)\n\nReproduce from the evidence steps on /rides/:id and fix it; add a regression check for that screen. Personas said they wanted: “메모 입력 중에는 제출되지 않고, 'Post ride'를 눌러야 올라가게”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=22e5ff1db700 -->",
-      "labels": [
-        "ux-sim",
-        "severity:3",
-        "bug"
-      ],
-      "personas": [
-        "seoyeon-exchange-korean"
-      ],
-      "severityMax": 3,
-      "personaCount": 1
-    },
-    {
-      "fingerprint": "95e8f1e4f9d1",
-      "title": "[ux-sim] Bug on /rides/:id — “You Host”",
-      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Found by AI personas driving a real browser — a hypothesis to confirm, not measured behaviour.\n\n### Problem\n\nBug on `/rides/:id` around “You Host”. Seen by **1 simulated persona(s)** across 1 scenario(s); severity max **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.), median 3.\n\n### Evidence\n\n- **seoyeon-exchange-korean** · `ride-sfo-thanksgiving` · run `baseline-seoyeon-ride-sfo-thanksgiving` step 29 · sev 3 — “그리고 내 라이드인데 '예시'랑 'Sample ride — made up to show how rides work'라고 써 있어요. 내 게 진짜로 올라간 거 맞아요? 다른 사람들도 가짜라고 생각할 것 같아요.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/029-type.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/shots/029-type-som.jpg)\n\nRuns: [`baseline-seoyeon-ride-sfo-thanksgiving`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/baseline-seoyeon-ride-sfo-thanksgiving/report.md)\n\n### Personas affected\n\n`seoyeon-exchange-korean`\n\n### Suggestion (hypothesis)\n\nReproduce from the evidence steps on /rides/:id (around “You Host”) and fix it; add a regression check for that screen. Personas said they wanted: “내가 올린 라이드에는 '예시/Sample' 표시가 없어야 함”.\n\n### Note\n\nFound by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates.\n\n<!-- ux-sim:fp=95e8f1e4f9d1 -->",
-      "labels": [
-        "ux-sim",
-        "severity:3",
-        "bug"
-      ],
-      "personas": [
-        "seoyeon-exchange-korean"
-      ],
-      "severityMax": 3,
-      "personaCount": 1
+      "key": "internship-list-thin-locally",
+      "title": "Internship list looked thin and the Bay Area filter returned nothing",
+      "why": "environment-limited"
     }
   ]
 }

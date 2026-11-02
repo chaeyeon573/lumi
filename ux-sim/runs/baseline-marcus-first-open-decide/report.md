@@ -8,6 +8,7 @@
 | Scenario | **First open: what is this app, and is it worth signing up?** — A friend sent you a link to this app. You have never seen it before. Figure out what it is for, and decide whether you want to make an account. If it seems worth it, sign up with your school e-mail. (`first-open-decide`) |
 | Target | local · http://localhost:36669 · worktree commit `60c0cc288e13` |
 | Outcome | **abandoned** · ended by persona |
+| Account | signed out at start |
 | Goal check (fixed, by harness) | not met — _Signed up and landed inside the app (the signed-in home or any main tab)._ |
 | Persona's reason | “I came for internships and it's asking me about my perfect free afternoon and long walks, with 6 more screens to go and I still haven't seen a single internship. Feels like a dating or hangout app, so I'm not making an account.” |
 | Effort | 4/36 actions · objective frustration 0.50/4 · 2 confused note(s) · ~51s simulated |

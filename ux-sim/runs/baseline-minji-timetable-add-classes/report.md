@@ -8,6 +8,7 @@
 | Scenario | **Put my classes into my timetable** — You want the app to know your schedule so it can show who's free when you are. Add MATH 1A (Calculus) to your timetable in the app. (`timetable-add-classes`) |
 | Target | local · http://localhost:35021 · worktree commit `60c0cc288e13` |
 | Outcome | **success** · ended by persona |
+| Account | shared demo account (sample profile with someone else's data) |
 | Goal check (fixed, by harness) | met at step 11 after 5 action(s) — _MATH 1A shows up in the timetable grid (checked on /timetable with no search sheet open)._ |
 | Persona's reason | “MATH 1A 넣었어 — 검색해서 한 번 누르니까 월수금 9시에 바로 들어감. 근데 처음부터 있던 CS 수업들은 내 거 아닌 것 같아서 좀 찝찝.” |
 | Effort | 5/40 actions · objective frustration 0.00/4.5 · 3 confused note(s) · ~23s simulated |

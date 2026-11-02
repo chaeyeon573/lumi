@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+// batch-plan — print the persona × scenario cells for a batch (see lib/batch.mjs, docs/ux-sim/ORCHESTRATE.md).
+//   batch-plan --all | --scenario a,b | --persona x | --rotate N  [--repeat K] [--worktree DIR] [--batch ID] [--mode local] [--json]
+import { parseArgs } from '../lib/args.mjs';
+import { plan, planText } from '../lib/batch.mjs';
+
+const o = parseArgs(process.argv.slice(2), ['all', 'json']);
+if (o.help || o.h) { console.log('batch-plan --all | --scenario a,b | --persona x,y | --rotate N  [--repeat K] [--worktree DIR] [--batch ID] [--mode local|live] [--json]'); process.exit(0); }
+try {
+  const p = plan(o);
+  console.log(o.json ? JSON.stringify(p, null, 2) : planText(p));
+} catch (e) { console.error(`batch-plan: ${e.message}`); process.exit(1); }

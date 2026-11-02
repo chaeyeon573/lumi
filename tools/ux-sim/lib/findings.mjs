@@ -27,7 +27,15 @@ export function keyElementOf(ev) {
 
 export const fingerprintOf = (ev) => sha1(JSON.stringify([ev.route ?? '/', ev.type, keyElementOf(ev)])).slice(0, 12);
 
-const median = (xs) => { const s = [...xs].sort((a, b) => a - b); const m = Math.floor(s.length / 2); return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+const median = (xs) => { if (!xs.length) return null; const s = [...xs].sort((a, b) => a - b); const m = Math.floor(s.length / 2); return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+
+/** 1–4 or null. Severity arrives as a number or a CLI string ("3"); anything else is not a severity. */
+export function toSeverity(v) { const n = Number(v); return Number.isInteger(n) && n >= 1 && n <= 4 ? n : null; }
+/** max of valid severities, null when there are none (never -Infinity/NaN, which JSON writes as null silently) */
+export function maxSeverity(xs) { const v = xs.map(toSeverity).filter((x) => x !== null); return v.length ? Math.max(...v) : null; }
+export function medianSeverity(xs) { return median(xs.map(toSeverity).filter((x) => x !== null)); }
+/** counts per severity level, e.g. { "1": 3, "2": 10, "3": 4, "4": 1 } */
+export function severityHistogram(xs) { const h = { 1: 0, 2: 0, 3: 0, 4: 0 }; for (const x of xs.map(toSeverity)) if (x !== null) h[x]++; return h; }
 
 const SUGGEST = {
   bug: (scr, el) => `Reproduce from the evidence steps on ${scr}${el ? ` (around “${el}”)` : ''} and fix it; add a regression check for that screen.`,
@@ -53,7 +61,7 @@ export function cluster(runs) {
       if (ev.environmentLimited) { envLimited.push({ runId: r.runId, persona: r.persona.id, scenario: r.scenario.id, step: ev.step, type: ev.type, severity: ev.severity, quote: ev.quote, route: ev.route, reason: ev.environmentLimitedReason ?? 'environment-limited' }); continue; }
       const fp = fingerprintOf(ev);
       if (!groups.has(fp)) groups.set(fp, { fp, route: ev.route ?? '/', type: ev.type, keyElement: keyElementOf(ev) || null, elementName: ev.element?.name || ev.key || null, events: [] });
-      groups.get(fp).events.push({ runId: r.runId, persona: r.persona.id, scenario: r.scenario.id, step: ev.step, severity: ev.severity, quote: ev.quote, evidence: ev.evidence ?? [], url: ev.url ?? '', wish: ev.wish ?? null, caveat: ev.environmentCaveat ?? null });
+      groups.get(fp).events.push({ runId: r.runId, persona: r.persona.id, scenario: r.scenario.id, step: ev.step, severity: toSeverity(ev.severity), quote: ev.quote, evidence: ev.evidence ?? [], url: ev.url ?? '', wish: ev.wish ?? null, caveat: ev.environmentCaveat ?? null });
     }
   }
   const findings = [...groups.values()].map((g) => {
@@ -71,7 +79,7 @@ export function cluster(runs) {
       screen: g.route, frictionType: g.type, keyElement: g.keyElement, keyElementLabel: el,
       personas, personaCount: personas.length, scenarios, scenarioCount: scenarios.length,
       runs: [...new Set(g.events.map((e) => e.runId))], occurrences: g.events.length,
-      severityMax: Math.max(...sev), severityMedian: median(sev),
+      severityMax: maxSeverity(sev), maxSeverity: maxSeverity(sev), severityMedian: medianSeverity(sev),
       events: g.events.map(({ caveat: _c, ...e }) => e), wishes, environmentCaveats: caveats,
       suggestedImprovement: { kind: 'hypothesis', text },
       hypothesisNote: HYPOTHESIS_NOTE,

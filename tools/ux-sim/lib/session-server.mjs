@@ -13,9 +13,11 @@ import http from 'node:http';
 import path from 'node:path';
 import { mkdirSync, existsSync, readFileSync } from 'node:fs';
 import { chromium } from 'playwright-core';
-import { CHROMIUM, rel } from './paths.mjs';
-import { collect, assignIds, drawMarks, clearMarks, scrollState } from './dom.mjs';
-import { readJson, writeJsonAtomic, sha1, sleep, FEELINGS, FRICTION_TYPES, OUTCOMES, normalizeRoute, checkSuccess, environmentConfig } from './util.mjs';
+import { CHROMIUM, REPO_ROOT, rel } from './paths.mjs';
+import { collect, assignIds, drawMarks, clearMarks, scrollState, hitPoint } from './dom.mjs';
+import { readJson, writeJsonAtomic, sha1, sleep, FEELINGS, FRICTION_TYPES, OUTCOMES, normalizeRoute, environmentConfig } from './util.mjs';
+import { traceSuccess, evalRecord, baselineOf, recordCollections, dataReader, campusToday } from './success.mjs';
+import { profileFor, registerFresh, seedPeers, BROWSER_KEYS } from './account.mjs';
 import { down as stackDown } from './stack.mjs';
 
 const runDir = path.resolve(process.argv[2]);
@@ -31,6 +33,14 @@ const phone = persona.device.type === 'phone';
 const env = environmentConfig()[target.mode] ?? environmentConfig().custom;
 const base = new URL(target.baseUrl);
 const LOCAL_HOSTS = new Set(['localhost', '127.0.0.1', '[::1]', '::1']);
+const authMode = cfg.auth ?? scenario.setup?.auth ?? 'fresh';
+const catalog = target.stack?.catalog ?? null;
+const catalogBuiltin = target.mode === 'local' && catalog?.kind !== 'cached';
+// the persona's own data on the local stack — success checks read it server-side (lib/success.mjs)
+const dataFileAbs = target.mode === 'local' && target.stack?.dataFile ? path.resolve(REPO_ROOT, target.stack.dataFile) : null;
+const readData = dataReader(dataFileAbs);
+let baseline = null; // { collections } when the persona starts
+const vars = { me: undefined, peers: [], peerActivities: [], peerRides: [], today: campusToday() };
 
 // ─── run record ───────────────────────────────────────────────────────────────
 const run = {
@@ -42,19 +52,34 @@ const run = {
   disclaimer: 'AI simulation — hypotheses, not measured user behaviour.',
   persona, scenario: { id: scenario.id, title: scenario.title, goal: scenario.goal, startUrl: scenario.startUrl, setup: scenario.setup, success: scenario.success },
   target: { mode: target.mode, baseUrl: target.baseUrl, stack: target.stack ?? null, liveGuard: target.mode === 'live' ? { enabled: true, rule: 'POST/PUT/PATCH/DELETE to /api/* blocked (403) except /api/auth/demo and read-only calls; /api/events (SSE) aborted', allowed: [] } : { enabled: false } },
-  environment: { summary: env.summary, knownLimits: env.knownLimits, viewport: persona.device.viewport, locale: persona.device.locale, timezone: 'America/Los_Angeles', userAgent: null, browserVersion: null },
+  auth: { mode: authMode },
+  harness: cfg.harness ?? null,
+  environment: { summary: env.summary, knownLimits: knownLimits(), viewport: persona.device.viewport, locale: persona.device.locale, timezone: 'America/Los_Angeles', userAgent: null, browserVersion: null },
   limits: { maxSteps: P.maxSteps, frustrationThreshold: P.frustrationThreshold, confusionTolerance: P.confusionTolerance, timeBudgetSec: P.timeBudgetSec, weights: WEIGHTS },
   counters: { actions: 0, frustration: 0, confusionNotes: 0, simTimeSec: 0 },
   steps: [],
   frictionEvents: [],
   autoChecks: [],
   outcome: null, reportedOutcome: null, outcomeReason: null, endedBy: null,
-  goalAchieved: false, goalFirstMetAtStep: null, stepsToGoal: null, falseSuccess: false, unnoticedSuccess: false,
+  goalAchieved: false, goalFirstMetAtStep: null, stepsToGoal: null, goalEvidence: null, falseSuccess: false, unnoticedSuccess: false,
+  successCheck: { evaluatedFrom: 'first persona action (never the start screen)', recordChecks: recordCollections(scenario.success).length ? (target.mode === 'local' ? 'local data file' : 'undecidable on this target') : 'none' },
+  patienceExhaustedAtStep: null, actionsAfterPatienceExhausted: 0, overrodePatience: false,
   abandonPoint: null,
   dropoffRisk: null,
 };
 if (target.mode === 'live') run.target.liveGuard.allowed = ['/api/auth/demo', '/api/auth/me', '/api/bootstrap', '/api/schools/search', '/api/schools/highlights', '/api/catalog/*', '/api/academic/dates', '/api/seats/mine', '/api/rides/teaser', '/api/classes/room', 'GET *'];
 const runFile = path.join(runDir, 'run.json');
+function knownLimits() {
+  const k = [...(env.knownLimits ?? [])];
+  if (target.mode !== 'local') return k;
+  const i = k.findIndex((x) => /^Course catalog/.test(x));
+  const line = catalogBuiltin
+    ? `Course catalog is the built-in sample list (~210 courses, e.g. MATH 1A; ${catalog?.why ?? 'no cached real catalog'}). Live has the imported current-term Berkeley schedule (e.g. MATH 51) — course-name findings on timetable/class screens are marked environment-limited.`
+    : `Course catalog is the real Berkeley Class Schedule (${catalog.courses} courses, ${(catalog.terms ?? []).join(' + ')}), fetched ${String(catalog.fetchedAt).slice(0, 10)} with the worker's adapter. Seat counts and very recent changes may differ from live.`;
+  if (i >= 0) k[i] = line; else k.push(line);
+  if (authMode === 'fresh') k.push('Signed in as a brand-new real (non-sample, e-mail-verified) account made for this run. Other students exist only if the scenario seeds peers (local fixtures); sample profiles are hidden from real accounts, as on live.');
+  return k;
+}
 const save = () => writeJsonAtomic(runFile, run);
 
 // ─── browser ──────────────────────────────────────────────────────────────────
@@ -195,16 +220,27 @@ async function observe(stepIndex, kind) {
   const prevTexts = new Set(last?.texts ?? []);
   const newChars = raw.texts.filter((t) => !prevTexts.has(t)).join(' ').length;
   const readSec = (newChars / (persona.readingCharsPerSec ?? 25)) * (persona.readingDepth ?? 0.6);
-  const goalMet = checkSuccess(scenario.success, raw.url, raw.fullText);
+  const goal = await goalTrace(raw.url, raw.fullText);
+  const goalMet = goal.met;
   const small = raw.checks.smallTapTargets.map((tmp) => raw.elements.find((d) => d.tmp === tmp)).filter(Boolean);
   const obs = {
     url: raw.url, route: normalizeRoute(raw.url), title: raw.title, elements: raw.elements, lines, texts: raw.texts, text,
-    offscreenOmitted: off.length - shownOff.length, scroll: raw.scroll, fingerprint, goalMet, readSec,
+    offscreenOmitted: off.length - shownOff.length, scroll: raw.scroll, fingerprint, goalMet, goal, readSec,
     checks: { smallTapTargets: small.map((d) => ({ id: d.id, name: d.name || d.icon, w: d.box.w, h: d.box.h })), horizontalOverflowPx: raw.checks.horizontalOverflowPx, brokenImages: raw.checks.brokenImages, navLoadMs: raw.checks.navLoadMs },
     screenshot: rel(shot), annotated: rel(som), newIds, pixels,
   };
   last = obs;
   return obs;
+}
+
+/** $me for sign-up scenarios is whoever the browser is signed in as now */
+async function goalTrace(url, text) {
+  if (authMode === 'none' && target.mode === 'local') {
+    const id = await page.evaluate((k) => { try { return localStorage.getItem(k); } catch { return null; } }, BROWSER_KEYS.user).catch(() => null);
+    vars.me = id || undefined;
+  }
+  const snapshot = recordCollections(scenario.success).length ? readData() : null;
+  return traceSuccess(scenario.success, { url, text, record: (leaf) => (baseline ? evalRecord(leaf, { snapshot, baseline, vars }) : null) });
 }
 
 function scrollLabel(s) {
@@ -224,8 +260,14 @@ function nudge() {
   const out = [];
   if (frac >= 0.85) out.push(`You are almost out of patience (${Math.round(frac * 100)}%). ${persona.name} would give up very soon — decide now whether this is worth it.`);
   else if (frac >= 0.7) out.push(`Patience is wearing thin (${Math.round(frac * 100)}%). Is ${persona.name} still motivated to keep going?`);
-  if (c.confusionNotes >= P.confusionTolerance) out.push(`You have felt confused/frustrated ${c.confusionNotes} times — about where ${persona.name} usually quits. If that is honest, finish with --outcome abandoned.`);
   return out.length ? out.join(' ') : undefined;
+}
+
+/** shown on every response once the persona's confusion tolerance is used up (PERSONA_RUN.md §3.6) */
+function exhaustedLine() {
+  if (run.patienceExhaustedAtStep === null) return undefined;
+  const left = Math.max(0, 1 - run.actionsAfterPatienceExhausted);
+  return `PATIENCE EXHAUSTED (step ${run.patienceExhaustedAtStep}: ${run.counters.confusionNotes} confused/frustrated moments, ${persona.name}'s limit is ${P.confusionTolerance}). Finish now with --outcome abandoned — unless you are in the middle of the action that completes the goal and it needs at most one more action (${left} left; continuing is recorded as overrodePatience). A further action ends the run as abandoned.`;
 }
 
 let pendingIntent = null; // { step, expect, confidence }
@@ -242,7 +284,8 @@ function view(obs, extra = {}) {
     url: obs.url.replace(base.origin, '') || '/',
     title: obs.title,
     patience: patienceLine(),
-    nudge: nudge(),
+    patienceExhausted: exhaustedLine(),
+    nudge: exhaustedLine() ? undefined : nudge(),
     reflect: pendingIntent ? `Before step ${pendingIntent.step} you expected: "${pendingIntent.expect}" (confidence ${pendingIntent.confidence ?? '?'}). Does this screen match? Record it: note --mismatch yes|no --actual "<what happened>" --feeling … --thought "…"` : undefined,
     signals: extra.signals?.length ? extra.signals : undefined,
     notices: extra.notices?.length ? extra.notices : undefined,
@@ -268,7 +311,11 @@ function recordObservation(step, obs) {
   step.observation = { title: obs.title, elementCount: obs.elements.length, newElementIds: obs.newIds, elements: obs.lines, text: obs.text.slice(0, 1500), scroll: obs.scroll, fingerprint: obs.fingerprint, simReadSec: Math.round(obs.readSec * 10) / 10 };
   step.checks = obs.checks;
   run.counters.simTimeSec += obs.readSec;
-  if (obs.goalMet && run.goalFirstMetAtStep === null) { run.goalFirstMetAtStep = step.index; run.goalAchieved = true; run.stepsToGoal = run.counters.actions; }
+  // never on the start screen: what is there before the persona acts is seed state, not their achievement
+  if (obs.goalMet && step.kind !== 'start' && run.counters.actions > 0 && run.goalFirstMetAtStep === null) {
+    run.goalFirstMetAtStep = step.index; run.goalAchieved = true; run.stepsToGoal = run.counters.actions;
+    run.goalEvidence = { step: step.index, url: obs.url.replace(base.origin, '') || '/', matched: obs.goal.matched, screenshot: obs.screenshot };
+  }
   if (obs.checks.smallTapTargets.length || obs.checks.horizontalOverflowPx > 0 || obs.checks.brokenImages) {
     run.autoChecks.push({ step: step.index, route: obs.route, smallTapTargets: obs.checks.smallTapTargets.length, smallTapTargetExamples: obs.checks.smallTapTargets.slice(0, 5), horizontalOverflowPx: obs.checks.horizontalOverflowPx, brokenImages: obs.checks.brokenImages, screenshot: obs.screenshot });
   }
@@ -283,16 +330,40 @@ function drain(step) {
 }
 
 // ─── setup: auth + start URL ─────────────────────────────────────────────────
+const apiBase = new URL(target.apiUrl ?? target.baseUrl);
 async function setup() {
-  const s = stepBase('start', 'start', { persona: persona.id, scenario: scenario.id });
+  const s = stepBase('start', 'start', { persona: persona.id, scenario: scenario.id, auth: authMode });
   const notes = [];
-  if (scenario.setup?.auth === 'demo') {
-    const school = scenario.setup.school ?? 'berkeley';
+  const school = scenario.setup?.school ?? 'berkeley';
+  if (authMode === 'demo') {
     await page.goto(new URL(`/welcome?demo=${school}`, base).href, { waitUntil: 'domcontentloaded', timeout: 60_000 });
     await page.waitForURL((u) => !u.pathname.startsWith('/welcome'), { timeout: 30_000 }).catch(() => notes.push('demo login did not leave /welcome'));
     await settle();
+    vars.me = await page.evaluate((k) => localStorage.getItem(k), BROWSER_KEYS.user).catch(() => null) || undefined;
+    Object.assign(run.auth, { userId: vars.me ?? null, sample: true, note: `shared ${school} demo account (sample profile with someone else's data)` });
     notes.push(`signed in as the ${school} demo account (sample data)`);
+  } else if (authMode === 'fresh') {
+    if (target.mode === 'live') throw new Error('auth "fresh" registers a real account — never on live (use --auth demo or none)');
+    const tag = cfg.runId.slice(-4) + Date.now().toString(36).slice(-4);
+    const dataFile = dataFileAbs;
+    const acc = await registerFresh(apiBase.href, profileFor(persona, { schoolId: scenario.setup?.schoolId ?? 's_berkeley' }), { tag, dataFile });
+    vars.me = acc.user.id;
+    if (scenario.setup?.peers?.length) {
+      const peers = await seedPeers(apiBase.href, scenario.setup.peers, { tag, dataFile });
+      vars.peers = peers.map((x) => x.userId); vars.peerActivities = peers.map((x) => x.activityId).filter(Boolean); vars.peerRides = peers.map((x) => x.rideId).filter(Boolean);
+      run.auth.peers = peers;
+      notes.push(`seeded ${peers.length} peer account(s) (real, non-sample local fixtures): ${peers.map((x) => x.nickname).join(', ')}`);
+    }
+    // sign the browser in the way the app does after sign-up: token + user id in localStorage
+    await page.goto(new URL('/api/health', base).href, { waitUntil: 'domcontentloaded', timeout: 30_000 });
+    await page.evaluate(({ k, token, user, lang, appLang }) => { localStorage.setItem(k.token, token); localStorage.setItem(k.user, user); if (appLang) localStorage.setItem(lang, appLang); }, { k: BROWSER_KEYS, token: acc.token, user: acc.user.id, lang: BROWSER_KEYS.lang, appLang: acc.profile.appLanguage });
+    const { avatar: _a, ...profile } = acc.profile;
+    Object.assign(run.auth, { userId: acc.user.id, email: acc.email, sample: !!acc.user.sample, emailVerified: !!acc.user.affiliation?.emailVerified, profile, createdVia: 'POST /api/schools/send-code → /api/schools/verify-code → /api/auth/register' });
+    notes.push(`signed in as a brand-new verified account ${acc.email} (${acc.profile.nickname}, ${acc.profile.department || 'no major'}, born ${acc.profile.birthYear})`);
+  } else {
+    Object.assign(run.auth, { userId: null, note: 'signed out — the persona signs up (or not) in the app' });
   }
+  if (target.mode === 'local') baseline = baselineOf(readData(), recordCollections(scenario.success));
   const t0 = Date.now();
   await page.goto(new URL(scenario.startUrl, base).href, { waitUntil: 'domcontentloaded', timeout: 60_000 });
   await settle(10_000);
@@ -341,15 +412,24 @@ function descriptor(id) {
   return d ? { id: d.id, tag: d.tag, role: d.role, name: d.name, icon: d.icon || undefined, href: d.href, box: d.box, inViewport: d.inViewport, disabled: d.disabled } : { id: Number(id) };
 }
 
-async function tapCenter(loc) {
+/** Tap a point where the element itself is on top (not its centre, which a sticky bar may cover) — see dom.hitPoint. */
+let lastTap = null;
+async function tapVisible(loc) {
   await loc.scrollIntoViewIfNeeded({ timeout: 2500 }).catch(() => {});
-  const box = await loc.boundingBox();
-  if (!box) throw new Stale('element has no position on screen any more — observe again');
-  await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+  let pt = await loc.evaluate(hitPoint).catch(() => null);
+  if (!pt || pt.x === null) {
+    await loc.evaluate((el) => el.scrollIntoView({ block: 'center', inline: 'nearest' })).catch(() => {});
+    await sleep(250);
+    pt = await loc.evaluate(hitPoint).catch(() => null);
+  }
+  if (!pt) throw new Stale('element has no position on screen any more — observe again');
+  if (pt.x === null) throw new Stale(`that element is covered${pt.coveredBy ? ` by “${pt.coveredBy}”` : ''} everywhere — a tap would hit what is on top. Scroll or close it, then observe again.`);
+  lastTap = pt;
+  await page.mouse.click(pt.x, pt.y);
 }
 
 const ACTIONS = {
-  async click({ id }) { await tapCenter(await locate(id)); },
+  async click({ id }) { await tapVisible(await locate(id)); },
   async tap({ x, y }) {
     const vp = persona.device.viewport;
     if (!(x >= 0 && y >= 0 && x <= vp.width && y <= vp.height)) throw new Refused(`tap x y must be inside the ${vp.width}x${vp.height} screen (screenshot pixels)`);
@@ -357,7 +437,10 @@ const ACTIONS = {
   },
   async type({ id, text, submit }) {
     const loc = await locate(id);
-    await tapCenter(loc);
+    await tapVisible(loc);
+    // only type where the tap put the cursor — never into whatever else has focus, and never after the page changed
+    const focused = await loc.evaluate((el) => el === document.activeElement || el.contains(document.activeElement)).catch(() => false);
+    if (!focused) throw new Error('tapping the field did not put the cursor in it (the screen changed or something else took the tap) — nothing was typed');
     try { await loc.fill(String(text), { timeout: 3000 }); } catch { await page.keyboard.type(String(text), { delay: 20 }); }
     if (submit) await page.keyboard.press('Enter');
   },
@@ -403,6 +486,15 @@ async function act(kind, args) {
   const pixelsBefore = last?.pixels;
   const scrollBefore = kind === 'scroll' ? await page.evaluate(scrollState).catch(() => null) : null;
   buf = { console: [], failed: [], blocked: [], envHits: [] };
+  // patience: after the harness said it is exhausted, ONE more action is allowed (to finish a goal that is one tap away)
+  if (run.patienceExhaustedAtStep !== null && kind !== 'wait') {
+    if (run.actionsAfterPatienceExhausted >= 1) {
+      const ended = await finish({ outcome: 'abandoned', reason: `[harness] ${persona.name}'s patience was exhausted at step ${run.patienceExhaustedAtStep}; one more action was allowed to finish the goal, and the persona tried a second.` }, 'harness:patience');
+      return { ok: false, counted: false, sessionEnded: ended, error: 'patience exhausted — the run was ended as abandoned' };
+    }
+  }
+  const afterExhaustion = run.patienceExhaustedAtStep !== null && kind !== 'wait';
+  lastTap = null;
   const t0 = Date.now();
   let error = null;
   try { await ACTIONS[kind](args); } catch (e) {
@@ -411,7 +503,9 @@ async function act(kind, args) {
   }
   await settle();
   step.latencyMs = Date.now() - t0;
+  if (lastTap) step.tapPoint = lastTap;
   run.counters.actions++;
+  if (afterExhaustion) { run.actionsAfterPatienceExhausted++; run.overrodePatience = true; step.afterPatienceExhausted = true; }
   step.actionNumber = run.counters.actions;
   step.result = error ? 'error' : 'ok';
   if (error) step.error = error;
@@ -467,6 +561,7 @@ function note(a) {
   step.route = about.route;
   if (['confused', 'frustrated'].includes(a.feeling)) run.counters.confusionNotes++;
   const res = { ok: true, step: step.index, about: about.index };
+  if (run.patienceExhaustedAtStep === null && run.counters.confusionNotes >= P.confusionTolerance) run.patienceExhaustedAtStep = step.index;
   if (a.mismatch !== undefined) {
     const mm = ['yes', 'true', '1', true].includes(a.mismatch);
     const target = pendingIntent ? run.steps[pendingIntent.step] : about;
@@ -486,7 +581,9 @@ function note(a) {
     if (!envLimited && r) { envLimited = true; envReason = r.reason; }
     if (!envLimited && about.blockedRequests?.length) { envLimited = true; envReason = 'a write was blocked by the ux-sim live guard on this step'; }
     if (!envLimited && about.environmentHits?.length) { envLimited = true; envReason = about.environmentHits[0].reason; }
-    const caveat = (env.contentCaveats ?? []).find((c) => c.types.includes(a.friction) && new RegExp(c.route).test(path0));
+    const cat = env.catalogBuiltin;
+    if (!envLimited && catalogBuiltin && cat && new RegExp(cat.route).test(path0) && cat.types.includes(a.friction)) { envLimited = true; envReason = cat.reason; }
+    const caveat = (env.contentCaveats ?? []).find((c) => c.types.includes(a.friction) && new RegExp(c.route).test(path0) && (c.when !== 'catalogBuiltin' || catalogBuiltin));
     const ev = {
       id: `f${run.frictionEvents.length + 1}`, step: about.index, noteStep: step.index, type: a.friction, severity: sev, feeling: a.feeling,
       quote: step.thought, url: (about.urlAfter ?? '').replace(base.origin, ''), route,
@@ -504,6 +601,7 @@ function note(a) {
   save();
   res.patience = patienceLine();
   res.nudge = nudge();
+  res.patienceExhausted = exhaustedLine();
   return res;
 }
 

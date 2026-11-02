@@ -8,6 +8,7 @@
 | Scenario | **Share a ride to SFO for Thanksgiving** — You fly out of SFO the Wednesday before Thanksgiving (Nov 25) in the morning. Find other students to split a ride to the airport with — join one, or post yours so others can find you. (`ride-sfo-thanksgiving`) |
 | Target | local · http://localhost:33897 · worktree commit `60c0cc288e13` |
 | Outcome | **success** · ended by persona |
+| Account | shared demo account (sample profile with someone else's data) |
 | Goal check (fixed, by harness) | met at step 17 after 8 action(s) — _Joined/requested an SFO ride or posted one (a ride page to SFO is open, or the list shows you in a ride)._ |
 | Persona's reason | “SFO 수요일 아침 7시 라이드를 Sproul Plaza에서 출발로 올렸어요. 진짜 같이 갈 사람은 아직 없고, 메모가 사라지고 내 라이드에도 '예시'가 붙어서 좀 불안해요.” |
 | Effort | 16/45 actions · objective frustration 1.50/5 · 5 confused note(s) · ~188s simulated |

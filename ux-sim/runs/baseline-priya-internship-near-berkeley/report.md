@@ -8,6 +8,7 @@
 | Scenario | **Find an internship near Berkeley** — You need a paid internship (summer or part-time) somewhere near Berkeley / the Bay Area. Use the app to find one that looks real and open, and open its details so you know how to apply. (`internship-near-berkeley`) |
 | Target | local · http://localhost:44215 · worktree commit `60c0cc288e13` |
 | Outcome | **abandoned** · ended by persona |
+| Account | shared demo account (sample profile with someone else's data) |
 | Goal check (fixed, by harness) | not met — _An internship listing's detail page is open._ |
 | Persona's reason | “Internships are buried under Campus > Browse, there are 8 of them with zero software or research roles, the Bay Area filter returns nothing, and Back threw me out of the section. The one plausible listing is an undergrad-style Stripe design internship; not worth re-clicking three levels between experiments.” |
 | Effort | 7/40 actions · objective frustration 3.50/5 · 6 confused note(s) · ~124s simulated |

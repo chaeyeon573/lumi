@@ -1,7 +1,9 @@
 import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import { readFileSync, writeFileSync, renameSync, existsSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { PERSONAS_DIR, SCENARIOS_DIR, HARNESS_DIR } from './paths.mjs';
+import { traceSuccess } from './success.mjs';
 
 export const sha1 = (s) => createHash('sha1').update(s).digest('hex');
 export const readJson = (f) => JSON.parse(readFileSync(f, 'utf8'));
@@ -43,20 +45,27 @@ export function normalizeRoute(urlOrPath) {
   return (segs.join('/') || '/') + (tab ? `?tab=${tab}` : '');
 }
 
-/** Evaluate a scenario success check against a URL + page text. */
-export function checkSuccess(success, url, text) {
-  if (!success) return false;
-  let p = url;
-  try { const u = new URL(url); p = u.pathname + u.search; } catch { /* path already */ }
-  const leaf = (c) => {
-    if (c.urlMatches !== undefined) return new RegExp(c.urlMatches, 'i').test(p);
-    if (c.textMatches !== undefined) return new RegExp(c.textMatches, 'i').test(text);
-    if (c.textAbsent !== undefined) return !new RegExp(c.textAbsent, 'i').test(text);
-    if (c.all) return c.all.every(leaf);
-    if (c.any) return c.any.some(leaf);
-    return false;
-  };
-  const all = success.all ?? [];
-  const any = success.any ?? [];
-  return all.every(leaf) && (any.length === 0 || any.some(leaf)) && (all.length + any.length > 0);
+/** Evaluate a scenario success check against a URL + page text (no record leaves — see lib/success.mjs). */
+export function checkSuccess(success, url, text, record) {
+  return traceSuccess(success, { url, text, record }).met;
+}
+
+/**
+ * What harness produced a run: a content hash over everything that shapes a run (lib, bin, personas, scenarios,
+ * environment.json) plus the last commit that touched tools/ux-sim. `compare` uses it to check both sides ran the same
+ * harness — the app under test can come from another worktree (--worktree), the harness always comes from here.
+ */
+export function harnessVersion() {
+  const files = [];
+  const walk = (d) => { for (const f of readdirSync(d, { withFileTypes: true })) { if (f.name === 'node_modules' || f.name === 'test') continue; const p = path.join(d, f.name); if (f.isDirectory()) walk(p); else if (/\.(mjs|json)$|^(ux-sim|local-stack|batch-plan)$/.test(f.name) && f.name !== 'package-lock.json') files.push(p); } };
+  for (const d of ['bin', 'lib', 'personas', 'scenarios']) if (existsSync(path.join(HARNESS_DIR, d))) walk(path.join(HARNESS_DIR, d));
+  files.push(path.join(HARNESS_DIR, 'environment.json'));
+  const h = createHash('sha1');
+  for (const f of files.sort()) { h.update(path.relative(HARNESS_DIR, f)); h.update('\0'); h.update(readFileSync(f)); h.update('\0'); }
+  let commit = null; let dirty = null;
+  try {
+    commit = execFileSync('git', ['-C', HARNESS_DIR, 'log', '-1', '--format=%H', '--', '.'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim() || null;
+    dirty = execFileSync('git', ['-C', HARNESS_DIR, 'status', '--porcelain', '--', '.'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim().length > 0;
+  } catch { /* not a git checkout */ }
+  return { hash: h.digest('hex').slice(0, 12), commit, dirty };
 }

@@ -5,6 +5,26 @@
   "year": "First-year (started college a year early)",
   "school": "UC Berkeley",
   "major": "Undeclared, leaning Data Science",
+  "account": {
+    "$comment": "Profile for auth: fresh — the harness registers this account through the app's own sign-up API (lib/account.mjs). nickname defaults to name, birthYear to this year − age.",
+    "nickname": "Minji",
+    "department": "Undeclared",
+    "yearInSchool": 1,
+    "goals": [
+      "friends",
+      "lunch"
+    ],
+    "interests": [
+      "meal",
+      "coffee"
+    ],
+    "purposes": [
+      "friend"
+    ],
+    "lookingFor": [
+      "friend"
+    ]
+  },
   "purpose": "Make a couple of friends to eat with — she eats most meals alone in her dorm room.",
   "techFamiliarity": "high",
   "readingDepth": 0.3,

@@ -5,6 +5,28 @@
   "year": "Sophomore",
   "school": "UC Berkeley",
   "major": "Computer Science (intended)",
+  "account": {
+    "$comment": "Profile for auth: fresh — the harness registers this account through the app's own sign-up API (lib/account.mjs). nickname defaults to name, birthYear to this year − age.",
+    "nickname": "Jordan",
+    "department": "Computer Science",
+    "yearInSchool": 2,
+    "goals": [
+      "hackathon",
+      "join_club"
+    ],
+    "interests": [
+      "club",
+      "exercise"
+    ],
+    "purposes": [
+      "club",
+      "friend"
+    ],
+    "lookingFor": [
+      "teammate",
+      "friend"
+    ]
+  },
   "purpose": "Find a club or hackathon team that's actually fun; gets bored fast.",
   "techFamiliarity": "high",
   "readingDepth": 0.2,

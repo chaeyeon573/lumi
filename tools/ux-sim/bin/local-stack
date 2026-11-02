@@ -1,15 +1,23 @@
 #!/usr/bin/env node
 // local-stack — run Lumi (server + built web) locally from any git worktree with an isolated, seeded data file.
-//   local-stack up [--worktree DIR] [--port N] [--data-file PATH] [--rebuild] [--reseed] [--dev [--web-port N]] [--autoreply]
+//   local-stack up [--worktree DIR] [--port N] [--data-file PATH] [--rebuild] [--reseed] [--dev [--web-port N]] [--autoreply] [--catalog auto|cached|builtin]
 //   local-stack down --port N | --all
 //   local-stack status
-import { up, down, status } from '../lib/stack.mjs';
+//   local-stack catalog fetch [--worktree DIR]   run the worktree's Berkeley course adapter once and cache it (~5 min)
+//   local-stack catalog status
+import { up, down, status, fetchCatalog, catalogCache, catalogPlan } from '../lib/stack.mjs';
 import { parseArgs } from '../lib/args.mjs';
 
-const { _: [cmd = 'help'], ...o } = parseArgs(process.argv.slice(2));
+const USAGE = `local-stack up [--worktree DIR] [--port N] [--data-file PATH] [--rebuild] [--reseed] [--dev [--web-port N]] [--autoreply] [--catalog auto|cached|builtin]
+local-stack down --port N | --all
+local-stack status
+local-stack catalog fetch [--worktree DIR]    cache the real Berkeley Class Schedule (same adapter as the worker, ~5 min)
+local-stack catalog status`;
+
+const { _: [cmd = 'help', sub], ...o } = parseArgs(process.argv.slice(2), ['rebuild', 'reseed', 'dev', 'autoreply', 'keep', 'all']);
 try {
   if (cmd === 'up') {
-    const info = await up({ worktree: o.worktree, port: o.port, dataFile: o['data-file'], rebuild: !!o.rebuild, reseed: !!o.reseed, dev: !!o.dev, webPort: o['web-port'], autoreply: !!o.autoreply, keep: !!o.keep });
+    const info = await up({ worktree: o.worktree, port: o.port, dataFile: o['data-file'], rebuild: !!o.rebuild, reseed: !!o.reseed, dev: !!o.dev, webPort: o['web-port'], autoreply: !!o.autoreply, keep: !!o.keep, catalog: o.catalog });
     console.log(JSON.stringify(info, null, 2));
     process.exit(0);
   } else if (cmd === 'down') {
@@ -18,9 +26,10 @@ try {
     for (const p of ports) console.log(`${p}: ${down(p) ? 'stopped' : 'not running (no pid file)'}`);
   } else if (cmd === 'status') {
     console.log(JSON.stringify(status(), null, 2));
+  } else if (cmd === 'catalog') {
+    if (sub === 'fetch') console.log(JSON.stringify(fetchCatalog({ worktree: o.worktree, school: o.school ?? 'berkeley' }), null, 2));
+    else console.log(JSON.stringify({ cache: catalogCache('berkeley'), nextTemplateUses: catalogPlan(o.catalog) }, null, 2));
   } else {
-    console.log(`local-stack up [--worktree DIR] [--port N] [--data-file PATH] [--rebuild] [--reseed] [--dev [--web-port N]] [--autoreply]
-local-stack down --port N | --all
-local-stack status`);
+    console.log(USAGE);
   }
 } catch (e) { console.error(`local-stack: ${e.message}`); process.exit(1); }

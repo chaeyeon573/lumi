@@ -8,6 +8,7 @@
 | Scenario | **Find a club I'd actually like** — You want to find one student club or group you'd actually enjoy and feel welcome in. Use the app to find one that fits you and open its page to see how to join. (`find-a-club`) |
 | Target | local · http://localhost:34607 · worktree commit `60c0cc288e13` |
 | Outcome | **success** · ended by persona |
+| Account | shared demo account (sample profile with someone else's data) |
 | Goal check (fixed, by harness) | met at step 26 after 16 action(s) — _A club / organization page is open._ |
 | Persona's reason | “I found a casual club that sounds welcoming (Berkeley Running Club, group runs Tue/Thu 5pm) and opened its page. I think joining means tapping 'Ask to join' or just showing up, but 'Not recruiting right now' makes me unsure, so I'd probably just go to a run instead of tapping anything.” |
 | Effort | 18/50 actions · objective frustration 2.50/6 · 8 confused note(s) · ~325s simulated |

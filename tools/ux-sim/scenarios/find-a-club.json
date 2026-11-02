@@ -4,11 +4,11 @@
   "goal": "You want to find one student club or group you'd actually enjoy and feel welcome in. Use the app to find one that fits you and open its page to see how to join.",
   "startUrl": "/",
   "setup": {
-    "auth": "demo",
+    "auth": "fresh",
     "school": "berkeley"
   },
   "success": {
-    "description": "A club / organization page is open.",
+    "description": "A club / organization page is open (reached by the persona — the run starts on /).",
     "all": [
       {
         "urlMatches": "^/orgs/[^/?]+"

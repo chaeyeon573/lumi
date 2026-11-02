@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-02T06:44:16.494Z",
+  "generatedAt": "2026-11-02T07:09:15.552Z",
   "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
   "runs": [
     {
@@ -12,8 +12,14 @@
       "goalAchieved": true,
       "stepsToGoal": 16,
       "actions": 18,
+      "frictionCount": 11,
+      "maxSeverity": 3,
       "mode": "local",
+      "auth": "demo",
       "commit": "60c0cc288e13",
+      "harness": null,
+      "catalog": null,
+      "overrodePatience": false,
       "dropoffRisk": {
         "kind": "hypothesis",
         "level": "high",
@@ -41,8 +47,14 @@
       "goalAchieved": true,
       "stepsToGoal": 2,
       "actions": 6,
+      "frictionCount": 5,
+      "maxSeverity": 4,
       "mode": "local",
+      "auth": "demo",
       "commit": "60c0cc288e13",
+      "harness": null,
+      "catalog": null,
+      "overrodePatience": false,
       "dropoffRisk": {
         "kind": "hypothesis",
         "level": "high",
@@ -67,8 +79,14 @@
       "goalAchieved": false,
       "stepsToGoal": null,
       "actions": 4,
+      "frictionCount": 3,
+      "maxSeverity": 3,
       "mode": "local",
+      "auth": "none",
       "commit": "60c0cc288e13",
+      "harness": null,
+      "catalog": null,
+      "overrodePatience": false,
       "dropoffRisk": {
         "kind": "hypothesis",
         "level": "high",
@@ -92,8 +110,14 @@
       "goalAchieved": false,
       "stepsToGoal": null,
       "actions": 27,
+      "frictionCount": 8,
+      "maxSeverity": 4,
       "mode": "local",
+      "auth": "none",
       "commit": "60c0cc288e13",
+      "harness": null,
+      "catalog": null,
+      "overrodePatience": false,
       "dropoffRisk": {
         "kind": "hypothesis",
         "level": "high",
@@ -117,8 +141,14 @@
       "goalAchieved": true,
       "stepsToGoal": 5,
       "actions": 5,
+      "frictionCount": 3,
+      "maxSeverity": 2,
       "mode": "local",
+      "auth": "demo",
       "commit": "60c0cc288e13",
+      "harness": null,
+      "catalog": null,
+      "overrodePatience": false,
       "dropoffRisk": {
         "kind": "hypothesis",
         "level": "medium",
@@ -142,8 +172,14 @@
       "goalAchieved": false,
       "stepsToGoal": null,
       "actions": 7,
+      "frictionCount": 7,
+      "maxSeverity": 3,
       "mode": "local",
+      "auth": "demo",
       "commit": "60c0cc288e13",
+      "harness": null,
+      "catalog": null,
+      "overrodePatience": false,
       "dropoffRisk": {
         "kind": "hypothesis",
         "level": "high",
@@ -168,8 +204,14 @@
       "goalAchieved": true,
       "stepsToGoal": 8,
       "actions": 16,
+      "frictionCount": 10,
+      "maxSeverity": 3,
       "mode": "local",
+      "auth": "demo",
       "commit": "60c0cc288e13",
+      "harness": null,
+      "catalog": null,
+      "overrodePatience": false,
       "dropoffRisk": {
         "kind": "hypothesis",
         "level": "medium",
@@ -194,8 +236,14 @@
       "goalAchieved": true,
       "stepsToGoal": 1,
       "actions": 5,
+      "frictionCount": 4,
+      "maxSeverity": 3,
       "mode": "local",
+      "auth": "demo",
       "commit": "f1e3d87f2f23-dirty-1f8877b9",
+      "harness": null,
+      "catalog": null,
+      "overrodePatience": false,
       "dropoffRisk": {
         "kind": "hypothesis",
         "level": "medium",
@@ -210,6 +258,21 @@
       "report": "ux-sim/runs/smoke-minji-lunch-today/report.md"
     }
   ],
+  "totals": {
+    "runs": 8,
+    "findings": 45,
+    "frictionEvents": 51,
+    "environmentLimitedEvents": 0,
+    "maxSeverity": 4,
+    "bySeverity": {
+      "1": 10,
+      "2": 28,
+      "3": 11,
+      "4": 2
+    },
+    "multiPersonaFindings": 2,
+    "singletonFindings": 42
+  },
   "findings": [
     {
       "fingerprint": "0ad866e92107",
@@ -242,6 +305,7 @@
       ],
       "occurrences": 5,
       "severityMax": 3,
+      "maxSeverity": 3,
       "severityMedian": 2,
       "events": [
         {
@@ -352,6 +416,7 @@
       ],
       "occurrences": 2,
       "severityMax": 1,
+      "maxSeverity": 1,
       "severityMedian": 1,
       "events": [
         {
@@ -413,6 +478,7 @@
       ],
       "occurrences": 1,
       "severityMax": 4,
+      "maxSeverity": 4,
       "severityMedian": 4,
       "events": [
         {
@@ -460,6 +526,7 @@
       ],
       "occurrences": 1,
       "severityMax": 4,
+      "maxSeverity": 4,
       "severityMedian": 4,
       "events": [
         {
@@ -509,6 +576,7 @@
       ],
       "occurrences": 1,
       "severityMax": 3,
+      "maxSeverity": 3,
       "severityMedian": 3,
       "events": [
         {
@@ -556,6 +624,7 @@
       ],
       "occurrences": 1,
       "severityMax": 3,
+      "maxSeverity": 3,
       "severityMedian": 3,
       "events": [
         {
@@ -603,6 +672,7 @@
       ],
       "occurrences": 1,
       "severityMax": 3,
+      "maxSeverity": 3,
       "severityMedian": 3,
       "events": [
         {
@@ -652,6 +722,7 @@
       ],
       "occurrences": 1,
       "severityMax": 3,
+      "maxSeverity": 3,
       "severityMedian": 3,
       "events": [
         {
@@ -699,6 +770,7 @@
       ],
       "occurrences": 1,
       "severityMax": 3,
+      "maxSeverity": 3,
       "severityMedian": 3,
       "events": [
         {
@@ -746,6 +818,7 @@
       ],
       "occurrences": 1,
       "severityMax": 3,
+      "maxSeverity": 3,
       "severityMedian": 3,
       "events": [
         {
@@ -793,6 +866,7 @@
       ],
       "occurrences": 1,
       "severityMax": 3,
+      "maxSeverity": 3,
       "severityMedian": 3,
       "events": [
         {
@@ -842,6 +916,7 @@
       ],
       "occurrences": 1,
       "severityMax": 3,
+      "maxSeverity": 3,
       "severityMedian": 3,
       "events": [
         {
@@ -889,6 +964,7 @@
       ],
       "occurrences": 1,
       "severityMax": 3,
+      "maxSeverity": 3,
       "severityMedian": 3,
       "events": [
         {
@@ -936,6 +1012,7 @@
       ],
       "occurrences": 1,
       "severityMax": 3,
+      "maxSeverity": 3,
       "severityMedian": 3,
       "events": [
         {
@@ -983,6 +1060,7 @@
       ],
       "occurrences": 2,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1045,6 +1123,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1092,6 +1171,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1139,6 +1219,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1186,6 +1267,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1233,6 +1315,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1280,6 +1363,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1329,6 +1413,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1376,6 +1461,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1423,6 +1509,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1470,6 +1557,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1517,6 +1605,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1564,6 +1653,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1611,6 +1701,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1656,6 +1747,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1703,6 +1795,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1750,6 +1843,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1797,6 +1891,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1844,6 +1939,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1891,6 +1987,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1938,6 +2035,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -1983,6 +2081,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -2028,6 +2127,7 @@
       ],
       "occurrences": 1,
       "severityMax": 2,
+      "maxSeverity": 2,
       "severityMedian": 2,
       "events": [
         {
@@ -2073,6 +2173,7 @@
       ],
       "occurrences": 1,
       "severityMax": 1,
+      "maxSeverity": 1,
       "severityMedian": 1,
       "events": [
         {
@@ -2120,6 +2221,7 @@
       ],
       "occurrences": 1,
       "severityMax": 1,
+      "maxSeverity": 1,
       "severityMedian": 1,
       "events": [
         {
@@ -2167,6 +2269,7 @@
       ],
       "occurrences": 1,
       "severityMax": 1,
+      "maxSeverity": 1,
       "severityMedian": 1,
       "events": [
         {
@@ -2214,6 +2317,7 @@
       ],
       "occurrences": 1,
       "severityMax": 1,
+      "maxSeverity": 1,
       "severityMedian": 1,
       "events": [
         {
@@ -2261,6 +2365,7 @@
       ],
       "occurrences": 1,
       "severityMax": 1,
+      "maxSeverity": 1,
       "severityMedian": 1,
       "events": [
         {
@@ -2308,6 +2413,7 @@
       ],
       "occurrences": 1,
       "severityMax": 1,
+      "maxSeverity": 1,
       "severityMedian": 1,
       "events": [
         {
@@ -2355,6 +2461,7 @@
       ],
       "occurrences": 1,
       "severityMax": 1,
+      "maxSeverity": 1,
       "severityMedian": 1,
       "events": [
         {
@@ -2402,6 +2509,7 @@
       ],
       "occurrences": 1,
       "severityMax": 1,
+      "maxSeverity": 1,
       "severityMedian": 1,
       "events": [
         {

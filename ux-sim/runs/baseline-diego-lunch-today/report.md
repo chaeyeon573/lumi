@@ -8,6 +8,7 @@
 | Scenario | **Find someone to get lunch with today** — It's a weekday and you'd rather not eat lunch alone again. Use the app to find someone (or a group) to get lunch with today, and let them know you're in. (`lunch-today`) |
 | Target | local · http://localhost:46077 · worktree commit `60c0cc288e13` |
 | Outcome | **abandoned** · ended by persona |
+| Account | shared demo account (sample profile with someone else's data) |
 | Goal check (fixed, by harness) | met at step 4 after 2 action(s) — _Joined or requested to join a meal plan / sent a lunch invite: the button now reads as joined/requested, or a chat with the plan opened._ |
 | ⚠ unnoticed success | The check passed but the persona did not realise it had succeeded. |
 | Persona's reason | “Everything food was tomorrow, the 'free now' people were samples, and 'Instant meetup' turned into a whole event form set to 11 PM. Class starts soon — I'm grabbing a burrito alone.” |
