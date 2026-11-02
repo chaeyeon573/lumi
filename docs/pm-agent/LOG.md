@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-11-02 06:00 UTC · 사장님 요청 — 버클리 공식 프로그램(문과·공공) 넣기
+- 배포: 51332a6(연구소 125곳, 인턴 문과 분야) — 사장님 허락.
+- 공식 페이지를 직접 열어 확인: IGS/Matsui(Cal-in-Sacramento·Pathways·Gardner·Schaeffer·Democracy Camp), Public Service Center 17개 프로그램, UCDC. 대부분 가을 마감이 이미 지남(Gardner 10/20, Democracy Camp 11/1, CITC 닫힘) → 넣지 않음.
+- 넣음(마감 날짜가 아직 안 올라와 ‘날짜 미정’으로, 페이지에 적힌 사실만): UCDC 가을 2027(“late February”, 자격: 3·4학년, 3.0 권장), Cal in Local Government 여름 2027(12월에 신청 열림). 둘 다 인턴 › Policy & Law. 로컬 가져오기로 확인.
+- 이 변경의 배포는 이 환경의 권한 검사에 막힘 → claude/lumi-pm 에만 올림, 배포는 사장님 확인 뒤.
+- 다음: 12월에 Cal in Local Government 신청이 열리면 마감 날짜 넣기, UCDC 가을 마감 날짜가 올라오면 넣기, 가을에 다시 열리는 IGS 펠로십(Cal-in-Sacramento·Gardner 등)은 공지되면 넣기.
+
 ## 2026-11-02 05:30 UTC · 사장님 요청 — 연구실 칸, 인턴 분야(문과)
 - 배포: 2e06318(대기 변경 전부, 디자인 알약 되살림), 48d86c1(사진 칸은 새 iPhone 앱 빌드에서만) — 사장님 허락. 라이브 번들 확인(11/2 방침 문구·디자인 알약·CalNet).
 - 연구실: Lab 칸에 예시 1곳뿐이었다 → 버클리 연구 담당 부총장실 공식 Research Units 목록(125곳: 연구소·연구원·자연보호구역·식물원)을 일주일마다 가져옴(이름·책임자만, 이메일·전화 안 넣음. 상세 페이지는 자동 요청을 막아 열지 않음). server/sources/researchunits.ts, 테스트.
