@@ -13,3 +13,23 @@ export function publicLinks<T extends { label: string; url: string }>(links: T[]
   const rank = (l: T) => { const i = order.indexOf(l.label); return i < 0 ? order.length : i; };
   return (links ?? []).filter((l) => !isLoginOnlyLink(l.url)).sort((a, b) => rank(a) - rank(b));
 }
+
+/**
+ * 화면에는 이모지를 쓰지 않는다 (2026-11-02 사장님: "Do not put emoji").
+ *   - 이름 끝의 💙 같은 이모지는 뺀다 (CalLink 에 그렇게 적혀 있어도)
+ *   - 로고 사진이 없고 로고가 이모지(🎯 🏛️ …)면 이름 머리글자로 바꾼다. 그리스 문자(ΑΚΨ)·머리글자는 그대로
+ * 저장된 데이터는 바꾸지 않고, 서버가 앱으로 보낼 때와 미리보기에서만 적용한다.
+ */
+const PICTO = /[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}\u{FE0F}\u{200D}\u{20E3}]/gu;
+export const stripEmoji = (s: string) => s.replace(PICTO, '').replace(/\(\s*\)/g, '').replace(/\s{2,}/g, ' ').trim();
+export function initialsOf(name: string): string {
+  const words = stripEmoji(name).replace(/\([^)]*\)/g, ' ').replace(/[^A-Za-z0-9 ]+/g, ' ').split(/\s+/)
+    .filter((w) => w && !/^(of|the|at|and|for|in|uc|cal|berkeley|stanford|club|campus|dept)$/i.test(w));
+  return (words.length ? words : stripEmoji(name).split(/\s+/)).slice(0, 2).map((w) => w[0] ?? '').join('').toUpperCase() || '•';
+}
+export function withoutEmoji<T extends { name: string; logo: { emoji: string; hue: number; url?: string } }>(o: T): T {
+  const name = stripEmoji(o.name) || o.name;
+  const emojiLogo = !o.logo.url && (new RegExp(PICTO.source, 'u').test(o.logo.emoji) || !o.logo.emoji.trim());
+  if (name === o.name && !emojiLogo) return o;
+  return { ...o, name, logo: emojiLogo ? { ...o.logo, emoji: initialsOf(name) } : o.logo };
+}

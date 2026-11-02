@@ -7,7 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Organization } from '@core/types';
 import { parseCSV } from './scripts/csv';
-import { publicLinks } from '@core/lib/orglinks';
+import { publicLinks, withoutEmoji } from '@core/lib/orglinks';
 
 const DATA = path.join(path.dirname(fileURLToPath(import.meta.url)), 'data');
 const COLLECTED = path.join(DATA, 'collected');
@@ -36,7 +36,7 @@ export function previewSchool(id: string): { school: PreviewSchool; orgs: Previe
   if (!ID_RE.test(id)) return null;
   const school = previewSchools().find((s) => s.id === id);
   if (!school) return null;
-  const orgs = (readJson<Organization[]>(path.join(COLLECTED, `${id}.orgs.json`)) ?? []).map((o) => ({ id: o.id, name: o.name, type: o.type, category: o.parent, description: o.description, links: publicLinks(o.links), logo: o.logo }));
+  const orgs = (readJson<Organization[]>(path.join(COLLECTED, `${id}.orgs.json`)) ?? []).map(withoutEmoji).map((o) => ({ id: o.id, name: o.name, type: o.type, category: o.parent, description: o.description, links: publicLinks(o.links), logo: o.logo }));
   const probe = readJson<Record<string, unknown>>(path.join(COLLECTED, `${id}.probe.json`));
   return { school, orgs, probe };
 }

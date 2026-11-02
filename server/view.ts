@@ -23,6 +23,9 @@
  * - 참가 기록: 내 것 + 내가 연 활동의 것 + 다른 사람은 승인된 것만(신청 메시지 없이)
  * - 동아리 지원자 목록은 운영진과 본인에게만, 다른 사람의 저장(saved)은 안 보낸다, 시간 투표는 초대받은 사람에게만
  */
+import { withoutEmoji, stripEmoji } from '@core/lib/orglinks';
+/** 공고·행사 주최 이름에도 이모지 없이 */
+const hostNoEmoji = <T extends { host?: string }>(o: T): T => (o.host && stripEmoji(o.host) !== o.host ? { ...o, host: stripEmoji(o.host) } : o);
 import type { Patch, Snapshot } from '@core/api/types';
 import type { Activity, ActivityProposal, ChatRoom, Game, ID, Organization, Participation, Post, TimePoll, User } from '@core/types';
 import { gameFor } from '@core/lib/icebreakers';
@@ -100,8 +103,9 @@ function participationsFor(list: Participation[], viewerId: ID, db?: Snapshot, e
 }
 
 /** 동아리 지원자 명단은 운영진에게만 — 다른 사람에게는 나만 남긴다 */
+// 화면에는 이모지 없이 — 이름 끝 💙 등은 빼고, 이모지 로고는 머리글자로 (packages/core/src/lib/orglinks.ts withoutEmoji)
 const orgFor = (viewerId: ID) => (o: Organization): Organization =>
-  o.adminIds.includes(viewerId) ? o : { ...o, applicantIds: o.applicantIds.filter((id) => id === viewerId) };
+  withoutEmoji(o.adminIds.includes(viewerId) ? o : { ...o, applicantIds: o.applicantIds.filter((id) => id === viewerId) });
 
 /** 이 사용자에게 보낼 동아리인지 */
 export function orgFilter(db: Snapshot, viewerId: ID): (o: Organization) => boolean {
@@ -201,7 +205,7 @@ export function snapshotFor(full: Snapshot, viewerId: ID): Snapshot {
   return moderateView({
     ...db,
     organizations: db.organizations.filter(orgFilter(db, viewerId)).map(orgFor(viewerId)),
-    opportunities: db.opportunities.filter(opportunityFilter(db, viewerId)),
+    opportunities: db.opportunities.filter(opportunityFilter(db, viewerId)).map(hostNoEmoji),
     users: usersFor(db.users, viewerId, db),
     relationships: relationshipsFor(db.relationships, viewerId),
     posts: postsFor(db.posts, viewerId, db),
@@ -229,7 +233,7 @@ export function patchFor(original: Patch, viewerId: ID, db?: Snapshot): Patch | 
   if (db) { const m: Patch = { ...patch }; moderatePatch(m, viewerId, db); patch = m; }
   const out: Patch = { ...patch };
   if (patch.organizations) out.organizations = db ? patch.organizations.filter(orgFilter(db, viewerId)).map(orgFor(viewerId)) : [];
-  if (patch.opportunities && db) out.opportunities = patch.opportunities.filter(opportunityFilter(db, viewerId));
+  if (patch.opportunities) out.opportunities = (db ? patch.opportunities.filter(opportunityFilter(db, viewerId)) : patch.opportunities).map(hostNoEmoji);
   if (patch.users) {
     out.users = usersFor(patch.users, viewerId, db);
     // 관계가 바뀐 패치(엔진이 두 당사자를 users 로 같이 보낸다): 나를 차단한 사람은 화면에서 지우고, 내가 당사자면 상대의 글·활동을 다시 맞춘다

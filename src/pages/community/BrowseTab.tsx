@@ -301,7 +301,7 @@ function ListingRow({ o, why, saved, toggleSave, club, onClub, showType = true }
             {o.type === 'internship' && (() => { const w = workAuthLabel(o, en); return w && <span className={cn('h-5 px-2 rounded-full text-[11px] font-semibold inline-flex items-center whitespace-nowrap', w.tone === 'good' ? 'bg-verify/10 text-verify v2:bg-lime-900/60 v2:text-lime-400' : 'bg-surface-2 text-ink-3')}>{w.text}</span>; })()}
             {o.remote && <span className="h-5 px-2 rounded-full bg-accent-soft text-primary text-[11px] font-semibold inline-flex items-center">Remote</span>}
           </span>
-          {why && <span className="block text-[12px] text-ink-3 truncate mt-1">✨ {why}</span>}
+          {why && <span className="block text-[12px] text-ink-3 truncate mt-1">{why}</span>}
         </span>
       </button>
       {club && onClub
@@ -359,7 +359,7 @@ function ClubRow({ o, why, events }: { o: Organization; why: string; events?: Op
         <span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{o.name}</span>{o.recruitment?.open && <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{t('모집 중')}</span>}</span>
         <span className="block text-[13px] text-ink-3 truncate mt-0.5">{orgSubtitle(o)}</span>
         {next && <span className="flex items-center gap-1 text-[12px] text-primary truncate mt-0.5"><CalendarDays size={12} className="shrink-0" />{badgeOf(next, en).text} · {next.title}{events!.length > 1 ? (en ? ` · +${events!.length - 1} more` : ` 외 ${events!.length - 1}개`) : ''}</span>}
-        {why && <span className="block text-[12px] text-ink-3 truncate mt-0.5">✨ {why}</span>}
+        {why && <span className="block text-[12px] text-ink-3 truncate mt-0.5">{why}</span>}
       </span>
       <span className="h-9 w-9 rounded-full grid place-items-center text-primary">{o.recruitment?.open ? <Plus size={20} /> : <ArrowRight size={20} />}</span>
     </button>

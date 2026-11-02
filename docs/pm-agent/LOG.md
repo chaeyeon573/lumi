@@ -1639,3 +1639,8 @@
 ## 2026-11-02 23:33 UTC — routine run
 - Re-collected the 7 Bay Area files with the new club-relevance rule for social links (personal profiles dropped): SF State 212/290 with a public link (5 dead sites removed), UC Davis 165/532, SJSU 84/392, USF 138/152, Stanford 41/733, UCSC 109/110, Santa Clara (names only).
 - Spot check classes via web fetch (classes.berkeley.edu still 403 to this container): ANTHRO 127A, MONGOLN C117, MELC 157, CHEM 3A, MUSIC 143 — day, time, room and instructor match 5/5.
+
+## 2026-11-02 — No emoji for clubs (owner: "Do not put emoji")
+- packages/core/src/lib/orglinks.ts withoutEmoji/stripEmoji, applied in server/view.ts (every org sent to the app) and in /preview: emoji at the end of names removed (458 Berkeley names had 💙), emoji logos replaced by initials (202 🎯 + Greek council emblems). Real logo images and Greek letters (ΑΚΨ) stay. Event/listing host names lose emoji too. Stored data unchanged.
+- Clubs & Groups list: removed the ✨ before recommendation reasons.
+- Checked on a local server: Explore › Clubs in v2 and classic shows no emoji, PAGE ERROR 0. Tests 287/287 (server/noemoji.test.ts).

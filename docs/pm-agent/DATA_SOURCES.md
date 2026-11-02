@@ -37,7 +37,7 @@ Order: Bay Area schools only. Never invent data; only official/public sources; v
 - [x] Course files for closed schools when the recipe passes (`<id>.courses.json`): SF State 4,419 · UC Davis 10,478 (catalog: codes/titles, no meeting times). Visible in /preview
 - [ ] Course times for closed schools: SF State / UC Davis class search (times), SJSU schedule, UCSC pisa — find a public timetable source per school
 - [ ] QA sample every run (owner 2026-11-02): pick 5 clubs + 5 courses at random across schools, re-open the official source, compare name/links/times; log mismatches and fix the reader
-- [ ] Logos: Berkeley 202 clubs show a generic 🎯 placeholder and 458 names end with 💙 (as written in CalLink) — propose to owner: show initials instead of 🎯 and hide the trailing 💙 in display
+- [x] (owner 2026-11-02 "Do not put emoji": done in server/view.ts + preview — names lose trailing emoji, emoji logos become initials) Logos: Berkeley 202 clubs show a generic 🎯 placeholder and 458 names end with 💙 (as written in CalLink) — propose to owner: show initials instead of 🎯 and hide the trailing 💙 in display
 - [ ] Re-collect weekly (`collect:<id>` for each row) and commit only real changes
 - [ ] Stanford class probe result on Railway (`probe:s_stanford` in /api/agent/status)
 - [ ] SJSU class schedule recipe (sjsu.edu/classes/schedules/<term>.php) — test from the server via probe
