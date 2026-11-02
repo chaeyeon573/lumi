@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-11-02 · 사장님 요청 — 대학원생 공고
+- USAJobs 첫 실행: 129개(06:03), 연구소 125곳 반영(05:49).
+- 대학원생: 공식 페이지에서 확인한 것만 — DOE SCGSR(11/4 5PM ET, 박사과정 국립연구소 연구), DOE CSGF·NNSA SSGF 2027(지금 접수 중, 마감은 신청 사이트에만 → 날짜 미정), AAAS Mass Media(1/4, 대학원·학부 고학년, 인턴 › Media & Writing), 버클리 대학원 Conference Travel Grant 가을 마감 12/1(페이지 기준으로 고침).
+- 넣지 않음: NDSEG(10/30 마감 — 버클리 페이지의 11/15 는 지난 정보), PMF(행정명령으로 종료), CSGF·SSGF FAQ 는 자동 접근 403 → 우회 안 함.
+- 가져오기가 마감 시각을 받게(YYYY-MM-DDTHH:MM 버클리 시각). 지난번 CSV 에 섞인 CRLF 정리. 257 통과.
+
 ## 2026-11-02 · 사장님 요청 — USAJobs(연방정부 학생 채용) 연결
 - 배포: 0fe6400(UCDC·Cal in Local Government) — 사장님 허락.
 - 사장님이 Railway 에 키를 넣음(저는 값을 보지 않음). server/sources/usajobs.ts: 공식 API(GET data.usajobs.gov/api/Search, HiringPath=student)에서 Pathways 학생 채용 → 인턴. 캘리포니아·D.C.·원격·여러 지역만, 마감 지난 것 제외, 급여 표시, 분야는 제목 → 없으면 기관(보건·교육·그 밖은 Policy & Law). 키(USAJOBS_API_KEY·USAJOBS_EMAIL)가 있는 서비스에서만 12시간마다. 키 없이 부르면 401 확인(주소 맞음). 테스트 2개, 257 통과.

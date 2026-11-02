@@ -28,7 +28,13 @@ const TYPES = Object.keys(COVER) as OpportunityType[];
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '').slice(0, 60);
 const list = (s: string) => s.split(',').map((x) => x.trim()).filter(Boolean);
 // 그날 23:59 버클리 시각 — ‘-07:00’ 고정이면 겨울(11월~3월, UTC−8)엔 밤 10:59 에 닫혔다
-const iso = (s: string) => { if (!s) return undefined; if (!/^\d{4}-\d{2}-\d{2}$/.test(s)) throw new Error(`bad date (YYYY-MM-DD): ${s}`); const [y, m, d] = s.split('-').map(Number); return pacificToIso(y, m - 1, d, 23, 59); };
+// 날짜만 쓰면 그날 23:59, 마감 시각이 따로 있으면 ‘YYYY-MM-DDTHH:MM’(버클리 시각) — 예: 동부 5 PM 마감 = 2026-11-04T14:00
+const iso = (s: string) => {
+  if (!s) return undefined;
+  const m = /^(\d{4})-(\d{2})-(\d{2})(?:T(\d{2}):(\d{2}))?$/.exec(s);
+  if (!m) throw new Error(`bad date (YYYY-MM-DD or YYYY-MM-DDTHH:MM Pacific): ${s}`);
+  return pacificToIso(Number(m[1]), Number(m[2]) - 1, Number(m[3]), m[4] ? Number(m[4]) : 23, m[5] ? Number(m[5]) : 59);
+};
 
 const store = createStore();
 await store.init();
