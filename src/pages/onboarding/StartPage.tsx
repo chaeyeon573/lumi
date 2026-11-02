@@ -17,7 +17,15 @@ import { takeReturnTo } from '@/lib/returnTo';
 
 const en = lang === 'en';
 type Step = 'school' | 'goals' | 'vibe' | 'friday' | 'meet' | 'major' | 'preview' | 'name' | 'email';
-const STEPS: Step[] = ['school', 'goals', 'vibe', 'friday', 'meet', 'major', 'preview', 'name', 'email'];
+/**
+ * 단계 — 전공(학과·학년, 수업·사람 추천에 쓰임)은 목표 바로 다음. 취향 질문(공강 오후 = interests, 금요일 밤 = purposes·likes)은
+ * 친구·밥·동아리처럼 사람을 만나려는 목표를 골랐을 때만 묻는다 — 인턴만 고른 학생에게 취미부터 물으면 데이팅 프로필처럼 읽혔다
+ * (ux-sim 2026-11-02 marcus). 취향·만나고 싶은 사람(lookingFor)은 모두 건너뛸 수 있다: interests 는 비어도 되고(카드 칩·추천 가중치만),
+ * purposes 는 비면 가입 때 ['friend'] 로 채운다.
+ */
+const SOCIAL_GOALS: Goal[] = ['friends', 'lunch', 'join_club'];
+const stepsFor = (goals: Goal[]): Step[] => ['school', 'goals', 'major', ...(goals.some((g) => SOCIAL_GOALS.includes(g)) ? ['vibe', 'friday'] as Step[] : []), 'meet', 'preview', 'name', 'email'];
+
 const KEY = 'aroundu.start.draft';
 
 interface Opt<T> { v: T; emoji: string; en: string; ko: string }
@@ -63,15 +71,15 @@ const AVATARS = ['🙂', '😎', '🧑‍💻', '👩‍🎨', '🧑‍🔬', '�
 
 const Q: Record<Exclude<Step, 'school' | 'preview' | 'name' | 'email'>, { q: string; sub: string }> = en ? {
   goals: { q: 'This semester, you’re mostly here to…', sub: 'Pick up to 3.' },
-  vibe: { q: 'Your perfect free afternoon?', sub: 'Pick up to 3.' },
-  friday: { q: 'Friday night, you’re…', sub: 'Be honest.' },
-  meet: { q: 'Who’d you love to meet?', sub: 'Pick any.' },
+  vibe: { q: 'Your perfect free afternoon?', sub: 'Optional · up to 3. Shows on your card so people know what to ask you to.' },
+  friday: { q: 'Friday night, you’re…', sub: 'Optional · be honest.' },
+  meet: { q: 'Who’d you love to meet?', sub: 'Optional · pick any. We use it to suggest people.' },
   major: { q: 'What do you study?', sub: 'So we can show classes, talks and people in your field.' },
 } : {
   goals: { q: '이번 학기, 제일 하고 싶은 건?', sub: '최대 3개' },
-  vibe: { q: '완벽한 공강 오후는?', sub: '최대 3개' },
-  friday: { q: '금요일 밤, 나는…', sub: '솔직하게' },
-  meet: { q: '어떤 사람을 만나고 싶어요?', sub: '여러 개 골라도 돼요' },
+  vibe: { q: '완벽한 공강 오후는?', sub: '선택 · 최대 3개. 카드에 보여서 무엇을 같이 할지 알 수 있어요.' },
+  friday: { q: '금요일 밤, 나는…', sub: '선택 · 솔직하게' },
+  meet: { q: '어떤 사람을 만나고 싶어요?', sub: '선택 · 여러 개 골라도 돼요. 사람 추천에 써요.' },
   major: { q: '전공이 뭐예요?', sub: '내 분야의 수업·강연·사람을 보여드려요.' },
 };
 
@@ -100,8 +108,9 @@ function Pick({ emoji, text, on, onClick }: { emoji: string; text: string; on: b
 }
 
 /**
- * 첫 실행 — 학교 → 짧은 퀴즈 4개(목표·공강 취향·금요일 밤·만나고 싶은 사람) → 전공 → 프로필 미리보기 → 이름.
- * 퀴즈 답이 goals / interests / purposes / lookingFor / likes 를 채우고, 미리보기에서 소개 문장을 고칠 수 있다.
+ * 첫 실행 — 학교 → 목표 → 전공 → (사람을 만나려는 목표면) 공강 취향·금요일 밤 → 만나고 싶은 사람 → 프로필 미리보기 → 이름 → 이메일.
+ * 답이 goals / department·year / interests / purposes·likes / lookingFor 를 채우고, 미리보기에서 소개 문장을 고칠 수 있다.
+ * 취향·만나고 싶은 사람은 'Skip' 으로 건너뛸 수 있다 (stepsFor).
  */
 export function StartPage() {
   const nav = useNavigate();
@@ -118,7 +127,8 @@ export function StartPage() {
   const patch = (p: Partial<Draft>) => setD((x) => ({ ...x, ...p }));
   const upTo3 = <T,>(arr: T[], v: T) => (arr.includes(v) ? arr.filter((x) => x !== v) : arr.length >= 3 ? [...arr.slice(1), v] : [...arr, v]);
   const tog = <T,>(arr: T[], v: T) => (arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v]);
-  const idx = STEPS.indexOf(step);
+  const STEPS = stepsFor(d.goals);
+  const idx = Math.max(0, STEPS.indexOf(step));
   const go = (s: Step) => { setStep(s); window.scrollTo({ top: 0 }); };
   const next = () => go(STEPS[Math.min(idx + 1, STEPS.length - 1)]);
   const bio = d.bioEdited ? d.bio : d.bio || draftBio(d);
@@ -180,6 +190,8 @@ export function StartPage() {
   const school = schools.find((s) => s.id === d.schoolId);
   const Head = ({ q, sub }: { q: string; sub: string }) => <div><h2 className="text-[26px] font-extrabold leading-tight">{q}</h2><p className="text-[14px] text-ink-3 mt-1">{sub}</p></div>;
   const NextBtn = ({ ok, text }: { ok: boolean; text?: string }) => <Button full size="lg" disabled={!ok} onClick={next}>{text ?? (en ? 'Next' : '다음')}</Button>;
+  // 취향 질문은 안 골라도 넘어간다 — 회색 'Next' 에 갇히지 않게 (ux-sim marcus: "I can't skip it, Next is grayed out")
+  const Skip = () => <button onClick={next} className="w-full h-11 text-[14px] font-semibold text-ink-3">{en ? 'Skip' : '건너뛰기'}</button>;
 
   return (
     <div className="min-h-full flex flex-col bg-bg">
@@ -215,6 +227,7 @@ export function StartPage() {
             <Head {...Q.vibe} />
             <div className="grid grid-cols-2 gap-2.5">{VIBE_OPTS.map((o) => <Pick key={o.v} emoji={o.emoji} text={label(o)} on={d.interests.includes(o.v)} onClick={() => patch({ interests: upTo3(d.interests, o.v) })} />)}</div>
             <NextBtn ok={d.interests.length > 0} />
+            <Skip />
           </>
         )}
 
@@ -224,6 +237,7 @@ export function StartPage() {
             <div className="space-y-2.5">{FRIDAY_OPTS.map((o) => (
               <Pick key={o.v} emoji={o.emoji} text={label(o)} on={d.purposes[0] === o.v} onClick={() => { patch({ purposes: [o.v, ...(o.v === 'friend' ? [] : ['friend' as Purpose])], likes: o.likes }); window.setTimeout(next, 220); }} />
             ))}</div>
+            <Skip />
           </>
         )}
 
@@ -232,6 +246,7 @@ export function StartPage() {
             <Head {...Q.meet} />
             <div className="space-y-2.5">{MEET_OPTS.map((o) => <Pick key={o.v} emoji={o.emoji} text={label(o)} on={d.lookingFor.includes(o.v)} onClick={() => patch({ lookingFor: tog(d.lookingFor, o.v) })} />)}</div>
             <NextBtn ok={d.lookingFor.length > 0} />
+            <Skip />
           </>
         )}
 
