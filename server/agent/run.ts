@@ -129,6 +129,14 @@ function runScript(task: string, script: string, schoolId: string, extraEnv: Rec
 interface SchoolRow { id: string; name: string; short: string; email_domain: string; region: string; lat: string; lng: string; orgs_host?: string; courses_source?: string; catalog_url?: string; research_source?: string; events_source?: string; academic_calendar?: string; tz?: string }
 const SCHOOLS_CSV = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', 'schools.csv');
 const loadSchools = () => parseCSV(readFileSync(SCHOOLS_CSV, 'utf8')) as unknown as SchoolRow[];
+/**
+ * 데이터만 모으는 학교 (2026-11-02 사장님: 다른 학교도 밤새 채우기, 가입 화면엔 아직 안 연다).
+ * 동아리·행사·수업은 똑같이 모으지만 앱 학교 목록에는 올리지 않는다 — 열 때는 줄을 schools.csv 로 옮기면 데이터가 이미 차 있다.
+ * 다른 학교 학생에게는 server/view.ts 의 학교 거르기 때문에 내려가지 않는다
+ */
+const COLLECT_CSV = path.join(path.dirname(SCHOOLS_CSV), 'schools-collect.csv');
+const loadCollect = () => (existsSync(COLLECT_CSV) ? parseCSV(readFileSync(COLLECT_CSV, 'utf8')) as unknown as SchoolRow[] : []).filter((r) => !loadSchools().some((x) => x.id === r.id));
+const findRow = (id: string) => loadSchools().find((r) => r.id === id) ?? loadCollect().find((r) => r.id === id);
 const hoursSince = (iso?: string) => iso ? (Date.now() - new Date(iso).getTime()) / 3_600_000 : Infinity;
 /** AGENT_FORCE="courses:harvard,courses:s_ucmerced" — 이 프로세스가 뜬 뒤 한 번은 최근 성공 여부와 상관없이 다시 돌린다 (어댑터를 고친 직후용) */
 const forced = new Set((process.env.AGENT_FORCE ?? '').split(',').map((x) => x.trim()).filter(Boolean));
@@ -180,12 +188,12 @@ async function runAcademic(row: SchoolRow): Promise<AgentRun> {
   } catch (e) { return record({ task, schoolId: row.id, status: 'error', startedAt, summary: { error: (e as Error).message } }); }
 }
 
-async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
+async function runSchool(row: SchoolRow, listed = true): Promise<AgentRun[]> {
   const out: AgentRun[] = [];
   const latest = await latestRuns();
-  // 1. 앱에 학교 등록
+  // 1. 앱에 학교 등록 — 데이터만 모으는 학교(schools-collect.csv)는 등록하지 않는다
   const school: School = { id: row.id, name: row.name, emailDomain: row.email_domain, region: row.region, center: { lat: Number(row.lat), lng: Number(row.lng) }, ...(row.tz ? { tz: row.tz } : {}) };
-  if (!DRY) await store.applyPatch({ schools: [school] });
+  if (listed && !DRY) await store.applyPatch({ schools: [school] });
   // 2. 동아리 디렉터리: 탐지 결과는 detect:<id> 실행 기록에 남겨 재사용한다 (30일마다 다시 탐지)
   let host = latest.get(`detect:${row.id}`)?.summary.host as string | undefined;
   let platform = latest.get(`detect:${row.id}`)?.summary.platform as string | undefined;
@@ -262,12 +270,12 @@ async function notify(results: AgentRun[]) {
 
 async function runTask(t: string): Promise<AgentRun[]> {
   const [kind, arg] = t.split(':');
-  if (kind === 'courses') { const row = loadSchools().find((r) => r.id === arg); return [row?.courses_source ? await runCourses(row.courses_source, row.id) : await runCourses(arg)]; }
+  if (kind === 'courses') { const row = findRow(arg); return [row?.courses_source ? await runCourses(row.courses_source, row.id) : await runCourses(arg)]; }
   if (kind === 'orgs') return [await runScript(t, 'fetch:orgs', arg)];
   if (kind === 'greeks') return [await runScript(t, 'fetch:greeks', arg)];
-  if (kind === 'academic') { const row = loadSchools().find((r) => r.id === arg); return [row ? await runAcademic(row) : await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
+  if (kind === 'academic') { const row = findRow(arg); return [row ? await runAcademic(row) : await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
   if (kind === 'seats') { const startedAt = new Date().toISOString(); const s = await pollSeats(store, { dry: DRY, force: true }); return [await record({ task: 'seats', status: s.errors && !s.fetched ? 'error' : 'applied', startedAt, summary: { ...s } })]; }
-  if (kind === 'school') { const row = loadSchools().find((s) => s.id === arg); return row ? runSchool(row) : [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
+  if (kind === 'school') { const row = findRow(arg); return row ? runSchool(row, loadSchools().some((x) => x.id === arg)) : [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
   return [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'unknown task' } })];
 }
 
@@ -345,8 +353,8 @@ if (process.env.AGENT_MODE === 'worker') {
       if (process.env.USAJOBS_API_KEY && due('external:usajobs', latest.get('external:usajobs')?.finishedAt, 12)) { const r = [await runOpportunities('external:usajobs', '', () => fetchUsaJobs(), 'op_usajobs_')]; did += 1; await notify(r); }
       if (due('external:internships', latest.get('external:internships')?.finishedAt, 12)) { const r = [await runOpportunities('external:internships', '', fetchInternships, 'op_ext_job_')]; did += 1; await notify(r); }
     }
-    for (const row of loadSchools()) {
-      const results = await runSchool(row);
+    for (const [row, listed] of [...loadSchools().map((r) => [r, true] as const), ...loadCollect().map((r) => [r, false] as const)]) {
+      const results = await runSchool(row, listed);
       if (results.length) { did += results.length; await notify(results); }
       if (process.env.AGENT_ONCE === '1') continue;
     }

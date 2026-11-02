@@ -10,7 +10,7 @@
  */
 import type { CatalogCourse, CatalogSection } from '@core/api/types';
 import { parseDays, parseTime } from '../scripts/csv';
-import { catalogTermLabels, currentTerm, normalizeTermLabel, termLabel, termSlug } from '@core/lib/terms';
+import { catalogTermLabels, currentTerm, nextTerm, normalizeTermLabel, termLabel, termOrder, termSlug } from '@core/lib/terms';
 
 type Meeting = { day: number; start: string; end: string };
 const courseId = (schoolId: string, code: string) => `cc_${schoolId.replace('s_', '')}_${code.toLowerCase().replace(/[^a-z0-9]+/g, '')}`;
@@ -115,10 +115,11 @@ function mitSchedule(s: string): { meetings: Meeting[]; location?: string } {
 async function mit(): Promise<CatalogCourse[]> {
   const res = await fetch('https://fireroad.mit.edu/courses/all?full=true', { headers: { 'user-agent': 'AroundU-importer' } });
   const all = (await res.json()) as { subject_id: string; title: string; schedule?: string; instructors?: string[]; total_units?: number; offered_fall?: boolean; offered_spring?: boolean }[];
-  const term = process.env.MIT_TERM ?? 'fall';
+  // fireroad 의 schedule 은 지금 학기 시간표 하나뿐 — 다음 학기 시간을 지어내지 않는다 (MIT 가 다음 학기를 올리면 fireroad 가 바꿔 준다)
+  const term = process.env.MIT_TERM ?? (currentTerm().season === 'Spring' ? 'spring' : 'fall');
   return all.filter((c) => c.schedule && (term === 'fall' ? c.offered_fall !== false : c.offered_spring !== false)).map((c) => {
     const { meetings, location } = mitSchedule(c.schedule!);
-    return { id: courseId('s_mit', c.subject_id), schoolId: 's_mit', code: c.subject_id, title: c.title, department: c.subject_id.split('.')[0], instructor: c.instructors?.[0], location, meetings, term: `${term === 'fall' ? 'Fall' : 'Spring'} ${new Date().getFullYear()}`, units: c.total_units, url: `https://student.mit.edu/catalog/search.cgi?search=${encodeURIComponent(c.subject_id)}` };
+    return { id: courseId('s_mit', c.subject_id), schoolId: 's_mit', code: c.subject_id, title: c.title, department: c.subject_id.split('.')[0], instructor: c.instructors?.[0], location, meetings, term: `${term === 'fall' ? 'Fall' : 'Spring'} ${currentTerm().year}`, units: c.total_units, url: `https://student.mit.edu/catalog/search.cgi?search=${encodeURIComponent(c.subject_id)}` };
   }).filter((c) => c.meetings.length > 0);
 }
 
@@ -380,16 +381,21 @@ async function berkeley(): Promise<CatalogCourse[]> {
 }
 
 // ─── Cornell: Class Roster 공개 JSON API (키 불필요) ───────────────────────
-/** 학기 slug(FA26 / SP27): 지정이 없으면 지금 학기(날짜 기준) 로스터, 아직 없으면 공개된 것 중 가장 최근 정규 학기(FA/SP) — 안 올라온 학기를 추측하지 않는다 */
-async function cornellRoster(): Promise<string> {
-  if (process.env.CORNELL_ROSTER) return process.env.CORNELL_ROSTER;
+/**
+ * 학기 slug(FA26 / SP27): 지금 학기 + 다음 학기(공개됐으면). 지금 학기가 아직 없으면 공개된 것 중 가장 최근 정규 학기(FA/SP) 하나 — 안 올라온 학기를 추측하지 않는다.
+ * CORNELL_ROSTER="FA26,SP27" 로 지정 가능
+ */
+async function cornellRosters(): Promise<string[]> {
+  if (process.env.CORNELL_ROSTER) return process.env.CORNELL_ROSTER.split(',').map((x) => x.trim()).filter(Boolean);
   const res = await fetch('https://classes.cornell.edu/api/2.0/config/rosters.json', { headers: { 'user-agent': 'AroundU-importer' } });
   if (!res.ok) throw new Error(`cornell rosters → ${res.status}`);
   const rosters = ((await res.json()) as { data?: { rosters?: { slug: string }[] } }).data?.rosters?.map((r) => r.slug) ?? [];
   const regular = rosters.filter((r) => /^(FA|SP)\d{2}$/.test(r));
   if (!regular.length) throw new Error('cornell: no FA/SP roster published');
-  const cur = currentTerm(); const want = `${cur.season === 'Fall' ? 'FA' : 'SP'}${String(cur.year).slice(2)}`;
-  return regular.includes(want) ? want : regular[regular.length - 1];
+  const slug = (t: { season: string; year: number }) => `${t.season === 'Fall' ? 'FA' : 'SP'}${String(t.year).slice(2)}`;
+  const cur = currentTerm(); const want = slug(cur); const after = slug(nextTerm(cur));
+  if (!regular.includes(want)) return [regular[regular.length - 1]];
+  return regular.includes(after) ? [want, after] : [want];
 }
 interface CornellClass { subject: string; catalogNbr: string; titleLong: string; enrollGroups: { unitsMinimum?: number; classSections: { ssrComponent: string; section: string; meetings: { timeStart?: string; timeEnd?: string; pattern?: string; facilityDescr?: string | null; bldgDescr?: string | null; instructors?: { firstName?: string; lastName?: string }[] }[] }[] }[] }
 async function cornellSubject(roster: string, subject: string): Promise<CatalogCourse[]> {
@@ -420,17 +426,21 @@ async function cornellSubject(roster: string, subject: string): Promise<CatalogC
   return out;
 }
 async function cornell(): Promise<CatalogCourse[]> {
-  const roster = await cornellRoster();
-  const res = await fetch(`https://classes.cornell.edu/api/2.0/config/subjects.json?roster=${roster}`, { headers: { 'user-agent': 'AroundU-importer' } });
-  if (!res.ok) throw new Error(`cornell subjects ${roster} → ${res.status}`);
-  const subjects = ((await res.json()) as { data?: { subjects?: { value: string }[] } }).data?.subjects?.map((s) => s.value) ?? [];
-  const out: CatalogCourse[] = [];
-  for (const subj of subjects) { out.push(...(await cornellSubject(roster, subj))); await new Promise((r) => setTimeout(r, 120)); }
-  console.log(`  cornell ${roster}: ${subjects.length} subjects, ${out.length} lectures`);
-  return out;
+  const all: CatalogCourse[] = [];
+  for (const roster of await cornellRosters()) {
+    const res = await fetch(`https://classes.cornell.edu/api/2.0/config/subjects.json?roster=${roster}`, { headers: { 'user-agent': 'AroundU-importer' } });
+    if (!res.ok) throw new Error(`cornell subjects ${roster} → ${res.status}`);
+    const subjects = ((await res.json()) as { data?: { subjects?: { value: string }[] } }).data?.subjects?.map((s) => s.value) ?? [];
+    const out: CatalogCourse[] = [];
+    for (const subj of subjects) { out.push(...(await cornellSubject(roster, subj))); await new Promise((r) => setTimeout(r, 120)); }
+    console.log(`  cornell ${roster}: ${subjects.length} subjects, ${out.length} lectures`);
+    all.push(...tagTerm(out, normalizeTermLabel(roster)));
+  }
+  return all;
 }
 async function cornellLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
-  return (await cornellSubject(c.termCode ?? c.term, c.department)).find((x) => x.id === c.id) ?? null;
+  const roster = c.termCode ?? c.term;
+  return tagTerm(await cornellSubject(roster, c.department), normalizeTermLabel(roster)).find((x) => x.id === c.id) ?? null;
 }
 
 // ─── Maryland: Testudo Schedule of Classes (공개 HTML, 키 불필요) ────────────
@@ -533,12 +543,19 @@ async function fosePost(host: string, route: string, body: unknown): Promise<unk
   return JSON.parse(text);
 }
 function foseSource(schoolId: string, host: string): CourseSource {
-  /** 지금 학기 (원본 코드 + "Fall 2026" 라벨) */
-  async function term(): Promise<{ code: string; label: string }> {
+  /**
+   * 지금 학기 + 다음 학기 (원본 코드 + "Fall 2026" 라벨). 다음 학기 = 목록에서 지금 학기 바로 뒤의 정규 학기(여름 제외 — 쿼터제 Dartmouth 는 Winter).
+   * 아직 안 올라왔으면 지금 학기만. FOSE_SRCDB="202610,202620" 로 지정 가능
+   */
+  async function terms(): Promise<{ code: string; label: string }[]> {
     const html = await (await fetch(`${host}/`, { headers: UAH })).text();
     const opts = [...html.matchAll(/<option value="(\d{4,6})"[^>]*>([^<]+)<\/option>/g)].map((m) => ({ code: m[1], label: m[2].trim() }));
-    if (process.env.FOSE_SRCDB) { const o = opts.find((x) => x.code === process.env.FOSE_SRCDB); return { code: process.env.FOSE_SRCDB, label: o ? labelOf(o.label) : process.env.FOSE_SRCDB }; }
-    const t = pickTerm(opts, (o) => o.label); if (!t) throw new Error(`${host}: no term options on index page`); return { code: t.code, label: labelOf(t.label) };
+    if (process.env.FOSE_SRCDB) return process.env.FOSE_SRCDB.split(',').map((code) => code.trim()).filter(Boolean).map((code) => { const o = opts.find((x) => x.code === code); return { code, label: o ? labelOf(o.label) : code }; });
+    const t = pickTerm(opts, (o) => o.label); if (!t) throw new Error(`${host}: no term options on index page`);
+    const now = termOrder(labelOf(t.label));
+    const after = opts.filter((o) => !/summer/i.test(o.label) && termOrder(labelOf(o.label)) > now && termOrder(labelOf(o.label)) !== Number.MAX_SAFE_INTEGER)
+      .sort((a, b) => termOrder(labelOf(a.label)) - termOrder(labelOf(b.label)))[0];
+    return [{ code: t.code, label: labelOf(t.label) }, ...(after ? [{ code: after.code, label: labelOf(after.label) }] : [])];
   }
   function rowsToCourses(rows: FoseRow[], srcdb: string, label: string = srcdb): CatalogCourse[] {
     const byCourse = new Map<string, FoseRow[]>();
@@ -564,7 +581,8 @@ function foseSource(schoolId: string, host: string): CourseSource {
   return {
     schoolId,
     async fetch() {
-      const { code: srcdb, label } = await term();
+      const all: CatalogCourse[] = [];
+      for (const { code: srcdb, label } of await terms()) {
       // 빈 조건으로 전부 받아 보고, 안 주면 글자별 키워드로 나눠 받아 crn 으로 합친다
       let rows = await search(srcdb, []);
       if (rows.length < 50) { const seen = new Map<string, FoseRow>(); for (const k of 'abcdefghijklmnopqrstuvwxyz') { for (const r of await search(srcdb, [{ field: 'keyword', value: k }])) seen.set(r.crn, r); await new Promise((res) => setTimeout(res, 120)); } rows = [...seen.values()]; }
@@ -581,9 +599,11 @@ function foseSource(schoolId: string, host: string): CourseSource {
         await new Promise((res) => setTimeout(res, 80));
       }
       console.log(`  ${schoolId} fose ${srcdb} (${label}): ${rows.length} sections → ${courses.length} lectures`);
-      return courses;
+      all.push(...tagTerm(courses, label));
+      }
+      return all;
     },
-    async lookup(c) { const srcdb = c.termCode ?? c.term; const rows = await search(srcdb, [{ field: 'keyword', value: c.code }]); return rowsToCourses(rows.filter((r) => r.code === c.code), srcdb, c.term).find((x) => x.id === c.id) ?? null; },
+    async lookup(c) { const srcdb = c.termCode ?? c.term; const rows = await search(srcdb, [{ field: 'keyword', value: c.code }]); return tagTerm(rowsToCourses(rows.filter((r) => r.code === c.code), srcdb, c.term), c.term).find((x) => x.id === c.id) ?? null; },
   };
 }
 
@@ -686,7 +706,8 @@ async function hvGet(url: string): Promise<string> {
   }
 }
 /** 검색 필터 값 "2026 Fall" — 진행 중인 학기 (@core/lib/terms) */
-function hvTermLabel(): string { if (process.env.HARVARD_TERM) return process.env.HARVARD_TERM; const c = currentTerm(); return `${c.year} ${c.season}`; }
+/** 지금 학기 + 다음 학기 ("2026 Fall", "2027 Spring"). HARVARD_TERM="2026 Fall|2027 Spring" 로 지정 가능 */
+function hvTermLabels(): string[] { if (process.env.HARVARD_TERM) return process.env.HARVARD_TERM.split('|').map((x) => x.trim()).filter(Boolean); const c = currentTerm(); const n = nextTerm(c); return [`${c.year} ${c.season}`, `${n.year} ${n.season}`]; }
 interface HvCard { key: string; code: string; title: string; sectionsUrl?: string; inline: string; dept: string }
 function hvCards(html: string): HvCard[] {
   const out: HvCard[] = [];
@@ -730,7 +751,16 @@ async function harvardCourses(cards: HvCard[], term: string): Promise<CatalogCou
   return out;
 }
 async function harvard(): Promise<CatalogCourse[]> {
-  const term = hvTermLabel(); const school = process.env.HARVARD_SCHOOL ?? 'FAS';
+  const all: CatalogCourse[] = [];
+  for (const term of hvTermLabels()) {
+    const got = await harvardTerm(term);
+    // 다음 학기가 아직 안 올라왔으면 비어 있다 — 건너뛴다. 지금 학기가 비면 아래 규칙 검사가 거부한다
+    all.push(...tagTerm(got, normalizeTermLabel(term)));
+  }
+  return all;
+}
+async function harvardTerm(term: string): Promise<CatalogCourse[]> {
+  const school = process.env.HARVARD_SCHOOL ?? 'FAS';
   // 전체 검색은 페이지마다 정렬이 흔들려 빠지는 과목이 생긴다 — 전체를 훑어 학과 접두어를 모으고, 학과별 검색(작고 안정적)으로 다시 받는다
   const cards: HvCard[] = []; const seen = new Set<string>(); const subjects = new Set<string>();
   const take = (list: HvCard[]) => { for (const c of list) { subjects.add(c.code.split(' ')[0]); if (!seen.has(c.key)) { seen.add(c.key); cards.push(c); } } };
@@ -758,7 +788,7 @@ async function harvard(): Promise<CatalogCourse[]> {
 async function harvardLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   const term = c.termCode ?? c.term;
   const cards = hvCards(await hvGet(`${HV}/search/?q=${encodeURIComponent(c.code)}&term=${encodeURIComponent(term)}`)).filter((x) => x.code === c.code);
-  return (await harvardCourses(cards, term)).find((x) => x.id === c.id) ?? null;
+  return tagTerm(await harvardCourses(cards, term), normalizeTermLabel(term)).find((x) => x.id === c.id) ?? null;
 }
 
 // ─── 표본 재확인 (agent) ───────────────────────────────────────────────────

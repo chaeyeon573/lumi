@@ -114,6 +114,19 @@ export function orgFilter(db: Snapshot, viewerId: ID): (o: Organization) => bool
     || o.memberIds.includes(viewerId) || o.followerIds.includes(viewerId) || o.adminIds.includes(viewerId) || o.applicantIds.includes(viewerId);
 }
 
+/**
+ * 이 사용자에게 보낼 공고인지 — 학교가 없는 공고(전국 인턴·장학금)와 내 학교 공고만.
+ * 데이터만 모으는 학교(schools-collect.csv)의 행사·연구가 다른 학교 학생에게 내려가지 않게 (2026-11-02).
+ * 학교를 모르는 사용자(가입 전 등)는 예전처럼 거르지 않는다. 내가 저장·관심 표시한 공고는 남긴다
+ */
+export function opportunityFilter(db: Snapshot, viewerId: ID): (o: { id: ID; schoolId?: ID }) => boolean {
+  const me = db.users.find((u) => u.id === viewerId);
+  const school = me?.affiliation.type === 'university' ? me.affiliation.schoolId : '';
+  if (!school) return () => true;
+  const mine = new Set(db.opportunityIntents.filter((i) => i.userId === viewerId).map((i) => i.opportunityId));
+  return (o) => !o.schoolId || o.schoolId === school || mine.has(o.id);
+}
+
 /** 이 사람이 볼 수 있는 게임만, 비밀을 지운 모양으로 */
 export const gamesFor = (games: Game[] | undefined, viewerId: ID): Game[] => (games ?? []).map((g) => gameFor(g, viewerId)).filter((g): g is Game => !!g);
 
@@ -188,6 +201,7 @@ export function snapshotFor(full: Snapshot, viewerId: ID): Snapshot {
   return moderateView({
     ...db,
     organizations: db.organizations.filter(orgFilter(db, viewerId)).map(orgFor(viewerId)),
+    opportunities: db.opportunities.filter(opportunityFilter(db, viewerId)),
     users: usersFor(db.users, viewerId, db),
     relationships: relationshipsFor(db.relationships, viewerId),
     posts: postsFor(db.posts, viewerId, db),
@@ -215,6 +229,7 @@ export function patchFor(original: Patch, viewerId: ID, db?: Snapshot): Patch | 
   if (db) { const m: Patch = { ...patch }; moderatePatch(m, viewerId, db); patch = m; }
   const out: Patch = { ...patch };
   if (patch.organizations) out.organizations = db ? patch.organizations.filter(orgFilter(db, viewerId)).map(orgFor(viewerId)) : [];
+  if (patch.opportunities && db) out.opportunities = patch.opportunities.filter(opportunityFilter(db, viewerId));
   if (patch.users) {
     out.users = usersFor(patch.users, viewerId, db);
     // 관계가 바뀐 패치(엔진이 두 당사자를 users 로 같이 보낸다): 나를 차단한 사람은 화면에서 지우고, 내가 당사자면 상대의 글·활동을 다시 맞춘다
