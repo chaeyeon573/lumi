@@ -1558,3 +1558,4 @@
 - New readers in server/sources/orglinks.ts (facetwp / accordion / drupalcards), detected from orgs_host in schools-collect.csv; tests with real page excerpts in server/fixtures.
 - SJSU classes: sjsu.edu not reachable from this container (TLS / 503) → next run, test on the server.
 - Checks: tsc, server typecheck, tests 277/277, build; agent DRY runs for s_ucsc, s_scu, s_usf OK.
+- SJSU events: events.sjsu.edu Localist API (checked: 211 items in 14 days; 9 kept after the student-event filter).
