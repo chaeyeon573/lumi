@@ -23,6 +23,7 @@ import { todayISO } from '@core/lib/format';
 import { friendsOf } from '@core/lib/relations';
 import { cn } from '@core/lib/cn';
 import { isNativeShell } from '@/lib/native';
+import { QuickMeetup } from './QuickMeetup';
 
 const COVER_HUES = [30, 220, 135, 285, 15, 175, 355, 100, 50, 235];
 
@@ -59,6 +60,8 @@ export function CreateActivityPage() {
     return { date: upcoming ? addDaysISO(upcoming.d) : todayISO(), start: toHHMM(Math.min(start, 21 * 60)), end: toHHMM(Math.min(start + 90, 22 * 60)) };
   })();
   const nowStart = Math.ceil((nowMin() + 30) / 15) * 15;
+  // 새 활동의 기본 날짜 — 저녁 6시 기본값이 이미 지났으면 내일 (밤에 열면 지난 시각이 기본으로 들어가던 것)
+  const defaultDate = isNow || nowMin() < 17 * 60 + 30 ? todayISO() : addDaysISO(1);
 
   const [form, setForm] = useState<ActivityInput>(() => editing ? { ...editing } : isCrew ? {
     kind: 'group', category: 'study', title: `${crewCourse} ${CREW_TYPE_LABELS.exam} Study Crew`, description: lang === 'en' ? `Study crew for ${crewCourse}. Split the material, explain to each other.` : `${crewCourse} 같이 준비해요. 범위 나눠서 서로 설명하기.`, cover: { emoji: '📝', hue: 220 },
@@ -67,7 +70,7 @@ export function CreateActivityPage() {
   } : {
     kind, category: (params.get('cat') as ActivityCategory | null) ?? (kind === 'org_event' ? 'club' : opp ? (opp.type === 'hackathon' || opp.type === 'startup' ? 'networking' : 'study') : isNow ? 'meal' : 'coffee'), title: opp ? `${opp.title}${t(' 같이 준비해요')}` : '', description: opp ? `${opp.title}${t('에 함께 지원·참가할 사람을 찾아요.')}` : '', cover: opp ? opp.cover : { emoji: isNow ? '🍱' : '☕', hue: 30 },
     opportunityId: oppId, rolesNeeded: opp?.rolesNeeded ?? (isTeam ? [] : undefined), openSlot: isNow || undefined, mode: isTeam ? 'offline' : undefined,
-    date: params.get('date') ?? todayISO(), startTime: params.get('start') ?? (isNow ? toHHMM(Math.min(nowStart, 23 * 60)) : '18:00'), endTime: params.get('end') ?? (isNow ? toHHMM(Math.min(nowStart + 90, 23 * 60 + 30)) : '19:30'), place: presets[0], capacity: kind === 'personal' ? 4 : 10, fee: 0, conditions: '',
+    date: params.get('date') ?? defaultDate, startTime: params.get('start') ?? (isNow ? toHHMM(Math.min(nowStart, 23 * 60)) : '18:00'), endTime: params.get('end') ?? (isNow ? toHHMM(Math.min(nowStart + 90, 23 * 60 + 30)) : '19:30'), place: presets[0], capacity: kind === 'personal' ? 4 : 10, fee: 0, conditions: '',
     joinPolicy: kind === 'personal' ? 'open' : 'approval', visibility: 'school', visibilityTargets: [], invitedIds: inviteId ? [inviteId] : [], orgId: kind === 'org_event' ? (orgParam && myOrgs.some((o) => o.id === orgParam) ? orgParam : myOrgs[0]?.id) : undefined,
   });
   const patch = (p: Partial<ActivityInput>) => setForm((f) => ({ ...f, ...p }));
@@ -75,10 +78,14 @@ export function CreateActivityPage() {
   const [busy, setBusy] = useState(false);
   const [customPlace, setCustomPlace] = useState(false);
 
+  // 즉석 만남은 짧은 양식 — 무엇·언제·어디 (QuickMeetup). 긴 양식은 '활동 만들기'와 그 양식의 '자세히 정하기'로
+  if (isNow && !editing && !isCrew && !isTeam && !opp) return <QuickMeetup presets={presets} inviteId={inviteId} />;
   if (id && !editing) return <div className="min-h-full"><TopBar back title={t('활동 수정')} /><EmptyState emoji="🔒" title={t('수정할 수 없는 활동이에요')} /></div>;
   if (editing && editing.hostId !== v.me.id) return <div className="min-h-full"><TopBar back title={t('활동 수정')} /><EmptyState emoji="🔒" title={t('주최자만 수정할 수 있어요')} /></div>;
 
-  const valid = form.title.trim().length >= 2 && form.description.trim().length > 0 && form.place.name && form.capacity > 0 && form.startTime < form.endTime;
+  // 새 활동은 지난 시각으로 열 수 없다
+  const past = !editing && (form.date < todayISO() || (form.date === todayISO() && toMin(form.startTime) < nowMin()));
+  const valid = form.title.trim().length >= 2 && form.description.trim().length > 0 && form.place.name && form.capacity > 0 && form.startTime < form.endTime && !past;
   // 영어는 '오늘 18:00 Doe Library 에서 …' 어순을 그대로 옮기면 'Today 18:00 Doe Library at …' 가 된다 — 날짜·시각·장소·제목 순으로
   const preview = lang === 'en'
     ? [`${formatDate(form.date)} ${formatTime(form.startTime)}`, form.place.name, form.title || '…'].filter(Boolean).join(' · ')
@@ -140,6 +147,7 @@ export function CreateActivityPage() {
           <Field label={t('시작')} required><Input type="time" value={form.startTime} onChange={(e) => patch({ startTime: e.target.value })} /></Field>
           <Field label={t('종료')} required><Input type="time" value={form.endTime} onChange={(e) => patch({ endTime: e.target.value })} /></Field>
         </div>
+        {past && <p className="text-[12px] text-danger -mt-3">{lang === 'en' ? 'That time has already passed — pick a later time.' : '이미 지난 시각이에요. 더 뒤로 골라주세요.'}</p>}
         <Field label={t('장소')} required hint={t('선택한 장소만 지도에 표시돼요. 내 위치는 공개되지 않아요.')}>
           <div className="flex flex-wrap gap-1.5 mb-2">{presets.map((p) => <Chip key={p.name} size="sm" active={form.place.name === p.name} onClick={() => { patch({ place: p }); setCustomPlace(false); }}>{p.name}</Chip>)}<Chip size="sm" active={customPlace} onClick={() => setCustomPlace(true)}><MapPin size={12} /> {t('지도에서 직접')}</Chip></div>
           {customPlace && (
