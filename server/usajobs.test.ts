@@ -24,3 +24,11 @@ test('usajobs: drop closed jobs and places far from Berkeley; field from the age
   assert.equal(usaJobToOpportunity(item({ PositionTitle: 'Student Trainee', DepartmentName: 'Department of Veterans Affairs', OrganizationName: 'Veterans Health Administration' }), NOW)!.field, 'Health');
   assert.equal(usaJobToOpportunity(item({ PositionTitle: 'Student Trainee (Information Technology)', PositionLocationDisplay: 'Multiple Locations' }), NOW)!.field !== 'Policy & Law', true);
 });
+
+test('usajobs: field from the job, not just “federal = policy”', () => {
+  const f = (t: string, dept = 'Department of the Interior', org = 'National Park Service') => usaJobToOpportunity(item({ PositionTitle: t, DepartmentName: dept, OrganizationName: org }), NOW)!.field;
+  assert.equal(f('Inpainting at the WWII Memorial'), 'Nonprofit & Education');
+  assert.equal(f('STUDENT TRAINEE (CONTRACTING)', 'Department of Defense', 'Defense Acquisition University'), 'Business & Marketing');
+  assert.equal(f('Student Trainee (Congressional & Public Affairs)', 'Small Business Administration', 'Small Business Administration'), 'Policy & Law');
+  assert.equal(f('Student Trainee', 'Department of Defense', 'Army Corps'), 'Other');
+});

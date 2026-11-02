@@ -8,7 +8,7 @@ import assert from 'node:assert/strict';
 import type { Snapshot } from '@core/api/types';
 import type { Opportunity, Organization } from '@core/types';
 import * as seed from '@core/data/seed.en';
-import { categoriesOf, eventKindsOf, inCategory, isOfType, listingsOfOrg, orgLinker, orgOfListing, regionsOf, fieldOf, listingField } from '@core/lib/listings';
+import { categoriesOf, eventKindsOf, inCategory, isOfType, listingsOfOrg, orgLinker, orgOfListing, regionsOf, fieldOf, listingField, audienceOf } from '@core/lib/listings';
 import { coursesFromCatalog, clashesWith, hasCatalogCourse } from '@core/lib/timetable';
 import { forYou } from '@core/lib/foryou';
 import { recommendFor, searchListings } from './ai-search';
@@ -178,4 +178,11 @@ test('internship fields: humanities & social-science roles get their own fields,
   assert.equal(fieldOf('Tax Information Reporting Intern'), 'Finance & Consulting');
   assert.equal(listingField({ title: 'Intern', field: 'Research & Science' }), 'Research & Science');
   assert.equal(listingField({ title: 'Legal Intern', field: 'Business & Marketing' }), 'Policy & Law');
+});
+
+test('audience: law-student and MBA listings are for graduate students', () => {
+  const o = (title: string) => ({ title, tags: [], eligibility: '', description: '' });
+  assert.equal(audienceOf(o('Law Student Volunteer')), 'grad');
+  assert.equal(audienceOf(o('MBA Summer Intern, Strategy')), 'grad');
+  assert.equal(audienceOf(o('Policy Intern')), 'all');
 });

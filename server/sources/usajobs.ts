@@ -21,12 +21,13 @@ export interface UsaJobItem {
 
 const NEAR = /california|, ca\b|district of columbia|washington, dc|washington dc|remote|anywhere|multiple locations|nationwide|negotiable/i;
 
-/** 기관으로 본 분야 — 제목으로 못 고르면. 연방정부 일이니 그 밖은 정책·행정 */
+/** 기관으로 본 분야 — 제목으로 못 고르면. 정책·법은 정책·법 기관일 때만(모든 연방 일자리를 정책으로 넣었더니 미술 보존·계약 업무까지 Policy & Law 였다) */
 function deptField(dept = '', org = ''): Field {
   const s = `${dept} ${org}`;
   if (/health|veterans|medicare|disease control|\bnih\b|food and drug/i.test(s)) return 'Health';
-  if (/education/i.test(s)) return 'Nonprofit & Education';
-  return 'Policy & Law';
+  if (/education|national park|smithsonian|library of congress|archives/i.test(s)) return 'Nonprofit & Education';
+  if (/justice|state\b|congress|legislative|court|management and budget|attorney|federal election|government accountability|homeland|treasury|commerce|labor|small business/i.test(s)) return 'Policy & Law';
+  return 'Other';
 }
 
 const money = (n?: string) => { const x = Number(n); return Number.isFinite(x) && x > 0 ? `$${x >= 1000 ? Math.round(x).toLocaleString('en-US') : x.toFixed(2)}` : ''; };
@@ -41,7 +42,9 @@ export function usaJobToOpportunity(item: UsaJobItem, now = new Date()): Opportu
   const pay = d.PositionRemuneration?.[0];
   const payText = pay && money(pay.MinimumRange) ? `${money(pay.MinimumRange)}${money(pay.MaximumRange) && pay.MaximumRange !== pay.MinimumRange ? `–${money(pay.MaximumRange)}` : ''}${RATE[pay.RateIntervalCode ?? ''] ?? ''}` : '';
   const id = (d.PositionID || item.MatchedObjectId || d.PositionURI.split('/').pop() || '').replace(/[^a-z0-9]+/gi, '_').toLowerCase();
-  const titleField = fieldOf(d.PositionTitle);
+  // “Student Trainee (Budget Analysis)” — 괄호 안이 실제 일
+  const inner = /\(([^)]+)\)/.exec(d.PositionTitle)?.[1] ?? '';
+  const titleField = fieldOf(d.PositionTitle) !== 'Other' ? fieldOf(d.PositionTitle) : fieldOf(inner);
   const host = d.OrganizationName || d.DepartmentName || 'U.S. federal government';
   const iso = now.toISOString();
   return {

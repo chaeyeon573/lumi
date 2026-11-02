@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-11-02 06:20 UTC (버클리 일 22:20 PST) · 초점: 오늘 배포한 연구소·USAJobs·장학금이 라이브 화면에 맞게 보이는지
+- 사장님 새 답 없음. 라이브: 연구실 126(연구소 125 + 예시 1), 인턴 457(Policy & Law 76), 장학금 25.
+- 고침: 연방 일자리를 제목으로 못 고르면 전부 Policy & Law 로 넣었다(“Inpainting at the WWII Memorial”, “Student Trainee (Contracting)”) → “Student Trainee (…)” 괄호 안을 먼저 보고, 기관으로 고를 때는 정책·법 기관만 Policy & Law, 국립공원·박물관은 Nonprofit & Education, 그 밖은 Other. 계약·예산·인사·물류는 Business. “Law Student”·MBA 공고는 대학원생 대상으로. 테스트 2개, 259 통과, 빌드·화면 오류 0.
+- 결과(라이브 데이터, 새 화면 코드): Policy & Law 76→62, Nonprofit & Education 7→13, Business 34→42.
+- 배포: 상시 허락 규칙대로 검사 통과 후 배포.
+
 ## 2026-11-02 · 사장님 요청 — 대학원생 장학금 더
 - 버클리 Graduate Division 펠로십 18개 추가(STEM Diversity $20k, Rosenfeld $10k, Lindheim $10k, Mentored Research Award, Lurcy $30k, Brett, CEND, Chowdhury, GIAS, Trujillo, Luce Indigenous $50k, Greater Good, Alexander, Fahey, Bancroft, Private Law, Singh $36k, Soong). 페이지마다 열어 확인 — 마감은 “1월 15일”처럼 연도가 없어서 날짜 미정으로 두고 설명에 페이지 표기를 그대로 적음(NDSEG 처럼 지난 정보가 섞여 있어 연도를 짐작하지 않음).
 - 전국: Boren Fellowship(대학원) 2027/1/20 — 공식 borenawards.org 확인.

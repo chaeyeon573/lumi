@@ -22,9 +22,9 @@ const FIELD_RULES: [Field, RegExp][] = [
   // 문과 쪽 — 금융(‘Tax … Reporting’) 다음, 경영·개발 전. 개발·디자인 제목(“Software Engineer, US Government”)은 fieldOf 가 건너뛴다
   ['Policy & Law', /\bpolicy\b|public policy|government|legislat|congress|\blegal\b|\blaw\b|paralegal|litigation|civil (rights|liberties)|advocacy|public affairs|regulatory|compliance|political|campaign|election|international affairs|diplomac/i],
   ['Media & Writing', /\bnews\b|photo|visuals|audience|sports|creative services|\bvideo\b|\bfilm\b|entertainment|publicity|journalis|editorial|\beditor\b|reporter|reporting|newsroom|writer|writing|copywrit|publishing|podcast|broadcast|video produc|\bmedia\b|communications?\b|public relations|\bpr\b|social media|content/i],
-  ['Nonprofit & Education', /nonprofit|non-profit|education|teach|tutor|curriculum|community|outreach|volunteer|philanthrop|fundrais|development associate|social impact|youth|museum|library|arts? (admin|program)/i],
+  ['Nonprofit & Education', /conservation|museum|archiv|park ranger|historic preservation|nonprofit|non-profit|education|teach|tutor|curriculum|community|outreach|volunteer|philanthrop|fundrais|development associate|social impact|youth|museum|library|arts? (admin|program)/i],
   ['Health', /\bhealth|public health|medical|hospital|patient|nurs|pharma(?!ceutical engineer)|clinical operations|epidemiolog/i],
-  ['Business & Marketing', /marketing|sales|business|brand|merchandis|retail|store (leadership|executive|manager)|operations|growth|partnership|people|recruit|vendor|special projects|programs?\b|workplace|employee|learning & development|alumni|events?\b/i],
+  ['Business & Marketing', /contracting|procurement|acquisition|budget|human capital|human resources|logistics|administrative|marketing|sales|business|brand|merchandis|retail|store (leadership|executive|manager)|operations|growth|partnership|people|recruit|vendor|special projects|programs?\b|workplace|employee|learning & development|alumni|events?\b/i],
   ['Software', /software|information technology|computer scien|\bswe\b|engineer|developer|frontend|front-end|backend|back-end|full.?stack|mobile|ios|android|infrastructure|platform|security|devops|\bsre\b/i],
 ];
 const HUMANITIES = new Set<Field>(['Policy & Law', 'Media & Writing', 'Nonprofit & Education', 'Health']);
@@ -116,7 +116,7 @@ export function spreadByHost<T extends { host: string }>(items: T[], gap = 3): T
 
 // ─── 누구를 위한 공고인가 (대학원생 / 학부생 / 모두) ─────────────────────────
 export type Audience = 'grad' | 'undergrad' | 'all';
-const GRAD_RE = /\bph\.?\s?d\b|ms\s?\/\s?ph\.?d|\bmasters?\b|master'?s\b|graduate students?|doctoral|dissertation|postdoc|\bgsr\b|\bgsi\b/i;
+const GRAD_RE = /\blaw students?\b|\bj\.?d\.? (students?|candidates?)|\bmba\b|\bph\.?\s?d\b|ms\s?\/\s?ph\.?d|\bmasters?\b|master'?s\b|graduate students?|doctoral|dissertation|postdoc|\bgsr\b|\bgsi\b/i;
 const UNDERGRAD_RE = /undergrad|bachelor'?s|freshm[ae]n|sophomore|high school|\bfirst[- ]year students?\b/i;
 export function audienceOf(o: Pick<Opportunity, 'title' | 'tags' | 'eligibility' | 'description'>): Audience {
   if (o.tags.some((t) => /^graduate$/i.test(t))) return 'grad';
