@@ -22,3 +22,13 @@ Notes
 - CampusGroups club pages draw their Instagram/Facebook icons by script, so only the club's own website is captured there. Engage and Penn Clubs give full social links.
 - Hand-checked student governments: `server/data/student-governments.csv` (official site; Instagram only when the official site links it).
 - East Coast schools (MIT, Harvard, Cornell, UPenn, Dartmouth, Notre Dame) moved back to `schools-paused.csv`. Their readers (incl. Penn Clubs, two-term classes) stay in the code.
+
+## Data work queue (the PM agent picks the top open item itself every run — owner 2026-11-02: "don't make me ask, keep filling")
+Order: Bay Area schools only. Never invent data; only official/public sources; verify with a real sample before wiring; never bulk-store timetables for schools that aren't open.
+- [ ] Check on the live agent status that orgs for s_ucsc / s_scu / s_usf / s_sjsu / s_ucdavis / s_sfsu loaded (counts match this table)
+- [ ] SJSU class schedule recipe (sjsu.edu/classes/schedules/<term>.php) — test from the server via probe
+- [ ] UCSC class schedule recipe (pisa.ucsc.edu class search)
+- [ ] Event calendars: UC Davis, UC Santa Cruz, Santa Clara, USF
+- [ ] Santa Clara club links (only names now) — look for each club's page/Instagram on official SCU pages
+- [ ] Official Instagram for student governments where the official site links it (ASSU, ASUCD, SUA, ASG)
+- [ ] Next Bay Area schools to consider: UCSF (grad), Cal State East Bay, Mills (Northeastern) — ask owner before adding a school
