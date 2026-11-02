@@ -1535,3 +1535,12 @@
 - Student government = type council. Rule widened (Undergraduate Assembly, Graduate Student Government, Student Assembly, Senate, class councils…); Dartmouth's "Council on Student Organizations" group type no longer turns every club into a council (was 189 → 7). Found in directories: ND Student Government/Senate + Graduate Student Government, Penn UA + GAPSA. MIT UA is not in engage.mit.edu → added by hand.
 - Not in any directory → server/data/student-governments.csv, checked on the official sites: Harvard Undergraduate Association (thehua.org), Dartmouth Student Government (sg.dartmouth.edu + Instagram), MIT Undergraduate Association (ua.mit.edu + Instagram). Worker adds them weekly (studentgov:<id>).
 - Tests: server/orglinks.test.ts. Checks: tsc, server typecheck, tests 274/274, build; FETCH_DRY runs for ND, UPenn, Dartmouth, MIT OK.
+
+## 2026-11-02 — Bay Area first; load clubs, only sample-test timetables
+- Owner: few schools, Bay Area first; clubs/groups (unstructured) load all now; timetables must not be bulk-loaded (storage cost) — prove the recipe with a few accurate samples so it can be pulled fast later.
+- schools-collect.csv is now Bay Area: Stanford, SF State, SJSU (new row), UC Davis, UC Santa Cruz, Santa Clara (new), USF (new). East Coast six moved back to schools-paused.csv.
+- Collect schools: classes are no longer stored. New `probe:<id>` job (weekly): reads a sample (Stanford CS/MATH/ECON; CourseLeaf 6 subjects), runs the rules + source re-check, records source, terms, sample rows, `stored: false`. Manual: `npm run agent -- probe:s_sfsu`.
+- Fixes found by the tests: CampusGroups paging (UC Davis 265 → 531, SJSU 238 → 440 — pages are 8–10 rows there, we stepped 30; rows without links now read via cb_club_<id>); CourseLeaf titles with "&#8212;" (UC Davis); MIT course import failed on duplicate ids ("ON CONFLICT … second time") → dedupe before saving.
+- Student governments hand-checked on official sites: ASSU, ASUCD, UCSC SUA, SCU ASG, ASUSF Senate (website only; no Instagram unless the official site links it).
+- Already in the live DB before this change (worker ran the earlier list at ~12:20 UTC): Stanford classes 2,439 rows (Stanford had 744 before), MIT/Stanford clubs. Not deleted — live DB deletes need owner OK.
+- Recipe table: docs/pm-agent/DATA_SOURCES.md.

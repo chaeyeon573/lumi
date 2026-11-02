@@ -67,14 +67,16 @@ async function fetchCampusGroups(host: string): Promise<CampusGroupsOrg[]> {
   const seen = new Set<string>();
   // 중간에 빈 페이지가 섞여 나온다(MIT: range=270 이 비고 300 은 찬다) — 첫 페이지의 총 개수까지 끝까지 걷고, 빈 페이지로 멈추지 않는다
   let total = Infinity;
-  for (let range = 0; range < Math.min(total + 60, 20000); range += 30) {
+  // 학교마다 한 페이지 크기가 다르다 (MIT·Stanford 30, UC Davis·SJSU 8~10) — 30씩 넘기면 작은 학교는 절반을 건너뛰었다. 10씩 넘기고 겹치는 건 seen 으로 거른다
+  for (let range = 0; range < Math.min(total + 60, 20000); range += 10) {
     const html = await getWithRetry(`${host}/club_signup?ax=1&range=${range}`);
     if (range === 0) total = Number(/clubsCount'\)\.innerHTML = '\((\d+)\)'/.exec(html)?.[1] ?? '') || 3000;
     const items = html.split('<li class="list-group-item"').slice(1);
     let added = 0;
     for (const it of items) {
-      const id = /club_id=(\d+)/.exec(it)?.[1];
-      const name = strip(/<h2 class="media-heading[^"]*">\s*<a[^>]*>([\s\S]*?)<\/a>/.exec(it)?.[1] ?? '');
+      // 링크가 없는 줄(가입 닫힘 등)도 있다 — 체크박스 id(cb_club_<id>)와 묶음 이름(aria-label)으로도 읽는다 (UC Davis 는 절반이 이렇다)
+      const id = /club_id=(\d+)/.exec(it)?.[1] ?? /cb_club_(\d+)/.exec(it)?.[1];
+      const name = strip(/<h2 class="media-heading[^"]*">\s*<a[^>]*>([\s\S]*?)<\/a>/.exec(it)?.[1] ?? /<h2 class="media-heading[^"]*">([\s\S]*?)<\/h2>/.exec(it)?.[1] ?? /role="group" aria-label="([^"]+)"/.exec(it)?.[1] ?? '');
       if (!id || !name || seen.has(id)) continue;
       seen.add(id); added++;
       const catLine = strip(/<p class="h5 media-heading grey-element">([\s\S]*?)<\/p>/.exec(it)?.[1] ?? '');

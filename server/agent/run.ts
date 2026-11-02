@@ -33,6 +33,7 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { School } from '@core/types';
+import type { CatalogCourse } from '@core/api/types';
 import { parseCSV } from '../scripts/csv';
 import { detectOrgsPlatform } from './detect';
 import { randomUUID } from 'node:crypto';
@@ -109,8 +110,10 @@ async function runCourses(key: string, schoolId?: string): Promise<AgentRun> {
     if (!spot.ok) reasons.push(`spot-check matched ${spot.matched}/${spot.matched + spot.mismatched.length}`);
     const summary = { school: src.schoolId, fetched: fetched.length, kept: rules.kept.length, dropped: rules.dropped.slice(0, 10), dropRate, drift, spotCheck: { ...spot, mismatched: spot.mismatched.slice(0, 10) }, reasons, dry: DRY };
     if (reasons.length) return record({ task: taskName, schoolId: src.schoolId, status: 'rejected', startedAt, summary });
-    if (!DRY) await store.replaceCatalog(src.schoolId, rules.kept);
-    return record({ task: taskName, schoolId: src.schoolId, status: 'applied', startedAt, summary });
+    // 같은 id 가 두 번 오면(MIT fireroad 의 교차 개설 과목 등) DB upsert 가 한 번에 같은 줄을 두 번 고치려다 실패한다 — 첫 줄만
+    const unique = [...new Map(rules.kept.map((c) => [c.id, c])).values()];
+    if (!DRY) await store.replaceCatalog(src.schoolId, unique);
+    return record({ task: taskName, schoolId: src.schoolId, status: 'applied', startedAt, summary: { ...summary, kept: unique.length, duplicateIds: rules.kept.length - unique.length } });
   } catch (e) {
     return record({ task: taskName, schoolId: src.schoolId, status: 'error', startedAt, summary: { error: (e as Error).message } });
   }
@@ -241,8 +244,11 @@ async function runSchool(row: SchoolRow, listed = true): Promise<AgentRun[]> {
   // 학사 일정 (수강신청 단계·마감·휴일·기말) — 하루마다, 실패하면 2시간 뒤
   const lastAcademic = latest.get(`academic:${row.id}`);
   if (icsUrlOf(row.academic_calendar) && due(`academic:${row.id}`, lastAcademic?.finishedAt, lastAcademic?.status === 'applied' ? 24 : 2)) out.push(await runAcademic(row));
-  // 3. 수업
-  if (row.courses_source && resolveCourseSource(row.id, row.courses_source)) {
+  // 3. 수업 — 데이터만 모으는 학교는 저장하지 않고 표본만 읽어 "이렇게 가져오면 맞다"를 확인한다 (2026-11-02 사장님: 시간표 전체 적재는 비용 — 방법만 검증)
+  if (!listed) {
+    const lastProbe = latest.get(`probe:${row.id}`);
+    if ((row.courses_source || row.catalog_url) && due(`probe:${row.id}`, lastProbe?.finishedAt, lastProbe?.status === 'applied' ? 24 * 7 : 24)) out.push(await runCourseProbe(row));
+  } else if (row.courses_source && resolveCourseSource(row.id, row.courses_source)) {
     const lastCourses = latest.get(`courses:${row.courses_source.includes(':') ? row.id : row.courses_source}`);
     // 성공하면 하루마다, 실패·거부면 2시간 뒤 다시 (어댑터를 고치면 곧 반영되도록)
     const coursesTask = `courses:${row.courses_source.includes(':') ? row.id : row.courses_source}`;
@@ -266,6 +272,35 @@ async function runSchool(row: SchoolRow, listed = true): Promise<AgentRun[]> {
   return out;
 }
 
+/**
+ * 수업 시험 읽기 — 표본 몇 학과만 가져와 규칙 검사 · 원본 재확인(어댑터가 있으면)까지 하고 DB 에는 넣지 않는다.
+ * 기록(agent_runs probe:<id>)에 원본·학기·표본 줄을 남겨, 나중에 학교를 열 때 schools.csv 로 옮기기만 하면 같은 방법으로 전부 가져온다
+ */
+async function runCourseProbe(row: SchoolRow): Promise<AgentRun> {
+  const startedAt = new Date().toISOString(); const task = `probe:${row.id}`;
+  try {
+    let courses: CatalogCourse[] = []; let source = ''; let spot: Awaited<ReturnType<typeof spotCheck>> | undefined;
+    const src = row.courses_source ? resolveCourseSource(row.id, row.courses_source) : undefined;
+    if (src) {
+      source = `timetable:${row.courses_source}`;
+      const prev = process.env.STANFORD_SUBJECTS;
+      if (row.courses_source === 'stanford') process.env.STANFORD_SUBJECTS = 'CS,MATH,ECON';
+      try { courses = applyRules(row.id, await src.fetch()).kept; } finally { if (row.courses_source === 'stanford') { if (prev === undefined) delete process.env.STANFORD_SUBJECTS; else process.env.STANFORD_SUBJECTS = prev; } }
+      spot = await spotCheck(courses, src.lookup, 6);
+    } else if (row.catalog_url) {
+      source = `catalog:${row.catalog_url}`;
+      courses = (await fetchCourseLeaf(row.id, row.catalog_url, 6)).courses;
+    }
+    const terms = [...new Set(courses.map((c) => c.term).filter(Boolean))];
+    const withTimes = courses.filter((c) => c.meetings?.length).length;
+    const sample = courses.filter((_, i) => i % Math.max(1, Math.floor(courses.length / 6)) === 0).slice(0, 6).map((c) => `${c.code} · ${c.title}${c.term ? ` · ${c.term}` : ''}${c.meetings?.length ? ` · ${c.meetings.map((m) => `${'MTWRFSU'[m.day]} ${m.start}-${m.end}`).join(' ')}` : ''}`);
+    const ok = courses.length > 0 && (!spot || spot.ok);
+    return record({ task, schoolId: row.id, status: ok ? 'applied' : 'rejected', startedAt, summary: { stored: false, source, sampled: courses.length, withTimes, terms, sample, spotCheck: spot ? { matched: spot.matched, mismatched: spot.mismatched.slice(0, 5), unavailable: spot.unavailable } : 'no lookup (catalog codes/titles only)' } });
+  } catch (e) {
+    return record({ task, schoolId: row.id, status: 'error', startedAt, summary: { stored: false, error: (e as Error).message } });
+  }
+}
+
 async function notify(results: AgentRun[]) {
   const bad = results.filter((r) => r.status === 'rejected' || r.status === 'error' || r.task.startsWith('adapter:'));
   const line = (r: AgentRun) => `${r.status.toUpperCase().padEnd(8)} ${r.task.padEnd(22)} ${JSON.stringify(r.summary).slice(0, 400)}`;
@@ -286,6 +321,7 @@ async function runTask(t: string): Promise<AgentRun[]> {
   if (kind === 'greeks') return [await runScript(t, 'fetch:greeks', arg)];
   if (kind === 'academic') { const row = findRow(arg); return [row ? await runAcademic(row) : await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
   if (kind === 'seats') { const startedAt = new Date().toISOString(); const s = await pollSeats(store, { dry: DRY, force: true }); return [await record({ task: 'seats', status: s.errors && !s.fetched ? 'error' : 'applied', startedAt, summary: { ...s } })]; }
+  if (kind === 'probe') { const row = findRow(arg); return [row ? await runCourseProbe(row) : await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv / schools-collect.csv' } })]; }
   if (kind === 'school') { const row = findRow(arg); return row ? runSchool(row, loadSchools().some((x) => x.id === arg)) : [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
   return [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'unknown task' } })];
 }

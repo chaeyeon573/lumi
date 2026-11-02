@@ -67,6 +67,8 @@ function parseBlock(schoolId: string, block: string, origin?: string): CatalogCo
   }
   // 제목 끝에 붙는 "3 Credits" / "0,3 Credits" / "1-4 Units" 는 학점이지 이름이 아니다
   title = title.replace(/[\s.,]*\(?\d+(?:[.,–-]\d+)*\)?\s*(?:units?|credits?|credit hours?|hours?|points?)\.?\s*$/i, '').replace(/[.\s]+$/, '').trim();
+  // UC Davis 처럼 제목 앞에 “&#8212; ” (—) 가 붙어 오는 카탈로그 — 글자 코드를 풀고 앞의 대시를 뗀다
+  title = title.replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n))).replace(/&amp;/g, '&').replace(/^[\s—–-]+/, '').trim();
   if (!code || !title || title.length < 3) return null;
   const units = /\b(\d+(?:\.\d+)?)(?:\s*[-–]\s*\d+(?:\.\d+)?)?\s*(?:units?|credits?|credit hours?|hours?|points?)\b/i.exec(strip(titleEl ?? block.slice(0, 600)))?.[1];
   return { id: courseId(schoolId, code), schoolId, code, title: title.slice(0, 140), department: code.replace(/\s?\d.*$/, ''), meetings: [], term: 'catalog', units: units ? Number(units) : undefined, url: origin ? `${origin}/search/?P=${encodeURIComponent(code)}` : undefined };
@@ -74,9 +76,11 @@ function parseBlock(schoolId: string, block: string, origin?: string): CatalogCo
 
 export interface CatalogResult { courses: CatalogCourse[]; subjects: string[]; subjectsWithCourses: number; root: string }
 
-export async function fetchCourseLeaf(schoolId: string, rootUrl: string): Promise<CatalogResult> {
+/** maxSubjects: 표본만 (데이터만 모으는 학교의 시험 읽기) — 학과 목록에서 고르게 n 개 */
+export async function fetchCourseLeaf(schoolId: string, rootUrl: string, maxSubjects?: number): Promise<CatalogResult> {
   const root = new URL(rootUrl);
-  const subjects = await discoverSubjects(root.href);
+  const all = await discoverSubjects(root.href);
+  const subjects = maxSubjects && all.length > maxSubjects ? Array.from({ length: maxSubjects }, (_, i) => all[Math.floor((i * all.length) / maxSubjects)]) : all;
   const byId = new Map<string, CatalogCourse>(); let subjectsWithCourses = 0;
   for (const subj of subjects) {
     const xml = await get(`${root.origin}/ribbit/index.cgi?page=getcourse.rjs&subject=${encodeURIComponent(subj)}`);

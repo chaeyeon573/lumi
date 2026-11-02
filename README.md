@@ -216,7 +216,7 @@ npm run import:opportunities -- server/data/opportunities-berkeley.csv
 
 - 새 학교: 앱에 등록 → 동아리 플랫폼 자동 탐지(CampusLabs Engage / CampusGroups, `server/agent/detect.ts`) → 동아리 가져오기 → 수업 어댑터가 없으면 `adapter:<school>` 로 기록하고 운영자에게 메일
 - 있는 학교: 수업 시간표는 하루마다, 동아리는 7일마다 원본에서 다시 가져온다 (Greek 공식 명단은 `npm run fetch:greeks -- <school>` 로 따로)
-- **데이터만 모으는 학교** (`server/data/schools-collect.csv`, 2026-11-02): Stanford · MIT · Harvard · Cornell · UPenn · Dartmouth · Notre Dame. 워커가 동아리·행사·수업(지금 학기 + 다음 학기)을 똑같이 모으지만 앱 학교 목록(가입 화면)에는 올리지 않는다. 열 때는 줄을 schools.csv 로 옮긴다. 다른 학교 학생에게는 server/view.ts 가 학교별로 걸러 보내지 않는다
+- **데이터만 모으는 학교** (`server/data/schools-collect.csv`, 2026-11-02 · 베이 지역): Stanford · SF State · SJSU · UC Davis · UC Santa Cruz · Santa Clara · USF. 워커가 동아리·학생회·행사·링크는 적재하고, **수업 시간표는 적재하지 않고 표본만 읽어 방법을 검증**한다(`probe:<id>`, stored:false). 가입 화면에는 아직 안 보인다. 열 때는 줄을 schools.csv 로 옮긴다. 학교별 출처: docs/pm-agent/DATA_SOURCES.md
 - **지금 활성 학교는 UC Berkeley · UC Merced 두 곳** (`server/data/schools.csv`). 나머지 51곳은 `server/data/schools-paused.csv` 에 그대로 있고, 줄을 옮기면 다시 켜진다. 워커는 시작할 때 목록에 없는 학교를 앱의 학교 선택지에서 숨긴다 (동아리·수업 데이터는 지우지 않는다)
 - 행사 (`server/sources/opportunities.ts`, 6시간마다 공고로): 학생 단체 행사 — Berkeley CalLink(Engage) 30일 · UC Merced Presence 45일, 학교 캘린더 — `events_source=livewhale:https://events.berkeley.edu` 2주치 중 무료 음식 · 강연/포럼/패널 · 추천 행사만. 무료 음식은 단체 표시나 설명 키워드로 찾아 "🍕 Free food" 를 단다
 - 마감 달력: `server/data/opportunities-<short>.csv` (berkeley · ucmerced) 를 워커가 매일 반영한다 — 파일만 고치면 된다
