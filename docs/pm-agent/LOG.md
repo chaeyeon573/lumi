@@ -1498,3 +1498,8 @@
 ## 2026-10-13 · 설치
 - PM agent 설정 (3시간마다, 작업 브랜치 claude/lumi-pm, 배포는 사장님).
 - 직전 수정: Discover 활동 날짜별 묶음 + "Be the first" 제거 (aacc152).
+
+## 2026-11-02 — Onboarding per owner mockup (/start)
+- New order: Name first ("What should we call you?" + birth year 16+) → Your goals (5 + Skip) → Here's how Lumi helps you (4 cards; Communities = "Join clubs, Greek life, and other campus groups") → University & student status (school + Undergraduate/Graduate/Alumni, optional year/major, waitlist for other schools) → Your communities (8 + None for now) → school email (optional) + Get Started.
+- No new schema: goals/communities map into existing goals/interests/purposes. "Make campus life easier" and "Residence Hall / Dorm" have no matching field, so they only steer interests (study) or are not stored. Avatar/bio quiz steps removed (bio starts empty, editable in Profile).
+- Checks: tsc, server typecheck, npm test 266/266, vite build, click-through screenshots v2+classic, PAGE ERROR 0 (register/email writes blocked).
