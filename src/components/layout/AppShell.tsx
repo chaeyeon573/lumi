@@ -25,8 +25,10 @@ export function AppShell({ withNav = true }: { withNav?: boolean }) {
       <div id="shell" className="relative h-full w-full max-w-[430px] bg-bg sm:shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_24px_60px_rgba(0,0,0,0.12)] lg:border-x lg:border-line lg:shadow-[0_0_0_1px_var(--color-line),0_30px_80px_rgba(0,0,0,0.35)] overflow-hidden flex flex-col">
         {inApp && <PullToRefresh target={scrollRef} />}
         {/* scroll-pt: 위의 고정 상단 바(h-16) 밑으로 줄이 숨지 않게 — 화면 밖 줄을 눌러 끌어올 때(scrollIntoView·포커스) 바 아래에 멈춘다.
-            안 그러면 줄 가운데가 상단 바 밑에 깔려 눌러도 바가 눌린다 (ux-sim baseline-aisha step 22: 동아리 줄을 눌렀는데 아무 일도 없음) */}
-        <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto hide-scrollbar scroll-pt-[72px]" id="scroll-root">
+            안 그러면 줄 가운데가 상단 바 밑에 깔려 눌러도 바가 눌린다 (ux-sim baseline-aisha step 22: 동아리 줄을 눌렀는데 아무 일도 없음).
+            scroll-pb: 아래쪽도 같다 — 화면 아래 고정 버튼 줄(‘Post ride’ 등, h≈72) 밑에 입력칸이 깔려, 메모 칸을 누르면 글이 올라갔다
+            (ux-sim baseline-seoyeon step 29) */}
+        <div ref={scrollRef} className="flex-1 min-h-0 overflow-y-auto hide-scrollbar scroll-pt-[72px] scroll-pb-[96px]" id="scroll-root">
           <Outlet />
         </div>
         {withNav && <BottomNav />}
