@@ -180,6 +180,17 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
     mkdirSync(COLLECTED_DIR, { recursive: true });
     writeFileSync(path.join(COLLECTED_DIR, `${row.id}.probe.json`), `${JSON.stringify({ checkedAt: probe.finishedAt, status: probe.status, ...probe.summary }, null, 1)}\n`);
     out.push(probe);
+    // 표본이 맞으면 전체 수업도 파일로 (DB 아님 — 학교를 열 때 그대로 넣는다). 한 줄에 과목 하나
+    if (probe.status === 'applied') {
+      const startedAt = new Date().toISOString();
+      try {
+        const src = row.courses_source ? resolveCourseSource(row.id, row.courses_source) : undefined;
+        const all = src ? applyRules(row.id, await src.fetch()).kept : row.catalog_url ? (await fetchCourseLeaf(row.id, row.catalog_url)).courses : [];
+        const unique = [...new Map(all.map((c) => [c.id, c])).values()].sort((a, b) => a.code.localeCompare(b.code, 'en', { numeric: true }));
+        writeFileSync(path.join(COLLECTED_DIR, `${row.id}.courses.json`), `[\n${unique.map((c) => JSON.stringify(c)).join(',\n')}\n]\n`);
+        out.push(await record({ task: `collect-courses:${row.id}`, schoolId: row.id, status: unique.length ? 'applied' : 'rejected', startedAt, summary: { courses: unique.length, withTimes: unique.filter((c) => c.meetings?.length).length, terms: [...new Set(unique.map((c) => c.term))].slice(0, 6) } }));
+      } catch (e) { out.push(await record({ task: `collect-courses:${row.id}`, schoolId: row.id, status: 'error', startedAt, summary: { error: (e as Error).message } })); }
+    }
   }
   return out;
 }

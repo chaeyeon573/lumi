@@ -67,6 +67,8 @@ function parseBlock(schoolId: string, block: string, origin?: string): CatalogCo
   }
   // 제목 끝에 붙는 "3 Credits" / "0,3 Credits" / "1-4 Units" 는 학점이지 이름이 아니다
   title = title.replace(/[\s.,]*\(?\d+(?:[.,–-]\d+)*\)?\s*(?:units?|credits?|credit hours?|hours?|points?)\.?\s*$/i, '').replace(/[.\s]+$/, '').trim();
+  // SF State 처럼 제목 뒤에 “(Units: 3)” 가 붙어 오는 카탈로그
+  title = title.replace(/\s*\(Units?:\s*[\d.]+(?:\s*[-–]\s*[\d.]+)?\)\s*$/i, '').trim();
   // UC Davis 처럼 제목 앞에 “&#8212; ” (—) 가 붙어 오는 카탈로그 — 글자 코드를 풀고 앞의 대시를 뗀다
   title = title.replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n))).replace(/&amp;/g, '&').replace(/^[\s—–-]+/, '').trim();
   if (!code || !title || title.length < 3) return null;

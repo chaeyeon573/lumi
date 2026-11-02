@@ -1,5 +1,5 @@
 {
- "checkedAt": "2026-11-02T14:09:24.933Z",
+ "checkedAt": "2026-11-02T14:22:00.518Z",
  "status": "applied",
  "stored": false,
  "source": "catalog:https://bulletin.sfsu.edu/",
@@ -9,12 +9,12 @@
   "catalog"
  ],
  "sample": [
-  "CINE 309 · Latina/o/x Cinema (Units: 3) · catalog",
-  "CINE 628 · Producing and Financing Films II (Units: 3) · catalog",
-  "CINE 750 · Production Workshop Intensive (Unit: 1) · catalog",
-  "CINE 343GW · Perspectives on Documentary Film - GWAR (Units: 3) · catalog",
-  "CINE 705 · Documentary Directing (Units: 3) · catalog",
-  "ETHS 895 · Field Study (Units: 3) · catalog"
+  "CINE 309 · Latina/o/x Cinema · catalog",
+  "CINE 628 · Producing and Financing Films II · catalog",
+  "CINE 750 · Production Workshop Intensive · catalog",
+  "CINE 343GW · Perspectives on Documentary Film - GWAR · catalog",
+  "CINE 705 · Documentary Directing · catalog",
+  "ETHS 895 · Field Study · catalog"
  ],
  "spotCheck": "no lookup (catalog codes/titles only)"
 }

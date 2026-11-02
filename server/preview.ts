@@ -17,7 +17,7 @@ interface Row { id: string; name: string; region: string; orgs_host?: string; co
 const rows = (): Row[] => (existsSync(path.join(DATA, 'schools-collect.csv')) ? (parseCSV(readFileSync(path.join(DATA, 'schools-collect.csv'), 'utf8')) as unknown as Row[]) : []);
 const readJson = <T>(file: string): T | undefined => { try { return JSON.parse(readFileSync(file, 'utf8')) as T; } catch { return undefined; } };
 
-export interface PreviewSchool { id: string; name: string; region: string; orgs: number; withLinks: number; collectedAt?: string; probe?: { status?: string; source?: string; sampled?: number; checkedAt?: string } }
+export interface PreviewSchool { id: string; name: string; region: string; orgs: number; withLinks: number; courses: number; collectedAt?: string; probe?: { status?: string; source?: string; sampled?: number; checkedAt?: string } }
 export interface PreviewOrg { id: string; name: string; type: Organization['type']; category?: string; description: string; links: { label: string; url: string }[]; logo: Organization['logo'] }
 
 const hasOwnLink = (o: Organization) => publicLinks(o.links).some((l) => ['Website', 'Instagram', 'Facebook'].includes(l.label));
@@ -27,7 +27,8 @@ export function previewSchools(): PreviewSchool[] {
     const f = path.join(COLLECTED, `${r.id}.orgs.json`);
     const orgs = readJson<Organization[]>(f) ?? [];
     const probe = readJson<PreviewSchool['probe']>(path.join(COLLECTED, `${r.id}.probe.json`));
-    return { id: r.id, name: r.name, region: r.region, orgs: orgs.length, withLinks: orgs.filter(hasOwnLink).length, collectedAt: existsSync(f) ? statSync(f).mtime.toISOString() : undefined, probe: probe ? { status: probe.status, source: probe.source, sampled: probe.sampled, checkedAt: probe.checkedAt } : undefined };
+    const courses = readJson<unknown[]>(path.join(COLLECTED, `${r.id}.courses.json`))?.length ?? 0;
+    return { id: r.id, name: r.name, region: r.region, orgs: orgs.length, courses, withLinks: orgs.filter(hasOwnLink).length, collectedAt: existsSync(f) ? statSync(f).mtime.toISOString() : undefined, probe: probe ? { status: probe.status, source: probe.source, sampled: probe.sampled, checkedAt: probe.checkedAt } : undefined };
   });
 }
 
@@ -38,4 +39,12 @@ export function previewSchool(id: string): { school: PreviewSchool; orgs: Previe
   const orgs = (readJson<Organization[]>(path.join(COLLECTED, `${id}.orgs.json`)) ?? []).map((o) => ({ id: o.id, name: o.name, type: o.type, category: o.parent, description: o.description, links: publicLinks(o.links), logo: o.logo }));
   const probe = readJson<Record<string, unknown>>(path.join(COLLECTED, `${id}.probe.json`));
   return { school, orgs, probe };
+}
+
+/** 파일로 모아 둔 수업에서 찾기 (코드·이름) — 30개까지 */
+export function previewCourses(id: string, q: string): { code: string; title: string; term?: string; meetings?: { day: number; start: string; end: string }[]; url?: string }[] | null {
+  if (!ID_RE.test(id) || !rows().some((r) => r.id === id)) return null;
+  const all = readJson<{ code: string; title: string; term?: string; meetings?: { day: number; start: string; end: string }[]; url?: string }[]>(path.join(COLLECTED, `${id}.courses.json`)) ?? [];
+  const k = q.trim().toLowerCase();
+  return all.filter((c) => !k || `${c.code} ${c.title}`.toLowerCase().includes(k)).slice(0, 30).map((c) => ({ code: c.code, title: c.title, term: c.term, meetings: c.meetings, url: c.url }));
 }

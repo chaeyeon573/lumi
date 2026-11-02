@@ -34,6 +34,10 @@ Order: Bay Area schools only. Never invent data; only official/public sources; v
 - [x] Collected to files 2026-11-02 13:28 UTC: Stanford 733 · SF State 290 (218 with social/site links) · SJSU 440 · UC Davis 532 · UCSC 110 · Santa Clara 163 · USF 152 (incl. hand-checked student governments where the directory lacks them)
 - [ ] Public links for clubs with none (owner 2026-11-02: no school-login pages; Website + Instagram + Facebook from public sources only). Stanford (directory gives no sites) and Santa Clara (names only): per run take ~25 clubs, web-search "<club> <school>" , keep only an official site/account that clearly names the club and school, add to a hand-checked CSV `server/data/org-links-<short>.csv` (club_id,label,url,checked), never guess
 - [ ] UC Berkeley (open, live): many clubs only had a CalLink link, now hidden as login-only → find public Website/Instagram/Facebook the same way (worker job, small batches; Railway cost: a few hundred page reads per week)
+- [x] Course files for closed schools when the recipe passes (`<id>.courses.json`): SF State 4,419 · UC Davis 10,478 (catalog: codes/titles, no meeting times). Visible in /preview
+- [ ] Course times for closed schools: SF State / UC Davis class search (times), SJSU schedule, UCSC pisa — find a public timetable source per school
+- [ ] QA sample every run (owner 2026-11-02): pick 5 clubs + 5 courses at random across schools, re-open the official source, compare name/links/times; log mismatches and fix the reader
+- [ ] Logos: Berkeley 202 clubs show a generic 🎯 placeholder and 458 names end with 💙 (as written in CalLink) — propose to owner: show initials instead of 🎯 and hide the trailing 💙 in display
 - [ ] Re-collect weekly (`collect:<id>` for each row) and commit only real changes
 - [ ] Stanford class probe result on Railway (`probe:s_stanford` in /api/agent/status)
 - [ ] SJSU class schedule recipe (sjsu.edu/classes/schedules/<term>.php) — test from the server via probe

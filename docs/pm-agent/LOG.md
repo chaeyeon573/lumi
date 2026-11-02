@@ -1579,3 +1579,9 @@
 - server/sources/sitesocial.ts: for clubs with their own website, read the site's first page and take its Instagram/Facebook profile links; a "Website" that is itself a Facebook/Instagram page is relabelled; accounts that appear on 3+ club sites of one school are treated as the school footer and dropped (SF State: sfstatecares, sanfranciscostate…). Part of `collect:<id>`.
 - After: SF State 214/290 with a public link (IG 171, FB 48) · UC Davis 172/532 (IG 77, FB 49) · SJSU 107/440 · USF 138/152 · UCSC 109/110 · Santa Clara 1/163 · Stanford 0/733. Spot check of 12 random new links: all the club's own accounts (one is the national parent org's account).
 - Stanford and Santa Clara have no public links in their directories → queued: small hand-checked batches per run via web search (DATA_SOURCES queue).
+
+## 2026-11-02 — Course files for closed schools + data check
+- collect:<id> now also saves all courses to server/data/collected/<id>.courses.json when the sample recipe passes (no DB): SF State 4,419, UC Davis 10,478 (catalog codes/titles; no times in that source). Catalog titles cleaned of "(Units: 3)" and a leading "—".
+- /preview shows "Courses saved: N" with a search (`/api/preview/:id/courses?q=`).
+- Berkeley live check (demo account, read-only): 1,707 groups (club 1,465 · lab 126 · greek 84 · co-op 20 · student gov 12), only 260 with a public link (CalLink pages need CalNet). 6,567 classes Fall 2026 + Spring 2027, 100 departments. Spot check CS 61A, DATA C8, ECON 1, MATH 51 against classes.berkeley.edu: times, instructor and room (Wheeler 150) match.
+- Logos: Berkeley 1,181 real logos, 256 initials, 270 emoji — 202 of those are a generic 🎯 placeholder; 458 names end with 💙 as written in CalLink. Queued as a question.

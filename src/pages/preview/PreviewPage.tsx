@@ -9,7 +9,7 @@ import { Input } from '@/components/ui';
  * 서버가 server/data/collected 파일을 요청 때만 읽는다 (DB 에 없음). 앱 메뉴에는 걸지 않고 주소(/preview)로만 들어온다.
  */
 const base = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
-interface School { id: string; name: string; region: string; orgs: number; withLinks: number; collectedAt?: string; probe?: { status?: string; source?: string; sampled?: number; checkedAt?: string } }
+interface School { id: string; name: string; region: string; orgs: number; withLinks: number; courses: number; collectedAt?: string; probe?: { status?: string; source?: string; sampled?: number; checkedAt?: string } }
 interface Org { id: string; name: string; type: 'club' | 'greek' | 'council' | 'coop' | 'lab' | 'department'; category?: string; description: string; links: { label: string; url: string }[]; logo: { emoji: string; hue: number; url?: string } }
 const TYPES = [['all', 'All'], ['club', 'Clubs'], ['greek', 'Greek life'], ['council', 'Student government']] as const;
 
@@ -42,7 +42,7 @@ export function PreviewListPage() {
             <span className="flex-1 min-w-0">
               <b className="block text-[15px] truncate">{s.name}</b>
               <span className="block text-[12px] text-ink-3">{s.orgs ? `${s.orgs} groups · ${s.withLinks} with links` : 'Not collected yet'} · {s.region}</span>
-              <span className="block text-[11px] text-ink-3">Classes: {s.probe ? `${s.probe.status === 'applied' ? 'recipe OK' : 'no recipe yet'}${s.probe.sampled ? ` (${s.probe.sampled} sample)` : ''}` : 'not tested here'}</span>
+              <span className="block text-[11px] text-ink-3">{s.courses ? `${s.courses} courses saved · ` : ''}Classes: {s.probe ? `${s.probe.status === 'applied' ? 'recipe OK' : 'no recipe yet'}${s.probe.sampled ? ` (${s.probe.sampled} sample)` : ''}` : 'not tested here'}</span>
             </span>
             <ChevronRight size={18} className="text-ink-3 shrink-0" />
           </Link>
@@ -71,6 +71,7 @@ export function PreviewSchoolPage() {
           <div className="flex gap-1.5 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-3">
             {TYPES.map(([k, l]) => <button key={k} onClick={() => setType(k)} className={cn('h-8 px-3 rounded-full text-[13px] font-semibold shrink-0', type === k ? 'bg-primary text-white v2:text-on-primary' : 'bg-surface-2 text-ink-2')}>{l} {count(k)}</button>)}
           </div>
+          {data.school.courses > 0 && <CourseSearch id={id} total={data.school.courses} />}
           {data.probe?.sample?.length ? (
             <div className="card rounded-2xl p-3.5 mb-3">
               <b className="text-[13px]">Classes — sample check ({data.probe.status === 'applied' ? 'recipe OK' : 'failed'})</b>
@@ -97,5 +98,21 @@ export function PreviewSchoolPage() {
         </>
       )}
     </Shell>
+  );
+}
+
+const DAY = 'MTWRFSU';
+function CourseSearch({ id, total }: { id: string; total: number }) {
+  const [q, setQ] = useState('');
+  const [list, setList] = useState<{ code: string; title: string; term?: string; meetings?: { day: number; start: string; end: string }[]; url?: string }[]>([]);
+  useEffect(() => { const t = setTimeout(() => { fetch(`${base}/api/preview/${encodeURIComponent(id)}/courses?q=${encodeURIComponent(q)}`).then((r) => r.json()).then((d) => setList(d.courses ?? [])).catch(() => setList([])); }, 250); return () => clearTimeout(t); }, [id, q]);
+  return (
+    <div className="card rounded-2xl p-3.5 mb-3">
+      <b className="text-[13px]">Courses saved: {total}</b>
+      <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search a course code or title" className="mt-2" />
+      <ul className="mt-2 space-y-1 text-[12px] text-ink-2 max-h-64 overflow-y-auto">
+        {list.map((c) => <li key={`${c.code}${c.term}${c.title}`}><b className="text-ink">{c.code}</b> · {c.title}{c.meetings?.length ? ` · ${c.meetings.map((m) => `${DAY[m.day]} ${m.start}-${m.end}`).join(' ')}` : ''}{c.term && c.term !== 'catalog' ? ` · ${c.term}` : ''}</li>)}
+      </ul>
+    </div>
   );
 }
