@@ -33,6 +33,7 @@ Notes
 Order: Bay Area schools only. Never invent data; only official/public sources; verify with a real sample before wiring; never bulk-store timetables for schools that aren't open.
 - [x] Collected to files 2026-11-02 13:28 UTC: Stanford 733 · SF State 290 (218 with social/site links) · SJSU 440 · UC Davis 532 · UCSC 110 · Santa Clara 163 · USF 152 (incl. hand-checked student governments where the directory lacks them)
 - [ ] Public links for clubs with none (owner 2026-11-02: no school-login pages; Website + Instagram + Facebook from public sources only). Stanford (directory gives no sites) and Santa Clara (names only): per run take ~25 clubs, web-search "<club> <school>" , keep only an official site/account that clearly names the club and school, add to a hand-checked CSV `server/data/org-links-<short>.csv` (club_id,label,url,checked), never guess
+- [ ] UC Berkeley (open, live): many clubs only had a CalLink link, now hidden as login-only → find public Website/Instagram/Facebook the same way (worker job, small batches; Railway cost: a few hundred page reads per week)
 - [ ] Re-collect weekly (`collect:<id>` for each row) and commit only real changes
 - [ ] Stanford class probe result on Railway (`probe:s_stanford` in /api/agent/status)
 - [ ] SJSU class schedule recipe (sjsu.edu/classes/schedules/<term>.php) — test from the server via probe
