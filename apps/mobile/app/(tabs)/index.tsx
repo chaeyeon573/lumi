@@ -187,7 +187,8 @@ function PersonSlide({ user, reasons, interactive = true }: { user: User; reason
       <View pointerEvents="none" style={tw`absolute left-0 right-0 bottom-0 p-6`}>
         <View style={[tw`flex-row items-baseline`, { gap: 8 }]}>
           <Text style={tw`text-[30px] font-bold text-white`}>{user.nickname}</Text>
-          <Text style={tw`text-[22px] text-white opacity-90`}>{new Date().getFullYear() - user.birthYear + 1}</Text>
+          {/* 다른 사람의 출생 연도는 서버가 보내지 않는다 (@core/lib/privacy) */}
+          {user.birthYear ? <Text style={tw`text-[22px] text-white opacity-90`}>{new Date().getFullYear() - user.birthYear + 1}</Text> : null}
         </View>
         <Text style={tw`text-[15px] text-accent`}>{dept}{gradYear(user) ? ` • ${school} ${gradYear(user)}` : ''}</Text>
         {(want || reason) && (

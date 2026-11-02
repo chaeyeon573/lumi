@@ -58,16 +58,16 @@ test('profile fields outside their visibility are not sent at all (snapshot and 
   assert.equal(mine.viewable, undefined);
 });
 
-test('owner-only details never reach anyone else: gender, saved clubs, meet preferences, settings, classmate opt-outs', () => {
+test('owner-only details never reach anyone else: birth year, gender, saved clubs, meet preferences, settings, classmate opt-outs', () => {
   const d = db();
   const o = user(d, OWNER);
   o.gender = 'female'; o.interestedOrgIds = ['o_startup']; o.meetPreference = ['same_goal']; o.showToClassmates = false; o.studyGroupOptOut = ['x']; o.settings.locationPermission = 'granted';
   for (const viewer of [VIEWER, OTHER]) for (const u of both(d, viewer, OWNER)) {
-    for (const k of ['gender', 'interestedOrgIds', 'meetPreference', 'showToClassmates', 'studyGroupOptOut', 'partnerSearch'] as const) assert.equal(k in u!, false, `${k} leaked`);
+    for (const k of ['birthYear', 'gender', 'interestedOrgIds', 'meetPreference', 'showToClassmates', 'studyGroupOptOut', 'partnerSearch'] as const) assert.equal(k in u!, false, `${k} leaked`);
     assert.deepEqual(u!.settings, { messagePolicy: o.settings.messagePolicy });
   }
   const mine = seen(snapshotFor(d, OWNER), OWNER)!;
-  assert.equal(mine.gender, 'female'); assert.deepEqual(mine.interestedOrgIds, ['o_startup']); assert.equal(mine.settings.locationPermission, 'granted');
+  assert.equal(mine.gender, 'female'); assert.equal(mine.birthYear, o.birthYear); assert.deepEqual(mine.interestedOrgIds, ['o_startup']); assert.equal(mine.settings.locationPermission, 'granted');
 });
 
 test('hidden school name (other schools) and hidden department (everyone) are not sent', () => {

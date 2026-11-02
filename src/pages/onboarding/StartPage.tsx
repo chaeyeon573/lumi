@@ -311,6 +311,9 @@ export function StartPage() {
             <Head q={en ? 'Almost done — what should we call you?' : '거의 다 왔어요! 뭐라고 불러드릴까요?'} sub={en ? 'A first name or nickname. This is how classmates will see you.' : '같은 학교 학생들에게 보이는 이름이에요.'} />
             <Field label={en ? 'Name' : '이름'}><Input autoFocus maxLength={20} value={d.nickname} onChange={(e) => patch({ nickname: e.target.value })} /></Field>
             <Field label={en ? 'Birth year' : '출생 연도'}><Input inputMode="numeric" maxLength={4} placeholder="2005" value={d.birthYear} onChange={(e) => patch({ birthYear: e.target.value.replace(/\D/g, '') })} /></Field>
+            {/* 사실 그대로 — 출생 연도는 다른 학생에게 보내지 않는다 (@core/lib/privacy OWNER_ONLY_KEYS), 카드·프로필에 나이 없음.
+                쓰이는 곳: 가입 16세 이상(여기), 같이 타기 18세 이상(@core/lib/rides rideEligibility) */}
+            <p className="text-[12px] text-ink-3 -mt-2">{en ? 'Only you see this — it’s not on your profile. It’s used to check Lumi’s 16+ rule (18+ for rides).' : '나만 볼 수 있어요 — 프로필에 나오지 않아요. 만 16세 이상(같이 타기는 18세 이상)인지 확인하는 데만 써요.'}</p>
             {d.birthYear.length === 4 && !birthOk && <p className="text-[12px] text-danger -mt-2">{en ? 'Lumi is for college students 16 and older.' : 'Lumi는 만 16세 이상 대학생을 위한 앱이에요.'}</p>}
             <NextBtn ok={!!d.nickname.trim() && birthOk} />
           </>

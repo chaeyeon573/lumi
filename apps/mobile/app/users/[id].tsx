@@ -203,7 +203,7 @@ function PhotoHero({ user }: { user: User }) {
       {photos.length > 1 && <View style={[tw`absolute top-3 left-4 right-4 flex-row`, { gap: 4 }]}>{photos.map((_, i) => <View key={i} style={[tw`h-[3px] flex-1 rounded-full`, { backgroundColor: i === pi ? '#fff' : 'rgba(255,255,255,0.4)' }]} />)}</View>}
       {user.avatar.photoType !== 'face' && <View style={[tw`absolute top-6 left-4 rounded-full px-2.5 py-1`, { backgroundColor: 'rgba(0,0,0,0.35)' }]}><Text style={tw`text-white text-[11px]`}>{user.avatar.photoType === 'masked' ? t('얼굴 비공개') : t('뒷모습')}</Text></View>}
       <View pointerEvents="none" style={tw`absolute left-0 right-0 bottom-0 p-5 pb-12`}>
-        <View style={[tw`flex-row items-end`, { gap: 8 }]}><Text style={tw`text-[40px] font-bold text-white leading-[44px]`}>{user.nickname}</Text><Text style={tw`text-[22px] text-white opacity-80 pb-1`}>{new Date().getFullYear() - user.birthYear + 1}</Text></View>
+        <View style={[tw`flex-row items-end`, { gap: 8 }]}><Text style={tw`text-[40px] font-bold text-white leading-[44px]`}>{user.nickname}</Text>{user.birthYear ? <Text style={tw`text-[22px] text-white opacity-80 pb-1`}>{new Date().getFullYear() - user.birthYear + 1}</Text> : null}</View>
         <Text style={tw`mt-1.5 text-[13px] text-white opacity-90`}>{affiliationText(user)}</Text>
       </View>
     </Pressable>

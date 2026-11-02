@@ -3,7 +3,7 @@
  *
  * - 프로필: 공개 범위(fieldVisibility)가 허락하지 않는 항목은 아예 보내지 않는다 (빈 값으로 채우지 않는다).
  *   어떤 항목이 열렸는지는 viewable 로 같이 보내고, 화면은 canViewField 로 그것을 읽는다
- * - 본인만 보는 것: 성별, 관심 조직, 만나고 싶은 사람 취향, 같은 수업 숨김·스터디 거절·파트너 기록, 알림·위치 설정, 정지 기록
+ * - 본인만 보는 것: 출생 연도(나이), 성별, 관심 조직, 만나고 싶은 사람 취향, 같은 수업 숨김·스터디 거절·파트너 기록, 알림·위치 설정, 정지 기록
  * - 학교명(showSchool 꺼짐 — 같은 학교 사람에게만), 학과(showDepartment 꺼짐 — 아무에게도)
  * - 투표형 질문: 누가 무엇을 골랐는지 대신 내 표 + 보기별 집계
  * - 관계: 내가 한 쪽인 것만. 받은 관심(♥)은 서로 관심일 때만, 차단은 내가 한 것만 (차단당한 사실은 절대 안 보낸다)
@@ -39,8 +39,11 @@ export const FIELD_KEYS: Record<ProfileField, readonly (keyof User)[]> = {
   living: ['living'],
 };
 
-/** 공개 범위와 상관없이 본인에게만 */
-export const OWNER_ONLY_KEYS = ['gender', 'interestedOrgIds', 'meetPreference', 'showToClassmates', 'studyGroupOptOut', 'partnerSearch', 'suspended'] as const satisfies readonly (keyof User)[];
+/**
+ * 공개 범위와 상관없이 본인에게만.
+ * birthYear: 가입 때 "Only you see this" 라고 말한다 (StartPage) — 16세 이상 확인·같이 타기 18세 이상 확인은 서버가 원본으로 한다
+ */
+export const OWNER_ONLY_KEYS = ['birthYear', 'gender', 'interestedOrgIds', 'meetPreference', 'showToClassmates', 'studyGroupOptOut', 'partnerSearch', 'suspended'] as const satisfies readonly (keyof User)[];
 
 /** owner 가 viewer 를 차단했으면 viewer 는 owner 에 대해 아무것도 받지 않는다 */
 export const blockedBy = (s: Pick<Snapshot, 'relationships'>, viewerId: ID, ownerId: ID) =>
