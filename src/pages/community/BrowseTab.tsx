@@ -41,7 +41,7 @@ const en = lang === 'en';
 const BADGE_TONE = { urgent: 'bg-danger text-white', soon: 'bg-danger/10 text-danger', normal: 'bg-primary-soft text-primary', muted: 'bg-surface-2 text-ink-3' } as const;
 const EVENT_KIND_LABEL: Record<EventKind, string> = { talk: en ? 'Talks' : '세미나·강연', social: en ? 'Social' : '소셜', career: en ? 'Career' : '커리어', free_food: en ? 'Free food' : '무료 음식' };
 const CLUB_KINDS: { key: '' | Organization['type'] | 'mine'; label: string }[] = [
-  { key: '', label: t('전체') }, { key: 'club', label: t('동아리') }, { key: 'greek', label: 'Greek' }, { key: 'lab', label: t('연구실') }, { key: 'council', label: t('학회·학생회') }, { key: 'mine', label: t('내 조직') },
+  { key: '', label: t('전체') }, { key: 'club', label: en ? 'Student clubs' : '일반 동아리' } /* 위 칩 줄의 'Clubs' 와 같은 이름이 겹쳐 보였다 (ux-sim baseline-aisha step 17) */, { key: 'greek', label: 'Greek' }, { key: 'lab', label: t('연구실') }, { key: 'council', label: t('학회·학생회') }, { key: 'mine', label: t('내 조직') },
 ];
 
 type Row = { o: Opportunity; score: number; reasons: Reason[]; cats: Category[] };

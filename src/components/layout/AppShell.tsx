@@ -1,5 +1,5 @@
-import { useRef } from 'react';
-import { Outlet } from 'react-router-dom';
+import { useEffect, useLayoutEffect, useRef, type RefObject } from 'react';
+import { Outlet, useLocation, useNavigationType } from 'react-router-dom';
 import { isNativeShell } from '@/lib/native';
 import { PullToRefresh } from '@/components/native/PullToRefresh';
 import { Toast } from '@/components/ui';
@@ -15,6 +15,7 @@ import { DesignToggle } from './DesignToggle';
 export function AppShell({ withNav = true }: { withNav?: boolean }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const inApp = isNativeShell();
+  useScrollMemory(scrollRef);
   return (
     <div className="h-full w-full flex justify-center">
       <div id="shell" className="relative h-full w-full max-w-[430px] bg-bg sm:shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_24px_60px_rgba(0,0,0,0.12)] overflow-hidden flex flex-col">
@@ -32,4 +33,44 @@ export function AppShell({ withNav = true }: { withNav?: boolean }) {
       </div>
     </div>
   );
+}
+
+/** 화면별 스크롤 위치 — 위치(location.key)마다. AppShell 이 다시 그려져도 남게 모듈에 둔다 */
+const scrollByKey = new Map<string, number>();
+
+/**
+ * 앱은 #scroll-root 하나 안에서 스크롤한다 — 브라우저의 스크롤 복원이 닿지 않는다.
+ * 다른 화면으로 가면(PUSH·REPLACE, 경로가 바뀔 때) 맨 위에서, 뒤로 가기(POP)면 떠날 때 위치로.
+ * 같은 화면 안에서 탭·필터만 바뀌면(?tab=…) 그대로 둔다.
+ * (ux-sim baseline-aisha step 9: Discover 를 내려 본 뒤 Campus 를 누르면 피드 맨 아래에서 열렸다)
+ */
+function useScrollMemory(ref: RefObject<HTMLDivElement | null>) {
+  const loc = useLocation();
+  const navType = useNavigationType();
+  const prevPath = useRef<string | null>(null);
+  const keyRef = useRef(loc.key);
+  // 지금 위치의 스크롤을 계속 적어 둔다 — 떠나는 순간에는 이미 새 화면이 그려져 있어 읽을 수 없다
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const save = () => scrollByKey.set(keyRef.current, el.scrollTop);
+    el.addEventListener('scroll', save, { passive: true });
+    return () => el.removeEventListener('scroll', save);
+  }, [ref]);
+  useLayoutEffect(() => {
+    keyRef.current = loc.key;
+    const el = ref.current;
+    if (!el) return;
+    const changedPath = prevPath.current !== null && prevPath.current !== loc.pathname;
+    prevPath.current = loc.pathname;
+    if (navType === 'POP') {
+      const y = scrollByKey.get(loc.key);
+      if (y === undefined) return;
+      el.scrollTop = y;
+      // 목록이 한 박자 늦게 길어지면 한 번 더
+      const id = requestAnimationFrame(() => { if (el.scrollTop !== y) el.scrollTop = y; });
+      return () => cancelAnimationFrame(id);
+    }
+    if (changedPath) el.scrollTop = 0;
+  }, [ref, loc.key, loc.pathname, navType]);
 }
