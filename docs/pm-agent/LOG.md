@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-11-02 09:20 UTC (버클리 월 01:20 PST) · 초점: 방금 배포한 새 홈·탐색이 라이브에서 도는지
+- 사장님 새 답 없음. 라이브 번들 6d9c8fb 확인. 라이브 주소로 직접 찍음: 홈(AroundU · UC Berkeley · Campus Life: RSF Closed 7 AM–11 PM, Dining Café 3 opens 7 AM · For you) · Explore › Opportunities 오류 0.
+- calendar:s_berkeley 마지막 기록 04:22 error — 고친 코드 배포 뒤 아직 6시간 주기가 안 돌았다(10:22 예정). 인턴 가져오기(유학생 표시 포함)도 10:21 예정.
+- 물어봄: Feed 자리·기본 디자인·법 문서 이름(QUESTIONS.md). 고친 코드 없음.
+
 ## 2026-11-02 · 사장님 시안 — 홈·탐색 개편 (AroundU)
 - 하단 탭: Home · People · Meet · Explore · Profile (가운데 + 는 Meet 화면 위 + 로). / = 새 홈, /people = 예전 사람 카드, /meet = 예전 Discover(/discover 는 /meet 로), /explore(+ /explore/events·opportunities·clubs).
 - 홈: AroundU + 학교 이름(인증된 소속에서, 없으면 숨김), “What’s happening at UC Berkeley?”(손 이모지 없음, 대학원·동문 문구 따로), Events·Opportunities·Clubs & Groups·Meetups 4칸, Campus Life(RSF 운영·시간·혼잡도 → /gym, Dining Halls 지금 연 곳 → /dining, 지원하는 학교만), For you(실제 추천 1~2개, 저장 버튼, 없으면 칸 숨김).
