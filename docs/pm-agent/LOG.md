@@ -1629,3 +1629,9 @@
 - Queue (Berkeley links): many Berkeley groups host their site at <CalLink id>.studentorg.berkeley.edu. Checked all 1,437 groups without a public link: kept a site only when it answers 200 and its page names the club (title/body words) → 48 sites (Berkeley Scientific Journal, Blue & Gold Yearbook, Codeology, DeCadence, Traders, ULAB, UC Rally Committee…). Their pages gave 53 Instagram/Facebook links.
 - Spot check caught a personal Facebook profile on a club site (South Indian Society → a person) and a junk link (facebook.com/pg). New rule in sitesocial.ts `relatedHandle`: a social account must share a word, the acronym or the site's sub-name with the club; applied to the CSV — 7 dropped, 3 of those restored after hand review (PiE, ML@B, Underwater Robotics). Test added.
 - Classes: GWS 210, MBN 98 OK; ARCH 207C, PHDBA 239FA, EUST 201 looked off only because the page writes "01:00 pm" with a leading zero — data correct (checked the page text).
+
+## 2026-11-02 22:33 UTC — routine run
+- Live: links:s_berkeley applied 21:48 — 48 more Berkeley groups gained public links.
+- Queue (Berkeley links): same check on Berkeley's other student web hosting, ocf.berkeley.edu/~<CalLink id>: 14 answered, 6 were empty "Index of" folders (skipped) → 8 real sites (CURIE, Upsilon Pi Epsilon, WYSE, Mahjong Club, ASUC SUPERB, BSHA, CALICO, Poker at Berkeley) + 3 social links (UPE, SUPERB). Public Health student groups page → Public Health Advocate, Suitcase Clinic. CDSS student page lists EECS groups already covered.
+- Spot check clubs: UCSC Pagkakaisa Dance Troupe, Slug Fund; SFSU AS Richard Oakes Multicultural Center, Basic Needs Center — on the official lists 4/4; Stanford GSB Coffee Club has no public link yet (expected, Stanford queue).
+- Spot check classes blocked: classes.berkeley.edu now answers 403 to this container (after many reads today). Not a data problem; the Railway worker reads it from its own address. Will retry next run with fewer requests.
