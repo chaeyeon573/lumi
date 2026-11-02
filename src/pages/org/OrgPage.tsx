@@ -18,6 +18,7 @@ import { isTeamActivity } from '@core/lib/discover';
 import { listingsOfOrg } from '@core/lib/listings';
 import { daysUntil } from '@core/lib/recommend';
 import { isSampleOrg } from '@core/lib/sampleorgs';
+import { orgJoinState } from '@core/lib/orgjoin';
 
 type Tab = 'about' | 'posts' | 'events' | 'recruit' | 'members';
 
@@ -45,9 +46,21 @@ export function OrgPage() {
   // 예시 동아리의 링크(instagram.com/example 등)는 남의 실제 페이지로 간다 — 예시엔 바깥 링크를 달지 않는다
   const links = sample ? [] : org.links ?? [];
   const following = v.isFollowing(org.id);
-  const isMember = org.memberIds.includes(v.me.id);
   const isAdmin = org.adminIds.includes(v.me.id);
-  const isApplicant = org.applicantIds.includes(v.me.id);
+  const join = orgJoinState(org, v.me.id);
+  const en = lang === 'en';
+  const apply = () => run(() => api.orgs.apply(org.id, v.me.id), en ? 'Join request sent to the organizers.' : '운영진에게 가입 요청을 보냈어요.');
+  // 주 버튼 밑 한 줄 — 누르면 무엇이 누구에게 가는지, 못 누르면 왜인지 (lib/orgjoin)
+  const joinNote = join.kind === 'apply'
+    ? (en ? `Sends a join request with your Lumi profile to the club's ${join.organizers === 1 ? 'organizer' : `${join.organizers} organizers`} on Lumi. They get a notification and decide.` : `가입 지원을 누르면 Lumi에 있는 운영진 ${join.organizers}명에게 내 프로필과 함께 알림이 가요. 운영진이 정해요.`)
+    : join.kind === 'applied' ? (en ? 'Request sent — the organizers decide. You\'ll see it here when you\'re in.' : '가입 요청을 보냈어요 — 운영진이 정해요.')
+    : join.kind === 'follow'
+      ? [join.why === 'not_recruiting'
+        ? (en ? 'Not taking join requests on Lumi right now.' : '지금은 Lumi에서 가입 요청을 받지 않아요.')
+        : (en ? 'The organizers aren\'t on Lumi yet, so there\'s no request to send here.' : '운영진이 아직 Lumi에 없어 여기서 보낼 가입 요청은 없어요.'),
+        org.joinProcess ? (en ? 'See “How to join” below.' : '아래 ‘가입 절차’를 보세요.') : links.length ? (en ? 'Their own page says how to join.' : '가입 방법은 동아리 페이지에 있어요.') : '',
+        following ? '' : (en ? 'Follow to get their new events.' : '팔로우하면 새 행사 소식을 받아요.')].filter(Boolean).join(' ')
+    : '';
   const today = todayISO();
   const orgActs = v.visibleActivities.filter((a) => a.orgId === org.id && a.date >= today);
   const events = orgActs.filter((a) => !isTeamActivity(a));
@@ -84,11 +97,14 @@ export function OrgPage() {
             {org.recruitment?.open && <Tag tone="accent">{t('모집 중')}</Tag>}
           </div>
           <div className="flex gap-2 mt-4">
-            <Button full variant={following ? 'secondary' : 'outline'} icon={<Bell size={16} />} onClick={() => run(() => api.relationships.toggleFollow(v.me.id, org.id, 'org'), following ? undefined : t('팔로우했어요. 새 행사 알림을 받아요.'))}>{following ? t('팔로잉') : t('팔로우')}</Button>
-            {isMember ? <Button full variant="secondary" disabled>{isAdmin ? t('운영진') : t('회원')}</Button> : isApplicant ? <Button full variant="outline" disabled>{t('지원 완료')}</Button> :
-              <Button full onClick={() => run(() => api.orgs.apply(org.id, v.me.id), t('지원서를 보냈어요.'))}>{org.recruitment?.open ? t('가입 지원') : t('가입 문의')}</Button>}
+            {/* 가입 요청을 받을 운영진이 없거나 모집하지 않으면 팔로우가 주 버튼이다 — '모집 안 함'과 '가입 문의'가 같이 보이지 않게 */}
+            <Button full variant={following ? 'secondary' : join.kind === 'follow' ? 'primary' : 'outline'} icon={<Bell size={16} />} onClick={() => run(() => api.relationships.toggleFollow(v.me.id, org.id, 'org'), following ? undefined : t('팔로우했어요. 새 행사 알림을 받아요.'))}>{following ? t('팔로잉') : join.kind === 'follow' ? (en ? 'Get updates' : '소식 받기') : t('팔로우')}</Button>
+            {join.kind === 'admin' || join.kind === 'member' ? <Button full variant="secondary" disabled>{isAdmin ? t('운영진') : t('회원')}</Button>
+              : join.kind === 'applied' ? <Button full variant="outline" disabled>{en ? 'Request sent' : '요청 보냄'}</Button>
+              : join.kind === 'apply' ? <Button full onClick={apply}>{t('가입 지원')}</Button> : null}
             {room && <Button variant="outline" icon={<MessageCircle size={16} />} onClick={() => nav(`/chats/${room.id}`)} />}
           </div>
+          {joinNote && <p className="text-[12px] text-ink-3 mt-2 leading-snug">{joinNote}</p>}
         </div>
 
         <ChipRow className="py-0 mt-3">{tabs.map((tb) => <Chip key={tb.key} size="sm" active={tab === tb.key} onClick={() => setTab(tb.key)}>{tb.label}{tb.n ? <span className="opacity-70 ml-0.5">{tb.n}</span> : null}</Chip>)}</ChipRow>
@@ -112,14 +128,20 @@ export function OrgPage() {
           </div>
         )}
         {tab === 'posts' && <div className="mt-3 space-y-3">{posts.length === 0 ? <EmptyState emoji="📝" title={t('아직 게시물이 없어요')} description={isAdmin ? t('소식을 올리면 Feed에도 함께 보여요.') : undefined} action={isAdmin ? <Button size="sm" onClick={() => setPost(true)}>{t('소식 올리기')}</Button> : undefined} /> : posts.map((p) => <PostCard key={p.id} post={p} />)}</div>}
-        {tab === 'events' && <div className="mt-3 space-y-2">{listedEvents.map((o) => <OpportunityCard key={o.id} o={o} variant="row" />)}{events.length === 0 && listedEvents.length > 0 ? null : events.length === 0 ? <EmptyState emoji="🎪" title={t('예정된 행사가 없어요')} description={t('행사를 올리면 발견 › 활동에도 보여요.')} action={isAdmin ? <Button size="sm" onClick={() => nav(`/create/activity?kind=org_event&org=${org.id}&cat=performance`)}>{t('행사 만들기')}</Button> : undefined} /> : events.map((a) => <ActivityCard key={a.id} activity={a} variant="row" />)}</div>}
+        {tab === 'events' && <div className="mt-3 space-y-2">{listedEvents.map((o) => <OpportunityCard key={o.id} o={o} variant="row" />)}{events.length === 0 && listedEvents.length > 0 ? null : events.length === 0
+          // 날짜가 정해진 행사가 없어도 소개에 적힌 정기 활동(“Group runs Tue/Thu 5pm”)은 여기서도 보인다 — '행사 없음'과 '주 2회 모임'이 엇갈려 보이지 않게
+          ? org.regularActivities.length > 0
+            ? <div className="card p-4"><b className="text-[14px] flex items-center gap-1.5"><CalendarDays size={15} className="text-primary" />{t('정기 활동')}</b><ul className="mt-2 space-y-1.5">{org.regularActivities.map((r) => <li key={r} className="text-[13px] text-ink-2 flex gap-2"><span className="text-primary">•</span>{r}</li>)}</ul><p className="text-[12px] text-ink-3 mt-2">{en ? 'As the club lists them — no dated events posted on Lumi yet.' : '동아리가 적어 둔 일정이에요 — Lumi에 날짜가 정해진 행사는 아직 없어요.'}</p>{isAdmin && <Button size="sm" className="mt-3" onClick={() => nav(`/create/activity?kind=org_event&org=${org.id}&cat=performance`)}>{t('행사 만들기')}</Button>}</div>
+            : <EmptyState emoji="🎪" title={t('예정된 행사가 없어요')} description={isAdmin ? t('행사를 올리면 발견 › 활동에도 보여요.') : following ? undefined : (en ? 'Follow to hear when they post one.' : '팔로우하면 행사가 올라올 때 알려 드려요.')} action={isAdmin ? <Button size="sm" onClick={() => nav(`/create/activity?kind=org_event&org=${org.id}&cat=performance`)}>{t('행사 만들기')}</Button> : undefined} />
+          : events.map((a) => <ActivityCard key={a.id} activity={a} variant="row" />)}</div>}
         {tab === 'recruit' && (
           <div className="mt-3 space-y-3">
             {org.recruitment && (
               <div className="card p-4 bg-[linear-gradient(120deg,#FFF4DE,#FFFFFF)]">
                 <div className="flex items-center gap-2"><Megaphone size={16} className="text-[#B57A0E]" /><b className="text-[14px]">{org.recruitment.title}</b>{org.recruitment.open && <Tag tone="accent">{t('모집 중')}</Tag>}</div>
                 <div className="text-[12px] text-ink-2 mt-1">{t('모집 기간 ·')} {org.recruitment.period}</div>
-                {!isMember && !isApplicant && org.recruitment.open && <Button size="sm" className="mt-3" onClick={() => run(() => api.orgs.apply(org.id, v.me.id), t('지원서를 보냈어요.'))}>{t('가입 지원')}</Button>}
+                {join.kind === 'apply' && <Button size="sm" className="mt-3" onClick={apply}>{t('가입 지원')}</Button>}
+                {org.recruitment.open && joinNote && join.kind !== 'apply' && <p className="text-[12px] text-ink-3 mt-2">{joinNote}</p>}
               </div>
             )}
             {recruits.map((a) => <TeamCard key={a.id} activity={a} />)}

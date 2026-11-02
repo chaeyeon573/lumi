@@ -17,6 +17,7 @@ import { canSendGame, gameProfileError, gameSummary, guessPickResult, thisOrThat
 import { pairById, guessQuestionById } from '@core/data/icebreakers';
 import { DAILY_QUESTIONS, PERSON_ROLE_LABELS } from '@core/lib/labels';
 import { campusDate } from '@core/lib/listings';
+import { orgJoinState } from '@core/lib/orgjoin';
 import { canGoTogether, campusToday, crewMembers, crewsFor, dailyTally, meetTimeFor, DAILY_MIN_ANSWERS, MEETUP_CAPACITY } from '@core/lib/withpeople';
 
 export interface EngineContext {
@@ -429,10 +430,16 @@ export function createEngine(ctx: EngineContext) {
     },
 
     orgs: {
+      /** 가입 요청 — 모집 중이고 운영진이 Lumi에 있을 때만 (lib/orgjoin). 운영진 모두에게 알림이 가고, 알림은 신청한 사람 프로필로 열린다 */
       apply(orgId: ID, userId: ID): Patch {
         const org = find(db().organizations, orgId);
-        if (!org.applicantIds.includes(userId) && !org.memberIds.includes(userId)) org.applicantIds.push(userId);
-        return { organizations: [org] };
+        const state = orgJoinState(org, userId);
+        if (state.kind === 'admin' || state.kind === 'member' || state.kind === 'applied') return { organizations: [org] };
+        if (state.kind === 'follow') throw new Error(t(state.why === 'not_recruiting' ? '지금은 가입 요청을 받지 않는 동아리예요. 팔로우하면 새 행사 소식을 받아요.' : '이 동아리 운영진이 아직 Lumi에 없어요. 동아리 안내에 적힌 방법으로 가입하세요.'));
+        org.applicantIds.push(userId);
+        const who = find(db().users, userId);
+        const nts = org.adminIds.filter((a) => a !== userId).map((a) => notify(a, { type: 'participation_request', title: t('가입 요청'), body: `${who.nickname} · ${org.name}`, link: `/users/${userId}` }));
+        return { organizations: [org], notifications: nts };
       },
     },
 
