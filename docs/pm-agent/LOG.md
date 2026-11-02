@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-11-02 · 사장님 시안 2단계 — 모임 만들기·참석
+- Meet › Create a Meetup: 사진 올리기(웹) · 제목 · 종류 4개(Coffee/Study/Workout/Hangout) · 설명 · 일시 · 장소 · 인원 · 공개 범위 3개(Public=우리 학교 / My Network=친구 / Invite Only=초대한 친구). 참가비·조건·승인 방식은 이 모드에서 숨김(바로 참여). 만든 뒤 “Meetup Created!” — View Meetup · Share Link.
+- 모임 상세: 참석 전 Going · Interested(새로 만듦: 관심 — 인원에 안 듦, 본인 것만 보임, 계정 삭제 때 지움) → 참석 뒤 You’re going! · Chat. 참석 취소는 한 번 더 묻고. 공유 버튼이 실제로 링크를 복사·공유(예전엔 토스트만).
+- 모임 사진: 사진 주소가 모임에 붙어 있으면 계속 보이고, 모임이 지워지거나 주최자가 정지되면 닫힘(server/media.ts). 테스트 2개 추가, 264 통과.
+
 ## 2026-11-02 · 사장님 결정 — 이름 Lumi, 탭 Home·Explore·Schedule·Meet·Profile, 밝은 디자인 시안
 - 사장님: 앱 이름은 Lumi, 첫 화면 = 정보 대시보드, 어두운 v2 기본 + Classic(밝은 파스텔) 함께, 배포는 바로.
 - 이름 되돌림(헤더·홈·시작 화면). Classic 색을 사장님 밝은 시안대로(흰 바탕·인디고 #4F55E3·파스텔 카드).

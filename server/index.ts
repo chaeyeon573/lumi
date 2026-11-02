@@ -394,7 +394,7 @@ const activityHost = (me: ID, activityId: unknown) => db.activities.find((a) => 
 const RULES: Record<Group, Record<string, Rule>> = {
   users: { update: 0, setAvailability: 0, votePoll: 1, ...TOGETHER_RULES.users },
   activities: {
-    create: 0, update: owner(() => db.activities, (a) => a.hostId), remove: owner(() => db.activities, (a) => a.hostId), join: 1, cancel: 1,
+    create: 0, update: owner(() => db.activities, (a) => a.hostId), remove: owner(() => db.activities, (a) => a.hostId), join: 1, cancel: 1, toggleInterest: 1,
     approve: (me, args) => { const p = db.participations.find((x) => x.id === args[0]); return !!p && activityHost(me, p.activityId); },
     reject: (me, args) => { const p = db.participations.find((x) => x.id === args[0]); return !!p && activityHost(me, p.activityId); },
     comment: 1,
@@ -479,7 +479,7 @@ app.get('/api/media/:id', wrap(async (req, res) => {
   const id = String(req.params.id);
   const m = /^[a-f0-9]{24}$/.test(id) ? await store.getMedia(id) : null;
   // 지워진·신고로 숨겨진·정지된 사람의 글에 붙은 사진은 닫는다. 지운 뒤 늦어도 1시간이면 브라우저에서도 사라지게 캐시는 짧게
-  if (!m || !mediaVisible(m.id, m.createdAt, db.posts, moderationState(db))) throw bad('not found', 404);
+  if (!m || !mediaVisible(m.id, m.createdAt, db.posts, moderationState(db), new Date(), db.activities)) throw bad('not found', 404);
   res.setHeader('content-type', m.mime);
   res.setHeader('cache-control', 'public, max-age=3600');
   res.setHeader('x-content-type-options', 'nosniff');

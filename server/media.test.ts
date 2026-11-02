@@ -46,3 +46,13 @@ test('a photo closes when its post is deleted, auto-hidden by reports, or its au
   assert.equal(mediaVisible('abc', '2026-10-01T00:00:00Z', [post], { hidden: new Map([['p1', 'u1']]), suspended: new Set() }, now), false, 'hidden by 3 reports');
   assert.equal(mediaVisible('abc', '2026-10-01T00:00:00Z', [post], { hidden: new Map(), suspended: new Set(['u1']) }, now), false, 'author suspended');
 });
+
+test('a meetup cover photo stays while the meetup exists and closes when it is deleted or the host is suspended', async () => {
+  const { mediaVisible } = await import('./media');
+  const now = new Date('2026-10-31T12:00:00Z');
+  const act = { id: 'a1', hostId: 'u1', cover: { url: 'api/media/abc' } };
+  const open = { hidden: new Map(), suspended: new Set<string>() };
+  assert.equal(mediaVisible('abc', '2026-10-01T00:00:00Z', [], open, now, [act]), true);
+  assert.equal(mediaVisible('abc', '2026-10-01T00:00:00Z', [], open, now, []), false);
+  assert.equal(mediaVisible('abc', '2026-10-01T00:00:00Z', [], { hidden: new Map(), suspended: new Set(['u1']) }, now, [act]), false);
+});

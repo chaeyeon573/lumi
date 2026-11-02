@@ -38,9 +38,12 @@ export const dayStart = (now = new Date()) => new Date(Date.UTC(now.getUTCFullYe
  * 이 사진을 지금 보여 줘도 되나 — 사진 주소만 알면 열리므로, 글이 지워지거나(운영자·작성자·계정 삭제) 신고로 숨겨지거나
  * 작성자가 정지되면 사진도 닫는다. 아직 글에 붙기 전(쓰는 중 미리보기)인 사진은 올린 지 2시간 동안만 — 갓 올린 글을 지워도 사진은 늦어도 2시간 뒤 닫힌다.
  */
-export function mediaVisible(id: string, uploadedAt: string, posts: { authorId?: ID; media: { url?: string }[]; id: ID }[], blocked: { hidden: Map<ID, ID>; suspended: Set<ID> }, now = new Date()): boolean {
+export function mediaVisible(id: string, uploadedAt: string, posts: { authorId?: ID; media: { url?: string }[]; id: ID }[], blocked: { hidden: Map<ID, ID>; suspended: Set<ID> }, now = new Date(), activities: { id: ID; hostId: ID; cover: { url?: string } }[] = []): boolean {
   const url = `api/media/${id}`;
   const using = posts.filter((p) => p.media.some((m) => m.url === url));
-  if (!using.length) return now.getTime() - Date.parse(uploadedAt) < 2 * 3600_000;
-  return using.some((p) => !blocked.hidden.has(p.id) && !(p.authorId && blocked.suspended.has(p.authorId)));
+  // 모임 대표 사진(2026-11-02) — 모임이 있고 주최자가 정지되지 않았을 때만
+  const covers = activities.filter((a) => a.cover.url === url);
+  if (!using.length && !covers.length) return now.getTime() - Date.parse(uploadedAt) < 2 * 3600_000;
+  return using.some((p) => !blocked.hidden.has(p.id) && !(p.authorId && blocked.suspended.has(p.authorId)))
+    || covers.some((a) => !blocked.hidden.has(a.id) && !blocked.suspended.has(a.hostId));
 }

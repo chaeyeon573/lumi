@@ -141,7 +141,7 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
     },
 
     users: group('users', ['update', 'setAvailability', 'votePoll', 'dailyResults']),
-    activities: group('activities', ['create', 'update', 'remove', 'join', 'cancel', 'approve', 'reject', 'comment']),
+    activities: group('activities', ['create', 'update', 'remove', 'join', 'cancel', 'approve', 'reject', 'comment', 'toggleInterest']),
     posts: group('posts', ['create', 'remove', 'toggleLike', 'toggleSave', 'comment', 'approveTag']),
     relationships: group('relationships', ['toggleLike', 'toggleFollow', 'sendFriendRequest', 'cancelFriendRequest', 'respondFriendRequest', 'unfriend', 'block', 'unblock']),
     orgs: group('orgs', ['apply']),

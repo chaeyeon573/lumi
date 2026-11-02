@@ -58,7 +58,7 @@ export function MeetPage() {
     .filter((a) => a.date > today || (a.date === today && toMin(a.endTime || a.startTime) > nowMin()))
     .filter((a) => !sel || sel.cats.includes(a.category))
     .sort((a, b) => `${a.date} ${a.startTime}`.localeCompare(`${b.date} ${b.startTime}`)), [v, today, sel]);
-  const create = () => nav(`/create/activity?kind=group${kind ? `&cat=${MEET_KIND_CATEGORY[kind]}` : ''}`);
+  const create = () => nav(`/create/activity?kind=group&meetup=1${kind ? `&cat=${MEET_KIND_CATEGORY[kind]}` : ''}`);
   return (
     <div className="min-h-full pb-8 bg-bg">
       <AppHeader />

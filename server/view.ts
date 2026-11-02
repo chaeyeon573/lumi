@@ -78,6 +78,7 @@ function activityFor(a: Activity, viewerId: ID): Activity {
   if (a.hostId === viewerId) return a;
   const out = { ...a };
   if (a.invitedIds) out.invitedIds = a.invitedIds.filter((id) => id === viewerId);
+  if (a.interestedIds) out.interestedIds = a.interestedIds.filter((id) => id === viewerId);
   if (a.visibility === 'selected' && a.visibilityTargets) out.visibilityTargets = a.visibilityTargets.filter((id) => id === viewerId);
   return out;
 }

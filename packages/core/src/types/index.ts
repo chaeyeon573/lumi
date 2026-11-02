@@ -356,6 +356,8 @@ export interface Activity {
   place: Place;
   capacity: number;
   visibility: Visibility;
+  /** Interested(관심) — 참석 인원에 들지 않는다. ⚠ 본인 것만 내려간다 (server/view.ts) */
+  interestedIds?: ID[];
   /** visibility === 'selected' | 'department' 일 때 대상 */
   visibilityTargets?: string[];
   joinPolicy: JoinPolicy;
