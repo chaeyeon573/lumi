@@ -8,6 +8,7 @@ import { OnboardingPage } from '@/pages/onboarding/OnboardingPage';
 import { StartPage } from '@/pages/onboarding/StartPage';
 import { HomePage } from '@/pages/home/HomePage';
 import { HomeDashboard } from '@/pages/home/HomeDashboard';
+import { SocialForYouPage, SocialPeoplePage, SocialFeedPage } from '@/pages/social/SocialPage';
 import { MeetPage } from '@/pages/meet/MeetPage';
 import { MyOrgsPage } from '@/pages/org/MyOrgsPage';
 import { ExplorePage, ExploreSectionPage } from '@/pages/explore/ExplorePage';
@@ -118,8 +119,11 @@ export default function App() {
       <Route element={<RequireAuth />}>
         <Route element={<AppShell />}>
           <Route path="/" element={<HomeDashboard />} />
-          <Route path="/people" element={<HomePage />} />
-          <Route path="/meet" element={<MeetPage />} />
+          <Route path="/people" element={<SocialPeoplePage />} />
+          <Route path="/people/explore" element={<HomePage />} />
+          <Route path="/meet" element={<SocialForYouPage />} />
+          <Route path="/meet/meetups" element={<MeetPage />} />
+          <Route path="/feed" element={<SocialFeedPage />} />
           <Route path="/meet/more" element={<DiscoverPage />} />
           <Route path="/schedule" element={<PlansPage />} />
           <Route path="/discover" element={<Navigate to="/meet" replace />} />

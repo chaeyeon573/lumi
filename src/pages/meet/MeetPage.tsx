@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
-import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
-import { Coffee, BookOpen, Dumbbell, Sparkles, Plus, ChevronRight, MapPin, Clock, Car, Link2, Zap, Users } from 'lucide-react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Coffee, BookOpen, Dumbbell, Sparkles, Plus, ChevronRight, MapPin, Clock, Car, Link2, Zap, Users, CalendarDays } from 'lucide-react';
 import { lang } from '@core/i18n';
-import { AppHeader } from '@/components/layout/AppHeader';
-import { CardSkeleton, ErrorState, Cover, Avatar, EmptyState } from '@/components/ui';
+import { SocialHeader, SocialSegment } from '@/pages/social/SocialPage';
+import { CardSkeleton, ErrorState, Cover, Avatar } from '@/components/ui';
 import { SampleTag } from '@/components/ui/SampleTag';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
@@ -25,23 +25,7 @@ export type MeetKind = typeof MEET_KINDS[number]['key'];
 /** 모임 만들기에서 고른 종류 → 활동 분류 */
 export const MEET_KIND_CATEGORY: Record<MeetKind, ActivityCategory> = { coffee: 'coffee', study: 'study', workout: 'exercise', hangout: 'etc' };
 
-/** Meet 위의 Activities | People — 두 화면이 같은 줄을 쓴다 */
-export function MeetSegment() {
-  const nav = useNavigate();
-  const loc = useLocation();
-  const people = loc.pathname.startsWith('/people');
-  const Seg = ({ on, label, to }: { on: boolean; label: string; to: string }) => (
-    <button onClick={() => nav(to, { replace: true })} className={cn('flex-1 h-10 rounded-full text-[14px] font-semibold transition', on ? 'bg-primary text-white v2:bg-surface v2:text-ink' : 'text-ink-3')}>{label}</button>
-  );
-  return (
-    <div className="mx-4 mb-3 p-1 rounded-full bg-surface-2 flex gap-1 shrink-0">
-      <Seg on={!people} label={en ? 'Activities' : '모임'} to="/meet" />
-      <Seg on={people} label={en ? 'People' : '사람'} to="/people" />
-    </div>
-  );
-}
-
-/** Meet — 학생끼리 만드는 가벼운 모임 (2026-11-02 사장님 시안) */
+/** Social › Meetups — 학생끼리 만드는 가벼운 모임 (2026-11-02 사장님 시안) */
 export function MeetPage() {
   const nav = useNavigate();
   const v = useViewer();
@@ -61,9 +45,8 @@ export function MeetPage() {
   const create = () => nav(`/create/activity?kind=group&meetup=1${kind ? `&cat=${MEET_KIND_CATEGORY[kind]}` : ''}`);
   return (
     <div className="min-h-full pb-8 bg-bg">
-      <AppHeader />
-      <h1 className="px-4 pt-1 pb-3 font-display text-[28px] font-extrabold tracking-tight">{en ? 'Meet' : '모임'}</h1>
-      <MeetSegment />
+      <SocialHeader />
+      <SocialSegment />
       {status === 'loading' && <CardSkeleton />}
       {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
       {status === 'ready' && (
@@ -86,7 +69,14 @@ export function MeetPage() {
               {upcoming.length > 3 && <button onClick={() => nav('/meet/more?tab=activities')} className="text-[14px] text-primary font-semibold flex items-center gap-0.5">{en ? 'See all' : '모두 보기'}<ChevronRight size={16} /></button>}
             </div>
             {upcoming.length === 0
-              ? <EmptyState emoji="" title={en ? 'No meetups yet' : '아직 모임이 없어요'} description={en ? 'Start one — coffee, study or a walk. Students nearby can join.' : '커피·스터디·산책 — 먼저 만들어 보세요. 근처 학생이 참여할 수 있어요.'} />
+              ? (
+                <div className="card rounded-[20px] px-4 py-6 text-center">
+                  <CalendarDays size={36} strokeWidth={1.6} className="mx-auto text-primary" />
+                  <b className="block text-[18px] mt-2">{en ? 'No meetups yet' : '아직 모임이 없어요'}</b>
+                  <p className="text-[14px] text-ink-2 mt-1">{en ? 'Create the first meetup on your campus!' : '우리 캠퍼스 첫 모임을 만들어 보세요!'}</p>
+                  <p className="text-[12px] text-ink-3 mt-3">{en ? 'Try a meetup — tap a kind above to start one.' : '위에서 종류를 골라 바로 시작해요.'}</p>
+                </div>
+              )
               : <div className="space-y-2.5">{upcoming.slice(0, 3).map((a) => <MeetupRow key={a.id} a={a} />)}</div>}
           </section>
 

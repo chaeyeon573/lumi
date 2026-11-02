@@ -1504,3 +1504,12 @@
 - No new schema: goals/communities map into existing goals/interests/purposes. "Make campus life easier" and "Residence Hall / Dorm" have no matching field, so they only steer interests (study) or are not stored. Avatar/bio quiz steps removed (bio starts empty, editable in Profile).
 - Checks: tsc, server typecheck, npm test 266/266, vite build, click-through screenshots v2+classic, PAGE ERROR 0 (register/email writes blocked).
 - Added "What would you like to discover?" topics step (8 topics, Skip) before Your communities, per owner mockup — saved into goals/interests. Checks re-run: tsc, server typecheck, tests, build, screenshots v2+classic PAGE ERROR 0.
+
+## 2026-11-02 — Meet → Social tab (owner mockup: For You · Meetups · People · Feed)
+- Bottom tab "Meet" renamed "Social" (still /meet; also lights up on /people and /feed). Header: Social + bell + create (+).
+- For You (/meet): Let's get started, Start a Meetup / Find People, Popular to try (Coffee/Study/Workout/Hangout → Meetups filter), Ask a Question (→ question post), Happening soon (real upcoming meetups, only when any exist).
+- Meetups (/meet/meetups): the former Meet page; empty state "No meetups yet — Create the first meetup on your campus!".
+- People (/people): Find your people → My Classes (/timetable), My Groups (/orgs/mine), Explore People (/people/explore = the former people deck).
+- Feed (/feed): Write a Post; when no posts, "Start a conversation" + Question / Tip / Discussion starters; otherwise the existing feed. Answers the open Feed-placement question.
+- Links updated: Home Meetups card, Plans "find activities", chat empty state, Who's free sheet. Illustrations are icons (no made-up images).
+- Checks: tsc, server typecheck, tests 266/266, build, screenshots classic+v2 of all 5 routes, PAGE ERROR 0.

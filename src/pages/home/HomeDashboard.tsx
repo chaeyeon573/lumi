@@ -37,7 +37,7 @@ const CATEGORIES = [
   { key: 'events', path: '/explore/events', Icon: CalendarDays, title: en ? 'Events' : '행사', tone: 'bg-[#EEF2FF] text-[#4B63D8] v2:bg-[#1D2140] v2:text-[#9DB0FF]' },
   { key: 'opps', path: '/explore/opportunities', Icon: Trophy, title: en ? 'Opportunities' : '기회', tone: 'bg-[#FFF4E5] text-[#D98A12] v2:bg-[#2E2416] v2:text-[#FFC266]' },
   { key: 'clubs', path: '/explore/clubs', Icon: Users, title: en ? 'Clubs & Groups' : '동아리·그룹', tone: 'bg-[#E9F6F4] text-[#1F9A86] v2:bg-[#14292A] v2:text-[#6FE0CB]' },
-  { key: 'meet', path: '/meet', Icon: Coffee, title: en ? 'Meetups' : '모임', tone: 'bg-[#FDEEF2] text-[#D2476B] v2:bg-[#2D1820] v2:text-[#FF9AB5]' },
+  { key: 'meet', path: '/meet/meetups', Icon: Coffee, title: en ? 'Meetups' : '모임', tone: 'bg-[#FDEEF2] text-[#D2476B] v2:bg-[#2D1820] v2:text-[#FF9AB5]' },
 ] as const;
 
 /** 홈 — 캠퍼스 정보로 들어가는 입구 (2026-11-02 사장님 시안: 카테고리 4칸 · Campus Life · For you) */

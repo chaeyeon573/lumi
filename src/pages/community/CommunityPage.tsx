@@ -53,7 +53,7 @@ export function CommunityPage() {
 }
 
 /** 피드는 사람만 — 공고를 자동으로 글처럼 올리지 않는다. 맨 위 오늘의 질문, 조용하면 초대 + 맨 아래 이번 주 하나 */
-function FeedTab() {
+export function FeedTab() {
   const nav = useNavigate();
   const v = useViewer();
   const [type, setType] = useState<PostType | 'all' | 'anon'>('all');

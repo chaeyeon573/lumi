@@ -12,7 +12,7 @@ const items = [
   { to: '/', label: lang === 'en' ? 'Home' : '홈', Icon: Home },
   { to: '/explore', label: lang === 'en' ? 'Explore' : '탐색', Icon: Compass },
   { to: '/schedule', label: lang === 'en' ? 'Schedule' : '일정', Icon: CalendarDays },
-  { to: '/meet', label: lang === 'en' ? 'Meet' : '모임', Icon: Users },
+  { to: '/meet', label: lang === 'en' ? 'Social' : '소셜', Icon: Users },
   { to: '/profile', label: lang === 'en' ? 'Profile' : '프로필', Icon: User },
 ];
 
@@ -41,7 +41,7 @@ export function BottomNav() {
   const oppHere = path.startsWith('/opportunities/') ? opps.find((o) => o.id === path.split('/')[2]) : undefined;
   const classHere = path.startsWith('/classes/') ? decodeURIComponent(path.split('/')[2] ?? '') : '';
   const userHere = path.startsWith('/users/') ? params.id ?? path.split('/')[2] : '';
-  let lastSeen = ''; try { lastSeen = path === '/people' ? localStorage.getItem(LAST_SEEN_KEY) ?? '' : ''; } catch { /* */ }
+  let lastSeen = ''; try { lastSeen = path === '/people/explore' ? localStorage.getItem(LAST_SEEN_KEY) ?? '' : ''; } catch { /* */ }
   const inviteId = userHere || lastSeen;
   const invitee = inviteId ? v.userById(inviteId) : undefined;
   const adminOrgs = orgs.filter((o) => o.adminIds.includes(v.me.id));
@@ -86,7 +86,7 @@ export function BottomNav() {
 }
 
 /** 탭이 맡는 다른 주소 — Meet 은 People 도, Schedule 은 약속·시간표도 */
-const ALSO: Record<string, string[]> = { '/meet': ['/people'], '/schedule': ['/plans', '/timetable'] };
+const ALSO: Record<string, string[]> = { '/meet': ['/people', '/feed'], '/schedule': ['/plans', '/timetable'] };
 function NavItem({ to, label, Icon }: { to: string; label: string; Icon: typeof Users }) {
   const loc = useLocation();
   const also = (ALSO[to] ?? []).some((p) => loc.pathname === p || loc.pathname.startsWith(`${p}/`));
