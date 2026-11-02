@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Check, GraduationCap, Briefcase, CalendarDays, Ticket, Users, Search, Compass, Coffee } from 'lucide-react';
+import { Check, GraduationCap, Briefcase, CalendarDays, Ticket, Users, Search, Compass, Coffee, FlaskConical, Trophy, Dumbbell } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { api } from '@core/api';
 import type { Goal, Interest, Purpose, School, UniversityRole } from '@core/types';
@@ -13,8 +13,8 @@ import { ComingSoonSchools } from './ComingSoonSchools';
 import { takeReturnTo } from '@/lib/returnTo';
 
 const en = lang === 'en';
-type Step = 'name' | 'goals' | 'how' | 'school' | 'communities' | 'email';
-const STEPS: Step[] = ['name', 'goals', 'how', 'school', 'communities', 'email'];
+type Step = 'name' | 'goals' | 'how' | 'school' | 'topics' | 'communities' | 'email';
+const STEPS: Step[] = ['name', 'goals', 'how', 'school', 'topics', 'communities', 'email'];
 const KEY = 'lumi.start.draft.v2';
 
 /**
@@ -37,6 +37,18 @@ const HELPS = [
   { Icon: Users, title: en ? 'Communities' : '커뮤니티', sub: en ? 'Join clubs, Greek life, and other campus groups' : '동아리·그릭 라이프 등 캠퍼스 단체에 참여', tone: 'bg-[#E9F6F4] text-[#1F9A86] v2:bg-[#14292A] v2:text-[#6FE0CB]' },
 ];
 
+/** 관심 주제 — 시안 “What would you like to discover?” 8개. 저장은 goals/interests 로 (피드·For You 추천에 쓰인다) */
+const TOPICS: { key: string; Icon: typeof Briefcase; en: string; ko: string; goals: Goal[]; interests: Interest[] }[] = [
+  { key: 'jobs', Icon: Briefcase, en: 'Internships & Jobs', ko: '인턴·일자리', goals: ['internship'], interests: [] },
+  { key: 'research', Icon: FlaskConical, en: 'Research', ko: '연구', goals: ['lab'], interests: ['research'] },
+  { key: 'hack', Icon: Trophy, en: 'Hackathons & Competitions', ko: '해커톤·공모전', goals: ['hackathon'], interests: [] },
+  { key: 'funding', Icon: GraduationCap, en: 'Scholarships & Funding', ko: '장학금·펀딩', goals: ['scholarship'], interests: [] },
+  { key: 'events', Icon: CalendarDays, en: 'Campus Events', ko: '캠퍼스 행사', goals: [], interests: ['networking'] },
+  { key: 'clubs', Icon: Users, en: 'Clubs & Communities', ko: '동아리·커뮤니티', goals: ['join_club'], interests: ['club'] },
+  { key: 'sports', Icon: Dumbbell, en: 'Sports & Fitness', ko: '스포츠·운동', goals: [], interests: ['exercise'] },
+  { key: 'food', Icon: Coffee, en: 'Food & Campus Life', ko: '맛집·캠퍼스 생활', goals: [], interests: ['meal'] },
+];
+
 const ROLES: { v: UniversityRole; en: string; ko: string }[] = [{ v: 'undergraduate', en: 'Undergraduate', ko: '학부생' }, { v: 'graduate', en: 'Graduate', ko: '대학원생' }, { v: 'alumni', en: 'Alumni', ko: '졸업생' }];
 const YEARS = [{ v: 1, en: 'Freshman', ko: '1학년' }, { v: 2, en: 'Sophomore', ko: '2학년' }, { v: 3, en: 'Junior', ko: '3학년' }, { v: 4, en: 'Senior', ko: '4학년' }];
 
@@ -52,8 +64,8 @@ const COMMUNITIES: { key: string; emoji: string; en: string; ko: string; goals: 
   { key: 'dorm', emoji: '🛏️', en: 'Residence Hall / Dorm', ko: '기숙사', goals: [], interests: [] },
 ];
 
-interface Draft { nickname: string; birthYear: string; goalKeys: string[]; schoolId: string; role: UniversityRole | ''; yearInSchool: number; department: string; communities: string[]; email: string }
-const EMPTY: Draft = { nickname: '', birthYear: '', goalKeys: [], schoolId: '', role: '', yearInSchool: 0, department: '', communities: [], email: '' };
+interface Draft { nickname: string; birthYear: string; goalKeys: string[]; schoolId: string; role: UniversityRole | ''; yearInSchool: number; department: string; communities: string[]; topics: string[]; email: string }
+const EMPTY: Draft = { nickname: '', birthYear: '', goalKeys: [], schoolId: '', role: '', yearInSchool: 0, department: '', communities: [], topics: [], email: '' };
 const uniq = <T,>(a: T[]) => [...new Set(a)];
 
 /** 큰 선택 줄 — 아이콘/이모지 + 제목 + 설명 */
@@ -107,8 +119,9 @@ export function StartPage() {
     try {
       const gs = GOAL_OPTS.filter((g) => d.goalKeys.includes(g.key));
       const cs = COMMUNITIES.filter((c) => d.communities.includes(c.key));
-      const goals = uniq([...gs.flatMap((g) => g.goals), ...cs.flatMap((c) => c.goals)]);
-      const interests = uniq([...gs.flatMap((g) => g.interests), ...cs.flatMap((c) => c.interests)]);
+      const ts = TOPICS.filter((t) => d.topics.includes(t.key));
+      const goals = uniq([...gs.flatMap((g) => g.goals), ...ts.flatMap((t) => t.goals), ...cs.flatMap((c) => c.goals)]);
+      const interests = uniq([...gs.flatMap((g) => g.interests), ...ts.flatMap((t) => t.interests), ...cs.flatMap((c) => c.interests)]);
       const purposes = uniq(gs.flatMap((g) => g.purposes));
       const role = d.role || 'undergraduate';
       const thisYear = new Date().getFullYear();
@@ -206,6 +219,22 @@ export function StartPage() {
               <p className="text-[13px] font-semibold text-ink-2 mb-2 flex items-center gap-1.5"><Search size={14} />{en ? 'Not at one of these schools?' : '다른 학교인가요?'}</p>
               <ComingSoonSchools openNames={schools.map((s) => s.name)} />
             </div>
+          </>
+        )}
+
+        {step === 'topics' && (
+          <>
+            <div className="flex items-center justify-between -mt-2"><span className="text-[13px] font-semibold text-ink-3">{en ? 'Personalize your experience' : '나에게 맞추기'}</span><button onClick={() => { patch({ topics: [] }); next(); }} className="text-[14px] font-semibold text-ink-3">{en ? 'Skip' : '건너뛰기'}</button></div>
+            <Head q={en ? 'What would you like to discover?' : '어떤 걸 찾아보고 싶어요?'} sub={en ? 'Choose a few topics to personalize your campus feed.' : '몇 가지 고르면 캠퍼스 피드를 맞춰 드려요.'} />
+            <div className="grid grid-cols-2 gap-2.5">
+              {TOPICS.map((t) => { const on = d.topics.includes(t.key); return (
+                <button key={t.key} onClick={() => patch({ topics: tog(d.topics, t.key) })} aria-pressed={on} className={cn('rounded-[20px] border-2 p-3.5 h-[108px] flex flex-col justify-between text-left press transition', on ? 'border-primary bg-primary-soft' : 'border-line bg-surface')}>
+                  <span className="flex items-center justify-between w-full"><t.Icon size={19} className={on ? 'text-primary' : 'text-ink-2'} /><span className={cn('h-5 w-5 rounded-full border-2 grid place-items-center', on ? 'border-primary bg-primary text-white v2:text-on-primary' : 'border-line')}>{on && <Check size={12} />}</span></span>
+                  <b className="text-[14px] font-semibold leading-snug">{en ? t.en : t.ko}</b>
+                </button>
+              ); })}
+            </div>
+            <NextBtn ok={d.topics.length > 0} />
           </>
         )}
 
