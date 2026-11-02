@@ -11,7 +11,10 @@ import { setDesign, useDesign } from '@/lib/design';
 export function DesignToggle({ withNav }: { withNav: boolean }) {
   const d = useDesign();
   const v2 = d === 'v2';
-  const onboarding = useLocation().pathname === '/start';
+  const { pathname } = useLocation();
+  const onboarding = pathname === '/start';
+  // 미리보기(/preview)는 운영용 화면 — 위 제목·검색을 가려서 숨긴다
+  if (pathname.startsWith('/preview')) return null;
   return (
     <button
       onClick={() => setDesign(v2 ? 'classic' : 'v2')}

@@ -1566,3 +1566,9 @@
 - Opening a school: move its row to schools.csv, then `import-collected:<id>`.
 - First collection: Stanford 733 · SFSU 290 · SJSU 440 · UC Davis 532 · UCSC 110 · Santa Clara 163 · USF 152 (≈2 MB of JSON in the repo).
 - Note: between 12:20 and this change the worker already wrote some Bay Area/East Coast data to the live DB; left as is (owner: don't delete).
+
+## 2026-11-02 — /preview: see collected schools without opening them (owner: option A)
+- Server reads server/data/collected/<id>.orgs.json only when /api/preview(/:id) is called — nothing in the DB or the in-memory snapshot. Ids checked (s_[a-z0-9]+, only rows of schools-collect.csv).
+- Pages /preview (school list: groups, with links, class recipe status) and /preview/:id (search, All/Clubs/Greek/Student government, description on tap, Directory/Instagram/Website links, class sample). Not linked from the app; the design toggle is hidden there.
+- Checked locally with the real server (file store): list + UCSC + SFSU in v2 and classic, PAGE ERROR 0. Test: server/preview.test.ts.
+- Next (owner): when a school looks right in preview → open it (option B: move row to schools.csv + import-collected).

@@ -32,6 +32,7 @@ import { randomBytes, randomInt } from 'node:crypto';
 import path from 'node:path';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { previewSchools, previewSchool } from './preview';
 import { t, lang } from '@core/i18n';
 import type { Patch, Snapshot, RegisterInput, CatalogCourse } from '@core/api/types';
 import type { Game, ID, User } from '@core/types';
@@ -572,6 +573,9 @@ app.get('/api/agent/status', wrap(async () => {
   for (const r of runs) if (!latest[r.task]) latest[r.task] = { status: r.status, finishedAt: r.finishedAt, summary: r.summary };
   return { latest, recent: runs.slice(0, 30) };
 }));
+// 아직 안 연 학교 미리보기 (파일에서 바로 — DB 에 넣지 않는다) · server/preview.ts
+app.get('/api/preview', (_req, res) => { res.json({ schools: previewSchools() }); });
+app.get('/api/preview/:id', (req, res) => { const r = previewSchool(String(req.params.id)); if (!r) { res.status(404).json({ error: 'not found' }); return; } res.json(r); });
 app.get('/api/health', (_req, res) => { res.json({ ok: true, users: db.users.length, lang, store: process.env.DATABASE_URL ? 'postgres' : 'file' }); });
 
 // ─── 오늘의 학식 · 체육관 혼잡도 (server/campus-live.ts) — 웹 서버 한 곳에서 가져오고 알림을 보낸다 ─────
