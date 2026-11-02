@@ -15,6 +15,7 @@ import { shareOrCopy } from '@/lib/native';
 import {
   campusToday, destLabel, fareText, isFull, matchRides, pickupLabel, rideEligibility, rideTitle, seatsLeft, seatsText, whenLabel,
   MAX_NOTE, RIDE_KIND_EMOJI, RIDE_KIND_LABELS, SAFETY_NOTE, type Ride,
+  rideLeft,
 } from '@core/lib/rides';
 
 export const rideLink = (id: string) => `${window.location.origin}/r/${id}`;
@@ -46,7 +47,7 @@ export function RideDetailPage() {
   const inRide = isHost || joined;
   const room = r.roomId ? rooms.find((c) => c.id === r.roomId) : undefined;
   const left = seatsLeft(r);
-  const past = r.date < today;
+  const past = rideLeft(r);
   const eligible = rideEligibility(v.me);
   const people = [r.hostId, ...r.memberIds];
   const headline = inRide && r.memberIds.length

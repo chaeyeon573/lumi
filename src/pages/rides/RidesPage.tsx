@@ -8,6 +8,7 @@ import { RideCard, SeasonCard, useRideCalendar, useRides } from '@/components/ri
 import { useViewer } from '@/hooks/useViewer';
 import {
   campusToday, dayLabel, departMin, filterGroupOf, isInRide, rideDestinations, rideEligibility, schoolOf, upcomingSeason, RIDE_FILTERS, SAFETY_NOTE, type Ride,
+  rideLeft,
 } from '@core/lib/rides';
 
 type View = 'all' | 'mine';
@@ -32,11 +33,11 @@ export function RidesPage() {
     const groups = RIDE_FILTERS.find((f) => f.key === filter)?.groups ?? null;
     const base = view === 'mine'
       ? rides.filter((r) => isInRide(r, v.me.id))
-      : rides.filter((r) => r.status !== 'cancelled' && r.date >= today && (!groups || groups.includes(filterGroupOf(r))) && (!to || r.to === to));
+      : rides.filter((r) => r.status !== 'cancelled' && !rideLeft(r) && (!groups || groups.includes(filterGroupOf(r))) && (!to || r.to === to));
     return base.sort((a, b) => departMin(a) - departMin(b));
   }, [rides, view, filter, to, today, v.me.id]);
-  const upcoming = view === 'mine' ? list.filter((r) => r.date >= today && r.status !== 'cancelled') : list;
-  const past = view === 'mine' ? list.filter((r) => r.date < today || r.status === 'cancelled').reverse() : [];
+  const upcoming = view === 'mine' ? list.filter((r) => !rideLeft(r) && r.status !== 'cancelled') : list;
+  const past = view === 'mine' ? list.filter((r) => rideLeft(r) || r.status === 'cancelled').reverse() : [];
 
   const byDay = (xs: Ride[]) => { const m = new Map<string, Ride[]>(); for (const r of xs) (m.get(r.date) ?? m.set(r.date, []).get(r.date)!).push(r); return [...m.entries()]; };
   const toLabel = dests.find((d) => d.key === to)?.label;

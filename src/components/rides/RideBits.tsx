@@ -11,6 +11,7 @@ import type { User } from '@core/types';
 import {
   bannerSeason, campusToday, clock, dayLabel, destLabel, fareText, isInRide, isVerifiedStudent, pickupLabel, schoolOf, seatsText, isFull,
   RIDE_KIND_EMOJI, RIDE_KIND_SHORT, type Ride, type RideSeason,
+  rideLeft,
 } from '@core/lib/rides';
 
 /** The school's academic calendar (registrar) for the break banner — undefined while loading or when the school has none */
@@ -109,7 +110,7 @@ export function RidesEntry({ className, compact }: { className?: string; compact
   const rides = useRides();
   const today = campusToday();
   const school = schoolOf(v.me);
-  const openRides = rides.filter((r) => r.status === 'open' && r.date >= today && !isFull(r));
+  const openRides = rides.filter((r) => r.status === 'open' && !rideLeft(r) && !isFull(r));
   const open = openRides.length;
   // 열린 차가 가는 곳을 그대로 — 예전엔 'airports, Trader Joe's, Costco, SF, Tahoe' 고정 문구라 없는 행선지(SF·Tahoe)도 있어 보였다
   const dests = [...new Set(openRides.sort((a, b) => a.date.localeCompare(b.date)).map(destLabel))];

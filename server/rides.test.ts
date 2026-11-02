@@ -12,6 +12,7 @@ import { t } from '@core/i18n';
 import { createRidesEngine, RideError } from '@core/api/rides';
 import { rideEligibility,
   bannerSeason, fareText, matchRides, rideSeasons, rideTitle, ridesMatch, seatsLeft, upcomingSeason, validateRideInput, type Ride, type RideInput,
+  rideLeft,
 } from '@core/lib/rides';
 import { snapshotFor, patchFor } from './view';
 import { ensureSampleRides, rideMeta, ridesRules, ruleAllows, withRideMeta } from './rides';
@@ -260,4 +261,12 @@ test('rides stay 18+ even though Lumi is 16+', () => {
   assert.equal(rideEligibility({ ...base, birthYear: now.getFullYear() - 16 }).ok, false);
   assert.equal(rideEligibility({ ...base, birthYear: now.getFullYear() - 16 }).minor, true);
   assert.equal(rideEligibility({ ...base, birthYear: now.getFullYear() - 20 }).ok, true);
+});
+
+test('rideLeft: a ride is gone once its leaving window ends (campus clock), not at midnight', () => {
+  const r = { date: '2026-11-01', end: '17:00' };
+  assert.equal(rideLeft(r, new Date('2026-11-02T00:17:00Z')), false); // Sun 4:17 PM PST — still in the 4–5 PM window
+  assert.equal(rideLeft(r, new Date('2026-11-02T01:05:00Z')), true); // Sun 5:05 PM PST — left
+  assert.equal(rideLeft({ date: '2026-11-02', end: '09:00' }, new Date('2026-11-02T07:00:00Z')), false); // Sun 11 PM PST — tomorrow's ride
+  assert.equal(rideLeft({ date: '2026-10-31', end: '23:00' }, new Date('2026-11-01T20:00:00Z')), true);
 });

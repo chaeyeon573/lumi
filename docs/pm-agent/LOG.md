@@ -2,6 +2,11 @@
 
 최신이 위.
 
+## 2026-11-02 00:17 UTC (버클리 일 16:17 PST) · 초점: 일요일 저녁 Rides·Plans
+- 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로. 라이브에 쓴 것 없음. calendar:s_berkeley 여전히 error(22:21, 배포 전).
+- Plans(투표 1·초대 1·확정 2·스터디 크루 1)·알림 4개 정상, 날짜 맞음.
+- 고침: Rides 가 날짜만 봐서, 출발 시간 창이 끝난 차(예: Emma → Trader Joe's 4–5 PM)가 자정까지 ‘Today · Help/Join’ 으로 남았다 → 창이 끝나면 찾기 목록·Discover Rides 개수에서 빠지고, 내 차는 ‘지난 차’로, 상세는 “This ride has left”(core rides.ts `rideLeft`, 테스트 추가). 시계를 16:40 / 17:30 PST 로 두고 화면 확인 — 16:40 에는 보이고 17:30 에는 빠짐. 250 통과.
+
 ## 2026-11-01 21:17 UTC (버클리 일 13:17 PST) · 초점: 월요일 아침 Discover·People (겨울 시간 첫 수업일)
 - 사장님 새 답 없음. 배포 브랜치 b158d1d 그대로. 라이브에 쓴 것 없음. calendar:s_berkeley 여전히 error(배포 전).
 - 브라우저 시계를 월 11/2 08:30 PST 로 두고 라이브 데이터로 봄: Discover “Free until 10 AM”, Activities Today 32 → Tomorrow 15 → Next 7 days(수요일부터) 정상. (식당·체육관 칸은 서버 시각이라 일요일 값 — 시뮬레이션 한계)

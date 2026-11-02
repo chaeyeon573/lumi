@@ -175,6 +175,11 @@ export function campusToday(now: Date = new Date()): string {
 export function campusNowHHMM(now: Date = new Date()): string {
   return new Intl.DateTimeFormat('en-GB', { timeZone: schoolTz(), hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(now);
 }
+/** 떠난 차 — 지난 날짜이거나, 오늘인데 출발 시간 창(start–end)이 끝났다. 예전엔 날짜만 봐서 오후 5시에 끝난 차가 자정까지 ‘Join’ 으로 남았다 */
+export function rideLeft(r: Pick<Ride, 'date' | 'end'>, now: Date = new Date()): boolean {
+  const today = campusToday(now);
+  return r.date < today || (r.date === today && r.end < campusNowHHMM(now));
+}
 const DAY = 86_400_000;
 export const addDays = (d: string, n: number) => new Date(Date.parse(`${d}T12:00:00Z`) + n * DAY).toISOString().slice(0, 10);
 const toMin = (hhmm: string) => { const [h, m] = hhmm.split(':').map(Number); return h * 60 + m; };
