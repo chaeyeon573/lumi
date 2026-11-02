@@ -3,7 +3,7 @@
  * 미국 대학 대부분이 CampusLabs Engage 또는 CampusGroups 를 쓴다 — 짧은 이름으로 만든 후보 주소를 찔러 보고,
  * 실제 목록이 1개 이상 읽히는 쪽을 고른다 (로그인 페이지로 넘어가는 200 은 걸러진다).
  */
-export interface Detected { platform: 'engage' | 'campusgroups' | 'presence' | 'pennclubs'; host: string; sample: number }
+export interface Detected { platform: 'engage' | 'campusgroups' | 'presence' | 'pennclubs' | 'facetwp' | 'accordion' | 'drupalcards'; host: string; sample: number }
 
 const UA = 'Mozilla/5.0 AroundU-importer';
 async function get(url: string): Promise<{ ok: boolean; status: number; text: string; url: string }> {
@@ -28,6 +28,23 @@ export function candidates(short: string, emailDomain: string): { platform: Dete
 }
 
 export async function detectOrgsPlatform(short: string, emailDomain: string, override?: string): Promise<Detected | null> {
+  // 학교 WordPress 단체 목록 (UCSC Get Involved) — FacetWP 카드가 있으면
+  if (override && /getinvolved\.ucsc\.edu/.test(override)) {
+    const r = await get(override); const n = r.ok ? r.text.split('<div class="fwpl-result r').length - 1 : 0;
+    return n > 0 ? { platform: 'facetwp', host: override, sample: n } : null;
+  }
+  // 분류별 이름 목록 (Santa Clara CSI directory)
+  if (override && /scu\.edu\/csi\/organizations\/directory/.test(override)) {
+    const r = await get(override); const n = r.ok ? (r.text.match(/accordion-panel-\d+/g) ?? []).length : 0;
+    return n > 0 ? { platform: 'accordion', host: override, sample: n } : null;
+  }
+  // 분류별 하위 페이지 카드 (USF myUSF)
+  if (override && /myusf\.usfca\.edu\/sle\/student-orgs/.test(override)) {
+    // 첫 페이지는 분류 하위 페이지 링크 모음 — 하위 페이지 수를 센다
+    const r = await get(override); const sub = new URL(override).pathname.replace(/\/+$/, '');
+    const n = r.ok ? new Set(r.text.match(new RegExp(`${sub}/[a-z0-9-]+"`, 'g')) ?? []).size : 0;
+    return n > 0 ? { platform: 'drupalcards', host: override.replace(/\/+$/, ''), sample: n } : null;
+  }
   // Penn Clubs (UPenn) — 공개 JSON 목록
   if (override && /pennclubs\.com/.test(override)) {
     const host = override.replace(/\/+$/, ''); const r = await get(`${host}/api/clubs/?format=json`);

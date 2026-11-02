@@ -1,0 +1,105 @@
+<html><body><div><div id="d.en.1079796" class="default-accordion accordion-item "  data-group="group-01">
+		<a role="button" data-toggle="collapse" href="#accordion-panel-1079796" aria-expanded="false" aria-controls="accordion-group-01" class="collapsed d-flex align-items-center justify-content-between flex-nowrap">
+			<h2 class="default-accordion accordion-item h5 text-sans-light">Academic & Professional</h2>
+			<svg width="14" height="8" viewBox="0 0 14 8" xmlns="http://www.w3.org/2000/svg"><path d="M7.43601 8L8.15859 7.27853L13.2742 2.17079L13.9999 1.44613L12.5516 0L11.829 0.721469L7.43601 5.10774L3.043 0.724661L2.32042 0L0.87207 1.44613L1.59465 2.1676L6.71023 7.27534L7.43601 8Z"/></svg>
+		</a>
+		<div id="accordion-panel-1079796" class="collapse" role="tabpanel" style="">
+			<p>Alliance of Latin Americans en Salud<br />Anthropology Club<br />Association for Women in Mathematics<br />Connecting Leaders in Innovation &amp; Pharma<br />Delta Epsilon Mu (Pre-Health Coed Fraternity)<br />History Club<br />IMPACT<br />Kappa Alpha Pi (Pre-Law &amp; Government Coed Fraternity)<br />Latine Pre-Law Sociedad<br />Mock Trial Team<br />Model United Nations<br />National Society of Black Engineers (NSBE)<br />Neuroscience Club<br />Pre-Dental Society<br />Psychology Club<br />Retail Studies Student Association<br />Rho Psi Eta (Women-Focused Pre-Health Coed Sorority)<br />Society of Physics Students<br />Sociology Club<br />Transfer Student Union<br />Women in Physics</p>
+		</div>
+	</div>
+	<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		let collapsed = true;
+		let button = document.getElementById("expand_button-group-01");
+		let accordions = document.querySelectorAll('.accordion-item[data-group="group-01"]');
+		if(button) button.addEventListener("click", expand);
+		function expand() {
+			// if accordions are currently collapsed -> open them
+			if(collapsed) {
+				button.textContent = "Collapse all items -";
+				button.setAttribute("aria-label", "Collapse all items");
+				button.setAttribute("aria-expanded", "true");
+				accordions.forEach((accordionItem) => {
+					var child_button = accordionItem.querySelector('a');
+					if(child_button) {
+						child_button.setAttribute('aria-expanded', 'true');
+						child_button.classList.remove('collapsed');
+					}
+					var child_panel = accordionItem.querySelector('[role="tabpanel"]');
+					if(child_panel) {
+						child_panel.classList.add('show');
+					}
+				});
+			}
+			else {
+				button.textContent = "Expand all items +";
+				button.setAttribute("aria-label", "Expand all items");
+				button.setAttribute("aria-expanded", "false");
+				accordions.forEach((accordionItem) => {
+					var child_button = accordionItem.querySelector('a');
+					if(child_button) {
+						child_button.setAttribute('aria-expanded', 'false');
+						child_button.classList.add('collapsed');
+					}
+					var child_panel = accordionItem.querySelector('[role="tabpanel"]');
+					if(child_panel) {
+						child_panel.classList.remove('show');
+					}
+				});
+			}
+			collapsed = !collapsed;
+		}
+	});
+	</script><!--/cid<div><div id="d.en.1079797" class="default-accordion accordion-item "  data-group="group-01">
+		<a role="button" data-toggle="collapse" href="#accordion-panel-1079797" aria-expanded="false" aria-controls="accordion-group-01" class="collapsed d-flex align-items-center justify-content-between flex-nowrap">
+			<h3 class="default-accordion accordion-item h5 text-sans-light">Business</h3>
+			<svg width="14" height="8" viewBox="0 0 14 8" xmlns="http://www.w3.org/2000/svg"><path d="M7.43601 8L8.15859 7.27853L13.2742 2.17079L13.9999 1.44613L12.5516 0L11.829 0.721469L7.43601 5.10774L3.043 0.724661L2.32042 0L0.87207 1.44613L1.59465 2.1676L6.71023 7.27534L7.43601 8Z"/></svg>
+		</a>
+		<div id="accordion-panel-1079797" class="collapse" role="tabpanel" style="">
+			<p>Accounting Association<br />Alpha Kappa Psi (Business Coed Fraternity)<br />Black Business Association<br />Blockchain@SCU<br />Delta Sigma Pi (Business Coed Fraternity)<br />Economic Student Association<br />Finance Association<br />Finance Technology Student Association<br />Information Systems and Analytics Student Network<br />Institute for Operations Research &amp; Management Sciences<br />Investment Banking Club<br />Latinx Business Student Association<br />Microfinance Association<br />Phi Chi Theta (Business Coed Fraternity)<br />Product Launch<br />Queer &amp; Qualified<br />Real Estate Association<br />Santa Clara Consulting<br />Santa Clara GetVirtual<br />Santa Clara Strategy<br />SCU Sports Business<br />Tech Sales Network<br />The Investment Club<br />The Women's Network<br />Undergraduate Marketing Association<br />Women in Business<br />Women in Investment</p>
+		</div>
+	</div>
+	<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		let collapsed = true;
+		let button = document.getElementById("expand_button-group-01");
+		let accordions = document.querySelectorAll('.accordion-item[data-group="group-01"]');
+		if(button) button.addEventListener("click", expand);
+		function expand() {
+			// if accordions are currently collapsed -> open them
+			if(collapsed) {
+				button.textContent = "Collapse all items -";
+				button.setAttribute("aria-label", "Collapse all items");
+				button.setAttribute("aria-expanded", "true");
+				accordions.forEach((accordionItem) => {
+					var child_button = accordionItem.querySelector('a');
+					if(child_button) {
+						child_button.setAttribute('aria-expanded', 'true');
+						child_button.classList.remove('collapsed');
+					}
+					var child_panel = accordionItem.querySelector('[role="tabpanel"]');
+					if(child_panel) {
+						child_panel.classList.add('show');
+					}
+				});
+			}
+			else {
+				button.textContent = "Expand all items +";
+				button.setAttribute("aria-label", "Expand all items");
+				button.setAttribute("aria-expanded", "false");
+				accordions.forEach((accordionItem) => {
+					var child_button = accordionItem.querySelector('a');
+					if(child_button) {
+						child_button.setAttribute('aria-expanded', 'false');
+						child_button.classList.add('collapsed');
+					}
+					var child_panel = accordionItem.querySelector('[role="tabpanel"]');
+					if(child_panel) {
+						child_panel.classList.remove('show');
+					}
+				});
+			}
+			collapsed = !collapsed;
+		}
+	});
+	</script><!--/cid--></body></html>

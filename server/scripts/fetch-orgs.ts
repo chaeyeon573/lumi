@@ -20,7 +20,7 @@
  *    학교가 UI 를 바꾸면 필드명이 달라질 수 있다 → 그럴 땐 아래 mapOrg 만 고치면 된다.
  */
 import { decodeNumericEntities } from '../sources/entities';
-import { COUNCIL_RE, notCouncil, campusGroupsWebsite, engageLinks, pennClubToOrg, type EngageSocial, type PennClub } from '../sources/orglinks';
+import { COUNCIL_RE, notCouncil, campusGroupsWebsite, engageLinks, pennClubToOrg, parseFacetWpCards, facetCardToOrg, parseAccordionDirectory, namedOrgToOrg, parseDrupalAccordionCards, cardOrgToOrg, type EngageSocial, type PennClub } from '../sources/orglinks';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -39,6 +39,12 @@ const CAMPUSGROUPS_HOSTS: Record<string, string> = {
   ...(process.env.CAMPUSGROUPS_HOSTS ? Object.fromEntries(process.env.CAMPUSGROUPS_HOSTS.split(',').map((p) => p.split('=') as [string, string])) : {}),
 };
 /** Penn Clubs (UPenn 공식 디렉터리) — PENNCLUBS_HOSTS="s_upenn=https://pennclubs.com" */
+/** 학교 WordPress 목록(FacetWP 카드) — FACETWP_HOSTS="s_ucsc=https://getinvolved.ucsc.edu/student-organizations/join/" */
+const FACETWP_HOSTS: Record<string, string> = process.env.FACETWP_HOSTS ? Object.fromEntries(process.env.FACETWP_HOSTS.split(',').map((p) => { const i = p.indexOf('='); return [p.slice(0, i), p.slice(i + 1)] as [string, string]; })) : {};
+/** 분류별 이름만 있는 학교 목록 (Santa Clara) — ACCORDION_HOSTS="s_scu=https://www.scu.edu/csi/organizations/directory/" */
+const ACCORDION_HOSTS: Record<string, string> = process.env.ACCORDION_HOSTS ? Object.fromEntries(process.env.ACCORDION_HOSTS.split(',').map((p) => { const i = p.indexOf('='); return [p.slice(0, i), p.slice(i + 1)] as [string, string]; })) : {};
+/** 분류별 하위 페이지에 카드가 있는 학교 목록 (USF myUSF) — DRUPALCARDS_HOSTS="s_usf=https://myusf.usfca.edu/sle/student-orgs/undergraduate" */
+const DRUPALCARDS_HOSTS: Record<string, string> = process.env.DRUPALCARDS_HOSTS ? Object.fromEntries(process.env.DRUPALCARDS_HOSTS.split(',').map((p) => { const i = p.indexOf('='); return [p.slice(0, i), p.slice(i + 1)] as [string, string]; })) : {};
 const PENNCLUBS_HOSTS: Record<string, string> = process.env.PENNCLUBS_HOSTS ? Object.fromEntries(process.env.PENNCLUBS_HOSTS.split(',').map((p) => p.split('=') as [string, string])) : {};
 
 /** 목록을 n 개씩 나란히 — 상세 페이지를 하나씩 더 읽을 때 (사이트에 무리가 없게 사이마다 쉰다) */
@@ -280,6 +286,57 @@ for (const [schoolId, host] of Object.entries(PENNCLUBS_HOSTS)) {
   const ratio = linked.length ? orgs.length / linked.length : 1;
   if (ratio < 0.5) { console.log(`${orgs.length}개 — 지난번 ${linked.length}개의 절반도 안 돼 반영하지 않음 (사이트 확인 필요)`); process.exitCode = 2; continue; }
   console.log(`${orgs.length}개 (학생회 ${orgs.filter((o) => o.type === 'council').length}, 링크 상세 ${detailed.length})`);
+  if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs });
+}
+for (const [schoolId, url] of Object.entries(FACETWP_HOSTS)) {
+  if (only && only !== schoolId) continue;
+  process.stdout.write(`${schoolId} ← ${url} (school list) … `);
+  let cards;
+  try { cards = parseFacetWpCards(await getWithRetry(url)); } catch (e) { console.log(`실패: ${(e as Error).message}`); continue; }
+  const orgs = cards.map((c) => facetCardToOrg(c, schoolId, url)).map(mergeExisting);
+  const linked = snap.organizations.filter((o) => o.schoolId === schoolId && o.links?.some((l) => l.url === url));
+  const ratio = linked.length ? orgs.length / linked.length : 1;
+  if (!orgs.length || ratio < 0.5) { console.log(`${orgs.length}개 — 지난번 ${linked.length}개의 절반도 안 돼 반영하지 않음 (사이트 확인 필요)`); process.exitCode = 2; continue; }
+  const csv = ['school_id,name,type,category,description', ...orgs.map((o) => [o.schoolId, o.name, o.type, o.parent ?? '', o.description].map((v) => `"${String(v).replace(/"/g, '""')}"`).join(','))].join('\n');
+  writeFileSync(path.join(dataDir, `orgs-${schoolId}.csv`), csv);
+  console.log(`${orgs.length}개 (링크 있는 곳 ${cards.filter((c) => c.links.length).length})`);
+  if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs });
+}
+for (const [schoolId, url] of Object.entries(ACCORDION_HOSTS)) {
+  if (only && only !== schoolId) continue;
+  process.stdout.write(`${schoolId} ← ${url} (school list by category) … `);
+  let list;
+  try { list = parseAccordionDirectory(await getWithRetry(url)); } catch (e) { console.log(`실패: ${(e as Error).message}`); continue; }
+  const orgs = [...new Map(list.map((x) => namedOrgToOrg(x, schoolId, url)).map((o) => [o.id, o])).values()].map(mergeExisting);
+  const linked = snap.organizations.filter((o) => o.schoolId === schoolId && o.links?.some((l) => l.url === url));
+  const ratio = linked.length ? orgs.length / linked.length : 1;
+  if (!orgs.length || ratio < 0.5) { console.log(`${orgs.length}개 — 지난번 ${linked.length}개의 절반도 안 돼 반영하지 않음 (사이트 확인 필요)`); process.exitCode = 2; continue; }
+  const csv = ['school_id,name,type,category,description', ...orgs.map((o) => [o.schoolId, o.name, o.type, o.parent ?? '', o.description].map((v) => `"${String(v).replace(/"/g, '""')}"`).join(','))].join('\n');
+  writeFileSync(path.join(dataDir, `orgs-${schoolId}.csv`), csv);
+  console.log(`${orgs.length}개 (분류 ${new Set(list.map((x) => x.category)).size})`);
+  if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs });
+}
+for (const [schoolId, base] of Object.entries(DRUPALCARDS_HOSTS)) {
+  if (only && only !== schoolId) continue;
+  process.stdout.write(`${schoolId} ← ${base} (school pages by category) … `);
+  const origin = new URL(base).origin; const basePath = new URL(base).pathname.replace(/\/+$/, '');
+  const cards: ReturnType<typeof parseDrupalAccordionCards> = []; let pages: string[] = [];
+  try {
+    const first = await getWithRetry(base);
+    pages = [...new Set([...first.matchAll(new RegExp(`href="(?:${origin})?(${basePath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}/[a-z0-9-]+)"`, 'g'))].map((m) => m[1]))];
+    for (const pth of pages) {
+      const cat = pth.split('/').pop()!.split('-').map((w) => w[0].toUpperCase() + w.slice(1)).join(' ');
+      cards.push(...parseDrupalAccordionCards(await getWithRetry(origin + pth), cat));
+      await new Promise((r) => setTimeout(r, 200));
+    }
+  } catch (e) { console.log(`실패: ${(e as Error).message}`); continue; }
+  const orgs = [...new Map(cards.map((c) => cardOrgToOrg(c, schoolId, base)).map((o) => [o.id, o])).values()].map(mergeExisting);
+  const linked = snap.organizations.filter((o) => o.schoolId === schoolId && o.links?.some((l) => l.url === base));
+  const ratio = linked.length ? orgs.length / linked.length : 1;
+  if (!orgs.length || ratio < 0.5) { console.log(`${orgs.length}개 — 지난번 ${linked.length}개의 절반도 안 돼 반영하지 않음 (사이트 확인 필요)`); process.exitCode = 2; continue; }
+  const csv = ['school_id,name,type,category,description', ...orgs.map((o) => [o.schoolId, o.name, o.type, o.parent ?? '', o.description].map((v) => `"${String(v).replace(/"/g, '""')}"`).join(','))].join('\n');
+  writeFileSync(path.join(dataDir, `orgs-${schoolId}.csv`), csv);
+  console.log(`${orgs.length}개 (분류 페이지 ${pages.length}, 링크 있는 곳 ${cards.filter((c) => c.links.length).length})`);
   if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs });
 }
 console.log(process.env.FETCH_DRY === '1' ? `CSV 만 생성: ${dataDir}` : 'DB 반영 완료');

@@ -1549,3 +1549,12 @@
 - Verified on live agent status: calendar:s_berkeley applied at 10:25 with the fixed code (182 events, 50 old removed — the 04:22 error is gone); external:internships applied 10:25 (453 postings, now with posting text for work-authorization labels); USAJobs 129 at 06:03.
 - Focus this run = today's owner requests (onboarding, Social tab, Bay Area data); screens were checked in classic + v2 during those changes, PAGE ERROR 0.
 - Open for owner: delete East Coast class rows already in the live DB (Cornell 9,518 · UPenn 7,492 · Harvard 2,764 · Dartmouth 1,346)? Home/Explore/Schedule to the latest mockup?
+- 2026-11-02 사장님: 동부 수업 데이터 지우지 말 것 (그대로 둔다).
+
+## 2026-11-02 — Bay Area clubs, one school at a time
+- UC Santa Cruz: Get Involved list (getinvolved.ucsc.edu, FacetWP cards) → 109 orgs, 108 with Instagram; greek councils (Panhellenic, Inter-Greek Council) as council, chapters as greek.
+- Santa Clara: CSI RSO directory (scu.edu/csi/organizations/directory) → 162 orgs in 10 categories (names only on that page).
+- USF: myUSF undergraduate category pages (5) → 152 orgs, 138 with Instagram/website; ASUSF Senate is in the directory, so the hand-checked copy is skipped (dedupe by name).
+- New readers in server/sources/orglinks.ts (facetwp / accordion / drupalcards), detected from orgs_host in schools-collect.csv; tests with real page excerpts in server/fixtures.
+- SJSU classes: sjsu.edu not reachable from this container (TLS / 503) → next run, test on the server.
+- Checks: tsc, server typecheck, tests 277/277, build; agent DRY runs for s_ucsc, s_scu, s_usf OK.

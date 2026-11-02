@@ -39,3 +39,37 @@ test('studentGovToOrg: verified council with official links', () => {
   assert.equal(o.type, 'council'); assert.equal(o.verified, true);
   assert.deepEqual(o.links?.map((l) => l.label), ['Website', 'Instagram']);
 });
+
+test('parseFacetWpCards: UC Santa Cruz Get Involved cards (real page excerpt)', async () => {
+  const { readFileSync } = await import('node:fs');
+  const { parseFacetWpCards, facetCardToOrg } = await import('./sources/orglinks');
+  const cards = parseFacetWpCards(readFileSync(new URL('./fixtures/ucsc-getinvolved.html', import.meta.url), 'utf8'));
+  assert.deepEqual(cards.map((c) => c.name), ['8th Rank Society', 'Asian American Christian Fellowship (AACF)', 'Emergency Medical Slugs (EMS)']);
+  const aacf = cards[1];
+  assert.match(aacf.description, /Christian fellowship at UC Santa Cruz/);
+  assert.deepEqual(aacf.links, [{ label: 'Instagram', url: 'https://www.instagram.com/aacfucsc/' }]);
+  const o = facetCardToOrg(aacf, 's_ucsc', 'https://getinvolved.ucsc.edu/student-organizations/join/');
+  assert.equal(o.type, 'club'); assert.equal(o.schoolId, 's_ucsc'); assert.equal(o.links?.[0].label, 'Directory');
+});
+
+test('parseAccordionDirectory: Santa Clara RSO directory (real page excerpt)', async () => {
+  const { readFileSync } = await import('node:fs');
+  const { parseAccordionDirectory, namedOrgToOrg } = await import('./sources/orglinks');
+  const list = parseAccordionDirectory(readFileSync(new URL('./fixtures/scu-rso-directory.html', import.meta.url), 'utf8'));
+  assert.equal(list.length, 48);
+  assert.deepEqual(list[0], { name: 'Alliance of Latin Americans en Salud', category: 'Academic & Professional' });
+  const akp = list.find((x) => x.name.startsWith('Alpha Kappa Psi'))!;
+  assert.equal(akp.category, 'Business');
+  assert.equal(namedOrgToOrg(akp, 's_scu', 'https://www.scu.edu/csi/organizations/directory/').type, 'greek');
+  assert.equal(namedOrgToOrg({ name: 'Mock Trial Team', category: 'Academic & Professional' }, 's_scu', 'x').type, 'club');
+});
+
+test('parseDrupalAccordionCards: USF undergraduate org page (real excerpt)', async () => {
+  const { readFileSync } = await import('node:fs');
+  const { parseDrupalAccordionCards } = await import('./sources/orglinks');
+  const cards = parseDrupalAccordionCards(readFileSync(new URL('./fixtures/usf-orgs.html', import.meta.url), 'utf8'), 'Academic, Honorary & Professional');
+  assert.equal(cards.length, 3);
+  assert.equal(cards[0].name, 'Alpha Sigma Nu (ASN)');
+  assert.match(cards[0].description, /Jesuit Honors Society/);
+  assert.deepEqual(cards[0].links, [{ label: 'Website', url: 'https://www.alphasigmanu.org/' }, { label: 'Instagram', url: 'https://www.instagram.com/asn.usfca/' }]);
+});

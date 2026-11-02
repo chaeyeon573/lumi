@@ -211,7 +211,7 @@ async function runSchool(row: SchoolRow, listed = true): Promise<AgentRun[]> {
     out.push(await record({ task: `detect:${row.id}`, schoolId: row.id, status: d ? 'applied' : 'rejected', startedAt, summary: d ? { ...d } : { error: 'no public club directory found (CampusLabs Engage / CampusGroups)', tried: row.orgs_host || 'guessed hosts' } }));
   }
   if (host && platform && due(`orgs:${row.id}`, latest.get(`orgs:${row.id}`)?.finishedAt, 24 * 7)) {
-    const env: Record<string, string> = platform === 'pennclubs' ? { PENNCLUBS_HOSTS: `${row.id}=${host}` } : platform === 'engage' ? { ENGAGE_HOSTS: `${row.id}=${host}` } : platform === 'presence' ? { PRESENCE_HOSTS: `${row.id}=${new URL(host).hostname.split('.')[0]}` } : { CAMPUSGROUPS_HOSTS: `${row.id}=${host}` };
+    const env: Record<string, string> = platform === 'pennclubs' ? { PENNCLUBS_HOSTS: `${row.id}=${host}` } : platform === 'facetwp' ? { FACETWP_HOSTS: `${row.id}=${host}` } : platform === 'accordion' ? { ACCORDION_HOSTS: `${row.id}=${host}` } : platform === 'drupalcards' ? { DRUPALCARDS_HOSTS: `${row.id}=${host}` } : platform === 'engage' ? { ENGAGE_HOSTS: `${row.id}=${host}` } : platform === 'presence' ? { PRESENCE_HOSTS: `${row.id}=${new URL(host).hostname.split('.')[0]}` } : { CAMPUSGROUPS_HOSTS: `${row.id}=${host}` };
     out.push(await runScript(`orgs:${row.id}`, 'fetch:orgs', row.id, env));
   }
   // 2a. 학생회 — 디렉터리에 없는 학교는 손으로 확인한 공식 학생회(server/data/student-governments.csv)를 7일마다 넣는다 (멤버·팔로워는 그대로)
@@ -220,7 +220,10 @@ async function runSchool(row: SchoolRow, listed = true): Promise<AgentRun[]> {
   if (govRows.length && due(`studentgov:${row.id}`, latest.get(`studentgov:${row.id}`)?.finishedAt, 24 * 7)) {
     const startedAt = new Date().toISOString();
     const snapOrgs = new Map(((await store.loadSnapshot())?.organizations ?? []).map((o) => [o.id, o]));
-    const organizations = govRows.map(studentGovToOrg).map((o) => { const prev = snapOrgs.get(o.id); return prev ? { ...prev, name: o.name, description: o.description, links: o.links, type: o.type, verified: true } : o; });
+    // 디렉터리가 같은 학생회를 이미 넣었으면(USF “ASUSF Senate”) 두 번 넣지 않는다 — 이름(괄호 약칭 빼고)으로 비교
+    const norm = (n: string) => n.toLowerCase().replace(/\([^)]*\)/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+    const dirNames = new Set([...snapOrgs.values()].filter((o) => o.schoolId === row.id && !o.id.includes('_sg_')).map((o) => norm(o.name)));
+    const organizations = govRows.map(studentGovToOrg).filter((o) => !dirNames.has(norm(o.name))).map((o) => { const prev = snapOrgs.get(o.id); return prev ? { ...prev, name: o.name, description: o.description, links: o.links, type: o.type, verified: true } : o; });
     if (!DRY) await store.applyPatch({ organizations });
     out.push(await record({ task: `studentgov:${row.id}`, schoolId: row.id, status: 'applied', startedAt, summary: { names: organizations.map((o) => o.name) } }));
   }
