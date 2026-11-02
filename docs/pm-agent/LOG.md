@@ -1617,3 +1617,9 @@
 - New worker task links:<id> (open schools): merges org-links-<short>.csv into the live groups once a week, only groups that gain a link. One small patch per week — no Railway cost to speak of.
 - Spot check clubs: 5 new Berkeley sites (Bike Builders, Space Enterprise, Formula Electric, Codebase, ASCE) — name on the page 5/5.
 - Spot check classes: LS 198, MBN 210, LANPRO 380, JEWISH 175E, STS C200 — first pass failed because classes.berkeley.edu took ~35 s per page (my 20 s timeout); re-checked with 90 s: time and room 5/5. Not a data problem.
+
+## 2026-11-02 20:33 UTC — routine run
+- Live check: links:s_berkeley applied at 19:46 — 52 Berkeley groups gained public links in the app.
+- Queue (Berkeley links): Cal RecWell sport club pages (recwell.berkeley.edu/essential_grid/<team>) are official public team pages; each links the team's CalLink slug, which equals our org id → 22 club sports matched exactly (Boxing, Fencing, Ice Hockey, Triathlon, Pie Queens, Club Volleyball…), with their own sites/Facebook where listed. Chemistry page → AIChE; Haas page → HBSA. Haas's 16 sponsored orgs and the Black RSO list (cejce) have names only. recsports.berkeley.edu is not allowed in this session's network (old host; recwell.berkeley.edu works).
+- Worker: links:<id> now re-merges as soon as the CSV row count changes (not only weekly).
+- Spot check clubs: Badminton (RecWell), Space Enterprise, Combat Robotics, Launchpad, AIChE — 5/5 OK. Courses: UC Davis PUL 475, ECS 289B, MGP 206; SFSU MATH 686, MUS 376 — 5/5.

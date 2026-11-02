@@ -321,9 +321,12 @@ async function runSchool(row: SchoolRow, listed = true): Promise<AgentRun[]> {
   }
   // 2c. 손으로 확인한 공개 링크 (server/data/org-links-<short>.csv) — 학교 로그인 디렉터리(CalLink) 대신 공식·공개 링크를 붙인다. 7일마다, 바뀐 단체만 (2026-11-02)
   const linkCsv = path.join(DATA_DIR, `org-links-${row.short}.csv`);
-  if (existsSync(linkCsv) && due(`links:${row.id}`, latest.get(`links:${row.id}`)?.finishedAt, 24 * 7)) {
+  // 파일 줄 수가 지난번과 다르면(새로 확인한 링크가 생기면) 7일을 기다리지 않고 바로
+  const linkRows = existsSync(linkCsv) ? parseCSV(readFileSync(linkCsv, 'utf8')) as unknown as { org_id: string; label: string; url: string }[] : [];
+  const lastLinks = latest.get(`links:${row.id}`);
+  if (linkRows.length && (due(`links:${row.id}`, lastLinks?.finishedAt, 24 * 7) || lastLinks?.summary.rows !== linkRows.length)) {
     const startedAt = new Date().toISOString();
-    const extra = parseCSV(readFileSync(linkCsv, 'utf8')) as unknown as { org_id: string; label: string; url: string }[];
+    const extra = linkRows;
     const orgs = ((await store.loadSnapshot())?.organizations ?? []).filter((o) => o.schoolId === row.id);
     const organizations = orgs.flatMap((o) => {
       const add = extra.filter((x) => x.org_id === o.id && x.url && !o.links?.some((l) => l.url === x.url || (l.label === x.label && x.label !== 'Website'))).map((x) => ({ label: x.label, url: x.url }));
