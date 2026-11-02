@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-11-02 · 사장님 요청 — 유학생 대학원생도 지원 가능한 것
+- 추가: Jane Street Graduate Research Fellowship(2026/11/13 AoE, 박사 $50k+등록금, “International students are eligible” 공식 명시), P.E.O. International Peace Scholarship(유학생 여성 대학원생, 최대 $12,500, “12월 15일까지” — 연도 표기 없어 날짜 미정).
+- 버클리 펠로십 중 페이지에 ‘모든 대학원생’/유학생 대상이 분명한 것만 ‘international students’ 태그: Chowdhury, Philip Brett, Guru Gobind Singh, Soong. (명시 없는 것은 짐작해 달지 않음; Lurcy·Mentored Research Award 는 시민·영주권자 전용으로 페이지에 적혀 있음)
+- 장학금·연구 탭에 “유학생 가능 N” 칩(해당 태그가 있을 때만 보임). 259 통과, 빌드·화면 오류 0.
+- 넣지 않음: Google PhD Fellowship(학교 추천, 2027 일정 공식 없음), Microsoft PhD Fellowship(중단), Two Sigma(페이지 비공개), AAUW International(2027 일정 없음).
+
 ## 2026-11-02 · 사장님 요청 — 대학원생 연구 기회
 - 공식 페이지 확인 후 추가(연구 칸): LLNL Data Science Summer Institute(2027/1/15, 대학원·학부 고학년), Los Alamos Dynamics Summer School(1차 11/14, 최종 2027/1/2 5PM MST, 3·4학년·대학원 1년차), LANL Remote Sensing Summer School(2027/1/10, 대학원생만, 유급).
 - 이미 있는 NASA OSTEM(3/1)·Berkeley Lab Computing Sciences 는 대학원생에게도 보임(대상 ‘모두’ 확인).

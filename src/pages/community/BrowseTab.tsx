@@ -38,6 +38,7 @@ export function readBrowseParams(params: URLSearchParams): { sub: BrowseChip; ki
 type Sort = 'foryou' | 'deadline' | 'newest';
 const PAGE = 30;
 const en = lang === 'en';
+const isIntlOk = (o: Opportunity) => o.tags.some((t) => /^international students$/i.test(t));
 const BADGE_TONE = { urgent: 'bg-danger text-white', soon: 'bg-danger/10 text-danger', normal: 'bg-primary-soft text-primary', muted: 'bg-surface-2 text-ink-3' } as const;
 const EVENT_KIND_LABEL: Record<EventKind, string> = { talk: en ? 'Talks' : '세미나·강연', social: en ? 'Social' : '소셜', career: en ? 'Career' : '커리어', free_food: en ? 'Free food' : '무료 음식' };
 const CLUB_KINDS: { key: '' | Organization['type'] | 'mine'; label: string }[] = [
@@ -193,6 +194,8 @@ function ListingList({ sub, kind, field, region, sort, setQ, rows, grad, savedId
     let xs = inChip;
     if (sub === 'event' && kind) xs = xs.filter((r) => eventKindsOf(r.o).includes(kind as EventKind));
     if (sub === 'internship' && kind === 'phd') xs = xs.filter((r) => audienceOf(r.o) === 'grad');
+    // 유학생 가능 — 공식 페이지에 유학생·‘모든 대학원생’ 이라고 적힌 것만 이 태그를 단다(짐작하지 않는다)
+    if ((sub === 'scholarship' || sub === 'research') && kind === 'intl') xs = xs.filter((r) => isIntlOk(r.o));
     if (field) xs = xs.filter((r) => listingField(r.o) === field);
     if (region) xs = xs.filter((r) => regionsOf(r.o).includes(region as Region));
     const when = (o: Opportunity) => `${o.date ?? o.deadline ?? '9999'} ${o.startTime ?? ''}`;
@@ -217,12 +220,17 @@ function ListingList({ sub, kind, field, region, sort, setQ, rows, grad, savedId
   const hostOrg = useMemo(() => orgLinker(orgs), [orgs]);
   const labs = useMemo(() => (sub === 'research' ? orgs.filter((o) => o.type === 'lab' && o.schoolId === (me.affiliation.type === 'university' ? me.affiliation.schoolId : '')) : []), [sub, orgs, me]);
   const showSort = sub === 'internship' || sub === 'research' || sub === 'scholarship' || sub === 'hackathon';
+  const intlCount = (sub === 'scholarship' || sub === 'research') ? inChip.filter((r) => isIntlOk(r.o)).length : 0;
 
   return (
     <div>
       {sub === 'internship' && grad && <div className="flex gap-1.5 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2">
         <Chip size="sm" active={kind !== 'phd'} onClick={() => setQ({ kind: '' })}>{en ? 'All internships' : '전체 인턴'}</Chip>
         <Chip size="sm" active={kind === 'phd'} onClick={() => setQ({ kind: 'phd' })}>{en ? 'PhD/MS internships' : '대학원 인턴'}</Chip>
+      </div>}
+      {intlCount > 0 && <div className="flex gap-1.5 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2">
+        <Chip size="sm" active={kind !== 'intl'} onClick={() => setQ({ kind: '' })}>{en ? 'All' : '전체'}</Chip>
+        <Chip size="sm" active={kind === 'intl'} onClick={() => setQ({ kind: 'intl' })}>{en ? `International students OK ${intlCount}` : `유학생 가능 ${intlCount}`}</Chip>
       </div>}
       {eventKinds.length > 0 && <div className="flex gap-1.5 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2">
         <Chip size="sm" active={!kind} onClick={() => setQ({ kind: '' })}>{en ? 'All events' : '전체 행사'}</Chip>
