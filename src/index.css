@@ -118,6 +118,23 @@ body {
   body { background: #EEF0EA; }
   [data-design="v2"] body { background: #000000; }
 }
+/* 노트북·데스크톱: 폰 폭 앱 뒤 배경 — 빈 검은 화면이 아니라 일부러 둔 틀로 보이게 (AppShell) */
+@media (min-width: 1024px) {
+  body {
+    background:
+      radial-gradient(900px 600px at 18% 20%, rgb(15 43 72 / .10), transparent 70%),
+      radial-gradient(800px 600px at 85% 85%, rgb(253 181 21 / .14), transparent 70%),
+      radial-gradient(circle at 1px 1px, rgb(15 43 72 / .10) 1px, transparent 0) 0 0 / 22px 22px,
+      #EEF0EA;
+  }
+  [data-design="v2"] body {
+    background:
+      radial-gradient(900px 640px at 15% 18%, rgb(255 61 168 / .16), transparent 70%),
+      radial-gradient(800px 600px at 88% 86%, rgb(212 255 58 / .09), transparent 70%),
+      radial-gradient(circle at 1px 1px, rgb(255 255 255 / .06) 1px, transparent 0) 0 0 / 22px 22px,
+      #000000;
+  }
+}
 
 * { box-sizing: border-box; }
 button { cursor: pointer; }
