@@ -1596,3 +1596,8 @@
 - Queue: 5 more Stanford official sites (Marching Band lsjumb.stanford.edu, BASES, Ram's Head, Debate Society, Stanford Finance) → org-links-stanford.csv; Stanford now 12/733 with a public site. No official page found for Korean-American Student Association and Gospel Choir (skipped, not guessed).
 - Spot check 5 clubs (UCSC KGD, SCU Sunrise, USF Society of Architecture Students, SFSU Journalism Club, UC Davis Imani Clinic): 4/4 found on their official public lists; UC Davis's list needs login, so only its links are checkable (none for this club).
 - Spot check 5 courses (UC Davis ANS 099, GEO 200DN, NAS 110D; SFSU ITEC 711, ENGR 694): code and title match the official catalogs 5/5.
+
+## 2026-11-02 17:03 UTC — routine run
+- Queue (Stanford links): faster route — official Stanford pages that list student groups with links (engineering.stanford.edu, cs, me, msande, explore-energy). Exact-name match against our 733, then reviewed by hand: 20 added (SWE, Tau Beta Pi, TreeHacks, Student Space Initiative, Women in CS, Stanford in Government, Energy Club…). Rejected 5 matches that pointed at a center (nacc), a national body (asce.org), a general GSB page, a program page, and a duplicate. Stanford now 32/733 with a public site.
+- Spot check clubs (5 new Stanford links): 2 confirmed on the page; 2 sites render only by script (Notion, WiCS) and 1 not reachable from the container — kept because the listing page is official.
+- Spot check classes (Berkeley ARESEC 201, GWS 10, DEVP 230, UGBA 135, ECON C270A): time and room 5/5.
