@@ -221,7 +221,8 @@ function PhotoHero({ user }: { user: User }) {
       {photos.length > 1 && <div className="absolute top-[60px] inset-x-4 flex gap-1">{photos.map((_, i) => <span key={i} className={cn('h-[3px] flex-1 rounded-full', i === pi ? 'bg-white' : 'bg-white/40')} />)}</div>}
       {user.avatar.photoType !== 'face' && <span className="absolute top-[72px] left-4 rounded-full bg-black/35 backdrop-blur text-[11px] px-2.5 py-1">{user.avatar.photoType === 'masked' ? t('얼굴 비공개') : t('뒷모습')}</span>}
       <div className="absolute inset-x-0 bottom-0 p-5 pb-12 pointer-events-none">
-        <div className="flex items-end gap-2"><h1 className="font-display text-[40px] leading-none font-bold">{user.nickname}</h1><span className="text-[22px] font-display opacity-80 leading-none pb-0.5">{new Date().getFullYear() - user.birthYear + 1}</span></div>
+        {/* 나이는 보여주지 않는다 — 출생 연도는 본인만 본다 (@core/lib/privacy OWNER_ONLY_KEYS) */}
+        <h1 className="font-display text-[40px] leading-none font-bold">{user.nickname}</h1>
         <div className="mt-1.5 text-[13px] opacity-90">{affiliationText(user)}</div>
       </div>
     </div>

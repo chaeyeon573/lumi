@@ -1,19 +1,20 @@
 import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SlidersHorizontal, X, Clock, Zap, Bookmark, BadgeCheck, Hand, RotateCcw, CalendarDays, Users } from 'lucide-react';
+import { SlidersHorizontal, X, Clock, Zap, Bookmark, BadgeCheck, RotateCcw, CalendarDays, Users, ChevronRight } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { LAST_SEEN_KEY } from '@/components/layout/BottomNav';
 import { CardSkeleton, EmptyState, ErrorState, Button, BottomSheet, Chip } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
-import { api } from '@core/api';
 import { INTEREST_LABELS, GOAL_LABELS, ALL_INTERESTS, ALL_GOALS } from '@core/lib/labels';
 import { commonInterests } from '@core/lib/relations';
 import { matchScore, shareableReasons, type Reason } from '@core/lib/recommend';
 import { sharedClassWith } from '@core/lib/classmates';
 import { statusNow, freeBlocks, todayIdx, nowMin, fmtBlock, toMin } from '@core/lib/timetable';
 import { formatDate, formatTime, todayISO } from '@core/lib/format';
+import { hiContext, yearMajor } from '@core/lib/sayhi';
+import { SayHiButton } from '@/components/people/SayHi';
 import { JoinButton } from '@/components/cards/JoinButton';
 import { assetUrl } from '@/lib/assets';
 import { cn } from '@core/lib/cn';
@@ -25,15 +26,18 @@ const EMPTY: Filters = { years: [], sameDept: false, sameClass: false, freeNow: 
 /** 몇 학년인지 — 학년은 가을(8월)에 바뀐다. 달력 연도로 세면 1~7월에 한 학년 높게 나왔다 */
 const academicYear = (d = new Date()) => (d.getMonth() >= 7 ? d.getFullYear() : d.getFullYear() - 1);
 const yearOf = (u: User) => (u.affiliation.type === 'university' ? Math.min(4, Math.max(1, academicYear() - u.affiliation.year + 1)) : 0);
-const gradYear = (u: User) => (u.affiliation.type === 'university' ? `'${String(u.affiliation.year + 4).slice(2)}` : '');
 
-/** 사람 — 한 번에 한 명. 카드를 끌어 왼쪽=넘기기, 오른쪽=친구로 연결 (Pastel Breeze) */
+/**
+ * 사람 — 한 번에 한 명 (사장님이 고른 덱). 데이팅 앱처럼 보이지 않게 (PRODUCT_TASTE, ux-sim 2026-11-02 — 7명 중 5명이 데이팅 앱 같다고 함):
+ * - 큰 버튼은 'Say hi' — 둘이 함께 가진 것(같은 수업 등)으로 시작하는 첫 메시지 (@core/lib/sayhi). 하트·연결 도장 없음
+ * - 참가는 그 사람의 계획 칸 안에서 "Join · 2 spots left" — 무엇에 끼는지가 바로 위에 보인다. 열린 계획이 없으면 칸도 없다
+ * - 넘기기(끌기·→)는 다음 사람으로만 — 넘기다가 친구 요청이 나가지 않는다 (친구 요청은 프로필에서)
+ */
 export function HomePage() {
   const nav = useNavigate();
   const status = useAppStore((s) => s.status);
   const error = useAppStore((s) => s.error);
   const init = useAppStore((s) => s.init);
-  const run = useAppStore((s) => s.run);
   const opps = useAppStore((s) => s.opportunities);
   const intents = useAppStore((s) => s.opportunityIntents);
   const v = useViewer();
@@ -69,19 +73,15 @@ export function HomePage() {
   const current = cards[idx];
   try { if (current) localStorage.setItem(LAST_SEEN_KEY, current.u.id); } catch { /* */ }
 
-  const connect = async (u: User, openIfConnected = true) => {
-    if (v.isFriend(u.id) || v.pendingOut(u.id)) { if (openIfConnected) nav(`/users/${u.id}`); return; }
-    try { await run(() => api.relationships.sendFriendRequest(me.id, u.id), `${u.nickname}${t('님에게 친구 요청을 보냈어요.')}`); } catch { /* */ }
-  };
   const reset = () => { setIdx(0); setReturning(false); };
-  const onSwipe = (dir: Dir) => {
+  const onSwipe = () => {
     if (!current) return;
-    if (dir === 'right') void connect(current.u, false);
     setReturning(false); setIdx((i) => i + 1);
   };
   const undo = () => { if (idx > 0) { setReturning(true); setIdx((i) => i - 1); } };
   const deck = useRef<DeckHandle>(null);
   const invite = useInvite();
+  const hi = current ? hiContext(me, current.u, { rosters: v.snap.classRosters, canSeeTimetable: v.canSeeField(current.u, 'timetable') }) : null;
   const chips: { key: string; label: string; clear: () => void }[] = [
     ...f.years.map((y) => ({ key: `y${y}`, label: yearLabel(y), clear: () => setF({ ...f, years: f.years.filter((x) => x !== y) }) })),
     ...(f.sameDept ? [{ key: 'dept', label: t('같은 학과'), clear: () => setF({ ...f, sameDept: false }) }] : []),
@@ -112,12 +112,11 @@ export function HomePage() {
       ) : (
         <div className="flex-1 min-h-0 flex flex-col">
           <SwipeDeck ref={deck} key={`${idx}`} top={current} next={cards[idx + 1]} returning={returning} onSwipe={onSwipe} onOpen={(u) => nav(`/users/${u.id}`)} />
-          <div className="shrink-0 pt-4 pb-7 flex flex-col items-center gap-3">
-            <div className="flex items-center gap-5">
+          <div className="shrink-0 pt-4 pb-6 flex flex-col items-center gap-2.5">
+            <div className="flex items-center gap-3">
               <button onClick={undo} disabled={idx === 0} aria-label={lang === 'en' ? 'Previous' : '이전 카드'} className="h-11 w-11 rounded-full grid place-items-center press bg-surface-2 text-ink-2 disabled:opacity-40"><RotateCcw size={18} /></button>
-              <button onClick={() => deck.current?.fly('left')} aria-label={t('넘기기')} className="h-[68px] w-[68px] rounded-full grid place-items-center press bg-surface-2 text-ink-2"><X size={28} /></button>
-              {current.plan && current.plan.hostId !== me.id ? <JoinButton activity={current.plan} size="lg" label={lang === 'en' ? "I'm in" : '나도 갈래'} className="h-[68px] px-7 rounded-full text-[16px]" />
-              : <button onClick={() => (v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? nav(`/users/${current.u.id}`) : deck.current?.fly('right'))} aria-label={t('친구로 연결')} className={cn('h-[84px] w-[84px] rounded-full grid place-items-center press shadow-[0_12px_28px_-6px_rgba(15,43,72,.35)]', v.isFriend(current.u.id) || v.pendingOut(current.u.id) ? 'bg-primary text-white' : 'bg-accent text-primary v2:bg-lime-400 v2:text-night v2:shadow-[0_12px_28px_-8px_rgba(212,255,58,.35)]')}><Hand size={32} /></button>}
+              {hi && <SayHiButton key={current.u.id} user={current.u} hi={hi} />}
+              <button onClick={() => deck.current?.fly('left')} aria-label={lang === 'en' ? 'Next person' : '다음 사람'} className="h-14 w-14 rounded-full grid place-items-center press bg-surface-2 text-ink-2"><ChevronRight size={26} /></button>
               <button onClick={() => setSaved((s) => tog(s, current.u.id))} aria-label={t('나중에 보기')} className={cn('h-11 w-11 rounded-full grid place-items-center press', saved.includes(current.u.id) ? 'bg-primary text-white' : 'bg-surface-2 text-primary')}><Bookmark size={18} fill={saved.includes(current.u.id) ? 'currentColor' : 'none'} /></button>
             </div>
             <p className="text-[12px] text-ink-3">{idx + 1} / {cards.length}</p>
@@ -146,8 +145,8 @@ interface DeckHandle { fly: (dir: Dir) => void }
 type Card = { u: User; reasons: Reason[]; plan?: Activity };
 const FLY_MS = 280;
 
-/** 카드 덱 — 맨 위 카드를 끌면 기울며 따라오고, 임계값을 넘겨 놓으면 날아간다. 뒤 카드는 끄는 만큼 커진다. */
-const SwipeDeck = forwardRef<DeckHandle, { top: Card; next?: Card; returning: boolean; onSwipe: (dir: Dir) => void; onOpen: (u: User) => void }>(function SwipeDeck({ top, next, returning, onSwipe, onOpen }, ref) {
+/** 카드 덱 — 맨 위 카드를 끌면 기울며 따라오고, 임계값을 넘겨 놓으면 날아가 다음 사람이 나온다 (어느 쪽이든 '다음'). 뒤 카드는 끄는 만큼 커진다. */
+const SwipeDeck = forwardRef<DeckHandle, { top: Card; next?: Card; returning: boolean; onSwipe: () => void; onOpen: (u: User) => void }>(function SwipeDeck({ top, next, returning, onSwipe, onOpen }, ref) {
   const box = useRef<HTMLDivElement>(null);
   const start = useRef<{ x: number; y: number } | null>(null);
   const moved = useRef(false);
@@ -165,7 +164,7 @@ const SwipeDeck = forwardRef<DeckHandle, { top: Card; next?: Card; returning: bo
     flown.current = true;
     setFlying(dir); setDragging(false);
     setD({ x: (dir === 'right' ? 1 : -1) * width() * 1.5, y: dRef.current.y + 40 });
-    window.setTimeout(() => onSwipe(dir), FLY_MS);
+    window.setTimeout(onSwipe, FLY_MS);
   };
   useImperativeHandle(ref, () => ({ fly }));
 
@@ -200,7 +199,6 @@ const SwipeDeck = forwardRef<DeckHandle, { top: Card; next?: Card; returning: bo
   }, [dragging]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const progress = Math.min(1, Math.abs(d.x) / threshold());
-  const stamp = d.x > 0 ? 'right' : d.x < 0 ? 'left' : null;
   return (
     <div ref={box} className="relative flex-1 min-h-0 mx-4">
       {next && (
@@ -215,32 +213,30 @@ const SwipeDeck = forwardRef<DeckHandle, { top: Card; next?: Card; returning: bo
         onClickCapture={(e) => { if (moved.current) { e.stopPropagation(); moved.current = false; } }}
       >
         <PersonSlide user={top.u} reasons={top.reasons} plan={top.plan} onOpen={() => onOpen(top.u)} />
-        {stamp && (
-          <span className={cn('pointer-events-none absolute top-16 px-4 py-1.5 rounded-xl border-[3px] text-[22px] font-extrabold tracking-wide bg-white/10 backdrop-blur-sm', stamp === 'right' ? 'left-6 -rotate-12 border-accent text-accent' : 'right-6 rotate-12 border-white text-white')} style={{ opacity: progress }}>
-            {stamp === 'right' ? (lang === 'en' ? 'CONNECT' : '연결') : (lang === 'en' ? 'PASS' : '넘기기')}
-          </span>
-        )}
       </div>
     </div>
   );
 });
 
-/** 카드: 사진 전체 + 아래 그라데이션 위에 이름·학과·찾는 것·칩 3개 */
+/**
+ * 카드: 위쪽에 얼굴 사진(카드의 40% 남짓 — 얼굴은 보이되 카드를 다 덮지 않는다), 아래에 이름 · 학년·전공(나이 대신),
+ * 둘이 함께 가진 것 한 줄, 그 사람의 열린 계획 칸(안에 Join 버튼), 관심사 칩.
+ */
 export function PersonSlide({ user, reasons, plan, onOpen }: { user: User; reasons: Reason[]; plan?: Activity; onOpen: () => void }) {
   const v = useViewer();
   const [pi, setPi] = useState(0);
   const photos = user.photos?.length ? user.photos : user.avatar.url ? [user.avatar.url] : [];
   const common = commonInterests(v.me, user);
   const want = v.canSeeField(user, 'prompts') && user.prompts?.[0]?.answer ? user.prompts[0].answer : user.nowWant;
-  // 말을 꺼낼 이유 한 줄 — 같은 수업·겹치는 공강·같은 생활권처럼 둘이 함께 가진 것 (관심사는 아래 칩에 이미 있다)
-  const ground = shareableReasons(reasons).find((r) => r.kind !== 'interest' && r.kind !== 'new');
   const reason = shareableReasons(reasons)[0];
+  const canSeeTT = !!user.timetable?.length && v.canSeeField(user, 'timetable');
+  // 말을 꺼낼 이유 한 줄 — 같은 수업·겹치는 공강·같은 학과처럼 둘이 함께 가진 것. 'Say hi' 초안과 같은 문장 (@core/lib/sayhi)
+  const shared = hiContext(v.me, user, { rosters: v.snap.classRosters, canSeeTimetable: canSeeTT }).line;
   const left = plan ? plan.capacity - v.approvedCount(plan.id) : 0;
   // 이미 시작한 계획(11시~5시 동아리 부스)은 'Today 11 AM' 이면 지난 것처럼 보인다 → '지금 · 5시까지'
   const started = !!plan && plan.date === todayISO() && toMin(plan.startTime) <= nowMin();
   const planWhen = !plan ? '' : started ? (lang === 'en' ? `Now · until ${formatTime(plan.endTime)}` : `지금 · ${formatTime(plan.endTime)}까지`) : `${formatDate(plan.date)} ${formatTime(plan.startTime)}`;
-  const dept = user.affiliation.type === 'university' && user.affiliation.showDepartment ? user.affiliation.department : '';
-  const canSeeTT = !!user.timetable?.length && v.canSeeField(user, 'timetable');
+  const spots = left > 0 && left <= 10 ? (lang === 'en' ? `${left} spot${left === 1 ? '' : 's'} left` : `${left}자리 남음`) : '';
   const st = canSeeTT ? statusNow(user.timetable ?? []) : null;
   const block = canSeeTT ? freeBlocks(user.timetable ?? [], todayIdx()).find((b) => b.end > nowMin()) : null;
   // 지금 비어 있으면 ‘지금 → 다음 수업’ — 아침 9시 전에 “free 9 AM–11 AM”(시간표 칸 시작) 으로 보이거나,
@@ -254,26 +250,31 @@ export function PersonSlide({ user, reasons, plan, onOpen }: { user: User; reaso
     else onOpen();
   };
   return (
-    <article className="relative h-full w-full rounded-[32px] overflow-hidden bg-primary text-[#fff] select-none shadow-[0_16px_36px_-6px_rgba(15,43,72,.12)] v2:bg-surface v2:border v2:border-line v2:shadow-none">
-      <div className="absolute inset-0" onClick={tap}>
-        {photos.length > 0 ? <img src={assetUrl(photos[pi])} alt="" className="absolute inset-0 h-full w-full object-cover" draggable={false} /> : <span className="absolute inset-0 grid place-items-center text-[96px]">{user.avatar.emoji}</span>}
-        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(15,43,72,.88)_0%,rgba(15,43,72,.25)_45%,rgba(15,43,72,0)_70%)] v2:bg-[linear-gradient(to_top,rgba(8,7,12,.95)_0%,rgba(8,7,12,.45)_45%,rgba(8,7,12,0)_70%)]" />
+    <article className="relative h-full w-full rounded-[28px] overflow-hidden bg-surface text-ink select-none flex flex-col border border-line shadow-[0_16px_36px_-10px_rgba(15,43,72,.18)] v2:shadow-none">
+      <div className="relative shrink-0 h-[40%] min-h-[150px] bg-surface-2" onClick={tap} style={photos.length ? undefined : { background: `linear-gradient(135deg, hsl(${user.avatar.hue} 60% 78%), hsl(${(user.avatar.hue + 40) % 360} 55% 64%))` }}>
+        {photos.length > 0 ? <img src={assetUrl(photos[pi])} alt="" className="absolute inset-0 h-full w-full object-cover object-[50%_30%]" draggable={false} /> : <span className="absolute inset-0 grid place-items-center text-[72px]">{user.avatar.emoji}</span>}
+        {photos.length > 1 && <div className="absolute top-2.5 inset-x-4 flex gap-1">{photos.map((_, i) => <span key={i} className={cn('h-[3px] flex-1 rounded-full', i === pi ? 'bg-white' : 'bg-white/45')} />)}</div>}
+        {freeLabel && <span className="absolute bottom-3 left-3 h-8 pl-3 pr-3.5 rounded-full bg-[#fff]/90 backdrop-blur text-primary text-[12px] font-semibold flex items-center gap-1.5 v2:bg-lime-900/90 v2:text-lime-400 v2:border v2:border-lime-800"><Clock size={14} className="text-verify v2:text-lime-400" />{freeLabel}</span>}
+        {user.sample && <span className="absolute top-5 left-3 h-6 px-2.5 rounded-full bg-black/45 backdrop-blur text-white text-[11px] font-semibold flex items-center">{lang === 'en' ? 'Sample profile' : '예시 프로필'}</span>}
+        {!user.sample && user.affiliation.type === 'university' && user.affiliation.emailVerified && <span className="absolute top-5 right-3 h-8 w-8 rounded-full bg-[#fff]/85 backdrop-blur grid place-items-center v2:bg-surface/85"><BadgeCheck size={16} className="text-verify" /></span>}
       </div>
-      {photos.length > 1 && <div className="absolute top-3 inset-x-4 flex gap-1">{photos.map((_, i) => <span key={i} className={cn('h-[3px] flex-1 rounded-full', i === pi ? 'bg-white' : 'bg-white/40')} />)}</div>}
-      {freeLabel && <span className="absolute top-6 left-4 h-8 pl-3 pr-3.5 rounded-full bg-[#fff]/85 backdrop-blur text-primary text-[12px] font-semibold flex items-center gap-1.5 v2:bg-lime-900/90 v2:text-lime-400 v2:border v2:border-lime-800"><Clock size={14} className="text-verify v2:text-lime-400" />{freeLabel}</span>}
-      {!user.sample && user.affiliation.type === 'university' && user.affiliation.emailVerified && <span className="absolute top-6 right-4 h-8 w-8 rounded-full bg-[#fff]/85 backdrop-blur grid place-items-center v2:bg-surface/85"><BadgeCheck size={16} className="text-verify" /></span>}
-      <div className="absolute inset-x-0 bottom-0 p-6 pointer-events-none">
-        {user.sample && <span className="inline-flex mb-1.5 h-6 px-2.5 rounded-full bg-white/20 backdrop-blur text-[11px] font-semibold items-center">{lang === 'en' ? 'Sample profile' : '예시 프로필'}</span>}
-        <div className="flex items-baseline gap-2"><h2 className="font-display text-[30px] leading-tight font-bold v2:font-extrabold v2:text-[28px]">{user.nickname}</h2><span className="text-[22px] opacity-90 v2:font-display v2:text-[20px] v2:opacity-60">{new Date().getFullYear() - user.birthYear + 1}</span></div>
-        <div className="text-[15px] text-accent v2:text-ink-2 v2:text-[14px]">{dept}{gradYear(user) ? ` • ${user.affiliation.type === 'university' && user.affiliation.showSchool && user.affiliation.schoolName ? user.affiliation.schoolName.replace(/대학교|University|UC /g, '').trim() : ''} ${gradYear(user)}` : ''}</div>
+      <div className="flex-1 min-h-0 px-5 pt-4 pb-5 flex flex-col gap-3 overflow-hidden" onClick={onOpen}>
+        <div className="min-w-0">
+          <h2 className="font-display text-[22px] leading-tight font-bold text-primary truncate v2:text-ink">{user.nickname}</h2>
+          <div className="text-[13.5px] text-ink-2 truncate">{yearMajor(user)}</div>
+        </div>
+        {shared && <div className="flex items-center gap-1.5 text-[14px] font-semibold text-primary v2:text-lime-400"><Users size={16} className="shrink-0" /><span className="truncate">{shared}</span></div>}
         {plan ? (
-          <div className="mt-2.5 rounded-2xl bg-white/15 backdrop-blur px-3.5 py-2.5 v2:bg-pink-900/90 v2:border v2:border-pink-800">
-            <div className="flex items-center gap-2 text-[14px] font-semibold"><CalendarDays size={15} className="text-accent shrink-0 v2:text-pink-300" /><span className="truncate">{plan.title}</span></div>
-            <div className="mt-0.5 pl-[23px] text-[12px] opacity-85 truncate">{[planWhen, plan.place.name, left > 0 && left <= 10 ? (lang === 'en' ? `${left} spot${left === 1 ? '' : 's'} left` : `${left}자리 남음`) : ''].filter(Boolean).join(' · ')}</div>
+          <div className="rounded-2xl bg-primary-soft px-3.5 py-3 v2:bg-pink-900/90 v2:border v2:border-pink-800" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center gap-2 text-[16px] font-bold text-primary v2:text-ink"><CalendarDays size={16} className="shrink-0 v2:text-pink-300" /><span className="truncate">{plan.title}</span></div>
+            <div className="mt-0.5 pl-6 text-[12.5px] text-ink-2 truncate">{[planWhen, plan.place.name].filter(Boolean).join(' · ')}</div>
+            {/* 무엇에 끼는지 바로 위에 보이는 자리에서 — "I'm in" 이 무슨 뜻인지 모르겠다던 버튼 (ux-sim 2026-11-02) */}
+            <div className="mt-2.5" onPointerDown={(e) => e.stopPropagation()}>
+              <JoinButton activity={plan} size="md" className="w-full rounded-full" label={lang === 'en' ? `Join${spots ? ` · ${spots}` : ''}` : `참여하기${spots ? ` · ${spots}` : ''}`} />
+            </div>
           </div>
-        ) : (want || reason) && <div className="mt-2.5 inline-flex items-center gap-2 max-w-full h-9 px-3.5 rounded-full bg-white/15 backdrop-blur text-[13px] font-medium v2:bg-pink-900/90 v2:border v2:border-pink-800"><Zap size={15} className="text-accent shrink-0 v2:text-pink-300" /><span className="truncate">{want ?? reason?.text}</span></div>}
-        {ground && (plan || want) && <div className="mt-2 flex items-center gap-1.5 text-[12.5px] font-medium opacity-90"><Users size={14} className="shrink-0 text-accent v2:text-lime-400" /><span className="truncate">{ground.text}</span></div>}
-        <div className="mt-3 flex flex-wrap gap-1.5">{(common.length ? common : user.interests ?? []).slice(0, 3).map((i) => <span key={i} className="h-8 px-3.5 rounded-full bg-primary-soft text-primary text-[12px] font-semibold flex items-center v2:bg-surface-2/90 v2:text-ink v2:border v2:border-line">{INTEREST_LABELS[i]}</span>)}</div>
+        ) : (want || reason) && <div className="flex items-center gap-2 text-[14px] text-ink-2"><Zap size={15} className="text-primary shrink-0 v2:text-pink-300" /><span className="line-clamp-2">{want ?? reason?.text}</span></div>}
+        <div className="flex flex-wrap gap-1.5 mt-auto">{(common.length ? common : user.interests ?? []).slice(0, 3).map((i) => <span key={i} className="h-8 px-3.5 rounded-full bg-surface-2 text-ink-2 text-[12px] font-semibold flex items-center border border-line">{INTEREST_LABELS[i]}</span>)}</div>
       </div>
     </article>
   );
