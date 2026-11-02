@@ -1,5 +1,7 @@
 # PM agent 질문함
 
+> 2026-11-02 사장님: **디자인 비교 알약(Classic ⇄ New)은 그대로 둔다**(10/30 ‘알약 없애기’ 취소) — 되살림. 그 밖의 대기 변경은 배포 허락(1회).
+
 사장님께 결정을 받아야 하는 것. 최신이 위. 답은 각 항목 아래에 `**답:** …` 으로 적어 주시면 다음 실행이 따른다.
 
 ## 2026-10-31 · 사진 올리기를 만들었는데 — 개인정보처리방침 문장 하나를 바꿔야 배포할 수 있어요
@@ -7,6 +9,7 @@
 **걸리는 것:** 개인정보처리방침(src/pages/legal/LegalPages.tsx) “What we don't collect” 에 “Lumi doesn't read your device's … photos, camera …” 가 있다 — 사진 올리기가 배포되면 사실과 다르다. 법 문서라 제가 혼자 고치지 않았다.
 **제안 문구:** ① “What you create and do” 에 “Photos you choose to attach to a post. We shrink them and remove location data (EXIF) on your device before upload.” 추가 ② “What we don't collect” 의 “photos, camera” 를 “your photo library (only the photos you pick are uploaded), camera” 로 ③ 계정 삭제 문단에 “and photos you uploaded” 추가 ④ Last updated 날짜.
 **선택:** A) 이 문구로 고치고 사진 올리기와 같이 배포(추천) B) 문구를 사장님이 직접 C) 사진 올리기는 배포에서 빼고 나중에.
+**답(11/2):** A. → 방침 4곳 고침(Last updated November 2, 2026) + 배포. 단 iPhone 앱은 사진·카메라 권한 문구가 없어 사진 고르기에서 앱이 꺼질 수 있으므로, 앱을 문구와 함께 다시 빌드하기 전까지 사진 칸은 웹에서만.
 
 ## 2026-10-25 · 내일 수강신청 시작인데 Discover 에는 안 보인다
 **무엇이 어색한가:** 내일(10/26 월) 버클리 Spring 2027 **Phase 1 수강신청 시작**(D-1)이다. 학사 일정은 Me 화면 ‘Key dates’ 와 /academic-calendar 에만 있고, 학생이 가장 자주 여는 Discover·People 에는 안 보인다. 수강신청은 Lumi 의 좌석 알림(/seats)·같은 수업 친구와 바로 이어지는 순간이다.
