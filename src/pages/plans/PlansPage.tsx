@@ -107,7 +107,7 @@ export function PlansPage() {
           {/* 제목이 이미 수업 번호로 시작하면(‘UGBA 105 project crew’) 같은 말을 또 붙이지 않는다 — 제목이 잘린다 */}
           {crews.map((a) => <Row key={a.id} a={a} right={a.title.startsWith(a.courseName!.split(' ').slice(0, 2).join(' ')) ? <span /> : <Tag tone="primary" className="h-5 max-w-full"><span className="truncate">{a.courseName}</span></Tag>} />)}
         </Section>
-        <div className="flex gap-2"><Button full variant="outline" onClick={() => nav('/timetable')}>{t('내 시간표')}</Button><Button full onClick={() => nav('/discover')}>{t('활동 찾기')}</Button></div>
+        <div className="flex gap-2"><Button full variant="outline" onClick={() => nav('/timetable')}>{t('내 시간표')}</Button><Button full onClick={() => nav('/meet')}>{t('활동 찾기')}</Button></div>
       </div>
     </div>
   );

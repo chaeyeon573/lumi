@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-11-02 · 사장님 시안 — 홈·탐색 개편 (AroundU)
+- 하단 탭: Home · People · Meet · Explore · Profile (가운데 + 는 Meet 화면 위 + 로). / = 새 홈, /people = 예전 사람 카드, /meet = 예전 Discover(/discover 는 /meet 로), /explore(+ /explore/events·opportunities·clubs).
+- 홈: AroundU + 학교 이름(인증된 소속에서, 없으면 숨김), “What’s happening at UC Berkeley?”(손 이모지 없음, 대학원·동문 문구 따로), Events·Opportunities·Clubs & Groups·Meetups 4칸, Campus Life(RSF 운영·시간·혼잡도 → /gym, Dining Halls 지금 연 곳 → /dining, 지원하는 학교만), For you(실제 추천 1~2개, 저장 버튼, 없으면 칸 숨김).
+- Explore: 제목·검색·Events/Opportunities/Clubs & Groups 세 줄 — 시안의 Discover 칸은 사장님 요청대로 뺌. 하위 화면은 캠퍼스 › 찾기 목록을 그 칸 칩만 남겨 재사용.
+- 이름: 헤더·시작 화면 로고 Lumi → AroundU. 법 문서·공유 링크 화면의 “Lumi” 는 그대로(법 문서는 사장님 확인 뒤).
+- 262 통과, 빌드 정상, 화면 12개(v2·classic) 오류 0.
+
 ## 2026-11-02 · 사장님 요청 — 인턴도 유학생 가능 여부
 - 공고 본문을 읽어 회사가 적은 문장만으로 표시(server/sources/workauth.ts): 유학생 가능(CPT/OPT 받음·international students welcome·sponsor) / 미국 시민만(citizenship required·보안 인가·must be a U.S. person) / 비자 스폰서 없음 / 안 적힘(표시 없음).
 - 본문 가져오기: Greenhouse(?content=true), Lever·Ashby(목록에 본문), Workday·SmartRecruiters(인턴 공고만 상세 한 번 더), USAJobs(자격 요건의 시민권).

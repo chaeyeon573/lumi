@@ -7,6 +7,8 @@ import { WelcomePage } from '@/pages/onboarding/WelcomePage';
 import { OnboardingPage } from '@/pages/onboarding/OnboardingPage';
 import { StartPage } from '@/pages/onboarding/StartPage';
 import { HomePage } from '@/pages/home/HomePage';
+import { HomeDashboard } from '@/pages/home/HomeDashboard';
+import { ExplorePage, ExploreSectionPage } from '@/pages/explore/ExplorePage';
 import { MapPage } from '@/pages/map/MapPage';
 import { CommunityPage } from '@/pages/community/CommunityPage';
 import { ProfilePage } from '@/pages/profile/ProfilePage';
@@ -113,8 +115,12 @@ export default function App() {
       <Route path="/c/:school/:code/qr" element={<ClassQrPage />} />
       <Route element={<RequireAuth />}>
         <Route element={<AppShell />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/discover" element={<DiscoverPage />} />
+          <Route path="/" element={<HomeDashboard />} />
+          <Route path="/people" element={<HomePage />} />
+          <Route path="/meet" element={<DiscoverPage />} />
+          <Route path="/discover" element={<Navigate to="/meet" replace />} />
+          <Route path="/explore" element={<ExplorePage />} />
+          <Route path="/explore/:section" element={<ExploreSectionPage />} />
           <Route path="/opportunities" element={<Navigate to="/community?tab=opportunities" replace />} />
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/profile" element={<ProfilePage />} />
@@ -133,7 +139,7 @@ export default function App() {
           <Route path="/rides" element={<RidesPage />} />
           <Route path="/rides/new" element={<PostRidePage />} />
           <Route path="/rides/:id" element={<RideDetailPage />} />
-          <Route path="/ask" element={<Navigate to="/discover" replace />} />
+          <Route path="/ask" element={<Navigate to="/meet" replace />} />
           <Route path="/dining" element={<DiningPage />} />
           <Route path="/gym" element={<GymPage />} />
           <Route path="/map" element={<MapPage />} />

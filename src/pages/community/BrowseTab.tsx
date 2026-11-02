@@ -49,16 +49,19 @@ type Row = { o: Opportunity; score: number; reasons: Reason[]; cats: Category[] 
 /** 보이는 순서대로 이유 한 줄 — 같은 이유 문장은 위에서부터 두 번까지만 (limitRepeats) */
 const whyLines = <T,>(items: T[], reasonsOf: (x: T) => Reason[]) => limitRepeats(items.map(reasonsOf)).map((rs) => whyLine(rs, 1));
 
-export function BrowseTab() {
+/** only: 이 칩만 보인다(Explore › Events/Opportunities/Clubs) · defaultSub: sub 가 없을 때 · extras=false: Saved·Rides 칩 숨김 */
+export function BrowseTab({ only, defaultSub, extras = true }: { only?: BrowseChip[]; defaultSub?: BrowseChip; extras?: boolean } = {}) {
   const nav = useNavigate();
   const [params, setParams] = useSearchParams();
-  const { sub, kind } = readBrowseParams(params);
+  const parsed = readBrowseParams(params);
+  const sub: BrowseChip = !params.get('sub') && defaultSub ? defaultSub : parsed.sub;
+  const { kind } = parsed;
   const field = params.get('field') ?? '';
   const intlOnly = params.get('intl') === '1';
   const region = params.get('region') ?? '';
   const sort = (params.get('sort') ?? 'foryou') as Sort;
-  const setQ = (p: Record<string, string>) => { const next = new URLSearchParams(params); next.set('tab', 'opportunities'); for (const [k, v] of Object.entries(p)) { if (v) next.set(k, v); else next.delete(k); } setParams(next, { replace: true }); };
-  const setSub = (s: BrowseChip) => setQ({ sub: s === 'foryou' ? '' : s, kind: '', field: '', region: '', sort: '', dept: '', mine: '' });
+  const setQ = (p: Record<string, string>) => { const next = new URLSearchParams(params); if (!only) next.set('tab', 'opportunities'); for (const [k, v] of Object.entries(p)) { if (v) next.set(k, v); else next.delete(k); } setParams(next, { replace: true }); };
+  const setSub = (s: BrowseChip) => setQ({ sub: s === (defaultSub ?? 'foryou') ? '' : s, kind: '', field: '', region: '', sort: '', dept: '', mine: '', intl: '' });
 
   const opps = useAppStore((s) => s.opportunities);
   const intents = useAppStore((s) => s.opportunityIntents);
@@ -93,7 +96,7 @@ export function BrowseTab() {
     ['hackathon', L('Hackathons', '해커톤·공모전')], ['event', L('Events', '행사')], ['free_food', L('Free food', '무료 음식')],
     ...(counts.startup || sub === 'startup' ? [['startup', L('Startups', '창업')] as [BrowseChip, string]] : []),
     ...(counts.exchange || sub === 'exchange' ? [['exchange', L('Study abroad', '교환학생')] as [BrowseChip, string]] : []),
-  ];
+  ].filter(([k]) => !only || only.includes(k as BrowseChip)) as [BrowseChip, string][];
 
   // 링크로 들어왔을 때 고른 칩이 화면 밖에 있지 않게
   const rowRef = useRef<HTMLDivElement>(null);
@@ -105,12 +108,12 @@ export function BrowseTab() {
   }, [activeIdx]);
   return (
     <div>
-      <div ref={rowRef} className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2" aria-label={L('Browse by category', '종류별로 보기')}>
+{(chips.length > 1 || extras) &&       <div ref={rowRef} className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2" aria-label={L('Browse by category', '종류별로 보기')}>
         {chips.map(([k, l]) => <Chip key={k} active={sub === k} onClick={() => setSub(k)}>{l}</Chip>)}
-        <Chip active={sub === 'saved'} onClick={() => setSub('saved')}><Star size={13} className="inline -mt-0.5 mr-1" fill={sub === 'saved' ? 'currentColor' : 'none'} />{L('Saved', '저장')}{savedOpen ? ` ${savedOpen}` : ''}</Chip>
-        <Chip onClick={() => nav('/rides')}>🚗 {L('Rides', '같이 타기')}</Chip>
-      </div>
-      {sub === 'foryou' && <RideSeasonBanner className="mb-3" />}
+        {extras && <Chip active={sub === 'saved'} onClick={() => setSub('saved')}><Star size={13} className="inline -mt-0.5 mr-1" fill={sub === 'saved' ? 'currentColor' : 'none'} />{L('Saved', '저장')}{savedOpen ? ` ${savedOpen}` : ''}</Chip>}
+        {extras && !only && <Chip onClick={() => nav('/rides')}>🚗 {L('Rides', '같이 타기')}</Chip>}
+      </div>}
+      {sub === 'foryou' && !only && <RideSeasonBanner className="mb-3" />}
       {sub === 'foryou' && <ForYouList rows={rows} savedIds={savedIds} toggleSave={toggleSave} onSaved={() => setSub('saved')} />}
       {sub === 'clubs' && <ClubsList kind={params.get('mine') ? 'mine' : kind} setKind={(k) => setQ({ kind: k, mine: '' })} rows={rows} />}
       {sub === 'classes' && <ClassesList dept={params.get('dept') ?? ''} setDept={(d) => setQ({ dept: d })} />}
