@@ -54,7 +54,8 @@ export function HomeDashboard() {
     <div className="min-h-full pb-8 bg-bg">
       <header className="sticky top-0 z-30 bg-surface/85 backdrop-blur-xl pl-4 pr-3 pt-2 pb-2 flex items-center gap-1.5">
         <div className="flex-1 min-w-0">
-          <div className="font-display text-[24px] font-extrabold tracking-tight leading-tight">AroundU</div>
+          <div className="font-display text-[24px] font-extrabold tracking-tight leading-tight v2:hidden">Lumi</div>
+          <div className="hidden v2:block font-['Unbounded'] text-[24px] font-extrabold tracking-tight leading-tight">lumi<span className="text-pink-400">.</span></div>
           {school && <div className="text-[13px] text-ink-2 truncate">{school}</div>}
         </div>
         <button onClick={() => nav('/search')} aria-label={en ? 'Search' : '검색'} className="h-11 w-11 rounded-full grid place-items-center text-ink-2 press"><Search size={23} /></button>

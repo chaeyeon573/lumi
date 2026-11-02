@@ -93,7 +93,7 @@ export function WelcomePage() {
       <div className="pointer-events-none absolute top-[420px] -right-64 h-[420px] w-[420px] rounded-full bg-[#D4FF3A] opacity-[.14] blur-[80px]" />
 
       <div className="relative px-6 pt-12 flex items-center">
-        <span className="font-['Unbounded'] font-extrabold text-[26px] tracking-tight">AroundU</span>
+        <span className="font-['Unbounded'] font-extrabold text-[26px] tracking-tight">lumi<span className="text-[#FF3DA8]">.</span></span>
       </div>
 
       <div className="relative mt-5 -mx-5 -rotate-3 bg-[#D4FF3A] text-[#0C0A14] py-2 overflow-hidden whitespace-nowrap">

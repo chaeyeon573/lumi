@@ -19,6 +19,7 @@ import { assetUrl } from '@/lib/assets';
 import { cn } from '@core/lib/cn';
 import { useInvite } from '@/components/together/FeedExtras';
 import type { Activity, User, Interest, Goal } from '@core/types';
+import { MeetSegment } from '@/pages/meet/MeetPage';
 
 interface Filters { years: number[]; sameDept: boolean; sameClass: boolean; freeNow: boolean; interests: Interest[]; goals: Goal[] }
 const EMPTY: Filters = { years: [], sameDept: false, sameClass: false, freeNow: false, interests: [], goals: [] };
@@ -96,6 +97,7 @@ export function HomePage() {
     <div className="h-full flex flex-col bg-bg">
       <AppHeader right={<button onClick={() => setFilterOpen(true)} aria-label={t('조건')} className={cn('h-10 w-10 rounded-full grid place-items-center press', chips.length ? 'bg-primary text-white' : 'text-ink-2')}><SlidersHorizontal size={20} /></button>} />
       <div className="h-2 shrink-0" />
+      <MeetSegment />
       {chips.length > 0 && <div className="shrink-0 flex gap-1.5 overflow-x-auto hide-scrollbar px-4 pb-3">{chips.map((c) => <button key={c.key} onClick={() => { c.clear(); reset(); }} className="h-8 pl-2.5 pr-3 rounded-full bg-accent-soft text-primary text-[12px] font-semibold flex items-center gap-1 shrink-0"><X size={12} />{c.label}</button>)}</div>}
       {status === 'loading' && <CardSkeleton />}
       {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}

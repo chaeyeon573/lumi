@@ -8,6 +8,7 @@ import { OnboardingPage } from '@/pages/onboarding/OnboardingPage';
 import { StartPage } from '@/pages/onboarding/StartPage';
 import { HomePage } from '@/pages/home/HomePage';
 import { HomeDashboard } from '@/pages/home/HomeDashboard';
+import { MeetPage } from '@/pages/meet/MeetPage';
 import { ExplorePage, ExploreSectionPage } from '@/pages/explore/ExplorePage';
 import { MapPage } from '@/pages/map/MapPage';
 import { CommunityPage } from '@/pages/community/CommunityPage';
@@ -117,7 +118,9 @@ export default function App() {
         <Route element={<AppShell />}>
           <Route path="/" element={<HomeDashboard />} />
           <Route path="/people" element={<HomePage />} />
-          <Route path="/meet" element={<DiscoverPage />} />
+          <Route path="/meet" element={<MeetPage />} />
+          <Route path="/meet/more" element={<DiscoverPage />} />
+          <Route path="/schedule" element={<PlansPage />} />
           <Route path="/discover" element={<Navigate to="/meet" replace />} />
           <Route path="/explore" element={<ExplorePage />} />
           <Route path="/explore/:section" element={<ExploreSectionPage />} />

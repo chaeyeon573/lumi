@@ -7,12 +7,12 @@ import { BottomSheet } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 
-// 2026-11-02 사장님 시안: Home · People · Meet · Explore · Profile (가운데 + 대신 Meet 위의 + 로 만들기)
+// 2026-11-02 사장님 시안: Home · Explore · Schedule · Meet · Profile (People 은 Meet 안 · 가운데 + 대신 Meet 의 ‘Create a Meetup’ 과 위의 +)
 const items = [
   { to: '/', label: lang === 'en' ? 'Home' : '홈', Icon: Home },
-  { to: '/people', label: t('사람'), Icon: Users },
-  { to: '/meet', label: lang === 'en' ? 'Meet' : '모임', Icon: CalendarDays },
   { to: '/explore', label: lang === 'en' ? 'Explore' : '탐색', Icon: Compass },
+  { to: '/schedule', label: lang === 'en' ? 'Schedule' : '일정', Icon: CalendarDays },
+  { to: '/meet', label: lang === 'en' ? 'Meet' : '모임', Icon: Users },
   { to: '/profile', label: lang === 'en' ? 'Profile' : '프로필', Icon: User },
 ];
 
@@ -85,10 +85,14 @@ export function BottomNav() {
   );
 }
 
+/** 탭이 맡는 다른 주소 — Meet 은 People 도, Schedule 은 약속·시간표도 */
+const ALSO: Record<string, string[]> = { '/meet': ['/people'], '/schedule': ['/plans', '/timetable'] };
 function NavItem({ to, label, Icon }: { to: string; label: string; Icon: typeof Users }) {
+  const loc = useLocation();
+  const also = (ALSO[to] ?? []).some((p) => loc.pathname === p || loc.pathname.startsWith(`${p}/`));
   return (
-    <NavLink to={to} end={to === '/'} className={({ isActive }) => cn('flex flex-col items-center justify-center gap-1 v2:gap-0.5 h-full text-[11px] font-semibold', isActive ? 'text-primary' : 'text-ink-3')}>
-      {({ isActive }) => (<><Icon size={24} strokeWidth={isActive ? 2.4 : 1.8} />{label}{isActive && <span className="hidden v2:block h-1 w-1 rounded-full bg-lime-400" />}</>)}
+    <NavLink to={to} end={to === '/'} className={({ isActive }) => cn('flex flex-col items-center justify-center gap-1 v2:gap-0.5 h-full text-[11px] font-semibold', isActive || also ? 'text-[var(--color-primary)] v2:text-primary' : 'text-ink-3')}>
+      {({ isActive }) => (<><Icon size={24} strokeWidth={isActive || also ? 2.4 : 1.8} />{label}{(isActive || also) && <span className="hidden v2:block h-1 w-1 rounded-full bg-lime-400" />}</>)}
     </NavLink>
   );
 }

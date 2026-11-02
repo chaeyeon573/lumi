@@ -6,37 +6,37 @@
 
   --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 
-  /* Pastel Breeze: white canvas, slate cobalt actions, pastel sky blue accents */
-  --color-bg: #FFFFFF;
+  /* 밝은 디자인(Classic) — 2026-11-02 사장님 시안: 흰 바탕 + 인디고 포인트 + 파스텔 카드 (어두운 v2 가 기본, Classic 버튼으로 전환) */
+  --color-bg: #F8F9FD;
   --color-surface: #FFFFFF;
-  --color-surface-2: #F3F4ED;
-  --color-line: #E6E8E1;
-  --color-ink: #1A1C18;
-  --color-ink-2: #43474D;
-  --color-ink-3: #74777E;
+  --color-surface-2: #F1F2F8;
+  --color-line: #E7E9F3;
+  --color-ink: #16182B;
+  --color-ink-2: #474B63;
+  --color-ink-3: #7A7F96;
 
-  --color-primary: #0F2B48;
-  --color-primary-deep: #00162D;
-  --color-primary-soft: #D2E4FF;
-  --color-accent: #A3D5FF;
-  --color-accent-soft: #BFF4FF;
-  --color-mint: #2E7D5B;
-  --color-mint-soft: #DDF3E6;
-  --color-gold: #B8860B;
-  --color-gold-soft: #FFF1C9;
-  --color-danger: #BA1A1A;
-  --color-danger-soft: #FFDAD6;
-  --color-heart: #0F2B48;
-  --color-heart-soft: #A3D5FF;
-  --color-verify: #2E6388;
-  --color-sky: #A3D5FF;
-  --color-sky-soft: #D2E4FF;
-  --color-blush: #F1A7A1;
-  --color-peach: #FFD2B5;
-  --color-sage: #C7D8B8;
+  --color-primary: #4F55E3;
+  --color-primary-deep: #3A3FC4;
+  --color-primary-soft: #ECEEFF;
+  --color-accent: #8C91F2;
+  --color-accent-soft: #EEF0FF;
+  --color-mint: #1F9A86;
+  --color-mint-soft: #E6F6F3;
+  --color-gold: #D98A12;
+  --color-gold-soft: #FFF4E5;
+  --color-danger: #D93A4A;
+  --color-danger-soft: #FDE8EB;
+  --color-heart: #D2476B;
+  --color-heart-soft: #FDEEF2;
+  --color-verify: #1E8E4E;
+  --color-sky: #8EC5FF;
+  --color-sky-soft: #EAF3FF;
+  --color-blush: #F6B3C2;
+  --color-peach: #FFD9B8;
+  --color-sage: #CDE8D6;
 
   /* 의미 토큰 — 기본(classic)에서는 위 값과 같아서 화면이 그대로다. v2에서 따로 갈린다 */
-  --color-title: #0F2B48;          /* text-primary 가 실제로 쓰는 색: 제목·링크 */
+  --color-title: #16182B;          /* text-primary 가 실제로 쓰는 색: 제목·링크 */
   --text-color-primary: var(--color-title);
   --color-on-primary: #FFFFFF;     /* bg-primary 위 글자 */
 

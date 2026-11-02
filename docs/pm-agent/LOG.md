@@ -2,6 +2,13 @@
 
 최신이 위.
 
+## 2026-11-02 · 사장님 결정 — 이름 Lumi, 탭 Home·Explore·Schedule·Meet·Profile, 밝은 디자인 시안
+- 사장님: 앱 이름은 Lumi, 첫 화면 = 정보 대시보드, 어두운 v2 기본 + Classic(밝은 파스텔) 함께, 배포는 바로.
+- 이름 되돌림(헤더·홈·시작 화면). Classic 색을 사장님 밝은 시안대로(흰 바탕·인디고 #4F55E3·파스텔 카드).
+- 탭: Home · Explore · Schedule(/schedule = 내 약속) · Meet(Activities | People — People 은 Meet 안, /people 도 Meet 탭으로 표시) · Profile.
+- Meet(시안 1단계): Coffee·Study·Workout·Hangout 4칸(누르면 그 종류만), Create a Meetup, Upcoming Meetups(실제 모임·참여 인원), 다른 방법(지금 공강·팀원·같이 타기·링크로 묻기 → 예전 Discover 는 /meet/more).
+- 다음: 모임 만들기·Going/Interested·채팅 흐름, 조직 행사(운영진 등록·RSVP·조직 페이지).
+
 ## 2026-11-02 09:20 UTC (버클리 월 01:20 PST) · 초점: 방금 배포한 새 홈·탐색이 라이브에서 도는지
 - 사장님 새 답 없음. 라이브 번들 6d9c8fb 확인. 라이브 주소로 직접 찍음: 홈(AroundU · UC Berkeley · Campus Life: RSF Closed 7 AM–11 PM, Dining Café 3 opens 7 AM · For you) · Explore › Opportunities 오류 0.
 - calendar:s_berkeley 마지막 기록 04:22 error — 고친 코드 배포 뒤 아직 6시간 주기가 안 돌았다(10:22 예정). 인턴 가져오기(유학생 표시 포함)도 10:21 예정.
