@@ -119,9 +119,11 @@ export function ActivityDetailPage() {
       <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-surface/95 backdrop-blur border-t border-line p-3 flex gap-2 safe-bottom z-20">
         <button onClick={async () => { if (await shareOrCopy({ title: a.title, url: `${window.location.origin}/activities/${a.id}` }) === 'copied') showToast(t('링크를 복사했어요.')); }} className="h-[52px] w-[52px] rounded-2xl bg-surface-2 grid place-items-center text-ink-2 press shrink-0" aria-label={t('공유')}><Share2 size={20} /></button>
         {/* 시안: 참석 전 Going · Interested → 참석 뒤 You’re going! · Chat */}
-        <JoinButton activity={a} size="lg" className="flex-1" label={a.joinPolicy === 'open' ? (lang === 'en' ? 'Going' : '참석') : undefined} />
-        {canChat ? <Button size="lg" variant="secondary" className="flex-1" onClick={() => nav(`/chats/${room!.id}`)} icon={<MessageCircle size={18} />}>{lang === 'en' ? 'Chat' : '채팅'}</Button>
-          : !isHost && !mine ? <InterestButton a={a} /> : null}
+        {/* 조직 행사(사장님 시안): RSVP → You’re going! · View Organization. 학생 모임: Going · Interested → You’re going! · Chat */}
+        <JoinButton activity={a} size="lg" className="flex-1" label={a.joinPolicy === 'open' ? (a.kind === 'org_event' ? 'RSVP' : (lang === 'en' ? 'Going' : '참석')) : undefined} />
+        {a.kind === 'org_event' && a.orgId && mine?.status === 'approved' ? <Button size="lg" variant="secondary" className="flex-1" onClick={() => nav(`/orgs/${a.orgId}`)} icon={<Users size={18} />}>{lang === 'en' ? 'View Organization' : '조직 보기'}</Button>
+          : canChat ? <Button size="lg" variant="secondary" className="flex-1" onClick={() => nav(`/chats/${room!.id}`)} icon={<MessageCircle size={18} />}>{lang === 'en' ? 'Chat' : '채팅'}</Button>
+          : !isHost && !mine && a.kind !== 'org_event' ? <InterestButton a={a} /> : null}
       </div>
 
       <BottomSheet open={menu} onClose={() => setMenu(false)} title={t('활동')}>

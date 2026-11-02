@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { t, lang } from '@core/i18n';
-import { BadgeCheck, Users, Megaphone, CalendarDays, Bell, MessageCircle, ExternalLink, ShieldCheck, PenSquare, Crown } from 'lucide-react';
+import { BadgeCheck, Users, Megaphone, CalendarDays, Bell, MessageCircle, ExternalLink, ShieldCheck, PenSquare, Crown, Plus } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Avatar, Button, Cover, Tag, EmptyState, Chip, ChipRow, SampleTag } from '@/components/ui';
 import { ActivityCard } from '@/components/cards/ActivityCard';
@@ -112,7 +112,7 @@ export function OrgPage() {
           </div>
         )}
         {tab === 'posts' && <div className="mt-3 space-y-3">{posts.length === 0 ? <EmptyState emoji="📝" title={t('아직 게시물이 없어요')} description={isAdmin ? t('소식을 올리면 Feed에도 함께 보여요.') : undefined} action={isAdmin ? <Button size="sm" onClick={() => setPost(true)}>{t('소식 올리기')}</Button> : undefined} /> : posts.map((p) => <PostCard key={p.id} post={p} />)}</div>}
-        {tab === 'events' && <div className="mt-3 space-y-2">{listedEvents.map((o) => <OpportunityCard key={o.id} o={o} variant="row" />)}{events.length === 0 && listedEvents.length > 0 ? null : events.length === 0 ? <EmptyState emoji="🎪" title={t('예정된 행사가 없어요')} description={t('행사를 올리면 발견 › 활동에도 보여요.')} action={isAdmin ? <Button size="sm" onClick={() => nav(`/create/activity?kind=org_event&org=${org.id}&cat=performance`)}>{t('행사 만들기')}</Button> : undefined} /> : events.map((a) => <ActivityCard key={a.id} activity={a} variant="row" />)}</div>}
+        {tab === 'events' && <div className="mt-3 space-y-2">{isAdmin && <Button full icon={<Plus size={16} />} onClick={() => nav(`/create/activity?kind=org_event&event=1&org=${org.id}`)}>{lang === 'en' ? 'Create Event' : '행사 올리기'}</Button>}{listedEvents.map((o) => <OpportunityCard key={o.id} o={o} variant="row" />)}{events.length === 0 && listedEvents.length > 0 ? null : events.length === 0 ? <EmptyState emoji="🎪" title={t('예정된 행사가 없어요')} description={t('행사를 올리면 발견 › 활동에도 보여요.')} action={isAdmin ? <Button size="sm" onClick={() => nav(`/create/activity?kind=org_event&org=${org.id}&cat=performance`)}>{t('행사 만들기')}</Button> : undefined} /> : events.map((a) => <ActivityCard key={a.id} activity={a} variant="row" />)}</div>}
         {tab === 'recruit' && (
           <div className="mt-3 space-y-3">
             {org.recruitment && (

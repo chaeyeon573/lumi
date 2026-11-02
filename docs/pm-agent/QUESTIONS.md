@@ -4,6 +4,9 @@
 
 사장님께 결정을 받아야 하는 것. 최신이 위. 답은 각 항목 아래에 `**답:** …` 으로 적어 주시면 다음 실행이 따른다.
 
+## 2026-11-02 · Explore 의 Co-ops 칸
+**무엇:** 시안에 Events·Clubs·Greek·Co-ops 가 있는데, 지금 동아리 명단에 Co-op(학생 협동조합 하우스, 예: Berkeley Student Cooperative) 분류가 없다. **제안:** A) BSC 공식 하우스 목록을 확인해 Co-op 조직으로 넣고 칸 만들기 B) 칸 없이 두기.
+
 ## 2026-11-02 · 홈·탐색 개편 뒤 남은 것 3가지
 **무엇:** 사장님 시안대로 Home·People·Meet·Explore·Profile 로 바꿔 배포했다(6d9c8fb).
 1) **Feed(학생 글)** 가 하단 탭에서 빠졌다(시안에 없음). 지금은 /community 주소로만 들어간다. → A) Meet 안 탭으로 B) Explore 에 한 줄 C) 그대로.

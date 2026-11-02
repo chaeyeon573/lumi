@@ -9,6 +9,7 @@ import { StartPage } from '@/pages/onboarding/StartPage';
 import { HomePage } from '@/pages/home/HomePage';
 import { HomeDashboard } from '@/pages/home/HomeDashboard';
 import { MeetPage } from '@/pages/meet/MeetPage';
+import { MyOrgsPage } from '@/pages/org/MyOrgsPage';
 import { ExplorePage, ExploreSectionPage } from '@/pages/explore/ExplorePage';
 import { MapPage } from '@/pages/map/MapPage';
 import { CommunityPage } from '@/pages/community/CommunityPage';
@@ -152,6 +153,7 @@ export default function App() {
           <Route path="/create/activity" element={<CreateActivityPage />} />
           <Route path="/create/post" element={<CreatePostPage />} />
           <Route path="/users/:id" element={<PersonPage />} />
+          <Route path="/orgs/mine" element={<MyOrgsPage />} />
           <Route path="/orgs/:id" element={<OrgPage />} />
           <Route path="/chats" element={<ChatInboxPage />} />
           <Route path="/chats/:roomId" element={<ChatRoomPage />} />

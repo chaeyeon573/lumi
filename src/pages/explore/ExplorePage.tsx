@@ -9,6 +9,11 @@ import { useAppStore } from '@core/store/useAppStore';
 import { cn } from '@core/lib/cn';
 import { BrowseTab } from '@/pages/community/BrowseTab';
 import { schoolLabel } from '@/pages/home/HomeDashboard';
+import { MeetupRow } from '@/pages/meet/MeetPage';
+import { useMemo, useState } from 'react';
+import { Chip } from '@/components/ui';
+import { todayISO } from '@core/lib/format';
+import { nowMin, toMin } from '@core/lib/timetable';
 
 const en = lang === 'en';
 
@@ -60,11 +65,38 @@ export function ExploreSectionPage() {
       {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
       {status === 'ready' && (
         <div className="px-4 pt-3">
-          {k === 'events' && <BrowseTab only={['event']} defaultSub="event" extras={false} />}
+          {k === 'events' && <><OrgEvents /><BrowseTab only={['event']} defaultSub="event" extras={false} /></>}
           {k === 'opportunities' && <BrowseTab only={['foryou', 'internship', 'research', 'scholarship', 'hackathon', 'startup', 'exchange']} defaultSub="foryou" />}
           {k === 'clubs' && <BrowseTab only={['clubs']} defaultSub="clubs" extras={false} />}
         </div>
       )}
     </div>
+  );
+}
+
+/** 동아리·Greek 이 Lumi 에 올린 행사 — 학교 공식 행사 목록 위에 (사장님 시안: 조직 행사 → 발견 → RSVP). 없으면 칸을 숨긴다 */
+function OrgEvents() {
+  const v = useViewer();
+  const orgs = useAppStore((s) => s.organizations);
+  const [f, setF] = useState<'' | 'clubs' | 'greek'>('');
+  const today = todayISO();
+  const list = useMemo(() => v.visibleActivities
+    .filter((a) => a.kind === 'org_event' && a.orgId)
+    .filter((a) => a.date > today || (a.date === today && toMin(a.endTime || a.startTime) > nowMin()))
+    .sort((a, b) => `${a.date} ${a.startTime}`.localeCompare(`${b.date} ${b.startTime}`)), [v, today]);
+  const typeOf = (id?: string) => orgs.find((o) => o.id === id)?.type;
+  const shown = list.filter((a) => !f || (f === 'greek' ? typeOf(a.orgId) === 'greek' : typeOf(a.orgId) !== 'greek'));
+  if (!list.length) return null;
+  return (
+    <section className="mb-5">
+      <h2 className="text-[17px] font-bold mb-2">{en ? 'From clubs & Greek life' : '동아리·Greek 행사'}</h2>
+      <div className="flex gap-1.5 mb-2.5">
+        <Chip size="sm" active={!f} onClick={() => setF('')}>{en ? 'All' : '전체'}</Chip>
+        <Chip size="sm" active={f === 'clubs'} onClick={() => setF('clubs')}>{en ? 'Clubs' : '동아리'}</Chip>
+        <Chip size="sm" active={f === 'greek'} onClick={() => setF('greek')}>Greek</Chip>
+      </div>
+      <div className="space-y-2.5">{shown.slice(0, 5).map((a) => <MeetupRow key={a.id} a={a} />)}</div>
+      {shown.length === 0 && <p className="text-[13px] text-ink-3">{en ? 'Nothing here yet.' : '아직 없어요.'}</p>}
+    </section>
   );
 }

@@ -25,7 +25,7 @@ export function JoinButton({ activity: a, className, size = 'md', label }: { act
   const submit = async (message?: string) => {
     setBusy(true);
     try {
-      await run(() => api.activities.join(a.id, v.me.id, message), a.joinPolicy === 'open' ? t('참가했어요! 그룹 채팅방이 열렸어요.') : t('참가 신청을 보냈어요. 승인되면 알려드릴게요.'));
+      await run(() => api.activities.join(a.id, v.me.id, message), a.joinPolicy === 'open' ? (lang === 'en' ? 'You’re going! Added to your Schedule.' : '참석해요! 내 일정에 추가했어요.') : t('참가 신청을 보냈어요. 승인되면 알려드릴게요.'));
       setOpen(false); setMsg('');
     } catch { /* toast shown */ } finally { setBusy(false); }
   };
