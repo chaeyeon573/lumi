@@ -1601,3 +1601,8 @@
 - Queue (Stanford links): faster route — official Stanford pages that list student groups with links (engineering.stanford.edu, cs, me, msande, explore-energy). Exact-name match against our 733, then reviewed by hand: 20 added (SWE, Tau Beta Pi, TreeHacks, Student Space Initiative, Women in CS, Stanford in Government, Energy Club…). Rejected 5 matches that pointed at a center (nacc), a national body (asce.org), a general GSB page, a program page, and a duplicate. Stanford now 32/733 with a public site.
 - Spot check clubs (5 new Stanford links): 2 confirmed on the page; 2 sites render only by script (Notion, WiCS) and 1 not reachable from the container — kept because the listing page is official.
 - Spot check classes (Berkeley ARESEC 201, GWS 10, DEVP 230, UGBA 135, ECON C270A): time and room 5/5.
+
+## 2026-11-02 17:35 UTC — routine run
+- Queue (Stanford links): the official a cappella council site acappella.stanford.edu has a page per group with its site/Instagram/Facebook → 9 groups (Counterpoint, Everyday People, Fleet Street, Harmonics, Mixed Company, O-Tone, Raagapella, Talisman, Testimony). Stanford now 41/733 with a public link. Tried and not usable: GSB alumni club page (no club sites), arts.stanford.edu student groups (403), Wikipedia a cappella list (no group links).
+- Spot check clubs: UCSC VSA, Leviathan; SCU Photography Club, Plant People Club; SFSU Mashouf Wellness — 5/5 on the official public lists.
+- Spot check courses: UC Davis ATM 270D, FAP 430, ART 142D; SFSU PSY 697, PHIL 470 — code and title match 5/5.
