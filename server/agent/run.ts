@@ -28,7 +28,7 @@ import { fetchResearchUnits, mergeResearchUnits } from '../sources/researchunits
 import { coopsFromCsv, COOP_PREFIX } from '../sources/coops';
 import { fetchUsaJobs } from '../sources/usajobs';
 import { studentGovToOrg, type StudentGovRow } from '../sources/orglinks';
-import { enrichFromWebsites } from '../sources/sitesocial';
+import { enrichFromWebsites, isDeadPage, DEAD } from '../sources/sitesocial';
 import { publicLinks } from '@core/lib/orglinks';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
@@ -147,8 +147,9 @@ const normName = (n: string) => n.toLowerCase().replace(/\([^)]*\)/g, '').replac
 async function fetchPublicPage(url: string): Promise<string> {
   try {
     const r = await fetch(url, { headers: { 'user-agent': 'Mozilla/5.0 (compatible; Lumi-campus-directory/1.0)', accept: 'text/html' }, redirect: 'follow', signal: AbortSignal.timeout(10_000) });
-    if (!r.ok || !/html/i.test(r.headers.get('content-type') ?? '')) return '';
-    return (await r.text()).slice(0, 500_000);
+    const body = /html/i.test(r.headers.get('content-type') ?? '') ? (await r.text()).slice(0, 500_000) : '';
+    if (isDeadPage(r.status, body)) return DEAD;
+    return r.ok ? body : '';
   } catch { return ''; }
 }
 async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
@@ -166,6 +167,16 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
     if (add.length) { mkdirSync(COLLECTED_DIR, { recursive: true }); writeFileSync(file, `${JSON.stringify([...list, ...add].sort((a, b) => a.name.localeCompare(b.name)), null, 1)}\n`); }
   }
   // railway 칸에 probe 가 있으면(이 컨테이너에서 원본에 못 닿음) 수업 표본은 Railway 가 한다
+  // 손으로 확인한 공개 링크 (server/data/org-links-<short>.csv: org_id,label,url,checked,source) — 디렉터리에 링크가 없는 학교(Stanford·Santa Clara)
+  const linkCsv = path.join(DATA_DIR, `org-links-${row.short}.csv`);
+  if (existsSync(file) && existsSync(linkCsv)) {
+    const extra = parseCSV(readFileSync(linkCsv, 'utf8')) as unknown as { org_id: string; label: string; url: string }[];
+    const list = (JSON.parse(readFileSync(file, 'utf8')) as Organization[]).map((o) => {
+      const add = extra.filter((x) => x.org_id === o.id && x.url && !o.links?.some((l) => l.url === x.url)).map((x) => ({ label: x.label, url: x.url }));
+      return add.length ? { ...o, links: [...(o.links ?? []), ...add] } : o;
+    });
+    writeFileSync(file, `${JSON.stringify(list, null, 1)}\n`);
+  }
   // 단체 웹사이트 첫 페이지에서 공식 인스타·페북 찾기 (학교 로그인 페이지 대신 공개 링크 — 2026-11-02 사장님)
   if (existsSync(file)) {
     const startedAt = new Date().toISOString();
@@ -173,7 +184,7 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
     const r = await enrichFromWebsites(list, fetchPublicPage);
     writeFileSync(file, `${JSON.stringify(r.orgs, null, 1)}\n`);
     const pub = r.orgs.filter((o) => publicLinks(o.links).some((l) => ['Website', 'Instagram', 'Facebook'].includes(l.label))).length;
-    out.push(await record({ task: `collect-social:${row.id}`, schoolId: row.id, status: 'applied', startedAt, summary: { orgs: r.orgs.length, sitesRead: r.checked, gainedSocial: r.found, withPublicLink: pub, schoolFooterAccountsDropped: r.droppedShared.slice(0, 10) } }));
+    out.push(await record({ task: `collect-social:${row.id}`, schoolId: row.id, status: 'applied', startedAt, summary: { orgs: r.orgs.length, sitesRead: r.checked, gainedSocial: r.found, withPublicLink: pub, schoolFooterAccountsDropped: r.droppedShared.slice(0, 10), deadWebsiteLinksRemoved: r.deadLinks } }));
   }
   if ((row.courses_source || row.catalog_url) && !(row.railway ?? '').split('|').includes('probe')) {
     const probe = await runCourseProbe(row);

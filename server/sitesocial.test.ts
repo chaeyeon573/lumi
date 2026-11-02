@@ -29,3 +29,15 @@ test('relabelSocialWebsites: a Facebook/Instagram page given as "Website" become
   const o = { id: 'x', name: 'x', logo: { emoji: 'X', hue: 1 }, type: 'club', schoolId: 's_x', verified: false, description: '', gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [], links: [{ label: 'Website', url: 'https://www.facebook.com/groups/12345/' }] } as Organization;
   assert.deepEqual(relabelSocialWebsites(o).links, [{ label: 'Facebook', url: 'https://www.facebook.com/groups/12345' }]);
 });
+
+test('enrichFromWebsites: a dead website (404) link is removed', async () => {
+  const { DEAD } = await import('./sources/sitesocial');
+  const o = { id: 'x', name: 'x', logo: { emoji: 'X', hue: 1 }, type: 'club', schoolId: 's_x', verified: false, description: '', gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [], links: [{ label: 'Website', url: 'https://gone.example.com/' }, { label: 'Instagram', url: 'https://www.instagram.com/x/' }] } as Organization;
+  const r = await enrichFromWebsites([o], async () => DEAD);
+  assert.equal(r.deadLinks, 1);
+  assert.deepEqual(r.orgs[0].links?.map((l) => l.label), ['Instagram']);
+});
+
+test('extractSocial: facebook pages/<name>/<id> keeps the id', () => {
+  assert.equal(extractSocial('<a href="https://www.facebook.com/pages/Stanford-Women-in-Business/123456789">f</a>').facebook, 'https://www.facebook.com/pages/Stanford-Women-in-Business/123456789');
+});

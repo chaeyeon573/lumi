@@ -1585,3 +1585,9 @@
 - /preview shows "Courses saved: N" with a search (`/api/preview/:id/courses?q=`).
 - Berkeley live check (demo account, read-only): 1,707 groups (club 1,465 · lab 126 · greek 84 · co-op 20 · student gov 12), only 260 with a public link (CalLink pages need CalNet). 6,567 classes Fall 2026 + Spring 2027, 100 departments. Spot check CS 61A, DATA C8, ECON 1, MATH 51 against classes.berkeley.edu: times, instructor and room (Wheeler 150) match.
 - Logos: Berkeley 1,181 real logos, 256 initials, 270 emoji — 202 of those are a generic 🎯 placeholder; 458 names end with 💙 as written in CalLink. Queued as a question.
+
+## 2026-11-02 14:53 UTC — routine run (data queue + spot check)
+- Queue item: public links for Stanford clubs. New hand-checked file server/data/org-links-stanford.csv (org_id,label,url,checked,source), merged by collect:<id>. First 7: ASSU, Solar Car, Taiko, Women in Business, Concert Network, Pre-Business Association, Stanford Daily — official sites from web search; Instagram/Facebook then read from those sites (Taiko, SWIB). Stanford Robotics Club skipped (two candidate sites, couldn't tell which is official).
+- Spot check, 5 clubs: 2 OK; 1 dead link (UC Davis AACF wixsite → 404); 2 SJSU entries were school offices ("Alumni Engagement", "Leadership and Career Certificate Program"), not clubs. Fixes: Website links that return 404/410 (or Wix "404 Error" page) are dropped (UC Davis 7, SJSU 1); CampusGroups "College/Department/Program" groups skipped unless student government (SJSU 440 → 388, Associated Students kept). Facebook pages/<name>/<id> links keep the id.
+- Spot check, 5 Berkeley classes (JOURN 219, RHETOR R1A, CDSS 198, FOLKLOR C262A, PHYSICS 153) against classes.berkeley.edu: time and room match 5/5.
+- Checks: tsc, server typecheck, tests 283/283, build.

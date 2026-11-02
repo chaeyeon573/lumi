@@ -52,32 +52,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg36021",
-  "name": "A.S. Community Action Center (CAC)",
-  "logo": {
-   "emoji": "AS",
-   "hue": 48
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36021"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg36040",
   "name": "Aatlas Honor Society",
   "logo": {
@@ -126,36 +100,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35444"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36063",
-  "name": "Accessible Education Center (AEC)",
-  "logo": {
-   "emoji": "AE",
-   "hue": 112
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36063"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.sjsu.edu/aec/"
    }
   ]
  },
@@ -786,36 +730,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg36104",
-  "name": "Alumni Engagement",
-  "logo": {
-   "emoji": "AE",
-   "hue": 56
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36104"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.sjsu.edu/alumni/"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg36003",
   "name": "Ambassadors for Christ",
   "logo": {
@@ -1352,10 +1266,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35478"
-   },
-   {
-    "label": "Website",
-    "url": "https://linktr.ee/womenindesignsjsu"
    }
   ]
  },
@@ -1856,32 +1766,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg36019",
-  "name": "Black Leadership & Opportunity Center (The BLOC)",
-  "logo": {
-   "emoji": "BL",
-   "hue": 120
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36019"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg36136",
   "name": "Black Pre-Health Society",
   "logo": {
@@ -2236,40 +2120,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg35996",
-  "name": "Career Center",
-  "logo": {
-   "emoji": "CC",
-   "hue": 16
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "We inspire, empower, and connect SJSU students, educators, and employers to build the workforce of the future.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35996"
-   },
-   {
-    "label": "Website",
-    "url": "https://careercenter.sjsu.edu/"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/sjsu_careercenter/"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg36098",
   "name": "Career Club SJSU",
   "logo": {
@@ -2318,62 +2168,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=36094"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36017",
-  "name": "Center for Asian and Pacific Islander Student Empowerment (CAPISE)",
-  "logo": {
-   "emoji": "CA",
-   "hue": 248
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36017"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36047",
-  "name": "Center for Community Learning and Leadership",
-  "logo": {
-   "emoji": "CC",
-   "hue": 224
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36047"
-   },
-   {
-    "label": "Website",
-    "url": "https://docs.google.com/spreadsheets/d/1qx_L8XDQ0Ww4e9G_B38LSbHso2Q_7Ws6eNsMR4B3Hds/edit?gid=1015417974#gid=1015417974"
    }
   ]
  },
@@ -2538,32 +2332,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35518"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36020",
-  "name": "Chicanx Latinx Student Success Center (El Centro)",
-  "logo": {
-   "emoji": "CL",
-   "hue": 40
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36020"
    }
   ]
  },
@@ -3004,62 +2772,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg36105",
-  "name": "College of Graduate Studies",
-  "logo": {
-   "emoji": "CG",
-   "hue": 160
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36105"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36108",
-  "name": "College of Information, Data, and Society",
-  "logo": {
-   "emoji": "CI",
-   "hue": 264
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "At the College of Information, Data and Society, we place students, alumni, and communities at the heart of our work by empowering diverse learners and scholars to harness human-centered AI, information, and data ethically, creatively and inclusively. Together, we turn technology and knowledge into responsible solutions to address society’s most pressing challenges, and strengthen Silicon Valley, California and the world.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36108"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.sjsu.edu/information-data-society/index.php"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg36051",
   "name": "Competitive Programming Club",
   "logo": {
@@ -3290,32 +3002,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=36092"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg35974",
-  "name": "Dean of Students",
-  "logo": {
-   "emoji": "DS",
-   "hue": 216
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "The Dean of Students is the main advocate for students outside the classroom, overseeing both student engagement and student support. That means leading areas like Student Involvement, the Student Union, and Associated Students to help build a vibrant campus life, as well as Student Conduct and Ethical Development, Behavioral Intervention, and the Student Ombuds to ensure fairness and well-being. The Dean also coordinates the campus response to expressive activities and upholds freedom of expression, helping create a safe, inclusive, and engaged community where students can thrive.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35974"
    }
   ]
  },
@@ -3730,32 +3416,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg35964",
-  "name": "Emerging Leaders Program",
-  "logo": {
-   "emoji": "EL",
-   "hue": 232
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "The Emerging Leaders Program is a co-curricular leadership experience designed to help students discover who they are, what they care about, and how they can create meaningful change in their communities. Through hands-on activities, reflective exploration, and collaboration with campus partners, students develop a strong sense of leader identity rooted in their values, lived experiences, and social identities. Participants begin by discovering their beliefs, values, and strengths, and build toward the ability to design and implement a community‑focused service project or fundraiser. Students ",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35964"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg35916",
   "name": "Environmental Resource Center",
   "logo": {
@@ -3838,32 +3498,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg36011",
-  "name": "Esports & Gaming",
-  "logo": {
-   "emoji": "EG",
-   "hue": 320
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36011"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg35558",
   "name": "Fashion Creatives Club",
   "logo": {
@@ -3938,36 +3572,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35562"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36000",
-  "name": "Finals Week Resources - Fall 2026",
-  "logo": {
-   "emoji": "FW",
-   "hue": 304
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36000"
-   },
-   {
-    "label": "Website",
-    "url": "https://sjsu.edu/getinvolved/campus-events/finals-resources.php"
    }
   ]
  },
@@ -4092,32 +3696,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg36075",
-  "name": "Gala Spring Nominations 25-26",
-  "logo": {
-   "emoji": "GS",
-   "hue": 272
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36075"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg35568",
   "name": "Game Development Club at San Jose State University",
   "logo": {
@@ -4144,32 +3722,6 @@
    {
     "label": "Website",
     "url": "http://sjsugamedev.com/"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36023",
-  "name": "Gender Equity Center",
-  "logo": {
-   "emoji": "GE",
-   "hue": 24
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36023"
    }
   ]
  },
@@ -4360,6 +3912,14 @@
    {
     "label": "Website",
     "url": "https://grupofolkloricolunaysol.weebly.com/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/gflssjsu/"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/GFLSdeSJSU"
    }
   ]
  },
@@ -4412,32 +3972,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35576"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36050",
-  "name": "Hammer Theatre",
-  "logo": {
-   "emoji": "HT",
-   "hue": 328
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36050"
    }
   ]
  },
@@ -4580,32 +4114,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35583"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36081",
-  "name": "Honors Convocation",
-  "logo": {
-   "emoji": "HC",
-   "hue": 272
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36081"
    }
   ]
  },
@@ -4830,36 +4338,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg36107",
-  "name": "Information Technology Services",
-  "logo": {
-   "emoji": "IT",
-   "hue": 88
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36107"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.sjsu.edu/it"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg35592",
   "name": "Insitute of Transportation Engineers (ITE)",
   "logo": {
@@ -4908,32 +4386,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35593"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36106",
-  "name": "Institute for Public Affairs and Civic Engagement/Political Science",
-  "logo": {
-   "emoji": "IP",
-   "hue": 216
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36106"
    }
   ]
  },
@@ -5102,32 +4554,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg36005",
-  "name": "International Student and Scholar Services",
-  "logo": {
-   "emoji": "IS",
-   "hue": 32
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36005"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg35602",
   "name": "InterVarsity Christian Fellowship",
   "logo": {
@@ -5180,32 +4606,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg36089",
-  "name": "iSucceed Mentorship Program",
-  "logo": {
-   "emoji": "IM",
-   "hue": 328
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36089"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg35604",
   "name": "Japanese Student Association",
   "logo": {
@@ -5254,32 +4654,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=36118"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36049",
-  "name": "King Library Digital Humanities Center",
-  "logo": {
-   "emoji": "KL",
-   "hue": 192
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36049"
    }
   ]
  },
@@ -5604,66 +4978,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg36001",
-  "name": "Leadership and Career Certificate Program",
-  "logo": {
-   "emoji": "LC",
-   "hue": 24
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36001"
-   },
-   {
-    "label": "Website",
-    "url": "https://sjsu.edu/getinvolved/leadership/leadership-career-certificate-program.php"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg35994",
-  "name": "Leadership Today",
-  "logo": {
-   "emoji": "LT",
-   "hue": 152
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "Leadership Today is a 3-day, 2-night immersion retreat focused on diversity, social justice, and cross-cultural communication. We are looking to provide opportunities for those who are interested in infusing social justice into their personal, educational, and professional lives. There is no cost to attend the retreat.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35994"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.sjsu.edu/mosaic/programs/leadership-today.php"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg35624",
   "name": "League of Filipino Students",
   "logo": {
@@ -5764,32 +5078,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35623"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36077",
-  "name": "Lucas College and Graduate School of Business",
-  "logo": {
-   "emoji": "LC",
-   "hue": 232
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "We are the premier business school of opportunity in Silicon Valley dedicated to the inclusive, equitable, and transformative education of tomorrow’s workforce, which we achieve through innovative learning experiences, impactful research, and meaningful engagement with our local and global communities.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36077"
    }
   ]
  },
@@ -6450,36 +5738,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg35995",
-  "name": "MOSAIC Cross Cultural Center",
-  "logo": {
-   "emoji": "MC",
-   "hue": 208
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "Mosaic Cross-Cultural Center is a space where all are welcome, regardless of race, ethnicity, gender, sexual orientation, or religion. SJSU Spartans love our center for studying, connecting with others, and resting during the busy school day. Throughout the year, we host exciting events and programs that promote cultural empowerment, cross-cultural engagement, and community building.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35995"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.sjsu.edu/mosaic/index.php"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg35651",
   "name": "Moss Landing Marine Laboratories",
   "logo": {
@@ -6804,32 +6062,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg36025",
-  "name": "Native American Indigenous Student Success Center (NAISSC)",
-  "logo": {
-   "emoji": "NA",
-   "hue": 48
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36025"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg35661",
   "name": "Native American Student Organization",
   "logo": {
@@ -6942,36 +6174,6 @@
    {
     "label": "Website",
     "url": "https://www.sjsunets.org/"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg35973",
-  "name": "New Student & Family Programs",
-  "logo": {
-   "emoji": "NS",
-   "hue": 232
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "SI RSO Special Interest",
-  "verified": false,
-  "description": "New Student and Family Programs (NSFP) strives to aid in the transition of new first-year, transfer students, parents and family members to the intellectual and social climate of San José State University (SJSU). NSFP is committed to providing a supportive transition for new students and their family members by fostering a sense of belonging through intentional programming to promote a familiarity with academic and student support services catered to SJSU’s diverse population of students and families. In collaboration with SJSU faculty and staff, and informed by the Council for Advancement of ",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35973"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.sjsu.edu/newspartans/index.php"
    }
   ]
  },
@@ -7122,84 +6324,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35667"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36006",
-  "name": "Office of Innovation",
-  "logo": {
-   "emoji": "OI",
-   "hue": 192
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36006"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36052",
-  "name": "Office of Research",
-  "logo": {
-   "emoji": "OR",
-   "hue": 96
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36052"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36126",
-  "name": "Office of Undergraduate Education",
-  "logo": {
-   "emoji": "OU",
-   "hue": 184
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36126"
    }
   ]
  },
@@ -7442,36 +6566,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35675"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36015",
-  "name": "Peer Connections",
-  "logo": {
-   "emoji": "PC",
-   "hue": 48
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "Peer Connections supports students through tutoring, mentoring, supplemental instruction, learning assistants, and student success events in an inclusive, welcoming environment. It serves as a university-wide resource for the promotion of peer learning and retention.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36015"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.sjsu.edu/peerconnections/"
    }
   ]
  },
@@ -8052,32 +7146,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35694"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36022",
-  "name": "PRIDE Center",
-  "logo": {
-   "emoji": "PC",
-   "hue": 104
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36022"
    }
   ]
  },
@@ -9070,100 +8138,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg35983",
-  "name": "SJSU Athletics",
-  "logo": {
-   "emoji": "SA",
-   "hue": 184
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "Spartans to show off their SJSU pride by attending games, going to events, and wearing Blue & Gold. Spartan Squad is all about having pride in being a student at San José State University.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35983"
-   },
-   {
-    "label": "Website",
-    "url": "https://sjsuspartans.com/"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/sjsubaseball/"
-   },
-   {
-    "label": "Facebook",
-    "url": "https://www.facebook.com/SJSUSpartansBaseball"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg35986",
-  "name": "SJSU Cares",
-  "logo": {
-   "emoji": "SC",
-   "hue": 18
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "SJSU Cares provides essential resources and services to support students in overcoming challenges. Whether it’s housing assistance, food assistance, or case management support, SJSU Cares is here for you.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35986"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.sjsu.edu/sjsucares/"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg35979",
-  "name": "SJSU Commencement",
-  "logo": {
-   "emoji": "SC",
-   "hue": 336
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "SI RSO Academic",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35979"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg35736",
   "name": "Society of Manufacturing Engineers",
   "logo": {
@@ -9410,36 +8384,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg36009",
-  "name": "Spartan Eats Dining Services",
-  "logo": {
-   "emoji": "SE",
-   "hue": 264
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36009"
-   },
-   {
-    "label": "Website",
-    "url": "https://dineoncampus.com/sjsu"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg36007",
   "name": "Spartan Exploration Design Club",
   "logo": {
@@ -9548,36 +8492,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35947"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36027",
-  "name": "Spartan Food Pantry",
-  "logo": {
-   "emoji": "SF",
-   "hue": 248
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36027"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.sjsu.edu/sjsucares/get-assistance/spartan-food-pantry.php"
    }
   ]
  },
@@ -9858,32 +8772,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg36033",
-  "name": "Spartan Quest: 1857 Minutes of Giving",
-  "logo": {
-   "emoji": "SQ",
-   "hue": 72
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "Join the Spartan Quest on Tuesday, April 21, from 12-5 p.m. Complete the checklist for a chance to win, 1. One of three $500 award toward your favorite Student Organization or Campus Fund 2. Signed baseball by former SF Giants player Wilmer Flores 3. Four SF Giants game tickets (some restrictions apply)",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36033"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg35758",
   "name": "Spartan Racing",
   "logo": {
@@ -9936,44 +8824,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35759"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg35934",
-  "name": "Spartan Recreation",
-  "logo": {
-   "emoji": "SR",
-   "hue": 152
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35934"
-   },
-   {
-    "label": "Website",
-    "url": "https://spartanrecreation.com/"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/sjsu_spartanrec/"
-   },
-   {
-    "label": "Facebook",
-    "url": "https://www.facebook.com/sjsuspartanrec"
    }
   ]
  },
@@ -10566,92 +9416,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg35965",
-  "name": "Student Union Events and Programs",
-  "logo": {
-   "emoji": "SU",
-   "hue": 24
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=35965"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36046",
-  "name": "Student Union, Inc.",
-  "logo": {
-   "emoji": "SU",
-   "hue": 56
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36046"
-   },
-   {
-    "label": "Website",
-    "url": "http://www.sjsu.edu/studentunion"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36004",
-  "name": "Student Wellness Center",
-  "logo": {
-   "emoji": "SW",
-   "hue": 112
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "We deliver quality primary, specialty, and mental healthcare, and health promotion services with a responsive, holistic approach to help students address health concerns, graduate, and pursue lasting well-being.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36004"
-   },
-   {
-    "label": "Website",
-    "url": "https://sjsu.edu/wellness/"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg35773",
   "name": "Students for a Democratic Society",
   "logo": {
@@ -10752,62 +9516,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35776"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36036",
-  "name": "Study Abroad and Away",
-  "logo": {
-   "emoji": "SA",
-   "hue": 24
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "Our mission is to empower San José State University students to become globally engaged citizens and culturally competent leaders through transformative academic experiences beyond our campus borders.",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36036"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36078",
-  "name": "Survivor Advocacy Services",
-  "logo": {
-   "emoji": "SA",
-   "hue": 296
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36078"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.sjsu.edu/wellness/access-services/survivor-advocacy-services.phpx"
    }
   ]
  },
@@ -10994,36 +9702,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35788"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36082",
-  "name": "The Office for Civil Rights and Title IX",
-  "logo": {
-   "emoji": "OC",
-   "hue": 160
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36082"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.sjsu.edu/titleixeo/"
    }
   ]
  },
@@ -11446,32 +10124,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg36018",
-  "name": "UndocuSpartans",
-  "logo": {
-   "emoji": "U",
-   "hue": 248
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36018"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg35804",
   "name": "UNICEF Club at SJSU",
   "logo": {
@@ -11632,36 +10284,6 @@
   ]
  },
  {
-  "id": "oc_sjsu_cg36024",
-  "name": "Veteran's Resource Center (VRC)",
-  "logo": {
-   "emoji": "VS",
-   "hue": 224
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "At the VRC, we assist military connected students with education benefits, host events & offer resources! Come and check us out! Stop by and say hello!",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36024"
-   },
-   {
-    "label": "Website",
-    "url": "https://www.sjsu.edu/veterans/"
-   }
-  ]
- },
- {
   "id": "oc_sjsu_cg35811",
   "name": "Veterans Student Organization",
   "logo": {
@@ -11710,88 +10332,6 @@
    {
     "label": "Directory",
     "url": "https://sammyapp.sjsu.edu/student_community?club_id=35812"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36043",
-  "name": "Weeks of Welcome",
-  "logo": {
-   "emoji": "WW",
-   "hue": 248
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36043"
-   },
-   {
-    "label": "Website",
-    "url": "https://sjsu.edu/getinvolved/campus-events/weeks-of-welcome.php"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36103",
-  "name": "Welcome to the 408",
-  "logo": {
-   "emoji": "WT",
-   "hue": 344
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36103"
-   }
-  ]
- },
- {
-  "id": "oc_sjsu_cg36080",
-  "name": "West Valley/Mission Community College Students",
-  "logo": {
-   "emoji": "WV",
-   "hue": 344
-  },
-  "type": "club",
-  "schoolId": "s_sjsu",
-  "parent": "College/Department/Program",
-  "verified": false,
-  "description": "",
-  "gallery": [],
-  "regularActivities": [],
-  "notices": [],
-  "followerIds": [],
-  "memberIds": [],
-  "adminIds": [],
-  "applicantIds": [],
-  "links": [
-   {
-    "label": "Directory",
-    "url": "https://sammyapp.sjsu.edu/student_community?club_id=36080"
    }
   ]
  },

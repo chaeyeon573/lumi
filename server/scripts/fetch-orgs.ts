@@ -97,7 +97,9 @@ async function fetchCampusGroups(host: string): Promise<CampusGroupsOrg[]> {
 }
 
 /** 학교 부서·행정 조직·기숙사 단위는 학생 단체가 아니라 뺀다 */
-const CAMPUSGROUPS_SKIP = /^(Campus Departments|Residential Life)$/i;
+const CAMPUSGROUPS_SKIP = /^(Campus Departments|Residential Life|College\/Department\/Program)$/i;
+/** 학교 부서 묶음이어도 학생회(Associated Students 등)는 남긴다 — SJSU 는 학생회가 “College/Department/Program” 안에 있다 */
+const skipCampusGroup = (o: CampusGroupsOrg) => (CAMPUSGROUPS_SKIP.test(o.groupType) || CAMPUSGROUPS_SKIP.test(o.tags[0] ?? '')) && !COUNCIL_RE.test(o.name);
 function mapCampusGroupsOrg(schoolId: ID, host: string, o: CampusGroupsOrg): Organization {
   const catText = notCouncil(`${o.groupType} ${o.tags.join(' ')} ${o.name}`);
   const type: Organization['type'] = /\b(council|association)\b/i.test(o.name) && /fratern|soror|greek|panhel|living group|fsilg/i.test(o.name) ? 'council' : GREEK_RE.test(catText) ? 'greek' : COUNCIL_RE.test(catText) || /^Associated Students/i.test(o.groupType) ? 'council' : 'club';
@@ -253,7 +255,7 @@ for (const [schoolId, host] of Object.entries(CAMPUSGROUPS_HOSTS)) {
   process.stdout.write(`${schoolId} ← ${host} (CampusGroups) … `);
   let raw: CampusGroupsOrg[];
   try { raw = await fetchCampusGroups(host); } catch (e) { console.log(`실패: ${(e as Error).message}`); continue; }
-  const orgs = raw.filter((o) => !CAMPUSGROUPS_SKIP.test(o.groupType)).map((o) => mapCampusGroupsOrg(schoolId, host, o))
+  const orgs = raw.filter((o) => !skipCampusGroup(o)).map((o) => mapCampusGroupsOrg(schoolId, host, o))
     .map(mergeExisting);
   const csv = ['school_id,name,type,category,description', ...orgs.map((o) => [o.schoolId, o.name, o.type, o.parent ?? '', o.description].map((v) => `"${String(v).replace(/"/g, '""')}"`).join(','))].join('\n');
   writeFileSync(path.join(dataDir, `orgs-${schoolId}.csv`), csv);

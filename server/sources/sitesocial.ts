@@ -15,7 +15,7 @@ export function extractAllSocial(html: string): { instagram: string[]; facebook:
     const host = m[2].toLowerCase(); const pathPart = m[3].replace(/\/+$/, ''); const first = pathPart.split('/')[0];
     if (!first) continue;
     if (host === 'instagram.com') { if (!IG_SKIP.test(first) && /^[A-Za-z0-9_.]{2,30}$/.test(first)) { const u = `https://www.instagram.com/${first.toLowerCase()}/`; if (!ig.includes(u)) ig.push(u); } }
-    else if ((first === 'groups' || first === 'pages') ? pathPart.split('/').length >= 2 : !FB_SKIP.test(first)) { const page = first === 'groups' || first === 'pages' ? pathPart.split('/').slice(0, 2).join('/') : first; const u = `https://www.facebook.com/${page}`; if (!fb.includes(u)) fb.push(u); }
+    else if ((first === 'groups' || first === 'pages') ? pathPart.split('/').length >= 2 : !FB_SKIP.test(first)) { const page = first === 'pages' ? pathPart.split('/').slice(0, 3).join('/') : first === 'groups' ? pathPart.split('/').slice(0, 2).join('/') : first; /* pages/<이름>/<번호> 는 번호까지 있어야 열린다 */ const u = `https://www.facebook.com/${page}`; if (!fb.includes(u)) fb.push(u); }
   }
   return { instagram: ig, facebook: fb };
 }
@@ -46,15 +46,19 @@ export function relabelSocialWebsites(o: Organization): Organization {
 }
 const hostOf = (u: string) => { try { return new URL(u).hostname; } catch { return ''; } };
 
-export async function enrichFromWebsites(orgs: Organization[], fetchPage: (url: string) => Promise<string>, concurrency = 6): Promise<{ orgs: Organization[]; checked: number; found: number; droppedShared: string[] }> {
+/** 사이트가 없어졌다고 확실한 응답(404·410, Wix 의 “404 Error: Page Not Found”) — 이런 Website 링크는 뺀다. 연결 실패·타임아웃은 모르는 것으로 보고 둔다 */
+export const DEAD = '__dead__';
+export function isDeadPage(status: number, html: string): boolean { return status === 404 || status === 410 || /<title[^>]*>\s*404 Error: Page Not Found/i.test(html); }
+
+export async function enrichFromWebsites(orgs: Organization[], fetchPage: (url: string) => Promise<string>, concurrency = 6): Promise<{ orgs: Organization[]; checked: number; found: number; droppedShared: string[]; deadLinks: number }> {
   orgs = orgs.map(relabelSocialWebsites);
   const want = orgs.filter((o) => o.links?.some((l) => l.label === 'Website') && !(o.links?.some((l) => l.label === 'Instagram') && o.links?.some((l) => l.label === 'Facebook')));
-  const got = new Map<string, { instagram: string[]; facebook: string[] }>();
+  const got = new Map<string, { instagram: string[]; facebook: string[] }>(); const dead = new Set<string>();
   let i = 0;
   await Promise.all(Array.from({ length: concurrency }, async () => {
     while (i < want.length) {
       const o = want[i++]; const site = o.links!.find((l) => l.label === 'Website')!.url;
-      try { const html = await fetchPage(site); if (html) got.set(o.id, extractAllSocial(html)); } catch { /* skip */ }
+      try { const html = await fetchPage(site); if (html === DEAD) dead.add(o.id); else if (html) got.set(o.id, extractAllSocial(html)); } catch { /* skip */ }
     }
   }));
   // 학교 바닥글 계정 거르기
@@ -62,7 +66,8 @@ export async function enrichFromWebsites(orgs: Organization[], fetchPage: (url: 
   for (const s of got.values()) for (const u of [...s.instagram, ...s.facebook]) count.set(handle(u), (count.get(handle(u)) ?? 0) + 1);
   const shared = new Set([...count].filter(([, n]) => n >= 3).map(([h]) => h));
   let found = 0;
-  const next = orgs.map((o) => {
+  const next = orgs.map((o0) => {
+    const o = dead.has(o0.id) ? { ...o0, links: o0.links?.filter((l) => l.label !== 'Website') } : o0;
     const s = got.get(o.id); if (!s) return o;
     const add: Link[] = [];
     const ig = s.instagram.find((u) => !shared.has(handle(u))); const fb = s.facebook.find((u) => !shared.has(handle(u)));
@@ -72,5 +77,5 @@ export async function enrichFromWebsites(orgs: Organization[], fetchPage: (url: 
     found++;
     return { ...o, links: [...(o.links ?? []), ...add] };
   });
-  return { orgs: next, checked: got.size, found, droppedShared: [...shared] };
+  return { orgs: next, checked: got.size, found, droppedShared: [...shared], deadLinks: dead.size };
 }
