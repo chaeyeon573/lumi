@@ -19,6 +19,7 @@
  *    `@odata.count`, `value[].{Id,Name,ShortName,WebsiteKey,Summary,Description,CategoryNames,Status}` 기준이며
  *    학교가 UI 를 바꾸면 필드명이 달라질 수 있다 → 그럴 땐 아래 mapOrg 만 고치면 된다.
  */
+import { decodeNumericEntities } from '../sources/entities';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -145,7 +146,8 @@ const initials = (name: string) => {
 
 const GREEK_RE = /fraternit|sororit|greek|panhellenic|interfraternity|nphc|multicultural greek|fsilg/i;
 const COUNCIL_RE = /student government|senate|associated students|council/i;
-const strip = (html = '') => html.replace(/<[^>]+>/g, ' ').replace(/&nbsp;|&amp;|&quot;|&#39;/g, (m) => ({ '&nbsp;': ' ', '&amp;': '&', '&quot;': '"', '&#39;': "'" }[m] ?? ' ')).replace(/\s+/g, ' ').trim();
+// 명단 이름·소개에 HTML 글자 코드가 그대로 온다(“Entrepreneurship &amp; Technology”, “&#8212;”, “&#43;”) — 화면에 그대로 보이던 것
+const strip = (html = '') => decodeNumericEntities(html.replace(/<[^>]+>/g, ' ').replace(/&nbsp;|&amp;|&quot;|&#39;/g, (m) => ({ '&nbsp;': ' ', '&amp;': '&', '&quot;': '"', '&#39;': "'" }[m] ?? ' '))).replace(/\s+/g, ' ').trim();
 
 function mapOrg(schoolId: ID, host: string, o: EngageOrg): Organization {
   const cats = o.CategoryNames ?? [];
@@ -154,8 +156,8 @@ function mapOrg(schoolId: ID, host: string, o: EngageOrg): Organization {
   const council = cats.find((c) => /IFC|Interfraternity/i.test(c)) ? 'IFC' : cats.find((c) => /Panhellenic/i.test(c)) ? 'Panhellenic' : cats.find((c) => /NPHC|Black Greek/i.test(c)) ? 'NPHC' : cats.find((c) => /Multicultural Greek|MGC/i.test(c)) ? 'MGC' : undefined;
   return {
     id: `${type === 'greek' ? 'og' : 'oc'}_${schoolId.replace('s_', '')}_${(o.WebsiteKey || o.Name).toLowerCase().replace(/[^a-z0-9]+/g, '_')}`,
-    name: o.Name,
-    logo: { emoji: initials(o.Name), hue: Math.abs([...o.Name].reduce((h, ch) => h * 31 + ch.charCodeAt(0), 7)) % 360, ...(o.ProfilePicture ? { url: `https://se-images.campuslabs.com/clink/images/${o.ProfilePicture}?preset=small-sq` } : {}) },
+    name: strip(o.Name),
+    logo: { emoji: initials(strip(o.Name)), hue: Math.abs([...o.Name].reduce((h, ch) => h * 31 + ch.charCodeAt(0), 7)) % 360, ...(o.ProfilePicture ? { url: `https://se-images.campuslabs.com/clink/images/${o.ProfilePicture}?preset=small-sq` } : {}) },
     type, schoolId, parent: council ?? cats[0], verified: false,
     description: strip(o.Summary || o.Description || '').slice(0, 600),
     gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [],
@@ -183,7 +185,9 @@ function mergeExisting(o: Organization): Organization {
   if (prev.verified && prev.type === 'greek') return { ...prev, links };
   // 로고: 디렉터리에 사진이 있으면 그걸로, 없으면 이전 사진(손으로 넣은 것), 그것도 없으면 머리글자
   const logo = o.logo.url ? o.logo : prev.logo.url ? prev.logo : o.logo;
-  return { ...prev, type: o.type, description: o.description || prev.description, links, parent: o.parent ?? prev.parent, logo };
+  // 예전 가져오기가 글자 코드째 넣은 이름(“&amp;”)은 고친 이름으로
+  const name = /&(?:#\d+|#x[0-9a-f]+|[a-z]+);/i.test(prev.name) ? o.name : prev.name;
+  return { ...prev, name, type: o.type, description: o.description || prev.description, links, parent: o.parent ?? prev.parent, logo };
 }
 
 /** 디렉터리에서 받은 뒤, 같은 학교의 손으로 넣어 둔 추정 항목(디렉터리 링크 없음 · 멤버/관리자 없음 · 이번에 안 맞음)은 지운다. greek 은 fetch-greeks 가 담당 */
