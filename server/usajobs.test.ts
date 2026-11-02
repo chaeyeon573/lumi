@@ -32,3 +32,9 @@ test('usajobs: field from the job, not just “federal = policy”', () => {
   assert.equal(f('Student Trainee (Congressional & Public Affairs)', 'Small Business Administration', 'Small Business Administration'), 'Policy & Law');
   assert.equal(f('Student Trainee', 'Department of Defense', 'Army Corps'), 'Other');
 });
+
+test('usajobs: citizenship stated in the posting → citizens', () => {
+  const o = usaJobToOpportunity(item({ UserArea: { Details: { JobSummary: 'Requirements: U.S. Citizenship; enrolled at least half-time.' } } }), NOW)!;
+  assert.equal(o.workAuth, 'citizens');
+  assert.equal(usaJobToOpportunity(item({ UserArea: { Details: { JobSummary: 'Gain experience.' } } }), NOW)!.workAuth, undefined);
+});

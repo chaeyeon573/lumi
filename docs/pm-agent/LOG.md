@@ -2,6 +2,12 @@
 
 최신이 위.
 
+## 2026-11-02 · 사장님 요청 — 인턴도 유학생 가능 여부
+- 공고 본문을 읽어 회사가 적은 문장만으로 표시(server/sources/workauth.ts): 유학생 가능(CPT/OPT 받음·international students welcome·sponsor) / 미국 시민만(citizenship required·보안 인가·must be a U.S. person) / 비자 스폰서 없음 / 안 적힘(표시 없음).
+- 본문 가져오기: Greenhouse(?content=true), Lever·Ashby(목록에 본문), Workday·SmartRecruiters(인턴 공고만 상세 한 번 더), USAJobs(자격 요건의 시민권).
+- 실제 456개로 돌려 봄: 유학생 가능 13(Jump Trading·Akuna), 미국 시민만 59(Anduril·Palantir), 스폰서 없음 13(Humana·AlixPartners 등), 안 적힘 371. 잘못 읽은 것 2가지 고침 — “스폰서 없음 (예: STEM OPT)” 목록의 OPT, ServiceNow 수출 통제 안내문. 실제 문장으로 테스트.
+- 화면: 인턴 카드 배지, 상세 “International students” 줄(안 적혀 있으면 “공고에 없음 — 지원 전 확인”), 인턴 칸 “Int’l students OK N” 칩(분야 개수도 따라감). 262 통과, 빌드·화면 오류 0. 라이브 데이터는 다음 인턴 가져오기(12시간마다)부터.
+
 ## 2026-11-02 · 사장님 요청 — 유학생 대학원생도 지원 가능한 것
 - 추가: Jane Street Graduate Research Fellowship(2026/11/13 AoE, 박사 $50k+등록금, “International students are eligible” 공식 명시), P.E.O. International Peace Scholarship(유학생 여성 대학원생, 최대 $12,500, “12월 15일까지” — 연도 표기 없어 날짜 미정).
 - 버클리 펠로십 중 페이지에 ‘모든 대학원생’/유학생 대상이 분명한 것만 ‘international students’ 태그: Chowdhury, Philip Brett, Guru Gobind Singh, Soong. (명시 없는 것은 짐작해 달지 않음; Lurcy·Mentored Research Award 는 시민·영주권자 전용으로 페이지에 적혀 있음)

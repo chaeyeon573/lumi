@@ -252,6 +252,9 @@ export interface Opportunity {
   field?: string;
   /** 회사가 공고를 올린·갱신한 시각 (마감일이 없는 상시 채용) */
   postedAt?: string;
+  /** 유학생이 지원할 수 있나 — 공고 본문에 적힌 것만 (server/sources/workauth.ts). 없으면 공고에 안 적혀 있음
+   *  citizens: 미국 시민·보안 인가 필요 · no_sponsor: 비자 스폰서 없음 · intl_ok: CPT/OPT·유학생 가능이라고 적힘 */
+  workAuth?: 'citizens' | 'no_sponsor' | 'intl_ok';
   official?: boolean;
   lastVerified: string;
   qna: Comment[];

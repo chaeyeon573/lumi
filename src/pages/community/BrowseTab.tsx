@@ -8,7 +8,7 @@ import { useAppStore } from '@core/store/useAppStore';
 import { ORG_TYPE_LABELS, OPP_TYPE_LABELS, OPP_TYPE_EMOJI } from '@core/lib/labels';
 import { daysUntil } from '@core/lib/recommend';
 import { forYou, scoreListings, scoreClubs, whyLine, limitRepeats, type Reason } from '@core/lib/foryou';
-import { FIELDS, REGIONS, audienceOf, badgeOf, categoriesOf, eventKindsOf, isGradStudent, listingField, locationOf, orgLinker, regionsOf, spreadByHost, type Category, type EventKind, type Region } from '@core/lib/listings';
+import { FIELDS, REGIONS, audienceOf, badgeOf, categoriesOf, eventKindsOf, isGradStudent, listingField, workAuthLabel, locationOf, orgLinker, regionsOf, spreadByHost, type Category, type EventKind, type Region } from '@core/lib/listings';
 import { COURSE_HUES, meetingsLabel, clashesWith, coursesFromCatalog, hasCatalogCourse } from '@core/lib/timetable';
 import { api } from '@core/api';
 import type { CatalogCourse } from '@core/api/types';
@@ -54,6 +54,7 @@ export function BrowseTab() {
   const [params, setParams] = useSearchParams();
   const { sub, kind } = readBrowseParams(params);
   const field = params.get('field') ?? '';
+  const intlOnly = params.get('intl') === '1';
   const region = params.get('region') ?? '';
   const sort = (params.get('sort') ?? 'foryou') as Sort;
   const setQ = (p: Record<string, string>) => { const next = new URLSearchParams(params); next.set('tab', 'opportunities'); for (const [k, v] of Object.entries(p)) { if (v) next.set(k, v); else next.delete(k); } setParams(next, { replace: true }); };
@@ -114,7 +115,7 @@ export function BrowseTab() {
       {sub === 'clubs' && <ClubsList kind={params.get('mine') ? 'mine' : kind} setKind={(k) => setQ({ kind: k, mine: '' })} rows={rows} />}
       {sub === 'classes' && <ClassesList dept={params.get('dept') ?? ''} setDept={(d) => setQ({ dept: d })} />}
       {sub !== 'foryou' && sub !== 'clubs' && sub !== 'classes' && (
-        <ListingList sub={sub} kind={kind} field={field} region={region} sort={sort} setQ={setQ} rows={rows} grad={grad} savedIds={savedIds} toggleSave={toggleSave} nav={nav} />
+        <ListingList sub={sub} kind={kind} field={field} intlOnly={intlOnly} region={region} sort={sort} setQ={setQ} rows={rows} grad={grad} savedIds={savedIds} toggleSave={toggleSave} nav={nav} />
       )}
     </div>
   );
@@ -161,14 +162,14 @@ function ForYouList({ rows, savedIds, toggleSave, onSaved }: { rows: Row[]; save
 }
 
 // ─── 공고 칸 (인턴·연구·장학금·해커톤·행사·무료 음식·창업·교환·저장) ─────────────
-function ListingList({ sub, kind, field, region, sort, setQ, rows, grad, savedIds, toggleSave, nav }: {
-  sub: Exclude<BrowseChip, 'foryou' | 'clubs' | 'classes'>; kind: string; field: string; region: string; sort: Sort; setQ: (p: Record<string, string>) => void;
+function ListingList({ sub, kind, field, intlOnly, region, sort, setQ, rows, grad, savedIds, toggleSave, nav }: {
+  sub: Exclude<BrowseChip, 'foryou' | 'clubs' | 'classes'>; kind: string; field: string; intlOnly: boolean; region: string; sort: Sort; setQ: (p: Record<string, string>) => void;
   rows: Row[]; grad: boolean; savedIds: Set<string>; toggleSave: (o: Opportunity) => void; nav: ReturnType<typeof useNavigate>;
 }) {
   const me = useViewer().me;
   const orgs = useAppStore((s) => s.organizations);
   const [shown, setShown] = useState(PAGE);
-  useEffect(() => setShown(PAGE), [sub, kind, field, region, sort]);
+  useEffect(() => setShown(PAGE), [sub, kind, field, intlOnly, region, sort]);
   const isEvents = sub === 'event' || sub === 'free_food';
   // 대학원생에게는 학부생 대상 공고를, 학부생에게는 대학원생 대상을 빼고 (장학금·연구)
   const fits = (o: Opportunity) => audienceOf(o) !== (grad ? 'undergrad' : 'grad');
@@ -186,10 +187,11 @@ function ListingList({ sub, kind, field, region, sort, setQ, rows, grad, savedId
     for (const r of inChip) {
       if (kind === 'phd' && audienceOf(r.o) !== 'grad') continue;
       if (region && !regionsOf(r.o).includes(region as Region)) continue;
+      if (intlOnly && r.o.workAuth !== 'intl_ok') continue;
       const f = listingField(r.o); m.set(f, (m.get(f) ?? 0) + 1);
     }
     return m;
-  }, [inChip, sub, kind, region]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [inChip, sub, kind, region, intlOnly]); // eslint-disable-line react-hooks/exhaustive-deps
   const list = useMemo(() => {
     let xs = inChip;
     if (sub === 'event' && kind) xs = xs.filter((r) => eventKindsOf(r.o).includes(kind as EventKind));
@@ -197,6 +199,7 @@ function ListingList({ sub, kind, field, region, sort, setQ, rows, grad, savedId
     // 유학생 가능 — 공식 페이지에 유학생·‘모든 대학원생’ 이라고 적힌 것만 이 태그를 단다(짐작하지 않는다)
     if ((sub === 'scholarship' || sub === 'research') && kind === 'intl') xs = xs.filter((r) => isIntlOk(r.o));
     if (field) xs = xs.filter((r) => listingField(r.o) === field);
+    if (sub === 'internship' && intlOnly) xs = xs.filter((r) => r.o.workAuth === 'intl_ok');
     if (region) xs = xs.filter((r) => regionsOf(r.o).includes(region as Region));
     const when = (o: Opportunity) => `${o.date ?? o.deadline ?? '9999'} ${o.startTime ?? ''}`;
     if (isEvents) {
@@ -210,7 +213,7 @@ function ListingList({ sub, kind, field, region, sort, setQ, rows, grad, savedId
     if (sub === 'saved') return [...xs].sort((a, b) => due(a.o).localeCompare(due(b.o))).map((r) => r.o);
     const sorted = [...xs].sort((a, b) => sort === 'deadline' ? due(a.o).localeCompare(due(b.o)) : sort === 'newest' ? posted(b.o).localeCompare(posted(a.o)) : b.score - a.score || due(a.o).localeCompare(due(b.o)));
     return sort === 'deadline' ? sorted.map((r) => r.o) : spreadByHost(sorted.map((r) => r.o));
-  }, [inChip, sub, kind, field, region, sort, isEvents, me]);
+  }, [inChip, sub, kind, field, intlOnly, region, sort, isEvents, me]);
   const whyOf = useMemo(() => {
     const byId = new Map(rows.map((r) => [r.o.id, r.reasons]));
     const vis = list.slice(0, shown);
@@ -221,9 +224,15 @@ function ListingList({ sub, kind, field, region, sort, setQ, rows, grad, savedId
   const labs = useMemo(() => (sub === 'research' ? orgs.filter((o) => o.type === 'lab' && o.schoolId === (me.affiliation.type === 'university' ? me.affiliation.schoolId : '')) : []), [sub, orgs, me]);
   const showSort = sub === 'internship' || sub === 'research' || sub === 'scholarship' || sub === 'hackathon';
   const intlCount = (sub === 'scholarship' || sub === 'research') ? inChip.filter((r) => isIntlOk(r.o)).length : 0;
+  // 인턴: 공고 본문에 CPT/OPT·유학생 가능이라고 적힌 것 (workAuth)
+  const intlJobs = sub === 'internship' ? inChip.filter((r) => r.o.workAuth === 'intl_ok').length : 0;
 
   return (
     <div>
+      {sub === 'internship' && intlJobs > 0 && <div className="flex gap-1.5 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2">
+        <Chip size="sm" active={!intlOnly} onClick={() => setQ({ intl: '' })}>{en ? 'Any work status' : '전체'}</Chip>
+        <Chip size="sm" active={intlOnly} onClick={() => setQ({ intl: intlOnly ? '' : '1' })}>{en ? `Int’l students OK ${intlJobs}` : `유학생 가능 ${intlJobs}`}</Chip>
+      </div>}
       {sub === 'internship' && grad && <div className="flex gap-1.5 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-2">
         <Chip size="sm" active={kind !== 'phd'} onClick={() => setQ({ kind: '' })}>{en ? 'All internships' : '전체 인턴'}</Chip>
         <Chip size="sm" active={kind === 'phd'} onClick={() => setQ({ kind: 'phd' })}>{en ? 'PhD/MS internships' : '대학원 인턴'}</Chip>
@@ -286,6 +295,7 @@ function ListingRow({ o, why, saved, toggleSave, club, onClub, showType = true }
             <span className={cn('h-5 px-2 rounded-full text-[11px] font-bold inline-flex items-center whitespace-nowrap shrink-0', BADGE_TONE[b.tone])}>{b.text}{time ? ` · ${time}` : ''}</span>
             {o.tags.includes('free food') && <span className="h-5 px-2 rounded-full bg-accent-soft text-primary text-[11px] font-semibold inline-flex items-center whitespace-nowrap shrink-0">{en ? 'Free food' : '무료 음식'}</span>}
             {showType && <span className="h-5 px-2 rounded-full bg-surface-2 text-ink-2 text-[11px] font-semibold inline-flex items-center whitespace-nowrap truncate">{o.type === 'internship' ? listingField(o) : OPP_TYPE_LABELS[o.type]}</span>}
+            {o.type === 'internship' && (() => { const w = workAuthLabel(o, en); return w && <span className={cn('h-5 px-2 rounded-full text-[11px] font-semibold inline-flex items-center whitespace-nowrap', w.tone === 'good' ? 'bg-verify/10 text-verify v2:bg-lime-900/60 v2:text-lime-400' : 'bg-surface-2 text-ink-3')}>{w.text}</span>; })()}
             {o.remote && <span className="h-5 px-2 rounded-full bg-accent-soft text-primary text-[11px] font-semibold inline-flex items-center">Remote</span>}
           </span>
           {why && <span className="block text-[12px] text-ink-3 truncate mt-1">✨ {why}</span>}
