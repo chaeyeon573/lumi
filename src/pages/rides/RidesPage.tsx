@@ -6,12 +6,14 @@ import { Chip, EmptyState, Button, Segmented } from '@/components/ui';
 import { SchoolEmailCard } from '@/components/settings/SchoolEmailCard';
 import { RideCard, SeasonCard, useRideCalendar, useRides } from '@/components/rides/RideBits';
 import { useViewer } from '@/hooks/useViewer';
+import { lang } from '@core/i18n';
 import {
   campusToday, dayLabel, departMin, filterGroupOf, isInRide, rideDestinations, rideEligibility, schoolOf, upcomingSeason, RIDE_FILTERS, SAFETY_NOTE, type Ride,
   rideLeft,
 } from '@core/lib/rides';
 
 type View = 'all' | 'mine';
+const L = (en: string, ko: string) => (lang === 'en' ? en : ko);
 
 /** /rides — browse by destination and time · /rides?mine=1 — My rides (Me › My rides) */
 export function RidesPage() {
@@ -44,9 +46,9 @@ export function RidesPage() {
 
   return (
     <div className="min-h-full pb-28 bg-bg">
-      <TopBar back title="Rides" />
+      <TopBar back title={L('Rides', '같이 타기')} />
       <div className="px-4 pt-2">
-        <Segmented value={view} onChange={(x) => set({ mine: x === 'mine' ? '1' : '', filter: '', to: '' })} options={[{ value: 'all', label: 'Find a ride' }, { value: 'mine', label: 'My rides' }]} />
+        <Segmented value={view} onChange={(x) => set({ mine: x === 'mine' ? '1' : '', filter: '', to: '' })} options={[{ value: 'all', label: L('Find a ride', '차 찾기') }, { value: 'mine', label: L('My rides', '내 라이드') }]} />
         {!eligible.ok && <div className="mt-3"><p className="text-[13px] text-ink-2 mb-2">{eligible.reason}</p>{!eligible.minor && <SchoolEmailCard />}</div>}
 
         {view === 'all' && (
@@ -55,25 +57,25 @@ export function RidesPage() {
             <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4 mt-4">
               {RIDE_FILTERS.map((f) => <Chip key={f.key} active={filter === f.key && !to} onClick={() => set({ filter: f.key === 'all' ? '' : f.key, to: '' })}>{f.label}</Chip>)}
             </div>
-            {toLabel && <div className="mt-2 flex items-center gap-2 text-[13px] text-ink-2">Showing rides to <b className="text-ink">{toLabel}</b><button className="text-primary font-semibold" onClick={() => set({ to: '' })}>Clear</button></div>}
+            {toLabel && <div className="mt-2 flex items-center gap-2 text-[13px] text-ink-2">{lang === 'en' ? <>Showing rides to <b className="text-ink">{toLabel}</b></> : <><b className="text-ink">{toLabel}</b> 가는 차만 보는 중</>}<button className="text-primary font-semibold" onClick={() => set({ to: '' })}>{L('Clear', '지우기')}</button></div>}
           </>
         )}
 
         <div className="mt-4 space-y-5">
           {upcoming.length === 0 && (
-            <EmptyState emoji={view === 'mine' ? '🚗' : '🛣️'} title={view === 'mine' ? (past.length ? 'No upcoming rides' : 'No rides yet') : toLabel ? `No rides to ${toLabel} yet` : 'No rides here yet'}
-              description={view === 'mine' ? 'Rides you post or join show up here.' : 'Post yours — students leaving within 90 minutes of you will see it as a match.'}
-              action={eligible.ok ? <Button size="sm" onClick={() => nav(`/rides/new${to ? `?to=${to}` : ''}`)}>Post a ride</Button> : undefined} />
+            <EmptyState emoji={view === 'mine' ? '🚗' : '🛣️'} title={view === 'mine' ? (past.length ? L('No upcoming rides', '다가오는 라이드가 없어요') : L('No rides yet', '아직 라이드가 없어요')) : toLabel ? L(`No rides to ${toLabel} yet`, `아직 ${toLabel} 가는 차가 없어요`) : L('No rides here yet', '아직 올라온 차가 없어요')}
+              description={view === 'mine' ? L('Rides you post or join show up here.', '올리거나 함께 탄 라이드가 여기 보여요.') : L('Post yours — students leaving within 90 minutes of you will see it as a match.', '내 라이드를 올리세요 — 앞뒤 90분 안에 출발하는 학생에게 맞는 차로 보여요.')}
+              action={eligible.ok ? <Button size="sm" onClick={() => nav(`/rides/new${to ? `?to=${to}` : ''}`)}>{L('Post a ride', '라이드 올리기')}</Button> : undefined} />
           )}
           {byDay(upcoming).map(([day, xs]) => (
             <section key={day}>
-              <h2 className="font-display text-[17px] font-bold text-primary mb-2">{day === today ? 'Today' : dayLabel(day)}</h2>
+              <h2 className="font-display text-[17px] font-bold text-primary mb-2">{day === today ? L('Today', '오늘') : dayLabel(day)}</h2>
               <div className="space-y-2.5">{xs.map((r) => <RideCard key={r.id} ride={r} />)}</div>
             </section>
           ))}
           {past.length > 0 && (
             <section>
-              <h2 className="font-display text-[17px] font-bold text-ink-3 mb-2">Past & cancelled</h2>
+              <h2 className="font-display text-[17px] font-bold text-ink-3 mb-2">{L('Past & cancelled', '지난·취소된 라이드')}</h2>
               <div className="space-y-2.5">{past.map((r) => <RideCard key={r.id} ride={r} />)}</div>
             </section>
           )}
@@ -82,7 +84,7 @@ export function RidesPage() {
       </div>
       {eligible.ok && (
         <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] p-3 safe-bottom z-20 bg-gradient-to-t from-bg via-bg/90 to-transparent">
-          <Button full size="lg" icon={<Plus size={18} />} onClick={() => nav(`/rides/new${to ? `?to=${to}` : ''}`)}>Post a ride</Button>
+          <Button full size="lg" icon={<Plus size={18} />} onClick={() => nav(`/rides/new${to ? `?to=${to}` : ''}`)}>{L('Post a ride', '라이드 올리기')}</Button>
         </div>
       )}
     </div>

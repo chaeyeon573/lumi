@@ -16,6 +16,10 @@
  */
 import type { ID, Relationships, User } from '@core/types';
 import { schoolTz } from './campusclock';
+import { lang } from '@core/i18n';
+
+/** 영어/한국어 한 쌍 — 서버(AROUNDU_LANG)와 화면이 같은 문장을 쓴다. 장소 이름(Sproul Plaza 등)은 고유명사라 그대로 */
+const say = (en: string, ko: string) => (lang === 'en' ? en : ko);
 
 export type RideKind = 'driving' | 'splitting' | 'looking';
 export type RideStatus = 'open' | 'closed' | 'cancelled';
@@ -129,23 +133,23 @@ export const rideDestinations = (schoolId: ID): RidePlace[] => (schoolId === 's_
 
 /** Browse filter chips → destination groups */
 export const RIDE_FILTERS: { key: string; label: string; groups: string[] | null }[] = [
-  { key: 'all', label: 'All', groups: null },
-  { key: 'airports', label: '✈️ Airports', groups: ['sfo', 'oak', 'sjc'] },
-  { key: 'errands', label: '🛒 Groceries & errands', groups: ['errands'] },
-  { key: 'city', label: '🌉 SF & Oakland', groups: ['sf', 'oakland'] },
-  { key: 'tahoe', label: '🏔️ Tahoe', groups: ['tahoe'] },
-  { key: 'other', label: 'Other', groups: ['custom'] },
+  { key: 'all', label: say('All', '전체'), groups: null },
+  { key: 'airports', label: say('✈️ Airports', '✈️ 공항'), groups: ['sfo', 'oak', 'sjc'] },
+  { key: 'errands', label: say('🛒 Groceries & errands', '🛒 장보기·볼일'), groups: ['errands'] },
+  { key: 'city', label: say('🌉 SF & Oakland', '🌉 SF·오클랜드'), groups: ['sf', 'oakland'] },
+  { key: 'tahoe', label: say('🏔️ Tahoe', '🏔️ 타호'), groups: ['tahoe'] },
+  { key: 'other', label: say('Other', '기타'), groups: ['custom'] },
 ];
 
 export const RIDE_KIND_LABELS: Record<RideKind, string> = {
-  driving: "I'm driving",
-  splitting: 'Splitting an Uber/Lyft',
-  looking: 'Looking for a ride',
+  driving: say("I'm driving", '내 차로 가요'),
+  splitting: say('Splitting an Uber/Lyft', 'Uber/Lyft 나눠 타기'),
+  looking: say('Looking for a ride', '탈 차를 찾아요'),
 };
-export const RIDE_KIND_SHORT: Record<RideKind, string> = { driving: 'Driving', splitting: 'Uber/Lyft split', looking: 'Looking' };
+export const RIDE_KIND_SHORT: Record<RideKind, string> = { driving: say('Driving', '운전'), splitting: say('Uber/Lyft split', 'Uber/Lyft 나눠 타기'), looking: say('Looking', '찾는 중') };
 export const RIDE_KIND_EMOJI: Record<RideKind, string> = { driving: '🚗', splitting: '🚕', looking: '🙋' };
 
-export const SAFETY_NOTE = 'Meet at the public pickup spot, ride only with verified students, and share your trip with a friend.';
+export const SAFETY_NOTE = say('Meet at the public pickup spot, ride only with verified students, and share your trip with a friend.', '공개된 탑승 장소에서 만나고, 인증된 학생과만 타고, 친구에게 이동 일정을 알려 두세요.');
 
 const norm = (s: string) => s.trim().toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 const findPlace = (list: RidePlace[], key: string) => list.find((p) => p.key === key);
@@ -154,7 +158,7 @@ export function pickupLabel(r: Pick<Ride, 'schoolId' | 'from'>): string {
   return findPlace(ridePickups(r.schoolId), r.from)?.label ?? r.from;
 }
 export function destLabel(r: Pick<Ride, 'schoolId' | 'to' | 'toCustom'>): string {
-  if (r.to === CUSTOM) return r.toCustom?.trim() || 'Somewhere';
+  if (r.to === CUSTOM) return r.toCustom?.trim() || say('Somewhere', '어딘가');
   return findPlace(rideDestinations(r.schoolId), r.to)?.label ?? r.to;
 }
 export function destEmoji(r: Pick<Ride, 'schoolId' | 'to'>): string {
@@ -189,15 +193,23 @@ export const departMin = (r: Pick<Ride, 'date' | 'start'>) => Date.parse(`${r.da
 /** "9:30am" */
 export function clock(hhmm: string): string {
   const m = toMin(hhmm); const h = Math.floor(m / 60); const mm = m % 60;
-  return `${h % 12 || 12}${mm ? `:${String(mm).padStart(2, '0')}` : ''}${h < 12 ? 'am' : 'pm'}`;
+  const hm = `${h % 12 || 12}${mm ? `:${String(mm).padStart(2, '0')}` : ''}`;
+  if (lang !== 'en') return `${h < 12 ? '오전' : '오후'} ${mm ? hm : `${hm}시`}`; // "오전 9시" · "오후 1:30"
+  return `${hm}${h < 12 ? 'am' : 'pm'}`;
 }
 /** "Wed Nov 25" */
 export function dayLabel(date: string): string {
+  if (lang !== 'en') return new Date(`${date}T12:00:00Z`).toLocaleDateString('ko-KR', { month: 'long', day: 'numeric', weekday: 'short', timeZone: 'UTC' });
   return new Date(`${date}T12:00:00Z`).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' }).replace(',', '');
+}
+/** "Wed" · "수" — 목록 한 줄의 요일 */
+export function weekdayLabel(date: string): string {
+  return new Date(`${date}T12:00:00Z`).toLocaleDateString(lang === 'en' ? 'en-US' : 'ko-KR', { weekday: 'short', timeZone: 'UTC' });
 }
 /** "Wed Nov 25 · 9:30–10:30am" */
 export function whenLabel(r: Pick<Ride, 'date' | 'start' | 'end'>): string {
   const a = clock(r.start), b = clock(r.end);
+  if (lang !== 'en') return `${dayLabel(r.date)} · ${r.start === r.end ? a : `${a}–${b.replace(a.slice(0, 2), '').trim()}`}`;
   const sameHalf = a.slice(-2) === b.slice(-2);
   return `${dayLabel(r.date)} · ${r.start === r.end ? a : `${sameHalf ? a.slice(0, -2) : a}–${b}`}`;
 }
@@ -215,9 +227,9 @@ export function isFull(r: Pick<Ride, 'kind' | 'seats' | 'memberCount'>): boolean
 }
 export function seatsText(r: Pick<Ride, 'kind' | 'seats' | 'memberCount'>): string {
   const left = seatsLeft(r);
-  if (left === null) return r.memberCount ? `${r.memberCount} teamed up` : r.seats > 1 ? `${r.seats} people` : '1 person';
-  if (left === 0) return 'Full';
-  return left === 1 ? '1 seat left' : `${left} seats left`;
+  if (left === null) return r.memberCount ? say(`${r.memberCount} teamed up`, `${r.memberCount}명 함께`) : r.seats > 1 ? say(`${r.seats} people`, `${r.seats}명`) : say('1 person', '1명');
+  if (left === 0) return say('Full', '마감');
+  return left === 1 ? say('1 seat left', '1자리 남음') : say(`${left} seats left`, `${left}자리 남음`);
 }
 /** People in the car right now, host included */
 export const peopleCount = (r: Pick<Ride, 'memberCount'>) => 1 + r.memberCount;
@@ -227,14 +239,14 @@ export const peopleCount = (r: Pick<Ride, 'memberCount'>) => 1 + r.memberCount;
  * N is the people in the ride now (at least 2, so a fresh post shows the 2-person split).
  */
 export function fareText(r: Pick<Ride, 'estTotal' | 'memberCount'>, people = Math.max(2, peopleCount(r))): string {
-  if (!r.estTotal) return 'Split evenly';
-  return `≈ $${Math.round(r.estTotal / people)} each with ${people} people`;
+  if (!r.estTotal) return say('Split evenly', '똑같이 나눠요');
+  return say(`≈ $${Math.round(r.estTotal / people)} each with ${people} people`, `${people}명이면 1인당 ≈ $${Math.round(r.estTotal / people)}`);
 }
 
 /** "Ride to SFO · Wed Nov 25 9:30am · 2 seats left" — link previews and share text */
 export function rideTitle(r: Pick<Ride, 'kind' | 'schoolId' | 'to' | 'toCustom' | 'date' | 'start' | 'seats' | 'memberCount' | 'status'>): string {
-  const head = r.kind === 'looking' ? `Looking for a ride to ${destLabel(r)}` : `Ride to ${destLabel(r)}`;
-  const tail = r.status === 'cancelled' ? 'Cancelled' : r.status === 'closed' ? 'Closed' : seatsText(r);
+  const head = r.kind === 'looking' ? say(`Looking for a ride to ${destLabel(r)}`, `${destLabel(r)} 가는 차 찾아요`) : say(`Ride to ${destLabel(r)}`, `${destLabel(r)} 같이 타기`);
+  const tail = r.status === 'cancelled' ? say('Cancelled', '취소됨') : r.status === 'closed' ? say('Closed', '모집 마감') : seatsText(r);
   return `${head} · ${dayLabel(r.date)} ${clock(r.start)} · ${tail}`;
 }
 
@@ -251,9 +263,9 @@ export const isVerifiedStudent = (u?: Pick<User, 'affiliation' | 'sample'>) => !
 export const RIDE_MIN_AGE = 18;
 export const isAdultByYear = (birthYear?: number, now = new Date()) => !!birthYear && now.getFullYear() - birthYear >= RIDE_MIN_AGE;
 export function rideEligibility(u?: Pick<User, 'affiliation' | 'sample' | 'birthYear'>): { ok: boolean; reason?: string; minor?: boolean } {
-  if (!u || u.affiliation.type !== 'university') return { ok: false, reason: 'Rides are for students — sign in with your school account.' };
-  if (!u.sample && !isAdultByYear(u.birthYear)) return { ok: false, minor: true, reason: `Rides are for students ${RIDE_MIN_AGE} and older.` };
-  if (!u.affiliation.emailVerified && !u.sample) return { ok: false, reason: 'Verify your school email to post or join rides — it keeps rides to students from your campus.' };
+  if (!u || u.affiliation.type !== 'university') return { ok: false, reason: say('Rides are for students — sign in with your school account.', '같이 타기는 학생만 쓸 수 있어요 — 학교 계정으로 로그인하세요.') };
+  if (!u.sample && !isAdultByYear(u.birthYear)) return { ok: false, minor: true, reason: say(`Rides are for students ${RIDE_MIN_AGE} and older.`, `같이 타기는 만 ${RIDE_MIN_AGE}세 이상 학생만 쓸 수 있어요.`) };
+  if (!u.affiliation.emailVerified && !u.sample) return { ok: false, reason: say('Verify your school email to post or join rides — it keeps rides to students from your campus.', '학교 이메일을 인증해야 올리거나 탈 수 있어요 — 같은 학교 학생끼리만 타게 하려는 거예요.') };
   return { ok: true };
 }
 
@@ -270,30 +282,30 @@ export const MAX_WINDOW_MIN = 6 * 60;
 
 /** null when OK, otherwise a sentence to show the student */
 export function validateRideInput(input: Partial<RideInput>, schoolId: ID, today: string): string | null {
-  if (!input || !['driving', 'splitting', 'looking'].includes(input.kind as string)) return 'Pick a ride type.';
-  if (!findPlace(ridePickups(schoolId), String(input.from ?? ''))) return 'Pick a pickup spot from the list — rides meet at public spots, never a home address.';
+  if (!input || !['driving', 'splitting', 'looking'].includes(input.kind as string)) return say('Pick a ride type.', '종류를 고르세요.');
+  if (!findPlace(ridePickups(schoolId), String(input.from ?? ''))) return say('Pick a pickup spot from the list — rides meet at public spots, never a home address.', '목록에서 탑승 장소를 고르세요 — 집 주소가 아니라 공개된 장소에서 만나요.');
   if (input.to === CUSTOM) {
     const c = String(input.toCustom ?? '').trim();
-    if (c.length < 2 || c.length > 60) return 'Name the destination (2–60 characters).';
-    if (ADDRESS.test(c)) return 'Use a place name (like "Napa" or "Golden 1 Center"), not a street address.';
-  } else if (!findPlace(rideDestinations(schoolId), String(input.to ?? ''))) return 'Pick a destination.';
-  if (!DATE.test(String(input.date ?? '')) || Number.isNaN(Date.parse(`${input.date}T12:00:00Z`))) return 'Pick a date.';
-  if (input.date! < today) return 'That date has passed.';
-  if (input.date! > addDays(today, MAX_DAYS_AHEAD)) return 'Rides can be posted up to 6 months ahead.';
-  if (!HHMM.test(String(input.start ?? '')) || !HHMM.test(String(input.end ?? ''))) return 'Pick a time window.';
-  if (toMin(input.end!) < toMin(input.start!)) return 'The window should end after it starts.';
-  if (toMin(input.end!) - toMin(input.start!) > MAX_WINDOW_MIN) return 'Keep the time window under 6 hours so people can plan.';
+    if (c.length < 2 || c.length > 60) return say('Name the destination (2–60 characters).', '목적지 이름을 적어 주세요 (2–60자).');
+    if (ADDRESS.test(c)) return say('Use a place name (like "Napa" or "Golden 1 Center"), not a street address.', '도로명 주소 말고 장소 이름(예: "Napa", "Golden 1 Center")을 적어 주세요.');
+  } else if (!findPlace(rideDestinations(schoolId), String(input.to ?? ''))) return say('Pick a destination.', '목적지를 고르세요.');
+  if (!DATE.test(String(input.date ?? '')) || Number.isNaN(Date.parse(`${input.date}T12:00:00Z`))) return say('Pick a date.', '날짜를 고르세요.');
+  if (input.date! < today) return say('That date has passed.', '이미 지난 날짜예요.');
+  if (input.date! > addDays(today, MAX_DAYS_AHEAD)) return say('Rides can be posted up to 6 months ahead.', '6개월 안의 날짜만 올릴 수 있어요.');
+  if (!HHMM.test(String(input.start ?? '')) || !HHMM.test(String(input.end ?? ''))) return say('Pick a time window.', '출발 시간대를 고르세요.');
+  if (toMin(input.end!) < toMin(input.start!)) return say('The window should end after it starts.', '끝나는 시간이 시작보다 뒤여야 해요.');
+  if (toMin(input.end!) - toMin(input.start!) > MAX_WINDOW_MIN) return say('Keep the time window under 6 hours so people can plan.', '다른 사람이 계획할 수 있게 시간대는 6시간 안으로 잡아 주세요.');
   const seats = Number(input.seats);
   const maxSeats = input.kind === 'looking' ? 4 : MAX_GROUP - 1;
-  if (!Number.isInteger(seats) || seats < 1 || seats > maxSeats) return input.kind === 'looking' ? 'How many people need a ride? (1–4)' : `Seats should be 1–${maxSeats}.`;
+  if (!Number.isInteger(seats) || seats < 1 || seats > maxSeats) return input.kind === 'looking' ? say('How many people need a ride? (1–4)', '몇 명이 타야 하나요? (1–4)') : say(`Seats should be 1–${maxSeats}.`, `자리는 1–${maxSeats}개예요.`);
   if (input.estTotal !== undefined && input.estTotal !== null) {
     const v = Number(input.estTotal);
-    if (!Number.isFinite(v) || v < 1 || v > 2000) return 'Estimated total should be between $1 and $2,000 — or leave it blank.';
+    if (!Number.isFinite(v) || v < 1 || v > 2000) return say('Estimated total should be between $1 and $2,000 — or leave it blank.', '예상 총액은 $1–$2,000 사이로 적거나 비워 두세요.');
   }
   const note = String(input.note ?? '');
-  if (note.length > MAX_NOTE) return `Keep the note under ${MAX_NOTE} characters.`;
-  if (ADDRESS.test(note)) return 'Keep addresses out of the note — meet at the pickup spot.';
-  if (PHONE.test(note)) return 'Share phone numbers in the ride chat, not the public note.';
+  if (note.length > MAX_NOTE) return say(`Keep the note under ${MAX_NOTE} characters.`, `메모는 ${MAX_NOTE}자 안으로 적어 주세요.`);
+  if (ADDRESS.test(note)) return say('Keep addresses out of the note — meet at the pickup spot.', '메모에 주소는 적지 마세요 — 탑승 장소에서 만나요.');
+  if (PHONE.test(note)) return say('Share phone numbers in the ride chat, not the public note.', '전화번호는 공개 메모 말고 라이드 채팅에서 나누세요.');
   return null;
 }
 
@@ -402,7 +414,7 @@ export interface RideSeason {
  * or for a school without one. TODO(academic-calendar): drop once every rides school has calendar rows.
  */
 export const RIDE_SEASONS: RideSeason[] = [
-  { key: 'thanksgiving-2026', schoolId: 's_berkeley', title: 'Thanksgiving break rides', breakStart: '2026-11-25', breakEnd: '2026-11-29', showFrom: '2026-11-10', showTo: '2026-11-25', source: 'https://registrar.berkeley.edu/wp-content/uploads/UCB_AcademicCalendar_2026-27_a11y.pdf' },
+  { key: 'thanksgiving-2026', schoolId: 's_berkeley', title: say('Thanksgiving break rides', '추수감사절 연휴 같이 타기'), breakStart: '2026-11-25', breakEnd: '2026-11-29', showFrom: '2026-11-10', showTo: '2026-11-25', source: 'https://registrar.berkeley.edu/wp-content/uploads/UCB_AcademicCalendar_2026-27_a11y.pdf' },
 ];
 
 /** Minimal shape of an academic-calendar row (lib/academic AcademicDate) */
@@ -426,7 +438,7 @@ export function rideSeasons(schoolId: ID, calendar?: CalendarDay[]): RideSeason[
     }
     const dow = new Date(`${tg.end}T12:00:00Z`).getUTCDay();
     const end = addDays(tg.end, dow === 0 ? 0 : 7 - dow);
-    out.push({ key: `thanksgiving-${start.slice(0, 4)}`, schoolId, title: 'Thanksgiving break rides', breakStart: start, breakEnd: end, showFrom: addDays(start, -BANNER_DAYS_BEFORE), showTo: start, source: tg.source ?? '' });
+    out.push({ key: `thanksgiving-${start.slice(0, 4)}`, schoolId, title: say('Thanksgiving break rides', '추수감사절 연휴 같이 타기'), breakStart: start, breakEnd: end, showFrom: addDays(start, -BANNER_DAYS_BEFORE), showTo: start, source: tg.source ?? '' });
   }
   return out.length ? out : RIDE_SEASONS.filter((x) => x.schoolId === schoolId);
 }

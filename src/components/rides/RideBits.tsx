@@ -8,9 +8,12 @@ import { useAppStore } from '@core/store/useAppStore';
 import { useAcademicDates } from '@/hooks/useCampusData';
 import { cn } from '@core/lib/cn';
 import type { User } from '@core/types';
+import { lang } from '@core/i18n';
+
+const L = (en: string, ko: string) => (lang === 'en' ? en : ko);
 import {
   bannerSeason, campusToday, clock, dayLabel, destLabel, fareText, isInRide, isVerifiedStudent, pickupLabel, schoolOf, seatsText, isFull,
-  RIDE_KIND_EMOJI, RIDE_KIND_SHORT, type Ride, type RideSeason,
+  RIDE_KIND_EMOJI, RIDE_KIND_SHORT, weekdayLabel, type Ride, type RideSeason,
   rideLeft,
 } from '@core/lib/rides';
 
@@ -20,7 +23,7 @@ export function useRideCalendar(schoolId: string) {
   return Array.isArray(d) && d.length ? d : undefined;
 }
 
-export const firstName = (u?: Pick<User, 'nickname'>) => (u?.nickname ?? 'Someone').trim().split(/\s+/)[0];
+export const firstName = (u?: Pick<User, 'nickname'>) => (u?.nickname ?? L('Someone', '누군가')).trim().split(/\s+/)[0];
 
 /**
  * Rides this viewer may see. The server already filters (school, blocks, riders) — this repeats the block and
@@ -39,7 +42,7 @@ export function useRides(): Ride[] {
 export function StudentMark({ user, className }: { user?: User; className?: string }) {
   if (!user) return null;
   if (user.sample) return <SampleTag className={cn('ml-1 mr-0', className)} />;
-  if (isVerifiedStudent(user)) return <BadgeCheck size={14} strokeWidth={2.4} className={cn('inline text-verify shrink-0', className)} aria-label="Verified student" />;
+  if (isVerifiedStudent(user)) return <BadgeCheck size={14} strokeWidth={2.4} className={cn('inline text-verify shrink-0', className)} aria-label={L('Verified student', '인증된 학생')} />;
   return null;
 }
 
@@ -51,7 +54,7 @@ export function RideCard({ ride, className }: { ride: Ride; className?: string }
   const mine = ride.hostId === v.me.id;
   const joined = ride.memberIds.includes(v.me.id);
   const full = isFull(ride);
-  const status = ride.status === 'cancelled' ? 'Cancelled' : ride.status === 'closed' ? 'Closed' : full ? 'Full' : seatsText(ride);
+  const status = ride.status === 'cancelled' ? L('Cancelled', '취소됨') : ride.status === 'closed' ? L('Closed', '모집 마감') : full ? L('Full', '마감') : seatsText(ride);
   return (
     <button onClick={() => nav(`/rides/${ride.id}`)} className={cn('card w-full rounded-[22px] p-3 flex items-center gap-3 text-left press', ride.status === 'cancelled' && 'opacity-60', className)}>
       <span className="relative shrink-0">
@@ -60,15 +63,15 @@ export function RideCard({ ride, className }: { ride: Ride; className?: string }
       </span>
       <span className="flex-1 min-w-0">
         <span className="flex items-center gap-1 text-[15px] font-bold text-ink truncate">
-          <span className="truncate">{mine ? 'You' : firstName(host)} → {destLabel(ride)}</span>
+          <span className="truncate">{mine ? L('You', '나') : firstName(host)} → {destLabel(ride)}</span>
           {!host?.sample && <StudentMark user={host} />}
         </span>
-        <span className="block text-[13px] text-ink-2 truncate">{(ride.sample || host?.sample) && <SampleTag className="h-[18px]" />}{dayLabel(ride.date).split(' ')[0]} {clock(ride.start)} · from {pickupLabel(ride)}</span>
+        <span className="block text-[13px] text-ink-2 truncate">{(ride.sample || host?.sample) && <SampleTag className="h-[18px]" />}{weekdayLabel(ride.date)} {clock(ride.start)} · {L(`from ${pickupLabel(ride)}`, `${pickupLabel(ride)}에서`)}</span>
         <span className="block text-[12.5px] font-semibold text-primary truncate">{ride.kind === 'looking' ? `${RIDE_KIND_SHORT.looking} · ${fareText(ride)}` : `${fareText(ride)}`}</span>
       </span>
       <span className="flex flex-col items-end gap-1 shrink-0">
         <span className={cn('h-9 px-4 rounded-full grid place-items-center text-[13px] font-bold', mine || joined ? 'bg-primary-soft text-primary' : full || ride.status !== 'open' ? 'bg-surface-2 text-ink-3' : 'bg-primary text-on-primary')}>
-          {mine ? 'Yours' : joined ? 'Joined' : ride.kind === 'looking' ? 'Help' : full || ride.status !== 'open' ? 'View' : 'Join'}
+          {mine ? L('Yours', '내 차') : joined ? L('Joined', '함께 탐') : ride.kind === 'looking' ? L('Help', '태워 주기') : full || ride.status !== 'open' ? L('View', '보기') : L('Join', '같이 타기')}
         </span>
         <span className="text-[11.5px] text-ink-3 font-medium">{status}</span>
       </span>
@@ -82,12 +85,12 @@ export function SeasonCard({ season, onPick, className }: { season: RideSeason; 
   const postDay = season.breakStart > campusToday() ? season.breakStart : campusToday();
   return (
     <div className={cn('rounded-[26px] p-4 bg-primary-soft v2:bg-[linear-gradient(160deg,#4a1238_0%,#1F1B2B_70%)] v2:border v2:border-line', className)}>
-      <div className="text-[11px] font-extrabold tracking-[0.12em] uppercase text-primary v2:text-pink-300">{season.title.replace(/ rides$/, '')} · no classes from {dayLabel(season.breakStart)}</div>
-      <div className="font-display text-[24px] leading-[1.1] font-extrabold text-primary v2:text-ink mt-1.5">Split a ride to the airport ✈️</div>
-      <p className="text-[13px] text-ink-2 mt-1">Post your ride once — we match you with students leaving ±90 min.</p>
+      <div className="text-[11px] font-extrabold tracking-[0.12em] uppercase text-primary v2:text-pink-300">{season.title.replace(/ rides$| 같이 타기$/, '')} · {L(`no classes from ${dayLabel(season.breakStart)}`, `${dayLabel(season.breakStart)}부터 수업 없음`)}</div>
+      <div className="font-display text-[24px] leading-[1.1] font-extrabold text-primary v2:text-ink mt-1.5">{L('Split a ride to the airport ✈️', '공항까지 같이 타요 ✈️')}</div>
+      <p className="text-[13px] text-ink-2 mt-1">{L('Post your ride once — we match you with students leaving ±90 min.', '한 번만 올리면 앞뒤 90분 안에 출발하는 학생과 이어 드려요.')}</p>
       <div className="mt-3 flex flex-wrap gap-2">
         {['sfo', 'oak', 'sjc'].map((k) => <button key={k} onClick={() => onPick(k)} className="h-9 px-4 rounded-full bg-surface text-ink text-[13px] font-bold border border-line press">{k.toUpperCase()}</button>)}
-        <button onClick={() => nav(`/rides/new?to=sfo&date=${postDay}`)} className="h-9 px-4 rounded-full bg-primary text-on-primary text-[13px] font-bold press">Post my ride</button>
+        <button onClick={() => nav(`/rides/new?to=sfo&date=${postDay}`)} className="h-9 px-4 rounded-full bg-primary text-on-primary text-[13px] font-bold press">{L('Post my ride', '내 라이드 올리기')}</button>
       </div>
     </div>
   );
@@ -121,9 +124,9 @@ export function RidesEntry({ className, compact }: { className?: string; compact
       <button onClick={() => nav('/rides?filter=airports')} className={cn('w-full rounded-[22px] p-3.5 flex items-center gap-3 text-left press bg-primary-soft v2:bg-[linear-gradient(120deg,#4a1238,#1F1B2B)] v2:border v2:border-line', className)}>
         <span className="h-11 w-11 rounded-full bg-surface grid place-items-center text-[22px] shrink-0">✈️</span>
         <span className="flex-1 min-w-0">
-          <span className="block text-[11px] font-extrabold tracking-[0.1em] uppercase text-primary v2:text-pink-300">No classes from {dayLabel(season.breakStart)}</span>
+          <span className="block text-[11px] font-extrabold tracking-[0.1em] uppercase text-primary v2:text-pink-300">{L(`No classes from ${dayLabel(season.breakStart)}`, `${dayLabel(season.breakStart)}부터 수업 없음`)}</span>
           <span className="block text-[15px] font-bold text-ink truncate">{season.title}</span>
-          <span className="block text-[12.5px] text-ink-2 truncate">{airport ? `${airport} airport ride${airport === 1 ? '' : 's'} posted · split SFO / OAK / SJC` : 'Split SFO / OAK / SJC with classmates'}</span>
+          <span className="block text-[12.5px] text-ink-2 truncate">{airport ? L(`${airport} airport ride${airport === 1 ? '' : 's'} posted · split SFO / OAK / SJC`, `공항 라이드 ${airport}개 · SFO / OAK / SJC 같이 타기`) : L('Split SFO / OAK / SJC with classmates', '학교 친구와 SFO / OAK / SJC 같이 타기')}</span>
         </span>
         <ChevronRight size={18} className="text-ink-3 shrink-0" />
       </button>
@@ -133,8 +136,8 @@ export function RidesEntry({ className, compact }: { className?: string; compact
     <button onClick={() => nav('/rides')} className={cn('w-full card rounded-full flex items-center gap-3 text-left press', compact ? 'p-1.5 pr-3' : 'p-2 pr-3.5', className)}>
       <span className="h-10 w-10 rounded-full bg-primary-soft text-primary grid place-items-center shrink-0"><Car size={19} /></span>
       <span className="flex-1 min-w-0">
-        <span className="block text-[14px] font-bold text-ink">Rides</span>
-        <span className="block text-[12.5px] text-ink-2 truncate">{open ? `${open} open · ${dests.slice(0, 3).join(', ')}${dests.length > 3 ? '…' : ''}` : "Airports, Trader Joe's, Costco, SF, Tahoe"}</span>
+        <span className="block text-[14px] font-bold text-ink">{L('Rides', '같이 타기')}</span>
+        <span className="block text-[12.5px] text-ink-2 truncate">{open ? `${L(`${open} open`, `${open}대 모집 중`)} · ${dests.slice(0, 3).join(', ')}${dests.length > 3 ? '…' : ''}` : L("Airports, Trader Joe's, Costco, SF, Tahoe", "공항, Trader Joe's, Costco, SF, 타호")}</span>
       </span>
       <ChevronRight size={18} className="text-ink-3 shrink-0" />
     </button>
