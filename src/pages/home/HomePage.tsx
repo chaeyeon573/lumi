@@ -18,7 +18,7 @@ import { SayHiButton } from '@/components/people/SayHi';
 import { JoinButton } from '@/components/cards/JoinButton';
 import { assetUrl } from '@/lib/assets';
 import { cn } from '@core/lib/cn';
-import { useInvite } from '@/components/together/FeedExtras';
+import { ColdStart } from '@/components/people/ColdStart';
 import type { Activity, User, Interest, Goal } from '@core/types';
 
 interface Filters { years: number[]; sameDept: boolean; sameClass: boolean; freeNow: boolean; interests: Interest[]; goals: Goal[] }
@@ -80,7 +80,6 @@ export function HomePage() {
   };
   const undo = () => { if (idx > 0) { setReturning(true); setIdx((i) => i - 1); } };
   const deck = useRef<DeckHandle>(null);
-  const invite = useInvite();
   const hi = current ? hiContext(me, current.u, { rosters: v.snap.classRosters, canSeeTimetable: v.canSeeField(current.u, 'timetable') }) : null;
   const chips: { key: string; label: string; clear: () => void }[] = [
     ...f.years.map((y) => ({ key: `y${y}`, label: yearLabel(y), clear: () => setF({ ...f, years: f.years.filter((x) => x !== y) }) })),
@@ -100,15 +99,15 @@ export function HomePage() {
       {status === 'loading' && <CardSkeleton />}
       {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
       {status === 'ready' && (v.visibleUsers.length === 0 ? (
-        // 학교에 아직 다른 학생이 없다 — 지어낸 사람을 채우지 않고, 사람을 데려오는 버튼 하나
-        <EmptyState emoji="👋" title={lang === 'en' ? 'Students from your campus show up here' : '같은 학교 학생들이 여기에 보여요'} description={lang === 'en' ? 'Bring your floor or your class along.' : '같은 층이나 수업 사람들을 불러오세요.'}
-          action={<Button size="sm" onClick={() => void invite(me.timetable.length ? 'class' : 'floor')}>{lang === 'en' ? 'Invite friends' : '친구 초대'}</Button>} />
+        // 학교에 아직 다른 학생이 없다 (가입 첫날) — 지어낸 사람 대신 이번 주에 같이 갈 수 있는 실제 캠퍼스 일 + 내 수업 (ColdStart)
+        <div className="flex-1 min-h-0 overflow-y-auto hide-scrollbar"><ColdStart className="pt-2" /></div>
       ) : cards.length === 0 ? (
         <EmptyState emoji="" title={t('이 조건에 맞는 사람이 아직 없어요')} action={<Button size="sm" variant="outline" onClick={() => { setF(EMPTY); reset(); }}>{t('조건 지우기')}</Button>} />
       ) : !current ? (
-        // 끝까지 넘겼을 때 막다른 길이 되지 않게 — 사람이 적은 첫 주엔 여기가 제일 자주 보인다. 친구를 부르는 게 다음 할 일
-        <EmptyState emoji="" title={lang === 'en' ? "You've seen everyone for now" : '오늘 추천은 여기까지예요'} description={lang === 'en' ? 'Lumi gets better with every friend who joins.' : '친구가 들어올수록 볼 사람이 늘어요.'}
-          action={<div className="flex gap-2 justify-center"><Button size="sm" onClick={() => void invite(me.timetable.length ? 'class' : 'floor')}>{lang === 'en' ? 'Invite friends' : '친구 초대'}</Button><Button size="sm" variant="outline" onClick={reset}>{lang === 'en' ? 'Start over' : '처음부터 다시 보기'}</Button></div>} />
+        // 끝까지 넘겼을 때 막다른 길이 되지 않게 — 사람이 적은 첫 주엔 여기가 제일 자주 보인다. 이번 주에 같이 갈 수 있는 것으로 잇는다
+        <div className="flex-1 min-h-0 overflow-y-auto hide-scrollbar">
+          <ColdStart head={<div className="flex items-center justify-between gap-3 mb-5 pt-2"><b className="text-[15px]">{lang === 'en' ? "You've seen everyone for now" : '오늘 추천은 여기까지예요'}</b><Button size="sm" variant="outline" onClick={reset}>{lang === 'en' ? 'Start over' : '처음부터'}</Button></div>} />
+        </div>
       ) : (
         <div className="flex-1 min-h-0 flex flex-col">
           <SwipeDeck ref={deck} key={`${idx}`} top={current} next={cards[idx + 1]} returning={returning} onSwipe={onSwipe} onOpen={(u) => nav(`/users/${u.id}`)} />
