@@ -73,3 +73,9 @@ test('parseDrupalAccordionCards: USF undergraduate org page (real excerpt)', asy
   assert.match(cards[0].description, /Jesuit Honors Society/);
   assert.deepEqual(cards[0].links, [{ label: 'Website', url: 'https://www.alphasigmanu.org/' }, { label: 'Instagram', url: 'https://www.instagram.com/asn.usfca/' }]);
 });
+
+test('school list names decode HTML codes (USF, UCSC, SCU pages)', async () => {
+  const { parseAccordionDirectory } = await import('./sources/orglinks');
+  const html = '<div id="d.en.1" class="default-accordion"><h2>Cultural</h2><div id="accordion-panel-1" class="collapse"><p>Ballet Folkl&oacute;rico de SCU<br />Hui O Hawai&#039;i<br />Game Design &#038; Art Collaborations<br />ACM &#8211; Women</p></div></div>';
+  assert.deepEqual(parseAccordionDirectory(html).map((x) => x.name), ['Ballet Folklórico de SCU', "Hui O Hawai'i", 'Game Design & Art Collaborations', 'ACM – Women']);
+});

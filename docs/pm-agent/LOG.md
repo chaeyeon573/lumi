@@ -1606,3 +1606,8 @@
 - Queue (Stanford links): the official a cappella council site acappella.stanford.edu has a page per group with its site/Instagram/Facebook → 9 groups (Counterpoint, Everyday People, Fleet Street, Harmonics, Mixed Company, O-Tone, Raagapella, Talisman, Testimony). Stanford now 41/733 with a public link. Tried and not usable: GSB alumni club page (no club sites), arts.stanford.edu student groups (403), Wikipedia a cappella list (no group links).
 - Spot check clubs: UCSC VSA, Leviathan; SCU Photography Club, Plant People Club; SFSU Mashouf Wellness — 5/5 on the official public lists.
 - Spot check courses: UC Davis ATM 270D, FAP 430, ART 142D; SFSU PSY 697, PHIL 470 — code and title match 5/5.
+
+## 2026-11-02 18:33 UTC — routine run
+- Queue (Stanford links): checked community-center and religious-life pages (El Centro VSOs, BCSC BVSO, ORSL SAR, A3C) — names only, no per-group links. Official list route is used up at 41/733; remaining Stanford groups need one-by-one search. Next runs move to Berkeley.
+- Spot check found a bug: USF/UCSC/SCU names showed HTML codes ("Hui O Hawai&#039;i", "Game Design &#038; Art", "Ballet Folkl&oacute;rico"). The school-list readers now decode numeric and named codes; test added; USF, UCSC and SCU files re-collected (0 codes left).
+- Spot check otherwise: USF VSA, SFSU Lambda Theta Alpha, SCU Commuter Student Union on their official lists; USF Instagram links appear on the USF page; UCSC SUA is the hand-checked student government (not on the club list, expected). Courses UC Davis MGB 299, MDS 421C; SFSU PRSN 509, ACCT 845, SPED 675 — 5/5 match.

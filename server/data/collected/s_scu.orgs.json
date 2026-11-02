@@ -576,11 +576,11 @@
   ]
  },
  {
-  "id": "oc_scu_dir_ballet_folkl_oacute_rico_de_scu",
-  "name": "Ballet Folkl&oacute;rico de SCU",
+  "id": "oc_scu_dir_ballet_folkl_rico_de_scu",
+  "name": "Ballet Folklórico de SCU",
   "logo": {
    "emoji": "BF",
-   "hue": 56
+   "hue": 176
   },
   "type": "club",
   "schoolId": "s_scu",
@@ -2162,15 +2162,15 @@
   ]
  },
  {
-  "id": "oc_scu_dir_latin_eacute_student_union",
-  "name": "Latin&eacute; Student Union",
+  "id": "oc_scu_dir_latine_pre_law_sociedad",
+  "name": "Latine Pre-Law Sociedad",
   "logo": {
-   "emoji": "LE",
+   "emoji": "LP",
    "hue": 40
   },
   "type": "club",
   "schoolId": "s_scu",
-  "parent": "Cultural",
+  "parent": "Academic & Professional",
   "verified": false,
   "description": "",
   "gallery": [],
@@ -2188,15 +2188,15 @@
   ]
  },
  {
-  "id": "oc_scu_dir_latine_pre_law_sociedad",
-  "name": "Latine Pre-Law Sociedad",
+  "id": "oc_scu_dir_latin_student_union",
+  "name": "Latiné Student Union",
   "logo": {
-   "emoji": "LP",
-   "hue": 40
+   "emoji": "LS",
+   "hue": 352
   },
   "type": "club",
   "schoolId": "s_scu",
-  "parent": "Academic & Professional",
+  "parent": "Cultural",
   "verified": false,
   "description": "",
   "gallery": [],

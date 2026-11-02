@@ -3,6 +3,7 @@
  * 디렉터리가 공개로 주는 값만 쓴다 (지어내지 않는다). 2026-11-02 사장님: "정보 얻을 수 있는 사이트 링크도 가져와야"
  */
 import type { Organization } from '@core/types';
+import { decodeNumericEntities } from './entities';
 
 type Link = { label: string; url: string };
 
@@ -48,7 +49,10 @@ export const notCouncil = (text: string) => text.replace(/council on student org
 // ─── Penn Clubs (pennclubs.com, UPenn 공식 학생 단체 디렉터리 · 공개 JSON) ───────────
 export interface PennClub { code: string; name: string; subtitle?: string; description?: string; image_url?: string | null; active?: boolean; approved?: boolean | null; tags?: { name: string }[]; website?: string | null; instagram?: string | null; facebook?: string | null; linkedin?: string | null; twitter?: string | null; youtube?: string | null; tiktok?: string | null }
 const GREEK_RE = /fraternit|sororit|greek|panhellenic|interfraternity|nphc|multicultural greek/i;
-const strip = (h = '') => h.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/\s+/g, ' ').trim();
+// 학교 목록 페이지의 글자 코드(&#039; &#8211; &#038; &oacute; …)를 모두 푼다 — 이름에 그대로 보이던 것 (2026-11-02 검사)
+const NAMED: Record<string, string> = { amp: '&', quot: '"', apos: "'", nbsp: ' ', ndash: '–', mdash: '—', rsquo: '’', lsquo: '‘', ldquo: '“', rdquo: '”', hellip: '…', aacute: 'á', eacute: 'é', iacute: 'í', oacute: 'ó', uacute: 'ú', ntilde: 'ñ', Aacute: 'Á', Eacute: 'É', Iacute: 'Í', Oacute: 'Ó', Uacute: 'Ú', Ntilde: 'Ñ', uuml: 'ü', ouml: 'ö', auml: 'ä', ccedil: 'ç' };
+const decodeHtmlText = (h: string) => decodeNumericEntities(h.replace(/&([A-Za-z]+);/g, (m, n: string) => NAMED[n] ?? m)).replace(/&amp;/g, '&');
+const strip = (h = '') => decodeHtmlText(h.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
 export function pennClubToOrg(c: PennClub, schoolId = 's_upenn'): Organization {
   const tags = (c.tags ?? []).map((t) => t.name);
   const text = `${tags.join(' ')} ${c.name}`;
