@@ -1623,3 +1623,9 @@
 - Queue (Berkeley links): Cal RecWell sport club pages (recwell.berkeley.edu/essential_grid/<team>) are official public team pages; each links the team's CalLink slug, which equals our org id → 22 club sports matched exactly (Boxing, Fencing, Ice Hockey, Triathlon, Pie Queens, Club Volleyball…), with their own sites/Facebook where listed. Chemistry page → AIChE; Haas page → HBSA. Haas's 16 sponsored orgs and the Black RSO list (cejce) have names only. recsports.berkeley.edu is not allowed in this session's network (old host; recwell.berkeley.edu works).
 - Worker: links:<id> now re-merges as soon as the CSV row count changes (not only weekly).
 - Spot check clubs: Badminton (RecWell), Space Enterprise, Combat Robotics, Launchpad, AIChE — 5/5 OK. Courses: UC Davis PUL 475, ECS 289B, MGP 206; SFSU MATH 686, MUS 376 — 5/5.
+
+## 2026-11-02 21:33 UTC — routine run
+- Live: links:s_berkeley applied 20:40 — club sports + AIChE/HBSA (24 groups).
+- Queue (Berkeley links): many Berkeley groups host their site at <CalLink id>.studentorg.berkeley.edu. Checked all 1,437 groups without a public link: kept a site only when it answers 200 and its page names the club (title/body words) → 48 sites (Berkeley Scientific Journal, Blue & Gold Yearbook, Codeology, DeCadence, Traders, ULAB, UC Rally Committee…). Their pages gave 53 Instagram/Facebook links.
+- Spot check caught a personal Facebook profile on a club site (South Indian Society → a person) and a junk link (facebook.com/pg). New rule in sitesocial.ts `relatedHandle`: a social account must share a word, the acronym or the site's sub-name with the club; applied to the CSV — 7 dropped, 3 of those restored after hand review (PiE, ML@B, Underwater Robotics). Test added.
+- Classes: GWS 210, MBN 98 OK; ARCH 207C, PHDBA 239FA, EUST 201 looked off only because the page writes "01:00 pm" with a leading zero — data correct (checked the page text).

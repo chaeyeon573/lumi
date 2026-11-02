@@ -10,9 +10,9 @@ test('extractSocial: profile links only, share/post links skipped', () => {
 });
 
 test('enrichFromWebsites: adds found accounts, drops a school footer account seen on 3+ club sites', async () => {
-  const org = (id: string): Organization => ({ id, name: id, logo: { emoji: 'X', hue: 1 }, type: 'club', schoolId: 's_x', verified: false, description: '', gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [], links: [{ label: 'Website', url: `https://${id}.example.edu/` }] });
+  const org = (id: string): Organization => ({ id, name: `Rocketry ${id}`, logo: { emoji: 'X', hue: 1 }, type: 'club', schoolId: 's_x', verified: false, description: '', gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [], links: [{ label: 'Website', url: `https://${id}.example.edu/` }] });
   const pages: Record<string, string> = {
-    'https://a.example.edu/': '<a href="https://instagram.com/club_a">x</a><a href="https://instagram.com/theschool">s</a>',
+    'https://a.example.edu/': '<a href="https://instagram.com/rocketry_a">x</a><a href="https://instagram.com/theschool">s</a>',
     'https://b.example.edu/': '<a href="https://instagram.com/theschool">s</a>',
     'https://c.example.edu/': '<a href="https://instagram.com/theschool">s</a>',
     'https://d.example.edu/': '',
@@ -20,7 +20,7 @@ test('enrichFromWebsites: adds found accounts, drops a school footer account see
   const r = await enrichFromWebsites(['a', 'b', 'c', 'd'].map(org), async (u) => pages[u] ?? '');
   assert.equal(r.found, 1);
   assert.deepEqual(r.orgs[0].links?.map((l) => l.label), ['Website', 'Instagram']);
-  assert.equal(r.orgs[0].links?.[1].url, 'https://www.instagram.com/club_a/');
+  assert.equal(r.orgs[0].links?.[1].url, 'https://www.instagram.com/rocketry_a/');
   assert.deepEqual(r.droppedShared, ['theschool']);
 });
 
@@ -40,4 +40,12 @@ test('enrichFromWebsites: a dead website (404) link is removed', async () => {
 
 test('extractSocial: facebook pages/<name>/<id> keeps the id', () => {
   assert.equal(extractSocial('<a href="https://www.facebook.com/pages/Stanford-Women-in-Business/123456789">f</a>').facebook, 'https://www.facebook.com/pages/Stanford-Women-in-Business/123456789');
+});
+
+test('relatedHandle: club accounts pass, a personal profile does not', async () => {
+  const { relatedHandle } = await import('./sources/sitesocial');
+  assert.ok(relatedHandle('https://www.instagram.com/tradersatberkeley/', 'Traders at Berkeley'));
+  assert.ok(relatedHandle('https://www.instagram.com/calbeeps/', 'Berkeley Environmental Economics and Policy Students', 'https://beeps.studentorg.berkeley.edu/'));
+  assert.ok(relatedHandle('https://www.facebook.com/berkeleyphichi', 'Phi Chi Pre-Health Fraternity', 'https://phichi.studentorg.berkeley.edu/'));
+  assert.ok(!relatedHandle('https://www.facebook.com/Sitara.Bellam', 'South Indian Society', 'https://southindiansociety.studentorg.berkeley.edu/'));
 });

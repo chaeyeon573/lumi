@@ -26,6 +26,21 @@ export function extractSocial(html: string): { instagram?: string; facebook?: st
   if (a.facebook[0]) out.facebook = a.facebook[0];
   return out;
 }
+/**
+ * 계정 이름이 그 단체와 이어지는지 — 이름의 낱말(4자 이상)·머리글자·사이트 주소 앞부분 중 하나가 계정에 들어 있어야 한다.
+ * 동아리 사이트에 회장 개인 페이스북이 걸려 있던 경우(facebook.com/Sitara.Bellam)를 거른다 (2026-11-02 검사)
+ */
+const STOPW = new Set(['berkeley', 'stanford', 'club', 'society', 'association', 'student', 'students', 'the', 'and', 'for', 'california', 'university', 'organization', 'group', 'team', 'formerly', 'known']);
+export function relatedHandle(url: string, name: string, site?: string): boolean {
+  const h = url.replace(/^https?:\/\/(www\.|m\.)?(instagram|facebook|fb)\.com\//i, '').replace(/[^a-z0-9]/gi, '').toLowerCase();
+  if (!h) return false;
+  const clean = name.replace(/\([^)]*\)/g, ' ').replace(/[^A-Za-z0-9 ]/g, ' ');
+  const words = clean.toLowerCase().split(/\s+/).filter((w) => w.length >= 4 && !STOPW.has(w));
+  const acronym = clean.split(/\s+/).filter((w) => w && !/^(of|the|at|and|for|in)$/i.test(w)).map((w) => w[0]).join('').toLowerCase();
+  const sub = site ? (() => { try { return new URL(site).hostname.split('.')[0].toLowerCase(); } catch { return ''; } })() : '';
+  return words.some((w) => h.includes(w)) || (acronym.length >= 3 && h.includes(acronym)) || (sub.length >= 3 && sub !== 'www' && h.includes(sub));
+}
+
 const handle = (url: string) => url.replace(/^https:\/\/www\.(instagram|facebook)\.com\//, '').replace(/\/$/, '').toLowerCase();
 
 /**
@@ -70,7 +85,9 @@ export async function enrichFromWebsites(orgs: Organization[], fetchPage: (url: 
     const o = dead.has(o0.id) ? { ...o0, links: o0.links?.filter((l) => l.label !== 'Website') } : o0;
     const s = got.get(o.id); if (!s) return o;
     const add: Link[] = [];
-    const ig = s.instagram.find((u) => !shared.has(handle(u))); const fb = s.facebook.find((u) => !shared.has(handle(u)));
+    const site = o.links?.find((l) => l.label === 'Website')?.url;
+    const ok = (u: string) => !shared.has(handle(u)) && relatedHandle(u, o.name, site);
+    const ig = s.instagram.find(ok); const fb = s.facebook.find(ok);
     if (ig && !o.links?.some((l) => l.label === 'Instagram')) add.push({ label: 'Instagram', url: ig });
     if (fb && !o.links?.some((l) => l.label === 'Facebook')) add.push({ label: 'Facebook', url: fb });
     if (!add.length) return o;
