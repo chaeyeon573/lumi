@@ -1,13 +1,17 @@
 # Lumi PM agent — 3시간마다 도는 기획자
 
 사장님 대신 앱을 직접 써 보고, 사장님 기준([../PRODUCT_TASTE.md](../PRODUCT_TASTE.md))으로 어색한 곳을
-찾아 **작은 것은 고치고, 큰 것은 묻는다.** 배포는 사장님이 한다.
+찾아 **작은 것은 고치고, 큰 것은 묻는다.** 검사를 통과한 변경은 바로 배포한다(2026-11-02 사장님: “배포는 그냥 바로바로 되게끔 해라”).
 
 ## 브랜치 규칙 (어기면 사고)
 
 - 라이브 배포 브랜치: `claude/friendly-euler-emuo1f` — push 하면 바로 Railway 배포된다.
-  ⛔ **이 브랜치에 절대 push 하지 않는다.**
-- PM agent 작업 브랜치: **`claude/lumi-pm`** — 여기에만 push 한다.
+  ✅ 2026-11-02 부터 사장님 상시 허락: 아래 ‘배포 전 검사’를 모두 통과한 커밋만, **빨리 감기(fast-forward)로만** 올린다
+  (`git merge-base --is-ancestor origin/claude/friendly-euler-emuo1f HEAD` 확인 → `git push origin HEAD:claude/friendly-euler-emuo1f`).
+  ⛔ force-push·rebase·검사 실패한 채 배포 금지. 검사가 하나라도 실패하면 lumi-pm 에만 올리고 보고에 적는다.
+  배포 전 검사: `npx tsc -b` · `npm run -s typecheck:server` · `npm test` 전부 통과 · `VITE_API_MODE=remote npx vite build` 성공 · 바꾼 화면 스크린샷에 PAGE ERROR 0.
+  법 문서(개인정보처리방침·약관) 문구 변경과 라이브 DB 직접 쓰기는 여전히 사장님 확인 뒤.
+- PM agent 작업 브랜치: **`claude/lumi-pm`** — 먼저 여기에 push 하고, 검사를 통과하면 같은 커밋을 배포 브랜치로.
 - 매 실행 시작:
   ```bash
   git fetch origin claude/friendly-euler-emuo1f claude/lumi-pm || git fetch origin claude/friendly-euler-emuo1f
@@ -50,13 +54,13 @@
    ```
    ⛔ PRODUCT_TASTE.md 의 "원하지 않은 것" 은 다시 제안하지 않는다.
 6. **기록** — `docs/pm-agent/LOG.md` 맨 위에 3~6줄: 시각, 초점, 본 것, 고친 것(커밋), 물어본 것.
-7. **push** — `git push -u origin claude/lumi-pm` (네트워크 실패 시만 2/4/8/16초 재시도).
+7. **push·배포** — `git push -u origin claude/lumi-pm` (네트워크 실패 시만 2/4/8/16초 재시도). 배포 전 검사를 모두 통과했으면 이어서 배포 브랜치로 빨리 감기 push, 배포 뒤 라이브 번들·/api/agent/status 확인.
 8. **마지막 답변** = 사장님께 보내는 짧은 한국어 보고: 고친 것 / 물어볼 것 / 다음 초점.
    고친 게 없고 물어볼 것도 없으면 "이번엔 이상 없음" 한 줄.
 
 ## 하지 말 것
 
-- 라이브 데이터 쓰기(관리자 API 호출, DB 수정) ⛔ — 코드·CSV 변경만, 배포는 사장님.
+- 라이브 데이터 쓰기(관리자 API 호출, DB 수정) ⛔ — 코드·CSV 변경만(배포는 위 검사 통과 시 바로).
 - 데이터를 지어내기 ⛔ — 공고를 추가하려면 공식 페이지에서 직접 확인한 것만, 마감 전인 것만.
 - 큰 리팩터·새 화면·새 기능 구현 ⛔ — 질문으로 남긴다.
 - 비밀키(API_KEY, ADMIN_KEY 등)를 출력·커밋 ⛔.
