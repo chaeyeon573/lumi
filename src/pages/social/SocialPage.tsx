@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Bell, Plus, CalendarPlus, Users, MessageSquareMore, ChevronRight, GraduationCap, Search, PenLine, Lightbulb, NotebookPen, Megaphone, MessagesSquare, CalendarDays } from 'lucide-react';
+import { Plus, CalendarPlus, Users, MessageSquareMore, ChevronRight, GraduationCap, Search, PenLine, Lightbulb, NotebookPen, Megaphone, MessagesSquare, CalendarDays } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { CardSkeleton, ErrorState } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
-import { useUnreadCounts } from '@/components/layout/TopBar';
+import { AppHeader } from '@/components/layout/AppHeader';
 import { useAppStore } from '@core/store/useAppStore';
 import { todayISO } from '@core/lib/format';
 import { nowMin, toMin } from '@core/lib/timetable';
@@ -26,19 +26,9 @@ export const SOCIAL_TABS = [
   { to: '/feed', label: en ? 'Feed' : '피드' },
 ] as const;
 
-/** 위 머리 — Social 제목 + 알림 + 만들기(+) */
+/** 위 머리 — 다른 탭과 같은 Lumi 머리(앱 이름·알림·채팅·프로필) + 만들기(+) (2026-11-02 사장님: 맨 위엔 앱 이름) */
 export function SocialHeader() {
-  const nav = useNavigate();
-  const counts = useUnreadCounts();
-  return (
-    <header className="sticky top-0 z-30 bg-bg/85 backdrop-blur-xl h-16 pl-4 pr-3 flex items-center gap-1.5">
-      <h1 className="font-display text-[28px] font-extrabold tracking-tight flex-1">{en ? 'Social' : '소셜'}</h1>
-      <button onClick={() => nav('/notifications')} aria-label={en ? 'Notifications' : '알림'} className="relative h-10 w-10 rounded-full grid place-items-center text-ink-2 press">
-        <Bell size={22} />{counts.bell ? <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-danger" /> : null}
-      </button>
-      <button onClick={openCreate} aria-label={en ? 'Create' : '만들기'} className="h-10 w-10 rounded-xl bg-primary text-white v2:text-on-primary grid place-items-center press"><Plus size={20} /></button>
-    </header>
-  );
+  return <AppHeader right={<button onClick={openCreate} aria-label={en ? 'Create' : '만들기'} className="h-9 w-9 rounded-xl bg-primary text-white v2:text-on-primary grid place-items-center press"><Plus size={19} /></button>} />;
 }
 
 /** For You · Meetups · People · Feed — 네 화면이 같은 줄을 쓴다 */

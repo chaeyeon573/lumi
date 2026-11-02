@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Check, GraduationCap, Briefcase, CalendarDays, Ticket, Users, Search, Compass, Coffee, FlaskConical, Trophy, Dumbbell } from 'lucide-react';
+import { Check, GraduationCap, Briefcase, CalendarDays, Users, Coffee, FlaskConical, Trophy, Dumbbell, Landmark, House, UserRound } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { api } from '@core/api';
 import type { Goal, Interest, Purpose, School, UniversityRole } from '@core/types';
@@ -21,20 +21,20 @@ const KEY = 'lumi.start.draft.v2';
  * 목표 — 시안(2026-11-02) 그대로 5개 + Skip. 저장은 기존 필드(goals·interests·purposes)에만 한다.
  * “Make campus life easier” 는 맞는 goals 값이 없어 study 관심사로만 남긴다.
  */
-const GOAL_OPTS: { key: string; Icon: typeof Briefcase; title: string; sub: string; goals: Goal[]; interests: Interest[]; purposes: Purpose[] }[] = [
-  { key: 'opps', Icon: Briefcase, title: en ? 'Find opportunities' : '기회 찾기', sub: en ? 'Internships, research, scholarships' : '인턴·연구·장학금', goals: ['internship', 'lab', 'scholarship'], interests: ['research'], purposes: [] },
-  { key: 'events', Icon: Ticket, title: en ? 'Discover campus events' : '캠퍼스 행사 찾기', sub: en ? 'Hackathons, talks, school events' : '해커톤·강연·학교 행사', goals: ['hackathon'], interests: ['networking'], purposes: ['networking'] },
-  { key: 'involved', Icon: Users, title: en ? 'Get involved' : '활동 참여하기', sub: en ? 'Clubs, Greek life, co-ops' : '동아리·그릭 라이프·코업', goals: ['join_club'], interests: ['club'], purposes: ['club'] },
-  { key: 'easier', Icon: CalendarDays, title: en ? 'Make campus life easier' : '캠퍼스 생활 편하게', sub: en ? 'Classes, schedule, RSF, dining' : '수업·시간표·RSF·식당', goals: [], interests: ['study'], purposes: ['study'] },
-  { key: 'people', Icon: Coffee, title: en ? 'Meet new people' : '새 사람 만나기', sub: en ? 'Study, hang out, and make plans' : '같이 공부하고 놀고 약속 잡기', goals: ['friends'], interests: ['coffee'], purposes: ['friend'] },
+const GOAL_OPTS: { key: string; Icon: typeof Briefcase; title: string; goals: Goal[]; interests: Interest[]; purposes: Purpose[] }[] = [
+  { key: 'opps', Icon: Briefcase, title: en ? 'Discover opportunities' : '기회 찾기', goals: ['internship', 'lab', 'scholarship', 'hackathon'], interests: ['research'], purposes: [] },
+  { key: 'classes', Icon: CalendarDays, title: en ? 'Plan my classes' : '수업 계획하기', goals: [], interests: ['study'], purposes: ['study'] },
+  { key: 'involved', Icon: Users, title: en ? 'Join communities' : '커뮤니티 참여', goals: ['join_club'], interests: ['club'], purposes: ['club'] },
+  { key: 'wellness', Icon: Dumbbell, title: en ? 'Campus life & wellness' : '캠퍼스 생활·건강', goals: [], interests: ['exercise', 'meal'], purposes: [] },
+  { key: 'people', Icon: Coffee, title: en ? 'Meet new people' : '새 사람 만나기', goals: ['friends'], interests: ['coffee'], purposes: ['friend'] },
 ];
 
-/** “Here’s how Lumi helps you” — Communities 문구는 사장님 지정 그대로 */
+/** “Here’s what you get” — 시안처럼 아이콘 + 제목만 */
 const HELPS = [
-  { Icon: CalendarDays, title: en ? 'Classes & Schedule' : '수업·시간표', sub: en ? 'Your classes, plans, RSF crowd and dining in one place' : '수업·약속·RSF 혼잡도·식당을 한곳에서', tone: 'bg-[#EEF2FF] text-[#4B63D8] v2:bg-[#1D2140] v2:text-[#9DB0FF]' },
-  { Icon: Briefcase, title: en ? 'Opportunities' : '기회', sub: en ? 'Internships, research and scholarships, with deadlines' : '인턴·연구·장학금을 마감일과 함께', tone: 'bg-[#FFF4E5] text-[#D98A12] v2:bg-[#2E2416] v2:text-[#FFC266]' },
-  { Icon: Ticket, title: en ? 'Campus Events' : '캠퍼스 행사', sub: en ? 'Hackathons, talks and what’s happening on campus' : '해커톤·강연·지금 캠퍼스에서 열리는 것', tone: 'bg-[#FDEEF2] text-[#D2476B] v2:bg-[#2D1820] v2:text-[#FF9AB5]' },
-  { Icon: Users, title: en ? 'Communities' : '커뮤니티', sub: en ? 'Join clubs, Greek life, and other campus groups' : '동아리·그릭 라이프 등 캠퍼스 단체에 참여', tone: 'bg-[#E9F6F4] text-[#1F9A86] v2:bg-[#14292A] v2:text-[#6FE0CB]' },
+  { Icon: CalendarDays, title: en ? 'Classes & Schedule' : '수업·시간표' },
+  { Icon: Briefcase, title: en ? 'Events & Opportunities' : '행사·기회' },
+  { Icon: Users, title: en ? 'Communities' : '커뮤니티' },
+  { Icon: Coffee, title: en ? 'Meet & Connect' : '만나고 연결하기' },
 ];
 
 /** 관심 주제 — 시안 “What would you like to discover?” 8개. 저장은 goals/interests 로 (피드·For You 추천에 쓰인다) */
@@ -49,38 +49,36 @@ const TOPICS: { key: string; Icon: typeof Briefcase; en: string; ko: string; goa
   { key: 'food', Icon: Coffee, en: 'Food & Campus Life', ko: '맛집·캠퍼스 생활', goals: [], interests: ['meal'] },
 ];
 
-const ROLES: { v: UniversityRole; en: string; ko: string }[] = [{ v: 'undergraduate', en: 'Undergraduate', ko: '학부생' }, { v: 'graduate', en: 'Graduate', ko: '대학원생' }, { v: 'alumni', en: 'Alumni', ko: '졸업생' }];
-const YEARS = [{ v: 1, en: 'Freshman', ko: '1학년' }, { v: 2, en: 'Sophomore', ko: '2학년' }, { v: 3, en: 'Junior', ko: '3학년' }, { v: 4, en: 'Senior', ko: '4학년' }];
+const ROLES: { v: UniversityRole; Icon: typeof Briefcase; en: string; ko: string }[] = [{ v: 'undergraduate', Icon: GraduationCap, en: 'Undergraduate', ko: '학부생' }, { v: 'graduate', Icon: UserRound, en: 'Graduate', ko: '대학원생' }, { v: 'alumni', Icon: Users, en: 'Alumni', ko: '졸업생' }];
 
 /** 커뮤니티 — 시안 목록. 저장할 칸이 따로 없어 goals/interests 로 옮긴다 (가입 후 Clubs & Groups 추천에 쓰인다) */
-const COMMUNITIES: { key: string; emoji: string; en: string; ko: string; goals: Goal[]; interests: Interest[] }[] = [
-  { key: 'clubs', emoji: '🎸', en: 'Clubs', ko: '동아리', goals: ['join_club'], interests: ['club'] },
-  { key: 'greek', emoji: '🏛️', en: 'Fraternity / Sorority', ko: '프래터니티 / 소로리티', goals: ['join_club'], interests: ['club'] },
-  { key: 'coop', emoji: '🏡', en: 'Co-op Housing', ko: '코업 하우스', goals: [], interests: ['club'] },
-  { key: 'lab', emoji: '🔬', en: 'Research Lab', ko: '연구실', goals: ['lab'], interests: ['research'] },
-  { key: 'dept', emoji: '🎓', en: 'Department / Major', ko: '학과 / 전공', goals: [], interests: ['networking'] },
-  { key: 'sports', emoji: '🏃', en: 'Sports / Recreation', ko: '스포츠 / 레크리에이션', goals: [], interests: ['exercise'] },
-  { key: 'culture', emoji: '🌏', en: 'Cultural / Identity', ko: '문화 / 정체성', goals: ['join_club'], interests: ['club'] },
-  { key: 'dorm', emoji: '🛏️', en: 'Residence Hall / Dorm', ko: '기숙사', goals: [], interests: [] },
+const COMMUNITIES: { key: string; Icon: typeof Briefcase; en: string; ko: string; goals: Goal[]; interests: Interest[] }[] = [
+  { key: 'clubs', Icon: Users, en: 'Clubs', ko: '동아리', goals: ['join_club'], interests: ['club'] },
+  { key: 'greek', Icon: Landmark, en: 'Fraternity / Sorority', ko: '프래터니티 / 소로리티', goals: ['join_club'], interests: ['club'] },
+  { key: 'coop', Icon: House, en: 'Co-op Housing', ko: '코업 하우스', goals: [], interests: ['club'] },
+  { key: 'lab', Icon: FlaskConical, en: 'Research Lab', ko: '연구실', goals: ['lab'], interests: ['research'] },
+  { key: 'dept', Icon: GraduationCap, en: 'Department / Major', ko: '학과 / 전공', goals: [], interests: ['networking'] },
+  { key: 'sports', Icon: Dumbbell, en: 'Sports / Recreation', ko: '스포츠 / 레크리에이션', goals: [], interests: ['exercise'] },
+  { key: 'other', Icon: UserRound, en: 'Other', ko: '기타', goals: [], interests: [] },
 ];
 
 interface Draft { nickname: string; birthYear: string; goalKeys: string[]; schoolId: string; role: UniversityRole | ''; yearInSchool: number; department: string; communities: string[]; topics: string[]; email: string }
 const EMPTY: Draft = { nickname: '', birthYear: '', goalKeys: [], schoolId: '', role: '', yearInSchool: 0, department: '', communities: [], topics: [], email: '' };
 const uniq = <T,>(a: T[]) => [...new Set(a)];
 
-/** 큰 선택 줄 — 아이콘/이모지 + 제목 + 설명 */
-function Pick({ icon, title, sub, on, onClick }: { icon: React.ReactNode; title: string; sub?: string; on: boolean; onClick: () => void }) {
+/** 선택 줄 — 아이콘 + 짧은 말 + 체크 (가볍게) */
+function Pick({ icon, title, on, onClick }: { icon: React.ReactNode; title: string; on: boolean; onClick: () => void }) {
   return (
-    <button onClick={onClick} aria-pressed={on} className={cn('w-full rounded-2xl border-2 px-4 py-3.5 text-left flex items-center gap-3 press transition', on ? 'border-primary bg-primary-soft' : 'border-line bg-surface')}>
-      <span className={cn('h-10 w-10 rounded-xl grid place-items-center shrink-0 text-[20px]', on ? 'bg-primary text-white v2:text-on-primary' : 'bg-surface-2 text-primary')}>{icon}</span>
-      <span className="flex-1 min-w-0"><b className="block text-[15px] font-bold leading-snug">{title}</b>{sub && <span className="block text-[12px] text-ink-3 mt-0.5">{sub}</span>}</span>
+    <button onClick={onClick} aria-pressed={on} className={cn('w-full rounded-2xl border px-4 h-14 text-left flex items-center gap-3 press transition', on ? 'border-primary bg-primary-soft' : 'border-line bg-surface')}>
+      <span className="text-primary shrink-0">{icon}</span>
+      <b className="flex-1 min-w-0 text-[15px] font-semibold truncate">{title}</b>
       <span className={cn('h-6 w-6 rounded-full border-2 grid place-items-center shrink-0', on ? 'border-primary bg-primary text-white v2:text-on-primary' : 'border-line')}>{on && <Check size={14} />}</span>
     </button>
   );
 }
 
 /**
- * 첫 실행 (2026-11-02 사장님 시안) — 이름 → 목표 → Lumi가 돕는 방법 → 학교·신분 → 커뮤니티 → (학교 이메일) Get Started.
+ * 첫 실행 (2026-11-02 사장님 시안, 글은 짧게) — 이름 → 목표 → 얻는 것 → 학교·신분 → 관심 주제 → 커뮤니티 → (학교 이메일) Get Started.
  */
 export function StartPage() {
   const nav = useNavigate();
@@ -125,8 +123,8 @@ export function StartPage() {
       const purposes = uniq(gs.flatMap((g) => g.purposes));
       const role = d.role || 'undergraduate';
       const thisYear = new Date().getFullYear();
-      // 입학 연도 — 학부생이 학년을 골랐을 때만 계산, 아니면 올해 (이전 흐름과 같은 기본값)
-      const year = role === 'undergraduate' && d.yearInSchool ? thisYear - d.yearInSchool + 1 : thisYear;
+      // 입학 연도는 묻지 않는다 (가볍게) — 이전 흐름과 같은 기본값 올해, 프로필에서 고칠 수 있다
+      const year = thisYear;
       const user = await api.auth.register({
         nickname: d.nickname.trim(), birthYear: Number(d.birthYear), gender: 'private', avatar: { emoji: '🙂', hue: 210, photoType: 'face' },
         schoolId: d.schoolId, role, department: d.department.trim(), year,
@@ -147,16 +145,23 @@ export function StartPage() {
   const school = schools.find((s) => s.id === d.schoolId);
   const name = d.nickname.trim();
   const Head = ({ q, sub }: { q: string; sub?: string }) => <div><h2 className="text-[26px] font-extrabold leading-tight">{q}</h2>{sub && <p className="text-[14px] text-ink-3 mt-1">{sub}</p>}</div>;
-  const NextBtn = ({ ok, text }: { ok: boolean; text?: string }) => <Button full size="lg" disabled={!ok} onClick={next}>{text ?? (en ? 'Continue' : '계속')}</Button>;
+  const skip = step === 'goals' ? () => { patch({ goalKeys: [] }); next(); } : step === 'topics' ? () => { patch({ topics: [] }); next(); } : undefined;
+  const NextBtn = ({ ok, text }: { ok: boolean; text?: string }) => (
+    <>
+      <Button full size="lg" disabled={!ok} onClick={next}>{text ?? (en ? 'Continue' : '계속')}</Button>
+      {/* Skip 은 버튼 아래 — 위 오른쪽은 디자인 전환 버튼 자리 */}
+      {skip && <button onClick={skip} className="w-full h-10 -mt-2 text-[14px] font-semibold text-ink-3">{en ? 'Skip' : '건너뛰기'}</button>}
+    </>
+  );
 
   return (
     <div className="min-h-full flex flex-col bg-bg">
-      <TopBar back onBack={idx > 0 ? () => go(STEPS[idx - 1]) : undefined} title={<span className="text-[15px] text-ink-3">{idx + 1} / {STEPS.length}</span>} />
-      <div className="h-1 mx-4 rounded-full bg-surface-2 overflow-hidden"><div className="h-full bg-primary transition-all duration-300" style={{ width: `${((idx + 1) / STEPS.length) * 100}%` }} /></div>
+      <TopBar back onBack={idx > 0 ? () => go(STEPS[idx - 1]) : undefined}
+        title={<span className="flex gap-1.5 w-[160px]">{STEPS.map((s2, i) => <span key={s2} className={cn('h-1 flex-1 rounded-full transition', i <= idx ? 'bg-primary' : 'bg-surface-2')} />)}</span>} />
       <div key={step} className="flex-1 px-5 pt-6 pb-8 space-y-5 animate-fade-in">
         {step === 'name' && (
           <>
-            <Head q={en ? 'What should we call you?' : '뭐라고 불러드릴까요?'} sub={en ? 'A first name or nickname. This is how classmates will see you.' : '같은 학교 학생들에게 보이는 이름이에요.'} />
+            <Head q={en ? 'What should we call you?' : '뭐라고 불러드릴까요?'} sub={en ? 'This is how classmates see you.' : '같은 학교 학생들에게 보이는 이름이에요.'} />
             <Field label={en ? 'Name' : '이름'}><Input autoFocus maxLength={20} value={d.nickname} onChange={(e) => patch({ nickname: e.target.value })} placeholder={en ? 'e.g. Alex' : '예: 민지'} /></Field>
             <Field label={en ? 'Birth year' : '출생 연도'}><Input inputMode="numeric" maxLength={4} placeholder="2005" value={d.birthYear} onChange={(e) => patch({ birthYear: e.target.value.replace(/\D/g, '') })} /></Field>
             {d.birthYear.length === 4 && !birthOk && <p className="text-[12px] text-danger -mt-2">{en ? 'Lumi is for college students 16 and older.' : 'Lumi는 만 16세 이상 대학생을 위한 앱이에요.'}</p>}
@@ -166,22 +171,20 @@ export function StartPage() {
 
         {step === 'goals' && (
           <>
-            <Head q={en ? `Nice to meet you, ${name}! What are your goals?` : `반가워요, ${name}님! 어떤 걸 하고 싶어요?`} sub={en ? 'Pick all that apply.' : '여러 개 골라도 돼요.'} />
-            <div className="space-y-2.5">{GOAL_OPTS.map((o) => <Pick key={o.key} icon={<o.Icon size={19} />} title={o.title} sub={o.sub} on={d.goalKeys.includes(o.key)} onClick={() => patch({ goalKeys: tog(d.goalKeys, o.key) })} />)}</div>
+            <Head q={en ? `What brings you to Lumi, ${name}?` : `${name}님, Lumi에서 뭘 하고 싶어요?`} sub={en ? 'Select all that apply.' : '여러 개 골라도 돼요.'} />
+            <div className="space-y-2">{GOAL_OPTS.map((o) => <Pick key={o.key} icon={<o.Icon size={20} />} title={o.title} on={d.goalKeys.includes(o.key)} onClick={() => patch({ goalKeys: tog(d.goalKeys, o.key) })} />)}</div>
             <NextBtn ok={d.goalKeys.length > 0} />
-            <button onClick={() => { patch({ goalKeys: [] }); next(); }} className="w-full h-10 text-[14px] font-semibold text-ink-3">{en ? 'Skip' : '건너뛰기'}</button>
           </>
         )}
 
         {step === 'how' && (
           <>
-            <Head q={en ? 'Here’s how Lumi helps you' : 'Lumi는 이렇게 도와줘요'} sub={en ? 'Everything for campus life, in one app.' : '캠퍼스 생활에 필요한 걸 한 앱에.'} />
+            <Head q={en ? 'Here’s what you get' : '이런 걸 할 수 있어요'} />
             <div className="grid grid-cols-2 gap-2.5">
               {HELPS.map((h) => (
-                <div key={h.title} className="card rounded-[20px] p-4 flex flex-col gap-2.5">
-                  <span className={cn('h-11 w-11 rounded-2xl grid place-items-center', h.tone)}><h.Icon size={21} /></span>
+                <div key={h.title} className="card rounded-[20px] h-[140px] p-4 flex flex-col items-center justify-center gap-3 text-center">
+                  <span className="h-14 w-14 rounded-2xl bg-primary-soft text-primary grid place-items-center"><h.Icon size={28} strokeWidth={1.7} /></span>
                   <b className="text-[15px] font-bold leading-tight">{h.title}</b>
-                  <span className="text-[12px] text-ink-3 leading-snug">{h.sub}</span>
                 </div>
               ))}
             </div>
@@ -191,41 +194,26 @@ export function StartPage() {
 
         {step === 'school' && (
           <>
-            <Head q={en ? 'Your university & student status' : '학교와 신분'} sub={en ? 'You’ll see events, clubs and classes from your campus.' : '우리 캠퍼스의 행사·동아리·수업을 보여드려요.'} />
-            <div className="space-y-2.5">
+            <Head q={en ? 'Your university' : '학교'} />
+            <div className="space-y-2">
               {schools.map((s) => (
-                <button key={s.id} onClick={() => patch({ schoolId: s.id })} aria-pressed={d.schoolId === s.id} className={cn('w-full rounded-2xl border-2 px-4 py-4 flex items-center gap-3 text-left press', d.schoolId === s.id ? 'border-primary bg-primary-soft' : 'border-line bg-surface')}>
-                  <span className="h-11 w-11 rounded-xl bg-surface-2 text-primary grid place-items-center"><GraduationCap size={20} /></span>
-                  <span className="flex-1"><b className="block text-[16px] text-primary">{s.name}</b><span className="text-[12px] text-ink-3">{s.region}</span></span>
-                  {d.schoolId === s.id && <Check size={20} className="text-primary" />}
-                </button>
+                <Pick key={s.id} icon={<GraduationCap size={20} />} title={s.name} on={d.schoolId === s.id} onClick={() => patch({ schoolId: s.id })} />
               ))}
             </div>
             {d.schoolId && (
               <>
-                <Field label={en ? 'I am a…' : '나는…'}><div className="grid grid-cols-3 gap-2">{ROLES.map((r) => (
-                  <button key={r.v} onClick={() => patch({ role: r.v })} aria-pressed={d.role === r.v} className={cn('h-11 rounded-full border-2 text-[13px] font-semibold press', d.role === r.v ? 'border-primary bg-primary text-white v2:text-on-primary' : 'border-line bg-surface text-ink')}>{en ? r.en : r.ko}</button>
-                ))}</div></Field>
-                {d.role === 'undergraduate' && (
-                  <Field label={en ? 'Year (optional)' : '학년 (선택)'}><div className="flex flex-wrap gap-2">{YEARS.map((y) => (
-                    <button key={y.v} onClick={() => patch({ yearInSchool: d.yearInSchool === y.v ? 0 : y.v })} className={cn('h-10 px-4 rounded-full border-2 text-[13px] font-semibold press', d.yearInSchool === y.v ? 'border-primary bg-primary-soft text-primary' : 'border-line bg-surface text-ink')}>{en ? y.en : y.ko}</button>
-                  ))}</div></Field>
-                )}
-                {d.role && <Field label={en ? 'Major / department (optional)' : '전공 (선택)'}><Input value={d.department} onChange={(e) => patch({ department: e.target.value })} placeholder={en ? 'e.g. Computer Science' : '예: 컴퓨터공학'} /></Field>}
+                <h3 className="text-[20px] font-extrabold pt-2">{en ? 'Your status' : '신분'}</h3>
+                <div className="space-y-2">{ROLES.map((r) => <Pick key={r.v} icon={<r.Icon size={20} />} title={en ? r.en : r.ko} on={d.role === r.v} onClick={() => patch({ role: r.v })} />)}</div>
                 <NextBtn ok={!!d.role} />
               </>
             )}
-            <div className="pt-1">
-              <p className="text-[13px] font-semibold text-ink-2 mb-2 flex items-center gap-1.5"><Search size={14} />{en ? 'Not at one of these schools?' : '다른 학교인가요?'}</p>
-              <ComingSoonSchools openNames={schools.map((s) => s.name)} />
-            </div>
+            <div className="pt-1"><ComingSoonSchools openNames={schools.map((s) => s.name)} /></div>
           </>
         )}
 
         {step === 'topics' && (
           <>
-            <div className="flex items-center justify-between -mt-2"><span className="text-[13px] font-semibold text-ink-3">{en ? 'Personalize your experience' : '나에게 맞추기'}</span><button onClick={() => { patch({ topics: [] }); next(); }} className="text-[14px] font-semibold text-ink-3">{en ? 'Skip' : '건너뛰기'}</button></div>
-            <Head q={en ? 'What would you like to discover?' : '어떤 걸 찾아보고 싶어요?'} sub={en ? 'Choose a few topics to personalize your campus feed.' : '몇 가지 고르면 캠퍼스 피드를 맞춰 드려요.'} />
+            <Head q={en ? 'What would you like to discover?' : '어떤 걸 찾아보고 싶어요?'} sub={en ? 'Pick a few.' : '몇 가지 골라 주세요.'} />
             <div className="grid grid-cols-2 gap-2.5">
               {TOPICS.map((t) => { const on = d.topics.includes(t.key); return (
                 <button key={t.key} onClick={() => patch({ topics: tog(d.topics, t.key) })} aria-pressed={on} className={cn('rounded-[20px] border-2 p-3.5 h-[108px] flex flex-col justify-between text-left press transition', on ? 'border-primary bg-primary-soft' : 'border-line bg-surface')}>
@@ -240,18 +228,22 @@ export function StartPage() {
 
         {step === 'communities' && (
           <>
-            <Head q={en ? 'Your communities' : '나의 커뮤니티'} sub={en ? 'Which groups are you part of — or want to join? Pick any.' : '속해 있거나 들어가고 싶은 곳을 골라 주세요.'} />
-            <div className="space-y-2.5">
-              {COMMUNITIES.map((c) => <Pick key={c.key} icon={c.emoji} title={en ? c.en : c.ko} on={d.communities.includes(c.key)} onClick={() => patch({ communities: tog(d.communities, c.key) })} />)}
-              <Pick icon={<Compass size={19} />} title={en ? 'None for now' : '아직 없어요'} on={false} onClick={() => { patch({ communities: [] }); next(); }} />
+            <Head q={en ? 'Your communities' : '나의 커뮤니티'} sub={en ? 'Select what you’re part of.' : '속한 곳을 골라 주세요.'} />
+            <div className="card rounded-[20px] divide-y divide-line">
+              {COMMUNITIES.map((c) => { const on = d.communities.includes(c.key); return (
+                <button key={c.key} onClick={() => patch({ communities: tog(d.communities, c.key) })} aria-pressed={on} className="w-full flex items-center gap-3 px-4 h-[52px] text-left press">
+                  <c.Icon size={20} className="text-primary shrink-0" /><b className="flex-1 text-[15px] font-semibold">{en ? c.en : c.ko}</b>
+                  <span className={cn('h-5 w-5 rounded-md border-2 grid place-items-center shrink-0', on ? 'border-primary bg-primary text-white v2:text-on-primary' : 'border-line')}>{on && <Check size={13} />}</span>
+                </button>
+              ); })}
             </div>
-            <NextBtn ok={d.communities.length > 0} />
+            <NextBtn ok />
           </>
         )}
 
         {step === 'email' && (
           <>
-            <Head q={en ? `You’re all set, ${name}!` : `준비 끝, ${name}님!`} sub={en ? 'Save your account with your school email so you can sign back in on a new phone. We only send a 6-digit code — no spam.' : '학교 이메일로 계정을 지키면 폰을 바꿔도 다시 들어올 수 있어요. 6자리 코드만 보내요.'} />
+            <Head q={en ? `You’re all set, ${name}!` : `준비 끝, ${name}님!`} sub={en ? 'Optional: add your school email to sign back in on any phone.' : '선택: 학교 이메일을 넣으면 어느 폰에서든 다시 들어올 수 있어요.'} />
             <Field label={en ? 'School email' : '학교 이메일'}>
               <div className="flex gap-2">
                 <Input type="email" inputMode="email" autoComplete="email" disabled={verified} placeholder={school?.emailDomain ? `you@${school.emailDomain}` : 'you@school.edu'} value={d.email} onChange={(e) => { patch({ email: e.target.value }); setCodeSent(false); setVerified(false); setCode(''); }} />

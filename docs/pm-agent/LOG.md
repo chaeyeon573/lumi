@@ -1513,3 +1513,8 @@
 - Feed (/feed): Write a Post; when no posts, "Start a conversation" + Question / Tip / Discussion starters; otherwise the existing feed. Answers the open Feed-placement question.
 - Links updated: Home Meetups card, Plans "find activities", chat empty state, Who's free sheet. Illustrations are icons (no made-up images).
 - Checks: tsc, server typecheck, tests 266/266, build, screenshots classic+v2 of all 5 routes, PAGE ERROR 0.
+
+## 2026-11-02 — Lighter onboarding text + Lumi header on Social
+- Owner mockup: shorter onboarding. Goals = 5 one-line options (Discover opportunities / Plan my classes / Join communities / Campus life & wellness / Meet new people), no subtitles. "Here's what you get" = 4 icon+title cards (Classes & Schedule, Events & Opportunities, Communities, Meet & Connect). "Your university" + "Your status" as rows; year/major questions removed (editable later in Profile). Topics sub "Pick a few." Communities = compact checkbox list (Clubs, Fraternity/Sorority, Co-op Housing, Research Lab, Department/Major, Sports/Recreation, Other). Segmented progress bar; Skip under Continue (top right is the design toggle). Email step kept but one-line, optional.
+- Social tab header now shows the app name (Lumi / lumi.) with bell, chats, profile and the + button, like other tabs.
+- Checks: tsc, server typecheck, tests 266/266, build, click-through screenshots classic+v2, PAGE ERROR 0.
