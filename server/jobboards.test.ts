@@ -26,3 +26,9 @@ test('board parsers + toStudentJobs keep US student roles from each vendor forma
   const out = [...toStudentJobs(gh, { platform: 'greenhouse', token: 'x', company: 'X' }), ...toStudentJobs(lv, { platform: 'lever', token: 'x', company: 'X' }), ...toStudentJobs(ab, { platform: 'ashby', token: 'x', company: 'X' })];
   assert.deepEqual(out.map((j) => [j.title, j.kind, j.audience.join('+')]), [['PhD Intern, Research', 'internship', 'phd'], ['Quant Research Intern', 'internship', ''], ['New Grad Software Engineer', 'job', 'newgrad']]);
 });
+
+test('classify: entry-level roles undergrads can get after graduating count as new grad', () => {
+  for (const t of ['Software Engineer I', 'Data Analyst 1', 'Junior Data Analyst', 'Associate Product Manager', 'Associate Consultant', 'Investment Banking Analyst Program 2027', 'Rotational Program - Finance', 'Leadership Development Program Associate', 'Class of 2027 Software Engineer'])
+    assert.deepEqual(classify(t), { kind: 'job', audience: ['newgrad'] }, t);
+  for (const t of ['Software Engineer II', 'Software Engineer III', 'Product Manager', 'Senior Associate', 'Associate Director, Research', 'Data Analyst', 'Engineer 10x team']) assert.equal(classify(t), null, t);
+});

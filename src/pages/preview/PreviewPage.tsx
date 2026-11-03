@@ -38,7 +38,7 @@ export function PreviewListPage() {
       {!schools && !err && <p className="text-ink-3 text-[13px]">Loading…</p>}
       <Link to="/preview/jobs" className="card rounded-2xl px-4 py-3.5 flex items-center gap-3 press mb-2.5">
         <span className="h-11 w-11 rounded-xl bg-primary-soft text-primary grid place-items-center shrink-0"><Briefcase size={20} /></span>
-        <span className="flex-1 min-w-0"><b className="block text-[15px]">Jobs and internships (US)</b><span className="block text-[12px] text-ink-3">PhD, master’s, new grad and intern roles from employers’ public job boards</span></span>
+        <span className="flex-1 min-w-0"><b className="block text-[15px]">Jobs and internships (US)</b><span className="block text-[12px] text-ink-3">Internships, new grad and entry-level jobs, PhD and master’s roles from employers’ public job boards</span></span>
         <ChevronRight size={18} className="text-ink-3 shrink-0" />
       </Link>
       <div className="space-y-2.5">
@@ -126,8 +126,8 @@ function CourseSearch({ id, total }: { id: string; total: number }) {
 
 /** 미국 전역 학생 채용 미리보기 — 회사 공개 채용 게시판에서 모은 파일 (server/data/collected/jobs-us.json) */
 interface Job { id: string; company: string; title: string; location: string; url: string; kind: string; audience: string[]; updatedAt?: string }
-const JOB_TABS = [['', 'All'], ['internship', 'Internships'], ['phd', 'PhD'], ['masters', 'Master’s'], ['newgrad', 'New grad'], ['postdoc', 'Postdoc']] as const;
-const AUD: Record<string, string> = { phd: 'PhD', masters: 'Master’s', newgrad: 'New grad', postdoc: 'Postdoc', undergrad: 'Undergrad' };
+const JOB_TABS = [['', 'All'], ['internship', 'Internships'], ['phd', 'PhD'], ['masters', 'Master’s'], ['newgrad', 'New grad / entry level'], ['postdoc', 'Postdoc']] as const;
+const AUD: Record<string, string> = { phd: 'PhD', masters: 'Master’s', newgrad: 'New grad / entry level', postdoc: 'Postdoc', undergrad: 'Undergrad' };
 export function PreviewJobsPage() {
   const [tab, setTab] = useState<string>('');
   const [q, setQ] = useState('');

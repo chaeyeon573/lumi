@@ -45,16 +45,20 @@ const PHD = /\b(ph\.?\s?d|doctoral|doctorate)\b/i;
 const MASTERS = /\b(master'?s|mba|m\.?eng)\b/i;
 const MS = /\bM\.?S\b/; // 대문자만
 const NEWGRAD = /\b(new grad|new graduate|university grad(uate)?|recent grad(uate)?|early career|entry[- ]level|graduate program|campus hire|20(2[6-9]) start)\b/i;
+// 졸업 후 학부생이 갈 수 있는 신입 자리 — 제목에 “new grad”가 없어도 1단계 직급·주니어·신입 프로그램이면 신입으로 본다
+const ENTRY = /\b(junior|jr\.?|rotational|rotation program|analyst program|development program|leadership program|graduate (scheme|program)|class of 20(2[6-9])|associate (product manager|consultant|software engineer|engineer|data scientist|data analyst|analyst|developer))\b/i;
+const LEVEL1 = /\b(Engineer|Developer|Analyst|Scientist|Technician|Specialist|Associate|Accountant|Consultant|Coordinator|Representative|Designer|Researcher)[ ,-]+(I|1)(?![\w+])/;
 const POSTDOC = /\b(post-?doc(toral)?)\b/i;
 const UNDERGRAD = /\b(undergrad(uate)?|bachelor'?s)\b|\bB\.?S\b/;
 /** 학생·졸업생 대상만 — 아니면 null. 시니어·매니저급은 “new grad”가 섞여도 뺀다 */
 export function classify(title: string): Pick<StudentJob, 'kind' | 'audience'> | null {
-  if (/\b(senior|sr\.?|staff|principal|lead|manager|director|head of|vp)\b/i.test(title) && !INTERN.test(title)) return null;
+  const seniorWord = /\b(senior|sr\.?|staff|principal|lead|director|head of|vp)\b/i.test(title) || (/\bmanager\b/i.test(title) && !/\b(associate|rotational|junior) product manager\b/i.test(title));
+  if (seniorWord && !INTERN.test(title)) return null;
   const audience: Audience[] = [];
   if (PHD.test(title)) audience.push('phd');
   if (MASTERS.test(title) || MS.test(title)) audience.push('masters');
   if (POSTDOC.test(title)) audience.push('postdoc');
-  if (NEWGRAD.test(title)) audience.push('newgrad');
+  if (NEWGRAD.test(title) || ENTRY.test(title) || LEVEL1.test(title)) audience.push('newgrad');
   if (UNDERGRAD.test(title)) audience.push('undergrad');
   const intern = INTERN.test(title);
   if (!intern && !audience.length && !(FELLOW.test(title) && /\b(research|ai|ml|science|scientist|graduate|phd)\b/i.test(title))) return null;
