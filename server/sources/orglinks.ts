@@ -57,6 +57,8 @@ export function isCouncil(name: string, categories: (string | undefined)[] = [],
   if (ua && schoolId && ua[1].toLowerCase() === schoolId.replace(/^s_/, '').toLowerCase()) return true;
   return categories.some((c) => !!c && GOV_CATEGORY_RE.test(notCouncil(c)));
 }
+/** CampusGroups 묶음 유형 중 그 자체가 학생회인 것만 — “Divisional Council”(Emory 대학원 학생회)·“Student Government”(Duke). “Homewood: Student Government Association”(JHU) 은 학생회에 등록한 동아리 묶음이라 아님 */
+export const GOV_GROUP_TYPE_RE = /^(student government|divisional councils?|governing (body|bodies|councils?)|government\s*\/\s*council|student councils?)$/i;
 /** 분류 이름에 붙은 “council” 이 학생회 뜻이 아닌 것 — Dartmouth 의 승인 기관 Council on Student Organizations(COSO) 등 */
 export const notCouncil = (text: string) => text
   .replace(/council on student organizations|\bCOSO\b/gi, ' ')

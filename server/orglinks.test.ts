@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { socialLinks, engageLinks, campusGroupsWebsite, pennClubToOrg, COUNCIL_RE, notCouncil, isCouncil, studentGovToOrg } from './sources/orglinks';
+import { socialLinks, engageLinks, campusGroupsWebsite, pennClubToOrg, COUNCIL_RE, notCouncil, isCouncil, GOV_GROUP_TYPE_RE, studentGovToOrg } from './sources/orglinks';
 
 test('engageLinks: real Notre Dame socialMedia shape → labeled links, empties dropped', () => {
   const l = engageLinks({ ExternalWebsite: 'https://asce.nd.edu/', InstagramUrl: 'https://www.instagram.com/notredame_asce/', FacebookUrl: 'https://www.facebook.com/NotreDameASCE', LinkedInUrl: '', TwitterUrl: null, YoutubeUrl: '' });
@@ -162,4 +162,11 @@ test('isCouncil: belonging to a council or being recognized by student governmen
   assert.equal(isCouncil('Vanderbilt Student Government', [], 's_vanderbilt'), true);
   assert.equal(isCouncil('Harvard Undergraduate Association', [], 's_harvard'), true);
   assert.equal(isCouncil('Area Councils', ['Government/Council'], 's_northwestern'), true);
+});
+
+test('GOV_GROUP_TYPE_RE: CampusGroups group type that is itself government vs a registration path', () => {
+  assert.equal(GOV_GROUP_TYPE_RE.test('Divisional Council'), true); // Emory graduate school governments
+  assert.equal(GOV_GROUP_TYPE_RE.test('Student Government'), true); // Duke
+  assert.equal(GOV_GROUP_TYPE_RE.test('Homewood: Student Government Association'), false); // JHU clubs registered with SGA
+  assert.equal(GOV_GROUP_TYPE_RE.test('Student Government Recognized Organizations'), false); // CMU
 });
