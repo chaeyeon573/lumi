@@ -1,20 +1,21 @@
 {
- "checkedAt": "2026-11-03T10:38:57.806Z",
+ "checkedAt": "2026-11-03T11:39:48.820Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:vanderbilt",
- "sampled": 2579,
- "withTimes": 2579,
+ "sampled": 5070,
+ "withTimes": 5070,
  "terms": [
-  "Fall 2026"
+  "Fall 2026",
+  "Spring 2027"
  ],
  "sample": [
   "CORE 1010 · Being Human (Sec 01) · Fall 2026 · M 08:40-09:55 W 08:40-09:55",
-  "CHEM 2100L · Analytical Chemistry Laboratory (Sec 02) · Fall 2026 · W 13:20-17:10",
-  "ECON 3610 · International Finance · Fall 2026 · T 08:00-09:15 R 08:00-09:15",
-  "CREO 5101 · Elementary Creole I (Duke) · Fall 2026 · M 09:15-10:15 W 09:15-10:15 F 09:15-10:15",
-  "MGT 6413 · Data & Analytics for Business (MAcc) · Fall 2026 · M 08:00-09:30 W 08:00-09:30",
-  "PERC 4100 · Percussion (B.Mus.Arts and Integrated Studies Juniors/Seniors) - Percussion · Fall 2026 · T 12:45-14:00"
+  "ECON 3035 · Econometric Methods (Sec 03) · Fall 2026 · M 09:05-09:55 W 09:05-09:55 F 09:05-09:55",
+  "MGT 6478 · Business Project Management (Sec 01) · Fall 2026 · T 11:30-13:00 R 11:30-13:00",
+  "SPEDV 7800 · Characteristics of Students with Complex Learning Needs · Fall 2026 · M 16:30-19:20",
+  "ECON 3035 · Econometric Methods (Sec 01) · Spring 2027 · T 09:30-10:45 R 09:30-10:45",
+  "MGT 6574 · Spreadsheets for Business Analytics (Sec 02) · Spring 2027 · T 16:15-17:45 R 16:15-17:45"
  ],
  "spotCheck": {
   "matched": 0,
