@@ -169,7 +169,11 @@ async function collectCourses(row: SchoolRow): Promise<AgentRun[]> {
         const file = path.join(COLLECTED_DIR, `${row.id}.courses.json`);
         // 시간표가 없는 과목의 카탈로그 항목(term 'catalog')은 남긴다 — 시간표가 생긴 과목만 새 것으로 (모은 데이터는 지우지 않는다, SF State 2026-11-03)
         const fresh = new Set(all.map((c) => c.code));
-        const keptCatalog = existsSync(file) ? (JSON.parse(readFileSync(file, 'utf8')) as CatalogCourse[]).filter((c) => c.term === 'catalog' && !fresh.has(c.code)) : [];
+        const prev = existsSync(file) ? (JSON.parse(readFileSync(file, 'utf8')) as CatalogCourse[]) : [];
+        const keptCatalog = prev.filter((c) => c.term === 'catalog' && !fresh.has(c.code));
+        // 이번에 한 개도 안 온 (학기, 학과) 묶음은 지난번 것을 남긴다 — 요청이 끊겨 빈 것을 '없어진 수업'으로 지우지 않는다 (SF State ENG·DES, 2026-11-03)
+        const freshGroups = new Set(all.map((c) => `${c.term}#${c.department}`));
+        keptCatalog.push(...prev.filter((c) => c.term !== 'catalog' && !freshGroups.has(`${c.term}#${c.department}`) && all.some((x) => x.term === c.term)));
         const unique = [...new Map([...all, ...keptCatalog].map((c) => [c.id, c])).values()].sort((a, b) => a.code.localeCompare(b.code, 'en', { numeric: true }));
         writeFileSync(file, `[\n${unique.map((c) => JSON.stringify(c)).join(',\n')}\n]\n`);
         out.push(await record({ task: `collect-courses:${row.id}`, schoolId: row.id, status: unique.length ? 'applied' : 'rejected', startedAt, summary: { courses: unique.length, withTimes: unique.filter((c) => c.meetings?.length).length, terms: [...new Set(unique.map((c) => c.term))].slice(0, 6) } }));

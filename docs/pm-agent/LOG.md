@@ -1801,3 +1801,12 @@
 - Student governments: Instagram from the official site for Harvard UA and SCU ASG; ASSU/SUA link none; ASUCD 403 (not bypassed). Queue item done.
 - Tried: SF State is done; UC Davis class search (registrar-apps.ucdavis.edu) 403 to automated requests — not bypassed.
 - Spot check clubs: JHU Phi Gamma Delta, CMU SEED, Rice SIAM match. Vanderbilt ColorStack and Lehigh Phi Alpha Delta list their national sites (what the clubs entered). Phi Alpha Delta is a pre-law professional fraternity typed greek — left as the directory categorizes it. Remaining councils at JHU/Lehigh/CMU/Vanderbilt/Rice are real councils.
+
+## 2026-11-03 22:33 run
+- No Codex commits or HANDOFF requests.
+- **SF State Fall 2026 added.** The public results link (`classsearch/results?searchFor=<subject>&term=<term>&classCategory=REG`, then `searchresultsjson`) works for any term without the form → reader now reads the latest Fall and Spring (2 requests per subject, 1 s apart). File: Fall 2026 1,993 + Spring 2027 2,123 classes with times + 2,669 catalog-only courses.
+  - The connection to SF State dropped mid-run (proxy: "ws_closed_mid_exchange"); ENG, DES, CWL, NUTR, IBUS, HH, COUN came back empty and the write would have removed their Spring classes. Restored from the previous file before commit. Fixes: the reader retries a failed subject once and logs it; `collect-courses` keeps the previous classes for any (term, department) that came back with nothing (a dropped request is not a removed class). Fall for those subjects fills on the next run.
+  - Spot check Fall: AA S 681, CSC 775 (grad), MATH 310 — match the official detail pages.
+- UCLA batch: 27/173 Fall subjects, 393 classes.
+- Offices: Illinois "Grainger Departments & Programs" (33 — the engineering college's departments, advising, career services) and 5 more UCI "Departments and Programs" units were typed club → department (hidden; nothing removed). Rule + test.
+- Spot check clubs: Minnesota FWCB Club, Wisconsin Food for Thought, UCI Cariño Student Outreach Clinic match; Illinois "Grainger Electrical & Computer Engineering" was the department itself (fixed above); Dartmouth D-LAB is a student-facilitated Rockefeller Center program (kept as club; site 503 to automated requests).

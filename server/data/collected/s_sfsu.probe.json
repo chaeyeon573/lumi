@@ -1,6 +1,25 @@
 {
- "checkedAt": "2026-11-03T22:34:55.085Z",
- "status": "error",
+ "checkedAt": "2026-11-03T23:03:22.409Z",
+ "status": "applied",
  "stored": false,
- "error": "sfsu: no term"
+ "source": "timetable:sfsu",
+ "sampled": 3959,
+ "withTimes": 3959,
+ "terms": [
+  "Spring 2027",
+  "Fall 2026"
+ ],
+ "sample": [
+  "A U 110 · Living in San Francisco (Sec 03) · Spring 2027 · T 15:30-16:45",
+  "CSC 842 · Human-Computer Interaction (Sec 02) · Spring 2027 · R 10:00-12:45",
+  "MKTG 480 · Search, Display, and Video Advertising · Spring 2027 · T 15:30-16:45 R 15:30-16:45",
+  "ACCT 307 · Accounting Information Systems (Sec 02) · Fall 2026 · T 14:00-15:15 R 14:00-15:15",
+  "COUN 706 · Counseling Skills and Process (Sec 04) · Fall 2026 · W 09:30-12:15",
+  "MGMT 605 · Seminar in Developing Management Skills (Sec 02) · Fall 2026 · M 12:30-13:45 W 12:30-13:45"
+ ],
+ "spotCheck": {
+  "matched": 0,
+  "mismatched": [],
+  "unavailable": 0
+ }
 }

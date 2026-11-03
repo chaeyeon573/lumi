@@ -1020,9 +1020,14 @@ async function sfsu(): Promise<CatalogCourse[]> {
   for (const term of terms) {
     const before = out.length;
     for (const subj of subjects) {
-      const r = await go(`${SFSU}/classsearch/results?${new URLSearchParams({ searchFor: subj, term, classCategory: 'REG' })}`); if (!r.ok) continue;
-      const j = await go(`${SFSU}/searchresultsjson`); if (!j.ok) continue;
-      out.push(...sfsuToCourses(await j.json(), term, labels[term] ?? term).filter((c) => c.department === subj));
+      // 연결이 끊기면 한 번 더 — 그래도 안 되면 그 전공은 건너뛰고(이전 파일의 것이 남는다) 기록
+      for (let attempt = 0; attempt < 2; attempt++) {
+        try {
+          const r = await go(`${SFSU}/classsearch/results?${new URLSearchParams({ searchFor: subj, term, classCategory: 'REG' })}`); if (!r.ok) throw new Error(String(r.status));
+          const j = await go(`${SFSU}/searchresultsjson`); if (!j.ok) throw new Error(String(j.status));
+          out.push(...sfsuToCourses(await j.json(), term, labels[term] ?? term).filter((c) => c.department === subj)); break;
+        } catch (e) { if (attempt === 1) console.log(`  s_sfsu ${term} ${subj}: skipped (${(e as Error).message})`); else await new Promise((res) => setTimeout(res, 5000)); }
+      }
     }
     console.log(`  s_sfsu ${labels[term]}: ${subjects.length} subjects → ${out.length - before} classes`);
   }
