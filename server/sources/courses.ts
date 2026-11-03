@@ -883,6 +883,54 @@ async function riceLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   return riceToCourses(await riceGet(`?p_action=QUERY&p_term=${c.termCode}&p_subj=${c.code.split(' ')[0]}`), c.termCode ?? '', c.term).find((x) => x.id === c.id) ?? null;
 }
 
+// ─── University of Washington: 공개 시간표 washington.edu/students/timeschd/pub/<AUT2026>/<dept>.html (쿼터제) ───
+// 고정폭 글자 표. 과목 머리줄 "CSE 122 COMP PROGRAMMING II", 섹션 줄 "SLN  A  4  WF  1230-120" (학점 자리에 QZ=퀴즈 섹션, LB=랩).
+// 시각엔 AM/PM 이 없다: 8~11 오전, 12 정오, 1~7 오후, 끝에 P 가 붙으면 저녁. 대학원(500번대) 포함.
+const UW = 'https://www.washington.edu/students/timeschd/pub';
+const UW_SECONDARY = /^(QZ|LB)$/;
+function uwTime(raw: string, pm: boolean): string { const d = raw.padStart(3, '0'); let h = Number(d.slice(0, -2)); const m = d.slice(-2); if (pm ? h < 12 : h >= 1 && h <= 7) h += 12; return `${String(h).padStart(2, '0')}:${m}`; }
+export function uwToCourses(html: string, termCode: string, label: string): CatalogCourse[] {
+  const out: CatalogCourse[] = []; const seen = new Set<string>(); const secOf = new Map<string, string>();
+  for (const block of html.split(/(?=<table bgcolor='#ffcccc')/)) {
+    const head = /<A NAME=[a-z0-9]+>([\s\S]*?)<\/A>&nbsp;<A [^>]*>([\s\S]*?)<\/A>/.exec(block); if (!head) continue;
+    const code = decodeEntities(head[1].replace(/&nbsp;/g, ' ')).replace(/\s+/g, ' ').trim(); const title = titleCase(decodeEntities(head[2]).trim());
+    if (!/^[A-Z&][A-Z& ]* \d{3}$/.test(code)) continue;
+    const baseId = courseId('s_uw', code);
+    for (const m of block.matchAll(/SLN=\d+>\d+<\/A>\s+([A-Z][A-Z0-9]?)\s+(\S+)\s+([MTWFhSau]+)\s+(\d{3,4})-(\d{3,4})(P?)/g)) {
+      const [, sec, kind, days, a, b, p] = m; if (UW_SECONDARY.test(kind)) continue;
+      const pm = p === 'P'; const start = uwTime(a, pm && Number(a.slice(0, -2)) < 12 && Number(a.slice(0, -2)) <= Number(b.slice(0, -2))); const end = uwTime(b, pm);
+      const meetings = (days.match(/Th|Sa|Su|M|T|W|F/g) ?? []).map((d) => ({ day: { M: 0, T: 1, W: 2, Th: 3, F: 4, Sa: 5, Su: 6 }[d as 'M']!, start, end }));
+      if (!meetings.length) continue;
+      const id = seen.has(baseId) ? `${baseId}_${sec.toLowerCase()}` : baseId; if (seen.has(id)) continue; seen.add(id); secOf.set(id, sec);
+      const units = Number(kind);
+      out.push({ id, schoolId: 's_uw', code, title, department: code.replace(/ \d{3}$/, ''), meetings: uniq(meetings), term: label, termCode, units: Number.isFinite(units) && units > 0 ? units : undefined, url: `${UW}/${termCode}/${(/<A NAME=([a-z0-9]+)>/.exec(block)?.[1] ?? '').replace(/\d+$/, '')}.html` });
+    }
+  }
+  for (const c of out) if (out.filter((o) => o.code === c.code).length > 1) c.title = `${c.title} (Sec ${secOf.get(c.id)})`;
+  return tagTerm(out, label);
+}
+async function uwGet(path: string): Promise<string | null> { const r = await fetch(`${UW}/${path}`, { headers: UAH }); if (r.status === 404) return null; if (!r.ok) throw new Error(`uw ${path} → ${r.status}`); return r.text(); }
+/** 지금 쿼터 + 다음 쿼터 (Autumn → Winter → Spring) */
+function uwTerms(now = new Date()): { code: string; label: string }[] {
+  const [cur] = catalogTermLabels(now); const y = Number(cur.split(' ')[1]);
+  const seq = /Fall|Autumn/.test(cur) ? [[`AUT${y}`, `Fall ${y}`], [`WIN${y + 1}`, `Winter ${y + 1}`]] : /Spring/.test(cur) ? [[`SPR${y}`, `Spring ${y}`], [`AUT${y}`, `Fall ${y}`]] : [[`WIN${y}`, `Winter ${y}`], [`SPR${y}`, `Spring ${y}`]];
+  return seq.map(([code, label]) => ({ code, label }));
+}
+async function uw(): Promise<CatalogCourse[]> {
+  const out: CatalogCourse[] = [];
+  for (const t of uwTerms()) {
+    const index = await uwGet(`${t.code}/`); if (!index) { console.log(`  s_uw ${t.code}: not published`); continue; }
+    const depts = [...new Set([...index.matchAll(/href="([a-z]+)\.html"/g)].map((m) => m[1]))]; const before = out.length;
+    for (const d of depts) { const html = await uwGet(`${t.code}/${d}.html`); if (html) out.push(...uwToCourses(html, t.code, t.label)); await new Promise((r) => setTimeout(r, 200)); }
+    console.log(`  s_uw ${t.code} (${t.label}): ${depts.length} departments → ${out.length - before} classes`);
+  }
+  return out;
+}
+async function uwLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
+  const page = /\/([a-z]+)\.html$/.exec(c.url ?? '')?.[1]; if (!page || !c.termCode) return null;
+  const html = await uwGet(`${c.termCode}/${page}.html`); return html ? uwToCourses(html, c.termCode, c.term).find((x) => x.id === c.id) ?? null : null;
+}
+
 // ─── Harvard: my.harvard.edu 공개 과목 검색 (키 불필요) ─────────────────────
 // 검색 결과는 JSON 안에 이스케이프된 HTML 로 오고 15개씩 page=N 으로 넘어간다. term=2026+Fall · school=FAS 필터가 된다.
 // 과목마다 /course/sections/<id>/<offer>/<strm>/<session> 조각에 섹션별 요일(aria-label "Tuesday, selected")·시간·장소·교수가 있다.
@@ -1015,6 +1063,7 @@ export const COURSE_SOURCES: Record<string, CourseSource> = {
   harvard: { schoolId: 's_harvard', fetch: harvard, lookup: harvardLookup },
   usc: { schoolId: 's_usc', fetch: usc, lookup: uscLookup },
   rice: { schoolId: 's_rice', fetch: rice, lookup: riceLookup },
+  uw: { schoolId: 's_uw', fetch: uw, lookup: uwLookup },
 };
 export const adapters: Record<string, () => Promise<CatalogCourse[]>> = Object.fromEntries(Object.entries(COURSE_SOURCES).map(([k, v]) => [k, v.fetch]));
 
