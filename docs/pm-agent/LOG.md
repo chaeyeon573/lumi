@@ -1721,3 +1721,4 @@
 - No Codex commits or HANDOFF requests yet.
 - New WashU class reader (registrar.washu.edu class-schedule-search: filters are a POST form, 149 courses per page via `paged`; only sections of the asked term — "Fall Intersession" left out). Spring 2027 not listed yet.
 - Spot check clubs: Michigan SCOPE, Notre Dame Farley Hall Council match Engage; Columbia Student Union for Sustainable Development and Stanford Student Space Initiative websites match; UCLA Undergraduate Economics Society Instagram matches RCO (tracking tail stripped on display).
+- WashU: full collect did not finish in 40 min — `paged=N` returns page 2's courses for every N>1 (checked 30, 60, 200), each request ~27 s / 1 MB, then a connection was dropped (possible throttling). Stopped hitting the site; reader kept (tested) but courses_source cleared so the routine does not loop. Existing WashU catalog file (5,429, no times) unchanged.
