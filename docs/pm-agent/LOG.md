@@ -1676,3 +1676,11 @@
 - USF classes: banner9 → 2,429 sections with times. Georgia Tech switched to banner9.
 - Jobs: new reader (server/sources/jobboards.ts, tests) → 967 US postings from 146 boards: internships 626, new grad/entry level 297, PhD 109, master's 55, postdoc 13. Entry level also catches "Engineer I", junior, APM, analyst/rotational programs; an intern's "2027 start" is not new grad (fixed after sample review). Spot check: 5 random postings open on the employer's page with the same title. Visible at /preview/jobs.
 - Gap: big banks, consulting, pharma, retail mostly use Workday (not yet read) — queued.
+
+## 2026-11-03 02:33 run
+- Container restarts keep killing long runs. Collect now saves the courses the class check already fetched (one full fetch per school instead of two).
+- New: PeopleSoft HCX class search reader (Duke DukeHub, BU; guest cookie, re-opens the guest session if it lapses). Duke: 6,291 sections with times (Fall 2026 + Spring 2027, graduate included). BU: only 452 Fall lectures at first — BU sends most regular classes as section type "IND" (CASEN 107 The Voice of Poetry); rule changed to drop only discussion/lab/recitation/tutorial/quiz; re-collect running.
+- Fixed: HTML codes in Banner course titles ("Black Activists &amp; Visionaries") — reader decodes; 862 titles fixed in USF/Georgia Tech files.
+- Spot check: Georgia Tech 5 sections re-fetched live (AE 6115, EAS 4803, MATH 1551, PSYC 4031, VIP 6602 — all match, 2 graduate). Clubs: 5 CampusGroups clubs' websites opened — 3 real student groups (Yale Arnold Air Society links the national site), 2 were school offices (Tufts "Orientation & Student Experience", JHU "Pava Center").
+- Fixed: school offices listed in club directories are now type `department` (kept in files, hidden from club lists): clear non-student categories ("non student org", "Staff-Only", "University Committee") always; looser ones ("Department", "Administrative") only when the name is office-like and not club-like. 736 marked across 28 schools; tests cover real false positives (UCSB Amateur Radio Club, Lehigh Amaranth Literary Magazine, WashU Bears Bikes, Yale Black Seminarians stay clubs).
+- Deployed 46dcbe2 (all checks passed).
