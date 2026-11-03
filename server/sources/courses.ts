@@ -994,7 +994,7 @@ export function sfsuToCourses(json: { aaData?: string[][] }, termCode: string, l
   for (const code of [...new Set(rows.map((r) => r.code))]) {
     const all = rows.filter((r) => r.code === code); const lec = all.filter((r) => r.kind === 'LEC'); const keep = lec.length ? lec : all.filter((r) => !/^(LAB|DIS|ACT)$/.test(r.kind)).length ? all.filter((r) => !/^(LAB|DIS|ACT)$/.test(r.kind)) : all;
     const baseId = `${courseId('s_sfsu', code)}_${termCode}`;
-    keep.forEach((r, i) => out.push({ id: i === 0 ? baseId : `${baseId}_${r.sec.toLowerCase()}`, schoolId: 's_sfsu', code, title: keep.length > 1 ? `${r.title} (Sec ${r.sec})` : r.title, department: code.split(' ')[0], instructor: r.instructor && !/^(To be announced|Staff|TBA)$/i.test(r.instructor) ? r.instructor : undefined, location: r.location && !/^(To be (arranged|announced)|TBA)$/i.test(r.location) ? r.location : undefined, meetings: r.meetings, term: label, termCode, units: Number.isFinite(r.units) && r.units > 0 ? r.units : undefined, url: r.url }));
+    keep.forEach((r, i) => out.push({ id: i === 0 ? baseId : `${baseId}_${r.sec.toLowerCase()}`, schoolId: 's_sfsu', code, title: keep.length > 1 ? `${r.title} (Sec ${r.sec})` : r.title, department: code.replace(/\s+\S+$/, ''), instructor: r.instructor && !/^(To be announced|Staff|TBA)$/i.test(r.instructor) ? r.instructor : undefined, location: r.location && !/^(To be (arranged|announced)|TBA)$/i.test(r.location) ? r.location : undefined, meetings: r.meetings, term: label, termCode, units: Number.isFinite(r.units) && r.units > 0 ? r.units : undefined, url: r.url }));
   }
   return out;
 }

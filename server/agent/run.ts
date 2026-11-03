@@ -166,8 +166,12 @@ async function collectCourses(row: SchoolRow): Promise<AgentRun[]> {
       try {
         const src = row.courses_source ? resolveCourseSource(row.id, row.courses_source) : undefined;
         const all = probeFull.get(row.id) ?? (src ? applyRules(row.id, await src.fetch()).kept : undefined) ?? (row.catalog_url ? (await fetchCourseLeaf(row.id, row.catalog_url)).courses : []);
-        const unique = [...new Map(all.map((c) => [c.id, c])).values()].sort((a, b) => a.code.localeCompare(b.code, 'en', { numeric: true }));
-        writeFileSync(path.join(COLLECTED_DIR, `${row.id}.courses.json`), `[\n${unique.map((c) => JSON.stringify(c)).join(',\n')}\n]\n`);
+        const file = path.join(COLLECTED_DIR, `${row.id}.courses.json`);
+        // 시간표가 없는 과목의 카탈로그 항목(term 'catalog')은 남긴다 — 시간표가 생긴 과목만 새 것으로 (모은 데이터는 지우지 않는다, SF State 2026-11-03)
+        const fresh = new Set(all.map((c) => c.code));
+        const keptCatalog = existsSync(file) ? (JSON.parse(readFileSync(file, 'utf8')) as CatalogCourse[]).filter((c) => c.term === 'catalog' && !fresh.has(c.code)) : [];
+        const unique = [...new Map([...all, ...keptCatalog].map((c) => [c.id, c])).values()].sort((a, b) => a.code.localeCompare(b.code, 'en', { numeric: true }));
+        writeFileSync(file, `[\n${unique.map((c) => JSON.stringify(c)).join(',\n')}\n]\n`);
         out.push(await record({ task: `collect-courses:${row.id}`, schoolId: row.id, status: unique.length ? 'applied' : 'rejected', startedAt, summary: { courses: unique.length, withTimes: unique.filter((c) => c.meetings?.length).length, terms: [...new Set(unique.map((c) => c.term))].slice(0, 6) } }));
       } catch (e) { out.push(await record({ task: `collect-courses:${row.id}`, schoolId: row.id, status: 'error', startedAt, summary: { error: (e as Error).message } })); }
     }
