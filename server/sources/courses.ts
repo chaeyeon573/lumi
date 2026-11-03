@@ -1022,6 +1022,54 @@ async function cmuLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   return cmuToCourses(await cmuPages.get(c.termCode)!, c.termCode, c.term).find((x) => x.id === c.id) ?? null;
 }
 
+// ─── WashU: registrar.washu.edu/classes-registration/class-schedule-search/ (Workday 에서 내보낸 공개 시간표, WordPress) ───
+// POST term="2026 Fall" & paged=N — 쪽마다 과목 149개. 과목 블록(학과·제목·코드 "SDS 5521"·학점) 안에 섹션 블록(번호·학기·교수·요일 "Tue Thu"·시간 "1:00 PM-2:20 PM").
+const WUSTL = 'https://registrar.washu.edu/classes-registration/class-schedule-search/';
+const WU_DAY: Record<string, number> = { Mon: 0, Tue: 1, Wed: 2, Thu: 3, Fri: 4, Sat: 5, Sun: 6 };
+export function wustlToCourses(html: string, termName: string, label: string): CatalogCourse[] {
+  const val = (h: string, cls: string) => decodeEntities((new RegExp(`class="scpi-class__${cls}">([\\s\\S]*?)<\\/div>`).exec(h)?.[1] ?? '').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+  const out: CatalogCourse[] = []; const seen = new Set<string>(); const secOf = new Map<string, string>();
+  for (const row of html.split('<div class="scpi__classes--row"').slice(1)) {
+    const title = val(row, 'heading wide'), code = val(row, 'heading middle'), dept = val(row, 'department');
+    const units = Number(/(\d+(?:\.\d+)?) Units?/.exec(val(row, 'heading narrow'))?.[1]);
+    if (!/^[A-Z][A-Z0-9 &-]* \d{3,4}[A-Z]?$/.test(code)) continue;
+    for (const sec of row.split('data-section-id=').slice(1)) {
+      if (val(sec, 'value value-term') !== termName) continue;
+      const num = val(sec, 'value value-section-number'), days = val(sec, 'value value-days'), time = val(sec, 'value value-time');
+      const t = /^(\d{1,2}:\d{2}) ?([AP]M)\s*-\s*(\d{1,2}:\d{2}) ?([AP]M)$/i.exec(time); if (!t) continue;
+      const start = to24(`${t[1]}${t[2]}`), end = to24(`${t[3]}${t[4]}`);
+      const meetings = days.split(/\s+/).filter((d) => d in WU_DAY).map((d) => ({ day: WU_DAY[d], start, end })); if (!meetings.length) continue;
+      const baseId = courseId('s_wustl', code); const id = seen.has(baseId) ? `${baseId}_${num.toLowerCase()}` : baseId; if (seen.has(id)) continue; seen.add(id); secOf.set(id, num);
+      const instructor = val(sec, 'value value-instructor') || undefined;
+      out.push({ id, schoolId: 's_wustl', code, title, department: dept || code.replace(/ \d.*$/, ''), instructor: instructor && !/^(TBA|Staff)$/i.test(instructor) ? instructor : undefined, meetings: uniq(meetings), term: label, termCode: termName, units: Number.isFinite(units) && units > 0 ? units : undefined, url: WUSTL });
+    }
+  }
+  for (const c of out) if (out.filter((o) => o.code === c.code).length > 1) c.title = `${c.title} (Sec ${secOf.get(c.id)})`;
+  return tagTerm(out, label);
+}
+async function wustlPage(termName: string, page: number): Promise<string> {
+  const r = await fetch(WUSTL, { method: 'POST', headers: { ...UAH, 'content-type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ term: termName, paged: String(page), filter_submit: '1' }).toString() });
+  if (!r.ok) throw new Error(`wustl ${termName} p${page} → ${r.status}`); return r.text();
+}
+async function wustl(): Promise<CatalogCourse[]> {
+  const first = await wustlPage('', 1);
+  const names = [...(/name="term"[\s\S]*?<\/select>/.exec(first)?.[0] ?? '').matchAll(/value="(20\d{2} (?:Fall|Spring))"/g)].map((m) => m[1]);
+  const [cur, next] = catalogTermLabels(); const want = (l: string) => names.find((n) => `${n.split(' ')[1]} ${n.split(' ')[0]}` === l);
+  const out: CatalogCourse[] = [];
+  for (const label of [cur, next]) {
+    const termName = want(label); if (!termName) { console.log(`  s_wustl ${label}: not listed yet`); continue; }
+    const seen = new Set<string>(); let n = 0;
+    for (let page = 1; page <= 120; page++) {
+      const html = await wustlPage(termName, page); const got = wustlToCourses(html, termName, label);
+      const fresh = got.filter((c) => !seen.has(c.id)); fresh.forEach((c) => seen.add(c.id)); out.push(...fresh); n += fresh.length;
+      if (!html.includes('Next Page') || !html.includes('scpi__classes--row')) break;
+      await new Promise((r) => setTimeout(r, 800));
+    }
+    console.log(`  s_wustl ${termName} (${label}): ${n} classes`);
+  }
+  return out;
+}
+
 // ─── Harvard: my.harvard.edu 공개 과목 검색 (키 불필요) ─────────────────────
 // 검색 결과는 JSON 안에 이스케이프된 HTML 로 오고 15개씩 page=N 으로 넘어간다. term=2026+Fall · school=FAS 필터가 된다.
 // 과목마다 /course/sections/<id>/<offer>/<strm>/<session> 조각에 섹션별 요일(aria-label "Tuesday, selected")·시간·장소·교수가 있다.
@@ -1157,6 +1205,7 @@ export const COURSE_SOURCES: Record<string, CourseSource> = {
   uw: { schoolId: 's_uw', fetch: uw, lookup: uwLookup },
   caltech: { schoolId: 's_caltech', fetch: caltech, lookup: caltechLookup },
   cmu: { schoolId: 's_cmu', fetch: cmu, lookup: cmuLookup },
+  wustl: { schoolId: 's_wustl', fetch: wustl },
 };
 export const adapters: Record<string, () => Promise<CatalogCourse[]>> = Object.fromEntries(Object.entries(COURSE_SOURCES).map(([k, v]) => [k, v.fetch]));
 
