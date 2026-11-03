@@ -1668,3 +1668,4 @@
 - Spot check: NYU 2 + UChicago 2 clubs vs. Engage API (socials and website match), Columbia 1 (its club page needs login, which led to the fix above); MIT 5 classes vs. FireRoad (title, days, times match). Gap: only lectures are kept, labs/recitations are dropped (6.S950 Thu lab, MAD.701 Fri lab) — queued. student.mit.edu answered 503 to the web fetch.
 - Screens: /community, /preview/s_columbia — no PAGE ERROR. Live feed shows demo posts with emoji → QUESTIONS.md.
 - Collection of the 28 new schools still running (USC: 1,964 groups, reading club websites).
+- 11-03: container restart stopped the 28-school run after UC Riverside. Saved: USC 1,964, UC Irvine 733 (+5,415 catalog courses), UC Santa Barbara 1,040 (0 links), UC Riverside 664 (507 with a link). Restarted for the 24 schools without a file (script skips schools that already have one).

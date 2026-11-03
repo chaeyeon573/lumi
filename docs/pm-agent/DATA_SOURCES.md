@@ -41,6 +41,7 @@ Notes
 
 ## Data work queue
 - [ ] (top, owner 2026-11-03) Collect every school in schools-collect.csv that has no `<id>.orgs.json` yet, one per run in file order (`npm run agent -- collect:<id>`), commit after each. Started 2026-11-03: USC, UCI, UCSB, UCR, Duke, JHU, Northwestern, Georgetown, CMU, Emory, Tufts, WashU, Rice, Vanderbilt, Michigan, UVA, UNC, Georgia Tech, UT Austin, BU, BC, UMD, Purdue, Florida, Wisconsin, UW, Minnesota, Lehigh
+- [ ] UC Santa Barbara (shoreline.ucsb.edu, CampusGroups): 1,040 groups but 0 club websites came through — check whether Shoreline lists sites on a public page, else find links per club
 - [ ] Schools still paused, need a reader or are blocked: Princeton (club list is behind Princeton login — skip unless a public list appears), UCSD (studentorg.ucsd.edu fails TLS from the container; try from Railway), Illinois, Rutgers, Ohio State, Texas A&M (public directory not found yet), Harvard clubs (engage.college.harvard.edu refused by session network)
 - [ ] Recruiting deadlines for schools whose directory lacks them (Berkeley CalLink is login-only; Engage schools): only from a public club page that states a date — never guess (the PM agent picks the top open item itself every run — owner 2026-11-02: "don't make me ask, keep filling")
 Order: Bay Area schools only. Never invent data; only official/public sources; verify with a real sample before wiring; never bulk-store timetables for schools that aren't open.
