@@ -6,7 +6,7 @@
  */
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
-import { boardUrl, parseBoard, toStudentJobs, type JobPlatform, type StudentJob } from '../sources/jobboards';
+import { boardUrl, parseBoard, toStudentJobs, fetchWorkday, type JobPlatform, type StudentJob } from '../sources/jobboards';
 
 const dataDir = path.join(import.meta.dirname, '..', 'data');
 const OUT = path.join(dataDir, 'collected', 'jobs-us.json');
@@ -15,7 +15,7 @@ function readBoards(): { platform: JobPlatform; token: string; company: string; 
   const lines = readFileSync(path.join(dataDir, 'job-boards.csv'), 'utf8').trim().split('\n');
   const head = lines[0].split(',');
   return lines.slice(1).map((l) => { const v = l.split(','); const r = Object.fromEntries(head.map((h, i) => [h, (v[i] ?? '').trim()])); return { platform: r.platform as JobPlatform, token: r.token, company: r.company, sector: r.sector }; })
-    .filter((b) => ['greenhouse', 'lever', 'ashby'].includes(b.platform) && b.token);
+    .filter((b) => ['greenhouse', 'lever', 'ashby', 'workday'].includes(b.platform) && b.token);
 }
 
 const prev: StudentJob[] = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')).jobs ?? [] : [];
@@ -23,9 +23,12 @@ const boards = readBoards();
 const jobs: StudentJob[] = []; let ok = 0; const failed: string[] = [];
 for (const b of boards) {
   try {
-    const r = await fetch(boardUrl(b.platform, b.token), { headers: { 'user-agent': 'AroundU-student-jobs', accept: 'application/json' } });
-    if (!r.ok) throw new Error(String(r.status));
-    jobs.push(...toStudentJobs(parseBoard(b.platform, await r.json()), b)); ok++;
+    if (b.platform === 'workday') { jobs.push(...toStudentJobs(await fetchWorkday(b.token), b)); ok++; }
+    else {
+      const r = await fetch(boardUrl(b.platform, b.token), { headers: { 'user-agent': 'AroundU-student-jobs', accept: 'application/json' } });
+      if (!r.ok) throw new Error(String(r.status));
+      jobs.push(...toStudentJobs(parseBoard(b.platform, await r.json()), b)); ok++;
+    }
   } catch (e) {
     failed.push(`${b.platform}:${b.token} (${(e as Error).message})`);
     jobs.push(...prev.filter((j) => j.source === b.platform && j.id.startsWith(`job_${b.platform}_${b.token}_`.toLowerCase().replace(/[^a-z0-9_]+/g, '_'))));

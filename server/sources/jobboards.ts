@@ -7,7 +7,7 @@
  * 게시판에 올라 있는 공고 = 지금 지원 가능한 공고 (내려가면 다음 수집에서 빠진다).
  */
 
-export type JobPlatform = 'greenhouse' | 'lever' | 'ashby';
+export type JobPlatform = 'greenhouse' | 'lever' | 'ashby' | 'workday';
 export type Audience = 'phd' | 'masters' | 'undergrad' | 'newgrad' | 'postdoc';
 export interface StudentJob {
   id: string; company: string; sector?: string; title: string; location: string; url: string;
@@ -44,7 +44,7 @@ const FELLOW = /\b(fellow|fellowship|residency|resident)\b/i;
 const PHD = /\b(ph\.?\s?d|doctoral|doctorate)\b/i;
 const MASTERS = /\b(master'?s|mba|m\.?eng)\b/i;
 const MS = /\bM\.?S\b/; // 대문자만
-const NEWGRAD = /\b(new grad|new graduate|university grad(uate)?|recent grad(uate)?|early career|entry[- ]level|graduate program|campus hire|20(2[6-9]) start)\b/i;
+const NEWGRAD = /\b(new grad|new college grad(uate)?|college grad(uate)?|new graduate|university grad(uate)?|recent grad(uate)?|early career|entry[- ]level|graduate program|campus hire|20(2[6-9]) start)\b/i;
 // 졸업 후 학부생이 갈 수 있는 신입 자리 — 제목에 “new grad”가 없어도 1단계 직급·주니어·신입 프로그램이면 신입으로 본다
 const ENTRY = /\b(junior|jr\.?|rotational|rotation program|analyst program|development program|leadership program|graduate (scheme|program)|class of 20(2[6-9])|associate (product manager|consultant|software engineer|engineer|data scientist|data analyst|analyst|developer))\b/i;
 const LEVEL1 = /\b(Engineer|Developer|Analyst|Scientist|Technician|Specialist|Associate|Accountant|Consultant|Coordinator|Representative|Designer|Researcher)[ ,-]+(I|1)(?![\w+])/;
@@ -60,7 +60,7 @@ export function classify(title: string): Pick<StudentJob, 'kind' | 'audience'> |
   if (POSTDOC.test(title)) audience.push('postdoc');
   // 인턴 공고의 “2027 start” 는 인턴 시작 시기일 뿐 — 인턴은 “new grad” 가 직접 적힐 때만 신입으로 본다
   const intern0 = INTERN.test(title);
-  if (intern0 ? /\b(new grad|new graduate|university grad(uate)?|recent grad(uate)?)\b/i.test(title) : NEWGRAD.test(title) || ENTRY.test(title) || LEVEL1.test(title)) audience.push('newgrad');
+  if (intern0 ? /\b(new grad|new college grad(uate)?|new graduate|university grad(uate)?|recent grad(uate)?)\b/i.test(title) : NEWGRAD.test(title) || ENTRY.test(title) || LEVEL1.test(title)) audience.push('newgrad');
   if (UNDERGRAD.test(title)) audience.push('undergrad');
   const intern = INTERN.test(title);
   if (!intern && !audience.length && !(FELLOW.test(title) && /\b(research|ai|ml|science|scientist|graduate|phd)\b/i.test(title))) return null;
@@ -79,8 +79,32 @@ export function toStudentJobs(raw: RawJob[], b: { platform: JobPlatform; token: 
   return out;
 }
 
-export const boardUrl = (platform: JobPlatform, token: string) =>
+export const boardUrl = (platform: Exclude<JobPlatform, 'workday'> | JobPlatform, token: string) =>
   platform === 'greenhouse' ? `https://boards-api.greenhouse.io/v1/boards/${encodeURIComponent(token)}/jobs`
     : platform === 'lever' ? `https://api.lever.co/v0/postings/${encodeURIComponent(token)}?mode=json`
       : `https://api.ashbyhq.com/posting-api/job-board/${encodeURIComponent(token)}`;
 export const parseBoard = (platform: JobPlatform, d: unknown) => (platform === 'greenhouse' ? parseGreenhouse(d) : platform === 'lever' ? parseLever(d) : parseAshby(d));
+
+/**
+ * Workday 공개 채용 사이트 (큰 은행·제약·제조·컨설팅이 많이 쓴다) — token = "host~tenant~site" (예: nvidia.wd5.myworkdayjobs.com~nvidia~NVIDIAExternalCareerSite).
+ * POST <host>/wday/cxs/<tenant>/<site>/jobs {searchText} — 검색어 몇 개로 학생·신입 공고만 모은다(전체를 다 받지 않는다). 근무지가 "N Locations" 로 묶인 것은 나라를 알 수 없어 뺀다.
+ */
+export const WORKDAY_QUERIES = ['new grad', 'university graduate', 'graduate program', 'entry level', 'early career', 'intern', 'phd', 'analyst program'];
+export function parseWorkday(d: unknown, host: string, site: string): RawJob[] {
+  const list = (d as { jobPostings?: { title: string; externalPath: string; locationsText?: string; postedOn?: string; bulletFields?: string[] }[] })?.jobPostings ?? [];
+  return list.filter((p) => p.title && p.externalPath).map((p) => ({ id: p.bulletFields?.[0] ?? p.externalPath.split('_').pop() ?? p.externalPath, title: p.title, location: /^\d+ Locations$/i.test(p.locationsText ?? '') ? '' : p.locationsText ?? '', url: `https://${host}/en-US/${site}${p.externalPath}` }));
+}
+export async function fetchWorkday(token: string, pages = 3): Promise<RawJob[]> {
+  const [host, tenant, site] = token.split('~'); const api = `https://${host}/wday/cxs/${tenant}/${site}/jobs`;
+  const byId = new Map<string, RawJob>();
+  for (const q of WORKDAY_QUERIES) {
+    for (let page = 0; page < pages; page++) {
+      const r = await fetch(api, { method: 'POST', headers: { 'user-agent': 'AroundU-student-jobs', 'content-type': 'application/json', accept: 'application/json' }, body: JSON.stringify({ appliedFacets: {}, limit: 20, offset: page * 20, searchText: q }) });
+      if (!r.ok) throw new Error(`workday ${tenant} → ${r.status}`);
+      const got = parseWorkday(await r.json(), host, site); for (const j of got) byId.set(j.id, j);
+      if (got.length < 20) break;
+      await new Promise((res) => setTimeout(res, 250));
+    }
+  }
+  return [...byId.values()];
+}

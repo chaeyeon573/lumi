@@ -1745,3 +1745,10 @@
 - No Codex commits or HANDOFF requests.
 - Events for CampusGroups schools: public `<host>/rss_events` feed. First version filtered by category "Open …" — only Cornell names categories that way (Yale "Group Meeting", Duke "Religious/Spiritual"), so 21 schools came back empty; switched to privacyLevel 0 (same field at every school) minus "Private …" categories. Now 22 more schools have event files (Illinois 1,477 … MIT 26). Tests added.
 - Spot check events: Yale "Fall Show Tech", Duke "Cosmic Origins" Exhibition Run, Illinois SIGMusic General Meeting — title and exact start time match the school feed (event pages are script shells, so checked against the feed).
+
+## 2026-11-03 14:33 run
+- No Codex commits or HANDOFF requests.
+- Events for the 9 schools without: Localist (/api/2/events) and LiveWhale (/live/json) don't answer at their obvious calendar hosts (Brown, Caltech, UCLA, UCSC, SCU, USF, Harvard, Princeton, BU) — needs per-school search, later.
+- Jobs: Workday reader added (POST /wday/cxs/<tenant>/<site>/jobs with 8 student/new-grad searches, 3 pages each; "N Locations" dropped). 19 employers verified by a live request (BofA campus site did not answer). New-grad rule now also matches "New College Grad" (NVIDIA). Jobs refreshed: 1,168 postings (internships 747, new grad/entry 374, PhD 157, master's 66, postdoc 13). 2 Workday links open (NVIDIA, Intel).
+- Spot check classes: USC AME 577, CTWR 512, LAW 205, PR 429, WRIT 340 re-fetched — match.
+- Spot check clubs: Illinois Amnesty International, Duke MSA, Columbia Ballet Collaborative — websites match; Emory "Emory Bookstore" was a campus service → office rule by service name at the end (bookstore, police department, dining services, registrar, transportation/parking): 10 marked (Notre Dame "Bookstore Basketball Commission" stays a club). Tests added.

@@ -37,3 +37,14 @@ test('classify: an internship with a start year is not a new-grad job', () => {
   assert.deepEqual(classify('Product Design Intern (2027 Start)'), { kind: 'internship', audience: [] });
   assert.deepEqual(classify('New Grad Intern Conversion - Software'), { kind: 'internship', audience: ['newgrad'] });
 });
+
+test('Workday postings: grouped "N Locations" dropped (country unknown), US ones kept and classified', async () => {
+  const { parseWorkday } = await import('./sources/jobboards');
+  const raw = parseWorkday({ jobPostings: [
+    { title: 'DFT Engineer - New College Grad', externalPath: '/job/US-CA-Santa-Clara/DFT-Engineer_JR1', locationsText: 'US, CA, Santa Clara', bulletFields: ['JR1'] },
+    { title: 'Software Engineer, University Graduate', externalPath: '/job/x_JR2', locationsText: '4 Locations', bulletFields: ['JR2'] },
+    { title: 'Graduate Data Scientist (Pfizer Ringaskiddy)', externalPath: '/job/IE/x_JR3', locationsText: 'Ireland - Ringaskiddy', bulletFields: ['JR3'] },
+  ] }, 'nvidia.wd5.myworkdayjobs.com', 'NVIDIAExternalCareerSite');
+  const out = toStudentJobs(raw, { platform: 'workday', token: 'nvidia.wd5.myworkdayjobs.com~nvidia~NVIDIAExternalCareerSite', company: 'NVIDIA' });
+  assert.deepEqual(out.map((j) => [j.title, j.audience.join('+'), j.url]), [['DFT Engineer - New College Grad', 'newgrad', 'https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/DFT-Engineer_JR1']]);
+});
