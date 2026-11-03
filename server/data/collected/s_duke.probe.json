@@ -1,0 +1,25 @@
+{
+ "checkedAt": "2026-11-03T02:00:01.059Z",
+ "status": "applied",
+ "stored": false,
+ "source": "timetable:hcx:https://dukehub.duke.edu/psc/CSPRD01/EMPLOYEE/SA|DUKEU",
+ "sampled": 6291,
+ "withTimes": 6291,
+ "terms": [
+  "Fall 2026",
+  "Spring 2027"
+ ],
+ "sample": [
+  "AAAS 102 · Introduction to African American Studies · Fall 2026 · M 11:45-13:00 W 11:45-13:00",
+  "ENVIRON 514 · Machine Learning in Environmental Science · Fall 2026 · M 16:40-17:55 W 16:40-17:55",
+  "MGRECON 547F · Fundamentals of Business Economics (Sec 101C) · Fall 2026 · T 15:00-17:15 F 15:00-17:15",
+  "ACCOUNTG 591 · Managerial Accounting · Spring 2027 · T 12:30-14:45 F 12:30-14:45",
+  "ENVIRON 726DA · Evolutionary and Ecological Genetics/Genomics of Marine Mammals · Spring 2027 · M 13:30-16:30 T 13:30-16:30 W 13:30-16:30 R 13:30-16:30 M 09:00-11:00 T 09:00-11:00 W 09:00-11:00 R 09:00-11:00 F 09:00-11:00",
+  "MGMTCOM 568 · Leadership Communication 2 (Sec 303) · Spring 2027 · M 09:00-11:15 R 09:00-11:15"
+ ],
+ "spotCheck": {
+  "matched": 6,
+  "mismatched": [],
+  "unavailable": 0
+ }
+}
