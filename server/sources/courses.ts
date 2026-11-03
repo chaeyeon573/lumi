@@ -935,22 +935,28 @@ async function uwLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
 // ─── UCLA: sa.ucla.edu/ro/Public/SOC — 공개. 과목 목록은 25개씩(Results/CourseTitlesView), 분반 시간은 과목마다 한 번(Results/GetCourseSummary).
 // 과목당 요청이 하나라 한 번에 다 읽지 않는다 — 하루 조금씩(server/scripts 쪽 배치). 여기는 GetCourseSummary 응답 한 개를 읽는 부분.
 // 강의(primary-row)만 — 토론·실험(Dis/Lab)은 펼쳐야 나오고 학생이 하나 고르는 것이라 넣지 않는다(다른 학교와 같은 규칙).
-export interface UclaCourseRef { subject: string; catalog: string; title: string }
+export interface UclaCourseRef { subject: string; catalog: string; title: string; path?: string }
 const UCLA_DAY: Record<string, number> = { M: 0, T: 1, W: 2, R: 3, F: 4, S: 5, U: 6 };
 const uclaTime = (t: string) => { const m = /^(\d{1,2})(?::(\d{2}))?\s*(am|pm)$/i.exec(t.trim()); if (!m) return ''; let h = Number(m[1]) % 12; if (/pm/i.test(m[3])) h += 12; return `${String(h).padStart(2, '0')}:${m[2] ?? '00'}`; };
 export function uclaSummaryToCourses(html: string, ref: UclaCourseRef, termCode: string, label: string): CatalogCourse[] {
   const out: CatalogCourse[] = []; const secOf = new Map<string, string>();
   const txt = (h = '') => decodeEntities(h.replace(/<wbr\s*\/?>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ')).trim();
-  const code = `${ref.subject} ${ref.catalog.replace(/^0+(?=\d)/, '')}`; const baseId = courseId('s_ucla', code);
+  const code = `${ref.subject} ${ref.catalog.trim().replace(/^0+(?=\d)/, '')}`;
+  // 같은 번호에 주제가 다른 과목(188 특강 등)이 여럿이라 학교 쪽 경로(Path)로 구분, 학기마다 따로
+  const baseId = `cc_ucla_${(ref.path ?? `${ref.subject}${ref.catalog}`).toLowerCase().replace(/[^a-z0-9]+/g, '')}_${termCode.toLowerCase()}`;
   const rows = html.split(/<div class="row-fluid data_row primary-row/).slice(1);
   for (const row of rows) {
     const sec = txt(/title="Class Detail[^"]*">([^<]+)<\/a>/.exec(row)?.[1]); if (!sec || !/^(Lec|Sem|Sec|Stu|Tut|Act|Lab|Rec|Cli|Fld|Res)\b/i.test(sec)) continue;
-    const days = txt(/-days_data">\s*<p>\s*<button[^>]*>([^<]+)<\/button>/.exec(row)?.[1]);
-    const time = /class="timeColumn"[\s\S]*?<p>([^<]*(?:<wbr\s*\/?>[^<]*)?)<\/p>\s*<\/div>/.exec(row)?.[1] ?? '';
-    const tm = /(\d{1,2}(?::\d{2})?\s*[ap]m)\s*-\s*(\d{1,2}(?::\d{2})?\s*[ap]m)/i.exec(txt(time));
-    if (!days || !tm || !/^[MTWRFSU]+$/.test(days)) continue;
-    const start = uclaTime(tm[1]), end = uclaTime(tm[2]); if (!start || !end) continue;
-    const meetings: Meeting[] = [...days].map((ch) => ({ day: UCLA_DAY[ch], start, end }));
+    // 요일·시간이 여러 줄일 수 있다(ASL 1: "MF<br />TWR" + "11am-11:50am<br />11am-11:50am") — 줄끼리 짝지어 읽는다
+    const dayLines = (/-days_data">\s*<p>\s*<button[^>]*>([\s\S]*?)<\/button>/.exec(row)?.[1] ?? '').split(/<br\s*\/?>/).map((x) => txt(x));
+    const timeLines = (/class="timeColumn"[\s\S]*?<\/div>\s*<p>([\s\S]*?)<\/p>\s*<\/div>/.exec(row)?.[1] ?? '').split(/<br\s*\/?>/).map((x) => txt(x));
+    const meetings: Meeting[] = [];
+    dayLines.forEach((days, i) => {
+      const tm = /(\d{1,2}(?::\d{2})?\s*[ap]m)\s*-\s*(\d{1,2}(?::\d{2})?\s*[ap]m)/i.exec(timeLines[i] ?? ''); if (!tm || !/^[MTWRFSU]+$/.test(days)) return;
+      const start = uclaTime(tm[1]), end = uclaTime(tm[2]); if (!start || !end) return;
+      for (const ch of days) meetings.push({ day: UCLA_DAY[ch], start, end });
+    });
+    if (!meetings.length) continue;
     const no = sec.replace(/^\S+\s*/, '');
     const id = out.length ? `${baseId}_${no.toLowerCase()}` : baseId; if (out.some((o) => o.id === id)) continue; secOf.set(id, sec);
     const location = txt(/class="locationColumn[^"]*"[^>]*>([\s\S]*?)<\/div>/.exec(row)?.[1]) || undefined;

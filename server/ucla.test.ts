@@ -15,3 +15,12 @@ test('UCLA GetCourseSummary (COM SCI 31, Winter 2027): lectures with days, times
   assert.equal(out[0].units, 4);
   assert.match(out[0].url ?? '', /class_id=187093200/);
 });
+
+test('UCLA section that meets on two day patterns (ASL 1: MF + TWR) keeps every day', () => {
+  const html = readFileSync(new URL('./fixtures/ucla-asl1.html', import.meta.url), 'utf8');
+  const out = uclaSummaryToCourses(html, { subject: 'ASL', catalog: '0001', title: 'Elementary American Sign Language', path: 'ASL0001' }, '26F', 'Fall 2026');
+  assert.ok(out.length >= 2);
+  assert.deepEqual(out[0].meetings.map((m) => m.day).sort(), [0, 1, 2, 3, 4]);
+  assert.ok(out[0].meetings.every((m) => m.start === '11:00' && m.end === '11:50'));
+  assert.equal(out[0].id, 'cc_ucla_asl0001_26f');
+});
