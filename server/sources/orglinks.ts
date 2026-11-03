@@ -197,6 +197,35 @@ export function cardOrgToOrg(c: CardOrg, schoolId: string, listUrl: string): Org
   };
 }
 
+// ─── Brown Student Activities 단체 목록 (studentactivities.brown.edu/dsf_orgs_undergrad) — 412개, 이름·분류·소개 + 단체별 공개 페이지(SNS 아이콘) ───
+export interface BrownRow { name: string; category: string; description: string; path: string }
+export function parseBrownDsf(html: string): BrownRow[] {
+  const out: BrownRow[] = [];
+  for (const raw of html.split('<div class="views-row">').slice(1)) {
+    const name = strip(/<span class="dsf-title-text">([\s\S]*?)<\/span>/.exec(raw)?.[1] ?? '');
+    const path = /<h3 class="dsf-title">\s*<a href="(\/organizations\/[^"]+)"/.exec(raw)?.[1] ?? '';
+    if (!name || !path) continue;
+    const category = strip(/term-item hidden"><a [^>]*>([\s\S]*?)<\/a>/.exec(raw)?.[1] ?? '');
+    const description = strip(/<div class="dsf-intro[^"]*">([\s\S]*?)<\/div>/.exec(raw)?.[1] ?? '');
+    out.push({ name, category, description, path });
+  }
+  return out;
+}
+/** 단체 페이지의 SNS 아이콘 칸 (social-media-icons) 안 링크만 — 머리·꼬리의 학교 링크는 빼고 */
+export function parseBrownOrgLinks(html: string): Link[] {
+  const i = html.indexOf('social-media-icons'); if (i < 0) return [];
+  const block = html.slice(i, html.indexOf('</main>', i) > 0 ? html.indexOf('</main>', i) : i + 4000);
+  const urls = [...block.matchAll(/<a [^>]*href="([^"]+)"/g)].map((m) => m[1].replace(/&amp;/g, '&'));
+  const by = (re: RegExp) => urls.find((u) => re.test(u));
+  return socialLinks({ instagram: by(/instagram\.com/i), facebook: by(/facebook\.com|fb\.com/i), linkedin: by(/linkedin\.com/i), twitter: by(/twitter\.com|\/\/x\.com/i), youtube: by(/youtube\.com|youtu\.be/i), tiktok: by(/tiktok\.com/i),
+    website: urls.find((u) => /^https?:/.test(u) && !/instagram|facebook|fb\.com|linkedin|twitter|x\.com|youtube|youtu\.be|tiktok|mailto:/i.test(u)) });
+}
+export function brownRowToOrg(r: BrownRow, links: Link[], schoolId: string, origin: string): Organization {
+  const o = cardOrgToOrg({ name: r.name, category: r.category, description: r.description, links }, schoolId, origin + r.path);
+  // 분류 “Student Governance” 는 학생회, 이름만으로 정하지 않는다
+  return /student governance/i.test(r.category) ? { ...o, type: 'council' } : o;
+}
+
 // ─── UCLA SOLE 등록 단체 공개 검색 (sa.ucla.edu/RCO, POST /Public/SearchOrganizations) — 1,451개, 사이트·SNS 링크 포함 ───
 export interface UclaOrg { OrganizationID: number; OrganizationName: string; OrganizationDescription?: string | null; OrganizationWebSite?: string | null; Category1Name?: string | null; Category2Name?: string | null; MemberType?: string | null; SocialMediaLink?: string | null }
 export function uclaOrgToOrg(o: UclaOrg, schoolId = 's_ucla'): Organization {

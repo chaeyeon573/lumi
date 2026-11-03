@@ -20,7 +20,7 @@
  *    학교가 UI 를 바꾸면 필드명이 달라질 수 있다 → 그럴 땐 아래 mapOrg 만 고치면 된다.
  */
 import { decodeNumericEntities } from '../sources/entities';
-import { COUNCIL_RE, notCouncil, campusGroupsWebsite, engageLinks, pennClubToOrg, parseFacetWpCards, facetCardToOrg, parseAccordionDirectory, namedOrgToOrg, parseDrupalAccordionCards, cardOrgToOrg, uclaOrgToOrg, type UclaOrg, type EngageSocial, type PennClub } from '../sources/orglinks';
+import { COUNCIL_RE, notCouncil, campusGroupsWebsite, engageLinks, pennClubToOrg, parseFacetWpCards, facetCardToOrg, parseAccordionDirectory, namedOrgToOrg, parseDrupalAccordionCards, cardOrgToOrg, uclaOrgToOrg, parseBrownDsf, parseBrownOrgLinks, brownRowToOrg, type UclaOrg, type EngageSocial, type PennClub } from '../sources/orglinks';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -44,6 +44,8 @@ const FACETWP_HOSTS: Record<string, string> = process.env.FACETWP_HOSTS ? Object
 /** 분류별 이름만 있는 학교 목록 (Santa Clara) — ACCORDION_HOSTS="s_scu=https://www.scu.edu/csi/organizations/directory/" */
 const ACCORDION_HOSTS: Record<string, string> = process.env.ACCORDION_HOSTS ? Object.fromEntries(process.env.ACCORDION_HOSTS.split(',').map((p) => { const i = p.indexOf('='); return [p.slice(0, i), p.slice(i + 1)] as [string, string]; })) : {};
 /** 분류별 하위 페이지에 카드가 있는 학교 목록 (USF myUSF) — DRUPALCARDS_HOSTS="s_usf=https://myusf.usfca.edu/sle/student-orgs/undergraduate" */
+/** Brown Student Activities — BROWNDSF_HOSTS="s_brown=https://studentactivities.brown.edu/dsf_orgs_undergrad" */
+const BROWNDSF_HOSTS: Record<string, string> = process.env.BROWNDSF_HOSTS ? Object.fromEntries(process.env.BROWNDSF_HOSTS.split(',').map((p) => { const i = p.indexOf('='); return [p.slice(0, i), p.slice(i + 1)] as [string, string]; })) : {};
 const DRUPALCARDS_HOSTS: Record<string, string> = process.env.DRUPALCARDS_HOSTS ? Object.fromEntries(process.env.DRUPALCARDS_HOSTS.split(',').map((p) => { const i = p.indexOf('='); return [p.slice(0, i), p.slice(i + 1)] as [string, string]; })) : {};
 /** UCLA SOLE 공개 검색 — UCLARCO_HOSTS="s_ucla=https://sa.ucla.edu/RCO" */
 const UCLARCO_HOSTS: Record<string, string> = process.env.UCLARCO_HOSTS ? Object.fromEntries(process.env.UCLARCO_HOSTS.split(',').map((p) => { const i = p.indexOf('='); return [p.slice(0, i), p.slice(i + 1)] as [string, string]; })) : {};
@@ -341,6 +343,20 @@ for (const [schoolId, url] of Object.entries(ACCORDION_HOSTS)) {
   const csv = ['school_id,name,type,category,description', ...orgs.map((o) => [o.schoolId, o.name, o.type, o.parent ?? '', o.description].map((v) => `"${String(v).replace(/"/g, '""')}"`).join(','))].join('\n');
   writeFileSync(path.join(dataDir, `orgs-${schoolId}.csv`), csv);
   console.log(`${orgs.length}개 (분류 ${new Set(list.map((x) => x.category)).size})`);
+  saveCollected(schoolId, orgs);
+  if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs });
+}
+for (const [schoolId, url] of Object.entries(BROWNDSF_HOSTS)) {
+  if (only && only !== schoolId) continue;
+  process.stdout.write(`${schoolId} ← ${url} (Brown Student Activities) … `);
+  const origin = new URL(url).origin;
+  let rows: ReturnType<typeof parseBrownDsf>;
+  try { rows = parseBrownDsf(await getWithRetry(url)); } catch (e) { console.log(`실패: ${(e as Error).message}`); continue; }
+  const links = new Map<string, ReturnType<typeof parseBrownOrgLinks>>();
+  await eachLimited(rows, 2, async (r) => { try { links.set(r.path, parseBrownOrgLinks(await getWithRetry(origin + r.path))); } catch { links.set(r.path, []); } await new Promise((ok) => setTimeout(ok, 150)); });
+  const orgs = [...new Map(rows.map((r) => brownRowToOrg(r, links.get(r.path) ?? [], schoolId, origin)).map((o) => [o.id, o])).values()].map(mergeExisting);
+  if (orgs.length < 50) { console.log(`${orgs.length}개 — 너무 적어 반영하지 않음 (사이트 확인 필요)`); process.exitCode = 2; continue; }
+  console.log(`${orgs.length}개 (링크 있는 곳 ${[...links.values()].filter((l) => l.length).length})`);
   saveCollected(schoolId, orgs);
   if (process.env.FETCH_DRY !== '1') await store.applyPatch({ organizations: orgs });
 }

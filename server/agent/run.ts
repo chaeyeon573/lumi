@@ -134,7 +134,7 @@ function runScript(task: string, script: string, schoolId: string, extraEnv: Rec
 
 /** 탐지한 동아리 플랫폼 → fetch:orgs 에 넘길 환경 변수 */
 function orgsEnv(id: string, platform: string, host: string): Record<string, string> {
-  return platform === 'pennclubs' ? { PENNCLUBS_HOSTS: `${id}=${host}` } : platform === 'facetwp' ? { FACETWP_HOSTS: `${id}=${host}` } : platform === 'accordion' ? { ACCORDION_HOSTS: `${id}=${host}` } : platform === 'drupalcards' ? { DRUPALCARDS_HOSTS: `${id}=${host}` } : platform === 'uclarco' ? { UCLARCO_HOSTS: `${id}=${host}` } : platform === 'engage' ? { ENGAGE_HOSTS: `${id}=${host}` } : platform === 'presence' ? { PRESENCE_HOSTS: `${id}=${new URL(host).hostname.split('.')[0]}` } : { CAMPUSGROUPS_HOSTS: `${id}=${host}` };
+  return platform === 'pennclubs' ? { PENNCLUBS_HOSTS: `${id}=${host}` } : platform === 'facetwp' ? { FACETWP_HOSTS: `${id}=${host}` } : platform === 'accordion' ? { ACCORDION_HOSTS: `${id}=${host}` } : platform === 'drupalcards' ? { DRUPALCARDS_HOSTS: `${id}=${host}` } : platform === 'uclarco' ? { UCLARCO_HOSTS: `${id}=${host}` } : platform === 'browndsf' ? { BROWNDSF_HOSTS: `${id}=${host}` } : platform === 'engage' ? { ENGAGE_HOSTS: `${id}=${host}` } : platform === 'presence' ? { PRESENCE_HOSTS: `${id}=${new URL(host).hostname.split('.')[0]}` } : { CAMPUSGROUPS_HOSTS: `${id}=${host}` };
 }
 
 // ─── 아직 안 연 학교: 파일로 모으기 (2026-11-02 사장님: Railway 비용 — 기본은 PM 에이전트가 파일로, 거기서 못 닿는 것만 Railway) ───

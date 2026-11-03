@@ -1,0 +1,20 @@
+{
+ "checkedAt": "2026-11-03T00:57:21.889Z",
+ "status": "applied",
+ "stored": false,
+ "source": "catalog:https://bulletin.brown.edu/",
+ "sampled": 720,
+ "withTimes": 0,
+ "terms": [
+  "catalog"
+ ],
+ "sample": [
+  "BIOL 0030 · Principles of Nutrition · catalog",
+  "BIOL 1600 · Development of Vaccines to Infectious Diseases · catalog",
+  "BIOL 3110 · Clinical Adult Cardiology · catalog",
+  "BIOL 3670 · Doctoring 4 · catalog",
+  "BIOL 5140 · Triple Board Elective in Pediatrics, Psychiatry and Child and Adolescent Psychiatry · catalog",
+  "BIOL 6536 · Clinical Practice of Chinese Medicine · catalog"
+ ],
+ "spotCheck": "no lookup (catalog codes/titles only)"
+}

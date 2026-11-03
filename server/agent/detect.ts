@@ -3,7 +3,7 @@
  * 미국 대학 대부분이 CampusLabs Engage 또는 CampusGroups 를 쓴다 — 짧은 이름으로 만든 후보 주소를 찔러 보고,
  * 실제 목록이 1개 이상 읽히는 쪽을 고른다 (로그인 페이지로 넘어가는 200 은 걸러진다).
  */
-export interface Detected { platform: 'engage' | 'campusgroups' | 'presence' | 'pennclubs' | 'facetwp' | 'accordion' | 'drupalcards' | 'uclarco'; host: string; sample: number }
+export interface Detected { platform: 'engage' | 'campusgroups' | 'presence' | 'pennclubs' | 'facetwp' | 'accordion' | 'drupalcards' | 'uclarco' | 'browndsf'; host: string; sample: number }
 
 const UA = 'Mozilla/5.0 AroundU-importer';
 async function get(url: string): Promise<{ ok: boolean; status: number; text: string; url: string }> {
@@ -32,6 +32,11 @@ export async function detectOrgsPlatform(short: string, emailDomain: string, ove
   if (override && /getinvolved\.ucsc\.edu/.test(override)) {
     const r = await get(override); const n = r.ok ? r.text.split('<div class="fwpl-result r').length - 1 : 0;
     return n > 0 ? { platform: 'facetwp', host: override, sample: n } : null;
+  }
+  // Brown Student Activities 목록 (views-row 마다 단체)
+  if (override && /studentactivities\.brown\.edu\/dsf_orgs/.test(override)) {
+    const r = await get(override); const n = r.ok ? r.text.split('<div class="views-row">').length - 1 : 0;
+    return n > 0 ? { platform: 'browndsf', host: override, sample: n } : null;
   }
   // 분류별 이름 목록 (Santa Clara CSI directory)
   if (override && /scu\.edu\/csi\/organizations\/directory|sfe\.caltech\.edu\/student-engagement\/clubs/.test(override)) {

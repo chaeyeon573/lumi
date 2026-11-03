@@ -118,3 +118,18 @@ test('Caltech SFE club list: approved-club names only, no page text', async () =
   const orgs = list.map((x) => namedOrgToOrg(x, 's_caltech', 'https://sfe.caltech.edu/student-engagement/clubs'));
   assert.equal(orgs.find((o) => o.name.startsWith('Organization of Associated Students'))?.type, 'club');
 });
+
+test('Brown Student Activities list + club page social block', async () => {
+  const { readFileSync } = await import('node:fs');
+  const { parseBrownDsf, parseBrownOrgLinks, brownRowToOrg } = await import('./sources/orglinks');
+  const rows = parseBrownDsf(readFileSync(new URL('./fixtures/brown-dsf.html', import.meta.url), 'utf8'));
+  assert.ok(rows.length >= 400, String(rows.length));
+  const r = rows.find((x) => x.name === '180 Degrees at Brown University')!;
+  assert.equal(r.category, 'Service'); assert.equal(r.path, '/organizations/180-degrees-brown-university');
+  assert.match(r.description, /consultancy for non-profits/);
+  const links = parseBrownOrgLinks(readFileSync(new URL('./fixtures/brown-org.html', import.meta.url), 'utf8'));
+  assert.deepEqual(links, [{ label: 'Instagram', url: 'https://instagram.com/brown180dc' }]);
+  const o = brownRowToOrg(r, links, 's_brown', 'https://studentactivities.brown.edu');
+  assert.equal(o.type, 'club'); assert.equal(o.links?.[0]?.url, 'https://studentactivities.brown.edu/organizations/180-degrees-brown-university');
+  assert.ok(rows.filter((x) => x.category === 'Student Governance').every((x) => brownRowToOrg(x, [], 's_brown', '').type === 'council'));
+});
