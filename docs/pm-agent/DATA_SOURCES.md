@@ -78,5 +78,5 @@ Order: Bay Area schools only. Never invent data; only official/public sources; v
 - [ ] UCSC class schedule recipe (pisa.ucsc.edu class search)
 - [ ] Event calendars: UC Davis, UC Santa Cruz, Santa Clara, USF
 - [ ] Santa Clara club links (only names now) — look for each club's page/Instagram on official SCU pages
-- [ ] Official Instagram for student governments where the official site links it (ASSU, ASUCD, SUA, ASG)
+- [x] Official Instagram for student governments where the official site links it — 11-03: HUA (theharvardua) and SCU ASG (asgscu) added to student-governments.csv; ASSU and SUA sites link none; ASUCD site answers 403 to automated requests (not bypassed)
 - [ ] Next Bay Area schools to consider: UCSF (grad), Cal State East Bay, Mills (Northeastern) — ask owner before adding a school
