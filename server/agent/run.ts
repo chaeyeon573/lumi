@@ -152,6 +152,27 @@ async function fetchPublicPage(url: string): Promise<string> {
     return r.ok ? body : '';
   } catch { return ''; }
 }
+/** 수업만: 표본 확인 → 맞으면 <id>.courses.json (collect 의 마지막 단계, collect-courses:<id> 로 따로도 돈다 — 동아리를 다시 읽지 않는다) */
+async function collectCourses(row: SchoolRow): Promise<AgentRun[]> {
+  const out: AgentRun[] = [];
+  if ((row.courses_source || row.catalog_url) && !(row.railway ?? '').split('|').includes('probe')) {
+    const probe = await runCourseProbe(row);
+    mkdirSync(COLLECTED_DIR, { recursive: true });
+    writeFileSync(path.join(COLLECTED_DIR, `${row.id}.probe.json`), `${JSON.stringify({ checkedAt: probe.finishedAt, status: probe.status, ...probe.summary }, null, 1)}\n`);
+    out.push(probe);
+    // 표본이 맞으면 전체 수업도 파일로 (DB 아님 — 학교를 열 때 그대로 넣는다). 한 줄에 과목 하나
+    if (probe.status === 'applied') {
+      const startedAt = new Date().toISOString();
+      try {
+        const src = row.courses_source ? resolveCourseSource(row.id, row.courses_source) : undefined;
+        const all = probeFull.get(row.id) ?? (src ? applyRules(row.id, await src.fetch()).kept : undefined) ?? (row.catalog_url ? (await fetchCourseLeaf(row.id, row.catalog_url)).courses : []);
+        const unique = [...new Map(all.map((c) => [c.id, c])).values()].sort((a, b) => a.code.localeCompare(b.code, 'en', { numeric: true }));
+        writeFileSync(path.join(COLLECTED_DIR, `${row.id}.courses.json`), `[\n${unique.map((c) => JSON.stringify(c)).join(',\n')}\n]\n`);
+        out.push(await record({ task: `collect-courses:${row.id}`, schoolId: row.id, status: unique.length ? 'applied' : 'rejected', startedAt, summary: { courses: unique.length, withTimes: unique.filter((c) => c.meetings?.length).length, terms: [...new Set(unique.map((c) => c.term))].slice(0, 6) } }));
+      } catch (e) { out.push(await record({ task: `collect-courses:${row.id}`, schoolId: row.id, status: 'error', startedAt, summary: { error: (e as Error).message } })); }
+    }
+  }  return out;
+}
 async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
   const out: AgentRun[] = [];
   const d = await detectOrgsPlatform(row.short, row.email_domain, row.orgs_host || undefined);
@@ -186,23 +207,8 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
     const pub = r.orgs.filter((o) => publicLinks(o.links).some((l) => ['Website', 'Instagram', 'Facebook'].includes(l.label))).length;
     out.push(await record({ task: `collect-social:${row.id}`, schoolId: row.id, status: 'applied', startedAt, summary: { orgs: r.orgs.length, sitesRead: r.checked, gainedSocial: r.found, withPublicLink: pub, schoolFooterAccountsDropped: r.droppedShared.slice(0, 10), deadWebsiteLinksRemoved: r.deadLinks } }));
   }
-  if ((row.courses_source || row.catalog_url) && !(row.railway ?? '').split('|').includes('probe')) {
-    const probe = await runCourseProbe(row);
-    mkdirSync(COLLECTED_DIR, { recursive: true });
-    writeFileSync(path.join(COLLECTED_DIR, `${row.id}.probe.json`), `${JSON.stringify({ checkedAt: probe.finishedAt, status: probe.status, ...probe.summary }, null, 1)}\n`);
-    out.push(probe);
-    // 표본이 맞으면 전체 수업도 파일로 (DB 아님 — 학교를 열 때 그대로 넣는다). 한 줄에 과목 하나
-    if (probe.status === 'applied') {
-      const startedAt = new Date().toISOString();
-      try {
-        const src = row.courses_source ? resolveCourseSource(row.id, row.courses_source) : undefined;
-        const all = probeFull.get(row.id) ?? (src ? applyRules(row.id, await src.fetch()).kept : undefined) ?? (row.catalog_url ? (await fetchCourseLeaf(row.id, row.catalog_url)).courses : []);
-        const unique = [...new Map(all.map((c) => [c.id, c])).values()].sort((a, b) => a.code.localeCompare(b.code, 'en', { numeric: true }));
-        writeFileSync(path.join(COLLECTED_DIR, `${row.id}.courses.json`), `[\n${unique.map((c) => JSON.stringify(c)).join(',\n')}\n]\n`);
-        out.push(await record({ task: `collect-courses:${row.id}`, schoolId: row.id, status: unique.length ? 'applied' : 'rejected', startedAt, summary: { courses: unique.length, withTimes: unique.filter((c) => c.meetings?.length).length, terms: [...new Set(unique.map((c) => c.term))].slice(0, 6) } }));
-      } catch (e) { out.push(await record({ task: `collect-courses:${row.id}`, schoolId: row.id, status: 'error', startedAt, summary: { error: (e as Error).message } })); }
-    }
-  }
+  out.push(...(await collectCourses(row)));
+
   return out;
 }
 /**
@@ -460,6 +466,7 @@ async function runTask(t: string): Promise<AgentRun[]> {
   if (kind === 'seats') { const startedAt = new Date().toISOString(); const s = await pollSeats(store, { dry: DRY, force: true }); return [await record({ task: 'seats', status: s.errors && !s.fetched ? 'error' : 'applied', startedAt, summary: { ...s } })]; }
   if (kind === 'collect') { const row = findRow(arg); return row ? runCollect(row) : [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv / schools-collect.csv' } })]; }
   if (kind === 'import-collected') return [await importCollected(arg)];
+  if (kind === 'collect-courses') { const row = findRow(arg); return row ? collectCourses(row) : [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
   if (kind === 'collect-events') { const row = findRow(arg); return [row ? await collectEvents(row) : await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
   if (kind === 'probe') { const row = findRow(arg); return [row ? await runCourseProbe(row) : await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv / schools-collect.csv' } })]; }
   if (kind === 'school') { const row = findRow(arg); return row ? runSchool(row, loadSchools().some((x) => x.id === arg)) : [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }

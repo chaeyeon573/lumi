@@ -774,6 +774,62 @@ function hcxSource(schoolId: string, base: string, institution: string): CourseS
   };
 }
 
+// ─── USC: classes.usc.edu 공개 JSON (Terms/Active · Schools/TermCode · Courses/CoursesByTermSchoolProgram) ───
+// 섹션마다 rnrMode(Lecture·Discussion·Lab·Quiz·Lecture/Lab)·요일 배열·24시간 시각. 학부·대학원 모두 (CSCI 502A 등).
+const USC = 'https://classes.usc.edu/api';
+export interface UscCourse { fullCourseName: string; name: string; scheduledCourseCode?: { prefix: string }; sections: { sisSectionId: string; rnrMode?: string; isCancelled?: boolean; schedule?: { days?: string[]; startTime?: string; endTime?: string }[]; instructors?: { firstName?: string; lastName?: string }[]; units?: string[] }[] }
+const USC_DAY: Record<string, number> = { Mon: 0, Tue: 1, Wed: 2, Thu: 3, Fri: 4, Sat: 5, Sun: 6 };
+const USC_SECONDARY = /^(discussion|lab|laboratory|quiz|recitation)$/i;
+export function uscToCourses(courses: UscCourse[], termCode: string, label: string): CatalogCourse[] {
+  const out: CatalogCourse[] = []; const seen = new Set<string>(); const secOf = new Map<string, string>();
+  for (const c of courses) {
+    const code = c.fullCourseName.replace(/\s+/g, ' ').trim(); const baseId = courseId('s_usc', code);
+    for (const sec of c.sections ?? []) {
+      if (sec.isCancelled || USC_SECONDARY.test(sec.rnrMode ?? '')) continue;
+      const meetings: Meeting[] = [];
+      for (const m of sec.schedule ?? []) { if (!m.startTime || !m.endTime || !m.days?.length) continue; for (const d of m.days) if (d in USC_DAY) meetings.push({ day: USC_DAY[d], start: m.startTime.slice(0, 5), end: m.endTime.slice(0, 5) }); }
+      if (!meetings.length) continue;
+      const id = seen.has(baseId) ? `${baseId}_${sec.sisSectionId}` : baseId; if (seen.has(id)) continue; seen.add(id); secOf.set(id, sec.sisSectionId);
+      const ins = sec.instructors?.find((i) => i.lastName); const units = Number(sec.units?.[0]);
+      out.push({ id, schoolId: 's_usc', code, title: c.name, department: c.scheduledCourseCode?.prefix ?? code.split(' ')[0], instructor: ins ? `${ins.firstName ?? ''} ${ins.lastName}`.trim() : undefined, meetings: uniq(meetings), term: label, termCode, units: Number.isFinite(units) && units > 0 ? units : undefined, url: `https://classes.usc.edu/term/${termCode}/course/${code.replace(' ', '-').toLowerCase()}` });
+    }
+  }
+  for (const c of out) if (out.filter((o) => o.code === c.code).length > 1) c.title = `${c.title} (Sec ${secOf.get(c.id)})`;
+  return tagTerm(out, label);
+}
+async function uscJson<T>(path: string): Promise<T> { const r = await fetch(`${USC}${path}`, { headers: { ...UAH, accept: 'application/json' } }); if (!r.ok) throw new Error(`usc ${path} → ${r.status}`); return (await r.json()) as T; }
+async function uscTerms(): Promise<{ code: string; label: string }[]> {
+  const all = await uscJson<{ termCode: number; season: string; year: number }[]>('/Terms/Active');
+  const regular = all.filter((t) => /fall|spring/i.test(t.season)).map((t) => ({ code: String(t.termCode), label: `${t.season} ${t.year}` }));
+  const [cur, next] = catalogTermLabels();
+  const now = regular.find((t) => t.label === cur) ?? regular[0]; if (!now) throw new Error('usc: no terms');
+  const after = regular.find((t) => t.label === next);
+  return [now, ...(after && after.code !== now.code ? [after] : [])];
+}
+async function uscPrograms(termCode: string): Promise<{ school: string; program: string }[]> {
+  const schools = await uscJson<{ prefix: string; programs?: { prefix: string }[] }[]>(`/Schools/TermCode?termCode=${termCode}`);
+  const seen = new Set<string>(); const out: { school: string; program: string }[] = [];
+  for (const s of schools) for (const p of s.programs ?? []) if (!seen.has(p.prefix)) { seen.add(p.prefix); out.push({ school: s.prefix, program: p.prefix }); }
+  return out;
+}
+async function uscProgram(termCode: string, school: string, program: string): Promise<UscCourse[]> {
+  return (await uscJson<{ courses?: UscCourse[] }>(`/Courses/CoursesByTermSchoolProgram?termCode=${termCode}&school=${school}&program=${program}`)).courses ?? [];
+}
+async function usc(): Promise<CatalogCourse[]> {
+  const out: CatalogCourse[] = [];
+  for (const t of await uscTerms()) {
+    const progs = await uscPrograms(t.code); const before = out.length;
+    for (const p of progs) { out.push(...uscToCourses(await uscProgram(t.code, p.school, p.program), t.code, t.label)); await new Promise((r) => setTimeout(r, 150)); }
+    console.log(`  s_usc ${t.code} (${t.label}): ${progs.length} programs → ${out.length - before} classes`);
+  }
+  return out;
+}
+async function uscLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
+  const termCode = c.termCode ?? ''; const prefix = c.code.split(' ')[0];
+  const p = (await uscPrograms(termCode)).find((x) => x.program === prefix); if (!p) return null;
+  return uscToCourses(await uscProgram(termCode, p.school, p.program), termCode, c.term).find((x) => x.id === c.id) ?? null;
+}
+
 // ─── Harvard: my.harvard.edu 공개 과목 검색 (키 불필요) ─────────────────────
 // 검색 결과는 JSON 안에 이스케이프된 HTML 로 오고 15개씩 page=N 으로 넘어간다. term=2026+Fall · school=FAS 필터가 된다.
 // 과목마다 /course/sections/<id>/<offer>/<strm>/<session> 조각에 섹션별 요일(aria-label "Tuesday, selected")·시간·장소·교수가 있다.
@@ -904,6 +960,7 @@ export const COURSE_SOURCES: Record<string, CourseSource> = {
   cornell: { schoolId: 's_cornell', fetch: cornell, lookup: cornellLookup },
   umd: { schoolId: 's_umd', fetch: umd, lookup: umdLookup },
   harvard: { schoolId: 's_harvard', fetch: harvard, lookup: harvardLookup },
+  usc: { schoolId: 's_usc', fetch: usc, lookup: uscLookup },
 };
 export const adapters: Record<string, () => Promise<CatalogCourse[]>> = Object.fromEntries(Object.entries(COURSE_SOURCES).map(([k, v]) => [k, v.fetch]));
 

@@ -1,0 +1,368 @@
+{
+ "courses": [
+  {
+   "courseId": 46737,
+   "startTermCode": 0,
+   "endTermCode": null,
+   "classNumber": "100",
+   "sequence": null,
+   "suffix": "xg",
+   "description": "A behind-the-scenes overview of the computational/algorithmic principles that form the basis of today's digital society. Exploration areas include social media, web search, videogames and location-based services.",
+   "fullCourseName": "CSCI 100",
+   "isCrossListed": false,
+   "maxUnits": "0.0",
+   "courseNotes": null,
+   "termNotes": null,
+   "duplicateCredit": null,
+   "recommendedPrep": null,
+   "geCode": "35",
+   "scheduledCourseCode": {
+    "prefix": "CSCI",
+    "number": "100",
+    "suffix": "",
+    "courseHyphen": "CSCI-100",
+    "courseSpace": "CSCI 100",
+    "courseSmashed": "CSCI100"
+   },
+   "publishedCourseCode": {
+    "prefix": "CSCI",
+    "number": "100",
+    "suffix": "",
+    "courseHyphen": "CSCI-100",
+    "courseSpace": "CSCI 100",
+    "courseSmashed": "CSCI100"
+   },
+   "matchedCourseCode": {
+    "prefix": "CSCI",
+    "number": "100",
+    "suffix": "",
+    "courseHyphen": "CSCI-100",
+    "courseSpace": "CSCI 100",
+    "courseSmashed": "CSCI100"
+   },
+   "courseUnits": [
+    4
+   ],
+   "sections": [
+    {
+     "sisSectionId": "30211",
+     "linkCode": "A",
+     "linkCodeForSort": "A",
+     "rnrSessionId": 36847,
+     "peSectionId": 747346,
+     "courseId": 46737,
+     "hasDClearance": false,
+     "classType": null,
+     "name": null,
+     "notes": null,
+     "description": "This is a GE-F Quantitative Reasoning course for NON-MAJORS. No credit will be awarded to CSCI, CECS, CSGA, or CSBA majors.",
+     "group": null,
+     "schedule": [
+      {
+       "dayCode": "TH",
+       "days": [
+        "Tue",
+        "Thu"
+       ],
+       "startTime": "11:00",
+       "endTime": "12:20",
+       "sectionLocationSqNumber": 1
+      }
+     ],
+     "totalSeats": 60,
+     "registeredSeats": 22,
+     "waitlistedSeats": null,
+     "rnrMode": "Lecture",
+     "session": {
+      "termCode": "20263",
+      "rnrSessionCode": "001",
+      "description": null,
+      "rnrSessionId": 36847
+     },
+     "units": [
+      "4.0"
+     ],
+     "instructors": [
+      {
+       "firstName": "Sathyanaraya",
+       "lastName": "Raghavachary"
+      }
+     ],
+     "syllabus": "https://usc.simplesyllabus.com/en-US/syllabus/Fall 2026/CSCI/100/30211",
+     "isCancelled": false,
+     "isFull": false,
+     "rnrModeCode": "C",
+     "term": {
+      "value": 20263,
+      "year": 2026,
+      "term": 3,
+      "season": "Fall"
+     },
+     "termCode": 20263,
+     "season": "Fall",
+     "year": 2026
+    },
+    {
+     "sisSectionId": "30212",
+     "linkCode": "A",
+     "linkCodeForSort": "A",
+     "rnrSessionId": 36847,
+     "peSectionId": 747356,
+     "courseId": 46737,
+     "hasDClearance": false,
+     "classType": null,
+     "name": null,
+     "notes": null,
+     "description": null,
+     "group": null,
+     "schedule": [
+      {
+       "dayCode": "W",
+       "days": [
+        "Wed"
+       ],
+       "startTime": "12:00",
+       "endTime": "12:50",
+       "sectionLocationSqNumber": 1
+      }
+     ],
+     "totalSeats": 30,
+     "registeredSeats": 16,
+     "waitlistedSeats": null,
+     "rnrMode": "Lab",
+     "session": {
+      "termCode": "20263",
+      "rnrSessionCode": "001",
+      "description": null,
+      "rnrSessionId": 36847
+     },
+     "units": [
+      "0.0"
+     ],
+     "instructors": [],
+     "syllabus": "https://usc.simplesyllabus.com/en-US/syllabus/Fall 2026/CSCI/100/30212",
+     "isCancelled": false,
+     "isFull": false,
+     "rnrModeCode": "L",
+     "term": {
+      "value": 20263,
+      "year": 2026,
+      "term": 3,
+      "season": "Fall"
+     },
+     "termCode": 20263,
+     "season": "Fall",
+     "year": 2026
+    },
+    {
+     "sisSectionId": "30213",
+     "linkCode": "A",
+     "linkCodeForSort": "A",
+     "rnrSessionId": 36847,
+     "peSectionId": 747365,
+     "courseId": 46737,
+     "hasDClearance": false,
+     "classType": null,
+     "name": null,
+     "notes": null,
+     "description": null,
+     "group": null,
+     "schedule": [
+      {
+       "dayCode": "W",
+       "days": [
+        "Wed"
+       ],
+       "startTime": "13:00",
+       "endTime": "13:50",
+       "sectionLocationSqNumber": 1
+      }
+     ],
+     "totalSeats": 30,
+     "registeredSeats": 6,
+     "waitlistedSeats": null,
+     "rnrMode": "Lab",
+     "session": {
+      "termCode": "20263",
+      "rnrSessionCode": "001",
+      "description": null,
+      "rnrSessionId": 36847
+     },
+     "units": [
+      "0.0"
+     ],
+     "instructors": [],
+     "syllabus": "https://usc.simplesyllabus.com/en-US/syllabus/Fall 2026/CSCI/100/30213",
+     "isCancelled": false,
+     "isFull": false,
+     "rnrModeCode": "L",
+     "term": {
+      "value": 20263,
+      "year": 2026,
+      "term": 3,
+      "season": "Fall"
+     },
+     "termCode": 20263,
+     "season": "Fall",
+     "year": 2026
+    }
+   ],
+   "prerequisiteCourseCodes": null,
+   "corequisiteCourseCodes": null,
+   "courseRestrictions": null,
+   "majorRestrictions": null,
+   "schoolRestrictions": null,
+   "concurrentCourses": null,
+   "remainingSectionSeats": 38,
+   "sectionSeatCount": 60,
+   "termCode": 20263,
+   "prefix": "CSCI",
+   "name": "Explorations in Computing",
+   "sortOrder": 0
+  },
+  {
+   "courseId": 13497,
+   "startTermCode": 0,
+   "endTermCode": null,
+   "classNumber": "502",
+   "sequence": "A",
+   "suffix": null,
+   "description": " Computational linear algebra; solution of general nonlinear       systems of equations; approximation theory using functional        analysis; numerical solution of ordinary and partial differential  equations.",
+   "fullCourseName": "CSCI 502A",
+   "isCrossListed": true,
+   "maxUnits": null,
+   "courseNotes": null,
+   "termNotes": null,
+   "duplicateCredit": null,
+   "recommendedPrep": null,
+   "geCode": null,
+   "scheduledCourseCode": {
+    "prefix": "MATH",
+    "number": "502",
+    "suffix": "A",
+    "courseHyphen": "MATH-502A",
+    "courseSpace": "MATH 502A",
+    "courseSmashed": "MATH502A"
+   },
+   "publishedCourseCode": {
+    "prefix": "CSCI",
+    "number": "502",
+    "suffix": "A",
+    "courseHyphen": "CSCI-502A",
+    "courseSpace": "CSCI 502A",
+    "courseSmashed": "CSCI502A"
+   },
+   "matchedCourseCode": {
+    "prefix": "CSCI",
+    "number": "502",
+    "suffix": "A",
+    "courseHyphen": "CSCI-502A",
+    "courseSpace": "CSCI 502A",
+    "courseSmashed": "CSCI502A"
+   },
+   "courseUnits": [
+    3
+   ],
+   "sections": [
+    {
+     "sisSectionId": "39700",
+     "linkCode": null,
+     "linkCodeForSort": null,
+     "rnrSessionId": 36847,
+     "peSectionId": 747922,
+     "courseId": 13497,
+     "hasDClearance": false,
+     "classType": null,
+     "name": null,
+     "notes": null,
+     "description": null,
+     "group": null,
+     "schedule": [
+      {
+       "dayCode": "MWF",
+       "days": [
+        "Mon",
+        "Wed",
+        "Fri"
+       ],
+       "startTime": "09:00",
+       "endTime": "09:50",
+       "sectionLocationSqNumber": 1
+      }
+     ],
+     "totalSeats": 25,
+     "registeredSeats": 8,
+     "waitlistedSeats": null,
+     "rnrMode": "Lecture",
+     "session": {
+      "termCode": "20263",
+      "rnrSessionCode": "001",
+      "description": null,
+      "rnrSessionId": 36847
+     },
+     "units": [
+      "3.0"
+     ],
+     "instructors": [
+      {
+       "firstName": "Cymra",
+       "lastName": "Haskell"
+      }
+     ],
+     "syllabus": "https://usc.simplesyllabus.com/en-US/syllabus/Fall 2026/MATH/502A/39700",
+     "isCancelled": false,
+     "isFull": false,
+     "rnrModeCode": "C",
+     "term": {
+      "value": 20263,
+      "year": 2026,
+      "term": 3,
+      "season": "Fall"
+     },
+     "termCode": 20263,
+     "season": "Fall",
+     "year": 2026
+    }
+   ],
+   "prerequisiteCourseCodes": [
+    {
+     "order": 2,
+     "requiredCourses": 2,
+     "courseOptions": [
+      {
+       "theRest": "425A",
+       "ands": [],
+       "prefix": "MATH",
+       "number": "425",
+       "suffix": "A",
+       "courseHyphen": "MATH-425A",
+       "courseSpace": "MATH 425A",
+       "courseSmashed": "MATH425A"
+      },
+      {
+       "theRest": "471",
+       "ands": [],
+       "prefix": "MATH",
+       "number": "471",
+       "suffix": "",
+       "courseHyphen": "MATH-471",
+       "courseSpace": "MATH 471",
+       "courseSmashed": "MATH471"
+      }
+     ]
+    }
+   ],
+   "corequisiteCourseCodes": null,
+   "courseRestrictions": null,
+   "majorRestrictions": null,
+   "schoolRestrictions": null,
+   "concurrentCourses": null,
+   "remainingSectionSeats": 17,
+   "sectionSeatCount": 25,
+   "termCode": 20263,
+   "prefix": "MATH",
+   "name": "Numerical Analysis",
+   "sortOrder": 0
+  }
+ ]
+}
