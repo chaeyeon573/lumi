@@ -156,7 +156,8 @@ export function StartPage() {
   const birthOk = birth >= 1950 && birth <= new Date().getFullYear() - 16;
   const school = schools.find((s) => s.id === d.schoolId);
   const name = d.nickname.trim();
-  const shownSchools = schools.filter((s) => !q.trim() || `${s.name} ${FULL_NAME[s.name] ?? ''} ${s.region}`.toLowerCase().includes(q.trim().toLowerCase()));
+  // 학교는 이름을 치기 전엔 하나도 보여주지 않는다 (사장님 2026-11-03) — 이미 고른 학교만 남긴다
+  const shownSchools = schools.filter((s) => (q.trim() ? `${s.name} ${FULL_NAME[s.name] ?? ''} ${s.region}`.toLowerCase().includes(q.trim().toLowerCase()) : s.id === d.schoolId));
   const Head = ({ q: title, sub }: { q: string; sub?: string }) => <div><h2 className="text-[28px] font-extrabold leading-tight">{title}</h2>{sub && <p className="text-[15px] text-ink-3 mt-1.5">{sub}</p>}</div>;
   const skip = step === 'goals' ? () => { patch({ goalKeys: [] }); next(); } : step === 'topics' ? () => { patch({ topics: [] }); next(); } : undefined;
   const NextBtn = ({ ok, text, onClick }: { ok: boolean; text?: string; onClick?: () => void }) => (
@@ -185,7 +186,7 @@ export function StartPage() {
 
         {step === 'goals' && (
           <>
-            <Head q={en ? 'What brings you to Lumi?' : 'Lumi에서 뭘 하고 싶어요?'} sub={en ? 'Choose what you’d like to get out of your campus life. (Select any that apply)' : '캠퍼스 생활에서 얻고 싶은 걸 골라 주세요. (여러 개 가능)'} />
+            <Head q={en ? 'What brings you to Lumi?' : 'Lumi에서 뭘 하고 싶어요?'} />
             <div className="space-y-2">{GOAL_OPTS.map((o) => <Pick key={o.key} icon={<o.Icon size={22} />} title={o.title} sub={o.sub} on={d.goalKeys.includes(o.key)} onClick={() => patch({ goalKeys: tog(d.goalKeys, o.key) })} />)}</div>
             <NextBtn ok={d.goalKeys.length > 0} />
           </>
@@ -193,7 +194,7 @@ export function StartPage() {
 
         {step === 'how' && (
           <>
-            <Head q={en ? 'Here’s how Lumi helps you.' : 'Lumi는 이렇게 도와줘요.'} sub={en ? 'The tools you need for your campus life, all in one place.' : '캠퍼스 생활에 필요한 걸 한곳에.'} />
+            <Head q={en ? 'Here’s how Lumi helps you.' : 'Lumi는 이렇게 도와줘요.'} />
             <div className="space-y-2.5">
               {HELPS.map((h) => (
                 <div key={h.title} className="card rounded-[20px] p-4 flex gap-3 items-start">
