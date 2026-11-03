@@ -1,0 +1,3505 @@
+{
+ "collectedAt": "2026-11-03T23:39:08.208Z",
+ "sources": [
+  "engage https://thelink.wfu.edu 118"
+ ],
+ "events": [
+  {
+   "description": "Election Day is here, Deacs! If you haven&rsquo;t cast your ballot yet, today is your last chance. Polls in Forsyth County are open from 6:30 a.m. to 7:30 p.m. A few important things to know: Stay in line! If you&rsquo;re in line at your assigned polling place by 7:30 p.m., you h",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12921638",
+   "type": "event",
+   "title": "Election Day with Deacs Decide",
+   "host": "Office of Civic & Community Engagement",
+   "schoolId": "s_wfu",
+   "date": "2026-11-03T14:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Benson University Center",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12921638",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Teen Court at the Forsyth County Courthouse at 5 PM.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12889945",
+   "type": "event",
+   "title": "Teen Court Session",
+   "host": "Teen Court",
+   "schoolId": "s_wfu",
+   "date": "2026-11-03T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Forsyth County Courthouse",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12889945",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Islam, Art, and Cultural Imagination explores how Muslims have imagined, interpreted, and expressed Islam across different cultural and intellectual contexts. The program will feature Dr. Naoki Yamamoto, whose work engages questions of Islam, Japanese culture, artistic expression",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12626413",
+   "type": "event",
+   "title": "Islam, Art, and Cultural Imagination",
+   "host": "Office of the Chaplain",
+   "schoolId": "s_wfu",
+   "date": "2026-11-03T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Byrum Welcome Center Auditorium ",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12626413",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "It's time to lock in! Join Zeta Chi for weekly study sessions focused on academic excellence, productivity, and accountability. Bring your assignments, your study materials, and your goals as we work together to stay focused and finish Finer!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12907383",
+   "type": "event",
+   "title": "Finer Focus Study Session",
+   "host": "Zeta Phi Beta Sorority, Incorporated",
+   "schoolId": "s_wfu",
+   "date": "2026-11-03T23:20:00.000Z",
+   "startTime": "18:20",
+   "place": {
+    "name": "Greene Hall 341",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12907383",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join KASA in Polo Multipurpose room on Tuesday, November 3rd from 6:30-8pm! We will be cooking Tanghulu (sugar coated fruit skewers) which is a popular Korean street food, alongside some boba!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12925698",
+   "type": "event",
+   "title": "Tanghulu Cooking Night",
+   "host": "Korean American Student Association",
+   "schoolId": "s_wfu",
+   "date": "2026-11-03T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Polo Multipurpose Room",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12925698",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for our November General Body Meeting! Come learn about service opportunities and meet other members. Food will be provided!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12871648",
+   "type": "event",
+   "title": "November General Body Meeting",
+   "host": "Circle K International",
+   "schoolId": "s_wfu",
+   "date": "2026-11-04T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Benson 301",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12871648",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Big election energy, good food, and even better company! Join Deacs Decide on Election Day to watch the results roll in, connect with your community, grab some FREE food and fun giveaways. Whether you're a political savant or just here for the snacks and community vibes, there's ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12921628",
+   "type": "event",
+   "title": "Election Day Watch Party with Deacs Decide",
+   "host": "Office of Civic & Community Engagement",
+   "schoolId": "s_wfu",
+   "date": "2026-11-04T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Shorty's ",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12921628",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Interested in pursuing a career in criminal law? Join the Society for Criminal Justice Reform (SCJR) for an engaging panel discussion featuring Wake Law Professors Alyse Bertenthal, Eleanor Morales, Ron Wright, Wayne Logan, and Abel Rodr&iacute;guez as they explore the many caree",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12904130",
+   "type": "event",
+   "title": "Criminal Law Professor Panel: Exploring Career Paths in Criminal Law",
+   "host": "Society for Criminal Justice Reform",
+   "schoolId": "s_wfu",
+   "date": "2026-11-04T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Worrell Professional Center 1301",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12904130",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Federalist Society at Wake Forest Law is pleased to invite you to a discussion of the upcoming Supreme Court Case Viramontes with Amy Swearer, a Senior Legal Fellow at Advancing American Freedom and Professor Wilson Parker. Chick-Fil-A will be provided for those who RSVP on t",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12625170",
+   "type": "event",
+   "title": "Viramontes: May States Ban AR-15's?",
+   "host": "Federalist Society",
+   "schoolId": "s_wfu",
+   "date": "2026-11-04T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "1312",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12625170",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A free, low-stakes resume workshop for any student! We will go over resume basics and foundations and then have time to review your document.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12581988",
+   "type": "event",
+   "title": "Wake Your Resume",
+   "host": "Office of Personal & Career Development",
+   "schoolId": "s_wfu",
+   "date": "2026-11-04T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Reynolda 230, Innovation Station",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12581988",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come join CAAFRO and Africasa for a Kompa Dance class! We will learn a short Kompa dance combo which will allow you to get a feel of the dance culture in Haiti!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12945007",
+   "type": "event",
+   "title": "Kompa Class!",
+   "host": "African and Caribbean Students Association",
+   "schoolId": "s_wfu",
+   "date": "2026-11-04T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Wellbeing Center B304",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12945007",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join students, faculty, supervising attorneys, and community partners for an evening celebrating the people and partnerships that make Wake Law&rsquo;s pro bono work possible. The Pro Humanitate Reception is our opportunity to recognize service, strengthen community, and thank th",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12915086",
+   "type": "event",
+   "title": "Pro Bono Pro Humanitate Reception",
+   "host": "Pro Bono Project",
+   "schoolId": "s_wfu",
+   "date": "2026-11-04T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Worrell Professional Center",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12915086",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance Nation by Clare Barron directed by Stephen Wrentmore November 4-7 at 7:30 pm November 7 & 8 at 2:00 pm Tedford Stage, Scales Fine Arts Center DANCE NATION is a jubilant and original play that is simultaneously funny, fierce, and unsettling. It delves into the terror and joy",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12778218",
+   "type": "event",
+   "title": "Dance Nation",
+   "host": "Wake the Arts",
+   "schoolId": "s_wfu",
+   "date": "2026-11-05T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Tedford Stage, Scales Fine Arts Center",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12778218",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "On Thursday, November 5th, the chapter is launching Uplift Thursday , a faith-centered social media campaign on Instagram designed to foster spiritual encouragement and community connection. The day kicks off with a morning Bible verse and devotional prayer on Instagram Stories t",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12172809",
+   "type": "event",
+   "title": "Uplift Thursday",
+   "host": "Lambda Eta Chapter of Omega Psi Phi Fraternity, Inc.",
+   "schoolId": "s_wfu",
+   "date": "2026-11-05T12:00:00.000Z",
+   "startTime": "07:00",
+   "place": {
+    "name": "Wake Forest University ",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12172809",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Find it hard to focus? Want to wind your week down right? Join the Graduate School of Arts & Sciences and the Writing Center every Thursday this fall beginning September 3rd for graduate student coworking hours! You bring whatever it is you need to get done, and we&rsquo;ll bring",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12525377",
+   "type": "event",
+   "title": "Grad Student Coworking Hours",
+   "host": "Graduate School of Art & Sciences",
+   "schoolId": "s_wfu",
+   "date": "2026-11-05T13:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "Writing Center, ZSR 426",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12525377",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join PILO for a lunch event with Professor Amanda Spriggs Reid, a Wake Forest Law graduate and current public interest lawyer. We will be discussing disability and reproductive justice, her area of expertise, as well as how to navigate getting a public interest fellowship.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12889564",
+   "type": "event",
+   "title": "Disability, Reproductive Justice, and Public Interest Fellowships with Professor Spriggs Reid",
+   "host": "Public Interest Law Organization",
+   "schoolId": "s_wfu",
+   "date": "2026-11-05T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Room 1107",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12889564",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The purpose of APALSA study hall is to help foster community among APALSA members without adding to everyone&rsquo;s busy schedule. Feel free to use APALSA Study Hall to study, eat lunch, and catch up with friends. 1Ls this is also a great way to connect with 2Ls and 3Ls and ask ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12732253",
+   "type": "event",
+   "title": "APALSA Study Hall",
+   "host": "Asian Pacific American Law Student Association",
+   "schoolId": "s_wfu",
+   "date": "2026-11-05T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Worrell Professional Center, Room 1106",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12732253",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Let's talk allows students to connect with an experienced clinician in an informal, drop-in, environment. Consultations are confidential and on a first come, first serve basis. *Note, these are not counseling sessions, but more so a way to learn about resources and ask questions.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12930479",
+   "type": "event",
+   "title": "Let's Talk! (Free Lunch)",
+   "host": "Office of Student Affairs (Law School)",
+   "schoolId": "s_wfu",
+   "date": "2026-11-05T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Worrell Professional Center 1301",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12930479",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for a kendra Scott pop-up fundraising sale supporting our philanthropy, the Starkey hearing foundation!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "fundraising"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12924950",
+   "type": "event",
+   "title": "Cookies with Kendra Scott hosted by DZ",
+   "host": "Delta Zeta",
+   "schoolId": "s_wfu",
+   "date": "2026-11-05T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Tribble Courtyard",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12924950",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Zotero is a powerful (and free!) tool for saving, organizing, and citing research sources. In this workshop, you'll learn how to install Zotero, how to use it to build your own library of sources, and save yourself time when writing research papers. This hands-on session is orien",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12534687",
+   "type": "event",
+   "title": "Zotero Workshops",
+   "host": "ZSR Library",
+   "schoolId": "s_wfu",
+   "date": "2026-11-05T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "ZSR Library Room 476",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12534687",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "All are Welcome for our weekly dinners. Bring friends, enjoy food, meet cool people, and just relax and be encouraged for the rest of your week. No need to RSVP, but please reach out and let us know if you have dietary restrictions.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12581218",
+   "type": "event",
+   "title": "LSM Thursday Night Dinner",
+   "host": "Lutheran Student Movement",
+   "schoolId": "s_wfu",
+   "date": "2026-11-05T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "BSU Lounge (underneath the Deacon Shop in Kitchin)",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12581218",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come make kintsugi with JSC! Kintsugi is the Japanese art of repairing broken pottery with gold, so the cracks become part of the piece&rsquo;s beauty instead of something to hide. We&rsquo;ll go over the history and meaning behind the practice, then you&rsquo;ll mend your own pi",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12944749",
+   "type": "event",
+   "title": "JSC Kintsugi Craft Night",
+   "host": "Japanese Studies Club",
+   "schoolId": "s_wfu",
+   "date": "2026-11-06T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Carswell 014",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12944749",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Trivia is BACK at Shorty's! We're bringing back the tradition of weekly Trivia Nights, and you're invited! Join Wake students Grant and Grady every Thursday for the rest of the semester as they put your knowledge to the test with custom trivia questions you won't find anywhere el",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12950851",
+   "type": "event",
+   "title": "Weekly Trivia at Shorty's!",
+   "host": "Office of Student Engagement",
+   "schoolId": "s_wfu",
+   "date": "2026-11-06T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Shorty's",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🎁 Free stuff",
+   "sourceUrl": "https://thelink.wfu.edu/event/12950851",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Women's Soccer against Clemson on Thursday, November 5th at 7:00 P.M. at Spry Stadium",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "athletics"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12549021",
+   "type": "event",
+   "title": "Women's Soccer vs Clemson",
+   "host": "Wake Forest Athletics",
+   "schoolId": "s_wfu",
+   "date": "2026-11-06T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Spry Stadium",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12549021",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance Nation by Clare Barron directed by Stephen Wrentmore November 4-7 at 7:30 pm November 7 & 8 at 2:00 pm Tedford Stage, Scales Fine Arts Center DANCE NATION is a jubilant and original play that is simultaneously funny, fierce, and unsettling. It delves into the terror and joy",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12778219",
+   "type": "event",
+   "title": "Dance Nation",
+   "host": "Wake the Arts",
+   "schoolId": "s_wfu",
+   "date": "2026-11-06T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Tedford Stage, Scales Fine Arts Center",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12778219",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Wake Forest Law Students--Join us for a Free Spin class at Campus Rec and Yamas lunch after at Worrell! Spots are limited, must RSVP on the Link, first come, first serve. Friday November 6th 11 am: Meet at Campus Rec for our Spin Class in Studio B251 12 pm: Yamas lunch at Worrell",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12917206",
+   "type": "event",
+   "title": "Wake Forest Law Free Spin Class & Yamas Lunch!",
+   "host": "Office of Student Affairs (Law School)",
+   "schoolId": "s_wfu",
+   "date": "2026-11-06T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Worrell Professional Center 2321",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12917206",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for fast and fun tours (30 minutes) that highlight how the ZSR Library is not the library you remember! We will begin in ZSR Atrium and end in Special Collections & Archives. In between, we will visit the wonderful new study spaces in the ZSR Library and drop in on some o",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12735029",
+   "type": "event",
+   "title": "Not the Library You Remember! ZSR Library Tours and Special Collections Open House",
+   "host": "ZSR Library",
+   "schoolId": "s_wfu",
+   "date": "2026-11-06T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "ZSR Atrium",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12735029",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "As part of the annual Lambda Eta Week celebrations, the Lambda Eta Chapter is hosting a Game Night at the BSA Lounge on November 6th from 6:00 PM to 8:00 PM . This casual social event is designed to build campus camaraderie and foster student engagement through friendly card and ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12933413",
+   "type": "event",
+   "title": "Game Night",
+   "host": "Lambda Eta Chapter of Omega Psi Phi Fraternity, Inc.",
+   "schoolId": "s_wfu",
+   "date": "2026-11-06T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "BSA Lounge",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12933413",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance Nation by Clare Barron directed by Stephen Wrentmore November 4-7 at 7:30 pm November 7 & 8 at 2:00 pm Tedford Stage, Scales Fine Arts Center DANCE NATION is a jubilant and original play that is simultaneously funny, fierce, and unsettling. It delves into the terror and joy",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12778220",
+   "type": "event",
+   "title": "Dance Nation",
+   "host": "Wake the Arts",
+   "schoolId": "s_wfu",
+   "date": "2026-11-07T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Tedford Stage, Scales Fine Arts Center",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12778220",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for the 4th annual Wake Law Pickleball Tournament! Saturday November 7th, from 11 am to 1 pm at the courts across from the law school. There will be snacks and drinks provided. Teams will play in an elimination bracket with the winners receiving a prize! This year's tourn",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "athletics"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12809926",
+   "type": "event",
+   "title": "WIL x PILO Pickleball Tourament",
+   "host": "Women in Law",
+   "schoolId": "s_wfu",
+   "date": "2026-11-07T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Courts across from law school",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12809926",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance Nation by Clare Barron directed by Stephen Wrentmore November 4-7 at 7:30 pm November 7 & 8 at 2:00 pm Tedford Stage, Scales Fine Arts Center DANCE NATION is a jubilant and original play that is simultaneously funny, fierce, and unsettling. It delves into the terror and joy",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12778222",
+   "type": "event",
+   "title": "Dance Nation",
+   "host": "Wake the Arts",
+   "schoolId": "s_wfu",
+   "date": "2026-11-07T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Tedford Stage, Scales Fine Arts Center",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12778222",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance Nation by Clare Barron directed by Stephen Wrentmore November 4-7 at 7:30 pm November 7 & 8 at 2:00 pm Tedford Stage, Scales Fine Arts Center DANCE NATION is a jubilant and original play that is simultaneously funny, fierce, and unsettling. It delves into the terror and joy",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12778221",
+   "type": "event",
+   "title": "Dance Nation",
+   "host": "Wake the Arts",
+   "schoolId": "s_wfu",
+   "date": "2026-11-08T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Tedford Stage, Scales Fine Arts Center",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12778221",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "MLS is going on a fishing trip to Kernersville Lake on Sunday, November 8th from 9 am to 1 pm. Lunch will be provided. Students are responsible for their own rods and licenses. If you do not have a rod, please reach out to coghm24@wfu.edu. I have a few extra rods. Rowboats and pe",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12914925",
+   "type": "event",
+   "title": "Maritime Law Society - Fishing Trip",
+   "host": "Maritime Law Society",
+   "schoolId": "s_wfu",
+   "date": "2026-11-08T14:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Kernersville Lake",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12914925",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance Nation by Clare Barron directed by Stephen Wrentmore November 4-7 at 7:30 pm November 7 & 8 at 2:00 pm Tedford Stage, Scales Fine Arts Center DANCE NATION is a jubilant and original play that is simultaneously funny, fierce, and unsettling. It delves into the terror and joy",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12778223",
+   "type": "event",
+   "title": "Dance Nation",
+   "host": "Wake the Arts",
+   "schoolId": "s_wfu",
+   "date": "2026-11-08T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Tedford Stage, Scales Fine Arts Center",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12778223",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "It's time to lock in! Join Zeta Chi for weekly study sessions focused on academic excellence, productivity, and accountability. Bring your assignments, your study materials, and your goals as we work together to stay focused and finish Finer!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12907384",
+   "type": "event",
+   "title": "Finer Focus Study Session",
+   "host": "Zeta Phi Beta Sorority, Incorporated",
+   "schoolId": "s_wfu",
+   "date": "2026-11-08T19:20:00.000Z",
+   "startTime": "14:20",
+   "place": {
+    "name": "Intercultural Center (Benson 349)",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12907384",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "If you have been or want to get introduced to the garden, join our Connect and Cultivate volunteer hours on Sundays 3-4 pm. Connect and Cultivate is a great way to meet new people and get involved on campus while enjoying the nice weather! Practice the fundamentals of gardening, ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12799512",
+   "type": "event",
+   "title": "Connect and Cultivate in the Campus Garden!",
+   "host": "Sustainable WFU",
+   "schoolId": "s_wfu",
+   "date": "2026-11-08T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "WFU Campus Garden",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12799512",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come join CKI in making beautiful flower arrangements and bouquets to drop them off at the local hospital!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12925182",
+   "type": "event",
+   "title": "Petals of Positivity",
+   "host": "Circle K International",
+   "schoolId": "s_wfu",
+   "date": "2026-11-08T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Benson 344",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12925182",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for a free performance featuring works from all dance student organizations on campus.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12936238",
+   "type": "event",
+   "title": "Fall 2026 Club Dance Showcase",
+   "host": "Setting the Groove Tap Club",
+   "schoolId": "s_wfu",
+   "date": "2026-11-08T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Brendle Recital Hall",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12936238",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Calling all graduate students! Take a break and grab some FREE coffee and treats in the Graduate Student Lounge, courtesy of GSAS and ZSR Library. Hang out and chat with other graduate students, or grab and go on the way to class.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12527086",
+   "type": "event",
+   "title": "Grad Student Coffee Hour",
+   "host": "Graduate School of Art & Sciences",
+   "schoolId": "s_wfu",
+   "date": "2026-11-09T13:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "Grad Student Lounge, ZSR 425",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12527086",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Stop by Tribble Courtyard between 11 am - 1 pm to help the Gamma Rho Rho Sigmas with fundraising for their chapter by paying to slime a brother of your choice. The prices are listed below. We hope to see you there on Monday, November 9th, 2026! The prices are as follows: - Cup of",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "fundraising"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12944067",
+   "type": "event",
+   "title": "The Gamma Rho Rho Chapter of Phi Beta Sigma Fraternity, Inc. Presents: \"Slime a Sigma\"",
+   "host": "Phi Beta Sigma Fraternity, Incorporated",
+   "schoolId": "s_wfu",
+   "date": "2026-11-09T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Tribble Courtyard",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12944067",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join the Federal Bar Association for an engaging conversation with U.S. Magistrate Judge Joi E. Peake of the Middle District of North Carolina. Judge Peake will share insights from her path to the bench, her perspective on effective advocacy in federal court, and practical advice",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12930796",
+   "type": "event",
+   "title": "A Conversation with Judge Joi E. Peake",
+   "host": "Federal Bar Association",
+   "schoolId": "s_wfu",
+   "date": "2026-11-09T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Worrell Professional Center",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12930796",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "SBA Exec and Representatives meeting.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12732552",
+   "type": "event",
+   "title": "SBA General Body Meeting",
+   "host": "Student Bar Association",
+   "schoolId": "s_wfu",
+   "date": "2026-11-09T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Room 1308",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12732552",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come drop-in anytime during Safe Hours to meet one of our Counselor/Advocates. You will have the opportunity to ask questions about the Safe Office, get to know our staff, and learn more about interpersonal violence. This is a drop-in event and does not require registration. Stay",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12940902",
+   "type": "event",
+   "title": "Safe Hours - LGBTQ+ Center",
+   "host": "Safe Office",
+   "schoolId": "s_wfu",
+   "date": "2026-11-09T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Benson 311",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12940902",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Stop by ZSR for fun afternoon crafts throughout the semester! A perfect time to do a craft, grab a snack, and de-stress. You can also discover more ways to learn about ZSR.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12532752",
+   "type": "event",
+   "title": "Crafternoons @ ZSR",
+   "host": "ZSR Library",
+   "schoolId": "s_wfu",
+   "date": "2026-11-09T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "ZSR Library",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12532752",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for Redz Anatomy, a collaborative event with the Women&rsquo;s Center focused on female reproductive health, body awareness, and self-care! A representative will lead a short presentation on reproductive health, followed by an interactive myth-versus-fact activity to test",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12933531",
+   "type": "event",
+   "title": "Redz Anatomy: A Women's Health Initiative",
+   "host": "Delta Sigma Theta Sorority Inc.",
+   "schoolId": "s_wfu",
+   "date": "2026-11-09T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Green Hall 312",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12933531",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "FSL 101 is an educational event meant for students interested in joining the NPHC or UGC at some point during their collegiate career.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12865111",
+   "type": "event",
+   "title": "FSL 101",
+   "host": "Fraternity and Sorority Engagement",
+   "schoolId": "s_wfu",
+   "date": "2026-11-09T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Tribble Hall Detamble Auditorium",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12865111",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Informational Session hosted by Chi Upsilon Sigma National Latin Sorority, Inc., Gamma Iota Chapter, will provide interested students with an opportunity to learn more about the organization&rsquo;s history, mission, values, and commitment to sisterhood, leadership, academic ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free stuff",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12932462",
+   "type": "event",
+   "title": "Informational Session",
+   "host": "Chi Upsilon Sigma National Latin Sorority, Incorporated",
+   "schoolId": "s_wfu",
+   "date": "2026-11-10T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "ZSR Auditorium ",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🎁 Free stuff",
+   "sourceUrl": "https://thelink.wfu.edu/event/12932462",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join Constangy partner Matt Toldero for a conversation about how AI is transforming both cyberattacks and cyber defense, the role lawyers play in responding to emerging threats, and where the field may be headed next.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12932345",
+   "type": "event",
+   "title": "AI v. AI: How Artificial Intelligence Is Changing Cybersecurity",
+   "host": "The Society for AI and Law",
+   "schoolId": "s_wfu",
+   "date": "2026-11-10T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Worrell Professional Center - Wake Forest School of Law 1309",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12932345",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Want to turn your passion for sustainability and social impact into a meaningful career? Join the Office of Sustainability, OCCE, and OPCD to chart a path forward! The event will begin at 4:00 pm with a session designed to help you navigate career pathways in sustainability and s",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12907020",
+   "type": "event",
+   "title": "Finding a Profession with Purpose: Career and Resume Workshop",
+   "host": "Sustainable WFU",
+   "schoolId": "s_wfu",
+   "date": "2026-11-10T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Reynolda 301",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12907020",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This workshop will focus on defining meaningful engagement, gaining an understanding of the Winston Salem community, and how to get involved in service off-campus.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12791363",
+   "type": "event",
+   "title": "OCCE Workshop: Engaging in Community",
+   "host": "Office of Civic & Community Engagement",
+   "schoolId": "s_wfu",
+   "date": "2026-11-10T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Benson 343",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12791363",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join ELS on Wednesday, November 11th at Noon in Room 1109 for our Public Practice Panel! Come hear from attorneys practicing environmental law in a variety of government roles about what it is like to work as a public environmental lawyer. Lunch will be provided!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12930715",
+   "type": "event",
+   "title": "Environmental Law Society Public Practice Panel",
+   "host": "Environmental Law Society",
+   "schoolId": "s_wfu",
+   "date": "2026-11-11T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Room 1109",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12930715",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Jennifer founded Village Law Group with a simple belief: all families deserve experienced legal guidance delivered with compassion and respect. For more than two decades, she has helped intended parents, donors, surrogates, and LGBTQ+ families navigate family-building with confid",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12887135",
+   "type": "event",
+   "title": "If/When/How X OUTLAW: Speaker Event with Jennifer Tharrington (Village Law Group, Assisted Reproductive Technology Attorney)",
+   "host": "OUTLaw",
+   "schoolId": "s_wfu",
+   "date": "2026-11-11T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "1108",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12887135",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Take a break from outlining and create your own stuffed animal, no sewing required!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12889416",
+   "type": "event",
+   "title": "Plushie Picnic",
+   "host": "OWLS (Older and Wiser Law Students)",
+   "schoolId": "s_wfu",
+   "date": "2026-11-11T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Commons",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🎁 Free stuff",
+   "sourceUrl": "https://thelink.wfu.edu/event/12889416",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A free, low-stakes resume workshop for any student! We will go over resume basics and foundations and then have time to review your document.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12581989",
+   "type": "event",
+   "title": "Wake Your Resume",
+   "host": "Office of Personal & Career Development",
+   "schoolId": "s_wfu",
+   "date": "2026-11-11T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Reynolda 230, Innovation Station",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12581989",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "All are welcome to join in a community conversation about consent in pursuit of a campus free of interpersonal violence. We will have two learning sessions dedicated to sharing the results from the 2026 Sexual Misconduct Survey. Meals will be provided to all who attend. RSVP toda",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12641448",
+   "type": "event",
+   "title": "ConsentCon 2026",
+   "host": "Office of Wellbeing",
+   "schoolId": "s_wfu",
+   "date": "2026-11-11T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Benson University Center",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12641448",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for an engaging and educational event focused on empowering young Black scholars to build wealth through financial literacy and investment knowledge! This event will highlight the importance of wealth building. Investing can be an accessible tool for anyone with the right",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12944064",
+   "type": "event",
+   "title": "Who Wants to Be a Millionaire",
+   "host": "Delta Sigma Theta Sorority Inc.",
+   "schoolId": "s_wfu",
+   "date": "2026-11-11T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Greene Hall 311",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12944064",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Find it hard to focus? Want to wind your week down right? Join the Graduate School of Arts & Sciences and the Writing Center every Thursday this fall beginning September 3rd for graduate student coworking hours! You bring whatever it is you need to get done, and we&rsquo;ll bring",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12525378",
+   "type": "event",
+   "title": "Grad Student Coworking Hours",
+   "host": "Graduate School of Art & Sciences",
+   "schoolId": "s_wfu",
+   "date": "2026-11-12T13:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "Writing Center, ZSR 426",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12525378",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This panel will feature distinguished North Carolina judges who will share insights from their careers on the bench and the paths that led them there. The discussion will highlight the challenges and rewards of judicial service, as well as perspectives on the evolving legal profe",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12810053",
+   "type": "event",
+   "title": "Women in Practice: Judges' Chambers",
+   "host": "Women in Law",
+   "schoolId": "s_wfu",
+   "date": "2026-11-12T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Wake Forest University School of Law 1108",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12810053",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The purpose of APALSA study hall is to help foster community among APALSA members without adding to everyone&rsquo;s busy schedule. Feel free to use APALSA Study Hall to study, eat lunch, and catch up with friends. 1Ls this is also a great way to connect with 2Ls and 3Ls and ask ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12732258",
+   "type": "event",
+   "title": "APALSA Study Hall",
+   "host": "Asian Pacific American Law Student Association",
+   "schoolId": "s_wfu",
+   "date": "2026-11-12T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Worrell Professional Center, Room 1106",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12732258",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come drop-in anytime during Safe Hours to meet one of our Counselor/Advocates. You will have the opportunity to ask questions about the Safe Office, get to know our staff, and learn more about interpersonal violence. This is a drop-in event and does not require registration. Stay",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12940917",
+   "type": "event",
+   "title": "Safe Hours - Intercultural Center",
+   "host": "Safe Office",
+   "schoolId": "s_wfu",
+   "date": "2026-11-12T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Benson 346",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12940917",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "As the United States approaches its 250th anniversary in 2026, we have an opportunity to reflect on where we&rsquo;ve been, where we are, and who we want to become. Join Deacon Dialogue: Pro Humanitate in Practice for three conversations exploring America&rsquo;s past, present, a",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12678429",
+   "type": "event",
+   "title": "Deacon Dialogue: Pro Humanitate in Practice",
+   "host": "Office of Civic & Community Engagement",
+   "schoolId": "s_wfu",
+   "date": "2026-11-12T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Campus Kitchen & SJI Lounge",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12678429",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "FSL 101 is an educational event meant for students interested in joining the NPHC or UGC at some point during their collegiate career.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12865112",
+   "type": "event",
+   "title": "FSL 101",
+   "host": "Fraternity and Sorority Engagement",
+   "schoolId": "s_wfu",
+   "date": "2026-11-12T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Tribble Hall Detamble Auditorium",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12865112",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join ASIA for hot pot!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12925269",
+   "type": "event",
+   "title": "Hot Pot Night",
+   "host": "Asian Student Interest Association",
+   "schoolId": "s_wfu",
+   "date": "2026-11-12T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Taylor Lounge",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12925269",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join the Pi Omicron chapter of Delta Sigma Theta Sorority, Inc. for an interactive Jeopardy-style game in recognition of World AIDS Day! Participants will compete in teams to test their knowledge of HIV/AIDS through categories covering HIV/AIDS facts, global impact, prevention, t",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12944061",
+   "type": "event",
+   "title": "Jeopardy: AIDS Awareness Across Borders",
+   "host": "Delta Sigma Theta Sorority Inc.",
+   "schoolId": "s_wfu",
+   "date": "2026-11-12T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Greene 311",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12944061",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "All are Welcome for our weekly dinners. Bring friends, enjoy food, meet cool people, and just relax and be encouraged for the rest of your week. No need to RSVP, but please reach out and let us know if you have dietary restrictions.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12581219",
+   "type": "event",
+   "title": "LSM Thursday Night Dinner",
+   "host": "Lutheran Student Movement",
+   "schoolId": "s_wfu",
+   "date": "2026-11-12T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "BSU Lounge (underneath the Deacon Shop in Kitchin)",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12581219",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Trivia is BACK at Shorty's! We're bringing back the tradition of weekly Trivia Nights, and you're invited! Join Wake students Grant and Grady every Thursday for the rest of the semester as they put your knowledge to the test with custom trivia questions you won't find anywhere el",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12950852",
+   "type": "event",
+   "title": "Weekly Trivia at Shorty's!",
+   "host": "Office of Student Engagement",
+   "schoolId": "s_wfu",
+   "date": "2026-11-13T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Shorty's",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🎁 Free stuff",
+   "sourceUrl": "https://thelink.wfu.edu/event/12950852",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come drop-in anytime during Safe Hours to meet one of our Counselor/Advocates. You will have the opportunity to ask questions about the Safe Office, get to know our staff, and learn more about interpersonal violence. This is a drop-in event and does not require registration. Stay",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12940873",
+   "type": "event",
+   "title": "Safe Hours - Women's Center",
+   "host": "Safe Office",
+   "schoolId": "s_wfu",
+   "date": "2026-11-13T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Benson 314",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12940873",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Women's Volleyball against Virginia on Friday, November 13th at 6:30 P.M. at Varsity Arena",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "athletics"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12549036",
+   "type": "event",
+   "title": "Women's Volleyball vs Virginia",
+   "host": "Wake Forest Athletics",
+   "schoolId": "s_wfu",
+   "date": "2026-11-13T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Varsity Arena at Reynolds Gymnasium",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12549036",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join LLSA at Alma to learn the history of the Margarita and learn how to make one! Alcohol and mocktail options available.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12915000",
+   "type": "event",
+   "title": "Margarita-Making",
+   "host": "Latino Law Student Association",
+   "schoolId": "s_wfu",
+   "date": "2026-11-14T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Alma M",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12915000",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Our October Cemetery cleanup was a resounding success. Now we present an excellent opportunity to get even more fresh air and even more service hours---a cleanup and tour of Oddfellows on November 14th from 9 am to 12 pm.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12944376",
+   "type": "event",
+   "title": "November Oddfellows Cemetery Cleanup",
+   "host": "The Funeral and Cemetery Law Project",
+   "schoolId": "s_wfu",
+   "date": "2026-11-14T14:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Oddfellows ",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12944376",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come join the ladies of the Pi Omicron Chapter of Delta Sigma Theta Sorority, Inc. for our Way of the Water Swim Clinic! Whether you're a beginner or just looking to become more comfortable in the water, come out for an opportunity to learn, practice your swimming skills, and hav",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12948780",
+   "type": "event",
+   "title": "Pi Omicron’s Way of the Water Swim Clinic",
+   "host": "Delta Sigma Theta Sorority Inc.",
+   "schoolId": "s_wfu",
+   "date": "2026-11-14T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Recreational Aquatic Center - Wellbeing Center 1st Floor",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12948780",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Head race in Augusta, Georgia.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "athletics"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12938601",
+   "type": "event",
+   "title": "Head of the South",
+   "host": "Club Rowing",
+   "schoolId": "s_wfu",
+   "date": "2026-11-14T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Savannah River ",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12938601",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Africasa Night is an immersive presentation showcase designed to celebrate and honor the rich heritage of African and Caribbean cultures. The evening unfolds as a exciting showcase of tradition and culture, this event it meant to captivate audiences through live performances, dyn",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12916312",
+   "type": "event",
+   "title": "Africasa night",
+   "host": "African and Caribbean Students Association",
+   "schoolId": "s_wfu",
+   "date": "2026-11-15T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Benson 401",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12916312",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join HSA for a Diwali Pooja at Davis Chapel, with a free lunch afterward!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12940611",
+   "type": "event",
+   "title": "HSA Diwali",
+   "host": "Hindu Students Association",
+   "schoolId": "s_wfu",
+   "date": "2026-11-15T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Davis Chapel  ",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12940611",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Women's Volleyball against Virginia Tech on Sunday, November 15th at 1:00 P.M. at Varsity Arena",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "athletics"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12549064",
+   "type": "event",
+   "title": "Women's Volleyball vs Virginia Tech",
+   "host": "Wake Forest Athletics",
+   "schoolId": "s_wfu",
+   "date": "2026-11-15T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Varsity Arena at Reynolds Gymnasium",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12549064",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Wake Forest Law's American Constitution Society invites you to a lunchtime conversation on the state of abortion rights in a post- Dobbs America. With the question of abortion returned to the states, courts, legislatures, and voters are now shaping reproductive policy at the stat",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12938064",
+   "type": "event",
+   "title": "Beyond Dobbs: Abortion Rights in the State Courts and the Future of Reproductive Policy",
+   "host": "American Constitution Society",
+   "schoolId": "s_wfu",
+   "date": "2026-11-16T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Worrell Professional Center 1301",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12938064",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "FSL 101 is an educational event meant for students interested in joining the NPHC or UGC at some point during their collegiate career.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12865113",
+   "type": "event",
+   "title": "FSL 101",
+   "host": "Fraternity and Sorority Engagement",
+   "schoolId": "s_wfu",
+   "date": "2026-11-16T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Tribble Hall Detamble Auditorium",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12865113",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Ready to be part of a legacy rooted in sisterhood, service, and scholarship? Join us at our Formal Interest Meeting to meet the captivating ladies of the Zeta Chi Chapter and learn about our rich history and campus impact.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12944105",
+   "type": "event",
+   "title": "Informational Interest Meeting",
+   "host": "Zeta Phi Beta Sorority, Incorporated",
+   "schoolId": "s_wfu",
+   "date": "2026-11-17T00:20:00.000Z",
+   "startTime": "19:20",
+   "place": {
+    "name": "Carswell Hall",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12944105",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for a panel discussion on how artificial intelligence is transforming legal practice! Hear from practicing attorneys and law students about how AI tools, including Harvey, are being integrated into everyday legal workflows, how law firms are approaching AI adoption, and w",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "talk",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12945734",
+   "type": "event",
+   "title": "AI in Legal Practice: Panel",
+   "host": "The Society for AI and Law",
+   "schoolId": "s_wfu",
+   "date": "2026-11-17T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Worrell - Room 1309",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12945734",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "VIVA VERDI! @ The Intergenerational Center FREE screening, music, performance, + discussion at Intergenerational Center for Arts + Wellness, sponsored by Wake the Arts. The film screening will follow a live musical performance beginning at 4 pm, and the discussion will take place",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12846200",
+   "type": "event",
+   "title": "VIVA VERDI!",
+   "host": "Wake the Arts",
+   "schoolId": "s_wfu",
+   "date": "2026-11-17T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Intergenerational Center for Arts and Wellness",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12846200",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for an interactive community space where gender explorers of all identities and experiences to join in community that centers non-binary and trans perspectives. Each session includes dinner and different discussions + activities! This space is open to all current WFU stud",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12517059",
+   "type": "event",
+   "title": "GendEx",
+   "host": "LGBTQ Center",
+   "schoolId": "s_wfu",
+   "date": "2026-11-17T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Benson 311",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12517059",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Teen Court at the Forsyth County Courthouse at 5 PM.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12889953",
+   "type": "event",
+   "title": "Teen Court Session",
+   "host": "Teen Court",
+   "schoolId": "s_wfu",
+   "date": "2026-11-17T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Forsyth County Courthouse",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12889953",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join LLSA and JLSA when preparing for finals with a free cup of Cuban Coffee and food!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12920096",
+   "type": "event",
+   "title": "LLSA x JLSA Cuban Coffee Bar",
+   "host": "Latino Law Student Association",
+   "schoolId": "s_wfu",
+   "date": "2026-11-18T14:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "The Commons in Worrel",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12920096",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This event will include three Brown Rudnick attorneys in different practice groups that will discuss both their own practice and the firm's overall practice. It will begin as a presentation which will then be opened up to a Q&A. Lunch will also be provided!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12939831",
+   "type": "event",
+   "title": "Brown Rudnick x BLS: Background to the Commercial Practice",
+   "host": "Business Law Society",
+   "schoolId": "s_wfu",
+   "date": "2026-11-18T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Worrell 1109",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12939831",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Wake Forest Law Students--Join us on Wednesday November 18th from 3:00-5:00 pm for a free guided tour at Reynolda Gardens and a coffee and treat at Dough-Joe's immediately after. Spots are limited, you must RSVP on the Link! *Must bring your Wake Forest Law ID for admission!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12938709",
+   "type": "event",
+   "title": "Wake Forest Law Free Reynolda Garden Tour and Dough-Joe's",
+   "host": "Office of Student Affairs (Law School)",
+   "schoolId": "s_wfu",
+   "date": "2026-11-18T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Reynolda Gardens",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12938709",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A free, low-stakes resume workshop for any student! We will go over resume basics and foundations and then have time to review your document.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12581990",
+   "type": "event",
+   "title": "Wake Your Resume",
+   "host": "Office of Personal & Career Development",
+   "schoolId": "s_wfu",
+   "date": "2026-11-18T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Reynolda 230, Innovation Station",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12581990",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for a discussion space exploring the intersections of LGBTQ+ and neurodivergent identities through community building & support. The dates for NeuroQueer will take place on September 23rd, October 7th, October 21st, November 18th, and December 2nd from 5PM-6PM in Benson 3",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12526689",
+   "type": "event",
+   "title": "NeuroQueer",
+   "host": "LGBTQ Center",
+   "schoolId": "s_wfu",
+   "date": "2026-11-18T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Benson 311",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12526689",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for a panel featuring Wake Forest University Physician Assistant (PA) students, as they share their experiences, career paths, and insights into the PA profession. Attendees will learn about the PA school application process, academic and clinical training, day-to-day res",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "talk",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12857495",
+   "type": "event",
+   "title": "Wake PA Student Panel",
+   "host": "Association of Pre-Physician Assistants",
+   "schoolId": "s_wfu",
+   "date": "2026-11-19T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Greene 313",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12857495",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "WATCH THE FIRST EVER ACAPELLA SHOWCASE AT WAKE FOREST! On November 18th, our four groups will perform in Brendle Recital Hall. You CANNOT miss this event, tickets coming soon.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12893355",
+   "type": "event",
+   "title": "Pitch Perfect in the Forest: Acapella Showcase",
+   "host": "Student Government",
+   "schoolId": "s_wfu",
+   "date": "2026-11-19T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Brendle Hall",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12893355",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Find it hard to focus? Want to wind your week down right? Join the Graduate School of Arts & Sciences and the Writing Center every Thursday this fall beginning September 3rd for graduate student coworking hours! You bring whatever it is you need to get done, and we&rsquo;ll bring",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12525379",
+   "type": "event",
+   "title": "Grad Student Coworking Hours",
+   "host": "Graduate School of Art & Sciences",
+   "schoolId": "s_wfu",
+   "date": "2026-11-19T13:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "Writing Center, ZSR 426",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12525379",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for a panel discussion on how artificial intelligence is transforming legal practice! Hear from practicing attorneys and law students about how AI tools, including Harvey, are being integrated into everyday legal workflows, how law firms are approaching AI adoption, and w",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "talk",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12945735",
+   "type": "event",
+   "title": "AI in Legal Practice: Panel",
+   "host": "The Society for AI and Law",
+   "schoolId": "s_wfu",
+   "date": "2026-11-19T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Worrell - Room [TBD]",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12945735",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The purpose of APALSA study hall is to help foster community among APALSA members without adding to everyone&rsquo;s busy schedule. Feel free to use APALSA Study Hall to study, eat lunch, and catch up with friends. 1Ls this is also a great way to connect with 2Ls and 3Ls and ask ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12708693",
+   "type": "event",
+   "title": "APALSA Study Halls",
+   "host": "Asian Pacific American Law Student Association",
+   "schoolId": "s_wfu",
+   "date": "2026-11-19T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Worrell Professional Center 1106",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12708693",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The LGBTQ+ Center is having our Third Thursdays you know and love, happening on September 17th, October 15th, and November 19th. Please drop by! All students and staff are welcome to join as we enjoy connecting with one another over a free community meal! This is a great opportun",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12515968",
+   "type": "event",
+   "title": "Third Thursday",
+   "host": "LGBTQ Center",
+   "schoolId": "s_wfu",
+   "date": "2026-11-19T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Benson 311",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12515968",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Championship Round of the Edwin M. Stanley Moot Court Competition",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12889501",
+   "type": "event",
+   "title": "Stanley Championship Round",
+   "host": "Moot Court",
+   "schoolId": "s_wfu",
+   "date": "2026-11-19T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Wake Forest Law School 1312",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12889501",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "QinFolk is a space that explores the intersectional experiences of BIPOC LGBTQ+ students in a supportive and affirming environment that fosters community building. This space centers the experiences of queer and trans people of color but all are welcome! The dates for this are Se",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12516047",
+   "type": "event",
+   "title": "QinFolk",
+   "host": "LGBTQ Center",
+   "schoolId": "s_wfu",
+   "date": "2026-11-19T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Benson 311",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12516047",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "All are Welcome for our weekly dinners. Bring friends, enjoy food, meet cool people, and just relax and be encouraged for the rest of your week. No need to RSVP, but please reach out and let us know if you have dietary restrictions.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12581220",
+   "type": "event",
+   "title": "LSM Thursday Night Dinner",
+   "host": "Lutheran Student Movement",
+   "schoolId": "s_wfu",
+   "date": "2026-11-19T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "BSU Lounge (underneath the Deacon Shop in Kitchin)",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12581220",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Trivia is BACK at Shorty's! We're bringing back the tradition of weekly Trivia Nights, and you're invited! Join Wake students Grant and Grady every Thursday for the rest of the semester as they put your knowledge to the test with custom trivia questions you won't find anywhere el",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12950853",
+   "type": "event",
+   "title": "Weekly Trivia at Shorty's!",
+   "host": "Office of Student Engagement",
+   "schoolId": "s_wfu",
+   "date": "2026-11-20T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Shorty's",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🎁 Free stuff",
+   "sourceUrl": "https://thelink.wfu.edu/event/12950853",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "It's time to lock in! Join Zeta Chi for weekly study sessions focused on academic excellence, productivity, and accountability. Bring your assignments, your study materials, and your goals as we work together to stay focused and finish Finer!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12907385",
+   "type": "event",
+   "title": "Finer Focus Study Session",
+   "host": "Zeta Phi Beta Sorority, Incorporated",
+   "schoolId": "s_wfu",
+   "date": "2026-11-20T00:20:00.000Z",
+   "startTime": "19:20",
+   "place": {
+    "name": "Zick's Underground",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12907385",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Fall Faculty & Guest Artist Concert will feature modern, jazz, contemporary and classical ballet choreography by our dance faculty and renowned guest choreographers, under the direction of Nina Lucas Rice. This fall faculty choreographers include Chris Martin, Tina Yarborough",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12779682",
+   "type": "event",
+   "title": "Fall Faculty and Guest Artist Dance Concert",
+   "host": "Wake the Arts",
+   "schoolId": "s_wfu",
+   "date": "2026-11-20T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Tedford Stage, Scales Fine Arts Center",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12779682",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The LGBTQ+ Center is having our Q-mmunity Jams series on September 25th, October 23rd, and November 20th! Q-mmunity Jams is designed to be inclusive and vibrant gatherings for all to enjoy musical activities for all skill levels. These Jam sessions are a safe and affirming space ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12516600",
+   "type": "event",
+   "title": "Q-mmunity Jams",
+   "host": "LGBTQ Center",
+   "schoolId": "s_wfu",
+   "date": "2026-11-20T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Benson 311",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12516600",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join Wake Forest's chapter of Delta Sigma Theta Sorority, Inc., and Winston-Salem State University's Student-Led Media Production Organization, RamsTV, for an evening of short films, media projects, documentaries, and more, produced, edited, and directed by African American stude",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12853347",
+   "type": "event",
+   "title": "Red Carpet Film Festival",
+   "host": "Delta Sigma Theta Sorority Inc.",
+   "schoolId": "s_wfu",
+   "date": "2026-11-20T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Carswell 111",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12853347",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Fall Faculty & Guest Artist Concert will feature modern, jazz, contemporary and classical ballet choreography by our dance faculty and renowned guest choreographers, under the direction of Nina Lucas Rice. This fall faculty choreographers include Chris Martin, Tina Yarborough",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12779683",
+   "type": "event",
+   "title": "Fall Faculty and Guest Artist Dance Concert",
+   "host": "Wake the Arts",
+   "schoolId": "s_wfu",
+   "date": "2026-11-21T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Tedford Stage, Scales Fine Arts Center",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12779683",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Fall Faculty & Guest Artist Concert will feature modern, jazz, contemporary and classical ballet choreography by our dance faculty and renowned guest choreographers, under the direction of Nina Lucas Rice. This fall faculty choreographers include Chris Martin, Tina Yarborough",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12779684",
+   "type": "event",
+   "title": "Fall Faculty and Guest Artist Dance Concert",
+   "host": "Wake the Arts",
+   "schoolId": "s_wfu",
+   "date": "2026-11-22T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Tedford Stage, Scales Fine Arts Center",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12779684",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "It's time to lock in! Join Zeta Chi for weekly study sessions focused on academic excellence, productivity, and accountability. Bring your assignments, your study materials, and your goals as we work together to stay focused and finish Finer!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12907386",
+   "type": "event",
+   "title": "Finer Focus Study Session",
+   "host": "Zeta Phi Beta Sorority, Incorporated",
+   "schoolId": "s_wfu",
+   "date": "2026-11-22T18:20:00.000Z",
+   "startTime": "13:20",
+   "place": {
+    "name": "Wellbeing Center A330",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12907386",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Fall Faculty & Guest Artist Concert will feature modern, jazz, contemporary and classical ballet choreography by our dance faculty and renowned guest choreographers, under the direction of Nina Lucas Rice. This fall faculty choreographers include Chris Martin, Tina Yarborough",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12779685",
+   "type": "event",
+   "title": "Fall Faculty and Guest Artist Dance Concert",
+   "host": "Wake the Arts",
+   "schoolId": "s_wfu",
+   "date": "2026-11-22T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Tedford Stage, Scales Fine Arts Center",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12779685",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Women's Volleyball against Clemson on Friday, November 27th at 3:00 P.M. at Varsity Arena",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "athletics"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12549070",
+   "type": "event",
+   "title": "Women's Volleyball vs Clemson",
+   "host": "Wake Forest Athletics",
+   "schoolId": "s_wfu",
+   "date": "2026-11-27T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Varsity Arena at Reynolds Gymnasium",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12549070",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for one of Wake Forest&rsquo;s most cherished traditions, Lighting of the Quad! Gather on Hearn Plaza on Monday, November 30th, starting at 7:00 PM as we celebrate the holiday season with lights, music, and community spirit. Watch as the Quad glows with hundreds of lights",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12789715",
+   "type": "event",
+   "title": "Lighting of the Quad",
+   "host": "Student Union",
+   "schoolId": "s_wfu",
+   "date": "2026-12-01T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Hearn Plaza",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12789715",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come drop-in anytime during Safe Hours to meet one of our Counselor/Advocates. You will have the opportunity to ask questions about the Safe Office, get to know our staff, and learn more about interpersonal violence. This is a drop-in event and does not require registration. Stay",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12940918",
+   "type": "event",
+   "title": "Safe Hours - Intercultural Center",
+   "host": "Safe Office",
+   "schoolId": "s_wfu",
+   "date": "2026-12-01T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Benson 346",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12940918",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for an interactive community space where gender explorers of all identities and experiences to join in community that centers non-binary and trans perspectives. Each session includes dinner and different discussions + activities! This space is open to all current WFU stud",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12517060",
+   "type": "event",
+   "title": "GendEx",
+   "host": "LGBTQ Center",
+   "schoolId": "s_wfu",
+   "date": "2026-12-01T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Benson 311",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12517060",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "FSL 101 is an educational event meant for students interested in joining the NPHC or UGC at some point during their collegiate career.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12865114",
+   "type": "event",
+   "title": "FSL 101",
+   "host": "Fraternity and Sorority Engagement",
+   "schoolId": "s_wfu",
+   "date": "2026-12-01T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Tribble Hall Detamble Auditorium",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12865114",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Calling all graduate students! Take a break and grab some FREE coffee and treats in the main lobby of Wake Downtown, courtesy of GSAS and the Medical School. Hang out and chat with other graduate students, or grab and go on the way to class. Remember that you can take the shuttle",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12527068",
+   "type": "event",
+   "title": "Wake Downtown Grad Student Coffee Hour",
+   "host": "Graduate School of Art & Sciences",
+   "schoolId": "s_wfu",
+   "date": "2026-12-02T13:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "Wake Downtown, Main Lobby",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12527068",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for a discussion space exploring the intersections of LGBTQ+ and neurodivergent identities through community building & support. The dates for NeuroQueer will take place on September 23rd, October 7th, October 21st, November 18th, and December 2nd from 5PM-6PM in Benson 3",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12526690",
+   "type": "event",
+   "title": "NeuroQueer",
+   "host": "LGBTQ Center",
+   "schoolId": "s_wfu",
+   "date": "2026-12-02T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Benson 311",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12526690",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The annual Night Market is the signature event of International Education Week (IEW), serving as a reminder that college and university campuses play a special part in shaping the awareness of our role in global living. Wake Forest University students, faculty, and staff are enco",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12932643",
+   "type": "event",
+   "title": "IEW Night Market",
+   "host": "Center for Global Programs and Studies",
+   "schoolId": "s_wfu",
+   "date": "2026-12-02T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Manchester Plaza",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12932643",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Find it hard to focus? Want to wind your week down right? Join the Graduate School of Arts & Sciences and the Writing Center every Thursday this fall beginning September 3rd for graduate student coworking hours! You bring whatever it is you need to get done, and we&rsquo;ll bring",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12525380",
+   "type": "event",
+   "title": "Grad Student Coworking Hours",
+   "host": "Graduate School of Art & Sciences",
+   "schoolId": "s_wfu",
+   "date": "2026-12-03T13:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "Writing Center, ZSR 426",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12525380",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come drop-in anytime during Safe Hours to meet one of our Counselor/Advocates. You will have the opportunity to ask questions about the Safe Office, get to know our staff, and learn more about interpersonal violence. This is a drop-in event and does not require registration. Stay",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12940874",
+   "type": "event",
+   "title": "Safe Hours - Women's Center",
+   "host": "Safe Office",
+   "schoolId": "s_wfu",
+   "date": "2026-12-03T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Benson 314",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12940874",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "QinFolk is a space that explores the intersectional experiences of BIPOC LGBTQ+ students in a supportive and affirming environment that fosters community building. This space centers the experiences of queer and trans people of color but all are welcome! The dates for this are Se",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12516048",
+   "type": "event",
+   "title": "QinFolk",
+   "host": "LGBTQ Center",
+   "schoolId": "s_wfu",
+   "date": "2026-12-03T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Benson 311",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "sourceUrl": "https://thelink.wfu.edu/event/12516048",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "All are Welcome for our weekly dinners. Bring friends, enjoy food, meet cool people, and just relax and be encouraged for the rest of your week. No need to RSVP, but please reach out and let us know if you have dietary restrictions.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T23:39:08.600Z",
+   "createdAt": "2026-11-03T23:39:08.600Z",
+   "id": "op_wfu_eg_12581221",
+   "type": "event",
+   "title": "LSM Thursday Night Dinner",
+   "host": "Lutheran Student Movement",
+   "schoolId": "s_wfu",
+   "date": "2026-12-03T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "BSU Lounge (underneath the Deacon Shop in Kitchin)",
+    "lat": 36.134,
+    "lng": -80.2773
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://thelink.wfu.edu/event/12581221",
+   "sourceLabel": "Student org events"
+  }
+ ]
+}
