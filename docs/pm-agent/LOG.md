@@ -1696,3 +1696,8 @@
 - Fixed: share-tracking tags in club links (instagram …?igsh=…&utm_source=qr, ?hl=en) are dropped when links are shown (live app and preview). Test added.
 - Spot check: Michigan 2 clubs (Engage API), Brown 2 (club pages), UCLA 1 (RCO search) — links match; only the tracking tags differed (fixed above).
 - Deployed cd99024 (checks passed, /preview/s_unc and /preview/s_umich PAGE ERROR 0).
+
+## 2026-11-03 05:33 run
+- Minnesota Schedule Builder: search returns at most 25 course ids and there is no subject/term list type — not usable for a full schedule; courses.umn.edu JSON stays the source (TLS-blocked here, needs Railway). Queued.
+- New Rice class reader (courses.rice.edu QUERY per subject: one row per section, "9:25AM - 10:40AM TR", titles title-cased from all caps, graduate 500-level included). Test with COMP 181/182/510/552.
+- Spot check clubs: Wisconsin Engineering EXPO, UW Society of Physics Students (Linktree), UCI Merage Consulting Association, Lehigh Outing Club, Tufts Biotech Group — each website names the club.
