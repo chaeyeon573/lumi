@@ -1,7 +1,7 @@
 {
- "collectedAt": "2026-11-03T14:46:23.258Z",
- "boards": 165,
- "boardsOk": 165,
+ "collectedAt": "2026-11-03T15:43:01.643Z",
+ "boards": 166,
+ "boardsOk": 166,
  "jobs": [
   {
    "id": "job_workday_adobe_wd5_myworkdayjobs_com_adobe_external_experienced_r172998",
@@ -376,6 +376,1363 @@
    "audience": [],
    "updatedAt": "2026-10-26T22:02:42-04:00",
    "source": "greenhouse"
+  },
+  {
+   "id": "job_amazon_amazon_3127861",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2026 Applied Science Internship - United States, PhD Student Science Recruiting, Frontier AI & Robotics",
+   "location": "San Francisco, California, USA",
+   "url": "https://www.amazon.jobs/en/jobs/3127861/2026-applied-science-internship-united-states-phd-student-science-recruiting-frontier-ai-robotics",
+   "kind": "internship",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2025-11-17T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10394156",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2026 Fall Applied Science Internship - Automated Reasoning - United States, PhD Student Science Recruiting",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10394156/2026-fall-applied-science-internship-automated-reasoning-united-states-phd-student-science-recruiting",
+   "kind": "internship",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-04-16T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10587855",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 Amazon Air (Network Control Center) Supply Chain Manager Intern",
+   "location": "Erlanger, Kentucky, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10587855/2027-amazon-air-network-control-center-supply-chain-manager-intern",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-23T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10587854",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 Amazon Air Supply Chain Manager Intern",
+   "location": "Bellevue, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10587854/2027-amazon-air-supply-chain-manager-intern",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-23T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10552930",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 Applied Science Internship - Automated Reasoning - United States, PhD Student Science Recruiting, Automated Reasoning",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10552930/2027-applied-science-internship-automated-reasoning-united-states-phd-student-science-recruiting-automated-reasoning",
+   "kind": "internship",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-09-17T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10564601",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 Applied Science Internship - Computer Vision - United States, PhD Student Science Recruiting",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10564601/2027-applied-science-internship-computer-vision-united-states-phd-student-science-recruiting",
+   "kind": "internship",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10564589",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 Applied Science Internship - Gen AI & Large Language Models - United States, PhD Student Science Recruiting",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10564589/2027-applied-science-internship-gen-ai-large-language-models-united-states-phd-student-science-recruiting",
+   "kind": "internship",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10564593",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 Applied Science Internship - Natural Language Processing and Speech Technologies - United States, PhD Student Science Recruiting",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10564593/2027-applied-science-internship-natural-language-processing-and-speech-technologies-united-states-phd-student-science-recruiting",
+   "kind": "internship",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10564598",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 Applied Science Internship - Recommender Systems/ Information Retrieval (Machine Learning) - United States, PhD Student Science Recruiting",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10564598/2027-applied-science-internship-recommender-systems-information-retrieval-machine-learning-united-states-phd-student-science-recruiting",
+   "kind": "internship",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10564597",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 Applied Science Internship - Reinforcement Learning & Optimization (Machine Learning) - United States, PhD Student Science Recruiting",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10564597/2027-applied-science-internship-reinforcement-learning-optimization-machine-learning-united-states-phd-student-science-recruiting",
+   "kind": "internship",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10591833",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 Applied Science Internship - Robotics - United States",
+   "location": "North Reading, Massachusetts, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10591833/2027-applied-science-internship-robotics-united-states",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-28T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10564586",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 Applied Science Internship - United States - Master's Student Science Recruiting",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10564586/2027-applied-science-internship-united-states-master-s-student-science-recruiting",
+   "kind": "internship",
+   "audience": [
+    "masters"
+   ],
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10564600",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 Applied Science Internship - United States, PhD Student Science Recruiting Frontier AI & Robotics, Frontier AI & Robotics",
+   "location": "San Francisco, California, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10564600/2027-applied-science-internship-united-states-phd-student-science-recruiting-frontier-ai-robotics-frontier-ai-robotics",
+   "kind": "internship",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10556927",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 Data Science Internship - United States, PhD or Masters Student",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10556927/2027-data-science-internship-united-states-phd-or-masters-student",
+   "kind": "internship",
+   "audience": [
+    "phd",
+    "masters"
+   ],
+   "updatedAt": "2026-09-22T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10564599",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 Frontier AI & Robotics Internship (Undergraduate) - United States, Frontier AI & Robotics, Frontier AI & Robotics",
+   "location": "San Francisco, California, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10564599/2027-frontier-ai-robotics-internship-undergraduate-united-states-frontier-ai-robotics-frontier-ai-robotics",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10492198",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 MBA Finance Leadership Development Program (FLDP) Internship",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10492198/2027-mba-finance-leadership-development-program-fldp-internship",
+   "kind": "internship",
+   "audience": [
+    "masters"
+   ],
+   "updatedAt": "2026-08-04T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10491603",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 MBA Leadership Development Program (MLDP) Intern",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10491603/2027-mba-leadership-development-program-mldp-intern",
+   "kind": "internship",
+   "audience": [
+    "masters"
+   ],
+   "updatedAt": "2026-08-04T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10556930",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 Quantum Applied Science Internship, Quantum Technologies team",
+   "location": "Pasadena, California, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10556930/2027-quantum-applied-science-internship-quantum-technologies-team",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-09-22T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10564602",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 Research Science Internship - United States, PhD Student Science Recruiting",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10564602/2027-research-science-internship-united-states-phd-student-science-recruiting",
+   "kind": "internship",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10564585",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "2027 Summer Applied Science Internship - Information & Knowledge Management (Machine Learning)- United States, PhD Student Science Recruiting",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10564585/2027-summer-applied-science-internship-information-knowledge-management-machine-learning-united-states-phd-student-science-recruiting",
+   "kind": "internship",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10587748",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Amazon Finance Rotational Program (AFRP) - Business Unit Finance, Early Career - 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10587748/amazon-finance-rotational-program-afrp-business-unit-finance-early-career-2027",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-10-23T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10594729",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Amazon Finance Rotational Program (AFRP) Accounting Intern – Summer 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10594729/amazon-finance-rotational-program-afrp-accounting-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-02T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10507283",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Amazon Finance Rotational Program (AFRP), Accounting, Early Career - 2026",
+   "location": "Culver City, California, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10507283/amazon-finance-rotational-program-afrp-accounting-early-career-2026",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-08-19T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10495055",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Area Maintenance Manager Intern - Summer 2027 (Nationwide)",
+   "location": "Dallas, Texas, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10495055/area-maintenance-manager-intern-summer-2027-nationwide",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-06T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10493095",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Area Manager Intern - Summer 2027 (AL, FL, GA, NC, SC), University Recruiting",
+   "location": "Atlanta, Georgia, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10493095/area-manager-intern-summer-2027-al-fl-ga-nc-sc-university-recruiting",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-05T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10494789",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Area Manager Intern - Summer 2027 (California), University Recruiting",
+   "location": "Rialto, California, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10494789/area-manager-intern-summer-2027-california-university-recruiting",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-06T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10493373",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Area Manager Intern - Summer 2027 (NY, NJ, PA, DE, MD, CT, MA, NH, RI, VT, ME)",
+   "location": "Somerset, New Jersey, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10493373/area-manager-intern-summer-2027-ny-nj-pa-de-md-ct-ma-nh-ri-vt-me",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-05T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10493126",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Area Manager Intern - Summer 2027 (WA, OR, ID, MT, WY, NV, UT, CO, AZ, NM), University Recruiting",
+   "location": "Phoenix, Arizona, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10493126/area-manager-intern-summer-2027-wa-or-id-mt-wy-nv-ut-co-az-nm-university-recruiting",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-05T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10493329",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Area Manager Intern – Summer 2027 (MO, OH, KY)",
+   "location": "Akron, Ohio, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10493329/area-manager-intern-summer-2027-mo-oh-ky",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-05T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10493586",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Area Manager Intern – Summer 2027 (ND, SD, NE, KS, MN, IA, WI, IL, MI, IN)",
+   "location": "Matteson, Illinois, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10493586/area-manager-intern-summer-2027-nd-sd-ne-ks-mn-ia-wi-il-mi-in",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-05T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10493325",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Area Manager Intern – Summer 2027 (PA, WV, VA)",
+   "location": "Fredericksburg, Virginia, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10493325/area-manager-intern-summer-2027-pa-wv-va",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-05T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10493331",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Area Manager Intern – Summer 2027 (Texas)",
+   "location": "Dallas, Texas, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10493331/area-manager-intern-summer-2027-texas",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-05T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10493330",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Area Manager Intern – Summer 2027 (TN, LA, OK, MS, AR), University Recruiting",
+   "location": "Nashville, Tennessee, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10493330/area-manager-intern-summer-2027-tn-la-ok-ms-ar-university-recruiting",
+   "kind": "internship",
+   "audience": [
+    "masters"
+   ],
+   "updatedAt": "2026-08-05T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10576621",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "ASIC Engineer Early Career - 2027, Project Leo",
+   "location": "Redmond, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10576621/asic-engineer-early-career-2027-project-leo",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-10-13T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10558918",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "ASIC Engineer I, Annapurna Labs, Early Career - 2027",
+   "location": "Cupertino, California, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10558918/asic-engineer-i-annapurna-labs-early-career-2027",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-09-24T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10517535",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "ASIC Engineer Intern, Annapurna Labs - 2027",
+   "location": "Cupertino, California, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10517535/asic-engineer-intern-annapurna-labs-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-27T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10576619",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "ASIC Engineer Intern, Summer 2027",
+   "location": "Sunnyvale, California, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10576619/asic-engineer-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-13T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10585774",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Associate Delivery Consultant Intern, AWS Professional Services",
+   "location": "Arlington, Virginia, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10585774/associate-delivery-consultant-intern-aws-professional-services",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-21T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10585775",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Associate Delivery Consultant Intern, National Security, AWS Professional Services",
+   "location": "Arlington, Virginia, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10585775/associate-delivery-consultant-intern-national-security-aws-professional-services",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-21T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10594714",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Associate Engagement Manager Intern- National Security, AWS Professional Services",
+   "location": "Arlington, Virginia, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10594714/associate-engagement-manager-intern-national-security-aws-professional-services",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-02T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10594713",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Associate Engagement Manager Intern, AWS Professional Services",
+   "location": "Arlington, Virginia, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10594713/associate-engagement-manager-intern-aws-professional-services",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-02T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10501526",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Automation Engineer Intern, (Nationwide) - Summer 2027",
+   "location": "Mt Juliet, Tennessee, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10501526/automation-engineer-intern-nationwide-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-13T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10575250",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Business Analyst Intern – Summer 2027",
+   "location": "Bellevue, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10575250/business-analyst-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-09T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10553765",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Business Intelligence Engineer Internship - 2027 (US)",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10553765/business-intelligence-engineer-internship-2027-us",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-09-18T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10532290",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Business Strategy & Execution Operations Engineering Intern Spring and Summer 2027 (Bellevue, WA )",
+   "location": "Bellevue, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10532290/business-strategy-execution-operations-engineering-intern-spring-and-summer-2027-bellevue-wa",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-09-08T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10558923",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Cloud Hardware Development Engineer I, Annapurna Labs, Early Career - 2027",
+   "location": "Austin, Texas, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10558923/cloud-hardware-development-engineer-i-annapurna-labs-early-career-2027",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-09-24T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10517649",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Cloud Hardware Development Engineer Intern, Annapurna Labs - 2027",
+   "location": "Austin, Texas, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10517649/cloud-hardware-development-engineer-intern-annapurna-labs-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-27T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10578771",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Communications Assistant Summer Intern – Summer 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10578771/communications-assistant-summer-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-14T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10584130",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Creative Marketing Intern – Summer 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10584130/creative-marketing-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-20T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10580807",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Customer Acquisition Representative Intern – Summer 2027",
+   "location": "Arlington, Virginia, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10580807/customer-acquisition-representative-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-19T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10537998",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Data Center Engineering Operations Technician Internship",
+   "location": "Sterling, Virginia, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10537998/data-center-engineering-operations-technician-internship",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-09-11T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10593054",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Data Center Infrastructure Engineer Intern, Summer 2027 - Midwest / Southeast",
+   "location": "Austin, Texas, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10593054/data-center-infrastructure-engineer-intern-summer-2027-midwest-southeast",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-29T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10513820",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Data Engineer I, Fire TV",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10513820/data-engineer-i-fire-tv",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-08-25T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10553907",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Data Engineer Internship - 2027 (US)",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10553907/data-engineer-internship-2027-us",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-09-18T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10590290",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Database Engineer Intern - Summer 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10590290/database-engineer-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-27T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10573570",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Embedded Firmware Co-op, Amazon Robotics - Spring 2027",
+   "location": "North Reading, Massachusetts, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10573570/embedded-firmware-co-op-amazon-robotics-spring-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-08T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10575256",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "General Marketing Specialist Intern – Summer 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10575256/general-marketing-specialist-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-09T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10593569",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Graduate Pharmacist Intern, Amazon Pharmacy",
+   "location": "Plainfield, Indiana, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10593569/graduate-pharmacist-intern-amazon-pharmacy",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-30T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10553866",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Hardware Dev. Engineer I (Electrical), One Materials Handling System (OMHS)",
+   "location": "Bellevue, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10553866/hardware-dev-engineer-i-electrical-one-materials-handling-system-omhs",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-09-18T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10584121",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Hardware Development Engineer Intern , Winter 2027",
+   "location": "Bellevue, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10584121/hardware-development-engineer-intern-winter-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-20T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10578090",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Hardware Development Engineer Intern,  Summer 2027",
+   "location": "Sunnyvale, California, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10578090/hardware-development-engineer-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-13T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10535282",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Hardware Development Engineer Intern/Co-Op, ROBOTICS - 2027",
+   "location": "North Reading, Massachusetts, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10535282/hardware-development-engineer-intern-co-op-robotics-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-09-09T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10584122",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Industrial Design Engineer Intern , Summer 2027",
+   "location": "Bellevue, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10584122/industrial-design-engineer-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-20T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10536817",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Industrial Development Engineer Intern/Co-op, ROBOTICS - 2027",
+   "location": "North Reading, Massachusetts, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10536817/industrial-development-engineer-intern-co-op-robotics-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-09-10T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10503471",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Injury Prevention Specialist Intern",
+   "location": "Fresno, California, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10503471/injury-prevention-specialist-intern",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-17T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10586548",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Jr. Software Development Engineer - Detroit, MI, Jr. Developer Program",
+   "location": "Detroit, Michigan, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10586548/jr-software-development-engineer-detroit-mi-jr-developer-program",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-10-22T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10502807",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Loss Prevention Specialist Intern 2027",
+   "location": "Fort Worth, Texas, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10502807/loss-prevention-specialist-intern-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-14T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10590368",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Network Development Engineer Intern, 2027 Summer",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10590368/network-development-engineer-intern-2027-summer",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-27T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10532282",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Operations Engineering Field (Execution) Intern Spring and Summer 2027 (CA, CT, FL, TX)",
+   "location": "Cleburne, Texas, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10532282/operations-engineering-field-execution-intern-spring-and-summer-2027-ca-ct-fl-tx",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-09-08T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10491075",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Pathways Operations Manager Intern – Summer 2027 (Nationwide Opportunities)",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10491075/pathways-operations-manager-intern-summer-2027-nationwide-opportunities",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-03T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10584152",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "PDE Intern (Summer),  Summer 2027",
+   "location": "Sunnyvale, California, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10584152/pde-intern-summer-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-20T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10590600",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "PhD Economics Intern – Finance, Macroeconomics, and Forecasting - Summer 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10590600/phd-economics-intern-finance-macroeconomics-and-forecasting-summer-2027",
+   "kind": "internship",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-10-27T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10564111",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "PhD Economics Intern – Reduced Form Causal Inference, Summer 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10564111/phd-economics-intern-reduced-form-causal-inference-summer-2027",
+   "kind": "internship",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-09-29T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10564110",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "PhD Economics Intern – Structural IO, Summer 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10564110/phd-economics-intern-structural-io-summer-2027",
+   "kind": "internship",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-09-29T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10509639",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Product Manager Technical (PMT) Intern - Summer 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10509639/product-manager-technical-pmt-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-20T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10575248",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Program Manager Intern – Summer 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10575248/program-manager-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-09T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10575251",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Risk Specialist Intern – Summer 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10575251/risk-specialist-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-09T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_3145033",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Robotics - Hardware Development Engineer Intern/Co-op - 2026 (Robotics, Mechanical, Electrical, Hardware Test, Reliability, Failure Analysis, Operations, and more)",
+   "location": "Westborough, Massachusetts, USA",
+   "url": "https://www.amazon.jobs/en/jobs/3145033/robotics-hardware-development-engineer-intern-co-op-2026-robotics-mechanical-electrical-hardware-test-reliability-failure-analysis-operations-and-more",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2025-12-17T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10593902",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Software Development Engineer (Database) Early Career- 2027 (US)",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10593902/software-development-engineer-database-early-career-2027-us",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-10-30T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10571374",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Software Development Engineer (Embedded Systems) Intern, Amazon Leo - Summer 2027 (USA)",
+   "location": "Redmond, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10571374/software-development-engineer-embedded-systems-intern-amazon-leo-summer-2027-usa",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-07T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10558915",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Software Development Engineer I, Annapurna Labs, Early Career - 2027",
+   "location": "Cupertino, California, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10558915/software-development-engineer-i-annapurna-labs-early-career-2027",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-09-24T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10552937",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Software Development Engineer Intern - Summer 2027 (USA)",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10552937/software-development-engineer-intern-summer-2027-usa",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-09-17T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10559746",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Software Development Engineer Intern - Summer 2027 (USA) , Amazon Dedicated Cloud (ADC)",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10559746/software-development-engineer-intern-summer-2027-usa-amazon-dedicated-cloud-adc",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-09-24T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10567914",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Software Development Engineer Intern (Embedded Systems) - Summer 2027 (USA)",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10567914/software-development-engineer-intern-embedded-systems-summer-2027-usa",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-02T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10587999",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Software Development Engineer Intern, Amazon Leo - Summer 2027 (USA)",
+   "location": "Redmond, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10587999/software-development-engineer-intern-amazon-leo-summer-2027-usa",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-23T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10517567",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Software Development Engineer Intern, Annapurna Labs - 2027",
+   "location": "Cupertino, California, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10517567/software-development-engineer-intern-annapurna-labs-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-27T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10565667",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Software Development Engineer Intern, AWS Database - 2027 (US)",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10565667/software-development-engineer-intern-aws-database-2027-us",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-09-30T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10593521",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Software Development Engineer Intern, Machine Learning/Automated Reasoning- Summer 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10593521/software-development-engineer-intern-machine-learning-automated-reasoning-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-30T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10529525",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Software Development Engineer Intern/Co-Op, ROBOTICS -  2027",
+   "location": "North Reading, Massachusetts, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10529525/software-development-engineer-intern-co-op-robotics-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-09-04T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10529546",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Software Development Engineer, Amazon Dedicated Cloud, Early Career - 2026, Amazon Dedicated Cloud (ADC)",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10529546/software-development-engineer-amazon-dedicated-cloud-early-career-2026-amazon-dedicated-cloud-adc",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-09-04T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10513110",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Software Development Engineer, Amazon Leo, Early Career - 2026",
+   "location": "Redmond, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10513110/software-development-engineer-amazon-leo-early-career-2026",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-08-25T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10530257",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Software Development Engineer, Early Career",
+   "location": "Cambridge, Massachusetts, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10530257/software-development-engineer-early-career",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-09-04T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10583340",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Software Development Engineer, Early Career - 2027 (US)",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10583340/software-development-engineer-early-career-2027-us",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-10-19T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10567489",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Software Development Engineer, ROBOTICS, Early Career - 2027",
+   "location": "North Reading, Massachusetts, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10567489/software-development-engineer-robotics-early-career-2027",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-10-01T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10575252",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Sourcing Recruiter Intern – Summer 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10575252/sourcing-recruiter-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-09T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10534584",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Startup Project Manager (Execution) Intern Spring and Summer 2027 (CA, CT, TX)",
+   "location": "Cleburne, Texas, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10534584/startup-project-manager-execution-intern-spring-and-summer-2027-ca-ct-tx",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-09-09T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10534582",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Startup Project Manager (Support) Intern Spring and Summer 2027 (Bellevue, WA),",
+   "location": "Bellevue, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10534582/startup-project-manager-support-intern-spring-and-summer-2027-bellevue-wa",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-09-09T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10491574",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Summer 2027 AWS Human Resources Leadership Development Program Internship, AWS",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10491574/summer-2027-aws-human-resources-leadership-development-program-internship-aws",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-04T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10575291",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Supply Chain Manager Intern - Summer 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10575291/supply-chain-manager-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-09T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10535281",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Supply Chain Manager Intern/Co-op, ROBOTICS - 2027",
+   "location": "North Reading, Massachusetts, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10535281/supply-chain-manager-intern-co-op-robotics-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-09-09T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10587087",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "System Development Engineer Intern/Co-op, ROBOTICS -  2027",
+   "location": "North Reading, Massachusetts, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10587087/system-development-engineer-intern-co-op-robotics-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-22T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10588969",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Tech Ops Engineer Intern, 2027 Tech Ops Intern",
+   "location": "San Diego, California, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10588969/tech-ops-engineer-intern-2027-tech-ops-intern",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-26T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10592766",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "UX Designer Intern – Summer 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10592766/ux-designer-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-29T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10592767",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "UX Researcher Intern – Summer 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10592767/ux-researcher-intern-summer-2027",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-29T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10510811",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Workplace Health and Safety Specialist Intern - Summer 2027 (Nationwide)",
+   "location": "Detroit, Michigan, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10510811/workplace-health-and-safety-specialist-intern-summer-2027-nationwide",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-08-21T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10491475",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Workplace Health and Safety Specialist, Early Career – (2027) – East",
+   "location": "North Haven, Connecticut, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10491475/workplace-health-and-safety-specialist-early-career-2027-east",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-08-04T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
+   "id": "job_amazon_amazon_10500045",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Workplace Health and Safety Specialist, Early Career – (2027) – West",
+   "location": "Phoenix, Arizona, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10500045/workplace-health-and-safety-specialist-early-career-2027-west",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-08-12T00:00:00.000Z",
+   "source": "amazon"
   },
   {
    "id": "job_greenhouse_andurilindustries_4802172007",
@@ -6599,17 +7956,6 @@
    "source": "workday"
   },
   {
-   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10258965",
-   "company": "Northrop Grumman",
-   "sector": "Aerospace/Defense",
-   "title": "2027 Electrical Engineer Intern - Field Engineering - Baltimore MD",
-   "location": "United States-Maryland-Baltimore",
-   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Maryland-Baltimore/XMLNAME-2027-Electrical-Engineer-Intern---Field-Engineering---Baltimore-MD_R10258965",
-   "kind": "internship",
-   "audience": [],
-   "source": "workday"
-  },
-  {
    "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10253725",
    "company": "Northrop Grumman",
    "sector": "Aerospace/Defense",
@@ -6823,18 +8169,6 @@
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-08-14T19:07:13.459+00:00",
-   "source": "ashby"
-  },
-  {
-   "id": "job_ashby_notion_e66c6658_9e65_4c58_8db2_844628b6e8f8",
-   "company": "Notion",
-   "sector": "AI/Big Tech",
-   "title": "Software Engineer Intern (Winter 2027)",
-   "location": "San Francisco, California; New York, New York; United States",
-   "url": "https://jobs.ashbyhq.com/notion/e66c6658-9e65-4c58-8db2-844628b6e8f8",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-08-14T19:05:18.297+00:00",
    "source": "ashby"
   },
   {
@@ -7117,17 +8451,6 @@
    "title": "Differentiable Simulation Research Intern - Summer 2027",
    "location": "US, CA, Santa Clara",
    "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Differentiable-Simulation-Research-Intern---Summer-2027_JR2027561",
-   "kind": "internship",
-   "audience": [],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_nvidia_wd5_myworkdayjobs_com_nvidia_nvidiaexternalcareersite_jr2025907",
-   "company": "NVIDIA",
-   "sector": "Chips/Hardware",
-   "title": "Enterprise Platform Technical Marketing Engineer Intern - Summer 2027",
-   "location": "US, CA, Santa Clara",
-   "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Enterprise-Platform-Technical-Marketing-Engineer-Intern---Summer-2027_JR2025907",
    "kind": "internship",
    "audience": [],
    "source": "workday"
@@ -11044,7 +12367,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T09:37:43-05:00",
+   "updatedAt": "2026-11-03T10:24:08-05:00",
    "source": "greenhouse"
   },
   {
@@ -11092,7 +12415,7 @@
    "url": "https://job-boards.greenhouse.io/rocketlab/jobs/8003533003",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-11-03T09:37:37-05:00",
+   "updatedAt": "2026-11-03T10:23:55-05:00",
    "source": "greenhouse"
   },
   {
@@ -12211,7 +13534,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12225,7 +13548,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-02T13:27:51-05:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12239,21 +13562,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8631545002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "Jr. Sous Chef - Temporary",
-   "location": "Cape Canaveral, FL",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8631545002?gh_jid=8631545002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12267,7 +13576,21 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_spacex_8631545002",
+   "company": "SpaceX",
+   "sector": "Aerospace/Energy",
+   "title": "Jr. Sous Chef - Temporary",
+   "location": "Cape Canaveral, FL",
+   "url": "https://boards.greenhouse.io/spacex/jobs/8631545002?gh_jid=8631545002",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12281,7 +13604,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12295,7 +13618,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12309,7 +13632,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12323,7 +13646,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12337,7 +13660,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12351,7 +13674,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12365,7 +13688,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12379,21 +13702,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8696105002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "New Graduate Engineer, GNC- '26/'27 (Starlink)",
-   "location": "Redmond, WA",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8696105002?gh_jid=8696105002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12407,7 +13716,21 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_spacex_8696105002",
+   "company": "SpaceX",
+   "sector": "Aerospace/Energy",
+   "title": "New Graduate Engineer, GNC- '26/'27 (Starlink)",
+   "location": "Redmond, WA",
+   "url": "https://boards.greenhouse.io/spacex/jobs/8696105002?gh_jid=8696105002",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12421,7 +13744,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12435,7 +13758,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12449,7 +13772,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12463,7 +13786,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12477,7 +13800,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12491,7 +13814,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12505,7 +13828,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12519,7 +13842,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12533,7 +13856,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12547,7 +13870,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12561,7 +13884,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12575,7 +13898,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12589,7 +13912,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12603,7 +13926,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12617,7 +13940,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12631,7 +13954,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12645,7 +13968,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12659,7 +13982,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12673,7 +13996,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12687,21 +14010,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8729121002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "New Graduate Engineer, Software (Starship)",
-   "location": "Starbase, TX",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8729121002?gh_jid=8729121002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12715,7 +14024,21 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_spacex_8729121002",
+   "company": "SpaceX",
+   "sector": "Aerospace/Energy",
+   "title": "New Graduate Engineer, Software (Starship)",
+   "location": "Starbase, TX",
+   "url": "https://boards.greenhouse.io/spacex/jobs/8729121002?gh_jid=8729121002",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12729,35 +14052,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8724316002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "New Graduate Engineer, Software Security - '26/'27 (Starlink)",
-   "location": "Hawthorne, CA",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8724316002?gh_jid=8724316002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8696158002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "New Graduate Engineer, Software Security - '26/'27 (Starlink)",
-   "location": "Palo Alto, CA",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8696158002?gh_jid=8696158002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12771,7 +14066,35 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_spacex_8724316002",
+   "company": "SpaceX",
+   "sector": "Aerospace/Energy",
+   "title": "New Graduate Engineer, Software Security - '26/'27 (Starlink)",
+   "location": "Hawthorne, CA",
+   "url": "https://boards.greenhouse.io/spacex/jobs/8724316002?gh_jid=8724316002",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_spacex_8696158002",
+   "company": "SpaceX",
+   "sector": "Aerospace/Energy",
+   "title": "New Graduate Engineer, Software Security - '26/'27 (Starlink)",
+   "location": "Palo Alto, CA",
+   "url": "https://boards.greenhouse.io/spacex/jobs/8696158002?gh_jid=8696158002",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12785,7 +14108,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -12799,7 +14122,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T16:40:42-04:00",
+   "updatedAt": "2026-11-03T10:06:14-05:00",
    "source": "greenhouse"
   },
   {

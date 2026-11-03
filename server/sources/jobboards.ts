@@ -7,7 +7,7 @@
  * 게시판에 올라 있는 공고 = 지금 지원 가능한 공고 (내려가면 다음 수집에서 빠진다).
  */
 
-export type JobPlatform = 'greenhouse' | 'lever' | 'ashby' | 'workday';
+export type JobPlatform = 'greenhouse' | 'lever' | 'ashby' | 'workday' | 'amazon';
 export type Audience = 'phd' | 'masters' | 'undergrad' | 'newgrad' | 'postdoc';
 export interface StudentJob {
   id: string; company: string; sector?: string; title: string; location: string; url: string;
@@ -104,6 +104,26 @@ export async function fetchWorkday(token: string, pages = 3): Promise<RawJob[]> 
       const got = parseWorkday(await r.json(), host, site); for (const j of got) byId.set(j.id, j);
       if (got.length < 20) break;
       await new Promise((res) => setTimeout(res, 250));
+    }
+  }
+  return [...byId.values()];
+}
+
+/** amazon.jobs 공개 검색 JSON (search.json?base_query=…&country=USA) — 학생·신입 검색어로만, 검색어당 100개씩 3쪽까지 */
+export const AMAZON_QUERIES = ['intern', 'university graduate', 'new grad', 'phd', 'graduate', 'early career', 'entry level', 'student'];
+export function parseAmazon(d: unknown): RawJob[] {
+  const jobs = (d as { jobs?: { id_icims?: string; title?: string; normalized_location?: string; location?: string; job_path?: string; posted_date?: string }[] })?.jobs ?? [];
+  return jobs.filter((j) => j.id_icims && j.title && j.job_path).map((j) => ({ id: j.id_icims!, title: j.title!, location: j.normalized_location || j.location || '', url: `https://www.amazon.jobs${j.job_path}`, updatedAt: j.posted_date ? new Date(j.posted_date).toISOString() : undefined }));
+}
+export async function fetchAmazon(pages = 3): Promise<RawJob[]> {
+  const byId = new Map<string, RawJob>();
+  for (const q of AMAZON_QUERIES) {
+    for (let page = 0; page < pages; page++) {
+      const r = await fetch(`https://www.amazon.jobs/en/search.json?base_query=${encodeURIComponent(q)}&country=USA&result_limit=100&offset=${page * 100}&sort=recent`, { headers: { 'user-agent': 'AroundU-student-jobs', accept: 'application/json' } });
+      if (!r.ok) throw new Error(`amazon → ${r.status}`);
+      const got = parseAmazon(await r.json()); for (const j of got) byId.set(j.id, j);
+      if (got.length < 100) break;
+      await new Promise((res) => setTimeout(res, 400));
     }
   }
   return [...byId.values()];

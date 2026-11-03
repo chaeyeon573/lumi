@@ -48,3 +48,14 @@ test('Workday postings: grouped "N Locations" dropped (country unknown), US ones
   const out = toStudentJobs(raw, { platform: 'workday', token: 'nvidia.wd5.myworkdayjobs.com~nvidia~NVIDIAExternalCareerSite', company: 'NVIDIA' });
   assert.deepEqual(out.map((j) => [j.title, j.audience.join('+'), j.url]), [['DFT Engineer - New College Grad', 'newgrad', 'https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/DFT-Engineer_JR1']]);
 });
+
+test('amazon.jobs search.json: US student roles kept with their posting link', async () => {
+  const { parseAmazon } = await import('./sources/jobboards');
+  const raw = parseAmazon({ jobs: [
+    { id_icims: '1', title: 'Software Dev Engineer Intern, 2027', normalized_location: 'Seattle, Washington, USA', job_path: '/en/jobs/1/sde-intern' },
+    { id_icims: '2', title: 'Area Manager, CXO', normalized_location: 'Lynnwood, Washington, USA', job_path: '/en/jobs/2/area-manager' },
+    { id_icims: '3', title: 'Applied Scientist Intern - PhD', normalized_location: 'Toronto, Ontario, CAN', job_path: '/en/jobs/3/as' },
+  ] });
+  const out = toStudentJobs(raw, { platform: 'amazon', token: 'amazon', company: 'Amazon' });
+  assert.deepEqual(out.map((j) => [j.title, j.kind, j.url]), [['Software Dev Engineer Intern, 2027', 'internship', 'https://www.amazon.jobs/en/jobs/1/sde-intern']]);
+});
