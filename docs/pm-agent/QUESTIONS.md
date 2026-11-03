@@ -124,3 +124,9 @@ The live feed shows example posts with emoji ("coffee meetup tonight ☕", "New 
 **Options:** A) Hide emoji when showing posts, comments and profile text, the same way clubs are handled now (real users' emoji would be hidden too). B) Clean only our demo text and avatars; real users can still write emoji (needs a live DB update, so your OK). C) Leave as is.
 **Recommended:** B. Stripping what real users write feels like censoring them.
 **Answer:**
+
+### (11/03) Put grad / new-grad jobs into the live app?
+The live app already shows internships from 98 company job boards (refreshed every 12 hours on Railway, internships only). The new US jobs file has 146 boards (88 not in the live list) and adds new-grad / entry-level, PhD, master's and postdoc roles (967 postings now). It is a file only and visible at /preview/jobs.
+**Options:** A) Add the 88 boards and the new-grad/PhD/master's roles to the live feed (about 90 more API calls every 12 hours on Railway; small cost increase). B) Keep it as a file and refresh it from the agent; put it live later together with schools. C) Live feed for internships stays as is; only new-grad jobs go live.
+**Recommended:** A. The calls are light JSON and this is the content grad students and graduating seniors asked for.
+**Answer:**
