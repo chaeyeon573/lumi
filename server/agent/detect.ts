@@ -34,8 +34,8 @@ export async function detectOrgsPlatform(short: string, emailDomain: string, ove
     return n > 0 ? { platform: 'facetwp', host: override, sample: n } : null;
   }
   // 분류별 이름 목록 (Santa Clara CSI directory)
-  if (override && /scu\.edu\/csi\/organizations\/directory/.test(override)) {
-    const r = await get(override); const n = r.ok ? (r.text.match(/accordion-panel-\d+/g) ?? []).length : 0;
+  if (override && /scu\.edu\/csi\/organizations\/directory|sfe\.caltech\.edu\/student-engagement\/clubs/.test(override)) {
+    const r = await get(override); const n = r.ok ? (r.text.match(/accordion-panel-\d+|two-column-text-block__left/g) ?? []).length : 0;
     return n > 0 ? { platform: 'accordion', host: override, sample: n } : null;
   }
   // 분류별 하위 페이지 카드 (USF myUSF)

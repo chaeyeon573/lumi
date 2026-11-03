@@ -1,0 +1,3128 @@
+[
+ {
+  "id": "oc_caltech_dir_aceing_autism",
+  "name": "ACEing Autism",
+  "logo": {
+   "emoji": "AA",
+   "hue": 256
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_aero_association_of_caltech_aacit",
+  "name": "Aero Association of Caltech (AACIT)",
+  "logo": {
+   "emoji": "AA",
+   "hue": 304
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_american_institute_of_chemical_engineers_aiche",
+  "name": "American Institute of Chemical Engineers (AIChE)",
+  "logo": {
+   "emoji": "AI",
+   "hue": 40
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_apida",
+  "name": "APIDA+",
+  "logo": {
+   "emoji": "A",
+   "hue": 131
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_armenian_cultural_society_at_caltech",
+  "name": "Armenian Cultural Society at Caltech",
+  "logo": {
+   "emoji": "AC",
+   "hue": 96
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_sg_associated_students_of_the_california_institute_of_technology_ascit_",
+  "name": "Associated Students of the California Institute of Technology (ASCIT)",
+  "logo": {
+   "emoji": "AS",
+   "hue": 128
+  },
+  "type": "council",
+  "schoolId": "s_caltech",
+  "parent": "Student Government",
+  "verified": true,
+  "description": "The undergraduate student government at Caltech: events for undergrads and oversight of undergraduate clubs and club funding.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Website",
+    "url": "https://ascit.caltech.edu/"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_avien_at_caltech",
+  "name": "AViEN at Caltech",
+  "logo": {
+   "emoji": "A",
+   "hue": 168
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_ballet_club",
+  "name": "Ballet Club",
+  "logo": {
+   "emoji": "B",
+   "hue": 184
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_bild_bio_laboratory_devices_outreach_club",
+  "name": "BiLD (Bio-Laboratory Devices) Outreach Club",
+  "logo": {
+   "emoji": "BO",
+   "hue": 200
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_biotechnology_club",
+  "name": "Biotechnology Club",
+  "logo": {
+   "emoji": "B",
+   "hue": 312
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_black_ladies_association_of_caltech",
+  "name": "Black Ladies Association of Caltech",
+  "logo": {
+   "emoji": "BL",
+   "hue": 0
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_black_scientists_and_engineers_of_caltech",
+  "name": "Black Scientists and Engineers of Caltech",
+  "logo": {
+   "emoji": "BS",
+   "hue": 120
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_black_student_union",
+  "name": "Black Student Union",
+  "logo": {
+   "emoji": "BS",
+   "hue": 80
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_brazilian_student_association_at_caltech_brasa_caltech",
+  "name": "Brazilian Student Association at Caltech (BRASA Caltech)",
+  "logo": {
+   "emoji": "BS",
+   "hue": 184
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_built_beavers",
+  "name": "Built Beavers",
+  "logo": {
+   "emoji": "BB",
+   "hue": 136
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_business_innovation_club",
+  "name": "Business & Innovation Club",
+  "logo": {
+   "emoji": "BI",
+   "hue": 56
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_aarya",
+  "name": "Caltech Aarya",
+  "logo": {
+   "emoji": "A",
+   "hue": 176
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_advanced_degree_consulting_club",
+  "name": "Caltech Advanced Degree Consulting Club",
+  "logo": {
+   "emoji": "AD",
+   "hue": 112
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_ai_alignment_caia",
+  "name": "Caltech AI Alignment (CAIA)",
+  "logo": {
+   "emoji": "AA",
+   "hue": 136
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_air_and_outer_space",
+  "name": "Caltech Air and Outer Space",
+  "logo": {
+   "emoji": "AO",
+   "hue": 40
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_alpine_club",
+  "name": "Caltech Alpine Club",
+  "logo": {
+   "emoji": "A",
+   "hue": 328
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_amateur_astronomy_club_caac",
+  "name": "Caltech Amateur Astronomy Club (CAAC)",
+  "logo": {
+   "emoji": "AA",
+   "hue": 240
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_arab_student_union_asu",
+  "name": "Caltech Arab Student Union (ASU)",
+  "logo": {
+   "emoji": "AS",
+   "hue": 40
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_badminton_club",
+  "name": "Caltech Badminton Club",
+  "logo": {
+   "emoji": "B",
+   "hue": 168
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_ballroom_swing_dance_club",
+  "name": "Caltech Ballroom Swing Dance Club",
+  "logo": {
+   "emoji": "BS",
+   "hue": 24
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_basketball_club",
+  "name": "Caltech Basketball Club",
+  "logo": {
+   "emoji": "B",
+   "hue": 64
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_bike_lab",
+  "name": "Caltech Bike Lab",
+  "logo": {
+   "emoji": "BL",
+   "hue": 224
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_book_club",
+  "name": "Caltech Book Club",
+  "logo": {
+   "emoji": "B",
+   "hue": 152
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_c_drama_club",
+  "name": "Caltech C-Drama Club",
+  "logo": {
+   "emoji": "CD",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_canadians_club",
+  "name": "Caltech Canadians Club",
+  "logo": {
+   "emoji": "C",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_capoeira_club_ccc",
+  "name": "Caltech Capoeira Club (CCC)",
+  "logo": {
+   "emoji": "C",
+   "hue": 104
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_catholics",
+  "name": "Caltech Catholics",
+  "logo": {
+   "emoji": "C",
+   "hue": 24
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_caving_club",
+  "name": "Caltech Caving Club",
+  "logo": {
+   "emoji": "C",
+   "hue": 136
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_charcuterie_club",
+  "name": "Caltech Charcuterie Club",
+  "logo": {
+   "emoji": "C",
+   "hue": 200
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_chemistry_club",
+  "name": "Caltech Chemistry Club",
+  "logo": {
+   "emoji": "C",
+   "hue": 240
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_chess_club",
+  "name": "Caltech Chess Club",
+  "logo": {
+   "emoji": "C",
+   "hue": 312
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_chinese_association_caltechc",
+  "name": "Caltech Chinese Association (CaltechC)",
+  "logo": {
+   "emoji": "CA",
+   "hue": 176
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_christian_fellowship_ccf",
+  "name": "Caltech Christian Fellowship (CCF)",
+  "logo": {
+   "emoji": "CF",
+   "hue": 64
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_cinema_club",
+  "name": "Caltech Cinema Club",
+  "logo": {
+   "emoji": "C",
+   "hue": 176
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_co_ed_volleyball_club",
+  "name": "Caltech Co-Ed Volleyball Club",
+  "logo": {
+   "emoji": "CE",
+   "hue": 192
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_competitive_programming",
+  "name": "Caltech Competitive Programming",
+  "logo": {
+   "emoji": "CP",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_consulting_club",
+  "name": "Caltech Consulting Club",
+  "logo": {
+   "emoji": "C",
+   "hue": 272
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_cricket_club",
+  "name": "Caltech Cricket Club",
+  "logo": {
+   "emoji": "C",
+   "hue": 160
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_cubing_club",
+  "name": "Caltech Cubing Club",
+  "logo": {
+   "emoji": "C",
+   "hue": 312
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_dance_club",
+  "name": "Caltech Dance Club",
+  "logo": {
+   "emoji": "D",
+   "hue": 240
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_engineers_without_borders",
+  "name": "Caltech Engineers Without Borders",
+  "logo": {
+   "emoji": "EW",
+   "hue": 72
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_fiber_arts_circle",
+  "name": "Caltech Fiber Arts Circle",
+  "logo": {
+   "emoji": "FA",
+   "hue": 32
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_hispanic_and_latino_association_chla",
+  "name": "Caltech Hispanic and Latino Association (CHLA)",
+  "logo": {
+   "emoji": "HL",
+   "hue": 280
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_ieee_institute_of_electrical_and_electronics_enginee",
+  "name": "Caltech IEEE (Institute of Electrical and Electronics Engineers)",
+  "logo": {
+   "emoji": "I",
+   "hue": 168
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_igem",
+  "name": "Caltech iGEM",
+  "logo": {
+   "emoji": "I",
+   "hue": 160
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_japanese_student_association",
+  "name": "Caltech Japanese Student Association",
+  "logo": {
+   "emoji": "JS",
+   "hue": 168
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_math_club",
+  "name": "Caltech Math Club",
+  "logo": {
+   "emoji": "M",
+   "hue": 328
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_math_meet_club",
+  "name": "Caltech Math Meet Club",
+  "logo": {
+   "emoji": "MM",
+   "hue": 176
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_mathathon_club",
+  "name": "Caltech Mathathon Club",
+  "logo": {
+   "emoji": "M",
+   "hue": 176
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_medlife_pre_medical_society",
+  "name": "Caltech MedLife & Pre-Medical Society",
+  "logo": {
+   "emoji": "MP",
+   "hue": 32
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_medtech",
+  "name": "CalTech MedTech",
+  "logo": {
+   "emoji": "M",
+   "hue": 232
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_model_united_nations_club",
+  "name": "Caltech Model United Nations Club",
+  "logo": {
+   "emoji": "MU",
+   "hue": 144
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_muslim_student_association_msa",
+  "name": "Caltech Muslim Student Association (MSA)",
+  "logo": {
+   "emoji": "MS",
+   "hue": 64
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_optica_student_chapter",
+  "name": "Caltech Optica Student Chapter",
+  "logo": {
+   "emoji": "OS",
+   "hue": 192
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_outreach_community_organization_coco",
+  "name": "Caltech Outreach Community Organization (COCO)",
+  "logo": {
+   "emoji": "OC",
+   "hue": 16
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_physics_club",
+  "name": "Caltech Physics Club",
+  "logo": {
+   "emoji": "P",
+   "hue": 56
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_pool_and_snooker_club",
+  "name": "Caltech Pool and Snooker Club",
+  "logo": {
+   "emoji": "PS",
+   "hue": 112
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_puzzle_club",
+  "name": "Caltech Puzzle Club",
+  "logo": {
+   "emoji": "P",
+   "hue": 288
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_quantum_club",
+  "name": "Caltech Quantum Club",
+  "logo": {
+   "emoji": "Q",
+   "hue": 184
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_quiz_society_cqs",
+  "name": "Caltech Quiz Society (CQS)",
+  "logo": {
+   "emoji": "QS",
+   "hue": 120
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_racing",
+  "name": "Caltech Racing",
+  "logo": {
+   "emoji": "R",
+   "hue": 248
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_robotics_team_crt",
+  "name": "Caltech Robotics Team (CRT)",
+  "logo": {
+   "emoji": "RT",
+   "hue": 32
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_rugby_club",
+  "name": "Caltech Rugby Club",
+  "logo": {
+   "emoji": "R",
+   "hue": 128
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_science_olympiad_planning_team",
+  "name": "Caltech Science Olympiad Planning Team",
+  "logo": {
+   "emoji": "SO",
+   "hue": 232
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_science_policy_initiative_spin",
+  "name": "Caltech Science Policy Initiative (SPIn)",
+  "logo": {
+   "emoji": "SP",
+   "hue": 136
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_soccer_club",
+  "name": "Caltech Soccer Club",
+  "logo": {
+   "emoji": "S",
+   "hue": 88
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_society_of_women_engineers_swe",
+  "name": "Caltech Society of Women Engineers(SWE)",
+  "logo": {
+   "emoji": "SW",
+   "hue": 248
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_sports_analytics_club",
+  "name": "Caltech Sports Analytics Club",
+  "logo": {
+   "emoji": "SA",
+   "hue": 216
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_squash_club",
+  "name": "Caltech Squash Club",
+  "logo": {
+   "emoji": "S",
+   "hue": 184
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_surf_and_windsurf_club_cswc",
+  "name": "Caltech Surf and Windsurf Club (CSWC)",
+  "logo": {
+   "emoji": "SW",
+   "hue": 192
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_table_tennis_club",
+  "name": "Caltech Table Tennis Club",
+  "logo": {
+   "emoji": "TT",
+   "hue": 352
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_tai_chi_club",
+  "name": "Caltech Tai-Chi Club",
+  "logo": {
+   "emoji": "TC",
+   "hue": 208
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_tango_club",
+  "name": "Caltech Tango Club",
+  "logo": {
+   "emoji": "T",
+   "hue": 264
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_tennis_club",
+  "name": "Caltech Tennis Club",
+  "logo": {
+   "emoji": "T",
+   "hue": 152
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_turtle_club",
+  "name": "Caltech Turtle Club",
+  "logo": {
+   "emoji": "T",
+   "hue": 176
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_ultimate_frisbee_team_aftermath",
+  "name": "Caltech Ultimate Frisbee Team (Aftermath)",
+  "logo": {
+   "emoji": "UF",
+   "hue": 104
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_undergraduate_computer_science_club",
+  "name": "Caltech Undergraduate Computer Science Club",
+  "logo": {
+   "emoji": "UC",
+   "hue": 328
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_caltech_world_model_club_caltech_wm_club",
+  "name": "Caltech World Model Club (Caltech WM Club)",
+  "logo": {
+   "emoji": "WM",
+   "hue": 328
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_chabad_at_caltech",
+  "name": "Chabad at Caltech",
+  "logo": {
+   "emoji": "C",
+   "hue": 88
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_cheese_society",
+  "name": "Cheese Society",
+  "logo": {
+   "emoji": "CS",
+   "hue": 0
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_cit_caltech_bond_club",
+  "name": "CIT, Caltech BOND Club",
+  "logo": {
+   "emoji": "CB",
+   "hue": 352
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_club_latino",
+  "name": "Club Latino",
+  "logo": {
+   "emoji": "L",
+   "hue": 160
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_equiscience_riding_club",
+  "name": "EquiScience riding club",
+  "logo": {
+   "emoji": "ER",
+   "hue": 128
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_extracurricular_players_at_california_institute_of_technolog",
+  "name": "EXtracurricular PLayers at California Institute of Technology (EXPLiCIT)",
+  "logo": {
+   "emoji": "EP",
+   "hue": 112
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_film_photography_club",
+  "name": "Film Photography Club",
+  "logo": {
+   "emoji": "FP",
+   "hue": 288
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_form_fashion_outreach_research_movement",
+  "name": "FORM (Fashion, Outreach, Research, Movement)",
+  "logo": {
+   "emoji": "F",
+   "hue": 8
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_friends_of_iranian_culture_at_california_institute_of_techno",
+  "name": "Friends of Iranian Culture at California Institute of Technology (FICCIT)",
+  "logo": {
+   "emoji": "FI",
+   "hue": 184
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_gender_minorities_women_in_physics_math_and_astronomy_gwipma",
+  "name": "Gender Minorities & Women in Physics, Math, and Astronomy (GWiPMA)",
+  "logo": {
+   "emoji": "GM",
+   "hue": 272
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_graduate_christian_fellowship",
+  "name": "Graduate Christian Fellowship",
+  "logo": {
+   "emoji": "GC",
+   "hue": 208
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_hacktech_by_caltech",
+  "name": "Hacktech by Caltech",
+  "logo": {
+   "emoji": "HB",
+   "hue": 208
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_hellenic_students_association",
+  "name": "Hellenic Students' Association",
+  "logo": {
+   "emoji": "HS",
+   "hue": 264
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_hyrox_at_caltech",
+  "name": "HYROX at Caltech",
+  "logo": {
+   "emoji": "H",
+   "hue": 32
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_international_student_association_of_caltech_isac",
+  "name": "International Student Association of Caltech (ISAC)",
+  "logo": {
+   "emoji": "IS",
+   "hue": 264
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_korean_students_association_ksa",
+  "name": "Korean Students Association (KSA)",
+  "logo": {
+   "emoji": "KS",
+   "hue": 280
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_medical_ethics_forum_cases_and_conscience",
+  "name": "Medical Ethics Forum: Cases and Conscience",
+  "logo": {
+   "emoji": "ME",
+   "hue": 304
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_organization_of_associated_students_from_the_indian_subconti",
+  "name": "Organization of Associated Students from the Indian Subcontinent (OASIS)",
+  "logo": {
+   "emoji": "OA",
+   "hue": 152
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_out_of_context_a_capella_ooc",
+  "name": "Out of Context A Capella (OoC)",
+  "logo": {
+   "emoji": "OC",
+   "hue": 136
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_padel_club",
+  "name": "Padel Club",
+  "logo": {
+   "emoji": "P",
+   "hue": 195
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_palestinian_cultural_club",
+  "name": "Palestinian Cultural Club",
+  "logo": {
+   "emoji": "PC",
+   "hue": 200
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_poker_club",
+  "name": "Poker club",
+  "logo": {
+   "emoji": "P",
+   "hue": 44
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_prism",
+  "name": "PRISM",
+  "logo": {
+   "emoji": "P",
+   "hue": 282
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_propulsion_aeronautics_and_rocket_systems_engineering_at_cal",
+  "name": "Propulsion, Aeronautics, and Rocket Systems Engineering at Caltech (PARSEC)",
+  "logo": {
+   "emoji": "PA",
+   "hue": 184
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_resonance_music_mind_and_medicine_society",
+  "name": "Resonance: Music, Mind, and Medicine Society",
+  "logo": {
+   "emoji": "RM",
+   "hue": 272
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_rhythm_gaming_club",
+  "name": "Rhythm Gaming Club",
+  "logo": {
+   "emoji": "RG",
+   "hue": 304
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_saudi_student_association_at_caltech_ssa_caltech",
+  "name": "Saudi Student Association at Caltech (SSA @ Caltech)",
+  "logo": {
+   "emoji": "SS",
+   "hue": 192
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_south_asian_student_association_sasa",
+  "name": "South Asian Student Association (SASA)",
+  "logo": {
+   "emoji": "SA",
+   "hue": 176
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_sparc_labs",
+  "name": "SPARC Labs",
+  "logo": {
+   "emoji": "SL",
+   "hue": 352
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_strings_club",
+  "name": "Strings Club",
+  "logo": {
+   "emoji": "S",
+   "hue": 232
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_student_investment_fund_sif",
+  "name": "Student Investment Fund (SIF)",
+  "logo": {
+   "emoji": "SI",
+   "hue": 208
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_students_for_socialism_at_caltech_sfs",
+  "name": "Students for Socialism at Caltech (SFS)",
+  "logo": {
+   "emoji": "SS",
+   "hue": 8
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_techlit",
+  "name": "TechLit",
+  "logo": {
+   "emoji": "T",
+   "hue": 2
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_the_puerto_rican_student_association_at_caltech_prsac",
+  "name": "The Puerto Rican Student Association at Caltech (PRSAC)",
+  "logo": {
+   "emoji": "PR",
+   "hue": 216
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_the_startup_club",
+  "name": "The Startup Club",
+  "logo": {
+   "emoji": "S",
+   "hue": 72
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_turkish_student_association",
+  "name": "Turkish Student Association",
+  "logo": {
+   "emoji": "TS",
+   "hue": 168
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_undergraduate_journal_club",
+  "name": "Undergraduate Journal Club",
+  "logo": {
+   "emoji": "UJ",
+   "hue": 312
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_united_federation_of_techers",
+  "name": "United Federation of Techers",
+  "logo": {
+   "emoji": "UF",
+   "hue": 176
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_women_in_biology_healthcare",
+  "name": "Women in Biology & Healthcare",
+  "logo": {
+   "emoji": "WB",
+   "hue": 344
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_women_in_galcit_wigalcit",
+  "name": "Women in GALCIT (WiGALCIT)",
+  "logo": {
+   "emoji": "WG",
+   "hue": 240
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_womxn_in_eas_wieas",
+  "name": "Womxn in EAS (WiEAS)",
+  "logo": {
+   "emoji": "WE",
+   "hue": 8
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ },
+ {
+  "id": "oc_caltech_dir_wooden_bat_club",
+  "name": "Wooden Bat Club",
+  "logo": {
+   "emoji": "WB",
+   "hue": 208
+  },
+  "type": "club",
+  "schoolId": "s_caltech",
+  "verified": false,
+  "description": "",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Directory",
+    "url": "https://sfe.caltech.edu/student-engagement/clubs"
+   }
+  ]
+ }
+]

@@ -1,6 +1,5 @@
 id,name,short,email_domain,region,lat,lng,orgs_host,courses_source,catalog_url,research_source,events_source
 s_princeton,Princeton University,princeton,princeton.edu,Princeton,40.3431,-74.6551,,,,,
-s_caltech,Caltech,caltech,caltech.edu,Pasadena,34.1377,-118.1253,,,,,
 s_brown,Brown University,brown,brown.edu,Providence,41.8268,-71.4025,,,https://bulletin.brown.edu/,,
 s_ucsd,UC San Diego,ucsd,ucsd.edu,La Jolla,32.8801,-117.2340,,,,,
 s_illinois,University of Illinois Urbana-Champaign,illinois,illinois.edu,Urbana,40.1020,-88.2272,,,https://catalog.illinois.edu/,,

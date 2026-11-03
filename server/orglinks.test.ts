@@ -107,3 +107,14 @@ test('recruitmentLabel: readable one-liners', async () => {
   assert.deepEqual(recruitmentLabel({ title: '', period: '', open: true, mode: 'deadline', deadline: '2026-10-01' }, '2026-11-02'), { text: 'Applications closed', open: false });
   assert.equal(recruitmentLabel({ title: '', period: 'Fall', open: false, mode: 'cycle' })?.text, 'Recruits in Fall');
 });
+
+test('Caltech SFE club list: approved-club names only, no page text', async () => {
+  const { readFileSync } = await import('node:fs');
+  const { parseAccordionDirectory, namedOrgToOrg } = await import('./sources/orglinks');
+  const list = parseAccordionDirectory(readFileSync(new URL('./fixtures/caltech-clubs.html', import.meta.url), 'utf8'));
+  assert.equal(list.length, 124);
+  assert.equal(list[0].name, 'ACEing Autism');
+  assert.ok(!list.some((x) => /Help Desk|reimbursement|Financial Hub/.test(x.name)));
+  const orgs = list.map((x) => namedOrgToOrg(x, 's_caltech', 'https://sfe.caltech.edu/student-engagement/clubs'));
+  assert.equal(orgs.find((o) => o.name.startsWith('Organization of Associated Students'))?.type, 'club');
+});

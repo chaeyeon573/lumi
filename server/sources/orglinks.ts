@@ -137,6 +137,12 @@ export function facetCardToOrg(c: FacetCard, schoolId: string, listUrl: string):
 export interface NamedOrg { name: string; category: string }
 export function parseAccordionDirectory(html: string): NamedOrg[] {
   const out: NamedOrg[] = [];
+  // Caltech SFE 클럽 페이지: 이름만 <p> 로 두 칸에 나열 (two-column-text-block) — 설명·연락처는 학교 로그인 뒤라 이름만
+  const at = html.search(/list of approved clubs/i);
+  const section = at < 0 ? '' : html.slice(at, (html.indexOf('</section>', html.indexOf('two-column-text-block__row', at)) + 1 || html.length));
+  for (const col of section.matchAll(/<div class="two-column-text-block__(?:left|right)-column-text[^"]*">\s*<div class="rich-text">([\s\S]*?)<\/div>/g)) {
+    for (const p of col[1].matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)) { const name = strip(p[1]); if (name && name.length < 120) out.push({ name, category: '' }); }
+  }
   for (const m of html.matchAll(/<div id="d\.en\.\d+" class="default-accordion[\s\S]*?(?=<div id="d\.en\.\d+" class="default-accordion|$)/g)) {
     const block = m[0];
     const category = strip(/<h[23][^>]*>([\s\S]*?)<\/h[23]>/.exec(block)?.[1] ?? '');
@@ -148,8 +154,8 @@ export function parseAccordionDirectory(html: string): NamedOrg[] {
 export function namedOrgToOrg(o: NamedOrg, schoolId: string, listUrl: string): Organization {
   const text = `${o.name} ${o.category}`;
   // “(Business Coed Fraternity)” 처럼 이름 뒤 괄호 설명은 분류 말 — 직업·학술 그릭(전문 프래터니티)도 greek 으로
-  const type: Organization['type'] = /\bcouncil\b/i.test(o.name) && GREEK_RE.test(text) ? 'council' : GREEK_RE.test(o.name) ? 'greek' : COUNCIL_RE.test(o.name) ? 'council' : 'club';
-  const words = o.name.replace(/\([^)]*\)/g, ' ').replace(/[^A-Za-z0-9 ]+/g, ' ').split(/\s+/).filter((w) => w && !/^(of|the|at|and|for|in|scu|santa|clara|club)$/i.test(w));
+  const type: Organization['type'] = /\bcouncil\b/i.test(o.name) && GREEK_RE.test(text) ? 'council' : GREEK_RE.test(o.name) ? 'greek' : COUNCIL_RE.test(o.name) && !/^organization of\b/i.test(o.name) ? 'council' : 'club';
+  const words = o.name.replace(/\([^)]*\)/g, ' ').replace(/[^A-Za-z0-9 ]+/g, ' ').split(/\s+/).filter((w) => w && !/^(of|the|at|and|for|in|scu|santa|clara|caltech|club)$/i.test(w));
   return {
     id: `${type === 'greek' ? 'og' : 'oc'}_${schoolId.replace('s_', '')}_dir_${o.name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '').slice(0, 60)}`,
     name: o.name,
