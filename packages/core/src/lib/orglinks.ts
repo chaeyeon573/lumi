@@ -11,11 +11,19 @@ export function isLoginOnlyLink(url: string): boolean {
     return LOGIN_HOSTS.test(u.hostname) || /^\/(student_community|feeds|webapp\/auth)\b/i.test(u.pathname) || /[?&]club_id=\d+/i.test(u.search);
   } catch { return false; }
 }
+/** 공유용 추적 꼬리표(igsh, utm_*, fbclid, hl) 떼기 — instagram.com/uncvtt?igsh=… → instagram.com/uncvtt */
+export function cleanShareUrl(url: string): string {
+  try {
+    const u = new URL(url); let changed = false;
+    for (const k of [...u.searchParams.keys()]) if (/^(igsh|igshid|utm_\w+|fbclid|hl|si)$/i.test(k)) { u.searchParams.delete(k); changed = true; }
+    return changed ? u.toString().replace(/\?$/, '') : url;
+  } catch { return url; }
+}
 /** 공개 링크만, 보기 좋은 순서 (Website → Instagram → Facebook → 나머지) */
 export function publicLinks<T extends { label: string; url: string }>(links: T[] | undefined): T[] {
   const order = ['Website', 'Instagram', 'Facebook'];
   const rank = (l: T) => { const i = order.indexOf(l.label); return i < 0 ? order.length : i; };
-  return (links ?? []).filter((l) => !isLoginOnlyLink(l.url)).sort((a, b) => rank(a) - rank(b));
+  return (links ?? []).filter((l) => !isLoginOnlyLink(l.url)).map((l) => ({ ...l, url: cleanShareUrl(l.url) })).sort((a, b) => rank(a) - rank(b));
 }
 
 /**

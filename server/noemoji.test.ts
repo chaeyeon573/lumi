@@ -16,3 +16,12 @@ test('kept: real logos, Greek letters, initials already there', () => {
   const b = org('Cal Blueprint', '🎯', 'https://x/logo.png'); assert.equal(withoutEmoji(b).logo.emoji, '🎯');
   const c = org('Codebase', 'CB'); assert.equal(withoutEmoji(c), c);
 });
+
+test('cleanShareUrl / publicLinks: share-tracking tags are removed, real query kept', async () => {
+  const { cleanShareUrl, publicLinks } = await import('@core/lib/orglinks');
+  assert.equal(cleanShareUrl('https://www.instagram.com/uncvtt?igsh=MW5tNXFhcTdhMmJkOA=='), 'https://www.instagram.com/uncvtt');
+  assert.equal(cleanShareUrl('https://www.instagram.com/nuchapterdst?igsh=YnNm&utm_source=qr'), 'https://www.instagram.com/nuchapterdst');
+  assert.equal(cleanShareUrl('https://www.instagram.com/usac_tsr/?hl=en'), 'https://www.instagram.com/usac_tsr/');
+  assert.equal(cleanShareUrl('https://example.org/page?id=5'), 'https://example.org/page?id=5');
+  assert.equal(publicLinks([{ label: 'Instagram', url: 'https://www.instagram.com/x?igsh=abc' }])[0].url, 'https://www.instagram.com/x');
+});
