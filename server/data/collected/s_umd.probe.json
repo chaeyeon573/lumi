@@ -1,0 +1,24 @@
+{
+ "checkedAt": "2026-11-03T01:37:06.295Z",
+ "status": "applied",
+ "stored": false,
+ "source": "timetable:umd",
+ "sampled": 6880,
+ "withTimes": 6880,
+ "terms": [
+  "Fall 2026"
+ ],
+ "sample": [
+  "AAAS100 · Introduction to African American and Africana Studies (Sec 0101) · Fall 2026 · M 10:00-10:50 W 10:00-10:50 F 10:00-10:50",
+  "BUDT758L · Special Topics in Decision, Operations and Information Technologies; Price Optimization & Revenue Management · Fall 2026 · T 15:30-16:45 R 15:30-16:45",
+  "EDCP210 · Peer Counseling Skills and Mental Health Advocacy (Sec 0501) · Fall 2026 · M 11:00-12:15 W 11:00-12:15",
+  "ENPM685 · Security Tools for Information Security (Sec 0101) · Fall 2026 · W 19:00-21:40",
+  "INST462 · Introduction to Data Visualization (Sec 0201) · Fall 2026 · T 11:00-12:15",
+  "PHPE308Y · Ancient Greek and Roman Philosophy (Sec 0102) · Fall 2026 · M 12:00-12:50 W 12:00-12:50"
+ ],
+ "spotCheck": {
+  "matched": 6,
+  "mismatched": [],
+  "unavailable": 0
+ }
+}

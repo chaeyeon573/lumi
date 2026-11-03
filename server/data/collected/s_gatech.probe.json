@@ -1,0 +1,25 @@
+{
+ "checkedAt": "2026-11-03T01:39:31.713Z",
+ "status": "applied",
+ "stored": false,
+ "source": "timetable:banner9:https://registration.banner.gatech.edu",
+ "sampled": 7177,
+ "withTimes": 7177,
+ "terms": [
+  "Fall 2026",
+  "Spring 2027"
+ ],
+ "sample": [
+  "ACCT 2101 · Principles of Accounting I (Sec 001) · Fall 2026 · M 12:30-13:45 W 12:30-13:45",
+  "ENGL 1101 · English Composition I · Fall 2026 · T 09:30-10:45 R 09:30-10:45",
+  "MATH 4581 · Math Methods in Engr · Fall 2026 · M 17:00-18:15 W 17:00-18:15",
+  "VIP 6601 · VIP Proj Team: GR I · Fall 2026 · W 18:30-19:20",
+  "ECE 2031 · Digital Design Laboratory · Spring 2027 · M 09:55-10:45",
+  "ME 2202 · Dynamics of Rigid Bodies · Spring 2027 · T 14:00-15:15 R 14:00-15:15"
+ ],
+ "spotCheck": {
+  "matched": 6,
+  "mismatched": [],
+  "unavailable": 0
+ }
+}
