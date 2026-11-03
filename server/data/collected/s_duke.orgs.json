@@ -204,7 +204,7 @@
    "emoji": "AR",
    "hue": 8
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -249,7 +249,7 @@
    "emoji": "AD",
    "hue": 296
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -397,7 +397,7 @@
    "emoji": "AF",
    "hue": 48
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -887,7 +887,7 @@
    "emoji": "AE",
    "hue": 144
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -1332,7 +1332,7 @@
    "emoji": "AA",
    "hue": 235
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Arts",
   "verified": false,
@@ -1534,7 +1534,7 @@
    "emoji": "AP",
    "hue": 288
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -1793,7 +1793,7 @@
    "emoji": "BC",
    "hue": 72
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Faith",
   "verified": false,
@@ -1826,7 +1826,7 @@
    "emoji": "BS",
    "hue": 48
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -1966,7 +1966,7 @@
    "emoji": "BC",
    "hue": 72
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -2526,7 +2526,7 @@
    "emoji": "BS",
    "hue": 232
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -2860,7 +2860,7 @@
    "emoji": "BD",
    "hue": 272
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Health & Wellness",
   "verified": false,
@@ -3536,7 +3536,7 @@
    "emoji": "CC",
    "hue": 16
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -3651,7 +3651,7 @@
    "emoji": "CJ",
    "hue": 224
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -3692,7 +3692,7 @@
    "emoji": "CM",
    "hue": 120
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Cultural & Identity",
   "verified": false,
@@ -3729,7 +3729,7 @@
    "emoji": "CM",
    "hue": 88
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -3766,7 +3766,7 @@
    "emoji": "CS",
    "hue": 248
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -5680,7 +5680,7 @@
    "emoji": "DS",
    "hue": 216
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -5885,7 +5885,7 @@
    "emoji": "D",
    "hue": 34
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -5955,7 +5955,7 @@
    "emoji": "DA",
    "hue": 224
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -6268,7 +6268,7 @@
    "emoji": "DO",
    "hue": 120
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Faith",
   "verified": false,
@@ -6890,7 +6890,7 @@
    "emoji": "DA",
    "hue": 302
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Arts",
   "verified": false,
@@ -6927,7 +6927,7 @@
    "emoji": "DA",
    "hue": 256
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Arts",
   "verified": false,
@@ -7075,7 +7075,7 @@
    "emoji": "DA",
    "hue": 296
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -7211,7 +7211,7 @@
    "emoji": "DB",
    "hue": 272
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Academic",
   "verified": false,
@@ -7462,7 +7462,7 @@
    "emoji": "DF",
    "hue": 216
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Academic",
   "verified": false,
@@ -7585,7 +7585,7 @@
    "emoji": "DC",
    "hue": 256
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Academic",
   "verified": false,
@@ -7626,7 +7626,7 @@
    "emoji": "DC",
    "hue": 112
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -7663,7 +7663,7 @@
    "emoji": "DC",
    "hue": 312
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Academic",
   "verified": false,
@@ -7910,7 +7910,7 @@
    "emoji": "DC",
    "hue": 40
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Service & Social Action",
   "verified": false,
@@ -7976,7 +7976,7 @@
    "emoji": "DC",
    "hue": 184
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Academic",
   "verified": false,
@@ -8174,7 +8174,7 @@
    "emoji": "DC",
    "hue": 200
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Service & Social Action",
   "verified": false,
@@ -8454,7 +8454,7 @@
    "emoji": "DD",
    "hue": 336
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -8705,7 +8705,7 @@
    "emoji": "DE",
    "hue": 280
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -9393,7 +9393,7 @@
    "emoji": "DI",
    "hue": 88
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -9426,7 +9426,7 @@
    "emoji": "DI",
    "hue": 328
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -9459,7 +9459,7 @@
    "emoji": "DI",
    "hue": 192
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -9566,7 +9566,7 @@
    "emoji": "DI",
    "hue": 40
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -9780,7 +9780,7 @@
    "emoji": "DJ",
    "hue": 304
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Career & Professional",
   "verified": false,
@@ -10027,7 +10027,7 @@
    "emoji": "DL",
    "hue": 128
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Academic",
   "verified": false,
@@ -10208,7 +10208,7 @@
    "emoji": "DM",
    "hue": 32
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Academic",
   "verified": false,
@@ -10583,7 +10583,7 @@
    "emoji": "DO",
    "hue": 112
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -10867,7 +10867,7 @@
    "emoji": "DP",
    "hue": 88
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -11188,7 +11188,7 @@
    "emoji": "DP",
    "hue": 272
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -11332,7 +11332,7 @@
    "emoji": "DQ",
    "hue": 144
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -11468,7 +11468,7 @@
    "emoji": "DR",
    "hue": 320
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -12481,7 +12481,7 @@
    "emoji": "DT",
    "hue": 352
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -15343,7 +15343,7 @@
    "emoji": "EE",
    "hue": 88
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Career & Professional",
   "verified": false,
@@ -15524,7 +15524,7 @@
    "emoji": "FY",
    "hue": 320
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -15759,7 +15759,7 @@
    "emoji": "GV",
    "hue": 160
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -15990,7 +15990,7 @@
    "emoji": "GE",
    "hue": 96
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -16348,7 +16348,7 @@
    "emoji": "GP",
    "hue": 48
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -16525,7 +16525,7 @@
    "emoji": "GD",
    "hue": 296
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Environmental",
   "verified": false,
@@ -16731,7 +16731,7 @@
    "emoji": "HL",
    "hue": 208
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Academic",
   "verified": false,
@@ -17258,7 +17258,7 @@
    "emoji": "IC",
    "hue": 144
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -17410,7 +17410,7 @@
    "emoji": "I",
    "hue": 304
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Faith",
   "verified": false,
@@ -17558,7 +17558,7 @@
    "emoji": "JL",
    "hue": 64
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -17628,7 +17628,7 @@
    "emoji": "JH",
    "hue": 168
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -18637,7 +18637,7 @@
    "emoji": "ML",
    "hue": 128
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -20141,7 +20141,7 @@
    "emoji": "NS",
    "hue": 256
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -20314,7 +20314,7 @@
    "emoji": "NS",
    "hue": 232
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -20627,7 +20627,7 @@
    "emoji": "OG",
    "hue": 112
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -20660,7 +20660,7 @@
    "emoji": "OI",
    "hue": 328
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -20693,7 +20693,7 @@
    "emoji": "OP",
    "hue": 344
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -20726,7 +20726,7 @@
    "emoji": "OS",
    "hue": 24
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -20763,7 +20763,7 @@
    "emoji": "OO",
    "hue": 200
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -20796,7 +20796,7 @@
    "emoji": "OU",
    "hue": 184
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -20829,7 +20829,7 @@
    "emoji": "OU",
    "hue": 256
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Academic",
   "verified": false,
@@ -21010,7 +21010,7 @@
    "emoji": "OF",
    "hue": 80
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -21319,7 +21319,7 @@
    "emoji": "PS",
    "hue": 88
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Academic",
   "verified": false,
@@ -21360,7 +21360,7 @@
    "emoji": "PP",
    "hue": 8
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -21871,7 +21871,7 @@
    "emoji": "PS",
    "hue": 320
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -22353,7 +22353,7 @@
    "emoji": "RF",
    "hue": 40
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -22468,7 +22468,7 @@
    "emoji": "RH",
    "hue": 208
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -22534,7 +22534,7 @@
    "emoji": "RL",
    "hue": 344
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -23972,7 +23972,7 @@
    "emoji": "SC",
    "hue": 240
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Academic",
   "verified": false,
@@ -24054,7 +24054,7 @@
    "emoji": "SY",
    "hue": 96
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -24157,7 +24157,7 @@
    "emoji": "S",
    "hue": 70
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "University Unit",
   "verified": false,
@@ -24577,7 +24577,7 @@
    "emoji": "SA",
    "hue": 296
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -24614,7 +24614,7 @@
    "emoji": "SA",
    "hue": 144
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -24713,7 +24713,7 @@
    "emoji": "SI",
    "hue": 56
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -24849,7 +24849,7 @@
    "emoji": "SW",
    "hue": 112
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
@@ -25380,10 +25380,6 @@
    {
     "label": "Website",
     "url": "http://tamidgroup.org/"
-   },
-   {
-    "label": "Instagram",
-    "url": "https://www.instagram.com/tamidgroup/"
    }
   ],
   "recruitment": {
@@ -26179,7 +26175,7 @@
    "emoji": "GS",
    "hue": 184
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Academic",
   "verified": false,
@@ -26768,7 +26764,7 @@
    "emoji": "TW",
    "hue": 88
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Academic",
   "verified": false,
@@ -26908,7 +26904,7 @@
    "emoji": "UR",
    "hue": 208
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Academic",
   "verified": false,
@@ -27571,7 +27567,7 @@
    "emoji": "WS",
    "hue": 24
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_duke",
   "parent": "Student Affairs Unit",
   "verified": false,
