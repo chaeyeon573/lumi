@@ -889,7 +889,8 @@ async function riceLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
 const UW = 'https://www.washington.edu/students/timeschd/pub';
 const UW_SECONDARY = /^(QZ|LB)$/;
 function uwTime(raw: string, pm: boolean): string { const d = raw.padStart(3, '0'); let h = Number(d.slice(0, -2)); const m = d.slice(-2); if (pm ? h < 12 : h >= 1 && h <= 7) h += 12; return `${String(h).padStart(2, '0')}:${m}`; }
-export function uwToCourses(html: string, termCode: string, label: string): CatalogCourse[] {
+/** page = 학과 시간표 파일 이름(anthro) — 과목 머리(ANTH)와 다를 수 있다(anth.html 은 404, 2026-11-03 점검). 없으면 머리 글자로 */
+export function uwToCourses(html: string, termCode: string, label: string, page?: string): CatalogCourse[] {
   const out: CatalogCourse[] = []; const seen = new Set<string>(); const secOf = new Map<string, string>();
   for (const block of html.split(/(?=<table bgcolor='#ffcccc')/)) {
     const head = /<A NAME=[a-z0-9]+>([\s\S]*?)<\/A>&nbsp;<A [^>]*>([\s\S]*?)<\/A>/.exec(block); if (!head) continue;
@@ -903,7 +904,7 @@ export function uwToCourses(html: string, termCode: string, label: string): Cata
       if (!meetings.length) continue;
       const id = seen.has(baseId) ? `${baseId}_${sec.toLowerCase()}` : baseId; if (seen.has(id)) continue; seen.add(id); secOf.set(id, sec);
       const units = Number(kind);
-      out.push({ id, schoolId: 's_uw', code, title, department: code.replace(/ \d{3}$/, ''), meetings: uniq(meetings), term: label, termCode, units: Number.isFinite(units) && units > 0 ? units : undefined, url: `${UW}/${termCode}/${(/<A NAME=([a-z0-9]+)>/.exec(block)?.[1] ?? '').replace(/\d+$/, '')}.html` });
+      out.push({ id, schoolId: 's_uw', code, title, department: code.replace(/ \d{3}$/, ''), meetings: uniq(meetings), term: label, termCode, units: Number.isFinite(units) && units > 0 ? units : undefined, url: ((a) => `${UW}/${termCode}/${page ?? a.replace(/\d+$/, '')}.html${page && a ? `#${a}` : ''}`)(/<A NAME=([a-z0-9]+)>/.exec(block)?.[1] ?? '') });
     }
   }
   for (const c of out) if (out.filter((o) => o.code === c.code).length > 1) c.title = `${c.title} (Sec ${secOf.get(c.id)})`;
@@ -921,14 +922,14 @@ async function uw(): Promise<CatalogCourse[]> {
   for (const t of uwTerms()) {
     const index = await uwGet(`${t.code}/`); if (!index) { console.log(`  s_uw ${t.code}: not published`); continue; }
     const depts = [...new Set([...index.matchAll(/href="([a-z]+)\.html"/g)].map((m) => m[1]))]; const before = out.length;
-    for (const d of depts) { const html = await uwGet(`${t.code}/${d}.html`); if (html) out.push(...uwToCourses(html, t.code, t.label)); await new Promise((r) => setTimeout(r, 200)); }
+    for (const d of depts) { const html = await uwGet(`${t.code}/${d}.html`); if (html) out.push(...uwToCourses(html, t.code, t.label, d)); await new Promise((r) => setTimeout(r, 200)); }
     console.log(`  s_uw ${t.code} (${t.label}): ${depts.length} departments → ${out.length - before} classes`);
   }
   return out;
 }
 async function uwLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
-  const page = /\/([a-z]+)\.html$/.exec(c.url ?? '')?.[1]; if (!page || !c.termCode) return null;
-  const html = await uwGet(`${c.termCode}/${page}.html`); return html ? uwToCourses(html, c.termCode, c.term).find((x) => x.id === c.id) ?? null : null;
+  const page = /\/([a-z]+)\.html(?:#|$)/.exec(c.url ?? '')?.[1]; if (!page || !c.termCode) return null;
+  const html = await uwGet(`${c.termCode}/${page}.html`); return html ? uwToCourses(html, c.termCode, c.term, page).find((x) => x.id === c.id) ?? null : null;
 }
 
 // ─── Caltech: schedules.caltech.edu/<FA2026-27>.html — 쿼터마다 한 페이지(보고서를 HTML 로 내보낸 표, 글자 칸 순서대로 읽는다) ───

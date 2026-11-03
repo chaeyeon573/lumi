@@ -16,3 +16,10 @@ test('UW time schedule: lectures only (quiz sections left out), no-AM/PM times r
   assert.deepEqual(g.find((c) => c.title.endsWith('(Sec I)'))?.meetings, [{ day: 0, start: '15:00', end: '16:20' }, { day: 2, start: '15:00', end: '16:20' }]);
   assert.ok(resolveCourseSource('s_uw', 'uw'));
 });
+
+test('UW course link uses the department page name (anthro.html), not the course prefix (anth.html is 404)', () => {
+  const out = uwToCourses(readFileSync(new URL('./fixtures/uw-anthro.html', import.meta.url), 'utf8'), 'AUT2026', 'Fall 2026', 'anthro');
+  const c = out.find((x) => x.code === 'ANTH 233');
+  assert.equal(c?.url, 'https://www.washington.edu/students/timeschd/pub/AUT2026/anthro.html#anth233');
+  assert.deepEqual(c?.meetings, [{ day: 0, start: '12:30', end: '13:20' }, { day: 2, start: '12:30', end: '13:20' }, { day: 4, start: '12:30', end: '13:20' }]);
+});
