@@ -931,6 +931,48 @@ async function uwLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   const html = await uwGet(`${c.termCode}/${page}.html`); return html ? uwToCourses(html, c.termCode, c.term).find((x) => x.id === c.id) ?? null : null;
 }
 
+// ─── Caltech: schedules.caltech.edu/<FA2026-27>.html — 쿼터마다 한 페이지(보고서를 HTML 로 내보낸 표, 글자 칸 순서대로 읽는다) ───
+// 칸 순서: 과목 "CS 024" → 학점 "3-3-3" → 제목 → [섹션 "01" → 교수 → "MWF 11:00 - 11:55"(24시간) → 강의실]… 시각이 두 줄로 나뉘기도 한다("OM,W 16:00 -" + "16:55").
+const CALTECH = 'https://schedules.caltech.edu';
+export function caltechToCourses(html: string, termCode: string, label: string): CatalogCourse[] {
+  const toks = [...html.matchAll(/<font face="verdana">([\s\S]*?)<\/font>/g)].map((m) => decodeEntities(m[1].replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ')).replace(/\s+/g, ' ').trim()).filter(Boolean);
+  for (let i = 0; i < toks.length - 1; i++) if (/\d{1,2}:\d{2} -$/.test(toks[i]) && /^\d{1,2}:\d{2}$/.test(toks[i + 1])) { toks[i] = `${toks[i]} ${toks[i + 1]}`; toks.splice(i + 1, 1); }
+  const out: CatalogCourse[] = []; const seen = new Set<string>(); const secOf = new Map<string, string>();
+  let code = '', title = '', sec = '', cur: CatalogCourse | undefined;
+  for (let i = 0; i < toks.length; i++) {
+    const t = toks[i];
+    if (/^[A-Z][A-Za-z]*(\/[A-Z][A-Za-z]*)* \d+[A-Za-z]*$/.test(t) && /^\+$|^\+?[\d.]+(-[\d.]+)*$/.test(toks[i + 1] ?? '')) { code = t; title = toks[i + 2] ?? ''; sec = ''; cur = undefined; i += 2; continue; }
+    if (!code) continue;
+    if (/^\d{2}$/.test(t)) { sec = t; cur = undefined; continue; }
+    const m = /(?:^|,)([MTWRFSU]+) (\d{1,2}:\d{2}) - (\d{1,2}:\d{2})$/.exec(t); if (!m) continue;
+    const meetings = [...m[1]].map((ch) => ({ day: { M: 0, T: 1, W: 2, R: 3, F: 4, S: 5, U: 6 }[ch as 'M']!, start: m[2].padStart(5, '0'), end: m[3].padStart(5, '0') }));
+    if (cur) { cur.meetings = uniq([...(cur.meetings ?? []), ...meetings]); continue; }
+    const baseId = courseId('s_caltech', code); const id = seen.has(baseId) ? `${baseId}_${sec || 'x'}` : baseId; if (seen.has(id)) continue; seen.add(id); secOf.set(id, sec || '01');
+    cur = { id, schoolId: 's_caltech', code, title, department: code.split(' ')[0], meetings: uniq(meetings), term: label, termCode, url: `${CALTECH}/${termCode}.html` };
+    out.push(cur);
+  }
+  for (const c of out) if (out.filter((o) => o.code === c.code).length > 1) c.title = `${c.title} (Sec ${secOf.get(c.id)})`;
+  return tagTerm(out, label);
+}
+function caltechTerms(now = new Date()): { code: string; label: string }[] {
+  const [cur] = catalogTermLabels(now); const y = Number(cur.split(' ')[1]); const ay = (a: number) => `${a}-${String(a + 1).slice(2)}`;
+  if (/Fall|Autumn/.test(cur)) return [{ code: `FA${ay(y)}`, label: `Fall ${y}` }, { code: `WI${ay(y)}`, label: `Winter ${y + 1}` }];
+  if (/Spring/.test(cur)) return [{ code: `SP${ay(y - 1)}`, label: `Spring ${y}` }, { code: `FA${ay(y)}`, label: `Fall ${y}` }];
+  return [{ code: `WI${ay(y - 1)}`, label: `Winter ${y}` }, { code: `SP${ay(y - 1)}`, label: `Spring ${y}` }];
+}
+async function caltech(): Promise<CatalogCourse[]> {
+  const out: CatalogCourse[] = [];
+  for (const t of caltechTerms()) {
+    const r = await fetch(`${CALTECH}/${t.code}.html`, { headers: UAH }); if (!r.ok) { console.log(`  s_caltech ${t.code}: ${r.status} (not published)`); continue; }
+    const got = caltechToCourses(await r.text(), t.code, t.label); out.push(...got); console.log(`  s_caltech ${t.code} (${t.label}): ${got.length} classes`);
+  }
+  return out;
+}
+async function caltechLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
+  if (!c.termCode) return null; const r = await fetch(`${CALTECH}/${c.termCode}.html`, { headers: UAH }); if (!r.ok) return null;
+  return caltechToCourses(await r.text(), c.termCode, c.term).find((x) => x.id === c.id) ?? null;
+}
+
 // ─── Harvard: my.harvard.edu 공개 과목 검색 (키 불필요) ─────────────────────
 // 검색 결과는 JSON 안에 이스케이프된 HTML 로 오고 15개씩 page=N 으로 넘어간다. term=2026+Fall · school=FAS 필터가 된다.
 // 과목마다 /course/sections/<id>/<offer>/<strm>/<session> 조각에 섹션별 요일(aria-label "Tuesday, selected")·시간·장소·교수가 있다.
@@ -1064,6 +1106,7 @@ export const COURSE_SOURCES: Record<string, CourseSource> = {
   usc: { schoolId: 's_usc', fetch: usc, lookup: uscLookup },
   rice: { schoolId: 's_rice', fetch: rice, lookup: riceLookup },
   uw: { schoolId: 's_uw', fetch: uw, lookup: uwLookup },
+  caltech: { schoolId: 's_caltech', fetch: caltech, lookup: caltechLookup },
 };
 export const adapters: Record<string, () => Promise<CatalogCourse[]>> = Object.fromEntries(Object.entries(COURSE_SOURCES).map(([k, v]) => [k, v.fetch]));
 
