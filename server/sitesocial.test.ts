@@ -49,3 +49,17 @@ test('relatedHandle: club accounts pass, a personal profile does not', async () 
   assert.ok(relatedHandle('https://www.facebook.com/berkeleyphichi', 'Phi Chi Pre-Health Fraternity', 'https://phichi.studentorg.berkeley.edu/'));
   assert.ok(!relatedHandle('https://www.facebook.com/Sitara.Bellam', 'South Indian Society', 'https://southindiansociety.studentorg.berkeley.edu/'));
 });
+
+test('relabelSocialWebsites: a Discord invite in the website field is labeled Discord', async () => {
+  const { relabelSocialWebsites } = await import('./sources/sitesocial');
+  const o = { id: 'x', name: 'Mahjong', links: [{ label: 'Directory', url: 'https://uchicago.campuslabs.com/engage/organization/mahjong' }, { label: 'Website', url: 'https://discord.gg/H8kzC6jmGF' }] } as never;
+  assert.deepEqual((relabelSocialWebsites(o) as { links: unknown[] }).links, [{ label: 'Directory', url: 'https://uchicago.campuslabs.com/engage/organization/mahjong' }, { label: 'Discord', url: 'https://discord.gg/H8kzC6jmGF' }]);
+});
+
+test('isLoginOnlyLink: CampusGroups club pages on school hosts are login-only, Engage pages are public', async () => {
+  const { isLoginOnlyLink } = await import('@core/lib/orglinks');
+  assert.equal(isLoginOnlyLink('https://lionhub.columbia.edu/student_community?club_id=35599'), true);
+  assert.equal(isLoginOnlyLink('https://yaleconnect.yale.edu/feeds?type=club&type_id=74501'), true);
+  assert.equal(isLoginOnlyLink('https://nyu.campuslabs.com/engage/organization/pre-soma'), false);
+  assert.equal(isLoginOnlyLink('https://synapsecolumbia.wixsite.com/synapse'), false);
+});

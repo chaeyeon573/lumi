@@ -5,7 +5,11 @@
  */
 const LOGIN_HOSTS = /(^|\.)(callink\.berkeley\.edu|cardinalengage\.stanford\.edu|engage\.mit\.edu|sammyapp\.sjsu\.edu|aggielife\.ucdavis\.edu|dartmouthgroups\.dartmouth\.edu|soco\.college\.harvard\.edu)$|\.campusgroups\.com$/i;
 export function isLoginOnlyLink(url: string): boolean {
-  try { return LOGIN_HOSTS.test(new URL(url).hostname); } catch { return false; }
+  try {
+    const u = new URL(url);
+    // CampusGroups 단체 페이지는 학교마다 주소가 달라도(lionhub.columbia.edu, yaleconnect.yale.edu …) 같은 경로 — 로그인 뒤에만 보인다
+    return LOGIN_HOSTS.test(u.hostname) || /^\/(student_community|feeds|webapp\/auth)\b/i.test(u.pathname) || /[?&]club_id=\d+/i.test(u.search);
+  } catch { return false; }
 }
 /** 공개 링크만, 보기 좋은 순서 (Website → Instagram → Facebook → 나머지) */
 export function publicLinks<T extends { label: string; url: string }>(links: T[] | undefined): T[] {

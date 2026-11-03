@@ -1661,3 +1661,10 @@
 - New readers: Caltech (public approved-club list, 124 names; descriptions are behind Caltech login) + ASCIT; Brown (Student Activities list, 412 groups, Instagram/Facebook from each public club page, 331 with a link; 7,020 catalog courses).
 - Spot check: Brown 2 club pages vs. collected links, match.
 - Blocked: studentorg.ucsd.edu (TLS failure from the container, not bypassed); Princeton club list needs login (skipped by rule).
+
+## 2026-11-03 01:00 run
+- Routine prompt updated to the owner's 11-03 rules (never remove collected data; keep widening top schools to files without asking).
+- Fixed: CampusGroups club pages on school hosts (lionhub.columbia.edu, yaleconnect.yale.edu, catsoncampus.northwestern.edu, …) were not recognized as login-only — now any `/student_community`, `/feeds`, `club_id=` link is hidden (test added). Discord invites in a club's website field are labeled Discord (25 links in 7 school files relabeled, test added).
+- Spot check: NYU 2 + UChicago 2 clubs vs. Engage API (socials and website match), Columbia 1 (its club page needs login, which led to the fix above); MIT 5 classes vs. FireRoad (title, days, times match). Gap: only lectures are kept, labs/recitations are dropped (6.S950 Thu lab, MAD.701 Fri lab) — queued. student.mit.edu answered 503 to the web fetch.
+- Screens: /community, /preview/s_columbia — no PAGE ERROR. Live feed shows demo posts with emoji → QUESTIONS.md.
+- Collection of the 28 new schools still running (USC: 1,964 groups, reading club websites).

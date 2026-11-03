@@ -49,12 +49,13 @@ const handle = (url: string) => url.replace(/^https:\/\/www\.(instagram|facebook
  */
 /** “Website” 칸에 인스타·페북 주소가 들어 있으면 그 이름으로 바꾼다 (사이트로 읽지 않는다) */
 export function relabelSocialWebsites(o: Organization): Organization {
-  if (!o.links?.some((l) => l.label === 'Website' && /(^|\.)(instagram|facebook|fb)\.com$/i.test(hostOf(l.url)))) return o;
+  if (!o.links?.some((l) => l.label === 'Website' && /(^|\.)(instagram|facebook|fb|discord)\.(com|gg)$/i.test(hostOf(l.url)))) return o;
   const links = o.links.map((l) => {
     if (l.label !== 'Website') return l;
     const h = hostOf(l.url);
     if (/instagram\.com$/i.test(h)) { const u = extractAllSocial(`href="${l.url}"`).instagram[0]; return u ? { label: 'Instagram', url: u } : l; }
     if (/(facebook|fb)\.com$/i.test(h)) { const u = extractAllSocial(`href="${l.url}"`).facebook[0]; return u ? { label: 'Facebook', url: u } : l; }
+    if (/(^|\.)discord\.(gg|com)$/i.test(h)) return { label: 'Discord', url: l.url };
     return l;
   });
   return { ...o, links: links.filter((l, i) => links.findIndex((x) => x.label === l.label) === i || l.label === 'Directory') };

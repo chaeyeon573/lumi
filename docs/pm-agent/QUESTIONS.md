@@ -118,3 +118,9 @@
 **답(10/16):** “지금 같이 할 것”을 주인공으로 하면 처음 보는 사람에게 “같이 하자”고 먼저 말하는 게 부담될 수 있다 — 그걸 풀어야 한다.
 **추가(10/16, 아직 안 정해진 부분):** 프로필 편집에 **키(Height, cm)** 칸과 ‘Here for’의 **Dating** 이 그대로 있다 — 둘 다 데이팅 앱 쪽 신호. 1+3 은 반영했고, 이 둘을 뺄지(또는 숨길지)만 정해 주시면 된다. 추천: 둘 다 빼기(기존 값은 남겨 두고 화면·카드에서만 안 보이게).
 **답(10/30, 키·Dating):** 키만 빼기. → 프로필 편집·가입·공개 범위·다른 사람 프로필에서 키 칸 숨김(값은 남김). Dating 은 그대로.
+
+### (11/03) Emoji in the live Berkeley feed and profiles
+The live feed shows example posts with emoji ("coffee meetup tonight ☕", "New member sets 🎸", "day made 😻"), and example profiles use emoji avatars. They come from our demo content (packages/core/src/data/seed.en.ts, 74 lines) and are already in the live DB. Clubs are already cleaned on display.
+**Options:** A) Hide emoji when showing posts, comments and profile text, the same way clubs are handled now (real users' emoji would be hidden too). B) Clean only our demo text and avatars; real users can still write emoji (needs a live DB update, so your OK). C) Leave as is.
+**Recommended:** B. Stripping what real users write feels like censoring them.
+**Answer:**
