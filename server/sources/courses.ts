@@ -1070,6 +1070,67 @@ async function wustl(): Promise<CatalogCourse[]> {
   return out;
 }
 
+// ─── Vanderbilt: more.app.vanderbilt.edu (YES 공개 수업 검색) — 학기 선택(쿠키) → 과목별 검색 → 50개씩 switchPage ───
+// 과목 머리 "CS 1101:" + 제목, 섹션 줄 칸 classSection·classType(Lecture/Laboratory/Discussion…)·classMeetingDays(MWF)·classMeetingTimes("01:25p - 02:15p").
+const VANDY = 'https://more.app.vanderbilt.edu/more';
+const ampm = (t: string) => to24(t.replace(/([ap])$/i, (_, x: string) => `${x.toUpperCase()}M`));
+export function vanderbiltToCourses(html: string, termCode: string, label: string): CatalogCourse[] {
+  type Sec = { code: string; title: string; sec: string; kind: string; meetings: Meeting[] };
+  const secs: Sec[] = []; const txt = (h = '') => decodeEntities(h.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ')).replace(/\s+/g, ' ').trim();
+  for (const block of html.split('<span class="classAbbreviation">').slice(1)) {
+    const code = txt(block.slice(0, block.indexOf('</span>'))).replace(/:$/, ''); const title = txt(/<span class="classDescription">([\s\S]*?)<\/span>/.exec(block)?.[1]);
+    if (!/^[A-Z]{2,5} \d{4}[A-Z]?$/.test(code)) continue;
+    for (const row of block.split(/<tr [^>]*class="[^"]*classRow[^"]*"/).slice(1)) {
+      const cell = (c: string) => txt(new RegExp(`<td[^>]*class="${c}"[^>]*>([\\s\\S]*?)<\\/td>`).exec(row)?.[1]);
+      const sec = cell('classSection'), kind = cell('classType'), days = cell('classMeetingDays'), times = cell('classMeetingTimes');
+      const t = /^(\d{1,2}:\d{2}[ap])\s*-\s*(\d{1,2}:\d{2}[ap])$/i.exec(times); const meetings: Meeting[] = [];
+      if (t && /^[MTWRFSU]+$/.test(days)) { const a = ampm(t[1]), b = ampm(t[2]); for (const ch of days) meetings.push({ day: { M: 0, T: 1, W: 2, R: 3, F: 4, S: 5, U: 6 }[ch as 'M']!, start: a, end: b }); }
+      if (sec) secs.push({ code, title, sec, kind, meetings });
+    }
+  }
+  const hasLec = new Set(secs.filter((x) => /^lecture/i.test(x.kind)).map((x) => x.code));
+  const out: CatalogCourse[] = []; const seen = new Set<string>(); const secOf = new Map<string, string>();
+  for (const x of secs) {
+    if ((hasLec.has(x.code) && !/^lecture/i.test(x.kind)) || !x.meetings.length) continue;
+    const baseId = courseId('s_vanderbilt', x.code); const id = seen.has(baseId) ? `${baseId}_${x.sec.toLowerCase()}` : baseId; if (seen.has(id)) continue; seen.add(id); secOf.set(id, x.sec);
+    out.push({ id, schoolId: 's_vanderbilt', code: x.code, title: x.title, department: x.code.split(' ')[0], meetings: uniq(x.meetings), term: label, termCode, url: `${VANDY}/SearchClasses!input.action` });
+  }
+  for (const c of out) if (out.filter((o) => o.code === c.code).length > 1) c.title = `${c.title} (Sec ${secOf.get(c.id)})`;
+  return tagTerm(out, label);
+}
+async function vanderbilt(): Promise<CatalogCourse[]> {
+  let cookie = '';
+  const get = async (path: string) => {
+    let url = `${VANDY}${path}`;
+    for (let hop = 0; hop < 5; hop++) {
+      const r = await fetch(url, { redirect: 'manual', headers: { ...UAH, ...(cookie ? { cookie } : {}) } });
+      const set = r.headers.getSetCookie?.() ?? []; if (set.length) { const jar = new Map(cookie.split('; ').filter(Boolean).map((c) => [c.split('=')[0], c] as const)); for (const c of set) { const kv = c.split(';')[0]; jar.set(kv.split('=')[0], kv); } cookie = [...jar.values()].join('; '); }
+      const loc = r.headers.get('location'); if (r.status >= 300 && r.status < 400 && loc) { url = new URL(loc, url).href; continue; }
+      if (!r.ok) throw new Error(`vanderbilt ${path} → ${r.status}`); return r.text();
+    }
+    throw new Error('vanderbilt: too many redirects');
+  };
+  await get('/SearchClasses!input.action');
+  const form = await get('/SearchClasses!input.action');
+  const subjects = [...new Set([...form.matchAll(/name="searchCriteria\.subjectAreaCodes" type="checkbox" value="([^"]+)"/g)].map((m) => m[1]))];
+  const terms = [...form.matchAll(/<option value="(\d{4})">(20\d{2} (?:Fall|Spring))/g)].map((m) => ({ code: m[1], label: labelOf(m[2]) }));
+  const [cur, next] = catalogTermLabels();
+  // 지금 학기는 목록에 없을 때가 있다(선택돼 있는 학기) — 앞뒤 번호로 맞춘다 (Spring 1080 → Fall 1075)
+  const nextT = terms.find((t) => t.label === next); const curT = terms.find((t) => t.label === cur) ?? (nextT && /Spring/.test(nextT.label) ? { code: String(Number(nextT.code) - 5), label: cur } : undefined);
+  const out: CatalogCourse[] = [];
+  for (const t of [curT, nextT].filter((x): x is { code: string; label: string } => !!x)) {
+    await get(`/SelectTerm!selectTerm.action?selectedTermCode=${t.code}`); const before = out.length;
+    for (const sub of subjects) {
+      const first = await get(`/SearchClassesExecute!search.action?searchCriteria.subjectAreaCodes=${encodeURIComponent(sub)}`);
+      const total = Number(/totalRecords: (\d+)/.exec(first)?.[1] ?? 0); let html = first;
+      for (let p = 2; p <= Math.ceil(total / 50); p++) { await new Promise((r) => setTimeout(r, 200)); html += await get(`/SearchClassesExecute!switchPage.action?pageNum=${p}`); }
+      out.push(...vanderbiltToCourses(html, t.code, t.label)); await new Promise((r) => setTimeout(r, 200));
+    }
+    console.log(`  s_vanderbilt ${t.code} (${t.label}): ${subjects.length} subjects → ${out.length - before} classes`);
+  }
+  return out;
+}
+
 // ─── Harvard: my.harvard.edu 공개 과목 검색 (키 불필요) ─────────────────────
 // 검색 결과는 JSON 안에 이스케이프된 HTML 로 오고 15개씩 page=N 으로 넘어간다. term=2026+Fall · school=FAS 필터가 된다.
 // 과목마다 /course/sections/<id>/<offer>/<strm>/<session> 조각에 섹션별 요일(aria-label "Tuesday, selected")·시간·장소·교수가 있다.
@@ -1206,6 +1267,7 @@ export const COURSE_SOURCES: Record<string, CourseSource> = {
   caltech: { schoolId: 's_caltech', fetch: caltech, lookup: caltechLookup },
   cmu: { schoolId: 's_cmu', fetch: cmu, lookup: cmuLookup },
   wustl: { schoolId: 's_wustl', fetch: wustl },
+  vanderbilt: { schoolId: 's_vanderbilt', fetch: vanderbilt },
 };
 export const adapters: Record<string, () => Promise<CatalogCourse[]>> = Object.fromEntries(Object.entries(COURSE_SOURCES).map(([k, v]) => [k, v.fetch]));
 
