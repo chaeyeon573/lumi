@@ -48,3 +48,14 @@ export function previewCourses(id: string, q: string): { code: string; title: st
   const k = q.trim().toLowerCase();
   return all.filter((c) => !k || `${c.code} ${c.title}`.toLowerCase().includes(k)).slice(0, 30).map((c) => ({ code: c.code, title: c.title, term: c.term, meetings: c.meetings, url: c.url }));
 }
+
+/** 미국 전역 학생 채용 파일 (server/data/collected/jobs-us.json) — 대상·종류·검색어로 거른다, 200개까지 */
+export function previewJobs(q: { q?: string; audience?: string; kind?: string }): { collectedAt?: string; total: number; counts: Record<string, number>; jobs: unknown[] } {
+  const f = readJson<{ collectedAt?: string; jobs?: { title: string; company: string; location: string; audience: string[]; kind: string }[] }>(path.join(COLLECTED, 'jobs-us.json'));
+  const all = f?.jobs ?? [];
+  const k = (q.q ?? '').trim().toLowerCase();
+  const hit = all.filter((j) => (!q.audience || j.audience.includes(q.audience)) && (!q.kind || j.kind === q.kind) && (!k || `${j.title} ${j.company} ${j.location}`.toLowerCase().includes(k)));
+  const counts: Record<string, number> = { all: all.length, internship: all.filter((j) => j.kind === 'internship').length };
+  for (const a of ['phd', 'masters', 'newgrad', 'postdoc', 'undergrad']) counts[a] = all.filter((j) => j.audience.includes(a)).length;
+  return { collectedAt: f?.collectedAt, total: hit.length, counts, jobs: hit.slice(0, 200) };
+}

@@ -6,7 +6,7 @@ import { ErrorState } from '@/components/ui';
 import { WelcomePage } from '@/pages/onboarding/WelcomePage';
 import { OnboardingPage } from '@/pages/onboarding/OnboardingPage';
 import { StartPage } from '@/pages/onboarding/StartPage';
-import { PreviewListPage, PreviewSchoolPage } from '@/pages/preview/PreviewPage';
+import { PreviewListPage, PreviewSchoolPage, PreviewJobsPage } from '@/pages/preview/PreviewPage';
 import { HomePage } from '@/pages/home/HomePage';
 import { HomeDashboard } from '@/pages/home/HomeDashboard';
 import { SocialForYouPage, SocialPeoplePage, SocialFeedPage } from '@/pages/social/SocialPage';
@@ -182,6 +182,7 @@ export default function App() {
       {/* 아직 안 연 학교 미리보기 — 주소로만 (메뉴에 없음) · server/preview.ts */}
       <Route element={<AppShell withNav={false} />}>
         <Route path="/preview" element={<PreviewListPage />} />
+        <Route path="/preview/jobs" element={<PreviewJobsPage />} />
         <Route path="/preview/:id" element={<PreviewSchoolPage />} />
       </Route>
       {/* Privacy Policy · Terms of Use — public, signed in or not (App Store Connect links here; server/legal.ts) */}

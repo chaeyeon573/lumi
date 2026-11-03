@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, ExternalLink, Search, GraduationCap } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ExternalLink, Search, GraduationCap, Briefcase } from 'lucide-react';
 import { cn } from '@core/lib/cn';
 import { Input } from '@/components/ui';
 
@@ -36,6 +36,11 @@ export function PreviewListPage() {
       <p className="text-[13px] text-ink-3 mb-3">Collected by the Lumi agent from each school’s official directory. Not in the live app until the school opens.</p>
       {err && <p className="text-danger text-[13px]">{err}</p>}
       {!schools && !err && <p className="text-ink-3 text-[13px]">Loading…</p>}
+      <Link to="/preview/jobs" className="card rounded-2xl px-4 py-3.5 flex items-center gap-3 press mb-2.5">
+        <span className="h-11 w-11 rounded-xl bg-primary-soft text-primary grid place-items-center shrink-0"><Briefcase size={20} /></span>
+        <span className="flex-1 min-w-0"><b className="block text-[15px]">Jobs and internships (US)</b><span className="block text-[12px] text-ink-3">PhD, master’s, new grad and intern roles from employers’ public job boards</span></span>
+        <ChevronRight size={18} className="text-ink-3 shrink-0" />
+      </Link>
       <div className="space-y-2.5">
         {schools?.map((s) => (
           <Link key={s.id} to={`/preview/${s.id}`} className="card rounded-2xl px-4 py-3.5 flex items-center gap-3 press">
@@ -116,5 +121,47 @@ function CourseSearch({ id, total }: { id: string; total: number }) {
         {list.map((c) => <li key={`${c.code}${c.term}${c.title}`}><b className="text-ink">{c.code}</b> · {c.title}{c.meetings?.length ? ` · ${c.meetings.map((m) => `${DAY[m.day]} ${m.start}-${m.end}`).join(' ')}` : ''}{c.term && c.term !== 'catalog' ? ` · ${c.term}` : ''}</li>)}
       </ul>
     </div>
+  );
+}
+
+/** 미국 전역 학생 채용 미리보기 — 회사 공개 채용 게시판에서 모은 파일 (server/data/collected/jobs-us.json) */
+interface Job { id: string; company: string; title: string; location: string; url: string; kind: string; audience: string[]; updatedAt?: string }
+const JOB_TABS = [['', 'All'], ['internship', 'Internships'], ['phd', 'PhD'], ['masters', 'Master’s'], ['newgrad', 'New grad'], ['postdoc', 'Postdoc']] as const;
+const AUD: Record<string, string> = { phd: 'PhD', masters: 'Master’s', newgrad: 'New grad', postdoc: 'Postdoc', undergrad: 'Undergrad' };
+export function PreviewJobsPage() {
+  const [tab, setTab] = useState<string>('');
+  const [q, setQ] = useState('');
+  const [data, setData] = useState<{ collectedAt?: string; total: number; counts: Record<string, number>; jobs: Job[] } | null>(null);
+  const [err, setErr] = useState('');
+  useEffect(() => {
+    const p = new URLSearchParams(); if (q.trim()) p.set('q', q.trim()); if (tab === 'internship') p.set('kind', tab); else if (tab) p.set('audience', tab);
+    const t = setTimeout(() => { fetch(`${base}/api/preview/jobs?${p}`).then((r) => r.json()).then(setData).catch((e) => setErr(String(e))); }, 250);
+    return () => clearTimeout(t);
+  }, [q, tab]);
+  const count = (k: string) => (k === '' ? data?.counts.all : data?.counts[k]) ?? 0;
+  return (
+    <Shell title="Jobs and internships (US)" back>
+      <p className="text-[13px] text-ink-3 mb-3">From employers’ own public job boards. A posting is listed while it is open on the employer’s board.{data?.collectedAt ? ` Updated ${data.collectedAt.slice(0, 10)}.` : ''}</p>
+      {err && <p className="text-danger text-[13px]">{err}</p>}
+      <div className="relative mb-2.5"><Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-3" /><Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search role, company or city" className="pl-9" /></div>
+      <div className="flex gap-1.5 overflow-x-auto hide-scrollbar -mx-4 px-4 mb-3">
+        {JOB_TABS.map(([k, l]) => <button key={k} onClick={() => setTab(k)} className={cn('h-8 px-3 rounded-full text-[13px] font-semibold shrink-0', tab === k ? 'bg-primary text-white v2:text-on-primary' : 'bg-surface-2 text-ink-2')}>{l} {count(k)}</button>)}
+      </div>
+      {data && <p className="text-[12px] text-ink-3 mb-2">{data.total} matching{data.total > data.jobs.length ? ` · showing ${data.jobs.length}` : ''}</p>}
+      <div className="space-y-2">
+        {data?.jobs.map((j) => (
+          <a key={j.id} href={j.url} target="_blank" rel="noreferrer" className="card rounded-2xl px-3.5 py-3 block press">
+            <b className="block text-[14px] leading-snug">{j.title}</b>
+            <span className="block text-[12px] text-ink-2 mt-0.5">{j.company}</span>
+            <span className="block text-[11px] text-ink-3 truncate">{j.location}</span>
+            <span className="flex flex-wrap gap-1 mt-1.5">
+              <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-primary-soft text-primary">{j.kind === 'internship' ? 'Internship' : j.kind === 'fellowship' ? 'Fellowship' : 'Job'}</span>
+              {j.audience.map((a) => <span key={a} className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-surface-2 text-ink-2">{AUD[a] ?? a}</span>)}
+            </span>
+          </a>
+        ))}
+        {data && data.jobs.length === 0 && <p className="text-[13px] text-ink-3">Nothing matches.</p>}
+      </div>
+    </Shell>
   );
 }
