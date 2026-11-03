@@ -20,7 +20,7 @@
  *    학교가 UI 를 바꾸면 필드명이 달라질 수 있다 → 그럴 땐 아래 mapOrg 만 고치면 된다.
  */
 import { decodeNumericEntities } from '../sources/entities';
-import { COUNCIL_RE, notCouncil, campusGroupsWebsite, engageLinks, pennClubToOrg, parseFacetWpCards, facetCardToOrg, parseAccordionDirectory, namedOrgToOrg, parseDrupalAccordionCards, cardOrgToOrg, uclaOrgToOrg, parseBrownDsf, parseBrownOrgLinks, brownRowToOrg, type UclaOrg, type EngageSocial, type PennClub } from '../sources/orglinks';
+import { COUNCIL_RE, notCouncil, campusGroupsWebsite, engageLinks, pennClubToOrg, parseFacetWpCards, facetCardToOrg, parseAccordionDirectory, namedOrgToOrg, parseDrupalAccordionCards, cardOrgToOrg, uclaOrgToOrg, isOfficeOrg, parseBrownDsf, parseBrownOrgLinks, brownRowToOrg, type UclaOrg, type EngageSocial, type PennClub } from '../sources/orglinks';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -106,7 +106,8 @@ const CAMPUSGROUPS_SKIP = /^(Campus Departments|Residential Life|College\/Depart
 const skipCampusGroup = (o: CampusGroupsOrg) => (CAMPUSGROUPS_SKIP.test(o.groupType) || CAMPUSGROUPS_SKIP.test(o.tags[0] ?? '')) && !COUNCIL_RE.test(o.name);
 function mapCampusGroupsOrg(schoolId: ID, host: string, o: CampusGroupsOrg): Organization {
   const catText = notCouncil(`${o.groupType} ${o.tags.join(' ')} ${o.name}`);
-  const type: Organization['type'] = /\b(council|association)\b/i.test(o.name) && /fratern|soror|greek|panhel|living group|fsilg/i.test(o.name) ? 'council' : GREEK_RE.test(catText) ? 'greek' : COUNCIL_RE.test(catText) || /^Associated Students/i.test(o.groupType) ? 'council' : 'club';
+  const type0: Organization['type'] = /\b(council|association)\b/i.test(o.name) && /fratern|soror|greek|panhel|living group|fsilg/i.test(o.name) ? 'council' : GREEK_RE.test(catText) ? 'greek' : COUNCIL_RE.test(catText) || /^Associated Students/i.test(o.groupType) ? 'council' : 'club';
+  const type: Organization['type'] = type0 === 'club' && (isOfficeOrg(o.name, o.groupType) || isOfficeOrg(o.name, o.tags[0])) ? 'department' : type0;
   return {
     id: `${type === 'greek' ? 'og' : 'oc'}_${schoolId.replace('s_', '')}_cg${o.id}`,
     name: o.name,

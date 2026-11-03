@@ -934,7 +934,7 @@
    "emoji": "AR",
    "hue": 48
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -2174,7 +2174,7 @@
    "emoji": "L",
    "hue": 0
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -2358,7 +2358,7 @@
    "emoji": "CS",
    "hue": 176
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -2436,7 +2436,7 @@
    "emoji": "CC",
    "hue": 88
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -2462,7 +2462,7 @@
    "emoji": "CD",
    "hue": 152
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -2488,7 +2488,7 @@
    "emoji": "CE",
    "hue": 120
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -2830,7 +2830,7 @@
    "emoji": "CB",
    "hue": 352
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -2962,7 +2962,7 @@
    "emoji": "CA",
    "hue": 232
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -2988,7 +2988,7 @@
    "emoji": "CA",
    "hue": 272
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -3492,7 +3492,7 @@
    "emoji": "DM",
    "hue": 120
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -3596,7 +3596,7 @@
    "emoji": "DS",
    "hue": 312
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -4308,7 +4308,7 @@
    "emoji": "GI",
    "hue": 56
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -4518,7 +4518,7 @@
    "emoji": "GF",
    "hue": 304
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -4706,7 +4706,7 @@
    "emoji": "HM",
    "hue": 192
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -5050,7 +5050,7 @@
    "emoji": "HH",
    "hue": 288
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -5311,7 +5311,7 @@
    "emoji": "IS",
    "hue": 24
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -5571,7 +5571,7 @@
    "emoji": "KA",
    "hue": 144
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -6022,7 +6022,7 @@
    "emoji": "LB",
    "hue": 96
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -6804,7 +6804,7 @@
    "emoji": "MM",
    "hue": 256
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -7384,7 +7384,7 @@
    "emoji": "OI",
    "hue": 80
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -7410,7 +7410,7 @@
    "emoji": "OR",
    "hue": 296
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -7462,7 +7462,7 @@
    "emoji": "OR",
    "hue": 16
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -7488,7 +7488,7 @@
    "emoji": "OS",
    "hue": 344
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -7514,7 +7514,7 @@
    "emoji": "OS",
    "hue": 56
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -7540,7 +7540,7 @@
    "emoji": "OU",
    "hue": 328
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -8722,7 +8722,7 @@
    "emoji": "PT",
    "hue": 0
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -8852,7 +8852,7 @@
    "emoji": "PA",
    "hue": 8
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -9784,7 +9784,7 @@
    "emoji": "RL",
    "hue": 0
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -9836,7 +9836,7 @@
    "emoji": "RS",
    "hue": 80
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -9888,7 +9888,7 @@
    "emoji": "RC",
    "hue": 32
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -10254,7 +10254,7 @@
    "emoji": "SC",
    "hue": 232
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -10384,7 +10384,7 @@
    "emoji": "SJ",
    "hue": 264
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -10596,7 +10596,7 @@
    "emoji": "SO",
    "hue": 352
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -11972,7 +11972,7 @@
    "emoji": "SE",
    "hue": 128
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -12024,7 +12024,7 @@
    "emoji": "SH",
    "hue": 16
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -12102,7 +12102,7 @@
    "emoji": "SL",
    "hue": 304
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -12180,7 +12180,7 @@
    "emoji": "SS",
    "hue": 176
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -12232,7 +12232,7 @@
    "emoji": "ST",
    "hue": 336
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -12284,7 +12284,7 @@
    "emoji": "ST",
    "hue": 240
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -12416,7 +12416,7 @@
    "emoji": "SO",
    "hue": 0
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -12734,7 +12734,7 @@
    "emoji": "TF",
    "hue": 296
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -13156,7 +13156,7 @@
    "emoji": "OM",
    "hue": 240
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -13208,7 +13208,7 @@
    "emoji": "TC",
    "hue": 24
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -13260,7 +13260,7 @@
    "emoji": "VR",
    "hue": 240
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -13338,7 +13338,7 @@
    "emoji": "TE",
    "hue": 264
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -13866,7 +13866,7 @@
    "emoji": "WU",
    "hue": 248
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -13918,7 +13918,7 @@
    "emoji": "WU",
    "hue": 152
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,
@@ -14126,7 +14126,7 @@
    "emoji": "WU",
    "hue": 40
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wustl",
   "parent": "University Department",
   "verified": false,

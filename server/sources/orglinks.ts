@@ -197,6 +197,22 @@ export function cardOrgToOrg(c: CardOrg, schoolId: string, listUrl: string): Org
   };
 }
 
+/**
+ * 학교 디렉터리 분류 중 학생 단체가 아닌 학교 부서·사무실·직원 모임 (2026-11-03 검사: Tufts “Orientation & Student Experience”, JHU “Pava Center” 가 동아리로 보였다).
+ * 지우지 않고 type 'department' 로 둔다 (사장님: 모은 데이터는 지우지 않는다) — 동아리 목록에는 안 나온다.
+ * “Department Sponsored Student Organization” 처럼 학생 단체라고 적힌 분류는 해당 없음.
+ */
+const STRONG_OFFICE = /non[- ]student org|staff[- ]only|faculty\/staff|university committee|student affairs unit|university unit|president'?s office/i;
+const WEAK_OFFICE = /\b(university|academic|campus) (department|office|unit)s?\b|^departments?( and programs| or program)?$|departmental programs|department ?office|department\/office|\boffices$|university offices?|career services|campus centers, museums|admin(istrative)? group|\badministration\b|^administrative$|dean'?s office/i;
+const OFFICE_NAME = /\b(center|centre|office|department|dept\.?|program|programs|services?|museum|institute|faculty|staff|committee|division|school of|college of|library|libraries|admissions|advising|registrar|recreation|housing|dining|alumni|career|campus life|student life|student affairs|dean|residential|ministry office|initiative|orientation|student experience|engagement|wellness|well-?being|support|success|equity|inclusion|operations|affairs)\b/i;
+const CLUB_NAME = /\b(club|society|association|team|magazine|journal|chapter|alliance|collective|ensemble|choir|band|league|union|coalition|students for|student group|fraternity|sorority)\b|@/i;
+/** 이름과 분류로 학교 부서인가 — 분류가 확실하면(직원 전용·비학생 단체 등) 이름과 상관없이, 애매한 분류(“Department”)면 이름도 부서 같을 때만 */
+export function isOfficeOrg(name: string, category?: string): boolean {
+  if (!category || COUNCIL_RE.test(name) || /student org(anization)?s?\b/i.test(category.replace(/non[- ]student org[^)]*\)?/i, ''))) return false;
+  if (STRONG_OFFICE.test(category)) return true;
+  return WEAK_OFFICE.test(category) && OFFICE_NAME.test(name) && !CLUB_NAME.test(name);
+}
+
 // ─── Brown Student Activities 단체 목록 (studentactivities.brown.edu/dsf_orgs_undergrad) — 412개, 이름·분류·소개 + 단체별 공개 페이지(SNS 아이콘) ───
 export interface BrownRow { name: string; category: string; description: string; path: string }
 export function parseBrownDsf(html: string): BrownRow[] {

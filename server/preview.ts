@@ -25,7 +25,7 @@ const hasOwnLink = (o: Organization) => publicLinks(o.links).some((l) => ['Websi
 export function previewSchools(): PreviewSchool[] {
   return rows().map((r) => {
     const f = path.join(COLLECTED, `${r.id}.orgs.json`);
-    const orgs = readJson<Organization[]>(f) ?? [];
+    const orgs = (readJson<Organization[]>(f) ?? []).filter((o) => o.type !== 'department'); // 학교 부서·사무실은 파일에는 남기고 목록에서는 뺀다
     const probe = readJson<PreviewSchool['probe']>(path.join(COLLECTED, `${r.id}.probe.json`));
     const courses = readJson<unknown[]>(path.join(COLLECTED, `${r.id}.courses.json`))?.length ?? 0;
     return { id: r.id, name: r.name, region: r.region, orgs: orgs.length, courses, withLinks: orgs.filter(hasOwnLink).length, collectedAt: existsSync(f) ? statSync(f).mtime.toISOString() : undefined, probe: probe ? { status: probe.status, source: probe.source, sampled: probe.sampled, checkedAt: probe.checkedAt } : undefined };
@@ -36,7 +36,7 @@ export function previewSchool(id: string): { school: PreviewSchool; orgs: Previe
   if (!ID_RE.test(id)) return null;
   const school = previewSchools().find((s) => s.id === id);
   if (!school) return null;
-  const orgs = (readJson<Organization[]>(path.join(COLLECTED, `${id}.orgs.json`)) ?? []).map(withoutEmoji).map((o) => ({ id: o.id, name: o.name, type: o.type, category: o.parent, description: o.description, links: publicLinks(o.links), logo: o.logo, recruiting: recruitmentLabel(o.recruitment) ?? undefined }));
+  const orgs = (readJson<Organization[]>(path.join(COLLECTED, `${id}.orgs.json`)) ?? []).filter((o) => o.type !== 'department').map(withoutEmoji).map((o) => ({ id: o.id, name: o.name, type: o.type, category: o.parent, description: o.description, links: publicLinks(o.links), logo: o.logo, recruiting: recruitmentLabel(o.recruitment) ?? undefined }));
   const probe = readJson<Record<string, unknown>>(path.join(COLLECTED, `${id}.probe.json`));
   return { school, orgs, probe };
 }

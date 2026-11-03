@@ -133,3 +133,11 @@ test('Brown Student Activities list + club page social block', async () => {
   assert.equal(o.type, 'club'); assert.equal(o.links?.[0]?.url, 'https://studentactivities.brown.edu/organizations/180-degrees-brown-university');
   assert.ok(rows.filter((x) => x.category === 'Student Governance').every((x) => brownRowToOrg(x, [], 's_brown', '').type === 'council'));
 });
+
+test('isOfficeOrg: school offices are not clubs; student groups filed under Department stay clubs', async () => {
+  const { isOfficeOrg } = await import('./sources/orglinks');
+  for (const [n, c] of [['Orientation & Student Experience', 'University Department'], ['Pava Center for Entrepreneurship', 'PRIMARY: University/Academic Department (non student org)'], ['Center for Career Development', 'Department'], ['Ackland Art Museum', 'University Department'], ['Academic Success and Writing Center', 'Department Office/Department Initiative'], ['Leaning In', 'Staff-Only Social Group'], ['Alumni Affairs at UC Santa Barbara', 'Department'], ['Data Intensive Social Science Center', 'Administrative']])
+    assert.equal(isOfficeOrg(n, c), true, n);
+  for (const [n, c] of [['Amateur Radio Club at UCSB', 'Department'], ['Amaranth Literary Magazine', 'Department Office/Department Initiative'], ['Bears Bikes', 'University Department'], ['Atlantic Hope @ Cornell', 'Department'], ['Graduate Student Council', 'University Department'], ['Chess Club', 'Department Sponsored Student Organization'], ['Robotics Team', 'Academic'], ['Yale Black Seminarians', 'Administrative'], ['SWANA-Y: Southwest Asia and North Africa at Yale', "Yale College Dean's Office Administration"]])
+    assert.equal(isOfficeOrg(n, c), false, n);
+});
