@@ -53,7 +53,8 @@ export function previewCourses(id: string, q: string): { code: string; title: st
   return all.filter((c) => !k || `${c.code} ${c.title}`.toLowerCase().includes(k)).slice(0, 30).map((c) => ({ code: c.code, title: c.title, term: c.term, meetings: c.meetings, url: c.url }));
 }
 
-/** 미국 전역 학생 채용 파일 (server/data/collected/jobs-us.json) — 대상·종류·검색어로 거른다, 200개까지 */
+/** 미국 전역 학생 채용 파일 (라이브 앱도 같은 함수: /api/jobs — DB·Railway 수집 없이 배포에 들어 있는 파일만 읽는다, 2026-11-03 사장님: 돈 안 드는 방식으로)
+ *  원래 설명: 미국 전역 학생 채용 파일 (server/data/collected/jobs-us.json) — 대상·종류·검색어로 거른다, 200개까지 */
 export function previewJobs(q: { q?: string; audience?: string; kind?: string }): { collectedAt?: string; total: number; counts: Record<string, number>; jobs: unknown[] } {
   const f = readJson<{ collectedAt?: string; jobs?: { title: string; company: string; location: string; audience: string[]; kind: string }[] }>(path.join(COLLECTED, 'jobs-us.json'));
   const all = f?.jobs ?? [];

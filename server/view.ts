@@ -24,6 +24,7 @@
  * - 동아리 지원자 목록은 운영진과 본인에게만, 다른 사람의 저장(saved)은 안 보낸다, 시간 투표는 초대받은 사람에게만
  */
 import { withoutEmoji, stripEmoji } from '@core/lib/orglinks';
+import { noEmojiView } from './noemoji';
 /** 공고·행사 주최 이름에도 이모지 없이 */
 const hostNoEmoji = <T extends { host?: string }>(o: T): T => (o.host && stripEmoji(o.host) !== o.host ? { ...o, host: stripEmoji(o.host) } : o);
 import type { Patch, Snapshot } from '@core/api/types';
@@ -202,7 +203,7 @@ export function snapshotFor(full: Snapshot, viewerId: ID): Snapshot {
   // 신고·정지 (server/moderation.ts) — 정지된 사람과 그 콘텐츠, 신고가 쌓여 숨긴 글·댓글을 뺀다.
   // 공개 범위로 거르기 전에 한 번 먼저 — 익명 글은 거른 뒤에는 글쓴이 id 가 없어 정지된 사람의 글인지 알 수 없다
   const db = moderateView(stripSamples(full, hiddenSamplesFor(full, full.users.find((u) => u.id === viewerId))), viewerId, full);
-  return moderateView({
+  return noEmojiView(moderateView({
     ...db,
     organizations: db.organizations.filter(orgFilter(db, viewerId)).map(orgFor(viewerId)),
     opportunities: db.opportunities.filter(opportunityFilter(db, viewerId)).map(hostNoEmoji),
@@ -220,7 +221,7 @@ export function snapshotFor(full: Snapshot, viewerId: ID): Snapshot {
     proposals: db.proposals.filter(inProposal(viewerId)),
     rides: ridesFor(db, viewerId), // my school only · blocks both ways · riders & chat only to people in the ride
     timePolls: pollsFor(db.timePolls, viewerId),
-  }, viewerId, full);
+  }, viewerId, full));
 }
 
 export function patchFor(original: Patch, viewerId: ID, db?: Snapshot): Patch | null {
@@ -273,5 +274,5 @@ export function patchFor(original: Patch, viewerId: ID, db?: Snapshot): Patch | 
   // 신고·정지 (server/moderation.ts) — 새로 숨겨진 것은 removed.* 로 보내 열린 화면에서도 사라지게
   if (db) moderatePatch(out, viewerId, db);
   const hasContent = Object.entries(out).some(([k, v]) => (k === 'relationships' ? !!v : k === 'removed' ? !!v && Object.values(v).some((ids) => ids && ids.length) : Array.isArray(v) && v.length > 0));
-  return hasContent ? out : null;
+  return hasContent ? noEmojiView(out) : null;
 }

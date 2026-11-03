@@ -574,6 +574,7 @@ app.get('/api/agent/status', wrap(async () => {
   return { latest, recent: runs.slice(0, 30) };
 }));
 // 아직 안 연 학교 미리보기 (파일에서 바로 — DB 에 넣지 않는다) · server/preview.ts
+app.get('/api/jobs', (req, res) => { res.json(previewJobs({ q: String(req.query.q ?? ''), audience: req.query.audience ? String(req.query.audience) : undefined, kind: req.query.kind ? String(req.query.kind) : undefined })); });
 app.get('/api/preview/jobs', (req, res) => { res.json(previewJobs({ q: String(req.query.q ?? ''), audience: req.query.audience ? String(req.query.audience) : undefined, kind: req.query.kind ? String(req.query.kind) : undefined })); });
 app.get('/api/preview', (_req, res) => { res.json({ schools: previewSchools() }); });
 app.get('/api/preview/:id/courses', (req, res) => { const r = previewCourses(String(req.params.id), String(req.query.q ?? '')); if (!r) { res.status(404).json({ error: 'not found' }); return; } res.json({ courses: r }); });

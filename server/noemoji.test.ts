@@ -25,3 +25,23 @@ test('cleanShareUrl / publicLinks: share-tracking tags are removed, real query k
   assert.equal(cleanShareUrl('https://example.org/page?id=5'), 'https://example.org/page?id=5');
   assert.equal(publicLinks([{ label: 'Instagram', url: 'https://www.instagram.com/x?igsh=abc' }])[0].url, 'https://www.instagram.com/x');
 });
+
+test('noEmojiView: no emoji in what the app receives — posts, names, avatars, covers; ids and reaction keys untouched', async () => {
+  const { noEmojiView } = await import('./noemoji');
+  const snap = {
+    posts: [{ id: 'p1', body: 'New café on Telegraph. The flat white is legit. Hosting a coffee meetup here tonight ☕', reactions: { '❤️': ['u1'] } }],
+    users: [{ id: 'u_seoyeon', nickname: 'Sofia', bio: 'Guitar 🎸 and coffee', avatar: { emoji: '🎸', hue: 290 } }],
+    opportunities: [{ id: 'op1', title: 'Hackathon 🚀', cover: { emoji: '📅', hue: 200 }, sourceUrl: 'https://x.org/?a=1' }],
+    chatRooms: [{ id: 'c1', lastMessage: 'see you 😊' }],
+  };
+  const out = noEmojiView(snap);
+  assert.equal(out.posts[0].body, 'New café on Telegraph. The flat white is legit. Hosting a coffee meetup here tonight');
+  assert.deepEqual(out.posts[0].reactions, { '❤️': ['u1'] });
+  assert.equal(out.users[0].bio, 'Guitar and coffee');
+  assert.equal(out.users[0].avatar.emoji, 'S');
+  assert.equal(out.opportunities[0].title, 'Hackathon');
+  assert.equal(out.opportunities[0].cover.emoji, '');
+  assert.equal(out.chatRooms[0].lastMessage, 'see you');
+  assert.equal(noEmojiView({ a: 'x' }).a, 'x');
+  assert.equal(snap.users[0].avatar.emoji, '🎸'); // input not changed
+});
