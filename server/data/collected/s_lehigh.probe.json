@@ -1,0 +1,20 @@
+{
+ "checkedAt": "2026-11-03T01:35:47.501Z",
+ "status": "applied",
+ "stored": false,
+ "source": "catalog:https://catalog.lehigh.edu/",
+ "sampled": 304,
+ "withTimes": 0,
+ "terms": [
+  "catalog"
+ ],
+ "sample": [
+  "BIOS 010 · Bioscience in the 21st Century · catalog",
+  "BIOS 338 · Neurodegenerative Diseases in Model Organisms · catalog",
+  "BIOS 426 · Coevolution · catalog",
+  "HMS 142 · (CLSS 142) The Greek and Latin Roots of Medical Terminology · catalog",
+  "REL 005 · Spiritual Exercises in Religious Traditions · catalog",
+  "REL 149 · (ETH 149) Modern Islamic Ethics · catalog"
+ ],
+ "spotCheck": "no lookup (catalog codes/titles only)"
+}

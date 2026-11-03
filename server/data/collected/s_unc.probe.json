@@ -1,0 +1,20 @@
+{
+ "checkedAt": "2026-11-03T01:23:39.254Z",
+ "status": "applied",
+ "stored": false,
+ "source": "catalog:https://catalog.unc.edu/courses/",
+ "sampled": 410,
+ "withTimes": 0,
+ "terms": [
+  "catalog"
+ ],
+ "sample": [
+  "BIOL 472 · Introduction to Plant Taxonomy · catalog",
+  "BIOL 213 · Evolution and Life · catalog",
+  "BIOL 201H · Ecology and Evolution · catalog",
+  "BIOL 680 · Advanced Seminar in Recent Biological Research and Methods · catalog",
+  "BIOL 272L · Local Flora Lab · catalog",
+  "GSLL 254 · The Division of Germany, Reunification, and Conflict with Russia · catalog"
+ ],
+ "spotCheck": "no lookup (catalog codes/titles only)"
+}

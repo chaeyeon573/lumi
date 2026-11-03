@@ -62,7 +62,8 @@ export async function detectOrgsPlatform(short: string, emailDomain: string, ove
     try { const n = r.ok ? (JSON.parse(r.text) as unknown[]).length : 0; return n > 0 ? { platform: 'pennclubs', host, sample: n } : null; } catch { return null; }
   }
   // 직접 적어 준 주소는 어느 플랫폼인지 모를 수 있다(예: callink.berkeley.edu 는 Engage) — 둘 다 시도한다
-  const list: { platform: Detected['platform']; host: string }[] = override ? [{ platform: 'engage', host: override.replace(/\/+$/, '') }, { platform: 'campusgroups', host: override.replace(/\/+$/, '') }] : candidates(short, emailDomain);
+  // presence.io 주소면 Presence 로 (2026-11-03 WashU: 직접 적은 주소를 Engage/CampusGroups 로만 시도해 못 찾았다)
+  const list: { platform: Detected['platform']; host: string }[] = override ? (/\.presence\.io\b/.test(override) ? [{ platform: 'presence', host: override.replace(/\/+$/, '') }] : [{ platform: 'engage', host: override.replace(/\/+$/, '') }, { platform: 'campusgroups', host: override.replace(/\/+$/, '') }]) : candidates(short, emailDomain);
   for (const c of list) {
     if (c.platform === 'presence') {
       const sub = new URL(c.host).hostname.split('.')[0];

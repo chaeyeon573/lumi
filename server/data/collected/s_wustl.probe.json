@@ -1,0 +1,20 @@
+{
+ "checkedAt": "2026-11-03T01:35:18.255Z",
+ "status": "applied",
+ "stored": false,
+ "source": "catalog:https://bulletin.wustl.edu/",
+ "sampled": 134,
+ "withTimes": 0,
+ "terms": [
+  "catalog"
+ ],
+ "sample": [
+  "ESE 5240 · Detection and Estimation Theory · catalog",
+  "ESE 5980 · Electrical & Systems Engineering Graduate Seminar · catalog",
+  "ESE 3300 · Engineering Electromagnetics Principles · catalog",
+  "ESE 4390 · Introduction to Quantum Communications · catalog",
+  "ESE 5130 · Large-Scale Optimization for Data Science · catalog",
+  "LING 2996 · Linguistics Elective · catalog"
+ ],
+ "spotCheck": "no lookup (catalog codes/titles only)"
+}
