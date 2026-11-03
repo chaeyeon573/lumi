@@ -167,6 +167,7 @@ test('isCouncil: belonging to a council or being recognized by student governmen
 test('GOV_GROUP_TYPE_RE: CampusGroups group type that is itself government vs a registration path', () => {
   assert.equal(GOV_GROUP_TYPE_RE.test('Divisional Council'), true); // Emory graduate school governments
   assert.equal(GOV_GROUP_TYPE_RE.test('Student Government'), true); // Duke
+  assert.equal(GOV_GROUP_TYPE_RE.test('Class Councils'), true); // Dartmouth Class of 20xx
   assert.equal(GOV_GROUP_TYPE_RE.test('Homewood: Student Government Association'), false); // JHU clubs registered with SGA
   assert.equal(GOV_GROUP_TYPE_RE.test('Student Government Recognized Organizations'), false); // CMU
 });
