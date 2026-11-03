@@ -9093,5 +9093,4278 @@
   "termCode": "26F",
   "units": 2,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CH%20ENGR&crs_catlg_no=0495A%20%20%20&class_id=769790201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0001_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 1",
+  "title": "Connections in Chemistry and Biochemistry",
+  "department": "CHEM",
+  "instructor": "Deweese, D. Spokoyny, A.M. Aguilar-Romero, J.",
+  "location": "Haines Hall 39",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0001%20%20%20%20&class_id=142001200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0003_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 3",
+  "title": "Material World",
+  "department": "CHEM",
+  "instructor": "Spokoyny, A.M. Pathuri, R.S.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:20"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0003%20%20%20%20&class_id=142009200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014a_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14A",
+  "title": "General Chemistry for Life Scientists I (Lec 1)",
+  "department": "CHEM",
+  "instructor": "Lavelle, L.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014A%20%20%20&class_id=142042200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14A",
+  "title": "General Chemistry for Life Scientists I (Lec 2)",
+  "department": "CHEM",
+  "instructor": "Lavelle, L.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014A%20%20%20&class_id=142042220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014ae_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14AE",
+  "title": "General Chemistry for Life Scientists I--Enhanced",
+  "department": "CHEM",
+  "instructor": "Anderson, L. Deweese, D. Woodburn, K.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014AE%20%20&class_id=142036200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014b_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14B",
+  "title": "General Chemistry for Life Scientists II",
+  "department": "CHEM",
+  "instructor": "Scerri, E.R.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014B%20%20%20&class_id=142043200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014bl_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14BL",
+  "title": "General and Organic Chemistry Laboratory I (Lec 1)",
+  "department": "CHEM",
+  "instructor": "Pang, J. Pathuri, R.S.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "08:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014BL%20%20&class_id=142117200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014bl_26f_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14BL",
+  "title": "General and Organic Chemistry Laboratory I (Lec 2)",
+  "department": "CHEM",
+  "instructor": "Henary, M.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "08:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014BL%20%20&class_id=142117220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014c_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14C",
+  "title": "Structure of Organic Molecules (Lec 1)",
+  "department": "CHEM",
+  "instructor": "Riu, M.Y.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014C%20%20%20&class_id=142044200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014c_26f_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14C",
+  "title": "Structure of Organic Molecules (Lec 2)",
+  "department": "CHEM",
+  "instructor": "Riu, M.Y.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014C%20%20%20&class_id=142044230&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014cl_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14CL",
+  "title": "General and Organic Chemistry Laboratory II (Lec 1)",
+  "department": "CHEM",
+  "instructor": "Ngo, C. Hateley, N.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014CL%20%20&class_id=142119200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014cl_26f_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14CL",
+  "title": "General and Organic Chemistry Laboratory II (Lec 2)",
+  "department": "CHEM",
+  "instructor": "Ngo, C. Hateley, N.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014CL%20%20&class_id=142119230&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014d_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14D",
+  "title": "Organic Reactions and Pharmaceuticals (Lec 1)",
+  "department": "CHEM",
+  "instructor": "Ow, F.P.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014D%20%20%20&class_id=142045200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014d_26f_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14D",
+  "title": "Organic Reactions and Pharmaceuticals (Lec 2)",
+  "department": "CHEM",
+  "instructor": "Ow, F.P.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014D%20%20%20&class_id=142045220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0020a_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 20A",
+  "title": "Chemical Structure (Lec 1)",
+  "department": "CHEM",
+  "instructor": "Wilson, P.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "08:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "08:50"
+   },
+   {
+    "day": 4,
+    "start": "08:00",
+    "end": "08:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0020A%20%20%20&class_id=142140200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0020a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 20A",
+  "title": "Chemical Structure (Lec 2)",
+  "department": "CHEM",
+  "instructor": "Schwartz, B.J. Casas, A.M.",
+  "location": "Moore Hall 100",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0020A%20%20%20&class_id=142140220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0020ah_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 20AH",
+  "title": "Chemical Structure (Honors)",
+  "department": "CHEM",
+  "instructor": "Narang, P.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0020AH%20%20&class_id=142143200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0030a_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 30A",
+  "title": "Organic Chemistry I: Structure and Reactivity",
+  "department": "CHEM",
+  "instructor": "Pham, H.V.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0030A%20%20%20&class_id=142088200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0030al_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 30AL",
+  "title": "General Chemistry Laboratory II",
+  "department": "CHEM",
+  "instructor": "Anderson, L. Henary, M. Fleming, W.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0030AL%20%20&class_id=142185200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0030b_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 30B",
+  "title": "Organic Chemistry II: Reactivity, Synthesis, and Spectroscopy",
+  "department": "CHEM",
+  "instructor": "Pham, H.V.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0030B%20%20%20&class_id=142091200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0098xa_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 98XA",
+  "title": "PEERS Collaborative Learning Workshops for Life Sciences Majors (Lab 1)",
+  "department": "CHEM",
+  "instructor": "Hasson, T.W. Gonzalez Ramirez,",
+  "location": "Bunche Hall 3178",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0098XA%20%20&class_id=142290201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0098xa_26f_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 98XA",
+  "title": "PEERS Collaborative Learning Workshops for Life Sciences Majors (Lab 2)",
+  "department": "CHEM",
+  "instructor": "No instructors",
+  "location": "Bunche Hall",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0098XA%20%20&class_id=142290202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0098xa_26f_3",
+  "schoolId": "s_ucla",
+  "code": "CHEM 98XA",
+  "title": "PEERS Collaborative Learning Workshops for Life Sciences Majors (Lab 3)",
+  "department": "CHEM",
+  "instructor": "No instructors",
+  "location": "Bunche Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0098XA%20%20&class_id=142290203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0098xa_26f_4",
+  "schoolId": "s_ucla",
+  "code": "CHEM 98XA",
+  "title": "PEERS Collaborative Learning Workshops for Life Sciences Majors (Lab 4)",
+  "department": "CHEM",
+  "instructor": "Hasson, T.W. Gonzalez Ramirez,",
+  "location": "Rolfe Hall 3105",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0098XA%20%20&class_id=142290204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0098xb_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 98XB",
+  "title": "PEERS Collaborative Learning Workshops for Physical Sciences and Engineering Majors",
+  "department": "CHEM",
+  "instructor": "Hasson, T.W. Gonzalez Ramirez,",
+  "location": "Royce Hall 150",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0098XB%20%20&class_id=142291201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0107c_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM C107",
+  "title": "Organometallic Chemistry",
+  "department": "CHEM",
+  "instructor": "Diaconescu, P.L.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0107%20%20C%20&class_id=142342200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0110a_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 110A",
+  "title": "Physical Chemistry: Chemical Thermodynamics",
+  "department": "CHEM",
+  "instructor": "Kavner, A.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0110A%20%20%20&class_id=142350200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0110b_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 110B",
+  "title": "Topics in Physical Chemistry",
+  "department": "CHEM",
+  "instructor": "Wu, E.C.",
+  "location": "Young Hall 2200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0110B%20%20%20&class_id=142357200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0113a_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 113A",
+  "title": "Physical Chemistry: Introduction to Quantum Mechanics",
+  "department": "CHEM",
+  "instructor": "Shafaat, H.",
+  "location": "Young Hall 2200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0113A%20%20%20&class_id=142381200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0115ac_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM C115A",
+  "title": "Advanced Quantum Chemistry with Laboratory I",
+  "department": "CHEM",
+  "instructor": "Fay, T.P.",
+  "location": "Young Hall 1044",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0115A%20C%20&class_id=142415200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0120m_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM M120",
+  "title": "Soft Matter Laboratory",
+  "department": "CHEM",
+  "instructor": "Arisaka, K. TA",
+  "location": "Knudsen Hall 4173",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:00"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0120%20%20M%20&class_id=142421200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0123ac_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM C123A",
+  "title": "Advanced Thermodynamics and Statistical Mechanics with Laboratory I",
+  "department": "CHEM",
+  "instructor": "Gelbart, W.M.",
+  "location": "Young Hall 1044",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0123A%20C%20&class_id=142455200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0124m_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM M124",
+  "title": "Philosophy of Science: Historical",
+  "department": "CHEM",
+  "instructor": "Scerri, E.R.",
+  "location": "Public Affairs Building 2250",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0124%20%20M%20&class_id=142460200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0132ac_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM C132A",
+  "title": "Core Principles in Cell and Molecular Biology",
+  "department": "CHEM",
+  "instructor": "Torres, J.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0132A%20C%20&class_id=142491200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0136_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 136",
+  "title": "Organic Structural Methods",
+  "department": "CHEM",
+  "instructor": "Rubin, Y.F.",
+  "location": "Young Hall 2200",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0136%20%20%20%20&class_id=142520200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0147_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 147",
+  "title": "Careers in Chemistry and Biochemistry",
+  "department": "CHEM",
+  "instructor": "Kavner, A. Kappel, K. Quinlan, M.E. Sletten, E.M.",
+  "location": "Young Hall 2200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0147%20%20%20%20&class_id=142582200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0153a_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 153A",
+  "title": "Biochemistry: Introduction to Structure, Enzymes, and Metabolism (Lec 1)",
+  "department": "CHEM",
+  "instructor": "Lannan, R. Wilson, P.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0153A%20%20%20&class_id=142637200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0153a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 153A",
+  "title": "Biochemistry: Introduction to Structure, Enzymes, and Metabolism (Lec 2)",
+  "department": "CHEM",
+  "instructor": "Lannan, R. Wang, S.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "16:50"
+   },
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "16:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "16:50"
+   },
+   {
+    "day": 4,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0153A%20%20%20&class_id=142637220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0153b_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 153B",
+  "title": "Biochemistry: DNA, RNA, and Protein Synthesis",
+  "department": "CHEM",
+  "instructor": "Lawson, M.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0153B%20%20%20&class_id=142638200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0153c_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 153C",
+  "title": "Biochemistry: Biosynthetic and Energy Metabolism and Its Regulation",
+  "department": "CHEM",
+  "instructor": "Koehler, C.M.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0153C%20%20%20&class_id=142639200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0153l_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 153L",
+  "title": "Biochemical Methods I",
+  "department": "CHEM",
+  "instructor": "Hong-Hermesdorf, A",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0153L%20%20%20&class_id=142641200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0154_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 154",
+  "title": "Biochemical Methods II",
+  "department": "CHEM",
+  "instructor": "Nakamoto, S.S.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0154%20%20%20%20&class_id=142640200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0155c_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM C155",
+  "title": "Mitochondria in Medicine, Biology, and Chemistry",
+  "department": "CHEM",
+  "instructor": "Koehler, C.M.",
+  "location": "Center for the Health Sciences 23105A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0155%20%20C%20&class_id=142648200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0156_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 156",
+  "title": "Physical Biochemistry",
+  "department": "CHEM",
+  "instructor": "Wollman, R.",
+  "location": "Young Hall 2200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0156%20%20%20%20&class_id=142650200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0171_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 171",
+  "title": "Intermediate Inorganic Chemistry",
+  "department": "CHEM",
+  "instructor": "Kaner, R.B.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0171%20%20%20%20&class_id=142725200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0173c_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM C173",
+  "title": "Electrochemical Systems",
+  "department": "CHEM",
+  "instructor": "Liu, C. Xiong, M.",
+  "location": "Young Hall 3069",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0173%20%20C%20&class_id=142736200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0189001_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 189",
+  "title": "Advanced Honors Seminars: Advanced Honors Seminar for Chemistry and Biochemistry 171",
+  "department": "CHEM",
+  "instructor": "Kaner, R.B.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0189%20%20%20%20&class_id=142534200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0192c_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 192C",
+  "title": "Undergraduate Assistant Education Practicum in Chemistry and Biochemistry",
+  "department": "CHEM",
+  "instructor": "Lavelle, L.",
+  "location": "Young Hall 4067",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0192C%20%20%20&class_id=142854200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0192d_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 192D",
+  "title": "Undergraduate Assistant Education Practicum in Chemistry and Biochemistry",
+  "department": "CHEM",
+  "instructor": "Lavelle, L.",
+  "location": "Young Hall 4067",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0192D%20%20%20&class_id=142855200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0192em_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM M192E",
+  "title": "Introduction to Collaborative Learning Theory and Practice",
+  "department": "CHEM",
+  "instructor": "Shaked, S. Parker, H.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0192E%20M%20&class_id=142865200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0192f_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 192F",
+  "title": "Methods and Application of Collaborative Learning Theory and Practice",
+  "department": "CHEM",
+  "instructor": "Shaked, S.",
+  "location": "Young Hall 2200 Franz Hall 2258A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0192F%20%20%20&class_id=142857200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0203b_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 203B",
+  "title": "Ethics in Chemical Research",
+  "department": "CHEM",
+  "instructor": "Tinoco Valencia, A Doyle, A.G.",
+  "location": "Young Hall 2200",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0203B%20%20%20&class_id=542015200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0206_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 206",
+  "title": "Chemistry of Biology Seminar",
+  "department": "CHEM",
+  "instructor": "Harran, P.G.",
+  "location": "Molecular Sciences Building 5241",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0206%20%20%20%20&class_id=542036200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0207c_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM C207",
+  "title": "Organometallic Chemistry",
+  "department": "CHEM",
+  "instructor": "Diaconescu, P.L.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0207%20%20C%20&class_id=542042200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0210_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 210",
+  "title": "Advanced Topics in Chemical Research",
+  "department": "CHEM",
+  "instructor": "Fay, T.P. Maynard, H.D. Shafaat, H.",
+  "location": "Young Hall 2200",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0210%20%20%20%20&class_id=542059200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0215ac_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM C215A",
+  "title": "Advanced Quantum Chemistry with Laboratory I",
+  "department": "CHEM",
+  "instructor": "Fay, T.P.",
+  "location": "Young Hall 1044",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0215A%20C%20&class_id=542091200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0218_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 218",
+  "title": "Chemistry Student Exit Seminar",
+  "department": "CHEM",
+  "instructor": "Schwartz, B.J.",
+  "location": "Young Hall 3069",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0218%20%20%20%20&class_id=542108200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0223ac_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM C223A",
+  "title": "Advanced Thermodynamics and Statistical Mechanics with Laboratory I",
+  "department": "CHEM",
+  "instructor": "Gelbart, W.M.",
+  "location": "Young Hall 1044",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0223A%20C%20&class_id=542144200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0228_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 228",
+  "title": "Chemical Physics Seminar",
+  "department": "CHEM",
+  "instructor": "Tolbert, S.H.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0228%20%20%20%20&class_id=542170200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0232ac_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM C232A",
+  "title": "Core Principles in Cell and Molecular Biology",
+  "department": "CHEM",
+  "instructor": "Torres, J.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0232A%20C%20&class_id=542198200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0236_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 236",
+  "title": "Spectroscopic Methods of Organic Chemistry",
+  "department": "CHEM",
+  "instructor": "Athavale, S.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0236%20%20%20%20&class_id=542224200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0244a_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 244A",
+  "title": "Organic Synthesis: Methodology and Stereochemistry",
+  "department": "CHEM",
+  "instructor": "Kwon, O.",
+  "location": "Young Hall 1044",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0244A%20%20%20&class_id=542275200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0247_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 247",
+  "title": "Organic Colloquium",
+  "department": "CHEM",
+  "instructor": "Tang, Y.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0247%20%20%20%20&class_id=542295200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0248_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 248",
+  "title": "Organic Chemistry Student Seminar",
+  "department": "CHEM",
+  "instructor": "Athavale, S.",
+  "location": "Kinsey Science Teaching Pavilion 1200B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0248%20%20%20%20&class_id=542309200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0249b_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 249B",
+  "title": "Methods of Chemical Synthesis:cvdganic/Inorganic/Organometallic",
+  "department": "CHEM",
+  "instructor": "Gutierrez, O.",
+  "location": "Young Hall 1044",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0249B%20%20%20&class_id=542314200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0255cm_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM CM255",
+  "title": "Mitochondria in Medicine, Biology, and Chemistry",
+  "department": "CHEM",
+  "instructor": "Koehler, C.M.",
+  "location": "Center for the Health Sciences 23105A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0255%20%20CM&class_id=542364200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0258_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 258",
+  "title": "Advanced Topics in Biochemistry and Molecular Biology",
+  "department": "CHEM",
+  "instructor": "Loo, J.A. Petrovic, S.",
+  "location": "Young Hall 3069",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0258%20%20%20%20&class_id=542396200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0268_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 268",
+  "title": "Biochemistry Research Seminar",
+  "department": "CHEM",
+  "instructor": "Schmitt, D.L.",
+  "location": "Young Hall 3069",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "15:30",
+    "end": "18:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0268%20%20%20%20&class_id=542469200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0269a_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 269A",
+  "title": "Protein Structure",
+  "department": "CHEM",
+  "instructor": "Lindert, S.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0269A%20%20%20&class_id=542473200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0269b_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 269B",
+  "title": "Biocatalysis and Bioenergetics",
+  "department": "CHEM",
+  "instructor": "Koehler, C.M.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0269B%20%20%20&class_id=542474200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0269c_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 269C",
+  "title": "Nucleic Acid Structure and Catalysis",
+  "department": "CHEM",
+  "instructor": "Chanfreau, G.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0269C%20%20%20&class_id=542475200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0269d_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 269D",
+  "title": "Mechanism and Regulation of Gene Expression",
+  "department": "CHEM",
+  "instructor": "Lawson, M.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0269D%20%20%20&class_id=542476200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0269e_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 269E",
+  "title": "Biomolecular Structure, Catalysis, and Regulation",
+  "department": "CHEM",
+  "instructor": "Quinlan, M.E.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0269E%20%20%20&class_id=542477200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0273c_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM C273",
+  "title": "Electrochemical Systems",
+  "department": "CHEM",
+  "instructor": "Liu, C. Xiong, M.",
+  "location": "Young Hall 3069",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0273%20%20C%20&class_id=542440200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0278_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 278",
+  "title": "Inorganic Chemistry Student Seminar",
+  "department": "CHEM",
+  "instructor": "Nava, M.J.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0278%20%20%20%20&class_id=542526200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0291m_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM M291",
+  "title": "Systems Biology: Practical Data Analysis",
+  "department": "CHEM",
+  "instructor": "Shah, P.K. Wollman, R.",
+  "location": "Boyer Hall 130",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:30",
+    "end": "16:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0291%20%20M%20&class_id=542571200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0495_26f",
+  "schoolId": "s_ucla",
+  "code": "CHEM 495",
+  "title": "Teaching College Chemistry",
+  "department": "CHEM",
+  "instructor": "Wilson, P. Mendelsohn, R.B. Deweese, D.",
+  "location": "Young Hall 2200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0495%20%20%20%20&class_id=542790200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0010a_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 10A",
+  "title": "Introduction to Chicana/Chicano Studies: History and Culture",
+  "department": "CCAS",
+  "instructor": "Cornejo, K.",
+  "location": "Moore Hall 100",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0010A%20%20%20&class_id=849025100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0019001_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 19",
+  "title": "Race, Education, and Building of a Nation",
+  "department": "CCAS",
+  "instructor": "Chavez Moreno, L.C",
+  "location": "Public Affairs Building 2292",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0019%20%20%20%20&class_id=849056101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0020_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 20",
+  "title": "Central American Studies: Histories and Cultures",
+  "department": "CCAS",
+  "instructor": "Boj Lopez, F.E.",
+  "location": "Renee and David Kaplan Hall 135",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0020%20%20%20%20&class_id=849060100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0089001_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 89",
+  "title": "Honors Seminars: Honors Seminar for Chicana/o and Central American Studies 10A",
+  "department": "CCAS",
+  "instructor": "Cornejo, K. Vazquez, R.",
+  "location": "Royce Hall 152",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0089%20%20%20%20&class_id=849267101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0100xp_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 100XP",
+  "title": "Barrio Organization and Service Learning",
+  "department": "CCAS",
+  "instructor": "Martinez, C.M.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0100XP%20%20&class_id=849302100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0102m_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS M102",
+  "title": "Mexican Americans and Schools",
+  "department": "CCAS",
+  "instructor": "Garcia, D.G.",
+  "location": "Moore Hall 3140",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0102%20%20M%20&class_id=849440100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0103dm_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS M103D",
+  "title": "Contemporary Chicano Theater: Beginning of Chicano Theater Movement",
+  "department": "CCAS",
+  "instructor": "Araiza, J.E. Rieber, C. Matkin, L.E.",
+  "location": "Macgowan Hall 1330",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0103D%20M%20&class_id=849444100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0109_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 109",
+  "title": "Chicana/Chicano Folklore",
+  "department": "CCAS",
+  "instructor": "Harris, A.A.",
+  "location": "Online Public Affairs Building 1234",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0109%20%20%20%20&class_id=849458100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0113_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 113",
+  "title": "Day of Dead Ritual",
+  "department": "CCAS",
+  "instructor": "Ramirez-Oropeza, M",
+  "location": "Boelter Hall 5249",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0113%20%20%20%20&class_id=849378100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0120_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 120",
+  "title": "Immigration and Chicano Community",
+  "department": "CCAS",
+  "instructor": "Andalon, R.",
+  "location": "Perloff Hall 1102",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0120%20%20%20%20&class_id=849480100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0141c_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS C141",
+  "title": "Chicana and Latin American Women&#39;s Narrative",
+  "department": "CCAS",
+  "instructor": "Ellis, H.",
+  "location": "Dodd Hall 161",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0141%20%20C%20&class_id=849543100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0144m_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS M144",
+  "title": "Women&#39;s Movement in Latin America",
+  "department": "CCAS",
+  "instructor": "Blackwell, M.S.",
+  "location": "Public Affairs Building 1246",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0144%20%20M%20&class_id=849565100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0147cm_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS CM147",
+  "title": "Transnational Women&#39;s Organizing in Americas",
+  "department": "CCAS",
+  "instructor": "Blackwell, M.S.",
+  "location": "Public Affairs Building 2270",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0147%20%20CM&class_id=849583100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0153d_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 153D",
+  "title": "U.S. Central American Narratives",
+  "department": "CCAS",
+  "instructor": "Alma, K.",
+  "location": "Haines Hall 118",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0153D%20%20%20&class_id=849624100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0154m_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS M154",
+  "title": "Contemporary Issues among Chicanas",
+  "department": "CCAS",
+  "instructor": "Espino, V.",
+  "location": "Haines Hall A25",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0154%20%20M%20&class_id=849650100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0155bm_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS M155B",
+  "title": "U.S. Latino Politics",
+  "department": "CCAS",
+  "instructor": "de La Vega, I.M.",
+  "location": "Haines Hall 118",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0155B%20M%20&class_id=849664100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0165_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 165",
+  "title": "Latinas and Latinos in Public Education",
+  "department": "CCAS",
+  "instructor": "Chavez Moreno, L.C",
+  "location": "Kaufman Hall 101",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0165%20%20%20%20&class_id=849690100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0166_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 166",
+  "title": "Paulo Freire for Chicana/Chicano Classroom",
+  "department": "CCAS",
+  "instructor": "Pescador, O.",
+  "location": "Dodd Hall 161",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "19:50"
+   },
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0166%20%20%20%20&class_id=849696100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0167xpm_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 167XPM",
+  "title": "Taking It to Street: Spanish in Community",
+  "department": "CCAS",
+  "instructor": "Suhr, C.",
+  "location": "Haines Hall A28",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0167XPM%20&class_id=849691100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0170xpm_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 170XPM",
+  "title": "Topics in Community Engagement",
+  "department": "CCAS",
+  "instructor": "Cohen, G.D.",
+  "location": "Haines Hall A28",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0170XPM%20&class_id=849740100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0172_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 172",
+  "title": "Chicana and Chicano Ethnography",
+  "department": "CCAS",
+  "instructor": "Steinberg, M.G.",
+  "location": "Broad Art Center 2100A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0172%20%20%20%20&class_id=849733100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0175m_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS M175",
+  "title": "Chicana Art and Artists",
+  "department": "CCAS",
+  "instructor": "Lopez, A. Hernandez, A.",
+  "location": "Broad Art Center 2100A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0175%20%20M%20&class_id=849750100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0188003_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 188",
+  "title": "Special Courses in Chicana/o and Central American Studies: History of Gendered and Racialized State Violence",
+  "department": "CCAS",
+  "instructor": "Rivera-Murillo, R. Carpio, G.G.",
+  "location": "Rolfe Hall 3126",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0188%20%20%20%20&class_id=849829103&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0188001_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 188",
+  "title": "Special Courses in Chicana/o and Central American Studies: Indigenous Genders and Sexualities in Abiayala",
+  "department": "CCAS",
+  "instructor": "Alvarado Cifuentes Boj Lopez, F.E.",
+  "location": "Rolfe Hall 3116",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0188%20%20%20%20&class_id=849829101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0188002_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 188",
+  "title": "Special Courses in Chicana/o and Central American Studies: Mental Health and Well-Being in Chicanx and Latinx Families and Communities",
+  "department": "CCAS",
+  "instructor": "Steinberg, M.G.",
+  "location": "Broad Art Center 2100A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0188%20%20%20%20&class_id=849829201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0191001_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 191",
+  "title": "Variable Topics Research Seminars: Chicana/o and Central American Studies: Seminar 1",
+  "department": "CCAS",
+  "instructor": "Barreto, M.A.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:20",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0191%20%20%20%20&class_id=849846101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0191004_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 191",
+  "title": "Variable Topics Research Seminars: Chicana/o and Central American Studies: Seminar 4",
+  "department": "CCAS",
+  "instructor": "No instructors",
+  "location": "Bunche Hall",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0191%20%20%20%20&class_id=849846104&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0194_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 194",
+  "title": "Research Group Seminars: Chicana/Chicano Studies and Central American Studies",
+  "department": "CCAS",
+  "instructor": "Carpio, G.G.",
+  "location": "Bunche Hall 2150",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0194%20%20%20%20&class_id=849864101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0200_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 200",
+  "title": "Theoretical Paradigms in Chicana/Chicano and Central American Studies",
+  "department": "CCAS",
+  "instructor": "Boj Lopez, F.E.",
+  "location": "Renee and David Kaplan Hall A48",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0200%20%20%20%20&class_id=449001200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0251c_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS C251",
+  "title": "Chicana and Latin American Women&#39;s Narrative",
+  "department": "CCAS",
+  "instructor": "Ellis, H.",
+  "location": "Dodd Hall 161",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0251%20%20C%20&class_id=449307200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0291002_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 291",
+  "title": "Variable Topics Research Seminars: Chicana/o and Central American Studies: Central American Novel in Diaspora",
+  "department": "CCAS",
+  "instructor": "Alma, K.",
+  "location": "Bunche Hall 2173",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0291%20%20%20%20&class_id=449546202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0291001_26f",
+  "schoolId": "s_ucla",
+  "code": "CCAS 291",
+  "title": "Variable Topics Research Seminars: Chicana/o and Central American Studies: Construction and Contesting of Racialization",
+  "department": "CCAS",
+  "instructor": "Chavez Moreno, L.C",
+  "location": "Public Affairs Building 2319",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0291%20%20%20%20&class_id=449546101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0001_26f",
+  "schoolId": "s_ucla",
+  "code": "CHIN 1",
+  "title": "Elementary Modern Chinese (Lec 1)",
+  "department": "CHIN",
+  "instructor": "Chief, L.",
+  "location": "Rolfe Hall 3134 Rolfe Hall 3134",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0001%20%20%20%20&class_id=259003200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0001_26f_2",
+  "schoolId": "s_ucla",
+  "code": "CHIN 1",
+  "title": "Elementary Modern Chinese (Lec 2)",
+  "department": "CHIN",
+  "instructor": "Chief, L.",
+  "location": "Franz Hall 2288 Rolfe Hall 3134",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0001%20%20%20%20&class_id=259003210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0001_26f_3",
+  "schoolId": "s_ucla",
+  "code": "CHIN 1",
+  "title": "Elementary Modern Chinese (Lec 3)",
+  "department": "CHIN",
+  "instructor": "Shen, Y.",
+  "location": "Public Affairs Building 1284 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0001%20%20%20%20&class_id=259003203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0001_26f_4",
+  "schoolId": "s_ucla",
+  "code": "CHIN 1",
+  "title": "Elementary Modern Chinese (Lec 4)",
+  "department": "CHIN",
+  "instructor": "Yao, Y.",
+  "location": "Royce Hall 150 Public Affairs Building 2319",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0001%20%20%20%20&class_id=259003204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0001_26f_5",
+  "schoolId": "s_ucla",
+  "code": "CHIN 1",
+  "title": "Elementary Modern Chinese (Lec 5)",
+  "department": "CHIN",
+  "instructor": "Yao, Y.",
+  "location": "Royce Hall 150 Royce Hall 148",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0001%20%20%20%20&class_id=259003205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0001_26f_6",
+  "schoolId": "s_ucla",
+  "code": "CHIN 1",
+  "title": "Elementary Modern Chinese (Lec 6)",
+  "department": "CHIN",
+  "instructor": "Chief, L.",
+  "location": "Franz Hall 2288 Rolfe Hall 3129",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0001%20%20%20%20&class_id=259003206&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0001a_26f",
+  "schoolId": "s_ucla",
+  "code": "CHIN 1A",
+  "title": "Elementary Modern Chinese for Advanced Beginners (Lec 1)",
+  "department": "CHIN",
+  "instructor": "Sun, X.",
+  "location": "Haines Hall A20 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0001A%20%20%20&class_id=259004200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0001a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "CHIN 1A",
+  "title": "Elementary Modern Chinese for Advanced Beginners (Lec 2)",
+  "department": "CHIN",
+  "instructor": "No instructors",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0001A%20%20%20&class_id=259004202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0004_26f",
+  "schoolId": "s_ucla",
+  "code": "CHIN 4",
+  "title": "Intermediate Modern Chinese (Lec 1)",
+  "department": "CHIN",
+  "instructor": "Shen, Y.",
+  "location": "Royce Hall 148 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0004%20%20%20%20&class_id=259012200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0004_26f_2",
+  "schoolId": "s_ucla",
+  "code": "CHIN 4",
+  "title": "Intermediate Modern Chinese (Lec 2)",
+  "department": "CHIN",
+  "instructor": "Shen, Y.",
+  "location": "Royce Hall 152 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0004%20%20%20%20&class_id=259012201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0004a_26f",
+  "schoolId": "s_ucla",
+  "code": "CHIN 4A",
+  "title": "Intermediate Modern Chinese for Advanced Students",
+  "department": "CHIN",
+  "instructor": "Sun, X.",
+  "location": "Haines Hall A6 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0004A%20%20%20&class_id=259013200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0050_26f",
+  "schoolId": "s_ucla",
+  "code": "CHIN 50",
+  "title": "Chinese Civilization",
+  "department": "CHIN",
+  "instructor": "Li, M.",
+  "location": "Franz Hall 1178",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0050%20%20%20%20&class_id=259150200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0100a_26f",
+  "schoolId": "s_ucla",
+  "code": "CHIN 100A",
+  "title": "Advanced Modern Chinese (Lec 1)",
+  "department": "CHIN",
+  "instructor": "Smith, M.M.",
+  "location": "Renee and David Kaplan Hall A48",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0100A%20%20%20&class_id=259300200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0100a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "CHIN 100A",
+  "title": "Advanced Modern Chinese (Lec 2)",
+  "department": "CHIN",
+  "instructor": "Smith, M.M.",
+  "location": "Renee and David Kaplan Hall A48",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0100A%20%20%20&class_id=259300202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0101a_26f",
+  "schoolId": "s_ucla",
+  "code": "CHIN 101A",
+  "title": "Advanced Readings in Modern Chinese",
+  "department": "CHIN",
+  "instructor": "No instructors",
+  "location": "Bunche Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0101A%20%20%20&class_id=259309200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0102a_26f",
+  "schoolId": "s_ucla",
+  "code": "CHIN 102A",
+  "title": "Advanced Chinese for International Business",
+  "department": "CHIN",
+  "instructor": "Smith, M.M.",
+  "location": "Royce Hall 148",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0102A%20%20%20&class_id=259312200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0110a_26f",
+  "schoolId": "s_ucla",
+  "code": "CHIN 110A",
+  "title": "Introduction to Classical Chinese",
+  "department": "CHIN",
+  "instructor": "Mai, H.",
+  "location": "Royce Hall 160",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0110A%20%20%20&class_id=259360200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0124_26f",
+  "schoolId": "s_ucla",
+  "code": "CHIN 124",
+  "title": "Taiwanese Language and Culture",
+  "department": "CHIN",
+  "instructor": "No instructors",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0124%20%20%20%20&class_id=259436200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0125_26f",
+  "schoolId": "s_ucla",
+  "code": "CHIN 125",
+  "title": "Taiwanese Language and Expressive Cultures",
+  "department": "CHIN",
+  "instructor": "Shen, K.",
+  "location": "Bunche Hall 3164",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0125%20%20%20%20&class_id=259442200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0157_26f",
+  "schoolId": "s_ucla",
+  "code": "CHIN 157",
+  "title": "Contemporary Chinese Popular Culture",
+  "department": "CHIN",
+  "instructor": "Shen, K.",
+  "location": "La Kretz Hall 120",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0157%20%20%20%20&class_id=259642200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0174_26f",
+  "schoolId": "s_ucla",
+  "code": "CHIN 174",
+  "title": "Chinese Strategic Thought",
+  "department": "CHIN",
+  "instructor": "Schaberg, D.C.",
+  "location": "Bunche Hall 2160",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0174%20%20%20%20&class_id=259744200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0180_26f",
+  "schoolId": "s_ucla",
+  "code": "CHIN 180",
+  "title": "Chinese Mythology and Supernatural",
+  "department": "CHIN",
+  "instructor": "Duthie, N.N.",
+  "location": "Royce Hall 160",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0180%20%20%20%20&class_id=259781200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0242a_26f",
+  "schoolId": "s_ucla",
+  "code": "CHIN 242A",
+  "title": "Chinese Classics and Exegetical Traditions",
+  "department": "CHIN",
+  "instructor": "Schaberg, D.C.",
+  "location": "Royce Hall 148",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "18:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0242A%20%20%20&class_id=659253200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0285a_26f",
+  "schoolId": "s_ucla",
+  "code": "CHIN 285A",
+  "title": "Seminar: Readings in Chinese Religions",
+  "department": "CHIN",
+  "instructor": "Balkwill, S.",
+  "location": "Public Affairs Building 2292",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0285A%20%20%20&class_id=659510200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0001_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 1",
+  "title": "Civil Engineering and Infrastructure",
+  "department": "C&EE",
+  "instructor": "Margulis, S.A.",
+  "location": "Boelter Hall 3400",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0001%20%20%20%20&class_id=147002200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0020m_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE M20",
+  "title": "Introduction to Computer Programming with MATLAB",
+  "department": "C&EE",
+  "instructor": "No instructors",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0020%20%20M%20&class_id=147060200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0020pm_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE M20P",
+  "title": "Introduction to Computer Programming with Python",
+  "department": "C&EE",
+  "instructor": "Lopez Droguett, E.",
+  "location": "Haines Hall A2",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0020P%20M%20&class_id=147065200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0091_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 91",
+  "title": "Statics",
+  "department": "C&EE",
+  "instructor": "Rosner, F.",
+  "location": "Boelter Hall 2760",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0091%20%20%20%20&class_id=147273200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0110_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 110",
+  "title": "Introduction to Probability and Statistics for Engineers",
+  "department": "C&EE",
+  "instructor": "Casillas, A.",
+  "location": "Boelter Hall 2444",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0110%20%20%20%20&class_id=147360200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0120_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 120",
+  "title": "Principles of Soil Mechanics",
+  "department": "C&EE",
+  "instructor": "Brandenberg, S.J.",
+  "location": "Boelter Hall 2760",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0120%20%20%20%20&class_id=147420200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0135a_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 135A",
+  "title": "Elementary Structural Analysis",
+  "department": "C&EE",
+  "instructor": "Zhang, J.",
+  "location": "Boelter Hall 2760",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0135A%20%20%20&class_id=147541200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0135l_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 135L",
+  "title": "Structural Design and Testing Laboratory",
+  "department": "C&EE",
+  "instructor": "Ahlberg, E.",
+  "location": "Boelter Hall 1567",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0135L%20%20%20&class_id=147544200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0141_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 141",
+  "title": "Steel Structures",
+  "department": "C&EE",
+  "instructor": "English, J.L.",
+  "location": "Franz Hall 2258A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0141%20%20%20%20&class_id=147565200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0150_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 150",
+  "title": "Introduction to Hydrology",
+  "department": "C&EE",
+  "instructor": "Margulis, S.A.",
+  "location": "Boelter Hall 2760",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0150%20%20%20%20&class_id=147600200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0153_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 153",
+  "title": "Introduction to Environmental Engineering Science",
+  "department": "C&EE",
+  "instructor": "Mohanty, S.",
+  "location": "Boelter Hall 3400",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0153%20%20%20%20&class_id=147614200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0155_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 155",
+  "title": "Unit Operations and Processes for Water and Wastewater Treatment",
+  "department": "C&EE",
+  "instructor": "Hoek, E.M.",
+  "location": "Boelter Hall 5252",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0155%20%20%20%20&class_id=147622200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0156a_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 156A",
+  "title": "Environmental Chemistry Laboratory",
+  "department": "C&EE",
+  "instructor": "Jassby, D.",
+  "location": "Boelter Hall 7737",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "08:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "08:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0156A%20%20%20&class_id=147623200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0181c_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE C181",
+  "title": "Traffic Engineering Systems: Operations and Control",
+  "department": "C&EE",
+  "instructor": "Ma, J.",
+  "location": "Boelter Hall 5249",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0181%20%20C%20&class_id=147787200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0183c_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE C183",
+  "title": "Transportation Sustainability",
+  "department": "C&EE",
+  "instructor": "Patterson, R.",
+  "location": "Young Hall 1044",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0183%20%20C%20&class_id=147793200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0184c_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE C184",
+  "title": "Transportation System and Policy Outcomes",
+  "department": "C&EE",
+  "instructor": "Bills, T.S.",
+  "location": "Boelter Hall 5252",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0184%20%20C%20&class_id=147795200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0190_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 190",
+  "title": "Professional Practice",
+  "department": "C&EE",
+  "instructor": "Hudson, M.B.",
+  "location": "Haines Hall A2",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0190%20%20%20%20&class_id=147858200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0194002_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 194",
+  "title": "Research Group Seminars: Civil and Environmental Engineering: Seminar 2",
+  "department": "C&EE",
+  "instructor": "Jay, J.A.",
+  "location": "Boelter Hall 5422",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0194%20%20%20%20&class_id=147864201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0200_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 200",
+  "title": "Civil and Environmental Engineering Graduate Seminar",
+  "department": "C&EE",
+  "instructor": "Casillas, A.",
+  "location": "Boelter Hall 4275",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0200%20%20%20%20&class_id=547001201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0220_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 220",
+  "title": "Advanced Soil Mechanics",
+  "department": "C&EE",
+  "instructor": "Stewart, J.P.",
+  "location": "Boelter Hall 4413",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0220%20%20%20%20&class_id=547101200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0222_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 222",
+  "title": "Unsaturated Soil Mechanics",
+  "department": "C&EE",
+  "instructor": "No instructors",
+  "location": "Boelter Hall",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0222%20%20%20%20&class_id=547122201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0230am_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE M230A",
+  "title": "Linear Elasticity",
+  "department": "C&EE",
+  "instructor": "Sepulveda, A.",
+  "location": "Boelter Hall 5264",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0230A%20M%20&class_id=547151200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0232_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 232",
+  "title": "Theory of Plates and Shells",
+  "department": "C&EE",
+  "instructor": "No instructors",
+  "location": "Boelter Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0232%20%20%20%20&class_id=547160200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0235a_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 235A",
+  "title": "Advanced Structural Analysis",
+  "department": "C&EE",
+  "instructor": "Burton, H.",
+  "location": "Boelter Hall 5264",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0235A%20%20%20&class_id=547175200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0239_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 239",
+  "title": "Elementary Structural Dynamics",
+  "department": "C&EE",
+  "instructor": "Taciroglu, E.",
+  "location": "Boelter Hall 5422",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0239%20%20%20%20&class_id=547199200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0243a_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 243A",
+  "title": "Behavior and Design of Reinforced Concrete Structural Elements",
+  "department": "C&EE",
+  "instructor": "Wallace, J.W.",
+  "location": "Boelter Hall 5264",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0243A%20%20%20&class_id=547216200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0250a_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 250A",
+  "title": "Surface Water Hydrology",
+  "department": "C&EE",
+  "instructor": "Gebremichael, M.",
+  "location": "Boelter Hall 4275",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0250A%20%20%20&class_id=547250200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0251e_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 251E",
+  "title": "Environmental Data Analysis",
+  "department": "C&EE",
+  "instructor": "Arzeno Soltero, I.",
+  "location": "Boelter Hall 5264",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0251E%20%20%20&class_id=547260200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0253_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 253",
+  "title": "Mathematical Models for Water Quality Management",
+  "department": "C&EE",
+  "instructor": "Stenstrom, M.K.",
+  "location": "Boelter Hall 5252",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0253%20%20%20%20&class_id=547265201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0254a_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 254A",
+  "title": "Environmental Aquatic Inorganic Chemistry",
+  "department": "C&EE",
+  "instructor": "Jay, J.A.",
+  "location": "Boelter Hall 5419",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0254A%20%20%20&class_id=547271200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0266_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 266",
+  "title": "Environmental Biotechnology",
+  "department": "C&EE",
+  "instructor": "Hafeznezami, S. Mahendra, S.",
+  "location": "Boelter Hall 4283",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0266%20%20%20%20&class_id=547328200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0281c_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE C281",
+  "title": "Traffic Engineering Systems: Operations and Control",
+  "department": "C&EE",
+  "instructor": "Ma, J.",
+  "location": "Boelter Hall 5249",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0281%20%20C%20&class_id=547484200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0283c_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE C283",
+  "title": "Transportation Sustainability",
+  "department": "C&EE",
+  "instructor": "Patterson, R.",
+  "location": "Young Hall 1044",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0283%20%20C%20&class_id=547493200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0284c_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE C284",
+  "title": "Transportation System and Policy Outcomes",
+  "department": "C&EE",
+  "instructor": "Bills, T.S.",
+  "location": "Boelter Hall 5252",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0284%20%20C%20&class_id=547495200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0298001_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 298",
+  "title": "Seminar: Engineering: Carbon Management",
+  "department": "C&EE",
+  "instructor": "Rosner, F.",
+  "location": "Boelter Hall 4283",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0298%20%20%20%20&class_id=547940201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0298002_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 298",
+  "title": "Seminar: Engineering: Mathematical Programming for Transportation and Logistics",
+  "department": "C&EE",
+  "instructor": "Kim, Y.",
+  "location": "Boelter Hall 4283",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0298%20%20%20%20&class_id=547940200&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0495_26f",
+  "schoolId": "s_ucla",
+  "code": "C&EE 495",
+  "title": "Teaching Assistant Training Seminar",
+  "department": "C&EE",
+  "instructor": "Narasimhan, S. Mugodzeri, N.D.",
+  "location": "Boelter Hall 5280",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0495%20%20%20%20&class_id=547790201&class_no=%20001%20%20"
  }
 ]
