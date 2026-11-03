@@ -39,7 +39,22 @@ Notes
 - East Coast schools (MIT, Harvard, Cornell, UPenn, Dartmouth, Notre Dame) are back in `schools-collect.csv` (owner 2026-11-02), collected to files like the rest.
 - Recruiting status (owner 2026-11-02: very important — year-round or deadline, and which deadline): stored as `recruitment.mode` = rolling | deadline (+ `deadline` date) | cycle (Fall/Spring) | closed, with `source`. Sources: Penn Clubs (recruiting cycle, application required, accepting members, and each club's application end date), CampusGroups ("Membership is closed" vs. a join button = open anytime). Engage, UCLA RCO, UCSC have no recruiting fields — shown as nothing rather than guessed. Past deadlines show "Applications closed".
 
+## Class schedules (with times, incl. graduate courses) — research 2026-11-03 (two agents, ~5 requests per site)
+Works now / easy:
+- USF `banner9:https://reg-prod.ec.usfca.edu` — **done**, 2,429 sections with times (Fall 2026 + Spring 2027)
+- Georgia Tech `banner9:https://registration.banner.gatech.edu` — set, re-collect running
+- One new adapter "PeopleSoft HCX" (`…/WEBLIB_HCX_CM.H_CLASS_SEARCH.FieldFormula.IScript_ClassSearch?institution=…&term=…&subject=…&page=N`, options from `IScript_ClassSearchOptions`) covers **Duke** (dukehub.duke.edu, DUKEU), **BU** (mybustudent.sa.bu.edu, BU001), likely **UVA** (sisuva, UVA01; TLS-blocked here)
+- **USC** public JSON: classes.usc.edu/api/Terms/Active + /api/Courses/CoursesByTermSchoolProgram
+- **Minnesota** Schedule Builder JSON: schedulebuilder.umn.edu/api.php (courses_search → courses → sections)
+- Static HTML per term: **Rice** (courses.rice.edu !SWKSCAT.cat), **UW** (washington.edu/students/timeschd/pub/AUT2026/<dept>.html), **Caltech** (schedules.caltech.edu/FA2026-27.html)
+- HTML with session/POST: **Vanderbilt** (more.app.vanderbilt.edu YES), **CMU** (enr-apps.as.cmu.edu SOCServlet), **UCLA** (sa.ucla.edu/ro/public/soc + GetCourseSummary), **WashU** (registrar.washu.edu class-schedule-search)
+Blocked from this container (retry from Railway via the `railway` probe column): Stanford, Notre Dame, UPenn, Dartmouth, Emory, NYU, UVA, UNC, UCI, UCSC, SJSU, Northwestern, UChicago, Purdue, UC Davis, Michigan — TLS chains (eMudhra emSign roots missing here) or Cloudflare/403.
+Bot check (AWS WAF JS challenge): Yale, Brown (FOSE). Cloudflare: Princeton, Johns Hopkins, Columbia times (Vergil).
+Login only: UT Austin, Santa Clara (Workday), Lehigh (probably). UF: public API but meeting times empty without login.
+
 ## Data work queue
+- [ ] Class times: build adapters in this order — PeopleSoft HCX (Duke, BU, UVA), USC JSON, Minnesota JSON, Rice/UW/Caltech static HTML, then Vanderbilt/CMU/UCLA/WashU; test each with a real sample incl. a graduate course
+- [ ] Jobs (US, file server/data/collected/jobs-us.json, `npm run -s jobs`): 146 employer boards (Greenhouse/Lever/Ashby). Next: Workday public career-site JSON for big new-grad employers (NVIDIA, Capital One, Pfizer, Boeing, Bank of America, Accenture, Salesforce, Intel, Target, Travelers, Northrop Grumman, Mastercard, Citi — answered from the container), then amazon.jobs search.json; weekly refresh
 - [ ] (top, owner 2026-11-03) Collect every school in schools-collect.csv that has no `<id>.orgs.json` yet, one per run in file order (`npm run agent -- collect:<id>`), commit after each. Started 2026-11-03: USC, UCI, UCSB, UCR, Duke, JHU, Northwestern, Georgetown, CMU, Emory, Tufts, WashU, Rice, Vanderbilt, Michigan, UVA, UNC, Georgia Tech, UT Austin, BU, BC, UMD, Purdue, Florida, Wisconsin, UW, Minnesota, Lehigh
 - [ ] UC Santa Barbara (shoreline.ucsb.edu) 1,040 and Northwestern (catsoncampus) 561, both CampusGroups: 0 club websites came through — check whether Shoreline lists sites on a public page, else find links per club
 - [ ] Schools still paused, need a reader or are blocked: Princeton (club list is behind Princeton login — skip unless a public list appears), UCSD (studentorg.ucsd.edu fails TLS from the container; try from Railway), Illinois, Rutgers, Ohio State, Texas A&M (public directory not found yet), Harvard clubs (engage.college.harvard.edu refused by session network)

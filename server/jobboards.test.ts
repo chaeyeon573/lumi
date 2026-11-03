@@ -32,3 +32,8 @@ test('classify: entry-level roles undergrads can get after graduating count as n
     assert.deepEqual(classify(t), { kind: 'job', audience: ['newgrad'] }, t);
   for (const t of ['Software Engineer II', 'Software Engineer III', 'Product Manager', 'Senior Associate', 'Associate Director, Research', 'Data Analyst', 'Engineer 10x team']) assert.equal(classify(t), null, t);
 });
+
+test('classify: an internship with a start year is not a new-grad job', () => {
+  assert.deepEqual(classify('Product Design Intern (2027 Start)'), { kind: 'internship', audience: [] });
+  assert.deepEqual(classify('New Grad Intern Conversion - Software'), { kind: 'internship', audience: ['newgrad'] });
+});

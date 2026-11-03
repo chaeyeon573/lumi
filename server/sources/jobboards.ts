@@ -58,7 +58,9 @@ export function classify(title: string): Pick<StudentJob, 'kind' | 'audience'> |
   if (PHD.test(title)) audience.push('phd');
   if (MASTERS.test(title) || MS.test(title)) audience.push('masters');
   if (POSTDOC.test(title)) audience.push('postdoc');
-  if (NEWGRAD.test(title) || ENTRY.test(title) || LEVEL1.test(title)) audience.push('newgrad');
+  // 인턴 공고의 “2027 start” 는 인턴 시작 시기일 뿐 — 인턴은 “new grad” 가 직접 적힐 때만 신입으로 본다
+  const intern0 = INTERN.test(title);
+  if (intern0 ? /\b(new grad|new graduate|university grad(uate)?|recent grad(uate)?)\b/i.test(title) : NEWGRAD.test(title) || ENTRY.test(title) || LEVEL1.test(title)) audience.push('newgrad');
   if (UNDERGRAD.test(title)) audience.push('undergrad');
   const intern = INTERN.test(title);
   if (!intern && !audience.length && !(FELLOW.test(title) && /\b(research|ai|ml|science|scientist|graduate|phd)\b/i.test(title))) return null;

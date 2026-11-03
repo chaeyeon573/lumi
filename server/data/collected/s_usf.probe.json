@@ -1,0 +1,25 @@
+{
+ "checkedAt": "2026-11-03T01:28:35.949Z",
+ "status": "applied",
+ "stored": false,
+ "source": "timetable:banner9:https://reg-prod.ec.usfca.edu",
+ "sampled": 2429,
+ "withTimes": 2429,
+ "terms": [
+  "Fall 2026",
+  "Spring 2027"
+ ],
+ "sample": [
+  "AEM 124 · Academic Reading/Writing III · Fall 2026 · M 13:00-15:20 W 13:00-15:20 F 13:00-15:20 F 15:00-17:00",
+  "ENVA 230 · Urban Ag: Fall · Fall 2026 · W 11:45-15:25 M 12:30-14:30",
+  "NURS 272 · Applied Assessment &amp; Nursing Fundamentals II: Alterations in Health &amp; Illness · Fall 2026 · R 07:30-09:30 R 08:00-11:40",
+  "YPSP 325 · Filipino Culture &amp; Soc · Fall 2026 · T 09:55-11:40 R 09:55-11:40",
+  "ENVM 690 · Research Methods (Sec 001) · Spring 2027 · M 18:30-21:30",
+  "NEUR 103 · Neurodiversity, Equity&amp; Ethics · Spring 2027 · T 16:35-18:20 R 16:35-18:20"
+ ],
+ "spotCheck": {
+  "matched": 6,
+  "mismatched": [],
+  "unavailable": 0
+ }
+}

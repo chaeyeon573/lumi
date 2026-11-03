@@ -1669,3 +1669,10 @@
 - Screens: /community, /preview/s_columbia — no PAGE ERROR. Live feed shows demo posts with emoji → QUESTIONS.md.
 - Collection of the 28 new schools still running (USC: 1,964 groups, reading club websites).
 - 11-03: container restart stopped the 28-school run after UC Riverside. Saved: USC 1,964, UC Irvine 733 (+5,415 catalog courses), UC Santa Barbara 1,040 (0 links), UC Riverside 664 (507 with a link). Restarted for the 24 schools without a file (script skips schools that already have one).
+
+## 2026-11-03 — grad courses, jobs, parallel agents (owner: grad students, US-wide jobs and internships, entry-level jobs for undergrads)
+- Graduate courses were already in the catalog files (UC Davis 4,877, Cornell 3,556, UCI 2,600, Brown 2,205, SF State 1,228 by course number).
+- Collection now runs 3 schools at a time (different sites). Two research agents mapped public class-schedule sources for 47 schools (DATA_SOURCES "Class schedules"); one agent verified 147 employer job boards.
+- USF classes: banner9 → 2,429 sections with times. Georgia Tech switched to banner9.
+- Jobs: new reader (server/sources/jobboards.ts, tests) → 967 US postings from 146 boards: internships 626, new grad/entry level 297, PhD 109, master's 55, postdoc 13. Entry level also catches "Engineer I", junior, APM, analyst/rotational programs; an intern's "2027 start" is not new grad (fixed after sample review). Spot check: 5 random postings open on the employer's page with the same title. Visible at /preview/jobs.
+- Gap: big banks, consulting, pharma, retail mostly use Workday (not yet read) — queued.
