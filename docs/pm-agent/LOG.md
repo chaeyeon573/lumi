@@ -1644,3 +1644,11 @@
 - packages/core/src/lib/orglinks.ts withoutEmoji/stripEmoji, applied in server/view.ts (every org sent to the app) and in /preview: emoji at the end of names removed (458 Berkeley names had 💙), emoji logos replaced by initials (202 🎯 + Greek council emblems). Real logo images and Greek letters (ΑΚΨ) stay. Event/listing host names lose emoji too. Stored data unchanged.
 - Clubs & Groups list: removed the ✨ before recommendation reasons.
 - Checked on a local server: Explore › Clubs in v2 and classic shows no emoji, PAGE ERROR 0. Tests 287/287 (server/noemoji.test.ts).
+
+## 2026-11-03 — UCLA, East Coast, recruiting status, more famous schools
+- Owner: famous schools only (SJSU / SF State / Santa Clara / USF dropped to paused, files removed), East Coast back, recruiting status matters, add Chicago / Columbia / NYU and similar.
+- Collected to files (not in the Railway DB): UCLA 1,451 (1,101 with a public link) · UPenn 514 · Cornell 1,483 + 9,518 classes with times (Fall 2026 + Spring 2027) · MIT 427 + 1,712 classes with times · Dartmouth 406 · Notre Dame 540 · re-collected Stanford 733, UC Davis 532.
+- Recruiting status: Penn 283 open anytime / 95 recruit in a set term / 135 not taking members / 1 live deadline (Student-Athlete Investment Club, Dec 20 2026). CampusGroups schools: open vs. "Membership is closed" (Cornell 1,270/198, Stanford 701/32, UC Davis 513/18, MIT 416/10, Dartmouth 385/20). UCLA, Notre Dame (Engage), UCSC: the directory has no recruiting field, shown as nothing.
+- Spot check: UCLA 5 clubs vs. sa.ucla.edu RCO, Penn 5 clubs incl. the deadline vs. pennclubs.com API, Cornell 5 classes (day/time/title) vs. classes.cornell.edu API: all match.
+- Blocked: engage.college.harvard.edu is refused by this session's network policy (agent proxy connect_rejected), so Harvard has only the hand-checked student government. Not worked around.
+- Added to collect (owner 2026-11-03): UChicago (Blueprint, Engage, 446), NYU (NYU Engage, 951), Columbia (LionHub, CampusGroups), Yale (Yale Connect, CampusGroups; class probe on Railway since courses.yale.edu gives an empty answer from the container).

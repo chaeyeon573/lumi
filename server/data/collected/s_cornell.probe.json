@@ -1,0 +1,25 @@
+{
+ "checkedAt": "2026-11-03T00:08:02.982Z",
+ "status": "applied",
+ "stored": false,
+ "source": "timetable:cornell",
+ "sampled": 9518,
+ "withTimes": 9518,
+ "terms": [
+  "Fall 2026",
+  "Spring 2027"
+ ],
+ "sample": [
+  "AAP 1100 · The Worlds We Make · Fall 2026 · W 14:30-16:10",
+  "ECE 4250 · Digital Signal Processing and Statistical Inference · Fall 2026 · T 13:25-14:40 R 13:25-14:40",
+  "MAE 4351 · Interdisciplinary Design Concepts · Fall 2026 · T 08:40-09:55 R 08:40-09:55",
+  "VISST 3910 · Visual Cultures of the Global Cold War · Fall 2026 · T 11:40-12:55 R 11:40-12:55",
+  "ECE 5550 · Power Systems and Market Operations · Spring 2027 · T 14:55-16:10 R 14:55-16:10",
+  "MATH 6230 · Differential Games and Optimal Control · Spring 2027 · M 10:10-11:25 W 10:10-11:25"
+ ],
+ "spotCheck": {
+  "matched": 6,
+  "mismatched": [],
+  "unavailable": 0
+ }
+}

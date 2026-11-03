@@ -1,0 +1,32 @@
+[
+ {
+  "id": "oc_harvard_sg_harvard_undergraduate_association",
+  "name": "Harvard Undergraduate Association",
+  "logo": {
+   "emoji": "HU",
+   "hue": 352
+  },
+  "type": "council",
+  "schoolId": "s_harvard",
+  "parent": "Student Government",
+  "verified": true,
+  "description": "The official student government of the Harvard undergraduate student body.",
+  "gallery": [],
+  "regularActivities": [],
+  "notices": [],
+  "followerIds": [],
+  "memberIds": [],
+  "adminIds": [],
+  "applicantIds": [],
+  "links": [
+   {
+    "label": "Website",
+    "url": "https://www.thehua.org/"
+   },
+   {
+    "label": "Instagram",
+    "url": "https://www.instagram.com/theharvardua/"
+   }
+  ]
+ }
+]
