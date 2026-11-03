@@ -1722,3 +1722,8 @@
 - New WashU class reader (registrar.washu.edu class-schedule-search: filters are a POST form, 149 courses per page via `paged`; only sections of the asked term — "Fall Intersession" left out). Spring 2027 not listed yet.
 - Spot check clubs: Michigan SCOPE, Notre Dame Farley Hall Council match Engage; Columbia Student Union for Sustainable Development and Stanford Student Space Initiative websites match; UCLA Undergraduate Economics Society Instagram matches RCO (tracking tail stripped on display).
 - WashU: full collect did not finish in 40 min — `paged=N` returns page 2's courses for every N>1 (checked 30, 60, 200), each request ~27 s / 1 MB, then a connection was dropped (possible throttling). Stopped hitting the site; reader kept (tested) but courses_source cleared so the routine does not loop. Existing WashU catalog file (5,429, no times) unchanged.
+
+## 2026-11-03 10:33 run
+- No Codex commits or HANDOFF requests.
+- New Vanderbilt class reader (more.app.vanderbilt.edu YES: select term → search per subject (302) → switchPage 50 per page; lectures only when a course has lectures; "01:25p" times). Fall 2026: 2,579 sections. Spring 2027 not collected yet — term pick to check next run.
+- Spot check clubs: UChicago Grappling, Rice Blue Sole Steppers, UCR Alpha Epsilon Pi, Florida Anisong Ensemble match Engage; UMD "Department of Environmental Safety… Office of Risk Management" was an office shown as a club → name rule added ("Office of / Department of / Division of / Center for …" without club words): 258 marked across schools (Engage schools have no category). Tests added.
