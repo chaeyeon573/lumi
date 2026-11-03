@@ -698,13 +698,16 @@ function banner9Source(schoolId: string, host: string): CourseSource {
 // 처음 요청에 손님 쿠키를 주며 같은 주소로 돌려보낸다 — 쿠키를 들고 따라간다. 학부·대학원(acad_career GRAD) 모두 온다.
 export interface HcxClass { strm: string; class_section: string; component: string; subject: string; subject_descr?: string; catalog_nbr: string; descr: string; acad_career?: string; units?: string; class_nbr?: number;
   instructors?: { name?: string }[]; meetings?: { days?: string; start_time?: string; end_time?: string; facility_descr?: string; bldg_cd?: string; room?: string }[] }
+const HCX_SECONDARY = /^(DIS|LAB|REC|DRS|TUT|QUI|QUZ)$/;
 const HCX_DAY: Record<string, number> = { Mo: 0, Tu: 1, We: 2, Th: 3, Fr: 4, Sa: 5, Su: 6 };
 /** "13.25.00.000000" → "13:25" */
 const hcxTime = (t?: string) => { const m = /^(\d{1,2})[.:](\d{2})/.exec(t ?? ''); return m ? `${m[1].padStart(2, '0')}:${m[2]}` : ''; };
 export function hcxToCourses(schoolId: string, classes: HcxClass[], termCode: string, label: string, url: string): CatalogCourse[] {
   const out: CatalogCourse[] = []; const seen = new Set<string>(); const secOf = new Map<string, string>();
   for (const s of classes) {
-    if (!/^(LEC|SEM)$/.test(s.component)) continue; // 토론·랩·개인연구는 학생이 고르는 섹션 — 시간표 기본은 강의·세미나 (banner9 와 같은 규칙)
+    // 토론·랩·리시테이션·튜토리얼은 학생이 고르는 딸린 섹션 — 뺀다. 그 밖의 유형은 수업 본 시간
+    // (BU 는 대부분의 정규 수업이 “IND” 로 온다: CASEN 107 The Voice of Poetry, 화. 강의·세미나만 남겼더니 가을 452개뿐이었다)
+    if (HCX_SECONDARY.test(s.component)) continue;
     const code = `${s.subject} ${s.catalog_nbr.trim()}`; const baseId = courseId(schoolId, code);
     const meetings: Meeting[] = []; let location: string | undefined;
     for (const m of s.meetings ?? []) {

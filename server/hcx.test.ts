@@ -14,3 +14,9 @@ test('PeopleSoft HCX (Duke): lectures with days/times, graduate courses kept, di
   assert.equal(out.filter((c) => c.code === 'COMPSCI 201').length, 1); // 14 discussion sections are not lecture times
   assert.ok(resolveCourseSource('s_duke', 'hcx:https://dukehub.duke.edu/psc/CSPRD01/EMPLOYEE/SA|DUKEU'));
 });
+
+test('PeopleSoft HCX (BU): regular classes sent as "IND" count; discussion-recitation does not', () => {
+  const mk = (catalog_nbr: string, component: string, days: string, descr: string): HcxClass => ({ strm: '2268', class_section: 'A1', component, subject: 'CASEN', catalog_nbr, descr, meetings: [{ days, start_time: '11.00.00.000000', end_time: '12.15.00.000000' }] });
+  const out = hcxToCourses('s_bu', [mk('107', 'IND', 'Tu', 'The Voice of Poetry'), mk('108', 'DRS', 'We', 'Discussion'), mk('109', 'IND', '', 'Arranged')], '2268', 'Fall 2026', 'u');
+  assert.deepEqual(out.map((c) => [c.code, c.meetings]), [['CASEN 107', [{ day: 1, start: '11:00', end: '12:15' }]]]);
+});
