@@ -1012,7 +1012,9 @@ async function sfsu(): Promise<CatalogCourse[]> {
   // 결과 주소(classsearch/results?searchFor=<전공>&term=<학기>&classCategory=REG)를 열면 같은 세션의 searchresultsjson 이 그 결과를 준다 — 폼 없이 전공당 2번
   const go = sfsuSession(); const form = await (await go(`${SFSU}/classsearch`)).text();
   const sel = /<select id="classScheduleAdvanced_subject"[\s\S]*?<\/select>/.exec(form)?.[0] ?? '';
-  const subjects = [...sel.matchAll(/<option value="([^"]+)"/g)].map((m) => m[1]).filter((v) => v && v !== 'X');
+  // SFSU_SUBJECTS=ECON,SOC 이면 그 전공만 다시 읽는다(지난번에 연결이 끊겨 빠진 것) — 나머지는 collect-courses 가 지난 파일 것을 그대로 둔다
+  const only = process.env.SFSU_SUBJECTS?.split(',').map((x) => x.trim()).filter(Boolean);
+  const subjects = [...sel.matchAll(/<option value="([^"]+)"/g)].map((m) => m[1]).filter((v) => v && v !== 'X' && (!only || only.includes(v)));
   const labels = Object.fromEntries([...form.matchAll(/<option value="(\d{4})">([^<]+)/g)].map((m) => [m[1], labelOf(m[2])]));
   // 가장 최근 가을·봄 두 학기(여름·겨울 계절학기 제외)
   const terms = Object.keys(labels).filter((t) => /Spring|Fall/.test(labels[t])).sort().reverse().slice(0, 2); if (!terms.length) throw new Error(`sfsu: no term (page ${form.length} chars, ${Object.keys(labels).length} options)`);

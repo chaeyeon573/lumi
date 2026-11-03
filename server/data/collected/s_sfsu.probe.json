@@ -1,21 +1,21 @@
 {
- "checkedAt": "2026-11-03T23:03:22.409Z",
+ "checkedAt": "2026-11-03T23:35:37.473Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:sfsu",
- "sampled": 3959,
- "withTimes": 3959,
+ "sampled": 487,
+ "withTimes": 487,
  "terms": [
   "Spring 2027",
   "Fall 2026"
  ],
  "sample": [
-  "A U 110 · Living in San Francisco (Sec 03) · Spring 2027 · T 15:30-16:45",
-  "CSC 842 · Human-Computer Interaction (Sec 02) · Spring 2027 · R 10:00-12:45",
-  "MKTG 480 · Search, Display, and Video Advertising · Spring 2027 · T 15:30-16:45 R 15:30-16:45",
-  "ACCT 307 · Accounting Information Systems (Sec 02) · Fall 2026 · T 14:00-15:15 R 14:00-15:15",
-  "COUN 706 · Counseling Skills and Process (Sec 04) · Fall 2026 · W 09:30-12:15",
-  "MGMT 605 · Seminar in Developing Management Skills (Sec 02) · Fall 2026 · M 12:30-13:45 W 12:30-13:45"
+  "BECA 300GW · Writing About the Media - GWAR · Spring 2027 · M 09:30-12:15",
+  "ENGR 100 · Introduction to Engineering (Sec 01) · Spring 2027 · M 10:00-10:50 W 10:00-10:50",
+  "JOUR 221 · Newswriting · Spring 2027 · M 14:00-15:15 W 14:00-15:15",
+  "BECA 301 · Media Literacy · Fall 2026 · T 15:30-18:15",
+  "ENGR 357 · Digital Design Laboratory (Sec 02) · Fall 2026 · F 09:30-12:15",
+  "JOUR 310 · Journalism Ethics · Fall 2026 · R 15:30-18:15"
  ],
  "spotCheck": {
   "matched": 0,
