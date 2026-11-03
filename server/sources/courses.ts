@@ -962,9 +962,10 @@ export function uclaSummaryToCourses(html: string, ref: UclaCourseRef, termCode:
     const location = txt(/class="locationColumn[^"]*"[^>]*>([\s\S]*?)<\/div>/.exec(row)?.[1]) || undefined;
     const units = Number(txt(/class="unitsColumn"[^>]*>([\s\S]*?)<\/div>/.exec(row)?.[1]));
     const instructor = txt(/class="instructorColumn[^"]*"[^>]*>([\s\S]*?)<\/div>/.exec(row)?.[1]) || undefined;
-    const classId = /id="(\d+)_/.exec(row)?.[1];
+    // 학교 화면의 상세 링크 그대로(class_no 가 없으면 404 로 간다, 2026-11-03 점검)
+    const href = /href="(\/ro\/Public\/SOC\/Results\/ClassDetail\?[^"]+)"/.exec(row)?.[1];
     out.push({ id, schoolId: 's_ucla', code, title: ref.title, department: ref.subject, instructor: instructor && !/^The Staff$/i.test(instructor) ? instructor : undefined, location, meetings: uniq(meetings), term: label, termCode, units: Number.isFinite(units) && units > 0 ? units : undefined,
-      url: `https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=${termCode}&subj_area_cd=${encodeURIComponent(ref.subject)}&crs_catlg_no=${encodeURIComponent(ref.catalog.padEnd(8))}${classId ? `&class_id=${classId}` : ''}` });
+      url: href ? `https://sa.ucla.edu${decodeEntities(href).replace(/ /g, '%20')}` : 'https://sa.ucla.edu/ro/Public/SOC' });
   }
   if (out.length > 1) for (const c of out) c.title = `${c.title} (${secOf.get(c.id)})`;
   return out;

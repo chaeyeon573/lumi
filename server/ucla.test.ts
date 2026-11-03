@@ -13,7 +13,7 @@ test('UCLA GetCourseSummary (COM SCI 31, Winter 2027): lectures with days, times
   assert.deepEqual(out[1].meetings, [{ day: 1, start: '18:00', end: '19:50' }, { day: 3, start: '18:00', end: '19:50' }]);
   assert.equal(out[0].location, 'Haines Hall 39');
   assert.equal(out[0].units, 4);
-  assert.match(out[0].url ?? '', /class_id=187093200/);
+  assert.equal(out[0].url, 'https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=COM%20SCI&crs_catlg_no=0031%20%20%20%20&class_id=187093200&class_no=%20001%20%20');
 });
 
 test('UCLA section that meets on two day patterns (ASL 1: MF + TWR) keeps every day', () => {
