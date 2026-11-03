@@ -1,0 +1,168 @@
+{
+  "generatedAt": "2026-11-03T19:20:23.230Z",
+  "source": "ux-sim/reports/2026-11-03-sched/analysis.json",
+  "layer": "curated (analysis.json)",
+  "rule": "not environment-limited, and severity ≥ 3 or ≥ 2 personas, unless the problem sets file: true|false",
+  "dedupe": "before creating, search existing issues for <!-- ux-sim:problem=<key> --> and for any <!-- ux-sim:fp=<fingerprint> --> marker; update the match instead of duplicating",
+  "note": "Candidates only — ux-sim never creates issues.",
+  "coverage": {
+    "findings": 18,
+    "grouped": 16,
+    "dismissed": 2,
+    "unassigned": []
+  },
+  "warnings": [],
+  "candidates": [
+    {
+      "key": "signup-asks-too-much-too-early",
+      "fingerprints": [
+        "97dda824b2fb",
+        "4b8a0b8abefa",
+        "8a0bf61f729f",
+        "e53f5b5080fe"
+      ],
+      "title": "[ux-sim] \"Get in\" goes straight into a 7-screen sign-up with no look around first; interests are asked twice",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nAll four first-open personas noted \"Get in\" jumps into sign-up with a 7-dash progress bar. The how-Lumi-helps screen read as a wall of English text; the second interest picker repeated the first. Jordan quit on the how-Lumi-helps screen without signing up.\n\nSeverity **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.) · analyst confidence high · **4 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nThe new onboarding (merged 2026-11-03) kept all earlier screens around the mockup's four steps, so it is still 7 screens before any content, with two overlapping interest pickers and a text-only explainer.\n\n### Evidence\n\n- run `sched-20261103-1915-jordan-first-open-decide` step 9 — “ok and? I picked clubs and you show me a wall of text about clubs. 4 more dashes to go. boring.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-jordan-first-open-decide/shots/009-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-jordan-first-open-decide/shots/009-click-som.jpg)\n- run `sched-20261103-1915-jordan-first-open-decide` step 2 — “wait I didn't even get to look around. 7 steps?? ugh.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-jordan-first-open-decide/shots/002-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-jordan-first-open-decide/shots/002-click-som.jpg)\n- run `sched-20261103-1915-aisha-first-open-decide` step 25 — “Didn't I just answer this? I already said clubs and meeting people. This is the fifth screen and I still haven't seen a single club.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-aisha-first-open-decide/shots/025-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-aisha-first-open-decide/shots/025-click-som.jpg)\n- run `sched-20261103-1915-minji-first-open-decide` step 16 — “아 귀찮아... another picker. still haven't seen a single person or the app itself” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-minji-first-open-decide/shots/016-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-minji-first-open-decide/shots/016-click-som.jpg)\n- run `sched-20261103-1915-seoyeon-first-open-decide` step 17 — “또 질문... 이메일은 언제 해? 그냥 Skip 할래.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-seoyeon-first-open-decide/shots/017-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-seoyeon-first-open-decide/shots/017-click-som.jpg)\n\nRuns: [`sched-20261103-1915-jordan-first-open-decide`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-jordan-first-open-decide/report.md), [`sched-20261103-1915-aisha-first-open-decide`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-aisha-first-open-decide/report.md), [`sched-20261103-1915-minji-first-open-decide`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-minji-first-open-decide/report.md), [`sched-20261103-1915-seoyeon-first-open-decide`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-seoyeon-first-open-decide/report.md)\n\n### Who\n\nPersonas: `jordan-sophomore-impatient`, `minji-freshman-17`, `aisha-firstgen-anxious`, `seoyeon-exchange-korean` · scenarios: `first-open-decide`\n\n### Environment note\n\nSame on live.\n\n### Suggested fix (hypothesis)\n\nLet people browse before sign-up (or after name + school only); merge \"What would you like to discover?\" into \"What brings you\"; shorten the how-Lumi-helps cards to one line each.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=signup-asks-too-much-too-early -->\n<!-- ux-sim:fp=97dda824b2fb -->\n<!-- ux-sim:fp=4b8a0b8abefa -->\n<!-- ux-sim:fp=8a0bf61f729f -->\n<!-- ux-sim:fp=e53f5b5080fe -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "onboarding",
+        "copy"
+      ],
+      "personas": [
+        "jordan-sophomore-impatient",
+        "minji-freshman-17",
+        "aisha-firstgen-anxious",
+        "seoyeon-exchange-korean"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "severity": 3
+    },
+    {
+      "key": "birth-year-hint-contradicts-profile",
+      "fingerprints": [
+        "4381a718da05"
+      ],
+      "title": "[ux-sim] Sign-up says birth year is \"never shown on your profile\", but profiles show age and the privacy policy says so",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nAisha read the Privacy Policy (\"your age shows on your profile\") then the sign-up hint \"Only to check you’re 16+. Never shown on your profile.\" The app does show age next to the name on Home and person pages.\n\nSeverity **2** (Moderate — slowed me down or made me hesitate; I recovered on my own.) · analyst confidence high · **1 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nThe hint was added in the 2026-11-03 onboarding change (claude/onboarding-4step) without checking the profile pages; it is factually wrong.\n\n### Evidence\n\n- run `sched-20261103-1915-aisha-first-open-decide` step 7 — “Also the privacy page I just read said my age sho…” _(Verified in code: PersonPage/HomePage render current year − birthYear + 1 next to the name.)_ [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-aisha-first-open-decide/shots/007-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-aisha-first-open-decide/shots/007-click-som.jpg)\n\nRuns: [`sched-20261103-1915-aisha-first-open-decide`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-aisha-first-open-decide/report.md)\n\n### Who\n\nPersonas: `aisha-firstgen-anxious` · scenarios: `first-open-decide`\n\n### Environment note\n\nSame on live.\n\n### Suggested fix (hypothesis)\n\nChange the hint to \"Used to check you’re 16+. Your age shows on your profile.\" (or stop showing age) — one-line copy fix in StartPage.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=birth-year-hint-contradicts-profile -->\n<!-- ux-sim:fp=4381a718da05 -->",
+      "labels": [
+        "ux-sim",
+        "severity:2",
+        "trust_privacy"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "severity": 2
+    },
+    {
+      "key": "teasers-and-for-you-skew-grad-careers",
+      "fingerprints": [
+        "b275c9c6f849",
+        "8bb560735e71",
+        "ed377ed9aef6"
+      ],
+      "title": "[ux-sim] Welcome teasers and first \"For you\" cards are grad/career items for undergrads",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nThree undergrads saw grad-oriented teaser cards on /welcome; after picking clubs / meet people, Home \"For you\" led with a Grad Student Appreciation Party or a law careers panel.\n\nSeverity **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.) · analyst confidence medium · **3 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nTeaser and For-you ranking ignore the role (undergrad) and the goals just picked; recent live events happen to be grad/career-heavy.\n\n### Evidence\n\n- run `sched-20261103-1915-minji-first-open-decide` step 30 — “뭐지... where's the lunch thing I saw at the start? 'For you' = grad student party?? I'm 17 lol. not for me” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-minji-first-open-decide/shots/030-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-minji-first-open-decide/shots/030-click-som.jpg)\n- run `sched-20261103-1915-jordan-first-open-decide` step 0 — “but a DOE grad research thing as a teaser card? not me.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-jordan-first-open-decide/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-jordan-first-open-decide/shots/000-start-som.jpg)\n- run `sched-20261103-1915-aisha-first-open-decide` step 40 — “But 'For you' is a law job panel? I said clubs and campus events, not careers.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-aisha-first-open-decide/shots/040-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-aisha-first-open-decide/shots/040-click-som.jpg)\n\nRuns: [`sched-20261103-1915-minji-first-open-decide`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-minji-first-open-decide/report.md), [`sched-20261103-1915-jordan-first-open-decide`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-jordan-first-open-decide/report.md), [`sched-20261103-1915-aisha-first-open-decide`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-aisha-first-open-decide/report.md)\n\n### Who\n\nPersonas: `minji-freshman-17`, `aisha-firstgen-anxious`, `jordan-sophomore-impatient` · scenarios: `first-open-decide`\n\n### Environment note\n\nContent is the live events snapshot (real), so likely the same on live today.\n\n### Suggested fix (hypothesis)\n\nFilter teasers/For-you by role (hide grad-only items for undergrads) and boost the categories picked in onboarding.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=teasers-and-for-you-skew-grad-careers -->\n<!-- ux-sim:fp=b275c9c6f849 -->\n<!-- ux-sim:fp=8bb560735e71 -->\n<!-- ux-sim:fp=ed377ed9aef6 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "motivation"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "aisha-firstgen-anxious",
+        "jordan-sophomore-impatient"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "severity": 3
+    },
+    {
+      "key": "cold-start-nobody-here",
+      "fingerprints": [
+        "e0347062be08",
+        "6f0858be8842",
+        "9c8f7a48cd72"
+      ],
+      "title": "[ux-sim] A brand-new account finds nobody to meet: Meetups and \"Who's free right now\" are empty",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nAfter signing up, Minji and Seoyeon found Meetups (\"No meetups yet\") and Who's free empty; Minji quit there.\n\nSeverity **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.) · analyst confidence medium · **2 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nSame as 2026-11-02: no fallback for an empty campus except \"start one\".\n\n### Evidence\n\n- run `sched-20261103-1915-minji-first-open-decide` step 32 — “헐 nobody's here. I'm not gonna be the first one to make a meetup, I'm 17 and new, that's so awkward” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-minji-first-open-decide/shots/032-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-minji-first-open-decide/shots/032-click-som.jpg)\n- run `sched-20261103-1915-minji-first-open-decide` step 34 — “아 again empty. 'Who's free' but no one is shown” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-minji-first-open-decide/shots/034-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-minji-first-open-decide/shots/034-click-som.jpg)\n\nRuns: [`sched-20261103-1915-minji-first-open-decide`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-minji-first-open-decide/report.md)\n\n### Who\n\nPersonas: `minji-freshman-17`, `seoyeon-exchange-korean` · scenarios: `first-open-decide`\n\n### Environment note\n\nLocal stack has no other students; stronger than live, but the empty state is real at quiet times.\n\n### Suggested fix (hypothesis)\n\nSee 2026-11-02 analysis: low-pressure \"count me in\" signal instead of \"create the first meetup\".\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=cold-start-nobody-here -->\n<!-- ux-sim:fp=e0347062be08 -->\n<!-- ux-sim:fp=6f0858be8842 -->\n<!-- ux-sim:fp=9c8f7a48cd72 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "content_gap"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "seoyeon-exchange-korean"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "severity": 3
+    },
+    {
+      "key": "club-join-status-unclear",
+      "fingerprints": [
+        "5b407b25b343"
+      ],
+      "title": "[ux-sim] Club says \"Not recruiting right now\" under a big \"Ask to join\"; nothing says what happens next",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nAisha gave up on the hiking club's Recruiting tab — third persona in two days.\n\nSeverity **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.) · analyst confidence high · **1 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nCTA ignores recruiting state; no next-step copy.\n\n### Evidence\n\n- run `sched-20261103-1915-aisha-first-open-decide` step 51 — “Wait, does 'not recruiting' mean I can't join a hiking club right now? Then what does 'Ask to join' do — send them a message with my profile?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-aisha-first-open-decide/shots/051-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-aisha-first-open-decide/shots/051-click-som.jpg)\n\nRuns: [`sched-20261103-1915-aisha-first-open-decide`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-aisha-first-open-decide/report.md)\n\n### Who\n\nPersonas: `aisha-firstgen-anxious` · scenarios: `first-open-decide`\n\n### Environment note\n\nSame on live.\n\n### Suggested fix (hypothesis)\n\nLabel/explain the button when not recruiting; after sending, say who sees it.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=club-join-status-unclear -->\n<!-- ux-sim:fp=5b407b25b343 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "ux_confusion"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "severity": 3
+    },
+    {
+      "key": "club-list-starts-with-greek-life",
+      "fingerprints": [
+        "23547d742182"
+      ],
+      "title": "[ux-sim] The club list opens with professional/Greek fraternities (\"matches your interest in careers\") before casual clubs",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nAisha (picked clubs + meet people, not careers) saw business/tech fraternities tagged \"Matches your interest in careers\" first; casual clubs were two scrolls down. Same pattern for Minji on 2026-11-02.\n\nSeverity **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.) · analyst confidence medium · **1 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nInterest matching maps onboarding picks (e.g. \"Discover opportunities\") to careers, and the list leads with professional orgs.\n\n### Evidence\n\n- run `sched-20261103-1915-aisha-first-open-decide` step 42 — “Wait, 'matches your interest in careers'? I never said careers, I said clubs and meeting people.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-aisha-first-open-decide/shots/042-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-aisha-first-open-decide/shots/042-click-som.jpg)\n\nRuns: [`sched-20261103-1915-aisha-first-open-decide`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261103-1915-aisha-first-open-decide/report.md)\n\n### Who\n\nPersonas: `aisha-firstgen-anxious` · scenarios: `first-open-decide`\n\n### Environment note\n\nSame on live.\n\n### Suggested fix (hypothesis)\n\nRank social/casual clubs first for students who picked \"Meet new people\"; check the onboarding → interest mapping.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=club-list-starts-with-greek-life -->\n<!-- ux-sim:fp=23547d742182 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "motivation"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "severity": 3
+    }
+  ],
+  "skipped": [
+    {
+      "key": "korean-hard-to-find-and-partial",
+      "title": "No Korean option on the welcome or sign-up screens; \"Get in\" does not read as sign-up",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "rides-invisible-in-onboarding",
+      "title": "Rides is never mentioned in the welcome or sign-up screens, and lives at the bottom of Meetups",
+      "why": "file: false"
+    },
+    {
+      "key": "floating-pills-cover-buttons",
+      "title": "The floating Design pill covers real buttons (\"My rides\")",
+      "why": "file: false"
+    }
+  ]
+}

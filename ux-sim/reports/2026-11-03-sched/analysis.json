@@ -1,0 +1,369 @@
+{
+  "schemaVersion": 1,
+  "kind": "ux-sim-analysis",
+  "date": "2026-11-03",
+  "generatedAt": "2026-11-03T19:19:22.545Z",
+  "author": "Scheduled orchestrating Claude session (https://claude.ai/code/session_01VX4jQF3M6doYf7VDXmTdrm)",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "sources": {
+    "findings": "ux-sim/reports/2026-11-03-sched/findings.json",
+    "runs": [
+      "sched-20261103-1915-aisha-first-open-decide",
+      "sched-20261103-1915-jordan-first-open-decide",
+      "sched-20261103-1915-minji-first-open-decide",
+      "sched-20261103-1915-seoyeon-first-open-decide"
+    ],
+    "harness": "6f174347960d",
+    "appCommits": [
+      "3f891a8142aa"
+    ]
+  },
+  "problems": [
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "signup-asks-too-much-too-early",
+      "title": "\"Get in\" goes straight into a 7-screen sign-up with no look around first; interests are asked twice",
+      "summary": "All four first-open personas noted \"Get in\" jumps into sign-up with a 7-dash progress bar. The how-Lumi-helps screen read as a wall of English text; the second interest picker repeated the first. Jordan quit on the how-Lumi-helps screen without signing up.",
+      "rootCauseHypothesis": "The new onboarding (merged 2026-11-03) kept all earlier screens around the mockup's four steps, so it is still 7 screens before any content, with two overlapping interest pickers and a text-only explainer.",
+      "severity": 3,
+      "frictionTypes": [
+        "onboarding",
+        "copy"
+      ],
+      "personas": [
+        "jordan-sophomore-impatient",
+        "minji-freshman-17",
+        "aisha-firstgen-anxious",
+        "seoyeon-exchange-korean"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261103-1915-jordan-first-open-decide",
+          "step": 9,
+          "quote": "ok and? I picked clubs and you show me a wall of text about clubs. 4 more dashes to go. boring."
+        },
+        {
+          "runId": "sched-20261103-1915-jordan-first-open-decide",
+          "step": 2,
+          "quote": "wait I didn't even get to look around. 7 steps?? ugh."
+        },
+        {
+          "runId": "sched-20261103-1915-aisha-first-open-decide",
+          "step": 25,
+          "quote": "Didn't I just answer this? I already said clubs and meeting people. This is the fifth screen and I still haven't seen a single club."
+        },
+        {
+          "runId": "sched-20261103-1915-minji-first-open-decide",
+          "step": 16,
+          "quote": "아 귀찮아... another picker. still haven't seen a single person or the app itself"
+        },
+        {
+          "runId": "sched-20261103-1915-seoyeon-first-open-decide",
+          "step": 17,
+          "quote": "또 질문... 이메일은 언제 해? 그냥 Skip 할래."
+        }
+      ],
+      "suggestedFix": "Let people browse before sign-up (or after name + school only); merge \"What would you like to discover?\" into \"What brings you\"; shorten the how-Lumi-helps cards to one line each.",
+      "fingerprints": [
+        "97dda824b2fb",
+        "4b8a0b8abefa",
+        "8a0bf61f729f",
+        "e53f5b5080fe"
+      ]
+    },
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "birth-year-hint-contradicts-profile",
+      "title": "Sign-up says birth year is \"never shown on your profile\", but profiles show age and the privacy policy says so",
+      "summary": "Aisha read the Privacy Policy (\"your age shows on your profile\") then the sign-up hint \"Only to check you’re 16+. Never shown on your profile.\" The app does show age next to the name on Home and person pages.",
+      "rootCauseHypothesis": "The hint was added in the 2026-11-03 onboarding change (claude/onboarding-4step) without checking the profile pages; it is factually wrong.",
+      "severity": 2,
+      "frictionTypes": [
+        "trust_privacy"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261103-1915-aisha-first-open-decide",
+          "step": 7,
+          "quote": "Also the privacy page I just read said my age sho…",
+          "note": "Verified in code: PersonPage/HomePage render current year − birthYear + 1 next to the name."
+        }
+      ],
+      "suggestedFix": "Change the hint to \"Used to check you’re 16+. Your age shows on your profile.\" (or stop showing age) — one-line copy fix in StartPage.",
+      "file": true,
+      "fingerprints": [
+        "4381a718da05"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "environmentLimited": false,
+      "environmentNote": "Content is the live events snapshot (real), so likely the same on live today.",
+      "key": "teasers-and-for-you-skew-grad-careers",
+      "title": "Welcome teasers and first \"For you\" cards are grad/career items for undergrads",
+      "summary": "Three undergrads saw grad-oriented teaser cards on /welcome; after picking clubs / meet people, Home \"For you\" led with a Grad Student Appreciation Party or a law careers panel.",
+      "rootCauseHypothesis": "Teaser and For-you ranking ignore the role (undergrad) and the goals just picked; recent live events happen to be grad/career-heavy.",
+      "severity": 3,
+      "frictionTypes": [
+        "motivation"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "aisha-firstgen-anxious",
+        "jordan-sophomore-impatient"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261103-1915-minji-first-open-decide",
+          "step": 30,
+          "quote": "뭐지... where's the lunch thing I saw at the start? 'For you' = grad student party?? I'm 17 lol. not for me"
+        },
+        {
+          "runId": "sched-20261103-1915-jordan-first-open-decide",
+          "step": 0,
+          "quote": "but a DOE grad research thing as a teaser card? not me."
+        },
+        {
+          "runId": "sched-20261103-1915-aisha-first-open-decide",
+          "step": 40,
+          "quote": "But 'For you' is a law job panel? I said clubs and campus events, not careers."
+        }
+      ],
+      "suggestedFix": "Filter teasers/For-you by role (hide grad-only items for undergrads) and boost the categories picked in onboarding.",
+      "fingerprints": [
+        "b275c9c6f849",
+        "8bb560735e71",
+        "ed377ed9aef6"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "environmentLimited": false,
+      "environmentNote": "Local stack has no other students; stronger than live, but the empty state is real at quiet times.",
+      "key": "cold-start-nobody-here",
+      "title": "A brand-new account finds nobody to meet: Meetups and \"Who's free right now\" are empty",
+      "summary": "After signing up, Minji and Seoyeon found Meetups (\"No meetups yet\") and Who's free empty; Minji quit there.",
+      "rootCauseHypothesis": "Same as 2026-11-02: no fallback for an empty campus except \"start one\".",
+      "severity": 3,
+      "frictionTypes": [
+        "content_gap"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "seoyeon-exchange-korean"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261103-1915-minji-first-open-decide",
+          "step": 32,
+          "quote": "헐 nobody's here. I'm not gonna be the first one to make a meetup, I'm 17 and new, that's so awkward"
+        },
+        {
+          "runId": "sched-20261103-1915-minji-first-open-decide",
+          "step": 34,
+          "quote": "아 again empty. 'Who's free' but no one is shown"
+        }
+      ],
+      "suggestedFix": "See 2026-11-02 analysis: low-pressure \"count me in\" signal instead of \"create the first meetup\".",
+      "fingerprints": [
+        "e0347062be08",
+        "6f0858be8842",
+        "9c8f7a48cd72"
+      ]
+    },
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "club-join-status-unclear",
+      "title": "Club says \"Not recruiting right now\" under a big \"Ask to join\"; nothing says what happens next",
+      "summary": "Aisha gave up on the hiking club's Recruiting tab — third persona in two days.",
+      "rootCauseHypothesis": "CTA ignores recruiting state; no next-step copy.",
+      "severity": 3,
+      "frictionTypes": [
+        "ux_confusion"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261103-1915-aisha-first-open-decide",
+          "step": 51,
+          "quote": "Wait, does 'not recruiting' mean I can't join a hiking club right now? Then what does 'Ask to join' do — send them a message with my profile?"
+        }
+      ],
+      "suggestedFix": "Label/explain the button when not recruiting; after sending, say who sees it.",
+      "fingerprints": [
+        "5b407b25b343"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "club-list-starts-with-greek-life",
+      "title": "The club list opens with professional/Greek fraternities (\"matches your interest in careers\") before casual clubs",
+      "summary": "Aisha (picked clubs + meet people, not careers) saw business/tech fraternities tagged \"Matches your interest in careers\" first; casual clubs were two scrolls down. Same pattern for Minji on 2026-11-02.",
+      "rootCauseHypothesis": "Interest matching maps onboarding picks (e.g. \"Discover opportunities\") to careers, and the list leads with professional orgs.",
+      "severity": 3,
+      "frictionTypes": [
+        "motivation"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261103-1915-aisha-first-open-decide",
+          "step": 42,
+          "quote": "Wait, 'matches your interest in careers'? I never said careers, I said clubs and meeting people."
+        }
+      ],
+      "suggestedFix": "Rank social/casual clubs first for students who picked \"Meet new people\"; check the onboarding → interest mapping.",
+      "fingerprints": [
+        "23547d742182"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "korean-hard-to-find-and-partial",
+      "title": "No Korean option on the welcome or sign-up screens; \"Get in\" does not read as sign-up",
+      "summary": "Seoyeon and Minji looked for 한국어 and found none before sign-up.",
+      "rootCauseHypothesis": "Language switch only in Settings.",
+      "severity": 2,
+      "frictionTypes": [
+        "copy"
+      ],
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261103-1915-seoyeon-first-open-decide",
+          "step": 0,
+          "quote": "한국어 설정은 안 보이네. 'Get in'... 가입하는 건가?"
+        }
+      ],
+      "suggestedFix": "Language toggle on /welcome; \"Sign up / Get in\" wording.",
+      "fingerprints": [
+        "a3cc6dcb6d19"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "rides-invisible-in-onboarding",
+      "title": "Rides is never mentioned in the welcome or sign-up screens, and lives at the bottom of Meetups",
+      "summary": "Seoyeon came for an SFO ride; nothing in welcome / goals / explainer mentions rides, so she nearly signed up not knowing it existed.",
+      "rootCauseHypothesis": "Goals and explainer cards list opportunities/classes/communities only.",
+      "severity": 2,
+      "frictionTypes": [
+        "content_gap"
+      ],
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261103-1915-seoyeon-first-open-decide",
+          "step": 6,
+          "quote": "음... 공항 가는 거, 같이 우버 타는 건 없네."
+        }
+      ],
+      "suggestedFix": "Mention rides in \"Make campus life easier\" or the Communities & People card.",
+      "file": false,
+      "fingerprints": [
+        "7f821b62f6e8"
+      ]
+    },
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "floating-pills-cover-buttons",
+      "title": "The floating Design pill covers real buttons (\"My rides\")",
+      "summary": "Seen again on /rides.",
+      "rootCauseHypothesis": "Fixed pill over the top-right tab.",
+      "severity": 1,
+      "frictionTypes": [
+        "bug"
+      ],
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261103-1915-seoyeon-first-open-decide",
+          "step": 35,
+          "quote": "위에 'Design' 버튼이 'My rides'를 가려서 잘 안 보여."
+        }
+      ],
+      "suggestedFix": "Move or hide the pill.",
+      "file": false,
+      "fingerprints": [
+        "39327c8d79c3"
+      ]
+    }
+  ],
+  "dismissed": [
+    {
+      "fingerprints": [
+        "99d3b468357d"
+      ],
+      "reason": "Single sev-1: no \"Exchange student\" role; Undergraduate worked. Note for later."
+    },
+    {
+      "fingerprints": [
+        "c1f6ce01874e"
+      ],
+      "reason": "Single sev-1 privacy hesitation on the optional Cultural / Identity tick; persona skipped it without trouble."
+    }
+  ],
+  "harnessIssues": [
+    {
+      "title": "privacy page placeholders are local-only",
+      "detail": "Aisha saw \"[operator name — to be set]\" on /privacy: LEGAL_NAME / PRIVACY_CONTACT_EMAIL are not set on the local stack. Check live has them set; if not, that is a real launch blocker. Grouped under birth-year problem fingerprint 4381a718da05 only for the age contradiction.",
+      "runs": [
+        "sched-20261103-1915-aisha-first-open-decide"
+      ]
+    }
+  ]
+}
