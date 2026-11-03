@@ -45,7 +45,7 @@ import { sendMail } from '../mail';
 import { MAIL_LOG, logEntries, pickToMail, type MailLogDoc } from './notify-throttle';
 import { COURSE_SOURCES, resolveCourseSource, useImportCheckpoint } from '../sources/courses';
 import { fetchCourseLeaf } from '../sources/catalog';
-import { fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale, fetchLocalist, fetchCampusGroupsEvents } from '../sources/opportunities';
+import { fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale, fetchLocalist, fetchCampusGroupsEvents, fetchEventRss } from '../sources/opportunities';
 import { dropDuplicateTitles, fetchDevpost, fetchInternships } from '../sources/external';
 import { existsSync } from 'node:fs';
 import { applyRules, checkDrift, spotCheck } from './validate';
@@ -226,6 +226,7 @@ async function collectEvents(row: SchoolRow): Promise<AgentRun> {
   if (d?.platform === 'presence') await tryAdd(`presence ${d.host}`, () => fetchPresenceEvents(new URL(d.host).hostname.split('.')[0], school));
   const lw = /^livewhale:(https?:\/\/[^\s]+?)\/?$/.exec(row.events_source ?? '')?.[1]; if (lw) await tryAdd(`livewhale ${lw}`, () => fetchLiveWhale(lw, school, 30));
   const lc = /^localist:(https?:\/\/[^\s]+?)\/?$/.exec(row.events_source ?? '')?.[1]; if (lc) await tryAdd(`localist ${lc}`, () => fetchLocalist(lc, school, 30));
+  const rs = /^rss:(https?:\/\/\S+)$/.exec(row.events_source ?? '')?.[1]; if (rs) await tryAdd(`rss ${rs}`, () => fetchEventRss(rs, school, 30));
   if (!sources.length && !errors.length) return record({ task, schoolId: row.id, status: 'skipped', startedAt, summary: { error: 'no public event source known' } });
   const today = new Date().toISOString().slice(0, 10);
   const events = [...new Map(got.filter((o) => !o.date || o.date >= today).map((o) => [o.id, o])).values()]

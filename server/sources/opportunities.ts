@@ -142,6 +142,32 @@ export function parseCampusGroupsRss(xml: string, host: string, school: EventSch
   }
   return out;
 }
+/**
+ * 학교 행사 RSS 중 pubDate 가 행사 시작 시각인 것 — Caltech events.caltech.edu/calendar/rss (학교 공식 공개 행사, 로그인 없음).
+ * 학교가 고른 공개 행사라 전부 넣는다. 지난 것·horizon 밖·전시(Exhibit/Exhibition)·알림은 뺀다. 글자 코드가 두 번 감싸여 온다(&amp;amp;) → 두 번 푼다.
+ */
+export function parseEventRss(xml: string, school: EventSchool, now = new Date(), horizonDays = 30, prefix = 'rss', label = 'Events'): Opportunity[] {
+  const nowIso = now.toISOString(); const until = now.getTime() + horizonDays * 86_400_000;
+  const tag = (it: string, t: string) => text(text((new RegExp(`<${t}[^>]*>([\\s\\S]*?)<\\/${t}>`).exec(it)?.[1] ?? '').replace(/^<!\[CDATA\[|\]\]>$/g, '')));
+  const out: Opportunity[] = []; const seen = new Set<string>();
+  for (const it of xml.match(/<item>[\s\S]*?<\/item>/g) ?? []) {
+    const title = tag(it, 'title'); const link = tag(it, 'link'); const start = new Date(tag(it, 'pubDate'));
+    if (!title || !link || Number.isNaN(start.getTime())) continue;
+    if (start.getTime() < now.getTime() || start.getTime() > until || isNoticeNotEvent(title) || /\bexhibit(ion)?\b/i.test(title)) continue;
+    const key = `${title.toLowerCase()}#${start.toISOString()}`; if (seen.has(key)) continue; seen.add(key);
+    const desc = tag(it, 'description'); const food = hasFreeFood(title, desc); const talk = TALK_RE.test(title);
+    const slug = (/\/([^/?#]+)\/?$/.exec(link)?.[1] ?? title).toLowerCase().replace(/[^a-z0-9]+/g, '_').slice(0, 60);
+    out.push(base({
+      id: `op_${school.id.replace('s_', '')}_${prefix}_${slug}`, type: 'event', title, host: school.name ?? 'Campus', schoolId: school.id,
+      description: desc.slice(0, 280), date: start.toISOString(), startTime: localTime(start, school.tz),
+      eligibility: /free and open to the public|admission is free|free/i.test(desc) ? 'Free, open to the public' : 'Open to the campus community', benefit: food ? 'Free food' : undefined, cover: { emoji: '', hue: 200 },
+      tags: ['event', ...(food ? ['free food'] : []), ...(talk ? ['talk'] : [])], interests: talk ? ['research', 'study'] : ['club'], goals: [], sourceUrl: link, sourceLabel: school.name ? `${school.name} ${label}` : label,
+    }, nowIso));
+  }
+  return out;
+}
+export async function fetchEventRss(url: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> { return parseEventRss(await get(url), school, new Date(), horizonDays); }
+
 export async function fetchCampusGroupsEvents(host: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> {
   return parseCampusGroupsRss(await get(`${host.replace(/\/+$/, '')}/rss_events`), host, school, new Date(), horizonDays);
 }
