@@ -1654,3 +1654,10 @@
 - Added to collect (owner 2026-11-03): UChicago (Blueprint, Engage, 446), NYU (NYU Engage, 951), Columbia (LionHub, CampusGroups), Yale (Yale Connect, CampusGroups; class probe on Railway since courses.yale.edu gives an empty answer from the container).
 - Collected 2026-11-03: UChicago 446 (404 with a public link) · NYU 951 (630) · Columbia 357 (18; LionHub draws socials by script) · Yale 1,377 (397). Recruiting: Columbia 338 open / 19 closed, Yale 1,220 open / 143 closed; UChicago and NYU (Engage) have no recruiting field.
 - Next: Yale class probe on Railway (fose), Columbia/NYU/UChicago class sources, public links for Columbia and Stanford clubs, Harvard directory (blocked here).
+
+## 2026-11-03 (2) — owner: never drop data, collect many top schools
+- Restored SJSU, SF State, Santa Clara, USF files and rows from git (commit f385006). Owner rule now: never remove collected data.
+- Found the club platform for 36 paused top schools: 13 Engage, 14 CampusGroups (all with public club lists), WashU on Presence; moved those 28 to collect, collection running (USC first).
+- New readers: Caltech (public approved-club list, 124 names; descriptions are behind Caltech login) + ASCIT; Brown (Student Activities list, 412 groups, Instagram/Facebook from each public club page, 331 with a link; 7,020 catalog courses).
+- Spot check: Brown 2 club pages vs. collected links, match.
+- Blocked: studentorg.ucsd.edu (TLS failure from the container, not bypassed); Princeton club list needs login (skipped by rule).

@@ -1,6 +1,6 @@
 # Schools — where each kind of data comes from (checked 2026-11-03)
 
-**Scope (owner, 2026-11-02):** well-known schools only — Bay Area (Stanford, UC Davis, UCSC), UCLA, and the East Coast set (MIT, Harvard, Cornell, UPenn, Dartmouth, Notre Dame). SJSU, SF State, Santa Clara and USF were dropped (moved to schools-paused.csv, files removed).
+**Scope (owner, 2026-11-03):** collect as many good schools as possible to files (Ivy League, top private and public universities, every good Bay Area school). Files cost nothing on Railway; which schools go live is decided later. **Never remove data already collected** (owner 2026-11-03) — SJSU, SF State, Santa Clara, USF were restored after a mistaken drop.
 
 **Where the data lives (owner, 2026-11-02 — Railway cost):** schools that aren't open are collected by the PM agent (this routine, not Railway) into
 `server/data/collected/<school>.orgs.json` (clubs + student government + links) and `<school>.probe.json` (class recipe sample). Nothing goes into the live DB.
@@ -40,6 +40,8 @@ Notes
 - Recruiting status (owner 2026-11-02: very important — year-round or deadline, and which deadline): stored as `recruitment.mode` = rolling | deadline (+ `deadline` date) | cycle (Fall/Spring) | closed, with `source`. Sources: Penn Clubs (recruiting cycle, application required, accepting members, and each club's application end date), CampusGroups ("Membership is closed" vs. a join button = open anytime). Engage, UCLA RCO, UCSC have no recruiting fields — shown as nothing rather than guessed. Past deadlines show "Applications closed".
 
 ## Data work queue
+- [ ] (top, owner 2026-11-03) Collect every school in schools-collect.csv that has no `<id>.orgs.json` yet, one per run in file order (`npm run agent -- collect:<id>`), commit after each. Started 2026-11-03: USC, UCI, UCSB, UCR, Duke, JHU, Northwestern, Georgetown, CMU, Emory, Tufts, WashU, Rice, Vanderbilt, Michigan, UVA, UNC, Georgia Tech, UT Austin, BU, BC, UMD, Purdue, Florida, Wisconsin, UW, Minnesota, Lehigh
+- [ ] Schools still paused, need a reader or are blocked: Princeton (club list is behind Princeton login — skip unless a public list appears), UCSD (studentorg.ucsd.edu fails TLS from the container; try from Railway), Illinois, Rutgers, Ohio State, Texas A&M (public directory not found yet), Harvard clubs (engage.college.harvard.edu refused by session network)
 - [ ] Recruiting deadlines for schools whose directory lacks them (Berkeley CalLink is login-only; Engage schools): only from a public club page that states a date — never guess (the PM agent picks the top open item itself every run — owner 2026-11-02: "don't make me ask, keep filling")
 Order: Bay Area schools only. Never invent data; only official/public sources; verify with a real sample before wiring; never bulk-store timetables for schools that aren't open.
 - [x] Collected to files 2026-11-02 13:28 UTC: Stanford 733 · SF State 290 (218 with social/site links) · SJSU 440 · UC Davis 532 · UCSC 110 · Santa Clara 163 · USF 152 (incl. hand-checked student governments where the directory lacks them)
