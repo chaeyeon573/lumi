@@ -1775,3 +1775,10 @@
 - Spot check classes (18:33): UW DRAMA 514, GWSS 262, LING 532, SPHSC 565 match; ANTH 233 times match but the saved **link was 404** (anth.html — the department page is anthro.html). Reader now uses the department page name + anchor; test with the real page; UW courses re-collected.
 - UW re-collect: 4,926 → 4,923 — HCDE 302 Winter 2027 sections I/J/K are no longer on UW's official page (only section A), so they left the timetable file like cancelled CMU sections. Lehigh: 21 more "Student Senate Affiliated Organization" clubs (dance, Formula SAE, Mock Trial …) council → club (total Lehigh 247).
 - Spot check clubs (18:33): Columbia CU Records, Michigan Music For Dementia, Notre Dame MBA Technology Club, Wisconsin Psychology Club, Georgia Tech PhD 2 Consulting Club — websites name the club.
+
+## 2026-11-03 19:33 run
+- No Codex commits or HANDOFF requests.
+- Caltech events: events.caltech.edu/calendar/rss is public; pubDate is the event start → new `parseEventRss` / `events_source=rss:<url>` → 16 upcoming (Watson Lectures, concerts, HSS 60th …; exhibitions left out; double-encoded `&amp;amp;` decoded). Test with the real feed. USF rss.xml exists but is empty; UCLA/UCSC/SCU no feed found.
+- Club types: relabel script now reads Presence categories — WashU Association of Black Students council → club. USC/UCSB/UW re-run under the final rule.
+- Spot check classes: Duke AMES 408S, ECON 690 (grad), HISTTHEO 820 (grad), MUSIC 101-3, SPANISH 590S re-fetched — match.
+- Spot check clubs: Yale Health Equity Thread, Penn Electric Racing match. MIT Climbing Club website now shows an MIT server error page (dead link) → queue item for a link check that marks dead links. UNC Unitarian Universalist Fellowship lists the national uua.org site (what the club entered; generic). Purdue Christian Student Fellowship lists Purdue Christian Campus House (its ministry).
