@@ -148,6 +148,7 @@ test('descriptionLinks: real URLs in a club description become links; forms, mai
     { label: 'Website', url: 'https://apo.wustl.edu/' }, { label: 'Instagram', url: 'https://www.instagram.com/apowashu/' },
   ]);
   assert.deepEqual(descriptionLinks('Find us @ability_washu'), []);
+  assert.deepEqual(descriptionLinks('Apply: https://aiesecusa.typeform.com/to/d6WPTvHI'), []); // Northwestern AIESEC sign-up form
   assert.deepEqual(descriptionLinks('<a href=&#34http://www.instagram.com/wustlumang/&#34>IG</a>'), [{ label: 'Instagram', url: 'http://www.instagram.com/wustlumang/' }]);
 });
 

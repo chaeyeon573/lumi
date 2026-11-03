@@ -247,7 +247,7 @@ export function isOfficeOrg(name: string, category?: string): boolean {
 export function descriptionLinks(textOrHtml: string): Link[] {
   const t = (textOrHtml ?? '').replace(/&#34;?|&#x22;?|&quot;?|&#39;?|&apos;?/gi, '"').replace(/&amp;/g, '&');
   const urls = [...new Set([...t.matchAll(/https?:\/\/[^\s"'<>)\]]+/gi)].map((m) => m[0].replace(/[.,;:!]+$/, '')))];
-  const skip = /forms\.gle|docs\.google|drive\.google|forms\.office|mailto:|gmail\.com|zoom\.us|calendly|spotify\.com|apple\.com\/music|groupme|discord\.(gg|com)|presence\.io|campuslabs|campusgroups/i;
+  const skip = /forms\.gle|typeform\.com|jotform\.com|docs\.google|drive\.google|forms\.office|mailto:|gmail\.com|zoom\.us|calendly|spotify\.com|apple\.com\/music|groupme|discord\.(gg|com)|presence\.io|campuslabs|campusgroups/i;
   const by = (re: RegExp) => urls.find((u) => re.test(u));
   return socialLinks({ instagram: by(/instagram\.com\/[A-Za-z0-9_.]+/i), facebook: by(/(facebook|fb)\.com\//i), linkedin: by(/linkedin\.com\//i), youtube: by(/youtube\.com|youtu\.be/i), tiktok: by(/tiktok\.com/i),
     website: urls.find((u) => !skip.test(u) && !/instagram|facebook|fb\.com|linkedin|twitter|x\.com\/|youtube|youtu\.be|tiktok/i.test(u)) });
