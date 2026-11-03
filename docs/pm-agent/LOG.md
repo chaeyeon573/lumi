@@ -1779,7 +1779,7 @@
 ## 2026-11-03 19:33 run
 - No Codex commits or HANDOFF requests.
 - Caltech events: events.caltech.edu/calendar/rss is public; pubDate is the event start → new `parseEventRss` / `events_source=rss:<url>` → 16 upcoming (Watson Lectures, concerts, HSS 60th …; exhibitions left out; double-encoded `&amp;amp;` decoded). Test with the real feed. USF rss.xml exists but is empty; UCLA/UCSC/SCU no feed found.
-- Club types: relabel script now reads Presence categories — WashU Association of Black Students council → club. USC/UCSB/UW re-run under the final rule.
+- Club types: relabel script now reads Presence categories — WashU Association of Black Students council → club. USC/UCSB/UW re-run under the final rule: 0 more (relabel queue item done).
 - Spot check classes: Duke AMES 408S, ECON 690 (grad), HISTTHEO 820 (grad), MUSIC 101-3, SPANISH 590S re-fetched — match.
 - Spot check clubs: Yale Health Equity Thread, Penn Electric Racing match. MIT Climbing Club website now shows an MIT server error page (dead link) → queue item for a link check that marks dead links. UNC Unitarian Universalist Fellowship lists the national uua.org site (what the club entered; generic). Purdue Christian Student Fellowship lists Purdue Christian Campus House (its ministry).
 - Club links: CampusGroups reader now uses URLs written in a club's description when the website field is empty (same rule as WashU; sign-up forms such as typeform/jotform skipped). Existing files: UCSB 0 → 9, Northwestern 0 → 2, Emory +2, Tufts 0 new. That is every URL those descriptions contain; the rest need another public source.
