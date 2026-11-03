@@ -974,7 +974,7 @@ export function uclaSummaryToCourses(html: string, ref: UclaCourseRef, termCode:
 }
 
 // ─── SF State: webapps.sfsu.edu/public/classservices/classsearch — 공개. 빠른 검색(전공 이름) → results → searchresultsjson(DataTables aaData).
-// 빠른 검색은 다음 학기들만 받는다(2026-11: Spring 2027, Winter 2027). 강의(LEC)가 있는 과목은 강의만, 없으면 세미나 등 시간이 있는 것. 개별 연구(SUP 등 시간 없음)는 빠진다.
+// 결과 주소는 어느 학기든 받는다(가을·봄 최근 두 학기). 강의(LEC)가 있는 과목은 강의만, 없으면 세미나 등 시간이 있는 것. 개별 연구(SUP 등 시간 없음)는 빠진다.
 const SFSU = 'https://webapps.sfsu.edu/public/classservices';
 const SFSU_DAY: Record<string, number> = { Mo: 0, Tu: 1, We: 2, Th: 3, Fr: 4, Sa: 5, Su: 6 };
 export function sfsuToCourses(json: { aaData?: string[][] }, termCode: string, label: string): CatalogCourse[] {
@@ -1009,26 +1009,23 @@ function sfsuSession() {
   };
 }
 async function sfsu(): Promise<CatalogCourse[]> {
+  // 결과 주소(classsearch/results?searchFor=<전공>&term=<학기>&classCategory=REG)를 열면 같은 세션의 searchresultsjson 이 그 결과를 준다 — 폼 없이 전공당 2번
   const go = sfsuSession(); const form = await (await go(`${SFSU}/classsearch`)).text();
   const sel = /<select id="classScheduleAdvanced_subject"[\s\S]*?<\/select>/.exec(form)?.[0] ?? '';
   const subjects = [...sel.matchAll(/<option value="([^"]+)"/g)].map((m) => m[1]).filter((v) => v && v !== 'X');
-  const terms = [...form.matchAll(/name="classScheduleQuick\[term\]"[^>]*value="(\d{4})"/g)].map((m) => m[1]);
   const labels = Object.fromEntries([...form.matchAll(/<option value="(\d{4})">([^<]+)/g)].map((m) => [m[1], labelOf(m[2])]));
-  const term = terms.find((t) => /Spring|Fall/.test(labels[t] ?? '')) ?? terms[0]; if (!term) throw new Error('sfsu: no term');
+  // 가장 최근 가을·봄 두 학기(여름·겨울 계절학기 제외)
+  const terms = Object.keys(labels).filter((t) => /Spring|Fall/.test(labels[t])).sort().reverse().slice(0, 2); if (!terms.length) throw new Error(`sfsu: no term (page ${form.length} chars, ${Object.keys(labels).length} options)`);
   const out: CatalogCourse[] = [];
-  const tokenOf = (h: string) => /name="classScheduleQuick\[_token\]" value="([^"]+)"/.exec(h)?.[1] ?? '';
-  let token = tokenOf(form);
-  const search = (subj: string) => go(`${SFSU}/classsearch`, new URLSearchParams({ 'classScheduleQuick[_token]': token, 'classScheduleQuick[term]': term, 'classScheduleQuick[termClassCategory]': `${term}:REG`, 'classScheduleQuick[searchFor]': subj, 'classScheduleQuick[submit]': '' }));
-  for (const subj of subjects) {
-    // 폼 열쇠(token)는 세션 동안 다시 쓴다 — 거절되면 한 번만 새로 받는다 (요청 수를 줄인다)
-    let r = await search(subj); let loc = r.headers.get('location');
-    if (!loc || !/results/.test(loc)) { token = tokenOf(await (await go(`${SFSU}/classsearch`)).text()); r = await search(subj); loc = r.headers.get('location'); }
-    if (!loc || !/results/.test(loc)) continue;
-    await go(new URL(loc, SFSU).href);
-    const j = await go(`${SFSU}/searchresultsjson`); if (!j.ok) continue;
-    out.push(...sfsuToCourses(await j.json(), term, labels[term] ?? term).filter((c) => c.department === subj || c.code.startsWith(`${subj} `)));
+  for (const term of terms) {
+    const before = out.length;
+    for (const subj of subjects) {
+      const r = await go(`${SFSU}/classsearch/results?${new URLSearchParams({ searchFor: subj, term, classCategory: 'REG' })}`); if (!r.ok) continue;
+      const j = await go(`${SFSU}/searchresultsjson`); if (!j.ok) continue;
+      out.push(...sfsuToCourses(await j.json(), term, labels[term] ?? term).filter((c) => c.department === subj));
+    }
+    console.log(`  s_sfsu ${labels[term]}: ${subjects.length} subjects → ${out.length - before} classes`);
   }
-  console.log(`  s_sfsu ${labels[term]}: ${subjects.length} subjects → ${out.length} classes`);
   return [...new Map(out.map((c) => [c.id, c])).values()];
 }
 

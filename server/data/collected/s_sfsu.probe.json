@@ -1,24 +1,6 @@
 {
- "checkedAt": "2026-11-03T21:58:52.951Z",
- "status": "applied",
+ "checkedAt": "2026-11-03T22:34:55.085Z",
+ "status": "error",
  "stored": false,
- "source": "timetable:sfsu",
- "sampled": 2061,
- "withTimes": 2061,
- "terms": [
-  "Spring 2027"
- ],
- "sample": [
-  "A U 110 · Living in San Francisco (Sec 03) · Spring 2027 · T 15:30-16:45",
-  "BUS 690 · Seminar in Business Policy and Strategic Management (Sec 02) · Spring 2027 · M 12:30-13:45 W 12:30-13:45",
-  "C W 854 · Workshop in Poetry · Spring 2027 · M 12:30-15:15",
-  "ENG 461 · Literature in English Since 1800 · Spring 2027 · T 18:00-20:45",
-  "LTNS 501 · Latin America: The National Period · Spring 2027 · M 14:00-15:15 W 14:00-15:15",
-  "PSY 305GW · Writing in Psychology - GWAR (Topic: Writing for Academic Audience) (Sec 04) · Spring 2027 · T 10:00-10:50"
- ],
- "spotCheck": {
-  "matched": 0,
-  "mismatched": [],
-  "unavailable": 0
- }
+ "error": "sfsu: no term"
 }
