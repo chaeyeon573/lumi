@@ -1689,3 +1689,10 @@
 - New `collect-events:<id>` (agent, files only): upcoming events from Engage / Presence / Localist / LiveWhale into `<id>.events.json`. 22 schools, e.g. WashU 977, NYU 804, UT Austin 802, Vanderbilt 695, Purdue 641, UMD 587, Notre Dame 410, Georgia Tech 399, UNC 389, Cornell 135 (events.cornell.edu), USC 54 (calendar.usc.edu). /preview shows the count and an "Upcoming events" card in the school's own time zone (first try showed UTC — fixed; added tz for the 8 California rows).
 - Spot check: 5 Duke sections re-fetched live (AMES 275, ECON 644 grad, ISS 253, PHIL 108CNS, WRITING 120) all match; 5 events (NYU, WashU, Michigan, Cornell, Vanderbilt) match title and start time on the source.
 - Screens: /preview, /preview/s_cornell, /preview/jobs with the local API — PAGE ERROR 0.
+
+## 2026-11-03 04:33 run
+- New USC class reader (classes.usc.edu public JSON: Terms/Active, Schools/TermCode, CoursesByTermSchoolProgram). Lecture / Lecture-Lab / seminar sections are class times; Discussion / Lab / Quiz are optional sections; cancelled skipped; graduate courses included (CSCI 502A). Fall 2026: 243 programs → 5,822 classes.
+- New `collect-courses:<id>`: runs only the class step (collect re-read 1,964 USC clubs + websites first).
+- Fixed: share-tracking tags in club links (instagram …?igsh=…&utm_source=qr, ?hl=en) are dropped when links are shown (live app and preview). Test added.
+- Spot check: Michigan 2 clubs (Engage API), Brown 2 (club pages), UCLA 1 (RCO search) — links match; only the tracking tags differed (fixed above).
+- Deployed cd99024 (checks passed, /preview/s_unc and /preview/s_umich PAGE ERROR 0).
