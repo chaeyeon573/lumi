@@ -1652,3 +1652,5 @@
 - Spot check: UCLA 5 clubs vs. sa.ucla.edu RCO, Penn 5 clubs incl. the deadline vs. pennclubs.com API, Cornell 5 classes (day/time/title) vs. classes.cornell.edu API: all match.
 - Blocked: engage.college.harvard.edu is refused by this session's network policy (agent proxy connect_rejected), so Harvard has only the hand-checked student government. Not worked around.
 - Added to collect (owner 2026-11-03): UChicago (Blueprint, Engage, 446), NYU (NYU Engage, 951), Columbia (LionHub, CampusGroups), Yale (Yale Connect, CampusGroups; class probe on Railway since courses.yale.edu gives an empty answer from the container).
+- Collected 2026-11-03: UChicago 446 (404 with a public link) · NYU 951 (630) · Columbia 357 (18; LionHub draws socials by script) · Yale 1,377 (397). Recruiting: Columbia 338 open / 19 closed, Yale 1,220 open / 143 closed; UChicago and NYU (Engage) have no recruiting field.
+- Next: Yale class probe on Railway (fose), Columbia/NYU/UChicago class sources, public links for Columbia and Stanford clubs, Harvard directory (blocked here).

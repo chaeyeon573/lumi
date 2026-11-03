@@ -18,6 +18,16 @@ Rule (owner, 2026-11-02): focus on Bay Area. **Clubs, student government, events
 | Stanford | Cardinal Engage (CampusGroups) `cardinalengage.stanford.edu` | each club's own site | ASSU — assu.stanford.edu (hand-checked) | events.stanford.edu (Localist API) | ExploreCourses XML (`stanford` adapter) — Autumn/Winter/Spring with times |
 | UC Davis | CampusGroups `aggielife.ucdavis.edu` — 531 | each club's own site | ASUCD — asucd.ucdavis.edu (hand-checked) | — | catalog.ucdavis.edu (CourseLeaf) — codes/titles. Test: 107 courses from 6 subjects |
 | UCLA | RCO public search `sa.ucla.edu/RCO` (POST /Public/SearchOrganizations) — 1,451 | website + social links from the directory (1,101 with a public link) | USAC etc. — 48 student-government groups in the directory | — | not yet (schedule of classes: next) |
+| UChicago | Blueprint (Engage) `uchicago.campuslabs.com/engage` — 446 | Engage detail socials (404 with a link) | in directory | — | not yet |
+| NYU | NYU Engage `nyu.campuslabs.com/engage` — 951 | Engage detail socials (630) | in directory | — | not yet |
+| Columbia | LionHub (CampusGroups) `lionhub.columbia.edu` — 357 | club's own site only (18) | in directory | — | not yet |
+| Yale | Yale Connect (CampusGroups) `yaleconnect.yale.edu` — 1,377 | club's own site (397) | in directory | — | courses.yale.edu (FOSE) — probe on Railway |
+| Cornell | CampusGroups — 1,483 | own site (644) | in directory | — | classes.cornell.edu — 9,518 with times, Fall 2026 + Spring 2027 |
+| MIT | engage.mit.edu (CampusGroups) — 427 | own site (252) | hand-checked | — | MIT subject listing — 1,712 with times |
+| UPenn | Penn Clubs — 514 (with recruiting cycle + deadlines) | full socials (472) | hand-checked | — | courses.upenn.edu (FOSE) — probe on Railway |
+| Dartmouth | dartmouthgroups (CampusGroups) — 406 | own site (30) | hand-checked | — | FOSE — probe on Railway |
+| Notre Dame | nd.campuslabs.com/engage — 540 | Engage socials (396) | in directory | — | classsearch.nd.edu (FOSE) — probe on Railway |
+| Harvard | blocked here (engage.college.harvard.edu refused by session network) | — | hand-checked | — | probe on Railway |
 | UC Santa Cruz | Get Involved list `getinvolved.ucsc.edu/student-organizations/join/` (WordPress/FacetWP, one page) — 109 | Instagram · email on the card (108 of 109 have a link) | SUA — sua.ucsc.edu (hand-checked) | — | catalog.ucsc.edu is not CourseLeaf → probe rejected; next: pisa.ucsc.edu class search |
 
 Open (fully loaded): UC Berkeley, UC Merced.
