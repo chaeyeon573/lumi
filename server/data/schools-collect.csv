@@ -1,11 +1,11 @@
 id,name,short,email_domain,region,lat,lng,orgs_host,courses_source,catalog_url,research_source,events_source,academic_calendar,tz,railway
-s_stanford,Stanford University,stanford,stanford.edu,Palo Alto,37.4275,-122.1697,https://cardinalengage.stanford.edu,stanford,,,localist:https://events.stanford.edu,,,probe
-s_ucdavis,UC Davis,ucdavis,ucdavis.edu,Davis,38.5382,-121.7617,https://aggielife.ucdavis.edu,,https://catalog.ucdavis.edu/,,,,,
-s_ucsc,UC Santa Cruz,ucsc,ucsc.edu,Santa Cruz,36.9916,-122.0583,https://getinvolved.ucsc.edu/student-organizations/join/,,https://catalog.ucsc.edu/,,,,,
-s_ucla,UCLA,ucla,ucla.edu,Los Angeles,34.0689,-118.4452,https://sa.ucla.edu/RCO,,,,,,,
+s_stanford,Stanford University,stanford,stanford.edu,Palo Alto,37.4275,-122.1697,https://cardinalengage.stanford.edu,stanford,,,localist:https://events.stanford.edu,,America/Los_Angeles,probe
+s_ucdavis,UC Davis,ucdavis,ucdavis.edu,Davis,38.5382,-121.7617,https://aggielife.ucdavis.edu,,https://catalog.ucdavis.edu/,,,,America/Los_Angeles,
+s_ucsc,UC Santa Cruz,ucsc,ucsc.edu,Santa Cruz,36.9916,-122.0583,https://getinvolved.ucsc.edu/student-organizations/join/,,https://catalog.ucsc.edu/,,,,America/Los_Angeles,
+s_ucla,UCLA,ucla,ucla.edu,Los Angeles,34.0689,-118.4452,https://sa.ucla.edu/RCO,,,,,,America/Los_Angeles,
 s_mit,MIT,mit,mit.edu,Cambridge,42.3601,-71.0942,https://engage.mit.edu,mit,,,,,America/New_York,
 s_harvard,Harvard University,harvard,harvard.edu,Cambridge,42.3770,-71.1167,,harvard,,,,,America/New_York,probe
-s_cornell,Cornell University,cornell,cornell.edu,Ithaca,42.4534,-76.4735,https://cornell.campusgroups.com,cornell,,,,,America/New_York,
+s_cornell,Cornell University,cornell,cornell.edu,Ithaca,42.4534,-76.4735,https://cornell.campusgroups.com,cornell,,,localist:https://events.cornell.edu,,America/New_York,
 s_upenn,University of Pennsylvania,upenn,upenn.edu,Philadelphia,39.9522,-75.1932,https://pennclubs.com,fose:https://courses.upenn.edu,,,,,America/New_York,probe
 s_dartmouth,Dartmouth College,dartmouth,dartmouth.edu,Hanover,43.7044,-72.2887,https://dartmouthgroups.dartmouth.edu,fose:https://courses.dartmouth.edu,,,,,America/New_York,probe
 s_notredame,University of Notre Dame,nd,nd.edu,Notre Dame,41.7056,-86.2353,https://nd.campuslabs.com/engage,fose:https://classsearch.nd.edu,https://catalog.nd.edu/,,,,America/Indiana/Indianapolis,probe
@@ -13,10 +13,10 @@ s_uchicago,University of Chicago,uchicago,uchicago.edu,Chicago,41.7886,-87.5987,
 s_nyu,New York University,nyu,nyu.edu,New York,40.7295,-73.9965,https://nyu.campuslabs.com/engage,,https://bulletins.nyu.edu/,,,,America/New_York,
 s_columbia,Columbia University,columbia,columbia.edu,New York,40.8075,-73.9626,https://lionhub.columbia.edu,,https://bulletin.columbia.edu/,,,,America/New_York,
 s_yale,Yale University,yale,yale.edu,New Haven,41.3163,-72.9223,https://yaleconnect.yale.edu,fose:https://courses.yale.edu,https://catalog.yale.edu/,,,,America/New_York,probe
-s_sfsu,San Francisco State,sfsu,sfsu.edu,San Francisco,37.7219,-122.4782,https://sfsu.campuslabs.com/engage,,https://bulletin.sfsu.edu/,,,,,
-s_sjsu,San José State University,sjsu,sjsu.edu,San Jose,37.3352,-121.8811,https://sammyapp.sjsu.edu,,,,localist:https://events.sjsu.edu,,,
-s_scu,Santa Clara University,scu,scu.edu,Santa Clara,37.3496,-121.9390,https://www.scu.edu/csi/organizations/directory/,,,,,,,
-s_usf,University of San Francisco,usfca,usfca.edu,San Francisco,37.7766,-122.4506,https://myusf.usfca.edu/sle/student-orgs/undergraduate,banner9:https://reg-prod.ec.usfca.edu,,,,,,
+s_sfsu,San Francisco State,sfsu,sfsu.edu,San Francisco,37.7219,-122.4782,https://sfsu.campuslabs.com/engage,,https://bulletin.sfsu.edu/,,,,America/Los_Angeles,
+s_sjsu,San José State University,sjsu,sjsu.edu,San Jose,37.3352,-121.8811,https://sammyapp.sjsu.edu,,,,localist:https://events.sjsu.edu,,America/Los_Angeles,
+s_scu,Santa Clara University,scu,scu.edu,Santa Clara,37.3496,-121.9390,https://www.scu.edu/csi/organizations/directory/,,,,,,America/Los_Angeles,
+s_usf,University of San Francisco,usfca,usfca.edu,San Francisco,37.7766,-122.4506,https://myusf.usfca.edu/sle/student-orgs/undergraduate,banner9:https://reg-prod.ec.usfca.edu,,,,,America/Los_Angeles,
 s_duke,Duke University,duke,duke.edu,Durham,36.0014,-78.9382,https://duke.campusgroups.com,hcx:https://dukehub.duke.edu/psc/CSPRD01/EMPLOYEE/SA|DUKEU,,,,,America/New_York,
 s_jhu,Johns Hopkins University,jhu,jhu.edu,Baltimore,39.3299,-76.6205,https://jhu.campusgroups.com,,,,,,America/New_York,
 s_northwestern,Northwestern University,northwestern,northwestern.edu,Evanston,42.0565,-87.6753,https://catsoncampus.northwestern.edu,,,,,,America/Chicago,
@@ -29,7 +29,7 @@ s_cmu,Carnegie Mellon University,cmu,cmu.edu,Pittsburgh,40.4433,-79.9436,https:/
 s_emory,Emory University,emory,emory.edu,Atlanta,33.7925,-84.3240,https://thehub.emory.edu,,,,,,America/New_York,
 s_uva,University of Virginia,virginia,virginia.edu,Charlottesville,38.0336,-78.5080,https://virginia.campuslabs.com/engage,,,,,,America/New_York,
 s_wustl,Washington University in St. Louis,wustl,wustl.edu,St. Louis,38.6488,-90.3108,https://wustl.presence.io,,https://bulletin.wustl.edu/,,,,America/Chicago,
-s_usc,USC,usc,usc.edu,Los Angeles,34.0224,-118.2851,https://engage.usc.edu,,,,,,America/Los_Angeles,
+s_usc,USC,usc,usc.edu,Los Angeles,34.0224,-118.2851,https://engage.usc.edu,,,,localist:https://calendar.usc.edu,,America/Los_Angeles,
 s_ufl,University of Florida,ufl,ufl.edu,Gainesville,29.6436,-82.3549,https://ufl.campuslabs.com/engage,,https://catalog.ufl.edu/,,,,America/New_York,
 s_utexas,UT Austin,utexas,utexas.edu,Austin,30.2849,-97.7341,https://utexas.campuslabs.com/engage,,https://catalog.utexas.edu/courses/,,,,America/Chicago,
 s_gatech,Georgia Tech,gatech,gatech.edu,Atlanta,33.7756,-84.3963,https://gatech.campuslabs.com/engage,banner9:https://registration.banner.gatech.edu,https://catalog.gatech.edu/,,,,America/New_York,

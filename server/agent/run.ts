@@ -29,13 +29,13 @@ import { coopsFromCsv, COOP_PREFIX } from '../sources/coops';
 import { fetchUsaJobs } from '../sources/usajobs';
 import { studentGovToOrg, type StudentGovRow } from '../sources/orglinks';
 import { enrichFromWebsites, isDeadPage, DEAD } from '../sources/sitesocial';
-import { publicLinks } from '@core/lib/orglinks';
+import { publicLinks, stripEmoji } from '@core/lib/orglinks';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import type { Organization, School } from '@core/types';
+import type { Opportunity, Organization, School } from '@core/types';
 import type { CatalogCourse } from '@core/api/types';
 import { parseCSV } from '../scripts/csv';
 import { detectOrgsPlatform } from './detect';
@@ -205,6 +205,30 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
   }
   return out;
 }
+/**
+ * collect-events:<id> — 아직 안 연 학교의 다가오는 행사를 server/data/collected/<id>.events.json 에 (DB 아님, 2026-11-03 사장님 질문 “다른 학교는?”).
+ * 동아리 시스템(Engage·Presence) 행사 + 학교 캘린더(Localist·LiveWhale, events_source). 지난 행사·이모지 표지는 넣지 않는다. 매 실행 새로 쓴다(행사는 지나가면 의미가 없다).
+ */
+async function collectEvents(row: SchoolRow): Promise<AgentRun> {
+  const startedAt = new Date().toISOString(); const task = `collect-events:${row.id}`;
+  const school: School = { id: row.id, name: row.name, emailDomain: row.email_domain, region: row.region, center: { lat: Number(row.lat), lng: Number(row.lng) }, ...(row.tz ? { tz: row.tz } : {}) };
+  const got: Opportunity[] = []; const sources: string[] = []; const errors: string[] = [];
+  const d = await detectOrgsPlatform(row.short, row.email_domain, row.orgs_host || undefined);
+  const tryAdd = async (label: string, f: () => Promise<Opportunity[]>) => { try { const xs = await f(); got.push(...xs); sources.push(`${label} ${xs.length}`); } catch (e) { errors.push(`${label}: ${(e as Error).message}`); } };
+  if (d?.platform === 'engage') await tryAdd(`engage ${d.host}`, () => fetchEngageEvents(d.host, school));
+  if (d?.platform === 'presence') await tryAdd(`presence ${d.host}`, () => fetchPresenceEvents(new URL(d.host).hostname.split('.')[0], school));
+  const lw = /^livewhale:(https?:\/\/[^\s]+?)\/?$/.exec(row.events_source ?? '')?.[1]; if (lw) await tryAdd(`livewhale ${lw}`, () => fetchLiveWhale(lw, school, 30));
+  const lc = /^localist:(https?:\/\/[^\s]+?)\/?$/.exec(row.events_source ?? '')?.[1]; if (lc) await tryAdd(`localist ${lc}`, () => fetchLocalist(lc, school, 30));
+  if (!sources.length && !errors.length) return record({ task, schoolId: row.id, status: 'skipped', startedAt, summary: { error: 'no public event source known (CampusGroups and school pages not read yet)' } });
+  const today = new Date().toISOString().slice(0, 10);
+  const events = [...new Map(got.filter((o) => !o.date || o.date >= today).map((o) => [o.id, o])).values()]
+    .map(({ cover: _c, qna: _q, reviews: _r, ...o }) => ({ ...o, title: stripEmoji(o.title), host: stripEmoji(o.host) }))
+    .sort((a, b) => `${a.date ?? ''} ${a.startTime ?? ''}`.localeCompare(`${b.date ?? ''} ${b.startTime ?? ''}`));
+  mkdirSync(COLLECTED_DIR, { recursive: true });
+  if (events.length) writeFileSync(path.join(COLLECTED_DIR, `${row.id}.events.json`), `${JSON.stringify({ collectedAt: startedAt, sources, events }, null, 1)}\n`);
+  return record({ task, schoolId: row.id, status: events.length ? 'applied' : errors.length ? 'error' : 'rejected', startedAt, summary: { events: events.length, sources, errors: errors.slice(0, 3), sample: events.slice(0, 4).map((e) => `${e.date ?? ''} ${e.title}`) } });
+}
+
 /** import-collected:<id> — 학교를 열 때 파일로 모아 둔 동아리를 DB 에 한 번에 */
 async function importCollected(id: string): Promise<AgentRun> {
   const startedAt = new Date().toISOString(); const file = path.join(COLLECTED_DIR, `${id}.orgs.json`);
@@ -436,6 +460,7 @@ async function runTask(t: string): Promise<AgentRun[]> {
   if (kind === 'seats') { const startedAt = new Date().toISOString(); const s = await pollSeats(store, { dry: DRY, force: true }); return [await record({ task: 'seats', status: s.errors && !s.fetched ? 'error' : 'applied', startedAt, summary: { ...s } })]; }
   if (kind === 'collect') { const row = findRow(arg); return row ? runCollect(row) : [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv / schools-collect.csv' } })]; }
   if (kind === 'import-collected') return [await importCollected(arg)];
+  if (kind === 'collect-events') { const row = findRow(arg); return [row ? await collectEvents(row) : await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
   if (kind === 'probe') { const row = findRow(arg); return [row ? await runCourseProbe(row) : await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv / schools-collect.csv' } })]; }
   if (kind === 'school') { const row = findRow(arg); return row ? runSchool(row, loadSchools().some((x) => x.id === arg)) : [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
   return [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'unknown task' } })];

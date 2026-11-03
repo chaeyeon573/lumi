@@ -9,7 +9,7 @@ import { Input } from '@/components/ui';
  * 서버가 server/data/collected 파일을 요청 때만 읽는다 (DB 에 없음). 앱 메뉴에는 걸지 않고 주소(/preview)로만 들어온다.
  */
 const base = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
-interface School { id: string; name: string; region: string; orgs: number; withLinks: number; courses: number; collectedAt?: string; probe?: { status?: string; source?: string; sampled?: number; checkedAt?: string } }
+interface School { id: string; name: string; region: string; orgs: number; withLinks: number; courses: number; events?: number; tz?: string; collectedAt?: string; probe?: { status?: string; source?: string; sampled?: number; checkedAt?: string } }
 interface Org { id: string; name: string; type: 'club' | 'greek' | 'council' | 'coop' | 'lab' | 'department'; category?: string; description: string; links: { label: string; url: string }[]; logo: { emoji: string; hue: number; url?: string }; recruiting?: { text: string; open: boolean } }
 const TYPES = [['all', 'All'], ['recruiting', 'Recruiting'], ['club', 'Clubs'], ['greek', 'Greek life'], ['council', 'Student government']] as const;
 const fits = (o: Org, t: string) => t === 'all' || (t === 'recruiting' ? !!o.recruiting?.open : o.type === t);
@@ -48,7 +48,7 @@ export function PreviewListPage() {
             <span className="flex-1 min-w-0">
               <b className="block text-[15px] truncate">{s.name}</b>
               <span className="block text-[12px] text-ink-3">{s.orgs ? `${s.orgs} groups · ${s.withLinks} with links` : 'Not collected yet'} · {s.region}</span>
-              <span className="block text-[11px] text-ink-3">{s.courses ? `${s.courses} courses saved · ` : ''}Classes: {s.probe ? `${s.probe.status === 'applied' ? 'recipe OK' : 'no recipe yet'}${s.probe.sampled ? ` (${s.probe.sampled} sample)` : ''}` : 'not tested here'}</span>
+              <span className="block text-[11px] text-ink-3">{s.events ? `${s.events} upcoming events · ` : ''}{s.courses ? `${s.courses} courses saved · ` : ''}Classes: {s.probe ? `${s.probe.status === 'applied' ? 'recipe OK' : 'no recipe yet'}${s.probe.sampled ? ` (${s.probe.sampled} sample)` : ''}` : 'not tested here'}</span>
             </span>
             <ChevronRight size={18} className="text-ink-3 shrink-0" />
           </Link>
@@ -60,7 +60,7 @@ export function PreviewListPage() {
 
 export function PreviewSchoolPage() {
   const { id = '' } = useParams();
-  const [data, setData] = useState<{ school: School; orgs: Org[]; probe?: { sample?: string[]; source?: string; status?: string } } | null>(null);
+  const [data, setData] = useState<{ school: School; orgs: Org[]; probe?: { sample?: string[]; source?: string; status?: string }; events?: { id: string; title: string; host: string; date?: string; location?: string; url: string }[] } | null>(null);
   const [err, setErr] = useState('');
   const [q, setQ] = useState('');
   const [type, setType] = useState<(typeof TYPES)[number][0]>('all');
@@ -78,6 +78,14 @@ export function PreviewSchoolPage() {
             {TYPES.map(([k, l]) => <button key={k} onClick={() => setType(k)} className={cn('h-8 px-3 rounded-full text-[13px] font-semibold shrink-0', type === k ? 'bg-primary text-white v2:text-on-primary' : 'bg-surface-2 text-ink-2')}>{l} {count(k)}</button>)}
           </div>
           {data.school.courses > 0 && <CourseSearch id={id} total={data.school.courses} />}
+          {data.events?.length ? (
+            <div className="card rounded-2xl p-3.5 mb-3">
+              <b className="text-[13px]">Upcoming events ({data.school.events})</b>
+              <ul className="mt-2 space-y-1.5 text-[12px] text-ink-2 max-h-64 overflow-y-auto">
+                {data.events.map((e) => <li key={e.id}><a href={e.url} target="_blank" rel="noreferrer" className="block"><b className="text-ink">{e.title}</b><span className="block text-ink-3">{e.date ? new Date(e.date).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', ...(data.school.tz ? { timeZone: data.school.tz, timeZoneName: 'short' } : {}) }) : ''}{e.host ? ` · ${e.host}` : ''}{e.location ? ` · ${e.location}` : ''}</span></a></li>)}
+              </ul>
+            </div>
+          ) : null}
           {data.probe?.sample?.length ? (
             <div className="card rounded-2xl p-3.5 mb-3">
               <b className="text-[13px]">Classes — sample check ({data.probe.status === 'applied' ? 'recipe OK' : 'failed'})</b>

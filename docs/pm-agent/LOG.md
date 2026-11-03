@@ -1684,3 +1684,8 @@
 - Spot check: Georgia Tech 5 sections re-fetched live (AE 6115, EAS 4803, MATH 1551, PSYC 4031, VIP 6602 — all match, 2 graduate). Clubs: 5 CampusGroups clubs' websites opened — 3 real student groups (Yale Arnold Air Society links the national site), 2 were school offices (Tufts "Orientation & Student Experience", JHU "Pava Center").
 - Fixed: school offices listed in club directories are now type `department` (kept in files, hidden from club lists): clear non-student categories ("non student org", "Staff-Only", "University Committee") always; looser ones ("Department", "Administrative") only when the name is office-like and not club-like. 736 marked across 28 schools; tests cover real false positives (UCSB Amateur Radio Club, Lehigh Amaranth Literary Magazine, WashU Bears Bikes, Yale Black Seminarians stay clubs).
 - Deployed 46dcbe2 (all checks passed).
+
+## 2026-11-03 03:33 run
+- New `collect-events:<id>` (agent, files only): upcoming events from Engage / Presence / Localist / LiveWhale into `<id>.events.json`. 22 schools, e.g. WashU 977, NYU 804, UT Austin 802, Vanderbilt 695, Purdue 641, UMD 587, Notre Dame 410, Georgia Tech 399, UNC 389, Cornell 135 (events.cornell.edu), USC 54 (calendar.usc.edu). /preview shows the count and an "Upcoming events" card in the school's own time zone (first try showed UTC — fixed; added tz for the 8 California rows).
+- Spot check: 5 Duke sections re-fetched live (AMES 275, ECON 644 grad, ISS 253, PHIL 108CNS, WRITING 120) all match; 5 events (NYU, WashU, Michigan, Cornell, Vanderbilt) match title and start time on the source.
+- Screens: /preview, /preview/s_cornell, /preview/jobs with the local API — PAGE ERROR 0.

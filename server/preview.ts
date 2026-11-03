@@ -13,11 +13,11 @@ const DATA = path.join(path.dirname(fileURLToPath(import.meta.url)), 'data');
 const COLLECTED = path.join(DATA, 'collected');
 const ID_RE = /^s_[a-z0-9]+$/;
 
-interface Row { id: string; name: string; region: string; orgs_host?: string; courses_source?: string; catalog_url?: string; events_source?: string }
+interface Row { id: string; name: string; region: string; orgs_host?: string; courses_source?: string; catalog_url?: string; events_source?: string; tz?: string }
 const rows = (): Row[] => (existsSync(path.join(DATA, 'schools-collect.csv')) ? (parseCSV(readFileSync(path.join(DATA, 'schools-collect.csv'), 'utf8')) as unknown as Row[]) : []);
 const readJson = <T>(file: string): T | undefined => { try { return JSON.parse(readFileSync(file, 'utf8')) as T; } catch { return undefined; } };
 
-export interface PreviewSchool { id: string; name: string; region: string; orgs: number; withLinks: number; courses: number; collectedAt?: string; probe?: { status?: string; source?: string; sampled?: number; checkedAt?: string } }
+export interface PreviewSchool { id: string; name: string; region: string; orgs: number; withLinks: number; courses: number; events: number; tz?: string; collectedAt?: string; probe?: { status?: string; source?: string; sampled?: number; checkedAt?: string } }
 export interface PreviewOrg { id: string; name: string; type: Organization['type']; category?: string; description: string; links: { label: string; url: string }[]; logo: Organization['logo']; recruiting?: { text: string; open: boolean } }
 
 const hasOwnLink = (o: Organization) => publicLinks(o.links).some((l) => ['Website', 'Instagram', 'Facebook'].includes(l.label));
@@ -28,17 +28,21 @@ export function previewSchools(): PreviewSchool[] {
     const orgs = (readJson<Organization[]>(f) ?? []).filter((o) => o.type !== 'department'); // 학교 부서·사무실은 파일에는 남기고 목록에서는 뺀다
     const probe = readJson<PreviewSchool['probe']>(path.join(COLLECTED, `${r.id}.probe.json`));
     const courses = readJson<unknown[]>(path.join(COLLECTED, `${r.id}.courses.json`))?.length ?? 0;
-    return { id: r.id, name: r.name, region: r.region, orgs: orgs.length, courses, withLinks: orgs.filter(hasOwnLink).length, collectedAt: existsSync(f) ? statSync(f).mtime.toISOString() : undefined, probe: probe ? { status: probe.status, source: probe.source, sampled: probe.sampled, checkedAt: probe.checkedAt } : undefined };
+    const events = readJson<{ events?: unknown[] }>(path.join(COLLECTED, `${r.id}.events.json`))?.events?.length ?? 0;
+    return { id: r.id, name: r.name, region: r.region, tz: r.tz || undefined, orgs: orgs.length, courses, events, withLinks: orgs.filter(hasOwnLink).length, collectedAt: existsSync(f) ? statSync(f).mtime.toISOString() : undefined, probe: probe ? { status: probe.status, source: probe.source, sampled: probe.sampled, checkedAt: probe.checkedAt } : undefined };
   });
 }
 
-export function previewSchool(id: string): { school: PreviewSchool; orgs: PreviewOrg[]; probe?: Record<string, unknown> } | null {
+export function previewSchool(id: string): { school: PreviewSchool; orgs: PreviewOrg[]; probe?: Record<string, unknown>; events: { id: string; title: string; host: string; date?: string; location?: string; url: string }[]; eventsCollectedAt?: string } | null {
   if (!ID_RE.test(id)) return null;
   const school = previewSchools().find((s) => s.id === id);
   if (!school) return null;
   const orgs = (readJson<Organization[]>(path.join(COLLECTED, `${id}.orgs.json`)) ?? []).filter((o) => o.type !== 'department').map(withoutEmoji).map((o) => ({ id: o.id, name: o.name, type: o.type, category: o.parent, description: o.description, links: publicLinks(o.links), logo: o.logo, recruiting: recruitmentLabel(o.recruitment) ?? undefined }));
   const probe = readJson<Record<string, unknown>>(path.join(COLLECTED, `${id}.probe.json`));
-  return { school, orgs, probe };
+  const today = new Date().toISOString().slice(0, 10);
+  const ev = readJson<{ collectedAt?: string; events?: { id: string; title: string; host: string; date?: string; location?: string; sourceUrl: string }[] }>(path.join(COLLECTED, `${id}.events.json`));
+  const events = (ev?.events ?? []).filter((e) => !e.date || e.date >= today).slice(0, 40).map((e) => ({ id: e.id, title: e.title, host: e.host, date: e.date, location: e.location, url: e.sourceUrl }));
+  return { school, orgs, probe, events, eventsCollectedAt: ev?.collectedAt };
 }
 
 /** 파일로 모아 둔 수업에서 찾기 (코드·이름) — 30개까지 */

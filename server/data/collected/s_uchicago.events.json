@@ -1,0 +1,932 @@
+{
+ "collectedAt": "2026-11-03T03:36:42.644Z",
+ "sources": [
+  "engage https://uchicago.campuslabs.com/engage 32"
+ ],
+ "events": [
+  {
+   "description": "PULSE Magazine is holding a writing workshop for the staff of our magazine and the general public interested in our upcoming issue. We gather all staff and Editors in Chief as well as senior editors to check in on the progress of the articles. Advice is given for any and all arti",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12939792",
+   "type": "event",
+   "title": "PULSE Writing Workship",
+   "host": "PULSE Magazine",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-03T21:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Bartlett Lounge",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12939792",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for a follow-up to lecture 1 covering Vital as a Reaper plugin, wavetable synthesis, and VGM analysis! Lecturer: J.P. Cupps .",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "talk",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12826440",
+   "type": "event",
+   "title": "GME Soundtrack Jam Track 2 (Mixing and wavetable synthesis): Lecture 2",
+   "host": "Game Music Ensemble",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-04T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Online",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12826440",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Following our discussion with Dr. J.B. Haws of the Maxwell Institute regarding the public perception of Latter-day Saint communities, we will gather to watch and discuss thoughtfully selected clips from the hit reality TV show The Secret Lives of Mormon Wives. These scenes and qu",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12926962",
+   "type": "event",
+   "title": "Mormons in the Media: The Secret Lives of Mormon Wives",
+   "host": "Reflection and Engagement with Latter-day Saint Identity and Culture",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-04T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Harper Center (Booth) Room C03",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12926962",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Jews have lived in India for over 2500 years, making it one of the oldest Jewish communities in the world. This event aims to introduce students to the Jewish culture in India, including its ethnic practices, foods, and traditions, as well as various historical eras and social ch",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12918226",
+   "type": "event",
+   "title": "History of Judaism in India: Speaker Rabbi Uri Bloy from the Thriving Jewish Community of Thane, India",
+   "host": "Chabad",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-04T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Chabad House at UChicago",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12918226",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The UChicago Ukrainian Society will host a traditional Ukrainian Pysanka (Easter egg-painting) workshop on April 11 at 3:00 PM. Participants will be guided through the ancient wax-resist dyeing technique used to create decorative Easter eggs, learning about its cultural significa",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12394985",
+   "type": "event",
+   "title": "Pysanky: Ukrainian Easter Celebration",
+   "host": "Ukrainian Society",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-04T21:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Eckhardt Research Center 501",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12394985",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Oeconomica, the undergraduate economics society, is excited to host James Robinson, a University of Chicago economist and political scientist, to present his research on \"successful government.\" Please join us to learn about his exciting work. Dinner will be provided.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12944640",
+   "type": "event",
+   "title": "Nobel Laureate James Robinson on \"Successful Government\"",
+   "host": "Oeconomica",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-05T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Harper Center C10 (Booth)",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12944640",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Wednesday from 7:30 to 9:30 p.m. in Midway Studios! Come to the door on the side of the building by the Logan Center. We have a model and drawing materials!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12875932",
+   "type": "event",
+   "title": "Figure Drawing Meeting",
+   "host": "Outside the Lines",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-05T01:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Midway Studios",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12875932",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join The Derivatives Group (DGQT) for our open-access Quantitative Finance Education Series. Explore foundational topics including probability, derivatives, options, market making, and quantitative trading through instruction and discussion. Open to all UChicago undergraduate and",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12940395",
+   "type": "event",
+   "title": "DGQT Quantitative Finance Education Series",
+   "host": "Derivatives Group Quant Trading",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-05T02:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Stuart 105, University of Chicago",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12940395",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "We will be meeting to discuss our anti-animal-testing campaign and other activist activities such as tabling, chalking, and our Thanksgiving installation on the quad in memoriam of the 46 million turkeys that will be needlessly killed this year.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12942721",
+   "type": "event",
+   "title": "ASAP General Body Meeting",
+   "host": "Allied Scholars for Animal Protection UChicago",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-05T23:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Regenstein Library Room 406",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12942721",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Welcome to Season 9 of Jet Lag with NU! Time Crunch is a game inspired by the Hunger Games, the Life Series, or similar battle royale type games. It is a two stage survival game where in the morning you complete challenges and collect time and cards, and in the afternoon you atta",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12947456",
+   "type": "event",
+   "title": "Jet Lag: Time Crunch with NU",
+   "host": "UChicago Transit Enthusiasts & Explorers",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-07T13:00:00.000Z",
+   "startTime": "07:00",
+   "place": {
+    "name": "Campus North Residential Commons",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12947456",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come watch the BYU vs University of Utah football game this Saturday with fans of both teams. All are welcome. We will be watching the game at the local church building for the Church of Jesus Christ of Latter-day Saints.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "athletics"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12946975",
+   "type": "event",
+   "title": "BYU vs University of Utah Football Game Watch Party",
+   "host": "Reflection and Engagement with Latter-day Saint Identity and Culture",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-07T17:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Church of Jesus Christ of Latter-day Saints",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12946975",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Diwali is almost here, and Sangam would love for you to celebrate with us! Our annual Diwali celebration is on Sunday, November 8th, at Rockefeller Chapel. That's Diwali itself, so there's no better night to come together. Wear your festive best, bring your friends and roommates,",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12944562",
+   "type": "event",
+   "title": "Diwali Celebration at Rockefeller Chapel",
+   "host": "Hindu Sangam",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-09T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Rockefeller Chapel",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12944562",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Bible study and food Monday nights Harper 148! Stop by if interested, we are non-denominational and open to everyone",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12875745",
+   "type": "event",
+   "title": "Bible Study + Dinner",
+   "host": "Christians on Campus",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-10T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Harper Memorial Library Room 148",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12875745",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us this Wednesday for another Movie Night with ABS! Come hang out, enjoy snacks, and spend the evening watching a (niche) but always interesting movie from the Balkans that we can discuss Everyone is welcome, so bring a friend! 📝 Sign up here: https://forms.gle/V6Fod7yYMLjd",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12942627",
+   "type": "event",
+   "title": "Balkan Movie Night",
+   "host": "Association of Balkan Students",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-12T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Harper 141",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12942627",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Wednesday from 7:30 to 9:30 p.m. in Midway Studios! Come to the door on the side of the building by the Logan Center. We have a model and drawing materials!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12875933",
+   "type": "event",
+   "title": "Figure Drawing Meeting",
+   "host": "Outside the Lines",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-12T01:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Midway Studios",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12875933",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join The Derivatives Group (DGQT) for our open-access Quantitative Finance Education Series. Explore foundational topics including probability, derivatives, options, market making, and quantitative trading through instruction and discussion. Open to all UChicago undergraduate and",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12940396",
+   "type": "event",
+   "title": "DGQT Quantitative Finance Education Series",
+   "host": "Derivatives Group Quant Trading",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-12T02:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Stuart 105, University of Chicago",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12940396",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "We are excited to announce our case competition in partnership with Bain & Co.! Register at our website by Wednesday, 11/4.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12930407",
+   "type": "event",
+   "title": "Prism x Bain Case Competition",
+   "host": "Prism Consulting",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-13T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Harper Library",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12930407",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Families will team up at a game night with snacks and board games for all to play. This will allow different families to meet each other and facilitate connections.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12918266",
+   "type": "event",
+   "title": "SASA Family Game Night",
+   "host": "South Asian Students’ Association",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-14T02:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "TBD",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12918266",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "UChicago's Phoenix Farms will be putting on their annual Fall Festival from 5:00-8:00pm on Saturday, November 14th in the 3rd Floor Theater of Ida Noyes Hall. Apple cider and Portillo's hot dogs will be provided while supplies last, and Phoenix Farms merch will also be available ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12942752",
+   "type": "event",
+   "title": "2026 Phoenix Farms Fall Festival",
+   "host": "Phoenix Farms",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-14T23:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Ida Noyes 3rd Floor Theater",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12942752",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Coffee Lab is attending the SF Coffee Festival, one of the biggest coffee gatherings in the country, where roasters, farmers, baristas, and brewing innovators from around the world come together to show what&rsquo;s next in coffee. Now we&rsquo;re bringing it all back to campus. ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12942856",
+   "type": "event",
+   "title": "Coffee Tasting and Workshop",
+   "host": "UChicago Coffee Lab",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-15T20:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "University of Chicago ",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12942856",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Bible study and food Monday nights Harper 148! Stop by if interested, we are non-denominational and open to everyone",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12875746",
+   "type": "event",
+   "title": "Bible Study + Dinner",
+   "host": "Christians on Campus",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-17T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Harper Memorial Library Room 148",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12875746",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "An Evening with Venerable Ani Choyang Guided Meditation and Teaching on the 37 Practices of the Bodhisattva Wed. Nov. 18th, 5:30-7pm Bond Chapel The UChicago Buddhist Association presents a special event teaching on the Tibetan Buddhist Lojong Practice and philosophy, accompanied",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12899102",
+   "type": "event",
+   "title": "An Evening with Ven. Ani Choyang",
+   "host": "UChicago Buddhist Association",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-18T23:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Bond Chapel",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12899102",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Celebration of food, culture, and gratitude! Enjoy traditional dishes from across Latin America while connecting with fellow UChicago graduate and undergraduate students. Come share a meal, celebrate our diverse traditions, and give thanks for the community we&rsquo;re building t",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12930331",
+   "type": "event",
+   "title": "LAMsgiving",
+   "host": "Latin American Matters",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-19T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "International House",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12930331",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Wednesday from 7:30 to 9:30 p.m. in Midway Studios! Come to the door on the side of the building by the Logan Center. We have a model and drawing materials!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12875934",
+   "type": "event",
+   "title": "Figure Drawing Meeting",
+   "host": "Outside the Lines",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-19T01:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Midway Studios",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12875934",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join The Derivatives Group (DGQT) for our open-access Quantitative Finance Education Series. Explore foundational topics including probability, derivatives, options, market making, and quantitative trading through instruction and discussion. Open to all UChicago undergraduate and",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12940397",
+   "type": "event",
+   "title": "DGQT Quantitative Finance Education Series",
+   "host": "Derivatives Group Quant Trading",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-19T02:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Stuart 105, University of Chicago",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12940397",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join The Derivatives Group (DGQT) for our open-access Quantitative Finance Education Series. Explore foundational topics including probability, derivatives, options, market making, and quantitative trading through instruction and discussion. Open to all UChicago undergraduate and",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12940398",
+   "type": "event",
+   "title": "DGQT Quantitative Finance Education Series",
+   "host": "Derivatives Group Quant Trading",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-26T02:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Stuart 105, University of Chicago",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12940398",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A picnic evening at the point where eevral families will do a potluck and share items at the point. This will allow different families to meet each other and provide furtehr bonding between underclassmen and upperclassmen.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12918269",
+   "type": "event",
+   "title": "SASA Family Picnic Night",
+   "host": "South Asian Students’ Association",
+   "schoolId": "s_uchicago",
+   "date": "2026-11-28T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Promontory Point",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12918269",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Bible study and food Monday nights Harper 148! Stop by if interested, we are non-denominational and open to everyone",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12875747",
+   "type": "event",
+   "title": "Bible Study + Dinner",
+   "host": "Christians on Campus",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-01T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Harper Memorial Library Room 148",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12875747",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A evening at a venue where several families will do karaoke together. This will allow different families to meet each other and provide further bonding between underclassmen and upperclassmen, and put each family's voices to the test!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12918272",
+   "type": "event",
+   "title": "SASA Family Karaoke Night",
+   "host": "South Asian Students’ Association",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-02T02:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "TBD",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12918272",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Wednesday from 7:30 to 9:30 p.m. in Midway Studios! Come to the door on the side of the building by the Logan Center. We have a model and drawing materials!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12875935",
+   "type": "event",
+   "title": "Figure Drawing Meeting",
+   "host": "Outside the Lines",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-03T01:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "Midway Studios",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12875935",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join The Derivatives Group (DGQT) for our open-access Quantitative Finance Education Series. Explore foundational topics including probability, derivatives, options, market making, and quantitative trading through instruction and discussion. Open to all UChicago undergraduate and",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T03:36:43.169Z",
+   "createdAt": "2026-11-03T03:36:43.169Z",
+   "id": "op_uchicago_eg_12940399",
+   "type": "event",
+   "title": "DGQT Quantitative Finance Education Series",
+   "host": "Derivatives Group Quant Trading",
+   "schoolId": "s_uchicago",
+   "date": "2026-12-03T02:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Stuart 105, University of Chicago",
+    "lat": 41.7886,
+    "lng": -87.5987
+   },
+   "sourceUrl": "https://uchicago.campuslabs.com/engage/event/12940399",
+   "sourceLabel": "Student org events"
+  }
+ ]
+}
