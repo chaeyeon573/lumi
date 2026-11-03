@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { socialLinks, engageLinks, campusGroupsWebsite, pennClubToOrg, COUNCIL_RE, notCouncil, studentGovToOrg } from './sources/orglinks';
+import { socialLinks, engageLinks, campusGroupsWebsite, pennClubToOrg, COUNCIL_RE, notCouncil, isCouncil, studentGovToOrg } from './sources/orglinks';
 
 test('engageLinks: real Notre Dame socialMedia shape → labeled links, empties dropped', () => {
   const l = engageLinks({ ExternalWebsite: 'https://asce.nd.edu/', InstagramUrl: 'https://www.instagram.com/notredame_asce/', FacebookUrl: 'https://www.facebook.com/NotreDameASCE', LinkedInUrl: '', TwitterUrl: null, YoutubeUrl: '' });
@@ -149,4 +149,17 @@ test('descriptionLinks: real URLs in a club description become links; forms, mai
   ]);
   assert.deepEqual(descriptionLinks('Find us @ability_washu'), []);
   assert.deepEqual(descriptionLinks('<a href=&#34http://www.instagram.com/wustlumang/&#34>IG</a>'), [{ label: 'Instagram', url: 'http://www.instagram.com/wustlumang/' }]);
+});
+
+test('isCouncil: belonging to a council or being recognized by student government is not being one (Vanderbilt, CMU, Lehigh 2026-11-03)', () => {
+  // real category lists from the public directories
+  assert.equal(isCouncil('Mexican American Student Association', ['Multicultural Leadership Council ', 'Advised by Student Center for Belonging and Communities'], 's_vanderbilt'), false);
+  assert.equal(isCouncil('Methodist Student Association', ['Interfaith Council Organizations'], 's_vanderbilt'), false);
+  assert.equal(isCouncil('ACM@CMU', ['Student Government Recognized Organizations', 'Professional/Academic'], 's_cmu'), false);
+  assert.equal(isCouncil('African Students Association', ['Student Senate Recognized Organization', 'Cultural'], 's_lehigh'), false);
+  assert.equal(isCouncil('History Undergraduate Association', ['Academic and Pre-Professional'], 's_umd'), false);
+  assert.equal(isCouncil('Vanderbilt Bar Association', ['Governing Councils'], 's_vanderbilt'), true);
+  assert.equal(isCouncil('Vanderbilt Student Government', [], 's_vanderbilt'), true);
+  assert.equal(isCouncil('Harvard Undergraduate Association', [], 's_harvard'), true);
+  assert.equal(isCouncil('Area Councils', ['Government/Council'], 's_northwestern'), true);
 });

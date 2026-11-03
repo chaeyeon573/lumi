@@ -43,8 +43,26 @@ export function campusGroupsWebsite(itemHtml: string, host: string): string | un
 
 /** 학생회·학생 정부 — 이름이나 분류에 이게 있으면 council 로 */
 export const COUNCIL_RE = /student government|student senate|\bsenate\b|associated students|student assembly|undergraduate assembly|undergraduate association|graduate student (council|assembly|government)|\bASSU\b|class council|\bcouncil\b/i;
+/**
+ * 학생회인지 — 이름은 COUNCIL_RE(단, “History Undergraduate Association” 같은 학과 모임은 빼고 학교 이름 + Undergraduate Association 만),
+ * 분류는 학생회 뜻인 것만: Student Government·Senate·Governing Councils·“Councils”(복수).
+ * 단수 “Multicultural Leadership Council”·“Interfaith Council Organizations” 같은 분류는 그 협의회에 속한 동아리라는 뜻이라 학생회가 아니다 (Vanderbilt MASA, 2026-11-03 점검)
+ */
+const COUNCIL_NAME_RE = new RegExp(COUNCIL_RE.source.replace('undergraduate association|', '').replace('\\bcouncil\\b', '\\bcouncils?\\b'), 'i');
+const GOV_CATEGORY_RE = /^government\b|government\s*\/\s*council|student government|student senate|associated students|student assembly|undergraduate assembly|governing|governance|class council|\bcouncils\b/i;
+export function isCouncil(name: string, categories: (string | undefined)[] = [], schoolId = ''): boolean {
+  const n = notCouncil(name);
+  if (COUNCIL_NAME_RE.test(n)) return true;
+  const ua = /^(?:the )?(\S+) undergraduate association$/i.exec(n.trim());
+  if (ua && schoolId && ua[1].toLowerCase() === schoolId.replace(/^s_/, '').toLowerCase()) return true;
+  return categories.some((c) => !!c && GOV_CATEGORY_RE.test(notCouncil(c)));
+}
 /** 분류 이름에 붙은 “council” 이 학생회 뜻이 아닌 것 — Dartmouth 의 승인 기관 Council on Student Organizations(COSO) 등 */
-export const notCouncil = (text: string) => text.replace(/council on student organizations|\bCOSO\b/gi, ' ');
+export const notCouncil = (text: string) => text
+  .replace(/council on student organizations|\bCOSO\b/gi, ' ')
+  // “Student Government Recognized Organizations”(CMU)·“Student Senate Recognized Organization”(Lehigh)·“funded by …” = 학생회가 승인·지원한 동아리라는 뜻
+  .replace(/(?:student government|student senate|senate|student association|associated students|student union|council)\s+(?:recognized|registered|funded|sponsored|chartered)\b[\w ]*/gi, ' ')
+  .replace(/(?:recognized|registered|funded|sponsored|chartered)\s+by\s+(?:the\s+)?[\w ]*?(?:student government|senate|council)\b/gi, ' ');
 
 // ─── Penn Clubs (pennclubs.com, UPenn 공식 학생 단체 디렉터리 · 공개 JSON) ───────────
 export interface PennClub { accepting_members?: boolean; application_required?: number; recruiting_cycle?: number; applications?: { name?: string; application_start_time?: string; application_end_time?: string; external_url?: string | null }[]; code: string; name: string; subtitle?: string; description?: string; image_url?: string | null; active?: boolean; approved?: boolean | null; tags?: { name: string }[]; website?: string | null; instagram?: string | null; facebook?: string | null; linkedin?: string | null; twitter?: string | null; youtube?: string | null; tiktok?: string | null }
