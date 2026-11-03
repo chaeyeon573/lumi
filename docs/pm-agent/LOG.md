@@ -1758,3 +1758,9 @@
 - Jobs: amazon.jobs public search.json added (8 student/new-grad searches, US only) — 107 postings (90 internships, 17 early career; 15 PhD, 5 master's). Jobs file now 1,272 (internships 834, new grad/entry 391, PhD 172, master's 71, postdoc 13). Test added.
 - Spot check classes: Duke BA 911, EGR 95FS, LAW 130, PHYSICS 760D, XTIANETH 757 re-fetched — match.
 - Spot check clubs: UT Filipino Students Association, Purdue Stars Hollow Club, Michigan ALA Student Chapter, UVA Afro-Latinx Student Organization match Engage; UNC "School of Social Work" was an academic school shown as a club → rule: names starting "School of / College of" are offices only when they carry no student words (first broader try caught "College of Pharmacy Graduate Student Organization", "Student Board", "Class of 2027" — reverted and narrowed). 45 marked (School of Law, College of Engineering, School of Nursing …). Tests added.
+
+## 2026-11-03 16:33 run
+- No Codex commits or HANDOFF requests. Queue item "collect every school without a club file" marked done (49 rows).
+- WashU links: Presence list and detail have no link fields; 72 club descriptions contain URLs → new `descriptionLinks()` (real URLs only; forms/drive/mail/zoom/music skipped; @handles not used). First run left HTML-encoded quotes (`&#34`) on URLs (Umang) → decoded first; test added. WashU 0 → 22 groups with a public link.
+- Spot check classes: Rice ASIA 229, ECON 200, LATI 510 (grad), PHIL 372, UNIV 195 re-fetched — match.
+- Spot check clubs: WashU Umang (description has its Instagram/Facebook/LinkedIn), Hillel Leadership Council (socials from its own website).

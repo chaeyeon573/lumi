@@ -20,7 +20,7 @@
  *    학교가 UI 를 바꾸면 필드명이 달라질 수 있다 → 그럴 땐 아래 mapOrg 만 고치면 된다.
  */
 import { decodeNumericEntities } from '../sources/entities';
-import { COUNCIL_RE, notCouncil, campusGroupsWebsite, engageLinks, pennClubToOrg, parseFacetWpCards, facetCardToOrg, parseAccordionDirectory, namedOrgToOrg, parseDrupalAccordionCards, cardOrgToOrg, uclaOrgToOrg, isOfficeOrg, parseBrownDsf, parseBrownOrgLinks, brownRowToOrg, type UclaOrg, type EngageSocial, type PennClub } from '../sources/orglinks';
+import { COUNCIL_RE, notCouncil, campusGroupsWebsite, engageLinks, pennClubToOrg, parseFacetWpCards, facetCardToOrg, parseAccordionDirectory, namedOrgToOrg, parseDrupalAccordionCards, cardOrgToOrg, uclaOrgToOrg, isOfficeOrg, descriptionLinks, parseBrownDsf, parseBrownOrgLinks, brownRowToOrg, type UclaOrg, type EngageSocial, type PennClub } from '../sources/orglinks';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -143,7 +143,7 @@ function mapPresenceOrg(schoolId: ID, sub: string, o: PresenceOrg): Organization
     type, schoolId, parent: cats.find((c) => !/undergraduate student organization|graduate student organization/i.test(c)) ?? cats[0], verified: false,
     description: strip(o.description ?? '').slice(0, 600),
     gallery: [], regularActivities: meet ? [meet] : [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [],
-    links: [{ label: 'Presence', url: `https://${sub}.presence.io/organization/${o.uri}` }],
+    links: [{ label: 'Presence', url: `https://${sub}.presence.io/organization/${o.uri}` }, ...descriptionLinks(o.description ?? '')],
   };
 }
 

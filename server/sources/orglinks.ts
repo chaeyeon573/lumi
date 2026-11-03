@@ -220,6 +220,19 @@ export function isOfficeOrg(name: string, category?: string): boolean {
   return WEAK_OFFICE.test(category) && OFFICE_NAME.test(name) && !CLUB_NAME.test(name);
 }
 
+/**
+ * 단체 소개 글 안의 주소만 (Presence 목록은 링크 칸이 없다 — WashU 640개 중 72개가 소개에 사이트·인스타를 적어 둔다).
+ * "@handle" 처럼 주소가 아닌 것은 어느 서비스인지 몰라 쓰지 않는다. 신청서·드라이브·메일·줌·음악 링크는 뺀다.
+ */
+export function descriptionLinks(textOrHtml: string): Link[] {
+  const t = (textOrHtml ?? '').replace(/&#34;?|&#x22;?|&quot;?|&#39;?|&apos;?/gi, '"').replace(/&amp;/g, '&');
+  const urls = [...new Set([...t.matchAll(/https?:\/\/[^\s"'<>)\]]+/gi)].map((m) => m[0].replace(/[.,;:!]+$/, '')))];
+  const skip = /forms\.gle|docs\.google|drive\.google|forms\.office|mailto:|gmail\.com|zoom\.us|calendly|spotify\.com|apple\.com\/music|groupme|discord\.(gg|com)|presence\.io|campuslabs|campusgroups/i;
+  const by = (re: RegExp) => urls.find((u) => re.test(u));
+  return socialLinks({ instagram: by(/instagram\.com\/[A-Za-z0-9_.]+/i), facebook: by(/(facebook|fb)\.com\//i), linkedin: by(/linkedin\.com\//i), youtube: by(/youtube\.com|youtu\.be/i), tiktok: by(/tiktok\.com/i),
+    website: urls.find((u) => !skip.test(u) && !/instagram|facebook|fb\.com|linkedin|twitter|x\.com\/|youtube|youtu\.be|tiktok/i.test(u)) });
+}
+
 // ─── Brown Student Activities 단체 목록 (studentactivities.brown.edu/dsf_orgs_undergrad) — 412개, 이름·분류·소개 + 단체별 공개 페이지(SNS 아이콘) ───
 export interface BrownRow { name: string; category: string; description: string; path: string }
 export function parseBrownDsf(html: string): BrownRow[] {

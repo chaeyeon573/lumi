@@ -141,3 +141,12 @@ test('isOfficeOrg: school offices are not clubs; student groups filed under Depa
   for (const [n, c] of [['Amateur Radio Club at UCSB', 'Department'], ['Amaranth Literary Magazine', 'Department Office/Department Initiative'], ['Bears Bikes', 'University Department'], ['Atlantic Hope @ Cornell', 'Department'], ['Graduate Student Council', 'University Department'], ['Chess Club', 'Department Sponsored Student Organization'], ['Robotics Team', 'Academic'], ['Yale Black Seminarians', 'Administrative'], ['SWANA-Y: Southwest Asia and North Africa at Yale', "Yale College Dean's Office Administration"], ['Department of Biostatistics & Bioinformatics Student Association', undefined], ['Bookstore Basketball Commission, University of Notre Dame', undefined], ['College of Pharmacy Graduate Student Organization', undefined], ['College of Liberal Arts Student Board #214', undefined], ['School of Medicine: Class of 2027', undefined], ['School of Public Health Foodies', undefined], ['College of Pharmacy Student Ambassadors', undefined]])
     assert.equal(isOfficeOrg(n as string, c), false, n);
 });
+
+test('descriptionLinks: real URLs in a club description become links; forms, mail, handles skipped', async () => {
+  const { descriptionLinks } = await import('./sources/orglinks');
+  assert.deepEqual(descriptionLinks('Follow us at https://www.instagram.com/apowashu/ and see https://apo.wustl.edu. Join: https://forms.gle/abc @apowashu wustlapo@gmail.com'), [
+    { label: 'Website', url: 'https://apo.wustl.edu/' }, { label: 'Instagram', url: 'https://www.instagram.com/apowashu/' },
+  ]);
+  assert.deepEqual(descriptionLinks('Find us @ability_washu'), []);
+  assert.deepEqual(descriptionLinks('<a href=&#34http://www.instagram.com/wustlumang/&#34>IG</a>'), [{ label: 'Instagram', url: 'http://www.instagram.com/wustlumang/' }]);
+});
