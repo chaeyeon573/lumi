@@ -1701,3 +1701,8 @@
 - Minnesota Schedule Builder: search returns at most 25 course ids and there is no subject/term list type — not usable for a full schedule; courses.umn.edu JSON stays the source (TLS-blocked here, needs Railway). Queued.
 - New Rice class reader (courses.rice.edu QUERY per subject: one row per section, "9:25AM - 10:40AM TR", titles title-cased from all caps, graduate 500-level included). Test with COMP 181/182/510/552.
 - Spot check clubs: Wisconsin Engineering EXPO, UW Society of Physics Students (Linktree), UCI Merage Consulting Association, Lehigh Outing Club, Tufts Biotech Group — each website names the club.
+
+## 2026-11-03 06:33 run
+- Codex now owns screens/content (AGENTS.md, docs/HANDOFF.md). No requests for Claude in HANDOFF this run. Recorded owner's chat answers (emoji: remove everywhere — done server-side; jobs live at no cost — /api/jobs from the deployed file).
+- New UW class reader (washington.edu/students/timeschd/pub/<AUT2026>/<dept>.html, fixed-width text; QZ/LB sections left out; times without AM/PM read UW's way: 8-11 morning, 12 noon, 1-7 afternoon, trailing P = evening). Test with CSE 122/143/599.
+- Spot check clubs: NYU SPS Hospitality, Notre Dame Dance Company, UT ClockTower Cultural Productions, Florida 3D Printing Club, BC Sports Analytics Club — links match Engage (BC source lists the Instagram without https).
