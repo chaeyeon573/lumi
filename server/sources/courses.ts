@@ -938,10 +938,12 @@ async function uwLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
 export interface UclaCourseRef { subject: string; catalog: string; title: string; path?: string }
 const UCLA_DAY: Record<string, number> = { M: 0, T: 1, W: 2, R: 3, F: 4, S: 5, U: 6 };
 const uclaTime = (t: string) => { const m = /^(\d{1,2})(?::(\d{2}))?\s*(am|pm)$/i.exec(t.trim()); if (!m) return ''; let h = Number(m[1]) % 12; if (/pm/i.test(m[3])) h += 12; return `${String(h).padStart(2, '0')}:${m[2] ?? '00'}`; };
+/** 학교 내부 번호 "0104E M " → 화면 번호 "M104E" (뒤에 붙은 글자는 앞 글자: M = 여러 학과 공동, C = 학부·대학원 동시) */
+export const uclaCatalog = (raw: string) => { const t = raw.trim(); const m = /^0*(\d+[A-Z]*)\s+([A-Z]+)$/.exec(t); return m ? `${m[2]}${m[1]}` : t.replace(/^0+(?=\d)/, ''); };
 export function uclaSummaryToCourses(html: string, ref: UclaCourseRef, termCode: string, label: string): CatalogCourse[] {
   const out: CatalogCourse[] = []; const secOf = new Map<string, string>();
   const txt = (h = '') => decodeEntities(h.replace(/<wbr\s*\/?>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ')).trim();
-  const code = `${ref.subject} ${ref.catalog.trim().replace(/^0+(?=\d)/, '')}`;
+  const code = `${ref.subject} ${uclaCatalog(ref.catalog)}`;
   // 같은 번호에 주제가 다른 과목(188 특강 등)이 여럿이라 학교 쪽 경로(Path)로 구분, 학기마다 따로
   const baseId = `cc_ucla_${(ref.path ?? `${ref.subject}${ref.catalog}`).toLowerCase().replace(/[^a-z0-9]+/g, '')}_${termCode.toLowerCase()}`;
   const rows = html.split(/<div class="row-fluid data_row primary-row/).slice(1);
@@ -969,6 +971,65 @@ export function uclaSummaryToCourses(html: string, ref: UclaCourseRef, termCode:
   }
   if (out.length > 1) for (const c of out) c.title = `${c.title} (${secOf.get(c.id)})`;
   return out;
+}
+
+// ─── SF State: webapps.sfsu.edu/public/classservices/classsearch — 공개. 빠른 검색(전공 이름) → results → searchresultsjson(DataTables aaData).
+// 빠른 검색은 다음 학기들만 받는다(2026-11: Spring 2027, Winter 2027). 강의(LEC)가 있는 과목은 강의만, 없으면 세미나 등 시간이 있는 것. 개별 연구(SUP 등 시간 없음)는 빠진다.
+const SFSU = 'https://webapps.sfsu.edu/public/classservices';
+const SFSU_DAY: Record<string, number> = { Mo: 0, Tu: 1, We: 2, Th: 3, Fr: 4, Sa: 5, Su: 6 };
+export function sfsuToCourses(json: { aaData?: string[][] }, termCode: string, label: string): CatalogCourse[] {
+  const txt = (h = '') => decodeEntities(h.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ')).trim();
+  const rows = (json.aaData ?? []).map((r) => {
+    const m = /^(.+?)\s+\[(\w+)\]$/.exec(txt(r[0])); const meetings: Meeting[] = [];
+    for (const b of (r[6] ?? '').split(/<div class='row'>/).slice(1)) {
+      const days = txt(/col-md-5[^>]*>([\s\S]*?)<\/div>/.exec(b)?.[1]); const tm = /(\d{1,2}:\d{2}\s*[AP]M)\s*-\s*(\d{1,2}:\d{2}\s*[AP]M)/i.exec(txt(/col-md-7[^>]*>([\s\S]*?)<\/div>/.exec(b)?.[1]));
+      if (!tm) continue; const start = to24(tm[1].replace(/\s+/g, '')), end = to24(tm[2].replace(/\s+/g, '')); if (!start || !end) continue;
+      for (const d of days.split(/\s+/)) if (d in SFSU_DAY) meetings.push({ day: SFSU_DAY[d], start, end });
+    }
+    const loc = txt(/col-md-12[^>]*>([\s\S]*?)<\/div>/.exec(r[6] ?? '')?.[1]);
+    const href = /href="([^"]+)"/.exec(r[0] ?? '')?.[1]?.replace(/\\\//g, '/');
+    return m ? { code: m[1], sec: m[2], kind: txt(r[1]), title: txt(r[2]), units: Number(txt(r[3]).split(/\s*-\s*/)[0]), meetings: uniq(meetings), location: loc || undefined, instructor: txt(r[8]) || undefined, url: href ? `https://webapps.sfsu.edu${href}` : undefined } : null;
+  }).filter((x): x is NonNullable<typeof x> => !!x && x.meetings.length > 0);
+  const out: CatalogCourse[] = [];
+  for (const code of [...new Set(rows.map((r) => r.code))]) {
+    const all = rows.filter((r) => r.code === code); const lec = all.filter((r) => r.kind === 'LEC'); const keep = lec.length ? lec : all.filter((r) => !/^(LAB|DIS|ACT)$/.test(r.kind)).length ? all.filter((r) => !/^(LAB|DIS|ACT)$/.test(r.kind)) : all;
+    const baseId = `${courseId('s_sfsu', code)}_${termCode}`;
+    keep.forEach((r, i) => out.push({ id: i === 0 ? baseId : `${baseId}_${r.sec.toLowerCase()}`, schoolId: 's_sfsu', code, title: keep.length > 1 ? `${r.title} (Sec ${r.sec})` : r.title, department: code.split(' ')[0], instructor: r.instructor && !/^(To be announced|Staff|TBA)$/i.test(r.instructor) ? r.instructor : undefined, location: r.location && !/^(To be (arranged|announced)|TBA)$/i.test(r.location) ? r.location : undefined, meetings: r.meetings, term: label, termCode, units: Number.isFinite(r.units) && r.units > 0 ? r.units : undefined, url: r.url }));
+  }
+  return out;
+}
+/** 쿠키(세션)를 들고 다니는 작은 요청기 — 빠른 검색은 같은 세션에서 결과 JSON 을 준다 */
+function sfsuSession() {
+  const jar = new Map<string, string>();
+  const keep = (r: Response) => { for (const c of r.headers.getSetCookie?.() ?? []) { const [kv] = c.split(';'); const i = kv.indexOf('='); jar.set(kv.slice(0, i).trim(), kv.slice(i + 1)); } };
+  const cookie = () => [...jar].map(([k, v]) => `${k}=${v}`).join('; ');
+  return async (url: string, body?: URLSearchParams): Promise<Response> => {
+    const r = await fetch(url, { method: body ? 'POST' : 'GET', body, redirect: 'manual', headers: { ...UAH, cookie: cookie(), referer: `${SFSU}/classsearch`, ...(body ? { 'content-type': 'application/x-www-form-urlencoded' } : {}), ...(/json/.test(url) ? { 'x-requested-with': 'XMLHttpRequest' } : {}) }, signal: AbortSignal.timeout(45000) });
+    keep(r); await new Promise((res) => setTimeout(res, 1000)); return r;
+  };
+}
+async function sfsu(): Promise<CatalogCourse[]> {
+  const go = sfsuSession(); const form = await (await go(`${SFSU}/classsearch`)).text();
+  const sel = /<select id="classScheduleAdvanced_subject"[\s\S]*?<\/select>/.exec(form)?.[0] ?? '';
+  const subjects = [...sel.matchAll(/<option value="([^"]+)"/g)].map((m) => m[1]).filter((v) => v && v !== 'X');
+  const terms = [...form.matchAll(/name="classScheduleQuick\[term\]"[^>]*value="(\d{4})"/g)].map((m) => m[1]);
+  const labels = Object.fromEntries([...form.matchAll(/<option value="(\d{4})">([^<]+)/g)].map((m) => [m[1], labelOf(m[2])]));
+  const term = terms.find((t) => /Spring|Fall/.test(labels[t] ?? '')) ?? terms[0]; if (!term) throw new Error('sfsu: no term');
+  const out: CatalogCourse[] = [];
+  const tokenOf = (h: string) => /name="classScheduleQuick\[_token\]" value="([^"]+)"/.exec(h)?.[1] ?? '';
+  let token = tokenOf(form);
+  const search = (subj: string) => go(`${SFSU}/classsearch`, new URLSearchParams({ 'classScheduleQuick[_token]': token, 'classScheduleQuick[term]': term, 'classScheduleQuick[termClassCategory]': `${term}:REG`, 'classScheduleQuick[searchFor]': subj, 'classScheduleQuick[submit]': '' }));
+  for (const subj of subjects) {
+    // 폼 열쇠(token)는 세션 동안 다시 쓴다 — 거절되면 한 번만 새로 받는다 (요청 수를 줄인다)
+    let r = await search(subj); let loc = r.headers.get('location');
+    if (!loc || !/results/.test(loc)) { token = tokenOf(await (await go(`${SFSU}/classsearch`)).text()); r = await search(subj); loc = r.headers.get('location'); }
+    if (!loc || !/results/.test(loc)) continue;
+    await go(new URL(loc, SFSU).href);
+    const j = await go(`${SFSU}/searchresultsjson`); if (!j.ok) continue;
+    out.push(...sfsuToCourses(await j.json(), term, labels[term] ?? term).filter((c) => c.department === subj || c.code.startsWith(`${subj} `)));
+  }
+  console.log(`  s_sfsu ${labels[term]}: ${subjects.length} subjects → ${out.length} classes`);
+  return [...new Map(out.map((c) => [c.id, c])).values()];
 }
 
 // ─── Caltech: schedules.caltech.edu/<FA2026-27>.html — 쿼터마다 한 페이지(보고서를 HTML 로 내보낸 표, 글자 칸 순서대로 읽는다) ───
@@ -1309,6 +1370,7 @@ export const COURSE_SOURCES: Record<string, CourseSource> = {
   cmu: { schoolId: 's_cmu', fetch: cmu, lookup: cmuLookup },
   wustl: { schoolId: 's_wustl', fetch: wustl },
   vanderbilt: { schoolId: 's_vanderbilt', fetch: vanderbilt },
+  sfsu: { schoolId: 's_sfsu', fetch: sfsu },
 };
 export const adapters: Record<string, () => Promise<CatalogCourse[]>> = Object.fromEntries(Object.entries(COURSE_SOURCES).map(([k, v]) => [k, v.fetch]));
 

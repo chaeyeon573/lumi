@@ -24,3 +24,11 @@ test('UCLA section that meets on two day patterns (ASL 1: MF + TWR) keeps every 
   assert.ok(out[0].meetings.every((m) => m.start === '11:00' && m.end === '11:50'));
   assert.equal(out[0].id, 'cc_ucla_asl0001_26f');
 });
+
+test('UCLA catalog numbers: trailing letters are a prefix (0104E M -> M104E, 0242B C -> C242B)', async () => {
+  const { uclaCatalog } = await import('./sources/courses');
+  assert.equal(uclaCatalog('0104E M '), 'M104E');
+  assert.equal(uclaCatalog('0242B C '), 'C242B');
+  assert.equal(uclaCatalog('0031    '), '31');
+  assert.equal(uclaCatalog('0102A   '), '102A');
+});
