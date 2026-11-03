@@ -830,6 +830,59 @@ async function uscLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   return uscToCourses(await uscProgram(termCode, p.school, p.program), termCode, c.term).find((x) => x.id === c.id) ?? null;
 }
 
+// ─── Rice: courses.rice.edu 공개 수업 검색 (!SWKSCAT.cat?p_action=QUERY&p_term=202710&p_subj=COMP) ───
+// 과목마다 한 페이지, 한 줄 = 한 섹션(CRN·과목 번호·섹션·제목(대문자)·교수·수업 시간 "9:25AM - 10:40AM TR"·기말). 대학원 과목(500번대) 포함.
+const RICE = 'https://courses.rice.edu/courses/courses/!SWKSCAT.cat';
+const RICE_DAY: Record<string, number> = { M: 0, T: 1, W: 2, R: 3, F: 4, S: 5, U: 6 };
+const SMALL = /^(a|an|and|as|at|by|for|in|of|on|or|the|to|vs|via|with)$/i;
+const titleCase = (t: string) => (/[a-z]/.test(t) ? t : t.toLowerCase().split(/(\s+|-|\/)/).map((w, i) => (i > 0 && SMALL.test(w) ? w : /^(i|ii|iii|iv|v|vi)$/i.test(w) ? w.toUpperCase() : w.charAt(0).toUpperCase() + w.slice(1))).join(''));
+const to24 = (t: string) => { const m = /^(\d{1,2}):(\d{2})(AM|PM)$/i.exec(t.trim()); if (!m) return ''; let h = Number(m[1]) % 12; if (/pm/i.test(m[3])) h += 12; return `${String(h).padStart(2, '0')}:${m[2]}`; };
+export function riceToCourses(html: string, termCode: string, label: string): CatalogCourse[] {
+  const out: CatalogCourse[] = []; const seen = new Set<string>(); const secOf = new Map<string, string>();
+  const txt = (h = '') => decodeEntities(h.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' '));
+  for (const row of html.match(/<tr><td data-label="CRN:[\s\S]*?<\/tr>/g) ?? []) {
+    const crs = /class="cls-crs">([\s\S]*?)<\/td>/.exec(row)?.[1]; if (!crs) continue;
+    const m = /^(\S+)\s+(\S+)\s+(\S+)$/.exec(txt(crs)); if (!m) continue;
+    const code = `${m[1]} ${m[2]}`; const sec = m[3]; const baseId = courseId('s_rice', code);
+    const meetings: Meeting[] = [];
+    const clas = /data-mtg-type="CLAS">([\s\S]*?)<\/div><\/div>/.exec(row)?.[1] ?? '';
+    for (const t of txt(clas).matchAll(/(\d{1,2}:\d{2}[AP]M)\s*-\s*(\d{1,2}:\d{2}[AP]M)\s+([MTWRFSU]+)/g)) {
+      const start = to24(t[1]), end = to24(t[2]); if (!start || !end) continue;
+      for (const ch of t[3]) meetings.push({ day: RICE_DAY[ch], start, end });
+    }
+    if (!meetings.length) continue;
+    const id = seen.has(baseId) ? `${baseId}_${sec}` : baseId; if (seen.has(id)) continue; seen.add(id); secOf.set(id, sec);
+    const instructor = txt(/class="cls-ins">([\s\S]*?)<\/td>/.exec(row)?.[1]).split(/\s{2,}/)[0] || undefined;
+    const crn = /p_crn=(\d+)/.exec(row)?.[1];
+    const units = Number(txt(/class="cls-crd"[^>]*>([\s\S]*?)<\/td>/.exec(row)?.[1]));
+    out.push({ id, schoolId: 's_rice', code, title: titleCase(txt(/class="cls-ttl">([\s\S]*?)<\/td>/.exec(row)?.[1])), department: m[1], instructor, meetings: uniq(meetings), term: label, termCode, units: Number.isFinite(units) && units > 0 ? units : undefined, url: crn ? `${RICE}?p_action=COURSE&p_term=${termCode}&p_crn=${crn}` : `${RICE}?p_action=QUERY&p_term=${termCode}&p_subj=${m[1]}` });
+  }
+  for (const c of out) if (out.filter((o) => o.code === c.code).length > 1) c.title = `${c.title} (Sec ${secOf.get(c.id)})`;
+  return tagTerm(out, label);
+}
+async function riceGet(q: string): Promise<string> { const r = await fetch(`${RICE}${q}`, { headers: UAH }); if (!r.ok) throw new Error(`rice ${q} → ${r.status}`); return r.text(); }
+async function riceForm(): Promise<{ terms: { code: string; label: string }[]; subjects: string[] }> {
+  const html = await riceGet('');
+  const terms = [...html.matchAll(/<option value="(\d{6})">([^<]+)/g)].map((m) => ({ code: m[1], label: labelOf(m[2]) }));
+  const sel = /<select id="p_subj_cd"[\s\S]*?<\/select>/.exec(html)?.[0] ?? '';
+  return { terms, subjects: [...sel.matchAll(/<option value="([A-Z]{2,5})">/g)].map((m) => m[1]) };
+}
+async function rice(): Promise<CatalogCourse[]> {
+  const { terms, subjects } = await riceForm(); const [cur, next] = catalogTermLabels();
+  const pick = [terms.find((t) => t.label === cur), terms.find((t) => t.label === next)].filter((t): t is { code: string; label: string } => !!t);
+  if (!pick.length) throw new Error('rice: current term not in the list');
+  const out: CatalogCourse[] = [];
+  for (const t of pick) {
+    const before = out.length;
+    for (const sub of subjects) { out.push(...riceToCourses(await riceGet(`?p_action=QUERY&p_term=${t.code}&p_subj=${sub}`), t.code, t.label)); await new Promise((r) => setTimeout(r, 200)); }
+    console.log(`  s_rice ${t.code} (${t.label}): ${subjects.length} subjects → ${out.length - before} classes`);
+  }
+  return out;
+}
+async function riceLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
+  return riceToCourses(await riceGet(`?p_action=QUERY&p_term=${c.termCode}&p_subj=${c.code.split(' ')[0]}`), c.termCode ?? '', c.term).find((x) => x.id === c.id) ?? null;
+}
+
 // ─── Harvard: my.harvard.edu 공개 과목 검색 (키 불필요) ─────────────────────
 // 검색 결과는 JSON 안에 이스케이프된 HTML 로 오고 15개씩 page=N 으로 넘어간다. term=2026+Fall · school=FAS 필터가 된다.
 // 과목마다 /course/sections/<id>/<offer>/<strm>/<session> 조각에 섹션별 요일(aria-label "Tuesday, selected")·시간·장소·교수가 있다.
@@ -961,6 +1014,7 @@ export const COURSE_SOURCES: Record<string, CourseSource> = {
   umd: { schoolId: 's_umd', fetch: umd, lookup: umdLookup },
   harvard: { schoolId: 's_harvard', fetch: harvard, lookup: harvardLookup },
   usc: { schoolId: 's_usc', fetch: usc, lookup: uscLookup },
+  rice: { schoolId: 's_rice', fetch: rice, lookup: riceLookup },
 };
 export const adapters: Record<string, () => Promise<CatalogCourse[]>> = Object.fromEntries(Object.entries(COURSE_SOURCES).map(([k, v]) => [k, v.fetch]));
 
