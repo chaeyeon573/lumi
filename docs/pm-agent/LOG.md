@@ -1810,3 +1810,10 @@
 - UCLA batch: 27/173 Fall subjects, 393 classes.
 - Offices: Illinois "Grainger Departments & Programs" (33 — the engineering college's departments, advising, career services) and 5 more UCI "Departments and Programs" units were typed club → department (hidden; nothing removed). Rule + test.
 - Spot check clubs: Minnesota FWCB Club, Wisconsin Food for Thought, UCI Cariño Student Outreach Clinic match; Illinois "Grainger Electrical & Computer Engineering" was the department itself (fixed above); Dartmouth D-LAB is a student-facilitated Rockefeller Center program (kept as club; site 503 to automated requests).
+
+## 2026-11-03 23:33 run
+- No Codex commits or HANDOFF requests.
+- SF State: re-read only the 13 subjects the dropped connection missed (`SFSU_SUBJECTS=…`): Fall 2026 1,993 → 2,242, nothing lost (other subjects kept by the collect-courses rule).
+- **New top schools (files only):** Wake Forest (thelink.wfu.edu, public Engage) 375 groups, 285 with a public link, 117 upcoming events; University of Rochester (ccc.rochester.edu, public CampusGroups) 382 groups, 208 events; Case Western Reserve (community.case.edu, public CampusGroups, 918 groups) collecting. Checked and not found public yet: Northeastern, Brandeis (no Engage/CampusGroups/Presence host answered).
+- UCLA batch: 31/173 Fall subjects, 563 classes. Spot check CHEM 14B, CHEM 153L, CCAS 89, CHIN 50, C&EE 251E (grad) on the official class pages — match.
+- Spot check clubs: Columbia Women's Business Society, NYU Video Game Orchestra, UChicago Phoenix Survivors Alliance, Michigan Sport Sustainability Initiative, Wake Forest MSA match. Purdue Operation Smile lists the national student-programs page (what the club entered). Rochester Music Interest Floor website no longer answers (dead link → link-check queue item).
