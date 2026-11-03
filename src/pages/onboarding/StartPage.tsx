@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Check, GraduationCap, CalendarDays, Users, Utensils, UsersRound, FlaskConical, Landmark, House, UserRound, Layers, Volleyball, Globe, Building2, Ellipsis, Search, Sparkles, Briefcase } from 'lucide-react';
+import { Check, GraduationCap, CalendarDays, Users, Utensils, UsersRound, FlaskConical, Landmark, House, UserRound, Layers, Volleyball, Globe, Building2, Ellipsis, Search, Sparkles, Briefcase, Trophy, Dumbbell, Coffee } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { api } from '@core/api';
 import type { Goal, Interest, Purpose, School, UniversityRole } from '@core/types';
@@ -13,10 +13,10 @@ import { ComingSoonSchools } from './ComingSoonSchools';
 import { takeReturnTo } from '@/lib/returnTo';
 
 const en = lang === 'en';
-/** 이름은 가입에 꼭 필요해서 맨 앞 한 화면 — 진행 막대는 시안의 4단계(목표 → 도움 → 학교·신분 → 커뮤니티)만 센다 */
-type Step = 'name' | 'goals' | 'how' | 'school' | 'communities';
-const STEPS: Step[] = ['name', 'goals', 'how', 'school', 'communities'];
-const BAR: Step[] = ['goals', 'how', 'school', 'communities'];
+/** 시안 4단계(목표 → 도움 → 학교·신분 → 커뮤니티) + 기존 화면(이름·출생 연도, 관심 주제, 학교 이메일)은 그대로 둔다 */
+type Step = 'name' | 'goals' | 'how' | 'school' | 'topics' | 'communities' | 'email';
+const STEPS: Step[] = ['name', 'goals', 'how', 'school', 'topics', 'communities', 'email'];
+const BAR: Step[] = STEPS;
 const KEY = 'lumi.start.draft.v3';
 type Ico = typeof Briefcase;
 
@@ -42,6 +42,18 @@ const ROLES: { v: UniversityRole; Icon: Ico; en: string; ko: string; sub: (schoo
   { v: 'alumni', Icon: UserRound, en: 'Alumni', ko: '졸업생', sub: (s) => (en ? `${s || 'University'} alum` : `${s || '학교'} 졸업생`) },
 ];
 
+/** 관심 주제 — “What would you like to discover?” 8개. 저장은 goals/interests 로 (피드·For You 추천에 쓰인다) */
+const TOPICS: { key: string; Icon: Ico; en: string; ko: string; goals: Goal[]; interests: Interest[] }[] = [
+  { key: 'jobs', Icon: Briefcase, en: 'Internships & Jobs', ko: '인턴·일자리', goals: ['internship'], interests: [] },
+  { key: 'research', Icon: FlaskConical, en: 'Research', ko: '연구', goals: ['lab'], interests: ['research'] },
+  { key: 'hack', Icon: Trophy, en: 'Hackathons & Competitions', ko: '해커톤·공모전', goals: ['hackathon'], interests: [] },
+  { key: 'funding', Icon: GraduationCap, en: 'Scholarships & Funding', ko: '장학금·펀딩', goals: ['scholarship'], interests: [] },
+  { key: 'events', Icon: CalendarDays, en: 'Campus Events', ko: '캠퍼스 행사', goals: [], interests: ['networking'] },
+  { key: 'clubs', Icon: Users, en: 'Clubs & Communities', ko: '동아리·커뮤니티', goals: ['join_club'], interests: ['club'] },
+  { key: 'sports', Icon: Dumbbell, en: 'Sports & Fitness', ko: '스포츠·운동', goals: [], interests: ['exercise'] },
+  { key: 'food', Icon: Coffee, en: 'Food & Campus Life', ko: '맛집·캠퍼스 생활', goals: [], interests: ['meal'] },
+];
+
 /** 학교 이름 아래 줄 — 시안처럼 정식 이름. 모르면 지역 */
 const FULL_NAME: Record<string, string> = { 'UC Berkeley': 'University of California, Berkeley' };
 
@@ -58,8 +70,8 @@ const COMMUNITIES: { key: string; Icon: Ico; en: string; ko: string; goals: Goal
   { key: 'none', Icon: Ellipsis, en: 'None for now', ko: '아직 없어요', goals: [], interests: [] },
 ];
 
-interface Draft { nickname: string; birthYear: string; goalKeys: string[]; schoolId: string; role: UniversityRole | ''; communities: string[] }
-const EMPTY: Draft = { nickname: '', birthYear: '', goalKeys: [], schoolId: '', role: '', communities: [] };
+interface Draft { nickname: string; birthYear: string; goalKeys: string[]; schoolId: string; role: UniversityRole | ''; communities: string[]; topics: string[]; email: string }
+const EMPTY: Draft = { nickname: '', birthYear: '', goalKeys: [], schoolId: '', role: '', communities: [], topics: [], email: '' };
 const uniq = <T,>(a: T[]) => [...new Set(a)];
 
 /** 선택 줄 — 아이콘 + 제목 (+ 한 줄 설명) + 체크. square = 커뮤니티 체크박스 */
@@ -77,8 +89,7 @@ function Pick({ icon, title, sub, on, onClick, square }: { icon: React.ReactNode
 }
 
 /**
- * 첫 실행 (2026-11-03 사장님 시안 “Onboarding Flow”) — 이름 → ① 목표 → ② 어떻게 도와주나 → ③ 학교·신분 → ④ 커뮤니티 → Get Started.
- * 학교 이메일은 가입 뒤 설정(SchoolEmailCard)에서 붙인다 — 첫 실행을 시안의 4단계로 줄이려고 마지막 화면을 뺐다.
+ * 첫 실행 (2026-11-03 사장님 시안 “Onboarding Flow”) — 이름 → 목표 → 어떻게 도와주나 → 학교·신분 → 관심 주제 → 커뮤니티 → (학교 이메일) Get Started.
  */
 export function StartPage() {
   const nav = useNavigate();
@@ -98,13 +109,30 @@ export function StartPage() {
   const go = (s: Step) => { setStep(s); window.scrollTo({ top: 0 }); };
   const next = () => go(STEPS[Math.min(idx + 1, STEPS.length - 1)]);
 
-  const finish = async () => {
+  // 학교 이메일 (선택) — 코드로 확인한 이메일만 계정에 붙인다. 브라우저를 지우거나 폰을 바꿔도 이메일 코드로 다시 들어온다
+  const [codeSent, setCodeSent] = useState(false);
+  const [code, setCode] = useState('');
+  const [verified, setVerified] = useState(false);
+  const [hint, setHint] = useState('');
+  const sendCode = async () => {
+    setBusy(true); setHint('');
+    try { const r = await api.schools.sendVerificationCode(d.email.trim(), d.schoolId); setHint(r.hint); setCodeSent(r.ok); }
+    catch (e) { setHint((e as Error).message); } finally { setBusy(false); }
+  };
+  const checkCode = async () => {
+    setBusy(true);
+    try { const r = await api.schools.verifyCode(d.email.trim(), code.trim()); if (r.ok) { setVerified(true); setHint(''); } else setHint(en ? 'That code didn’t match. Check the latest email and try again.' : '코드가 맞지 않아요. 가장 최근 메일의 코드를 확인해주세요.'); }
+    catch (e) { setHint((e as Error).message); } finally { setBusy(false); }
+  };
+
+  const finish = async (withEmail: boolean) => {
     setBusy(true);
     try {
       const gs = GOAL_OPTS.filter((g) => d.goalKeys.includes(g.key));
       const cs = COMMUNITIES.filter((c) => d.communities.includes(c.key));
-      const goals = uniq([...gs.flatMap((g) => g.goals), ...cs.flatMap((c) => c.goals)]);
-      const interests = uniq([...gs.flatMap((g) => g.interests), ...cs.flatMap((c) => c.interests)]);
+      const ts = TOPICS.filter((t) => d.topics.includes(t.key));
+      const goals = uniq([...gs.flatMap((g) => g.goals), ...ts.flatMap((t) => t.goals), ...cs.flatMap((c) => c.goals)]);
+      const interests = uniq([...gs.flatMap((g) => g.interests), ...ts.flatMap((t) => t.interests), ...cs.flatMap((c) => c.interests)]);
       const purposes = uniq(gs.flatMap((g) => g.purposes));
       const role = d.role || 'undergraduate';
       // 입학 연도는 묻지 않는다 (가볍게) — 이전 흐름과 같은 기본값 올해, 프로필에서 고칠 수 있다
@@ -112,7 +140,7 @@ export function StartPage() {
       const user = await api.auth.register({
         nickname: d.nickname.trim(), birthYear: Number(d.birthYear), gender: 'private', avatar: { emoji: '🙂', hue: 210, photoType: 'face' },
         schoolId: d.schoolId, role, department: '', year,
-        email: undefined, emailVerified: false, showSchool: true, showDepartment: true,
+        email: withEmail && verified ? d.email.trim() : undefined, emailVerified: withEmail && verified, showSchool: true, showDepartment: true,
         interests, purposes: purposes.length ? purposes : ['friend'], bio: '', likes: '', freeTime: '', availability: 'after18',
         fieldVisibility: DEFAULT_FV, prompts: [], goals, lookingFor: [], canOffer: [], meetPreference: [], interestedOrgIds: [],
         locationPermission: 'undecided', notifications: true,
@@ -130,7 +158,7 @@ export function StartPage() {
   const name = d.nickname.trim();
   const shownSchools = schools.filter((s) => !q.trim() || `${s.name} ${FULL_NAME[s.name] ?? ''} ${s.region}`.toLowerCase().includes(q.trim().toLowerCase()));
   const Head = ({ q: title, sub }: { q: string; sub?: string }) => <div><h2 className="text-[28px] font-extrabold leading-tight">{title}</h2>{sub && <p className="text-[15px] text-ink-3 mt-1.5">{sub}</p>}</div>;
-  const skip = step === 'goals' ? () => { patch({ goalKeys: [] }); next(); } : undefined;
+  const skip = step === 'goals' ? () => { patch({ goalKeys: [] }); next(); } : step === 'topics' ? () => { patch({ topics: [] }); next(); } : undefined;
   const NextBtn = ({ ok, text, onClick }: { ok: boolean; text?: string; onClick?: () => void }) => (
     <>
       <Button full size="lg" loading={busy} disabled={!ok || busy} onClick={onClick ?? next}>{text ?? (en ? 'Continue' : '계속')}</Button>
@@ -209,6 +237,21 @@ export function StartPage() {
           </>
         )}
 
+        {step === 'topics' && (
+          <>
+            <Head q={en ? 'What would you like to discover?' : '어떤 걸 찾아보고 싶어요?'} sub={en ? 'Pick a few.' : '몇 가지 골라 주세요.'} />
+            <div className="grid grid-cols-2 gap-2.5">
+              {TOPICS.map((t) => { const on = d.topics.includes(t.key); return (
+                <button key={t.key} onClick={() => patch({ topics: tog(d.topics, t.key) })} aria-pressed={on} className={cn('rounded-[20px] border-2 p-3.5 h-[108px] flex flex-col justify-between text-left press transition', on ? 'border-primary bg-primary-soft' : 'border-line bg-surface')}>
+                  <span className="flex items-center justify-between w-full"><t.Icon size={19} className={on ? 'text-primary' : 'text-ink-2'} /><span className={cn('h-5 w-5 rounded-full border-2 grid place-items-center', on ? 'border-primary bg-primary text-white v2:text-on-primary' : 'border-line')}>{on && <Check size={12} />}</span></span>
+                  <b className="text-[14px] font-semibold leading-snug">{en ? t.en : t.ko}</b>
+                </button>
+              ); })}
+            </div>
+            <NextBtn ok={d.topics.length > 0} />
+          </>
+        )}
+
         {step === 'communities' && (
           <>
             <Head q={en ? 'Your communities' : '나의 커뮤니티'} sub={en ? 'Which communities are you part of? Select all that apply. You can update this later.' : '어떤 커뮤니티에 속해 있어요? 모두 골라 주세요. 나중에 바꿀 수 있어요.'} />
@@ -220,8 +263,31 @@ export function StartPage() {
                 </button>
               ); })}
             </div>
-            <NextBtn ok text={en ? 'Get Started' : '시작하기'} onClick={finish} />
-            <p className="text-center text-[12px] text-ink-3 -mt-2">{en ? 'By starting Lumi you confirm you’re 16 or older and agree to the ' : 'Lumi를 시작하면 만 16세 이상이며 다음에 동의하는 것으로 봐요: '}<Link to="/terms" className="text-primary font-semibold underline">{en ? 'Terms of Use' : '이용약관'}</Link>{en ? ' and ' : ', '}<Link to="/privacy" className="text-primary font-semibold underline">{en ? 'Privacy Policy' : '개인정보처리방침'}</Link>. {en ? 'Add your school email anytime in Settings.' : '학교 이메일은 설정에서 언제든 추가할 수 있어요.'}</p>
+            <NextBtn ok />
+          </>
+        )}
+        {step === 'email' && (
+          <>
+            <Head q={en ? `You’re all set, ${name}!` : `준비 끝, ${name}님!`} sub={en ? 'Optional: add your school email to sign back in on any phone.' : '선택: 학교 이메일을 넣으면 어느 폰에서든 다시 들어올 수 있어요.'} />
+            <Field label={en ? 'School email' : '학교 이메일'}>
+              <div className="flex gap-2">
+                <Input type="email" inputMode="email" autoComplete="email" disabled={verified} placeholder={school?.emailDomain ? `you@${school.emailDomain}` : 'you@school.edu'} value={d.email} onChange={(e) => { patch({ email: e.target.value }); setCodeSent(false); setVerified(false); setCode(''); }} />
+                {!verified && <Button variant="secondary" loading={busy && !codeSent} disabled={!d.email.includes('@')} onClick={sendCode}>{codeSent ? (en ? 'Resend' : '다시 보내기') : (en ? 'Send code' : '코드 받기')}</Button>}
+              </div>
+            </Field>
+            {codeSent && !verified && (
+              <Field label={en ? '6-digit code' : '6자리 코드'}>
+                <div className="flex gap-2">
+                  <Input inputMode="numeric" autoComplete="one-time-code" maxLength={6} value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, ''))} placeholder="123456" />
+                  <Button loading={busy} disabled={code.length !== 6} onClick={checkCode}>{en ? 'Verify' : '확인'}</Button>
+                </div>
+              </Field>
+            )}
+            {hint && <p className="text-[12px] text-ink-2 -mt-2">{hint}</p>}
+            {verified && <div className="rounded-xl bg-mint-soft text-mint text-[13px] font-semibold px-3 py-2.5 flex items-center gap-2"><Check size={16} />{en ? 'Verified — you’ll get a school badge too.' : '인증 완료 — 학교 인증 배지도 붙어요.'}</div>}
+            <Button full size="lg" loading={busy} disabled={busy} onClick={() => finish(verified)}>{en ? 'Get Started' : '시작하기'}</Button>
+            {!verified && <p className="text-center text-[12px] text-ink-3 -mt-2">{en ? 'You can add your school email later in Settings.' : '학교 이메일은 나중에 설정에서 추가할 수 있어요.'}</p>}
+            <p className="text-center text-[12px] text-ink-3">{en ? 'By starting Lumi you confirm you’re 16 or older and agree to the ' : 'Lumi를 시작하면 만 16세 이상이며 다음에 동의하는 것으로 봐요: '}<Link to="/terms" className="text-primary font-semibold underline">{en ? 'Terms of Use' : '이용약관'}</Link>{en ? ' and ' : ', '}<Link to="/privacy" className="text-primary font-semibold underline">{en ? 'Privacy Policy' : '개인정보처리방침'}</Link>.</p>
           </>
         )}
       </div>
