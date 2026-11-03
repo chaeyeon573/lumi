@@ -985,7 +985,7 @@ export function cmuToCourses(html: string, termCode: string, label: string): Cat
   for (const chunk of body.split('</tr>')) {
     const cells = [...chunk.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map((m) => m[1]); if (cells.length < 8) continue;
     const num = /courseDetails\?COURSE=(\d{5})/.exec(cells[0])?.[1];
-    if (num) { code = `${num.slice(0, 2)}-${num.slice(2)}`; title = cellText(cells[1]); const u = Number(cellText(cells[2])); units = Number.isFinite(u) && u > 0 ? u : undefined; cur = undefined; }
+    if (num) { code = `${num.slice(0, 2)}-${num.slice(2)}`; title = cellText(cells[1]).replace(/\s*This Section Cancelled\s*$/i, ' [cancelled]'); const u = Number(cellText(cells[2])); units = Number.isFinite(u) && u > 0 ? u : undefined; cur = undefined; }
     if (!code) continue;
     const sec = cellText(cells[3]);
     if (sec) { cur = { code, title, sec, units, meetings: [] }; secs.push(cur); }
@@ -998,6 +998,7 @@ export function cmuToCourses(html: string, termCode: string, label: string): Cat
   const hasLec = new Set(secs.filter((x) => /^Lec/i.test(x.sec)).map((x) => x.code));
   for (const x of secs) {
     if (hasLec.has(x.code) && !/^Lec/i.test(x.sec)) continue; if (!x.meetings.length) continue;
+    if (/\[cancelled\]$/.test(x.title)) continue; // CMU 는 취소된 섹션을 제목 칸에 "This Section Cancelled" 로 적는다
     const baseId = courseId('s_cmu', x.code); const id = seen.has(baseId) ? `${baseId}_${x.sec.toLowerCase().replace(/\s+/g, '')}` : baseId; if (seen.has(id)) continue; seen.add(id); secOf.set(id, x.sec);
     out.push({ id, schoolId: 's_cmu', code: x.code, title: x.title, department: x.code.slice(0, 2), meetings: uniq(x.meetings), term: label, termCode, units: x.units, url: `${CMU}/courseDetails?COURSE=${x.code.replace('-', '')}&SEMESTER=${termCode}` });
   }

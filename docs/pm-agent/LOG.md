@@ -1733,3 +1733,9 @@
 - Vanderbilt Spring 2027 was missed: without a session the form pre-selects 1080 (`selected="selected"`), which the term regex skipped. Fixed (option may be selected); re-collecting both terms.
 - Spot check classes: UW AIS 307, CSE 453, G H 101 (Winter), LAW B 531 (grad), SOC 337 re-fetched live — match; independent raw check: CSE 453 "MWF 130-220" → 13:30-14:20, quiz sections left out.
 - Spot check clubs: Brown SOCA and Personal Finance Initiative (club pages), Caltech Competitive Programming and GWiPMA (on the SFE list), Emory Raoul Hall (residence hall → housing.emory.edu; residential community, kept).
+
+## 2026-11-03 12:33 run
+- No Codex commits or HANDOFF requests.
+- UCLA classes parked: sections need one extra request per course (thousands per term) — too heavy for one site; queued.
+- Paused schools: Illinois club directory found — one.illinois.edu is CampusGroups with a public club list → moved to collect, collecting. Ohio State (activities.osu.edu) fails TLS from the container; Texas A&M getinvolved.tamu.edu answers 403 and StuAct Online is script/login; Rutgers getinvolved.rutgers.edu redirects to a resource page — still paused.
+- Spot check classes: CMU 5 re-fetched — times match, but one was "ETC Interdisciplinary Project II This Section Cancelled": CMU marks cancelled sections in the title cell. Reader now leaves them out (test); CMU re-collected 6,953 → 6,756 (197 cancelled removed from the class file — they were not real classes).

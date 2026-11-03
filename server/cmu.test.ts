@@ -12,3 +12,10 @@ test('CMU Schedule of Classes: lectures (recitations left out), extra meeting ro
   assert.ok(by('76-101').length > 1); // no lecture: every lettered section is the class
   assert.ok(resolveCourseSource('s_cmu', 'cmu'));
 });
+
+test('CMU: sections marked "This Section Cancelled" are left out', () => {
+  const td = (x: string) => `<td>${x}</td>`;
+  const row = (t: string) => `<tr>${td('<a onclick="x(\'/SOC/SOCServlet/courseDetails?COURSE=53607&SEMESTER=F26\')">53607</a>')}${td(t)}${td('12')}${td('A')}${td('')}${td('MWF')}${td('03:00PM')}${td('05:50PM')}${td('Pittsburgh')}${td('In person')}</tr>`;
+  assert.equal(cmuToCourses(`<tbody>${row('ETC Interdisciplinary Project II This Section Cancelled')}</tbody>`, 'F26', 'Fall 2026').length, 0);
+  assert.equal(cmuToCourses(`<tbody>${row('ETC Interdisciplinary Project II')}</tbody>`, 'F26', 'Fall 2026').length, 1);
+});
