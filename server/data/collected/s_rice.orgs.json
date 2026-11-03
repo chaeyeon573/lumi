@@ -1649,7 +1649,7 @@
    "emoji": "CE",
    "hue": 48
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_rice",
   "parent": "STEM",
   "verified": false,
@@ -1744,7 +1744,7 @@
    "emoji": "CS",
    "hue": 128
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_rice",
   "parent": "Academic & Research",
   "verified": false,
@@ -2506,7 +2506,7 @@
    "hue": 320,
    "url": "https://se-images.campuslabs.com/clink/images/b0dc2236-9996-4cd2-982a-2ea30ce2a2bcdd0c6238-91d2-4ee9-8b03-da6e72af11a2.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_rice",
   "parent": "Visual/Performing Arts",
   "verified": false,
@@ -2587,7 +2587,7 @@
    "emoji": "DB",
    "hue": 320
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_rice",
   "verified": false,
   "description": "Biochemistry & Cell Biology and Ecology & Evolutionary Biology.",
@@ -5752,7 +5752,7 @@
    "hue": 144,
    "url": "https://se-images.campuslabs.com/clink/images/19aa0d70-66d1-45ac-b224-5a860449ee62cf7ef7bc-2564-44ed-9d19-c44c2f980c83.jpg?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_rice",
   "parent": "STEM",
   "verified": false,
@@ -5922,7 +5922,7 @@
    "hue": 56,
    "url": "https://se-images.campuslabs.com/clink/images/78fea7ed-1f71-4a3a-91ef-b8328ac3031bdc3b0e7b-d12d-4d93-84fb-923c343e65ce.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_rice",
   "verified": false,
   "description": "The Office of Sustainability leads and supports a broad range of sustainability initiatives spanning the entire university enterprise. The Office is guided by the UN’s Sustainable Development Goals, providing a holistic view of sustainability.",

@@ -208,7 +208,10 @@ const OFFICE_NAME = /\b(center|centre|office|department|dept\.?|program|programs
 const CLUB_NAME = /\b(club|society|association|team|magazine|journal|chapter|alliance|collective|ensemble|choir|band|league|union|coalition|students for|student group|fraternity|sorority)\b|@/i;
 /** 이름과 분류로 학교 부서인가 — 분류가 확실하면(직원 전용·비학생 단체 등) 이름과 상관없이, 애매한 분류(“Department”)면 이름도 부서 같을 때만 */
 export function isOfficeOrg(name: string, category?: string): boolean {
-  if (!category || COUNCIL_RE.test(name) || /student org(anization)?s?\b/i.test(category.replace(/non[- ]student org[^)]*\)?/i, ''))) return false;
+  if (COUNCIL_RE.test(name)) return false;
+  // 분류가 없어도(Engage) 이름이 "Office of … / Department of … / Division of … / Center for …" 이고 학생 단체 말이 없으면 학교 부서 (UMD "Department of Environmental Safety…")
+  if (/^(department|office|division|center|centre) (of|for)\b/i.test(name) && !CLUB_NAME.test(name)) return true;
+  if (!category || /student org(anization)?s?\b/i.test(category.replace(/non[- ]student org[^)]*\)?/i, ''))) return false;
   if (STRONG_OFFICE.test(category)) return true;
   return WEAK_OFFICE.test(category) && OFFICE_NAME.test(name) && !CLUB_NAME.test(name);
 }
