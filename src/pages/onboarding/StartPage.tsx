@@ -33,7 +33,7 @@ const GOAL_OPTS: { key: string; Icon: Ico; title: string; sub: string; goals: Go
 const HELPS: { Icon: Ico; Art: Ico[]; title: string; sub: string }[] = [
   { Icon: CalendarDays, Art: [Briefcase, Sparkles], title: en ? 'Discover Opportunities & Events' : '기회·행사 찾기', sub: en ? 'Find internships, research, scholarships, hackathons, talks, and campus events that fit your interests.' : '관심사에 맞는 인턴, 연구, 장학금, 해커톤, 강연, 캠퍼스 행사를 찾아요.' },
   { Icon: CalendarDays, Art: [CalendarDays, UsersRound], title: en ? 'Classes & Schedule' : '수업·시간표', sub: en ? 'Build your timetable, adjust your classes, and connect with classmates in the same courses.' : '시간표를 만들고 수업을 바꾸고, 같은 수업 듣는 친구와 연결돼요.' },
-  { Icon: Users, Art: [Users, House], title: en ? 'Communities' : '커뮤니티', sub: en ? 'Explore and join clubs, Greek life, co-ops, and research groups.' : '동아리, 그릭 라이프, 코업, 연구 그룹을 둘러보고 참여해요.' },
+  { Icon: Users, Art: [Users, UsersRound], title: en ? 'Communities & People' : '커뮤니티·사람', sub: en ? 'Join clubs, Greek life, co-ops, and research groups, and meet people to study and hang out with.' : '동아리, 그릭 라이프, 코업, 연구 그룹에 참여하고 같이 공부하고 놀 사람을 만나요.' },
 ];
 
 const ROLES: { v: UniversityRole; Icon: Ico; en: string; ko: string; sub: (school: string) => string }[] = [
