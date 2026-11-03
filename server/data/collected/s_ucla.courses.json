@@ -1,0 +1,2960 @@
+[
+ {
+  "id": "cc_ucla_aerost0000a_26f",
+  "schoolId": "s_ucla",
+  "code": "AERO ST 0A",
+  "title": "Leadership Laboratory",
+  "department": "AERO ST",
+  "instructor": "Tull, B.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "08:20",
+    "end": "11:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AERO%20ST&crs_catlg_no=0000A%20%20%20&class_id=102001200"
+ },
+ {
+  "id": "cc_ucla_aerost0001a_26f",
+  "schoolId": "s_ucla",
+  "code": "AERO ST 1A",
+  "title": "Heritage and Values",
+  "department": "AERO ST",
+  "instructor": "Salas, I.L. Flanagan, N.",
+  "location": "Student Activities Center B20B",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AERO%20ST&crs_catlg_no=0001A%20%20%20&class_id=102048200"
+ },
+ {
+  "id": "cc_ucla_aerost0020a_26f",
+  "schoolId": "s_ucla",
+  "code": "AERO ST 20A",
+  "title": "Team and Leadership Fundamentals",
+  "department": "AERO ST",
+  "instructor": "Flanagan, N.",
+  "location": "Student Activities Center B20B",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AERO%20ST&crs_catlg_no=0020A%20%20%20&class_id=102107200"
+ },
+ {
+  "id": "cc_ucla_aerost0130a_26f",
+  "schoolId": "s_ucla",
+  "code": "AERO ST 130A",
+  "title": "Leading People and Effective Communication",
+  "department": "AERO ST",
+  "instructor": "Tull, B.",
+  "location": "Student Activities Center 120P",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AERO%20ST&crs_catlg_no=0130A%20%20%20&class_id=102401201"
+ },
+ {
+  "id": "cc_ucla_aerost0140a_26f",
+  "schoolId": "s_ucla",
+  "code": "AERO ST 140A",
+  "title": "National Security Affairs/Preparation for Active Duty",
+  "department": "AERO ST",
+  "instructor": "Davis, B.",
+  "location": "Student Activities Center 215",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AERO%20ST&crs_catlg_no=0140A%20%20%20&class_id=102445200"
+ },
+ {
+  "id": "cc_ucla_afamer0002b_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 2B",
+  "title": "Race and U.S. Military Intervention in Africa",
+  "department": "AF AMER",
+  "instructor": "No instructors",
+  "location": "Royce Hall",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0002B%20%20%20&class_id=413007200"
+ },
+ {
+  "id": "cc_ucla_afamer0096w001_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 96W",
+  "title": "Variable Topics in Black Studies: Seminar 1",
+  "department": "AF AMER",
+  "instructor": "Williams, K.L. Mays, K.T.",
+  "location": "Haines Hall A28",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0096W%20%20%20&class_id=413276200"
+ },
+ {
+  "id": "cc_ucla_afamer0104em001_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 104E M",
+  "title": "Topics in African American Literature and Culture: Lecture 1",
+  "department": "AF AMER",
+  "instructor": "Goyal, Y.",
+  "location": "Rolfe Hall 3116",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0104E%20M%20&class_id=413328200"
+ },
+ {
+  "id": "cc_ucla_afamer0110b_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 110B",
+  "title": "Reproducing While Black: Politics of Black Reproduction",
+  "department": "AF AMER",
+  "instructor": "No instructors",
+  "location": "Haines Hall",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0110B%20%20%20&class_id=413362200"
+ },
+ {
+  "id": "cc_ucla_afamer0110c_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 110C",
+  "title": "Black Health Matters: Wellness, Health, and Self-Care",
+  "department": "AF AMER",
+  "instructor": "Edu, U.F.",
+  "location": "Haines Hall A44",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0110C%20%20%20&class_id=413363200"
+ },
+ {
+  "id": "cc_ucla_afamer0112a_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 112A",
+  "title": "Sunken Place: Racism, Survival, and Black Horror Aesthetic",
+  "department": "AF AMER",
+  "instructor": "Due, T.P.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0112A%20%20%20&class_id=413367200"
+ },
+ {
+  "id": "cc_ucla_afamer0116am_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 116A M",
+  "title": "African American Musical Heritage",
+  "department": "AF AMER",
+  "instructor": "Norfleet, D.M.",
+  "location": "Schoenberg Music Building 1200",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:50"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0116A%20M%20&class_id=413392200"
+ },
+ {
+  "id": "cc_ucla_afamer0117_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 117",
+  "title": "Ecologies of Empire, Liberation, and Resistance (Lec 1)",
+  "department": "AF AMER",
+  "instructor": "No instructors",
+  "location": "Public Affairs Building",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0117%20%20%20%20&class_id=413397200"
+ },
+ {
+  "id": "cc_ucla_afamer0117_26f_2",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 117",
+  "title": "Ecologies of Empire, Liberation, and Resistance (Lec 2)",
+  "department": "AF AMER",
+  "instructor": "Smith, J.",
+  "location": "Public Affairs Building 1323",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0117%20%20%20%20&class_id=413397300"
+ },
+ {
+  "id": "cc_ucla_afamer0124m_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 124  M",
+  "title": "Comparative Racialization and Indigeneity",
+  "department": "AF AMER",
+  "instructor": "Qutami, L.N.",
+  "location": "Dodd Hall 175",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0124%20%20M%20&class_id=413444200"
+ },
+ {
+  "id": "cc_ucla_afamer0157_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 157",
+  "title": "Rastafari World Making",
+  "department": "AF AMER",
+  "instructor": "Alhassan, S.",
+  "location": "Haines Hall A18",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0157%20%20%20%20&class_id=413642200"
+ },
+ {
+  "id": "cc_ucla_afamer0158bm_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 158B M",
+  "title": "Introduction to Afro-American History",
+  "department": "AF AMER",
+  "instructor": "Stevenson, B. Martinez, C.A.",
+  "location": "Haines Hall 220",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0158B%20M%20&class_id=413649200"
+ },
+ {
+  "id": "cc_ucla_afamer0168c_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 168  C",
+  "title": "Black Queer Ecologies",
+  "department": "AF AMER",
+  "instructor": "No instructors",
+  "location": "Bunche Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0168%20%20C%20&class_id=413712200"
+ },
+ {
+  "id": "cc_ucla_afamer0184a_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 184A",
+  "title": "Research in Black Life, Institutions, and Culture",
+  "department": "AF AMER",
+  "instructor": "Paul, K.N. Thomas Tobin, C. Lord, P.F. Ralston, M.",
+  "location": "Bunche Hall 2121",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0184A%20%20%20&class_id=413804200"
+ },
+ {
+  "id": "cc_ucla_afamer0188a001_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 188A",
+  "title": "Special Courses in African American Studies: Lecture 1",
+  "department": "AF AMER",
+  "instructor": "No instructors",
+  "location": "Rolfe Hall",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0188A%20%20%20&class_id=413828200"
+ },
+ {
+  "id": "cc_ucla_afamer0191c001_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 191  C",
+  "title": "Variable Topics Research Seminars: Afro-American Studies: Black Health Across the Diaspora",
+  "department": "AF AMER",
+  "instructor": "Edu, U.F.",
+  "location": "Bunche Hall 2150",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0191%20%20C%20&class_id=413846200"
+ },
+ {
+  "id": "cc_ucla_afamer0191c003_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 191  C",
+  "title": "Variable Topics Research Seminars: Afro-American Studies: Black Reparations",
+  "department": "AF AMER",
+  "instructor": "No instructors",
+  "location": "Bunche Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0191%20%20C%20&class_id=413846400"
+ },
+ {
+  "id": "cc_ucla_afamer0191c004_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 191  C",
+  "title": "Variable Topics Research Seminars: Afro-American Studies: Internationalism Paradigms, Debates, and New Directions",
+  "department": "AF AMER",
+  "instructor": "No instructors",
+  "location": "Royce Hall",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0191%20%20C%20&class_id=413846500"
+ },
+ {
+  "id": "cc_ucla_afamer0191c002_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 191  C",
+  "title": "Variable Topics Research Seminars: Afro-American Studies: Literature and Pedagogy of Toni Morrison",
+  "department": "AF AMER",
+  "instructor": "Streeter, C.A.",
+  "location": "Public Affairs Building 2292",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0191%20%20C%20&class_id=413846300"
+ },
+ {
+  "id": "cc_ucla_afamer0201a_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 201A",
+  "title": "Survey of Black Studies Research: Themes, Issues, and Concepts",
+  "department": "AF AMER",
+  "instructor": "Alhassan, S.",
+  "location": "Kaufman Hall 136",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0201A%20%20%20&class_id=813009200"
+ },
+ {
+  "id": "cc_ucla_afamer0268c_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 268  C",
+  "title": "Black Queer Ecologies",
+  "department": "AF AMER",
+  "instructor": "No instructors",
+  "location": "Bunche Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0268%20%20C%20&class_id=813368200"
+ },
+ {
+  "id": "cc_ucla_afamer0291c001_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 291  C",
+  "title": "Special Topics in Afro-American Studies: Black Health Across the Diaspora",
+  "department": "AF AMER",
+  "instructor": "Edu, U.F.",
+  "location": "Bunche Hall 2150",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0291%20%20C%20&class_id=813546200"
+ },
+ {
+  "id": "cc_ucla_afamer0291c003_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 291  C",
+  "title": "Special Topics in Afro-American Studies: Black Reparations",
+  "department": "AF AMER",
+  "instructor": "No instructors",
+  "location": "Bunche Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0291%20%20C%20&class_id=813546400"
+ },
+ {
+  "id": "cc_ucla_afamer0291c004_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 291  C",
+  "title": "Special Topics in Afro-American Studies: Internationalism Paradigms, Debates, and New Directions",
+  "department": "AF AMER",
+  "instructor": "No instructors",
+  "location": "Royce Hall",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0291%20%20C%20&class_id=813546500"
+ },
+ {
+  "id": "cc_ucla_afamer0291c002_26f",
+  "schoolId": "s_ucla",
+  "code": "AF AMER 291  C",
+  "title": "Special Topics in Afro-American Studies: Literature and Pedagogy of Toni Morrison",
+  "department": "AF AMER",
+  "instructor": "Streeter, C.A.",
+  "location": "Public Affairs Building 2292",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AF%20AMER&crs_catlg_no=0291%20%20C%20&class_id=813546300"
+ },
+ {
+  "id": "cc_ucla_amind0010m_26f",
+  "schoolId": "s_ucla",
+  "code": "AM IND 10  M",
+  "title": "Introduction to American Indian Studies",
+  "department": "AM IND",
+  "instructor": "Taitano Delisle, C",
+  "location": "Renee and David Kaplan Hall 135",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AM%20IND&crs_catlg_no=0010%20%20M%20&class_id=105030200"
+ },
+ {
+  "id": "cc_ucla_amind0120c_26f",
+  "schoolId": "s_ucla",
+  "code": "AM IND 120  C",
+  "title": "Working in Tribal Communities: Introduction",
+  "department": "AM IND",
+  "instructor": "Eagle, V.R.",
+  "location": "Haines Hall A6",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AM%20IND&crs_catlg_no=0120%20%20C%20&class_id=105420100"
+ },
+ {
+  "id": "cc_ucla_amind0123m_26f",
+  "schoolId": "s_ucla",
+  "code": "AM IND 123  M",
+  "title": "Afro-Indigenous History: from Enslavement and Settlement to Black Lives Matter and Indigenous Sovereignty",
+  "department": "AM IND",
+  "instructor": "Mays, K.T.",
+  "location": "Bunche Hall 3117",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AM%20IND&crs_catlg_no=0123%20%20M%20&class_id=105439200"
+ },
+ {
+  "id": "cc_ucla_amind0155m_26f",
+  "schoolId": "s_ucla",
+  "code": "AM IND 155  M",
+  "title": "Native American Languages and Their Speakers",
+  "department": "AM IND",
+  "instructor": "Kroskrity, P.V.",
+  "location": "Fowler Museum at UCLA A139",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AM%20IND&crs_catlg_no=0155%20%20M%20&class_id=105625100"
+ },
+ {
+  "id": "cc_ucla_amind0161m_26f",
+  "schoolId": "s_ucla",
+  "code": "AM IND 161  M",
+  "title": "Comparative American Indian Societies",
+  "department": "AM IND",
+  "instructor": "Small-Rodriguez, D",
+  "location": "Renee and David Kaplan Hall A60",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AM%20IND&crs_catlg_no=0161%20%20M%20&class_id=105666100"
+ },
+ {
+  "id": "cc_ucla_amind0175c_26f",
+  "schoolId": "s_ucla",
+  "code": "AM IND 175  C",
+  "title": "Cultures of Native Southern California",
+  "department": "AM IND",
+  "instructor": "Diaz, V.",
+  "location": "Renee and David Kaplan Hall A60",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AM%20IND&crs_catlg_no=0175%20%20C%20&class_id=105750100"
+ },
+ {
+  "id": "cc_ucla_amind0201001_26f",
+  "schoolId": "s_ucla",
+  "code": "AM IND 201",
+  "title": "Introduction to Interdisciplinary Methods in American Indian and Indigenous Studies: Lecture 1",
+  "department": "AM IND",
+  "instructor": "Small-Rodriguez, D",
+  "location": "Public Affairs Building 2319",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AM%20IND&crs_catlg_no=0201%20%20%20%20&class_id=505030200"
+ },
+ {
+  "id": "cc_ucla_amind0202_26f",
+  "schoolId": "s_ucla",
+  "code": "AM IND 202",
+  "title": "Key Theories and Concepts in American Indian Studies",
+  "department": "AM IND",
+  "instructor": "Diaz, V.",
+  "location": "Bunche Hall 2168",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AM%20IND&crs_catlg_no=0202%20%20%20%20&class_id=505013200"
+ },
+ {
+  "id": "cc_ucla_amind0208m_26f",
+  "schoolId": "s_ucla",
+  "code": "AM IND 208  M",
+  "title": "Native American Languages and Discourses of Indigeneity",
+  "department": "AM IND",
+  "instructor": "No instructors",
+  "location": "Haines Hall",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AM%20IND&crs_catlg_no=0208%20%20M%20&class_id=505048200"
+ },
+ {
+  "id": "cc_ucla_amind0220c_26f",
+  "schoolId": "s_ucla",
+  "code": "AM IND 220  C",
+  "title": "Working in Tribal Communities: Introduction",
+  "department": "AM IND",
+  "instructor": "Eagle, V.R.",
+  "location": "Haines Hall",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AM%20IND&crs_catlg_no=0220%20%20C%20&class_id=505120200"
+ },
+ {
+  "id": "cc_ucla_amind0261_26f",
+  "schoolId": "s_ucla",
+  "code": "AM IND 261",
+  "title": "Comparative Indigenous Societies",
+  "department": "AM IND",
+  "instructor": "Small-Rodriguez, D",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AM%20IND&crs_catlg_no=0261%20%20%20%20&class_id=505366200"
+ },
+ {
+  "id": "cc_ucla_amind0265_26f",
+  "schoolId": "s_ucla",
+  "code": "AM IND 265",
+  "title": "Federal Indian Law I",
+  "department": "AM IND",
+  "instructor": "Riley, A.R.",
+  "location": "Law Building 2467",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:40"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:40"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AM%20IND&crs_catlg_no=0265%20%20%20%20&class_id=505392200"
+ },
+ {
+  "id": "cc_ucla_amind0265b_26f",
+  "schoolId": "s_ucla",
+  "code": "AM IND 265B",
+  "title": "Federal Indian Law I",
+  "department": "AM IND",
+  "instructor": "No instructors",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:40"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:40"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AM%20IND&crs_catlg_no=0265B%20%20%20&class_id=505391100"
+ },
+ {
+  "id": "cc_ucla_amind0272m001_26f",
+  "schoolId": "s_ucla",
+  "code": "AM IND 272  M",
+  "title": "Seminar: Cultural Property Law: Seminar 1",
+  "department": "AM IND",
+  "instructor": "Riley, A.R.",
+  "location": "Law Building 1457",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:10",
+    "end": "14:50"
+   },
+   {
+    "day": 3,
+    "start": "13:10",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AM%20IND&crs_catlg_no=0272%20%20M%20&class_id=505432200"
+ },
+ {
+  "id": "cc_ucla_amind0275c_26f",
+  "schoolId": "s_ucla",
+  "code": "AM IND 275  C",
+  "title": "Cultures of Native Southern California",
+  "department": "AM IND",
+  "instructor": "Diaz, V.",
+  "location": "Renee and David Kaplan Hall A60",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AM%20IND&crs_catlg_no=0275%20%20C%20&class_id=505450200"
+ },
+ {
+  "id": "cc_ucla_amind0280b_26f",
+  "schoolId": "s_ucla",
+  "code": "AM IND 280B",
+  "title": "Indigenous Peoples in International Law",
+  "department": "AM IND",
+  "instructor": "No instructors",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:25",
+    "end": "12:00"
+   },
+   {
+    "day": 1,
+    "start": "10:25",
+    "end": "12:00"
+   },
+   {
+    "day": 3,
+    "start": "10:25",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AM%20IND&crs_catlg_no=0280B%20%20%20&class_id=505481200"
+ },
+ {
+  "id": "cc_ucla_asl0001_26f",
+  "schoolId": "s_ucla",
+  "code": "ASL 1",
+  "title": "Elementary American Sign Language (Lec 1)",
+  "department": "ASL",
+  "instructor": "Marfino, J.",
+  "location": "Online Public Affairs Building 2250",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ASL&crs_catlg_no=0001%20%20%20%20&class_id=404001200"
+ },
+ {
+  "id": "cc_ucla_asl0001_26f_2",
+  "schoolId": "s_ucla",
+  "code": "ASL 1",
+  "title": "Elementary American Sign Language (Lec 2)",
+  "department": "ASL",
+  "instructor": "Marfino, J.",
+  "location": "Online Public Affairs Building 2250",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ASL&crs_catlg_no=0001%20%20%20%20&class_id=404001201"
+ },
+ {
+  "id": "cc_ucla_asl0003_26f",
+  "schoolId": "s_ucla",
+  "code": "ASL 3",
+  "title": "Elementary American Sign Language",
+  "department": "ASL",
+  "instructor": "Lewis, B.",
+  "location": "Online Public Affairs Building 2250",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ASL&crs_catlg_no=0003%20%20%20%20&class_id=404009200"
+ },
+ {
+  "id": "cc_ucla_asl0004_26f",
+  "schoolId": "s_ucla",
+  "code": "ASL 4",
+  "title": "Intermediate American Sign Language",
+  "department": "ASL",
+  "instructor": "Lewis, B.",
+  "location": "Public Affairs Building 2270 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ASL&crs_catlg_no=0004%20%20%20%20&class_id=404012200"
+ },
+ {
+  "id": "cc_ucla_annea0010_26f",
+  "schoolId": "s_ucla",
+  "code": "AN N EA 10",
+  "title": "Jerusalem: Holy City",
+  "department": "AN N EA",
+  "instructor": "Smoak, J.D.",
+  "location": "Haines Hall A25",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AN%20N%20EA&crs_catlg_no=0010%20%20%20%20&class_id=286030200"
+ },
+ {
+  "id": "cc_ucla_annea0050am_26f",
+  "schoolId": "s_ucla",
+  "code": "AN N EA 50A M",
+  "title": "First Civilizations",
+  "department": "AN N EA",
+  "instructor": "Burke, A.A.",
+  "location": "Franz Hall 1260",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AN%20N%20EA&crs_catlg_no=0050A%20M%20&class_id=286150200"
+ },
+ {
+  "id": "cc_ucla_annea0120a_26f",
+  "schoolId": "s_ucla",
+  "code": "AN N EA 120A",
+  "title": "Elementary Ancient Egyptian",
+  "department": "AN N EA",
+  "instructor": "Winnerman, J.P.",
+  "location": "Mathematical Sciences 5217",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AN%20N%20EA&crs_catlg_no=0120A%20%20%20&class_id=286338200"
+ },
+ {
+  "id": "cc_ucla_annea0168am_26f",
+  "schoolId": "s_ucla",
+  "code": "AN N EA 168A M",
+  "title": "Elementary Hittite",
+  "department": "AN N EA",
+  "instructor": "Yates, A.D.",
+  "location": "Renee and David Kaplan Hall 365",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AN%20N%20EA&crs_catlg_no=0168A%20M%20&class_id=286709200"
+ },
+ {
+  "id": "cc_ucla_annea0210_26f",
+  "schoolId": "s_ucla",
+  "code": "AN N EA 210",
+  "title": "Late Egyptian",
+  "department": "AN N EA",
+  "instructor": "Cooney, K.M.",
+  "location": "Renee and David Kaplan Hall 398",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AN%20N%20EA&crs_catlg_no=0210%20%20%20%20&class_id=686066200"
+ },
+ {
+  "id": "cc_ucla_annea0225_26f",
+  "schoolId": "s_ucla",
+  "code": "AN N EA 225",
+  "title": "Readings on the Ancient Near East",
+  "department": "AN N EA",
+  "instructor": "Yates, A.D.",
+  "location": "Renee and David Kaplan Hall 398",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:30",
+    "end": "17:35"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AN%20N%20EA&crs_catlg_no=0225%20%20%20%20&class_id=686150201"
+ },
+ {
+  "id": "cc_ucla_annea0230_26f",
+  "schoolId": "s_ucla",
+  "code": "AN N EA 230",
+  "title": "Seminar: Ancient Syria/Palestine",
+  "department": "AN N EA",
+  "instructor": "Burke, A.A.",
+  "location": "Renee and David Kaplan Hall 398",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "18:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AN%20N%20EA&crs_catlg_no=0230%20%20%20%20&class_id=686180200"
+ },
+ {
+  "id": "cc_ucla_annea0240a_26f",
+  "schoolId": "s_ucla",
+  "code": "AN N EA 240A",
+  "title": "Seminar: Sumerian Language and Literature",
+  "department": "AN N EA",
+  "instructor": "Konstantopoulos, G",
+  "location": "Renee and David Kaplan Hall 365",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AN%20N%20EA&crs_catlg_no=0240A%20%20%20&class_id=686298200"
+ },
+ {
+  "id": "cc_ucla_annea0267ac_26f",
+  "schoolId": "s_ucla",
+  "code": "AN N EA 267A C",
+  "title": "Art and Architecture of Ancient Egypt, Predynastic Period to New Kingdom",
+  "department": "AN N EA",
+  "instructor": "Cooney, K.M.",
+  "location": "Renee and David Kaplan Hall 398",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=AN%20N%20EA&crs_catlg_no=0267A%20C%20&class_id=686402200"
+ },
+ {
+  "id": "cc_ucla_anthro0002_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 2",
+  "title": "Archaeology: Introduction",
+  "department": "ANTHRO",
+  "instructor": "Schachner, G.T.",
+  "location": "Fowler Museum at UCLA A103B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0002%20%20%20%20&class_id=111004200"
+ },
+ {
+  "id": "cc_ucla_anthro0003_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 3",
+  "title": "Culture and Society",
+  "department": "ANTHRO",
+  "instructor": "Boum, A.",
+  "location": "Fowler Museum at UCLA A103B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0003%20%20%20%20&class_id=111009200"
+ },
+ {
+  "id": "cc_ucla_anthro0019001_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 19",
+  "title": "Denying to the Grave",
+  "department": "ANTHRO",
+  "instructor": "Prall, S.P.",
+  "location": "Dodd Hall 178",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0019%20%20%20%20&class_id=111057100"
+ },
+ {
+  "id": "cc_ucla_anthro0019002_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 19",
+  "title": "Folk Music, Kindness, Peace, and Social Critique",
+  "department": "ANTHRO",
+  "instructor": "Kroskrity, P.V.",
+  "location": "Haines Hall A20",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0019%20%20%20%20&class_id=111057200"
+ },
+ {
+  "id": "cc_ucla_anthro0019003_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 19",
+  "title": "People, Plants, Water, and Animals in Urban Environments",
+  "department": "ANTHRO",
+  "instructor": "Smith, M.L.",
+  "location": "Public Affairs Building 2325",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0019%20%20%20%20&class_id=111057300"
+ },
+ {
+  "id": "cc_ucla_anthro0113p_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 113P",
+  "title": "Archaeology of North America",
+  "department": "ANTHRO",
+  "instructor": "Neubauer, F.",
+  "location": "Fowler Museum at UCLA A139",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0113P%20%20%20&class_id=111429001"
+ },
+ {
+  "id": "cc_ucla_anthro0114p_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 114P",
+  "title": "Ancient Civilizations of Mesoamerica",
+  "department": "ANTHRO",
+  "instructor": "Cheetham, D.T.",
+  "location": "Fowler Museum at UCLA A139",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0114P%20%20%20&class_id=111358100"
+ },
+ {
+  "id": "cc_ucla_anthro0116p_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 116P",
+  "title": "Archaeology of South Asia",
+  "department": "ANTHRO",
+  "instructor": "Smith, M.L.",
+  "location": "Fowler Museum at UCLA A139",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0116P%20%20%20&class_id=111339100"
+ },
+ {
+  "id": "cc_ucla_anthro0116xp_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 116XP",
+  "title": "Collaborative and Community-Engaged Archaeology",
+  "department": "ANTHRO",
+  "instructor": "Acabado, S.B.",
+  "location": "Bunche Hall 3164",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "18:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0116XP%20%20&class_id=111400100"
+ },
+ {
+  "id": "cc_ucla_anthro0117c001_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 117  C",
+  "title": "Selected Laboratory Topics in Archaeology: Experimental Archaeology",
+  "department": "ANTHRO",
+  "instructor": "No instructors",
+  "location": "Fowler Museum at UCLA",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0117%20%20C%20&class_id=111346100"
+ },
+ {
+  "id": "cc_ucla_anthro0119001_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 119",
+  "title": "Selected Topics in Archaeology: Caribbean Archaeology",
+  "department": "ANTHRO",
+  "instructor": "Dunnavant, J.P.",
+  "location": "Fowler Museum at UCLA A139",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0119%20%20%20%20&class_id=111455100"
+ },
+ {
+  "id": "cc_ucla_anthro0124p_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 124P",
+  "title": "Human Behavioral Ecology",
+  "department": "ANTHRO",
+  "instructor": "Wood, B.M.",
+  "location": "Fowler Museum at UCLA A139",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0124P%20%20%20&class_id=111361100"
+ },
+ {
+  "id": "cc_ucla_anthro0126nm_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 126N M",
+  "title": "Genes, Disease, and Culture",
+  "department": "ANTHRO",
+  "instructor": "Bigham, A.W.",
+  "location": "Fowler Museum at UCLA A103B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0126N%20M%20&class_id=111910100"
+ },
+ {
+  "id": "cc_ucla_anthro0126p_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 126P",
+  "title": "Paleopathology",
+  "department": "ANTHRO",
+  "instructor": "Rashidi, J.S.",
+  "location": "Fowler Museum at UCLA A139",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0126P%20%20%20&class_id=111371100"
+ },
+ {
+  "id": "cc_ucla_anthro0128p_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 128P",
+  "title": "Primate Behavior Nonhuman to Human",
+  "department": "ANTHRO",
+  "instructor": "Perry, S.E.",
+  "location": "Fowler Museum at UCLA A103B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0128P%20%20%20&class_id=111381100"
+ },
+ {
+  "id": "cc_ucla_anthro0128tm_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 128T M",
+  "title": "Amazon in Anthropocene",
+  "department": "ANTHRO",
+  "instructor": "Lynch, J.W.",
+  "location": "Fowler Museum at UCLA A139",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0128T%20M%20&class_id=111520100"
+ },
+ {
+  "id": "cc_ucla_anthro0130_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 130",
+  "title": "Study of Culture",
+  "department": "ANTHRO",
+  "instructor": "Thein, S.M.",
+  "location": "Rolfe Hall 1200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0130%20%20%20%20&class_id=111516200"
+ },
+ {
+  "id": "cc_ucla_anthro0132_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 132",
+  "title": "Anthropology of Environment",
+  "department": "ANTHRO",
+  "instructor": "Cattelino, J.R.",
+  "location": "Dodd Hall 121",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0132%20%20%20%20&class_id=111543100"
+ },
+ {
+  "id": "cc_ucla_anthro0136m_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 136M",
+  "title": "Medical Anthropology",
+  "department": "ANTHRO",
+  "instructor": "Aciksoz, S.C.",
+  "location": "Fowler Museum at UCLA A103B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0136M%20%20%20&class_id=111560100"
+ },
+ {
+  "id": "cc_ucla_anthro0139001_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 139",
+  "title": "Selected Topics in Cultural Anthropology: Anthropology of Extreme Human Experience",
+  "department": "ANTHRO",
+  "instructor": "Lemelson, R.B.",
+  "location": "Public Affairs Building 1256",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0139%20%20%20%20&class_id=111592001"
+ },
+ {
+  "id": "cc_ucla_anthro0141_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 141",
+  "title": "Careers in Anthropology",
+  "department": "ANTHRO",
+  "instructor": "Loyd, H.M.",
+  "location": "Dodd Hall 175",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0141%20%20%20%20&class_id=111623100"
+ },
+ {
+  "id": "cc_ucla_anthro0142q_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 142Q",
+  "title": "Ethnic and Religious Minorities",
+  "department": "ANTHRO",
+  "instructor": "Boum, A.",
+  "location": "Broad Art Center 2100A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0142Q%20%20%20&class_id=111642100"
+ },
+ {
+  "id": "cc_ucla_anthro0145p_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 145P",
+  "title": "Marriage, Family, and Kinship",
+  "department": "ANTHRO",
+  "instructor": "Levine, N.",
+  "location": "Fowler Museum at UCLA A139",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0145P%20%20%20&class_id=111701100"
+ },
+ {
+  "id": "cc_ucla_anthro0146s_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 146S",
+  "title": "Disability Anthropology",
+  "department": "ANTHRO",
+  "instructor": "Aciksoz, S.C.",
+  "location": "Fowler Museum at UCLA A139",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0146S%20%20%20&class_id=111696100"
+ },
+ {
+  "id": "cc_ucla_anthro0149001_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 149",
+  "title": "Selected Topics in Social Anthropology: Marriage, Family, and Kinship in Chinese Culture",
+  "department": "ANTHRO",
+  "instructor": "Yan, Y.",
+  "location": "Haines Hall 314",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0149%20%20%20%20&class_id=111707100"
+ },
+ {
+  "id": "cc_ucla_anthro0155m_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 155  M",
+  "title": "Native American Languages and Their Speakers",
+  "department": "ANTHRO",
+  "instructor": "Kroskrity, P.V.",
+  "location": "Fowler Museum at UCLA A139",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0155%20%20M%20&class_id=111800100"
+ },
+ {
+  "id": "cc_ucla_anthro0159001_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 159",
+  "title": "Selected Topics in Linguistic Anthropology: Language across Generations, from Socialization to Slang",
+  "department": "ANTHRO",
+  "instructor": "Bahtina, D.",
+  "location": "Fowler Museum at UCLA A139",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0159%20%20%20%20&class_id=111797100"
+ },
+ {
+  "id": "cc_ucla_anthro0169002_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 169",
+  "title": "Selected Topics in Regional Cultures: Anthropology of Italy and Mediterranean",
+  "department": "ANTHRO",
+  "instructor": "La Mattina, N.",
+  "location": "Public Affairs Building 2232",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0169%20%20%20%20&class_id=111908200"
+ },
+ {
+  "id": "cc_ucla_anthro0169001_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 169",
+  "title": "Selected Topics in Regional Cultures: Homicide",
+  "department": "ANTHRO",
+  "instructor": "Brantingham, P.J.",
+  "location": "Haines Hall 314",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0169%20%20%20%20&class_id=111908100"
+ },
+ {
+  "id": "cc_ucla_anthro0189001_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 189",
+  "title": "Advanced Honors Seminars: Advanced Honors Seminar for Anthropology 130",
+  "department": "ANTHRO",
+  "instructor": "Thein, S.M.",
+  "location": "Haines Hall A78",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0189%20%20%20%20&class_id=111866100"
+ },
+ {
+  "id": "cc_ucla_anthro0191hc_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 191HC",
+  "title": "Data Analysis",
+  "department": "ANTHRO",
+  "instructor": "Miyake, L.R. Rinza, D.",
+  "location": "Haines Hall 314",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0191HC%20%20&class_id=111880200"
+ },
+ {
+  "id": "cc_ucla_anthro0194_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 194",
+  "title": "Research Group Seminars: Anthropology",
+  "department": "ANTHRO",
+  "instructor": "Fox, M.M.",
+  "location": "Life Sciences 3836",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0194%20%20%20%20&class_id=111865100"
+ },
+ {
+  "id": "cc_ucla_anthro0200_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 200",
+  "title": "Anthropology Graduate Proseminar",
+  "department": "ANTHRO",
+  "instructor": "Barrett, H.C.",
+  "location": "Haines Hall 352",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0200%20%20%20%20&class_id=511014200"
+ },
+ {
+  "id": "cc_ucla_anthro0201am_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 201A M",
+  "title": "Graduate Core Seminar: Archaeology",
+  "department": "ANTHRO",
+  "instructor": "Lesure, R.G.",
+  "location": "Haines Hall 310",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0201A%20M%20&class_id=511006200"
+ },
+ {
+  "id": "cc_ucla_anthro0202a_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 202A",
+  "title": "Core Seminar: Biological Anthropology Colloquium",
+  "department": "ANTHRO",
+  "instructor": "Barrett, H.C.",
+  "location": "Haines Hall 350",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0202A%20%20%20&class_id=511039200"
+ },
+ {
+  "id": "cc_ucla_anthro0203a_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 203A",
+  "title": "Core Seminar: Sociocultural Anthropology--Historical and Philosophical Foundations of Anthropology",
+  "department": "ANTHRO",
+  "instructor": "Yan, Y.",
+  "location": "Haines Hall 332",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0203A%20%20%20&class_id=511022200"
+ },
+ {
+  "id": "cc_ucla_anthro0216m001_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 216  M",
+  "title": "Topics in Asian Archaeology: Seminar 1",
+  "department": "ANTHRO",
+  "instructor": "Acabado, S.B.",
+  "location": "Haines Hall 310",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0216%20%20M%20&class_id=511068100"
+ },
+ {
+  "id": "cc_ucla_anthro0217cm001_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 217  CM",
+  "title": "Selected Laboratory Topics in Archaeology: Experimental Archaeology",
+  "department": "ANTHRO",
+  "instructor": "No instructors",
+  "location": "Fowler Museum at UCLA",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0217%20%20CM&class_id=511320100"
+ },
+ {
+  "id": "cc_ucla_anthro0219001_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 219",
+  "title": "Selected Topics in Anthropological/Archaeological Theory: Contemporary African Thought",
+  "department": "ANTHRO",
+  "instructor": "Dunnavant, J.P.",
+  "location": "Haines Hall 332",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0219%20%20%20%20&class_id=511324100"
+ },
+ {
+  "id": "cc_ucla_anthro0221_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 221",
+  "title": "Behavior, Evolution, and Culture",
+  "department": "ANTHRO",
+  "instructor": "Scelza, B.A.",
+  "location": "Haines Hall 352",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0221%20%20%20%20&class_id=511089200"
+ },
+ {
+  "id": "cc_ucla_anthro0223_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 223",
+  "title": "Experimental Biological Anthropology",
+  "department": "ANTHRO",
+  "instructor": "Wood, B.M.",
+  "location": "Haines Hall 350",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0223%20%20%20%20&class_id=511344200"
+ },
+ {
+  "id": "cc_ucla_anthro0239001_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 239",
+  "title": "Selected Topics in Field Ethnography: Seminar 1",
+  "department": "ANTHRO",
+  "instructor": "Gupta, A.",
+  "location": "Haines Hall 332",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0239%20%20%20%20&class_id=511420100"
+ },
+ {
+  "id": "cc_ucla_anthro0241_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 241",
+  "title": "Culture, Power, Social Change",
+  "department": "ANTHRO",
+  "instructor": "Speed, S.E.",
+  "location": "Haines Hall 352",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "12:15",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0241%20%20%20%20&class_id=511166200"
+ },
+ {
+  "id": "cc_ucla_anthro0249001_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 249",
+  "title": "Selected Topics in Social Anthropology: Critical Migration Study",
+  "department": "ANTHRO",
+  "instructor": "Park, K.R.",
+  "location": "Haines Hall 314",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0249%20%20%20%20&class_id=511507100"
+ },
+ {
+  "id": "cc_ucla_anthro0249002_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 249",
+  "title": "Selected Topics in Social Anthropology: Seminar 2",
+  "department": "ANTHRO",
+  "instructor": "Yan, Y.",
+  "location": "Haines Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0249%20%20%20%20&class_id=511507200"
+ },
+ {
+  "id": "cc_ucla_anthro0254_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 254",
+  "title": "Discourse Laboratory",
+  "department": "ANTHRO",
+  "instructor": "Debenport, E.K.",
+  "location": "Haines Hall 352",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:15",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0254%20%20%20%20&class_id=511323001"
+ },
+ {
+  "id": "cc_ucla_anthro0255m_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 255  M",
+  "title": "Native American Languages and Discourses of Indigeneity",
+  "department": "ANTHRO",
+  "instructor": "No instructors",
+  "location": "Haines Hall",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0255%20%20M%20&class_id=511526100"
+ },
+ {
+  "id": "cc_ucla_anthro0299001_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 299",
+  "title": "Selected Topics in Anthropology: Feminist Cultural Analysis",
+  "department": "ANTHRO",
+  "instructor": "Mankekar, P.",
+  "location": "Haines Hall 332",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0299%20%20%20%20&class_id=511596100"
+ },
+ {
+  "id": "cc_ucla_anthro0495_26f",
+  "schoolId": "s_ucla",
+  "code": "ANTHRO 495",
+  "title": "Teaching Anthropology",
+  "department": "ANTHRO",
+  "instructor": "Mendoza-Denton, N. Barreras Rodarte,",
+  "location": "Haines Hall 352",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ANTHRO&crs_catlg_no=0495%20%20%20%20&class_id=511790200"
+ },
+ {
+  "id": "cc_ucla_appchm0102c_26f",
+  "schoolId": "s_ucla",
+  "code": "APP CHM 102  C",
+  "title": "Data Management in Science",
+  "department": "APP CHM",
+  "instructor": "Liu, C.",
+  "location": "Young Hall 3069 Young Hall 3069",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=APP%20CHM&crs_catlg_no=0102%20%20C%20&class_id=456102201"
+ },
+ {
+  "id": "cc_ucla_appchm0104c_26f",
+  "schoolId": "s_ucla",
+  "code": "APP CHM 104  C",
+  "title": "Workflow Management",
+  "department": "APP CHM",
+  "instructor": "Johnson, T.A.",
+  "location": "MacDonald Medical Research Laboratories 1441",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=APP%20CHM&crs_catlg_no=0104%20%20C%20&class_id=456104200"
+ },
+ {
+  "id": "cc_ucla_appchm0201a_26f",
+  "schoolId": "s_ucla",
+  "code": "APP CHM 201A",
+  "title": "Modern Analytical Methods in Chemistry (Sem 1)",
+  "department": "APP CHM",
+  "instructor": "TA Loo, J.A.",
+  "location": "Molecular Sciences Building 3440",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=APP%20CHM&crs_catlg_no=0201A%20%20%20&class_id=856010200"
+ },
+ {
+  "id": "cc_ucla_appchm0201a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "APP CHM 201A",
+  "title": "Modern Analytical Methods in Chemistry (Sem 2)",
+  "department": "APP CHM",
+  "instructor": "TA Loo, J.A.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "08:30",
+    "end": "10:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=APP%20CHM&crs_catlg_no=0201A%20%20%20&class_id=856010202"
+ },
+ {
+  "id": "cc_ucla_appchm0201b_26f",
+  "schoolId": "s_ucla",
+  "code": "APP CHM 201B",
+  "title": "Modern Analytical Methods in Chemistry (Sem 1)",
+  "department": "APP CHM",
+  "instructor": "TA Nava, M.J.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "10:30",
+    "end": "12:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=APP%20CHM&crs_catlg_no=0201B%20%20%20&class_id=856011201"
+ },
+ {
+  "id": "cc_ucla_appchm0201b_26f_2",
+  "schoolId": "s_ucla",
+  "code": "APP CHM 201B",
+  "title": "Modern Analytical Methods in Chemistry (Sem 2)",
+  "department": "APP CHM",
+  "instructor": "TA Nava, M.J.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "10:30",
+    "end": "12:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=APP%20CHM&crs_catlg_no=0201B%20%20%20&class_id=856011203"
+ },
+ {
+  "id": "cc_ucla_appchm0202c_26f",
+  "schoolId": "s_ucla",
+  "code": "APP CHM 202  C",
+  "title": "Data Management in Science",
+  "department": "APP CHM",
+  "instructor": "Liu, C.",
+  "location": "Young Hall 3069 Young Hall 3069",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=APP%20CHM&crs_catlg_no=0202%20%20C%20&class_id=856016200"
+ },
+ {
+  "id": "cc_ucla_appchm0204c_26f",
+  "schoolId": "s_ucla",
+  "code": "APP CHM 204  C",
+  "title": "Workflow Management",
+  "department": "APP CHM",
+  "instructor": "Johnson, T.A.",
+  "location": "MacDonald Medical Research Laboratories 1441",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=APP%20CHM&crs_catlg_no=0204%20%20C%20&class_id=856024200"
+ },
+ {
+  "id": "cc_ucla_appchm0205a_26f",
+  "schoolId": "s_ucla",
+  "code": "APP CHM 205A",
+  "title": "Careers in Chemistry",
+  "department": "APP CHM",
+  "instructor": "Diaconescu, P.L.",
+  "location": "Young Hall 2033",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "16:00",
+    "end": "18:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=APP%20CHM&crs_catlg_no=0205A%20%20%20&class_id=856030200"
+ },
+ {
+  "id": "cc_ucla_appchm0495_26f",
+  "schoolId": "s_ucla",
+  "code": "APP CHM 495",
+  "title": "Teaching Assistant Seminar",
+  "department": "APP CHM",
+  "instructor": "Diaconescu, P.L.",
+  "location": "Molecular Sciences Building 3440",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=APP%20CHM&crs_catlg_no=0495%20%20%20%20&class_id=856495200"
+ },
+ {
+  "id": "cc_ucla_arabic0001a_26f",
+  "schoolId": "s_ucla",
+  "code": "ARABIC 1A",
+  "title": "Elementary Standard Arabic (Lec 1)",
+  "department": "ARABIC",
+  "instructor": "Al Rifae, K.A.",
+  "location": "Royce Hall 162 Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ARABIC&crs_catlg_no=0001A%20%20%20&class_id=287014201"
+ },
+ {
+  "id": "cc_ucla_arabic0001a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "ARABIC 1A",
+  "title": "Elementary Standard Arabic (Lec 2)",
+  "department": "ARABIC",
+  "instructor": "Al Rifae, K.A.",
+  "location": "Dodd Hall 154 Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ARABIC&crs_catlg_no=0001A%20%20%20&class_id=287014202"
+ },
+ {
+  "id": "cc_ucla_arabic0102a_26f",
+  "schoolId": "s_ucla",
+  "code": "ARABIC 102A",
+  "title": "Intermediate Standard Arabic",
+  "department": "ARABIC",
+  "instructor": "Hamza, A.T.",
+  "location": "Public Affairs Building 2325",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ARABIC&crs_catlg_no=0102A%20%20%20&class_id=287323201"
+ },
+ {
+  "id": "cc_ucla_arabic0103a_26f",
+  "schoolId": "s_ucla",
+  "code": "ARABIC 103A",
+  "title": "Advanced Arabic",
+  "department": "ARABIC",
+  "instructor": "Hamza, A.T.",
+  "location": "Renee and David Kaplan Hall A30",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ARABIC&crs_catlg_no=0103A%20%20%20&class_id=287342200"
+ },
+ {
+  "id": "cc_ucla_arabic0106cm_26f",
+  "schoolId": "s_ucla",
+  "code": "ARABIC 106  CM",
+  "title": "Qur&#39;an",
+  "department": "ARABIC",
+  "instructor": "Sayeed, A.",
+  "location": "La Kretz Hall 100",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ARABIC&crs_catlg_no=0106%20%20CM&class_id=287337200"
+ },
+ {
+  "id": "cc_ucla_arabic0148m_26f",
+  "schoolId": "s_ucla",
+  "code": "ARABIC 148  M",
+  "title": "Contemporary Arab Film and Song",
+  "department": "ARABIC",
+  "instructor": "Gana, N.",
+  "location": "Renee and David Kaplan Hall A48",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ARABIC&crs_catlg_no=0148%20%20M%20&class_id=287588200"
+ },
+ {
+  "id": "cc_ucla_arabic0206c_26f",
+  "schoolId": "s_ucla",
+  "code": "ARABIC 206  C",
+  "title": "Qur&#39;an",
+  "department": "ARABIC",
+  "instructor": "Sayeed, A.",
+  "location": "La Kretz Hall 100",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ARABIC&crs_catlg_no=0206%20%20C%20&class_id=687044200"
+ },
+ {
+  "id": "cc_ucla_arabic0241c_26f",
+  "schoolId": "s_ucla",
+  "code": "ARABIC 241  C",
+  "title": "Modern Arabic Literature",
+  "department": "ARABIC",
+  "instructor": "Gana, N.",
+  "location": "Renee and David Kaplan Hall 398",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ARABIC&crs_catlg_no=0241%20%20C%20&class_id=687246200"
+ },
+ {
+  "id": "cc_ucla_arabic0250_26f",
+  "schoolId": "s_ucla",
+  "code": "ARABIC 250",
+  "title": "Seminar: Premodern Arabic Literature",
+  "department": "ARABIC",
+  "instructor": "Cooperson, M.D.",
+  "location": "Bunche Hall 2121",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ARABIC&crs_catlg_no=0250%20%20%20%20&class_id=687300200"
+ },
+ {
+  "id": "cc_ucla_archeol0201am_26f",
+  "schoolId": "s_ucla",
+  "code": "ARCHEOL 201A M",
+  "title": "Graduate Core Seminar: Archaeology",
+  "department": "ARCHEOL",
+  "instructor": "Lesure, R.G.",
+  "location": "Haines Hall 310",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ARCHEOL&crs_catlg_no=0201A%20M%20&class_id=515030200"
+ },
+ {
+  "id": "cc_ucla_archeol0202_26f",
+  "schoolId": "s_ucla",
+  "code": "ARCHEOL 202",
+  "title": "Waystation Certificate Program Core Course",
+  "department": "ARCHEOL",
+  "instructor": "Stapleton, L.C.",
+  "location": "Fowler Museum at UCLA A322",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ARCHEOL&crs_catlg_no=0202%20%20%20%20&class_id=515042200"
+ },
+ {
+  "id": "cc_ucla_archeol0205am001_26f",
+  "schoolId": "s_ucla",
+  "code": "ARCHEOL 205A M",
+  "title": "Selected Laboratory Topics in Archaeology: Lecture 1",
+  "department": "ARCHEOL",
+  "instructor": "Wake, T.A.",
+  "location": "Fowler Museum at UCLA A312",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=ARCHEOL&crs_catlg_no=0205A%20M%20&class_id=515052200"
+ }
+]
