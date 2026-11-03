@@ -179,7 +179,7 @@ export function StartPage() {
             <Head q={en ? 'What should we call you?' : '뭐라고 불러드릴까요?'} sub={en ? 'This is how classmates see you.' : '같은 학교 학생들에게 보이는 이름이에요.'} />
             <Field label={en ? 'Name' : '이름'}><Input autoFocus maxLength={20} value={d.nickname} onChange={(e) => patch({ nickname: e.target.value })} placeholder={en ? 'e.g. Alex' : '예: 민지'} /></Field>
             <Field label={en ? 'Birth year' : '출생 연도'}><Input inputMode="numeric" maxLength={4} placeholder="2005" value={d.birthYear} onChange={(e) => patch({ birthYear: e.target.value.replace(/\D/g, '') })} /></Field>
-            <p className="text-[12px] text-ink-3 -mt-3">{d.birthYear.length === 4 && !birthOk ? <span className="text-danger">{en ? 'Lumi is for college students 16 and older.' : 'Lumi는 만 16세 이상 대학생을 위한 앱이에요.'}</span> : (en ? 'Only to check you’re 16+. Never shown on your profile.' : '만 16세 이상인지 확인용이에요. 프로필에는 안 보여요.')}</p>
+            <p className="text-[12px] text-ink-3 -mt-3">{d.birthYear.length === 4 && !birthOk ? <span className="text-danger">{en ? 'Lumi is for college students 16 and older.' : 'Lumi는 만 16세 이상 대학생을 위한 앱이에요.'}</span> : (en ? 'Used to check you’re 16+. Your age shows on your profile.' : '만 16세 이상인지 확인해요. 프로필에는 나이가 보여요.')}</p>
             <NextBtn ok={!!name && birthOk} />
           </>
         )}
