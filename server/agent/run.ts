@@ -196,7 +196,7 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
       const startedAt = new Date().toISOString();
       try {
         const src = row.courses_source ? resolveCourseSource(row.id, row.courses_source) : undefined;
-        const all = src ? applyRules(row.id, await src.fetch()).kept : row.catalog_url ? (await fetchCourseLeaf(row.id, row.catalog_url)).courses : [];
+        const all = probeFull.get(row.id) ?? (src ? applyRules(row.id, await src.fetch()).kept : undefined) ?? (row.catalog_url ? (await fetchCourseLeaf(row.id, row.catalog_url)).courses : []);
         const unique = [...new Map(all.map((c) => [c.id, c])).values()].sort((a, b) => a.code.localeCompare(b.code, 'en', { numeric: true }));
         writeFileSync(path.join(COLLECTED_DIR, `${row.id}.courses.json`), `[\n${unique.map((c) => JSON.stringify(c)).join(',\n')}\n]\n`);
         out.push(await record({ task: `collect-courses:${row.id}`, schoolId: row.id, status: unique.length ? 'applied' : 'rejected', startedAt, summary: { courses: unique.length, withTimes: unique.filter((c) => c.meetings?.length).length, terms: [...new Set(unique.map((c) => c.term))].slice(0, 6) } }));
@@ -387,6 +387,8 @@ async function runSchool(row: SchoolRow, listed = true): Promise<AgentRun[]> {
  * 수업 시험 읽기 — 표본 몇 학과만 가져와 규칙 검사 · 원본 재확인(어댑터가 있으면)까지 하고 DB 에는 넣지 않는다.
  * 기록(agent_runs probe:<id>)에 원본·학기·표본 줄을 남겨, 나중에 학교를 열 때 schools.csv 로 옮기기만 하면 같은 방법으로 전부 가져온다
  */
+/** 표본 확인에서 이미 전부 받은 수업 — 파일로 저장할 때 다시 받지 않는다 (Stanford 는 표본이 3과목뿐이라 제외) */
+const probeFull = new Map<string, CatalogCourse[]>();
 async function runCourseProbe(row: SchoolRow): Promise<AgentRun> {
   const startedAt = new Date().toISOString(); const task = `probe:${row.id}`;
   try {
@@ -396,7 +398,7 @@ async function runCourseProbe(row: SchoolRow): Promise<AgentRun> {
       source = `timetable:${row.courses_source}`;
       const prev = process.env.STANFORD_SUBJECTS;
       if (row.courses_source === 'stanford') process.env.STANFORD_SUBJECTS = 'CS,MATH,ECON';
-      try { courses = applyRules(row.id, await src.fetch()).kept; } finally { if (row.courses_source === 'stanford') { if (prev === undefined) delete process.env.STANFORD_SUBJECTS; else process.env.STANFORD_SUBJECTS = prev; } }
+      try { courses = applyRules(row.id, await src.fetch()).kept; if (row.courses_source !== 'stanford') probeFull.set(row.id, courses); } finally { if (row.courses_source === 'stanford') { if (prev === undefined) delete process.env.STANFORD_SUBJECTS; else process.env.STANFORD_SUBJECTS = prev; } }
       spot = await spotCheck(courses, src.lookup, 6);
     } else if (row.catalog_url) {
       source = `catalog:${row.catalog_url}`;
