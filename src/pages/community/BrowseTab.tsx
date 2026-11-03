@@ -1,3 +1,4 @@
+import { recruitmentLabel } from '@core/lib/orglinks';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Plus, ArrowRight, Star, Check, CalendarDays, Search } from 'lucide-react';
@@ -329,7 +330,7 @@ function ClubsList({ kind, setKind, rows }: { kind: string; setKind: (k: string)
   const filtered = useMemo(() => orgs.filter((o) => kind === 'mine' ? mine(o) : (o.schoolId === mySchool || mine(o)) && (!kind || o.type === kind)), [orgs, kind, mySchool, v.me.id]); // eslint-disable-line react-hooks/exhaustive-deps
   // 내 관심사대로 — 화면과 Ask Lumi가 같은 엔진(lib/foryou)을 쓴다
   const sc = useMemo(() => scoreClubs({ opportunities, opportunityIntents: intents, organizations: orgs, relationships, schools }, v.me, filtered), [opportunities, intents, orgs, relationships, schools, v.me, filtered]);
-  const list = useMemo(() => filtered.map((o) => ({ o, r: sc.get(o.id) })).sort((a, b) => (b.r?.score ?? -1) - (a.r?.score ?? -1) || Number(!!b.o.recruitment?.open) - Number(!!a.o.recruitment?.open)).map((x) => x.o), [filtered, sc]);
+  const list = useMemo(() => filtered.map((o) => ({ o, r: sc.get(o.id) })).sort((a, b) => (b.r?.score ?? -1) - (a.r?.score ?? -1) || Number(!!recruitmentLabel(b.o.recruitment)?.open) - Number(!!recruitmentLabel(a.o.recruitment)?.open)).map((x) => x.o), [filtered, sc]);
   const clubWhy = useMemo(() => { const vis = list.slice(0, shown); const lines = whyLines(vis, (o) => sc.get(o.id)?.reasons ?? []); return new Map(vis.map((o, i) => [o.id, lines[i]])); }, [list, sc, shown]);
   // 이 동아리의 다가오는 모임·행사 (학교 행사 목록에서 이름으로 잇는다)
   const upcoming = useMemo(() => {
@@ -356,12 +357,12 @@ function ClubRow({ o, why, events }: { o: Organization; why: string; events?: Op
     <button onClick={() => nav(`/orgs/${o.id}`)} className="w-full flex items-center gap-3 py-3.5 text-left press">
       <Avatar emoji={o.logo.emoji} hue={o.logo.hue} url={o.logo.url} size={44} />
       <span className="flex-1 min-w-0">
-        <span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{o.name}</span>{o.recruitment?.open && <span className="h-6 px-2.5 rounded-full bg-accent-soft text-primary text-[11px] font-semibold shrink-0">{t('모집 중')}</span>}</span>
+        <span className="flex items-center gap-2"><span className="text-[15px] font-semibold text-primary truncate">{o.name}</span>{(() => { const r = recruitmentLabel(o.recruitment); return r && <span className={`h-6 px-2.5 rounded-full text-[11px] font-semibold shrink-0 truncate max-w-[45%] ${r.open ? 'bg-accent-soft text-primary' : 'bg-surface-2 text-ink-3'}`}>{r.text}</span>; })()}</span>
         <span className="block text-[13px] text-ink-3 truncate mt-0.5">{orgSubtitle(o)}</span>
         {next && <span className="flex items-center gap-1 text-[12px] text-primary truncate mt-0.5"><CalendarDays size={12} className="shrink-0" />{badgeOf(next, en).text} · {next.title}{events!.length > 1 ? (en ? ` · +${events!.length - 1} more` : ` 외 ${events!.length - 1}개`) : ''}</span>}
         {why && <span className="block text-[12px] text-ink-3 truncate mt-0.5">{why}</span>}
       </span>
-      <span className="h-9 w-9 rounded-full grid place-items-center text-primary">{o.recruitment?.open ? <Plus size={20} /> : <ArrowRight size={20} />}</span>
+      <span className="h-9 w-9 rounded-full grid place-items-center text-primary">{recruitmentLabel(o.recruitment)?.open ? <Plus size={20} /> : <ArrowRight size={20} />}</span>
     </button>
   );
 }

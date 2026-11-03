@@ -10,8 +10,9 @@ import { Input } from '@/components/ui';
  */
 const base = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
 interface School { id: string; name: string; region: string; orgs: number; withLinks: number; courses: number; collectedAt?: string; probe?: { status?: string; source?: string; sampled?: number; checkedAt?: string } }
-interface Org { id: string; name: string; type: 'club' | 'greek' | 'council' | 'coop' | 'lab' | 'department'; category?: string; description: string; links: { label: string; url: string }[]; logo: { emoji: string; hue: number; url?: string } }
-const TYPES = [['all', 'All'], ['club', 'Clubs'], ['greek', 'Greek life'], ['council', 'Student government']] as const;
+interface Org { id: string; name: string; type: 'club' | 'greek' | 'council' | 'coop' | 'lab' | 'department'; category?: string; description: string; links: { label: string; url: string }[]; logo: { emoji: string; hue: number; url?: string }; recruiting?: { text: string; open: boolean } }
+const TYPES = [['all', 'All'], ['recruiting', 'Recruiting'], ['club', 'Clubs'], ['greek', 'Greek life'], ['council', 'Student government']] as const;
+const fits = (o: Org, t: string) => t === 'all' || (t === 'recruiting' ? !!o.recruiting?.open : o.type === t);
 
 function Shell({ title, back, children }: { title: string; back?: boolean; children: React.ReactNode }) {
   return (
@@ -60,8 +61,8 @@ export function PreviewSchoolPage() {
   const [type, setType] = useState<(typeof TYPES)[number][0]>('all');
   const [open, setOpen] = useState<string | null>(null);
   useEffect(() => { fetch(`${base}/api/preview/${encodeURIComponent(id)}`).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`${r.status}`)))).then(setData).catch((e) => setErr(String(e))); }, [id]);
-  const shown = useMemo(() => (data?.orgs ?? []).filter((o) => (type === 'all' || o.type === type) && (!q.trim() || `${o.name} ${o.category ?? ''} ${o.description}`.toLowerCase().includes(q.trim().toLowerCase()))), [data, q, type]);
-  const count = (t: string) => (t === 'all' ? data?.orgs.length ?? 0 : data?.orgs.filter((o) => o.type === t).length ?? 0);
+  const shown = useMemo(() => (data?.orgs ?? []).filter((o) => fits(o, type) && (!q.trim() || `${o.name} ${o.category ?? ''} ${o.description}`.toLowerCase().includes(q.trim().toLowerCase()))), [data, q, type]);
+  const count = (t: string) => (t === 'all' ? data?.orgs.length ?? 0 : data?.orgs.filter((o) => fits(o, t)).length ?? 0);
   return (
     <Shell title={data?.school.name ?? 'Preview'} back>
       {err && <p className="text-danger text-[13px]">Couldn’t load ({err})</p>}
@@ -87,6 +88,7 @@ export function PreviewSchoolPage() {
                   <span className="flex-1 min-w-0">
                     <b className="block text-[14px] leading-snug">{o.name}</b>
                     <span className="block text-[11px] text-ink-3 truncate">{o.type === 'council' ? 'Student government' : o.type === 'greek' ? 'Greek life' : 'Club'}{o.category ? ` · ${o.category}` : ''}</span>
+                    {o.recruiting && <span className={cn('inline-block mt-1 text-[11px] font-semibold px-2 py-0.5 rounded-full', o.recruiting.open ? 'bg-primary-soft text-primary' : 'bg-surface-2 text-ink-3')}>{o.recruiting.text}</span>}
                   </span>
                 </button>
                 {open === o.id && o.description && <p className="text-[13px] text-ink-2 mt-2">{o.description}</p>}

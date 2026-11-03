@@ -1,0 +1,51 @@
+{
+ "orgList": [
+  {
+   "OrganizationID": 3,
+   "OrganizationName": "Phi Sigma Rho Sorority",
+   "AdvisorName": "Lindsey Goldstein",
+   "OrganizationDescription": null,
+   "OrganizationEmail": "president.phirhobruins@gmail.com",
+   "OrganizationWebSite": "http://phirhobruins.com",
+   "Category1Name": "Greek Life - Sororities",
+   "Category2Name": "Social",
+   "Sig1Name": null,
+   "Sig2Name": null,
+   "Sig3Name": null,
+   "MemberType": "Undergraduate",
+   "SocialMediaLink": "<a target='_blank' href='https://www.instagram.com/phirhobruins/'>Instagram</a>"
+  },
+  {
+   "OrganizationID": 34,
+   "OrganizationName": "Bruin Racing Baja SAE",
+   "AdvisorName": "Orlando Luna",
+   "OrganizationDescription": null,
+   "OrganizationEmail": "baja@bruinracing.org",
+   "OrganizationWebSite": "https://baja304.wixsite.com/bruin-racing-baja",
+   "Category1Name": "Engineering",
+   "Category2Name": "Educational",
+   "Sig1Name": null,
+   "Sig2Name": null,
+   "Sig3Name": null,
+   "MemberType": "Undergraduate",
+   "SocialMediaLink": "<a target='_blank' href='https://www.instagram.com/bruinbaja'>Instagram</a> , <a target='_blank' href='https://www.youtube.com/@BruinRacingBaja'>Youtube</a> , <a target='_blank' href='https://www.linkedin.com/company/bruin-racing/'>Linkedin</a>"
+  },
+  {
+   "OrganizationID": 432,
+   "OrganizationName": "Delta Sigma Pi Business Fraternity",
+   "AdvisorName": "Miranda Redman",
+   "OrganizationDescription": null,
+   "OrganizationEmail": "xio.dsp@gmail.com",
+   "OrganizationWebSite": "https://www.ucladsp.com/",
+   "Category1Name": "Business",
+   "Category2Name": "Pre-Professional",
+   "Sig1Name": null,
+   "Sig2Name": null,
+   "Sig3Name": null,
+   "MemberType": "Undergraduate",
+   "SocialMediaLink": "<a target='_blank' href='https://www.linkedin.com/company/delta-sigma-pi-xi-omicron-chapter/about/'>Linkedin</a>"
+  }
+ ],
+ "clubSportsOrgList": [],
+ "resLifeOrgList": []
+}

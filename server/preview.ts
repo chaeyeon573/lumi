@@ -7,7 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Organization } from '@core/types';
 import { parseCSV } from './scripts/csv';
-import { publicLinks, withoutEmoji } from '@core/lib/orglinks';
+import { publicLinks, recruitmentLabel, withoutEmoji } from '@core/lib/orglinks';
 
 const DATA = path.join(path.dirname(fileURLToPath(import.meta.url)), 'data');
 const COLLECTED = path.join(DATA, 'collected');
@@ -18,7 +18,7 @@ const rows = (): Row[] => (existsSync(path.join(DATA, 'schools-collect.csv')) ? 
 const readJson = <T>(file: string): T | undefined => { try { return JSON.parse(readFileSync(file, 'utf8')) as T; } catch { return undefined; } };
 
 export interface PreviewSchool { id: string; name: string; region: string; orgs: number; withLinks: number; courses: number; collectedAt?: string; probe?: { status?: string; source?: string; sampled?: number; checkedAt?: string } }
-export interface PreviewOrg { id: string; name: string; type: Organization['type']; category?: string; description: string; links: { label: string; url: string }[]; logo: Organization['logo'] }
+export interface PreviewOrg { id: string; name: string; type: Organization['type']; category?: string; description: string; links: { label: string; url: string }[]; logo: Organization['logo']; recruiting?: { text: string; open: boolean } }
 
 const hasOwnLink = (o: Organization) => publicLinks(o.links).some((l) => ['Website', 'Instagram', 'Facebook'].includes(l.label));
 
@@ -36,7 +36,7 @@ export function previewSchool(id: string): { school: PreviewSchool; orgs: Previe
   if (!ID_RE.test(id)) return null;
   const school = previewSchools().find((s) => s.id === id);
   if (!school) return null;
-  const orgs = (readJson<Organization[]>(path.join(COLLECTED, `${id}.orgs.json`)) ?? []).map(withoutEmoji).map((o) => ({ id: o.id, name: o.name, type: o.type, category: o.parent, description: o.description, links: publicLinks(o.links), logo: o.logo }));
+  const orgs = (readJson<Organization[]>(path.join(COLLECTED, `${id}.orgs.json`)) ?? []).map(withoutEmoji).map((o) => ({ id: o.id, name: o.name, type: o.type, category: o.parent, description: o.description, links: publicLinks(o.links), logo: o.logo, recruiting: recruitmentLabel(o.recruitment) ?? undefined }));
   const probe = readJson<Record<string, unknown>>(path.join(COLLECTED, `${id}.probe.json`));
   return { school, orgs, probe };
 }

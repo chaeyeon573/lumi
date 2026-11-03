@@ -298,7 +298,12 @@ export interface Organization {
   description: string;
   gallery: { emoji: string; hue: number; caption: string; url?: string }[];
   regularActivities: string[];
-  recruitment?: { title: string; period: string; open: boolean };
+  /**
+   * 모집 상태 (2026-11-02 사장님: 상시 모집인지, 마감이 있는지, 마감일이 언제인지가 중요).
+   * mode: rolling = 언제든 가입 · deadline = 마감일까지 지원(deadline YYYY-MM-DD) · cycle = 정해진 학기에 모집(period) · closed = 지금 안 받음.
+   * 출처가 알려 준 것만 (지어내지 않는다). how = 지원 방식 (Application · Audition · Tryout · Application + interview)
+   */
+  recruitment?: { title: string; period: string; open: boolean; mode?: 'rolling' | 'deadline' | 'cycle' | 'closed'; deadline?: string; how?: string; source?: string };
   notices: { id: ID; title: string; body: string; createdAt: string }[];
   followerIds: ID[];
   memberIds: ID[];

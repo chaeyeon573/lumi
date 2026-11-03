@@ -1,8 +1,11 @@
 id,name,short,email_domain,region,lat,lng,orgs_host,courses_source,catalog_url,research_source,events_source,academic_calendar,tz,railway
 s_stanford,Stanford University,stanford,stanford.edu,Palo Alto,37.4275,-122.1697,https://cardinalengage.stanford.edu,stanford,,,localist:https://events.stanford.edu,,,probe
-s_sfsu,San Francisco State,sfsu,sfsu.edu,San Francisco,37.7219,-122.4782,https://sfsu.campuslabs.com/engage,,https://bulletin.sfsu.edu/,,,,,
 s_ucdavis,UC Davis,ucdavis,ucdavis.edu,Davis,38.5382,-121.7617,https://aggielife.ucdavis.edu,,https://catalog.ucdavis.edu/,,,,,
 s_ucsc,UC Santa Cruz,ucsc,ucsc.edu,Santa Cruz,36.9916,-122.0583,https://getinvolved.ucsc.edu/student-organizations/join/,,https://catalog.ucsc.edu/,,,,,
-s_sjsu,San José State University,sjsu,sjsu.edu,San Jose,37.3352,-121.8811,https://sammyapp.sjsu.edu,,,,localist:https://events.sjsu.edu,,,
-s_scu,Santa Clara University,scu,scu.edu,Santa Clara,37.3496,-121.9390,https://www.scu.edu/csi/organizations/directory/,,,,,,,
-s_usf,University of San Francisco,usfca,usfca.edu,San Francisco,37.7766,-122.4506,https://myusf.usfca.edu/sle/student-orgs/undergraduate,,,,,,,
+s_ucla,UCLA,ucla,ucla.edu,Los Angeles,34.0689,-118.4452,https://sa.ucla.edu/RCO,,,,,,,
+s_mit,MIT,mit,mit.edu,Cambridge,42.3601,-71.0942,https://engage.mit.edu,mit,,,,,America/New_York,
+s_harvard,Harvard University,harvard,harvard.edu,Cambridge,42.3770,-71.1167,,harvard,,,,,America/New_York,probe
+s_cornell,Cornell University,cornell,cornell.edu,Ithaca,42.4534,-76.4735,https://cornell.campusgroups.com,cornell,,,,,America/New_York,
+s_upenn,University of Pennsylvania,upenn,upenn.edu,Philadelphia,39.9522,-75.1932,https://pennclubs.com,fose:https://courses.upenn.edu,,,,,America/New_York,probe
+s_dartmouth,Dartmouth College,dartmouth,dartmouth.edu,Hanover,43.7044,-72.2887,https://dartmouthgroups.dartmouth.edu,fose:https://courses.dartmouth.edu,,,,,America/New_York,probe
+s_notredame,University of Notre Dame,nd,nd.edu,Notre Dame,41.7056,-86.2353,https://nd.campuslabs.com/engage,fose:https://classsearch.nd.edu,https://catalog.nd.edu/,,,,America/Indiana/Indianapolis,probe

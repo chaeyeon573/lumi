@@ -3,7 +3,7 @@
  * 미국 대학 대부분이 CampusLabs Engage 또는 CampusGroups 를 쓴다 — 짧은 이름으로 만든 후보 주소를 찔러 보고,
  * 실제 목록이 1개 이상 읽히는 쪽을 고른다 (로그인 페이지로 넘어가는 200 은 걸러진다).
  */
-export interface Detected { platform: 'engage' | 'campusgroups' | 'presence' | 'pennclubs' | 'facetwp' | 'accordion' | 'drupalcards'; host: string; sample: number }
+export interface Detected { platform: 'engage' | 'campusgroups' | 'presence' | 'pennclubs' | 'facetwp' | 'accordion' | 'drupalcards' | 'uclarco'; host: string; sample: number }
 
 const UA = 'Mozilla/5.0 AroundU-importer';
 async function get(url: string): Promise<{ ok: boolean; status: number; text: string; url: string }> {
@@ -44,6 +44,12 @@ export async function detectOrgsPlatform(short: string, emailDomain: string, ove
     const r = await get(override); const sub = new URL(override).pathname.replace(/\/+$/, '');
     const n = r.ok ? new Set(r.text.match(new RegExp(`${sub}/[a-z0-9-]+"`, 'g')) ?? []).size : 0;
     return n > 0 ? { platform: 'drupalcards', host: override.replace(/\/+$/, ''), sample: n } : null;
+  }
+  // UCLA SOLE 공개 검색 (POST)
+  if (override && /sa\.ucla\.edu\/RCO/i.test(override)) {
+    try { const r = await fetch(`${override.replace(/\/+$/, '')}/Public/SearchOrganizations`, { method: 'POST', headers: { 'content-type': 'application/json', 'x-requested-with': 'XMLHttpRequest', 'user-agent': UA }, body: JSON.stringify({ searchString: 'club', categoryId: '0', memberType: '0' }), signal: AbortSignal.timeout(30_000) });
+      const n = r.ok ? (((await r.json()) as { orgList?: unknown[] }).orgList ?? []).length : 0;
+      return n > 0 ? { platform: 'uclarco', host: override.replace(/\/+$/, ''), sample: n } : null; } catch { return null; }
   }
   // Penn Clubs (UPenn) — 공개 JSON 목록
   if (override && /pennclubs\.com/.test(override)) {

@@ -79,3 +79,31 @@ test('school list names decode HTML codes (USF, UCSC, SCU pages)', async () => {
   const html = '<div id="d.en.1" class="default-accordion"><h2>Cultural</h2><div id="accordion-panel-1" class="collapse"><p>Ballet Folkl&oacute;rico de SCU<br />Hui O Hawai&#039;i<br />Game Design &#038; Art Collaborations<br />ACM &#8211; Women</p></div></div>';
   assert.deepEqual(parseAccordionDirectory(html).map((x) => x.name), ['Ballet Folklórico de SCU', "Hui O Hawai'i", 'Game Design & Art Collaborations', 'ACM – Women']);
 });
+
+test('uclaOrgToOrg: UCLA SOLE search rows (real excerpt) → club/greek with site and socials', async () => {
+  const { readFileSync } = await import('node:fs');
+  const { uclaOrgToOrg } = await import('./sources/orglinks');
+  const rows = JSON.parse(readFileSync(new URL('./fixtures/ucla-rco.json', import.meta.url), 'utf8')).orgList;
+  const baja = uclaOrgToOrg(rows.find((r: { OrganizationID: number }) => r.OrganizationID === 34));
+  assert.equal(baja.type, 'club'); assert.equal(baja.schoolId, 's_ucla');
+  assert.deepEqual(baja.links?.map((l) => l.label), ['Directory', 'Website', 'Instagram', 'LinkedIn', 'YouTube']);
+  assert.equal(uclaOrgToOrg(rows.find((r: { OrganizationID: number }) => r.OrganizationID === 3)).type, 'greek');
+});
+
+test('pennRecruitment: open membership, deadline from the public application, cycle, closed', async () => {
+  const { pennRecruitment } = await import('./sources/orglinks');
+  const now = new Date('2026-11-02T00:00:00Z');
+  assert.equal(pennRecruitment({ code: 'a', name: 'A', application_required: 1, accepting_members: true }, now)?.mode, 'rolling');
+  const d = pennRecruitment({ code: 'b', name: 'B', application_required: 4, recruiting_cycle: 2, applications: [{ application_end_time: '2026-11-15T23:59:00-05:00' }, { application_end_time: '2026-09-01T00:00:00Z' }] }, now);
+  assert.deepEqual([d?.mode, d?.deadline, d?.how], ['deadline', '2026-11-15', 'Application']);
+  const c = pennRecruitment({ code: 'c', name: 'C', application_required: 3, recruiting_cycle: 3, applications: [] }, now);
+  assert.deepEqual([c?.mode, c?.period, c?.how], ['cycle', 'Spring', 'Audition']);
+  assert.equal(pennRecruitment({ code: 'd', name: 'D', accepting_members: false }, now)?.mode, 'closed');
+});
+
+test('recruitmentLabel: readable one-liners', async () => {
+  const { recruitmentLabel } = await import('@core/lib/orglinks');
+  assert.deepEqual(recruitmentLabel({ title: '', period: '', open: true, mode: 'deadline', deadline: '2026-11-15', how: 'Application' }, '2026-11-02'), { text: 'Apply by Nov 15 · Application', open: true });
+  assert.deepEqual(recruitmentLabel({ title: '', period: '', open: true, mode: 'deadline', deadline: '2026-10-01' }, '2026-11-02'), { text: 'Applications closed', open: false });
+  assert.equal(recruitmentLabel({ title: '', period: 'Fall', open: false, mode: 'cycle' })?.text, 'Recruits in Fall');
+});

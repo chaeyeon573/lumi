@@ -1,3 +1,4 @@
+import { recruitmentLabel } from '@core/lib/orglinks';
 import { publicLinks } from '@core/lib/orglinks';
 import { useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
@@ -83,7 +84,7 @@ export function OrgPage() {
             {org.followerIds.length > 0 && <span className="flex items-center gap-1"><Users size={13} className="text-ink-3" />{t('팔로워')} <b>{org.followerIds.length}</b></span>}
             {org.memberIds.length > 0 && <span>{t('회원')} <b>{org.memberIds.length}</b></span>}
             {sample ? null : org.verified ? <Tag tone="gold"><BadgeCheck size={11} /> {t('공식 인증')}</Tag> : <Tag>{t('미인증')}</Tag>}
-            {org.recruitment?.open && <Tag tone="accent">{t('모집 중')}</Tag>}
+            {(() => { const r = recruitmentLabel(org.recruitment); return r && <Tag tone={r.open ? 'accent' : undefined}>{r.text}</Tag>; })()}
           </div>
           <div className="flex gap-2 mt-4">
             <Button full variant={following ? 'secondary' : 'outline'} icon={<Bell size={16} />} onClick={() => run(() => api.relationships.toggleFollow(v.me.id, org.id, 'org'), following ? undefined : t('팔로우했어요. 새 행사 알림을 받아요.'))}>{following ? t('팔로잉') : t('팔로우')}</Button>
@@ -119,9 +120,10 @@ export function OrgPage() {
           <div className="mt-3 space-y-3">
             {org.recruitment && (
               <div className="card p-4 bg-[linear-gradient(120deg,#FFF4DE,#FFFFFF)]">
-                <div className="flex items-center gap-2"><Megaphone size={16} className="text-[#B57A0E]" /><b className="text-[14px]">{org.recruitment.title}</b>{org.recruitment.open && <Tag tone="accent">{t('모집 중')}</Tag>}</div>
-                <div className="text-[12px] text-ink-2 mt-1">{t('모집 기간 ·')} {org.recruitment.period}</div>
-                {!isMember && !isApplicant && org.recruitment.open && <Button size="sm" className="mt-3" onClick={() => run(() => api.orgs.apply(org.id, v.me.id), t('지원서를 보냈어요.'))}>{t('가입 지원')}</Button>}
+                <div className="flex items-center gap-2"><Megaphone size={16} className="text-[#B57A0E]" /><b className="text-[14px]">{recruitmentLabel(org.recruitment)?.text ?? org.recruitment.title}</b></div>
+                {org.recruitment.period && !org.recruitment.mode && <div className="text-[12px] text-ink-2 mt-1">{t('모집 기간 ·')} {org.recruitment.period}</div>}
+                {org.recruitment.source && <div className="text-[11px] text-ink-3 mt-1">{lang === 'en' ? 'From the club directory' : '학교 단체 목록 기준'}</div>}
+                {!isMember && !isApplicant && org.recruitment.open && !org.recruitment.source && <Button size="sm" className="mt-3" onClick={() => run(() => api.orgs.apply(org.id, v.me.id), t('지원서를 보냈어요.'))}>{t('가입 지원')}</Button>}
               </div>
             )}
             {recruits.map((a) => <TeamCard key={a.id} activity={a} />)}

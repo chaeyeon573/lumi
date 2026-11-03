@@ -47,12 +47,28 @@ export const COUNCIL_RE = /student government|student senate|\bsenate\b|associat
 export const notCouncil = (text: string) => text.replace(/council on student organizations|\bCOSO\b/gi, ' ');
 
 // ─── Penn Clubs (pennclubs.com, UPenn 공식 학생 단체 디렉터리 · 공개 JSON) ───────────
-export interface PennClub { code: string; name: string; subtitle?: string; description?: string; image_url?: string | null; active?: boolean; approved?: boolean | null; tags?: { name: string }[]; website?: string | null; instagram?: string | null; facebook?: string | null; linkedin?: string | null; twitter?: string | null; youtube?: string | null; tiktok?: string | null }
+export interface PennClub { accepting_members?: boolean; application_required?: number; recruiting_cycle?: number; applications?: { name?: string; application_start_time?: string; application_end_time?: string; external_url?: string | null }[]; code: string; name: string; subtitle?: string; description?: string; image_url?: string | null; active?: boolean; approved?: boolean | null; tags?: { name: string }[]; website?: string | null; instagram?: string | null; facebook?: string | null; linkedin?: string | null; twitter?: string | null; youtube?: string | null; tiktok?: string | null }
 const GREEK_RE = /fraternit|sororit|greek|panhellenic|interfraternity|nphc|multicultural greek/i;
 // 학교 목록 페이지의 글자 코드(&#039; &#8211; &#038; &oacute; …)를 모두 푼다 — 이름에 그대로 보이던 것 (2026-11-02 검사)
 const NAMED: Record<string, string> = { amp: '&', quot: '"', apos: "'", nbsp: ' ', ndash: '–', mdash: '—', rsquo: '’', lsquo: '‘', ldquo: '“', rdquo: '”', hellip: '…', aacute: 'á', eacute: 'é', iacute: 'í', oacute: 'ó', uacute: 'ú', ntilde: 'ñ', Aacute: 'Á', Eacute: 'É', Iacute: 'Í', Oacute: 'Ó', Uacute: 'Ú', Ntilde: 'Ñ', uuml: 'ü', ouml: 'ö', auml: 'ä', ccedil: 'ç' };
 const decodeHtmlText = (h: string) => decodeNumericEntities(h.replace(/&([A-Za-z]+);/g, (m, n: string) => NAMED[n] ?? m)).replace(/&amp;/g, '&');
 const strip = (h = '') => decodeHtmlText(h.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+/**
+ * Penn Clubs 모집 상태 — 사이트 코드값(pennlabs/penn-clubs models.py): recruiting_cycle 1 모름·2 가을·3 봄·4 둘 다·5 상시,
+ * application_required 1 누구나·2 트라이아웃·3 오디션·4 지원서·5 지원서+면접. 마감일은 그 동아리의 공개 지원서(application_end_time)에서만
+ */
+const PENN_HOW: Record<number, string> = { 2: 'Tryout', 3: 'Audition', 4: 'Application', 5: 'Application + interview' };
+const PENN_CYCLE: Record<number, string> = { 2: 'Fall', 3: 'Spring', 4: 'Fall and spring' };
+export function pennRecruitment(c: PennClub, now = new Date()): Organization['recruitment'] {
+  if (c.accepting_members === false) return { title: 'Not taking new members', period: '', open: false, mode: 'closed', source: 'pennclubs' };
+  const how = c.application_required ? PENN_HOW[c.application_required] : undefined;
+  if (c.application_required === 1) return { title: 'Open to join anytime', period: '', open: true, mode: 'rolling', source: 'pennclubs' };
+  const next = (c.applications ?? []).map((a) => a.application_end_time).filter((t): t is string => !!t && new Date(t) > now).sort()[0];
+  if (next) return { title: 'Applications open', period: '', open: true, mode: 'deadline', deadline: next.slice(0, 10), ...(how ? { how } : {}), source: 'pennclubs' };
+  if (c.recruiting_cycle === 5) return { title: 'Open to join anytime', period: '', open: true, mode: 'rolling', ...(how ? { how } : {}), source: 'pennclubs' };
+  if (c.recruiting_cycle && PENN_CYCLE[c.recruiting_cycle]) return { title: `Recruits in ${PENN_CYCLE[c.recruiting_cycle]}`, period: PENN_CYCLE[c.recruiting_cycle], open: false, mode: 'cycle', ...(how ? { how } : {}), source: 'pennclubs' };
+  return undefined;
+}
 export function pennClubToOrg(c: PennClub, schoolId = 's_upenn'): Organization {
   const tags = (c.tags ?? []).map((t) => t.name);
   const text = `${tags.join(' ')} ${c.name}`;
@@ -67,6 +83,7 @@ export function pennClubToOrg(c: PennClub, schoolId = 's_upenn'): Organization {
     description: (strip(c.description) || strip(c.subtitle)).slice(0, 600),
     gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [],
     links: [{ label: 'Penn Clubs', url: `https://pennclubs.com/club/${encodeURIComponent(c.code)}` }, ...socialLinks(c)],
+    ...(pennRecruitment(c) ? { recruitment: pennRecruitment(c) } : {}),
   };
 }
 
@@ -171,5 +188,25 @@ export function cardOrgToOrg(c: CardOrg, schoolId: string, listUrl: string): Org
     type, schoolId, parent: c.category || undefined, verified: false, description: c.description.slice(0, 600),
     gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [],
     links: [{ label: 'Directory', url: listUrl }, ...c.links],
+  };
+}
+
+// ─── UCLA SOLE 등록 단체 공개 검색 (sa.ucla.edu/RCO, POST /Public/SearchOrganizations) — 1,451개, 사이트·SNS 링크 포함 ───
+export interface UclaOrg { OrganizationID: number; OrganizationName: string; OrganizationDescription?: string | null; OrganizationWebSite?: string | null; Category1Name?: string | null; Category2Name?: string | null; MemberType?: string | null; SocialMediaLink?: string | null }
+export function uclaOrgToOrg(o: UclaOrg, schoolId = 's_ucla'): Organization {
+  const name = strip(o.OrganizationName);
+  const cat = o.Category1Name ?? '';
+  const type: Organization['type'] = /student government/i.test(cat) ? 'council' : /greek life/i.test(cat) ? (/\bcouncil\b/i.test(name) ? 'council' : 'greek') : COUNCIL_RE.test(name) ? 'council' : 'club';
+  const social = [...(o.SocialMediaLink ?? '').matchAll(/href='([^']+)'/g)].map((m) => m[1]);
+  const pick = (re: RegExp) => social.find((u) => re.test(u));
+  const words = name.replace(/\([^)]*\)/g, ' ').replace(/[^A-Za-z0-9 ]+/g, ' ').split(/\s+/).filter((w) => w && !/^(of|the|at|and|for|in|ucla|bruin|bruins|club)$/i.test(w));
+  return {
+    id: `${type === 'greek' ? 'og' : 'oc'}_${schoolId.replace('s_', '')}_rco${o.OrganizationID}`,
+    name,
+    logo: { emoji: words.slice(0, 2).map((w) => w[0]).join('').toUpperCase() || '•', hue: Math.abs([...name].reduce((h, ch) => h * 31 + ch.charCodeAt(0), 7)) % 360 },
+    type, schoolId, parent: [cat, o.Category2Name].filter(Boolean).join(' · ') || undefined, verified: false,
+    description: strip(o.OrganizationDescription ?? ''),
+    gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [],
+    links: [{ label: 'Directory', url: `https://sa.ucla.edu/RCO/public/search?q=${encodeURIComponent(name)}` }, ...socialLinks({ website: o.OrganizationWebSite, instagram: pick(/instagram\.com/i), facebook: pick(/facebook\.com/i), linkedin: pick(/linkedin\.com/i), twitter: pick(/twitter\.com|x\.com/i), youtube: pick(/youtube\.com|youtu\.be/i), tiktok: pick(/tiktok\.com/i) })],
   };
 }

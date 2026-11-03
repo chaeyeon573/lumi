@@ -33,3 +33,18 @@ export function withoutEmoji<T extends { name: string; logo: { emoji: string; hu
   if (name === o.name && !emojiLogo) return o;
   return { ...o, name, logo: emojiLogo ? { ...o.logo, emoji: initialsOf(name) } : o.logo };
 }
+
+/** 모집 상태 한 줄 — "Open to join anytime" · "Apply by Nov 15" · "Recruits in Fall" · "Not taking new members" */
+export function recruitmentLabel(r: { title: string; period: string; open: boolean; mode?: string; deadline?: string; how?: string } | undefined, today = new Date().toISOString().slice(0, 10)): { text: string; open: boolean } | null {
+  if (!r) return null;
+  const how = r.how ? ` · ${r.how}` : '';
+  if (r.mode === 'deadline' && r.deadline) {
+    if (r.deadline < today) return { text: 'Applications closed', open: false };
+    const d = new Date(`${r.deadline}T12:00:00`);
+    return { text: `Apply by ${d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}${how}`, open: true };
+  }
+  if (r.mode === 'rolling') return { text: `Open to join anytime${how}`, open: true };
+  if (r.mode === 'cycle') return { text: `Recruits in ${r.period}${how}`, open: false };
+  if (r.mode === 'closed') return { text: 'Not taking new members', open: false };
+  return r.open ? { text: r.title || 'Recruiting', open: true } : null;
+}
