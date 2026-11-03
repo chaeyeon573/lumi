@@ -1706,3 +1706,8 @@
 - Codex now owns screens/content (AGENTS.md, docs/HANDOFF.md). No requests for Claude in HANDOFF this run. Recorded owner's chat answers (emoji: remove everywhere — done server-side; jobs live at no cost — /api/jobs from the deployed file).
 - New UW class reader (washington.edu/students/timeschd/pub/<AUT2026>/<dept>.html, fixed-width text; QZ/LB sections left out; times without AM/PM read UW's way: 8-11 morning, 12 noon, 1-7 afternoon, trailing P = evening). Test with CSE 122/143/599.
 - Spot check clubs: NYU SPS Hospitality, Notre Dame Dance Company, UT ClockTower Cultural Productions, Florida 3D Printing Club, BC Sports Analytics Club — links match Engage (BC source lists the Instagram without https).
+
+## 2026-11-03 07:33 run
+- No Codex commits or HANDOFF requests yet.
+- New Caltech class reader (schedules.caltech.edu/FA2026-27.html, a report export: read text cells in order; 24-hour times; variable "+" and "1.5-0-1.5" units; times split over two cells). 438 Fall sections; live re-check 6/6; Winter page not published (404).
+- Spot check clubs (websites): Yale Mixed Company OK; Yale Magevet and Duke SHPE (national shpe.org) behind bot checks / national site; Columbia "Group Conduct" (Admin Group) and JHU "Carey Business School" (Group Management) were offices shown as clubs → office rule extended ("group management", names with conduct/accountability or ending in "School"); 10 more marked (Cornell Law School, JHU School of Nursing, UW Community Standards & Student Conduct…). Test added.

@@ -1,0 +1,24 @@
+{
+ "checkedAt": "2026-11-03T07:35:19.847Z",
+ "status": "applied",
+ "stored": false,
+ "source": "timetable:caltech",
+ "sampled": 438,
+ "withTimes": 438,
+ "terms": [
+  "Fall 2026"
+ ],
+ "sample": [
+  "Ae/APh/CE/ME 101A · Fluid Mechanics (Sec 01) · Fall 2026 · M 10:00-10:55 W 10:00-10:55 F 10:00-10:55",
+  "Ch/ChE 091 · Scientific Writing (Sec 01) · Fall 2026 · M 14:00-15:55",
+  "CMS/CS/IDS 150A · Probability and Algorithms (Sec 01) · Fall 2026 · T 10:30-11:55 R 10:30-11:55",
+  "Ge 145 · Isotope-Ratio Mass Spectrometry · Fall 2026 · M 11:00-11:55 W 11:00-11:55 F 11:00-11:55",
+  "Ma 002 · Differential Equations (Sec 04) · Fall 2026 · M 10:00-10:55 W 10:00-10:55 F 10:00-10:55 R 09:00-09:55",
+  "Ph 001A · Classical Mechanics and Electromagnetism (Sec 02) · Fall 2026 · W 11:00-11:55 F 11:00-11:55 M 15:00-15:55 R 15:00-15:55"
+ ],
+ "spotCheck": {
+  "matched": 6,
+  "mismatched": [],
+  "unavailable": 0
+ }
+}
