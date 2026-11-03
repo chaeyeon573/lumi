@@ -1716,3 +1716,8 @@
 - No Codex commits or HANDOFF requests yet.
 - New CMU class reader (enr-apps.as.cmu.edu/open/SOC: one POST per term with DEPT=All, Pittsburgh → ~3,200 courses; "Lec" sections are class times, lettered recitations left out when a course has lectures; extra meeting rows kept). 6,953 sections (Fall 2026 + Spring 2027); live re-check 6/6.
 - Spot check clubs: UVA LumiLink, Purdue Beta Psi Omega, Vanderbilt Neuroscience Majors Club match Engage; Wisconsin ALT Magazine website matches; Georgia Tech T-Book has the Ramblin' Reck Club Instagram/Facebook found on reckclub.org (parent club's official accounts — acceptable).
+
+## 2026-11-03 09:33 run
+- No Codex commits or HANDOFF requests yet.
+- New WashU class reader (registrar.washu.edu class-schedule-search: filters are a POST form, 149 courses per page via `paged`; only sections of the asked term — "Fall Intersession" left out). Spring 2027 not listed yet.
+- Spot check clubs: Michigan SCOPE, Notre Dame Farley Hall Council match Engage; Columbia Student Union for Sustainable Development and Stanford Student Space Initiative websites match; UCLA Undergraduate Economics Society Instagram matches RCO (tracking tail stripped on display).
