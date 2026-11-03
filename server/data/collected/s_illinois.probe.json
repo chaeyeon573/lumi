@@ -1,0 +1,20 @@
+{
+ "checkedAt": "2026-11-03T12:38:09.759Z",
+ "status": "applied",
+ "stored": false,
+ "source": "catalog:https://catalog.illinois.edu/",
+ "sampled": 296,
+ "withTimes": 0,
+ "terms": [
+  "catalog"
+ ],
+ "sample": [
+  "CS 100 · Computer Science Orientation   credit: · catalog",
+  "CS 423 · Operating Systems Design   credit: 3 or · catalog",
+  "CS 493 · Senior Project II, ACP   credit: · catalog",
+  "CS 576 · Topics in Automated Deduction   credit: 2 to · catalog",
+  "CSE 543 · Topics in Image Processing   credit: · catalog",
+  "GGIS 384 · Population Geography   credit: · catalog"
+ ],
+ "spotCheck": "no lookup (catalog codes/titles only)"
+}
