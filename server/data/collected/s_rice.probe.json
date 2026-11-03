@@ -1,0 +1,24 @@
+{
+ "checkedAt": "2026-11-03T05:38:37.971Z",
+ "status": "applied",
+ "stored": false,
+ "source": "timetable:rice",
+ "sampled": 2097,
+ "withTimes": 2097,
+ "terms": [
+  "Fall 2026"
+ ],
+ "sample": [
+  "AAAS 115 · Black Gods of the Caribbean · Fall 2026 · W 16:00-18:30",
+  "CHBE 470 · Process Dynamics & Control · Fall 2026 · M 10:00-10:50 W 10:00-10:50 F 10:00-10:50",
+  "EEPS 603 · Seminar: Department Research · Fall 2026 · F 12:00-12:50",
+  "HUMA 201 · Public Speaking (Sec 001) · Fall 2026 · T 10:50-12:05 R 10:50-12:05",
+  "MGMT 667 · Re Development: Feasibility (Sec 001) · Fall 2026 · M 09:45-11:15 W 09:45-11:15",
+  "PSYC 485 · Ug Supervised Research (Sec 019) · Fall 2026 · T 07:00-07:50"
+ ],
+ "spotCheck": {
+  "matched": 6,
+  "mismatched": [],
+  "unavailable": 0
+ }
+}
