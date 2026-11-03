@@ -1,0 +1,5323 @@
+{
+ "collectedAt": "2026-11-03T13:41:45.109Z",
+ "sources": [
+  "campusgroups https://lionhub.columbia.edu 223"
+ ],
+ "events": [
+  {
+   "description": "Join the Columbia Political Union and campus partners for a watch party as election results come in from across the country. Follow key races, discuss the results in real time, and watch live coverage with fellow students throughout the evening. Additional details and co-sponsors",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375098",
+   "type": "event",
+   "title": "2026 Midterm Election Watch Party",
+   "host": "35571 Columbia Political Union (CPU)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-03T22:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002569/rsvp?id=375098",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly rehearsal for our performing members.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375930",
+   "type": "event",
+   "title": "CU Taiko Performance Practice",
+   "host": "35689 CU Taiko",
+   "schoolId": "s_columbia",
+   "date": "2026-11-03T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003038/rsvp?id=375930",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376540",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-03T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376540",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly CUVotes GBM where we have speakers, movie screenings, group discussions, and play games! Snacks always provided.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377070",
+   "type": "event",
+   "title": "ColumbiaVotes GBM",
+   "host": "35668 ColumbiaVotes",
+   "schoolId": "s_columbia",
+   "date": "2026-11-04T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Lerner 477, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003196/rsvp?id=377070",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly meeting for our adaptive nerve stimulator project, where our hardware engineering, software engineering, clinical, business, and science communication teams will come together to develop the device.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377743",
+   "type": "event",
+   "title": "Nerve Stimulator Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-04T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Mudd 233, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=377743",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The LionHealth business team meets weekly here to work on grant submissions, discuss business pitches, and work on intellectual property related research for our medical devices.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378877",
+   "type": "event",
+   "title": "Business Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-04T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=378877",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly General Body Meeting for the Columbia Policy Institute. With a new topic every week, we meet to learn about and discuss pressing policy issues of today. These meetings are a space to debate topics in policy, get involved in the club, and meet your peers!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375640",
+   "type": "event",
+   "title": "CPI General Body Meeting",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-04T02:00:00.000Z",
+   "startTime": "21:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=375640",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us in Lerner 515 on November 4 at 5:45PM for a chance to see MJ: The Michael Jackson Musical! Registration on LionHub is not required!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378950",
+   "type": "event",
+   "title": "Urban New York: MJ: The Michael Jackson Musical on Broadway",
+   "host": "35444 Urban New York",
+   "schoolId": "s_columbia",
+   "date": "2026-11-04T22:45:00.000Z",
+   "startTime": "17:45",
+   "sourceUrl": "https://lionhub.columbia.edu/urbannewyork/rsvp?id=378950",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376541",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-04T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376541",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Our Liga G-body meetings occur on Wednesday, traditionally from 8-10pm. We would like to move the start time an hour earlier, starting at 7pm instead so we can accommodate our Liga members who commute to school. During our g-body meetings, we have cultural lessons, do different i",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375913",
+   "type": "event",
+   "title": "Liga Filipina G-Body Meetings",
+   "host": "35769 Liga Filipina",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002596/rsvp?id=375913",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Education Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377826",
+   "type": "event",
+   "title": "CPI Education Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377826",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General body meetings will consist of presentations about security topics, discussions, and general activities in the furtherance of improving attendees&apos; understanding of national security and foreign policy.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376106",
+   "type": "event",
+   "title": "The Alexander Hamilton Society at Columbia University - General Body Meeting",
+   "host": "35458 Alexander Hamilton Society at Columbia University",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002882/rsvp?id=376106",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The weekly meeting for Columbia University Science Fiction Society! Each meeting is different. Some of our activities are movies, debates, TTRPGs, short story readings, and creative writing. Sometimes we even have snacks! Hope to see you there!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376246",
+   "type": "event",
+   "title": "CUSFS Weekly Meeting",
+   "host": "35647 Columbia University Science Fiction Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002549/rsvp?id=376246",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Research Team will be meeting to figure out the next project CU-EWB will take on!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377089",
+   "type": "event",
+   "title": "Research Team Meeting",
+   "host": "35713 Engineers Without Borders",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002395/rsvp?id=377089",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Lion Dance practice on Wednesdays from 8-10 PM.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377400",
+   "type": "event",
+   "title": "CULD Wednesday Practice",
+   "host": "35638 Columbia University Lion Dance",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002489/rsvp?id=377400",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Econ Dev Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377804",
+   "type": "event",
+   "title": "CPI Econ Dev Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377804",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "weekly meeting for KISAC Board members",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378138",
+   "type": "event",
+   "title": "Weekly Meeting",
+   "host": "35761 Korean International Society for Academics and Career (KISAC)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003059/rsvp?id=378138",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "These meetings are a space for Indigenous students and anyone interested in learning, connecting, and building community. We’ll share updates, discuss upcoming events and initiatives, and create space for conversations about Indigenous cultures, histories, sovereignty, and the is",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379344",
+   "type": "event",
+   "title": "Native American Council General Body Meeting",
+   "host": "35943 Intercultural House",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/IRC/rsvp?id=379344",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly General Body Meeting for the Columbia University Democrats. We meet to discuss -- and learn about -- different political issues, policy proposals, and current events. Additionally, this is an important component of the social aspect and the community building f",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375521",
+   "type": "event",
+   "title": "Columbia University Democrats - Weekly GBM",
+   "host": "35623 Columbia University College Democrats",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T02:00:00.000Z",
+   "startTime": "21:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002534/rsvp?id=375521",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come join Chicane Caucus as we wind down from a stressful midterm season! We&apos;ll have games, hot chocolate, and a lock in sesh!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379765",
+   "type": "event",
+   "title": "Study & Rest with Caucus",
+   "host": "35500 ChicanX Caucus",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T02:00:00.000Z",
+   "startTime": "21:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002545/rsvp?id=379765",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly meeting, review and plan events.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376434",
+   "type": "event",
+   "title": "TASA G-Board Meeting",
+   "host": "35863 Taiwanese American Students Association",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T03:00:00.000Z",
+   "startTime": "22:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002597/rsvp?id=376434",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Tired of locking in? Want to debrief your fall break? Join Columbia KSA for a study/snack break featuring our favorite convenience store-themed foods! Anyone and everyone is welcome.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379872",
+   "type": "event",
+   "title": "KSA - \"Convenient Cramming\" Study/Snack Break",
+   "host": "35762 Korean Students Association",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T22:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002610/rsvp?id=379872",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Stop by Lerner 515 on November 5 at 5:45PM for a chance to win standby tickets to see Maybe Happy Ending! Registration on LionHub is not required!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378951",
+   "type": "event",
+   "title": "Urban New York: Maybe Happy Ending on Broadway",
+   "host": "35444 Urban New York",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T22:45:00.000Z",
+   "startTime": "17:45",
+   "sourceUrl": "https://lionhub.columbia.edu/urbannewyork/rsvp?id=378951",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376542",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376542",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly meeting for our speculum project, where our hardware engineering, software engineering, clinical, business, and science communication teams will come together to develop the device.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377756",
+   "type": "event",
+   "title": "Speculum Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=377756",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "FLI@Columbia will be hosting our biannual Be the First Dinner on Thursday, November 5th, 2026 from 6-8pm in Lerner 555. The dinner brings together first-generation and/or low income (FLI) students with faculty, staff, and alumni who were FLI themselves. Please complete the linked",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379776",
+   "type": "event",
+   "title": "FLI@Columbia Be The First Dinner",
+   "host": "35901 Multicultural Affairs",
+   "schoolId": "s_columbia",
+   "date": "2026-11-05T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/multiculturalaffairs/rsvp?id=379776",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Mentors and mentees studying civil engineering will be able to meet and discuss topics including but not limited to, classes, internships, and research opportunities.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379007",
+   "type": "event",
+   "title": "ASCE Mentorship Event",
+   "host": "35472 American Society of Civil Engineers",
+   "schoolId": "s_columbia",
+   "date": "2026-11-06T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002583/rsvp?id=379007",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General body meeting for ColorStack at Columbia University, a community supporting Black and Latino Computer Science students in building rewarding technical careers. Members connect, get chapter updates and opportunities, and support each other’s professional and technical growt",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379015",
+   "type": "event",
+   "title": "Colorstack@CU General Body Meeting",
+   "host": "35514 ColorStack at Columbia University",
+   "schoolId": "s_columbia",
+   "date": "2026-11-06T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003391/rsvp?id=379015",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Semester-long interview prep series that provides resources & guidance to you help ace your interviews! Meets once a week in person & covers NEW content on data structures.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379239",
+   "type": "event",
+   "title": "Leet&apos;s Get Coding",
+   "host": "35473 Application Development Initiative",
+   "schoolId": "s_columbia",
+   "date": "2026-11-06T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002379/rsvp?id=379239",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Meeting time for the Aerodynamics subteam.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379967",
+   "type": "event",
+   "title": "CUFR Aerodynamics Work Session",
+   "host": "35630 Columbia University Formula Racing",
+   "schoolId": "s_columbia",
+   "date": "2026-11-06T20:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002320/rsvp?id=379967",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Stop by the CCE Open House to discover how CCE can support you throughout your career development as a FLI student! During the Open House, you can: • Get a free professional headshot for your LinkedIn profile and other career materials • Learn about CCE & FLI@Columbia&apos;s reso",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379996",
+   "type": "event",
+   "title": "CCE x FLI Open House",
+   "host": "35901 Multicultural Affairs",
+   "schoolId": "s_columbia",
+   "date": "2026-11-06T20:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://lionhub.columbia.edu/multiculturalaffairs/rsvp?id=379996",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Human Rights Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377848",
+   "type": "event",
+   "title": "CPI Human Rights Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-06T21:00:00.000Z",
+   "startTime": "16:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377848",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Foreign Policy Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377859",
+   "type": "event",
+   "title": "CPI Foreign Policy Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-06T21:00:00.000Z",
+   "startTime": "16:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377859",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come join Rhythm Game Club at our weekly meetings! A wide range of games like a DDR, SDVX, Chunithm, Taiko, and others are available. Feel free to come by with your own devices to play other rhythm games like Project Sekai too.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377270",
+   "type": "event",
+   "title": "CUGG - Rhythm Games Meeting",
+   "host": "35631 Columbia University Gaming Group",
+   "schoolId": "s_columbia",
+   "date": "2026-11-06T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003025/rsvp?id=377270",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "We&apos;re excited to announce our 2nd annual Noche de Jaripeo! Join us for a showcase centered on Latine culture, featuring student performances and artistry, plus an open dance floor! We hope to see you all there!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378400",
+   "type": "event",
+   "title": "Noche de Jaripeo",
+   "host": "35924 Ballet Folklorico Cielito Azul",
+   "schoolId": "s_columbia",
+   "date": "2026-11-07T00:00:00.000Z",
+   "startTime": "19:00",
+   "benefit": "Free food",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003533/rsvp?id=378400",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us in celebrating Diwali, the Hindu Festival of Lights, symbolizing the triumph of light over darkness and good over evil! Come together for an evening filled with delicious dinner, mango lassi, music, dance, and festive celebrations as we share in the joy and spirit of Diwa",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379995",
+   "type": "event",
+   "title": "HSO Diwali",
+   "host": "35741 Hindu Students Organization",
+   "schoolId": "s_columbia",
+   "date": "2026-11-07T00:30:00.000Z",
+   "startTime": "19:30",
+   "benefit": "Free food",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002598/rsvp?id=379995",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join 8+ improv teams from around the northeast for two nights of Improv!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375589",
+   "type": "event",
+   "title": "Third Wheel Spare Tires Improv Festival",
+   "host": "35878 Third Wheel Improv",
+   "schoolId": "s_columbia",
+   "date": "2026-11-07T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003169/rsvp?id=375589",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come play board games or all sizes and complexities!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375734",
+   "type": "event",
+   "title": "Weekly Board Game Social",
+   "host": "35725 Games Club",
+   "schoolId": "s_columbia",
+   "date": "2026-11-07T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Lerner 510, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG002756/rsvp?id=375734",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "We sing hat we have learnt up to that point of the semester.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379382",
+   "type": "event",
+   "title": "#|SHARP MidSem Concert",
+   "host": "35833 SHARP",
+   "schoolId": "s_columbia",
+   "date": "2026-11-07T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Wang Pavilion, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG002852/rsvp?id=379382",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Hi Columbia Gamers! CUID affiliates will get the chance to play head to head with each other on PS5 in the Wallach Esports Lounge. Matches will be 1 v 1 in Rush Mode Two matches required for students to qualify for the national Leaderboard and no limit to how many matches you can",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379144",
+   "type": "event",
+   "title": "FC27&apos; Wings Cup Session 2",
+   "host": "35631 Columbia University Gaming Group",
+   "schoolId": "s_columbia",
+   "date": "2026-11-07T20:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003025/rsvp?id=379144",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376543",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-07T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376543",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join 8+ improv teams from around the northeast for two nights of Improv!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375592",
+   "type": "event",
+   "title": "Third Wheel Spare Tires Improv Festival",
+   "host": "35878 Third Wheel Improv",
+   "schoolId": "s_columbia",
+   "date": "2026-11-08T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003169/rsvp?id=375592",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Organized annually, the CU Taiko Festival is a large musical performance event designed to celebrate traditional Japanese drumming, fulfilling our mission of sharing the art of Taiko with the Columbia and broader New York City community. As well as showcasing our own playing, we ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375902",
+   "type": "event",
+   "title": "Columbia University Taiko Festival",
+   "host": "35689 CU Taiko",
+   "schoolId": "s_columbia",
+   "date": "2026-11-08T14:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Roone Alredge Auditorium, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG003038/rsvp?id=375902",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Interested in breaking into finance or sharpening your technical skills? Join us for a two-day Financial Modeling & Valuation Seminar at NOCO 501, taught by Ashish Kohli, a finance professional with over 20 years of transaction experience. Students will get hands-on experience wi",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378399",
+   "type": "event",
+   "title": "Ashish Kohli",
+   "host": "35542 Columbia Economics Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-08T14:00:00.000Z",
+   "startTime": "09:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002606/rsvp?id=378399",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Fall semester tournament. Open to anyone with a CUID.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376283",
+   "type": "event",
+   "title": "Columbia Poker Club Fall Semester Tournament",
+   "host": "35569 Columbia Poker Club",
+   "schoolId": "s_columbia",
+   "date": "2026-11-08T17:00:00.000Z",
+   "startTime": "12:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003352/rsvp?id=376283",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Rehearsals for CMTS Dogfight",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377034",
+   "type": "event",
+   "title": "CMTS Dogfight",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-08T17:00:00.000Z",
+   "startTime": "12:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=377034",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is Modulus&apos;s fourth hackathon! The topic/ question are yet to be decided.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376569",
+   "type": "event",
+   "title": "Modulus Hackathon",
+   "host": "35779 Modulus Research Education Club",
+   "schoolId": "s_columbia",
+   "date": "2026-11-08T18:00:00.000Z",
+   "startTime": "13:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003404/rsvp?id=376569",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Technology Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378650",
+   "type": "event",
+   "title": "CPI Technology Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-08T18:00:00.000Z",
+   "startTime": "13:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=378650",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Work Session for Project Engineers only.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379977",
+   "type": "event",
+   "title": "CUFR Work Day",
+   "host": "35630 Columbia University Formula Racing",
+   "schoolId": "s_columbia",
+   "date": "2026-11-08T18:00:00.000Z",
+   "startTime": "13:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002320/rsvp?id=379977",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Lion dance practice on Sundays from 3-5 PM",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377423",
+   "type": "event",
+   "title": "CULD Sunday Practice",
+   "host": "35638 Columbia University Lion Dance",
+   "schoolId": "s_columbia",
+   "date": "2026-11-08T20:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002489/rsvp?id=377423",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Kingsmen are putting on our Fresh&apos;smen K&apos;oncert, which we do every semester we have recruited new members. This concert is intended to show off our new members and their vocal abilities to friends, family members, and the Columbia community.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378463",
+   "type": "event",
+   "title": "Fresh&apos;smen K&apos;oncert",
+   "host": "35760 Kingsmen",
+   "schoolId": "s_columbia",
+   "date": "2026-11-08T20:15:00.000Z",
+   "startTime": "15:15",
+   "place": {
+    "name": "Lerner Room 555, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG002623/rsvp?id=378463",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Grants and Fundraising Team will be working on raising enough funds to support our projects!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377595",
+   "type": "event",
+   "title": "Grants and Fundraising Team Meeting",
+   "host": "35713 Engineers Without Borders",
+   "schoolId": "s_columbia",
+   "date": "2026-11-08T20:30:00.000Z",
+   "startTime": "15:30",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002395/rsvp?id=377595",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly meeting for our fluid balance device project, where our hardware engineering, software engineering, clinical, business, and science communication teams will come together to develop the device.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377768",
+   "type": "event",
+   "title": "Fluid Balance Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-08T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Mudd 327, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=377768",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "We meet at 5 pm every Sunday at the Sundial. Then we make our way to the Postcrypt if the day is gloomy, or the Law Bridge if it&apos;s nice outside. We have fellowship with our Chaplain, Father Zosimas.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376739",
+   "type": "event",
+   "title": "OCF Weekly Meeting",
+   "host": "35796 Orthodox Christian Fellowship (OCF)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-08T22:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002625/rsvp?id=376739",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join At Your Service at its weekly meeting to discuss working with people with chronic diseases including Huntington&apos;s disease. Meetings feature expert panelists, narrative medicine sessions, and other reflection sessions.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378452",
+   "type": "event",
+   "title": "AYS Weekly Meeting",
+   "host": "35523 Columbia At Your Service",
+   "schoolId": "s_columbia",
+   "date": "2026-11-08T22:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002959/rsvp?id=378452",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The CUP Mainstage show, which is a full performance with lights, sound, set, actors, crew, director, etc, that performs Friday night, Saturday afternoon, and Saturday night, and needs a week of residency in the blackbox to do their tech week.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376080",
+   "type": "event",
+   "title": "CUP Mainstage",
+   "host": "35643 Columbia University Players",
+   "schoolId": "s_columbia",
+   "date": "2026-11-08T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002425/rsvp?id=376080",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376544",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-09T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376544",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Democratic Access Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377870",
+   "type": "event",
+   "title": "CPI Democratic Access Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-09T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377870",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CU Sign General Body Meetings are held every other Monday and alternate between ASL lesson meetings and community/social events. Lesson meetings introduce ASL vocabulary, conversation, and signing practice, while event meetings provide opportunities to connect, practice, and enga",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377675",
+   "type": "event",
+   "title": "CU Sign General Body Meetings Pending approval",
+   "host": "35840 Sign Language Club",
+   "schoolId": "s_columbia",
+   "date": "2026-11-10T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Lerner 568, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG002340/rsvp?id=377675",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Gadfly is Columbia&apos;s premier undergraduate philosophy-oriented print and online magazine. Each semester, we publish original essays, artwork, and interviews. We hold weekly discussions on select topics curated by our discussion coordinator, with snacks and light refreshm",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377668",
+   "type": "event",
+   "title": "Gadfly Weekly Discussion",
+   "host": "35724 Gadfly",
+   "schoolId": "s_columbia",
+   "date": "2026-11-10T01:00:00.000Z",
+   "startTime": "20:00",
+   "benefit": "Free food",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002314/rsvp?id=377668",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "ASA will be hosting a Political Roundtable in Uris 330",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379277",
+   "type": "event",
+   "title": "ASA Political Roundtable",
+   "host": "35456 African Students Association",
+   "schoolId": "s_columbia",
+   "date": "2026-11-10T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002384/rsvp?id=379277",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Biweekly general body meeting for the Modulus club.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378966",
+   "type": "event",
+   "title": "Modulus GBM",
+   "host": "35779 Modulus Research Education Club",
+   "schoolId": "s_columbia",
+   "date": "2026-11-10T01:15:00.000Z",
+   "startTime": "20:15",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003404/rsvp?id=378966",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us in Lerner 515 on November 10 at 5:45PM for a chance to win a spot in Fold, Fill & Feast: Asian Dumpling Making Class! Registration on LionHub is not required!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378953",
+   "type": "event",
+   "title": "Urban New York: Fold, Fill & Feast, Asian Dumpling Making Class",
+   "host": "35444 Urban New York",
+   "schoolId": "s_columbia",
+   "date": "2026-11-10T22:45:00.000Z",
+   "startTime": "17:45",
+   "sourceUrl": "https://lionhub.columbia.edu/urbannewyork/rsvp?id=378953",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly rehearsal for our performing members.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375931",
+   "type": "event",
+   "title": "CU Taiko Performance Practice",
+   "host": "35689 CU Taiko",
+   "schoolId": "s_columbia",
+   "date": "2026-11-10T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003038/rsvp?id=375931",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376545",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-10T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376545",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join the Columbia Political Union for one of our proudest campus traditions: the annual Columbia vs. West Point Debate. Every year, CPU hosts cadets from the United States Military Academy at West Point for a high-stakes, sharp-witted debate. Four Columbia speakers will go head-t",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375904",
+   "type": "event",
+   "title": "CPU X West Point Debate",
+   "host": "35571 Columbia Political Union (CPU)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-11T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002569/rsvp?id=375904",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The career panel in collaboration with SecondAct will feature speakers from a range of fields, such as medicine, law, finance and more, who all began their careers as ballet dancers. The panel will focus on how to leverage one&apos;s experience in ballet to find a secondary caree",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377122",
+   "type": "event",
+   "title": "CBC X SecondAct Panel",
+   "host": "35524 Columbia Ballet Collaborative",
+   "schoolId": "s_columbia",
+   "date": "2026-11-11T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "TBD",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002445/rsvp?id=377122",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly CUVotes GBM where we have speakers, movie screenings, group discussions, and play games! Snacks always provided.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377071",
+   "type": "event",
+   "title": "ColumbiaVotes GBM",
+   "host": "35668 ColumbiaVotes",
+   "schoolId": "s_columbia",
+   "date": "2026-11-11T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Lerner 477, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003196/rsvp?id=377071",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly meeting for our adaptive nerve stimulator project, where our hardware engineering, software engineering, clinical, business, and science communication teams will come together to develop the device.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377744",
+   "type": "event",
+   "title": "Nerve Stimulator Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-11T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Mudd 233, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=377744",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The LionHealth business team meets weekly here to work on grant submissions, discuss business pitches, and work on intellectual property related research for our medical devices.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378878",
+   "type": "event",
+   "title": "Business Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-11T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=378878",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Plot Twist is a moderated panel on careers that changed course (or followed the lawyer, engineer, doctor path). Speakers share how they got to where they are, how culture and identity shaped the path, and how they handled the family conversation, including what they tell their fi",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379541",
+   "type": "event",
+   "title": "ALPFA x HSA: Plot Twist",
+   "host": "35476 Association of Latino Professionals for America Columbia Chapter",
+   "schoolId": "s_columbia",
+   "date": "2026-11-11T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003390/rsvp?id=379541",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Semester-long interview prep series that provides resources & guidance to you help ace your interviews! Meets once a week in person & covers NEW content on data structures.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379235",
+   "type": "event",
+   "title": "Leet&apos;s Get Coding",
+   "host": "35473 Application Development Initiative",
+   "schoolId": "s_columbia",
+   "date": "2026-11-11T01:15:00.000Z",
+   "startTime": "20:15",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002379/rsvp?id=379235",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly General Body Meeting for the Columbia Policy Institute. With a new topic every week, we meet to learn about and discuss pressing policy issues of today. These meetings are a space to debate topics in policy, get involved in the club, and meet your peers!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375641",
+   "type": "event",
+   "title": "CPI General Body Meeting",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-11T02:00:00.000Z",
+   "startTime": "21:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=375641",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376546",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-11T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376546",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Our Liga G-body meetings occur on Wednesday, traditionally from 8-10pm. We would like to move the start time an hour earlier, starting at 7pm instead so we can accommodate our Liga members who commute to school. During our g-body meetings, we have cultural lessons, do different i",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375914",
+   "type": "event",
+   "title": "Liga Filipina G-Body Meetings",
+   "host": "35769 Liga Filipina",
+   "schoolId": "s_columbia",
+   "date": "2026-11-12T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002596/rsvp?id=375914",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Education Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377827",
+   "type": "event",
+   "title": "CPI Education Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-12T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377827",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Get Advice from upperclassmen about course registration!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379986",
+   "type": "event",
+   "title": "ASCE Course Registration Event",
+   "host": "35472 American Society of Civil Engineers",
+   "schoolId": "s_columbia",
+   "date": "2026-11-12T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002583/rsvp?id=379986",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General body meetings will consist of presentations about security topics, discussions, and general activities in the furtherance of improving attendees&apos; understanding of national security and foreign policy.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376107",
+   "type": "event",
+   "title": "The Alexander Hamilton Society at Columbia University - General Body Meeting",
+   "host": "35458 Alexander Hamilton Society at Columbia University",
+   "schoolId": "s_columbia",
+   "date": "2026-11-12T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002882/rsvp?id=376107",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The weekly meeting for Columbia University Science Fiction Society! Each meeting is different. Some of our activities are movies, debates, TTRPGs, short story readings, and creative writing. Sometimes we even have snacks! Hope to see you there!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376247",
+   "type": "event",
+   "title": "CUSFS Weekly Meeting",
+   "host": "35647 Columbia University Science Fiction Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-12T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002549/rsvp?id=376247",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Research Team will be meeting to figure out the next project CU-EWB will take on!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377090",
+   "type": "event",
+   "title": "Research Team Meeting",
+   "host": "35713 Engineers Without Borders",
+   "schoolId": "s_columbia",
+   "date": "2026-11-12T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002395/rsvp?id=377090",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Lion Dance practice on Wednesdays from 8-10 PM.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377401",
+   "type": "event",
+   "title": "CULD Wednesday Practice",
+   "host": "35638 Columbia University Lion Dance",
+   "schoolId": "s_columbia",
+   "date": "2026-11-12T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002489/rsvp?id=377401",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Econ Dev Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377805",
+   "type": "event",
+   "title": "CPI Econ Dev Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-12T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377805",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "weekly meeting for KISAC Board members",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378139",
+   "type": "event",
+   "title": "Weekly Meeting",
+   "host": "35761 Korean International Society for Academics and Career (KISAC)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-12T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003059/rsvp?id=378139",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "These meetings are a space for Indigenous students and anyone interested in learning, connecting, and building community. We’ll share updates, discuss upcoming events and initiatives, and create space for conversations about Indigenous cultures, histories, sovereignty, and the is",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379345",
+   "type": "event",
+   "title": "Native American Council General Body Meeting",
+   "host": "35943 Intercultural House",
+   "schoolId": "s_columbia",
+   "date": "2026-11-12T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/IRC/rsvp?id=379345",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly General Body Meeting for the Columbia University Democrats. We meet to discuss -- and learn about -- different political issues, policy proposals, and current events. Additionally, this is an important component of the social aspect and the community building f",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375522",
+   "type": "event",
+   "title": "Columbia University Democrats - Weekly GBM",
+   "host": "35623 Columbia University College Democrats",
+   "schoolId": "s_columbia",
+   "date": "2026-11-12T02:00:00.000Z",
+   "startTime": "21:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002534/rsvp?id=375522",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly meeting, review and plan events.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376435",
+   "type": "event",
+   "title": "TASA G-Board Meeting",
+   "host": "35863 Taiwanese American Students Association",
+   "schoolId": "s_columbia",
+   "date": "2026-11-12T03:00:00.000Z",
+   "startTime": "22:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002597/rsvp?id=376435",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376547",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-12T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376547",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly meeting for our speculum project, where our hardware engineering, software engineering, clinical, business, and science communication teams will come together to develop the device.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377757",
+   "type": "event",
+   "title": "Speculum Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-12T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=377757",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A stand-up comedy show to benefit the charity Comedy vs. Cancer. Will include 7 performances---3 from Columbia students, 3 from NYU students, and one from a professional comedian. Additionally, the show will include a testimonial from a cancer survivor on the value of continued c",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378052",
+   "type": "event",
+   "title": "College vs. Cancer Presents Columbia vs. NYU",
+   "host": "35774 Memento Mori",
+   "schoolId": "s_columbia",
+   "date": "2026-11-12T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Alfred Lerner Hall - Lerner Roone Arledge Cinema, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG003242/rsvp?id=378052",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come to Lerner 515 on November 12 at 6:45PM for a chance to win standby tickets to see The Fantasticks! Registration on LionHub is not required!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378952",
+   "type": "event",
+   "title": "Urban New York: The Fantasticks on Broadway",
+   "host": "35444 Urban New York",
+   "schoolId": "s_columbia",
+   "date": "2026-11-12T23:45:00.000Z",
+   "startTime": "18:45",
+   "sourceUrl": "https://lionhub.columbia.edu/urbannewyork/rsvp?id=378952",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General body meeting for ColorStack at Columbia University, a community supporting Black and Latino Computer Science students in building rewarding technical careers. Members connect, get chapter updates and opportunities, and support each other’s professional and technical growt",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379016",
+   "type": "event",
+   "title": "Colorstack@CU General Body Meeting",
+   "host": "35514 ColorStack at Columbia University",
+   "schoolId": "s_columbia",
+   "date": "2026-11-13T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003391/rsvp?id=379016",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Open to everyone, beginner-friendly poker freeplay.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376475",
+   "type": "event",
+   "title": "Columbia Poker Weekly Freeplay",
+   "host": "35569 Columbia Poker Club",
+   "schoolId": "s_columbia",
+   "date": "2026-11-13T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003352/rsvp?id=376475",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Alfred Joyce Kilmer Memorial Bad Poetry Contest has been hosted annually by the Philolexian Society, a literary and debating group at Columbia University, since 1986, drawing crowds of students and participants vying for the title of best of the worst. Columbia faculty member",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378430",
+   "type": "event",
+   "title": "Bad Poetry Night",
+   "host": "35802 Philolexian Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-13T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002595/rsvp?id=378430",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Meeting time for the Aerodynamics subteam.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379968",
+   "type": "event",
+   "title": "CUFR Aerodynamics Work Session",
+   "host": "35630 Columbia University Formula Racing",
+   "schoolId": "s_columbia",
+   "date": "2026-11-13T20:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002320/rsvp?id=379968",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Human Rights Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377849",
+   "type": "event",
+   "title": "CPI Human Rights Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-13T21:00:00.000Z",
+   "startTime": "16:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377849",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Foreign Policy Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377860",
+   "type": "event",
+   "title": "CPI Foreign Policy Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-13T21:00:00.000Z",
+   "startTime": "16:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377860",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Welcome to KSA&apos;s Pojangmacha! Pojangmacha is based on the tented street stalls found in Korea that sell a variety of popular street foods. Through this event, KSA mirrors Korea’s own food, music, and cultural nightlife that blends food with a dynamic social scene! Students w",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378179",
+   "type": "event",
+   "title": "KSA - Pojangmacha",
+   "host": "35762 Korean Students Association",
+   "schoolId": "s_columbia",
+   "date": "2026-11-13T22:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002610/rsvp?id=378179",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come join Rhythm Game Club at our weekly meetings! A wide range of games like a DDR, SDVX, Chunithm, Taiko, and others are available. Feel free to come by with your own devices to play other rhythm games like Project Sekai too.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377271",
+   "type": "event",
+   "title": "CUGG - Rhythm Games Meeting",
+   "host": "35631 Columbia University Gaming Group",
+   "schoolId": "s_columbia",
+   "date": "2026-11-13T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003025/rsvp?id=377271",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "LionHealth is hosting a career panel event surrounding the life sciences with three panelists speaking on their experiences in their field and brief networking afterwards with the students.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379388",
+   "type": "event",
+   "title": "LionHealth Career Panel Event",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-13T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "URI 330, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=379388",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come play board games or all sizes and complexities!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375735",
+   "type": "event",
+   "title": "Weekly Board Game Social",
+   "host": "35725 Games Club",
+   "schoolId": "s_columbia",
+   "date": "2026-11-14T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Lerner 510, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG002756/rsvp?id=375735",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Mr. Philippines 2026 is Liga Filipina&apos;s annual cultural pageant that amasses over 800+ attendees. Our audience includes our representatives and their entourage (~102 people) and our audience of 800+ people, which is made up of Columbia affiliates and students from other coll",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377683",
+   "type": "event",
+   "title": "Mr. Philippines 2026",
+   "host": "35769 Liga Filipina",
+   "schoolId": "s_columbia",
+   "date": "2026-11-14T14:00:00.000Z",
+   "startTime": "09:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002596/rsvp?id=377683",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376548",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-14T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376548",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "ASA will be hosting the annual African Thanksgiving, this year we will be going even bigger and better by adding in a pageant.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379281",
+   "type": "event",
+   "title": "ASA African Thanksgiving",
+   "host": "35456 African Students Association",
+   "schoolId": "s_columbia",
+   "date": "2026-11-14T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002384/rsvp?id=379281",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Interested in breaking into finance or sharpening your technical skills? Join us for a two-day Financial Modeling & Valuation Seminar at NOCO 501, taught by Ashish Kohli, a finance professional with over 20 years of transaction experience. Students will get hands-on experience wi",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378404",
+   "type": "event",
+   "title": "Ashish Kohli",
+   "host": "35542 Columbia Economics Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-15T14:00:00.000Z",
+   "startTime": "09:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002606/rsvp?id=378404",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Rehearsals for CMTS Dogfight",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377035",
+   "type": "event",
+   "title": "CMTS Dogfight",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-15T17:00:00.000Z",
+   "startTime": "12:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=377035",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Energy and Environment Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378821",
+   "type": "event",
+   "title": "CPI Energy and Environment Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-15T17:00:00.000Z",
+   "startTime": "12:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=378821",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Columbia Students for Global Health and Equity in Medicine (CU GHEM) is hosting an Undergraduate Public Health Research Conference on November 15th in Lerner 555 from 12-3! The event will feature undergrad public health research presentations, a Keynote presentation from a public",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379098",
+   "type": "event",
+   "title": "CU GHEM Undergraduate Public Health Research Conference",
+   "host": "35594 Columbia Students for Global Health Equity and Medicine (GHEM)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-15T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Lerner 555, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG002851/rsvp?id=379098",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Welcome to CU Taiko general member practice! No experience required to start",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375941",
+   "type": "event",
+   "title": "General Member Practice",
+   "host": "35689 CU Taiko",
+   "schoolId": "s_columbia",
+   "date": "2026-11-15T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Lerner 478, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG003038/rsvp?id=375941",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Technology Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378651",
+   "type": "event",
+   "title": "CPI Technology Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-15T18:00:00.000Z",
+   "startTime": "13:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=378651",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Work Session for Project Engineers only.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379978",
+   "type": "event",
+   "title": "CUFR Work Day",
+   "host": "35630 Columbia University Formula Racing",
+   "schoolId": "s_columbia",
+   "date": "2026-11-15T18:00:00.000Z",
+   "startTime": "13:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002320/rsvp?id=379978",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Lion dance practice on Sundays from 3-5 PM",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377424",
+   "type": "event",
+   "title": "CULD Sunday Practice",
+   "host": "35638 Columbia University Lion Dance",
+   "schoolId": "s_columbia",
+   "date": "2026-11-15T20:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002489/rsvp?id=377424",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Grants and Fundraising Team will be working on raising enough funds to support our projects!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377596",
+   "type": "event",
+   "title": "Grants and Fundraising Team Meeting",
+   "host": "35713 Engineers Without Borders",
+   "schoolId": "s_columbia",
+   "date": "2026-11-15T20:30:00.000Z",
+   "startTime": "15:30",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002395/rsvp?id=377596",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly meeting for our fluid balance device project, where our hardware engineering, software engineering, clinical, business, and science communication teams will come together to develop the device.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377769",
+   "type": "event",
+   "title": "Fluid Balance Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-15T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Mudd 327, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=377769",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "We meet at 5 pm every Sunday at the Sundial. Then we make our way to the Postcrypt if the day is gloomy, or the Law Bridge if it&apos;s nice outside. We have fellowship with our Chaplain, Father Zosimas.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376740",
+   "type": "event",
+   "title": "OCF Weekly Meeting",
+   "host": "35796 Orthodox Christian Fellowship (OCF)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-15T22:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002625/rsvp?id=376740",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join At Your Service at its weekly meeting to discuss working with people with chronic diseases including Huntington&apos;s disease. Meetings feature expert panelists, narrative medicine sessions, and other reflection sessions.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378453",
+   "type": "event",
+   "title": "AYS Weekly Meeting",
+   "host": "35523 Columbia At Your Service",
+   "schoolId": "s_columbia",
+   "date": "2026-11-15T22:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002959/rsvp?id=378453",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376549",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-16T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376549",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Democratic Access Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377871",
+   "type": "event",
+   "title": "CPI Democratic Access Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-16T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377871",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Technology Center - Governance of AI Panel",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379729",
+   "type": "event",
+   "title": "CPI Technology Center - Governance of AI Panel",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-16T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=379729",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join International@Columbia and International Alumni for a discussion about life post graduation from Columbia! Networking will follow the panel discussion, light refreshments provided. Event is open to all current Columbia students.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379636",
+   "type": "event",
+   "title": "IEW: International Alumni Panel",
+   "host": "35901 Multicultural Affairs",
+   "schoolId": "s_columbia",
+   "date": "2026-11-16T23:30:00.000Z",
+   "startTime": "18:30",
+   "benefit": "Free food",
+   "sourceUrl": "https://lionhub.columbia.edu/multiculturalaffairs/rsvp?id=379636",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CU Sign General Body Meetings are held every other Monday and alternate between ASL lesson meetings and community/social events. Lesson meetings introduce ASL vocabulary, conversation, and signing practice, while event meetings provide opportunities to connect, practice, and enga",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377676",
+   "type": "event",
+   "title": "CU Sign General Body Meetings Pending approval",
+   "host": "35840 Sign Language Club",
+   "schoolId": "s_columbia",
+   "date": "2026-11-17T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Lerner 568, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG002340/rsvp?id=377676",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Gadfly is Columbia&apos;s premier undergraduate philosophy-oriented print and online magazine. Each semester, we publish original essays, artwork, and interviews. We hold weekly discussions on select topics curated by our discussion coordinator, with snacks and light refreshm",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377670",
+   "type": "event",
+   "title": "Gadfly Weekly Discussion",
+   "host": "35724 Gadfly",
+   "schoolId": "s_columbia",
+   "date": "2026-11-17T01:00:00.000Z",
+   "startTime": "20:00",
+   "benefit": "Free food",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002314/rsvp?id=377670",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "ASA will be having members engage in a hot takes night while enjoying hot Milo at the Malcolm X Lounge",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379278",
+   "type": "event",
+   "title": "ASA Hot Takes and Hot Milo",
+   "host": "35456 African Students Association",
+   "schoolId": "s_columbia",
+   "date": "2026-11-17T02:00:00.000Z",
+   "startTime": "21:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002384/rsvp?id=379278",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly rehearsal for our performing members.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375932",
+   "type": "event",
+   "title": "CU Taiko Performance Practice",
+   "host": "35689 CU Taiko",
+   "schoolId": "s_columbia",
+   "date": "2026-11-17T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003038/rsvp?id=375932",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376550",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-17T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376550",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us in Lerner 515 on November 17 at 6:00PM for a chance to win standby tickets to see Tosca at the Met Opera! Registration on LionHub is not required!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378954",
+   "type": "event",
+   "title": "Urban New York: Tosca at the Met Opera",
+   "host": "35444 Urban New York",
+   "schoolId": "s_columbia",
+   "date": "2026-11-17T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/urbannewyork/rsvp?id=378954",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly CUVotes GBM where we have speakers, movie screenings, group discussions, and play games! Snacks always provided.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377072",
+   "type": "event",
+   "title": "ColumbiaVotes GBM",
+   "host": "35668 ColumbiaVotes",
+   "schoolId": "s_columbia",
+   "date": "2026-11-18T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Lerner 477, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003196/rsvp?id=377072",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly meeting for our adaptive nerve stimulator project, where our hardware engineering, software engineering, clinical, business, and science communication teams will come together to develop the device.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377745",
+   "type": "event",
+   "title": "Nerve Stimulator Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-18T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Mudd 233, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=377745",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The LionHealth business team meets weekly here to work on grant submissions, discuss business pitches, and work on intellectual property related research for our medical devices.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378879",
+   "type": "event",
+   "title": "Business Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-18T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=378879",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Semester-long interview prep series that provides resources & guidance to you help ace your interviews! Meets once a week in person & covers NEW content on data structures.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379236",
+   "type": "event",
+   "title": "Leet&apos;s Get Coding",
+   "host": "35473 Application Development Initiative",
+   "schoolId": "s_columbia",
+   "date": "2026-11-18T01:15:00.000Z",
+   "startTime": "20:15",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002379/rsvp?id=379236",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly General Body Meeting for the Columbia Policy Institute. With a new topic every week, we meet to learn about and discuss pressing policy issues of today. These meetings are a space to debate topics in policy, get involved in the club, and meet your peers!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375642",
+   "type": "event",
+   "title": "CPI General Body Meeting",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-18T02:00:00.000Z",
+   "startTime": "21:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=375642",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Stop by Lerner 515 on November 18 at 5:45PM for a chance to win a spot in our Turkish Lamp Making Class! Registration on LionHub is not required!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378955",
+   "type": "event",
+   "title": "Urban New York: Turkish Lamp Decorating Class",
+   "host": "35444 Urban New York",
+   "schoolId": "s_columbia",
+   "date": "2026-11-18T22:45:00.000Z",
+   "startTime": "17:45",
+   "sourceUrl": "https://lionhub.columbia.edu/urbannewyork/rsvp?id=378955",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376551",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-18T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376551",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join International@Columbia and cultural student groups for Global Cafe on Lerner 2fl ramps! Enjoy free hot drinks and snacks, and learn more about the global community at Columbia and connect with cultural student groups. Event is open to all current Columbia students.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379637",
+   "type": "event",
+   "title": "IEW: Global Cafe",
+   "host": "35901 Multicultural Affairs",
+   "schoolId": "s_columbia",
+   "date": "2026-11-18T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/multiculturalaffairs/rsvp?id=379637",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Our Liga G-body meetings occur on Wednesday, traditionally from 8-10pm. We would like to move the start time an hour earlier, starting at 7pm instead so we can accommodate our Liga members who commute to school. During our g-body meetings, we have cultural lessons, do different i",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375915",
+   "type": "event",
+   "title": "Liga Filipina G-Body Meetings",
+   "host": "35769 Liga Filipina",
+   "schoolId": "s_columbia",
+   "date": "2026-11-19T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002596/rsvp?id=375915",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Education Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377828",
+   "type": "event",
+   "title": "CPI Education Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-19T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377828",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General body meetings will consist of presentations about security topics, discussions, and general activities in the furtherance of improving attendees&apos; understanding of national security and foreign policy.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376108",
+   "type": "event",
+   "title": "The Alexander Hamilton Society at Columbia University - General Body Meeting",
+   "host": "35458 Alexander Hamilton Society at Columbia University",
+   "schoolId": "s_columbia",
+   "date": "2026-11-19T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002882/rsvp?id=376108",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The weekly meeting for Columbia University Science Fiction Society! Each meeting is different. Some of our activities are movies, debates, TTRPGs, short story readings, and creative writing. Sometimes we even have snacks! Hope to see you there!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376248",
+   "type": "event",
+   "title": "CUSFS Weekly Meeting",
+   "host": "35647 Columbia University Science Fiction Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-19T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002549/rsvp?id=376248",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Research Team will be meeting to figure out the next project CU-EWB will take on!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377091",
+   "type": "event",
+   "title": "Research Team Meeting",
+   "host": "35713 Engineers Without Borders",
+   "schoolId": "s_columbia",
+   "date": "2026-11-19T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002395/rsvp?id=377091",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Lion Dance practice on Wednesdays from 8-10 PM.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377402",
+   "type": "event",
+   "title": "CULD Wednesday Practice",
+   "host": "35638 Columbia University Lion Dance",
+   "schoolId": "s_columbia",
+   "date": "2026-11-19T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002489/rsvp?id=377402",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Econ Dev Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377806",
+   "type": "event",
+   "title": "CPI Econ Dev Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-19T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377806",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "weekly meeting for KISAC Board members",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378140",
+   "type": "event",
+   "title": "Weekly Meeting",
+   "host": "35761 Korean International Society for Academics and Career (KISAC)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-19T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003059/rsvp?id=378140",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "These meetings are a space for Indigenous students and anyone interested in learning, connecting, and building community. We’ll share updates, discuss upcoming events and initiatives, and create space for conversations about Indigenous cultures, histories, sovereignty, and the is",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379346",
+   "type": "event",
+   "title": "Native American Council General Body Meeting",
+   "host": "35943 Intercultural House",
+   "schoolId": "s_columbia",
+   "date": "2026-11-19T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/IRC/rsvp?id=379346",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly General Body Meeting for the Columbia University Democrats. We meet to discuss -- and learn about -- different political issues, policy proposals, and current events. Additionally, this is an important component of the social aspect and the community building f",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375523",
+   "type": "event",
+   "title": "Columbia University Democrats - Weekly GBM",
+   "host": "35623 Columbia University College Democrats",
+   "schoolId": "s_columbia",
+   "date": "2026-11-19T02:00:00.000Z",
+   "startTime": "21:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002534/rsvp?id=375523",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly meeting, review and plan events.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376436",
+   "type": "event",
+   "title": "TASA G-Board Meeting",
+   "host": "35863 Taiwanese American Students Association",
+   "schoolId": "s_columbia",
+   "date": "2026-11-19T03:00:00.000Z",
+   "startTime": "22:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002597/rsvp?id=376436",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come to Lerner 515 on November 19 at 5:45PM for a chance to win standby tickets to see & Juliet! Registration on LionHub is not required!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378956",
+   "type": "event",
+   "title": "Urban New York: & Juliet on Broadway",
+   "host": "35444 Urban New York",
+   "schoolId": "s_columbia",
+   "date": "2026-11-19T22:45:00.000Z",
+   "startTime": "17:45",
+   "sourceUrl": "https://lionhub.columbia.edu/urbannewyork/rsvp?id=378956",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376552",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-19T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376552",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly meeting for our speculum project, where our hardware engineering, software engineering, clinical, business, and science communication teams will come together to develop the device.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377758",
+   "type": "event",
+   "title": "Speculum Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-19T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=377758",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General body meeting for ColorStack at Columbia University, a community supporting Black and Latino Computer Science students in building rewarding technical careers. Members connect, get chapter updates and opportunities, and support each other’s professional and technical growt",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379017",
+   "type": "event",
+   "title": "Colorstack@CU General Body Meeting",
+   "host": "35514 ColorStack at Columbia University",
+   "schoolId": "s_columbia",
+   "date": "2026-11-20T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003391/rsvp?id=379017",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Open to everyone, beginner-friendly poker freeplay.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376476",
+   "type": "event",
+   "title": "Columbia Poker Weekly Freeplay",
+   "host": "35569 Columbia Poker Club",
+   "schoolId": "s_columbia",
+   "date": "2026-11-20T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003352/rsvp?id=376476",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Meeting time for the Aerodynamics subteam.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379969",
+   "type": "event",
+   "title": "CUFR Aerodynamics Work Session",
+   "host": "35630 Columbia University Formula Racing",
+   "schoolId": "s_columbia",
+   "date": "2026-11-20T20:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002320/rsvp?id=379969",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Human Rights Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377850",
+   "type": "event",
+   "title": "CPI Human Rights Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-20T21:00:00.000Z",
+   "startTime": "16:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377850",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Foreign Policy Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377861",
+   "type": "event",
+   "title": "CPI Foreign Policy Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-20T21:00:00.000Z",
+   "startTime": "16:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377861",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join International@Columbia and LGBTQ@Columbia for a film screening of \"Layla\" 2024 followed by dinner at Friendsgiving as we celebrate International Education Week and Transgender Awareness Week!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379929",
+   "type": "event",
+   "title": "IEW &TAW: Dinner & A Movie",
+   "host": "35901 Multicultural Affairs",
+   "schoolId": "s_columbia",
+   "date": "2026-11-20T22:30:00.000Z",
+   "startTime": "17:30",
+   "sourceUrl": "https://lionhub.columbia.edu/multiculturalaffairs/rsvp?id=379929",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come join Rhythm Game Club at our weekly meetings! A wide range of games like a DDR, SDVX, Chunithm, Taiko, and others are available. Feel free to come by with your own devices to play other rhythm games like Project Sekai too.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377272",
+   "type": "event",
+   "title": "CUGG - Rhythm Games Meeting",
+   "host": "35631 Columbia University Gaming Group",
+   "schoolId": "s_columbia",
+   "date": "2026-11-20T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003025/rsvp?id=377272",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come play board games or all sizes and complexities!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375736",
+   "type": "event",
+   "title": "Weekly Board Game Social",
+   "host": "35725 Games Club",
+   "schoolId": "s_columbia",
+   "date": "2026-11-21T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Lerner 510, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG002756/rsvp?id=375736",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376553",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-21T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376553",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Rehearsals for CMTS Dogfight",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377036",
+   "type": "event",
+   "title": "CMTS Dogfight",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-22T17:00:00.000Z",
+   "startTime": "12:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=377036",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Energy and Environment Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378817",
+   "type": "event",
+   "title": "CPI Energy and Environment Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-22T17:00:00.000Z",
+   "startTime": "12:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=378817",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Welcome to CU Taiko general member practice! No experience required to start",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375942",
+   "type": "event",
+   "title": "General Member Practice",
+   "host": "35689 CU Taiko",
+   "schoolId": "s_columbia",
+   "date": "2026-11-22T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Lerner 478, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG003038/rsvp?id=375942",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Technology Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378652",
+   "type": "event",
+   "title": "CPI Technology Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-22T18:00:00.000Z",
+   "startTime": "13:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=378652",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Work Session for Project Engineers only.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379979",
+   "type": "event",
+   "title": "CUFR Work Day",
+   "host": "35630 Columbia University Formula Racing",
+   "schoolId": "s_columbia",
+   "date": "2026-11-22T18:00:00.000Z",
+   "startTime": "13:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002320/rsvp?id=379979",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Lion dance practice on Sundays from 3-5 PM",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377425",
+   "type": "event",
+   "title": "CULD Sunday Practice",
+   "host": "35638 Columbia University Lion Dance",
+   "schoolId": "s_columbia",
+   "date": "2026-11-22T20:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002489/rsvp?id=377425",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Grants and Fundraising Team will be working on raising enough funds to support our projects!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377597",
+   "type": "event",
+   "title": "Grants and Fundraising Team Meeting",
+   "host": "35713 Engineers Without Borders",
+   "schoolId": "s_columbia",
+   "date": "2026-11-22T20:30:00.000Z",
+   "startTime": "15:30",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002395/rsvp?id=377597",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly meeting for our fluid balance device project, where our hardware engineering, software engineering, clinical, business, and science communication teams will come together to develop the device.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377770",
+   "type": "event",
+   "title": "Fluid Balance Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-22T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Mudd 327, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=377770",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "We meet at 5 pm every Sunday at the Sundial. Then we make our way to the Postcrypt if the day is gloomy, or the Law Bridge if it&apos;s nice outside. We have fellowship with our Chaplain, Father Zosimas.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376741",
+   "type": "event",
+   "title": "OCF Weekly Meeting",
+   "host": "35796 Orthodox Christian Fellowship (OCF)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-22T22:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002625/rsvp?id=376741",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join At Your Service at its weekly meeting to discuss working with people with chronic diseases including Huntington&apos;s disease. Meetings feature expert panelists, narrative medicine sessions, and other reflection sessions.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378454",
+   "type": "event",
+   "title": "AYS Weekly Meeting",
+   "host": "35523 Columbia At Your Service",
+   "schoolId": "s_columbia",
+   "date": "2026-11-22T22:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002959/rsvp?id=378454",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376554",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-23T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376554",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Democratic Access Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377872",
+   "type": "event",
+   "title": "CPI Democratic Access Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-23T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377872",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CU Sign General Body Meetings are held every other Monday and alternate between ASL lesson meetings and community/social events. Lesson meetings introduce ASL vocabulary, conversation, and signing practice, while event meetings provide opportunities to connect, practice, and enga",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377677",
+   "type": "event",
+   "title": "CU Sign General Body Meetings Pending approval",
+   "host": "35840 Sign Language Club",
+   "schoolId": "s_columbia",
+   "date": "2026-11-24T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Lerner 568, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG002340/rsvp?id=377677",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Gadfly is Columbia&apos;s premier undergraduate philosophy-oriented print and online magazine. Each semester, we publish original essays, artwork, and interviews. We hold weekly discussions on select topics curated by our discussion coordinator, with snacks and light refreshm",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377671",
+   "type": "event",
+   "title": "Gadfly Weekly Discussion",
+   "host": "35724 Gadfly",
+   "schoolId": "s_columbia",
+   "date": "2026-11-24T01:00:00.000Z",
+   "startTime": "20:00",
+   "benefit": "Free food",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002314/rsvp?id=377671",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Biweekly general body meeting for the Modulus club.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378967",
+   "type": "event",
+   "title": "Modulus GBM",
+   "host": "35779 Modulus Research Education Club",
+   "schoolId": "s_columbia",
+   "date": "2026-11-24T01:15:00.000Z",
+   "startTime": "20:15",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003404/rsvp?id=378967",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "ASA will be hosting a game night at the Malcolm X Lounge",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379280",
+   "type": "event",
+   "title": "ASA Game Night",
+   "host": "35456 African Students Association",
+   "schoolId": "s_columbia",
+   "date": "2026-11-24T02:00:00.000Z",
+   "startTime": "21:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002384/rsvp?id=379280",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly rehearsal for our performing members.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375933",
+   "type": "event",
+   "title": "CU Taiko Performance Practice",
+   "host": "35689 CU Taiko",
+   "schoolId": "s_columbia",
+   "date": "2026-11-24T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003038/rsvp?id=375933",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376555",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-24T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376555",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly CUVotes GBM where we have speakers, movie screenings, group discussions, and play games! Snacks always provided.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377073",
+   "type": "event",
+   "title": "ColumbiaVotes GBM",
+   "host": "35668 ColumbiaVotes",
+   "schoolId": "s_columbia",
+   "date": "2026-11-25T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Lerner 477, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003196/rsvp?id=377073",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly meeting for our adaptive nerve stimulator project, where our hardware engineering, software engineering, clinical, business, and science communication teams will come together to develop the device.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377746",
+   "type": "event",
+   "title": "Nerve Stimulator Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-25T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Mudd 233, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=377746",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The LionHealth business team meets weekly here to work on grant submissions, discuss business pitches, and work on intellectual property related research for our medical devices.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378880",
+   "type": "event",
+   "title": "Business Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-25T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=378880",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Semester-long interview prep series that provides resources & guidance to you help ace your interviews! Meets once a week in person & covers NEW content on data structures.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379237",
+   "type": "event",
+   "title": "Leet&apos;s Get Coding",
+   "host": "35473 Application Development Initiative",
+   "schoolId": "s_columbia",
+   "date": "2026-11-25T01:15:00.000Z",
+   "startTime": "20:15",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002379/rsvp?id=379237",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly General Body Meeting for the Columbia Policy Institute. With a new topic every week, we meet to learn about and discuss pressing policy issues of today. These meetings are a space to debate topics in policy, get involved in the club, and meet your peers!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375643",
+   "type": "event",
+   "title": "CPI General Body Meeting",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-25T02:00:00.000Z",
+   "startTime": "21:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=375643",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376556",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-25T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376556",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Our Liga G-body meetings occur on Wednesday, traditionally from 8-10pm. We would like to move the start time an hour earlier, starting at 7pm instead so we can accommodate our Liga members who commute to school. During our g-body meetings, we have cultural lessons, do different i",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375916",
+   "type": "event",
+   "title": "Liga Filipina G-Body Meetings",
+   "host": "35769 Liga Filipina",
+   "schoolId": "s_columbia",
+   "date": "2026-11-26T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002596/rsvp?id=375916",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Education Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377829",
+   "type": "event",
+   "title": "CPI Education Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-26T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377829",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Research Team will be meeting to figure out the next project CU-EWB will take on!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377092",
+   "type": "event",
+   "title": "Research Team Meeting",
+   "host": "35713 Engineers Without Borders",
+   "schoolId": "s_columbia",
+   "date": "2026-11-26T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002395/rsvp?id=377092",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Lion Dance practice on Wednesdays from 8-10 PM.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377403",
+   "type": "event",
+   "title": "CULD Wednesday Practice",
+   "host": "35638 Columbia University Lion Dance",
+   "schoolId": "s_columbia",
+   "date": "2026-11-26T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002489/rsvp?id=377403",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Econ Dev Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377807",
+   "type": "event",
+   "title": "CPI Econ Dev Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-26T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377807",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "weekly meeting for KISAC Board members",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378141",
+   "type": "event",
+   "title": "Weekly Meeting",
+   "host": "35761 Korean International Society for Academics and Career (KISAC)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-26T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003059/rsvp?id=378141",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "These meetings are a space for Indigenous students and anyone interested in learning, connecting, and building community. We’ll share updates, discuss upcoming events and initiatives, and create space for conversations about Indigenous cultures, histories, sovereignty, and the is",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379347",
+   "type": "event",
+   "title": "Native American Council General Body Meeting",
+   "host": "35943 Intercultural House",
+   "schoolId": "s_columbia",
+   "date": "2026-11-26T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/IRC/rsvp?id=379347",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly General Body Meeting for the Columbia University Democrats. We meet to discuss -- and learn about -- different political issues, policy proposals, and current events. Additionally, this is an important component of the social aspect and the community building f",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375524",
+   "type": "event",
+   "title": "Columbia University Democrats - Weekly GBM",
+   "host": "35623 Columbia University College Democrats",
+   "schoolId": "s_columbia",
+   "date": "2026-11-26T02:00:00.000Z",
+   "startTime": "21:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002534/rsvp?id=375524",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly meeting, review and plan events.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376437",
+   "type": "event",
+   "title": "TASA G-Board Meeting",
+   "host": "35863 Taiwanese American Students Association",
+   "schoolId": "s_columbia",
+   "date": "2026-11-26T03:00:00.000Z",
+   "startTime": "22:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002597/rsvp?id=376437",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376557",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-26T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376557",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly meeting for our speculum project, where our hardware engineering, software engineering, clinical, business, and science communication teams will come together to develop the device.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377759",
+   "type": "event",
+   "title": "Speculum Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-26T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=377759",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Human Rights Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377851",
+   "type": "event",
+   "title": "CPI Human Rights Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-27T21:00:00.000Z",
+   "startTime": "16:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377851",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Foreign Policy Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377862",
+   "type": "event",
+   "title": "CPI Foreign Policy Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-27T21:00:00.000Z",
+   "startTime": "16:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377862",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come play board games or all sizes and complexities!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375737",
+   "type": "event",
+   "title": "Weekly Board Game Social",
+   "host": "35725 Games Club",
+   "schoolId": "s_columbia",
+   "date": "2026-11-28T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Lerner 510, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG002756/rsvp?id=375737",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376558",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-28T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376558",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Energy and Environment Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378818",
+   "type": "event",
+   "title": "CPI Energy and Environment Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-29T17:00:00.000Z",
+   "startTime": "12:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=378818",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Welcome to CU Taiko general member practice! No experience required to start",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375943",
+   "type": "event",
+   "title": "General Member Practice",
+   "host": "35689 CU Taiko",
+   "schoolId": "s_columbia",
+   "date": "2026-11-29T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Lerner 478, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG003038/rsvp?id=375943",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Technology Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378653",
+   "type": "event",
+   "title": "CPI Technology Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-29T18:00:00.000Z",
+   "startTime": "13:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=378653",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Lion dance practice on Sundays from 3-5 PM",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377426",
+   "type": "event",
+   "title": "CULD Sunday Practice",
+   "host": "35638 Columbia University Lion Dance",
+   "schoolId": "s_columbia",
+   "date": "2026-11-29T20:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002489/rsvp?id=377426",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Grants and Fundraising Team will be working on raising enough funds to support our projects!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377598",
+   "type": "event",
+   "title": "Grants and Fundraising Team Meeting",
+   "host": "35713 Engineers Without Borders",
+   "schoolId": "s_columbia",
+   "date": "2026-11-29T20:30:00.000Z",
+   "startTime": "15:30",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002395/rsvp?id=377598",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly meeting for our fluid balance device project, where our hardware engineering, software engineering, clinical, business, and science communication teams will come together to develop the device.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377771",
+   "type": "event",
+   "title": "Fluid Balance Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-11-29T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Mudd 327, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=377771",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "We meet at 5 pm every Sunday at the Sundial. Then we make our way to the Postcrypt if the day is gloomy, or the Law Bridge if it&apos;s nice outside. We have fellowship with our Chaplain, Father Zosimas.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376742",
+   "type": "event",
+   "title": "OCF Weekly Meeting",
+   "host": "35796 Orthodox Christian Fellowship (OCF)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-29T22:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002625/rsvp?id=376742",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join At Your Service at its weekly meeting to discuss working with people with chronic diseases including Huntington&apos;s disease. Meetings feature expert panelists, narrative medicine sessions, and other reflection sessions.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378455",
+   "type": "event",
+   "title": "AYS Weekly Meeting",
+   "host": "35523 Columbia At Your Service",
+   "schoolId": "s_columbia",
+   "date": "2026-11-29T22:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002959/rsvp?id=378455",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376559",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-11-30T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376559",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Democratic Access Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377873",
+   "type": "event",
+   "title": "CPI Democratic Access Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-11-30T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377873",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CU Sign General Body Meetings are held every other Monday and alternate between ASL lesson meetings and community/social events. Lesson meetings introduce ASL vocabulary, conversation, and signing practice, while event meetings provide opportunities to connect, practice, and enga",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377678",
+   "type": "event",
+   "title": "CU Sign General Body Meetings Pending approval",
+   "host": "35840 Sign Language Club",
+   "schoolId": "s_columbia",
+   "date": "2026-12-01T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Lerner 568, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG002340/rsvp?id=377678",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Gadfly is Columbia&apos;s premier undergraduate philosophy-oriented print and online magazine. Each semester, we publish original essays, artwork, and interviews. We hold weekly discussions on select topics curated by our discussion coordinator, with snacks and light refreshm",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377681",
+   "type": "event",
+   "title": "Gadfly Weekly Discussion",
+   "host": "35724 Gadfly",
+   "schoolId": "s_columbia",
+   "date": "2026-12-01T01:00:00.000Z",
+   "startTime": "20:00",
+   "benefit": "Free food",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002314/rsvp?id=377681",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376560",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-12-01T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376560",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly CUVotes GBM where we have speakers, movie screenings, group discussions, and play games! Snacks always provided.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377074",
+   "type": "event",
+   "title": "ColumbiaVotes GBM",
+   "host": "35668 ColumbiaVotes",
+   "schoolId": "s_columbia",
+   "date": "2026-12-02T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Lerner 477, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003196/rsvp?id=377074",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly meeting for our adaptive nerve stimulator project, where our hardware engineering, software engineering, clinical, business, and science communication teams will come together to develop the device.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377747",
+   "type": "event",
+   "title": "Nerve Stimulator Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-12-02T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Mudd 233, United States",
+    "lat": 40.8075,
+    "lng": -73.9626
+   },
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=377747",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The LionHealth business team meets weekly here to work on grant submissions, discuss business pitches, and work on intellectual property related research for our medical devices.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378881",
+   "type": "event",
+   "title": "Business Weekly Meeting",
+   "host": "35929 LionHealth",
+   "schoolId": "s_columbia",
+   "date": "2026-12-02T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003538/rsvp?id=378881",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Semester-long interview prep series that provides resources & guidance to you help ace your interviews! Meets once a week in person & covers NEW content on data structures.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379238",
+   "type": "event",
+   "title": "Leet&apos;s Get Coding",
+   "host": "35473 Application Development Initiative",
+   "schoolId": "s_columbia",
+   "date": "2026-12-02T01:15:00.000Z",
+   "startTime": "20:15",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002379/rsvp?id=379238",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dance, music, and acting rehearsal for CMTS’s Come From Away",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376561",
+   "type": "event",
+   "title": "Rehearsals",
+   "host": "35563 Columbia Musical Theater Society",
+   "schoolId": "s_columbia",
+   "date": "2026-12-02T23:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002592/rsvp?id=376561",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Education Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377830",
+   "type": "event",
+   "title": "CPI Education Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-12-03T00:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377830",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General body meetings will consist of presentations about security topics, discussions, and general activities in the furtherance of improving attendees&apos; understanding of national security and foreign policy.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376109",
+   "type": "event",
+   "title": "The Alexander Hamilton Society at Columbia University - General Body Meeting",
+   "host": "35458 Alexander Hamilton Society at Columbia University",
+   "schoolId": "s_columbia",
+   "date": "2026-12-03T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002882/rsvp?id=376109",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The weekly meeting for Columbia University Science Fiction Society! Each meeting is different. Some of our activities are movies, debates, TTRPGs, short story readings, and creative writing. Sometimes we even have snacks! Hope to see you there!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376249",
+   "type": "event",
+   "title": "CUSFS Weekly Meeting",
+   "host": "35647 Columbia University Science Fiction Society",
+   "schoolId": "s_columbia",
+   "date": "2026-12-03T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002549/rsvp?id=376249",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Research Team will be meeting to figure out the next project CU-EWB will take on!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377093",
+   "type": "event",
+   "title": "Research Team Meeting",
+   "host": "35713 Engineers Without Borders",
+   "schoolId": "s_columbia",
+   "date": "2026-12-03T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002395/rsvp?id=377093",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Lion Dance practice on Wednesdays from 8-10 PM.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377404",
+   "type": "event",
+   "title": "CULD Wednesday Practice",
+   "host": "35638 Columbia University Lion Dance",
+   "schoolId": "s_columbia",
+   "date": "2026-12-03T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002489/rsvp?id=377404",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "CPI Econ Dev Center",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_377808",
+   "type": "event",
+   "title": "CPI Econ Dev Center",
+   "host": "35570 Columbia Policy Institute (CPI)",
+   "schoolId": "s_columbia",
+   "date": "2026-12-03T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002658/rsvp?id=377808",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "weekly meeting for KISAC Board members",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_378142",
+   "type": "event",
+   "title": "Weekly Meeting",
+   "host": "35761 Korean International Society for Academics and Career (KISAC)",
+   "schoolId": "s_columbia",
+   "date": "2026-12-03T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG003059/rsvp?id=378142",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "These meetings are a space for Indigenous students and anyone interested in learning, connecting, and building community. We’ll share updates, discuss upcoming events and initiatives, and create space for conversations about Indigenous cultures, histories, sovereignty, and the is",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_379348",
+   "type": "event",
+   "title": "Native American Council General Body Meeting",
+   "host": "35943 Intercultural House",
+   "schoolId": "s_columbia",
+   "date": "2026-12-03T01:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://lionhub.columbia.edu/IRC/rsvp?id=379348",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is the weekly General Body Meeting for the Columbia University Democrats. We meet to discuss -- and learn about -- different political issues, policy proposals, and current events. Additionally, this is an important component of the social aspect and the community building f",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_375525",
+   "type": "event",
+   "title": "Columbia University Democrats - Weekly GBM",
+   "host": "35623 Columbia University College Democrats",
+   "schoolId": "s_columbia",
+   "date": "2026-12-03T02:00:00.000Z",
+   "startTime": "21:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002534/rsvp?id=375525",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly meeting, review and plan events.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:02.379Z",
+   "createdAt": "2026-11-03T13:42:02.379Z",
+   "id": "op_columbia_cg_376438",
+   "type": "event",
+   "title": "TASA G-Board Meeting",
+   "host": "35863 Taiwanese American Students Association",
+   "schoolId": "s_columbia",
+   "date": "2026-12-03T03:00:00.000Z",
+   "startTime": "22:00",
+   "sourceUrl": "https://lionhub.columbia.edu/AG002597/rsvp?id=376438",
+   "sourceLabel": "Student org events"
+  }
+ ]
+}

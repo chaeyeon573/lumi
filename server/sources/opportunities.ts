@@ -117,14 +117,15 @@ export async function fetchEngageEvents(host: string, school: EventSchool, horiz
 
 /**
  * CampusGroups 공개 행사 RSS (<host>/rss_events) — Cornell·Yale·Columbia·Duke·USC… CampusGroups 학교들. 로그인 없이 열린다.
- * 공개 행사만(category "Open …"), 30일 안에 시작하는 것만, 장소가 "sign in to display" 면 장소 없이. 이모지 없음.
+ * 공개 행사만(privacyLevel 0, "Private …" 분류 제외), 30일 안에 시작하는 것만, 장소가 "sign in to display" 면 장소 없이. 이모지 없음.
  */
 export function parseCampusGroupsRss(xml: string, host: string, school: EventSchool, now = new Date(), horizonDays = 30): Opportunity[] {
   const nowIso = now.toISOString(); const until = now.getTime() + horizonDays * 86_400_000;
   const tag = (it: string, t: string) => text((new RegExp(`<${t}[^>]*>([\\s\\S]*?)<\\/${t}>`).exec(it)?.[1] ?? '').replace(/^<!\[CDATA\[|\]\]>$/g, '')).trim();
   const out: Opportunity[] = []; const seen = new Set<string>();
   for (const it of xml.match(/<item>[\s\S]*?<\/item>/g) ?? []) {
-    if (!/^Open\b/i.test(tag(it, 'category'))) continue;
+    // 공개 = privacyLevel 0 (모든 학교 같은 칸). 분류는 학교마다 다르다(Cornell "Open/Private …", Yale "Group Meeting") — "Private …" 는 빼고
+    if (tag(it, 'privacyLevel') !== '0' || /^Private\b/i.test(tag(it, 'category'))) continue;
     const id = tag(it, 'eventId'); const title = tag(it, 'title'); const startRaw = tag(it, 'eventStartDateTime');
     const start = new Date(startRaw.replace(/\.\d+(?=[+-]\d{2}:\d{2}$)/, '')); if (!id || !title || Number.isNaN(start.getTime())) continue;
     if (start.getTime() < now.getTime() || start.getTime() > until || isNoticeNotEvent(title)) continue;

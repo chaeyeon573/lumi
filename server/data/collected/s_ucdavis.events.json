@@ -1,0 +1,1976 @@
+{
+ "collectedAt": "2026-11-03T13:43:01.702Z",
+ "sources": [
+  "campusgroups https://aggielife.ucdavis.edu 79"
+ ],
+ "events": [
+  {
+   "description": "Please feel free to join us for our Pre-Grad/Law Application Workspace! What do we mean by \"workspace\"? It&apos;s a dedicated time and space for you to focus on your graduate or law school applications (especially your essays) with the added benefit of having a pre-grad/law advis",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909152",
+   "type": "event",
+   "title": "Application Workspace",
+   "host": "40550 Academic Assistance & Tutoring Center: Pre-Graduate/Law Advising",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-03T21:10:00.000Z",
+   "startTime": "13:10",
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCGradLaw/rsvp?id=909152",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Read to remember! Explore active techniques for engagement and efficiency. We will practice concept mapping as a way to capture and organize the information we read. All workshops are drop-in!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909120",
+   "type": "event",
+   "title": "Take Charge of the Reading",
+   "host": "40549 Academic Assistance & Tutoring Center: Success Coaching and Learning Strategies",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-03T23:10:00.000Z",
+   "startTime": "15:10",
+   "place": {
+    "name": "Online Event",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCCoach/rsvp?id=909120",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "HDE Major Crash Course & Advising",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909819",
+   "type": "event",
+   "title": "HDE Club General Meeting #3",
+   "host": "39224 The Human Development Club",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-04T02:10:00.000Z",
+   "startTime": "18:10",
+   "sourceUrl": "https://aggielife.ucdavis.edu/humandevelopmentclub/rsvp?id=909819",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Please feel free to join us for our Pre-Grad/Law Application Workspace! What do we mean by \"workspace\"? It&apos;s a dedicated time and space for you to focus on your graduate or law school applications (especially your essays) with the added benefit of having a pre-grad/law advis",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909153",
+   "type": "event",
+   "title": "Application Workspace",
+   "host": "40550 Academic Assistance & Tutoring Center: Pre-Graduate/Law Advising",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-04T21:10:00.000Z",
+   "startTime": "13:10",
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCGradLaw/rsvp?id=909153",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "How do you know what you know? How do you prepare for exams? Let’s discuss strategies that can help make study sessions more effective and efficient. All workshops are drop-in!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909121",
+   "type": "event",
+   "title": "Study Smarter, Not Harder",
+   "host": "40549 Academic Assistance & Tutoring Center: Success Coaching and Learning Strategies",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-05T00:10:00.000Z",
+   "startTime": "16:10",
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCCoach/rsvp?id=909121",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Participants will learn resume construction tips from other club members and get peer advice on how to develop a resume to optimize passing through AI screening.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909431",
+   "type": "event",
+   "title": "Career Development Workshop",
+   "host": "39084 Neurotech@Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-05T02:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/neorotech/rsvp?id=909431",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Open space to come and study. Open for any UCD student",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909823",
+   "type": "event",
+   "title": "Study Hours",
+   "host": "39460 Lambda Theta Phi Latin Fraternity, Incorporated",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-05T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/LambdaThetaPhi/rsvp?id=909823",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Georgetown Law, located in the heart of where the law is made, offers an unparalleled education in which theory and practice uniquely intersect. We invite UC Davis students and alumni to learn more about Georgetown Law and the admissions process and meet a member of the Admission",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909281",
+   "type": "event",
+   "title": "Georgetown Law Information Session",
+   "host": "40550 Academic Assistance & Tutoring Center: Pre-Graduate/Law Advising",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-05T20:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Online Event",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCGradLaw/rsvp?id=909281",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "How can I become a better test taker? Join us to discuss strategies for maximizing your test grade, including managing test-induced anxiety. All workshops are drop-in!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909122",
+   "type": "event",
+   "title": "Strategies for Test Taking",
+   "host": "40549 Academic Assistance & Tutoring Center: Success Coaching and Learning Strategies",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-05T21:10:00.000Z",
+   "startTime": "13:10",
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCCoach/rsvp?id=909122",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Info session on financial wellness: Students will understand key principles of financial wellness, learn practical steps for budgeting, saving, and managing credit, and know how to access Travis Credit Union’s tools and services to support their financial goals.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909291",
+   "type": "event",
+   "title": "Financial Workshop Series hosted by Travis Credit Union X GSP",
+   "host": "39686 Guardian Scholars Program",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-06T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Online Event",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/guardianscholars/rsvp?id=909291",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join MyBaltoU at Blaze Pizza for a delicious way to support our organization! On Thursday, November 5, Blaze Pizza will donate 20% of participating meal proceeds to MyBaltoU. Stop by anytime from 5:00–8:00 p.m. at 212 F Street in Davis. When ordering in the restaurant, show the f",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909306",
+   "type": "event",
+   "title": "Blaze Pizza Fundrasier",
+   "host": "40537 myBaltoU",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-06T01:00:00.000Z",
+   "startTime": "17:00",
+   "benefit": "Free food",
+   "sourceUrl": "https://aggielife.ucdavis.edu/myBaltoU/rsvp?id=909306",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come by to learn and practice lion dance with others! No experience is needed to join, just bring water and be willing to do your best! We meet every Monday and Thursday on the Fifth floor of the Pavilion Parking Structure from 6PM to 8PM.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909642",
+   "type": "event",
+   "title": "General Practice",
+   "host": "40216 Lion Dance at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-06T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "TBD",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/ldatucd/rsvp?id=909642",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General Club Meeting, open to all interested in learning about the club or joining.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909331",
+   "type": "event",
+   "title": "Club Meeting",
+   "host": "40413 Bagpipe Club at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-06T02:30:00.000Z",
+   "startTime": "18:30",
+   "sourceUrl": "https://aggielife.ucdavis.edu/AggiePipers/rsvp?id=909331",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us in making music and new friends! We aim to spread the love of guitar and the wonders of music! ⭐️ All instruments and experience levels welcome ⭐️ This meeting will consist of an icebreaker, lesson, and open jam session.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909807",
+   "type": "event",
+   "title": "Guitar Club General Meeting",
+   "host": "38948 Guitar Club",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-06T04:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/guitarclub/rsvp?id=909807",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Show solidarity and share some encouragement this holiday season! Join fellow Underground Scholars for a card-making session to support students working toward their college education while incarcerated. Many of these scholars are working hard to transfer to universities upon rel",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909875",
+   "type": "event",
+   "title": "Words Through the Wall",
+   "host": "40501 Underground Scholars Program",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-06T23:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/USP/rsvp?id=909875",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Pre-Production; Animation Club; anyone of any skill level is welcome!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909496",
+   "type": "event",
+   "title": "Aggiemation Eggheads | General Meetings",
+   "host": "38750 Aggiemation Eggheads",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-07T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/aggiemationeggheads/rsvp?id=909496",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A tournament where people can play Tetris versus against each other!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_908918",
+   "type": "event",
+   "title": "Tetris Tournament 2",
+   "host": "40440 Tetris at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-07T18:00:00.000Z",
+   "startTime": "10:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/TSD/rsvp?id=908918",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This workshop is a general introduction to the business school (Master’s in Business Administration) application process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909154",
+   "type": "event",
+   "title": "How to Prepare and Apply to MBA Programs",
+   "host": "40550 Academic Assistance & Tutoring Center: Pre-Graduate/Law Advising",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-09T20:10:00.000Z",
+   "startTime": "12:10",
+   "place": {
+    "name": "Online Event",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCGradLaw/rsvp?id=909154",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Presentation skills are useful in and outside the classroom. Come learn techniques for creating an effective presentation, as well as best practices for public speaking.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909123",
+   "type": "event",
+   "title": "Designing and Delivering Presentations",
+   "host": "40549 Academic Assistance & Tutoring Center: Success Coaching and Learning Strategies",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-09T21:10:00.000Z",
+   "startTime": "13:10",
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCCoach/rsvp?id=909123",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come join us for an hour of fun, game night, trivia night, or music night!!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909728",
+   "type": "event",
+   "title": "Grace Alive Monday Funday",
+   "host": "38942 Grace Alive!",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-10T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "SCC Meeting Room D, 1 Shields Ave, Davis, California 95616, United States",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/GraceAlive/rsvp?id=909728",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come by to learn and practice lion dance with others! No experience is needed to join, just bring water and be willing to do your best!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909605",
+   "type": "event",
+   "title": "General Practice",
+   "host": "40216 Lion Dance at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-10T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Pavilion Parking Structure, Davis, CA 95616, United States",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/ldatucd/rsvp?id=909605",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General Club Meeting, open to all interested in learning about the club or joining.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909332",
+   "type": "event",
+   "title": "Club Meeting",
+   "host": "40413 Bagpipe Club at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-10T02:30:00.000Z",
+   "startTime": "18:30",
+   "sourceUrl": "https://aggielife.ucdavis.edu/AggiePipers/rsvp?id=909332",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Pre-Production; Animation Club; anyone of any skill level is welcome!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909497",
+   "type": "event",
+   "title": "Aggiemation Eggheads | General Meetings",
+   "host": "38750 Aggiemation Eggheads",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-10T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/aggiemationeggheads/rsvp?id=909497",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Undermined in the workplace or in school? Join the WRRC for Women in STEM: More than lab rats for pizza and rant sesh to share your experiences with others! Bring complaints, bring good times, and bring yourself! The discussion will begin at 12 pm on Tuesday, November 10th at the",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909856",
+   "type": "event",
+   "title": "Real Talk Dialogue Series Presents: Women in STEM: More Than Lab Rats",
+   "host": "40494 Women&apos;s Resources and Research Center",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-10T20:00:00.000Z",
+   "startTime": "12:00",
+   "benefit": "Free food",
+   "sourceUrl": "https://aggielife.ucdavis.edu/WRRC/rsvp?id=909856",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Study guides are one of the most helpful ways to study for exams. Learn to create one that works best for you.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909124",
+   "type": "event",
+   "title": "Create Your Own Study Guide",
+   "host": "40549 Academic Assistance & Tutoring Center: Success Coaching and Learning Strategies",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-11T00:10:00.000Z",
+   "startTime": "16:10",
+   "place": {
+    "name": "Online Event",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCCoach/rsvp?id=909124",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join Women in STEM @ UC Davis (WIS@UCD) for our inaugural event, Her STEM Story: Fall Welcome & Career Panel! Hear inspiring women in STEM share their career journeys, challenges, successes, and lessons learned. Connect with peers, gain valuable career insights, and learn more ab",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909572",
+   "type": "event",
+   "title": "Her STEM Story: Fall Welcome & Career Panel",
+   "host": "40668 Women in STEM at UC DAVIS",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-11T01:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/WISATUCD/rsvp?id=909572",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for the chance to hear from current graduate students from different fields about the real experience of being in graduate school, including the application process, the everyday tasks, financial realities, opportunities, and more. This will be a chance for you to network",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909874",
+   "type": "event",
+   "title": "Is Graduate School Right for Me?: Grad School Panel",
+   "host": "40550 Academic Assistance & Tutoring Center: Pre-Graduate/Law Advising",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-12T23:10:00.000Z",
+   "startTime": "15:10",
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCGradLaw/rsvp?id=909874",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come by to learn and practice lion dance with others! No experience is needed to join, just bring water and be willing to do your best! We meet every Monday and Thursday on the Fifth floor of the Pavilion Parking Structure from 6PM to 8PM.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909644",
+   "type": "event",
+   "title": "General Practice",
+   "host": "40216 Lion Dance at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-13T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "TBD",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/ldatucd/rsvp?id=909644",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General Club Meeting, open to all interested in learning about the club or joining.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909333",
+   "type": "event",
+   "title": "Club Meeting",
+   "host": "40413 Bagpipe Club at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-13T02:30:00.000Z",
+   "startTime": "18:30",
+   "sourceUrl": "https://aggielife.ucdavis.edu/AggiePipers/rsvp?id=909333",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us in making music and new friends! We aim to spread the love of guitar and the wonders of music! ⭐️ All instruments and experience levels welcome ⭐️ This meeting will consist of an icebreaker, lesson, and open jam session.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909808",
+   "type": "event",
+   "title": "Guitar Club General Meeting",
+   "host": "38948 Guitar Club",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-13T04:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/guitarclub/rsvp?id=909808",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "We are inviting speakers from Student Health and Counseling Services to discuss available wellness resources, counseling options, and support services on campus.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909759",
+   "type": "event",
+   "title": "(HGSA) Mental Health Panel",
+   "host": "38958 History Graduate Student Association",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-13T23:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/historygraduatestudentassociation/rsvp?id=909759",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Official WCA Rubik&apos;s Cube Competition",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909091",
+   "type": "event",
+   "title": "Davis Weeknight November 2026",
+   "host": "40099 Davis Cube Club",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-14T01:30:00.000Z",
+   "startTime": "17:30",
+   "sourceUrl": "https://aggielife.ucdavis.edu/DSCC/rsvp?id=909091",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Pre-Production; Animation Club; anyone of any skill level is welcome!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909498",
+   "type": "event",
+   "title": "Aggiemation Eggheads | General Meetings",
+   "host": "38750 Aggiemation Eggheads",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-14T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/aggiemationeggheads/rsvp?id=909498",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "ACE is VSA&apos;s big/little program. During ACE Reveal, littles find out who their big is.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909524",
+   "type": "event",
+   "title": "VSA ACE Reveal 2026",
+   "host": "39261 Vietnamese Student Association",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-14T15:00:00.000Z",
+   "startTime": "07:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/VSA/rsvp?id=909524",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "https://arboretum.ucdavis.edu/plant-sales",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909174",
+   "type": "event",
+   "title": "Clearance Public Plant Sale",
+   "host": "40605 UC Davis Fall Welcome Events",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-14T17:00:00.000Z",
+   "startTime": "09:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/fallwelcome/rsvp?id=909174",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dia de los Muertos (the day of the dead/ddlm), a mexican celebration, is a day to celebrate, remember and prepare altars and offerings for lost loved ones. Organizations will be invited to make altars that can be showcased at the event.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909232",
+   "type": "event",
+   "title": "Dia De Los Muertos (DDLM)",
+   "host": "39171 Sigma Pi Alpha Sorority, Inc.",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-15T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Arc Ballroom A and B, 1 Shields Ave, Davis, California 95616, United States",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://aggielife.ucdavis.edu/SPAS/rsvp?id=909232",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Are you interested in going to graduate school for psychology? Learn about the many different programs available, including the Master’s in Social Work (MSW), Master’s in Marriage and Family Therapy (MFT), clinical psychology Ph.Ds and PsyDs, and research Ph.Ds. Find out which gr",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909155",
+   "type": "event",
+   "title": "Going to Grad School for Psychology",
+   "host": "40550 Academic Assistance & Tutoring Center: Pre-Graduate/Law Advising",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-16T20:10:00.000Z",
+   "startTime": "12:10",
+   "place": {
+    "name": "Online Event",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCGradLaw/rsvp?id=909155",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Calfresh info session Students will be able to successfully identify CalFresh eligibility requirements, navigate the application process, and utilize Aggie Compass resources to submit an application.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909292",
+   "type": "event",
+   "title": "Calfresh Workshop",
+   "host": "39686 Guardian Scholars Program",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-16T22:00:00.000Z",
+   "startTime": "14:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/guardianscholars/rsvp?id=909292",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come join us for an hour of fun, game night, trivia night, or music night!!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909729",
+   "type": "event",
+   "title": "Grace Alive Monday Funday",
+   "host": "38942 Grace Alive!",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-17T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "SCC Meeting Room D, 1 Shields Ave, Davis, California 95616, United States",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/GraceAlive/rsvp?id=909729",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come by to learn and practice lion dance with others! No experience is needed to join, just bring water and be willing to do your best!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909606",
+   "type": "event",
+   "title": "General Practice",
+   "host": "40216 Lion Dance at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-17T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Pavilion Parking Structure, Davis, CA 95616, United States",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/ldatucd/rsvp?id=909606",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General Club Meeting, open to all interested in learning about the club or joining.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909334",
+   "type": "event",
+   "title": "Club Meeting",
+   "host": "40413 Bagpipe Club at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-17T02:30:00.000Z",
+   "startTime": "18:30",
+   "sourceUrl": "https://aggielife.ucdavis.edu/AggiePipers/rsvp?id=909334",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Pre-Production; Animation Club; anyone of any skill level is welcome!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909499",
+   "type": "event",
+   "title": "Aggiemation Eggheads | General Meetings",
+   "host": "38750 Aggiemation Eggheads",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-17T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/aggiemationeggheads/rsvp?id=909499",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join MyBaltoU for a special meeting featuring Dr. Jandrey, Dean of the School of Veterinary Medicine. Dr. Jandrey will share insight into veterinary medicine, veterinary education, and his professional journey. Students will also have the opportunity to ask questions and learn mo",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909246",
+   "type": "event",
+   "title": "MyBaltoU Meeting",
+   "host": "40537 myBaltoU",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-17T03:30:00.000Z",
+   "startTime": "19:30",
+   "sourceUrl": "https://aggielife.ucdavis.edu/myBaltoU/rsvp?id=909246",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "What are best practices for communicating and building relationships with professors? We will discuss e-mail, office hours, and mentorship.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909125",
+   "type": "event",
+   "title": "Communicating With Professors",
+   "host": "40549 Academic Assistance & Tutoring Center: Success Coaching and Learning Strategies",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-17T22:10:00.000Z",
+   "startTime": "14:10",
+   "place": {
+    "name": "Online Event",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCCoach/rsvp?id=909125",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Explore ways to increase focus and concentration. You will have a chance to reflect on your common distractions and problem solve. All workshops are drop-in!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909126",
+   "type": "event",
+   "title": "Focus and Concentration",
+   "host": "40549 Academic Assistance & Tutoring Center: Success Coaching and Learning Strategies",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-18T19:00:00.000Z",
+   "startTime": "11:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCCoach/rsvp?id=909126",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Open space to come and study. Open for any UCD student",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909824",
+   "type": "event",
+   "title": "Study Hours",
+   "host": "39460 Lambda Theta Phi Latin Fraternity, Incorporated",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-19T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/LambdaThetaPhi/rsvp?id=909824",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Need a break from the college grind? ✨ Drop in, unwind, and kick back with your Underground Scholars family! We’re coming together to craft holiday cards for our loved ones, connect with fellow scholars, and chill with our CAN counselors. Whether you want to make something specia",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909873",
+   "type": "event",
+   "title": "Create & Connect with C Squared",
+   "host": "40501 Underground Scholars Program",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-19T22:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "South Hall room 26, 1 Shields Ave. South Hall, Room 26, Davis, CA 95616,",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/USP/rsvp?id=909873",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Read to remember! Explore active techniques for engagement and efficiency. We will practice concept mapping as a way to capture and organize the information we read. All workshops are drop-in!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909127",
+   "type": "event",
+   "title": "Take Charge of the Reading",
+   "host": "40549 Academic Assistance & Tutoring Center: Success Coaching and Learning Strategies",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-19T22:10:00.000Z",
+   "startTime": "14:10",
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCCoach/rsvp?id=909127",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come by to learn and practice lion dance with others! No experience is needed to join, just bring water and be willing to do your best! We meet every Monday and Thursday on the Fifth floor of the Pavilion Parking Structure from 6PM to 8PM.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909646",
+   "type": "event",
+   "title": "General Practice",
+   "host": "40216 Lion Dance at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-20T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "TBD",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/ldatucd/rsvp?id=909646",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General Club Meeting, open to all interested in learning about the club or joining.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909335",
+   "type": "event",
+   "title": "Club Meeting",
+   "host": "40413 Bagpipe Club at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-20T02:30:00.000Z",
+   "startTime": "18:30",
+   "sourceUrl": "https://aggielife.ucdavis.edu/AggiePipers/rsvp?id=909335",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us in making music and new friends! We aim to spread the love of guitar and the wonders of music! ⭐️ All instruments and experience levels welcome ⭐️ This meeting will consist of an icebreaker, lesson, and open jam session.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909809",
+   "type": "event",
+   "title": "Guitar Club General Meeting",
+   "host": "38948 Guitar Club",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-20T04:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/guitarclub/rsvp?id=909809",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A shadowcast performance of The Rocky Horror Picture Show.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_908907",
+   "type": "event",
+   "title": "Rocky Horror Shadowcast",
+   "host": "39879 Rocky Horror Club",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-21T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/rockyhorrorclub/rsvp?id=908907",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Pre-Production; Animation Club; anyone of any skill level is welcome!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909500",
+   "type": "event",
+   "title": "Aggiemation Eggheads | General Meetings",
+   "host": "38750 Aggiemation Eggheads",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-21T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/aggiemationeggheads/rsvp?id=909500",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Annual Acapella showcase hosted by The Liquid Hotplates.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909017",
+   "type": "event",
+   "title": "Alotta Acapella",
+   "host": "39227 The Liquid Hotplates",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-22T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/liquidhotplates/rsvp?id=909017",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Study guides are one of the most helpful ways to study for exams. Learn to create one that works best for you.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909128",
+   "type": "event",
+   "title": "Create Your Own Study Guide",
+   "host": "40549 Academic Assistance & Tutoring Center: Success Coaching and Learning Strategies",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-23T22:10:00.000Z",
+   "startTime": "14:10",
+   "place": {
+    "name": "South Hall 114, 1 Shields Ave, Davis, California 95616, United States",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCCoach/rsvp?id=909128",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come join us for an hour of fun, game night, trivia night, or music night!!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909730",
+   "type": "event",
+   "title": "Grace Alive Monday Funday",
+   "host": "38942 Grace Alive!",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-24T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "SCC Meeting Room D, 1 Shields Ave, Davis, California 95616, United States",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/GraceAlive/rsvp?id=909730",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come by to learn and practice lion dance with others! No experience is needed to join, just bring water and be willing to do your best!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909607",
+   "type": "event",
+   "title": "General Practice",
+   "host": "40216 Lion Dance at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-24T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Pavilion Parking Structure, Davis, CA 95616, United States",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/ldatucd/rsvp?id=909607",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General Club Meeting, open to all interested in learning about the club or joining.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909336",
+   "type": "event",
+   "title": "Club Meeting",
+   "host": "40413 Bagpipe Club at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-24T02:30:00.000Z",
+   "startTime": "18:30",
+   "sourceUrl": "https://aggielife.ucdavis.edu/AggiePipers/rsvp?id=909336",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Pre-Production; Animation Club; anyone of any skill level is welcome!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909501",
+   "type": "event",
+   "title": "Aggiemation Eggheads | General Meetings",
+   "host": "38750 Aggiemation Eggheads",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-24T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/aggiemationeggheads/rsvp?id=909501",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "We&apos;re gonna have a fun time of fellowship and a pie-eating contest!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909580",
+   "type": "event",
+   "title": "Pie Eating Contest",
+   "host": "39230 The Navigators at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-24T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/Navigators/rsvp?id=909580",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Learn about the difference between “funded” and “unfunded” programs, how scholarships work in grad school, and different sources of funding to pay for grad school.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909156",
+   "type": "event",
+   "title": "Funding Your Graduate Education",
+   "host": "40550 Academic Assistance & Tutoring Center: Pre-Graduate/Law Advising",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-24T21:10:00.000Z",
+   "startTime": "13:10",
+   "place": {
+    "name": "Online Event",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCGradLaw/rsvp?id=909156",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Rage is powerful, and you don&apos;t have to carry it alone. Join us on Tuesday, November 24th from 4-5:30pm for a community-centered space focused on expressing feminine rage, releasing frustration, building community, and embracing anger as a source of insight, power, and conne",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909859",
+   "type": "event",
+   "title": "OurStories Presents: Rage and Release",
+   "host": "40494 Women&apos;s Resources and Research Center",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-25T00:00:00.000Z",
+   "startTime": "16:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/WRRC/rsvp?id=909859",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join Us for a Friendsgiving Celebration Filled with Joy, Gratitude, and Great Food!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909737",
+   "type": "event",
+   "title": "Underground Scholars Friendsgiving 2026",
+   "host": "40501 Underground Scholars Program",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-25T02:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/USP/rsvp?id=909737",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Let’s examine our behaviors and habits to design action plans to strengthen our study system. What’s working, what could be working better?",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909129",
+   "type": "event",
+   "title": "Thrive Versus Survive",
+   "host": "40549 Academic Assistance & Tutoring Center: Success Coaching and Learning Strategies",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-26T00:10:00.000Z",
+   "startTime": "16:10",
+   "place": {
+    "name": "Online Event",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCCoach/rsvp?id=909129",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Open space to come and study. Open for any UCD student",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909825",
+   "type": "event",
+   "title": "Study Hours",
+   "host": "39460 Lambda Theta Phi Latin Fraternity, Incorporated",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-26T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/LambdaThetaPhi/rsvp?id=909825",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come by to learn and practice lion dance with others! No experience is needed to join, just bring water and be willing to do your best! We meet every Monday and Thursday on the Fifth floor of the Pavilion Parking Structure from 6PM to 8PM.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909648",
+   "type": "event",
+   "title": "General Practice",
+   "host": "40216 Lion Dance at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-27T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "TBD",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/ldatucd/rsvp?id=909648",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General Club Meeting, open to all interested in learning about the club or joining.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909337",
+   "type": "event",
+   "title": "Club Meeting",
+   "host": "40413 Bagpipe Club at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-27T02:30:00.000Z",
+   "startTime": "18:30",
+   "sourceUrl": "https://aggielife.ucdavis.edu/AggiePipers/rsvp?id=909337",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us in making music and new friends! We aim to spread the love of guitar and the wonders of music! ⭐️ All instruments and experience levels welcome ⭐️ This meeting will consist of an icebreaker, lesson, and open jam session.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909810",
+   "type": "event",
+   "title": "Guitar Club General Meeting",
+   "host": "38948 Guitar Club",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-27T04:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/guitarclub/rsvp?id=909810",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Having trouble juggling completing responsibilities and tasks? Let’s discuss how to strike a better balance through prioritization and to-do lists. All workshops are drop-in!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909130",
+   "type": "event",
+   "title": "Task Management",
+   "host": "40549 Academic Assistance & Tutoring Center: Success Coaching and Learning Strategies",
+   "schoolId": "s_ucdavis",
+   "date": "2026-11-30T22:10:00.000Z",
+   "startTime": "14:10",
+   "place": {
+    "name": "Online Event",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCCoach/rsvp?id=909130",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come join us for an hour of fun, game night, trivia night, or music night!!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909731",
+   "type": "event",
+   "title": "Grace Alive Monday Funday",
+   "host": "38942 Grace Alive!",
+   "schoolId": "s_ucdavis",
+   "date": "2026-12-01T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "SCC Meeting Room A, 1 Shields Ave, Davis, California 95616, United States",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/GraceAlive/rsvp?id=909731",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come by to learn and practice lion dance with others! No experience is needed to join, just bring water and be willing to do your best!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909608",
+   "type": "event",
+   "title": "General Practice",
+   "host": "40216 Lion Dance at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-12-01T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Pavilion Parking Structure, Davis, CA 95616, United States",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/ldatucd/rsvp?id=909608",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General Club Meeting, open to all interested in learning about the club or joining.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909338",
+   "type": "event",
+   "title": "Club Meeting",
+   "host": "40413 Bagpipe Club at UC Davis",
+   "schoolId": "s_ucdavis",
+   "date": "2026-12-01T02:30:00.000Z",
+   "startTime": "18:30",
+   "sourceUrl": "https://aggielife.ucdavis.edu/AggiePipers/rsvp?id=909338",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Pre-Production; Animation Club; anyone of any skill level is welcome!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909502",
+   "type": "event",
+   "title": "Aggiemation Eggheads | General Meetings",
+   "host": "38750 Aggiemation Eggheads",
+   "schoolId": "s_ucdavis",
+   "date": "2026-12-01T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/aggiemationeggheads/rsvp?id=909502",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join MyBaltoU for our final meeting of the semester! Members will help select a pet to support through the club’s fundraising efforts. Afterward, stay for ice cream and a relaxed study session as we prepare for finals and celebrate the semester together.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909247",
+   "type": "event",
+   "title": "MyBaltoU Meeting",
+   "host": "40537 myBaltoU",
+   "schoolId": "s_ucdavis",
+   "date": "2026-12-01T03:30:00.000Z",
+   "startTime": "19:30",
+   "sourceUrl": "https://aggielife.ucdavis.edu/myBaltoU/rsvp?id=909247",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come to Giedt 1001 on Monday Nights starting at 8pm for our lessons & social dance! We&apos;ll teach a beginner lesson at the beginning of every meeting which is followed by a social dance! Both are free. Hope to see you there!! Find more info at: linkTr.ee/DavisSwingDancers.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909007",
+   "type": "event",
+   "title": "Davis Swing Dancers Lesson and Social Dance!",
+   "host": "38884 Davis Swing Dancers",
+   "schoolId": "s_ucdavis",
+   "date": "2026-12-01T04:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Giedt 1001, 1 Shields Ave, Davis, California 95616, United States",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/davisswingdancers/rsvp?id=909007",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "How can I become a better test taker? Join us to discuss strategies for maximizing your test grade, including managing test-induced anxiety. All workshops are drop-in!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909131",
+   "type": "event",
+   "title": "Strategies for Test Taking",
+   "host": "40549 Academic Assistance & Tutoring Center: Success Coaching and Learning Strategies",
+   "schoolId": "s_ucdavis",
+   "date": "2026-12-01T23:10:00.000Z",
+   "startTime": "15:10",
+   "place": {
+    "name": "Online Event",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCCoach/rsvp?id=909131",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Explore ways to increase focus and concentration. You will have a chance to reflect on your common distractions and problem solve. All workshops are drop-in!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909132",
+   "type": "event",
+   "title": "Focus and Concentration",
+   "host": "40549 Academic Assistance & Tutoring Center: Success Coaching and Learning Strategies",
+   "schoolId": "s_ucdavis",
+   "date": "2026-12-02T21:10:00.000Z",
+   "startTime": "13:10",
+   "place": {
+    "name": "Online Event",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCCoach/rsvp?id=909132",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This workshop explains what a gap (\"growth\") year is, reasons why to consider taking a one (or more), and what to do during that time.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909157",
+   "type": "event",
+   "title": "Maximizing the Gap Year(s)",
+   "host": "40550 Academic Assistance & Tutoring Center: Pre-Graduate/Law Advising",
+   "schoolId": "s_ucdavis",
+   "date": "2026-12-02T21:10:00.000Z",
+   "startTime": "13:10",
+   "place": {
+    "name": "Online Event",
+    "lat": 38.5382,
+    "lng": -121.7617
+   },
+   "sourceUrl": "https://aggielife.ucdavis.edu/AATCGradLaw/rsvp?id=909157",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Open space to come and study. Open for any UCD student",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:43:08.262Z",
+   "createdAt": "2026-11-03T13:43:08.262Z",
+   "id": "op_ucdavis_cg_909826",
+   "type": "event",
+   "title": "Study Hours",
+   "host": "39460 Lambda Theta Phi Latin Fraternity, Incorporated",
+   "schoolId": "s_ucdavis",
+   "date": "2026-12-03T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://aggielife.ucdavis.edu/LambdaThetaPhi/rsvp?id=909826",
+   "sourceLabel": "Student org events"
+  }
+ ]
+}

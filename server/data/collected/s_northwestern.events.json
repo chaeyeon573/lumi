@@ -1,0 +1,1008 @@
+{
+ "collectedAt": "2026-11-03T13:42:12.344Z",
+ "sources": [
+  "campusgroups https://catsoncampus.northwestern.edu 41"
+ ],
+ "events": [
+  {
+   "description": "We will be meeting to talk about our upcoming blood drive!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376990",
+   "type": "event",
+   "title": "General Meeting",
+   "host": "35994 University Blood Initiative",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-04T01:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/universitybloodinitiative/rsvp?id=376990",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us on Next Up Stage in Luna’s Pub! Gather your friends for food, fun, and Tuesday Karaoke!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376755",
+   "type": "event",
+   "title": "TUESDAY KARAOKE in Luna&apos;s Pub",
+   "host": "36669 Norris University Center",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-04T02:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/Norris/rsvp?id=376755",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "YUÈ is an independent couture brand based in Chicago, practicing fashion design with analytical rigor and empathy. Every garment is sewn by hand in the bedroom of a walkup apartment, from 5-9. UNITY is hosting a speaker event with YUÈ designs for Northwestern students to learn ab",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376999",
+   "type": "event",
+   "title": "YUÈ Designs Speaker Event",
+   "host": "35992 UNITY Charity Fashion Show",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-05T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Anneberg G21, Evanston, IL 60208, United States",
+    "lat": 42.0565,
+    "lng": -87.6753
+   },
+   "sourceUrl": "https://catsoncampus.northwestern.edu/unity/rsvp?id=376999",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "In just 9 weeks, you’ll learn how to build a resume-worthy web application from scratch using the latest technologies and best practices. We welcome students of any level!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376947",
+   "type": "event",
+   "title": "Fall Workshop Series 2026",
+   "host": "35593 Develop + Innovate for Social Change",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-06T00:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/disc/rsvp?id=376947",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Outside fielding practice",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376917",
+   "type": "event",
+   "title": "Fielding Practice",
+   "host": "35558 Club Softball",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-06T00:30:00.000Z",
+   "startTime": "18:30",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/softball/rsvp?id=376917",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come to our fall external event (likely a speaker!!!)!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376612",
+   "type": "event",
+   "title": "Fall External Event",
+   "host": "35863 Remote Area Medical Volunteer Corps",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-06T01:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/ram/rsvp?id=376612",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join UNICEF for our weekly meeting! We will host a member education and plan volunteer oportunitites. Hope to see you there!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376630",
+   "type": "event",
+   "title": "UNICEF Weekly Meeting",
+   "host": "35990 UNICEF NU",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-06T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Tech L158, Evanston, IL 60208, United States",
+    "lat": 42.0565,
+    "lng": -87.6753
+   },
+   "sourceUrl": "https://catsoncampus.northwestern.edu/unicef/rsvp?id=376630",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Twice-weekly trivia practice, open to anyone regardless of prior experience.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376670",
+   "type": "event",
+   "title": "Quizbowl Practice",
+   "host": "35854 Quizbowl",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-06T01:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/quizbowl/rsvp?id=376670",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us on Next Up Stage in Luna’s Pub! Gather your friends for food, fun, and Thursday TRIVIA!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376747",
+   "type": "event",
+   "title": "TRIVIA NIGHTS in Luna&apos;s Pub!",
+   "host": "36669 Norris University Center",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-06T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Luna&apos;s Pub, Norris University Center, 1999 Campus Drive, Evanston, IL 60208, United States",
+    "lat": 42.0565,
+    "lng": -87.6753
+   },
+   "sourceUrl": "https://catsoncampus.northwestern.edu/Norris/rsvp?id=376747",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us on Next Up Stage in Luna’s Pub! Gather your friends for food, fun, and Friday Variety Nights! October 9 - Live Tote Bag Painting October 23 - Game Night in Luna&apos;s November 6 - Student DJ Night November 20 - Arts & Crafts Night Interested in participating in a feature",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376762",
+   "type": "event",
+   "title": "FRIDAY VARIETY NIGHT! Student DJ Night",
+   "host": "36669 Norris University Center",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-07T00:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/Norris/rsvp?id=376762",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "I am excited to announce that this year&apos;s NLVS Annual Gala will be held on Saturday, November 7, 2026, at Loft on Lake! The Gala is an opportunity to celebrate all the hard work and accomplishments of our organization throughout the year. This year is especially meaningful a",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376977",
+   "type": "event",
+   "title": "NLVS Gala",
+   "host": "35750 New Life Volunteering Society",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-08T01:00:00.000Z",
+   "startTime": "19:00",
+   "benefit": "Free food",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/nlvs/rsvp?id=376977",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Hello everyone! ❤️ NU Red Cross is hosting our quarterly CPR & AED Certification on Sunday, Nov 8th! Here are the details: Use this link to sign up! https://docs.google.com/forms/d/e/1FAIpQLSclM_5Bi3cRmhkIs4_b_kuuqpBH19Ui4Wale6d9kpDDLZMzYg/viewform 15 Student Limit! First come, f",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376993",
+   "type": "event",
+   "title": "NURC CPR & AED Certification Training Sign Up Form",
+   "host": "35857 Red Cross Club at Northwestern University",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-08T15:00:00.000Z",
+   "startTime": "09:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/redcross/rsvp?id=376993",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come learn a new style of ballroom dance. No partner or experience required. Bring socks!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376727",
+   "type": "event",
+   "title": "Beginner Lesson",
+   "host": "35508 Ballroom Latin and Swing Team",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-08T21:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Chicago Ballet Arts, 915 Foster St, Evanston , IL 60201, United States",
+    "lat": 42.0565,
+    "lng": -87.6753
+   },
+   "sourceUrl": "https://catsoncampus.northwestern.edu/blast/rsvp?id=376727",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Tangem is coming to campus to run a hands-on workshop on self-custody: how wallets and private keys work, common ways people lose funds, and how to keep your assets safe. Tangem is giving away to attendees, while supplies last: - Tangem hardware wallets - notebooks - T-shirts Ope",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376978",
+   "type": "event",
+   "title": "Crypto Security Workshop with Tangem",
+   "host": "35526 Blockchain Group",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-10T00:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/nublockchain/rsvp?id=376978",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Informative session with a business management consultant, Accenture through the Women&apos;s Network at Northwestern.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376958",
+   "type": "event",
+   "title": "TWN x Accenture",
+   "host": "35966 The Women&apos;s Network",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-11T00:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/thewomensnetwork/rsvp?id=376958",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This is a free, beginner-friendly event hosted by Polerize where everyone who is curious is invited to try out the sport of pole dance in a supportive environment.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_377000",
+   "type": "event",
+   "title": "Pole Jam",
+   "host": "35838 Polerize",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-11T00:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/polerize/rsvp?id=377000",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us on Next Up Stage in Luna’s Pub! Gather your friends for food, fun, and Tuesday Karaoke!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376756",
+   "type": "event",
+   "title": "TUESDAY KARAOKE in Luna&apos;s Pub",
+   "host": "36669 Norris University Center",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-11T02:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/Norris/rsvp?id=376756",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Interested in applying to medical school? Come join us at the Northwestern University Medical School Fair! The International Medical School Fair (IMSF) Workshop Series is designed to provide aspiring healthcare professionals with practical, hands-on training led by experienced in",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376991",
+   "type": "event",
+   "title": "NORTHWESTERN UNIVERSITY WORKSHOP - International Medical School Fair (IMSF) Workshop Series",
+   "host": "35857 Red Cross Club at Northwestern University",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-11T21:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/redcross/rsvp?id=376991",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Dare To Be Scared on Kahn Pavilion! Norris Programs Presents Fall Film Series! September 30 - Five Nights at Freddy&apos;s 2 October 14 - I Know What You Did Last Summer (1997) November 11 - Sinners",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376769",
+   "type": "event",
+   "title": "Fall Film Series on Kahn Pavilion!",
+   "host": "36669 Norris University Center",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-12T01:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/Norris/rsvp?id=376769",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "In just 9 weeks, you’ll learn how to build a resume-worthy web application from scratch using the latest technologies and best practices. We welcome students of any level!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376948",
+   "type": "event",
+   "title": "Fall Workshop Series 2026",
+   "host": "35593 Develop + Innovate for Social Change",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-13T00:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/disc/rsvp?id=376948",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Help us plan the first RAM clinic in Chicago!!!!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376613",
+   "type": "event",
+   "title": "Community Host Group Meeting (November)",
+   "host": "35863 Remote Area Medical Volunteer Corps",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-13T01:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/ram/rsvp?id=376613",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join UNICEF for our weekly meeting! We will host a member education and plan volunteer oportunitites. Hope to see you there!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376631",
+   "type": "event",
+   "title": "UNICEF Weekly Meeting",
+   "host": "35990 UNICEF NU",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-13T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Tech L158, Evanston, IL 60208, United States",
+    "lat": 42.0565,
+    "lng": -87.6753
+   },
+   "sourceUrl": "https://catsoncampus.northwestern.edu/unicef/rsvp?id=376631",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Twice-weekly trivia practice, open to anyone regardless of prior experience.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376671",
+   "type": "event",
+   "title": "Quizbowl Practice",
+   "host": "35854 Quizbowl",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-13T01:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/quizbowl/rsvp?id=376671",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us on Next Up Stage in Luna’s Pub! Gather your friends for food, fun, and Thursday TRIVIA!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376748",
+   "type": "event",
+   "title": "TRIVIA NIGHTS in Luna&apos;s Pub!",
+   "host": "36669 Norris University Center",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-13T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Luna&apos;s Pub, Norris University Center, 1999 Campus Drive, Evanston, IL 60208, United States",
+    "lat": 42.0565,
+    "lng": -87.6753
+   },
+   "sourceUrl": "https://catsoncampus.northwestern.edu/Norris/rsvp?id=376748",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "NUFF is a student-led short film festival at Northwestern University open to all filmmakers nationwide to exhibit their work, regardless of level. NUFF is a new festival, debuting this Fall on Northwestern’s campus in Evanston, IL. The festival will feature both NU and external s",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_377001",
+   "type": "event",
+   "title": "The Film Festival at Northwestern University 2026",
+   "host": "36227 The Film Festival",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-13T23:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Annie May Swift Hall, Evanston, IL 60208, United States",
+    "lat": 42.0565,
+    "lng": -87.6753
+   },
+   "sourceUrl": "https://catsoncampus.northwestern.edu/filmfestival/rsvp?id=377001",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us on Next Up Stage in Luna’s Pub! Gather your friends for food, fun, and a special Friday NUxChicago Comedy Series! See on-campus student talent and Chicago comedians perform! Hosted by SESP Professor Sepehr Vakil. October 16 - NU x Chicago Comedy Night! featuring Kristen T",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376765",
+   "type": "event",
+   "title": "NU x Chicago Comedy Series! in Luna&apos;s Pub",
+   "host": "36669 Norris University Center",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-14T01:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/Norris/rsvp?id=376765",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Twice-weekly trivia practice, open to anyone regardless of prior experience.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376672",
+   "type": "event",
+   "title": "Quizbowl Practice",
+   "host": "35854 Quizbowl",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-17T01:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/quizbowl/rsvp?id=376672",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us on Next Up Stage in Luna’s Pub! Gather your friends for food, fun, and Tuesday Karaoke!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376757",
+   "type": "event",
+   "title": "TUESDAY KARAOKE in Luna&apos;s Pub",
+   "host": "36669 Norris University Center",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-18T02:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/Norris/rsvp?id=376757",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "In just 9 weeks, you’ll learn how to build a resume-worthy web application from scratch using the latest technologies and best practices. We welcome students of any level!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376949",
+   "type": "event",
+   "title": "Fall Workshop Series 2026",
+   "host": "35593 Develop + Innovate for Social Change",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-20T00:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/disc/rsvp?id=376949",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Outside fielding practice",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376919",
+   "type": "event",
+   "title": "Fielding Practice",
+   "host": "35558 Club Softball",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-20T00:30:00.000Z",
+   "startTime": "18:30",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/softball/rsvp?id=376919",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come bond with the RAMily! Details will be announced closer to the date, but it might involve some tie-dye...",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376614",
+   "type": "event",
+   "title": "RAM November Bonding",
+   "host": "35863 Remote Area Medical Volunteer Corps",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-20T01:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/ram/rsvp?id=376614",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join UNICEF for our weekly meeting! We will host a member education and plan volunteer oportunitites. Hope to see you there!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376632",
+   "type": "event",
+   "title": "UNICEF Weekly Meeting",
+   "host": "35990 UNICEF NU",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-20T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Tech L158, Evanston, IL 60208, United States",
+    "lat": 42.0565,
+    "lng": -87.6753
+   },
+   "sourceUrl": "https://catsoncampus.northwestern.edu/unicef/rsvp?id=376632",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Twice-weekly trivia practice, open to anyone regardless of prior experience.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376673",
+   "type": "event",
+   "title": "Quizbowl Practice",
+   "host": "35854 Quizbowl",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-20T01:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/quizbowl/rsvp?id=376673",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us on Next Up Stage in Luna’s Pub! Gather your friends for food, fun, and Thursday TRIVIA!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376749",
+   "type": "event",
+   "title": "TRIVIA NIGHTS in Luna&apos;s Pub!",
+   "host": "36669 Norris University Center",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-20T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Luna&apos;s Pub, Norris University Center, 1999 Campus Drive, Evanston, IL 60208, United States",
+    "lat": 42.0565,
+    "lng": -87.6753
+   },
+   "sourceUrl": "https://catsoncampus.northwestern.edu/Norris/rsvp?id=376749",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us on Next Up Stage in Luna’s Pub! Gather your friends for food, fun, and Friday Variety Nights! October 9 - Live Tote Bag Painting October 23 - Game Night in Luna&apos;s November 6 - Student DJ Night November 20 - Arts & Crafts Night Interested in participating in a feature",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376763",
+   "type": "event",
+   "title": "FRIDAY VARIETY NIGHT! Arts & Crafts Night!",
+   "host": "36669 Norris University Center",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-21T00:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/Norris/rsvp?id=376763",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come learn a new style of ballroom dance. No partner or experience required. Bring socks!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376728",
+   "type": "event",
+   "title": "Beginner Lesson",
+   "host": "35508 Ballroom Latin and Swing Team",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-22T21:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Chicago Ballet Arts, 915 Foster St, Evanston , IL 60201, United States",
+    "lat": 42.0565,
+    "lng": -87.6753
+   },
+   "sourceUrl": "https://catsoncampus.northwestern.edu/blast/rsvp?id=376728",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Twice-weekly trivia practice, open to anyone regardless of prior experience.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376674",
+   "type": "event",
+   "title": "Quizbowl Practice",
+   "host": "35854 Quizbowl",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-24T01:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/quizbowl/rsvp?id=376674",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us on Next Up Stage in Luna’s Pub! Gather your friends for food, fun, and Tuesday Karaoke!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376758",
+   "type": "event",
+   "title": "TUESDAY KARAOKE in Luna&apos;s Pub",
+   "host": "36669 Norris University Center",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-25T02:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/Norris/rsvp?id=376758",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come learn a new style of ballroom dance. No partner or experience required. Bring socks!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376729",
+   "type": "event",
+   "title": "Beginner Lesson",
+   "host": "35508 Ballroom Latin and Swing Team",
+   "schoolId": "s_northwestern",
+   "date": "2026-11-29T21:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Chicago Ballet Arts, 915 Foster St, Evanston , IL 60201, United States",
+    "lat": 42.0565,
+    "lng": -87.6753
+   },
+   "sourceUrl": "https://catsoncampus.northwestern.edu/blast/rsvp?id=376729",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Twice-weekly trivia practice, open to anyone regardless of prior experience.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376675",
+   "type": "event",
+   "title": "Quizbowl Practice",
+   "host": "35854 Quizbowl",
+   "schoolId": "s_northwestern",
+   "date": "2026-12-01T01:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/quizbowl/rsvp?id=376675",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us on Next Up Stage in Luna’s Pub! Gather your friends for food, fun, and Tuesday Karaoke!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-03T13:42:15.228Z",
+   "createdAt": "2026-11-03T13:42:15.228Z",
+   "id": "op_northwestern_cg_376759",
+   "type": "event",
+   "title": "TUESDAY KARAOKE in Luna&apos;s Pub",
+   "host": "36669 Norris University Center",
+   "schoolId": "s_northwestern",
+   "date": "2026-12-02T02:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://catsoncampus.northwestern.edu/Norris/rsvp?id=376759",
+   "sourceLabel": "Student org events"
+  }
+ ]
+}

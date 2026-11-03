@@ -1740,3 +1740,8 @@
 - Paused schools: Illinois club directory found — one.illinois.edu is CampusGroups with a public club list → moved to collect, collecting. Ohio State (activities.osu.edu) fails TLS from the container; Texas A&M getinvolved.tamu.edu answers 403 and StuAct Online is script/login; Rutgers getinvolved.rutgers.edu redirects to a resource page — still paused.
 - Spot check classes: CMU 5 re-fetched — times match, but one was "ETC Interdisciplinary Project II This Section Cancelled": CMU marks cancelled sections in the title cell. Reader now leaves them out (test); CMU re-collected 6,953 → 6,756 (197 cancelled removed from the class file — they were not real classes).
 - Illinois collected: 1,227 groups (96 Greek, 13 student government), 115 with a public link, 9,087 catalog courses (no times). Spot check: Illini Dancesport, Illinois MicroTech websites match.
+
+## 2026-11-03 13:33 run
+- No Codex commits or HANDOFF requests.
+- Events for CampusGroups schools: public `<host>/rss_events` feed. First version filtered by category "Open …" — only Cornell names categories that way (Yale "Group Meeting", Duke "Religious/Spiritual"), so 21 schools came back empty; switched to privacyLevel 0 (same field at every school) minus "Private …" categories. Now 22 more schools have event files (Illinois 1,477 … MIT 26). Tests added.
+- Spot check events: Yale "Fall Show Tech", Duke "Cosmic Origins" Exhibition Run, Illinois SIGMusic General Meeting — title and exact start time match the school feed (event pages are script shells, so checked against the feed).
