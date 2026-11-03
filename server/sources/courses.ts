@@ -973,6 +973,55 @@ async function caltechLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   return caltechToCourses(await r.text(), c.termCode, c.term).find((x) => x.id === c.id) ?? null;
 }
 
+// ─── Carnegie Mellon: enr-apps.as.cmu.edu/open/SOC (공개 Schedule of Classes) — 학기마다 POST 한 번(DEPT=All, 피츠버그)으로 전 과목 ───
+// 줄 칸: 과목(15122) · 제목 · 학점 · 섹션("Lec 1"·"A") · 건물방 · 요일(TR) · 시작 09:30AM · 끝 · 캠퍼스 · 방식. 섹션 칸이 빈 줄은 위 섹션의 추가 시간.
+// 과목에 "Lec" 섹션이 있으면 강의만(문자 섹션은 리시테이션), 없으면 모든 섹션. 대학원(10-701 등) 포함.
+const CMU = 'https://enr-apps.as.cmu.edu/open/SOC/SOCServlet';
+export function cmuToCourses(html: string, termCode: string, label: string): CatalogCourse[] {
+  type Sec = { code: string; title: string; sec: string; units?: number; meetings: Meeting[] };
+  const secs: Sec[] = []; let code = '', title = '', units: number | undefined, cur: Sec | undefined;
+  const cellText = (h: string) => decodeEntities(h.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ')).replace(/\s+/g, ' ').trim();
+  const body = html.slice(html.indexOf('<tbody') >= 0 ? html.indexOf('<tbody') : 0);
+  for (const chunk of body.split('</tr>')) {
+    const cells = [...chunk.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map((m) => m[1]); if (cells.length < 8) continue;
+    const num = /courseDetails\?COURSE=(\d{5})/.exec(cells[0])?.[1];
+    if (num) { code = `${num.slice(0, 2)}-${num.slice(2)}`; title = cellText(cells[1]); const u = Number(cellText(cells[2])); units = Number.isFinite(u) && u > 0 ? u : undefined; cur = undefined; }
+    if (!code) continue;
+    const sec = cellText(cells[3]);
+    if (sec) { cur = { code, title, sec, units, meetings: [] }; secs.push(cur); }
+    if (!cur) continue;
+    const days = cellText(cells[5]), a = to24(cellText(cells[6])), b = to24(cellText(cells[7]));
+    if (!/^[MTWRFSU]+$/.test(days) || !a || !b) continue;
+    for (const ch of days) cur.meetings.push({ day: { M: 0, T: 1, W: 2, R: 3, F: 4, S: 5, U: 6 }[ch as 'M']!, start: a, end: b });
+  }
+  const out: CatalogCourse[] = []; const seen = new Set<string>(); const secOf = new Map<string, string>();
+  const hasLec = new Set(secs.filter((x) => /^Lec/i.test(x.sec)).map((x) => x.code));
+  for (const x of secs) {
+    if (hasLec.has(x.code) && !/^Lec/i.test(x.sec)) continue; if (!x.meetings.length) continue;
+    const baseId = courseId('s_cmu', x.code); const id = seen.has(baseId) ? `${baseId}_${x.sec.toLowerCase().replace(/\s+/g, '')}` : baseId; if (seen.has(id)) continue; seen.add(id); secOf.set(id, x.sec);
+    out.push({ id, schoolId: 's_cmu', code: x.code, title: x.title, department: x.code.slice(0, 2), meetings: uniq(x.meetings), term: label, termCode, units: x.units, url: `${CMU}/courseDetails?COURSE=${x.code.replace('-', '')}&SEMESTER=${termCode}` });
+  }
+  for (const c of out) if (out.filter((o) => o.code === c.code).length > 1) c.title = `${c.title} (${secOf.get(c.id)})`;
+  return tagTerm(out, label);
+}
+async function cmuSearch(termCode: string): Promise<string> {
+  const r = await fetch(`${CMU}/search`, { method: 'POST', headers: { ...UAH, 'content-type': 'application/x-www-form-urlencoded' }, body: `SEMESTER=${termCode}&MINI=NO&GRAD_UNDER=All&PRG_LOCATION=PIT&DEPT=All&COURSE=&INSTRUCTOR=&DAYS=&BEG_TIME=All&KEYWORD=&TITLE_ONLY=NO&SUBMIT=` });
+  if (!r.ok) throw new Error(`cmu ${termCode} → ${r.status}`); return r.text();
+}
+async function cmu(): Promise<CatalogCourse[]> {
+  const form = await (await fetch(`${CMU}/search`, { headers: UAH })).text();
+  const terms = [...(/name="SEMESTER"[\s\S]*?<\/select>/.exec(form)?.[0] ?? '').matchAll(/value="([A-Z]\d{2})"[^>]*>\s*([^<]+)/g)].map((m) => ({ code: m[1], label: labelOf(m[2]) }));
+  const [cur, next] = catalogTermLabels(); const pick = [cur, next].map((l) => terms.find((t) => t.label === l)).filter((t): t is { code: string; label: string } => !!t);
+  const out: CatalogCourse[] = [];
+  for (const t of pick) { const got = cmuToCourses(await cmuSearch(t.code), t.code, t.label); out.push(...got); console.log(`  s_cmu ${t.code} (${t.label}): ${got.length} classes`); await new Promise((r) => setTimeout(r, 1000)); }
+  return out;
+}
+const cmuPages = new Map<string, Promise<string>>();
+async function cmuLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
+  if (!c.termCode) return null; if (!cmuPages.has(c.termCode)) cmuPages.set(c.termCode, cmuSearch(c.termCode));
+  return cmuToCourses(await cmuPages.get(c.termCode)!, c.termCode, c.term).find((x) => x.id === c.id) ?? null;
+}
+
 // ─── Harvard: my.harvard.edu 공개 과목 검색 (키 불필요) ─────────────────────
 // 검색 결과는 JSON 안에 이스케이프된 HTML 로 오고 15개씩 page=N 으로 넘어간다. term=2026+Fall · school=FAS 필터가 된다.
 // 과목마다 /course/sections/<id>/<offer>/<strm>/<session> 조각에 섹션별 요일(aria-label "Tuesday, selected")·시간·장소·교수가 있다.
@@ -1107,6 +1156,7 @@ export const COURSE_SOURCES: Record<string, CourseSource> = {
   rice: { schoolId: 's_rice', fetch: rice, lookup: riceLookup },
   uw: { schoolId: 's_uw', fetch: uw, lookup: uwLookup },
   caltech: { schoolId: 's_caltech', fetch: caltech, lookup: caltechLookup },
+  cmu: { schoolId: 's_cmu', fetch: cmu, lookup: cmuLookup },
 };
 export const adapters: Record<string, () => Promise<CatalogCourse[]>> = Object.fromEntries(Object.entries(COURSE_SOURCES).map(([k, v]) => [k, v.fetch]));
 
