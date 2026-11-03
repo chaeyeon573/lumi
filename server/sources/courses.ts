@@ -932,6 +932,38 @@ async function uwLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   const html = await uwGet(`${c.termCode}/${page}.html`); return html ? uwToCourses(html, c.termCode, c.term, page).find((x) => x.id === c.id) ?? null : null;
 }
 
+// ─── UCLA: sa.ucla.edu/ro/Public/SOC — 공개. 과목 목록은 25개씩(Results/CourseTitlesView), 분반 시간은 과목마다 한 번(Results/GetCourseSummary).
+// 과목당 요청이 하나라 한 번에 다 읽지 않는다 — 하루 조금씩(server/scripts 쪽 배치). 여기는 GetCourseSummary 응답 한 개를 읽는 부분.
+// 강의(primary-row)만 — 토론·실험(Dis/Lab)은 펼쳐야 나오고 학생이 하나 고르는 것이라 넣지 않는다(다른 학교와 같은 규칙).
+export interface UclaCourseRef { subject: string; catalog: string; title: string }
+const UCLA_DAY: Record<string, number> = { M: 0, T: 1, W: 2, R: 3, F: 4, S: 5, U: 6 };
+const uclaTime = (t: string) => { const m = /^(\d{1,2})(?::(\d{2}))?\s*(am|pm)$/i.exec(t.trim()); if (!m) return ''; let h = Number(m[1]) % 12; if (/pm/i.test(m[3])) h += 12; return `${String(h).padStart(2, '0')}:${m[2] ?? '00'}`; };
+export function uclaSummaryToCourses(html: string, ref: UclaCourseRef, termCode: string, label: string): CatalogCourse[] {
+  const out: CatalogCourse[] = []; const secOf = new Map<string, string>();
+  const txt = (h = '') => decodeEntities(h.replace(/<wbr\s*\/?>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ')).trim();
+  const code = `${ref.subject} ${ref.catalog.replace(/^0+(?=\d)/, '')}`; const baseId = courseId('s_ucla', code);
+  const rows = html.split(/<div class="row-fluid data_row primary-row/).slice(1);
+  for (const row of rows) {
+    const sec = txt(/title="Class Detail[^"]*">([^<]+)<\/a>/.exec(row)?.[1]); if (!sec || !/^(Lec|Sem|Sec|Stu|Tut|Act|Lab|Rec|Cli|Fld|Res)\b/i.test(sec)) continue;
+    const days = txt(/-days_data">\s*<p>\s*<button[^>]*>([^<]+)<\/button>/.exec(row)?.[1]);
+    const time = /class="timeColumn"[\s\S]*?<p>([^<]*(?:<wbr\s*\/?>[^<]*)?)<\/p>\s*<\/div>/.exec(row)?.[1] ?? '';
+    const tm = /(\d{1,2}(?::\d{2})?\s*[ap]m)\s*-\s*(\d{1,2}(?::\d{2})?\s*[ap]m)/i.exec(txt(time));
+    if (!days || !tm || !/^[MTWRFSU]+$/.test(days)) continue;
+    const start = uclaTime(tm[1]), end = uclaTime(tm[2]); if (!start || !end) continue;
+    const meetings: Meeting[] = [...days].map((ch) => ({ day: UCLA_DAY[ch], start, end }));
+    const no = sec.replace(/^\S+\s*/, '');
+    const id = out.length ? `${baseId}_${no.toLowerCase()}` : baseId; if (out.some((o) => o.id === id)) continue; secOf.set(id, sec);
+    const location = txt(/class="locationColumn[^"]*"[^>]*>([\s\S]*?)<\/div>/.exec(row)?.[1]) || undefined;
+    const units = Number(txt(/class="unitsColumn"[^>]*>([\s\S]*?)<\/div>/.exec(row)?.[1]));
+    const instructor = txt(/class="instructorColumn[^"]*"[^>]*>([\s\S]*?)<\/div>/.exec(row)?.[1]) || undefined;
+    const classId = /id="(\d+)_/.exec(row)?.[1];
+    out.push({ id, schoolId: 's_ucla', code, title: ref.title, department: ref.subject, instructor: instructor && !/^The Staff$/i.test(instructor) ? instructor : undefined, location, meetings: uniq(meetings), term: label, termCode, units: Number.isFinite(units) && units > 0 ? units : undefined,
+      url: `https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=${termCode}&subj_area_cd=${encodeURIComponent(ref.subject)}&crs_catlg_no=${encodeURIComponent(ref.catalog.padEnd(8))}${classId ? `&class_id=${classId}` : ''}` });
+  }
+  if (out.length > 1) for (const c of out) c.title = `${c.title} (${secOf.get(c.id)})`;
+  return out;
+}
+
 // ─── Caltech: schedules.caltech.edu/<FA2026-27>.html — 쿼터마다 한 페이지(보고서를 HTML 로 내보낸 표, 글자 칸 순서대로 읽는다) ───
 // 칸 순서: 과목 "CS 024" → 학점 "3-3-3" → 제목 → [섹션 "01" → 교수 → "MWF 11:00 - 11:55"(24시간) → 강의실]… 시각이 두 줄로 나뉘기도 한다("OM,W 16:00 -" + "16:55").
 const CALTECH = 'https://schedules.caltech.edu';
