@@ -1,25 +1,25 @@
 {
- "checkedAt": "2026-11-03T06:38:23.416Z",
+ "checkedAt": "2026-11-03T18:39:51.915Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:uw",
- "sampled": 4926,
- "withTimes": 4926,
+ "sampled": 4923,
+ "withTimes": 4923,
  "terms": [
   "Fall 2026",
   "Winter 2027"
  ],
  "sample": [
   "ARCTIC 210 · Inuit/Arctc/Glbl Chg · Fall 2026 · T 12:30-14:20 R 12:30-14:20",
-  "ENGL 131 · Compositn: Expositn (Sec X7) · Fall 2026 · T 13:30-15:20 R 13:30-15:20",
-  "PHYS 117 · Gen Phys Lab Mechncs (Sec R) · Fall 2026 · W 19:30-21:20",
-  "EDTEP 532 · Tch & Lrn Litrcy II (Sec D) · Fall 2026 · T 17:00-19:50",
-  "LAW A 530 · Indiv Income Tax (Sec A) · Fall 2026 · M 13:30-15:20 W 13:30-15:20",
-  "CLAS 101 · Lat & Grk Curr Use (Sec B) · Winter 2027 · T 09:30-10:20 R 09:30-10:20"
+  "ENGL 131 · Compositn: Expositn (Sec X5) · Fall 2026 · W 10:30-12:20 F 10:30-12:20",
+  "PHYS 117 · Gen Phys Lab Mechncs (Sec P) · Fall 2026 · F 15:30-17:20",
+  "EDTEP 532 · Tch & Lrn Litrcy II (Sec A) · Fall 2026 · R 08:30-12:50",
+  "LAW A 525 · Water Law (Sec A) · Fall 2026 · M 08:30-09:50 W 08:30-09:50",
+  "CMS 240 · Writing in Cms (Sec B) · Winter 2027 · T 08:30-10:20 R 08:30-10:20"
  ],
  "spotCheck": {
-  "matched": 5,
+  "matched": 6,
   "mismatched": [],
-  "unavailable": 1
+  "unavailable": 0
  }
 }
