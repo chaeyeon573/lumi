@@ -1113,7 +1113,7 @@ async function vanderbilt(): Promise<CatalogCourse[]> {
   await get('/SearchClasses!input.action');
   const form = await get('/SearchClasses!input.action');
   const subjects = [...new Set([...form.matchAll(/name="searchCriteria\.subjectAreaCodes" type="checkbox" value="([^"]+)"/g)].map((m) => m[1]))];
-  const terms = [...form.matchAll(/<option value="(\d{4})">(20\d{2} (?:Fall|Spring))/g)].map((m) => ({ code: m[1], label: labelOf(m[2]) }));
+  const terms = [...form.matchAll(/<option value="(\d{4})"(?: selected="selected")?>(20\d{2} (?:Fall|Spring))/g)].map((m) => ({ code: m[1], label: labelOf(m[2]) }));
   const [cur, next] = catalogTermLabels();
   // 지금 학기는 목록에 없을 때가 있다(선택돼 있는 학기) — 앞뒤 번호로 맞춘다 (Spring 1080 → Fall 1075)
   const nextT = terms.find((t) => t.label === next); const curT = terms.find((t) => t.label === cur) ?? (nextT && /Spring/.test(nextT.label) ? { code: String(Number(nextT.code) - 5), label: cur } : undefined);

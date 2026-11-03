@@ -1727,3 +1727,9 @@
 - No Codex commits or HANDOFF requests.
 - New Vanderbilt class reader (more.app.vanderbilt.edu YES: select term → search per subject (302) → switchPage 50 per page; lectures only when a course has lectures; "01:25p" times). Fall 2026: 2,579 sections. Spring 2027 not collected yet — term pick to check next run.
 - Spot check clubs: UChicago Grappling, Rice Blue Sole Steppers, UCR Alpha Epsilon Pi, Florida Anisong Ensemble match Engage; UMD "Department of Environmental Safety… Office of Risk Management" was an office shown as a club → name rule added ("Office of / Department of / Division of / Center for …" without club words): 258 marked across schools (Engage schools have no category). Tests added.
+
+## 2026-11-03 11:33 run
+- No Codex commits or HANDOFF requests.
+- Vanderbilt Spring 2027 was missed: without a session the form pre-selects 1080 (`selected="selected"`), which the term regex skipped. Fixed (option may be selected); re-collecting both terms.
+- Spot check classes: UW AIS 307, CSE 453, G H 101 (Winter), LAW B 531 (grad), SOC 337 re-fetched live — match; independent raw check: CSE 453 "MWF 130-220" → 13:30-14:20, quiz sections left out.
+- Spot check clubs: Brown SOCA and Personal Finance Initiative (club pages), Caltech Competitive Programming and GWiPMA (on the SFE list), Emory Raoul Hall (residence hall → housing.emory.edu; residential community, kept).
