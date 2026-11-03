@@ -1,21 +1,21 @@
 {
- "checkedAt": "2026-11-03T02:56:09.429Z",
+ "checkedAt": "2026-11-03T03:19:21.421Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:hcx:https://mybustudent.sa.bu.edu/psc/BUPRDSA/EMPLOYEE/SA|BU001",
- "sampled": 933,
- "withTimes": 933,
+ "sampled": 7919,
+ "withTimes": 7919,
  "terms": [
   "Fall 2026",
   "Spring 2027"
  ],
  "sample": [
-  "CASAA 207 · Sociology of Race and Ethnicity · Fall 2026 · T 09:30-10:45 R 09:30-10:45",
-  "CASJS 120 · The Bible · Fall 2026 · M 12:20-13:10 W 12:20-13:10 F 12:20-13:10",
-  "CFATH 131 · Movement 1: Expressive Human Instrument (Sec A1) · Fall 2026 · W 10:10-11:55 M 12:20-14:05",
-  "CASBB 528 · Biochemistry Laboratory 2 (Sec A1) · Spring 2027 · F 12:20-14:05",
-  "CASMA 113 · Elementary Statistics (Sec B1) · Spring 2027 · M 12:20-13:10 W 12:20-13:10 F 12:20-13:10",
-  "CGSHU 202 · Modern and Applied Ethics (Sec SS) · Spring 2027 · M 15:35-16:25"
+  "CASAA 114 · Kongo to Cuba: Art, Exchange, and Self-Determination in Africa and Latin America · Fall 2026 · M 13:25-14:15 W 13:25-14:15 F 13:25-14:15",
+  "CFAAR 121 · Foundation Sculpture (Sec B1) · Fall 2026 · T 15:30-18:15 R 15:30-18:15",
+  "METCJ 511 · Rehabilitation and Re-Integration · Fall 2026 · T 18:00-20:45",
+  "CASAR 190 · Introduction to Archaeology (Sec A1) · Spring 2027 · T 11:00-12:15 R 11:00-12:15",
+  "CASWS 645 · Shariah Law · Spring 2027 · T 11:00-12:15 R 11:00-12:15",
+  "MEDMD 227 · Doctoring 2 (Sec S10) · Spring 2027 · F 13:00-17:00 T 13:00-15:30 W 13:00-15:30 R 13:00-15:30 T 13:00-17:00 W 13:00-17:00 R 13:00-17:00 M 13:00-17:00 M 13:00-15:30"
  ],
  "spotCheck": {
   "matched": 6,
