@@ -237,11 +237,22 @@ async function collectEvents(row: SchoolRow): Promise<AgentRun> {
 
 /** import-collected:<id> — 학교를 열 때 파일로 모아 둔 동아리를 DB 에 한 번에 */
 async function importCollected(id: string): Promise<AgentRun> {
-  const startedAt = new Date().toISOString(); const file = path.join(COLLECTED_DIR, `${id}.orgs.json`);
-  if (!existsSync(file)) return record({ task: `import-collected:${id}`, schoolId: id, status: 'skipped', startedAt, summary: { error: `no ${file}` } });
-  const organizations = JSON.parse(readFileSync(file, 'utf8')) as Organization[];
-  if (!DRY) await store.applyPatch({ organizations });
-  return record({ task: `import-collected:${id}`, schoolId: id, status: 'applied', startedAt, summary: { organizations: organizations.length, dry: DRY } });
+  // 학교를 열 때 한 번에: 파일로 모아 둔 동아리 + 수업 + 다가오는 행사를 DB 에 (2026-11-03 사장님: 파일로 두고 한 번에 올릴 수 있게)
+  // AGENT_DRY=1 이면 쓰지 않고 몇 개가 들어갈지만 센다
+  const startedAt = new Date().toISOString(); const f = (kind: string) => path.join(COLLECTED_DIR, `${id}.${kind}.json`);
+  if (!existsSync(f('orgs'))) return record({ task: `import-collected:${id}`, schoolId: id, status: 'skipped', startedAt, summary: { error: `no ${f('orgs')}` } });
+  const organizations = JSON.parse(readFileSync(f('orgs'), 'utf8')) as Organization[];
+  const courses = existsSync(f('courses')) ? (JSON.parse(readFileSync(f('courses'), 'utf8')) as CatalogCourse[]) : [];
+  const today = new Date().toISOString().slice(0, 10);
+  const opportunities = existsSync(f('events'))
+    ? ((JSON.parse(readFileSync(f('events'), 'utf8')) as { events?: Opportunity[] }).events ?? []).filter((e) => !e.date || e.date >= today).map((e) => ({ ...e, cover: { emoji: '', hue: 200 }, qna: [], reviews: [] }) as Opportunity)
+    : [];
+  if (!DRY) {
+    await store.applyPatch({ organizations });
+    if (courses.length) await store.replaceCatalog(id, courses);
+    if (opportunities.length) await store.applyPatch({ opportunities });
+  }
+  return record({ task: `import-collected:${id}`, schoolId: id, status: 'applied', startedAt, summary: { organizations: organizations.length, courses: courses.length, events: opportunities.length, dry: DRY } });
 }
 
 // ─── 학교 단위 작업 (워커) ─────────────────────────────────────────────────
