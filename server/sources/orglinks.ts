@@ -222,7 +222,7 @@ export function cardOrgToOrg(c: CardOrg, schoolId: string, listUrl: string): Org
  * 지우지 않고 type 'department' 로 둔다 (사장님: 모은 데이터는 지우지 않는다) — 동아리 목록에는 안 나온다.
  * “Department Sponsored Student Organization” 처럼 학생 단체라고 적힌 분류는 해당 없음.
  */
-const STRONG_OFFICE = /non[- ]student org|staff[- ]only|faculty\/staff|university committee|student affairs unit|university unit|president'?s office/i;
+const STRONG_OFFICE = /non[- ]student org|staff[- ]only|faculty\/staff|university committee|student affairs unit|university unit|president'?s office|\bdepartments? (&|and) programs?\b/i; // Illinois "Grainger Departments & Programs" = 공대 학과·사무실 32곳 (2026-11-03)
 const WEAK_OFFICE = /\b(university|academic|campus) (department|office|unit)s?\b|^departments?( and programs| or program)?$|departmental programs|department ?office|department\/office|\boffices$|university offices?|career services|campus centers, museums|group management|admin(istrative)? group|\badministration\b|^administrative$|dean'?s office/i;
 const OFFICE_NAME = /\b(center|centre|office|department|dept\.?|program|programs|services?|museum|institute|faculty|staff|committee|division|school of|college of|library|libraries|admissions|advising|registrar|recreation|housing|dining|alumni|career|campus life|student life|student affairs|dean|residential|ministry office|initiative|orientation|student experience|engagement|wellness|well-?being|support|success|equity|inclusion|operations|affairs|conduct|accountability)\b|\bschool$/i;
 const CLUB_NAME = /\b(club|society|association|team|magazine|journal|chapter|alliance|collective|ensemble|choir|band|league|union|coalition|students for|student group|fraternity|sorority)\b|@/i;
