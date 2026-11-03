@@ -1711,3 +1711,8 @@
 - No Codex commits or HANDOFF requests yet.
 - New Caltech class reader (schedules.caltech.edu/FA2026-27.html, a report export: read text cells in order; 24-hour times; variable "+" and "1.5-0-1.5" units; times split over two cells). 438 Fall sections; live re-check 6/6; Winter page not published (404).
 - Spot check clubs (websites): Yale Mixed Company OK; Yale Magevet and Duke SHPE (national shpe.org) behind bot checks / national site; Columbia "Group Conduct" (Admin Group) and JHU "Carey Business School" (Group Management) were offices shown as clubs → office rule extended ("group management", names with conduct/accountability or ending in "School"); 10 more marked (Cornell Law School, JHU School of Nursing, UW Community Standards & Student Conduct…). Test added.
+
+## 2026-11-03 08:33 run
+- No Codex commits or HANDOFF requests yet.
+- New CMU class reader (enr-apps.as.cmu.edu/open/SOC: one POST per term with DEPT=All, Pittsburgh → ~3,200 courses; "Lec" sections are class times, lettered recitations left out when a course has lectures; extra meeting rows kept). 6,953 sections (Fall 2026 + Spring 2027); live re-check 6/6.
+- Spot check clubs: UVA LumiLink, Purdue Beta Psi Omega, Vanderbilt Neuroscience Majors Club match Engage; Wisconsin ALT Magazine website matches; Georgia Tech T-Book has the Ramblin' Reck Club Instagram/Facebook found on reckclub.org (parent club's official accounts — acceptable).
