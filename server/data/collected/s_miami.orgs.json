@@ -12262,7 +12262,8 @@
   "name": "Themed Entertainment Association",
   "logo": {
    "emoji": "TE",
-   "hue": 112
+   "hue": 112,
+   "url": "https://se-images.campuslabs.com/clink/images/organizations/82/435921/ea351ed5-896f-40a4-92c6-09569b4f2305.jpg?preset=small-sq"
   },
   "type": "club",
   "schoolId": "s_miami",
@@ -14216,6 +14217,10 @@
    {
     "label": "YouTube",
     "url": "https://youtu.be/QPVSO3dwq9Y?si=us5Om0mfy78DoYe4"
+   },
+   {
+    "label": "Facebook",
+    "url": "https://www.facebook.com/wearemovingtheneedle"
    }
   ]
  },

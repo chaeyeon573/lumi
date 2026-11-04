@@ -1832,3 +1832,11 @@
 - UCLA batch: 51/173 Fall subjects, 1,048 classes.
 - Spot check classes: CMU 03-751 (grad), 45-980 (grad), 54-428, 57-577, 79-176 re-fetched — match.
 - Spot check clubs: Syracuse NEXIS, Miami NOMAS, MSU NAMI, Clemson Frontline — match.
+
+## 2026-11-04 02:33 run
+- No Codex commits or HANDOFF requests.
+- **Dead website URLs recovered** for the 11 schools added 11-03/04: re-collected each once; club counts identical; 112 URLs that no longer answer now kept in `<id>.deadlinks.json` (UGA 19, Indiana 21, MSU 21, GWU 15, Clemson 14, Tulane 7, Miami 4, WFU 3, CWRU 3, W&M 3, Rochester 2). Checked every changed orgs.json against the previous one: 7 social links found last time but not this time would have dropped (site answered differently) → restored; queue item to make re-collect keep earlier links automatically.
+- Georgetown: website field empty for every CampusGroups club → URLs in descriptions (0 → 4). A URL cut off at the 600-character description end ("web.groupm") slipped past the end check → check tightened (any URL in the last 60 chars of a cut description is skipped); UCSB/Northwestern/Emory/WashU links re-checked — no cut-off URLs.
+- UCLA batch continuing.
+- Spot check classes: Cornell ART 2301, COGST 2310, HADM 7120 (grad), NTRES 3220, YORUB 1109 — match.
+- Spot check clubs: UT Texas Trading Group, UF SwampHacks, UVA Theta Tau match; Notre Dame Sports Analytics Club site 403 to automated requests (sites.nd.edu).
