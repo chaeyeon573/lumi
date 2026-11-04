@@ -49,6 +49,9 @@ const handle = (url: string) => url.replace(/^https:\/\/www\.(instagram|facebook
  */
 /** “Website” 칸에 인스타·페북 주소가 들어 있으면 그 이름으로 바꾼다 (사이트로 읽지 않는다) */
 export function relabelSocialWebsites(o: Organization): Organization {
+  // 신청서(Google Form·Typeform·Jotform·MS Forms)는 웹사이트가 아니다 — 'Sign-up form' 으로 (Lehigh Inspire Her 등 45곳, 2026-11-04)
+  const FORM = /^https?:\/\/(docs\.google\.com\/forms|forms\.gle|[^/]*typeform\.com|[^/]*jotform\.com|forms\.office\.com)/i;
+  if (o.links?.some((l) => l.label === 'Website' && FORM.test(l.url))) o = { ...o, links: o.links.map((l) => (l.label === 'Website' && FORM.test(l.url) ? { label: 'Sign-up form', url: l.url } : l)) };
   if (!o.links?.some((l) => l.label === 'Website' && /(^|\.)(instagram|facebook|fb|discord)\.(com|gg)$/i.test(hostOf(l.url)))) return o;
   const links = o.links.map((l) => {
     if (l.label !== 'Website') return l;

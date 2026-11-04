@@ -63,3 +63,9 @@ test('isLoginOnlyLink: CampusGroups club pages on school hosts are login-only, E
   assert.equal(isLoginOnlyLink('https://nyu.campuslabs.com/engage/organization/pre-soma'), false);
   assert.equal(isLoginOnlyLink('https://synapsecolumbia.wixsite.com/synapse'), false);
 });
+
+test('relabelSocialWebsites: a Google Form given as "Website" is a sign-up form (Lehigh 2026-11-04)', async () => {
+  const { relabelSocialWebsites } = await import('./sources/sitesocial');
+  const o = relabelSocialWebsites({ id: 'x', name: 'Inspire Her', links: [{ label: 'Website', url: 'https://docs.google.com/forms/d/e/abc/viewform' }, { label: 'Website', url: 'https://inspireher.org/' }] } as never);
+  assert.deepEqual(o.links, [{ label: 'Sign-up form', url: 'https://docs.google.com/forms/d/e/abc/viewform' }, { label: 'Website', url: 'https://inspireher.org/' }]);
+});
