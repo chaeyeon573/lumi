@@ -120753,5 +120753,6899 @@
   "termCode": "27W",
   "units": 2,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0422%20%20%20%20&class_id=653725200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0001a_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 1A",
+  "title": "Principles of Accounting (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Gardner Treloar, J",
+  "location": "Entrepreneurs Hall C314",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0001A%20%20%20&class_id=260001200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0001a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 1A",
+  "title": "Principles of Accounting (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Gardner Treloar, J",
+  "location": "Entrepreneurs Hall C314",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0001A%20%20%20&class_id=260001220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0001b_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 1B",
+  "title": "Principles of Accounting",
+  "department": "MGMT",
+  "instructor": "Devito, D.S.",
+  "location": "Entrepreneurs Hall C314",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0001B%20%20%20&class_id=260002200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0108_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 108",
+  "title": "Business Law (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Guerin, J.",
+  "location": "Gold Hall B301",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0108%20%20%20%20&class_id=260320200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0108_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 108",
+  "title": "Business Law (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Guerin, J.",
+  "location": "Gold Hall B301",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0108%20%20%20%20&class_id=260320201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0108_27w_3",
+  "schoolId": "s_ucla",
+  "code": "MGMT 108",
+  "title": "Business Law (Lec 3)",
+  "department": "MGMT",
+  "instructor": "Boss, M.S.",
+  "location": "Haines Hall A25",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0108%20%20%20%20&class_id=260320203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0120a_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 120A",
+  "title": "Intermediate Financial Accounting I (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Berges, T.L.",
+  "location": "Dodd Hall 78",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0120A%20%20%20&class_id=260491200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0120a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 120A",
+  "title": "Intermediate Financial Accounting I (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Berges, T.L.",
+  "location": "Dodd Hall 78",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0120A%20%20%20&class_id=260491201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0120b_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 120B",
+  "title": "Intermediate Financial Accounting II (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Kumar, N.T.",
+  "location": "Haines Hall A25",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0120B%20%20%20&class_id=260492200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0120b_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 120B",
+  "title": "Intermediate Financial Accounting II (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Kumar, N.T.",
+  "location": "Royce Hall 156",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0120B%20%20%20&class_id=260492201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0121_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 121",
+  "title": "Ethical Leadership in Accounting",
+  "department": "MGMT",
+  "instructor": "Borman, C.J.",
+  "location": "Dodd Hall 175",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0121%20%20%20%20&class_id=260426200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0122_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 122",
+  "title": "Management Accounting (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Devito, D.S.",
+  "location": "Broad Art Center 2100A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0122%20%20%20%20&class_id=260510200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0122_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 122",
+  "title": "Management Accounting (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Devito, D.S.",
+  "location": "Public Affairs Building 2270",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0122%20%20%20%20&class_id=260510201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0126_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 126",
+  "title": "Financial Statement Analysis",
+  "department": "MGMT",
+  "instructor": "Borman, C.J.",
+  "location": "Dodd Hall 78",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0126%20%20%20%20&class_id=260534200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0127a_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 127A",
+  "title": "Tax Principles and Policy (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Gardner Treloar, J",
+  "location": "Public Affairs Building 1246",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0127A%20%20%20&class_id=260539200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0127a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 127A",
+  "title": "Tax Principles and Policy (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Berges, T.L.",
+  "location": "Royce Hall 154",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0127A%20%20%20&class_id=260539201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0127b_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 127B",
+  "title": "Corporate and Partnership Taxation",
+  "department": "MGMT",
+  "instructor": "Pittard, J.D.",
+  "location": "Haines Hall A25",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0127B%20%20%20&class_id=260540200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0131b_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 131B",
+  "title": "Analytics in Accounting II",
+  "department": "MGMT",
+  "instructor": "Ravetch, D.S.",
+  "location": "Cornell Hall D313",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0131B%20%20%20&class_id=260902201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0140_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 140",
+  "title": "The Global Ecosystem of Sports",
+  "department": "MGMT",
+  "instructor": "Johnson, E.C.",
+  "location": "Entrepreneurs Hall C314",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0140%20%20%20%20&class_id=260440200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0143_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 143",
+  "title": "Sports Marketing",
+  "department": "MGMT",
+  "instructor": "Johnson, E.C.",
+  "location": "Collins Center for Executive Education A301",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0143%20%20%20%20&class_id=260443200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0159_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 159",
+  "title": "Foundations of Business and Entrepreneurship",
+  "department": "MGMT",
+  "instructor": "Patt, S.S.",
+  "location": "Bunche Hall 1209B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0159%20%20%20%20&class_id=260636201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0160_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 160",
+  "title": "Entrepreneurship and Venture Initiation (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Wilson, N.M.",
+  "location": "Cornell Hall D307",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0160%20%20%20%20&class_id=260605201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0160_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 160",
+  "title": "Entrepreneurship and Venture Initiation (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Pierce, M.D.",
+  "location": "Cornell Hall D310",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0160%20%20%20%20&class_id=260605202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0161_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 161",
+  "title": "Business Plan Development (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Yi, S.",
+  "location": "Cornell Hall D307",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0161%20%20%20%20&class_id=260610201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0161_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 161",
+  "title": "Business Plan Development (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Nazar, J.",
+  "location": "Public Affairs Building 1337",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0161%20%20%20%20&class_id=260610202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0165_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 165",
+  "title": "Marketing Principles for Entrepreneurs",
+  "department": "MGMT",
+  "instructor": "Esteves-Sorenson,",
+  "location": "Cornell Hall D313",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0165%20%20%20%20&class_id=260690200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0167_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 167",
+  "title": "Social Entrepreneurship",
+  "department": "MGMT",
+  "instructor": "Taylor, B.H.",
+  "location": "Bunche Hall 3211",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0167%20%20%20%20&class_id=260702201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0168_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 168",
+  "title": "Personal Financial Health: Theory and Practice",
+  "department": "MGMT",
+  "instructor": "Ravetch, D.S.",
+  "location": "Cornell Hall D313",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0168%20%20%20%20&class_id=260708201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0169_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 169",
+  "title": "Entrepreneurial Leadership and Practical Experience",
+  "department": "MGMT",
+  "instructor": "Wilson, N.M.",
+  "location": "Cornell Hall D307",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0169%20%20%20%20&class_id=260714200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0170_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 170",
+  "title": "Real Estate Finance and Investments",
+  "department": "MGMT",
+  "instructor": "Karlan, M.S.",
+  "location": "Entrepreneurs Hall C314",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:20"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0170%20%20%20%20&class_id=260720203&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0171_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 171",
+  "title": "Real Estate Capital Markets",
+  "department": "MGMT",
+  "location": "Broad Art Center 2100A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0171%20%20%20%20&class_id=260726200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0200_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 200",
+  "title": "Market Games: How to Be Ahead of Competition (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Ngangoue, M.",
+  "location": "Entrepreneurs Hall C315",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0200%20%20%20%20&class_id=660000201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0200_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 200",
+  "title": "Market Games: How to Be Ahead of Competition (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Ngangoue, M.",
+  "location": "Online - Recorded",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0200%20%20%20%20&class_id=660000202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0206_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 206",
+  "title": "Global Trends",
+  "department": "MGMT",
+  "instructor": "Wacziarg, R.T.",
+  "location": "Cornell Hall D301",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0206%20%20%20%20&class_id=660035201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0210_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 210",
+  "title": "Entertainment Business Models",
+  "department": "MGMT",
+  "instructor": "Sood, S. Sloan, H.E.",
+  "location": "Marion Anderson Hall G304",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0210%20%20%20%20&class_id=660060201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0213_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 213",
+  "title": "Real Estate Law and Taxation",
+  "department": "MGMT",
+  "instructor": "Freixes, G.",
+  "location": "Marion Anderson Hall G305",
+  "meetings": [
+   {
+    "day": 6,
+    "start": "09:00",
+    "end": "16:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0213%20%20%20%20&class_id=660070201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0218_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 218",
+  "title": "Tools and Analysis for Business Strategy",
+  "department": "MGMT",
+  "instructor": "Santikian, L.N.",
+  "location": "Online - Recorded",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0218%20%20%20%20&class_id=660097201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0220_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 220",
+  "title": "Corporate Financial Reporting (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Pittard, J.D.",
+  "location": "Online - Recorded",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0220%20%20%20%20&class_id=660098201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0220_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 220",
+  "title": "Corporate Financial Reporting (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Sussman, E.H.",
+  "location": "Entrepreneurs Hall C315",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0220%20%20%20%20&class_id=660098202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0221_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 221",
+  "title": "International Business Law",
+  "department": "MGMT",
+  "instructor": "Park, P.S.",
+  "location": "Online - Recorded",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "18:15",
+    "end": "21:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0221%20%20%20%20&class_id=660115201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0223_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 223",
+  "title": "Choice Architecture (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Fox, C.R.",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0223%20%20%20%20&class_id=660139201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0223_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 223",
+  "title": "Choice Architecture (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Fox, C.R.",
+  "location": "Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0223%20%20%20%20&class_id=660139202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0223_27w_3",
+  "schoolId": "s_ucla",
+  "code": "MGMT 223",
+  "title": "Choice Architecture (Lec 3)",
+  "department": "MGMT",
+  "instructor": "Fox, C.R.",
+  "location": "Online - Recorded",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0223%20%20%20%20&class_id=660139203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0228_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 228",
+  "title": "Financial Statement Analysis",
+  "department": "MGMT",
+  "instructor": "Borman, C.J.",
+  "location": "Gold Hall B117",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0228%20%20%20%20&class_id=660159201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0230_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 230",
+  "title": "Takeovers, Restructuring, and Corporate Governance",
+  "department": "MGMT",
+  "instructor": "Greene, S.A.",
+  "location": "Cornell Hall D313",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0230%20%20%20%20&class_id=660155201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0234_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 234",
+  "title": "Investment Management",
+  "department": "MGMT",
+  "instructor": "Kahl, M.",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0234%20%20%20%20&class_id=660204201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0241_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 241",
+  "title": "Technology Innovation and Strategy (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Kramer, T.D.",
+  "location": "Marion Anderson Hall G305",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0241%20%20%20%20&class_id=660251201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0241_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 241",
+  "title": "Technology Innovation and Strategy (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Kramer, T.D.",
+  "location": "Marion Anderson Hall G305",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:30",
+    "end": "20:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0241%20%20%20%20&class_id=660251202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0246_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 246",
+  "title": "Business and Environment",
+  "department": "MGMT",
+  "instructor": "Delmas, M.A.",
+  "location": "Entrepreneurs Hall C315",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0246%20%20%20%20&class_id=660266201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0247_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 247",
+  "title": "Product Management in Technology Companies: Discovery (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Shankar, G.",
+  "location": "Marion Anderson Hall G305",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0247%20%20%20%20&class_id=660281201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0247_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 247",
+  "title": "Product Management in Technology Companies: Discovery (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Shankar, G.",
+  "location": "Marion Anderson Hall G305",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0247%20%20%20%20&class_id=660281202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0250_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 250",
+  "title": "Patterns of Problem Solving",
+  "department": "MGMT",
+  "instructor": "Firstenberg, I.",
+  "location": "Cornell Hall D301",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0250%20%20%20%20&class_id=660295201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0253_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 253",
+  "title": "Leadership Communication",
+  "department": "MGMT",
+  "instructor": "McCann, R.",
+  "location": "Online - Recorded",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0253%20%20%20%20&class_id=660312201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0258_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 258",
+  "title": "Applying the Science of Happiness to Life Design (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Holmes, C.M.",
+  "location": "Collins Center for Executive Education A301",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0258%20%20%20%20&class_id=660318201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0258_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 258",
+  "title": "Applying the Science of Happiness to Life Design (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Holmes, C.M.",
+  "location": "Collins Center for Executive Education A301",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0258%20%20%20%20&class_id=660318202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0262_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 262",
+  "title": "Strategic Pricing and Monetization Tactics",
+  "department": "MGMT",
+  "instructor": "Terech, A.",
+  "location": "Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0262%20%20%20%20&class_id=660349201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0273001_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 273",
+  "title": "Current Topics in Entertainment, Media, and Sports: Innovations in Sports Marketing",
+  "department": "MGMT",
+  "instructor": "Johnson, E.C.",
+  "location": "Gold Hall B301",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0273%20%20%20%20&class_id=660411201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0274b007_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 274B",
+  "title": "Advanced Topics in Management Capstone: Advancing Health Technology Innovation II",
+  "department": "MGMT",
+  "instructor": "Toloui, O.",
+  "location": "Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0274B%20%20%20&class_id=660375207&class_no=%20007%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0274b006_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 274B",
+  "title": "Advanced Topics in Management Capstone: Applied Integrated Research II",
+  "department": "MGMT",
+  "instructor": "Alderton, D.J. de Rezende, P.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0274B%20%20%20&class_id=660375206&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0274b003_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 274B",
+  "title": "Advanced Topics in Management Capstone: Business of Behavior Change II",
+  "department": "MGMT",
+  "instructor": "Hershfield, H.E.",
+  "location": "Cornell Hall D313",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0274B%20%20%20&class_id=660375203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0274b002_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 274B",
+  "title": "Advanced Topics in Management Capstone: Early-Stage Investment Fund II",
+  "department": "MGMT",
+  "instructor": "Kahl, M.",
+  "location": "Cornell Hall D310",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0274B%20%20%20&class_id=660375202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0274b005_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 274B",
+  "title": "Advanced Topics in Management Capstone: Global Social Impact Consulting - East Africa II",
+  "department": "MGMT",
+  "instructor": "Northrop, G.S.",
+  "location": "Gold Hall B117",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0274B%20%20%20&class_id=660375205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0274b001_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 274B",
+  "title": "Advanced Topics in Management Capstone: Nuts and Bolts of A/B Testing II",
+  "department": "MGMT",
+  "instructor": "Gallus, J.",
+  "location": "Cornell Hall D307",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0274B%20%20%20&class_id=660375201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0274b004_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 274B",
+  "title": "Advanced Topics in Management Capstone: Tough Technology Commercialization II",
+  "department": "MGMT",
+  "instructor": "Wu, J.Y.",
+  "location": "Entrepreneurs Hall C315",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0274B%20%20%20&class_id=660375204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0275001_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 275",
+  "title": "Current Topics in Emerging Technologies and Markets: Leading with Artificial Intelligence: Operations Applications",
+  "department": "MGMT",
+  "instructor": "Holloway, T.M.",
+  "location": "Marion Anderson Hall G304",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0275%20%20%20%20&class_id=660451201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0275002_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 275",
+  "title": "Current Topics in Emerging Technologies and Markets: Leading with Artificial Intelligence: Operations Applications",
+  "department": "MGMT",
+  "instructor": "Holloway, T.M.",
+  "location": "Marion Anderson Hall G304",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0275%20%20%20%20&class_id=660451202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0277_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 277",
+  "title": "Entrepreneurial Real Estate Development",
+  "department": "MGMT",
+  "instructor": "Habibi, P.B.",
+  "location": "Marion Anderson Hall G304",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0277%20%20%20%20&class_id=660487201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0278_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 278",
+  "title": "Urban Real Estate Financing and Investing",
+  "department": "MGMT",
+  "instructor": "Habibi, P.B.",
+  "location": "Marion Anderson Hall G305",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0278%20%20%20%20&class_id=660478201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0290_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 290",
+  "title": "Social Entrepreneurship",
+  "department": "MGMT",
+  "instructor": "Northrop, G.S.",
+  "location": "Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0290%20%20%20%20&class_id=660510201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0291a_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 291A",
+  "title": "Nonprofit Board Governance and Leadership",
+  "department": "MGMT",
+  "instructor": "Northrop, G.S.",
+  "location": "Cornell Hall D313",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:10",
+    "end": "18:10"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0291A%20%20%20&class_id=660561201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0295a_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 295A",
+  "title": "Entrepreneurship and Venture Initiation (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Wu, J.Y.",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0295A%20%20%20&class_id=660530201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0295a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 295A",
+  "title": "Entrepreneurship and Venture Initiation (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Wu, J.Y.",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0295A%20%20%20&class_id=660530202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0295b_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 295B",
+  "title": "Strategic Planning for New Ventures",
+  "department": "MGMT",
+  "instructor": "Dowling, D.J.",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0295B%20%20%20&class_id=660531201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298d007_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298D",
+  "title": "Special Topics in Management: Advanced Cases in Real Estate Entrepreneurship",
+  "department": "MGMT",
+  "instructor": "Sussman, E.H.",
+  "location": "Gold Hall B301",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298D%20%20%20&class_id=660547207&class_no=%20007%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298d012_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298D",
+  "title": "Special Topics in Management: Artificial Intelligence Agents for Managers",
+  "department": "MGMT",
+  "instructor": "Schubert, G.",
+  "location": "Marion Anderson Hall G305",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298D%20%20%20&class_id=660547212&class_no=%20012%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298d013_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298D",
+  "title": "Special Topics in Management: Artificial Intelligence Agents for Managers",
+  "department": "MGMT",
+  "instructor": "Schubert, G.",
+  "location": "Marion Anderson Hall G305",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298D%20%20%20&class_id=660547213&class_no=%20013%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298d002_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298D",
+  "title": "Special Topics in Management: Entertainment Globalization",
+  "department": "MGMT",
+  "instructor": "Kinberg, M.H. Prakash, A.",
+  "location": "Marion Anderson Hall G419",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298D%20%20%20&class_id=660547202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298d008_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298D",
+  "title": "Special Topics in Management: Entrepreneurship through Acquisition: Search Fund",
+  "department": "MGMT",
+  "instructor": "Weaver, K.A.",
+  "location": "Collins Center for Executive Education A301",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298D%20%20%20&class_id=660547208&class_no=%20008%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298d004_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298D",
+  "title": "Special Topics in Management: From Studios to Streamers: Radical Reinvention of Content Distribution Today",
+  "department": "MGMT",
+  "instructor": "Kinberg, M.H. Daniels, S.",
+  "location": "Marion Anderson Hall G305",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298D%20%20%20&class_id=660547204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298d006_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298D",
+  "title": "Special Topics in Management: Health Care Innovation and Technologies that Scale",
+  "department": "MGMT",
+  "instructor": "Toloui, O.",
+  "location": "Collins Center for Executive Education A301",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298D%20%20%20&class_id=660547206&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298d005_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298D",
+  "title": "Special Topics in Management: Health Care Strategy",
+  "department": "MGMT",
+  "location": "Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298D%20%20%20&class_id=660547205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298d014_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298D",
+  "title": "Special Topics in Management: Private Credit, Distressed Investing, and Other Fixed Income Investments",
+  "department": "MGMT",
+  "instructor": "Longstaff, F.A.",
+  "location": "Collins Center for Executive Education A301",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298D%20%20%20&class_id=660547214&class_no=%20014%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298d003_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298D",
+  "title": "Special Topics in Management: Sports Management",
+  "department": "MGMT",
+  "instructor": "Moorad, J.S. Sood, S.",
+  "location": "Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298D%20%20%20&class_id=660547203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298d011_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298D",
+  "title": "Special Topics in Management: Strategy Consulting Group I",
+  "department": "MGMT",
+  "instructor": "Alderton, D.J.",
+  "location": "Gold Hall B117",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298D%20%20%20&class_id=660547211&class_no=%20011%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298d001_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298D",
+  "title": "Special Topics in Management: Technology and Business Challenges in Clean Technology Entrepreneurship",
+  "department": "MGMT",
+  "instructor": "Mehta, K.H.",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298D%20%20%20&class_id=660547201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298e004_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298E",
+  "title": "Special Topics in Management: Affordable Housing Development",
+  "department": "MGMT",
+  "instructor": "Gross, A.D.",
+  "location": "Gold Hall B117",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298E%20%20%20&class_id=660552204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298e001_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298E",
+  "title": "Special Topics in Management: Impact Investing II",
+  "department": "MGMT",
+  "instructor": "Simms, C. Cochran, K.",
+  "location": "Cornell Hall D313",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298E%20%20%20&class_id=660552201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298e009_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298E",
+  "title": "Special Topics in Management: Leadership in Practice",
+  "department": "MGMT",
+  "instructor": "Ullmen, J.B.",
+  "location": "Collins Center for Executive Education A301",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298E%20%20%20&class_id=660552209&class_no=%20009%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298e010_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298E",
+  "title": "Special Topics in Management: Redesigning Health Care in Age of Artificial Intelligence",
+  "department": "MGMT",
+  "location": "Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298E%20%20%20&class_id=660552210&class_no=%20010%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298e005_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298E",
+  "title": "Special Topics in Management: Strategies for Valuing, Financing, and Harvesting New Ventures",
+  "department": "MGMT",
+  "instructor": "Sarada, U.",
+  "location": "Cornell Hall D313",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298E%20%20%20&class_id=660552205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298e006_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298E",
+  "title": "Special Topics in Management: Strategies for Valuing, Financing, and Harvesting New Ventures",
+  "department": "MGMT",
+  "instructor": "Sarada, U.",
+  "location": "Cornell Hall D313",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298E%20%20%20&class_id=660552206&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298e002_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298E",
+  "title": "Special Topics in Management: Strategy for Global Markets",
+  "department": "MGMT",
+  "location": "Gold Hall B301",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298E%20%20%20&class_id=660552202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298e003_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298E",
+  "title": "Special Topics in Management: Strategy for Global Markets",
+  "department": "MGMT",
+  "location": "Gold Hall B301",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298E%20%20%20&class_id=660552203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298e008_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298E",
+  "title": "Special Topics in Management: Taxation for Managers and Entrepreneurs",
+  "department": "MGMT",
+  "instructor": "Freixes, G.",
+  "location": "Cornell Hall D301",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298E%20%20%20&class_id=660552208&class_no=%20008%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298e007_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298E",
+  "title": "Special Topics in Management: Value-Based Strategy",
+  "department": "MGMT",
+  "instructor": "Alderton, D.J.",
+  "location": "Entrepreneurs Hall C315",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298E%20%20%20&class_id=660552207&class_no=%20007%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0430_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 430",
+  "title": "Corporate Finance (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Haddad, V.P.",
+  "location": "Gold Hall B301",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0430%20%20%20%20&class_id=660706201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0430_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 430",
+  "title": "Corporate Finance (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Zhang, J.",
+  "location": "Gold Hall B301",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0430%20%20%20%20&class_id=660706202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0457c_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMT 457C",
+  "title": "Fieldwork in Investment Management (Sem 1)",
+  "department": "MGMT",
+  "instructor": "Patt, S.S.",
+  "location": "Gold Hall B312",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:30",
+    "end": "11:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0457C%20%20%20&class_id=660661201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0457c_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 457C",
+  "title": "Fieldwork in Investment Management (Sem 2)",
+  "department": "MGMT",
+  "instructor": "Welch, I.I.",
+  "location": "Entrepreneurs Hall C303",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "19:10",
+    "end": "21:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0457C%20%20%20&class_id=660661202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtex0415a_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTEX 415A",
+  "title": "Foundations of Ethical Decision Making (Lec 1)",
+  "department": "MGMTEX",
+  "instructor": "Caruso, E.M. Caruso, H.M.",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTEX%20&crs_catlg_no=0415A%20%20%20&class_id=561090201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtex0415a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMTEX 415A",
+  "title": "Foundations of Ethical Decision Making (Lec 2)",
+  "department": "MGMTEX",
+  "instructor": "Caruso, E.M. Caruso, H.M.",
+  "location": "Collins Center for Executive Education A301",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTEX%20&crs_catlg_no=0415A%20%20%20&class_id=561090202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtex0430b_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTEX 430B",
+  "title": "Corporate Governance II",
+  "department": "MGMTEX",
+  "instructor": "Park, P.S.",
+  "location": "Online - Recorded",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "18:15",
+    "end": "21:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTEX%20&crs_catlg_no=0430B%20%20%20&class_id=561181201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtft0408_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTFT 408",
+  "title": "Foundations of Finance (Lec 1)",
+  "department": "MGMTFT",
+  "instructor": "Muir, T.S.",
+  "location": "Marion Anderson Hall G304",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:45",
+    "end": "14:15"
+   },
+   {
+    "day": 2,
+    "start": "12:45",
+    "end": "14:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFT%20&crs_catlg_no=0408%20%20%20%20&class_id=563616201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtft0408_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMTFT 408",
+  "title": "Foundations of Finance (Lec 2)",
+  "department": "MGMTFT",
+  "instructor": "Muir, T.S.",
+  "location": "Marion Anderson Hall G304",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:30",
+    "end": "16:00"
+   },
+   {
+    "day": 2,
+    "start": "14:30",
+    "end": "16:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFT%20&crs_catlg_no=0408%20%20%20%20&class_id=563616202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtft0409_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTFT 409",
+  "title": "Organizational Behavior (Lec 1)",
+  "department": "MGMTFT",
+  "instructor": "Wu, S.",
+  "location": "Marion Anderson Hall G304",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:30"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFT%20&crs_catlg_no=0409%20%20%20%20&class_id=563618201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtft0409_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMTFT 409",
+  "title": "Organizational Behavior (Lec 2)",
+  "department": "MGMTFT",
+  "instructor": "Whitson, J.A.",
+  "location": "Marion Anderson Hall G304",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:30",
+    "end": "16:00"
+   },
+   {
+    "day": 3,
+    "start": "14:30",
+    "end": "16:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFT%20&crs_catlg_no=0409%20%20%20%20&class_id=563618202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtft0409_27w_3",
+  "schoolId": "s_ucla",
+  "code": "MGMTFT 409",
+  "title": "Organizational Behavior (Lec 3)",
+  "department": "MGMTFT",
+  "instructor": "Wu, S.",
+  "location": "Marion Anderson Hall G304",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:45",
+    "end": "14:15"
+   },
+   {
+    "day": 3,
+    "start": "12:45",
+    "end": "14:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFT%20&crs_catlg_no=0409%20%20%20%20&class_id=563618203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtft0409_27w_4",
+  "schoolId": "s_ucla",
+  "code": "MGMTFT 409",
+  "title": "Organizational Behavior (Lec 4)",
+  "department": "MGMTFT",
+  "instructor": "Wu, S.",
+  "location": "Marion Anderson Hall G304",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:45",
+    "end": "11:15"
+   },
+   {
+    "day": 3,
+    "start": "09:45",
+    "end": "11:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFT%20&crs_catlg_no=0409%20%20%20%20&class_id=563618204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtft0410_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTFT 410",
+  "title": "Operations Technology Management (Lec 1)",
+  "department": "MGMTFT",
+  "instructor": "Bravo Plaza, F.",
+  "location": "Marion Anderson Hall G419",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:45",
+    "end": "14:15"
+   },
+   {
+    "day": 3,
+    "start": "12:45",
+    "end": "14:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFT%20&crs_catlg_no=0410%20%20%20%20&class_id=563620201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtft0410_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMTFT 410",
+  "title": "Operations Technology Management (Lec 2)",
+  "department": "MGMTFT",
+  "instructor": "Corbett, C.J.",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:45",
+    "end": "11:15"
+   },
+   {
+    "day": 3,
+    "start": "09:45",
+    "end": "11:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFT%20&crs_catlg_no=0410%20%20%20%20&class_id=563620202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtft0410_27w_3",
+  "schoolId": "s_ucla",
+  "code": "MGMTFT 410",
+  "title": "Operations Technology Management (Lec 3)",
+  "department": "MGMTFT",
+  "instructor": "Corbett, C.J.",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:30"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFT%20&crs_catlg_no=0410%20%20%20%20&class_id=563620203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtft0410_27w_4",
+  "schoolId": "s_ucla",
+  "code": "MGMTFT 410",
+  "title": "Operations Technology Management (Lec 4)",
+  "department": "MGMTFT",
+  "instructor": "Bravo Plaza, F.",
+  "location": "Marion Anderson Hall G419",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:30",
+    "end": "16:00"
+   },
+   {
+    "day": 3,
+    "start": "14:30",
+    "end": "16:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFT%20&crs_catlg_no=0410%20%20%20%20&class_id=563620204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtft0411_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTFT 411",
+  "title": "Marketing Management (Lec 1)",
+  "department": "MGMTFT",
+  "instructor": "Lieberman, A.",
+  "location": "Marion Anderson Hall G419",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:45",
+    "end": "14:15"
+   },
+   {
+    "day": 2,
+    "start": "12:45",
+    "end": "14:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFT%20&crs_catlg_no=0411%20%20%20%20&class_id=563623201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtft0411_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMTFT 411",
+  "title": "Marketing Management (Lec 2)",
+  "department": "MGMTFT",
+  "instructor": "Lieberman, A.",
+  "location": "Marion Anderson Hall G419",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:30",
+    "end": "16:00"
+   },
+   {
+    "day": 2,
+    "start": "14:30",
+    "end": "16:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFT%20&crs_catlg_no=0411%20%20%20%20&class_id=563623202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtft0428b_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTFT 428B",
+  "title": "Business Creation Capstone",
+  "department": "MGMTFT",
+  "instructor": "Sarada, U.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "17:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFT%20&crs_catlg_no=0428B%20%20%20&class_id=563657201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtfe0403_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTFE 403",
+  "title": "Financial Accounting (Lec 3)",
+  "department": "MGMTFE",
+  "instructor": "Pittard, J.D.",
+  "location": "Entrepreneurs Hall C315",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:30",
+    "end": "21:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFE%20&crs_catlg_no=0403%20%20%20%20&class_id=562619203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtfe0403_27w_4",
+  "schoolId": "s_ucla",
+  "code": "MGMTFE 403",
+  "title": "Financial Accounting (Lec 4)",
+  "department": "MGMTFE",
+  "instructor": "Kim, M.P.",
+  "location": "Marion Anderson Hall G419",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "18:30",
+    "end": "21:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFE%20&crs_catlg_no=0403%20%20%20%20&class_id=562619204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtfe0410_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTFE 410",
+  "title": "Operations Technology Management (Lec 3)",
+  "department": "MGMTFE",
+  "instructor": "Corbett, C.J.",
+  "location": "Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:30",
+    "end": "21:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFE%20&crs_catlg_no=0410%20%20%20%20&class_id=562620203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtfe0410_27w_4",
+  "schoolId": "s_ucla",
+  "code": "MGMTFE 410",
+  "title": "Operations Technology Management (Lec 4)",
+  "department": "MGMTFE",
+  "instructor": "Bravo Plaza, F.",
+  "location": "Cornell Hall D301",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "18:30",
+    "end": "21:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFE%20&crs_catlg_no=0410%20%20%20%20&class_id=562620204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtfe0411_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTFE 411",
+  "title": "Marketing Management (Lec 3)",
+  "department": "MGMTFE",
+  "instructor": "Lieberman, A.",
+  "location": "Entrepreneurs Hall C315",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "18:30",
+    "end": "21:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFE%20&crs_catlg_no=0411%20%20%20%20&class_id=562623203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtfe0411_27w_4",
+  "schoolId": "s_ucla",
+  "code": "MGMTFE 411",
+  "title": "Marketing Management (Lec 4)",
+  "department": "MGMTFE",
+  "instructor": "Shaddy, F.P.",
+  "location": "Marion Anderson Hall G419",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:30",
+    "end": "21:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTFE%20&crs_catlg_no=0411%20%20%20%20&class_id=562623204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtmfe0407_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTMFE 407",
+  "title": "Empirical Methods in Finance",
+  "department": "MGMTMFE",
+  "instructor": "Lochstoer, L.A.",
+  "location": "Cornell Hall D301",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTMFE&crs_catlg_no=0407%20%20%20%20&class_id=565614201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtmfe0408_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTMFE 408",
+  "title": "Fixed-Income Markets",
+  "department": "MGMTMFE",
+  "instructor": "Longstaff, F.A.",
+  "location": "Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTMFE&crs_catlg_no=0408%20%20%20%20&class_id=565616201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtmfe0433_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTMFE 433",
+  "title": "Derivative Markets",
+  "department": "MGMTMFE",
+  "instructor": "Reiner, E.S.",
+  "location": "Entrepreneurs Hall C301 Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:30"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTMFE&crs_catlg_no=0433%20%20%20%20&class_id=565198201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtmfe0434_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTMFE 434",
+  "title": "Trading, Market Frictions, and FinTech",
+  "department": "MGMTMFE",
+  "instructor": "Zhang, J.",
+  "location": "Cornell Hall D313",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTMFE&crs_catlg_no=0434%20%20%20%20&class_id=565204201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtmsa0403_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTMSA 403",
+  "title": "Optimization (Lec 1)",
+  "department": "MGMTMSA",
+  "instructor": "Misic, V.",
+  "location": "Cornell Hall D301",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTMSA&crs_catlg_no=0403%20%20%20%20&class_id=566606201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtmsa0403_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMTMSA 403",
+  "title": "Optimization (Lec 2)",
+  "department": "MGMTMSA",
+  "instructor": "Misic, V.",
+  "location": "Cornell Hall D301",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTMSA&crs_catlg_no=0403%20%20%20%20&class_id=566606202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtmsa0404_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTMSA 404",
+  "title": "Business Fundamentals for Analytics (Lec 1)",
+  "department": "MGMTMSA",
+  "instructor": "Giuliano, P. Bodapati, A.V. Welch, I.I.",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTMSA&crs_catlg_no=0404%20%20%20%20&class_id=566608201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtmsa0404_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMTMSA 404",
+  "title": "Business Fundamentals for Analytics (Lec 2)",
+  "department": "MGMTMSA",
+  "instructor": "Giuliano, P. Bodapati, A.V. Welch, I.I.",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTMSA&crs_catlg_no=0404%20%20%20%20&class_id=566608202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtmsa0405_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTMSA 405",
+  "title": "Data Management (Lec 1)",
+  "department": "MGMTMSA",
+  "instructor": "Rosario, R.R.",
+  "location": "Marion Anderson Hall G313",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTMSA&crs_catlg_no=0405%20%20%20%20&class_id=566610201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtmsa0405_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMTMSA 405",
+  "title": "Data Management (Lec 2)",
+  "department": "MGMTMSA",
+  "instructor": "Rosario, R.R.",
+  "location": "Marion Anderson Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTMSA&crs_catlg_no=0405%20%20%20%20&class_id=566610202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtmsa0406_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTMSA 406",
+  "title": "Prescriptive Models and Data Analytics (Lec 1)",
+  "department": "MGMTMSA",
+  "instructor": "Castro Altamirano,",
+  "location": "Entrepreneurs Hall C315",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTMSA&crs_catlg_no=0406%20%20%20%20&class_id=566612201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtmsa0406_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MGMTMSA 406",
+  "title": "Prescriptive Models and Data Analytics (Lec 2)",
+  "department": "MGMTMSA",
+  "instructor": "Castro Altamirano,",
+  "location": "Entrepreneurs Hall C315",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTMSA&crs_catlg_no=0406%20%20%20%20&class_id=566612202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtmsa0407_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTMSA 407",
+  "title": "Data Analytics Industry Seminar I",
+  "department": "MGMTMSA",
+  "instructor": "Caro, F.",
+  "location": "Marion Anderson Hall G313",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTMSA&crs_catlg_no=0407%20%20%20%20&class_id=566614201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtphd0200_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTPHD 200",
+  "title": "Economics of Decision",
+  "department": "MGMTPHD",
+  "instructor": "Sarin, R.K.",
+  "location": "Entrepreneurs Hall C303",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTPHD&crs_catlg_no=0200%20%20%20%20&class_id=567001201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtphd0201b_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTPHD 201B",
+  "title": "Theory and Application of Regression Analysis",
+  "department": "MGMTPHD",
+  "instructor": "Honka, E.",
+  "location": "Entrepreneurs Hall C303",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTPHD&crs_catlg_no=0201B%20%20%20&class_id=567007200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtphd0202b_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTPHD 202B",
+  "title": "Accounting Workshop",
+  "department": "MGMTPHD",
+  "instructor": "Hayn, C.",
+  "location": "Cornell Hall D307",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "14:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTPHD&crs_catlg_no=0202B%20%20%20&class_id=567013200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtphd0203b_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTPHD 203B",
+  "title": "Behavioral Decision Making Workshop",
+  "department": "MGMTPHD",
+  "instructor": "Shaddy, F.P.",
+  "location": "Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "12:15",
+    "end": "13:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTPHD&crs_catlg_no=0203B%20%20%20&class_id=567020201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtphd0204b_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTPHD 204B",
+  "title": "Finance Workshop",
+  "department": "MGMTPHD",
+  "instructor": "Schubert, G.",
+  "location": "Cornell Hall D307",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "11:30",
+    "end": "12:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTPHD&crs_catlg_no=0204B%20%20%20&class_id=567025201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtphd0205b_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTPHD 205B",
+  "title": "Seminar: Decisions, Operations, and Technology Management Systems",
+  "department": "MGMTPHD",
+  "instructor": "Siddiq, A.A.",
+  "location": "Cornell Hall D310",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTPHD&crs_catlg_no=0205B%20%20%20&class_id=567031200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtphd0206b_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTPHD 206B",
+  "title": "Research Seminar: Management and Organizational Behavior",
+  "department": "MGMTPHD",
+  "instructor": "Unzueta, M.M.",
+  "location": "Gold Hall B301",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "13:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTPHD&crs_catlg_no=0206B%20%20%20&class_id=567037200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtphd0207b_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTPHD 207B",
+  "title": "Workshop: Marketing",
+  "department": "MGMTPHD",
+  "instructor": "Hershfield, H.E.",
+  "location": "Gold Hall B301",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTPHD&crs_catlg_no=0207B%20%20%20&class_id=567043200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtphd0208b_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTPHD 208B",
+  "title": "Global Economics and Management Workshop",
+  "department": "MGMTPHD",
+  "instructor": "Voigtlaender, N.",
+  "location": "Gold Hall B301",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "11:30",
+    "end": "13:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTPHD&crs_catlg_no=0208B%20%20%20&class_id=567049200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtphd0209b_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTPHD 209B",
+  "title": "Management Strategy and Policy Workshop",
+  "department": "MGMTPHD",
+  "instructor": "Sorenson, O.J.",
+  "location": "Cornell Hall D310",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "13:30",
+    "end": "15:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTPHD&crs_catlg_no=0209B%20%20%20&class_id=567055200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtphd0210_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTPHD 210",
+  "title": "Foundations of Strategy Research",
+  "department": "MGMTPHD",
+  "instructor": "Poliquin, C.W.",
+  "location": "Entrepreneurs Hall C303",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTPHD&crs_catlg_no=0210%20%20%20%20&class_id=567060201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtphd0236_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTPHD 236",
+  "title": "Theoretical Models in Accounting",
+  "department": "MGMTPHD",
+  "instructor": "Teoh, S.",
+  "location": "Gold Hall B312",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "18:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTPHD&crs_catlg_no=0236%20%20%20%20&class_id=567216201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtphd0239_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTPHD 239",
+  "title": "Empirical Asset Pricing",
+  "department": "MGMTPHD",
+  "instructor": "Muir, T.S.",
+  "location": "Entrepreneurs Hall C303",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTPHD&crs_catlg_no=0239%20%20%20%20&class_id=567234201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmtphd0243m_27w",
+  "schoolId": "s_ucla",
+  "code": "MGMTPHD M243",
+  "title": "Foundations of Organizational Behavior",
+  "department": "MGMTPHD",
+  "instructor": "Devoe, S.E.",
+  "location": "Gold Hall B312",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MGMTPHD&crs_catlg_no=0243%20%20M%20&class_id=567258201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0090l_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 90L",
+  "title": "Physical Measurement in Materials Engineering (Lab 1)",
+  "department": "MAT SCI",
+  "instructor": "TA Hossain, M.",
+  "location": "Boelter Hall 5273",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0090L%20%20%20&class_id=191270200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0090l_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 90L",
+  "title": "Physical Measurement in Materials Engineering (Lab 2)",
+  "department": "MAT SCI",
+  "instructor": "TA Hossain, M.",
+  "location": "Boelter Hall 5273",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0090L%20%20%20&class_id=191270201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0104_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 104",
+  "title": "Science of Engineering Materials (Lec 1)",
+  "department": "MAT SCI",
+  "instructor": "Szymanski, N.",
+  "location": "Boelter Hall 5249",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0104%20%20%20%20&class_id=191324200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0104_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 104",
+  "title": "Science of Engineering Materials (Lec 2)",
+  "department": "MAT SCI",
+  "instructor": "Bescher, E.P.",
+  "location": "Boelter Hall 2444",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0104%20%20%20%20&class_id=191324210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0111c_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI C111",
+  "title": "Introduction to Materials Characterization B (Electron Microscopy)",
+  "department": "MAT SCI",
+  "instructor": "TA Prikhodko, S.",
+  "location": "Boelter Hall 2444",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0111%20%20C%20&class_id=191443200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0120_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 120",
+  "title": "Physics of Materials",
+  "department": "MAT SCI",
+  "instructor": "TA Pena, T.",
+  "location": "Boelter Hall 2444",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0120%20%20%20%20&class_id=191479200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0122_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 122",
+  "title": "Principles of Electronic Materials Processing",
+  "department": "MAT SCI",
+  "instructor": "Moment, A. TA",
+  "location": "Boelter Hall 5264",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0122%20%20%20%20&class_id=191485200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0131_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 131",
+  "title": "Diffusion and Diffusion-Controlled Reactions",
+  "department": "MAT SCI",
+  "instructor": "Balonis, M.",
+  "location": "Boelter Hall 8500",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0131%20%20%20%20&class_id=191521200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0131l_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 131L",
+  "title": "Diffusion and Diffusion-Controlled Reactions Laboratory (Lab 1)",
+  "department": "MAT SCI",
+  "instructor": "Pozuelo, M. TA",
+  "location": "Engineering V 1010",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0131L%20%20%20&class_id=191522200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0131l_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 131L",
+  "title": "Diffusion and Diffusion-Controlled Reactions Laboratory (Lab 2)",
+  "department": "MAT SCI",
+  "instructor": "Pozuelo, M. TA",
+  "location": "Engineering V 1010",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0131L%20%20%20&class_id=191522202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0140a_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 140A",
+  "title": "Materials Selection and Engineering Design A",
+  "department": "MAT SCI",
+  "instructor": "Pozuelo, M. TA",
+  "location": "Boelter Hall 4760",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0140A%20%20%20&class_id=191541200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0141l_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 141L",
+  "title": "Computer Methods and Instrumentation in Materials Science",
+  "department": "MAT SCI",
+  "instructor": "TA Banerjee, A.S.",
+  "location": "Engineering V 1010",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0141L%20%20%20&class_id=191574201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0143a_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 143A",
+  "title": "Mechanical Behavior of Materials",
+  "department": "MAT SCI",
+  "instructor": "Wang, Y.",
+  "location": "Boelter Hall 5436",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0143A%20%20%20&class_id=191588200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0202_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 202",
+  "title": "Thermodynamics of Materials",
+  "department": "MAT SCI",
+  "instructor": "Raman, A.P.",
+  "location": "Boelter Hall 5420",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0202%20%20%20%20&class_id=595012201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0211c_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI C211",
+  "title": "Introduction to Materials Characterization B (Electron Microscopy)",
+  "department": "MAT SCI",
+  "instructor": "TA Prikhodko, S.",
+  "location": "Boelter Hall 2444",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0211%20%20C%20&class_id=595068201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0262_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 262",
+  "title": "Probabilistic Modeling and Simulation of Complex Systems",
+  "department": "MAT SCI",
+  "instructor": "Mosleh, A.",
+  "location": "Royce Hall 156",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0262%20%20%20%20&class_id=595372200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0282_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 282",
+  "title": "Exploration of Advanced Topics in Materials Science and Engineering",
+  "department": "MAT SCI",
+  "instructor": "Hossain, M.",
+  "location": "Engineering V 2101",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "10:30",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0282%20%20%20%20&class_id=595492201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0298001_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 298",
+  "title": "Seminar: Engineering: Seminar 1",
+  "department": "MAT SCI",
+  "instructor": "Balandin, A.A.",
+  "location": "Boelter Hall 7702",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0298%20%20%20%20&class_id=595610001&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0298002_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 298",
+  "title": "Seminar: Engineering: Seminar 2",
+  "department": "MAT SCI",
+  "instructor": "Wang, Y.",
+  "location": "Boelter Hall 5420",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0298%20%20%20%20&class_id=595610210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_matsci0298003_27w",
+  "schoolId": "s_ucla",
+  "code": "MAT SCI 298",
+  "title": "Seminar: Engineering: Seminar 3",
+  "department": "MAT SCI",
+  "instructor": "Dunn, B.S.",
+  "location": "Mathematical Sciences 5203",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MAT%20SCI&crs_catlg_no=0298%20%20%20%20&class_id=595610003&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_math0003b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 3B",
+  "title": "Calculus for Life Sciences Students",
+  "department": "MATH",
+  "instructor": "Greene, M.P.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0003B%20%20%20&class_id=262083200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0011_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 11",
+  "title": "Transition to Upper-Division Mathematics",
+  "department": "MATH",
+  "instructor": "Shevchenko, O.",
+  "location": "Dodd Hall 121",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0011%20%20%20%20&class_id=262033200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0031a_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 31A",
+  "title": "Differential and Integral Calculus (Lec 1)",
+  "department": "MATH",
+  "instructor": "Adkisson, W.",
+  "location": "Mathematical Sciences 4000A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0031A%20%20%20&class_id=262181200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0031a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 31A",
+  "title": "Differential and Integral Calculus (Lec 2)",
+  "department": "MATH",
+  "instructor": "Weihs, A.",
+  "location": "Mathematical Sciences 4000A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0031A%20%20%20&class_id=262181210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0031al_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 31AL",
+  "title": "Differential and Integral Calculus Laboratory",
+  "department": "MATH",
+  "instructor": "Lopez, I.",
+  "location": "Mathematical Sciences 4000A Moore Hall 100",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0031AL%20%20&class_id=262182200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0031b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 31B",
+  "title": "Integration and Infinite Series (Lec 1)",
+  "department": "MATH",
+  "instructor": "Song, Y.",
+  "location": "Mathematical Sciences 4000A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0031B%20%20%20&class_id=262186200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0031b_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 31B",
+  "title": "Integration and Infinite Series (Lec 2)",
+  "department": "MATH",
+  "instructor": "Song, Y.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0031B%20%20%20&class_id=262186210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0031b_27w_3",
+  "schoolId": "s_ucla",
+  "code": "MATH 31B",
+  "title": "Integration and Infinite Series (Lec 3)",
+  "department": "MATH",
+  "instructor": "Katay, T.",
+  "location": "Rolfe Hall 1200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0031B%20%20%20&class_id=262186220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_math0031b_27w_4",
+  "schoolId": "s_ucla",
+  "code": "MATH 31B",
+  "title": "Integration and Infinite Series (Lec 4)",
+  "department": "MATH",
+  "location": "Mathematical Sciences 4000A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0031B%20%20%20&class_id=262186230&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_math0032a_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 32A",
+  "title": "Calculus of Several Variables (Lec 1)",
+  "department": "MATH",
+  "instructor": "Ma, S.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0032A%20%20%20&class_id=262206200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0032a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 32A",
+  "title": "Calculus of Several Variables (Lec 2)",
+  "department": "MATH",
+  "instructor": "Keranen, J.P.",
+  "location": "Broad Art Center 2160E",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0032A%20%20%20&class_id=262206210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0032a_27w_3",
+  "schoolId": "s_ucla",
+  "code": "MATH 32A",
+  "title": "Calculus of Several Variables (Lec 3)",
+  "department": "MATH",
+  "instructor": "Keranen, J.P.",
+  "location": "Franz Hall 1178",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0032A%20%20%20&class_id=262206220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_math0032a_27w_4",
+  "schoolId": "s_ucla",
+  "code": "MATH 32A",
+  "title": "Calculus of Several Variables (Lec 4)",
+  "department": "MATH",
+  "instructor": "Conley, W.J.",
+  "location": "Renee and David Kaplan Hall A51",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0032A%20%20%20&class_id=262206230&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_math0032b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 32B",
+  "title": "Calculus of Several Variables (Lec 1)",
+  "department": "MATH",
+  "instructor": "Tan, H.",
+  "location": "Renee and David Kaplan Hall A51",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0032B%20%20%20&class_id=262211200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0032b_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 32B",
+  "title": "Calculus of Several Variables (Lec 2)",
+  "department": "MATH",
+  "instructor": "Beers, D.",
+  "location": "Rolfe Hall 1200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0032B%20%20%20&class_id=262211210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0032b_27w_3",
+  "schoolId": "s_ucla",
+  "code": "MATH 32B",
+  "title": "Calculus of Several Variables (Lec 3)",
+  "department": "MATH",
+  "instructor": "Chen, H.",
+  "location": "Mathematical Sciences 4000A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0032B%20%20%20&class_id=262211220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_math0032b_27w_4",
+  "schoolId": "s_ucla",
+  "code": "MATH 32B",
+  "title": "Calculus of Several Variables (Lec 4)",
+  "department": "MATH",
+  "instructor": "Shi, X.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0032B%20%20%20&class_id=262211230&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_math0032bh_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 32BH",
+  "title": "Calculus of Several Variables (Honors)",
+  "department": "MATH",
+  "instructor": "Munoz, S.",
+  "location": "Mathematical Sciences 5147",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0032BH%20%20&class_id=262210200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0033a_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 33A",
+  "title": "Linear Algebra and Applications (Lec 1)",
+  "department": "MATH",
+  "instructor": "Ding, C.",
+  "location": "Rolfe Hall 1200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0033A%20%20%20&class_id=262221200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0033a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 33A",
+  "title": "Linear Algebra and Applications (Lec 2)",
+  "department": "MATH",
+  "instructor": "Higgins, V.",
+  "location": "Franz Hall 1178",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0033A%20%20%20&class_id=262221210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0033b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 33B",
+  "title": "Differential Equations (Lec 1)",
+  "department": "MATH",
+  "instructor": "Ji, S.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0033B%20%20%20&class_id=262223200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0033b_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 33B",
+  "title": "Differential Equations (Lec 2)",
+  "department": "MATH",
+  "instructor": "Marsden, K.",
+  "location": "Renee and David Kaplan Hall A51",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0033B%20%20%20&class_id=262223210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0061_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 61",
+  "title": "Introduction to Discrete Structures (Lec 1)",
+  "department": "MATH",
+  "instructor": "Soskin, D.",
+  "location": "Franz Hall 1178",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0061%20%20%20%20&class_id=262268200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0061_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 61",
+  "title": "Introduction to Discrete Structures (Lec 2)",
+  "department": "MATH",
+  "instructor": "Soskin, D.",
+  "location": "Franz Hall 1178",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0061%20%20%20%20&class_id=262268210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0074xp_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 74XP",
+  "title": "Mathematics and Pedagogy for Teaching Elementary Mathematics",
+  "department": "MATH",
+  "location": "Mathematical Sciences 6221",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0074XP%20%20&class_id=262243200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0105b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 105B",
+  "title": "Mathematics and Pedagogy for Teaching Secondary School Mathematics",
+  "department": "MATH",
+  "instructor": "Lopez, I.",
+  "location": "Mathematical Sciences 6221",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0105B%20%20%20&class_id=262331200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0106_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 106",
+  "title": "History of Mathematics",
+  "department": "MATH",
+  "instructor": "Xu, P.",
+  "location": "Bunche Hall 1209B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0106%20%20%20%20&class_id=262328200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0110a_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 110A",
+  "title": "Algebra",
+  "department": "MATH",
+  "instructor": "Sukarto, E.",
+  "location": "Geology Building 4645",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0110A%20%20%20&class_id=262338200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0110b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 110B",
+  "title": "Algebra",
+  "department": "MATH",
+  "instructor": "Sempliner, J.",
+  "location": "Mathematical Sciences 5147",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0110B%20%20%20&class_id=262348200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0110bh_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 110BH",
+  "title": "Algebra (Honors)",
+  "department": "MATH",
+  "location": "Mathematical Sciences 5147",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0110BH%20%20&class_id=262354200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0114sm_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH M114S",
+  "title": "Introduction to Set Theory",
+  "department": "MATH",
+  "location": "Mathematical Sciences 5117",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0114S%20M%20&class_id=262381200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0115a_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 115A",
+  "title": "Linear Algebra (Lec 1)",
+  "department": "MATH",
+  "location": "Physics and Astronomy Building 1425",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0115A%20%20%20&class_id=262398200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0115a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 115A",
+  "title": "Linear Algebra (Lec 2)",
+  "department": "MATH",
+  "location": "Physics and Astronomy Building 1425",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0115A%20%20%20&class_id=262398210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0115a_27w_3",
+  "schoolId": "s_ucla",
+  "code": "MATH 115A",
+  "title": "Linear Algebra (Lec 3)",
+  "department": "MATH",
+  "instructor": "Arant, T.J.",
+  "location": "Physics and Astronomy Building 1425",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0115A%20%20%20&class_id=262398220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_math0115ah_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 115AH",
+  "title": "Linear Algebra (Honors)",
+  "department": "MATH",
+  "instructor": "Moraga, J.",
+  "location": "Geology Building 4645",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0115AH%20%20&class_id=262395200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0115b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 115B",
+  "title": "Linear Algebra",
+  "department": "MATH",
+  "instructor": "Gao, Z.",
+  "location": "Mathematical Sciences 5117",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0115B%20%20%20&class_id=262399200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0118_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 118",
+  "title": "Mathematical Methods of Data Theory",
+  "department": "MATH",
+  "instructor": "Climaco, P.",
+  "location": "Mathematical Sciences 5117",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0118%20%20%20%20&class_id=262409200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0120a_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 120A",
+  "title": "Differential Geometry",
+  "department": "MATH",
+  "instructor": "Sarkar, S.",
+  "location": "Mathematical Sciences 5138",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0120A%20%20%20&class_id=262407200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0131a_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 131A",
+  "title": "Analysis (Lec 1)",
+  "department": "MATH",
+  "instructor": "Ding, C.",
+  "location": "Kinsey Science Teaching Pavilion 1220B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0131A%20%20%20&class_id=262447200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0131a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 131A",
+  "title": "Analysis (Lec 2)",
+  "department": "MATH",
+  "instructor": "Xu, P.",
+  "location": "Bunche Hall 2209A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0131A%20%20%20&class_id=262447210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0131ah_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 131AH",
+  "title": "Analysis (Honors)",
+  "department": "MATH",
+  "instructor": "Munoz, S.",
+  "location": "Geology Building 6704",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0131AH%20%20&class_id=262449200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0131b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 131B",
+  "title": "Analysis (Lec 1)",
+  "department": "MATH",
+  "instructor": "Altaf, I.",
+  "location": "Mathematical Sciences 5118",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0131B%20%20%20&class_id=262457200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0131b_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 131B",
+  "title": "Analysis (Lec 2)",
+  "department": "MATH",
+  "instructor": "Tan, H.",
+  "location": "Mathematical Sciences 5118",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0131B%20%20%20&class_id=262457210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0131bh_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 131BH",
+  "title": "Analysis (Honors)",
+  "department": "MATH",
+  "instructor": "Khitrik, M.",
+  "location": "Mathematical Sciences 5127",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0131BH%20%20&class_id=262458200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0132_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 132",
+  "title": "Complex Analysis for Applications (Lec 1)",
+  "department": "MATH",
+  "instructor": "Taylor, J.",
+  "location": "Mathematical Sciences 5127",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0132%20%20%20%20&class_id=262469200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0132_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 132",
+  "title": "Complex Analysis for Applications (Lec 2)",
+  "department": "MATH",
+  "location": "Mathematical Sciences 5118",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0132%20%20%20%20&class_id=262469210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0134_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 134",
+  "title": "Linear and Nonlinear Systems of Differential Equations (Lec 1)",
+  "department": "MATH",
+  "instructor": "Zhang, E.",
+  "location": "Public Affairs Building 1234",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0134%20%20%20%20&class_id=262503200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0134_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 134",
+  "title": "Linear and Nonlinear Systems of Differential Equations (Lec 2)",
+  "department": "MATH",
+  "instructor": "Shi, X.",
+  "location": "Public Affairs Building 1234",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0134%20%20%20%20&class_id=262503210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0135_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 135",
+  "title": "Ordinary Differential Equations",
+  "department": "MATH",
+  "instructor": "Marsden, K.",
+  "location": "Geology Building 6704",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0135%20%20%20%20&class_id=262508200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0142_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 142",
+  "title": "Mathematical Modeling (Lec 1)",
+  "department": "MATH",
+  "instructor": "Johnson, C.L.",
+  "location": "Mathematical Sciences 6229",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0142%20%20%20%20&class_id=262513200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0142_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 142",
+  "title": "Mathematical Modeling (Lec 2)",
+  "department": "MATH",
+  "instructor": "Cole, F.",
+  "location": "Mathematical Sciences 6229",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0142%20%20%20%20&class_id=262513210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0148m_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH M148",
+  "title": "Experience of Data Science",
+  "department": "MATH",
+  "instructor": "Bertozzi, A.",
+  "location": "Geology Building 6704",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0148%20%20M%20&class_id=262588200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0151a_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 151A",
+  "title": "Applied Numerical Methods (Lec 1)",
+  "department": "MATH",
+  "instructor": "Sule, S.",
+  "location": "Public Affairs Building 1234",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0151A%20%20%20&class_id=262564200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0151a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 151A",
+  "title": "Applied Numerical Methods (Lec 2)",
+  "department": "MATH",
+  "instructor": "Sule, S.",
+  "location": "Public Affairs Building 1222",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0151A%20%20%20&class_id=262564210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0151ah_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 151AH",
+  "title": "Numerical Analysis Part 1 (Honors)",
+  "department": "MATH",
+  "location": "Mathematical Sciences 5117",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0151AH%20%20&class_id=262548200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0151b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 151B",
+  "title": "Applied Numerical Methods (Lec 1)",
+  "department": "MATH",
+  "instructor": "Tan, H.",
+  "location": "Public Affairs Building 1234",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0151B%20%20%20&class_id=262565200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0151b_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 151B",
+  "title": "Applied Numerical Methods (Lec 2)",
+  "department": "MATH",
+  "instructor": "Baker, J.",
+  "location": "Dodd Hall 146",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0151B%20%20%20&class_id=262565210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0151b_27w_3",
+  "schoolId": "s_ucla",
+  "code": "MATH 151B",
+  "title": "Applied Numerical Methods (Lec 3)",
+  "department": "MATH",
+  "instructor": "Vural, Z.",
+  "location": "Mathematical Sciences 5117",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0151B%20%20%20&class_id=262565220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_math0155_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 155",
+  "title": "Mathematical Imaging",
+  "department": "MATH",
+  "location": "Mathematical Sciences 5127",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0155%20%20%20%20&class_id=262576200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0164_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 164",
+  "title": "Optimization",
+  "department": "MATH",
+  "location": "Franz Hall 1178",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0164%20%20%20%20&class_id=262629200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0170a_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 170A",
+  "title": "Probability Theory I",
+  "department": "MATH",
+  "instructor": "Yin, J.",
+  "location": "Mathematical Sciences 5117",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0170A%20%20%20&class_id=262660200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0170e_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 170E",
+  "title": "Introduction to Probability and Statistics 1: Probability (Lec 1)",
+  "department": "MATH",
+  "location": "Franz Hall 1178",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "08:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "08:50"
+   },
+   {
+    "day": 4,
+    "start": "08:00",
+    "end": "08:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0170E%20%20%20&class_id=262720200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0170e_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 170E",
+  "title": "Introduction to Probability and Statistics 1: Probability (Lec 2)",
+  "department": "MATH",
+  "instructor": "Butson, D.",
+  "location": "Physics and Astronomy Building 1425",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0170E%20%20%20&class_id=262720210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0170e_27w_3",
+  "schoolId": "s_ucla",
+  "code": "MATH 170E",
+  "title": "Introduction to Probability and Statistics 1: Probability (Lec 3)",
+  "department": "MATH",
+  "instructor": "Lopez Rivera, P.",
+  "location": "Kinsey Science Teaching Pavilion 1220B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0170E%20%20%20&class_id=262720220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_math0170e_27w_4",
+  "schoolId": "s_ucla",
+  "code": "MATH 170E",
+  "title": "Introduction to Probability and Statistics 1: Probability (Lec 4)",
+  "department": "MATH",
+  "instructor": "Lopez Rivera, P.",
+  "location": "Physics and Astronomy Building 1425",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "16:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "16:50"
+   },
+   {
+    "day": 4,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0170E%20%20%20&class_id=262720230&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_math0170s_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 170S",
+  "title": "Introduction to Probability and Statistics 2: Statistics (Lec 1)",
+  "department": "MATH",
+  "instructor": "Gurdogan, H.U.",
+  "location": "Public Affairs Building 1234",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0170S%20%20%20&class_id=262725200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0170s_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 170S",
+  "title": "Introduction to Probability and Statistics 2: Statistics (Lec 2)",
+  "department": "MATH",
+  "instructor": "Gu, H.",
+  "location": "Public Affairs Building 1222",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0170S%20%20%20&class_id=262725210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0170s_27w_3",
+  "schoolId": "s_ucla",
+  "code": "MATH 170S",
+  "title": "Introduction to Probability and Statistics 2: Statistics (Lec 3)",
+  "department": "MATH",
+  "instructor": "Hoare, D.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0170S%20%20%20&class_id=262725220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_math0171_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 171",
+  "title": "Stochastic Processes",
+  "department": "MATH",
+  "instructor": "Gu, H.",
+  "location": "Mathematical Sciences 5118",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0171%20%20%20%20&class_id=262662200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0174e_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 174E",
+  "title": "Mathematics of Finance for Mathematics/Economics Students",
+  "department": "MATH",
+  "location": "Public Affairs Building 1222",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0174E%20%20%20&class_id=262749200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0178b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 178B",
+  "title": "Foundations of Actuarial Mathematics: Additional Topics in Long-Term Actuarial Mathematics",
+  "department": "MATH",
+  "instructor": "Martin, B.",
+  "location": "Public Affairs Building 1222",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0178B%20%20%20&class_id=262769200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0180_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 180",
+  "title": "Graph Theory",
+  "department": "MATH",
+  "instructor": "Bernshteyn, A.",
+  "location": "Public Affairs Building 1222",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0180%20%20%20%20&class_id=262781200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0182_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 182",
+  "title": "Algorithms",
+  "department": "MATH",
+  "instructor": "Wang, A.Y.",
+  "location": "Geology Building 4645",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0182%20%20%20%20&class_id=262792200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0191001_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 191",
+  "title": "Variable Topics Research Seminars: Mathematics: Lecture 1",
+  "department": "MATH",
+  "instructor": "Gleizer, O.",
+  "location": "La Kretz Hall 120",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0191%20%20%20%20&class_id=262847200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0192am_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH M192A",
+  "title": "Introduction to Collaborative Learning Theory and Practice",
+  "department": "MATH",
+  "instructor": "TA Roper, M.L. Shaked, S.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0192A%20M%20&class_id=262867200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0192b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 192B",
+  "title": "Collaborative Learning Theory and Practice",
+  "department": "MATH",
+  "instructor": "Roper, M.L. Shaked, S.",
+  "location": "Royce Hall 154",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0192B%20%20%20&class_id=262868200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0205b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 205B",
+  "title": "Number Theory",
+  "department": "MATH",
+  "instructor": "Blasius, D.M.",
+  "location": "Mathematical Sciences 5137",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0205B%20%20%20&class_id=662014200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0206b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 206B",
+  "title": "Combinatorial Theory",
+  "department": "MATH",
+  "instructor": "Pak, I.",
+  "location": "Mathematical Sciences 5137",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0206B%20%20%20&class_id=662022200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0207b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 207B",
+  "title": "Topics in Number Theory",
+  "department": "MATH",
+  "instructor": "Sharifi, R.T.",
+  "location": "Mathematical Sciences 5137",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0207B%20%20%20&class_id=662020200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0210b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 210B",
+  "title": "Algebra",
+  "department": "MATH",
+  "instructor": "Merkurjev, A.S.",
+  "location": "Mathematical Sciences 5203",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0210B%20%20%20&class_id=662026200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0212a_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 212A",
+  "title": "Homological Algebra",
+  "department": "MATH",
+  "instructor": "Balmer, P.",
+  "location": "Mathematical Sciences 5137",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0212A%20%20%20&class_id=662072200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0214a_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 214A",
+  "title": "Introduction to Algebraic Geometry",
+  "department": "MATH",
+  "instructor": "Totaro, B.",
+  "location": "Mathematical Sciences 5203",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0214A%20%20%20&class_id=662042200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0220b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 220B",
+  "title": "Mathematical Logic",
+  "department": "MATH",
+  "instructor": "Bernshteyn, A.",
+  "location": "Mathematical Sciences 6627",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0220B%20%20%20&class_id=662057200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0223s_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 223S",
+  "title": "Topics in Set Theory",
+  "department": "MATH",
+  "instructor": "No instructors",
+  "location": "Mathematical Sciences 5137",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0223S%20%20%20&class_id=662113200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0225b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 225B",
+  "title": "Differential Topology",
+  "department": "MATH",
+  "instructor": "Honda, K.",
+  "location": "Mathematical Sciences 5203",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0225B%20%20%20&class_id=662152200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0226a_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 226A",
+  "title": "Differential Geometry",
+  "department": "MATH",
+  "instructor": "Greene, R.E.",
+  "location": "Mathematical Sciences 5138",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0226A%20%20%20&class_id=662120200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0229b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 229B",
+  "title": "Lie Groups and Lie Algebras",
+  "department": "MATH",
+  "instructor": "Dhillon, G.",
+  "location": "Mathematical Sciences 5127",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0229B%20%20%20&class_id=662135200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0245b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 245B",
+  "title": "Real Analysis",
+  "department": "MATH",
+  "instructor": "Gangbo, W.",
+  "location": "Mathematical Sciences 5203",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0245B%20%20%20&class_id=662192200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0246b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 246B",
+  "title": "Complex Analysis",
+  "department": "MATH",
+  "instructor": "Bonk, M.",
+  "location": "Mathematical Sciences 5138",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0246B%20%20%20&class_id=662197200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0247b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 247B",
+  "title": "Classical Fourier Analysis",
+  "department": "MATH",
+  "instructor": "Maldague, D.F.",
+  "location": "Mathematical Sciences 5138",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0247B%20%20%20&class_id=662203200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0266b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 266B",
+  "title": "Applied Partial Differential Equations",
+  "department": "MATH",
+  "instructor": "Bertozzi, A.",
+  "location": "Mathematical Sciences 5147",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0266B%20%20%20&class_id=662327200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0269c_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 269C",
+  "title": "Advanced Numerical Analysis",
+  "department": "MATH",
+  "instructor": "Vese, L.A.",
+  "location": "Mathematical Sciences 6229",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0269C%20%20%20&class_id=662354200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0270b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 270B",
+  "title": "Mathematical Aspects of Scientific Computing: Computational Linear Algebra",
+  "department": "MATH",
+  "instructor": "Chen, Y.",
+  "location": "Mathematical Sciences 5147",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0270B%20%20%20&class_id=662365200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0275b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 275B",
+  "title": "Probability Theory",
+  "department": "MATH",
+  "instructor": "Menz, G.",
+  "location": "Mathematical Sciences 6201",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0275B%20%20%20&class_id=662378200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0276_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 276",
+  "title": "Topics in Network Science",
+  "department": "MATH",
+  "instructor": "Cucuringu, M.",
+  "location": "Mathematical Sciences 6229 Mathematical Sciences 6229",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0276%20%20%20%20&class_id=662393200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0285i_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 285I",
+  "title": "Seminar: Functional Analysis",
+  "department": "MATH",
+  "instructor": "Popa, S.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0285I%20%20%20&class_id=662463200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 290B",
+  "title": "Participating Seminar: Current Literature in Number Theory (Sem 1)",
+  "department": "MATH",
+  "instructor": "Khare, C. Sharifi, R.T.",
+  "location": "Mathematical Sciences 6201",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290B%20%20%20&class_id=662541200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290b_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 290B",
+  "title": "Participating Seminar: Current Literature in Number Theory (Sem 2)",
+  "department": "MATH",
+  "instructor": "No instructors",
+  "location": "Mathematical Sciences 7608",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290B%20%20%20&class_id=662541210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290c_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 290C",
+  "title": "Participating Seminar: Current Literature in Algebra (Sem 1)",
+  "department": "MATH",
+  "instructor": "Rouquier, R.A. Balmer, P. Dhillon, G. Merkurjev, A.S. Moraga, J.",
+  "location": "Mathematical Sciences 6221",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290C%20%20%20&class_id=662542200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290c_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 290C",
+  "title": "Participating Seminar: Current Literature in Algebra (Sem 2)",
+  "department": "MATH",
+  "instructor": "Totaro, B.",
+  "location": "Mathematical Sciences 6221",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 4,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290C%20%20%20&class_id=662542210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290c_27w_3",
+  "schoolId": "s_ucla",
+  "code": "MATH 290C",
+  "title": "Participating Seminar: Current Literature in Algebra (Sem 3)",
+  "department": "MATH",
+  "instructor": "Balmer, P.",
+  "location": "Mathematical Sciences 6201",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290C%20%20%20&class_id=662542202&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290c_27w_4",
+  "schoolId": "s_ucla",
+  "code": "MATH 290C",
+  "title": "Participating Seminar: Current Literature in Algebra (Sem 4)",
+  "department": "MATH",
+  "instructor": "Marks, A.",
+  "location": "Mathematical Sciences 6201",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290C%20%20%20&class_id=662542203&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290c_27w_5",
+  "schoolId": "s_ucla",
+  "code": "MATH 290C",
+  "title": "Participating Seminar: Current Literature in Algebra (Sem 5)",
+  "department": "MATH",
+  "instructor": "Moraga, J.",
+  "location": "Mathematical Sciences 6201 Mathematical Sciences 6201",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290C%20%20%20&class_id=662542204&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290d_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 290D",
+  "title": "Participating Seminar: Current Literature in Logic (Sem 1)",
+  "department": "MATH",
+  "instructor": "Neeman, I.",
+  "location": "Mathematical Sciences 6201",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290D%20%20%20&class_id=662543200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290d_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 290D",
+  "title": "Participating Seminar: Current Literature in Logic (Sem 2)",
+  "department": "MATH",
+  "instructor": "Bernshteyn, A.",
+  "location": "Mathematical Sciences 6229",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290D%20%20%20&class_id=662543210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290f_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 290F",
+  "title": "Participating Seminar: Current Literature in Topology (Sem 1)",
+  "department": "MATH",
+  "instructor": "Xu, Z.",
+  "location": "Mathematical Sciences 7608",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290F%20%20%20&class_id=662545200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290f_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 290F",
+  "title": "Participating Seminar: Current Literature in Topology (Sem 2)",
+  "department": "MATH",
+  "instructor": "Honda, K. Sarkar, S.",
+  "location": "Mathematical Sciences 5147",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290F%20%20%20&class_id=662545201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290g_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 290G",
+  "title": "Participating Seminar: Current Literature in Analysis (Sem 1)",
+  "department": "MATH",
+  "instructor": "Bedrossian, J.P. Bonk, M. Visan, M. Killip, R. Tao, T.C.",
+  "location": "Mathematical Sciences 6221",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290G%20%20%20&class_id=662546200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290g_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MATH 290G",
+  "title": "Participating Seminar: Current Literature in Analysis (Sem 2)",
+  "department": "MATH",
+  "instructor": "Tao, T.C.",
+  "location": "Mathematical Sciences 6627",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290G%20%20%20&class_id=662546210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290i_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 290I",
+  "title": "Participating Seminar: Current Literature in Functional Analysis",
+  "department": "MATH",
+  "instructor": "Popa, S.",
+  "location": "Mathematical Sciences 6627",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290I%20%20%20&class_id=662548200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290j_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 290J",
+  "title": "Participating Seminar: Current Literature in Applied Mathematics",
+  "department": "MATH",
+  "instructor": "Ryu, E.K.",
+  "location": "Mathematical Sciences 6201",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290J%20%20%20&class_id=662549200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290k_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 290K",
+  "title": "Participating Seminar: Current Literature in Probability",
+  "department": "MATH",
+  "instructor": "Biskup, M.",
+  "location": "Mathematical Sciences 7608 Mathematical Sciences 7608",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290K%20%20%20&class_id=662550200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0290n_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 290N",
+  "title": "Participating Seminar: Current Literature in Combinatorics",
+  "department": "MATH",
+  "instructor": "Galashin, P.",
+  "location": "Mathematical Sciences 6201 Mathematical Sciences 6201",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0290N%20%20%20&class_id=662553200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0296b_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 296B",
+  "title": "Research Seminar: Number Theory",
+  "department": "MATH",
+  "instructor": "Sharifi, R.T.",
+  "location": "Mathematical Sciences 6221",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0296B%20%20%20&class_id=662561200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0296d_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 296D",
+  "title": "Research Seminar: Logic",
+  "department": "MATH",
+  "instructor": "Neeman, I.",
+  "location": "Mathematical Sciences 6201",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0296D%20%20%20&class_id=662563200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0296i_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 296I",
+  "title": "Research Seminar: Functional Analysis",
+  "department": "MATH",
+  "instructor": "Popa, S.",
+  "location": "Mathematical Sciences 6627",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0296I%20%20%20&class_id=662568200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0296j_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 296J",
+  "title": "Research Seminar: Applied Mathematics",
+  "department": "MATH",
+  "instructor": "Schaeffer, H.K.",
+  "location": "Mathematical Sciences 6229",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0296J%20%20%20&class_id=662569200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0296k_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 296K",
+  "title": "Research Seminar: Probability",
+  "department": "MATH",
+  "instructor": "Biskup, M. Menz, G. Yin, J.",
+  "location": "Mathematical Sciences 6627",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0296K%20%20%20&class_id=662570200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_math0296n_27w",
+  "schoolId": "s_ucla",
+  "code": "MATH 296N",
+  "title": "Research Seminar: Combinatorics",
+  "department": "MATH",
+  "instructor": "Pak, I.",
+  "location": "Mathematical Sciences 6221",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0296N%20%20%20&class_id=662574200&class_no=%20001%20%20"
  }
 ]

@@ -1975,3 +1975,10 @@
 - UCLA batch: Winter 2027 83+ subjects, 4,939+ classes.
 - Spot check classes (Georgia Tech): ARCH 8833 (grad), ECE 2040, MATH 1551, PHYS 2211, VIP 4603 — match.
 - Spot check clubs: Lehigh Coffee Club, Dartmouth Student Government, Caltech ASCIT, USF Delta Delta Delta match (Brown lists no website field).
+
+## 2026-11-04 21:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- Spot check jobs (new this run — closed postings must not stay): Affirm Implementation Specialist I, Clorox R&D Packaging Co-op (Workday API: postingAvailable true), Nuro SWE New Grad, Salesforce BDA Early Career, Waymo 2027 Summer Intern — all still open.
+- UCLA batch: Winter 2027 106+ subjects.
+- Spot check classes (BU): CASEC 508 (grad), CDSBF 592 (grad), GMSPM 803 (grad), QSTMK 345, SSWWP 713 (grad) — match.
+- Spot check clubs: UCLA Alpha Phi Alpha, UC Davis Aggie Open Mics, SF State ASME, SJSU ASME match; UCI Alpha Phi site does not answer.
