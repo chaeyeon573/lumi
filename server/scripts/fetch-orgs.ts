@@ -178,7 +178,9 @@ const strip = (html = '') => decodeNumericEntities(html.replace(/<[^>]+>/g, ' ')
 function mapOrg(schoolId: ID, host: string, o: EngageOrg): Organization {
   const cats = o.CategoryNames ?? [];
   const catText = `${cats.join(' ')} ${o.Name}`;
-  const type: Organization['type'] = GREEK_RE.test(catText) ? 'greek' : isCouncil(o.Name, cats, schoolId) ? 'council' : 'club';
+  // 그릭 협의회(Panhellenic Council·IFC)는 council, 학교 부서(분류·이름으로)는 department — Engage 도 CampusGroups 와 같은 규칙 (Syracuse·IU·W&M 2026-11-04)
+  const type0: Organization['type'] = /\b(council|association|conference)\b/i.test(o.Name) && /fratern|soror|greek|panhel|interfraternity/i.test(o.Name) ? 'council' : GREEK_RE.test(catText) ? 'greek' : isCouncil(o.Name, cats, schoolId) ? 'council' : 'club';
+  const type: Organization['type'] = type0 === 'club' && (cats.some((c) => isOfficeOrg(o.Name, c)) || isOfficeOrg(o.Name)) ? 'department' : type0;
   const council = cats.find((c) => /IFC|Interfraternity/i.test(c)) ? 'IFC' : cats.find((c) => /Panhellenic/i.test(c)) ? 'Panhellenic' : cats.find((c) => /NPHC|Black Greek/i.test(c)) ? 'NPHC' : cats.find((c) => /Multicultural Greek|MGC/i.test(c)) ? 'MGC' : undefined;
   return {
     id: `${type === 'greek' ? 'og' : 'oc'}_${schoolId.replace('s_', '')}_${(o.WebsiteKey || o.Name).toLowerCase().replace(/[^a-z0-9]+/g, '_')}`,
