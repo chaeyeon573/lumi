@@ -108033,5 +108033,539 @@
   "termCode": "27W",
   "units": 4,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ENVIRON&crs_catlg_no=0277%20%20%20%20&class_id=684462200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_envhlt0100_27w",
+  "schoolId": "s_ucla",
+  "code": "ENV HLT 100",
+  "title": "Introduction to Environmental Health",
+  "department": "ENV HLT",
+  "instructor": "Schwarz, K. Almony, H. He, J.",
+  "location": "Center for the Health Sciences 33105A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ENV%20HLT&crs_catlg_no=0100%20%20%20%20&class_id=042300200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_envhlt0112_27w",
+  "schoolId": "s_ucla",
+  "code": "ENV HLT 112",
+  "title": "Fundamentals of Occupational Exposure and Techniques",
+  "department": "ENV HLT",
+  "instructor": "Tsai, C.",
+  "location": "Public Health, School of 71257",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ENV%20HLT&crs_catlg_no=0112%20%20%20%20&class_id=042372100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_envhlt0120_27w",
+  "schoolId": "s_ucla",
+  "code": "ENV HLT 120",
+  "title": "Environment and Health",
+  "department": "ENV HLT",
+  "instructor": "Jones, R.M.",
+  "location": "Center for the Health Sciences 73105A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ENV%20HLT&crs_catlg_no=0120%20%20%20%20&class_id=042420200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_envhlt0166m_27w",
+  "schoolId": "s_ucla",
+  "code": "ENV HLT M166",
+  "title": "Environmental Microbiology",
+  "department": "ENV HLT",
+  "instructor": "Mahendra, S.",
+  "location": "Boelter Hall 5440",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ENV%20HLT&crs_catlg_no=0166%20%20M%20&class_id=042696200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_envhlt0201_27w",
+  "schoolId": "s_ucla",
+  "code": "ENV HLT 201",
+  "title": "Foundations of Environmental Health",
+  "department": "ENV HLT",
+  "instructor": "Van Horne, Y. Litvin, S.",
+  "location": "Center for the Health Sciences 43105A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ENV%20HLT&crs_catlg_no=0201%20%20%20%20&class_id=842011200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_envhlt0208m_27w",
+  "schoolId": "s_ucla",
+  "code": "ENV HLT M208",
+  "title": "Built Environment and Health",
+  "department": "ENV HLT",
+  "instructor": "Schwarz, K.",
+  "location": "Public Health, School of 61262",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ENV%20HLT&crs_catlg_no=0208%20%20M%20&class_id=842050200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_envhlt0219_27w",
+  "schoolId": "s_ucla",
+  "code": "ENV HLT 219",
+  "title": "Environmental Health Disparities",
+  "department": "ENV HLT",
+  "instructor": "Cushing, L.J. TA",
+  "location": "Public Health, School of 51279",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ENV%20HLT&crs_catlg_no=0219%20%20%20%20&class_id=842108200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_envhlt0221_27w",
+  "schoolId": "s_ucla",
+  "code": "ENV HLT 221",
+  "title": "Climate Change, Equity, and Health",
+  "department": "ENV HLT",
+  "instructor": "Jerrett, M.L.",
+  "location": "Center for the Health Sciences 33105A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ENV%20HLT&crs_catlg_no=0221%20%20%20%20&class_id=842128200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_envhlt0252e_27w",
+  "schoolId": "s_ucla",
+  "code": "ENV HLT 252E",
+  "title": "Identification and Measurement of Gases and Vapors",
+  "department": "ENV HLT",
+  "instructor": "Que Hee, S.S.",
+  "location": "Geffen Hall",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ENV%20HLT&crs_catlg_no=0252E%20%20%20&class_id=842315200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_envhlt0253_27w",
+  "schoolId": "s_ucla",
+  "code": "ENV HLT 253",
+  "title": "Physical Agents in Work Environment",
+  "department": "ENV HLT",
+  "instructor": "Que Hee, S.S.",
+  "location": "Public Health, School of 41235",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ENV%20HLT&crs_catlg_no=0253%20%20%20%20&class_id=842317200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_envhlt0280_27w",
+  "schoolId": "s_ucla",
+  "code": "ENV HLT 280",
+  "title": "Nanomaterial-Related Emerging Technologies: Exposure and Health Effects",
+  "department": "ENV HLT",
+  "instructor": "Tsai, C.",
+  "location": "Public Health, School of 51279",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ENV%20HLT&crs_catlg_no=0280%20%20%20%20&class_id=842481200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_envhlt0410a_27w",
+  "schoolId": "s_ucla",
+  "code": "ENV HLT 410A",
+  "title": "Instrumental Methods in Environmental Sciences",
+  "department": "ENV HLT",
+  "instructor": "Suffet, I.H.",
+  "location": "Public Health, School of 61262",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ENV%20HLT&crs_catlg_no=0410A%20%20%20&class_id=842619200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_envhlt0454_27w",
+  "schoolId": "s_ucla",
+  "code": "ENV HLT 454",
+  "title": "Health Hazards of Industrial Processes",
+  "department": "ENV HLT",
+  "instructor": "Arabzadeh, H.",
+  "location": "Public Health, School of 61235",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ENV%20HLT&crs_catlg_no=0454%20%20%20%20&class_id=842709200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epidem0160_27w",
+  "schoolId": "s_ucla",
+  "code": "EPIDEM 160",
+  "title": "Infectious Disease Prevention and Control",
+  "department": "EPIDEM",
+  "instructor": "TA Kim-Farley, R.J.",
+  "location": "Public Health, School of A1265",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPIDEM%20&crs_catlg_no=0160%20%20%20%20&class_id=044480200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epidem0200b_27w",
+  "schoolId": "s_ucla",
+  "code": "EPIDEM 200B",
+  "title": "Methods II: Prediction and Validity",
+  "department": "EPIDEM",
+  "instructor": "Hashibe, M.",
+  "location": "Center for the Health Sciences 33105A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPIDEM%20&crs_catlg_no=0200B%20%20%20&class_id=844003200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epidem0216m_27w",
+  "schoolId": "s_ucla",
+  "code": "EPIDEM M216",
+  "title": "Applied Sampling",
+  "department": "EPIDEM",
+  "instructor": "Cochran, S.D.",
+  "location": "Dodd Hall 78",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPIDEM%20&crs_catlg_no=0216%20%20M%20&class_id=844098200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epidem0220_27w",
+  "schoolId": "s_ucla",
+  "code": "EPIDEM 220",
+  "title": "Principles of Infectious Disease Epidemiology",
+  "department": "EPIDEM",
+  "instructor": "TA Rimoin, A.W.",
+  "location": "Center for the Health Sciences 33105A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:50"
+   },
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPIDEM%20&crs_catlg_no=0220%20%20%20%20&class_id=844122201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epidem0232_27w",
+  "schoolId": "s_ucla",
+  "code": "EPIDEM 232",
+  "title": "Methods in Research of Marginalized and Hidden Populations",
+  "department": "EPIDEM",
+  "instructor": "Gorbach, P.M.",
+  "location": "Public Health, School of 41268",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPIDEM%20&crs_catlg_no=0232%20%20%20%20&class_id=844193200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epidem0254m_27w",
+  "schoolId": "s_ucla",
+  "code": "EPIDEM M254",
+  "title": "Nutritional Epidemiology I",
+  "department": "EPIDEM",
+  "instructor": "Chen, L. TA",
+  "location": "Public Health, School of 41235",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPIDEM%20&crs_catlg_no=0254%20%20M%20&class_id=844323200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epidem0272m_27w",
+  "schoolId": "s_ucla",
+  "code": "EPIDEM M272",
+  "title": "Social Epidemiology",
+  "department": "EPIDEM",
+  "instructor": "Garfin, D.R.",
+  "location": "Public Health, School of 51279",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPIDEM%20&crs_catlg_no=0272%20%20M%20&class_id=844432200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epidem0292_27w",
+  "schoolId": "s_ucla",
+  "code": "EPIDEM 292",
+  "title": "Advanced Seminar: Epidemiology",
+  "department": "EPIDEM",
+  "instructor": "Mimiaga, M.J.",
+  "location": "Public Health, School of 61262",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPIDEM%20&crs_catlg_no=0292%20%20%20%20&class_id=844552201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epidem0403m_27w",
+  "schoolId": "s_ucla",
+  "code": "EPIDEM M403",
+  "title": "Computer Management and Analysis of Health Data Using SAS",
+  "department": "EPIDEM",
+  "instructor": "TA Smith, L.V.",
+  "location": "Public Health, School of 61269",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPIDEM%20&crs_catlg_no=0403%20%20M%20&class_id=844606200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epidem0410_27w",
+  "schoolId": "s_ucla",
+  "code": "EPIDEM 410",
+  "title": "Introduction to Python for Epidemiologists",
+  "department": "EPIDEM",
+  "instructor": "Cochran, S.D. TA",
+  "location": "Public Health, School of 61262",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPIDEM%20&crs_catlg_no=0410%20%20%20%20&class_id=844619200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epidem0413_27w",
+  "schoolId": "s_ucla",
+  "code": "EPIDEM 413",
+  "title": "Methods of Scientific Communication",
+  "department": "EPIDEM",
+  "instructor": "Cochran, S.D. TA",
+  "location": "Center for the Health Sciences 33105A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPIDEM%20&crs_catlg_no=0413%20%20%20%20&class_id=844626200&class_no=%20001%20%20"
  }
 ]
