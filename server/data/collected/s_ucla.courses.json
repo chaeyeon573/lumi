@@ -91049,5 +91049,1448 @@
   "termCode": "27W",
   "units": 4,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0159%20%20%20%20&class_id=259654200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0020pm_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE M20P",
+  "title": "Introduction to Computer Programming with Python",
+  "department": "C&EE",
+  "location": "Perloff Hall 1102",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0020P%20M%20&class_id=147065200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0104c_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE C104",
+  "title": "Structure, Processing, and Properties of Civil Engineering Materials",
+  "department": "C&EE",
+  "instructor": "TA Sant, G.",
+  "location": "Rolfe Hall 3134",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0104%20%20C%20&class_id=147324200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0108_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 108",
+  "title": "Introduction to Mechanics of Deformable Solids",
+  "department": "C&EE",
+  "instructor": "TA Rosner, F.",
+  "location": "Boelter Hall 2760",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0108%20%20%20%20&class_id=147348200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0108l_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 108L",
+  "title": "Experimental Structural Mechanics",
+  "department": "C&EE",
+  "instructor": "Ahlberg, E. TA",
+  "location": "Boelter Hall 4283",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "08:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "08:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0108L%20%20%20&class_id=147349200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0109w_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 109W",
+  "title": "Ethics in Civil and Environmental Engineering",
+  "department": "C&EE",
+  "instructor": "TA Patterson, R.",
+  "location": "Franz Hall 2258A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0109W%20%20%20&class_id=147356200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0111c_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE C111",
+  "title": "Machine Learning and Artificial Intelligence for Civil Engineering",
+  "department": "C&EE",
+  "instructor": "TA Lopez Droguett, E.",
+  "location": "Geology Building 3656",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0111%20%20C%20&class_id=147366101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0120l_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 120L",
+  "title": "Soil Mechanics Laboratory",
+  "department": "C&EE",
+  "instructor": "TA Cetin, K.O.",
+  "location": "Boelter Hall 1567",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0120L%20%20%20&class_id=147421200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0121_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 121",
+  "title": "Design of Foundations and Earth Structures",
+  "department": "C&EE",
+  "instructor": "TA Stewart, J.P.",
+  "location": "Boelter Hall 5422",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0121%20%20%20%20&class_id=147426200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0132_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 132",
+  "title": "Dynamics of Rigid and Flexible Structures",
+  "department": "C&EE",
+  "instructor": "TA Narasimhan, S.",
+  "location": "Boelter Hall 9436",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0132%20%20%20%20&class_id=147532201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0135b_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 135B",
+  "title": "Intermediate Structural Analysis",
+  "department": "C&EE",
+  "instructor": "Ahlberg, E.",
+  "location": "Boelter Hall 5249",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0135B%20%20%20&class_id=147542200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0142_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 142",
+  "title": "Design of Reinforced Concrete Structures",
+  "department": "C&EE",
+  "instructor": "Glassman, J.D.",
+  "location": "Boelter Hall 2444",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0142%20%20%20%20&class_id=147569200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0151_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 151",
+  "title": "Introduction to Water Resources Engineering",
+  "department": "C&EE",
+  "instructor": "TA Gallien, T.",
+  "location": "Boelter Hall 5436",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0151%20%20%20%20&class_id=147605200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0154_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 154",
+  "title": "Chemical Fate and Transport in Aquatic Environments",
+  "department": "C&EE",
+  "instructor": "Jay, J.A. TA",
+  "location": "Boelter Hall 5436",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0154%20%20%20%20&class_id=147619200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0156b_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 156B",
+  "title": "Environmental Engineering Unit Operations and Processes Laboratory",
+  "department": "C&EE",
+  "instructor": "Hoek, E.M.",
+  "location": "Boelter Hall 7737",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0156B%20%20%20&class_id=147625200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0157l_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 157L",
+  "title": "Hydrologic Analysis",
+  "department": "C&EE",
+  "instructor": "TA Gebremichael, M.",
+  "location": "Boelter Hall 5440",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0157L%20%20%20&class_id=147634200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0164c_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE C164",
+  "title": "Sustainable Waste Management",
+  "department": "C&EE",
+  "instructor": "Mohanty, S. TA",
+  "location": "Boelter Hall 5249",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0164%20%20C%20&class_id=147660200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0166m_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE M166",
+  "title": "Environmental Microbiology",
+  "department": "C&EE",
+  "instructor": "TA Mahendra, S.",
+  "location": "Boelter Hall 5440",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0166%20%20M%20&class_id=147696200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0185c_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE C185",
+  "title": "Transportation Systems Analysis",
+  "department": "C&EE",
+  "instructor": "TA Ma, J.",
+  "location": "Boelter Hall 5422",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0185%20%20C%20&class_id=147798200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0188l001_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 188L",
+  "title": "Special Laboratory Courses in Civil and Environmental Engineering: Lecture 1",
+  "department": "C&EE",
+  "instructor": "TA Arzeno Soltero, I.",
+  "location": "Boelter Hall 5422",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0188L%20%20%20&class_id=147830201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0200_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 200",
+  "title": "Civil and Environmental Engineering Graduate Seminar",
+  "department": "C&EE",
+  "instructor": "Tang, C.",
+  "location": "Boelter Hall 4275",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0200%20%20%20%20&class_id=547001201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0204c_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE C204",
+  "title": "Structure, Processing, and Properties of Civil Engineering Materials",
+  "department": "C&EE",
+  "instructor": "TA Sant, G.",
+  "location": "Rolfe Hall 3134",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0204%20%20C%20&class_id=547824200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0211c_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE C211",
+  "title": "Machine Learning and Artificial Intelligence for Civil Engineering",
+  "department": "C&EE",
+  "instructor": "Lopez Droguett, E.",
+  "location": "Geology Building 3656",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0211%20%20C%20&class_id=547043201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0227_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 227",
+  "title": "Numerical Methods in Geotechnical Engineering",
+  "department": "C&EE",
+  "instructor": "Brandenberg, S.J.",
+  "location": "Boelter Hall 9436",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0227%20%20%20%20&class_id=547135200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0230bm_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE M230B",
+  "title": "Nonlinear Elasticity",
+  "department": "C&EE",
+  "instructor": "Liu, Y.",
+  "location": "Boelter Hall 5280",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0230B%20M%20&class_id=547152200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0235b_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 235B",
+  "title": "Finite Element Analysis of Structures",
+  "department": "C&EE",
+  "instructor": "Taciroglu, E.",
+  "location": "Boelter Hall 7702",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0235B%20%20%20&class_id=547176200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0244_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 244",
+  "title": "Structural Reliability",
+  "department": "C&EE",
+  "instructor": "TA Burton, H.",
+  "location": "Boelter Hall 9436",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0244%20%20%20%20&class_id=547220200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0245_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 245",
+  "title": "Earthquake Ground Motion Characterization",
+  "department": "C&EE",
+  "instructor": "Bozorgnia, Y.",
+  "location": "Boelter Hall 5280",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0245%20%20%20%20&class_id=547227200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0246_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 246",
+  "title": "Structural Response to Ground Motions",
+  "department": "C&EE",
+  "instructor": "Roldan, R.",
+  "location": "Boelter Hall 5273",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0246%20%20%20%20&class_id=547230200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0250b_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 250B",
+  "title": "Groundwater Hydrology",
+  "department": "C&EE",
+  "instructor": "Casillas, A.",
+  "location": "Boelter Hall 4413",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0250B%20%20%20&class_id=547251200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0255a_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 255A",
+  "title": "Physical and Chemical Processes for Water and Wastewater Treatment",
+  "department": "C&EE",
+  "instructor": "Jassby, D.",
+  "location": "Boelter Hall 4283",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0255A%20%20%20&class_id=547278200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0255b_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 255B",
+  "title": "Biological Processes for Water and Wastewater Treatment",
+  "department": "C&EE",
+  "instructor": "Stenstrom, M.K.",
+  "location": "Boelter Hall 5440",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0255B%20%20%20&class_id=547279200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0262am_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE M262A",
+  "title": "Introduction to Atmospheric Chemistry",
+  "department": "C&EE",
+  "instructor": "Paulson, S.E.",
+  "location": "Mathematical Sciences 7121 Mathematical Sciences 7124A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:30",
+    "end": "12:20"
+   },
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0262A%20M%20&class_id=547311200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0264c_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE C264",
+  "title": "Sustainable Waste Management",
+  "department": "C&EE",
+  "instructor": "Mohanty, S. TA",
+  "location": "Boelter Hall 5249",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0264%20%20C%20&class_id=547320200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0285c_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE C285",
+  "title": "Transportation Systems Analysis",
+  "department": "C&EE",
+  "instructor": "TA Ma, J.",
+  "location": "Boelter Hall 5422",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0285%20%20C%20&class_id=547498200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0287m_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE M287",
+  "title": "Travel Behavior Analysis",
+  "department": "C&EE",
+  "instructor": "Bills, T.S.",
+  "location": "Renee and David Kaplan Hall A26",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0287%20%20M%20&class_id=547517200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cee0298001_27w",
+  "schoolId": "s_ucla",
+  "code": "C&EE 298",
+  "title": "Seminar: Engineering: Seminar 1",
+  "department": "C&EE",
+  "instructor": "Tang, C.",
+  "location": "Boelter Hall 5419",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0298%20%20%20%20&class_id=547940201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0030_27w",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC 30",
+  "title": "Classical Mythology",
+  "department": "CLASSIC",
+  "instructor": "Moat, C.J.",
+  "location": "Dodd Hall 147",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLASSIC&crs_catlg_no=0030%20%20%20%20&class_id=148055200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0052_27w",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC 52",
+  "title": "Greco-Roman Technologies: Materials, Monuments, Machines",
+  "department": "CLASSIC",
+  "instructor": "Wood, R.L.",
+  "location": "Dodd Hall 147",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLASSIC&crs_catlg_no=0052%20%20%20%20&class_id=148112200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0088ge001_27w",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC 88GE",
+  "title": "General Education Seminar Sequences: Archaeology of Roman Provinces",
+  "department": "CLASSIC",
+  "instructor": "Wood, R.L.",
+  "location": "Dodd Hall 162",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLASSIC&crs_catlg_no=0088GE%20%20&class_id=148266200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0088ge002_27w",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC 88GE",
+  "title": "General Education Seminar Sequences: Culture, Identity, Performance, and Anthropology of Greek Folk and Traditional Dance",
+  "department": "CLASSIC",
+  "instructor": "Papakostas, C.",
+  "location": "Bunche Hall 3123",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLASSIC&crs_catlg_no=0088GE%20%20&class_id=148266201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0125m_27w",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC M125",
+  "title": "Invention of Democracy",
+  "department": "CLASSIC",
+  "instructor": "Sissa, G.",
+  "location": "Haines Hall 118",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLASSIC&crs_catlg_no=0125%20%20M%20&class_id=148450200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0130_27w",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC 130",
+  "title": "Race, Ethnicity, Identity in Greco-Roman World",
+  "department": "CLASSIC",
+  "instructor": "Culik-Baird, H.",
+  "location": "Dodd Hall 247",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLASSIC&crs_catlg_no=0130%20%20%20%20&class_id=148430200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0144001_27w",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC 144",
+  "title": "Topical Studies in Ancient Culture: Africa and Rome",
+  "department": "CLASSIC",
+  "instructor": "Martelli, F.K.",
+  "location": "Dodd Hall 146",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLASSIC&crs_catlg_no=0144%20%20%20%20&class_id=148525200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0153em_27w",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC M153E",
+  "title": "Hellenistic Greek Art and Archaeology",
+  "department": "CLASSIC",
+  "instructor": "Schneller, D.",
+  "location": "Dodd Hall 146",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLASSIC&crs_catlg_no=0153E%20M%20&class_id=148664200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0191001_27w",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC 191",
+  "title": "Capstone Seminar: Classics: Reception of Rome in Contemporary Historical Fiction",
+  "department": "CLASSIC",
+  "instructor": "Martelli, F.K.",
+  "location": "Dodd Hall 248",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLASSIC&crs_catlg_no=0191%20%20%20%20&class_id=148840201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0250001_27w",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC 250",
+  "title": "Topics in Greek and Roman Culture and Literature: Historical Epitomes and Breviaries",
+  "department": "CLASSIC",
+  "instructor": "Spielberg, L.M.",
+  "location": "Dodd Hall 248",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLASSIC&crs_catlg_no=0250%20%20%20%20&class_id=548295200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0287_27w",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC 287",
+  "title": "Graduate Colloquium in Classical Literature",
+  "department": "CLASSIC",
+  "instructor": "Haselswerdt, E.H.",
+  "location": "Dodd Hall 248",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLASSIC&crs_catlg_no=0287%20%20%20%20&class_id=548550200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0001bm_27w",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER M1B",
+  "title": "Food: Lens for Environment and Sustainability",
+  "department": "CLUSTER",
+  "instructor": "Jay, J.A. Osborn, K.P.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "10:15"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "10:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLUSTER&crs_catlg_no=0001B%20M%20&class_id=143002200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0002b_27w",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 2B",
+  "title": "Building Climates",
+  "department": "CLUSTER",
+  "instructor": "Osman, M. Patterson, R. Koslov, E.C.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLUSTER&crs_catlg_no=0002B%20%20%20&class_id=143013200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0010b_27w",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 10B",
+  "title": "Data, Justice, and Society",
+  "department": "CLUSTER",
+  "instructor": "Bhaumik, M. Posner, M. Noble, S.U.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLUSTER&crs_catlg_no=0010B%20%20%20&class_id=143031200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0020b_27w",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 20B",
+  "title": "Race and Indigeneity in U.S.",
+  "department": "CLUSTER",
+  "instructor": "Ortiz, V. Fong, K.N.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLUSTER&crs_catlg_no=0020B%20%20%20&class_id=143061200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0027bm_27w",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER M27B",
+  "title": "Global Islam",
+  "department": "CLUSTER",
+  "instructor": "Green, N.S. Yarbrough, L.B. Chism, C.N.",
+  "location": "Northwest Campus Auditorium 101A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLUSTER&crs_catlg_no=0027B%20M%20&class_id=143086210&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0055b_27w",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 55B",
+  "title": "Innovative Thinking and Entrepreneurship: From Theory to Practice",
+  "department": "CLUSTER",
+  "instructor": "No instructors",
+  "location": "Northwest Campus Auditorium 101A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLUSTER&crs_catlg_no=0055B%20%20%20&class_id=143171200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0060b_27w",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 60B",
+  "title": "America in Sixties: Politics, Society, and Culture, 1954 to 1974",
+  "department": "CLUSTER",
+  "instructor": "Fink, R.W. Decker, J.L. Avila, E.R. Vavreck, L.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLUSTER&crs_catlg_no=0060B%20%20%20&class_id=143181200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0070b_27w",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 70B",
+  "title": "Evolution of Cosmos and Life",
+  "department": "CLUSTER",
+  "instructor": "Friscia, A.R. Supriya, K.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLUSTER&crs_catlg_no=0070B%20%20%20&class_id=143211200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0071bm_27w",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER M71B",
+  "title": "Biotechnology and Society",
+  "department": "CLUSTER",
+  "instructor": "Vaughn, R.A. Rensel, M.A. Lee, R.C.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLUSTER&crs_catlg_no=0071B%20M%20&class_id=143214200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0072bm_27w",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER M72B",
+  "title": "Sex from Biology to Gendered Society",
+  "department": "CLUSTER",
+  "instructor": "Haselton, M.G. Schlinger, B. Prall, S.P. Frederick, D.A.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLUSTER&crs_catlg_no=0072B%20M%20&class_id=143217200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0073b_27w",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 73B",
+  "title": "Brain, Bodymind, and Society: All in Your Head?",
+  "department": "CLUSTER",
+  "instructor": "Phillips, E. Knowlton, B. Roush, S. Sutherland Kristal",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLUSTER&crs_catlg_no=0073B%20%20%20&class_id=143223200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0080bx_27w",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 80BX",
+  "title": "Frontiers in Human Aging",
+  "department": "CLUSTER",
+  "instructor": "Hahm, A. Soroosh, A. Kwok, I.Y.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CLUSTER&crs_catlg_no=0080BX%20%20&class_id=143343200&class_no=%20001%20%20"
  }
 ]
