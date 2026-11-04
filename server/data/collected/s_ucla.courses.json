@@ -52210,5 +52210,784 @@
   "termCode": "26F",
   "units": 2,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0262A%20%20%20&class_id=545372200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mestd0050am_26f",
+  "schoolId": "s_ucla",
+  "code": "M E STD M50A",
+  "title": "First Civilizations",
+  "department": "M E STD",
+  "instructor": "Burke, A.A.",
+  "location": "Franz Hall 1260",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=M%20E%20STD&crs_catlg_no=0050A%20M%20&class_id=406150200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_milsci0000z_26f",
+  "schoolId": "s_ucla",
+  "code": "MIL SCI 0Z",
+  "title": "Leadership Laboratory",
+  "department": "MIL SCI",
+  "instructor": "Evans, V.",
+  "location": "Student Activities Center 120P",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "06:00",
+    "end": "08:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MIL%20SCI&crs_catlg_no=0000Z%20%20%20&class_id=277002200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_milsci0011_26f",
+  "schoolId": "s_ucla",
+  "code": "MIL SCI 11",
+  "title": "Foundations of Officership",
+  "department": "MIL SCI",
+  "instructor": "Washington, A.",
+  "location": "Kaufman Hall 153",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "08:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MIL%20SCI&crs_catlg_no=0011%20%20%20%20&class_id=277032200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_milsci0021_26f",
+  "schoolId": "s_ucla",
+  "code": "MIL SCI 21",
+  "title": "Individual Leadership Development",
+  "department": "MIL SCI",
+  "instructor": "Trombley, L.",
+  "location": "Kaufman Hall 136",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MIL%20SCI&crs_catlg_no=0021%20%20%20%20&class_id=277063200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_milsci0131_26f",
+  "schoolId": "s_ucla",
+  "code": "MIL SCI 131",
+  "title": "Tactical Planning and Analysis",
+  "department": "MIL SCI",
+  "instructor": "Sasan, K. Evans, V.",
+  "location": "Royce Hall 166",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MIL%20SCI&crs_catlg_no=0131%20%20%20%20&class_id=277487200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_milsci0141_26f",
+  "schoolId": "s_ucla",
+  "code": "MIL SCI 141",
+  "title": "Leadership and Management",
+  "department": "MIL SCI",
+  "instructor": "Lively, D.",
+  "location": "Student Activities Center 120P",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MIL%20SCI&crs_catlg_no=0141%20%20%20%20&class_id=277547200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mpharm0237_26f",
+  "schoolId": "s_ucla",
+  "code": "M PHARM 237",
+  "title": "Research Frontiers in Cellular and Molecular Pharmacology",
+  "department": "M PHARM",
+  "instructor": "Stoyanova, T.I. Clark, P.M.",
+  "location": "Center for the Health Sciences 22096",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "10:00"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "10:00"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "10:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=M%20PHARM&crs_catlg_no=0237%20%20%20%20&class_id=680235200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mpharm0251_26f",
+  "schoolId": "s_ucla",
+  "code": "M PHARM 251",
+  "title": "Seminar: Pharmacology",
+  "department": "M PHARM",
+  "instructor": "Wu, T.",
+  "location": "Center for the Health Sciences 23105A",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=M%20PHARM&crs_catlg_no=0251%20%20%20%20&class_id=680306200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mpharm0291_26f",
+  "schoolId": "s_ucla",
+  "code": "M PHARM 291",
+  "title": "Special Topics in Pharmacology",
+  "department": "M PHARM",
+  "instructor": "Wu, T.",
+  "location": "Center for the Health Sciences 22096",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=M%20PHARM&crs_catlg_no=0291%20%20%20%20&class_id=680584200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_molbio0235_26f",
+  "schoolId": "s_ucla",
+  "code": "MOL BIO 235",
+  "title": "Rigor and Reproducibility",
+  "department": "MOL BIO",
+  "instructor": "Dreier, L. Sehl, M.E.",
+  "location": "Biomedical Sciences Research Building 154",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "10:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MOL%20BIO&crs_catlg_no=0235%20%20%20%20&class_id=679303235&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_molbio0254a003_26f",
+  "schoolId": "s_ucla",
+  "code": "MOL BIO 254A",
+  "title": "Concepts in Molecular Biosciences: Cell Biology of Interorganelle Contacts and Their Roles in  Disease",
+  "department": "MOL BIO",
+  "instructor": "Bertholet, A.M. Van der Bliek, A.M",
+  "location": "Orthopaedic Hospital Research Center 401",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MOL%20BIO&crs_catlg_no=0254A%20%20%20&class_id=679324210&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_molbio0254a004_26f",
+  "schoolId": "s_ucla",
+  "code": "MOL BIO 254A",
+  "title": "Concepts in Molecular Biosciences: Molecular Biology of Genome and Chromatin",
+  "department": "MOL BIO",
+  "instructor": "Kurdistani, S.K. Vondriska, T.M.",
+  "location": "Biomedical Sciences Research Building 383",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MOL%20BIO&crs_catlg_no=0254A%20%20%20&class_id=679324613&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_molbio0254a002_26f",
+  "schoolId": "s_ucla",
+  "code": "MOL BIO 254A",
+  "title": "Concepts in Molecular Biosciences: Omics Approaches to Understand Transcription, Translation, and Cellular Stress Responses",
+  "department": "MOL BIO",
+  "instructor": "Backus, K.M. Divakaruni, A.S.",
+  "location": "Boyer Hall 130",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MOL%20BIO&crs_catlg_no=0254A%20%20%20&class_id=679324608&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_molbio0254a001_26f",
+  "schoolId": "s_ucla",
+  "code": "MOL BIO 254A",
+  "title": "Concepts in Molecular Biosciences: Structure, Function, and Dynamics of Macromolecular Assemblies",
+  "department": "MOL BIO",
+  "instructor": "Eisenberg, D.S. Guo, F.",
+  "location": "Boyer Hall 159",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MOL%20BIO&crs_catlg_no=0254A%20%20%20&class_id=679324601&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_molbio0254b004_26f",
+  "schoolId": "s_ucla",
+  "code": "MOL BIO 254B",
+  "title": "Concepts in Molecular Biosciences: Cell Biological Mechanisms of Neurodegenerative Disease",
+  "department": "MOL BIO",
+  "instructor": "Samelson, A. Dreier, L.",
+  "location": "Boyer Hall 130",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MOL%20BIO&crs_catlg_no=0254B%20%20%20&class_id=679325620&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_molbio0254b002_26f",
+  "schoolId": "s_ucla",
+  "code": "MOL BIO 254B",
+  "title": "Concepts in Molecular Biosciences: Genetic Approaches to Study of Metabolism",
+  "department": "MOL BIO",
+  "instructor": "Vallim, T.A. Rodrigues Sobreira",
+  "location": "Biomedical Sciences Research Building 383",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MOL%20BIO&crs_catlg_no=0254B%20%20%20&class_id=679325616&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_molbio0254b003_26f",
+  "schoolId": "s_ucla",
+  "code": "MOL BIO 254B",
+  "title": "Concepts in Molecular Biosciences: Pluripotent Stem Cell Biology",
+  "department": "MOL BIO",
+  "instructor": "Plath, K. Pyle, A.D.",
+  "location": "Boyer Hall 159",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MOL%20BIO&crs_catlg_no=0254B%20%20%20&class_id=679325618&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_moltox0211a_26f",
+  "schoolId": "s_ucla",
+  "code": "MOL TOX 211A",
+  "title": "Molecular Toxicology Seminar",
+  "department": "MOL TOX",
+  "instructor": "Hankinson, O.",
+  "location": "Public Health, School of A1265",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MOL%20TOX&crs_catlg_no=0211A%20%20%20&class_id=678066200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0006hm_26f",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO M6H",
+  "title": "Experiments in Cell and Tissue Culture",
+  "department": "MCD BIO",
+  "instructor": "Goldstein, A.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MCD%20BIO&crs_catlg_no=0006H%20M%20&class_id=269016200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0050_26f",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 50",
+  "title": "Stem Cell Biology, Politics, and Ethics: Teasing Apart Issues",
+  "department": "MCD BIO",
+  "instructor": "Lee, P.",
+  "location": "Kinsey Science Teaching Pavilion 1200B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MCD%20BIO&crs_catlg_no=0050%20%20%20%20&class_id=269151200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0060_26f",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 60",
+  "title": "Biomedical Ethics",
+  "department": "MCD BIO",
+  "instructor": "Tulipana, P.A.",
+  "location": "Physics and Astronomy Building 1425",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MCD%20BIO&crs_catlg_no=0060%20%20%20%20&class_id=269180200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0104al_26f",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 104AL",
+  "title": "Research Immersion Laboratory in Developmental Biology",
+  "department": "MCD BIO",
+  "instructor": "Lee, P.",
+  "location": "Mathematical Sciences 6229",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MCD%20BIO&crs_catlg_no=0104AL%20%20&class_id=269325200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0138_26f",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 138",
+  "title": "Developmental Biology",
+  "department": "MCD BIO",
+  "instructor": "Chen, J.",
+  "location": "Physics and Astronomy Building 1425",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MCD%20BIO&crs_catlg_no=0138%20%20%20%20&class_id=269528200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0140m_26f",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO M140",
+  "title": "Cancer Cell Biology",
+  "department": "MCD BIO",
+  "instructor": "Myers, M.D.",
+  "location": "Haines Hall 220",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MCD%20BIO&crs_catlg_no=0140%20%20M%20&class_id=269540200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0144_26f",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 144",
+  "title": "Molecular Biology of Cellular Processes",
+  "department": "MCD BIO",
+  "instructor": "Lowry, W.E.",
+  "location": "Renee and David Kaplan Hall 135",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MCD%20BIO&crs_catlg_no=0144%20%20%20%20&class_id=269565200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0165a_26f",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 165A",
+  "title": "Biology of Cells",
+  "department": "MCD BIO",
+  "instructor": "Sagasti, A.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MCD%20BIO&crs_catlg_no=0165A%20%20%20&class_id=269691200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0175am_26f",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO M175A",
+  "title": "Neuroscience: From Molecules to Mind--Cellular and Systems Neuroscience",
+  "department": "MCD BIO",
+  "instructor": "Peng, Y. Schweizer, F.E. White, S.A.",
+  "location": "Broad Art Center 2160E",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MCD%20BIO&crs_catlg_no=0175A%20M%20&class_id=269750200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0180a_26f",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 180A",
+  "title": "Scientific Analysis and Communication I",
+  "department": "MCD BIO",
+  "instructor": "Lough-Stevens, M.J",
+  "location": "Mathematical Sciences 5217",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MCD%20BIO&crs_catlg_no=0180A%20%20%20&class_id=269781201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0191003_26f",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 191",
+  "title": "Variable Topics Research Seminars: Molecular, Cell, and Developmental Biology: Emergence and Diversity of Neural Crest Cells in Organogenesis and Tissue Regeneration",
+  "department": "MCD BIO",
+  "instructor": "Rigueur, D.",
+  "location": "Boelter Hall 4413",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MCD%20BIO&crs_catlg_no=0191%20%20%20%20&class_id=269847203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0191005_26f",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 191",
+  "title": "Variable Topics Research Seminars: Molecular, Cell, and Developmental Biology: Emergence and Diversity of Neural Crest Cells in Organogenesis and Tissue Regeneration",
+  "department": "MCD BIO",
+  "instructor": "Rigueur, D.",
+  "location": "Boelter Hall 4283",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MCD%20BIO&crs_catlg_no=0191%20%20%20%20&class_id=269847205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0191004_26f",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 191",
+  "title": "Variable Topics Research Seminars: Molecular, Cell, and Developmental Biology: Lessons in Developmental Mechanisms from Vertebrate Skeleton",
+  "department": "MCD BIO",
+  "instructor": "Rigueur, D.",
+  "location": "Boelter Hall 5419",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MCD%20BIO&crs_catlg_no=0191%20%20%20%20&class_id=269847204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0191001_26f",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 191",
+  "title": "Variable Topics Research Seminars: Molecular, Cell, and Developmental Biology: Value of Human Life",
+  "department": "MCD BIO",
+  "instructor": "Tulipana, P.A.",
+  "location": "La Kretz Hall 100",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MCD%20BIO&crs_catlg_no=0191%20%20%20%20&class_id=269847201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0191002_26f",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 191",
+  "title": "Variable Topics Research Seminars: Molecular, Cell, and Developmental Biology: Value of Human Life",
+  "department": "MCD BIO",
+  "instructor": "Tulipana, P.A.",
+  "location": "La Kretz Hall 100",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MCD%20BIO&crs_catlg_no=0191%20%20%20%20&class_id=269847202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mcip0252_26f",
+  "schoolId": "s_ucla",
+  "code": "MC&IP 252",
+  "title": "Molecular Mechanisms of Human Diseases I",
+  "department": "MC&IP",
+  "instructor": "Yang, X.",
+  "location": "La Kretz Hall 101",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MC%26IP%20%20&crs_catlg_no=0252%20%20%20%20&class_id=677311200&class_no=%20001%20%20"
  }
 ]

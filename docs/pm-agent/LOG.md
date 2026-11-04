@@ -1871,3 +1871,11 @@
 - Florida: one.uf.edu/apix/soc/schedule is public but returns empty meeting times for every section (Fall 2026 and Spring 2027) → no times from it; queue. Wisconsin public.enroll.wisc.edu 403; UCI WebSoc and UNC reports.unc.edu do not answer from here.
 - UCLA batch continuing.
 - Spot check clubs: Georgia Tech Marine Robotics, Vanderbilt Society of Physics Students, WashU Peer Health Educators, SJSU Men's Ice Hockey, UC Davis Political Review — match.
+
+## 2026-11-04 07:33 run
+- No Codex commits or HANDOFF requests.
+- Looked for more class-time sources: guessed Banner 8 public schedule pages (Purdue, GWU, Wake Forest, Tulane, Clemson, Lehigh) — none answer; Michigan/Purdue web search found no public schedule feed; Northwestern class-descriptions fails TLS here.
+- **Chat invites as websites:** 27 "Website" links were WhatsApp/Slack/Telegram invites (UT, WashU, UW, W&M …) → labeled `Group chat` (in `relabelSocialWebsites`; test). Description links now skip chat invites (Columbia Q&A WhatsApp link was about to be added — not added). HANDOFF note updated.
+- Description links: Illinois +3 (Astrobiology Club, Quant, Spanish and Portuguese Graduate Organization); Columbia, Dartmouth, Caltech, SCU, Tufts, Emory had no more usable URLs in descriptions.
+- UCLA batch continuing.
+- Spot check classes (UCLA): HIST C191P, LIFESCI 7C, MGMTMFE 431 (grad, W/T/R 1–3:50pm + T 8:30–11:20am), MATH 164, MECH&AE 271D (grad) — match the official class pages.

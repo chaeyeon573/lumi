@@ -69,3 +69,9 @@ test('relabelSocialWebsites: a Google Form given as "Website" is a sign-up form 
   const o = relabelSocialWebsites({ id: 'x', name: 'Inspire Her', links: [{ label: 'Website', url: 'https://docs.google.com/forms/d/e/abc/viewform' }, { label: 'Website', url: 'https://inspireher.org/' }] } as never);
   assert.deepEqual(o.links, [{ label: 'Sign-up form', url: 'https://docs.google.com/forms/d/e/abc/viewform' }, { label: 'Website', url: 'https://inspireher.org/' }]);
 });
+
+test('relabelSocialWebsites: a WhatsApp/Slack invite given as "Website" is a group chat (2026-11-04)', async () => {
+  const { relabelSocialWebsites } = await import('./sources/sitesocial');
+  const o = relabelSocialWebsites({ id: 'x', name: 'Bird Buddies', links: [{ label: 'Website', url: 'https://chat.whatsapp.com/FtJm6iB0tvgJDGNV3bns8V' }] } as never);
+  assert.deepEqual(o.links, [{ label: 'Group chat', url: 'https://chat.whatsapp.com/FtJm6iB0tvgJDGNV3bns8V' }]);
+});

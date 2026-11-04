@@ -149,6 +149,7 @@ test('descriptionLinks: real URLs in a club description become links; forms, mai
   ]);
   assert.deepEqual(descriptionLinks('Find us @ability_washu'), []);
   assert.deepEqual(descriptionLinks('Apply: https://aiesecusa.typeform.com/to/d6WPTvHI'), []); // Northwestern AIESEC sign-up form
+  assert.deepEqual(descriptionLinks('Join our group chat: https://chat.whatsapp.com/FXFNi0UhHDN1guJjTQE7cO'), []); // Columbia Q&A
   assert.deepEqual(descriptionLinks('<a href=&#34http://www.instagram.com/wustlumang/&#34>IG</a>'), [{ label: 'Instagram', url: 'http://www.instagram.com/wustlumang/' }]);
 });
 
