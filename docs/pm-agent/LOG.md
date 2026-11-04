@@ -1879,3 +1879,11 @@
 - Description links: Illinois +3 (Astrobiology Club, Quant, Spanish and Portuguese Graduate Organization); Columbia, Dartmouth, Caltech, SCU, Tufts, Emory had no more usable URLs in descriptions.
 - UCLA batch continuing.
 - Spot check classes (UCLA): HIST C191P, LIFESCI 7C, MGMTMFE 431 (grad, W/T/R 1–3:50pm + T 8:30–11:20am), MATH 164, MECH&AE 271D (grad) — match the official class pages.
+
+## 2026-11-04 08:33 run
+- No Codex commits or HANDOFF requests.
+- **Placeholder websites:** spot check found Cornell's Diabetes Link chapter with "idonothaveawebsite.com" as its website — 16 Cornell clubs and 1 Illinois (example.com) had such placeholders. Now treated like dead links: off the screen data, kept in `<id>.deadlinks.json` with reason `placeholder`; `isPlaceholderSite` runs in collect-social. Test added.
+- QUESTIONS: whether to fetch class times for the TLS-blocked schools from Railway once a week.
+- UCLA batch: 124+ Fall subjects.
+- Spot check classes: Georgia Tech BIOS 4401, CS 6457 (grad), MATH 2551, VIP 3601, VIP 6602 (grad) — match.
+- Spot check clubs: Northwestern Club Softball matches; Columbia CUGG and JHU HopkinsLEAD pages 403 to automated requests, Duke Impact Investing 503; Cornell Diabetes Link placeholder (fixed above).

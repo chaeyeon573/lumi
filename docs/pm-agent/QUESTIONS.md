@@ -130,3 +130,8 @@ The live app already shows internships from 98 company job boards (refreshed eve
 **Options:** A) Add the 88 boards and the new-grad/PhD/master's roles to the live feed (about 90 more API calls every 12 hours on Railway; small cost increase). B) Keep it as a file and refresh it from the agent; put it live later together with schools. C) Live feed for internships stays as is; only new-grad jobs go live.
 **Recommended:** A. The calls are light JSON and this is the content grad students and graduating seniors asked for.
 **Answer (11/03, chat):** "돈이 안드는 방식으로 하면 올려도 돼" → /api/jobs reads the jobs file shipped with the deploy (no DB, no Railway fetching); agent refreshes it daily. App screen: Codex.
+
+## 2026-11-04 — 이 컨테이너에서 막힌 학교들의 수업 시간을 Railway 에서 한 번 받을까요?
+**상황:** Stanford, Northwestern, Notre Dame, UVA, Minnesota, SJSU, UC Santa Cruz 등의 공개 수업 검색은 이 작업 컨테이너에서 TLS 인증서 오류로 열리지 않습니다(학교 쪽은 공개, 막힌 건 이쪽 네트워크). 우회는 하지 않았습니다.
+**제안:** A) Railway 서버에서 학교마다 일주일에 한 번만 수업 표본·전체를 받아 파일로 남기기 — 상시 프로세스는 늘지 않고, 학교당 주 1회 수백 번 요청(작은 비용). B) 지금처럼 두고 다른 학교부터 채우기.
+**답:**

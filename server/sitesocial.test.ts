@@ -75,3 +75,10 @@ test('relabelSocialWebsites: a WhatsApp/Slack invite given as "Website" is a gro
   const o = relabelSocialWebsites({ id: 'x', name: 'Bird Buddies', links: [{ label: 'Website', url: 'https://chat.whatsapp.com/FtJm6iB0tvgJDGNV3bns8V' }] } as never);
   assert.deepEqual(o.links, [{ label: 'Group chat', url: 'https://chat.whatsapp.com/FtJm6iB0tvgJDGNV3bns8V' }]);
 });
+
+test('isPlaceholderSite: "I do not have a website" placeholders are not websites (Cornell 2026-11-04)', async () => {
+  const { isPlaceholderSite } = await import('./sources/sitesocial');
+  assert.equal(isPlaceholderSite('https://www.idonothaveawebsite.com/'), true);
+  assert.equal(isPlaceholderSite('https://example.com/'), true);
+  assert.equal(isPlaceholderSite('https://www.cornelldiabeteslink.org/'), false);
+});
