@@ -1,0 +1,107 @@
+{
+  "generatedAt": "2026-11-04T19:19:37.836Z",
+  "source": "ux-sim/reports/2026-11-04-sched/analysis.json",
+  "layer": "curated (analysis.json)",
+  "rule": "not environment-limited, and severity ≥ 3 or ≥ 2 personas, unless the problem sets file: true|false",
+  "dedupe": "before creating, search existing issues for <!-- ux-sim:problem=<key> --> and for any <!-- ux-sim:fp=<fingerprint> --> marker; update the match instead of duplicating",
+  "note": "Candidates only — ux-sim never creates issues.",
+  "coverage": {
+    "findings": 15,
+    "grouped": 14,
+    "dismissed": 1,
+    "unassigned": []
+  },
+  "warnings": [],
+  "candidates": [
+    {
+      "key": "internship-details-missing-pay-and-role",
+      "fingerprints": [
+        "6d922472ea26",
+        "98145c4f47a4",
+        "03b9cc604cb5"
+      ],
+      "title": "[ux-sim] Internship pages never say if it is paid, what the job is or who can apply; prep-crew features sit above the job facts",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nBoth internship personas reached a details page (goal met) but could not tell pay, duties or eligibility (\"Graduate Intern\" for an undergrad?). \"Do it with people / Start a prep crew\" comes before the job facts.\n\nSeverity **2** (Moderate — slowed me down or made me hesitate; I recovered on my own.) · analyst confidence high · **2 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nImported listings carry only title, place, field and a link; the page leads with social features instead of the facts students check first.\n\n### Evidence\n\n- run `sched-20261104-1915-marcus-internship-near-berkeley` step 10 — “I don't need a 'prep crew', I need to know if it pays. Why is that stuff” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/010-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/010-click-som.jpg)\n- run `sched-20261104-1915-marcus-internship-near-berkeley` step 12 — “But nothing says if it's paid or what I'd actually do.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/012-scroll.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/012-scroll-som.jpg)\n- run `sched-20261104-1915-diego-internship-near-berkeley` step 17 — “'Software Graduate Intern' — that's probably for grad students, I'm an undergrad. And still no pay anywhere.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/017-scroll.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/017-scroll-som.jpg)\n\nRuns: [`sched-20261104-1915-marcus-internship-near-berkeley`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/report.md), [`sched-20261104-1915-diego-internship-near-berkeley`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/report.md)\n\n### Who\n\nPersonas: `marcus-senior-lowtech`, `diego-transfer-commuter` · scenarios: `internship-near-berkeley`\n\n### Environment note\n\nSame on live (opportunities come from the live snapshot).\n\n### Suggested fix (hypothesis)\n\nPut a facts block first (Paid/Unpaid/Unknown, level: undergrad/grad, one-line summary) and move prep crews below; show \"Pay: see posting\" when unknown.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=internship-details-missing-pay-and-role -->\n<!-- ux-sim:fp=6d922472ea26 -->\n<!-- ux-sim:fp=98145c4f47a4 -->\n<!-- ux-sim:fp=03b9cc604cb5 -->",
+      "labels": [
+        "ux-sim",
+        "severity:2",
+        "content_gap",
+        "ux_confusion"
+      ],
+      "personas": [
+        "marcus-senior-lowtech",
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "severity": 2
+    },
+    {
+      "key": "rides-hidden-under-meetups",
+      "fingerprints": [
+        "cc0f68d6c010",
+        "7d8e0b863e51"
+      ],
+      "title": "[ux-sim] Rides is not on Home or in onboarding; students find it only at the bottom of Social › Meetups",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nDiego (today) and Seoyeon (2026-11-03) both searched for rides; it sits under \"More ways to meet\". Once found, the Rides page worked very well.\n\nSeverity **2** (Moderate — slowed me down or made me hesitate; I recovered on my own.) · analyst confidence high · **1 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nRides is filed as a social feature; Home tiles and onboarding goals never mention it.\n\n### Evidence\n\n- run `sched-20261104-1915-diego-ride-sfo-thanksgiving` step 0 — “OK, where's rides? Events, opportunities, clubs, meetups... nothing says ride or carpool.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/shots/000-start.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/shots/000-start-som.jpg)\n- run `sched-20261104-1915-diego-ride-sfo-thanksgiving` step 4 — “There it is — Rides. Buried at the bottom of Social > Meetups though.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/shots/004-scroll.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/shots/004-scroll-som.jpg)\n\nRuns: [`sched-20261104-1915-diego-ride-sfo-thanksgiving`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/report.md)\n\n### Who\n\nPersonas: `diego-transfer-commuter` · scenarios: `ride-sfo-thanksgiving`\n\n### Environment note\n\nSame on live (opportunities come from the live snapshot).\n\n### Suggested fix (hypothesis)\n\nAdd a Rides tile on Home (at least around breaks) and mention rides in \"Make campus life easier\".\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=rides-hidden-under-meetups -->\n<!-- ux-sim:fp=cc0f68d6c010 -->\n<!-- ux-sim:fp=7d8e0b863e51 -->",
+      "labels": [
+        "ux-sim",
+        "severity:2",
+        "discoverability"
+      ],
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "severity": 2
+    },
+    {
+      "key": "floating-pills-cover-buttons",
+      "fingerprints": [
+        "39327c8d79c3",
+        "44271af15761"
+      ],
+      "title": "[ux-sim] The floating Design pill covers real buttons (\"My rides\", chat header)",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nSeen again on /rides and in a chat header — third day in a row.\n\nSeverity **1** (Minor — noticed it, cosmetic or a small annoyance; did not slow me down.) · analyst confidence high · **2 simulated persona(s)** across 2 scenario(s).\n\n### Root cause (hypothesis)\n\nFixed top-right pill over page controls.\n\n### Evidence\n\n- run `sched-20261104-1915-diego-ride-sfo-thanksgiving` step 6 — “The Design Classic/New pill is sitting on top of the My rides tab, can't even read it.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/shots/006-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/shots/006-click-som.jpg)\n\nRuns: [`sched-20261104-1915-diego-ride-sfo-thanksgiving`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/report.md)\n\n### Who\n\nPersonas: `diego-transfer-commuter`, `aisha-firstgen-anxious` · scenarios: `ride-sfo-thanksgiving`, `lunch-today`\n\n### Environment note\n\nSame on live.\n\n### Suggested fix (hypothesis)\n\nRemove the pill (owner decided New only) or move it out of the header.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=floating-pills-cover-buttons -->\n<!-- ux-sim:fp=39327c8d79c3 -->\n<!-- ux-sim:fp=44271af15761 -->",
+      "labels": [
+        "ux-sim",
+        "severity:1",
+        "bug"
+      ],
+      "personas": [
+        "diego-transfer-commuter",
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "ride-sfo-thanksgiving",
+        "lunch-today"
+      ],
+      "severity": 1
+    }
+  ],
+  "skipped": [
+    {
+      "key": "going-button-unclear",
+      "title": "On a plan, \"Going\" looks like a status, joins instantly and does not say others will see you",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "major-match-tag-unreliable",
+      "title": "\"Fits your major\" appears on unrelated internships (Civil Engineering → robotics; History → oil and gas)",
+      "why": "file: false"
+    },
+    {
+      "key": "internship-list-labels-unclear",
+      "title": "Internship list: red \"D-1 / D-82\" tags are not explained and ~20 filter chips crowd the top",
+      "why": "file: false"
+    },
+    {
+      "key": "internship-fields-narrow",
+      "title": "Bay Area internships are almost all software/hardware/research; nothing for civil or public works",
+      "why": "file: false"
+    }
+  ]
+}

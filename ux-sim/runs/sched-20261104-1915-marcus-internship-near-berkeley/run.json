@@ -1,0 +1,3242 @@
+{
+  "schemaVersion": 1,
+  "runId": "sched-20261104-1915-marcus-internship-near-berkeley",
+  "status": "finished",
+  "createdAt": "2026-11-04T19:16:34.820Z",
+  "finishedAt": "2026-11-04T19:18:04.388Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "persona": {
+    "id": "marcus-senior-lowtech",
+    "name": "Marcus",
+    "age": 22,
+    "year": "Senior",
+    "school": "UC Berkeley",
+    "major": "History",
+    "account": {
+      "$comment": "Profile for auth: fresh — the harness registers this account through the app's own sign-up API (lib/account.mjs). nickname defaults to name, birthYear to this year − age.",
+      "nickname": "Marcus",
+      "department": "History",
+      "yearInSchool": 4,
+      "goals": [
+        "internship"
+      ],
+      "interests": [
+        "walk"
+      ],
+      "purposes": [
+        "networking"
+      ],
+      "lookingFor": [
+        "senior"
+      ]
+    },
+    "purpose": "Find a paid internship or job lead near Berkeley for after graduation; skeptical of new apps.",
+    "techFamiliarity": "low",
+    "readingDepth": 0.7,
+    "readingCharsPerSec": 20,
+    "language": {
+      "preferred": "en",
+      "englishUiComfort": "high",
+      "notes": "Native English; not used to app conventions like swipe cards or icon-only buttons."
+    },
+    "device": {
+      "type": "phone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "locale": "en-US"
+    },
+    "patience": {
+      "maxSteps": 36,
+      "frustrationThreshold": 4,
+      "confusionTolerance": 2,
+      "timeBudgetSec": 360
+    },
+    "backstory": "I mostly use my phone for texting, email and Handshake when the career center tells me to. My little sister said this app has internships. I'm not giving my info to some random app unless it's clearly legit. Icons without words lose me.",
+    "quitsWhen": [
+      "It wants my info before I know what it is",
+      "Icons with no labels",
+      "I can't find the internship part",
+      "It looks like a dating or party app"
+    ],
+    "voice": "Plain, slightly skeptical, polite. 'I don't get what this button does', 'Is this legit?'"
+  },
+  "scenario": {
+    "id": "internship-near-berkeley",
+    "title": "Find an internship near Berkeley",
+    "goal": "You need a paid internship (summer or part-time) somewhere near Berkeley / the Bay Area. Use the app to find one that looks real and open, and open its details so you know how to apply.",
+    "startUrl": "/",
+    "setup": {
+      "auth": "fresh",
+      "school": "berkeley"
+    },
+    "success": {
+      "description": "An internship listing's detail page is open (reached by the persona — the run starts on /).",
+      "all": [
+        {
+          "urlMatches": "^/opportunities/[^/?]+"
+        },
+        {
+          "textMatches": "\\bintern(ship)?s?\\b"
+        }
+      ]
+    }
+  },
+  "target": {
+    "mode": "local",
+    "baseUrl": "http://localhost:37595",
+    "stack": {
+      "catalog": {
+        "kind": "builtin",
+        "source": "built-in sample catalog (packages/core/src/data/catalog)",
+        "why": "no cached catalog — run `local-stack catalog fetch` once (about 5 minutes) to test with the real Berkeley schedule"
+      },
+      "events": {
+        "kind": "cached",
+        "source": "https://heetz.up.railway.app POST /api/auth/demo + POST /api/bootstrap (read-only), worker-fetched opportunities",
+        "baseUrl": "https://heetz.up.railway.app",
+        "fetchedAt": "2026-11-04T19:15:55.044Z",
+        "stamp": "033c90e9",
+        "opportunities": 1281,
+        "updatedExisting": 132,
+        "byType": {
+          "internship": 565,
+          "exchange": 317,
+          "event": 187,
+          "scholarship": 64,
+          "hackathon": 107,
+          "lab": 40,
+          "startup": 1
+        },
+        "eventsThisWeek": 120,
+        "freeFoodThisWeek": 5
+      },
+      "port": 37595,
+      "worktree": "/home/user/lumi-live",
+      "commit": "b1c9c98b2b5a75547e6822b40378003e28aaaa9e",
+      "stamp": "b1c9c98b2b5a",
+      "dirty": false,
+      "dataFile": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/stack/db.json",
+      "template": "ux-sim/stack/templates/lumi-live-b1c9c98b2b5a-ev033c90e9.json",
+      "log": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/stack/server.log",
+      "owned": true,
+      "autoreply": false
+    },
+    "liveGuard": {
+      "enabled": false
+    }
+  },
+  "auth": {
+    "mode": "fresh",
+    "userId": "u_3aw198zylp",
+    "email": "marcus.eleyzy4h@berkeley.edu",
+    "sample": false,
+    "emailVerified": true,
+    "profile": {
+      "nickname": "Marcus",
+      "birthYear": 2004,
+      "department": "History",
+      "yearInSchool": 4,
+      "role": "undergraduate",
+      "year": 2023,
+      "gender": "private",
+      "goals": [
+        "internship"
+      ],
+      "interests": [
+        "walk"
+      ],
+      "purposes": [
+        "networking"
+      ],
+      "lookingFor": [
+        "senior"
+      ],
+      "likes": "",
+      "bio": "",
+      "language": "en",
+      "appLanguage": null,
+      "schoolId": "s_berkeley"
+    },
+    "createdVia": "POST /api/schools/send-code → /api/schools/verify-code → /api/auth/register"
+  },
+  "harness": {
+    "hash": "6f174347960d",
+    "commit": "29aa633114d3a6233c4828a1d8cf59485768bd2a",
+    "dirty": false
+  },
+  "environment": {
+    "summary": "Local stack: this worktree's server + built web app, fresh seeded FileStore per run, no secrets, no worker.",
+    "knownLimits": [
+      "Dining menus and RSF gym crowd levels need live campus sources (the local stack runs with CAMPUS_LIVE=0) — empty or missing data there is not a UX bug.",
+      "AI features (Ask Lumi, AI profile draft on /start, conversation starters) need an OpenAI key; none is configured locally.",
+      "Course catalog is the built-in sample list (~210 courses, e.g. MATH 1A; no cached catalog — run `local-stack catalog fetch` once (about 5 minutes) to test with the real Berkeley schedule). Live has the imported current-term Berkeley schedule (e.g. MATH 51) — course-name findings on timetable/class screens are marked environment-limited.",
+      "Campus events, free food, internships, hackathons and scholarships are a read-only snapshot of live (1281 real items, 120 events this week, taken 2026-11-04 19:15 UTC) plus the CSV calendar. Nothing new appears during the run; Q&A and reviews are empty.",
+      "No e-mail is sent: the sign-up / sign-in code is shown on screen in the hint (live sends a real e-mail).",
+      "Real-time updates (SSE) work locally; other people never reply unless the stack was started with --autoreply.",
+      "Signed in as a brand-new real (non-sample, e-mail-verified) account made for this run. Other students exist only if the scenario seeds peers (local fixtures); sample profiles are hidden from real accounts, as on live."
+    ],
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "locale": "en-US",
+    "timezone": "America/Los_Angeles",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+    "browserVersion": "153.0.8010.12"
+  },
+  "limits": {
+    "maxSteps": 36,
+    "frustrationThreshold": 4,
+    "confusionTolerance": 2,
+    "timeBudgetSec": 360,
+    "weights": {
+      "failed": 1,
+      "no_effect": 1,
+      "repeated": 0.75,
+      "backtrack": 0.5,
+      "mismatch": 0.5
+    }
+  },
+  "counters": {
+    "actions": 8,
+    "frustration": 2,
+    "confusionNotes": 1,
+    "simTimeSec": 139.56
+  },
+  "steps": [
+    {
+      "index": 0,
+      "at": "2026-11-04T19:16:47.873Z",
+      "kind": "start",
+      "command": "start",
+      "args": {
+        "persona": "marcus-senior-lowtech",
+        "scenario": "internship-near-berkeley",
+        "auth": "fresh"
+      },
+      "latencyMs": 1860,
+      "urlBefore": null,
+      "setupNotes": [
+        "signed in as a brand-new verified account marcus.eleyzy4h@berkeley.edu (Marcus, History, born 2004)"
+      ],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37595/",
+      "route": "/",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/000-start.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/000-start-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 20,
+        "newElementIds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "elements": [
+          "[1]<button> Search",
+          "[2]<button> Messages",
+          "[3]<button> Events",
+          "[4]<button> Opportunities",
+          "[5]<button> Clubs & Groups",
+          "[6]<button> Meetups",
+          "[7]<button> See all",
+          "[8]<button> (no label)",
+          "[9]<button> Internships Oil and Gas Bond Reviews and Maintenance D-1 Bakersfield, California",
+          "[10]<button> Save",
+          "[11]<button> (no label)",
+          "[12]<button> Internships GENERAL STUDENT TRAINEE (TECHNICAL) D-8 Multiple Locations",
+          "[13]<button> Save",
+          "[14]<a selected> Home",
+          "[15]<a> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design"
+        ],
+        "text": "lumi | . | UC Berkeley | What’s happening at UC Berkeley? | Discover events, opportunities, and people around you. | Events | Opportunities | Clubs & Groups | Meetups | For you | See all | Internships | Oil and Gas Bond Reviews and Maintenance | D-1 | Bakersfield, California | Internships | GENERAL STUDENT TRAINEE (TECHNICAL) | Multiple Locations | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 13
+        },
+        "fingerprint": "89d0966a709637e2e44a585b8156475adda3203e",
+        "simReadSec": 13.3
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 7,
+            "name": "See all",
+            "w": 62,
+            "h": 21
+          },
+          {
+            "id": 10,
+            "name": "Save",
+            "w": 36,
+            "h": 36
+          },
+          {
+            "id": 13,
+            "name": "Save",
+            "w": 36,
+            "h": 36
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 617
+      }
+    },
+    {
+      "index": 1,
+      "at": "2026-11-04T19:16:56.338Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 4,
+        "expect": "a list of jobs and internships",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:37595/",
+      "target": {
+        "id": 4,
+        "tag": "button",
+        "role": "button",
+        "name": "Opportunities",
+        "box": {
+          "x": 200,
+          "y": 208,
+          "w": 174,
+          "h": 104
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "a list of jobs and internships",
+        "confidence": 0.7
+      },
+      "latencyMs": 927,
+      "tapPoint": {
+        "x": 287,
+        "y": 260,
+        "centre": true
+      },
+      "actionNumber": 1,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37595/explore/opportunities",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/001-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/001-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 19,
+        "newElementIds": [
+          21,
+          22
+        ],
+        "elements": [
+          "[1]<button> Search",
+          "[2]<button> Messages",
+          "[3]<button> Events",
+          "[4]<button> Opportunities",
+          "[5]<button> Clubs & Groups",
+          "[6]<button> Meetups",
+          "[21]<button> RSF Crowd meter unavailable",
+          "[22]<button> Dining Halls Menus unavailable right now",
+          "[7]<button> See all",
+          "[14]<a selected> Home",
+          "[15]<a> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[8]<button> (no label)  ↓ below",
+          "[12]<button> Internships GENERAL STUDENT TRAINEE (TECHNICAL) D-8 Multiple Locations  ↓ below",
+          "[10]<button> Save  ↓ below"
+        ],
+        "text": "lumi | . | UC Berkeley | What’s happening at UC Berkeley? | Discover events, opportunities, and people around you. | Events | Opportunities | Clubs & Groups | Meetups | Campus Life | RSF | Crowd meter unavailable | Dining Halls | Menus unavailable right now | For you | See all | Oil and Gas Bond Reviews and Maintenance | D-1 | Bakersfield, California | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 240
+        },
+        "fingerprint": "20687a05ccf25b4f1cba9d6af2f0dae831d3c090",
+        "simReadSec": 2.8
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 7,
+            "name": "See all",
+            "w": 62,
+            "h": 21
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 617
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Opportunities page with tabs For you / Internships / Research, list of listings",
+        "feeling": "neutral",
+        "note": "OK, this is the job part. But 'Oil and Gas Bond Reviews' in Bakersfield 'fits my major (History)'? That's a stretch. And what's D-1, D-8 — red tags, no idea."
+      }
+    },
+    {
+      "index": 2,
+      "at": "2026-11-04T19:17:03.380Z",
+      "kind": "observe",
+      "command": "observe",
+      "args": {},
+      "urlBefore": "http://localhost:37595/explore/opportunities",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37595/explore/opportunities",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/002-observe.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/002-observe-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 71,
+        "newElementIds": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86
+        ],
+        "elements": [
+          "[23]<button> Back",
+          "[24]<button> For you",
+          "[25]<button> Internships",
+          "[26]<button> Research & RA",
+          "[27]<button> Scholarships",
+          "[32]<button> 💼 Oil and Gas Bond Reviews and Maintenance Bureau of Land Management · Bakersfield, Calif",
+          "[33]<button> Save listing",
+          "[34]<button> 💼 GENERAL STUDENT TRAINEE (TECHNICAL) National Reconnaissance Office · Multiple Locations",
+          "[35]<button> Save listing",
+          "[36]<button> 🎪 RWAP: Johanna Dunaway, Syracuse University Institute of Governmental Studies · Harris R",
+          "[37]<button> Save listing",
+          "[38]<button> 💼 CISA - Scholarship for Service (SFS) Internship - Accepting Resumes, Transcripts, and S",
+          "[39]<button> Save listing",
+          "[40]<button> PL Berkeley Pre-Law Society Law school panels, LSAT study groups and mock trial. Matches y",
+          "[14]<a> Home",
+          "[15]<a selected> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[28]<button> Hackathons  (off screen)",
+          "[29]<button> Startups  (off screen)",
+          "[30]<button> Study abroad  (off screen)",
+          "[31]<button> Saved  (off screen)",
+          "[41]<button> 💼 Cal in Local Government — summer 2027 city government internship UC Berkeley Public Ser  ↓ below",
+          "[42]<button> Save listing  ↓ below",
+          "[43]<button> 🎪 APHS: Outed: LBJ’s Confidant and the Arrest That Transformed a Presidency Institute of   ↓ below",
+          "[44]<button> Save listing  ↓ below",
+          "[45]<button> 💼 STUDENT TRAINEE (FORESTRY) Natural Resources Conservation Service · Multiple Locations   ↓ below",
+          "[46]<button> Save listing  ↓ below",
+          "[47]<button> 🎪 Navigating Conversations About Work Authorization During Your Job Search Law Today · 1   ↓ below",
+          "[48]<button> Save listing  ↓ below",
+          "[49]<button> 💼 Student Trainee Executive Office for U.S. Attorneys and the Office of the U.S. Attorney  ↓ below",
+          "[50]<button> Save listing  ↓ below",
+          "[51]<button> 💼 STUDENT TRAINEE Air Force Civilian Career Training · Multiple Locations D-300 Other U.S  ↓ below",
+          "[52]<button> Save listing  ↓ below",
+          "[53]<button> 🎪 REI Colloquium: Sanctuary Making: Immigrant Families Reshaping Geographies of Deportabi  ↓ below",
+          "[54]<button> Save listing  ↓ below",
+          "[55]<button> 💼 Student Trainee (Forestry) Natural Resources Conservation Service · Multiple Locations   ↓ below",
+          "[56]<button> Save listing  ↓ below",
+          "[57]<button> 🎪 Landback Litigation: East Bay Community Law Center Open Seminar Law Today · 3:35 PM Cam  ↓ below",
+          "[58]<button> Save listing  ↓ below",
+          "[59]<button> 💼 Student Trainee Executive Office for U.S. Attorneys and the Office of the U.S. Attorney  ↓ below",
+          "[60]<button> Save listing  ↓ below",
+          "[61]<button> 💼 Inventory Management Specialist Air Force Civilian Career Training · Multiple Locations  ↓ below",
+          "[62]<button> Save listing  ↓ below",
+          "[63]<button> A ASUC (Associated Students of the University of California) Berkeley’s student government  ↓ below",
+          "[64]<button> 💼 Student Trainee (Rangeland Management) Natural Resources Conservation Service · Multipl  ↓ below",
+          "[65]<button> Save listing  ↓ below",
+          "[66]<button> 🎪 [IPLS] Covington IP Panel Law Tomorrow · 1 PM Campus event Tomorrow  ↓ below",
+          "[67]<button> Save listing  ↓ below",
+          "[68]<button> 💼 Student Trainee Executive Office for U.S. Attorneys and the Office of the U.S. Attorney  ↓ below",
+          "[69]<button> Save listing  ↓ below",
+          "[70]<button> 💼 Inventory Management Specialist Air Force Civilian Career Training · Multiple Locations  ↓ below",
+          "[71]<button> Save listing  ↓ below",
+          "[72]<button> MU Berkeley Model United Nations One of the oldest college MUN programs; hosts BMUN for hi  ↓ below",
+          "[73]<button> 💼 Student Trainee (Forestry) Natural Resources Conservation Service · Multiple Locations   ↓ below",
+          "[74]<button> Save listing  ↓ below",
+          "[75]<button> 🎪 Clerkship Panel Law Tomorrow · 1 PM Campus event Tomorrow  ↓ below",
+          "[76]<button> Save listing  ↓ below"
+        ],
+        "text": "Opportunities | For you | Internships | Research & RA | Scholarships | Clubs, listings and events picked for you | 💼 | Oil and Gas Bond Reviews and Maintenance | Bureau of Land Management | · Bakersfield, California | D-1 | Other | U.S. citizens only | Fits your major (History) | 💼 | GENERAL STUDENT TRAINEE (TECHNICAL) | National Reconnaissance Office | · Multiple Locations | D-8 | Other | Fits your major (History) | 🎪 | RWAP: Johanna Dunaway, Syracuse University | Institute of Governmental Studies | · Harris Room | Today | · 12 PM | Campus event | Today | 💼 | CISA - Scholarship for Service (SFS) Internship - Accepting Resumes, Transcripts, and SFS Agreements | Cybersecurity and Infrastructure Security Agency | · Multiple Locations | D-82 | Policy & Law | U.S. citizens only | Matches your interest in careers | 💼 | Student Trainee (Clerical) | Executive Office for U.S. Attorneys and the Office of the U.S. Attorneys | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 2999
+        },
+        "fingerprint": "78f5b613f2c712ab3d815639126db2ce26d6b9ef",
+        "simReadSec": 27.5
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 24,
+            "name": "For you",
+            "w": 76,
+            "h": 36
+          },
+          {
+            "id": 25,
+            "name": "Internships",
+            "w": 99,
+            "h": 36
+          },
+          {
+            "id": 26,
+            "name": "Research & RA",
+            "w": 121,
+            "h": 36
+          },
+          {
+            "id": 27,
+            "name": "Scholarships",
+            "w": 110,
+            "h": 36
+          },
+          {
+            "id": 33,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 35,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 37,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 39,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 617
+      }
+    },
+    {
+      "index": 3,
+      "at": "2026-11-04T19:17:10.027Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Opportunities page with tabs For you / Internships / Research, list of listings",
+        "feeling": "neutral",
+        "thought": "OK, this is the job part. But 'Oil and Gas Bond Reviews' in Bakersfield 'fits my major (History)'? That's a stretch. And what's D-1, D-8 — red tags, no idea."
+      },
+      "about": 2,
+      "feeling": "neutral",
+      "thought": "OK, this is the job part. But 'Oil and Gas Bond Reviews' in Bakersfield 'fits my major (History)'? That's a stretch. And what's D-1, D-8 — red tags, no idea.",
+      "urlAfter": "http://localhost:37595/explore/opportunities",
+      "route": "/explore/opportunities"
+    },
+    {
+      "index": 4,
+      "at": "2026-11-04T19:17:10.166Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "feeling": "neutral",
+        "thought": "Red 'D-1', 'D-8', 'D-82' tags on every job. Is that a deadline? A grade level? Doesn't say.",
+        "friction": "copy",
+        "severity": "2",
+        "element": "32",
+        "wish": "Write 'Due in 1 day' instead of D-1"
+      },
+      "about": 2,
+      "feeling": "neutral",
+      "thought": "Red 'D-1', 'D-8', 'D-82' tags on every job. Is that a deadline? A grade level? Doesn't say.",
+      "urlAfter": "http://localhost:37595/explore/opportunities",
+      "route": "/explore/opportunities",
+      "frictionId": "f1"
+    },
+    {
+      "index": 5,
+      "at": "2026-11-04T19:17:12.709Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 25,
+        "expect": "only internships listed",
+        "confidence": "0.8"
+      },
+      "urlBefore": "http://localhost:37595/explore/opportunities",
+      "target": {
+        "id": 25,
+        "tag": "button",
+        "role": "button",
+        "name": "Internships",
+        "box": {
+          "x": 100,
+          "y": 68,
+          "w": 99,
+          "h": 36
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "only internships listed",
+        "confidence": 0.8
+      },
+      "latencyMs": 867,
+      "tapPoint": {
+        "x": 150.2,
+        "y": 86,
+        "centre": true
+      },
+      "actionNumber": 2,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37595/explore/opportunities?sub=internship",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/005-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/005-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 97,
+        "newElementIds": [
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125
+        ],
+        "elements": [
+          "[23]<button> Back",
+          "[24]<button> For you",
+          "[25]<button> Internships",
+          "[26]<button> Research & RA",
+          "[27]<button> Scholarships",
+          "[87]<button> Any work status",
+          "[88]<button> Int’l students OK 14",
+          "[89]<button> For you",
+          "[90]<button> Deadline soon",
+          "[91]<button> Newest",
+          "[92]<select> Location",
+          "[93]<button> All fields 567",
+          "[94]<button> Software 117",
+          "[95]<button> Data & AI 80",
+          "[96]<button> Hardware 25",
+          "[97]<button> Quant & Trading 22",
+          "[98]<button> Finance & Consulting 37",
+          "[99]<button> Product & Design 24",
+          "[100]<button> Business & Marketing 85",
+          "[101]<button> Policy & Law 22",
+          "[102]<button> Media & Writing 13",
+          "[103]<button> Nonprofit & Education 16",
+          "[104]<button> Health 1",
+          "[105]<button> Research & Science 45",
+          "[106]<button> Other 80",
+          "[32]<button> 💼 Oil and Gas Bond Reviews and Maintenance Bureau of Land Management · Bakersfield, Calif",
+          "[33]<button> Save listing",
+          "[34]<button> 💼 GENERAL STUDENT TRAINEE (TECHNICAL) National Reconnaissance Office · Multiple Locations",
+          "[35]<button> Save listing",
+          "[38]<button> 💼 CISA - Scholarship for Service (SFS) Internship - Accepting Resumes, Transcripts, and S",
+          "[37]<button> Save listing",
+          "[14]<a> Home",
+          "[15]<a selected> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[28]<button> Hackathons  (off screen)",
+          "[29]<button> Startups  (off screen)",
+          "[30]<button> Study abroad  (off screen)",
+          "[31]<button> Saved  (off screen)",
+          "[107]<button> 💼 Student Trainee (Clerical) Executive Office for U.S. Attorneys and the Office of the U.  ↓ below",
+          "[39]<button> Save listing  ↓ below",
+          "[41]<button> 💼 Cal in Local Government — summer 2027 city government internship UC Berkeley Public Ser  ↓ below",
+          "[42]<button> Save listing  ↓ below",
+          "[108]<button> 💼 Student Trainee (Agronomist) Natural Resources Conservation Service · Multiple Location  ↓ below",
+          "[44]<button> Save listing  ↓ below",
+          "[51]<button> 💼 STUDENT TRAINEE Air Force Civilian Career Training · Multiple Locations D-300 Other U.S  ↓ below",
+          "[46]<button> Save listing  ↓ below",
+          "[49]<button> 💼 Student Trainee Executive Office for U.S. Attorneys and the Office of the U.S. Attorney  ↓ below",
+          "[48]<button> Save listing  ↓ below",
+          "[109]<button> 💼 UCDC Washington Program — government & policy internship semester (Fall 2027) UC Berkel  ↓ below",
+          "[50]<button> Save listing  ↓ below",
+          "[64]<button> 💼 Student Trainee (Rangeland Management) Natural Resources Conservation Service · Multipl  ↓ below",
+          "[52]<button> Save listing  ↓ below",
+          "[61]<button> 💼 Inventory Management Specialist Air Force Civilian Career Training · Multiple Locations  ↓ below",
+          "[54]<button> Save listing  ↓ below",
+          "[59]<button> 💼 Student Trainee Executive Office for U.S. Attorneys and the Office of the U.S. Attorney  ↓ below",
+          "[56]<button> Save listing  ↓ below",
+          "[110]<button> 💼 2027 Legal Intern Schonfeld · New York, New York, United States New today Policy & Law  ↓ below",
+          "[58]<button> Save listing  ↓ below",
+          "[55]<button> 💼 Student Trainee (Forestry) Natural Resources Conservation Service · Multiple Locations   ↓ below",
+          "[60]<button> Save listing  ↓ below",
+          "[70]<button> 💼 Inventory Management Specialist Air Force Civilian Career Training · Multiple Locations  ↓ below",
+          "[62]<button> Save listing  ↓ below",
+          "[68]<button> 💼 Student Trainee Executive Office for U.S. Attorneys and the Office of the U.S. Attorney  ↓ below",
+          "[65]<button> Save listing  ↓ below",
+          "[111]<button> 💼 Graffiti Removal on the National Mall National Park Service · Washington, District of C  ↓ below",
+          "[67]<button> Save listing  ↓ below",
+          "[73]<button> 💼 Student Trainee (Forestry) Natural Resources Conservation Service · Multiple Locations   ↓ below",
+          "[69]<button> Save listing  ↓ below",
+          "[79]<button> 💼 Management Analyst Air Force Civilian Career Training · Multiple Locations D-330 Other  ↓ below",
+          "[71]<button> Save listing  ↓ below",
+          "[77]<button> 💼 Spring Law Interns (Student Volunteer) Executive Office for U.S. Attorneys and the Offi  ↓ below",
+          "[74]<button> Save listing  ↓ below",
+          "[112]<button> 💼 Legal Intern Sierra Club · Oakland, CA · Washington, DC Rolling Policy & Law In the Bay  ↓ below",
+          "[76]<button> Save listing  ↓ below"
+        ],
+        "text": "Opportunities | For you | Internships | Research & RA | Scholarships | Any work status | Int’l students OK 14 | For you | Deadline soon | Newest | All fields | 567 | Software | 117 | Data & AI | 80 | Hardware | 25 | Quant & Trading | 22 | Finance & Consulting | 37 | Product & Design | 24 | Business & Marketing | 85 | Policy & Law | 22 | Media & Writing | 13 | Nonprofit & Education | 16 | Health | 1 | Research & Science | 45 | Other (×3 on screen) | 80 | 567 listings | 💼 | Oil and Gas Bond Reviews and Maintenance | Bureau of Land Management | · Bakersfield, California | D-1 | Other | U.S. citizens only | Fits your major (History) | 💼 | GENERAL STUDENT TRAINEE (TECHNICAL) | National Reconnaissance Office | · Multiple Locations | D-8 | Fits your major (History) | 💼 | Cybersecurity and Infrastructure Security Agency | · Multiple Locations | D-82 | Policy & Law | U.S. citizens only | Matches your interest in careers | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 3209
+        },
+        "fingerprint": "6bac32391fbd7ea008c82e31ec8cbf7bee08d069",
+        "simReadSec": 10.2
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 24,
+            "name": "For you",
+            "w": 76,
+            "h": 36
+          },
+          {
+            "id": 25,
+            "name": "Internships",
+            "w": 99,
+            "h": 36
+          },
+          {
+            "id": 26,
+            "name": "Research & RA",
+            "w": 121,
+            "h": 36
+          },
+          {
+            "id": 27,
+            "name": "Scholarships",
+            "w": 110,
+            "h": 36
+          },
+          {
+            "id": 87,
+            "name": "Any work status",
+            "w": 115,
+            "h": 28
+          },
+          {
+            "id": 88,
+            "name": "Int’l students OK 14",
+            "w": 133,
+            "h": 28
+          },
+          {
+            "id": 89,
+            "name": "For you",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 90,
+            "name": "Deadline soon",
+            "w": 104,
+            "h": 28
+          },
+          {
+            "id": 91,
+            "name": "Newest",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 92,
+            "name": "Location",
+            "w": 138,
+            "h": 32
+          },
+          {
+            "id": 93,
+            "name": "All fields 567",
+            "w": 96,
+            "h": 28
+          },
+          {
+            "id": 94,
+            "name": "Software 117",
+            "w": 94,
+            "h": 28
+          },
+          {
+            "id": 95,
+            "name": "Data & AI 80",
+            "w": 94,
+            "h": 28
+          },
+          {
+            "id": 96,
+            "name": "Hardware 25",
+            "w": 96,
+            "h": 28
+          },
+          {
+            "id": 97,
+            "name": "Quant & Trading 22",
+            "w": 133,
+            "h": 28
+          },
+          {
+            "id": 98,
+            "name": "Finance & Consulting 37",
+            "w": 162,
+            "h": 28
+          },
+          {
+            "id": 99,
+            "name": "Product & Design 24",
+            "w": 140,
+            "h": 28
+          },
+          {
+            "id": 100,
+            "name": "Business & Marketing 85",
+            "w": 165,
+            "h": 28
+          },
+          {
+            "id": 101,
+            "name": "Policy & Law 22",
+            "w": 113,
+            "h": 28
+          },
+          {
+            "id": 102,
+            "name": "Media & Writing 13",
+            "w": 129,
+            "h": 28
+          },
+          {
+            "id": 103,
+            "name": "Nonprofit & Education 16",
+            "w": 164,
+            "h": 28
+          },
+          {
+            "id": 104,
+            "name": "Health 1",
+            "w": 68,
+            "h": 28
+          },
+          {
+            "id": 105,
+            "name": "Research & Science 45",
+            "w": 155,
+            "h": 28
+          },
+          {
+            "id": 106,
+            "name": "Other 80",
+            "w": 74,
+            "h": 28
+          },
+          {
+            "id": 33,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 35,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 37,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 617
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Internships tab: 567 listings, but a wall of ~20 filter buttons on top",
+        "feeling": "neutral",
+        "note": "567 internships, fine. That's a lot of little buttons though. I see 'Any location' — that's what I want, near Berkeley."
+      }
+    },
+    {
+      "index": 6,
+      "at": "2026-11-04T19:17:20.292Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Internships tab: 567 listings, but a wall of ~20 filter buttons on top",
+        "feeling": "neutral",
+        "thought": "567 internships, fine. That's a lot of little buttons though. I see 'Any location' — that's what I want, near Berkeley.",
+        "friction": "ux_confusion",
+        "severity": "1",
+        "element": "89",
+        "wish": "Fewer chips; why are there two 'For you' buttons?"
+      },
+      "about": 5,
+      "feeling": "neutral",
+      "thought": "567 internships, fine. That's a lot of little buttons though. I see 'Any location' — that's what I want, near Berkeley.",
+      "urlAfter": "http://localhost:37595/explore/opportunities?sub=internship",
+      "route": "/explore/opportunities",
+      "frictionId": "f2"
+    },
+    {
+      "index": 7,
+      "at": "2026-11-04T19:17:20.417Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 92,
+        "expect": "a list of places to pick from, like Bay Area",
+        "confidence": "0.6"
+      },
+      "urlBefore": "http://localhost:37595/explore/opportunities?sub=internship",
+      "target": {
+        "id": 92,
+        "tag": "select",
+        "role": "combobox",
+        "name": "Location",
+        "box": {
+          "x": 283,
+          "y": 148,
+          "w": 138,
+          "h": 32
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "a list of places to pick from, like Bay Area",
+        "confidence": 0.6
+      },
+      "latencyMs": 861,
+      "tapPoint": {
+        "x": 320.9,
+        "y": 164,
+        "centre": true
+      },
+      "actionNumber": 3,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37595/explore/opportunities?sub=internship",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/007-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/007-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 97,
+        "newElementIds": [],
+        "elements": [
+          "[23]<button> Back",
+          "[24]<button> For you",
+          "[25]<button> Internships",
+          "[26]<button> Research & RA",
+          "[27]<button> Scholarships",
+          "[87]<button> Any work status",
+          "[88]<button> Int’l students OK 14",
+          "[89]<button> For you",
+          "[90]<button> Deadline soon",
+          "[91]<button> Newest",
+          "[92]<select> Location",
+          "[93]<button> All fields 567",
+          "[94]<button> Software 117",
+          "[95]<button> Data & AI 80",
+          "[96]<button> Hardware 25",
+          "[97]<button> Quant & Trading 22",
+          "[98]<button> Finance & Consulting 37",
+          "[99]<button> Product & Design 24",
+          "[100]<button> Business & Marketing 85",
+          "[101]<button> Policy & Law 22",
+          "[102]<button> Media & Writing 13",
+          "[103]<button> Nonprofit & Education 16",
+          "[104]<button> Health 1",
+          "[105]<button> Research & Science 45",
+          "[106]<button> Other 80",
+          "[32]<button> 💼 Oil and Gas Bond Reviews and Maintenance Bureau of Land Management · Bakersfield, Calif",
+          "[33]<button> Save listing",
+          "[34]<button> 💼 GENERAL STUDENT TRAINEE (TECHNICAL) National Reconnaissance Office · Multiple Locations",
+          "[35]<button> Save listing",
+          "[38]<button> 💼 CISA - Scholarship for Service (SFS) Internship - Accepting Resumes, Transcripts, and S",
+          "[37]<button> Save listing",
+          "[14]<a> Home",
+          "[15]<a selected> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[28]<button> Hackathons  (off screen)",
+          "[29]<button> Startups  (off screen)",
+          "[30]<button> Study abroad  (off screen)",
+          "[31]<button> Saved  (off screen)",
+          "[107]<button> 💼 Student Trainee (Clerical) Executive Office for U.S. Attorneys and the Office of the U.  ↓ below",
+          "[39]<button> Save listing  ↓ below",
+          "[41]<button> 💼 Cal in Local Government — summer 2027 city government internship UC Berkeley Public Ser  ↓ below",
+          "[42]<button> Save listing  ↓ below",
+          "[108]<button> 💼 Student Trainee (Agronomist) Natural Resources Conservation Service · Multiple Location  ↓ below",
+          "[44]<button> Save listing  ↓ below",
+          "[51]<button> 💼 STUDENT TRAINEE Air Force Civilian Career Training · Multiple Locations D-300 Other U.S  ↓ below",
+          "[46]<button> Save listing  ↓ below",
+          "[49]<button> 💼 Student Trainee Executive Office for U.S. Attorneys and the Office of the U.S. Attorney  ↓ below",
+          "[48]<button> Save listing  ↓ below",
+          "[109]<button> 💼 UCDC Washington Program — government & policy internship semester (Fall 2027) UC Berkel  ↓ below",
+          "[50]<button> Save listing  ↓ below",
+          "[64]<button> 💼 Student Trainee (Rangeland Management) Natural Resources Conservation Service · Multipl  ↓ below",
+          "[52]<button> Save listing  ↓ below",
+          "[61]<button> 💼 Inventory Management Specialist Air Force Civilian Career Training · Multiple Locations  ↓ below",
+          "[54]<button> Save listing  ↓ below",
+          "[59]<button> 💼 Student Trainee Executive Office for U.S. Attorneys and the Office of the U.S. Attorney  ↓ below",
+          "[56]<button> Save listing  ↓ below",
+          "[110]<button> 💼 2027 Legal Intern Schonfeld · New York, New York, United States New today Policy & Law  ↓ below",
+          "[58]<button> Save listing  ↓ below",
+          "[55]<button> 💼 Student Trainee (Forestry) Natural Resources Conservation Service · Multiple Locations   ↓ below",
+          "[60]<button> Save listing  ↓ below",
+          "[70]<button> 💼 Inventory Management Specialist Air Force Civilian Career Training · Multiple Locations  ↓ below",
+          "[62]<button> Save listing  ↓ below",
+          "[68]<button> 💼 Student Trainee Executive Office for U.S. Attorneys and the Office of the U.S. Attorney  ↓ below",
+          "[65]<button> Save listing  ↓ below",
+          "[111]<button> 💼 Graffiti Removal on the National Mall National Park Service · Washington, District of C  ↓ below",
+          "[67]<button> Save listing  ↓ below",
+          "[73]<button> 💼 Student Trainee (Forestry) Natural Resources Conservation Service · Multiple Locations   ↓ below",
+          "[69]<button> Save listing  ↓ below",
+          "[79]<button> 💼 Management Analyst Air Force Civilian Career Training · Multiple Locations D-330 Other  ↓ below",
+          "[71]<button> Save listing  ↓ below",
+          "[77]<button> 💼 Spring Law Interns (Student Volunteer) Executive Office for U.S. Attorneys and the Offi  ↓ below",
+          "[74]<button> Save listing  ↓ below",
+          "[112]<button> 💼 Legal Intern Sierra Club · Oakland, CA · Washington, DC Rolling Policy & Law In the Bay  ↓ below",
+          "[76]<button> Save listing  ↓ below"
+        ],
+        "text": "Opportunities | For you | Internships | Research & RA | Scholarships | Any work status | Int’l students OK 14 | For you | Deadline soon | Newest | All fields | 567 | Software | 117 | Data & AI | 80 | Hardware | 25 | Quant & Trading | 22 | Finance & Consulting | 37 | Product & Design | 24 | Business & Marketing | 85 | Policy & Law | 22 | Media & Writing | 13 | Nonprofit & Education | 16 | Health | 1 | Research & Science | 45 | Other (×3 on screen) | 80 | 567 listings | 💼 | Oil and Gas Bond Reviews and Maintenance | Bureau of Land Management | · Bakersfield, California | D-1 | Other | U.S. citizens only | Fits your major (History) | 💼 | GENERAL STUDENT TRAINEE (TECHNICAL) | National Reconnaissance Office | · Multiple Locations | D-8 | Fits your major (History) | 💼 | Cybersecurity and Infrastructure Security Agency | · Multiple Locations | D-82 | Policy & Law | U.S. citizens only | Matches your interest in careers | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 3209
+        },
+        "fingerprint": "6bac32391fbd7ea008c82e31ec8cbf7bee08d069",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 24,
+            "name": "For you",
+            "w": 76,
+            "h": 36
+          },
+          {
+            "id": 25,
+            "name": "Internships",
+            "w": 99,
+            "h": 36
+          },
+          {
+            "id": 26,
+            "name": "Research & RA",
+            "w": 121,
+            "h": 36
+          },
+          {
+            "id": 27,
+            "name": "Scholarships",
+            "w": 110,
+            "h": 36
+          },
+          {
+            "id": 87,
+            "name": "Any work status",
+            "w": 115,
+            "h": 28
+          },
+          {
+            "id": 88,
+            "name": "Int’l students OK 14",
+            "w": 133,
+            "h": 28
+          },
+          {
+            "id": 89,
+            "name": "For you",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 90,
+            "name": "Deadline soon",
+            "w": 104,
+            "h": 28
+          },
+          {
+            "id": 91,
+            "name": "Newest",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 92,
+            "name": "Location",
+            "w": 138,
+            "h": 32
+          },
+          {
+            "id": 93,
+            "name": "All fields 567",
+            "w": 96,
+            "h": 28
+          },
+          {
+            "id": 94,
+            "name": "Software 117",
+            "w": 94,
+            "h": 28
+          },
+          {
+            "id": 95,
+            "name": "Data & AI 80",
+            "w": 94,
+            "h": 28
+          },
+          {
+            "id": 96,
+            "name": "Hardware 25",
+            "w": 96,
+            "h": 28
+          },
+          {
+            "id": 97,
+            "name": "Quant & Trading 22",
+            "w": 133,
+            "h": 28
+          },
+          {
+            "id": 98,
+            "name": "Finance & Consulting 37",
+            "w": 162,
+            "h": 28
+          },
+          {
+            "id": 99,
+            "name": "Product & Design 24",
+            "w": 140,
+            "h": 28
+          },
+          {
+            "id": 100,
+            "name": "Business & Marketing 85",
+            "w": 165,
+            "h": 28
+          },
+          {
+            "id": 101,
+            "name": "Policy & Law 22",
+            "w": 113,
+            "h": 28
+          },
+          {
+            "id": 102,
+            "name": "Media & Writing 13",
+            "w": 129,
+            "h": 28
+          },
+          {
+            "id": 103,
+            "name": "Nonprofit & Education 16",
+            "w": 164,
+            "h": 28
+          },
+          {
+            "id": 104,
+            "name": "Health 1",
+            "w": 68,
+            "h": 28
+          },
+          {
+            "id": 105,
+            "name": "Research & Science 45",
+            "w": 155,
+            "h": 28
+          },
+          {
+            "id": 106,
+            "name": "Other 80",
+            "w": 74,
+            "h": 28
+          },
+          {
+            "id": 33,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 35,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 37,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 617
+      },
+      "signals": [],
+      "frustrationAfter": 0
+    },
+    {
+      "index": 8,
+      "at": "2026-11-04T19:17:24.749Z",
+      "kind": "action",
+      "command": "select",
+      "args": {
+        "id": 92,
+        "option": "Bay Area",
+        "expect": "list narrows to Bay Area internships",
+        "confidence": "0.6"
+      },
+      "urlBefore": "http://localhost:37595/explore/opportunities?sub=internship",
+      "target": {
+        "id": 92,
+        "tag": "select",
+        "role": "combobox",
+        "name": "Location",
+        "box": {
+          "x": 252,
+          "y": 148,
+          "w": 138,
+          "h": 32
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "list narrows to Bay Area internships",
+        "confidence": 0.6
+      },
+      "latencyMs": 826,
+      "actionNumber": 4,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37595/explore/opportunities?sub=internship&region=Bay+Area",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/008-select.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/008-select-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 95,
+        "newElementIds": [
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169
+        ],
+        "elements": [
+          "[23]<button> Back",
+          "[24]<button> For you",
+          "[25]<button> Internships",
+          "[26]<button> Research & RA",
+          "[27]<button> Scholarships",
+          "[87]<button> Any work status",
+          "[88]<button> Int’l students OK 14",
+          "[89]<button> For you",
+          "[90]<button> Deadline soon",
+          "[91]<button> Newest",
+          "[92]<select> Location",
+          "[126]<button> All fields 155",
+          "[127]<button> Software 43",
+          "[128]<button> Data & AI 51",
+          "[129]<button> Hardware 8",
+          "[130]<button> Quant & Trading 1",
+          "[131]<button> Finance & Consulting 8",
+          "[132]<button> Product & Design 10",
+          "[133]<button> Business & Marketing 5",
+          "[134]<button> Policy & Law 1",
+          "[135]<button> Media & Writing 0",
+          "[136]<button> Nonprofit & Education 0",
+          "[137]<button> Health 0",
+          "[138]<button> Research & Science 19",
+          "[139]<button> Other 9",
+          "[140]<button> 💼 Legal Intern Sierra Club · Oakland, CA · Washington, DC Rolling Policy & Law Fits your ",
+          "[33]<button> Save listing",
+          "[141]<button> 💼 Forward Deployed Infrastructure Engineer, Internship - US Government Palantir · Palo Al",
+          "[35]<button> Save listing",
+          "[142]<button> 💼 IT Engineer Intern (Early Careers Summer 2027) Affirm · San Francisco, California, Unit",
+          "[37]<button> Save listing",
+          "[14]<a> Home",
+          "[15]<a selected> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[28]<button> Hackathons  (off screen)",
+          "[29]<button> Startups  (off screen)",
+          "[30]<button> Study abroad  (off screen)",
+          "[31]<button> Saved  (off screen)",
+          "[143]<button> 💼 Sales Development Representative, Internship Verkada · San Mateo, CA United States Post  ↓ below",
+          "[39]<button> Save listing  ↓ below",
+          "[144]<button> 💼 Product Designer, Internship - US Government Palantir · Palo Alto, CA Rolling Product &  ↓ below",
+          "[42]<button> Save listing  ↓ below",
+          "[145]<button> 💼 Software Engineer Intern (Summer 2027) Affirm · San Francisco, California, United State  ↓ below",
+          "[44]<button> Save listing  ↓ below",
+          "[146]<button> 💼 2027 Summer Intern, BS/MS, Software Engineering, Commercialization Waymo · Mountain Vie  ↓ below",
+          "[46]<button> Save listing  ↓ below",
+          "[147]<button> 💼 SW Engineer Intern, AI Engineering Roku · San Jose, California Posted 1d ago Data & AI  ↓ below",
+          "[48]<button> Save listing  ↓ below",
+          "[148]<button> 💼 2027 Intern - Software Engineer Adobe · San Jose, United States of America (+6 more) Po  ↓ below",
+          "[50]<button> Save listing  ↓ below",
+          "[149]<button> 💼 Software Engineer (Machine Learning) Intern (Summer 2027) Affirm · San Francisco, Calif  ↓ below",
+          "[52]<button> Save listing  ↓ below",
+          "[150]<button> 💼 Finance Intern - Undergrad Summer 2027 ServiceNow · Santa Clara, CALIFORNIA, United Sta  ↓ below",
+          "[54]<button> Save listing  ↓ below",
+          "[151]<button> 💼 Rebele Editorial AI Development Intern Hearst · San Francisco, CA, United States Posted  ↓ below",
+          "[56]<button> Save listing  ↓ below",
+          "[152]<button> 💼 2027 Intern - AI & Architecture Adobe · San Jose Posted 2d ago Data & AI  ↓ below",
+          "[58]<button> Save listing  ↓ below",
+          "[153]<button> 💼 Data Science Intern (2027 Start) Databricks · Mountain View, California · San Francisco  ↓ below",
+          "[60]<button> Save listing  ↓ below",
+          "[154]<button> 💼 Undergrad Software Engineering Intern (Grad Year: Spring 2028) Twitch · San Francisco,   ↓ below",
+          "[62]<button> Save listing  ↓ below",
+          "[155]<button> 💼 Software Engineer Intern (Summer 2027) Notion · San Francisco, California · New York, N  ↓ below",
+          "[65]<button> Save listing  ↓ below",
+          "[156]<button> 💼 2027 Intern - Experience Researcher Adobe · San Jose Posted 2d ago Research & Science  ↓ below",
+          "[67]<button> Save listing  ↓ below",
+          "[157]<button> 💼 Product Design Intern (2027 Start) Databricks · San Francisco, California · Seattle, Wa  ↓ below",
+          "[69]<button> Save listing  ↓ below",
+          "[158]<button> 💼 Undergrad Software Engineering Intern (Grad Year: Winter 2027) Twitch · San Francisco,   ↓ below",
+          "[71]<button> Save listing  ↓ below",
+          "[159]<button> 💼 Software Engineer Intern, Mobile (Winter 2027) Notion · San Francisco, California · New  ↓ below",
+          "[74]<button> Save listing  ↓ below",
+          "[160]<button> 💼 2027 Intern - Security Engineer Adobe · San Jose Posted 2d ago Software  ↓ below",
+          "[76]<button> Save listing  ↓ below"
+        ],
+        "text": "Opportunities | For you | Internships | Research & RA | Scholarships | Any work status | Int’l students OK 14 | For you | Deadline soon | Newest | All fields | 155 | Software (×3 on screen) | 43 | Data & AI | 51 | Hardware | 8 | Quant & Trading | 1 | Finance & Consulting | 8 | Product & Design | 10 | Business & Marketing | 5 | Policy & Law | 1 | Media & Writing | 0 | Nonprofit & Education | 0 | Health | 0 | Research & Science | 19 | Other | 9 | 155 listings | 💼 | Legal Intern | Sierra Club | · Oakland, CA · Washington, DC | Rolling | Policy & Law | Fits your major (History) | 💼 | Forward Deployed Infrastructure Engineer, Internship - US Government | Palantir | · Palo Alto, CA | Rolling | Software | U.S. citizens only | Fits your major (History) | 💼 | IT Engineer Intern (Early Careers Summer 2027) | New today | Matches your interest in careers | 💼 | [Summer 2027] Software Engineer Intern | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 3041
+        },
+        "fingerprint": "07d4774b16054d7cfcbfd547d24978d929a82766",
+        "simReadSec": 10.6
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 24,
+            "name": "For you",
+            "w": 76,
+            "h": 36
+          },
+          {
+            "id": 25,
+            "name": "Internships",
+            "w": 99,
+            "h": 36
+          },
+          {
+            "id": 26,
+            "name": "Research & RA",
+            "w": 121,
+            "h": 36
+          },
+          {
+            "id": 27,
+            "name": "Scholarships",
+            "w": 110,
+            "h": 36
+          },
+          {
+            "id": 87,
+            "name": "Any work status",
+            "w": 115,
+            "h": 28
+          },
+          {
+            "id": 88,
+            "name": "Int’l students OK 14",
+            "w": 133,
+            "h": 28
+          },
+          {
+            "id": 89,
+            "name": "For you",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 90,
+            "name": "Deadline soon",
+            "w": 104,
+            "h": 28
+          },
+          {
+            "id": 91,
+            "name": "Newest",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 92,
+            "name": "Location",
+            "w": 138,
+            "h": 32
+          },
+          {
+            "id": 126,
+            "name": "All fields 155",
+            "w": 94,
+            "h": 28
+          },
+          {
+            "id": 127,
+            "name": "Software 43",
+            "w": 93,
+            "h": 28
+          },
+          {
+            "id": 128,
+            "name": "Data & AI 51",
+            "w": 91,
+            "h": 28
+          },
+          {
+            "id": 129,
+            "name": "Hardware 8",
+            "w": 89,
+            "h": 28
+          },
+          {
+            "id": 130,
+            "name": "Quant & Trading 1",
+            "w": 123,
+            "h": 28
+          },
+          {
+            "id": 131,
+            "name": "Finance & Consulting 8",
+            "w": 155,
+            "h": 28
+          },
+          {
+            "id": 132,
+            "name": "Product & Design 10",
+            "w": 138,
+            "h": 28
+          },
+          {
+            "id": 133,
+            "name": "Business & Marketing 5",
+            "w": 157,
+            "h": 28
+          },
+          {
+            "id": 134,
+            "name": "Policy & Law 1",
+            "w": 103,
+            "h": 28
+          },
+          {
+            "id": 135,
+            "name": "Media & Writing 0",
+            "w": 124,
+            "h": 28
+          },
+          {
+            "id": 136,
+            "name": "Nonprofit & Education 0",
+            "w": 160,
+            "h": 28
+          },
+          {
+            "id": 137,
+            "name": "Health 0",
+            "w": 71,
+            "h": 28
+          },
+          {
+            "id": 138,
+            "name": "Research & Science 19",
+            "w": 152,
+            "h": 28
+          },
+          {
+            "id": 139,
+            "name": "Other 9",
+            "w": 66,
+            "h": 28
+          },
+          {
+            "id": 33,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 35,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 37,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 617
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Picked 'Bay Area' from the location list; now 155 listings, first one Sierra Club Legal Intern in Oakland",
+        "feeling": "curious",
+        "note": "Now we're talking. Sierra Club in Oakland, that's a real organization and close by. Doesn't say if it's paid though."
+      }
+    },
+    {
+      "index": 9,
+      "at": "2026-11-04T19:17:31.885Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Picked 'Bay Area' from the location list; now 155 listings, first one Sierra Club Legal Intern in Oakland",
+        "feeling": "curious",
+        "thought": "Now we're talking. Sierra Club in Oakland, that's a real organization and close by. Doesn't say if it's paid though."
+      },
+      "about": 8,
+      "feeling": "curious",
+      "thought": "Now we're talking. Sierra Club in Oakland, that's a real organization and close by. Doesn't say if it's paid though.",
+      "urlAfter": "http://localhost:37595/explore/opportunities?sub=internship&region=Bay+Area",
+      "route": "/explore/opportunities"
+    },
+    {
+      "index": 10,
+      "at": "2026-11-04T19:17:32.054Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 140,
+        "expect": "details page: pay, what you do, how to apply",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:37595/explore/opportunities?sub=internship&region=Bay+Area",
+      "target": {
+        "id": 140,
+        "tag": "button",
+        "role": "button",
+        "name": "💼 Legal Intern Sierra Club · Oakland, CA · Washington, DC Rolling Policy & Law Fits your ",
+        "box": {
+          "x": 16,
+          "y": 428,
+          "w": 306,
+          "h": 88
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "details page: pay, what you do, how to apply",
+        "confidence": 0.7
+      },
+      "latencyMs": 852,
+      "tapPoint": {
+        "x": 169,
+        "y": 472.1,
+        "centre": true
+      },
+      "actionNumber": 5,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37595/opportunities/op_ext_job_lever_sierraclub_1d928d1f-09d1-4a8e-85d3-7fe711636186",
+      "route": "/opportunities/:id",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/010-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/010-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 12,
+        "newElementIds": [
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179
+        ],
+        "elements": [
+          "[23]<button> Back",
+          "[170]<button> More",
+          "[171]<button> Sierra Club",
+          "[172]<button> Start one",
+          "[173]<button> Start a prep crew e.g. Interview prep · Thu 7pm — people who saved this can join",
+          "[174]<button> Details",
+          "[175]<button> People 0",
+          "[176]<button> Q&A 0",
+          "[178]<button> Interested",
+          "[179]<button> Apply on Sierra Club",
+          "[20]<button> Switch to the classic design",
+          "[177]<a> Official source Sierra Club careers Last verified Wed, Nov 4 View posting  ↓ below"
+        ],
+        "text": "💼 | Internships | Official | Legal Intern | Sierra Club | Do it with people | Nobody has saved this yet. Save it and classmates who do will show up here. | Prep crews | Start one | Start a prep crew | e.g. Interview prep · Thu 7pm — people who saved this can join | Details | People 0 | Q&A 0 | Location | Oakland, CA · Washington, DC | 🧭 | Field | Policy & Law | 🛂 | International students | Not stated in the posting — check before applying | Deadline | Apply on Sierra Club | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 375
+        },
+        "fingerprint": "e0eae0a7688a669e71c8424958e0584c3a070685",
+        "simReadSec": 13.3
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 170,
+            "name": "More",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 171,
+            "name": "Sierra Club",
+            "w": 68,
+            "h": 20
+          },
+          {
+            "id": 172,
+            "name": "Start one",
+            "w": 70,
+            "h": 18
+          },
+          {
+            "id": 174,
+            "name": "Details",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 175,
+            "name": "People 0",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 176,
+            "name": "Q&A 0",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 617
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "Details page has 'Official' badge and big 'Apply on Sierra Club' button, but the top half is social stuff (Do it with people, Prep crews) and no pay shown yet",
+        "feeling": "neutral",
+        "note": "'Official' and 'Apply on Sierra Club' — OK, that looks legit. But I don't need a 'prep crew', I need to know if it pays. Why is that stuff above the actual job info?"
+      }
+    },
+    {
+      "index": 11,
+      "at": "2026-11-04T19:17:39.753Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "Details page has 'Official' badge and big 'Apply on Sierra Club' button, but the top half is social stuff (Do it with people, Prep crews) and no pay shown yet",
+        "feeling": "neutral",
+        "thought": "'Official' and 'Apply on Sierra Club' — OK, that looks legit. But I don't need a 'prep crew', I need to know if it pays. Why is that stuff above the actual job info?",
+        "friction": "ux_confusion",
+        "severity": "2",
+        "element": "173",
+        "wish": "Put pay, dates and job description at the top; social extras lower"
+      },
+      "about": 10,
+      "feeling": "neutral",
+      "thought": "'Official' and 'Apply on Sierra Club' — OK, that looks legit. But I don't need a 'prep crew', I need to know if it pays. Why is that stuff above the actual job info?",
+      "urlAfter": "http://localhost:37595/opportunities/op_ext_job_lever_sierraclub_1d928d1f-09d1-4a8e-85d3-7fe711636186",
+      "route": "/opportunities/:id",
+      "frictionId": "f3"
+    },
+    {
+      "index": 12,
+      "at": "2026-11-04T19:17:39.923Z",
+      "kind": "action",
+      "command": "scroll",
+      "args": {
+        "direction": "down",
+        "expect": "pay and description below",
+        "confidence": "0.5"
+      },
+      "urlBefore": "http://localhost:37595/opportunities/op_ext_job_lever_sierraclub_1d928d1f-09d1-4a8e-85d3-7fe711636186",
+      "intent": {
+        "expectedOutcome": "pay and description below",
+        "confidence": 0.5
+      },
+      "latencyMs": 1316,
+      "actionNumber": 6,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37595/opportunities/op_ext_job_lever_sierraclub_1d928d1f-09d1-4a8e-85d3-7fe711636186",
+      "route": "/opportunities/:id",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/012-scroll.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/012-scroll-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 12,
+        "newElementIds": [],
+        "elements": [
+          "[23]<button> Back",
+          "[170]<button> More",
+          "[172]<button> Start one",
+          "[173]<button> Start a prep crew e.g. Interview prep · Thu 7pm — people who saved this can join",
+          "[174]<button> Details",
+          "[175]<button> People 0",
+          "[176]<button> Q&A 0",
+          "[177]<a> Official source Sierra Club careers Last verified Wed, Nov 4 View posting",
+          "[178]<button> Interested",
+          "[179]<button> Apply on Sierra Club",
+          "[20]<button> Switch to the classic design",
+          "[171]<button> Sierra Club  ↑ above"
+        ],
+        "text": "Nobody has saved this yet. Save it and classmates who do will show up here. | Prep crews | Start a prep crew | e.g. Interview prep · Thu 7pm — people who saved this can join | Details | People 0 | Q&A 0 | Location | Oakland, CA · Washington, DC | 🧭 | Field | Policy & Law | 🛂 | International students | Not stated in the posting — check before applying | Deadline | Not posted — companies usually close once roles fill. Rolling. | 👤 | Who it’s for | See the posting for class year, major and work authorization | Official source | Sierra Club careers | Last verified Wed, Nov 4 | View posting | # | internship | # | Sierra Club | Apply on Sierra Club | Design: | Classic | New",
+        "scroll": {
+          "top": 375,
+          "max": 375
+        },
+        "fingerprint": "36ad2579432e4972b08ac7eb95ede131bf30e3b0",
+        "simReadSec": 8
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 170,
+            "name": "More",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 172,
+            "name": "Start one",
+            "w": 70,
+            "h": 18
+          },
+          {
+            "id": 174,
+            "name": "Details",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 175,
+            "name": "People 0",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 176,
+            "name": "Q&A 0",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 617
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 0.5,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "Bottom of page: location, field, 'Rolling' deadline, 'see the posting' for who it's for, official source verified today. No pay, no job description.",
+        "feeling": "frustrated",
+        "note": "'Last verified Nov 4' and a link to Sierra Club careers — fine, I believe it's real. But nothing says if it's paid or what I'd actually do. I'd have to leave the app to find out. Kind of the whole point."
+      }
+    },
+    {
+      "index": 13,
+      "at": "2026-11-04T19:17:46.038Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "Bottom of page: location, field, 'Rolling' deadline, 'see the posting' for who it's for, official source verified today. No pay, no job description.",
+        "feeling": "frustrated",
+        "thought": "'Last verified Nov 4' and a link to Sierra Club careers — fine, I believe it's real. But nothing says if it's paid or what I'd actually do. I'd have to leave the app to find out. Kind of the whole point.",
+        "friction": "content_gap",
+        "severity": "2",
+        "element": "177",
+        "wish": "Show pay (paid/unpaid, hourly rate) and a short description of the job"
+      },
+      "about": 12,
+      "feeling": "frustrated",
+      "thought": "'Last verified Nov 4' and a link to Sierra Club careers — fine, I believe it's real. But nothing says if it's paid or what I'd actually do. I'd have to leave the app to find out. Kind of the whole point.",
+      "urlAfter": "http://localhost:37595/opportunities/op_ext_job_lever_sierraclub_1d928d1f-09d1-4a8e-85d3-7fe711636186",
+      "route": "/opportunities/:id",
+      "frictionId": "f4"
+    },
+    {
+      "index": 14,
+      "at": "2026-11-04T19:17:48.523Z",
+      "kind": "action",
+      "command": "back",
+      "args": {
+        "expect": "back to Bay Area internship list",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:37595/opportunities/op_ext_job_lever_sierraclub_1d928d1f-09d1-4a8e-85d3-7fe711636186",
+      "intent": {
+        "expectedOutcome": "back to Bay Area internship list",
+        "confidence": 0.7
+      },
+      "latencyMs": 1136,
+      "actionNumber": 7,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37595/explore/opportunities?sub=internship&region=Bay+Area",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/014-back.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/014-back-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 92,
+        "newElementIds": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          140,
+          33,
+          141,
+          35,
+          142,
+          37,
+          180,
+          39,
+          143,
+          42,
+          144,
+          44,
+          146,
+          46,
+          147,
+          48,
+          148,
+          50,
+          149,
+          52,
+          150,
+          54,
+          151,
+          56,
+          152,
+          58,
+          153,
+          60,
+          154,
+          62,
+          155,
+          65,
+          156,
+          67,
+          157,
+          69,
+          158,
+          71,
+          159,
+          74,
+          160,
+          76,
+          161,
+          78,
+          162,
+          80,
+          163,
+          83,
+          164,
+          85,
+          165,
+          117,
+          166,
+          119,
+          167,
+          121,
+          168,
+          123,
+          169,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "elements": [
+          "[23]<button> Back",
+          "[140]<button> 💼 Legal Intern Sierra Club · Oakland, CA · Washington, DC Rolling Policy & Law Fits your ",
+          "[33]<button> Save listing",
+          "[141]<button> 💼 Forward Deployed Infrastructure Engineer, Internship - US Government Palantir · Palo Al",
+          "[35]<button> Save listing",
+          "[142]<button> 💼 IT Engineer Intern (Early Careers Summer 2027) Affirm · San Francisco, California, Unit",
+          "[37]<button> Save listing",
+          "[180]<button> 💼 [Summer 2027] Software Engineer Intern Roblox · San Mateo, CA, United States New today ",
+          "[39]<button> Save listing",
+          "[143]<button> 💼 Sales Development Representative, Internship Verkada · San Mateo, CA United States Post",
+          "[42]<button> Save listing",
+          "[144]<button> 💼 Product Designer, Internship - US Government Palantir · Palo Alto, CA Rolling Product &",
+          "[44]<button> Save listing",
+          "[14]<a> Home",
+          "[15]<a selected> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[135]<button> Media & Writing 0  ↑ above",
+          "[136]<button> Nonprofit & Education 0  ↑ above",
+          "[133]<button> Business & Marketing 5  ↑ above",
+          "[134]<button> Policy & Law 1  ↑ above",
+          "[131]<button> Finance & Consulting 8  ↑ above",
+          "[132]<button> Product & Design 10  ↑ above",
+          "[129]<button> Hardware 8  ↑ above",
+          "[130]<button> Quant & Trading 1  ↑ above",
+          "[126]<button> All fields 155  ↑ above",
+          "[127]<button> Software 43  ↑ above",
+          "[128]<button> Data & AI 51  ↑ above",
+          "[89]<button> For you  ↑ above",
+          "[90]<button> Deadline soon  ↑ above",
+          "[91]<button> Newest  ↑ above",
+          "[92]<select> Location  ↑ above",
+          "[87]<button> Any work status  ↑ above",
+          "[88]<button> Int’l students OK 14  ↑ above",
+          "[24]<button> For you  ↑ above",
+          "[25]<button> Internships  ↑ above",
+          "[26]<button> Research & RA  ↑ above",
+          "[27]<button> Scholarships  ↑ above",
+          "[28]<button> Hackathons  ↑ above",
+          "[29]<button> Startups  ↑ above",
+          "[30]<button> Study abroad  ↑ above",
+          "[31]<button> Saved  ↑ above",
+          "[146]<button> 💼 2027 Summer Intern, BS/MS, Software Engineering, Commercialization Waymo · Mountain Vie  ↓ below",
+          "[46]<button> Save listing  ↓ below",
+          "[147]<button> 💼 SW Engineer Intern, AI Engineering Roku · San Jose, California Posted 1d ago Data & AI  ↓ below",
+          "[48]<button> Save listing  ↓ below",
+          "[148]<button> 💼 2027 Intern - Software Engineer Adobe · San Jose, United States of America (+6 more) Po  ↓ below",
+          "[50]<button> Save listing  ↓ below",
+          "[149]<button> 💼 Software Engineer (Machine Learning) Intern (Summer 2027) Affirm · San Francisco, Calif  ↓ below",
+          "[52]<button> Save listing  ↓ below",
+          "[150]<button> 💼 Finance Intern - Undergrad Summer 2027 ServiceNow · Santa Clara, CALIFORNIA, United Sta  ↓ below",
+          "[54]<button> Save listing  ↓ below",
+          "[151]<button> 💼 Rebele Editorial AI Development Intern Hearst · San Francisco, CA, United States Posted  ↓ below",
+          "[56]<button> Save listing  ↓ below",
+          "[152]<button> 💼 2027 Intern - AI & Architecture Adobe · San Jose Posted 2d ago Data & AI  ↓ below",
+          "[58]<button> Save listing  ↓ below",
+          "[153]<button> 💼 Data Science Intern (2027 Start) Databricks · Mountain View, California · San Francisco  ↓ below"
+        ],
+        "text": "Opportunities | Health | 0 | Research & Science | 19 | Other | 9 | 💼 | Legal Intern | Sierra Club | · Oakland, CA · Washington, DC | Rolling (×3 on screen) | Policy & Law | Fits your major (History) | 💼 | Forward Deployed Infrastructure Engineer, Internship - US Government | Palantir | · Palo Alto, CA | Rolling | Software (×3 on screen) | U.S. citizens only | Fits your major (History) | 💼 | IT Engineer Intern (Early Careers Summer 2027) | Affirm | · San Francisco, California, United States | New today | Software | Matches your interest in careers | 💼 | [Summer 2027] Software Engineer Intern | Roblox | · San Mateo, CA, United States | New today | Just posted | 💼 | Sales Development Representative, Internship | Verkada | · San Mateo, CA United States | Posted 1d ago | Business & Marketing | No visa sponsorship | 💼 | Product Designer, Internship - US Government | Product & Design | U.S. citizens only | 💼 | Software Engineer Intern (Summer 2027) | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 375,
+          "max": 3041
+        },
+        "fingerprint": "58ca98d1b83d92fdbf25422fb83ef92f3c9de0c3",
+        "simReadSec": 30.7
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 33,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 35,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 37,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 39,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 42,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 44,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 617
+      },
+      "signals": [
+        {
+          "type": "backtrack",
+          "weight": 0.5,
+          "detail": "went back to /explore/opportunities"
+        }
+      ],
+      "frustrationAfter": 1.5,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Back on the Bay Area list, filter kept",
+        "feeling": "neutral",
+        "note": "Good, it kept Bay Area. Mostly software stuff, not for a History guy. That Verkada sales internship in San Mateo — a company like that pays interns, I'd think. Let me look."
+      }
+    },
+    {
+      "index": 15,
+      "at": "2026-11-04T19:17:55.239Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Back on the Bay Area list, filter kept",
+        "feeling": "neutral",
+        "thought": "Good, it kept Bay Area. Mostly software stuff, not for a History guy. That Verkada sales internship in San Mateo — a company like that pays interns, I'd think. Let me look."
+      },
+      "about": 14,
+      "feeling": "neutral",
+      "thought": "Good, it kept Bay Area. Mostly software stuff, not for a History guy. That Verkada sales internship in San Mateo — a company like that pays interns, I'd think. Let me look.",
+      "urlAfter": "http://localhost:37595/explore/opportunities?sub=internship&region=Bay+Area",
+      "route": "/explore/opportunities"
+    },
+    {
+      "index": 16,
+      "at": "2026-11-04T19:17:55.406Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 143,
+        "expect": "Verkada internship details, maybe pay",
+        "confidence": "0.5"
+      },
+      "urlBefore": "http://localhost:37595/explore/opportunities?sub=internship&region=Bay+Area",
+      "target": {
+        "id": 143,
+        "tag": "button",
+        "role": "button",
+        "name": "💼 Sales Development Representative, Internship Verkada · San Mateo, CA United States Post",
+        "box": {
+          "x": 16,
+          "y": 588,
+          "w": 306,
+          "h": 87
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "Verkada internship details, maybe pay",
+        "confidence": 0.5
+      },
+      "latencyMs": 860,
+      "tapPoint": {
+        "x": 169,
+        "y": 631.4,
+        "centre": true
+      },
+      "actionNumber": 8,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37595/opportunities/op_ext_job_greenhouse_verkada_4866879007",
+      "route": "/opportunities/:id",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/016-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/016-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 12,
+        "newElementIds": [
+          170,
+          181,
+          172,
+          173,
+          174,
+          175,
+          176,
+          182,
+          178,
+          183
+        ],
+        "elements": [
+          "[23]<button> Back",
+          "[170]<button> More",
+          "[172]<button> Start one",
+          "[173]<button> Start a prep crew e.g. Interview prep · Thu 7pm — people who saved this can join",
+          "[174]<button> Details",
+          "[175]<button> People 0",
+          "[176]<button> Q&A 0",
+          "[182]<a> Official source Verkada careers Last verified Wed, Nov 4 View posting",
+          "[178]<button> Interested",
+          "[183]<button> Apply on Verkada",
+          "[20]<button> Switch to the classic design",
+          "[181]<button> Verkada  ↑ above"
+        ],
+        "text": "Prep crews | Start a prep crew | e.g. Interview prep · Thu 7pm — people who saved this can join | Details | People 0 | Q&A 0 | Location | San Mateo, CA United States | 🧭 | Field | Business & Marketing | 🛂 | International students | No visa sponsorship | Deadline | Not posted — companies usually close once roles fill. Posted 1d ago. | 👤 | Who it’s for | See the posting for class year, major and work authorization | Official source | Verkada careers | Last verified Wed, Nov 4 | View posting | # | internship | # | Verkada | Apply on Verkada | Design: | Classic | New",
+        "scroll": {
+          "top": 375,
+          "max": 381
+        },
+        "fingerprint": "bd12d1a6c90960830fb95ba0080937c9251a7cd3",
+        "simReadSec": 15.5
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 170,
+            "name": "More",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 172,
+            "name": "Start one",
+            "w": 70,
+            "h": 18
+          },
+          {
+            "id": 174,
+            "name": "Details",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 175,
+            "name": "People 0",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 176,
+            "name": "Q&A 0",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 617
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 1.5,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "Same layout: San Mateo, Business & Marketing, posted 1d ago, verified today, 'Apply on Verkada' button — again no pay listed",
+        "feeling": "neutral",
+        "note": "Same deal, no pay listed. But it's a real company, posted yesterday, checked today, and there's a button that says exactly where I apply. A sales internship at a tech company is paid, I'm pretty sure. I'll save this one and apply on their site."
+      }
+    },
+    {
+      "index": 17,
+      "at": "2026-11-04T19:18:04.156Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "Same layout: San Mateo, Business & Marketing, posted 1d ago, verified today, 'Apply on Verkada' button — again no pay listed",
+        "feeling": "neutral",
+        "thought": "Same deal, no pay listed. But it's a real company, posted yesterday, checked today, and there's a button that says exactly where I apply. A sales internship at a tech company is paid, I'm pretty sure. I'll save this one and apply on their site."
+      },
+      "about": 16,
+      "feeling": "neutral",
+      "thought": "Same deal, no pay listed. But it's a real company, posted yesterday, checked today, and there's a button that says exactly where I apply. A sales internship at a tech company is paid, I'm pretty sure. I'll save this one and apply on their site.",
+      "urlAfter": "http://localhost:37595/opportunities/op_ext_job_greenhouse_verkada_4866879007",
+      "route": "/opportunities/:id"
+    },
+    {
+      "index": 18,
+      "at": "2026-11-04T19:18:04.311Z",
+      "kind": "finish",
+      "command": "finish",
+      "args": {
+        "outcome": "success",
+        "reason": "Found a Verkada sales internship in San Mateo, posted yesterday and verified today, and I know to hit 'Apply on Verkada'. Wish it said whether it pays.",
+        "dropoff": "medium",
+        "dropoff-why": "Location filter and 'Official / Apply on X' made it feel legit and fast, but no pay or job description on any listing means I'd still go to Handshake to actually decide; the prep-crew/social stuff isn't for me.",
+        "dropoff-basis": "8,12,16"
+      },
+      "urlBefore": "http://localhost:37595/opportunities/op_ext_job_greenhouse_verkada_4866879007",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37595/opportunities/op_ext_job_greenhouse_verkada_4866879007",
+      "route": "/opportunities/:id",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/018-finish.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/018-finish-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 12,
+        "newElementIds": [],
+        "elements": [
+          "[23]<button> Back",
+          "[170]<button> More",
+          "[172]<button> Start one",
+          "[173]<button> Start a prep crew e.g. Interview prep · Thu 7pm — people who saved this can join",
+          "[174]<button> Details",
+          "[175]<button> People 0",
+          "[176]<button> Q&A 0",
+          "[182]<a> Official source Verkada careers Last verified Wed, Nov 4 View posting",
+          "[178]<button> Interested",
+          "[183]<button> Apply on Verkada",
+          "[20]<button> Switch to the classic design",
+          "[181]<button> Verkada  ↑ above"
+        ],
+        "text": "Prep crews | Start a prep crew | e.g. Interview prep · Thu 7pm — people who saved this can join | Details | People 0 | Q&A 0 | Location | San Mateo, CA United States | 🧭 | Field | Business & Marketing | 🛂 | International students | No visa sponsorship | Deadline | Not posted — companies usually close once roles fill. Posted 1d ago. | 👤 | Who it’s for | See the posting for class year, major and work authorization | Official source | Verkada careers | Last verified Wed, Nov 4 | View posting | # | internship | # | Verkada | Apply on Verkada | Design: | Classic | New",
+        "scroll": {
+          "top": 375,
+          "max": 381
+        },
+        "fingerprint": "bd12d1a6c90960830fb95ba0080937c9251a7cd3",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 170,
+            "name": "More",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 172,
+            "name": "Start one",
+            "w": 70,
+            "h": 18
+          },
+          {
+            "id": 174,
+            "name": "Details",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 175,
+            "name": "People 0",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 176,
+            "name": "Q&A 0",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 617
+      }
+    }
+  ],
+  "frictionEvents": [
+    {
+      "id": "f1",
+      "step": 2,
+      "noteStep": 4,
+      "type": "copy",
+      "severity": 2,
+      "feeling": "neutral",
+      "quote": "Red 'D-1', 'D-8', 'D-82' tags on every job. Is that a deadline? A grade level? Doesn't say.",
+      "url": "/explore/opportunities",
+      "route": "/explore/opportunities",
+      "element": {
+        "id": 32,
+        "role": "button",
+        "name": "💼 Oil and Gas Bond Reviews and Maintenance Bureau of Land Management · Bakersfield, Calif"
+      },
+      "key": null,
+      "wish": "Write 'Due in 1 day' instead of D-1",
+      "evidence": [
+        "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/002-observe.jpg",
+        "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/002-observe-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f2",
+      "step": 5,
+      "noteStep": 6,
+      "type": "ux_confusion",
+      "severity": 1,
+      "feeling": "neutral",
+      "quote": "567 internships, fine. That's a lot of little buttons though. I see 'Any location' — that's what I want, near Berkeley.",
+      "url": "/explore/opportunities?sub=internship",
+      "route": "/explore/opportunities",
+      "element": {
+        "id": 89,
+        "role": "button",
+        "name": "For you"
+      },
+      "key": null,
+      "wish": "Fewer chips; why are there two 'For you' buttons?",
+      "evidence": [
+        "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/005-click.jpg",
+        "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/005-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f3",
+      "step": 10,
+      "noteStep": 11,
+      "type": "ux_confusion",
+      "severity": 2,
+      "feeling": "neutral",
+      "quote": "'Official' and 'Apply on Sierra Club' — OK, that looks legit. But I don't need a 'prep crew', I need to know if it pays. Why is that stuff above the actual job info?",
+      "url": "/opportunities/op_ext_job_lever_sierraclub_1d928d1f-09d1-4a8e-85d3-7fe711636186",
+      "route": "/opportunities/:id",
+      "element": {
+        "id": 173,
+        "role": "button",
+        "name": "Start a prep crew e.g. Interview prep · Thu 7pm — people who saved this can join"
+      },
+      "key": null,
+      "wish": "Put pay, dates and job description at the top; social extras lower",
+      "evidence": [
+        "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/010-click.jpg",
+        "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/010-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f4",
+      "step": 12,
+      "noteStep": 13,
+      "type": "content_gap",
+      "severity": 2,
+      "feeling": "frustrated",
+      "quote": "'Last verified Nov 4' and a link to Sierra Club careers — fine, I believe it's real. But nothing says if it's paid or what I'd actually do. I'd have to leave the app to find out. Kind of the whole point.",
+      "url": "/opportunities/op_ext_job_lever_sierraclub_1d928d1f-09d1-4a8e-85d3-7fe711636186",
+      "route": "/opportunities/:id",
+      "element": {
+        "id": 177,
+        "role": "link",
+        "name": "Official source Sierra Club careers Last verified Wed, Nov 4 View posting"
+      },
+      "key": null,
+      "wish": "Show pay (paid/unpaid, hourly rate) and a short description of the job",
+      "evidence": [
+        "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/012-scroll.jpg",
+        "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/012-scroll-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    }
+  ],
+  "autoChecks": [
+    {
+      "step": 0,
+      "route": "/",
+      "smallTapTargets": 5,
+      "smallTapTargetExamples": [
+        {
+          "id": 7,
+          "name": "See all",
+          "w": 62,
+          "h": 21
+        },
+        {
+          "id": 10,
+          "name": "Save",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 13,
+          "name": "Save",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 19,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/000-start.jpg"
+    },
+    {
+      "step": 1,
+      "route": "/explore/opportunities",
+      "smallTapTargets": 3,
+      "smallTapTargetExamples": [
+        {
+          "id": 7,
+          "name": "See all",
+          "w": 62,
+          "h": 21
+        },
+        {
+          "id": 19,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/001-click.jpg"
+    },
+    {
+      "step": 2,
+      "route": "/explore/opportunities",
+      "smallTapTargets": 11,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 24,
+          "name": "For you",
+          "w": 76,
+          "h": 36
+        },
+        {
+          "id": 25,
+          "name": "Internships",
+          "w": 99,
+          "h": 36
+        },
+        {
+          "id": 26,
+          "name": "Research & RA",
+          "w": 121,
+          "h": 36
+        },
+        {
+          "id": 27,
+          "name": "Scholarships",
+          "w": 110,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/002-observe.jpg"
+    },
+    {
+      "step": 5,
+      "route": "/explore/opportunities",
+      "smallTapTargets": 30,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 24,
+          "name": "For you",
+          "w": 76,
+          "h": 36
+        },
+        {
+          "id": 25,
+          "name": "Internships",
+          "w": 99,
+          "h": 36
+        },
+        {
+          "id": 26,
+          "name": "Research & RA",
+          "w": 121,
+          "h": 36
+        },
+        {
+          "id": 27,
+          "name": "Scholarships",
+          "w": 110,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/005-click.jpg"
+    },
+    {
+      "step": 7,
+      "route": "/explore/opportunities",
+      "smallTapTargets": 30,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 24,
+          "name": "For you",
+          "w": 76,
+          "h": 36
+        },
+        {
+          "id": 25,
+          "name": "Internships",
+          "w": 99,
+          "h": 36
+        },
+        {
+          "id": 26,
+          "name": "Research & RA",
+          "w": 121,
+          "h": 36
+        },
+        {
+          "id": 27,
+          "name": "Scholarships",
+          "w": 110,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/007-click.jpg"
+    },
+    {
+      "step": 8,
+      "route": "/explore/opportunities",
+      "smallTapTargets": 30,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 24,
+          "name": "For you",
+          "w": 76,
+          "h": 36
+        },
+        {
+          "id": 25,
+          "name": "Internships",
+          "w": 99,
+          "h": 36
+        },
+        {
+          "id": 26,
+          "name": "Research & RA",
+          "w": 121,
+          "h": 36
+        },
+        {
+          "id": 27,
+          "name": "Scholarships",
+          "w": 110,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/008-select.jpg"
+    },
+    {
+      "step": 10,
+      "route": "/opportunities/:id",
+      "smallTapTargets": 8,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 170,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 171,
+          "name": "Sierra Club",
+          "w": 68,
+          "h": 20
+        },
+        {
+          "id": 172,
+          "name": "Start one",
+          "w": 70,
+          "h": 18
+        },
+        {
+          "id": 174,
+          "name": "Details",
+          "w": 114,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/010-click.jpg"
+    },
+    {
+      "step": 12,
+      "route": "/opportunities/:id",
+      "smallTapTargets": 7,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 170,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 172,
+          "name": "Start one",
+          "w": 70,
+          "h": 18
+        },
+        {
+          "id": 174,
+          "name": "Details",
+          "w": 114,
+          "h": 36
+        },
+        {
+          "id": 175,
+          "name": "People 0",
+          "w": 114,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/012-scroll.jpg"
+    },
+    {
+      "step": 14,
+      "route": "/explore/opportunities",
+      "smallTapTargets": 9,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 33,
+          "name": "Save listing",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 35,
+          "name": "Save listing",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 37,
+          "name": "Save listing",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 39,
+          "name": "Save listing",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/014-back.jpg"
+    },
+    {
+      "step": 16,
+      "route": "/opportunities/:id",
+      "smallTapTargets": 7,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 170,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 172,
+          "name": "Start one",
+          "w": 70,
+          "h": 18
+        },
+        {
+          "id": 174,
+          "name": "Details",
+          "w": 114,
+          "h": 36
+        },
+        {
+          "id": 175,
+          "name": "People 0",
+          "w": 114,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/016-click.jpg"
+    },
+    {
+      "step": 18,
+      "route": "/opportunities/:id",
+      "smallTapTargets": 7,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 170,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 172,
+          "name": "Start one",
+          "w": 70,
+          "h": 18
+        },
+        {
+          "id": 174,
+          "name": "Details",
+          "w": 114,
+          "h": 36
+        },
+        {
+          "id": 175,
+          "name": "People 0",
+          "w": 114,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/018-finish.jpg"
+    }
+  ],
+  "outcome": "success",
+  "reportedOutcome": "success",
+  "outcomeReason": "Found a Verkada sales internship in San Mateo, posted yesterday and verified today, and I know to hit 'Apply on Verkada'. Wish it said whether it pays.",
+  "endedBy": "persona",
+  "goalAchieved": true,
+  "goalFirstMetAtStep": 10,
+  "stepsToGoal": 5,
+  "goalEvidence": {
+    "step": 10,
+    "url": "/opportunities/op_ext_job_lever_sierraclub_1d928d1f-09d1-4a8e-85d3-7fe711636186",
+    "matched": [
+      {
+        "urlMatches": "^/opportunities/[^/?]+"
+      },
+      {
+        "textMatches": "\\bintern(ship)?s?\\b"
+      }
+    ],
+    "screenshot": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/010-click.jpg"
+  },
+  "falseSuccess": false,
+  "unnoticedSuccess": false,
+  "successCheck": {
+    "evaluatedFrom": "first persona action (never the start screen)",
+    "recordChecks": "none"
+  },
+  "patienceExhaustedAtStep": null,
+  "actionsAfterPatienceExhausted": 0,
+  "overrodePatience": false,
+  "abandonPoint": null,
+  "dropoffRisk": {
+    "kind": "hypothesis",
+    "level": "medium",
+    "rationale": "Location filter and 'Official / Apply on X' made it feel legit and fast, but no pay or job description on any listing means I'd still go to Handshake to actually decide; the prep-crew/social stuff isn't for me.",
+    "basis": [
+      8,
+      12,
+      16
+    ],
+    "source": "persona-agent"
+  }
+}

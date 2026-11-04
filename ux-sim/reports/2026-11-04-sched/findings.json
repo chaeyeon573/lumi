@@ -1,0 +1,1147 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-04T19:19:37.579Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "runs": [
+    {
+      "runId": "sched-20261104-1915-aisha-lunch-today",
+      "persona": "aisha-firstgen-anxious",
+      "scenario": "lunch-today",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 4,
+      "actions": 6,
+      "frictionCount": 4,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "b1c9c98b2b5a",
+      "harness": "6f174347960d",
+      "catalog": "builtin",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "low",
+        "rationale": "It took me straight to a real lunch today with no application, and the chat made it feel safe; I'd come back if Hana actually shows up and replies",
+        "basis": [
+          1,
+          3,
+          8,
+          10
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261104-1915-aisha-lunch-today/run.json",
+      "report": "ux-sim/runs/sched-20261104-1915-aisha-lunch-today/report.md"
+    },
+    {
+      "runId": "sched-20261104-1915-diego-internship-near-berkeley",
+      "persona": "diego-transfer-commuter",
+      "scenario": "internship-near-berkeley",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 8,
+      "actions": 10,
+      "frictionCount": 3,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "b1c9c98b2b5a",
+      "harness": "6f174347960d",
+      "catalog": "builtin",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "The Bay Area filter and the Apply button saved me time, but nothing was civil engineering, pay was never shown and 'fits your major' was wrong, so I'm not sure it's for someone like me.",
+        "basis": [
+          4,
+          10,
+          14,
+          18
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/run.json",
+      "report": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/report.md"
+    },
+    {
+      "runId": "sched-20261104-1915-diego-ride-sfo-thanksgiving",
+      "persona": "diego-transfer-commuter",
+      "scenario": "ride-sfo-thanksgiving",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 5,
+      "actions": 6,
+      "frictionCount": 4,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "b1c9c98b2b5a",
+      "harness": "6f174347960d",
+      "catalog": "builtin",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "low",
+        "rationale": "It actually solved a real commuter problem fast; the Thanksgiving banner shows it gets my situation. Only the buried Rides entry would slow me next time.",
+        "basis": [
+          4,
+          6,
+          11,
+          13
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/run.json",
+      "report": "ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/report.md"
+    },
+    {
+      "runId": "sched-20261104-1915-marcus-internship-near-berkeley",
+      "persona": "marcus-senior-lowtech",
+      "scenario": "internship-near-berkeley",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 5,
+      "actions": 8,
+      "frictionCount": 4,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "b1c9c98b2b5a",
+      "harness": "6f174347960d",
+      "catalog": "builtin",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Location filter and 'Official / Apply on X' made it feel legit and fast, but no pay or job description on any listing means I'd still go to Handshake to actually decide; the prep-crew/social stuff isn't for me.",
+        "basis": [
+          8,
+          12,
+          16
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/run.json",
+      "report": "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/report.md"
+    }
+  ],
+  "totals": {
+    "runs": 4,
+    "findings": 15,
+    "frictionEvents": 15,
+    "environmentLimitedEvents": 0,
+    "maxSeverity": 2,
+    "bySeverity": {
+      "1": 6,
+      "2": 9,
+      "3": 0,
+      "4": 0
+    },
+    "multiPersonaFindings": 0,
+    "singletonFindings": 15
+  },
+  "findings": [
+    {
+      "fingerprint": "afdbc3f2e8da",
+      "title": "Confusing UI on /activities/:id — “Going”",
+      "screen": "/activities/:id",
+      "frictionType": "ux_confusion",
+      "keyElement": "going",
+      "keyElementLabel": "Going",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261104-1915-aisha-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261104-1915-aisha-lunch-today",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "lunch-today",
+          "step": 3,
+          "severity": 2,
+          "quote": "Wait, does 'Going' mean I'm already marked as going, or is it the button to say I'm going? And what's the difference with 'Interested'? I don't want to accidentally tell Hana I'm coming and then flake... but that IS what I want, I think. Does it message her?",
+          "evidence": [
+            "ux-sim/runs/sched-20261104-1915-aisha-lunch-today/shots/003-click.jpg",
+            "ux-sim/runs/sched-20261104-1915-aisha-lunch-today/shots/003-click-som.jpg"
+          ],
+          "url": "/activities/a_7n802xzzb2",
+          "wish": "a button that says 'Join lunch' and a line telling me what happens (Hana is notified / group chat opens)"
+        }
+      ],
+      "wishes": [
+        "a button that says 'Join lunch' and a line telling me what happens (Hana is notified / group chat opens)"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Going” on /activities/:id does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “a button that says 'Join lunch' and a line telling me what happens (Hana is notified / group chat opens)”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "e767a4c35cfe",
+      "title": "Confusing UI on /explore/opportunities — “💼 2027 Electrical Engineer Intern Andur”",
+      "screen": "/explore/opportunities",
+      "frictionType": "ux_confusion",
+      "keyElement": "electrical engineer intern anduril atlanta",
+      "keyElementLabel": "💼 2027 Electrical Engineer Intern Andur",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261104-1915-diego-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261104-1915-diego-internship-near-berkeley",
+          "persona": "diego-transfer-commuter",
+          "scenario": "internship-near-berkeley",
+          "step": 2,
+          "severity": 2,
+          "quote": "Says 'Fits your major (Civil Engineering)' on Electrical Engineer and Robotics interns. That's not civil. Makes me trust the 'For you' less.",
+          "evidence": [
+            "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/002-observe.jpg",
+            "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/002-observe-som.jpg"
+          ],
+          "url": "/explore/opportunities",
+          "wish": "Only say it fits my major when it actually matches civil engineering"
+        }
+      ],
+      "wishes": [
+        "Only say it fits my major when it actually matches civil engineering"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “💼 2027 Electrical Engineer Intern Andur” on /explore/opportunities does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “Only say it fits my major when it actually matches civil engineering”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "268a55d5e687",
+      "title": "Missing / empty content on /explore/opportunities",
+      "screen": "/explore/opportunities",
+      "frictionType": "content_gap",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261104-1915-diego-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261104-1915-diego-internship-near-berkeley",
+          "persona": "diego-transfer-commuter",
+          "scenario": "internship-near-berkeley",
+          "step": 13,
+          "severity": 2,
+          "quote": "It's all software, hardware, research. Nothing civil — no construction, no transportation, no city/public works. There isn't even a civil or engineering field chip. Emeryville is right by me though.",
+          "evidence": [
+            "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/013-scroll.jpg",
+            "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/013-scroll-som.jpg"
+          ],
+          "url": "/explore/opportunities?sub=internship&region=Bay+Area",
+          "wish": "A civil/structural/transportation category, or local firms and public agencies"
+        }
+      ],
+      "wishes": [
+        "A civil/structural/transportation category, or local firms and public agencies"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /explore/opportunities is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “A civil/structural/transportation category, or local firms and public agencies”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "6d922472ea26",
+      "title": "Missing / empty content on /opportunities/:id — “Details”",
+      "screen": "/opportunities/:id",
+      "frictionType": "content_gap",
+      "keyElement": "details",
+      "keyElementLabel": "Details",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261104-1915-diego-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261104-1915-diego-internship-near-berkeley",
+          "persona": "diego-transfer-commuter",
+          "scenario": "internship-near-berkeley",
+          "step": 17,
+          "severity": 2,
+          "quote": "Wait, 'Software Graduate Intern' — that's probably for grad students, I'm an undergrad. And still no pay anywhere. There was a plain 'Software Intern' from the same lab right below it, I'll check that one.",
+          "evidence": [
+            "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/017-scroll.jpg",
+            "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/017-scroll-som.jpg"
+          ],
+          "url": "/opportunities/op_ext_job_greenhouse_ginkgobioworks_5033171007",
+          "wish": "Show pay/paid vs unpaid and who's eligible (undergrad/grad) on the card"
+        }
+      ],
+      "wishes": [
+        "Show pay/paid vs unpaid and who's eligible (undergrad/grad) on the card"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /opportunities/:id is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “Show pay/paid vs unpaid and who's eligible (undergrad/grad) on the card”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "cc0f68d6c010",
+      "title": "Hard to find on / — “Meetups”",
+      "screen": "/",
+      "frictionType": "discoverability",
+      "keyElement": "meetups",
+      "keyElementLabel": "Meetups",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261104-1915-diego-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261104-1915-diego-ride-sfo-thanksgiving",
+          "persona": "diego-transfer-commuter",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 0,
+          "severity": 2,
+          "quote": "OK, where's rides? Events, opportunities, clubs, meetups... nothing says ride or carpool. Meetups maybe?",
+          "evidence": [
+            "ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/shots/000-start.jpg",
+            "ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/shots/000-start-som.jpg"
+          ],
+          "url": "/",
+          "wish": "a Rides / carpool entry on home"
+        }
+      ],
+      "wishes": [
+        "a Rides / carpool entry on home"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for (“Meetups”) where they looked (/); label icon-only controls. Personas said they wanted: “a Rides / carpool entry on home”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "7d8e0b863e51",
+      "title": "Hard to find on /meet/meetups — “Rides”",
+      "screen": "/meet/meetups",
+      "frictionType": "discoverability",
+      "keyElement": "rides",
+      "keyElementLabel": "Rides",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261104-1915-diego-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261104-1915-diego-ride-sfo-thanksgiving",
+          "persona": "diego-transfer-commuter",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 4,
+          "severity": 2,
+          "quote": "There it is — Rides. Buried at the bottom of Social > Meetups though.",
+          "evidence": [
+            "ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/shots/004-scroll.jpg",
+            "ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/shots/004-scroll-som.jpg"
+          ],
+          "url": "/meet/meetups",
+          "wish": "Rides should be on home, not the last row of Social"
+        }
+      ],
+      "wishes": [
+        "Rides should be on home, not the last row of Social"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for (“Rides”) where they looked (/meet/meetups); label icon-only controls. Personas said they wanted: “Rides should be on home, not the last row of Social”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "8b9f87525e26",
+      "title": "Unclear wording on /explore/opportunities — “💼 Oil and Gas Bond Reviews and Maintena”",
+      "screen": "/explore/opportunities",
+      "frictionType": "copy",
+      "keyElement": "oil and gas bond reviews",
+      "keyElementLabel": "💼 Oil and Gas Bond Reviews and Maintena",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261104-1915-marcus-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261104-1915-marcus-internship-near-berkeley",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "internship-near-berkeley",
+          "step": 2,
+          "severity": 2,
+          "quote": "Red 'D-1', 'D-8', 'D-82' tags on every job. Is that a deadline? A grade level? Doesn't say.",
+          "evidence": [
+            "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/002-observe.jpg",
+            "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/002-observe-som.jpg"
+          ],
+          "url": "/explore/opportunities",
+          "wish": "Write 'Due in 1 day' instead of D-1"
+        }
+      ],
+      "wishes": [
+        "Write 'Due in 1 day' instead of D-1"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite “💼 Oil and Gas Bond Reviews and Maintena” on /explore/opportunities in plain language (and check the Korean UI). Personas said they wanted: “Write 'Due in 1 day' instead of D-1”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "03b9cc604cb5",
+      "title": "Confusing UI on /opportunities/:id — “Start a prep crew e.g. Interview prep · ”",
+      "screen": "/opportunities/:id",
+      "frictionType": "ux_confusion",
+      "keyElement": "start a prep crew e",
+      "keyElementLabel": "Start a prep crew e.g. Interview prep · ",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261104-1915-marcus-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261104-1915-marcus-internship-near-berkeley",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "internship-near-berkeley",
+          "step": 10,
+          "severity": 2,
+          "quote": "'Official' and 'Apply on Sierra Club' — OK, that looks legit. But I don't need a 'prep crew', I need to know if it pays. Why is that stuff above the actual job info?",
+          "evidence": [
+            "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/010-click.jpg",
+            "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/010-click-som.jpg"
+          ],
+          "url": "/opportunities/op_ext_job_lever_sierraclub_1d928d1f-09d1-4a8e-85d3-7fe711636186",
+          "wish": "Put pay, dates and job description at the top; social extras lower"
+        }
+      ],
+      "wishes": [
+        "Put pay, dates and job description at the top; social extras lower"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Start a prep crew e.g. Interview prep · ” on /opportunities/:id does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “Put pay, dates and job description at the top; social extras lower”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "98145c4f47a4",
+      "title": "Missing / empty content on /opportunities/:id — “Official source Sierra Club careers Last”",
+      "screen": "/opportunities/:id",
+      "frictionType": "content_gap",
+      "keyElement": "official source sierra club careers",
+      "keyElementLabel": "Official source Sierra Club careers Last",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261104-1915-marcus-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261104-1915-marcus-internship-near-berkeley",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "internship-near-berkeley",
+          "step": 12,
+          "severity": 2,
+          "quote": "'Last verified Nov 4' and a link to Sierra Club careers — fine, I believe it's real. But nothing says if it's paid or what I'd actually do. I'd have to leave the app to find out. Kind of the whole point.",
+          "evidence": [
+            "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/012-scroll.jpg",
+            "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/012-scroll-som.jpg"
+          ],
+          "url": "/opportunities/op_ext_job_lever_sierraclub_1d928d1f-09d1-4a8e-85d3-7fe711636186",
+          "wish": "Show pay (paid/unpaid, hourly rate) and a short description of the job"
+        }
+      ],
+      "wishes": [
+        "Show pay (paid/unpaid, hourly rate) and a short description of the job"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /opportunities/:id is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “Show pay (paid/unpaid, hourly rate) and a short description of the job”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "e2bf4efd0409",
+      "title": "Confusing UI on /activities/:id",
+      "screen": "/activities/:id",
+      "frictionType": "ux_confusion",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261104-1915-aisha-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261104-1915-aisha-lunch-today",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "lunch-today",
+          "step": 3,
+          "severity": 1,
+          "quote": "Okay, this is reassuring — Hana seems real, it's free, 'happy to meet new people'. But wait, the list said '1 going' and here it says '0 joined'... which is it? Am I going to be alone with a stranger?",
+          "evidence": [
+            "ux-sim/runs/sched-20261104-1915-aisha-lunch-today/shots/003-click.jpg",
+            "ux-sim/runs/sched-20261104-1915-aisha-lunch-today/shots/003-click-som.jpg"
+          ],
+          "url": "/activities/a_7n802xzzb2",
+          "wish": "the going count matches between list and detail, and say whether the host counts"
+        }
+      ],
+      "wishes": [
+        "the going count matches between list and detail, and say whether the host counts"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what the main control on /activities/:id does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “the going count matches between list and detail, and say whether the host counts”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "7e9ffeaa7d87",
+      "title": "Confusing UI on /activities/:id — “You’re going!”",
+      "screen": "/activities/:id",
+      "frictionType": "ux_confusion",
+      "keyElement": "youre going",
+      "keyElementLabel": "You’re going!",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261104-1915-aisha-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261104-1915-aisha-lunch-today",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "lunch-today",
+          "step": 8,
+          "severity": 1,
+          "quote": "Oh — it just did it, no 'are you sure?'. That's kind of okay since it's what I wanted, and seeing my name next to Hana's is reassuring. But I didn't know tapping 'Going' would publicly list me. Does Hana get told? I'm guessing the Chat is how I say hi.",
+          "evidence": [
+            "ux-sim/runs/sched-20261104-1915-aisha-lunch-today/shots/008-click.jpg",
+            "ux-sim/runs/sched-20261104-1915-aisha-lunch-today/shots/008-click-som.jpg"
+          ],
+          "url": "/activities/a_7n802xzzb2",
+          "wish": "one line before or after joining saying who can see I joined and whether Hana is notified"
+        }
+      ],
+      "wishes": [
+        "one line before or after joining saying who can see I joined and whether Hana is notified"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “You’re going!” on /activities/:id does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “one line before or after joining saying who can see I joined and whether Hana is notified”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "44271af15761",
+      "title": "Bug on /chats/:id — “Switch to the classic design”",
+      "screen": "/chats/:id",
+      "frictionType": "bug",
+      "keyElement": "switch to the classic design",
+      "keyElementLabel": "Switch to the classic design",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261104-1915-aisha-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261104-1915-aisha-lunch-today",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "lunch-today",
+          "step": 12,
+          "severity": 1,
+          "quote": "Sent. No 'delivered' or 'seen' marker, so I'll probably keep checking until Hana answers... but at least she knows I'm coming. Also that little Design pill is sitting on top of the lunch title in the chat, kind of covering it.",
+          "evidence": [
+            "ux-sim/runs/sched-20261104-1915-aisha-lunch-today/shots/012-type.jpg",
+            "ux-sim/runs/sched-20261104-1915-aisha-lunch-today/shots/012-type-som.jpg"
+          ],
+          "url": "/chats/cr_366yp3zzb3",
+          "wish": "the floating Design pill doesn't cover the header/event card"
+        }
+      ],
+      "wishes": [
+        "the floating Design pill doesn't cover the header/event card"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Reproduce from the evidence steps on /chats/:id (around “Switch to the classic design”) and fix it; add a regression check for that screen. Personas said they wanted: “the floating Design pill doesn't cover the header/event card”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "39327c8d79c3",
+      "title": "Bug on /rides — “My rides”",
+      "screen": "/rides",
+      "frictionType": "bug",
+      "keyElement": "my rides",
+      "keyElementLabel": "My rides",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261104-1915-diego-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261104-1915-diego-ride-sfo-thanksgiving",
+          "persona": "diego-transfer-commuter",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 6,
+          "severity": 1,
+          "quote": "The Design Classic/New pill is sitting on top of the My rides tab, can't even read it.",
+          "evidence": [
+            "ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/shots/006-click.jpg",
+            "ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/shots/006-click-som.jpg"
+          ],
+          "url": "/rides",
+          "wish": "don't cover the tab"
+        }
+      ],
+      "wishes": [
+        "don't cover the tab"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Reproduce from the evidence steps on /rides (around “My rides”) and fix it; add a regression check for that screen. Personas said they wanted: “don't cover the tab”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "5bd02d4d3f24",
+      "title": "Unclear wording on /rides/:id — “Open ride chat”",
+      "screen": "/rides/:id",
+      "frictionType": "copy",
+      "keyElement": "open ride chat",
+      "keyElementLabel": "Open ride chat",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261104-1915-diego-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261104-1915-diego-ride-sfo-thanksgiving",
+          "persona": "diego-transfer-commuter",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 11,
+          "severity": 1,
+          "quote": "I'm in. Toast says chat is open but it isn't — minor, the button's right there.",
+          "evidence": [
+            "ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/shots/011-click.jpg",
+            "ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/shots/011-click-som.jpg"
+          ],
+          "url": "/rides/rd_d9i5vozzba",
+          "wish": "say 'ride chat is ready' not 'open'"
+        }
+      ],
+      "wishes": [
+        "say 'ride chat is ready' not 'open'"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite “Open ride chat” on /rides/:id in plain language (and check the Korean UI). Personas said they wanted: “say 'ride chat is ready' not 'open'”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "257f14871bc1",
+      "title": "Confusing UI on /explore/opportunities — “For you”",
+      "screen": "/explore/opportunities",
+      "frictionType": "ux_confusion",
+      "keyElement": "for you",
+      "keyElementLabel": "For you",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261104-1915-marcus-internship-near-berkeley"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261104-1915-marcus-internship-near-berkeley",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "internship-near-berkeley",
+          "step": 5,
+          "severity": 1,
+          "quote": "567 internships, fine. That's a lot of little buttons though. I see 'Any location' — that's what I want, near Berkeley.",
+          "evidence": [
+            "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/005-click.jpg",
+            "ux-sim/runs/sched-20261104-1915-marcus-internship-near-berkeley/shots/005-click-som.jpg"
+          ],
+          "url": "/explore/opportunities?sub=internship",
+          "wish": "Fewer chips; why are there two 'For you' buttons?"
+        }
+      ],
+      "wishes": [
+        "Fewer chips; why are there two 'For you' buttons?"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “For you” on /explore/opportunities does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “Fewer chips; why are there two 'For you' buttons?”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    }
+  ],
+  "environmentLimited": [],
+  "falseSuccesses": [],
+  "autoChecks": [
+    {
+      "route": "/explore/opportunities",
+      "device": "phone",
+      "smallTapTargetsMax": 31,
+      "examples": [
+        {
+          "id": 7,
+          "name": "See all",
+          "w": 62,
+          "h": 21
+        },
+        {
+          "id": 19,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/001-click.jpg"
+    },
+    {
+      "route": "/rides",
+      "device": "phone",
+      "smallTapTargetsMax": 12,
+      "examples": [
+        {
+          "id": 37,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 38,
+          "name": "Find a ride",
+          "w": 173,
+          "h": 36
+        },
+        {
+          "id": 39,
+          "name": "My rides",
+          "w": 173,
+          "h": 36
+        },
+        {
+          "id": 40,
+          "name": "SFO",
+          "w": 60,
+          "h": 36
+        },
+        {
+          "id": 41,
+          "name": "OAK",
+          "w": 63,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/shots/006-click.jpg"
+    },
+    {
+      "route": "/meet/meetups",
+      "device": "phone",
+      "smallTapTargetsMax": 10,
+      "examples": [
+        {
+          "id": 21,
+          "name": "Create",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 22,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 23,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 24,
+          "name": "For You",
+          "w": 85,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261104-1915-aisha-lunch-today/shots/001-click.jpg"
+    },
+    {
+      "route": "/opportunities/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 8,
+      "examples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 166,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 169,
+          "name": "Details",
+          "w": 114,
+          "h": 36
+        },
+        {
+          "id": 170,
+          "name": "People 0",
+          "w": 114,
+          "h": 36
+        },
+        {
+          "id": 171,
+          "name": "Q&A 0",
+          "w": 114,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/015-click.jpg"
+    },
+    {
+      "route": "/activities/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 6,
+      "examples": [
+        {
+          "id": 37,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 38,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261104-1915-aisha-lunch-today/shots/003-click.jpg"
+    },
+    {
+      "route": "/",
+      "device": "phone",
+      "smallTapTargetsMax": 5,
+      "examples": [
+        {
+          "id": 7,
+          "name": "See all",
+          "w": 62,
+          "h": 21
+        },
+        {
+          "id": 10,
+          "name": "Save",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 13,
+          "name": "Save",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 19,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261104-1915-aisha-lunch-today/shots/000-start.jpg"
+    },
+    {
+      "route": "/chats/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 3,
+      "examples": [
+        {
+          "id": 37,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 53,
+          "name": "Menu",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261104-1915-aisha-lunch-today/shots/010-click.jpg"
+    },
+    {
+      "route": "/rides/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 3,
+      "examples": [
+        {
+          "id": 37,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 52,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 21,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261104-1915-diego-ride-sfo-thanksgiving/shots/009-click.jpg"
+    }
+  ]
+}

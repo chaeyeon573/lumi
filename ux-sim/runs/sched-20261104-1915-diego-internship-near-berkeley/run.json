@@ -1,0 +1,4189 @@
+{
+  "schemaVersion": 1,
+  "runId": "sched-20261104-1915-diego-internship-near-berkeley",
+  "status": "finished",
+  "createdAt": "2026-11-04T19:16:35.187Z",
+  "finishedAt": "2026-11-04T19:18:36.012Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "persona": {
+    "id": "diego-transfer-commuter",
+    "name": "Diego",
+    "age": 21,
+    "year": "Junior (transfer from Laney College)",
+    "school": "UC Berkeley",
+    "major": "Civil Engineering",
+    "account": {
+      "$comment": "Profile for auth: fresh — the harness registers this account through the app's own sign-up API (lib/account.mjs). nickname defaults to name, birthYear to this year − age.",
+      "nickname": "Diego",
+      "department": "Civil Engineering",
+      "yearInSchool": 3,
+      "goals": [
+        "friends",
+        "lunch"
+      ],
+      "interests": [
+        "study",
+        "meal"
+      ],
+      "purposes": [
+        "study",
+        "friend"
+      ],
+      "lookingFor": [
+        "study_partner",
+        "friend"
+      ]
+    },
+    "purpose": "Find study partners for his classes and a cheap way to get places — he commutes from Oakland and has no car.",
+    "techFamiliarity": "medium",
+    "readingDepth": 0.5,
+    "language": {
+      "preferred": "en",
+      "englishUiComfort": "high",
+      "notes": "Bilingual English/Spanish; uses apps in English."
+    },
+    "device": {
+      "type": "phone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "locale": "en-US"
+    },
+    "patience": {
+      "maxSteps": 32,
+      "frustrationThreshold": 4,
+      "confusionTolerance": 2,
+      "timeBudgetSec": 240
+    },
+    "backstory": "I transferred this fall and I'm on campus maybe four days a week between BART and work shifts. Everyone already knows each other from freshman year. I don't have time to scroll through stuff — I open an app between classes, and if it doesn't help me in a minute or two I close it. I'd love people in my classes to study with.",
+    "quitsWhen": [
+      "It wastes my time between classes",
+      "It's all freshman stuff",
+      "I can't tell what to tap next"
+    ],
+    "voice": "Direct and practical. 'OK, where's the…', 'I don't have time for this'."
+  },
+  "scenario": {
+    "id": "internship-near-berkeley",
+    "title": "Find an internship near Berkeley",
+    "goal": "You need a paid internship (summer or part-time) somewhere near Berkeley / the Bay Area. Use the app to find one that looks real and open, and open its details so you know how to apply.",
+    "startUrl": "/",
+    "setup": {
+      "auth": "fresh",
+      "school": "berkeley"
+    },
+    "success": {
+      "description": "An internship listing's detail page is open (reached by the persona — the run starts on /).",
+      "all": [
+        {
+          "urlMatches": "^/opportunities/[^/?]+"
+        },
+        {
+          "textMatches": "\\bintern(ship)?s?\\b"
+        }
+      ]
+    }
+  },
+  "target": {
+    "mode": "local",
+    "baseUrl": "http://localhost:34709",
+    "stack": {
+      "catalog": {
+        "kind": "builtin",
+        "source": "built-in sample catalog (packages/core/src/data/catalog)",
+        "why": "no cached catalog — run `local-stack catalog fetch` once (about 5 minutes) to test with the real Berkeley schedule"
+      },
+      "events": {
+        "kind": "cached",
+        "source": "https://heetz.up.railway.app POST /api/auth/demo + POST /api/bootstrap (read-only), worker-fetched opportunities",
+        "baseUrl": "https://heetz.up.railway.app",
+        "fetchedAt": "2026-11-04T19:15:55.044Z",
+        "stamp": "033c90e9",
+        "opportunities": 1281,
+        "updatedExisting": 132,
+        "byType": {
+          "internship": 565,
+          "exchange": 317,
+          "event": 187,
+          "scholarship": 64,
+          "hackathon": 107,
+          "lab": 40,
+          "startup": 1
+        },
+        "eventsThisWeek": 120,
+        "freeFoodThisWeek": 5
+      },
+      "port": 34709,
+      "worktree": "/home/user/lumi-live",
+      "commit": "b1c9c98b2b5a75547e6822b40378003e28aaaa9e",
+      "stamp": "b1c9c98b2b5a",
+      "dirty": false,
+      "dataFile": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/stack/db.json",
+      "template": "ux-sim/stack/templates/lumi-live-b1c9c98b2b5a-ev033c90e9.json",
+      "log": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/stack/server.log",
+      "owned": true,
+      "autoreply": false
+    },
+    "liveGuard": {
+      "enabled": false
+    }
+  },
+  "auth": {
+    "mode": "fresh",
+    "userId": "u_eaq4tbzyjo",
+    "email": "diego.eleyzy56@berkeley.edu",
+    "sample": false,
+    "emailVerified": true,
+    "profile": {
+      "nickname": "Diego",
+      "birthYear": 2005,
+      "department": "Civil Engineering",
+      "yearInSchool": 3,
+      "role": "undergraduate",
+      "year": 2024,
+      "gender": "private",
+      "goals": [
+        "friends",
+        "lunch"
+      ],
+      "interests": [
+        "study",
+        "meal"
+      ],
+      "purposes": [
+        "study",
+        "friend"
+      ],
+      "lookingFor": [
+        "study_partner",
+        "friend"
+      ],
+      "likes": "",
+      "bio": "",
+      "language": "en",
+      "appLanguage": null,
+      "schoolId": "s_berkeley"
+    },
+    "createdVia": "POST /api/schools/send-code → /api/schools/verify-code → /api/auth/register"
+  },
+  "harness": {
+    "hash": "6f174347960d",
+    "commit": "29aa633114d3a6233c4828a1d8cf59485768bd2a",
+    "dirty": false
+  },
+  "environment": {
+    "summary": "Local stack: this worktree's server + built web app, fresh seeded FileStore per run, no secrets, no worker.",
+    "knownLimits": [
+      "Dining menus and RSF gym crowd levels need live campus sources (the local stack runs with CAMPUS_LIVE=0) — empty or missing data there is not a UX bug.",
+      "AI features (Ask Lumi, AI profile draft on /start, conversation starters) need an OpenAI key; none is configured locally.",
+      "Course catalog is the built-in sample list (~210 courses, e.g. MATH 1A; no cached catalog — run `local-stack catalog fetch` once (about 5 minutes) to test with the real Berkeley schedule). Live has the imported current-term Berkeley schedule (e.g. MATH 51) — course-name findings on timetable/class screens are marked environment-limited.",
+      "Campus events, free food, internships, hackathons and scholarships are a read-only snapshot of live (1281 real items, 120 events this week, taken 2026-11-04 19:15 UTC) plus the CSV calendar. Nothing new appears during the run; Q&A and reviews are empty.",
+      "No e-mail is sent: the sign-up / sign-in code is shown on screen in the hint (live sends a real e-mail).",
+      "Real-time updates (SSE) work locally; other people never reply unless the stack was started with --autoreply.",
+      "Signed in as a brand-new real (non-sample, e-mail-verified) account made for this run. Other students exist only if the scenario seeds peers (local fixtures); sample profiles are hidden from real accounts, as on live."
+    ],
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "locale": "en-US",
+    "timezone": "America/Los_Angeles",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+    "browserVersion": "153.0.8010.12"
+  },
+  "limits": {
+    "maxSteps": 32,
+    "frustrationThreshold": 4,
+    "confusionTolerance": 2,
+    "timeBudgetSec": 240,
+    "weights": {
+      "failed": 1,
+      "no_effect": 1,
+      "repeated": 0.75,
+      "backtrack": 0.5,
+      "mismatch": 0.5
+    }
+  },
+  "counters": {
+    "actions": 10,
+    "frustration": 2.75,
+    "confusionNotes": 1,
+    "simTimeSec": 122.40799999999999
+  },
+  "steps": [
+    {
+      "index": 0,
+      "at": "2026-11-04T19:16:47.898Z",
+      "kind": "start",
+      "command": "start",
+      "args": {
+        "persona": "diego-transfer-commuter",
+        "scenario": "internship-near-berkeley",
+        "auth": "fresh"
+      },
+      "latencyMs": 1864,
+      "urlBefore": null,
+      "setupNotes": [
+        "signed in as a brand-new verified account diego.eleyzy56@berkeley.edu (Diego, Civil Engineering, born 2005)"
+      ],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:34709/",
+      "route": "/",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/000-start.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/000-start-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 20,
+        "newElementIds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "elements": [
+          "[1]<button> Search",
+          "[2]<button> Messages",
+          "[3]<button> Events",
+          "[4]<button> Opportunities",
+          "[5]<button> Clubs & Groups",
+          "[6]<button> Meetups",
+          "[7]<button> See all",
+          "[8]<button> (no label)",
+          "[9]<button> Internships Robotics Research Intern Posted 23d ago Sunnyvale, CA, United States",
+          "[10]<button> Save",
+          "[11]<button> (no label)",
+          "[12]<button> Internships 2027 Electrical Engineer Intern Posted 1d ago Atlanta, Georgia, United States ",
+          "[13]<button> Save",
+          "[14]<a selected> Home",
+          "[15]<a> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design"
+        ],
+        "text": "lumi | . | UC Berkeley | What’s happening at UC Berkeley? | Discover events, opportunities, and people around you. | Events | Opportunities | Clubs & Groups | Meetups | For you | See all | Internships | Robotics Research Intern | Posted 23d ago | Sunnyvale, CA, United States | Internships | 2027 Electrical Engineer Intern | Posted 1d ago | Atlanta, Georgia, United States · Boston, Massachusetts, United States · Broomfield, Colorado, United States · Colorado Springs, Colorado, United States · Costa Mesa, California, United States · Fort Collins, Colorado, United States · Irvine, California, United States · Reston, Virginia, United States · Seattle, Washington, United States | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "1de33ca329421740370e63bb3734e889b6f3bfa4",
+        "simReadSec": 14.2
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 7,
+            "name": "See all",
+            "w": 62,
+            "h": 21
+          },
+          {
+            "id": 10,
+            "name": "Save",
+            "w": 36,
+            "h": 36
+          },
+          {
+            "id": 13,
+            "name": "Save",
+            "w": 36,
+            "h": 36
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 611
+      }
+    },
+    {
+      "index": 1,
+      "at": "2026-11-04T19:16:56.958Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 4,
+        "expect": "list of internships and jobs, hopefully filterable by location",
+        "confidence": "0.8"
+      },
+      "urlBefore": "http://localhost:34709/",
+      "target": {
+        "id": 4,
+        "tag": "button",
+        "role": "button",
+        "name": "Opportunities",
+        "box": {
+          "x": 200,
+          "y": 208,
+          "w": 174,
+          "h": 104
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "list of internships and jobs, hopefully filterable by location",
+        "confidence": 0.8
+      },
+      "latencyMs": 942,
+      "tapPoint": {
+        "x": 287,
+        "y": 260,
+        "centre": true
+      },
+      "actionNumber": 1,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:34709/explore/opportunities",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/001-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/001-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 21,
+        "newElementIds": [
+          21,
+          22
+        ],
+        "elements": [
+          "[1]<button> Search",
+          "[2]<button> Messages",
+          "[3]<button> Events",
+          "[4]<button> Opportunities",
+          "[5]<button> Clubs & Groups",
+          "[6]<button> Meetups",
+          "[21]<button> RSF Crowd meter unavailable",
+          "[22]<button> Dining Halls Menus unavailable right now",
+          "[7]<button> See all",
+          "[8]<button> (no label)",
+          "[9]<button> Internships Robotics Research Intern Posted 23d ago Sunnyvale, CA, United States",
+          "[14]<a selected> Home",
+          "[15]<a> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[11]<button> (no label)  ↓ below",
+          "[12]<button> Internships 2027 Electrical Engineer Intern Posted 1d ago Atlanta, Georgia, United States   ↓ below",
+          "[10]<button> Save  ↓ below"
+        ],
+        "text": "lumi | . | UC Berkeley | What’s happening at UC Berkeley? | Discover events, opportunities, and people around you. | Events | Opportunities | Clubs & Groups | Meetups | Campus Life | RSF | Crowd meter unavailable | Dining Halls | Menus unavailable right now | For you | See all | Robotics Research Intern | Posted 23d ago | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 218
+        },
+        "fingerprint": "5944dabb704d77d35fdcee73c2420a60cc8a2fc9",
+        "simReadSec": 1.6
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 7,
+            "name": "See all",
+            "w": 62,
+            "h": 21
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 611
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Opportunities list with tabs (For you, Internships, Research...). Mixed internships, events, study abroad. No location filter visible.",
+        "feeling": "neutral",
+        "note": "OK, this is the right place. But 'Fits your major (Civil Engineering)' on an Electrical Engineer intern? That's not my major. And it's Atlanta. Let me hit Internships."
+      }
+    },
+    {
+      "index": 2,
+      "at": "2026-11-04T19:17:03.611Z",
+      "kind": "observe",
+      "command": "observe",
+      "args": {},
+      "urlBefore": "http://localhost:34709/explore/opportunities",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:34709/explore/opportunities",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/002-observe.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/002-observe-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 76,
+        "newElementIds": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91
+        ],
+        "elements": [
+          "[23]<button> Back",
+          "[24]<button> For you",
+          "[25]<button> Internships",
+          "[26]<button> Research & RA",
+          "[27]<button> Scholarships",
+          "[32]<button> 💼 Robotics Research Intern Bosch · Sunnyvale, CA, United States Posted 23d ago Hardware F",
+          "[33]<button> Save listing",
+          "[34]<button> 💼 2027 Electrical Engineer Intern Anduril · Atlanta, Georgia, United States · Boston, Mas",
+          "[35]<button> Save listing",
+          "[36]<button> 🎪 a16z Info-Session / Panel Electrical Engineering & Computer Sciences · Jarvis Auditoriu",
+          "[37]<button> Save listing",
+          "[38]<button> 🎪 Jeff Hawkins: How the Brain Understands the World: Implications for AI and robotics Hel",
+          "[39]<button> Save listing",
+          "[40]<button> ✈️ STEM Research in Osaka (Summer) UCEAP Programs D-14 Exchange Closes in 14 days",
+          "[41]<button> Save listing",
+          "[42]<button> Save listing",
+          "[14]<a> Home",
+          "[15]<a selected> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[28]<button> Hackathons  (off screen)",
+          "[29]<button> Startups  (off screen)",
+          "[30]<button> Study abroad  (off screen)",
+          "[31]<button> Saved  (off screen)",
+          "[43]<button> 💼 Electrical Engineering Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware In th  ↓ below",
+          "[44]<button> Save listing  ↓ below",
+          "[45]<button> 🎪 Microsoft Security @ UC Berkeley | Tech Talk + Q&A Electrical Engineering & Computer Sc  ↓ below",
+          "[46]<button> Save listing  ↓ below",
+          "[47]<button> 💡 HackStorm 3.0: Sense, Think and Act HackStorm · San Francisco, California, USA D-74 Hac  ↓ below",
+          "[48]<button> Save listing  ↓ below",
+          "[49]<button> 💼 2027 Manufacturing Engineer Intern Anduril · Atlanta, Georgia, United States · Boston,   ↓ below",
+          "[50]<button> Save listing  ↓ below",
+          "[51]<button> 💼 Firmware Engineer Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware  ↓ below",
+          "[52]<button> Save listing  ↓ below",
+          "[53]<button> 💼 Hardware Engineer (Winter Co-op) Verkada · San Mateo, CA United States Rolling Hardware  ↓ below",
+          "[54]<button> Save listing  ↓ below",
+          "[55]<button> ✈️ STEM Research in Tohoku (Summer) UCEAP Programs D-14 Exchange Closes in 14 days  ↓ below",
+          "[56]<button> Save listing  ↓ below",
+          "[57]<button> 🎪 EECS Colloquium: Quantum Interconnects and Modularity via Waveguide QED Electrical Engi  ↓ below",
+          "[58]<button> Save listing  ↓ below",
+          "[59]<button> 💼 Winter 2027 Electrical Engineer Co-op Anduril · Costa Mesa, California, United States ·  ↓ below",
+          "[60]<button> Save listing  ↓ below",
+          "[61]<button> 💼 Summer 2027 Intern - Hardware Engineering Western Digital · San Jose, CA, United States  ↓ below",
+          "[62]<button> Save listing  ↓ below",
+          "[63]<button> 💼 Manufacturing Engineering Intern (Jan 2027) Bosch · Grand Rapids, MI, United States Pos  ↓ below",
+          "[64]<button> Save listing  ↓ below",
+          "[65]<button> ✈️ Engineering Research in Madrid (Summer) UCEAP Programs D-91 Exchange  ↓ below",
+          "[66]<button> Save listing  ↓ below",
+          "[67]<button> 🎓 DOE Computational Science Graduate Fellowship (CSGF) — 2027 U.S. Department of Energy /  ↓ below",
+          "[68]<button> Save listing  ↓ below",
+          "[69]<button> 💼 Winter 2027 Propulsion Engineer Co-op Anduril · Costa Mesa, California, United States P  ↓ below",
+          "[70]<button> Save listing  ↓ below",
+          "[71]<button> 💼 Manufacturing Engineer Intern - Summer 2027 Bosch · Lincolnshire, IL, United States Pos  ↓ below",
+          "[72]<button> Save listing  ↓ below",
+          "[73]<button> 🔬 Texas A&M Engineering Undergraduate Summer Research (S-REU) 2027 Texas A&M University C  ↓ below",
+          "[74]<button> Save listing  ↓ below",
+          "[75]<button> ✈️ Engineering Research in Monterrey (Summer) UCEAP Programs D-91 Exchange  ↓ below",
+          "[76]<button> Save listing  ↓ below",
+          "[77]<button> 💼 Winter 2027 Manufacturing Engineer Co-op Anduril · Ashville, Ohio, United States · Lexi  ↓ below",
+          "[78]<button> Save listing  ↓ below"
+        ],
+        "text": "Opportunities | For you | Internships | Research & RA | Scholarships | Clubs, listings and events picked for you | 💼 | Robotics Research Intern | Bosch | · Sunnyvale, CA, United States | Posted 23d ago | Hardware | Fits your major (Civil Engineering) | 💼 | 2027 Electrical Engineer Intern | Anduril | · Atlanta, Georgia, United States · Boston, Massachusetts, United States · Broomfield, Colorado, United States · Colorado Springs, Colorado, United States · Costa Mesa, California, United States · Fort Collins, Colorado, United States · Irvine, California, United States · Reston, Virginia, United States · Seattle, Washington, United States | Posted 1d ago | Hardware | U.S. citizens only | Fits your major (Civil Engineering) | 🎪 | a16z Info-Session / Panel | Electrical Engineering & Computer Sciences | Today | · 5:30 PM | Campus event | Today | 🎪 | Jeff Hawkins: How the Brain Understands the World: Implications for AI and robotics | Helen Wills Neuroscience Institute | · Simons Institute for the Theory of Computing | Nov 12 | · 5:30 PM | Campus event | ✈️ | STEM Research in Osaka (Summer) | UCEAP Programs | D-14 | Exchange | Closes in 14 days | 💼 | 2027 Mechanical Engineer Intern | Anduril | · Atlanta, Georgia, United States · Boston, Massachusetts, United States · Broomfield, Colorado, United States · Colorado Springs, Colorado, United States · Costa Mesa, California, United States · Fort Collins, Colorado, United States · Irvine, California, United States · Reston, Virginia,",
+        "scroll": {
+          "top": 0,
+          "max": 2953
+        },
+        "fingerprint": "653ed658c2df9d05d43b1abcc5e3dccbfef250b5",
+        "simReadSec": 28.9
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 24,
+            "name": "For you",
+            "w": 76,
+            "h": 36
+          },
+          {
+            "id": 25,
+            "name": "Internships",
+            "w": 99,
+            "h": 36
+          },
+          {
+            "id": 26,
+            "name": "Research & RA",
+            "w": 121,
+            "h": 36
+          },
+          {
+            "id": 27,
+            "name": "Scholarships",
+            "w": 110,
+            "h": 36
+          },
+          {
+            "id": 33,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 35,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 37,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 39,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 41,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 42,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 611
+      }
+    },
+    {
+      "index": 3,
+      "at": "2026-11-04T19:17:10.283Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Opportunities list with tabs (For you, Internships, Research...). Mixed internships, events, study abroad. No location filter visible.",
+        "feeling": "neutral",
+        "thought": "OK, this is the right place. But 'Fits your major (Civil Engineering)' on an Electrical Engineer intern? That's not my major. And it's Atlanta. Let me hit Internships."
+      },
+      "about": 2,
+      "feeling": "neutral",
+      "thought": "OK, this is the right place. But 'Fits your major (Civil Engineering)' on an Electrical Engineer intern? That's not my major. And it's Atlanta. Let me hit Internships.",
+      "urlAfter": "http://localhost:34709/explore/opportunities",
+      "route": "/explore/opportunities"
+    },
+    {
+      "index": 4,
+      "at": "2026-11-04T19:17:10.443Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "feeling": "frustrated",
+        "thought": "Says 'Fits your major (Civil Engineering)' on Electrical Engineer and Robotics interns. That's not civil. Makes me trust the 'For you' less.",
+        "friction": "ux_confusion",
+        "severity": "2",
+        "element": "34",
+        "wish": "Only say it fits my major when it actually matches civil engineering"
+      },
+      "about": 2,
+      "feeling": "frustrated",
+      "thought": "Says 'Fits your major (Civil Engineering)' on Electrical Engineer and Robotics interns. That's not civil. Makes me trust the 'For you' less.",
+      "urlAfter": "http://localhost:34709/explore/opportunities",
+      "route": "/explore/opportunities",
+      "frictionId": "f1"
+    },
+    {
+      "index": 5,
+      "at": "2026-11-04T19:17:13.050Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 25,
+        "expect": "only internships, maybe a location filter",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:34709/explore/opportunities",
+      "target": {
+        "id": 25,
+        "tag": "button",
+        "role": "button",
+        "name": "Internships",
+        "box": {
+          "x": 100,
+          "y": 68,
+          "w": 99,
+          "h": 36
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "only internships, maybe a location filter",
+        "confidence": 0.7
+      },
+      "latencyMs": 850,
+      "tapPoint": {
+        "x": 150.2,
+        "y": 86,
+        "centre": true
+      },
+      "actionNumber": 2,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:34709/explore/opportunities?sub=internship",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/005-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/005-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 95,
+        "newElementIds": [
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128
+        ],
+        "elements": [
+          "[23]<button> Back",
+          "[24]<button> For you",
+          "[25]<button> Internships",
+          "[26]<button> Research & RA",
+          "[27]<button> Scholarships",
+          "[92]<button> Any work status",
+          "[93]<button> Int’l students OK 14",
+          "[94]<button> For you",
+          "[95]<button> Deadline soon",
+          "[96]<button> Newest",
+          "[97]<select> Location",
+          "[98]<button> All fields 567",
+          "[99]<button> Software 117",
+          "[100]<button> Data & AI 80",
+          "[101]<button> Hardware 25",
+          "[102]<button> Quant & Trading 22",
+          "[103]<button> Finance & Consulting 37",
+          "[104]<button> Product & Design 24",
+          "[105]<button> Business & Marketing 85",
+          "[106]<button> Policy & Law 22",
+          "[107]<button> Media & Writing 13",
+          "[108]<button> Nonprofit & Education 16",
+          "[109]<button> Health 1",
+          "[110]<button> Research & Science 45",
+          "[111]<button> Other 80",
+          "[32]<button> 💼 Robotics Research Intern Bosch · Sunnyvale, CA, United States Posted 23d ago Hardware F",
+          "[33]<button> Save listing",
+          "[112]<button> 💼 Fall 2027 Manufacturing Engineer Co-op Anduril · Ashville, Ohio, United States · Quincy",
+          "[35]<button> Save listing",
+          "[43]<button> 💼 Electrical Engineering Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware In th",
+          "[37]<button> Save listing",
+          "[14]<a> Home",
+          "[15]<a selected> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[28]<button> Hackathons  (off screen)",
+          "[29]<button> Startups  (off screen)",
+          "[30]<button> Study abroad  (off screen)",
+          "[31]<button> Saved  (off screen)",
+          "[61]<button> 💼 Summer 2027 Intern - Hardware Engineering Western Digital · San Jose, CA, United States  ↓ below",
+          "[39]<button> Save listing  ↓ below",
+          "[34]<button> 💼 2027 Electrical Engineer Intern Anduril · Atlanta, Georgia, United States · Boston, Mas  ↓ below",
+          "[41]<button> Save listing  ↓ below",
+          "[51]<button> 💼 Firmware Engineer Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware  ↓ below",
+          "[42]<button> Save listing  ↓ below",
+          "[63]<button> 💼 Manufacturing Engineering Intern (Jan 2027) Bosch · Grand Rapids, MI, United States Pos  ↓ below",
+          "[44]<button> Save listing  ↓ below",
+          "[79]<button> 💼 2027 Internship- Hardware Engineer (FPGA) Virtu Financial · Austin, TX Rolling Hardware  ↓ below",
+          "[46]<button> Save listing  ↓ below",
+          "[113]<button> 💼 2027 Firmware Engineer Intern Anduril · Costa Mesa, California, United States Posted 1d  ↓ below",
+          "[48]<button> Save listing  ↓ below",
+          "[114]<button> 💼 Embedded Software Engineering Intern 2027 Verkada · San Mateo, CA United States Posted   ↓ below",
+          "[50]<button> Save listing  ↓ below",
+          "[71]<button> 💼 Manufacturing Engineer Intern - Summer 2027 Bosch · Lincolnshire, IL, United States Pos  ↓ below",
+          "[52]<button> Save listing  ↓ below",
+          "[115]<button> 💼 Hardware Engineer Internship - Summer 2027 Hudson River Trading · New York, NY, United   ↓ below",
+          "[54]<button> Save listing  ↓ below",
+          "[49]<button> 💼 2027 Manufacturing Engineer Intern Anduril · Atlanta, Georgia, United States · Boston,   ↓ below",
+          "[56]<button> Save listing  ↓ below",
+          "[116]<button> 💼 2027 Intern - Experience Researcher Adobe · San Jose Posted 2d ago Research & Science  ↓ below",
+          "[58]<button> Save listing  ↓ below",
+          "[89]<button> 💼 Mechanical Design Engineering Intern Bosch · Fort Lauderdale, FL, United States Posted   ↓ below",
+          "[60]<button> Save listing  ↓ below",
+          "[117]<button> 💼 R&D Intern (Summer 2027) Clorox · Pleasanton, CA - USA, United States of America (+2 mo  ↓ below",
+          "[62]<button> Save listing  ↓ below",
+          "[118]<button> 💼 2027 Mechanical Engineer Intern Anduril · Atlanta, Georgia, United States · Boston, Mas  ↓ below",
+          "[64]<button> Save listing  ↓ below",
+          "[119]<button> 💼 2027 Intern - Applied and Research Scientist/Engineer Adobe · San Jose, United States o  ↓ below",
+          "[66]<button> Save listing  ↓ below",
+          "[120]<button> 💼 Driving Foundations Research Intern Bosch · Sunnyvale, CA, United States Posted 14d ago  ↓ below",
+          "[68]<button> Save listing  ↓ below",
+          "[121]<button> 💼 Clorox R&D Packaging Co-op (June 2027) Clorox · Pleasanton, CA - USA Posted 2d ago Rese  ↓ below",
+          "[70]<button> Save listing  ↓ below",
+          "[59]<button> 💼 Winter 2027 Electrical Engineer Co-op Anduril · Costa Mesa, California, United States ·  ↓ below",
+          "[72]<button> Save listing  ↓ below"
+        ],
+        "text": "Opportunities | For you | Internships | Research & RA | Scholarships | Any work status | Int’l students OK 14 | For you | Deadline soon | Newest | All fields | 567 | Software | 117 | Data & AI | 80 | Hardware (×5 on screen) | 25 | Quant & Trading | 22 | Finance & Consulting | 37 | Product & Design | 24 | Business & Marketing | 85 | Policy & Law | 22 | Media & Writing | 13 | Nonprofit & Education | 16 | Health | 1 | Research & Science | 45 | Other | 80 | 567 listings | 💼 | Robotics Research Intern | Bosch | · Sunnyvale, CA, United States | Posted 23d ago | Hardware | Fits your major (Civil Engineering) | 💼 | Fall 2027 Manufacturing Engineer Co-op | Anduril | · Ashville, Ohio, United States · Quincy, Massachusetts, United States · Santa Ana, California, United States | Posted 1d ago | U.S. citizens only | Fits your major (Civil Engineering) | 💼 | Electrical Engineering Co-Op | Samsara | · San Francisco - SF9 | Hardware Engineer (Winter Co-op) | Verkada | · San Mateo, CA United States | Rolling | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 2980
+        },
+        "fingerprint": "5a4b7a380e2d1f4144cf323d3c503d37fcc09425",
+        "simReadSec": 11.8
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 24,
+            "name": "For you",
+            "w": 76,
+            "h": 36
+          },
+          {
+            "id": 25,
+            "name": "Internships",
+            "w": 99,
+            "h": 36
+          },
+          {
+            "id": 26,
+            "name": "Research & RA",
+            "w": 121,
+            "h": 36
+          },
+          {
+            "id": 27,
+            "name": "Scholarships",
+            "w": 110,
+            "h": 36
+          },
+          {
+            "id": 92,
+            "name": "Any work status",
+            "w": 115,
+            "h": 28
+          },
+          {
+            "id": 93,
+            "name": "Int’l students OK 14",
+            "w": 133,
+            "h": 28
+          },
+          {
+            "id": 94,
+            "name": "For you",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 95,
+            "name": "Deadline soon",
+            "w": 104,
+            "h": 28
+          },
+          {
+            "id": 96,
+            "name": "Newest",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 97,
+            "name": "Location",
+            "w": 138,
+            "h": 32
+          },
+          {
+            "id": 98,
+            "name": "All fields 567",
+            "w": 96,
+            "h": 28
+          },
+          {
+            "id": 99,
+            "name": "Software 117",
+            "w": 94,
+            "h": 28
+          },
+          {
+            "id": 100,
+            "name": "Data & AI 80",
+            "w": 94,
+            "h": 28
+          },
+          {
+            "id": 101,
+            "name": "Hardware 25",
+            "w": 96,
+            "h": 28
+          },
+          {
+            "id": 102,
+            "name": "Quant & Trading 22",
+            "w": 133,
+            "h": 28
+          },
+          {
+            "id": 103,
+            "name": "Finance & Consulting 37",
+            "w": 162,
+            "h": 28
+          },
+          {
+            "id": 104,
+            "name": "Product & Design 24",
+            "w": 140,
+            "h": 28
+          },
+          {
+            "id": 105,
+            "name": "Business & Marketing 85",
+            "w": 165,
+            "h": 28
+          },
+          {
+            "id": 106,
+            "name": "Policy & Law 22",
+            "w": 113,
+            "h": 28
+          },
+          {
+            "id": 107,
+            "name": "Media & Writing 13",
+            "w": 129,
+            "h": 28
+          },
+          {
+            "id": 108,
+            "name": "Nonprofit & Education 16",
+            "w": 164,
+            "h": 28
+          },
+          {
+            "id": 109,
+            "name": "Health 1",
+            "w": 68,
+            "h": 28
+          },
+          {
+            "id": 110,
+            "name": "Research & Science 45",
+            "w": 155,
+            "h": 28
+          },
+          {
+            "id": 111,
+            "name": "Other 80",
+            "w": 74,
+            "h": 28
+          },
+          {
+            "id": 33,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 35,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 37,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 611
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Internships only, 567 listings, with a 'Any location' dropdown plus lots of field chips.",
+        "feeling": "curious",
+        "note": "There's a location dropdown. That's what I need. Ignoring the wall of chips."
+      }
+    },
+    {
+      "index": 6,
+      "at": "2026-11-04T19:17:19.401Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Internships only, 567 listings, with a 'Any location' dropdown plus lots of field chips.",
+        "feeling": "curious",
+        "thought": "There's a location dropdown. That's what I need. Ignoring the wall of chips."
+      },
+      "about": 5,
+      "feeling": "curious",
+      "thought": "There's a location dropdown. That's what I need. Ignoring the wall of chips.",
+      "urlAfter": "http://localhost:34709/explore/opportunities?sub=internship",
+      "route": "/explore/opportunities"
+    },
+    {
+      "index": 7,
+      "at": "2026-11-04T19:17:19.564Z",
+      "kind": "action",
+      "command": "select",
+      "args": {
+        "id": 97,
+        "option": "?"
+      },
+      "urlBefore": "http://localhost:34709/explore/opportunities?sub=internship",
+      "target": {
+        "id": 97,
+        "tag": "select",
+        "role": "combobox",
+        "name": "Location",
+        "box": {
+          "x": 283,
+          "y": 148,
+          "w": 138,
+          "h": 32
+        },
+        "inViewport": true
+      },
+      "latencyMs": 6810,
+      "actionNumber": 3,
+      "result": "error",
+      "error": "locator.selectOption: Timeout 3000ms exceeded.",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:34709/explore/opportunities?sub=internship",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/007-select.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/007-select-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 95,
+        "newElementIds": [],
+        "elements": [
+          "[23]<button> Back",
+          "[24]<button> For you",
+          "[25]<button> Internships",
+          "[26]<button> Research & RA",
+          "[27]<button> Scholarships",
+          "[92]<button> Any work status",
+          "[93]<button> Int’l students OK 14",
+          "[94]<button> For you",
+          "[95]<button> Deadline soon",
+          "[96]<button> Newest",
+          "[97]<select> Location",
+          "[98]<button> All fields 567",
+          "[99]<button> Software 117",
+          "[100]<button> Data & AI 80",
+          "[101]<button> Hardware 25",
+          "[102]<button> Quant & Trading 22",
+          "[103]<button> Finance & Consulting 37",
+          "[104]<button> Product & Design 24",
+          "[105]<button> Business & Marketing 85",
+          "[106]<button> Policy & Law 22",
+          "[107]<button> Media & Writing 13",
+          "[108]<button> Nonprofit & Education 16",
+          "[109]<button> Health 1",
+          "[110]<button> Research & Science 45",
+          "[111]<button> Other 80",
+          "[32]<button> 💼 Robotics Research Intern Bosch · Sunnyvale, CA, United States Posted 23d ago Hardware F",
+          "[33]<button> Save listing",
+          "[112]<button> 💼 Fall 2027 Manufacturing Engineer Co-op Anduril · Ashville, Ohio, United States · Quincy",
+          "[35]<button> Save listing",
+          "[43]<button> 💼 Electrical Engineering Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware In th",
+          "[37]<button> Save listing",
+          "[14]<a> Home",
+          "[15]<a selected> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[28]<button> Hackathons  (off screen)",
+          "[29]<button> Startups  (off screen)",
+          "[30]<button> Study abroad  (off screen)",
+          "[31]<button> Saved  (off screen)",
+          "[61]<button> 💼 Summer 2027 Intern - Hardware Engineering Western Digital · San Jose, CA, United States  ↓ below",
+          "[39]<button> Save listing  ↓ below",
+          "[34]<button> 💼 2027 Electrical Engineer Intern Anduril · Atlanta, Georgia, United States · Boston, Mas  ↓ below",
+          "[41]<button> Save listing  ↓ below",
+          "[51]<button> 💼 Firmware Engineer Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware  ↓ below",
+          "[42]<button> Save listing  ↓ below",
+          "[63]<button> 💼 Manufacturing Engineering Intern (Jan 2027) Bosch · Grand Rapids, MI, United States Pos  ↓ below",
+          "[44]<button> Save listing  ↓ below",
+          "[79]<button> 💼 2027 Internship- Hardware Engineer (FPGA) Virtu Financial · Austin, TX Rolling Hardware  ↓ below",
+          "[46]<button> Save listing  ↓ below",
+          "[113]<button> 💼 2027 Firmware Engineer Intern Anduril · Costa Mesa, California, United States Posted 1d  ↓ below",
+          "[48]<button> Save listing  ↓ below",
+          "[114]<button> 💼 Embedded Software Engineering Intern 2027 Verkada · San Mateo, CA United States Posted   ↓ below",
+          "[50]<button> Save listing  ↓ below",
+          "[71]<button> 💼 Manufacturing Engineer Intern - Summer 2027 Bosch · Lincolnshire, IL, United States Pos  ↓ below",
+          "[52]<button> Save listing  ↓ below",
+          "[115]<button> 💼 Hardware Engineer Internship - Summer 2027 Hudson River Trading · New York, NY, United   ↓ below",
+          "[54]<button> Save listing  ↓ below",
+          "[49]<button> 💼 2027 Manufacturing Engineer Intern Anduril · Atlanta, Georgia, United States · Boston,   ↓ below",
+          "[56]<button> Save listing  ↓ below",
+          "[116]<button> 💼 2027 Intern - Experience Researcher Adobe · San Jose Posted 2d ago Research & Science  ↓ below",
+          "[58]<button> Save listing  ↓ below",
+          "[89]<button> 💼 Mechanical Design Engineering Intern Bosch · Fort Lauderdale, FL, United States Posted   ↓ below",
+          "[60]<button> Save listing  ↓ below",
+          "[117]<button> 💼 R&D Intern (Summer 2027) Clorox · Pleasanton, CA - USA, United States of America (+2 mo  ↓ below",
+          "[62]<button> Save listing  ↓ below",
+          "[118]<button> 💼 2027 Mechanical Engineer Intern Anduril · Atlanta, Georgia, United States · Boston, Mas  ↓ below",
+          "[64]<button> Save listing  ↓ below",
+          "[119]<button> 💼 2027 Intern - Applied and Research Scientist/Engineer Adobe · San Jose, United States o  ↓ below",
+          "[66]<button> Save listing  ↓ below",
+          "[120]<button> 💼 Driving Foundations Research Intern Bosch · Sunnyvale, CA, United States Posted 14d ago  ↓ below",
+          "[68]<button> Save listing  ↓ below",
+          "[121]<button> 💼 Clorox R&D Packaging Co-op (June 2027) Clorox · Pleasanton, CA - USA Posted 2d ago Rese  ↓ below",
+          "[70]<button> Save listing  ↓ below",
+          "[59]<button> 💼 Winter 2027 Electrical Engineer Co-op Anduril · Costa Mesa, California, United States ·  ↓ below",
+          "[72]<button> Save listing  ↓ below"
+        ],
+        "text": "Opportunities | For you | Internships | Research & RA | Scholarships | Any work status | Int’l students OK 14 | For you | Deadline soon | Newest | All fields | 567 | Software | 117 | Data & AI | 80 | Hardware (×5 on screen) | 25 | Quant & Trading | 22 | Finance & Consulting | 37 | Product & Design | 24 | Business & Marketing | 85 | Policy & Law | 22 | Media & Writing | 13 | Nonprofit & Education | 16 | Health | 1 | Research & Science | 45 | Other | 80 | 567 listings | 💼 | Robotics Research Intern | Bosch | · Sunnyvale, CA, United States | Posted 23d ago | Hardware | Fits your major (Civil Engineering) | 💼 | Fall 2027 Manufacturing Engineer Co-op | Anduril | · Ashville, Ohio, United States · Quincy, Massachusetts, United States · Santa Ana, California, United States | Posted 1d ago | U.S. citizens only | Fits your major (Civil Engineering) | 💼 | Electrical Engineering Co-Op | Samsara | · San Francisco - SF9 | Hardware Engineer (Winter Co-op) | Verkada | · San Mateo, CA United States | Rolling | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 2980
+        },
+        "fingerprint": "5a4b7a380e2d1f4144cf323d3c503d37fcc09425",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 24,
+            "name": "For you",
+            "w": 76,
+            "h": 36
+          },
+          {
+            "id": 25,
+            "name": "Internships",
+            "w": 99,
+            "h": 36
+          },
+          {
+            "id": 26,
+            "name": "Research & RA",
+            "w": 121,
+            "h": 36
+          },
+          {
+            "id": 27,
+            "name": "Scholarships",
+            "w": 110,
+            "h": 36
+          },
+          {
+            "id": 92,
+            "name": "Any work status",
+            "w": 115,
+            "h": 28
+          },
+          {
+            "id": 93,
+            "name": "Int’l students OK 14",
+            "w": 133,
+            "h": 28
+          },
+          {
+            "id": 94,
+            "name": "For you",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 95,
+            "name": "Deadline soon",
+            "w": 104,
+            "h": 28
+          },
+          {
+            "id": 96,
+            "name": "Newest",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 97,
+            "name": "Location",
+            "w": 138,
+            "h": 32
+          },
+          {
+            "id": 98,
+            "name": "All fields 567",
+            "w": 96,
+            "h": 28
+          },
+          {
+            "id": 99,
+            "name": "Software 117",
+            "w": 94,
+            "h": 28
+          },
+          {
+            "id": 100,
+            "name": "Data & AI 80",
+            "w": 94,
+            "h": 28
+          },
+          {
+            "id": 101,
+            "name": "Hardware 25",
+            "w": 96,
+            "h": 28
+          },
+          {
+            "id": 102,
+            "name": "Quant & Trading 22",
+            "w": 133,
+            "h": 28
+          },
+          {
+            "id": 103,
+            "name": "Finance & Consulting 37",
+            "w": 162,
+            "h": 28
+          },
+          {
+            "id": 104,
+            "name": "Product & Design 24",
+            "w": 140,
+            "h": 28
+          },
+          {
+            "id": 105,
+            "name": "Business & Marketing 85",
+            "w": 165,
+            "h": 28
+          },
+          {
+            "id": 106,
+            "name": "Policy & Law 22",
+            "w": 113,
+            "h": 28
+          },
+          {
+            "id": 107,
+            "name": "Media & Writing 13",
+            "w": 129,
+            "h": 28
+          },
+          {
+            "id": 108,
+            "name": "Nonprofit & Education 16",
+            "w": 164,
+            "h": 28
+          },
+          {
+            "id": 109,
+            "name": "Health 1",
+            "w": 68,
+            "h": 28
+          },
+          {
+            "id": 110,
+            "name": "Research & Science 45",
+            "w": 155,
+            "h": 28
+          },
+          {
+            "id": 111,
+            "name": "Other 80",
+            "w": 74,
+            "h": 28
+          },
+          {
+            "id": 33,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 35,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 37,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 611
+      },
+      "signals": [
+        {
+          "type": "failed",
+          "weight": 1,
+          "detail": "locator.selectOption: Timeout 3000ms exceeded."
+        }
+      ],
+      "frustrationAfter": 1
+    },
+    {
+      "index": 8,
+      "at": "2026-11-04T19:17:29.900Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 97,
+        "expect": "a list of locations like Bay Area / Berkeley",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:34709/explore/opportunities?sub=internship",
+      "target": {
+        "id": 97,
+        "tag": "select",
+        "role": "combobox",
+        "name": "Location",
+        "box": {
+          "x": 283,
+          "y": 148,
+          "w": 138,
+          "h": 32
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "a list of locations like Bay Area / Berkeley",
+        "confidence": 0.7
+      },
+      "latencyMs": 848,
+      "tapPoint": {
+        "x": 320.9,
+        "y": 164,
+        "centre": true
+      },
+      "actionNumber": 4,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:34709/explore/opportunities?sub=internship",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/008-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/008-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 95,
+        "newElementIds": [],
+        "elements": [
+          "[23]<button> Back",
+          "[24]<button> For you",
+          "[25]<button> Internships",
+          "[26]<button> Research & RA",
+          "[27]<button> Scholarships",
+          "[92]<button> Any work status",
+          "[93]<button> Int’l students OK 14",
+          "[94]<button> For you",
+          "[95]<button> Deadline soon",
+          "[96]<button> Newest",
+          "[97]<select> Location",
+          "[98]<button> All fields 567",
+          "[99]<button> Software 117",
+          "[100]<button> Data & AI 80",
+          "[101]<button> Hardware 25",
+          "[102]<button> Quant & Trading 22",
+          "[103]<button> Finance & Consulting 37",
+          "[104]<button> Product & Design 24",
+          "[105]<button> Business & Marketing 85",
+          "[106]<button> Policy & Law 22",
+          "[107]<button> Media & Writing 13",
+          "[108]<button> Nonprofit & Education 16",
+          "[109]<button> Health 1",
+          "[110]<button> Research & Science 45",
+          "[111]<button> Other 80",
+          "[32]<button> 💼 Robotics Research Intern Bosch · Sunnyvale, CA, United States Posted 23d ago Hardware F",
+          "[33]<button> Save listing",
+          "[112]<button> 💼 Fall 2027 Manufacturing Engineer Co-op Anduril · Ashville, Ohio, United States · Quincy",
+          "[35]<button> Save listing",
+          "[43]<button> 💼 Electrical Engineering Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware In th",
+          "[37]<button> Save listing",
+          "[14]<a> Home",
+          "[15]<a selected> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[28]<button> Hackathons  (off screen)",
+          "[29]<button> Startups  (off screen)",
+          "[30]<button> Study abroad  (off screen)",
+          "[31]<button> Saved  (off screen)",
+          "[61]<button> 💼 Summer 2027 Intern - Hardware Engineering Western Digital · San Jose, CA, United States  ↓ below",
+          "[39]<button> Save listing  ↓ below",
+          "[34]<button> 💼 2027 Electrical Engineer Intern Anduril · Atlanta, Georgia, United States · Boston, Mas  ↓ below",
+          "[41]<button> Save listing  ↓ below",
+          "[51]<button> 💼 Firmware Engineer Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware  ↓ below",
+          "[42]<button> Save listing  ↓ below",
+          "[63]<button> 💼 Manufacturing Engineering Intern (Jan 2027) Bosch · Grand Rapids, MI, United States Pos  ↓ below",
+          "[44]<button> Save listing  ↓ below",
+          "[79]<button> 💼 2027 Internship- Hardware Engineer (FPGA) Virtu Financial · Austin, TX Rolling Hardware  ↓ below",
+          "[46]<button> Save listing  ↓ below",
+          "[113]<button> 💼 2027 Firmware Engineer Intern Anduril · Costa Mesa, California, United States Posted 1d  ↓ below",
+          "[48]<button> Save listing  ↓ below",
+          "[114]<button> 💼 Embedded Software Engineering Intern 2027 Verkada · San Mateo, CA United States Posted   ↓ below",
+          "[50]<button> Save listing  ↓ below",
+          "[71]<button> 💼 Manufacturing Engineer Intern - Summer 2027 Bosch · Lincolnshire, IL, United States Pos  ↓ below",
+          "[52]<button> Save listing  ↓ below",
+          "[115]<button> 💼 Hardware Engineer Internship - Summer 2027 Hudson River Trading · New York, NY, United   ↓ below",
+          "[54]<button> Save listing  ↓ below",
+          "[49]<button> 💼 2027 Manufacturing Engineer Intern Anduril · Atlanta, Georgia, United States · Boston,   ↓ below",
+          "[56]<button> Save listing  ↓ below",
+          "[116]<button> 💼 2027 Intern - Experience Researcher Adobe · San Jose Posted 2d ago Research & Science  ↓ below",
+          "[58]<button> Save listing  ↓ below",
+          "[89]<button> 💼 Mechanical Design Engineering Intern Bosch · Fort Lauderdale, FL, United States Posted   ↓ below",
+          "[60]<button> Save listing  ↓ below",
+          "[117]<button> 💼 R&D Intern (Summer 2027) Clorox · Pleasanton, CA - USA, United States of America (+2 mo  ↓ below",
+          "[62]<button> Save listing  ↓ below",
+          "[118]<button> 💼 2027 Mechanical Engineer Intern Anduril · Atlanta, Georgia, United States · Boston, Mas  ↓ below",
+          "[64]<button> Save listing  ↓ below",
+          "[119]<button> 💼 2027 Intern - Applied and Research Scientist/Engineer Adobe · San Jose, United States o  ↓ below",
+          "[66]<button> Save listing  ↓ below",
+          "[120]<button> 💼 Driving Foundations Research Intern Bosch · Sunnyvale, CA, United States Posted 14d ago  ↓ below",
+          "[68]<button> Save listing  ↓ below",
+          "[121]<button> 💼 Clorox R&D Packaging Co-op (June 2027) Clorox · Pleasanton, CA - USA Posted 2d ago Rese  ↓ below",
+          "[70]<button> Save listing  ↓ below",
+          "[59]<button> 💼 Winter 2027 Electrical Engineer Co-op Anduril · Costa Mesa, California, United States ·  ↓ below",
+          "[72]<button> Save listing  ↓ below"
+        ],
+        "text": "Opportunities | For you | Internships | Research & RA | Scholarships | Any work status | Int’l students OK 14 | For you | Deadline soon | Newest | All fields | 567 | Software | 117 | Data & AI | 80 | Hardware (×5 on screen) | 25 | Quant & Trading | 22 | Finance & Consulting | 37 | Product & Design | 24 | Business & Marketing | 85 | Policy & Law | 22 | Media & Writing | 13 | Nonprofit & Education | 16 | Health | 1 | Research & Science | 45 | Other | 80 | 567 listings | 💼 | Robotics Research Intern | Bosch | · Sunnyvale, CA, United States | Posted 23d ago | Hardware | Fits your major (Civil Engineering) | 💼 | Fall 2027 Manufacturing Engineer Co-op | Anduril | · Ashville, Ohio, United States · Quincy, Massachusetts, United States · Santa Ana, California, United States | Posted 1d ago | U.S. citizens only | Fits your major (Civil Engineering) | 💼 | Electrical Engineering Co-Op | Samsara | · San Francisco - SF9 | Hardware Engineer (Winter Co-op) | Verkada | · San Mateo, CA United States | Rolling | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 2980
+        },
+        "fingerprint": "5a4b7a380e2d1f4144cf323d3c503d37fcc09425",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 24,
+            "name": "For you",
+            "w": 76,
+            "h": 36
+          },
+          {
+            "id": 25,
+            "name": "Internships",
+            "w": 99,
+            "h": 36
+          },
+          {
+            "id": 26,
+            "name": "Research & RA",
+            "w": 121,
+            "h": 36
+          },
+          {
+            "id": 27,
+            "name": "Scholarships",
+            "w": 110,
+            "h": 36
+          },
+          {
+            "id": 92,
+            "name": "Any work status",
+            "w": 115,
+            "h": 28
+          },
+          {
+            "id": 93,
+            "name": "Int’l students OK 14",
+            "w": 133,
+            "h": 28
+          },
+          {
+            "id": 94,
+            "name": "For you",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 95,
+            "name": "Deadline soon",
+            "w": 104,
+            "h": 28
+          },
+          {
+            "id": 96,
+            "name": "Newest",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 97,
+            "name": "Location",
+            "w": 138,
+            "h": 32
+          },
+          {
+            "id": 98,
+            "name": "All fields 567",
+            "w": 96,
+            "h": 28
+          },
+          {
+            "id": 99,
+            "name": "Software 117",
+            "w": 94,
+            "h": 28
+          },
+          {
+            "id": 100,
+            "name": "Data & AI 80",
+            "w": 94,
+            "h": 28
+          },
+          {
+            "id": 101,
+            "name": "Hardware 25",
+            "w": 96,
+            "h": 28
+          },
+          {
+            "id": 102,
+            "name": "Quant & Trading 22",
+            "w": 133,
+            "h": 28
+          },
+          {
+            "id": 103,
+            "name": "Finance & Consulting 37",
+            "w": 162,
+            "h": 28
+          },
+          {
+            "id": 104,
+            "name": "Product & Design 24",
+            "w": 140,
+            "h": 28
+          },
+          {
+            "id": 105,
+            "name": "Business & Marketing 85",
+            "w": 165,
+            "h": 28
+          },
+          {
+            "id": 106,
+            "name": "Policy & Law 22",
+            "w": 113,
+            "h": 28
+          },
+          {
+            "id": 107,
+            "name": "Media & Writing 13",
+            "w": 129,
+            "h": 28
+          },
+          {
+            "id": 108,
+            "name": "Nonprofit & Education 16",
+            "w": 164,
+            "h": 28
+          },
+          {
+            "id": 109,
+            "name": "Health 1",
+            "w": 68,
+            "h": 28
+          },
+          {
+            "id": 110,
+            "name": "Research & Science 45",
+            "w": 155,
+            "h": 28
+          },
+          {
+            "id": 111,
+            "name": "Other 80",
+            "w": 74,
+            "h": 28
+          },
+          {
+            "id": 33,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 35,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 37,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 611
+      },
+      "signals": [],
+      "frustrationAfter": 1,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Dropdown opened: Any location, Bay Area, LA, Seattle, NY, Boston, Chicago, Texas, Remote.",
+        "feeling": "delighted",
+        "note": "Bay Area. Perfect, that's exactly the filter I want."
+      }
+    },
+    {
+      "index": 9,
+      "at": "2026-11-04T19:17:36.956Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Dropdown opened: Any location, Bay Area, LA, Seattle, NY, Boston, Chicago, Texas, Remote.",
+        "feeling": "delighted",
+        "thought": "Bay Area. Perfect, that's exactly the filter I want."
+      },
+      "about": 8,
+      "feeling": "delighted",
+      "thought": "Bay Area. Perfect, that's exactly the filter I want.",
+      "urlAfter": "http://localhost:34709/explore/opportunities?sub=internship",
+      "route": "/explore/opportunities"
+    },
+    {
+      "index": 10,
+      "at": "2026-11-04T19:17:37.114Z",
+      "kind": "action",
+      "command": "select",
+      "args": {
+        "id": 97,
+        "option": "Bay Area",
+        "expect": "only Bay Area internships listed",
+        "confidence": "0.85"
+      },
+      "urlBefore": "http://localhost:34709/explore/opportunities?sub=internship",
+      "target": {
+        "id": 97,
+        "tag": "select",
+        "role": "combobox",
+        "name": "Location",
+        "box": {
+          "x": 252,
+          "y": 148,
+          "w": 138,
+          "h": 32
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "only Bay Area internships listed",
+        "confidence": 0.85
+      },
+      "latencyMs": 822,
+      "actionNumber": 5,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:34709/explore/opportunities?sub=internship&region=Bay+Area",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/010-select.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/010-select-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 96,
+        "newElementIds": [
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          53,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          90,
+          165
+        ],
+        "elements": [
+          "[23]<button> Back",
+          "[24]<button> For you",
+          "[25]<button> Internships",
+          "[26]<button> Research & RA",
+          "[27]<button> Scholarships",
+          "[92]<button> Any work status",
+          "[93]<button> Int’l students OK 14",
+          "[94]<button> For you",
+          "[95]<button> Deadline soon",
+          "[96]<button> Newest",
+          "[97]<select> Location",
+          "[129]<button> All fields 155",
+          "[130]<button> Software 43",
+          "[131]<button> Data & AI 51",
+          "[132]<button> Hardware 8",
+          "[133]<button> Quant & Trading 1",
+          "[134]<button> Finance & Consulting 8",
+          "[135]<button> Product & Design 10",
+          "[136]<button> Business & Marketing 5",
+          "[137]<button> Policy & Law 1",
+          "[138]<button> Media & Writing 0",
+          "[139]<button> Nonprofit & Education 0",
+          "[140]<button> Health 0",
+          "[141]<button> Research & Science 19",
+          "[142]<button> Other 9",
+          "[32]<button> 💼 Robotics Research Intern Bosch · Sunnyvale, CA, United States Posted 23d ago Hardware F",
+          "[33]<button> Save listing",
+          "[143]<button> 💼 Electrical Engineering Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware Fits ",
+          "[35]<button> Save listing",
+          "[53]<button> 💼 Hardware Engineer (Winter Co-op) Verkada · San Mateo, CA United States Rolling Hardware",
+          "[37]<button> Save listing",
+          "[39]<button> Save listing",
+          "[14]<a> Home",
+          "[15]<a selected> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[28]<button> Hackathons  (off screen)",
+          "[29]<button> Startups  (off screen)",
+          "[30]<button> Study abroad  (off screen)",
+          "[31]<button> Saved  (off screen)",
+          "[144]<button> 💼 2027 Intern - Experience Researcher Adobe · San Jose Posted 2d ago Research & Science J  ↓ below",
+          "[41]<button> Save listing  ↓ below",
+          "[51]<button> 💼 Firmware Engineer Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware  ↓ below",
+          "[42]<button> Save listing  ↓ below",
+          "[114]<button> 💼 Embedded Software Engineering Intern 2027 Verkada · San Mateo, CA United States Posted   ↓ below",
+          "[44]<button> Save listing  ↓ below",
+          "[120]<button> 💼 Driving Foundations Research Intern Bosch · Sunnyvale, CA, United States Posted 14d ago  ↓ below",
+          "[46]<button> Save listing  ↓ below",
+          "[119]<button> 💼 2027 Intern - Applied and Research Scientist/Engineer Adobe · San Jose, United States o  ↓ below",
+          "[48]<button> Save listing  ↓ below",
+          "[126]<button> 💼 User Research Intern Coinbase · Hybrid - San Francisco, CA Posted 5d ago Product & Desi  ↓ below",
+          "[50]<button> Save listing  ↓ below",
+          "[145]<button> 💼 Software Graduate Intern, Autonomous Lab Ginkgo Bioworks · Emeryville, California Rolli  ↓ below",
+          "[52]<button> Save listing  ↓ below",
+          "[146]<button> 💼 Machine Learning Research Intern (Summer 2027) Scale AI · New York, NY · San Francisco,  ↓ below",
+          "[54]<button> Save listing  ↓ below",
+          "[147]<button> 💼 Sales Development Representative, Internship Verkada · San Mateo, CA United States Post  ↓ below",
+          "[56]<button> Save listing  ↓ below",
+          "[148]<button> 💼 IT Engineer Intern (Early Careers Summer 2027) Affirm · San Francisco, California, Unit  ↓ below",
+          "[58]<button> Save listing  ↓ below",
+          "[149]<button> 💼 Software Intern, Autonomous Lab Ginkgo Bioworks · Emeryville, California Rolling Resear  ↓ below",
+          "[60]<button> Save listing  ↓ below",
+          "[150]<button> 💼 [Summer 2027] Software Engineer Intern Roblox · San Mateo, CA, United States New today   ↓ below",
+          "[62]<button> Save listing  ↓ below",
+          "[151]<button> 💼 2027 Summer Intern, BS/MS, Software Engineering, Commercialization Waymo · Mountain Vie  ↓ below",
+          "[64]<button> Save listing  ↓ below",
+          "[152]<button> 💼 Software Engineer Intern (Summer 2027) Affirm · San Francisco, California, United State  ↓ below",
+          "[66]<button> Save listing  ↓ below",
+          "[153]<button> 💼 SW Engineer Intern, AI Engineering Roku · San Jose, California Posted 1d ago Data & AI  ↓ below",
+          "[68]<button> Save listing  ↓ below",
+          "[154]<button> 💼 2027 Intern - Software Engineer Adobe · San Jose, United States of America (+6 more) Po  ↓ below",
+          "[70]<button> Save listing  ↓ below",
+          "[155]<button> 💼 Finance Intern - Undergrad Summer 2027 ServiceNow · Santa Clara, CALIFORNIA, United Sta  ↓ below",
+          "[72]<button> Save listing  ↓ below",
+          "[156]<button> 💼 Software Engineer (Machine Learning) Intern (Summer 2027) Affirm · San Francisco, Calif  ↓ below",
+          "[74]<button> Save listing  ↓ below"
+        ],
+        "text": "Opportunities | For you | Internships | Research & RA | Scholarships | Any work status | Int’l students OK 14 | For you | Deadline soon | Newest | All fields | 155 | Software | 43 | Data & AI | 51 | Hardware (×5 on screen) | 8 | Quant & Trading | 1 | Finance & Consulting | 8 | Product & Design | 10 | Business & Marketing | 5 | Policy & Law | 1 | Media & Writing | 0 | Nonprofit & Education | 0 | Health | 0 | Research & Science | 19 | Other | 9 | 155 listings | 💼 | Robotics Research Intern | Bosch | · Sunnyvale, CA, United States | Posted 23d ago | Hardware | Fits your major (Civil Engineering) | 💼 | Electrical Engineering Co-Op | Samsara | · San Francisco - SF9 | Posted 5d ago | Fits your major (Civil Engineering) | 💼 | Hardware Engineer (Winter Co-op) | Verkada | · San Mateo, CA United States | Rolling | 💼 | Summer 2027 Intern - Hardware Engineering | Western Digital | · San Jose, CA, United States | Rolling | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 3020
+        },
+        "fingerprint": "ee3deccb401c29bcf4ab5bf4d1f7043d2b7a8757",
+        "simReadSec": 2.9
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 24,
+            "name": "For you",
+            "w": 76,
+            "h": 36
+          },
+          {
+            "id": 25,
+            "name": "Internships",
+            "w": 99,
+            "h": 36
+          },
+          {
+            "id": 26,
+            "name": "Research & RA",
+            "w": 121,
+            "h": 36
+          },
+          {
+            "id": 27,
+            "name": "Scholarships",
+            "w": 110,
+            "h": 36
+          },
+          {
+            "id": 92,
+            "name": "Any work status",
+            "w": 115,
+            "h": 28
+          },
+          {
+            "id": 93,
+            "name": "Int’l students OK 14",
+            "w": 133,
+            "h": 28
+          },
+          {
+            "id": 94,
+            "name": "For you",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 95,
+            "name": "Deadline soon",
+            "w": 104,
+            "h": 28
+          },
+          {
+            "id": 96,
+            "name": "Newest",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 97,
+            "name": "Location",
+            "w": 138,
+            "h": 32
+          },
+          {
+            "id": 129,
+            "name": "All fields 155",
+            "w": 94,
+            "h": 28
+          },
+          {
+            "id": 130,
+            "name": "Software 43",
+            "w": 93,
+            "h": 28
+          },
+          {
+            "id": 131,
+            "name": "Data & AI 51",
+            "w": 91,
+            "h": 28
+          },
+          {
+            "id": 132,
+            "name": "Hardware 8",
+            "w": 89,
+            "h": 28
+          },
+          {
+            "id": 133,
+            "name": "Quant & Trading 1",
+            "w": 123,
+            "h": 28
+          },
+          {
+            "id": 134,
+            "name": "Finance & Consulting 8",
+            "w": 155,
+            "h": 28
+          },
+          {
+            "id": 135,
+            "name": "Product & Design 10",
+            "w": 138,
+            "h": 28
+          },
+          {
+            "id": 136,
+            "name": "Business & Marketing 5",
+            "w": 157,
+            "h": 28
+          },
+          {
+            "id": 137,
+            "name": "Policy & Law 1",
+            "w": 103,
+            "h": 28
+          },
+          {
+            "id": 138,
+            "name": "Media & Writing 0",
+            "w": 124,
+            "h": 28
+          },
+          {
+            "id": 139,
+            "name": "Nonprofit & Education 0",
+            "w": 160,
+            "h": 28
+          },
+          {
+            "id": 140,
+            "name": "Health 0",
+            "w": 71,
+            "h": 28
+          },
+          {
+            "id": 141,
+            "name": "Research & Science 19",
+            "w": 152,
+            "h": 28
+          },
+          {
+            "id": 142,
+            "name": "Other 9",
+            "w": 66,
+            "h": 28
+          },
+          {
+            "id": 33,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 35,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 37,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 39,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 611
+      },
+      "signals": [
+        {
+          "type": "repeated",
+          "weight": 0.75,
+          "detail": "same select as 1 time(s) in the last 20 actions"
+        }
+      ],
+      "frustrationAfter": 1.75,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Filtered to 155 Bay Area listings: Sunnyvale, SF, San Mateo, San Jose. URL-backed filter, chip counts updated.",
+        "feeling": "curious",
+        "note": "OK, 155 in the Bay. Sunnyvale's a long haul without a car though. Let me scroll for something closer to Oakland."
+      }
+    },
+    {
+      "index": 11,
+      "at": "2026-11-04T19:17:44.439Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Filtered to 155 Bay Area listings: Sunnyvale, SF, San Mateo, San Jose. URL-backed filter, chip counts updated.",
+        "feeling": "curious",
+        "thought": "OK, 155 in the Bay. Sunnyvale's a long haul without a car though. Let me scroll for something closer to Oakland."
+      },
+      "about": 10,
+      "feeling": "curious",
+      "thought": "OK, 155 in the Bay. Sunnyvale's a long haul without a car though. Let me scroll for something closer to Oakland.",
+      "urlAfter": "http://localhost:34709/explore/opportunities?sub=internship&region=Bay+Area",
+      "route": "/explore/opportunities"
+    },
+    {
+      "index": 12,
+      "at": "2026-11-04T19:17:44.604Z",
+      "kind": "action",
+      "command": "scroll",
+      "args": {
+        "direction": "down"
+      },
+      "urlBefore": "http://localhost:34709/explore/opportunities?sub=internship&region=Bay+Area",
+      "latencyMs": 1318,
+      "actionNumber": 6,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:34709/explore/opportunities?sub=internship&region=Bay+Area",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/012-scroll.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/012-scroll-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 96,
+        "newElementIds": [
+          61
+        ],
+        "elements": [
+          "[23]<button> Back",
+          "[53]<button> 💼 Hardware Engineer (Winter Co-op) Verkada · San Mateo, CA United States Rolling Hardware",
+          "[37]<button> Save listing",
+          "[61]<button> 💼 Summer 2027 Intern - Hardware Engineering Western Digital · San Jose, CA, United States",
+          "[39]<button> Save listing",
+          "[144]<button> 💼 2027 Intern - Experience Researcher Adobe · San Jose Posted 2d ago Research & Science J",
+          "[41]<button> Save listing",
+          "[51]<button> 💼 Firmware Engineer Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware",
+          "[42]<button> Save listing",
+          "[114]<button> 💼 Embedded Software Engineering Intern 2027 Verkada · San Mateo, CA United States Posted ",
+          "[44]<button> Save listing",
+          "[120]<button> 💼 Driving Foundations Research Intern Bosch · Sunnyvale, CA, United States Posted 14d ago",
+          "[46]<button> Save listing",
+          "[119]<button> 💼 2027 Intern - Applied and Research Scientist/Engineer Adobe · San Jose, United States o",
+          "[48]<button> Save listing",
+          "[14]<a> Home",
+          "[15]<a selected> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[35]<button> Save listing  ↑ above",
+          "[32]<button> 💼 Robotics Research Intern Bosch · Sunnyvale, CA, United States Posted 23d ago Hardware F  ↑ above",
+          "[33]<button> Save listing  ↑ above",
+          "[140]<button> Health 0  ↑ above",
+          "[141]<button> Research & Science 19  ↑ above",
+          "[142]<button> Other 9  ↑ above",
+          "[138]<button> Media & Writing 0  ↑ above",
+          "[139]<button> Nonprofit & Education 0  ↑ above",
+          "[136]<button> Business & Marketing 5  ↑ above",
+          "[137]<button> Policy & Law 1  ↑ above",
+          "[134]<button> Finance & Consulting 8  ↑ above",
+          "[135]<button> Product & Design 10  ↑ above",
+          "[132]<button> Hardware 8  ↑ above",
+          "[133]<button> Quant & Trading 1  ↑ above",
+          "[129]<button> All fields 155  ↑ above",
+          "[130]<button> Software 43  ↑ above",
+          "[131]<button> Data & AI 51  ↑ above",
+          "[94]<button> For you  ↑ above",
+          "[95]<button> Deadline soon  ↑ above",
+          "[96]<button> Newest  ↑ above",
+          "[97]<select> Location  ↑ above",
+          "[92]<button> Any work status  ↑ above",
+          "[93]<button> Int’l students OK 14  ↑ above",
+          "[24]<button> For you  ↑ above",
+          "[25]<button> Internships  ↑ above",
+          "[26]<button> Research & RA  ↑ above",
+          "[27]<button> Scholarships  ↑ above",
+          "[28]<button> Hackathons  ↑ above",
+          "[29]<button> Startups  ↑ above",
+          "[30]<button> Study abroad  ↑ above",
+          "[31]<button> Saved  ↑ above",
+          "[126]<button> 💼 User Research Intern Coinbase · Hybrid - San Francisco, CA Posted 5d ago Product & Desi  ↓ below",
+          "[50]<button> Save listing  ↓ below",
+          "[145]<button> 💼 Software Graduate Intern, Autonomous Lab Ginkgo Bioworks · Emeryville, California Rolli  ↓ below",
+          "[52]<button> Save listing  ↓ below",
+          "[146]<button> 💼 Machine Learning Research Intern (Summer 2027) Scale AI · New York, NY · San Francisco,  ↓ below",
+          "[54]<button> Save listing  ↓ below",
+          "[147]<button> 💼 Sales Development Representative, Internship Verkada · San Mateo, CA United States Post  ↓ below",
+          "[56]<button> Save listing  ↓ below",
+          "[148]<button> 💼 IT Engineer Intern (Early Careers Summer 2027) Affirm · San Francisco, California, Unit  ↓ below"
+        ],
+        "text": "Opportunities | Posted 5d ago | Hardware (×5 on screen) | Fits your major (Civil Engineering) | 💼 | Hardware Engineer (Winter Co-op) | Verkada | · San Mateo, CA United States | Rolling | Hardware | 💼 | Summer 2027 Intern - Hardware Engineering | Western Digital | · San Jose, CA, United States | Rolling | 💼 | 2027 Intern - Experience Researcher | Adobe | · San Jose | Posted 2d ago | Research & Science | Just posted | 💼 | Firmware Engineer Co-Op | Samsara | · San Francisco - SF9 | Posted 5d ago | 💼 | Embedded Software Engineering Intern 2027 | Verkada | · San Mateo, CA United States | Posted 27d ago | 💼 | Driving Foundations Research Intern | Bosch | · Sunnyvale, CA, United States | Posted 14d ago | Research & Science | Adobe | · San Jose, United States of America (+5 more) | Posted 2d ago | Just posted | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 591,
+          "max": 3020
+        },
+        "fingerprint": "602f878d8eea20150d503663ae749e7a385aa6ff",
+        "simReadSec": 5.8
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 37,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 39,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 41,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 42,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 44,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 46,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 48,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 611
+      },
+      "signals": [],
+      "frustrationAfter": 1.75
+    },
+    {
+      "index": 13,
+      "at": "2026-11-04T19:17:51.773Z",
+      "kind": "action",
+      "command": "scroll",
+      "args": {
+        "direction": "down"
+      },
+      "urlBefore": "http://localhost:34709/explore/opportunities?sub=internship&region=Bay+Area",
+      "latencyMs": 1315,
+      "actionNumber": 7,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:34709/explore/opportunities?sub=internship&region=Bay+Area",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/013-scroll.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/013-scroll-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 94,
+        "newElementIds": [
+          143
+        ],
+        "elements": [
+          "[23]<button> Back",
+          "[120]<button> 💼 Driving Foundations Research Intern Bosch · Sunnyvale, CA, United States Posted 14d ago",
+          "[119]<button> 💼 2027 Intern - Applied and Research Scientist/Engineer Adobe · San Jose, United States o",
+          "[46]<button> Save listing",
+          "[126]<button> 💼 User Research Intern Coinbase · Hybrid - San Francisco, CA Posted 5d ago Product & Desi",
+          "[48]<button> Save listing",
+          "[145]<button> 💼 Software Graduate Intern, Autonomous Lab Ginkgo Bioworks · Emeryville, California Rolli",
+          "[50]<button> Save listing",
+          "[146]<button> 💼 Machine Learning Research Intern (Summer 2027) Scale AI · New York, NY · San Francisco,",
+          "[52]<button> Save listing",
+          "[147]<button> 💼 Sales Development Representative, Internship Verkada · San Mateo, CA United States Post",
+          "[54]<button> Save listing",
+          "[148]<button> 💼 IT Engineer Intern (Early Careers Summer 2027) Affirm · San Francisco, California, Unit",
+          "[56]<button> Save listing",
+          "[14]<a> Home",
+          "[15]<a selected> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[114]<button> 💼 Embedded Software Engineering Intern 2027 Verkada · San Mateo, CA United States Posted   ↑ above",
+          "[44]<button> Save listing  ↑ above",
+          "[51]<button> 💼 Firmware Engineer Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware  ↑ above",
+          "[42]<button> Save listing  ↑ above",
+          "[144]<button> 💼 2027 Intern - Experience Researcher Adobe · San Jose Posted 2d ago Research & Science J  ↑ above",
+          "[41]<button> Save listing  ↑ above",
+          "[61]<button> 💼 Summer 2027 Intern - Hardware Engineering Western Digital · San Jose, CA, United States  ↑ above",
+          "[39]<button> Save listing  ↑ above",
+          "[53]<button> 💼 Hardware Engineer (Winter Co-op) Verkada · San Mateo, CA United States Rolling Hardware  ↑ above",
+          "[37]<button> Save listing  ↑ above",
+          "[143]<button> 💼 Electrical Engineering Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware Fits   ↑ above",
+          "[35]<button> Save listing  ↑ above",
+          "[32]<button> 💼 Robotics Research Intern Bosch · Sunnyvale, CA, United States Posted 23d ago Hardware F  ↑ above",
+          "[33]<button> Save listing  ↑ above",
+          "[140]<button> Health 0  ↑ above",
+          "[141]<button> Research & Science 19  ↑ above",
+          "[142]<button> Other 9  ↑ above",
+          "[138]<button> Media & Writing 0  ↑ above",
+          "[139]<button> Nonprofit & Education 0  ↑ above",
+          "[150]<button> 💼 [Summer 2027] Software Engineer Intern Roblox · San Mateo, CA, United States New today   ↓ below",
+          "[58]<button> Save listing  ↓ below",
+          "[136]<button> Business & Marketing 5  ↑ above",
+          "[137]<button> Policy & Law 1  ↑ above",
+          "[134]<button> Finance & Consulting 8  ↑ above",
+          "[135]<button> Product & Design 10  ↑ above",
+          "[132]<button> Hardware 8  ↑ above",
+          "[133]<button> Quant & Trading 1  ↑ above",
+          "[129]<button> All fields 155  ↑ above",
+          "[130]<button> Software 43  ↑ above",
+          "[131]<button> Data & AI 51  ↑ above",
+          "[151]<button> 💼 2027 Summer Intern, BS/MS, Software Engineering, Commercialization Waymo · Mountain Vie  ↓ below",
+          "[60]<button> Save listing  ↓ below",
+          "[94]<button> For you  ↑ above",
+          "[95]<button> Deadline soon  ↑ above",
+          "[96]<button> Newest  ↑ above",
+          "[97]<select> Location  ↑ above",
+          "[92]<button> Any work status  ↑ above",
+          "[93]<button> Int’l students OK 14  ↑ above",
+          "[24]<button> For you  ↑ above",
+          "[25]<button> Internships  ↑ above"
+        ],
+        "text": "Opportunities | Driving Foundations Research Intern | Bosch | · Sunnyvale, CA, United States | Posted 14d ago | Research & Science (×3 on screen) | 💼 | 2027 Intern - Applied and Research Scientist/Engineer | Adobe | · San Jose, United States of America (+5 more) | Posted 2d ago | Research & Science | Just posted | 💼 | User Research Intern | Coinbase | · Hybrid - San Francisco, CA | Posted 5d ago | Product & Design | 💼 | Software Graduate Intern, Autonomous Lab | Ginkgo Bioworks | · Emeryville, California | Rolling | 💼 | Machine Learning Research Intern (Summer 2027) | Scale AI | · New York, NY · San Francisco, CA | Posted 13d ago | Data & AI | 💼 | Sales Development Representative, Internship | Verkada | · San Mateo, CA United States | Posted 1d ago | Business & Marketing | No visa sponsorship | 💼 | IT Engineer Intern (Early Careers Summer 2027) | New today | Software | 💼 | Software Intern, Autonomous Lab | Ginkgo Bioworks | · Emeryville, California | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 1182,
+          "max": 3020
+        },
+        "fingerprint": "23a7c613b45555533454f172acc0c0d55e6d2259",
+        "simReadSec": 11.3
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 46,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 48,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 50,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 52,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 54,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 56,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 611
+      },
+      "signals": [],
+      "frustrationAfter": 1.75
+    },
+    {
+      "index": 14,
+      "at": "2026-11-04T19:17:57.901Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "feeling": "neutral",
+        "thought": "It's all software, hardware, research. Nothing civil — no construction, no transportation, no city/public works. There isn't even a civil or engineering field chip. Emeryville is right by me though.",
+        "friction": "content_gap",
+        "severity": "2",
+        "wish": "A civil/structural/transportation category, or local firms and public agencies"
+      },
+      "about": 13,
+      "feeling": "neutral",
+      "thought": "It's all software, hardware, research. Nothing civil — no construction, no transportation, no city/public works. There isn't even a civil or engineering field chip. Emeryville is right by me though.",
+      "urlAfter": "http://localhost:34709/explore/opportunities?sub=internship&region=Bay+Area",
+      "route": "/explore/opportunities",
+      "frictionId": "f2"
+    },
+    {
+      "index": 15,
+      "at": "2026-11-04T19:17:58.038Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 145,
+        "expect": "details page: pay, dates, and an Apply link",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:34709/explore/opportunities?sub=internship&region=Bay+Area",
+      "target": {
+        "id": 145,
+        "tag": "button",
+        "role": "button",
+        "name": "💼 Software Graduate Intern, Autonomous Lab Ginkgo Bioworks · Emeryville, California Rolli",
+        "box": {
+          "x": 16,
+          "y": 348,
+          "w": 306,
+          "h": 87
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "details page: pay, dates, and an Apply link",
+        "confidence": 0.7
+      },
+      "latencyMs": 864,
+      "tapPoint": {
+        "x": 169,
+        "y": 391.8,
+        "centre": true
+      },
+      "actionNumber": 8,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:34709/opportunities/op_ext_job_greenhouse_ginkgobioworks_5033171007",
+      "route": "/opportunities/:id",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/015-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/015-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 11,
+        "newElementIds": [
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174
+        ],
+        "elements": [
+          "[23]<button> Back",
+          "[166]<button> More",
+          "[168]<button> Start a prep crew e.g. Interview prep · Thu 7pm — people who saved this can join",
+          "[169]<button> Details",
+          "[170]<button> People 0",
+          "[171]<button> Q&A 0",
+          "[172]<a> Official source Ginkgo Bioworks careers Last verified Wed, Nov 4 View posting",
+          "[173]<button> Interested",
+          "[174]<button> Apply on Ginkgo Bioworks",
+          "[20]<button> Switch to the classic design",
+          "[167]<button> Ginkgo Bioworks  ↑ above"
+        ],
+        "text": "Start one | Start a prep crew | e.g. Interview prep · Thu 7pm — people who saved this can join | Details | People 0 | Q&A 0 | Location | Emeryville, California | 🧭 | Field | Research & Science | 🛂 | International students | Not stated in the posting — check before applying | Deadline | Not posted — companies usually close once roles fill. Rolling. | 👤 | Who it’s for | See the posting for class year, major and work authorization | Official source | Ginkgo Bioworks careers | Last verified Wed, Nov 4 | View posting | # | internship | # | Ginkgo Bioworks | Apply on Ginkgo Bioworks | Design: | Classic | New",
+        "scroll": {
+          "top": 423,
+          "max": 423
+        },
+        "fingerprint": "c44e962e8de243b40d739f3cd02f68fc2658af72",
+        "simReadSec": 9.9
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 166,
+            "name": "More",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 169,
+            "name": "Details",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 170,
+            "name": "People 0",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 171,
+            "name": "Q&A 0",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 611
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 1.75,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "Details page opened scrolled to the bottom: location Emeryville, rolling deadline, 'Last verified Nov 4', big 'Apply on Ginkgo Bioworks' button. No pay listed; job title scrolled off the top.",
+        "feeling": "neutral",
+        "note": "Good — verified today and a clear Apply button. But is it paid? Says nothing about pay. Let me peek at the top."
+      }
+    },
+    {
+      "index": 16,
+      "at": "2026-11-04T19:18:07.510Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "Details page opened scrolled to the bottom: location Emeryville, rolling deadline, 'Last verified Nov 4', big 'Apply on Ginkgo Bioworks' button. No pay listed; job title scrolled off the top.",
+        "feeling": "neutral",
+        "thought": "Good — verified today and a clear Apply button. But is it paid? Says nothing about pay. Let me peek at the top."
+      },
+      "about": 15,
+      "feeling": "neutral",
+      "thought": "Good — verified today and a clear Apply button. But is it paid? Says nothing about pay. Let me peek at the top.",
+      "urlAfter": "http://localhost:34709/opportunities/op_ext_job_greenhouse_ginkgobioworks_5033171007",
+      "route": "/opportunities/:id"
+    },
+    {
+      "index": 17,
+      "at": "2026-11-04T19:18:07.651Z",
+      "kind": "action",
+      "command": "scroll",
+      "args": {
+        "direction": "up"
+      },
+      "urlBefore": "http://localhost:34709/opportunities/op_ext_job_greenhouse_ginkgobioworks_5033171007",
+      "latencyMs": 1324,
+      "actionNumber": 9,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:34709/opportunities/op_ext_job_greenhouse_ginkgobioworks_5033171007",
+      "route": "/opportunities/:id",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/017-scroll.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/017-scroll-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 12,
+        "newElementIds": [
+          175
+        ],
+        "elements": [
+          "[23]<button> Back",
+          "[166]<button> More",
+          "[167]<button> Ginkgo Bioworks",
+          "[175]<button> Start one",
+          "[168]<button> Start a prep crew e.g. Interview prep · Thu 7pm — people who saved this can join",
+          "[169]<button> Details",
+          "[170]<button> People 0",
+          "[171]<button> Q&A 0",
+          "[173]<button> Interested",
+          "[174]<button> Apply on Ginkgo Bioworks",
+          "[20]<button> Switch to the classic design",
+          "[172]<a> Official source Ginkgo Bioworks careers Last verified Wed, Nov 4 View posting  ↓ below"
+        ],
+        "text": "💼 | Internships | Official | Software Graduate Intern, Autonomous Lab | Ginkgo Bioworks | Do it with people | Nobody has saved this yet. Save it and classmates who do will show up here. | Prep crews | Start one | Start a prep crew | e.g. Interview prep · Thu 7pm — people who saved this can join | Details | People 0 | Q&A 0 | Location | Emeryville, California | 🧭 | Field | Research & Science | International students | Apply on Ginkgo Bioworks | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 423
+        },
+        "fingerprint": "7e9d5f661f618dd4afe73c9ab370469a55eb541e",
+        "simReadSec": 3.4
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 166,
+            "name": "More",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 167,
+            "name": "Ginkgo Bioworks",
+            "w": 103,
+            "h": 20
+          },
+          {
+            "id": 175,
+            "name": "Start one",
+            "w": 70,
+            "h": 18
+          },
+          {
+            "id": 169,
+            "name": "Details",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 170,
+            "name": "People 0",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 171,
+            "name": "Q&A 0",
+            "w": 114,
+            "h": 36
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 611
+      },
+      "signals": [],
+      "frustrationAfter": 2.25
+    },
+    {
+      "index": 18,
+      "at": "2026-11-04T19:18:25.005Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "feeling": "neutral",
+        "thought": "Wait, 'Software Graduate Intern' — that's probably for grad students, I'm an undergrad. And still no pay anywhere. There was a plain 'Software Intern' from the same lab right below it, I'll check that one.",
+        "friction": "content_gap",
+        "severity": "2",
+        "element": "169",
+        "wish": "Show pay/paid vs unpaid and who's eligible (undergrad/grad) on the card"
+      },
+      "about": 17,
+      "feeling": "neutral",
+      "thought": "Wait, 'Software Graduate Intern' — that's probably for grad students, I'm an undergrad. And still no pay anywhere. There was a plain 'Software Intern' from the same lab right below it, I'll check that one.",
+      "urlAfter": "http://localhost:34709/opportunities/op_ext_job_greenhouse_ginkgobioworks_5033171007",
+      "route": "/opportunities/:id",
+      "frictionId": "f3"
+    },
+    {
+      "index": 19,
+      "at": "2026-11-04T19:18:25.150Z",
+      "kind": "action",
+      "command": "back",
+      "args": {
+        "expect": "back to the Bay Area internship list where I was",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:34709/opportunities/op_ext_job_greenhouse_ginkgobioworks_5033171007",
+      "intent": {
+        "expectedOutcome": "back to the Bay Area internship list where I was",
+        "confidence": 0.7
+      },
+      "latencyMs": 1155,
+      "actionNumber": 10,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:34709/explore/opportunities?sub=internship&region=Bay+Area",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/019-back.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/019-back-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 96,
+        "newElementIds": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          32,
+          33,
+          143,
+          35,
+          53,
+          37,
+          39,
+          144,
+          41,
+          51,
+          42,
+          114,
+          44,
+          120,
+          46,
+          119,
+          48,
+          126,
+          50,
+          145,
+          52,
+          146,
+          54,
+          147,
+          56,
+          148,
+          58,
+          149,
+          60,
+          150,
+          62,
+          151,
+          64,
+          152,
+          66,
+          153,
+          68,
+          154,
+          70,
+          155,
+          72,
+          156,
+          74,
+          157,
+          76,
+          158,
+          78,
+          159,
+          80,
+          160,
+          82,
+          161,
+          84,
+          162,
+          86,
+          163,
+          88,
+          164,
+          90,
+          165,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "elements": [
+          "[23]<button> Back",
+          "[24]<button> For you",
+          "[25]<button> Internships",
+          "[26]<button> Research & RA",
+          "[27]<button> Scholarships",
+          "[92]<button> Any work status",
+          "[93]<button> Int’l students OK 14",
+          "[94]<button> For you",
+          "[95]<button> Deadline soon",
+          "[96]<button> Newest",
+          "[97]<select> Location",
+          "[129]<button> All fields 155",
+          "[130]<button> Software 43",
+          "[131]<button> Data & AI 51",
+          "[132]<button> Hardware 8",
+          "[133]<button> Quant & Trading 1",
+          "[134]<button> Finance & Consulting 8",
+          "[135]<button> Product & Design 10",
+          "[136]<button> Business & Marketing 5",
+          "[137]<button> Policy & Law 1",
+          "[138]<button> Media & Writing 0",
+          "[139]<button> Nonprofit & Education 0",
+          "[140]<button> Health 0",
+          "[141]<button> Research & Science 19",
+          "[142]<button> Other 9",
+          "[32]<button> 💼 Robotics Research Intern Bosch · Sunnyvale, CA, United States Posted 23d ago Hardware F",
+          "[33]<button> Save listing",
+          "[143]<button> 💼 Electrical Engineering Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware Fits ",
+          "[35]<button> Save listing",
+          "[53]<button> 💼 Hardware Engineer (Winter Co-op) Verkada · San Mateo, CA United States Rolling Hardware",
+          "[37]<button> Save listing",
+          "[39]<button> Save listing",
+          "[14]<a> Home",
+          "[15]<a selected> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[28]<button> Hackathons  (off screen)",
+          "[29]<button> Startups  (off screen)",
+          "[30]<button> Study abroad  (off screen)",
+          "[31]<button> Saved  (off screen)",
+          "[144]<button> 💼 2027 Intern - Experience Researcher Adobe · San Jose Posted 2d ago Research & Science J  ↓ below",
+          "[41]<button> Save listing  ↓ below",
+          "[51]<button> 💼 Firmware Engineer Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware  ↓ below",
+          "[42]<button> Save listing  ↓ below",
+          "[114]<button> 💼 Embedded Software Engineering Intern 2027 Verkada · San Mateo, CA United States Posted   ↓ below",
+          "[44]<button> Save listing  ↓ below",
+          "[120]<button> 💼 Driving Foundations Research Intern Bosch · Sunnyvale, CA, United States Posted 14d ago  ↓ below",
+          "[46]<button> Save listing  ↓ below",
+          "[119]<button> 💼 2027 Intern - Applied and Research Scientist/Engineer Adobe · San Jose, United States o  ↓ below",
+          "[48]<button> Save listing  ↓ below",
+          "[126]<button> 💼 User Research Intern Coinbase · Hybrid - San Francisco, CA Posted 5d ago Product & Desi  ↓ below",
+          "[50]<button> Save listing  ↓ below",
+          "[145]<button> 💼 Software Graduate Intern, Autonomous Lab Ginkgo Bioworks · Emeryville, California Rolli  ↓ below",
+          "[52]<button> Save listing  ↓ below",
+          "[146]<button> 💼 Machine Learning Research Intern (Summer 2027) Scale AI · New York, NY · San Francisco,  ↓ below",
+          "[54]<button> Save listing  ↓ below",
+          "[147]<button> 💼 Sales Development Representative, Internship Verkada · San Mateo, CA United States Post  ↓ below",
+          "[56]<button> Save listing  ↓ below",
+          "[148]<button> 💼 IT Engineer Intern (Early Careers Summer 2027) Affirm · San Francisco, California, Unit  ↓ below",
+          "[58]<button> Save listing  ↓ below",
+          "[149]<button> 💼 Software Intern, Autonomous Lab Ginkgo Bioworks · Emeryville, California Rolling Resear  ↓ below",
+          "[60]<button> Save listing  ↓ below",
+          "[150]<button> 💼 [Summer 2027] Software Engineer Intern Roblox · San Mateo, CA, United States New today   ↓ below",
+          "[62]<button> Save listing  ↓ below",
+          "[151]<button> 💼 2027 Summer Intern, BS/MS, Software Engineering, Commercialization Waymo · Mountain Vie  ↓ below",
+          "[64]<button> Save listing  ↓ below",
+          "[152]<button> 💼 Software Engineer Intern (Summer 2027) Affirm · San Francisco, California, United State  ↓ below",
+          "[66]<button> Save listing  ↓ below",
+          "[153]<button> 💼 SW Engineer Intern, AI Engineering Roku · San Jose, California Posted 1d ago Data & AI  ↓ below",
+          "[68]<button> Save listing  ↓ below",
+          "[154]<button> 💼 2027 Intern - Software Engineer Adobe · San Jose, United States of America (+6 more) Po  ↓ below",
+          "[70]<button> Save listing  ↓ below",
+          "[155]<button> 💼 Finance Intern - Undergrad Summer 2027 ServiceNow · Santa Clara, CALIFORNIA, United Sta  ↓ below",
+          "[72]<button> Save listing  ↓ below",
+          "[156]<button> 💼 Software Engineer (Machine Learning) Intern (Summer 2027) Affirm · San Francisco, Calif  ↓ below",
+          "[74]<button> Save listing  ↓ below"
+        ],
+        "text": "Opportunities | For you | Internships | Research & RA | Scholarships | Any work status | Int’l students OK 14 | For you | Deadline soon | Newest | All fields | 155 | Software | 43 | Data & AI | 51 | Hardware (×5 on screen) | 8 | Quant & Trading | 1 | Finance & Consulting | 8 | Product & Design | 10 | Business & Marketing | 5 | Policy & Law | 1 | Media & Writing | 0 | Nonprofit & Education | 0 | Health | 0 | Research & Science | 19 | Other | 9 | 155 listings | 💼 | Robotics Research Intern | Bosch | · Sunnyvale, CA, United States | Posted 23d ago | Hardware | Fits your major (Civil Engineering) | 💼 | Electrical Engineering Co-Op | Samsara | · San Francisco - SF9 | Posted 5d ago | Fits your major (Civil Engineering) | 💼 | Hardware Engineer (Winter Co-op) | Verkada | · San Mateo, CA United States | Rolling | 💼 | Summer 2027 Intern - Hardware Engineering | Western Digital | · San Jose, CA, United States | Rolling | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 3020
+        },
+        "fingerprint": "ee3deccb401c29bcf4ab5bf4d1f7043d2b7a8757",
+        "simReadSec": 16.4
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 24,
+            "name": "For you",
+            "w": 76,
+            "h": 36
+          },
+          {
+            "id": 25,
+            "name": "Internships",
+            "w": 99,
+            "h": 36
+          },
+          {
+            "id": 26,
+            "name": "Research & RA",
+            "w": 121,
+            "h": 36
+          },
+          {
+            "id": 27,
+            "name": "Scholarships",
+            "w": 110,
+            "h": 36
+          },
+          {
+            "id": 92,
+            "name": "Any work status",
+            "w": 115,
+            "h": 28
+          },
+          {
+            "id": 93,
+            "name": "Int’l students OK 14",
+            "w": 133,
+            "h": 28
+          },
+          {
+            "id": 94,
+            "name": "For you",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 95,
+            "name": "Deadline soon",
+            "w": 104,
+            "h": 28
+          },
+          {
+            "id": 96,
+            "name": "Newest",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 97,
+            "name": "Location",
+            "w": 138,
+            "h": 32
+          },
+          {
+            "id": 129,
+            "name": "All fields 155",
+            "w": 94,
+            "h": 28
+          },
+          {
+            "id": 130,
+            "name": "Software 43",
+            "w": 93,
+            "h": 28
+          },
+          {
+            "id": 131,
+            "name": "Data & AI 51",
+            "w": 91,
+            "h": 28
+          },
+          {
+            "id": 132,
+            "name": "Hardware 8",
+            "w": 89,
+            "h": 28
+          },
+          {
+            "id": 133,
+            "name": "Quant & Trading 1",
+            "w": 123,
+            "h": 28
+          },
+          {
+            "id": 134,
+            "name": "Finance & Consulting 8",
+            "w": 155,
+            "h": 28
+          },
+          {
+            "id": 135,
+            "name": "Product & Design 10",
+            "w": 138,
+            "h": 28
+          },
+          {
+            "id": 136,
+            "name": "Business & Marketing 5",
+            "w": 157,
+            "h": 28
+          },
+          {
+            "id": 137,
+            "name": "Policy & Law 1",
+            "w": 103,
+            "h": 28
+          },
+          {
+            "id": 138,
+            "name": "Media & Writing 0",
+            "w": 124,
+            "h": 28
+          },
+          {
+            "id": 139,
+            "name": "Nonprofit & Education 0",
+            "w": 160,
+            "h": 28
+          },
+          {
+            "id": 140,
+            "name": "Health 0",
+            "w": 71,
+            "h": 28
+          },
+          {
+            "id": 141,
+            "name": "Research & Science 19",
+            "w": 152,
+            "h": 28
+          },
+          {
+            "id": 142,
+            "name": "Other 9",
+            "w": 66,
+            "h": 28
+          },
+          {
+            "id": 33,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 35,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 37,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 39,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 611
+      },
+      "signals": [
+        {
+          "type": "backtrack",
+          "weight": 0.5,
+          "detail": "went back to /explore/opportunities"
+        }
+      ],
+      "frustrationAfter": 2.75,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Back kept the Bay Area filter (155) but jumped to the top of the list, not where I was scrolled.",
+        "feeling": "neutral",
+        "note": "At least the filter stuck. I'd have to scroll again to find that other Ginkgo one. I'm out of time between classes — I know how to apply now, I'll do it from the Ginkgo site tonight."
+      }
+    },
+    {
+      "index": 20,
+      "at": "2026-11-04T19:18:35.740Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Back kept the Bay Area filter (155) but jumped to the top of the list, not where I was scrolled.",
+        "feeling": "neutral",
+        "thought": "At least the filter stuck. I'd have to scroll again to find that other Ginkgo one. I'm out of time between classes — I know how to apply now, I'll do it from the Ginkgo site tonight."
+      },
+      "about": 19,
+      "feeling": "neutral",
+      "thought": "At least the filter stuck. I'd have to scroll again to find that other Ginkgo one. I'm out of time between classes — I know how to apply now, I'll do it from the Ginkgo site tonight.",
+      "urlAfter": "http://localhost:34709/explore/opportunities?sub=internship&region=Bay+Area",
+      "route": "/explore/opportunities"
+    },
+    {
+      "index": 21,
+      "at": "2026-11-04T19:18:35.902Z",
+      "kind": "finish",
+      "command": "finish",
+      "args": {
+        "outcome": "success",
+        "reason": "Filtered internships to the Bay Area and opened a Ginkgo Bioworks internship in Emeryville, verified today, with a clear Apply button. I couldn't tell if it's paid or if undergrads qualify, so I'll check on their site.",
+        "dropoff": "medium",
+        "dropoff-why": "The Bay Area filter and the Apply button saved me time, but nothing was civil engineering, pay was never shown and 'fits your major' was wrong, so I'm not sure it's for someone like me.",
+        "dropoff-basis": "4,10,14,18"
+      },
+      "urlBefore": "http://localhost:34709/explore/opportunities?sub=internship&region=Bay+Area",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:34709/explore/opportunities?sub=internship&region=Bay+Area",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/021-finish.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/021-finish-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 96,
+        "newElementIds": [],
+        "elements": [
+          "[23]<button> Back",
+          "[24]<button> For you",
+          "[25]<button> Internships",
+          "[26]<button> Research & RA",
+          "[27]<button> Scholarships",
+          "[92]<button> Any work status",
+          "[93]<button> Int’l students OK 14",
+          "[94]<button> For you",
+          "[95]<button> Deadline soon",
+          "[96]<button> Newest",
+          "[97]<select> Location",
+          "[129]<button> All fields 155",
+          "[130]<button> Software 43",
+          "[131]<button> Data & AI 51",
+          "[132]<button> Hardware 8",
+          "[133]<button> Quant & Trading 1",
+          "[134]<button> Finance & Consulting 8",
+          "[135]<button> Product & Design 10",
+          "[136]<button> Business & Marketing 5",
+          "[137]<button> Policy & Law 1",
+          "[138]<button> Media & Writing 0",
+          "[139]<button> Nonprofit & Education 0",
+          "[140]<button> Health 0",
+          "[141]<button> Research & Science 19",
+          "[142]<button> Other 9",
+          "[32]<button> 💼 Robotics Research Intern Bosch · Sunnyvale, CA, United States Posted 23d ago Hardware F",
+          "[33]<button> Save listing",
+          "[143]<button> 💼 Electrical Engineering Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware Fits ",
+          "[35]<button> Save listing",
+          "[53]<button> 💼 Hardware Engineer (Winter Co-op) Verkada · San Mateo, CA United States Rolling Hardware",
+          "[37]<button> Save listing",
+          "[39]<button> Save listing",
+          "[14]<a> Home",
+          "[15]<a selected> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[28]<button> Hackathons  (off screen)",
+          "[29]<button> Startups  (off screen)",
+          "[30]<button> Study abroad  (off screen)",
+          "[31]<button> Saved  (off screen)",
+          "[144]<button> 💼 2027 Intern - Experience Researcher Adobe · San Jose Posted 2d ago Research & Science J  ↓ below",
+          "[41]<button> Save listing  ↓ below",
+          "[51]<button> 💼 Firmware Engineer Co-Op Samsara · San Francisco - SF9 Posted 5d ago Hardware  ↓ below",
+          "[42]<button> Save listing  ↓ below",
+          "[114]<button> 💼 Embedded Software Engineering Intern 2027 Verkada · San Mateo, CA United States Posted   ↓ below",
+          "[44]<button> Save listing  ↓ below",
+          "[120]<button> 💼 Driving Foundations Research Intern Bosch · Sunnyvale, CA, United States Posted 14d ago  ↓ below",
+          "[46]<button> Save listing  ↓ below",
+          "[119]<button> 💼 2027 Intern - Applied and Research Scientist/Engineer Adobe · San Jose, United States o  ↓ below",
+          "[48]<button> Save listing  ↓ below",
+          "[126]<button> 💼 User Research Intern Coinbase · Hybrid - San Francisco, CA Posted 5d ago Product & Desi  ↓ below",
+          "[50]<button> Save listing  ↓ below",
+          "[145]<button> 💼 Software Graduate Intern, Autonomous Lab Ginkgo Bioworks · Emeryville, California Rolli  ↓ below",
+          "[52]<button> Save listing  ↓ below",
+          "[146]<button> 💼 Machine Learning Research Intern (Summer 2027) Scale AI · New York, NY · San Francisco,  ↓ below",
+          "[54]<button> Save listing  ↓ below",
+          "[147]<button> 💼 Sales Development Representative, Internship Verkada · San Mateo, CA United States Post  ↓ below",
+          "[56]<button> Save listing  ↓ below",
+          "[148]<button> 💼 IT Engineer Intern (Early Careers Summer 2027) Affirm · San Francisco, California, Unit  ↓ below",
+          "[58]<button> Save listing  ↓ below",
+          "[149]<button> 💼 Software Intern, Autonomous Lab Ginkgo Bioworks · Emeryville, California Rolling Resear  ↓ below",
+          "[60]<button> Save listing  ↓ below",
+          "[150]<button> 💼 [Summer 2027] Software Engineer Intern Roblox · San Mateo, CA, United States New today   ↓ below",
+          "[62]<button> Save listing  ↓ below",
+          "[151]<button> 💼 2027 Summer Intern, BS/MS, Software Engineering, Commercialization Waymo · Mountain Vie  ↓ below",
+          "[64]<button> Save listing  ↓ below",
+          "[152]<button> 💼 Software Engineer Intern (Summer 2027) Affirm · San Francisco, California, United State  ↓ below",
+          "[66]<button> Save listing  ↓ below",
+          "[153]<button> 💼 SW Engineer Intern, AI Engineering Roku · San Jose, California Posted 1d ago Data & AI  ↓ below",
+          "[68]<button> Save listing  ↓ below",
+          "[154]<button> 💼 2027 Intern - Software Engineer Adobe · San Jose, United States of America (+6 more) Po  ↓ below",
+          "[70]<button> Save listing  ↓ below",
+          "[155]<button> 💼 Finance Intern - Undergrad Summer 2027 ServiceNow · Santa Clara, CALIFORNIA, United Sta  ↓ below",
+          "[72]<button> Save listing  ↓ below",
+          "[156]<button> 💼 Software Engineer (Machine Learning) Intern (Summer 2027) Affirm · San Francisco, Calif  ↓ below",
+          "[74]<button> Save listing  ↓ below"
+        ],
+        "text": "Opportunities | For you | Internships | Research & RA | Scholarships | Any work status | Int’l students OK 14 | For you | Deadline soon | Newest | All fields | 155 | Software | 43 | Data & AI | 51 | Hardware (×5 on screen) | 8 | Quant & Trading | 1 | Finance & Consulting | 8 | Product & Design | 10 | Business & Marketing | 5 | Policy & Law | 1 | Media & Writing | 0 | Nonprofit & Education | 0 | Health | 0 | Research & Science | 19 | Other | 9 | 155 listings | 💼 | Robotics Research Intern | Bosch | · Sunnyvale, CA, United States | Posted 23d ago | Hardware | Fits your major (Civil Engineering) | 💼 | Electrical Engineering Co-Op | Samsara | · San Francisco - SF9 | Posted 5d ago | Fits your major (Civil Engineering) | 💼 | Hardware Engineer (Winter Co-op) | Verkada | · San Mateo, CA United States | Rolling | 💼 | Summer 2027 Intern - Hardware Engineering | Western Digital | · San Jose, CA, United States | Rolling | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 3020
+        },
+        "fingerprint": "ee3deccb401c29bcf4ab5bf4d1f7043d2b7a8757",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 23,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 24,
+            "name": "For you",
+            "w": 76,
+            "h": 36
+          },
+          {
+            "id": 25,
+            "name": "Internships",
+            "w": 99,
+            "h": 36
+          },
+          {
+            "id": 26,
+            "name": "Research & RA",
+            "w": 121,
+            "h": 36
+          },
+          {
+            "id": 27,
+            "name": "Scholarships",
+            "w": 110,
+            "h": 36
+          },
+          {
+            "id": 92,
+            "name": "Any work status",
+            "w": 115,
+            "h": 28
+          },
+          {
+            "id": 93,
+            "name": "Int’l students OK 14",
+            "w": 133,
+            "h": 28
+          },
+          {
+            "id": 94,
+            "name": "For you",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 95,
+            "name": "Deadline soon",
+            "w": 104,
+            "h": 28
+          },
+          {
+            "id": 96,
+            "name": "Newest",
+            "w": 65,
+            "h": 28
+          },
+          {
+            "id": 97,
+            "name": "Location",
+            "w": 138,
+            "h": 32
+          },
+          {
+            "id": 129,
+            "name": "All fields 155",
+            "w": 94,
+            "h": 28
+          },
+          {
+            "id": 130,
+            "name": "Software 43",
+            "w": 93,
+            "h": 28
+          },
+          {
+            "id": 131,
+            "name": "Data & AI 51",
+            "w": 91,
+            "h": 28
+          },
+          {
+            "id": 132,
+            "name": "Hardware 8",
+            "w": 89,
+            "h": 28
+          },
+          {
+            "id": 133,
+            "name": "Quant & Trading 1",
+            "w": 123,
+            "h": 28
+          },
+          {
+            "id": 134,
+            "name": "Finance & Consulting 8",
+            "w": 155,
+            "h": 28
+          },
+          {
+            "id": 135,
+            "name": "Product & Design 10",
+            "w": 138,
+            "h": 28
+          },
+          {
+            "id": 136,
+            "name": "Business & Marketing 5",
+            "w": 157,
+            "h": 28
+          },
+          {
+            "id": 137,
+            "name": "Policy & Law 1",
+            "w": 103,
+            "h": 28
+          },
+          {
+            "id": 138,
+            "name": "Media & Writing 0",
+            "w": 124,
+            "h": 28
+          },
+          {
+            "id": 139,
+            "name": "Nonprofit & Education 0",
+            "w": 160,
+            "h": 28
+          },
+          {
+            "id": 140,
+            "name": "Health 0",
+            "w": 71,
+            "h": 28
+          },
+          {
+            "id": 141,
+            "name": "Research & Science 19",
+            "w": 152,
+            "h": 28
+          },
+          {
+            "id": 142,
+            "name": "Other 9",
+            "w": 66,
+            "h": 28
+          },
+          {
+            "id": 33,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 35,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 37,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 39,
+            "name": "Save listing",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 611
+      }
+    }
+  ],
+  "frictionEvents": [
+    {
+      "id": "f1",
+      "step": 2,
+      "noteStep": 4,
+      "type": "ux_confusion",
+      "severity": 2,
+      "feeling": "frustrated",
+      "quote": "Says 'Fits your major (Civil Engineering)' on Electrical Engineer and Robotics interns. That's not civil. Makes me trust the 'For you' less.",
+      "url": "/explore/opportunities",
+      "route": "/explore/opportunities",
+      "element": {
+        "id": 34,
+        "role": "button",
+        "name": "💼 2027 Electrical Engineer Intern Anduril · Atlanta, Georgia, United States · Boston, Mas"
+      },
+      "key": null,
+      "wish": "Only say it fits my major when it actually matches civil engineering",
+      "evidence": [
+        "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/002-observe.jpg",
+        "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/002-observe-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f2",
+      "step": 13,
+      "noteStep": 14,
+      "type": "content_gap",
+      "severity": 2,
+      "feeling": "neutral",
+      "quote": "It's all software, hardware, research. Nothing civil — no construction, no transportation, no city/public works. There isn't even a civil or engineering field chip. Emeryville is right by me though.",
+      "url": "/explore/opportunities?sub=internship&region=Bay+Area",
+      "route": "/explore/opportunities",
+      "element": null,
+      "key": null,
+      "wish": "A civil/structural/transportation category, or local firms and public agencies",
+      "evidence": [
+        "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/013-scroll.jpg",
+        "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/013-scroll-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f3",
+      "step": 17,
+      "noteStep": 18,
+      "type": "content_gap",
+      "severity": 2,
+      "feeling": "neutral",
+      "quote": "Wait, 'Software Graduate Intern' — that's probably for grad students, I'm an undergrad. And still no pay anywhere. There was a plain 'Software Intern' from the same lab right below it, I'll check that one.",
+      "url": "/opportunities/op_ext_job_greenhouse_ginkgobioworks_5033171007",
+      "route": "/opportunities/:id",
+      "element": {
+        "id": 169,
+        "role": "button",
+        "name": "Details"
+      },
+      "key": null,
+      "wish": "Show pay/paid vs unpaid and who's eligible (undergrad/grad) on the card",
+      "evidence": [
+        "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/017-scroll.jpg",
+        "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/017-scroll-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    }
+  ],
+  "autoChecks": [
+    {
+      "step": 0,
+      "route": "/",
+      "smallTapTargets": 5,
+      "smallTapTargetExamples": [
+        {
+          "id": 7,
+          "name": "See all",
+          "w": 62,
+          "h": 21
+        },
+        {
+          "id": 10,
+          "name": "Save",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 13,
+          "name": "Save",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 19,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/000-start.jpg"
+    },
+    {
+      "step": 1,
+      "route": "/explore/opportunities",
+      "smallTapTargets": 3,
+      "smallTapTargetExamples": [
+        {
+          "id": 7,
+          "name": "See all",
+          "w": 62,
+          "h": 21
+        },
+        {
+          "id": 19,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/001-click.jpg"
+    },
+    {
+      "step": 2,
+      "route": "/explore/opportunities",
+      "smallTapTargets": 13,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 24,
+          "name": "For you",
+          "w": 76,
+          "h": 36
+        },
+        {
+          "id": 25,
+          "name": "Internships",
+          "w": 99,
+          "h": 36
+        },
+        {
+          "id": 26,
+          "name": "Research & RA",
+          "w": 121,
+          "h": 36
+        },
+        {
+          "id": 27,
+          "name": "Scholarships",
+          "w": 110,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/002-observe.jpg"
+    },
+    {
+      "step": 5,
+      "route": "/explore/opportunities",
+      "smallTapTargets": 30,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 24,
+          "name": "For you",
+          "w": 76,
+          "h": 36
+        },
+        {
+          "id": 25,
+          "name": "Internships",
+          "w": 99,
+          "h": 36
+        },
+        {
+          "id": 26,
+          "name": "Research & RA",
+          "w": 121,
+          "h": 36
+        },
+        {
+          "id": 27,
+          "name": "Scholarships",
+          "w": 110,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/005-click.jpg"
+    },
+    {
+      "step": 7,
+      "route": "/explore/opportunities",
+      "smallTapTargets": 30,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 24,
+          "name": "For you",
+          "w": 76,
+          "h": 36
+        },
+        {
+          "id": 25,
+          "name": "Internships",
+          "w": 99,
+          "h": 36
+        },
+        {
+          "id": 26,
+          "name": "Research & RA",
+          "w": 121,
+          "h": 36
+        },
+        {
+          "id": 27,
+          "name": "Scholarships",
+          "w": 110,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/007-select.jpg"
+    },
+    {
+      "step": 8,
+      "route": "/explore/opportunities",
+      "smallTapTargets": 30,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 24,
+          "name": "For you",
+          "w": 76,
+          "h": 36
+        },
+        {
+          "id": 25,
+          "name": "Internships",
+          "w": 99,
+          "h": 36
+        },
+        {
+          "id": 26,
+          "name": "Research & RA",
+          "w": 121,
+          "h": 36
+        },
+        {
+          "id": 27,
+          "name": "Scholarships",
+          "w": 110,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/008-click.jpg"
+    },
+    {
+      "step": 10,
+      "route": "/explore/opportunities",
+      "smallTapTargets": 31,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 24,
+          "name": "For you",
+          "w": 76,
+          "h": 36
+        },
+        {
+          "id": 25,
+          "name": "Internships",
+          "w": 99,
+          "h": 36
+        },
+        {
+          "id": 26,
+          "name": "Research & RA",
+          "w": 121,
+          "h": 36
+        },
+        {
+          "id": 27,
+          "name": "Scholarships",
+          "w": 110,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/010-select.jpg"
+    },
+    {
+      "step": 12,
+      "route": "/explore/opportunities",
+      "smallTapTargets": 10,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 37,
+          "name": "Save listing",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 39,
+          "name": "Save listing",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 41,
+          "name": "Save listing",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 42,
+          "name": "Save listing",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/012-scroll.jpg"
+    },
+    {
+      "step": 13,
+      "route": "/explore/opportunities",
+      "smallTapTargets": 9,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 46,
+          "name": "Save listing",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 48,
+          "name": "Save listing",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 50,
+          "name": "Save listing",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 52,
+          "name": "Save listing",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/013-scroll.jpg"
+    },
+    {
+      "step": 15,
+      "route": "/opportunities/:id",
+      "smallTapTargets": 6,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 166,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 169,
+          "name": "Details",
+          "w": 114,
+          "h": 36
+        },
+        {
+          "id": 170,
+          "name": "People 0",
+          "w": 114,
+          "h": 36
+        },
+        {
+          "id": 171,
+          "name": "Q&A 0",
+          "w": 114,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/015-click.jpg"
+    },
+    {
+      "step": 17,
+      "route": "/opportunities/:id",
+      "smallTapTargets": 8,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 166,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 167,
+          "name": "Ginkgo Bioworks",
+          "w": 103,
+          "h": 20
+        },
+        {
+          "id": 175,
+          "name": "Start one",
+          "w": 70,
+          "h": 18
+        },
+        {
+          "id": 169,
+          "name": "Details",
+          "w": 114,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/017-scroll.jpg"
+    },
+    {
+      "step": 19,
+      "route": "/explore/opportunities",
+      "smallTapTargets": 31,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 24,
+          "name": "For you",
+          "w": 76,
+          "h": 36
+        },
+        {
+          "id": 25,
+          "name": "Internships",
+          "w": 99,
+          "h": 36
+        },
+        {
+          "id": 26,
+          "name": "Research & RA",
+          "w": 121,
+          "h": 36
+        },
+        {
+          "id": 27,
+          "name": "Scholarships",
+          "w": 110,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/019-back.jpg"
+    },
+    {
+      "step": 21,
+      "route": "/explore/opportunities",
+      "smallTapTargets": 31,
+      "smallTapTargetExamples": [
+        {
+          "id": 23,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 24,
+          "name": "For you",
+          "w": 76,
+          "h": 36
+        },
+        {
+          "id": 25,
+          "name": "Internships",
+          "w": 99,
+          "h": 36
+        },
+        {
+          "id": 26,
+          "name": "Research & RA",
+          "w": 121,
+          "h": 36
+        },
+        {
+          "id": 27,
+          "name": "Scholarships",
+          "w": 110,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/021-finish.jpg"
+    }
+  ],
+  "outcome": "success",
+  "reportedOutcome": "success",
+  "outcomeReason": "Filtered internships to the Bay Area and opened a Ginkgo Bioworks internship in Emeryville, verified today, with a clear Apply button. I couldn't tell if it's paid or if undergrads qualify, so I'll check on their site.",
+  "endedBy": "persona",
+  "goalAchieved": true,
+  "goalFirstMetAtStep": 15,
+  "stepsToGoal": 8,
+  "goalEvidence": {
+    "step": 15,
+    "url": "/opportunities/op_ext_job_greenhouse_ginkgobioworks_5033171007",
+    "matched": [
+      {
+        "urlMatches": "^/opportunities/[^/?]+"
+      },
+      {
+        "textMatches": "\\bintern(ship)?s?\\b"
+      }
+    ],
+    "screenshot": "ux-sim/runs/sched-20261104-1915-diego-internship-near-berkeley/shots/015-click.jpg"
+  },
+  "falseSuccess": false,
+  "unnoticedSuccess": false,
+  "successCheck": {
+    "evaluatedFrom": "first persona action (never the start screen)",
+    "recordChecks": "none"
+  },
+  "patienceExhaustedAtStep": null,
+  "actionsAfterPatienceExhausted": 0,
+  "overrodePatience": false,
+  "abandonPoint": null,
+  "dropoffRisk": {
+    "kind": "hypothesis",
+    "level": "medium",
+    "rationale": "The Bay Area filter and the Apply button saved me time, but nothing was civil engineering, pay was never shown and 'fits your major' was wrong, so I'm not sure it's for someone like me.",
+    "basis": [
+      4,
+      10,
+      14,
+      18
+    ],
+    "source": "persona-agent"
+  }
+}

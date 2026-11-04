@@ -1,0 +1,293 @@
+{
+  "schemaVersion": 1,
+  "kind": "ux-sim-analysis",
+  "date": "2026-11-04",
+  "generatedAt": "2026-11-04T19:18:49.253Z",
+  "author": "Scheduled orchestrating Claude session (https://claude.ai/code/session_01VX4jQF3M6doYf7VDXmTdrm)",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "sources": {
+    "findings": "ux-sim/reports/2026-11-04-sched/findings.json",
+    "runs": [
+      "sched-20261104-1915-aisha-lunch-today",
+      "sched-20261104-1915-diego-internship-near-berkeley",
+      "sched-20261104-1915-diego-ride-sfo-thanksgiving",
+      "sched-20261104-1915-marcus-internship-near-berkeley"
+    ],
+    "harness": "6f174347960d",
+    "appCommits": [
+      "b1c9c98b2b5a"
+    ]
+  },
+  "problems": [
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live (opportunities come from the live snapshot).",
+      "key": "internship-details-missing-pay-and-role",
+      "title": "Internship pages never say if it is paid, what the job is or who can apply; prep-crew features sit above the job facts",
+      "summary": "Both internship personas reached a details page (goal met) but could not tell pay, duties or eligibility (\"Graduate Intern\" for an undergrad?). \"Do it with people / Start a prep crew\" comes before the job facts.",
+      "rootCauseHypothesis": "Imported listings carry only title, place, field and a link; the page leads with social features instead of the facts students check first.",
+      "severity": 2,
+      "frictionTypes": [
+        "content_gap",
+        "ux_confusion"
+      ],
+      "personas": [
+        "marcus-senior-lowtech",
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261104-1915-marcus-internship-near-berkeley",
+          "step": 10,
+          "quote": "I don't need a 'prep crew', I need to know if it pays. Why is that stuff"
+        },
+        {
+          "runId": "sched-20261104-1915-marcus-internship-near-berkeley",
+          "step": 12,
+          "quote": "But nothing says if it's paid or what I'd actually do."
+        },
+        {
+          "runId": "sched-20261104-1915-diego-internship-near-berkeley",
+          "step": 17,
+          "quote": "'Software Graduate Intern' — that's probably for grad students, I'm an undergrad. And still no pay anywhere."
+        }
+      ],
+      "suggestedFix": "Put a facts block first (Paid/Unpaid/Unknown, level: undergrad/grad, one-line summary) and move prep crews below; show \"Pay: see posting\" when unknown.",
+      "fingerprints": [
+        "6d922472ea26",
+        "98145c4f47a4",
+        "03b9cc604cb5"
+      ]
+    },
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live (opportunities come from the live snapshot).",
+      "key": "rides-hidden-under-meetups",
+      "title": "Rides is not on Home or in onboarding; students find it only at the bottom of Social › Meetups",
+      "summary": "Diego (today) and Seoyeon (2026-11-03) both searched for rides; it sits under \"More ways to meet\". Once found, the Rides page worked very well.",
+      "rootCauseHypothesis": "Rides is filed as a social feature; Home tiles and onboarding goals never mention it.",
+      "severity": 2,
+      "frictionTypes": [
+        "discoverability"
+      ],
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261104-1915-diego-ride-sfo-thanksgiving",
+          "step": 0,
+          "quote": "OK, where's rides? Events, opportunities, clubs, meetups... nothing says ride or carpool."
+        },
+        {
+          "runId": "sched-20261104-1915-diego-ride-sfo-thanksgiving",
+          "step": 4,
+          "quote": "There it is — Rides. Buried at the bottom of Social > Meetups though."
+        }
+      ],
+      "suggestedFix": "Add a Rides tile on Home (at least around breaks) and mention rides in \"Make campus life easier\".",
+      "file": true,
+      "fingerprints": [
+        "cc0f68d6c010",
+        "7d8e0b863e51"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "environmentLimited": false,
+      "environmentNote": "Same UI on live.",
+      "key": "going-button-unclear",
+      "title": "On a plan, \"Going\" looks like a status, joins instantly and does not say others will see you",
+      "summary": "Aisha could not tell if \"Going\" was her status or the button, how it differs from \"Interested\", or whether the host is told; it joined without a confirm. Counts also disagreed (\"1 going\" vs \"0 joined\").",
+      "rootCauseHypothesis": "Same button label for state and action; list counts the host, detail does not.",
+      "severity": 2,
+      "frictionTypes": [
+        "ux_confusion"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "lunch-today"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261104-1915-aisha-lunch-today",
+          "step": 3,
+          "quote": "Wait, does 'Going' mean I'm already marked as going, or is it the button to say I'm going?"
+        },
+        {
+          "runId": "sched-20261104-1915-aisha-lunch-today",
+          "step": 8,
+          "quote": "Oh — it just did it, no 'are you sure?'."
+        }
+      ],
+      "suggestedFix": "Label the action \"Join lunch\", say \"Hana and others will see you joined\", and count the host the same way in list and detail.",
+      "fingerprints": [
+        "afdbc3f2e8da",
+        "7e9ffeaa7d87",
+        "e2bf4efd0409"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "environmentLimited": false,
+      "environmentNote": "Same on live (opportunities come from the live snapshot).",
+      "key": "major-match-tag-unreliable",
+      "title": "\"Fits your major\" appears on unrelated internships (Civil Engineering → robotics; History → oil and gas)",
+      "summary": "Diego saw the tag on electrical/robotics roles; Marcus noticed it on oil-and-gas and technical trainee jobs.",
+      "rootCauseHypothesis": "Major matching is too broad (engineering ↔ any engineering; humanities ↔ anything).",
+      "severity": 2,
+      "frictionTypes": [
+        "ux_confusion"
+      ],
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261104-1915-diego-internship-near-berkeley",
+          "step": 2,
+          "quote": "Says 'Fits your major (Civil Engineering)' on Electrical Engineer and Robotics interns. That's not civil."
+        }
+      ],
+      "suggestedFix": "Tighten the major→field mapping or drop the tag when the match is weak.",
+      "file": false,
+      "fingerprints": [
+        "e767a4c35cfe"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "environmentLimited": false,
+      "environmentNote": "Same on live (opportunities come from the live snapshot).",
+      "key": "internship-list-labels-unclear",
+      "title": "Internship list: red \"D-1 / D-82\" tags are not explained and ~20 filter chips crowd the top",
+      "summary": "Marcus (low-tech senior) did not know what the D-number tags meant and saw two \"For you\" buttons.",
+      "rootCauseHypothesis": "D-day shorthand is a Korean convention; filters are all shown at once.",
+      "severity": 2,
+      "frictionTypes": [
+        "copy"
+      ],
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261104-1915-marcus-internship-near-berkeley",
+          "step": 2,
+          "quote": "Red 'D-1', 'D-8', 'D-82' tags on every job. Is that a deadline? A grade level? Doesn't say."
+        }
+      ],
+      "suggestedFix": "Show \"Due in 8 days\" (or \"Due Nov 12\"); collapse field chips behind one \"Field\" control.",
+      "file": false,
+      "fingerprints": [
+        "8b9f87525e26",
+        "257f14871bc1"
+      ]
+    },
+    {
+      "confidence": "low",
+      "environmentLimited": false,
+      "environmentNote": "Snapshot is the live data; check the live source list.",
+      "key": "internship-fields-narrow",
+      "title": "Bay Area internships are almost all software/hardware/research; nothing for civil or public works",
+      "summary": "Diego (civil engineering transfer) found no civil, construction or transportation roles and no field chip for them.",
+      "rootCauseHypothesis": "Sources are tech-heavy job boards.",
+      "severity": 2,
+      "frictionTypes": [
+        "content_gap"
+      ],
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261104-1915-diego-internship-near-berkeley",
+          "step": 13,
+          "quote": "It's all software, hardware, research. Nothing civil — no construction, no transportation, no city/public works."
+        }
+      ],
+      "suggestedFix": "Add a civil/public-sector source (e.g. city/county and Caltrans internships).",
+      "file": false,
+      "fingerprints": [
+        "268a55d5e687"
+      ]
+    },
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "floating-pills-cover-buttons",
+      "title": "The floating Design pill covers real buttons (\"My rides\", chat header)",
+      "summary": "Seen again on /rides and in a chat header — third day in a row.",
+      "rootCauseHypothesis": "Fixed top-right pill over page controls.",
+      "severity": 1,
+      "frictionTypes": [
+        "bug"
+      ],
+      "personas": [
+        "diego-transfer-commuter",
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "ride-sfo-thanksgiving",
+        "lunch-today"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261104-1915-diego-ride-sfo-thanksgiving",
+          "step": 6,
+          "quote": "The Design Classic/New pill is sitting on top of the My rides tab, can't even read it."
+        }
+      ],
+      "suggestedFix": "Remove the pill (owner decided New only) or move it out of the header.",
+      "fingerprints": [
+        "39327c8d79c3",
+        "44271af15761"
+      ]
+    }
+  ],
+  "dismissed": [
+    {
+      "fingerprints": [
+        "5bd02d4d3f24"
+      ],
+      "reason": "Single sev-1: toast says \"the ride chat is open\" while the button to open it is right there; persona recovered at once."
+    }
+  ],
+  "harnessIssues": [
+    {
+      "title": "first click returned the previous screen's element list",
+      "detail": "Both internship runs: after the first click the element list still showed Home while the screenshot showed Opportunities; an extra observe fixed it. Look at the settle/wait after navigation in session-server.",
+      "runs": [
+        "sched-20261104-1915-diego-internship-near-berkeley",
+        "sched-20261104-1915-marcus-internship-near-berkeley"
+      ]
+    },
+    {
+      "title": "persona used a placeholder select to peek at options",
+      "detail": "diego-internship step 7 `select 97 \"?\"` timed out and counted as frustration — persona error, not app friction. Consider a harness command to list a select's options.",
+      "runs": [
+        "sched-20261104-1915-diego-internship-near-berkeley"
+      ]
+    }
+  ]
+}
