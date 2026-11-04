@@ -87383,5 +87383,743 @@
   "termCode": "27W",
   "units": 2,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=BIOSTAT&crs_catlg_no=0409%20%20%20%20&class_id=535619201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0045_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 45",
+  "title": "Biomolecular Engineering Fundamentals",
+  "department": "CH ENGR",
+  "instructor": "Chen, I. Tang, Y.",
+  "location": "Boelter Hall 2760",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0045%20%20%20%20&class_id=369135200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0101b_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 101B",
+  "title": "Transport Phenomena II: Heat Transfer",
+  "department": "CH ENGR",
+  "instructor": "Peterson, J.D.",
+  "location": "Boelter Hall 5249",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0101B%20%20%20&class_id=369307200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0102a_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 102A",
+  "title": "Thermodynamics I",
+  "department": "CH ENGR",
+  "instructor": "Manousiouthakis, V",
+  "location": "Boelter Hall 5249",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0102A%20%20%20&class_id=369313200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0104a_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 104A",
+  "title": "Chemical and Biomolecular Engineering Laboratory I",
+  "department": "CH ENGR",
+  "instructor": "Eisler, C.N. Morales Guio, C.G. Simonetti, D.A. TA",
+  "location": "Public Affairs Building 2232",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0104A%20%20%20&class_id=369322200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0104d_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 104D",
+  "title": "Molecular Biotechnology Laboratory: From Gene to Product",
+  "department": "CH ENGR",
+  "instructor": "Su, F.",
+  "location": "Boelter Hall 5514",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0104D%20%20%20&class_id=369331200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0107_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 107",
+  "title": "Process Dynamics and Control",
+  "department": "CH ENGR",
+  "instructor": "Christofides, P.D.",
+  "location": "Boelter Hall 2444",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0107%20%20%20%20&class_id=369342200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0108a_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 108A",
+  "title": "Process Economics and Analysis",
+  "department": "CH ENGR",
+  "instructor": "Chavez, S. de Souza, P.",
+  "location": "Boelter Hall 2760",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0108A%20%20%20&class_id=369348200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0116c_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR C116",
+  "title": "Surface and Interface Engineering",
+  "department": "CH ENGR",
+  "instructor": "Chang, J.P.",
+  "location": "Boelter Hall 5419",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0116%20%20C%20&class_id=369396200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0124c_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR C124",
+  "title": "Cell Material Interactions",
+  "department": "CH ENGR",
+  "instructor": "Annabi, N.",
+  "location": "Boelter Hall 5272",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0124%20%20C%20&class_id=369444200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0153m_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR M153",
+  "title": "Introduction to Microscale and Nanoscale Manufacturing",
+  "department": "CH ENGR",
+  "instructor": "No instructors",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0153%20%20M%20&class_id=369618200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0155cm_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR CM155",
+  "title": "Systems Biology: Intracellular Network Identification and Analysis",
+  "department": "CH ENGR",
+  "instructor": "Park, J.",
+  "location": "Boelter Hall 5249",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0155%20%20CM&class_id=369630200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0210_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 210",
+  "title": "Advanced Chemical Reaction Engineering",
+  "department": "CH ENGR",
+  "instructor": "TA Nandy, A.",
+  "location": "Boelter Hall 5272",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0210%20%20%20%20&class_id=769060200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0216c_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR C216",
+  "title": "Surface and Interface Engineering",
+  "department": "CH ENGR",
+  "instructor": "Chang, J.P.",
+  "location": "Boelter Hall 4413",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0216%20%20C%20&class_id=769096200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0220_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 220",
+  "title": "Advanced Mass Transfer",
+  "department": "CH ENGR",
+  "instructor": "TA Srivastava, S.",
+  "location": "Boelter Hall 5419",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0220%20%20%20%20&class_id=769120200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0224c_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR C224",
+  "title": "Cell Material Interactions",
+  "department": "CH ENGR",
+  "instructor": "Annabi, N.",
+  "location": "Boelter Hall 5272",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0224%20%20C%20&class_id=769144201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0255c_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR C255",
+  "title": "Systems Biology: Intracellular Network Identification and Analysis",
+  "department": "CH ENGR",
+  "instructor": "Park, J.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0255%20%20C%20&class_id=769330200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298a_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298A",
+  "title": "Research Seminar",
+  "department": "CH ENGR",
+  "instructor": "Christofides, P.D.",
+  "location": "Boelter Hall 5252",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298A%20%20%20&class_id=769570200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298b_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298B",
+  "title": "Research Seminar",
+  "department": "CH ENGR",
+  "instructor": "Morales Guio, C.G.",
+  "location": "Slichter Hall 2834",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "08:00",
+    "end": "08:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298B%20%20%20&class_id=769571200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298c_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298C",
+  "title": "Research Seminar",
+  "department": "CH ENGR",
+  "instructor": "Cohen, Y.",
+  "location": "Rolfe Hall 3115",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298C%20%20%20&class_id=769572200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298d_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298D",
+  "title": "Research Seminar",
+  "department": "CH ENGR",
+  "instructor": "Simonetti, D.A.",
+  "location": "Slichter Hall 2834",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298D%20%20%20&class_id=769573200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298f_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298F",
+  "title": "Research Seminar",
+  "department": "CH ENGR",
+  "instructor": "Annabi, N.",
+  "location": "Slichter Hall 2834",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298F%20%20%20&class_id=769574200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298g_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298G",
+  "title": "Research Seminar",
+  "department": "CH ENGR",
+  "instructor": "Monbouquette, H.G.",
+  "location": "Boelter Hall 5514",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298G%20%20%20&class_id=769575200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298h_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298H",
+  "title": "Research Seminar",
+  "department": "CH ENGR",
+  "instructor": "Srivastava, S.",
+  "location": "Renee and David Kaplan Hall A30",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298H%20%20%20&class_id=769576200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298j_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298J",
+  "title": "Research Seminar",
+  "department": "CH ENGR",
+  "instructor": "Park, J.",
+  "location": "Boelter Hall 5514",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298J%20%20%20&class_id=769577200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298l001_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298L",
+  "title": "Research Seminars: Seminar 1",
+  "department": "CH ENGR",
+  "instructor": "Li, Y.",
+  "location": "Bunche Hall 1265",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298L%20%20%20&class_id=769586200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298m_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298M",
+  "title": "Research Seminar",
+  "department": "CH ENGR",
+  "instructor": "Manousiouthakis, V",
+  "location": "Boelter Hall 5514",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298M%20%20%20&class_id=769578200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298n_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298N",
+  "title": "Research Seminar",
+  "department": "CH ENGR",
+  "instructor": "Sautet, P.",
+  "location": "Slichter Hall 2834",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298N%20%20%20&class_id=769579200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298o_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298O",
+  "title": "Research Seminar",
+  "department": "CH ENGR",
+  "instructor": "Eisler, C.N.",
+  "location": "Renee and David Kaplan Hall A30",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298O%20%20%20&class_id=769580200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298p_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298P",
+  "title": "Research Seminar",
+  "department": "CH ENGR",
+  "instructor": "Chang, J.P.",
+  "location": "Boelter Hall 5514",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298P%20%20%20&class_id=769581200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298s_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298S",
+  "title": "Research Seminar",
+  "department": "CH ENGR",
+  "instructor": "Su, F.",
+  "location": "Renee and David Kaplan Hall A30",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298S%20%20%20&class_id=769582200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298t_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298T",
+  "title": "Research Seminar",
+  "department": "CH ENGR",
+  "instructor": "Tang, Y.",
+  "location": "Renee and David Kaplan Hall A30",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298T%20%20%20&class_id=769583200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298v_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298V",
+  "title": "Research Seminar",
+  "department": "CH ENGR",
+  "instructor": "Lu, Y.",
+  "location": "Boelter Hall 5420",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298V%20%20%20&class_id=769584200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0298z_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 298Z",
+  "title": "Research Seminar",
+  "department": "CH ENGR",
+  "instructor": "Chen, I.",
+  "location": "Boelter Hall 4413",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0298Z%20%20%20&class_id=769585200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chengr0299_27w",
+  "schoolId": "s_ucla",
+  "code": "CH ENGR 299",
+  "title": "Departmental Seminar",
+  "department": "CH ENGR",
+  "instructor": "Srivastava, S. Wright, T.A.",
+  "location": "Boelter Hall 3400",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0299%20%20%20%20&class_id=769594200&class_no=%20001%20%20"
  }
 ]
