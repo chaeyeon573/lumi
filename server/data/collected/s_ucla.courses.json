@@ -127647,5 +127647,3515 @@
   "termCode": "27W",
   "units": 1,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MATH%20%20%20&crs_catlg_no=0296N%20%20%20&class_id=662574200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0020pm_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE M20P",
+  "title": "Introduction to Computer Programming with Python",
+  "department": "MECH&AE",
+  "instructor": "Vu, T.",
+  "location": "Perloff Hall 1102",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0020P%20M%20&class_id=210071200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0082_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 82",
+  "title": "Mathematics of Engineering",
+  "department": "MECH&AE",
+  "instructor": "Gandhi, V.",
+  "location": "Boelter Hall 2760",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0082%20%20%20%20&class_id=210246200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0101_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 101",
+  "title": "Statics and Strength of Materials",
+  "department": "MECH&AE",
+  "instructor": "Jin, L.",
+  "location": "Boelter Hall 2760",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0101%20%20%20%20&class_id=210306200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0102_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 102",
+  "title": "Dynamics of Particles and Rigid Bodies",
+  "department": "MECH&AE",
+  "instructor": "Yoshida, K.",
+  "location": "Boelter Hall 3400",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0102%20%20%20%20&class_id=210312200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0103_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 103",
+  "title": "Elementary Fluid Mechanics",
+  "department": "MECH&AE",
+  "instructor": "Kavehpour, H.",
+  "location": "Franz Hall 1260",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0103%20%20%20%20&class_id=210318200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0105a_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 105A",
+  "title": "Introduction to Engineering Thermodynamics",
+  "department": "MECH&AE",
+  "instructor": "Amar, R.C.",
+  "location": "Haines Hall 220",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0105A%20%20%20&class_id=210330200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0105d_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 105D",
+  "title": "Transport Phenomena",
+  "department": "MECH&AE",
+  "instructor": "Vialetto, L.",
+  "location": "Renee and David Kaplan Hall 169",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0105D%20%20%20&class_id=210333200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0107_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 107",
+  "title": "Introduction to Modeling and Analysis of Dynamic Systems",
+  "department": "MECH&AE",
+  "instructor": "Franco, E.",
+  "location": "Boelter Hall 5249",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0107%20%20%20%20&class_id=210342200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0133a_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 133A",
+  "title": "Engineering Thermodynamics",
+  "department": "MECH&AE",
+  "instructor": "Fisher, T.S.",
+  "location": "Boelter Hall 2760",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0133A%20%20%20&class_id=210498200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0137c_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE C137",
+  "title": "Design and Analysis of Smart Grids",
+  "department": "MECH&AE",
+  "instructor": "Gadh, R.",
+  "location": "Boelter Hall 2760",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0137%20%20C%20&class_id=210523200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0138c_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE C138",
+  "title": "Introduction to Statistical Thermodynamics",
+  "department": "MECH&AE",
+  "instructor": "Ju, S.",
+  "location": "Boelter Hall 5264",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0138%20%20C%20&class_id=210530200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0140cm_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE CM140",
+  "title": "Introduction to Biomechanics",
+  "department": "MECH&AE",
+  "instructor": "Gupta, V.",
+  "location": "Boelter Hall 5264",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0140%20%20CM&class_id=210540200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0150a_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 150A",
+  "title": "Intermediate Fluid Mechanics",
+  "department": "MECH&AE",
+  "instructor": "Lopez-Doriga Costa",
+  "location": "Renee and David Kaplan Hall 169",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0150A%20%20%20&class_id=210600200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0154a_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 154A",
+  "title": "Preliminary Design of Aircraft",
+  "department": "MECH&AE",
+  "instructor": "Toohey, D.M.",
+  "location": "Boelter Hall 5419",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0154A%20%20%20&class_id=210624200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0156a_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 156A",
+  "title": "Advanced Strength of Materials",
+  "department": "MECH&AE",
+  "instructor": "Khalid Jawed, M.",
+  "location": "Boelter Hall 2444",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0156A%20%20%20&class_id=210638200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0157d_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 157D",
+  "title": "Aerospace Design Laboratory I (Lec 1)",
+  "department": "MECH&AE",
+  "instructor": "Thorne, D.",
+  "location": "Boelter Hall 5264",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0157D%20%20%20&class_id=210649200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0157d_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 157D",
+  "title": "Aerospace Design Laboratory I (Lec 2)",
+  "department": "MECH&AE",
+  "instructor": "Bendana, F.A.",
+  "location": "Boelter Hall 4413",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "18:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0157D%20%20%20&class_id=210649210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0157w_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 157W",
+  "title": "Basic Mechanical and Aerospace Engineering Laboratory with Writing (Lab 1)",
+  "department": "MECH&AE",
+  "instructor": "TA Hu, Y.",
+  "location": "Engineering IV 43116",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0157W%20%20%20&class_id=210647201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0157w_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 157W",
+  "title": "Basic Mechanical and Aerospace Engineering Laboratory with Writing (Lab 2)",
+  "department": "MECH&AE",
+  "instructor": "TA Gao, E.X.",
+  "location": "Engineering IV 43116",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0157W%20%20%20&class_id=210647202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0161b_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 161B",
+  "title": "Introduction to Space Technology",
+  "department": "MECH&AE",
+  "instructor": "Davoyan, A.R.",
+  "location": "Boelter Hall 3400",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0161B%20%20%20&class_id=210667200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0162bc_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE C162B",
+  "title": "Compliant Mechanism Design",
+  "department": "MECH&AE",
+  "instructor": "Hopkins, J. TA",
+  "location": "Boelter Hall 2760",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0162B%20C%20&class_id=210679200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0162d_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 162D",
+  "title": "Mechanical Engineering Design I (Lec 1)",
+  "department": "MECH&AE",
+  "instructor": "Hong, D.W.",
+  "location": "Engineering IV 38138",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0162D%20%20%20&class_id=210675200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0162d_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 162D",
+  "title": "Mechanical Engineering Design I (Lec 2)",
+  "department": "MECH&AE",
+  "instructor": "Tsao, T.",
+  "location": "Engineering IV 38138",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0162D%20%20%20&class_id=210675220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0162d_27w_3",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 162D",
+  "title": "Mechanical Engineering Design I (Lec 3)",
+  "department": "MECH&AE",
+  "instructor": "Chang, Y.",
+  "location": "Engineering IV 38138",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0162D%20%20%20&class_id=210675230&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0163bc_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE C163B",
+  "title": "Dynamics of Robotic Systems",
+  "department": "MECH&AE",
+  "instructor": "Rosen, J.",
+  "location": "Boelter Hall 4760",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "19:50"
+   },
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0163B%20C%20&class_id=210681200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0171a_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 171A",
+  "title": "Introduction to Feedback and Control Systems: Dynamic Systems Control I",
+  "department": "MECH&AE",
+  "instructor": "Dixit, A.",
+  "location": "Geology Building 3656",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0171A%20%20%20&class_id=210726200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0172_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 172",
+  "title": "Control System Design Laboratory",
+  "department": "MECH&AE",
+  "instructor": "M'Closkey, R.T.",
+  "location": "Boelter Hall 4283",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0172%20%20%20%20&class_id=210732200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0183a_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 183A",
+  "title": "Introduction to Manufacturing Processes",
+  "department": "MECH&AE",
+  "instructor": "Kim, C.",
+  "location": "Dodd Hall 175",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0183A%20%20%20&class_id=210801200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0183bm_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE M183B",
+  "title": "Introduction to Microscale and Nanoscale Manufacturing",
+  "department": "MECH&AE",
+  "instructor": "Chen, Y.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0183B%20M%20&class_id=210802200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0231c_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 231C",
+  "title": "Phase Change Heat Transfer and Two-Phase Flow",
+  "department": "MECH&AE",
+  "instructor": "Wei, T.",
+  "location": "Boelter Hall 5419",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0231C%20%20%20&class_id=610185200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0237c_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE C237",
+  "title": "Design and Analysis of Smart Grids",
+  "department": "MECH&AE",
+  "instructor": "Gadh, R.",
+  "location": "Boelter Hall 2760",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0237%20%20C%20&class_id=610222200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0238c_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE C238",
+  "title": "Introduction to Statistical Thermodynamics",
+  "department": "MECH&AE",
+  "instructor": "Ju, S.",
+  "location": "Boelter Hall 5264",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0238%20%20C%20&class_id=610230200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0240cm_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE CM240",
+  "title": "Introduction to Biomechanics",
+  "department": "MECH&AE",
+  "instructor": "Gupta, V.",
+  "location": "Boelter Hall 5264",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0240%20%20CM&class_id=610245200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0250a_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 250A",
+  "title": "Foundations of Fluid Dynamics",
+  "department": "MECH&AE",
+  "instructor": "Jones, A.",
+  "location": "Boelter Hall 5264",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0250A%20%20%20&class_id=610300200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0250d_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 250D",
+  "title": "Computational Fluid Dynamics for Compressible Flows",
+  "department": "MECH&AE",
+  "instructor": "Zhong, X.",
+  "location": "Royce Hall 156",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0250D%20%20%20&class_id=610303200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0256bm_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE M256B",
+  "title": "Nonlinear Elasticity",
+  "department": "MECH&AE",
+  "instructor": "Liu, Y.",
+  "location": "Boelter Hall 5280",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0256B%20M%20&class_id=610337200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0263bc_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE C263B",
+  "title": "Dynamics of Robotic Systems",
+  "department": "MECH&AE",
+  "instructor": "Rosen, J.",
+  "location": "Boelter Hall 4760",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "19:50"
+   },
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0263B%20C%20&class_id=610283200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0270b_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 270B",
+  "title": "Linear Optimal Control",
+  "department": "MECH&AE",
+  "instructor": "Iwasaki, T.",
+  "location": "Boelter Hall 4760",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0270B%20%20%20&class_id=610421200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0280bm_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE M280B",
+  "title": "Microelectromechanical Systems (MEMS) Fabrication",
+  "department": "MECH&AE",
+  "instructor": "Chiou, P.",
+  "location": "Boelter Hall 5280",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0280B%20M%20&class_id=610485200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0285_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 285",
+  "title": "Mechanics of Soft Matter",
+  "department": "MECH&AE",
+  "instructor": "Lin, N.",
+  "location": "Boelter Hall 5422",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0285%20%20%20%20&class_id=610510200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0294ac_27w",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE C294A",
+  "title": "Compliant Mechanism Design",
+  "department": "MECH&AE",
+  "instructor": "Hopkins, J. TA",
+  "location": "Boelter Hall 2760",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MECH%26AE&crs_catlg_no=0294A%20C%20&class_id=610574200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0101_27w",
+  "schoolId": "s_ucla",
+  "code": "MIMG 101",
+  "title": "Introductory Microbiology",
+  "department": "MIMG",
+  "instructor": "Berthet, K.J. Bouklas, T.A.",
+  "location": "Broad Art Center 2160E",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0101%20%20%20%20&class_id=145306200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0102_27w",
+  "schoolId": "s_ucla",
+  "code": "MIMG 102",
+  "title": "Introductory Virology",
+  "department": "MIMG",
+  "instructor": "Li, M. Bouhaddou, M.",
+  "location": "Franz Hall 1178",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0102%20%20%20%20&class_id=145312200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0109al_27w",
+  "schoolId": "s_ucla",
+  "code": "MIMG 109AL",
+  "title": "Research Immersion Laboratory in Microbiology",
+  "department": "MIMG",
+  "instructor": "Bouklas, T.A. Velez Ramirez, D.E",
+  "location": "Geology Building 4660",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0109AL%20%20&class_id=145354200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0109bl_27w",
+  "schoolId": "s_ucla",
+  "code": "MIMG 109BL",
+  "title": "Advanced Research Analysis in Microbiology (Lab 1)",
+  "department": "MIMG",
+  "instructor": "Velez Ramirez, D.E",
+  "location": "Life Sciences 2320",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0109BL%20%20&class_id=145355201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0109bl_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MIMG 109BL",
+  "title": "Advanced Research Analysis in Microbiology (Lab 2)",
+  "department": "MIMG",
+  "instructor": "Velez Ramirez, D.E",
+  "location": "Young Hall 3336",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0109BL%20%20&class_id=145355202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0156cm_27w",
+  "schoolId": "s_ucla",
+  "code": "MIMG CM156",
+  "title": "Human Genetics and Genomics",
+  "department": "MIMG",
+  "instructor": "Lusis, A.J. Allayee, H.",
+  "location": "Franz Hall 1260",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0156%20%20CM&class_id=145636200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0158_27w",
+  "schoolId": "s_ucla",
+  "code": "MIMG 158",
+  "title": "Microbial Genomics",
+  "department": "MIMG",
+  "instructor": "Miller, J.H.",
+  "location": "La Kretz Hall 120",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0158%20%20%20%20&class_id=145648200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0168_27w",
+  "schoolId": "s_ucla",
+  "code": "MIMG 168",
+  "title": "Molecular Parasitology",
+  "department": "MIMG",
+  "instructor": "Bradley, P.J. Hill, K.L.",
+  "location": "Dodd Hall 175",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0168%20%20%20%20&class_id=145708200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0180a_27w",
+  "schoolId": "s_ucla",
+  "code": "MIMG 180A",
+  "title": "Scientific Analysis and Communication I",
+  "department": "MIMG",
+  "instructor": "Smale, S. Pernas, L.",
+  "location": "La Kretz Hall 100",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0180A%20%20%20&class_id=145780200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0181h_27w",
+  "schoolId": "s_ucla",
+  "code": "MIMG 181H",
+  "title": "Honors Research Seminars: Microbiology, Immunology, and Molecular Genetics",
+  "department": "MIMG",
+  "instructor": "Miller, J.H.",
+  "location": "La Kretz Hall 120",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0181H%20%20%20&class_id=145791201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0185a_27w",
+  "schoolId": "s_ucla",
+  "code": "MIMG 185A",
+  "title": "Immunology",
+  "department": "MIMG",
+  "instructor": "Yang, L. Covarrubias, A.J.",
+  "location": "Franz Hall 1260",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0185A%20%20%20&class_id=145815200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0256cm_27w",
+  "schoolId": "s_ucla",
+  "code": "MIMG CM256",
+  "title": "Human Genetics and Genomics",
+  "department": "MIMG",
+  "instructor": "Lusis, A.J. Allayee, H.",
+  "location": "Franz Hall 1260",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0256%20%20CM&class_id=545336210&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0262b_27w",
+  "schoolId": "s_ucla",
+  "code": "MIMG 262B",
+  "title": "Seminar: Current Topics in Immunobiology of Cancer",
+  "department": "MIMG",
+  "instructor": "Economou, J.S.",
+  "location": "Molecular Sciences Building 1601",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0262B%20%20%20&class_id=545373200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mestd0111m_27w",
+  "schoolId": "s_ucla",
+  "code": "M E STD M111",
+  "title": "Introduction to Islamic Archaeology",
+  "department": "M E STD",
+  "instructor": "Burke, K.S.",
+  "location": "Bunche Hall 3211",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=M%20E%20STD&crs_catlg_no=0111%20%20M%20&class_id=406366200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mestd0178m001_27w",
+  "schoolId": "s_ucla",
+  "code": "M E STD M178",
+  "title": "Variable Topics: Religious Dialogue Across Abrahamic Religions",
+  "department": "M E STD",
+  "instructor": "Bakhos, C.A.",
+  "location": "Mathematical Sciences 5225",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=M%20E%20STD&crs_catlg_no=0178%20%20M%20&class_id=406768200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_milsci0012_27w",
+  "schoolId": "s_ucla",
+  "code": "MIL SCI 12",
+  "title": "Basic Military Leadership",
+  "department": "MIL SCI",
+  "instructor": "Washington, A.",
+  "location": "Kaufman Hall 136",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "08:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIL%20SCI&crs_catlg_no=0012%20%20%20%20&class_id=277037200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_milsci0022_27w",
+  "schoolId": "s_ucla",
+  "code": "MIL SCI 22",
+  "title": "Leadership Development and Military Planning",
+  "department": "MIL SCI",
+  "instructor": "Trombley, L.",
+  "location": "Boelter Hall 5514",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIL%20SCI&crs_catlg_no=0022%20%20%20%20&class_id=277067200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_milsci0110_27w",
+  "schoolId": "s_ucla",
+  "code": "MIL SCI 110",
+  "title": "U.S. Military History",
+  "department": "MIL SCI",
+  "instructor": "Tavantzis, A.",
+  "location": "Student Activities Center 120P",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIL%20SCI&crs_catlg_no=0110%20%20%20%20&class_id=277318200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_milsci0132_27w",
+  "schoolId": "s_ucla",
+  "code": "MIL SCI 132",
+  "title": "Army Officership and Communication",
+  "department": "MIL SCI",
+  "instructor": "Sasan, K. Evans, V.",
+  "location": "Bunche Hall 2173",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIL%20SCI&crs_catlg_no=0132%20%20%20%20&class_id=277493200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_milsci0142_27w",
+  "schoolId": "s_ucla",
+  "code": "MIL SCI 142",
+  "title": "Leadership, Ethics, and Military Law",
+  "department": "MIL SCI",
+  "instructor": "Lively, D.",
+  "location": "Student Activities Center 120P",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MIL%20SCI&crs_catlg_no=0142%20%20%20%20&class_id=277553200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_molbio0254d001_27w",
+  "schoolId": "s_ucla",
+  "code": "MOL BIO 254D",
+  "title": "Concepts in Molecular Biosciences: Statistical Tools and Concepts for Molecular Biologists: Lecture 1",
+  "department": "MOL BIO",
+  "instructor": "Bhaduri, A. Wells, M.",
+  "location": "Boyer Hall 159",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MOL%20BIO&crs_catlg_no=0254D%20%20%20&class_id=679327654&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_molbio0255_27w",
+  "schoolId": "s_ucla",
+  "code": "MOL BIO 255",
+  "title": "Scientific Writing",
+  "department": "MOL BIO",
+  "instructor": "No instructors",
+  "location": "Boyer Hall 159",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MOL%20BIO&crs_catlg_no=0255%20%20%20%20&class_id=679330200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_molbio0300_27w",
+  "schoolId": "s_ucla",
+  "code": "MOL BIO 300",
+  "title": "Entering Mentoring Training Program",
+  "department": "MOL BIO",
+  "instructor": "Azurdia, D.E.",
+  "location": "Boyer Hall 130",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MOL%20BIO&crs_catlg_no=0300%20%20%20%20&class_id=679900301&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_moltox0211b_27w",
+  "schoolId": "s_ucla",
+  "code": "MOL TOX 211B",
+  "title": "Molecular Toxicology Seminar",
+  "department": "MOL TOX",
+  "instructor": "Hankinson, O.",
+  "location": "Public Health, School of 71257",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MOL%20TOX&crs_catlg_no=0211B%20%20%20&class_id=678067200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0006hm_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO M6H",
+  "title": "Experiments in Cell and Tissue Culture",
+  "department": "MCD BIO",
+  "instructor": "Myers, M.D.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0006H%20M%20&class_id=269016200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0050_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 50",
+  "title": "Stem Cell Biology, Politics, and Ethics: Teasing Apart Issues",
+  "department": "MCD BIO",
+  "instructor": "Lee, P.",
+  "location": "Royce Hall 362",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0050%20%20%20%20&class_id=269151200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0060_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 60",
+  "title": "Biomedical Ethics",
+  "department": "MCD BIO",
+  "instructor": "Tulipana, P.A.",
+  "location": "Kinsey Science Teaching Pavilion 1200B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0060%20%20%20%20&class_id=269180200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0104al_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 104AL",
+  "title": "Research Immersion Laboratory in Developmental Biology",
+  "department": "MCD BIO",
+  "instructor": "Lee, P.",
+  "location": "Geology Building 4660",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0104AL%20%20&class_id=269325200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0138_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 138",
+  "title": "Developmental Biology",
+  "department": "MCD BIO",
+  "instructor": "Rigueur, D.",
+  "location": "Franz Hall 1178",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0138%20%20%20%20&class_id=269528200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0141c_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO C141",
+  "title": "Molecular Basis of Plant Differentiation and Development",
+  "department": "MCD BIO",
+  "instructor": "Long, J.A.",
+  "location": "Public Affairs Building 1222",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0141%20%20C%20&class_id=269546200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0142c_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO C142",
+  "title": "Design Principles of Biological Circuits",
+  "department": "MCD BIO",
+  "instructor": "Askary, A.",
+  "location": "Geology Building 3656",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0142%20%20C%20&class_id=269550200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0144_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 144",
+  "title": "Molecular Biology of Cellular Processes",
+  "department": "MCD BIO",
+  "instructor": "Nakano, A.",
+  "location": "Dodd Hall 161",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0144%20%20%20%20&class_id=269565200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0156cm_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO CM156",
+  "title": "Human Genetics and Genomics",
+  "department": "MCD BIO",
+  "instructor": "Lusis, A.J. Allayee, H.",
+  "location": "Franz Hall 1260",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0156%20%20CM&class_id=269636200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0165a_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 165A",
+  "title": "Biology of Cells",
+  "department": "MCD BIO",
+  "instructor": "Coller, H.A.",
+  "location": "Fowler Museum at UCLA A103B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0165A%20%20%20&class_id=269691200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0168_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 168",
+  "title": "Stem Cell Biology",
+  "department": "MCD BIO",
+  "instructor": "Mikkola, H.K.",
+  "location": "Public Affairs Building 1246",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0168%20%20%20%20&class_id=269709200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0175bm_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO M175B",
+  "title": "Neuroscience: From Molecules to Mind--Molecular and Developmental Neuroscience",
+  "department": "MCD BIO",
+  "instructor": "Akin, O. Trott, J.M. Abderemane Ali, F.",
+  "location": "Franz Hall 1178",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0175B%20M%20&class_id=269751200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0180a_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 180A",
+  "title": "Scientific Analysis and Communication I",
+  "department": "MCD BIO",
+  "instructor": "Myers, M.D.",
+  "location": "Mathematical Sciences 5217",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0180A%20%20%20&class_id=269781200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0180b_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 180B",
+  "title": "Scientific Analysis and Communication II",
+  "department": "MCD BIO",
+  "instructor": "Lough-Stevens, M.J",
+  "location": "Mathematical Sciences 5217",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0180B%20%20%20&class_id=269782201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0191001_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 191",
+  "title": "Variable Topics Research Seminars: Molecular, Cell, and Developmental Biology: Epigenetics",
+  "department": "MCD BIO",
+  "instructor": "Jacobsen, S.E.",
+  "location": "Mathematical Sciences 5225",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0191%20%20%20%20&class_id=269847201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0191004_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 191",
+  "title": "Variable Topics Research Seminars: Molecular, Cell, and Developmental Biology: Lessons in Developmental Mechanisms from Vertebrate Skeleton",
+  "department": "MCD BIO",
+  "instructor": "Rigueur, D.",
+  "location": "Mathematical Sciences 5225",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0191%20%20%20%20&class_id=269847204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0191002_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 191",
+  "title": "Variable Topics Research Seminars: Molecular, Cell, and Developmental Biology: Value of Human Life",
+  "department": "MCD BIO",
+  "instructor": "Tulipana, P.A.",
+  "location": "Mathematical Sciences 5233",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0191%20%20%20%20&class_id=269847202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0191003_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO 191",
+  "title": "Variable Topics Research Seminars: Molecular, Cell, and Developmental Biology: Value of Human Life",
+  "department": "MCD BIO",
+  "instructor": "Tulipana, P.A.",
+  "location": "Mathematical Sciences 5233",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0191%20%20%20%20&class_id=269847203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0202c_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO C202",
+  "title": "Design Principles of Biological Circuits",
+  "department": "MCD BIO",
+  "instructor": "Askary, A.",
+  "location": "Geology Building 3656",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0202%20%20C%20&class_id=669010200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0239c_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO C239",
+  "title": "Molecular Basis of Plant Differentiation and Development",
+  "department": "MCD BIO",
+  "instructor": "Long, J.A.",
+  "location": "Public Affairs Building 1222",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0239%20%20C%20&class_id=669234200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcdbio0256cm_27w",
+  "schoolId": "s_ucla",
+  "code": "MCD BIO CM256",
+  "title": "Human Genetics and Genomics",
+  "department": "MCD BIO",
+  "instructor": "Lusis, A.J. Allayee, H.",
+  "location": "Franz Hall 1260",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MCD%20BIO&crs_catlg_no=0256%20%20CM&class_id=669636210&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mcip0262_27w",
+  "schoolId": "s_ucla",
+  "code": "MC&IP 262",
+  "title": "Molecular Mechanisms of Human Diseases II",
+  "department": "MC&IP",
+  "instructor": "Yang, X.",
+  "location": "La Kretz Hall 101",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MC%26IP%20%20&crs_catlg_no=0262%20%20%20%20&class_id=677371200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0006bm_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC M6B",
+  "title": "Introduction to Musicianship (Lab 1)",
+  "department": "MUSC",
+  "instructor": "Depinna, N.",
+  "location": "Schoenberg Music Building B425 Schoenberg Music Building B431 Schoenberg Music Building B425",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0006B%20M%20&class_id=431019201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0006bm_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MUSC M6B",
+  "title": "Introduction to Musicianship (Lab 2)",
+  "department": "MUSC",
+  "instructor": "Depinna, N. TA",
+  "location": "Schoenberg Music Building B431 Schoenberg Music Building B425 Schoenberg Music Building B648",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0006B%20M%20&class_id=431019202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0006bm_27w_3",
+  "schoolId": "s_ucla",
+  "code": "MUSC M6B",
+  "title": "Introduction to Musicianship (Lab 3)",
+  "department": "MUSC",
+  "instructor": "Depinna, N. TA",
+  "location": "Schoenberg Music Building 1345 Schoenberg Music Building B431",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0006B%20M%20&class_id=431019203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0006bm_27w_4",
+  "schoolId": "s_ucla",
+  "code": "MUSC M6B",
+  "title": "Introduction to Musicianship (Lab 4)",
+  "department": "MUSC",
+  "instructor": "Depinna, N. TA",
+  "location": "Schoenberg Music Building 1354 Schoenberg Music Building B425 Schoenberg Music Building B431",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0006B%20M%20&class_id=431019204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0006bm_27w_5",
+  "schoolId": "s_ucla",
+  "code": "MUSC M6B",
+  "title": "Introduction to Musicianship (Lab 5)",
+  "department": "MUSC",
+  "instructor": "Depinna, N. TA",
+  "location": "Schoenberg Music Building 1439 Schoenberg Music Building B431 Schoenberg Music Building B425",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0006B%20M%20&class_id=431019205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0006bm_27w_6",
+  "schoolId": "s_ucla",
+  "code": "MUSC M6B",
+  "title": "Introduction to Musicianship (Lab 6)",
+  "department": "MUSC",
+  "instructor": "Depinna, N. TA",
+  "location": "Schoenberg Music Building B431 Schoenberg Music Building 1440",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0006B%20M%20&class_id=431019206&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0006bm_27w_7",
+  "schoolId": "s_ucla",
+  "code": "MUSC M6B",
+  "title": "Introduction to Musicianship (Lab 7)",
+  "department": "MUSC",
+  "instructor": "Depinna, N. TA",
+  "location": "Schoenberg Music Building B425 Schoenberg Music Building Schoenberg Music Building 1354",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0006B%20M%20&class_id=431019207&class_no=%20007%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0015_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 15",
+  "title": "Art of Listening",
+  "department": "MUSC",
+  "instructor": "Richman, W.M. TA",
+  "location": "Schoenberg Music Building 1100",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0015%20%20%20%20&class_id=431050200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0021b_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 21B",
+  "title": "Project Approach to Music Theory II (Lec 1)",
+  "department": "MUSC",
+  "instructor": "Oba, H.M. TA",
+  "location": "Schoenberg Music Building 1344",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0021B%20%20%20&class_id=431068200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0021b_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MUSC 21B",
+  "title": "Project Approach to Music Theory II (Lec 2)",
+  "department": "MUSC",
+  "instructor": "TA de Silva, D.L.",
+  "location": "Schoenberg Music Building 1344",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:50"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0021B%20%20%20&class_id=431068201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0030a_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 30A",
+  "title": "History, Listening, and Survey of Piano Literature I: Baroque and Classical",
+  "department": "MUSC",
+  "instructor": "No instructors",
+  "location": "Schoenberg Music Building",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0030A%20%20%20&class_id=431078200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0030b_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 30B",
+  "title": "History, Listening, and Survey of Piano Literature II: Romantic, Impressionistic, 20th-Century, and Contemporary",
+  "department": "MUSC",
+  "instructor": "Lent, J.D.",
+  "location": "Schoenberg Music Building B431",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0030B%20%20%20&class_id=431079201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0074b_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 74B",
+  "title": "Introduction to Singing Diction: German",
+  "department": "MUSC",
+  "instructor": "Kirsch, V.H.",
+  "location": "Ostin Music Center 110A",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0074B%20%20%20&class_id=431223201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0080f_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 80F",
+  "title": "Beginning Guitar Class",
+  "department": "MUSC",
+  "instructor": "Gogoncea, M.",
+  "location": "Schoenberg Music Building B431",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0080F%20%20%20&class_id=431219200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0090tm_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC M90T",
+  "title": "Early Music Ensemble",
+  "department": "MUSC",
+  "instructor": "Winkle, M.D. TA",
+  "location": "Schoenberg Music Building B429 Schoenberg Music Building B429",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "19:00",
+    "end": "21:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0090T%20M%20&class_id=431292200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0102b_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 102B",
+  "title": "Advanced Musicianship II (Lab 1)",
+  "department": "MUSC",
+  "instructor": "Depinna, N. TA",
+  "location": "Schoenberg Music Building 1345 Schoenberg Music Building B431 Schoenberg Music Building 1345",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0102B%20%20%20&class_id=431316200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0102b_27w_2",
+  "schoolId": "s_ucla",
+  "code": "MUSC 102B",
+  "title": "Advanced Musicianship II (Lab 2)",
+  "department": "MUSC",
+  "instructor": "Depinna, N.",
+  "location": "Schoenberg Music Building B431 Schoenberg Music Building 1345 Schoenberg Music Building 1354",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0102B%20%20%20&class_id=431316201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0102b_27w_3",
+  "schoolId": "s_ucla",
+  "code": "MUSC 102B",
+  "title": "Advanced Musicianship II (Lab 3)",
+  "department": "MUSC",
+  "instructor": "Depinna, N. TA",
+  "location": "Schoenberg Music Building B648 Schoenberg Music Building B431 Schoenberg Music Building B425",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0102B%20%20%20&class_id=431316202&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0110c_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 110C",
+  "title": "Comparative Study of Choral Music Education",
+  "department": "MUSC",
+  "instructor": "Dietz, R.N.",
+  "location": "Schoenberg Music Building B425",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0110C%20%20%20&class_id=431345200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0111b_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 111B",
+  "title": "Music Creation and Analysis through Technology",
+  "department": "MUSC",
+  "instructor": "Dietz, R.N. TA",
+  "location": "Schoenberg Music Building 1439",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0111B%20%20%20&class_id=431348200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0114b_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 114B",
+  "title": "Study of Instrumental Techniques: Low Strings",
+  "department": "MUSC",
+  "instructor": "Gamboa-Kroesen, J.",
+  "location": "Schoenberg Music Building B425",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0114B%20%20%20&class_id=431420200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0114d_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 114D",
+  "title": "Vocal Techniques for Music Education II",
+  "department": "MUSC",
+  "instructor": "Hearn, K.N.",
+  "location": "Schoenberg Music Building 1343",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0114D%20%20%20&class_id=431438200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0115b_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 115B",
+  "title": "Study of Instrumental Techniques: Brass",
+  "department": "MUSC",
+  "instructor": "Bradbury, W.A.",
+  "location": "Schoenberg Music Building B425",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "14:50"
+   },
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0115B%20%20%20&class_id=431361201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0117_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 117",
+  "title": "Study and Conducting of Instrumental and Choral Literature",
+  "department": "MUSC",
+  "instructor": "McManus, J.C.",
+  "location": "Ostin Music Center 110A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0117%20%20%20%20&class_id=431373200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0120b_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 120B",
+  "title": "Music Theory V",
+  "department": "MUSC",
+  "instructor": "Lefkowitz, D.S. TA",
+  "location": "Schoenberg Music Building 1420",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0120B%20%20%20&class_id=431384200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0158ec_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C158E",
+  "title": "Advanced Vocal Repertoire, Diction, and Interpretation: Spanish",
+  "department": "MUSC",
+  "instructor": "No instructors",
+  "location": "Ostin Music Center",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0158E%20C%20&class_id=431656200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0158gc_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C158G",
+  "title": "Advanced Vocal Repertoire, Diction, and Interpretation: Other Languages",
+  "department": "MUSC",
+  "instructor": "Gondek, J.K.",
+  "location": "Ostin Music Center 110A",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0158G%20C%20&class_id=431667201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0171c001_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C171",
+  "title": "Selected Topics in Keyboard Literature: Lecture 1",
+  "department": "MUSC",
+  "instructor": "Kaplan, D.",
+  "location": "Schoenberg Music Building 1200",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0171%20%20C%20&class_id=431716200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0171c002_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C171",
+  "title": "Selected Topics in Keyboard Literature: Lecture 2",
+  "department": "MUSC",
+  "instructor": "TA Faliks, I.",
+  "location": "Ostin Music Center 110A",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0171%20%20C%20&class_id=431716201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0175ac001_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C175A",
+  "title": "Chamber Ensembles: Brass: Activity 1",
+  "department": "MUSC",
+  "instructor": "TA Lindemann, J.H.",
+  "location": "Schoenberg Music Building 1345",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "19:00",
+    "end": "21:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0175A%20C%20&class_id=431763200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0175bc_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C175B",
+  "title": "Chamber Ensembles: Guitar",
+  "department": "MUSC",
+  "instructor": "Gogoncea, M.",
+  "location": "Schoenberg Music Building 1655A",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "19:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0175B%20C%20&class_id=431764200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0175fc_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C175F",
+  "title": "Chamber Ensembles: Woodwinds",
+  "department": "MUSC",
+  "instructor": "Berry Baker, J.N. TA Steinmetz, J.A. Davis, J.D. Ranz, J.H.",
+  "location": "Schoenberg Music Building 1439 Schoenberg Music Building B686 Schoenberg Music Building 1354 Schoenberg Music Building B648 Schoenberg Music Building 1420 Schoenberg Music Building 1345",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "19:50"
+   },
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0175F%20C%20&class_id=431768200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0175gc_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C175G",
+  "title": "Chamber Ensembles: Flux Contemporary",
+  "department": "MUSC",
+  "instructor": "Richman, W.M.",
+  "location": "Schoenberg Music Building 1345",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0175G%20C%20&class_id=431769201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0182cm_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC CM182",
+  "title": "Music Industry",
+  "department": "MUSC",
+  "instructor": "Provenzano, C.A.",
+  "location": "Schoenberg Music Building 1439",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0182%20%20CM&class_id=431792200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0185bc_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C185B",
+  "title": "Chamber Singers",
+  "department": "MUSC",
+  "instructor": "TA Bass, J.",
+  "location": "Schoenberg Music Building 1325 Schoenberg Music Building B686",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "16:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0185B%20C%20&class_id=431817200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0185cc_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C185C",
+  "title": "Opera Workshop",
+  "department": "MUSC",
+  "instructor": "Hak, R.R. Darrah Black, J.E. Fielding, C.L. Malkin, I. TA",
+  "location": "Ostin Music Center 110A No Location No Location",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0185C%20C%20&class_id=431819200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0185dc_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C185D",
+  "title": "Symphony Orchestra",
+  "department": "MUSC",
+  "instructor": "Stulberg, N.H. TA",
+  "location": "Schoenberg Music Building 1345",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "19:00",
+    "end": "21:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0185D%20C%20&class_id=431665200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0185ec_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C185E",
+  "title": "Philharmonia",
+  "department": "MUSC",
+  "instructor": "Stulberg, N.H. TA",
+  "location": "Schoenberg Music Building 1345",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0185E%20C%20&class_id=431666200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0185f_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 185F",
+  "title": "Symphonic Band",
+  "department": "MUSC",
+  "instructor": "TA McManus, J.C.",
+  "location": "Schoenberg Music Building 1343",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0185F%20%20%20&class_id=431820200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0185gc_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C185G",
+  "title": "Wind Ensemble",
+  "department": "MUSC",
+  "instructor": "TA Cross, T.J.",
+  "location": "Schoenberg Music Building 1420 Schoenberg Music Building 1354 Schoenberg Music Building 1345",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "16:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0185G%20C%20&class_id=431821200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0185h_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 185H",
+  "title": "Marching and Varsity Bands",
+  "department": "MUSC",
+  "instructor": "TA McManus, J.C.",
+  "location": "Schoenberg Music Building 1343 No Location Schoenberg Music Building 1343",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0185H%20%20%20&class_id=431822200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0201m_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC M201",
+  "title": "Repertory and Analysis",
+  "department": "MUSC",
+  "instructor": "Cross, T.J. Upton, E.R.",
+  "location": "Schoenberg Music Building B648",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0201%20%20M%20&class_id=831007200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0203_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 203",
+  "title": "Notation and Performance",
+  "department": "MUSC",
+  "instructor": "Kinderman, W.A.",
+  "location": "Schoenberg Music Building B648",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0203%20%20%20%20&class_id=831029200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0251_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 251",
+  "title": "Seminar: Orchestration",
+  "department": "MUSC",
+  "instructor": "Danielpour, R.D.",
+  "location": "Schoenberg Music Building B648",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0251%20%20%20%20&class_id=831308201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0255_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 255",
+  "title": "Advanced Music Analysis: Tonal Music",
+  "department": "MUSC",
+  "instructor": "Krouse, I.",
+  "location": "Schoenberg Music Building B648",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0255%20%20%20%20&class_id=831336200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0260a_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 260A",
+  "title": "Seminar: Composition for Motion Pictures and Television",
+  "department": "MUSC",
+  "instructor": "Golub, P.R.",
+  "location": "Schoenberg Music Building",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0260A%20%20%20&class_id=831360201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0261f_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 261F",
+  "title": "Problems in Performance Practices: Contemporary",
+  "department": "MUSC",
+  "instructor": "Cheng, G.C.",
+  "location": "Schoenberg Music Building 1439",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0261F%20%20%20&class_id=831380200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0271c001_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C271",
+  "title": "Selected Topics in Keyboard Literature: Lecture 1",
+  "department": "MUSC",
+  "instructor": "Kaplan, D.",
+  "location": "Schoenberg Music Building 1200",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0271%20%20C%20&class_id=831465200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0271c002_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C271",
+  "title": "Selected Topics in Keyboard Literature: Lecture 2",
+  "department": "MUSC",
+  "instructor": "TA Faliks, I.",
+  "location": "Ostin Music Center 110A",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0271%20%20C%20&class_id=831465201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0458ec_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C458E",
+  "title": "Advanced Vocal Repertoire, Diction, and Interpretation: Spanish",
+  "department": "MUSC",
+  "instructor": "No instructors",
+  "location": "Ostin Music Center",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0458E%20C%20&class_id=831722200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0458gc_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C458G",
+  "title": "Advanced Vocal Repertoire, Diction, and Interpretation: Other languages",
+  "department": "MUSC",
+  "instructor": "Gondek, J.K.",
+  "location": "Ostin Music Center 110A",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0458G%20C%20&class_id=831725201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0472_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC 472",
+  "title": "Master Class in Opera",
+  "department": "MUSC",
+  "instructor": "Hak, R.R. Darrah Black, J.E.",
+  "location": "Ostin Music Center 110A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:50"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0472%20%20%20%20&class_id=831782200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0480bc_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C480B",
+  "title": "Chamber Singers",
+  "department": "MUSC",
+  "instructor": "TA Bass, J.",
+  "location": "Schoenberg Music Building 1325 Schoenberg Music Building B686",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "16:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0480B%20C%20&class_id=831797200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0480cc_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C480C",
+  "title": "Opera Workshop",
+  "department": "MUSC",
+  "instructor": "Hak, R.R. Darrah Black, J.E. Fielding, C.L. Malkin, I.",
+  "location": "Ostin Music Center 110A No Location No Location",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0480C%20C%20&class_id=831799200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0480dc_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C480D",
+  "title": "Symphony Orchestra",
+  "department": "MUSC",
+  "instructor": "Stulberg, N.H. TA",
+  "location": "Schoenberg Music Building 1345",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "19:00",
+    "end": "21:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0480D%20C%20&class_id=831801200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0480ec_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C480E",
+  "title": "Philharmonia",
+  "department": "MUSC",
+  "instructor": "Stulberg, N.H. TA",
+  "location": "Schoenberg Music Building 1345",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0480E%20C%20&class_id=831804200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0480gc_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C480G",
+  "title": "Wind Ensemble",
+  "department": "MUSC",
+  "instructor": "Cross, T.J.",
+  "location": "Schoenberg Music Building 1420 Schoenberg Music Building 1354 Schoenberg Music Building 1345",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "16:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0480G%20C%20&class_id=831803200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0485ac001_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C485A",
+  "title": "Chamber Ensembles: Brass: Activity 1",
+  "department": "MUSC",
+  "instructor": "TA Lindemann, J.H.",
+  "location": "Schoenberg Music Building 1345",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "19:00",
+    "end": "21:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0485A%20C%20&class_id=831789200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0485bc_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C485B",
+  "title": "Chamber Ensembles: Guitar",
+  "department": "MUSC",
+  "instructor": "Gogoncea, M.",
+  "location": "Schoenberg Music Building 1655A",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "19:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0485B%20C%20&class_id=831805200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0485fc_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C485F",
+  "title": "Chamber Ensembles: Woodwinds",
+  "department": "MUSC",
+  "instructor": "Berry Baker, J.N. TA Steinmetz, J.A. Davis, J.D. Ranz, J.H.",
+  "location": "Schoenberg Music Building 1439 Schoenberg Music Building B686 Schoenberg Music Building 1354 Schoenberg Music Building B648 Schoenberg Music Building 1420 Schoenberg Music Building 1345",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "19:50"
+   },
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0485F%20C%20&class_id=831809200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_musc0485gc_27w",
+  "schoolId": "s_ucla",
+  "code": "MUSC C485G",
+  "title": "Chamber Ensembles: Flux Contemporary",
+  "department": "MUSC",
+  "instructor": "Richman, W.M.",
+  "location": "Schoenberg Music Building",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=MUSC%20%20%20&crs_catlg_no=0485G%20C%20&class_id=831811201&class_no=%20001%20%20"
  }
 ]
