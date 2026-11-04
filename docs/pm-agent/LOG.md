@@ -1894,3 +1894,11 @@
 - UCLA batch: 137+ Fall subjects, 2,561+ classes.
 - Spot check classes (BU): CASAN 287, CASWR 120, GMSFS 702 (grad), QSTFE 427, WEDME 558 (grad) — match.
 - Spot check clubs: UChicago Sustainable Investing Group, Yale Film Archive, Dartmouth Mock Trial match; Brown Aerial & Acrobatics Instagram matches its directory page (Brown lists Instagram/Facebook, no website field); NYU SPS site 503.
+
+## 2026-11-04 10:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- Labs/recitations: wrote a concrete proposal to Codex in HANDOFF — optional `sections` field on `CatalogCourse` (one entry per kind, alternative times to pick from; lecture `meetings` unchanged). Waiting for "OK sections" because the type file is shared.
+- Florida: the public schedule page loads its code in chunks; the API call that returns meeting times was not found — still parked.
+- **UCLA Fall 2026 done:** every subject read, 2,997 classes. Winter 2027 batches start next run.
+- Spot check classes (Rice): ARCH 503 (grad), CMOR 220, HART 589 (grad), MUSI 231, UNIV 195 — match.
+- Spot check clubs: Minnesota Campus Outreach, UCR Catholic Student Fellowship, UCI Anteaters for Autism, UCSB AS Senate (council), UF College Republicans — match.
