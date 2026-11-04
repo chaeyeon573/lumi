@@ -1,0 +1,2618 @@
+{
+ "collectedAt": "2026-11-04T00:38:52.471Z",
+ "sources": [
+  "engage https://tribelink.wm.edu 89"
+ ],
+ "events": [
+  {
+   "description": "Come write songs with us! We have a new challenge or workshop each week. No experience required.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12718761",
+   "type": "event",
+   "title": "Songwriting Club Meeting",
+   "host": "Songwriting Club",
+   "schoolId": "s_wm",
+   "date": "2026-11-04T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Tucker 110",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12718761",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Enjoy a night of cheese and fun with the French Society! 🇫🇷🧀",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12944948",
+   "type": "event",
+   "title": "Cheese Night",
+   "host": "French Society",
+   "schoolId": "s_wm",
+   "date": "2026-11-04T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Washington 305",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://tribelink.wm.edu/event/12944948",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Student Assembly Senate meetings are held weekly on Tuesday nights at 7pm when classes are in session. Senate is the legislative body of the Student Assembly. Senate Representatives can be found here . These meetings are open to the student body and are held in person during AND ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12569084",
+   "type": "event",
+   "title": "Student Assembly Senate Meeting",
+   "host": "Student Assembly",
+   "schoolId": "s_wm",
+   "date": "2026-11-04T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Sadler Center, Tidewater B",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12569084",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us every Tuesday in McGlothlin 020 for Large Group, where we will have time of worship, listen to a message, and have fellowship/hangout time afterwards.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12641277",
+   "type": "event",
+   "title": "RUF Large Group",
+   "host": "Reformed University Fellowship",
+   "schoolId": "s_wm",
+   "date": "2026-11-04T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "McGlothlin 020",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12641277",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come to the slice and get your own Crim Del Cutie friend!!! We have Griffens, Bears and more!!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12944933",
+   "type": "event",
+   "title": "Stuff a Plush - Midday Moments",
+   "host": "Student Unions and Engagement",
+   "schoolId": "s_wm",
+   "date": "2026-11-04T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "The Slice, Sadler Center",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12944933",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Looking to start a new student organization or club here at William & Mary? The first step is to attend this mandatory information session. During the session you will learn about the process to become a recognized student organization, the benefits and responsibilities that come",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12607253",
+   "type": "event",
+   "title": "Starting a New Student Organization Information Session",
+   "host": "Student Leadership Development",
+   "schoolId": "s_wm",
+   "date": "2026-11-04T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Sadler Center James Room",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12607253",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to answer questions about budgets, purchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646431",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-04T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646431",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Does your organization plan on requesting a budget/funding from Student Assembly for event, activities, and operations (including competitions or conferences) in the 2026-2027 academic year? If the answer is yes, or even maybe, you will need to come to one of these information se",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12882217",
+   "type": "event",
+   "title": "Organization Budget Allocation Process 101: How to Request a Budget",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-04T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Sadler Center - York Room",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12882217",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to answer questions about budgets, purchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646447",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-05T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646447",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Does your organization need to update and refresh your constitution? Has your organization not reviewed your policies and procedures in a while? Come to this workshop with a copy of your current constitution and we'll walk through key points to include or discuss when updating yo",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12746705",
+   "type": "event",
+   "title": "Constitution Review Workshop",
+   "host": "Student Leadership Development",
+   "schoolId": "s_wm",
+   "date": "2026-11-05T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "James Room, Sadler Center",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12746705",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for this semester's version of The Haven Comfort Farm! We are partnering with The Teeny Tiny Farm to bring farm animals of all kinds to William & Mary's Sunken Gardens. Stop by to connect with some furry friends, ground yourself, and invest in your mental health! Note: pa",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12945025",
+   "type": "event",
+   "title": "The Haven Comfort Farm",
+   "host": "The Haven",
+   "schoolId": "s_wm",
+   "date": "2026-11-05T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "The Sunken Gardens ",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12945025",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Got conflict? We got you! Stop by Conflict Resolution & Education's weekly office hours to chat with us about whatever situation you're dealing with. Whether it's how to approach a tough conversation, craft a nice but direct text, or communicate with compassion, CRE specialists c",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12671222",
+   "type": "event",
+   "title": "Conflict Resolution Office Hours",
+   "host": "Conflict Resolution & Education",
+   "schoolId": "s_wm",
+   "date": "2026-11-05T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Sadler 366",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12671222",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Does your organization plan on requesting a budget/funding from Student Assembly for event, activities, and operations (including competitions or conferences) in the 2026-2027 academic year? If the answer is yes, or even maybe, you will need to come to one of these information se",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12882218",
+   "type": "event",
+   "title": "Organization Budget Allocation Process 101: How to Request a Budget",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-05T20:45:00.000Z",
+   "startTime": "15:45",
+   "place": {
+    "name": "The Daily Grind",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12882218",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Annual Atwater Lecture Fall 2026",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "talk",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12536568",
+   "type": "event",
+   "title": "AMP/ Atwater Lecture",
+   "host": "Alma Mater Productions",
+   "schoolId": "s_wm",
+   "date": "2026-11-06T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Commonwealth Auditorium ",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12536568",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Interested in American Sign Language? Want to learn more about Deaf culture? Looking for a place to practice signing and meet new people? Join us in James Blair Hall, Room 223, on Thursdays from 7:30pm-8:30pm! All skill levels are welcome, so come to learn new skills or share wha",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12670599",
+   "type": "event",
+   "title": "ASL Club Meeting",
+   "host": "American Sign Language Club",
+   "schoolId": "s_wm",
+   "date": "2026-11-06T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "James Blair Hall Room 223",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12670599",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to asnwer questions about budgets, purchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646466",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-06T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646466",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join the Office of First-Generation Student Engagement and Academic Wellbeing for an uplifting event focused on overcoming the mid-semester slump! Take a break from academic stress, recharge your motivation, and learn practical strategies to manage stress, build healthy habits, a",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12939144",
+   "type": "event",
+   "title": "Overcoming the Mid-Semester Slump With Academic Wellbeing",
+   "host": "First Generation Student Engagement",
+   "schoolId": "s_wm",
+   "date": "2026-11-06T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Office of First Generation Student Engagement",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://tribelink.wm.edu/event/12939144",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Have questions about your organization? Need help navigating campus resources, improving club operations, or planning for the semester? Join us for RSO Office Hours , a dedicated weekly opportunity for student organization members and leaders to connect one-on-one with Student Le",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12689250",
+   "type": "event",
+   "title": "RSO Office Hours",
+   "host": "Student Leadership Development",
+   "schoolId": "s_wm",
+   "date": "2026-11-06T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Leadership Lounge (Sadler 273)",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12689250",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join the Residence Hall Association (RHA) and Community Councils for our Community Carnival on Friday, November 6, from 4:30&ndash;7:30 PM at Westwood Greens! Come enjoy an evening of free food, carnival games, prizes, and fun activities! Community Councils from across campus wil",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12945019",
+   "type": "event",
+   "title": "Community Carnival",
+   "host": "Residence Hall Association",
+   "schoolId": "s_wm",
+   "date": "2026-11-06T21:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "Westwood Greens",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://tribelink.wm.edu/event/12945019",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Visiting poet Ayanna Florence, the 2023 Womxn of the World Poetry Slam Champion, leads a workshop here at William & Mary! Open to all.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12908203",
+   "type": "event",
+   "title": "Ayanna Florence Workshop",
+   "host": "Inside Out Poetry",
+   "schoolId": "s_wm",
+   "date": "2026-11-06T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Ford Classroom in Swem Library",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12908203",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join the Nu Chi Chapter of Alpha Kappa Alpha Sorority, Incorporated&reg; for Phirst Phriday Game Night! Kick off the month with an evening of fun, friendly competition, and fellowship. Enjoy a variety of games, connect with fellow students, and create new memories. Whether you're",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12944997",
+   "type": "event",
+   "title": "Phirst Phriday: Game Night",
+   "host": "Alpha Kappa Alpha",
+   "schoolId": "s_wm",
+   "date": "2026-11-06T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Student Center for Inclusive Excellence, Sadler Center",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12944997",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Calling all music lovers! Come to WCWM's Battle of the Bands on Saturday November 7th from 2-6pm! Come for FREE music, vendors, and fun! Ten bands enter and only one will leave&hellip;Come watch some of your favorite on-campus bands and vote for who will be crowned the greatest b",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12908167",
+   "type": "event",
+   "title": "WCWM Battle of the Bands",
+   "host": "WCWM 90.9 FM",
+   "schoolId": "s_wm",
+   "date": "2026-11-07T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Crim Dell Meadows",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12908167",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A showcase of ballet dances from The Nutcracker as a kickoff to the holiday season!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12945031",
+   "type": "event",
+   "title": "The Nutcracker: A Ballet Showcase Presented by Canvas Ballet Company",
+   "host": "Canvas Ballet Company",
+   "schoolId": "s_wm",
+   "date": "2026-11-08T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Commonwealth Auditorium",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12945031",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Enjoy a night of fun, food, and dancing with Cheese Club! Our annual Cheese Ball is held in honor of community building within our club and to promote others to socialize. It is also a great way to get into Cheese Club if you are a newcomer! This year's theme is \"Munsterade Ball,",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12659874",
+   "type": "event",
+   "title": "Munsterade Ball: Cheese Ball 2026",
+   "host": "Cheese Club",
+   "schoolId": "s_wm",
+   "date": "2026-11-09T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Chesapeake BC",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://tribelink.wm.edu/event/12659874",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Registration for the last fall Senior Portrait Session is open! Portrait sessions will take place on the following dates in Sadler, Commonwealth Auditorium . Nov 9, 9am-5pm Nov 10, 9am-5pm Nov 11, 9am-5pm Appointments are available on a first-come, first-served basis, so reserve ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12925420",
+   "type": "event",
+   "title": "Senior Portrait Sessions (November Sessions)",
+   "host": "Student Leadership Development",
+   "schoolId": "s_wm",
+   "date": "2026-11-09T14:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Sadler Commonwealth Auditorium",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12925420",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to answer questions about budgets, purchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646479",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-09T18:30:00.000Z",
+   "startTime": "13:30",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646479",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "With more than 50 recognized multicultural and affinity-based student organizations at William & Mary, the Student Center for Inclusive Excellence provides leadership development, partnership, and collaboration to celebrate diverse cultural experiences on campus.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646012",
+   "type": "event",
+   "title": "Presidents Council",
+   "host": "Student Center for Inclusive Excellence",
+   "schoolId": "s_wm",
+   "date": "2026-11-09T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "James Room",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646012",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join FGSE in celebrating National First-Generation College Celebration Day! This is celebrated annually on November 8th , commemorating the anniversary of the Higher Education Act of 1965! We will be hosting events throughout this week in commemoration of this day! This event wil",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12945033",
+   "type": "event",
+   "title": "S'mores Bonfire Night",
+   "host": "First Generation Student Engagement",
+   "schoolId": "s_wm",
+   "date": "2026-11-09T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Sunken Garden",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://tribelink.wm.edu/event/12945033",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "KASA invites you to come and learn to make Kimbap! A traditional food item in Korean culture, you will be taught what it is, how to make it, and best of all, EAT IT. There is no cost to attending this event so COME, LEARN, and EAT! ISC 1280 6:30pm - 8:00pm RSVP REQUIRED (First co",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12939141",
+   "type": "event",
+   "title": "KASA Kimbap Cooking Course",
+   "host": "Korean American Student Association",
+   "schoolId": "s_wm",
+   "date": "2026-11-09T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Integrated Science Center",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://tribelink.wm.edu/event/12939141",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Registration for the last fall Senior Portrait Session is open! Portrait sessions will take place on the following dates in Sadler, Commonwealth Auditorium . Nov 9, 9am-5pm Nov 10, 9am-5pm Nov 11, 9am-5pm Appointments are available on a first-come, first-served basis, so reserve ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12925421",
+   "type": "event",
+   "title": "Senior Portrait Sessions (November Sessions)",
+   "host": "Student Leadership Development",
+   "schoolId": "s_wm",
+   "date": "2026-11-10T14:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Sadler Commonwealth Auditorium",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12925421",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join FGSE in celebrating National First-Generation College Celebration Day! This is celebrated annually on November 8th , commemorating the anniversary of the Higher Education Act of 1965! We will be hosting events throughout this week in commemoration of this day! For this event",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12945051",
+   "type": "event",
+   "title": "Letter Writing to Admitted Students",
+   "host": "First Generation Student Engagement",
+   "schoolId": "s_wm",
+   "date": "2026-11-10T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Sadler 203 (First Generation Student Enagagement Office)",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12945051",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to answer questions about budgets, pruchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646495",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-10T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646495",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Navigate Leadership is a year-long leadership development experience designed to help students strengthen their leadership skills through interactive, practical workshops. Formerly known as Leadership Accelerator, Navigate Leadership offers a flexible approach to leadership learn",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12895424",
+   "type": "event",
+   "title": "Navigate Leadership / The Exemplary Practices of Leadership",
+   "host": "Student Leadership Development",
+   "schoolId": "s_wm",
+   "date": "2026-11-10T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "York Room",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12895424",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come write songs with us! We have a new challenge or workshop each week. No experience required.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12718762",
+   "type": "event",
+   "title": "Songwriting Club Meeting",
+   "host": "Songwriting Club",
+   "schoolId": "s_wm",
+   "date": "2026-11-11T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Tucker 110",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12718762",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Student Assembly Senate meetings are held weekly on Tuesday nights at 7pm when classes are in session. Senate is the legislative body of the Student Assembly. Senate Representatives can be found here . These meetings are open to the student body and are held in person during AND ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12569085",
+   "type": "event",
+   "title": "Student Assembly Senate Meeting",
+   "host": "Student Assembly",
+   "schoolId": "s_wm",
+   "date": "2026-11-11T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Sadler Center, Tidewater B",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12569085",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us every Tuesday in McGlothlin 020 for Large Group, where we will have time of worship, listen to a message, and have fellowship/hangout time afterwards.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12641278",
+   "type": "event",
+   "title": "RUF Large Group",
+   "host": "Reformed University Fellowship",
+   "schoolId": "s_wm",
+   "date": "2026-11-11T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "McGlothlin 020",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12641278",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Registration for the last fall Senior Portrait Session is open! Portrait sessions will take place on the following dates in Sadler, Commonwealth Auditorium . Nov 9, 9am-5pm Nov 10, 9am-5pm Nov 11, 9am-5pm Appointments are available on a first-come, first-served basis, so reserve ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12925422",
+   "type": "event",
+   "title": "Senior Portrait Sessions (November Sessions)",
+   "host": "Student Leadership Development",
+   "schoolId": "s_wm",
+   "date": "2026-11-11T14:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Sadler Commonwealth Auditorium",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12925422",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Have questions about your organization? Need help navigating campus resources, improving club operations, or planning for the semester? Join us for RSO Office Hours , a dedicated weekly opportunity for student organization members and leaders to connect one-on-one with Student Le",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12689251",
+   "type": "event",
+   "title": "RSO Office Hours",
+   "host": "Student Leadership Development",
+   "schoolId": "s_wm",
+   "date": "2026-11-11T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Leadership Lounge (Sadler 273)",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12689251",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to answer questions about budgets, purchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646432",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-11T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646432",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join APPA on Wednesday, November 11th for a special PA Student Guest Speaker Night! Get the inside scoop on PA school, from the application process and interviews to classes, clinical experiences, and life as a PA student! Hear firsthand advice and learn what it takes to become a",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12945010",
+   "type": "event",
+   "title": "GBM: PA-S Panel",
+   "host": "Association of Pre-Physician Assistants",
+   "schoolId": "s_wm",
+   "date": "2026-11-11T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Chancellors Hall 133",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://tribelink.wm.edu/event/12945010",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to answer questions about budgets, purchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646448",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-12T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646448",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Got conflict? We got you! Stop by Conflict Resolution & Education's weekly office hours to chat with us about whatever situation you're dealing with. Whether it's how to approach a tough conversation, craft a nice but direct text, or communicate with compassion, CRE specialists c",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12671223",
+   "type": "event",
+   "title": "Conflict Resolution Office Hours",
+   "host": "Conflict Resolution & Education",
+   "schoolId": "s_wm",
+   "date": "2026-11-12T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Sadler 366",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12671223",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Interested in American Sign Language? Want to learn more about Deaf culture? Looking for a place to practice signing and meet new people? Join us in James Blair Hall, Room 223, on Thursdays from 7:30pm-8:30pm! All skill levels are welcome, so come to learn new skills or share wha",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12670600",
+   "type": "event",
+   "title": "ASL Club Meeting",
+   "host": "American Sign Language Club",
+   "schoolId": "s_wm",
+   "date": "2026-11-13T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "James Blair Hall Room 223",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12670600",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to asnwer questions about budgets, purchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646467",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-13T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646467",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Have questions about your organization? Need help navigating campus resources, improving club operations, or planning for the semester? Join us for RSO Office Hours , a dedicated weekly opportunity for student organization members and leaders to connect one-on-one with Student Le",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12689253",
+   "type": "event",
+   "title": "RSO Office Hours",
+   "host": "Student Leadership Development",
+   "schoolId": "s_wm",
+   "date": "2026-11-13T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Leadership Lounge (Sadler 273)",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12689253",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join AMP in watching Dead Poets Society",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12536518",
+   "type": "event",
+   "title": "AMP / Dead Poets Society",
+   "host": "Alma Mater Productions",
+   "schoolId": "s_wm",
+   "date": "2026-11-14T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Tucker 127A",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12536518",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Syndicate, a student-choreographed hip-hop dance team, is having our semesterly showcase with the theme of Syndi Secrets! Come see what we've been working on all semester. For more details, follow us on Instagram @syndicate_wm.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12944984",
+   "type": "event",
+   "title": "Syndicate Showcase",
+   "host": "Syndicate Hip Hop Dance Team",
+   "schoolId": "s_wm",
+   "date": "2026-11-14T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Sadler Commonwealth Auditorium",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12944984",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us as we celebrate Underground's release of our Fall 2026 Issue: Mirror, Mirror... Come and learn what Underground is all about, meet our editorial staff, and see what this semester's magazine entails, including the models and artwork published! The event will be held at Mer",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12945004",
+   "type": "event",
+   "title": "Underground Fall '26 Launch Party",
+   "host": "Underground",
+   "schoolId": "s_wm",
+   "date": "2026-11-14T13:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Meridian Coffeehouse ",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://tribelink.wm.edu/event/12945004",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "During our cultural showcase, our story follows a grandmother who travels to the United States to visit her son and his family. During her visit, she discovers that her grandson has never visited Africa, has little to no connection with his African heritage, and shows little inte",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12944978",
+   "type": "event",
+   "title": "iREP, The Royal Journey",
+   "host": "African Cultural Society",
+   "schoolId": "s_wm",
+   "date": "2026-11-14T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Sadler Commonwealth | Tidewater AB",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12944978",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join AMP in crafts and coffee with Corvo Coffee",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12939229",
+   "type": "event",
+   "title": "Coffee and Crafts",
+   "host": "Alma Mater Productions",
+   "schoolId": "s_wm",
+   "date": "2026-11-14T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Atrium",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12939229",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Mock Mehndi is a pretend South Asian wedding with catered dinner, performances, dancing, and more! Attire is formal, and cultural outfits are encouraged.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12939217",
+   "type": "event",
+   "title": "Mock Mehndi 2026",
+   "host": "South Asian Student Association",
+   "schoolId": "s_wm",
+   "date": "2026-11-14T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Sadler Chesapeake ",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://tribelink.wm.edu/event/12939217",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Emerald Elite Stomp n Shake Cheer will be hosting our 5th annual cheer showcase on November 14th, 2026. This year's theme is \"Carnival\". Get ready for a night of performances from various Stomp n Shake teams, vendors, and fun. Visit us during tabling or get your tickets online us",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12945045",
+   "type": "event",
+   "title": "EEC \"Carnival\" 5th Annual Showcase",
+   "host": "Emerald Elite Stomp n' Shake",
+   "schoolId": "s_wm",
+   "date": "2026-11-15T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Martha Wren Briggs Amphitheatre at Lake Matoaka",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12945045",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come n&rsquo; get cozy with AMP, enjoy some coffee and take a well-deserved break with some holiday themed crafts! With Thanksgiving right around the corner, what better way to get ready than to make your own scarecrow or even decorate a hand-turkey? We have all the turkey-tastic",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_5171579",
+   "type": "event",
+   "title": "AMP / Coffee & Crafts",
+   "host": "Alma Mater Productions",
+   "schoolId": "s_wm",
+   "date": "2026-11-15T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Sadler, Lodge One",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://tribelink.wm.edu/event/5171579",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to answer questions about budgets, purchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646480",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-16T18:30:00.000Z",
+   "startTime": "13:30",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646480",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Does your organization need to update and refresh your constitution? Has your organization not reviewed your policies and procedures in a while? Come to this workshop with a copy of your current constitution and we'll walk through key points to include or discuss when updating yo",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12746706",
+   "type": "event",
+   "title": "Constitution Review Workshop",
+   "host": "Student Leadership Development",
+   "schoolId": "s_wm",
+   "date": "2026-11-16T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "York Room, Sadler Center",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12746706",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Celebrate the milestone of reaching academic junior and/or senior class status! A Jostens representative will be on campus this semester for several ring sales events. The full catalog of W&M rings can be found on the Jostens website , and includes a specially designed ring for o",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12553185",
+   "type": "event",
+   "title": "Order Your W&M Ring!",
+   "host": "Student Transition Engagement Programs of W&M",
+   "schoolId": "s_wm",
+   "date": "2026-11-17T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Sadler Center, Atrium",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12553185",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Navigating membership challenges can be difficult, especially when they involve accountability, conflict, or potential removal from an organization. \"So You Wanna Kick a Member Out?\" Office Hours are designed for student leaders seeking guidance on addressing member concerns, man",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12746691",
+   "type": "event",
+   "title": "So You Wanna Kick A Member Out Office Hours",
+   "host": "Student Leadership Development",
+   "schoolId": "s_wm",
+   "date": "2026-11-17T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Leadership Lounge (Sadler 273)",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12746691",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to answer questions about budgets, pruchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646497",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-17T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646497",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Looking to start a new student organization or club here at William & Mary? The first step is to attend this mandatory information session. During the session you will learn about the process to become a recognized student organization, the benefits and responsibilities that come",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12607254",
+   "type": "event",
+   "title": "Starting a New Student Organization Information Session",
+   "host": "Student Leadership Development",
+   "schoolId": "s_wm",
+   "date": "2026-11-17T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Sadler Center Room 298",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12607254",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Brown Table Talk provides a platform for women of color to speak their truth, share their experiences, network, and confide in one another. Topics of Brown Table Talk include wellness and self-care, portrayal of women in color in the media, navigating graduate school, and relatio",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "talk",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646019",
+   "type": "event",
+   "title": "Brown Table Talk",
+   "host": "Student Center for Inclusive Excellence",
+   "schoolId": "s_wm",
+   "date": "2026-11-17T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "James Room",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646019",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come write songs with us! We have a new challenge or workshop each week. No experience required.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12718763",
+   "type": "event",
+   "title": "Songwriting Club Meeting",
+   "host": "Songwriting Club",
+   "schoolId": "s_wm",
+   "date": "2026-11-18T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Tucker 110",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12718763",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Student Assembly Senate meetings are held weekly on Tuesday nights at 7pm when classes are in session. Senate is the legislative body of the Student Assembly. Senate Representatives can be found here . These meetings are open to the student body and are held in person during AND ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12569086",
+   "type": "event",
+   "title": "Student Assembly Senate Meeting",
+   "host": "Student Assembly",
+   "schoolId": "s_wm",
+   "date": "2026-11-18T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Sadler Center, Tidewater B",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12569086",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us every Tuesday in McGlothlin 020 for Large Group, where we will have time of worship, listen to a message, and have fellowship/hangout time afterwards.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12641279",
+   "type": "event",
+   "title": "RUF Large Group",
+   "host": "Reformed University Fellowship",
+   "schoolId": "s_wm",
+   "date": "2026-11-18T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "McGlothlin 020",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12641279",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Have questions about your organization? Need help navigating campus resources, improving club operations, or planning for the semester? Join us for RSO Office Hours , a dedicated weekly opportunity for student organization members and leaders to connect one-on-one with Student Le",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12689252",
+   "type": "event",
+   "title": "RSO Office Hours",
+   "host": "Student Leadership Development",
+   "schoolId": "s_wm",
+   "date": "2026-11-18T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Leadership Lounge (Sadler 273)",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12689252",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to answer questions about budgets, purchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646433",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-18T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646433",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "APPA x MAPS Present: Suturing Workshop with a Guest PA Ever wanted to learn how to close a wound like a healthcare provider? APPA and MAPS are linking up to host a hands-on Suturing Skills Workshop led by a practicing Physician Assistant! What you&rsquo;ll get out of it: PA Mento",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12539600",
+   "type": "event",
+   "title": "GBM #5: Suturing Workshop",
+   "host": "Association of Pre-Physician Assistants",
+   "schoolId": "s_wm",
+   "date": "2026-11-18T23:45:00.000Z",
+   "startTime": "18:45",
+   "place": {
+    "name": "Chancellors Hall, Classroom 134",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12539600",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come join SPS for our Planksgiving dinner before we all leave for Thanksgiving! 🦃🦃🥧🥧 Food will be provided, but everyone is welcome to bring something; the more, the merrier! This is a great chance to meet up with all your physics friends and buddies before we all have to thi",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12670827",
+   "type": "event",
+   "title": "Planksgiving!!!",
+   "host": "Society of Physics Students",
+   "schoolId": "s_wm",
+   "date": "2026-11-19T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Small 122",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://tribelink.wm.edu/event/12670827",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to answer questions about budgets, purchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646449",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-19T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646449",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Whether you're a newly elected officer or a returning leader looking for a refresher, RSO Boost is designed to help your organization succeed. These interactive workshops provide current student organization leaders with the knowledge, resources, and campus connections needed to ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12689293",
+   "type": "event",
+   "title": "RSO Boost Workshop for Existing RSOs",
+   "host": "Student Leadership Development",
+   "schoolId": "s_wm",
+   "date": "2026-11-19T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Leadership Lounge (Sadler 273)",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12689293",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Calling ALL PLUS 2026 (and your PLUS ONE, too)! Join us for our annual PLUS Friendsgiving and end of semester event!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12641177",
+   "type": "event",
+   "title": "PLUS Workshop",
+   "host": "Student Center for Inclusive Excellence",
+   "schoolId": "s_wm",
+   "date": "2026-11-19T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "The Student Center of Inclusive Excellence Collaboration Room",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12641177",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Got conflict? We got you! Stop by Conflict Resolution & Education's weekly office hours to chat with us about whatever situation you're dealing with. Whether it's how to approach a tough conversation, craft a nice but direct text, or communicate with compassion, CRE specialists c",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12671224",
+   "type": "event",
+   "title": "Conflict Resolution Office Hours",
+   "host": "Conflict Resolution & Education",
+   "schoolId": "s_wm",
+   "date": "2026-11-19T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Sadler 366",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12671224",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Interested in American Sign Language? Want to learn more about Deaf culture? Looking for a place to practice signing and meet new people? Join us in James Blair Hall, Room 223, on Thursdays from 7:30pm-8:30pm! All skill levels are welcome, so come to learn new skills or share wha",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12670601",
+   "type": "event",
+   "title": "ASL Club Meeting",
+   "host": "American Sign Language Club",
+   "schoolId": "s_wm",
+   "date": "2026-11-20T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "James Blair Hall Room 223",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12670601",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to asnwer questions about budgets, purchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646468",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-20T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646468",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Have questions about your organization? Need help navigating campus resources, improving club operations, or planning for the semester? Join us for RSO Office Hours , a dedicated weekly opportunity for student organization members and leaders to connect one-on-one with Student Le",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12689254",
+   "type": "event",
+   "title": "RSO Office Hours",
+   "host": "Student Leadership Development",
+   "schoolId": "s_wm",
+   "date": "2026-11-20T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Leadership Lounge (Sadler 273)",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12689254",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Open Mic, open to all! Come share poetry, music, stories, or anything else you can share aloud!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646581",
+   "type": "event",
+   "title": "Open Mic",
+   "host": "Inside Out Poetry",
+   "schoolId": "s_wm",
+   "date": "2026-11-20T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Daily Grind",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646581",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to answer questions about budgets, purchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646481",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-23T18:30:00.000Z",
+   "startTime": "13:30",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646481",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us every Tuesday in McGlothlin 020 for Large Group, where we will have time of worship, listen to a message, and have fellowship/hangout time afterwards.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12641280",
+   "type": "event",
+   "title": "RUF Large Group",
+   "host": "Reformed University Fellowship",
+   "schoolId": "s_wm",
+   "date": "2026-11-25T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "McGlothlin 020",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12641280",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to answer questions about budgets, purchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646482",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-11-30T18:30:00.000Z",
+   "startTime": "13:30",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646482",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to answer questions about budgets, pruchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646498",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-12-01T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646498",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come write songs with us! We have a new challenge or workshop each week. No experience required.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12718764",
+   "type": "event",
+   "title": "Songwriting Club Meeting",
+   "host": "Songwriting Club",
+   "schoolId": "s_wm",
+   "date": "2026-12-02T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Tucker 110",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12718764",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Student Assembly Senate meetings are held weekly on Tuesday nights at 7pm when classes are in session. Senate is the legislative body of the Student Assembly. Senate Representatives can be found here . These meetings are open to the student body and are held in person during AND ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12569087",
+   "type": "event",
+   "title": "Student Assembly Senate Meeting",
+   "host": "Student Assembly",
+   "schoolId": "s_wm",
+   "date": "2026-12-02T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Sadler Center, Tidewater B",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12569087",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us every Tuesday in McGlothlin 020 for Large Group, where we will have time of worship, listen to a message, and have fellowship/hangout time afterwards.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12641281",
+   "type": "event",
+   "title": "RUF Large Group",
+   "host": "Reformed University Fellowship",
+   "schoolId": "s_wm",
+   "date": "2026-12-02T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "McGlothlin 020",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12641281",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Have questions about your organization? Need help navigating campus resources, improving club operations, or planning for the semester? Join us for RSO Office Hours , a dedicated weekly opportunity for student organization members and leaders to connect one-on-one with Student Le",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12689256",
+   "type": "event",
+   "title": "RSO Office Hours",
+   "host": "Student Leadership Development",
+   "schoolId": "s_wm",
+   "date": "2026-12-02T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Leadership Lounge (Sadler 273)",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12689256",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to answer questions about budgets, purchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646434",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-12-02T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646434",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join AMP in Spider-man a brand new day",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12541437",
+   "type": "event",
+   "title": "AMP / Spider-Man: Brand New Day",
+   "host": "Alma Mater Productions",
+   "schoolId": "s_wm",
+   "date": "2026-12-03T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Commonwealth",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12541437",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A member of the Organization Budget Allocation Committee will be present to answer questions about budgets, purchase requests, and any other logistics related to the OBAC process.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "groupbusiness"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12646450",
+   "type": "event",
+   "title": "OBAC Office Hours",
+   "host": "Organization Budget Allocation Committee",
+   "schoolId": "s_wm",
+   "date": "2026-12-03T17:30:00.000Z",
+   "startTime": "12:30",
+   "place": {
+    "name": "Sadler Center - Student Assembly Office",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12646450",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Got conflict? We got you! Stop by Conflict Resolution & Education's weekly office hours to chat with us about whatever situation you're dealing with. Whether it's how to approach a tough conversation, craft a nice but direct text, or communicate with compassion, CRE specialists c",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12671225",
+   "type": "event",
+   "title": "Conflict Resolution Office Hours",
+   "host": "Conflict Resolution & Education",
+   "schoolId": "s_wm",
+   "date": "2026-12-03T20:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Sadler 366",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12671225",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join the Student Center for Inclusive Excellence for a festive, educational day celebrating the traditions and values of Kwanzaa.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12641146",
+   "type": "event",
+   "title": "Pre-Kwanzaa",
+   "host": "Student Center for Inclusive Excellence",
+   "schoolId": "s_wm",
+   "date": "2026-12-03T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Tidewater",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "benefit": "🍕 Free food",
+   "sourceUrl": "https://tribelink.wm.edu/event/12641146",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Interested in American Sign Language? Want to learn more about Deaf culture? Looking for a place to practice signing and meet new people? Join us in James Blair Hall, Room 223, on Thursdays from 7:30pm-8:30pm! All skill levels are welcome, so come to learn new skills or share wha",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-04T00:38:52.796Z",
+   "createdAt": "2026-11-04T00:38:52.796Z",
+   "id": "op_wm_eg_12670602",
+   "type": "event",
+   "title": "ASL Club Meeting",
+   "host": "American Sign Language Club",
+   "schoolId": "s_wm",
+   "date": "2026-12-04T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "James Blair Hall Room 223",
+    "lat": 37.271,
+    "lng": -76.7075
+   },
+   "sourceUrl": "https://tribelink.wm.edu/event/12670602",
+   "sourceLabel": "Student org events"
+  }
+ ]
+}

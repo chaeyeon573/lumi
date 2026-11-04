@@ -1817,3 +1817,10 @@
 - **New top schools (files only):** Wake Forest (thelink.wfu.edu, public Engage) 375 groups, 285 with a public link, 117 upcoming events; University of Rochester (ccc.rochester.edu, public CampusGroups) 382 groups, 208 events; Case Western Reserve (community.case.edu, public CampusGroups) 886 groups (30 greek), 398 events. Checked and not found public yet: Northeastern, Brandeis (no Engage/CampusGroups/Presence host answered).
 - UCLA batch: 31/173 Fall subjects, 563 classes. Spot check CHEM 14B, CHEM 153L, CCAS 89, CHIN 50, C&EE 251E (grad) on the official class pages — match.
 - Spot check clubs: Columbia Women's Business Society, NYU Video Game Orchestra, UChicago Phoenix Survivors Alliance, Michigan Sport Sustainability Initiative, Wake Forest MSA match. Purdue Operation Smile lists the national student-programs page (what the club entered). Rochester Music Interest Floor website no longer answers (dead link → link-check queue item).
+
+## 2026-11-04 00:33 run
+- No Codex commits or HANDOFF requests.
+- **Five more top schools (files only, public Engage directories):** Georgia 984 groups (826 with a public link) + 186 events; Indiana 897 (747) + 620 events; William & Mary 534 (465) + 89 events; Tulane 787 (525) + 260 events; George Washington 624 (517), no public events on its Engage (0, rejected — nothing written). Checked, not public: Virginia Tech (gobblerconnect 404), Penn State (orgcentral redirects to login).
+- UCLA batch: 41/173 Fall subjects, 787 classes.
+- Spot check classes: Maryland BSCI213, EDCP610 (grad), ENPM687 (grad), INST462, WGSS618 (grad) re-fetched — match.
+- Spot check clubs: UGA Mind Blowers, IU Limitless Club, W&M Lawyers Helping Lawyers, Tulane Rowing Club (site is script-rendered; its own domain), GWU Kappa Delta — match.
