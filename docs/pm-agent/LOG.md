@@ -1857,3 +1857,10 @@
 - Login-only links: an Emory club's "website" was its Canvas course page (canvas.emory.edu — school login). `isLoginOnlyLink` now hides Canvas / Instructure / Blackboard / Brightspace / D2L course sites (shared file packages/core/src/lib/orglinks.ts, data stays). Test added.
 - Spot check classes (UW): AES 151, CLAS 101, G H 101, MGMT 599 (grad), STAT 180 — match.
 - Spot check clubs: BU Pre-Law Society, Tufts Bikes, BC Music Guild match; Michigan PERMIAS site does not answer; Emory Goizueta Evening Business Association → Canvas (fixed above).
+
+## 2026-11-04 05:33 run
+- No Codex commits or HANDOFF requests.
+- **Rochester class times (new reader `rochester`):** cdcs.ur.rochester.edu is a public ASP.NET search; one search per school division and term (16 requests, the largest about 66 MB) instead of one per department. Lectures where a course has them, else seminars/workshops with times; labs, recitations, thesis, research and independent study left out. Fall 2026 + Spring 2027: 4,360 classes, graduate, Simon, Warner and Eastman included. Test with a real CSC response. Spot check (fresh MATH and ECON searches): MATH 141, 165, 282, ECON 214, ECON 482 (grad) — match.
+- **Club links that are forms:** 43 "Website" links were Google Forms / Typeform / Jotform / MS Forms (Lehigh Inspire Her, 7 at Michigan …) → labeled `Sign-up form` (in `relabelSocialWebsites`, runs on every collect; test). HANDOFF note to Codex.
+- UCLA batch continuing.
+- Spot check clubs: CWRU Discussions journal, Rice KTRU, USC GASP match; Purdue Delta Phi Mu site 503; Lehigh Inspire Her → form (fixed above).

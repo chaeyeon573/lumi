@@ -44568,5 +44568,1589 @@
   "termCode": "26F",
   "units": 2,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LING%20%20%20&crs_catlg_no=0422%20%20%20%20&class_id=653725200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0001a_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 1A",
+  "title": "Principles of Accounting (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Gardner Treloar, J Shams, A. Johnson, B.A.",
+  "location": "Entrepreneurs Hall C314",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0001A%20%20%20&class_id=260001200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0001a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 1A",
+  "title": "Principles of Accounting (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Gardner Treloar, J Mannix, K.M. Patankar, H.J.",
+  "location": "Entrepreneurs Hall C314",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0001A%20%20%20&class_id=260001220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0001b_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 1B",
+  "title": "Principles of Accounting",
+  "department": "MGMT",
+  "instructor": "Devito, D.S. Cid Cabrera, N. Qureshi, B.",
+  "location": "Entrepreneurs Hall C314",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0001B%20%20%20&class_id=260002200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0070_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 70",
+  "title": "Quantitative Foundations for Business",
+  "department": "MGMT",
+  "instructor": "No instructors",
+  "location": "Cornell Hall",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0070%20%20%20%20&class_id=260210200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0071_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 71",
+  "title": "Selected Topics in Managerial Economics",
+  "department": "MGMT",
+  "instructor": "Wasserman, M.S. Tao, Z.",
+  "location": "Collins Center for Executive Education A301",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0071%20%20%20%20&class_id=260213200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0108_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 108",
+  "title": "Business Law (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Guerin, J. Nirpaz, O.",
+  "location": "Gold Hall B301",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0108%20%20%20%20&class_id=260320200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0108_26f_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 108",
+  "title": "Business Law (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Guerin, J. Hirshfeld, T.L.",
+  "location": "Bunche Hall 3153",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0108%20%20%20%20&class_id=260320201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0108_26f_3",
+  "schoolId": "s_ucla",
+  "code": "MGMT 108",
+  "title": "Business Law (Lec 3)",
+  "department": "MGMT",
+  "instructor": "Guerin, J.",
+  "location": "Gold Hall B117",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0108%20%20%20%20&class_id=260320202&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0120a_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 120A",
+  "title": "Intermediate Financial Accounting I (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Lu, M.",
+  "location": "Dodd Hall 170",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0120A%20%20%20&class_id=260491200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0120a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 120A",
+  "title": "Intermediate Financial Accounting I (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Berges, T.L.",
+  "location": "Royce Hall 156",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0120A%20%20%20&class_id=260491201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0120b_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 120B",
+  "title": "Intermediate Financial Accounting II (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Kumar, N.T.",
+  "location": "Public Affairs Building 1246",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0120B%20%20%20&class_id=260492200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0120b_26f_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 120B",
+  "title": "Intermediate Financial Accounting II (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Lu, M.",
+  "location": "Dodd Hall 170",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0120B%20%20%20&class_id=260492201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0121_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 121",
+  "title": "Ethical Leadership in Accounting",
+  "department": "MGMT",
+  "instructor": "Borman, C.J.",
+  "location": "Haines Hall A25",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0121%20%20%20%20&class_id=260426200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0122_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 122",
+  "title": "Management Accounting",
+  "department": "MGMT",
+  "instructor": "Devito, D.S.",
+  "location": "Haines Hall A25",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0122%20%20%20%20&class_id=260510200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0123_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 123",
+  "title": "Auditing",
+  "department": "MGMT",
+  "instructor": "Gardner Treloar, J",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0123%20%20%20%20&class_id=260518200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0124_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 124",
+  "title": "Advanced Accounting",
+  "department": "MGMT",
+  "instructor": "Devito, D.S.",
+  "location": "Rolfe Hall 3129",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0124%20%20%20%20&class_id=260528200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0127a_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 127A",
+  "title": "Tax Principles and Policy (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Berges, T.L.",
+  "location": "Royce Hall 164",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0127A%20%20%20&class_id=260539200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0127a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 127A",
+  "title": "Tax Principles and Policy (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Berges, T.L.",
+  "location": "Royce Hall 156",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0127A%20%20%20&class_id=260539201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0127b_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 127B",
+  "title": "Corporate and Partnership Taxation",
+  "department": "MGMT",
+  "instructor": "Kumar, N.T.",
+  "location": "Public Affairs Building 2214",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0127B%20%20%20&class_id=260540001&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0131a_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 131A",
+  "title": "Analytics in Accounting I (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Ravetch, D.S.",
+  "location": "Cornell Hall D310",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0131A%20%20%20&class_id=260901201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0131a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 131A",
+  "title": "Analytics in Accounting I (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Ravetch, D.S.",
+  "location": "Cornell Hall D313",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0131A%20%20%20&class_id=260901202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0140_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 140",
+  "title": "The Global Ecosystem of Sports",
+  "department": "MGMT",
+  "instructor": "Johnson, E.C. Campion, A.",
+  "location": "Collins Center for Executive Education A301",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0140%20%20%20%20&class_id=260440200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0159_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 159",
+  "title": "Foundations of Business and Entrepreneurship",
+  "department": "MGMT",
+  "instructor": "Pierce, M.D.",
+  "location": "Entrepreneurs Hall C314",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0159%20%20%20%20&class_id=260636200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0160_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 160",
+  "title": "Entrepreneurship and Venture Initiation (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Wilson, N.M.",
+  "location": "Cornell Hall D307",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0160%20%20%20%20&class_id=260605201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0160_26f_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 160",
+  "title": "Entrepreneurship and Venture Initiation (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Wilson, N.M.",
+  "location": "Cornell Hall D310",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0160%20%20%20%20&class_id=260605200&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0161_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 161",
+  "title": "Business Plan Development",
+  "department": "MGMT",
+  "instructor": "Yi, S.",
+  "location": "Cornell Hall D307",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0161%20%20%20%20&class_id=260610200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0164_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 164",
+  "title": "Entrepreneurial Finance and Accounting",
+  "department": "MGMT",
+  "instructor": "Borman, C.J.",
+  "location": "Cornell Hall D307",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0164%20%20%20%20&class_id=260684201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0165_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 165",
+  "title": "Marketing Principles for Entrepreneurs",
+  "department": "MGMT",
+  "instructor": "Esteves-Sorenson,",
+  "location": "Cornell Hall D301",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0165%20%20%20%20&class_id=260690200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0168_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 168",
+  "title": "Personal Financial Health: Theory and Practice",
+  "department": "MGMT",
+  "instructor": "Patt, S.S.",
+  "location": "Gold Hall B117",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:45",
+    "end": "14:15"
+   },
+   {
+    "day": 2,
+    "start": "12:45",
+    "end": "14:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0168%20%20%20%20&class_id=260708201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0170_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 170",
+  "title": "Real Estate Finance and Investments",
+  "department": "MGMT",
+  "instructor": "Karlan, M.S. Chang, T. Adauy Rock, M.N. Achondo Salas, J.I",
+  "location": "Entrepreneurs Hall C314",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:20"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0170%20%20%20%20&class_id=260720200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0203_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 203",
+  "title": "Behavioral Economics (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Haggag, K.F. Che, T.",
+  "location": "Gold Hall B301",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0203%20%20%20%20&class_id=660022201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0203_26f_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 203",
+  "title": "Behavioral Economics (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Haggag, K.F. Che, T.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0203%20%20%20%20&class_id=660022202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0220_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 220",
+  "title": "Corporate Financial Reporting",
+  "department": "MGMT",
+  "instructor": "Sussman, E.H. Yu, Z.",
+  "location": "Collins Center for Executive Education A301",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0220%20%20%20%20&class_id=660098201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0233_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 233",
+  "title": "Managing Finance and Financing Emerging Enterprises",
+  "department": "MGMT",
+  "instructor": "Newton, B.G.",
+  "location": "Gold Hall B301",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0233%20%20%20%20&class_id=660202201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0235_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 235",
+  "title": "Venture Capital and Private Equity",
+  "department": "MGMT",
+  "instructor": "Garmaise, M.J. Jena, A.",
+  "location": "Marion Anderson Hall G419",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0235%20%20%20%20&class_id=660210201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0250_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 250",
+  "title": "Patterns of Problem Solving",
+  "department": "MGMT",
+  "instructor": "Firstenberg, I.",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0250%20%20%20%20&class_id=660295201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0253_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 253",
+  "title": "Leadership Communication (Lec 1)",
+  "department": "MGMT",
+  "instructor": "McCann, R.",
+  "location": "Online - Recorded",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0253%20%20%20%20&class_id=660312201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0253_26f_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 253",
+  "title": "Leadership Communication (Lec 2)",
+  "department": "MGMT",
+  "instructor": "McCann, R.",
+  "location": "Online - Recorded",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0253%20%20%20%20&class_id=660312202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0254_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 254",
+  "title": "Employee Motivation and the Future of Work",
+  "department": "MGMT",
+  "instructor": "Bendersky, C.B.",
+  "location": "Cornell Hall D313",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0254%20%20%20%20&class_id=660324201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0260_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 260",
+  "title": "Customer Assessment and Analytics (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Hollenbeck, B.W.",
+  "location": "Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0260%20%20%20%20&class_id=660330201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0260_26f_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 260",
+  "title": "Customer Assessment and Analytics (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Hollenbeck, B.W.",
+  "location": "Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0260%20%20%20%20&class_id=660330202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0264_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 264",
+  "title": "Market Research",
+  "department": "MGMT",
+  "instructor": "Esteves-Sorenson,",
+  "location": "Cornell Hall D313",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0264%20%20%20%20&class_id=660360201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0266_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 266",
+  "title": "New Product Development",
+  "department": "MGMT",
+  "instructor": "Terech, A.",
+  "location": "Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0266%20%20%20%20&class_id=660385201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0274a007_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 274A",
+  "title": "Advanced Topics in Management Capstone: Advancing Health Technology Innovation",
+  "department": "MGMT",
+  "instructor": "Toloui, O.",
+  "location": "Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0274A%20%20%20&class_id=660374207&class_no=%20007%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0274a006_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 274A",
+  "title": "Advanced Topics in Management Capstone: Applied Integrated Research I",
+  "department": "MGMT",
+  "instructor": "Alderton, D.J. de Rezende, P.",
+  "location": "Collins Center for Executive Education A301",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0274A%20%20%20&class_id=660374206&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0274a003_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 274A",
+  "title": "Advanced Topics in Management Capstone: Business of Behavior Change",
+  "department": "MGMT",
+  "instructor": "Hershfield, H.E. Nair, N.",
+  "location": "Cornell Hall D313",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0274A%20%20%20&class_id=660374203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0274a002_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 274A",
+  "title": "Advanced Topics in Management Capstone: Early-Stage Investment Fund",
+  "department": "MGMT",
+  "instructor": "Kahl, M.",
+  "location": "Cornell Hall D310",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0274A%20%20%20&class_id=660374202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0274a005_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 274A",
+  "title": "Advanced Topics in Management Capstone: Global Social Impact Consulting: East Africa",
+  "department": "MGMT",
+  "instructor": "Northrop, G.S.",
+  "location": "Gold Hall B117",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0274A%20%20%20&class_id=660374205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0274a001_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 274A",
+  "title": "Advanced Topics in Management Capstone: Nuts and Bolts of A/B Testing",
+  "department": "MGMT",
+  "instructor": "Gallus, J.",
+  "location": "Cornell Hall D307",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0274A%20%20%20&class_id=660374201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0274a004_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 274A",
+  "title": "Advanced Topics in Management Capstone: Tough Technology Commercialization",
+  "department": "MGMT",
+  "instructor": "Wu, J.Y.",
+  "location": "Entrepreneurs Hall C315",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "11:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0274A%20%20%20&class_id=660374204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0275001_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 275",
+  "title": "Current Topics in Emerging Technologies and Markets: Artificial Intelligence",
+  "department": "MGMT",
+  "instructor": "Null, B.W.",
+  "location": "Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0275%20%20%20%20&class_id=660451201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0275002_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 275",
+  "title": "Current Topics in Emerging Technologies and Markets: Artificial Intelligence",
+  "department": "MGMT",
+  "instructor": "Null, B.W.",
+  "location": "Entrepreneurs Hall C301",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0275%20%20%20%20&class_id=660451202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0275005_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 275",
+  "title": "Current Topics in Emerging Technologies and Markets: Technological Innovations in Media and Entertainment",
+  "department": "MGMT",
+  "instructor": "Swidler, T.",
+  "location": "Marion Anderson Hall G304",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0275%20%20%20%20&class_id=660451205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0275003_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 275",
+  "title": "Current Topics in Emerging Technologies and Markets: Technology Entrepreneurship in Artificial Intelligence Era",
+  "department": "MGMT",
+  "instructor": "Futoran, E.",
+  "location": "Marion Anderson Hall G419",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0275%20%20%20%20&class_id=660451203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0275004_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 275",
+  "title": "Current Topics in Emerging Technologies and Markets: Technology Entrepreneurship in Artificial Intelligence Era",
+  "department": "MGMT",
+  "instructor": "Futoran, E.",
+  "location": "Marion Anderson Hall G419",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0275%20%20%20%20&class_id=660451204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0278_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 278",
+  "title": "Urban Real Estate Financing and Investing",
+  "department": "MGMT",
+  "instructor": "Habibi, P.B.",
+  "location": "Marion Anderson Hall G304",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0278%20%20%20%20&class_id=660478201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0279_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 279",
+  "title": "Cases in Real Estate Investments",
+  "department": "MGMT",
+  "instructor": "Sussman, E.H.",
+  "location": "Gold Hall B301",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0279%20%20%20%20&class_id=660489201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0282_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 282",
+  "title": "Optimizing Team Performance",
+  "department": "MGMT",
+  "instructor": "Bendersky, C.B.",
+  "location": "Entrepreneurs Hall C315",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:30",
+    "end": "19:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0282%20%20%20%20&class_id=660459201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0284_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 284",
+  "title": "Managing Entrepreneurial Organizations",
+  "department": "MGMT",
+  "instructor": "Ullmen, J.B.",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0284%20%20%20%20&class_id=660470201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0293_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 293",
+  "title": "Ethical Considerations in Business",
+  "department": "MGMT",
+  "instructor": "Farrell, B.J.",
+  "location": "Collins Center for Executive Education A301",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0293%20%20%20%20&class_id=660523201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0294_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 294",
+  "title": "Financial Forecasting, Analysis, and Modeling for Entrepreneurs, Managers, and Dealmakers",
+  "department": "MGMT",
+  "instructor": "Lee, J.J.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "18:30",
+    "end": "21:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0294%20%20%20%20&class_id=660524201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0295a_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 295A",
+  "title": "Entrepreneurship and Venture Initiation",
+  "department": "MGMT",
+  "instructor": "Alderton, D.J.",
+  "location": "Gold Hall B301",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0295A%20%20%20&class_id=660530201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0295b_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 295B",
+  "title": "Strategic Planning for New Ventures",
+  "department": "MGMT",
+  "instructor": "Alderton, D.J.",
+  "location": "Cornell Hall D301",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0295B%20%20%20&class_id=660531201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0297_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 297",
+  "title": "Venture Capital Strategy (Lec 1)",
+  "department": "MGMT",
+  "instructor": "Sorenson, O.J. Tran, A.",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0297%20%20%20%20&class_id=660537201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0297_26f_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 297",
+  "title": "Venture Capital Strategy (Lec 2)",
+  "department": "MGMT",
+  "instructor": "Sorenson, O.J.",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0297%20%20%20%20&class_id=660537202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298d004_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298D",
+  "title": "Special Topics in Management: Content Creation and Exploitation in Digital Age",
+  "department": "MGMT",
+  "instructor": "Frons, B.S.",
+  "location": "Marion Anderson Hall G305",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298D%20%20%20&class_id=660547204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298d002_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298D",
+  "title": "Special Topics in Management: Managing Disruptive Technologies and Business Models",
+  "department": "MGMT",
+  "instructor": "Farrell, B.J.",
+  "location": "Entrepreneurs Hall C315",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298D%20%20%20&class_id=660547202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298d003_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298D",
+  "title": "Special Topics in Management: Sports Marketing Management",
+  "department": "MGMT",
+  "instructor": "Johnson, E.C.",
+  "location": "Cornell Hall D313",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298D%20%20%20&class_id=660547203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298e002_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298E",
+  "title": "Special Topics in Management: Five Essential Stories for Leaders",
+  "department": "MGMT",
+  "instructor": "Sternberg, J.L. Ullmen, J.B.",
+  "location": "Gold Hall B313",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "19:10",
+    "end": "22:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298E%20%20%20&class_id=660552202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298e001_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298E",
+  "title": "Special Topics in Management: Impact Investing I",
+  "department": "MGMT",
+  "instructor": "Simms, C. Cochran, K.",
+  "location": "Cornell Hall D307",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:10",
+    "end": "19:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298E%20%20%20&class_id=660552201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0298g_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 298G",
+  "title": "Special Topics in Management",
+  "department": "MGMT",
+  "location": "Cornell Hall D301",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "22:00"
+   },
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "22:00"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "22:00"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "22:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0298G%20%20%20&class_id=660554201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0457b_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 457B",
+  "title": "Fieldwork in Investment Management (Sem 1)",
+  "department": "MGMT",
+  "instructor": "Patt, S.S.",
+  "location": "Gold Hall B312",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:30",
+    "end": "11:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0457B%20%20%20&class_id=660660201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0457b_26f_2",
+  "schoolId": "s_ucla",
+  "code": "MGMT 457B",
+  "title": "Fieldwork in Investment Management (Sem 2)",
+  "department": "MGMT",
+  "instructor": "Welch, I.I.",
+  "location": "Entrepreneurs Hall C303",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "19:10",
+    "end": "21:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0457B%20%20%20&class_id=660660202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mgmt0495_26f",
+  "schoolId": "s_ucla",
+  "code": "MGMT 495",
+  "title": "Teaching Assistant Training Seminar",
+  "department": "MGMT",
+  "instructor": "Jenner, B.M.",
+  "location": "Online Online",
+  "meetings": [
+   {
+    "day": 5,
+    "start": "09:00",
+    "end": "17:00"
+   },
+   {
+    "day": 6,
+    "start": "09:00",
+    "end": "17:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MGMT%20%20%20&crs_catlg_no=0495%20%20%20%20&class_id=660801201&class_no=%20001%20%20"
  }
 ]

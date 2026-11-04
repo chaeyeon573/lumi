@@ -1,0 +1,25 @@
+{
+ "checkedAt": "2026-11-04T05:38:00.290Z",
+ "status": "applied",
+ "stored": false,
+ "source": "timetable:rochester",
+ "sampled": 4360,
+ "withTimes": 4360,
+ "terms": [
+  "Spring 2027",
+  "Fall 2026"
+ ],
+ "sample": [
+  "AHST 100 · Introduction to Visual and Cultural Studies · Spring 2027 · T 14:00-15:15 R 14:00-15:15",
+  "GRMN 261 · Weimar Film & Film Theory · Spring 2027 · M 12:30-13:45 W 12:30-13:45",
+  "THTR 153 · Acting with Objects: Puppetry · Spring 2027 · F 14:00-16:40",
+  "ASLA 101 · Beginning Amer Sign Lang I (Sec 01) · Fall 2026 · M 14:00-14:50 W 14:00-14:50 F 14:00-14:50",
+  "GRMN 426 · Modern Anti-Semitism in Germany · Fall 2026 · W 10:25-11:40 F 10:25-11:40",
+  "NAVS 094 · Ship Systems I · Fall 2026 · M 07:30-08:50 W 07:30-08:50"
+ ],
+ "spotCheck": {
+  "matched": 0,
+  "mismatched": [],
+  "unavailable": 0
+ }
+}
