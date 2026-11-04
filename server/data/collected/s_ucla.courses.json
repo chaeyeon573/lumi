@@ -50831,5 +50831,1384 @@
   "termCode": "26F",
   "units": 2,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MATH%20%20%20&crs_catlg_no=0495%20%20%20%20&class_id=662790210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0001_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 1",
+  "title": "Undergraduate Seminar",
+  "department": "MECH&AE",
+  "instructor": "Ju, S.",
+  "location": "Physics and Astronomy Building 1425",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0001%20%20%20%20&class_id=210001200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0019001_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 19",
+  "title": "Engineering for Good: Designing Solutions that Matter",
+  "department": "MECH&AE",
+  "instructor": "Yoshida, K.",
+  "location": "Renee and David Kaplan Hall A48",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0019%20%20%20%20&class_id=210057201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0020m_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE M20",
+  "title": "Introduction to Computer Programming with MATLAB",
+  "department": "MECH&AE",
+  "instructor": "No instructors",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0020%20%20M%20&class_id=210062200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0020pm_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE M20P",
+  "title": "Introduction to Computer Programming with Python",
+  "department": "MECH&AE",
+  "instructor": "Lopez Droguett, E.",
+  "location": "Haines Hall A2",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0020P%20M%20&class_id=210071200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0082_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 82",
+  "title": "Mathematics of Engineering",
+  "department": "MECH&AE",
+  "instructor": "Dixit, A.",
+  "location": "Boelter Hall 2760",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0082%20%20%20%20&class_id=210246200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0094_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 94",
+  "title": "Introduction to Computer-Aided Design and Drafting",
+  "department": "MECH&AE",
+  "instructor": "Yoshida, K.",
+  "location": "Kinsey Science Teaching Pavilion 1240B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0094%20%20%20%20&class_id=210282200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0101_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 101",
+  "title": "Statics and Strength of Materials",
+  "department": "MECH&AE",
+  "instructor": "Gupta, V.",
+  "location": "Franz Hall 1178",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0101%20%20%20%20&class_id=210306200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0102_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 102",
+  "title": "Dynamics of Particles and Rigid Bodies",
+  "department": "MECH&AE",
+  "instructor": "Liu, Y.",
+  "location": "Boelter Hall 5249",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0102%20%20%20%20&class_id=210312200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0103_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 103",
+  "title": "Elementary Fluid Mechanics",
+  "department": "MECH&AE",
+  "instructor": "Kavehpour, H.",
+  "location": "Boelter Hall 3400",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0103%20%20%20%20&class_id=210318200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0105a_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 105A",
+  "title": "Introduction to Engineering Thermodynamics",
+  "department": "MECH&AE",
+  "instructor": "Stubblebine, M.J.",
+  "location": "Haines Hall A18",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0105A%20%20%20&class_id=210330200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0105d_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 105D",
+  "title": "Transport Phenomena",
+  "department": "MECH&AE",
+  "instructor": "Vialetto, L.",
+  "location": "Engineering VI Mong Learning Center",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0105D%20%20%20&class_id=210333200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0107_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 107",
+  "title": "Introduction to Modeling and Analysis of Dynamic Systems",
+  "department": "MECH&AE",
+  "instructor": "Kim, D.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "18:00",
+    "end": "19:50"
+   },
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0107%20%20%20%20&class_id=210342200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0131a_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 131A",
+  "title": "Intermediate Heat Transfer",
+  "department": "MECH&AE",
+  "instructor": "Wei, T.",
+  "location": "Boelter Hall 5249",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0131A%20%20%20&class_id=210486200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0150a_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 150A",
+  "title": "Intermediate Fluid Mechanics",
+  "department": "MECH&AE",
+  "instructor": "Jones, A.",
+  "location": "Renee and David Kaplan Hall 169",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0150A%20%20%20&class_id=210600200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0150pc_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE C150P",
+  "title": "Aircraft Propulsion Systems",
+  "department": "MECH&AE",
+  "instructor": "Karagozian, A.R.",
+  "location": "Boelter Hall 4760",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0150P%20C%20&class_id=210604200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0154s_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 154S",
+  "title": "Flight Mechanics, Stability, and Control of Aircraft",
+  "department": "MECH&AE",
+  "instructor": "Toohey, D.M.",
+  "location": "Boelter Hall 9436",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0154S%20%20%20&class_id=210629200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0156a_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 156A",
+  "title": "Advanced Strength of Materials",
+  "department": "MECH&AE",
+  "instructor": "Jin, L.",
+  "location": "Boelter Hall 2444",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0156A%20%20%20&class_id=210638200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0157w_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 157W",
+  "title": "Basic Mechanical and Aerospace Engineering Laboratory with Writing (Lab 1)",
+  "department": "MECH&AE",
+  "instructor": "Heronimus, B. Liu, Y. Eltawil, S. Gao, E.X.",
+  "location": "Engineering IV 43116",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0157W%20%20%20&class_id=210647200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0157w_26f_2",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 157W",
+  "title": "Basic Mechanical and Aerospace Engineering Laboratory with Writing (Lab 2)",
+  "department": "MECH&AE",
+  "instructor": "Pradeep, S. Johnson, K.R. Luo, Y. Lin, N.",
+  "location": "Engineering IV 43116",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0157W%20%20%20&class_id=210647201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0161a_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 161A",
+  "title": "Introduction to Astronautics",
+  "department": "MECH&AE",
+  "instructor": "Davoyan, A.R.",
+  "location": "Renee and David Kaplan Hall 169",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0161A%20%20%20&class_id=210666200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0162ac_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE C162A",
+  "title": "Introduction to Mechanisms and Mechanical Systems",
+  "department": "MECH&AE",
+  "instructor": "Hopkins, J. Tsao, A.",
+  "location": "Boelter Hall 3400",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0162A%20C%20&class_id=210673200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0163ac_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE C163A",
+  "title": "Kinematics of Robotic Systems",
+  "department": "MECH&AE",
+  "instructor": "Hong, D.W.",
+  "location": "Boelter Hall 3400",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0163A%20C%20&class_id=210680200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0166a_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 166A",
+  "title": "Analysis of Aerospace Structures",
+  "department": "MECH&AE",
+  "instructor": "Carman, G.P.",
+  "location": "Dodd Hall 167",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0166A%20%20%20&class_id=210696200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0171a_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 171A",
+  "title": "Introduction to Feedback and Control Systems: Dynamic Systems Control I",
+  "department": "MECH&AE",
+  "instructor": "Iwasaki, T.",
+  "location": "Dodd Hall 175",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0171A%20%20%20&class_id=210726200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0175ac_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE C175A",
+  "title": "Probability and Stochastic Processes in Dynamical Systems",
+  "department": "MECH&AE",
+  "instructor": "Talebi, S.",
+  "location": "Boelter Hall 9436",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0175A%20C%20&class_id=210750200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0182c_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 182C",
+  "title": "Numerical Methods for Engineering Applications",
+  "department": "MECH&AE",
+  "instructor": "Zhong, X.",
+  "location": "Boelter Hall 5420",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0182C%20%20%20&class_id=210794200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0183a_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 183A",
+  "title": "Introduction to Manufacturing Processes",
+  "department": "MECH&AE",
+  "instructor": "Li, X.",
+  "location": "Franz Hall 2258A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0183A%20%20%20&class_id=210801200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0183bm_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE M183B",
+  "title": "Introduction to Microscale and Nanoscale Manufacturing",
+  "department": "MECH&AE",
+  "instructor": "Chiou, P.",
+  "location": "Dodd Hall 78",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0183B%20M%20&class_id=210802200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0231a_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 231A",
+  "title": "Convective Heat Transfer Theory",
+  "department": "MECH&AE",
+  "instructor": "Fisher, T.S.",
+  "location": "Boelter Hall 2444",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0231A%20%20%20&class_id=610186200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0233_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 233",
+  "title": "Nanoscience for Energy Technologies",
+  "department": "MECH&AE",
+  "instructor": "Hu, Y.",
+  "location": "Boelter Hall 5436",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0233%20%20%20%20&class_id=610200200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0250c_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 250C",
+  "title": "Compressible Flows",
+  "department": "MECH&AE",
+  "instructor": "Spearrin, R.M.",
+  "location": "Boelter Hall 4760",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0250C%20%20%20&class_id=610302200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0250pc_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE C250P",
+  "title": "Aircraft Propulsion Systems",
+  "department": "MECH&AE",
+  "instructor": "Karagozian, A.R.",
+  "location": "Boelter Hall 4760",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0250P%20C%20&class_id=610310200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0256am_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE M256A",
+  "title": "Linear Elasticity",
+  "department": "MECH&AE",
+  "instructor": "Carman, G.P.",
+  "location": "Boelter Hall 5264",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0256A%20M%20&class_id=610336200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0259b_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 259B",
+  "title": "Seminar: Advanced Topics in Solid Mechanics",
+  "department": "MECH&AE",
+  "instructor": "Gandhi, V.",
+  "location": "Boelter Hall 4413",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0259B%20%20%20&class_id=610355200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0260_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 260",
+  "title": "Current Topics in Mechanical Engineering",
+  "department": "MECH&AE",
+  "instructor": "Abdou, M.A.",
+  "location": "Boelter Hall 8500",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0260%20%20%20%20&class_id=610360201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0261a_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 261A",
+  "title": "Energy and Computational Methods in Structural Mechanics",
+  "department": "MECH&AE",
+  "instructor": "Goyal, V.K.",
+  "location": "Boelter Hall 5280",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "19:50"
+   },
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0261A%20%20%20&class_id=610366200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0263ac_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE C263A",
+  "title": "Kinematics of Robotic Systems",
+  "department": "MECH&AE",
+  "instructor": "Hong, D.W.",
+  "location": "Boelter Hall 3400",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0263A%20C%20&class_id=610382200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0263f_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 263F",
+  "title": "Mechanics of Flexible Structures and Soft Robots",
+  "department": "MECH&AE",
+  "instructor": "Khalid Jawed, M.",
+  "location": "Boelter Hall 5440",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0263F%20%20%20&class_id=610385200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0265a_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 265A",
+  "title": "Autonomous Aerospace Systems: Planning and Control",
+  "department": "MECH&AE",
+  "instructor": "No instructors",
+  "location": "Boelter Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0265A%20%20%20&class_id=610400200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0270a_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 270A",
+  "title": "Linear Dynamic Systems",
+  "department": "MECH&AE",
+  "instructor": "M'Closkey, R.T.",
+  "location": "Boelter Hall 5272",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0270A%20%20%20&class_id=610420200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0271ac_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE C271A",
+  "title": "Probability and Stochastic Processes in Dynamical Systems",
+  "department": "MECH&AE",
+  "instructor": "Talebi, S.",
+  "location": "Boelter Hall 9436",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0271A%20C%20&class_id=610425200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0271d_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 271D",
+  "title": "Seminar: Special Topics in Dynamic Systems Control",
+  "department": "MECH&AE",
+  "instructor": "No instructors",
+  "location": "Boelter Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0271D%20%20%20&class_id=610429200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0279b_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 279B",
+  "title": "Dynamics and Feedback in Biological and Ecological Systems",
+  "department": "MECH&AE",
+  "instructor": "Franco, E.",
+  "location": "Boelter Hall 5280",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0279B%20%20%20&class_id=610478200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0281_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 281",
+  "title": "Microsciences",
+  "department": "MECH&AE",
+  "instructor": "Kim, C.",
+  "location": "Boelter Hall 5280",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0281%20%20%20%20&class_id=610486200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0287m_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE M287",
+  "title": "Nanoscience and Technology",
+  "department": "MECH&AE",
+  "instructor": "Chen, Y.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0287%20%20M%20&class_id=610521200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0294bc_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE C294B",
+  "title": "Introduction to Mechanisms and Mechanical Systems",
+  "department": "MECH&AE",
+  "instructor": "Hopkins, J. Tsao, A.",
+  "location": "Boelter Hall 3400",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0294B%20C%20&class_id=610575200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mechae0495_26f",
+  "schoolId": "s_ucla",
+  "code": "MECH&AE 495",
+  "title": "Teaching Assistant Training Seminar",
+  "department": "MECH&AE",
+  "instructor": "Ju, S. Fayed, M.",
+  "location": "Boelter Hall 9436",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MECH%26AE&crs_catlg_no=0495%20%20%20%20&class_id=610790200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_med0019002_26f",
+  "schoolId": "s_ucla",
+  "code": "MED 19",
+  "title": "Medicine and Technology: New Era of Innovation",
+  "department": "MED",
+  "instructor": "Naeim, A. Spiegel, B.M.",
+  "location": "Geffen Hall 148",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MED%20%20%20%20&crs_catlg_no=0019%20%20%20%20&class_id=264057102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_med0019001_26f",
+  "schoolId": "s_ucla",
+  "code": "MED 19",
+  "title": "Population Health Disparities and Outcomes of Women&#39;s Health",
+  "department": "MED",
+  "instructor": "Kuo, A.A.",
+  "location": "Public Affairs Building 1256",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MED%20%20%20%20&crs_catlg_no=0019%20%20%20%20&class_id=264057101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0101_26f",
+  "schoolId": "s_ucla",
+  "code": "MIMG 101",
+  "title": "Introductory Microbiology",
+  "department": "MIMG",
+  "instructor": "Berthet, K.J. Donaldson, G.",
+  "location": "Broad Art Center 2160E",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0101%20%20%20%20&class_id=145306200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0105_26f",
+  "schoolId": "s_ucla",
+  "code": "MIMG 105",
+  "title": "Biological Microscopy",
+  "department": "MIMG",
+  "instructor": "Zhou, H. Bentolila, L. Stieg, A.Z.",
+  "location": "Geology Building 4660",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0105%20%20%20%20&class_id=145330200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0109al_26f",
+  "schoolId": "s_ucla",
+  "code": "MIMG 109AL",
+  "title": "Research Immersion Laboratory in Microbiology",
+  "department": "MIMG",
+  "instructor": "Velez Ramirez, D.E",
+  "location": "Geology Building 4660",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0109AL%20%20&class_id=145354200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0109bl_26f",
+  "schoolId": "s_ucla",
+  "code": "MIMG 109BL",
+  "title": "Advanced Research Analysis in Microbiology",
+  "department": "MIMG",
+  "instructor": "Bouklas, T.A. Yenokyan, D.",
+  "location": "Life Sciences 2320",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "12:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0109BL%20%20&class_id=145355200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0178m_26f",
+  "schoolId": "s_ucla",
+  "code": "MIMG M178",
+  "title": "Quantitative Regulatory Biology and Signal Transduction",
+  "department": "MIMG",
+  "instructor": "Hoffmann, A. Deeds, E.J. Vanheusden, R. Zagon, N. Walker, J.L. Hamilton, T.",
+  "location": "Bunche Hall 1209B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0178%20%20M%20&class_id=145769200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0180b_26f",
+  "schoolId": "s_ucla",
+  "code": "MIMG 180B",
+  "title": "Scientific Analysis and Communication II",
+  "department": "MIMG",
+  "instructor": "Pernas, L. Hallem, E.A.",
+  "location": "La Kretz Hall 100",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0180B%20%20%20&class_id=145781200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0186_26f",
+  "schoolId": "s_ucla",
+  "code": "MIMG 186",
+  "title": "Human Clinical Immunology",
+  "department": "MIMG",
+  "instructor": "Kohn, D.B. Su, M.A.",
+  "location": "Biomedical Sciences Research Building 283",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0186%20%20%20%20&class_id=145820201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_mimg0262a_26f",
+  "schoolId": "s_ucla",
+  "code": "MIMG 262A",
+  "title": "Seminar: Current Topics in Immunobiology of Cancer",
+  "department": "MIMG",
+  "instructor": "No instructors",
+  "location": "Molecular Sciences Building",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MIMG%20%20%20&crs_catlg_no=0262A%20%20%20&class_id=545372200&class_no=%20001%20%20"
  }
 ]

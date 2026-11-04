@@ -1864,3 +1864,10 @@
 - **Club links that are forms:** 43 "Website" links were Google Forms / Typeform / Jotform / MS Forms (Lehigh Inspire Her, 7 at Michigan …) → labeled `Sign-up form` (in `relabelSocialWebsites`, runs on every collect; test). HANDOFF note to Codex.
 - UCLA batch continuing.
 - Spot check clubs: CWRU Discussions journal, Rice KTRU, USC GASP match; Purdue Delta Phi Mu site 503; Lehigh Inspire Her → form (fixed above).
+
+## 2026-11-04 06:33 run
+- No Codex commits or HANDOFF requests.
+- **Illinois class times (new reader `uiuc`):** courses.illinois.edu course explorer XML is public; `<subject>.xml?mode=cascade` gives every section and meeting in one request per subject (about 375 requests, 0.7 s apart). Lectures (LEC / lecture-discussion) where a course has them, else seminars/studios. Fall 2026 5,107 + Spring 2027 4,704 classes with times; 4,643 catalog-only courses kept (no course code lost). Test with the real CS response. Spot check ACCY 303, CI 402 (grad), FIN 463 (grad), MSE 422 (grad), TAM 270 against the official course pages — saved times appear there.
+- Florida: one.uf.edu/apix/soc/schedule is public but returns empty meeting times for every section (Fall 2026 and Spring 2027) → no times from it; queue. Wisconsin public.enroll.wisc.edu 403; UCI WebSoc and UNC reports.unc.edu do not answer from here.
+- UCLA batch continuing.
+- Spot check clubs: Georgia Tech Marine Robotics, Vanderbilt Society of Physics Students, WashU Peer Health Educators, SJSU Men's Ice Hockey, UC Davis Political Review — match.

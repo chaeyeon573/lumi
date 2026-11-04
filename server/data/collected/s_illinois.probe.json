@@ -1,20 +1,25 @@
 {
- "checkedAt": "2026-11-03T12:38:09.759Z",
+ "checkedAt": "2026-11-04T06:41:21.050Z",
  "status": "applied",
  "stored": false,
- "source": "catalog:https://catalog.illinois.edu/",
- "sampled": 296,
- "withTimes": 0,
+ "source": "timetable:uiuc",
+ "sampled": 9811,
+ "withTimes": 9811,
  "terms": [
-  "catalog"
+  "Fall 2026",
+  "Spring 2027"
  ],
  "sample": [
-  "CS 100 · Computer Science Orientation   credit: · catalog",
-  "CS 423 · Operating Systems Design   credit: 3 or · catalog",
-  "CS 493 · Senior Project II, ACP   credit: · catalog",
-  "CS 576 · Topics in Automated Deduction   credit: 2 to · catalog",
-  "CSE 543 · Topics in Image Processing   credit: · catalog",
-  "GGIS 384 · Population Geography   credit: · catalog"
+  "AAS 100 · Intro Asian American Studies (Sec AL1) · Fall 2026 · M 13:00-13:50 W 13:00-13:50",
+  "ECE 210 · Analog Signal Processing (Sec AL3) · Fall 2026 · M 12:00-12:50 T 12:00-12:50 W 12:00-12:50 F 12:00-12:50",
+  "LING 300 · Anat & Physiol Spch Mechanism · Fall 2026 · M 08:30-09:50 W 08:30-09:50",
+  "STAT 433 · Stochastic Processes (Sec 1UG) · Fall 2026 · T 12:30-13:50 R 12:30-13:50",
+  "CSE 448 · Advanced Data Analysis (Sec 1GR) · Spring 2027 · M 15:00-15:50 W 15:00-15:50 F 15:00-15:50",
+  "MACS 503 · Historiography of Cinema · Spring 2027 · W 15:00-17:50"
  ],
- "spotCheck": "no lookup (catalog codes/titles only)"
+ "spotCheck": {
+  "matched": 0,
+  "mismatched": [],
+  "unavailable": 0
+ }
 }
