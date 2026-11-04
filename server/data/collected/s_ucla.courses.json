@@ -117528,5 +117528,3230 @@
   "termCode": "27W",
   "units": 4,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=IRANIAN&crs_catlg_no=0210%20%20M%20&class_id=691060200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_islmst0027bm_27w",
+  "schoolId": "s_ucla",
+  "code": "ISLM ST M27B",
+  "title": "Global Islam",
+  "department": "ISLM ST",
+  "instructor": "Green, N.S. Yarbrough, L.B. Chism, C.N.",
+  "location": "Northwest Campus Auditorium 101A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ISLM%20ST&crs_catlg_no=0027B%20M%20&class_id=234108200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_islmst0111m_27w",
+  "schoolId": "s_ucla",
+  "code": "ISLM ST M111",
+  "title": "Introduction to Islamic Archaeology",
+  "department": "ISLM ST",
+  "instructor": "Burke, K.S.",
+  "location": "Bunche Hall 3211",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ISLM%20ST&crs_catlg_no=0111%20%20M%20&class_id=234366200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_islmst0291a001_27w",
+  "schoolId": "s_ucla",
+  "code": "ISLM ST 291A",
+  "title": "Variable Topics in Islamic Studies: Seminar 1",
+  "department": "ISLM ST",
+  "instructor": "Sayeed, A.",
+  "location": "Renee and David Kaplan Hall 365",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ISLM%20ST&crs_catlg_no=0291A%20%20%20&class_id=634546200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_italian0001_27w",
+  "schoolId": "s_ucla",
+  "code": "ITALIAN 1",
+  "title": "Elementary Italian--Beginning (Lec 1)",
+  "department": "ITALIAN",
+  "location": "Haines Hall A24",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ITALIAN&crs_catlg_no=0001%20%20%20%20&class_id=237003200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_italian0001_27w_2",
+  "schoolId": "s_ucla",
+  "code": "ITALIAN 1",
+  "title": "Elementary Italian--Beginning (Lec 2)",
+  "department": "ITALIAN",
+  "location": "Haines Hall A74",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ITALIAN&crs_catlg_no=0001%20%20%20%20&class_id=237003202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_italian0001_27w_3",
+  "schoolId": "s_ucla",
+  "code": "ITALIAN 1",
+  "title": "Elementary Italian--Beginning (Lec 3)",
+  "department": "ITALIAN",
+  "location": "Haines Hall A24",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ITALIAN&crs_catlg_no=0001%20%20%20%20&class_id=237003203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_italian0001_27w_4",
+  "schoolId": "s_ucla",
+  "code": "ITALIAN 1",
+  "title": "Elementary Italian--Beginning (Lec 4)",
+  "department": "ITALIAN",
+  "location": "Haines Hall A24",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ITALIAN&crs_catlg_no=0001%20%20%20%20&class_id=237003204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_italian0002_27w",
+  "schoolId": "s_ucla",
+  "code": "ITALIAN 2",
+  "title": "Elementary Italian--Continued (Lec 1)",
+  "department": "ITALIAN",
+  "instructor": "TA Bjekovic, N.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ITALIAN&crs_catlg_no=0002%20%20%20%20&class_id=237009200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_italian0002_27w_2",
+  "schoolId": "s_ucla",
+  "code": "ITALIAN 2",
+  "title": "Elementary Italian--Continued (Lec 2)",
+  "department": "ITALIAN",
+  "location": "Haines Hall A74",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ITALIAN&crs_catlg_no=0002%20%20%20%20&class_id=237009202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_italian0002_27w_3",
+  "schoolId": "s_ucla",
+  "code": "ITALIAN 2",
+  "title": "Elementary Italian--Continued (Lec 3)",
+  "department": "ITALIAN",
+  "location": "Haines Hall A74",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ITALIAN&crs_catlg_no=0002%20%20%20%20&class_id=237009203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_italian0002_27w_4",
+  "schoolId": "s_ucla",
+  "code": "ITALIAN 2",
+  "title": "Elementary Italian--Continued (Lec 4)",
+  "department": "ITALIAN",
+  "instructor": "TA Bjekovic, N.",
+  "location": "Royce Hall 152",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ITALIAN&crs_catlg_no=0002%20%20%20%20&class_id=237009204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_italian0003_27w",
+  "schoolId": "s_ucla",
+  "code": "ITALIAN 3",
+  "title": "Elementary Italian--Continued",
+  "department": "ITALIAN",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ITALIAN&crs_catlg_no=0003%20%20%20%20&class_id=237015201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_italian0006_27w",
+  "schoolId": "s_ucla",
+  "code": "ITALIAN 6",
+  "title": "Intermediate Italian",
+  "department": "ITALIAN",
+  "instructor": "TA Bjekovic, N.",
+  "location": "Royce Hall 152",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ITALIAN&crs_catlg_no=0006%20%20%20%20&class_id=237027200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_italian0046001_27w",
+  "schoolId": "s_ucla",
+  "code": "ITALIAN 46",
+  "title": "Italian Cinema and Culture in English: Lecture 1",
+  "department": "ITALIAN",
+  "instructor": "Rushing, R.A.",
+  "location": "Haines Hall 118",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ITALIAN&crs_catlg_no=0046%20%20%20%20&class_id=237110200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_italian0150001_27w",
+  "schoolId": "s_ucla",
+  "code": "ITALIAN 150",
+  "title": "Modern Fiction in Translation: Fiction of Self-Knowledge",
+  "department": "ITALIAN",
+  "instructor": "Harrison, T.J.",
+  "location": "Royce Hall 152",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ITALIAN&crs_catlg_no=0150%20%20%20%20&class_id=237592200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0002_27w",
+  "schoolId": "s_ucla",
+  "code": "JAPAN 2",
+  "title": "Elementary Modern Japanese (Lec 1)",
+  "department": "JAPAN",
+  "location": "Bunche Hall 3117 Royce Hall 162",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0002%20%20%20%20&class_id=261006200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0002_27w_2",
+  "schoolId": "s_ucla",
+  "code": "JAPAN 2",
+  "title": "Elementary Modern Japanese (Lec 2)",
+  "department": "JAPAN",
+  "location": "Bunche Hall 2168 Royce Hall 160",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0002%20%20%20%20&class_id=261006201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0002_27w_3",
+  "schoolId": "s_ucla",
+  "code": "JAPAN 2",
+  "title": "Elementary Modern Japanese (Lec 3)",
+  "department": "JAPAN",
+  "location": "Bunche Hall 3157 Royce Hall 160",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 4,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0002%20%20%20%20&class_id=261006202&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0002_27w_4",
+  "schoolId": "s_ucla",
+  "code": "JAPAN 2",
+  "title": "Elementary Modern Japanese (Lec 4)",
+  "department": "JAPAN",
+  "location": "Public Affairs Building 2325 Public Affairs Building 1256",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0002%20%20%20%20&class_id=261006203&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0002_27w_5",
+  "schoolId": "s_ucla",
+  "code": "JAPAN 2",
+  "title": "Elementary Modern Japanese (Lec 5)",
+  "department": "JAPAN",
+  "location": "Royce Hall 148 Royce Hall 148",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0002%20%20%20%20&class_id=261006204&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0005_27w",
+  "schoolId": "s_ucla",
+  "code": "JAPAN 5",
+  "title": "Intermediate Modern Japanese (Lec 1)",
+  "department": "JAPAN",
+  "location": "Rolfe Hall 3129 Public Affairs Building 2242",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0005%20%20%20%20&class_id=261015200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0005_27w_2",
+  "schoolId": "s_ucla",
+  "code": "JAPAN 5",
+  "title": "Intermediate Modern Japanese (Lec 2)",
+  "department": "JAPAN",
+  "location": "Bunche Hall 3123 Rolfe Hall 3135",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:30",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:30",
+    "end": "15:15"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0005%20%20%20%20&class_id=261015201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0050_27w",
+  "schoolId": "s_ucla",
+  "code": "JAPAN 50",
+  "title": "Japanese Civilization",
+  "department": "JAPAN",
+  "instructor": "Duthie, T.",
+  "location": "Dodd Hall 147",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0050%20%20%20%20&class_id=261150200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0070_27w",
+  "schoolId": "s_ucla",
+  "code": "JAPAN 70",
+  "title": "Images of Japan: Literature and Film",
+  "department": "JAPAN",
+  "instructor": "Shimazaki, S.",
+  "location": "Haines Hall A25",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0070%20%20%20%20&class_id=261210200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0100b_27w",
+  "schoolId": "s_ucla",
+  "code": "JAPAN 100B",
+  "title": "Advanced Modern Japanese (Lec 1)",
+  "department": "JAPAN",
+  "location": "Royce Hall 166 Kaufman Hall 153 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0100B%20%20%20&class_id=261301200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0100b_27w_2",
+  "schoolId": "s_ucla",
+  "code": "JAPAN 100B",
+  "title": "Advanced Modern Japanese (Lec 2)",
+  "department": "JAPAN",
+  "location": "Haines Hall A76 Dodd Hall 170 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0100B%20%20%20&class_id=261301202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0101b_27w",
+  "schoolId": "s_ucla",
+  "code": "JAPAN 101B",
+  "title": "Fourth-Year Japanese: Advanced Reading",
+  "department": "JAPAN",
+  "location": "Public Affairs Building 2325",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0101B%20%20%20&class_id=261316203&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0130a_27w",
+  "schoolId": "s_ucla",
+  "code": "JAPAN 130A",
+  "title": "Readings in Modern Japanese Literature",
+  "department": "JAPAN",
+  "location": "Bunche Hall 3164",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0130A%20%20%20&class_id=261481200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0159c001_27w",
+  "schoolId": "s_ucla",
+  "code": "JAPAN C159",
+  "title": "Variable Topics in Culture and Society in Japan: Lecture 1",
+  "department": "JAPAN",
+  "instructor": "Curtis, P.R.",
+  "location": "Bunche Hall 3156",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0159%20%20C%20&class_id=261654200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0170_27w",
+  "schoolId": "s_ucla",
+  "code": "JAPAN 170",
+  "title": "Japanese Tales of Supernatural",
+  "department": "JAPAN",
+  "location": "Bunche Hall 3156",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0170%20%20%20%20&class_id=261720200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0240b_27w",
+  "schoolId": "s_ucla",
+  "code": "JAPAN 240B",
+  "title": "Seminar: Selected Topics in Japanese Literature",
+  "department": "JAPAN",
+  "instructor": "Shimazaki, S.",
+  "location": "Bunche Hall 2150",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0240B%20%20%20&class_id=661241200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_japan0297b001_27w",
+  "schoolId": "s_ucla",
+  "code": "JAPAN 297B",
+  "title": "Seminar: Modern Japan: Seminar 1",
+  "department": "JAPAN",
+  "location": "Bunche Hall 2150",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JAPAN%20%20&crs_catlg_no=0297B%20%20%20&class_id=661582200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_jewish0080m_27w",
+  "schoolId": "s_ucla",
+  "code": "JEWISH M80",
+  "title": "Jewish American Experience through Music",
+  "department": "JEWISH",
+  "instructor": "Kligman, M.L.",
+  "location": "Schoenberg Music Building 1200",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JEWISH%20&crs_catlg_no=0080%20%20M%20&class_id=293240200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_jewish0150am_27w",
+  "schoolId": "s_ucla",
+  "code": "JEWISH M150A",
+  "title": "Hebrew Literature in English: Literary Traditions of Ancient Israel--Bible and Apocrypha",
+  "department": "JEWISH",
+  "instructor": "Smoak, J.D.",
+  "location": "Rolfe Hall 3105",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JEWISH%20&crs_catlg_no=0150A%20M%20&class_id=293602200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_jewish0178m_27w",
+  "schoolId": "s_ucla",
+  "code": "JEWISH M178",
+  "title": "Introduction to History and Culture of Iranian Jews",
+  "department": "JEWISH",
+  "instructor": "Pirnazar, N.",
+  "location": "Renee and David Kaplan Hall 398",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JEWISH%20&crs_catlg_no=0178%20%20M%20&class_id=293778200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_jewish0182cm_27w",
+  "schoolId": "s_ucla",
+  "code": "JEWISH M182C",
+  "title": "Modern Jewish History",
+  "department": "JEWISH",
+  "instructor": "May, C.S.",
+  "location": "Bunche Hall 3178",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=JEWISH%20&crs_catlg_no=0182C%20M%20&class_id=293794200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0002_27w",
+  "schoolId": "s_ucla",
+  "code": "KOREA 2",
+  "title": "Elementary Modern Korean (Lec 1)",
+  "department": "KOREA",
+  "location": "Kaufman Hall 153 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0002%20%20%20%20&class_id=267006200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0002_27w_2",
+  "schoolId": "s_ucla",
+  "code": "KOREA 2",
+  "title": "Elementary Modern Korean (Lec 2)",
+  "department": "KOREA",
+  "location": "Bunche Hall 2178 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0002%20%20%20%20&class_id=267006210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0002_27w_3",
+  "schoolId": "s_ucla",
+  "code": "KOREA 2",
+  "title": "Elementary Modern Korean (Lec 3)",
+  "department": "KOREA",
+  "location": "Bunche Hall 2156 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0002%20%20%20%20&class_id=267006205&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0002_27w_4",
+  "schoolId": "s_ucla",
+  "code": "KOREA 2",
+  "title": "Elementary Modern Korean (Lec 4)",
+  "department": "KOREA",
+  "location": "Public Affairs Building 2319 Public Affairs Building 2238",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0002%20%20%20%20&class_id=267006204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0002_27w_5",
+  "schoolId": "s_ucla",
+  "code": "KOREA 2",
+  "title": "Elementary Modern Korean (Lec 5)",
+  "department": "KOREA",
+  "location": "Bunche Hall 3123 Public Affairs Building 1270",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0002%20%20%20%20&class_id=267006206&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0002a_27w",
+  "schoolId": "s_ucla",
+  "code": "KOREA 2A",
+  "title": "Elementary Korean for Korean-Heritage Speakers (Lec 1)",
+  "department": "KOREA",
+  "location": "Bunche Hall 3143 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0002A%20%20%20&class_id=267008200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0002a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "KOREA 2A",
+  "title": "Elementary Korean for Korean-Heritage Speakers (Lec 2)",
+  "department": "KOREA",
+  "location": "Bunche Hall 3117 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0002A%20%20%20&class_id=267008201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0005_27w",
+  "schoolId": "s_ucla",
+  "code": "KOREA 5",
+  "title": "Intermediate Modern Korean (Lec 1)",
+  "department": "KOREA",
+  "location": "Haines Hall A6 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0005%20%20%20%20&class_id=267015200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0005_27w_2",
+  "schoolId": "s_ucla",
+  "code": "KOREA 5",
+  "title": "Intermediate Modern Korean (Lec 2)",
+  "department": "KOREA",
+  "location": "Haines Hall A6 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0005%20%20%20%20&class_id=267015203&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0050_27w",
+  "schoolId": "s_ucla",
+  "code": "KOREA 50",
+  "title": "History of Korean Civilization",
+  "department": "KOREA",
+  "instructor": "Wang, S.",
+  "location": "Bunche Hall 2209A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0050%20%20%20%20&class_id=267150200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0100b_27w",
+  "schoolId": "s_ucla",
+  "code": "KOREA 100B",
+  "title": "Advanced Modern Korean",
+  "department": "KOREA",
+  "location": "Haines Hall 122",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0100B%20%20%20&class_id=267301200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0101b_27w",
+  "schoolId": "s_ucla",
+  "code": "KOREA 101B",
+  "title": "Fourth Year Korean: Speaking, Listening, Reading, and Writing",
+  "department": "KOREA",
+  "location": "Haines Hall A28",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0101B%20%20%20&class_id=267307200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0102a_27w",
+  "schoolId": "s_ucla",
+  "code": "KOREA 102A",
+  "title": "Advanced Korean Conversation",
+  "department": "KOREA",
+  "location": "Renee and David Kaplan Hall A48",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0102A%20%20%20&class_id=267312200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0105b_27w",
+  "schoolId": "s_ucla",
+  "code": "KOREA 105B",
+  "title": "Fifth-Year Korean: High-Advanced Speaking, Listening, Reading, and Writing",
+  "department": "KOREA",
+  "location": "Royce Hall 148",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0105B%20%20%20&class_id=267326200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0124_27w",
+  "schoolId": "s_ucla",
+  "code": "KOREA 124",
+  "title": "Topics in Korean Language and Culture",
+  "department": "KOREA",
+  "location": "Bunche Hall 3156",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0124%20%20%20%20&class_id=267536200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0151c_27w",
+  "schoolId": "s_ucla",
+  "code": "KOREA C151",
+  "title": "Korean Literature in Translation: Modern",
+  "department": "KOREA",
+  "instructor": "Hanscom, C.P.",
+  "location": "Royce Hall 148",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0151%20%20C%20&class_id=267607200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0153_27w",
+  "schoolId": "s_ucla",
+  "code": "KOREA 153",
+  "title": "Korea West Encounters",
+  "department": "KOREA",
+  "instructor": "Oak, S.",
+  "location": "Haines Hall A44",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0153%20%20%20%20&class_id=267618200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_korea0172001_27w",
+  "schoolId": "s_ucla",
+  "code": "KOREA 172",
+  "title": "Topics in Korean Christianity: Lecture 1",
+  "department": "KOREA",
+  "instructor": "Oak, S.",
+  "location": "Bunche Hall 2160",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=KOREA%20%20&crs_catlg_no=0172%20%20%20%20&class_id=267743200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lbrstd0107_27w",
+  "schoolId": "s_ucla",
+  "code": "LBR STD 107",
+  "title": "Working Badly: Sabotage, Laziness, Mischief",
+  "department": "LBR STD",
+  "instructor": "Berg, H.R.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LBR%20STD&crs_catlg_no=0107%20%20%20%20&class_id=447335200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lbrstd0109_27w",
+  "schoolId": "s_ucla",
+  "code": "LBR STD 109",
+  "title": "Sex and Money",
+  "department": "LBR STD",
+  "instructor": "Berg, H.R.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LBR%20STD&crs_catlg_no=0109%20%20%20%20&class_id=447354200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lbrstd0117m_27w",
+  "schoolId": "s_ucla",
+  "code": "LBR STD M117",
+  "title": "Negotiation",
+  "department": "LBR STD",
+  "instructor": "Stroessner, S.J.",
+  "location": "Royce Hall 164",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LBR%20STD&crs_catlg_no=0117%20%20M%20&class_id=447402200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lbrstd0126_27w",
+  "schoolId": "s_ucla",
+  "code": "LBR STD 126",
+  "title": "Farm Worker Transnational Struggle",
+  "department": "LBR STD",
+  "instructor": "Rivera-Salgado, G.",
+  "location": "Royce Hall 156",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LBR%20STD&crs_catlg_no=0126%20%20%20%20&class_id=447456200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lbrstd0137_27w",
+  "schoolId": "s_ucla",
+  "code": "LBR STD 137",
+  "title": "Labor and Public Higher Education: Campus Workers, Working Students, and the Public Good",
+  "department": "LBR STD",
+  "instructor": "Griffey, T.S.",
+  "location": "Haines Hall A44",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LBR%20STD&crs_catlg_no=0137%20%20%20%20&class_id=447520200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lbrstd0156_27w",
+  "schoolId": "s_ucla",
+  "code": "LBR STD 156",
+  "title": "Revolutionary Fantasies: Inequality and Protest in Contempory Science Fiction",
+  "department": "LBR STD",
+  "instructor": "Gaffney, L.M.",
+  "location": "Rolfe Hall 3126",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LBR%20STD&crs_catlg_no=0156%20%20%20%20&class_id=447636200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lbrstd0174_27w",
+  "schoolId": "s_ucla",
+  "code": "LBR STD 174",
+  "title": "Labor and Employment Law",
+  "department": "LBR STD",
+  "instructor": "Smemo, K.O. Bollo, D.",
+  "location": "Kinsey Science Teaching Pavilion 1240B",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LBR%20STD&crs_catlg_no=0174%20%20%20%20&class_id=447744200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lbrstd0179a_27w",
+  "schoolId": "s_ucla",
+  "code": "LBR STD 179A",
+  "title": "Neoliberalism, Social Justice, and Transformative Politics",
+  "department": "LBR STD",
+  "instructor": "Rocco, R.A.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LBR%20STD&crs_catlg_no=0179A%20%20%20&class_id=447774200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lbrstd0184_27w",
+  "schoolId": "s_ucla",
+  "code": "LBR STD 184",
+  "title": "Strategic Research for Los Angeles Workers",
+  "department": "LBR STD",
+  "instructor": "McBride, J.G.",
+  "location": "Public Affairs Building 2232",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LBR%20STD&crs_catlg_no=0184%20%20%20%20&class_id=447798200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lbrstd0188001_27w",
+  "schoolId": "s_ucla",
+  "code": "LBR STD 188",
+  "title": "Special Courses in Labor Studies: California Immigrant Youth Movement: Past, Present, and Future",
+  "department": "LBR STD",
+  "instructor": "Narro, V.H. Borrego, M.",
+  "location": "Dodd Hall 146",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LBR%20STD&crs_catlg_no=0188%20%20%20%20&class_id=447828201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lbrstd0188002_27w",
+  "schoolId": "s_ucla",
+  "code": "LBR STD 188",
+  "title": "Special Courses in Labor Studies: Labor Digital Economy: Algorithmic Management, Artificial Intelligence, and Workers&#39; Rights",
+  "department": "LBR STD",
+  "instructor": "Marinaro, P.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LBR%20STD&crs_catlg_no=0188%20%20%20%20&class_id=447828200&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_lbrstd0191001_27w",
+  "schoolId": "s_ucla",
+  "code": "LBR STD 191",
+  "title": "Labor Studies: Research Principles, Methods, and Practices: Seminar 1",
+  "department": "LBR STD",
+  "instructor": "Espino, V.",
+  "location": "Bunche Hall 3117",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LBR%20STD&crs_catlg_no=0191%20%20%20%20&class_id=447845200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_latin0002_27w",
+  "schoolId": "s_ucla",
+  "code": "LATIN 2",
+  "title": "Elementary Latin (Lec 1)",
+  "department": "LATIN",
+  "instructor": "Beckelhymer, S.D.",
+  "location": "Dodd Hall 247",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LATIN%20%20&crs_catlg_no=0002%20%20%20%20&class_id=150021200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_latin0002_27w_2",
+  "schoolId": "s_ucla",
+  "code": "LATIN 2",
+  "title": "Elementary Latin (Lec 2)",
+  "department": "LATIN",
+  "instructor": "TA Beckelhymer, S.D.",
+  "location": "Dodd Hall 247",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LATIN%20%20&crs_catlg_no=0002%20%20%20%20&class_id=150021203&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_latin0111_27w",
+  "schoolId": "s_ucla",
+  "code": "LATIN 111",
+  "title": "Livy",
+  "department": "LATIN",
+  "instructor": "Spielberg, L.M.",
+  "location": "Dodd Hall 247",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LATIN%20%20&crs_catlg_no=0111%20%20%20%20&class_id=150365200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_latin0119a001_27w",
+  "schoolId": "s_ucla",
+  "code": "LATIN 119A",
+  "title": "Readings in Roman Prose: Lecture 1",
+  "department": "LATIN",
+  "instructor": "Culik-Baird, H.",
+  "location": "Dodd Hall 162",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LATIN%20%20&crs_catlg_no=0119A%20%20%20&class_id=150414200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_latnam0260m_27w",
+  "schoolId": "s_ucla",
+  "code": "LATN AM M260",
+  "title": "Health and Culture in Americas",
+  "department": "LATN AM",
+  "instructor": "Taub, B.",
+  "location": "Public Health, School of 71257",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LATN%20AM&crs_catlg_no=0260%20%20M%20&class_id=640360200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lgbtqs0114m_27w",
+  "schoolId": "s_ucla",
+  "code": "LGBTQS M114",
+  "title": "Introduction to Lesbian, Gay, Bisexual, Transgender, and Queer Studies",
+  "department": "LGBTQS",
+  "instructor": "Bustillo, D.",
+  "location": "Perloff Hall 1102",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LGBTQS%20&crs_catlg_no=0114%20%20M%20&class_id=436384200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lgbtqs0115m001_27w",
+  "schoolId": "s_ucla",
+  "code": "LGBTQS M115",
+  "title": "Topics in Study of Sexual and Gender Orientation: Gender Across Media",
+  "department": "LGBTQS",
+  "instructor": "Cornejo Salinas, G",
+  "location": "Bunche Hall 3170",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LGBTQS%20&crs_catlg_no=0115%20%20M%20&class_id=436390200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lgbtqs0126m001_27w",
+  "schoolId": "s_ucla",
+  "code": "LGBTQS M126",
+  "title": "Feminist and Queer Theory: Feminism and Psychoanalysis",
+  "department": "LGBTQS",
+  "instructor": "Lee, S.K.",
+  "location": "Bunche Hall 3143",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LGBTQS%20&crs_catlg_no=0126%20%20M%20&class_id=436456200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lgbtqs0181001_27w",
+  "schoolId": "s_ucla",
+  "code": "LGBTQS 181",
+  "title": "Variable Topics in Queer Diversities: Queer Arts in Los Angeles",
+  "department": "LGBTQS",
+  "instructor": "Lopez, A.",
+  "location": "Dodd Hall 154",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LGBTQS%20&crs_catlg_no=0181%20%20%20%20&class_id=436786200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lgbtqs0183001_27w",
+  "schoolId": "s_ucla",
+  "code": "LGBTQS 183",
+  "title": "Variable Topics in Queer Subjectivities/Theories/History: Embodiment and Horror Genre",
+  "department": "LGBTQS",
+  "instructor": "Gates, W.",
+  "location": "Boelter Hall 5436",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LGBTQS%20&crs_catlg_no=0183%20%20%20%20&class_id=436798200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lgbtqs0184001_27w",
+  "schoolId": "s_ucla",
+  "code": "LGBTQS 184",
+  "title": "Variable Topics in Science, Health, and Genetics: The Meaning of Cure: Medicine and LGBTQ+ Experience",
+  "department": "LGBTQS",
+  "instructor": "Hunter, M.A.",
+  "location": "Public Affairs Building 1284",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LGBTQS%20&crs_catlg_no=0184%20%20%20%20&class_id=436804200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0007a_27w",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 7A",
+  "title": "Cell and Molecular Biology (Lec 1)",
+  "department": "LIFESCI",
+  "instructor": "Ko, J.",
+  "location": "Dodd Hall 147",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0007A%20%20%20&class_id=252022200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0007a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 7A",
+  "title": "Cell and Molecular Biology (Lec 2)",
+  "department": "LIFESCI",
+  "instructor": "Ko, J. Chen, Y.Y.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0007A%20%20%20&class_id=252022220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0007b_27w",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 7B",
+  "title": "Genetics, Evolution, and Ecology (Lec 1)",
+  "department": "LIFESCI",
+  "instructor": "Marcot, J.D.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0007B%20%20%20&class_id=252023200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0007b_27w_2",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 7B",
+  "title": "Genetics, Evolution, and Ecology (Lec 2)",
+  "department": "LIFESCI",
+  "instructor": "Andres-Bray, T. Lohmueller, K.E.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0007B%20%20%20&class_id=252023220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0007b_27w_3",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 7B",
+  "title": "Genetics, Evolution, and Ecology (Lec 3)",
+  "department": "LIFESCI",
+  "instructor": "Pires, D.B. Lynch, J.W.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0007B%20%20%20&class_id=252023240&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0007b_27w_4",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 7B",
+  "title": "Genetics, Evolution, and Ecology (Lec 4)",
+  "department": "LIFESCI",
+  "instructor": "Pires, D.B.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0007B%20%20%20&class_id=252023260&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0007b_27w_5",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 7B",
+  "title": "Genetics, Evolution, and Ecology (Lec 5)",
+  "department": "LIFESCI",
+  "instructor": "Marcroft, T.A.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0007B%20%20%20&class_id=252023280&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0007c_27w",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 7C",
+  "title": "Physiology and Human Biology",
+  "department": "LIFESCI",
+  "instructor": "Esdin, J. Pires, D.B.",
+  "location": "Broad Art Center 2160E",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0007C%20%20%20&class_id=252024200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0015_27w",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 15",
+  "title": "Life: Concepts and Issues",
+  "department": "LIFESCI",
+  "instructor": "Phelan, J.P.",
+  "location": "Haines Hall 39",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0015%20%20%20%20&class_id=252045200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0030a_27w",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 30A",
+  "title": "Mathematics for Life Scientists",
+  "department": "LIFESCI",
+  "instructor": "Siskaki, M.",
+  "location": "Moore Hall 100",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0030A%20%20%20&class_id=252090200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0030b_27w",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 30B",
+  "title": "Mathematics for Life Scientists (Lec 1)",
+  "department": "LIFESCI",
+  "instructor": "Bennoun, S.J.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0030B%20%20%20&class_id=252091200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0030b_27w_2",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 30B",
+  "title": "Mathematics for Life Scientists (Lec 2)",
+  "department": "LIFESCI",
+  "instructor": "Bennoun, S.J.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0030B%20%20%20&class_id=252091220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0030b_27w_3",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 30B",
+  "title": "Mathematics for Life Scientists (Lec 3)",
+  "department": "LIFESCI",
+  "instructor": "Lee, C.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0030B%20%20%20&class_id=252091240&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0030b_27w_4",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 30B",
+  "title": "Mathematics for Life Scientists (Lec 4)",
+  "department": "LIFESCI",
+  "instructor": "Lee, C.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0030B%20%20%20&class_id=252091260&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0098xa_27w",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 98XA",
+  "title": "PEERS Collaborative Learning Workshops for Life Sciences Majors",
+  "department": "LIFESCI",
+  "instructor": "Hasson, T.W. Gonzalez Ramirez,",
+  "location": "Bunche Hall 3123",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0098XA%20%20&class_id=252294100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0107_27w",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 107",
+  "title": "Genetics (Lec 1)",
+  "department": "LIFESCI",
+  "instructor": "Pham, H.D.",
+  "location": "Haines Hall 39",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0107%20%20%20%20&class_id=252342200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0107_27w_2",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 107",
+  "title": "Genetics (Lec 2)",
+  "department": "LIFESCI",
+  "instructor": "Pham, H.D.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0107%20%20%20%20&class_id=252342220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0110_27w",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 110",
+  "title": "Career Exploration in Life Sciences",
+  "department": "LIFESCI",
+  "instructor": "Parker, H.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0110%20%20%20%20&class_id=252360200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0192am_27w",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI M192A",
+  "title": "Introduction to Collaborative Learning Theory and Practice",
+  "department": "LIFESCI",
+  "instructor": "Shaked, S. Parker, H.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0192A%20M%20&class_id=252864201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0192b_27w",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 192B",
+  "title": "Methods and Application of Collaborative Learning Theory in Life Sciences",
+  "department": "LIFESCI",
+  "instructor": "Parker, H. Shaked, S.",
+  "location": "Dodd Hall 175",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0192B%20%20%20&class_id=252861201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_lifesci0495_27w",
+  "schoolId": "s_ucla",
+  "code": "LIFESCI 495",
+  "title": "Preparation for College-Level Teaching in Life Sciences",
+  "department": "LIFESCI",
+  "instructor": "Marcroft, T.A.",
+  "location": "Young Hall 2200",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LIFESCI&crs_catlg_no=0495%20%20%20%20&class_id=652790201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0020_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 20",
+  "title": "Introduction to Linguistic Analysis",
+  "department": "LING",
+  "instructor": "Keine, S.",
+  "location": "Rolfe Hall 1200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0020%20%20%20%20&class_id=253090200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0102_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 102",
+  "title": "Introduction to Applied Phonetics",
+  "department": "LING",
+  "instructor": "Narkar, J.",
+  "location": "Renee and David Kaplan Hall 135",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0102%20%20%20%20&class_id=253312200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0103_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 103",
+  "title": "Introduction to General Phonetics",
+  "department": "LING",
+  "instructor": "Bell, E.A.",
+  "location": "Royce Hall 160",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0103%20%20%20%20&class_id=253334200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0104c_27w",
+  "schoolId": "s_ucla",
+  "code": "LING C104",
+  "title": "Experimental Phonetics",
+  "department": "LING",
+  "instructor": "Narkar, J.",
+  "location": "Dodd Hall 161",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0104%20%20C%20&class_id=253554200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0105_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 105",
+  "title": "Morphology",
+  "department": "LING",
+  "instructor": "Motter, T.C.",
+  "location": "Public Affairs Building 2270",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0105%20%20%20%20&class_id=253330200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0119a_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 119A",
+  "title": "Applied Phonology",
+  "department": "LING",
+  "instructor": "Moore-Cantwell, C.",
+  "location": "Renee and David Kaplan Hall A65",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0119A%20%20%20&class_id=253414200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0120a_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 120A",
+  "title": "Phonology I",
+  "department": "LING",
+  "instructor": "Eischens, B.J.",
+  "location": "Bunche Hall 3157",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0120A%20%20%20&class_id=253420200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0120b_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 120B",
+  "title": "Syntax I",
+  "department": "LING",
+  "instructor": "Motter, T.C.",
+  "location": "Renee and David Kaplan Hall 169",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0120B%20%20%20&class_id=253437200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0120c_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 120C",
+  "title": "Semantics I",
+  "department": "LING",
+  "instructor": "Rett, J.L.",
+  "location": "Public Affairs Building 2232",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0120C%20%20%20&class_id=253422200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0127_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 127",
+  "title": "Syntactic Typology and Universals",
+  "department": "LING",
+  "instructor": "Silvestri, G.",
+  "location": "Public Affairs Building 2270",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0127%20%20%20%20&class_id=253459200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0132_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 132",
+  "title": "Language Processing",
+  "department": "LING",
+  "instructor": "Harris, J.A.",
+  "location": "Bunche Hall 3157",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0132%20%20%20%20&class_id=253491200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0140c_27w",
+  "schoolId": "s_ucla",
+  "code": "LING C140",
+  "title": "Bilingualism and Second Language Acquisition",
+  "department": "LING",
+  "instructor": "Bell, E.A.",
+  "location": "Dodd Hall 178",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0140%20%20C%20&class_id=253505200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0141m_27w",
+  "schoolId": "s_ucla",
+  "code": "LING M141",
+  "title": "Current Methods of Language Teaching",
+  "department": "LING",
+  "instructor": "Chamberlain, M.A.",
+  "location": "Renee and David Kaplan Hall A66",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0141%20%20M%20&class_id=253546200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0146m_27w",
+  "schoolId": "s_ucla",
+  "code": "LING M146",
+  "title": "Language in Culture",
+  "department": "LING",
+  "instructor": "Bahtina, D.",
+  "location": "Fowler Museum at UCLA A103B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0146%20%20M%20&class_id=253521201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0165b_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 165B",
+  "title": "Syntax II",
+  "department": "LING",
+  "instructor": "Silvestri, G.",
+  "location": "Bunche Hall 2160",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0165B%20%20%20&class_id=253675200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0185a_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 185A",
+  "title": "Computational Linguistics I",
+  "department": "LING",
+  "instructor": "Bumford, D.",
+  "location": "Public Affairs Building 1246",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0185A%20%20%20&class_id=253783200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0201a_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 201A",
+  "title": "Phonological Theory II",
+  "department": "LING",
+  "instructor": "Moore-Cantwell, C.",
+  "location": "Campbell Hall 2122A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0201A%20%20%20&class_id=653015200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0201b_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 201B",
+  "title": "Syntactic Theory II",
+  "department": "LING",
+  "instructor": "Poole, E.J.",
+  "location": "Campbell Hall 2122A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0201B%20%20%20&class_id=653016200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0201c_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 201C",
+  "title": "Semantic Theory II",
+  "department": "LING",
+  "instructor": "Sharvit, Y.",
+  "location": "Campbell Hall 2122A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0201C%20%20%20&class_id=653017200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0204ac_27w",
+  "schoolId": "s_ucla",
+  "code": "LING C204A",
+  "title": "Experimental Phonetics",
+  "department": "LING",
+  "instructor": "Narkar, J.",
+  "location": "Dodd Hall 161",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0204A%20C%20&class_id=653100201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0207_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 207",
+  "title": "Pragmatic Theory",
+  "department": "LING",
+  "instructor": "Harris, J.A.",
+  "location": "Bunche Hall 1265",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0207%20%20%20%20&class_id=653042200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0210a_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 210A",
+  "title": "Field Methods I",
+  "department": "LING",
+  "instructor": "Torrence, W.H.",
+  "location": "Campbell Hall 2122A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0210A%20%20%20&class_id=653134200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0213c_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 213C",
+  "title": "Linguistic Processing",
+  "department": "LING",
+  "instructor": "Duff, J.",
+  "location": "Bunche Hall 1265",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0213C%20%20%20&class_id=653146200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0251001_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 251",
+  "title": "Topics in Phonetics and Phonology: Seminar 1",
+  "department": "LING",
+  "instructor": "Zuraw, K.R.",
+  "location": "Bunche Hall 2150",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0251%20%20%20%20&class_id=653381200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0254001_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 254",
+  "title": "Topics in Linguistics: Seminar 1",
+  "department": "LING",
+  "instructor": "Hunter, T. Perkins, L.L.",
+  "location": "Rolfe Hall 3120",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0254%20%20%20%20&class_id=653405200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0260b_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 260B",
+  "title": "Seminar: Phonetics",
+  "department": "LING",
+  "instructor": "Jun, S.",
+  "location": "Campbell Hall 2122A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0260B%20%20%20&class_id=653434200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0261b_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 261B",
+  "title": "Seminar: Phonology",
+  "department": "LING",
+  "instructor": "Moore-Cantwell, C.",
+  "location": "Campbell Hall 2122A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0261B%20%20%20&class_id=653439200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0262b_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 262B",
+  "title": "Syntax Seminar",
+  "department": "LING",
+  "instructor": "Poole, E.J.",
+  "location": "Campbell Hall 2122A",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0262B%20%20%20&class_id=653458200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0264b_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 264B",
+  "title": "Seminar: Psycholinguistics/Neurolinguistics",
+  "department": "LING",
+  "instructor": "Hunter, T.",
+  "location": "Campbell Hall 2122A",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0264B%20%20%20&class_id=653471200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0265b_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 265B",
+  "title": "American Indian Linguistics Seminar",
+  "department": "LING",
+  "instructor": "Munro, P.",
+  "location": "Campbell Hall 3103D",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0265B%20%20%20&class_id=653393200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0403_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 403",
+  "title": "Practical Phonetics Training (Lec 1)",
+  "department": "LING",
+  "instructor": "Bell, E.A.",
+  "location": "Bunche Hall 1265",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0403%20%20%20%20&class_id=653704201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0403_27w_2",
+  "schoolId": "s_ucla",
+  "code": "LING 403",
+  "title": "Practical Phonetics Training (Lec 2)",
+  "department": "LING",
+  "instructor": "Bell, E.A.",
+  "location": "Bunche Hall 2173",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0403%20%20%20%20&class_id=653704202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0403_27w_3",
+  "schoolId": "s_ucla",
+  "code": "LING 403",
+  "title": "Practical Phonetics Training (Lec 3)",
+  "department": "LING",
+  "instructor": "Bell, E.A.",
+  "location": "Bunche Hall 2174",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0403%20%20%20%20&class_id=653704203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0403_27w_4",
+  "schoolId": "s_ucla",
+  "code": "LING 403",
+  "title": "Practical Phonetics Training (Lec 4)",
+  "department": "LING",
+  "instructor": "Bell, E.A.",
+  "location": "Bunche Hall 1265",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0403%20%20%20%20&class_id=653704204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_ling0422_27w",
+  "schoolId": "s_ucla",
+  "code": "LING 422",
+  "title": "Practicum: Phonetic Data Analysis",
+  "department": "LING",
+  "instructor": "Jun, S.",
+  "location": "Campbell Hall 2101K",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=LING%20%20%20&crs_catlg_no=0422%20%20%20%20&class_id=653725200&class_no=%20001%20%20"
  }
 ]
