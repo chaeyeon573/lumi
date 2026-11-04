@@ -58409,5 +58409,1771 @@
   "term": "Fall 2026",
   "termCode": "26F",
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHILOS%20&crs_catlg_no=0495%20%20%20%20&class_id=712795200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0001a_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 1A",
+  "title": "Physics for Scientists and Engineers: Mechanics (Lec 1)",
+  "department": "PHYSICS",
+  "instructor": "Corbin, B.",
+  "location": "Physics and Astronomy Building 1425",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0001A%20%20%20&class_id=318001200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0001a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 1A",
+  "title": "Physics for Scientists and Engineers: Mechanics (Lec 2)",
+  "department": "PHYSICS",
+  "instructor": "No instructors",
+  "location": "Kinsey Science Teaching Pavilion",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "16:50"
+   },
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "16:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "16:50"
+   },
+   {
+    "day": 4,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0001A%20%20%20&class_id=318001210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0001ah_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 1AH",
+  "title": "Physics for Scientists and Engineers: Mechanics (Honors)",
+  "department": "PHYSICS",
+  "instructor": "Bozovic, D.",
+  "location": "Physics and Astronomy Building 1434A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0001AH%20%20&class_id=318020200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0001b_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 1B",
+  "title": "Physics for Scientists and Engineers: Oscillations, Waves, Electric and Magnetic Fields (Lec 1)",
+  "department": "PHYSICS",
+  "instructor": "Wang, G.",
+  "location": "Physics and Astronomy Building 1425",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0001B%20%20%20&class_id=318007200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0001b_26f_2",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 1B",
+  "title": "Physics for Scientists and Engineers: Oscillations, Waves, Electric and Magnetic Fields (Lec 2)",
+  "department": "PHYSICS",
+  "instructor": "Wang, G.",
+  "location": "Kinsey Science Teaching Pavilion 1220B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0001B%20%20%20&class_id=318007206&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0001c_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 1C",
+  "title": "Physics for Scientists and Engineers: Electrodynamics, Optics, and Special Relativity (Lec 1)",
+  "department": "PHYSICS",
+  "instructor": "Corbin, B.",
+  "location": "Kinsey Science Teaching Pavilion 1220B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0001C%20%20%20&class_id=318008200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0001c_26f_2",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 1C",
+  "title": "Physics for Scientists and Engineers: Electrodynamics, Optics, and Special Relativity (Lec 2)",
+  "department": "PHYSICS",
+  "instructor": "Ong, R.A.",
+  "location": "Physics and Astronomy Building 1425",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0001C%20%20%20&class_id=318008210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004al_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4AL",
+  "title": "Physics Laboratory for Scientists and Engineers: Mechanics (Lab 1)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Kang, B.",
+  "location": "Knudsen Hall 1238",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004AL%20%20&class_id=318016201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004al_26f_2",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4AL",
+  "title": "Physics Laboratory for Scientists and Engineers: Mechanics (Lab 2)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Pandey, R.",
+  "location": "Knudsen Hall 1238",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004AL%20%20&class_id=318016202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004al_26f_3",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4AL",
+  "title": "Physics Laboratory for Scientists and Engineers: Mechanics (Lab 3)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Pandey, R.",
+  "location": "Knudsen Hall 1238",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004AL%20%20&class_id=318016203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004al_26f_4",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4AL",
+  "title": "Physics Laboratory for Scientists and Engineers: Mechanics (Lab 4)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Cheng, Y.",
+  "location": "Knudsen Hall 1238",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004AL%20%20&class_id=318016204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004al_26f_5",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4AL",
+  "title": "Physics Laboratory for Scientists and Engineers: Mechanics (Lab 5)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Fiedorowicz, O.",
+  "location": "Knudsen Hall 1238",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004AL%20%20&class_id=318016205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004al_26f_6",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4AL",
+  "title": "Physics Laboratory for Scientists and Engineers: Mechanics (Lab 6)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Valle, M.",
+  "location": "Knudsen Hall 1238",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004AL%20%20&class_id=318016206&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004al_26f_7",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4AL",
+  "title": "Physics Laboratory for Scientists and Engineers: Mechanics (Lab 7)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Valle, M.",
+  "location": "Knudsen Hall 1238",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004AL%20%20&class_id=318016207&class_no=%20007%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004al_26f_8",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4AL",
+  "title": "Physics Laboratory for Scientists and Engineers: Mechanics (Lab 8)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Cheng, Y.",
+  "location": "Knudsen Hall 1238",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004AL%20%20&class_id=318016208&class_no=%20008%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004al_26f_9",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4AL",
+  "title": "Physics Laboratory for Scientists and Engineers: Mechanics (Lab 9)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Chen, P.",
+  "location": "Knudsen Hall 1238",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004AL%20%20&class_id=318016209&class_no=%20009%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004al_26f_10",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4AL",
+  "title": "Physics Laboratory for Scientists and Engineers: Mechanics (Lab 10)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Fiedorowicz, O.",
+  "location": "Knudsen Hall 1238",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "18:00",
+    "end": "19:50"
+   },
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004AL%20%20&class_id=318016210&class_no=%20010%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004al_26f_11",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4AL",
+  "title": "Physics Laboratory for Scientists and Engineers: Mechanics (Lab 11)",
+  "department": "PHYSICS",
+  "instructor": "Patel, H. Arisaka, K.",
+  "location": "Knudsen Hall 1238",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004AL%20%20&class_id=318016211&class_no=%20011%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004al_26f_12",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4AL",
+  "title": "Physics Laboratory for Scientists and Engineers: Mechanics (Lab 12)",
+  "department": "PHYSICS",
+  "instructor": "Chen, P. Arisaka, K.",
+  "location": "Knudsen Hall 1238",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "19:50"
+   },
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004AL%20%20&class_id=318016212&class_no=%20012%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004al_26f_13",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4AL",
+  "title": "Physics Laboratory for Scientists and Engineers: Mechanics (Lab 13)",
+  "department": "PHYSICS",
+  "instructor": "Patel, H. Arisaka, K.",
+  "location": "Knudsen Hall 1238",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "20:00",
+    "end": "21:50"
+   },
+   {
+    "day": 2,
+    "start": "20:00",
+    "end": "21:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004AL%20%20&class_id=318016213&class_no=%20013%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004bl_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4BL",
+  "title": "Physics Laboratory for Scientists and Engineers: Electricity and Magnetism (Lab 1)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Gediman, B.",
+  "location": "Knudsen Hall 2115",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004BL%20%20&class_id=318017201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004bl_26f_2",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4BL",
+  "title": "Physics Laboratory for Scientists and Engineers: Electricity and Magnetism (Lab 2)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Manthena, R.",
+  "location": "Knudsen Hall 2115",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004BL%20%20&class_id=318017202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004bl_26f_3",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4BL",
+  "title": "Physics Laboratory for Scientists and Engineers: Electricity and Magnetism (Lab 3)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Miltner, A.",
+  "location": "Knudsen Hall 2115",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004BL%20%20&class_id=318017203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004bl_26f_4",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4BL",
+  "title": "Physics Laboratory for Scientists and Engineers: Electricity and Magnetism (Lab 4)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Miltner, A.",
+  "location": "Knudsen Hall 2115",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004BL%20%20&class_id=318017204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004bl_26f_5",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4BL",
+  "title": "Physics Laboratory for Scientists and Engineers: Electricity and Magnetism (Lab 5)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Misra, P.",
+  "location": "Knudsen Hall 2115",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004BL%20%20&class_id=318017205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004bl_26f_6",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4BL",
+  "title": "Physics Laboratory for Scientists and Engineers: Electricity and Magnetism (Lab 6)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Ganesh, A.R.",
+  "location": "Knudsen Hall 2115",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004BL%20%20&class_id=318017206&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004bl_26f_7",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4BL",
+  "title": "Physics Laboratory for Scientists and Engineers: Electricity and Magnetism (Lab 7)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Ganesh, A.R.",
+  "location": "Knudsen Hall 2115",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004BL%20%20&class_id=318017207&class_no=%20007%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004bl_26f_8",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4BL",
+  "title": "Physics Laboratory for Scientists and Engineers: Electricity and Magnetism (Lab 8)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Spinelli, M.",
+  "location": "Knudsen Hall 2115",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004BL%20%20&class_id=318017208&class_no=%20008%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004bl_26f_9",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4BL",
+  "title": "Physics Laboratory for Scientists and Engineers: Electricity and Magnetism (Lab 9)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Misra, P.",
+  "location": "Knudsen Hall 2115",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004BL%20%20&class_id=318017209&class_no=%20009%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0004bl_26f_10",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 4BL",
+  "title": "Physics Laboratory for Scientists and Engineers: Electricity and Magnetism (Lab 10)",
+  "department": "PHYSICS",
+  "instructor": "No instructors",
+  "location": "Knudsen Hall",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "18:00",
+    "end": "19:50"
+   },
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0004BL%20%20&class_id=318017210&class_no=%20010%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0005a_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 5A",
+  "title": "Physics for Life Sciences Majors: Mechanics and Energy (Lec 1)",
+  "department": "PHYSICS",
+  "instructor": "Tung, N.C.",
+  "location": "Renee and David Kaplan Hall A51",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0005A%20%20%20&class_id=318025200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0005a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 5A",
+  "title": "Physics for Life Sciences Majors: Mechanics and Energy (Lec 2)",
+  "department": "PHYSICS",
+  "instructor": "Tung, N.C.",
+  "location": "Renee and David Kaplan Hall A51",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0005A%20%20%20&class_id=318025210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0005a_26f_3",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 5A",
+  "title": "Physics for Life Sciences Majors: Mechanics and Energy (Lec 3)",
+  "department": "PHYSICS",
+  "instructor": "Gutperle, M.",
+  "location": "Renee and David Kaplan Hall A51",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0005A%20%20%20&class_id=318025220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0005a_26f_4",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 5A",
+  "title": "Physics for Life Sciences Majors: Mechanics and Energy (Lec 4)",
+  "department": "PHYSICS",
+  "instructor": "Gutperle, M.",
+  "location": "Renee and David Kaplan Hall A51",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0005A%20%20%20&class_id=318025230&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0005b_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 5B",
+  "title": "Physics for Life Sciences Majors: Thermodynamics, Fluids, Waves, Light, and Optics (Lec 1)",
+  "department": "PHYSICS",
+  "instructor": "Bauer, D.J.",
+  "location": "Physics and Astronomy Building 1425",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0005B%20%20%20&class_id=318026200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0005b_26f_2",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 5B",
+  "title": "Physics for Life Sciences Majors: Thermodynamics, Fluids, Waves, Light, and Optics (Lec 2)",
+  "department": "PHYSICS",
+  "instructor": "Bauer, D.J.",
+  "location": "Physics and Astronomy Building 1425",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "16:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "16:50"
+   },
+   {
+    "day": 4,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0005B%20%20%20&class_id=318026210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0005c_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 5C",
+  "title": "Physics for Life Sciences Majors: Electricity, Magnetism, and Modern Physics (Lec 1)",
+  "department": "PHYSICS",
+  "instructor": "Shi, Q.",
+  "location": "Kinsey Science Teaching Pavilion 1220B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0005C%20%20%20&class_id=318027200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0005c_26f_2",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 5C",
+  "title": "Physics for Life Sciences Majors: Electricity, Magnetism, and Modern Physics (Lec 2)",
+  "department": "PHYSICS",
+  "instructor": "Shi, Q.",
+  "location": "Kinsey Science Teaching Pavilion 1220B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0005C%20%20%20&class_id=318027210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0005c_26f_3",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 5C",
+  "title": "Physics for Life Sciences Majors: Electricity, Magnetism, and Modern Physics (Lec 3)",
+  "department": "PHYSICS",
+  "instructor": "Schriver, D.",
+  "location": "Physics and Astronomy Building 1425",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0005C%20%20%20&class_id=318027220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0010_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 10",
+  "title": "Physics",
+  "department": "PHYSICS",
+  "instructor": "Naranjo, B.B.",
+  "location": "Physics and Astronomy Building 1425",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0010%20%20%20%20&class_id=318065200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0017_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 17",
+  "title": "Modern Physics",
+  "department": "PHYSICS",
+  "instructor": "Hamilton, P.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0017%20%20%20%20&class_id=318092200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0032_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 32",
+  "title": "Mathematical Methods",
+  "department": "PHYSICS",
+  "instructor": "Gutierrez, C.",
+  "location": "Kinsey Science Teaching Pavilion 1240B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0032%20%20%20%20&class_id=318175200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0105b_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 105B",
+  "title": "Analytic Mechanics",
+  "department": "PHYSICS",
+  "instructor": "Bern, Z.",
+  "location": "Physics and Astronomy Building 1434A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0105B%20%20%20&class_id=318311200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0110b_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 110B",
+  "title": "Electricity and Magnetism",
+  "department": "PHYSICS",
+  "instructor": "Bachtis, M.",
+  "location": "Kinsey Science Teaching Pavilion 1240B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0110B%20%20%20&class_id=318839200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0112_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 112",
+  "title": "Thermal Physics",
+  "department": "PHYSICS",
+  "instructor": "Roy, R.",
+  "location": "Kinsey Science Teaching Pavilion 1240B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0112%20%20%20%20&class_id=318350200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0115a_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 115A",
+  "title": "Quantum Mechanics",
+  "department": "PHYSICS",
+  "instructor": "Putterman, S.J.",
+  "location": "Physics and Astronomy Building 1434A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0115A%20%20%20&class_id=318373200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0115b_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 115B",
+  "title": "Quantum Mechanics",
+  "department": "PHYSICS",
+  "instructor": "Zocchi, G.",
+  "location": "Physics and Astronomy Building 1434A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0115B%20%20%20&class_id=318374200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0122m_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS M122",
+  "title": "Introduction to Plasmas in the Laboratory, Space, and Engineering",
+  "department": "PHYSICS",
+  "instructor": "Schaeffer, D.B.",
+  "location": "Physics and Astronomy Building 2748",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0122%20%20M%20&class_id=318413200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0124_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 124",
+  "title": "Nuclear Physics",
+  "department": "PHYSICS",
+  "instructor": "Kang, Z.",
+  "location": "Physics and Astronomy Building 2748",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0124%20%20%20%20&class_id=318422200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0140a_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 140A",
+  "title": "Introduction to Solid-State Physics",
+  "department": "PHYSICS",
+  "instructor": "Regan, B.C.",
+  "location": "Physics and Astronomy Building 2748",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0140A%20%20%20&class_id=318551200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0170a_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 170A",
+  "title": "Electronics for Physics Measurement",
+  "department": "PHYSICS",
+  "instructor": "Leibrandt, D.R.",
+  "location": "Physics and Astronomy Building 2748",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0170A%20%20%20&class_id=318737200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0180d_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 180D",
+  "title": "Acoustics Laboratory",
+  "department": "PHYSICS",
+  "instructor": "Goodarzi, S. Kogar, A.",
+  "location": "Physics and Astronomy Building 3735",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0180D%20%20%20&class_id=318753200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0180f_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 180F",
+  "title": "Elementary Particle Laboratory",
+  "department": "PHYSICS",
+  "instructor": "No instructors",
+  "location": "Physics and Astronomy Building",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0180F%20%20%20&class_id=318757200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0180gm_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS M180G",
+  "title": "Soft Matter Laboratory",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K. Anabi, J.",
+  "location": "Knudsen Hall 4173",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:00"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0180G%20M%20&class_id=318758200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0192_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 192",
+  "title": "Undergraduate Practicum in Physics (Sem 1)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0192%20%20%20%20&class_id=318852001&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0192_26f_2",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 192",
+  "title": "Undergraduate Practicum in Physics (Sem 2)",
+  "department": "PHYSICS",
+  "instructor": "Arisaka, K.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0192%20%20%20%20&class_id=318852002&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0192m_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 192M",
+  "title": "Methods and Application of Collaborative Learning Theory in Physical Sciences",
+  "department": "PHYSICS",
+  "instructor": "Samani, J.F. Shaked, S.",
+  "location": "Kinsey Science Teaching Pavilion 1220B",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0192M%20%20%20&class_id=318853202&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0192sm_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS M192S",
+  "title": "Introduction to Collaborative Learning Theory and Practice",
+  "department": "PHYSICS",
+  "instructor": "Shaked, S. Parker, H.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0192S%20M%20&class_id=318859201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0201q_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 201Q",
+  "title": "Modern Physics Research Areas",
+  "department": "PHYSICS",
+  "instructor": "Ni, N.",
+  "location": "Physics and Astronomy Building 2748",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0201Q%20%20%20&class_id=718002200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0220_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 220",
+  "title": "Classical Mechanics",
+  "department": "PHYSICS",
+  "instructor": "Musumeci, P.",
+  "location": "Physics and Astronomy Building 2434",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0220%20%20%20%20&class_id=718060200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0221a_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 221A",
+  "title": "Quantum Mechanics",
+  "department": "PHYSICS",
+  "instructor": "Jiang, H.",
+  "location": "Physics and Astronomy Building 2434",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0221A%20%20%20&class_id=718072200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0222a_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 222A",
+  "title": "Plasma Physics",
+  "department": "PHYSICS",
+  "instructor": "Yoon, Y.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0222A%20%20%20&class_id=718085200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0230b_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 230B",
+  "title": "Quantum Field Theory",
+  "department": "PHYSICS",
+  "instructor": "Solon, M.P.",
+  "location": "Bunche Hall 2174",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0230B%20%20%20&class_id=718213200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0231a_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 231A",
+  "title": "Methods of Mathematical Physics",
+  "department": "PHYSICS",
+  "instructor": "No instructors",
+  "location": "Knudsen Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0231A%20%20%20&class_id=718221200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0241a_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 241A",
+  "title": "Solid-State Physics",
+  "department": "PHYSICS",
+  "instructor": "Thorngren, R.G.",
+  "location": "Knudsen Hall 6107",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0241A%20%20%20&class_id=718285200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0245_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 245",
+  "title": "Quantum Computation (Lec 1)",
+  "department": "PHYSICS",
+  "instructor": "Hudson, E.R.",
+  "location": "Kinsey Science Teaching Pavilion 1240B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0245%20%20%20%20&class_id=718318200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0245_26f_80",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 245",
+  "title": "Quantum Computation (Lec 80)",
+  "department": "PHYSICS",
+  "instructor": "Hudson, E.R.",
+  "location": "Kinsey Science Teaching Pavilion 1240B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0245%20%20%20%20&class_id=718318280&class_no=%20080%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0291_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 291",
+  "title": "Research Tutorial: Elementary Particle Theory",
+  "department": "PHYSICS",
+  "instructor": "Gutperle, M.",
+  "location": "Physics and Astronomy Building 4740",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "10:30",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0291%20%20%20%20&class_id=718562200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0293_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 293",
+  "title": "Research Tutorial: Current Topics in Physics",
+  "department": "PHYSICS",
+  "instructor": "Putterman, S.J.",
+  "location": "Physics and Astronomy Building 1434A",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0293%20%20%20%20&class_id=718569200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physics0495_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSICS 495",
+  "title": "Teaching College Physics",
+  "department": "PHYSICS",
+  "instructor": "Samani, J.F. Morral, A.J.",
+  "location": "Physics and Astronomy Building 2748",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0495%20%20%20%20&class_id=718780200&class_no=%20001%20%20"
  }
 ]
