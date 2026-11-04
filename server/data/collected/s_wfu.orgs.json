@@ -1754,7 +1754,7 @@
    "hue": 248,
    "url": "https://se-images.campuslabs.com/clink/images/91205a57-763e-4661-a957-22fb333b9bc4b3c4ca35-06d4-4dab-9976-427934051388.jpg?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "verified": false,
   "description": "Study Abroad, Global Campus Programs, and ISSS",
@@ -1792,7 +1792,7 @@
    "hue": 224,
    "url": "https://se-images.campuslabs.com/clink/images/16e034b2-649f-4d6a-8b54-8904d38bba5175e4a21d-8fb1-436c-82d0-9ddd1cb0afd3.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "parent": "Academic, Pre-Professional, and Honor Societies",
   "verified": false,
@@ -1826,7 +1826,7 @@
    "emoji": "CA",
    "hue": 248
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "verified": false,
   "description": "CAT aims to advance passionate, reflective, and evidence-informed teaching. We contribute to Wake Forest’s distinctive mission by encouraging the development of teacher-student relationships that prepare all students to live examined, purposeful lives.",
@@ -4151,7 +4151,7 @@
    "emoji": "DC",
    "hue": 120
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "verified": false,
   "description": "The Department of Classics studies ancient Greek & Latin language, literatures, and broader cultural issues. Our goal is to understand the Greek and Roman worlds as wholes and consider their influence, for better & often worse, on the modern world.",
@@ -4176,7 +4176,7 @@
    "emoji": "DM",
    "hue": 120
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "parent": "Academic, Pre-Professional, and Honor Societies",
   "verified": false,
@@ -4202,7 +4202,7 @@
    "emoji": "DP",
    "hue": 8
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "verified": false,
   "description": "n/a",
@@ -4323,7 +4323,7 @@
    "hue": 184,
    "url": "https://se-images.campuslabs.com/clink/images/49cde1f6-03c2-4418-a2b9-4207d1d2cf85c3bf5f53-99ea-4a1d-909c-6fd191aee87a.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "verified": false,
   "description": "Opportunities to engage and connect on campus from departments and organizations across campus.",
@@ -5483,7 +5483,7 @@
    "hue": 312,
    "url": "https://se-images.campuslabs.com/clink/images/a2ce187d-aa7f-435c-be87-06b0ec490d8c3aa68622-9feb-44e0-806d-2ef04b5e1954.jpg?preset=small-sq"
   },
-  "type": "greek",
+  "type": "council",
   "schoolId": "s_wfu",
   "parent": "Fraternity and Sorority Life",
   "verified": false,
@@ -7401,7 +7401,7 @@
    "hue": 328,
    "url": "https://se-images.campuslabs.com/clink/images/7aa53c28-ccd4-459a-be2b-b80c7e493fd5b1136b9c-c088-4459-a7c9-ae85942e7fec.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "verified": false,
   "description": "Office of Civic & Community Engagement",
@@ -7439,7 +7439,7 @@
    "hue": 56,
    "url": "https://se-images.campuslabs.com/clink/images/8413c380-432e-4fbc-afa1-3b86eea2592d26a79204-511e-4a2c-801b-7b2b25c11103.jpg?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "verified": false,
   "description": "Office of Diversity and Inclusion",
@@ -7469,7 +7469,7 @@
    "hue": 56,
    "url": "https://se-images.campuslabs.com/clink/images/ab7d20a7-6bfa-4053-a578-d94a331b8d7f26745bcb-cec9-4f9f-85c0-984deb83e8b9.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "verified": false,
   "description": "The Office of Leadership Engagement creates pathways for students to explore their leadership identity, empower themselves through community engagement, and lead towards a more compassionate and just world.",
@@ -7503,7 +7503,7 @@
    "hue": 248,
    "url": "https://se-images.campuslabs.com/clink/images/900f6a17-f270-452c-bee1-340c5b1f76ee47585561-4297-4fe4-b017-92e2b1b616a2.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "verified": false,
   "description": "Here at the OPCD, our goal is simple: To provide Wake Forest students with the tools and confidence to navigate the often daunting path from college to career.",
@@ -7545,7 +7545,7 @@
    "hue": 96,
    "url": "https://se-images.campuslabs.com/clink/images/f188995e-bc31-43b7-bf07-b38170df5dd12afcb389-1647-4284-8420-236dc1cd4fb6.PNG?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "verified": false,
   "description": "The one stop for all things student life.",
@@ -7575,7 +7575,7 @@
    "hue": 288,
    "url": "https://se-images.campuslabs.com/clink/images/915659ac-5cea-453c-bcae-8519bc4f3fb7f30dd628-438b-476c-ae4e-133877a3d230.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "verified": false,
   "description": "Helping every Deacon find their place. Student Engagement supports over 200 student organizations and involvement opportunities, Fraternity and Sorority Life, campus traditions, and leadership development initiatives.",
@@ -7613,7 +7613,7 @@
    "hue": 40,
    "url": "https://se-images.campuslabs.com/clink/images/e38c9a5c-75c8-454e-908c-45477ee6295c21d6e1a3-e366-4bf9-b58c-61ac4a6d645d.jpg?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "verified": false,
   "description": "Office of the Chaplain",
@@ -7651,7 +7651,7 @@
    "hue": 0,
    "url": "https://se-images.campuslabs.com/clink/images/0ed27fc4-5b73-4d56-929b-38c3513fad0712b893c4-e76c-40f8-a9ea-bd9875748551.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "parent": "Wellbeing and Health",
   "verified": false,
@@ -7932,7 +7932,7 @@
    "hue": 64,
    "url": "https://se-images.campuslabs.com/clink/images/e944d3d7-c130-4813-949f-97ac816cf331d1658764-376c-4503-88ce-47b482ec3d9b.jpeg?preset=small-sq"
   },
-  "type": "greek",
+  "type": "council",
   "schoolId": "s_wfu",
   "parent": "Fraternity and Sorority Life",
   "verified": false,
@@ -8908,7 +8908,7 @@
    "hue": 192,
    "url": "https://se-images.campuslabs.com/clink/images/c7250dff-6c57-4029-8d9f-eef8fb0da988a89601c1-3322-4e82-9934-29369d22f5dc.jpeg?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "verified": false,
   "description": "The School of Business strives to help businesses create a better world through developing passionate, ethical business leaders who get results with integrity, and through thought leadership that positively impacts the practice of business.",
@@ -8950,7 +8950,7 @@
    "hue": 192,
    "url": "https://se-images.campuslabs.com/clink/images/51accc39-2e67-4a0a-8dcc-45cf0e96fa250d42db6a-2641-4464-babc-1426d4ae7600.jpg?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "verified": false,
   "description": "Graduate theological school offering doctoral and masters degree programs educating leaders of justice, reconciliation & compassion.",
@@ -10940,7 +10940,7 @@
    "emoji": "UG",
    "hue": 272
   },
-  "type": "greek",
+  "type": "council",
   "schoolId": "s_wfu",
   "verified": false,
   "description": "change later",
@@ -11449,7 +11449,7 @@
    "hue": 288,
    "url": "https://se-images.campuslabs.com/clink/images/0ce19400-f096-4bed-b2f3-2811d8ea5470888b30e3-0fa3-49a4-b08c-306ea77e4106.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_wfu",
   "verified": false,
   "description": "Providing a safe and inclusive community where students, faculty, staff, and visitors may experience a sense of security and belonging...We are here for you!",

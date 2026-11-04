@@ -3001,7 +3001,7 @@
    "hue": 248,
    "url": "https://se-images.campuslabs.com/clink/images/c18fb5a4-176a-4584-93ce-3275386f59a1fbee485d-2b47-484e-a03a-f72a16d7839c.jpg?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_umass",
   "parent": "☆Agency",
   "verified": false,
@@ -3048,7 +3048,7 @@
    "hue": 104,
    "url": "https://se-images.campuslabs.com/clink/images/adf5faad-ccb1-4b8c-82dc-1ff2705332a18389ced1-9661-4374-9d05-72a617a755b5.jpg?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_umass",
   "verified": false,
   "description": "UMass Amherst's Center for Health Promotion (CHP) offers innovative programs, entertaining events, important health information, and outreach and consultation services.",
@@ -3078,7 +3078,7 @@
    "hue": 240,
    "url": "https://se-images.campuslabs.com/clink/images/b8a3efdd-bbd9-425c-9e12-f6dc06117ef8a354139c-8f6a-4281-aca7-1541fb64a456.JPG?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_umass",
   "parent": "☆Agency",
   "verified": false,
@@ -3105,7 +3105,7 @@
    "hue": 104,
    "url": "https://se-images.campuslabs.com/clink/images/874775de-bb0c-4ffb-a719-837bc855300761fd0b68-8b86-4e82-963c-563be10a2de4.gif?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_umass",
   "verified": false,
   "description": "We are a multicultural campus-based center established in 1972. We offer many services to meet the needs of the diverse cultural and linguistic populations of the university, five colleges and surrounding Hampshire County community.",
@@ -3814,7 +3814,7 @@
    "emoji": "CE",
    "hue": 112
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_umass",
   "parent": "Other",
   "verified": false,
@@ -3840,7 +3840,7 @@
    "emoji": "CI",
    "hue": 240
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_umass",
   "parent": "Graduate Student Organizations",
   "verified": false,
@@ -7442,7 +7442,7 @@
    "emoji": "GA",
    "hue": 152
   },
-  "type": "greek",
+  "type": "council",
   "schoolId": "s_umass",
   "verified": false,
   "description": "Council of academic, professional, and service fraternal organizations.",
@@ -7467,7 +7467,7 @@
    "emoji": "GG",
    "hue": 16
   },
-  "type": "greek",
+  "type": "council",
   "schoolId": "s_umass",
   "parent": "Graduate Student Organizations",
   "verified": false,
@@ -8335,7 +8335,7 @@
    "hue": 312,
    "url": "https://se-images.campuslabs.com/clink/images/3beb7990-9528-45e5-acc0-933edb34e26bd800707b-6be5-49c1-914d-ff4f32158b90.jpg?preset=small-sq"
   },
-  "type": "greek",
+  "type": "council",
   "schoolId": "s_umass",
   "parent": "IFC",
   "verified": false,
@@ -11094,7 +11094,7 @@
    "hue": 288,
    "url": "https://se-images.campuslabs.com/clink/images/2364449c-5242-4e01-b91e-7c3b82ac809759ca46de-f799-494a-9edd-8d18d632e50a.png?preset=small-sq"
   },
-  "type": "greek",
+  "type": "council",
   "schoolId": "s_umass",
   "parent": "MGC",
   "verified": false,
@@ -12126,7 +12126,7 @@
    "hue": 96,
    "url": "https://se-images.campuslabs.com/clink/images/3f4d35d9-2a5a-45a1-bb42-c57cca0b5aec60382843-3553-4e9a-9525-943efb46552f.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_umass",
   "parent": "Other",
   "verified": false,
@@ -12486,7 +12486,7 @@
    "hue": 64,
    "url": "https://se-images.campuslabs.com/clink/images/0ed2a23c-77b8-4216-b834-350ffe43a7e86ee02392-100c-4d76-86e0-8b4d2c774efe.jpg?preset=small-sq"
   },
-  "type": "greek",
+  "type": "council",
   "schoolId": "s_umass",
   "parent": "Panhellenic",
   "verified": false,

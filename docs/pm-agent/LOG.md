@@ -1902,3 +1902,10 @@
 - **UCLA Fall 2026 done:** every subject read, 2,997 classes. Winter 2027 batches start next run.
 - Spot check classes (Rice): ARCH 503 (grad), CMOR 220, HART 589 (grad), MUSI 231, UNIV 195 — match.
 - Spot check clubs: Minnesota Campus Outreach, UCR Catholic Student Fellowship, UCI Anteaters for Autism, UCSB AS Senate (council), UF College Republicans — match.
+
+## 2026-11-04 11:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **Two more schools (files only, public Engage):** UMass Amherst 656 groups (486 with a public link) + 250 events; UConn 855 (698) + 214 events. Rutgers getinvolved redirects to a general page (not a directory); Pitt not on Engage.
+- **Engage reader never marked school offices or Greek councils.** Spot check found W&M "Muscarelle Museum of Art" and IU "Neal-Marshall Black Culture Center" as clubs, Syracuse "Panhellenic Council" as a Greek chapter. Engage `mapOrg` now uses the same rules as CampusGroups (`isOfficeOrg` on every category; Greek council names → council). Existing Engage files relabeled from one directory read each (types only, nothing removed): offices → department at Tulane 70 (research centers), IU 32, WFU 18, Clemson 18, Vanderbilt 15, UGA 11, MSU 11, W&M 10, GWU 10, UMass 7, Rice 4, BC 2, Michigan 2, Syracuse 1, UChicago 1, UNC 1, Purdue 1; Greek councils → council at 22 schools (2–5 each). First pass also caught Syracuse "American Institute of Chemical Engineers / Architecture Students" (category "Academic Department") → rule exception for "American Institute/Society of …" and both restored to club; tests added. Not reachable for the relabel: UC Davis, Dartmouth, SJSU, USC, Wisconsin, UW, Minnesota (their Engage search API did not answer) — they get the rule on the next weekly re-collect.
+- Spot check classes (Duke): AADS 138, DANCE 212, FRENCH 303S, MATH 181CC, WRITING 120 — match.
+- Spot check clubs: Tulane Student Alumni Ambassadors, Miami Pi Tau Sigma, Syracuse Panhellenic (now council), W&M Muscarelle (now department), IU Neal-Marshall (now department).

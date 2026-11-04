@@ -2479,7 +2479,7 @@
    "hue": 96,
    "url": "https://se-images.campuslabs.com/clink/images/c5acb1c1-af9b-443b-852f-da3d81de525c6462c8e0-58af-4589-9ca4-4d49f7b538c7.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_gwu",
   "verified": false,
   "description": "The George Washington University Center for Career Services offers comprehensive career development, experiential education and student employment services and resources for GW degree-seeking students, alumni and international exchange students.",
@@ -2525,7 +2525,7 @@
    "hue": 248,
    "url": "https://se-images.campuslabs.com/clink/images/bf6c8b7d-f7a4-4193-a13b-0425000d2a00317597b7-2623-484d-88c6-62416dd3038b.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_gwu",
   "verified": false,
   "description": "The Center for Interfaith & Spiritual Life will support and strengthen the university's religious and philosophical diversity by providing opportunities to engage with spiritual life on campus.",
@@ -2555,7 +2555,7 @@
    "hue": 352,
    "url": "https://se-images.campuslabs.com/clink/images/215a59a7-6b4a-4372-99f2-842126f31a04a4b5af75-4868-46ab-9a3a-d70ab3bdd66b.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_gwu",
   "verified": false,
   "description": "The Center for Undergraduate Fellowships and Research provides individualized and group mentorship to all GW undergraduate students and alumni pursuing national awards, fellowships, and undergraduate research opportunities.",
@@ -4097,7 +4097,7 @@
    "emoji": "DS",
    "hue": 272
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_gwu",
   "verified": false,
   "description": "DSA cultivates an inclusive community that supports connection, growth, and well-being for every student throughout their GW journey.",
@@ -9290,7 +9290,7 @@
    "hue": 152,
    "url": "https://se-images.campuslabs.com/clink/images/f0fd43ad-c615-48fb-ad20-eeef9cab406d1afb88fa-2592-43d4-9649-5ac8d9a0e6ce.jpg?preset=small-sq"
   },
-  "type": "greek",
+  "type": "council",
   "schoolId": "s_gwu",
   "parent": "Undergraduate",
   "verified": false,
@@ -11802,7 +11802,7 @@
    "hue": 312,
    "url": "https://se-images.campuslabs.com/clink/images/f809e92f-40b1-4075-b1c6-c351ee0c7d04b6911ddc-5dc2-4edb-9dd6-c85c5728af6c.png?preset=small-sq"
   },
-  "type": "greek",
+  "type": "council",
   "schoolId": "s_gwu",
   "parent": "IFC",
   "verified": false,
@@ -13739,7 +13739,7 @@
    "hue": 288,
    "url": "https://se-images.campuslabs.com/clink/images/794f224b-22c2-4c96-b260-db06516c876717706454-8315-4ad2-af6d-18ce06a835a7.png?preset=small-sq"
   },
-  "type": "greek",
+  "type": "council",
   "schoolId": "s_gwu",
   "parent": "MGC",
   "verified": false,
@@ -14350,7 +14350,7 @@
    "emoji": "OD",
    "hue": 112
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_gwu",
   "verified": false,
   "description": "To be completed",
@@ -14379,7 +14379,7 @@
    "emoji": "OS",
    "hue": 336
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_gwu",
   "verified": false,
   "description": "To support academic progress, student engagement, and well-being to ensure student satisfaction and successful student experiences.",
@@ -14409,7 +14409,7 @@
    "hue": 144,
    "url": "https://se-images.campuslabs.com/clink/images/b593f834-446b-4b20-9b53-5af13341f6ee1e0f32bc-2453-467f-9e1f-2408cfad6a3a.jpeg?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_gwu",
   "verified": false,
   "description": "The Office of Advocacy and Support (OAS) provides trauma-informed and healing-centered confidential support to GW students impacted by sexual violence, relationship violence, and/or stalking.",
@@ -14439,7 +14439,7 @@
    "hue": 48,
    "url": "https://se-images.campuslabs.com/clink/images/4848bfba-447e-45d3-9388-4474c03ddf4aaf225090-5511-4673-9405-af3f07a96c56.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_gwu",
   "parent": "Club Sports",
   "verified": false,
@@ -14470,7 +14470,7 @@
    "hue": 56,
    "url": "https://se-images.campuslabs.com/clink/images/b33493d7-9ec2-4f8c-8041-80fc68dfe3ab0fb41ce3-a4d9-4b5a-a751-c5752a7e7726.png?preset=small-sq"
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_gwu",
   "verified": false,
   "description": "Office of Sustainability",
@@ -14499,7 +14499,7 @@
    "emoji": "OP",
    "hue": 264
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_gwu",
   "verified": false,
   "description": "GW's Office of the Provost supports all academic endeavors across the George Washington University's 10 schools and colleges.",

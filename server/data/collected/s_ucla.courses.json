@@ -70519,5 +70519,6639 @@
   "termCode": "26F",
   "units": 2,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SOCIOL%20&crs_catlg_no=0495%20%20%20%20&class_id=747780200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0100_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 100",
+  "title": "Contracts (Lec 1)",
+  "department": "LAW",
+  "instructor": "Zatz, N.D.",
+  "location": "Law Building 1430",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:45",
+    "end": "15:00"
+   },
+   {
+    "day": 2,
+    "start": "13:45",
+    "end": "15:00"
+   },
+   {
+    "day": 4,
+    "start": "13:45",
+    "end": "15:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0100%20%20%20%20&class_id=880100101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0100_26f_2",
+  "schoolId": "s_ucla",
+  "code": "LAW 100",
+  "title": "Contracts (Lec 2)",
+  "department": "LAW",
+  "instructor": "Zatz, N.D.",
+  "location": "Law Building 1430",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:45",
+    "end": "15:00"
+   },
+   {
+    "day": 2,
+    "start": "13:45",
+    "end": "15:00"
+   },
+   {
+    "day": 4,
+    "start": "13:45",
+    "end": "15:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0100%20%20%20%20&class_id=880100102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_law0100_26f_3",
+  "schoolId": "s_ucla",
+  "code": "LAW 100",
+  "title": "Contracts (Lec 3)",
+  "department": "LAW",
+  "instructor": "Bussel, D.J.",
+  "location": "Law Building 1430",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:10",
+    "end": "10:25"
+   },
+   {
+    "day": 1,
+    "start": "09:10",
+    "end": "10:25"
+   },
+   {
+    "day": 3,
+    "start": "09:10",
+    "end": "10:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0100%20%20%20%20&class_id=880100103&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_law0100_26f_4",
+  "schoolId": "s_ucla",
+  "code": "LAW 100",
+  "title": "Contracts (Lec 4)",
+  "department": "LAW",
+  "instructor": "Bussel, D.J.",
+  "location": "Law Building 1430",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:10",
+    "end": "10:25"
+   },
+   {
+    "day": 1,
+    "start": "09:10",
+    "end": "10:25"
+   },
+   {
+    "day": 3,
+    "start": "09:10",
+    "end": "10:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0100%20%20%20%20&class_id=880100104&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_law0100_26f_5",
+  "schoolId": "s_ucla",
+  "code": "LAW 100",
+  "title": "Contracts (Lec 5)",
+  "department": "LAW",
+  "instructor": "Gross, A.J.",
+  "location": "Law Building 1457",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:20",
+    "end": "16:35"
+   },
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "16:35"
+   },
+   {
+    "day": 3,
+    "start": "15:20",
+    "end": "16:35"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0100%20%20%20%20&class_id=880100105&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_law0100_26f_6",
+  "schoolId": "s_ucla",
+  "code": "LAW 100",
+  "title": "Contracts (Lec 6)",
+  "department": "LAW",
+  "instructor": "Gross, A.J.",
+  "location": "Law Building 1457",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:20",
+    "end": "16:35"
+   },
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "16:35"
+   },
+   {
+    "day": 3,
+    "start": "15:20",
+    "end": "16:35"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0100%20%20%20%20&class_id=880100106&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_law0100_26f_7",
+  "schoolId": "s_ucla",
+  "code": "LAW 100",
+  "title": "Contracts (Lec 7)",
+  "department": "LAW",
+  "instructor": "Stone, R.",
+  "location": "Law Building 1447",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "12:00"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0100%20%20%20%20&class_id=880100107&class_no=%20007%20%20"
+ },
+ {
+  "id": "cc_ucla_law0100_26f_8",
+  "schoolId": "s_ucla",
+  "code": "LAW 100",
+  "title": "Contracts (Lec 8)",
+  "department": "LAW",
+  "instructor": "Stone, R.",
+  "location": "Law Building 1447",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "12:00"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0100%20%20%20%20&class_id=880100108&class_no=%20008%20%20"
+ },
+ {
+  "id": "cc_ucla_law0106_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 106",
+  "title": "Real Estate Law",
+  "department": "LAW",
+  "instructor": "Donald, R.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "19:30",
+    "end": "21:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0106%20%20%20%20&class_id=880106101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0110_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 110",
+  "title": "Healthcare: Regulatory and Compliance Issues",
+  "department": "LAW",
+  "instructor": "Levy-Biehl, H.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "19:30",
+    "end": "21:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0110%20%20%20%20&class_id=880110101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0112001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 112",
+  "title": "Private Law: Lecture 1",
+  "department": "LAW",
+  "instructor": "Vandevelde, K.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:20"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0112%20%20%20%20&class_id=880112101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0112002_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 112",
+  "title": "Private Law: Lecture 2",
+  "department": "LAW",
+  "instructor": "Vandevelde, K.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "19:20"
+   },
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "19:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0112%20%20%20%20&class_id=880112102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_law0112003_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 112",
+  "title": "Private Law: Lecture 3",
+  "department": "LAW",
+  "instructor": "Sander, R.H.",
+  "location": "Law Building 1430 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:30",
+    "end": "20:00"
+   },
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "19:10"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0112%20%20%20%20&class_id=880112103&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_law0113_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 113",
+  "title": "Public Law: Constitutional and Statutory Analysis (Lec 1)",
+  "department": "LAW",
+  "instructor": "Reich, P.L.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:40",
+    "end": "19:00"
+   },
+   {
+    "day": 3,
+    "start": "17:40",
+    "end": "19:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0113%20%20%20%20&class_id=880113101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0113_26f_2",
+  "schoolId": "s_ucla",
+  "code": "LAW 113",
+  "title": "Public Law: Constitutional and Statutory Analysis (Lec 2)",
+  "department": "LAW",
+  "instructor": "Reich, P.L.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "19:40",
+    "end": "21:00"
+   },
+   {
+    "day": 3,
+    "start": "19:40",
+    "end": "21:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0113%20%20%20%20&class_id=880113102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_law0113_26f_3",
+  "schoolId": "s_ucla",
+  "code": "LAW 113",
+  "title": "Public Law: Constitutional and Statutory Analysis (Lec 3)",
+  "department": "LAW",
+  "instructor": "Merrill, C.",
+  "location": "Law Building 1457 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "20:10",
+    "end": "21:40"
+   },
+   {
+    "day": 3,
+    "start": "19:30",
+    "end": "20:40"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0113%20%20%20%20&class_id=880113103&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_law0114_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 114",
+  "title": "Legal Communication and Analysis",
+  "department": "LAW",
+  "instructor": "Sherman, M.",
+  "location": "Law Building 2467 Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:30"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:10"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0114%20%20%20%20&class_id=880114101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0117_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 117",
+  "title": "Data Privacy and Cyber Security",
+  "department": "LAW",
+  "instructor": "Alben, A.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "18:00",
+    "end": "19:20"
+   },
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "19:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0117%20%20%20%20&class_id=880117101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0118_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 118",
+  "title": "Contract Analysis",
+  "department": "LAW",
+  "instructor": "Yiap, R.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "18:00",
+    "end": "19:20"
+   },
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "19:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0118%20%20%20%20&class_id=880118101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0119_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 119",
+  "title": "Master of Legal Studies Capstone",
+  "department": "LAW",
+  "instructor": "Widess, K.A.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "14:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0119%20%20%20%20&class_id=880119101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0125_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 125",
+  "title": "Compensation and Working Conditions",
+  "department": "LAW",
+  "instructor": "Reus, I.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "19:30",
+    "end": "21:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0125%20%20%20%20&class_id=880125101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0126_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 126",
+  "title": "Legal Research for MLS Students",
+  "department": "LAW",
+  "instructor": "Raphael, B.M.",
+  "location": "Online Online",
+  "meetings": [
+   {
+    "day": 6,
+    "start": "17:00",
+    "end": "18:20"
+   },
+   {
+    "day": 2,
+    "start": "16:45",
+    "end": "17:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0126%20%20%20%20&class_id=880126101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0128_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 128",
+  "title": "Entertainment Transactions",
+  "department": "LAW",
+  "instructor": "Hartman, A.R. Dawson, L.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "19:30",
+    "end": "21:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0128%20%20%20%20&class_id=880128101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0129_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 129",
+  "title": "Innovation Law",
+  "department": "LAW",
+  "instructor": "Pedraza Farina, L.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "19:30",
+    "end": "21:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0129%20%20%20%20&class_id=880129101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0140_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 140",
+  "title": "Torts (Lec 1)",
+  "department": "LAW",
+  "instructor": "Wiley, L.F.",
+  "location": "Law Building 1447",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:50",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "08:50",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0140%20%20%20%20&class_id=880140101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0140_26f_2",
+  "schoolId": "s_ucla",
+  "code": "LAW 140",
+  "title": "Torts (Lec 2)",
+  "department": "LAW",
+  "instructor": "Wiley, L.F.",
+  "location": "Law Building 1447",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:50",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "08:50",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0140%20%20%20%20&class_id=880140102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_law0140_26f_3",
+  "schoolId": "s_ucla",
+  "code": "LAW 140",
+  "title": "Torts (Lec 3)",
+  "department": "LAW",
+  "instructor": "Anastopoulo, C.",
+  "location": "Law Building 2467",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "12:00"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0140%20%20%20%20&class_id=880140103&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_law0140_26f_4",
+  "schoolId": "s_ucla",
+  "code": "LAW 140",
+  "title": "Torts (Lec 4)",
+  "department": "LAW",
+  "instructor": "Selbst, A.D.",
+  "location": "Law Building 2357",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:35",
+    "end": "11:50"
+   },
+   {
+    "day": 1,
+    "start": "10:35",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:35",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0140%20%20%20%20&class_id=880140104&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_law0140_26f_5",
+  "schoolId": "s_ucla",
+  "code": "LAW 140",
+  "title": "Torts (Lec 5)",
+  "department": "LAW",
+  "instructor": "Emerson, B.E.",
+  "location": "Law Building 1430",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "12:00"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0140%20%20%20%20&class_id=880140105&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_law0140_26f_6",
+  "schoolId": "s_ucla",
+  "code": "LAW 140",
+  "title": "Torts (Lec 6)",
+  "department": "LAW",
+  "instructor": "Emerson, B.E.",
+  "location": "Law Building 1430",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "12:00"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0140%20%20%20%20&class_id=880140106&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_law0140_26f_7",
+  "schoolId": "s_ucla",
+  "code": "LAW 140",
+  "title": "Torts (Lec 7)",
+  "department": "LAW",
+  "instructor": "Wang, A.",
+  "location": "Law Building 1327",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:35",
+    "end": "11:50"
+   },
+   {
+    "day": 1,
+    "start": "10:35",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:35",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0140%20%20%20%20&class_id=880140107&class_no=%20007%20%20"
+ },
+ {
+  "id": "cc_ucla_law0140_26f_8",
+  "schoolId": "s_ucla",
+  "code": "LAW 140",
+  "title": "Torts (Lec 8)",
+  "department": "LAW",
+  "instructor": "Wang, A.",
+  "location": "Law Building 1447",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:45",
+    "end": "15:00"
+   },
+   {
+    "day": 1,
+    "start": "13:45",
+    "end": "15:00"
+   },
+   {
+    "day": 3,
+    "start": "13:45",
+    "end": "15:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0140%20%20%20%20&class_id=880140108&class_no=%20008%20%20"
+ },
+ {
+  "id": "cc_ucla_law0145001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 145",
+  "title": "Civil Procedure: Lecture 1",
+  "department": "LAW",
+  "instructor": "Kang, J.",
+  "location": "Law Building 2357",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:20",
+    "end": "17:20"
+   },
+   {
+    "day": 2,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0145%20%20%20%20&class_id=880145101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0145002_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 145",
+  "title": "Civil Procedure: Lecture 2",
+  "department": "LAW",
+  "instructor": "Kang, J.",
+  "location": "Law Building 2357",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:25",
+    "end": "10:25"
+   },
+   {
+    "day": 2,
+    "start": "08:25",
+    "end": "10:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0145%20%20%20%20&class_id=880145102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_law0145003_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 145",
+  "title": "Civil Procedure: Lecture 3",
+  "department": "LAW",
+  "instructor": "Arnold, A.L.",
+  "location": "Law Building 1447",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:20",
+    "end": "17:20"
+   },
+   {
+    "day": 2,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0145%20%20%20%20&class_id=880145103&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_law0145004_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 145",
+  "title": "Civil Procedure: Lecture 4",
+  "department": "LAW",
+  "instructor": "Arnold, A.L.",
+  "location": "Law Building 1447",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:20",
+    "end": "17:20"
+   },
+   {
+    "day": 2,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0145%20%20%20%20&class_id=880145104&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_law0145005_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 145",
+  "title": "Civil Procedure: Lecture 5",
+  "department": "LAW",
+  "instructor": "Yeazell, S.C.",
+  "location": "Law Building 1420 Law Building 2467",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:55"
+   },
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "11:55"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "11:55"
+   },
+   {
+    "day": 2,
+    "start": "15:20",
+    "end": "16:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0145%20%20%20%20&class_id=880145105&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_law0145006_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 145",
+  "title": "Civil Procedure: Lecture 6",
+  "department": "LAW",
+  "instructor": "Marcus, D.W.",
+  "location": "Law Building 2357",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:45",
+    "end": "15:00"
+   },
+   {
+    "day": 2,
+    "start": "13:45",
+    "end": "15:00"
+   },
+   {
+    "day": 4,
+    "start": "13:45",
+    "end": "15:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0145%20%20%20%20&class_id=880145106&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_law0145007_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 145",
+  "title": "Civil Procedure: Lecture 7",
+  "department": "LAW",
+  "instructor": "Schwartz, J.C.",
+  "location": "Law Building 1457",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:10",
+    "end": "10:25"
+   },
+   {
+    "day": 1,
+    "start": "09:10",
+    "end": "10:25"
+   },
+   {
+    "day": 3,
+    "start": "09:10",
+    "end": "10:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0145%20%20%20%20&class_id=880145107&class_no=%20007%20%20"
+ },
+ {
+  "id": "cc_ucla_law0145008_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 145",
+  "title": "Civil Procedure: Lecture 8",
+  "department": "LAW",
+  "instructor": "Schwartz, J.C.",
+  "location": "Law Building 1457",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:10",
+    "end": "10:25"
+   },
+   {
+    "day": 1,
+    "start": "09:10",
+    "end": "10:25"
+   },
+   {
+    "day": 3,
+    "start": "09:10",
+    "end": "10:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0145%20%20%20%20&class_id=880145108&class_no=%20008%20%20"
+ },
+ {
+  "id": "cc_ucla_law0201_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 201",
+  "title": "Constitutional Law II",
+  "department": "LAW",
+  "instructor": "Cohen, D.M.",
+  "location": "Law Building 1447",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "13:00"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "13:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0201%20%20%20%20&class_id=880201101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0202001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 202",
+  "title": "Criminal Procedure: Investigations: Lecture 1",
+  "department": "LAW",
+  "instructor": "Colgan, B.",
+  "location": "Law Building 1457",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "13:00"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "13:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0202%20%20%20%20&class_id=880202101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0202002_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 202",
+  "title": "Criminal Procedure: Investigations: Lecture 2",
+  "department": "LAW",
+  "instructor": "Langer, M.",
+  "location": "Law Building 1420",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:10",
+    "end": "15:10"
+   },
+   {
+    "day": 3,
+    "start": "13:10",
+    "end": "15:10"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0202%20%20%20%20&class_id=880202102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_law0205_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 205",
+  "title": "Wills and Trusts",
+  "department": "LAW",
+  "instructor": "Goodman, P.D.",
+  "location": "Law Building 1430",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:35",
+    "end": "11:50"
+   },
+   {
+    "day": 1,
+    "start": "10:35",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:35",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0205%20%20%20%20&class_id=880205101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0207_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 207",
+  "title": "Community Property",
+  "department": "LAW",
+  "instructor": "Slevin, H.F.",
+  "location": "Law Building 1447",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:30",
+    "end": "20:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0207%20%20%20%20&class_id=880207101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0211_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 211",
+  "title": "Evidence (Lec 1)",
+  "department": "LAW",
+  "instructor": "Eagly, I.",
+  "location": "Law Building 1357",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:10",
+    "end": "10:25"
+   },
+   {
+    "day": 1,
+    "start": "09:10",
+    "end": "10:25"
+   },
+   {
+    "day": 3,
+    "start": "09:10",
+    "end": "10:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0211%20%20%20%20&class_id=880211101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0211_26f_2",
+  "schoolId": "s_ucla",
+  "code": "LAW 211",
+  "title": "Evidence (Lec 2)",
+  "department": "LAW",
+  "instructor": "Wonsowicz, P.",
+  "location": "Law Building 1347",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:20",
+    "end": "16:35"
+   },
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "16:35"
+   },
+   {
+    "day": 3,
+    "start": "15:20",
+    "end": "16:35"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0211%20%20%20%20&class_id=880211102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_law0211_26f_3",
+  "schoolId": "s_ucla",
+  "code": "LAW 211",
+  "title": "Evidence (Lec 3)",
+  "department": "LAW",
+  "instructor": "Heilman, J.W.",
+  "location": "Law Building 1430",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "17:20"
+   },
+   {
+    "day": 3,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0211%20%20%20%20&class_id=880211103&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_law0212_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 212",
+  "title": "Federal Courts",
+  "department": "LAW",
+  "instructor": "Marcus, D.W.",
+  "location": "Law Building 1420",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:35",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:35",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "08:35",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0212%20%20%20%20&class_id=880212101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0213_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 213",
+  "title": "Sports as Legal Systems: A Comparative Investigation of Law",
+  "department": "LAW",
+  "instructor": "Greenberg, M.D.",
+  "location": "Law Building 2448",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:45",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0213%20%20%20%20&class_id=880213101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0217_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 217",
+  "title": "Introduction to Legal Philosophy",
+  "department": "LAW",
+  "instructor": "Churba, T.",
+  "location": "Law Building 2483",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:30",
+    "end": "20:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0217%20%20%20%20&class_id=880217101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0220_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 220",
+  "title": "Introduction to Federal Income Tax (Lec 1)",
+  "department": "LAW",
+  "instructor": "Bank, S.",
+  "location": "Law Building 1327",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:45",
+    "end": "15:00"
+   },
+   {
+    "day": 2,
+    "start": "13:45",
+    "end": "15:00"
+   },
+   {
+    "day": 4,
+    "start": "13:45",
+    "end": "15:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0220%20%20%20%20&class_id=880220101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0220_26f_2",
+  "schoolId": "s_ucla",
+  "code": "LAW 220",
+  "title": "Introduction to Federal Income Tax (Lec 2)",
+  "department": "LAW",
+  "instructor": "Oh, J.S.",
+  "location": "Law Building 1347",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:25",
+    "end": "10:25"
+   },
+   {
+    "day": 2,
+    "start": "08:25",
+    "end": "10:25"
+   },
+   {
+    "day": 3,
+    "start": "08:25",
+    "end": "10:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0220%20%20%20%20&class_id=880220102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_law0222_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 222",
+  "title": "Estate and Gift Tax",
+  "department": "LAW",
+  "instructor": "Bawden, E.A.",
+  "location": "Law Building 2467",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:30",
+    "end": "20:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0222%20%20%20%20&class_id=880222101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0230_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 230",
+  "title": "Business Associations (Lec 1)",
+  "department": "LAW",
+  "instructor": "Bainbridge, S.M.",
+  "location": "Law Building 1357",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:20",
+    "end": "17:20"
+   },
+   {
+    "day": 2,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0230%20%20%20%20&class_id=880230101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0230_26f_2",
+  "schoolId": "s_ucla",
+  "code": "LAW 230",
+  "title": "Business Associations (Lec 2)",
+  "department": "LAW",
+  "instructor": "Restrepo, F.",
+  "location": "Law Building 1337",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:25",
+    "end": "10:25"
+   },
+   {
+    "day": 3,
+    "start": "08:25",
+    "end": "10:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0230%20%20%20%20&class_id=880230102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_law0230_26f_3",
+  "schoolId": "s_ucla",
+  "code": "LAW 230",
+  "title": "Business Associations (Lec 3)",
+  "department": "LAW",
+  "instructor": "Kim, S.",
+  "location": "Law Building 1347",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:25",
+    "end": "10:25"
+   },
+   {
+    "day": 2,
+    "start": "08:25",
+    "end": "10:25"
+   },
+   {
+    "day": 3,
+    "start": "08:25",
+    "end": "10:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0230%20%20%20%20&class_id=880230103&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_law0234_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 234",
+  "title": "Accounting and Financial Analysis for Lawyers",
+  "department": "LAW",
+  "instructor": "Power, J.J.",
+  "location": "Law Building 1420",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:25",
+    "end": "10:25"
+   },
+   {
+    "day": 3,
+    "start": "08:25",
+    "end": "10:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0234%20%20%20%20&class_id=880234101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0236_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 236",
+  "title": "Securities Regulation",
+  "department": "LAW",
+  "instructor": "Park, J.",
+  "location": "Law Building 1347",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:25"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0236%20%20%20%20&class_id=880236101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0240_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 240",
+  "title": "Antitrust Law I",
+  "department": "LAW",
+  "instructor": "Dixton, J.",
+  "location": "Law Building 1420",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "17:30",
+    "end": "20:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0240%20%20%20%20&class_id=880240101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0250_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 250",
+  "title": "Secured Transactions",
+  "department": "LAW",
+  "instructor": "Amini, A.",
+  "location": "Law Building 1327",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:35",
+    "end": "12:00"
+   },
+   {
+    "day": 4,
+    "start": "10:35",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0250%20%20%20%20&class_id=880250101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0261_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 261",
+  "title": "Employment Law (Lec 1)",
+  "department": "LAW",
+  "instructor": "Abele, G.W.",
+  "location": "Law Building 1327",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0261%20%20%20%20&class_id=880261101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0261_26f_2",
+  "schoolId": "s_ucla",
+  "code": "LAW 261",
+  "title": "Employment Law (Lec 2)",
+  "department": "LAW",
+  "instructor": "Hoag, A.J.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "18:00",
+    "end": "19:20"
+   },
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "19:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0261%20%20%20%20&class_id=880261102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_law0263001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 263",
+  "title": "Employment Discrimination Law: Lecture 1",
+  "department": "LAW",
+  "instructor": "Fishkin, J.R.",
+  "location": "Law Building 1310",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:35",
+    "end": "12:00"
+   },
+   {
+    "day": 2,
+    "start": "10:35",
+    "end": "12:00"
+   },
+   {
+    "day": 3,
+    "start": "10:35",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0263%20%20%20%20&class_id=880263101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0266_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 266",
+  "title": "Critical Race Theory",
+  "department": "LAW",
+  "instructor": "Gamal, F.",
+  "location": "Law Building 1337",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "12:00"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0266%20%20%20%20&class_id=880266101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0267_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 267",
+  "title": "Federal Indian Law I",
+  "department": "LAW",
+  "instructor": "Riley, A.R.",
+  "location": "Law Building 2467",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:40"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:40"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0267%20%20%20%20&class_id=880267101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0273_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 273",
+  "title": "International Human Rights Law",
+  "department": "LAW",
+  "instructor": "Spain Bradley, A.K",
+  "location": "Law Building 1430",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:20",
+    "end": "17:20"
+   },
+   {
+    "day": 2,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0273%20%20%20%20&class_id=880273101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0278001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 278",
+  "title": "Comparative Law: Lecture 1",
+  "department": "LAW",
+  "instructor": "Gardbaum, S.A.",
+  "location": "Law Building 2357",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:35",
+    "end": "12:00"
+   },
+   {
+    "day": 4,
+    "start": "10:35",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0278%20%20%20%20&class_id=880278101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0290_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 290",
+  "title": "Environmental Law and Policy",
+  "department": "LAW",
+  "instructor": "Camacho, A.E.",
+  "location": "Law Building 1337",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:25"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0290%20%20%20%20&class_id=880290101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0295001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 295",
+  "title": "Criminal Procedure: Adjudication: Lecture 1",
+  "department": "LAW",
+  "instructor": "Colgan, B.",
+  "location": "Law Building 1447",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "17:20"
+   },
+   {
+    "day": 3,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0295%20%20%20%20&class_id=880295101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0301_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 301",
+  "title": "Art & Cultural Property Law",
+  "department": "LAW",
+  "instructor": "Riley, A.R.",
+  "location": "Law Building 1457",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:10",
+    "end": "14:50"
+   },
+   {
+    "day": 3,
+    "start": "13:10",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0301%20%20%20%20&class_id=880301101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0302_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 302",
+  "title": "Copyright Law",
+  "department": "LAW",
+  "instructor": "Lichtman, D.G.",
+  "location": "Law Building 1357",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "13:00"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "13:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0302%20%20%20%20&class_id=880302101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0305_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 305",
+  "title": "Entertainment Law (Lec 1)",
+  "department": "LAW",
+  "instructor": "Tang, X.",
+  "location": "Law Building 1347",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:35",
+    "end": "12:00"
+   },
+   {
+    "day": 2,
+    "start": "10:35",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0305%20%20%20%20&class_id=880305101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0305_26f_2",
+  "schoolId": "s_ucla",
+  "code": "LAW 305",
+  "title": "Entertainment Law (Lec 2)",
+  "department": "LAW",
+  "instructor": "Simon, J.",
+  "location": "Law Building 1447",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:30",
+    "end": "20:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0305%20%20%20%20&class_id=880305102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_law0305_26f_3",
+  "schoolId": "s_ucla",
+  "code": "LAW 305",
+  "title": "Entertainment Law (Lec 3)",
+  "department": "LAW",
+  "instructor": "Tang, X.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "18:00",
+    "end": "19:20"
+   },
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "19:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0305%20%20%20%20&class_id=880305103&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_law0306_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 306",
+  "title": "Patent Law",
+  "department": "LAW",
+  "instructor": "Pedraza Farina, L.",
+  "location": "Law Building 1327",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:25",
+    "end": "10:25"
+   },
+   {
+    "day": 3,
+    "start": "08:25",
+    "end": "10:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0306%20%20%20%20&class_id=880306101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0307_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 307",
+  "title": "Intellectual Property Law",
+  "department": "LAW",
+  "instructor": "Lichtman, D.G.",
+  "location": "Law Building 1347",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:10",
+    "end": "15:10"
+   },
+   {
+    "day": 3,
+    "start": "13:10",
+    "end": "15:10"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0307%20%20%20%20&class_id=880307101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0309_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 309",
+  "title": "Criminal Law",
+  "department": "LAW",
+  "instructor": "An, Y.",
+  "location": "Law Building 1457",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:35",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:35",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "10:35",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0309%20%20%20%20&class_id=880309101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0311_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 311",
+  "title": "Property",
+  "department": "LAW",
+  "instructor": "Banner, S.A.",
+  "location": "Law Building 1357",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:45",
+    "end": "15:00"
+   },
+   {
+    "day": 1,
+    "start": "13:45",
+    "end": "15:00"
+   },
+   {
+    "day": 3,
+    "start": "13:45",
+    "end": "15:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0311%20%20%20%20&class_id=880311101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0312001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 312",
+  "title": "Professional Responsibility: Lecture 1",
+  "department": "LAW",
+  "instructor": "Cummings, S.",
+  "location": "Law Building 1457",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:45",
+    "end": "15:10"
+   },
+   {
+    "day": 2,
+    "start": "13:45",
+    "end": "15:10"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0312%20%20%20%20&class_id=880312101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0312002_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 312",
+  "title": "Professional Responsibility: Lecture 2",
+  "department": "LAW",
+  "instructor": "Winkler, A.D.",
+  "location": "Law Building 1430",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:30",
+    "end": "20:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0312%20%20%20%20&class_id=880312102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_law0312003_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 312",
+  "title": "Professional Responsibility: Lecture 3",
+  "department": "LAW",
+  "instructor": "Webster, N.D.",
+  "location": "Law Building 1347",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:50",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0312%20%20%20%20&class_id=880312103&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_law0316001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 316",
+  "title": "Disability Law: Lecture 1",
+  "department": "LAW",
+  "instructor": "Waterstone, M.",
+  "location": "Law Building 2448",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:50",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0316%20%20%20%20&class_id=880316101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0317_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 317",
+  "title": "Family Law",
+  "department": "LAW",
+  "instructor": "Sidwell, A.",
+  "location": "Law Building 2448",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "13:00"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "13:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0317%20%20%20%20&class_id=880317101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0326_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 326",
+  "title": "Health Law & Policy",
+  "department": "LAW",
+  "instructor": "Richardson Kuljurg",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "18:00",
+    "end": "19:20"
+   },
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "19:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0326%20%20%20%20&class_id=880326101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0331_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 331",
+  "title": "Immigration Law",
+  "department": "LAW",
+  "instructor": "Motomura, H.",
+  "location": "Law Building 1420",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:20",
+    "end": "17:20"
+   },
+   {
+    "day": 2,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0331%20%20%20%20&class_id=880331101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0350001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 350",
+  "title": "Energy Law and Regulation: Lecture 1",
+  "department": "LAW",
+  "instructor": "Boyd, W.C.",
+  "location": "Law Building 2357",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:55",
+    "end": "17:20"
+   },
+   {
+    "day": 3,
+    "start": "15:55",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0350%20%20%20%20&class_id=880350101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0357001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 357",
+  "title": "Law and Practice with the Hollywood Guilds: Lecture 1",
+  "department": "LAW",
+  "instructor": "Wetanson, R.A.",
+  "location": "Law Building 2467",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:25",
+    "end": "10:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0357%20%20%20%20&class_id=880357101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0364_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 364",
+  "title": "Motion Picture Distribution",
+  "department": "LAW",
+  "instructor": "Ziffren, K.",
+  "location": "Law Building 2473",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:30",
+    "end": "20:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0364%20%20%20%20&class_id=880364101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0380_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 380",
+  "title": "State & Local Tax",
+  "department": "LAW",
+  "instructor": "Stark, K.J.",
+  "location": "Law Building 2467",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:45",
+    "end": "15:10"
+   },
+   {
+    "day": 2,
+    "start": "13:45",
+    "end": "15:10"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0380%20%20%20%20&class_id=880380101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0389001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 389",
+  "title": "Prison Law and Policy: Lecture 1",
+  "department": "LAW",
+  "instructor": "Dolovich, S.",
+  "location": "Law Building 3473",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:20",
+    "end": "17:20"
+   },
+   {
+    "day": 2,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0389%20%20%20%20&class_id=880389101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0397_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 397",
+  "title": "Advanced Legal Research",
+  "department": "LAW",
+  "instructor": "Raphael, B.M. Green, R.E. Edwards, E.",
+  "location": "Law Building 1430",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:10",
+    "end": "15:10"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0397%20%20%20%20&class_id=880397101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0403_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 403",
+  "title": "Contracts for Foreign Lawyers - LLM",
+  "department": "LAW",
+  "instructor": "Curtis, J.B.",
+  "location": "Law Building 1347",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0403%20%20%20%20&class_id=880403101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0405001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 405",
+  "title": "Preventive Detention: Lecture 1",
+  "department": "LAW",
+  "instructor": "Arulanantham, A.",
+  "location": "Law Building 2477",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "12:00"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0405%20%20%20%20&class_id=880405101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0406_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 406",
+  "title": "Legal Research, Writing, and Analysis for LLMs (Lec 1)",
+  "department": "LAW",
+  "instructor": "Lew-Corbridge, C.K",
+  "location": "Law Building 2483",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0406%20%20%20%20&class_id=880406101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0406_26f_2",
+  "schoolId": "s_ucla",
+  "code": "LAW 406",
+  "title": "Legal Research, Writing, and Analysis for LLMs (Lec 2)",
+  "department": "LAW",
+  "instructor": "Lew-Corbridge, C.K",
+  "location": "Law Building 1314",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:10",
+    "end": "15:10"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0406%20%20%20%20&class_id=880406102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_law0406_26f_3",
+  "schoolId": "s_ucla",
+  "code": "LAW 406",
+  "title": "Legal Research, Writing, and Analysis for LLMs (Lec 3)",
+  "department": "LAW",
+  "instructor": "Lew-Corbridge, C.K",
+  "location": "Law Building 3473",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0406%20%20%20%20&class_id=880406103&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_law0406_26f_4",
+  "schoolId": "s_ucla",
+  "code": "LAW 406",
+  "title": "Legal Research, Writing, and Analysis for LLMs (Lec 4)",
+  "department": "LAW",
+  "instructor": "Patterson, R.E.",
+  "location": "Law Building 2483",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0406%20%20%20%20&class_id=880406104&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_law0406_26f_5",
+  "schoolId": "s_ucla",
+  "code": "LAW 406",
+  "title": "Legal Research, Writing, and Analysis for LLMs (Lec 5)",
+  "department": "LAW",
+  "instructor": "Jaffe, M.",
+  "location": "Law Building 3473",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0406%20%20%20%20&class_id=880406105&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_law0406_26f_6",
+  "schoolId": "s_ucla",
+  "code": "LAW 406",
+  "title": "Legal Research, Writing, and Analysis for LLMs (Lec 6)",
+  "department": "LAW",
+  "instructor": "Alkhawaja, O.",
+  "location": "Law Building 2483",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0406%20%20%20%20&class_id=880406106&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_law0406_26f_7",
+  "schoolId": "s_ucla",
+  "code": "LAW 406",
+  "title": "Legal Research, Writing, and Analysis for LLMs (Lec 7)",
+  "department": "LAW",
+  "instructor": "Megdal, S.",
+  "location": "Law Building 2483",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "20:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0406%20%20%20%20&class_id=880406107&class_no=%20007%20%20"
+ },
+ {
+  "id": "cc_ucla_law0406_26f_8",
+  "schoolId": "s_ucla",
+  "code": "LAW 406",
+  "title": "Legal Research, Writing, and Analysis for LLMs (Lec 8)",
+  "department": "LAW",
+  "instructor": "Merrill, C.",
+  "location": "Law Building 2448",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0406%20%20%20%20&class_id=880406108&class_no=%20008%20%20"
+ },
+ {
+  "id": "cc_ucla_law0422_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 422",
+  "title": "Silicon Valley Law for Startups, Entrepreneurs and VCs",
+  "department": "LAW",
+  "instructor": "Green, J.L.",
+  "location": "Law Building 2448",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0422%20%20%20%20&class_id=880422101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0433_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 433",
+  "title": "Taxation of the Entertainment Industry",
+  "department": "LAW",
+  "instructor": "Nix, S.",
+  "location": "Law Building 2467",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "13:45",
+    "end": "15:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0433%20%20%20%20&class_id=880433101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0434001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 434",
+  "title": "Business Skills for Lawyers: Lecture 1",
+  "department": "LAW",
+  "instructor": "Habibi, P.B.",
+  "location": "Law Building 1420",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0434%20%20%20%20&class_id=880434101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0462_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 462",
+  "title": "The Law of Peace",
+  "department": "LAW",
+  "instructor": "Spain Bradley, A.K",
+  "location": "Law Building 2473",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:35",
+    "end": "12:00"
+   },
+   {
+    "day": 2,
+    "start": "10:35",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0462%20%20%20%20&class_id=880462101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0475_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 475",
+  "title": "U.S. Constitutional Law for Foreign Lawyers - LLM",
+  "department": "LAW",
+  "instructor": "Vandevelde, K.",
+  "location": "Law Building 1430",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:10",
+    "end": "15:10"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0475%20%20%20%20&class_id=880475101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0476_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 476",
+  "title": "Torts for Foreign Lawyers",
+  "department": "LAW",
+  "instructor": "Merrill, C.",
+  "location": "Law Building 3467",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0476%20%20%20%20&class_id=880476101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0482001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 482",
+  "title": "Representing Talent in Entertainment: Lecture 1",
+  "department": "LAW",
+  "instructor": "Johnson, J.R. Wagner, C.A.",
+  "location": "Law Building 1420",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0482%20%20%20%20&class_id=880482101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0495_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 495",
+  "title": "Artificial Intelligence Law",
+  "department": "LAW",
+  "instructor": "Selbst, A.D.",
+  "location": "Law Building 1357",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:20",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0495%20%20%20%20&class_id=880495101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0502_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 502",
+  "title": "Borders, Punishment, and Control",
+  "department": "LAW",
+  "instructor": "Eagly, I.",
+  "location": "Law Building 3393",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0502%20%20%20%20&class_id=880502101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0505a_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 505A",
+  "title": "Major Problems in Environment & Sustainability",
+  "department": "LAW",
+  "instructor": "Boyd, W.C.",
+  "location": "Law Building 2477",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "19:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0505A%20%20%20&class_id=880505101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0509_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 509",
+  "title": "Rights, Secrecy, and the Limits of Public Interest          Litigation After 9/11",
+  "department": "LAW",
+  "instructor": "Kaufman, B.",
+  "location": "Law Building 2442",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0509%20%20%20%20&class_id=880509101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0524001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 524",
+  "title": "Legal Philosophy: Authority and Resistance",
+  "department": "LAW",
+  "instructor": "Ronquist, F.",
+  "location": "Dodd Hall 300C",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "17:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0524%20%20%20%20&class_id=880524101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0526_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 526",
+  "title": "Housing Segregation, Housing Discrimination & the Evolution of Public Policy",
+  "department": "LAW",
+  "instructor": "Sander, R.H.",
+  "location": "Law Building 2357",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0526%20%20%20%20&class_id=880526101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0535_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 535",
+  "title": "The Role of Public Interest Lawyering in Policy and Organizing Campaigns",
+  "department": "LAW",
+  "instructor": "Narro, V.H.",
+  "location": "Law Building 3467",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0535%20%20%20%20&class_id=880535101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0567_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 567",
+  "title": "Direct Democracy",
+  "department": "LAW",
+  "instructor": "Fishkin, J.R.",
+  "location": "Law Building 3393",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0567%20%20%20%20&class_id=880567101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0572a001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 572A",
+  "title": "Seminar: Lawyering Skills Writing Advisor/Lawyering Skills: Seminar 1",
+  "department": "LAW",
+  "instructor": "Baril, J.R.",
+  "location": "Law Building 1457",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0572A%20%20%20&class_id=880572101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0586001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 586",
+  "title": "International Food Law and Governance: Seminar 1",
+  "department": "LAW",
+  "instructor": "Roberts, M.T.",
+  "location": "Law Building 3467",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0586%20%20%20%20&class_id=880586101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0591001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 591",
+  "title": "Seminar: Climate Change: Seminar 1",
+  "department": "LAW",
+  "instructor": "Horowitz, C.",
+  "location": "Law Building 2477",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0591%20%20%20%20&class_id=880591101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0611001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 611",
+  "title": "Environmental Law Colloquium: Seminar 1",
+  "department": "LAW",
+  "instructor": "Camacho, A.E.",
+  "location": "Law Building 3393",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:10",
+    "end": "14:35"
+   },
+   {
+    "day": 3,
+    "start": "13:10",
+    "end": "14:35"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0611%20%20%20%20&class_id=880611101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0618_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 618",
+  "title": "Your Professional Identity and Diversity, Equity and Inclusion in the Law",
+  "department": "LAW",
+  "instructor": "Suttonwills, B.E. Williams, S.S.",
+  "location": "Law Building 1314",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0618%20%20%20%20&class_id=880618101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0627_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 627",
+  "title": "Public Health Law and Ethics",
+  "department": "LAW",
+  "instructor": "Wiley, L.F.",
+  "location": "Law Building 2442",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0627%20%20%20%20&class_id=880627101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0635_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 635",
+  "title": "Topics in Animal Law",
+  "department": "LAW",
+  "instructor": "Bryant, T.L.",
+  "location": "Law Building 2442",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0635%20%20%20%20&class_id=880635101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0640_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 640",
+  "title": "Higher Education Law and Policy",
+  "department": "LAW",
+  "instructor": "Falsafi, S.",
+  "location": "Law Building 2483",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:10",
+    "end": "15:10"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0640%20%20%20%20&class_id=880640101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0645_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 645",
+  "title": "Race Conscious Remedies",
+  "department": "LAW",
+  "instructor": "Harris, C.I.",
+  "location": "Law Building 3467",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0645%20%20%20%20&class_id=880645101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0648001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 648",
+  "title": "Business Law Workshop: Seminar 1",
+  "department": "LAW",
+  "instructor": "Verstein, A.",
+  "location": "Law Building 2477",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:35",
+    "end": "12:00"
+   },
+   {
+    "day": 3,
+    "start": "10:35",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0648%20%20%20%20&class_id=880988101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0649001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 649",
+  "title": "Religious Legal Systems: Jewish Law: Seminar 1",
+  "department": "LAW",
+  "instructor": "Zasloff, J.",
+  "location": "Law Building 2448",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0649%20%20%20%20&class_id=880649101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0652_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 652",
+  "title": "PR Issues in Business Transactions, Litigations & Reorganizations",
+  "department": "LAW",
+  "instructor": "Bussel, D.J.",
+  "location": "Law Building 2448",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0652%20%20%20%20&class_id=880652101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0658_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 658",
+  "title": "Human Rights and War Crimes Digital Investigation",
+  "department": "LAW",
+  "instructor": "Peake, J.S.",
+  "location": "Law Building 2483",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:10",
+    "end": "15:10"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0658%20%20%20%20&class_id=880658101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0671_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 671",
+  "title": "Comparative Education: Law and Policy",
+  "department": "LAW",
+  "instructor": "Falsafi, S.",
+  "location": "Law Building 2483",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0671%20%20%20%20&class_id=880671101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0675_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 675",
+  "title": "LGBTQ Law and Public Policy",
+  "department": "LAW",
+  "instructor": "Nguyen, G.",
+  "location": "Law Building 2442",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0675%20%20%20%20&class_id=880675101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0693001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 693",
+  "title": "Food, Beverage, and Consumer Products Litigation: Seminar 1",
+  "department": "LAW",
+  "instructor": "Biderman, D.T. Wetherell, J.",
+  "location": "Law Building 1310",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0693%20%20%20%20&class_id=880693101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0700_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 700",
+  "title": "Pretrial Civil Litigation",
+  "department": "LAW",
+  "instructor": "Light, J.A.",
+  "location": "Law Building 2483",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "13:00"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "13:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0700%20%20%20%20&class_id=880700101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0701001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 701",
+  "title": "Prisoners&#39; Rights Clinic: Lecture 1",
+  "department": "LAW",
+  "instructor": "Littman, A.M. Schmutzer-Oblegors Montes, A.",
+  "location": "Law Building 3211A",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "12:00"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0701%20%20%20%20&class_id=880701101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0702001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 702",
+  "title": "Depositions & Discovery Clinic: Lecture 1",
+  "department": "LAW",
+  "instructor": "Light, J.A.",
+  "location": "Law Building 1337",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "17:20"
+   },
+   {
+    "day": 3,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0702%20%20%20%20&class_id=880702101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0705001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 705",
+  "title": "Trial Advocacy: Lecture 1",
+  "department": "LAW",
+  "instructor": "Anderson, C.T. Bernstein, J.B.",
+  "location": "Law Building 1310 Law Building 3483",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:45",
+    "end": "14:40"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "15:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0705%20%20%20%20&class_id=880705101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0705002_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 705",
+  "title": "Trial Advocacy: Lecture 2",
+  "department": "LAW",
+  "instructor": "Kamalpour, D. Bernstein, J.B.",
+  "location": "Law Building 1310 Law Building 3483",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:45",
+    "end": "14:40"
+   },
+   {
+    "day": 3,
+    "start": "17:30",
+    "end": "20:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0705%20%20%20%20&class_id=880705102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_law0705003_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 705",
+  "title": "Trial Advocacy: Lecture 3",
+  "department": "LAW",
+  "instructor": "Love, C. Bernstein, J.B.",
+  "location": "Law Building 1310 Law Building 3483",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:45",
+    "end": "14:40"
+   },
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "21:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0705%20%20%20%20&class_id=880705103&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_law0705004_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 705",
+  "title": "Trial Advocacy: Lecture 4",
+  "department": "LAW",
+  "instructor": "Koury, J. Bernstein, J.B.",
+  "location": "Law Building 1310 Law Building 3483",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:45",
+    "end": "14:40"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "16:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0705%20%20%20%20&class_id=880705104&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_law0705005_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 705",
+  "title": "Trial Advocacy: Lecture 5",
+  "department": "LAW",
+  "instructor": "Bernstein, J.B.",
+  "location": "Law Building 1310 Law Building 1310",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:45",
+    "end": "14:40"
+   },
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0705%20%20%20%20&class_id=880705105&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_law0707_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 707",
+  "title": "Mediation (Lec 1)",
+  "department": "LAW",
+  "instructor": "Wetzstein, S.R.",
+  "location": "Law Building 2473",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "13:00"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "13:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0707%20%20%20%20&class_id=880707101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0707_26f_2",
+  "schoolId": "s_ucla",
+  "code": "LAW 707",
+  "title": "Mediation (Lec 2)",
+  "department": "LAW",
+  "instructor": "Wetzstein, S.R.",
+  "location": "Law Building 3483",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "17:20"
+   },
+   {
+    "day": 3,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0707%20%20%20%20&class_id=880707102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_law0722_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 722",
+  "title": "Mediation Clinic",
+  "department": "LAW",
+  "instructor": "Lanning, D.P.",
+  "location": "Law Building 3484",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0722%20%20%20%20&class_id=880722101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0732_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 732",
+  "title": "Land Develop Simulation",
+  "department": "LAW",
+  "instructor": "Pilchen, L.",
+  "location": "Law Building 3473",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0732%20%20%20%20&class_id=880732101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0733_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 733",
+  "title": "Pre-Trial Criminal Litigation",
+  "department": "LAW",
+  "instructor": "Cotton, G.",
+  "location": "Law Building 2442",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "13:00"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "13:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0733%20%20%20%20&class_id=880733101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0734_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 734",
+  "title": "Housing Justice Clinic",
+  "department": "LAW",
+  "instructor": "Nickell, M.",
+  "location": "Law Building 3484",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "12:00"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0734%20%20%20%20&class_id=880734101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0738_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 738",
+  "title": "California Environmental Legislation and Policy Clinic",
+  "department": "LAW",
+  "instructor": "Stein, J.E. Van Emmerick, E.",
+  "location": "Law Building 3393",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "12:00"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0738%20%20%20%20&class_id=880738101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0746_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 746",
+  "title": "Litigation and Fact Discovery",
+  "department": "LAW",
+  "instructor": "Khan, A.M. Hwang, R.",
+  "location": "Law Building 3473",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0746%20%20%20%20&class_id=880746101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0760a_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 760A",
+  "title": "Patent Clinic",
+  "department": "LAW",
+  "instructor": "Chong, E.K.",
+  "location": "Law Building 2477",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0760A%20%20%20&class_id=880760101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0763001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 763",
+  "title": "Contract Drafting: Lecture 1",
+  "department": "LAW",
+  "instructor": "Karlsson, S.A.",
+  "location": "Law Building 2483",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "17:20"
+   },
+   {
+    "day": 3,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0763%20%20%20%20&class_id=880763101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0763002_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 763",
+  "title": "Contract Drafting: Lecture 2",
+  "department": "LAW",
+  "instructor": "Karlsson, S.A.",
+  "location": "Law Building 1314",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "13:00"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "13:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0763%20%20%20%20&class_id=880763102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_law0764001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 764",
+  "title": "Intramural Transactional LawMeet: Lecture 1",
+  "department": "LAW",
+  "instructor": "Karlsson, S.A.",
+  "location": "Law Building 2448",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0764%20%20%20%20&class_id=880764101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0769_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 769",
+  "title": "Documentary Film Legal Clinic",
+  "department": "LAW",
+  "instructor": "Cohen, D.M. Sundra, L.",
+  "location": "Law Building 1314",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0769%20%20%20%20&class_id=880769101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0788_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 788",
+  "title": "Advanced Trial Preparation",
+  "department": "LAW",
+  "instructor": "Bernstein, J.B.",
+  "location": "Law Building 1310",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "18:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0788%20%20%20%20&class_id=880788101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0792_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 792",
+  "title": "Immigrant Family Legal Clinic",
+  "department": "LAW",
+  "instructor": "Rabin, N.A.",
+  "location": "Law Building 2442",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "12:00"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0792%20%20%20%20&class_id=880792101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0794_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 794",
+  "title": "Human Rights Litigation Clinic",
+  "department": "LAW",
+  "instructor": "Sweetser, C.",
+  "location": "Law Building 3484",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:30"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0794%20%20%20%20&class_id=880794101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0797_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 797",
+  "title": "Appellate Advocacy: Introduction to Moot Court Competitions",
+  "department": "LAW",
+  "instructor": "Gomez, M.",
+  "location": "Law Building 2473",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0797%20%20%20%20&class_id=880797101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0802_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 802",
+  "title": "Entrepreneurship Practicum",
+  "department": "LAW",
+  "instructor": "Dorff, M. Mayberry, J. Van Ligten, G.",
+  "location": "Law Building 3393",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:25",
+    "end": "10:25"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0802%20%20%20%20&class_id=880802101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0805_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 805",
+  "title": "Part-Time Externship Seminar: Criminal",
+  "department": "LAW",
+  "instructor": "Nam, J.",
+  "location": "Law Building 2473",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0805%20%20%20%20&class_id=880805101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0806_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 806",
+  "title": "Part-Time Externship Seminar: Judicial",
+  "department": "LAW",
+  "instructor": "Hanasono, M.",
+  "location": "Law Building 2357",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "20:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0806%20%20%20%20&class_id=880806101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0807001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 807",
+  "title": "Part-Time Externship Seminar: Public Interest: Seminar 1",
+  "department": "LAW",
+  "instructor": "Koenig, S.",
+  "location": "Law Building 3211A",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0807%20%20%20%20&class_id=880807101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0808_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 808",
+  "title": "Part-Time Externship Seminar: Government/Civil",
+  "department": "LAW",
+  "instructor": "Toma, J.M.",
+  "location": "Law Building 3484",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "20:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0808%20%20%20%20&class_id=880808101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0809_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 809",
+  "title": "Part-Time Externsip Seminar: Transactional/Entertainment/Corporate",
+  "department": "LAW",
+  "instructor": "Lee, V.",
+  "location": "Law Building 3484",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0809%20%20%20%20&class_id=880809101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0814001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 814",
+  "title": "Part-Time Externship Seminar: Federal Public Defender: Seminar 1",
+  "department": "LAW",
+  "instructor": "Drozdowski, M.R. Shah, R.",
+  "location": "Law Building 1102",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0814%20%20%20%20&class_id=880814101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0815_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 815",
+  "title": "Lawyering in Practice: Externship Seminar",
+  "department": "LAW",
+  "instructor": "Mora, C.",
+  "location": "Law Building 3393",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0815%20%20%20%20&class_id=880815101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0817_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 817",
+  "title": "California Criminal Justice Practicum",
+  "department": "LAW",
+  "instructor": "Casey, T.",
+  "location": "Law Building 2476",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0817%20%20%20%20&class_id=880817101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0832_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 832",
+  "title": "Voting Rights Policy and Practice",
+  "department": "LAW",
+  "instructor": "Dunn, C.W. Morfin, E.",
+  "location": "Law Building 1314",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:20",
+    "end": "17:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0832%20%20%20%20&class_id=880832101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_law0851b001_26f",
+  "schoolId": "s_ucla",
+  "code": "LAW 851B",
+  "title": "Agency Externship: Tutorial 1",
+  "department": "LAW",
+  "instructor": "Sidwell, A.",
+  "location": "Law Building 3211A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:30",
+    "end": "19:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=LAW%20%20%20%20&crs_catlg_no=0851B%20%20%20&class_id=880051101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_sasian0110a_26f",
+  "schoolId": "s_ucla",
+  "code": "S ASIAN 110A",
+  "title": "Elementary Sanskrit",
+  "department": "S ASIAN",
+  "instructor": "Jamison, S.",
+  "location": "Public Affairs Building 1337",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=S%20ASIAN&crs_catlg_no=0110A%20%20%20&class_id=265360200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_seasian0050_26f",
+  "schoolId": "s_ucla",
+  "code": "SEASIAN 50",
+  "title": "Southeast Asian Societies and Cultures",
+  "department": "SEASIAN",
+  "instructor": "Dutton, G.E.",
+  "location": "Haines Hall 118",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SEASIAN&crs_catlg_no=0050%20%20%20%20&class_id=271149200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0001_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 1",
+  "title": "Elementary Spanish (Lec 1)",
+  "department": "SPAN",
+  "instructor": "Benavides, B. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1264",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0001%20%20%20%20&class_id=349002201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0001_26f_2",
+  "schoolId": "s_ucla",
+  "code": "SPAN 1",
+  "title": "Elementary Spanish (Lec 2)",
+  "department": "SPAN",
+  "instructor": "Benitez, R. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1264",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0001%20%20%20%20&class_id=349002202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_span0001_26f_3",
+  "schoolId": "s_ucla",
+  "code": "SPAN 1",
+  "title": "Elementary Spanish (Lec 3)",
+  "department": "SPAN",
+  "instructor": "Duan, J. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1264",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0001%20%20%20%20&class_id=349002203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_span0001_26f_4",
+  "schoolId": "s_ucla",
+  "code": "SPAN 1",
+  "title": "Elementary Spanish (Lec 4)",
+  "department": "SPAN",
+  "instructor": "Chan, J. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1264",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0001%20%20%20%20&class_id=349002204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_span0001_26f_5",
+  "schoolId": "s_ucla",
+  "code": "SPAN 1",
+  "title": "Elementary Spanish (Lec 5)",
+  "department": "SPAN",
+  "instructor": "Hernandez, G. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1264",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0001%20%20%20%20&class_id=349002205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_span0001_26f_6",
+  "schoolId": "s_ucla",
+  "code": "SPAN 1",
+  "title": "Elementary Spanish (Lec 6)",
+  "department": "SPAN",
+  "instructor": "Sanchez Rodriguez, Falce-Robinson, J.",
+  "location": "Public Affairs Building 1284",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0001%20%20%20%20&class_id=349002206&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_span0001_26f_7",
+  "schoolId": "s_ucla",
+  "code": "SPAN 1",
+  "title": "Elementary Spanish (Lec 7)",
+  "department": "SPAN",
+  "instructor": "Perichon, M. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1264",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0001%20%20%20%20&class_id=349002207&class_no=%20007%20%20"
+ },
+ {
+  "id": "cc_ucla_span0002_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 2",
+  "title": "Elementary Spanish (Lec 1)",
+  "department": "SPAN",
+  "instructor": "Middleton, M.R. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1278",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0002%20%20%20%20&class_id=349008001&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0002_26f_2",
+  "schoolId": "s_ucla",
+  "code": "SPAN 2",
+  "title": "Elementary Spanish (Lec 2)",
+  "department": "SPAN",
+  "instructor": "Middleton, M.R. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1278",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0002%20%20%20%20&class_id=349008202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_span0002_26f_3",
+  "schoolId": "s_ucla",
+  "code": "SPAN 2",
+  "title": "Elementary Spanish (Lec 3)",
+  "department": "SPAN",
+  "instructor": "de La Torre Amagua Falce-Robinson, J.",
+  "location": "Public Affairs Building 1264",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0002%20%20%20%20&class_id=349008203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_span0002_26f_4",
+  "schoolId": "s_ucla",
+  "code": "SPAN 2",
+  "title": "Elementary Spanish (Lec 4)",
+  "department": "SPAN",
+  "instructor": "Suhr, C. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1278",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0002%20%20%20%20&class_id=349008204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_span0002_26f_5",
+  "schoolId": "s_ucla",
+  "code": "SPAN 2",
+  "title": "Elementary Spanish (Lec 5)",
+  "department": "SPAN",
+  "instructor": "de La Torre Amagua Falce-Robinson, J.",
+  "location": "Public Affairs Building 1278",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0002%20%20%20%20&class_id=349008205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_span0002_26f_6",
+  "schoolId": "s_ucla",
+  "code": "SPAN 2",
+  "title": "Elementary Spanish (Lec 6)",
+  "department": "SPAN",
+  "instructor": "Cohen, G.D. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1284",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0002%20%20%20%20&class_id=349008206&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_span0002_26f_7",
+  "schoolId": "s_ucla",
+  "code": "SPAN 2",
+  "title": "Elementary Spanish (Lec 7)",
+  "department": "SPAN",
+  "instructor": "Cohen, G.D. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1284",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0002%20%20%20%20&class_id=349008207&class_no=%20007%20%20"
+ },
+ {
+  "id": "cc_ucla_span0003_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 3",
+  "title": "Elementary Spanish (Lec 1)",
+  "department": "SPAN",
+  "instructor": "Reda Coll, F. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1270",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0003%20%20%20%20&class_id=349010300&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0003_26f_2",
+  "schoolId": "s_ucla",
+  "code": "SPAN 3",
+  "title": "Elementary Spanish (Lec 2)",
+  "department": "SPAN",
+  "instructor": "Reyes, C. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1270",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0003%20%20%20%20&class_id=349010302&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_span0003_26f_3",
+  "schoolId": "s_ucla",
+  "code": "SPAN 3",
+  "title": "Elementary Spanish (Lec 3)",
+  "department": "SPAN",
+  "instructor": "Suhr, C. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1270",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0003%20%20%20%20&class_id=349010203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_span0003_26f_4",
+  "schoolId": "s_ucla",
+  "code": "SPAN 3",
+  "title": "Elementary Spanish (Lec 4)",
+  "department": "SPAN",
+  "instructor": "Duarte, J. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1270",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0003%20%20%20%20&class_id=349010201&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_span0003_26f_5",
+  "schoolId": "s_ucla",
+  "code": "SPAN 3",
+  "title": "Elementary Spanish (Lec 5)",
+  "department": "SPAN",
+  "instructor": "Gzehoviak, J. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1270",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0003%20%20%20%20&class_id=349010305&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_span0003_26f_6",
+  "schoolId": "s_ucla",
+  "code": "SPAN 3",
+  "title": "Elementary Spanish (Lec 6)",
+  "department": "SPAN",
+  "instructor": "TA Falce-Robinson, J.",
+  "location": "Public Affairs Building 1284",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0003%20%20%20%20&class_id=349010206&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_span0004_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 4",
+  "title": "Intermediate Spanish",
+  "department": "SPAN",
+  "instructor": "Lee, C. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1323",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0004%20%20%20%20&class_id=349012201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0005_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 5",
+  "title": "Intermediate Spanish",
+  "department": "SPAN",
+  "instructor": "McKay Villegas, A. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1284",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0005%20%20%20%20&class_id=349014201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0007a_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 7A",
+  "title": "Introductory Spanish for Heritage Speakers (Lec 1)",
+  "department": "SPAN",
+  "instructor": "Carter, J. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1278",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0007A%20%20%20&class_id=349018201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0007a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "SPAN 7A",
+  "title": "Introductory Spanish for Heritage Speakers (Lec 2)",
+  "department": "SPAN",
+  "instructor": "Carter, J. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1323",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0007A%20%20%20&class_id=349018202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_span0007b_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 7B",
+  "title": "Intermediate Spanish for Heritage Speakers",
+  "department": "SPAN",
+  "instructor": "Cruz, G. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1278",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0007B%20%20%20&class_id=349020201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0011a_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 11A",
+  "title": "Catalan Language and Culture I",
+  "department": "SPAN",
+  "instructor": "Reda Coll, F. Mateu, V.",
+  "location": "Public Affairs Building 1040",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0011A%20%20%20&class_id=349033200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0025_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 25",
+  "title": "Advanced Spanish Composition (Lec 1)",
+  "department": "SPAN",
+  "instructor": "Garcia Lorenzo, G. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1329",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0025%20%20%20%20&class_id=349075201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0025_26f_2",
+  "schoolId": "s_ucla",
+  "code": "SPAN 25",
+  "title": "Advanced Spanish Composition (Lec 2)",
+  "department": "SPAN",
+  "instructor": "No instructors",
+  "location": "Haines Hall",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0025%20%20%20%20&class_id=349075202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_span0025_26f_3",
+  "schoolId": "s_ucla",
+  "code": "SPAN 25",
+  "title": "Advanced Spanish Composition (Lec 3)",
+  "department": "SPAN",
+  "instructor": "Tobin, S.C. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1270",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0025%20%20%20%20&class_id=349075203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_span0025_26f_4",
+  "schoolId": "s_ucla",
+  "code": "SPAN 25",
+  "title": "Advanced Spanish Composition (Lec 4)",
+  "department": "SPAN",
+  "instructor": "TA Falce-Robinson, J.",
+  "location": "Haines Hall 110",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0025%20%20%20%20&class_id=349075204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_span0027_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 27",
+  "title": "Advanced Spanish Composition for Heritage Speakers (Lec 1)",
+  "department": "SPAN",
+  "instructor": "Carter, J. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1278",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0027%20%20%20%20&class_id=349062201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0027_26f_2",
+  "schoolId": "s_ucla",
+  "code": "SPAN 27",
+  "title": "Advanced Spanish Composition for Heritage Speakers (Lec 2)",
+  "department": "SPAN",
+  "instructor": "TA Falce-Robinson, J.",
+  "location": "Public Affairs Building 1264",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0027%20%20%20%20&class_id=349062202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_span0035m_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN M35",
+  "title": "Spanish, Portuguese, and Nature of Language",
+  "department": "SPAN",
+  "instructor": "Mateu, V.",
+  "location": "Perloff Hall 1102",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0035%20%20M%20&class_id=349072200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0044_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 44",
+  "title": "Latin American Cultures",
+  "department": "SPAN",
+  "instructor": "Arroyo Calderon, P",
+  "location": "Royce Hall 362",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:50"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0044%20%20%20%20&class_id=349132200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0119_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 119",
+  "title": "Introduction to Literary Analysis (Lec 1)",
+  "department": "SPAN",
+  "instructor": "Rodriguez, J.N.",
+  "location": "Rolfe Hall 3105",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0119%20%20%20%20&class_id=349415202&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0119_26f_2",
+  "schoolId": "s_ucla",
+  "code": "SPAN 119",
+  "title": "Introduction to Literary Analysis (Lec 2)",
+  "department": "SPAN",
+  "instructor": "Marturano, J.",
+  "location": "Bunche Hall 1221A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0119%20%20%20%20&class_id=349415201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_span0120_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 120",
+  "title": "Literature in Historical Context",
+  "department": "SPAN",
+  "instructor": "Patino Loira, J.",
+  "location": "Public Affairs Building 2238",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0120%20%20%20%20&class_id=349421201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0135001_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 135",
+  "title": "Topics in Early Modern Studies: Complexities and Paradoxes of Women in the Colonial World",
+  "department": "SPAN",
+  "instructor": "Rodriguez, J.N.",
+  "location": "Rolfe Hall 3105",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0135%20%20%20%20&class_id=349513100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0150001_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 150",
+  "title": "Topics in Contemporary Studies: Ethnic Otherness in Latin American Culture: From Indigenismo to Indigenous Movements",
+  "department": "SPAN",
+  "instructor": "Arroyo Calderon, P",
+  "location": "Public Affairs Building 1329",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0150%20%20%20%20&class_id=349601202&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0150002_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 150",
+  "title": "Topics in Contemporary Studies: Mexican Climate Fiction: From Environmental Crisis to Eco-utopian Futures",
+  "department": "SPAN",
+  "instructor": "Garcia Lorenzo, G.",
+  "location": "Renee and David Kaplan Hall A26",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0150%20%20%20%20&class_id=349601201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_span0160001_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 160",
+  "title": "Topics in Spanish Linguistics: Linguistic Landscape of Spanish-Speaking World",
+  "department": "SPAN",
+  "instructor": "Kim, J.",
+  "location": "Dodd Hall 154",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0160%20%20%20%20&class_id=349660201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0165xpm_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 165XPM",
+  "title": "Taking It to Street: Spanish in Community",
+  "department": "SPAN",
+  "instructor": "Suhr, C.",
+  "location": "Haines Hall A28",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0165XPM%20&class_id=349691100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0170001_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 170",
+  "title": "Topics in Interdisciplinary and Transhistorical Studies: Robots, Cyborgs, and Artificial Intelligence in Latin America",
+  "department": "SPAN",
+  "instructor": "Tobin, S.C.",
+  "location": "Public Affairs Building 1329",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0170%20%20%20%20&class_id=349720200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0172xpm001_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 172XPM",
+  "title": "Topics in Community Engagement: Cine Vivo: Community-Engaged Sensory Ethnography",
+  "department": "SPAN",
+  "instructor": "Cohen, G.D.",
+  "location": "Haines Hall A28",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0172XPM%20&class_id=349733200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0175001_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 175",
+  "title": "Topics in Creative Writing and Translation: Creative Poetry Writing in Spanish",
+  "department": "SPAN",
+  "instructor": "Castro, A.",
+  "location": "Rolfe Hall 3105",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0175%20%20%20%20&class_id=349750201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0191c001_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 191C",
+  "title": "Senior Capstone Seminar: Seminar 1",
+  "department": "SPAN",
+  "instructor": "Marturano, J.",
+  "location": "Rolfe Hall 1301",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0191C%20%20%20&class_id=349849200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0204b_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 204B",
+  "title": "Generative Syntax and Semantics",
+  "department": "SPAN",
+  "instructor": "Mateu, V.",
+  "location": "Bunche Hall 2174",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0204B%20%20%20&class_id=749029201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0205am_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN M205A",
+  "title": "Development of Portuguese and Spanish Languages",
+  "department": "SPAN",
+  "instructor": "No instructors",
+  "location": "Rolfe Hall",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0205A%20M%20&class_id=749030201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0256b001_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 256B",
+  "title": "Studies in Spanish Linguistics: Lecture 1",
+  "department": "SPAN",
+  "instructor": "Quicoli, A.C.",
+  "location": "Rolfe Hall 3105",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0256B%20%20%20&class_id=749340201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0290001_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 290",
+  "title": "Special Topics:",
+  "department": "SPAN",
+  "instructor": "Van Delden, M.H.",
+  "location": "Bunche Hall 2173",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0290%20%20%20%20&class_id=749530201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0290002_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 290",
+  "title": "Special Topics: Latin American Poetry and Psychoanalysis",
+  "department": "SPAN",
+  "instructor": "Castro, A.",
+  "location": "Bunche Hall 2173",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0290%20%20%20%20&class_id=749530202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_span0297am_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN M297A",
+  "title": "Proseminar I",
+  "department": "SPAN",
+  "instructor": "Patino Loira, J.",
+  "location": "Rolfe Hall 4330",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0297A%20M%20&class_id=749584200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0297bm_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN M297B",
+  "title": "Proseminar II",
+  "department": "SPAN",
+  "instructor": "Patino Loira, J.",
+  "location": "Rolfe Hall 4330",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:30",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0297B%20M%20&class_id=749585201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_span0495_26f",
+  "schoolId": "s_ucla",
+  "code": "SPAN 495",
+  "title": "Teaching Spanish at College Level",
+  "department": "SPAN",
+  "instructor": "Falce-Robinson, J.",
+  "location": "Public Affairs Building 2292",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=SPAN%20%20%20&crs_catlg_no=0495%20%20%20%20&class_id=749781200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0010_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 10",
+  "title": "Introduction to Statistical Reasoning (Lec 2)",
+  "department": "STATS",
+  "instructor": "Wang, B.",
+  "location": "Mathematical Sciences 4000A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0010%20%20%20%20&class_id=263030210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0010_26f_3",
+  "schoolId": "s_ucla",
+  "code": "STATS 10",
+  "title": "Introduction to Statistical Reasoning (Lec 3)",
+  "department": "STATS",
+  "instructor": "Cha, M.",
+  "location": "Bunche Hall 2209A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0010%20%20%20%20&class_id=263030220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0010_26f_4",
+  "schoolId": "s_ucla",
+  "code": "STATS 10",
+  "title": "Introduction to Statistical Reasoning (Lec 4)",
+  "department": "STATS",
+  "instructor": "Cha, M.",
+  "location": "Bunche Hall 2209A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0010%20%20%20%20&class_id=263030230&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0010_26f_5",
+  "schoolId": "s_ucla",
+  "code": "STATS 10",
+  "title": "Introduction to Statistical Reasoning (Lec 5)",
+  "department": "STATS",
+  "instructor": "Gould, R.L.",
+  "location": "Kinsey Science Teaching Pavilion 1220B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0010%20%20%20%20&class_id=263030240&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0013_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 13",
+  "title": "Introduction to Statistical Methods for Life and Health Sciences (Lec 1)",
+  "department": "STATS",
+  "instructor": "Zanontian, L.A.",
+  "location": "Mathematical Sciences 4000A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0013%20%20%20%20&class_id=263040200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0013_26f_2",
+  "schoolId": "s_ucla",
+  "code": "STATS 13",
+  "title": "Introduction to Statistical Methods for Life and Health Sciences (Lec 2)",
+  "department": "STATS",
+  "instructor": "Zanontian, L.A.",
+  "location": "Mathematical Sciences 4000A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0013%20%20%20%20&class_id=263040210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0013_26f_3",
+  "schoolId": "s_ucla",
+  "code": "STATS 13",
+  "title": "Introduction to Statistical Methods for Life and Health Sciences (Lec 3)",
+  "department": "STATS",
+  "instructor": "Ho, H.",
+  "location": "Mathematical Sciences 4000A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0013%20%20%20%20&class_id=263040220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0013_26f_4",
+  "schoolId": "s_ucla",
+  "code": "STATS 13",
+  "title": "Introduction to Statistical Methods for Life and Health Sciences (Lec 4)",
+  "department": "STATS",
+  "instructor": "Ho, H.",
+  "location": "Mathematical Sciences 4000A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "18:30",
+    "end": "19:45"
+   },
+   {
+    "day": 2,
+    "start": "18:30",
+    "end": "19:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0013%20%20%20%20&class_id=263040230&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0013_26f_5",
+  "schoolId": "s_ucla",
+  "code": "STATS 13",
+  "title": "Introduction to Statistical Methods for Life and Health Sciences (Lec 5)",
+  "department": "STATS",
+  "instructor": "Wu, G.",
+  "location": "Mathematical Sciences 4000A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0013%20%20%20%20&class_id=263040240&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0015_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 15",
+  "title": "Introduction to Data Science",
+  "department": "STATS",
+  "instructor": "Zes, D.A.",
+  "location": "Dodd Hall 175",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0015%20%20%20%20&class_id=263045200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0020_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 20",
+  "title": "Introduction to Statistical Programming with R (Lec 1)",
+  "department": "STATS",
+  "instructor": "Sparks, J.H.",
+  "location": "Mathematical Sciences 4000A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0020%20%20%20%20&class_id=263060200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0020_26f_2",
+  "schoolId": "s_ucla",
+  "code": "STATS 20",
+  "title": "Introduction to Statistical Programming with R (Lec 2)",
+  "department": "STATS",
+  "instructor": "Sparks, J.H.",
+  "location": "Bunche Hall 1209B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0020%20%20%20%20&class_id=263060210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0021_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 21",
+  "title": "Python and Other Technologies for Data Science",
+  "department": "STATS",
+  "instructor": "Chen, M.S.",
+  "location": "Geology Building 3656",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0021%20%20%20%20&class_id=263062200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0100a_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 100A",
+  "title": "Introduction to Probability (Lec 1)",
+  "department": "STATS",
+  "instructor": "Wu, Y.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0100A%20%20%20&class_id=263303200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0100a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "STATS 100A",
+  "title": "Introduction to Probability (Lec 2)",
+  "department": "STATS",
+  "instructor": "Zhu, Y.",
+  "location": "Dodd Hall 146",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0100A%20%20%20&class_id=263303210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0100a_26f_3",
+  "schoolId": "s_ucla",
+  "code": "STATS 100A",
+  "title": "Introduction to Probability (Lec 3)",
+  "department": "STATS",
+  "instructor": "Montufar Cuartas,",
+  "location": "Public Affairs Building 2214",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0100A%20%20%20&class_id=263303220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0100a_26f_4",
+  "schoolId": "s_ucla",
+  "code": "STATS 100A",
+  "title": "Introduction to Probability (Lec 4)",
+  "department": "STATS",
+  "instructor": "Plecko, D.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0100A%20%20%20&class_id=263303230&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0100b_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 100B",
+  "title": "Introduction to Mathematical Statistics",
+  "department": "STATS",
+  "instructor": "Tsiang, M.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0100B%20%20%20&class_id=263304200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0100c_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 100C",
+  "title": "Linear Models",
+  "department": "STATS",
+  "instructor": "Christou, N.",
+  "location": "Kinsey Science Teaching Pavilion 1200B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0100C%20%20%20&class_id=263388200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0101c_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 101C",
+  "title": "Introduction to Statistical Models and Data Mining (Lec 1)",
+  "department": "STATS",
+  "instructor": "Almohalwas, A.M.",
+  "location": "Kinsey Science Teaching Pavilion 1200B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0101C%20%20%20&class_id=263312200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0101c_26f_2",
+  "schoolId": "s_ucla",
+  "code": "STATS 101C",
+  "title": "Introduction to Statistical Models and Data Mining (Lec 2)",
+  "department": "STATS",
+  "instructor": "Almohalwas, A.M.",
+  "location": "Kinsey Science Teaching Pavilion 1200B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0101C%20%20%20&class_id=263312210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0101c_26f_3",
+  "schoolId": "s_ucla",
+  "code": "STATS 101C",
+  "title": "Introduction to Statistical Models and Data Mining (Lec 3)",
+  "department": "STATS",
+  "instructor": "Maierhofer, T.J.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0101C%20%20%20&class_id=263312220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0101c_26f_4",
+  "schoolId": "s_ucla",
+  "code": "STATS 101C",
+  "title": "Introduction to Statistical Models and Data Mining (Lec 4)",
+  "department": "STATS",
+  "instructor": "Maierhofer, T.J.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0101C%20%20%20&class_id=263312230&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0102c_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 102C",
+  "title": "Introduction to Monte Carlo Methods (Lec 1)",
+  "department": "STATS",
+  "instructor": "Handcock, M.S.",
+  "location": "Renee and David Kaplan Hall A51",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0102C%20%20%20&class_id=263316200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0102c_26f_2",
+  "schoolId": "s_ucla",
+  "code": "STATS 102C",
+  "title": "Introduction to Monte Carlo Methods (Lec 2)",
+  "department": "STATS",
+  "instructor": "Chen, M.S.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "08:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "08:50"
+   },
+   {
+    "day": 4,
+    "start": "08:00",
+    "end": "08:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0102C%20%20%20&class_id=263316210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0102c_26f_3",
+  "schoolId": "s_ucla",
+  "code": "STATS 102C",
+  "title": "Introduction to Monte Carlo Methods (Lec 3)",
+  "department": "STATS",
+  "instructor": "Tsiang, M.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0102C%20%20%20&class_id=263316220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0102c_26f_4",
+  "schoolId": "s_ucla",
+  "code": "STATS 102C",
+  "title": "Introduction to Monte Carlo Methods (Lec 4)",
+  "department": "STATS",
+  "instructor": "Wu, G.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0102C%20%20%20&class_id=263316230&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0116c_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS C116",
+  "title": "Applied Bayesian Social Statistics",
+  "department": "STATS",
+  "instructor": "Handcock, M.S.",
+  "location": "Royce Hall 154",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0116%20%20C%20&class_id=263396200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0140xp_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 140XP",
+  "title": "Collaboration in Data Science (Lec 1)",
+  "department": "STATS",
+  "instructor": "Lew, V. Chandy, M.",
+  "location": "Royce Hall 160",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0140XP%20%20&class_id=263542200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0140xp_26f_2",
+  "schoolId": "s_ucla",
+  "code": "STATS 140XP",
+  "title": "Collaboration in Data Science (Lec 2)",
+  "department": "STATS",
+  "instructor": "Lew, V. Chandy, M.",
+  "location": "Royce Hall 160",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0140XP%20%20&class_id=263542210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0140xp_26f_3",
+  "schoolId": "s_ucla",
+  "code": "STATS 140XP",
+  "title": "Collaboration in Data Science (Lec 3)",
+  "department": "STATS",
+  "instructor": "Zes, D.A. Arjon, A.",
+  "location": "La Kretz Hall 120",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0140XP%20%20&class_id=263542220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0153_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 153",
+  "title": "Hierarchical Linear Modeling",
+  "department": "STATS",
+  "instructor": "Esfandiari, M.M.",
+  "location": "Mathematical Sciences 6229",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0153%20%20%20%20&class_id=263618200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0161c_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS C161",
+  "title": "Introduction to Machine Learning and Artificial Intelligence",
+  "department": "STATS",
+  "instructor": "Cheng, G.",
+  "location": "Dodd Hall 170",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "18:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0161%20%20C%20&class_id=263666200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0183c_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS C183",
+  "title": "Statistical Models in Finance",
+  "department": "STATS",
+  "instructor": "Christou, N.",
+  "location": "Geology Building 4660",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0183%20%20C%20&class_id=263698200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0200a_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 200A",
+  "title": "Applied Probability",
+  "department": "STATS",
+  "instructor": "Amini, A.A.",
+  "location": "Boelter Hall 5273",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0200A%20%20%20&class_id=663003200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0201a_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 201A",
+  "title": "Research Design, Sampling, and Analysis",
+  "department": "STATS",
+  "instructor": "Xu, H.",
+  "location": "Royce Hall 162",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0201A%20%20%20&class_id=663010200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0202a_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 202A",
+  "title": "Statistics Programming",
+  "department": "STATS",
+  "instructor": "Paik Schoenberg, F",
+  "location": "Bunche Hall 3170",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0202A%20%20%20&class_id=663013200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0211_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 211",
+  "title": "Topics in Economics and Machine Learning",
+  "department": "STATS",
+  "instructor": "Dai, X.",
+  "location": "Bunche Hall 3170",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0211%20%20%20%20&class_id=663071200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0216c_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS C216",
+  "title": "Applied Bayesian Social Statistics",
+  "department": "STATS",
+  "instructor": "Handcock, M.S.",
+  "location": "Royce Hall 154",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0216%20%20C%20&class_id=663097200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0219_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 219",
+  "title": "Topics in Reinforcement Learning",
+  "department": "STATS",
+  "instructor": "Zhu, Y.",
+  "location": "La Kretz Hall 120",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0219%20%20%20%20&class_id=663115200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0243m_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS M243",
+  "title": "Logic, Causation, and Probability",
+  "department": "STATS",
+  "instructor": "Arah, O.A.",
+  "location": "Public Health, School of 41268",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0243%20%20M%20&class_id=663258200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0261c_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS C261",
+  "title": "Introduction to Machine Learning and Artificial Intelligence",
+  "department": "STATS",
+  "instructor": "Cheng, G.",
+  "location": "Dodd Hall 170",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "18:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0261%20%20C%20&class_id=663366200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0283c_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS C283",
+  "title": "Statistical Models in Finance",
+  "department": "STATS",
+  "instructor": "Christou, N.",
+  "location": "Geology Building 4660",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0283%20%20C%20&class_id=663498200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0290_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 290",
+  "title": "Current Literature in Statistics",
+  "department": "STATS",
+  "instructor": "Zhu, Y.",
+  "location": "Geology Building 4660",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0290%20%20%20%20&class_id=663540200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0296_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 296",
+  "title": "Participating Seminar: Statistics",
+  "department": "STATS",
+  "instructor": "Paik Schoenberg, F",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0296%20%20%20%20&class_id=663576213&class_no=%20013%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0400_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 400",
+  "title": "Introduction to Probability Modeling",
+  "department": "STATS",
+  "instructor": "Madrid Padilla, O.",
+  "location": "Kinsey Science Teaching Pavilion 1200B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0400%20%20%20%20&class_id=663600200&class_no=%20080%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0401_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 401",
+  "title": "Survey of Methods in Modern Statistics",
+  "department": "STATS",
+  "instructor": "Chen, M.S.",
+  "location": "Renee and David Kaplan Hall A65",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0401%20%20%20%20&class_id=663602401&class_no=%20080%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0412_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 412",
+  "title": "Advanced Regression and Predictive Modeling",
+  "department": "STATS",
+  "instructor": "Wu, G.",
+  "location": "Mathematical Sciences 6229",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0412%20%20%20%20&class_id=663624200&class_no=%20080%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0414_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 414",
+  "title": "From Predictive Artificial Intelligence to Generative Artificial Intelligence",
+  "department": "STATS",
+  "instructor": "Cheng, G.",
+  "location": "Boelter Hall 5280",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0414%20%20%20%20&class_id=663628407&class_no=%20080%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0419_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 419",
+  "title": "Experimental Design",
+  "department": "STATS",
+  "instructor": "Xu, H.",
+  "location": "Mathematical Sciences 6229",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0419%20%20%20%20&class_id=663638403&class_no=%20080%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0420_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 420",
+  "title": "Causal Inference",
+  "department": "STATS",
+  "instructor": "Plecko, D.",
+  "location": "Kinsey Science Teaching Pavilion 1240B",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0420%20%20%20%20&class_id=663640405&class_no=%20080%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0425_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 425",
+  "title": "Large Language Models in Text Mining",
+  "department": "STATS",
+  "instructor": "Dai, X.",
+  "location": "Renee and David Kaplan Hall A65",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "18:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0425%20%20%20%20&class_id=663650407&class_no=%20080%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0426_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 426",
+  "title": "Deep Learning",
+  "department": "STATS",
+  "instructor": "No instructors",
+  "location": "Mathematical Sciences",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0426%20%20%20%20&class_id=663656408&class_no=%20080%20%20"
+ },
+ {
+  "id": "cc_ucla_stats0495a_26f",
+  "schoolId": "s_ucla",
+  "code": "STATS 495A",
+  "title": "Teaching College Statistics",
+  "department": "STATS",
+  "instructor": "Gould, R.L. Ying, D.",
+  "location": "Boelter Hall 5440",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=STATS%20%20&crs_catlg_no=0495A%20%20%20&class_id=663791200&class_no=%20001%20%20"
  }
 ]
