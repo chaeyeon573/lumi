@@ -1953,3 +1953,10 @@
 - UCLA batch: Winter 2027 50+ subjects, 4,270+ classes.
 - Spot check classes (SF State): ACCT 101, CAD 410GW, EDDL 961 (doctoral, Saturday), ISYS 856 (grad), RRS 110 — match (site reset one connection; retried).
 - Spot check clubs: UVA Sailing, Notre Dame Scholastic Magazine, UW SEDS match; Minnesota Somali Pre-Dental Association lists the generic student-union page (what the club entered).
+
+## 2026-11-04 18:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **Mailing-list sign-ups as websites:** WashU Dermatology Interest Group's "Website" was an Outlook group join link (school login). 17 Website links were mailing-list sign-ups (Mailchimp, list-manage, eepurl, Google Groups, Outlook groups, lists.<school>.edu) → labeled `Mailing list` in `relabelSocialWebsites` (runs on every collect; test). HANDOFF note updated.
+- UCLA batch: Winter 2027 58+ subjects, 4,485+ classes.
+- Spot check classes (USC): BME 506 (grad), EE 444 (grad), MATH 434, SOWK 591 (grad), TAC 380 — match.
+- Spot check clubs: Tufts Biotech Group, BC Black Law Students Association match; Vanderbilt Chi Omega site does not answer; Rice Chi Epsilon lists a department awards page (what the chapter entered); WashU DIG (fixed above).

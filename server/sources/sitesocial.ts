@@ -55,6 +55,9 @@ export function relabelSocialWebsites(o: Organization): Organization {
   // 단톡방 초대(WhatsApp·Slack·Telegram)도 웹사이트가 아니다 — 'Group chat' (UT·WashU·UW 등 27곳, 2026-11-04)
   const CHAT = /^https?:\/\/(chat\.whatsapp\.com|wa\.me|join\.slack\.com|t\.me)\//i;
   if (o.links?.some((l) => l.label === 'Website' && CHAT.test(l.url))) o = { ...o, links: o.links.map((l) => (l.label === 'Website' && CHAT.test(l.url) ? { label: 'Group chat', url: l.url } : l)) };
+  // 메일링 리스트 가입(Mailchimp·Google Groups·Outlook 그룹·학교 메일링) — 'Mailing list' (WashU 등 15곳, 2026-11-04)
+  const LIST = /^https?:\/\/([^/]*\.)?(mailchi\.mp|eepurl\.com|list-manage\.com|groups\.google\.com|outlook\.office365\.com\/groups)|^https?:\/\/lists\.[a-z.]+\//i;
+  if (o.links?.some((l) => l.label === 'Website' && LIST.test(l.url))) o = { ...o, links: o.links.map((l) => (l.label === 'Website' && LIST.test(l.url) ? { label: 'Mailing list', url: l.url } : l)) };
   if (!o.links?.some((l) => l.label === 'Website' && /(^|\.)(instagram|facebook|fb|discord)\.(com|gg)$/i.test(hostOf(l.url)))) return o;
   const links = o.links.map((l) => {
     if (l.label !== 'Website') return l;

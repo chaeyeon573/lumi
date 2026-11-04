@@ -82,3 +82,9 @@ test('isPlaceholderSite: "I do not have a website" placeholders are not websites
   assert.equal(isPlaceholderSite('https://example.com/'), true);
   assert.equal(isPlaceholderSite('https://www.cornelldiabeteslink.org/'), false);
 });
+
+test('relabelSocialWebsites: mailing-list sign-ups given as "Website" are mailing lists (2026-11-04)', async () => {
+  const { relabelSocialWebsites } = await import('./sources/sitesocial');
+  const o = relabelSocialWebsites({ id: 'x', name: 'DIG', links: [{ label: 'Website', url: 'https://mailchi.mp/abc/join' }, { label: 'Website', url: 'https://outlook.office365.com/groups/groupsubscription?action=join&smtp=dig%40gowustl.onmicrosoft.com' }] } as never);
+  assert.deepEqual(o.links?.map((l) => l.label), ['Mailing list', 'Mailing list']);
+});
