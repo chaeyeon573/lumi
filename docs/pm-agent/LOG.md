@@ -1848,3 +1848,12 @@
 - UCLA batch: 70 Fall subjects done, 1,565 classes (the public subject list now shows 190 subjects).
 - Spot check classes: USC AEST 420B, DANC 310, JOUR 499, PHYS 720 (grad), WRIT 150 — match.
 - Spot check clubs: Penn Medical Volunteers for Prevention, Yale Simplex Sciences, Stanford Debate Society match; Harvard UA matches (Harvard has only its student government in the file — club directory blocked from here); MIT Infinite Magazine site does not answer (link-check item).
+
+## 2026-11-04 04:33 run
+- No Codex commits or HANDOFF requests.
+- **William & Mary class times:** registration.wm.edu is a public FOSE class search (same reader as Penn/Dartmouth/Yale) → Fall 2026 1,113 + Spring 2027 1,148 lecture sections, graduate/law included. Spot check AFST 100, CHEM 206L, EPPL 654 (grad), LAW 718, THEA 150 re-fetched — match.
+- Looked for class search at the schools that have none: guessed Banner 9 / FOSE hosts for Notre Dame, Clemson, GWU, Georgetown, Purdue, Wake Forest, Tulane, Rochester, BC, Miami, UGA — none answered (Notre Dame classsearch.nd.edu fails TLS here). Rochester's public schedule is cdcs.ur.rochester.edu (custom page) → queue.
+- Dead-link item: collect-social already checks every club Website on each re-collect (404/410) and now keeps the URL in deadlinks — so the weekly re-collect is the link check; item closed.
+- Login-only links: an Emory club's "website" was its Canvas course page (canvas.emory.edu — school login). `isLoginOnlyLink` now hides Canvas / Instructure / Blackboard / Brightspace / D2L course sites (shared file packages/core/src/lib/orglinks.ts, data stays). Test added.
+- Spot check classes (UW): AES 151, CLAS 101, G H 101, MGMT 599 (grad), STAT 180 — match.
+- Spot check clubs: BU Pre-Law Society, Tufts Bikes, BC Music Guild match; Michigan PERMIAS site does not answer; Emory Goizueta Evening Business Association → Canvas (fixed above).

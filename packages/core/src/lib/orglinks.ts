@@ -3,7 +3,7 @@
  * 데이터에는 남겨 둔다(가져오기 기록·중복 검사용) — 화면과 미리보기에서만 뺀다.
  *   CampusGroups 단체 페이지(student_community?club_id=, /<slug>/) · Berkeley CalLink(CalNet)
  */
-const LOGIN_HOSTS = /(^|\.)(callink\.berkeley\.edu|cardinalengage\.stanford\.edu|engage\.mit\.edu|sammyapp\.sjsu\.edu|aggielife\.ucdavis\.edu|dartmouthgroups\.dartmouth\.edu|soco\.college\.harvard\.edu)$|\.campusgroups\.com$/i;
+const LOGIN_HOSTS = /(^|\.)(callink\.berkeley\.edu|cardinalengage\.stanford\.edu|engage\.mit\.edu|sammyapp\.sjsu\.edu|aggielife\.ucdavis\.edu|dartmouthgroups\.dartmouth\.edu|soco\.college\.harvard\.edu)$|\.campusgroups\.com$|(^|\.)(canvas\.[a-z0-9-]+\.edu|[a-z0-9-]+\.instructure\.com|blackboard\.[a-z0-9-]+\.edu|[a-z0-9-]+\.brightspace\.com|d2l\.[a-z0-9-]+\.edu)$/i; // 수업 사이트(Canvas·Blackboard·Brightspace)는 학교 로그인 — Emory 동아리 링크 2026-11-04
 export function isLoginOnlyLink(url: string): boolean {
   try {
     const u = new URL(url);

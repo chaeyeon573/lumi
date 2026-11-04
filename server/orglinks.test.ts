@@ -172,3 +172,11 @@ test('GOV_GROUP_TYPE_RE: CampusGroups group type that is itself government vs a 
   assert.equal(GOV_GROUP_TYPE_RE.test('Homewood: Student Government Association'), false); // JHU clubs registered with SGA
   assert.equal(GOV_GROUP_TYPE_RE.test('Student Government Recognized Organizations'), false); // CMU
 });
+
+test('isLoginOnlyLink: course sites (Canvas, Blackboard, Brightspace) need a school login (Emory club link 2026-11-04)', async () => {
+  const { isLoginOnlyLink } = await import('@core/lib/orglinks');
+  assert.equal(isLoginOnlyLink('https://canvas.emory.edu/courses/124290'), true);
+  assert.equal(isLoginOnlyLink('https://emory.instructure.com/courses/1'), true);
+  assert.equal(isLoginOnlyLink('https://bupls.com/'), false);
+  assert.equal(isLoginOnlyLink('https://canvasclub.org/'), false);
+});
