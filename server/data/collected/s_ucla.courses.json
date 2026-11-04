@@ -60175,5 +60175,2537 @@
   "termCode": "26F",
   "units": 2,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSICS&crs_catlg_no=0495%20%20%20%20&class_id=718780200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_medhis0019001_26f",
+  "schoolId": "s_ucla",
+  "code": "MED HIS 19",
+  "title": "Traveling through History of Medicine",
+  "department": "MED HIS",
+  "instructor": "Iravani, M.",
+  "location": "Public Affairs Building 1256",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=MED%20HIS&crs_catlg_no=0019%20%20%20%20&class_id=107057200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pbmed0205_26f",
+  "schoolId": "s_ucla",
+  "code": "PBMED 205",
+  "title": "Physics of Diagnostic Radiology",
+  "department": "PBMED",
+  "instructor": "Hoffman, J.M.",
+  "location": "Center for the Health Sciences BL420",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:30",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:30",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PBMED%20%20&crs_catlg_no=0205%20%20%20%20&class_id=825030200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pbmed0209m_26f",
+  "schoolId": "s_ucla",
+  "code": "PBMED M209",
+  "title": "Signal and Image Processing for Biomedicine",
+  "department": "PBMED",
+  "instructor": "Ruan, D.",
+  "location": "Center for the Health Sciences BH173",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "10:30"
+   },
+   {
+    "day": 4,
+    "start": "08:30",
+    "end": "10:30"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PBMED%20%20&crs_catlg_no=0209%20%20M%20&class_id=825055200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pbmed0216_26f",
+  "schoolId": "s_ucla",
+  "code": "PBMED 216",
+  "title": "Fundamentals of Dosimetry",
+  "department": "PBMED",
+  "instructor": "Lamb, J.M.",
+  "location": "Center for the Health Sciences BL420",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PBMED%20%20&crs_catlg_no=0216%20%20%20%20&class_id=825096200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pbmed0218_26f",
+  "schoolId": "s_ucla",
+  "code": "PBMED 218",
+  "title": "Radiologic Functional Anatomy",
+  "department": "PBMED",
+  "instructor": "Mackenzie-Graham,",
+  "location": "Center for the Health Sciences BL420",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:30",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PBMED%20%20&crs_catlg_no=0218%20%20%20%20&class_id=825108200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pbmed0260a_26f",
+  "schoolId": "s_ucla",
+  "code": "PBMED 260A",
+  "title": "Seminar: Biomedical Physics",
+  "department": "PBMED",
+  "instructor": "McNitt-Gray, M. Zhou, X.J.",
+  "location": "Center for the Health Sciences BL420",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PBMED%20%20&crs_catlg_no=0260A%20%20%20&class_id=825360200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0003_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 3",
+  "title": "Introduction to Human Physiology",
+  "department": "PHYSCI",
+  "instructor": "No instructors",
+  "location": "La Kretz Hall",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0003%20%20%20%20&class_id=387009200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0005_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 5",
+  "title": "Issues in Human Physiology: Diet and Exercise",
+  "department": "PHYSCI",
+  "instructor": "Esdin, J.",
+  "location": "Moore Hall 100",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0005%20%20%20%20&class_id=387015200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0107_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 107",
+  "title": "Systems Anatomy",
+  "department": "PHYSCI",
+  "instructor": "Friscia, A.R. Phelps, P.E.",
+  "location": "Haines Hall 39",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0107%20%20%20%20&class_id=387342200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0110_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 110",
+  "title": "How Cancer Co-Opts Normal Physiology",
+  "department": "PHYSCI",
+  "instructor": "Van Veen, J.E.",
+  "location": "Royce Hall 156",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0110%20%20%20%20&class_id=387350200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0123cm_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI CM123",
+  "title": "Neurobiology of Sleep",
+  "department": "PHYSCI",
+  "instructor": "Colwell, C.S. Nwaobi-Petersen, S Paul, K.N. Poe, G.R. Ricketts, E.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0123%20%20CM&class_id=387438200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0127c_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI C127",
+  "title": "Neuroendocrinology of Reproduction",
+  "department": "PHYSCI",
+  "instructor": "Correa, S. Van Veen, J.E.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0127%20%20C%20&class_id=387463200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0140_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 140",
+  "title": "Hormones and Behavior in Humans and Other Animals",
+  "department": "PHYSCI",
+  "instructor": "Schlinger, B.",
+  "location": "Public Affairs Building 2270",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0140%20%20%20%20&class_id=387546200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0141m_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI M141",
+  "title": "Aging Brain: Neuroscience of Getting Older and Wiser",
+  "department": "PHYSCI",
+  "instructor": "Leal, S. Simonson, J.M.",
+  "location": "Franz Hall 2258A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0141%20%20M%20&class_id=387552200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0147_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 147",
+  "title": "Neurobiology of Learning and Memory",
+  "department": "PHYSCI",
+  "instructor": "Glanzman, D.L.",
+  "location": "Young Hall 2200",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0147%20%20%20%20&class_id=387582200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0148_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 148",
+  "title": "Physiological Regulation of Metabolism and Nutrient Sensing",
+  "department": "PHYSCI",
+  "instructor": "Villanueva, C.J.",
+  "location": "Public Affairs Building 2232",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0148%20%20%20%20&class_id=387599200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0152c_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI C152",
+  "title": "Musculoskeletal Anatomy, Physiology, and Biomechanics",
+  "department": "PHYSCI",
+  "instructor": "Henricks, M. Fleser, T.",
+  "location": "Geology Building 3656",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0152%20%20C%20&class_id=387612200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0164m_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI M164",
+  "title": "Physiological and Sociocultural Disparities of Brain Aging and Neurodegeneration",
+  "department": "PHYSCI",
+  "instructor": "Deters, K.D. Glenn, K.",
+  "location": "Boelter Hall 5273",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0164%20%20M%20&class_id=387684200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0165_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 165",
+  "title": "Comparative Animal Physiology",
+  "department": "PHYSCI",
+  "instructor": "Frye, M.A.",
+  "location": "Geology Building 4660",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0165%20%20%20%20&class_id=387690200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0168c_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI C168",
+  "title": "Professional and Career Development for Pre-Health Students",
+  "department": "PHYSCI",
+  "instructor": "Henricks, M.",
+  "location": "Kaufman Hall 101",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0168%20%20C%20&class_id=387707200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0178m_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI M178",
+  "title": "Quantitative Regulatory Biology and Signal Transduction",
+  "department": "PHYSCI",
+  "instructor": "Hoffmann, A. Deeds, E.J. Vanheusden, R. Zagon, N. Walker, J.L. Hamilton, T.",
+  "location": "Bunche Hall 1209B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0178%20%20M%20&class_id=387769200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0180am_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI M180A",
+  "title": "Neuroscience: From Molecules to Mind--Cellular and Systems Neuroscience",
+  "department": "PHYSCI",
+  "instructor": "Peng, Y. Schweizer, F.E. White, S.A.",
+  "location": "Broad Art Center 2160E",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0180A%20M%20&class_id=387780200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0191_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 191",
+  "title": "Variable Topics Research Seminars: Physiology",
+  "department": "PHYSCI",
+  "instructor": "Correa, S.",
+  "location": "La Kretz Hall 101",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0191%20%20%20%20&class_id=387846201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0194a_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 194A",
+  "title": "Research Group Seminars: Physiological Science",
+  "department": "PHYSCI",
+  "instructor": "McEvoy, M.M. Poe, G.R.",
+  "location": "Mathematical Sciences 5217",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0194A%20%20%20&class_id=387866200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0202m_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI M202",
+  "title": "Cellular Neurophysiology",
+  "department": "PHYSCI",
+  "instructor": "de Biase, L.M. Sampath, A.P. Abderemane Ali, F. O'Dell, T.J. Kim, K.",
+  "location": "Center for the Health Sciences 23105A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0202%20%20M%20&class_id=787012200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0223cm_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI CM223",
+  "title": "Neurobiology of Sleep",
+  "department": "PHYSCI",
+  "instructor": "Colwell, C.S. Nwaobi-Petersen, S",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0223%20%20CM&class_id=787138200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0227c_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI C227",
+  "title": "Neuroendocrinology of Reproduction",
+  "department": "PHYSCI",
+  "instructor": "Correa, S. Van Veen, J.E.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0227%20%20C%20&class_id=787163200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0252c_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI C252",
+  "title": "Musculoskeletal Anatomy, Physiology, and Biomechanics",
+  "department": "PHYSCI",
+  "instructor": "Henricks, M.",
+  "location": "Geology Building 3656",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0252%20%20C%20&class_id=787312200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0268c_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI C268",
+  "title": "Professional and Career Development for Pre-Health Students",
+  "department": "PHYSCI",
+  "instructor": "Henricks, M.",
+  "location": "Kaufman Hall 101",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0268%20%20C%20&class_id=787408200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0289a_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 289A",
+  "title": "Honing Your Skills as Researcher in Integrative Biology and Physiology",
+  "department": "PHYSCI",
+  "instructor": "Rowat, A.C.",
+  "location": "Boelter Hall 2444",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0289A%20%20%20&class_id=787534201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0289b_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 289B",
+  "title": "Honing Your Skills as Researcher in Integrative Biology and Physiology",
+  "department": "PHYSCI",
+  "instructor": "Rowat, A.C.",
+  "location": "Boelter Hall",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0289B%20%20%20&class_id=787535201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0297_26f",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 297",
+  "title": "Seminar: Muscle Cell Biology",
+  "department": "PHYSCI",
+  "instructor": "Crosbie, R.H. Spencer, M.J.",
+  "location": "La Kretz Garden Pavilion 100",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PHYSCI%20&crs_catlg_no=0297%20%20%20%20&class_id=787582201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsh0101a_26f",
+  "schoolId": "s_ucla",
+  "code": "POLSH 101A",
+  "title": "Elementary Polish",
+  "department": "POLSH",
+  "instructor": "Koropeckyj, R.",
+  "location": "Renee and David Kaplan Hall 305",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 4,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POLSH%20%20&crs_catlg_no=0101A%20%20%20&class_id=419306201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0006_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 6",
+  "title": "Introduction to Data Analysis",
+  "department": "POL SCI",
+  "instructor": "Roberts, T.",
+  "location": "Haines Hall 118",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0006%20%20%20%20&class_id=324018200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0010_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 10",
+  "title": "Introduction to Political Theory",
+  "department": "POL SCI",
+  "instructor": "Branstetter, J.G.",
+  "location": "Perloff Hall 1102",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0010%20%20%20%20&class_id=324070200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0019001_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 19",
+  "title": "International Politics through Film",
+  "department": "POL SCI",
+  "instructor": "Stein, A.A.",
+  "location": "Haines Hall 122",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0019%20%20%20%20&class_id=324057100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0020_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 20",
+  "title": "World Politics",
+  "department": "POL SCI",
+  "instructor": "Ying, L.",
+  "location": "Broad Art Center 2160E",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0020%20%20%20%20&class_id=324094200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0030_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 30",
+  "title": "Politics and Strategy",
+  "department": "POL SCI",
+  "instructor": "Bawn, K.",
+  "location": "Royce Hall 362",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0030%20%20%20%20&class_id=324090100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0040_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 40",
+  "title": "Introduction to American Politics",
+  "department": "POL SCI",
+  "instructor": "Thompson, D.",
+  "location": "Broad Art Center 2160E",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0040%20%20%20%20&class_id=324121200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0050_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 50",
+  "title": "Introduction to Comparative Politics",
+  "department": "POL SCI",
+  "instructor": "Thies, M.F.",
+  "location": "Renee and David Kaplan Hall A51",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0050%20%20%20%20&class_id=324141200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0111am_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI M111A",
+  "title": "Ancient and Medieval Political Theory",
+  "department": "POL SCI",
+  "instructor": "Sissa, G.",
+  "location": "Haines Hall 220",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0111A%20M%20&class_id=324349200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0113b_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 113B",
+  "title": "Politics, Theory, and Film",
+  "department": "POL SCI",
+  "instructor": "Panagia, D.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0113B%20%20%20&class_id=324356200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0114b_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 114B",
+  "title": "American Political Thought II, 1865 to Present",
+  "department": "POL SCI",
+  "instructor": "No instructors",
+  "location": "Haines Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0114B%20%20%20&class_id=324385200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0116a_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 116A",
+  "title": "Marxism",
+  "department": "POL SCI",
+  "instructor": "Branstetter, J.G.",
+  "location": "Haines Hall A2",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0116A%20%20%20&class_id=324379200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0118_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 118",
+  "title": "Laws of War and Peace from Conquest of America to Declaration of Human Rights (1948)",
+  "department": "POL SCI",
+  "instructor": "Pagden, A.R.",
+  "location": "Haines Hall 118",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0118%20%20%20%20&class_id=324387200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0119002_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 119",
+  "title": "Special Studies in Political Theory: Laws of War and Peace: International Political Theory",
+  "department": "POL SCI",
+  "instructor": "Pooudomsak, V.V.",
+  "location": "Royce Hall 190",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0119%20%20%20%20&class_id=324390101&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0119001_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 119",
+  "title": "Special Studies in Political Theory: Social Contract",
+  "department": "POL SCI",
+  "instructor": "Piano, N.",
+  "location": "Royce Hall 362",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0119%20%20%20%20&class_id=324390200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0125a_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 125A",
+  "title": "Arms Control and International Security",
+  "department": "POL SCI",
+  "instructor": "O'Neill, B.",
+  "location": "Royce Hall 362",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0125A%20%20%20&class_id=324449200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0132a_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 132A",
+  "title": "International Relations of Middle East",
+  "department": "POL SCI",
+  "instructor": "Waxman, D.",
+  "location": "Public Affairs Building 2270",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0132A%20%20%20&class_id=324451200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0137a_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 137A",
+  "title": "International Relations Theory",
+  "department": "POL SCI",
+  "instructor": "Perry, J.",
+  "location": "Royce Hall 190",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0137A%20%20%20&class_id=324481200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0139003_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 139",
+  "title": "Special Studies in International Relations: Conflict Prevention and Peacebuilding",
+  "department": "POL SCI",
+  "instructor": "Dezzani Huff, C.",
+  "location": "Haines Hall 220",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0139%20%20%20%20&class_id=324499203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0139001_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 139",
+  "title": "Special Studies in International Relations: International Politics in Data",
+  "department": "POL SCI",
+  "instructor": "Ying, L.",
+  "location": "Broad Art Center 2100A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0139%20%20%20%20&class_id=324499200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0139004_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 139",
+  "title": "Special Studies in International Relations: International Relations of East and Southeast Asia",
+  "department": "POL SCI",
+  "instructor": "Lee, Y.B.",
+  "location": "Haines Hall A2",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0139%20%20%20%20&class_id=324499204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0139002_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 139",
+  "title": "Special Studies in International Relations: Technology and International Security",
+  "department": "POL SCI",
+  "instructor": "Pike, S.W.",
+  "location": "Royce Hall 190",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0139%20%20%20%20&class_id=324499201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0140b_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 140B",
+  "title": "National Institutions: The Presidency",
+  "department": "POL SCI",
+  "instructor": "James, S.C.",
+  "location": "Royce Hall 190",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0140B%20%20%20&class_id=324534200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0141am_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI M141A",
+  "title": "Electoral Politics: Political Psychology",
+  "department": "POL SCI",
+  "instructor": "Baylor, C.A.",
+  "location": "Haines Hall 220",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0141A%20M%20&class_id=324537200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0147a_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 147A",
+  "title": "American Political Development: Overview",
+  "department": "POL SCI",
+  "instructor": "Orren, K.J.",
+  "location": "Haines Hall 118",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0147A%20%20%20&class_id=324582200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0149001_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 149",
+  "title": "Special Topics in American Government and Politics: Careers in Political Science",
+  "department": "POL SCI",
+  "instructor": "Sherrer, T.A.",
+  "location": "Royce Hall 362",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0149%20%20%20%20&class_id=324575200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0149002_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 149",
+  "title": "Special Topics in American Government and Politics: Lecture 2",
+  "department": "POL SCI",
+  "instructor": "Vargas Nunez, C.",
+  "location": "Dodd Hall 170",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0149%20%20%20%20&class_id=324575201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0151a_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 151A",
+  "title": "African Politics: Government and Politics of Africa",
+  "department": "POL SCI",
+  "instructor": "Posner, D.N.",
+  "location": "Royce Hall 190",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0151A%20%20%20&class_id=324593200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0151b_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 151B",
+  "title": "African Politics: Political Economy of Africa",
+  "department": "POL SCI",
+  "instructor": "Roberts, T.",
+  "location": "Royce Hall 362",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0151B%20%20%20&class_id=324594200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0153a_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 153A",
+  "title": "Comparative Government and Politics of Western Europe: West European Government and Politics",
+  "department": "POL SCI",
+  "instructor": "Homola, J.",
+  "location": "Royce Hall 190",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0153A%20%20%20&class_id=324602200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0169001_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 169",
+  "title": "Special Studies in Comparative Politics: Development Economics for Political Scientists",
+  "department": "POL SCI",
+  "instructor": "Lofchie, M.F.",
+  "location": "Public Affairs Building 1234",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0169%20%20%20%20&class_id=324699200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0169002_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 169",
+  "title": "Special Studies in Comparative Politics: Mixed Methods Research",
+  "department": "POL SCI",
+  "instructor": "Mousa, S.",
+  "location": "Haines Hall 220",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0169%20%20%20%20&class_id=324699201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0171b_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 171B",
+  "title": "Collective Choice and Majority Rule",
+  "department": "POL SCI",
+  "instructor": "Bawn, K.",
+  "location": "Royce Hall 190",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0171B%20%20%20&class_id=324728200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0180bm_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI M180B",
+  "title": "Asian American Politics",
+  "department": "POL SCI",
+  "instructor": "Masuoka, N.R.",
+  "location": "Renee and David Kaplan Hall A26",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0180B%20M%20&class_id=324780200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0181bm_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI M181B",
+  "title": "U.S. Latino Politics",
+  "department": "POL SCI",
+  "instructor": "de La Vega, I.M.",
+  "location": "Haines Hall 118",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0181B%20M%20&class_id=324791200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0186001_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 186",
+  "title": "Special Studies in Race, Ethnicity, and Politics: Immigration in the U.S.",
+  "department": "POL SCI",
+  "instructor": "Vargas Nunez, C.",
+  "location": "Dodd Hall 170",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0186%20%20%20%20&class_id=324816200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0191d001_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 191D",
+  "title": "Variable Topics Research Seminars for Majors: Comparative Government: Parties and Voting Behavior in Western Democracies",
+  "department": "POL SCI",
+  "instructor": "Homola, J.",
+  "location": "Haines Hall 110",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0191D%20%20%20&class_id=324851200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0200a_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 200A",
+  "title": "Probability and Inference for Social Science",
+  "department": "POL SCI",
+  "instructor": "Torres Pacheco, S. Goetz, J.",
+  "location": "Bunche Hall 4276 Bunche Hall 4276",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0200A%20%20%20&class_id=724001200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0200x_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 200X",
+  "title": "Data Analysis Workshop",
+  "department": "POL SCI",
+  "instructor": "No instructors",
+  "location": "Haines Hall",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0200X%20%20%20&class_id=724013200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0204a_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 204A",
+  "title": "Game Theory in Politics I",
+  "department": "POL SCI",
+  "instructor": "O'Neill, B.",
+  "location": "Bunche Hall 2173",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0204A%20%20%20&class_id=724024200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0218001_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 218",
+  "title": "Selected Topics in Political Theory: Democratic Theory",
+  "department": "POL SCI",
+  "instructor": "Piano, N.",
+  "location": "Bunche Hall 4276",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:30",
+    "end": "16:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0218%20%20%20%20&class_id=724101200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0239001_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 239",
+  "title": "Selected Topics in International Relations: Seminar 1",
+  "department": "POL SCI",
+  "instructor": "Dezzani Huff, C.",
+  "location": "Haines Hall A78",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0239%20%20%20%20&class_id=724256200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0240a_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 240A",
+  "title": "Seminar: Comparative Politics",
+  "department": "POL SCI",
+  "instructor": "Treisman, D.S. Ross, M.L.",
+  "location": "Royce Hall 166",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0240A%20%20%20&class_id=724261200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0241_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 241",
+  "title": "African Politics",
+  "department": "POL SCI",
+  "instructor": "Posner, D.N.",
+  "location": "Bunche Hall 4276",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0241%20%20%20%20&class_id=724265200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0269001_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 269",
+  "title": "Seminar: Political Behavior: Seminar 1",
+  "department": "POL SCI",
+  "instructor": "Chwe, M.S.",
+  "location": "Haines Hall A78",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0269%20%20%20%20&class_id=724422200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0280a_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 280A",
+  "title": "Race and Ethnic Politics Field Seminar 1",
+  "department": "POL SCI",
+  "instructor": "Frasure, L.",
+  "location": "Kaufman Hall 136",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0280A%20%20%20&class_id=724526200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0289a001_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 289A",
+  "title": "Approaches to Study of Race, Ethnicity, and Politics: Psychology of Intergroup Politics",
+  "department": "POL SCI",
+  "instructor": "Perez, E.O.",
+  "location": "Haines Hall A82",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "19:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0289A%20%20%20&class_id=724586200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0292a_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 292A",
+  "title": "Introduction to Political Inquiry: Problems of Scientific Inquiry and Normative Discourse",
+  "department": "POL SCI",
+  "instructor": "Peters, M.E.",
+  "location": "Bunche Hall 4280",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0292A%20%20%20&class_id=724568200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0495b_26f",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 495B",
+  "title": "Teaching in Political Science 2",
+  "department": "POL SCI",
+  "instructor": "No instructors",
+  "location": "Haines Hall",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=POL%20SCI&crs_catlg_no=0495B%20%20%20&class_id=724788200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_portgse0001_26f",
+  "schoolId": "s_ucla",
+  "code": "PORTGSE 1",
+  "title": "Elementary Portuguese (Lec 1)",
+  "department": "PORTGSE",
+  "instructor": "Araujo, L. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1329",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PORTGSE&crs_catlg_no=0001%20%20%20%20&class_id=350005200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_portgse0001_26f_2",
+  "schoolId": "s_ucla",
+  "code": "PORTGSE 1",
+  "title": "Elementary Portuguese (Lec 2)",
+  "department": "PORTGSE",
+  "instructor": "Furtado, A. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1270",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PORTGSE&crs_catlg_no=0001%20%20%20%20&class_id=350005202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_portgse0011a_26f",
+  "schoolId": "s_ucla",
+  "code": "PORTGSE 11A",
+  "title": "Intensive Portuguese",
+  "department": "PORTGSE",
+  "instructor": "Raupp Mayer, B. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1323",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PORTGSE&crs_catlg_no=0011A%20%20%20&class_id=350033201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_portgse0035m_26f",
+  "schoolId": "s_ucla",
+  "code": "PORTGSE M35",
+  "title": "Spanish, Portuguese, and Nature of Language",
+  "department": "PORTGSE",
+  "instructor": "Mateu, V.",
+  "location": "Perloff Hall 1102",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PORTGSE&crs_catlg_no=0035%20%20M%20&class_id=350105200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_portgse0046_26f",
+  "schoolId": "s_ucla",
+  "code": "PORTGSE 46",
+  "title": "Brazil and Portuguese-Speaking World",
+  "department": "PORTGSE",
+  "instructor": "Passos, J.I.",
+  "location": "Haines Hall A25",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:50"
+   },
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PORTGSE&crs_catlg_no=0046%20%20%20%20&class_id=350140200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_portgse0141c001_26f",
+  "schoolId": "s_ucla",
+  "code": "PORTGSE 141C",
+  "title": "Documentary Film: Lecture 1",
+  "department": "PORTGSE",
+  "location": "Bunche Hall 3150",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PORTGSE&crs_catlg_no=0141C%20%20%20&class_id=350548201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_portgse0142cm001_26f",
+  "schoolId": "s_ucla",
+  "code": "PORTGSE M142C",
+  "title": "Travel Narratives, Testimony, Autobiography: Travel, Migration, and Exile in Brazil",
+  "department": "PORTGSE",
+  "instructor": "Passos, J.I.",
+  "location": "Haines Hall A24",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PORTGSE&crs_catlg_no=0142C%20M%20&class_id=350555201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_portgse0205am_26f",
+  "schoolId": "s_ucla",
+  "code": "PORTGSE M205A",
+  "title": "Development of Portuguese and Spanish Languages",
+  "department": "PORTGSE",
+  "instructor": "No instructors",
+  "location": "Rolfe Hall",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PORTGSE&crs_catlg_no=0205A%20M%20&class_id=750032201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_portgse0297am_26f",
+  "schoolId": "s_ucla",
+  "code": "PORTGSE M297A",
+  "title": "Proseminar I",
+  "department": "PORTGSE",
+  "instructor": "Patino Loira, J.",
+  "location": "Rolfe Hall 4330",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PORTGSE&crs_catlg_no=0297A%20M%20&class_id=750561200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_portgse0297bm_26f",
+  "schoolId": "s_ucla",
+  "code": "PORTGSE M297B",
+  "title": "Proseminar II",
+  "department": "PORTGSE",
+  "instructor": "Patino Loira, J.",
+  "location": "Rolfe Hall 4330",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:30",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PORTGSE&crs_catlg_no=0297B%20M%20&class_id=750562201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0010a_26f",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 10A",
+  "title": "Introduction to Programming (Lec 1)",
+  "department": "COMPTNG",
+  "instructor": "Lin, B.",
+  "location": "Franz Hall 2258A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=COMPTNG&crs_catlg_no=0010A%20%20%20&class_id=157050200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0010a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 10A",
+  "title": "Introduction to Programming (Lec 2)",
+  "department": "COMPTNG",
+  "instructor": "Park, Y.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=COMPTNG&crs_catlg_no=0010A%20%20%20&class_id=157050210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0010a_26f_3",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 10A",
+  "title": "Introduction to Programming (Lec 3)",
+  "department": "COMPTNG",
+  "instructor": "Lin, B.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=COMPTNG&crs_catlg_no=0010A%20%20%20&class_id=157050220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0010a_26f_4",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 10A",
+  "title": "Introduction to Programming (Lec 4)",
+  "department": "COMPTNG",
+  "instructor": "Munoz Ewald, P.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=COMPTNG&crs_catlg_no=0010A%20%20%20&class_id=157050230&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0010b_26f",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 10B",
+  "title": "Intermediate Programming",
+  "department": "COMPTNG",
+  "instructor": "Feng, X.",
+  "location": "Physics and Astronomy Building 1434A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=COMPTNG&crs_catlg_no=0010B%20%20%20&class_id=157051200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0010c_26f",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 10C",
+  "title": "Advanced Programming",
+  "department": "COMPTNG",
+  "location": "Mathematical Sciences 6201",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=COMPTNG&crs_catlg_no=0010C%20%20%20&class_id=157052200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0016a_26f",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 16A",
+  "title": "Python with Applications I (Lec 2)",
+  "department": "COMPTNG",
+  "instructor": "Chen, Q.",
+  "location": "La Kretz Hall 120",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=COMPTNG&crs_catlg_no=0016A%20%20%20&class_id=157048210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0016a_26f_3",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 16A",
+  "title": "Python with Applications I (Lec 3)",
+  "department": "COMPTNG",
+  "instructor": "Bhusal, G.",
+  "location": "La Kretz Hall 120",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=COMPTNG&crs_catlg_no=0016A%20%20%20&class_id=157048220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0016a_26f_4",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 16A",
+  "title": "Python with Applications I (Lec 4)",
+  "department": "COMPTNG",
+  "instructor": "Bhusal, G.",
+  "location": "Geology Building 6704",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=COMPTNG&crs_catlg_no=0016A%20%20%20&class_id=157048230&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_psyctry0019001_26f",
+  "schoolId": "s_ucla",
+  "code": "PSYCTRY 19",
+  "title": "Mental Illness and Movies",
+  "department": "PSYCTRY",
+  "instructor": "Taylor, D.",
+  "location": "Wooden Recreation and Sports Center 1402",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PSYCTRY&crs_catlg_no=0019%20%20%20%20&class_id=326057200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psyctry0079_26f",
+  "schoolId": "s_ucla",
+  "code": "PSYCTRY 79",
+  "title": "Applied Positive Neuroscience: Skills for Improving Productivity and Well-Being",
+  "department": "PSYCTRY",
+  "instructor": "Korb, A.",
+  "location": "Semel Institute for Neuroscience and HumanBehavior C8183H",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:20"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PSYCTRY&crs_catlg_no=0079%20%20%20%20&class_id=326237200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psyctry0173_26f",
+  "schoolId": "s_ucla",
+  "code": "PSYCTRY 173",
+  "title": "Mental Health: Bias, Inequities, and Racism",
+  "department": "PSYCTRY",
+  "instructor": "No instructors",
+  "location": "Marion Davies Children's Center",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PSYCTRY&crs_catlg_no=0173%20%20%20%20&class_id=326743200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psyctry0292_26f",
+  "schoolId": "s_ucla",
+  "code": "PSYCTRY 292",
+  "title": "Functional Neuroanatomy for Neuropsychologists",
+  "department": "PSYCTRY",
+  "instructor": "Walshaw, P. Bookheimer, S.Y.",
+  "location": "Semel Institute for Neuroscience and HumanBehavior 67415",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=PSYCTRY&crs_catlg_no=0292%20%20%20%20&class_id=726553200&class_no=%20001%20%20"
  }
 ]

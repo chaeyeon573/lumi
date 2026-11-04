@@ -1887,3 +1887,10 @@
 - UCLA batch: 124+ Fall subjects.
 - Spot check classes: Georgia Tech BIOS 4401, CS 6457 (grad), MATH 2551, VIP 3601, VIP 6602 (grad) — match.
 - Spot check clubs: Northwestern Club Softball matches; Columbia CUGG and JHU HopkinsLEAD pages 403 to automated requests, Duke Impact Investing 503; Cornell Diabetes Link placeholder (fixed above).
+
+## 2026-11-04 09:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **GWU events:** calendar.gwu.edu is a public Localist calendar → `events_source=localist:` → 93 upcoming (talks, free food, featured). One re-opened: "Jenny McKean Moore Reading Series" Nov 5 6:00 PM ET — matches. BU's rss.php is an HTML form (no feed); Penn and UCLA still no feed.
+- UCLA batch: 137+ Fall subjects, 2,561+ classes.
+- Spot check classes (BU): CASAN 287, CASWR 120, GMSFS 702 (grad), QSTFE 427, WEDME 558 (grad) — match.
+- Spot check clubs: UChicago Sustainable Investing Group, Yale Film Archive, Dartmouth Mock Trial match; Brown Aerial & Acrobatics Instagram matches its directory page (Brown lists Instagram/Facebook, no website field); NYU SPS site 503.
