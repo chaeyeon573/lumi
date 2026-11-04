@@ -88,3 +88,9 @@ test('relabelSocialWebsites: mailing-list sign-ups given as "Website" are mailin
   const o = relabelSocialWebsites({ id: 'x', name: 'DIG', links: [{ label: 'Website', url: 'https://mailchi.mp/abc/join' }, { label: 'Website', url: 'https://outlook.office365.com/groups/groupsubscription?action=join&smtp=dig%40gowustl.onmicrosoft.com' }] } as never);
   assert.deepEqual(o.links?.map((l) => l.label), ['Mailing list', 'Mailing list']);
 });
+
+test('relabelSocialWebsites: a Google Doc given as "Website" is a document (2026-11-04)', async () => {
+  const { relabelSocialWebsites } = await import('./sources/sitesocial');
+  const o = relabelSocialWebsites({ id: 'x', name: 'Y', links: [{ label: 'Website', url: 'https://docs.google.com/document/d/abc/edit' }] } as never);
+  assert.equal(o.links?.[0].label, 'Document');
+});

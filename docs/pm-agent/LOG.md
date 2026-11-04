@@ -1960,3 +1960,11 @@
 - UCLA batch: Winter 2027 58+ subjects, 4,485+ classes.
 - Spot check classes (USC): BME 506 (grad), EE 444 (grad), MATH 434, SOWK 591 (grad), TAC 380 — match.
 - Spot check clubs: Tufts Biotech Group, BC Black Law Students Association match; Vanderbilt Chi Omega site does not answer; Rice Chi Epsilon lists a department awards page (what the chapter entered); WashU DIG (fixed above).
+
+## 2026-11-04 19:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **Shared files as websites:** 14 Website links were Google Docs/Sheets/Drive, Dropbox or Canva files → labeled `Document` (relabelSocialWebsites; test). HANDOFF note updated.
+- **"Governance" as a topic:** spot check found Syracuse "Women in National Security" typed council — Syracuse (and IU, Tulane) use "Governance" as an interest category. Council categories now need "Student Governance", not just "Governance" (test). Relabeled to club: Syracuse Democracy Matters, NYPIRG, Debate Club, Model UN, Women in National Security; IU Graduate Students in African Studies, Women in Law; Tulane Shipwreck Society. IU Funding Board and Student Bar Association stay councils (checked by hand).
+- UCLA batch: Winter 2027 67+ subjects, 4,737+ classes.
+- Spot check classes (UW): BIOC 405, ENGL 182, L ARCH 401, PHG 512 (grad), STAT 180 — match.
+- Spot check clubs: MSU Women and Minorities in Economics, UMass Vocal Suspects match; UGA Wesley/Freshley site misspelled in the directory (ugawelsey.org, does not resolve); UConn UNESCO site does not answer; Syracuse WINS (fixed above).

@@ -49,7 +49,7 @@ export const COUNCIL_RE = /student government|student senate|\bsenate\b|associat
  * 단수 “Multicultural Leadership Council”·“Interfaith Council Organizations” 같은 분류는 그 협의회에 속한 동아리라는 뜻이라 학생회가 아니다 (Vanderbilt MASA, 2026-11-03 점검)
  */
 const COUNCIL_NAME_RE = new RegExp(COUNCIL_RE.source.replace('undergraduate association|', '').replace('\\bcouncil\\b', '\\bcouncils?\\b'), 'i');
-const GOV_CATEGORY_RE = /^government\b|government\s*\/\s*council|student government|student senate|associated students|student assembly|undergraduate assembly|governing|governance|class council|\bcouncils\b/i;
+const GOV_CATEGORY_RE = /^government\b|government\s*\/\s*council|student government|student senate|associated students|student assembly|undergraduate assembly|governing|student governance|class council|\bcouncils\b/i;
 export function isCouncil(name: string, categories: (string | undefined)[] = [], schoolId = ''): boolean {
   const n = notCouncil(name);
   if (COUNCIL_NAME_RE.test(n)) return true;

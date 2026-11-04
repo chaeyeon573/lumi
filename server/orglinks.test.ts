@@ -164,6 +164,8 @@ test('isCouncil: belonging to a council or being recognized by student governmen
   assert.equal(isCouncil('Vanderbilt Student Government', [], 's_vanderbilt'), true);
   assert.equal(isCouncil('Harvard Undergraduate Association', [], 's_harvard'), true);
   assert.equal(isCouncil('Area Councils', ['Government/Council'], 's_northwestern'), true);
+  assert.equal(isCouncil('Model United Nations Club', ['Cultural', 'Governance', 'Special Interest'], 's_syracuse'), false); // Syracuse 'Governance' is a topic
+  assert.equal(isCouncil('Brown Undergraduate Council', ['Student Governance'], 's_brown'), true);
 });
 
 test('GOV_GROUP_TYPE_RE: CampusGroups group type that is itself government vs a registration path', () => {

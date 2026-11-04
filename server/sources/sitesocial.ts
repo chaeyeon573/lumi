@@ -58,6 +58,9 @@ export function relabelSocialWebsites(o: Organization): Organization {
   // 메일링 리스트 가입(Mailchimp·Google Groups·Outlook 그룹·학교 메일링) — 'Mailing list' (WashU 등 15곳, 2026-11-04)
   const LIST = /^https?:\/\/([^/]*\.)?(mailchi\.mp|eepurl\.com|list-manage\.com|groups\.google\.com|outlook\.office365\.com\/groups)|^https?:\/\/lists\.[a-z.]+\//i;
   if (o.links?.some((l) => l.label === 'Website' && LIST.test(l.url))) o = { ...o, links: o.links.map((l) => (l.label === 'Website' && LIST.test(l.url) ? { label: 'Mailing list', url: l.url } : l)) };
+  // 공유 문서(Google Docs·Drive·Dropbox·Canva) — 'Document' (14곳, 2026-11-04)
+  const DOC = /^https?:\/\/(docs\.google\.com\/(document|presentation|spreadsheets)|drive\.google\.com|(www\.)?dropbox\.com|(www\.)?canva\.com\/design)/i;
+  if (o.links?.some((l) => l.label === 'Website' && DOC.test(l.url))) o = { ...o, links: o.links.map((l) => (l.label === 'Website' && DOC.test(l.url) ? { label: 'Document', url: l.url } : l)) };
   if (!o.links?.some((l) => l.label === 'Website' && /(^|\.)(instagram|facebook|fb|discord)\.(com|gg)$/i.test(hostOf(l.url)))) return o;
   const links = o.links.map((l) => {
     if (l.label !== 'Website') return l;
