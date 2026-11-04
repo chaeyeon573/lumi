@@ -233,6 +233,8 @@ export function isOfficeOrg(name: string, category?: string): boolean {
   if (/^(department|office|division|center|centre) (of|for)\b/i.test(name) && !CLUB_NAME.test(name)) return true;
   // "School of …"/"College of …" 는 학생 모임이 많다(Graduate Student Organization, Student Board, Ambassadors, Class of 2027 …) — 학생 말이 하나도 없을 때만 학교 부서
   if (/^(school|college) of\b/i.test(name) && !CLUB_NAME.test(name) && !/\b(students?|board|ambassadors?|class of|committee|council|mentor(ing|s)?|program|productions?|foodies|peer|chapter|alliance|network|group)\b/i.test(name)) return true;
+  // "University … Services/Center/Office" (UW-Madison University Health Services, UVA University Career Center …) — 학생 단체 말이 없으면 학교 부서. Michigan "University Activities Center" 는 학생 단체라 activities 는 뺀다 (2026-11-04)
+  if (/^(the )?university\b.*\b(services|center|centre|office|offices|department)$/i.test(name.trim()) && !CLUB_NAME.test(name) && !/\b(activities|students?)\b/i.test(name)) return true;
   // 학교 서비스 이름으로 끝나면 (Emory Bookstore, UTPD, University Registrar …) — "Bookstore Basketball Commission"(학생 대회)은 끝이 아니라 해당 없음
   if (/\b(bookstore|book store|police department|dining services|registrar('s office)?|transportation services|parking services|parking and transportation)\s*(\([^)]*\))?$/i.test(name.trim())) return true;
   if (!category || /student org(anization)?s?\b/i.test(category.replace(/non[- ]student org[^)]*\)?/i, ''))) return false;

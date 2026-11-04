@@ -100686,5 +100686,1330 @@
   "term": "Winter 2027",
   "termCode": "27W",
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=ECON%20%20%20&crs_catlg_no=0599%20%20%20%20&class_id=580995218&class_no=%20018%20%20"
+ },
+ {
+  "id": "cc_ucla_ukrn0187a_26f",
+  "schoolId": "s_ucla",
+  "code": "UKRN 187A",
+  "title": "Advanced Tutorial Instruction in Ukrainian",
+  "department": "UKRN",
+  "instructor": "No instructors",
+  "location": "Renee and David Kaplan Hall To Be Announced consult instructor",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:30",
+    "end": "12:30"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "16:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=UKRN%20%20%20&crs_catlg_no=0187A%20%20%20&class_id=424822201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0010_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 10",
+  "title": "Introduction to Educational Issues and Scholarship",
+  "department": "EDUC",
+  "instructor": "Rios Aguilar, C.",
+  "location": "Royce Hall 190",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0010%20%20%20%20&class_id=183031100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0011_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 11",
+  "title": "Education, Equality, and Future of American Society: Problems, Prospects, and Policies",
+  "department": "EDUC",
+  "instructor": "Santibanez, L.",
+  "location": "Moore Hall 3320",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0011%20%20%20%20&class_id=183033100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0035_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 35",
+  "title": "Introduction to Inquiry and Research in Education",
+  "department": "EDUC",
+  "instructor": "Martinez-Fernandez",
+  "location": "Kinsey Science Teaching Pavilion 1240B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0035%20%20%20%20&class_id=183105201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0100_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 100",
+  "title": "Foundations: Histories and Philosophies of Education",
+  "department": "EDUC",
+  "instructor": "Cole, E.R.",
+  "location": "Dodd Hall 175",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0100%20%20%20%20&class_id=183300100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0103m_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC M103",
+  "title": "Asian American Education and Schooling",
+  "department": "EDUC",
+  "instructor": "Teranishi, R.",
+  "location": "Royce Hall 162",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0103%20%20M%20&class_id=183318100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0105c_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 105C",
+  "title": "Comparative Educational Policies and Practices",
+  "department": "EDUC",
+  "instructor": "Omwami, E.S.",
+  "location": "Moore Hall 3140",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0105C%20%20%20&class_id=183330100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0106c_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 106C",
+  "title": "Diversity, Democracy, and Law",
+  "department": "EDUC",
+  "instructor": "Purdy, W.C.",
+  "location": "Moore Hall 3140",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0106C%20%20%20&class_id=183338100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0108m_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC M108",
+  "title": "Sociology of Education",
+  "department": "EDUC",
+  "instructor": "Brand, J.E.",
+  "location": "Broad Art Center 2160E",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0108%20%20M%20&class_id=183368100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0109b_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 109B",
+  "title": "Global Citizenship Education",
+  "department": "EDUC",
+  "instructor": "Torres, C.A.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0109B%20%20%20&class_id=183373200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0110_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 110",
+  "title": "Gender Development in Education",
+  "department": "EDUC",
+  "instructor": "Else-Quest, N.",
+  "location": "Moore Hall 3027",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0110%20%20%20%20&class_id=183376100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0120_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 120",
+  "title": "Foundations: Contexts for Teaching, Learning, and Development",
+  "department": "EDUC",
+  "instructor": "Mistry, R.S.",
+  "location": "Public Affairs Building 1246",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0120%20%20%20%20&class_id=183420100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0123_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 123",
+  "title": "Teaching Profession",
+  "department": "EDUC",
+  "instructor": "Guillen, L.I.",
+  "location": "Moore Hall 3027",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0123%20%20%20%20&class_id=183438100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0124c_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC C124",
+  "title": "Theory and Practice of Intergroup Dialogue: Building Facilitation Skills",
+  "department": "EDUC",
+  "instructor": "Tran, M.C.",
+  "location": "Moore Hall 3140",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0124%20%20C%20&class_id=183446200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0128_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 128",
+  "title": "Educational Psychology: Contexts for Learning and Development",
+  "department": "EDUC",
+  "instructor": "Blackstock-Bernste",
+  "location": "Moore Hall 3320",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0128%20%20%20%20&class_id=183469100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0129am_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC M129A",
+  "title": "Arts Education Undergraduate Practicum: Preparation, Observation, and Practice",
+  "department": "EDUC",
+  "instructor": "Cawelti, L.",
+  "location": "Broad Art Center",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0129A%20M%20&class_id=183909100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0129bxm_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 129BXM",
+  "title": "Arts Education Undergraduate Practicum and Capstone Project",
+  "department": "EDUC",
+  "instructor": "Gragossian, A.",
+  "location": "Broad Art Center 2101",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0129BXM%20&class_id=183910100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0130ax_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 130AX",
+  "title": "Instructional Apprenticeship in Teaching and Learning at UCLA Lab School",
+  "department": "EDUC",
+  "instructor": "Gilani, A.",
+  "location": "Education and Information Studies Building 245",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0130AX%20%20&class_id=183509100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0130bx_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 130BX",
+  "title": "Instructional Apprenticeship in Teaching and Learning at UCLA Partner Schools",
+  "department": "EDUC",
+  "instructor": "Bang, S.",
+  "location": "Moore Hall 1048",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0130BX%20%20&class_id=183515100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0130ex_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 130EX",
+  "title": "Instructional Apprenticeships in Teaching and Learning at UCLA Early Care and Education Centers",
+  "department": "EDUC",
+  "instructor": "Blackstock-Bernste",
+  "location": "Moore Hall 3030",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0130EX%20%20&class_id=183533100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0132_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 132",
+  "title": "Autism: Mind, Brain, and Education",
+  "department": "EDUC",
+  "instructor": "Kasari, C.L.",
+  "location": "Moore Hall 3320",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0132%20%20%20%20&class_id=183493100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0135m_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC M135",
+  "title": "Environmental Justice through Lens of Media and Education",
+  "department": "EDUC",
+  "instructor": "Share, J.",
+  "location": "Moore Hall 2120",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0135%20%20M%20&class_id=183512100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0143_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 143",
+  "title": "Understanding Pathways to College",
+  "department": "EDUC",
+  "instructor": "Purdy, W.C.",
+  "location": "Moore Hall 3027",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0143%20%20%20%20&class_id=183558202&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0150_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 150",
+  "title": "Quantitative Methods in Education: Claims and Evidence",
+  "department": "EDUC",
+  "instructor": "Wang, J. TA",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0150%20%20%20%20&class_id=183602100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0151_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 151",
+  "title": "Quantitative Methods in Education: Principles of Measurement and Testing",
+  "department": "EDUC",
+  "instructor": "Jeon, M.",
+  "location": "Moore Hall 3320",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0151%20%20%20%20&class_id=183609100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0154b_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 154B",
+  "title": "Community-Engaged Research in Clinical and Educational Settings",
+  "department": "EDUC",
+  "instructor": "Raia, F.",
+  "location": "Moore Hall 1048",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:50"
+   },
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0154B%20%20%20&class_id=183625100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0156_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 156",
+  "title": "Introduction to Qualitative Research in Education for Social Transformation",
+  "department": "EDUC",
+  "instructor": "Salazar, C.",
+  "location": "Public Affairs Building 1234",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0156%20%20%20%20&class_id=183642100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0179bx_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 179BX",
+  "title": "Community Futures: Engagement and Data Collection",
+  "department": "EDUC",
+  "instructor": "Dorio, J. Salazar, C.",
+  "location": "Moore Hall 3030",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0179BX%20%20&class_id=183772100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0180_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 180",
+  "title": "Orientation to Community Engagement",
+  "department": "EDUC",
+  "instructor": "Dorio, J.",
+  "location": "Franz Hall 2258A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0180%20%20%20%20&class_id=183781200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0181_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 181",
+  "title": "Capstone in Education and Social Transformation (Sem 1)",
+  "department": "EDUC",
+  "instructor": "Share, J.",
+  "location": "Moore Hall 1048",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0181%20%20%20%20&class_id=183786200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0181_27w_2",
+  "schoolId": "s_ucla",
+  "code": "EDUC 181",
+  "title": "Capstone in Education and Social Transformation (Sem 2)",
+  "department": "EDUC",
+  "instructor": "Purdy, W.C.",
+  "location": "Moore Hall 3030",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0181%20%20%20%20&class_id=183786102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0181_27w_3",
+  "schoolId": "s_ucla",
+  "code": "EDUC 181",
+  "title": "Capstone in Education and Social Transformation (Sem 3)",
+  "department": "EDUC",
+  "instructor": "Yokota, M.",
+  "location": "Moore Hall 2016",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0181%20%20%20%20&class_id=183786103&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0201004_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 201",
+  "title": "Variable Topics Seminar: Education: Academic Socialization Colloquium II",
+  "department": "EDUC",
+  "instructor": "Nguyen, M.T. Orellana, M.E.",
+  "location": "Moore Hall 1048 Moore Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0201%20%20%20%20&class_id=583031203&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0201008_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 201",
+  "title": "Variable Topics Seminar: Education: Best of Finnish Education",
+  "department": "EDUC",
+  "instructor": "Amlani, A.M. Powers, E.M. Ong, C.A. Christie, C.A.",
+  "location": "Moore Hall 2140",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0201%20%20%20%20&class_id=583031207&class_no=%20008%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0201006_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 201",
+  "title": "Variable Topics Seminar: Education: Crises of Democracy in New Capitalist Modernity",
+  "department": "EDUC",
+  "instructor": "Torres, C.A.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0201%20%20%20%20&class_id=583031205&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0201005_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 201",
+  "title": "Variable Topics Seminar: Education: Discourse and Interaction Analysis II",
+  "department": "EDUC",
+  "instructor": "Garcia Sanchez, I. Marin, A.M.",
+  "location": "Moore Hall 3140",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0201%20%20%20%20&class_id=583031204&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0201002_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 201",
+  "title": "Variable Topics Seminar: Education: Professional Development and Alumni Connection Colloquium II",
+  "department": "EDUC",
+  "instructor": "Teranishi, R. Rios Aguilar, C.",
+  "location": "Moore Hall 2140 Moore Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0201%20%20%20%20&class_id=583031201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0201009_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 201",
+  "title": "Variable Topics Seminar: Education: Race, Racism, and Education",
+  "department": "EDUC",
+  "instructor": "Solorzano, D.",
+  "location": "Moore Hall 2120",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0201%20%20%20%20&class_id=583031208&class_no=%20009%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0201007_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 201",
+  "title": "Variable Topics Seminar: Education: What is Reason",
+  "department": "EDUC",
+  "instructor": "Amlani, A.M.",
+  "location": "Moore Hall 3030",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0201%20%20%20%20&class_id=583031206&class_no=%20007%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0201003_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 201",
+  "title": "Variable Topics Seminar: Education: Written Qualifying Exam Support Colloquium II",
+  "department": "EDUC",
+  "instructor": "Eagan, K. Santibanez, L.",
+  "location": "Moore Hall 3027 Moore Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0201%20%20%20%20&class_id=583031202&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0202001_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 202",
+  "title": "Evaluation Theory: Lecture 1",
+  "department": "EDUC",
+  "instructor": "Bush-Mecenas, S.",
+  "location": "Moore Hall 3140",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0202%20%20%20%20&class_id=583040200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0203b_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 203B",
+  "title": "Learning and Development across Contexts",
+  "department": "EDUC",
+  "instructor": "Barry, N.B. Markowitz, A.",
+  "location": "Moore Hall 3140",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0203B%20%20%20&class_id=583044200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0209a_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 209A",
+  "title": "History of Higher Education",
+  "department": "EDUC",
+  "instructor": "Cole, E.R.",
+  "location": "Moore Hall 2140",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0209A%20%20%20&class_id=583109200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0217cm_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC M217C",
+  "title": "Personality Development and Education",
+  "department": "EDUC",
+  "instructor": "Wood, J.J.",
+  "location": "Moore Hall 2016",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0217C%20M%20&class_id=583806200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0222a_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 222A",
+  "title": "Introduction to Qualitative Methods and Design Issues in Educational Research",
+  "department": "EDUC",
+  "instructor": "Garcia Sanchez, I.",
+  "location": "Moore Hall 3027",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0222A%20%20%20&class_id=583213201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0222d002_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 222D",
+  "title": "Qualitative Inquiry: Special Topics: Academic Writing and Publishing",
+  "department": "EDUC",
+  "instructor": "McCarty, T.L.",
+  "location": "Moore Hall 3030",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0222D%20%20%20&class_id=583217202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0222d001_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 222D",
+  "title": "Qualitative Inquiry: Special Topics: School-Based Collaborative Research",
+  "department": "EDUC",
+  "instructor": "Mancevice, N.A.",
+  "location": "Moore Hall 3030",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0222D%20%20%20&class_id=583217200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0230a_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 230A",
+  "title": "Introduction to Research Design and Statistics",
+  "department": "EDUC",
+  "instructor": "Jaquette, O. TA",
+  "location": "Moore Hall 3320",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0230A%20%20%20&class_id=583230200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0244c_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC C244",
+  "title": "Theory and Practice of Intergroup Dialogue: Building Facilitation Skills",
+  "department": "EDUC",
+  "instructor": "Tran, M.C.",
+  "location": "Moore Hall 3140",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0244%20%20C%20&class_id=583322200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0256a001_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 256A",
+  "title": "Seminar: Special Topics in School Learning: Literacy Development and Learning Differences",
+  "department": "EDUC",
+  "instructor": "Wang, J.",
+  "location": "Moore Hall 3030",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0256A%20%20%20&class_id=583419200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0260bm_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC M260B",
+  "title": "Fundamentals of Programming",
+  "department": "EDUC",
+  "instructor": "Jaquette, O.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0260B%20M%20&class_id=583460200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0263001_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 263",
+  "title": "Seminar: Higher Education: Major Higher Education Court Cases",
+  "department": "EDUC",
+  "instructor": "Allen, W.",
+  "location": "Moore Hall 3030",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0263%20%20%20%20&class_id=583478200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0298b_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 298B",
+  "title": "Research Capstone I: Project Development",
+  "department": "EDUC",
+  "instructor": "de La Garza Luvian",
+  "location": "Moore Hall",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0298B%20%20%20&class_id=583499200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0318b_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 318B",
+  "title": "Integrated Methods for Elementary Teachers",
+  "department": "EDUC",
+  "instructor": "Hipolito, E.D.",
+  "location": "Education and Information Studies Building 111",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0318B%20%20%20&class_id=583035200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0330b_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 330B",
+  "title": "Student Teaching",
+  "department": "EDUC",
+  "instructor": "Kim, J.W.",
+  "location": "Field Field",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "15:30"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "15:30"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "15:30"
+   },
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "12:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0330B%20%20%20&class_id=583838206&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0411_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 411",
+  "title": "Procedural Issues in Evaluation",
+  "department": "EDUC",
+  "instructor": "Rohanna, K.",
+  "location": "Moore Hall",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "21:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0411%20%20%20%20&class_id=583739201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0477_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 477",
+  "title": "Leadership and Management of Athletic Departments in Educational Institutions",
+  "department": "EDUC",
+  "instructor": "Cooper, R.",
+  "location": "Moore Hall 1048",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0477%20%20%20%20&class_id=583399200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0478_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 478",
+  "title": "Introduction to Research Methods",
+  "department": "EDUC",
+  "instructor": "de La Garza Luvian",
+  "location": "Moore Hall 3027",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0478%20%20%20%20&class_id=583438200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0479001_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 479",
+  "title": "Variable Topics in Transformative Coaching and Leadership: College Student Athletes: Issues and Research",
+  "department": "EDUC",
+  "instructor": "Sax, L.J.",
+  "location": "Moore Hall 2120",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0479%20%20%20%20&class_id=583479200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_educ0498b_27w",
+  "schoolId": "s_ucla",
+  "code": "EDUC 498B",
+  "title": "Directed Field Experience",
+  "department": "EDUC",
+  "instructor": "Pelikhova, J.",
+  "location": "Moore Hall 1048",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0498B%20%20%20&class_id=583787209&class_no=%20009%20%20"
  }
 ]

@@ -1946,3 +1946,10 @@
 - UCLA batch: Winter 2027 39+ subjects, 4,071+ classes.
 - Spot check classes (Illinois): ABE 498, BADM 538 (grad), ECON 598 (grad), MATH 416, TE 450 — saved times appear on the official course pages.
 - Spot check clubs: Purdue Cross Impact, UMD East African Student Union, UF Explore Run Club, BU Consulting Group match; UNC "Connor Community" is a residence hall community (housing.unc.edu) — left as is.
+
+## 2026-11-04 17:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **"University … Center/Services/Office" offices:** spot check found UW-Madison "University Health Services" as a club. New name rule in `isOfficeOrg` (starts with University, ends with Services/Center/Office/Department, no club or "activities"/"students" words) → 11 marked department: UGA and UMD University Health Center, UVA University Career Center, WFU University Counseling Center, Tulane University Financial Aid Office, UT University Ombuds Offices, NYU University Learning Center, UChicago University Community Service Center, UCSB University Center, Michigan Detroit Center, UW-Madison UHS. Michigan "University Activities Center" (student programming board) excluded; tests added.
+- UCLA batch: Winter 2027 50+ subjects, 4,270+ classes.
+- Spot check classes (SF State): ACCT 101, CAD 410GW, EDDL 961 (doctoral, Saturday), ISYS 856 (grad), RRS 110 — match (site reset one connection; retried).
+- Spot check clubs: UVA Sailing, Notre Dame Scholastic Magazine, UW SEDS match; Minnesota Somali Pre-Dental Association lists the generic student-union page (what the club entered).
