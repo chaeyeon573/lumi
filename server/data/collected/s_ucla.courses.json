@@ -18725,5 +18725,885 @@
   "termCode": "26F",
   "units": 2,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DANCE%20%20&crs_catlg_no=0415%20%20C%20&class_id=573630200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_dsbmed0208_26f",
+  "schoolId": "s_ucla",
+  "code": "DS BMED 208",
+  "title": "Recent Research in Machine Learning in Medicine (Lec 1)",
+  "department": "DS BMED",
+  "instructor": "Rudas, A. Lee, S.A.",
+  "location": "Online - Asynchronous Life Sciences 5236",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DS%20BMED&crs_catlg_no=0208%20%20%20%20&class_id=859048200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_dsbmed0208_26f_2",
+  "schoolId": "s_ucla",
+  "code": "DS BMED 208",
+  "title": "Recent Research in Machine Learning in Medicine (Lec 2)",
+  "department": "DS BMED",
+  "instructor": "Ernst, J. Efrat, L.",
+  "location": "Online - Asynchronous Online Online Online",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "18:00"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "10:00"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "13:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DS%20BMED&crs_catlg_no=0208%20%20%20%20&class_id=859048201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_dsbmed0208_26f_3",
+  "schoolId": "s_ucla",
+  "code": "DS BMED 208",
+  "title": "Recent Research in Machine Learning in Medicine (Lec 3)",
+  "department": "DS BMED",
+  "instructor": "Rudas, A. Lee, S.A.",
+  "location": "Online - Asynchronous Online",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DS%20BMED&crs_catlg_no=0208%20%20%20%20&class_id=859048202&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0010_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 10",
+  "title": "Design Culture",
+  "department": "DESMA",
+  "instructor": "Cho, H. Huhtamo, E.I.",
+  "location": "Public Affairs Building 2270",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0010%20%20%20%20&class_id=141032200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0021_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 21",
+  "title": "Digital Image",
+  "department": "DESMA",
+  "instructor": "Ty, S. Malabre, S.B.",
+  "location": "Broad Art Center 4250",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0021%20%20%20%20&class_id=141063200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0022_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 22",
+  "title": "Fabrication and Materials",
+  "department": "DESMA",
+  "instructor": "Burch, C.R. McWilliams, C.B.",
+  "location": "Broad Art Center 2250",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0022%20%20%20%20&class_id=141066201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0024_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 24",
+  "title": "Video and Motion",
+  "department": "DESMA",
+  "instructor": "Weissbrot, L.N. Ty, S.",
+  "location": "Broad Art Center 4220",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0024%20%20%20%20&class_id=141073101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0028_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 28",
+  "title": "Interactivity",
+  "department": "DESMA",
+  "instructor": "Pham, P. Chai, H.",
+  "location": "Broad Art Center 4220",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0028%20%20%20%20&class_id=141085100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0110_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 110",
+  "title": "Tangible Media",
+  "department": "DESMA",
+  "instructor": "Goodwin, D. Strong, A.M.",
+  "location": "Broad Art Center 2250",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0110%20%20%20%20&class_id=141350123&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0116_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 116",
+  "title": "Sonic Media",
+  "department": "DESMA",
+  "instructor": "Meyer, P. Harris, R.",
+  "location": "Broad Art Center 4230",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0116%20%20%20%20&class_id=141380231&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0125_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 125",
+  "title": "Game Design",
+  "department": "DESMA",
+  "instructor": "Yu, E.B. Malabre, S.B.",
+  "location": "Broad Art Center 4240",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0125%20%20%20%20&class_id=141445200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0127_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 127",
+  "title": "Interactive Animation",
+  "department": "DESMA",
+  "instructor": "Noya, T. Caravello, J.B.",
+  "location": "Broad Art Center 4230",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0127%20%20%20%20&class_id=141455101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0130_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 130",
+  "title": "Experiments in Virtuality",
+  "department": "DESMA",
+  "instructor": "Klitsner, M.J. Mou, P.",
+  "location": "Broad Art Center 4230",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0130%20%20%20%20&class_id=141500101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0131_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 131",
+  "title": "Three-Dimensional Modeling and Motion",
+  "department": "DESMA",
+  "instructor": "Shum, L. Browning-Wilson, B",
+  "location": "Broad Art Center 4230",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0131%20%20%20%20&class_id=141505101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0140_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 140",
+  "title": "Word + Image",
+  "department": "DESMA",
+  "instructor": "Lu, M. Mendez, R.",
+  "location": "Broad Art Center 4250",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0140%20%20%20%20&class_id=141540101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0141_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 141",
+  "title": "Web Design and User Interface and Experience",
+  "department": "DESMA",
+  "instructor": "Seu, M. Goyal, D.",
+  "location": "Broad Art Center 4220",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0141%20%20%20%20&class_id=141545101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0160001_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 160",
+  "title": "Special Topics in Design | Media Arts: Game History and Analysis",
+  "department": "DESMA",
+  "instructor": "O Grady, D.K. Bang, R.",
+  "location": "Broad Art Center 4240",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0160%20%20%20%20&class_id=141661223&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0200_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 200",
+  "title": "Design|Media Arts Faculty Seminar",
+  "department": "DESMA",
+  "instructor": "Stern, E.I.",
+  "location": "Broad Art Center 3261",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0200%20%20%20%20&class_id=541001200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0252a_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 252A",
+  "title": "Coding for the Arts",
+  "department": "DESMA",
+  "instructor": "McCarthy, L.L.",
+  "location": "Broad Art Center 3261",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0252A%20%20%20&class_id=541315200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0266_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 266",
+  "title": "Creating Context and Collaborative Projects",
+  "department": "DESMA",
+  "instructor": "Morrison, R.",
+  "location": "Broad Art Center 3261",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0266%20%20%20%20&class_id=541396201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0282_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 282",
+  "title": "Contemporary Topics in Media Arts",
+  "department": "DESMA",
+  "instructor": "Willis, H.L.",
+  "location": "Broad Art Center 3261",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0282%20%20%20%20&class_id=541482201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0289001_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 289",
+  "title": "Special Topics in Media Arts: Seminar 1",
+  "department": "DESMA",
+  "instructor": "Caravello, J.B.",
+  "location": "Broad Art Center 3261",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0289%20%20%20%20&class_id=541535200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0403_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 403",
+  "title": "Graduate Critique (Sem 1)",
+  "department": "DESMA",
+  "instructor": "Stern, E.I.",
+  "location": "Broad Art Center 3261",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0403%20%20%20%20&class_id=541606200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0403_26f_2",
+  "schoolId": "s_ucla",
+  "code": "DESMA 403",
+  "title": "Graduate Critique (Sem 2)",
+  "department": "DESMA",
+  "instructor": "Lunenfeld, P.B.",
+  "location": "Broad Art Center 1250",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0403%20%20%20%20&class_id=541606201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0403_26f_3",
+  "schoolId": "s_ucla",
+  "code": "DESMA 403",
+  "title": "Graduate Critique (Sem 3)",
+  "department": "DESMA",
+  "instructor": "Seu, M.",
+  "location": "Broad Art Center 1250",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0403%20%20%20%20&class_id=541606203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0495_26f",
+  "schoolId": "s_ucla",
+  "code": "DESMA 495",
+  "title": "Teaching Assistant Training Practicum",
+  "department": "DESMA",
+  "instructor": "No instructors",
+  "location": "Broad Art Center",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DESMA%20%20&crs_catlg_no=0495%20%20%20%20&class_id=541790200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_dgthum0101_26f",
+  "schoolId": "s_ucla",
+  "code": "DGT HUM 101",
+  "title": "Introduction to Digital Humanities",
+  "department": "DGT HUM",
+  "instructor": "Kurtz, W.",
+  "location": "Haines Hall A2",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DGT%20HUM&crs_catlg_no=0101%20%20%20%20&class_id=402306200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_dgthum0120_26f",
+  "schoolId": "s_ucla",
+  "code": "DGT HUM 120",
+  "title": "Social Media Data Analytics",
+  "department": "DGT HUM",
+  "instructor": "Sabo, N.",
+  "location": "Royce Hall 362",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DGT%20HUM&crs_catlg_no=0120%20%20%20%20&class_id=402318200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_dgthum0121m_26f",
+  "schoolId": "s_ucla",
+  "code": "DGT HUM M121",
+  "title": "Race, Gender, and Data",
+  "department": "DGT HUM",
+  "instructor": "Bhaumik, M.",
+  "location": "Rolfe Hall 2118",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DGT%20HUM&crs_catlg_no=0121%20%20M%20&class_id=402321200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_dgthum0150002_26f",
+  "schoolId": "s_ucla",
+  "code": "DGT HUM 150",
+  "title": "Advanced Topics in Digital Humanities: Artificial Intelligence and Automation in Humanities",
+  "department": "DGT HUM",
+  "instructor": "Sabo, N.",
+  "location": "Rolfe Hall 2118",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DGT%20HUM&crs_catlg_no=0150%20%20%20%20&class_id=402600201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_dgthum0150001_26f",
+  "schoolId": "s_ucla",
+  "code": "DGT HUM 150",
+  "title": "Advanced Topics in Digital Humanities: Digital Musicology Methods and Resources",
+  "department": "DGT HUM",
+  "instructor": "Mohammadi, M.",
+  "location": "Public Affairs Building 1041",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DGT%20HUM&crs_catlg_no=0150%20%20%20%20&class_id=402600200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_dgthum0160c_26f",
+  "schoolId": "s_ucla",
+  "code": "DGT HUM C160",
+  "title": "Introduction to Critical Cartography and Theories of Mapping",
+  "department": "DGT HUM",
+  "instructor": "Joudah, N.A.",
+  "location": "Rolfe Hall 2118",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DGT%20HUM&crs_catlg_no=0160%20%20C%20&class_id=402660200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_dgthum0260c_26f",
+  "schoolId": "s_ucla",
+  "code": "DGT HUM C260",
+  "title": "Introduction to Critical Cartography and Theories of Mapping",
+  "department": "DGT HUM",
+  "instructor": "Joudah, N.A.",
+  "location": "Rolfe Hall 2118",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DGT%20HUM&crs_catlg_no=0260%20%20C%20&class_id=802360200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_disstd0101_26f",
+  "schoolId": "s_ucla",
+  "code": "DIS STD 101",
+  "title": "Perspectives on Disability Studies",
+  "department": "DIS STD",
+  "instructor": "Hernandez, F.A.",
+  "location": "Geology Building 4660",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:50"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DIS%20STD&crs_catlg_no=0101%20%20%20%20&class_id=028306200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_disstd0112m_26f",
+  "schoolId": "s_ucla",
+  "code": "DIS STD M112",
+  "title": "Disability and Musical-Dramatic Arts: Representation, Embodiment, Themes, and Practices",
+  "department": "DIS STD",
+  "instructor": "Knapp, R.L.",
+  "location": "Schoenberg Music Building 1344",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "10:20"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "10:20"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DIS%20STD&crs_catlg_no=0112%20%20M%20&class_id=028376201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_disstd0121m001_26f",
+  "schoolId": "s_ucla",
+  "code": "DIS STD M121",
+  "title": "Topics in Gender and Disabilities: Disability Sport and Oral History Research Method",
+  "department": "DIS STD",
+  "instructor": "Anesi, J.T.",
+  "location": "Public Affairs Building 2250",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DIS%20STD&crs_catlg_no=0121%20%20M%20&class_id=028426200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_disstd0138xp_26f",
+  "schoolId": "s_ucla",
+  "code": "DIS STD 138XP",
+  "title": "Applied Autism Intervention: Multidisciplinary Perspective",
+  "department": "DIS STD",
+  "instructor": "Freeman, S.F.",
+  "location": "Semel Institute for Neuroscience and HumanBehavior 78233",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:30",
+    "end": "15:00"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DIS%20STD&crs_catlg_no=0138XP%20%20&class_id=028534201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_dutch0103a_26f",
+  "schoolId": "s_ucla",
+  "code": "DUTCH 103A",
+  "title": "Elementary Dutch",
+  "department": "DUTCH",
+  "instructor": "Brier, M.F.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=DUTCH%20%20&crs_catlg_no=0103A%20%20%20&class_id=216340200&class_no=%20001%20%20"
  }
 ]
