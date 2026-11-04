@@ -1082,6 +1082,52 @@ async function rochester(): Promise<CatalogCourse[]> {
   return [...new Map(out.map((c) => [c.id, c])).values()];
 }
 
+// ─── Illinois: courses.illinois.edu/cisapp/explorer (공개 XML). 전공당 한 번 — <subject>.xml?mode=cascade 에 분반·시간이 다 들어 있다.
+// 강의(LEC·LCD 강의-토론)가 있으면 그것만, 없으면 세미나·스튜디오 등(토론·실험·퀴즈·개별 연구·온라인 무시간은 뺀다).
+const UIUC = 'https://courses.illinois.edu/cisapp/explorer/schedule';
+const UIUC_DAY: Record<string, number> = { M: 0, T: 1, W: 2, R: 3, F: 4, S: 5, U: 6 };
+const uiucTime = (t: string) => { const m = /^(\d{1,2}):(\d{2})\s*(AM|PM)$/i.exec(t.trim()); if (!m) return ''; let h = Number(m[1]) % 12; if (/pm/i.test(m[3])) h += 12; return `${String(h).padStart(2, '0')}:${m[2]}`; };
+export function uiucToCourses(xml: string, termCode: string, label: string): CatalogCourse[] {
+  const out: CatalogCourse[] = [];
+  const tag = (h: string, t: string) => decodeEntities((new RegExp(`<${t}[^>]*>([\\s\\S]*?)</${t}>`).exec(h)?.[1] ?? '').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
+  for (const c of xml.split('<cascadingCourse ').slice(1)) {
+    const code = /^id="([^"]+)"/.exec(c)?.[1]; if (!code) continue;
+    const title = tag(c.split('<detailedSections>')[0], 'label');
+    const secs = c.split('<detailedSection ').slice(1).map((d) => {
+      const no = tag(d, 'sectionNumber'); const meetings: Meeting[] = []; let kind = ''; const ins: string[] = []; let loc = '';
+      for (const m of d.split('<meeting ').slice(1)) {
+        kind ||= /<type code="([^"]+)"/.exec(m)?.[1] ?? '';
+        const st = uiucTime(tag(m, 'start')), en = uiucTime(tag(m, 'end')); const days = tag(m, 'daysOfTheWeek').replace(/\s+/g, '');
+        if (st && en) for (const ch of days) if (ch in UIUC_DAY) meetings.push({ day: UIUC_DAY[ch], start: st, end: en });
+        for (const i of m.matchAll(/<instructor [^>]*>([^<]+)<\/instructor>/g)) ins.push(i[1].trim());
+        loc ||= [tag(m, 'buildingName'), tag(m, 'roomNumber')].filter(Boolean).join(' ');
+      }
+      const units = Number(/(\d+(?:\.\d+)?)/.exec(tag(d, 'creditHours'))?.[1]);
+      return { no, kind, meetings: uniq(meetings), instructor: [...new Set(ins)].join(', ') || undefined, location: loc || undefined, units, crn: /^id="(\d+)"/.exec(d)?.[1] };
+    }).filter((x) => x.meetings.length);
+    const lec = secs.filter((x) => /^(LEC|LCD)$/.test(x.kind));
+    const keep = lec.length ? lec : secs.filter((x) => !/^(DIS|LAB|LBD|Q|IND|OD|ONL|PKG)$/.test(x.kind));
+    const baseId = `${courseId('s_illinois', code)}_${termCode}`;
+    keep.forEach((x, i) => out.push({ id: i === 0 ? baseId : `${baseId}_${x.no.toLowerCase()}`, schoolId: 's_illinois', code, title: keep.length > 1 ? `${title} (Sec ${x.no})` : title, department: code.split(' ')[0], instructor: x.instructor, location: x.location, meetings: x.meetings, term: label, termCode, units: Number.isFinite(x.units) && x.units > 0 ? x.units : undefined, url: `${UIUC.replace('/cisapp/explorer/schedule', '/schedule')}/${termCode.replace('-', '/')}/${code.replace(' ', '/')}` }));
+  }
+  return out;
+}
+async function uiuc(): Promise<CatalogCourse[]> {
+  const get = async (u: string) => { for (let i = 0; i < 2; i++) { try { const r = await fetch(u, { headers: UAH, signal: AbortSignal.timeout(60_000) }); if (r.ok) { const t = await r.text(); await new Promise((res) => setTimeout(res, 700)); return t; } } catch { /* retry */ } await new Promise((res) => setTimeout(res, 4000)); } return ''; };
+  const out: CatalogCourse[] = [];
+  const now = new Date(); const y = now.getFullYear();
+  // 지금 가을이면 가을 + 다음 봄, 봄이면 봄 + 가을 — 학교가 아직 안 낸 학기는 비어서 건너뛴다
+  const terms = now.getMonth() >= 6 ? [`${y}-fall`, `${y + 1}-spring`] : [`${y}-spring`, `${y}-fall`];
+  for (const t of terms) {
+    const idx = await get(`${UIUC}/${t.replace('-', '/')}.xml`); if (!idx) continue;
+    const subjects = [...idx.matchAll(/<subject id="([A-Z]+)"/g)].map((m) => m[1]); const label = labelOf(t.replace('-', ' '));
+    const before = out.length;
+    for (const subj of subjects) { const xml = await get(`${UIUC}/${t.replace('-', '/')}/${subj}.xml?mode=cascade`); if (xml) out.push(...uiucToCourses(xml, t, label)); }
+    console.log(`  s_illinois ${label}: ${subjects.length} subjects → ${out.length - before} classes`);
+  }
+  return [...new Map(out.map((c) => [c.id, c])).values()];
+}
+
 // ─── Caltech: schedules.caltech.edu/<FA2026-27>.html — 쿼터마다 한 페이지(보고서를 HTML 로 내보낸 표, 글자 칸 순서대로 읽는다) ───
 // 칸 순서: 과목 "CS 024" → 학점 "3-3-3" → 제목 → [섹션 "01" → 교수 → "MWF 11:00 - 11:55"(24시간) → 강의실]… 시각이 두 줄로 나뉘기도 한다("OM,W 16:00 -" + "16:55").
 const CALTECH = 'https://schedules.caltech.edu';
@@ -1422,6 +1468,7 @@ export const COURSE_SOURCES: Record<string, CourseSource> = {
   vanderbilt: { schoolId: 's_vanderbilt', fetch: vanderbilt },
   sfsu: { schoolId: 's_sfsu', fetch: sfsu },
   rochester: { schoolId: 's_rochester', fetch: rochester },
+  uiuc: { schoolId: 's_illinois', fetch: uiuc },
 };
 export const adapters: Record<string, () => Promise<CatalogCourse[]>> = Object.fromEntries(Object.entries(COURSE_SOURCES).map(([k, v]) => [k, v.fetch]));
 
