@@ -13366,5 +13366,549 @@
   "termCode": "26F",
   "units": 2,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=C%26EE%20%20%20&crs_catlg_no=0495%20%20%20%20&class_id=547790201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0010_26f",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC 10",
+  "title": "Discovering Greeks",
+  "department": "CLASSIC",
+  "instructor": "Kirkland, B.",
+  "location": "Dodd Hall 147",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLASSIC&crs_catlg_no=0010%20%20%20%20&class_id=148012200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0019001_26f",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC 19",
+  "title": "The Odyssey, Christopher Nolan, and Homer",
+  "department": "CLASSIC",
+  "instructor": "Purves, A.C.",
+  "location": "Dodd Hall 248",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLASSIC&crs_catlg_no=0019%20%20%20%20&class_id=148057200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0051a_26f",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC 51A",
+  "title": "Art and Archaeology of Ancient Greece",
+  "department": "CLASSIC",
+  "instructor": "Papadopoulos, J.K.",
+  "location": "Dodd Hall 147",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLASSIC&crs_catlg_no=0051A%20%20%20&class_id=148106200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0088ge001_26f",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC 88GE",
+  "title": "General Education Seminar Sequences: Celtic Art and Archaeology",
+  "department": "CLASSIC",
+  "instructor": "Wood, R.L.",
+  "location": "Dodd Hall 146",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLASSIC&crs_catlg_no=0088GE%20%20&class_id=148266200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0121m_26f",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC M121",
+  "title": "Ancient and Medieval Political Theory",
+  "department": "CLASSIC",
+  "instructor": "Sissa, G.",
+  "location": "Haines Hall 220",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLASSIC&crs_catlg_no=0121%20%20M%20&class_id=148427200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0143a_26f",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC 143A",
+  "title": "Ancient Tragedy",
+  "department": "CLASSIC",
+  "instructor": "Haselswerdt, E.H.",
+  "location": "Dodd Hall 247",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLASSIC&crs_catlg_no=0143A%20%20%20&class_id=148522200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0144001_26f",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC 144",
+  "title": "Topical Studies in Ancient Culture: Environmental Imagination in Ancient Greece",
+  "department": "CLASSIC",
+  "instructor": "Moat, C.J.",
+  "location": "Dodd Hall 146",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLASSIC&crs_catlg_no=0144%20%20%20%20&class_id=148525200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0153fm_26f",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC M153F",
+  "title": "Etruscan Art and Archaeology",
+  "department": "CLASSIC",
+  "instructor": "Wood, R.L.",
+  "location": "Dodd Hall 146",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLASSIC&crs_catlg_no=0153F%20M%20&class_id=148665200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_classic0250001_26f",
+  "schoolId": "s_ucla",
+  "code": "CLASSIC 250",
+  "title": "Topics in Greek and Roman Culture and Literature: Image and Text in Classical Antiquity",
+  "department": "CLASSIC",
+  "instructor": "Papadopoulos, J.K.",
+  "location": "Fowler Museum at UCLA A222",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLASSIC&crs_catlg_no=0250%20%20%20%20&class_id=548295200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0001am_26f",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER M1A",
+  "title": "Food: Lens for Environment and Sustainability",
+  "department": "CLUSTER",
+  "instructor": "Shaked, S. Thomas, A.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "10:15"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "10:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLUSTER&crs_catlg_no=0001A%20M%20&class_id=143001200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0002a_26f",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 2A",
+  "title": "Building Climates",
+  "department": "CLUSTER",
+  "instructor": "Osman, M. Craig, S. Carver, E.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLUSTER&crs_catlg_no=0002A%20%20%20&class_id=143012201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0010a_26f",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 10A",
+  "title": "Data, Justice, and Society",
+  "department": "CLUSTER",
+  "instructor": "Bhaumik, M. Posner, M. Noble, S.U.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLUSTER&crs_catlg_no=0010A%20%20%20&class_id=143030200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0020a_26f",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 20A",
+  "title": "Race and Indigeneity in U.S.",
+  "department": "CLUSTER",
+  "instructor": "Ortiz, V. Fong, K.N. Simpkins, A.M. Blu Wakpa, T.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLUSTER&crs_catlg_no=0020A%20%20%20&class_id=143060200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0027am_26f",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER M27A",
+  "title": "Global Islam",
+  "department": "CLUSTER",
+  "instructor": "Green, N.S. Yarbrough, L.B. Chism, C.N.",
+  "location": "Northwest Campus Auditorium 101A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLUSTER&crs_catlg_no=0027A%20M%20&class_id=143385200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0048a_26f",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 48A",
+  "title": "Political Violence in Modern World: Causes, Cases, and Consequences",
+  "department": "CLUSTER",
+  "instructor": "No instructors",
+  "location": "De Neve Plaza Commons Building",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLUSTER&crs_catlg_no=0048A%20%20%20&class_id=143144000&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0055a_26f",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 55A",
+  "title": "Innovative Thinking and Entrepreneurship: From Theory to Practice",
+  "department": "CLUSTER",
+  "instructor": "Sarada, U. Bassett, J.",
+  "location": "Northwest Campus Auditorium 101A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLUSTER&crs_catlg_no=0055A%20%20%20&class_id=143170000&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0060a_26f",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 60A",
+  "title": "America in Sixties: Politics, Society, and Culture, 1954 to 1974",
+  "department": "CLUSTER",
+  "instructor": "Fink, R.W. Decker, J.L. Avila, E.R. Vavreck, L.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLUSTER&crs_catlg_no=0060A%20%20%20&class_id=143180200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0070a_26f",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 70A",
+  "title": "Evolution of Cosmos and Life",
+  "department": "CLUSTER",
+  "instructor": "Friscia, A.R. Jewitt, D.C. Supriya, K. Lewis, B.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLUSTER&crs_catlg_no=0070A%20%20%20&class_id=143210200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0071am_26f",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER M71A",
+  "title": "Biotechnology and Society",
+  "department": "CLUSTER",
+  "instructor": "Panofsky, A.L. Rensel, M.A. Scroggins, M.J.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLUSTER&crs_catlg_no=0071A%20M%20&class_id=143213200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0072am_26f",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER M72A",
+  "title": "Sex from Biology to Gendered Society",
+  "department": "CLUSTER",
+  "instructor": "Haselton, M.G. Schlinger, B. Frederick, D.A.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLUSTER&crs_catlg_no=0072A%20M%20&class_id=143216210&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0073a_26f",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 73A",
+  "title": "Brain, Bodymind, and Society: All in Your Head?",
+  "department": "CLUSTER",
+  "instructor": "Phillips, E. Feinsinger, A.L. Knowlton, B.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLUSTER&crs_catlg_no=0073A%20%20%20&class_id=143222200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_cluster0080a_26f",
+  "schoolId": "s_ucla",
+  "code": "CLUSTER 80A",
+  "title": "Frontiers in Human Aging",
+  "department": "CLUSTER",
+  "instructor": "Hahm, A. Soroosh, A. Kwok, I.Y.",
+  "location": "De Neve Plaza Commons Building P350",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=CLUSTER&crs_catlg_no=0080A%20%20%20&class_id=143240200&class_no=%20001%20%20"
  }
 ]
