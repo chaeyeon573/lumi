@@ -1988,3 +1988,12 @@
 - UCLA batch: Winter 2027 continuing.
 - Spot check classes (Rice): ASIA 220, EMBA 913 (grad, two Friday blocks), MATH 590 (grad), PSYC 550 (grad), UNIV 201 — match.
 - Spot check clubs: Columbia Computer Security Club, Yale Opera Theatre, Harvard UA, MIT Filipino Students Association, Penn Graduate InterVarsity — match.
+
+## 2026-11-04 23:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **Residence halls and Vanderbilt units listed as clubs:** spot check found Emory "Clairmont Tower" (category Residence Hall) and Vanderbilt "Gender and Sexuality Studies" as clubs.
+  - Housing categories (Residence Hall(s), Residential Community/Life) are now strong office categories → 51 marked department: Yale 15 (residential colleges), Vanderbilt 13, Emory 11, CWRU 10, UMass 2. Test added.
+  - Vanderbilt's Engage lists ~250 entries with no category, mostly offices, departments, labs, institutes and programs. Reviewed a name-based list of 79: 76 are university units → department (hand-checked, added to `org-type-overrides.csv`, kept on re-collect); 3 student groups kept as clubs (School of Medicine Ambassadors, School of Nursing Pride, VUSM Street Medicine Initiative).
+- UCLA batch: Winter 2027 continuing.
+- Spot check classes (Duke): ARTS&SCI 104CN, ENVIRON 321A, MATH 353, SOCIOL 202, XTIANETH 757 (grad) — match.
+- Spot check clubs: Georgetown Law Restructuring Club, WFU Men's Club Golf match; Notre Dame College Democrats site 403 to automated requests; Emory Clairmont Tower and Vanderbilt GSS (fixed above).
