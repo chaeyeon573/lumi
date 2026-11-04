@@ -114328,5 +114328,1731 @@
   "termCode": "27W",
   "units": 4,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0441%20%20%20%20&class_id=809441200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hebrew0001b_27w",
+  "schoolId": "s_ucla",
+  "code": "HEBREW 1B",
+  "title": "Elementary Hebrew",
+  "department": "HEBREW",
+  "instructor": "Birnbaum, S.H.",
+  "location": "Bunche Hall 2156",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HEBREW%20&crs_catlg_no=0001B%20%20%20&class_id=290006200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hebrew0102b_27w",
+  "schoolId": "s_ucla",
+  "code": "HEBREW 102B",
+  "title": "Intermediate Hebrew",
+  "department": "HEBREW",
+  "instructor": "Birnbaum, S.H.",
+  "location": "Bunche Hall 2156",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HEBREW%20&crs_catlg_no=0102B%20%20%20&class_id=290397200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hebrew0188fl_27w",
+  "schoolId": "s_ucla",
+  "code": "HEBREW 188FL",
+  "title": "Special Studies: Readings in Hebrew",
+  "department": "HEBREW",
+  "instructor": "Smoak, J.D.",
+  "location": "Renee and David Kaplan Hall A30",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HEBREW%20&crs_catlg_no=0188FL%20%20&class_id=290828200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hebrew0210_27w",
+  "schoolId": "s_ucla",
+  "code": "HEBREW 210",
+  "title": "History of Hebrew Language",
+  "department": "HEBREW",
+  "instructor": "Schniedewind, W.M.",
+  "location": "Renee and David Kaplan Hall 365",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "18:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HEBREW%20&crs_catlg_no=0210%20%20%20%20&class_id=690010200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hebrew0235_27w",
+  "schoolId": "s_ucla",
+  "code": "HEBREW 235",
+  "title": "Hebrew Literature of Second Temple Period",
+  "department": "HEBREW",
+  "instructor": "Bonesho, C.E.",
+  "location": "Renee and David Kaplan Hall 365",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:30",
+    "end": "17:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HEBREW%20&crs_catlg_no=0235%20%20%20%20&class_id=690180200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hinurd0002_27w",
+  "schoolId": "s_ucla",
+  "code": "HIN-URD 2",
+  "title": "Introductory Hindi-Urdu (Lec 1)",
+  "department": "HIN-URD",
+  "location": "Public Affairs Building 1264",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIN-URD&crs_catlg_no=0002%20%20%20%20&class_id=377006200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hinurd0002_27w_2",
+  "schoolId": "s_ucla",
+  "code": "HIN-URD 2",
+  "title": "Introductory Hindi-Urdu (Lec 2)",
+  "department": "HIN-URD",
+  "location": "Bunche Hall 3123",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIN-URD&crs_catlg_no=0002%20%20%20%20&class_id=377006203&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_hinurd0003r_27w",
+  "schoolId": "s_ucla",
+  "code": "HIN-URD 3R",
+  "title": "Elementary Hindi-Urdu Reading and Writing",
+  "department": "HIN-URD",
+  "instructor": "Mahajan, G.",
+  "location": "Bunche Hall 2168",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIN-URD&crs_catlg_no=0003R%20%20%20&class_id=377011200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hinurd0100a_27w",
+  "schoolId": "s_ucla",
+  "code": "HIN-URD 100A",
+  "title": "Intermediate Hindi-Urdu",
+  "department": "HIN-URD",
+  "location": "Rolfe Hall 3116",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIN-URD&crs_catlg_no=0100A%20%20%20&class_id=377300200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0001b_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 1B",
+  "title": "Introduction to Western Civilization: Circa 843 to circa 1715",
+  "department": "HIST",
+  "instructor": "McClendon, M.C.",
+  "location": "Royce Hall 190",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0001B%20%20%20&class_id=221006200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0003a_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 3A",
+  "title": "History of Science: Renaissance to 1800",
+  "department": "HIST",
+  "instructor": "Alexander, A.",
+  "location": "Bunche Hall 1209B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0003A%20%20%20&class_id=221016200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0008b_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 8B",
+  "title": "Modern Latin America",
+  "department": "HIST",
+  "instructor": "Summerhill, W.R.",
+  "location": "Rolfe Hall 1200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0008B%20%20%20&class_id=221044200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0010am_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST M10A",
+  "title": "History of Africa to 1800",
+  "department": "HIST",
+  "instructor": "Lydon, G.E.",
+  "location": "Dodd Hall 170",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0010A%20M%20&class_id=221064200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0012e_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 12E",
+  "title": "Inequality: History of Money",
+  "department": "HIST",
+  "instructor": "Koh, C.",
+  "location": "Public Affairs Building 1234",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0012E%20%20%20&class_id=221033200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0013b_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 13B",
+  "title": "History of the U.S. and Its Colonial Origins: 19th Century",
+  "department": "HIST",
+  "instructor": "Tejada, V.",
+  "location": "Renee and David Kaplan Hall A51",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0013B%20%20%20&class_id=221068200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0021_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 21",
+  "title": "World History, circa 600 to 1760",
+  "department": "HIST",
+  "instructor": "Subrahmanyam, S.",
+  "location": "Dodd Hall 170",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0021%20%20%20%20&class_id=221086200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0096w004_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 96W",
+  "title": "Introduction to Historical Practice: Culture in China and Diasporic Communities, 1400s to 1900s",
+  "department": "HIST",
+  "instructor": "TA Penny, H.",
+  "location": "Public Affairs Building 1264",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0096W%20%20%20&class_id=221289204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0096w002_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 96W",
+  "title": "Introduction to Historical Practice: Distrust, Drugs, and Disco in 1970s U.S.",
+  "department": "HIST",
+  "instructor": "TA Penny, H.",
+  "location": "Haines Hall A28",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0096W%20%20%20&class_id=221289201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0096w001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 96W",
+  "title": "Introduction to Historical Practice: Empire, Revolution, and U.S.-China Cultural Exchanges, 1850 to 1970",
+  "department": "HIST",
+  "instructor": "TA Penny, H.",
+  "location": "Haines Hall 122",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0096W%20%20%20&class_id=221289200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0096w007_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 96W",
+  "title": "Introduction to Historical Practice: Pan-Africanism, Black Internationalism, and Decolonial Thought",
+  "department": "HIST",
+  "instructor": "TA Penny, H.",
+  "location": "Haines Hall 122",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0096W%20%20%20&class_id=221289207&class_no=%20007%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0096w003_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 96W",
+  "title": "Introduction to Historical Practice: Political History of Race and Power in Mexico",
+  "department": "HIST",
+  "instructor": "TA Penny, H.",
+  "location": "Public Affairs Building 2333",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0096W%20%20%20&class_id=221289202&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0096w006_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 96W",
+  "title": "Introduction to Historical Practice: Republic and Its Fortune in Early Modern Europe and America",
+  "department": "HIST",
+  "instructor": "TA Penny, H.",
+  "location": "Haines Hall A20",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0096W%20%20%20&class_id=221289206&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0096w005_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 96W",
+  "title": "Introduction to Historical Practice: Video Games and Religions of India",
+  "department": "HIST",
+  "instructor": "TA Penny, H.",
+  "location": "Royce Hall 148",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0096W%20%20%20&class_id=221289205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0097k001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 97K",
+  "title": "Introduction to Historical Practice: Variable Topics in History of Religion: Seminar 1",
+  "department": "HIST",
+  "instructor": "Green, N.S.",
+  "location": "Public Affairs Building 1284",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0097K%20%20%20&class_id=221281200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0105c_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 105C",
+  "title": "Survey of Middle East, 500 to Present: 1700 to Present",
+  "department": "HIST",
+  "instructor": "Aoun Ghazal, M.",
+  "location": "Bunche Hall 3156",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0105C%20%20%20&class_id=221315200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0111c001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 111C",
+  "title": "Topics in Middle Eastern History: Modern: Minorities, Women, and Gender in Modern Middle East",
+  "department": "HIST",
+  "instructor": "Momdjian, M.",
+  "location": "Renee and David Kaplan Hall A65",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0111C%20%20%20&class_id=221353200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0113b_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 113B",
+  "title": "History of Ancient Greece: Classical Period",
+  "department": "HIST",
+  "instructor": "Phillips, D.D.",
+  "location": "Dodd Hall 170",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0113B%20%20%20&class_id=221362200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0114a_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 114A",
+  "title": "History of Rome to Death of Caesar",
+  "department": "HIST",
+  "instructor": "Langdon, J.S.",
+  "location": "Broad Art Center 2100A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0114A%20%20%20&class_id=221363200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0115001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 115",
+  "title": "Topics in Ancient History: Homer&#39;s Iliad and Greek Iron Age",
+  "department": "HIST",
+  "instructor": "Vivian, A.L.",
+  "location": "Broad Art Center 2160E",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0115%20%20%20%20&class_id=221365200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0119a_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 119A",
+  "title": "Medieval Europe, 400 to 1000",
+  "department": "HIST",
+  "instructor": "Ibarra, R.P.",
+  "location": "Bunche Hall 2160",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0119A%20%20%20&class_id=221397200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0121f_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 121F",
+  "title": "History of Modern Europe: World War II and Its Aftermath, 1939 to Present",
+  "department": "HIST",
+  "instructor": "Jovanovic, M.",
+  "location": "Public Affairs Building 2214",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0121F%20%20%20&class_id=221331200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0122a_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 122A",
+  "title": "Cultural and Intellectual History of Modern Europe, 15th Century",
+  "department": "HIST",
+  "instructor": "Stacey, P.J. TA",
+  "location": "Royce Hall 190",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0122A%20%20%20&class_id=221395200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0122b_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 122B",
+  "title": "Cultural and Intellectual History of Modern Europe, 16th Century",
+  "department": "HIST",
+  "instructor": "Weinreich, S.",
+  "location": "Kinsey Science Teaching Pavilion 1200B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0122B%20%20%20&class_id=221396200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0122em_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST M122E",
+  "title": "Cultural and Intellectual History of Modern Europe, 19th Century",
+  "department": "HIST",
+  "instructor": "Medvedev, N.",
+  "location": "Dodd Hall 146",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0122E%20M%20&class_id=221348200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0124c_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 124C",
+  "title": "History of France: Making of Modern France, 1871 to Present",
+  "department": "HIST",
+  "instructor": "Ford, C.C.",
+  "location": "Public Affairs Building 2214",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0124C%20%20%20&class_id=221405200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0125c_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 125C",
+  "title": "20th-Century Germany",
+  "department": "HIST",
+  "instructor": "Penny, H.",
+  "location": "Dodd Hall 167",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0125C%20%20%20&class_id=221414200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0127c_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 127C",
+  "title": "History of Russia: Revolutionary Russia and Soviet Union",
+  "department": "HIST",
+  "instructor": "McBride, J. TA",
+  "location": "Haines Hall 118",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0127C%20%20%20&class_id=221427200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0138a_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 138A",
+  "title": "Colonial America, 1600 to 1763",
+  "department": "HIST",
+  "instructor": "Yirush, C.B.",
+  "location": "Public Affairs Building 2250",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0138A%20%20%20&class_id=221505200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0147dm_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST M147D",
+  "title": "History of Women in U.S., 1860 to 1980",
+  "department": "HIST",
+  "instructor": "Nye, M.",
+  "location": "Bunche Hall 2160",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0147D%20M%20&class_id=221589200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0148_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 148",
+  "title": "Introduction to Public/Applied History",
+  "department": "HIST",
+  "instructor": "Paul, T.",
+  "location": "Broad Art Center 2100A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0148%20%20%20%20&class_id=221515200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0149b_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 149B",
+  "title": "North American Indian History, 1830 to Present",
+  "department": "HIST",
+  "instructor": "Madley, B.L. TA",
+  "location": "Haines Hall 220",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0149B%20%20%20&class_id=221604200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0154_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 154",
+  "title": "History of California",
+  "department": "HIST",
+  "instructor": "Sladeck, J.J.",
+  "location": "Broad Art Center 2100A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0154%20%20%20%20&class_id=221634200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0167a_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 167A",
+  "title": "History of Northeast Africa",
+  "department": "HIST",
+  "instructor": "Wint-Frederick, H.",
+  "location": "Public Affairs Building 2214",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0167A%20%20%20&class_id=221692200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0173d_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 173D",
+  "title": "Postwar Japanese History through Film",
+  "department": "HIST",
+  "instructor": "Marotti, W. TA",
+  "location": "Rolfe Hall 1200",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "19:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0173D%20%20%20&class_id=221535200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0174f_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 174F",
+  "title": "Gandhi and Making of Modern India",
+  "department": "HIST",
+  "instructor": "Lal, V.",
+  "location": "Bunche Hall 3164",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0174F%20%20%20&class_id=221582200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0178m_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST M178",
+  "title": "Introduction to History and Culture of Iranian Jews",
+  "department": "HIST",
+  "instructor": "Pirnazar, N.",
+  "location": "Public Affairs Building 1256",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0178%20%20M%20&class_id=221537200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0179b001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 179B",
+  "title": "History of Medicine: Foundations of Modern Medicine: Lecture 1",
+  "department": "HIST",
+  "instructor": "Zeleny, C.L.",
+  "location": "Renee and David Kaplan Hall A65",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0179B%20%20%20&class_id=221741200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0182cm_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST M182C",
+  "title": "Modern Jewish History",
+  "department": "HIST",
+  "instructor": "May, C.S.",
+  "location": "Bunche Hall 3178",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0182C%20M%20&class_id=221762200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0185fm_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST M185F",
+  "title": "History of Early Christians",
+  "department": "HIST",
+  "instructor": "Joseph, S.J.",
+  "location": "Public Affairs Building 2232",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0185F%20M%20&class_id=221552200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0187c001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 187C",
+  "title": "Variable Topics Historiography Proseminar: Europe: Modern City in Europe",
+  "department": "HIST",
+  "instructor": "Jovanovic, M.",
+  "location": "Renee and David Kaplan Hall A48",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0187C%20%20%20&class_id=221519200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0187d001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 187D",
+  "title": "Variable Topics Historiography Proseminar: U.S.: Arguing American Revolution",
+  "department": "HIST",
+  "instructor": "Yirush, C.B.",
+  "location": "Haines Hall A28",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0187D%20%20%20&class_id=221527200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0187g001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 187G",
+  "title": "Variable Topics Historiography Proseminar: East Asia: Seminar 1",
+  "department": "HIST",
+  "location": "Renee and David Kaplan Hall A32",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0187G%20%20%20&class_id=221532200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0187i001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 187I",
+  "title": "Variable Topics Historiography Proseminar: Science/Technology: Gender, Empire, and Social Reform in History of Medicine",
+  "department": "HIST",
+  "instructor": "O'Brien, E.",
+  "location": "Royce Hall 166",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0187I%20%20%20&class_id=221534200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0187j001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 187J",
+  "title": "Variable Topics Historiography Proseminar: Africa: Debating Africa&#39;s Pasts",
+  "department": "HIST",
+  "instructor": "Wint-Frederick, H.",
+  "location": "Rolfe Hall 3121",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0187J%20%20%20&class_id=221536200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0187rc001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST C187R",
+  "title": "Topics in Historiography: Japan: Art, Politics, and Violence in 1960s Japan",
+  "department": "HIST",
+  "instructor": "Marotti, W.",
+  "location": "Haines Hall 122",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0187R%20C%20&class_id=221783200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0188001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 188",
+  "title": "Special Courses in History: Careers in History",
+  "department": "HIST",
+  "instructor": "Paul, T.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0188%20%20%20%20&class_id=221780200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0191a001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 191A",
+  "title": "Capstone Seminar: History--Ancient History: Roman Law",
+  "department": "HIST",
+  "instructor": "Phillips, D.D.",
+  "location": "Haines Hall A6",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0191A%20%20%20&class_id=221788200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0191c002_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 191C",
+  "title": "Capstone Seminar: History--Europe: Holocaust in Eastern Europe",
+  "department": "HIST",
+  "instructor": "McBride, J.",
+  "location": "Public Affairs Building 2292",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0191C%20%20%20&class_id=221790201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0191c001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 191C",
+  "title": "Capstone Seminar: History--Europe: Philosophy and More&#39;s Utopia in Early Modern Europe",
+  "department": "HIST",
+  "instructor": "Stacey, P.J.",
+  "location": "Haines Hall A74",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0191C%20%20%20&class_id=221790200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0191c003_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 191C",
+  "title": "Capstone Seminar: History--Europe: World War II, Vichy France, and German Occupation",
+  "department": "HIST",
+  "instructor": "Ford, C.C.",
+  "location": "Public Affairs Building 2317",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0191C%20%20%20&class_id=221790202&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0191dc001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST C191D",
+  "title": "Topics in History: U.S.: Collecting at William Andrews Clark Memorial Library",
+  "department": "HIST",
+  "instructor": "Pestana, C.G.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0191D%20C%20&class_id=221791200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0191jc001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST C191J",
+  "title": "Topics in History: Africa: Origin of Writing in Africa",
+  "department": "HIST",
+  "instructor": "Lydon, G.E.",
+  "location": "Renee and David Kaplan Hall A46",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0191J%20C%20&class_id=221882200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0191oc001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST C191O",
+  "title": "Topics in History: World: Religion in Early Modern Europe and European Empires",
+  "department": "HIST",
+  "instructor": "Subrahmanyam, S.",
+  "location": "Bunche Hall 1265",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0191O%20C%20&class_id=221900200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0200kc001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST C200K",
+  "title": "Topics in Historiography: India: Postcolonial Theory, Subaltern History, and Politics of Knowledge",
+  "department": "HIST",
+  "instructor": "Lal, V.",
+  "location": "Bunche Hall 2121",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0200K%20C%20&class_id=621900200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0200mc001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST C200M",
+  "title": "Topics in Historiography: Japan: Art, Politics, and Violence in 1960s Japan",
+  "department": "HIST",
+  "instructor": "Marotti, W.",
+  "location": "Haines Hall 122",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0200M%20C%20&class_id=621415200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0200o001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 200O",
+  "title": "Advanced Historiography: Science/Technology: History of Science, Medicine, and Technology, 1800 to Present",
+  "department": "HIST",
+  "instructor": "de Chadarevian, S.",
+  "location": "Bunche Hall 5288",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0200O%20%20%20&class_id=621016200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0201e002_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 201E",
+  "title": "Topics in History: Modern Europe: Europe: History of the Present",
+  "department": "HIST",
+  "instructor": "Ghervas, S.",
+  "location": "Public Affairs Building 2325",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0201E%20%20%20&class_id=621033201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0201e001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 201E",
+  "title": "Topics in History: Modern Europe: Reading Cultural Landscapes",
+  "department": "HIST",
+  "instructor": "Penny, H.",
+  "location": "Rolfe Hall 3115",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0201E%20%20%20&class_id=621033200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0201wc001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST C201W",
+  "title": "Topics in History: World: Religion in Early Modern Europe and European Empires",
+  "department": "HIST",
+  "instructor": "Subrahmanyam, S.",
+  "location": "Bunche Hall 1265",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0201W%20C%20&class_id=621100200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0210m_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST M210",
+  "title": "Topics in Ancient Iranian History",
+  "department": "HIST",
+  "instructor": "Fabian, L.",
+  "location": "Renee and David Kaplan Hall 365",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0210%20%20M%20&class_id=621060200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0213c_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 213C",
+  "title": "History of Women, Men, and Sexuality Historiography",
+  "department": "HIST",
+  "instructor": "Marino, K.M.",
+  "location": "Haines Hall 110",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0213C%20%20%20&class_id=621073200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0246b_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 246B",
+  "title": "Introduction to U.S. History: 1790 to 1900",
+  "department": "HIST",
+  "instructor": "Madley, B.L.",
+  "location": "Bunche Hall 1265",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0246B%20%20%20&class_id=621258200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hist0282b001_27w",
+  "schoolId": "s_ucla",
+  "code": "HIST 282B",
+  "title": "Seminar: Chinese History: Seminar 1",
+  "department": "HIST",
+  "instructor": "Zhang, M.",
+  "location": "Rolfe Hall 3120",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0282B%20%20%20&class_id=621459200&class_no=%20001%20%20"
  }
 ]
