@@ -185,6 +185,8 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
   const out: AgentRun[] = [];
   const d = await detectOrgsPlatform(row.short, row.email_domain, row.orgs_host || undefined);
   const file = path.join(COLLECTED_DIR, `${row.id}.orgs.json`);
+  // 다시 모을 때 이전 파일의 링크를 지키기 위해 먼저 읽어 둔다 (아래 collect-social 뒤에서 합친다)
+  const prevOrgs: Organization[] = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : [];
   if (d) out.push(await runScript(`collect-orgs:${row.id}`, 'fetch:orgs', row.id, { ...orgsEnv(row.id, d.platform, d.host), FETCH_DRY: '1', ORGS_JSON_DIR: COLLECTED_DIR }));
   else out.push(await record({ task: `collect-orgs:${row.id}`, schoolId: row.id, status: 'rejected', startedAt: new Date().toISOString(), summary: { error: 'no public club directory found', tried: row.orgs_host || 'guessed hosts' } }));
   // 학생회: 디렉터리에 없을 때만 더한다
@@ -222,6 +224,20 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
     }
     const pub = r.orgs.filter((o) => publicLinks(o.links).some((l) => ['Website', 'Instagram', 'Facebook'].includes(l.label))).length;
     out.push(await record({ task: `collect-social:${row.id}`, schoolId: row.id, status: 'applied', startedAt, summary: { orgs: r.orgs.length, sitesRead: r.checked, gainedSocial: r.found, withPublicLink: pub, schoolFooterAccountsDropped: r.droppedShared.slice(0, 10), deadWebsiteLinksRemoved: r.deadLinks } }));
+  }
+  // 지난번에 모은 링크(웹사이트·인스타 등, 디렉터리 링크 제외)가 이번에 안 나왔으면 되살린다 — 사이트가 이번엔 다르게 응답했을 뿐 지운 게 아니다.
+  // 응답 없던 웹사이트(<id>.deadlinks.json)는 되살리지 않는다 (2026-11-04 재수집에서 7개가 빠질 뻔함)
+  if (prevOrgs.length && existsSync(file)) {
+    const deadFile = path.join(COLLECTED_DIR, `${row.id}.deadlinks.json`);
+    const dead = existsSync(deadFile) ? (JSON.parse(readFileSync(deadFile, 'utf8')) as { orgId: string; url: string }[]) : [];
+    const before = new Map(prevOrgs.map((o) => [o.id, o]));
+    let kept = 0;
+    const list = (JSON.parse(readFileSync(file, 'utf8')) as Organization[]).map((o) => {
+      const old = before.get(o.id); if (!old) return o;
+      const add = (old.links ?? []).filter((l) => !/^(Directory|Presence|MIT Engage|Cardinal Engage)$/.test(l.label) && !(o.links ?? []).some((x) => x.url === l.url) && !dead.some((x) => x.orgId === o.id && x.url === l.url));
+      kept += add.length; return add.length ? { ...o, links: [...(o.links ?? []), ...add] } : o;
+    });
+    if (kept) { writeFileSync(file, `${JSON.stringify(list, null, 1)}\n`); console.log(`  ${row.id}: kept ${kept} earlier links`); }
   }
   out.push(...(await collectCourses(row)));
 
