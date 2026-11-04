@@ -53,7 +53,7 @@ export function relabelSocialWebsites(o: Organization): Organization {
   const FORM = /^https?:\/\/(docs\.google\.com\/forms|forms\.gle|[^/]*typeform\.com|[^/]*jotform\.com|forms\.office\.com)/i;
   if (o.links?.some((l) => l.label === 'Website' && FORM.test(l.url))) o = { ...o, links: o.links.map((l) => (l.label === 'Website' && FORM.test(l.url) ? { label: 'Sign-up form', url: l.url } : l)) };
   // 단톡방 초대(WhatsApp·Slack·Telegram)도 웹사이트가 아니다 — 'Group chat' (UT·WashU·UW 등 27곳, 2026-11-04)
-  const CHAT = /^https?:\/\/(chat\.whatsapp\.com|wa\.me|join\.slack\.com|t\.me)\//i;
+  const CHAT = /^https?:\/\/(chat\.whatsapp\.com|wa\.me|join\.slack\.com|t\.me|(web\.|www\.)?groupme\.com)\//i;
   if (o.links?.some((l) => l.label === 'Website' && CHAT.test(l.url))) o = { ...o, links: o.links.map((l) => (l.label === 'Website' && CHAT.test(l.url) ? { label: 'Group chat', url: l.url } : l)) };
   // 메일링 리스트 가입(Mailchimp·Google Groups·Outlook 그룹·학교 메일링) — 'Mailing list' (WashU 등 15곳, 2026-11-04)
   const LIST = /^https?:\/\/([^/]*\.)?(mailchi\.mp|eepurl\.com|list-manage\.com|groups\.google\.com|outlook\.office365\.com\/groups)|^https?:\/\/lists\.[a-z.]+\//i;
@@ -61,6 +61,9 @@ export function relabelSocialWebsites(o: Organization): Organization {
   // 공유 문서(Google Docs·Drive·Dropbox·Canva) — 'Document' (14곳, 2026-11-04)
   const DOC = /^https?:\/\/(docs\.google\.com\/(document|presentation|spreadsheets)|drive\.google\.com|(www\.)?dropbox\.com|(www\.)?canva\.com\/design)/i;
   if (o.links?.some((l) => l.label === 'Website' && DOC.test(l.url))) o = { ...o, links: o.links.map((l) => (l.label === 'Website' && DOC.test(l.url) ? { label: 'Document', url: l.url } : l)) };
+  // 다른 SNS(LinkedIn·YouTube·X·TikTok)를 웹사이트 칸에 넣은 경우 — 그 SNS 이름으로 (socialLinks 와 같은 라벨, 2026-11-04)
+  const SOCIAL: [RegExp, string][] = [[/^https?:\/\/([a-z]+\.)?linkedin\.com\//i, 'LinkedIn'], [/^https?:\/\/((www|m)\.)?(youtube\.com|youtu\.be)\//i, 'YouTube'], [/^https?:\/\/((www|mobile)\.)?(twitter|x)\.com\//i, 'X'], [/^https?:\/\/(www\.)?tiktok\.com\//i, 'TikTok']];
+  if (o.links?.some((l) => l.label === 'Website' && SOCIAL.some(([re]) => re.test(l.url)))) o = { ...o, links: o.links.map((l) => { const hit = l.label === 'Website' ? SOCIAL.find(([re]) => re.test(l.url)) : undefined; return hit && !o.links!.some((x) => x.label === hit[1]) ? { label: hit[1], url: l.url } : l; }) };
   if (!o.links?.some((l) => l.label === 'Website' && /(^|\.)(instagram|facebook|fb|discord)\.(com|gg)$/i.test(hostOf(l.url)))) return o;
   const links = o.links.map((l) => {
     if (l.label !== 'Website') return l;

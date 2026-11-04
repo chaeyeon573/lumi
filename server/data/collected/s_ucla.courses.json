@@ -116054,5 +116054,1479 @@
   "termCode": "27W",
   "units": 4,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HIST%20%20%20&crs_catlg_no=0282B%20%20%20&class_id=621459200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_fiatlx0019001_27w",
+  "schoolId": "s_ucla",
+  "code": "FIAT LX 19",
+  "title": "African Millionaires and Billionaires in and out of America",
+  "department": "FIAT LX",
+  "instructor": "Lydon, G.E.",
+  "location": "Bunche Hall 3211",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=FIAT%20LX&crs_catlg_no=0019%20%20%20%20&class_id=858057101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_fiatlx0019005_27w",
+  "schoolId": "s_ucla",
+  "code": "FIAT LX 19",
+  "title": "Becoming a Changemaker and How to Make Meaningful Change",
+  "department": "FIAT LX",
+  "instructor": "Jacobs, M.S.",
+  "location": "Public Affairs Building 1323",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=FIAT%20LX&crs_catlg_no=0019%20%20%20%20&class_id=858057105&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_fiatlx0019004_27w",
+  "schoolId": "s_ucla",
+  "code": "FIAT LX 19",
+  "title": "Design, Creativity, and Authorship of Websites Built with Artificial Intelligence",
+  "department": "FIAT LX",
+  "instructor": "Stefans, B.K.",
+  "location": "Bunche Hall 3164",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=FIAT%20LX&crs_catlg_no=0019%20%20%20%20&class_id=858057104&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_hnrs0050m_27w",
+  "schoolId": "s_ucla",
+  "code": "HNRS M50",
+  "title": "Creating Your Roadmap (Sem 1)",
+  "department": "HNRS",
+  "instructor": "Mattenson, L.M.",
+  "location": "Public Affairs Building 1323",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:50"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HNRS%20%20%20&crs_catlg_no=0050%20%20M%20&class_id=222035200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hnrs0050m_27w_2",
+  "schoolId": "s_ucla",
+  "code": "HNRS M50",
+  "title": "Creating Your Roadmap (Sem 2)",
+  "department": "HNRS",
+  "instructor": "Mattenson, L.M.",
+  "location": "Public Affairs Building 1323",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:20"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HNRS%20%20%20&crs_catlg_no=0050%20%20M%20&class_id=222035201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_hnrs0086_27w",
+  "schoolId": "s_ucla",
+  "code": "HNRS 86",
+  "title": "Psychology of Fear",
+  "department": "HNRS",
+  "instructor": "Mazey, K.A.",
+  "location": "La Kretz Hall 100",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HNRS%20%20%20&crs_catlg_no=0086%20%20%20%20&class_id=222270200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hnrs0101e_27w",
+  "schoolId": "s_ucla",
+  "code": "HNRS 101E",
+  "title": "Leading Undergraduate Seminars",
+  "department": "HNRS",
+  "instructor": "Mott, C.M.",
+  "location": "Renee and David Kaplan Hall A68",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HNRS%20%20%20&crs_catlg_no=0101E%20%20%20&class_id=222307200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hnrs0105_27w",
+  "schoolId": "s_ucla",
+  "code": "HNRS 105",
+  "title": "Racial and Ethnic Disparities in Healthcare",
+  "department": "HNRS",
+  "instructor": "Alexander, C.J.",
+  "location": "Public Affairs Building 2238",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HNRS%20%20%20&crs_catlg_no=0105%20%20%20%20&class_id=222332200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hnrs0119_27w",
+  "schoolId": "s_ucla",
+  "code": "HNRS 119",
+  "title": "Hollywood and Cultural Diversity in America",
+  "department": "HNRS",
+  "instructor": "Franklin, A.S.",
+  "location": "Public Affairs Building 2317",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HNRS%20%20%20&crs_catlg_no=0119%20%20%20%20&class_id=222415200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hnrs0159_27w",
+  "schoolId": "s_ucla",
+  "code": "HNRS 159",
+  "title": "Feminism, Art, and Metaphors of Trauma",
+  "department": "HNRS",
+  "instructor": "Abramson, T.L. Abramson, P.R.",
+  "location": "Mathematical Sciences 5118",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HNRS%20%20%20&crs_catlg_no=0159%20%20%20%20&class_id=222254200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hnrs0179m_27w",
+  "schoolId": "s_ucla",
+  "code": "HNRS M179",
+  "title": "Critical Vision: History of Art as Social and Political Commentary",
+  "department": "HNRS",
+  "instructor": "Von Blum, P.",
+  "location": "Public Affairs Building 1337",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HNRS%20%20%20&crs_catlg_no=0179%20%20M%20&class_id=222774200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_humgen0211m_27w",
+  "schoolId": "s_ucla",
+  "code": "HUM GEN M211",
+  "title": "Mathematical and Statistical Phylogenetics",
+  "department": "HUM GEN",
+  "instructor": "Suchard, M.A.",
+  "location": "Life Sciences 5236",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HUM%20GEN&crs_catlg_no=0211%20%20M%20&class_id=676066200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_humgen0236b_27w",
+  "schoolId": "s_ucla",
+  "code": "HUM GEN 236B",
+  "title": "Advanced Human Genetics B: Genetics and Genomics Aspects",
+  "department": "HUM GEN",
+  "instructor": "Pajukanta, P.E. Ophoff, R.A. Luo, C. Kruglyak, L. Yin, Y. Benjamin, D.J.",
+  "location": "Gonda (Goldschmied) Neuroscience and Genetics Research Center 6303 Gonda (Goldschmied) Neuroscience and Genetics Research Center 6303",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:00"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HUM%20GEN&crs_catlg_no=0236B%20%20%20&class_id=676220200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_humgen0282_27w",
+  "schoolId": "s_ucla",
+  "code": "HUM GEN 282",
+  "title": "Topics on Scientific Careers",
+  "department": "HUM GEN",
+  "instructor": "Arboleda, V.A. Pimentel, H.J.",
+  "location": "Gonda (Goldschmied) Neuroscience and Genetics Research Center 6303",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HUM%20GEN&crs_catlg_no=0282%20%20%20%20&class_id=676492200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_humgen0400b_27w",
+  "schoolId": "s_ucla",
+  "code": "HUM GEN 400B",
+  "title": "Principles and Practices in Medical Genetics 2",
+  "department": "HUM GEN",
+  "instructor": "Araujo, R.L. Morales Corado, J.",
+  "location": "Center for the Health Sciences 14214U",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HUM%20GEN&crs_catlg_no=0400B%20%20%20&class_id=676601200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_humgen0402_27w",
+  "schoolId": "s_ucla",
+  "code": "HUM GEN 402",
+  "title": "Reproductive Genetics in Practice",
+  "department": "HUM GEN",
+  "instructor": "Murali, A. Shamshoni, J.S.",
+  "location": "Center for the Health Sciences 14214U Marion Davies Children's Center 12407",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HUM%20GEN&crs_catlg_no=0402%20%20%20%20&class_id=676606200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_humgen0405_27w",
+  "schoolId": "s_ucla",
+  "code": "HUM GEN 405",
+  "title": "Professional Development in Genetic Counseling",
+  "department": "HUM GEN",
+  "instructor": "Dorrani, N.",
+  "location": "Center for the Health Sciences 17323 Center for the Health Sciences 17323",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:20",
+    "end": "11:10"
+   },
+   {
+    "day": 3,
+    "start": "08:30",
+    "end": "10:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HUM%20GEN&crs_catlg_no=0405%20%20%20%20&class_id=676614200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_humgen0410_27w",
+  "schoolId": "s_ucla",
+  "code": "HUM GEN 410",
+  "title": "Translational Genomics",
+  "department": "HUM GEN",
+  "instructor": "Quinn, E. Zhang, W.",
+  "location": "Marion Davies Children's Center 12407",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HUM%20GEN&crs_catlg_no=0410%20%20%20%20&class_id=676620200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_humgen0411_27w",
+  "schoolId": "s_ucla",
+  "code": "HUM GEN 411",
+  "title": "Foundations in Genetic Counseling Research",
+  "department": "HUM GEN",
+  "instructor": "Gorman, N.",
+  "location": "Marion Davies Children's Center 12407",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HUM%20GEN&crs_catlg_no=0411%20%20%20%20&class_id=676622200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hngar0101b_27w",
+  "schoolId": "s_ucla",
+  "code": "HNGAR 101B",
+  "title": "Elementary Hungarian",
+  "department": "HNGAR",
+  "instructor": "Borbely, M.",
+  "location": "Renee and David Kaplan Hall 305",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HNGAR%20%20&crs_catlg_no=0101B%20%20%20&class_id=417307200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ilamer0018b_27w",
+  "schoolId": "s_ucla",
+  "code": "IL AMER 18B",
+  "title": "Elementary Quechua",
+  "department": "IL AMER",
+  "instructor": "de La Torre Amagua",
+  "location": "Bunche Hall 2121",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=IL%20AMER&crs_catlg_no=0018B%20%20%20&class_id=426055200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_iestd0160c_27w",
+  "schoolId": "s_ucla",
+  "code": "I E STD C160",
+  "title": "Indo-European Comparative Mythology and Poetics",
+  "department": "I E STD",
+  "instructor": "Clayton, J.B.",
+  "location": "Dodd Hall 247",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=I%20E%20STD&crs_catlg_no=0160%20%20C%20&class_id=227660200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_iestd0168bm_27w",
+  "schoolId": "s_ucla",
+  "code": "I E STD M168B",
+  "title": "Elementary Hittite",
+  "department": "I E STD",
+  "instructor": "Yates, A.D.",
+  "location": "Renee and David Kaplan Hall 365",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=I%20E%20STD&crs_catlg_no=0168B%20M%20&class_id=227710200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_iestd0210_27w",
+  "schoolId": "s_ucla",
+  "code": "I E STD 210",
+  "title": "Indo-European Morphology",
+  "department": "I E STD",
+  "instructor": "Yates, A.D.",
+  "location": "Dodd Hall 232",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=I%20E%20STD&crs_catlg_no=0210%20%20%20%20&class_id=627061201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_iestd0260c_27w",
+  "schoolId": "s_ucla",
+  "code": "I E STD C260",
+  "title": "Indo-European Comparative Mythology and Poetics",
+  "department": "I E STD",
+  "instructor": "Clayton, J.B.",
+  "location": "Dodd Hall 247",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=I%20E%20STD&crs_catlg_no=0260%20%20C%20&class_id=627360200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_iestd0280a001_27w",
+  "schoolId": "s_ucla",
+  "code": "I E STD 280A",
+  "title": "Seminar: Indo-European Linguistics: Elementary Tocharian B Language",
+  "department": "I E STD",
+  "instructor": "Gunkel, D.",
+  "location": "Dodd Hall 232",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=I%20E%20STD&crs_catlg_no=0280A%20%20%20&class_id=627491200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_iestd0281a001_27w",
+  "schoolId": "s_ucla",
+  "code": "I E STD 281A",
+  "title": "Seminar: Indo-European Linguistics: Seminar 1",
+  "department": "I E STD",
+  "instructor": "Jamison, S. Gunkel, D. Yates, A.D.",
+  "location": "Dodd Hall 248",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "20:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=I%20E%20STD&crs_catlg_no=0281A%20%20%20&class_id=627496200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_indo0002_27w",
+  "schoolId": "s_ucla",
+  "code": "INDO 2",
+  "title": "Introductory Indonesian",
+  "department": "INDO",
+  "location": "Moore Hall 1003",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INDO%20%20%20&crs_catlg_no=0002%20%20%20%20&class_id=378006200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_indo0005_27w",
+  "schoolId": "s_ucla",
+  "code": "INDO 5",
+  "title": "Intermediate Indonesian",
+  "department": "INDO",
+  "location": "Moore Hall 1003 Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INDO%20%20%20&crs_catlg_no=0005%20%20%20%20&class_id=378015200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_indo0100b_27w",
+  "schoolId": "s_ucla",
+  "code": "INDO 100B",
+  "title": "Advanced Indonesian",
+  "department": "INDO",
+  "location": "Moore Hall 1003",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INDO%20%20%20&crs_catlg_no=0100B%20%20%20&class_id=378301200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0010_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 10",
+  "title": "Information and Power",
+  "department": "INF STD",
+  "instructor": "Sutherland, T. TA",
+  "location": "Renee and David Kaplan Hall 135",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0010%20%20%20%20&class_id=228030101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0115c_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD C115",
+  "title": "Introduction to Information Literacies",
+  "department": "INF STD",
+  "instructor": "Ciccone, P.",
+  "location": "Education and Information Studies Building 121",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0115%20%20C%20&class_id=228708101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0135m_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD M135",
+  "title": "Environmental Justice through Lens of Media and Education",
+  "department": "INF STD",
+  "instructor": "Share, J.",
+  "location": "Moore Hall 2120",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0135%20%20M%20&class_id=228731100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0202_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 202",
+  "title": "History of Books and Literacy Technologies",
+  "department": "INF STD",
+  "instructor": "Montoya, R.D.",
+  "location": "Education and Information Studies Building 121",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "08:30",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0202%20%20%20%20&class_id=628013201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0214_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 214",
+  "title": "Informatics: Principles and Practices",
+  "department": "INF STD",
+  "instructor": "Srinivasan, R.",
+  "location": "Moore Hall 3030",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "20:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0214%20%20%20%20&class_id=628085201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0234_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 234",
+  "title": "Contemporary Children&#39;s Literature",
+  "department": "INF STD",
+  "instructor": "Fabicon, J.K.",
+  "location": "Education and Information Studies Building 121",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "17:30",
+    "end": "21:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0234%20%20%20%20&class_id=628204201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0241_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 241",
+  "title": "Digital Preservation",
+  "department": "INF STD",
+  "instructor": "Gilliland, A.J.",
+  "location": "Education and Information Studies Building 111",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "12:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0241%20%20%20%20&class_id=628247201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0244m_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD M244",
+  "title": "Collection Management for Archives, Libraries, and Museums",
+  "department": "INF STD",
+  "instructor": "Drolet, E.",
+  "location": "Education and Information Studies Building 121",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:30",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0244%20%20M%20&class_id=628265201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0260_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 260",
+  "title": "Description and Access",
+  "department": "INF STD",
+  "instructor": "Leazer, G.H.",
+  "location": "Public Affairs Building 1246",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "12:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0260%20%20%20%20&class_id=628361200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0270_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 270",
+  "title": "Systems and Infrastructures",
+  "department": "INF STD",
+  "instructor": "Raval, N.A.",
+  "location": "Royce Hall 190",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:30",
+    "end": "20:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0270%20%20%20%20&class_id=628420201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0275_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 275",
+  "title": "Community Media and Design",
+  "department": "INF STD",
+  "instructor": "Nguyen, C.A.",
+  "location": "Moore Hall 2120",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0275%20%20%20%20&class_id=628452201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0280_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 280",
+  "title": "Social Science Research Methodology for Information Studies",
+  "department": "INF STD",
+  "instructor": "Caswell, M.",
+  "location": "Education and Information Studies Building 121",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0280%20%20%20%20&class_id=628481201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0285_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 285",
+  "title": "Oral History Principles and Practice",
+  "department": "INF STD",
+  "instructor": "Vo Dang, T.",
+  "location": "Education and Information Studies Building 111",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:30",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0285%20%20%20%20&class_id=628505201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0290_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 290",
+  "title": "Research Seminar: Information Studies",
+  "department": "INF STD",
+  "instructor": "Vo Dang, T.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0290%20%20%20%20&class_id=628541200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0291b001_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 291B",
+  "title": "Special Topics in Theory of Information Studies: Seminar 1",
+  "department": "INF STD",
+  "instructor": "Srinivasan, R.",
+  "location": "Education and Information Studies Building 121",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0291B%20%20%20&class_id=628549201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0298b001_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 298B",
+  "title": "Special Topics in Methodology of Information Studies: Seminar 1",
+  "department": "INF STD",
+  "instructor": "Caswell, M.",
+  "location": "Education and Information Studies Building",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0298B%20%20%20&class_id=628589201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0400_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 400",
+  "title": "Professional Development and Portfolio Design",
+  "department": "INF STD",
+  "instructor": "Leazer, G.H.",
+  "location": "Education and Information Studies Building 111",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0400%20%20%20%20&class_id=628601201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0438a_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 438A",
+  "title": "Seminar: Advanced Issues in Archival Science--Archival Appraisal",
+  "department": "INF STD",
+  "instructor": "Gilliland, A.J.",
+  "location": "Education and Information Studies Building 111",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0438A%20%20%20&class_id=628677201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0461_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 461",
+  "title": "Descriptive Cataloging",
+  "department": "INF STD",
+  "instructor": "Furner, J.",
+  "location": "Education and Information Studies Building 111",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "13:30",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0461%20%20%20%20&class_id=628723201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_infstd0481_27w",
+  "schoolId": "s_ucla",
+  "code": "INF STD 481",
+  "title": "Moving Image Media and Technologies",
+  "department": "INF STD",
+  "instructor": "Everett, D.",
+  "location": "Education and Information Studies Building 111",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "17:30",
+    "end": "21:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INF%20STD&crs_catlg_no=0481%20%20%20%20&class_id=628762201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_iastd0050_27w",
+  "schoolId": "s_ucla",
+  "code": "I A STD 50",
+  "title": "Introduction to Latin America",
+  "department": "I A STD",
+  "instructor": "Taub, B.",
+  "location": "Royce Hall 154",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=I%20A%20STD&crs_catlg_no=0050%20%20%20%20&class_id=407150200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_iastd0188001_27w",
+  "schoolId": "s_ucla",
+  "code": "I A STD 188",
+  "title": "Special Courses in International and Area Studies: Comparative Analysis of Cultural Values in Taiwan and East Asia through Film",
+  "department": "I A STD",
+  "instructor": "Kao, Y.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=I%20A%20STD&crs_catlg_no=0188%20%20%20%20&class_id=407828200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_iastd0191001_27w",
+  "schoolId": "s_ucla",
+  "code": "I A STD 191",
+  "title": "Variable Topics Senior Research Seminars: International and Area Studies: Chocolate and Coffee in the Americas",
+  "department": "I A STD",
+  "instructor": "Taub, B.",
+  "location": "Bunche Hall 3117",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=I%20A%20STD&crs_catlg_no=0191%20%20%20%20&class_id=407846201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_intldv0140_27w",
+  "schoolId": "s_ucla",
+  "code": "INTL DV 140",
+  "title": "Decolonizing Political Economy: Colonialism and Development",
+  "department": "INTL DV",
+  "instructor": "Sexton, J.S.",
+  "location": "Public Affairs Building 2214",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INTL%20DV&crs_catlg_no=0140%20%20%20%20&class_id=229541200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_intldv0160001_27w",
+  "schoolId": "s_ucla",
+  "code": "INTL DV 160",
+  "title": "Selected Topics in International Development Studies: Development After Wars and Political Conflicts: The Case of Post-Khmer-Rouge Cambodia",
+  "department": "INTL DV",
+  "instructor": "Heuveline, P.C.",
+  "location": "Dodd Hall 78",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INTL%20DV&crs_catlg_no=0160%20%20%20%20&class_id=229660200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_intldv0191001_27w",
+  "schoolId": "s_ucla",
+  "code": "INTL DV 191",
+  "title": "Variable Topics Research Seminars: International Development Studies--Senior Seminar: Gender and Development in East Asia",
+  "department": "INTL DV",
+  "instructor": "Jung-Kim, J.J.",
+  "location": "Public Affairs Building 1323",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INTL%20DV&crs_catlg_no=0191%20%20%20%20&class_id=229846201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_intldv0191002_27w",
+  "schoolId": "s_ucla",
+  "code": "INTL DV 191",
+  "title": "Variable Topics Research Seminars: International Development Studies--Senior Seminar: Global Social Movements: Research and Researchers in Social Change",
+  "department": "INTL DV",
+  "instructor": "Appel, H.C.",
+  "location": "Haines Hall A20",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INTL%20DV&crs_catlg_no=0191%20%20%20%20&class_id=229846202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_intldv0193_27w",
+  "schoolId": "s_ucla",
+  "code": "INTL DV 193",
+  "title": "Colloquia and Speaker Series",
+  "department": "INTL DV",
+  "instructor": "Heuveline, P.C.",
+  "location": "Bunche Hall 3123",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=INTL%20DV&crs_catlg_no=0193%20%20%20%20&class_id=229858200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_imstd0155_27w",
+  "schoolId": "s_ucla",
+  "code": "I M STD 155",
+  "title": "Theory, Research, and Methods in Study of International Migration",
+  "department": "I M STD",
+  "instructor": "Agadjanian, V.",
+  "location": "Moore Hall 1003",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=I%20M%20STD&crs_catlg_no=0155%20%20%20%20&class_id=437630200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_iranian0001b_27w",
+  "schoolId": "s_ucla",
+  "code": "IRANIAN 1B",
+  "title": "Elementary Persian",
+  "department": "IRANIAN",
+  "instructor": "Pourzangi, B.",
+  "location": "Boelter Hall 4283 Public Affairs Building 2325",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=IRANIAN&crs_catlg_no=0001B%20%20%20&class_id=291002200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_iranian0020b_27w",
+  "schoolId": "s_ucla",
+  "code": "IRANIAN 20B",
+  "title": "Accelerated Elementary Persian",
+  "department": "IRANIAN",
+  "instructor": "Shayani, S.",
+  "location": "Royce Hall 148",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=IRANIAN&crs_catlg_no=0020B%20%20%20&class_id=291062200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_iranian0102b_27w",
+  "schoolId": "s_ucla",
+  "code": "IRANIAN 102B",
+  "title": "Intermediate Persian",
+  "department": "IRANIAN",
+  "instructor": "Shayani, S.",
+  "location": "Public Affairs Building 1270",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=IRANIAN&crs_catlg_no=0102B%20%20%20&class_id=291340200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_iranian0103b_27w",
+  "schoolId": "s_ucla",
+  "code": "IRANIAN 103B",
+  "title": "Advanced Persian",
+  "department": "IRANIAN",
+  "instructor": "Shayani, S.",
+  "location": "Moore Hall 1003",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=IRANIAN&crs_catlg_no=0103B%20%20%20&class_id=291352200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_iranian0163cm_27w",
+  "schoolId": "s_ucla",
+  "code": "IRANIAN CM163",
+  "title": "Archaeology of Iran",
+  "department": "IRANIAN",
+  "instructor": "Fabian, L.",
+  "location": "Dodd Hall 170",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=IRANIAN&crs_catlg_no=0163%20%20CM&class_id=291678200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_iranian0178m_27w",
+  "schoolId": "s_ucla",
+  "code": "IRANIAN M178",
+  "title": "Introduction to History and Culture of Iranian Jews",
+  "department": "IRANIAN",
+  "instructor": "Pirnazar, N.",
+  "location": "Public Affairs Building 1256",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=IRANIAN&crs_catlg_no=0178%20%20M%20&class_id=291768200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_iranian0210m001_27w",
+  "schoolId": "s_ucla",
+  "code": "IRANIAN M210",
+  "title": "Topics in Ancient Iranian History: Seminar 1",
+  "department": "IRANIAN",
+  "instructor": "Fabian, L.",
+  "location": "Renee and David Kaplan Hall 365",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=IRANIAN&crs_catlg_no=0210%20%20M%20&class_id=691060200&class_no=%20001%20%20"
  }
 ]

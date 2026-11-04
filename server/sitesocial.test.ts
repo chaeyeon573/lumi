@@ -94,3 +94,9 @@ test('relabelSocialWebsites: a Google Doc given as "Website" is a document (2026
   const o = relabelSocialWebsites({ id: 'x', name: 'Y', links: [{ label: 'Website', url: 'https://docs.google.com/document/d/abc/edit' }] } as never);
   assert.equal(o.links?.[0].label, 'Document');
 });
+
+test('relabelSocialWebsites: GroupMe / LinkedIn / YouTube given as "Website" get their own labels (2026-11-04)', async () => {
+  const { relabelSocialWebsites } = await import('./sources/sitesocial');
+  const o = relabelSocialWebsites({ id: 'x', name: 'Y', links: [{ label: 'Website', url: 'https://groupme.com/join_group/123/abc' }, { label: 'Website', url: 'https://www.linkedin.com/company/y-club' }, { label: 'Website', url: 'https://www.youtube.com/@yclub' }] } as never);
+  assert.deepEqual(o.links?.map((l) => l.label), ['Group chat', 'LinkedIn', 'YouTube']);
+});

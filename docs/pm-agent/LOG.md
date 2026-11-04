@@ -1968,3 +1968,10 @@
 - UCLA batch: Winter 2027 67+ subjects, 4,737+ classes.
 - Spot check classes (UW): BIOC 405, ENGL 182, L ARCH 401, PHG 512 (grad), STAT 180 — match.
 - Spot check clubs: MSU Women and Minorities in Economics, UMass Vocal Suspects match; UGA Wesley/Freshley site misspelled in the directory (ugawelsey.org, does not resolve); UConn UNESCO site does not answer; Syracuse WINS (fixed above).
+
+## 2026-11-04 20:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **Other social links filed as "Website":** scanned all files — GroupMe 249 → `Group chat`; LinkedIn 25, YouTube 15, X 3, TikTok 1 → their own labels (same labels as `socialLinks`); 9 Instagram, 2 Facebook, 5 Discord that the older relabel had not reached → labeled. 309 labels changed, nothing removed (relabelSocialWebsites; test). Linktree / Beacons link-in-bio pages stay "Website".
+- UCLA batch: Winter 2027 83+ subjects, 4,939+ classes.
+- Spot check classes (Georgia Tech): ARCH 8833 (grad), ECE 2040, MATH 1551, PHYS 2211, VIP 4603 — match.
+- Spot check clubs: Lehigh Coffee Club, Dartmouth Student Government, Caltech ASCIT, USF Delta Delta Delta match (Brown lists no website field).
