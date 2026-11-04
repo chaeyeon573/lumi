@@ -88121,5 +88121,2933 @@
   "termCode": "27W",
   "units": 2,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CH%20ENGR&crs_catlg_no=0299%20%20%20%20&class_id=769594200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014a_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14A",
+  "title": "General Chemistry for Life Scientists I (Lec 1)",
+  "department": "CHEM",
+  "instructor": "Scerri, E.R.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014A%20%20%20&class_id=142042200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14A",
+  "title": "General Chemistry for Life Scientists I (Lec 2)",
+  "department": "CHEM",
+  "instructor": "Scerri, E.R.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014A%20%20%20&class_id=142042220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014ae_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14AE",
+  "title": "General Chemistry for Life Scientists I--Enhanced",
+  "department": "CHEM",
+  "instructor": "Anderson, L. Deweese, D.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014AE%20%20&class_id=142036200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014b_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14B",
+  "title": "General Chemistry for Life Scientists II (Lec 1)",
+  "department": "CHEM",
+  "instructor": "Ow, F.P.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014B%20%20%20&class_id=142043200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014b_27w_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14B",
+  "title": "General Chemistry for Life Scientists II (Lec 2)",
+  "department": "CHEM",
+  "instructor": "Lavelle, L.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014B%20%20%20&class_id=142043220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014b_27w_3",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14B",
+  "title": "General Chemistry for Life Scientists II (Lec 3)",
+  "department": "CHEM",
+  "instructor": "Lavelle, L.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014B%20%20%20&class_id=142043240&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014be_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14BE",
+  "title": "General Chemistry for Life Scientists II--Enhanced",
+  "department": "CHEM",
+  "instructor": "Deweese, D. Quinlan, M.E.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014BE%20%20&class_id=142037200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014bl_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14BL",
+  "title": "General and Organic Chemistry Laboratory I (Lec 1)",
+  "department": "CHEM",
+  "instructor": "Ngo, C.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "08:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014BL%20%20&class_id=142117200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014bl_27w_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14BL",
+  "title": "General and Organic Chemistry Laboratory I (Lec 2)",
+  "department": "CHEM",
+  "instructor": "Ngo, C. Xia, K.T.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014BL%20%20&class_id=142117220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014bl_27w_3",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14BL",
+  "title": "General and Organic Chemistry Laboratory I (Lec 3)",
+  "department": "CHEM",
+  "instructor": "Pathuri, R.S.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "08:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014BL%20%20&class_id=142117240&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014c_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14C",
+  "title": "Structure of Organic Molecules (Lec 1)",
+  "department": "CHEM",
+  "instructor": "Pham, H.V.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014C%20%20%20&class_id=142044200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014c_27w_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14C",
+  "title": "Structure of Organic Molecules (Lec 2)",
+  "department": "CHEM",
+  "instructor": "Pham, H.V.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014C%20%20%20&class_id=142044230&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014cl_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14CL",
+  "title": "General and Organic Chemistry Laboratory II",
+  "department": "CHEM",
+  "instructor": "Pang, J.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014CL%20%20&class_id=142119200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014d_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14D",
+  "title": "Organic Reactions and Pharmaceuticals (Lec 1)",
+  "department": "CHEM",
+  "instructor": "Ow, F.P.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014D%20%20%20&class_id=142045200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0014d_27w_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 14D",
+  "title": "Organic Reactions and Pharmaceuticals (Lec 2)",
+  "department": "CHEM",
+  "instructor": "Casas, A.M.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0014D%20%20%20&class_id=142045220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0020a_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 20A",
+  "title": "Chemical Structure",
+  "department": "CHEM",
+  "instructor": "Wilson, P.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0020A%20%20%20&class_id=142140200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0020b_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 20B",
+  "title": "Chemical Energetics and Change (Lec 1)",
+  "department": "CHEM",
+  "instructor": "Wu, E.C. Weiss, P.S.",
+  "location": "Moore Hall 100",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0020B%20%20%20&class_id=142141200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0020b_27w_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 20B",
+  "title": "Chemical Energetics and Change (Lec 2)",
+  "department": "CHEM",
+  "instructor": "Gelbart, W.M. Wu, E.C.",
+  "location": "Broad Art Center 2160E",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0020B%20%20%20&class_id=142141220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0020bh_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 20BH",
+  "title": "Chemical Energetics and Change (Honors)",
+  "department": "CHEM",
+  "instructor": "Weiss, P.S.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0020BH%20%20&class_id=142144200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0020l_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 20L",
+  "title": "General Chemistry Laboratory (Lec 1)",
+  "department": "CHEM",
+  "instructor": "Henary, M.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0020L%20%20%20&class_id=142142200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0020l_27w_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 20L",
+  "title": "General Chemistry Laboratory (Lec 2)",
+  "department": "CHEM",
+  "instructor": "Pang, J. Anderson, L.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0020L%20%20%20&class_id=142142220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0030b_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 30B",
+  "title": "Organic Chemistry II: Reactivity, Synthesis, and Spectroscopy",
+  "department": "CHEM",
+  "instructor": "Gutierrez, O.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0030B%20%20%20&class_id=142091200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0030bl_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 30BL",
+  "title": "Organic Chemistry Laboratory I",
+  "department": "CHEM",
+  "instructor": "Aguilar-Romero, J. Xia, K.T.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "08:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0030BL%20%20&class_id=142187200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0030c_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 30C",
+  "title": "Organic Chemistry III: Reactivity, Synthesis, and Biomolecules",
+  "department": "CHEM",
+  "instructor": "Maynard, H.D.",
+  "location": "Young Hall 2200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0030C%20%20%20&class_id=142092200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0030cl_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 30CL",
+  "title": "Organic Chemistry Laboratory II",
+  "department": "CHEM",
+  "instructor": "Aguilar-Romero, J.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0030CL%20%20&class_id=142189200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0098xa_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 98XA",
+  "title": "PEERS Collaborative Learning Workshops for Life Sciences Majors (Lab 1)",
+  "department": "CHEM",
+  "instructor": "Hasson, T.W.",
+  "location": "Mathematical Sciences 5138",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0098XA%20%20&class_id=142290200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0098xa_27w_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 98XA",
+  "title": "PEERS Collaborative Learning Workshops for Life Sciences Majors (Lab 2)",
+  "department": "CHEM",
+  "instructor": "Hasson, T.W. Gonzalez Ramirez,",
+  "location": "Rolfe Hall 3121",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0098XA%20%20&class_id=142290201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0098xa_27w_3",
+  "schoolId": "s_ucla",
+  "code": "CHEM 98XA",
+  "title": "PEERS Collaborative Learning Workshops for Life Sciences Majors (Lab 3)",
+  "department": "CHEM",
+  "instructor": "Hasson, T.W. Gonzalez Ramirez,",
+  "location": "Rolfe Hall 3116",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0098XA%20%20&class_id=142290202&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0098xb_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 98XB",
+  "title": "PEERS Collaborative Learning Workshops for Physical Sciences and Engineering Majors",
+  "department": "CHEM",
+  "instructor": "Hasson, T.W.",
+  "location": "Public Affairs Building 1284",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0098XB%20%20&class_id=142291200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0110a_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 110A",
+  "title": "Physical Chemistry: Chemical Thermodynamics",
+  "department": "CHEM",
+  "instructor": "Kavner, A.",
+  "location": "Young Hall 2200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0110A%20%20%20&class_id=142350200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0110b_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 110B",
+  "title": "Topics in Physical Chemistry",
+  "department": "CHEM",
+  "instructor": "Bensimon, D.B.",
+  "location": "Young Hall 1044",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0110B%20%20%20&class_id=142357200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0114_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 114",
+  "title": "Physical Chemistry Laboratory",
+  "department": "CHEM",
+  "instructor": "Bouchard, L.",
+  "location": "Young Hall 1044",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0114%20%20%20%20&class_id=142210200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0115bc_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM C115B",
+  "title": "Advanced Quantum Chemistry with Laboratory II",
+  "department": "CHEM",
+  "instructor": "Fay, T.P.",
+  "location": "Young Hall 3069",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0115B%20C%20&class_id=142416200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0123bc_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM C123B",
+  "title": "Advanced Thermodynamics and Statistical Mechanics with Laboratory II",
+  "department": "CHEM",
+  "instructor": "Schwartz, B.J.",
+  "location": "Young Hall 3069",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0123B%20C%20&class_id=142456200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0143ac_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM C143A",
+  "title": "Structure and Mechanism in Organic Chemistry",
+  "department": "CHEM",
+  "instructor": "Doyle, A.G.",
+  "location": "Molecular Sciences Building 3440",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:30",
+    "end": "10:00"
+   },
+   {
+    "day": 3,
+    "start": "08:30",
+    "end": "10:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0143A%20C%20&class_id=142570200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0153a_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 153A",
+  "title": "Biochemistry: Introduction to Structure, Enzymes, and Metabolism (Lec 1)",
+  "department": "CHEM",
+  "instructor": "Lannan, R. Wilson, P.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0153A%20%20%20&class_id=142637200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0153a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "CHEM 153A",
+  "title": "Biochemistry: Introduction to Structure, Enzymes, and Metabolism (Lec 2)",
+  "department": "CHEM",
+  "instructor": "Lannan, R. Tinoco Valencia, A",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0153A%20%20%20&class_id=142637220&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0153b_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 153B",
+  "title": "Biochemistry: DNA, RNA, and Protein Synthesis",
+  "department": "CHEM",
+  "instructor": "Kappel, K.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0153B%20%20%20&class_id=142638200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0153c_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 153C",
+  "title": "Biochemistry: Biosynthetic and Energy Metabolism and Its Regulation",
+  "department": "CHEM",
+  "instructor": "Clarke, S.G.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0153C%20%20%20&class_id=142639200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0153l_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 153L",
+  "title": "Biochemical Methods I",
+  "department": "CHEM",
+  "instructor": "Hong-Hermesdorf, A",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0153L%20%20%20&class_id=142641200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0154_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 154",
+  "title": "Biochemical Methods II",
+  "department": "CHEM",
+  "instructor": "Nakamoto, S.S.",
+  "location": "Young Hall CS76",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0154%20%20%20%20&class_id=142640200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0155c_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM C155",
+  "title": "Mitochondria in Medicine, Biology, and Chemistry",
+  "department": "CHEM",
+  "instructor": "Koehler, C.M.",
+  "location": "Center for the Health Sciences 23105A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0155%20%20C%20&class_id=142648200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0156_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 156",
+  "title": "Physical Biochemistry",
+  "department": "CHEM",
+  "instructor": "Lindert, S.",
+  "location": "Young Hall 2200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0156%20%20%20%20&class_id=142650200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0164c_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM C164",
+  "title": "Free Radicals in Biology and Medicine",
+  "department": "CHEM",
+  "instructor": "Clarke, C.F. Schmitt, D.L.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0164%20%20C%20&class_id=142684200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0176c_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM C176",
+  "title": "Group Theory and Applications to Inorganic Chemistry",
+  "department": "CHEM",
+  "instructor": "Nava, M.J.",
+  "location": "Young Hall 1044",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0176%20%20C%20&class_id=142756200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0184_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 184",
+  "title": "Chemical Instrumentation",
+  "department": "CHEM",
+  "instructor": "Loo, J.A.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0184%20%20%20%20&class_id=142772200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0192c_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 192C",
+  "title": "Undergraduate Assistant Education Practicum in Chemistry and Biochemistry",
+  "department": "CHEM",
+  "instructor": "Lavelle, L.",
+  "location": "Young Hall 4067",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0192C%20%20%20&class_id=142854200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0192em_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM M192E",
+  "title": "Introduction to Collaborative Learning Theory and Practice",
+  "department": "CHEM",
+  "instructor": "Shaked, S. Parker, H.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0192E%20M%20&class_id=142865200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0206_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 206",
+  "title": "Chemistry of Biology Seminar",
+  "department": "CHEM",
+  "instructor": "Harran, P.G.",
+  "location": "Molecular Sciences Building 5241",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0206%20%20%20%20&class_id=542036200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0215bc_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM C215B",
+  "title": "Advanced Quantum Chemistry with Laboratory II",
+  "department": "CHEM",
+  "instructor": "Fay, T.P.",
+  "location": "Young Hall 3069",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0215B%20C%20&class_id=542092200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0218_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 218",
+  "title": "Chemistry Student Exit Seminar",
+  "department": "CHEM",
+  "instructor": "Weiss, P.S.",
+  "location": "Young Hall 3069",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0218%20%20%20%20&class_id=542108200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0223bc_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM C223B",
+  "title": "Advanced Thermodynamics and Statistical Mechanics with Laboratory II",
+  "department": "CHEM",
+  "instructor": "Schwartz, B.J.",
+  "location": "Young Hall 3069",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0223B%20C%20&class_id=542145200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0228_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 228",
+  "title": "Chemical Physics Seminar",
+  "department": "CHEM",
+  "instructor": "Bouchard, L.",
+  "location": "Mathematical Sciences 4000A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0228%20%20%20%20&class_id=542170200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0230a_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 230A",
+  "title": "Methods of Structural Molecular Biology: X-ray Crystallography and Electron Microscopy",
+  "department": "CHEM",
+  "instructor": "Eisenberg, D.S. Rodriguez, J.A. Cascio, D.D.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0230A%20%20%20&class_id=542181200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0232b_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 232B",
+  "title": "Skills Development for Cell and Molecular Biologists",
+  "department": "CHEM",
+  "instructor": "Torres, J.",
+  "location": "Young Hall 3069",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0232B%20%20%20&class_id=542201200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0232d_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 232D",
+  "title": "Career Development for Cell and Molecular Biologists",
+  "department": "CHEM",
+  "instructor": "Torres, J.",
+  "location": "Slichter Hall 2834",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0232D%20%20%20&class_id=542194200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0243ac_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM C243A",
+  "title": "Structure and Mechanism in Organic Chemistry",
+  "department": "CHEM",
+  "instructor": "Doyle, A.G.",
+  "location": "Molecular Sciences Building 3440",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:30",
+    "end": "10:00"
+   },
+   {
+    "day": 3,
+    "start": "08:30",
+    "end": "10:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0243A%20C%20&class_id=542268200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0244b_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 244B",
+  "title": "Strategy and Design in Organic Synthesis",
+  "department": "CHEM",
+  "instructor": "Harran, P.G.",
+  "location": "Young Hall 1044",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0244B%20%20%20&class_id=542276200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0247_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 247",
+  "title": "Organic Colloquium",
+  "department": "CHEM",
+  "instructor": "Kwon, O.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0247%20%20%20%20&class_id=542295200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0248_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 248",
+  "title": "Organic Chemistry Student Seminar",
+  "department": "CHEM",
+  "instructor": "Rubin, Y.F.",
+  "location": "Young Hall 2200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0248%20%20%20%20&class_id=542309200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0249a_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 249A",
+  "title": "Methods of Materials Chemistry: Synthesis, Characterization, Physical Properties, Applications, and Devices",
+  "department": "CHEM",
+  "instructor": "Liu, C.",
+  "location": "Young Hall 3069",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0249A%20%20%20&class_id=542313200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0249b_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 249B",
+  "title": "Methods of Chemical Synthesis:cvdganic/Inorganic/Organometallic",
+  "department": "CHEM",
+  "instructor": "Doyle, A.K.",
+  "location": "Young Hall 3069",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0249B%20%20%20&class_id=542314200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0249c_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 249C",
+  "title": "Methods of Physical/Theoretical/Biophysical Chemistry",
+  "department": "CHEM",
+  "instructor": "Palermo, G.",
+  "location": "Young Hall 3069",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0249C%20%20%20&class_id=542316200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0255cm_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM CM255",
+  "title": "Mitochondria in Medicine, Biology, and Chemistry",
+  "department": "CHEM",
+  "instructor": "Koehler, C.M.",
+  "location": "Center for the Health Sciences 23105A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0255%20%20CM&class_id=542364200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0257_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 257",
+  "title": "Physical Chemistry of Biological Macromolecules",
+  "department": "CHEM",
+  "instructor": "Reisler, E. Petrovic, S. Rodriguez, J.A.",
+  "location": "Young Hall 1044",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0257%20%20%20%20&class_id=542389200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0264c_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM C264",
+  "title": "Free Radicals in Biology and Medicine",
+  "department": "CHEM",
+  "instructor": "Clarke, C.F. Schmitt, D.L.",
+  "location": "Young Hall 4216",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0264%20%20C%20&class_id=542435200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0268_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 268",
+  "title": "Biochemistry Research Seminar",
+  "department": "CHEM",
+  "instructor": "Lindert, S.",
+  "location": "Renee and David Kaplan Hall 169",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "15:30",
+    "end": "18:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0268%20%20%20%20&class_id=542469200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0276ac_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM C276A",
+  "title": "Group Theory and Applications to Inorganic Chemistry",
+  "department": "CHEM",
+  "instructor": "Nava, M.J.",
+  "location": "Young Hall 1044",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0276A%20C%20&class_id=542511200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0278_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 278",
+  "title": "Inorganic Chemistry Student Seminar",
+  "department": "CHEM",
+  "instructor": "Duan, X.",
+  "location": "Renee and David Kaplan Hall 169",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0278%20%20%20%20&class_id=542526200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0285c_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM C285",
+  "title": "Materials Chemistry Laboratory",
+  "department": "CHEM",
+  "instructor": "Tolbert, S.H.",
+  "location": "Young Hall 3069",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0285%20%20C%20&class_id=542555200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chem0400_27w",
+  "schoolId": "s_ucla",
+  "code": "CHEM 400",
+  "title": "Safety in Chemical and Biochemical Research",
+  "department": "CHEM",
+  "instructor": "Merlic, C.A.",
+  "location": "Young Hall 2200",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHEM%20%20%20&crs_catlg_no=0400%20%20%20%20&class_id=542600200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0010b_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 10B",
+  "title": "Introduction to Chicana/Chicano Studies: Social Structure and Contemporary Conditions",
+  "department": "CCAS",
+  "instructor": "Garcia Hernandez,",
+  "location": "Haines Hall 39",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0010B%20%20%20&class_id=849030200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0018m_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS M18",
+  "title": "Leadership and Student-Initiated Retention",
+  "department": "CCAS",
+  "instructor": "Romero, R.C.",
+  "location": "Student Activities Center B2",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0018%20%20M%20&class_id=849054200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0089001_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 89",
+  "title": "Honors Seminars: Seminar 1",
+  "department": "CCAS",
+  "instructor": "Garcia Hernandez, Bonitz, D.",
+  "location": "Haines Hall 110",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "19:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0089%20%20%20%20&class_id=849267101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0104_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 104",
+  "title": "Comedy and Culture: Your Humorous Life",
+  "department": "CCAS",
+  "instructor": "Frias, C.M.",
+  "location": "Public Affairs Building 2270",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0104%20%20%20%20&class_id=849324100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0106cm_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS CM106",
+  "title": "Health in Chicano/Latino Population",
+  "department": "CCAS",
+  "instructor": "Hayes-Bautista, D.",
+  "location": "Haines Hall A18",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0106%20%20CM&class_id=849453200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0107c_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS C107",
+  "title": "Latina/Latino Families in U.S.",
+  "department": "CCAS",
+  "instructor": "Abrego, L.J.",
+  "location": "Bunche Hall 1209B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0107%20%20C%20&class_id=849342101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0116m_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS M116",
+  "title": "Chicano/Latino Music in U.S.",
+  "department": "CCAS",
+  "instructor": "Loza, S.J.",
+  "location": "Schoenberg Music Building 1100",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:50"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0116%20%20M%20&class_id=849472100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0117_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 117",
+  "title": "Chicana/Chicano Images in Mexican Film and Literature",
+  "department": "CCAS",
+  "instructor": "Martinez, C.M.",
+  "location": "Public Affairs Building 2250",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0117%20%20%20%20&class_id=849402100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0143_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 143",
+  "title": "Mestizaje: History of Diverse Racial/Cultural Roots of Mexico",
+  "department": "CCAS",
+  "instructor": "Romero, R.C.",
+  "location": "Haines Hall A18",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0143%20%20%20%20&class_id=849549100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0149_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 149",
+  "title": "Gendered Politics and Chicana/Latina Political Participation",
+  "department": "CCAS",
+  "instructor": "Andalon, R. Salazar, P.",
+  "location": "Perloff Hall 1102",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0149%20%20%20%20&class_id=849620100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0152_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 152",
+  "title": "Disposable People: U.S. Deportation and Repatriation Campaigns",
+  "department": "CCAS",
+  "instructor": "Steinberg, M.G.",
+  "location": "Broad Art Center 2100A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0152%20%20%20%20&class_id=849612100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0155bm_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS M155B",
+  "title": "U.S. Latino Politics",
+  "department": "CCAS",
+  "instructor": "Barreto, M.A.",
+  "location": "Bunche Hall 2209A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0155B%20M%20&class_id=849664100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0170xpm_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 170XPM",
+  "title": "Topics in Community Engagement",
+  "department": "CCAS",
+  "instructor": "Suhr, C.",
+  "location": "Haines Hall A28",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0170XPM%20&class_id=849740100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0187c_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 187C",
+  "title": "Aztec Art",
+  "department": "CCAS",
+  "instructor": "Ellis, H.",
+  "location": "Rolfe Hall 3126",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0187C%20%20%20&class_id=849827100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0188001_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 188",
+  "title": "Special Courses in Chicana/o and Central American Studies: Seminar 1",
+  "department": "CCAS",
+  "instructor": "No instructors",
+  "location": "Bunche Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0188%20%20%20%20&class_id=849829101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0191001_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 191",
+  "title": "Variable Topics Research Seminars: Chicana/o and Central American Studies: Critical Race Theory and Latino Critical Theory in Education",
+  "department": "CCAS",
+  "instructor": "Chavez Moreno, L.C",
+  "location": "Kaufman Hall 101",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0191%20%20%20%20&class_id=849846101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0191003_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 191",
+  "title": "Variable Topics Research Seminars: Chicana/o and Central American Studies: Redlining",
+  "department": "CCAS",
+  "instructor": "Carpio, G.G.",
+  "location": "Bunche Hall 1221A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0191%20%20%20%20&class_id=849846103&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0191002_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 191",
+  "title": "Variable Topics Research Seminars: Chicana/o and Central American Studies: Seminar 2",
+  "department": "CCAS",
+  "instructor": "No instructors",
+  "location": "Dodd Hall",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0191%20%20%20%20&class_id=849846102&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0194_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 194",
+  "title": "Research Group Seminars: Chicana/Chicano Studies and Central American Studies",
+  "department": "CCAS",
+  "instructor": "Carpio, G.G.",
+  "location": "Bunche Hall 2121",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0194%20%20%20%20&class_id=849864101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0201_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 201",
+  "title": "Activist Scholarship and Intersectional Methodologies Seminar",
+  "department": "CCAS",
+  "instructor": "Carpio, G.G.",
+  "location": "Rolfe Hall 3115",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0201%20%20%20%20&class_id=449006201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0239_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 239",
+  "title": "Digital Methods for Research and Presentations",
+  "department": "CCAS",
+  "instructor": "Lopez, A.",
+  "location": "Haines Hall A6",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0239%20%20%20%20&class_id=449200100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0254_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 254",
+  "title": "Los Angeles: History, Space, and Culture",
+  "department": "CCAS",
+  "instructor": "Espino, V.",
+  "location": "Public Affairs Building 1329",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0254%20%20%20%20&class_id=449324100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0276c_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS C276",
+  "title": "Health in Chicano/Latino Population",
+  "department": "CCAS",
+  "instructor": "Hayes-Bautista, D.",
+  "location": "Haines Hall A18",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0276%20%20C%20&class_id=449456200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ccas0291001_27w",
+  "schoolId": "s_ucla",
+  "code": "CCAS 291",
+  "title": "Variable Topics Research Seminars: Chicana/o and Central American Studies: Critical Race Theory and Latinxs",
+  "department": "CCAS",
+  "instructor": "Chavez Moreno, L.C",
+  "location": "Haines Hall A74",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CCAS%20%20%20&crs_catlg_no=0291%20%20%20%20&class_id=449546201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0002_27w",
+  "schoolId": "s_ucla",
+  "code": "CHIN 2",
+  "title": "Elementary Modern Chinese (Lec 1)",
+  "department": "CHIN",
+  "location": "Haines Hall A20 Public Affairs Building 1278",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0002%20%20%20%20&class_id=259006200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0002_27w_2",
+  "schoolId": "s_ucla",
+  "code": "CHIN 2",
+  "title": "Elementary Modern Chinese (Lec 2)",
+  "department": "CHIN",
+  "location": "Public Affairs Building 1256 Public Affairs Building 1278",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0002%20%20%20%20&class_id=259006210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0002_27w_3",
+  "schoolId": "s_ucla",
+  "code": "CHIN 2",
+  "title": "Elementary Modern Chinese (Lec 3)",
+  "department": "CHIN",
+  "location": "Haines Hall A20 Public Affairs Building 2232",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0002%20%20%20%20&class_id=259006203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0002_27w_4",
+  "schoolId": "s_ucla",
+  "code": "CHIN 2",
+  "title": "Elementary Modern Chinese (Lec 4)",
+  "department": "CHIN",
+  "location": "Bunche Hall 3153 Royce Hall 162",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0002%20%20%20%20&class_id=259006204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0002_27w_5",
+  "schoolId": "s_ucla",
+  "code": "CHIN 2",
+  "title": "Elementary Modern Chinese (Lec 5)",
+  "department": "CHIN",
+  "location": "Mathematical Sciences 5225 Haines Hall A20 Rolfe Hall 3129",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0002%20%20%20%20&class_id=259006205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0002a_27w",
+  "schoolId": "s_ucla",
+  "code": "CHIN 2A",
+  "title": "Elementary Modern Chinese for Advanced Beginners (Lec 1)",
+  "department": "CHIN",
+  "location": "Bunche Hall 3123 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0002A%20%20%20&class_id=259007200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0002a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "CHIN 2A",
+  "title": "Elementary Modern Chinese for Advanced Beginners (Lec 2)",
+  "department": "CHIN",
+  "location": "Royce Hall 150 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0002A%20%20%20&class_id=259007201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0005_27w",
+  "schoolId": "s_ucla",
+  "code": "CHIN 5",
+  "title": "Intermediate Modern Chinese (Lec 1)",
+  "department": "CHIN",
+  "location": "Renee and David Kaplan Hall A32 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0005%20%20%20%20&class_id=259015200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0005_27w_2",
+  "schoolId": "s_ucla",
+  "code": "CHIN 5",
+  "title": "Intermediate Modern Chinese (Lec 2)",
+  "department": "CHIN",
+  "location": "Bunche Hall 3156 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0005%20%20%20%20&class_id=259015201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0005a_27w",
+  "schoolId": "s_ucla",
+  "code": "CHIN 5A",
+  "title": "Intermediate Modern Chinese for Advanced Students",
+  "department": "CHIN",
+  "location": "Haines Hall A6 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0005A%20%20%20&class_id=259016200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0040_27w",
+  "schoolId": "s_ucla",
+  "code": "CHIN 40",
+  "title": "Popular Culture in Modern Chinese Societies",
+  "department": "CHIN",
+  "instructor": "Berry, M.S.",
+  "location": "Bunche Hall 2209A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0040%20%20%20%20&class_id=259120200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0070_27w",
+  "schoolId": "s_ucla",
+  "code": "CHIN 70",
+  "title": "Ink of Imagination: Exploration of Premodern Chinese Literature",
+  "department": "CHIN",
+  "instructor": "Mai, H.",
+  "location": "Public Affairs Building 2270",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0070%20%20%20%20&class_id=259210200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0100b_27w",
+  "schoolId": "s_ucla",
+  "code": "CHIN 100B",
+  "title": "Advanced Modern Chinese (Lec 1)",
+  "department": "CHIN",
+  "location": "Renee and David Kaplan Hall A68",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0100B%20%20%20&class_id=259301200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0100b_27w_2",
+  "schoolId": "s_ucla",
+  "code": "CHIN 100B",
+  "title": "Advanced Modern Chinese (Lec 2)",
+  "department": "CHIN",
+  "location": "Public Affairs Building 1256",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0100B%20%20%20&class_id=259301201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0102b_27w",
+  "schoolId": "s_ucla",
+  "code": "CHIN 102B",
+  "title": "Advanced Chinese for International Business",
+  "department": "CHIN",
+  "location": "Haines Hall A6",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0102B%20%20%20&class_id=259313200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0103_27w",
+  "schoolId": "s_ucla",
+  "code": "CHIN 103",
+  "title": "Topics in Chinese Language and Culture",
+  "department": "CHIN",
+  "instructor": "Tao, H.",
+  "location": "Bunche Hall 2160",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0103%20%20%20%20&class_id=259318200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0105a_27w",
+  "schoolId": "s_ucla",
+  "code": "CHIN 105A",
+  "title": "Advanced Chinese Rhetoric and Critical Thinking",
+  "department": "CHIN",
+  "location": "Haines Hall A28",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0105A%20%20%20&class_id=259330200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0110b_27w",
+  "schoolId": "s_ucla",
+  "code": "CHIN 110B",
+  "title": "Introduction to Classical Chinese",
+  "department": "CHIN",
+  "location": "Royce Hall 160",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0110B%20%20%20&class_id=259361200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0137c_27w",
+  "schoolId": "s_ucla",
+  "code": "CHIN C137",
+  "title": "How to Read Chinese Poetry",
+  "department": "CHIN",
+  "instructor": "Mai, H.",
+  "location": "Bunche Hall 3170",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0137%20%20C%20&class_id=259521200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0150bc_27w",
+  "schoolId": "s_ucla",
+  "code": "CHIN C150B",
+  "title": "Chinese Literature in Translation: Traditional Narrative and Fiction",
+  "department": "CHIN",
+  "instructor": "Wu, Y.",
+  "location": "Bunche Hall 3164",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0150B%20C%20&class_id=259604200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_chin0159001_27w",
+  "schoolId": "s_ucla",
+  "code": "CHIN 159",
+  "title": "Variable Topics in Culture and Society in China: The Ming in History, Fiction, and Fantasy",
+  "department": "CHIN",
+  "instructor": "Wu, Y.",
+  "location": "Bunche Hall 3164",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=CHIN%20%20%20&crs_catlg_no=0159%20%20%20%20&class_id=259654200&class_no=%20001%20%20"
  }
 ]

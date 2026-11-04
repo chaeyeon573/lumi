@@ -1932,3 +1932,10 @@
 - UCLA batch: Winter 2027 continuing.
 - Spot check classes (CMU): 05-891 (grad), 42-782 (grad), 54-471, 76-101, 95-883 (grad) — match.
 - Spot check clubs: Northwestern SWE, Illinois Space Society, UT Orthodox Christian Fellowship match; Georgetown IRAP site does not answer; UCSB Engaging Humanities (fixed above).
+
+## 2026-11-04 15:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- Tulane: the search keeps results in the session and shows them at /Results.aspx, but a plain POST of the form is not accepted (results page stays empty; a required field or client-side step is missing). Stopped for today; queue note stays.
+- UCLA batch: Winter 2027 28+ subjects, 3,821+ classes.
+- Spot check classes (Maryland): ARHU158Y, CMSC436, ENMA300, LING660 (grad), UNIV100 — match (ARHU158Y title re-checked directly: identical).
+- Spot check clubs: Penn Rangoli, Cornell Latine Graduate Student Coalition, Columbia CU Records, JHU Mentoring Assistance Peer Program, Emory Goizueta Consulting Group — match.
