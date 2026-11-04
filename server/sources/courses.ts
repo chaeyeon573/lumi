@@ -1128,6 +1128,55 @@ async function uiuc(): Promise<CatalogCourse[]> {
   return [...new Map(out.map((c) => [c.id, c])).values()];
 }
 
+// ─── GWU: my.gwu.edu/mod/pws (Schedule of Classes, 공개). 전공 페이지(courses.cfm?campId=1&termId=&subjId=)가 쪽마다 나뉜다(POST pageNum).
+// 굵은 줄(crseRow1, secondary 아님) = 본 분반(강의·세미나, 제목 있음). 숨은 secondary 줄 = 함께 듣는 실험·토론이라 넣지 않는다.
+const GWU = 'https://my.gwu.edu/mod/pws';
+const GWU_DAY: Record<string, number> = { M: 0, T: 1, W: 2, R: 3, F: 4, S: 5, U: 6 };
+export function gwuToCourses(html: string, termCode: string, label: string): CatalogCourse[] {
+  const out: CatalogCourse[] = []; const secOf = new Map<string, string>();
+  const td = (h: string) => [...h.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map((m) => m[1]);
+  const txt = (h = '') => decodeEntities(h.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, ' ').replace(/[ \t]+/g, ' ')).trim();
+  for (const row of html.matchAll(/<tr class="[^"]*crseRow1[^"]*"[^>]*>([\s\S]*?)<\/tr>/g)) {
+    if (/secondaryCoursetable/.test(row[0].slice(0, 200))) continue;
+    const c = td(row[1]); if (c.length < 10) continue;
+    const subj = txt(/<span[^>]*>\s*([A-Z&]+)\s*<\/span>/.exec(c[2])?.[1]); const num = txt(/<span[^>]*>\s*([0-9A-Z]+)\s*<\/span>\s*<\/A>/i.exec(c[2])?.[1]);
+    if (!subj || !num) continue;
+    const code = `${subj} ${num}`; const sec = txt(c[3]); const title = txt(c[4]);
+    const lines = txt(c[8]).split('\n').map((x) => x.trim()).filter(Boolean); const meetings: Meeting[] = [];
+    for (let i = 0; i + 1 < lines.length; i += 2) {
+      const tm = /(\d{1,2}:\d{2}[AP]M)\s*-\s*(\d{1,2}:\d{2}[AP]M)/i.exec(lines[i + 1]); if (!tm || !/^[MTWRFSU]+$/.test(lines[i])) continue;
+      const st = to24(tm[1]), en = to24(tm[2]); if (!st || !en) continue;
+      for (const ch of lines[i]) meetings.push({ day: GWU_DAY[ch], start: st, end: en });
+    }
+    if (!meetings.length) continue;
+    const baseId = `${courseId('s_gwu', code)}_${termCode}`; const id = out.some((o) => o.id === baseId) ? `${baseId}_${sec.toLowerCase()}` : baseId; if (out.some((o) => o.id === id)) continue; secOf.set(id, sec);
+    const units = Number(txt(c[5])); const ins = txt(c[6]); const loc = txt(c[7]);
+    out.push({ id, schoolId: 's_gwu', code, title, department: subj, instructor: ins && !/^(staff|tba)$/i.test(ins) ? ins : undefined, location: loc || undefined, meetings: uniq(meetings), term: label, termCode, units: Number.isFinite(units) && units > 0 ? units : undefined, url: `${GWU}/courses.cfm?campId=1&termId=${termCode}&subjId=${encodeURIComponent(subj)}` });
+  }
+  for (const c of out) if (out.filter((o) => o.code === c.code).length > 1) c.title = `${c.title} (Sec ${secOf.get(c.id)})`;
+  return out;
+}
+async function gwu(): Promise<CatalogCourse[]> {
+  const get = async (u: string, body?: string) => { for (let i = 0; i < 2; i++) { try { const r = await fetch(u, { method: body ? 'POST' : 'GET', body, headers: { ...UAH, ...(body ? { 'content-type': 'application/x-www-form-urlencoded' } : {}) }, signal: AbortSignal.timeout(60_000) }); if (r.ok) { const t = await r.text(); await new Promise((res) => setTimeout(res, 700)); return t; } } catch { /* retry */ } await new Promise((res) => setTimeout(res, 4000)); } return ''; };
+  const home = await get(`${GWU}/`);
+  // 본 캠퍼스(campId=1) 최근 학기 둘 (가을 03 · 봄 01, 여름 02 제외)
+  const terms = [...new Set([...home.matchAll(/subjects\.cfm\?campId=1&termId=(\d{4}0[13])/g)].map((m) => m[1]))].sort().reverse().slice(0, 2);
+  const out: CatalogCourse[] = [];
+  for (const term of terms) {
+    const label = `${term.endsWith('03') ? 'Fall' : 'Spring'} ${term.slice(0, 4)}`;
+    const subjects = [...new Set([...(await get(`${GWU}/subjects.cfm?campId=1&termId=${term}`)).matchAll(/courses\.cfm\?campId=1&termId=\d+&subjId=([A-Z&]+)/g)].map((m) => m[1]))];
+    const before = out.length;
+    for (const subj of subjects) {
+      const url = `${GWU}/courses.cfm?campId=1&termId=${term}&subjId=${encodeURIComponent(subj)}`;
+      const first = await get(url); if (!first) continue; out.push(...gwuToCourses(first, term, label));
+      const pages = Math.max(1, ...[...first.matchAll(/goToPage\('(\d+)'\)/g)].map((m) => Number(m[1])));
+      for (let p = 2; p <= pages; p++) out.push(...gwuToCourses(await get(url, `pageNum=${p}`), term, label));
+    }
+    console.log(`  s_gwu ${label}: ${subjects.length} subjects → ${out.length - before} classes`);
+  }
+  return [...new Map(out.map((c) => [c.id, c])).values()];
+}
+
 // ─── Caltech: schedules.caltech.edu/<FA2026-27>.html — 쿼터마다 한 페이지(보고서를 HTML 로 내보낸 표, 글자 칸 순서대로 읽는다) ───
 // 칸 순서: 과목 "CS 024" → 학점 "3-3-3" → 제목 → [섹션 "01" → 교수 → "MWF 11:00 - 11:55"(24시간) → 강의실]… 시각이 두 줄로 나뉘기도 한다("OM,W 16:00 -" + "16:55").
 const CALTECH = 'https://schedules.caltech.edu';
@@ -1469,6 +1518,7 @@ export const COURSE_SOURCES: Record<string, CourseSource> = {
   sfsu: { schoolId: 's_sfsu', fetch: sfsu },
   rochester: { schoolId: 's_rochester', fetch: rochester },
   uiuc: { schoolId: 's_illinois', fetch: uiuc },
+  gwu: { schoolId: 's_gwu', fetch: gwu },
 };
 export const adapters: Record<string, () => Promise<CatalogCourse[]>> = Object.fromEntries(Object.entries(COURSE_SOURCES).map(([k, v]) => [k, v.fetch]));
 
