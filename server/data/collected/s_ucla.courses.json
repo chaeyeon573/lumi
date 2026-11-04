@@ -113127,5 +113127,1206 @@
   "termCode": "27W",
   "units": 4,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GLB%20HLT&crs_catlg_no=0160%20%20%20%20&class_id=429660200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0010b_27w",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS 10B",
+  "title": "Sociocultural History of Jazz",
+  "department": "GJ STDS",
+  "instructor": "Carter, R.D.",
+  "location": "Schoenberg Music Building 1344",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0010B%20%20%20&class_id=443031200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0022a_27w",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS 22A",
+  "title": "Global Jazz Theory I",
+  "department": "GJ STDS",
+  "instructor": "Harrison, C.A.",
+  "location": "Schoenberg Music Building B544",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0022A%20%20%20&class_id=443066200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0025m_27w",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS M25",
+  "title": "Global Pop",
+  "department": "GJ STDS",
+  "instructor": "No instructors",
+  "location": "Schoenberg Music Building",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0025%20%20M%20&class_id=443075200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0050bm_27w",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS M50B",
+  "title": "Jazz in American Culture: 1940s to Present",
+  "department": "GJ STDS",
+  "instructor": "Bolin, M.T.",
+  "location": "Schoenberg Music Building 1100",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0050B%20M%20&class_id=443172200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0055b_27w",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS 55B",
+  "title": "Essential Jazz Piano",
+  "department": "GJ STDS",
+  "instructor": "Weir, M.A.",
+  "location": "Schoenberg Music Building B431",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0055B%20%20%20&class_id=443176200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0127b_27w",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS 127B",
+  "title": "Jazz Keyboard Harmony II",
+  "department": "GJ STDS",
+  "instructor": "Hendelman, T.",
+  "location": "Schoenberg Music Building B431",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0127B%20%20%20&class_id=443465200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0129b_27w",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS 129B",
+  "title": "Jazz Theory and Improvisation II",
+  "department": "GJ STDS",
+  "instructor": "Hendelman, T.",
+  "location": "Schoenberg Music Building 1345",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0129B%20%20%20&class_id=443475200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0175_27w",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS 175",
+  "title": "Jazz Combo (Act 3)",
+  "department": "GJ STDS",
+  "instructor": "Cameron, C.",
+  "location": "Schoenberg Music Building 1440",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0175%20%20%20%20&class_id=443750203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0175_27w_4",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS 175",
+  "title": "Jazz Combo (Act 4)",
+  "department": "GJ STDS",
+  "instructor": "Miranda, R.",
+  "location": "Schoenberg Music Building 1439",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0175%20%20%20%20&class_id=443750204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0175_27w_5",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS 175",
+  "title": "Jazz Combo (Act 5)",
+  "department": "GJ STDS",
+  "instructor": "Harrison, C.A.",
+  "location": "Schoenberg Music Building 1440",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "18:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0175%20%20%20%20&class_id=443750205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0175_27w_6",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS 175",
+  "title": "Jazz Combo (Act 6)",
+  "department": "GJ STDS",
+  "instructor": "Guzman, J.A.",
+  "location": "Schoenberg Music Building 1420",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0175%20%20%20%20&class_id=443750206&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0175_27w_7",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS 175",
+  "title": "Jazz Combo (Act 7)",
+  "department": "GJ STDS",
+  "instructor": "Benjamin, D.C.",
+  "location": "Schoenberg Music Building 1325",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0175%20%20%20%20&class_id=443750207&class_no=%20007%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0175_27w_8",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS 175",
+  "title": "Jazz Combo (Act 8)",
+  "department": "GJ STDS",
+  "instructor": "Carter, R.D.",
+  "location": "Schoenberg Music Building 1343",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "18:30",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0175%20%20%20%20&class_id=443750208&class_no=%20008%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0176a001_27w",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS 176A",
+  "title": "Large Jazz Ensembles: Contemporary Jazz Ensemble: Activity 1",
+  "department": "GJ STDS",
+  "instructor": "Oba, H.M.",
+  "location": "Schoenberg Music Building 1343",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0176A%20%20%20&class_id=443753200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0176b001_27w",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS 176B",
+  "title": "Large Jazz Ensembles: Charles Mingus Ensemble: Activity 1",
+  "department": "GJ STDS",
+  "instructor": "Washington, M.",
+  "location": "Schoenberg Music Building 1343",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0176B%20%20%20&class_id=443754200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0176c001_27w",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS 176C",
+  "title": "Large Jazz Ensembles: UCLA Jazz Orchestra: Activity 1",
+  "department": "GJ STDS",
+  "instructor": "Harrison, C.A.",
+  "location": "Schoenberg Music Building 1343",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "16:30"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "16:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0176C%20%20%20&class_id=443755200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0176h001_27w",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS 176H",
+  "title": "Large Jazz Ensembles: Commercial Music Studio Ensemble: Activity 1",
+  "department": "GJ STDS",
+  "instructor": "Benjamin, D.C.",
+  "location": "Schoenberg Music Building 1343",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "19:00",
+    "end": "21:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0176H%20%20%20&class_id=443760200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_gjstds0188001_27w",
+  "schoolId": "s_ucla",
+  "code": "GJ STDS 188",
+  "title": "Special Topics in Global Jazz Studies: Lecture 1",
+  "department": "GJ STDS",
+  "instructor": "No instructors",
+  "location": "Schoenberg Music Building",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GJ%20STDS&crs_catlg_no=0188%20%20%20%20&class_id=443815200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_glblst0001_27w",
+  "schoolId": "s_ucla",
+  "code": "GLBL ST 1",
+  "title": "Introduction to Globalization",
+  "department": "GLBL ST",
+  "instructor": "Parasher, T.",
+  "location": "Public Affairs Building 2214",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GLBL%20ST&crs_catlg_no=0001%20%20%20%20&class_id=022004200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_glblst0019001_27w",
+  "schoolId": "s_ucla",
+  "code": "GLBL ST 19",
+  "title": "Perceptions of U.S. Abroad: Discussions with Visiting Fulbright Scholars",
+  "department": "GLBL ST",
+  "instructor": "Kerr, A.Z.",
+  "location": "Public Affairs Building 2317",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GLBL%20ST&crs_catlg_no=0019%20%20%20%20&class_id=022057200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_glblst0103_27w",
+  "schoolId": "s_ucla",
+  "code": "GLBL ST 103",
+  "title": "Globalization: Governance and Conflict",
+  "department": "GLBL ST",
+  "instructor": "Min, E.A.",
+  "location": "Rolfe Hall 1200",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GLBL%20ST&crs_catlg_no=0103%20%20%20%20&class_id=022318200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_glblst0160001_27w",
+  "schoolId": "s_ucla",
+  "code": "GLBL ST 160",
+  "title": "Selected Topics in Global Studies: Diaspora Politics",
+  "department": "GLBL ST",
+  "instructor": "Stein, E.",
+  "location": "Public Affairs Building 1234",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GLBL%20ST&crs_catlg_no=0160%20%20%20%20&class_id=022660200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_glblst0161m001_27w",
+  "schoolId": "s_ucla",
+  "code": "GLBL ST M161",
+  "title": "Special Topics in Global Studies and Public Policy: Global Business, Law, and Public Policy",
+  "department": "GLBL ST",
+  "instructor": "Zipperstein, S.E.",
+  "location": "Public Affairs Building 2355",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GLBL%20ST&crs_catlg_no=0161%20%20M%20&class_id=022661200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_glblst0191001_27w",
+  "schoolId": "s_ucla",
+  "code": "GLBL ST 191",
+  "title": "Variable Topics Research Seminars: Global Studies--Senior Seminar: Campaigning to Change the World from Los Angeles to United Nations",
+  "department": "GLBL ST",
+  "instructor": "Matisoff, A.",
+  "location": "Bunche Hall A152",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GLBL%20ST&crs_catlg_no=0191%20%20%20%20&class_id=022846200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_gradpd0495a_27w",
+  "schoolId": "s_ucla",
+  "code": "GRAD PD 495A",
+  "title": "Teaching Assistant Pedagogy Seminar",
+  "department": "GRAD PD",
+  "instructor": "Gueidon, E.C.",
+  "location": "Mathematical Sciences 5117",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GRAD%20PD&crs_catlg_no=0495A%20%20%20&class_id=502780200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_gradpd0496b_27w",
+  "schoolId": "s_ucla",
+  "code": "GRAD PD 496B",
+  "title": "Teaching as Research",
+  "department": "GRAD PD",
+  "instructor": "Ha, B.A.",
+  "location": "Bunche Hall 3143",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GRAD%20PD&crs_catlg_no=0496B%20%20%20&class_id=502792200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_greek0002_27w",
+  "schoolId": "s_ucla",
+  "code": "GREEK 2",
+  "title": "Elementary Greek",
+  "department": "GREEK",
+  "instructor": "Moat, C.J.",
+  "location": "Dodd Hall 162",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GREEK%20%20&crs_catlg_no=0002%20%20%20%20&class_id=149010200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_greek0009b_27w",
+  "schoolId": "s_ucla",
+  "code": "GREEK 9B",
+  "title": "Intermediate Modern Greek",
+  "department": "GREEK",
+  "instructor": "Tsaggouri, E.",
+  "location": "Bunche Hall 3123",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GREEK%20%20&crs_catlg_no=0009B%20%20%20&class_id=149029200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_greek0121_27w",
+  "schoolId": "s_ucla",
+  "code": "GREEK 121",
+  "title": "Plato",
+  "department": "GREEK",
+  "instructor": "Morgan, K.A.",
+  "location": "Dodd Hall 248",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GREEK%20%20&crs_catlg_no=0121%20%20%20%20&class_id=149426200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_greek0140001_27w",
+  "schoolId": "s_ucla",
+  "code": "GREEK 140",
+  "title": "Topics in Greek Language and Culture: Seminar 1",
+  "department": "GREEK",
+  "instructor": "Tsaggouri, E.",
+  "location": "Rolfe Hall 2117",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GREEK%20%20&crs_catlg_no=0140%20%20%20%20&class_id=149487200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_greek0200b_27w",
+  "schoolId": "s_ucla",
+  "code": "GREEK 200B",
+  "title": "History of Greek Literature",
+  "department": "GREEK",
+  "instructor": "Morgan, K.A.",
+  "location": "Dodd Hall 248",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GREEK%20%20&crs_catlg_no=0200B%20%20%20&class_id=549011200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_greek0240a_27w",
+  "schoolId": "s_ucla",
+  "code": "GREEK 240A",
+  "title": "History of Greek Language",
+  "department": "GREEK",
+  "instructor": "Gunkel, D.",
+  "location": "Dodd Hall 248",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=GREEK%20%20&crs_catlg_no=0240A%20%20%20&class_id=549352200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0019_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL 19",
+  "title": "Fiat Lux Freshman Seminars",
+  "department": "HLT POL",
+  "instructor": "Elginer, J.A.",
+  "location": "Royce Hall 162",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0019%20%20%20%20&class_id=409057200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0142_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL 142",
+  "title": "How Health Happens",
+  "department": "HLT POL",
+  "instructor": "Zimmerman, F.J.",
+  "location": "Center for the Health Sciences 43105A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0142%20%20%20%20&class_id=409550200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0149001_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL 149",
+  "title": "Variable Topics Research Seminar in Health Policy and Management: Seminar 1",
+  "department": "HLT POL",
+  "instructor": "Glenn, B.A.",
+  "location": "Royce Hall 164",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0149%20%20%20%20&class_id=409594200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0151_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL 151",
+  "title": "Reproductive Health Policy",
+  "department": "HLT POL",
+  "instructor": "Elginer, J.A.",
+  "location": "Dodd Hall 78",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0151%20%20%20%20&class_id=409605200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0201_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL 201",
+  "title": "Health Systems Organization and Financing",
+  "department": "HLT POL",
+  "instructor": "TA Cowgill, B.O.",
+  "location": "Center for the Health Sciences 33105A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "14:50"
+   },
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0201%20%20%20%20&class_id=809007200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0204bm_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL M204B",
+  "title": "Seminar: Pharmaceutical Economics and Policy",
+  "department": "HLT POL",
+  "instructor": "Lu, Z.J. TA",
+  "location": "Public Health, School of 61262",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "17:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0204B%20M%20&class_id=809025200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0205m_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL M205",
+  "title": "Pharmaceutical Policy",
+  "department": "HLT POL",
+  "instructor": "Comanor, W.S. TA",
+  "location": "Public Health, School of A1265",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0205%20%20M%20&class_id=809031200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0215_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL 215",
+  "title": "Applied Methods for Improvement/Implementation Science",
+  "department": "HLT POL",
+  "instructor": "Inkelas, M.",
+  "location": "Public Health, School of 41235",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0215%20%20%20%20&class_id=809089200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0225b_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL 225B",
+  "title": "Health Services Research Design",
+  "department": "HLT POL",
+  "instructor": "Zimmerman, F.J.",
+  "location": "Public Health, School of 41235",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0225B%20%20%20&class_id=809151200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0226b_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL 226B",
+  "title": "Readings in Health Services Research",
+  "department": "HLT POL",
+  "instructor": "Eisenberg, D.",
+  "location": "Public Health, School of 61235",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0226B%20%20%20&class_id=809157200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0227a_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL 227A",
+  "title": "Special Topics in Health Services: Seminar Series",
+  "department": "HLT POL",
+  "instructor": "Eisenberg, D.",
+  "location": "Public Health, School of 61262",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0227A%20%20%20&class_id=809164200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0232_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL 232",
+  "title": "Leadership Capstone Seminar",
+  "department": "HLT POL",
+  "instructor": "TA Jung, O.",
+  "location": "Public Health, School of 41235",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0232%20%20%20%20&class_id=809192201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0236m_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL M236",
+  "title": "Microeconomic Theory of Health Sector",
+  "department": "HLT POL",
+  "instructor": "Lu, Z.J.",
+  "location": "Public Health, School of A1265",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "14:50"
+   },
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0236%20%20M%20&class_id=809216200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0242m_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL M242",
+  "title": "Determinants of Health",
+  "department": "HLT POL",
+  "instructor": "Leifheit, K.M.",
+  "location": "Public Health, School of 61235",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0242%20%20M%20&class_id=809252200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0248m_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL M248",
+  "title": "Primary Health Care",
+  "department": "HLT POL",
+  "instructor": "Macinko, J.A.",
+  "location": "Public Health, School of 71257",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0248%20%20M%20&class_id=809283200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0249001_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL 249",
+  "title": "Advanced Research Topics in Health Policy and Management: Leading Community-Engaged Health Systems Change",
+  "department": "HLT POL",
+  "instructor": "Dotson, E.",
+  "location": "Public Health, School of 41268",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0249%20%20%20%20&class_id=809288200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0266b_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL 266B",
+  "title": "Community-Based Participatory Health Research: Methods and Applications",
+  "department": "HLT POL",
+  "instructor": "Chung, B.",
+  "location": "Off campus",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0266B%20%20%20&class_id=809397200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0274m_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL M274",
+  "title": "Health Status and Health Behaviors of Racial and Ethnic Minority Populations",
+  "department": "HLT POL",
+  "instructor": "Mays, V.M.",
+  "location": "Pritzker Hall 3572",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0274%20%20M%20&class_id=809444200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0286_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL 286",
+  "title": "American Political Institutions and Health Policy",
+  "department": "HLT POL",
+  "instructor": "Cowgill, B.O.",
+  "location": "Public Health, School of 41268",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0286%20%20%20%20&class_id=809516200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0403_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL 403",
+  "title": "Healthcare Financial Accounting",
+  "department": "HLT POL",
+  "instructor": "Galper, M.R.",
+  "location": "Public Health, School of 51279",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0403%20%20%20%20&class_id=809606200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0437_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL 437",
+  "title": "Essentials of Health Care Law",
+  "department": "HLT POL",
+  "instructor": "Pelliccioni, L.S.",
+  "location": "Public Health, School of 71257",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0437%20%20%20%20&class_id=809674200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_hltpol0441_27w",
+  "schoolId": "s_ucla",
+  "code": "HLT POL 441",
+  "title": "Data Analytics: Identifying, Collecting, and Analyzing Data in Health Care",
+  "department": "HLT POL",
+  "instructor": "Zhu, X.",
+  "location": "Center for the Health Sciences 33105A",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=HLT%20POL&crs_catlg_no=0441%20%20%20%20&class_id=809441200&class_no=%20001%20%20"
  }
 ]
