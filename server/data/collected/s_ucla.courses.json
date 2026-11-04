@@ -96848,5 +96848,2297 @@
   "termCode": "27W",
   "units": 4,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DS%20BMED&crs_catlg_no=0209%20%20%20%20&class_id=859059201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0008_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 8",
+  "title": "Media Histories",
+  "department": "DESMA",
+  "instructor": "Guo, V. Lunenfeld, P.B.",
+  "location": "Broad Art Center 2100A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0008%20%20%20%20&class_id=141025200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0022_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 22",
+  "title": "Fabrication and Materials",
+  "department": "DESMA",
+  "instructor": "The Staff Kasai, W.",
+  "location": "Broad Art Center 2250",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0022%20%20%20%20&class_id=141066200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0024_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 24",
+  "title": "Video and Motion",
+  "department": "DESMA",
+  "instructor": "Penado, Y.A. Turpin, J.A.",
+  "location": "Broad Art Center 4230",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0024%20%20%20%20&class_id=141073201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0025_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 25",
+  "title": "Typography",
+  "department": "DESMA",
+  "instructor": "Qu, M. Elliott, B.A.",
+  "location": "Broad Art Center 4250",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0025%20%20%20%20&class_id=141076200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0028_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 28",
+  "title": "Interactivity",
+  "department": "DESMA",
+  "instructor": "Harris, R. Goodwin, D.",
+  "location": "Broad Art Center 4220",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0028%20%20%20%20&class_id=141085200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0101_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 101",
+  "title": "Media Arts: Introduction",
+  "department": "DESMA",
+  "instructor": "Wilson, A.J. Huhtamo, E.I.",
+  "location": "Broad Art Center 2100A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0101%20%20%20%20&class_id=141307101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0110_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 110",
+  "title": "Tangible Media",
+  "department": "DESMA",
+  "instructor": "Huang, B. McWilliams, C.B.",
+  "location": "Broad Art Center 2250",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0110%20%20%20%20&class_id=141350101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0113_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 113",
+  "title": "Generative Art",
+  "department": "DESMA",
+  "instructor": "Harris, R. Reas, C.",
+  "location": "Broad Art Center 4240",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0113%20%20%20%20&class_id=141365101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0116_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 116",
+  "title": "Sonic Media",
+  "department": "DESMA",
+  "instructor": "Morrison, R. Burch, C.R.",
+  "location": "Broad Art Center 4230",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0116%20%20%20%20&class_id=141380321&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0126_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 126",
+  "title": "Game Engine",
+  "department": "DESMA",
+  "instructor": "Strong, A.M. Chai, H.",
+  "location": "Broad Art Center 4230",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0126%20%20%20%20&class_id=141450101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0128_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 128",
+  "title": "Worldbuilding",
+  "department": "DESMA",
+  "instructor": "Bucknell, A. Lugo, E.",
+  "location": "Broad Art Center 4230",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0128%20%20%20%20&class_id=141478666&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0141_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 141",
+  "title": "Web Design and User Interface and Experience",
+  "department": "DESMA",
+  "instructor": "Nakada, M. Penado, Y.A.",
+  "location": "Broad Art Center 4240",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0141%20%20%20%20&class_id=141545311&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0142_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 142",
+  "title": "Design Systems",
+  "department": "DESMA",
+  "instructor": "Wilson, A.J. Seu, M.",
+  "location": "Broad Art Center 4250",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0142%20%20%20%20&class_id=141550101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0145_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 145",
+  "title": "Design Research",
+  "department": "DESMA",
+  "instructor": "Kasai, W. Lunenfeld, P.B.",
+  "location": "Broad Art Center 4250",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0145%20%20%20%20&class_id=141565100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0146_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 146",
+  "title": "Ecological Arts and Justice Practice",
+  "department": "DESMA",
+  "instructor": "Mendez, R. Guo, V.",
+  "location": "Broad Art Center 4250",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0146%20%20%20%20&class_id=141570133&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0252b_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 252B",
+  "title": "Virtuality",
+  "department": "DESMA",
+  "instructor": "Rahal, S.",
+  "location": "Broad Art Center 4230",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "19:50"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0252B%20%20%20&class_id=541317200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0269_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 269",
+  "title": "Graduate Seminar",
+  "department": "DESMA",
+  "instructor": "Lunenfeld, P.B.",
+  "location": "Broad Art Center 3261",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0269%20%20%20%20&class_id=541414201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0289001_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 289",
+  "title": "Special Topics in Media Arts: Seminar 1",
+  "department": "DESMA",
+  "instructor": "Bucknell, A.",
+  "location": "Broad Art Center 3261",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0289%20%20%20%20&class_id=541535201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0299_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 299",
+  "title": "Professional Practice",
+  "department": "DESMA",
+  "instructor": "Seu, M.",
+  "location": "Broad Art Center 3261",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0299%20%20%20%20&class_id=541549200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_desma0403_27w",
+  "schoolId": "s_ucla",
+  "code": "DESMA 403",
+  "title": "Graduate Critique",
+  "department": "DESMA",
+  "instructor": "Morrison, R.",
+  "location": "Broad Art Center 3261",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DESMA%20%20&crs_catlg_no=0403%20%20%20%20&class_id=541606122&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_dgthum0101_27w",
+  "schoolId": "s_ucla",
+  "code": "DGT HUM 101",
+  "title": "Introduction to Digital Humanities",
+  "department": "DGT HUM",
+  "instructor": "Sabo, N.",
+  "location": "Royce Hall 190",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DGT%20HUM&crs_catlg_no=0101%20%20%20%20&class_id=402306200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_dgthum0110_27w",
+  "schoolId": "s_ucla",
+  "code": "DGT HUM 110",
+  "title": "User Experience and Design",
+  "department": "DGT HUM",
+  "instructor": "Sabo, N.",
+  "location": "Rolfe Hall 2118",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DGT%20HUM&crs_catlg_no=0110%20%20%20%20&class_id=402312200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_dgthum0131c_27w",
+  "schoolId": "s_ucla",
+  "code": "DGT HUM C131",
+  "title": "Geospatial Humanities: Digital Mapping and Critical Geographic Information Systems",
+  "department": "DGT HUM",
+  "instructor": "Kurtz, W.",
+  "location": "Rolfe Hall 2118",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DGT%20HUM&crs_catlg_no=0131%20%20C%20&class_id=402325200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_dgthum0150002_27w",
+  "schoolId": "s_ucla",
+  "code": "DGT HUM 150",
+  "title": "Advanced Topics in Digital Humanities: Data from the Margins",
+  "department": "DGT HUM",
+  "instructor": "Posner, M.",
+  "location": "Rolfe Hall 2118",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DGT%20HUM&crs_catlg_no=0150%20%20%20%20&class_id=402600201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_dgthum0150001_27w",
+  "schoolId": "s_ucla",
+  "code": "DGT HUM 150",
+  "title": "Advanced Topics in Digital Humanities: Digital Musicology and Global Audio Archive",
+  "department": "DGT HUM",
+  "instructor": "Mohammadi, M.",
+  "location": "Public Affairs Building 1041",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DGT%20HUM&crs_catlg_no=0150%20%20%20%20&class_id=402600200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_dgthum0150003_27w",
+  "schoolId": "s_ucla",
+  "code": "DGT HUM 150",
+  "title": "Advanced Topics in Digital Humanities: Social Media and Propaganda",
+  "department": "DGT HUM",
+  "instructor": "Huether, K.",
+  "location": "Rolfe Hall 2118",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DGT%20HUM&crs_catlg_no=0150%20%20%20%20&class_id=402600203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_dgthum0201_27w",
+  "schoolId": "s_ucla",
+  "code": "DGT HUM 201",
+  "title": "Introduction to Digital Humanities",
+  "department": "DGT HUM",
+  "instructor": "Nguyen, C.A.",
+  "location": "Moore Hall 2120",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DGT%20HUM&crs_catlg_no=0201%20%20%20%20&class_id=802006200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_dgthum0231c_27w",
+  "schoolId": "s_ucla",
+  "code": "DGT HUM C231",
+  "title": "Geospatial Humanities: Digital Mapping and Critical Geographic Information Systems",
+  "department": "DGT HUM",
+  "instructor": "Kurtz, W.",
+  "location": "Rolfe Hall 2118",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DGT%20HUM&crs_catlg_no=0231%20%20C%20&class_id=802231200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_disstd0001_27w",
+  "schoolId": "s_ucla",
+  "code": "DIS STD 1",
+  "title": "Construction of (Dis)ability and Ableism in U.S.",
+  "department": "DIS STD",
+  "instructor": "Lu, J.",
+  "location": "Renee and David Kaplan Hall A65",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DIS%20STD&crs_catlg_no=0001%20%20%20%20&class_id=028001200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_disstd0115m_27w",
+  "schoolId": "s_ucla",
+  "code": "DIS STD M115",
+  "title": "Enforcing Normalcy: Deaf and Disability Studies",
+  "department": "DIS STD",
+  "instructor": "Lewis, B.",
+  "location": "Public Affairs Building 2250",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DIS%20STD&crs_catlg_no=0115%20%20M%20&class_id=028390200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_disstd0137xp_27w",
+  "schoolId": "s_ucla",
+  "code": "DIS STD 137XP",
+  "title": "Community Engaged Learning around Autism and Neurodiversity: Identity, Belonging, and Advocacy",
+  "department": "DIS STD",
+  "instructor": "Ayoub, M.C.",
+  "location": "Royce Hall 162",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DIS%20STD&crs_catlg_no=0137XP%20%20&class_id=028527200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_disstd0138xp_27w",
+  "schoolId": "s_ucla",
+  "code": "DIS STD 138XP",
+  "title": "Applied Autism Intervention: Multidisciplinary Perspective",
+  "department": "DIS STD",
+  "instructor": "Freeman, S.F.",
+  "location": "Semel Institute for Neuroscience and HumanBehavior 78233",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:30",
+    "end": "15:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DIS%20STD&crs_catlg_no=0138XP%20%20&class_id=028534200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_disstd0161m_27w",
+  "schoolId": "s_ucla",
+  "code": "DIS STD M161",
+  "title": "Sports, Normativity, and Body",
+  "department": "DIS STD",
+  "instructor": "Hernandez, F.A.",
+  "location": "Public Affairs Building 2270",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DIS%20STD&crs_catlg_no=0161%20%20M%20&class_id=028666200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_dutch0103b_27w",
+  "schoolId": "s_ucla",
+  "code": "DUTCH 103B",
+  "title": "Elementary Dutch",
+  "department": "DUTCH",
+  "instructor": "Brier, M.F.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=DUTCH%20%20&crs_catlg_no=0103B%20%20%20&class_id=216341200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0009_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI 9",
+  "title": "Solar System and Planets",
+  "department": "EPS SCI",
+  "instructor": "Ni, P.",
+  "location": "Haines Hall 39",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0009%20%20%20%20&class_id=411027105&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0013_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI 13",
+  "title": "Natural Disasters",
+  "department": "EPS SCI",
+  "instructor": "Newman, W.I.",
+  "location": "Geology Building 3820",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "12:00"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "12:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0013%20%20%20%20&class_id=411039001&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0015_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI 15",
+  "title": "Blue Planet: Introduction to Oceanography",
+  "department": "EPS SCI",
+  "instructor": "Tripati, A.K.",
+  "location": "Moore Hall 100",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0015%20%20%20%20&class_id=411045015&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0051_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI 51",
+  "title": "Mineralogy: Earth and Planetary Materials",
+  "department": "EPS SCI",
+  "instructor": "Schauble, E.A.",
+  "location": "Geology Building 3645",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0051%20%20%20%20&class_id=411153200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0071m_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI M71",
+  "title": "Introduction to Computing for Geoscientists",
+  "department": "EPS SCI",
+  "instructor": "Mitchell, J.L.",
+  "location": "Geology Building 5655",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0071%20%20M%20&class_id=411213171&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0107c_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI C107",
+  "title": "Geochemical Cycles",
+  "department": "EPS SCI",
+  "instructor": "Young, E.D.",
+  "location": "Geology Building 4677",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0107%20%20C%20&class_id=411342106&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0112_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI 112",
+  "title": "Structural Geology",
+  "department": "EPS SCI",
+  "instructor": "He, J.",
+  "location": "Geology Building 3645",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0112%20%20%20%20&class_id=411372200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0114bcm_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI CM114B",
+  "title": "Aquatic Geomicrobiology: Environments",
+  "department": "EPS SCI",
+  "instructor": "Treude, T.I.",
+  "location": "Geology Building 4677",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:30"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0114B%20CM&class_id=411386038&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0136a_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI 136A",
+  "title": "Applied Geophysics",
+  "department": "EPS SCI",
+  "instructor": "Meng, L.",
+  "location": "Geology Building 3645",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0136A%20%20%20&class_id=411516200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0139_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI 139",
+  "title": "Engineering and Environmental Geology",
+  "department": "EPS SCI",
+  "instructor": "Lam, P.",
+  "location": "Geology Building 3645",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "20:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0139%20%20%20%20&class_id=411534122&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0150_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI 150",
+  "title": "Remote Sensing for Earth Sciences",
+  "department": "EPS SCI",
+  "instructor": "Larochelle, S. Mainzer, A.",
+  "location": "Geology Building 3645",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0150%20%20%20%20&class_id=411600033&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0154m_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI M154",
+  "title": "The Science of Our Space Environment",
+  "department": "EPS SCI",
+  "instructor": "Cao, H.",
+  "location": "Geology Building 4677",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:15"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0154%20%20M%20&class_id=411624039&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0155_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI 155",
+  "title": "Planetary Physics",
+  "department": "EPS SCI",
+  "instructor": "Benneke, B.",
+  "location": "Geology Building 5655",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0155%20%20%20%20&class_id=411630040&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0193bc_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI C193B",
+  "title": "Current Research in Earth, Planetary, and Space Sciences",
+  "department": "EPS SCI",
+  "instructor": "Schlichting, H.E.",
+  "location": "Slichter Hall 3853",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0193B%20C%20&class_id=411854053&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0200d_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI 200D",
+  "title": "Planetary Surfaces",
+  "department": "EPS SCI",
+  "instructor": "Jewitt, D.C.",
+  "location": "Geology Building 1707",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0200D%20%20%20&class_id=811004035&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0207c_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI C207",
+  "title": "Geochemical Cycles",
+  "department": "EPS SCI",
+  "instructor": "Young, E.D.",
+  "location": "Geology Building 4677",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0207%20%20C%20&class_id=811042225&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0214bcm_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI CM214B",
+  "title": "Aquatic Geomicrobiology: Environments",
+  "department": "EPS SCI",
+  "instructor": "Treude, T.I.",
+  "location": "Geology Building 4677",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:30"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0214B%20CM&class_id=811086037&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0254_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI 254",
+  "title": "Seminar Practicum: Space Physics",
+  "department": "EPS SCI",
+  "instructor": "Angelopoulos, V.",
+  "location": "Slichter Hall 3853",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0254%20%20%20%20&class_id=811325080&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0283b_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI 283B",
+  "title": "Space Physics Journal Club",
+  "department": "EPS SCI",
+  "instructor": "Angelopoulos, V.",
+  "location": "Slichter Hall 6850",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0283B%20%20%20&class_id=811499052&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0293bc_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI C293B",
+  "title": "Current Research in Earth, Planetary, and Space Sciences",
+  "department": "EPS SCI",
+  "instructor": "Schlichting, H.E.",
+  "location": "Slichter Hall 3853",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0293B%20C%20&class_id=811544054&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0294am_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI M294A",
+  "title": "Current Research in Space Physics",
+  "department": "EPS SCI",
+  "instructor": "No instructors",
+  "location": "Slichter Hall",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "15:30",
+    "end": "16:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0294A%20M%20&class_id=811550056&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0294bm_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI M294B",
+  "title": "Current Research in Space Physics",
+  "department": "EPS SCI",
+  "instructor": "Angelopoulos, V.",
+  "location": "Slichter Hall 3853",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "15:30",
+    "end": "16:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0294B%20M%20&class_id=811551200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_epssci0295a_27w",
+  "schoolId": "s_ucla",
+  "code": "EPS SCI 295A",
+  "title": "Current Research in Geophysics",
+  "department": "EPS SCI",
+  "instructor": "Meng, L.",
+  "location": "Slichter Hall 3853",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EPS%20SCI&crs_catlg_no=0295A%20%20%20&class_id=811555051&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eastds0291a001_27w",
+  "schoolId": "s_ucla",
+  "code": "EA STDS 291A",
+  "title": "Variable Topics in East Asian Studies: Japanese History and Theories of Difference",
+  "department": "EA STDS",
+  "instructor": "Wilson, J.",
+  "location": "Royce Hall 166",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EA%20STDS&crs_catlg_no=0291A%20%20%20&class_id=810546200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0101_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 101",
+  "title": "Marine Botany",
+  "department": "EE BIOL",
+  "instructor": "Kane, T.L.",
+  "location": "Life Sciences 2320",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0101%20%20%20%20&class_id=128308200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0103_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 103",
+  "title": "Plant Diversity and Evolution",
+  "department": "EE BIOL",
+  "instructor": "Zapata, F.",
+  "location": "Public Affairs Building 2270",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0103%20%20%20%20&class_id=128318200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0105_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 105",
+  "title": "Biology of Invertebrates",
+  "department": "EE BIOL",
+  "instructor": "Kane, T.L.",
+  "location": "Life Sciences 2320",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0105%20%20%20%20&class_id=128330200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0110_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 110",
+  "title": "Vertebrate Morphology",
+  "department": "EE BIOL",
+  "instructor": "Dines, J.P.",
+  "location": "Franz Hall 2258A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0110%20%20%20%20&class_id=128360200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0119ac_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL C119A",
+  "title": "Mathematical and Computational Modeling in Ecology",
+  "department": "EE BIOL",
+  "instructor": "Lloyd-Smith, J.O.",
+  "location": "Boelter Hall 9436",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0119A%20C%20&class_id=128417200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0122_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 122",
+  "title": "Ecology",
+  "department": "EE BIOL",
+  "instructor": "No instructors",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0122%20%20%20%20&class_id=128432200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0127m_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL M127",
+  "title": "Soils and Environment",
+  "department": "EE BIOL",
+  "instructor": "Okin, G.S. TA",
+  "location": "Bunche Hall A163",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0127%20%20M%20&class_id=128462200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0129_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 129",
+  "title": "Animal Behavior",
+  "department": "EE BIOL",
+  "instructor": "Pinter-Wollman, N.",
+  "location": "Haines Hall A18",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0129%20%20%20%20&class_id=128474200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0132_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 132",
+  "title": "Field Behavioral Ecology",
+  "department": "EE BIOL",
+  "instructor": "Grether, G.F.",
+  "location": "Life Sciences 1113",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "12:50"
+   },
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "12:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 8,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0132%20%20%20%20&class_id=128492200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0139m_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL M139",
+  "title": "Introduction to Chemical Oceanography",
+  "department": "EE BIOL",
+  "instructor": "TA Bianchi, D.",
+  "location": "Kinsey Science Teaching Pavilion 1200B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0139%20%20M%20&class_id=128534200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0141c_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL C141",
+  "title": "Applied Population Biology",
+  "department": "EE BIOL",
+  "instructor": "Chen, N.",
+  "location": "Life Sciences 2320",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0141%20%20C%20&class_id=128541200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0143_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 143",
+  "title": "Viral Ecology and Evolution",
+  "department": "EE BIOL",
+  "instructor": "Knowles, B.",
+  "location": "Royce Hall 362",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0143%20%20%20%20&class_id=128553200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0146c_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL C146",
+  "title": "Conservation Genomics",
+  "department": "EE BIOL",
+  "instructor": "Sork, V.",
+  "location": "Public Affairs Building 1246",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0146%20%20C%20&class_id=128571200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0149_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 149",
+  "title": "Evolutionary Genomics",
+  "department": "EE BIOL",
+  "instructor": "Garud, N.",
+  "location": "La Kretz Hall 120",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0149%20%20%20%20&class_id=128589200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0151a_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 151A",
+  "title": "Tropical Ecology",
+  "department": "EE BIOL",
+  "instructor": "Gorlitsky, L.",
+  "location": "Public Affairs Building 1246",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0151A%20%20%20&class_id=128606200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0151b_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 151B",
+  "title": "Field Tropical Ecology",
+  "department": "EE BIOL",
+  "instructor": "Shier, D.M.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "12:50"
+   },
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "12:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 8,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0151B%20%20%20&class_id=128607200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0162_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 162",
+  "title": "Plant Physiology",
+  "department": "EE BIOL",
+  "instructor": "Sack, L.",
+  "location": "Dodd Hall 121",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0162%20%20%20%20&class_id=128672200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0162l_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 162L",
+  "title": "Plant Physiology and Ecophysiology Laboratory (Lab 1)",
+  "department": "EE BIOL",
+  "instructor": "TA Sack, L.",
+  "location": "Botany Building 108",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "12:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0162L%20%20%20&class_id=128671201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0162l_27w_2",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 162L",
+  "title": "Plant Physiology and Ecophysiology Laboratory (Lab 2)",
+  "department": "EE BIOL",
+  "instructor": "TA Sack, L.",
+  "location": "Botany Building 108",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:30",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0162L%20%20%20&class_id=128671202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0162l_27w_3",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 162L",
+  "title": "Plant Physiology and Ecophysiology Laboratory (Lab 3)",
+  "department": "EE BIOL",
+  "instructor": "TA Sack, L.",
+  "location": "Botany Building 108",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "12:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0162L%20%20%20&class_id=128671203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0162l_27w_4",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 162L",
+  "title": "Plant Physiology and Ecophysiology Laboratory (Lab 4)",
+  "department": "EE BIOL",
+  "instructor": "TA Sack, L.",
+  "location": "Botany Building 108",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "13:30",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0162L%20%20%20&class_id=128671204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0167_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 167",
+  "title": "Natural History Collections in Biological Sciences",
+  "department": "EE BIOL",
+  "instructor": "Baniaga, A.E. Marcot, J.D.",
+  "location": "Haines Hall A2",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0167%20%20%20%20&class_id=128701200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0167l_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 167L",
+  "title": "Natural History Collections in Biological Sciences Laboratory (Lab 1)",
+  "department": "EE BIOL",
+  "instructor": "Baniaga, A.E. Marcot, J.D. TA",
+  "location": "Hershey Hall 148",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0167L%20%20%20&class_id=128703201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0167l_27w_2",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 167L",
+  "title": "Natural History Collections in Biological Sciences Laboratory (Lab 2)",
+  "department": "EE BIOL",
+  "instructor": "Baniaga, A.E. Marcot, J.D. TA",
+  "location": "Hershey Hall 148",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0167L%20%20%20&class_id=128703202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0167l_27w_3",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 167L",
+  "title": "Natural History Collections in Biological Sciences Laboratory (Lab 3)",
+  "department": "EE BIOL",
+  "instructor": "Baniaga, A.E. Marcot, J.D. TA",
+  "location": "Hershey Hall 148",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0167L%20%20%20&class_id=128703203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0167l_27w_4",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 167L",
+  "title": "Natural History Collections in Biological Sciences Laboratory (Lab 4)",
+  "department": "EE BIOL",
+  "instructor": "Baniaga, A.E. Marcot, J.D. TA",
+  "location": "Hershey Hall 148",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "16:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0167L%20%20%20&class_id=128703204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0169_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 169",
+  "title": "Biology of Bats: The True Superheroes",
+  "department": "EE BIOL",
+  "instructor": "Sears, K.E.",
+  "location": "Franz Hall 1178",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0169%20%20%20%20&class_id=128711200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0172c_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL C172",
+  "title": "Advanced Statistics in Ecology and Evolutionary Biology",
+  "department": "EE BIOL",
+  "instructor": "Garud, N.",
+  "location": "La Kretz Hall 120",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0172%20%20C%20&class_id=128732200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0185_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 185",
+  "title": "Evolutionary Medicine",
+  "department": "EE BIOL",
+  "instructor": "Knowles, B.",
+  "location": "Royce Hall 362",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0185%20%20%20%20&class_id=128812200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0200b_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 200B",
+  "title": "Evolutionary Biology",
+  "department": "EE BIOL",
+  "instructor": "Medina, M. Alfaro, M.E.",
+  "location": "La Kretz Garden Pavilion 100",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0200B%20%20%20&class_id=528007200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0202c_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL C202",
+  "title": "Advanced Statistics in Ecology and Evolutionary Biology",
+  "department": "EE BIOL",
+  "instructor": "Garud, N.",
+  "location": "La Kretz Hall 120",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0202%20%20C%20&class_id=528012200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0219ac_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL C219A",
+  "title": "Mathematical and Computational Modeling in Ecology",
+  "department": "EE BIOL",
+  "instructor": "Lloyd-Smith, J.O.",
+  "location": "Boelter Hall 9436",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0219A%20C%20&class_id=528117200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0241c_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL C241",
+  "title": "Applied Population Biology",
+  "department": "EE BIOL",
+  "instructor": "Chen, N.",
+  "location": "Life Sciences 2320",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0241%20%20C%20&class_id=528246200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0246c_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL C246",
+  "title": "Conservation Genomics",
+  "department": "EE BIOL",
+  "instructor": "Sork, V.",
+  "location": "Public Affairs Building 1246",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0246%20%20C%20&class_id=528271200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0250_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 250",
+  "title": "Professional Skills for Biological Research",
+  "department": "EE BIOL",
+  "instructor": "Ordway, E.",
+  "location": "La Kretz Garden Pavilion 101",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0250%20%20%20%20&class_id=528300200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0296_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 296",
+  "title": "Seminar: Ecology and Evolutionary Biology",
+  "department": "EE BIOL",
+  "instructor": "Pinter-Wollman, N.",
+  "location": "Kaufman Hall 136",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0296%20%20%20%20&class_id=528577217&class_no=%20017%20%20"
+ },
+ {
+  "id": "cc_ucla_eebiol0297003_27w",
+  "schoolId": "s_ucla",
+  "code": "EE BIOL 297",
+  "title": "Selected Topics in Ecology and Evolutionary Biology: Artificial Intelligence and the Future of Science",
+  "department": "EE BIOL",
+  "instructor": "Tingley, M.W.",
+  "location": "La Kretz Hall 100",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=EE%20BIOL&crs_catlg_no=0297%20%20%20%20&class_id=528582203&class_no=%20003%20%20"
  }
 ]

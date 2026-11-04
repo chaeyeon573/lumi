@@ -1939,3 +1939,10 @@
 - UCLA batch: Winter 2027 28+ subjects, 3,821+ classes.
 - Spot check classes (Maryland): ARHU158Y, CMSC436, ENMA300, LING660 (grad), UNIV100 — match (ARHU158Y title re-checked directly: identical).
 - Spot check clubs: Penn Rangoli, Cornell Latine Graduate Student Coalition, Columbia CU Records, JHU Mentoring Assistance Peer Program, Emory Goizueta Consulting Group — match.
+
+## 2026-11-04 16:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- Re-checked next terms: Rice Spring 2027 and Caltech Winter 2027 still not published (Caltech WI2026-27 page 404). Rice refreshed: same 2,097 classes, one line updated, nothing removed.
+- UCLA batch: Winter 2027 39+ subjects, 4,071+ classes.
+- Spot check classes (Illinois): ABE 498, BADM 538 (grad), ECON 598 (grad), MATH 416, TE 450 — saved times appear on the official course pages.
+- Spot check clubs: Purdue Cross Impact, UMD East African Student Union, UF Explore Run Club, BU Consulting Group match; UNC "Connor Community" is a residence hall community (housing.unc.edu) — left as is.
