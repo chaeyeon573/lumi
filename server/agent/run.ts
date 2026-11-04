@@ -239,6 +239,15 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
     });
     if (kept) { writeFileSync(file, `${JSON.stringify(list, null, 1)}\n`); console.log(`  ${row.id}: kept ${kept} earlier links`); }
   }
+  // 손으로 확인한 종류 고침(server/data/org-type-overrides.csv: 학교 디렉터리에 섞인 교직원·행정 모임 등) — 다시 모아도 유지
+  const ovFile = path.join(DATA_DIR, 'org-type-overrides.csv');
+  if (existsSync(ovFile) && existsSync(file)) {
+    const ov = (parseCSV(readFileSync(ovFile, 'utf8')) as unknown as { school_id: string; org_id: string; type: Organization['type'] }[]).filter((r) => r.school_id === row.id);
+    if (ov.length) {
+      const list = (JSON.parse(readFileSync(file, 'utf8')) as Organization[]).map((o) => { const r = ov.find((x) => x.org_id === o.id); return r && r.type && o.type !== r.type ? { ...o, type: r.type } : o; });
+      writeFileSync(file, `${JSON.stringify(list, null, 1)}\n`);
+    }
+  }
   out.push(...(await collectCourses(row)));
 
   return out;

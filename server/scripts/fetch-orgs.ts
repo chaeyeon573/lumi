@@ -116,7 +116,7 @@ function mapCampusGroupsOrg(schoolId: ID, host: string, o: CampusGroupsOrg): Org
     type, schoolId, parent: o.tags[0] || o.groupType || undefined, verified: false,
     description: o.mission.slice(0, 600),
     gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [],
-    links: [{ label: schoolId === 's_mit' ? 'MIT Engage' : schoolId === 's_stanford' ? 'Cardinal Engage' : 'Directory', url: `${host}/student_community?club_id=${o.id}` }, ...(o.website ? [{ label: 'Website', url: o.website }] : descriptionLinks(o.mission))], // 웹사이트 칸이 없으면 소개글에 적힌 실제 주소(UCSB·Northwestern 은 칸이 비어 있다)
+    links: [{ label: schoolId === 's_mit' ? 'MIT Engage' : schoolId === 's_stanford' ? 'Cardinal Engage' : 'Directory', url: `${host}/student_community?club_id=${o.id}` }, ...(o.website ? [{ label: 'Website', url: o.website }] : descriptionLinks(o.mission))].filter((l, i) => i === 0 || !l.url.includes(`//${new URL(host).hostname}/`)), // 디렉터리 자기 주소(로그인 필요한 CampusGroups 쪽 페이지)는 웹사이트가 아니다 (UCSB·CWRU 2026-11-04) // 웹사이트 칸이 없으면 소개글에 적힌 실제 주소(UCSB·Northwestern 은 칸이 비어 있다)
     // 디렉터리가 보여 주는 가입 상태 — “Membership is closed” 면 안 받음, 가입 체크칸이 있으면 언제든 가입 신청 가능
     ...(o.closed ? { recruitment: { title: 'Not taking new members', period: '', open: false, mode: 'closed' as const, source: 'campusgroups' } } : o.joinable ? { recruitment: { title: 'Open to join anytime', period: '', open: true, mode: 'rolling' as const, source: 'campusgroups' } } : {}),
   };

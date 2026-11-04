@@ -109,7 +109,7 @@
    "emoji": "AR",
    "hue": 64
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Department",
   "verified": false,
@@ -315,7 +315,7 @@
    "emoji": "AP",
    "hue": 80
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Resource",
   "verified": false,
@@ -620,7 +620,7 @@
    "emoji": "AU",
    "hue": 176
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Resource",
   "verified": false,
@@ -1684,7 +1684,7 @@
    "emoji": "AF",
    "hue": 344
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "University",
   "verified": false,
@@ -2290,7 +2290,7 @@
    "emoji": "B",
    "hue": 248
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Department",
   "verified": false,
@@ -2686,7 +2686,7 @@
    "emoji": "BA",
    "hue": 184
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Resource",
   "verified": false,
@@ -2851,7 +2851,7 @@
    "emoji": "BM",
    "hue": 40
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Resource",
   "verified": false,
@@ -2987,7 +2987,7 @@
    "emoji": "CS",
    "hue": 104
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Resource",
   "verified": false,
@@ -5039,7 +5039,7 @@
    "emoji": "CO",
    "hue": 136
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Resource",
   "verified": false,
@@ -5975,7 +5975,7 @@
    "emoji": "CC",
    "hue": 192
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "University",
   "verified": false,
@@ -6074,7 +6074,7 @@
    "emoji": "CT",
    "hue": 288
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Department",
   "verified": false,
@@ -7080,7 +7080,7 @@
    "emoji": "CE",
    "hue": 328
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Program",
   "verified": false,
@@ -8169,7 +8169,7 @@
    "emoji": "DG",
    "hue": 40
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Committee",
   "verified": false,
@@ -9735,7 +9735,7 @@
    "emoji": "DR",
    "hue": 8
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Resource",
   "verified": false,
@@ -10101,7 +10101,7 @@
    "emoji": "DE",
    "hue": 96
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Departmental Group",
   "verified": false,
@@ -10200,7 +10200,7 @@
    "emoji": "EE",
    "hue": 144
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Program",
   "verified": false,
@@ -10365,7 +10365,7 @@
    "emoji": "EL",
    "hue": 232
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Program",
   "verified": false,
@@ -10563,7 +10563,7 @@
    "emoji": "EC",
    "hue": 136
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Program",
   "verified": false,
@@ -10695,7 +10695,7 @@
    "emoji": "ED",
    "hue": 8
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Program",
   "verified": false,
@@ -11099,7 +11099,7 @@
    "emoji": "FP",
    "hue": 112
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Resource",
   "verified": false,
@@ -11631,7 +11631,7 @@
    "emoji": "FY",
    "hue": 248
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Departmental Group",
   "verified": false,
@@ -11664,7 +11664,7 @@
    "emoji": "FY",
    "hue": 320
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Program",
   "verified": false,
@@ -12064,7 +12064,7 @@
    "emoji": "FU",
    "hue": 312
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Program",
   "verified": false,
@@ -12097,7 +12097,7 @@
    "emoji": "FP",
    "hue": 56
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "University",
   "verified": false,
@@ -12839,7 +12839,7 @@
    "emoji": "GS",
    "hue": 16
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "University",
   "verified": false,
@@ -13639,7 +13639,7 @@
    "emoji": "HB",
    "hue": 280
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Program",
   "verified": false,
@@ -13676,7 +13676,7 @@
    "emoji": "HP",
    "hue": 264
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Resource",
   "verified": false,
@@ -13746,7 +13746,7 @@
    "emoji": "HW",
    "hue": 96
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Resource",
   "verified": false,
@@ -14199,7 +14199,7 @@
    "emoji": "IC",
    "hue": 96
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Department",
   "verified": false,
@@ -14339,7 +14339,7 @@
    "emoji": "IC",
    "hue": 184
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "University",
   "verified": false,
@@ -15597,7 +15597,7 @@
    "emoji": "LI",
    "hue": 8
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Department",
   "verified": false,
@@ -15630,7 +15630,7 @@
    "emoji": "LS",
    "hue": 232
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Departmental Group",
   "verified": false,
@@ -15729,7 +15729,7 @@
    "emoji": "LS",
    "hue": 232
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Program",
   "verified": false,
@@ -15931,7 +15931,7 @@
    "emoji": "LG",
    "hue": 160
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "University",
   "verified": false,
@@ -16258,10 +16258,6 @@
     "url": "https://community.case.edu/student_community?club_id=21099"
    },
    {
-    "label": "Website",
-    "url": "https://community.case.edu/mpac/home/"
-   },
-   {
     "label": "Instagram",
     "url": "https://www.instagram.com/maltzcenter/"
    },
@@ -16396,7 +16392,7 @@
    "emoji": "MS",
    "hue": 104
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Departmental Group",
   "verified": false,
@@ -18153,7 +18149,7 @@
    "emoji": "NY",
    "hue": 304
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Program",
   "verified": false,
@@ -19344,7 +19340,7 @@
    "emoji": "OT",
    "hue": 216
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Department",
   "verified": false,
@@ -20457,7 +20453,7 @@
    "emoji": "P",
    "hue": 208
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Department",
   "verified": false,
@@ -20523,7 +20519,7 @@
    "emoji": "PE",
    "hue": 352
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Department",
   "verified": false,
@@ -20589,7 +20585,7 @@
    "emoji": "PA",
    "hue": 16
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Program",
   "verified": false,
@@ -21921,7 +21917,7 @@
    "emoji": "RS",
    "hue": 16
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Program",
   "verified": false,
@@ -22358,7 +22354,7 @@
    "emoji": "SD",
    "hue": 120
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Departmental Group",
   "verified": false,
@@ -22391,7 +22387,7 @@
    "emoji": "SD",
    "hue": 80
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "University",
   "verified": false,
@@ -23207,7 +23203,7 @@
    "emoji": "ST",
    "hue": 232
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Resource",
   "verified": false,
@@ -24229,7 +24225,7 @@
    "emoji": "SC",
    "hue": 0
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Resource",
   "verified": false,
@@ -25033,7 +25029,7 @@
    "emoji": "SA",
    "hue": 152
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Departmental Group",
   "verified": false,
@@ -25099,7 +25095,7 @@
    "emoji": "SC",
    "hue": 336
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Department",
   "verified": false,
@@ -25767,7 +25763,7 @@
    "emoji": "SA",
    "hue": 128
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Program",
   "verified": false,
@@ -26068,7 +26064,7 @@
    "emoji": "TU",
    "hue": 72
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Resource",
   "verified": false,
@@ -26332,7 +26328,7 @@
    "emoji": "TL",
    "hue": 184
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Resource",
   "verified": false,
@@ -27453,7 +27449,7 @@
    "emoji": "U",
    "hue": 85
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Department",
   "verified": false,
@@ -28199,7 +28195,7 @@
    "emoji": "UC",
    "hue": 208
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Departmental Group",
   "verified": false,
@@ -28232,7 +28228,7 @@
    "emoji": "UF",
    "hue": 8
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Department",
   "verified": false,
@@ -28409,7 +28405,7 @@
    "emoji": "UT",
    "hue": 56
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Department",
   "verified": false,
@@ -28508,7 +28504,7 @@
    "emoji": "UN",
    "hue": 8
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Departmental Group",
   "verified": false,
@@ -28805,7 +28801,7 @@
    "emoji": "WS",
    "hue": 0
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Resource",
   "verified": false,
@@ -28937,7 +28933,7 @@
    "emoji": "WG",
    "hue": 112
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Program",
   "verified": false,
@@ -29036,7 +29032,7 @@
    "emoji": "WM",
    "hue": 80
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Program",
   "verified": false,
@@ -29102,7 +29098,7 @@
    "emoji": "WU",
    "hue": 248
   },
-  "type": "club",
+  "type": "department",
   "schoolId": "s_cwru",
   "parent": "Program",
   "verified": false,

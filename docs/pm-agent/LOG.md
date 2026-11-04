@@ -1924,3 +1924,11 @@
 - UCLA batch: Winter 2027 started.
 - Spot check classes (W&M): ANTH 150, CRWR 368, GIS 590 (grad), MATH 555 (grad), SOCI 200 — match.
 - Spot check clubs: UGA SUAT, MSU Tau Beta Pi, Clemson Students for Stewardship, BC Symphonic Band match; GW Vibes site does not answer.
+
+## 2026-11-04 14:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **Case Western staff groups:** reviewed the ~70 "club" entries in Department/Resource/Program/Departmental Group/University/Committee one by one (name + description): 59 are offices, academic departments, staff/faculty groups or office programs (Law IT, HR Benefits, University Technology, Study Abroad, Mandel School Admissions, Faculty Parents' Group …) → department; 12 student groups stay clubs (Community Pantry, QuestBridge Scholars, Posse, Springfest Committee, Commuter and Off-Campus Organization …). Saved as hand-checked `server/data/org-type-overrides.csv`, applied by `runCollect` after every re-collect. Queue item done.
+- Directory pages as websites: UCSB "Engaging Humanities" (from my description-link step) and CWRU "Maltz Performing Arts Center" pointed at their own CampusGroups pages (school login) → moved to deadlinks (reason: directory page); CampusGroups reader now drops links on the directory's own host. Engage club pages on their own host are public and stay.
+- UCLA batch: Winter 2027 continuing.
+- Spot check classes (CMU): 05-891 (grad), 42-782 (grad), 54-471, 76-101, 95-883 (grad) — match.
+- Spot check clubs: Northwestern SWE, Illinois Space Society, UT Orthodox Christian Fellowship match; Georgetown IRAP site does not answer; UCSB Engaging Humanities (fixed above).
