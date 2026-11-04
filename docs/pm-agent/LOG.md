@@ -1840,3 +1840,11 @@
 - UCLA batch continuing.
 - Spot check classes: Cornell ART 2301, COGST 2310, HADM 7120 (grad), NTRES 3220, YORUB 1109 — match.
 - Spot check clubs: UT Texas Trading Group, UF SwampHacks, UVA Theta Tau match; Notre Dame Sports Analytics Club site 403 to automated requests (sites.nd.edu).
+
+## 2026-11-04 03:33 run
+- No Codex commits or HANDOFF requests.
+- **Daily refresh:** events re-collected for all 53 schools with an event file (all applied); jobs file refreshed — 1,290 US postings from 165/166 boards (internships 840, new grad 403, PhD 171, master's 70, postdoc 13); Boeing Workday answered 502, its previous postings kept.
+- Re-collect now keeps earlier club links: `runCollect` reads the previous orgs file first and, after collect-social, adds back any website/social link the new run did not find (directory links and URLs in deadlinks excepted). Queue item done.
+- UCLA batch: 70 Fall subjects done, 1,565 classes (the public subject list now shows 190 subjects).
+- Spot check classes: USC AEST 420B, DANC 310, JOUR 499, PHYS 720 (grad), WRIT 150 — match.
+- Spot check clubs: Penn Medical Volunteers for Prevention, Yale Simplex Sciences, Stanford Debate Society match; Harvard UA matches (Harvard has only its student government in the file — club directory blocked from here); MIT Infinite Magazine site does not answer (link-check item).
