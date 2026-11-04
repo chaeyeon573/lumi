@@ -1916,3 +1916,11 @@
 - Engage relabel retry: the 7 schools that did not answer last run (UC Davis, Dartmouth, SJSU, USC, Wisconsin, UW, Minnesota) are CampusGroups schools, which already had the office and Greek-council rules — nothing missing.
 - Indiana/MSU class search hosts did not answer; Tulane classschedule.tulane.edu is a public ASP.NET search → queue.
 - Spot check clubs: UMass Leading Women of Tomorrow, UConn Iota Phi Theta, Rochester LOGOS, WFU International Law Society match; Case Western "HR Professional Development Center" is a staff office listed as a club — CWRU's directory mixes in ~60 staff/admin groups → queue item (check one by one).
+
+## 2026-11-04 13:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- Tulane classschedule.tulane.edu: ASP.NET form; term change needs a postback and results are filled by script after the search — no results returned to a plain request yet → parked in queue.
+- Course titles: W&M GIS 590 had a trailing tab from the FOSE source → FOSE reader trims titles; existing files cleaned of stray spaces in titles (Illinois catalog 4,643, USC 262, Georgia Tech 14, W&M 13, MIT 7, GWU 3, UCLA 4, BU 1, Cornell 1) — text only.
+- UCLA batch: Winter 2027 started.
+- Spot check classes (W&M): ANTH 150, CRWR 368, GIS 590 (grad), MATH 555 (grad), SOCI 200 — match.
+- Spot check clubs: UGA SUAT, MSU Tau Beta Pi, Clemson Students for Stewardship, BC Symphonic Band match; GW Vibes site does not answer.

@@ -570,7 +570,7 @@ function foseSource(schoolId: string, host: string): CourseSource {
         try { mts = JSON.parse(sec.meetingTimes!) as typeof mts; } catch { return; }
         const meetings = uniq(mts.filter((m) => m.start_time && m.end_time).map((m) => ({ day: Number(m.meet_day), start: hhmm(m.start_time), end: hhmm(m.end_time) })));
         if (!meetings.length) return;
-        out.push({ id: i === 0 ? baseId : `${baseId}_${sec.no}`, schoolId, code, title: picked.length > 1 ? `${sec.title} (Sec ${sec.no})` : sec.title, department: code.replace(/\s?\d.*$/, ''), instructor: sec.instr?.replace(/\//g, ', ') || undefined, meetings, term: label, termCode: srcdb, url: `${host}/?details&srcdb=${srcdb}&code=${encodeURIComponent(code)}` });
+        out.push({ id: i === 0 ? baseId : `${baseId}_${sec.no}`, schoolId, code, title: picked.length > 1 ? `${sec.title.trim()} (Sec ${sec.no})` : sec.title.trim(), department: code.replace(/\s?\d.*$/, ''), instructor: sec.instr?.replace(/\//g, ', ') || undefined, meetings, term: label, termCode: srcdb, url: `${host}/?details&srcdb=${srcdb}&code=${encodeURIComponent(code)}` });
       });
     }
     return out;
