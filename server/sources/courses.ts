@@ -1036,6 +1036,52 @@ async function sfsu(): Promise<CatalogCourse[]> {
   return [...new Map(out.map((c) => [c.id, c])).values()];
 }
 
+// ─── Rochester: cdcs.ur.rochester.edu (Course Description / Course Schedule, 공개 ASP.NET 폼). 학교 단위(ddlSchool)·학기 한 번씩 — 요청 16번 정도.
+// 과목마다 강의(Lecture)가 있으면 강의만, 없으면 세미나·워크숍 등 시간이 있는 것(실험·리사이테이션·논문·연구·개별 연구는 뺀다).
+const ROC = 'https://cdcs.ur.rochester.edu/';
+const ROC_DAY: Record<string, number> = { M: 0, T: 1, W: 2, R: 3, F: 4, S: 5, U: 6 };
+const rocTime = (t: string) => { const m = /^(\d{1,2}?)(\d{2})\s*(AM|PM)$/i.exec(t.trim()); if (!m) return ''; let h = Number(m[1]) % 12; if (/pm/i.test(m[3])) h += 12; return `${String(h).padStart(2, '0')}:${m[2]}`; };
+export function rochesterToCourses(html: string, termCode: string): CatalogCourse[] {
+  const txt = (h = '') => decodeEntities(h.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ')).trim();
+  const rows: { code: string; sec: string; title: string; kind: string; term: string; units: number; instructor?: string; meetings: Meeting[] }[] = [];
+  for (const b of html.split(/<span id="rpResults_lblCNum_/).slice(1)) {
+    const n = /^(\d+)">([^<]*)/.exec(b); if (!n) continue;
+    const m = /^(.+?)-(\w+)$/.exec(txt(n[2])); if (!m) continue;
+    const get = (k: string) => txt(new RegExp(`id="rpResults_lbl${k}_${n[1]}">([\\s\\S]*?)</span>`).exec(b)?.[1]);
+    const meetings: Meeting[] = [];
+    for (const r of b.matchAll(new RegExp(`id="rpResults_rpSchedule_${n[1]}_lblDay_(\\d+)">([^<]*)</span>`, 'g'))) {
+      const st = rocTime(txt(new RegExp(`rpSchedule_${n[1]}_lblStartTime_${r[1]}">([^<]*)`).exec(b)?.[1])), en = rocTime(txt(new RegExp(`rpSchedule_${n[1]}_lblEndTime_${r[1]}">([^<]*)`).exec(b)?.[1]));
+      if (!st || !en) continue; for (const ch of txt(r[2])) if (ch in ROC_DAY) meetings.push({ day: ROC_DAY[ch], start: st, end: en });
+    }
+    rows.push({ code: m[1].trim(), sec: m[2], title: get('Title'), kind: get('Type'), term: labelOf(get('Term')), units: Number(get('Credits')), instructor: get('Instructors') || undefined, meetings: uniq(meetings) });
+  }
+  const timed = rows.filter((r) => r.meetings.length);
+  const out: CatalogCourse[] = [];
+  for (const code of [...new Set(timed.map((r) => r.code))]) {
+    const all = timed.filter((r) => r.code === code); const lec = all.filter((r) => r.kind === 'Lecture');
+    const other = all.filter((r) => !/^(Laboratory|Recitation|Discussion|Thesis|Research|Independent Study|Internship|Lab Lecture)/i.test(r.kind));
+    const keep = lec.length ? lec : other; const baseId = `${courseId('s_rochester', code)}_${termCode.toLowerCase().replace(/[^a-z0-9]+/g, '')}`;
+    keep.forEach((r, i) => out.push({ id: i === 0 ? baseId : `${baseId}_${r.sec.toLowerCase()}`, schoolId: 's_rochester', code, title: keep.length > 1 ? `${r.title} (Sec ${r.sec})` : r.title, department: code.split(' ')[0], instructor: r.instructor && !/^(TBA|Staff)$/i.test(r.instructor) ? r.instructor : undefined, meetings: r.meetings, term: r.term, termCode, units: Number.isFinite(r.units) && r.units > 0 ? r.units : undefined, url: ROC }));
+  }
+  return out;
+}
+async function rochester(): Promise<CatalogCourse[]> {
+  const jar = new Map<string, string>(); const cookie = () => [...jar].map(([k, v]) => `${k}=${v}`).join('; ');
+  const keep = (r: Response) => { for (const c of r.headers.getSetCookie?.() ?? []) { const [kv] = c.split(';'); const i = kv.indexOf('='); jar.set(kv.slice(0, i).trim(), kv.slice(i + 1)); } };
+  const page = async (body?: URLSearchParams) => { const r = await fetch(ROC, { method: body ? 'POST' : 'GET', body, headers: { ...UAH, cookie: cookie(), ...(body ? { 'content-type': 'application/x-www-form-urlencoded' } : {}) }, signal: AbortSignal.timeout(300_000) }); keep(r); if (!r.ok) throw new Error(`rochester → ${r.status}`); const t = await r.text(); await new Promise((res) => setTimeout(res, 3000)); return t; };
+  const form = await page();
+  const hidden = (h: string) => Object.fromEntries(['__VIEWSTATE', '__VIEWSTATEGENERATOR', '__EVENTVALIDATION'].map((k) => [k, decodeEntities(new RegExp(`name="${k}"[^>]*value="([^"]*)"`).exec(h)?.[1] ?? '')]));
+  const terms = [...(/<select[^>]*name="ddlTerm"[\s\S]*?<\/select>/.exec(form)?.[0] ?? '').matchAll(/<option[^>]*value="(D-(?:Fall|Spring) \d{4})"/g)].map((m) => m[1]).slice(0, 2);
+  const schools = [...(/<select[^>]*name="ddlSchool"[\s\S]*?<\/select>/.exec(form)?.[0] ?? '').matchAll(/<option[^>]*value="(\d+)"/g)].map((m) => m[1]);
+  const out: CatalogCourse[] = [];
+  for (const term of terms) for (const school of schools) {
+    const html = await page(new URLSearchParams({ ...hidden(form), ddlTerm: term, ddlSchool: school, btnSubmit: 'Search' }));
+    const got = rochesterToCourses(html, term.replace(/^D-/, '')); out.push(...got);
+    console.log(`  s_rochester ${term} school ${school}: ${got.length} classes`);
+  }
+  return [...new Map(out.map((c) => [c.id, c])).values()];
+}
+
 // ─── Caltech: schedules.caltech.edu/<FA2026-27>.html — 쿼터마다 한 페이지(보고서를 HTML 로 내보낸 표, 글자 칸 순서대로 읽는다) ───
 // 칸 순서: 과목 "CS 024" → 학점 "3-3-3" → 제목 → [섹션 "01" → 교수 → "MWF 11:00 - 11:55"(24시간) → 강의실]… 시각이 두 줄로 나뉘기도 한다("OM,W 16:00 -" + "16:55").
 const CALTECH = 'https://schedules.caltech.edu';
@@ -1375,6 +1421,7 @@ export const COURSE_SOURCES: Record<string, CourseSource> = {
   wustl: { schoolId: 's_wustl', fetch: wustl },
   vanderbilt: { schoolId: 's_vanderbilt', fetch: vanderbilt },
   sfsu: { schoolId: 's_sfsu', fetch: sfsu },
+  rochester: { schoolId: 's_rochester', fetch: rochester },
 };
 export const adapters: Record<string, () => Promise<CatalogCourse[]>> = Object.fromEntries(Object.entries(COURSE_SOURCES).map(([k, v]) => [k, v.fetch]));
 
