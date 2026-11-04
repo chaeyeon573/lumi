@@ -1824,3 +1824,11 @@
 - UCLA batch: 41/173 Fall subjects, 787 classes.
 - Spot check classes: Maryland BSCI213, EDCP610 (grad), ENPM687 (grad), INST462, WGSS618 (grad) re-fetched — match.
 - Spot check clubs: UGA Mind Blowers, IU Limitless Club, W&M Lawyers Helping Lawyers, Tulane Rowing Club (site is script-rendered; its own domain), GWU Kappa Delta — match.
+
+## 2026-11-04 01:33 run
+- No Codex commits or HANDOFF requests.
+- **Four more schools (files only, public Engage):** Syracuse 420 groups (310 with a public link) + 231 events; Miami 435 (374) + 95 events; Michigan State 1,267 (1,043) + 723 events; Clemson 743 (587) + 65 events. Public Engage also found for UCF (832) and Iowa (629), not added (below the top-school bar). Not on Engage: RPI, Pitt, UConn, Ohio State, Arizona, Colorado.
+- **Owner rule fix — dead links were being deleted.** `collect-social` removed a club's Website link when the site did not answer. Now the link still leaves the screen data but is kept in `<id>.deadlinks.json` (org id, url, date). Syracuse's 14 recovered from git. Schools collected 11-03/04 before this fix (Wake Forest 3, Rochester 2, Case Western 3, Georgia, Indiana, W&M, Tulane, GWU, Miami, MSU, Clemson) lost their dead website URLs from the file → queue item to recover them from one directory read each.
+- UCLA batch: 51/173 Fall subjects, 1,048 classes.
+- Spot check classes: CMU 03-751 (grad), 45-980 (grad), 54-428, 57-577, 79-176 re-fetched — match.
+- Spot check clubs: Syracuse NEXIS, Miami NOMAS, MSU NAMI, Clemson Frontline — match.

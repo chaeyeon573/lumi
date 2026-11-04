@@ -212,6 +212,14 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
     const list = JSON.parse(readFileSync(file, 'utf8')) as Organization[];
     const r = await enrichFromWebsites(list, fetchPublicPage);
     writeFileSync(file, `${JSON.stringify(r.orgs, null, 1)}\n`);
+    // 응답 없던 웹사이트 주소는 따로 남긴다 (지우지 않는다 — 사장님 2026-11-03)
+    if (r.deadList.length) {
+      const deadFile = path.join(COLLECTED_DIR, `${row.id}.deadlinks.json`);
+      const prevDead = existsSync(deadFile) ? (JSON.parse(readFileSync(deadFile, 'utf8')) as { orgId: string; url: string; checkedAt: string }[]) : [];
+      const now = new Date().toISOString().slice(0, 10);
+      const merged = [...prevDead.filter((d) => !r.deadList.some((x) => x.orgId === d.orgId && x.url === d.url)), ...r.deadList.map((d) => ({ ...d, checkedAt: now }))];
+      writeFileSync(deadFile, `${JSON.stringify(merged, null, 1)}\n`);
+    }
     const pub = r.orgs.filter((o) => publicLinks(o.links).some((l) => ['Website', 'Instagram', 'Facebook'].includes(l.label))).length;
     out.push(await record({ task: `collect-social:${row.id}`, schoolId: row.id, status: 'applied', startedAt, summary: { orgs: r.orgs.length, sitesRead: r.checked, gainedSocial: r.found, withPublicLink: pub, schoolFooterAccountsDropped: r.droppedShared.slice(0, 10), deadWebsiteLinksRemoved: r.deadLinks } }));
   }

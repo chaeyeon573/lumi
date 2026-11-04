@@ -66,7 +66,7 @@ const hostOf = (u: string) => { try { return new URL(u).hostname; } catch { retu
 export const DEAD = '__dead__';
 export function isDeadPage(status: number, html: string): boolean { return status === 404 || status === 410 || /<title[^>]*>\s*404 Error: Page Not Found/i.test(html); }
 
-export async function enrichFromWebsites(orgs: Organization[], fetchPage: (url: string) => Promise<string>, concurrency = 6): Promise<{ orgs: Organization[]; checked: number; found: number; droppedShared: string[]; deadLinks: number }> {
+export async function enrichFromWebsites(orgs: Organization[], fetchPage: (url: string) => Promise<string>, concurrency = 6): Promise<{ orgs: Organization[]; checked: number; found: number; droppedShared: string[]; deadLinks: number; deadList: { orgId: string; url: string }[] }> {
   orgs = orgs.map(relabelSocialWebsites);
   const want = orgs.filter((o) => o.links?.some((l) => l.label === 'Website') && !(o.links?.some((l) => l.label === 'Instagram') && o.links?.some((l) => l.label === 'Facebook')));
   const got = new Map<string, { instagram: string[]; facebook: string[] }>(); const dead = new Set<string>();
@@ -95,5 +95,7 @@ export async function enrichFromWebsites(orgs: Organization[], fetchPage: (url: 
     found++;
     return { ...o, links: [...(o.links ?? []), ...add] };
   });
-  return { orgs: next, checked: got.size, found, droppedShared: [...shared], deadLinks: dead.size };
+  // 응답 없는 웹사이트 주소는 화면 링크에서 빼되 버리지 않고 돌려준다(호출하는 쪽이 <id>.deadlinks.json 에 남긴다 — 모은 데이터는 지우지 않는다)
+  const deadList = orgs.filter((o) => dead.has(o.id)).map((o) => ({ orgId: o.id, url: o.links!.find((l) => l.label === 'Website')!.url }));
+  return { orgs: next, checked: got.size, found, droppedShared: [...shared], deadLinks: dead.size, deadList };
 }
