@@ -24664,5 +24664,1748 @@
   "term": "Fall 2026",
   "termCode": "26F",
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EDUC%20%20%20&crs_catlg_no=0498A%20%20%20&class_id=583786208&class_no=%20008%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0001_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 1",
+  "title": "Undergraduate Seminar",
+  "department": "EC ENGR",
+  "instructor": "Ozcan, A. Hitit, O.",
+  "location": "Dodd Hall 121",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0001%20%20%20%20&class_id=439001100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0002_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 2",
+  "title": "Physics for Electrical Engineers",
+  "department": "EC ENGR",
+  "instructor": "Sokolich, M.",
+  "location": "Dodd Hall 161",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0002%20%20%20%20&class_id=439006010&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0003_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 3",
+  "title": "Introduction to Electrical Engineering",
+  "department": "EC ENGR",
+  "instructor": "Briggs, D.M.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0003%20%20%20%20&class_id=439009200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0010h_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 10H",
+  "title": "Circuit Theory I (Honors)",
+  "department": "EC ENGR",
+  "instructor": "Darabi, H.",
+  "location": "Dodd Hall 170",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0010H%20%20%20&class_id=439031100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0011l_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 11L",
+  "title": "Circuits Laboratory I",
+  "department": "EC ENGR",
+  "instructor": "Darabi, H.",
+  "location": "Geology Building 3656",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0011L%20%20%20&class_id=439034200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0016m_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M16",
+  "title": "Logic Design of Digital Systems",
+  "department": "EC ENGR",
+  "instructor": "No instructors",
+  "location": "Dodd Hall 147",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0016%20%20M%20&class_id=439048100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0019001_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 19",
+  "title": "Artificial Intelligence for Future CEOs",
+  "department": "EC ENGR",
+  "instructor": "Kadambi, A.",
+  "location": "Mathematical Sciences 7608",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0019%20%20%20%20&class_id=439057100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0100_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 100",
+  "title": "Electrical and Electronic Circuits",
+  "department": "EC ENGR",
+  "instructor": "Yang, C.K.",
+  "location": "Engineering VI Mong Learning Center",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0100%20%20%20%20&class_id=439300200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0101a_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 101A",
+  "title": "Engineering Electromagnetics",
+  "department": "EC ENGR",
+  "instructor": "Wang, Y.",
+  "location": "Kinsey Science Teaching Pavilion 1240B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0101A%20%20%20&class_id=439306200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0102_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 102",
+  "title": "Systems and Signals",
+  "department": "EC ENGR",
+  "instructor": "Kadambi, A.",
+  "location": "Engineering VI Mong Learning Center",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0102%20%20%20%20&class_id=439312200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0110_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 110",
+  "title": "Circuit Theory II",
+  "department": "EC ENGR",
+  "instructor": "Moloudi, S.",
+  "location": "Boelter Hall 5264",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0110%20%20%20%20&class_id=439360100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0110l_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 110L",
+  "title": "Circuit Measurements Laboratory (Lab 1)",
+  "department": "EC ENGR",
+  "instructor": "Mesghali, F. Xiong, C.",
+  "location": "Engineering IV 18132J",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0110L%20%20%20&class_id=439361201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0110l_26f_2",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 110L",
+  "title": "Circuit Measurements Laboratory (Lab 2)",
+  "department": "EC ENGR",
+  "instructor": "Mesghali, F. Cheng, D.",
+  "location": "Engineering IV 18132J",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "16:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0110L%20%20%20&class_id=439361202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0110l_26f_3",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 110L",
+  "title": "Circuit Measurements Laboratory (Lab 3)",
+  "department": "EC ENGR",
+  "instructor": "Mesghali, F. Xiong, C.",
+  "location": "Engineering IV 18132J",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0110L%20%20%20&class_id=439361103&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0111l_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 111L",
+  "title": "Circuits Laboratory II",
+  "department": "EC ENGR",
+  "instructor": "Moloudi, S.",
+  "location": "Franz Hall 2258A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0111L%20%20%20&class_id=439367100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0113_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 113",
+  "title": "Digital Signal Processing",
+  "department": "EC ENGR",
+  "instructor": "Alwan, A.A.",
+  "location": "Boelter Hall 4760",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0113%20%20%20%20&class_id=439378100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0113da_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 113DA",
+  "title": "Digital Signal Processing Design",
+  "department": "EC ENGR",
+  "instructor": "Briggs, D.M.",
+  "location": "Boelter Hall 5440",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0113DA%20%20&class_id=439382200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0115a_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 115A",
+  "title": "Analog Electronic Circuits I",
+  "department": "EC ENGR",
+  "instructor": "Darabi, H.",
+  "location": "Franz Hall 1178",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0115A%20%20%20&class_id=439390200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0115pc_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR C115P",
+  "title": "Power Electronics",
+  "department": "EC ENGR",
+  "instructor": "Cui, X. Duan, R.",
+  "location": "Boelter Hall 4760",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0115P%20C%20&class_id=439400100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0116cm_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M116C",
+  "title": "Computer Systems Architecture",
+  "department": "EC ENGR",
+  "instructor": "Gupta, P.",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "18:00",
+    "end": "19:50"
+   },
+   {
+    "day": 3,
+    "start": "18:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0116C%20M%20&class_id=439398100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0116lm_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M116L",
+  "title": "Introductory Digital Design Laboratory (Lab 1)",
+  "department": "EC ENGR",
+  "instructor": "Atajyan, H. Sarrafzadeh, M.",
+  "location": "Boelter Hall 3428",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0116L%20M%20&class_id=439401100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0116lm_26f_2",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M116L",
+  "title": "Introductory Digital Design Laboratory (Lab 2)",
+  "department": "EC ENGR",
+  "instructor": "Khosravi, S. Sarrafzadeh, M.",
+  "location": "Boelter Hall 3428",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0116L%20M%20&class_id=439401200&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0116lm_26f_3",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M116L",
+  "title": "Introductory Digital Design Laboratory (Lab 3)",
+  "department": "EC ENGR",
+  "instructor": "Ehsani Oskouie, H. Sarrafzadeh, M.",
+  "location": "Boelter Hall 3428",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0116L%20M%20&class_id=439401203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0116lm_26f_4",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M116L",
+  "title": "Introductory Digital Design Laboratory (Lab 4)",
+  "department": "EC ENGR",
+  "instructor": "Vora, A.S. Sarrafzadeh, M.",
+  "location": "Boelter Hall 3428",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0116L%20M%20&class_id=439401104&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0116lm_26f_5",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M116L",
+  "title": "Introductory Digital Design Laboratory (Lab 5)",
+  "department": "EC ENGR",
+  "instructor": "Hukkeri, S. Sarrafzadeh, M.",
+  "location": "Boelter Hall 3428",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0116L%20M%20&class_id=439401205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0116lm_26f_6",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M116L",
+  "title": "Introductory Digital Design Laboratory (Lab 6)",
+  "department": "EC ENGR",
+  "instructor": "Wang, D. Sarrafzadeh, M.",
+  "location": "Boelter Hall 3428",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0116L%20M%20&class_id=439401106&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0117m_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M117",
+  "title": "Computer System Security",
+  "department": "EC ENGR",
+  "instructor": "Tian, Y.",
+  "location": "Boelter Hall 3400",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0117%20%20M%20&class_id=439408100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0119m_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M119",
+  "title": "Fundamentals of Embedded Networked Systems",
+  "department": "EC ENGR",
+  "instructor": "Chen, X.",
+  "location": "Boelter Hall 5420",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0119%20%20M%20&class_id=439414100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0121b_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 121B",
+  "title": "Principles of Semiconductor Device Design",
+  "department": "EC ENGR",
+  "instructor": "Emaminejad, S.",
+  "location": "Boelter Hall 3400",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0121B%20%20%20&class_id=439427100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0123a_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 123A",
+  "title": "Fundamentals of Solid-State I",
+  "department": "EC ENGR",
+  "instructor": "Wang, K.L.",
+  "location": "Boelter Hall 5273",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0123A%20%20%20&class_id=439438100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0131a_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 131A",
+  "title": "Probability and Statistics",
+  "department": "EC ENGR",
+  "instructor": "Roychowdhury, V.P.",
+  "location": "Boelter Hall 5249",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "18:00",
+    "end": "19:50"
+   },
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0131A%20%20%20&class_id=439486200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0133a_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 133A",
+  "title": "Applied Numerical Computing",
+  "department": "EC ENGR",
+  "instructor": "Izhikevich, L.",
+  "location": "Perloff Hall 1102",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:30",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:30",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0133A%20%20%20&class_id=439498200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0146m_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M146",
+  "title": "Introduction to Machine Learning",
+  "department": "EC ENGR",
+  "instructor": "Tang, C. TA",
+  "location": "Young Hall CS24",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0146%20%20M%20&class_id=439576100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0147ac_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR C147A",
+  "title": "Neural Networks and Deep Learning",
+  "department": "EC ENGR",
+  "instructor": "Diggavi, S.N. Yetim, S.",
+  "location": "Engineering VI Mong Learning Center",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0147A%20C%20&class_id=439583100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0148m_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M148",
+  "title": "Introduction to Data Science",
+  "department": "EC ENGR",
+  "instructor": "Szymanski, N.",
+  "location": "Haines Hall A18",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0148%20%20M%20&class_id=439588100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0153m_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M153",
+  "title": "Introduction to Microscale and Nanoscale Manufacturing",
+  "department": "EC ENGR",
+  "instructor": "Chiou, P.",
+  "location": "Dodd Hall 78",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0153%20%20M%20&class_id=439618200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0163a_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 163A",
+  "title": "Introductory Microwave Circuits",
+  "department": "EC ENGR",
+  "instructor": "Babakhani, A.",
+  "location": "Boelter Hall 5252",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0163A%20%20%20&class_id=439678200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0170a_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 170A",
+  "title": "Principles of Photonics",
+  "department": "EC ENGR",
+  "instructor": "Carbajo, S.",
+  "location": "Haines Hall A18",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0170A%20%20%20&class_id=439720200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0180da_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 180DA",
+  "title": "Systems Design (Lec 1)",
+  "department": "EC ENGR",
+  "instructor": "Shoarinejad, K.",
+  "location": "Boelter Hall 5264",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0180DA%20%20&class_id=439783100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0180da_26f_2",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 180DA",
+  "title": "Systems Design (Lec 2)",
+  "department": "EC ENGR",
+  "instructor": "Sehatbakhsh, N.",
+  "location": "Boelter Hall 5273",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0180DA%20%20&class_id=439783200&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0185m_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M185",
+  "title": "Introduction to Plasmas in the Laboratory, Space, and Engineering",
+  "department": "EC ENGR",
+  "instructor": "Schaeffer, D.B.",
+  "location": "Physics and Astronomy Building 2748",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0185%20%20M%20&class_id=439809100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0189001_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 189",
+  "title": "Advanced Honors Seminars: Seminar 1",
+  "department": "EC ENGR",
+  "instructor": "Wang, Y.",
+  "location": "Boelter Hall 5252",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0189%20%20%20%20&class_id=439834100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0189002_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 189",
+  "title": "Advanced Honors Seminars: Seminar 2",
+  "department": "EC ENGR",
+  "instructor": "Chen, X.",
+  "location": "Boelter Hall 9436",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0189%20%20%20%20&class_id=439834110&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0194_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 194",
+  "title": "Research Group Seminars: Electrical Engineering",
+  "department": "EC ENGR",
+  "instructor": "Ozcan, A.",
+  "location": "Boelter Hall 5280",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0194%20%20%20%20&class_id=439864201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0201c_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 201C",
+  "title": "Artificial Intelligence on Chip",
+  "department": "EC ENGR",
+  "instructor": "Gupta, P.",
+  "location": "Boelter Hall 7702",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0201C%20%20%20&class_id=839008200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0202am_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M202A",
+  "title": "Embedded Systems",
+  "department": "EC ENGR",
+  "instructor": "Srivastava, M.B.",
+  "location": "Boelter Hall 5272",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0202A%20M%20&class_id=839011200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0205a_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 205A",
+  "title": "Matrix Analysis for Scientists and Engineers",
+  "department": "EC ENGR",
+  "instructor": "Zhou, L.",
+  "location": "Haines Hall 220",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "18:00",
+    "end": "19:50"
+   },
+   {
+    "day": 2,
+    "start": "18:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0205A%20%20%20&class_id=839022100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0209as001_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 209AS",
+  "title": "Special Topics in Circuits and Embedded Systems: Lecture 1",
+  "department": "EC ENGR",
+  "instructor": "Zhang, Y.",
+  "location": "Boelter Hall 9436",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0209AS%20%20&class_id=839031200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0209bs001_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 209BS",
+  "title": "Seminar: Circuits and Embedded Systems: Seminar 1",
+  "department": "EC ENGR",
+  "instructor": "Wang, S.C.",
+  "location": "Renee and David Kaplan Hall A65",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0209BS%20%20&class_id=839032100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0212a_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 212A",
+  "title": "Theory and Design of Digital Filters",
+  "department": "EC ENGR",
+  "instructor": "Pamarti, S.",
+  "location": "Boelter Hall 5419",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0212A%20%20%20&class_id=839040200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0215a_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 215A",
+  "title": "Analog Integrated Circuit Design (Lec 1)",
+  "department": "EC ENGR",
+  "instructor": "Razavi, B.",
+  "location": "Renee and David Kaplan Hall 169",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0215A%20%20%20&class_id=839058200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0215a_26f_2",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 215A",
+  "title": "Analog Integrated Circuit Design (Lec 2)",
+  "department": "EC ENGR",
+  "instructor": "Abidi, A.A.",
+  "location": "Boelter Hall 5422",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0215A%20%20%20&class_id=839058300&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0215a_26f_91",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 215A",
+  "title": "Analog Integrated Circuit Design (Lec 91)",
+  "department": "EC ENGR",
+  "instructor": "Razavi, B.",
+  "location": "Renee and David Kaplan Hall 169",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0215A%20%20%20&class_id=839058291&class_no=%20091%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0215pc_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR C215P",
+  "title": "Power Electronics",
+  "department": "EC ENGR",
+  "instructor": "Cui, X. Duan, R.",
+  "location": "Boelter Hall 4760",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0215P%20C%20&class_id=839077200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0216am_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M216A",
+  "title": "Design of VLSI Circuits and Systems (Lec 1)",
+  "department": "EC ENGR",
+  "instructor": "Markovic, D.",
+  "location": "Boelter Hall 4760",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0216A%20M%20&class_id=839091200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0216am_26f_91",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M216A",
+  "title": "Design of VLSI Circuits and Systems (Lec 91)",
+  "department": "EC ENGR",
+  "instructor": "Markovic, D.",
+  "location": "Boelter Hall 4760",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0216A%20M%20&class_id=839091300&class_no=%20091%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0221a_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 221A",
+  "title": "Physics of Semiconductor Devices I",
+  "department": "EC ENGR",
+  "instructor": "Chang, M.F.",
+  "location": "Boelter Hall 9436",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0221A%20%20%20&class_id=839119200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0223_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 223",
+  "title": "Solid-State Electronics I",
+  "department": "EC ENGR",
+  "instructor": "Wong, C.",
+  "location": "Boelter Hall 2444",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0223%20%20%20%20&class_id=839131200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0231a_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 231A",
+  "title": "Information Theory",
+  "department": "EC ENGR",
+  "instructor": "Wesel, R.D.",
+  "location": "Boelter Hall 4760",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0231A%20%20%20&class_id=839178200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0234a_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 234A",
+  "title": "Network Coding Theory and Applications",
+  "department": "EC ENGR",
+  "instructor": "Fragouli, C.P.",
+  "location": "Mathematical Sciences 5233",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0234A%20%20%20&class_id=839204201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0236a_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 236A",
+  "title": "Linear Programming",
+  "department": "EC ENGR",
+  "instructor": "Fragouli, C.P.",
+  "location": "Boelter Hall 5249",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0236A%20%20%20&class_id=839209200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0239as001_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 239AS",
+  "title": "Special Topics in Signals and Systems: Lecture 1",
+  "department": "EC ENGR",
+  "instructor": "Roberts, I.",
+  "location": "Boelter Hall 5420",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0239AS%20%20&class_id=839229200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0240a_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 240A",
+  "title": "Linear Dynamic Systems",
+  "department": "EC ENGR",
+  "instructor": "Tabuada, P.",
+  "location": "Boelter Hall 4283",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0240A%20%20%20&class_id=839235200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0247ac_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR C247A",
+  "title": "Neural Networks and Deep Learning (Lec 1)",
+  "department": "EC ENGR",
+  "instructor": "Diggavi, S.N. Pang, K. Turali, M. Yetim, S. Huang, B.L.",
+  "location": "Engineering VI Mong Learning Center",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0247A%20C%20&class_id=839283100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0247ac_26f_91",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR C247A",
+  "title": "Neural Networks and Deep Learning (Lec 91)",
+  "department": "EC ENGR",
+  "instructor": "Diggavi, S.N. Kadiyala, A. Pang, K. Turali, M. Yetim, S.",
+  "location": "Engineering VI Mong Learning Center",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0247A%20C%20&class_id=839283200&class_no=%20091%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0255m_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M255",
+  "title": "Neuroengineering",
+  "department": "EC ENGR",
+  "instructor": "Liu, W.",
+  "location": "Boelter Hall 5272",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0255%20%20M%20&class_id=839330200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0257m_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M257",
+  "title": "Nanoscience and Technology",
+  "department": "EC ENGR",
+  "instructor": "Chen, Y.",
+  "location": "Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0257%20%20M%20&class_id=839342200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0260a_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 260A",
+  "title": "Advanced Engineering Electrodynamics",
+  "department": "EC ENGR",
+  "instructor": "Rahmat-Samii, Y.",
+  "location": "Boelter Hall 5252",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0260A%20%20%20&class_id=839354200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0270_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 270",
+  "title": "Applied Quantum Mechanics",
+  "department": "EC ENGR",
+  "instructor": "Gyure, M.",
+  "location": "Geology Building 4645",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0270%20%20%20%20&class_id=839377200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0279as001_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 279AS",
+  "title": "Special Topics in Physical and Wave Electronics: Lecture 1",
+  "department": "EC ENGR",
+  "instructor": "Joshi, C.J.",
+  "location": "Boelter Hall 4283",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0279AS%20%20&class_id=839410200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0295_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 295",
+  "title": "Academic Technical Writing for Electrical Engineers",
+  "department": "EC ENGR",
+  "instructor": "Watson, D.C.",
+  "location": "Boelter Hall 5436",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 3,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0295%20%20%20%20&class_id=839571200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0297001_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR 297",
+  "title": "Seminar Series: Electrical Engineering: Seminar 1",
+  "department": "EC ENGR",
+  "instructor": "Choi, J.",
+  "location": "Engineering IV 54134",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0297%20%20%20%20&class_id=839582200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_ecengr0495m_26f",
+  "schoolId": "s_ucla",
+  "code": "EC ENGR M495",
+  "title": "Teaching Preparation Seminar: Teaching and Writing Pedagogies for Electrical Engineers",
+  "department": "EC ENGR",
+  "instructor": "Mehta, A.M. Morag, E. Rajesh, S.",
+  "location": "Boelter Hall 9436",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "17:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Fall 2026",
+  "termCode": "26F",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=26F&subj_area_cd=EC%20ENGR&crs_catlg_no=0495%20%20M%20&class_id=839790200&class_no=%20001%20%20"
  }
 ]
