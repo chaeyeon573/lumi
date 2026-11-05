@@ -227,12 +227,15 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
   }
   // 지난번에 모은 링크(웹사이트·인스타 등, 디렉터리 링크 제외)가 이번에 안 나왔으면 되살린다 — 사이트가 이번엔 다르게 응답했을 뿐 지운 게 아니다.
   // 응답 없던 웹사이트(<id>.deadlinks.json)는 되살리지 않는다 (2026-11-04 재수집에서 7개가 빠질 뻔함)
-  if (prevOrgs.length && existsSync(file)) {
+  if (existsSync(file)) {
     const deadFile = path.join(COLLECTED_DIR, `${row.id}.deadlinks.json`);
     const dead = existsSync(deadFile) ? (JSON.parse(readFileSync(deadFile, 'utf8')) as { orgId: string; url: string }[]) : [];
     const before = new Map(prevOrgs.map((o) => [o.id, o]));
     let kept = 0;
     const list = (JSON.parse(readFileSync(file, 'utf8')) as Organization[]).map((o) => {
+      // deadlinks 에 옮겨 둔 웹사이트는 디렉터리가 다시 보내도 화면 데이터에 넣지 않는다 (파일에는 남아 있다)
+      const isDead = (l: { label: string; url: string }) => l.label === 'Website' && dead.some((x) => x.orgId === o.id && x.url.replace(/^http:/, 'https:') === l.url.replace(/^http:/, 'https:'));
+      if ((o.links ?? []).some(isDead)) { o = { ...o, links: (o.links ?? []).filter((l) => !isDead(l)) }; kept++; }
       const old = before.get(o.id); if (!old) return o;
       const add = (old.links ?? []).filter((l) => !/^(Directory|Presence|MIT Engage|Cardinal Engage)$/.test(l.label) && !(o.links ?? []).some((x) => x.url === l.url) && !dead.some((x) => x.orgId === o.id && x.url === l.url));
       kept += add.length; return add.length ? { ...o, links: [...(o.links ?? []), ...add] } : o;

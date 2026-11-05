@@ -2003,3 +2003,10 @@
 - Spot check courses (Cornell): ENMGT 5920, HD 3250, CEE 4760, ARCH 6408, AEM 4670 all match the official class roster.
 - Spot check clubs: Vanderbilt Global China Connection, Emory Barkley Forum, Georgetown Law Restructuring Club, Wake Forest Club Golf (Men) open and name the club. Notre Dame College Democrats site answers 403 to our checker (sites.nd.edu blocks bots); not treated as dead, left as is.
 - Nothing blocked beyond the known TLS schools.
+
+## 2026-11-05 01:33 UTC
+- New events reader `tribe:` (WordPress "The Events Calendar" public REST). UC Santa Cruz: 126 upcoming events from events.ucsc.edu (exhibits and Zoom-only left out). Checked BME 280B Seminar on its page: Nov 5 11:40 am, same as ours. Test added.
+- Looked for more sources: Brown cab.brown.edu answers 202 with an empty page (bot check) - blocked, not bypassed. UNC class search fails TLS here. UC Davis / Santa Clara / Harvard / Michigan / Princeton event sites answer 403 or a bot check.
+- UCLA: found a bug - the subject list sometimes comes back short (117 instead of 173), so the batch skipped 13 Winter subjects and started Spring. Fixed: the list is fetched twice and merged with subjects seen before. Spring 2027 is in the term menu but returned 0 classes, so a term with no classes yet is not marked done (it will be retried). Winter 2027 batch rerun.
+- Spot check courses (UCLA Winter 2027, rendered official class pages): AM IND 280A MW 10:35-12, EC ENGR C249 MW 8-9:50, BIOSTAT M208 T 12-2:50, ECON 103 MW 11-12:15, MUSCLG CM90T T 7-9:50 pm + F 1-3:50 pm - all match.
+- Spot check clubs (random): JHU Men's Club Basketball, Miami Reach Out and Read, Vanderbilt Culture Advocacy and Leadership, CMU SEED - pages name the club. MSU MBA Finance Association website now redirects to the general MBA page (club page gone) - moved to s_msu.deadlinks.json, not deleted. Re-collect now also leaves out Website links already in a school's deadlinks file (a directory sending the same dead link again would have brought it back).

@@ -12,7 +12,7 @@ import type { CatalogCourse } from '@core/api/types';
 const DIR = path.join(import.meta.dirname, '..', 'data', 'collected');
 const OUT = path.join(DIR, 's_ucla.courses.json'); const PROG = path.join(DIR, 's_ucla.courses-progress.json');
 const SOC = 'https://sa.ucla.edu/ro/Public/SOC';
-const TERMS: { code: string; label: string }[] = [{ code: '26F', label: 'Fall 2026' }, { code: '27W', label: 'Winter 2027' }];
+const TERMS: { code: string; label: string }[] = [{ code: '26F', label: 'Fall 2026' }, { code: '27W', label: 'Winter 2027' }, { code: '27S', label: 'Spring 2027' }];
 const FLAGS = JSON.stringify({ enrollment_status: 'O,W,C,X,T,S', advanced: 'y', meet_days: 'M,T,W,R,F,S,U', start_time: '1:00 am', end_time: '11:00 pm', meet_locations: null, meet_units: null, instructor: null, class_career: null, impacted: null, enrollment_restrictions: null, enforced_requisites: null, individual_studies: null, summer_session: null });
 let budget = Number(process.argv[2] ?? 300);
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -52,13 +52,17 @@ async function subjectCourses(term: string, label: string, subj: string): Promis
 
 const prog: Record<string, string[]> = existsSync(PROG) ? JSON.parse(readFileSync(PROG, 'utf8')) : {};
 let all: CatalogCourse[] = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : [];
-const subs = await subjects(); let did = 0;
+// 전공 목록이 가끔 짧게(173 대신 117) 온다 → 두 번 받아 합치고, 지난 실행에서 본 전공도 더한다 (짧은 목록 때문에 13개를 건너뛰고 다음 학기로 넘어간 적 있음, 2026-11-05)
+const subs = [...new Set([...(await subjects()), ...(await subjects()), ...Object.values(prog).flat()])].sort(); let did = 0;
 for (const t of TERMS) {
   const done = new Set(prog[t.code] ?? []);
+  const termHasClasses = () => all.some((c) => c.termCode === t.code);
   for (const subj of subs) {
     if (done.has(subj)) continue;
     if (budget < 60) break; // 큰 전공 하나(과목 50개 정도)를 끝낼 만큼 남았을 때만 시작
     const got = await subjectCourses(t.code, t.label, subj);
+    // 학기 목록에는 있지만 아직 수업이 안 올라온 학기: 0개를 '끝냄'으로 적으면 나중에 다시 안 받는다 → 그 학기는 이번에 멈춘다
+    if (!got.length && !termHasClasses()) { console.log(`  ${t.code} ${subj}: 0 lectures and none yet this term - not published yet, stop this term`); break; }
     all = [...all.filter((c) => !(c.termCode === t.code && c.department === subj)), ...got];
     done.add(subj); prog[t.code] = [...done]; did++;
     writeFileSync(OUT, `${JSON.stringify(all, null, 1)}\n`); writeFileSync(PROG, `${JSON.stringify(prog, null, 1)}\n`);
