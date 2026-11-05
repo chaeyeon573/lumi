@@ -2091,3 +2091,12 @@
   - Applied to today's file: 1,246 kept, 47 moved to `jobs-us.dropped.json` (not deleted).
 - Spot check courses (GWU, official schedule incl. later result pages): BADM 2301 sec 12 TR 2:20, PSYC 3133 MW 2:20, CHEM 2154 sec 21 F 12:45-4:35, ECE 2110 sec 11 MW 12:45, ANTH 3891 MW 2:20 - all match.
 - Spot check clubs: Cornell SWAG, UC Davis Clinica Tepati, UMN Physiology Society, BU Engineers Without Borders fine. GWU "Excellence in Student Life Awards" is a university awards program, so it is marked `department` (override added).
+
+## 2026-11-05 10:33 UTC
+- **UC Riverside class times: 3,111 classes** (Fall 2026 1,584 + Winter 2027 1,527) from UCR's public Banner 9 class search. UCR was already configured but never produced a file, because the Banner reader dropped every "Winter" term (meant for semester schools' winter sessions) and only looked for "Spring" after "Fall". Fixed:
+  - only true winter sessions (Winter Session, Intersession, J-term) are skipped;
+  - if the expected next term isn't listed, the next regular term by code is used;
+  - ALL-CAPS Banner titles are title-cased.
+  - USF and Georgia Tech are unaffected (they find Spring by name).
+- Checked 5 random UCR classes against the live Banner search: NRSC 200A TR 11:00-12:20, ANTH 253 M 11:00-1:50, CEE 206 001 TR 3:30-4:50, POSC 164S TR 5:00-6:20, CS 171 MWF 2:00-2:50 - all match. The class-file audit is clean (7 weekend classes, no exam rows).
+- Emory (atlas.emory.edu), Indiana (classes.iu.edu, refused by the proxy) and UChicago (PeopleSoft guest search) are not reachable from here.

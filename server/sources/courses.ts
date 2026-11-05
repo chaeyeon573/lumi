@@ -649,10 +649,12 @@ function banner9Source(schoolId: string, host: string): CourseSource {
     const all = await json<{ code: string; description: string }[]>('/classSearch/getTerms?offset=1&max=20');
     const toTerm = (t: { code: string; description: string }) => ({ code: t.code, label: labelOf(t.description) });
     if (process.env.BANNER_TERM) return process.env.BANNER_TERM.split(',').map((code) => code.trim()).filter(Boolean).map((code) => toTerm(all.find((t) => t.code === code) ?? { code, description: code }));
-    const regular = all.filter((x) => !/summer|winter/i.test(x.description));
+    // 여름학기·겨울 계절학기(Winter Session/Intersession)는 뺀다. 쿼터제 학교의 정규 'Winter 2027' 은 남긴다 (UCR, 2026-11-05)
+    const regular = all.filter((x) => !/summer|intersession|winter\s+(session|term\s+mini|break)|j-?term/i.test(x.description));
     const [cur, next] = catalogTermLabels();
     const now = findTerm(regular, (x) => x.description, cur) ?? pickTerm(regular, (x) => x.description) ?? all[0]; if (!now) throw new Error(`${host}: no terms`);
-    const after = findTerm(regular, (x) => x.description, next);
+    // 다음 학기: 학기제면 'Spring', 쿼터제면 'Winter' — 이름이 안 맞으면 코드가 바로 다음인 정규 학기
+    const after = findTerm(regular, (x) => x.description, next) ?? regular.filter((x) => x.code > now.code).sort((a, b) => a.code.localeCompare(b.code))[0];
     return [toTerm(now), ...(after && after.code !== now.code ? [toTerm(after)] : [])];
   }
   function toCourses(secs: B9Section[], termCode: string, label: string = termCode): CatalogCourse[] {
@@ -663,7 +665,7 @@ function banner9Source(schoolId: string, host: string): CourseSource {
       const { meetings, location } = b9Meetings(s.meetingsFaculty);
       if (!meetings.length) continue;
       const id = seen.has(baseId) ? `${baseId}_${s.sequenceNumber}` : baseId; if (seen.has(id)) continue; seen.add(id);
-      out.push({ id, schoolId, code, title: decodeEntities(s.courseTitle), department: s.subjectDescription ? decodeEntities(s.subjectDescription) : s.subject, instructor: s.faculty?.[0]?.displayName, location, meetings: uniq(meetings), term: label, termCode, units: s.creditHours ?? s.creditHourLow, url: `${H}/classSearch/classSearch` });
+      out.push({ id, schoolId, code, title: ((t) => (/[a-z]/.test(t) ? t : titleCase(t)))(decodeEntities(s.courseTitle)), department: s.subjectDescription ? decodeEntities(s.subjectDescription) : s.subject, instructor: s.faculty?.[0]?.displayName, location, meetings: uniq(meetings), term: label, termCode, units: s.creditHours ?? s.creditHourLow, url: `${H}/classSearch/classSearch` });
     }
     for (const c of out) if (out.some((o) => o.id.startsWith(`${c.id}_`))) c.title = `${c.title} (Sec 001)`;
     for (const c of out) { const m = /_(\d{3})$/.exec(c.id); if (m) c.title = `${c.title} (Sec ${m[1]})`; }
@@ -843,7 +845,7 @@ async function uscLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
 const RICE = 'https://courses.rice.edu/courses/courses/!SWKSCAT.cat';
 const RICE_DAY: Record<string, number> = { M: 0, T: 1, W: 2, R: 3, F: 4, S: 5, U: 6 };
 const SMALL = /^(a|an|and|as|at|by|for|in|of|on|or|the|to|vs|via|with)$/i;
-const titleCase = (t: string) => (/[a-z]/.test(t) ? t : t.toLowerCase().split(/(\s+|-|\/)/).map((w, i) => (i > 0 && SMALL.test(w) ? w : /^(i|ii|iii|iv|v|vi)$/i.test(w) ? w.toUpperCase() : w.charAt(0).toUpperCase() + w.slice(1))).join(''));
+export const titleCase = (t: string) => (/[a-z]/.test(t) ? t : t.toLowerCase().split(/(\s+|-|\/)/).map((w, i) => (i > 0 && SMALL.test(w) ? w : /^(i|ii|iii|iv|v|vi)$/i.test(w) ? w.toUpperCase() : w.charAt(0).toUpperCase() + w.slice(1))).join(''));
 const to24 = (t: string) => { const m = /^(\d{1,2}):(\d{2})(AM|PM)$/i.exec(t.trim()); if (!m) return ''; let h = Number(m[1]) % 12; if (/pm/i.test(m[3])) h += 12; return `${String(h).padStart(2, '0')}:${m[2]}`; };
 export function riceToCourses(html: string, termCode: string, label: string): CatalogCourse[] {
   const out: CatalogCourse[] = []; const seen = new Set<string>(); const secOf = new Map<string, string>();
