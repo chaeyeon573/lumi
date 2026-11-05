@@ -132,7 +132,7 @@ test('view: members who are not admins never see who else asked to join', () => 
 // ─── S089 public Explore ───────────────────────────────────────────────────────
 const listing = (extra: Partial<Opportunity>): Opportunity => ({
   id: 'op_x', type: 'event', title: 'Open house', host: 'Career Center', description: 'Come by.', cover: { emoji: '', hue: 0 },
-  date: '2099-01-10', eligibility: 'All students', sourceUrl: 'https://career.berkeley.edu/x', sourceLabel: 'Career Center', tags: [], interests: ['career'], goals: ['internship'],
+  date: '2099-01-10', eligibility: 'All students', sourceUrl: 'https://career.berkeley.edu/x', sourceLabel: 'Career Center', tags: [], interests: [], goals: ['internship'],
   schoolId: 's_berkeley', lastVerified: '2026-11-01', createdAt: '2026-11-01T00:00:00Z',
   qna: [{ id: 'c1', authorId: 'u_me', text: 'Is it free?', createdAt: '2026-11-01T00:00:00Z' }], reviews: [{ id: 'r1', authorId: 'u_me', text: 'Good', createdAt: '2026-11-01T00:00:00Z' }],
   ...extra,
