@@ -403,7 +403,7 @@ async function cornellSubject(roster: string, subject: string): Promise<CatalogC
   const res = await fetch(`https://classes.cornell.edu/api/2.0/search/classes.json?roster=${roster}&subject=${encodeURIComponent(subject)}`, { headers: { 'user-agent': 'AroundU-importer' } });
   if (!res.ok) return [];
   const data = (await res.json()) as { data?: { classes?: CornellClass[] } };
-  const out: CatalogCourse[] = []; const seen = new Set<string>();
+  const out: CatalogCourse[] = []; const seen = new Set<string>(); const secOf = new Map<string, string>();
   for (const c of data.data?.classes ?? []) {
     const code = `${c.subject} ${c.catalogNbr}`; const baseId = courseId('s_cornell', code);
     const lectures = c.enrollGroups.flatMap((g) => g.classSections.filter((sec) => sec.ssrComponent === 'LEC').map((sec) => ({ g, sec })));
@@ -418,12 +418,12 @@ async function cornellSubject(roster: string, subject: string): Promise<CatalogC
       }
       if (!meetings.length) continue;
       const id = seen.has(baseId) ? `${baseId}_${sec.section}` : baseId;
-      if (seen.has(id)) continue; seen.add(id);
-      out.push({ id, schoolId: 's_cornell', code, title: seen.size > 1 && id !== baseId ? `${c.titleLong} (Lec ${sec.section})` : c.titleLong, department: c.subject, instructor, location, meetings: uniq(meetings), term: normalizeTermLabel(roster), termCode: roster, units: g.unitsMinimum, url: `https://classes.cornell.edu/browse/roster/${roster}/class/${c.subject}/${c.catalogNbr}` });
+      if (seen.has(id)) continue; seen.add(id); secOf.set(id, `${sec.ssrComponent.charAt(0)}${sec.ssrComponent.slice(1).toLowerCase()} ${sec.section}`);
+      out.push({ id, schoolId: 's_cornell', code, title: c.titleLong, department: c.subject, instructor, location, meetings: uniq(meetings), term: normalizeTermLabel(roster), termCode: roster, units: g.unitsMinimum, url: `https://classes.cornell.edu/browse/roster/${roster}/class/${c.subject}/${c.catalogNbr}` });
     }
   }
-  // 섹션이 둘 이상인 과목은 첫 섹션 제목에도 번호를 붙인다
-  for (const c of out) if (out.some((o) => o.id.startsWith(`${c.id}_`))) c.title = `${c.title} (Lec 001)`;
+  // 섹션이 둘 이상인 과목은 학교가 준 종류·번호 그대로 붙인다(첫 섹션을 'Lec 001' 로 적던 것은 틀렸다 — ECE 6950 첫 강의는 002, ENGL 1183 은 SEM 101, 2026-11-05)
+  for (const c of out) if (out.filter((o) => o.code === c.code).length > 1) c.title = `${c.title} (${secOf.get(c.id)})`;
   return out;
 }
 async function cornell(): Promise<CatalogCourse[]> {

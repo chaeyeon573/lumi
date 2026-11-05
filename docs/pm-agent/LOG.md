@@ -2155,3 +2155,7 @@
   - start times like "-0500" are normalised;
   - ongoing exhibits, multi-day items (e.g. Homecoming Weekend) and virtual events are left out.
   - Test added. Checked Penn GIS Day on its page: Nov 17, 9:30 a.m. = ours.
+- Spot check courses (Cornell class roster API): BME 4020 WF 1:25, CLASS 1451 MW 10:10, NBA 5390 TR 2:55 match.
+  - ENGL 1183 and ECE 6950 showed the same first-section labelling bug as Banner and UMD: the Cornell reader titled a course's first section "Lec 001" whatever it really was (ECE 6950's first lecture is 002; ENGL 1183 has seminars 101+). Times were right.
+  - Fixed: labels use Cornell's own component and number ("Lec 002", "Sem 101"). Cornell re-collected (9,509 classes, Fall + Spring), and both courses now match the roster.
+- Spot check clubs: NC State NSBE, Penn State CrossFit Medical Society, USC Sirens fine. UChicago BLSA (blsa.uchicago.edu) no longer resolves, so moved to deadlinks. Notre Dame engineering site is unreachable from here (known TLS block).
