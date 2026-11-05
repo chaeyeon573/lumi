@@ -1,20 +1,25 @@
 {
- "checkedAt": "2026-11-03T16:38:02.454Z",
+ "checkedAt": "2026-11-05T22:42:54.276Z",
  "status": "applied",
  "stored": false,
- "source": "catalog:https://bulletin.wustl.edu/",
- "sampled": 134,
- "withTimes": 0,
+ "source": "timetable:wustl",
+ "sampled": 3770,
+ "withTimes": 3770,
  "terms": [
-  "catalog"
+  "Fall 2026",
+  "Spring 2027"
  ],
  "sample": [
-  "ESE 5240 · Detection and Estimation Theory · catalog",
-  "ESE 5980 · Electrical & Systems Engineering Graduate Seminar · catalog",
-  "ESE 3300 · Engineering Electromagnetics Principles · catalog",
-  "ESE 4390 · Introduction to Quantum Communications · catalog",
-  "ESE 5130 · Large-Scale Optimization for Data Science · catalog",
-  "LING 2996 · Linguistics Elective · catalog"
+  "AFAS 3040 · A History of African-American Theater · Fall 2026 · M 16:00-17:20 W 16:00-17:20",
+  "ELIT 5156 · Selected English Writers I: Virginia Woolf: Novelist and Feminist · Fall 2026 · T 14:30-15:50 R 14:30-15:50",
+  "SOC 2050 · Inequality By Design: Understanding Racial/Ethnic Health Disparities · Fall 2026 · T 16:00-17:20 R 16:00-17:20",
+  "GNCOUN 5020 · Genetic Counseling Journal Club · Fall 2026 · T 11:00-13:00",
+  "WRITING 5802 · MFA Poetry Workshop · Spring 2027 · W 14:30-17:20",
+  "SOC 3213 · Constructing Suburbia · Spring 2027 · T 11:30-12:50 R 11:30-12:50"
  ],
- "spotCheck": "no lookup (catalog codes/titles only)"
+ "spotCheck": {
+  "matched": 0,
+  "mismatched": [],
+  "unavailable": 0
+ }
 }

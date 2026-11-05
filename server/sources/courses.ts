@@ -1317,8 +1317,12 @@ export function wustlToCourses(html: string, termName: string, label: string): C
     const title = val(row, 'heading wide'), code = val(row, 'heading middle'), dept = val(row, 'department');
     const units = Number(/(\d+(?:\.\d+)?) Units?/.exec(val(row, 'heading narrow'))?.[1]);
     if (!/^[A-Z][A-Z0-9 &-]* \d{3,4}[A-Z]?$/.test(code)) continue;
-    for (const sec of row.split('data-section-id=').slice(1)) {
-      if (val(sec, 'value value-term') !== termName) continue;
+    // WashU 는 분반 종류를 안 주지만 번호 규칙이 있다: 숫자 분반(01, 02) = 강의, 글자 분반(A, B, C) = 토론·실험(학생이 하나 고름).
+    // 숫자 분반이 있으면 글자 분반은 뺀다 — 다른 학교처럼 강의만 (2026-11-05 CLASSICS 3010: 01 월수 + A/B/C 금)
+    const secs = row.split('data-section-id=').slice(1).filter((x) => val(x, 'value value-term') === termName);
+    const hasNumbered = secs.some((x) => /^\d+$/.test(val(x, 'value value-section-number')));
+    for (const sec of secs) {
+      if (hasNumbered && !/^\d+$/.test(val(sec, 'value value-section-number'))) continue;
       const num = val(sec, 'value value-section-number'), days = val(sec, 'value value-days'), time = val(sec, 'value value-time');
       const t = /^(\d{1,2}:\d{2}) ?([AP]M)\s*-\s*(\d{1,2}:\d{2}) ?([AP]M)$/i.exec(time); if (!t) continue;
       const start = to24(`${t[1]}${t[2]}`), end = to24(`${t[3]}${t[4]}`);
@@ -1331,25 +1335,30 @@ export function wustlToCourses(html: string, termName: string, label: string): C
   for (const c of out) if (out.filter((o) => o.code === c.code).length > 1) c.title = `${c.title} (Sec ${secOf.get(c.id)})`;
   return tagTerm(out, label);
 }
-async function wustlPage(termName: string, page: number): Promise<string> {
-  const r = await fetch(WUSTL, { method: 'POST', headers: { ...UAH, 'content-type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ term: termName, paged: String(page), filter_submit: '1' }).toString() });
-  if (!r.ok) throw new Error(`wustl ${termName} p${page} → ${r.status}`); return r.text();
+async function wustlPost(fields: Record<string, string>): Promise<string> {
+  const r = await fetch(WUSTL, { method: 'POST', headers: { ...UAH, 'content-type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ ...fields, paged: '1', filter_submit: '1' }).toString() });
+  if (!r.ok) throw new Error(`wustl ${JSON.stringify(fields)} → ${r.status}`); return r.text();
 }
+const wustlOptions = (html: string, id: string) => [...(new RegExp(`<select id="${id}"[\\s\\S]*?<\\/select>`).exec(html)?.[0] ?? '').matchAll(/<option value="([^"]+)"/g)].map((m) => decodeEntities(m[1]));
+/** 학교(school) → 그 학교 학과(department) 목록 → 학과마다 한 번. 학과 결과는 한 쪽에 다 나온다(Biology 64·Economics 65, 2026-11-05 확인).
+ *  전에는 학기 전체를 쪽(paged)으로 넘겼는데 2쪽 이후가 늘 같은 쪽이라 꺼 두었었다 */
 async function wustl(): Promise<CatalogCourse[]> {
-  const first = await wustlPage('', 1);
+  const first = await wustlPost({ term: '' });
   const names = [...(/name="term"[\s\S]*?<\/select>/.exec(first)?.[0] ?? '').matchAll(/value="(20\d{2} (?:Fall|Spring))"/g)].map((m) => m[1]);
   const [cur, next] = catalogTermLabels(); const want = (l: string) => names.find((n) => `${n.split(' ')[1]} ${n.split(' ')[0]}` === l);
-  const out: CatalogCourse[] = [];
+  const schools = wustlOptions(first, 'schoolselect').filter((x) => !/^Washington University in St\. Louis$/.test(x));
+  const out: CatalogCourse[] = []; const seen = new Set<string>();
   for (const label of [cur, next]) {
     const termName = want(label); if (!termName) { console.log(`  s_wustl ${label}: not listed yet`); continue; }
-    const seen = new Set<string>(); let n = 0;
-    for (let page = 1; page <= 120; page++) {
-      const html = await wustlPage(termName, page); const got = wustlToCourses(html, termName, label);
-      const fresh = got.filter((c) => !seen.has(c.id)); fresh.forEach((c) => seen.add(c.id)); out.push(...fresh); n += fresh.length;
-      if (!html.includes('Next Page') || !html.includes('scpi__classes--row')) break;
-      await new Promise((r) => setTimeout(r, 800));
+    let n = 0;
+    for (const school of schools) {
+      const depts = wustlOptions(await wustlPost({ term: termName, school }), 'departmentselect');
+      for (const department of depts) {
+        await new Promise((r) => setTimeout(r, 700));
+        for (const c of wustlToCourses(await wustlPost({ term: termName, school, department }), termName, label)) if (!seen.has(c.id)) { seen.add(c.id); out.push(c); n++; }
+      }
     }
-    console.log(`  s_wustl ${termName} (${label}): ${n} classes`);
+    console.log(`  s_wustl ${termName} (${label}): ${schools.length} schools → ${n} classes`);
   }
   return out;
 }

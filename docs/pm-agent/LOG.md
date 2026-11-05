@@ -2216,3 +2216,16 @@
 - Spot check clubs found Cornell "PLHRT 5850 Public Garden Management class", which is a course, not a club. Scanning all schools for course-coded names found 9 Cornell course groups (BEE 4270/5270, CHEME 7900 Seminar Series, CRP 3072/5072, HADM 4810 NYC trip, NBA 6500, PUBPOL 2301, VTPEH 6182/6142 ...) and Georgia Tech's GT 1000/2000 Transition Seminars. Marked `department` (hidden) in org-type-overrides.csv. UCLA "MT2026" and UCSB "SS805" are unclear, so left as is.
 - Spot check clubs (others): Penn State Sign Language Organization, Maryland Club Baseball, IU Abundance, UGA Geology Club fine.
 - Spot check courses (UCLA rendered class pages): MGMTFE 411 Lec 4 T 6:30-9:30 pm, DANCE C109A TR 4:00-5:20, ARCHEOL M201B M 2:00-4:50, PUB PLC M265 W 1:00-3:50, COM SCI 32 TR 6:00-7:50 pm - all match.
+
+## 2026-11-05 22:33 UTC
+- Event time-zone check: every event's local start time matches its UTC time in the school's tz (all 61 events files).
+- **WashU class times enabled: 3,770 classes** (Fall 1,900 + Spring 1,870).
+  - The old reader paged the whole term, and pages 2+ always came back the same, so it was disabled.
+  - Now it asks each school for its departments, then one POST per department; a department's classes all come on one page (Biology 64, Economics 65 checked).
+  - The first run counted lettered sections as classes (CLASSICS 3010 Spring "Sec A/B/C", Friday discussions). WashU numbers lectures (01, 02) and letters discussions/labs, so lettered sections are now left out when numbered ones exist. Test with the real CLASSICS 3010 row.
+  - Re-collected; the first run's lettered entries moved to courses-dropped.
+  - Checked live: MATH 3410 MWF 3:00, MEMS 3120 M 2:00-3:20, MEMS 1150 03 MW 2:30, DRAMA 2101 TR 1:00, CLASSICS 3010 MW 3:00 - match. Audit clean.
+- **Harvard:** has a reader and my.harvard.edu answers from here, but the row is marked for Railway probing, so it was never collected. A full run is about 6,600 requests to one site, so it is queued for a budgeted batch instead.
+- Spot check clubs:
+  - UW TAPPI (Linktree), Dartmouth D-LAB (student-facilitated) and USF CAB are fine.
+  - Purdue "International Student Services" (Office of International Students and Scholars) and UVA "Digital Technology for Democracy Lab" (university research initiative) are offices, so marked `department`.
