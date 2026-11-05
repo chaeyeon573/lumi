@@ -2100,3 +2100,7 @@
   - USF and Georgia Tech are unaffected (they find Spring by name).
 - Checked 5 random UCR classes against the live Banner search: NRSC 200A TR 11:00-12:20, ANTH 253 M 11:00-1:50, CEE 206 001 TR 3:30-4:50, POSC 164S TR 5:00-6:20, CS 171 MWF 2:00-2:50 - all match. The class-file audit is clean (7 weekend classes, no exam rows).
 - Emory (atlas.emory.edu), Indiana (classes.iu.edu, refused by the proxy) and UChicago (PeopleSoft guest search) are not reachable from here.
+- **Lehigh class times: 2,700 classes** (Fall 2026 1,392 + Spring 2027 1,308) from Lehigh's public Banner 9 (reg-prod.ec.lehigh.edu). Found by trying the Ellucian cloud host pattern for 17 schools without times; only Lehigh answered. The 3,340 catalog-only entries are kept. Audit clean.
+- **Spot check found a labelling bug:** in Lehigh's live data, MAT 495's first section is 011 but we titled it "(Sec 001)". The Banner reader hard-coded "001" for a course's first section; it now uses the school's section number. Times were right. USF, Georgia Tech, UCR and Lehigh re-collected; FIN 331 now shows Sec 011 / Sec 012 like the live data.
+- Spot check Lehigh vs live Banner: BIOS 323 TR 3:00-4:15, MAT 495 011 MW 10:45-12:00, FIN 331 012 TR 12:10-1:25 match. (WRT 1 and PSYC 1 came back empty only because the check asked for "1"; Lehigh numbers them "001".)
+- Spot check clubs: UVA All Girls STEM Society, UCR South Asian InterVarsity, MSU Big Sister Little Sister, UT TexasDayTrading fine. USC Troy Tones (troytones.org) no longer resolves, so moved to deadlinks.

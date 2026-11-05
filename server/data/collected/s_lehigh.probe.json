@@ -1,20 +1,25 @@
 {
- "checkedAt": "2026-11-03T01:35:47.501Z",
+ "checkedAt": "2026-11-05T10:48:47.738Z",
  "status": "applied",
  "stored": false,
- "source": "catalog:https://catalog.lehigh.edu/",
- "sampled": 304,
- "withTimes": 0,
+ "source": "timetable:banner9:https://reg-prod.ec.lehigh.edu",
+ "sampled": 2700,
+ "withTimes": 2700,
  "terms": [
-  "catalog"
+  "Fall 2026",
+  "Spring 2027"
  ],
  "sample": [
-  "BIOS 010 · Bioscience in the 21st Century · catalog",
-  "BIOS 338 · Neurodegenerative Diseases in Model Organisms · catalog",
-  "BIOS 426 · Coevolution · catalog",
-  "HMS 142 · (CLSS 142) The Greek and Latin Roots of Medical Terminology · catalog",
-  "REL 005 · Spiritual Exercises in Religious Traditions · catalog",
-  "REL 149 · (ETH 149) Modern Islamic Ethics · catalog"
+  "ACCT 108 · Fundamentals of Accounting · Fall 2026 · T 15:00-16:15 R 15:00-16:15",
+  "CPSY 480 · Master's Internship I - MHC (Sec 010) · Fall 2026 · M 16:25-19:05",
+  "MGT 379 · Bias in Individuals & Organizations · Fall 2026 · T 15:00-16:15 R 15:00-16:15",
+  "WRT 1 · Academic and Analytical Writing (Sec 023) · Fall 2026 · T 09:20-10:35 R 09:20-10:35",
+  "DES 111 · Sound Design · Spring 2027 · T 15:00-16:15 R 15:00-16:15",
+  "MKT 111 · Principles of Marketing (Sec 017) · Spring 2027 · T 10:45-12:00 R 10:45-12:00"
  ],
- "spotCheck": "no lookup (catalog codes/titles only)"
+ "spotCheck": {
+  "matched": 6,
+  "mismatched": [],
+  "unavailable": 0
+ }
 }

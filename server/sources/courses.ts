@@ -658,17 +658,17 @@ function banner9Source(schoolId: string, host: string): CourseSource {
     return [toTerm(now), ...(after && after.code !== now.code ? [toTerm(after)] : [])];
   }
   function toCourses(secs: B9Section[], termCode: string, label: string = termCode): CatalogCourse[] {
-    const out: CatalogCourse[] = []; const seen = new Set<string>();
+    const out: CatalogCourse[] = []; const seen = new Set<string>(); const secOf = new Map<string, string>();
     for (const s of secs) {
       if (s.scheduleTypeDescription && !/lecture|seminar|lecture\/discussion/i.test(s.scheduleTypeDescription)) continue;
       const code = `${s.subject} ${s.courseNumber.replace(/^0+(?=\d)/, '')}`; const baseId = courseId(schoolId, code);
       const { meetings, location } = b9Meetings(s.meetingsFaculty);
       if (!meetings.length) continue;
-      const id = seen.has(baseId) ? `${baseId}_${s.sequenceNumber}` : baseId; if (seen.has(id)) continue; seen.add(id);
+      const id = seen.has(baseId) ? `${baseId}_${s.sequenceNumber}` : baseId; if (seen.has(id)) continue; seen.add(id); secOf.set(id, s.sequenceNumber);
       out.push({ id, schoolId, code, title: ((t) => (/[a-z]/.test(t) ? t : titleCase(t)))(decodeEntities(s.courseTitle)), department: s.subjectDescription ? decodeEntities(s.subjectDescription) : s.subject, instructor: s.faculty?.[0]?.displayName, location, meetings: uniq(meetings), term: label, termCode, units: s.creditHours ?? s.creditHourLow, url: `${H}/classSearch/classSearch` });
     }
-    for (const c of out) if (out.some((o) => o.id.startsWith(`${c.id}_`))) c.title = `${c.title} (Sec 001)`;
-    for (const c of out) { const m = /_(\d{3})$/.exec(c.id); if (m) c.title = `${c.title} (Sec ${m[1]})`; }
+    // 분반 번호는 학교가 준 번호 그대로 — 첫 분반을 '001' 로 적던 것은 틀렸다 (Lehigh MAT 495 첫 분반은 011, 2026-11-05)
+    for (const c of out) if (out.filter((o) => o.code === c.code).length > 1) c.title = `${c.title} (Sec ${secOf.get(c.id)})`;
     return tagTerm(out, label);
   }
   async function searchSubject(termCode: string, subject: string): Promise<B9Section[]> {
