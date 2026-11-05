@@ -147,3 +147,20 @@ test('POST /api/auth/export-data answers for the signed-in caller only', async (
     assert.equal(body.profile.id, VIEWER, 'a user id in the body is ignored');
   } finally { server.close(); }
 });
+
+test('open to: only within its visibility and until its end date; bad input is dropped', () => {
+  const d = db();
+  const today = new Date().toISOString().slice(0, 10);
+  const o = user(d, OWNER);
+  o.openTo = { kinds: ['coffee'], when: 'this_week', until: today, visibility: 'friends' };
+  for (const u of seenBy(d, VIEWER, OWNER)) assert.equal('openTo' in u!, false, 'not a friend yet');
+  d.relationships.friends.push({ a: OWNER, b: VIEWER, since: '2026-10-01' });
+  for (const u of seenBy(d, VIEWER, OWNER)) assert.deepEqual(u!.openTo?.kinds, ['coffee']);
+  o.openTo = { ...o.openTo, until: '2020-01-01' };
+  for (const u of seenBy(d, VIEWER, OWNER)) assert.equal('openTo' in u!, false, 'expired');
+  assert.equal(snapshotFor(d, OWNER).users.find((u) => u.id === OWNER)!.openTo?.until, '2020-01-01', 'the owner still sees it');
+  assert.equal(cleanProfileExtras({ openTo: { kinds: ['dating' as never], when: 'today', until: today, visibility: 'friends' } }).openTo, undefined);
+  assert.equal(cleanProfileExtras({ openTo: { kinds: ['walk'], when: 'today', until: 'soon', visibility: 'friends' } }).openTo, undefined);
+  assert.deepEqual(cleanProfileExtras({ openTo: { kinds: ['walk', 'walk', 'lunch'], when: 'today', until: today, visibility: 'school' } }).openTo, { kinds: ['walk', 'lunch'], when: 'today', until: today, visibility: 'school' });
+  assert.equal(cleanProfileExtras({ openTo: undefined }).openTo, undefined, 'turning it off');
+});

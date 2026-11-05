@@ -82,6 +82,8 @@ export function profileFor(s: Rel, viewer: User, owner: User): User {
   for (const [f, k] of Object.entries(EXTRA_KEYS) as [Exclude<ExtraField, 'memberships'>, keyof User][]) {
     if (k in bag && !canView(s, viewer, owner.id, extraVisibilityOf(owner, f))) delete bag[k];
   }
+  // Open to: 고른 공개 범위 안에서, 끝나는 날까지만 (날짜는 서버 시계 기준 — 하루 늦게 꺼질 수는 있어도 일찍 새지는 않는다)
+  if (out.openTo && (out.openTo.until < new Date().toISOString().slice(0, 10) || !canView(s, viewer, owner.id, out.openTo.visibility))) delete bag.openTo;
   if (out.timetable) out.timetable = out.timetable.map((c) => ({ id: c.id, name: '', day: c.day, start: c.start, end: c.end, hue: c.hue }));
   if (out.poll) {
     const mine = out.poll.votes[viewer.id];

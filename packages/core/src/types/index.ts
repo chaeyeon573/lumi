@@ -204,6 +204,17 @@ export interface User {
    * memberships: 내가 속하거나 팔로우하는 그룹 — 다른 사람이 받는 동아리의 memberIds·followerIds 에서 나를 뺀다 (server/view.ts)
    */
   extraVisibility?: Partial<Record<ExtraField, Visibility>>;
+  /** "Open to" (S080) — 잠깐 켜 두는 선택 상태. 다른 사람에게는 visibility 안에서, until 날짜까지만 (lib/privacy). 위치는 없다 */
+  openTo?: OpenTo;
+}
+
+export type OpenToKind = 'coffee' | 'study' | 'advice' | 'walk' | 'lunch';
+export interface OpenTo {
+  kinds: OpenToKind[];
+  when: 'today' | 'this_week' | 'next_week';
+  /** 이 날짜(YYYY-MM-DD, 그날 포함)가 지나면 다른 사람에게 보내지 않는다 */
+  until: string;
+  visibility: Visibility;
 }
 
 /** fieldVisibility 밖에서 공개 범위를 따로 갖는 항목 (fieldVisibility 는 모든 키가 있어야 해서 새 항목은 여기에) */

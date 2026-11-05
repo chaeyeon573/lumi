@@ -1,4 +1,4 @@
-import type { Affiliation, ExtraField, NextChapter, User, Visibility } from '@core/types';
+import type { Affiliation, ExtraField, NextChapter, OpenTo, OpenToKind, User, Visibility } from '@core/types';
 
 /**
  * users.update 를 사용자가 RPC로 직접 부를 때 바꿀 수 없는 값을 걸러낸다.
@@ -12,6 +12,7 @@ const sameOrg = (a: Affiliation, b: Affiliation) =>
   a.type === b.type && (a.type === 'university' ? a.schoolId === (b as typeof a).schoolId : a.companyName.trim().toLowerCase() === (b as typeof a).companyName.trim().toLowerCase());
 
 const VISIBILITIES: readonly Visibility[] = ['public', 'school', 'department', 'friends', 'followers', 'private'];
+const OPEN_TO_KINDS: readonly OpenToKind[] = ['coffee', 'study', 'advice', 'walk', 'lunch'];
 const EXTRA_FIELDS: readonly ExtraField[] = ['languages', 'country', 'nextChapter', 'memberships'];
 const short = (x: unknown, max: number) => (typeof x === 'string' ? x.replace(/\s+/g, ' ').trim().slice(0, max) : '');
 
@@ -37,6 +38,12 @@ export function cleanProfileExtras(patch: Partial<User>): Partial<User> {
       ...(short(n.industry, 60) ? { industry: short(n.industry, 60) } : {}),
     };
     out.nextChapter = Object.keys(next).length ? next : undefined;
+  }
+  if ('openTo' in out) {
+    const o = out.openTo as Partial<OpenTo> | undefined;
+    const kinds = (Array.isArray(o?.kinds) ? o.kinds : []).filter((k): k is OpenToKind => OPEN_TO_KINDS.includes(k as OpenToKind));
+    const ok = o && kinds.length && ['today', 'this_week', 'next_week'].includes(o.when as string) && /^\d{4}-\d{2}-\d{2}$/.test(o.until ?? '') && VISIBILITIES.includes(o.visibility as Visibility);
+    out.openTo = ok ? { kinds: [...new Set(kinds)], when: o.when!, until: o.until!, visibility: o.visibility! } : undefined;
   }
   if ('extraVisibility' in out) {
     const v = (out.extraVisibility ?? {}) as Record<string, unknown>;
