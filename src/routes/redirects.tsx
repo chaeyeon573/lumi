@@ -1,5 +1,7 @@
 import { Navigate, Route, useLocation, useParams } from 'react-router-dom';
 import { useAppStore } from '@core/store/useAppStore';
+import { AppShell } from '@/components/layout/AppShell';
+import { GuestExplorePage } from '@/pages/explore/GuestExplorePage';
 
 /**
  * 예전 주소 → 새 주소. 알림·푸시·공유 링크에 남은 예전 주소가 깨지지 않게 (?쿼리는 그대로).
@@ -69,5 +71,7 @@ export const legacyPublicRoutes = (
   <>
     <Route path="/r/:id" element={<Navigate to="/" replace />} />
     <Route path="/p/:id" element={<Navigate to="/schedule/plans" replace />} />
+    {/* WP2 S089 — Explore without an account (public; a signed-in person is sent to /explore) */}
+    <Route element={<AppShell withNav={false} />}><Route path="/guest/explore" element={<GuestExplorePage />} /><Route path="/guest/explore/:section" element={<GuestExplorePage />} /></Route>
   </>
 );
