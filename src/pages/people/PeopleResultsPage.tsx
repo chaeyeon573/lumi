@@ -60,8 +60,10 @@ function usePeopleFilter(x: PeopleQuery) {
 export function PeopleResultsPage({ mode = 'results' }: { mode?: 'results' | 'common' }) {
   const nav = useNavigate();
   const [params, setParams] = useSearchParams();
-  const x = readQuery(params);
-  const set = (p: Partial<PeopleQuery>) => setParams(writeQuery({ ...x, ...p }), { replace: true });
+  // 검색어는 자기 상태로 (주소에 바로 묶으면 빠르게 친 글자가 사라진다), 나머지 조건은 주소에서
+  const [text, setText] = useState(params.get('q') ?? '');
+  const x = { ...readQuery(params), q: text };
+  const set = (p: Partial<PeopleQuery>) => { if (p.q !== undefined) setText(p.q); setParams(writeQuery({ ...x, ...p }), { replace: true }); };
   const ranked = usePeopleInCommon();
   const ok = usePeopleFilter(x);
   const list = ranked.filter(({ u, common }) => (mode === 'results' || common.length > 0) && ok(u));
@@ -85,7 +87,7 @@ export function PeopleResultsPage({ mode = 'results' }: { mode?: 'results' | 'co
           {!list.length && (ranked.length
             ? <EmptyCard title={mode === 'common' ? (en ? 'Nothing in common yet' : '아직 겹치는 사람이 없어요') : (en ? 'No one matches that yet' : '아직 맞는 사람이 없어요')}
                 sub={mode === 'common' ? (en ? 'Add your classes and interests — shared ones show up here.' : '수업과 관심사를 넣으면 겹치는 사람이 보여요.') : (en ? 'Try fewer filters.' : '조건을 줄여 보세요.')}
-                secondary={anyFilter ? { label: en ? 'Clear filters' : '조건 지우기', onClick: () => setParams({}, { replace: true }) } : { label: en ? 'Edit profile' : '프로필 수정', onClick: () => nav('/profile/edit') }} />
+                secondary={anyFilter ? { label: en ? 'Clear filters' : '조건 지우기', onClick: () => { setText(''); setParams({}, { replace: true }); } } : { label: en ? 'Edit profile' : '프로필 수정', onClick: () => nav('/profile/edit') }} />
             : <CampusStart parts={['classes', 'invite']} />)}
         </div>
         <InfoNote className="mt-5">{en ? 'Suggestions reflect registered people, not school rosters.' : '학교 명단이 아니라 Lumi 에 가입한 사람만 보여요.'}</InfoNote>
