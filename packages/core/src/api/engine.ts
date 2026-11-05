@@ -4,10 +4,10 @@
  * 스냅샷 모양의 in-memory DB(`ctx.db`)를 직접 변경하고, 바뀐 엔티티만 담은 Patch를 돌려준다.
  * 저장(localStorage / DB 영속화), 지연, 세션, 인증은 호출하는 쪽의 책임이다.
  */
-import type { Patch, Snapshot, RegisterInput, ActivityInput, PostInput, OpportunityInput, TimePollInput, GoTogetherResult, DailyResults } from './types';
+import type { Patch, Snapshot, RegisterInput, ActivityInput, PostInput, OpportunityInput, TimePollInput, GoTogetherResult, DailyResults, OrgInput } from './types';
 import type {
   Activity, ActivityProposal, Availability, ChatRoom, ID, Notification, OpportunityIntent, Participation, Post, User, Opportunity, TimePoll, TimeOption, ReportTargetType,
-  Game, GameInput, GameKind, Role,
+  Game, GameInput, GameKind, Role, Organization,
 } from '@core/types';
 import { freeBlocks, jsDayToIdx, toMin } from '@core/lib/timetable';
 import { uid, pairKey } from '@core/lib/format';
@@ -20,6 +20,7 @@ import { campusDate } from '@core/lib/listings';
 import { pollPlaceNames, POLL_MAX_GRID_OPTIONS } from '@core/lib/pollgrid';
 import { orgJoinState } from '@core/lib/orgjoin';
 import { audienceFits, isFull, waitlistOf } from '@core/lib/meetups';
+import { initialsOf } from '@core/lib/orglinks';
 import { canGoTogether, campusToday, crewMembers, crewsFor, dailyTally, meetTimeFor, DAILY_MIN_ANSWERS, MEETUP_CAPACITY } from '@core/lib/withpeople';
 
 export interface EngineContext {
@@ -483,10 +484,55 @@ export function createEngine(ctx: EngineContext) {
         const state = orgJoinState(org, userId);
         if (state.kind === 'admin' || state.kind === 'member' || state.kind === 'applied') return { organizations: [org] };
         if (state.kind === 'follow') throw new Error(t(state.why === 'not_recruiting' ? '지금은 가입 요청을 받지 않는 동아리예요. 팔로우하면 새 행사 소식을 받아요.' : '이 동아리 운영진이 아직 Lumi에 없어요. 동아리 안내에 적힌 방법으로 가입하세요.'));
-        org.applicantIds.push(userId);
         const who = find(db().users, userId);
+        // 열린 그룹 (S026 Join policy: Anyone can join) — 바로 회원, 운영진에게는 알림만
+        if (state.kind === 'join') {
+          org.memberIds.push(userId);
+          const nts = org.adminIds.filter((a) => a !== userId).map((a) => notify(a, { type: 'follow', title: t('새 회원'), body: `${who.nickname} · ${org.name}`, link: `/orgs/${org.id}?tab=members` }));
+          return { organizations: [org], notifications: nts };
+        }
+        org.applicantIds.push(userId);
         const nts = org.adminIds.filter((a) => a !== userId).map((a) => notify(a, { type: 'participation_request', title: t('가입 요청'), body: `${who.nickname} · ${org.name}`, link: `/users/${userId}` }));
         return { organizations: [org], notifications: nts };
+      },
+      /**
+       * 그룹 만들기 (S026) — 학교를 인증한 학생만, 그 학교 안에. 만든 사람이 운영진·회원이 된다.
+       * 같은 학교에 같은 이름의 단체가 있으면 만들지 않는다 (학교 공식 동아리와 헷갈리지 않게). 한 사람당 열 개까지
+       */
+      create(creatorId: ID, input: OrgInput): { org: Organization; patch: Patch } {
+        const me = find(db().users, creatorId);
+        if (me.affiliation.type !== 'university' || !me.affiliation.schoolId) throw new Error(t('학교를 인증한 학생만 그룹을 만들 수 있어요.'));
+        const schoolId = me.affiliation.schoolId;
+        const name = String(input?.name ?? '').replace(/\s+/g, ' ').trim();
+        const description = String(input?.description ?? '').trim();
+        if (name.length < 3 || name.length > 60) throw new Error(t('그룹 이름은 3–60자로 적어주세요.'));
+        if (description.length > 500) throw new Error(t('소개는 500자까지예요.'));
+        if (!['club', 'lab', 'coop', 'council'].includes(input?.type)) throw new Error(t('그룹 종류를 골라주세요.'));
+        if (input?.joinPolicy !== 'open' && input?.joinPolicy !== 'approval') throw new Error(t('가입 방식을 골라주세요.'));
+        const key = (x: string) => x.toLowerCase().replace(/[^a-z0-9가-힣]+/g, '');
+        if (db().organizations.some((o) => o.schoolId === schoolId && key(o.name) === key(name))) throw new Error(t('같은 이름의 단체가 이미 있어요. 그 페이지에서 팔로우하거나 다른 이름을 써주세요.'));
+        if (db().organizations.filter((o) => o.createdBy === creatorId).length >= 10) throw new Error(t('그룹은 한 사람당 열 개까지 만들 수 있어요.'));
+        const hue = [...name].reduce((h, c) => (h * 31 + c.charCodeAt(0)) % 360, 7);
+        const org: Organization = {
+          id: uid('org'), name, logo: { emoji: initialsOf(name), hue }, type: input.type, schoolId, verified: false, description,
+          gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [creatorId], adminIds: [creatorId], applicantIds: [],
+          joinPolicy: input.joinPolicy, createdBy: creatorId,
+        };
+        db().organizations.push(org);
+        return { org, patch: { organizations: [org] } };
+      },
+      /**
+       * 가입 요청에 답하기 (S091) — 운영진만 (서버 권한 + 여기서 한 번 더). 승인하면 회원이 되고 본인에게 알림,
+       * 거절은 알리지 않는다 (친구 요청과 같다). 이미 처리된 요청이면 아무것도 하지 않는다
+       */
+      respondApplication(orgId: ID, userId: ID, accept: boolean): Patch {
+        const org = find(db().organizations, orgId);
+        if (!org.applicantIds.includes(userId)) return { organizations: [org] };
+        org.applicantIds = org.applicantIds.filter((a) => a !== userId);
+        if (!accept) return { organizations: [org] };
+        if (!org.memberIds.includes(userId)) org.memberIds.push(userId);
+        const nt = notify(userId, { type: 'participation_approved', title: t('가입 승인'), body: `${org.name}${t('의 회원이 됐어요.')}`, link: `/orgs/${org.id}` });
+        return { organizations: [org], notifications: [nt] };
       },
     },
 

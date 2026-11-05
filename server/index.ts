@@ -68,6 +68,7 @@ import { registerAppLinkRoutes } from './app-links';
 import { PROTECTED_IDS } from './account';
 import { acceptUpload, dayStart, MAX_MEDIA_PER_DAY, mediaVisible } from './media';
 import { createReviewLogin, reviewConfig, ReviewLoginError } from './review-login';
+import { orgRules, registerPublicExploreRoute } from './orgs';
 
 const PORT = Number(process.env.PORT ?? 8787);
 const store = createStore();
@@ -314,6 +315,9 @@ app.post('/api/schools/highlights', wrap(async (req) => {
   };
 }));
 
+// 로그인 없이 보는 Explore (S089) — 공개 공고·행사·동아리만, 사람 정보 없음 (server/orgs.ts)
+registerPublicExploreRoute(app, { db: () => db, wrap, bad });
+
 app.post('/api/schools/search', wrap(async (req) => engine.schools.search(String(req.body.query ?? ''))));
 
 // 가입 S010 "Search organizations" — 로그인 전, 연 학교의 동아리 이름만 (회원·팔로워·숫자 없음). 데모 동아리는 빼고 (@core/lib/signup)
@@ -430,7 +434,7 @@ const RULES: Record<Group, Record<string, Rule>> = {
     respondFriendRequest: owner(() => db.relationships.friendRequests, (r) => r.toId),
     unfriend: (me, args) => args[0] === me || args[1] === me,
   },
-  orgs: { apply: 1 },
+  orgs: orgRules(() => db),
   opportunities: { create: 0, setIntent: 1, toggleSave: 1, ask: 1, review: 1, ...TOGETHER_RULES.opportunities },
   proposals: { create: 0, respond: owner(() => db.proposals, (p) => p.toId) },
   together: { create: 0, vote: 1, addOption: 1, decide: owner(() => db.timePolls, (p) => p.hostId), cancel: owner(() => db.timePolls, (p) => p.hostId), votePlace: 1 },

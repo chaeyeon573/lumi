@@ -8,6 +8,7 @@
 import type { AccountExport } from '@core/lib/exportdata';
 import type { AroundUApi, Patch, Snapshot } from '../types';
 import type { PublicPlan } from '@core/lib/plans';
+import type { PublicExplore } from '@core/lib/publicexplore';
 import type { ID, User } from '@core/types';
 import { t, lang } from '@core/i18n';
 
@@ -147,7 +148,18 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
     activities: group('activities', ['create', 'update', 'remove', 'join', 'cancel', 'approve', 'reject', 'comment', 'toggleInterest', 'joinWaitlist']),
     posts: group('posts', ['create', 'remove', 'toggleLike', 'toggleSave', 'comment', 'approveTag']),
     relationships: group('relationships', ['toggleLike', 'toggleFollow', 'sendFriendRequest', 'cancelFriendRequest', 'respondFriendRequest', 'unfriend', 'block', 'unblock']),
-    orgs: group('orgs', ['apply']),
+    orgs: group('orgs', ['apply', 'create', 'respondApplication']),
+    // 로그인 없이 (S089) — 토큰 없이 GET, 공개 데이터만 (server: GET /api/public/explore)
+    guest: {
+      async explore(schoolId) {
+        let res: Response;
+        try { res = await fetch(`${base}/api/public/explore?school=${encodeURIComponent(schoolId)}`, { headers: { 'accept-language': lang } }); }
+        catch { throw new Error(t('네트워크 연결이 불안정해요. 잠시 후 다시 시도해주세요.')); }
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error((data as { error?: string }).error || t('문제가 발생했어요.'));
+        return data as PublicExplore;
+      },
+    },
     opportunities: group('opportunities', ['create', 'setIntent', 'toggleSave', 'ask', 'review', 'goTogether', 'leaveTogether', 'lookForTeam']),
     proposals: group('proposals', ['create', 'respond']),
     together: group('together', ['create', 'vote', 'addOption', 'decide', 'cancel', 'votePlace']),

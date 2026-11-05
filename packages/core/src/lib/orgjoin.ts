@@ -13,13 +13,17 @@ export type OrgJoin =
   /** 모집 중이고 운영진이 Lumi에 있다 — 가입 요청이 운영진(organizers명)에게 알림으로 간다 */
   | { kind: 'apply'; organizers: number }
   /** 가입 요청을 받을 사람이 없거나 모집하지 않는다 — 팔로우가 주 버튼 */
-  | { kind: 'follow'; why: 'not_recruiting' | 'no_organizers' };
+  | { kind: 'follow'; why: 'not_recruiting' | 'no_organizers' }
+  /** Lumi 에서 만든 열린 그룹 (joinPolicy open) — 누르면 바로 회원 */
+  | { kind: 'join' };
 
-export function orgJoinState(org: Pick<Organization, 'adminIds' | 'memberIds' | 'applicantIds' | 'recruitment'>, userId: ID): OrgJoin {
+export function orgJoinState(org: Pick<Organization, 'adminIds' | 'memberIds' | 'applicantIds' | 'recruitment' | 'joinPolicy'>, userId: ID): OrgJoin {
   if (org.adminIds.includes(userId)) return { kind: 'admin' };
   if (org.memberIds.includes(userId)) return { kind: 'member' };
   if (org.applicantIds.includes(userId)) return { kind: 'applied' };
-  if (!org.recruitment?.open) return { kind: 'follow', why: 'not_recruiting' };
+  // Lumi 에서 만든 그룹 — 만든 사람이 고른 가입 방식이 정한다 (학교 목록의 모집 기간과 상관없다)
+  if (org.joinPolicy === 'open') return { kind: 'join' };
+  if (!org.joinPolicy && !org.recruitment?.open) return { kind: 'follow', why: 'not_recruiting' };
   const organizers = org.adminIds.filter((a) => a !== userId).length;
   if (!organizers) return { kind: 'follow', why: 'no_organizers' };
   return { kind: 'apply', organizers };

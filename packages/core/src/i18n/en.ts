@@ -1423,4 +1423,15 @@ export const en: Record<string, string> = {
   '출생 연도를 확인해주세요.': 'Please check your birth year.',
   'Lumi는 만 16세 이상 대학생을 위한 앱이에요.': 'Lumi is for college students 16 and older.',
   '학교 이메일 인증을 먼저 해주세요.': 'Verify your school email first.',
+  // WP2 — 그룹 만들기 (S026) · 가입 요청 답하기 (S091)
+  '새 회원': 'New member',
+  '가입 승인': "You're in",
+  '의 회원이 됐어요.': ' accepted your membership request.',
+  '학교를 인증한 학생만 그룹을 만들 수 있어요.': 'Only students with a verified school can create a group.',
+  '그룹 이름은 3–60자로 적어주세요.': 'Give the group a name of 3–60 characters.',
+  '소개는 500자까지예요.': 'Keep the About to 500 characters.',
+  '그룹 종류를 골라주세요.': 'Pick a group type.',
+  '가입 방식을 골라주세요.': 'Pick a join policy.',
+  '같은 이름의 단체가 이미 있어요. 그 페이지에서 팔로우하거나 다른 이름을 써주세요.': 'A group with this name already exists. Follow it from its page, or pick another name.',
+  '그룹은 한 사람당 열 개까지 만들 수 있어요.': 'You can create up to ten groups.',
 };

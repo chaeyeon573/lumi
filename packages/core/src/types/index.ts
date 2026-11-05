@@ -352,7 +352,15 @@ export interface Organization {
   joinProcess?: string;
   /** Greek life 등 학교 정책 안내 */
   policyNote?: string;
+  /**
+   * 학생이 Lumi 에서 만든 그룹 (S026) — 가입 방식. approval = 운영진이 요청을 승인(S091) · open = 누르면 바로 회원.
+   * 학교 목록에서 가져온 동아리에는 없다 (그때는 recruitment 가 정한다, lib/orgjoin)
+   */
+  joinPolicy?: OrgJoinPolicy;
+  /** 이 그룹을 Lumi 에서 만든 사람 — 학교 공식 목록에서 온 동아리에는 없다 (로그인 없이 보는 Explore 에는 만든 그룹을 넣지 않는다) */
+  createdBy?: ID;
 }
+export type OrgJoinPolicy = 'open' | 'approval';
 
 // ─── 활동 ─────────────────────────────────────────────────────────────────
 export type ActivityKind = 'personal' | 'group' | 'org_event';

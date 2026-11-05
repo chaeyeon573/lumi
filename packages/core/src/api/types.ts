@@ -11,6 +11,8 @@ import type { OrgHit } from '@core/lib/signup';
 import type { PlansApi } from './plans';
 import type { TimePollWindow } from '@core/types';
 import type { ClassQuestionView } from '@core/lib/classqa';
+import type { PublicExplore } from '@core/lib/publicexplore';
+import type { OrgJoinPolicy } from '@core/types';
 
 /** 클라이언트가 보유하는 전체 데이터 스냅샷 (실제 API에서는 필요한 부분만 내려받도록 분리) */
 export interface Snapshot {
@@ -143,6 +145,14 @@ export interface OpportunityInput {
   date?: string;
   rolesNeeded?: Role[];
   orgId?: ID;
+}
+
+/** 그룹 만들기 (S026) — 만든 사람이 운영진이 되고, 가입 방식(승인제·열림)을 고른다. 학교는 만든 사람의 학교 */
+export interface OrgInput {
+  name: string;
+  description: string;
+  type: Extract<Organization['type'], 'club' | 'lab' | 'coop' | 'council'>;
+  joinPolicy: OrgJoinPolicy;
 }
 
 /** 학교 수업 목록 항목 (registrar 데이터). 시간표에 추가하면 요일별 Course로 펼쳐진다 */
@@ -342,6 +352,15 @@ export interface AroundUApi {
 
   orgs: {
     apply(orgId: ID, userId: ID): Promise<Patch>;
+    /** S026 — 학생이 그룹을 만든다 (만든 사람 = 운영진) */
+    create(creatorId: ID, input: OrgInput): Promise<{ org: Organization; patch: Patch }>;
+    /** S091 — 운영진이 가입 요청을 승인(accept) / 거절한다 */
+    respondApplication(orgId: ID, userId: ID, accept: boolean): Promise<Patch>;
+  };
+
+  /** 로그인 없이 — 열린 학교의 공개 행사·공고·동아리 (사람 정보 없음, S089) */
+  guest: {
+    explore(schoolId: ID): Promise<PublicExplore>;
   };
 
   opportunities: {

@@ -20,6 +20,7 @@ import { birthYearProblem, searchOrgs } from '@core/lib/signup';
 import { classRostersFor } from '@core/lib/classmates';
 import { createClassQa, type ClassQuestion } from '@core/lib/classqa';
 import { catalogCourses, searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm } from '@core/data/catalog/courses';
+import { publicExplore } from '@core/lib/publicexplore';
 
 let db: MockDB = loadDB();
 let failNextRequest = false;
@@ -176,6 +177,8 @@ export const mockApi: AroundUApi = {
   posts: wrap(engine.posts),
   relationships: wrap(engine.relationships),
   orgs: wrap(engine.orgs),
+  // 목업에는 서버가 없다 — 같은 공개 규칙(lib/publicexplore)을 이 브라우저의 데이터에
+  guest: { explore: (schoolId) => request(() => publicExplore(db, schoolId)) },
   opportunities: wrap(engine.opportunities),
   proposals: wrap(engine.proposals),
   together: wrap(engine.together),
