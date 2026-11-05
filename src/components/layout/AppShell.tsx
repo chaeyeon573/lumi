@@ -9,7 +9,7 @@ import { lang } from '@core/i18n';
 /**
  * 모바일 프레임. 데스크톱에서는 가운데 430px 폭으로 고정된다.
  * 떠 있는 알약(디자인 비교 · 의견)은 두지 않는다 — 'Edit timetable'·'My rides'·채팅 날짜 줄을 가렸다 (2026-11-02 ux-sim).
- * 디자인 바꾸기와 의견 보내기는 설정에 한 줄씩 있다 (SettingsPage). 주소의 ?design= 비교는 그대로 된다 (src/lib/design.ts).
+ * 의견 보내기는 설정에 한 줄 있다 (SettingsPage). 디자인은 어두운 것 하나뿐이다 (?design= 비교는 없앴다).
  */
 export function AppShell({ withNav = true }: { withNav?: boolean }) {
   const scrollRef = useRef<HTMLDivElement>(null);

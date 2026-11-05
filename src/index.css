@@ -2,45 +2,63 @@
 @import "leaflet/dist/leaflet.css";
 
 @theme {
+  /* Harness A (docs/design/harness-a) — 앱 테마는 어두운 것 하나뿐이다. 예전 Classic/v2 스위치(?design=)는 없앴다 (2026-11-05).
+     글꼴: PDF 시안의 기하학적 산세리프 — Plus Jakarta Sans (index.html 에서 불러온다) */
   --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-
   --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 
-  /* 밝은 디자인(Classic) — 2026-11-02 사장님 시안: 흰 바탕 + 인디고 포인트 + 파스텔 카드 (어두운 v2 가 기본, Classic 버튼으로 전환) */
-  --color-bg: #F8F9FD;
-  --color-surface: #FFFFFF;
-  --color-surface-2: #F1F2F8;
-  --color-line: #E7E9F3;
-  --color-ink: #16182B;
-  --color-ink-2: #474B63;
-  --color-ink-3: #7A7F96;
+  /* 바탕·표면 — PDF Background → bg, Surface → surface(카드), 입력·눌린 칸 → surface-2 */
+  --color-bg: #08070C;
+  --color-surface: #16131F;
+  --color-surface-2: #1F1B2B;
+  --color-line: #2A2433;
+  /* 글자 — ink-3 은 #6E6889 였다(카드 위 3.5:1, AA 미달). #8A84A6 = 표면 위 5.1:1, surface-2 위 4.8:1 */
+  --color-ink: #F4F1FF;
+  --color-ink-2: #A79FC4;
+  --color-ink-3: #8A84A6;
 
-  --color-primary: #4F55E3;
-  --color-primary-deep: #3A3FC4;
-  --color-primary-soft: #ECEEFF;
-  --color-accent: #8C91F2;
-  --color-accent-soft: #EEF0FF;
-  --color-mint: #1F9A86;
-  --color-mint-soft: #E6F6F3;
-  --color-gold: #D98A12;
-  --color-gold-soft: #FFF4E5;
-  --color-danger: #D93A4A;
-  --color-danger-soft: #FDE8EB;
-  --color-heart: #D2476B;
-  --color-heart-soft: #FDEEF2;
-  --color-verify: #1E8E4E;
-  --color-sky: #8EC5FF;
-  --color-sky-soft: #EAF3FF;
-  --color-blush: #F6B3C2;
-  --color-peach: #FFD9B8;
-  --color-sage: #CDE8D6;
-
-  /* 의미 토큰 — 기본(classic)에서는 위 값과 같아서 화면이 그대로다. v2에서 따로 갈린다 */
-  --color-title: #16182B;          /* text-primary 가 실제로 쓰는 색: 제목·링크 */
+  /* PDF Primary(남색 버튼) → 라임 버튼 + 검은 글자. 한 화면에 큰 버튼 하나 */
+  --color-primary: #D4FF3A;
+  --color-primary-deep: #A9CC1F;
+  --color-primary-soft: #2A0E20;
+  --color-on-primary: #0C0A14;
+  /* text-primary 는 제목·링크용으로 쓰여 왔다 — 어두운 바탕에서는 밝은 글자 */
+  --color-title: #F4F1FF;
   --text-color-primary: var(--color-title);
-  --color-on-primary: #FFFFFF;     /* bg-primary 위 글자 */
 
-  /* Lumi v2 스케일 (docs/design/lumi-v2) — classic 화면은 쓰지 않는다 */
+  /* PDF Selected(밝은 파랑: 밑줄 탭·고른 칩·탭 바·링크) → 핑크. sel-fg 는 작은 글자용으로 한 단계 밝다 (7.8:1) */
+  --color-sel: #FF3DA8;
+  --color-sel-fg: #FF7AC0;
+  --color-sel-soft: #2A0E20;
+  --color-sel-line: #6B1A4C;
+
+  /* PDF 카테고리 4색(+보라) → 어두운 낮은 채도 틴트 + 밝은 아이콘색. 홈 타일·아이콘 칸·배지가 같은 쌍을 쓴다 */
+  --color-t-ice: #171C36;      /* Events · 하늘(Ice blue #EDF0FF) */
+  --color-t-ice-fg: #9DB0FF;
+  --color-t-peach: #2A2015;    /* Opportunities · 살구(Peach #FFF2E7) */
+  --color-t-peach-fg: #FFC27A;
+  --color-t-mint: #11261F;     /* Clubs · 민트(Mint #EAF5F1) */
+  --color-t-mint-fg: #6FE0B9;
+  --color-t-rose: #2B1522;     /* Meetups · 장미(Rose #FCEEF4) */
+  --color-t-rose-fg: #FF9AC8;
+  --color-t-lav: #1F1934;      /* PDF 의 보라 아이콘 칸(캠퍼스 생활·연구·AI·온라인) */
+  --color-t-lav-fg: #B9A6FF;
+
+  /* 예전 화면이 쓰는 이름들 — 같은 어두운 값으로 */
+  --color-accent: #FF3DA8;
+  --color-accent-soft: #2A0E20;
+  --color-heart: #FF3DA8;
+  --color-heart-soft: #2A0E20;
+  --color-verify: #FF7AC0;
+  --color-mint: #D4FF3A;
+  --color-mint-soft: #1C220A;
+  --color-gold: #FFC94D;
+  --color-gold-soft: #2A2410;
+  --color-danger: #FF5C7A;
+  --color-danger-soft: #3A1020;
+  --color-ok: #6FE0B9;
+
+  /* Lumi 핑크·라임 스케일 */
   --color-pink-900: #2A0E20;
   --color-pink-800: #5C1640;
   --color-pink-600: #C42683;
@@ -54,56 +72,20 @@
   --color-lime-400: #D4FF3A;
   --color-lime-200: #E6FF8F;
   --color-lime-100: #F4FFD1;
-  --color-night: #0C0A14;          /* 라임 위 글자 */
+  --color-night: #0C0A14;
 
   --radius-xl2: 20px;
   --radius-xl3: 28px;
-  --shadow-card: 0 12px 32px -4px rgba(15, 43, 72, 0.08);
-  --shadow-float: 0 12px 32px rgba(15, 43, 72, 0.28);
-  --shadow-sheet: 0 -8px 40px rgba(20, 22, 31, 0.14);
-}
-
-/* ─── 디자인 스위치: <html data-design="v2"> (src/lib/design.ts) ───────────────
-   토큰만 갈아 끼워 모든 화면이 한꺼번에 바뀐다. classic은 위 @theme 값 그대로. */
-@custom-variant v2 (&:where([data-design="v2"], [data-design="v2"] *));
-
-:root[data-design="v2"] {
-  color-scheme: dark;
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-  --font-display: "Unbounded", "Inter", -apple-system, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-
-  --color-bg: #08070C;
-  --color-surface: #16131F;
-  --color-surface-2: #1F1B2B;
-  --color-line: #2A2433;
-  --color-ink: #F4F1FF;
-  --color-ink-2: #A79FC4;
-  --color-ink-3: #6E6889;
-
-  /* primary = 라임 버튼(한 화면에 하나), 제목·링크(text-primary)는 밝은 글자로 */
-  --color-primary: #D4FF3A;
-  --color-primary-deep: #A9CC1F;
-  --color-primary-soft: #2A0E20;
-  --color-title: #F4F1FF;
-  --color-on-primary: #0C0A14;
-
-  /* 핑크는 어두운 틴트 + 작은 라벨로 */
-  --color-accent: #FF3DA8;
-  --color-accent-soft: #2A0E20;
-  --color-heart: #FF3DA8;
-  --color-heart-soft: #2A0E20;
-  --color-verify: #FF7AC0;
-  --color-mint: #D4FF3A;
-  --color-mint-soft: #1C220A;
-  --color-gold: #FFC94D;
-  --color-gold-soft: #2A2410;
-  --color-danger: #FF5C7A;
-  --color-danger-soft: #3A1020;
-
   --shadow-card: none;
   --shadow-float: 0 10px 28px rgba(0, 0, 0, 0.5);
   --shadow-sheet: 0 -8px 40px rgba(0, 0, 0, 0.6);
 }
+
+/* 예전 화면의 `v2:` 클래스 — 이제 어두운 테마 하나뿐이라 항상 켜진다.
+   (지울 때까지 남겨 둔다. 새 화면(src/components/ha)은 쓰지 않는다) */
+@custom-variant v2 (&:where(:root, :root *));
+
+:root { color-scheme: dark; }
 
 html, body, #root { height: 100%; }
 body {
@@ -115,19 +97,11 @@ body {
   overscroll-behavior-y: none;
 }
 @media (min-width: 640px) {
-  body { background: #EEF0EA; }
-  [data-design="v2"] body { background: #000000; }
+  body { background: #000000; }
 }
 /* 노트북·데스크톱: 폰 폭 앱 뒤 배경 — 빈 검은 화면이 아니라 일부러 둔 틀로 보이게 (AppShell) */
 @media (min-width: 1024px) {
   body {
-    background:
-      radial-gradient(900px 600px at 18% 20%, rgb(15 43 72 / .10), transparent 70%),
-      radial-gradient(800px 600px at 85% 85%, rgb(253 181 21 / .14), transparent 70%),
-      radial-gradient(circle at 1px 1px, rgb(15 43 72 / .10) 1px, transparent 0) 0 0 / 22px 22px,
-      #EEF0EA;
-  }
-  [data-design="v2"] body {
     background:
       radial-gradient(900px 640px at 15% 18%, rgb(255 61 168 / .16), transparent 70%),
       radial-gradient(800px 600px at 88% 86%, rgb(212 255 58 / .09), transparent 70%),
@@ -150,13 +124,29 @@ input, textarea, select { font: inherit; }
 }
 @utility card {
   background: var(--color-surface);
-  border-radius: 24px;
-  border: 1px solid rgba(177, 229, 255, 0.35);
+  border-radius: 20px;
+  border: 1px solid var(--color-line);
   box-shadow: var(--shadow-card);
 }
 @utility font-display {
   font-family: var(--font-display);
   letter-spacing: -0.02em;
+}
+/* Harness A 글자 단계 (docs/design/harness-a/COMPONENTS.md) — 큰 제목은 화면마다 같은 크기 */
+@utility ha-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-ink);
+}
+@utility ha-h2 {
+  font-size: 19px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
 }
 @utility press {
   transition: transform 120ms ease, opacity 120ms ease;
@@ -182,7 +172,7 @@ input, textarea, select { font: inherit; }
 .animate-card-return { animation: card-return 320ms cubic-bezier(.2,.8,.2,1); }
 @media (prefers-reduced-motion: reduce) { .animate-card-return { animation: none; } }
 .skeleton {
-  background: linear-gradient(90deg, #F1E7DA 0%, #FBF5EC 40%, #F1E7DA 80%);
+  background: linear-gradient(90deg, #16131F 0%, #221D2E 40%, #16131F 80%);
   background-size: 800px 100%;
   animation: shimmer 1.4s infinite linear;
   border-radius: 10px;
@@ -213,21 +203,16 @@ input, textarea, select { font: inherit; }
   background: rgba(255,255,255,.85); padding: 2px 7px; border-radius: 8px; border: 1px solid #E6E8EF;
 }
 
-/* ─── v2: 토큰만으로 안 갈리는 곳 (화면 파일을 건드리지 않고 대비만 맞춘다) ─── */
-[data-design="v2"] .card { border-color: var(--color-line); }
-/* Unbounded는 넓다 — 같은 font-size로도 제목이 두 줄이 되지 않게 x-height 기준으로 줄인다 */
-[data-design="v2"] .font-display { font-size-adjust: ex-height 0.5; letter-spacing: -0.01em; }
-/* 라임·밝은 바탕 위 흰 글자 → 어두운 글자
-   (자기 v2 글자색을 따로 정한 요소는 건드리지 않는다) */
-[data-design="v2"] :is(.bg-primary, .bg-mint).text-white:not([class*="v2:text-"]) { color: var(--color-on-primary); }
-[data-design="v2"] .bg-ink.text-white:not([class*="v2:text-"]) { color: var(--color-bg); }
+/* ─── 예전 화면 대비 맞춤 (토큰만으로 안 갈리는 곳) ─── */
+/* 라임·밝은 바탕 위 흰 글자 → 어두운 글자 (자기 v2 글자색을 따로 정한 요소는 건드리지 않는다) */
+:is(.bg-primary, .bg-mint).text-white:not([class*="v2:text-"]) { color: var(--color-on-primary); }
+.bg-ink.text-white:not([class*="v2:text-"]) { color: var(--color-bg); }
 /* 밝은 그라데이션 카드(오늘의 질문·모집 공고 등) → 어두운 표면 */
-[data-design="v2"] [class*="bg-[linear-gradient(120deg,#"] { background-image: none; background-color: var(--color-surface-2); }
-[data-design="v2"] .bg-white:is(.rounded-xl, .shadow-lg),
-[data-design="v2"] :is([class*="bg-white/8"], [class*="bg-white/9"]) { background-color: rgb(22 19 31 / .85); }
-[data-design="v2"] .ring-white { --tw-ring-color: var(--color-surface); }
-[data-design="v2"] .text-\[\#B57A0E\] { color: var(--color-gold); }
-/* 제목 옆 아이콘은 핑크 300 (작은 라벨·아이콘) */
-[data-design="v2"] svg.text-primary { color: var(--color-pink-300); }
-[data-design="v2"] .skeleton { background: linear-gradient(90deg, #16131F 0%, #221D2E 40%, #16131F 80%); background-size: 800px 100%; }
-[data-design="v2"] .au-landmark { color: var(--color-ink-2); background: rgba(22,19,31,.85); border-color: var(--color-line); }
+[class*="bg-[linear-gradient(120deg,#"] { background-image: none; background-color: var(--color-surface-2); }
+.bg-white:is(.rounded-xl, .shadow-lg),
+:is([class*="bg-white/8"], [class*="bg-white/9"]) { background-color: rgb(22 19 31 / .85); }
+.ring-white { --tw-ring-color: var(--color-surface); }
+.text-\[\#B57A0E\] { color: var(--color-gold); }
+/* 제목 옆 아이콘은 핑크 300 */
+svg.text-primary { color: var(--color-pink-300); }
+.au-landmark { color: var(--color-ink-2); background: rgba(22,19,31,.85); border-color: var(--color-line); }

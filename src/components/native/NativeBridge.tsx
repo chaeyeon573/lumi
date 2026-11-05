@@ -4,7 +4,6 @@ import { Bell } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { useAppStore } from '@core/store/useAppStore';
 import { BottomSheet, Button } from '@/components/ui';
-import { themeColor, useDesign } from '@/lib/design';
 import { haptic, native } from '@/lib/native';
 import { forgetPushToken, markPushOffered, shouldOfferPush, syncPushToken, turnOnPush } from './pushDevice';
 
@@ -14,14 +13,13 @@ type RunFn = ReturnType<typeof useAppStore.getState>['run'];
 /**
  * Only rendered inside the iPhone app (App.tsx: isNativeShell()). Connects the web app to apps/shell:
  * - deep links / push taps navigate inside the SPA (no reload)
- * - status bar + background follow the design (classic = light, v2 = dark)
+ * - status bar + background: the app has one dark theme (src/index.css --color-bg)
  * - tells the shell when the first real screen is up (it hides the splash then — no white flash)
  * - push: keeps this device's token registered while signed in, unregisters on sign-out,
  *   and offers notifications after the person's first successful action (never at first launch)
  */
 export function NativeBridge() {
   const navigate = useNavigate();
-  const design = useDesign();
   const status = useAppStore((s) => s.status);
   const userId = useAppStore((s) => s.currentUserId);
   const [offer, setOffer] = useState(false);
@@ -34,8 +32,9 @@ export function NativeBridge() {
 
   useEffect(() => {
     document.documentElement.dataset.native = native()?.platform ?? 'ios';
-    void native()?.setTheme({ design, background: themeColor(design), statusBar: design === 'v2' ? 'light' : 'dark' }).catch(() => {});
-  }, [design]);
+    // 'v2' = the shell's name for the dark theme (apps/shell) — the only theme now
+    void native()?.setTheme({ design: 'v2', background: '#08070C', statusBar: 'light' }).catch(() => {});
+  }, []);
 
   useEffect(() => {
     if (status === 'ready' || status === 'error') void native()?.ready().catch(() => {});
