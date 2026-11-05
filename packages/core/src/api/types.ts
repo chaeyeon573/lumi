@@ -7,6 +7,7 @@ import type {
 import type { AcademicDate } from '@core/lib/academic';
 import type { SeatWatchView } from '@core/lib/seats';
 import type { Ride, RideInput, RideTeaser } from '@core/lib/rides';
+import type { OrgHit } from '@core/lib/signup';
 import type { PlansApi } from './plans';
 import type { TimePollWindow } from '@core/types';
 import type { ClassQuestionView } from '@core/lib/classqa';
@@ -266,6 +267,8 @@ export interface AroundUApi {
     verifyCode(email: string, code: string): Promise<{ ok: boolean }>;
     /** 첫 화면에 띄우는 이번 주 하이라이트 (로그인 전에도) — 없으면 null */
     highlights(schoolId: ID): Promise<Highlights | null>;
+    /** Sign-up S010 "Search organizations" (signed out): clubs of an open school by name — public facts only (@core/lib/signup) */
+    searchOrgs(schoolId: ID, query: string): Promise<OrgHit[]>;
   };
 
   catalog: {

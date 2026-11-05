@@ -126,6 +126,7 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
       sendVerificationCode: (email, schoolId) => call('schools/send-code', { email, schoolId }),
       verifyCode: (email, code) => call('schools/verify-code', { email, code }),
       highlights: (schoolId) => call('schools/highlights', { schoolId }),
+      searchOrgs: (schoolId, query) => call('schools/orgs', { schoolId, query }),
     },
 
     catalog: {

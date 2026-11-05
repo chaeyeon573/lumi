@@ -1419,4 +1419,8 @@ export const en: Record<string, string> = {
   '참가할 수 없는 활동이에요.': "You can't join this meetup.",
   '이 모임은 정해진 학적의 학생만 참가할 수 있어요.': 'This meetup is open to a specific academic status only.',
   '차단된 사용자예요.': "You can't reach this person.",
+  // WP1 sign-up (server/index.ts /api/auth/register, @core/lib/signup)
+  '출생 연도를 확인해주세요.': 'Please check your birth year.',
+  'Lumi는 만 16세 이상 대학생을 위한 앱이에요.': 'Lumi is for college students 16 and older.',
+  '학교 이메일 인증을 먼저 해주세요.': 'Verify your school email first.',
 };

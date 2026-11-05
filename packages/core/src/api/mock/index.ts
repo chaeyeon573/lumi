@@ -16,6 +16,7 @@ import { eraseUser, isProtectedAccount, deleteConfirmOk, DELETE_CONFIRM_WORD, DE
 /** 목업의 예시 사용자(데모 계정 포함)는 지울 수 없다 */
 const MOCK_PROTECTED = new Set<string>([DEMO_USER_ID, ...seedUsers.map((u) => u.id)]);
 import { createClassesEngine } from '../classes';
+import { birthYearProblem, searchOrgs } from '@core/lib/signup';
 import { classRostersFor } from '@core/lib/classmates';
 import { createClassQa, type ClassQuestion } from '@core/lib/classqa';
 import { catalogCourses, searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm } from '@core/data/catalog/courses';
@@ -97,6 +98,8 @@ export const mockApi: AroundUApi = {
     },
     async register(input) {
       return request(() => {
+        const age = birthYearProblem(input.birthYear);
+        if (age) throw new Error(age === 'under_16' ? t('Lumi는 만 16세 이상 대학생을 위한 앱이에요.') : t('출생 연도를 확인해주세요.'));
         const user = engine.register(input);
         if (input.email) writeEmails({ ...readEmails(), [input.email.trim().toLowerCase()]: user.id });
         setSession(user.id);
@@ -139,6 +142,7 @@ export const mockApi: AroundUApi = {
   schools: {
     async highlights() { return null; },
     async search(query) { return request(() => engine.schools.search(query)); },
+    async searchOrgs(schoolId, query) { return request(() => searchOrgs(db.organizations, schoolId, query)); },
     async sendVerificationCode(email, schoolId) {
       return request(() => {
         const school = schoolId ? engine.find(db.schools, schoolId) : null;
