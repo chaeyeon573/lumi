@@ -2137,3 +2137,15 @@
 - Probed more top schools. Rutgers, Colorado and FSU CampusGroups sites look like single departments (law school, career center), not the club directory, so not used. Arizona, Pepperdine and Buffalo have public directories but sit at the edge of the "top school" bar, so they are in QUESTIONS.md with UCF and Iowa.
 - Spot check courses (NC State catalog pages): COM 585, TOX 400, ECD 736 match; NR 421 and TE 507 found the cross-listing bug above (fixed, NR 421 "Wetland Science and Management" now matches).
 - Spot check clubs (NC State directory API): NSSLHA, Volunteer Organization for Youth, Agroecology Club, Imago Dei Church, Club Sports at NC State - names and links match.
+
+## 2026-11-05 14:33 UTC
+- Probed more top schools for public directories (Virginia Tech, Pitt, Rutgers, Texas A&M, Ohio State, UCSD, Northeastern on campuslabs hosts): none public.
+- Club link gaps (Northwestern, Emory, Georgetown, UCSB, Tufts at 0-4% with links): their CampusGroups club pages need a school login (checked Emory, which redirects to login), so there is nothing public to read; left as is.
+- **USF events connected (5 for the next 7 days)** with a new `jsonld:` reader:
+  - It reads the listing pages, then each event page's schema.org Event data. A local time without a zone is read in the school's time zone (`zonedToDate`).
+  - USF's JSON has trailing commas, raw line breaks and unescaped quotes, so there is a field-by-field fallback.
+  - Only USF's featured events carry that data; the rest give the time only in prose, which I don't guess from.
+  - Capped at 6 listing pages and 40 event pages per day with pauses.
+  - Test with the real PASJ page (Nov 6, 8:00 p.m. Pacific).
+- Spot check courses (UMD, Testudo): MATH 299P W 3:00, GEMS 296 0102 Th 8:15, ENGL 498 0201 (Spring) M 3:30-6:00, KNES 320 0106 (Spring) Th 4:00, EPIB 301 TuTh 3:30 - all match.
+- Spot check clubs: Tulane MeeT U Kpop, Clemson Vida Volunteer, UMich Eta Sigma Phi fine. UNC Senior Class Marshals (alumni.unc.edu) answers 403 to the checker. NYU "Fubon Center for Technology, Business and Innovation" is a Stern research center, so it is marked `department` (override added).

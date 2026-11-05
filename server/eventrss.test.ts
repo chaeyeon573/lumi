@@ -50,3 +50,17 @@ test('UCLA Community calendar (community.ucla.edu week pages): weeks in range, U
   assert.ok(!out.some((e) => /webinar/i.test(e.title)));
   assert.ok(!out.some((e) => /&amp;/.test(e.title + e.description)));
 });
+
+test('JSON-LD event page (USF usfca.edu): local start without zone read in the school time zone, trailing commas tolerated', async () => {
+  const { parseJsonLdEvent, zonedToDate } = await import('./sources/opportunities');
+  assert.equal(zonedToDate('2026-11-06T20:00:00', 'America/Los_Angeles').toISOString(), '2026-11-07T04:00:00.000Z');
+  assert.equal(zonedToDate('2026-07-06T20:00:00', 'America/New_York').toISOString(), '2026-07-07T00:00:00.000Z');
+  const html = readFileSync(new URL('./fixtures/usf-event-jsonld.html', import.meta.url), 'utf8');
+  const school = { id: 's_usf', name: 'USF', tz: 'America/Los_Angeles', center: { lat: 37.7766, lng: -122.4506 } };
+  const e = parseJsonLdEvent(html, 'https://www.usfca.edu/event/pasj-presents-lost-ballad-our-mechanical-ancestor/13570341', school, new Date('2026-11-05T12:00:00Z'), 7);
+  assert.equal(e?.title, 'PASJ Presents: The Lost Ballad of our Mechanical Ancestor');
+  assert.equal(e?.date, '2026-11-07T04:00:00.000Z');
+  assert.equal(e?.startTime, '20:00');
+  assert.equal(e?.place?.name, 'Lone Mountain Main 148 - Studio Theatre');
+  assert.equal(parseJsonLdEvent(html, 'https://x', school, new Date('2026-11-08T00:00:00Z'), 7), null, 'past event');
+});
