@@ -2159,3 +2159,11 @@
   - ENGL 1183 and ECE 6950 showed the same first-section labelling bug as Banner and UMD: the Cornell reader titled a course's first section "Lec 001" whatever it really was (ECE 6950's first lecture is 002; ENGL 1183 has seminars 101+). Times were right.
   - Fixed: labels use Cornell's own component and number ("Lec 002", "Sem 101"). Cornell re-collected (9,509 classes, Fall + Spring), and both courses now match the roster.
 - Spot check clubs: NC State NSBE, Penn State CrossFit Medical Society, USC Sirens fine. UChicago BLSA (blsa.uchicago.edu) no longer resolves, so moved to deadlinks. Notre Dame engineering site is unreachable from here (known TLS block).
+
+## 2026-11-05 16:33 UTC
+- Checked every class reader for the hard-coded first-section label (fixed this afternoon in Banner, UMD and Cornell). All others already use the school's real numbers (Stanford, SF State, Rochester, Illinois, Harvard, UCLA, UW, USC, CMU, Vanderbilt, GWU, HCX ...). Berkeley ("001") and Caltech ("01") only fall back when the source gives no number.
+- Humanities and social-science jobs are thin (owner question, 11-02). Tested candidate boards with one request each and added 6 to job-boards.csv: Axios, Vox Media (Media/Journalism), ACLU, Brookings (Policy/Nonprofit), Patreon, Substack. ProPublica and Wikimedia were already listed.
+  - Today the student filter keeps only a few of their postings (Axios AI Fellow, Patreon summer interns). Most humanities internships are posted in spring, and the daily refresh will pick them up.
+  - Not on Greenhouse, Lever or Ashby (no board found): NYT, Politico, The Atlantic, Urban Institute, Mathematica, Teach For America, NPR, Pew, CFR, KIPP.
+- Spot check courses (BU, live class search): CASCL 211 B1 MWF 11:15, QSTBA 808 E2 W 3:45-6:30, COMJO 721 A1 T 12:30-3:15, CFATH 350 Th 12:30-4:45 (Spring), CASPO 842 W 8:00-10:45 - all match.
+- Spot check clubs: BU Marketing Club, UChicago Model UN, UVA Grace Christian Fellowship, MSU Royal Encounters, Wisconsin BadgerVC - all open and name the club.
