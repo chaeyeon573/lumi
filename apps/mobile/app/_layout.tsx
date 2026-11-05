@@ -18,6 +18,7 @@ import { TamaguiProvider, Theme } from 'tamagui';
 import config from '@/tamagui.config';
 import { setPalette, storedPalette, usePalette } from '@/theme';
 import { replace } from '@/nav';
+import { GuestExplore } from '@/lumi/GuestExplore';
 import { Welcome } from '@/components/Welcome';
 import { OnboardingFlow } from './onboarding';
 
@@ -36,14 +37,13 @@ export default function RootLayout() {
   // 계정 삭제 직후(로그아웃 전) 익명화된 "나"가 실시간 패치로 들어와도 탭 화면을 그리지 않는다
   const meDeleted = useAppStore((s) => !!s.users.find((u) => u.id === s.currentUserId)?.deleted);
   const init = useAppStore((s) => s.init);
-  const setCurrentUser = useAppStore((s) => s.setCurrentUser);
   const [booting, setBooting] = useState(true);
   const [bootError, setBootError] = useState<string | null>(null);
   const [fontsLoaded, fontError] = useFonts(FONTS);
   const [fontTimeout, setFontTimeout] = useState(false);
   const palette = usePalette();
   /** 로그아웃 상태에서 보여줄 화면 — 시작 화면 또는 가입(온보딩) */
-  const [signedOutView, setSignedOutView] = useState<'welcome' | 'onboarding'>('welcome');
+  const [signedOutView, setSignedOutView] = useState<'welcome' | 'onboarding' | 'explore'>('welcome');
   const wasSignedOut = useRef(false);
   if (fontsLoaded) applyDefaultFont();
 
@@ -60,12 +60,6 @@ export default function RootLayout() {
       await init();
       const st = useAppStore.getState();
       if (st.status === 'error') throw new Error(st.error ?? 'init failed');
-      // 데모(mock)만: 세션이 없으면 데모 계정으로 바로 로그인. 실제 서버(remote)는 시작 화면을 보여준다
-      if (!st.currentUserId && apiMode === 'mock') {
-        console.log('[boot] loginDemo');
-        const u = await api.auth.loginDemo();
-        await setCurrentUser(u);
-      }
       console.log('[boot] ready');
     } catch (e) {
       console.warn('[boot] failed', e);
@@ -96,7 +90,7 @@ export default function RootLayout() {
             ) : signedOut ? (
               signedOutView === 'onboarding'
                 ? <OnboardingFlow embedded onExit={() => setSignedOutView('welcome')} />
-                : <Welcome onStart={() => setSignedOutView('onboarding')} />
+                : signedOutView === 'explore' ? <GuestExplore onBack={() => setSignedOutView('welcome')} onJoin={() => setSignedOutView('onboarding')} /> : <Welcome onExplore={() => setSignedOutView('explore')} onStart={() => setSignedOutView('onboarding')} />
             ) : failed ? (
               <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: C.bg, padding: 28 }}>
                 <Text style={{ fontSize: 20, fontWeight: '700', color: C.ink }}>{t('문제가 발생했어요.')}</Text>

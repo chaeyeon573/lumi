@@ -14,7 +14,7 @@ import { STAGE_ROLE } from '@core/types';
 import { freeBlocks, jsDayToIdx, toMin } from '@core/lib/timetable';
 import { uid, pairKey } from '@core/lib/format';
 import { CATEGORY_LABELS } from '@core/lib/labels';
-import { canMessage } from '@core/lib/relations';
+import { canMessage, canViewActivity } from '@core/lib/relations';
 import { searchPeople } from '@core/lib/people';
 import { openToFromWants } from '@core/lib/wants';
 import { makeStatus } from '@core/lib/status';
@@ -108,8 +108,10 @@ export function createEngine(ctx: EngineContext) {
   }
 
   function approveParticipation(p: Participation): Patch {
-    p.status = 'approved';
     const activity = find(db().activities, p.activityId);
+    if (p.status === 'approved') return { participations: [p] };
+    if (db().participations.filter((x) => x.activityId === activity.id && x.status === 'approved').length >= activity.capacity) throw new Error('This meetup is full.');
+    p.status = 'approved';
     const room = ensureActivityRoom(activity);
     addToRoom(room, p.userId);
     const nts = [notify(p.userId, { type: 'participation_approved', title: t('참가가 승인되었어요'), body: `"${activity.title}${t('" 그룹 채팅방에 입장할 수 있어요.')}`, link: `/chats/${room.id}` })];
@@ -201,7 +203,7 @@ export function createEngine(ctx: EngineContext) {
       const verified = input.emailVerified || !!input.verification;
       const homeCity = input.homeCity?.trim() || school.region;
       const user: User = {
-        id: uid('u'), nickname: input.nickname, birthYear: input.birthYear, gender: input.gender, avatar: input.avatar,
+        dataOrigin: 'registered', classmateOptIn: false, membershipVisibility: 'private', id: uid('u'), nickname: input.nickname, birthYear: input.birthYear, gender: input.gender, avatar: input.avatar,
         identityVerified: false,
         affiliation: {
           type: 'university', schoolId: school.id, schoolName: school.name, role: input.role, department: input.department, year: input.year,
@@ -238,7 +240,7 @@ export function createEngine(ctx: EngineContext) {
         const u = find(db().users, id);
         const before = { city: u.homeCity, company: u.career?.company };
         // id·생성일·새 소식은 직접 바꿀 수 없다
-        const { id: _i, createdAt: _c, updates: _u, ...rest } = patch;
+        const { id: _i, createdAt: _c, updates: _u, dataOrigin: _origin, ...rest } = patch;
         Object.assign(u, rest);
         if (rest.helpWith) u.helpWith = cleanTags(rest.helpWith);
         if (rest.seeking) u.seeking = cleanTags(rest.seeking);
@@ -553,6 +555,11 @@ export function createEngine(ctx: EngineContext) {
       create(hostId: ID, input: ActivityInput): { activity: Activity; patch: Patch } {
         // 그룹 안에서 만든 모임: hostType 은 org_event 일 때만 org. 개인이 그룹에 올리는 모임은 사람이 주최
         if (input.visibility === 'group' && !input.orgId) throw new Error(t('공개할 그룹을 골라주세요.'));
+        if (input.visibility === 'group' || input.kind === 'org_event') {
+          const g = find(db().organizations, input.orgId ?? '');
+          if (!g.memberIds.includes(hostId) && !g.adminIds.includes(hostId)) throw new Error('Verified group membership required.');
+          if (input.kind === 'org_event' && !g.adminIds.includes(hostId)) throw new Error('Only group admins can publish as an organization.');
+        }
         const activity: Activity = { id: uid('a'), hostId, hostType: input.kind === 'org_event' && input.orgId ? 'org' : 'user', comments: [], createdAt: now(), ...input };
         db().activities.unshift(activity);
         const room = ensureActivityRoom(activity);
@@ -567,6 +574,10 @@ export function createEngine(ctx: EngineContext) {
       },
       update(id: ID, input: Partial<ActivityInput>): Patch {
         const a = find(db().activities, id);
+        if (input.visibility === 'group' || (a.visibility === 'group' && input.orgId)) {
+          const g = find(db().organizations, input.orgId ?? a.orgId ?? '');
+          if (!g.memberIds.includes(a.hostId) && !g.adminIds.includes(a.hostId)) throw new Error('Verified group membership required.');
+        }
         Object.assign(a, input);
         const room = db().chatRooms.find((r) => r.activityId === id);
         if (room) room.title = a.title;
@@ -585,12 +596,15 @@ export function createEngine(ctx: EngineContext) {
       },
       join(activityId: ID, userId: ID, message?: string): Patch {
         const activity = find(db().activities, activityId);
+        const joiningUser = find(db().users, userId);
+        if (!canViewActivity(db(), joiningUser, activity)) throw new Error('This meetup is private.');
         const existing = db().participations.find((p) => p.activityId === activityId && p.userId === userId && p.status !== 'cancelled' && p.status !== 'rejected');
         if (existing) return { participations: [existing] };
         const approvedCount = db().participations.filter((p) => p.activityId === activityId && p.status === 'approved').length;
         if (activity.joinPolicy === 'invite' && !(activity.invitedIds ?? []).includes(userId)) throw new Error(t('초대받은 사람만 참가할 수 있는 활동이에요.'));
-        if (approvedCount >= activity.capacity) throw new Error(t('모집 인원이 모두 찼어요.'));
-        const p: Participation = { id: uid('p'), activityId, userId, status: activity.joinPolicy === 'open' ? 'approved' : 'pending', message, createdAt: now() };
+        if (activity.attendeeRoles?.length && (joiningUser.affiliation.type !== 'university' || !activity.attendeeRoles.includes(joiningUser.affiliation.role))) throw new Error('This meetup has a student status restriction.');
+        if (activity.attendeeYears?.length && (!joiningUser.academicYear || !activity.attendeeYears.includes(joiningUser.academicYear))) throw new Error('This meetup has a year restriction.');
+        const p: Participation = { id: uid('p'), activityId, userId, status: approvedCount >= activity.capacity ? 'waitlisted' : activity.joinPolicy === 'open' ? 'approved' : 'pending', message, createdAt: now() };
         db().participations.push(p);
         if (p.status === 'approved') {
           const room = ensureActivityRoom(activity);
@@ -604,7 +618,7 @@ export function createEngine(ctx: EngineContext) {
         return { participations: [p], notifications: nts };
       },
       cancel(activityId: ID, userId: ID): Patch {
-        const p = db().participations.find((x) => x.activityId === activityId && x.userId === userId && (x.status === 'approved' || x.status === 'pending'));
+        const p = db().participations.find((x) => x.activityId === activityId && x.userId === userId && (x.status === 'approved' || x.status === 'pending' || x.status === 'waitlisted'));
         if (!p) return {};
         p.status = 'cancelled';
         const room = db().chatRooms.find((r) => r.activityId === activityId);
@@ -768,11 +782,19 @@ export function createEngine(ctx: EngineContext) {
     },
 
     orgs: {
+      review(orgId: ID, adminId: ID, userId: ID, accept: boolean): Patch {
+        const org = find(db().organizations, orgId);
+        if (!org.adminIds.includes(adminId)) throw new Error('Only group admins may review membership.');
+        if (!org.applicantIds.includes(userId)) throw new Error('No pending membership request.');
+        org.applicantIds = org.applicantIds.filter((id) => id !== userId);
+        if (accept && !org.memberIds.includes(userId)) org.memberIds.push(userId);
+        return { organizations: [org] };
+      },
       /** 가입 — 자유 그룹(open)은 즉시 멤버, 승인제·기존 조직은 지원 목록 */
       apply(orgId: ID, userId: ID): Patch {
         const org = find(db().organizations, orgId);
         if (org.memberIds.includes(userId)) return { organizations: [org] };
-        if (org.joinPolicy === 'open') {
+        if (org.joinPolicy === 'open' && org.type === 'community') {
           org.memberIds.push(userId);
           org.applicantIds = org.applicantIds.filter((i) => i !== userId);
           return { organizations: [org] };

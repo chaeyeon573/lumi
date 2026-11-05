@@ -1,5 +1,5 @@
 /**
- * AroundU 디자인 토큰 v3 — "Timeleft 느낌": 차분하고 여백이 많고, 한 화면에 한 가지 행동이 또렷하다.
+ * Lumi implementation tokens (proposed, not measured brand colors) — "Timeleft 느낌": 차분하고 여백이 많고, 한 화면에 한 가지 행동이 또렷하다.
  * 웹(src/index.css 의 CSS 변수)과 모바일(apps/mobile 테마)이 같은 값을 쓴다. 값을 바꾸면 두 곳을 같이 바꾼다.
  *
  * 색 규칙
@@ -41,10 +41,10 @@ export const PALETTES: Record<PaletteId, Palette> = {
   // A. 미스트 — 흰색에 가까운 하늘 배경 + 맑은 파랑. 가장 가볍고 밝다
   mist: {
     id: 'mist', name: 'Mist',
-    bg: '#F6F9FC', surface: '#FFFFFF', surface2: '#EEF3F8', line: '#E1E8F0',
-    tint: '#E7F1FB', tint2: '#D3E5F7',
-    primary: '#2F80ED', primaryPress: '#2468C4', onPrimary: '#FFFFFF',
-    ink: '#1E2B3A', ink2: '#4A5A6B', ink3: '#7E8B9A', link: '#2A6FC9',
+    bg: '#FFFFFF', surface: '#FFFFFF', surface2: '#F9FAFC', line: '#E8EAF0',
+    tint: '#EEF0FC', tint2: '#E4E9FA',
+    primary: '#303858', primaryPress: '#232A45', onPrimary: '#FFFFFF',
+    ink: '#181D32', ink2: '#555D73', ink3: '#778096', link: '#4464C8',
     ok: '#2F8F67', okSoft: '#E3F4EC', warn: '#B7791F', warnSoft: '#FDF3DC', danger: '#C53D3D', dangerSoft: '#FCE8E8',
   },
   // B. 하버 — 조금 더 회색 기운의 하늘 + 깊은 바다 파랑. 가장 차분하다
@@ -78,7 +78,7 @@ export const TYPE = {
   caption: { size: 12, line: 1.4, weight: 500, tracking: 0 },
 } as const;
 
-export const RADIUS = { card: 20, cardSm: 16, input: 14, pill: 999 } as const;
+export const RADIUS = { card: 16, cardSm: 12, input: 14, pill: 999 } as const;
 export const SPACE = { cardPad: 18, cardGap: 12, section: 28, screenX: 20 } as const;
 export const SHADOW = {
   card: '0 1px 2px rgba(30, 43, 58, 0.04), 0 8px 24px -12px rgba(30, 43, 58, 0.10)',

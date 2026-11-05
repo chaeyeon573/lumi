@@ -5,6 +5,7 @@
  * 규칙: 채워진 파랑 버튼은 화면당 하나(나머지는 secondary · outline · ghost). 이름·제목은 ink, 링크만 파랑.
  * 선택된 칩은 옅은 하늘 면 + 파랑 글자 + 파랑 선. 카드는 반경 20 + 1px 선 + 아주 옅은 그림자.
  */
+import { BRAND } from '@core/brand';
 import { useState, type ReactNode } from 'react';
 import { ScrollView, StyleSheet, type TextInputProps, type ViewStyle, type ImageStyle, type StyleProp } from 'react-native';
 import { Image } from 'expo-image';
@@ -61,7 +62,7 @@ export function AppHeader({ right, people, search }: { right?: ReactNode; people
   const verified = hasSchool && isVerified(v.me);
   return (
     <XStack height={64} paddingLeft={16} paddingRight={8} alignItems="center" backgroundColor="$bg">
-      <T fontSize={22} fontWeight="800" letterSpacing={-0.5} color="$ink">AroundU</T>
+      <T fontSize={22} fontWeight="800" letterSpacing={-0.5} color="$ink">{BRAND.name}</T>
       <XStack onPress={() => setLangOpen(true)} marginLeft={6} height={32} paddingHorizontal={9} borderRadius={RADIUS.pill} backgroundColor="$tint" alignItems="center" maxWidth={120} flexShrink={1} pressStyle={{ opacity: 0.8 }} cursor="pointer">
         {people ? <MapPin size={13} color={C.ink2} /> : <GraduationCap size={13} color={C.ink2} />}
         <T numberOfLines={1} marginHorizontal={4} fontSize={12} fontWeight="600" color="$ink2" flexShrink={1}>{school}</T>
@@ -121,15 +122,17 @@ export function TabScreen({ children, scroll = true, header }: { children: React
   );
 }
 /** 상세 화면 래퍼: 뒤로가기 + 제목 + 오른쪽 액션 */
-export function Screen({ title, right, children, scroll = true, footer, sub }: { title?: string; right?: ReactNode; children: ReactNode; scroll?: boolean; footer?: ReactNode; sub?: ReactNode }) {
+export function Screen({ title, right, children, scroll = true, footer, sub, header }: { header?: ReactNode; title?: string; right?: ReactNode; children: ReactNode; scroll?: boolean; footer?: ReactNode; sub?: ReactNode }) {
   const insets = useSafeAreaInsets();
+  const demo = useAppStore((st) => { const me = st.users.find((u) => u.id === st.currentUserId); return me?.dataOrigin === 'demo' || me?.id === 'u_me'; });
   return (
     <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: C.bg }}>
-      <XStack height={56} paddingLeft={4} paddingRight={12} alignItems="center">
+      {header ?? <XStack height={56} paddingLeft={4} paddingRight={12} alignItems="center">
         <IconBtn onPress={back}><ChevronLeft size={26} color={C.ink} /></IconBtn>
         <T numberOfLines={1} flex={1} fontSize={17} fontWeight="700" color="$ink" marginLeft={4}>{title ?? ''}</T>
         {right}
-      </XStack>
+      </XStack>}
+      {demo && <T fontSize={10} color="$ink2" backgroundColor="$tint" padding={8}>Demo · sample data, not real campus activity</T>}
       {sub}
       {scroll ? <ScrollView contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 40 }} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">{children}</ScrollView> : <YStack flex={1}>{children}</YStack>}
       {footer && <YStack paddingHorizontal={16} paddingTop={8} backgroundColor="$surface" borderTopWidth={1} borderColor="$line" paddingBottom={Math.max(insets.bottom, 12)}>{footer}</YStack>}

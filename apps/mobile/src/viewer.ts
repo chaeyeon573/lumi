@@ -21,7 +21,7 @@ export function useViewer() {
 
   return useMemo(() => {
     // 추천·관계 계산용 스냅샷에서는 탈퇴·이용 정지 사용자를 뺀다 (userById 는 전체 — 대화 기록의 "탈퇴한 사용자" 표시용)
-    const snap = { users: users.filter((u) => !u.deleted && !u.suspended), relationships, participations, proposals, activities, opportunities, opportunityIntents, timePolls };
+    const snap = { users: users.filter((u) => !u.deleted && !u.suspended), relationships, participations, proposals, activities, opportunities, opportunityIntents, timePolls, organizations };
     const me = users.find((u) => u.id === currentUserId) as User;
     const userById = (id: ID) => users.find((u) => u.id === id);
     const orgById = (id: ID) => organizations.find((o) => o.id === id);
@@ -34,7 +34,7 @@ export function useViewer() {
     const visibleUsers: User[] = me ? users.filter((u) => u.id !== me.id && !u.deleted && !u.suspended && !hidden(u.id)) : [];
 
     const approvedCount = (activityId: ID) => participations.filter((p) => p.activityId === activityId && p.status === 'approved').length;
-    const myParticipation = (activityId: ID) => participations.find((p) => p.activityId === activityId && p.userId === me?.id && (p.status === 'approved' || p.status === 'pending'));
+    const myParticipation = (activityId: ID) => participations.find((p) => p.activityId === activityId && p.userId === me?.id && (p.status === 'approved' || p.status === 'pending' || p.status === 'waitlisted'));
 
     return {
       me, users, userById, orgById, snap,

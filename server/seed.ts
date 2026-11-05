@@ -14,19 +14,11 @@ export async function loadSeed(): Promise<Snapshot> {
     chatRooms: seed.chatRooms, notifications: seed.notifications, reports: [], opportunities: seed.opportunities,
     opportunityIntents: seed.opportunityIntents, timePolls: seed.timePolls, savedSearches: [], networkRequests: seed.networkRequests, introRequests: seed.introRequests,
   });
-  if (process.env.SEED !== 'base') return full;
+  if (process.env.SEED === 'full') { full.users = full.users.map((u) => ({ ...u, dataOrigin: 'demo', classmateOptIn: true })); return full; }
 
-  // 심사용 데모 계정만 남기고 예시 사람과의 관계·기록은 지운다
-  const demo = full.users.find((u) => u.id === seed.DEMO_USER_ID);
-  const users = demo ? [{ ...demo, savedPeople: [], hiddenPeople: [], savedLists: [], trips: [], openStatuses: [], status: undefined }] : [];
-  const ids = new Set(users.map((u) => u.id));
-  const keep = (xs: string[] | undefined) => (xs ?? []).filter((x) => ids.has(x));
-  return {
-    users,
-    schools: full.schools,
-    organizations: full.organizations.map((o) => ({ ...o, memberIds: keep(o.memberIds), followerIds: keep(o.followerIds), adminIds: keep(o.adminIds), applicantIds: keep(o.applicantIds), notices: [] })),
-    activities: [], participations: [], posts: [], proposals: [], chatRooms: [], notifications: [], reports: [],
-    relationships: { likes: [], follows: [], friendRequests: [], friends: [], blocks: [] },
-    opportunities: [], opportunityIntents: [], timePolls: [], savedSearches: [], networkRequests: [], introRequests: [],
-  };
+  // A fresh real environment contains no fictional people, memberships or listings.
+  return { ...full, users: [], organizations: [], activities: [], participations: [], posts: [],
+    proposals: [], chatRooms: [], notifications: [], reports: [], opportunities: [], opportunityIntents: [],
+    timePolls: [], savedSearches: [], networkRequests: [], introRequests: [],
+    relationships: { likes: [], follows: [], friendRequests: [], friends: [], blocks: [] } };
 }

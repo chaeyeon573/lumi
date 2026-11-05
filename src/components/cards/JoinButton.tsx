@@ -25,7 +25,7 @@ export function JoinButton({ activity: a, className, size = 'md', label }: { act
   const submit = async (message?: string) => {
     setBusy(true);
     try {
-      await run(() => api.activities.join(a.id, v.me.id, message), a.joinPolicy === 'open' ? t('참가했어요! 그룹 채팅방이 열렸어요.') : t('참가 신청을 보냈어요. 승인되면 알려드릴게요.'));
+      await run(() => api.activities.join(a.id, v.me.id, message), full ? 'Added to the waitlist. No seat reserved yet.' : a.joinPolicy === 'open' ? t('참가했어요! 그룹 채팅방이 열렸어요.') : t('참가 신청을 보냈어요. 승인되면 알려드릴게요.'));
       setOpen(false); setMsg('');
     } catch { /* toast shown */ } finally { setBusy(false); }
   };
@@ -36,9 +36,10 @@ export function JoinButton({ activity: a, className, size = 'md', label }: { act
 
   if (isHost) return <Button size={size} variant="secondary" className={className} icon={<Settings2 size={16} />} onClick={() => nav(`/activities/${a.id}/manage`)}>{t('참가자 관리')}</Button>;
   if (mine?.status === 'approved') return <Button size={size} variant="secondary" className={className} icon={<Check size={16} />} onClick={cancel} loading={busy}>{t('참가 중 · 취소')}</Button>;
+  if (mine?.status === 'waitlisted') return <Button size={size} variant="outline" className={className} onClick={cancel} loading={busy}>Waitlisted · Cancel</Button>;
   if (mine?.status === 'pending') return <Button size={size} variant="outline" className={className} icon={<Clock size={16} />} onClick={cancel} loading={busy}>{t('승인 대기 중')}</Button>;
   if (a.joinPolicy === 'invite' && !invited) return <Button size={size} variant="outline" className={className} disabled>{t('초대받은 사람만')}</Button>;
-  if (full) return <Button size={size} variant="outline" className={className} disabled>{t('마감')}</Button>;
+  if (full) return <Button size={size} variant="outline" className={className} onClick={() => submit()} loading={busy}>Join Waitlist</Button>;
   if (a.joinPolicy === 'approval') {
     return (
       <>

@@ -1,15 +1,14 @@
-import { t, lang } from '@core/i18n';
 import { NavLink } from 'react-router-dom';
-import { Home, User, Users, CalendarDays, MessageSquareText } from 'lucide-react';
+import { Home, User, Users, Compass, CalendarDays, MessageSquareText } from 'lucide-react';
 import { cn } from '@core/lib/cn';
 
 /** PRD 4절: Home | People | Meet | Feed | Profile. 가운데 + 버튼 없음 — 만들기는 Meet › + Create, Feed › 컴포저 */
 const items = [
-  { to: '/', label: lang === 'en' ? 'Home' : t('홈'), Icon: Home },
-  { to: '/people', label: lang === 'en' ? 'People' : t('사람'), Icon: Users },
-  { to: '/meet', label: lang === 'en' ? 'Meet' : t('모임'), Icon: CalendarDays },
-  { to: '/feed', label: lang === 'en' ? 'Feed' : t('피드'), Icon: MessageSquareText },
-  { to: '/profile', label: lang === 'en' ? 'Profile' : t('프로필'), Icon: User },
+  { to: '/', label: 'Home', Icon: Home },
+  { to: '/explore', label: 'Explore', Icon: Compass },
+  { to: '/schedule', label: 'Schedule', Icon: CalendarDays },
+  { to: '/social', label: 'Social', Icon: MessageSquareText },
+  { to: '/profile', label: 'Profile', Icon: User },
 ];
 
 /** 마지막으로 본 사람 (People 카드) — 초대·제안 화면에서 기본값으로 사용 */

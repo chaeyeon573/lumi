@@ -1,3 +1,4 @@
+import { BRAND } from '@core/brand';
 import { useState } from 'react';
 import { t, lang, setLang } from '@core/i18n';
 import { useNavigate } from 'react-router-dom';
@@ -68,8 +69,8 @@ export function WelcomePage() {
         <button onClick={() => lang !== 'en' && setLang('en')} className={`px-3 h-7 rounded-full ${lang === 'en' ? 'bg-primary text-white' : 'text-ink-2'}`}>English</button>
       </div>
       <div className="flex-1 flex flex-col items-center justify-center px-7 pt-16 text-center">
-        <div className="font-display text-[46px] font-extrabold tracking-tight leading-none" style={{ color: 'var(--ink)' }}>AroundU</div>
-        <h1 className="mt-7 font-display text-[28px] font-bold text-ink leading-tight text-balance">{ctx.tagline}</h1>
+        <div className="font-display text-[46px] font-extrabold tracking-tight leading-none" style={{ color: 'var(--ink)' }}>{BRAND.name}</div>
+        <h1 className="mt-7 font-display text-[28px] font-bold text-ink leading-tight text-balance">{BRAND.tagline}</h1>
         <p className="mt-3 text-[14px] text-ink-2 leading-relaxed text-balance">{ctx.subtitle}</p>
         <div className="mt-8 flex items-center justify-center gap-1 flex-wrap px-2">
           {pills.map((p, i) => (

@@ -81,6 +81,14 @@ export interface PollPrompt {
 }
 
 export interface User {
+  /** Explicit consent for classmate discovery; absent means private. */
+  classmateOptIn?: boolean;
+  /** Membership display defaults to private, independently of interests. */
+  membershipVisibility?: Visibility;
+  spokenLanguages?: string[];
+  countryOfOrigin?: string;
+  academicYear?: 1 | 2 | 3 | 4;
+  dataOrigin?: "demo" | "registered";
   id: ID;
   nickname: string;
   birthYear: number;
@@ -328,6 +336,8 @@ export type OpportunityType = 'event' | 'club' | 'lab' | 'internship' | 'scholar
 export type OpportunityIntent = 'interested' | 'going' | 'solo' | 'company' | 'team' | 'applied' | 'done';
 
 export interface Opportunity {
+  /** Set only by a trusted ingestion/review path, never inferred from the URL. */
+  sourceVerified?: boolean;
   id: ID;
   type: OpportunityType;
   title: string;
@@ -442,6 +452,9 @@ export interface Comment {
 }
 
 export interface Activity {
+  /** Optional, deliberately chosen restrictions. Empty means all student statuses/years. */
+  attendeeRoles?: UniversityRole[];
+  attendeeYears?: number[];
   id: ID;
   kind: ActivityKind;
   category: ActivityCategory;
@@ -485,7 +498,7 @@ export interface Activity {
 
 export type CrewType = 'exam' | 'assignment' | 'review' | 'project';
 
-export type ParticipationStatus = 'pending' | 'approved' | 'rejected' | 'cancelled';
+export type ParticipationStatus = 'waitlisted' | 'pending' | 'approved' | 'rejected' | 'cancelled';
 
 export interface Participation {
   id: ID;

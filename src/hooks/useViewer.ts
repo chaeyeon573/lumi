@@ -34,7 +34,7 @@ export function useViewer() {
     const visibleUsers: User[] = me ? users.filter((u) => u.id !== me.id && !u.deleted && !u.suspended && !hidden(u.id)) : [];
 
     const approvedCount = (activityId: ID) => participations.filter((p) => p.activityId === activityId && p.status === 'approved').length;
-    const myParticipation = (activityId: ID) => participations.find((p) => p.activityId === activityId && p.userId === me?.id && (p.status === 'approved' || p.status === 'pending'));
+    const myParticipation = (activityId: ID) => participations.find((p) => p.activityId === activityId && p.userId === me?.id && (p.status === 'approved' || p.status === 'pending' || p.status === 'waitlisted'));
 
     return {
       me, users, userById, orgById, snap,

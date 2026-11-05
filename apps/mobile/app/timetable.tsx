@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import { Platform, Pressable, Text, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { Plus, Trash2, Lock, Users, CalendarPlus, ChevronRight, Sparkles, ImageDown, Eye } from 'lucide-react-native';
@@ -30,7 +30,7 @@ const TIME_COL = 34;
 const emptyCourse = (day: number): Course => ({ id: '', name: '', day, start: '10:00', end: '11:15', room: '', hue: HUES[Math.floor(Math.random() * HUES.length)] });
 
 /** 시간표 — 주간 그리드 + 공강 열기 + 수업 추가/수정 (웹 TimetablePage 와 동일) */
-export default function TimetableScreen() {
+export default function TimetableScreen({ tabHeader }: { tabHeader?: ReactNode } = {}) {
   const params = useLocalSearchParams<{ open?: string; add?: string }>();
   const v = useViewer();
   const run = useAppStore((s) => s.run);
@@ -48,7 +48,7 @@ export default function TimetableScreen() {
   const gridRef = useRef<View>(null);
   const showToast = useAppStore((st) => st.showToast);
   const today = todayIdx();
-  const showWeekend = me.timetable.some((c) => c.day >= 5);
+  const showWeekend = false; // Mon–Fri remain visible together; weekend courses remain editable below.
   const days = showWeekend ? [0, 1, 2, 3, 4, 5, 6] : [0, 1, 2, 3, 4];
   const hours = Array.from({ length: GRID_END - GRID_START }, (_, i) => GRID_START + i);
 
@@ -122,8 +122,8 @@ export default function TimetableScreen() {
     else setEditing({ ...emptyCourse(d), start: toHHMM(min), end: toHHMM(min + 75) });
   };
 
-  if (status === 'loading') return <Screen title={t('시간표')}><Loading /></Screen>;
-  if (status === 'error') return <Screen title={t('시간표')}><Empty title={error ?? t('문제가 발생했어요.')} action={<Button size="sm" onPress={() => init()}>{t('다시 시도')}</Button>} /></Screen>;
+  if (status === 'loading') return <Screen title={tabHeader ? 'Schedule' : t('시간표')}><Loading /></Screen>;
+  if (status === 'error') return <Screen title={tabHeader ? 'Schedule' : t('시간표')}><Empty title={error ?? t('문제가 발생했어요.')} action={<Button size="sm" onPress={() => init()}>{t('다시 시도')}</Button>} /></Screen>;
 
   const headerRight = (
     <Pressable onPress={() => setEditing(emptyCourse(today < 5 ? today : 0))} style={tw`h-9 pl-3 pr-3.5 rounded-full bg-primary flex-row items-center`}><Plus size={16} color={C.onPrimary} /><Text style={tw`ml-1 text-[13px] font-semibold text-white`}>{t('수업 추가')}</Text></Pressable>
@@ -132,7 +132,8 @@ export default function TimetableScreen() {
   const upcomingFree = myFree.filter((b) => b.end > nowMin());
 
   return (
-    <Screen title={t('시간표')} right={headerRight}>
+    <Screen header={tabHeader} title={tabHeader ? 'Schedule' : t('시간표')} right={headerRight}>
+      {tabHeader && <View style={tw`flex-row justify-between items-center mt-3`}><Text style={tw`text-[26px] font-bold text-ink`}>Schedule</Text>{headerRight}</View>}
       <View style={tw`pt-3`}>
         {me.timetable.length > 0 && (
           <View style={[tw`rounded-[20px] border border-line p-3.5 flex-row items-center mb-3`, { backgroundColor: now.kind === 'in_class' ? C.warnSoft : C.okSoft }]}>

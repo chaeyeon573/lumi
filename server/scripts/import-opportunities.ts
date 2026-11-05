@@ -48,6 +48,8 @@ for (const r of rows) {
     sourceUrl: r.url, sourceLabel: r.source_label || new URL(r.url).hostname,
     tags: list(r.tags ?? ''), interests: [], goals: list(r.goals ?? '') as Goal[],
     schoolId: r.school_id, official: r.official === '1' || /^true$/i.test(r.official ?? ''),
+    // Trust is an explicit operator assertion after checking the source and dates.
+    sourceVerified: process.env.VERIFIED_SOURCE_IMPORT === '1',
     lastVerified: now, qna: prev?.qna ?? [], reviews: prev?.reviews ?? [], createdAt: prev?.createdAt ?? now,
   });
 }

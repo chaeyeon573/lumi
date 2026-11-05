@@ -7,8 +7,9 @@ import { getPlatform } from '@core/platform';
 const seed = lang === 'en' ? seedEn : seedKo;
 
 const DB_VERSION = 16;
-const STORAGE_KEY = `aroundu.mockdb.v${DB_VERSION}.${lang}`;
-const SESSION_KEY = `aroundu.session.v1.${lang}`;
+export const demoEnabled = () => getPlatform().getItem('lumi.demo') === '1';
+const storageKey = () => demoEnabled() ? `lumi.demo.v1.${lang}` : `lumi.local.v1.${lang}`;
+const SESSION_KEY = `lumi.session.v1.${lang}`;
 
 export interface MockDB extends Snapshot {
   version: number;
@@ -16,10 +17,10 @@ export interface MockDB extends Snapshot {
 }
 
 function freshDB(): MockDB {
-  return {
+  const full: MockDB = {
     version: DB_VERSION,
     seededOn: new Date().toISOString().slice(0, 10),
-    users: structuredClone(seed.users),
+    users: structuredClone(seed.users).map((u) => ({ ...u, dataOrigin: 'demo', classmateOptIn: true })),
     schools: structuredClone(seed.schools),
     organizations: structuredClone(seed.organizations),
     activities: structuredClone(seed.activities),
@@ -37,15 +38,25 @@ function freshDB(): MockDB {
     networkRequests: structuredClone(seed.networkRequests ?? []),
     introRequests: structuredClone(seed.introRequests ?? []),
   };
+  if (demoEnabled()) return full;
+  return { ...full, users: [], organizations: [], activities: [], participations: [], posts: [],
+    relationships: { likes: [], follows: [], friendRequests: [], friends: [], blocks: [] },
+    proposals: [], chatRooms: [], notifications: [], opportunities: [], opportunityIntents: [],
+    timePolls: [], savedSearches: [], networkRequests: [], introRequests: [] };
+}
+
+export function enterDemo(): MockDB {
+  getPlatform().setItem('lumi.demo', '1');
+  return loadDB();
 }
 
 export function loadDB(): MockDB {
   try {
-    const raw = getPlatform().getItem(STORAGE_KEY);
+    const raw = getPlatform().getItem(storageKey());
     if (raw) {
       const parsed = JSON.parse(raw) as MockDB;
       // 날짜가 바뀌면 '오늘' 기준 예시 데이터를 다시 만든다
-      if (parsed.version === DB_VERSION && parsed.seededOn === new Date().toISOString().slice(0, 10)) return parsed;
+      if (parsed.version === DB_VERSION) return parsed;
     }
   } catch { /* ignore */ }
   const db = freshDB();
@@ -54,7 +65,7 @@ export function loadDB(): MockDB {
 }
 
 export function saveDB(db: MockDB) {
-  try { getPlatform().setItem(STORAGE_KEY, JSON.stringify(db)); } catch { /* ignore quota */ }
+  try { getPlatform().setItem(storageKey(), JSON.stringify(db)); } catch { /* ignore quota */ }
 }
 
 export function resetDB(): MockDB {

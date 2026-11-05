@@ -7,10 +7,10 @@
  * 쨍한 하늘색 #BFF4FF · 진한 남색 #0F2B48 은 쓰지 않는다. 옅은 하늘 배경 + 맑은 파랑 버튼 + 짙은 회청 글자.
  */
 :root, :root[data-palette="mist"] {
-  --bg: #F6F9FC; --surface: #FFFFFF; --surface-2: #EEF3F8; --line: #E1E8F0;
-  --tint: #E7F1FB; --tint-2: #D3E5F7;
-  --primary: #2F80ED; --primary-press: #2468C4; --on-primary: #FFFFFF;
-  --ink: #1E2B3A; --ink-2: #4A5A6B; --ink-3: #7E8B9A; --link: #2A6FC9;
+  --bg: #FFFFFF; --surface: #FFFFFF; --surface-2: #F9FAFC; --line: #E8EAF0;
+  --tint: #EEF0FC; --tint-2: #E4E9FA;
+  --primary: #303858; --primary-press: #232A45; --on-primary: #FFFFFF;
+  --ink: #181D32; --ink-2: #555D73; --ink-3: #778096; --link: #4464C8;
   --ok: #2F8F67; --ok-soft: #E3F4EC; --warn: #B7791F; --warn-soft: #FDF3DC; --danger: #C53D3D; --danger-soft: #FCE8E8;
   --shadow-rgb: 30, 43, 58;
 }

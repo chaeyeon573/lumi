@@ -19,7 +19,8 @@
     "fetch:orgs": "tsx --tsconfig server/tsconfig.json server/scripts/fetch-orgs.ts",
     "fetch:courses": "tsx --tsconfig server/tsconfig.json server/scripts/fetch-courses.ts",
     "fetch:greeks": "tsx --tsconfig server/tsconfig.json server/scripts/fetch-greeks.ts",
-    "import:opportunities": "tsx --tsconfig server/tsconfig.json server/scripts/import-opportunities.ts"
+    "import:opportunities": "tsx --tsconfig server/tsconfig.json server/scripts/import-opportunities.ts",
+    "test:lumi": "tsx --tsconfig server/tsconfig.json --test tests/lumi.test.ts"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.23",

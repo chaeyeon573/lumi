@@ -4,9 +4,10 @@
  * - 다른 사람의 시간표 강의실(room)은 절대 내려보내지 않는다
  */
 import type { Patch, Snapshot } from '@core/api/types';
+import { canView, canViewActivity, canViewPost } from '@core/lib/relations';
 import type { ID, User, NetworkRequest } from '@core/types';
 
-function sanitizeUser(u: User, viewerId: ID): User {
+function sanitizeUser(u: User, viewerId: ID, db?: Snapshot): User {
   if (u.id === viewerId) return u;
   // 다른 사람의 요금제·연결 요청 사용량·검색 취향은 내려보내지 않는다
   // 요금제·사용량·저장·숨김·최근 검색은 본인만. 방문 예정은 공개 설정이 꺼져 있으면 뺀다
@@ -14,7 +15,15 @@ function sanitizeUser(u: User, viewerId: ID): User {
   if (u.privacy && u.privacy.showTrips === false) delete (rest as Partial<User>).trips;
   // 지도교수는 본인이 켰을 때만
   if (u.research && !u.research.showAdvisor) rest.research = { ...u.research, advisor: undefined };
-  return { ...rest, timetable: u.timetable.map(({ room: _room, ...c }) => c) };
+  const viewer = db?.users.find((v) => v.id === viewerId);
+  const visible = (field: keyof User['fieldVisibility']) => !!viewer && !!db && canView(db, viewer, u.id, u.fieldVisibility[field] ?? 'private');
+  if (!visible('living')) delete rest.living;
+  if (!viewer || !db || !canView(db, viewer, u.id, u.membershipVisibility ?? 'private')) rest.interestedOrgIds = [];
+  if (!visible('prompts')) { rest.prompts = []; delete rest.voicePrompt; delete rest.poll; }
+  if (!visible('bio')) rest.bio = '';
+  if (!visible('interests')) rest.interests = [];
+  return { ...rest, timetable: visible('timetable') ? u.timetable.map(({ room: _room, ...c }) => c) : [] };
+
 }
 
 /** 네트워크 요청: 응답·추천 목록은 요청자와 당사자에게만. 추천받은 후보는 '관심 있어요' 전까지 요청자에게 보이지 않는다 */
@@ -24,9 +33,24 @@ function sanitizeRequest(r: NetworkRequest, viewerId: ID): NetworkRequest {
 }
 
 export function snapshotFor(db: Snapshot, viewerId: ID): Snapshot {
+  const viewer = db.users.find((u) => u.id === viewerId);
   return {
     ...db,
-    users: db.users.map((u) => sanitizeUser(u, viewerId)),
+    users: db.users.map((u) => sanitizeUser(u, viewerId, db)),
+    activities: viewer ? db.activities.filter((a) => canViewActivity(db, viewer, a)) : [],
+    posts: viewer ? db.posts.filter((p) => canViewPost(db, viewer, p)) : [],
+    participations: db.participations.filter((p) => p.userId === viewerId || !!viewer && db.activities.some((a) => a.id === p.activityId && canViewActivity(db, viewer, a))),
+    proposals: db.proposals.filter((p) => p.fromId === viewerId || p.toId === viewerId),
+    opportunityIntents: db.opportunityIntents.filter((i) => i.userId === viewerId || !i.saved && i.intent !== null),
+    timePolls: db.timePolls.filter((p) => p.hostId === viewerId || p.inviteeIds.includes(viewerId)),
+    chatRooms: db.chatRooms.filter((r) => r.memberIds.includes(viewerId)),
+    organizations: db.organizations.map((o) => {
+      if (o.memberIds.includes(viewerId) || o.adminIds.includes(viewerId)) return o;
+      return { ...o, notices: [], applicantIds: [], memberIds: o.memberIds.filter((id) => {
+        const owner = db.users.find((u) => u.id === id);
+        return id === viewerId || !!owner && !!viewer && canView(db, viewer, id, owner.membershipVisibility ?? 'private');
+      }), adminIds: o.adminIds.filter((id) => id === viewerId) };
+    }),
     notifications: db.notifications.filter((n) => n.userId === viewerId),
     reports: db.reports.filter((r) => r.reporterId === viewerId),
     savedSearches: db.savedSearches.filter((s) => s.userId === viewerId),
@@ -35,9 +59,20 @@ export function snapshotFor(db: Snapshot, viewerId: ID): Snapshot {
   };
 }
 
-export function patchFor(patch: Patch, viewerId: ID): Patch | null {
+export function patchFor(patch: Patch, viewerId: ID, db?: Snapshot): Patch | null {
   const out: Patch = { ...patch };
-  if (patch.users) out.users = patch.users.map((u) => sanitizeUser(u, viewerId));
+  const viewer = db?.users.find((u) => u.id === viewerId);
+  if (patch.activities) out.activities = viewer && db ? patch.activities.filter((a) => canViewActivity(db, viewer, a)) : [];
+  if (patch.posts) out.posts = viewer && db ? patch.posts.filter((p) => canViewPost(db, viewer, p)) : [];
+  if (patch.proposals) out.proposals = patch.proposals.filter((p) => p.fromId === viewerId || p.toId === viewerId);
+  if (patch.timePolls) out.timePolls = patch.timePolls.filter((p) => p.hostId === viewerId || p.inviteeIds.includes(viewerId));
+  if (patch.opportunityIntents) out.opportunityIntents = patch.opportunityIntents.filter((i) => i.userId === viewerId || !i.saved && i.intent !== null);
+  if (patch.chatRooms) out.chatRooms = patch.chatRooms.filter((r) => r.memberIds.includes(viewerId));
+  if (patch.organizations) {
+    const allowed = db ? snapshotFor(db, viewerId).organizations : [];
+    out.organizations = patch.organizations.flatMap((o) => { const safe = allowed.find((g) => g.id === o.id); return safe ? [safe] : []; });
+  }
+  if (patch.users) out.users = patch.users.map((u) => sanitizeUser(u, viewerId, db));
   if (patch.notifications) out.notifications = patch.notifications.filter((n) => n.userId === viewerId);
   if (patch.reports) out.reports = patch.reports.filter((r) => r.reporterId === viewerId);
   if (patch.savedSearches) out.savedSearches = patch.savedSearches.filter((s) => s.userId === viewerId);

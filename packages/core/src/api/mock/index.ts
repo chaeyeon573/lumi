@@ -5,7 +5,7 @@
 import type { AroundUApi, Patch, Snapshot } from '../types';
 import { t } from '@core/i18n';
 import { createEngine } from '../engine';
-import { loadDB, resetDB, saveDB, getSession, setSession, type MockDB } from './db';
+import { loadDB, resetDB, saveDB, getSession, setSession, type MockDB, enterDemo, demoEnabled } from './db';
 import { DEMO_USER_ID } from '@core/data/seed';
 import { catalogCourses, searchCatalog } from '@core/data/catalog/courses';
 import { getPlatform } from '@core/platform';
@@ -21,7 +21,7 @@ const writeEmails = (m: Record<string, string>) => { try { getPlatform().setItem
 const engine = createEngine({
   get db() { return db; },
   t,
-  demo: true,
+  get demo() { return demoEnabled(); },
   push(patch) { saveDB(db); listeners.forEach((l) => l(patch)); },
 });
 
@@ -49,9 +49,10 @@ function wrap<G extends Record<string, (...a: never[]) => unknown>>(group: G) {
 }
 
 export const mockApi: AroundUApi = {
+  async publicContent() { return { schools: db.schools, organizations: db.organizations.filter((o) => o.verified).map((o) => ({ ...o, memberIds: [], adminIds: [], applicantIds: [], followerIds: [], notices: [] })), opportunities: db.opportunities.filter((o) => o.sourceVerified === true) }; },
   auth: {
     async loginDemo() {
-      return request(() => { setSession(DEMO_USER_ID); return engine.find(db.users, DEMO_USER_ID); });
+      return request(() => { db = enterDemo(); setSession(DEMO_USER_ID); return engine.find(db.users, DEMO_USER_ID); });
     },
     async loginWithCode(email, code) {
       return request(() => {
@@ -71,7 +72,7 @@ export const mockApi: AroundUApi = {
         return user;
       });
     },
-    async logout() { setSession(null); },
+    async logout() { setSession(null); if (demoEnabled()) { getPlatform().removeItem('lumi.demo'); db = loadDB(); } },
     async session() { return getSession(); },
   },
 

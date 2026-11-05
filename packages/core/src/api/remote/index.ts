@@ -114,6 +114,7 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
       session,
     },
 
+    publicContent: () => call('public/content', {}),
     async bootstrap(viewerId) {
       const snap = await call<Snapshot>('bootstrap', { viewerId });
       startEvents();
@@ -137,7 +138,7 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
     activities: group('activities', ['create', 'update', 'remove', 'join', 'cancel', 'approve', 'reject', 'comment']),
     posts: group('posts', ['create', 'remove', 'boost', 'toggleLike', 'toggleSave', 'comment', 'approveTag']),
     relationships: group('relationships', ['toggleLike', 'toggleFollow', 'sendFriendRequest', 'cancelFriendRequest', 'respondFriendRequest', 'unfriend', 'block', 'unblock']),
-    orgs: group('orgs', ['apply', 'leave', 'create']),
+    orgs: group('orgs', ['review', 'apply', 'leave', 'create']),
     opportunities: group('opportunities', ['create', 'setIntent', 'toggleSave', 'ask', 'review']),
     proposals: group('proposals', ['create', 'respond']),
     together: group('together', ['create', 'vote', 'addOption', 'decide', 'cancel']),

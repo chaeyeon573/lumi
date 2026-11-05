@@ -89,7 +89,7 @@ export const canViewPost = (s: Rel, viewer: User, p: Post) => canView(s, viewer,
 
 /** 같은 수업을 듣는 사람 (시간표 공개 범위를 지킨다) */
 export const classmates = (s: Rel, viewer: User, courseName: string, canSee: (u: User) => boolean) =>
-  s.users.filter((u) => u.id !== viewer.id && !isBlocked(s, viewer.id, u.id) && sameSchool(viewer, u) && u.timetable.some((c) => c.name === courseName) && canSee(u));
+  s.users.filter((u) => u.id !== viewer.id && u.classmateOptIn === true && !u.deleted && !u.suspended && !isBlocked(s, viewer.id, u.id) && sameSchool(viewer, u) && u.timetable.some((c) => c.name === courseName) && canSee(u));
 
 /** 활동 장소 표시 — 승인제는 승인 전까지 대략적인 위치만 */
 export function placeLabel(a: Activity, viewer: User, approved: boolean): { name: string; approximate: boolean } {

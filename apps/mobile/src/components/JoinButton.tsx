@@ -24,19 +24,20 @@ export function JoinButton({ activity: a, size = 'sm', label }: { activity: Acti
 
   const submit = async (message?: string) => {
     setBusy(true);
-    try { await run(() => api.activities.join(a.id, v.me.id, message), a.joinPolicy === 'open' ? t('참가했어요! 그룹 채팅방이 열렸어요.') : t('참가 신청을 보냈어요. 승인되면 알려드릴게요.')); setOpen(false); setMsg(''); } catch { /* */ } finally { setBusy(false); }
+    try { await run(() => api.activities.join(a.id, v.me.id, message), full ? 'Added to the waitlist. No seat reserved yet.' : a.joinPolicy === 'open' ? t('참가했어요! 그룹 채팅방이 열렸어요.') : t('참가 신청을 보냈어요. 승인되면 알려드릴게요.')); setOpen(false); setMsg(''); } catch { /* */ } finally { setBusy(false); }
   };
   const cancel = async () => { setBusy(true); try { await run(() => api.activities.cancel(a.id, v.me.id), t('참가를 취소했어요.')); } catch { /* */ } finally { setBusy(false); } };
 
   if (isHost) return <Button size={size} variant="secondary" icon={<Settings2 size={15} color={C.primary} />} onPress={() => nav(`/activities/${a.id}/manage`)}>{t('참가자 관리')}</Button>;
   if (mine?.status === 'approved') return <Button size={size} variant="secondary" icon={<Check size={15} color={C.primary} />} onPress={cancel} loading={busy}>{t('참가 중 · 취소')}</Button>;
+  if (mine?.status === 'waitlisted') return <Button size={size} variant="outline" onPress={cancel} loading={busy}>Waitlisted · Cancel</Button>;
   if (mine?.status === 'pending') return <Button size={size} variant="outline" icon={<Clock size={15} color={C.ink2} />} onPress={cancel} loading={busy}>{t('승인 대기 중')}</Button>;
   if (a.joinPolicy === 'invite' && !invited) return <Button size={size} variant="outline" disabled>{t('초대받은 사람만')}</Button>;
-  if (full) return <Button size={size} variant="outline" disabled>{t('마감')}</Button>;
+  if (full) return <Button size={size} variant="outline" onPress={() => submit()} loading={busy}>Join Waitlist</Button>;
   if (a.joinPolicy === 'approval') {
     return (
       <>
-        <Button size={size} variant="accent" icon={<Plus size={15} color={C.primary} />} onPress={() => setOpen(true)}>{label ?? t('참가 신청')}</Button>
+        <Button size={size} variant="accent" icon={<Plus size={15} color={C.primary} />} onPress={() => setOpen(true)}>{label ?? 'Request to Join'}</Button>
         <BottomSheet open={open} onClose={() => setOpen(false)} title={t('참가 신청')}>
           <Text style={tw`text-[13px] text-ink-2`}>{t('주최자가 승인하면 참가가 확정되고 그룹 채팅방에 입장할 수 있어요.')}</Text>
           {a.conditions ? <View style={tw`mt-3 rounded-xl bg-gold-soft px-3 py-2`}><Text style={tw`text-[13px]`}><Text style={tw`font-bold`}>{t('참가 조건')}</Text> · {a.conditions}</Text></View> : null}
@@ -46,5 +47,5 @@ export function JoinButton({ activity: a, size = 'sm', label }: { activity: Acti
       </>
     );
   }
-  return <Button size={size} variant="accent" icon={<Plus size={15} color={C.primary} />} onPress={() => submit()} loading={busy}>{label ?? t('바로 참가')}</Button>;
+  return <Button size={size} variant="accent" icon={<Plus size={15} color={C.primary} />} onPress={() => submit()} loading={busy}>{label ?? 'Join Meetup'}</Button>;
 }

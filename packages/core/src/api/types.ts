@@ -83,6 +83,8 @@ export interface RegisterInput {
 }
 
 export interface ActivityInput {
+  attendeeRoles?: Activity['attendeeRoles'];
+  attendeeYears?: number[];
   kind: ActivityKind;
   category: ActivityCategory;
   title: string;
@@ -190,6 +192,7 @@ export interface TimePollInput {
 }
 
 export interface AroundUApi {
+  publicContent(): Promise<Pick<Snapshot, 'schools' | 'organizations' | 'opportunities'>>;
   auth: {
     loginDemo(): Promise<User>;
     /** 가입한 학교 이메일로 받은 코드로 로그인 (mock: 123456) */
@@ -321,6 +324,7 @@ export interface AroundUApi {
   };
 
   orgs: {
+    review(orgId: ID, adminId: ID, userId: ID, accept: boolean): Promise<Patch>;
     /** 가입 — joinPolicy 'open' 이면 즉시 멤버, 아니면 지원 목록에 */
     apply(orgId: ID, userId: ID): Promise<Patch>;
     leave(orgId: ID, userId: ID): Promise<Patch>;

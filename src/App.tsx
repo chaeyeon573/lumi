@@ -1,13 +1,13 @@
+import { LumiHome, LumiExplore, LumiSocial, LumiProfile, LumiSaved, LumiPrivacy } from '@/pages/lumi/Experience';
+import { BRAND } from '@core/brand';
 import { useEffect } from 'react';
 import { Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
-import { useAppStore, useCurrentUser } from '@core/store/useAppStore';
+import { useAppStore } from '@core/store/useAppStore';
 import { AppShell } from '@/components/layout/AppShell';
 import { ErrorState } from '@/components/ui';
 import { WelcomePage } from '@/pages/onboarding/WelcomePage';
-import { OnboardingPage } from '@/pages/onboarding/OnboardingPage';
-import { HomePage } from '@/pages/home/HomePage';
+import { LumiOnboarding } from '@/pages/lumi/Onboarding';
 import { MapPage } from '@/pages/map/MapPage';
-import { ProfilePage } from '@/pages/profile/ProfilePage';
 import { EditProfilePage } from '@/pages/profile/EditProfilePage';
 import { ActivityDetailPage } from '@/pages/activity/ActivityDetailPage';
 import { ManageActivityPage } from '@/pages/activity/ManageActivityPage';
@@ -25,7 +25,6 @@ import { SearchPage } from '@/pages/search/SearchPage';
 import { ProfileListPage } from '@/pages/profile/ProfileListPage';
 import { EditPromptsPage } from '@/pages/profile/EditPromptsPage';
 import { TimetablePage } from '@/pages/timetable/TimetablePage';
-import { PeoplePage } from '@/pages/people/PeoplePage';
 import { PeopleResultsPage } from '@/pages/people/PeopleResultsPage';
 import { AroundPage } from '@/pages/people/AroundPage';
 import { UnexpectedPage } from '@/pages/people/UnexpectedPage';
@@ -46,9 +45,7 @@ import { CreateGroupPage } from '@/pages/groups/CreateGroupPage';
 import { WantsPage } from '@/pages/profile/WantsPage';
 import { StatusPage } from '@/pages/profile/StatusPage';
 import { StatusCareerPage } from '@/pages/profile/StatusCareerPage';
-import { MeetPage } from '@/pages/meet/MeetPage';
 import { CreateMeetPage } from '@/pages/meet/CreateMeetPage';
-import { FeedPage } from '@/pages/feed/FeedPage';
 import { PostDetailPage } from '@/pages/feed/PostDetailPage';
 import { PricingPage } from '@/pages/pricing/PricingPage';
 import { MyGroupsPage } from '@/pages/profile/MyGroupsPage';
@@ -58,12 +55,9 @@ import { CreateTogetherPage } from '@/pages/together/CreateTogetherPage';
 import { TogetherPage } from '@/pages/together/TogetherPage';
 import { OpportunityDetailPage } from '@/pages/opportunities/OpportunityDetailPage';
 import { ProfileContextPage } from '@/pages/profile/ProfileContextPage';
-import { isAlumniStage } from '@core/lib/network';
 
 /** 졸업생에게는 시간표·수업·같이 계획하기(시간 투표 만들기)가 없다 — 옛 링크로 들어오면 모임으로 */
 function StudentOnly({ children }: { children: React.ReactElement }) {
-  const me = useCurrentUser();
-  if (me && isAlumniStage(me)) return <Navigate to="/meet" replace />;
   return children;
 }
 
@@ -95,12 +89,18 @@ function CommunityRedirect() {
   return <Navigate to={tab === 'clubs' ? '/meet?tab=groups' : tab === 'opportunities' ? '/' : '/feed'} replace />;
 }
 
+function LegacySocial({ section }: { section: string }) {
+  const location = useLocation();
+  const params = new URLSearchParams(location.search); params.set('section', section);
+  return <Navigate to={'/social?' + params.toString()} replace />;
+}
+
 function SplashScreen() {
   return (
     <div className="h-full grid place-items-center bg-bg">
       <div className="flex flex-col items-center gap-3">
         <div className="h-16 w-16 rounded-3xl bg-primary grid place-items-center text-white text-3xl shadow-[var(--shadow-float)]">📍</div>
-        <div className="text-[15px] font-bold">AroundU</div>
+        <div className="text-[15px] font-bold">{BRAND.name}</div>
         <div className="h-1 w-24 rounded-full bg-line overflow-hidden"><div className="h-full w-1/2 bg-primary animate-pulse" /></div>
       </div>
     </div>
@@ -122,28 +122,33 @@ export default function App() {
       <Route element={<RedirectIfAuthed />}>
         <Route element={<AppShell withNav={false} />}>
           <Route path="/welcome" element={<WelcomePage />} />
-          <Route path="/onboarding/*" element={<OnboardingPage />} />
+          <Route path="/onboarding/*" element={<LumiOnboarding />} />
         </Route>
       </Route>
       <Route element={<RequireAuth />}>
         <Route element={<AppShell />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/people" element={<PeoplePage />} />
+          <Route path="/" element={<LumiHome />} />
+          <Route path="/explore" element={<LumiExplore />} />
+          <Route path="/social" element={<LumiSocial />} />
+          <Route path="/schedule" element={<TimetablePage />} />
+          <Route path="/profile/discovery" element={<LumiPrivacy />} />
+          <Route path="/saved-content" element={<LumiSaved />} />
+          <Route path="/people" element={<LegacySocial section="people" />} />
           {/* v2: 학교로 나누지 않는다 — 이전 Beyond/고급 검색은 찾기 탭으로 */}
           <Route path="/people/beyond" element={<Navigate to="/people?tab=search" replace />} />
           <Route path="/people/search" element={<Navigate to="/people?tab=search" replace />} />
           <Route path="/people/results" element={<PeopleResultsPage />} />
-          <Route path="/meet" element={<MeetPage />} />
+          <Route path="/meet" element={<LegacySocial section="meetups" />} />
           <Route path="/meet/create" element={<CreateMeetPage />} />
-          <Route path="/feed" element={<FeedPage />} />
+          <Route path="/feed" element={<LegacySocial section="feed" />} />
           <Route path="/feed/:id" element={<PostDetailPage />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/profile/groups" element={<MyGroupsPage />} />
           {/* 이전 구조 호환 */}
-          <Route path="/discover" element={<Navigate to="/meet" replace />} />
+          <Route path="/discover" element={<Navigate to="/explore" replace />} />
           <Route path="/community" element={<CommunityRedirect />} />
-          <Route path="/opportunities" element={<Navigate to="/" replace />} />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/opportunities" element={<Navigate to="/explore?category=Opportunities" replace />} />
+          <Route path="/profile" element={<LumiProfile />} />
         </Route>
         <Route element={<AppShell withNav={false} />}>
           {/* 사람 찾아보기 — 가까운 네트워크에서 찾고, 건너건너 물어보기 */}
@@ -166,7 +171,7 @@ export default function App() {
           <Route path="/profile/wants" element={<WantsPage />} />
           <Route path="/profile/status" element={<StatusPage />} />
           <Route path="/profile/status/career" element={<StatusCareerPage />} />
-          <Route path="/timetable" element={<StudentOnly><TimetablePage /></StudentOnly>} />
+          <Route path="/timetable" element={<Navigate to="/schedule" replace />} />
           <Route path="/plans" element={<PlansPage />} />
           <Route path="/classes/:courseName" element={<StudentOnly><ClassPage /></StudentOnly>} />
           <Route path="/together/new" element={<StudentOnly><CreateTogetherPage /></StudentOnly>} />

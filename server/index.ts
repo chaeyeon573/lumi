@@ -30,6 +30,7 @@ import { searchCatalog, catalogCourses as builtInCatalog } from '@core/data/cata
 import { createStore } from './store';
 import { snapshotFor, patchFor } from './view';
 import { sendCodeMail, sendReportMail } from './mail';
+import { currentOpportunities } from '@core/lib/content-truth';
 import { loadSeed } from './seed';
 import { LEGAL_PAGES, legalPage } from './legal';
 
@@ -60,7 +61,7 @@ const clients = new Map<ID, Set<Response>>();
 
 function broadcast(patch: Patch) {
   for (const [userId, set] of clients) {
-    const p = patchFor(patch, userId);
+    const p = patchFor(patch, userId, db);
     if (!p) continue;
     const line = `event: patch\ndata: ${JSON.stringify(p)}\n\n`;
     for (const res of set) res.write(line);
@@ -162,6 +163,13 @@ app.post('/api/auth/delete', auth, wrap(async (req: Req) => {
 app.post('/api/auth/me', auth, wrap(async (req: Req) => ({ user: req.userId ? db.users.find((u) => u.id === req.userId) ?? null : null })));
 
 // ─── 부트스트랩 ──────────────────────────────────────────────────────────
+// Anonymous discovery has no social roster or private membership data.
+app.post('/api/public/content', (_req, res) => res.json({
+  schools: db.schools,
+  opportunities: currentOpportunities(db.opportunities).map((o) => ({ ...o, qna: [], reviews: [] })),
+  organizations: db.organizations.filter((o) => o.verified).map((o) => ({ ...o, memberIds: [], adminIds: [], applicantIds: [], followerIds: [], notices: [] })),
+}));
+
 app.post('/api/bootstrap', auth, wrap(async (req: Req) => {
   const me = requireUser(req);
   const hk = engine.housekeeping();
@@ -236,7 +244,7 @@ const RULES: Record<Group, Record<string, Rule>> = {
     respondFriendRequest: owner(() => db.relationships.friendRequests, (r) => r.toId),
     unfriend: (me, args) => args[0] === me || args[1] === me,
   },
-  orgs: { apply: 1, leave: 1, create: 0 },
+  orgs: { review: (me, args) => args[1] === me && !!db.organizations.find((o) => o.id === args[0])?.adminIds.includes(me), apply: 1, leave: 1, create: 0 },
   opportunities: { create: 0, setIntent: 1, toggleSave: 1, ask: 1, review: 1 },
   proposals: { create: 0, respond: owner(() => db.proposals, (p) => p.toId) },
   together: { create: 0, vote: 1, addOption: 1, decide: owner(() => db.timePolls, (p) => p.hostId), cancel: owner(() => db.timePolls, (p) => p.hostId) },

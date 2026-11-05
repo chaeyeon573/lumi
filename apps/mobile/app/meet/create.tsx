@@ -47,6 +47,8 @@ export default function CreateMeetScreen() {
   const initialOrg = p.org && groups.some((o) => o.id === p.org) ? p.org : '';
   const initialCat = (p.category && (ALL_CATEGORIES as string[]).includes(p.category) ? p.category : 'etc') as ActivityCategory;
 
+  const [audience, setAudience] = useState<string[]>([]);
+  const [years, setYears] = useState<number[]>([]);
   const [title, setTitle] = useState(p.title ?? '');
   const [orgId, setOrgId] = useState<string>(initialOrg);
   const [date, setDate] = useState(p.date ?? todayISO());
@@ -70,6 +72,7 @@ export default function CreateMeetScreen() {
     setBusy(true);
     try {
       const input: ActivityInput = {
+        attendeeRoles: audience as ActivityInput["attendeeRoles"], attendeeYears: years,
         kind: orgId ? 'group' : 'personal', category, title: title.trim(), description: description.trim(),
         cover: { emoji: CATEGORY_EMOJI[category], hue: HUE_OF[category] },
         date, startTime, endTime, place: { name: placeName.trim(), area: city, lat: center.lat, lng: center.lng },
@@ -113,6 +116,8 @@ export default function CreateMeetScreen() {
         </Field>
         <Field label={`${t('공개 범위')} *`}><Segmented<MeetVis> value={vis} onChange={setVis} options={visOptions} /></Field>
 
+        <Field label="Student status (optional)" hint="Leave empty to welcome everyone, including students and alumni."><Wrap>{['undergraduate', 'graduate', 'alumni'].map((role) => <WChip key={role} active={audience.includes(role)} onPress={() => setAudience((xs) => xs.includes(role) ? xs.filter((x) => x !== role) : [...xs, role])}>{role === 'undergraduate' ? 'Undergraduate' : role === 'graduate' ? 'Graduate' : 'Alumni'}</WChip>)}</Wrap></Field>
+        <Field label="Undergraduate year (optional)"><Wrap>{[1, 2, 3, 4].map((year) => <WChip key={year} active={years.includes(year)} onPress={() => setYears((xs) => xs.includes(year) ? xs.filter((x) => x !== year) : [...xs, year])}>{year === 4 ? '4th+' : `Year ${year}`}</WChip>)}</Wrap></Field>
         {/* 더 보기 — 참가 승인 · 종류 · 설명 · 다른 방법으로 모으기 */}
         <MoreRow open={more} onToggle={() => setMore((x) => !x)} />
         {more ? (

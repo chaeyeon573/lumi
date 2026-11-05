@@ -1,7 +1,7 @@
 /** 프로필 질문 풀. Hinge식 구조: 텍스트 3개 필수 + 음성 1개·투표 1개 선택
  *  필수 3개는 슬롯별로 카테고리를 분배해 어떤 카드를 봐도 "뭘 · 어디서/언제 · 어떤 사람과"가 한 줄씩 나오게 한다.
  *  1번 슬롯은 첫 질문(FIRST_PROMPT_ID)으로 고정 — 답이 추천과 카드 첫 줄에 바로 쓰인다. */
-import { t } from '@core/i18n';
+import { t, lang } from '@core/i18n';
 import type { StageKind } from '@core/lib/stage';
 export type PromptCategory = 'activity' | 'campus' | 'time' | 'style' | 'connect' | 'me';
 
@@ -14,10 +14,11 @@ export interface PromptQuestion { id: string; text: string; category: PromptCate
 const U: StageKind[] = ['undergrad']; const S: StageKind[] = ['undergrad', 'grad']; const G: StageKind[] = ['grad']; const A: StageKind[] = ['alumni'];
 
 export const TEXT_PROMPTS: PromptQuestion[] = [
+  { id: 'q_weekend', text: lang === 'en' ? 'My ideal weekend…' : '내가 좋아하는 주말', category: 'me' },
   { id: 'q_now', text: t('이번 주에 학교 근처에서 누군가랑 같이 하고 싶은 거 하나'), category: 'activity', placeholder: t('예: 정문 카페에서 커피 한 잔'), stages: U },
   { id: 'q_hobby', text: t('혼자 하기 아까운 취미 하나'), category: 'activity', placeholder: t('예: 보드게임, 클라이밍') },
   { id: 'q_into', text: t('요즘 꽂힌 것'), category: 'activity', placeholder: t('음악, 유튜브, 책, 게임 뭐든') },
-  { id: 'q_always', text: t('같이 가자고 하면 무조건 나가는 것'), category: 'activity' },
+  { id: 'q_always', text: lang === 'en' ? "I'm always down for…" : t('같이 가자고 하면 무조건 나가는 것'), category: 'activity' },
   { id: 'q_after_exam', text: t('시험 끝나면 제일 먼저 하고 싶은 것'), category: 'activity', stages: U },
   { id: 'q_cafe', text: t('학교 근처 내 최애 카페 / 밥집'), category: 'campus', stages: S },
   { id: 'q_spot', text: t('학교에서 가장 좋아하는 자리'), category: 'campus', stages: S },
@@ -31,14 +32,14 @@ export const TEXT_PROMPTS: PromptQuestion[] = [
   { id: 'q_first_meet', text: t('처음 만나면 이런 활동이 제일 편해요'), category: 'style' },
   { id: 'q_study_type', text: t('스터디할 때 나는 이런 타입'), category: 'style', placeholder: t('조용히 / 토론 / 카페 / 도서관'), stages: S },
   { id: 'q_role', text: t('모임에서 나는 주로 이런 역할'), category: 'style' },
-  { id: 'q_want_person', text: t('이런 사람이면 같이하고 싶어요'), category: 'connect' },
+  { id: 'q_want_person', text: lang === 'en' ? "I'm looking for people to…" : t('이런 사람이면 같이하고 싶어요'), category: 'connect' },
   { id: 'q_project', text: t('요즘 하는 프로젝트·연구·준비'), category: 'connect' },
   { id: 'q_ask_me', text: t('나한테 물어보면 잘 알려줄 수 있는 것'), category: 'connect' },
   { id: 'q_team_with', text: t('같이 하면 좋을 것 같은 전공·학년'), category: 'connect', placeholder: t('예: 디자인 전공, 2~3학년'), stages: U },
   { id: 'q_life', text: t('내 인생 활동 하나'), category: 'me' },
   { id: 'q_new', text: t('최근에 새로 시작한 것'), category: 'me' },
   { id: 'q_emoji', text: t('나를 설명하는 이모지 세 개'), category: 'me', placeholder: '☕📚🏃' },
-  { id: 'q_one_line', text: t('요즘 나를 한 문장으로'), category: 'me' },
+  { id: 'q_one_line', text: lang === 'en' ? 'A fun fact about me…' : t('요즘 나를 한 문장으로'), category: 'me' },
   // ── 대학원생 ──
   { id: 'qg_now', text: t('요즘 연구 말고 같이 하고 싶은 것'), category: 'activity', placeholder: t('예: 금요일 저녁 러닝, 논문 얘기 안 하는 저녁'), stages: G },
   { id: 'qg_explain', text: t('내 연구를 할머니께 설명한다면'), category: 'connect', placeholder: t('예: 컴퓨터가 사람 말을 더 잘 알아듣게 가르쳐요'), stages: G },

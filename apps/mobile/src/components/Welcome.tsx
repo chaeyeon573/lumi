@@ -1,3 +1,4 @@
+import { BRAND } from '@core/brand';
 import { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -15,7 +16,7 @@ import { SHOW_DEMO } from '@/demo';
  * 시작 화면 (웹 WelcomePage) — 로그아웃 상태에서 루트 레이아웃이 탭 대신 보여준다.
  * 시작하기 → 온보딩(가입) · 이메일 코드 로그인 · (mock/데모 빌드만) 데모 계정 · 약관 링크.
  */
-export function Welcome({ onStart }: { onStart: () => void }) {
+export function Welcome({ onStart, onExplore }: { onStart: () => void; onExplore?: () => void }) {
   const setCurrentUser = useAppStore((s) => s.setCurrentUser);
   const showToast = useAppStore((s) => s.showToast);
   const ctx = localeContext();
@@ -66,26 +67,20 @@ export function Welcome({ onStart }: { onStart: () => void }) {
       </View>
 
       <View style={tw`flex-1 items-center justify-center px-7`}>
-        <Text style={[tw`text-[46px] font-extrabold`, { color: C.ink, letterSpacing: -1 }]}>AroundU</Text>
-        <Text style={tw`mt-7 text-[28px] font-bold text-ink text-center leading-9`}>{ctx.tagline}</Text>
-        <Text style={tw`mt-3 text-[14px] text-ink-2 text-center leading-5`}>{ctx.subtitle}</Text>
-        <View style={tw`mt-8 flex-row flex-wrap items-center justify-center`}>
-          {pills.map((p, i) => (
-            <View key={p.label} style={tw`flex-row items-center mb-1`}>
-              <View style={[tw`flex-row items-center h-7 px-2.5 rounded-full`, { backgroundColor: p.bg }]}><p.Icon size={12} color={p.fg} /><Text style={[tw`ml-1 text-[11px] font-semibold`, { color: p.fg }]}>{p.label}</Text></View>
-              {i < pills.length - 1 ? <View style={tw`mx-1`}><ArrowRight size={12} color={C.ink3} /></View> : null}
-            </View>
-          ))}
-        </View>
+        <Text style={[tw`text-[46px] font-extrabold`, { color: C.ink, letterSpacing: -1 }]}>{BRAND.name}</Text>
+        <Text style={tw`mt-7 text-[28px] font-bold text-ink text-center leading-9`}>{BRAND.tagline}</Text>
+        <Text style={tw`mt-3 text-[14px] text-ink-2 text-center leading-5`}>{'Discover your campus. Make a plan. Find your people.'}</Text>
+
       </View>
 
       <View style={tw`px-6 pb-6`}>
+        {onExplore && <Button variant="ghost" onPress={onExplore}>Browse campus without an account</Button>}
         <View style={tw`flex-row`}><Button full size="lg" onPress={onStart}>{t('시작하기')}</Button></View>
         <Pressable onPress={() => setEmailOpen(true)} style={tw`h-11 items-center justify-center mt-1`}>
           <Text style={tw`text-[13px] text-ink-2`}>{t('이미 계정이 있나요?')} <Text style={tw`font-bold text-primary underline`}>{t('로그인')}</Text></Text>
         </Pressable>
-        {SHOW_DEMO ? <View style={tw`flex-row`}><Button full size="lg" variant="ghost" onPress={loginDemo} loading={busy && !emailOpen}>{t('로그인 (데모 계정)')}</Button></View> : null}
-        <Text style={tw`mt-2 text-center text-[11px] text-ink-3`}>{t('학교 인증을 거친 사람만 만나요. 정확한 위치는 절대 공개되지 않아요.')}</Text>
+        {SHOW_DEMO ? <View style={tw`flex-row`}><Button full size="lg" variant="ghost" onPress={loginDemo} loading={busy && !emailOpen}>{'Explore demo · sample data'}</Button></View> : null}
+        <Text style={tw`mt-2 text-center text-[11px] text-ink-3`}>{'Your privacy comes first. Share only what you choose.'}</Text>
         <View style={tw`mt-1.5 flex-row justify-center`}>
           <Text onPress={() => openLegal('terms')} accessibilityRole="link" style={tw`text-[11px] text-ink-3 underline`}>{t('이용약관')}</Text>
           <Text style={tw`mx-1.5 text-[11px] text-ink-3`}>·</Text>
