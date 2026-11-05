@@ -3455,19 +3455,6 @@
    "source": "workday"
   },
   {
-   "id": "job_workday_boeing_wd1_myworkdayjobs_com_boeing_external_careers_jr2026523631",
-   "company": "Boeing",
-   "sector": "Aerospace/Defense",
-   "title": "AH-64 Product Repair Modification (Entry Level, Associate, or Mid level) Technician",
-   "location": "USA - Mesa, AZ",
-   "url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/job/USA---Mesa-AZ/AH-64-Product-Repair-Modification--Entry-Level--Associate--or-Mid-level--Technician_JR2026523631-1",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
-  },
-  {
    "id": "job_workday_boeing_wd1_myworkdayjobs_com_boeing_external_careers_jr2026517990",
    "company": "Boeing",
    "sector": "Aerospace/Defense",
@@ -3604,19 +3591,6 @@
    "title": "ICBM Minuteman Flight Control Systems Engineer , Early Career",
    "location": "USA - Hill AFB, UT",
    "url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/job/USA---Hill-AFB-UT/ICBM-Minuteman-Flight-Control-Systems-Engineer---Early-Career_JR2026528240-1",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_boeing_wd1_myworkdayjobs_com_boeing_external_careers_jr2026527050",
-   "company": "Boeing",
-   "sector": "Aerospace/Defense",
-   "title": "Maintenance, Repair, and Overhaul (MRO) and Component Operations Aircraft Mechanics – Electricians (Entry-Level)",
-   "location": "USA - Jacksonville, FL",
-   "url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/job/USA---Jacksonville-FL/Maintenance--Repair--and-Overhaul--MRO--and-Component-Operations-Aircraft-Mechanics---Electricians--Entry-Level-_JR2026527050-2",
    "kind": "job",
    "audience": [
     "newgrad"
@@ -4248,32 +4222,6 @@
    "url": "https://clorox.wd1.myworkdayjobs.com/en-US/Clorox/job/Pleasanton-CA---USA/Clorox-R-D-Packaging-Co-op--June-2027-_JR23810",
    "kind": "internship",
    "audience": [],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_clorox_wd1_myworkdayjobs_com_clorox_clorox_23189",
-   "company": "Clorox",
-   "sector": "Retail/Consumer",
-   "title": "Maintenance (12 hour Rotational Swing Shift)",
-   "location": "Belle, MO - USA",
-   "url": "https://clorox.wd1.myworkdayjobs.com/en-US/Clorox/job/Belle-MO---USA/Maintenance--12-hour-Rotational-Swing-Shift-_23189",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_clorox_wd1_myworkdayjobs_com_clorox_clorox_23192",
-   "company": "Clorox",
-   "sector": "Retail/Consumer",
-   "title": "Maintenance (12 hour Rotational Swing Shift)",
-   "location": "Belle, MO - USA",
-   "url": "https://clorox.wd1.myworkdayjobs.com/en-US/Clorox/job/Belle-MO---USA/Maintenance--12-hour-Rotational-Swing-Shift-_23192",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
    "source": "workday"
   },
   {
@@ -5834,34 +5782,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_freenome_8879804002",
-   "company": "Freenome",
-   "sector": "Biotech/Pharma",
-   "title": "Clinical Laboratory Associate I (Contractor)",
-   "location": "Brisbane, California",
-   "url": "https://job-boards.greenhouse.io/freenome/jobs/8879804002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-10-26T13:57:53-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_freenome_8889072002",
-   "company": "Freenome",
-   "sector": "Biotech/Pharma",
-   "title": "Clinical Laboratory Associate I (Contractor)",
-   "location": "Brisbane, California",
-   "url": "https://job-boards.greenhouse.io/freenome/jobs/8889072002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-10-26T13:56:16-04:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_freenome_8888967002",
    "company": "Freenome",
    "sector": "Biotech/Pharma",
@@ -5873,34 +5793,6 @@
     "newgrad"
    ],
    "updatedAt": "2026-10-16T15:18:36-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_freenome_8871042002",
-   "company": "Freenome",
-   "sector": "Biotech/Pharma",
-   "title": "Inventory Specialist I (Contractor)",
-   "location": "Brisbane, California",
-   "url": "https://job-boards.greenhouse.io/freenome/jobs/8871042002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-10-06T14:22:52-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_freenome_8868428002",
-   "company": "Freenome",
-   "sector": "Biotech/Pharma",
-   "title": "Quality Control Specialist I (Contractor)",
-   "location": "Brisbane, California",
-   "url": "https://job-boards.greenhouse.io/freenome/jobs/8868428002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-10-05T15:02:25-04:00",
    "source": "greenhouse"
   },
   {
@@ -6806,19 +6698,6 @@
    "url": "https://intel.wd1.myworkdayjobs.com/en-US/External/job/US-New-Mexico-Albuquerque/Facilities-Technician-Intern_JR0286923",
    "kind": "internship",
    "audience": [],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_intel_wd1_myworkdayjobs_com_intel_external_jr0286014",
-   "company": "Intel",
-   "sector": "Chips/Hardware",
-   "title": "Industrial Security Representative 1",
-   "location": "US, Oregon, Hillsboro",
-   "url": "https://intel.wd1.myworkdayjobs.com/en-US/External/job/US-Oregon-Hillsboro/Industrial-Security-Representative-1_JR0286014",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
    "source": "workday"
   },
   {
@@ -7748,20 +7627,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_natera_6194240004",
-   "company": "Natera",
-   "sector": "Biotech/Pharma",
-   "title": "Receiving Specialist I - San Carlos, CA",
-   "location": "San Carlos, CA",
-   "url": "https://job-boards.greenhouse.io/natera/jobs/6194240004",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-09-22T13:01:03-04:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_neuralink_7565469003",
    "company": "Neuralink",
    "sector": "Chips/Hardware",
@@ -7988,19 +7853,6 @@
    "audience": [],
    "updatedAt": "2026-09-24T21:18:21-04:00",
    "source": "greenhouse"
-  },
-  {
-   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10258335",
-   "company": "Northrop Grumman",
-   "sector": "Aerospace/Defense",
-   "title": "(Skillbridge) – Electrical Engineer 1",
-   "location": "United States-Arizona-Chandler",
-   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Arizona-Chandler/XMLNAME--Skillbridge----Electrical-Engineer-1_R10258335",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
   },
   {
    "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259106",
@@ -10230,19 +10082,6 @@
    "source": "ashby"
   },
   {
-   "id": "job_workday_pfizer_wd1_myworkdayjobs_com_pfizer_pfizercareers_4965717",
-   "company": "Pfizer",
-   "sector": "Biotech/Pharma",
-   "title": "Environmental Monitoring Technician I",
-   "location": "United States - Michigan - Rochester",
-   "url": "https://pfizer.wd1.myworkdayjobs.com/en-US/PfizerCareers/job/United-States---Michigan---Rochester/Environmental-Monitoring-Technician-I_4965717-2",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
-  },
-  {
    "id": "job_workday_pfizer_wd1_myworkdayjobs_com_pfizer_pfizercareers_4960971",
    "company": "Pfizer",
    "sector": "Biotech/Pharma",
@@ -10738,34 +10577,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_relativity_8925714002",
-   "company": "Relativity Space",
-   "sector": "Aerospace/Energy",
-   "title": "Additive Post Processing Technician I, First Shift",
-   "location": "Long Beach, California, United States",
-   "url": "https://boards.greenhouse.io/relativity/jobs/8925714002?gh_jid=8925714002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T20:19:25-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_relativity_8925631002",
-   "company": "Relativity Space",
-   "sector": "Aerospace/Energy",
-   "title": "Additive Post Processing Technician I, Second Shift",
-   "location": "Long Beach, California, United States",
-   "url": "https://boards.greenhouse.io/relativity/jobs/8925631002?gh_jid=8925631002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T20:21:09-05:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_relativity_8726261002",
    "company": "Relativity Space",
    "sector": "Aerospace/Energy",
@@ -10786,90 +10597,6 @@
    "title": "Build Reliability Engineer I",
    "location": "Long Beach, California, United States",
    "url": "https://boards.greenhouse.io/relativity/jobs/8911813002?gh_jid=8911813002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T16:34:00-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_relativity_8881993002",
-   "company": "Relativity Space",
-   "sector": "Aerospace/Energy",
-   "title": "Environmental Test Technician I, First Shift",
-   "location": "Long Beach, California, United States",
-   "url": "https://boards.greenhouse.io/relativity/jobs/8881993002?gh_jid=8881993002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T16:34:00-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_relativity_8869136002",
-   "company": "Relativity Space",
-   "sector": "Aerospace/Energy",
-   "title": "Facilities Technician I",
-   "location": "Long Beach, California, United States",
-   "url": "https://boards.greenhouse.io/relativity/jobs/8869136002?gh_jid=8869136002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T16:34:00-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_relativity_8881418002",
-   "company": "Relativity Space",
-   "sector": "Aerospace/Energy",
-   "title": "Factory Test Technical Specialist I - 1st Shift",
-   "location": "Long Beach, California, United States",
-   "url": "https://boards.greenhouse.io/relativity/jobs/8881418002?gh_jid=8881418002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T16:34:00-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_relativity_8657175002",
-   "company": "Relativity Space",
-   "sector": "Aerospace/Energy",
-   "title": "Factory Test Technical Specialist I - 2nd Shift",
-   "location": "Long Beach, California, United States",
-   "url": "https://boards.greenhouse.io/relativity/jobs/8657175002?gh_jid=8657175002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T16:34:00-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_relativity_8893295002",
-   "company": "Relativity Space",
-   "sector": "Aerospace/Energy",
-   "title": "Friction Stir Welding Technician I, First Shift",
-   "location": "Long Beach, California, United States",
-   "url": "https://boards.greenhouse.io/relativity/jobs/8893295002?gh_jid=8893295002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T16:34:00-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_relativity_8880436002",
-   "company": "Relativity Space",
-   "sector": "Aerospace/Energy",
-   "title": "FSW Technician I, Second Shift",
-   "location": "Long Beach, California, United States",
-   "url": "https://boards.greenhouse.io/relativity/jobs/8880436002?gh_jid=8880436002",
    "kind": "job",
    "audience": [
     "newgrad"
@@ -10982,34 +10709,6 @@
    "title": "Launch Operations Engineer I - Launch Operations",
    "location": "Cape Canaveral, Florida, United States",
    "url": "https://boards.greenhouse.io/relativity/jobs/8734961002?gh_jid=8734961002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T16:34:00-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_relativity_8922020002",
-   "company": "Relativity Space",
-   "sector": "Aerospace/Energy",
-   "title": "Logistics Specialist I - Inventory",
-   "location": "Cape Canaveral, Florida, United States",
-   "url": "https://boards.greenhouse.io/relativity/jobs/8922020002?gh_jid=8922020002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T16:34:00-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_relativity_8917056002",
-   "company": "Relativity Space",
-   "sector": "Aerospace/Energy",
-   "title": "Logistics Specialist I - Transportation",
-   "location": "Cape Canaveral, Florida, United States",
-   "url": "https://boards.greenhouse.io/relativity/jobs/8917056002?gh_jid=8917056002",
    "kind": "job",
    "audience": [
     "newgrad"
@@ -11186,20 +10885,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_relativity_8904603002",
-   "company": "Relativity Space",
-   "sector": "Aerospace/Energy",
-   "title": "PBF Printer Technician I",
-   "location": "Long Beach, California, United States",
-   "url": "https://boards.greenhouse.io/relativity/jobs/8904603002?gh_jid=8904603002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T16:34:00-05:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_relativity_8845906002",
    "company": "Relativity Space",
    "sector": "Aerospace/Energy",
@@ -11228,34 +10913,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_relativity_8859315002",
-   "company": "Relativity Space",
-   "sector": "Aerospace/Energy",
-   "title": "Propulsion Technician I, First Shift",
-   "location": "Long Beach, California, United States",
-   "url": "https://boards.greenhouse.io/relativity/jobs/8859315002?gh_jid=8859315002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T16:34:00-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_relativity_8859318002",
-   "company": "Relativity Space",
-   "sector": "Aerospace/Energy",
-   "title": "Propulsion Technician I, Second Shift",
-   "location": "Long Beach, California, United States",
-   "url": "https://boards.greenhouse.io/relativity/jobs/8859318002?gh_jid=8859318002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T16:34:00-05:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_relativity_8519337002",
    "company": "Relativity Space",
    "sector": "Aerospace/Energy",
@@ -11267,20 +10924,6 @@
     "newgrad"
    ],
    "updatedAt": "2026-11-04T10:40:14-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_relativity_8495294002",
-   "company": "Relativity Space",
-   "sector": "Aerospace/Energy",
-   "title": "Propulsion Test Technician I",
-   "location": "Stennis Space Center, Mississippi, United States",
-   "url": "https://boards.greenhouse.io/relativity/jobs/8495294002?gh_jid=8495294002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T16:34:00-05:00",
    "source": "greenhouse"
   },
   {
@@ -11318,20 +10961,6 @@
    "title": "Thermal Engineer I",
    "location": "Long Beach, California, United States",
    "url": "https://boards.greenhouse.io/relativity/jobs/8924090002?gh_jid=8924090002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T16:34:00-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_relativity_8779531002",
-   "company": "Relativity Space",
-   "sector": "Aerospace/Energy",
-   "title": "TPS Technician I, First Shift",
-   "location": "Long Beach, California, United States",
-   "url": "https://boards.greenhouse.io/relativity/jobs/8779531002?gh_jid=8779531002",
    "kind": "job",
    "audience": [
     "newgrad"
@@ -11388,20 +11017,6 @@
    "title": "Vehicle Structures Engineer I - 2026 Graduate",
    "location": "Long Beach, California, United States",
    "url": "https://boards.greenhouse.io/relativity/jobs/8600166002?gh_jid=8600166002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T16:34:00-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_relativity_8909081002",
-   "company": "Relativity Space",
-   "sector": "Aerospace/Energy",
-   "title": "Vehicle Technician I",
-   "location": "Long Beach, California, United States",
-   "url": "https://boards.greenhouse.io/relativity/jobs/8909081002?gh_jid=8909081002",
    "kind": "job",
    "audience": [
     "newgrad"
@@ -11541,20 +11156,6 @@
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-11-02T17:24:54-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_rocketlab_8016902003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Additive Manufacturing Technician I",
-   "location": "Long Beach, CA",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/8016902003",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T17:34:30-05:00",
    "source": "greenhouse"
   },
   {
@@ -11935,20 +11536,6 @@
     "newgrad"
    ],
    "updatedAt": "2026-11-02T11:27:10-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_rocketlab_7815713003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Harness Technician I - A Shift",
-   "location": "Long Beach, CA",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7815713003",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T17:19:49-05:00",
    "source": "greenhouse"
   },
   {
@@ -12615,20 +12202,6 @@
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-11-02T17:28:21-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_rocketlab_7787940003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Technician I-III, Ops Support – Facilities",
-   "location": "Albuquerque, NM",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7787940003",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T17:19:00-05:00",
    "source": "greenhouse"
   },
   {
@@ -13883,104 +13456,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_spacex_8657538002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "Entry-Level Production Technician, PCBA",
-   "location": "Redmond, WA",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8657538002?gh_jid=8657538002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-04T18:30:16-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8875741002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "Jr. Sous Chef",
-   "location": "Hawthorne, CA",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8875741002?gh_jid=8875741002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-04T18:30:16-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8631545002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "Jr. Sous Chef - Temporary",
-   "location": "Cape Canaveral, FL",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8631545002?gh_jid=8631545002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-04T18:30:16-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8627591002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "Jr. Sous Chef - Temporary",
-   "location": "Starbase, TX",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8627591002?gh_jid=8627591002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-04T18:30:16-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8629111002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "Jr. Sous Chef - Temporary",
-   "location": "Bastrop, TX",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8629111002?gh_jid=8629111002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-04T18:30:16-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8903153002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "Jr. Sous Chef (Sushi)",
-   "location": "Starbase, TX",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8903153002?gh_jid=8903153002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-04T18:30:16-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8700616002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "Machining Technician (Starlink) - Entry Level",
-   "location": "Woodinville, WA",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8700616002?gh_jid=8700616002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-04T18:30:16-05:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_spacex_8731991002",
    "company": "SpaceX",
    "sector": "Aerospace/Energy",
@@ -14471,34 +13946,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_spacex_8928271002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "Starlink Aviation Production Technician (Entry Level, Temporary)",
-   "location": "Woodinville, WA",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8928271002?gh_jid=8928271002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-04T18:30:16-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8647897002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "Starlink Production Technician - Entry Level",
-   "location": "Redmond, WA",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8647897002?gh_jid=8647897002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-04T18:30:16-05:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_stripe_8194291",
    "company": "Stripe",
    "sector": "AI/Big Tech",
@@ -14646,97 +14093,6 @@
    "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/1000-Nicollet-Mall-MinneapolisMN-55403-2542/Inventory-Analyst-Intern---Minneapolis--MN--Starting-Summer--2027-_R0000450965",
    "kind": "internship",
    "audience": [],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_target_wd5_myworkdayjobs_com_target_targetcareers_r0000477620",
-   "company": "Target",
-   "sector": "Retail/Consumer",
-   "title": "Maintenance Technician 1 - Food Distribution Center - Lake City, FL",
-   "location": "3049 North US 441, Lake City,FL 32055-4939",
-   "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/3049-North-US-441-Lake-CityFL-32055-4939/Maintenance-Technician-1---Food-Distribution-Center---Lake-City--FL_R0000477620",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_target_wd5_myworkdayjobs_com_target_targetcareers_r0000479450",
-   "company": "Target",
-   "sector": "Retail/Consumer",
-   "title": "Maintenance Technician 1 - Food Distribution Center - Thornton, CO",
-   "location": "15450 Washington St, Thornton,CO 80023-9719",
-   "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/15450-Washington-St-ThorntonCO-80023-9719/Maintenance-Technician-1---Food-Distribution-Center---Thornton--CO_R0000479450-1",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_target_wd5_myworkdayjobs_com_target_targetcareers_r0000476201",
-   "company": "Target",
-   "sector": "Retail/Consumer",
-   "title": "Maintenance Technician 1 - Regional Distribution Center - Midway, GA",
-   "location": "1247 Sunbury Rd, Midway,GA 31320-5409",
-   "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/1247-Sunbury-Rd-MidwayGA-31320-5409/Maintenance-Technician-1---Regional-Distribution-Center---Midway--GA_R0000476201",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_target_wd5_myworkdayjobs_com_target_targetcareers_r0000448040",
-   "company": "Target",
-   "sector": "Retail/Consumer",
-   "title": "Maintenance Technician 1 - Regional Distribution Center - Oconomowoc, WI - $5000 Sign On Bonus!",
-   "location": "1100 E Valley Rd, Oconomowoc,WI 53066-4821",
-   "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/1100-E-Valley-Rd-OconomowocWI-53066-4821/Maintenance-Technician-1---Regional-Distribution-Center---Oconomowoc--WI_R0000448040",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_target_wd5_myworkdayjobs_com_target_targetcareers_r0000478349",
-   "company": "Target",
-   "sector": "Retail/Consumer",
-   "title": "Maintenance Technician 1 - Regional Distribution Center - Tifton, GA",
-   "location": "4502 Union Rd, Tifton,GA 31794-8543",
-   "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/4502-Union-Rd-TiftonGA-31794-8543/Maintenance-Technician-1---Regional-Distribution-Center---Tifton--GA_R0000478349",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_target_wd5_myworkdayjobs_com_target_targetcareers_r0000479429",
-   "company": "Target",
-   "sector": "Retail/Consumer",
-   "title": "Maintenance Technician 1 - Upstream Distribution Center - DeKalb, IL",
-   "location": "1111 Macom Dr, Dekalb,IL 60115-8709",
-   "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/1111-Macom-Dr-DekalbIL-60115-8709/Maintenance-Technician-1---Upstream-Distribution-Center---DeKalb--IL_R0000479429",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_target_wd5_myworkdayjobs_com_target_targetcareers_r0000477747",
-   "company": "Target",
-   "sector": "Retail/Consumer",
-   "title": "Maintenance Technician 1 - Upstream Distribution Center - Suffolk, VA",
-   "location": "300 Manning Bridge Rd, Suffolk,VA 23434-8592",
-   "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/300-Manning-Bridge-Rd-SuffolkVA-23434-8592/Maintenance-Technician-1---Upstream-Distribution-Center---Suffolk--VA_R0000477747",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
    "source": "workday"
   },
   {

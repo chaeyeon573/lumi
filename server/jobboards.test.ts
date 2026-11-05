@@ -59,3 +59,12 @@ test('amazon.jobs search.json: US student roles kept with their posting link', a
   const out = toStudentJobs(raw, { platform: 'amazon', token: 'amazon', company: 'Amazon' });
   assert.deepEqual(out.map((j) => [j.title, j.kind, j.url]), [['Software Dev Engineer Intern, 2027', 'internship', 'https://www.amazon.jobs/en/jobs/1/sde-intern']]);
 });
+
+test('classify: hourly trade and shift jobs are not college new-grad roles; student internships and engineer/scientist I stay', () => {
+  for (const t of ['Propulsion Technician I, First Shift', 'Maintenance Technician 1 - Regional Distribution Center - Tifton, GA', 'Jr. Sous Chef (Sushi)', 'Inventory Specialist I (Contractor)', 'Starlink Production Technician - Entry Level', 'Maintenance (12 hour Rotational Swing Shift)', '(Skillbridge) – Electrical Engineer 1', 'Industrial Security Representative 1'])
+    assert.equal(classify(t), null, t);
+  assert.equal(classify('Facilities Technician Intern')?.kind, 'internship');
+  assert.equal(classify('Manufacturing Engineer 1, Unpressurized Structures')?.audience.includes('newgrad'), true);
+  assert.equal(classify('Scientist I, Computational Protein Design')?.audience.includes('newgrad'), true);
+  assert.equal(classify('Software Engineer, New Grad 2027')?.audience.includes('newgrad'), true);
+});

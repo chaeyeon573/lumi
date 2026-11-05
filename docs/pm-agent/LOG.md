@@ -2082,3 +2082,12 @@
   - Applied to today's files offline.
 - Spot check courses (Caltech Winter 2027, fresh official page): CS 2 sec 01 and 07, Ae/APh/CE/ME 101B, Hum/H 53, ME 50A - all match.
 - Spot check clubs: Rice RUF, MSU Blueprints for Pangaea, SFSU Muslim Tech Collaborative fine. Wake Forest "Reynolda" is the university's museum and gardens, so it is marked `department` (override added). Cornell Latinx Student Empowerment (scl.cornell.edu) fails TLS from the container - not verifiable here.
+
+## 2026-11-05 09:33 UTC
+- Audited the US jobs file (1,293 postings):
+  - Every location is in the US. No duplicate links; the 15 same-title pairs are separate requisitions with different IDs.
+  - **Problem:** about 50 hourly trade and shift jobs were labelled "new grad" because their titles end in "I" or say "Entry Level" (Relativity Space shift technicians, Target distribution-center maintenance, SpaceX Jr. Sous Chef, contractor lab and inventory roles, a SkillBridge listing). These aren't college new-grad roles.
+  - **Fix:** `classify` now leaves out technician, maintenance, shift, chef, contractor and warehouse-type titles unless they are internships. Engineer I and Scientist I still count as new grad. Test added.
+  - Applied to today's file: 1,246 kept, 47 moved to `jobs-us.dropped.json` (not deleted).
+- Spot check courses (GWU, official schedule incl. later result pages): BADM 2301 sec 12 TR 2:20, PSYC 3133 MW 2:20, CHEM 2154 sec 21 F 12:45-4:35, ECE 2110 sec 11 MW 12:45, ANTH 3891 MW 2:20 - all match.
+- Spot check clubs: Cornell SWAG, UC Davis Clinica Tepati, UMN Physiology Society, BU Engineers Without Borders fine. GWU "Excellence in Student Life Awards" is a university awards program, so it is marked `department` (override added).
