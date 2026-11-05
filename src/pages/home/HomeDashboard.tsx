@@ -5,17 +5,17 @@ import { lang } from '@core/i18n';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { forYou } from '@core/lib/foryou';
-import { badgeOf, locationOf } from '@core/lib/listings';
-import { OPP_TYPE_LABELS, ORG_TYPE_LABELS } from '@core/lib/labels';
 import { daysUntil } from '@core/lib/recommend';
-import { formatDate } from '@core/lib/format';
 import { campusClock, fmtClock, schoolTz } from '@core/lib/campusclock';
 import { crowdLevel, CROWD_LABELS } from '@core/lib/gym';
 import { statusNow, statusLabel, coursesOn, todayIdx } from '@core/lib/timetable';
 import { api } from '@core/api';
 import { campusLive, type CampusNow } from '@/lib/campusLive';
+import { ClubItem, ListingItem } from '@/pages/explore/ExploreItems';
+import { clubSub } from '@/pages/explore/exploreData';
+import { relationOf } from '@/pages/explore/ClubsList';
 import {
-  BrandHeader, Screen, CategoryGrid, CategoryTile, SectionHeader, ListingCard, RowCard, EmptyCard, ErrorScreen, LoadingCards, IconTile, cardCls, CATEGORY_TONE,
+  BrandHeader, Screen, CategoryGrid, CategoryTile, SectionHeader, RowCard, EmptyCard, ErrorScreen, LoadingCards, IconTile, cardCls, CATEGORY_TONE,
 } from '@/components/ha';
 import { cn } from '@core/lib/cn';
 import type { Opportunity, User } from '@core/types';
@@ -142,23 +142,17 @@ function ForYou() {
   const saved = useMemo(() => new Set(intents.filter((i) => i.userId === me.id && (i.saved || i.intent !== 'interested')).map((i) => i.opportunityId)), [intents, me.id]);
   return (
     <section className="mt-8">
-      <SectionHeader title={en ? 'For you' : '추천'} action={items.length ? (en ? 'See all' : '모두 보기') : undefined} onAction={() => nav('/explore/opportunities')} />
+      <SectionHeader title={en ? 'For you' : '추천'} action={items.length ? (en ? 'See all' : '모두 보기') : undefined} onAction={() => nav(items.every((o) => o.type === 'event') ? '/explore/events' : '/explore/opportunities')} />
       {items.length === 0 ? (
         <EmptyCard title={en ? 'Your campus starts here.' : '캠퍼스가 여기서 시작돼요.'} sub={en ? 'Explore opportunities while your community grows.' : '커뮤니티가 자라는 동안 기회부터 둘러보세요.'}
           primary={{ label: en ? 'Explore Campus' : '캠퍼스 둘러보기', onClick: () => nav('/explore/events') }}
           secondary={{ label: en ? 'Create Meetup' : '모임 만들기', onClick: () => nav('/meetups/new') }} />
       ) : (
         <div className="space-y-3">
-          {items.map((o) => {
-            const b = badgeOf(o, en); const where = locationOf(o) || o.host;
-            const when = o.date && !o.deadline ? formatDate(o.date) : b.text;
-            return (
-              <ListingCard key={o.id} cover={o.cover} badge={OPP_TYPE_LABELS[o.type]} badgeTone={o.type === 'event' ? 'ice' : 'peach'} title={o.title}
-                meta={[when, where].filter(Boolean).join(' · ')} sourceUrl={o.sourceUrl || undefined} saved={saved.has(o.id)}
-                onClick={() => nav(`/opportunities/${o.id}`)}
-                onSave={() => run(() => api.opportunities.toggleSave(o.id, me.id), saved.has(o.id) ? undefined : (en ? 'Saved' : '저장했어요'))} />
-            );
-          })}
+          {items.map((o) => (
+            <ListingItem key={o.id} o={o} saved={saved.has(o.id)} onOpen={() => nav(`/opportunities/${o.id}`)}
+              onSave={() => { run(() => api.opportunities.toggleSave(o.id, me.id), saved.has(o.id) ? undefined : (en ? 'Saved' : '저장했어요')).catch(() => {}); }} />
+          ))}
         </div>
       )}
     </section>
@@ -188,7 +182,7 @@ function MyCommunities() {
   const nav = useNavigate();
   const v = useViewer();
   const orgs = useAppStore((s) => s.organizations);
-  const mine = useMemo(() => orgs.filter((o) => o.memberIds.includes(v.me.id) || v.isFollowing(o.id)).slice(0, 3), [orgs, v]);
+  const mine = useMemo(() => orgs.filter((o) => o.memberIds.includes(v.me.id) || o.adminIds.includes(v.me.id) || v.isFollowing(o.id)).slice(0, 3), [orgs, v]);
   return (
     <section className="mt-8">
       <SectionHeader title={en ? 'My Communities' : '내 커뮤니티'} action={en ? 'Explore' : '둘러보기'} onAction={() => nav('/explore/clubs')} />
@@ -196,8 +190,7 @@ function MyCommunities() {
         {mine.length === 0
           ? <RowCard tone="rose" icon={<Users size={22} />} title={en ? 'Find your communities' : '내 커뮤니티 찾기'} sub={en ? 'Follow interests. Verify membership separately.' : '관심사를 팔로우하세요. 회원 인증은 따로 해요.'} onClick={() => nav('/explore/clubs')} />
           : mine.map((o) => (
-            <RowCard key={o.id} tone="mint" icon={<Users size={22} />} title={o.name}
-              sub={[ORG_TYPE_LABELS[o.type], o.memberIds.includes(v.me.id) ? (en ? 'Member' : '회원') : (en ? 'Followed' : '팔로우')].join(' · ')} onClick={() => nav(`/orgs/${o.id}`)} />
+            <ClubItem key={o.id} o={o} sub={clubSub(o, relationOf(o, v.me.id, v.isFollowing(o.id)))} onClick={() => nav(`/orgs/${o.id}`)} />
           ))}
       </div>
     </section>
