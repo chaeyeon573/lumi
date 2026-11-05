@@ -58,6 +58,7 @@ export function WelcomePage() {
       <div className="pb-8 pt-4 safe-bottom">
         <Btn full size="lg" onClick={start} disabled={busy}>{lang === 'en' ? 'Get Started' : '시작하기'}</Btn>
         <button onClick={() => nav('/login')} className="block mx-auto mt-4 h-10 px-4 text-[15px] font-semibold text-sel-fg press">{lang === 'en' ? 'Sign In' : '로그인'}</button>
+        <button onClick={() => nav('/guest/explore/events')} className="block mx-auto h-9 px-4 text-[13px] font-medium text-ink-3 press">{lang === 'en' ? 'Look around first' : '가입 없이 둘러보기'}</button>
         {apiMode !== 'remote' && <button onClick={() => login()} className="block mx-auto text-[12px] text-ink-3 underline">{t('로그인 (데모 계정)')}</button>}
         <p className="text-center text-[12px] text-ink-3 mt-3"><Link to="/terms" className="press">Terms</Link> · <Link to="/privacy" className="press">Privacy</Link></p>
       </div>

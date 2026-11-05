@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Navigate, Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import { useAppStore } from '@core/store/useAppStore';
 import { AppShell } from '@/components/layout/AppShell';
-import { ErrorState } from '@/components/ui';
+import { ErrorScreen } from '@/components/ha/States';
 import { PreviewListPage, PreviewSchoolPage, PreviewJobsPage } from '@/pages/preview/PreviewPage';
 import { ClassRoomPage } from '@/pages/classes/ClassRoomPage';
 import { ClassQrPage } from '@/pages/classes/ClassQrPage';
@@ -51,7 +51,7 @@ function SplashScreen() {
 function FullError() {
   const error = useAppStore((s) => s.error);
   const init = useAppStore((s) => s.init);
-  return <div className="h-full grid place-items-center"><ErrorState message={error ?? undefined} onRetry={init} /></div>;
+  return <div className="h-full grid place-items-center bg-bg"><ErrorScreen message={error ?? undefined} onRetry={init} /></div>;
 }
 
 export default function App() {
