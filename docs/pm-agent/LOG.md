@@ -2111,3 +2111,15 @@
 - Spot check courses (Lehigh, live Banner, using Lehigh's "001" numbering): PSYC 1 Spring 010 TR 10:45 and 011 MW 12:10; WRT 1 Fall 010-013 match section by section.
 - Spot check clubs: Duke PASH, Lehigh Anglican Episcopal Student Association, Cornell Hotel Ezra Cornell (site answers 403 but names the club), Penn Petey Greene fine. UT Diversity in Advertising & PR (daprtx.com) no longer resolves, so moved to deadlinks.
 - Searched for other public PeopleSoft class searches like Duke/BU's: nothing usable found.
+
+## 2026-11-05 12:33 UTC
+- **New school (file only): Penn State.**
+  - Clubs: 1,302 organizations from discover.psu.edu (public Engage): 1,173 clubs, 77 Greek, 48 student councils, 16 offices.
+  - 1,017 have a public link besides the directory page.
+  - Links: club websites read for Instagram/Facebook (56 gained), 22 dead websites moved to deadlinks, and four college accounts that appear in many clubs' page footers left out.
+  - Events: 181 upcoming.
+  - Catalog: 15,336 courses from bulletins.psu.edu. No meeting times, because LionPATH's class search needs a login.
+  - Marked 6 university offices as `department`: Career Services, CAPS, University Libraries, Penn State Learning, Adult Learner Programs, Residence Life LLCs. The audit shows only the club-sports page shared by 16 sports clubs, which is fine.
+- Tried other top schools; their directories are not public: Northeastern and Stony Brook (school SSO), Pitt, RPI and Brandeis (campuslabs login), Virginia Tech (GobblerConnect API 404).
+- Spot check courses (Penn State bulletin): BIOET 533, ENGL 399, ENT 596, EE 353 (the source has a double space in the title), EET 409 - titles match.
+- Spot check clubs (Penn State, official directory API): First-Gen Advocates, Hillel, Dickinson Law Cyber Law Society, Supply Chain Management Association - names and links match. University Libraries turned out to be an office (marked above).

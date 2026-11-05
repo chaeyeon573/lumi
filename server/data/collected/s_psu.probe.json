@@ -1,0 +1,20 @@
+{
+ "checkedAt": "2026-11-05T12:36:55.766Z",
+ "status": "applied",
+ "stored": false,
+ "source": "catalog:https://bulletins.psu.edu/",
+ "sampled": 112,
+ "withTimes": 0,
+ "terms": [
+  "catalog"
+ ],
+ "sample": [
+  "SCIED 110 · Introduction to Engineering for Educators · catalog",
+  "SCIED 551 · History, Philosophy, & Sociology of Science and Science Teaching · catalog",
+  "DANCE 232 · Beginning Ballet II · catalog",
+  "DANCE 370 · Anatomy and Physiology for Performers · catalog",
+  "DANCE 496 · Independent Studies · catalog",
+  "BUSAD 828 · Mergers and Acquisitions · catalog"
+ ],
+ "spotCheck": "no lookup (catalog codes/titles only)"
+}
