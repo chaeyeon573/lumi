@@ -3,39 +3,17 @@ import { t, lang, setLang } from '@core/i18n';
 import { CalendarDays, Coffee, Users } from 'lucide-react';
 import { Btn, Wordmark, TONE } from '@/components/ha';
 import { cn } from '@core/lib/cn';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
-import { Button, BottomSheet, Field, Input } from '@/components/ui';
+import { Link, Navigate, useNavigate, useSearchParams } from 'react-router-dom';
 import { useAppStore } from '@core/store/useAppStore';
 import { api, apiMode } from '@core/api';
 import { takeReturnTo } from '@/lib/returnTo';
-
-/**
- * Sign-in sheet state survives leaving the app to read the code in Mail: iOS may unload the iPhone app's WebView
- * in the background (apps/shell reloads it), which would otherwise drop the typed e-mail and the code field.
- * Kept for the code's lifetime (10 min), cleared on sign-in.
- */
-const SIGNIN_KEY = 'lumi.signin.v1';
-const SIGNIN_TTL_MS = 10 * 60 * 1000;
-function savedSignIn(): { email: string; sent: boolean } | null {
-  try {
-    const v = JSON.parse(localStorage.getItem(SIGNIN_KEY) ?? 'null') as { email?: unknown; sent?: unknown; at?: unknown } | null;
-    if (!v || typeof v.email !== 'string' || typeof v.at !== 'number' || Date.now() - v.at > SIGNIN_TTL_MS) return null;
-    return { email: v.email, sent: v.sent === true };
-  } catch { return null; }
-}
-const saveSignIn = (v: { email: string; sent: boolean } | null) => { try { if (v) localStorage.setItem(SIGNIN_KEY, JSON.stringify({ ...v, at: Date.now() })); else localStorage.removeItem(SIGNIN_KEY); } catch { /* */ } };
+import { pendingSignIn } from './LoginPage';
 
 export function WelcomePage() {
   const nav = useNavigate();
   const setCurrentUser = useAppStore((s) => s.setCurrentUser);
   const showToast = useAppStore((s) => s.showToast);
   const [busy, setBusy] = useState(false);
-  const [restored] = useState(savedSignIn);
-  const [emailOpen, setEmailOpen] = useState(!!restored?.sent);
-  const [email, setEmail] = useState(restored?.email ?? '');
-  const [code, setCode] = useState('');
-  const [sent, setSent] = useState(!!restored?.sent);
-  const [hint, setHint] = useState('');
 
   const login = async (schoolId?: string) => {
     setBusy(true);
@@ -56,28 +34,9 @@ export function WelcomePage() {
     void login(d === 'ucmerced' || d === 'merced' ? 's_ucmerced' : 's_berkeley');
   }, [params]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const sendCode = async () => {
-    setBusy(true);
-    try {
-      const r = await api.schools.sendVerificationCode(email.trim(), '');
-      setHint(r.hint);
-      if (r.ok) { setSent(true); saveSignIn({ email: email.trim(), sent: true }); } else showToast(r.hint, 'error');
-    } catch (e) { showToast((e as Error).message, 'error'); } finally { setBusy(false); }
-  };
-
-  const loginWithCode = async () => {
-    setBusy(true);
-    try {
-      const user = await api.auth.loginWithCode(email.trim(), code.trim());
-      saveSignIn(null);
-      await setCurrentUser(user);
-      nav(takeReturnTo(), { replace: true });
-    } catch (e) { showToast((e as Error).message, 'error'); setBusy(false); }
-  };
-
-  // /login (S002) → 이메일 시트를 바로 연다
-  useEffect(() => { if (params.get('signin') === '1') setEmailOpen(true); }, [params]);
-  const start = () => nav(apiMode === 'remote' ? '/start' : '/onboarding/basic');
+  // S002 is a full screen now (/login). Old links (/welcome?signin=1, push notifications, the iPhone app) still land there
+  if (params.get('signin') === '1' || (!params.get('demo') && pendingSignIn())) return <Navigate to="/login" replace />;
+  const start = () => nav(apiMode === 'remote' ? '/start/goals' : '/onboarding/basic');
 
   /* S001 Welcome (PDF p.4) — 말 한 줄 + 떠 있는 칩 세 개 + Get Started / Sign In */
   return (
@@ -98,28 +57,11 @@ export function WelcomePage() {
       </div>
       <div className="pb-8 pt-4 safe-bottom">
         <Btn full size="lg" onClick={start} disabled={busy}>{lang === 'en' ? 'Get Started' : '시작하기'}</Btn>
-        <button onClick={() => setEmailOpen(true)} className="block mx-auto mt-4 h-10 px-4 text-[15px] font-semibold text-sel-fg press">{lang === 'en' ? 'Sign In' : '로그인'}</button>
+        <button onClick={() => nav('/login')} className="block mx-auto mt-4 h-10 px-4 text-[15px] font-semibold text-sel-fg press">{lang === 'en' ? 'Sign In' : '로그인'}</button>
         {apiMode !== 'remote' && <button onClick={() => login()} className="block mx-auto text-[12px] text-ink-3 underline">{t('로그인 (데모 계정)')}</button>}
         <p className="text-center text-[12px] text-ink-3 mt-3"><Link to="/terms" className="press">Terms</Link> · <Link to="/privacy" className="press">Privacy</Link></p>
       </div>
 
-      <BottomSheet open={emailOpen} onClose={() => setEmailOpen(false)} title={t('이메일로 로그인')}>
-        <div className="space-y-4">
-          <Field label={t('학교 이메일')} hint={hint || t('가입할 때 쓴 학교 이메일로 코드를 보내드려요.')}>
-            <div className="flex gap-2">
-              <Input type="email" inputMode="email" autoComplete="email" autoCapitalize="off" autoCorrect="off" spellCheck={false} autoFocus={!sent} placeholder="you@school.edu" value={email} onChange={(e) => { setEmail(e.target.value); setSent(false); saveSignIn(null); }} />
-              <Button variant="secondary" onClick={sendCode} loading={busy} disabled={!email.includes('@')}>{t('코드 받기')}</Button>
-            </div>
-          </Field>
-          {sent && (
-            <Field label={t('인증 코드')} hint={apiMode === 'mock' ? t('데모 인증 코드: 123456') : undefined}>
-              {/* one-time-code: iOS offers the code from Mail/Messages above the keyboard — no need to leave the app */}
-              <Input inputMode="numeric" autoComplete="one-time-code" maxLength={6} autoFocus placeholder="123456" value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, '').slice(0, 6))} onKeyDown={(e) => { if (e.key === 'Enter' && code.length === 6 && !busy) void loginWithCode(); }} />
-            </Field>
-          )}
-          <Button full size="lg" onClick={loginWithCode} loading={busy} disabled={!sent || code.length !== 6}>{t('로그인')}</Button>
-        </div>
-      </BottomSheet>
     </div>
   );
 }

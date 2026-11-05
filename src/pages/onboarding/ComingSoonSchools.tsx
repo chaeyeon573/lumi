@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { Search } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { api } from '@core/api';
 import { cn } from '@core/lib/cn';
-import { Button, Input } from '@/components/ui';
+import { Btn, Chip, ChipRow, InfoNote, SearchField, TextInput, cardCls } from '@/components/ha';
 
 /**
  * 아직 안 연 학교 — 시작 화면 목록에만 보이고, 고르면 대기 명단(이메일)만 받는다 (2026-10-30 사장님 결정: “목록에만 넣는 거지”).
@@ -42,30 +41,28 @@ export function ComingSoonSchools({ openNames }: { openNames: string[] }) {
     try { await api.system.feedback(`[waitlist] ${pick} · ${email.trim()}`, '/start'); setState('done'); } catch { setState('error'); }
   };
   return (
-    <div className="pt-4 space-y-2.5">
+    <div className="pt-6 space-y-3">
       <div>
-        <b className="block text-[15px]">{en ? 'Another school?' : '다른 학교예요?'}</b>
-        <span className="text-[12px] text-ink-3">{en ? 'Lumi is starting at UC Berkeley. Pick your school and we’ll email you when it opens.' : 'Lumi는 UC Berkeley에서 먼저 시작해요. 학교를 고르면 열릴 때 메일로 알려 드려요.'}</span>
+        <h2 className="ha-h2">{en ? 'Another school?' : '다른 학교예요?'}</h2>
+        <p className="text-[13.5px] text-ink-2 mt-1 leading-snug">{en ? 'Lumi is starting at UC Berkeley. Pick your school and we’ll email you when it opens.' : 'Lumi는 UC Berkeley에서 먼저 시작해요. 학교를 고르면 열릴 때 메일로 알려 드려요.'}</p>
       </div>
-      <div className="relative"><Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-3" /><Input className="pl-9" placeholder={en ? 'Search schools' : '학교 검색'} value={q} onChange={(e) => setQ(e.target.value)} /></div>
-      <div className="flex flex-wrap gap-1.5">
-        {shown.map((s) => (
-          <button key={s.name} onClick={() => { setPick(s.name); setState('idle'); }} className={cn('h-9 px-3 rounded-full border text-[13px] font-semibold press', pick === s.name ? 'border-primary bg-primary-soft text-primary' : 'border-line bg-surface text-ink-2')}>{s.name}</button>
-        ))}
-        {!shown.length && <span className="text-[12px] text-ink-3">{en ? 'Not on the list yet — tell us in Feedback.' : '아직 목록에 없어요 — 의견 보내기로 알려 주세요.'}</span>}
-      </div>
+      <SearchField placeholder={en ? 'Search schools' : '학교 검색'} value={q} onChange={setQ} />
+      <ChipRow wrap>
+        {shown.map((s) => <Chip key={s.name} active={pick === s.name} onClick={() => { setPick(s.name); setState('idle'); }}>{s.name}</Chip>)}
+      </ChipRow>
+      {!shown.length && <InfoNote>{en ? 'Not on the list yet. Tell us in Feedback.' : '아직 목록에 없어요. 의견 보내기로 알려 주세요.'}</InfoNote>}
       {pick && (
-        <div className="card p-3.5 space-y-2">
-          <span className="block text-[13px] font-semibold">{en ? `${pick} — coming soon` : `${pick} — 곧 열려요`}</span>
+        <div className={cn(cardCls, 'p-4 space-y-3')}>
+          <b className="block text-[15px]">{en ? `${pick} is coming soon` : `${pick} — 곧 열려요`}</b>
           {state === 'done' ? (
-            <span className="block text-[13px] text-ink-2">{en ? 'You’re on the list. We’ll email you when it opens.' : '대기 명단에 넣었어요. 열리면 메일로 알려 드릴게요.'}</span>
+            <p className="text-[13.5px] text-ink-2">{en ? 'You’re on the list. We’ll email you when it opens.' : '대기 명단에 넣었어요. 열리면 메일로 알려 드릴게요.'}</p>
           ) : (
             <div className="flex gap-2">
-              <Input type="email" inputMode="email" placeholder={en ? 'Your email' : '이메일'} value={email} onChange={(e) => setEmail(e.target.value)} />
-              <Button disabled={!valid || state === 'busy'} onClick={join}>{en ? 'Notify me' : '알림 받기'}</Button>
+              <TextInput className="flex-1" type="email" inputMode="email" autoComplete="email" placeholder={en ? 'Your email' : '이메일'} value={email} onChange={(e) => setEmail(e.target.value)} />
+              <Btn variant="outline" size="lg" className="!h-12 px-4" loading={state === 'busy'} disabled={!valid} onClick={join}>{en ? 'Notify me' : '알림 받기'}</Btn>
             </div>
           )}
-          {state === 'error' && <span className="block text-[12px] text-danger">{en ? 'Couldn’t save — try again.' : '저장하지 못했어요. 다시 시도해 주세요.'}</span>}
+          {state === 'error' && <p className="text-[12.5px] text-danger">{en ? 'Couldn’t save. Try again.' : '저장하지 못했어요. 다시 시도해 주세요.'}</p>}
         </div>
       )}
     </div>
