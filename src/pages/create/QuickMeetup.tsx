@@ -1,17 +1,14 @@
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Users } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { api } from '@core/api';
 import type { Place } from '@core/types';
 import { useAppStore } from '@core/store/useAppStore';
 import { useViewer } from '@/hooks/useViewer';
-import { TopBar } from '@/components/layout/TopBar';
-import { Button, Chip, Field, Input } from '@/components/ui';
+import { BackHeader, PageTitle, BottomCTA, Btn, Chip, ChipRow, FormField, TextInput, TextCard, InfoNote } from '@/components/ha';
 import { QUICK_WHAT, quickEnd, quickPickOk, quickWhen, type QuickWhatKey, type QuickWhenKey } from '@core/lib/quickmeet';
 import { nowMin, toHHMM, toMin } from '@core/lib/timetable';
 import { addDaysISO, formatTime, todayISO } from '@core/lib/format';
-import { cn } from '@core/lib/cn';
 
 const en = lang === 'en';
 const CAPACITY = 4;
@@ -61,8 +58,8 @@ export function QuickMeetup({ presets, inviteId }: { presets: Place[]; inviteId?
   };
   // 긴 양식으로 — 지금 고른 것을 들고 간다 (제목·설명·인원·공개 범위를 직접 정하고 싶을 때)
   const more = () => {
-    const q = new URLSearchParams({ kind: 'personal', cat: w.category, ...(start != null ? { date: dayOffset ? addDaysISO(1) : todayISO(), start: toHHMM(start), end: toHHMM(quickEnd(start, w.minutes)) } : {}), ...(inviteId ? { invite: inviteId } : {}) });
-    nav(`/create/activity?${q}`, { replace: true });
+    const q = new URLSearchParams({ cat: w.category, title: title.slice(0, 60), place: place.name, ...(start != null ? { date: dayOffset ? addDaysISO(1) : todayISO(), start: toHHMM(start), end: toHHMM(quickEnd(start, w.minutes)) } : {}), ...(inviteId ? { invite: inviteId } : {}) });
+    nav(`/meetups/new?${q}`, { replace: true });
   };
 
   const whenChips: { key: QuickWhenKey; text: string; at: number | null }[] = [
@@ -72,44 +69,33 @@ export function QuickMeetup({ presets, inviteId }: { presets: Place[]; inviteId?
   ];
 
   return (
-    <div className="min-h-full pb-28">
-      <TopBar back title={en ? 'Instant meetup' : '즉석 만남'} />
-      <div className="px-4 py-4 space-y-6">
-        <Field label={en ? 'What' : '무엇'}>
-          <div className="grid grid-cols-4 gap-2">{QUICK_WHAT.map((x) => (
-            <button key={x.key} type="button" onClick={() => pickWhat(x.key)} aria-pressed={what === x.key} className={cn('h-[72px] rounded-2xl border-2 flex flex-col items-center justify-center gap-1 press', what === x.key ? 'border-primary bg-primary-soft' : 'border-line bg-surface')}>
-              <span className="text-[24px] leading-none">{x.emoji}</span><span className={cn('text-[13px] font-semibold', what === x.key ? 'text-primary' : 'text-ink')}>{label(x)}</span>
-            </button>
-          ))}</div>
-          <Input className="mt-2" maxLength={40} value={custom} onChange={(e) => setCustom(e.target.value)} placeholder={en ? 'Or type it (optional) — e.g. Boba run' : '직접 쓰기 (선택) — 예: 버블티'} />
-        </Field>
-
-        <Field label={en ? 'When' : '언제'}>
-          <div className="flex flex-wrap gap-2">{whenChips.map((c) => <Chip key={c.key} active={when === c.key} onClick={() => setWhen(c.key)}>{c.text}{c.at != null ? ` · ${formatTime(toHHMM(c.at))}` : ''}</Chip>)}</div>
+    <div className="min-h-full flex flex-col bg-bg">
+      <BackHeader title={en ? 'Quick meetup' : '즉석 모임'} />
+      <PageTitle title={en ? 'Quick meetup' : '즉석 모임'} sub={en ? 'What, when, where — that’s it.' : '무엇·언제·어디만 정해요.'} className="pb-2" />
+      <div className="px-4 pb-6 space-y-5">
+        <FormField label={en ? 'What' : '무엇'}>
+          <ChipRow wrap>{QUICK_WHAT.map((x) => <Chip key={x.key} active={what === x.key} onClick={() => pickWhat(x.key)}>{label(x)}</Chip>)}</ChipRow>
+          <TextInput className="mt-2.5" maxLength={40} value={custom} onChange={(e) => setCustom(e.target.value)} placeholder={en ? 'Or type it (optional) — e.g. Boba run' : '직접 쓰기 (선택) — 예: 버블티'} />
+        </FormField>
+        <FormField label={en ? 'When' : '언제'}>
+          <ChipRow wrap>{whenChips.map((c) => <Chip key={c.key} active={when === c.key} onClick={() => setWhen(c.key)}>{c.text}{c.at != null ? ` · ${formatTime(toHHMM(c.at))}` : ''}</Chip>)}</ChipRow>
           {when === 'pick' && (
-            <div className="mt-2 flex gap-2 items-center">
-              <div className="flex gap-1.5">{([0, 1] as const).map((d) => <Chip key={d} size="sm" active={pickDay === d} onClick={() => setPickDay(d)}>{d ? (en ? 'Tomorrow' : '내일') : (en ? 'Today' : '오늘')}</Chip>)}</div>
-              <Input type="time" step={300} className="flex-1" value={pickTime} onChange={(e) => setPickTime(e.target.value)} aria-label={en ? 'Start time' : '시작 시각'} />
+            <div className="mt-2.5 flex gap-2 items-center">
+              {([0, 1] as const).map((d) => <Chip key={d} size="sm" active={pickDay === d} onClick={() => setPickDay(d)}>{d ? (en ? 'Tomorrow' : '내일') : (en ? 'Today' : '오늘')}</Chip>)}
+              <TextInput type="time" step={300} className="flex-1" value={pickTime} onChange={(e) => setPickTime(e.target.value)} aria-label={en ? 'Start time' : '시작 시각'} />
             </div>
           )}
-          {when === 'pick' && !ok && <p className="text-[12px] text-danger mt-1.5">{en ? 'Pick a time later today (6 AM–11 PM), or tomorrow.' : '오늘 지금 이후(오전 6시~밤 11시)나 내일로 골라주세요.'}</p>}
-          {when0.now == null && when0.in30 == null && <p className="text-[12px] text-ink-3 mt-1.5">{en ? "Too late for right now — pick a time." : '지금은 늦은 시간이라 시각을 골라주세요.'}</p>}
-        </Field>
-
-        <Field label={en ? 'Where' : '어디'} hint={en ? 'Only this place is shown. Your location is never shared.' : '이 장소만 보여요. 내 위치는 공개되지 않아요.'}>
-          <div className="flex flex-wrap gap-1.5">{presets.map((p) => <Chip key={p.name} size="sm" active={place.name === p.name} onClick={() => { setPlace(p); setPlaceTouched(true); }}>{p.name}</Chip>)}</div>
-        </Field>
-
-        <div className="rounded-2xl bg-surface-2 px-4 py-3">
-          <div className="text-[15px] font-bold">{w.emoji} {title}</div>
-          <div className="text-[13px] text-ink-2 mt-0.5">{whenText}</div>
-          <div className="text-[12px] text-ink-3 mt-1.5 flex items-center gap-1.5"><Users size={13} />{en ? `Students at your school can see it and join · up to ${CAPACITY} people · group chat opens` : `같은 학교 학생에게 보이고 바로 참여 · 최대 ${CAPACITY}명 · 그룹 채팅이 열려요`}</div>
-        </div>
-        <button type="button" onClick={more} className="w-full text-center text-[13px] font-semibold text-ink-3">{en ? 'More options (title, people, who sees it)' : '자세히 정하기 (제목·인원·공개 범위)'}</button>
+          {when === 'pick' && !ok && <p className="text-[12.5px] text-danger mt-1.5">{en ? 'Pick a time later today (6 AM–11 PM), or tomorrow.' : '오늘 지금 이후(오전 6시~밤 11시)나 내일로 골라주세요.'}</p>}
+          {when0.now == null && when0.in30 == null && <p className="text-[12.5px] text-ink-3 mt-1.5">{en ? 'Too late for right now — pick a time.' : '지금은 늦은 시간이라 시각을 골라주세요.'}</p>}
+        </FormField>
+        <FormField label={en ? 'Where' : '어디'}>
+          <ChipRow wrap>{presets.map((p) => <Chip key={p.name} size="sm" active={place.name === p.name} onClick={() => { setPlace(p); setPlaceTouched(true); }}>{p.name}</Chip>)}</ChipRow>
+        </FormField>
+        <TextCard title={title}>{[whenText, en ? `Up to ${CAPACITY} people · group chat opens` : `최대 ${CAPACITY}명 · 그룹 채팅이 열려요`].filter(Boolean).join(' · ')}</TextCard>
+        <InfoNote>{en ? 'Students at your school can see it and join. Only this place is shown.' : '같은 학교 학생에게 보이고 바로 참여해요. 이 장소만 보여요.'}</InfoNote>
+        <div className="text-center"><Btn variant="link" size="sm" onClick={more}>{en ? 'More options' : '자세히 정하기'}</Btn></div>
       </div>
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-surface/95 backdrop-blur border-t border-line p-3 safe-bottom z-20">
-        <Button full size="lg" disabled={!ok} loading={busy} onClick={submit}>{en ? 'Post it' : '열기'}</Button>
-      </div>
+      <BottomCTA><Btn full size="lg" disabled={!ok} loading={busy} onClick={submit}>{en ? 'Post it' : '열기'}</Btn></BottomCTA>
     </div>
   );
 }

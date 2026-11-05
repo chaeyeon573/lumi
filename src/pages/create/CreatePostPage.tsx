@@ -1,118 +1,136 @@
-import { useMemo, useState } from 'react';
-import { t, lang } from '@core/i18n';
+import { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Plus, X, Lock, ImageOff } from 'lucide-react';
+import { Camera, Eye, Users, X, Check } from 'lucide-react';
+import { lang } from '@core/i18n';
 import type { PostInput } from '@core/api';
 import type { PostType, Visibility } from '@core/types';
-import { TopBar } from '@/components/layout/TopBar';
-import { Button, Field, Input, Textarea, Select, VisibilityList, Cover, Toggle, Chip, Avatar } from '@/components/ui';
+import { api } from '@core/api';
+import { Avatar, BottomSheet, Cover } from '@/components/ui';
+import { BackHeader, PageTitle, BottomCTA, Btn, Chip, ChipRow, FormField, TextArea, SelectField, InfoNote, Switch } from '@/components/ha';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
-import { api } from '@core/api';
-import { ALL_POST_TYPES, POST_TYPE_LABELS, POST_TYPE_EMOJI, TOPIC_TAGS } from '@core/lib/labels';
-import { friendsOf } from '@core/lib/relations';
 import { cn } from '@core/lib/cn';
-import { SampleTag } from '@/components/ui/SampleTag';
-import { canPickPhotos, isNativeShell } from '@/lib/native';
+import { canPickPhotos } from '@/lib/native';
 import { shrinkPhoto } from '@/lib/photoUpload';
 
+const en = lang === 'en';
 const MAX_PHOTOS = 4;
+type Kind = 'post' | 'question' | 'photo';
+const VIS: { key: Visibility; label: string; sub: string }[] = [
+  { key: 'school', label: en ? 'My school' : '우리 학교', sub: en ? 'Verified students at your school' : '같은 학교 인증 학생' },
+  { key: 'friends', label: en ? 'Friends' : '친구', sub: en ? 'Only your friends' : '친구만' },
+  { key: 'followers', label: en ? 'Followers' : '팔로워', sub: en ? 'People who follow you and friends' : '팔로워와 친구' },
+  { key: 'private', label: en ? 'Only me' : '나만', sub: en ? 'A note to yourself' : '나만 보기' },
+];
 
-/** 개인 포스트: 사진 1~4장 + 짧은 글, 종류·주제·함께한 사람·관련 활동, 공개 범위와 노출 위치 */
+/**
+ * 글쓰기 (PDF S051 Share something) — 나 · 종류(Post / Question / Photo) · 글 · 사진 · 공개 범위 · 올릴 곳.
+ * 인터넷 전체 공개는 없다 (학교 인증 사용자 안에서만). 익명은 글만 (사진 없이) — 학교 이름만 보인다.
+ */
 export function CreatePostPage() {
   const nav = useNavigate();
   const [params] = useSearchParams();
   const v = useViewer();
   const run = useAppStore((s) => s.run);
+  const showToast = useAppStore((s) => s.showToast);
   const orgs = useAppStore((s) => s.organizations);
-  const allOpps = useAppStore((s) => s.opportunities);
-  const intents = useAppStore((s) => s.opportunityIntents);
-  // 관련 기회는 내가 저장·표시한 것만 — 전체 수백 개(같은 제목 “Gathering” 여러 개)를 드롭다운에 넣으면 고를 수가 없다
-  const myOppIds = new Set(intents.filter((i) => i.userId === v.me.id).map((i) => i.opportunityId));
-  const opps = allOpps.filter((o) => myOppIds.has(o.id));
-  const myOrgs = orgs.filter((o) => o.adminIds.includes(v.me.id));
-  const myActs = v.visibleActivities.filter((a) => a.hostId === v.me.id || v.myParticipation(a.id)?.status === 'approved');
-  const friends = useMemo(() => friendsOf(v.snap, v.me.id).map((id) => v.userById(id)!).filter(Boolean), [v]);
+  const adminOrgs = orgs.filter((o) => o.adminIds.includes(v.me.id));
   const orgParam = params.get('org');
-  const showToast = useAppStore((x) => x.showToast);
-  const [uploading, setUploading] = useState(false);
-  // 학생 본인 사진 — 줄여서(위치정보 제거) 올린 뒤 주소를 글에 붙인다 (src/lib/photoUpload.ts, server/media.ts)
-  const addPhoto = async (file: File) => {
-    setUploading(true);
-    try {
-      const { url } = await api.system.uploadPhoto(await shrinkPhoto(file));
-      setForm((x) => ({ ...x, media: [...x.media, { emoji: '📷', hue: 210, url }].slice(0, MAX_PHOTOS) }));
-    } catch (e) { showToast((e as Error).message && !/too large/.test((e as Error).message) ? (e as Error).message : t('사진을 올리지 못했어요. 다시 시도해 주세요.')); }
-    finally { setUploading(false); }
-  };
+  const typeParam = params.get('type') as PostType | null;
+  const [kind, setKind] = useState<Kind>(typeParam === 'question' ? 'question' : 'post');
   const [form, setForm] = useState<PostInput>({
-    text: '', media: [], tags: [], topics: [], visibility: 'school', relatedActivityId: params.get('activity') ?? undefined, relatedOpportunityId: undefined,
-    orgId: orgParam && myOrgs.some((o) => o.id === orgParam) ? orgParam : undefined, anonymous: params.get('anon') === '1',
-    postType: (params.get('type') as PostType | null) ?? 'story', taggedUserIds: [], recruitNext: false, showOnProfile: true, showOnFeed: true,
+    text: '', media: [], tags: [], topics: [], visibility: 'school', relatedActivityId: params.get('activity') ?? undefined,
+    orgId: orgParam && adminOrgs.some((o) => o.id === orgParam) ? orgParam : undefined, anonymous: params.get('anon') === '1',
+    postType: typeParam && typeParam !== 'question' ? typeParam : 'story', showOnProfile: true, showOnFeed: true,
   });
-  const [tagInput, setTagInput] = useState('');
+  const [sheet, setSheet] = useState<'vis' | 'to' | null>(null);
+  const [uploading, setUploading] = useState(false);
   const [busy, setBusy] = useState(false);
   const patch = (p: Partial<PostInput>) => setForm((f) => ({ ...f, ...p }));
-  const toggle = <T,>(arr: T[] | undefined, x: T) => (arr ?? []).includes(x) ? (arr ?? []).filter((y) => y !== x) : [...(arr ?? []), x];
-  const anon = !!form.anonymous;
+  const anon = !!form.anonymous && !form.orgId;
+  const school = v.me.affiliation.type === 'university' ? v.me.affiliation.schoolName : '';
+  const org = form.orgId ? adminOrgs.find((o) => o.id === form.orgId) : undefined;
+  const photos = canPickPhotos();
+  const to = org ? org.name : form.showOnFeed === false ? (en ? 'My profile only' : '내 프로필에만') : (en ? 'Campus feed' : '캠퍼스 피드');
 
+  const addPhoto = async (file: File) => {
+    setUploading(true);
+    try { const { url } = await api.system.uploadPhoto(await shrinkPhoto(file)); patch({ media: [...form.media, { emoji: '', hue: 210, url }].slice(0, MAX_PHOTOS) }); }
+    catch (e) { showToast((e as Error).message && !/too large/.test((e as Error).message) ? (e as Error).message : (en ? 'Couldn’t add that photo. Try again.' : '사진을 올리지 못했어요.'), 'error'); }
+    finally { setUploading(false); }
+  };
   const submit = async () => {
+    if (kind === 'photo' && !form.media.length && !form.text.trim()) { showToast(en ? 'Add a photo first.' : '사진을 먼저 골라 주세요.', 'error'); return; }
     setBusy(true);
-    try { await run(() => api.posts.create(v.me.id, { ...form, media: anon ? [] : form.media, taggedUserIds: anon ? [] : form.taggedUserIds }), t('게시물을 올렸어요.')); nav(form.orgId ? `/orgs/${form.orgId}?tab=posts` : form.showOnFeed ? '/community' : '/profile', { replace: true }); } catch { setBusy(false); }
+    const input: PostInput = { ...form, text: form.text.trim(), anonymous: anon, media: anon ? [] : form.media, postType: org ? 'news' : kind === 'question' ? 'question' : form.postType === 'question' ? 'story' : form.postType,
+      showOnFeed: form.visibility === 'private' ? false : form.showOnFeed, showOnProfile: !anon };
+    try {
+      const res = await run(() => api.posts.create(v.me.id, input), en ? 'Shared.' : '올렸어요.');
+      nav(org ? `/orgs/${org.id}?tab=posts` : `/posts/${res.post.id}`, { replace: true });
+    } catch { setBusy(false); }
   };
 
   return (
-    <div className="min-h-full pb-28">
-      <TopBar back title={form.orgId ? t('조직 소식 작성') : t('게시물 작성')} />
-      <div className="px-4 py-4 space-y-5">
-        {!form.orgId && <div className="card px-4"><Toggle label={t('익명으로 올리기')} description={t('이름과 사진 대신 "익명"으로 표시돼요. 익명은 글만 올릴 수 있고 학교명만 보여요. 신고 시 운영진이 확인할 수 있어요.')} checked={anon} onChange={(val) => patch({ anonymous: val, orgId: val ? undefined : form.orgId, media: val ? [] : form.media })} /></div>}
-        <Field label={t('종류')} required><div className="flex flex-wrap gap-1.5">{ALL_POST_TYPES.filter((pt) => form.orgId ? true : pt !== 'news').map((pt) => <Chip key={pt} size="sm" active={form.postType === pt} onClick={() => patch({ postType: pt })}>{POST_TYPE_EMOJI[pt]} {POST_TYPE_LABELS[pt]}</Chip>)}</div></Field>
-        {/* 사진·카메라 권한 문구가 없는 예전 iPhone 앱은 사진 고르기를 누르면 꺼진다 — 그 앱에서는 사진 칸을 숨긴다 (canPickPhotos) */}
-        {canPickPhotos() && <Field label={`${t('사진')} (${form.media.length}/${MAX_PHOTOS})`} hint={anon || isNativeShell() ? undefined : t('캠퍼스 생활·활동 사진을 올려 주세요. 사진 속 위치 정보는 지워서 올려요.')}>
-          {anon ? <div className="rounded-xl bg-surface-2 px-3.5 py-3 text-[12px] text-ink-3 flex items-center gap-2"><ImageOff size={15} />{t('익명 글에는 사진을 붙일 수 없어요. 사진을 올리려면 익명을 끄세요.')}</div> : (<>
-            <div className="flex gap-2 overflow-x-auto hide-scrollbar">
-              {form.media.map((m, i) => (
-                <div key={i} className="relative shrink-0"><Cover emoji={m.emoji} hue={m.hue} url={m.url} className="h-24 w-24 rounded-2xl" size={36} />
-                  <button onClick={() => patch({ media: form.media.filter((_, j) => j !== i) })} className="absolute -top-1.5 -right-1.5 h-6 w-6 rounded-full bg-ink text-white grid place-items-center"><X size={12} /></button></div>
-              ))}
-              {form.media.length < MAX_PHOTOS && (
-                <label className={cn('h-24 w-24 rounded-2xl border-2 border-dashed border-line grid place-items-center text-ink-3 shrink-0 press', uploading ? 'opacity-60' : 'cursor-pointer')} aria-label={t('사진')}>
-                  {uploading ? <span className="text-[11px] text-center px-1">{t('사진 올리는 중…')}</span> : <Plus size={22} />}
-                  <input type="file" accept="image/*" className="hidden" disabled={uploading} onChange={(e) => { const f = e.target.files?.[0]; e.target.value = ''; if (f) void addPhoto(f); }} />
-                </label>
-              )}
-            </div>
-          </>)}
-        </Field>}
-        <Field label={t('내용')} required><Textarea placeholder={form.postType === 'question' ? t('무엇이 궁금해요?') : form.postType === 'together' ? t('무엇을 같이 하고 싶어요?') : t('무슨 일이 있었나요?')} value={form.text} onChange={(e) => patch({ text: e.target.value })} maxLength={500} /></Field>
-        <Field label={t('주제')}><div className="flex flex-wrap gap-1.5">{TOPIC_TAGS.map((tg) => <Chip key={tg.key} size="sm" active={form.topics?.includes(tg.key)} onClick={() => patch({ topics: toggle(form.topics, tg.key) })}>#{tg.label}</Chip>)}</div></Field>
-        <Field label={t('태그 (학교·수업·동아리)')}>
-          <div className="flex gap-2"><Input placeholder={t('태그 입력 후 추가')} value={tagInput} onChange={(e) => setTagInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); if (tagInput.trim()) { patch({ tags: [...form.tags, tagInput.trim().replace(/^#/, '')] }); setTagInput(''); } } }} /><Button variant="secondary" onClick={() => { if (tagInput.trim()) { patch({ tags: [...form.tags, tagInput.trim().replace(/^#/, '')] }); setTagInput(''); } }}>{t('추가')}</Button></div>
-          <div className="flex flex-wrap gap-1.5 mt-2">{[...new Set(v.me.timetable.map((c) => c.name))].slice(0, 3).map((c) => <Chip key={c} size="sm" active={form.courseTag === c} onClick={() => patch({ courseTag: form.courseTag === c ? undefined : c })}>📚 {c}</Chip>)}{form.tags.map((tg, i) => <button key={i} onClick={() => patch({ tags: form.tags.filter((_, j) => j !== i) })} className="rounded-lg bg-primary-soft text-primary text-[12px] font-semibold px-2 h-7 flex items-center gap-1">#{tg}<X size={11} /></button>)}</div>
-        </Field>
-        {!anon && (
-          <Field label={t('함께한 사람')} hint={t('태그된 사람이 승인해야 그 사람 프로필에도 표시돼요.')}>
-            <div className="flex flex-wrap gap-1.5">{friends.map((f) => <Chip key={f.id} size="sm" active={form.taggedUserIds?.includes(f.id)} onClick={() => patch({ taggedUserIds: toggle(form.taggedUserIds, f.id) })}><Avatar emoji={f.avatar.emoji} hue={f.avatar.hue} url={f.avatar.url} size={18} /> {f.sample && <SampleTag className="h-4 mr-0 px-1 text-[9px]" />}{f.nickname}</Chip>)}{friends.length === 0 && <span className="text-[12px] text-ink-3">{t('친구가 없어요')}</span>}</div>
-          </Field>
+    <div className="min-h-full flex flex-col bg-bg">
+      <BackHeader title={en ? 'Share something' : '글쓰기'} />
+      <PageTitle title={en ? 'Share something' : '글쓰기'} className="pb-3" />
+      <div className="px-4 pb-6 space-y-5">
+        <div className="flex items-center gap-3">
+          {anon ? <span className="h-11 w-11 rounded-full grid place-items-center bg-t-lav text-t-lav-fg font-bold">?</span> : org ? <Avatar emoji={org.logo.emoji} hue={org.logo.hue} url={org.logo.url} size={44} /> : <Avatar emoji={v.me.avatar.emoji} hue={v.me.avatar.hue} url={v.me.avatar.url} size={44} />}
+          <span className="min-w-0"><b className="block text-[15px] truncate">{anon ? (en ? 'Anonymous' : '익명') : org ? org.name : (en ? 'You' : '나')}</b><span className="block text-[13px] text-ink-3 truncate">{school || (en ? 'Your university' : '내 학교')}</span></span>
+        </div>
+        <ChipRow>
+          <Chip active={kind === 'post'} onClick={() => setKind('post')}>{en ? 'Post' : '글'}</Chip>
+          <Chip active={kind === 'question'} onClick={() => setKind('question')}>{en ? 'Question' : '질문'}</Chip>
+          {photos && !anon && <Chip active={kind === 'photo'} onClick={() => setKind('photo')}>{en ? 'Photo' : '사진'}</Chip>}
+        </ChipRow>
+        <TextArea value={form.text} maxLength={500} onChange={(e) => patch({ text: e.target.value })} className="min-h-[110px]"
+          placeholder={kind === 'question' ? (en ? 'What would you like to ask?' : '무엇이 궁금해요?') : (en ? 'What would you like to share?' : '무엇을 나누고 싶어요?')} />
+        {photos && !anon && (kind === 'photo' || form.media.length > 0 || kind === 'post') && (
+          <div className="flex gap-2.5 overflow-x-auto hide-scrollbar">
+            {form.media.map((m, i) => (
+              <div key={i} className="relative shrink-0"><Cover emoji={m.emoji} hue={m.hue} url={m.url} className="h-[132px] w-[132px] rounded-[20px]" size={30} />
+                <button onClick={() => patch({ media: form.media.filter((_, j) => j !== i) })} aria-label={en ? 'Remove photo' : '사진 빼기'} className="absolute top-1.5 right-1.5 h-7 w-7 rounded-full bg-bg/80 text-ink grid place-items-center"><X size={14} /></button></div>
+            ))}
+            {form.media.length < MAX_PHOTOS && (
+              <label className={cn('h-[132px] rounded-[20px] border border-dashed border-line bg-surface flex flex-col items-center justify-center gap-2 text-ink-3 press shrink-0', form.media.length ? 'w-[132px]' : 'w-full', uploading ? 'opacity-60' : 'cursor-pointer')}>
+                <Camera size={22} /><span className="text-[14px] font-medium">{uploading ? (en ? 'Uploading…' : '올리는 중…') : (en ? 'Add photo' : '사진 추가')}</span>
+                <input type="file" accept="image/*" className="hidden" disabled={uploading} onChange={(e) => { const f = e.target.files?.[0]; e.target.value = ''; if (f) void addPhoto(f); }} />
+              </label>
+            )}
+          </div>
         )}
-        <div className="grid grid-cols-2 gap-2">
-          <Field label={t('참여한 활동')}><Select value={form.relatedActivityId ?? ''} onChange={(e) => patch({ relatedActivityId: e.target.value || undefined })}><option value="">{t('연결 안 함')}</option>{myActs.map((a) => <option key={a.id} value={a.id}>{a.title}{a.sample ? (lang === 'en' ? ' (sample)' : ' (예시)') : ''}</option>)}</Select></Field>
-          {opps.length > 0 && <Field label={t('관련 기회')}><Select value={form.relatedOpportunityId ?? ''} onChange={(e) => patch({ relatedOpportunityId: e.target.value || undefined })}><option value="">{t('연결 안 함')}</option>{opps.map((o) => <option key={o.id} value={o.id}>{o.title}</option>)}</Select></Field>}
-        </div>
-        {!anon && <div className="card px-4"><Toggle label={t('다음 활동 같이할 사람 모집')} description={t('게시물에 "다음에는 같이하기" 버튼이 강조돼요.')} checked={!!form.recruitNext} onChange={(val) => patch({ recruitNext: val })} /></div>}
-        {myOrgs.length > 0 && !anon && <Field label={t('조직 이름으로 게시')}><Select value={form.orgId ?? ''} onChange={(e) => patch({ orgId: e.target.value || undefined, postType: e.target.value ? 'news' : form.postType })}><option value="">{t('내 이름으로')}</option>{myOrgs.map((o) => <option key={o.id} value={o.id}>{o.name}</option>)}</Select></Field>}
-        <Field label={t('공개 범위')} required hint={t('인터넷 전체 공개는 없어요. 학교 인증 사용자 안에서만 보여요.')}>
-          <VisibilityList value={form.visibility} options={(anon ? ['school', 'private'] : ['school', 'friends', 'followers', 'private']) as Visibility[]} onChange={(vis) => patch({ visibility: vis })} />
-        </Field>
-        <div className="card px-4 divide-y divide-line">
-          <Toggle label={t('내 프로필에 표시')} checked={form.showOnProfile !== false && !anon} onChange={(val) => patch({ showOnProfile: val })} />
-          <Toggle label={t('Community Feed에도 공개')} description={form.visibility === 'private' ? t('나만 보기에서는 Feed에 올라가지 않아요.') : undefined} checked={form.showOnFeed !== false && form.visibility !== 'private'} onChange={(val) => patch({ showOnFeed: val })} />
-        </div>
-        <p className="text-[11px] text-ink-3 flex items-start gap-1.5"><Lock size={12} className="shrink-0 mt-0.5" />{t('스토리·릴스·랭킹은 없어요. 사진은 캠퍼스 생활과 활동 기록에만 써요.')}</p>
+        <FormField label={en ? 'Visibility' : '공개 범위'}><SelectField icon={<Eye size={18} />} value={VIS.find((x) => x.key === form.visibility)?.label} placeholder="" onClick={() => setSheet('vis')} /></FormField>
+        <FormField label={en ? 'Post to' : '올릴 곳'}><SelectField icon={<Users size={18} />} value={to} placeholder="" onClick={() => setSheet('to')} /></FormField>
+        {!org && (
+          <div className="flex items-center gap-3">
+            <span className="flex-1 min-w-0"><span className="block text-[14px] font-semibold">{en ? 'Post anonymously' : '익명으로 올리기'}</span><span className="block text-[12.5px] text-ink-3">{en ? 'Text only · shows your school, not you' : '글만 · 내 이름 대신 학교만 보여요'}</span></span>
+            <Switch checked={anon} onChange={(on) => { patch({ anonymous: on, visibility: on && !['school', 'private'].includes(form.visibility) ? 'school' : form.visibility }); if (on && kind === 'photo') setKind('post'); }} label={en ? 'Post anonymously' : '익명'} />
+          </div>
+        )}
+        <InfoNote>{en ? 'Group and class posts follow their permissions.' : '그룹·수업 글은 그곳의 공개 범위를 따라요.'}</InfoNote>
       </div>
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-surface/95 backdrop-blur border-t border-line p-3 safe-bottom z-20">
-        <Button full size="lg" disabled={!form.text.trim()} loading={busy} onClick={submit}>{t('게시하기')}</Button>
-      </div>
+      <BottomCTA><Btn full size="lg" disabled={!form.text.trim() && !form.media.length} loading={busy} onClick={submit}>{en ? 'Share Post' : '올리기'}</Btn></BottomCTA>
+
+      <BottomSheet open={sheet === 'vis'} onClose={() => setSheet(null)} title={en ? 'Who can see it' : '공개 범위'}>
+        <div className="space-y-1">{VIS.filter((x) => !anon || x.key === 'school' || x.key === 'private').map((x) => (
+          <button key={x.key} onClick={() => { patch({ visibility: x.key }); setSheet(null); }} className="w-full flex items-center gap-3 rounded-xl px-3 py-3 text-left press">
+            <span className="flex-1 min-w-0"><b className="block text-[15px]">{x.label}</b><span className="block text-[12.5px] text-ink-3">{x.sub}</span></span>{form.visibility === x.key && <Check size={18} className="text-sel-fg" />}
+          </button>
+        ))}</div>
+      </BottomSheet>
+      <BottomSheet open={sheet === 'to'} onClose={() => setSheet(null)} title={en ? 'Post to' : '올릴 곳'}>
+        <div className="space-y-1">
+          {[{ key: 'feed', label: en ? 'Campus feed' : '캠퍼스 피드', sub: en ? 'Feed and your profile' : '피드와 내 프로필', on: !org && form.showOnFeed !== false, set: { orgId: undefined, showOnFeed: true } },
+            { key: 'profile', label: en ? 'My profile only' : '내 프로필에만', sub: en ? 'Not in the feed' : '피드에는 안 보여요', on: !org && form.showOnFeed === false, set: { orgId: undefined, showOnFeed: false } },
+            ...adminOrgs.map((o) => ({ key: o.id, label: o.name, sub: en ? 'As the group — on its page and the feed' : '그룹 이름으로 — 그룹 페이지와 피드', on: org?.id === o.id, set: { orgId: o.id, showOnFeed: true, anonymous: false } }))]
+            .map((x) => (
+              <button key={x.key} onClick={() => { patch(x.set); setSheet(null); }} className="w-full flex items-center gap-3 rounded-xl px-3 py-3 text-left press">
+                <span className="flex-1 min-w-0"><b className="block text-[15px] truncate">{x.label}</b><span className="block text-[12.5px] text-ink-3">{x.sub}</span></span>{x.on && <Check size={18} className="text-sel-fg" />}
+              </button>
+            ))}
+        </div>
+      </BottomSheet>
     </div>
   );
 }

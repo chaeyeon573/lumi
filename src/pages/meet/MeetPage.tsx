@@ -1,21 +1,23 @@
 import { useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Coffee, BookOpen, Dumbbell, Sparkles, Plus, ChevronRight, MapPin, Clock, Zap, Users, CalendarDays } from 'lucide-react';
-import { TONE } from '@/components/ha/tones';
+import { Coffee, BookOpen, Dumbbell, Sparkles, Plus, MapPin, Clock, Users, CalendarDays, UtensilsCrossed, Search } from 'lucide-react';
+import { TONE, Btn, Chip, ChipRow, EmptyState, EmptyCard, RowCard, SectionHeader } from '@/components/ha';
 import { lang } from '@core/i18n';
-import { SocialHeader, SocialSegment } from '@/pages/social/SocialPage';
-import { CardSkeleton, ErrorState, Cover, Avatar } from '@/components/ui';
+import { SocialShell } from '@/pages/social/SocialPage';
+import { Cover, Avatar } from '@/components/ui';
 import { SampleTag } from '@/components/ui/SampleTag';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
-import { todayISO, formatDate, formatTime } from '@core/lib/format';
-import { nowMin, toMin } from '@core/lib/timetable';
-import { cn } from '@core/lib/cn';
-import type { Activity, ActivityCategory } from '@core/types';
+import { formatDate, formatTime } from '@core/lib/format';
+import { ORG_TYPE_LABELS } from '@core/lib/labels';
+import { myGroups } from '@core/lib/meetups';
+import { MeetupItem, studentMeetups } from '@/components/social/MeetupBits';
+import { CampusStart } from '@/components/people/CampusStart';
+import type { Activity, ActivityCategory, ID, Place } from '@core/types';
 
 const en = lang === 'en';
 
-/** 모임 종류 — 시안: Coffee · Study · Workout · Hangout (Hangout = 그 밖의 가벼운 만남) */
+/** 모임 종류 — 예전 만들기 양식(CreateActivityPage)이 쓴다. 새 화면은 @/components/social/meetupKinds */
 export const MEET_KINDS = [
   { key: 'coffee', cats: ['coffee', 'meal'] as ActivityCategory[], title: en ? 'Coffee' : '커피·밥', Icon: Coffee, tone: TONE.peach },
   { key: 'study', cats: ['study', 'seminar'] as ActivityCategory[], title: en ? 'Study' : '스터디', Icon: BookOpen, tone: TONE.ice },
@@ -26,77 +28,86 @@ export type MeetKind = typeof MEET_KINDS[number]['key'];
 /** 모임 만들기에서 고른 종류 → 활동 분류 */
 export const MEET_KIND_CATEGORY: Record<MeetKind, ActivityCategory> = { coffee: 'coffee', study: 'study', workout: 'exercise', hangout: 'etc' };
 
-/** Social › Meetups — 학생끼리 만드는 가벼운 모임 (2026-11-02 사장님 시안) */
+type Filter = 'all' | 'groups' | 'classes' | 'nearby';
+/** "Nearby" — 실시간 위치는 쓰지 않는다. 모임 장소가 캠퍼스 중심에서 이 거리 안이면 가까운 순으로 */
+const NEARBY_KM = 1.5;
+const km = (a: { lat: number; lng: number }, b: { lat: number; lng: number }) => {
+  const r = Math.PI / 180; const x = (b.lng - a.lng) * r * Math.cos(((a.lat + b.lat) / 2) * r); const y = (b.lat - a.lat) * r;
+  return Math.sqrt(x * x + y * y) * 6371;
+};
+const physical = (p?: Place) => !!p && !!p.lat && !!p.lng && !/online|zoom/i.test(p.name);
+
+/** 내 그룹·내 수업에 묶인 모임인지 (공개 범위 'org:<id>' / 'course:<수업>', 동아리가 연 것, Study Crew, Lumi 스터디 그룹) */
+export function meetupScope(a: Activity, groupIds: Set<ID>, courses: Set<string>) {
+  const tg = a.visibilityTargets ?? [];
+  return {
+    group: (!!a.orgId && groupIds.has(a.orgId)) || tg.some((x) => x.startsWith('org:') && groupIds.has(x.slice(4))),
+    cls: !!a.studyGroup || (!!a.courseName && courses.has(a.courseName)) || tg.some((x) => x.startsWith('course:') && courses.has(x.slice(7))),
+  };
+}
+
+/** Social › Meetups (PDF S038 · 비었을 때 S042) — Better together + Create, 칩 All · My Groups · My Classes · Nearby, 모임 카드, Your groups */
 export function MeetPage() {
   const nav = useNavigate();
   const v = useViewer();
-  const status = useAppStore((s) => s.status);
-  const error = useAppStore((s) => s.error);
-  const init = useAppStore((s) => s.init);
+  const parts = useAppStore((s) => s.participations);
+  const orgs = useAppStore((s) => s.organizations);
+  const schools = useAppStore((s) => s.schools);
   const [params, setParams] = useSearchParams();
-  const kind = (params.get('kind') ?? '') as MeetKind | '';
-  const sel = MEET_KINDS.find((k) => k.key === kind);
-  const today = todayISO();
-  // 다가오는 모임 — 학생이 만든 것(조직 행사·Study Crew·할인 제외), 지난 것 제외, 시간순
-  const upcoming = useMemo(() => v.visibleActivities
-    .filter((a) => a.kind !== 'org_event' && !a.studyGroup && a.category !== 'store_deal' && a.category !== 'school_event')
-    .filter((a) => a.date > today || (a.date === today && toMin(a.endTime || a.startTime) > nowMin()))
-    .filter((a) => !sel || sel.cats.includes(a.category))
-    .sort((a, b) => `${a.date} ${a.startTime}`.localeCompare(`${b.date} ${b.startTime}`)), [v, today, sel]);
-  const create = () => nav(`/meetups/new${kind ? `?cat=${MEET_KIND_CATEGORY[kind]}` : ''}`);
+  const f = (['groups', 'classes', 'nearby'].includes(params.get('f') ?? '') ? params.get('f') : 'all') as Filter;
+  const setF = (x: Filter) => setParams(x === 'all' ? {} : { f: x }, { replace: true });
+  const groups = useMemo(() => myGroups(orgs, v.me.id), [orgs, v.me.id]);
+  const all = useMemo(() => studentMeetups(v.visibleActivities, v.me, parts), [v, parts]);
+  const center = schools.find((s) => v.me.affiliation.type === 'university' && s.id === v.me.affiliation.schoolId)?.center;
+  const shown = useMemo(() => {
+    const gIds = new Set(groups.map((o) => o.id)); const courses = new Set(v.me.timetable.map((c) => c.name));
+    if (f === 'groups') return all.filter((a) => meetupScope(a, gIds, courses).group);
+    if (f === 'classes') return all.filter((a) => meetupScope(a, gIds, courses).cls);
+    if (f === 'nearby') return center ? all.filter((a) => physical(a.place) && km(center, a.place) <= NEARBY_KM).sort((a, b) => km(center, a.place) - km(center, b.place)) : [];
+    return all;
+  }, [all, f, groups, v.me.timetable, center]);
+  const create = () => nav('/meetups/new');
+
+  const yourGroups = (
+    <section className="mt-7">
+      <SectionHeader title={en ? 'Your groups' : '내 그룹'} />
+      <div className="space-y-3">
+        {groups.slice(0, 4).map((o) => (
+          <RowCard key={o.id} tone="mint" icon={<Users size={20} />} title={o.name} sub={[ORG_TYPE_LABELS[o.type], o.adminIds.includes(v.me.id) ? (en ? 'Officer' : '운영진') : (en ? 'Member' : '회원')].join(' · ')} onClick={() => nav(`/orgs/${o.id}`)} />
+        ))}
+        {!groups.length && <RowCard tone="mint" icon={<Search size={20} />} title={en ? 'Find your groups' : '내 그룹 찾기'} sub={en ? 'Clubs, labs and communities on campus' : '동아리·연구실·커뮤니티'} onClick={() => nav('/explore/clubs')} />}
+        <RowCard tone="rose" icon={<UtensilsCrossed size={20} />} title={en ? 'Small Tables' : '작은 테이블'} sub={en ? 'Small plans, good company' : '작은 약속, 좋은 사람들'} onClick={() => nav('/social/small-tables')} />
+      </div>
+    </section>
+  );
+
+  if (!all.length) return (
+    <SocialShell>
+      <EmptyState icon={<CalendarDays size={30} />} tone="rose" title={en ? 'Make the first plan' : '첫 약속을 만들어요'} sub={en ? 'A little company goes a long way.' : '작은 만남이 큰 힘이 돼요.'}
+        action={{ label: en ? 'Create Meetup' : '모임 만들기', onClick: create }} />
+      {yourGroups}
+      <CampusStart parts={['week', 'classes']} className="mt-7" />
+    </SocialShell>
+  );
   return (
-    <div className="min-h-full pb-8 bg-bg">
-      <SocialHeader />
-      <SocialSegment />
-      {status === 'loading' && <CardSkeleton />}
-      {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
-      {status === 'ready' && (
-        <div className="px-4 pt-5">
-          <div className="grid grid-cols-2 gap-2.5">
-            {MEET_KINDS.map((k) => (
-              <button key={k.key} onClick={() => setParams(kind === k.key ? {} : { kind: k.key }, { replace: true })} aria-pressed={kind === k.key}
-                className={cn('rounded-[20px] h-[92px] flex flex-col items-center justify-center gap-1.5 press border-2', k.tone, kind === k.key ? 'border-primary v2:border-lime-400' : 'border-transparent')}>
-                <k.Icon size={26} /><span className="text-[15px] font-bold text-ink">{k.title}</span>
-              </button>
-            ))}
-          </div>
-          <button onClick={create} className="mt-3 w-full h-12 rounded-2xl bg-primary text-white v2:text-on-primary font-semibold flex items-center justify-center gap-2 press">
-            <Plus size={19} />{en ? 'Create a Meetup' : '모임 만들기'}{sel ? ` · ${sel.title}` : ''}
-          </button>
-
-          <section className="mt-6">
-            <div className="flex items-center justify-between mb-2.5">
-              <h2 className="text-[18px] font-bold">{en ? 'Upcoming Meetups' : '다가오는 모임'}{sel ? ` · ${sel.title}` : ''}</h2>
-              {upcoming.length > 3 && <button onClick={() => nav('/social/more?tab=activities')} className="text-[14px] text-primary font-semibold flex items-center gap-0.5">{en ? 'See all' : '모두 보기'}<ChevronRight size={16} /></button>}
-            </div>
-            {upcoming.length === 0
-              ? (
-                <div className="card rounded-[20px] px-4 py-6 text-center">
-                  <CalendarDays size={36} strokeWidth={1.6} className="mx-auto text-primary" />
-                  <b className="block text-[18px] mt-2">{en ? 'No meetups yet' : '아직 모임이 없어요'}</b>
-                  <p className="text-[14px] text-ink-2 mt-1">{en ? 'Create the first meetup on your campus!' : '우리 캠퍼스 첫 모임을 만들어 보세요!'}</p>
-                  <p className="text-[12px] text-ink-3 mt-3">{en ? 'Try a meetup — tap a kind above to start one.' : '위에서 종류를 골라 바로 시작해요.'}</p>
-                </div>
-              )
-              : <div className="space-y-2.5">{upcoming.slice(0, 3).map((a) => <MeetupRow key={a.id} a={a} />)}</div>}
-          </section>
-
-          <section className="mt-6">
-            <h2 className="text-[18px] font-bold mb-2.5">{en ? 'More ways to meet' : '다른 방법으로 만나기'}</h2>
-            <div className="card rounded-[20px] divide-y divide-line">
-              {[
-                { Icon: Zap, label: en ? 'Who’s free right now' : '지금 공강인 사람', to: '/social/more' },
-                { Icon: Users, label: en ? 'Find teammates' : '팀원 찾기', to: '/social/more?tab=teams' },
-              ].map((r) => (
-                <button key={r.label} onClick={() => nav(r.to)} className="w-full flex items-center gap-3 px-4 h-14 text-left press">
-                  <r.Icon size={19} className="text-ink-2" /><span className="flex-1 text-[15px] font-medium">{r.label}</span><ChevronRight size={17} className="text-ink-3" />
-                </button>
-              ))}
-            </div>
-          </section>
-        </div>
-      )}
-    </div>
+    <SocialShell>
+      <div className="flex items-center justify-between gap-3">
+        <h2 className="ha-h2">{en ? 'Better together' : '함께하면 더 좋아요'}</h2>
+        <Btn size="sm" icon={<Plus size={16} />} onClick={create}>{en ? 'Create' : '만들기'}</Btn>
+      </div>
+      <ChipRow className="mt-4">
+        {([['all', en ? 'All' : '전체'], ['groups', en ? 'My Groups' : '내 그룹'], ['classes', en ? 'My Classes' : '내 수업'], ['nearby', en ? 'Nearby' : '가까운']] as const)
+          .map(([key, label]) => <Chip key={key} active={f === key} onClick={() => setF(key)}>{label}</Chip>)}
+      </ChipRow>
+      <div className="space-y-3 mt-4">
+        {shown.slice(0, 12).map((a) => <MeetupItem key={a.id} a={a} />)}
+        {!shown.length && <EmptyCard
+          title={f === 'groups' ? (en ? 'No group meetups yet' : '그룹 모임이 아직 없어요') : f === 'classes' ? (en ? 'No class meetups yet' : '수업 모임이 아직 없어요') : (en ? 'Nothing near campus right now' : '캠퍼스 근처 모임이 없어요')}
+          sub={f === 'groups' ? (en ? 'Plan one just for your group.' : '그룹만 보는 모임을 열어 보세요.') : f === 'classes' ? (en ? 'Plan one just for your classmates.' : '같은 수업 사람만 보는 모임을 열어 보세요.') : (en ? 'Meetups show here by where they happen.' : '모임 장소 기준으로 보여요.')}
+          secondary={{ label: en ? 'Create Meetup' : '모임 만들기', onClick: () => nav(f === 'groups' ? '/meetups/new?reach=groups' : f === 'classes' ? '/meetups/new?reach=class' : '/meetups/new') }} />}
+      </div>
+      {yourGroups}
+    </SocialShell>
   );
 }
 
