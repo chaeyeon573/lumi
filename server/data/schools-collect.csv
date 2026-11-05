@@ -2,7 +2,7 @@ id,name,short,email_domain,region,lat,lng,orgs_host,courses_source,catalog_url,r
 s_stanford,Stanford University,stanford,stanford.edu,Palo Alto,37.4275,-122.1697,https://cardinalengage.stanford.edu,stanford,,,localist:https://events.stanford.edu,,America/Los_Angeles,probe
 s_ucdavis,UC Davis,ucdavis,ucdavis.edu,Davis,38.5382,-121.7617,https://aggielife.ucdavis.edu,,https://catalog.ucdavis.edu/,,,,America/Los_Angeles,
 s_ucsc,UC Santa Cruz,ucsc,ucsc.edu,Santa Cruz,36.9916,-122.0583,https://getinvolved.ucsc.edu/student-organizations/join/,,https://catalog.ucsc.edu/,,tribe:https://events.ucsc.edu,,America/Los_Angeles,
-s_ucla,UCLA,ucla,ucla.edu,Los Angeles,34.0689,-118.4452,https://sa.ucla.edu/RCO,,,,,,America/Los_Angeles,
+s_ucla,UCLA,ucla,ucla.edu,Los Angeles,34.0689,-118.4452,https://sa.ucla.edu/RCO,,,,uclacommunity:https://community.ucla.edu,,America/Los_Angeles,
 s_mit,MIT,mit,mit.edu,Cambridge,42.3601,-71.0942,https://engage.mit.edu,mit,,,,,America/New_York,
 s_harvard,Harvard University,harvard,harvard.edu,Cambridge,42.3770,-71.1167,,harvard,,,,,America/New_York,probe
 s_cornell,Cornell University,cornell,cornell.edu,Ithaca,42.4534,-76.4735,https://cornell.campusgroups.com,cornell,,,localist:https://events.cornell.edu,,America/New_York,

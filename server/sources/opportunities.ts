@@ -204,6 +204,55 @@ export async function fetchTribeEvents(site: string, school: EventSchool, horizo
   return parseTribeEvents(all, school, new Date(), horizonDays);
 }
 
+/** UCLA Community calendar (community.ucla.edu, 학교 공식) — 피드가 없어 주(week) 페이지의 event-card 를 읽는다. data-event-start 는 UTC */
+export function parseUclaCommunityWeek(html: string, school: EventSchool, now = new Date(), horizonDays = 30, origin = 'https://community.ucla.edu'): Opportunity[] {
+  const nowIso = now.toISOString(); const until = now.getTime() + horizonDays * 86_400_000;
+  const out: Opportunity[] = []; const seen = new Set<string>();
+  const cards = html.split(/<div\s+id="event-/).slice(1);
+  for (const c of cards) {
+    const id = /^([0-9a-f-]+)"/.exec(c)?.[1]; const startRaw = /data-event-start="([^"]+Z)"/.exec(c)?.[1]; const stopRaw = /data-event-stop="([^"]+Z)"/.exec(c)?.[1];
+    const a = /<a\s+href="(\/event\/[^"]+)"\s+aria-label="([^"]*)"\s*>([\s\S]*?)<\/a/.exec(c);
+    if (!id || !startRaw || !a) continue;
+    const title = text(a[3]); const start = new Date(startRaw); const stop = stopRaw ? new Date(stopRaw) : start;
+    if (!title || Number.isNaN(start.getTime()) || start.getTime() < now.getTime() || start.getTime() > until || isNoticeNotEvent(title)) continue;
+    // 여러 날 이어지는 전시·상시 프로그램은 '그 시간에 가는 행사'가 아니다
+    if (stop.getTime() - start.getTime() > 86_400_000 || /\bexhibit(ion)?\b/i.test(title)) continue;
+    const allDay = /data-event-allday="true"/.test(c);
+    const loc = text(/<p class="event-card-location">([\s\S]*?)<\/p>/.exec(c)?.[1] ?? '');
+    if (/zoom|on-?line|remote|virtual/i.test(loc) || /\bwebinar\b/i.test(title)) continue;
+    const key = `${title.toLowerCase()}#${start.toISOString().slice(0, 10)}`; if (seen.has(key)) continue; seen.add(key);
+    const desc = text(/<p class="event-card-description">([\s\S]*?)<\/p>/.exec(c)?.[1] ?? '');
+    const host = text(/ by ([^"]+)$/.exec(text(a[2]))?.[1] ?? '') || school.name || 'Campus';
+    const cats = [...c.matchAll(/class="label label-(?:sub)?category"\s*>#([^<]+)</g)].map((m) => text(m[1]));
+    const food = hasFreeFood(title, desc); const talk = TALK_RE.test(title) || cats.some((x) => /lecture|seminar|panel|talk|research/i.test(x));
+    out.push(base({
+      id: `op_${school.id.replace('s_', '')}_ucom_${id.slice(0, 18)}`, type: 'event', title, host, schoolId: school.id,
+      description: desc.slice(0, 280), date: start.toISOString(), startTime: allDay ? undefined : localTime(start, school.tz),
+      place: loc ? { name: loc, lat: school.center.lat, lng: school.center.lng } : undefined,
+      eligibility: 'Open to the campus community', benefit: food ? 'Free food' : undefined, cover: { emoji: '', hue: 200 },
+      tags: ['event', ...(food ? ['free food'] : []), ...(talk ? ['talk'] : []), ...cats.slice(0, 3).map((x) => x.toLowerCase())], interests: talk ? ['research', 'study'] : ['club'], goals: [], sourceUrl: `${origin}${a[1]}`, sourceLabel: school.name ? `${school.name} Community Calendar` : 'Community Calendar',
+    }, nowIso));
+  }
+  return out;
+}
+/** /calendars 에서 주 링크("Mon 11/9 - Sun 11/15")를 읽어 앞으로 horizonDays 안에 걸친 주만 받는다 (보통 5페이지) */
+export function uclaCommunityWeeks(html: string, now = new Date(), horizonDays = 30): string[] {
+  const flat = html.replace(/\s+/g, ' '); const until = now.getTime() + horizonDays * 86_400_000; const out: string[] = [];
+  for (const m of flat.matchAll(/<a href="(\/term\/[a-z]+-(\d{4})\/[^"]+)"\s*>[^<]*<span class="button-aside">\w{3} (\d{1,2})\/(\d{1,2}) - \w{3} (\d{1,2})\/(\d{1,2})<\/span>/g)) {
+    const y = Number(m[2]); const sm = Number(m[3]); const em = Number(m[5]);
+    // 가을 학기 링크의 연도는 학기 연도. 겨울방학처럼 1월로 넘어가면 다음 해
+    const sy = y; const from = Date.UTC(sy, sm - 1, Number(m[4])); const to = Date.UTC(em < sm ? sy + 1 : sy, em - 1, Number(m[6]) + 1);
+    if (to >= now.getTime() && from <= until) out.push(m[1]);
+  }
+  return [...new Set(out)];
+}
+export async function fetchUclaCommunity(origin: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> {
+  const o = origin.replace(/\/+$/, ''); const weeks = uclaCommunityWeeks(await get(`${o}/calendars`), new Date(), horizonDays);
+  const out: Opportunity[] = []; const ids = new Set<string>();
+  for (const w of weeks) for (const e of parseUclaCommunityWeek(await get(`${o}${w}`), school, new Date(), horizonDays, o)) if (!ids.has(e.id)) { ids.add(e.id); out.push(e); }
+  return out;
+}
+
 export async function fetchCampusGroupsEvents(host: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> {
   return parseCampusGroupsRss(await get(`${host.replace(/\/+$/, '')}/rss_events`), host, school, new Date(), horizonDays);
 }

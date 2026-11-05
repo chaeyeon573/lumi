@@ -32,3 +32,21 @@ test('Tribe events (UCSC events.ucsc.edu wp-json): utc_start_date is UTC, exhibi
   assert.ok(!out.some((e) => /Virtual Open House/.test(e.title)), 'Zoom-only left out');
   assert.ok(!out.some((e) => /&amp;|&#8211;/.test(e.title + e.description)));
 });
+
+test('UCLA Community calendar (community.ucla.edu week pages): weeks in range, UTC start, host from the card, multi-day and webinars left out', async () => {
+  const { parseUclaCommunityWeek, uclaCommunityWeeks } = await import('./sources/opportunities');
+  const now = new Date('2026-11-05T03:00:00Z');
+  const weeks = uclaCommunityWeeks(readFileSync(new URL('./fixtures/ucla-community-calendars.html', import.meta.url), 'utf8'), now, 30);
+  assert.deepEqual(weeks, ['/term/fall-2026/week-6', '/term/fall-2026/week-7', '/term/fall-2026/week-8', '/term/fall-2026/week-9', '/term/fall-2026/week-10']);
+  const school = { id: 's_ucla', name: 'UCLA', tz: 'America/Los_Angeles', center: { lat: 34.0689, lng: -118.4452 } };
+  const out = parseUclaCommunityWeek(readFileSync(new URL('./fixtures/ucla-community-week.html', import.meta.url), 'utf8'), school, now, 30);
+  const b = out.find((e) => e.title.startsWith('One Bead at a Time'));
+  assert.equal(b?.date, '2026-11-09T21:00:00.000Z');
+  assert.equal(b?.startTime, '13:00');
+  assert.equal(b?.host, 'Institute of American Cultures');
+  assert.equal(b?.place?.name, 'AISC Library, Campbell Hall Room 3214');
+  assert.equal(b?.sourceUrl, 'https://community.ucla.edu/event/49e4a42f-684e-440d-9cbf-b0917bffceaa');
+  assert.ok(!out.some((e) => /^At Eye Level/.test(e.title)) && out.some((e) => /^Opening Reception for Self Portraits/.test(e.title)), 'multi-day exhibit left out');
+  assert.ok(!out.some((e) => /webinar/i.test(e.title)));
+  assert.ok(!out.some((e) => /&amp;/.test(e.title + e.description)));
+});
