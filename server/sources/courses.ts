@@ -611,7 +611,19 @@ function foseSource(schoolId: string, host: string): CourseSource {
 
 // Banner 9 (Ellucian StudentRegistrationSsb 공개 검색: registrationssb.ucr.edu …)
 const decodeEntities = (x: string) => decodeNumericEntities(x.replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>')).replace(/&amp;/g, '&').trim();
-interface B9Section { subject: string; subjectDescription?: string; courseNumber: string; courseTitle: string; sequenceNumber: string; scheduleTypeDescription?: string; creditHours?: number; creditHourLow?: number; faculty?: { displayName?: string }[]; meetingsFaculty?: { meetingTime?: { beginTime?: string; endTime?: string; monday?: boolean; tuesday?: boolean; wednesday?: boolean; thursday?: boolean; friday?: boolean; saturday?: boolean; sunday?: boolean; building?: string; room?: string; meetingType?: string } }[] }
+export interface B9Section { subject: string; subjectDescription?: string; courseNumber: string; courseTitle: string; sequenceNumber: string; scheduleTypeDescription?: string; creditHours?: number; creditHourLow?: number; faculty?: { displayName?: string }[]; meetingsFaculty?: { meetingTime?: { beginTime?: string; endTime?: string; monday?: boolean; tuesday?: boolean; wednesday?: boolean; thursday?: boolean; friday?: boolean; saturday?: boolean; sunday?: boolean; building?: string; room?: string; meetingType?: string; meetingTypeDescription?: string; startDate?: string; endDate?: string } }[] }
+/** Banner 9 섹션의 meetingsFaculty → 매주 수업 시간. 기말시험(FINL, 하루짜리)은 수업 시간이 아니다 — 넣으면 토요일 수업처럼 보인다 (2026-11-05 USF ADVT 320 등 166개) */
+export function b9Meetings(mfs: B9Section['meetingsFaculty']): { meetings: Meeting[]; location?: string } {
+  const meetings: Meeting[] = []; let location: string | undefined;
+  for (const mf of mfs ?? []) {
+    const m = mf.meetingTime; if (!m?.beginTime || !m.endTime) continue;
+    if (/^(FINL|FE|EXAM|MIDT)$/i.test(m.meetingType ?? '') || /exam/i.test(m.meetingTypeDescription ?? '') || (m.startDate && m.startDate === m.endDate)) continue;
+    location ||= [m.building, m.room].filter(Boolean).join(' ') || undefined;
+    const days = [m.monday, m.tuesday, m.wednesday, m.thursday, m.friday, m.saturday, m.sunday];
+    days.forEach((on, day) => { if (on) meetings.push({ day, start: hhmm(m.beginTime!), end: hhmm(m.endTime!) }); });
+  }
+  return { meetings, location };
+}
 function banner9Source(schoolId: string, host: string): CourseSource {
   const H = `${host}/StudentRegistrationSsb/ssb`;
   let cookie = '';
@@ -648,13 +660,7 @@ function banner9Source(schoolId: string, host: string): CourseSource {
     for (const s of secs) {
       if (s.scheduleTypeDescription && !/lecture|seminar|lecture\/discussion/i.test(s.scheduleTypeDescription)) continue;
       const code = `${s.subject} ${s.courseNumber.replace(/^0+(?=\d)/, '')}`; const baseId = courseId(schoolId, code);
-      const meetings: Meeting[] = []; let location: string | undefined;
-      for (const mf of s.meetingsFaculty ?? []) {
-        const m = mf.meetingTime; if (!m?.beginTime || !m.endTime) continue;
-        location ||= [m.building, m.room].filter(Boolean).join(' ') || undefined;
-        const days = [m.monday, m.tuesday, m.wednesday, m.thursday, m.friday, m.saturday, m.sunday];
-        days.forEach((on, day) => { if (on) meetings.push({ day, start: hhmm(m.beginTime!), end: hhmm(m.endTime!) }); });
-      }
+      const { meetings, location } = b9Meetings(s.meetingsFaculty);
       if (!meetings.length) continue;
       const id = seen.has(baseId) ? `${baseId}_${s.sequenceNumber}` : baseId; if (seen.has(id)) continue; seen.add(id);
       out.push({ id, schoolId, code, title: decodeEntities(s.courseTitle), department: s.subjectDescription ? decodeEntities(s.subjectDescription) : s.subject, instructor: s.faculty?.[0]?.displayName, location, meetings: uniq(meetings), term: label, termCode, units: s.creditHours ?? s.creditHourLow, url: `${H}/classSearch/classSearch` });

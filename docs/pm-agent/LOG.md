@@ -2051,3 +2051,10 @@
 - Spot check courses (other): CMU 82-175 T 12:30-1:50, BU QSTLA 245 A1 TTh 9:30-10:45, W&M GOVT 470 W 7-9:50 pm match. SF State's detail page loads by script and GWU PUBH 8528 is on a later results page, so neither was re-checked this run.
 - Spot check clubs: MSU Riv, JHU WJHU (site answers 403 but names the station), MIT Cthulhu, BU Rotaract fine. GWU "Development and Alumni Relations" is a university office typed as club. Scanned GWU names and marked 12 clear offices as `department` in org-type-overrides.csv (Title IX Office, Office for Study Abroad, SEAS student services, Multicultural Student Services Center, ...). "Leadership Development Programs" left as is because the name alone doesn't settle it.
 - Penn events: penntoday.upenn.edu/events fills its list from a script feed I could not find yet; parked.
+
+## 2026-11-05 06:33 UTC
+- Audited every class file for misread signs: lopsided term counts, too many sections per course, impossible times, weekend and long meetings.
+- **USF was wrong:** 166 classes showed a Saturday meeting. Banner 9 lists the final exam (meetingType FINL, one date, e.g. ADVT 320 Sat 12/12 10-12) as a meeting, and the reader stored it as a weekly class. Fixed in the Banner reader (`b9Meetings`: skips exam types and one-date meetings; test with the real ADVT 320 section). Re-collected USF: ADVT 320 is now F 11:45-3:25 only, no Sat 10-12 left, 62 weekend classes remain (EMBA, nursing and other weekend programs). 96 entries moved to `s_usf.courses-dropped.json`. Georgia Tech (same reader) re-collected: 7,199 classes, small changes.
+- CMU's 865 weekend and long meetings are real: drama rehearsals and production practicums. Checked 53-603 Game Design Fundamentals: Saturday 11:15-5:05 on CMU's page.
+- Spot check courses this run: CMU 53-603, USF ADVT 320 and BIOL 115 (after the fix), UW SPH 380/381 (after the earlier fix).
+- Spot check clubs: UMN READ, UNC Delta Delta Sigma, Penn Kite and Key, UMD Kappa Theta Pi fine. W&M Black Law Students Association (law.wm.edu) fails TLS from the container for the whole host - not verifiable here, left as is.
