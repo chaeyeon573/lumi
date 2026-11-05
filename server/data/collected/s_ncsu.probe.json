@@ -1,0 +1,20 @@
+{
+ "checkedAt": "2026-11-05T13:42:48.902Z",
+ "status": "applied",
+ "stored": false,
+ "source": "catalog:https://catalog.ncsu.edu/",
+ "sampled": 63,
+ "withTimes": 0,
+ "terms": [
+  "catalog"
+ ],
+ "sample": [
+  "BSC 492 · Professional Experience · catalog",
+  "BSC 305 · Professional Development for Life Science Students · catalog",
+  "EED 511 · Societal Foundations for Engineering Education · catalog",
+  "ITAO 552 · Predictive Analytics for Business and Big Data · catalog",
+  "ITAO 558 · Artificial Intelligence in Management · catalog",
+  "ITAO 498 · Independent Study in IT, Analytics, and Operations · catalog"
+ ],
+ "spotCheck": "no lookup (catalog codes/titles only)"
+}

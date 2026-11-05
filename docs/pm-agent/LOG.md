@@ -2123,3 +2123,17 @@
 - Tried other top schools; their directories are not public: Northeastern and Stony Brook (school SSO), Pitt, RPI and Brandeis (campuslabs login), Virginia Tech (GobblerConnect API 404).
 - Spot check courses (Penn State bulletin): BIOET 533, ENGL 399, ENT 596, EE 353 (the source has a double space in the title), EET 409 - titles match.
 - Spot check clubs (Penn State, official directory API): First-Gen Advocates, Hillel, Dickinson Law Cyber Law Society, Supply Chain Management Association - names and links match. University Libraries turned out to be an office (marked above).
+
+## 2026-11-05 13:33 UTC
+- **New school (file only): NC State.**
+  - Clubs: 806 organizations from ncsu.campuslabs.com (public Engage): 663 clubs, 67 Greek, 70 councils, 11 offices after marking 5 university centers (African American Cultural Center, Career Development Center, LGBTQ Pride Center, University Recreation, Women's Center). 677 have a public link.
+  - Events: 12 upcoming.
+  - Catalog: 7,705 courses from catalog.ncsu.edu.
+- **CourseLeaf catalog reader, three fixes found on NC State (test added):**
+  - subject links in `/course-descriptions/<code>/` form are now found;
+  - the `detail-coursecode` class is read;
+  - a cross-listed code like "NR 421/ NR 521" keeps the first code, as the school's own listing heading does. Caltech's shared-department codes ("ACM/EE 106A") are unchanged.
+  - The first NC State catalog file from earlier this run had those combined codes. I regenerated it right away, so nothing from before this run was removed.
+- Probed more top schools. Rutgers, Colorado and FSU CampusGroups sites look like single departments (law school, career center), not the club directory, so not used. Arizona, Pepperdine and Buffalo have public directories but sit at the edge of the "top school" bar, so they are in QUESTIONS.md with UCF and Iowa.
+- Spot check courses (NC State catalog pages): COM 585, TOX 400, ECD 736 match; NR 421 and TE 507 found the cross-listing bug above (fixed, NR 421 "Wetland Science and Management" now matches).
+- Spot check clubs (NC State directory API): NSSLHA, Volunteer Organization for Youth, Agroecology Club, Imago Dei Church, Club Sports at NC State - names and links match.
