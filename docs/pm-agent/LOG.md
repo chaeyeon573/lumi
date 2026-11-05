@@ -2202,3 +2202,11 @@
   - Re-collected: 2,231 → 3,200 classes (Fall 1,597 + Spring 1,603). CRWR 368 now shows all three Fall sections. Audit clean; 2 entries moved to courses-dropped.
 - Spot check courses (W&M live search): ART 332 TR 5-7:50 pm, CRWR 368 02 MW 3:30, MSCI 562 MW 11, APSC 450 TR 2:00, PHIL 311 MW 3:30 - times match (and CRWR 368 found the bug above).
 - Spot check clubs: UF Agronomy-Soils Club, UW PUGS, USC Emily Shane Foundation Club, UNC ESE Student Organization fine. Syracuse Delta Sigma Pi (syr.dsp.org) fails TLS from here.
+
+## 2026-11-05 20:33 UTC
+- Checked every school for "only one section per course" (share of courses with 2+ sections per term). Most are 9-45%; MIT was 0%.
+- **MIT was wrong:** FireRoad lists a subject's lecture slots as alternatives, and MIT's own catalog writes them with "or" (6.1010 "R9.30-11 or R11-12.30 or R1-2.30 or R2.30-4"; 15.276 and 21M.051 too). The reader merged all slots into one schedule, so 146 subjects showed impossible timetables (6.1010 met four times on Thursday).
+  - Fixed: each slot is its own entry, titled "(Lecture option N)" because FireRoad has no section numbers. The spot-check lookup uses the same option. Test with the real 6.1010 and 6.C57 schedules.
+  - Re-collected: 1,712 → 1,962 entries (Fall 2026); IDs for single-option subjects unchanged.
+- Spot check clubs: UMN StudioU, Cornell Assistive Technologies, MSU Powerlifting, Penn MSE Society fine. NC State Student Veterinary Emergency & Critical Care Society's sveccs.org now shows an unrelated gambling spam page (domain lost), so moved to deadlinks.
+- Courses checked this run: MIT 6.1010, 15.276, 21M.051 against the MIT catalog (above).

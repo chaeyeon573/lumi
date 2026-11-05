@@ -113,15 +113,21 @@ function mitSchedule(s: string): { meetings: Meeting[]; location?: string } {
   }
   return { meetings: uniq(meetings), location };
 }
+/** FireRoad "Lecture,slot1,slot2" 의 slot 은 고르는 분반(대안)이다 — MIT 카탈로그도 "R9.30-11 or R11-12.30 …" 로 적는다(6.1010, 2026-11-05).
+ *  전에는 모두 합쳐 한 수업에 목요일 네 번처럼 나왔다 → 분반마다 따로 */
+export function mitLectureOptions(s: string): { meetings: Meeting[]; location?: string }[] {
+  const lec = s.split(';').find((part) => /^lecture,/i.test(part)); if (!lec) return [];
+  return lec.split(',').slice(1).map((slot) => mitSchedule(`Lecture,${slot}`)).filter((o) => o.meetings.length > 0);
+}
 async function mit(): Promise<CatalogCourse[]> {
   const res = await fetch('https://fireroad.mit.edu/courses/all?full=true', { headers: { 'user-agent': 'AroundU-importer' } });
   const all = (await res.json()) as { subject_id: string; title: string; schedule?: string; instructors?: string[]; total_units?: number; offered_fall?: boolean; offered_spring?: boolean }[];
   // fireroad 의 schedule 은 지금 학기 시간표 하나뿐 — 다음 학기 시간을 지어내지 않는다 (MIT 가 다음 학기를 올리면 fireroad 가 바꿔 준다)
   const term = process.env.MIT_TERM ?? (currentTerm().season === 'Spring' ? 'spring' : 'fall');
-  return all.filter((c) => c.schedule && (term === 'fall' ? c.offered_fall !== false : c.offered_spring !== false)).map((c) => {
-    const { meetings, location } = mitSchedule(c.schedule!);
-    return { id: courseId('s_mit', c.subject_id), schoolId: 's_mit', code: c.subject_id, title: c.title, department: c.subject_id.split('.')[0], instructor: c.instructors?.[0], location, meetings, term: `${term === 'fall' ? 'Fall' : 'Spring'} ${currentTerm().year}`, units: c.total_units, url: `https://student.mit.edu/catalog/search.cgi?search=${encodeURIComponent(c.subject_id)}` };
-  }).filter((c) => c.meetings.length > 0);
+  return all.filter((c) => c.schedule && (term === 'fall' ? c.offered_fall !== false : c.offered_spring !== false)).flatMap((c) => {
+    const opts = mitLectureOptions(c.schedule!);
+    return opts.map(({ meetings, location }, i) => ({ id: i === 0 ? courseId('s_mit', c.subject_id) : `${courseId('s_mit', c.subject_id)}_l${i + 1}`, schoolId: 's_mit', code: c.subject_id, title: opts.length > 1 ? `${c.title} (Lecture option ${i + 1})` : c.title, department: c.subject_id.split('.')[0], instructor: c.instructors?.[0], location, meetings, term: `${term === 'fall' ? 'Fall' : 'Spring'} ${currentTerm().year}`, units: c.total_units, url: `https://student.mit.edu/catalog/search.cgi?search=${encodeURIComponent(c.subject_id)}` }));
+  });
 }
 
 // ─── Berkeley: 공개 수업 시간표 classes.berkeley.edu (키 불필요) ────────────────
@@ -1522,8 +1528,9 @@ async function mitLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   if (!res.ok) return null;
   const x = (await res.json()) as { subject_id: string; title: string; schedule?: string; instructors?: string[]; total_units?: number };
   if (!x.schedule) return null;
-  const { meetings, location } = mitSchedule(x.schedule);
-  return { id: c.id, schoolId: 's_mit', code: x.subject_id, title: x.title, department: x.subject_id.split('.')[0], instructor: x.instructors?.[0], location, meetings, term: c.term, units: x.total_units, url: c.url };
+  const n = Number(/_l(\d+)$/.exec(c.id)?.[1] ?? 1); const opt = mitLectureOptions(x.schedule)[n - 1]; if (!opt) return null;
+  const { meetings, location } = opt;
+  return { id: c.id, schoolId: 's_mit', code: x.subject_id, title: c.title, department: x.subject_id.split('.')[0], instructor: x.instructors?.[0], location, meetings, term: c.term, units: x.total_units, url: c.url };
 }
 async function berkeleyLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   // 공개 시간표 어댑터가 department 에 학과 이름("offered through")을 넣는다 — 학과 필터 이름과 다르면 찾지 못해 '확인 불가'로 센다
