@@ -52,8 +52,9 @@ export function OpportunitiesList() {
     <div>
       <ExploreControls placeholder={en ? 'Search opportunities' : '기회 검색'} q={q} onQ={(x) => set({ q: x })} sort={sort} onSort={(s) => set({ sort: s })}>
         <ChipRow>
-          {types.map((t) => <Chip key={t.key} size="sm" active={type === t.key} onClick={() => set({ type: type === t.key ? '' : t.key })}>{t.label}</Chip>)}
+          {/* Saved first — /profile/saved lands here (?type=saved) and the chosen chip must be in view */}
           {(savedCount > 0 || type === 'saved') && <Chip size="sm" active={type === 'saved'} onClick={() => set({ type: type === 'saved' ? '' : 'saved' })} icon={<Bookmark size={13} fill={type === 'saved' ? 'currentColor' : 'none'} />}>{en ? `Saved ${savedCount}` : `저장 ${savedCount}`}</Chip>}
+          {types.map((t) => <Chip key={t.key} size="sm" active={type === t.key} onClick={() => set({ type: type === t.key ? '' : t.key })}>{t.label}</Chip>)}
         </ChipRow>
       </ExploreControls>
       {base.length === 0 ? (
