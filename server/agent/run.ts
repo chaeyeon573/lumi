@@ -173,8 +173,18 @@ async function collectCourses(row: SchoolRow): Promise<AgentRun[]> {
         const keptCatalog = prev.filter((c) => c.term === 'catalog' && !fresh.has(c.code));
         // 이번에 한 개도 안 온 (학기, 학과) 묶음은 지난번 것을 남긴다 — 요청이 끊겨 빈 것을 '없어진 수업'으로 지우지 않는다 (SF State ENG·DES, 2026-11-03)
         const freshGroups = new Set(all.map((c) => `${c.term}#${c.department}`));
-        keptCatalog.push(...prev.filter((c) => c.term !== 'catalog' && !freshGroups.has(`${c.term}#${c.department}`) && all.some((x) => x.term === c.term)));
+        // 학기 전체를 한 페이지로 받는 출처(Caltech, CMU)는 끊길 일이 없다 → 빈 학과는 정말 없어진 것(취소 등)
+        const wholeTerm = /^(caltech|cmu)\b/.test(row.courses_source ?? '');
+        if (!wholeTerm) keptCatalog.push(...prev.filter((c) => c.term !== 'catalog' && !freshGroups.has(`${c.term}#${c.department}`) && all.some((x) => x.term === c.term)));
         const unique = [...new Map([...all, ...keptCatalog].map((c) => [c.id, c])).values()].sort((a, b) => a.code.localeCompare(b.code, 'en', { numeric: true }));
+        // 이번에 빠진 수업(취소 등)은 지우지 않고 <id>.courses-dropped.json 에 옮겨 둔다 (화면 데이터에는 안 나감)
+        const nowIds = new Set(unique.map((c) => c.id)); const dropped = prev.filter((c) => !nowIds.has(c.id));
+        if (dropped.length) {
+          const dFile = path.join(COLLECTED_DIR, `${row.id}.courses-dropped.json`);
+          const old = existsSync(dFile) ? (JSON.parse(readFileSync(dFile, 'utf8')) as (CatalogCourse & { droppedAt?: string })[]) : [];
+          const at = new Date().toISOString().slice(0, 10);
+          writeFileSync(dFile, `[\n${[...new Map([...old, ...dropped.map((c) => ({ ...c, droppedAt: at }))].map((c) => [c.id, c])).values()].map((c) => JSON.stringify(c)).join(',\n')}\n]\n`);
+        }
         writeFileSync(file, `[\n${unique.map((c) => JSON.stringify(c)).join(',\n')}\n]\n`);
         out.push(await record({ task: `collect-courses:${row.id}`, schoolId: row.id, status: unique.length ? 'applied' : 'rejected', startedAt, summary: { courses: unique.length, withTimes: unique.filter((c) => c.meetings?.length).length, terms: [...new Set(unique.map((c) => c.term))].slice(0, 6) } }));
       } catch (e) { out.push(await record({ task: `collect-courses:${row.id}`, schoolId: row.id, status: 'error', startedAt, summary: { error: (e as Error).message } })); }

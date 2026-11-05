@@ -1184,12 +1184,17 @@ export function caltechToCourses(html: string, termCode: string, label: string):
   const toks = [...html.matchAll(/<font face="verdana">([\s\S]*?)<\/font>/g)].map((m) => decodeEntities(m[1].replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ')).replace(/\s+/g, ' ').trim()).filter(Boolean);
   for (let i = 0; i < toks.length - 1; i++) if (/\d{1,2}:\d{2} -$/.test(toks[i]) && /^\d{1,2}:\d{2}$/.test(toks[i + 1])) { toks[i] = `${toks[i]} ${toks[i + 1]}`; toks.splice(i + 1, 1); }
   const out: CatalogCourse[] = []; const seen = new Set<string>(); const secOf = new Map<string, string>();
-  let code = '', title = '', sec = '', cur: CatalogCourse | undefined;
+  let code = '', title = '', sec = '', cur: CatalogCourse | undefined; let blockStart = 0; let cancelled = false; let cancelledSecs = new Set<string>();
   for (let i = 0; i < toks.length; i++) {
     const t = toks[i];
-    if (/^[A-Z][A-Za-z]*(\/[A-Z][A-Za-z]*)* \d+[A-Za-z]*$/.test(t) && /^\+$|^\+?[\d.]+(-[\d.]+)*$/.test(toks[i + 1] ?? '')) { code = t; title = toks[i + 2] ?? ''; sec = ''; cur = undefined; i += 2; continue; }
+    if (/^[A-Z][A-Za-z]*(\/[A-Z][A-Za-z]*)* \d+[A-Za-z]*$/.test(t) && /^\+$|^\+?[\d.]+(-[\d.]+)*$/.test(toks[i + 1] ?? '')) { code = t; title = toks[i + 2] ?? ''; sec = ''; cur = undefined; i += 2; blockStart = out.length; cancelled = false; cancelledSecs = new Set(); continue; }
     if (!code) continue;
+    // 메모 칸의 "Course Cancelled // ..." → 이 과목 전체를 뺀다 (2026-11-05 표본 EE/MedE 124 가 취소인데 들어가 있었음). "Section 03 cancelled" → 그 분반만
+    if (/\bcourse cancell?ed\b/i.test(t)) { for (const c of out.splice(blockStart)) seen.delete(c.id); cancelled = true; cur = undefined; continue; }
+    for (const m of t.matchAll(/\bsection (\d{1,2}) cancell?ed\b/gi)) cancelledSecs.add(m[1].padStart(2, '0'));
+    if (cancelled) continue;
     if (/^\d{2}$/.test(t)) { sec = t; cur = undefined; continue; }
+    if (cancelledSecs.has(sec)) continue;
     const m = /(?:^|,)([MTWRFSU]+) (\d{1,2}:\d{2}) - (\d{1,2}:\d{2})$/.exec(t); if (!m) continue;
     const meetings = [...m[1]].map((ch) => ({ day: { M: 0, T: 1, W: 2, R: 3, F: 4, S: 5, U: 6 }[ch as 'M']!, start: m[2].padStart(5, '0'), end: m[3].padStart(5, '0') }));
     if (cur) { cur.meetings = uniq([...(cur.meetings ?? []), ...meetings]); continue; }
