@@ -133,6 +133,7 @@ export function eraseUser(db: Snapshot, userId: ID, opts: { now?: () => string }
     let touched = false;
     if (p.inviteeIds.includes(userId)) { p.inviteeIds = p.inviteeIds.filter((x) => x !== userId); touched = true; }
     if (userId in p.votes) { const { [userId]: _v, ...votes } = p.votes; p.votes = votes; touched = true; }
+    if (p.placeVotes && userId in p.placeVotes) { const { [userId]: _pv, ...placeVotes } = p.placeVotes; p.placeVotes = placeVotes; touched = true; }
     if (p.link?.responses.some((r) => r.userId === userId)) { p.link.responses = p.link.responses.filter((r) => r.userId !== userId); touched = true; }
     if (p.activityId && gone.activities.has(p.activityId)) { delete p.activityId; touched = true; }
     if (touched) changed.timePolls.set(p.id, p);

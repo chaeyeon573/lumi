@@ -17,6 +17,7 @@ import { canSendGame, gameProfileError, gameSummary, guessPickResult, thisOrThat
 import { pairById, guessQuestionById } from '@core/data/icebreakers';
 import { DAILY_QUESTIONS, PERSON_ROLE_LABELS } from '@core/lib/labels';
 import { campusDate } from '@core/lib/listings';
+import { pollPlaceNames, POLL_MAX_GRID_OPTIONS } from '@core/lib/pollgrid';
 import { orgJoinState } from '@core/lib/orgjoin';
 import { audienceFits, isFull, waitlistOf } from '@core/lib/meetups';
 import { canGoTogether, campusToday, crewMembers, crewsFor, dailyTally, meetTimeFor, DAILY_MIN_ANSWERS, MEETUP_CAPACITY } from '@core/lib/withpeople';
@@ -648,8 +649,16 @@ export function createEngine(ctx: EngineContext) {
           id: uid('tp'), hostId, title: input.title, category: input.category, place: input.place, inviteeIds: input.inviteeIds,
           options: input.options.map((o) => ({ ...o, id: uid('to') })), votes: {}, status: 'open', closesAt: input.closesAt, createdAt: now(),
         };
-        // 주최자는 모든 옵션에 가능한 것으로 시작
-        poll.votes[hostId] = poll.options.map((o) => o.id);
+        // 장소 후보 (S033) · 한 주 격자 (S032) — 있을 때만 붙인다
+        const places = pollPlaceNames(input.placeOptions);
+        if (places.length) { poll.placeOptions = places.map((name) => ({ id: uid('pl'), name })); poll.placeVotes = {}; }
+        if (input.window) {
+          const w = input.window;
+          if (!/^\d{4}-\d{2}-\d{2}$/.test(String(w.weekStart)) || ![30, 60, 90, 120].includes(Number(w.minutes)) || poll.options.length > POLL_MAX_GRID_OPTIONS) throw new Error(t('입력값을 확인해주세요.'));
+          poll.window = { weekStart: w.weekStart, minutes: Number(w.minutes) };
+        }
+        // 주최자는 모든 옵션에 가능한 것으로 시작 — 한 주 격자는 주최자도 자기 칸을 직접 고른다 (모두 켜 두면 모든 칸에 한 표씩 얹힌다)
+        poll.votes[hostId] = poll.window ? [] : poll.options.map((o) => o.id);
         db().timePolls.unshift(poll);
         const nts = input.inviteeIds.map((u) => notify(u, { type: 'plan_vote', title: t('언제 만날지 골라주세요'), body: `${host.nickname}${t('님이 "')}${poll.title}${t('" 시간을 정하고 있어요.')}`, link: `/together/${poll.id}` }));
         // 데모: 초대받은 예시 사용자는 잠시 후 자기 시간표의 공강과 겹치는 시간에 자동 투표
@@ -667,7 +676,20 @@ export function createEngine(ctx: EngineContext) {
         return { poll, patch: { timePolls: [poll], notifications: nts } };
       },
       vote(pollId: ID, userId: ID, optionIds: ID[]): Patch {
-        const p = find(db().timePolls, pollId); p.votes[userId] = optionIds; return { timePolls: [p] };
+        const p = find(db().timePolls, pollId);
+        // 주최자·초대받은 사람만, 이 투표의 칸만 (예전에는 아무 id 나 받았다)
+        if (p.hostId !== userId && !p.inviteeIds.includes(userId)) throw new Error(t('초대받은 사람만 볼 수 있어요'));
+        const known = new Set(p.options.map((o) => o.id));
+        p.votes[userId] = [...new Set((Array.isArray(optionIds) ? optionIds : []).filter((x) => known.has(x)))];
+        return { timePolls: [p] };
+      },
+      votePlace(pollId: ID, userId: ID, placeIds: ID[]): Patch {
+        const p = find(db().timePolls, pollId);
+        if (p.hostId !== userId && !p.inviteeIds.includes(userId)) throw new Error(t('초대받은 사람만 볼 수 있어요'));
+        if (p.status !== 'open' || !p.placeOptions?.length) throw new Error(t('입력값을 확인해주세요.'));
+        const known = new Set(p.placeOptions.map((o) => o.id));
+        p.placeVotes = { ...(p.placeVotes ?? {}), [userId]: [...new Set((Array.isArray(placeIds) ? placeIds : []).filter((x) => known.has(x)))] };
+        return { timePolls: [p] };
       },
       addOption(pollId: ID, userId: ID, option: Omit<TimeOption, 'id'>): Patch {
         const p = find(db().timePolls, pollId);
@@ -676,17 +698,20 @@ export function createEngine(ctx: EngineContext) {
         p.votes[userId] = [...new Set([...(p.votes[userId] ?? []), o.id])];
         return { timePolls: [p] };
       },
-      decide(pollId: ID, optionId: ID): { activity: Activity; patch: Patch } {
+      decide(pollId: ID, optionId: ID, placeId?: ID): { activity: Activity; patch: Patch } {
         const p = find(db().timePolls, pollId);
         const opt = p.options.find((o) => o.id === optionId);
         if (!opt) throw new Error(t('항목을 찾을 수 없어요.'));
+        if (p.status !== 'open') throw new Error(t('입력값을 확인해주세요.'));
+        const chosenPlace = placeId ? p.placeOptions?.find((x) => x.id === placeId) : undefined;
+        if (placeId && !chosenPlace) throw new Error(t('항목을 찾을 수 없어요.'));
         const goers = [...new Set([p.hostId, ...Object.entries(p.votes).filter(([, ids]) => ids.includes(optionId)).map(([u]) => u)])];
         const host = find(db().users, p.hostId);
         const activity: Activity = {
           id: uid('a'), kind: 'group', category: p.category, title: p.title, description: `${t('Plan Together로 정한 약속이에요. ')}${goers.length}${t('명이 이 시간에 가능하다고 했어요.')}`,
           cover: { emoji: CATEGORY_EMOJI[p.category], hue: 200 },
           hostId: p.hostId, hostType: 'user', date: opt.date, startTime: opt.startTime, endTime: opt.endTime,
-          place: p.place ?? { name: t('장소 미정'), lat: 0, lng: 0 }, capacity: Math.max(goers.length, p.inviteeIds.length + 1), visibility: 'selected', visibilityTargets: [...p.inviteeIds],
+          place: chosenPlace ? { name: chosenPlace.name, lat: 0, lng: 0 } : p.place ?? { name: t('장소 미정'), lat: 0, lng: 0 }, capacity: Math.max(goers.length, p.inviteeIds.length + 1), visibility: 'selected', visibilityTargets: [...p.inviteeIds],
           joinPolicy: 'invite', fee: 0, invitedIds: [...p.inviteeIds], comments: [], createdAt: now(),
         };
         db().activities.unshift(activity);
@@ -696,6 +721,7 @@ export function createEngine(ctx: EngineContext) {
           db().participations.push(pt); addToRoom(room, userId); return pt;
         });
         p.status = 'decided'; p.decidedOptionId = optionId; p.activityId = activity.id;
+        if (chosenPlace) p.decidedPlaceId = chosenPlace.id;
         const nts = goers.filter((g) => g !== p.hostId).map((g) => notify(g, { type: 'plan_decided', title: t('약속 시간이 정해졌어요'), body: `${host.nickname}${t('님이 "')}${p.title}${t('" 시간을 확정했어요. 그룹 채팅방이 열렸어요.')}`, link: `/activities/${activity.id}` }));
         return { activity, patch: { timePolls: [p], activities: [activity], participations: parts, chatRooms: [room], notifications: nts } };
       },

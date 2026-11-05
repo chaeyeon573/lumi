@@ -35,7 +35,7 @@ export function tally(poll: TimePoll): { rows: OptionTally[]; best?: OptionTally
     return { option, voterIds, count: voterIds.length, everyone: voterIds.length >= total };
   });
   const best = [...rows].sort((a, b) => b.count - a.count || (a.option.date + a.option.startTime).localeCompare(b.option.date + b.option.startTime))[0];
-  return { rows, best: best && best.count > 0 ? best : undefined, voted: Object.keys(poll.votes).length, total };
+  return { rows, best: best && best.count > 0 ? best : undefined, voted: Object.values(poll.votes).filter((ids) => ids.length > 0).length, total };
 }
 
 /** 내 시간표 기준 이 시간이 공강인지 */

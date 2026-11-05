@@ -52,6 +52,7 @@ import { migrateDemo, demoUserIdFor, rollSampleActivities, rollSampleContent } f
 import { hiddenSamplesFor, SAMPLE_OPPORTUNITY_IDS, SAMPLE_ORG_IDS } from './samples';
 import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError, campusToday, forgetStarters } from './ai';
 import { registerAccountRoutes } from './account';
+import { createClassQaService, registerClassQaRoutes } from './classqa';
 import type { AiLog } from './store';
 import { loadSeed } from './seed';
 import { startCampusLive, liveServices } from './campus-live';
@@ -153,6 +154,9 @@ setInterval(() => { rollSamples().catch((e) => console.error('[demo] roll failed
 // 학사 일정 · 좌석 알림 (워커가 쓰고 웹은 읽는다)
 const campus = createCampusData(store);
 await campus.load();
+// 수업 질문 (S030 Questions — server/classqa.ts, 스냅샷 밖 문서 묶음)
+const classQa = createClassQaService({ db: () => db, store, push: pushPatch });
+await classQa.load();
 setInterval(() => { syncFromWorker().catch((e) => console.error('[sync] failed', e)); }, Number(process.env.DATA_SYNC_SECONDS ?? 120) * 1000);
 
 // ─── 앱 ─────────────────────────────────────────────────────────────────
@@ -352,6 +356,7 @@ registerAccountRoutes(app, {
     (id) => liveServices()?.gym.forgetUser(id),
     (id, emails) => { emails.forEach((e) => verifiedEmails.delete(e)); forgetStarters(id); },
     (id) => push.forgetUser(id),
+    (id) => classQa.forgetUser(id),
   ],
 });
 
@@ -368,6 +373,9 @@ app.post('/api/catalog/departments', wrap(async (req) => { const s = String(req.
 app.post('/api/catalog/terms', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const list = schoolCatalog(s); return { terms: catalogTerms(list, s), current: resolveCatalogTerm(list, s) }; }));
 // 강의에 딸린 토론·랩 — 학생이 그 수업을 넣을 때 학교 시간표에서 읽어 온다 (6시간 기억)
 app.post('/api/catalog/sections', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const c = schoolCatalog(s).find((x) => x.id === String(req.body.courseId ?? '')); return c ? readSections(c) : []; }));
+
+// ─── 수업 질문 — POST /api/classqa/{list,ask,answer,remove} (server/classqa.ts) ───
+registerClassQaRoutes(app, classQa, { auth, wrap, requireUser, bad });
 
 // ─── 학사 일정 · 좌석 알림 ── /api/academic/dates, /api/seats/{mine,watch,unwatch}
 mountCampusRoutes(app, campus, { auth, wrap, requireUser, bad, user: (id) => db.users.find((u) => u.id === id), catalog: schoolCatalog });
@@ -412,7 +420,7 @@ const RULES: Record<Group, Record<string, Rule>> = {
   orgs: { apply: 1 },
   opportunities: { create: 0, setIntent: 1, toggleSave: 1, ask: 1, review: 1, ...TOGETHER_RULES.opportunities },
   proposals: { create: 0, respond: owner(() => db.proposals, (p) => p.toId) },
-  together: { create: 0, vote: 1, addOption: 1, decide: owner(() => db.timePolls, (p) => p.hostId), cancel: owner(() => db.timePolls, (p) => p.hostId) },
+  together: { create: 0, vote: 1, addOption: 1, decide: owner(() => db.timePolls, (p) => p.hostId), cancel: owner(() => db.timePolls, (p) => p.hostId), votePlace: 1 },
   // 보내는 사람 = 본인, 답하기·넘기기 = 받은 사람 본인 (엔진도 한 번 더 확인한다)
   games: { send: 0, answer: (me, args) => args[1] === me && owner(() => db.games, (g) => g.toId)(me, args), decline: (me, args) => args[1] === me && owner(() => db.games, (g) => g.toId)(me, args) },
   chats: { send: 1, markRead: 1, openDirect: 0 },

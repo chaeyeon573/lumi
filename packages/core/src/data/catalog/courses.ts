@@ -303,8 +303,12 @@ export function searchCatalog(courses: CatalogCourse[], schoolId: ID, query: str
   const compact = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
   const scored = mine.map((c) => {
     const code = norm(c.code);
+    // 바뀐 과목 번호 — Berkeley 는 제목에 "(formerly MATH 1A)" 를 붙여 둔다. 옛 번호로 찾아도 나오게
+    const formerly = /\(formerly ([^)]+)\)/i.exec(c.title)?.[1] ?? '';
     let score = 0;
     if (code === q || compact(c.code) === compact(q)) score = 100;
+    else if (formerly && compact(formerly) === compact(q)) score = 95;
+    else if (formerly && compact(q).length >= 3 && compact(formerly).startsWith(compact(q))) score = 70;
     else if (code.startsWith(q) || compact(c.code).startsWith(compact(q))) score = 80;
     else if (norm(c.title).includes(q)) score = 60;
     else if (norm(c.department).includes(q)) score = 40;

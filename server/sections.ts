@@ -54,11 +54,13 @@ export const associatedIdFromPage = (html: string): string | undefined =>
 
 type Fetch = (url: string) => Promise<string>;
 const defaultFetch: Fetch = async (url) => {
-  const r = await fetch(url, { headers: { 'user-agent': 'Mozilla/5.0 Lumi-sections' }, signal: AbortSignal.timeout(30_000) });
+  const r = await fetch(url, { headers: { 'user-agent': 'Mozilla/5.0 Lumi-sections' }, signal: AbortSignal.timeout(SECTION_FETCH_MS) });
   if (!r.ok) throw new Error(`${url} → ${r.status}`);
   return r.text();
 };
 
+/** 학생이 기다리는 동안 읽는다 — 예전 30초는 너무 길었다 (AI 사용자 테스트: "거의 20초 기다림"). 화면은 기다리지 않고 강의부터 넣게 해 준다 */
+export const SECTION_FETCH_MS = 8_000;
 const KEEP_MS = 6 * 3_600_000;
 const RETRY_MS = 10 * 60_000;
 

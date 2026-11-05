@@ -581,7 +581,16 @@ export interface TimePoll {
   createdAt: string;
   /** 링크로 묻는 약속 (/p/<id>) — 있으면 계정 없는 친구도 링크로 답한다. 규칙은 @core/lib/plans */
   link?: PlanLink;
+  /** 장소 후보 (Harness A S033) — 앱 안 시간 투표용. 링크 약속은 link.placeOptions */
+  placeOptions?: PlanPlaceOption[];
+  /** userId → 괜찮은 장소 id 들 (S036 Places 탭) */
+  placeVotes?: Record<ID, ID[]>;
+  /** 주최자가 확정한 장소 */
+  decidedPlaceId?: ID;
+  /** 한 주 격자로 묻는 투표 (S032·S036) — 그 주 월요일과 모임 길이(분). 있으면 주최자도 빈 표로 시작한다 */
+  window?: TimePollWindow;
 }
+export interface TimePollWindow { weekStart: string; minutes: number }
 
 // ─── 링크로 묻는 약속 (Plans) ─────────────────────────────────────────────
 /** fixed: 시간을 정해 두고 갈게요/아마도/못 가요 · vote: 후보 시간(2~6개) 중 되는 것 모두 */

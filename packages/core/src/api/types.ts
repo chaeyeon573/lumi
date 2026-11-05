@@ -8,6 +8,8 @@ import type { AcademicDate } from '@core/lib/academic';
 import type { SeatWatchView } from '@core/lib/seats';
 import type { Ride, RideInput, RideTeaser } from '@core/lib/rides';
 import type { PlansApi } from './plans';
+import type { TimePollWindow } from '@core/types';
+import type { ClassQuestionView } from '@core/lib/classqa';
 
 /** 클라이언트가 보유하는 전체 데이터 스냅샷 (실제 API에서는 필요한 부분만 내려받도록 분리) */
 export interface Snapshot {
@@ -210,6 +212,10 @@ export interface TimePollInput {
   inviteeIds: ID[];
   options: Omit<TimeOption, 'id'>[];
   closesAt: string;
+  /** 장소 후보 이름들 (S033 Location Ideas, 최대 6개) */
+  placeOptions?: string[];
+  /** 한 주 격자 투표 (S032) — options 는 그 주의 칸들 */
+  window?: TimePollWindow;
 }
 
 /** 첫 화면 카드 — 실제 데이터 */
@@ -360,9 +366,11 @@ export interface AroundUApi {
     create(hostId: ID, input: TimePollInput): Promise<{ poll: TimePoll; patch: Patch }>;
     vote(pollId: ID, userId: ID, optionIds: ID[]): Promise<Patch>;
     addOption(pollId: ID, userId: ID, option: Omit<TimeOption, 'id'>): Promise<Patch>;
-    /** 확정: 활동을 만들고 그 시간에 표를 던진 사람을 참가자로 초대한다 */
-    decide(pollId: ID, optionId: ID): Promise<{ activity: Activity; patch: Patch }>;
+    /** 확정: 활동을 만들고 그 시간에 표를 던진 사람을 참가자로 초대한다. placeId 를 주면 그 장소 후보로 (S034) */
+    decide(pollId: ID, optionId: ID, placeId?: ID): Promise<{ activity: Activity; patch: Patch }>;
     cancel(pollId: ID): Promise<Patch>;
+    /** 장소 후보 중 괜찮은 곳들 (S036 Places) — 주최자·초대받은 사람만, 열린 투표만 */
+    votePlace(pollId: ID, userId: ID, placeIds: ID[]): Promise<Patch>;
   };
 
   /** 링크로 묻는 약속 (/p/<id>) — Plan Together 를 그대로 쓰고 계정 없는 친구도 답한다 (@core/api/plans) */
@@ -439,6 +447,16 @@ export interface AroundUApi {
     respond(activityId: ID, userId: ID, response: StudyGroupResponse, preferred?: { day: number; start: string; end: string }): Promise<Patch>;
     /** 파트너 찾기 목록에 올리기(note 는 한 줄) · null 이면 내리기 (짝을 찾았어요) */
     setPartner(userId: ID, classKey: string, note: string | null): Promise<Patch>;
+  };
+
+  /** 수업 질문 (S030 Questions) — 그 수업을 듣는, 학교 이메일을 인증한 학생끼리만. 스냅샷 밖 (server/classqa.ts) */
+  classQA: {
+    /** key = 수업 키 (@core/lib/classmates classKey) */
+    list(key: string): Promise<ClassQuestionView[]>;
+    ask(key: string, text: string): Promise<ClassQuestionView[]>;
+    answer(questionId: ID, text: string): Promise<ClassQuestionView[]>;
+    /** 내가 쓴 질문·답 지우기 (answerId 없으면 질문 통째로) */
+    remove(questionId: ID, answerId?: ID): Promise<ClassQuestionView[]>;
   };
 
   /** 서버 푸시(웹소켓 등)를 흉내내는 구독. 실제 API로 교체 시 SSE/WebSocket으로 대체 */

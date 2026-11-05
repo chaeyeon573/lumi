@@ -149,7 +149,7 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
     orgs: group('orgs', ['apply']),
     opportunities: group('opportunities', ['create', 'setIntent', 'toggleSave', 'ask', 'review', 'goTogether', 'leaveTogether', 'lookForTeam']),
     proposals: group('proposals', ['create', 'respond']),
-    together: group('together', ['create', 'vote', 'addOption', 'decide', 'cancel']),
+    together: group('together', ['create', 'vote', 'addOption', 'decide', 'cancel', 'votePlace']),
     plans: {
       ...group<Omit<AroundUApi['plans'], 'view' | 'guestRespond'>>('plans', ['create', 'respond', 'lock', 'edit', 'close', 'removeResponse']),
       // 공개 — 로그인 없이도 (로그인했으면 Authorization 으로 나를 알아본다). 손님 토큰은 본문으로만 (주소에 넣지 않는다)
@@ -167,6 +167,12 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
     classes: {
       room: (school, code) => call('classes/room', { school, code }),
       ...group<Pick<AroundUApi['classes'], 'respond' | 'setPartner'>>('classes', ['respond', 'setPartner']),
+    },
+    classQA: {
+      list: (key) => call('classqa/list', { key }),
+      ask: (key, text) => call('classqa/ask', { key, text }),
+      answer: (questionId, text) => call('classqa/answer', { questionId, text }),
+      remove: (questionId, answerId) => call('classqa/remove', { questionId, answerId }),
     },
 
     push: {

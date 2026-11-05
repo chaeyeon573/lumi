@@ -17,6 +17,7 @@ import { eraseUser, isProtectedAccount, deleteConfirmOk, DELETE_CONFIRM_WORD, DE
 const MOCK_PROTECTED = new Set<string>([DEMO_USER_ID, ...seedUsers.map((u) => u.id)]);
 import { createClassesEngine } from '../classes';
 import { classRostersFor } from '@core/lib/classmates';
+import { createClassQa, type ClassQuestion } from '@core/lib/classqa';
 import { catalogCourses, searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm } from '@core/data/catalog/courses';
 
 let db: MockDB = loadDB();
@@ -37,6 +38,19 @@ const engine = createEngine({
 const classes = createClassesEngine({ get db() { return db; }, t, demo: true, push(patch) { saveDB(db); listeners.forEach((l) => l(patch)); } }, { catalog: (schoolId) => catalogCourses.filter((c) => c.schoolId === schoolId) });
 /** 목업은 모든 데이터를 갖고 있다 — 같은 수업 목록만 서버처럼 계산해 붙인다 */
 const withRosters = (patch: Patch): Patch => { const me = getSession(); return me ? { ...patch, classRosters: classRostersFor(db, me) } : patch; };
+/** 수업 질문 (S030) — 목업은 이 탭이 열려 있는 동안만 (서버는 server/classqa.ts) */
+const qaItems: ClassQuestion[] = [];
+const classQa = createClassQa({
+  all: () => qaItems,
+  put(q) { const i = qaItems.findIndex((x) => x.id === q.id); if (i >= 0) qaItems[i] = q; else qaItems.push(q); },
+  drop(id) { const i = qaItems.findIndex((x) => x.id === id); if (i >= 0) qaItems.splice(i, 1); },
+  user: (id) => db.users.find((u) => u.id === id),
+  users: () => db.users,
+  blocks: () => db.relationships.blocks,
+  uid: (prefix) => `${prefix}_${Math.random().toString(36).slice(2, 10)}`,
+});
+const qa = <T>(fn: () => T) => request(fn);
+
 const rides = createRidesEngine({ get db() { return db; }, t, demo: true, push(patch) { saveDB(db); listeners.forEach((l) => l(patch)); } });
 
 /** 링크로 묻는 약속 — 목업은 손님 토큰을 해시 없이 둔다 (이 브라우저 안에서만 쓴다) */
@@ -183,6 +197,12 @@ export const mockApi: AroundUApi = {
     room: (school, code) => request(() => classes.room(school, code)),
     respond: (activityId, userId, response, preferred) => request(() => classes.respond(activityId, userId, response, preferred)),
     setPartner: (userId, key, note) => request(() => withRosters(classes.setPartner(userId, key, note))),
+  },
+  classQA: {
+    list: (key) => qa(() => classQa.list(getSession() ?? '', key)),
+    ask: (key, text) => qa(() => classQa.ask(getSession() ?? '', key, text)),
+    answer: (questionId, text) => qa(() => classQa.answer(getSession() ?? '', questionId, text)),
+    remove: (questionId, answerId) => qa(() => classQa.remove(getSession() ?? '', questionId, answerId)),
   },
 
   // 목업 모드에는 푸시 서버가 없다
