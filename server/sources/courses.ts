@@ -459,7 +459,7 @@ function umdTerm(): string { if (process.env.UMD_TERM) return process.env.UMD_TE
 /** 202608 → "Fall 2026" */
 const umdLabel = (code: string) => { const m = /^(\d{4})(\d{2})$/.exec(code); const season = m && ({ '01': 'Spring', '05': 'Summer', '08': 'Fall', '12': 'Winter' } as Record<string, string>)[m[2]]; return m && season ? `${season} ${m[1]}` : code; };
 function umdParseSections(html: string, term: string, titles: Map<string, { title: string; units?: number }>): CatalogCourse[] {
-  const out: CatalogCourse[] = []; const seen = new Set<string>();
+  const out: CatalogCourse[] = []; const seen = new Set<string>(); const secOf = new Map<string, string>();
   // 과목 묶음: <div id="CMSC131" class="course-sections"> … 다음 묶음 전까지
   const heads = [...html.matchAll(/<div id="([A-Z]{4}\d{3}[A-Z]{0,2})" class="course-sections">/g)];
   for (let h = 0; h < heads.length; h++) {
@@ -481,17 +481,28 @@ function umdParseSections(html: string, term: string, titles: Map<string, { titl
       if (!meetings.length) continue;
       const baseId = courseId('s_umd', courseCode);
       const id = seen.has(baseId) ? `${baseId}_${sectionNo}` : baseId;
-      if (seen.has(id)) continue; seen.add(id);
+      if (seen.has(id)) continue; seen.add(id); secOf.set(id, sectionNo);
       const t = titles.get(courseCode);
       out.push({ id, schoolId: 's_umd', code: courseCode, title: t?.title ?? courseCode, department: courseCode.slice(0, 4), instructor, location, meetings: uniq(meetings), term: umdLabel(term), termCode: term, units: t?.units, url: `${UMD}/${term}/${courseCode.slice(0, 4)}/${courseCode}` });
     }
   }
-  for (const c of out) if (out.some((o) => o.id.startsWith(`${c.id}_`))) c.title = `${c.title} (Sec 0101)`;
-  for (const c of out) { const m = /_(\d{4})$/.exec(c.id); if (m) c.title = `${c.title} (Sec ${m[1]})`; }
+  // 분반 번호는 학교 번호 그대로(첫 분반을 '0101' 로 적지 않는다 — Banner 와 같은 실수, 2026-11-05)
+  for (const c of out) if (out.filter((o) => o.code === c.code).length > 1) c.title = `${c.title} (Sec ${secOf.get(c.id)})`;
   return out;
 }
+/** 다음 학기 코드: 가을(08) → 다음 해 봄(01), 봄(01) → 같은 해 가을(08) */
+const umdNext = (t: string) => (t.endsWith('08') ? `${Number(t.slice(0, 4)) + 1}01` : `${t.slice(0, 4)}08`);
 async function umd(): Promise<CatalogCourse[]> {
-  const term = umdTerm();
+  // 지금 학기 + 다음 학기(나와 있으면). 다음 학기는 id 에 꼬리표(_sp27) — 같은 과목이 두 학기에 있어도 겹치지 않게
+  const first = umdTerm(); const out: CatalogCourse[] = [];
+  for (const term of process.env.UMD_TERM ? [first] : [first, umdNext(first)]) {
+    const got = await umdOneTerm(term);
+    if (!got.length && term !== first) { console.log(`  umd ${term}: not published yet`); continue; }
+    out.push(...tagTerm(got, umdLabel(term)));
+  }
+  return out;
+}
+async function umdOneTerm(term: string): Promise<CatalogCourse[]> {
   const home = await umdGet(`${UMD}/`);
   const depts = [...new Set([...home.matchAll(/class="prefix-abbrev[^"]*">([A-Z]{4})<\/span>/g)].map((m) => m[1]))];
   if (!depts.length) throw new Error('umd: no departments on the schedule page');

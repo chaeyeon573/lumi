@@ -2104,3 +2104,10 @@
 - **Spot check found a labelling bug:** in Lehigh's live data, MAT 495's first section is 011 but we titled it "(Sec 001)". The Banner reader hard-coded "001" for a course's first section; it now uses the school's section number. Times were right. USF, Georgia Tech, UCR and Lehigh re-collected; FIN 331 now shows Sec 011 / Sec 012 like the live data.
 - Spot check Lehigh vs live Banner: BIOS 323 TR 3:00-4:15, MAT 495 011 MW 10:45-12:00, FIN 331 012 TR 12:10-1:25 match. (WRT 1 and PSYC 1 came back empty only because the check asked for "1"; Lehigh numbers them "001".)
 - Spot check clubs: UVA All Girls STEM Society, UCR South Asian InterVarsity, MSU Big Sister Little Sister, UT TexasDayTrading fine. USC Troy Tones (troytones.org) no longer resolves, so moved to deadlinks.
+
+## 2026-11-05 11:33 UTC
+- **UMD Spring 2027 class times: 6,125 more classes** (file now Fall 6,883 + Spring 6,125). The UMD reader fetched only the current term; it now also fetches the next one when Testudo has published it, with term-tagged IDs so Fall IDs are unchanged (nothing dropped). It also had the same first-section bug as Banner ("Sec 0101" hard-coded) and now uses the school's section number. Checked SPAN 303 0301 TuTh 2:00-3:15, CCJS 621 M 4:00-6:45, CMSC 416 0101 TuTh 2:00-3:15 on Testudo - match. Audit clean.
+- Rice and MIT re-collected: still only Fall 2026. Rice's Spring 2027 (202720) is barely populated, and MIT's catalog shows 2026-2027 subjects with no Spring schedule yet.
+- Spot check courses (Lehigh, live Banner, using Lehigh's "001" numbering): PSYC 1 Spring 010 TR 10:45 and 011 MW 12:10; WRT 1 Fall 010-013 match section by section.
+- Spot check clubs: Duke PASH, Lehigh Anglican Episcopal Student Association, Cornell Hotel Ezra Cornell (site answers 403 but names the club), Penn Petey Greene fine. UT Diversity in Advertising & PR (daprtx.com) no longer resolves, so moved to deadlinks.
+- Searched for other public PeopleSoft class searches like Duke/BU's: nothing usable found.

@@ -1,24 +1,25 @@
 {
- "checkedAt": "2026-11-03T01:37:06.295Z",
+ "checkedAt": "2026-11-05T11:45:07.220Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:umd",
- "sampled": 6880,
- "withTimes": 6880,
+ "sampled": 13008,
+ "withTimes": 13008,
  "terms": [
-  "Fall 2026"
+  "Fall 2026",
+  "Spring 2027"
  ],
  "sample": [
   "AAAS100 · Introduction to African American and Africana Studies (Sec 0101) · Fall 2026 · M 10:00-10:50 W 10:00-10:50 F 10:00-10:50",
-  "BUDT758L · Special Topics in Decision, Operations and Information Technologies; Price Optimization & Revenue Management · Fall 2026 · T 15:30-16:45 R 15:30-16:45",
-  "EDCP210 · Peer Counseling Skills and Mental Health Advocacy (Sec 0501) · Fall 2026 · M 11:00-12:15 W 11:00-12:15",
-  "ENPM685 · Security Tools for Information Security (Sec 0101) · Fall 2026 · W 19:00-21:40",
-  "INST462 · Introduction to Data Visualization (Sec 0201) · Fall 2026 · T 11:00-12:15",
-  "PHPE308Y · Ancient Greek and Roman Philosophy (Sec 0102) · Fall 2026 · M 12:00-12:50 W 12:00-12:50"
+  "DATA400 · Applied Probability and Statistics I (Sec 0222) · Fall 2026 · M 13:00-13:50 W 13:00-13:50 F 13:00-13:50",
+  "HNUH359T · U.S. Intelligence and Policymaking · Fall 2026 · R 18:00-21:00",
+  "THET475 · History of Art, Architecture, and Decor for the Theatre · Fall 2026 · R 09:30-12:20",
+  "COMM130 · Professional Communication and Writing (Sec 0201) · Spring 2027 · F 12:00-12:50",
+  "INAG110 · Oral Communication (Sec 3001) · Spring 2027 · T 11:00-12:15 R 11:00-12:15"
  ],
  "spotCheck": {
-  "matched": 6,
+  "matched": 3,
   "mismatched": [],
-  "unavailable": 0
+  "unavailable": 3
  }
 }
