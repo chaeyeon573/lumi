@@ -183,3 +183,32 @@ test('isLoginOnlyLink: course sites (Canvas, Blackboard, Brightspace) need a sch
   assert.equal(isLoginOnlyLink('https://bupls.com/'), false);
   assert.equal(isLoginOnlyLink('https://canvasclub.org/'), false);
 });
+
+test('cleanCollectedOrgs: emoji, double-encoded entities, link spaces; placeholder test clubs recognised', async () => {
+  const { cleanCollectedOrgs, isPlaceholderOrg } = await import('./sources/orglinks');
+  const list = [
+    { id: 'a', name: 'Strawberries &amp; Sudoku at UW', description: 'Puzzles &amp; fruit', links: [{ label: 'Facebook', url: 'https://www.facebook.com/AlphaChiUGA ' }] },
+    { id: 'b', name: 'The AgriBusiness Club 🌱', description: 'Two  spaces stay', links: [{ label: 'Facebook', url: 'https://www.facebook.com/Alpha Omicron Pi - SJSU' }, { label: 'Instagram', url: 'https://instagram.com/aoii' }] },
+    { id: 'c', name: 'Plain  Club', description: 'Nothing  to do', links: [] },
+  ] as never;
+  const { orgs, badLinks } = cleanCollectedOrgs(list, '2026-11-05');
+  assert.equal(orgs[0].name, 'Strawberries & Sudoku at UW');
+  assert.equal(orgs[0].description, 'Puzzles & fruit');
+  assert.equal(orgs[0].links![0].url, 'https://www.facebook.com/AlphaChiUGA');
+  assert.equal(orgs[1].name, 'The AgriBusiness Club');
+  assert.equal(orgs[1].description, 'Two  spaces stay');
+  assert.deepEqual(orgs[1].links, [{ label: 'Instagram', url: 'https://instagram.com/aoii' }]);
+  assert.equal(badLinks.length, 1);
+  assert.equal(orgs[2], list[2]);
+  for (const n of ['Test Club', 'Test Club 2', 'Test Org One', 'Test Organization', 'Test CIO', 'Test CLP (#0001)', 'Test Test Test', 'Test Group']) assert.ok(isPlaceholderOrg(n), n);
+  for (const n of ['Testing Center', 'Test Prep Club', 'TestBed Robotics', 'Contest Club']) assert.ok(!isPlaceholderOrg(n), n);
+});
+
+test('cleanCollectedOrgs: a website shared by 10+ clubs is a school page, not theirs; HTML tags leave descriptions', async () => {
+  const { cleanCollectedOrgs } = await import('./sources/orglinks');
+  const list = Array.from({ length: 52 }, (_, i) => ({ id: `o${i}`, name: `Club ${i}`, description: i === 0 ? 'Graduate Business Association<strong>Mission Statement</strong><p>We meet</p>' : 'x', links: [{ label: 'Directory', url: 'https://umn.campusgroups.com/x' }, { label: 'Website', url: 'https://student.sua.umn.edu/' }, ...(i === 1 ? [{ label: 'Instagram', url: 'https://instagram.com/club1' }] : [])] })) as never;
+  const { orgs, badLinks } = cleanCollectedOrgs(list, '2026-11-05');
+  assert.equal(badLinks.length, 52);
+  assert.deepEqual(orgs[1].links!.map((l: { label: string }) => l.label), ['Directory', 'Instagram']);
+  assert.equal(orgs[0].description, 'Graduate Business Association Mission Statement We meet');
+});

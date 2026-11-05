@@ -1,3 +1,4 @@
+import { isPlaceholderOrg } from './sources/orglinks';
 /**
  * 아직 안 연 학교 미리보기 (2026-11-02 사장님 A안) — server/data/collected/<id>.orgs.json 을 요청이 올 때만 읽어 보여준다.
  * DB·메모리에 올리지 않는다. 링크로만 들어오는 페이지(/preview) — 앱 화면 어디에도 걸지 않는다.
@@ -25,7 +26,7 @@ const hasOwnLink = (o: Organization) => publicLinks(o.links).some((l) => ['Websi
 export function previewSchools(): PreviewSchool[] {
   return rows().map((r) => {
     const f = path.join(COLLECTED, `${r.id}.orgs.json`);
-    const orgs = (readJson<Organization[]>(f) ?? []).filter((o) => o.type !== 'department'); // 학교 부서·사무실은 파일에는 남기고 목록에서는 뺀다
+    const orgs = (readJson<Organization[]>(f) ?? []).filter((o) => o.type !== 'department' && !isPlaceholderOrg(o.name)); // 학교 부서·사무실은 파일에는 남기고 목록에서는 뺀다
     const probe = readJson<PreviewSchool['probe']>(path.join(COLLECTED, `${r.id}.probe.json`));
     const courses = readJson<unknown[]>(path.join(COLLECTED, `${r.id}.courses.json`))?.length ?? 0;
     const events = readJson<{ events?: unknown[] }>(path.join(COLLECTED, `${r.id}.events.json`))?.events?.length ?? 0;
@@ -37,7 +38,7 @@ export function previewSchool(id: string): { school: PreviewSchool; orgs: Previe
   if (!ID_RE.test(id)) return null;
   const school = previewSchools().find((s) => s.id === id);
   if (!school) return null;
-  const orgs = (readJson<Organization[]>(path.join(COLLECTED, `${id}.orgs.json`)) ?? []).filter((o) => o.type !== 'department').map(withoutEmoji).map((o) => ({ id: o.id, name: o.name, type: o.type, category: o.parent, description: o.description, links: publicLinks(o.links), logo: o.logo, recruiting: recruitmentLabel(o.recruitment) ?? undefined }));
+  const orgs = (readJson<Organization[]>(path.join(COLLECTED, `${id}.orgs.json`)) ?? []).filter((o) => o.type !== 'department' && !isPlaceholderOrg(o.name)).map(withoutEmoji).map((o) => ({ id: o.id, name: o.name, type: o.type, category: o.parent, description: o.description, links: publicLinks(o.links), logo: o.logo, recruiting: recruitmentLabel(o.recruitment) ?? undefined }));
   const probe = readJson<Record<string, unknown>>(path.join(COLLECTED, `${id}.probe.json`));
   const today = new Date().toISOString().slice(0, 10);
   const ev = readJson<{ collectedAt?: string; events?: { id: string; title: string; host: string; date?: string; location?: string; sourceUrl: string }[] }>(path.join(COLLECTED, `${id}.events.json`));

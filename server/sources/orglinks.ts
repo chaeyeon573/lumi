@@ -4,6 +4,7 @@
  */
 import type { Organization } from '@core/types';
 import { decodeNumericEntities } from './entities';
+import { stripEmoji } from '@core/lib/orglinks';
 
 type Link = { label: string; url: string };
 
@@ -302,4 +303,38 @@ export function uclaOrgToOrg(o: UclaOrg, schoolId = 's_ucla'): Organization {
     gallery: [], regularActivities: [], notices: [], followerIds: [], memberIds: [], adminIds: [], applicantIds: [],
     links: [{ label: 'Directory', url: `https://sa.ucla.edu/RCO/public/search?q=${encodeURIComponent(name)}` }, ...socialLinks({ website: o.OrganizationWebSite, instagram: pick(/instagram\.com/i), facebook: pick(/facebook\.com/i), linkedin: pick(/linkedin\.com/i), twitter: pick(/twitter\.com|x\.com/i), youtube: pick(/youtube\.com|youtu\.be/i), tiktok: pick(/tiktok\.com/i) })],
   };
+}
+
+/** 디렉터리에 남은 시험용 가짜 단체("Test Club", "Test Org One", "Test CIO"…) — 파일에는 두고 화면·DB 로는 보내지 않는다 (2026-11-05 점검 15개). "Test Prep Club"·"Testing Center" 는 해당 없음 */
+export const isPlaceholderOrg = (name: string) => /^test\s+(club|org(anization)?|group|cio|clp|test)\b/i.test(name.trim()) || /^(asdf|do not use|delete me)\b/i.test(name.trim());
+
+/** 모은 동아리 파일 다듬기(collect 때마다, 2026-11-05 점검):
+ *  - 이모지가 있는 이름·설명만 이모지를 뺀다(다른 띄어쓰기는 그대로)
+ *  - 디렉터리가 두 번 감싼 HTML 문자(&amp; &#39;)를 푼다 (UW·Lehigh)
+ *  - 링크 앞뒤 빈칸은 지우고, 가운데 빈칸이 있어 열리지 않는 주소("facebook.com/Alpha Omicron Pi - SJSU")는 badLinks 로 돌려준다(호출하는 쪽이 deadlinks 에 남긴다) */
+export function cleanCollectedOrgs(list: Organization[], today: string): { orgs: Organization[]; badLinks: { orgId: string; url: string; checkedAt: string; note: string }[] } {
+  const has = (t?: string) => !!t && /[\p{Extended_Pictographic}\u{1F3FB}-\u{1F3FF}]/u.test(t);
+  const ent = (t?: string) => (t && /&(amp|quot|lt|gt|apos|#\d+|#x[0-9a-f]+);/i.test(t) ? decodeNumericEntities(t.replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>')).replace(/&amp;/g, '&') : t);
+  const badLinks: { orgId: string; url: string; checkedAt: string; note: string }[] = [];
+  // 동아리 50곳 이상이 같은 웹사이트·SNS 를 적었으면 그건 학교 부서 홈이다(UMN 학생회관 홈 184곳) — 동아리 자기 링크가 아니니 뺀다. 기숙사·봉사 프로그램끼리 부서 페이지를 같이 쓰는 것(10~23곳)은 그 모임에 맞는 링크라 둔다
+  const DIR = /^(Directory|Presence|Cardinal Engage|MIT Engage|Penn Clubs)$/;
+  const uses = new Map<string, number>(); for (const o of list) for (const u of new Set((o.links ?? []).filter((l) => !DIR.test(l.label)).map((l) => l.url.trim()))) uses.set(u, (uses.get(u) ?? 0) + 1);
+  const shared = new Set([...uses].filter(([, n]) => n >= 50).map(([u]) => u));
+  const tags = (t?: string) => (t && /<\/?(p|b|strong|i|em|br|div|span|ul|li|a)\b[^>]*>/i.test(t) ? t.replace(/<br\s*\/?>|<\/p>|<\/li>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/[ \t]{2,}/g, ' ').trim() : t);
+  const orgs = list.map((o0) => {
+    let o = has(o0.name) || has(o0.description) ? { ...o0, name: has(o0.name) ? stripEmoji(o0.name) || o0.name : o0.name, ...(has(o0.description) ? { description: stripEmoji(o0.description!) } : {}) } : o0;
+    if (ent(o.name) !== o.name || ent(o.description) !== o.description) o = { ...o, name: ent(o.name)!, ...(o.description ? { description: ent(o.description) } : {}) };
+    if (tags(o.description) !== o.description) o = { ...o, description: tags(o.description)! };
+    if ((o.links ?? []).some((l) => shared.has(l.url.trim()) && !DIR.test(l.label))) {
+      for (const l of (o.links ?? []).filter((l) => shared.has(l.url.trim()) && !DIR.test(l.label))) badLinks.push({ orgId: o.id, url: l.url.trim(), checkedAt: today, note: `${l.label} is a school page shared by ${uses.get(l.url.trim())} clubs, not this club's own` });
+      o = { ...o, links: (o.links ?? []).filter((l) => !(shared.has(l.url.trim()) && !DIR.test(l.label))) };
+    }
+    if ((o.links ?? []).some((l) => l.url !== l.url.trim() || /\s/.test(l.url.trim()))) {
+      const links = (o.links ?? []).map((l) => ({ ...l, url: l.url.trim() }));
+      for (const l of links.filter((l) => /\s/.test(l.url))) badLinks.push({ orgId: o.id, url: l.url, checkedAt: today, note: `${l.label} address has spaces - does not open` });
+      o = { ...o, links: links.filter((l) => !/\s/.test(l.url)) };
+    }
+    return o;
+  });
+  return { orgs, badLinks };
 }

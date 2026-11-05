@@ -183,7 +183,8 @@ function mapOrg(schoolId: ID, host: string, o: EngageOrg): Organization {
   const type: Organization['type'] = type0 === 'club' && (cats.some((c) => isOfficeOrg(o.Name, c)) || isOfficeOrg(o.Name)) ? 'department' : type0;
   const council = cats.find((c) => /IFC|Interfraternity/i.test(c)) ? 'IFC' : cats.find((c) => /Panhellenic/i.test(c)) ? 'Panhellenic' : cats.find((c) => /NPHC|Black Greek/i.test(c)) ? 'NPHC' : cats.find((c) => /Multicultural Greek|MGC/i.test(c)) ? 'MGC' : undefined;
   return {
-    id: `${type === 'greek' ? 'og' : 'oc'}_${schoolId.replace('s_', '')}_${(o.WebsiteKey || o.Name).toLowerCase().replace(/[^a-z0-9]+/g, '_')}`,
+    // 주소 키가 '-'·'--' 처럼 글자 없이 오면 둘이 같은 id(oc_msu__)가 되어 링크가 섞였다 (2026-11-05 MSU) → 글자가 있는 첫 값(키 → 이름 → Engage 번호)으로
+    id: `${type === 'greek' ? 'og' : 'oc'}_${schoolId.replace('s_', '')}_${[o.WebsiteKey, o.Name, String(o.Id)].map((x) => (x ?? '').toLowerCase().replace(/[^a-z0-9]+/g, '_')).find((x) => /[a-z0-9]/.test(x)) ?? 'x'}`,
     name: strip(o.Name),
     logo: { emoji: initials(strip(o.Name)), hue: Math.abs([...o.Name].reduce((h, ch) => h * 31 + ch.charCodeAt(0), 7)) % 360, ...(o.ProfilePicture ? { url: `https://se-images.campuslabs.com/clink/images/${o.ProfilePicture}?preset=small-sq` } : {}) },
     type, schoolId, parent: council ?? cats[0], verified: false,

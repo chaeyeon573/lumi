@@ -27,7 +27,7 @@ import { findStudentOrgSites, knownSites } from '../sources/orgsites';
 import { fetchResearchUnits, mergeResearchUnits } from '../sources/researchunits';
 import { coopsFromCsv, COOP_PREFIX } from '../sources/coops';
 import { fetchUsaJobs } from '../sources/usajobs';
-import { studentGovToOrg, type StudentGovRow } from '../sources/orglinks';
+import { studentGovToOrg, isPlaceholderOrg, cleanCollectedOrgs, type StudentGovRow } from '../sources/orglinks';
 import { enrichFromWebsites, isDeadPage, DEAD } from '../sources/sitesocial';
 import { publicLinks, stripEmoji } from '@core/lib/orglinks';
 import { noEmojiView } from '../noemoji';
@@ -240,7 +240,7 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
   // 응답 없던 웹사이트(<id>.deadlinks.json)는 되살리지 않는다 (2026-11-04 재수집에서 7개가 빠질 뻔함)
   if (existsSync(file)) {
     const deadFile = path.join(COLLECTED_DIR, `${row.id}.deadlinks.json`);
-    const dead = existsSync(deadFile) ? (JSON.parse(readFileSync(deadFile, 'utf8')) as { orgId: string; url: string }[]) : [];
+    const dead = (existsSync(deadFile) ? (JSON.parse(readFileSync(deadFile, 'utf8')) as { orgId: string; url: string; restoredAt?: string }[]) : []).filter((x) => !x.restoredAt); // 다시 살아나 되돌린 링크(restoredAt)는 죽은 것으로 보지 않는다
     const before = new Map(prevOrgs.map((o) => [o.id, o]));
     let kept = 0;
     const list = (JSON.parse(readFileSync(file, 'utf8')) as Organization[]).map((o) => {
@@ -265,8 +265,8 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
   // 이모지는 파일에도 남기지 않는다(동아리 이름·설명, 2026-11-05 점검에서 약 160개) — 서버 응답에서도 지우지만 데이터 자체를 깨끗하게
   if (existsSync(file)) {
     const raw = readFileSync(file, 'utf8'); const list = JSON.parse(raw) as Organization[];
-    const has = (t?: string) => !!t && /[\p{Extended_Pictographic}\u{1F3FB}-\u{1F3FF}]/u.test(t); // 이모지가 있는 글만 바꾼다(띄어쓰기 등 나머지는 그대로)
-    const clean = list.map((o) => (has(o.name) || has(o.description) ? { ...o, name: has(o.name) ? stripEmoji(o.name) || o.name : o.name, ...(has(o.description) ? { description: stripEmoji(o.description!) } : {}) } : o));
+    const { orgs: clean, badLinks } = cleanCollectedOrgs(list, new Date().toISOString().slice(0, 10));
+    if (badLinks.length) { const df = path.join(COLLECTED_DIR, `${row.id}.deadlinks.json`); const old = existsSync(df) ? JSON.parse(readFileSync(df, 'utf8')) as unknown[] : []; writeFileSync(df, `${JSON.stringify([...old, ...badLinks], null, 1)}\n`); }
     const next = `${JSON.stringify(clean, null, 1)}\n`; if (next !== raw) writeFileSync(file, next);
   }
   out.push(...(await collectCourses(row)));
@@ -311,7 +311,7 @@ async function importCollected(id: string): Promise<AgentRun> {
   // AGENT_DRY=1 이면 쓰지 않고 몇 개가 들어갈지만 센다
   const startedAt = new Date().toISOString(); const f = (kind: string) => path.join(COLLECTED_DIR, `${id}.${kind}.json`);
   if (!existsSync(f('orgs'))) return record({ task: `import-collected:${id}`, schoolId: id, status: 'skipped', startedAt, summary: { error: `no ${f('orgs')}` } });
-  const organizations = JSON.parse(readFileSync(f('orgs'), 'utf8')) as Organization[];
+  const organizations = (JSON.parse(readFileSync(f('orgs'), 'utf8')) as Organization[]).filter((o) => !isPlaceholderOrg(o.name)); // 시험용 가짜 단체는 DB 로 안 보낸다(파일엔 남김)
   const courses = existsSync(f('courses')) ? (JSON.parse(readFileSync(f('courses'), 'utf8')) as CatalogCourse[]) : [];
   const today = new Date().toISOString().slice(0, 10);
   const opportunities = existsSync(f('events'))

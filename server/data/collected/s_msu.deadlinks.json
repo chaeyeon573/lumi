@@ -55,7 +55,7 @@
   "checkedAt": "2026-11-04"
  },
  {
-  "orgId": "oc_msu__",
+  "orgId": "oc_msu_national_arab_american_medical_association_next_generation",
   "url": "https://naama.com/next-gen/",
   "checkedAt": "2026-11-04"
  },
@@ -65,9 +65,11 @@
   "checkedAt": "2026-11-04"
  },
  {
-  "orgId": "oc_msu__",
+  "orgId": "oc_msu_perfect_pair",
   "url": "https://www.perfectpair.org/",
-  "checkedAt": "2026-11-04"
+  "checkedAt": "2026-11-04",
+  "restoredAt": "2026-11-05",
+  "note": "answers again (200, page names Perfect Pair) - link restored to the org"
  },
  {
   "orgId": "oc_msu_pharmtoxcl",
@@ -114,5 +116,11 @@
   "url": "http://mba.broad.msu.edu/organizations/mbafa/",
   "checkedAt": "2026-11-05",
   "note": "redirects to the general MBA page; club page gone"
+ },
+ {
+  "orgId": "oc_msu_alphaomicronpi",
+  "url": "https://www.facebook.com/AOII Beta Gamma Alumnae (MSU)",
+  "checkedAt": "2026-11-05",
+  "note": "Facebook address has spaces - does not open"
  }
 ]

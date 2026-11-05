@@ -2069,3 +2069,16 @@
   - Checked and fine: UCSC "CSE Colloquium" at 2:40 a.m. is what UCSC's own API says (source data, kept). UT's 31 "duplicate" General Meetings are different clubs at the same time.
 - Spot check courses (Illinois, official XML): NEUR 598 T 2:00, MUSC 430 B TR 11:00, SPAN 122 E3 MW 1:00-1:50, HIST 377 TR 12:30, PS 512 T 1:00 - all match.
 - Spot check clubs: UT Pre-CAA, Yale Historical Review, UMass Comm Grad, Duke Catholic Center fine. USC SC Men's Rugby answered 503 twice - left for the weekly link check.
+
+## 2026-11-05 08:33 UTC
+- Audited every club file: empty or test names, shared IDs, broken or shared links, HTML in text.
+  - **MSU shared ID:** "National Arab American Medical Association Next Generation" and "Perfect Pair" have directory keys "--" and "-", so both became `oc_msu__`. The link merge-back then gave NAAMA Perfect Pair's Instagram and Facebook. Fixed the ID builder: a key with no letters or digits falls back to the name, then the Engage number; other IDs unchanged. Repaired both entries and their deadlinks rows. perfectpair.org answers again and names the club, so it is restored, and restored deadlinks rows (`restoredAt`) are no longer treated as dead on re-collect.
+  - **Test placeholders:** 15 such as "Test Club" and "Test Org One" (NYU, UMich, JHU ...). Kept in the files but no longer sent by /api/preview or loaded by import-collected (`isPlaceholderOrg`). "Testing Center" and "Test Prep Club" don't count.
+  - **New `cleanCollectedOrgs` step** (runs at every club collect, test added):
+    - decodes double-encoded entities ("Strawberries &amp; Sudoku");
+    - strips HTML tags from 4 descriptions (CMU, UW);
+    - trims link addresses; links with spaces inside ("facebook.com/Alpha Omicron Pi - SJSU", 4) go to deadlinks;
+    - a website shared by 50+ clubs is the school's page, not the club's: UMN student union home on 184 clubs, moved to deadlinks. Residence halls and outreach programs that share their office's page (10-23) are kept.
+  - Applied to today's files offline.
+- Spot check courses (Caltech Winter 2027, fresh official page): CS 2 sec 01 and 07, Ae/APh/CE/ME 101B, Hum/H 53, ME 50A - all match.
+- Spot check clubs: Rice RUF, MSU Blueprints for Pangaea, SFSU Muslim Tech Collaborative fine. Wake Forest "Reynolda" is the university's museum and gardens, so it is marked `department` (override added). Cornell Latinx Student Empowerment (scl.cornell.edu) fails TLS from the container - not verifiable here.
