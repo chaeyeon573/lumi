@@ -102,9 +102,9 @@ export function ClassFormPage() {
               ))}
             </ChipRow>
           </div>
-          <FormField label={en ? 'Start time' : '시작'}><TextInput type="time" icon={<Clock size={18} />} value={draft.start} onChange={(e) => setDraft({ ...draft, start: e.target.value })} /></FormField>
+          <FormField label={en ? 'Start time' : '시작'}><TextInput type="time" className="[&_input::-webkit-calendar-picker-indicator]:hidden" icon={<Clock size={18} />} value={draft.start} onChange={(e) => setDraft({ ...draft, start: e.target.value })} /></FormField>
           <FormField label={en ? 'End time' : '끝'} hint={toMin(draft.start) >= toMin(draft.end) ? <span className="text-danger">{en ? 'End after it starts.' : '끝나는 시간이 시작보다 뒤여야 해요.'}</span> : undefined}>
-            <TextInput type="time" icon={<Clock size={18} />} value={draft.end} onChange={(e) => setDraft({ ...draft, end: e.target.value })} />
+            <TextInput type="time" className="[&_input::-webkit-calendar-picker-indicator]:hidden" icon={<Clock size={18} />} value={draft.end} onChange={(e) => setDraft({ ...draft, end: e.target.value })} />
           </FormField>
           <FormField label={en ? 'Classroom' : '강의실'}><TextInput value={draft.room} onChange={(e) => setDraft({ ...draft, room: e.target.value })} placeholder={en ? 'Optional · private' : '선택 · 나만 보기'} maxLength={60} /></FormField>
           <FormField label={en ? 'Instructor' : '교수'}><TextInput value={draft.professor} onChange={(e) => setDraft({ ...draft, professor: e.target.value })} placeholder={en ? 'Optional' : '선택'} maxLength={60} /></FormField>
