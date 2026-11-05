@@ -14,10 +14,24 @@ const DELETED = en
 
 /** 설정 › 계정 삭제 — 무엇이 지워지는지 보여 주고, DELETE 를 입력해야 지운다. 지우면 로그아웃된다 (App Store 5.1.1(v)) */
 export function DeleteAccountCard() {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="card">
+      <button onClick={() => setOpen(true)} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press">
+        <Trash2 size={18} className="text-danger" />
+        <span className="flex-1"><span className="block text-[14px] font-semibold text-danger">{en ? 'Delete account' : '계정 삭제'}</span><span className="block text-[12px] text-ink-3">{en ? 'Permanently delete your account and data' : '계정과 데이터를 영구히 삭제해요'}</span></span>
+      </button>
+      <DeleteAccountSheet open={open} onClose={() => setOpen(false)} />
+    </div>
+  );
+}
+
+/** 계정 삭제 확인 시트 — Privacy & safety (S086) 의 Delete account 줄이 연다 */
+export function DeleteAccountSheet({ open, onClose }: { open: boolean; onClose: () => void }) {
   const nav = useNavigate();
   const deleteAccount = useAppStore((s) => s.deleteAccount);
   const showToast = useAppStore((s) => s.showToast);
-  const [open, setOpen] = useState(false);
+  const setOpen = (v: boolean) => { if (!v) onClose(); };
   const [typed, setTyped] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
@@ -34,11 +48,7 @@ export function DeleteAccountCard() {
   };
 
   return (
-    <div className="card">
-      <button onClick={() => setOpen(true)} className="w-full flex items-center gap-3 px-4 py-3.5 text-left press">
-        <Trash2 size={18} className="text-danger" />
-        <span className="flex-1"><span className="block text-[14px] font-semibold text-danger">{en ? 'Delete account' : '계정 삭제'}</span><span className="block text-[12px] text-ink-3">{en ? 'Permanently delete your account and data' : '계정과 데이터를 영구히 삭제해요'}</span></span>
-      </button>
+    <>
       <BottomSheet open={open} onClose={close} title={en ? 'Delete your account?' : '계정을 삭제할까요?'}>
         <div className="space-y-3">
           <p className="text-[13px] text-ink-2">{en ? 'This permanently deletes your Lumi account. It can’t be undone, and you’ll be signed out. What’s deleted:' : 'Lumi 계정이 영구히 삭제돼요. 되돌릴 수 없고, 바로 로그아웃돼요. 삭제되는 것:'}</p>
@@ -54,6 +64,6 @@ export function DeleteAccountCard() {
           </div>
         </div>
       </BottomSheet>
-    </div>
+    </>
   );
 }

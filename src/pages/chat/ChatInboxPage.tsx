@@ -1,138 +1,115 @@
+import { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { t } from '@core/i18n';
-import { Users, Building2, Inbox, MessageCircle, Check, X, Search, Plus } from 'lucide-react';
-import { useMemo } from 'react';
-import { whosFree } from '@core/lib/social';
+import { Building2, Inbox, MessageCircle, Users } from 'lucide-react';
 import { lang } from '@core/i18n';
-import { TopBar } from '@/components/layout/TopBar';
-import { Avatar, EmptyState, Button, Tag, CardSkeleton, ErrorState, Chip } from '@/components/ui';
-import { useViewer } from '@/hooks/useViewer';
-import { useAppStore } from '@core/store/useAppStore';
 import { api } from '@core/api';
+import { useAppStore } from '@core/store/useAppStore';
 import { relativeTime } from '@core/lib/format';
-import { CATEGORY_EMOJI, CATEGORY_LABELS } from '@core/lib/labels';
-import type { ChatRoom } from '@core/types';
-import { cn } from '@core/lib/cn';
-import { SampleTag } from '@/components/ui/SampleTag';
+import { CATEGORY_LABELS } from '@core/lib/labels';
 import { proposalWhen } from '@core/lib/plans';
+import type { ChatRoom } from '@core/types';
+import { Avatar } from '@/components/ui';
+import { Btn, EmptyState, IconTile, InfoNote, PersonCard, RowCard, SearchField, SegTabs } from '@/components/ha';
+import { useViewer } from '@/hooks/useViewer';
+import { cn } from '@core/lib/cn';
+import { SubScreen } from '@/pages/profile/shared';
 
-type Tab = 'direct' | 'activity' | 'org' | 'requests';
+const en = lang === 'en';
+type Tab = 'all' | 'direct' | 'groups' | 'requests';
 
+/** 예전 주소의 탭 (?tab=activity · org) 은 Groups 로 */
+function tabOf(raw: string | null): Tab {
+  if (raw === 'direct' || raw === 'requests') return raw;
+  if (raw === 'groups' || raw === 'activity' || raw === 'org') return 'groups';
+  return 'all';
+}
+const last = (r: ChatRoom) => r.messages[r.messages.length - 1];
+
+/**
+ * Messages (PDF S068) — SearchField, SegTabs All · Direct · Groups (주소 ?tab=), 줄: 얼굴 · 이름 · 마지막 메시지 · 시각.
+ * 처음엔 늘 All — 예전엔 Direct 가 기본이라, 모임에 들어가 그룹 채팅이 생긴 직후 빈 Direct 탭이 열렸다 (AI 사용자 테스트).
+ * 받은 친구 요청·만남 제안은 탭 대신 맨 위 한 줄 → ?tab=requests.
+ */
 export function ChatInboxPage() {
   const nav = useNavigate();
-  const [params, setParams] = useSearchParams();
-  const tab = (params.get('tab') ?? 'direct') as Tab;
   const v = useViewer();
   const run = useAppStore((s) => s.run);
-  const status = useAppStore((s) => s.status);
-  const error = useAppStore((s) => s.error);
-  const init = useAppStore((s) => s.init);
   const rooms = useAppStore((s) => s.chatRooms);
   const proposals = useAppStore((s) => s.proposals);
   const requests = useAppStore((s) => s.relationships.friendRequests);
+  const [params, setParams] = useSearchParams();
+  const [q, setQ] = useState('');
+  const tab = tabOf(params.get('tab'));
   const me = v.me;
-  const myRooms = rooms.filter((r) => r.memberIds.includes(me.id)).sort((a, b) => (last(b)?.createdAt ?? b.createdAt).localeCompare(last(a)?.createdAt ?? a.createdAt));
   const inProposals = proposals.filter((p) => p.toId === me.id && p.status === 'pending');
-  const outProposals = proposals.filter((p) => p.fromId === me.id && p.status !== 'accepted');
-  const inRequests = requests.filter((q) => q.toId === me.id && q.status === 'pending');
-  const outRequests = requests.filter((q) => q.fromId === me.id && q.status === 'pending');
-  const unread = (r: ChatRoom) => r.messages.filter((m) => m.senderId !== me.id && !m.system && new Date(m.createdAt) > new Date(r.lastReadAt[me.id] ?? 0)).length;
-
-  const list = myRooms.filter((r) => r.type === tab);
+  const inRequests = requests.filter((r) => r.toId === me.id && r.status === 'pending');
   const reqCount = inProposals.length + inRequests.length;
-  const orgs = useAppStore((s) => s.organizations);
-  const snap = useMemo(() => ({ ...v.snap, organizations: orgs }), [v.snap, orgs]);
-  const free = useMemo(() => whosFree(snap, me, (u) => v.canSeeField(u, 'timetable')), [snap, me, v]);
+  const unread = (r: ChatRoom) => r.messages.filter((m) => m.senderId !== me.id && !m.system && new Date(m.createdAt) > new Date(r.lastReadAt[me.id] ?? 0)).length;
+  const nameOf = (r: ChatRoom) => (r.type === 'direct' ? v.userById(r.memberIds.find((m) => m !== me.id) ?? '')?.nickname : undefined) ?? r.title ?? (en ? 'Group chat' : '그룹 채팅');
+  const mine = rooms.filter((r) => r.memberIds.includes(me.id)).sort((a, b) => (last(b)?.createdAt ?? b.createdAt).localeCompare(last(a)?.createdAt ?? a.createdAt));
+  const s = q.trim().toLowerCase();
+  const list = mine.filter((r) => (tab === 'all' || (tab === 'direct' ? r.type === 'direct' : r.type !== 'direct'))
+    && (!s || nameOf(r).toLowerCase().includes(s) || r.messages.some((m) => !m.system && m.text.toLowerCase().includes(s))));
+  const setTab = (k: string) => setParams(k === 'all' ? {} : { tab: k }, { replace: true });
+
+  if (tab === 'requests') return (
+    <SubScreen title={en ? 'Requests' : '받은 요청'}>
+      {reqCount === 0 && <EmptyState icon={<Inbox size={28} />} tone="rose" title={en ? 'No requests right now' : '받은 요청이 없어요'} />}
+      <div className="space-y-3">
+        {inRequests.map((r) => { const u = v.userById(r.fromId); if (!u) return null; return (
+          <PersonCard key={r.id} avatar={u.avatar} name={u.nickname} meta={en ? `Friend request · ${relativeTime(r.createdAt)}` : `친구 요청 · ${relativeTime(r.createdAt)}`} onClick={() => nav(`/users/${u.id}`)}
+            action={<div className="flex gap-2">
+              <Btn size="sm" variant="outline" onClick={() => run(() => api.relationships.respondFriendRequest(r.id, false))}>{en ? 'Decline' : '거절'}</Btn>
+              <Btn size="sm" variant="outline" className="border-sel-line text-sel-fg" onClick={() => run(() => api.relationships.respondFriendRequest(r.id, true), en ? `You and ${u.nickname} are friends` : `${u.nickname}님과 친구가 되었어요`)}>{en ? 'Accept' : '수락'}</Btn>
+            </div>} />
+        ); })}
+        {inProposals.map((p) => { const u = v.userById(p.fromId); if (!u) return null; return (
+          <PersonCard key={p.id} avatar={u.avatar} name={u.nickname} meta={`${CATEGORY_LABELS[p.category]} · ${proposalWhen(p.when)}`} bio={`“${p.message}”`} onClick={() => nav(`/users/${u.id}`)}
+            action={<div className="flex gap-2">
+              <Btn size="sm" variant="outline" onClick={() => run(() => api.proposals.respond(p.id, false))}>{en ? 'Not now' : '다음에'}</Btn>
+              <Btn size="sm" variant="outline" className="border-sel-line text-sel-fg" onClick={async () => { await run(() => api.proposals.respond(p.id, true), en ? 'Accepted — say hi!' : '수락했어요. 인사해 보세요!').catch(() => {}); setTab('direct'); }}>{en ? 'Sounds good' : '좋아요'}</Btn>
+            </div>} />
+        ); })}
+      </div>
+      {reqCount > 0 && <InfoNote className="mt-4">{en ? 'Declining doesn’t notify them.' : '거절해도 상대에게 알림이 가지 않아요.'}</InfoNote>}
+    </SubScreen>
+  );
 
   return (
-    <div className="min-h-full">
-      <TopBar back title={lang === 'en' ? 'Direct Messages' : t('메시지')} bell />
-      <div className="px-4 pt-2 space-y-4">
-        <button onClick={() => nav('/search?tab=people')} className="w-full h-12 rounded-full bg-surface-2 flex items-center gap-2 px-4 text-[15px] text-ink-3"><Search size={18} />{lang === 'en' ? 'Search chats or mutuals…' : '대화·친구 검색'}</button>
-        {tab === 'direct' && free.length > 0 && (
-          <div>
-            <div className="flex items-center justify-between mb-2"><span className="text-[12px] font-bold tracking-wide text-ink-3 uppercase">{lang === 'en' ? 'Free right now' : '지금 시간 되는 사람'}</span><span className="text-[13px] text-verify">{free.length}{lang === 'en' ? ' around campus' : '명'}</span></div>
-            <div className="flex gap-4 overflow-x-auto hide-scrollbar -mx-4 px-4">
-              {free.slice(0, 8).map((p) => <button key={p.u.id} onClick={() => nav(`/users/${p.u.id}?propose=1&cat=${p.category ?? 'coffee'}`)} className="flex flex-col items-center gap-1.5 shrink-0 w-[64px]"><span className="relative"><Avatar emoji={p.u.avatar.emoji} hue={p.u.avatar.hue} url={p.u.avatar.url} size={60} /><span className="absolute bottom-0.5 right-0.5 h-3 w-3 rounded-full bg-accent ring-2 ring-white" /></span><span className="text-[12px] text-primary truncate max-w-full">{p.u.nickname}</span>{p.u.sample && <SampleTag className="h-4 mr-0 px-1 text-[9px] -mt-1" />}</button>)}
-              <button onClick={() => nav('/create/activity?kind=personal&now=1')} className="flex flex-col items-center gap-1.5 shrink-0 w-[64px]"><span className="h-[60px] w-[60px] rounded-full bg-surface-2 grid place-items-center text-primary"><Plus size={22} /></span><span className="text-[12px] text-ink-3">{lang === 'en' ? 'You' : '나'}</span></button>
-            </div>
-          </div>
-        )}
-        <div className="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4">{([['direct', t('개인')], ['activity', t('활동')], ['org', t('단체')], ['requests', reqCount ? `${t('요청 ')}${reqCount}` : t('요청')]] as [Tab, string][]).map(([k, l]) => <Chip key={k} size="sm" active={tab === k} onClick={() => setParams({ tab: k })}>{l}</Chip>)}</div>
-      </div>
-      {status === 'loading' && <CardSkeleton count={2} />}
-      {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
-      {status === 'ready' && tab !== 'requests' && (
-        <div className="px-4 py-3">
-          {list.length === 0 ? (
-            <EmptyState emoji={tab === 'direct' ? '💬' : tab === 'activity' ? '🗓️' : '🏛️'}
-              title={tab === 'direct' ? t('아직 개인 채팅이 없어요') : tab === 'activity' ? t('참가 중인 활동 채팅이 없어요') : t('조직 채팅이 없어요')}
-              description={tab === 'direct' ? t('친구 요청 수락, 상호 관심, 활동 참가 승인 중 하나가 성립하면 대화를 시작할 수 있어요.') : tab === 'activity' ? t('활동에 참가하면 그룹 채팅방이 열려요.') : t('동아리·조직에 가입하거나 팔로우해보세요.')}
-              action={<Button variant="outline" onClick={() => nav(tab === 'direct' ? '/people' : tab === 'activity' ? '/meet/meetups' : '/feed')}>{t('둘러보기')}</Button>} />
-          ) : (
-            <div className="divide-y divide-line">
-              {list.map((r) => {
-                const other = r.type === 'direct' ? v.userById(r.memberIds.find((m) => m !== me.id)!) : undefined;
-                const org = r.orgId ? v.orgById(r.orgId) : undefined;
-                const lm = last(r);
-                const n = unread(r);
-                const avatar = other?.avatar ?? org?.logo ?? { emoji: r.type === 'activity' ? '🗓️' : '🏛️', hue: 220 };
-                return (
-                  <button key={r.id} onClick={() => nav(`/chats/${r.id}`)} className="w-full flex items-center gap-3 py-3.5 text-left press">
-                    {r.type === 'direct' ? <Avatar emoji={avatar.emoji} hue={avatar.hue} url={avatar.url} size={52} /> : <span className="h-[52px] w-[52px] rounded-full bg-primary text-white grid place-items-center shrink-0">{r.type === 'activity' ? <Users size={20} /> : <Building2 size={20} />}</span>}
-                    <div className="flex-1 min-w-0 flex items-center gap-2">
-                      {other?.sample && <SampleTag className="shrink-0 mr-0" />}<span className={cn('text-[16px] font-semibold text-primary truncate shrink-0 max-w-[45%]')}>{other?.nickname ?? r.title}</span>
-                      <span className={cn('text-[15px] truncate', n > 0 ? 'text-ink' : 'text-ink-2')}>· {lm?.text ?? t('대화를 시작해보세요')}</span>
-                    </div>
-                    <span className="text-[12px] text-ink-3 shrink-0">{lm ? relativeTime(lm.createdAt) : ''}</span>
-                    {n > 0 && <span className="h-2.5 w-2.5 rounded-full bg-accent shrink-0" />}
-                  </button>
-                );
-              })}
-            </div>
-          )}
+    <SubScreen title={en ? 'Messages' : '메시지'}>
+      <SearchField placeholder={en ? 'Search messages' : '메시지 찾기'} value={q} onChange={setQ} />
+      <SegTabs className="-mx-4 px-2 mt-3" value={tab} onChange={setTab}
+        tabs={[{ key: 'all', label: en ? 'All' : '전체' }, { key: 'direct', label: en ? 'Direct' : '1:1' }, { key: 'groups', label: en ? 'Groups' : '그룹' }]} />
+      {reqCount > 0 && <RowCard className="mt-4" tone="rose" icon={<Inbox size={21} />} title={en ? `${reqCount} ${reqCount === 1 ? 'request' : 'requests'}` : `받은 요청 ${reqCount}`} sub={en ? 'Friend requests and meetup ideas' : '친구 요청과 만남 제안'} onClick={() => setTab('requests')} />}
+      {list.length === 0 ? (
+        s ? <p className="text-[14px] text-ink-3 text-center py-10">{en ? 'No messages match that.' : '찾는 대화가 없어요.'}</p>
+          : <EmptyState icon={<MessageCircle size={28} />} title={en ? 'No messages yet' : '아직 대화가 없어요'}
+              sub={tab === 'groups' ? (en ? 'Join a meetup and its group chat opens here.' : '모임에 들어가면 그룹 채팅이 여기에 열려요.') : (en ? 'Chats open once you’re connected — a friend, an accepted request or a meetup together.' : '친구가 되거나, 요청을 수락하거나, 같은 모임에 들어가면 대화가 열려요.')}
+              action={{ label: tab === 'groups' ? (en ? 'Browse meetups' : '모임 보기') : (en ? 'Find people' : '사람 찾기'), onClick: () => nav(tab === 'groups' ? '/social/meetups' : '/social/people') }} />
+      ) : (
+        <div className="divide-y divide-line mt-1">
+          {list.map((r) => {
+            const other = r.type === 'direct' ? v.userById(r.memberIds.find((m) => m !== me.id) ?? '') : undefined;
+            const lm = last(r);
+            const n = unread(r);
+            return (
+              <button key={r.id} onClick={() => nav(`/chats/${r.id}`)} className="w-full flex items-center gap-3.5 py-4 text-left press">
+                {other ? <Avatar emoji={other.avatar.emoji} hue={other.avatar.hue} url={other.avatar.url} size={48} />
+                  : <IconTile tone={r.type === 'org' ? 'mint' : 'rose'} size={48} className="rounded-full">{r.type === 'org' ? <Building2 size={21} /> : <Users size={21} />}</IconTile>}
+                <span className="flex-1 min-w-0">
+                  <span className="block text-[15px] font-bold truncate">{nameOf(r)}</span>
+                  <span className={cn('block text-[13.5px] truncate mt-0.5', n > 0 ? 'text-ink' : 'text-ink-3')}>{lm ? (lm.senderId === me.id && !lm.system ? `${en ? 'You' : '나'}: ${lm.text}` : lm.text) : (en ? 'Say hi' : '인사해 보세요')}</span>
+                </span>
+                <span className="flex flex-col items-end gap-1.5 shrink-0">
+                  <span className="text-[12px] text-ink-3">{lm ? relativeTime(lm.createdAt) : ''}</span>
+                  {other?.sample && <span className="text-[11px] text-ink-3">{en ? 'Sample' : '예시'}</span>}
+                  {n > 0 && <span className="h-2.5 w-2.5 rounded-full bg-sel" aria-label={en ? 'Unread' : '안 읽음'} />}
+                </span>
+              </button>
+            );
+          })}
         </div>
       )}
-      {status === 'ready' && tab === 'requests' && (
-        <div className="px-4 py-3 space-y-4">
-          {/* 받은 게 없으면 빈 칸 두 개(“0”) 대신 한 줄 */}
-          {inProposals.length === 0 && inRequests.length === 0 && <div className="card p-4 text-[13px] text-ink-3">{t('받은 요청이 없어요.')}</div>}
-          {inProposals.length > 0 && <section>
-            <h2 className="text-[14px] font-bold mb-2 flex items-center gap-1.5"><Inbox size={15} />{t('받은 활동 제안')} {inProposals.length}</h2>
-            {inProposals.map((p) => { const u = v.userById(p.fromId); return (
-              <div key={p.id} className="card p-3.5 mb-2">
-                <button onClick={() => nav(`/users/${p.fromId}`)} className="flex items-center gap-3 text-left w-full"><Avatar emoji={u?.avatar.emoji ?? '👤'} hue={u?.avatar.hue ?? 200} url={u?.avatar.url} size={40} /><div className="flex-1"><b className="text-[14px]">{u?.nickname}</b><div className="text-[12px] text-ink-3">{CATEGORY_EMOJI[p.category]} {CATEGORY_LABELS[p.category]} · {proposalWhen(p.when)}</div></div><Tag>{relativeTime(p.createdAt)}</Tag></button>
-                <p className="mt-2 rounded-xl bg-surface-2 px-3 py-2 text-[13px]">“{p.message}”</p>
-                <div className="flex gap-2 mt-3"><Button full variant="outline" icon={<X size={15} />} onClick={() => run(() => api.proposals.respond(p.id, false))}>{t('이번에는 어려워요')}</Button><Button full icon={<Check size={15} />} onClick={async () => { await run(() => api.proposals.respond(p.id, true), t('제안을 수락했어요. 대화를 시작해요!')); setParams({ tab: 'direct' }); }}>{t('좋아요')}</Button></div>
-              </div>
-            ); })}
-          </section>}
-          {inRequests.length > 0 && <section>
-            <h2 className="text-[14px] font-bold mb-2 flex items-center gap-1.5"><Users size={15} />{t('받은 친구 요청')} {inRequests.length}</h2>
-            {inRequests.map((q) => { const u = v.userById(q.fromId); return (
-              <div key={q.id} className="card p-3.5 mb-2 flex items-center gap-3">
-                <button onClick={() => nav(`/users/${q.fromId}`)}><Avatar emoji={u?.avatar.emoji ?? '👤'} hue={u?.avatar.hue ?? 200} url={u?.avatar.url} size={40} /></button>
-                <div className="flex-1 min-w-0"><b className="text-[14px]">{u?.nickname}</b><div className="text-[12px] text-ink-3">{relativeTime(q.createdAt)}</div></div>
-                <Button size="sm" variant="outline" onClick={() => run(() => api.relationships.respondFriendRequest(q.id, false))}>{t('거절')}</Button>
-                <Button size="sm" onClick={() => run(() => api.relationships.respondFriendRequest(q.id, true), `${u?.nickname}${t('님과 친구가 되었어요!')}`)}>{t('수락')}</Button>
-              </div>
-            ); })}
-            <p className="text-[11px] text-ink-3 mt-1">{t('거절해도 상대에게 알림이 가지 않아요.')}</p>
-          </section>}
-          {(outProposals.length > 0 || outRequests.length > 0) && (
-            <section>
-              <h2 className="text-[14px] font-bold mb-2 flex items-center gap-1.5"><MessageCircle size={15} />{t('보낸 요청')}</h2>
-              <div className="card divide-y divide-line">
-                {outRequests.map((q) => { const u = v.userById(q.toId); return <div key={q.id} className="flex items-center gap-3 px-3.5 py-3"><Avatar emoji={u?.avatar.emoji ?? '👤'} hue={u?.avatar.hue ?? 200} url={u?.avatar.url} size={36} /><div className="flex-1 text-[13px]"><b>{u?.nickname}</b>{t('님에게 친구 요청')}</div><Tag>{t('대기 중')}</Tag></div>; })}
-                {outProposals.map((p) => { const u = v.userById(p.toId); return <div key={p.id} className="flex items-center gap-3 px-3.5 py-3"><Avatar emoji={u?.avatar.emoji ?? '👤'} hue={u?.avatar.hue ?? 200} url={u?.avatar.url} size={36} /><div className="flex-1 text-[13px]"><b>{u?.nickname}</b>{t('님에게')} {CATEGORY_LABELS[p.category]} {t('제안')}</div>{p.status === 'pending' ? <Tag>{t('대기 중')}</Tag> : <Tag tone="neutral">{t('이번 활동은 성사되지 않았어요')}</Tag>}</div>; })}
-              </div>
-              <p className="text-[11px] text-ink-3 mt-1">{t('읽음 여부와 거절 사유는 표시되지 않아요.')}</p>
-            </section>
-          )}
-        </div>
-      )}
-    </div>
+    </SubScreen>
   );
 }
-
-function last(r: ChatRoom) { return r.messages[r.messages.length - 1]; }

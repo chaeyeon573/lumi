@@ -1,41 +1,52 @@
-import { useNavigate } from 'react-router-dom';
-import { Plus, ChevronRight } from 'lucide-react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { CalendarPlus, Users } from 'lucide-react';
 import { lang } from '@core/i18n';
-import { TopBar } from '@/components/layout/TopBar';
-import { Avatar, Button, EmptyState } from '@/components/ui';
-import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { ORG_TYPE_LABELS } from '@core/lib/labels';
+import { Badge, Btn, EmptyState, InfoNote, RowCard, SegTabs } from '@/components/ha';
+import { useViewer } from '@/hooks/useViewer';
+import { SubScreen } from '@/pages/profile/shared';
 
 const en = lang === 'en';
+type Tab = 'followed' | 'member';
 
-/** 내 조직 — 운영진이 행사를 올리는 입구 (2026-11-02 사장님 시안: My Organizations → Create Event) */
+/**
+ * My Communities (PDF S074) — SegTabs Followed · Member, RowCards, "Interests and follows are separate from verified membership.",
+ * outline Explore Communities. 운영진이면 그 동아리 줄에 Admin 표시와 행사 올리기 (예전 My Organizations 의 입구, 2026-11-02).
+ * 탭은 주소(?tab=)가 정한다 — 뒤로 오면 같은 탭.
+ */
 export function MyOrgsPage() {
   const nav = useNavigate();
   const v = useViewer();
   const orgs = useAppStore((s) => s.organizations);
-  const admin = orgs.filter((o) => o.adminIds.includes(v.me.id));
-  const member = orgs.filter((o) => !o.adminIds.includes(v.me.id) && o.memberIds.includes(v.me.id));
-  const Row = ({ o }: { o: typeof orgs[number] }) => (
-    <button onClick={() => nav(`/orgs/${o.id}`)} className="w-full flex items-center gap-3 px-4 py-3 text-left press">
-      <Avatar emoji={o.logo.emoji} hue={o.logo.hue} url={o.logo.url} size={44} />
-      <span className="flex-1 min-w-0"><span className="block text-[15px] font-bold truncate">{o.name}</span><span className="block text-[12px] text-ink-3">{ORG_TYPE_LABELS[o.type]} · {o.memberIds.length + o.adminIds.length} {en ? 'members' : '명'}</span></span>
-      <ChevronRight size={17} className="text-ink-3" />
-    </button>
-  );
+  const [params, setParams] = useSearchParams();
+  const me = v.me.id;
+  const member = orgs.filter((o) => o.memberIds.includes(me) || o.adminIds.includes(me));
+  const followed = orgs.filter((o) => o.followerIds.includes(me) && !member.includes(o));
+  const tab: Tab = params.get('tab') === 'member' || (!params.get('tab') && followed.length === 0 && member.length > 0) ? 'member' : 'followed';
+  const list = tab === 'member' ? member : followed;
+  const admin = member.filter((o) => o.adminIds.includes(me));
+
   return (
-    <div className="min-h-full pb-28 bg-bg">
-      <TopBar back title={en ? 'My Organizations' : '내 조직'} />
-      <div className="px-4 pt-3">
-        {admin.length === 0 && member.length === 0 && <EmptyState emoji="" title={en ? 'No organizations yet' : '아직 조직이 없어요'} description={en ? 'Officers of a club, fraternity, sorority or co-op can post events here once they’re added as admins of their organization’s page.' : '동아리·Greek 운영진은 조직 페이지의 운영진으로 등록되면 여기서 행사를 올릴 수 있어요.'} action={<Button variant="outline" onClick={() => nav('/explore/clubs')}>{en ? 'Find your organization' : '조직 찾기'}</Button>} />}
-        {admin.length > 0 && <><div className="text-[13px] font-semibold text-ink-3 mb-1.5">{en ? 'You run' : '운영 중'}</div><div className="card rounded-[20px] divide-y divide-line">{admin.map((o) => <Row key={o.id} o={o} />)}</div></>}
-        {member.length > 0 && <><div className="text-[13px] font-semibold text-ink-3 mt-4 mb-1.5">{en ? 'Member of' : '회원'}</div><div className="card rounded-[20px] divide-y divide-line">{member.map((o) => <Row key={o.id} o={o} />)}</div></>}
+    <SubScreen title={en ? 'My Communities' : '내 커뮤니티'}>
+      <SegTabs className="-mx-4 px-2 mb-4" value={tab} onChange={(k) => setParams({ tab: k }, { replace: true })}
+        tabs={[{ key: 'followed', label: en ? 'Followed' : '팔로우' }, { key: 'member', label: en ? 'Member' : '회원' }]} />
+      {list.length === 0
+        ? <EmptyState className="pt-4" icon={<Users size={30} />} tone="rose" title={tab === 'member' ? (en ? 'No memberships yet' : '아직 회원인 곳이 없어요') : (en ? 'Follow a few communities' : '커뮤니티를 팔로우해 보세요')}
+            sub={tab === 'member' ? (en ? 'Groups you’ve joined show up here.' : '가입한 그룹이 여기에 보여요.') : (en ? 'Clubs, Greek life, co-ops and labs at your school.' : '우리 학교 동아리·그릭·코업·연구실.')} />
+        : <div className="space-y-3">
+            {list.map((o) => (
+              <RowCard key={o.id} tone="rose" icon={<Users size={21} />} title={o.name}
+                sub={[ORG_TYPE_LABELS[o.type], tab === 'member' ? (en ? 'Member' : '회원') : (en ? 'Followed' : '팔로우')].join(' · ')}
+                right={o.adminIds.includes(me) ? <Badge tone="sel">{en ? 'Admin' : '운영진'}</Badge> : undefined}
+                onClick={() => nav(`/orgs/${o.id}`)} />
+            ))}
+          </div>}
+      <InfoNote className="mt-4">{en ? 'Interests and follows are separate from verified membership.' : '관심·팔로우는 인증된 회원과 따로예요.'}</InfoNote>
+      <div className="flex flex-wrap gap-2.5 mt-4">
+        <Btn variant="outline" onClick={() => nav('/explore/clubs')}>{en ? 'Explore Communities' : '커뮤니티 둘러보기'}</Btn>
+        {admin.length > 0 && <Btn variant="outline" icon={<CalendarPlus size={17} />} onClick={() => nav(`/create/activity?kind=org_event&event=1&org=${admin[0].id}`)}>{en ? 'Post an event' : '행사 올리기'}</Btn>}
       </div>
-      {admin.length > 0 && (
-        <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] p-4 safe-bottom bg-bg/95 backdrop-blur">
-          <Button full size="lg" icon={<Plus size={18} />} onClick={() => nav(`/create/activity?kind=org_event&event=1&org=${admin[0].id}`)}>{en ? 'Create Event' : '행사 올리기'}</Button>
-        </div>
-      )}
-    </div>
+    </SubScreen>
   );
 }

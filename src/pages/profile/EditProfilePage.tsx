@@ -1,77 +1,62 @@
 import { useState } from 'react';
-import { t } from '@core/i18n';
 import { useNavigate } from 'react-router-dom';
-import { TopBar } from '@/components/layout/TopBar';
-import { Button, Chip, Field, Input, Textarea, Toggle, VisibilityPicker, Segmented, Avatar } from '@/components/ui';
-import { useViewer } from '@/hooks/useViewer';
-import { useAppStore } from '@core/store/useAppStore';
-import { api } from '@core/api';
-import { ALL_AVAILABILITY, ALL_INTERESTS, ALL_PURPOSES, AVAILABILITY_LABELS, INTEREST_EMOJI, INTEREST_LABELS, PURPOSE_LABELS } from '@core/lib/labels';
-import type { Availability, Interest, ProfileField, Purpose, Self } from '@core/types';
+import { Check, GraduationCap } from 'lucide-react';
+import { BottomSheet } from '@/components/ui';
+import { FormField, InfoNote, SelectField, TextArea, TextInput, cardCls } from '@/components/ha';
 import { cn } from '@core/lib/cn';
-import { isNativeShell } from '@/lib/native';
+import { SaveButton, SubScreen, STATUS_LABEL, YEAR_OPTIONS, en, entryYearFor, listToText, textToList, useSaveSelf, yearOfStudy } from './shared';
 
-const EMOJIS = ['🙂', '😎', '🧑‍💻', '👩‍🎨', '🧑‍🔬', '🏃', '🎸', '📚', '🌱', '🎨', '🚀', '🧗', '☕', '🐱', '🦊', '🎧'];
-
+/**
+ * Edit Profile (PDF S072): Name · Bio · University · Student status · Academic year · Spoken languages · Country of origin.
+ * 예전 화면의 키·목적(데이팅 포함)·좋아하는 것·지역 같은 칸은 여기서 뺐다 — 저장된 값은 그대로 두고 보이지만 않는다.
+ * 관심사는 Recommendation preferences(S078), 찾는 사람은 What you're looking for(S079), 공개 범위는 Visibility(S085).
+ * PDF 에 없는 Major(전공) 한 칸을 더했다 — 프로필 첫 줄("Design · Second-year")을 고칠 곳이 여기뿐이다.
+ */
 export function EditProfilePage() {
   const nav = useNavigate();
-  const v = useViewer();
-  const run = useAppStore((s) => s.run);
-  const me = v.me;
-  const [form, setForm] = useState<Self>(() => structuredClone(me));
-  const [busy, setBusy] = useState(false);
-  const patch = (p: Partial<Self>) => setForm((f) => ({ ...f, ...p }));
-  const toggle = <T,>(arr: T[], x: T) => (arr.includes(x) ? arr.filter((i) => i !== x) : [...arr, x]);
-  const fv = (k: ProfileField) => <VisibilityPicker compact value={form.fieldVisibility[k]} onChange={(vis) => patch({ fieldVisibility: { ...form.fieldVisibility, [k]: vis } })} />;
-  const aff = form.affiliation.type === 'university' ? form.affiliation : null;
+  const { me, busy, save } = useSaveSelf();
+  const aff = me.affiliation.type === 'university' ? me.affiliation : null;
+  const [name, setName] = useState(me.nickname);
+  const [bio, setBio] = useState(me.bio ?? '');
+  const [major, setMajor] = useState(aff?.department ?? '');
+  const [year, setYear] = useState(aff ? yearOfStudy(aff.year) : 1);
+  const [langs, setLangs] = useState(listToText(me.spokenLanguages));
+  const [country, setCountry] = useState(me.countryOfOrigin ?? '');
+  const [yearOpen, setYearOpen] = useState(false);
+  const ok = name.trim().length >= 2;
 
-  const save = async () => {
-    setBusy(true);
-    try {
-      const { id: _id, createdAt: _c, ...rest } = form;
-      await run(() => api.users.update(me.id, rest), t('프로필을 저장했어요.'));
-      nav('/profile', { replace: true });
-    } catch { setBusy(false); }
-  };
+  const submit = () => save({
+    nickname: name.trim(), bio: bio.trim(), spokenLanguages: textToList(langs), countryOfOrigin: country.trim(),
+    ...(aff ? { affiliation: { ...aff, department: major.trim(), ...(aff.role === 'undergraduate' && yearOfStudy(aff.year) !== year ? { year: entryYearFor(year) } : {}) } } : {}),
+  }, en ? 'Profile saved' : '프로필을 저장했어요');
 
   return (
-    <div className="min-h-full pb-28">
-      <TopBar back title={t('프로필 편집')} />
-      <div className="px-4 py-4 space-y-5">
-        <div className="flex items-center gap-4">
-          <Avatar emoji={form.avatar.emoji} hue={form.avatar.hue} url={form.avatar.url} size={80} className="!rounded-3xl text-4xl" />
-          <div className="flex-1">
-            {/* 얼굴·가면·뒷모습은 사진 위에 붙는 표시 — 이모지 아바타에는 뜻이 없다 */}
-            {form.avatar.url && <Segmented value={form.avatar.photoType} onChange={(t) => patch({ avatar: { ...form.avatar, photoType: t } })} options={[{ value: 'face', label: t('얼굴') }, { value: 'masked', label: t('가면') }, { value: 'back', label: t('뒷모습') }]} />}
-            {!form.avatar.url && <div className="text-[12px] font-semibold text-ink-3">{t('배경 색상')}</div>}
-            <input type="range" min={0} max={359} value={form.avatar.hue} onChange={(e) => patch({ avatar: { ...form.avatar, hue: Number(e.target.value) } })} className="w-full mt-2 accent-primary" aria-label={t('배경 색상')} />
-          </div>
-        </div>
-        <div className="grid grid-cols-8 gap-1.5">{EMOJIS.map((e) => <button key={e} type="button" onClick={() => patch({ avatar: { ...form.avatar, emoji: e } })} className={cn('h-10 rounded-xl text-xl', form.avatar.emoji === e ? 'bg-primary-soft ring-2 ring-primary' : 'bg-surface-2')}>{e}</button>)}</div>
-        <Field label={t('닉네임')} required><Input value={form.nickname} onChange={(e) => patch({ nickname: e.target.value })} maxLength={12} /></Field>
-        <Field label={t('지금 하고 싶은 활동 (한 줄)')} hint={t('사람 탭 카드에 표시돼요')}><Input placeholder={t('예: 오늘 저녁 신촌에서 커피 한 잔?')} value={form.nowWant ?? ''} onChange={(e) => patch({ nowWant: e.target.value })} /></Field>
-        <Field label={t('자기소개')} right={fv('bio')}><Textarea value={form.bio} onChange={(e) => patch({ bio: e.target.value })} maxLength={200} /></Field>
-        <Field label={t('좋아하는 것')} right={fv('likes')}><Input value={form.likes} onChange={(e) => patch({ likes: e.target.value })} /></Field>
-        <Field label={t('자유시간에 하고 싶은 활동')} right={fv('freeTime')}><Input value={form.freeTime} onChange={(e) => patch({ freeTime: e.target.value })} /></Field>
-        <Field label={t('관심사')} right={fv('interests')}><div className="flex flex-wrap gap-2">{ALL_INTERESTS.map((i) => <Chip key={i} active={form.interests.includes(i)} onClick={() => patch({ interests: toggle(form.interests, i) as Interest[] })}>{INTEREST_EMOJI[i]} {INTEREST_LABELS[i]}</Chip>)}</div></Field>
-        <Field label={t('이용 목적')} right={fv('purposes')}><div className="flex flex-wrap gap-2">{ALL_PURPOSES.map((p) => <Chip key={p} active={form.purposes.includes(p)} onClick={() => patch({ purposes: toggle(form.purposes, p) as Purpose[] })}>{PURPOSE_LABELS[p]}</Chip>)}</div></Field>
-        <Field label={t('활동 가능한 시간')} right={fv('availability')}><div className="flex flex-wrap gap-2">{ALL_AVAILABILITY.map((a) => <Chip key={a} active={form.availability === a} onClick={() => patch({ availability: a as Availability })}>{AVAILABILITY_LABELS[a]}</Chip>)}</div></Field>
-        <div className="grid grid-cols-2 gap-3">
-          <Field label={t('지역')}><Input value={form.region} onChange={(e) => patch({ region: e.target.value })} /></Field>
-        </div>
-        <Field label={t('관심 있는 사람의 조건 (선택)')} right={fv('preferredPartner')}><Input value={form.preferredPartner ?? ''} onChange={(e) => patch({ preferredPartner: e.target.value })} /></Field>
-        {aff && (
-          <div className="card px-4 divide-y divide-line">
-            <div className="py-3"><b className="text-[13px]">{t('학교 정보')}</b><div className="text-[12px] text-ink-3">{aff.schoolName} · {aff.department} · {aff.emailVerified ? t('학교 인증 완료') : t('미인증')}</div></div>
-            <Toggle label={t('학교명 공개')} checked={aff.showSchool} onChange={(val) => patch({ affiliation: { ...aff, showSchool: val } })} />
-            <Toggle label={t('학과 공개')} checked={aff.showDepartment} onChange={(val) => patch({ affiliation: { ...aff, showDepartment: val } })} />
-            {/* 데모용 즉시 인증·본인 인증 토글 — iPhone 앱에서는 숨긴다 (학교 이메일은 설정 → 학교 이메일 카드에서 코드로 인증) */}
-            {!aff.emailVerified && !isNativeShell() && me.sample && <div className="py-3"><Button size="sm" variant="secondary" onClick={() => patch({ affiliation: { ...aff, emailVerified: true } })}>{t('학교 이메일 인증하기 (데모: 즉시 완료)')}</Button></div>}
-          </div>
-        )}
-        {!isNativeShell() && me.sample && <div className="card px-4"><Toggle label={t('본인 인증')} description={form.identityVerified ? t('인증 완료 — 프로필에 배지가 표시돼요') : t('데모에서는 토글로 인증 상태를 바꿀 수 있어요')} checked={form.identityVerified} onChange={(val) => patch({ identityVerified: val })} /></div>}
+    <SubScreen title={en ? 'Edit Profile' : '프로필 편집'} cta={<SaveButton label={en ? 'Save Profile' : '프로필 저장'} busy={busy} disabled={!ok} onClick={submit} />}>
+      <div className="space-y-5">
+        <FormField label={en ? 'Name' : '이름'}><TextInput value={name} maxLength={12} onChange={(e) => setName(e.target.value)} autoComplete="nickname" /></FormField>
+        <FormField label={en ? 'Bio' : '소개'}><TextArea value={bio} maxLength={200} onChange={(e) => setBio(e.target.value)} placeholder={en ? 'One line about you' : '나를 한 줄로'} className="min-h-[72px]" /></FormField>
+        {aff && <>
+          <FormField label={en ? 'University' : '학교'} hint={aff.emailVerified ? (en ? 'Verified with your school email' : '학교 이메일로 인증됨') : (en ? 'Add your school email in Settings › Privacy & safety' : '설정 › 개인정보와 안전에서 학교 이메일을 추가하세요')}>
+            <div className={cn(cardCls, 'h-12 px-4 flex items-center gap-2.5 rounded-2xl text-[15px]')}><GraduationCap size={19} className="text-ink-3" />{aff.schoolName}</div>
+          </FormField>
+          <FormField label={en ? 'Major' : '전공'}><TextInput value={major} maxLength={60} onChange={(e) => setMajor(e.target.value)} placeholder={en ? 'Optional' : '선택'} /></FormField>
+          <FormField label={en ? 'Student status' : '학생 상태'}><SelectField value={STATUS_LABEL[aff.role]} placeholder="" onClick={() => nav('/profile/status')} /></FormField>
+          {aff.role === 'alumni' && <FormField label={en ? 'Your next chapter' : '다음 걸음'}><SelectField value={[me.nextChapter?.role, me.nextChapter?.company, me.nextChapter?.city].filter(Boolean).join(' · ')} placeholder={en ? 'Optional' : '선택'} onClick={() => nav('/profile/next-chapter')} /></FormField>}
+          {aff.role === 'undergraduate' && <FormField label={en ? 'Academic year' : '학년'}><SelectField value={YEAR_OPTIONS[year - 1]} placeholder="" onClick={() => setYearOpen(true)} /></FormField>}
+        </>}
+        <FormField label={en ? 'Spoken languages' : '쓰는 언어'} hint={en ? 'Separate with commas' : '쉼표로 나눠 적어요'}><TextInput value={langs} maxLength={200} onChange={(e) => setLangs(e.target.value)} placeholder={en ? 'Optional' : '선택'} /></FormField>
+        <FormField label={en ? 'Country of origin' : '출신 나라'}><TextInput value={country} maxLength={56} onChange={(e) => setCountry(e.target.value)} placeholder={en ? 'Optional · separate from language' : '선택 · 언어와 따로'} /></FormField>
+        <InfoNote>{en ? 'Languages and country are shown to people at your school unless you change it in Discovery & privacy.' : '언어와 나라는 같은 학교 사람에게 보여요. Discovery & privacy 에서 바꿀 수 있어요.'}</InfoNote>
       </div>
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-surface/95 backdrop-blur border-t border-line p-3 safe-bottom z-20"><Button full size="lg" loading={busy} disabled={form.nickname.trim().length < 2} onClick={save}>{t('저장')}</Button></div>
-    </div>
+      <BottomSheet open={yearOpen} onClose={() => setYearOpen(false)} title={en ? 'Academic year' : '학년'}>
+        <div className="space-y-2 pb-2">
+          {YEAR_OPTIONS.map((label, i) => (
+            <button key={label} onClick={() => { setYear(i + 1); setYearOpen(false); }} className={cn(cardCls, 'w-full h-12 px-4 flex items-center justify-between text-left text-[15px] press', year === i + 1 && 'border-sel-line text-sel-fg')}>
+              {label}{year === i + 1 && <Check size={18} />}
+            </button>
+          ))}
+        </div>
+      </BottomSheet>
+    </SubScreen>
   );
 }

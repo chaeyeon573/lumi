@@ -1,7 +1,7 @@
 /** 프로필 질문 풀. Hinge식 구조: 텍스트 3개 필수 + 음성 1개·투표 1개 선택
  *  필수 3개는 슬롯별로 카테고리를 분배해 어떤 카드를 봐도 "뭘 · 어디서/언제 · 어떤 사람과"가 한 줄씩 나오게 한다.
  *  1번 슬롯은 첫 질문(FIRST_PROMPT_ID)으로 고정 — 답이 추천과 카드 첫 줄에 바로 쓰인다. */
-import { t } from '@core/i18n';
+import { t, lang } from '@core/i18n';
 export type PromptCategory = 'activity' | 'campus' | 'time' | 'style' | 'connect' | 'me';
 
 export const PROMPT_CATEGORY_LABELS: Record<PromptCategory, string> = {
@@ -36,7 +36,20 @@ export const TEXT_PROMPTS: PromptQuestion[] = [
   { id: 'q_new', text: t('최근에 새로 시작한 것'), category: 'me' },
   { id: 'q_emoji', text: t('나를 설명하는 이모지 세 개'), category: 'me', placeholder: '☕📚🏃' },
   { id: 'q_one_line', text: t('요즘 나를 한 문장으로'), category: 'me' },
+  // Harness A "Get to know me" (S073) — 짧은 답 세 개, 모두 선택
+  ...GET_TO_KNOW_ME_PROMPTS(),
 ];
+
+/** S073 의 세 질문 — 화면(EditPromptsPage)이 이 순서로 보여 준다 */
+export const GET_TO_KNOW_ME_IDS = ['q_down_for', 'q_weekend', 'q_people_to'] as const;
+function GET_TO_KNOW_ME_PROMPTS(): PromptQuestion[] {
+  const en = lang === 'en';
+  return [
+    { id: 'q_down_for', text: en ? 'I’m always down for…' : '언제든 좋다고 하는 것…', category: 'activity', placeholder: en ? 'A coffee after class.' : '수업 끝나고 커피 한 잔.' },
+    { id: 'q_weekend', text: en ? 'My ideal weekend…' : '내가 그리는 주말…', category: 'time', placeholder: en ? 'A hike, a book, and good company.' : '산책, 책 한 권, 좋은 사람들.' },
+    { id: 'q_people_to', text: en ? 'I’m looking for people to…' : '이런 걸 같이 할 사람을 찾아요…', category: 'connect', placeholder: en ? 'Try something new with.' : '새로운 걸 같이 해 볼 사람.' },
+  ];
+}
 
 export const VOICE_PROMPTS: PromptQuestion[] = [
   { id: 'v_now', text: t('지금 같이 하고 싶은 걸 30초로 말해주세요'), category: 'activity' },

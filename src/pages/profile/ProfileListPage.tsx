@@ -1,38 +1,44 @@
+import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { t } from '@core/i18n';
-import { Heart } from 'lucide-react';
-import { TopBar } from '@/components/layout/TopBar';
-import { Avatar, EmptyState, SampleTag, VerifiedBadge } from '@/components/ui';
-import { affiliationText } from '@/components/cards/PersonCard';
-import { useViewer } from '@/hooks/useViewer';
-import { useAppStore } from '@core/store/useAppStore';
+import { UserPlus } from 'lucide-react';
 import { friendsOf, followersOf, followingOf } from '@core/lib/relations';
+import { EmptyState, InfoNote, SearchField, SegTabs } from '@/components/ha';
+import { useViewer } from '@/hooks/useViewer';
+import { PersonRow, matches, usersOf } from './PeopleBits';
+import { SubScreen, en } from './shared';
 
-const TITLES: Record<string, string> = { friends: t('친구'), followers: t('팔로워'), following: t('팔로잉'), likes: t('관심 목록') };
+type List = 'friends' | 'followers' | 'following';
 
+/**
+ * Friends & followers (PDF S075) — 한 화면, SegTabs Friends · Followers · Following (주소 /profile/friends|followers|following 이 탭).
+ * SearchField, PersonCards + Message (메시지를 보낼 수 있는 사람만), "Friends are mutually confirmed. Followers are a separate list."
+ * 팔로우한 동아리는 My Communities 에 있다 — 여기는 사람만.
+ */
 export function ProfileListPage() {
-  const { list = 'friends' } = useParams();
+  const { list: raw } = useParams();
+  const list: List = raw === 'followers' || raw === 'following' ? raw : 'friends';
   const nav = useNavigate();
   const v = useViewer();
-  const orgs = useAppStore((s) => s.organizations);
-  const me = v.me;
-  const ids = list === 'friends' ? friendsOf(v.snap, me.id) : list === 'followers' ? followersOf(v.snap, me.id) : list === 'following' ? followingOf(v.snap, me.id) : v.snap.relationships.likes.filter((l) => l.fromId === me.id).map((l) => l.toId);
+  const [q, setQ] = useState('');
+  const ids = list === 'friends' ? friendsOf(v.snap, v.me.id) : list === 'followers' ? followersOf(v.snap, v.me.id) : followingOf(v.snap, v.me.id);
+  const all = usersOf(ids, v.userById);
+  const people = all.filter((u) => matches(u, q));
+  const empty = {
+    friends: [en ? 'No friends yet' : '아직 친구가 없어요', en ? 'Friends are people who accepted your request — or you theirs.' : '요청을 서로 수락하면 친구가 돼요.'],
+    followers: [en ? 'No followers yet' : '아직 팔로워가 없어요', en ? 'People who follow you show up here.' : '나를 팔로우한 사람이 여기에 보여요.'],
+    following: [en ? 'Not following anyone yet' : '아직 팔로우한 사람이 없어요', en ? 'People you follow show up here.' : '내가 팔로우한 사람이 여기에 보여요.'],
+  }[list];
+
   return (
-    <div className="min-h-full">
-      <TopBar back title={TITLES[list] ?? t('목록')} />
-      {list === 'likes' && <p className="px-4 pt-3 text-[12px] text-ink-3 flex items-center gap-1"><Heart size={12} className="text-heart" />{t('관심은 상대에게 공개되지 않아요. 서로 관심을 표시하면 매칭돼요.')}</p>}
-      <div className="px-4 py-3">
-        {ids.length === 0 ? <EmptyState emoji="🙋" title={t('아직 아무도 없어요')} /> : (
-          <div className="card divide-y divide-line">
-            {ids.map((id) => {
-              const u = v.userById(id); const o = orgs.find((x) => x.id === id);
-              if (o) return <button key={id} onClick={() => nav(`/orgs/${id}`)} className="w-full flex items-center gap-3 px-3.5 py-3 text-left press"><Avatar emoji={o.logo.emoji} hue={o.logo.hue} url={o.logo.url} size={40} className="!rounded-xl" /><div className="flex-1"><b className="text-[14px]">{o.name}</b><div className="text-[12px] text-ink-3">{t('조직')}</div></div></button>;
-              if (!u) return null;
-              return <button key={id} onClick={() => nav(`/users/${id}`)} className="w-full flex items-center gap-3 px-3.5 py-3 text-left press"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={40} /><div className="flex-1 min-w-0"><b className="text-[14px] flex items-center gap-1">{u.sample && <SampleTag />}{u.nickname}{u.affiliation.type === 'university' && !u.sample && u.affiliation.emailVerified && <VerifiedBadge />}</b><div className="text-[12px] text-ink-3 truncate">{affiliationText(u)}</div></div>{list === 'likes' && v.isMutual(id) && <span className="text-[11px] font-bold text-heart">{t('매칭')}</span>}</button>;
-            })}
-          </div>
-        )}
-      </div>
-    </div>
+    <SubScreen title={en ? 'Friends & followers' : '친구와 팔로워'}>
+      <SegTabs className="-mx-4 px-2 mb-4" value={list} onChange={(k) => nav(`/profile/${k}`, { replace: true })}
+        tabs={[{ key: 'friends', label: en ? 'Friends' : '친구' }, { key: 'followers', label: en ? 'Followers' : '팔로워' }, { key: 'following', label: en ? 'Following' : '팔로잉' }]} />
+      {all.length > 0 && <SearchField className="mb-3" placeholder={en ? 'Search your people' : '내 사람 찾기'} value={q} onChange={setQ} />}
+      {all.length === 0
+        ? <EmptyState className="pt-4" icon={<UserPlus size={28} />} tone="rose" title={empty[0]} sub={empty[1]} />
+        : <div className="space-y-3">{people.map((u) => <PersonRow key={u.id} user={u} action="message" />)}</div>}
+      {all.length > 0 && people.length === 0 && <p className="text-[14px] text-ink-3 text-center py-6">{en ? 'No one matches that search.' : '찾는 사람이 없어요.'}</p>}
+      <InfoNote className="mt-4">{en ? 'Friends are mutually confirmed. Followers are a separate list.' : '친구는 서로 수락한 사이예요. 팔로워는 따로예요.'}</InfoNote>
+    </SubScreen>
   );
 }

@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Users, CalendarCheck } from 'lucide-react';
+import { Users, CalendarCheck, Sparkles } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { Avatar } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
-import { ORG_TYPE_LABELS, ROLE_LABELS } from '@core/lib/labels';
+import { ORG_TYPE_LABELS } from '@core/lib/labels';
 import { friendsOf } from '@core/lib/relations';
 import { todayISO, formatDateTime } from '@core/lib/format';
-import { questionById } from '@core/data/prompts';
+import { GET_TO_KNOW_ME_IDS, questionById } from '@core/data/prompts';
+import { majorYear } from './shared';
+import { OPEN_KIND_LABEL, WHEN_LABEL, activeOpenTo } from './PreferencePages';
 import { shareOrCopy } from '@/lib/native';
 import { BrandHeader, Screen, Btn, ChoiceChips, RowCard, SectionHeader, ErrorScreen, LoadingCards, InfoNote, cardCls } from '@/components/ha';
 import { cn } from '@core/lib/cn';
@@ -44,7 +46,10 @@ export function ProfilePage() {
   const plans = (tab === 'created' ? activities.filter((a) => a.hostId === me.id) : mine.filter((a) => (tab === 'upcoming' ? a.date >= today : a.date < today)))
     .sort((a, b) => (tab === 'past' ? -1 : 1) * (a.date + a.startTime).localeCompare(b.date + b.startTime));
   const aff = me.affiliation.type === 'university' ? me.affiliation : null;
-  const prompt = me.prompts[0];
+  // Get to know me (S073) 의 답이 먼저, 없으면 예전 질문 답
+  const answered = me.prompts.filter((p) => p.answer.trim());
+  const prompt = GET_TO_KNOW_ME_IDS.map((id) => answered.find((p) => p.questionId === id)).find(Boolean) ?? answered[0];
+  const openTo = activeOpenTo(me.openTo);
   const share = async () => {
     const url = `${window.location.origin}/users/${me.id}`;
     const r = await shareOrCopy({ title: me.nickname, text: en ? `${me.nickname} on Lumi` : `Lumi 의 ${me.nickname}`, url, copy: url });
@@ -60,10 +65,15 @@ export function ProfilePage() {
           <div className="min-w-0">
             <h1 className="ha-title truncate">{me.nickname}</h1>
             {aff?.schoolName && <div className="text-[13px] text-ink-2 truncate mt-1">{aff.schoolName}</div>}
-            {aff && <div className="text-[13px] text-ink-3 truncate">{[aff.department, ROLE_LABELS[aff.role]].filter(Boolean).join(' · ')}</div>}
+            {aff && <div className="text-[13px] text-ink-3 truncate">{majorYear(me)}</div>}
           </div>
         </div>
         {me.bio && <p className="text-[14.5px] text-ink mt-4 leading-snug">{me.bio}</p>}
+        {/* Open to (S080) — 켜 두었으면 한 줄, 아니면 켜는 링크 */}
+        <button onClick={() => nav('/profile/open-to')} className="mt-3 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-sel-fg press">
+          <Sparkles size={15} />
+          {openTo ? `${en ? 'Open to' : ''} ${openTo.kinds.map((k) => OPEN_KIND_LABEL[k].toLowerCase()).join(', ')} · ${WHEN_LABEL[openTo.when].toLowerCase()}${en ? '' : ' 좋아요'}` : (en ? 'Set what you’re open to' : '지금 같이 하고 싶은 것 알리기')}
+        </button>
         <div className="grid grid-cols-2 gap-3 mt-4">
           <Btn variant="outline" onClick={() => nav('/profile/edit')}>{en ? 'Edit Profile' : '프로필 편집'}</Btn>
           <Btn variant="outline" onClick={share}>{en ? 'Share Profile' : '프로필 공유'}</Btn>
