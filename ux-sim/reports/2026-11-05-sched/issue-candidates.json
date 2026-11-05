@@ -1,0 +1,87 @@
+{
+  "generatedAt": "2026-11-05T19:22:34.279Z",
+  "source": "ux-sim/reports/2026-11-05-sched/analysis.json",
+  "layer": "curated (analysis.json)",
+  "rule": "not environment-limited, and severity ≥ 3 or ≥ 2 personas, unless the problem sets file: true|false",
+  "dedupe": "before creating, search existing issues for <!-- ux-sim:problem=<key> --> and for any <!-- ux-sim:fp=<fingerprint> --> marker; update the match instead of duplicating",
+  "note": "Candidates only — ux-sim never creates issues.",
+  "coverage": {
+    "findings": 13,
+    "grouped": 11,
+    "dismissed": 2,
+    "unassigned": []
+  },
+  "warnings": [],
+  "candidates": [
+    {
+      "key": "going-button-unclear",
+      "fingerprints": [
+        "afdbc3f2e8da"
+      ],
+      "title": "[ux-sim] On a plan, \"Going\" looks like a status, joins instantly, and the count disagrees (\"1 going\" vs \"0 joined\")",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nMinji today, Aisha on 2026-11-04: both unsure whether \"Going\" was already set or the button, and both saw the list and detail counts disagree.\n\nSeverity **2** (Moderate — slowed me down or made me hesitate; I recovered on my own.) · analyst confidence high · **1 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nSame label for state and action; the list counts the host, the detail page does not.\n\n### Evidence\n\n- run `sched-20261105-1915-minji-lunch-today` step 3 — “뭐지, list said '1 going' but here it says '0 joined · cap 4'. is anyone actually coming? and the big lime 'Going' — did” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/003-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/003-click-som.jpg)\n\nRuns: [`sched-20261105-1915-minji-lunch-today`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261105-1915-minji-lunch-today/report.md)\n\n### Who\n\nPersonas: `minji-freshman-17` · scenarios: `lunch-today`\n\n### Environment note\n\nSame on live.\n\n### Suggested fix (hypothesis)\n\nLabel the action \"Join lunch\"; count the host the same way on both screens.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=going-button-unclear -->\n<!-- ux-sim:fp=afdbc3f2e8da -->",
+      "labels": [
+        "ux-sim",
+        "severity:2",
+        "ux_confusion"
+      ],
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "lunch-today"
+      ],
+      "severity": 2
+    },
+    {
+      "key": "floating-pills-cover-buttons",
+      "fingerprints": [
+        "ed2dd86233eb",
+        "44271af15761"
+      ],
+      "title": "[ux-sim] The floating Design pill covers real buttons and chat messages (4th day in a row)",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nCovered the event card in the lunch chat and the first system message in the ride chat.\n\nSeverity **1** (Minor — noticed it, cosmetic or a small annoyance; did not slow me down.) · analyst confidence high · **2 simulated persona(s)** across 2 scenario(s).\n\n### Root cause (hypothesis)\n\nFixed top-right pill over page content; owner already chose \"New only\".\n\n### Evidence\n\n- run `sched-20261105-1915-priya-ride-sfo-thanksgiving` step 11 — “The floating Design pill is now covering the first system message, third screen in a row it sits on top of conte” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261105-1915-priya-ride-sfo-thanksgiving/shots/011-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261105-1915-priya-ride-sfo-thanksgiving/shots/011-click-som.jpg)\n\nRuns: [`sched-20261105-1915-priya-ride-sfo-thanksgiving`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261105-1915-priya-ride-sfo-thanksgiving/report.md)\n\n### Who\n\nPersonas: `minji-freshman-17`, `priya-phd-desktop` · scenarios: `lunch-today`, `ride-sfo-thanksgiving`\n\n### Environment note\n\nSame on live.\n\n### Suggested fix (hypothesis)\n\nRemove the pill.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=floating-pills-cover-buttons -->\n<!-- ux-sim:fp=ed2dd86233eb -->\n<!-- ux-sim:fp=44271af15761 -->",
+      "labels": [
+        "ux-sim",
+        "severity:1",
+        "bug"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "priya-phd-desktop"
+      ],
+      "scenarios": [
+        "lunch-today",
+        "ride-sfo-thanksgiving"
+      ],
+      "severity": 1
+    }
+  ],
+  "skipped": [
+    {
+      "key": "desktop-phone-column",
+      "title": "On a laptop the app is a phone-width column floating in black",
+      "why": "file: false"
+    },
+    {
+      "key": "rides-hidden-under-meetups",
+      "title": "Rides is not on Home or in onboarding; students find it only at the bottom of Social › Meetups",
+      "why": "file: false"
+    },
+    {
+      "key": "timetable-behind-schedule-tab",
+      "title": "The Schedule tab opens \"My Plans\"; the class timetable is behind a second button",
+      "why": "file: false"
+    },
+    {
+      "key": "section-picker-extra-step",
+      "title": "Adding a class asks for a discussion section from a long list before saving",
+      "why": "file: false"
+    },
+    {
+      "key": "timetable-class-count",
+      "title": "Timetable header says \"2 classes\" for one course that meets twice a week",
+      "why": "file: false"
+    }
+  ]
+}

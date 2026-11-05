@@ -1,0 +1,1594 @@
+{
+  "schemaVersion": 1,
+  "runId": "sched-20261105-1915-minji-lunch-today",
+  "status": "finished",
+  "createdAt": "2026-11-05T19:16:28.392Z",
+  "finishedAt": "2026-11-05T19:17:12.423Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "persona": {
+    "id": "minji-freshman-17",
+    "name": "Minji",
+    "age": 17,
+    "year": "First-year (started college a year early)",
+    "school": "UC Berkeley",
+    "major": "Undeclared, leaning Data Science",
+    "account": {
+      "$comment": "Profile for auth: fresh — the harness registers this account through the app's own sign-up API (lib/account.mjs). nickname defaults to name, birthYear to this year − age.",
+      "nickname": "Minji",
+      "department": "Undeclared",
+      "yearInSchool": 1,
+      "goals": [
+        "friends",
+        "lunch"
+      ],
+      "interests": [
+        "meal",
+        "coffee"
+      ],
+      "purposes": [
+        "friend"
+      ],
+      "lookingFor": [
+        "friend"
+      ]
+    },
+    "purpose": "Make a couple of friends to eat with — she eats most meals alone in her dorm room.",
+    "techFamiliarity": "high",
+    "readingDepth": 0.3,
+    "readingCharsPerSec": 30,
+    "language": {
+      "preferred": "ko",
+      "englishUiComfort": "medium",
+      "notes": "Moved from Seoul in August. Reads English fine but slowly; would switch an app to Korean if she noticed the option. Types in Korean or short English."
+    },
+    "device": {
+      "type": "phone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "locale": "ko-KR"
+    },
+    "patience": {
+      "maxSteps": 40,
+      "frustrationThreshold": 4.5,
+      "confusionTolerance": 3,
+      "timeBudgetSec": 300
+    },
+    "backstory": "I'm 17 and everyone on my floor is 18 or 19 and already seems to have a group. I use Instagram and KakaoTalk all day, so I'm fast with apps, but I hate apps that feel like dating apps or ask for too much about me. If I see people from my dorm or my classes I'd say hi. I'm a bit worried about being younger than everyone.",
+    "quitsWhen": [
+      "It looks like a dating app or wants a big face photo",
+      "Nobody seems to be around my age or in my dorm",
+      "It asks for lots of personal info before showing me anything",
+      "Walls of English text"
+    ],
+    "voice": "Short, casual, sometimes mixes Korean words (헐, 뭐지, 아 귀찮아). Honest about feeling awkward."
+  },
+  "scenario": {
+    "id": "lunch-today",
+    "title": "Find someone to get lunch with today",
+    "goal": "It's a weekday and you'd rather not eat lunch alone again. Use the app to find someone (or a group) to get lunch with today, and let them know you're in.",
+    "startUrl": "/",
+    "setup": {
+      "auth": "fresh",
+      "notes": "A brand-new real account (not the shared demo). Two other real students (local fixtures, not samples) have posted lunch plans for today, so there is someone to join — as on live, where real students post plans.",
+      "peers": [
+        {
+          "nickname": "Hana",
+          "department": "Cognitive Science",
+          "yearInSchool": 2,
+          "age": 19,
+          "activity": {
+            "category": "meal",
+            "emoji": "🍱",
+            "title": "Lunch at Crossroads — anyone want to join?",
+            "description": "Grabbing lunch between classes. Happy to meet new people!",
+            "startTime": "12:30",
+            "endTime": "13:15",
+            "place": {
+              "name": "Crossroads Dining Commons",
+              "area": "Unit 1 / Southside",
+              "lat": 37.8667,
+              "lng": -122.256
+            },
+            "capacity": 4,
+            "joinPolicy": "open"
+          }
+        },
+        {
+          "nickname": "Leo",
+          "department": "Economics",
+          "yearInSchool": 3,
+          "age": 21,
+          "activity": {
+            "category": "meal",
+            "emoji": "🌯",
+            "title": "Quick burrito on Bancroft",
+            "description": "30 min, then I have section.",
+            "startTime": "13:00",
+            "endTime": "13:40",
+            "place": {
+              "name": "Bancroft Way",
+              "area": "Southside",
+              "lat": 37.8686,
+              "lng": -122.2595
+            },
+            "capacity": 3,
+            "joinPolicy": "approval"
+          }
+        }
+      ]
+    },
+    "success": {
+      "description": "During the run the persona's own account joined/requested one of today's lunch plans, posted its own meal plan for today, or messaged in a lunch plan's chat.",
+      "any": [
+        {
+          "record": {
+            "collection": "participations",
+            "where": {
+              "userId": "$me",
+              "activityId": {
+                "in": "$peerActivities"
+              }
+            },
+            "description": "joined or asked to join a peer's lunch plan"
+          }
+        },
+        {
+          "record": {
+            "collection": "participations",
+            "where": {
+              "userId": "$me"
+            },
+            "description": "joined or asked to join a plan"
+          }
+        },
+        {
+          "record": {
+            "collection": "activities",
+            "where": {
+              "hostId": "$me",
+              "date": "$today",
+              "category": {
+                "re": "^(meal|coffee)$"
+              }
+            },
+            "description": "posted a meal/coffee plan for today"
+          }
+        },
+        {
+          "record": {
+            "collection": "activities",
+            "where": {
+              "hostId": "$me",
+              "date": "$today",
+              "title": {
+                "re": "lunch|eat|food|bite|meal|점심|밥"
+              }
+            },
+            "description": "posted a lunch plan for today"
+          }
+        },
+        {
+          "record": {
+            "collection": "chatRooms",
+            "where": {
+              "memberIds": {
+                "has": "$me"
+              },
+              "messages": {
+                "some": {
+                  "senderId": "$me",
+                  "system": {
+                    "exists": false
+                  }
+                }
+              }
+            },
+            "fresh": "changed",
+            "description": "sent a message in a chat"
+          }
+        }
+      ]
+    }
+  },
+  "target": {
+    "mode": "local",
+    "baseUrl": "http://localhost:38795",
+    "stack": {
+      "catalog": {
+        "kind": "builtin",
+        "source": "built-in sample catalog (packages/core/src/data/catalog)",
+        "why": "UX_SIM_CATALOG=builtin"
+      },
+      "events": {
+        "kind": "cached",
+        "source": "https://heetz.up.railway.app POST /api/auth/demo + POST /api/bootstrap (read-only), worker-fetched opportunities",
+        "baseUrl": "https://heetz.up.railway.app",
+        "fetchedAt": "2026-11-05T19:15:53.601Z",
+        "stamp": "2cc1135f",
+        "opportunities": 1282,
+        "updatedExisting": 132,
+        "byType": {
+          "internship": 570,
+          "hackathon": 111,
+          "lab": 40,
+          "event": 178,
+          "scholarship": 65,
+          "exchange": 317,
+          "startup": 1
+        },
+        "eventsThisWeek": 122,
+        "freeFoodThisWeek": 5
+      },
+      "port": 38795,
+      "worktree": "/home/user/lumi-live",
+      "commit": "9add077e78dfa02c2c4908ee6ca5c6781fad3cd3",
+      "stamp": "9add077e78df",
+      "dirty": false,
+      "dataFile": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/stack/db.json",
+      "template": "ux-sim/stack/templates/lumi-live-9add077e78df-ev2cc1135f.json",
+      "log": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/stack/server.log",
+      "owned": true,
+      "autoreply": false
+    },
+    "liveGuard": {
+      "enabled": false
+    }
+  },
+  "auth": {
+    "mode": "fresh",
+    "peers": [
+      {
+        "userId": "u_4t1mbsff0q",
+        "nickname": "Hana",
+        "activityId": "a_kbt0y2ff3u"
+      },
+      {
+        "userId": "u_w6w8dmff6f",
+        "nickname": "Leo",
+        "activityId": "a_nyzo6gff8q"
+      }
+    ],
+    "userId": "u_ft8e8yfevm",
+    "email": "minji.odayfepo@berkeley.edu",
+    "sample": false,
+    "emailVerified": true,
+    "profile": {
+      "nickname": "Minji",
+      "birthYear": 2009,
+      "department": "Undeclared",
+      "yearInSchool": 1,
+      "role": "undergraduate",
+      "year": 2026,
+      "gender": "private",
+      "goals": [
+        "friends",
+        "lunch"
+      ],
+      "interests": [
+        "meal",
+        "coffee"
+      ],
+      "purposes": [
+        "friend"
+      ],
+      "lookingFor": [
+        "friend"
+      ],
+      "likes": "",
+      "bio": "",
+      "language": "ko",
+      "appLanguage": null,
+      "schoolId": "s_berkeley"
+    },
+    "createdVia": "POST /api/schools/send-code → /api/schools/verify-code → /api/auth/register"
+  },
+  "harness": {
+    "hash": "6f174347960d",
+    "commit": "29aa633114d3a6233c4828a1d8cf59485768bd2a",
+    "dirty": false
+  },
+  "environment": {
+    "summary": "Local stack: this worktree's server + built web app, fresh seeded FileStore per run, no secrets, no worker.",
+    "knownLimits": [
+      "Dining menus and RSF gym crowd levels need live campus sources (the local stack runs with CAMPUS_LIVE=0) — empty or missing data there is not a UX bug.",
+      "AI features (Ask Lumi, AI profile draft on /start, conversation starters) need an OpenAI key; none is configured locally.",
+      "Course catalog is the built-in sample list (~210 courses, e.g. MATH 1A; UX_SIM_CATALOG=builtin). Live has the imported current-term Berkeley schedule (e.g. MATH 51) — course-name findings on timetable/class screens are marked environment-limited.",
+      "Campus events, free food, internships, hackathons and scholarships are a read-only snapshot of live (1282 real items, 122 events this week, taken 2026-11-05 19:15 UTC) plus the CSV calendar. Nothing new appears during the run; Q&A and reviews are empty.",
+      "No e-mail is sent: the sign-up / sign-in code is shown on screen in the hint (live sends a real e-mail).",
+      "Real-time updates (SSE) work locally; other people never reply unless the stack was started with --autoreply.",
+      "Signed in as a brand-new real (non-sample, e-mail-verified) account made for this run. Other students exist only if the scenario seeds peers (local fixtures); sample profiles are hidden from real accounts, as on live."
+    ],
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "locale": "ko-KR",
+    "timezone": "America/Los_Angeles",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+    "browserVersion": "153.0.8010.12"
+  },
+  "limits": {
+    "maxSteps": 40,
+    "frustrationThreshold": 4.5,
+    "confusionTolerance": 3,
+    "timeBudgetSec": 300,
+    "weights": {
+      "failed": 1,
+      "no_effect": 1,
+      "repeated": 0.75,
+      "backtrack": 0.5,
+      "mismatch": 0.5
+    }
+  },
+  "counters": {
+    "actions": 5,
+    "frustration": 0,
+    "confusionNotes": 1,
+    "simTimeSec": 15.501999999999997
+  },
+  "steps": [
+    {
+      "index": 0,
+      "at": "2026-11-05T19:16:29.628Z",
+      "kind": "start",
+      "command": "start",
+      "args": {
+        "persona": "minji-freshman-17",
+        "scenario": "lunch-today",
+        "auth": "fresh"
+      },
+      "latencyMs": 1091,
+      "urlBefore": null,
+      "setupNotes": [
+        "seeded 2 peer account(s) (real, non-sample local fixtures): Hana, Leo",
+        "signed in as a brand-new verified account minji.odayfepo@berkeley.edu (Minji, Undeclared, born 2009)"
+      ],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:38795/",
+      "route": "/",
+      "screenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/000-start.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/000-start-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 20,
+        "newElementIds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "elements": [
+          "[1]<button> Search",
+          "[2]<button> Messages",
+          "[3]<button> Events",
+          "[4]<button> Opportunities",
+          "[5]<button> Clubs & Groups",
+          "[6]<button> Meetups",
+          "[7]<button> See all",
+          "[8]<button> (no label)",
+          "[9]<button> Campus event Grad Student Appreciation Party Sat, Nov 7 ASUC Student Union",
+          "[10]<button> Save",
+          "[11]<button> (no label)",
+          "[12]<button> Campus event Free Coffee and Tea for Students Mon, Nov 9 Law",
+          "[13]<button> Save",
+          "[14]<a selected> Home",
+          "[15]<a> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design"
+        ],
+        "text": "lumi | . | UC Berkeley | What’s happening at UC Berkeley? | Discover events, opportunities, and people around you. | Events | Opportunities | Clubs & Groups | Meetups | For you | See all | Campus event | Grad Student Appreciation Party | Sat, Nov 7 | ASUC Student Union | Campus event | Free Coffee and Tea for Students | Mon, Nov 9 | Law | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "89b4605f05a95d9f3bb0ec71f09c9928a9b70028",
+        "simReadSec": 3.7
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 7,
+            "name": "See all",
+            "w": 62,
+            "h": 21
+          },
+          {
+            "id": 10,
+            "name": "Save",
+            "w": 36,
+            "h": 36
+          },
+          {
+            "id": 13,
+            "name": "Save",
+            "w": 36,
+            "h": 36
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 175
+      }
+    },
+    {
+      "index": 1,
+      "at": "2026-11-05T19:16:36.039Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 6,
+        "expect": "list of people meeting up to eat or hang out",
+        "confidence": "0.6"
+      },
+      "urlBefore": "http://localhost:38795/",
+      "target": {
+        "id": 6,
+        "tag": "button",
+        "role": "button",
+        "name": "Meetups",
+        "box": {
+          "x": 200,
+          "y": 322,
+          "w": 174,
+          "h": 104
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "list of people meeting up to eat or hang out",
+        "confidence": 0.6
+      },
+      "latencyMs": 904,
+      "tapPoint": {
+        "x": 287,
+        "y": 374,
+        "centre": true
+      },
+      "actionNumber": 1,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:38795/meet/meetups",
+      "route": "/meet/meetups",
+      "screenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/001-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/001-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 25,
+        "newElementIds": [
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36
+        ],
+        "elements": [
+          "[21]<button> Create",
+          "[22]<button> Notifications",
+          "[2]<button> Messages",
+          "[23]<button> Me",
+          "[24]<button> For You",
+          "[6]<button selected> Meetups",
+          "[25]<button> People",
+          "[26]<button> Feed",
+          "[27]<button> Coffee",
+          "[28]<button> Study",
+          "[29]<button> Workout",
+          "[30]<button> Hangout",
+          "[31]<button> Create a Meetup",
+          "[32]<button> Lunch at Crossroads — anyone want to join? Today · 12:30 PM Crossroads Dining Commons H 1 ",
+          "[33]<button> Quick burrito on Bancroft Today · 1 PM Bancroft Way L 1 going · up to 3",
+          "[34]<button> Who’s free right now",
+          "[14]<a> Home",
+          "[15]<a> Explore",
+          "[16]<a> Schedule",
+          "[17]<a selected> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design",
+          "[35]<button> Rides  ↓ below",
+          "[36]<button> Ask friends with one link  ↓ below"
+        ],
+        "text": "lumi | . | For You | Meetups | People | Feed | Coffee | Study | Workout | Hangout | Create a Meetup | Upcoming Meetups | Lunch at Crossroads — anyone want to join? | Today | · | 12:30 PM | Crossroads Dining Commons | H | 1 | going | · up to 4 | Quick burrito on Bancroft | Today | · | 1 PM | Bancroft Way | L | 1 | going | · up to 3 | Who’s free right now | Find teammates | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 239
+        },
+        "fingerprint": "34b88c1b1f6a18d21738f973baa32e9c0f2d7338",
+        "simReadSec": 3
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 21,
+            "name": "Create",
+            "w": 36,
+            "h": 36
+          },
+          {
+            "id": 22,
+            "name": "Notifications",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 2,
+            "name": "Messages",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 23,
+            "name": "Me",
+            "w": 32,
+            "h": 32
+          },
+          {
+            "id": 24,
+            "name": "For You",
+            "w": 85,
+            "h": 40
+          },
+          {
+            "id": 6,
+            "name": "Meetups",
+            "w": 85,
+            "h": 40
+          },
+          {
+            "id": 25,
+            "name": "People",
+            "w": 85,
+            "h": 40
+          },
+          {
+            "id": 26,
+            "name": "Feed",
+            "w": 85,
+            "h": 40
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 175
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Meetups list with 'Lunch at Crossroads — anyone want to join?' today 12:30 right at top",
+        "feeling": "delighted",
+        "note": "오 바로 있네! lunch today at Crossroads, that's literally what I want. no face photos either, nice"
+      }
+    },
+    {
+      "index": 2,
+      "at": "2026-11-05T19:16:40.884Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Meetups list with 'Lunch at Crossroads — anyone want to join?' today 12:30 right at top",
+        "feeling": "delighted",
+        "thought": "오 바로 있네! lunch today at Crossroads, that's literally what I want. no face photos either, nice"
+      },
+      "about": 1,
+      "feeling": "delighted",
+      "thought": "오 바로 있네! lunch today at Crossroads, that's literally what I want. no face photos either, nice",
+      "urlAfter": "http://localhost:38795/meet/meetups",
+      "route": "/meet/meetups"
+    },
+    {
+      "index": 3,
+      "at": "2026-11-05T19:16:43.249Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 32,
+        "expect": "details of the lunch with who's going and a join button",
+        "confidence": "0.8"
+      },
+      "urlBefore": "http://localhost:38795/meet/meetups",
+      "target": {
+        "id": 32,
+        "tag": "button",
+        "role": "button",
+        "name": "Lunch at Crossroads — anyone want to join? Today · 12:30 PM Crossroads Dining Commons H 1 ",
+        "box": {
+          "x": 16,
+          "y": 439,
+          "w": 358,
+          "h": 135
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "details of the lunch with who's going and a join button",
+        "confidence": 0.8
+      },
+      "latencyMs": 1251,
+      "tapPoint": {
+        "x": 195,
+        "y": 506.6,
+        "centre": true
+      },
+      "actionNumber": 2,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:38795/activities/a_kbt0y2ff3u",
+      "route": "/activities/:id",
+      "screenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/003-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/003-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 13,
+        "newElementIds": [
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48
+        ],
+        "elements": [
+          "[37]<button> Back",
+          "[38]<button> More",
+          "[39]<button> H Host Hana UC Berkeley Cognitive Science",
+          "[46]<button> Share",
+          "[47]<button> Going",
+          "[48]<button> Interested",
+          "[20]<button> Switch to the classic design",
+          "[40]<div clickable> 🍽️  ↓ below",
+          "[41]<div role=button> 🍽️  ↓ below",
+          "[42]<button> View on map  ↓ below",
+          "[43]<button> H Hana host  ↓ below",
+          "[44]<input> Leave a comment or question  ↓ below",
+          "[45]<button disabled> Post  ↓ below"
+        ],
+        "text": "🍽️ | Food | Group | My school | Lunch at Crossroads — anyone want to join? | Grabbing lunch between classes. Happy to meet new people! | H | Host | Hana | UC Berkeley | Cognitive Science | Date & time | Today 12:30 PM – 1:15 PM | Location | Crossroads Dining Commons | Capacity | 0 joined · cap 4 | Cost | Free | Going | Interested | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 619
+        },
+        "fingerprint": "1e86b2d9dd63f466be0bc29d8752e00b5d89d01f",
+        "simReadSec": 2.2
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 37,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 38,
+            "name": "More",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 175
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "detail page: Hana, Cog Sci, today 12:30 Crossroads, 'Going' and 'Interested' buttons",
+        "feeling": "curious",
+        "note": "Hana seems chill, just an initial not a big face. short text, good"
+      }
+    },
+    {
+      "index": 4,
+      "at": "2026-11-05T19:16:50.163Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "detail page: Hana, Cog Sci, today 12:30 Crossroads, 'Going' and 'Interested' buttons",
+        "feeling": "curious",
+        "thought": "Hana seems chill, just an initial not a big face. short text, good"
+      },
+      "about": 3,
+      "feeling": "curious",
+      "thought": "Hana seems chill, just an initial not a big face. short text, good",
+      "urlAfter": "http://localhost:38795/activities/a_kbt0y2ff3u",
+      "route": "/activities/:id"
+    },
+    {
+      "index": 5,
+      "at": "2026-11-05T19:16:50.232Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "feeling": "confused",
+        "thought": "뭐지, list said '1 going' but here it says '0 joined · cap 4'. is anyone actually coming? and the big lime 'Going' — did I already press it?",
+        "friction": "ux_confusion",
+        "severity": "2",
+        "element": "47",
+        "wish": "say 'Join lunch' and show the same count everywhere"
+      },
+      "about": 3,
+      "feeling": "confused",
+      "thought": "뭐지, list said '1 going' but here it says '0 joined · cap 4'. is anyone actually coming? and the big lime 'Going' — did I already press it?",
+      "urlAfter": "http://localhost:38795/activities/a_kbt0y2ff3u",
+      "route": "/activities/:id",
+      "frictionId": "f1"
+    },
+    {
+      "index": 6,
+      "at": "2026-11-05T19:16:52.407Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 47,
+        "expect": "I join Hana's lunch and it shows I'm going",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:38795/activities/a_kbt0y2ff3u",
+      "target": {
+        "id": 47,
+        "tag": "button",
+        "role": "button",
+        "name": "Going",
+        "box": {
+          "x": 72,
+          "y": 792,
+          "w": 148,
+          "h": 52
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "I join Hana's lunch and it shows I'm going",
+        "confidence": 0.7
+      },
+      "latencyMs": 838,
+      "tapPoint": {
+        "x": 146,
+        "y": 818,
+        "centre": true
+      },
+      "actionNumber": 3,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:38795/activities/a_kbt0y2ff3u",
+      "route": "/activities/:id",
+      "screenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/006-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/006-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 14,
+        "newElementIds": [
+          49,
+          50,
+          51
+        ],
+        "elements": [
+          "[37]<button> Back",
+          "[38]<button> More",
+          "[39]<button> H Host Hana UC Berkeley Cognitive Science",
+          "[46]<button> Share",
+          "[50]<button> You’re going!",
+          "[51]<button> Chat",
+          "[20]<button> Switch to the classic design",
+          "[40]<div clickable> 🍽️  ↓ below",
+          "[41]<div role=button> 🍽️  ↓ below",
+          "[42]<button> View on map  ↓ below",
+          "[43]<button> H Hana host  ↓ below",
+          "[49]<button> M Minji  ↓ below",
+          "[44]<input> Leave a comment or question  ↓ below",
+          "[45]<button disabled> Post  ↓ below"
+        ],
+        "text": "🍽️ | Food | Group | My school | Lunch at Crossroads — anyone want to join? | Grabbing lunch between classes. Happy to meet new people! | H | Host | Hana | UC Berkeley | Cognitive Science | Date & time | Today 12:30 PM – 1:15 PM | Location | Crossroads Dining Commons | Capacity | 1 joined · cap 4 | Cost | Free | You’re going! | Chat | Design: | Classic | New | You’re going! Added to your Schedule.",
+        "scroll": {
+          "top": 0,
+          "max": 619
+        },
+        "fingerprint": "84aa3600be5f993a42605b2b8d94d107ca04322d",
+        "simReadSec": 0.7
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 37,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 38,
+            "name": "More",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 175
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "button turned to 'You're going!', toast 'Added to your Schedule', Chat button appeared",
+        "feeling": "delighted",
+        "note": "오 쉽다. one tap and I'm in, and there's a chat. 'Added to your Schedule' is nice"
+      }
+    },
+    {
+      "index": 7,
+      "at": "2026-11-05T19:16:58.315Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "button turned to 'You're going!', toast 'Added to your Schedule', Chat button appeared",
+        "feeling": "delighted",
+        "thought": "오 쉽다. one tap and I'm in, and there's a chat. 'Added to your Schedule' is nice"
+      },
+      "about": 6,
+      "feeling": "delighted",
+      "thought": "오 쉽다. one tap and I'm in, and there's a chat. 'Added to your Schedule' is nice",
+      "urlAfter": "http://localhost:38795/activities/a_kbt0y2ff3u",
+      "route": "/activities/:id"
+    },
+    {
+      "index": 8,
+      "at": "2026-11-05T19:16:58.395Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 51,
+        "expect": "group chat with Hana where I can say hi",
+        "confidence": "0.75"
+      },
+      "urlBefore": "http://localhost:38795/activities/a_kbt0y2ff3u",
+      "target": {
+        "id": 51,
+        "tag": "button",
+        "role": "button",
+        "name": "Chat",
+        "box": {
+          "x": 249,
+          "y": 792,
+          "w": 129,
+          "h": 52
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "group chat with Hana where I can say hi",
+        "confidence": 0.75
+      },
+      "latencyMs": 854,
+      "tapPoint": {
+        "x": 313.6,
+        "y": 818,
+        "centre": true
+      },
+      "actionNumber": 4,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:38795/chats/cr_c1a502ff3u",
+      "route": "/chats/:id",
+      "screenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/008-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/008-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 7,
+        "newElementIds": [
+          52,
+          53,
+          54,
+          55,
+          56
+        ],
+        "elements": [
+          "[37]<button> Back",
+          "[52]<button> Lunch at Crossroads — anyone want to join? Members 2",
+          "[53]<button> Menu",
+          "[54]<button> Lunch at Crossroads — anyone want to join? Crossroads Dining Commons · Today 12:30 PM",
+          "[55]<input> Type a message…",
+          "[56]<button disabled> Send",
+          "[20]<button> Switch to the classic design"
+        ],
+        "text": "Lunch at Crossroads — anyone want to join? | Members | 2 | Lunch at Crossroads — anyone want to join? | Crossroads Dining Commons | · | Today | 12:30 PM | The group chat for this activity is open. | Minji joined. | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "85b7ea354e6cb50a4fe55a2d9b69b7b20b8519be",
+        "simReadSec": 0.8
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 37,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 53,
+            "name": "Menu",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 175
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "group chat opened, 'Minji joined.' system line, 2 members, empty otherwise",
+        "feeling": "neutral",
+        "note": "ok chat is here. kinda empty and dark, Hana didn't say anything yet. I'll just say hi"
+      }
+    },
+    {
+      "index": 9,
+      "at": "2026-11-05T19:17:04.905Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "group chat opened, 'Minji joined.' system line, 2 members, empty otherwise",
+        "feeling": "neutral",
+        "thought": "ok chat is here. kinda empty and dark, Hana didn't say anything yet. I'll just say hi",
+        "friction": "ux_confusion",
+        "severity": "1",
+        "element": "20",
+        "wish": "Design pill shouldn't sit on top of the event card"
+      },
+      "about": 8,
+      "feeling": "neutral",
+      "thought": "ok chat is here. kinda empty and dark, Hana didn't say anything yet. I'll just say hi",
+      "urlAfter": "http://localhost:38795/chats/cr_c1a502ff3u",
+      "route": "/chats/:id",
+      "frictionId": "f2"
+    },
+    {
+      "index": 10,
+      "at": "2026-11-05T19:17:04.990Z",
+      "kind": "action",
+      "command": "type",
+      "args": {
+        "id": 55,
+        "text": "hi! I'm Minji, I'll be there at 12:30 🙂",
+        "submit": true,
+        "expect": "message shows up in chat so Hana knows I'm coming",
+        "confidence": "0.8"
+      },
+      "urlBefore": "http://localhost:38795/chats/cr_c1a502ff3u",
+      "target": {
+        "id": 55,
+        "tag": "input",
+        "role": "textbox",
+        "name": "Type a message…",
+        "box": {
+          "x": 10,
+          "y": 800,
+          "w": 318,
+          "h": 44
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "message shows up in chat so Hana knows I'm coming",
+        "confidence": 0.8
+      },
+      "latencyMs": 895,
+      "tapPoint": {
+        "x": 169,
+        "y": 822,
+        "centre": true
+      },
+      "actionNumber": 5,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:38795/chats/cr_c1a502ff3u",
+      "route": "/chats/:id",
+      "screenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/010-type.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/010-type-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 7,
+        "newElementIds": [],
+        "elements": [
+          "[37]<button> Back",
+          "[52]<button> Lunch at Crossroads — anyone want to join? Members 2",
+          "[53]<button> Menu",
+          "[54]<button> Lunch at Crossroads — anyone want to join? Crossroads Dining Commons · Today 12:30 PM",
+          "[55]<input> Type a message…",
+          "[56]<button disabled> Send",
+          "[20]<button> Switch to the classic design"
+        ],
+        "text": "Lunch at Crossroads — anyone want to join? | Members | 2 | Lunch at Crossroads — anyone want to join? | Crossroads Dining Commons | · | Today | 12:30 PM | The group chat for this activity is open. | Minji joined. | hi! I'm Minji, I'll be there at 12:30 | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "e9caf6e6d57515db0eb34e89b4a9dc611622f17e",
+        "simReadSec": 0.4
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 37,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 53,
+            "name": "Menu",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 175
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "my message appeared in the chat; the 🙂 emoji I typed is missing from the bubble",
+        "feeling": "neutral",
+        "note": "sent! 근데 my smiley disappeared? weird but whatever. no read receipt so idk if Hana saw"
+      }
+    },
+    {
+      "index": 11,
+      "at": "2026-11-05T19:17:12.272Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "my message appeared in the chat; the 🙂 emoji I typed is missing from the bubble",
+        "feeling": "neutral",
+        "thought": "sent! 근데 my smiley disappeared? weird but whatever. no read receipt so idk if Hana saw",
+        "friction": "bug",
+        "severity": "1",
+        "element": "55",
+        "wish": "keep emoji, show if host has seen it"
+      },
+      "about": 10,
+      "feeling": "neutral",
+      "thought": "sent! 근데 my smiley disappeared? weird but whatever. no read receipt so idk if Hana saw",
+      "urlAfter": "http://localhost:38795/chats/cr_c1a502ff3u",
+      "route": "/chats/:id",
+      "frictionId": "f3"
+    },
+    {
+      "index": 12,
+      "at": "2026-11-05T19:17:12.357Z",
+      "kind": "finish",
+      "command": "finish",
+      "args": {
+        "outcome": "success",
+        "reason": "Found Hana's lunch at Crossroads today, tapped Going and said hi in the group chat. Took like 5 taps.",
+        "dropoff": "low",
+        "dropoff-why": "Found a same-day lunch fast with no face photos or profile quiz; would come back if Hana actually shows up / replies",
+        "dropoff-basis": "1,6,10"
+      },
+      "urlBefore": "http://localhost:38795/chats/cr_c1a502ff3u",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:38795/chats/cr_c1a502ff3u",
+      "route": "/chats/:id",
+      "screenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/012-finish.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/012-finish-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 7,
+        "newElementIds": [],
+        "elements": [
+          "[37]<button> Back",
+          "[52]<button> Lunch at Crossroads — anyone want to join? Members 2",
+          "[53]<button> Menu",
+          "[54]<button> Lunch at Crossroads — anyone want to join? Crossroads Dining Commons · Today 12:30 PM",
+          "[55]<input> Type a message…",
+          "[56]<button disabled> Send",
+          "[20]<button> Switch to the classic design"
+        ],
+        "text": "Lunch at Crossroads — anyone want to join? | Members | 2 | Lunch at Crossroads — anyone want to join? | Crossroads Dining Commons | · | Today | 12:30 PM | The group chat for this activity is open. | Minji joined. | hi! I'm Minji, I'll be there at 12:30 | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "e9caf6e6d57515db0eb34e89b4a9dc611622f17e",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 37,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 53,
+            "name": "Menu",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 175
+      }
+    }
+  ],
+  "frictionEvents": [
+    {
+      "id": "f1",
+      "step": 3,
+      "noteStep": 5,
+      "type": "ux_confusion",
+      "severity": 2,
+      "feeling": "confused",
+      "quote": "뭐지, list said '1 going' but here it says '0 joined · cap 4'. is anyone actually coming? and the big lime 'Going' — did I already press it?",
+      "url": "/activities/a_kbt0y2ff3u",
+      "route": "/activities/:id",
+      "element": {
+        "id": 47,
+        "role": "button",
+        "name": "Going"
+      },
+      "key": null,
+      "wish": "say 'Join lunch' and show the same count everywhere",
+      "evidence": [
+        "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/003-click.jpg",
+        "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/003-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f2",
+      "step": 8,
+      "noteStep": 9,
+      "type": "ux_confusion",
+      "severity": 1,
+      "feeling": "neutral",
+      "quote": "ok chat is here. kinda empty and dark, Hana didn't say anything yet. I'll just say hi",
+      "url": "/chats/cr_c1a502ff3u",
+      "route": "/chats/:id",
+      "element": {
+        "id": 20,
+        "role": "button",
+        "name": "Switch to the classic design"
+      },
+      "key": null,
+      "wish": "Design pill shouldn't sit on top of the event card",
+      "evidence": [
+        "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/008-click.jpg",
+        "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/008-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f3",
+      "step": 10,
+      "noteStep": 11,
+      "type": "bug",
+      "severity": 1,
+      "feeling": "neutral",
+      "quote": "sent! 근데 my smiley disappeared? weird but whatever. no read receipt so idk if Hana saw",
+      "url": "/chats/cr_c1a502ff3u",
+      "route": "/chats/:id",
+      "element": {
+        "id": 55,
+        "role": "textbox",
+        "name": "Type a message…"
+      },
+      "key": null,
+      "wish": "keep emoji, show if host has seen it",
+      "evidence": [
+        "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/010-type.jpg",
+        "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/010-type-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    }
+  ],
+  "autoChecks": [
+    {
+      "step": 0,
+      "route": "/",
+      "smallTapTargets": 5,
+      "smallTapTargetExamples": [
+        {
+          "id": 7,
+          "name": "See all",
+          "w": 62,
+          "h": 21
+        },
+        {
+          "id": 10,
+          "name": "Save",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 13,
+          "name": "Save",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 19,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/000-start.jpg"
+    },
+    {
+      "step": 1,
+      "route": "/meet/meetups",
+      "smallTapTargets": 10,
+      "smallTapTargetExamples": [
+        {
+          "id": 21,
+          "name": "Create",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 22,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 23,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 24,
+          "name": "For You",
+          "w": 85,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/001-click.jpg"
+    },
+    {
+      "step": 3,
+      "route": "/activities/:id",
+      "smallTapTargets": 3,
+      "smallTapTargetExamples": [
+        {
+          "id": 37,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 38,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/003-click.jpg"
+    },
+    {
+      "step": 6,
+      "route": "/activities/:id",
+      "smallTapTargets": 3,
+      "smallTapTargetExamples": [
+        {
+          "id": 37,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 38,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/006-click.jpg"
+    },
+    {
+      "step": 8,
+      "route": "/chats/:id",
+      "smallTapTargets": 3,
+      "smallTapTargetExamples": [
+        {
+          "id": 37,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 53,
+          "name": "Menu",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/008-click.jpg"
+    },
+    {
+      "step": 10,
+      "route": "/chats/:id",
+      "smallTapTargets": 3,
+      "smallTapTargetExamples": [
+        {
+          "id": 37,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 53,
+          "name": "Menu",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/010-type.jpg"
+    },
+    {
+      "step": 12,
+      "route": "/chats/:id",
+      "smallTapTargets": 3,
+      "smallTapTargetExamples": [
+        {
+          "id": 37,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 53,
+          "name": "Menu",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/012-finish.jpg"
+    }
+  ],
+  "outcome": "success",
+  "reportedOutcome": "success",
+  "outcomeReason": "Found Hana's lunch at Crossroads today, tapped Going and said hi in the group chat. Took like 5 taps.",
+  "endedBy": "persona",
+  "goalAchieved": true,
+  "goalFirstMetAtStep": 6,
+  "stepsToGoal": 3,
+  "goalEvidence": {
+    "step": 6,
+    "url": "/activities/a_kbt0y2ff3u",
+    "matched": [
+      {
+        "record": "participations",
+        "where": {
+          "userId": "$me",
+          "activityId": {
+            "in": "$peerActivities"
+          }
+        },
+        "description": "joined or asked to join a peer's lunch plan"
+      },
+      {
+        "record": "participations",
+        "where": {
+          "userId": "$me"
+        },
+        "description": "joined or asked to join a plan"
+      }
+    ],
+    "screenshot": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/006-click.jpg"
+  },
+  "falseSuccess": false,
+  "unnoticedSuccess": false,
+  "successCheck": {
+    "evaluatedFrom": "first persona action (never the start screen)",
+    "recordChecks": "local data file"
+  },
+  "patienceExhaustedAtStep": null,
+  "actionsAfterPatienceExhausted": 0,
+  "overrodePatience": false,
+  "abandonPoint": null,
+  "dropoffRisk": {
+    "kind": "hypothesis",
+    "level": "low",
+    "rationale": "Found a same-day lunch fast with no face photos or profile quiz; would come back if Hana actually shows up / replies",
+    "basis": [
+      1,
+      6,
+      10
+    ],
+    "source": "persona-agent"
+  }
+}

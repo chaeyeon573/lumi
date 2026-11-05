@@ -1,0 +1,1786 @@
+{
+  "schemaVersion": 1,
+  "runId": "sched-20261105-1915-diego-timetable-add-classes",
+  "status": "finished",
+  "createdAt": "2026-11-05T19:20:59.921Z",
+  "finishedAt": "2026-11-05T19:21:46.429Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "persona": {
+    "id": "diego-transfer-commuter",
+    "name": "Diego",
+    "age": 21,
+    "year": "Junior (transfer from Laney College)",
+    "school": "UC Berkeley",
+    "major": "Civil Engineering",
+    "account": {
+      "$comment": "Profile for auth: fresh — the harness registers this account through the app's own sign-up API (lib/account.mjs). nickname defaults to name, birthYear to this year − age.",
+      "nickname": "Diego",
+      "department": "Civil Engineering",
+      "yearInSchool": 3,
+      "goals": [
+        "friends",
+        "lunch"
+      ],
+      "interests": [
+        "study",
+        "meal"
+      ],
+      "purposes": [
+        "study",
+        "friend"
+      ],
+      "lookingFor": [
+        "study_partner",
+        "friend"
+      ]
+    },
+    "purpose": "Find study partners for his classes and a cheap way to get places — he commutes from Oakland and has no car.",
+    "techFamiliarity": "medium",
+    "readingDepth": 0.5,
+    "language": {
+      "preferred": "en",
+      "englishUiComfort": "high",
+      "notes": "Bilingual English/Spanish; uses apps in English."
+    },
+    "device": {
+      "type": "phone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "locale": "en-US"
+    },
+    "patience": {
+      "maxSteps": 32,
+      "frustrationThreshold": 4,
+      "confusionTolerance": 2,
+      "timeBudgetSec": 240
+    },
+    "backstory": "I transferred this fall and I'm on campus maybe four days a week between BART and work shifts. Everyone already knows each other from freshman year. I don't have time to scroll through stuff — I open an app between classes, and if it doesn't help me in a minute or two I close it. I'd love people in my classes to study with.",
+    "quitsWhen": [
+      "It wastes my time between classes",
+      "It's all freshman stuff",
+      "I can't tell what to tap next"
+    ],
+    "voice": "Direct and practical. 'OK, where's the…', 'I don't have time for this'."
+  },
+  "scenario": {
+    "id": "timetable-add-classes",
+    "title": "Put my classes into my timetable",
+    "goal": "You want the app to know your schedule so it can show who's free when you are. Add your calculus class — Calculus I, which you know as MATH 1A — to your timetable in the app.",
+    "startUrl": "/",
+    "setup": {
+      "auth": "fresh",
+      "notes": "Fresh account with an empty timetable. Berkeley renumbered MATH 1A to MATH 51 (\"formerly MATH 1A\"); the real catalog (local-stack catalog fetch) has MATH 51, the built-in sample has MATH 1A — the check accepts either."
+    },
+    "success": {
+      "description": "The persona's own timetable (server-side) gained Calculus I (MATH 51 / MATH 1A) during the run.",
+      "all": [
+        {
+          "record": {
+            "collection": "users",
+            "where": {
+              "id": "$me",
+              "timetable": {
+                "re": "MATH ?(1A|51)\\b|Calculus I\\b"
+              }
+            },
+            "fresh": "changed",
+            "description": "Calculus I is in my saved timetable"
+          }
+        }
+      ]
+    }
+  },
+  "target": {
+    "mode": "local",
+    "baseUrl": "http://localhost:37829",
+    "stack": {
+      "catalog": {
+        "kind": "cached",
+        "source": "berkeley course adapter (server/sources/courses.ts) via server/scripts/fetch-courses.ts",
+        "schoolId": "s_berkeley",
+        "courses": 6619,
+        "terms": [
+          "Fall 2026",
+          "Spring 2027"
+        ],
+        "fetchedAt": "2026-11-05T19:20:36.331Z"
+      },
+      "events": {
+        "kind": "cached",
+        "source": "https://heetz.up.railway.app POST /api/auth/demo + POST /api/bootstrap (read-only), worker-fetched opportunities",
+        "baseUrl": "https://heetz.up.railway.app",
+        "fetchedAt": "2026-11-05T19:15:53.601Z",
+        "stamp": "2cc1135f",
+        "opportunities": 1282,
+        "updatedExisting": 132,
+        "byType": {
+          "internship": 570,
+          "hackathon": 111,
+          "lab": 40,
+          "event": 178,
+          "scholarship": 65,
+          "exchange": 317,
+          "startup": 1
+        },
+        "eventsThisWeek": 122,
+        "freeFoodThisWeek": 5
+      },
+      "port": 37829,
+      "worktree": "/home/user/lumi-live",
+      "commit": "9add077e78dfa02c2c4908ee6ca5c6781fad3cd3",
+      "stamp": "9add077e78df",
+      "dirty": false,
+      "dataFile": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/stack/db.json",
+      "template": "ux-sim/stack/templates/lumi-live-9add077e78df-cat355fc699-ev2cc1135f.json",
+      "log": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/stack/server.log",
+      "owned": true,
+      "autoreply": false
+    },
+    "liveGuard": {
+      "enabled": false
+    }
+  },
+  "auth": {
+    "mode": "fresh",
+    "userId": "u_lts3pnl8py",
+    "email": "diego.ssesl89g@berkeley.edu",
+    "sample": false,
+    "emailVerified": true,
+    "profile": {
+      "nickname": "Diego",
+      "birthYear": 2005,
+      "department": "Civil Engineering",
+      "yearInSchool": 3,
+      "role": "undergraduate",
+      "year": 2024,
+      "gender": "private",
+      "goals": [
+        "friends",
+        "lunch"
+      ],
+      "interests": [
+        "study",
+        "meal"
+      ],
+      "purposes": [
+        "study",
+        "friend"
+      ],
+      "lookingFor": [
+        "study_partner",
+        "friend"
+      ],
+      "likes": "",
+      "bio": "",
+      "language": "en",
+      "appLanguage": null,
+      "schoolId": "s_berkeley"
+    },
+    "createdVia": "POST /api/schools/send-code → /api/schools/verify-code → /api/auth/register"
+  },
+  "harness": {
+    "hash": "6f174347960d",
+    "commit": "29aa633114d3a6233c4828a1d8cf59485768bd2a",
+    "dirty": false
+  },
+  "environment": {
+    "summary": "Local stack: this worktree's server + built web app, fresh seeded FileStore per run, no secrets, no worker.",
+    "knownLimits": [
+      "Dining menus and RSF gym crowd levels need live campus sources (the local stack runs with CAMPUS_LIVE=0) — empty or missing data there is not a UX bug.",
+      "AI features (Ask Lumi, AI profile draft on /start, conversation starters) need an OpenAI key; none is configured locally.",
+      "Course catalog is the real Berkeley Class Schedule (6619 courses, Fall 2026 + Spring 2027), fetched 2026-11-05 with the worker's adapter. Seat counts and very recent changes may differ from live.",
+      "Campus events, free food, internships, hackathons and scholarships are a read-only snapshot of live (1282 real items, 122 events this week, taken 2026-11-05 19:15 UTC) plus the CSV calendar. Nothing new appears during the run; Q&A and reviews are empty.",
+      "No e-mail is sent: the sign-up / sign-in code is shown on screen in the hint (live sends a real e-mail).",
+      "Real-time updates (SSE) work locally; other people never reply unless the stack was started with --autoreply.",
+      "Signed in as a brand-new real (non-sample, e-mail-verified) account made for this run. Other students exist only if the scenario seeds peers (local fixtures); sample profiles are hidden from real accounts, as on live."
+    ],
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "locale": "en-US",
+    "timezone": "America/Los_Angeles",
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1",
+    "browserVersion": "153.0.8010.12"
+  },
+  "limits": {
+    "maxSteps": 32,
+    "frustrationThreshold": 4,
+    "confusionTolerance": 2,
+    "timeBudgetSec": 240,
+    "weights": {
+      "failed": 1,
+      "no_effect": 1,
+      "repeated": 0.75,
+      "backtrack": 0.5,
+      "mismatch": 0.5
+    }
+  },
+  "counters": {
+    "actions": 6,
+    "frustration": 1,
+    "confusionNotes": 0,
+    "simTimeSec": 63.395
+  },
+  "steps": [
+    {
+      "index": 0,
+      "at": "2026-11-05T19:21:01.204Z",
+      "kind": "start",
+      "command": "start",
+      "args": {
+        "persona": "diego-transfer-commuter",
+        "scenario": "timetable-add-classes",
+        "auth": "fresh"
+      },
+      "latencyMs": 1199,
+      "urlBefore": null,
+      "setupNotes": [
+        "signed in as a brand-new verified account diego.ssesl89g@berkeley.edu (Diego, Civil Engineering, born 2005)"
+      ],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37829/",
+      "route": "/",
+      "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/000-start.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/000-start-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 20,
+        "newElementIds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "elements": [
+          "[1]<button> Search",
+          "[2]<button> Messages",
+          "[3]<button> Events",
+          "[4]<button> Opportunities",
+          "[5]<button> Clubs & Groups",
+          "[6]<button> Meetups",
+          "[7]<button> See all",
+          "[8]<button> (no label)",
+          "[9]<button> Internships Robotics Research Intern Posted 24d ago Sunnyvale, CA, United States",
+          "[10]<button> Save",
+          "[11]<button> (no label)",
+          "[12]<button> Internships 2027 Electrical Engineer Intern Posted 2d ago Atlanta, Georgia, United States ",
+          "[13]<button> Save",
+          "[14]<a selected> Home",
+          "[15]<a> Explore",
+          "[16]<a> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design"
+        ],
+        "text": "lumi | . | UC Berkeley | What’s happening at UC Berkeley? | Discover events, opportunities, and people around you. | Events | Opportunities | Clubs & Groups | Meetups | For you | See all | Internships | Robotics Research Intern | Posted 24d ago | Sunnyvale, CA, United States | Internships | 2027 Electrical Engineer Intern | Posted 2d ago | Atlanta, Georgia, United States · Boston, Massachusetts, United States · Broomfield, Colorado, United States · Colorado Springs, Colorado, United States · Costa Mesa, California, United States · Fort Collins, Colorado, United States · Irvine, California, United States · Reston, Virginia, United States · Seattle, Washington, United States | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "0e1e594f175eb03000c122a5c95282e50ff5d943",
+        "simReadSec": 14.2
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 7,
+            "name": "See all",
+            "w": 62,
+            "h": 21
+          },
+          {
+            "id": 10,
+            "name": "Save",
+            "w": 36,
+            "h": 36
+          },
+          {
+            "id": 13,
+            "name": "Save",
+            "w": 36,
+            "h": 36
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 288
+      }
+    },
+    {
+      "index": 1,
+      "at": "2026-11-05T19:21:07.618Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 16,
+        "expect": "my timetable, with a way to add classes",
+        "confidence": "0.8"
+      },
+      "urlBefore": "http://localhost:37829/",
+      "target": {
+        "id": 16,
+        "tag": "a",
+        "role": "link",
+        "name": "Schedule",
+        "href": "/schedule",
+        "box": {
+          "x": 156,
+          "y": 780,
+          "w": 78,
+          "h": 64
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "my timetable, with a way to add classes",
+        "confidence": 0.8
+      },
+      "latencyMs": 910,
+      "tapPoint": {
+        "x": 195,
+        "y": 812,
+        "centre": true
+      },
+      "actionNumber": 1,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37829/schedule",
+      "route": "/schedule",
+      "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/001-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/001-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 12,
+        "newElementIds": [
+          21,
+          22,
+          23,
+          24
+        ],
+        "elements": [
+          "[21]<button> Back",
+          "[2]<button> Messages",
+          "[22]<button> + Plan Together",
+          "[23]<button> My timetable",
+          "[24]<button> Find activities",
+          "[14]<a> Home",
+          "[15]<a> Explore",
+          "[16]<a selected> Schedule",
+          "[17]<a> Social",
+          "[18]<a> Profile",
+          "[19]<button> Feedback",
+          "[20]<button> Switch to the classic design"
+        ],
+        "text": "My Plans | Picking a time | 0 | + | Plan Together | No open time polls. Pick a time to meet friends by voting. | Confirmed plans | 0 | No confirmed plans. Hop on something open in Discover. | My timetable | Find activities | Home | Explore | Schedule | Social | Profile | Feedback | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "e0a79df51b668a23e8562608d2849db4f2ea0eec",
+        "simReadSec": 4
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 21,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 2,
+            "name": "Messages",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 22,
+            "name": "+ Plan Together",
+            "w": 92,
+            "h": 18
+          },
+          {
+            "id": 19,
+            "name": "Feedback",
+            "w": 93,
+            "h": 32
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 288
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "Schedule tab opens 'My Plans' (polls, confirmed plans), timetable is a secondary button below",
+        "feeling": "neutral",
+        "note": "OK, it's plans, not my classes. There's a 'My timetable' button though, fine."
+      }
+    },
+    {
+      "index": 2,
+      "at": "2026-11-05T19:21:12.696Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "Schedule tab opens 'My Plans' (polls, confirmed plans), timetable is a secondary button below",
+        "feeling": "neutral",
+        "thought": "OK, it's plans, not my classes. There's a 'My timetable' button though, fine.",
+        "friction": "ux_confusion",
+        "severity": "1",
+        "element": "23",
+        "wish": "Schedule tab should show my class timetable first"
+      },
+      "about": 1,
+      "feeling": "neutral",
+      "thought": "OK, it's plans, not my classes. There's a 'My timetable' button though, fine.",
+      "urlAfter": "http://localhost:37829/schedule",
+      "route": "/schedule",
+      "frictionId": "f1"
+    },
+    {
+      "index": 3,
+      "at": "2026-11-05T19:21:12.776Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 23,
+        "expect": "weekly class grid with an add class button",
+        "confidence": "0.8"
+      },
+      "urlBefore": "http://localhost:37829/schedule",
+      "target": {
+        "id": 23,
+        "tag": "button",
+        "role": "button",
+        "name": "My timetable",
+        "box": {
+          "x": 16,
+          "y": 253,
+          "w": 176,
+          "h": 44
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "weekly class grid with an add class button",
+        "confidence": 0.8
+      },
+      "latencyMs": 844,
+      "tapPoint": {
+        "x": 103.8,
+        "y": 275,
+        "centre": true
+      },
+      "actionNumber": 2,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37829/timetable",
+      "route": "/timetable",
+      "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/003-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/003-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 5,
+        "newElementIds": [
+          25,
+          26,
+          27
+        ],
+        "elements": [
+          "[21]<button> Back",
+          "[25]<button> Friends",
+          "[26]<button> Class",
+          "[27]<button> Add first class",
+          "[20]<button> Switch to the classic design"
+        ],
+        "text": "Timetable | Friends | Class | Your timetable is empty | Add classes to get friends and activities that fit your free periods. Rooms and your full schedule stay private. | Add first class | Others only see when you’re free, never your full schedule. Rooms are never shared. | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "b6c303b4448d2469c0a1132c1af4991e9e73d8fa",
+        "simReadSec": 5.2
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 21,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 25,
+            "name": "Friends",
+            "w": 92,
+            "h": 28
+          },
+          {
+            "id": 26,
+            "name": "Class",
+            "w": 88,
+            "h": 36
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 288
+      },
+      "signals": [],
+      "frustrationAfter": 0.5,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Empty timetable with a big 'Add first class' button and a privacy note",
+        "feeling": "curious",
+        "note": "Good, clear. And they say others only see when I'm free, nice."
+      }
+    },
+    {
+      "index": 4,
+      "at": "2026-11-05T19:21:17.577Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Empty timetable with a big 'Add first class' button and a privacy note",
+        "feeling": "curious",
+        "thought": "Good, clear. And they say others only see when I'm free, nice."
+      },
+      "about": 3,
+      "feeling": "curious",
+      "thought": "Good, clear. And they say others only see when I'm free, nice.",
+      "urlAfter": "http://localhost:37829/timetable",
+      "route": "/timetable"
+    },
+    {
+      "index": 5,
+      "at": "2026-11-05T19:21:17.657Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 27,
+        "expect": "search for a course by code like MATH 1A",
+        "confidence": "0.75"
+      },
+      "urlBefore": "http://localhost:37829/timetable",
+      "target": {
+        "id": 27,
+        "tag": "button",
+        "role": "button",
+        "name": "Add first class",
+        "box": {
+          "x": 114,
+          "y": 237,
+          "w": 162,
+          "h": 44
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "search for a course by code like MATH 1A",
+        "confidence": 0.75
+      },
+      "latencyMs": 863,
+      "tapPoint": {
+        "x": 195,
+        "y": 259.4,
+        "centre": true
+      },
+      "actionNumber": 3,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37829/timetable",
+      "route": "/timetable",
+      "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/005-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/005-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 62,
+        "newElementIds": [
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89
+        ],
+        "elements": [
+          "[28]<button> Close",
+          "[29]<button> Fall 2026",
+          "[30]<button> Spring 2027",
+          "[31]<select> All departments (100)",
+          "[32]<input> Search by course name or code",
+          "[33]<button> CS 61A The Structure and Interpretation of Computer Programs Mon 12 PM–12:59 PM · Wed 12 P",
+          "[34]<a> Course info",
+          "[35]<button> CS 61B Data Structures Mon 2 PM–2:59 PM · Wed 2 PM–2:59 PM · Fri 2 PM–2:59 PM · Wheeler 15",
+          "[36]<a> Course info",
+          "[37]<button> CS 61C Great Ideas of Computer Architecture (Machine Structures) Mon 11 AM–11:59 AM · Wed ",
+          "[38]<a> Course info",
+          "[39]<button> CS 70 Discrete Mathematics and Probability Theory Tue 3:30 PM–4:59 PM · Thu 3:30 PM–4:59 P",
+          "[40]<a> Course info",
+          "[73]<input> e.g. Databases",
+          "[74]<select> Thu",
+          "[41]<button> CS 161 Computer Security Mon 12 PM–12:59 PM · Wed 12 PM–12:59 PM · Fri 12 PM–12:59 PM · Ph  ↓ below",
+          "[42]<a> Course info  ↓ below",
+          "[75]<input type=time> (no label) value=\"10:00\"  ↓ below",
+          "[76]<input type=time> (no label) value=\"11:15\"  ↓ below",
+          "[43]<button> CS 162 Operating Systems and System Programming Tue 2 PM–3:29 PM · Thu 2 PM–3:29 PM · The   ↓ below",
+          "[44]<a> Course info  ↓ below",
+          "[77]<input> e.g. Soda 306  ↓ below",
+          "[78]<input> (no label)  ↓ below",
+          "[79]<button> Color 220  ↓ below",
+          "[80]<button> Color 160  ↓ below",
+          "[81]<button> Color 15  ↓ below",
+          "[82]<button> Color 280  ↓ below",
+          "[83]<button> Color 45  ↓ below",
+          "[84]<button> Color 330  ↓ below",
+          "[85]<button> Color 120  ↓ below",
+          "[86]<button> Color 200  ↓ below",
+          "[87]<button> Color 60  ↓ below",
+          "[88]<button> Color 300  ↓ below",
+          "[45]<button> CS 164 Programming Languages and Compilers Mon 5 PM–6:29 PM · Wed 5 PM–6:29 PM · The Gatew  ↓ below",
+          "[46]<a> Course info  ↓ below",
+          "[89]<button disabled> Add  ↓ below",
+          "[47]<button> CS 168 Introduction to the Internet: Architecture and Protocols Tue 11 AM–12:29 PM · Thu 1  ↓ below",
+          "[48]<a> Course info  ↓ below",
+          "[49]<button> CS 169A Introduction to Software Engineering Tue 11 AM–12:29 PM · Thu 11 AM–12:29 PM · The  ↓ below",
+          "[50]<a> Course info  ↓ below",
+          "[51]<button> CS 170 Efficient Algorithms and Intractable Problems Tue 9:30 AM–10:59 AM · Thu 9:30 AM–10  ↓ below",
+          "[52]<a> Course info  ↓ below",
+          "[53]<button> CS 186 Introduction to Database Systems Mon 9:30 AM–10:59 AM · Wed 9:30 AM–10:59 AM · The   ↓ below",
+          "[54]<a> Course info  ↓ below",
+          "[55]<button> CS 188 Introduction to Artificial Intelligence Mon 2 PM–3:29 PM · Wed 2 PM–3:29 PM · The G  ↓ below",
+          "[56]<a> Course info  ↓ below",
+          "[57]<button> CS 189 Introduction to Machine Learning Tue 5 PM–6:29 PM · Thu 5 PM–6:29 PM · Dwinelle 155  ↓ below",
+          "[58]<a> Course info  ↓ below",
+          "[59]<button> CS 282A Designing, Visualizing and Understanding Deep Neural Networks Tue 9:30 AM–10:59 AM  ↓ below",
+          "[60]<a> Course info  ↓ below",
+          "[61]<button> DATA C8 Foundations of Data Science (Lec 001) Mon 10 AM–10:59 AM · Wed 10 AM–10:59 AM · Fr  ↓ below",
+          "[62]<a> Course info  ↓ below",
+          "[63]<button> DATA C100 Principles & Techniques of Data Science Tue 12:30 PM–1:59 PM · Thu 12:30 PM–1:59  ↓ below",
+          "[64]<a> Course info  ↓ below",
+          "[65]<button> DATA C140 Probability for Data Science Tue 2 PM–3:29 PM · Thu 2 PM–3:29 PM · Dwinelle 155   ↓ below"
+        ],
+        "text": "Timetable | Friends | Class | Your timetable is empty | Design: | Classic | New | Add class | Find in course catalog | Classmates in the same class can see you take it — nothing else from your timetable. | Fall 2026 | Spring 2027 | CS 61A | The Structure and Interpretation of Computer Programs | Mon 12 PM–12:59 PM · Wed 12 PM–12:59 PM · Fri 12 PM–12:59 PM | · Wheeler 150 | · Kay Ousterhout, John DeNero | Course info (×4 on screen) | CS 61B | Data Structures | Mon 2 PM–2:59 PM · Wed 2 PM–2:59 PM · Fri 2 PM–2:59 PM | · Wheeler 150 | · Joshua A Hug, Manuel A Sabin | Course info | CS 61C | Great Ideas of Computer Architecture (Machine Structures) | CS 70 | Discrete Mathematics and Probability Theory | Enter manually | ↓ | Course | * | Day | *",
+        "scroll": {
+          "top": 0,
+          "max": 308
+        },
+        "fingerprint": "55679f0a5f237b04460dbd7911352341de5fa847",
+        "simReadSec": 12.5
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 28,
+            "name": "Close",
+            "w": 32,
+            "h": 32
+          },
+          {
+            "id": 29,
+            "name": "Fall 2026",
+            "w": 157,
+            "h": 36
+          },
+          {
+            "id": 30,
+            "name": "Spring 2027",
+            "w": 157,
+            "h": 36
+          },
+          {
+            "id": 34,
+            "name": "Course info",
+            "w": 62,
+            "h": 19
+          },
+          {
+            "id": 36,
+            "name": "Course info",
+            "w": 62,
+            "h": 19
+          },
+          {
+            "id": 38,
+            "name": "Course info",
+            "w": 62,
+            "h": 19
+          },
+          {
+            "id": 40,
+            "name": "Course info",
+            "w": 62,
+            "h": 19
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 288
+      },
+      "signals": [],
+      "frustrationAfter": 0.5,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Add class sheet with Fall 2026 selected and a catalog search box",
+        "feeling": "neutral",
+        "note": "OK, search box. Typing MATH 1A."
+      }
+    },
+    {
+      "index": 6,
+      "at": "2026-11-05T19:21:22.352Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Add class sheet with Fall 2026 selected and a catalog search box",
+        "feeling": "neutral",
+        "thought": "OK, search box. Typing MATH 1A."
+      },
+      "about": 5,
+      "feeling": "neutral",
+      "thought": "OK, search box. Typing MATH 1A.",
+      "urlAfter": "http://localhost:37829/timetable",
+      "route": "/timetable"
+    },
+    {
+      "index": 7,
+      "at": "2026-11-05T19:21:22.432Z",
+      "kind": "action",
+      "command": "type",
+      "args": {
+        "id": 32,
+        "text": "MATH 1A",
+        "submit": false,
+        "expect": "MATH 1A Calculus shows in the list",
+        "confidence": "0.8"
+      },
+      "urlBefore": "http://localhost:37829/timetable",
+      "target": {
+        "id": 32,
+        "tag": "input",
+        "role": "textbox",
+        "name": "Search by course name or code",
+        "box": {
+          "x": 32,
+          "y": 423,
+          "w": 326,
+          "h": 44
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "MATH 1A Calculus shows in the list",
+        "confidence": 0.8
+      },
+      "latencyMs": 860,
+      "tapPoint": {
+        "x": 195,
+        "y": 445.3,
+        "centre": true
+      },
+      "actionNumber": 4,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37829/timetable",
+      "route": "/timetable",
+      "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/007-type.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/007-type-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 26,
+        "newElementIds": [
+          90,
+          91,
+          92,
+          93
+        ],
+        "elements": [
+          "[28]<button> Close",
+          "[29]<button> Fall 2026",
+          "[30]<button> Spring 2027",
+          "[31]<select> All departments (100)",
+          "[32]<input> Search by course name or code value=\"MATH 1A\"",
+          "[90]<button> MATH 51 Calculus I (formerly MATH 1A) (Lec 001) Tue 9:30 AM–10:59 AM · Thu 9:30 AM–10:59 A",
+          "[91]<a> Course info",
+          "[92]<button> MATH 51 Calculus I (formerly MATH 1A) (Lec 002) Tue 8 AM–9:29 AM · Thu 8 AM–9:29 AM · Whee",
+          "[93]<a> Course info",
+          "[73]<input> e.g. Databases",
+          "[74]<select> Thu",
+          "[75]<input type=time> (no label) value=\"10:00\"  ↓ below",
+          "[76]<input type=time> (no label) value=\"11:15\"  ↓ below",
+          "[77]<input> e.g. Soda 306  ↓ below",
+          "[78]<input> (no label)  ↓ below",
+          "[79]<button> Color 220  ↓ below",
+          "[80]<button> Color 160  ↓ below",
+          "[81]<button> Color 15  ↓ below",
+          "[82]<button> Color 280  ↓ below",
+          "[83]<button> Color 45  ↓ below",
+          "[84]<button> Color 330  ↓ below",
+          "[85]<button> Color 120  ↓ below",
+          "[86]<button> Color 200  ↓ below",
+          "[87]<button> Color 60  ↓ below",
+          "[88]<button> Color 300  ↓ below",
+          "[89]<button disabled> Add  ↓ below"
+        ],
+        "text": "Timetable | Friends | Class | Your timetable is empty | Design: | Classic | New | Add class | Find in course catalog | Classmates in the same class can see you take it — nothing else from your timetable. | Fall 2026 | Spring 2027 | MATH 51 | Calculus I (formerly MATH 1A) (Lec 001) | Tue 9:30 AM–10:59 AM · Thu 9:30 AM–10:59 AM | · Wheeler 150 | · Alexander Paulin | Course info | MATH 51 | Calculus I (formerly MATH 1A) (Lec 002) | Tue 8 AM–9:29 AM · Thu 8 AM–9:29 AM | · Wheeler 150 | · Alexander Paulin | Course info | Enter manually | ↓ | Course | * | Day | *",
+        "scroll": {
+          "top": 0,
+          "max": 308
+        },
+        "fingerprint": "c381c9c4eba78c853931f337357c107f1dbbf69e",
+        "simReadSec": 4.3
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 28,
+            "name": "Close",
+            "w": 32,
+            "h": 32
+          },
+          {
+            "id": 29,
+            "name": "Fall 2026",
+            "w": 157,
+            "h": 36
+          },
+          {
+            "id": 30,
+            "name": "Spring 2027",
+            "w": 157,
+            "h": 36
+          },
+          {
+            "id": 91,
+            "name": "Course info",
+            "w": 62,
+            "h": 19
+          },
+          {
+            "id": 93,
+            "name": "Course info",
+            "w": 62,
+            "h": 19
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 288
+      },
+      "signals": [],
+      "frustrationAfter": 0.5,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "Shows MATH 51 Calculus I (formerly MATH 1A), two lectures",
+        "feeling": "delighted",
+        "note": "Oh nice, it's MATH 51 now and it says 'formerly MATH 1A' — I would've been lost otherwise. I'm in the 9:30 one, no way I make 8 AM off BART."
+      }
+    },
+    {
+      "index": 8,
+      "at": "2026-11-05T19:21:29.256Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "Shows MATH 51 Calculus I (formerly MATH 1A), two lectures",
+        "feeling": "delighted",
+        "thought": "Oh nice, it's MATH 51 now and it says 'formerly MATH 1A' — I would've been lost otherwise. I'm in the 9:30 one, no way I make 8 AM off BART."
+      },
+      "about": 7,
+      "feeling": "delighted",
+      "thought": "Oh nice, it's MATH 51 now and it says 'formerly MATH 1A' — I would've been lost otherwise. I'm in the 9:30 one, no way I make 8 AM off BART.",
+      "urlAfter": "http://localhost:37829/timetable",
+      "route": "/timetable"
+    },
+    {
+      "index": 9,
+      "at": "2026-11-05T19:21:29.350Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 90,
+        "expect": "Lec 001 gets added to my timetable",
+        "confidence": "0.65"
+      },
+      "urlBefore": "http://localhost:37829/timetable",
+      "target": {
+        "id": 90,
+        "tag": "button",
+        "role": "button",
+        "name": "MATH 51 Calculus I (formerly MATH 1A) (Lec 001) Tue 9:30 AM–10:59 AM · Thu 9:30 AM–10:59 A",
+        "box": {
+          "x": 44,
+          "y": 483,
+          "w": 232,
+          "h": 72
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "Lec 001 gets added to my timetable",
+        "confidence": 0.65
+      },
+      "latencyMs": 3373,
+      "tapPoint": {
+        "x": 160.2,
+        "y": 519.3,
+        "centre": true
+      },
+      "actionNumber": 5,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37829/timetable",
+      "route": "/timetable",
+      "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/009-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/009-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 25,
+        "newElementIds": [
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          21,
+          116
+        ],
+        "elements": [
+          "[28]<button> Close",
+          "[94]<input> Your section number (e.g. 118)",
+          "[95]<button> DIS 103 Mon 9 AM–9:59 AM · Wed 9 AM–9:59 AM · Fri 9 AM–9:59 AM · Wheeler 202",
+          "[96]<button> DIS 104 Mon 9 AM–9:59 AM · Wed 9 AM–9:59 AM · Fri 9 AM–9:59 AM · Dwinelle 229",
+          "[97]<button> DIS 105 Mon 10 AM–10:59 AM · Wed 10 AM–10:59 AM · Fri 10 AM–10:59 AM · Morgan 109",
+          "[98]<button> DIS 106 Mon 10 AM–10:59 AM · Wed 10 AM–10:59 AM · Fri 10 AM–10:59 AM · Wheeler 220",
+          "[99]<button> DIS 107 Mon 11 AM–11:59 AM · Wed 11 AM–11:59 AM · Fri 11 AM–11:59 AM · Hearst Field Annex ",
+          "[21]<button> Back",
+          "[116]<button> Add lecture only",
+          "[100]<button> DIS 108 Mon 11 AM–11:59 AM · Wed 11 AM–11:59 AM · Fri 11 AM–11:59 AM · Wheeler 200  ↓ below",
+          "[101]<button> DIS 109 Mon 12 PM–12:59 PM · Wed 12 PM–12:59 PM · Fri 12 PM–12:59 PM · Genetics & Plant Bi  ↓ below",
+          "[102]<button> DIS 110 Mon 12 PM–12:59 PM · Wed 12 PM–12:59 PM · Fri 12 PM–12:59 PM · Cory 247  ↓ below",
+          "[103]<button> DIS 111 Mon 1 PM–1:59 PM · Wed 1 PM–1:59 PM · Fri 1 PM–1:59 PM · Wheeler 200  ↓ below",
+          "[104]<button> DIS 112 Mon 3 PM–3:59 PM · Wed 3 PM–3:59 PM · Fri 3 PM–3:59 PM · Cory 247  ↓ below",
+          "[105]<button> DIS 113 Mon 2 PM–2:59 PM · Wed 2 PM–2:59 PM · Fri 2 PM–2:59 PM · Morgan 109  ↓ below",
+          "[106]<button> DIS 114 Mon 2 PM–2:59 PM · Wed 2 PM–2:59 PM · Fri 2 PM–2:59 PM · Genetics & Plant Bio 107  ↓ below",
+          "[107]<button> DIS 115 Mon 9 AM–9:59 AM · Wed 9 AM–9:59 AM · Fri 9 AM–9:59 AM · Haviland 12  ↓ below",
+          "[108]<button> DIS 116 Mon 3 PM–3:59 PM · Wed 3 PM–3:59 PM · Fri 3 PM–3:59 PM · Cory 289  ↓ below",
+          "[109]<button> DIS 117 Mon 4 PM–4:59 PM · Wed 4 PM–4:59 PM · Fri 4 PM–4:59 PM · Anthro/Art Practice Bldg   ↓ below",
+          "[110]<button> DIS 118 Mon 4 PM–4:59 PM · Wed 4 PM–4:59 PM · Fri 4 PM–4:59 PM · Dwinelle 223  ↓ below",
+          "[111]<button> DIS 119 Mon 5 PM–5:59 PM · Wed 5 PM–5:59 PM · Fri 5 PM–5:59 PM · Dwinelle 229  ↓ below",
+          "[112]<button> DIS 120 Mon 1 PM–1:59 PM · Wed 1 PM–1:59 PM · Fri 1 PM–1:59 PM · Giannini 141  ↓ below",
+          "[113]<button> DIS 121 Mon 4 PM–4:59 PM · Wed 4 PM–4:59 PM · Fri 4 PM–4:59 PM · Wheeler 200  ↓ below",
+          "[114]<button> DIS 122 Mon 9 AM–9:59 AM · Wed 9 AM–9:59 AM · Fri 9 AM–9:59 AM · Dwinelle 223  ↓ below",
+          "[115]<button> DIS 124 Mon 11 AM–11:59 AM · Wed 11 AM–11:59 AM · Fri 11 AM–11:59 AM · Evans 740  ↓ below"
+        ],
+        "text": "Timetable | Friends | Class | Your timetable is empty | Add classes to get friends and activities that fit your free periods. Rooms and your full schedule stay private. | Add first class | Design: | Classic | New | Add class | MATH 51 | Calculus I (formerly MATH 1A) (Lec 001) | Lecture | · | Tue 9:30 AM–10:59 AM · Thu 9:30 AM–10:59 AM | · Wheeler 150 | Pick yours so your free time is right and you can see who’s in your section. Not sure yet? Leave it empty. | Discussion | DIS 103 | Mon 9 AM–9:59 AM · Wed 9 AM–9:59 AM · Fri 9 AM–9:59 AM | · Wheeler 202 | DIS 104 | Mon 9 AM–9:59 AM · Wed 9 AM–9:59 AM · Fri 9 AM–9:59 AM | · Dwinelle 229 | DIS 105 | Mon 10 AM–10:59 AM · Wed 10 AM–10:59 AM · Fri 10 AM–10:59 AM | · Morgan 109 | DIS 106 | · Wheeler 220 | Back | Add lecture only",
+        "scroll": {
+          "top": 0,
+          "max": 0
+        },
+        "fingerprint": "7474f979242e94222aacba98b1f3e623930423f3",
+        "simReadSec": 10.7
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 28,
+            "name": "Close",
+            "w": 32,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 288
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 0.5,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "Not added yet; asks for a discussion section with a long list of DIS options, plus 'Add lecture only'",
+        "feeling": "neutral",
+        "note": "Extra step, but it says I can leave it empty. I don't remember my DIS number off the top of my head — lecture only, done."
+      }
+    },
+    {
+      "index": 10,
+      "at": "2026-11-05T19:21:37.741Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "Not added yet; asks for a discussion section with a long list of DIS options, plus 'Add lecture only'",
+        "feeling": "neutral",
+        "thought": "Extra step, but it says I can leave it empty. I don't remember my DIS number off the top of my head — lecture only, done.",
+        "friction": "ux_confusion",
+        "severity": "1",
+        "element": "116",
+        "wish": "let me add the lecture in one tap and pick my section later"
+      },
+      "about": 9,
+      "feeling": "neutral",
+      "thought": "Extra step, but it says I can leave it empty. I don't remember my DIS number off the top of my head — lecture only, done.",
+      "urlAfter": "http://localhost:37829/timetable",
+      "route": "/timetable",
+      "frictionId": "f2"
+    },
+    {
+      "index": 11,
+      "at": "2026-11-05T19:21:37.842Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 116,
+        "expect": "MATH 51 shows on my timetable Tue/Thu 9:30",
+        "confidence": "0.85"
+      },
+      "urlBefore": "http://localhost:37829/timetable",
+      "target": {
+        "id": 116,
+        "tag": "button",
+        "role": "button",
+        "name": "Add lecture only",
+        "box": {
+          "x": 125,
+          "y": 800,
+          "w": 245,
+          "h": 44
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "MATH 51 shows on my timetable Tue/Thu 9:30",
+        "confidence": 0.85
+      },
+      "latencyMs": 845,
+      "tapPoint": {
+        "x": 247.7,
+        "y": 822,
+        "centre": true
+      },
+      "actionNumber": 6,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37829/timetable",
+      "route": "/timetable",
+      "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/011-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/011-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 7,
+        "newElementIds": [
+          25,
+          26,
+          117,
+          118,
+          119,
+          20
+        ],
+        "elements": [
+          "[21]<button> Back",
+          "[25]<button> Friends",
+          "[26]<button> Class",
+          "[117]<button> MATH 51 Calculus I (formerly MATH 1A) (Lec 001) Wheeler 150",
+          "[118]<button> MATH 51 Calculus I (formerly MATH 1A) (Lec 001) Wheeler 150",
+          "[20]<button> Switch to the classic design",
+          "[119]<button> 11:30 AM–9 PM 0 free · 0 nearby Open  ↓ below"
+        ],
+        "text": "Timetable | Friends | Class | Thu · Done with classes | The rest of today is yours | 2 | classes | Mon | Tue | Wed | Thu | Fri | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | MATH 51 | Calculus I (formerly MATH 1A) (Lec 001) | Wheeler 150 | MATH 51 | Calculus I (formerly MATH 1A) (Lec 001) | Wheeler 150 | Class | Activity | Tap a class for its space · a free period to open an activity · empty for a new class | Design: | Classic | New | MATH 51 added",
+        "scroll": {
+          "top": 0,
+          "max": 254
+        },
+        "fingerprint": "52e527a41ab354a06bbd16b01156d2440c7c122a",
+        "simReadSec": 4.8
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 21,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 25,
+            "name": "Friends",
+            "w": 92,
+            "h": 28
+          },
+          {
+            "id": 26,
+            "name": "Class",
+            "w": 88,
+            "h": 36
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 288
+      },
+      "signals": [],
+      "frustrationAfter": 1,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "MATH 51 now on Tue and Thu 9:30 in the week grid, toast 'MATH 51 added'",
+        "feeling": "delighted",
+        "note": "Done, under a minute. It's there Tue/Thu. Though the banner says '2 classes' — it's one class, twice a week."
+      }
+    },
+    {
+      "index": 12,
+      "at": "2026-11-05T19:21:46.285Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "MATH 51 now on Tue and Thu 9:30 in the week grid, toast 'MATH 51 added'",
+        "feeling": "delighted",
+        "thought": "Done, under a minute. It's there Tue/Thu. Though the banner says '2 classes' — it's one class, twice a week.",
+        "friction": "copy",
+        "severity": "1",
+        "wish": "count meetings vs. courses clearly, e.g. '1 class today' or '2 sessions'"
+      },
+      "about": 11,
+      "feeling": "delighted",
+      "thought": "Done, under a minute. It's there Tue/Thu. Though the banner says '2 classes' — it's one class, twice a week.",
+      "urlAfter": "http://localhost:37829/timetable",
+      "route": "/timetable",
+      "frictionId": "f3"
+    },
+    {
+      "index": 13,
+      "at": "2026-11-05T19:21:46.375Z",
+      "kind": "finish",
+      "command": "finish",
+      "args": {
+        "outcome": "success",
+        "reason": "Found Calc I under its new number MATH 51 and it's on my timetable Tue/Thu 9:30. Took like a minute.",
+        "dropoff": "medium",
+        "dropoff-why": "Adding the class was fast, but I still haven't seen any actual study partners or 'who's free' yet — if that's empty next time, I'm out.",
+        "dropoff-basis": "9,11"
+      },
+      "urlBefore": "http://localhost:37829/timetable",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:37829/timetable",
+      "route": "/timetable",
+      "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/013-finish.jpg",
+      "annotatedScreenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/013-finish-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 7,
+        "newElementIds": [],
+        "elements": [
+          "[21]<button> Back",
+          "[25]<button> Friends",
+          "[26]<button> Class",
+          "[117]<button> MATH 51 Calculus I (formerly MATH 1A) (Lec 001) Wheeler 150",
+          "[118]<button> MATH 51 Calculus I (formerly MATH 1A) (Lec 001) Wheeler 150",
+          "[20]<button> Switch to the classic design",
+          "[119]<button> 11:30 AM–9 PM 0 free · 0 nearby Open  ↓ below"
+        ],
+        "text": "Timetable | Friends | Class | Thu · Done with classes | The rest of today is yours | 2 | classes | Mon | Tue | Wed | Thu | Fri | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | MATH 51 | Calculus I (formerly MATH 1A) (Lec 001) | Wheeler 150 | MATH 51 | Calculus I (formerly MATH 1A) (Lec 001) | Wheeler 150 | Class | Activity | Tap a class for its space · a free period to open an activity · empty for a new class | Design: | Classic | New",
+        "scroll": {
+          "top": 0,
+          "max": 254
+        },
+        "fingerprint": "c6b3a61ef467f0b773317f4c2b1f6bca7c987009",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [
+          {
+            "id": 21,
+            "name": "Back",
+            "w": 40,
+            "h": 40
+          },
+          {
+            "id": 25,
+            "name": "Friends",
+            "w": 92,
+            "h": 28
+          },
+          {
+            "id": 26,
+            "name": "Class",
+            "w": 88,
+            "h": 36
+          },
+          {
+            "id": 20,
+            "name": "Switch to the classic design",
+            "w": 158,
+            "h": 32
+          }
+        ],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 288
+      }
+    }
+  ],
+  "frictionEvents": [
+    {
+      "id": "f1",
+      "step": 1,
+      "noteStep": 2,
+      "type": "ux_confusion",
+      "severity": 1,
+      "feeling": "neutral",
+      "quote": "OK, it's plans, not my classes. There's a 'My timetable' button though, fine.",
+      "url": "/schedule",
+      "route": "/schedule",
+      "element": {
+        "id": 23,
+        "role": "button",
+        "name": "My timetable"
+      },
+      "key": null,
+      "wish": "Schedule tab should show my class timetable first",
+      "evidence": [
+        "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/001-click.jpg",
+        "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/001-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f2",
+      "step": 9,
+      "noteStep": 10,
+      "type": "ux_confusion",
+      "severity": 1,
+      "feeling": "neutral",
+      "quote": "Extra step, but it says I can leave it empty. I don't remember my DIS number off the top of my head — lecture only, done.",
+      "url": "/timetable",
+      "route": "/timetable",
+      "element": {
+        "id": 116,
+        "role": "button",
+        "name": "Add lecture only"
+      },
+      "key": null,
+      "wish": "let me add the lecture in one tap and pick my section later",
+      "evidence": [
+        "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/009-click.jpg",
+        "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/009-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f3",
+      "step": 11,
+      "noteStep": 12,
+      "type": "copy",
+      "severity": 1,
+      "feeling": "delighted",
+      "quote": "Done, under a minute. It's there Tue/Thu. Though the banner says '2 classes' — it's one class, twice a week.",
+      "url": "/timetable",
+      "route": "/timetable",
+      "element": null,
+      "key": null,
+      "wish": "count meetings vs. courses clearly, e.g. '1 class today' or '2 sessions'",
+      "evidence": [
+        "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/011-click.jpg",
+        "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/011-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    }
+  ],
+  "autoChecks": [
+    {
+      "step": 0,
+      "route": "/",
+      "smallTapTargets": 5,
+      "smallTapTargetExamples": [
+        {
+          "id": 7,
+          "name": "See all",
+          "w": 62,
+          "h": 21
+        },
+        {
+          "id": 10,
+          "name": "Save",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 13,
+          "name": "Save",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 19,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/000-start.jpg"
+    },
+    {
+      "step": 1,
+      "route": "/schedule",
+      "smallTapTargets": 5,
+      "smallTapTargetExamples": [
+        {
+          "id": 21,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 22,
+          "name": "+ Plan Together",
+          "w": 92,
+          "h": 18
+        },
+        {
+          "id": 19,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/001-click.jpg"
+    },
+    {
+      "step": 3,
+      "route": "/timetable",
+      "smallTapTargets": 4,
+      "smallTapTargetExamples": [
+        {
+          "id": 21,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 25,
+          "name": "Friends",
+          "w": 92,
+          "h": 28
+        },
+        {
+          "id": 26,
+          "name": "Class",
+          "w": 88,
+          "h": 36
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/003-click.jpg"
+    },
+    {
+      "step": 5,
+      "route": "/timetable",
+      "smallTapTargets": 7,
+      "smallTapTargetExamples": [
+        {
+          "id": 28,
+          "name": "Close",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 29,
+          "name": "Fall 2026",
+          "w": 157,
+          "h": 36
+        },
+        {
+          "id": 30,
+          "name": "Spring 2027",
+          "w": 157,
+          "h": 36
+        },
+        {
+          "id": 34,
+          "name": "Course info",
+          "w": 62,
+          "h": 19
+        },
+        {
+          "id": 36,
+          "name": "Course info",
+          "w": 62,
+          "h": 19
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/005-click.jpg"
+    },
+    {
+      "step": 7,
+      "route": "/timetable",
+      "smallTapTargets": 5,
+      "smallTapTargetExamples": [
+        {
+          "id": 28,
+          "name": "Close",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 29,
+          "name": "Fall 2026",
+          "w": 157,
+          "h": 36
+        },
+        {
+          "id": 30,
+          "name": "Spring 2027",
+          "w": 157,
+          "h": 36
+        },
+        {
+          "id": 91,
+          "name": "Course info",
+          "w": 62,
+          "h": 19
+        },
+        {
+          "id": 93,
+          "name": "Course info",
+          "w": 62,
+          "h": 19
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/007-type.jpg"
+    },
+    {
+      "step": 9,
+      "route": "/timetable",
+      "smallTapTargets": 1,
+      "smallTapTargetExamples": [
+        {
+          "id": 28,
+          "name": "Close",
+          "w": 32,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/009-click.jpg"
+    },
+    {
+      "step": 11,
+      "route": "/timetable",
+      "smallTapTargets": 4,
+      "smallTapTargetExamples": [
+        {
+          "id": 21,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 25,
+          "name": "Friends",
+          "w": 92,
+          "h": 28
+        },
+        {
+          "id": 26,
+          "name": "Class",
+          "w": 88,
+          "h": 36
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/011-click.jpg"
+    },
+    {
+      "step": 13,
+      "route": "/timetable",
+      "smallTapTargets": 4,
+      "smallTapTargetExamples": [
+        {
+          "id": 21,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 25,
+          "name": "Friends",
+          "w": 92,
+          "h": 28
+        },
+        {
+          "id": 26,
+          "name": "Class",
+          "w": 88,
+          "h": 36
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPx": 0,
+      "brokenImages": 0,
+      "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/013-finish.jpg"
+    }
+  ],
+  "outcome": "success",
+  "reportedOutcome": "success",
+  "outcomeReason": "Found Calc I under its new number MATH 51 and it's on my timetable Tue/Thu 9:30. Took like a minute.",
+  "endedBy": "persona",
+  "goalAchieved": true,
+  "goalFirstMetAtStep": 11,
+  "stepsToGoal": 6,
+  "goalEvidence": {
+    "step": 11,
+    "url": "/timetable",
+    "matched": [
+      {
+        "record": "users",
+        "where": {
+          "id": "$me",
+          "timetable": {
+            "re": "MATH ?(1A|51)\\b|Calculus I\\b"
+          }
+        },
+        "description": "Calculus I is in my saved timetable"
+      }
+    ],
+    "screenshot": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/011-click.jpg"
+  },
+  "falseSuccess": false,
+  "unnoticedSuccess": false,
+  "successCheck": {
+    "evaluatedFrom": "first persona action (never the start screen)",
+    "recordChecks": "local data file"
+  },
+  "patienceExhaustedAtStep": null,
+  "actionsAfterPatienceExhausted": 0,
+  "overrodePatience": false,
+  "abandonPoint": null,
+  "dropoffRisk": {
+    "kind": "hypothesis",
+    "level": "medium",
+    "rationale": "Adding the class was fast, but I still haven't seen any actual study partners or 'who's free' yet — if that's empty next time, I'm out.",
+    "basis": [
+      9,
+      11
+    ],
+    "source": "persona-agent"
+  }
+}

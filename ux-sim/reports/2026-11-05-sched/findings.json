@@ -1,0 +1,1002 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-05T19:22:34.098Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "runs": [
+    {
+      "runId": "sched-20261105-1915-diego-timetable-add-classes",
+      "persona": "diego-transfer-commuter",
+      "scenario": "timetable-add-classes",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 6,
+      "actions": 6,
+      "frictionCount": 3,
+      "maxSeverity": 1,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "9add077e78df",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Adding the class was fast, but I still haven't seen any actual study partners or 'who's free' yet — if that's empty next time, I'm out.",
+        "basis": [
+          9,
+          11
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/run.json",
+      "report": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/report.md"
+    },
+    {
+      "runId": "sched-20261105-1915-marcus-timetable-add-classes",
+      "persona": "marcus-senior-lowtech",
+      "scenario": "timetable-add-classes",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 6,
+      "actions": 6,
+      "frictionCount": 4,
+      "maxSeverity": 1,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "9add077e78df",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Adding the class was smooth, but I came for internships and the 'Schedule' tab was about meeting friends; I'd only come back if the internship side is as clear.",
+        "basis": [
+          1,
+          12
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261105-1915-marcus-timetable-add-classes/run.json",
+      "report": "ux-sim/runs/sched-20261105-1915-marcus-timetable-add-classes/report.md"
+    },
+    {
+      "runId": "sched-20261105-1915-minji-lunch-today",
+      "persona": "minji-freshman-17",
+      "scenario": "lunch-today",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 3,
+      "actions": 5,
+      "frictionCount": 3,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "9add077e78df",
+      "harness": "6f174347960d",
+      "catalog": "builtin",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "low",
+        "rationale": "Found a same-day lunch fast with no face photos or profile quiz; would come back if Hana actually shows up / replies",
+        "basis": [
+          1,
+          6,
+          10
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/run.json",
+      "report": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/report.md"
+    },
+    {
+      "runId": "sched-20261105-1915-priya-ride-sfo-thanksgiving",
+      "persona": "priya-phd-desktop",
+      "scenario": "ride-sfo-thanksgiving",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 5,
+      "actions": 7,
+      "frictionCount": 4,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "9add077e78df",
+      "harness": "6f174347960d",
+      "catalog": "builtin",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "The rides flow was fast and to the point, but the whole app is a phone column on my laptop, and meetups were empty. I'd come back for rides, maybe not for much else.",
+        "basis": [
+          0,
+          2,
+          5,
+          9
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/sched-20261105-1915-priya-ride-sfo-thanksgiving/run.json",
+      "report": "ux-sim/runs/sched-20261105-1915-priya-ride-sfo-thanksgiving/report.md"
+    }
+  ],
+  "totals": {
+    "runs": 4,
+    "findings": 13,
+    "frictionEvents": 14,
+    "environmentLimitedEvents": 0,
+    "maxSeverity": 2,
+    "bySeverity": {
+      "1": 12,
+      "2": 2,
+      "3": 0,
+      "4": 0
+    },
+    "multiPersonaFindings": 1,
+    "singletonFindings": 12
+  },
+  "findings": [
+    {
+      "fingerprint": "a0f2ea5c4667",
+      "title": "Unclear wording on /timetable",
+      "screen": "/timetable",
+      "frictionType": "copy",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "diego-transfer-commuter",
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 2,
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261105-1915-diego-timetable-add-classes",
+        "sched-20261105-1915-marcus-timetable-add-classes"
+      ],
+      "occurrences": 2,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261105-1915-diego-timetable-add-classes",
+          "persona": "diego-transfer-commuter",
+          "scenario": "timetable-add-classes",
+          "step": 11,
+          "severity": 1,
+          "quote": "Done, under a minute. It's there Tue/Thu. Though the banner says '2 classes' — it's one class, twice a week.",
+          "evidence": [
+            "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/011-click.jpg",
+            "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/011-click-som.jpg"
+          ],
+          "url": "/timetable",
+          "wish": "count meetings vs. courses clearly, e.g. '1 class today' or '2 sessions'"
+        },
+        {
+          "runId": "sched-20261105-1915-marcus-timetable-add-classes",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "timetable-add-classes",
+          "step": 12,
+          "severity": 1,
+          "quote": "It says '2 classes' up top but I only added one. I guess it means two meetings. Small thing.",
+          "evidence": [
+            "ux-sim/runs/sched-20261105-1915-marcus-timetable-add-classes/shots/012-click.jpg",
+            "ux-sim/runs/sched-20261105-1915-marcus-timetable-add-classes/shots/012-click-som.jpg"
+          ],
+          "url": "/timetable",
+          "wish": "say '1 class, 2 meetings' or just count the course once"
+        }
+      ],
+      "wishes": [
+        "count meetings vs. courses clearly, e.g. '1 class today' or '2 sessions'",
+        "say '1 class, 2 meetings' or just count the course once"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite the wording on /timetable in plain language (and check the Korean UI). Personas said they wanted: “count meetings vs. courses clearly, e.g. '1 class today' or '2 sessions'”; “say '1 class, 2 meetings' or just count the course once”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "afdbc3f2e8da",
+      "title": "Confusing UI on /activities/:id — “Going”",
+      "screen": "/activities/:id",
+      "frictionType": "ux_confusion",
+      "keyElement": "going",
+      "keyElementLabel": "Going",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261105-1915-minji-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261105-1915-minji-lunch-today",
+          "persona": "minji-freshman-17",
+          "scenario": "lunch-today",
+          "step": 3,
+          "severity": 2,
+          "quote": "뭐지, list said '1 going' but here it says '0 joined · cap 4'. is anyone actually coming? and the big lime 'Going' — did I already press it?",
+          "evidence": [
+            "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/003-click.jpg",
+            "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/003-click-som.jpg"
+          ],
+          "url": "/activities/a_kbt0y2ff3u",
+          "wish": "say 'Join lunch' and show the same count everywhere"
+        }
+      ],
+      "wishes": [
+        "say 'Join lunch' and show the same count everywhere"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Going” on /activities/:id does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “say 'Join lunch' and show the same count everywhere”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "ca00bd1ad3db",
+      "title": "Confusing UI on /",
+      "screen": "/",
+      "frictionType": "ux_confusion",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261105-1915-priya-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "sched-20261105-1915-priya-ride-sfo-thanksgiving",
+          "persona": "priya-phd-desktop",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 0,
+          "severity": 2,
+          "quote": "A 430px phone column in the middle of my 1440 screen, with black bars on both sides. This is a mobile app stretched onto my laptop. Not a great start.",
+          "evidence": [
+            "ux-sim/runs/sched-20261105-1915-priya-ride-sfo-thanksgiving/shots/000-start.jpg",
+            "ux-sim/runs/sched-20261105-1915-priya-ride-sfo-thanksgiving/shots/000-start-som.jpg"
+          ],
+          "url": "/",
+          "wish": "a real desktop layout that uses the width"
+        }
+      ],
+      "wishes": [
+        "a real desktop layout that uses the width"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what the main control on / does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “a real desktop layout that uses the width”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "bacb0bd4468f",
+      "title": "Confusing UI on /schedule — “My timetable”",
+      "screen": "/schedule",
+      "frictionType": "ux_confusion",
+      "keyElement": "my timetable",
+      "keyElementLabel": "My timetable",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261105-1915-diego-timetable-add-classes"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261105-1915-diego-timetable-add-classes",
+          "persona": "diego-transfer-commuter",
+          "scenario": "timetable-add-classes",
+          "step": 1,
+          "severity": 1,
+          "quote": "OK, it's plans, not my classes. There's a 'My timetable' button though, fine.",
+          "evidence": [
+            "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/001-click.jpg",
+            "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/001-click-som.jpg"
+          ],
+          "url": "/schedule",
+          "wish": "Schedule tab should show my class timetable first"
+        }
+      ],
+      "wishes": [
+        "Schedule tab should show my class timetable first"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “My timetable” on /schedule does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “Schedule tab should show my class timetable first”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "a104f66ab71e",
+      "title": "Confusing UI on /timetable — “Add lecture only”",
+      "screen": "/timetable",
+      "frictionType": "ux_confusion",
+      "keyElement": "add lecture only",
+      "keyElementLabel": "Add lecture only",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261105-1915-diego-timetable-add-classes"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261105-1915-diego-timetable-add-classes",
+          "persona": "diego-transfer-commuter",
+          "scenario": "timetable-add-classes",
+          "step": 9,
+          "severity": 1,
+          "quote": "Extra step, but it says I can leave it empty. I don't remember my DIS number off the top of my head — lecture only, done.",
+          "evidence": [
+            "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/009-click.jpg",
+            "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/009-click-som.jpg"
+          ],
+          "url": "/timetable",
+          "wish": "let me add the lecture in one tap and pick my section later"
+        }
+      ],
+      "wishes": [
+        "let me add the lecture in one tap and pick my section later"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Add lecture only” on /timetable does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “let me add the lecture in one tap and pick my section later”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "902be6e4513e",
+      "title": "Unclear wording on /schedule — “Schedule”",
+      "screen": "/schedule",
+      "frictionType": "copy",
+      "keyElement": "schedule",
+      "keyElementLabel": "Schedule",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261105-1915-marcus-timetable-add-classes"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261105-1915-marcus-timetable-add-classes",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "timetable-add-classes",
+          "step": 1,
+          "severity": 1,
+          "quote": "Says Schedule but it's about plans with friends. There's a 'My timetable' button though, that's probably it.",
+          "evidence": [
+            "ux-sim/runs/sched-20261105-1915-marcus-timetable-add-classes/shots/001-click.jpg",
+            "ux-sim/runs/sched-20261105-1915-marcus-timetable-add-classes/shots/001-click-som.jpg"
+          ],
+          "url": "/schedule",
+          "wish": "Schedule tab should open my class timetable or say 'Plans'"
+        }
+      ],
+      "wishes": [
+        "Schedule tab should open my class timetable or say 'Plans'"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite “Schedule” on /schedule in plain language (and check the Korean UI). Personas said they wanted: “Schedule tab should open my class timetable or say 'Plans'”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "f634db6cc171",
+      "title": "Confusing UI on /timetable — “MATH 51 Calculus I (formerly MATH 1A) (L”",
+      "screen": "/timetable",
+      "frictionType": "ux_confusion",
+      "keyElement": "math calculus i formerly math",
+      "keyElementLabel": "MATH 51 Calculus I (formerly MATH 1A) (L",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261105-1915-marcus-timetable-add-classes"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261105-1915-marcus-timetable-add-classes",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "timetable-add-classes",
+          "step": 7,
+          "severity": 1,
+          "quote": "Two of them, Lec 001 and Lec 002. Same professor. I guess the 9:30 one, I'm not getting up for 8 AM. Hope picking one doesn't sign me up for anything official.",
+          "evidence": [
+            "ux-sim/runs/sched-20261105-1915-marcus-timetable-add-classes/shots/007-type.jpg",
+            "ux-sim/runs/sched-20261105-1915-marcus-timetable-add-classes/shots/007-type-som.jpg"
+          ],
+          "url": "/timetable",
+          "wish": "a plain hint like 'pick the section/time you're in'"
+        }
+      ],
+      "wishes": [
+        "a plain hint like 'pick the section/time you're in'"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “MATH 51 Calculus I (formerly MATH 1A) (L” on /timetable does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “a plain hint like 'pick the section/time you're in'”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "7959ca402a91",
+      "title": "Confusing UI on /timetable — “Your section number (e.g. 118)”",
+      "screen": "/timetable",
+      "frictionType": "ux_confusion",
+      "keyElement": "your section number e g",
+      "keyElementLabel": "Your section number (e.g. 118)",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261105-1915-marcus-timetable-add-classes"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261105-1915-marcus-timetable-add-classes",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "timetable-add-classes",
+          "step": 10,
+          "severity": 1,
+          "quote": "A whole wall of DIS sections. I don't remember my section number offhand. Good that it says 'Not sure yet? Leave it empty' — I'll just add the lecture.",
+          "evidence": [
+            "ux-sim/runs/sched-20261105-1915-marcus-timetable-add-classes/shots/010-click.jpg",
+            "ux-sim/runs/sched-20261105-1915-marcus-timetable-add-classes/shots/010-click-som.jpg"
+          ],
+          "url": "/timetable",
+          "wish": "ask about the section after the class is saved, not before"
+        }
+      ],
+      "wishes": [
+        "ask about the section after the class is saved, not before"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Your section number (e.g. 118)” on /timetable does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “ask about the section after the class is saved, not before”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "ed2dd86233eb",
+      "title": "Confusing UI on /chats/:id — “Switch to the classic design”",
+      "screen": "/chats/:id",
+      "frictionType": "ux_confusion",
+      "keyElement": "switch to the classic design",
+      "keyElementLabel": "Switch to the classic design",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261105-1915-minji-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261105-1915-minji-lunch-today",
+          "persona": "minji-freshman-17",
+          "scenario": "lunch-today",
+          "step": 8,
+          "severity": 1,
+          "quote": "ok chat is here. kinda empty and dark, Hana didn't say anything yet. I'll just say hi",
+          "evidence": [
+            "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/008-click.jpg",
+            "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/008-click-som.jpg"
+          ],
+          "url": "/chats/cr_c1a502ff3u",
+          "wish": "Design pill shouldn't sit on top of the event card"
+        }
+      ],
+      "wishes": [
+        "Design pill shouldn't sit on top of the event card"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Switch to the classic design” on /chats/:id does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “Design pill shouldn't sit on top of the event card”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "8d68fe5c0aae",
+      "title": "Bug on /chats/:id — “Type a message…”",
+      "screen": "/chats/:id",
+      "frictionType": "bug",
+      "keyElement": "type a message",
+      "keyElementLabel": "Type a message…",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261105-1915-minji-lunch-today"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261105-1915-minji-lunch-today",
+          "persona": "minji-freshman-17",
+          "scenario": "lunch-today",
+          "step": 10,
+          "severity": 1,
+          "quote": "sent! 근데 my smiley disappeared? weird but whatever. no read receipt so idk if Hana saw",
+          "evidence": [
+            "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/010-type.jpg",
+            "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/010-type-som.jpg"
+          ],
+          "url": "/chats/cr_c1a502ff3u",
+          "wish": "keep emoji, show if host has seen it"
+        }
+      ],
+      "wishes": [
+        "keep emoji, show if host has seen it"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Reproduce from the evidence steps on /chats/:id (around “Type a message…”) and fix it; add a regression check for that screen. Personas said they wanted: “keep emoji, show if host has seen it”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "7d8e0b863e51",
+      "title": "Hard to find on /meet/meetups — “Rides”",
+      "screen": "/meet/meetups",
+      "frictionType": "discoverability",
+      "keyElement": "rides",
+      "keyElementLabel": "Rides",
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261105-1915-priya-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261105-1915-priya-ride-sfo-thanksgiving",
+          "persona": "priya-phd-desktop",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 2,
+          "severity": 1,
+          "quote": "No meetups at all on campus. But there's a 'Rides' entry half hidden behind that floating Design toggle. That's what I want.",
+          "evidence": [
+            "ux-sim/runs/sched-20261105-1915-priya-ride-sfo-thanksgiving/shots/002-click.jpg",
+            "ux-sim/runs/sched-20261105-1915-priya-ride-sfo-thanksgiving/shots/002-click-som.jpg"
+          ],
+          "url": "/meet/meetups",
+          "wish": "Rides not covered by the floating pill"
+        }
+      ],
+      "wishes": [
+        "Rides not covered by the floating pill"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for (“Rides”) where they looked (/meet/meetups); label icon-only controls. Personas said they wanted: “Rides not covered by the floating pill”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "afdf99517f07",
+      "title": "Unclear wording on /rides/:id",
+      "screen": "/rides/:id",
+      "frictionType": "copy",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261105-1915-priya-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261105-1915-priya-ride-sfo-thanksgiving",
+          "persona": "priya-phd-desktop",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 7,
+          "severity": 1,
+          "quote": "This is what I needed. Noon flight, 8:30 departure, matches my morning flight. 'Pickup (public spot): Unit 2' — Unit 2 is a dorm complex, which corner exactly? Minor, the chat can sort it.",
+          "evidence": [
+            "ux-sim/runs/sched-20261105-1915-priya-ride-sfo-thanksgiving/shots/007-click.jpg",
+            "ux-sim/runs/sched-20261105-1915-priya-ride-sfo-thanksgiving/shots/007-click-som.jpg"
+          ],
+          "url": "/rides/rd_jcw15aff4w",
+          "wish": "an actual pickup point, e.g. 'Unit 2, Channing Way entrance'"
+        }
+      ],
+      "wishes": [
+        "an actual pickup point, e.g. 'Unit 2, Channing Way entrance'"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite the wording on /rides/:id in plain language (and check the Korean UI). Personas said they wanted: “an actual pickup point, e.g. 'Unit 2, Channing Way entrance'”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "44271af15761",
+      "title": "Bug on /chats/:id — “Switch to the classic design”",
+      "screen": "/chats/:id",
+      "frictionType": "bug",
+      "keyElement": "switch to the classic design",
+      "keyElementLabel": "Switch to the classic design",
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "sched-20261105-1915-priya-ride-sfo-thanksgiving"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "sched-20261105-1915-priya-ride-sfo-thanksgiving",
+          "persona": "priya-phd-desktop",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 11,
+          "severity": 1,
+          "quote": "Works. The floating Design pill is now covering the first system message, third screen in a row it sits on top of content. Sloppy.",
+          "evidence": [
+            "ux-sim/runs/sched-20261105-1915-priya-ride-sfo-thanksgiving/shots/011-click.jpg",
+            "ux-sim/runs/sched-20261105-1915-priya-ride-sfo-thanksgiving/shots/011-click-som.jpg"
+          ],
+          "url": "/chats/cr_i62dekg8dj",
+          "wish": "the design toggle not overlapping page content"
+        }
+      ],
+      "wishes": [
+        "the design toggle not overlapping page content"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Reproduce from the evidence steps on /chats/:id (around “Switch to the classic design”) and fix it; add a regression check for that screen. Personas said they wanted: “the design toggle not overlapping page content”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    }
+  ],
+  "environmentLimited": [],
+  "falseSuccesses": [],
+  "autoChecks": [
+    {
+      "route": "/meet/meetups",
+      "device": "phone",
+      "smallTapTargetsMax": 10,
+      "examples": [
+        {
+          "id": 21,
+          "name": "Create",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 22,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 23,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 24,
+          "name": "For You",
+          "w": 85,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/001-click.jpg"
+    },
+    {
+      "route": "/timetable",
+      "device": "phone",
+      "smallTapTargetsMax": 7,
+      "examples": [
+        {
+          "id": 21,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 25,
+          "name": "Friends",
+          "w": 92,
+          "h": 28
+        },
+        {
+          "id": 26,
+          "name": "Class",
+          "w": 88,
+          "h": 36
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/003-click.jpg"
+    },
+    {
+      "route": "/",
+      "device": "phone",
+      "smallTapTargetsMax": 5,
+      "examples": [
+        {
+          "id": 7,
+          "name": "See all",
+          "w": 62,
+          "h": 21
+        },
+        {
+          "id": 10,
+          "name": "Save",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 13,
+          "name": "Save",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 19,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/000-start.jpg"
+    },
+    {
+      "route": "/schedule",
+      "device": "phone",
+      "smallTapTargetsMax": 5,
+      "examples": [
+        {
+          "id": 21,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 22,
+          "name": "+ Plan Together",
+          "w": 92,
+          "h": 18
+        },
+        {
+          "id": 19,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261105-1915-diego-timetable-add-classes/shots/001-click.jpg"
+    },
+    {
+      "route": "/activities/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 3,
+      "examples": [
+        {
+          "id": 37,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 38,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/003-click.jpg"
+    },
+    {
+      "route": "/chats/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 3,
+      "examples": [
+        {
+          "id": 37,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 53,
+          "name": "Menu",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 20,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/sched-20261105-1915-minji-lunch-today/shots/008-click.jpg"
+    }
+  ]
+}

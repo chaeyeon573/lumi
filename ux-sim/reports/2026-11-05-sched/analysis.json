@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "kind": "ux-sim-analysis",
+  "date": "2026-11-05",
+  "generatedAt": "2026-11-05T19:22:04.599Z",
+  "author": "Scheduled orchestrating Claude session (https://claude.ai/code/session_01VX4jQF3M6doYf7VDXmTdrm)",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "sources": {
+    "findings": "ux-sim/reports/2026-11-05-sched/findings.json",
+    "runs": [
+      "sched-20261105-1915-diego-timetable-add-classes",
+      "sched-20261105-1915-marcus-timetable-add-classes",
+      "sched-20261105-1915-minji-lunch-today",
+      "sched-20261105-1915-priya-ride-sfo-thanksgiving"
+    ],
+    "harness": "6f174347960d",
+    "appCommits": [
+      "9add077e78df"
+    ]
+  },
+  "problems": [
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "going-button-unclear",
+      "title": "On a plan, \"Going\" looks like a status, joins instantly, and the count disagrees (\"1 going\" vs \"0 joined\")",
+      "summary": "Minji today, Aisha on 2026-11-04: both unsure whether \"Going\" was already set or the button, and both saw the list and detail counts disagree.",
+      "rootCauseHypothesis": "Same label for state and action; the list counts the host, the detail page does not.",
+      "severity": 2,
+      "frictionTypes": [
+        "ux_confusion"
+      ],
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "lunch-today"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261105-1915-minji-lunch-today",
+          "step": 3,
+          "quote": "뭐지, list said '1 going' but here it says '0 joined · cap 4'. is anyone actually coming? and the big lime 'Going' — did"
+        }
+      ],
+      "suggestedFix": "Label the action \"Join lunch\"; count the host the same way on both screens.",
+      "file": true,
+      "fingerprints": [
+        "afdbc3f2e8da"
+      ]
+    },
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "floating-pills-cover-buttons",
+      "title": "The floating Design pill covers real buttons and chat messages (4th day in a row)",
+      "summary": "Covered the event card in the lunch chat and the first system message in the ride chat.",
+      "rootCauseHypothesis": "Fixed top-right pill over page content; owner already chose \"New only\".",
+      "severity": 1,
+      "frictionTypes": [
+        "bug"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "priya-phd-desktop"
+      ],
+      "scenarios": [
+        "lunch-today",
+        "ride-sfo-thanksgiving"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261105-1915-priya-ride-sfo-thanksgiving",
+          "step": 11,
+          "quote": "The floating Design pill is now covering the first system message, third screen in a row it sits on top of conte"
+        }
+      ],
+      "suggestedFix": "Remove the pill.",
+      "file": true,
+      "fingerprints": [
+        "ed2dd86233eb",
+        "44271af15761"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "desktop-phone-column",
+      "title": "On a laptop the app is a phone-width column floating in black",
+      "summary": "Priya (PhD, desktop) — one of her stated quit reasons.",
+      "rootCauseHypothesis": "No desktop layout.",
+      "severity": 2,
+      "frictionTypes": [
+        "ux_confusion"
+      ],
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261105-1915-priya-ride-sfo-thanksgiving",
+          "step": 0,
+          "quote": "A 430px phone column in the middle of my 1440 screen, with black bars on both sides."
+        }
+      ],
+      "suggestedFix": "Wider max-width or a two-column layout above ~900px.",
+      "file": false,
+      "fingerprints": [
+        "ca00bd1ad3db"
+      ]
+    },
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "rides-hidden-under-meetups",
+      "title": "Rides is not on Home or in onboarding; students find it only at the bottom of Social › Meetups",
+      "summary": "Third persona in three days (Priya).",
+      "rootCauseHypothesis": "Rides filed under social.",
+      "severity": 1,
+      "frictionTypes": [
+        "discoverability"
+      ],
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261105-1915-priya-ride-sfo-thanksgiving",
+          "step": 2,
+          "quote": "But there's a 'Rides' entry half hidden behind that floating Design toggle."
+        }
+      ],
+      "suggestedFix": "Rides tile on Home.",
+      "file": false,
+      "fingerprints": [
+        "7d8e0b863e51"
+      ]
+    },
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "timetable-behind-schedule-tab",
+      "title": "The Schedule tab opens \"My Plans\"; the class timetable is behind a second button",
+      "summary": "Both timetable personas expected classes under Schedule.",
+      "rootCauseHypothesis": "Tab name vs content.",
+      "severity": 1,
+      "frictionTypes": [
+        "copy"
+      ],
+      "personas": [
+        "diego-transfer-commuter",
+        "marcus-senior-lowtech"
+      ],
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261105-1915-marcus-timetable-add-classes",
+          "step": 1,
+          "quote": "Says Schedule but it's about plans with friends. There's a 'My timetable' button though, that's probably it."
+        }
+      ],
+      "suggestedFix": "Open the timetable first or rename the tab \"Plans\".",
+      "file": false,
+      "fingerprints": [
+        "bacb0bd4468f",
+        "902be6e4513e"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "section-picker-extra-step",
+      "title": "Adding a class asks for a discussion section from a long list before saving",
+      "summary": "\"Add lecture only\" got both through; Marcus also had to guess between Lec 001/002.",
+      "rootCauseHypothesis": "Section choice is required before save.",
+      "severity": 1,
+      "frictionTypes": [
+        "ux_confusion"
+      ],
+      "personas": [
+        "diego-transfer-commuter",
+        "marcus-senior-lowtech"
+      ],
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261105-1915-marcus-timetable-add-classes",
+          "step": 10,
+          "quote": "A whole wall of DIS sections. I don't remember my section number offhand."
+        }
+      ],
+      "suggestedFix": "Save the lecture first; ask for the section afterwards.",
+      "file": false,
+      "fingerprints": [
+        "a104f66ab71e",
+        "7959ca402a91",
+        "f634db6cc171"
+      ]
+    },
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "timetable-class-count",
+      "title": "Timetable header says \"2 classes\" for one course that meets twice a week",
+      "summary": "Both timetable personas noticed.",
+      "rootCauseHypothesis": "Counts meetings, not courses.",
+      "severity": 1,
+      "frictionTypes": [
+        "copy"
+      ],
+      "personas": [
+        "diego-transfer-commuter",
+        "marcus-senior-lowtech"
+      ],
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261105-1915-diego-timetable-add-classes",
+          "step": 11,
+          "quote": "the banner says '2 classes' — it's one class, twice a week."
+        }
+      ],
+      "suggestedFix": "Count distinct courses.",
+      "file": false,
+      "fingerprints": [
+        "a0f2ea5c4667"
+      ]
+    }
+  ],
+  "dismissed": [
+    {
+      "fingerprints": [
+        "afdf99517f07"
+      ],
+      "reason": "Single sev-1: \"Pickup: Unit 2\" names a dorm not a spot; seed ride text, not app copy."
+    },
+    {
+      "fingerprints": [
+        "8d68fe5c0aae"
+      ],
+      "reason": "Emoji missing from a sent message — likely the harness typing path (see harnessIssues); verify by hand before treating as an app bug."
+    }
+  ],
+  "harnessIssues": [
+    {
+      "title": "emoji possibly dropped by `type`",
+      "detail": "minji-lunch-today step 10: the typed 🙂 did not appear in the sent bubble. Check whether the harness types astral-plane characters correctly.",
+      "runs": [
+        "sched-20261105-1915-minji-lunch-today"
+      ]
+    },
+    {
+      "title": "catalog fetch worked this time (267 s)",
+      "detail": "The 2026-11-02 hang did not repeat; the timetable cells ran on the real Berkeley catalog. The two other cells were started with --catalog builtin before the cache existed (no catalog-dependent screens).",
+      "runs": []
+    }
+  ]
+}
