@@ -45,11 +45,11 @@ export function AboutStep({ d, patch, school, finish }: Omit<StepProps, 'next'> 
 
   const taken = /already registered|이미 가입된/i.test(err);
   return (
-    <StepFrame title={en ? 'A little about you' : '나에 대해 조금만'} sub={en ? 'Your timetable, housing and memberships start private.' : '시간표·사는 곳·소속은 처음엔 비공개로 시작해요.'}
+    <StepFrame title={en ? 'A little about you' : '나에 대해 조금만'} sub={en ? 'Your timetable and housing start friends-only.' : '시간표와 사는 곳은 처음엔 친구에게만 보여요.'}
       cta={{ label: en ? 'Get Started' : '시작하기', onClick: start, disabled: !ready || !!busy, loading: busy === 'start' }}
       note={<p className="text-center text-[11.5px] text-ink-3 leading-snug">{en ? 'By starting Lumi you confirm you’re 16 or older and agree to the ' : 'Lumi를 시작하면 만 16세 이상이며 다음에 동의하는 것으로 봐요: '}<Link to="/terms" className="text-sel-fg font-semibold">{en ? 'Terms' : '이용약관'}</Link>{en ? ' and ' : ', '}<Link to="/privacy" className="text-sel-fg font-semibold">{en ? 'Privacy Policy' : '개인정보처리방침'}</Link>.</p>}>
       <div className="space-y-5">
-        <FormField label={en ? 'Your name' : '이름'} hint={en ? 'How classmates see you.' : '같은 학교 학생들에게 보이는 이름이에요.'}>
+        <FormField label={en ? 'Your name' : '이름'}>
           <TextInput maxLength={20} autoComplete="given-name" value={d.nickname} onChange={(e) => patch({ nickname: e.target.value })} placeholder={en ? 'First name or nickname' : '이름 또는 닉네임'} />
         </FormField>
         <FormField label={en ? 'Birth year' : '출생 연도'}
@@ -60,7 +60,7 @@ export function AboutStep({ d, patch, school, finish }: Omit<StepProps, 'next'> 
         </FormField>
         <FormField label={en ? 'School email' : '학교 이메일'}>
           <div className="flex gap-2">
-            <TextInput className="flex-1" icon={<Mail size={19} />} type="email" inputMode="email" autoComplete="email" autoCapitalize="off" autoCorrect="off" spellCheck={false}
+            <TextInput className="flex-1 min-w-0" icon={<Mail size={19} />} type="email" inputMode="email" autoComplete="email" autoCapitalize="off" autoCorrect="off" spellCheck={false}
               disabled={verified} placeholder={school?.emailDomain ? `you@${school.emailDomain}` : 'you@university.edu'} value={d.email}
               onChange={(e) => { patch({ email: e.target.value, codeSent: false }); setCode(''); setVerified(false); setHint(''); setErr(''); }} />
             {!verified && <Btn variant="outline" size="lg" className="!h-12 px-4" onClick={sendCode} loading={busy === 'send'} disabled={!emailOk || !!busy}>{d.codeSent ? (en ? 'Resend' : '다시 받기') : (en ? 'Send code' : '코드 받기')}</Btn>}

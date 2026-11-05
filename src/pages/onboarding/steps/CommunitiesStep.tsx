@@ -60,7 +60,7 @@ export function CommunitiesStep({ d, patch, next, schoolName }: StepProps & { sc
           <IconTile tone="rose" size={46} className="!rounded-full ring-4 ring-t-ice -ml-2.5"><Landmark size={21} /></IconTile>
           <IconTile tone="peach" size={46} className="!rounded-full ring-4 ring-t-ice -ml-2.5"><FlaskConical size={21} /></IconTile>
         </div>
-        <p className="mt-3.5 text-[17px] font-extrabold leading-snug tracking-[-0.01em] flex items-center gap-1.5"><Users size={18} className="text-t-ice-fg" />{en ? 'Connect through shared communities' : '같은 커뮤니티로 연결돼요'}</p>
+        <p className="mt-3.5 text-[17px] font-extrabold leading-snug tracking-[-0.01em] max-w-[240px]">{en ? 'Connect through shared communities' : '같은 커뮤니티로 연결돼요'}</p>
         <p className="mt-1 text-[12.5px] text-ink-2">{en ? 'Clubs, labs, houses and teams you belong to or follow.' : '속해 있거나 팔로우하는 동아리·연구실·하우스·팀.'}</p>
       </div>
 

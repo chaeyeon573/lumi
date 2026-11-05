@@ -29,8 +29,8 @@ export function WhatStep({ p, onPick, onContinue }: { p: Preview; onPick: (p: Pr
           const on = k === p; const { Icon, label } = PILLS[k];
           return (
             <button key={k} type="button" role="tab" aria-selected={on} onClick={() => onPick(k)}
-              className={cn('h-11 px-3.5 rounded-full border flex items-center gap-2 text-[13px] font-semibold press min-w-0', on ? 'bg-sel-soft border-sel-line text-sel-fg' : 'bg-surface border-line text-ink')}>
-              <Icon size={16} className="shrink-0" /><span className="truncate">{label}</span>
+              className={cn('min-h-12 py-1.5 px-3.5 rounded-[22px] border flex items-center gap-2 text-left text-[12.5px] leading-tight font-semibold press min-w-0', on ? 'bg-sel-soft border-sel-line text-sel-fg' : 'bg-surface border-line text-ink')}>
+              <Icon size={16} className="shrink-0" /><span>{label}</span>
             </button>
           );
         })}
@@ -63,13 +63,13 @@ function PreviewCard({ title, line, children }: { title: string; line: string; c
 
 const DAYS = en ? ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'] : ['월', '화', '수', '목', '금'];
 const HOURS = [9, 10, 11, 12, 13, 14, 15, 16];
-const ROW = 30;
+const ROW = 32;
 const CLASSES: { day: number; start: number; len: number; title: string; tone: Tone }[] = [
   ...[0, 2, 4].map((day) => ({ day, start: 10, len: 1, title: en ? 'Calculus' : '미적분', tone: 'ice' as Tone })),
   { day: 1, start: 12, len: 1.5, title: en ? 'Studio' : '스튜디오', tone: 'peach' },
   { day: 3, start: 12, len: 1.5, title: en ? 'Seminar' : '세미나', tone: 'mint' },
-  { day: 0, start: 14, len: 1, title: en ? 'Discussion' : '토론', tone: 'lav' },
-  { day: 3, start: 14.5, len: 1, title: en ? 'Research' : '연구', tone: 'lav' },
+  { day: 0, start: 14, len: 1, title: en ? 'Section' : '분반', tone: 'lav' },
+  { day: 3, start: 14.5, len: 1, title: en ? 'Lab' : '실험', tone: 'lav' },
 ];
 const hourLabel = (h: number) => (h === 12 ? '12 PM' : h > 12 ? `${h - 12} PM` : `${h} AM`);
 
@@ -88,13 +88,14 @@ function ClassesPreview() {
             <div key={day} className="relative border-l border-line">
               {HOURS.map((h) => <div key={h} className="border-t border-line/60 first:border-t-0" style={{ height: ROW }} />)}
               {day === 2 && (
-                <div className="absolute inset-x-[3px] rounded-lg border border-dashed border-sel-line bg-sel-soft/60 px-1 pt-1 text-[9.5px] font-semibold leading-tight text-sel-fg" style={{ top: (13 - 9) * ROW + 3, height: 3 * ROW - 6 }}>
+                <div className="absolute inset-x-[3px] rounded-lg border border-dashed border-t-rose-fg/50 bg-t-rose/60 px-1 pt-1 text-[9.5px] font-semibold leading-tight text-t-rose-fg" style={{ top: (13 - 9) * ROW + 3, height: 3 * ROW - 6 }}>
                   {en ? 'Free afternoon' : '빈 오후'}
                 </div>
               )}
               {CLASSES.filter((c) => c.day === day).map((c) => (
                 <div key={c.title + c.start} className={cn('absolute inset-x-[3px] rounded-lg px-1 pt-1 text-[9.5px] font-bold leading-tight text-ink overflow-hidden', TONE[c.tone])} style={{ top: (c.start - 9) * ROW + 2, height: c.len * ROW - 4 }}>
                   <span className="block truncate text-ink">{c.title}</span>
+                  <span className="block text-[8.5px] font-medium opacity-80">{`${Math.floor(c.start)}:${c.start % 1 ? '30' : '00'}`}</span>
                 </div>
               ))}
             </div>
@@ -113,7 +114,7 @@ function SampleListing({ tone, Icon, badge, title }: { tone: Tone; Icon: typeof 
       <span className={cn('h-[76px] w-[76px] rounded-2xl grid place-items-center shrink-0', TONE[tone])}><Icon size={26} /></span>
       <div className="flex-1 min-w-0 pr-6">
         <Badge tone={tone}>{badge}</Badge>
-        <span className="block text-[14.5px] font-bold leading-snug mt-1.5 truncate">{title}</span>
+        <span className="block text-[14.5px] font-bold leading-snug mt-1.5">{title}</span>
         <span className="block text-[12px] text-ink-3 mt-0.5">{en ? 'Example listing' : '예시 공고'}</span>
         <span className="inline-flex items-center gap-0.5 mt-1 text-[12px] font-semibold text-sel-fg">{en ? 'View source' : '원문 보기'}<ArrowUpRight size={13} /></span>
       </div>
@@ -153,23 +154,23 @@ function ClubsPreview() {
 function SocialPreview() {
   const tabs = en ? ['For You', 'Meetups', 'People', 'Feed'] : ['추천', '모임', '사람', '피드'];
   return (
-    <PreviewCard title={PILLS.social.label} line={en ? 'Small plans with people from your classes and clubs.' : '같은 수업·동아리 사람들과 작은 약속을.'}>
+    <PreviewCard title={PILLS.social.label} line={en ? 'Small plans with people from your classes.' : '같은 수업 사람들과 작은 약속을.'}>
       <div className="flex border-b border-line -mx-1">
         {tabs.map((t, i) => (
-          <span key={t} className={cn('relative flex-1 h-9 grid place-items-center text-[12px] font-semibold', i === 0 ? 'text-sel-fg' : 'text-ink-3')}>
+          <span key={t} className={cn('relative flex-1 h-8 grid place-items-center text-[12px] font-semibold', i === 0 ? 'text-sel-fg' : 'text-ink-3')}>
             {t}{i === 0 && <span className="absolute left-2 right-2 bottom-0 h-[2px] rounded-full bg-sel" />}
           </span>
         ))}
       </div>
-      <div className="text-[17px] font-extrabold tracking-[-0.02em] mt-3.5">{en ? 'Good plans. Your people.' : '좋은 약속, 나의 사람들.'}</div>
-      <div className="grid grid-cols-2 gap-2 mt-3">
+      <div className="text-[17px] font-extrabold tracking-[-0.02em] mt-3">{en ? 'Good plans. Your people.' : '좋은 약속, 나의 사람들.'}</div>
+      <div className="grid grid-cols-2 gap-2 mt-2.5">
         <span className="h-9 rounded-full border border-sel-line bg-sel-soft text-sel-fg text-[12.5px] font-semibold grid place-items-center">{en ? 'Start a Meetup' : '모임 만들기'}</span>
         <span className="h-9 rounded-full border border-line text-[12.5px] font-semibold grid place-items-center">{en ? 'Find People' : '사람 찾기'}</span>
       </div>
-      <div className="flex gap-1.5 mt-3 overflow-hidden">
+      <div className="flex gap-1.5 mt-2.5 overflow-hidden">
         {(en ? ['Coffee', 'Study', 'Workout', 'Lunch'] : ['커피', '공부', '운동', '점심']).map((c, i) => <Chip key={c} size="sm" active={i === 0}>{c}</Chip>)}
       </div>
-      <div className={cn(cardCls, 'p-3.5 mt-3 bg-surface-2')}>
+      <div className={cn(cardCls, 'p-3 mt-2.5 bg-surface-2')}>
         <div className="flex items-center gap-3">
           <IconTile tone="peach" size={42}><Coffee size={20} /></IconTile>
           <div className="flex-1 min-w-0">
@@ -184,7 +185,7 @@ function SocialPreview() {
           <span className="font-semibold text-sel-fg">{en ? 'View meetup' : '모임 보기'}</span>
         </div>
       </div>
-      <div className={cn(cardCls, 'p-3.5 mt-2.5 bg-surface-2')}>
+      <div className={cn(cardCls, 'p-3 mt-2 bg-surface-2')}>
         <div className="flex items-center gap-2.5">
           <IconTile tone="neutral" size={34} className="!rounded-full"><UserRound size={18} /></IconTile>
           <div className="min-w-0">

@@ -78,7 +78,7 @@ export function LoginPage() {
         <div className="space-y-5">
           <FormField label={en ? 'School email' : '학교 이메일'}>
             <div className="flex gap-2">
-              <TextInput className="flex-1" icon={<Mail size={19} />} type="email" inputMode="email" autoComplete="email" autoCapitalize="off" autoCorrect="off" spellCheck={false} autoFocus={!sent}
+              <TextInput className="flex-1 min-w-0" icon={<Mail size={19} />} type="email" inputMode="email" autoComplete="email" autoCapitalize="off" autoCorrect="off" spellCheck={false} autoFocus={!sent}
                 placeholder="you@university.edu" value={email} onChange={(e) => { setEmail(e.target.value); setSent(false); setCode(''); setHint(''); setErr(''); saveSignIn(null); }} />
               <Btn variant="outline" size="lg" className="!h-12 px-4" onClick={sendCode} loading={busy === 'send'} disabled={!valid || !!busy}>{sent ? (en ? 'Resend' : '다시 받기') : (en ? 'Send code' : '코드 받기')}</Btn>
             </div>

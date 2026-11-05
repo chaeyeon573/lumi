@@ -56,9 +56,9 @@ export interface StepProps { d: Draft; patch: (p: Partial<Draft>) => void; next:
 /** Big title + one grey line (PDF: "Your goals / What would you like to get out of Lumi?") */
 export function StepTitle({ title, sub }: { title: string; sub?: ReactNode }) {
   return (
-    <div className="pt-3 pb-5">
+    <div className="pt-3 pb-6">
       <h1 className="ha-title">{title}</h1>
-      {sub && <p className="text-[15px] text-ink-2 mt-2.5 leading-snug">{sub}</p>}
+      {sub && <p className="text-[15px] text-ink-2 mt-3 leading-snug">{sub}</p>}
     </div>
   );
 }

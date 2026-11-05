@@ -58,7 +58,7 @@ export function ComingSoonSchools({ openNames }: { openNames: string[] }) {
             <p className="text-[13.5px] text-ink-2">{en ? 'You’re on the list. We’ll email you when it opens.' : '대기 명단에 넣었어요. 열리면 메일로 알려 드릴게요.'}</p>
           ) : (
             <div className="flex gap-2">
-              <TextInput className="flex-1" type="email" inputMode="email" autoComplete="email" placeholder={en ? 'Your email' : '이메일'} value={email} onChange={(e) => setEmail(e.target.value)} />
+              <TextInput className="flex-1 min-w-0" type="email" inputMode="email" autoComplete="email" placeholder={en ? 'Your email' : '이메일'} value={email} onChange={(e) => setEmail(e.target.value)} />
               <Btn variant="outline" size="lg" className="!h-12 px-4" loading={state === 'busy'} disabled={!valid} onClick={join}>{en ? 'Notify me' : '알림 받기'}</Btn>
             </div>
           )}
