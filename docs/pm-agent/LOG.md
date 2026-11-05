@@ -2058,3 +2058,14 @@
 - CMU's 865 weekend and long meetings are real: drama rehearsals and production practicums. Checked 53-603 Game Design Fundamentals: Saturday 11:15-5:05 on CMU's page.
 - Spot check courses this run: CMU 53-603, USF ADVT 320 and BIOL 115 (after the fix), UW SPH 380/381 (after the earlier fix).
 - Spot check clubs: UMN READ, UNC Delta Delta Sigma, Penn Kite and Key, UMD Kappa Theta Pi fine. W&M Black Law Students Association (law.wm.edu) fails TLS from the container for the whole host - not verifiable here, left as is.
+
+## 2026-11-05 07:33 UTC
+- Audited every events file: night times, duplicates, exhibits, emoji, past dates, missing links.
+  - **Exhibitions:** 29 multi-day exhibitions came through readers that don't filter them (e.g. Duke's "Cosmic Origins Exhibition Run" 18 times). collect-events now drops exhibitions in one shared place; sports "exhibition games" are kept.
+  - **Emoji in events:** descriptions and places kept emoji; collect-events now runs every event through `noEmojiView`.
+  - **Emoji in club files:** 73 names and descriptions in 36 files had emoji or ® marks. Club collection now strips them, touching only text that actually contains an emoji (a first try also collapsed spaces in 640 descriptions and was reverted before commit).
+  - **Shared emoji stripper:** skin-tone modifiers (U+1F3FB-1F3FF) and flag tag characters were left behind. Added to `stripEmoji` in packages/core/src/lib/orglinks.ts (shared file) and to server/noemoji.ts, with a test.
+  - All of the above applied to today's files, offline.
+  - Checked and fine: UCSC "CSE Colloquium" at 2:40 a.m. is what UCSC's own API says (source data, kept). UT's 31 "duplicate" General Meetings are different clubs at the same time.
+- Spot check courses (Illinois, official XML): NEUR 598 T 2:00, MUSC 430 B TR 11:00, SPAN 122 E3 MW 1:00-1:50, HIST 377 TR 12:30, PS 512 T 1:00 - all match.
+- Spot check clubs: UT Pre-CAA, Yale Historical Review, UMass Comm Grad, Duke Catholic Center fine. USC SC Men's Rugby answered 503 twice - left for the weekly link check.

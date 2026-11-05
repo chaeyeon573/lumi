@@ -45,3 +45,9 @@ test('noEmojiView: no emoji in what the app receives — posts, names, avatars, 
   assert.equal(noEmojiView({ a: 'x' }).a, 'x');
   assert.equal(snap.users[0].avatar.emoji, '🎸'); // input not changed
 });
+
+test('stripEmoji: skin-tone modifiers and flag tags do not survive alone (BC event "Maloney 441! 🤝🏽")', () => {
+  assert.equal(stripEmoji('Meet in Maloney 441! 🤝🏽 Casual'), 'Meet in Maloney 441! Casual');
+  assert.equal(stripEmoji('Lone 🏽 modifier'), 'Lone modifier');
+  assert.equal(stripEmoji('Scotland 🏴󠁧󠁢󠁳󠁣󠁴󠁿 night'), 'Scotland night');
+});

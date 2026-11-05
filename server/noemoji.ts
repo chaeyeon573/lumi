@@ -7,7 +7,7 @@
  */
 import { stripEmoji, initialsOf } from '@core/lib/orglinks';
 
-const PICTO = /[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}\u{FE0F}\u{200D}\u{20E3}]/u;
+const PICTO = /[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}\u{FE0F}\u{200D}\u{20E3}\u{1F3FB}-\u{1F3FF}\u{E0020}-\u{E007F}]/u;
 const TEXT_KEYS = new Set(['title', 'body', 'content', 'text', 'description', 'nickname', 'name', 'bio', 'host', 'answer', 'caption', 'comment', 'message', 'note', 'notes', 'tagline', 'headline', 'question', 'prompt', 'label', 'location', 'eligibility', 'benefit', 'period', 'how', 'preview', 'lastMessage']);
 const PICTURE_KEYS = new Set(['avatar', 'logo', 'cover', 'icon']);
 

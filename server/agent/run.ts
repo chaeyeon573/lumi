@@ -30,6 +30,7 @@ import { fetchUsaJobs } from '../sources/usajobs';
 import { studentGovToOrg, type StudentGovRow } from '../sources/orglinks';
 import { enrichFromWebsites, isDeadPage, DEAD } from '../sources/sitesocial';
 import { publicLinks, stripEmoji } from '@core/lib/orglinks';
+import { noEmojiView } from '../noemoji';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
@@ -261,6 +262,13 @@ async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
       writeFileSync(file, `${JSON.stringify(list, null, 1)}\n`);
     }
   }
+  // 이모지는 파일에도 남기지 않는다(동아리 이름·설명, 2026-11-05 점검에서 약 160개) — 서버 응답에서도 지우지만 데이터 자체를 깨끗하게
+  if (existsSync(file)) {
+    const raw = readFileSync(file, 'utf8'); const list = JSON.parse(raw) as Organization[];
+    const has = (t?: string) => !!t && /[\p{Extended_Pictographic}\u{1F3FB}-\u{1F3FF}]/u.test(t); // 이모지가 있는 글만 바꾼다(띄어쓰기 등 나머지는 그대로)
+    const clean = list.map((o) => (has(o.name) || has(o.description) ? { ...o, name: has(o.name) ? stripEmoji(o.name) || o.name : o.name, ...(has(o.description) ? { description: stripEmoji(o.description!) } : {}) } : o));
+    const next = `${JSON.stringify(clean, null, 1)}\n`; if (next !== raw) writeFileSync(file, next);
+  }
   out.push(...(await collectCourses(row)));
 
   return out;
@@ -286,8 +294,11 @@ async function collectEvents(row: SchoolRow): Promise<AgentRun> {
   const tb = /^trumba:([\w.-]+)$/.exec(row.events_source ?? '')?.[1]; if (tb) await tryAdd(`trumba ${tb}`, () => fetchTrumba(tb, school, 30));
   if (!sources.length && !errors.length) return record({ task, schoolId: row.id, status: 'skipped', startedAt, summary: { error: 'no public event source known' } });
   const today = new Date().toISOString().slice(0, 10);
-  const events = [...new Map(got.filter((o) => !o.date || o.date >= today).map((o) => [o.id, o])).values()]
-    .map(({ cover: _c, qna: _q, reviews: _r, ...o }) => ({ ...o, title: stripEmoji(o.title), host: stripEmoji(o.host) }))
+  // 전시(며칠씩 열려 있는 것)는 '그 시간에 가는 행사'가 아니다 — 읽는 코드마다 빼던 것을 여기서 한 번 더 (Duke "Cosmic Origins Exhibition Run" 18개, 2026-11-05 점검). 운동 경기의 exhibition game 은 남긴다
+  const isExhibit = (t: string) => /\bexhibit(ion)?s?\b/i.test(t) && !/\b(game|match|vs\.?|versus|tournament|scrimmage|bout|meet|showcase)\b/i.test(t);
+  // 이모지는 데이터에도 남기지 않는다 — 제목·주최만이 아니라 설명·장소까지 (서버 응답과 같은 규칙, server/noemoji.ts)
+  const events = [...new Map(got.filter((o) => (!o.date || o.date >= today) && !isExhibit(o.title)).map((o) => [o.id, o])).values()]
+    .map(({ cover: _c, qna: _q, reviews: _r, ...o }) => noEmojiView({ ...o, title: stripEmoji(o.title), host: stripEmoji(o.host) }))
     .sort((a, b) => `${a.date ?? ''} ${a.startTime ?? ''}`.localeCompare(`${b.date ?? ''} ${b.startTime ?? ''}`));
   mkdirSync(COLLECTED_DIR, { recursive: true });
   if (events.length) writeFileSync(path.join(COLLECTED_DIR, `${row.id}.events.json`), `${JSON.stringify({ collectedAt: startedAt, sources, events }, null, 1)}\n`);

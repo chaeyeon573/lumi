@@ -32,7 +32,7 @@ export function publicLinks<T extends { label: string; url: string }>(links: T[]
  *   - 로고 사진이 없고 로고가 이모지(🎯 🏛️ …)면 이름 머리글자로 바꾼다. 그리스 문자(ΑΚΨ)·머리글자는 그대로
  * 저장된 데이터는 바꾸지 않고, 서버가 앱으로 보낼 때와 미리보기에서만 적용한다.
  */
-const PICTO = /[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}\u{FE0F}\u{200D}\u{20E3}]/gu;
+const PICTO = /[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}\u{FE0F}\u{200D}\u{20E3}\u{1F3FB}-\u{1F3FF}\u{E0020}-\u{E007F}]/gu;
 export const stripEmoji = (s: string) => s.replace(PICTO, '').replace(/\(\s*\)/g, '').replace(/\s{2,}/g, ' ').trim();
 export function initialsOf(name: string): string {
   const words = stripEmoji(name).replace(/\([^)]*\)/g, ' ').replace(/[^A-Za-z0-9 ]+/g, ' ').split(/\s+/)
