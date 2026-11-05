@@ -43,6 +43,7 @@ import { searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm, ca
 import { createStore } from './store';
 import { snapshotFor, patchFor } from './view';
 import { TOGETHER_RULES, ruleAllows } from './together-rules';
+import { MEETUP_RULES } from './meetup-rules';
 import { gameFor } from '@core/lib/icebreakers';
 import { sendCodeMail, sendMail } from './mail';
 import { registerRideRoutes } from './rides';
@@ -399,6 +400,7 @@ const RULES: Record<Group, Record<string, Rule>> = {
     approve: (me, args) => { const p = db.participations.find((x) => x.id === args[0]); return !!p && activityHost(me, p.activityId); },
     reject: (me, args) => { const p = db.participations.find((x) => x.id === args[0]); return !!p && activityHost(me, p.activityId); },
     comment: 1,
+    ...MEETUP_RULES.activities,
   },
   posts: { create: 0, remove: owner(() => db.posts, (p) => p.authorId), toggleLike: 1, toggleSave: 1, comment: 1, approveTag: 1 },
   relationships: {

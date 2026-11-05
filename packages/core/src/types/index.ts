@@ -412,6 +412,8 @@ export interface Activity {
   official?: boolean;
   /** Lumi 가 같은 수업 학생끼리 공강이 겹쳐 제안한 스터디 그룹 — 초대받은 사람에게만 내려간다 */
   studyGroup?: StudyGroupInfo;
+  /** 참가할 수 있는 학적 (S045 All statuses / Undergraduate / Graduate / Alumni). 없으면 모두. 보기는 공개 범위를 따르고, 참가만 막는다 (engine activities.join) */
+  audience?: UniversityRole;
   createdAt: string;
 }
 
@@ -470,7 +472,8 @@ export interface ClassRoster {
 
 export type CrewType = 'exam' | 'assignment' | 'review' | 'project';
 
-export type ParticipationStatus = 'pending' | 'approved' | 'rejected' | 'cancelled';
+/** waitlisted: 자리가 찼을 때 대기 명단 (S046 Join Waitlist) — 자리가 나면 먼저 온 순서로 올라간다 (engine activities.cancel) */
+export type ParticipationStatus = 'pending' | 'approved' | 'rejected' | 'cancelled' | 'waitlisted';
 
 export interface Participation {
   id: ID;

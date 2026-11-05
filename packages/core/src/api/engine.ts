@@ -18,6 +18,7 @@ import { pairById, guessQuestionById } from '@core/data/icebreakers';
 import { DAILY_QUESTIONS, PERSON_ROLE_LABELS } from '@core/lib/labels';
 import { campusDate } from '@core/lib/listings';
 import { orgJoinState } from '@core/lib/orgjoin';
+import { audienceFits, isFull, waitlistOf } from '@core/lib/meetups';
 import { canGoTogether, campusToday, crewMembers, crewsFor, dailyTally, meetTimeFor, DAILY_MIN_ANSWERS, MEETUP_CAPACITY } from '@core/lib/withpeople';
 
 export interface EngineContext {
@@ -93,6 +94,14 @@ export function createEngine(ctx: EngineContext) {
     addToRoom(room, p.userId);
     const nts = [notify(p.userId, { type: 'participation_approved', title: t('참가가 승인되었어요'), body: `"${activity.title}${t('" 그룹 채팅방에 입장할 수 있어요.')}`, link: `/chats/${room.id}` })];
     return { participations: [p], chatRooms: [room], notifications: nts };
+  }
+
+  /** 참가할 수 있는지 — 초대 전용·차단·학적(S045 audience). 안 되면 사람이 읽을 이유로 던진다 */
+  function canJoin(activity: Activity, userId: ID) {
+    if (activity.joinPolicy === 'invite' && !(activity.invitedIds ?? []).includes(userId)) throw new Error(t('초대받은 사람만 참가할 수 있는 활동이에요.'));
+    if (isBlocked(db(), userId, activity.hostId)) throw new Error(t('참가할 수 없는 활동이에요.'));
+    const user = find(db().users, userId);
+    if (!audienceFits(activity, user)) throw new Error(t('이 모임은 정해진 학적의 학생만 참가할 수 있어요.'));
   }
 
   function acceptFriend(reqId: ID): Patch {
@@ -279,7 +288,7 @@ export function createEngine(ctx: EngineContext) {
         const existing = db().participations.find((p) => p.activityId === activityId && p.userId === userId && p.status !== 'cancelled' && p.status !== 'rejected');
         if (existing) return { participations: [existing] };
         const approvedCount = db().participations.filter((p) => p.activityId === activityId && p.status === 'approved').length;
-        if (activity.joinPolicy === 'invite' && !(activity.invitedIds ?? []).includes(userId)) throw new Error(t('초대받은 사람만 참가할 수 있는 활동이에요.'));
+        canJoin(activity, userId);
         if (approvedCount >= activity.capacity) throw new Error(t('모집 인원이 모두 찼어요.'));
         const p: Participation = { id: uid('p'), activityId, userId, status: activity.joinPolicy === 'open' ? 'approved' : 'pending', message, createdAt: now() };
         db().participations.push(p);
@@ -294,16 +303,41 @@ export function createEngine(ctx: EngineContext) {
         if (AUTO_APPROVE_HOSTS.has(activity.hostId)) later(5000, () => { if (p.status === 'pending') ctx.push(approveParticipation(p)); });
         return { participations: [p], notifications: nts };
       },
+      /** 자리가 찼으면 대기 명단에 (S046 Join Waitlist), 자리가 있으면 join 과 같다 */
+      joinWaitlist(activityId: ID, userId: ID): Patch {
+        const activity = find(db().activities, activityId);
+        const existing = db().participations.find((p) => p.activityId === activityId && p.userId === userId && p.status !== 'cancelled' && p.status !== 'rejected');
+        if (existing) return { participations: [existing] };
+        canJoin(activity, userId);
+        if (!isFull(activity, db().participations)) return api.activities.join(activityId, userId);
+        const p: Participation = { id: uid('p'), activityId, userId, status: 'waitlisted', createdAt: now() };
+        db().participations.push(p);
+        return { participations: [p] };
+      },
       cancel(activityId: ID, userId: ID): Patch {
-        const p = db().participations.find((x) => x.activityId === activityId && x.userId === userId && (x.status === 'approved' || x.status === 'pending'));
+        const p = db().participations.find((x) => x.activityId === activityId && x.userId === userId && (x.status === 'approved' || x.status === 'pending' || x.status === 'waitlisted'));
         if (!p) return {};
+        const wasIn = p.status === 'approved';
         p.status = 'cancelled';
         const room = db().chatRooms.find((r) => r.activityId === activityId);
         if (room) room.memberIds = room.memberIds.filter((m) => m !== userId);
-        return { participations: [p], chatRooms: room ? [room] : [] };
+        const out: Patch = { participations: [p], chatRooms: room ? [room] : [] };
+        // 자리가 났다 — 대기 명단 맨 앞 사람이 올라간다 (바로 참가 모임은 참가, 승인제는 주최자에게 요청으로)
+        const activity = db().activities.find((a) => a.id === activityId);
+        const next = activity && wasIn ? waitlistOf(db().participations, activityId)[0] : undefined;
+        if (!activity || !next || isFull(activity, db().participations)) return out;
+        if (activity.joinPolicy === 'open') return mergePatch(out, approveParticipation(next));
+        next.status = 'pending';
+        const who = db().users.find((u) => u.id === next.userId);
+        const nts = [notify(activity.hostId, { type: 'participation_request', title: t('참가 요청'), body: `${who?.nickname ?? ''}${t('님이 "')}${activity.title}${t('"에 참가를 신청했어요.')}`, link: `/activities/${activity.id}/manage` })];
+        return mergePatch(out, { participations: [next], notifications: nts });
       },
+      /** 승인은 정원을 넘지 못한다 (S048 "Approval cannot exceed capacity") — 요청·대기 명단 모두 */
       approve(participationId: ID): Patch {
-        return approveParticipation(find(db().participations, participationId));
+        const p = find(db().participations, participationId);
+        const activity = find(db().activities, p.activityId);
+        if (p.status !== 'approved' && isFull(activity, db().participations)) throw new Error(t('모집 인원이 모두 찼어요.'));
+        return approveParticipation(p);
       },
       reject(participationId: ID): Patch {
         const p = find(db().participations, participationId);
@@ -400,6 +434,7 @@ export function createEngine(ctx: EngineContext) {
       },
       sendFriendRequest(fromId: ID, toId: ID): Patch {
         const r = db().relationships;
+        if (isBlocked(db(), fromId, toId)) throw new Error(t('차단된 사용자예요.'));
         if (r.friendRequests.some((q) => q.fromId === fromId && q.toId === toId && q.status === 'pending')) return { relationships: r };
         const req = { id: uid('fr'), fromId, toId, status: 'pending' as const, createdAt: now() };
         r.friendRequests.push(req);
@@ -576,6 +611,9 @@ export function createEngine(ctx: EngineContext) {
 
     proposals: {
       create(fromId: ID, toId: ID, input: Pick<ActivityProposal, 'category' | 'message' | 'when'>): Patch {
+        if (fromId === toId || isBlocked(db(), fromId, toId)) throw new Error(t('차단된 사용자예요.'));
+        const dup = db().proposals.find((x) => x.fromId === fromId && x.toId === toId && x.status === 'pending' && x.expiresAt > now());
+        if (dup) return { proposals: [dup] };
         const p: ActivityProposal = { id: uid('pr'), fromId, toId, status: 'pending', createdAt: now(), expiresAt: new Date(Date.now() + 48 * 3600000).toISOString(), ...input };
         db().proposals.push(p);
         const me = find(db().users, fromId);

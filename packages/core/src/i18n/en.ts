@@ -1415,4 +1415,8 @@ export const en: Record<string, string> = {
   '다른 학교 행사예요.': "That event is at another campus.",
   '같이 가요 · ': 'Go together · ',
   '행사 시작 전에 만나서 같이 들어가요. 처음 가는 사람도 환영이에요.': 'Meet a few minutes before it starts and walk in together. First-timers welcome.',
+  // WP4 모임·사람 (S045–S055)
+  '참가할 수 없는 활동이에요.': "You can't join this meetup.",
+  '이 모임은 정해진 학적의 학생만 참가할 수 있어요.': 'This meetup is open to a specific academic status only.',
+  '차단된 사용자예요.': "You can't reach this person.",
 };

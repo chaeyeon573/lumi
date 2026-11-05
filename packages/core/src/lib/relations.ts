@@ -1,6 +1,6 @@
 import type { Snapshot } from '@core/api/types';
 import { t } from '@core/i18n';
-import type { Activity, ID, Post, User, Visibility, ProfileField } from '@core/types';
+import type { Activity, ID, Organization, Post, User, Visibility, ProfileField } from '@core/types';
 import { pairKey } from './format';
 
 type Rel = Pick<Snapshot, 'relationships' | 'participations' | 'proposals' | 'users'>;
@@ -60,6 +60,12 @@ function sameSchool(a: User, b: User) {
 }
 function dept(u: User) { return u.affiliation.type === 'university' ? u.affiliation.department ?? '' : ''; }
 
+/** 그 모임의 회원·운영진인지 — 스냅샷에 모임 목록이 있을 때만 (서버 db 에는 늘 있다). 팔로우는 회원이 아니다 */
+function inOrg(s: Rel, userId: ID, orgId: ID): boolean {
+  const o = (s as Rel & { organizations?: Organization[] }).organizations?.find((x) => x.id === orgId);
+  return !!o && (o.memberIds.includes(userId) || o.adminIds.includes(userId));
+}
+
 export function canView(s: Rel, viewer: User, ownerId: ID, visibility: Visibility, targets?: string[]): boolean {
   if (viewer.id === ownerId) return true;
   if (isBlocked(s, viewer.id, ownerId)) return false;
@@ -73,8 +79,9 @@ export function canView(s: Rel, viewer: User, ownerId: ID, visibility: Visibilit
     case 'department': {
       if (!sameSchool(viewer, owner)) return false;
       if (!targets?.length) return !!dept(viewer) && dept(viewer) === dept(owner);
-      // 'course:<수업명>' 타깃은 같은 수업을 듣는 사람에게만
-      return targets.some((tg) => tg.startsWith('course:') ? (viewer.timetable ?? []).some((c) => c.name === tg.slice(7)) : tg === dept(viewer));
+      // 'course:<수업명>' 타깃은 같은 수업을 듣는 사람에게만, 'org:<id>' 는 그 모임의 회원·운영진에게만 (S045 My verified groups)
+      return targets.some((tg) => tg.startsWith('course:') ? (viewer.timetable ?? []).some((c) => c.name === tg.slice(7))
+        : tg.startsWith('org:') ? inOrg(s, viewer.id, tg.slice(4)) : tg === dept(viewer));
     }
     case 'friends': return isFriend(s, viewer.id, ownerId);
     case 'followers': return isFollowing(s, viewer.id, ownerId) || isFriend(s, viewer.id, ownerId);
