@@ -24,7 +24,8 @@
     "agent": "tsx --tsconfig server/tsconfig.json server/agent/run.ts",
     "jobs": "tsx --tsconfig server/tsconfig.json server/scripts/fetch-jobs.ts",
     "agent:worker": "AGENT_MODE=worker tsx --tsconfig server/tsconfig.json server/agent/run.ts",
-    "ucla-courses": "tsx --tsconfig server/tsconfig.json server/scripts/ucla-courses.ts"
+    "ucla-courses": "tsx --tsconfig server/tsconfig.json server/scripts/ucla-courses.ts",
+    "harvard-courses": "tsx --tsconfig server/tsconfig.json server/scripts/harvard-courses.ts"
   },
   "dependencies": {
     "cors": "^2.8.6",

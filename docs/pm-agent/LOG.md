@@ -2229,3 +2229,16 @@
 - Spot check clubs:
   - UW TAPPI (Linktree), Dartmouth D-LAB (student-facilitated) and USF CAB are fine.
   - Purdue "International Student Services" (Office of International Students and Scholars) and UVA "Digital Technology for Democracy Lab" (university research initiative) are offices, so marked `department`.
+
+## 2026-11-05 23:33 UTC
+- **Harvard class times started** with a new budgeted batch script, `npm run -s harvard-courses -- 400`, like the UCLA one:
+  - Per term it scans the course search once to list subjects, then does whole subjects at a time (subject search pages plus one section request per course) until the budget runs out.
+  - A finished subject replaces only its own classes; progress is kept in s_harvard.courses-progress.json.
+  - Run 1: Fall 2026 has 170 subjects; 25 done, 411 classes with times. Many graduate and research courses list no time (e.g. CELLBIO 50 courses → 2 with times).
+  - Checked ENG-SCI 30 (12:00-2:45), PHYSICS 19 (3:00-4:15), FYSEMR 51M (9:00-11:45) on my.harvard.edu - match.
+- Spot check clubs found UMN African Student Association's "website" is a Wix admin dashboard link. A scan of all schools found three kinds of non-public links; `cleanCollectedOrgs` now handles them (tests added) and the fix is applied to today's files:
+  - Social links saved as login redirects (instagram.com/accounts/login/?next=/shpeuga/, LinkedIn session_redirect, X redirect_after_login) now point at the real profile (`publicFix`).
+  - /wp-admin and Squarespace /config suffixes are trimmed to the public site.
+  - Wix dashboard, Mailchimp admin and Google Sites editor links (sites.google.com/d/<id>/...) move to deadlinks: 9 links in 16 files.
+  - Domain-named Google Sites such as sites.google.com/d.umn.edu/... stay.
+- Other spot-check clubs: UF NAYGN (title "NAYGN at UF"), Penn State Weather Outreach, NC State 1911 Consulting, JHU Club Equestrian fine.

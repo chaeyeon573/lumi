@@ -20,7 +20,7 @@ const uniq = (ms: Meeting[]) => ms.filter((m, i) => ms.findIndex((x) => x.day ==
  * 두 학기를 같이 담으면 같은 과목이 두 번 나온다 — 지금 학기는 원래 id 그대로(cc_berkeley_cs61a), 다른 학기는 꼬리표를 붙인다(cc_berkeley_cs61a_sp27).
  * 사용자가 시간표에 넣은 수업은 요일·시간을 복사해 두므로 id 가 바뀌어도 영향이 없다.
  */
-const tagTerm = (courses: CatalogCourse[], label: string, now = new Date()): CatalogCourse[] => {
+export const tagTerm = (courses: CatalogCourse[], label: string, now = new Date()): CatalogCourse[] => {
   if (label === termLabel(currentTerm(now))) return courses;
   const slug = termSlug(label);
   return courses.map((c) => ({ ...c, id: `${c.id}_${slug}` }));
@@ -1427,11 +1427,11 @@ async function vanderbilt(): Promise<CatalogCourse[]> {
 // ─── Harvard: my.harvard.edu 공개 과목 검색 (키 불필요) ─────────────────────
 // 검색 결과는 JSON 안에 이스케이프된 HTML 로 오고 15개씩 page=N 으로 넘어간다. term=2026+Fall · school=FAS 필터가 된다.
 // 과목마다 /course/sections/<id>/<offer>/<strm>/<session> 조각에 섹션별 요일(aria-label "Tuesday, selected")·시간·장소·교수가 있다.
-const HV = 'https://my.harvard.edu';
+export const HV = 'https://my.harvard.edu';
 const hvUnescape = (s: string) => s.replace(/\\"/g, '"').replace(/\\n/g, '\n').replace(/\\\//g, '/').replace(/\\u([0-9a-fA-F]{4})/g, (_, h) => String.fromCharCode(parseInt(h, 16)));
 const hvText = (h: string) => h.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&#039;|&#39;/g, "'").replace(/\s+/g, ' ').trim();
 const HV_DAYS: Record<string, number> = { Monday: 0, Tuesday: 1, Wednesday: 2, Thursday: 3, Friday: 4, Saturday: 5, Sunday: 6 };
-async function hvGet(url: string): Promise<string> {
+export async function hvGet(url: string): Promise<string> {
   for (let attempt = 0; ; attempt++) {
     try { const r = await fetch(url, { headers: { 'user-agent': 'Mozilla/5.0 AroundU-importer' } }); if (r.ok) return hvUnescape(await r.text()); if (r.status < 500 || attempt >= 3) throw new Error(`${url} → ${r.status}`); }
     catch (e) { if (attempt >= 3) throw e; }
@@ -1440,9 +1440,9 @@ async function hvGet(url: string): Promise<string> {
 }
 /** 검색 필터 값 "2026 Fall" — 진행 중인 학기 (@core/lib/terms) */
 /** 지금 학기 + 다음 학기 ("2026 Fall", "2027 Spring"). HARVARD_TERM="2026 Fall|2027 Spring" 로 지정 가능 */
-function hvTermLabels(): string[] { if (process.env.HARVARD_TERM) return process.env.HARVARD_TERM.split('|').map((x) => x.trim()).filter(Boolean); const c = currentTerm(); const n = nextTerm(c); return [`${c.year} ${c.season}`, `${n.year} ${n.season}`]; }
-interface HvCard { key: string; code: string; title: string; sectionsUrl?: string; inline: string; dept: string }
-function hvCards(html: string): HvCard[] {
+export function hvTermLabels(): string[] { if (process.env.HARVARD_TERM) return process.env.HARVARD_TERM.split('|').map((x) => x.trim()).filter(Boolean); const c = currentTerm(); const n = nextTerm(c); return [`${c.year} ${c.season}`, `${n.year} ${n.season}`]; }
+export interface HvCard { key: string; code: string; title: string; sectionsUrl?: string; inline: string; dept: string }
+export function hvCards(html: string): HvCard[] {
   const out: HvCard[] = [];
   for (const card of html.split(/data-course-id="/).slice(1)) {
     const code = hvText(/badge badge-light relative md:-top-0\.5">([\s\S]*?)<\/span>/.exec(card)?.[1] ?? '').replace(/\s+/g, ' ');
@@ -1470,7 +1470,7 @@ function hvSections(html: string): { no: string; location?: string; instructor?:
   }
   return out;
 }
-async function harvardCourses(cards: HvCard[], term: string): Promise<CatalogCourse[]> {
+export async function harvardCourses(cards: HvCard[], term: string): Promise<CatalogCourse[]> {
   const out: CatalogCourse[] = [];
   for (const card of cards) {
     const html = card.sectionsUrl ? await hvGet(`${HV}${card.sectionsUrl}`) : card.inline;
