@@ -2167,3 +2167,18 @@
   - Not on Greenhouse, Lever or Ashby (no board found): NYT, Politico, The Atlantic, Urban Institute, Mathematica, Teach For America, NPR, Pew, CFR, KIPP.
 - Spot check courses (BU, live class search): CASCL 211 B1 MWF 11:15, QSTBA 808 E2 W 3:45-6:30, COMJO 721 A1 T 12:30-3:15, CFATH 350 Th 12:30-4:45 (Spring), CASPO 842 W 8:00-10:45 - all match.
 - Spot check clubs: BU Marketing Club, UChicago Model UN, UVA Grace Christian Fellowship, MSU Royal Encounters, Wisconsin BadgerVC - all open and name the club.
+
+## 2026-11-05 17:33 UTC
+- More humanities / social-science job sources: 11 boards added to job-boards.csv.
+  - **Workday:** The Washington Post, Warner Bros. Discovery. Both keep 0 student roles today (WBD's open internships are in Hong Kong and Beijing, correctly left out), so they are added for future summer postings.
+  - **Greenhouse/Lever/Ashby**, found by scanning about 65 policy, advocacy, media and research organisations:
+    - Charles River Associates (economics consulting): 17 Class of 2027 analyst/associate roles
+    - Clinton Foundation: 5 spring interns
+    - Gallup: 3 associate consultants
+    - Sierra Club: 2 interns
+    - Business Insider: 1
+    - Morning Consult, Morning Brew, Newsela, charity: water: 0 today
+  - GiveDirectly was already listed; a duplicate line I added was removed.
+  - They load at tomorrow's 03:33 daily refresh (jobs stay once a day).
+- Spot check courses (Georgia Tech, live Banner): VIP 6601 VPE R 5:00, MSE 4105 TR 12:30, HTS 8803 DV WF 11:00, VIP 6600 VVP (Spring) R 9:30, MATH 2550 D02 F 4:00 - all match.
+- Spot check clubs: Yale Logos, GT Alpha Gamma Delta, UVA Think Again fine. UW Somali Student Association and NC State Geospatial Graduate Student Organization failed at the container's proxy (502), so I couldn't tell; left as is.
