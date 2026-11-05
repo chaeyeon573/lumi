@@ -51,7 +51,7 @@ export function MeetPage() {
       {status === 'loading' && <CardSkeleton />}
       {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
       {status === 'ready' && (
-        <div className="px-4">
+        <div className="px-4 pt-5">
           <div className="grid grid-cols-2 gap-2.5">
             {MEET_KINDS.map((k) => (
               <button key={k.key} onClick={() => setParams(kind === k.key ? {} : { kind: k.key }, { replace: true })} aria-pressed={kind === k.key}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Bell, BellRing, ExternalLink, WifiOff } from 'lucide-react';
-import { TopBar } from '@/components/layout/TopBar';
+import { Bell, BellRing, WifiOff } from 'lucide-react';
+import { CampusHead, CampusSource } from './CampusSource';
 import { BottomSheet, Button, CardSkeleton, Chip, EmptyState, ErrorState, Tag } from '@/components/ui';
 import { useAppStore } from '@core/store/useAppStore';
 import { cn } from '@core/lib/cn';
@@ -24,19 +24,20 @@ export function GymPage() {
   const load = () => campusLive.gym().then((r) => { setData(r); setError(null); }).catch((e) => setError((e as Error).message));
   useEffect(() => { load(); const h = setInterval(() => { load(); setTick((x) => x + 1); }, 60_000); return () => clearInterval(h); }, []);
 
-  if (error && !data) return <div><TopBar back title="Gym crowd" /><ErrorState message={error} onRetry={load} /></div>;
-  if (!data) return <div><TopBar back title="Gym crowd" /><CardSkeleton /></div>;
-  if (!data.supported) return <div><TopBar back title="Gym crowd" /><EmptyState emoji="🏋️" title="Gym crowd isn't here for your school yet" description="Lumi shows the UC Berkeley RSF crowd meter for now." /></div>;
+  if (error && !data) return <div><CampusHead title="Recreation" /><ErrorState message={error} onRetry={load} /></div>;
+  if (!data) return <div><CampusHead title="Recreation" /><CardSkeleton /></div>;
+  if (!data.supported) return <div><CampusHead title="Recreation" /><EmptyState emoji="🏋️" title="Gym crowd isn't here for your school yet" description="Lumi shows the UC Berkeley RSF crowd meter for now." /></div>;
 
   return (
     <div className="min-h-full pb-10 bg-bg">
-      <TopBar back title="Gym crowd" />
-      <div className="px-4 pt-2 space-y-4" data-tick={tick}>
+      <CampusHead title="Recreation" />
+      <div className="px-4 space-y-4" data-tick={tick}>
         {data.spaces.length === 0 && <div className="card p-5 text-center"><WifiOff className="mx-auto text-ink-3" size={22} /><p className="text-[15px] font-bold mt-2">Crowd meter unavailable</p><p className="text-[13px] text-ink-3 mt-1">We couldn't read the crowd meter yet. Try again in a few minutes.</p></div>}
         {data.spaces.map((s) => <SpaceCard key={s.id} s={s} alert={data.alerts.find((a) => a.displayId === s.id)} onAlert={() => setEditing(s)} />)}
-        {data.source && (
-          <a href={data.source.url} target="_blank" rel="noreferrer" className="block px-1 text-[12px] text-ink-3 underline underline-offset-2">{data.source.attribution} <ExternalLink size={11} className="inline -mt-0.5" /></a>
-        )}
+        {/* S015 — 공식 출처 카드. "라이브 값 없음" 각주는 혼잡도를 실제로 못 읽을 때만 */}
+        <CampusSource url={data.source?.url} label={data.source ? 'RecWell' : undefined}
+          text={data.source?.attribution ?? 'Hours and facility information come from the official recreation page.'}
+          unavailableNote={data.spaces.every((s) => s.status !== 'live') ? 'No live occupancy is shown without a verified feed.' : null} />
       </div>
       <AlertSheet space={editing} alert={editing ? data.alerts.find((a) => a.displayId === editing.id) : undefined} onClose={() => setEditing(null)} onSaved={(alerts) => setData({ ...data, alerts })} />
     </div>

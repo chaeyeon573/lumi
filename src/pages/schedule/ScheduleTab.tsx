@@ -33,9 +33,8 @@ export function ScheduleTab() {
   const init = useAppStore((s) => s.init);
   const courses = v.me.timetable ?? [];
   const day = todayIdx();
-  // 오늘(주말이면 다음 월요일 기준 없이 그냥 오늘) 2시간 넘게 빈 오후 — 정오 이후
-  const free = courses.length ? freeBlocks(courses, day).filter((b) => b.end - b.start >= 120 && b.end > 12 * 60) : [];
-  const afternoon = free[0];
+  // 오늘 정오 이후 2시간 넘게 비는 때 (정오 전에 시작하는 빈 칸은 정오부터 센다)
+  const afternoon = courses.length ? freeBlocks(courses, day).map((b) => ({ start: Math.max(b.start, 12 * 60), end: b.end })).find((b) => b.end - b.start >= 120) : undefined;
   return (
     <Screen>
       <TitleHeader title={en ? 'Schedule' : '일정'} actions={[{ key: 'edit', label: en ? 'Edit classes' : '수업 편집', icon: <CalendarDays size={22} />, onClick: () => nav('/schedule/classes') }]} />

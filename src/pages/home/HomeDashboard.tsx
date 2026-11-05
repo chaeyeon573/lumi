@@ -104,13 +104,12 @@ function CampusToday() {
   const diningLine = !d?.available ? (en ? 'Menus unavailable' : '메뉴를 읽을 수 없어요')
     : open.length ? [en ? 'Open' : '운영 중', open[0].meal?.toLowerCase()].filter(Boolean).join(' · ') + (open.length > 1 ? (en ? ` · +${open.length - 1}` : ` 외 ${open.length - 1}곳`) : '')
     : d.next ? (en ? `Opens ${fmtClock(d.next.opensAt)}` : `${fmtClock(d.next.opensAt)} 오픈`) : (en ? 'Closed for today' : '오늘은 닫았어요');
+  // 두 칸 나란히 — 아이콘 위, 이름, 한 줄(두 줄까지). 좁은 칸에서 "Crowd meter …" 처럼 잘리지 않게
   const Card = ({ onClick, Icon, tone, title, line, dot }: { onClick: () => void; Icon: typeof Dumbbell; tone: 'mint' | 'peach'; title: string; line: string; dot?: boolean }) => (
-    <button onClick={onClick} className={cn(cardCls, 'p-3.5 flex items-center gap-3 text-left press min-w-0')}>
-      <IconTile tone={tone} size={40}><Icon size={20} /></IconTile>
-      <span className="min-w-0">
-        <span className="block text-[14px] font-bold truncate">{title}</span>
-        <span className="flex items-center gap-1.5 text-[12.5px] text-ink-2 min-w-0">{dot && <span className="h-1.5 w-1.5 rounded-full bg-ok shrink-0" />}<span className="truncate">{line}</span></span>
-      </span>
+    <button onClick={onClick} className={cn(cardCls, 'p-3.5 text-left press min-w-0 flex flex-col items-start justify-start')}>
+      <IconTile tone={tone} size={36}><Icon size={19} /></IconTile>
+      <span className="block w-full text-[15px] font-bold truncate mt-2.5">{title}</span>
+      <span className="flex items-start gap-1.5 text-[12.5px] text-ink-2 mt-0.5 leading-snug">{dot && <span className="h-1.5 w-1.5 rounded-full bg-ok shrink-0 mt-[6px]" />}<span className="line-clamp-2">{line}</span></span>
     </button>
   );
   return (

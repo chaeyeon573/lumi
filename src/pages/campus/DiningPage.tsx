@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Star, ExternalLink, Clock, Info } from 'lucide-react';
-import { TopBar } from '@/components/layout/TopBar';
+import { Star, Clock, Info } from 'lucide-react';
+import { CampusHead, CampusSource } from './CampusSource';
 import { Chip, CardSkeleton, EmptyState, ErrorState, Tag } from '@/components/ui';
 import { useAppStore } from '@core/store/useAppStore';
 import { cn } from '@core/lib/cn';
@@ -62,10 +62,10 @@ export function DiningPage() {
     return out;
   }, [day, favorites, favKeys]);
 
-  const title = isToday || !data ? 'Dining today' : 'Dining tomorrow';
-  if (error) return <div><TopBar back title="Dining today" /><ErrorState message={error} onRetry={() => load(date)} /></div>;
-  if (!data) return <div><TopBar back title="Dining today" /><CardSkeleton /></div>;
-  if (!data.supported) return <div><TopBar back title="Dining today" /><EmptyState emoji="🍽️" title="Dining menus aren't here for your school yet" description="Lumi shows UC Berkeley dining hall menus for now." /></div>;
+  const title = isToday || !data ? 'Dining' : 'Dining tomorrow';
+  if (error) return <div><CampusHead title="Dining" /><ErrorState message={error} onRetry={() => load(date)} /></div>;
+  if (!data) return <div><CampusHead title="Dining" /><CardSkeleton /></div>;
+  if (!data.supported) return <div><CampusHead title="Dining" /><EmptyState emoji="🍽️" title="Dining menus aren't here for your school yet" description="Lumi shows UC Berkeley dining hall menus for now." /></div>;
 
   const tomorrow = data.dates?.find((d) => d > data.today);
   const state = loc && isToday ? openState(loc, nowMin) : null;
@@ -75,8 +75,8 @@ export function DiningPage() {
 
   return (
     <div className="min-h-full pb-10 bg-bg">
-      <TopBar back title={title} />
-      <div className="px-4 pt-2">
+      <CampusHead title={title} />
+      <div className="px-4">
         {/* 날짜 */}
         {(tomorrow || !isToday) && (
           <div className="flex bg-surface-2 rounded-full p-1 mb-3 w-fit">
@@ -88,11 +88,8 @@ export function DiningPage() {
         )}
 
         {!day ? (
-          <div className="card p-5 text-center">
-            <p className="text-[15px] font-bold">Menus aren't available right now</p>
-            <p className="text-[13px] text-ink-3 mt-1">We couldn't read the dining menus. Check again soon, or see the official page.</p>
-            {data.source && <a href={data.source.url} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-primary">{data.source.label} menus <ExternalLink size={13} /></a>}
-          </div>
+          <CampusSource url={data.source?.url} label={data.source?.label} text="Verified menus and dining hours appear here when the campus source can be read."
+            unavailableNote="No live menus are shown without a verified feed." />
         ) : (
           <>
             {favToday.length > 0 && (
@@ -181,7 +178,7 @@ export function DiningPage() {
             <div className="mt-5 px-1 space-y-1.5">
               <p className="text-[12px] text-ink-3 flex items-start gap-1.5"><Star size={12} className="mt-0.5 shrink-0" />Tap ☆ on a dish and Lumi tells you the day it's back on a menu.</p>
               <p className="text-[12px] text-ink-3 flex items-start gap-1.5"><Info size={12} className="mt-0.5 shrink-0" />Diet and allergen tags come from Cal Dining's labels — if you have an allergy, check with staff.</p>
-              {data.source && <a href={data.source.url} target="_blank" rel="noreferrer" className="text-[12px] text-ink-3 underline underline-offset-2 inline-flex items-center gap-1">{data.source.attribution}<ExternalLink size={11} /></a>}
+              <CampusSource url={data.source?.url} label={data.source?.label} text={data.source?.attribution ?? 'Menus and hours come from the official dining page.'} />
             </div>
           </>
         )}
