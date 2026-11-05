@@ -1,169 +1,149 @@
-import { useNavigate } from 'react-router-dom';
-import { Users, CalendarCheck, Send, ChevronRight, Clock, Mail, Heart, BookOpen, Puzzle, Vote } from 'lucide-react';
-import { TopBar } from '@/components/layout/TopBar';
-import { Avatar, Button, Tag, CardSkeleton, ErrorState } from '@/components/ui';
-import { SampleTag } from '@/components/ui/SampleTag';
+import { useMemo } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { BookOpen, CalendarClock, CalendarDays, Coffee, Dumbbell, Plus, Sparkles } from 'lucide-react';
+import { lang } from '@core/i18n';
+import type { Activity, Opportunity, User } from '@core/types';
+import { api } from '@core/api';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
-import { api } from '@core/api';
-import { t, lang } from '@core/i18n';
-import type { planFeed } from '@core/lib/social';
-import { RSVP_LABELS, RSVP_EMOJI, GOAL_LABELS, GOAL_EMOJI, CATEGORY_EMOJI, OPP_TYPE_EMOJI } from '@core/lib/labels';
-import { formatDateTime, todayISO, relativeTime, formatDate } from '@core/lib/format';
-import { isTeamActivity } from '@core/lib/discover';
-import { dday } from '@core/lib/recommend';
-import type { OpportunityIntent, Goal, Activity } from '@core/types';
-import { proposalWhen } from '@core/lib/plans';
+import { CATEGORY_LABELS, OPP_TYPE_LABELS } from '@core/lib/labels';
+import { formatDate, formatTime, todayISO } from '@core/lib/format';
 import { campusDate } from '@core/lib/listings';
+import { BackHeader, PageTitle, SegTabs, SectionHeader, MeetupCard, ListingCard, RowCard, InfoNote, EmptyState, Btn, HeaderIcon, ErrorScreen, LoadingCards, CATEGORY_TONE, type Tone } from '@/components/ha';
+import { pollSummary } from '@/pages/together/TogetherPage';
 
-/** Me › My Plans — 받은 초대 / 대기 / 확정 / 관심 행사 / 팀 신청 / Study Crew */
+const en = lang === 'en';
+type Tab = 'upcoming' | 'past' | 'created';
+/** 약속 종류 → 색·아이콘 */
+const LOOK: Record<string, { tone: Tone; Icon: typeof Coffee }> = {
+  study: { tone: 'ice', Icon: BookOpen }, coffee: { tone: 'peach', Icon: Coffee }, meal: { tone: 'peach', Icon: Coffee }, exercise: { tone: 'mint', Icon: Dumbbell },
+};
+const GOING = new Set(['going', 'solo', 'company']);
+
+/**
+ * My Plans (PDF S031) — Upcoming · Past · Created (주소 ?tab=).
+ *   Upcoming  시간을 정하는 중인 투표 · 확정된 약속(내가 열었거나 승인된 것) · 간다고 한 행사
+ *   Past      지난 약속 · 다녀온 행사
+ *   Created   내가 만든 투표와 약속
+ * 관심(Interested)·대기(waitlist/pending)는 확정된 약속이 아니라 넣지 않는다 (PDF 각주).
+ */
 export function PlansPage() {
   const nav = useNavigate();
+  const [params, setParams] = useSearchParams();
   const v = useViewer();
   const status = useAppStore((s) => s.status);
   const error = useAppStore((s) => s.error);
   const init = useAppStore((s) => s.init);
-  const run = useAppStore((s) => s.run);
   const participations = useAppStore((s) => s.participations);
-  const proposals = useAppStore((s) => s.proposals);
+  const polls = useAppStore((s) => s.timePolls);
   const opps = useAppStore((s) => s.opportunities);
   const intents = useAppStore((s) => s.opportunityIntents);
-  const polls = useAppStore((s) => s.timePolls);
   const me = v.me;
   const today = todayISO();
-  const openPolls = polls.filter((p) => p.status === 'open' && (p.hostId === me.id || p.inviteeIds.includes(me.id) || !!p.link?.responses.some((r) => r.userId === me.id)));
-  if (status === 'loading') return <div><TopBar back title={lang === 'en' ? 'My Plans' : '내 약속'} /><CardSkeleton /></div>;
-  if (status === 'error') return <div><TopBar back title={lang === 'en' ? 'My Plans' : '내 약속'} /><ErrorState message={error ?? undefined} onRetry={init} /></div>;
+  const tab = (['upcoming', 'past', 'created'].includes(params.get('tab') ?? '') ? params.get('tab') : 'upcoming') as Tab;
 
-  const upcoming = v.visibleActivities.filter((a) => a.date >= today).sort((a, b) => (a.date + a.startTime).localeCompare(b.date + b.startTime));
-  const myPending = participations.filter((p) => p.userId === me.id && p.status === 'pending');
-  const pendingActs = upcoming.filter((a) => myPending.some((p) => p.activityId === a.id));
-  const confirmed = upcoming.filter((a) => a.hostId === me.id || participations.some((p) => p.activityId === a.id && p.userId === me.id && p.status === 'approved'));
-  const invites = upcoming.filter((a) => a.joinPolicy === 'invite' && (a.invitedIds ?? []).includes(me.id) && !participations.some((p) => p.activityId === a.id && p.userId === me.id));
-  const proposalsIn = proposals.filter((p) => p.toId === me.id && p.status === 'pending');
-  const friendReqs = v.snap.relationships.friendRequests.filter((r) => r.toId === me.id && r.status === 'pending');
-  const myIntents = intents.filter((i) => i.userId === me.id).map((i) => ({ i, o: opps.find((o) => o.id === i.opportunityId)! })).filter((x) => x.o);
-  const events = myIntents.filter((x) => x.o.date && campusDate(x.o.date) >= today && ['interested', 'going', 'solo', 'company'].includes(x.i.intent));
-  const teamPending = pendingActs.filter(isTeamActivity);
-  const crews = confirmed.filter((a) => a.courseName);
-  const plain = confirmed.filter((a) => !a.courseName);
+  const confirmed = useMemo(() => v.visibleActivities.filter((a) => a.hostId === me.id || participations.some((p) => p.activityId === a.id && p.userId === me.id && p.status === 'approved'))
+    .sort((a, b) => (a.date + a.startTime).localeCompare(b.date + b.startTime)), [v.visibleActivities, participations, me.id]);
+  const upcoming = confirmed.filter((a) => a.date >= today);
+  const past = confirmed.filter((a) => a.date < today).reverse().slice(0, 30);
+  const openPolls = polls.filter((p) => !p.link && p.status === 'open' && (p.hostId === me.id || p.inviteeIds.includes(me.id)));
+  const going = intents.filter((i) => i.userId === me.id && GOING.has(i.intent)).map((i) => opps.find((o) => o.id === i.opportunityId)).filter((o): o is Opportunity => !!o && !!o.date);
+  const goingNext = going.filter((o) => campusDate(o.date!) >= today).sort((a, b) => a.date!.localeCompare(b.date!));
+  const goingPast = going.filter((o) => campusDate(o.date!) < today);
+  const myPolls = polls.filter((p) => !p.link && p.hostId === me.id && p.status !== 'cancelled');
+  const hosted = confirmed.filter((a) => a.hostId === me.id && a.date >= today);
 
-  const Row = ({ a, right }: { a: Activity; right?: React.ReactNode }) => (
-    <button onClick={() => nav(`/activities/${a.id}`)} className="w-full flex items-center gap-3 px-3.5 py-3 text-left press">
-      <span className="h-10 w-10 rounded-xl bg-surface-2 grid place-items-center text-[18px]">{a.courseName ? '📚' : CATEGORY_EMOJI[a.category]}</span>
-      <span className="flex-1 min-w-0"><b className="text-[13px] block truncate">{a.sample && <SampleTag />}{a.title}</b><span className="text-[12px] text-ink-3">{formatDateTime(a.date, a.startTime)} · {a.place.name}</span></span>
-      <span className="shrink-0 max-w-[40%] flex justify-end">{right ?? (a.hostId === me.id && <Tag className="h-5">{t('주최')}</Tag>)}</span>
-    </button>
+  const head = (
+    <>
+      <BackHeader title={en ? 'My Plans' : '내 약속'} right={<HeaderIcon label={en ? 'Plan a meeting' : '약속 만들기'} onClick={() => nav('/schedule/meeting/new')}><Plus size={22} /></HeaderIcon>} />
+      <PageTitle title={en ? 'My Plans' : '내 약속'} className="pb-2" />
+      <div className="px-4">
+        <SegTabs value={tab} onChange={(k) => setParams(k === 'upcoming' ? {} : { tab: k }, { replace: true })} tabs={[
+          { key: 'upcoming', label: en ? 'Upcoming' : '다가오는' }, { key: 'past', label: en ? 'Past' : '지난' }, { key: 'created', label: en ? 'Created' : '만든 것' },
+        ]} />
+      </div>
+    </>
   );
-  // 빈 칸은 숨긴다 — '0 · 받은 초대가 없어요' 같은 줄이 다섯 개 쌓이면 빈 앱처럼 보인다. 확정된 약속(keep)만 비어도 남겨 다음 할 일을 알려 준다
-  const Section = ({ icon, title, count, children, empty, keep }: { icon: React.ReactNode; title: string; count: number; children: React.ReactNode; empty: string; keep?: boolean }) => (count === 0 && !keep ? null :
-    <section>
-      <h2 className="text-[15px] font-bold mb-2 flex items-center gap-1.5">{icon}{title}<span className="text-[12px] text-ink-3 font-semibold">{count}</span></h2>
-      {count === 0 ? <div className="card px-4 py-3 text-[12px] text-ink-3">{empty}</div> : <div className="card divide-y divide-line">{children}</div>}
-    </section>
-  );
+  if (status === 'loading') return <div className="min-h-full bg-bg">{head}<LoadingCards className="px-4 pt-4" /></div>;
+  if (status === 'error') return <div className="min-h-full bg-bg">{head}<ErrorScreen message={error ?? undefined} onRetry={init} /></div>;
+
+  const pollRows = (list: typeof polls) => list.map((p) => {
+    const mineAnswered = (p.votes[me.id] ?? []).length > 0;
+    return (
+      <RowCard key={p.id} tone="lav" icon={<CalendarClock size={21} />} title={p.title}
+        sub={`${p.status === 'decided' ? (en ? 'Confirmed' : '확정') : p.hostId === me.id ? (en ? 'You’re hosting' : '내가 주최') : mineAnswered ? (en ? 'You answered' : '답했어요') : (en ? 'Your turn' : '내 답을 기다려요')} · ${pollSummary(p)}`}
+        onClick={() => nav(p.status === 'open' && p.hostId === me.id && mineAnswered ? `/together/${p.id}/find` : `/together/${p.id}`)} />
+    );
+  });
 
   return (
-    <div className="min-h-full pb-8">
-      <TopBar back title={lang === 'en' ? 'My Plans' : '내 약속'} messages />
-      <div className="px-4 pt-2 space-y-5">
-        <section>
-          <div className="flex items-end justify-between mb-2"><h2 className="text-[15px] font-bold flex items-center gap-1.5"><Vote size={15} className="text-heart" />{t('시간 정하는 중')}<span className="text-[12px] text-ink-3 font-semibold">{openPolls.length}</span></h2><button onClick={() => nav('/together/new')} className="text-[12px] font-semibold text-primary">+ {lang === 'en' ? 'Plan Together' : '시간 정하기'}</button></div>
-          {openPolls.length === 0 ? <div className="card px-4 py-3 text-[12px] text-ink-3">{t('진행 중인 시간 투표가 없어요. 친구들과 만날 시간을 투표로 정해보세요.')}</div> : (
-            <div className="card divide-y divide-line">{openPolls.map((p) => { const h = v.userById(p.hostId); const voted = !!p.votes[me.id]; const n = Object.keys(p.votes).length; return (
-              <button key={p.id} onClick={() => nav(p.link ? `/p/${p.id}` : `/together/${p.id}`)} className="w-full flex items-center gap-3 px-3.5 py-3 text-left press">
-                <span className="h-10 w-10 rounded-xl bg-heart-soft text-heart grid place-items-center"><Vote size={18} /></span>
-                <span className="flex-1 min-w-0"><b className="text-[13px] block truncate">{h?.sample && <SampleTag />}{p.title}</b><span className="text-[12px] text-ink-3">{p.hostId === me.id ? t('내가 주최') : h?.nickname} · {p.link ? (lang === 'en' ? `link · ${p.link.responses.length} answered` : `링크 · ${p.link.responses.length}명 답함`) : lang === 'en' ? `${n}/${p.inviteeIds.length + 1} voted · ${p.options.length} options` : `${n}/${p.inviteeIds.length + 1}명 투표 · 후보 ${p.options.length}개`}</span></span>
-                {p.hostId === me.id ? <Tag tone="primary" className="h-5">{t('확정하기')}</Tag> : voted ? <Tag tone="mint" className="h-5">{t('투표 완료')}</Tag> : <Tag tone="accent" className="h-5">{t('투표하기')}</Tag>}
-              </button>); })}</div>
-          )}
-        </section>
-        <Section icon={<Mail size={15} className="text-accent" />} title={t('받은 초대')} count={invites.length + proposalsIn.length + friendReqs.length} empty={t('받은 초대가 없어요.')}>
-          {friendReqs.map((r) => { const u = v.userById(r.fromId); return u && (
-            <div key={r.id} className="flex items-center gap-3 px-3.5 py-3"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} /><span className="flex-1 text-[13px]">{u.sample && <SampleTag />}<b>{u.nickname}</b>{t('님의 친구 요청')}</span><Button size="sm" variant="outline" onClick={() => run(() => api.relationships.respondFriendRequest(r.id, false))}>{t('거절')}</Button><Button size="sm" onClick={() => run(() => api.relationships.respondFriendRequest(r.id, true), t('친구가 되었어요!'))}>{t('수락')}</Button></div>); })}
-          {proposalsIn.map((p) => { const u = v.userById(p.fromId); return u && (
-            <div key={p.id} className="px-3.5 py-3"><div className="flex items-center gap-3"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={36} /><span className="flex-1 min-w-0 text-[13px]">{u.sample && <SampleTag />}<b>{u.nickname}</b> · {CATEGORY_EMOJI[p.category]} {proposalWhen(p.when)}<span className="block text-[12px] text-ink-3 truncate">{p.message}</span></span></div><div className="flex justify-end gap-2 mt-2"><Button size="sm" variant="outline" onClick={() => run(() => api.proposals.respond(p.id, false))}>{t('이번에는 어려워요')}</Button><Button size="sm" onClick={() => run(() => api.proposals.respond(p.id, true), t('제안을 수락했어요.'))}>{t('수락')}</Button></div></div>); })}
-          {invites.map((a) => <Row key={a.id} a={a} right={<Tag tone="accent" className="h-5">{t('초대')}</Tag>} />)}
-        </Section>
-        <Section icon={<Clock size={15} className="text-gold" />} title={t('참가 신청 대기')} count={pendingActs.filter((a) => !isTeamActivity(a)).length} empty={t('승인을 기다리는 신청이 없어요.')}>
-          {pendingActs.filter((a) => !isTeamActivity(a)).map((a) => <Row key={a.id} a={a} right={<Tag tone="gold" className="h-5">{t('대기')}</Tag>} />)}
-        </Section>
-        <Section icon={<CalendarCheck size={15} className="text-mint" />} title={t('확정된 약속')} count={plain.length} keep empty={t('확정된 약속이 없어요. 발견 탭에서 지금 열린 활동에 올라타 보세요.')}>
-          {plain.map((a) => <Row key={a.id} a={a} />)}
-        </Section>
-        <Section icon={<Heart size={15} className="text-heart" />} title={t('관심 표시한 행사')} count={events.length} empty={t('관심 표시한 행사가 없어요.')}>
-          {events.map(({ i, o }) => (
-            <button key={i.id} onClick={() => nav(`/opportunities/${o.id}`)} className="w-full flex items-center gap-3 px-3.5 py-3 text-left press">
-              <span className="h-10 w-10 rounded-xl bg-surface-2 grid place-items-center text-[18px]">{OPP_TYPE_EMOJI[o.type]}</span>
-              <span className="flex-1 min-w-0"><b className="text-[13px] block truncate">{o.title}</b><span className="text-[12px] text-ink-3">{o.date && formatDate(o.date)}{o.deadline ? ` · ${dday(o.deadline)}` : ''}</span></span>
-              <Tag className="h-5">{RSVP_EMOJI[i.intent]} {RSVP_LABELS[i.intent]}</Tag>
-            </button>
-          ))}
-        </Section>
-        <Section icon={<Puzzle size={15} className="text-primary" />} title={t('대기 중인 팀 신청')} count={teamPending.length} empty={t('신청한 팀이 없어요. 발견 › 팀에서 역할이 맞는 팀을 찾아보세요.')}>
-          {teamPending.map((a) => <Row key={a.id} a={a} right={<Tag tone="gold" className="h-5">{t('대기')}</Tag>} />)}
-        </Section>
-        <Section icon={<BookOpen size={15} className="text-primary" />} title={t('Study Crew 일정')} count={crews.length} empty={t('참여 중인 Study Crew가 없어요. 시간표에서 수업을 누르면 만들 수 있어요.')}>
-          {/* 제목이 이미 수업 번호로 시작하면(‘UGBA 105 project crew’) 같은 말을 또 붙이지 않는다 — 제목이 잘린다 */}
-          {crews.map((a) => <Row key={a.id} a={a} right={a.title.startsWith(a.courseName!.split(' ').slice(0, 2).join(' ')) ? <span /> : <Tag tone="primary" className="h-5 max-w-full"><span className="truncate">{a.courseName}</span></Tag>} />)}
-        </Section>
-        <div className="flex gap-2"><Button full variant="outline" onClick={() => nav('/timetable')}>{t('내 시간표')}</Button><Button full onClick={() => nav('/meet/meetups')}>{t('활동 찾기')}</Button></div>
+    <div className="min-h-full bg-bg pb-10">
+      {head}
+      <div className="px-4 pt-5 space-y-7">
+        {tab === 'upcoming' && (
+          !openPolls.length && !upcoming.length && !goingNext.length ? (
+            <EmptyState icon={<CalendarDays size={28} />} title={en ? 'Nothing planned yet' : '아직 약속이 없어요'} sub={en ? 'Pick a time with your group, or join a meetup.' : '그룹과 시간을 정하거나 모임에 들어가 보세요.'}
+              action={{ label: en ? 'Plan a meeting' : '약속 만들기', onClick: () => nav('/schedule/meeting/new') }} className="pt-4">
+              <Btn variant="link" onClick={() => nav('/social/meetups')}>{en ? 'Find a meetup' : '모임 찾기'}</Btn>
+            </EmptyState>
+          ) : (
+            <>
+              {openPolls.length > 0 && <section><SectionHeader title={en ? 'Picking a time' : '시간 정하는 중'} /><div className="space-y-3">{pollRows(openPolls)}</div></section>}
+              {upcoming.length > 0 && <section><SectionHeader title={en ? 'Your confirmed plans' : '확정된 약속'} /><div className="space-y-3">{upcoming.map((a) => <PlanItem key={a.id} a={a} />)}</div></section>}
+              {goingNext.length > 0 && <section><SectionHeader title={en ? 'Going events' : '갈 행사'} /><div className="space-y-3">{goingNext.map((o) => <EventItem key={o.id} o={o} />)}</div></section>}
+            </>
+          )
+        )}
+        {tab === 'past' && (
+          !past.length && !goingPast.length ? <EmptyState icon={<CalendarDays size={28} />} title={en ? 'No past plans yet' : '지난 약속이 없어요'} sub={en ? 'Plans you went to show up here.' : '다녀온 약속이 여기에 보여요.'} className="pt-4" /> : (
+            <>
+              {past.length > 0 && <section><SectionHeader title={en ? 'Past plans' : '지난 약속'} /><div className="space-y-3">{past.map((a) => <PlanItem key={a.id} a={a} />)}</div></section>}
+              {goingPast.length > 0 && <section><SectionHeader title={en ? 'Events you went to' : '다녀온 행사'} /><div className="space-y-3">{goingPast.map((o) => <EventItem key={o.id} o={o} />)}</div></section>}
+            </>
+          )
+        )}
+        {tab === 'created' && (
+          !myPolls.length && !hosted.length ? (
+            <EmptyState icon={<CalendarClock size={28} />} title={en ? 'Plan something with your group' : '그룹과 약속을 잡아 보세요'} sub={en ? 'Everyone marks the times that work. You confirm.' : '각자 되는 시간을 고르고, 내가 확정해요.'}
+              action={{ label: en ? 'Plan a meeting' : '약속 만들기', onClick: () => nav('/schedule/meeting/new') }} className="pt-4" />
+          ) : (
+            <>
+              {myPolls.length > 0 && <section><SectionHeader title={en ? 'Your polls' : '내 투표'} /><div className="space-y-3">{pollRows(myPolls)}</div></section>}
+              {hosted.length > 0 && <section><SectionHeader title={en ? 'Plans you host' : '내가 연 약속'} /><div className="space-y-3">{hosted.map((a) => <PlanItem key={a.id} a={a} />)}</div></section>}
+              <Btn variant="outline" icon={<Plus size={18} />} onClick={() => nav('/schedule/meeting/new')}>{en ? 'Plan a meeting' : '약속 만들기'}</Btn>
+            </>
+          )
+        )}
+        <InfoNote>{en ? 'Interested and waitlisted items are not confirmed plans.' : '관심·대기 중인 것은 확정된 약속이 아니에요.'}</InfoNote>
       </div>
     </div>
   );
 }
 
-/** 친구들의 계획 카드 — Discover › Now 하단에서 사용 */
-export function PlanCard({ item }: { item: ReturnType<typeof planFeed>[number] }) {
+/** 확정된 약속 카드 (PDF: Study · Group project catch-up · Study room · faces · View meetup) */
+function PlanItem({ a }: { a: Activity }) {
+  const nav = useNavigate();
+  const v = useViewer();
+  const parts = useAppStore((s) => s.participations);
+  const look = LOOK[a.courseName || a.studyGroup ? 'study' : a.category] ?? { tone: 'rose' as Tone, Icon: Sparkles };
+  const people = [a.hostId, ...parts.filter((p) => p.activityId === a.id && p.status === 'approved').map((p) => p.userId)].map(v.userById).filter((u): u is User => !!u);
+  return (
+    <MeetupCard tone={look.tone} icon={<look.Icon size={21} />} badge={a.studyGroup ? (en ? 'Study group' : '스터디') : CATEGORY_LABELS[a.category]} title={a.title}
+      meta={`${formatDate(a.date)} · ${formatTime(a.startTime)}${a.place?.name ? ` · ${a.place.name}` : ''}`}
+      people={people.map((u) => ({ id: u.id, avatar: u.avatar }))} footnote={a.sample ? (en ? 'Sample meetup' : '예시 모임') : `${people.length} ${en ? 'going' : '명'}`}
+      action={en ? 'View meetup' : '모임 보기'} onClick={() => nav(a.studyGroup ? `/study/${a.id}` : `/activities/${a.id}`)} />
+  );
+}
+
+/** 간다고 한 행사 (PDF: Going events — ListingCard) */
+function EventItem({ o }: { o: Opportunity }) {
   const nav = useNavigate();
   const v = useViewer();
   const run = useAppStore((s) => s.run);
-  const showToast = useAppStore((s) => s.showToast);
-  const u = item.user;
-  const head = <button onClick={() => nav(`/users/${u.id}`)} className="flex items-center gap-2"><Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={32} /><b className="text-[13px]">{u.nickname}</b><span className="text-[11px] text-ink-3">{relativeTime(item.when)}</span></button>;
-  if (item.kind === 'rsvp') {
-    const it = item.intent as OpportunityIntent;
-    const mine = v.snap.opportunityIntents.find((i) => i.opportunityId === item.oppId && i.userId === v.me.id);
-    return (
-      <div className="card p-3.5">{head}
-        <p className="text-[14px] mt-2">{lang === 'en' ? <><b>{item.title}</b> — {RSVP_EMOJI[it]} {RSVP_LABELS[it]}</> : <><b>{item.title}</b>{it === 'solo' ? '에 혼자 갈 예정이에요.' : it === 'company' ? '에 같이 갈 사람을 찾고 있어요.' : it === 'team' ? ' 팀원을 찾고 있어요.' : it === 'going' ? '에 갈 예정이에요.' : it === 'done' ? ' 참여 경험이 있어요.' : '에 관심 있어요.'}</>}</p>
-        <div className="flex gap-2 mt-3">
-          {(it === 'solo' || it === 'company') && <Button size="sm" full icon={<Users size={14} />} onClick={() => nav(`/users/${u.id}?propose=1&cat=networking&opp=${item.oppId}`)}>{t('같이 갈래요')}</Button>}
-          {it === 'team' && <Button size="sm" full onClick={() => nav(`/opportunities/${item.oppId}?tab=people`)}>{t('팀 이야기하기')}</Button>}
-          {it === 'done' && <Button size="sm" full variant="outline" onClick={() => nav(`/opportunities/${item.oppId}?tab=qna`)}>{t('경험 물어보기')}</Button>}
-          {(it === 'going' || it === 'interested') && <Button size="sm" full variant={mine ? 'secondary' : 'primary'} onClick={() => run(() => api.opportunities.setIntent(item.oppId, v.me.id, mine ? null : 'interested'))}>{mine ? t('나도 관심 있어요 ✓') : t('나도 관심 있어요')}</Button>}
-          <Button size="sm" variant="outline" onClick={() => showToast(t('링크를 복사했어요.'))} icon={<Send size={14} />}>{t('친구에게')}</Button>
-        </div>
-      </div>
-    );
-  }
-  if (item.kind === 'open_slot') {
-    const a = item.activity;
-    const joined = v.myParticipation(a.id);
-    return (
-      <div className="card p-3.5">{head}
-        <p className="text-[14px] mt-2">{lang === 'en' ? <>opened <b>{a.title}</b> · {formatDateTime(a.date, a.startTime)} · {item.joined} joined</> : <><b>{formatDateTime(a.date, a.startTime)}</b> {a.category === 'meal' ? '점심을' : a.category === 'coffee' ? '커피를' : '활동을'} 열었어요. 현재 {item.joined}명 참여.</>}</p>
-        <p className="text-[12px] text-ink-3 mt-0.5">{a.title} · {a.place.name}</p>
-        <div className="flex gap-2 mt-3">
-          <Button size="sm" full onClick={() => nav(`/activities/${a.id}`)}>{joined ? t('참여 중') : a.category === 'meal' ? t('같이 먹기') : t('나도 시간 돼요')}</Button>
-          <Button size="sm" variant="outline" onClick={() => showToast(t('링크를 복사했어요.'))} icon={<Send size={14} />}>{t('친구에게')}</Button>
-        </div>
-      </div>
-    );
-  }
-  if (item.kind === 'poll') return (
-    <div className="card p-3.5">{head}
-      <p className="text-[14px] mt-2">{lang === 'en' ? <>is picking a time for <b>{item.poll.title}</b> · {item.poll.options.length} options</> : <><b>{item.poll.title}</b> 시간을 정하고 있어요 · 후보 {item.poll.options.length}개</>}</p>
-      <Button size="sm" className="mt-3" full variant={item.voted ? 'secondary' : 'primary'} onClick={() => nav(`/together/${item.poll.id}`)}>{item.voted ? t('투표 완료 · 현황 보기') : t('되는 시간 고르기')}</Button>
-    </div>
-  );
-  if (item.kind === 'saved') return <div className="card p-3.5">{head}<p className="text-[14px] mt-2">{lang === 'en' ? <>saved <b>{item.title}</b>.</> : <><b>{item.title}</b>을(를) 저장했어요.</>}</p><Button size="sm" variant="outline" className="mt-3" onClick={() => nav(`/opportunities/${item.oppId}`)}>{t('나도 볼래요')}</Button></div>;
-  const g = item.text as Goal;
+  const saved = !!useAppStore((s) => s.opportunityIntents).find((i) => i.opportunityId === o.id && i.userId === v.me.id)?.saved;
   return (
-    <div className="card p-3.5">{head}
-      <p className="text-[14px] mt-2">{lang === 'en' ? <>wants to <b>{GOAL_LABELS[g].toLowerCase()}</b> this semester {GOAL_EMOJI[g]}</> : <>{t('이번 학기에')} <b>{GOAL_LABELS[g]}</b>{t('를 하고 싶어 해요')} {GOAL_EMOJI[g]}</>}</p>
-      <Button size="sm" className="mt-3" full onClick={() => nav(`/users/${u.id}?propose=1`)}>{t('같이 시작할래요')}</Button>
-      <span className="hidden"><ChevronRight size={1} /></span>
-    </div>
+    <ListingCard cover={o.cover.url ? o.cover : undefined} badge={OPP_TYPE_LABELS[o.type]} badgeTone={o.type === 'event' ? CATEGORY_TONE.events : CATEGORY_TONE.opportunities} title={o.title}
+      meta={[o.date ? formatDate(campusDate(o.date)) : '', o.place?.name].filter(Boolean).join(' · ')} sourceUrl={o.sourceUrl || undefined}
+      saved={saved} onSave={() => run(() => api.opportunities.toggleSave(o.id, v.me.id))} onClick={() => nav(`/opportunities/${o.id}`)} />
   );
 }
