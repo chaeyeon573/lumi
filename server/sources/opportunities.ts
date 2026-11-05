@@ -168,6 +168,42 @@ export function parseEventRss(xml: string, school: EventSchool, now = new Date()
 }
 export async function fetchEventRss(url: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> { return parseEventRss(await get(url), school, new Date(), horizonDays); }
 
+interface TribeEvent { id: number; title: string; url: string; description?: string; excerpt?: string; all_day?: boolean; utc_start_date?: string; cost?: string; hide_from_listings?: boolean; is_virtual?: boolean; status?: string; venue?: { venue?: string } | unknown[]; categories?: { name?: string }[] }
+/** WordPress "The Events Calendar" 공개 REST (/wp-json/tribe/events/v1/events) — UCSC events.ucsc.edu. utc_start_date 는 UTC */
+export function parseTribeEvents(events: TribeEvent[], school: EventSchool, now = new Date(), horizonDays = 30): Opportunity[] {
+  const nowIso = now.toISOString(); const until = now.getTime() + horizonDays * 86_400_000;
+  const out: Opportunity[] = []; const seen = new Set<string>();
+  for (const e of events) {
+    const title = text(text(e.title ?? '')); const start = new Date(`${(e.utc_start_date ?? '').replace(' ', 'T')}Z`);
+    if (!title || !e.url || Number.isNaN(start.getTime()) || e.hide_from_listings || (e.status && e.status !== 'publish')) continue;
+    if (start.getTime() < now.getTime() || start.getTime() > until || isNoticeNotEvent(title)) continue;
+    const cats = (e.categories ?? []).map((c) => text(c.name ?? ''));
+    if (cats.some((c) => /^exhibit/i.test(c)) || /\bexhibit(ion)?\b/i.test(title)) continue;
+    const venue = e.venue && !Array.isArray(e.venue) ? text(e.venue.venue ?? '') : '';
+    if (e.is_virtual || /zoom|on-?line|remote|virtual/i.test(venue)) continue;
+    const key = `${title.toLowerCase()}#${start.toISOString().slice(0, 10)}`; if (seen.has(key)) continue; seen.add(key);
+    const desc = text(text(e.excerpt || e.description || '')); const food = hasFreeFood(title, desc);
+    const talk = TALK_RE.test(title) || cats.some((c) => /lecture|seminar|panel|colloquium|talk|presentation/i.test(c));
+    out.push(base({
+      id: `op_${school.id.replace('s_', '')}_tribe_${e.id}`, type: 'event', title, host: school.name ?? 'Campus', schoolId: school.id,
+      description: desc.slice(0, 280), date: start.toISOString(), startTime: e.all_day ? undefined : localTime(start, school.tz),
+      place: venue ? { name: venue, lat: school.center.lat, lng: school.center.lng } : undefined,
+      eligibility: e.cost && !/free/i.test(e.cost) ? `Cost: ${text(e.cost)}` : 'Open to the campus community', benefit: food ? 'Free food' : undefined, cover: { emoji: '', hue: 200 },
+      tags: ['event', ...(food ? ['free food'] : []), ...(talk ? ['talk'] : []), ...cats.slice(0, 3).map((c) => c.toLowerCase())], interests: talk ? ['research', 'study'] : ['club'], goals: [], sourceUrl: e.url, sourceLabel: school.name ? `${school.name} Events` : 'Events',
+    }, nowIso));
+  }
+  return out;
+}
+export async function fetchTribeEvents(site: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> {
+  const from = new Date().toISOString().slice(0, 10); const to = new Date(Date.now() + horizonDays * 86_400_000).toISOString().slice(0, 10);
+  const all: TribeEvent[] = [];
+  for (let page = 1; page <= 20; page++) {
+    const j = JSON.parse(await get(`${site.replace(/\/+$/, '')}/wp-json/tribe/events/v1/events?per_page=50&page=${page}&start_date=${from}&end_date=${to}`)) as { events?: TribeEvent[]; total_pages?: number };
+    all.push(...(j.events ?? [])); if (!j.total_pages || page >= j.total_pages) break;
+  }
+  return parseTribeEvents(all, school, new Date(), horizonDays);
+}
+
 export async function fetchCampusGroupsEvents(host: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> {
   return parseCampusGroupsRss(await get(`${host.replace(/\/+$/, '')}/rss_events`), host, school, new Date(), horizonDays);
 }
