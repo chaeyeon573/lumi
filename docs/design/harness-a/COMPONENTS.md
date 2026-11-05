@@ -1,0 +1,118 @@
+# Harness A — dark tokens and components
+
+Everything a Harness A screen needs lives in **`src/components/ha`** (`import { … } from '@/components/ha'`).
+New screens use only these plus `Avatar` / `Cover` / `BottomSheet` from `src/components/ui`. Colours come only from
+the tokens below — no hex values in screen files.
+
+## 1. Palette (src/index.css `@theme`) — the only theme
+
+The app has one dark theme. The old Classic/v2 switch (`?design=`, Settings → Design, `src/lib/design.ts`) is gone.
+The legacy `v2:` variant is now always on so older screens keep their dark overrides until they are rebuilt; **do not
+use `v2:` in new code**.
+
+| PDF role | PDF value | Token(s) | Dark value | Use |
+|---|---|---|---|---|
+| Background | `#F9F9FF` | `bg` | `#08070C` | page background |
+| Surface | `#FFFFFF` | `surface` / `surface-2` / `line` | `#16131F` / `#1F1B2B` / `#2A2433` | cards / inputs, pressed / 1px borders |
+| Text | navy | `ink` / `ink-2` / `ink-3` | `#F4F1FF` / `#A79FC4` / `#8A84A6` | titles / body, meta / captions, placeholders |
+| **Primary** (navy CTA) | `#333E72` | `primary` + `on-primary` | lime `#D4FF3A` + ink `#0C0A14` | the one big button per screen (BottomCTA, empty-state button, Get Started) |
+| **Selected** (bright blue) | `#4D61FF` | `sel` / `sel-fg` / `sel-soft` / `sel-line` | `#FF3DA8` / `#FF7AC0` / `#2A0E20` / `#6B1A4C` | underline tab bar, selected chip, active tab-bar item, links ("View source ↗", "Sign In", "View meetup"), switches, focus ring |
+| Ice blue (Events) | `#EDF0FF` | `t-ice` / `t-ice-fg` | `#171C36` / `#9DB0FF` | events, classes, calendar icons |
+| Peach (Opportunities) | `#FFF2E7` | `t-peach` / `t-peach-fg` | `#2A2015` / `#FFC27A` | opportunities, dining, coffee |
+| Mint (Clubs) | `#EAF5F1` | `t-mint` / `t-mint-fg` | `#11261F` / `#6FE0B9` | clubs, recreation, free time |
+| Rose (Meetups) | `#FCEEF4` | `t-rose` / `t-rose-fg` | `#2B1522` / `#FF9AC8` | meetups, people, communities row |
+| Lavender (PDF icon tiles) | — | `t-lav` / `t-lav-fg` | `#1F1934` / `#B9A6FF` | campus life, research, AI, online |
+| status | — | `ok`, `danger`, `gold` | `#6FE0B9`, `#FF5C7A`, `#FFC94D` | live dot, errors, warnings |
+
+Decisions:
+- **One primary: lime-on-ink.** It is our existing dark brand button and has the strongest contrast (17:1). Pink is
+  never a filled button — it only marks *selection* and *links*, exactly where the PDF uses bright blue.
+- **Category tints** are deep, low-saturation versions of the PDF pastels with a light icon colour; the tile label
+  stays `ink`, so the four Home tiles keep their colour coding on black. `tones.ts` maps
+  `events→ice, opportunities→peach, clubs→mint, meetups→rose` — use `CATEGORY_TONE`, don't pick by hand.
+- Contrast (WCAG AA, small text ≥ 4.5:1): `ink` 17:1, `ink-2` 7.3:1, `ink-3` 5.1:1 on `surface` (4.8:1 on
+  `surface-2`; it was `#6E6889` = 3.5:1 and was lifted), `sel-fg` 7.8:1, `t-*-fg` on their tint ≥ 6:1.
+
+## 2. Type
+
+Plus Jakarta Sans (already loaded in `index.html`; it is the PDF's geometric sans) for everything — Unbounded and
+Inter are no longer used by the theme.
+
+| Level | Class | Size / weight | PDF example |
+|---|---|---|---|
+| Page title | `ha-title` | 28 / 800, tracking −0.03em | "Explore", "Social", "Good morning!", "Recreation" |
+| Section | `ha-h2` | 19 / 700 | "For you", "Your week", "My Communities" |
+| Back-header title | (BackHeader) | 17 / 700 | "‹ Recreation" |
+| Card title | — | 15 / 700 | "Campus design showcase" |
+| Body | — | 14–15 / 400–500 `ink`/`ink-2` | descriptions |
+| Meta / caption | — | 12.5–13 `ink-3` | "Example date · On campus" |
+| Tab bar label | (TabBar) | 11 / 600 | "Home" |
+
+Radii: cards 20px, icon tiles 14px, chips / buttons fully round. Cards are `surface` + 1px `line`, no shadow.
+
+## 3. Components
+
+### Shell (`Shell.tsx`)
+| Component | PDF | Notes |
+|---|---|---|
+| `TabBar` | bottom bar Home · Explore · Schedule · Social · Profile | rendered by `AppShell` (via `BottomNav`) on tab roots only. Active item = `sel-fg`. `TABS[].also` lists the paths that light each tab. |
+| `BrandHeader({actions, title?, children?})` | S012 "Lumi ⌕ 🔔 💬", S037 + big "Social", S071 "Lumi ⚙ 💬" | `actions`: `'search' | 'bell' | 'messages' | 'settings'` or a custom `{key,label,icon,onClick}`. Unread dots come from `useUnreadCounts`. `children` = SegTabs under the title. Sticky. |
+| `TitleHeader({title, actions, children})` | S017 "Explore ⌕ 🔔 💬", S027 "Schedule 📅" | big title is the header. |
+| `BackHeader({title?, onBack?, onMore?, right?})` | "‹ Title ···" | `···` only appears when `onMore` is given (no dead dots). Title may be empty (S020, S046). |
+| `PageTitle({title, sub})` | big title + one grey line under a BackHeader | "Recreation / UC Berkeley · Recreation". |
+| `OnboardingHeader({step, total, onBack?, onSkip?})` | "‹ Lumi · 1 of 6      Skip" | |
+| `Wordmark({size, dot})` | "Lumi" (dot on Welcome) | |
+| `Screen` | page wrapper (`bg`, bottom padding) | |
+
+### Controls (`Controls.tsx`)
+| Component | PDF | Notes |
+|---|---|---|
+| `Btn({variant, size, full, loading, icon})` | navy pill / white outline pill / blue text | `primary` (lime), `outline`, `link` (pink text), `danger`. Sizes `lg` 52 · `md` 44 · `sm` 36. |
+| `BottomCTA({leading?, note?})` | sticky bottom button bar (Continue, Going, Create Meetup …) | put a `Btn full size="lg"` inside; `leading` for `RoundIconBtn` (bookmark). |
+| `RoundIconBtn` | round bookmark button left of "Going" | |
+| `Chip({active, onClick, icon, size})`, `ChipRow({wrap})`, `ChoiceChips` | Recommended / Newest / Ending soon, Coffee / Study … | selected = `sel-soft` + `sel-line` border + `sel-fg` text. `ChipRow` scrolls sideways unless `wrap`. |
+| `SegTabs({tabs, value?, onChange?})` | underline tabs | each tab `{key, label, to?, count?}`. With `to` they are links (replace) — the URL owns the tab. |
+| `SearchField({placeholder, value, onChange \| onOpen})` | "Search events" | `onOpen` turns it into a button that opens `/search`. |
+| `FormField({label, hint})`, `TextInput({icon})`, `TextArea`, `SelectField({icon, value, placeholder, onClick})` | form rows (School email ✉, Verification code 🔒, Group type ▾) | `SelectField` opens a sheet you provide. |
+| `Switch` | toggle rows (S066, S085) | |
+
+### Cards (`Cards.tsx`)
+| Component | PDF | Notes |
+|---|---|---|
+| `SectionHeader({title, action?, onAction?})` | "For you        See all ›" | |
+| `IconTile({tone, size})` | 40–44px tinted rounded square | |
+| `Badge({tone})` | "Campus event", "Source verified", "Coffee" | |
+| `CategoryTile` + `CategoryGrid` | Home 2×2 | use `CATEGORY_TONE`. |
+| `RowCard({tone, icon, title, sub, right?, badge?, onClick?})` | "Make room for a good plan ›" | chevron appears when clickable. |
+| `ListingCard({cover, badge, badgeTone, title, meta, sourceUrl, saved, onSave, onClick})` | S017 event/opportunity card | 88px image (or a tinted block when there is no photo — never invent one), "View source ↗" only with a real URL. |
+| `MeetupCard({tone, icon, badge, title, meta, people, footnote, action, onClick})` | S037 "Coffee after class … View meetup" | `people` are real participants only. |
+| `AvatarStack` | overlapping faces | |
+| `PersonCard({avatar, name, meta, bio, action})` | S039 "Jordan · Second-year · Design   [Add Friend]" | `action` = a `Btn size="sm" variant="outline"`. |
+| `InfoRows({rows})` | S020 Who it's for / Benefits / Original source; S035 When / Where | rows `{tone, icon, label, value, caption, onClick?, right?}`. |
+| `TextCard({title?})` | description / About cards | |
+| `HeroBanner({tone, icon})` | S022 / S046 tinted banner with an icon | instead of stock photos. |
+| `cardCls` | the card surface classes | for one-off cards. |
+
+### States (`States.tsx`)
+| Component | PDF | Notes |
+|---|---|---|
+| `InfoNote` | "(i) You can change this later." | the PDF puts one under most lists/forms — keep them short, one line. |
+| `EmptyCard({title, sub, primary, secondary})` | S013 "Your campus starts here." [Explore Campus][Create Meetup] | inside a section. |
+| `EmptyState({icon, tone, title, sub, action, children})` | S041–S044, S028, S095, S096 | whole tab/screen empty; `children` for extra chips/buttons. |
+| `ErrorScreen({message, onRetry})` | S094 "Let's try that again" | use instead of the old `ErrorState` in new screens. |
+| `LoadingCards({count})` | — | keeps the card layout while loading. |
+
+### Screen-specific helpers outside `ha`
+- `src/pages/campus/CampusSource.tsx` — `CampusHead` (S015/S016 back header + title + "UC Berkeley · …") and
+  `CampusSource` (official-source card; footnote only when the feed is unavailable).
+- `src/pages/social/SocialPage.tsx` — `SocialHeader` (BrandHeader + "Social" + SegTabs), `MeetupItem` (MeetupCard from
+  an `Activity`), `meetKindOf`.
+
+## 4. Rules
+- One `primary` button per screen. Everything else is `outline` or `link`.
+- Selection is always pink (`sel*`); category colour is always a tint (`t-*`). Don't use lime for selection.
+- Data that isn't there is not drawn: no sample people mixed into real counts, no stock photos, no "Be the first" lines
+  on every row (PRODUCT_TASTE). Sample content in onboarding (S004–S007) carries "Sample preview".
+- Headers: tab roots use `BrandHeader`/`TitleHeader`; every other screen uses `BackHeader` (+ `PageTitle` when the PDF
+  shows the big title again).
+- Copy follows the PDF in English; Korean strings follow `lang` like the rest of the app.
