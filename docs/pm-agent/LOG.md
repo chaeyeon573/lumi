@@ -2149,3 +2149,9 @@
   - Test with the real PASJ page (Nov 6, 8:00 p.m. Pacific).
 - Spot check courses (UMD, Testudo): MATH 299P W 3:00, GEMS 296 0102 Th 8:15, ENGL 498 0201 (Spring) M 3:30-6:00, KNES 320 0106 (Spring) Th 4:00, EPIB 301 TuTh 3:30 - all match.
 - Spot check clubs: Tulane MeeT U Kpop, Clemson Vida Volunteer, UMich Eta Sigma Phi fine. UNC Senior Class Marshals (alumni.unc.edu) answers 403 to the checker. NYU "Fubon Center for Technology, Business and Innovation" is a Stern research center, so it is marked `department` (override added).
+
+## 2026-11-05 15:33 UTC
+- **Penn events: 44 upcoming** from Penn Today's public events JSON (penntoday.upenn.edu/api/events, found by trying the site's api path; the events page fills itself from it). New `penntoday:` reader:
+  - start times like "-0500" are normalised;
+  - ongoing exhibits, multi-day items (e.g. Homecoming Weekend) and virtual events are left out.
+  - Test added. Checked Penn GIS Day on its page: Nov 17, 9:30 a.m. = ours.

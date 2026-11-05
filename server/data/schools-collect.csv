@@ -6,7 +6,7 @@ s_ucla,UCLA,ucla,ucla.edu,Los Angeles,34.0689,-118.4452,https://sa.ucla.edu/RCO,
 s_mit,MIT,mit,mit.edu,Cambridge,42.3601,-71.0942,https://engage.mit.edu,mit,,,,,America/New_York,
 s_harvard,Harvard University,harvard,harvard.edu,Cambridge,42.3770,-71.1167,,harvard,,,trumba:gazette,,America/New_York,probe
 s_cornell,Cornell University,cornell,cornell.edu,Ithaca,42.4534,-76.4735,https://cornell.campusgroups.com,cornell,,,localist:https://events.cornell.edu,,America/New_York,
-s_upenn,University of Pennsylvania,upenn,upenn.edu,Philadelphia,39.9522,-75.1932,https://pennclubs.com,fose:https://courses.upenn.edu,,,,,America/New_York,probe
+s_upenn,University of Pennsylvania,upenn,upenn.edu,Philadelphia,39.9522,-75.1932,https://pennclubs.com,fose:https://courses.upenn.edu,,,penntoday:https://penntoday.upenn.edu/api/events,,America/New_York,probe
 s_dartmouth,Dartmouth College,dartmouth,dartmouth.edu,Hanover,43.7044,-72.2887,https://dartmouthgroups.dartmouth.edu,fose:https://courses.dartmouth.edu,,,,,America/New_York,probe
 s_notredame,University of Notre Dame,nd,nd.edu,Notre Dame,41.7056,-86.2353,https://nd.campuslabs.com/engage,fose:https://classsearch.nd.edu,https://catalog.nd.edu/,,,,America/Indiana/Indianapolis,probe
 s_uchicago,University of Chicago,uchicago,uchicago.edu,Chicago,41.7886,-87.5987,https://uchicago.campuslabs.com/engage,,,,,,America/Chicago,

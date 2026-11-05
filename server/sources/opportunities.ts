@@ -349,6 +349,39 @@ export async function fetchJsonLdEvents(listing: string, school: EventSchool, ho
   return out;
 }
 
+interface PennTodayItem { title?: string; summary?: string; location?: string; category?: string; start_date?: string; end_date?: string; all_day?: string; url?: string; event_url?: string }
+/** Penn Today 행사(penntoday.upenn.edu/api/events, 공개 JSON). 시각은 "2026-11-09T18:00:00-0500" — 쌍점 없는 시간대라 고쳐 읽는다. 여러 날 이어지는 전시는 뺀다 */
+export function parsePennToday(items: PennTodayItem[], school: EventSchool, now = new Date(), horizonDays = 30): Opportunity[] {
+  const iso = (t?: string) => new Date((t ?? '').replace(/([+-]\d\d)(\d\d)$/, '$1:$2'));
+  const out: Opportunity[] = []; const seen = new Set<string>(); const until = now.getTime() + horizonDays * 86_400_000;
+  for (const it of items) {
+    const title = text(text(it.title ?? '')); const start = iso(it.start_date); const end = it.end_date ? iso(it.end_date) : start;
+    if (!title || !it.url || Number.isNaN(start.getTime()) || start.getTime() < now.getTime() || start.getTime() > until || isNoticeNotEvent(title)) continue;
+    if (end.getTime() - start.getTime() > 86_400_000 || /\bexhibit(ion)?\b/i.test(title)) continue;
+    const loc = text(it.location ?? ''); if (/zoom|on-?line|virtual|webinar/i.test(loc + ' ' + title)) continue;
+    const key = `${title.toLowerCase()}#${start.toISOString().slice(0, 10)}`; if (seen.has(key)) continue; seen.add(key);
+    const desc = text(text(it.summary ?? '')); const food = hasFreeFood(title, desc); const talk = TALK_RE.test(title) || /lecture|talk|panel|seminar/i.test(it.category ?? '');
+    const allDay = /^true$/i.test(it.all_day ?? '');
+    out.push(base({
+      id: `op_${school.id.replace('s_', '')}_pt_${(/\/events\/([^/?#]+)/.exec(it.url)?.[1] ?? title).toLowerCase().replace(/[^a-z0-9]+/g, '_').slice(0, 60)}`, type: 'event', title, host: school.name ?? 'Penn', schoolId: school.id,
+      description: desc.slice(0, 280), date: start.toISOString(), startTime: allDay ? undefined : localTime(start, school.tz),
+      place: loc ? { name: loc, lat: school.center.lat, lng: school.center.lng } : undefined,
+      eligibility: /free/i.test(desc) ? 'Free, open to the Penn community' : 'Open to the campus community', benefit: food ? 'Free food' : undefined, cover: { emoji: '', hue: 200 },
+      tags: ['event', ...(food ? ['free food'] : []), ...(talk ? ['talk'] : []), ...(it.category ? [text(it.category).toLowerCase()] : [])], interests: talk ? ['research', 'study'] : ['club'], goals: [], sourceUrl: it.url, sourceLabel: 'Penn Today Events',
+    }, now.toISOString()));
+  }
+  return out;
+}
+export async function fetchPennToday(api: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> {
+  const items: PennTodayItem[] = []; const until = Date.now() + horizonDays * 86_400_000;
+  for (let page = 0; page < 8; page++) {
+    const j = JSON.parse(await get(`${api}?items_per_page=100&page=${page}`)) as { items?: PennTodayItem[] };
+    const got = j.items ?? []; items.push(...got);
+    const last = got[got.length - 1]?.start_date; if (!got.length || (last && new Date(last.replace(/([+-]\d\d)(\d\d)$/, '$1:$2')).getTime() > until)) break;
+  }
+  return parsePennToday(items, school, new Date(), horizonDays);
+}
+
 export async function fetchCampusGroupsEvents(host: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> {
   return parseCampusGroupsRss(await get(`${host.replace(/\/+$/, '')}/rss_events`), host, school, new Date(), horizonDays);
 }

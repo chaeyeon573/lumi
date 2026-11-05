@@ -64,3 +64,17 @@ test('JSON-LD event page (USF usfca.edu): local start without zone read in the s
   assert.equal(e?.place?.name, 'Lone Mountain Main 148 - Studio Theatre');
   assert.equal(parseJsonLdEvent(html, 'https://x', school, new Date('2026-11-08T00:00:00Z'), 7), null, 'past event');
 });
+
+test('Penn Today events API: -0500 offsets read correctly, ongoing exhibits / multi-day / virtual left out', async () => {
+  const { parsePennToday } = await import('./sources/opportunities');
+  const j = JSON.parse(readFileSync(new URL('./fixtures/penntoday-events.json', import.meta.url), 'utf8'));
+  const school = { id: 's_upenn', name: 'Penn', tz: 'America/New_York', center: { lat: 39.9522, lng: -75.1932 } };
+  const out = parsePennToday(j.items, school, new Date('2026-11-05T12:00:00Z'), 30);
+  const r = out.find((e) => e.title.startsWith('Election Roundtable'));
+  assert.equal(r?.date, '2026-11-11T17:00:00.000Z');
+  assert.equal(r?.startTime, '12:00');
+  assert.equal(r?.place?.name, 'Houston Hall, 3417 Spruce St.');
+  assert.ok(!out.some((e) => /Nursing the Revolution|Allison Zuckerman|Print the Declaration/.test(e.title)), 'ongoing exhibits');
+  assert.ok(!out.some((e) => /Homecoming Weekend|Symposium: Stranger Things/.test(e.title)), 'multi-day');
+  assert.ok(!out.some((e) => /Brotherly Love/.test(e.title)), 'virtual');
+});
