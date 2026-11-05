@@ -1,96 +1,9 @@
 {
- "collectedAt": "2026-11-04T03:39:37.887Z",
+ "collectedAt": "2026-11-05T03:39:36.400Z",
  "sources": [
-  "engage https://sfsu.campuslabs.com/engage 18"
+  "engage https://sfsu.campuslabs.com/engage 19"
  ],
  "events": [
-  {
-   "description": "AS The Depot Presents: Karaoke Night. Share your talent and come sing your favorite tunes at The Depot! Signups begin at 5:50 with Karaoke from 6pm - 9pm. Free and all ages. For more information, please contact thedepot@asi.sfsu.edu or DM @as_thedepot_sfsu on Instagram. Associate",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "arts"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
-   "id": "op_sfsu_eg_12673243",
-   "type": "event",
-   "title": "Karaoke Night",
-   "host": "Associated Students The Depot",
-   "schoolId": "s_sfsu",
-   "date": "2026-11-04T02:00:00.000Z",
-   "startTime": "18:00",
-   "place": {
-    "name": "The Depot",
-    "lat": 37.7219,
-    "lng": -122.4782
-   },
-   "sourceUrl": "https://sfsu.campuslabs.com/engage/event/12673243",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "The Zen Meditation Club is hosting a guided meditation session this week, and we would love for you to join us! Whether you are looking to reduce stress or simply find a moment of peace, this session is open to all. When: Wed 1:00 pm - 1:30 pm Where: Thornton Hall, TH 818 Email: ",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "social"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
-   "id": "op_sfsu_eg_12746965",
-   "type": "event",
-   "title": "Guided Meditation",
-   "host": "Zen Meditation Club",
-   "schoolId": "s_sfsu",
-   "date": "2026-11-04T21:00:00.000Z",
-   "startTime": "13:00",
-   "place": {
-    "name": "Thornton Hall TH818",
-    "lat": 37.7219,
-    "lng": -122.4782
-   },
-   "sourceUrl": "https://sfsu.campuslabs.com/engage/event/12746965",
-   "sourceLabel": "Student org events"
-  },
-  {
-   "description": "Drop in and join a casual crochet session &mdash; beginners welcome, all supplies provided! Look for us near the checkout desk on the first floor. Love crafts? Tell us what else you'd like to see offered at your Library 🎨🖌️🧶",
-   "eligibility": "Open to students",
-   "tags": [
-    "event",
-    "arts"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
-   "id": "op_sfsu_eg_12931302",
-   "type": "event",
-   "title": "Fall Crafternoons",
-   "host": "J. Paul Leonard Library",
-   "schoolId": "s_sfsu",
-   "date": "2026-11-04T23:00:00.000Z",
-   "startTime": "15:00",
-   "place": {
-    "name": "SFSU Library (J. Paul Leonard Library)",
-    "lat": 37.7219,
-    "lng": -122.4782
-   },
-   "sourceUrl": "https://sfsu.campuslabs.com/engage/event/12931302",
-   "sourceLabel": "Student org events"
-  },
   {
    "description": "🌙✨ Layali Al-Sham | ليالي الشام ✨🌙 Join the Arab Student Union (ASU) for a special evening celebrating the beauty of Al-Sham! 🇸🇾🇵🇸🇱🇧🇯🇴 Come enjoy a night filled with delicious shawarma, refreshing drinks, and great company as we bring a little taste of home to campus! W",
    "eligibility": "Open to students",
@@ -103,8 +16,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
    "id": "op_sfsu_eg_12930895",
    "type": "event",
    "title": "Layali Al-Sham",
@@ -132,8 +45,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
    "id": "op_sfsu_eg_12914101",
    "type": "event",
    "title": "Live Music Thursday: KSFS x The Depot",
@@ -162,8 +75,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
    "id": "op_sfsu_eg_12698011",
    "type": "event",
    "title": "Game Nights",
@@ -192,8 +105,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
    "id": "op_sfsu_eg_12495749",
    "type": "event",
    "title": "Gator Gains Lift Fest",
@@ -223,8 +136,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
    "id": "op_sfsu_eg_12886476",
    "type": "event",
    "title": "BDSM & Consent Workshop- Make your own Flogger!",
@@ -253,8 +166,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
    "id": "op_sfsu_eg_12673244",
    "type": "event",
    "title": "Karaoke Night",
@@ -271,6 +184,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Associated Students Farmer's Market pops up every Thursday from 10am to 3pm in front of the Humanities Building near the Fine Arts Building and Burk Hall. Looking for lunch or something good for the week ahead? Stop by for farm fresh produce, hot meals and self-care essentials. W",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
+   "id": "op_sfsu_eg_12955606",
+   "type": "event",
+   "title": "AS Farmer's Market",
+   "host": "Associated Students Productions",
+   "schoolId": "s_sfsu",
+   "date": "2026-11-12T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "AS Farmer's Market",
+    "lat": 37.7219,
+    "lng": -122.4782
+   },
+   "sourceUrl": "https://sfsu.campuslabs.com/engage/event/12955606",
+   "sourceLabel": "Student org events"
+  },
+  {
    "description": "Join us for a relaxed social networking event featuring a resume revamp presentation from Career and Leadership Development (CLD), complete with a Q&A, and a strengths and values mapping activity to help you shine in interviews. While you&rsquo;re here, mix your own Italian soda ",
    "eligibility": "Open to students",
    "tags": [
@@ -282,8 +224,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
    "id": "op_sfsu_eg_12765254",
    "type": "event",
    "title": "Soda & Success: A Career Networking & Resume Social",
@@ -313,8 +255,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
    "id": "op_sfsu_eg_12944938",
    "type": "event",
    "title": "The Land Returns: Screening and Q&A with Director Margaret Jacobs",
@@ -344,8 +286,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
    "id": "op_sfsu_eg_12944936",
    "type": "event",
    "title": "SPACE Beach Bonfire",
@@ -374,8 +316,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
    "id": "op_sfsu_eg_12673245",
    "type": "event",
    "title": "Karaoke Night",
@@ -403,8 +345,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
    "id": "op_sfsu_eg_12931304",
    "type": "event",
    "title": "Fall Crafternoons",
@@ -432,8 +374,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
    "id": "op_sfsu_eg_12914103",
    "type": "event",
    "title": "Jazz Evening",
@@ -450,6 +392,35 @@
    "sourceLabel": "Student org events"
   },
   {
+   "description": "Associated Students Farmer's Market pops up every Thursday from 10am to 3pm in front of the Humanities Building near the Fine Arts Building and Burk Hall. Looking for lunch or something good for the week ahead? Stop by for farm fresh produce, hot meals and self-care essentials. W",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
+   "id": "op_sfsu_eg_12955607",
+   "type": "event",
+   "title": "AS Farmer's Market",
+   "host": "Associated Students Productions",
+   "schoolId": "s_sfsu",
+   "date": "2026-11-19T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "AS Farmer's Market",
+    "lat": 37.7219,
+    "lng": -122.4782
+   },
+   "sourceUrl": "https://sfsu.campuslabs.com/engage/event/12955607",
+   "sourceLabel": "Student org events"
+  },
+  {
    "description": "Traveling home for the holidays or staying local? Join us for a cozy afternoon of creative gratitude! We&rsquo;re hosting a hand-crafted postcard station where you can design, doodle, and customize mailers for your friends and family back home. It&rsquo;s the perfect chance to ge",
    "eligibility": "Open to students",
    "tags": [
@@ -461,8 +432,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
    "id": "op_sfsu_eg_12826087",
    "type": "event",
    "title": "Thanks In The Mail: Gratitude Postcards Making",
@@ -491,8 +462,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
    "id": "op_sfsu_eg_12698012",
    "type": "event",
    "title": "Game Nights",
@@ -521,8 +492,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-04T03:39:38.281Z",
-   "createdAt": "2026-11-04T03:39:38.281Z",
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
    "id": "op_sfsu_eg_12746968",
    "type": "event",
    "title": "Guided Meditation",
@@ -536,6 +507,66 @@
     "lng": -122.4782
    },
    "sourceUrl": "https://sfsu.campuslabs.com/engage/event/12746968",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Associated Students Farmer's Market pops up every Thursday from 10am to 3pm in front of the Humanities Building near the Fine Arts Building and Burk Hall. Looking for lunch or something good for the week ahead? Stop by for farm fresh produce, hot meals and self-care essentials. W",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
+   "id": "op_sfsu_eg_12955608",
+   "type": "event",
+   "title": "AS Farmer's Market",
+   "host": "Associated Students Productions",
+   "schoolId": "s_sfsu",
+   "date": "2026-12-03T18:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "AS Farmer's Market",
+    "lat": 37.7219,
+    "lng": -122.4782
+   },
+   "sourceUrl": "https://sfsu.campuslabs.com/engage/event/12955608",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Event Description: Shop Free at Alli Gator's Closet! Give preloved clothes a second chance at life and support sustainable fashion. We've collected and cleaned lost-and-found items from campus facilities, now available at no cost to all students! Registration: No registration req",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:36.936Z",
+   "createdAt": "2026-11-05T03:39:36.936Z",
+   "id": "op_sfsu_eg_11972477",
+   "type": "event",
+   "title": "Alli Gator's Closet",
+   "host": "Campus Recreation- The Mashouf Wellness Center",
+   "schoolId": "s_sfsu",
+   "date": "2026-12-04T19:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Mashouf Wellness Center",
+    "lat": 37.7219,
+    "lng": -122.4782
+   },
+   "benefit": "🎁 Free stuff",
+   "sourceUrl": "https://sfsu.campuslabs.com/engage/event/11972477",
    "sourceLabel": "Student org events"
   }
  ]

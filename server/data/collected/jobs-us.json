@@ -1,7 +1,7 @@
 {
- "collectedAt": "2026-11-04T03:40:51.389Z",
+ "collectedAt": "2026-11-05T03:41:19.318Z",
  "boards": 166,
- "boardsOk": 165,
+ "boardsOk": 166,
  "jobs": [
   {
    "id": "job_workday_adobe_wd5_myworkdayjobs_com_adobe_external_experienced_r172998",
@@ -10,6 +10,17 @@
    "title": "2027 Intern - AI & Architecture",
    "location": "San Jose",
    "url": "https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced/job/San-Jose/XMLNAME-2027-Intern---AI---Architecture_R172998",
+   "kind": "internship",
+   "audience": [],
+   "source": "workday"
+  },
+  {
+   "id": "job_workday_adobe_wd5_myworkdayjobs_com_adobe_external_experienced_r173411",
+   "company": "Adobe",
+   "sector": "AI/Big Tech",
+   "title": "2027 Intern - Brand Creative",
+   "location": "San Francisco",
+   "url": "https://adobe.wd5.myworkdayjobs.com/en-US/external_experienced/job/San-Francisco/XMLNAME-2027-Intern---Brand-Creative_R173411",
    "kind": "internship",
    "audience": [],
    "source": "workday"
@@ -649,6 +660,20 @@
    "source": "amazon"
   },
   {
+   "id": "job_amazon_amazon_10597230",
+   "company": "Amazon",
+   "sector": "AI/Big Tech",
+   "title": "Amazon Finance Rotational Program (AFRP) - Operations Finance, Early Career - 2027",
+   "location": "Seattle, Washington, USA",
+   "url": "https://www.amazon.jobs/en/jobs/10597230/amazon-finance-rotational-program-afrp-operations-finance-early-career-2027",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-04T00:00:00.000Z",
+   "source": "amazon"
+  },
+  {
    "id": "job_amazon_amazon_10594729",
    "company": "Amazon",
    "sector": "AI/Big Tech",
@@ -1028,20 +1053,6 @@
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-10-29T00:00:00.000Z",
-   "source": "amazon"
-  },
-  {
-   "id": "job_amazon_amazon_10513820",
-   "company": "Amazon",
-   "sector": "AI/Big Tech",
-   "title": "Data Engineer I, Fire TV",
-   "location": "Seattle, Washington, USA",
-   "url": "https://www.amazon.jobs/en/jobs/10513820/data-engineer-i-fire-tv",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-08-25T00:00:00.000Z",
    "source": "amazon"
   },
   {
@@ -2121,6 +2132,18 @@
    "source": "greenhouse"
   },
   {
+   "id": "job_greenhouse_andurilindustries_5278662007",
+   "company": "Anduril",
+   "sector": "Aerospace/Energy",
+   "title": "2027 Library Science Intern",
+   "location": "Santa Ana, California, United States",
+   "url": "https://boards.greenhouse.io/andurilindustries/jobs/5278662007?gh_jid=5278662007",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-04T15:51:43-05:00",
+   "source": "greenhouse"
+  },
+  {
    "id": "job_greenhouse_andurilindustries_5268752007",
    "company": "Anduril",
    "sector": "Aerospace/Energy",
@@ -2343,27 +2366,15 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_andurilindustries_5278662007",
-   "company": "Anduril",
-   "sector": "Aerospace/Energy",
-   "title": "Winter 2027 Library Science Co-op",
-   "location": "Santa Ana, California, United States",
-   "url": "https://boards.greenhouse.io/andurilindustries/jobs/5278662007?gh_jid=5278662007",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-11-02T16:27:19-05:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_andurilindustries_5236589007",
    "company": "Anduril",
    "sector": "Aerospace/Energy",
    "title": "Winter 2027 Manufacturing Engineer Co-op",
-   "location": "Ashville, Ohio, United States; Lexington, Massachusetts, United States; Quincy, Massachusetts, United States",
+   "location": "Ashville, Ohio, United States; Lexington, Massachusetts, United States; Quincy, Massachusetts, United States; Quonset, Rhode Island, United States",
    "url": "https://boards.greenhouse.io/andurilindustries/jobs/5236589007?gh_jid=5236589007",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-11-02T16:27:19-05:00",
+   "updatedAt": "2026-11-04T11:05:32-05:00",
    "source": "greenhouse"
   },
   {
@@ -2495,7 +2506,7 @@
    "url": "https://job-boards.greenhouse.io/anthropic/jobs/5438311008",
    "kind": "fellowship",
    "audience": [],
-   "updatedAt": "2026-10-28T15:15:37-04:00",
+   "updatedAt": "2026-11-04T02:13:33-05:00",
    "source": "greenhouse"
   },
   {
@@ -3431,6 +3442,19 @@
    "source": "greenhouse"
   },
   {
+   "id": "job_workday_ghr_wd1_myworkdayjobs_com_ghr_lateral_us_26040910",
+   "company": "Bank of America",
+   "sector": "Finance/Banking",
+   "title": "Merrill Advisor Development Program - Financial Advisor: Chicago Metro Market",
+   "location": "Chicago",
+   "url": "https://ghr.wd1.myworkdayjobs.com/en-US/lateral-us/job/Chicago/Merrill-Advisor-Development-Program---Financial-Advisor--Chicago-Metro-Market_26040910-2",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "source": "workday"
+  },
+  {
    "id": "job_workday_boeing_wd1_myworkdayjobs_com_boeing_external_careers_jr2026523631",
    "company": "Boeing",
    "sector": "Aerospace/Defense",
@@ -3457,12 +3481,12 @@
    "source": "workday"
   },
   {
-   "id": "job_workday_boeing_wd1_myworkdayjobs_com_boeing_external_careers_jr2026524945",
+   "id": "job_workday_boeing_wd1_myworkdayjobs_com_boeing_external_careers_jr2026523750",
    "company": "Boeing",
    "sector": "Aerospace/Defense",
-   "title": "Astrodynamics Engineer (Entry-Level) - Millennium Space Systems",
+   "title": "Entry Level Command and Data Handling Network Engineer (Autonomous Navigation Systems)",
    "location": "USA - El Segundo, CA",
-   "url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/job/USA---El-Segundo-CA/Astrodynamics-Engineer--Entry-Level----Millennium-Space-Systems_JR2026524945-1",
+   "url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/job/USA---El-Segundo-CA/Command-and-Data-Handling-Network--Autonomous-Navigation-Systems-_JR2026523750-1",
    "kind": "job",
    "audience": [
     "newgrad"
@@ -3509,6 +3533,19 @@
    "source": "workday"
   },
   {
+   "id": "job_workday_boeing_wd1_myworkdayjobs_com_boeing_external_careers_jr2026524285",
+   "company": "Boeing",
+   "sector": "Aerospace/Defense",
+   "title": "Entry Level Supply Chain Specialist (Supply Chain Management)",
+   "location": "USA - Forest Park, GA",
+   "url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/job/USA---Forest-Park-GA/Entry-Level-Supply-Chain-Specialist--Supply-Chain-Management-_JR2026524285-2",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "source": "workday"
+  },
+  {
    "id": "job_workday_boeing_wd1_myworkdayjobs_com_boeing_external_careers_jr2026523829",
    "company": "Boeing",
    "sector": "Aerospace/Defense",
@@ -3528,19 +3565,6 @@
    "title": "Entry-Level Fabrication Specialist (Preparing and Painting)",
    "location": "USA - Mesa, AZ",
    "url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/job/USA---Mesa-AZ/Entry-Level-Fabrication-Specialist--Preparing-and-Painting-_JR2026523559",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_boeing_wd1_myworkdayjobs_com_boeing_external_careers_jr2026511162",
-   "company": "Boeing",
-   "sector": "Aerospace/Defense",
-   "title": "Entry-Level Mechanical Product Design and Analysis Engineer",
-   "location": "USA - El Segundo, CA",
-   "url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/job/USA---El-Segundo-CA/Entry-Level-Mechanical-Product-Design-and-Analysis-Engineer_JR2026511162-1",
    "kind": "job",
    "audience": [
     "newgrad"
@@ -3600,12 +3624,12 @@
    "source": "workday"
   },
   {
-   "id": "job_workday_boeing_wd1_myworkdayjobs_com_boeing_external_careers_jr2026528167",
+   "id": "job_workday_boeing_wd1_myworkdayjobs_com_boeing_external_careers_jr2026527323",
    "company": "Boeing",
    "sector": "Aerospace/Defense",
-   "title": "Procurement Agent  - Entry Level or Associate",
-   "location": "USA - Ridley Park, PA",
-   "url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/job/USA---Ridley-Park-PA/Procurement-Agent----Entry-Level-or-Associate_JR2026528167",
+   "title": "Mission Operations Engineer (Entry-Level) - Millennium Space Systems",
+   "location": "USA - Chantilly, VA",
+   "url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/job/USA---Chantilly-VA/Mission-Operations-Engineer--Entry-Level----Millennium-Space-Systems_JR2026527323-1",
    "kind": "job",
    "audience": [
     "newgrad"
@@ -3613,12 +3637,12 @@
    "source": "workday"
   },
   {
-   "id": "job_workday_boeing_wd1_myworkdayjobs_com_boeing_external_careers_jr2026522330",
+   "id": "job_workday_boeing_wd1_myworkdayjobs_com_boeing_external_careers_jr2026528167",
    "company": "Boeing",
    "sector": "Aerospace/Defense",
-   "title": "Quality Engineer (Entry-level or Associate) - F-15",
-   "location": "USA - Berkeley, MO",
-   "url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/job/USA---Berkeley-MO/Quality-Engineer--Entry-level-or-Associate----F-15_JR2026522330-1",
+   "title": "Procurement Agent  - Entry Level or Associate",
+   "location": "USA - Ridley Park, PA",
+   "url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/job/USA---Ridley-Park-PA/Procurement-Agent----Entry-Level-or-Associate_JR2026528167",
    "kind": "job",
    "audience": [
     "newgrad"
@@ -3710,45 +3734,17 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_thebrattlegroup_4744187005",
+   "id": "job_greenhouse_thebrattlegroup_4744188005",
    "company": "Brattle Group",
    "sector": "Consulting/Research",
    "title": "Associate, PhD - Economics Focus (2027)",
-   "location": "Chicago, Illinois, United States",
-   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4744187005",
+   "location": "New York, New York, United States",
+   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4744188005",
    "kind": "job",
    "audience": [
     "phd"
    ],
-   "updatedAt": "2026-10-15T16:32:49-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_thebrattlegroup_4744186005",
-   "company": "Brattle Group",
-   "sector": "Consulting/Research",
-   "title": "Associate, PhD - Economics Focus (2027)",
-   "location": "Boston, Massachusetts, United States",
-   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4744186005",
-   "kind": "job",
-   "audience": [
-    "phd"
-   ],
-   "updatedAt": "2026-10-15T16:32:47-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_thebrattlegroup_4744190005",
-   "company": "Brattle Group",
-   "sector": "Consulting/Research",
-   "title": "Associate, PhD - Economics Focus (2027)",
-   "location": "San Francisco, California, United States",
-   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4744190005",
-   "kind": "job",
-   "audience": [
-    "phd"
-   ],
-   "updatedAt": "2026-10-15T16:32:55-04:00",
+   "updatedAt": "2026-10-15T16:32:51-04:00",
    "source": "greenhouse"
   },
   {
@@ -3766,73 +3762,45 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_thebrattlegroup_4744188005",
+   "id": "job_greenhouse_thebrattlegroup_4744190005",
    "company": "Brattle Group",
    "sector": "Consulting/Research",
    "title": "Associate, PhD - Economics Focus (2027)",
-   "location": "New York, New York, United States",
-   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4744188005",
-   "kind": "job",
-   "audience": [
-    "phd"
-   ],
-   "updatedAt": "2026-10-15T16:32:51-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_thebrattlegroup_4744196005",
-   "company": "Brattle Group",
-   "sector": "Consulting/Research",
-   "title": "Associate, PhD - Finance Focus (2027)",
-   "location": "Chicago, Illinois, United States",
-   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4744196005",
-   "kind": "job",
-   "audience": [
-    "phd"
-   ],
-   "updatedAt": "2026-10-16T12:07:43-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_thebrattlegroup_4744199005",
-   "company": "Brattle Group",
-   "sector": "Consulting/Research",
-   "title": "Associate, PhD - Finance Focus (2027)",
    "location": "San Francisco, California, United States",
-   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4744199005",
+   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4744190005",
    "kind": "job",
    "audience": [
     "phd"
    ],
-   "updatedAt": "2026-10-16T12:07:49-04:00",
+   "updatedAt": "2026-10-15T16:32:55-04:00",
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_thebrattlegroup_4744197005",
+   "id": "job_greenhouse_thebrattlegroup_4744186005",
    "company": "Brattle Group",
    "sector": "Consulting/Research",
-   "title": "Associate, PhD - Finance Focus (2027)",
-   "location": "Washington, District of Columbia, United States",
-   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4744197005",
-   "kind": "job",
-   "audience": [
-    "phd"
-   ],
-   "updatedAt": "2026-10-16T12:07:45-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_thebrattlegroup_4744195005",
-   "company": "Brattle Group",
-   "sector": "Consulting/Research",
-   "title": "Associate, PhD - Finance Focus (2027)",
+   "title": "Associate, PhD - Economics Focus (2027)",
    "location": "Boston, Massachusetts, United States",
-   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4744195005",
+   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4744186005",
    "kind": "job",
    "audience": [
     "phd"
    ],
-   "updatedAt": "2026-10-16T12:07:41-04:00",
+   "updatedAt": "2026-10-15T16:32:47-04:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_thebrattlegroup_4744187005",
+   "company": "Brattle Group",
+   "sector": "Consulting/Research",
+   "title": "Associate, PhD - Economics Focus (2027)",
+   "location": "Chicago, Illinois, United States",
+   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4744187005",
+   "kind": "job",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-10-15T16:32:49-04:00",
    "source": "greenhouse"
   },
   {
@@ -3850,6 +3818,62 @@
    "source": "greenhouse"
   },
   {
+   "id": "job_greenhouse_thebrattlegroup_4744195005",
+   "company": "Brattle Group",
+   "sector": "Consulting/Research",
+   "title": "Associate, PhD - Finance Focus (2027)",
+   "location": "Boston, Massachusetts, United States",
+   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4744195005",
+   "kind": "job",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-10-16T12:07:41-04:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_thebrattlegroup_4744196005",
+   "company": "Brattle Group",
+   "sector": "Consulting/Research",
+   "title": "Associate, PhD - Finance Focus (2027)",
+   "location": "Chicago, Illinois, United States",
+   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4744196005",
+   "kind": "job",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-10-16T12:07:43-04:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_thebrattlegroup_4744197005",
+   "company": "Brattle Group",
+   "sector": "Consulting/Research",
+   "title": "Associate, PhD - Finance Focus (2027)",
+   "location": "Washington, District of Columbia, United States",
+   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4744197005",
+   "kind": "job",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-10-16T12:07:45-04:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_thebrattlegroup_4744199005",
+   "company": "Brattle Group",
+   "sector": "Consulting/Research",
+   "title": "Associate, PhD - Finance Focus (2027)",
+   "location": "San Francisco, California, United States",
+   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4744199005",
+   "kind": "job",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-10-16T12:07:49-04:00",
+   "source": "greenhouse"
+  },
+  {
    "id": "job_greenhouse_thebrattlegroup_4735999005",
    "company": "Brattle Group",
    "sector": "Consulting/Research",
@@ -3862,15 +3886,15 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_thebrattlegroup_4735792005",
+   "id": "job_greenhouse_thebrattlegroup_4735791005",
    "company": "Brattle Group",
    "sector": "Consulting/Research",
    "title": "Research Analyst Intern (Economics & Finance) - Summer 2027",
-   "location": "Washington, District of Columbia, United States",
-   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4735792005",
+   "location": "New York, New York, United States",
+   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4735791005",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-09-18T17:22:46-04:00",
+   "updatedAt": "2026-09-18T17:22:34-04:00",
    "source": "greenhouse"
   },
   {
@@ -3898,15 +3922,15 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_thebrattlegroup_4735791005",
+   "id": "job_greenhouse_thebrattlegroup_4735792005",
    "company": "Brattle Group",
    "sector": "Consulting/Research",
    "title": "Research Analyst Intern (Economics & Finance) - Summer 2027",
-   "location": "New York, New York, United States",
-   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4735791005",
+   "location": "Washington, District of Columbia, United States",
+   "url": "https://job-boards.greenhouse.io/thebrattlegroup/jobs/4735792005",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-09-18T17:22:34-04:00",
+   "updatedAt": "2026-09-18T17:22:46-04:00",
    "source": "greenhouse"
   },
   {
@@ -4029,6 +4053,17 @@
    "source": "workday"
   },
   {
+   "id": "job_workday_citi_wd5_myworkdayjobs_com_citi_2_261007501",
+   "company": "Citi",
+   "sector": "Finance/Banking",
+   "title": "Banking - Corporate Banking, Summer Analyst, New York City - US, 2027",
+   "location": "New York New York United States",
+   "url": "https://citi.wd5.myworkdayjobs.com/en-US/2/job/New-York-New-York-United-States/Banking---Corporate-Banking--Summer-Analyst--New-York-City---US--2027_261007501",
+   "kind": "internship",
+   "audience": [],
+   "source": "workday"
+  },
+  {
    "id": "job_workday_citi_wd5_myworkdayjobs_com_citi_2_26997257",
    "company": "Citi",
    "sector": "Finance/Banking",
@@ -4121,17 +4156,6 @@
    "source": "workday"
   },
   {
-   "id": "job_workday_citi_wd5_myworkdayjobs_com_citi_2_25928736",
-   "company": "Citi",
-   "sector": "Finance/Banking",
-   "title": "Markets - Sales and Trading, Summer Analyst, New York City - US, 2027",
-   "location": "New York New York United States",
-   "url": "https://citi.wd5.myworkdayjobs.com/en-US/2/job/New-York-New-York-United-States/Markets---Sales-and-Trading--Summer-Analyst--New-York-City---US--2027_25928736",
-   "kind": "internship",
-   "audience": [],
-   "source": "workday"
-  },
-  {
    "id": "job_workday_citi_wd5_myworkdayjobs_com_citi_2_261003288",
    "company": "Citi",
    "sector": "Finance/Banking",
@@ -4199,7 +4223,7 @@
     "postdoc",
     "newgrad"
    ],
-   "updatedAt": "2026-10-26T10:24:28-04:00",
+   "updatedAt": "2026-11-04T10:44:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -4847,12 +4871,12 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_databricks_8482037002",
+   "id": "job_greenhouse_databricks_8482086002",
    "company": "Databricks",
    "sector": "AI/Big Tech",
    "title": "Systems PhD - Software Engineer",
-   "location": "Mountain View, California; San Francisco, California",
-   "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8482037002",
+   "location": "Bellevue, Washington; Seattle, Washington",
+   "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8482086002",
    "kind": "job",
    "audience": [
     "phd"
@@ -4861,12 +4885,12 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_databricks_8482086002",
+   "id": "job_greenhouse_databricks_8482037002",
    "company": "Databricks",
    "sector": "AI/Big Tech",
    "title": "Systems PhD - Software Engineer",
-   "location": "Bellevue, Washington; Seattle, Washington",
-   "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8482086002",
+   "location": "Mountain View, California; San Francisco, California",
+   "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8482037002",
    "kind": "job",
    "audience": [
     "phd"
@@ -4909,7 +4933,19 @@
    "url": "https://job-boards.greenhouse.io/doordashusa/jobs/7848317",
    "kind": "fellowship",
    "audience": [],
-   "updatedAt": "2026-11-03T09:27:38-05:00",
+   "updatedAt": "2026-11-04T16:15:15-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_doordashusa_8312381",
+   "company": "DoorDash",
+   "sector": "Retail/Consumer",
+   "title": "Drone Operations, Intern - Labs (Summer 2027)",
+   "location": "San Francisco, CA",
+   "url": "https://job-boards.greenhouse.io/doordashusa/jobs/8312381",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-04T16:15:15-05:00",
    "source": "greenhouse"
   },
   {
@@ -4921,7 +4957,7 @@
    "url": "https://job-boards.greenhouse.io/doordashusa/jobs/8274095",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-11-03T09:27:38-05:00",
+   "updatedAt": "2026-11-04T16:15:15-05:00",
    "source": "greenhouse"
   },
   {
@@ -4935,7 +4971,7 @@
    "audience": [
     "masters"
    ],
-   "updatedAt": "2026-11-03T09:27:38-05:00",
+   "updatedAt": "2026-11-04T16:15:15-05:00",
    "source": "greenhouse"
   },
   {
@@ -4949,7 +4985,7 @@
    "audience": [
     "phd"
    ],
-   "updatedAt": "2026-11-03T09:27:38-05:00",
+   "updatedAt": "2026-11-04T16:15:15-05:00",
    "source": "greenhouse"
   },
   {
@@ -4961,7 +4997,7 @@
    "url": "https://job-boards.greenhouse.io/doordashusa/jobs/8313401",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-11-03T09:27:38-05:00",
+   "updatedAt": "2026-11-04T16:15:15-05:00",
    "source": "greenhouse"
   },
   {
@@ -4975,7 +5011,7 @@
    "audience": [
     "phd"
    ],
-   "updatedAt": "2026-11-03T09:27:38-05:00",
+   "updatedAt": "2026-11-04T16:15:15-05:00",
    "source": "greenhouse"
   },
   {
@@ -4989,7 +5025,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T09:27:38-05:00",
+   "updatedAt": "2026-11-04T16:15:15-05:00",
    "source": "greenhouse"
   },
   {
@@ -5001,7 +5037,7 @@
    "url": "https://job-boards.greenhouse.io/doordashusa/jobs/8176863",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-11-03T09:27:38-05:00",
+   "updatedAt": "2026-11-04T16:15:15-05:00",
    "source": "greenhouse"
   },
   {
@@ -5015,7 +5051,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T09:27:38-05:00",
+   "updatedAt": "2026-11-04T16:15:15-05:00",
    "source": "greenhouse"
   },
   {
@@ -5027,7 +5063,7 @@
    "url": "https://job-boards.greenhouse.io/doordashusa/jobs/8263774",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-11-03T09:27:38-05:00",
+   "updatedAt": "2026-11-04T16:15:15-05:00",
    "source": "greenhouse"
   },
   {
@@ -5039,7 +5075,7 @@
    "url": "https://job-boards.greenhouse.io/doordashusa/jobs/8171041",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-11-03T09:27:38-05:00",
+   "updatedAt": "2026-11-04T16:15:15-05:00",
    "source": "greenhouse"
   },
   {
@@ -5139,7 +5175,7 @@
    "url": "https://careers.duolingo.com/jobs/8863967002?gh_jid=8863967002",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-11-02T11:38:30-05:00",
+   "updatedAt": "2026-11-04T15:47:52-05:00",
    "source": "greenhouse"
   },
   {
@@ -5258,7 +5294,7 @@
    "id": "job_ashby_etched_05d67dff_a7a4_4ece_a809_3200d95e7440",
    "company": "Etched",
    "sector": "Chips/Hardware",
-   "title": "IA Research Engineer (Kernels) Intern",
+   "title": "IA Research Engineer Intern",
    "location": "San Jose; United States",
    "url": "https://jobs.ashbyhq.com/etched/05d67dff-a7a4-4ece-a809-3200d95e7440",
    "kind": "internship",
@@ -5497,6 +5533,20 @@
     "phd"
    ],
    "updatedAt": "2026-10-27T13:40:12-04:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_figma_6241542004",
+   "company": "Figma",
+   "sector": "AI/Big Tech",
+   "title": "PhD Intern, Software Engineer - Interaction Design (2027)",
+   "location": "San Francisco, CA • New York, NY",
+   "url": "https://boards.greenhouse.io/figma/jobs/6241542004?gh_jid=6241542004",
+   "kind": "internship",
+   "audience": [
+    "phd"
+   ],
+   "updatedAt": "2026-11-04T11:53:19-05:00",
    "source": "greenhouse"
   },
   {
@@ -5854,20 +5904,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_freenome_8637437002",
-   "company": "Freenome",
-   "sector": "Biotech/Pharma",
-   "title": "Research Associate I/II",
-   "location": "Brisbane, California",
-   "url": "https://job-boards.greenhouse.io/freenome/jobs/8637437002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-07-23T15:50:40-04:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_freenome_8637397002",
    "company": "Freenome",
    "sector": "Biotech/Pharma",
@@ -6134,7 +6170,7 @@
    "id": "job_lever_hermeus_b7babdb5_64ee_49ad_a193_918d6a31c462",
    "company": "Hermeus",
    "sector": "Aerospace/Energy",
-   "title": "Avionics Electrical Engineering Intern - Spring/Summer 2027",
+   "title": "Avionics Electrical Engineering Intern - Summer 2027",
    "location": "Atlanta, GA",
    "url": "https://jobs.lever.co/hermeus/b7babdb5-64ee-49ad-a193-918d6a31c462",
    "kind": "internship",
@@ -6580,18 +6616,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_imc_4842595101",
-   "company": "IMC Trading",
-   "sector": "Quant/Trading",
-   "title": "Quant Performance Engineer Intern - Summer 2027",
-   "location": "Chicago, United States",
-   "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4842595101",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-10-30T10:45:00-04:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_imc_4907399101",
    "company": "IMC Trading",
    "sector": "Quant/Trading",
@@ -6630,6 +6654,18 @@
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-10-30T10:43:45-04:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_imc_4823946101",
+   "company": "IMC Trading",
+   "sector": "Quant/Trading",
+   "title": "Research Analyst Intern - Summer 2027",
+   "location": "Chicago, United States",
+   "url": "https://job-boards.eu.greenhouse.io/imc/jobs/4823946101",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-04T14:39:52-05:00",
    "source": "greenhouse"
   },
   {
@@ -7368,24 +7404,24 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_lyft_8796124002",
-   "company": "Lyft",
-   "sector": "AI/Big Tech",
-   "title": "Data Science Intern, Algorithms (Summer 2027 - SF/NYC)",
-   "location": "New York, NY",
-   "url": "https://app.careerpuck.com/job-board/lyft/job/8796124002?gh_jid=8796124002",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-10-19T18:43:36-04:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_lyft_8767723002",
    "company": "Lyft",
    "sector": "AI/Big Tech",
    "title": "Data Science Intern, Algorithms (Summer 2027 - SF/NYC)",
    "location": "San Francisco, CA",
    "url": "https://app.careerpuck.com/job-board/lyft/job/8767723002?gh_jid=8767723002",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-19T18:43:36-04:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_lyft_8796124002",
+   "company": "Lyft",
+   "sector": "AI/Big Tech",
+   "title": "Data Science Intern, Algorithms (Summer 2027 - SF/NYC)",
+   "location": "New York, NY",
+   "url": "https://app.careerpuck.com/job-board/lyft/job/8796124002?gh_jid=8796124002",
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-10-19T18:43:36-04:00",
@@ -7666,7 +7702,7 @@
    "url": "https://www.mongodb.com/careers/job/?gh_jid=8209134",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-11-03T18:10:15-05:00",
+   "updatedAt": "2026-11-04T07:37:43-05:00",
    "source": "greenhouse"
   },
   {
@@ -7978,12 +8014,23 @@
    "source": "workday"
   },
   {
-   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10258093",
+   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259296",
    "company": "Northrop Grumman",
    "sector": "Aerospace/Defense",
-   "title": "2027 Configuration Analyst Intern - Redondo Beach CA",
-   "location": "United States-California-Redondo Beach",
-   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-California-Redondo-Beach/XMLNAME-2027-Configuration-Analyst-Intern---Redondo-Beach-CA_R10258093",
+   "title": "2027 Business Development Intern - Clearfield UT",
+   "location": "United States-Utah-Roy",
+   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Utah-Roy/XMLNAME-2027-Business-Development-Intern---Clearfield-UT_R10259296",
+   "kind": "internship",
+   "audience": [],
+   "source": "workday"
+  },
+  {
+   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259337",
+   "company": "Northrop Grumman",
+   "sector": "Aerospace/Defense",
+   "title": "2027 Business Development Intern - Mesa AZ",
+   "location": "United States-Arizona-Mesa",
+   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Arizona-Mesa/XMLNAME-2027-Business-Development-Intern---Mesa-AZ_R10259337",
    "kind": "internship",
    "audience": [],
    "source": "workday"
@@ -8011,6 +8058,28 @@
    "source": "workday"
   },
   {
+   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259177",
+   "company": "Northrop Grumman",
+   "sector": "Aerospace/Defense",
+   "title": "2027 Cybersecurity Software Engineering Intern - Roy UT",
+   "location": "United States-Utah-Clearfield",
+   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Utah-Clearfield/XMLNAME-2027-Cybersecurity-Software-Engineering-Intern---Roy-UT_R10259177",
+   "kind": "internship",
+   "audience": [],
+   "source": "workday"
+  },
+  {
+   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259178",
+   "company": "Northrop Grumman",
+   "sector": "Aerospace/Defense",
+   "title": "2027 DevOps Software Engineering Intern - Roy UT",
+   "location": "United States-Utah-Roy",
+   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Utah-Roy/XMLNAME-2027-DevOps-Software-Engineering-Intern---Roy-UT_R10259178",
+   "kind": "internship",
+   "audience": [],
+   "source": "workday"
+  },
+  {
    "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10258813",
    "company": "Northrop Grumman",
    "sector": "Aerospace/Defense",
@@ -8028,6 +8097,17 @@
    "title": "2027 Electrical Engineering Intern - Colorado Springs",
    "location": "United States-Colorado-Colorado Springs",
    "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Colorado-Colorado-Springs/XMLNAME-2027-Electrical-Engineering-Intern---Colorado-Springs_R10259022",
+   "kind": "internship",
+   "audience": [],
+   "source": "workday"
+  },
+  {
+   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259306",
+   "company": "Northrop Grumman",
+   "sector": "Aerospace/Defense",
+   "title": "2027 Electrical Engineering Intern- Huntsville AL",
+   "location": "United States-Alabama-Huntsville",
+   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Alabama-Huntsville/XMLNAME-2027-Electrical-Engineering-Intern--Huntsville-AL_R10259306-1",
    "kind": "internship",
    "audience": [],
    "source": "workday"
@@ -8088,23 +8168,34 @@
    "source": "workday"
   },
   {
-   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10256169",
-   "company": "Northrop Grumman",
-   "sector": "Aerospace/Defense",
-   "title": "2027 Global Supply Intern - Linthicum MD",
-   "location": "United States-Maryland-Linthicum",
-   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Maryland-Linthicum/XMLNAME-2027-Global-Supply-Intern---Linthicum-MD_R10256169-1",
-   "kind": "internship",
-   "audience": [],
-   "source": "workday"
-  },
-  {
    "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259057",
    "company": "Northrop Grumman",
    "sector": "Aerospace/Defense",
    "title": "2027 Ground Software Engineer Intern - Redondo Beach CA",
    "location": "United States-California-Redondo Beach",
    "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-California-Redondo-Beach/XMLNAME-2027-Ground-Software-Engineer-Intern---Redondo-Beach-CA_R10259057",
+   "kind": "internship",
+   "audience": [],
+   "source": "workday"
+  },
+  {
+   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259386",
+   "company": "Northrop Grumman",
+   "sector": "Aerospace/Defense",
+   "title": "2027 Guidance Navigation and Control Engineer Intern - Redondo Beach CA",
+   "location": "United States-California-Redondo Beach",
+   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-California-Redondo-Beach/XMLNAME-2027-Guidance-Navigation-and-Control-Engineer-Intern---Redondo-Beach-CA_R10259386",
+   "kind": "internship",
+   "audience": [],
+   "source": "workday"
+  },
+  {
+   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259321",
+   "company": "Northrop Grumman",
+   "sector": "Aerospace/Defense",
+   "title": "2027 Integration and Test (Electronics/Mechanical) Technical Intern - Dulles VA",
+   "location": "United States-Virginia-Dulles",
+   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Virginia-Dulles/XMLNAME-2027-Integration-and-Test--Electronics-Mechanical--Technical-Intern---Dulles-VA_R10259321",
    "kind": "internship",
    "audience": [],
    "source": "workday"
@@ -8121,45 +8212,23 @@
    "source": "workday"
   },
   {
-   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10258679",
+   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10258214",
    "company": "Northrop Grumman",
    "sector": "Aerospace/Defense",
-   "title": "2027 Intern Product Support – Data Scientist",
-   "location": "United States-California-San Diego",
-   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-California-San-Diego/XMLNAME-2027-Intern-Product-Support---Data-Scientist_R10258679",
+   "title": "2027 Mechanical Engineer Intern- Gilbert AZ",
+   "location": "United States-Arizona-Gilbert",
+   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Arizona-Gilbert/XMLNAME-2027-Mechanical-Engineer-Intern--Gilbert-AZ_R10258214",
    "kind": "internship",
    "audience": [],
    "source": "workday"
   },
   {
-   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10258681",
+   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259204",
    "company": "Northrop Grumman",
    "sector": "Aerospace/Defense",
-   "title": "2027 Intern Product Support – Logistics Planner",
-   "location": "United States-California-San Diego",
-   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-California-San-Diego/XMLNAME-2027-Intern-Product-Support---Logistics-Planner_R10258681",
-   "kind": "internship",
-   "audience": [],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10258248",
-   "company": "Northrop Grumman",
-   "sector": "Aerospace/Defense",
-   "title": "2027 Parts Materials and Process Engineering Intern- Roy UT",
-   "location": "United States-Utah-Roy",
-   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Utah-Roy/XMLNAME-2027-Parts-Materials-and-Process-Engineering-Intern--Roy-UT_R10258248",
-   "kind": "internship",
-   "audience": [],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10258242",
-   "company": "Northrop Grumman",
-   "sector": "Aerospace/Defense",
-   "title": "2027 Parts Materials and Process Engineering Intern- Roy UT",
-   "location": "United States-Utah-Roy",
-   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Utah-Roy/XMLNAME-2027-Parts-Materials-and-Process-Engineering-Intern--Roy-UT_R10258242-1",
+   "title": "2027 Operations Tool Engineer Intern",
+   "location": "United States-California-Palmdale",
+   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-California-Palmdale/XMLNAME-2027-Operations-Tool-Engineer-Intern_R10259204",
    "kind": "internship",
    "audience": [],
    "source": "workday"
@@ -8171,6 +8240,17 @@
    "title": "2027 Program Management Intern - Northridge CA",
    "location": "United States-California-Northridge",
    "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-California-Northridge/XMLNAME-2027-Program-Management-Intern---Northridge-CA_R10259102",
+   "kind": "internship",
+   "audience": [],
+   "source": "workday"
+  },
+  {
+   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10258553",
+   "company": "Northrop Grumman",
+   "sector": "Aerospace/Defense",
+   "title": "2027 S/W Embedded Engineering Intern – Sykesville MD",
+   "location": "United States-Maryland-Sykesville",
+   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Maryland-Sykesville/XMLNAME-2027-S-W-Embedded-Engineering-Intern---Sykesville-MD_R10258553",
    "kind": "internship",
    "audience": [],
    "source": "workday"
@@ -8220,12 +8300,45 @@
    "source": "workday"
   },
   {
-   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10258276",
+   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259181",
    "company": "Northrop Grumman",
    "sector": "Aerospace/Defense",
-   "title": "2027 Software Test Engineering Intern- Roy UT",
+   "title": "2027 Software Engineering Intern - Roy UT",
    "location": "United States-Utah-Roy",
-   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Utah-Roy/XMLNAME-2027-Software-Test-Engineering-Intern--Roy-UT_R10258276-1",
+   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Utah-Roy/XMLNAME-2027-Software-Engineering-Intern---Roy-UT_R10259181",
+   "kind": "internship",
+   "audience": [],
+   "source": "workday"
+  },
+  {
+   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259179",
+   "company": "Northrop Grumman",
+   "sector": "Aerospace/Defense",
+   "title": "2027 Software Test Engineering Intern - Roy UT",
+   "location": "United States-Utah-Roy",
+   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Utah-Roy/XMLNAME-2027-Software-Test-Engineering-Intern---Roy-UT_R10259179",
+   "kind": "internship",
+   "audience": [],
+   "source": "workday"
+  },
+  {
+   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259329",
+   "company": "Northrop Grumman",
+   "sector": "Aerospace/Defense",
+   "title": "2027 Spring Co-op Software Engineer Intern – McClellan CA",
+   "location": "United States-California-McClellan",
+   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-California-McClellan/XMLNAME-2027-Spring-Co-op-Software-Engineer-Intern---McClellan-CA_R10259329",
+   "kind": "internship",
+   "audience": [],
+   "source": "workday"
+  },
+  {
+   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10259391",
+   "company": "Northrop Grumman",
+   "sector": "Aerospace/Defense",
+   "title": "2027 Structural Dynamics Engineer Intern - Redondo Beach CA",
+   "location": "United States-California-Redondo Beach",
+   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-California-Redondo-Beach/XMLNAME-2027-Structural-Dynamics-Engineer-Intern---Redondo-Beach-CA_R10259391",
    "kind": "internship",
    "audience": [],
    "source": "workday"
@@ -8268,19 +8381,6 @@
    "source": "workday"
   },
   {
-   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10258160",
-   "company": "Northrop Grumman",
-   "sector": "Aerospace/Defense",
-   "title": "Associate Software Engineer - Pathways Program - Aurora CO",
-   "location": "United States-Colorado-Aurora",
-   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-Colorado-Aurora/Associate-Software-Engineer---Pathways-Program---Aurora-CO_R10258160",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
-  },
-  {
    "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10258772",
    "company": "Northrop Grumman",
    "sector": "Aerospace/Defense",
@@ -8289,19 +8389,6 @@
    "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-California-Sunnyvale/Engineering-Software-and-Analysis-Intern_R10258772",
    "kind": "internship",
    "audience": [],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_ngc_wd1_myworkdayjobs_com_ngc_northrop_grumman_external_site_r10258992",
-   "company": "Northrop Grumman",
-   "sector": "Aerospace/Defense",
-   "title": "Manufacturing Engineer 1/2",
-   "location": "United States-West Virginia-Rocket Center",
-   "url": "https://ngc.wd1.myworkdayjobs.com/en-US/Northrop_Grumman_External_Site/job/United-States-West-Virginia-Rocket-Center/Manufacturing-Engineer-1-2_R10258992",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
    "source": "workday"
   },
   {
@@ -8550,17 +8637,6 @@
    "audience": [
     "newgrad"
    ],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_nvidia_wd5_myworkdayjobs_com_nvidia_nvidiaexternalcareersite_jr2028512",
-   "company": "NVIDIA",
-   "sector": "Chips/Hardware",
-   "title": "Customer Technical Program Management Intern, OEMs System Partner – Summer 2027",
-   "location": "US, CA, Santa Clara",
-   "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Customer-Technical-Program-Management-Intern--OEMs-System-Partner---Summer-2027_JR2028512",
-   "kind": "internship",
-   "audience": [],
    "source": "workday"
   },
   {
@@ -9144,19 +9220,6 @@
    "source": "workday"
   },
   {
-   "id": "job_workday_nvidia_wd5_myworkdayjobs_com_nvidia_nvidiaexternalcareersite_jr2027742",
-   "company": "NVIDIA",
-   "sector": "Chips/Hardware",
-   "title": "Technical Product Marketing Engineer, Robotics Simulation - New College Grad 2027",
-   "location": "US, CA, Santa Clara",
-   "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Technical-Product-Marketing-Engineer--Robotics-Simulation---New-College-Grad-2027_JR2027742",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
-  },
-  {
    "id": "job_greenhouse_oklo_6204291004",
    "company": "Oklo",
    "sector": "Aerospace/Energy",
@@ -9166,18 +9229,6 @@
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-10-23T13:34:41-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_optiverus_8905975002",
-   "company": "Optiver",
-   "sector": "Quant/Trading",
-   "title": "Compliance Intern – Regulatory Advisory",
-   "location": "Chicago, Illinois, United States",
-   "url": "https://www.optiver.com/join-us/jobs/8905975002/?gh_jid=8905975002",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-10-29T18:02:17-04:00",
    "source": "greenhouse"
   },
   {
@@ -9233,12 +9284,12 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_optiverus_8451764002",
+   "id": "job_greenhouse_optiverus_8451763002",
    "company": "Optiver",
    "sector": "Quant/Trading",
    "title": "Graduate Quantitative Researcher, PhD (2027 Start)",
-   "location": "New York, New York",
-   "url": "https://www.optiver.com/join-us/jobs/8451764002/?gh_jid=8451764002",
+   "location": "Austin, Texas, United States",
+   "url": "https://www.optiver.com/join-us/jobs/8451763002/?gh_jid=8451763002",
    "kind": "job",
    "audience": [
     "phd",
@@ -9263,12 +9314,12 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_optiverus_8451763002",
+   "id": "job_greenhouse_optiverus_8451764002",
    "company": "Optiver",
    "sector": "Quant/Trading",
    "title": "Graduate Quantitative Researcher, PhD (2027 Start)",
-   "location": "Austin, Texas, United States",
-   "url": "https://www.optiver.com/join-us/jobs/8451763002/?gh_jid=8451763002",
+   "location": "New York, New York",
+   "url": "https://www.optiver.com/join-us/jobs/8451764002/?gh_jid=8451764002",
    "kind": "job",
    "audience": [
     "phd",
@@ -10243,6 +10294,18 @@
    "source": "ashby"
   },
   {
+   "id": "job_greenhouse_pinterest_8334884",
+   "company": "Pinterest",
+   "sector": "AI/Big Tech",
+   "title": "Content Enablement Intern 2027 (USA)",
+   "location": "San Francisco, CA, US; Remote, US",
+   "url": "https://www.pinterestcareers.com/jobs/?gh_jid=8334884",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-04T15:00:32-05:00",
+   "source": "greenhouse"
+  },
+  {
    "id": "job_greenhouse_pinterest_8138097",
    "company": "Pinterest",
    "sector": "AI/Big Tech",
@@ -10364,7 +10427,7 @@
    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=8214788",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-10-27T18:38:52-04:00",
+   "updatedAt": "2026-11-04T15:01:19-05:00",
    "source": "greenhouse"
   },
   {
@@ -10402,7 +10465,7 @@
    "url": "https://boards.greenhouse.io/point72/jobs/8811167002?gh_jid=8811167002",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-10-30T17:12:32-04:00",
+   "updatedAt": "2026-11-04T19:22:55-05:00",
    "source": "greenhouse"
   },
   {
@@ -10453,7 +10516,7 @@
    "url": "https://boards.greenhouse.io/point72/jobs/8876354002?gh_jid=8876354002",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-10-30T17:12:32-04:00",
+   "updatedAt": "2026-11-04T12:53:24-05:00",
    "source": "greenhouse"
   },
   {
@@ -10599,7 +10662,7 @@
    "url": "https://www.psiquantum.com/apply?gh_jid=7761881003",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-10-29T15:08:03-04:00",
+   "updatedAt": "2026-11-04T12:06:42-05:00",
    "source": "greenhouse"
   },
   {
@@ -10840,6 +10903,20 @@
     "newgrad"
    ],
    "updatedAt": "2026-11-02T16:34:00-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_relativity_8370634002",
+   "company": "Relativity Space",
+   "sector": "Aerospace/Energy",
+   "title": "Hardware Development Engineer I",
+   "location": "Long Beach, California, United States",
+   "url": "https://boards.greenhouse.io/relativity/jobs/8370634002?gh_jid=8370634002",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-04T21:02:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -11133,7 +11210,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T17:15:07-05:00",
+   "updatedAt": "2026-11-04T20:32:25-05:00",
    "source": "greenhouse"
   },
   {
@@ -11147,7 +11224,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T17:17:10-05:00",
+   "updatedAt": "2026-11-04T20:32:04-05:00",
    "source": "greenhouse"
   },
   {
@@ -11189,7 +11266,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-02T16:34:00-05:00",
+   "updatedAt": "2026-11-04T10:40:14-05:00",
    "source": "greenhouse"
   },
   {
@@ -11383,7 +11460,7 @@
    "audience": [
     "phd"
    ],
-   "updatedAt": "2026-11-03T14:57:56-05:00",
+   "updatedAt": "2026-11-04T14:36:03-05:00",
    "source": "greenhouse"
   },
   {
@@ -11397,7 +11474,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T15:01:39-05:00",
+   "updatedAt": "2026-11-04T02:42:49-05:00",
    "source": "greenhouse"
   },
   {
@@ -11411,7 +11488,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T15:01:29-05:00",
+   "updatedAt": "2026-11-04T14:39:34-05:00",
    "source": "greenhouse"
   },
   {
@@ -11425,7 +11502,7 @@
    "audience": [
     "phd"
    ],
-   "updatedAt": "2026-11-03T14:57:52-05:00",
+   "updatedAt": "2026-11-04T02:39:20-05:00",
    "source": "greenhouse"
   },
   {
@@ -11439,7 +11516,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T15:04:33-05:00",
+   "updatedAt": "2026-11-04T02:45:27-05:00",
    "source": "greenhouse"
   },
   {
@@ -11451,19 +11528,7 @@
    "url": "https://careers.roblox.com/jobs/8072713?gh_jid=8072713",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-11-03T15:03:57-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_rocketlab_7983576003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Additive Manufacturing Intern Spring 2027",
-   "location": "Long Beach, CA",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7983576003",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-11-03T20:08:11-05:00",
+   "updatedAt": "2026-11-04T14:41:57-05:00",
    "source": "greenhouse"
   },
   {
@@ -11503,7 +11568,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T16:25:32-05:00",
+   "updatedAt": "2026-11-04T16:47:45-05:00",
    "source": "greenhouse"
   },
   {
@@ -11585,20 +11650,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_rocketlab_8055708003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Electrical Engineer I",
-   "location": "Long Beach, CA",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/8055708003",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-03T13:50:23-05:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_rocketlab_8057261003",
    "company": "Rocket Lab",
    "sector": "Aerospace/Energy",
@@ -11610,6 +11661,20 @@
     "newgrad"
    ],
    "updatedAt": "2026-11-02T17:37:52-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_rocketlab_8055708003",
+   "company": "Rocket Lab",
+   "sector": "Aerospace/Energy",
+   "title": "Electrical Engineer I",
+   "location": "Long Beach, CA",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/8055708003",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-03T13:50:23-05:00",
    "source": "greenhouse"
   },
   {
@@ -11711,6 +11776,20 @@
    "source": "greenhouse"
   },
   {
+   "id": "job_greenhouse_rocketlab_7680875003",
+   "company": "Rocket Lab",
+   "sector": "Aerospace/Energy",
+   "title": "Fluid Systems Engineer I",
+   "location": "Long Beach, CA",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7680875003",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-04T11:11:41-05:00",
+   "source": "greenhouse"
+  },
+  {
    "id": "job_greenhouse_rocketlab_7986788003",
    "company": "Rocket Lab",
    "sector": "Aerospace/Energy",
@@ -11719,7 +11798,7 @@
    "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7986788003",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-11-02T17:25:48-05:00",
+   "updatedAt": "2026-11-04T12:37:15-05:00",
    "source": "greenhouse"
   },
   {
@@ -11749,18 +11828,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_rocketlab_7992752003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Government Operations Intern Spring 2027",
-   "location": "Washington, DC",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7992752003",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-11-02T17:29:16-05:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_rocketlab_8001399003",
    "company": "Rocket Lab",
    "sector": "Aerospace/Energy",
@@ -11770,6 +11837,18 @@
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-11-02T17:31:26-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_rocketlab_7992752003",
+   "company": "Rocket Lab",
+   "sector": "Aerospace/Energy",
+   "title": "Government Operations Intern Spring 2027",
+   "location": "Washington, DC",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7992752003",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-02T17:29:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -11797,20 +11876,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_rocketlab_7593331003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Ground Systems Engineer I, Electrical",
-   "location": "Stennis Space Center, MS",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7593331003",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T11:28:58-05:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_rocketlab_8007204003",
    "company": "Rocket Lab",
    "sector": "Aerospace/Energy",
@@ -11835,18 +11900,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_rocketlab_8007202003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Ground Systems Engineering Intern Summer 2027",
-   "location": "Stennis Space Center, MS",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/8007202003",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-11-02T17:32:25-05:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_rocketlab_8042092003",
    "company": "Rocket Lab",
    "sector": "Aerospace/Energy",
@@ -11856,6 +11909,18 @@
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-11-02T18:37:42-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_rocketlab_8007202003",
+   "company": "Rocket Lab",
+   "sector": "Aerospace/Energy",
+   "title": "Ground Systems Engineering Intern Summer 2027",
+   "location": "Stennis Space Center, MS",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/8007202003",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-02T17:32:25-05:00",
    "source": "greenhouse"
   },
   {
@@ -11947,7 +12012,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-02T11:27:10-05:00",
+   "updatedAt": "2026-11-04T12:48:10-05:00",
    "source": "greenhouse"
   },
   {
@@ -11977,15 +12042,17 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_rocketlab_7996617003",
+   "id": "job_greenhouse_rocketlab_8195549003",
    "company": "Rocket Lab",
    "sector": "Aerospace/Energy",
-   "title": "Manufacturing Engineering Intern Spring 2027",
-   "location": "Wallops Island, VA",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7996617003",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-11-02T17:26:43-05:00",
+   "title": "Manufacturing Engineer I",
+   "location": "Long Beach, CA",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/8195549003",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-04T13:42:03-05:00",
    "source": "greenhouse"
   },
   {
@@ -12013,6 +12080,30 @@
    "source": "greenhouse"
   },
   {
+   "id": "job_greenhouse_rocketlab_7996617003",
+   "company": "Rocket Lab",
+   "sector": "Aerospace/Energy",
+   "title": "Manufacturing Engineering Intern Spring 2027",
+   "location": "Wallops Island, VA",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7996617003",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-02T17:26:43-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_rocketlab_7988835003",
+   "company": "Rocket Lab",
+   "sector": "Aerospace/Energy",
+   "title": "Manufacturing Engineering Intern Summer 2027",
+   "location": "Middle River, MD",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7988835003",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-02T17:27:01-05:00",
+   "source": "greenhouse"
+  },
+  {
    "id": "job_greenhouse_rocketlab_7996623003",
    "company": "Rocket Lab",
    "sector": "Aerospace/Energy",
@@ -12034,18 +12125,6 @@
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-11-02T17:24:40-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_rocketlab_7988835003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Manufacturing Engineering Intern Summer 2027",
-   "location": "Middle River, MD",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7988835003",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-11-02T17:27:01-05:00",
    "source": "greenhouse"
   },
   {
@@ -12245,6 +12324,18 @@
    "source": "greenhouse"
   },
   {
+   "id": "job_greenhouse_rocketlab_7986954003",
+   "company": "Rocket Lab",
+   "sector": "Aerospace/Energy",
+   "title": "Security Analyst Intern Spring 2027",
+   "location": "Long Beach, CA",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7986954003",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-02T17:25:56-05:00",
+   "source": "greenhouse"
+  },
+  {
    "id": "job_greenhouse_rocketlab_7986965003",
    "company": "Rocket Lab",
    "sector": "Aerospace/Energy",
@@ -12269,18 +12360,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_rocketlab_7986954003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Security Analyst Intern Spring 2027",
-   "location": "Long Beach, CA",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7986954003",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-11-02T17:25:56-05:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_rocketlab_7986959003",
    "company": "Rocket Lab",
    "sector": "Aerospace/Energy",
@@ -12290,18 +12369,6 @@
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-11-02T17:26:08-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_rocketlab_7986956003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Security Analyst Intern Summer 2027",
-   "location": "Long Beach, CA",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7986956003",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-11-02T17:26:07-05:00",
    "source": "greenhouse"
   },
   {
@@ -12317,18 +12384,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_rocketlab_7986961003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Security Analyst Intern Summer 2027",
-   "location": "Wallops Island, VA",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7986961003",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-11-02T17:26:09-05:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_rocketlab_7986874003",
    "company": "Rocket Lab",
    "sector": "Aerospace/Energy",
@@ -12341,17 +12396,27 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_rocketlab_8043199003",
+   "id": "job_greenhouse_rocketlab_7986961003",
    "company": "Rocket Lab",
    "sector": "Aerospace/Energy",
-   "title": "Spacecraft GNC Engineer I",
-   "location": "Littleton, CO",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/8043199003",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T17:36:17-05:00",
+   "title": "Security Analyst Intern Summer 2027",
+   "location": "Wallops Island, VA",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7986961003",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-02T17:26:09-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_rocketlab_7986956003",
+   "company": "Rocket Lab",
+   "sector": "Aerospace/Energy",
+   "title": "Security Analyst Intern Summer 2027",
+   "location": "Long Beach, CA",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7986956003",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-02T17:26:07-05:00",
    "source": "greenhouse"
   },
   {
@@ -12409,6 +12474,18 @@
    "source": "greenhouse"
   },
   {
+   "id": "job_greenhouse_rocketlab_7986131003",
+   "company": "Rocket Lab",
+   "sector": "Aerospace/Energy",
+   "title": "Supply Chain Intern Spring 2027",
+   "location": "Silver Spring, MD",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7986131003",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-02T17:25:42-05:00",
+   "source": "greenhouse"
+  },
+  {
    "id": "job_greenhouse_rocketlab_7985032003",
    "company": "Rocket Lab",
    "sector": "Aerospace/Energy",
@@ -12418,18 +12495,6 @@
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-11-02T17:25:35-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_rocketlab_7990378003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Supply Chain Intern Spring 2027",
-   "location": "Tucson, AZ",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7990378003",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-11-02T17:28:25-05:00",
    "source": "greenhouse"
   },
   {
@@ -12445,27 +12510,15 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_rocketlab_7986131003",
+   "id": "job_greenhouse_rocketlab_7990378003",
    "company": "Rocket Lab",
    "sector": "Aerospace/Energy",
    "title": "Supply Chain Intern Spring 2027",
-   "location": "Silver Spring, MD",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7986131003",
+   "location": "Tucson, AZ",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7990378003",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-11-02T17:25:42-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_rocketlab_7984568003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Supply Chain Intern Summer 2027",
-   "location": "Long Beach, CA",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7984568003",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-11-02T17:24:41-05:00",
+   "updatedAt": "2026-11-02T17:28:25-05:00",
    "source": "greenhouse"
   },
   {
@@ -12481,6 +12534,18 @@
    "source": "greenhouse"
   },
   {
+   "id": "job_greenhouse_rocketlab_7984568003",
+   "company": "Rocket Lab",
+   "sector": "Aerospace/Energy",
+   "title": "Supply Chain Intern Summer 2027",
+   "location": "Long Beach, CA",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7984568003",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-02T17:24:41-05:00",
+   "source": "greenhouse"
+  },
+  {
    "id": "job_greenhouse_rocketlab_7990063003",
    "company": "Rocket Lab",
    "sector": "Aerospace/Energy",
@@ -12490,18 +12555,6 @@
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-11-02T17:27:44-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_rocketlab_7987046003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Systems Engineering Intern Summer 2027",
-   "location": "Long Beach, CA",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7987046003",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-11-02T17:26:17-05:00",
    "source": "greenhouse"
   },
   {
@@ -12517,18 +12570,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_rocketlab_7990138003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Systems Engineering Intern Summer 2027",
-   "location": "Pasadena, CA",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7990138003",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-11-02T17:27:47-05:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_rocketlab_7990270003",
    "company": "Rocket Lab",
    "sector": "Aerospace/Energy",
@@ -12538,6 +12579,30 @@
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-11-02T17:28:15-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_rocketlab_7987046003",
+   "company": "Rocket Lab",
+   "sector": "Aerospace/Energy",
+   "title": "Systems Engineering Intern Summer 2027",
+   "location": "Long Beach, CA",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7987046003",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-02T17:26:17-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_rocketlab_7990138003",
+   "company": "Rocket Lab",
+   "sector": "Aerospace/Energy",
+   "title": "Systems Engineering Intern Summer 2027",
+   "location": "Pasadena, CA",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/7990138003",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-02T17:27:47-05:00",
    "source": "greenhouse"
   },
   {
@@ -12577,7 +12642,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T22:23:05-05:00",
+   "updatedAt": "2026-11-04T22:32:46-05:00",
    "source": "greenhouse"
   },
   {
@@ -12605,18 +12670,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_rocketlab_8003533003",
-   "company": "Rocket Lab",
-   "sector": "Aerospace/Energy",
-   "title": "Test Engineering Intern Spring 2027",
-   "location": "Wallops Island, VA",
-   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/8003533003",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-11-03T22:22:52-05:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_rocketlab_7990352003",
    "company": "Rocket Lab",
    "sector": "Aerospace/Energy",
@@ -12626,6 +12679,18 @@
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-11-02T17:28:23-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_rocketlab_8003533003",
+   "company": "Rocket Lab",
+   "sector": "Aerospace/Energy",
+   "title": "Test Engineering Intern Spring 2027",
+   "location": "Wallops Island, VA",
+   "url": "https://job-boards.greenhouse.io/rocketlab/jobs/8003533003",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-04T22:32:38-05:00",
    "source": "greenhouse"
   },
   {
@@ -12853,17 +12918,17 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_samsara_8094373",
+   "id": "job_greenhouse_samsara_8325055",
    "company": "Samsara",
    "sector": "AI/Big Tech",
    "title": "(New Grad) Account Development Representative II - Atlanta",
    "location": "Atlanta, Georgia, United States",
-   "url": "https://www.samsara.com/company/careers/roles/8094373?gh_jid=8094373",
+   "url": "https://www.samsara.com/company/careers/roles/8325055?gh_jid=8325055",
    "kind": "job",
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T11:37:11-04:00",
+   "updatedAt": "2026-11-04T11:58:30-05:00",
    "source": "greenhouse"
   },
   {
@@ -12877,35 +12942,21 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T11:37:11-04:00",
+   "updatedAt": "2026-11-04T11:58:30-05:00",
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_samsara_8325055",
+   "id": "job_greenhouse_samsara_8094373",
    "company": "Samsara",
    "sector": "AI/Big Tech",
    "title": "(New Grad) Account Development Representative II - Atlanta",
    "location": "Atlanta, Georgia, United States",
-   "url": "https://www.samsara.com/company/careers/roles/8325055?gh_jid=8325055",
+   "url": "https://www.samsara.com/company/careers/roles/8094373?gh_jid=8094373",
    "kind": "job",
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-10-30T11:37:11-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_samsara_8325054",
-   "company": "Samsara",
-   "sector": "AI/Big Tech",
-   "title": "(New Grad) Account Development Representative II - Phoenix",
-   "location": "Phoenix, Arizona, United States",
-   "url": "https://www.samsara.com/company/careers/roles/8325054?gh_jid=8325054",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-10-30T11:35:53-04:00",
+   "updatedAt": "2026-11-04T11:58:30-05:00",
    "source": "greenhouse"
   },
   {
@@ -12923,27 +12974,17 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_samsara_8103119",
+   "id": "job_greenhouse_samsara_8325054",
    "company": "Samsara",
    "sector": "AI/Big Tech",
-   "title": "Account Development Representative Intern - Atlanta",
-   "location": "Atlanta, Georgia, United States",
-   "url": "https://www.samsara.com/company/careers/roles/8103119?gh_jid=8103119",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-10-30T11:37:42-04:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_samsara_8325373",
-   "company": "Samsara",
-   "sector": "AI/Big Tech",
-   "title": "Account Development Representative Intern - Atlanta",
-   "location": "Atlanta, Georgia, United States",
-   "url": "https://www.samsara.com/company/careers/roles/8325373?gh_jid=8325373",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-10-30T11:37:42-04:00",
+   "title": "(New Grad) Account Development Representative II - Phoenix",
+   "location": "Phoenix, Arizona, United States",
+   "url": "https://www.samsara.com/company/careers/roles/8325054?gh_jid=8325054",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-10-30T11:35:53-04:00",
    "source": "greenhouse"
   },
   {
@@ -12955,19 +12996,31 @@
    "url": "https://www.samsara.com/company/careers/roles/8325057?gh_jid=8325057",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-10-30T11:37:42-04:00",
+   "updatedAt": "2026-11-04T11:58:32-05:00",
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_samsara_8099799",
+   "id": "job_greenhouse_samsara_8103119",
    "company": "Samsara",
    "sector": "AI/Big Tech",
-   "title": "Account Development Representative Intern - Phoenix",
-   "location": "Phoenix, Arizona, United States",
-   "url": "https://www.samsara.com/company/careers/roles/8099799?gh_jid=8099799",
+   "title": "Account Development Representative Intern - Atlanta",
+   "location": "Atlanta, Georgia, United States",
+   "url": "https://www.samsara.com/company/careers/roles/8103119?gh_jid=8103119",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-10-30T11:37:35-04:00",
+   "updatedAt": "2026-11-04T11:58:32-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_samsara_8325373",
+   "company": "Samsara",
+   "sector": "AI/Big Tech",
+   "title": "Account Development Representative Intern - Atlanta",
+   "location": "Atlanta, Georgia, United States",
+   "url": "https://www.samsara.com/company/careers/roles/8325373?gh_jid=8325373",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-11-04T11:58:32-05:00",
    "source": "greenhouse"
   },
   {
@@ -12977,6 +13030,18 @@
    "title": "Account Development Representative Intern - Phoenix",
    "location": "Phoenix, Arizona, United States",
    "url": "https://www.samsara.com/company/careers/roles/8319784?gh_jid=8319784",
+   "kind": "internship",
+   "audience": [],
+   "updatedAt": "2026-10-30T11:37:35-04:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_samsara_8099799",
+   "company": "Samsara",
+   "sector": "AI/Big Tech",
+   "title": "Account Development Representative Intern - Phoenix",
+   "location": "Phoenix, Arizona, United States",
+   "url": "https://www.samsara.com/company/careers/roles/8099799?gh_jid=8099799",
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-10-30T11:37:35-04:00",
@@ -13027,7 +13092,7 @@
    "url": "https://www.samsara.com/company/careers/roles/8082091?gh_jid=8082091",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-10-30T11:33:45-04:00",
+   "updatedAt": "2026-11-04T11:58:23-05:00",
    "source": "greenhouse"
   },
   {
@@ -13270,12 +13335,12 @@
    "id": "job_greenhouse_schonfeld_8171776",
    "company": "Schonfeld",
    "sector": "Quant/Trading",
-   "title": "2027 Legal Intern",
+   "title": "2027 Legal Engineer Intern",
    "location": "New York, New York, United States",
    "url": "https://job-boards.greenhouse.io/schonfeld/jobs/8171776",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-11-03T16:59:38-05:00",
+   "updatedAt": "2026-11-04T14:42:37-05:00",
    "source": "greenhouse"
   },
   {
@@ -13377,6 +13442,20 @@
    "source": "lever"
   },
   {
+   "id": "job_lever_shieldai_5dcaa8e8_df94_4655_9d75_462d497b6b6e",
+   "company": "Shield AI",
+   "sector": "Aerospace/Energy",
+   "title": "Electrical Engineer I, X-BAT (New Grad)",
+   "location": "Seattle, Washington",
+   "url": "https://jobs.lever.co/shieldai/5dcaa8e8-df94-4655-9d75-462d497b6b6e",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-09-25T16:34:34.091Z",
+   "source": "lever"
+  },
+  {
    "id": "job_lever_shieldai_87d982f2_8b2b_4c73_9a19_71e461c7b724",
    "company": "Shield AI",
    "sector": "Aerospace/Energy",
@@ -13406,7 +13485,7 @@
    "id": "job_lever_shieldai_0cdcb67f_0550_4f14_987f_82cc6d17ea6e",
    "company": "Shield AI",
    "sector": "Aerospace/Energy",
-   "title": "Engineer I, Flight Test (R6219) - New Grad",
+   "title": "Engineer I, Flight Test - New Grad - 6219",
    "location": "San Diego, California",
    "url": "https://jobs.lever.co/shieldai/0cdcb67f-0550-4f14-987f-82cc6d17ea6e",
    "kind": "job",
@@ -13476,7 +13555,7 @@
    "id": "job_lever_shieldai_71a4617f_c917_4536_bbf1_8d11d04d8cba",
    "company": "Shield AI",
    "sector": "Aerospace/Energy",
-   "title": "Engineer I, Simulation Framework (R6203)",
+   "title": "Engineer I, Simulation Framework - New Grad - 6203",
    "location": "Washington, D.C.; San Diego, California",
    "url": "https://jobs.lever.co/shieldai/71a4617f-c917-4536-bbf1-8d11d04d8cba",
    "kind": "job",
@@ -13490,7 +13569,7 @@
    "id": "job_lever_shieldai_59e0cf9b_04d7_43c0_8a65_9d411fe56c68",
    "company": "Shield AI",
    "sector": "Aerospace/Energy",
-   "title": "Engineer I, Software - Factory Team (R6235)",
+   "title": "Engineer I, Software - Factory Team - New Grad - 6235",
    "location": "Washington, D.C.; San Diego, California",
    "url": "https://jobs.lever.co/shieldai/59e0cf9b-04d7-43c0-8a65-9d411fe56c68",
    "kind": "job",
@@ -13504,7 +13583,7 @@
    "id": "job_lever_shieldai_7c8aaf63_ab92_4c0f_8a54_9cf1ce07ca69",
    "company": "Shield AI",
    "sector": "Aerospace/Energy",
-   "title": "Engineer I, Software Integration (R6214) - New Grad",
+   "title": "Engineer I, Software Integration - New Grad - 6214",
    "location": "Washington, D.C.; San Diego, California",
    "url": "https://jobs.lever.co/shieldai/7c8aaf63-ab92-4c0f-8a54-9cf1ce07ca69",
    "kind": "job",
@@ -13518,7 +13597,7 @@
    "id": "job_lever_shieldai_c28e98ff_88ce_4e56_ada5_4cee7d417885",
    "company": "Shield AI",
    "sector": "Aerospace/Energy",
-   "title": "Engineer II, Flight Test (R6222) - New Grad",
+   "title": "Engineer II, Flight Test - New Grad - 6222",
    "location": "San Diego, California",
    "url": "https://jobs.lever.co/shieldai/c28e98ff-88ce-4e56-ada5-4cee7d417885",
    "kind": "job",
@@ -13532,7 +13611,7 @@
    "id": "job_lever_shieldai_de13deec_afa6_4d78_b920_aeb5571be9d3",
    "company": "Shield AI",
    "sector": "Aerospace/Energy",
-   "title": "Engineer II, Integration (R6202) - New Grad",
+   "title": "Engineer II, Integration - New Grad - 6202",
    "location": "Washington, D.C.",
    "url": "https://jobs.lever.co/shieldai/de13deec-afa6-4d78-b920-aeb5571be9d3",
    "kind": "job",
@@ -13543,10 +13622,24 @@
    "source": "lever"
   },
   {
+   "id": "job_lever_shieldai_39a7aa1b_9988_4ac7_ade9_12dd16cbae62",
+   "company": "Shield AI",
+   "sector": "Aerospace/Energy",
+   "title": "Engineer II, Simulation Framework - New Grad - 6204",
+   "location": "San Diego, California; Washington, D.C.",
+   "url": "https://jobs.lever.co/shieldai/39a7aa1b-9988-4ac7-ade9-12dd16cbae62",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-10-07T19:26:50.652Z",
+   "source": "lever"
+  },
+  {
    "id": "job_lever_shieldai_681efe7f_2c2a_4830_8976_9a6f77d9d3e5",
    "company": "Shield AI",
    "sector": "Aerospace/Energy",
-   "title": "Engineer II, Software - Factory (R6217) - New Grad",
+   "title": "Engineer II, Software - Factory - New Grad - 6217",
    "location": "Washington, D.C.; San Diego, California",
    "url": "https://jobs.lever.co/shieldai/681efe7f-2c2a-4830-8976-9a6f77d9d3e5",
    "kind": "job",
@@ -13560,7 +13653,7 @@
    "id": "job_lever_shieldai_ebf49595_032b_493d_a80e_3ac00eb4d0ab",
    "company": "Shield AI",
    "sector": "Aerospace/Energy",
-   "title": "Engineer II, Software Test and Automation (R6221) - New Grad",
+   "title": "Engineer II, Software Test and Automation - New Grad - 6221",
    "location": "Washington, D.C.",
    "url": "https://jobs.lever.co/shieldai/ebf49595-032b-493d-a80e-3ac00eb4d0ab",
    "kind": "job",
@@ -13766,18 +13859,6 @@
    "source": "ashby"
   },
   {
-   "id": "job_ashby_snowflake_322b82f6_4b18_4f86_ae34_007f55c4bdbf",
-   "company": "Snowflake",
-   "sector": "AI/Big Tech",
-   "title": "Product Management Intern (Summer 2027)",
-   "location": "US-CA-Menlo Park; United States",
-   "url": "https://jobs.ashbyhq.com/snowflake/322b82f6-4b18-4f86-ae34-007f55c4bdbf",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-11-02T20:14:37.218+00:00",
-   "source": "ashby"
-  },
-  {
    "id": "job_ashby_snowflake_97e37c43_2298_42c8_bb4c_1bcfadc80af9",
    "company": "Snowflake",
    "sector": "AI/Big Tech",
@@ -13812,7 +13893,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -13826,7 +13907,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -13840,7 +13921,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -13854,7 +13935,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -13868,7 +13949,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -13882,7 +13963,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -13896,7 +13977,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -13910,7 +13991,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -13924,7 +14005,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -13938,7 +14019,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -13952,7 +14033,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -13966,21 +14047,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8696124002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "New Graduate Engineer, GNC- '26/'27 (Starlink)",
-   "location": "Bastrop, TX",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8696124002?gh_jid=8696124002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -13994,7 +14061,21 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_spacex_8696124002",
+   "company": "SpaceX",
+   "sector": "Aerospace/Energy",
+   "title": "New Graduate Engineer, GNC- '26/'27 (Starlink)",
+   "location": "Bastrop, TX",
+   "url": "https://boards.greenhouse.io/spacex/jobs/8696124002?gh_jid=8696124002",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14008,7 +14089,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14022,7 +14103,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14036,7 +14117,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14050,7 +14131,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14064,7 +14145,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14078,7 +14159,21 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_spacex_8930094002",
+   "company": "SpaceX",
+   "sector": "Aerospace/Energy",
+   "title": "New Graduate Engineer, Mechanical - '26/'27 (Starlink/Starmind)",
+   "location": "Bastrop, TX",
+   "url": "https://boards.greenhouse.io/spacex/jobs/8930094002?gh_jid=8930094002",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-04T20:42:30-05:00",
    "source": "greenhouse"
   },
   {
@@ -14092,7 +14187,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14106,7 +14201,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14120,7 +14215,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14134,7 +14229,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14148,7 +14243,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14162,21 +14257,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8802897002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "New Graduate Engineer, Security Software (Starshield)",
-   "location": "Washington, DC",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8802897002?gh_jid=8802897002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14190,7 +14271,21 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_spacex_8802897002",
+   "company": "SpaceX",
+   "sector": "Aerospace/Energy",
+   "title": "New Graduate Engineer, Security Software (Starshield)",
+   "location": "Washington, DC",
+   "url": "https://boards.greenhouse.io/spacex/jobs/8802897002?gh_jid=8802897002",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14204,7 +14299,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14218,21 +14313,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8696058002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "New Graduate Engineer, Software - '26/'27 (Starlink)",
-   "location": "Redmond, WA",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8696058002?gh_jid=8696058002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14246,7 +14327,21 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_spacex_8696058002",
+   "company": "SpaceX",
+   "sector": "Aerospace/Energy",
+   "title": "New Graduate Engineer, Software - '26/'27 (Starlink)",
+   "location": "Redmond, WA",
+   "url": "https://boards.greenhouse.io/spacex/jobs/8696058002?gh_jid=8696058002",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14260,7 +14355,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14274,7 +14369,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14288,7 +14383,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14302,49 +14397,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8696158002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "New Graduate Engineer, Software Security - '26/'27 (Starlink)",
-   "location": "Palo Alto, CA",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8696158002?gh_jid=8696158002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8724316002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "New Graduate Engineer, Software Security - '26/'27 (Starlink)",
-   "location": "Hawthorne, CA",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8724316002?gh_jid=8724316002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_spacex_8696143002",
-   "company": "SpaceX",
-   "sector": "Aerospace/Energy",
-   "title": "New Graduate Engineer, Software Security - '26/'27 (Starlink)",
-   "location": "Redmond, WA",
-   "url": "https://boards.greenhouse.io/spacex/jobs/8696143002?gh_jid=8696143002",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14358,7 +14411,49 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_spacex_8696158002",
+   "company": "SpaceX",
+   "sector": "Aerospace/Energy",
+   "title": "New Graduate Engineer, Software Security - '26/'27 (Starlink)",
+   "location": "Palo Alto, CA",
+   "url": "https://boards.greenhouse.io/spacex/jobs/8696158002?gh_jid=8696158002",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-04T18:30:16-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_spacex_8696143002",
+   "company": "SpaceX",
+   "sector": "Aerospace/Energy",
+   "title": "New Graduate Engineer, Software Security - '26/'27 (Starlink)",
+   "location": "Redmond, WA",
+   "url": "https://boards.greenhouse.io/spacex/jobs/8696143002?gh_jid=8696143002",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-04T18:30:16-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_spacex_8724316002",
+   "company": "SpaceX",
+   "sector": "Aerospace/Energy",
+   "title": "New Graduate Engineer, Software Security - '26/'27 (Starlink)",
+   "location": "Hawthorne, CA",
+   "url": "https://boards.greenhouse.io/spacex/jobs/8724316002?gh_jid=8724316002",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14372,7 +14467,21 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_spacex_8928271002",
+   "company": "SpaceX",
+   "sector": "Aerospace/Energy",
+   "title": "Starlink Aviation Production Technician (Entry Level, Temporary)",
+   "location": "Woodinville, WA",
+   "url": "https://boards.greenhouse.io/spacex/jobs/8928271002?gh_jid=8928271002",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14386,7 +14495,7 @@
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-11-03T10:06:14-05:00",
+   "updatedAt": "2026-11-04T18:30:16-05:00",
    "source": "greenhouse"
   },
   {
@@ -14605,19 +14714,6 @@
    "source": "workday"
   },
   {
-   "id": "job_workday_target_wd5_myworkdayjobs_com_target_targetcareers_r0000477546",
-   "company": "Target",
-   "sector": "Retail/Consumer",
-   "title": "Maintenance Technician 1 - Sortation Center - Austin, TX",
-   "location": "9400 Tuscany Way, Bldg 2, Austin,TX 78754",
-   "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/9400-Tuscany-Way-Bldg-2-AustinTX-78754/Maintenance-Technician-1---Sortation-Center---Austin--TX_R0000477546",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "source": "workday"
-  },
-  {
    "id": "job_workday_target_wd5_myworkdayjobs_com_target_targetcareers_r0000479429",
    "company": "Target",
    "sector": "Retail/Consumer",
@@ -14668,36 +14764,16 @@
    "source": "workday"
   },
   {
-   "id": "job_workday_target_wd5_myworkdayjobs_com_target_targetcareers_r0000450290",
+   "id": "job_workday_target_wd5_myworkdayjobs_com_target_targetcareers_r0000402314",
    "company": "Target",
    "sector": "Retail/Consumer",
-   "title": "Store Executive Intern (Store Leadership Intern) – Greater San Diego, CA (Starting Summer 2027)",
-   "location": "1288 Camino Del Rio N, San Diego,CA 92108-1511",
-   "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/1288-Camino-Del-Rio-N-San-DiegoCA-92108-1511/Store-Executive-Intern--Store-Leadership-Intern----Southern-San-Diego--CA--Starting-Summer-2027-_R0000450290",
-   "kind": "internship",
-   "audience": [],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_target_wd5_myworkdayjobs_com_target_targetcareers_r0000450296",
-   "company": "Target",
-   "sector": "Retail/Consumer",
-   "title": "Store Executive Intern (Store Leadership Intern) – Manhattan Beach, CA (Starting Summer 2027)",
-   "location": "1200 N Sepulveda Blvd, Manhattan Beach,CA 90266-5104",
-   "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/1200-N-Sepulveda-Blvd-Manhattan-BeachCA-90266-5104/Store-Executive-Intern--Store-Leadership-Intern----Manhattan-Beach--CA--Starting-Summer-2027-_R0000450296",
-   "kind": "internship",
-   "audience": [],
-   "source": "workday"
-  },
-  {
-   "id": "job_workday_target_wd5_myworkdayjobs_com_target_targetcareers_r0000450602",
-   "company": "Target",
-   "sector": "Retail/Consumer",
-   "title": "Store Executive Intern (Store Leadership Intern) – Moreno Valley / Inland Empire, CA, CA (Starting Summer 2027)",
-   "location": "27100 Eucalyptus Ave, Moreno Valley,CA 92555-4522",
-   "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/27100-Eucalyptus-Ave-Moreno-ValleyCA-92555-4522/Store-Executive-Intern--Store-Leadership-Intern----Moreno-Valley---Inland-Empire--CA--CA--Starting-Summer-2027-_R0000450602",
-   "kind": "internship",
-   "audience": [],
+   "title": "Technology Leadership Program - Hybrid (Starting August 2027)",
+   "location": "7000 Target Pkwy N,NCD-0375 Brooklyn Park,MN 55445",
+   "url": "https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/7000-Target-Pkwy-NNCD-0375-Brooklyn-ParkMN-55445/Technology-Leadership-Program---Hybrid--Starting-August-2027-_R0000402314",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
    "source": "workday"
   },
   {
@@ -14721,32 +14797,6 @@
    "kind": "internship",
    "audience": [],
    "updatedAt": "2026-11-02T18:51:17-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_togetherai_5238469007",
-   "company": "Together AI",
-   "sector": "AI/Big Tech",
-   "title": "Hardware Security Engineer Intern (Summer 2027)",
-   "location": "San Francisco",
-   "url": "https://job-boards.greenhouse.io/togetherai/jobs/5238469007",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-11-02T18:51:48-05:00",
-   "source": "greenhouse"
-  },
-  {
-   "id": "job_greenhouse_togetherai_5238471007",
-   "company": "Together AI",
-   "sector": "AI/Big Tech",
-   "title": "Hardware Security Engineer, New Grad (2027)",
-   "location": "San Francisco",
-   "url": "https://job-boards.greenhouse.io/togetherai/jobs/5238471007",
-   "kind": "job",
-   "audience": [
-    "newgrad"
-   ],
-   "updatedAt": "2026-11-02T18:51:59-05:00",
    "source": "greenhouse"
   },
   {
@@ -14939,18 +14989,6 @@
    "kind": "internship",
    "audience": [],
    "source": "workday"
-  },
-  {
-   "id": "job_greenhouse_ursamajor_4746892005",
-   "company": "Ursa Major",
-   "sector": "Aerospace/Defense",
-   "title": "2027 Summer Additive Manufacturing Engineering Intern",
-   "location": "Youngstown, Ohio",
-   "url": "https://ursamajor.com/careers/?gh_jid=4746892005",
-   "kind": "internship",
-   "audience": [],
-   "updatedAt": "2026-10-26T11:34:12-04:00",
-   "source": "greenhouse"
   },
   {
    "id": "job_greenhouse_ursamajor_4746844005",
@@ -15588,21 +15626,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_waymo_8198218",
-   "company": "Waymo",
-   "sector": "AI/Autonomy",
-   "title": "2027 Summer Intern, BS/MS, Software Engineering, Commercialization",
-   "location": "Mountain View, California, United States; San Francisco, California, United States",
-   "url": "https://careers.withwaymo.com/jobs?gh_jid=8198218",
-   "kind": "internship",
-   "audience": [
-    "masters",
-    "undergrad"
-   ],
-   "updatedAt": "2026-11-02T19:11:41-05:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_waymo_8248060",
    "company": "Waymo",
    "sector": "AI/Autonomy",
@@ -15732,6 +15755,21 @@
     "masters"
    ],
    "updatedAt": "2026-10-22T13:40:32-04:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_waymo_8350687",
+   "company": "Waymo",
+   "sector": "AI/Autonomy",
+   "title": "2027 Summer Intern, MS/PhD, Depot Automation",
+   "location": "San Francisco, California",
+   "url": "https://careers.withwaymo.com/jobs?gh_jid=8350687",
+   "kind": "internship",
+   "audience": [
+    "phd",
+    "masters"
+   ],
+   "updatedAt": "2026-11-04T19:22:49-05:00",
    "source": "greenhouse"
   },
   {
@@ -16402,21 +16440,6 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_waymo_7488508",
-   "company": "Waymo",
-   "sector": "AI/Autonomy",
-   "title": "Machine Learning Engineer, Perception, LLM/VLM (PhD, New Grad)",
-   "location": "Mountain View, CA USA;  San Francisco, CA USA;",
-   "url": "https://careers.withwaymo.com/jobs?gh_jid=7488508",
-   "kind": "job",
-   "audience": [
-    "phd",
-    "newgrad"
-   ],
-   "updatedAt": "2026-10-26T16:48:59-04:00",
-   "source": "greenhouse"
-  },
-  {
    "id": "job_greenhouse_williamblair_5181697007",
    "company": "William Blair",
    "sector": "Finance/Banking",
@@ -16428,6 +16451,20 @@
     "masters"
    ],
    "updatedAt": "2026-10-30T18:15:45-04:00",
+   "source": "greenhouse"
+  },
+  {
+   "id": "job_greenhouse_williamblair_5246807007",
+   "company": "William Blair",
+   "sector": "Finance/Banking",
+   "title": "Associate I, CRU Risk",
+   "location": "Boston, Massachusetts; New York, New York",
+   "url": "https://www.williamblair.com/Careers/job-description?gh_jid=5246807007",
+   "kind": "job",
+   "audience": [
+    "newgrad"
+   ],
+   "updatedAt": "2026-09-22T23:01:53-04:00",
    "source": "greenhouse"
   },
   {
@@ -16459,17 +16496,17 @@
    "source": "greenhouse"
   },
   {
-   "id": "job_greenhouse_williamblair_5246807007",
+   "id": "job_greenhouse_williamblair_5262706007",
    "company": "William Blair",
    "sector": "Finance/Banking",
-   "title": "Associate I, CRU Risk",
-   "location": "Boston, Massachusetts; New York, New York",
-   "url": "https://www.williamblair.com/Careers/job-description?gh_jid=5246807007",
+   "title": "Associate I, PWM Capital Markets",
+   "location": "Chicago, Illinois, United States",
+   "url": "https://www.williamblair.com/Careers/job-description?gh_jid=5262706007",
    "kind": "job",
    "audience": [
     "newgrad"
    ],
-   "updatedAt": "2026-09-22T23:01:53-04:00",
+   "updatedAt": "2026-11-04T14:39:51-05:00",
    "source": "greenhouse"
   },
   {
@@ -16481,7 +16518,7 @@
    "url": "https://job-boards.greenhouse.io/xai/jobs/5255113007",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-10-28T14:46:27-04:00",
+   "updatedAt": "2026-11-04T15:04:22-05:00",
    "source": "greenhouse"
   },
   {
@@ -16493,7 +16530,7 @@
    "url": "https://job-boards.greenhouse.io/xai/jobs/5252108007",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-10-29T04:25:54-04:00",
+   "updatedAt": "2026-11-04T15:03:04-05:00",
    "source": "greenhouse"
   },
   {
@@ -16505,7 +16542,7 @@
    "url": "https://job-boards.greenhouse.io/xai/jobs/5255116007",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-10-28T14:45:56-04:00",
+   "updatedAt": "2026-11-04T15:04:58-05:00",
    "source": "greenhouse"
   },
   {
@@ -16517,7 +16554,7 @@
    "url": "https://job-boards.greenhouse.io/xai/jobs/5255111007",
    "kind": "internship",
    "audience": [],
-   "updatedAt": "2026-10-28T14:46:16-04:00",
+   "updatedAt": "2026-11-04T15:03:50-05:00",
    "source": "greenhouse"
   },
   {
