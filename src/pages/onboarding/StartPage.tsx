@@ -7,10 +7,10 @@ import type { Goal, Interest, Purpose, School, UniversityRole } from '@core/type
 import { useAppStore } from '@core/store/useAppStore';
 import { cn } from '@core/lib/cn';
 import { Button, Field, Input } from '@/components/ui';
-import { TopBar } from '@/components/layout/TopBar';
 import { DEFAULT_FV } from './OnboardingPage';
 import { ComingSoonSchools } from './ComingSoonSchools';
 import { takeReturnTo } from '@/lib/returnTo';
+import { OnboardingHeader } from '@/components/ha';
 
 const en = lang === 'en';
 /** 시안 4단계(목표 → 도움 → 학교·신분 → 커뮤니티) + 기존 화면(이름·출생 연도, 관심 주제, 학교 이메일)은 그대로 둔다 */
@@ -163,25 +163,20 @@ export function StartPage() {
   const NextBtn = ({ ok, text, onClick }: { ok: boolean; text?: string; onClick?: () => void }) => (
     <>
       <Button full size="lg" loading={busy} disabled={!ok || busy} onClick={onClick ?? next}>{text ?? (en ? 'Continue' : '계속')}</Button>
-      {/* Skip 은 버튼 아래 — 위 오른쪽은 디자인 전환 버튼 자리 */}
-      {skip && <button onClick={skip} className="w-full h-10 -mt-2 text-[14px] font-semibold text-ink-3">{en ? 'Skip' : '건너뛰기'}</button>}
     </>
   );
   const barIdx = BAR.indexOf(step);
 
   return (
     <div className="min-h-full flex flex-col bg-bg">
-      <TopBar back onBack={idx > 0 ? () => go(STEPS[idx - 1]) : undefined}
-        title={barIdx >= 0 ? <span className="flex gap-1.5 w-[160px]" aria-label={en ? `Step ${barIdx + 1} of ${BAR.length}` : `${BAR.length}단계 중 ${barIdx + 1}`}>{BAR.map((s2, i) => <span key={s2} className={cn('h-1 flex-1 rounded-full transition', i <= barIdx ? 'bg-primary' : 'bg-surface-2')} />)}</span> : undefined} />
+      <OnboardingHeader step={Math.max(0, barIdx) + 1} total={BAR.length} onBack={idx > 0 ? () => go(STEPS[idx - 1]) : () => nav('/welcome')} onSkip={skip} />
       <div key={step} className="flex-1 px-5 pt-6 pb-8 space-y-5 animate-fade-in">
         {step === 'name' && (
           <>
             <Head q={en ? 'What should we call you?' : '뭐라고 불러드릴까요?'} sub={en ? 'This is how classmates see you.' : '같은 학교 학생들에게 보이는 이름이에요.'} />
             <Field label={en ? 'Name' : '이름'}><Input autoFocus maxLength={20} value={d.nickname} onChange={(e) => patch({ nickname: e.target.value })} placeholder={en ? 'e.g. Alex' : '예: 민지'} /></Field>
             <Field label={en ? 'Birth year' : '출생 연도'}><Input inputMode="numeric" maxLength={4} placeholder="2005" value={d.birthYear} onChange={(e) => patch({ birthYear: e.target.value.replace(/\D/g, '') })} /></Field>
-            {/* 사실 그대로 — 출생 연도는 다른 학생에게 보내지 않는다 (@core/lib/privacy OWNER_ONLY_KEYS), 카드·프로필에 나이 없음 */}
-            <p className="text-[12px] text-ink-3 -mt-2">{en ? 'Only you see this — it’s not on your profile. It’s used to check Lumi’s 16+ rule (18+ for rides).' : '나만 볼 수 있어요 — 프로필에 나오지 않아요. 만 16세 이상(같이 타기는 18세 이상)인지 확인하는 데만 써요.'}</p>
-            <p className="text-[12px] text-ink-3 -mt-3">{d.birthYear.length === 4 && !birthOk ? <span className="text-danger">{en ? 'Lumi is for college students 16 and older.' : 'Lumi는 만 16세 이상 대학생을 위한 앱이에요.'}</span> : (en ? 'Only to check you’re 16+. Never shown on your profile.' : '만 16세 이상인지 확인용이에요. 프로필에는 안 보여요.')}</p>
+            <p className="text-[12px] text-ink-3 -mt-2">{d.birthYear.length === 4 && !birthOk ? <span className="text-danger">{en ? 'Lumi is for college students 16 and older.' : 'Lumi는 만 16세 이상 대학생을 위한 앱이에요.'}</span> : (en ? 'Only to check you’re 16+. Never shown on your profile.' : '만 16세 이상인지 확인용이에요. 프로필에는 안 보여요.')}</p>
             <NextBtn ok={!!name && birthOk} />
           </>
         )}

@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Coffee, BookOpen, Dumbbell, Sparkles, Plus, ChevronRight, MapPin, Clock, Car, Link2, Zap, Users, CalendarDays } from 'lucide-react';
+import { Coffee, BookOpen, Dumbbell, Sparkles, Plus, ChevronRight, MapPin, Clock, Zap, Users, CalendarDays } from 'lucide-react';
+import { TONE } from '@/components/ha/tones';
 import { lang } from '@core/i18n';
 import { SocialHeader, SocialSegment } from '@/pages/social/SocialPage';
 import { CardSkeleton, ErrorState, Cover, Avatar } from '@/components/ui';
@@ -16,10 +17,10 @@ const en = lang === 'en';
 
 /** 모임 종류 — 시안: Coffee · Study · Workout · Hangout (Hangout = 그 밖의 가벼운 만남) */
 export const MEET_KINDS = [
-  { key: 'coffee', cats: ['coffee', 'meal'] as ActivityCategory[], title: en ? 'Coffee' : '커피·밥', Icon: Coffee, tone: 'bg-[#FFF4E5] text-[#D98A12] v2:bg-[#2E2416] v2:text-[#FFC266]' },
-  { key: 'study', cats: ['study', 'seminar'] as ActivityCategory[], title: en ? 'Study' : '스터디', Icon: BookOpen, tone: 'bg-[#EEF2FF] text-[#4B63D8] v2:bg-[#1D2140] v2:text-[#9DB0FF]' },
-  { key: 'workout', cats: ['exercise'] as ActivityCategory[], title: en ? 'Workout' : '운동', Icon: Dumbbell, tone: 'bg-[#E9F6F4] text-[#1F9A86] v2:bg-[#14292A] v2:text-[#6FE0CB]' },
-  { key: 'hangout', cats: ['etc', 'performance', 'club', 'networking'] as ActivityCategory[], title: en ? 'Hangout' : '같이 놀기', Icon: Sparkles, tone: 'bg-[#FDEEF2] text-[#D2476B] v2:bg-[#2D1820] v2:text-[#FF9AB5]' },
+  { key: 'coffee', cats: ['coffee', 'meal'] as ActivityCategory[], title: en ? 'Coffee' : '커피·밥', Icon: Coffee, tone: TONE.peach },
+  { key: 'study', cats: ['study', 'seminar'] as ActivityCategory[], title: en ? 'Study' : '스터디', Icon: BookOpen, tone: TONE.ice },
+  { key: 'workout', cats: ['exercise'] as ActivityCategory[], title: en ? 'Workout' : '운동', Icon: Dumbbell, tone: TONE.mint },
+  { key: 'hangout', cats: ['etc', 'performance', 'club', 'networking'] as ActivityCategory[], title: en ? 'Hangout' : '같이 놀기', Icon: Sparkles, tone: TONE.rose },
 ] as const;
 export type MeetKind = typeof MEET_KINDS[number]['key'];
 /** 모임 만들기에서 고른 종류 → 활동 분류 */
@@ -42,7 +43,7 @@ export function MeetPage() {
     .filter((a) => a.date > today || (a.date === today && toMin(a.endTime || a.startTime) > nowMin()))
     .filter((a) => !sel || sel.cats.includes(a.category))
     .sort((a, b) => `${a.date} ${a.startTime}`.localeCompare(`${b.date} ${b.startTime}`)), [v, today, sel]);
-  const create = () => nav(`/create/activity?kind=group&meetup=1${kind ? `&cat=${MEET_KIND_CATEGORY[kind]}` : ''}`);
+  const create = () => nav(`/meetups/new${kind ? `?cat=${MEET_KIND_CATEGORY[kind]}` : ''}`);
   return (
     <div className="min-h-full pb-8 bg-bg">
       <SocialHeader />
@@ -66,7 +67,7 @@ export function MeetPage() {
           <section className="mt-6">
             <div className="flex items-center justify-between mb-2.5">
               <h2 className="text-[18px] font-bold">{en ? 'Upcoming Meetups' : '다가오는 모임'}{sel ? ` · ${sel.title}` : ''}</h2>
-              {upcoming.length > 3 && <button onClick={() => nav('/meet/more?tab=activities')} className="text-[14px] text-primary font-semibold flex items-center gap-0.5">{en ? 'See all' : '모두 보기'}<ChevronRight size={16} /></button>}
+              {upcoming.length > 3 && <button onClick={() => nav('/social/more?tab=activities')} className="text-[14px] text-primary font-semibold flex items-center gap-0.5">{en ? 'See all' : '모두 보기'}<ChevronRight size={16} /></button>}
             </div>
             {upcoming.length === 0
               ? (
@@ -84,10 +85,8 @@ export function MeetPage() {
             <h2 className="text-[18px] font-bold mb-2.5">{en ? 'More ways to meet' : '다른 방법으로 만나기'}</h2>
             <div className="card rounded-[20px] divide-y divide-line">
               {[
-                { Icon: Zap, label: en ? 'Who’s free right now' : '지금 공강인 사람', to: '/meet/more' },
-                { Icon: Users, label: en ? 'Find teammates' : '팀원 찾기', to: '/meet/more?tab=teams' },
-                { Icon: Car, label: en ? 'Rides' : '같이 타기', to: '/rides' },
-                { Icon: Link2, label: en ? 'Ask friends with one link' : '링크로 친구에게 묻기', to: '/plans/new' },
+                { Icon: Zap, label: en ? 'Who’s free right now' : '지금 공강인 사람', to: '/social/more' },
+                { Icon: Users, label: en ? 'Find teammates' : '팀원 찾기', to: '/social/more?tab=teams' },
               ].map((r) => (
                 <button key={r.label} onClick={() => nav(r.to)} className="w-full flex items-center gap-3 px-4 h-14 text-left press">
                   <r.Icon size={19} className="text-ink-2" /><span className="flex-1 text-[15px] font-medium">{r.label}</span><ChevronRight size={17} className="text-ink-3" />

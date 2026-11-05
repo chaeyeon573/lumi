@@ -1,76 +1,58 @@
-import { useNavigate, useParams } from 'react-router-dom';
-import { CalendarDays, Trophy, Users, ChevronRight, Search } from 'lucide-react';
+import { Navigate, useParams } from 'react-router-dom';
+import { CalendarDays, Trophy, Users } from 'lucide-react';
 import { lang } from '@core/i18n';
-import { AppHeader } from '@/components/layout/AppHeader';
-import { TopBar } from '@/components/layout/TopBar';
-import { CardSkeleton, ErrorState } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
-import { cn } from '@core/lib/cn';
 import { BrowseTab } from '@/pages/community/BrowseTab';
-import { schoolLabel } from '@/pages/home/HomeDashboard';
 import { MeetupRow } from '@/pages/meet/MeetPage';
 import { useMemo, useState } from 'react';
 import { Chip } from '@/components/ui';
+import { Screen, TitleHeader, SegTabs, ErrorScreen, LoadingCards, TONE, CATEGORY_TONE } from '@/components/ha';
 import { todayISO } from '@core/lib/format';
 import { nowMin, toMin } from '@core/lib/timetable';
 
 const en = lang === 'en';
 
-/** Explore 에서 들어가는 세 곳 — 홈의 카드도 같은 주소로 온다 */
+/** Explore 의 세 칸 — 홈의 카테고리 타일도 같은 주소로 온다 (PDF S017·S018·S019) */
 export const EXPLORE_SECTIONS = {
-  events: { title: en ? 'Events' : '행사', sub: en ? 'Campus events and happenings' : '캠퍼스 행사와 소식', Icon: CalendarDays, tone: 'bg-[#EAF0FF] text-[#4B63D8] v2:bg-[#1D2140] v2:text-[#9DB0FF]' },
-  opportunities: { title: en ? 'Opportunities' : '기회', sub: en ? 'Internships, research, competitions' : '인턴·연구·장학금·공모전', Icon: Trophy, tone: 'bg-[#FFF3E2] text-[#D98A12] v2:bg-[#2E2416] v2:text-[#FFC266]' },
-  clubs: { title: en ? 'Clubs & Groups' : '동아리·그룹', sub: en ? 'Find your community' : '나에게 맞는 모임 찾기', Icon: Users, tone: 'bg-[#E6F6F3] text-[#1F9A86] v2:bg-[#14292A] v2:text-[#6FE0CB]' },
+  events: { title: en ? 'Events' : '행사', sub: en ? 'Campus events and happenings' : '캠퍼스 행사와 소식', Icon: CalendarDays, tone: TONE[CATEGORY_TONE.events] },
+  opportunities: { title: en ? 'Opportunities' : '기회', sub: en ? 'Internships, research, competitions' : '인턴·연구·장학금·공모전', Icon: Trophy, tone: TONE[CATEGORY_TONE.opportunities] },
+  clubs: { title: en ? 'Clubs' : '동아리', sub: en ? 'Find your community' : '나에게 맞는 모임 찾기', Icon: Users, tone: TONE[CATEGORY_TONE.clubs] },
 } as const;
 export type ExploreSection = keyof typeof EXPLORE_SECTIONS;
+const SECTIONS = Object.keys(EXPLORE_SECTIONS) as ExploreSection[];
 
-/** Explore — 캠퍼스 정보 카테고리를 모은 허브 (2026-11-02 사장님 시안, Discover 칸은 빼기로) */
-export function ExplorePage() {
-  const nav = useNavigate();
-  const me = useViewer().me;
-  return (
-    <div className="min-h-full pb-8 bg-bg">
-      <AppHeader />
-      <div className="px-4 pt-2">
-        <h1 className="font-display text-[28px] font-extrabold tracking-tight">{en ? 'Explore' : '탐색'}</h1>
-        <p className="text-[14px] text-ink-3 mt-1">{en ? `Discover more at ${schoolLabel(me) ?? 'your campus'}.` : `${schoolLabel(me) ?? '우리 학교'}에서 더 찾아보기`}</p>
-        <button onClick={() => nav('/search')} className="mt-4 w-full h-12 rounded-2xl border border-line bg-surface flex items-center gap-2.5 px-4 text-left text-[14px] text-ink-3 press">
-          <Search size={18} />{en ? 'Search events, opportunities, clubs…' : '행사·기회·동아리 검색'}
-        </button>
-        <div className="mt-4 space-y-2.5">
-          {(Object.keys(EXPLORE_SECTIONS) as ExploreSection[]).map((k) => { const s = EXPLORE_SECTIONS[k]; return (
-            <button key={k} onClick={() => nav(`/explore/${k}`)} className="w-full card rounded-[20px] p-4 flex items-center gap-3.5 text-left press">
-              <span className={cn('h-12 w-12 rounded-2xl grid place-items-center shrink-0', s.tone)}><s.Icon size={22} /></span>
-              <span className="flex-1 min-w-0"><span className="block text-[16px] font-bold">{s.title}</span><span className="block text-[13px] text-ink-3 truncate">{s.sub}</span></span>
-              <ChevronRight size={18} className="text-ink-3 shrink-0" />
-            </button>); })}
-        </div>
-      </div>
-    </div>
-  );
+/** /explore → 첫 칸(Events). PDF 의 Explore 는 늘 칸 하나가 열려 있다 */
+export function ExploreIndex() {
+  return <Navigate to="/explore/events" replace />;
 }
 
-/** Explore › Events / Opportunities / Clubs & Groups — 캠퍼스 › 찾기 목록을 그 칸의 칩만 남겨 다시 쓴다 */
-export function ExploreSectionPage() {
+/**
+ * Explore 탭 (PDF S017 Events · S018 Opportunities · S019 Clubs) — 큰 제목 + 검색·알림·메시지, 밑줄 탭.
+ * 칸 안의 목록은 아직 예전 찾기 목록(BrowseTab)을 그대로 쓴다 — Explore 작업 묶음(PLAN.md WP2)이 PDF 카드로 바꾼다.
+ */
+export function ExplorePage() {
   const { section } = useParams();
   const status = useAppStore((s) => s.status);
   const error = useAppStore((s) => s.error);
   const init = useAppStore((s) => s.init);
-  const k: ExploreSection = section === 'events' || section === 'clubs' ? section : 'opportunities';
+  if (!SECTIONS.includes(section as ExploreSection)) return <Navigate to="/explore/events" replace />;
+  const k = section as ExploreSection;
   return (
-    <div className="min-h-full pb-8 bg-bg">
-      <TopBar back title={EXPLORE_SECTIONS[k].title} />
-      {status === 'loading' && <CardSkeleton />}
-      {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
+    <Screen>
+      <TitleHeader title={en ? 'Explore' : '탐색'}>
+        <SegTabs value={k} tabs={SECTIONS.map((s) => ({ key: s, label: EXPLORE_SECTIONS[s].title, to: `/explore/${s}` }))} />
+      </TitleHeader>
+      {status === 'loading' && <LoadingCards className="px-4 pt-4" />}
+      {status === 'error' && <ErrorScreen message={error ?? undefined} onRetry={init} />}
       {status === 'ready' && (
-        <div className="px-4 pt-3">
+        <div className="px-4 pt-4">
           {k === 'events' && <><OrgEvents /><BrowseTab only={['event']} defaultSub="event" extras={false} /></>}
           {k === 'opportunities' && <BrowseTab only={['foryou', 'internship', 'research', 'scholarship', 'hackathon', 'startup', 'exchange']} defaultSub="foryou" />}
           {k === 'clubs' && <BrowseTab only={['clubs']} defaultSub="clubs" extras={false} />}
         </div>
       )}
-    </div>
+    </Screen>
   );
 }
 

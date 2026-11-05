@@ -1,60 +1,46 @@
 import { useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Plus, CalendarPlus, Users, MessageSquareMore, ChevronRight, GraduationCap, Search, PenLine, Lightbulb, NotebookPen, Megaphone, MessagesSquare, CalendarDays } from 'lucide-react';
+import { Users, GraduationCap, Search, PenLine, Lightbulb, NotebookPen, Megaphone, MessagesSquare, Coffee, BookOpen, Dumbbell, Sparkles } from 'lucide-react';
 import { lang } from '@core/i18n';
-import { CardSkeleton, ErrorState } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
-import { AppHeader } from '@/components/layout/AppHeader';
 import { useAppStore } from '@core/store/useAppStore';
 import { todayISO } from '@core/lib/format';
 import { nowMin, toMin } from '@core/lib/timetable';
-import { cn } from '@core/lib/cn';
-import { openCreate } from '@/components/layout/BottomNav';
-import { MEET_KINDS, MeetupRow } from '@/pages/meet/MeetPage';
+import { formatDate, formatTime } from '@core/lib/format';
+import { MEET_KINDS } from '@/pages/meet/MeetPage';
+import { PostCard } from '@/components/cards/PostCard';
+import { BrandHeader, SegTabs, Btn, Chip, ChipRow, MeetupCard, EmptyState, ErrorScreen, LoadingCards, SectionHeader, RowCard, type Tone } from '@/components/ha';
+import type { Activity } from '@core/types';
 import { FeedTab } from '@/pages/community/CommunityPage';
 
 const en = lang === 'en';
 
 /**
- * Social 탭 (2026-11-02 사장님 시안) — For You · Meetups · People · Feed.
- * 처음 쓰는 사람도 바로 할 수 있는 행동을 먼저 보여주고, 모임·사람·피드는 각 칸으로 나눈다.
+ * Social 탭 (PDF S037~S044) — 머리 "Lumi" + 알림·메시지, 큰 제목 "Social", 밑줄 탭 For You · Meetups · People · Feed.
  */
 export const SOCIAL_TABS = [
-  { to: '/meet', label: en ? 'For You' : '추천' },
-  { to: '/meet/meetups', label: en ? 'Meetups' : '모임' },
-  { to: '/people', label: en ? 'People' : '사람' },
-  { to: '/feed', label: en ? 'Feed' : '피드' },
+  { to: '/social', label: en ? 'For You' : '추천' },
+  { to: '/social/meetups', label: en ? 'Meetups' : '모임' },
+  { to: '/social/people', label: en ? 'People' : '사람' },
+  { to: '/social/feed', label: en ? 'Feed' : '피드' },
 ] as const;
 
-/** 위 머리 — 다른 탭과 같은 Lumi 머리(앱 이름·알림·채팅·프로필) + 만들기(+) (2026-11-02 사장님: 맨 위엔 앱 이름) */
+/** 머리 — Lumi · 알림 · 메시지 + 큰 제목 Social + 밑줄 탭 (네 화면이 같은 것을 쓴다) */
 export function SocialHeader() {
-  return <AppHeader right={<button onClick={openCreate} aria-label={en ? 'Create' : '만들기'} className="h-9 w-9 rounded-xl bg-primary text-white v2:text-on-primary grid place-items-center press"><Plus size={19} /></button>} />;
-}
-
-/** For You · Meetups · People · Feed — 네 화면이 같은 줄을 쓴다 */
-export function SocialSegment() {
-  const nav = useNavigate();
   const { pathname } = useLocation();
-  const active = pathname.startsWith('/meet/meetups') ? '/meet/meetups' : pathname.startsWith('/people') ? '/people' : pathname.startsWith('/feed') ? '/feed' : '/meet';
+  const active = SOCIAL_TABS.slice(1).find((t) => pathname.startsWith(t.to))?.to ?? '/social';
   return (
-    <div className="mx-4 mb-3 p-1 rounded-full bg-surface-2 flex gap-1 shrink-0">
-      {SOCIAL_TABS.map((s) => (
-        <button key={s.to} onClick={() => nav(s.to, { replace: true })} aria-pressed={active === s.to}
-          className={cn('flex-1 h-10 rounded-full text-[14px] font-semibold transition', active === s.to ? 'bg-primary text-white v2:text-on-primary' : 'text-ink-3')}>{s.label}</button>
-      ))}
-    </div>
+    <BrandHeader actions={['bell', 'messages']} title={en ? 'Social' : '소셜'}>
+      <SegTabs value={active} tabs={SOCIAL_TABS.map((t) => ({ key: t.to, label: t.label, to: t.to }))} className="-mx-4 px-2" />
+    </BrandHeader>
   );
 }
+/** 예전 이름 — 탭 줄은 이제 SocialHeader 안에 있다 */
+export function SocialSegment() { return null; }
 
 /** 시안의 그림 자리 — 사진을 지어내지 않고 아이콘으로 */
 function Hero({ Icon, title, sub }: { Icon: typeof Users; title: string; sub: string }) {
-  return (
-    <div className="flex flex-col items-center text-center pt-4 pb-5">
-      <span className="h-24 w-24 rounded-[32px] bg-primary-soft text-primary grid place-items-center mb-4"><Icon size={44} strokeWidth={1.6} /></span>
-      <h2 className="text-[24px] font-extrabold tracking-tight">{title}</h2>
-      <p className="text-[15px] text-ink-2 mt-1.5 max-w-[280px]">{sub}</p>
-    </div>
-  );
+  return <EmptyState icon={<Icon size={30} />} tone="ice" title={title} sub={sub} className="pt-6" />;
 }
 
 function Shell({ children }: { children: React.ReactNode }) {
@@ -64,21 +50,37 @@ function Shell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-full pb-8 bg-bg">
       <SocialHeader />
-      <SocialSegment />
-      {status === 'loading' && <CardSkeleton />}
-      {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
-      {status === 'ready' && <div className="px-4">{children}</div>}
+      {status === 'loading' && <LoadingCards className="px-4 pt-4" />}
+      {status === 'error' && <ErrorScreen message={error ?? undefined} onRetry={init} />}
+      {status === 'ready' && <div className="px-4 pt-5">{children}</div>}
     </div>
   );
 }
 
-const Row = ({ Icon, label, onClick }: { Icon: typeof Users; label: string; onClick: () => void }) => (
-  <button onClick={onClick} className="w-full card rounded-2xl flex items-center gap-3 px-4 h-14 text-left press">
-    <Icon size={20} className="text-primary" /><span className="flex-1 text-[15px] font-bold">{label}</span><ChevronRight size={18} className="text-ink-3" />
-  </button>
+/** 모임 종류 → 색·아이콘 (MEET_KINDS 와 같은 묶음) */
+const KIND_LOOK: Record<string, { tone: Tone; Icon: typeof Coffee }> = { coffee: { tone: 'peach', Icon: Coffee }, study: { tone: 'ice', Icon: BookOpen }, workout: { tone: 'mint', Icon: Dumbbell }, hangout: { tone: 'rose', Icon: Sparkles } };
+export function meetKindOf(a: Pick<Activity, 'category'>) { return MEET_KINDS.find((k) => (k.cats as readonly string[]).includes(a.category)) ?? MEET_KINDS[3]; }
+
+/** 모임 카드 (PDF S037) — 실제 장소·시간·참여한 사람 */
+export function MeetupItem({ a }: { a: Activity }) {
+  const nav = useNavigate();
+  const v = useViewer();
+  const parts = useAppStore((s) => s.participations);
+  const k = meetKindOf(a); const look = KIND_LOOK[k.key];
+  const host = v.userById(a.hostId);
+  const people = [host, ...parts.filter((p) => p.activityId === a.id && p.status === 'approved').map((p) => v.userById(p.userId))].filter((u): u is NonNullable<typeof u> => !!u);
+  return (
+    <MeetupCard tone={look.tone} icon={<look.Icon size={22} />} badge={k.title} title={a.title}
+      meta={[a.place?.name, `${formatDate(a.date)} · ${formatTime(a.startTime)}`].filter(Boolean).join(' · ')}
+      people={people} footnote={`${people.length} ${en ? 'going' : '명 참여'}`} action={en ? 'View meetup' : '모임 보기'} onClick={() => nav(`/activities/${a.id}`)} />
+  );
+}
+
+const Row = ({ Icon, label, onClick, tone = 'ice' }: { Icon: typeof Users; label: string; onClick: () => void; tone?: Tone }) => (
+  <RowCard tone={tone} icon={<Icon size={21} />} title={label} onClick={onClick} />
 );
 
-/** For You — 처음 쓰는 사람도 바로 할 수 있는 핵심 행동 + (있으면) 곧 열리는 모임 */
+/** For You (PDF S037 · 비었을 때 S041) — 바로 할 수 있는 두 가지 + 종류 칩 + 곧 열리는 모임 + 최근 글 */
 export function SocialForYouPage() {
   const nav = useNavigate();
   const v = useViewer();
@@ -87,35 +89,30 @@ export function SocialForYouPage() {
     .filter((a) => a.kind !== 'org_event' && !a.studyGroup && a.category !== 'store_deal' && a.category !== 'school_event')
     .filter((a) => a.date > today || (a.date === today && toMin(a.endTime || a.startTime) > nowMin()))
     .sort((a, b) => `${a.date} ${a.startTime}`.localeCompare(`${b.date} ${b.startTime}`)).slice(0, 2), [v, today]);
+  const post = v.visiblePosts.find((p) => p.showOnFeed !== false);
+  const chips = <ChipRow>{MEET_KINDS.map((k) => <Chip key={k.key} onClick={() => nav(`/social/meetups?kind=${k.key}`)}>{k.title}</Chip>)}</ChipRow>;
+  if (!soon.length && !post) return (
+    <Shell>
+      <EmptyState icon={<Coffee size={30} />} tone="ice" title={en ? 'Start something small' : '작게 시작해요'} sub={en ? 'A coffee, a walk, a study session.' : '커피 한 잔, 산책, 같이 공부.'}
+        action={{ label: en ? 'Start a Meetup' : '모임 만들기', onClick: () => nav('/meetups/new') }}>{chips}</EmptyState>
+    </Shell>
+  );
   return (
     <Shell>
-      <Hero Icon={CalendarDays} title={en ? 'Let’s get started' : '시작해 볼까요'} sub={en ? 'Meet people, join activities, and share with your campus.' : '사람을 만나고, 모임에 참여하고, 캠퍼스와 나눠요.'} />
-      <div className="grid grid-cols-2 gap-2.5">
-        <button onClick={() => nav('/create/activity?kind=group&meetup=1')} className="card rounded-[20px] h-[112px] flex flex-col items-center justify-center gap-2 press">
-          <CalendarPlus size={28} className="text-primary" /><span className="text-[15px] font-bold">{en ? 'Start a Meetup' : '모임 만들기'}</span>
-        </button>
-        <button onClick={() => nav('/people/explore')} className="card rounded-[20px] h-[112px] flex flex-col items-center justify-center gap-2 press">
-          <Users size={28} className="text-primary" /><span className="text-[15px] font-bold">{en ? 'Find People' : '사람 찾기'}</span>
-        </button>
+      <h2 className="ha-h2">{en ? 'Good plans. Your people.' : '좋은 약속, 나의 사람들.'}</h2>
+      <p className="text-[14px] text-ink-2 mt-1">{en ? 'Make a little time for something new.' : '새로운 일에 잠깐 시간을 내 봐요.'}</p>
+      <div className="grid grid-cols-2 gap-3 mt-4">
+        <Btn onClick={() => nav('/meetups/new')}>{en ? 'Start a Meetup' : '모임 만들기'}</Btn>
+        <Btn variant="outline" onClick={() => nav('/social/people')}>{en ? 'Find People' : '사람 찾기'}</Btn>
       </div>
-      <h3 className="text-[17px] font-bold mt-6 mb-2.5">{en ? 'Popular to try' : '많이 하는 것'}</h3>
-      <div className="grid grid-cols-4 gap-2">
-        {MEET_KINDS.map((k) => (
-          <button key={k.key} onClick={() => nav(`/meet/meetups?kind=${k.key}`)} className={cn('rounded-2xl h-[78px] flex flex-col items-center justify-center gap-1.5 press', k.tone)}>
-            <k.Icon size={22} /><span className="text-[12px] font-bold text-ink">{k.title}</span>
-          </button>
-        ))}
-      </div>
-      <div className="mt-3"><Row Icon={MessageSquareMore} label={en ? 'Ask a Question' : '질문하기'} onClick={() => nav('/create/post?type=question')} /></div>
+      <div className="mt-4">{chips}</div>
       {soon.length > 0 && (
         <section className="mt-6">
-          <div className="flex items-center justify-between mb-2.5">
-            <h3 className="text-[17px] font-bold">{en ? 'Happening soon' : '곧 열리는 모임'}</h3>
-            <button onClick={() => nav('/meet/meetups')} className="text-[14px] text-primary font-semibold flex items-center gap-0.5">{en ? 'See all' : '모두 보기'}<ChevronRight size={16} /></button>
-          </div>
-          <div className="space-y-2.5">{soon.map((a) => <MeetupRow key={a.id} a={a} />)}</div>
+          <SectionHeader title={en ? 'Happening soon' : '곧 열리는 모임'} action={en ? 'See all' : '모두 보기'} onAction={() => nav('/social/meetups')} />
+          <div className="space-y-3">{soon.map((a) => <MeetupItem key={a.id} a={a} />)}</div>
         </section>
       )}
+      {post && <section className="mt-6"><SectionHeader title={en ? 'From your campus' : '우리 캠퍼스 이야기'} action={en ? 'Feed' : '피드'} onAction={() => nav('/social/feed')} /><PostCard post={post} /></section>}
     </Shell>
   );
 }
@@ -127,9 +124,9 @@ export function SocialPeoplePage() {
     <Shell>
       <Hero Icon={Users} title={en ? 'Find your people' : '나와 맞는 사람 찾기'} sub={en ? 'Discover classmates and campus peers.' : '같은 수업 친구와 캠퍼스 사람들을 만나요.'} />
       <div className="space-y-2.5">
-        <Row Icon={GraduationCap} label={en ? 'My Classes' : '내 수업'} onClick={() => nav('/timetable')} />
-        <Row Icon={Users} label={en ? 'My Groups' : '내 그룹'} onClick={() => nav('/orgs/mine')} />
-        <Row Icon={Search} label={en ? 'Explore People' : '사람 둘러보기'} onClick={() => nav('/people/explore')} />
+        <Row Icon={GraduationCap} tone="ice" label={en ? 'My Classes' : '내 수업'} onClick={() => nav('/schedule')} />
+        <Row Icon={Users} tone="mint" label={en ? 'My Groups' : '내 그룹'} onClick={() => nav('/profile/communities')} />
+        <Row Icon={Search} tone="rose" label={en ? 'Explore People' : '사람 둘러보기'} onClick={() => nav('/social/people/explore')} />
       </div>
     </Shell>
   );

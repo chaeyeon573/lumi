@@ -1,25 +1,26 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Settings, Pencil, ShieldCheck, BadgeCheck, CalendarDays, ChevronRight, Users, CalendarCheck, Bookmark, Building2, Quote, Car } from 'lucide-react';
-import { t, lang } from '@core/i18n';
-import { AppHeader } from '@/components/layout/AppHeader';
-import { Avatar, Button, CardSkeleton, ErrorState, Tag } from '@/components/ui';
+import { Users, CalendarCheck } from 'lucide-react';
+import { lang } from '@core/i18n';
+import { Avatar } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
-import { INTEREST_LABELS } from '@core/lib/labels';
+import { ORG_TYPE_LABELS, ROLE_LABELS } from '@core/lib/labels';
 import { friendsOf } from '@core/lib/relations';
 import { todayISO, formatDateTime } from '@core/lib/format';
-import { statusNow, statusLabel, freeBlocks, todayIdx, nowMin, fmtBlock } from '@core/lib/timetable';
-import { profileCompletion, questionById } from '@core/data/prompts';
+import { questionById } from '@core/data/prompts';
+import { shareOrCopy } from '@/lib/native';
+import { BrandHeader, Screen, Btn, ChoiceChips, RowCard, SectionHeader, ErrorScreen, LoadingCards, InfoNote, cardCls } from '@/components/ha';
 import { cn } from '@core/lib/cn';
-import { WeekGrid } from '@/components/timetable/WeekGrid';
-import { KeyDatesCard } from '@/components/academic/KeyDatesCard';
-import { SeatWatchCard } from '@/components/seats/SeatWatch';
-import { campusToday } from '@core/lib/rides';
-import { SampleTag } from '@/components/ui/SampleTag';
-import { daysUntil } from '@core/lib/recommend';
 
+const en = lang === 'en';
+type PlanTab = 'upcoming' | 'past' | 'created';
 
-/** 나 — 프로필 카드 · 주간 시간표 · 다가오는 약속 (Pastel Breeze) */
+/**
+ * Profile 탭 (PDF S071) — 머리 Lumi + 설정·메시지, 얼굴·이름·학교, 소개, Edit / Share, 그룹·친구 수,
+ * Get to know me, My Communities, My Events & Meetups (Upcoming · Past · Created), 아래 Saved · My Posts · Settings.
+ * 예전 Me 탭의 시간표·좌석 알림·내 라이드는 여기서 뺐다 (시간표는 Schedule 탭, 좌석·라이드는 Harness A 에 없음).
+ */
 export function ProfilePage() {
   const nav = useNavigate();
   const v = useViewer();
@@ -28,119 +29,86 @@ export function ProfilePage() {
   const init = useAppStore((s) => s.init);
   const activities = useAppStore((s) => s.activities);
   const participations = useAppStore((s) => s.participations);
-  const polls = useAppStore((s) => s.timePolls);
-  const intents = useAppStore((s) => s.opportunityIntents);
-  const opps = useAppStore((s) => s.opportunities);
   const orgs = useAppStore((s) => s.organizations);
-  const rides = useAppStore((s) => s.rides);
+  const showToast = useAppStore((s) => s.showToast);
+  const [tab, setTab] = useState<PlanTab>('upcoming');
   const me = v.me;
-  if (status === 'loading') return <div><AppHeader /><CardSkeleton count={2} /></div>;
-  if (status === 'error') return <div><AppHeader /><ErrorState message={error ?? undefined} onRetry={init} /></div>;
+  const header = <BrandHeader actions={['settings', 'messages']} />;
+  if (status === 'loading') return <Screen>{header}<LoadingCards className="px-4 pt-4" /></Screen>;
+  if (status === 'error') return <Screen>{header}<ErrorScreen message={error ?? undefined} onRetry={init} /></Screen>;
 
   const friends = friendsOf(v.snap, me.id).length;
+  const myOrgs = orgs.filter((o) => o.memberIds.includes(me.id) || o.adminIds.includes(me.id) || o.followerIds.includes(me.id));
   const today = todayISO();
-  const upcoming = activities.filter((a) => a.date >= today && (a.hostId === me.id || participations.some((p) => p.activityId === a.id && p.userId === me.id && (p.status === 'approved' || p.status === 'pending')))).sort((a, b) => (a.date + a.startTime).localeCompare(b.date + b.startTime));
-  const hangouts = activities.filter((a) => participations.some((p) => p.activityId === a.id && p.userId === me.id && p.status === 'approved')).length + activities.filter((a) => a.hostId === me.id).length;
-  const completion = profileCompletion(me);
-  const goTo = me.prompts[0];
-  const now = statusNow(me.timetable);
-  const nextFree = freeBlocks(me.timetable, todayIdx()).find((b) => b.end > nowMin());
-  const days = [0, 1, 2, 3, 4];
-  const openPolls = polls.filter((p) => p.status === 'open' && (p.hostId === me.id || p.inviteeIds.includes(me.id))).length;
-  // 저장 목록(Browse ☆)에 실제로 뜨는 것만 센다 — 마감됐거나 내려간 공고까지 세면 '1개'를 눌렀는데 빈 목록이 나온다
-  const openOpp = new Set(opps.filter((o) => o.type !== 'activity' && o.type !== 'club' && (o.deadline ? daysUntil(o.deadline) >= 0 : !o.date || daysUntil(o.date) >= 0)).map((o) => o.id));
-  const saved = intents.filter((i) => i.userId === me.id && (i.saved || i.intent === 'applied') && openOpp.has(i.opportunityId)).length;
-  // Campus › Clubs › Mine 과 같은 기준(가입·운영·팔로우) — 이 줄을 누르면 그 목록이 열린다
-  const myOrgs = orgs.filter((o) => o.memberIds.includes(me.id) || o.adminIds.includes(me.id) || o.followerIds.includes(me.id)).length;
-  const myRides = (rides ?? []).filter((r) => r.status !== 'cancelled' && r.date >= campusToday() && (r.hostId === me.id || r.memberIds.includes(me.id))).length;
-  const dept = me.affiliation.type === 'university' ? `${me.affiliation.department} • ${me.affiliation.schoolName}` : '';
+  const mine = activities.filter((a) => a.hostId === me.id || participations.some((p) => p.activityId === a.id && p.userId === me.id && p.status === 'approved'));
+  const plans = (tab === 'created' ? activities.filter((a) => a.hostId === me.id) : mine.filter((a) => (tab === 'upcoming' ? a.date >= today : a.date < today)))
+    .sort((a, b) => (tab === 'past' ? -1 : 1) * (a.date + a.startTime).localeCompare(b.date + b.startTime));
+  const aff = me.affiliation.type === 'university' ? me.affiliation : null;
+  const prompt = me.prompts[0];
+  const share = async () => {
+    const url = `${window.location.origin}/users/${me.id}`;
+    const r = await shareOrCopy({ title: me.nickname, text: en ? `${me.nickname} on Lumi` : `Lumi 의 ${me.nickname}`, url, copy: url });
+    if (r === 'copied') showToast(en ? 'Profile link copied' : '프로필 링크를 복사했어요');
+  };
 
   return (
-    <div className="min-h-full pb-8 bg-bg">
-      <AppHeader right={<button onClick={() => nav('/settings')} aria-label={t('설정')} className="h-11 w-11 rounded-full grid place-items-center text-ink-2"><Settings size={21} /></button>} />
-      <div className="px-4 space-y-4">
-        {me.affiliation.type === 'university' && <KeyDatesCard schoolId={me.affiliation.schoolId} />}
-        <section className="card p-5">
-          <div className="flex items-center justify-between">
-            <h2 className="font-display text-[20px] font-bold text-primary flex items-center gap-2 whitespace-nowrap"><CalendarDays size={18} />{lang === 'en' ? 'Schedule' : '내 시간표'}</h2>
-            {me.timetable.length > 0 && <span className={cn('h-7 px-3 rounded-full text-[11px] font-bold flex items-center gap-1 whitespace-nowrap shrink-0', now.kind === 'free' ? 'bg-mint-soft text-mint' : 'bg-surface-2 text-ink-2')}><span className={cn('h-1.5 w-1.5 rounded-full', now.kind === 'free' ? 'bg-mint' : 'bg-ink-3')} />{now.kind === 'free' ? statusLabel(now) : now.kind === 'in_class' ? t('수업 중') : t('오늘 수업 끝')}</span>}
+    <Screen>
+      {header}
+      <div className="px-4">
+        <div className="flex items-center gap-4 mt-3">
+          <Avatar emoji={me.avatar.emoji} hue={me.avatar.hue} url={me.avatar.url} size={76} />
+          <div className="min-w-0">
+            <h1 className="ha-title truncate">{me.nickname}</h1>
+            {aff?.schoolName && <div className="text-[13px] text-ink-2 truncate mt-1">{aff.schoolName}</div>}
+            {aff && <div className="text-[13px] text-ink-3 truncate">{[aff.department, ROLE_LABELS[aff.role]].filter(Boolean).join(' · ')}</div>}
           </div>
-          {me.timetable.length === 0 ? (
-            <Button full variant="secondary" className="mt-4" onClick={() => nav('/timetable')}>{t('시간표 만들기')}</Button>
-          ) : (
-            <>
-              <div className="mt-3 -mx-3 rounded-2xl overflow-hidden border border-line">
-                <WeekGrid courses={me.timetable} days={days} today={todayIdx()} onCourse={(c) => nav(`/classes/${encodeURIComponent(c.name)}`)} onCell={() => nav('/timetable')} />
-              </div>
-              <button onClick={() => nav('/timetable')} className="mt-2 w-full h-10 rounded-xl bg-surface-2 text-[13px] font-semibold text-primary press">{lang === 'en' ? 'Edit timetable' : '시간표 편집'}</button>
-              {nextFree && <div className="mt-3 flex items-center gap-2 text-[13px] text-ink-2"><span className="text-verify">★</span><span className="flex-1 truncate">{lang === 'en' ? `Next free window ${fmtBlock({ start: Math.max(nextFree.start, nowMin()), end: nextFree.end })}` : `다음 공강 ${fmtBlock({ start: Math.max(nextFree.start, nowMin()), end: nextFree.end })}`}</span><Button size="sm" onClick={() => nav('/timetable?open=1')}>{t('열기')}</Button></div>}
-            </>
-          )}
-        </section>
-
-        <section className="card p-5">
-          <div className="flex items-center gap-4">
-            <Avatar emoji={me.avatar.emoji} hue={me.avatar.hue} url={me.avatar.url} size={72} />
-            <div className="flex-1 min-w-0">
-              <h1 className="font-display text-[24px] font-bold text-primary leading-tight truncate">{me.nickname}</h1>
-              <div className="text-[13px] text-ink-2 truncate">{dept}</div>
-              {me.affiliation.type === 'university' && me.affiliation.emailVerified && <span className="mt-1.5 inline-flex items-center gap-1 h-6 px-2.5 rounded-full bg-accent-soft border border-accent text-primary text-[11px] font-bold"><BadgeCheck size={12} />{lang === 'en' ? 'Campus verified' : '학교 인증'}</span>}
-            </div>
-          </div>
-          <div className="mt-5 grid grid-cols-3 text-center">
-            {[{ n: friends, l: t('친구'), to: '/profile/friends' }, { n: hangouts, l: lang === 'en' ? 'Hangouts' : '활동', to: '/plans' }, { n: `${completion.percent}%`, l: lang === 'en' ? 'Profile' : '프로필 완성', to: '/profile/prompts' }].map((s) => (
-              <button key={s.l} onClick={() => nav(s.to)} className="py-1"><div className="font-display text-[22px] font-bold text-primary">{s.n}</div><div className="text-[12px] text-ink-3">{s.l}</div></button>
-            ))}
-          </div>
-          {goTo?.answer && (
-            <div className="mt-4 rounded-2xl bg-surface-2 px-4 py-3">
-              <div className="text-[11px] font-bold tracking-wide text-verify uppercase flex items-center gap-1"><Quote size={11} />{questionById(goTo.questionId)?.text}</div>
-              <p className="mt-1 text-[14px] text-ink-2 italic">“{goTo.answer}”</p>
-            </div>
-          )}
-          <div className="mt-3 flex flex-wrap gap-1.5">{me.interests.slice(0, 5).map((i) => <span key={i} className="h-7 px-3 rounded-full bg-accent-soft text-primary text-[12px] font-semibold flex items-center">#{INTEREST_LABELS[i]}</span>)}</div>
-          <div className="mt-4 flex gap-2">
-            <Button full icon={<Pencil size={15} />} onClick={() => nav('/profile/edit')}>{t('프로필 편집')}</Button>
-            <Button full variant="secondary" icon={<ShieldCheck size={15} />} onClick={() => nav('/settings/privacy')}>{t('공개 범위')}</Button>
-          </div>
-          {/* 운영진·회원인 조직 — 운영진은 여기서 행사를 올린다 */}
-          <button onClick={() => nav('/orgs/mine')} className="mt-2 w-full h-11 rounded-xl bg-surface-2 text-[13px] font-semibold flex items-center justify-center gap-1.5 press">{lang === 'en' ? 'My Organizations' : '내 조직'}<span className="text-ink-3">· {lang === 'en' ? 'post events' : '행사 올리기'}</span></button>
-        </section>
-
-
-        <SeatWatchCard />
-
-        <section className="card p-5">
-          <div className="flex items-center justify-between mb-2"><h2 className="font-display text-[20px] font-bold text-primary flex items-center gap-2"><CalendarCheck size={18} />{lang === 'en' ? 'Upcoming Hangouts' : '다가오는 약속'}</h2><button onClick={() => nav('/plans')} className="text-[13px] font-semibold text-verify">{t('전체')} ({upcoming.length + openPolls})</button></div>
-          {upcoming.length === 0 && openPolls === 0 ? <p className="text-[13px] text-ink-3">{t('확정된 약속이 없어요.')}</p> : (
-            <div className="divide-y divide-line">
-              {upcoming.slice(0, 3).map((a) => { const pending = participations.some((p) => p.activityId === a.id && p.userId === me.id && p.status === 'pending'); return (
-                <button key={a.id} onClick={() => nav(`/activities/${a.id}`)} className="w-full flex items-center gap-3 py-3 text-left press">
-                  <span className="h-10 w-10 rounded-full bg-surface-2 grid place-items-center text-primary"><CalendarCheck size={17} /></span>
-                  <span className="flex-1 min-w-0"><span className="block text-[14px] font-semibold text-primary truncate">{a.sample && <SampleTag />}{a.title}</span><span className="block text-[12px] text-ink-3">{formatDateTime(a.date, a.startTime)}</span></span>
-                  <Tag tone={pending ? 'neutral' : 'primary'} className="h-6 rounded-full">{pending ? t('대기') : lang === 'en' ? 'Confirmed' : '확정'}</Tag>
-                </button>
-              ); })}
-            </div>
-          )}
-        </section>
-
-        <div className="card divide-y divide-line">
-          {[
-            { icon: <Users size={18} />, label: t('친구'), sub: `${friends}${t('명')}`, to: '/profile/friends' },
-            { icon: <CalendarCheck size={18} />, label: lang === 'en' ? 'My Plans' : '내 약속', sub: openPolls ? `${t('시간 정하는 중')} ${openPolls}` : t('초대·대기·확정'), to: '/plans' },
-            { icon: <Bookmark size={18} />, label: t('저장·지원 내역'), sub: `${saved}${t('개')}`, to: '/community?tab=opportunities&sub=saved' },
-            { icon: <Car size={18} />, label: 'My rides', sub: myRides ? `${myRides} upcoming` : 'Airports, groceries, SF, Tahoe', to: '/rides?mine=1' },
-            { icon: <Building2 size={18} />, label: t('내 단체'), sub: `${myOrgs}${t('개')}`, to: '/community?tab=opportunities&sub=clubs&kind=mine' },
-          ].map((r) => (
-            <button key={r.label} onClick={() => nav(r.to)} className="w-full flex items-center gap-3 px-4 py-3 text-left press">
-              <span className="h-10 w-10 rounded-full bg-surface-2 grid place-items-center text-primary">{r.icon}</span>
-              <span className="flex-1 min-w-0"><span className="block text-[14px] font-semibold text-primary">{r.label}</span><span className="block text-[12px] text-ink-3 truncate">{r.sub}</span></span>
-              <ChevronRight size={18} className="text-ink-3" />
-            </button>
-          ))}
         </div>
+        {me.bio && <p className="text-[14.5px] text-ink mt-4 leading-snug">{me.bio}</p>}
+        <div className="grid grid-cols-2 gap-3 mt-4">
+          <Btn variant="outline" onClick={() => nav('/profile/edit')}>{en ? 'Edit Profile' : '프로필 편집'}</Btn>
+          <Btn variant="outline" onClick={share}>{en ? 'Share Profile' : '프로필 공유'}</Btn>
+        </div>
+        <div className="flex gap-6 mt-4 text-[14px] text-ink-2">
+          <button onClick={() => nav('/profile/communities')} className="press"><b className="text-ink">{myOrgs.length}</b> {en ? 'Groups' : '그룹'}</button>
+          <button onClick={() => nav('/profile/friends')} className="press"><b className="text-ink">{friends}</b> {en ? 'Friends' : '친구'}</button>
+        </div>
+
+        <section className="mt-7">
+          <SectionHeader title={en ? 'Get to know me' : '나를 소개해요'} action={en ? 'Edit' : '편집'} onAction={() => nav('/profile/prompts')} />
+          {prompt?.answer ? (
+            <button onClick={() => nav('/profile/prompts')} className={cn(cardCls, 'w-full p-4 text-left press')}>
+              <span className="block text-[12px] text-ink-3">{questionById(prompt.questionId)?.text}</span>
+              <span className="block text-[17px] font-bold leading-snug mt-1">{prompt.answer}</span>
+            </button>
+          ) : (
+            <RowCard tone="lav" icon={<Users size={21} />} title={en ? 'Add a few short answers' : '짧은 답 몇 개 더하기'} sub={en ? 'Optional — helps people know what to ask you to.' : '선택 — 무엇을 같이 할지 알기 쉬워져요.'} onClick={() => nav('/profile/prompts')} />
+          )}
+        </section>
+
+        <section className="mt-7">
+          <SectionHeader title={en ? 'My Communities' : '내 커뮤니티'} action={myOrgs.length > 2 ? (en ? 'See all' : '모두 보기') : undefined} onAction={() => nav('/profile/communities')} />
+          <div className="space-y-3">
+            {myOrgs.length === 0
+              ? <RowCard tone="rose" icon={<Users size={21} />} title={en ? 'Find your communities' : '내 커뮤니티 찾기'} sub={en ? 'Follow interests. Verify membership separately.' : '관심사를 팔로우하세요. 회원 인증은 따로 해요.'} onClick={() => nav('/explore/clubs')} />
+              : myOrgs.slice(0, 2).map((o) => <RowCard key={o.id} tone="rose" icon={<Users size={21} />} title={o.name} sub={[o.memberIds.includes(me.id) ? (en ? 'Member' : '회원') : (en ? 'Followed' : '팔로우'), ORG_TYPE_LABELS[o.type]].join(' · ')} onClick={() => nav(`/orgs/${o.id}`)} />)}
+          </div>
+        </section>
+
+        <section className="mt-7">
+          <SectionHeader title={en ? 'My Events & Meetups' : '내 행사·모임'} />
+          <ChoiceChips value={tab} onChange={setTab} options={[{ value: 'upcoming', label: en ? 'Upcoming' : '다가오는' }, { value: 'past', label: en ? 'Past' : '지난' }, { value: 'created', label: en ? 'Created' : '만든' }]} />
+          <div className="space-y-3 mt-3">
+            {plans.slice(0, 3).map((a) => <RowCard key={a.id} tone="ice" icon={<CalendarCheck size={21} />} title={a.title} sub={formatDateTime(a.date, a.startTime)} onClick={() => nav(`/activities/${a.id}`)} />)}
+          </div>
+          {plans.length === 0 && <InfoNote className="mt-3">{en ? 'Visible, confirmed plans only.' : '확정된 약속만 보여요.'}</InfoNote>}
+        </section>
+
+        <nav className="mt-8 border-t border-line pt-4 grid grid-cols-3 text-[14px] text-ink-2">
+          <button onClick={() => nav('/profile/saved')} className="text-left press">{en ? 'Saved' : '저장'}</button>
+          <button onClick={() => nav('/profile/posts')} className="text-center press">{en ? 'My Posts' : '내 글'}</button>
+          <button onClick={() => nav('/settings')} className="text-right press">{en ? 'Settings' : '설정'}</button>
+        </nav>
       </div>
-    </div>
+    </Screen>
   );
 }
