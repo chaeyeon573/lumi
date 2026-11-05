@@ -2182,3 +2182,13 @@
   - They load at tomorrow's 03:33 daily refresh (jobs stay once a day).
 - Spot check courses (Georgia Tech, live Banner): VIP 6601 VPE R 5:00, MSE 4105 TR 12:30, HTS 8803 DV WF 11:00, VIP 6600 VVP (Spring) R 9:30, MATH 2550 D02 F 4:00 - all match.
 - Spot check clubs: Yale Logos, GT Alpha Gamma Delta, UVA Think Again fine. UW Somali Student Association and NC State Geospatial Graduate Student Organization failed at the container's proxy (502), so I couldn't tell; left as is.
+
+## 2026-11-05 18:33 UTC
+- Stanford club links (queue item, per-club search): +3 in org-links-stanford.csv and applied to the file.
+  - ACM: stanfordacm.org, opened, names Stanford ACM.
+  - Asha for Education: stanford.ashanet.org, opened, "Student Group at Stanford University".
+  - ASES: ases.stanford.edu, official per search.
+  - No official site found for the Asian American Theater Project, Basmati Raas, Ballet Folklórico (only Stanford Arts, Daily and archive pages) or the Alexander Hamilton Society (no Stanford chapter found).
+  - Every *.stanford.edu page fails at the container proxy (502), so Stanford-hosted club pages can't be verified from here; this item stays slow.
+- Spot check courses (Rice course pages): CHEM 515 TR 10:50, MGMT 616 T 6:15-9:30, MDIA 204 TR 10:50, ENGI 320 M 2:00-4:50, MSNE 401 TR 9:25 - all match. The second time on some pages is the final exam, correctly not included.
+- Spot check clubs: UCI ACM (page title "ACM@UCI"; the checker missed the short form), UMich The Gentlemen, Cornell Ventures Accelerated, Purdue Omega Chi Epsilon, IU Hispanic Finance Association - all correct.
