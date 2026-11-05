@@ -2192,3 +2192,13 @@
   - Every *.stanford.edu page fails at the container proxy (502), so Stanford-hosted club pages can't be verified from here; this item stays slow.
 - Spot check courses (Rice course pages): CHEM 515 TR 10:50, MGMT 616 T 6:15-9:30, MDIA 204 TR 10:50, ENGI 320 M 2:00-4:50, MSNE 401 TR 9:25 - all match. The second time on some pages is the final exam, correctly not included.
 - Spot check clubs: UCI ACM (page title "ACM@UCI"; the checker missed the short form), UMich The Gentlemen, Cornell Ventures Accelerated, Purdue Omega Chi Epsilon, IU Hispanic Finance Association - all correct.
+
+## 2026-11-05 19:33 UTC
+- Santa Clara: scu.campusgroups.com redirects to the CampusGroups home page (not in use); no better public club list found.
+- Re-tested the TLS-blocked class sources (SJSU, UCSC, Stanford, Notre Dame, UCI, UNC): still blocked. The proxy shows a certificate failure, not a policy denial, so allowing hosts would not help. Covered by the open Railway question.
+- **W&M classes were incomplete. Found by spot check:** CRWR 368 has sections 02, 03 and 04 live, but we had one.
+  - Cause: the FOSE reader only treated LEC/SEM as main sections. W&M names them LC, LC1-9, L10-15, SM, SM1-9, S10-15, SO, SD and WK, so none matched and every course fell back to its first section.
+  - Fixed: those types now count; labs, discussions, independent study, thesis, applied music and ensembles stay out, as elsewhere.
+  - Re-collected: 2,231 → 3,200 classes (Fall 1,597 + Spring 1,603). CRWR 368 now shows all three Fall sections. Audit clean; 2 entries moved to courses-dropped.
+- Spot check courses (W&M live search): ART 332 TR 5-7:50 pm, CRWR 368 02 MW 3:30, MSCI 562 MW 11, APSC 450 TR 2:00, PHIL 311 MW 3:30 - times match (and CRWR 368 found the bug above).
+- Spot check clubs: UF Agronomy-Soils Club, UW PUGS, USC Emily Shane Foundation Club, UNC ESE Student Organization fine. Syracuse Delta Sigma Pi (syr.dsp.org) fails TLS from here.

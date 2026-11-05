@@ -575,7 +575,8 @@ function foseSource(schoolId: string, host: string): CourseSource {
     for (const r of rows) { if (!r.code || !r.meetingTimes || r.stat === 'X' || (r.isCancelled && r.isCancelled !== '0')) continue; (byCourse.get(r.code) ?? byCourse.set(r.code, []).get(r.code)!).push(r); }
     const out: CatalogCourse[] = [];
     for (const [code, secs] of byCourse) {
-      const lectures = secs.filter((x) => /^LEC|^SEM|^LAB$/.test(x.schd) && !/^LAB$/.test(x.schd)); const picked = lectures.length ? lectures : secs.slice(0, 1);
+      // 강의·세미나·스튜디오: LEC/SEM(Brown·Yale 식), W&M 은 LC·LC1…·L10…·SM·SM1…·S10…·SO·SD·WK — 전엔 W&M 이 하나도 안 맞아 과목마다 첫 분반만 남았다 (2026-11-05 CRWR 368)
+      const lectures = secs.filter((x) => /^(LEC|SEM|LC\d?|L1\d|SM\d?|S1\d|SO|SD|WK)$/.test(x.schd.trim())); const picked = lectures.length ? lectures : secs.slice(0, 1);
       const baseId = courseId(schoolId, code);
       picked.forEach((sec, i) => {
         let mts: { meet_day: string; start_time: string; end_time: string }[] = [];
