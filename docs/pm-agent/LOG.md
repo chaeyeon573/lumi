@@ -1997,3 +1997,9 @@
 - UCLA batch: Winter 2027 continuing.
 - Spot check classes (Duke): ARTS&SCI 104CN, ENVIRON 321A, MATH 353, SOCIOL 202, XTIANETH 757 (grad) — match.
 - Spot check clubs: Georgetown Law Restructuring Club, WFU Men's Club Golf match; Notre Dame College Democrats site 403 to automated requests; Emory Clairmont Tower and Vanderbilt GSS (fixed above).
+
+## 2026-11-05 00:33 UTC
+- UCLA Winter 2027 class times: 10 more subjects (Portuguese, Computing, Psychiatry, Psychology, Public Affairs, ...). File now 5,987 classes; Winter 158/190 subjects.
+- Spot check courses (Cornell): ENMGT 5920, HD 3250, CEE 4760, ARCH 6408, AEM 4670 all match the official class roster.
+- Spot check clubs: Vanderbilt Global China Connection, Emory Barkley Forum, Georgetown Law Restructuring Club, Wake Forest Club Golf (Men) open and name the club. Notre Dame College Democrats site answers 403 to our checker (sites.nd.edu blocks bots); not treated as dead, left as is.
+- Nothing blocked beyond the known TLS schools.

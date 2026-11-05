@@ -136255,5 +136255,4637 @@
   "termCode": "27W",
   "units": 2,
   "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSICS&crs_catlg_no=0293%20%20%20%20&class_id=718569200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pbmed0210_27w",
+  "schoolId": "s_ucla",
+  "code": "PBMED 210",
+  "title": "Computer Vision in Medical Imaging",
+  "department": "PBMED",
+  "instructor": "Brown, M.S.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:30"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PBMED%20%20&crs_catlg_no=0210%20%20%20%20&class_id=825060200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pbmed0217_27w",
+  "schoolId": "s_ucla",
+  "code": "PBMED 217",
+  "title": "Statistics and Data Analysis in Biomedical Physics",
+  "department": "PBMED",
+  "instructor": "Kim, G.J. McNitt-Gray, M.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:30"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PBMED%20%20&crs_catlg_no=0217%20%20%20%20&class_id=825102102&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0003_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 3",
+  "title": "Introduction to Human Physiology",
+  "department": "PHYSCI",
+  "instructor": "Henricks, M.",
+  "location": "Royce Hall 154",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0003%20%20%20%20&class_id=387009200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0005_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 5",
+  "title": "Issues in Human Physiology: Diet and Exercise",
+  "department": "PHYSCI",
+  "instructor": "Esdin, J.",
+  "location": "Broad Art Center 2160E",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0005%20%20%20%20&class_id=387015200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0105_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 105",
+  "title": "Physiological Mechanisms of Social Behavior",
+  "department": "PHYSCI",
+  "instructor": "Alward, B.",
+  "location": "Geology Building 4660",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:20"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0105%20%20%20%20&class_id=387330200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0109_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 109",
+  "title": "Cellular and Molecular Insights into Cardiovascular Development and Disease",
+  "department": "PHYSCI",
+  "instructor": "Quijada, P.J.",
+  "location": "Geology Building 4660",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0109%20%20%20%20&class_id=387349200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0111a_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 111A",
+  "title": "Foundations in Physiological Science",
+  "department": "PHYSCI",
+  "instructor": "Esdin, J. Henricks, M. Leitch, D.B.",
+  "location": "Franz Hall 1178",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 6,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0111A%20%20%20&class_id=387366200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0126c_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI C126",
+  "title": "Biological Clocks",
+  "department": "PHYSCI",
+  "instructor": "Colwell, C.S.",
+  "location": "Renee and David Kaplan Hall 135",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0126%20%20C%20&class_id=387456200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0144c_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI C144",
+  "title": "Neural Control of Physiological Systems",
+  "department": "PHYSCI",
+  "instructor": "Mulugeta, M.",
+  "location": "Geology Building 4660",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0144%20%20C%20&class_id=387564200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0149_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 149",
+  "title": "Systems Biology and Mechanisms of Major Cardiometabolic Diseases",
+  "department": "PHYSCI",
+  "instructor": "Yang, X.",
+  "location": "Geology Building 4660",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0149%20%20%20%20&class_id=387595200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0167_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 167",
+  "title": "Physiology of Nutrition",
+  "department": "PHYSCI",
+  "instructor": "Li, Z. Heber, D. TA",
+  "location": "Renee and David Kaplan Hall A51",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0167%20%20%20%20&class_id=387702200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0175m_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI M175",
+  "title": "Why Fido Can&#39;t Speak: Biological Evolution of Language",
+  "department": "PHYSCI",
+  "instructor": "White, S.A.",
+  "location": "Geology Building 4660",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0175%20%20M%20&class_id=387750200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0177_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 177",
+  "title": "Neuroethology",
+  "department": "PHYSCI",
+  "instructor": "Glanzman, D.L. Schlinger, B. Leitch, D.B.",
+  "location": "Public Affairs Building 1246",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0177%20%20%20%20&class_id=387762200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0180bm_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI M180B",
+  "title": "Neuroscience: From Molecules to Mind--Molecular and Developmental Neuroscience",
+  "department": "PHYSCI",
+  "instructor": "Akin, O. Trott, J.M. Abderemane Ali, F.",
+  "location": "Franz Hall 1178",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0180B%20M%20&class_id=387781200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0187a_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 187A",
+  "title": "Seeing Brain in Action",
+  "department": "PHYSCI",
+  "instructor": "Akin, O. Donlea, J.M.",
+  "location": "Mathematical Sciences 5217",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0187A%20%20%20&class_id=387822200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0194a_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 194A",
+  "title": "Research Group Seminars: Physiological Science",
+  "department": "PHYSCI",
+  "instructor": "McEvoy, M.M. Poe, G.R.",
+  "location": "Mathematical Sciences 5217",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0194A%20%20%20&class_id=387866200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0200_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 200",
+  "title": "Advanced Experimental Statistics",
+  "department": "PHYSCI",
+  "instructor": "TA Wollman, R.",
+  "location": "Boelter Hall 5419",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0200%20%20%20%20&class_id=787001200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0226c_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI C226",
+  "title": "Biological Clocks",
+  "department": "PHYSCI",
+  "instructor": "Colwell, C.S.",
+  "location": "Renee and David Kaplan Hall 135",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0226%20%20C%20&class_id=787156200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0244c_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI C244",
+  "title": "Neural Control of Physiological Systems",
+  "department": "PHYSCI",
+  "instructor": "Mulugeta, M.",
+  "location": "Geology Building 4660",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0244%20%20C%20&class_id=787264200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0270a_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 270A",
+  "title": "Modern Concepts in Physiology",
+  "department": "PHYSCI",
+  "instructor": "Paul, K.N. Walker, D.W.",
+  "location": "La Kretz Hall 120",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0270A%20%20%20&class_id=787420200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_physci0297_27w",
+  "schoolId": "s_ucla",
+  "code": "PHYSCI 297",
+  "title": "Seminar: Muscle Cell Biology",
+  "department": "PHYSCI",
+  "instructor": "Crosbie, R.H.",
+  "location": "Bunche Hall 2150",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PHYSCI%20&crs_catlg_no=0297%20%20%20%20&class_id=787582201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsh0101b_27w",
+  "schoolId": "s_ucla",
+  "code": "POLSH 101B",
+  "title": "Elementary Polish",
+  "department": "POLSH",
+  "instructor": "Koropeckyj, R.",
+  "location": "Renee and David Kaplan Hall 305",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 4,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POLSH%20%20&crs_catlg_no=0101B%20%20%20&class_id=419307201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0006_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 6",
+  "title": "Introduction to Data Analysis",
+  "department": "POL SCI",
+  "instructor": "Roberts, T.",
+  "location": "Haines Hall 118",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0006%20%20%20%20&class_id=324018200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0010_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 10",
+  "title": "Introduction to Political Theory",
+  "department": "POL SCI",
+  "instructor": "Branstetter, J.G.",
+  "location": "Dodd Hall 121",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0010%20%20%20%20&class_id=324070200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0020_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 20",
+  "title": "World Politics",
+  "department": "POL SCI",
+  "instructor": "Min, E.A.",
+  "location": "Dodd Hall 121",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0020%20%20%20%20&class_id=324094200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0030_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 30",
+  "title": "Politics and Strategy",
+  "department": "POL SCI",
+  "instructor": "Roberts, T.",
+  "location": "Haines Hall 118",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0030%20%20%20%20&class_id=324090200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0040_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 40",
+  "title": "Introduction to American Politics",
+  "department": "POL SCI",
+  "instructor": "Tausanovitch, C.N.",
+  "location": "Haines Hall 39",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0040%20%20%20%20&class_id=324121200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0050_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 50",
+  "title": "Introduction to Comparative Politics",
+  "department": "POL SCI",
+  "instructor": "Homola, J.",
+  "location": "Haines Hall 220",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0050%20%20%20%20&class_id=324141200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0089001_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 89",
+  "title": "Honors Seminars: Honors Seminar for Political Science 60",
+  "department": "POL SCI",
+  "instructor": "Lohmann, S.",
+  "location": "Public Affairs Building 2319",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "18:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0089%20%20%20%20&class_id=324267201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0111b_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 111B",
+  "title": "Early Modern Political Theory",
+  "department": "POL SCI",
+  "instructor": "Pagden, A.R.",
+  "location": "Perloff Hall 1102",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0111B%20%20%20&class_id=324350200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0111c_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 111C",
+  "title": "Late Modern Political Theory",
+  "department": "POL SCI",
+  "instructor": "Piano, N.",
+  "location": "Haines Hall A18",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0111C%20%20%20&class_id=324351100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0112bm_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI M112B",
+  "title": "Invention of Democracy",
+  "department": "POL SCI",
+  "instructor": "Sissa, G.",
+  "location": "Haines Hall 118",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0112B%20M%20&class_id=324358200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0116b_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 116B",
+  "title": "Continental Political Thought",
+  "department": "POL SCI",
+  "instructor": "Panagia, D.",
+  "location": "Haines Hall 118",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0116B%20%20%20&class_id=324380200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0119001_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 119",
+  "title": "Special Studies in Political Theory: Friedrich Nietzsche",
+  "department": "POL SCI",
+  "instructor": "Branstetter, J.G.",
+  "location": "Royce Hall 190",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0119%20%20%20%20&class_id=324390200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0119b001_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 119B",
+  "title": "Radical Disagreement: Lecture 1",
+  "department": "POL SCI",
+  "instructor": "Lohmann, S.",
+  "location": "Public Affairs Building 2319 Online - Asynchronous",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0119B%20%20%20&class_id=324392200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0120a_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 120A",
+  "title": "Foreign Relations of U.S.",
+  "department": "POL SCI",
+  "instructor": "Pike, S.W.",
+  "location": "Royce Hall 190",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0120A%20%20%20&class_id=324421200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0123a_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 123A",
+  "title": "International Law",
+  "department": "POL SCI",
+  "instructor": "Johns, L.N.",
+  "location": "Haines Hall 220",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0123A%20%20%20&class_id=324419200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0137a_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 137A",
+  "title": "International Relations Theory",
+  "department": "POL SCI",
+  "instructor": "Perry, J.",
+  "location": "Haines Hall 220",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0137A%20%20%20&class_id=324481200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0139001_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 139",
+  "title": "Special Studies in International Relations: Conflict Prevention and Peacebuilding",
+  "department": "POL SCI",
+  "instructor": "Dezzani Huff, C.",
+  "location": "Haines Hall A2",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0139%20%20%20%20&class_id=324499200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0140b_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 140B",
+  "title": "National Institutions: The Presidency",
+  "department": "POL SCI",
+  "instructor": "James, S.C.",
+  "location": "Royce Hall 362",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0140B%20%20%20&class_id=324534200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0141b_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 141B",
+  "title": "Electoral Politics: Public Opinion and Voting Behavior",
+  "department": "POL SCI",
+  "instructor": "Baylor, C.A.",
+  "location": "Haines Hall 118",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0141B%20%20%20&class_id=324538200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0141e_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 141E",
+  "title": "Electoral Politics: Elections, Media, and Strategy",
+  "department": "POL SCI",
+  "instructor": "Sherrer, T.A.",
+  "location": "Haines Hall A2",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0141E%20%20%20&class_id=324542200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0143c_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 143C",
+  "title": "Politics of American Suburbanization",
+  "department": "POL SCI",
+  "instructor": "de La Vega, I.M.",
+  "location": "Royce Hall 190",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0143C%20%20%20&class_id=324530200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0147c001_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 147C",
+  "title": "American Political Development: Institutional Development: Lecture 1",
+  "department": "POL SCI",
+  "instructor": "James, S.C.",
+  "location": "Royce Hall 190",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0147C%20%20%20&class_id=324586200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0156a_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 156A",
+  "title": "Government and Politics of Post-Communist States: Russia",
+  "department": "POL SCI",
+  "instructor": "Treisman, D.S.",
+  "location": "Haines Hall A2",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0156A%20%20%20&class_id=324617200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0159b_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 159B",
+  "title": "Government and Politics of China: China in Age of Reform",
+  "department": "POL SCI",
+  "instructor": "Lee, Y.B.",
+  "location": "Haines Hall A18",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "17:00",
+    "end": "18:15"
+   },
+   {
+    "day": 3,
+    "start": "17:00",
+    "end": "18:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0159B%20%20%20&class_id=324626200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0160_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 160",
+  "title": "Government and Politics of Japan",
+  "department": "POL SCI",
+  "instructor": "Thies, M.F.",
+  "location": "Dodd Hall 175",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0160%20%20%20%20&class_id=324629200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0163b_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 163B",
+  "title": "Colonialism, Discourse, and Democracy",
+  "department": "POL SCI",
+  "instructor": "Anderson, R.D.",
+  "location": "Public Affairs Building 1222",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0163B%20%20%20&class_id=324680200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0169002_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 169",
+  "title": "Special Studies in Comparative Politics: Mixed Methods Research",
+  "department": "POL SCI",
+  "instructor": "Mousa, S.",
+  "location": "Royce Hall 362",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0169%20%20%20%20&class_id=324699300&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0169001_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 169",
+  "title": "Special Studies in Comparative Politics: Problems of Prejudice",
+  "department": "POL SCI",
+  "instructor": "Mousa, S.",
+  "location": "Haines Hall 220",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0169%20%20%20%20&class_id=324699200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0170a001_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 170A",
+  "title": "Studies in Statistical Analysis of Political Data: Lecture 1",
+  "department": "POL SCI",
+  "instructor": "Torres Pacheco, S.",
+  "location": "Haines Hall 118",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0170A%20%20%20&class_id=324723200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0172_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 172",
+  "title": "Strategy and Conflict",
+  "department": "POL SCI",
+  "instructor": "Chwe, M.S.",
+  "location": "Public Affairs Building 1246",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0172%20%20%20%20&class_id=324732200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0181bm_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI M181B",
+  "title": "U.S. Latino Politics",
+  "department": "POL SCI",
+  "instructor": "Barreto, M.A.",
+  "location": "Bunche Hall 2209A",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0181B%20M%20&class_id=324791200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0185_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 185",
+  "title": "Racial and Ethnic Politics after 1965",
+  "department": "POL SCI",
+  "instructor": "Masuoka, N.R.",
+  "location": "Royce Hall 362",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0185%20%20%20%20&class_id=324810200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0186001_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 186",
+  "title": "Special Studies in Race, Ethnicity, and Politics: Immigration in the U.S.",
+  "department": "POL SCI",
+  "instructor": "Vargas Nunez, C.",
+  "location": "Haines Hall 220",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0186%20%20%20%20&class_id=324816200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0189001_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 189",
+  "title": "Advanced Honors Seminars: Advanced Honors Seminar for Political Science 115D",
+  "department": "POL SCI",
+  "instructor": "Lohmann, S.",
+  "location": "Public Affairs Building 2319",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "19:00",
+    "end": "19:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0189%20%20%20%20&class_id=324834201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0200b_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 200B",
+  "title": "Regression Analysis for Social Science",
+  "department": "POL SCI",
+  "instructor": "Lewis, J.B.",
+  "location": "Rolfe Hall 3105",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0200B%20%20%20&class_id=724002200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0204b_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 204B",
+  "title": "Game Theory in Politics II",
+  "department": "POL SCI",
+  "instructor": "Chwe, M.S.",
+  "location": "Renee and David Kaplan Hall A60",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0204B%20%20%20&class_id=724033200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0209001_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 209",
+  "title": "Special Topics in Formal Theory and Quantitative Methods: Seminar 1",
+  "department": "POL SCI",
+  "instructor": "Torres Pacheco, S.",
+  "location": "Renee and David Kaplan Hall A48",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0209%20%20%20%20&class_id=724048200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0218001_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 218",
+  "title": "Selected Topics in Political Theory: Approaches to History of Political Thought",
+  "department": "POL SCI",
+  "instructor": "Parasher, T.",
+  "location": "Bunche Hall 4276",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0218%20%20%20%20&class_id=724101200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0218002_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 218",
+  "title": "Selected Topics in Political Theory: Slavery, Ancient and Modern",
+  "department": "POL SCI",
+  "instructor": "Sissa, G.",
+  "location": "Royce Hall 166",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0218%20%20%20%20&class_id=724101201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0220b_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 220B",
+  "title": "International Relations Core Seminar II",
+  "department": "POL SCI",
+  "instructor": "Johns, L.N.",
+  "location": "Haines Hall 122",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0220B%20%20%20&class_id=724120200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0240b_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 240B",
+  "title": "Seminar: Comparative Politics",
+  "department": "POL SCI",
+  "instructor": "Treisman, D.S. Ross, M.L.",
+  "location": "Bunche Hall 4276",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0240B%20%20%20&class_id=724262200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0268001_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 268",
+  "title": "Seminar: Political and Electoral Problems: Seminar 1",
+  "department": "POL SCI",
+  "instructor": "Tausanovitch, C.N.",
+  "location": "Rolfe Hall 3120",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "15:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0268%20%20%20%20&class_id=724416200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0280b_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 280B",
+  "title": "Research Methods in Race-Ethnicity Politics",
+  "department": "POL SCI",
+  "instructor": "Barreto, M.A. Vargas Nunez, C.",
+  "location": "Bunche Hall 4357",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0280B%20%20%20&class_id=724527200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_polsci0289b001_27w",
+  "schoolId": "s_ucla",
+  "code": "POL SCI 289B",
+  "title": "Current Research on Race, Ethnicity, and Politics: Seminar 1",
+  "department": "POL SCI",
+  "instructor": "Masuoka, N.R.",
+  "location": "Haines Hall 110",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=POL%20SCI&crs_catlg_no=0289B%20%20%20&class_id=724587200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_portgse0002_27w",
+  "schoolId": "s_ucla",
+  "code": "PORTGSE 2",
+  "title": "Elementary Portuguese (Lec 1)",
+  "department": "PORTGSE",
+  "instructor": "Araujo, L. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1264",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PORTGSE&crs_catlg_no=0002%20%20%20%20&class_id=350008200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_portgse0002_27w_2",
+  "schoolId": "s_ucla",
+  "code": "PORTGSE 2",
+  "title": "Elementary Portuguese (Lec 2)",
+  "department": "PORTGSE",
+  "instructor": "Furtado, A. Falce-Robinson, J.",
+  "location": "Public Affairs Building 1264",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PORTGSE&crs_catlg_no=0002%20%20%20%20&class_id=350008202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_portgse0011b_27w",
+  "schoolId": "s_ucla",
+  "code": "PORTGSE 11B",
+  "title": "Intensive Portuguese",
+  "department": "PORTGSE",
+  "instructor": "Raupp Mayer, B. Falce-Robinson, J.",
+  "location": "Public Affairs Building 2317",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PORTGSE&crs_catlg_no=0011B%20%20%20&class_id=350034201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_portgse0040b001_27w",
+  "schoolId": "s_ucla",
+  "code": "PORTGSE 40B",
+  "title": "Portuguese, Brazilian, and African Literature in Translation: Brazilian Literature: Lecture 1",
+  "department": "PORTGSE",
+  "instructor": "Martins Lino, P.S.",
+  "location": "Dodd Hall 154",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PORTGSE&crs_catlg_no=0040B%20%20%20&class_id=350121201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_portgse0141c001_27w",
+  "schoolId": "s_ucla",
+  "code": "PORTGSE 141C",
+  "title": "Documentary Film: Afro-Luso- Brazilian Cinema and Short Filmmaking",
+  "department": "PORTGSE",
+  "instructor": "Martins Lino, P.S.",
+  "location": "Rolfe Hall 3105",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PORTGSE&crs_catlg_no=0141C%20%20%20&class_id=350548201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0001_27w",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 1",
+  "title": "Spreadsheets, Programming, and Their Application to Data Science",
+  "department": "COMPTNG",
+  "instructor": "Lin, B.",
+  "location": "Geology Building 3656",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=COMPTNG&crs_catlg_no=0001%20%20%20%20&class_id=157001200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0010a_27w",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 10A",
+  "title": "Introduction to Programming (Lec 1)",
+  "department": "COMPTNG",
+  "instructor": "Munoz Ewald, P.",
+  "location": "Geology Building 3656",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=COMPTNG&crs_catlg_no=0010A%20%20%20&class_id=157050200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0010a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 10A",
+  "title": "Introduction to Programming (Lec 2)",
+  "department": "COMPTNG",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=COMPTNG&crs_catlg_no=0010A%20%20%20&class_id=157050210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0010a_27w_3",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 10A",
+  "title": "Introduction to Programming (Lec 3)",
+  "department": "COMPTNG",
+  "instructor": "Munoz Ewald, P.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=COMPTNG&crs_catlg_no=0010A%20%20%20&class_id=157050220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0010a_27w_4",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 10A",
+  "title": "Introduction to Programming (Lec 4)",
+  "department": "COMPTNG",
+  "instructor": "Bhusal, G.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=COMPTNG&crs_catlg_no=0010A%20%20%20&class_id=157050230&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0010b_27w",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 10B",
+  "title": "Intermediate Programming (Lec 1)",
+  "department": "COMPTNG",
+  "instructor": "Feng, X.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=COMPTNG&crs_catlg_no=0010B%20%20%20&class_id=157051200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0010b_27w_2",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 10B",
+  "title": "Intermediate Programming (Lec 2)",
+  "department": "COMPTNG",
+  "instructor": "Andrews, M.J.",
+  "location": "Mathematical Sciences 5200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "14:50"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=COMPTNG&crs_catlg_no=0010B%20%20%20&class_id=157051210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0016a_27w",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 16A",
+  "title": "Python with Applications I (Lec 1)",
+  "department": "COMPTNG",
+  "location": "Mathematical Sciences 2000",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "09:50"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=COMPTNG&crs_catlg_no=0016A%20%20%20&class_id=157048200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0016a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 16A",
+  "title": "Python with Applications I (Lec 2)",
+  "department": "COMPTNG",
+  "instructor": "Park, Y.",
+  "location": "Mathematical Sciences 2000",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=COMPTNG&crs_catlg_no=0016A%20%20%20&class_id=157048210&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0016a_27w_3",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 16A",
+  "title": "Python with Applications I (Lec 3)",
+  "department": "COMPTNG",
+  "instructor": "Chen, Q.",
+  "location": "Mathematical Sciences 2000",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "13:00",
+    "end": "13:50"
+   },
+   {
+    "day": 4,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=COMPTNG&crs_catlg_no=0016A%20%20%20&class_id=157048220&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0016a_27w_4",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 16A",
+  "title": "Python with Applications I (Lec 4)",
+  "department": "COMPTNG",
+  "instructor": "Bhusal, G.",
+  "location": "Mathematical Sciences 2000",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   },
+   {
+    "day": 4,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=COMPTNG&crs_catlg_no=0016A%20%20%20&class_id=157048230&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0016b_27w",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 16B",
+  "title": "Python with Applications II",
+  "department": "COMPTNG",
+  "instructor": "Gurevich, D.",
+  "location": "Mathematical Sciences 2000",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   },
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=COMPTNG&crs_catlg_no=0016B%20%20%20&class_id=157054200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_comptng0040a_27w",
+  "schoolId": "s_ucla",
+  "code": "COMPTNG 40A",
+  "title": "Introduction to Programming for Internet",
+  "department": "COMPTNG",
+  "instructor": "Weihs, A.",
+  "location": "Mathematical Sciences 2000",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   },
+   {
+    "day": 4,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=COMPTNG&crs_catlg_no=0040A%20%20%20&class_id=157166200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psyctry0019001_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCTRY 19",
+  "title": "Mental Illness and Movies",
+  "department": "PSYCTRY",
+  "instructor": "Taylor, D.",
+  "location": "Wooden Recreation and Sports Center 1402",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCTRY&crs_catlg_no=0019%20%20%20%20&class_id=326057100&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psyctry0176_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCTRY 176",
+  "title": "Brain and Behavioral Health: Adulthood and Aging",
+  "department": "PSYCTRY",
+  "instructor": "Lee, S.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCTRY&crs_catlg_no=0176%20%20%20%20&class_id=326480200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psyctry0178_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCTRY 178",
+  "title": "Cannabis and Cannabinoids: From Pharmacology to Public Policy",
+  "department": "PSYCTRY",
+  "instructor": "Evans, C.J. Cooper, Z.D.",
+  "location": "Semel Institute for Neuroscience and HumanBehavior C8183H",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "15:00"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCTRY&crs_catlg_no=0178%20%20%20%20&class_id=326635200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psyctry0230m_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCTRY M230",
+  "title": "Communication of Science",
+  "department": "PSYCTRY",
+  "instructor": "Ranganath, V.K. Elashoff, D.",
+  "location": "Off campus",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:50"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCTRY&crs_catlg_no=0230%20%20M%20&class_id=726180200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0010_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 10",
+  "title": "Introductory Psychology (Lec 1)",
+  "department": "PSYCH",
+  "instructor": "Paquette-Smith, M. TA",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 2,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0010%20%20%20%20&class_id=328056200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0010_27w_2",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 10",
+  "title": "Introductory Psychology (Lec 2)",
+  "department": "PSYCH",
+  "instructor": "The Staff TA",
+  "location": "Dodd Hall 147",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:50"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0010%20%20%20%20&class_id=328056201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0020a_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 20A",
+  "title": "MATLAB Programming for Behavioral Sciences",
+  "department": "PSYCH",
+  "instructor": "Frane, A.V.",
+  "location": "Pritzker Hall 1531",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0020A%20%20%20&class_id=328062200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0085_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 85",
+  "title": "Introduction to Cognitive Science",
+  "department": "PSYCH",
+  "instructor": "Blank, I. TA",
+  "location": "Franz Hall 1260",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0085%20%20%20%20&class_id=328194200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0100a_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 100A",
+  "title": "Psychological Statistics (Lec 1)",
+  "department": "PSYCH",
+  "instructor": "Enders, C.K. TA",
+  "location": "La Kretz Hall 110 Online",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "09:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0100A%20%20%20&class_id=328304200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0100a_27w_2",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 100A",
+  "title": "Psychological Statistics (Lec 2)",
+  "department": "PSYCH",
+  "instructor": "Ichien, N. TA",
+  "location": "Young Hall CS76 Online",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 4,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0100A%20%20%20&class_id=328304201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0100b_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 100B",
+  "title": "Research Methods in Psychology",
+  "department": "PSYCH",
+  "instructor": "Firstenberg, I. TA",
+  "location": "Moore Hall 100",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "17:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0100B%20%20%20&class_id=328305200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0101_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 101",
+  "title": "General Psychology Laboratory (Lab 1)",
+  "department": "PSYCH",
+  "instructor": "McAuliffe, S.P. TA",
+  "location": "Franz Hall 3312",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0101%20%20%20%20&class_id=328307201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0101_27w_2",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 101",
+  "title": "General Psychology Laboratory (Lab 2)",
+  "department": "PSYCH",
+  "instructor": "McAuliffe, S.P. TA",
+  "location": "Franz Hall 3312",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "14:50"
+   },
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0101%20%20%20%20&class_id=328307202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0110_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 110",
+  "title": "Fundamentals of Learning",
+  "department": "PSYCH",
+  "instructor": "Boorman, E.D.",
+  "location": "Broad Art Center 2160E",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0110%20%20%20%20&class_id=328336200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0112b_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 112B",
+  "title": "Psychobiology of Fear and Anxiety",
+  "department": "PSYCH",
+  "instructor": "Trott, J.M.",
+  "location": "Franz Hall 1260",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0112B%20%20%20&class_id=328346200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0112f_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 112F",
+  "title": "Computational Neuroethology",
+  "department": "PSYCH",
+  "instructor": "Wikenheiser, A.M.",
+  "location": "Franz Hall A279",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0112F%20%20%20&class_id=328372201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0115_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 115",
+  "title": "Principles of Behavioral Neuroscience",
+  "department": "PSYCH",
+  "instructor": "Adhikari, A.",
+  "location": "Moore Hall 100",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0115%20%20%20%20&class_id=328350200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0116am_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH M116A",
+  "title": "Behavioral Neuroscience Laboratory (Lec 1)",
+  "department": "PSYCH",
+  "instructor": "Trott, J.M. Bitan, G. Wong, J. Izquierdo, A.",
+  "location": "Perloff Hall 1102",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0116A%20M%20&class_id=328359200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0116am_27w_2",
+  "schoolId": "s_ucla",
+  "code": "PSYCH M116A",
+  "title": "Behavioral Neuroscience Laboratory (Lec 2)",
+  "department": "PSYCH",
+  "instructor": "Trott, J.M. Bitan, G. Wong, J. Izquierdo, A.",
+  "location": "Perloff Hall 1102",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0116A%20M%20&class_id=328359202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0116am_27w_3",
+  "schoolId": "s_ucla",
+  "code": "PSYCH M116A",
+  "title": "Behavioral Neuroscience Laboratory (Lec 3)",
+  "department": "PSYCH",
+  "instructor": "Trott, J.M. Bitan, G. Wong, J. Izquierdo, A.",
+  "location": "Perloff Hall 1102",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0116A%20M%20&class_id=328359203&class_no=%20003%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0116am_27w_4",
+  "schoolId": "s_ucla",
+  "code": "PSYCH M116A",
+  "title": "Behavioral Neuroscience Laboratory (Lec 4)",
+  "department": "PSYCH",
+  "instructor": "Trott, J.M. Bitan, G. Wong, J. Izquierdo, A.",
+  "location": "Perloff Hall 1102",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0116A%20M%20&class_id=328359204&class_no=%20004%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0116am_27w_5",
+  "schoolId": "s_ucla",
+  "code": "PSYCH M116A",
+  "title": "Behavioral Neuroscience Laboratory (Lec 5)",
+  "department": "PSYCH",
+  "instructor": "Trott, J.M. Bitan, G. Wong, J. Izquierdo, A.",
+  "location": "Perloff Hall 1102",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0116A%20M%20&class_id=328359205&class_no=%20005%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0116am_27w_6",
+  "schoolId": "s_ucla",
+  "code": "PSYCH M116A",
+  "title": "Behavioral Neuroscience Laboratory (Lec 6)",
+  "department": "PSYCH",
+  "instructor": "Trott, J.M. Bitan, G. Wong, J. Izquierdo, A.",
+  "location": "Perloff Hall 1102",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0116A%20M%20&class_id=328359206&class_no=%20006%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0116b_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 116B",
+  "title": "Human Neuropsychology Laboratory",
+  "department": "PSYCH",
+  "instructor": "Sakon, J.J. TA",
+  "location": "Pritzker Hall 1531",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0116B%20%20%20&class_id=328179200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0117bm_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH M117B",
+  "title": "Neuroscience: From Molecules to Mind--Molecular and Developmental Neuroscience",
+  "department": "PSYCH",
+  "instructor": "Akin, O. Trott, J.M. Abderemane Ali, F.",
+  "location": "Franz Hall 1178",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "16:00",
+    "end": "17:50"
+   },
+   {
+    "day": 3,
+    "start": "16:00",
+    "end": "17:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0117B%20M%20&class_id=328330200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0118_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 118",
+  "title": "Comparative Psychobiology",
+  "department": "PSYCH",
+  "instructor": "Blaisdell, A.P. TA",
+  "location": "Haines Hall A2",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0118%20%20%20%20&class_id=328360200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0119d_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 119D",
+  "title": "Learning in Biological and Artificial Neural Networks",
+  "department": "PSYCH",
+  "instructor": "Blair, H.T.",
+  "location": "Bunche Hall 3211",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0119D%20%20%20&class_id=328389201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0119y_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 119Y",
+  "title": "Psychobiology of Sexual Behavior",
+  "department": "PSYCH",
+  "instructor": "Wong, J. TA",
+  "location": "Franz Hall 1260",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0119Y%20%20%20&class_id=328513200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0120a_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 120A",
+  "title": "Cognitive Psychology",
+  "department": "PSYCH",
+  "instructor": "Ritchey, M.",
+  "location": "Moore Hall 100",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0120A%20%20%20&class_id=328449200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0120b_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 120B",
+  "title": "Sensation and Perception",
+  "department": "PSYCH",
+  "instructor": "Murray, C.A.",
+  "location": "Bunche Hall 2209A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0120B%20%20%20&class_id=328450200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0121_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 121",
+  "title": "Laboratory in Cognitive Psychology (Lab 1)",
+  "department": "PSYCH",
+  "instructor": "Frane, A.V. TA",
+  "location": "Franz Hall 3312",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0121%20%20%20%20&class_id=328397200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0121_27w_2",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 121",
+  "title": "Laboratory in Cognitive Psychology (Lab 2)",
+  "department": "PSYCH",
+  "instructor": "McAuliffe, S.P. TA",
+  "location": "Franz Hall 3312",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:30",
+    "end": "15:20"
+   },
+   {
+    "day": 2,
+    "start": "13:30",
+    "end": "15:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0121%20%20%20%20&class_id=328397201&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0124d_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 124D",
+  "title": "Consciousness: Current Debates",
+  "department": "PSYCH",
+  "instructor": "Monti, M.M.",
+  "location": "Royce Hall 162",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0124D%20%20%20&class_id=328313201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0124e_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 124E",
+  "title": "Decision Psychology and Neuroscience",
+  "department": "PSYCH",
+  "instructor": "Krajbich, I.M.",
+  "location": "La Kretz Hall 120",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0124E%20%20%20&class_id=328344201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0124g_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 124G",
+  "title": "Cognition and Successful Aging",
+  "department": "PSYCH",
+  "instructor": "Castel, A.D.",
+  "location": "Pritzker Hall 1531",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0124G%20%20%20&class_id=328410200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0124j_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 124J",
+  "title": "Perception, Learning, and Learning Technology",
+  "department": "PSYCH",
+  "instructor": "Kellman, P.",
+  "location": "Franz Hall A279",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0124J%20%20%20&class_id=328441201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0126_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 126",
+  "title": "Clinical Psychology Laboratory (Lab 1)",
+  "department": "PSYCH",
+  "instructor": "Rith-Najarian, L.R TA",
+  "location": "Pritzker Hall 3571",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "10:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0126%20%20%20%20&class_id=328432200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0126_27w_2",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 126",
+  "title": "Clinical Psychology Laboratory (Lab 2)",
+  "department": "PSYCH",
+  "instructor": "Karlsgodt, K.H. TA",
+  "location": "Franz Hall 3351",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0126%20%20%20%20&class_id=328432202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0127a_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 127A",
+  "title": "Clinical Psychological Science",
+  "department": "PSYCH",
+  "instructor": "Chavira, D.A.",
+  "location": "Bunche Hall 1209B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0127A%20%20%20&class_id=328472200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0127b_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 127B",
+  "title": "Clinical Psychological Science: Biological Bases",
+  "department": "PSYCH",
+  "instructor": "Ray, L.A.",
+  "location": "Bunche Hall 2209A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0127B%20%20%20&class_id=328473200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0128a_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 128A",
+  "title": "Youth Behavioral Health Intervention",
+  "department": "PSYCH",
+  "instructor": "Park, A.L.",
+  "location": "Kinsey Science Teaching Pavilion 1240B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0128A%20%20%20&class_id=328428201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0130_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 130",
+  "title": "Developmental Psychology",
+  "department": "PSYCH",
+  "instructor": "Goff, B.S.",
+  "location": "La Kretz Hall 110",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0130%20%20%20%20&class_id=328426200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0131_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 131",
+  "title": "Research in Developmental Psychology",
+  "department": "PSYCH",
+  "instructor": "Sandhofer, C.M.",
+  "location": "Pritzker Hall 3581",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0131%20%20%20%20&class_id=328431201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0133b_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 133B",
+  "title": "Cognitive Development",
+  "department": "PSYCH",
+  "instructor": "Ankowski, A.N. TA",
+  "location": "Haines Hall 39",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0133B%20%20%20&class_id=328455200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0133j_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 133J",
+  "title": "Literacy Development",
+  "department": "PSYCH",
+  "instructor": "Ankowski, A.N. TA",
+  "location": "Haines Hall 39",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0133J%20%20%20&class_id=328474201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0134b_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 134B",
+  "title": "Applied Developmental Psychology: Preschool/School-Age Care and Education",
+  "department": "PSYCH",
+  "instructor": "Gross, E.F. TA",
+  "location": "Pritzker Hall 3581",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "14:45"
+   },
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "14:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0134B%20%20%20&class_id=328478200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0134k_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 134K",
+  "title": "Effects of Early Adversity and Trauma",
+  "department": "PSYCH",
+  "instructor": "Goff, B.S. TA",
+  "location": "Kinsey Science Teaching Pavilion 1220B",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0134K%20%20%20&class_id=328476201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0135_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 135",
+  "title": "Social Psychology",
+  "department": "PSYCH",
+  "instructor": "Krems, J.A.",
+  "location": "Moore Hall 100",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0135%20%20%20%20&class_id=328466200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0136a_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 136A",
+  "title": "Social Psychology Laboratory",
+  "department": "PSYCH",
+  "instructor": "Smurda, J.D. TA",
+  "location": "Franz Hall A279",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "09:30",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0136A%20%20%20&class_id=328475200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0136b_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 136B",
+  "title": "Nonexperimental Methods in Social Psychology",
+  "department": "PSYCH",
+  "instructor": "Huo, Y.J.",
+  "location": "Pritzker Hall 3571",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0136B%20%20%20&class_id=328483201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0137i_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 137I",
+  "title": "Social Influence",
+  "department": "PSYCH",
+  "instructor": "Smurda, J.D. TA",
+  "location": "Franz Hall 1260",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0137I%20%20%20&class_id=328519200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0137mm_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH M137M",
+  "title": "Social Cognition",
+  "department": "PSYCH",
+  "instructor": "Stroessner, S.J.",
+  "location": "Royce Hall 362",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0137M%20M%20&class_id=328508201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0150_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 150",
+  "title": "Introduction to Health Psychology",
+  "department": "PSYCH",
+  "instructor": "Robles, T.F. TA",
+  "location": "Moore Hall 100",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0150%20%20%20%20&class_id=328600200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0151_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 151",
+  "title": "Research Methods in Health Psychology",
+  "department": "PSYCH",
+  "instructor": "Tomiyama, J. TA",
+  "location": "Pritzker Hall 3571",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:50"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0151%20%20%20%20&class_id=328606200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0155a_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 155A",
+  "title": "Social Neuroscience",
+  "department": "PSYCH",
+  "instructor": "Parkinson, C.M. TA",
+  "location": "Haines Hall 39",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0155A%20%20%20&class_id=328554201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0155b_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 155B",
+  "title": "Psychology and Neuroscience of Emotion",
+  "department": "PSYCH",
+  "instructor": "Satpute, A.",
+  "location": "Broad Art Center 2160E",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0155B%20%20%20&class_id=328555200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0156a_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 156A",
+  "title": "Conscious Experience: Social Cognitive Neuroscience Approach",
+  "department": "PSYCH",
+  "instructor": "Lieberman, M.D.",
+  "location": "Young Hall CS50",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0156A%20%20%20&class_id=328556200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0158_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 158",
+  "title": "Social and Affective Neuroscience Laboratory",
+  "department": "PSYCH",
+  "instructor": "Castrellon, J.",
+  "location": "Franz Hall 3351",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0158%20%20%20%20&class_id=328558201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0162_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 162",
+  "title": "Psychology of Addiction",
+  "department": "PSYCH",
+  "instructor": "Murray, C.",
+  "location": "Haines Hall A2",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0162%20%20%20%20&class_id=328585201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0184b_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 184B",
+  "title": "Psychology Research Opportunity Program Seminar",
+  "department": "PSYCH",
+  "instructor": "Wilson, P.A.",
+  "location": "Pritzker Hall 1531",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0184B%20%20%20&class_id=328802201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0186a_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 186A",
+  "title": "Cognitive Science Laboratory: Introduction to Theory and Simulation",
+  "department": "PSYCH",
+  "instructor": "Lu, H.",
+  "location": "Franz Hall 3290",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:00",
+    "end": "13:50"
+   },
+   {
+    "day": 3,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0186A%20%20%20&class_id=328668201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0186b_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 186B",
+  "title": "Cognitive Science Laboratory: Neural Networks",
+  "department": "PSYCH",
+  "instructor": "Liu, Z.",
+  "location": "Franz Hall 3351",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 4,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0186B%20%20%20&class_id=328674200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0188b001_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 188B",
+  "title": "Special Courses in Psychology: Language in Intelligent Machines",
+  "department": "PSYCH",
+  "instructor": "Blank, I.",
+  "location": "Franz Hall A279",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0188B%20%20%20&class_id=328830201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0188b002_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 188B",
+  "title": "Special Courses in Psychology: Sport Psychology",
+  "department": "PSYCH",
+  "instructor": "Givvin, K.B.",
+  "location": "Haines Hall 39",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 3,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0188B%20%20%20&class_id=328830202&class_no=%20002%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0191bh_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 191BH",
+  "title": "Departmental Honors Research Seminars",
+  "department": "PSYCH",
+  "instructor": "Eisenberger, N.I.",
+  "location": "Pritzker Hall 3581",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0191BH%20%20&class_id=328848201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0194a_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 194A",
+  "title": "Internship Seminars: Psychology",
+  "department": "PSYCH",
+  "instructor": "Karlsgodt, K.H. TA",
+  "location": "Pritzker Hall 1521",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0194A%20%20%20&class_id=328864201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0194c_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 194C",
+  "title": "Internship Seminars: Youth Behavioral Health",
+  "department": "PSYCH",
+  "instructor": "Chorpita, B.F.",
+  "location": "Franz Hall 2258A",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0194C%20%20%20&class_id=328868201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0203_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 203",
+  "title": "Grant Writing for Neuroscientists",
+  "department": "PSYCH",
+  "instructor": "Wassum, K.",
+  "location": "Pritzker Hall 1521",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "12:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0203%20%20%20%20&class_id=728013200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0212_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 212",
+  "title": "Evaluation of Research Literature in Physiological Psychology",
+  "department": "PSYCH",
+  "instructor": "Blaisdell, A.P.",
+  "location": "Franz Hall 3258",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0212%20%20%20%20&class_id=728073200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0218_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 218",
+  "title": "Research Methods in Health Psychology",
+  "department": "PSYCH",
+  "instructor": "Tomiyama, J.",
+  "location": "Pritzker Hall 3535",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0218%20%20%20%20&class_id=728107201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0219_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 219",
+  "title": "Health Psychology Lecture Series",
+  "department": "PSYCH",
+  "instructor": "Wilson, P.A.",
+  "location": "Pritzker Hall 3535",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "12:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0219%20%20%20%20&class_id=728114200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0222em_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH M222E",
+  "title": "Foundations of Organizational Behavior",
+  "department": "PSYCH",
+  "instructor": "Devoe, S.E.",
+  "location": "Gold Hall B312",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0222E%20M%20&class_id=728134201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0222gm_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH M222G",
+  "title": "Social Vision",
+  "department": "PSYCH",
+  "instructor": "Johnson, K.",
+  "location": "No Location",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "12:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0222G%20M%20&class_id=728146201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0230_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 230",
+  "title": "Current Literature in Social and Affective Neuroscience",
+  "department": "PSYCH",
+  "instructor": "Castrellon, J.",
+  "location": "Franz Hall A258",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:30"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0230%20%20%20%20&class_id=728280201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0240c_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 240C",
+  "title": "Developmental Psychobiology",
+  "department": "PSYCH",
+  "instructor": "Callahan, B.R.",
+  "location": "Pritzker Hall 1521",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "13:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0240C%20%20%20&class_id=728243201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0245m_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH M245",
+  "title": "Personality Development and Education",
+  "department": "PSYCH",
+  "instructor": "Wood, J.J.",
+  "location": "Moore Hall 2016",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0245%20%20M%20&class_id=728267201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0248m_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH M248",
+  "title": "Brain and Behavioral Development during Adolescence",
+  "department": "PSYCH",
+  "instructor": "Fuligni, A.J.",
+  "location": "Pritzker Hall 2506",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "12:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0248%20%20M%20&class_id=728291201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0250c_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 250C",
+  "title": "Advanced Psychological Statistics",
+  "department": "PSYCH",
+  "instructor": "Montoya, A.K. TA",
+  "location": "Pritzker Hall 1531",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0250C%20%20%20&class_id=728302201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0256a_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 256A",
+  "title": "Introduction to Multilevel Modeling",
+  "department": "PSYCH",
+  "instructor": "Enders, C.K.",
+  "location": "Pritzker Hall 1531",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 2,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0256A%20%20%20&class_id=728338201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0260b_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 260B",
+  "title": "Proseminar: Cognitive Psychology",
+  "department": "PSYCH",
+  "instructor": "Shams, L.",
+  "location": "Pritzker Hall 1531",
+  "meetings": [
+   {
+    "day": 4,
+    "start": "12:00",
+    "end": "13:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0260B%20%20%20&class_id=728361200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0262_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 262",
+  "title": "Human Learning and Memory",
+  "department": "PSYCH",
+  "instructor": "Clewett, D.",
+  "location": "Pritzker Hall 3572",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0262%20%20%20%20&class_id=728374201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0270b_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 270B",
+  "title": "Foundations of Clinical Psychology",
+  "department": "PSYCH",
+  "instructor": "Chavira, D.A. Ho, T.C. Lee, S.S. Chorpita, B.F. Bower, J.E. Bradbury, T. Yee-Bradbury, C.M. Craske, M. Ng, L.C. Karlsgodt, K.H. Green, S.A.",
+  "location": "Franz Hall 2220",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "11:50"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0270B%20%20%20&class_id=728422200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0273b_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 273B",
+  "title": "Professional and Ethical Issues in Clinical Psychology",
+  "department": "PSYCH",
+  "instructor": "Lebeau, R.T.",
+  "location": "Franz Hall 2220",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "13:00",
+    "end": "14:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 2,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0273B%20%20%20&class_id=728445200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0274m_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH M274",
+  "title": "Health Status and Health Behaviors of Racial and Ethnic Minority Populations",
+  "department": "PSYCH",
+  "instructor": "Mays, V.M.",
+  "location": "Pritzker Hall 3572",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "16:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0274%20%20M%20&class_id=728449201&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0276_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 276",
+  "title": "Children with Learning and Related Behavioral Problems: School Policy and Practice",
+  "department": "PSYCH",
+  "instructor": "Adelman, H.S.",
+  "location": "Pritzker Hall 3535",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0276%20%20%20%20&class_id=728458200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0277a_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 277A",
+  "title": "Advanced Clinical Assessment",
+  "department": "PSYCH",
+  "instructor": "Chung, A.S. Sayegh, P. TA",
+  "location": "Franz Hall 2220 Franz Hall 2220",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "10:50"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0277A%20%20%20&class_id=728464200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0289b_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 289B",
+  "title": "Current Issues in Clinical Psychology",
+  "department": "PSYCH",
+  "instructor": "Sayegh, P. Ho, T.C.",
+  "location": "Pritzker Hall 3571",
+  "meetings": [
+   {
+    "day": 3,
+    "start": "13:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0289B%20%20%20&class_id=728535200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0292_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 292",
+  "title": "Seminar in Addiction Neuroscience",
+  "department": "PSYCH",
+  "instructor": "Ray, L.A. Wassum, K.",
+  "location": "Pritzker Hall 3517",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0292%20%20%20%20&class_id=728550200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_psych0495a_27w",
+  "schoolId": "s_ucla",
+  "code": "PSYCH 495A",
+  "title": "Teaching Assistant Training Seminar: Presentation of Psychological Materials I",
+  "department": "PSYCH",
+  "instructor": "Paquette-Smith, M.",
+  "location": "Pritzker Hall 3535",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 1,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PSYCH%20%20&crs_catlg_no=0495A%20%20%20&class_id=728795200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0020_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF 20",
+  "title": "Power, Politics, and Policy Change",
+  "department": "PUB AFF",
+  "instructor": "Sherrer, T.A.",
+  "location": "Renee and David Kaplan Hall 169",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "12:30",
+    "end": "13:45"
+   },
+   {
+    "day": 2,
+    "start": "12:30",
+    "end": "13:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0020%20%20%20%20&class_id=441051200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0040_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF 40",
+  "title": "Microeconomics for Public Affairs",
+  "department": "PUB AFF",
+  "instructor": "Yin, W.E.",
+  "location": "Public Affairs Building 2355",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0040%20%20%20%20&class_id=441120101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0060_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF 60",
+  "title": "Using Data to Learn about Society: Introduction to Empirical Research and Statistics",
+  "department": "PUB AFF",
+  "instructor": "Phillips, M.",
+  "location": "Renee and David Kaplan Hall A65",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0060%20%20%20%20&class_id=441180200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0080_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF 80",
+  "title": "How Social Environments Shape Human Development",
+  "department": "PUB AFF",
+  "instructor": "Wray-Lake, L. Zhang, M.",
+  "location": "Kinsey Science Teaching Pavilion 1200B",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 3,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0080%20%20%20%20&class_id=441240200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0109m_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF M109",
+  "title": "Introduction to Cities and Planning",
+  "department": "PUB AFF",
+  "instructor": "Goh, K.",
+  "location": "Public Affairs Building 1246",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 2,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0109%20%20M%20&class_id=441354200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0114_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF 114",
+  "title": "People, Organizations, and Systems",
+  "department": "PUB AFF",
+  "instructor": "Leap, J.J. Hogenkamp, S.M. Li, J. Wang, Q. Wu, C.",
+  "location": "Rolfe Hall 1200",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "16:00",
+    "end": "18:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0114%20%20%20%20&class_id=441384101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0115_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF 115",
+  "title": "Using Quantitative Methods to Understand Social Problems and their Potential Solutions",
+  "department": "PUB AFF",
+  "instructor": "Opper, I.",
+  "location": "Dodd Hall 161",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0115%20%20%20%20&class_id=441390101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0116_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF 116",
+  "title": "Using Qualitative Methods to Understand Social Problems and Their Potential Solutions",
+  "department": "PUB AFF",
+  "instructor": "Hill, J.D.",
+  "location": "Haines Hall A2",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "14:00",
+    "end": "15:15"
+   },
+   {
+    "day": 3,
+    "start": "14:00",
+    "end": "15:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0116%20%20%20%20&class_id=441396200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0124m_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF M124",
+  "title": "Child Welfare Policy in America",
+  "department": "PUB AFF",
+  "instructor": "Dudley, T.I.",
+  "location": "Franz Hall 2288",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0124%20%20M%20&class_id=441424200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0134_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF 134",
+  "title": "Politics of U.S. Health Policy",
+  "department": "PUB AFF",
+  "instructor": "Peterson, M.A. TA",
+  "location": "Public Affairs Building 2355",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "10:00",
+    "end": "11:50"
+   },
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0134%20%20%20%20&class_id=441506200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0153m_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF M153",
+  "title": "Parking and the City",
+  "department": "PUB AFF",
+  "instructor": "Millard-Ball, A.S.",
+  "location": "Public Affairs Building 5391",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "09:00",
+    "end": "11:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0153%20%20M%20&class_id=441520200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0155_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF 155",
+  "title": "Economics and Equity in Transportation Systems and Policies",
+  "department": "PUB AFF",
+  "instructor": "Bills, T.S. TA",
+  "location": "Dodd Hall 78",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "08:00",
+    "end": "09:15"
+   },
+   {
+    "day": 2,
+    "start": "08:00",
+    "end": "09:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0155%20%20%20%20&class_id=441593101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0160m_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF M160",
+  "title": "Urban Sustainability",
+  "department": "PUB AFF",
+  "instructor": "Turner, V.K. TA",
+  "location": "Royce Hall 164",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "09:30",
+    "end": "12:20"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0160%20%20M%20&class_id=441667200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0161m_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF M161",
+  "title": "Environmental Justice through Multiple Lenses",
+  "department": "PUB AFF",
+  "instructor": "Koslov, E.C. Do, T.",
+  "location": "Renee and David Kaplan Hall 135",
+  "meetings": [
+   {
+    "day": 0,
+    "start": "11:00",
+    "end": "12:15"
+   },
+   {
+    "day": 2,
+    "start": "11:00",
+    "end": "12:15"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0161%20%20M%20&class_id=441666200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0162_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF 162",
+  "title": "U.S. Environmental Politics",
+  "department": "PUB AFF",
+  "instructor": "Mullin, M. Carmel, A.",
+  "location": "Dodd Hall 78",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "15:30",
+    "end": "16:45"
+   },
+   {
+    "day": 3,
+    "start": "15:30",
+    "end": "16:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0162%20%20%20%20&class_id=441672101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0172_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF 172",
+  "title": "Development and Its Governance",
+  "department": "PUB AFF",
+  "instructor": "Levy, B.D.",
+  "location": "Public Affairs Building 4371",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "11:00",
+    "end": "13:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0172%20%20%20%20&class_id=441732200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0177_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF 177",
+  "title": "Truth and Consequences: Problems in Contemporary American Journalism",
+  "department": "PUB AFF",
+  "instructor": "Broder, J.M.",
+  "location": "Bunche Hall 3150",
+  "meetings": [
+   {
+    "day": 1,
+    "start": "09:30",
+    "end": "10:45"
+   },
+   {
+    "day": 3,
+    "start": "09:30",
+    "end": "10:45"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0177%20%20%20%20&class_id=441760101&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0187bx_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF 187BX",
+  "title": "Experiential Learning Capstone",
+  "department": "PUB AFF",
+  "instructor": "Crane, R.E.",
+  "location": "Bunche Hall 1209B",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "15:00",
+    "end": "15:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 5,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0187BX%20%20&class_id=441772200&class_no=%20001%20%20"
+ },
+ {
+  "id": "cc_ucla_pubaff0191pm001_27w",
+  "schoolId": "s_ucla",
+  "code": "PUB AFF M191P",
+  "title": "Variable Topics Seminar: Public Policy: Contemporary Theories and Debates on Revitalizing Labor Movement",
+  "department": "PUB AFF",
+  "instructor": "No instructors",
+  "location": "Rolfe Hall",
+  "meetings": [
+   {
+    "day": 2,
+    "start": "10:00",
+    "end": "12:50"
+   }
+  ],
+  "term": "Winter 2027",
+  "termCode": "27W",
+  "units": 4,
+  "url": "https://sa.ucla.edu/ro/Public/SOC/Results/ClassDetail?term_cd=27W&subj_area_cd=PUB%20AFF&crs_catlg_no=0191P%20M%20&class_id=441860201&class_no=%20001%20%20"
  }
 ]
