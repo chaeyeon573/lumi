@@ -2043,3 +2043,7 @@
   - USC Mental Health Content Collective: the domain no longer resolves, so the link moved to deadlinks.
   - Michigan Alpha Pi Mu: its old sites.google.com/a/umich.edu site now redirects to a Google sign-in (school login). I checked all 21 such links: 6 ask for sign-in (Michigan 4, UW 1, Wake Forest 1) and moved to deadlinks; the other 15 are public (e.g. BLiSS, GIS Student Organization).
   - The weekly link check now treats a Google sign-in page as not public (`isSignInPage`, test added).
+
+## 2026-11-05 05:33 UTC
+- Harvard events: 139 upcoming from the Harvard Gazette calendar (official, public Trumba RSS `trumba.com/calendars/gazette.rss`; pubDate is the start in GMT). Left out: events marked "Harvard Key Required: Yes" (school login, 4 of 470), museum exhibitions (posted daily) and "Ongoing through" items. New reader `trumba:<webName>` + test. Checked "Transcending the Ordinary" (Mon Nov 9, 12-1:30 p.m. in the feed) = 12:00 in ours. Note: one Warren Center talk is listed by Harvard as "12:45 - 2:45 a.m." - probably their typo for p.m., kept as the source says (not guessed).
+- BU events: bu.edu/calendar day pages list events (uid, title, time) but after a few requests the site answered 202 with an empty body (bot check). Stopped; not bypassed.

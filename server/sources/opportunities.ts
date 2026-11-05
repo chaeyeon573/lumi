@@ -253,6 +253,44 @@ export async function fetchUclaCommunity(origin: string, school: EventSchool, ho
   return out;
 }
 
+/** Trumba 공개 RSS (trumba.com/calendars/<webName>.rss) — Harvard Gazette 캘린더. pubDate = 시작(GMT). 설명 첫 줄들 = 장소, 다음 = 날짜·시간 줄.
+ *  "Harvard Key Required: Yes"(학교 로그인) 행사, 여러 날 이어지는 "Ongoing through" 전시는 뺀다 */
+export function parseTrumbaRss(xml: string, school: EventSchool, now = new Date(), horizonDays = 30, label = 'Events'): Opportunity[] {
+  const nowIso = now.toISOString(); const until = now.getTime() + horizonDays * 86_400_000;
+  const out: Opportunity[] = []; const seen = new Set<string>();
+  const raw = (it: string, t: string) => (new RegExp(`<${t}[^>]*>([\\s\\S]*?)<\\/${t}>`).exec(it)?.[1] ?? '');
+  for (const it of xml.match(/<item>[\s\S]*?<\/item>/g) ?? []) {
+    const title = text(text(raw(it, 'title'))); const link = text(raw(it, 'link')); const start = new Date(raw(it, 'pubDate'));
+    if (!title || !link || Number.isNaN(start.getTime()) || start.getTime() < now.getTime() || start.getTime() > until || isNoticeNotEvent(title) || /\bexhibit(ion)?\b/i.test(title)) continue;
+    const desc = raw(it, 'description').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
+    if (/Key Required<\/b>:(?:&nbsp;|\s)*Yes/i.test(desc) || /\bOngoing through\b/i.test(desc)) continue;
+    const parts = desc.split(/<br\s*\/?>/i).map((x) => text(x));
+    const dateIdx = parts.findIndex((x) => /^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*\.?,? /.test(x));
+    const place = dateIdx > 0 ? parts.slice(0, dateIdx).filter(Boolean).join(', ') : '';
+    if (/zoom|on-?line|virtual|webinar/i.test(place)) continue;
+    const allDay = dateIdx >= 0 && !/\d(:\d\d)?\s*(a\.m\.|p\.m\.|noon)/i.test(parts[dateIdx]);
+    const body = parts.slice(dateIdx + 1).filter((x) => x && !/^(Gazette Classification|Organization\/Sponsor|Cost|Harvard Key Required|More info|Contact|Ticket)/i.test(x)).join(' ');
+    const sponsor = text(/Organization\/Sponsor<\/b>:(?:&nbsp;|\s)*([^<]+)/i.exec(desc)?.[1] ?? '');
+    const cost = text(/<b>Cost<\/b>:(?:&nbsp;|\s)*([^<]+)/i.exec(desc)?.[1] ?? '');
+    const cats = text(/Classification<\/b>:(?:&nbsp;|\s)*([^<]+)/i.exec(desc)?.[1] ?? '').split(/,\s*/).filter(Boolean);
+    if (cats.some((c) => /^exhibition/i.test(c))) continue; // 박물관 전시는 매일 따로 올라온다 — '그 시간에 가는 행사'가 아니다
+    const key = `${title.toLowerCase()}#${start.toISOString().slice(0, 10)}`; if (seen.has(key)) continue; seen.add(key);
+    const food = hasFreeFood(title, body); const talk = TALK_RE.test(title) || cats.some((c) => /lecture|seminar|panel|talk/i.test(c));
+    const eid = /eventid%3D(\d+)/.exec(link)?.[1] ?? title.toLowerCase().replace(/[^a-z0-9]+/g, '_').slice(0, 40);
+    out.push(base({
+      id: `op_${school.id.replace('s_', '')}_trumba_${eid}`, type: 'event', title, host: (sponsor && sponsor.length <= 60 ? sponsor : '') || school.name || 'Campus', schoolId: school.id,
+      description: body.slice(0, 280), date: start.toISOString(), startTime: allDay ? undefined : localTime(start, school.tz),
+      place: place ? { name: place, lat: school.center.lat, lng: school.center.lng } : undefined,
+      eligibility: cost && !/^free/i.test(cost) ? `Cost: ${cost}` : 'Open to the campus community', benefit: food ? 'Free food' : undefined, cover: { emoji: '', hue: 200 },
+      tags: ['event', ...(food ? ['free food'] : []), ...(talk ? ['talk'] : []), ...cats.slice(0, 3).map((c) => c.toLowerCase())], interests: talk ? ['research', 'study'] : ['club'], goals: [], sourceUrl: link, sourceLabel: school.name ? `${school.name} ${label}` : label,
+    }, nowIso));
+  }
+  return out;
+}
+export async function fetchTrumba(webName: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> {
+  return parseTrumbaRss((await get(`https://www.trumba.com/calendars/${encodeURIComponent(webName)}.rss`)).replace(/^\uFEFF/, ''), school, new Date(), horizonDays);
+}
+
 export async function fetchCampusGroupsEvents(host: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> {
   return parseCampusGroupsRss(await get(`${host.replace(/\/+$/, '')}/rss_events`), host, school, new Date(), horizonDays);
 }
