@@ -52,7 +52,7 @@ export function commonGround(me: Self, u: User, ctx: { rosters?: ClassRoster[]; 
   const both = ctx.orgs.find((o) => (o.memberIds.includes(me.id) || o.adminIds.includes(me.id)) && (o.memberIds.includes(u.id) || o.adminIds.includes(u.id)));
   if (both) out.push({ kind: 'group', text: en ? `Both in ${both.name}` : `${both.name} 같이 해요` });
   const ints = (me.interests ?? []).filter((i) => (u.interests ?? []).includes(i));
-  if (ints.length) out.push({ kind: 'interest', text: en ? `Into ${ints.slice(0, 2).map((i) => INTEREST_LABELS[i].toLowerCase()).join(', ')} too` : `${ints.slice(0, 2).map((i) => INTEREST_LABELS[i]).join('·')} 좋아해요` });
+  if (ints.length) out.push({ kind: 'interest', text: en ? `Also into ${ints.slice(0, 2).map((i) => INTEREST_LABELS[i].toLowerCase()).join(', ')}` : `${ints.slice(0, 2).map((i) => INTEREST_LABELS[i]).join('·')} 좋아해요` });
   return out;
 }
 

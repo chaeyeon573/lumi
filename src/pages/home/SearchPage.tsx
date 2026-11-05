@@ -67,7 +67,7 @@ export function SearchPage() {
       <BackHeader title={en ? 'Search Lumi' : 'Lumi 검색'} />
       <PageTitle title={en ? 'Search Lumi' : 'Lumi 검색'} className="pb-3" />
       <div className="px-4">
-        <form onSubmit={(e) => { e.preventDefault(); remember(q); }}><SearchField autoFocus placeholder={en ? 'Search events, people, clubs…' : '행사, 사람, 동아리 검색…'} value={q} onChange={setQ} /></form>
+        <form onSubmit={(e) => { e.preventDefault(); remember(e.currentTarget.querySelector('input')?.value ?? q); }}><SearchField autoFocus placeholder={en ? 'Search events, people, clubs…' : '행사, 사람, 동아리 검색…'} value={q} onChange={setQ} /></form>
       </div>
       <SegTabs value={tab} onChange={setTab} className="mx-4 mt-3" tabs={[{ key: 'all', label: en ? 'All' : '전체' }, { key: 'people', label: en ? 'People' : '사람' }, { key: 'events', label: en ? 'Events' : '행사' }, { key: 'clubs', label: en ? 'Clubs' : '동아리' }]} />
       <div className="px-4 pt-5">

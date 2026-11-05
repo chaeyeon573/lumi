@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Coffee, Users, MessageCircle, Plus, SlidersHorizontal, Sparkles, GraduationCap, UsersRound, UserPlus } from 'lucide-react';
+import { Coffee, Users, MessageCircle, Plus, SlidersHorizontal, Sparkles, UserPlus } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
@@ -136,8 +136,8 @@ export function SocialPeoplePage() {
       <EmptyState icon={<Users size={30} />} tone="rose" title={en ? 'Good company starts somewhere' : '좋은 사람은 어딘가에서 시작돼요'} sub={en ? 'Invite a friend or explore your classes.' : '친구를 초대하거나 내 수업을 둘러보세요.'}
         action={{ label: en ? 'Invite Friends' : '친구 초대', onClick: () => invite('class') }}>
         <div className="grid grid-cols-2 gap-3">
-          <Btn variant="outline" onClick={() => nav('/schedule/classes')} icon={<GraduationCap size={16} />}>{en ? 'My Classes' : '내 수업'}</Btn>
-          <Btn variant="outline" onClick={() => nav('/profile/communities')} icon={<UsersRound size={16} />}>{en ? 'My Communities' : '내 커뮤니티'}</Btn>
+          <Btn variant="outline" onClick={() => nav('/schedule/classes')}>{en ? 'My Classes' : '내 수업'}</Btn>
+          <Btn variant="outline" onClick={() => nav('/profile/communities')}>{en ? 'My Communities' : '내 커뮤니티'}</Btn>
         </div>
       </EmptyState>
       <CampusStart parts={['week', 'invite']} className="mt-4" />
