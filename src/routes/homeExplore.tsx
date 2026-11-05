@@ -5,6 +5,8 @@ import { GymPage } from '@/pages/campus/GymPage';
 import { DiningPage } from '@/pages/campus/DiningPage';
 import { OpportunityDetailPage } from '@/pages/opportunities/OpportunityDetailPage';
 import { OrgPage } from '@/pages/org/OrgPage';
+import { CreateGroupPage } from '@/pages/org/CreateGroupPage';
+import { MembershipRequestsPage } from '@/pages/org/MembershipRequestsPage';
 
 /** WP2 Home + Explore + 상세 (S012–S026, S089–S091). 파일 주인: WP2 */
 export const homeExploreTabRoutes = (
@@ -19,6 +21,8 @@ export const homeExploreSubRoutes = (
     <Route path="/recreation" element={<GymPage />} />                    {/* S015 RSF 혼잡도 */}
     <Route path="/dining" element={<DiningPage />} />                     {/* S016 학식 */}
     <Route path="/opportunities/:id" element={<OpportunityDetailPage />} /> {/* S020 · S021 · S090 */}
-    <Route path="/orgs/:id" element={<OrgPage />} />                      {/* S022–S025 · S091 */}
+    <Route path="/orgs/new" element={<CreateGroupPage />} />               {/* S026 */}
+    <Route path="/orgs/:id" element={<OrgPage />} />                      {/* S022–S025 (?tab=about|feed|events|members) */}
+    <Route path="/orgs/:id/requests" element={<MembershipRequestsPage />} /> {/* S091 */}
   </>
 );
