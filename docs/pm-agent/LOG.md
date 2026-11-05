@@ -2210,3 +2210,9 @@
   - Re-collected: 1,712 → 1,962 entries (Fall 2026); IDs for single-option subjects unchanged.
 - Spot check clubs: UMN StudioU, Cornell Assistive Technologies, MSU Powerlifting, Penn MSE Society fine. NC State Student Veterinary Emergency & Critical Care Society's sveccs.org now shows an unrelated gambling spam page (domain lost), so moved to deadlinks.
 - Courses checked this run: MIT 6.1010, 15.276, 21M.051 against the MIT catalog (above).
+
+## 2026-11-05 21:33 UTC
+- Weekly link check now also treats a club website whose page title is gambling or adult spam as dead (`isHijackedPage`: slot, gacor, togel, judi, casino, poker online, betting, pulsa ...; "Stanford Poker Club" is not caught). Test added. Follows the NC State sveccs.org case.
+- Spot check clubs found Cornell "PLHRT 5850 Public Garden Management class", which is a course, not a club. Scanning all schools for course-coded names found 9 Cornell course groups (BEE 4270/5270, CHEME 7900 Seminar Series, CRP 3072/5072, HADM 4810 NYC trip, NBA 6500, PUBPOL 2301, VTPEH 6182/6142 ...) and Georgia Tech's GT 1000/2000 Transition Seminars. Marked `department` (hidden) in org-type-overrides.csv. UCLA "MT2026" and UCSB "SS805" are unclear, so left as is.
+- Spot check clubs (others): Penn State Sign Language Organization, Maryland Club Baseball, IU Abundance, UGA Geology Club fine.
+- Spot check courses (UCLA rendered class pages): MGMTFE 411 Lec 4 T 6:30-9:30 pm, DANCE C109A TR 4:00-5:20, ARCHEOL M201B M 2:00-4:50, PUB PLC M265 W 1:00-3:50, COM SCI 32 TR 6:00-7:50 pm - all match.
