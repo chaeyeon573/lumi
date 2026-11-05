@@ -894,7 +894,8 @@ function uwTime(raw: string, pm: boolean): string { const d = raw.padStart(3, '0
 /** page = 학과 시간표 파일 이름(anthro) — 과목 머리(ANTH)와 다를 수 있다(anth.html 은 404, 2026-11-03 점검). 없으면 머리 글자로 */
 export function uwToCourses(html: string, termCode: string, label: string, page?: string): CatalogCourse[] {
   const out: CatalogCourse[] = []; const seen = new Set<string>(); const secOf = new Map<string, string>();
-  for (const block of html.split(/(?=<table bgcolor='#ffcccc')/)) {
+  // 과목 머리 표의 색이 쿼터마다 다르다(가을 #ffcccc, 겨울 #99ccff) — 색과 상관없이 나눈다. 전에는 겨울 페이지가 통째로 첫 과목 하나로 묶였다 (2026-11-05 표본 SPH 380)
+  for (const block of html.split(/(?=<table bgcolor='#[0-9a-fA-F]{6}')/)) {
     const head = /<A NAME=[a-z0-9]+>([\s\S]*?)<\/A>&nbsp;<A [^>]*>([\s\S]*?)<\/A>/.exec(block); if (!head) continue;
     const code = decodeEntities(head[1].replace(/&nbsp;/g, ' ')).replace(/\s+/g, ' ').trim(); const title = titleCase(decodeEntities(head[2]).trim());
     if (!/^[A-Z&][A-Z& ]* \d{3}$/.test(code)) continue;

@@ -23,3 +23,13 @@ test('UW course link uses the department page name (anthro.html), not the course
   assert.equal(c?.url, 'https://www.washington.edu/students/timeschd/pub/AUT2026/anthro.html#anth233');
   assert.deepEqual(c?.meetings, [{ day: 0, start: '12:30', end: '13:20' }, { day: 2, start: '12:30', end: '13:20' }, { day: 4, start: '12:30', end: '13:20' }]);
 });
+
+test('UW Winter time schedule: course headers are blue (#99ccff), each course keeps its own sections (SPH 380 TTh 4:30, SPH 381 MW 1:00)', async () => {
+  const { uwToCourses: uw } = await import('./sources/courses');
+  const out = uw(readFileSync(new URL('./fixtures/uw-sph-winter.html', import.meta.url), 'utf8'), 'WIN2027', 'Winter 2027', 'sph.html');
+  const by = (code: string) => out.filter((c) => c.code === code);
+  assert.equal(by('SPH 380').length, 1);
+  assert.deepEqual(by('SPH 380')[0].meetings, [{ day: 1, start: '16:30', end: '17:50' }, { day: 3, start: '16:30', end: '17:50' }]);
+  assert.deepEqual(by('SPH 381')[0]?.meetings, [{ day: 0, start: '13:00', end: '14:20' }, { day: 2, start: '13:00', end: '14:20' }]);
+  assert.equal(by('SPH 381')[0]?.title, 'Ph Science');
+});
