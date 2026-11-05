@@ -536,7 +536,7 @@ function pickTerm<T>(terms: T[], label: (t: T) => string): T | undefined {
 }
 
 // Fose (CourseLeaf Section Scheduler 공개 검색: courses.upenn.edu, classsearch.nd.edu, courses.dartmouth.edu …)
-interface FoseRow { code: string; title: string; crn: string; no: string; schd: string; meetingTimes?: string; instr?: string; srcdb: string }
+interface FoseRow { code: string; title: string; crn: string; no: string; schd: string; meetingTimes?: string; instr?: string; srcdb: string; stat?: string; isCancelled?: string | boolean }
 async function fosePost(host: string, route: string, body: unknown): Promise<unknown> {
   const r = await fetch(`${host}/api/?page=fose&route=${route}`, { method: 'POST', headers: { ...UAH, 'content-type': 'application/x-www-form-urlencoded' }, body: JSON.stringify(body) });
   if (!r.ok) throw new Error(`${host} fose ${route} → ${r.status}`);
@@ -560,7 +560,8 @@ function foseSource(schoolId: string, host: string): CourseSource {
   }
   function rowsToCourses(rows: FoseRow[], srcdb: string, label: string = srcdb): CatalogCourse[] {
     const byCourse = new Map<string, FoseRow[]>();
-    for (const r of rows) { if (!r.code || !r.meetingTimes) continue; (byCourse.get(r.code) ?? byCourse.set(r.code, []).get(r.code)!).push(r); }
+    // 취소된 분반(stat 'X' 또는 isCancelled 표시)은 넣지 않는다 (2026-11-05 Caltech 에서 취소 과목이 섞인 뒤 모든 출처 점검)
+    for (const r of rows) { if (!r.code || !r.meetingTimes || r.stat === 'X' || (r.isCancelled && r.isCancelled !== '0')) continue; (byCourse.get(r.code) ?? byCourse.set(r.code, []).get(r.code)!).push(r); }
     const out: CatalogCourse[] = [];
     for (const [code, secs] of byCourse) {
       const lectures = secs.filter((x) => /^LEC|^SEM|^LAB$/.test(x.schd) && !/^LAB$/.test(x.schd)); const picked = lectures.length ? lectures : secs.slice(0, 1);
@@ -696,7 +697,7 @@ function banner9Source(schoolId: string, host: string): CourseSource {
 // <base>/s/WEBLIB_HCX_CM.H_CLASS_SEARCH.FieldFormula.IScript_ClassSearchOptions?institution=X → 학기·과목 목록
 // <base>/s/WEBLIB_HCX_CM.H_CLASS_SEARCH.FieldFormula.IScript_ClassSearch?institution=X&term=T&subject=S&page=N → classes[] (100개씩, pageCount)
 // 처음 요청에 손님 쿠키를 주며 같은 주소로 돌려보낸다 — 쿠키를 들고 따라간다. 학부·대학원(acad_career GRAD) 모두 온다.
-export interface HcxClass { strm: string; class_section: string; component: string; subject: string; subject_descr?: string; catalog_nbr: string; descr: string; acad_career?: string; units?: string; class_nbr?: number;
+export interface HcxClass { strm: string; class_section: string; class_stat?: string; component: string; subject: string; subject_descr?: string; catalog_nbr: string; descr: string; acad_career?: string; units?: string; class_nbr?: number;
   instructors?: { name?: string }[]; meetings?: { days?: string; start_time?: string; end_time?: string; facility_descr?: string; bldg_cd?: string; room?: string }[] }
 const HCX_SECONDARY = /^(DIS|LAB|REC|DRS|TUT|QUI|QUZ)$/;
 const HCX_DAY: Record<string, number> = { Mo: 0, Tu: 1, We: 2, Th: 3, Fr: 4, Sa: 5, Su: 6 };
@@ -708,6 +709,7 @@ export function hcxToCourses(schoolId: string, classes: HcxClass[], termCode: st
     // 토론·랩·리시테이션·튜토리얼은 학생이 고르는 딸린 섹션 — 뺀다. 그 밖의 유형은 수업 본 시간
     // (BU 는 대부분의 정규 수업이 “IND” 로 온다: CASEN 107 The Voice of Poetry, 화. 강의·세미나만 남겼더니 가을 452개뿐이었다)
     if (HCX_SECONDARY.test(s.component)) continue;
+    if (s.class_stat === 'X') continue; // PeopleSoft class_stat X = Cancelled Section
     const code = `${s.subject} ${s.catalog_nbr.trim()}`; const baseId = courseId(schoolId, code);
     const meetings: Meeting[] = []; let location: string | undefined;
     for (const m of s.meetings ?? []) {
@@ -949,6 +951,7 @@ export function uclaSummaryToCourses(html: string, ref: UclaCourseRef, termCode:
   const rows = html.split(/<div class="row-fluid data_row primary-row/).slice(1);
   for (const row of rows) {
     const sec = txt(/title="Class Detail[^"]*">([^<]+)<\/a>/.exec(row)?.[1]); if (!sec || !/^(Lec|Sem|Sec|Stu|Tut|Act|Lab|Rec|Cli|Fld|Res)\b/i.test(sec)) continue;
+    if (/^\s*cancell?ed\b/i.test(txt(/class="statusColumn"[^>]*>([\s\S]*?)<\/div>/.exec(row)?.[1]))) continue; // 상태 칸이 Cancelled 인 분반은 뺀다
     // 요일·시간이 여러 줄일 수 있다(ASL 1: "MF<br />TWR" + "11am-11:50am<br />11am-11:50am") — 줄끼리 짝지어 읽는다
     const dayLines = (/-days_data">\s*<p>\s*<button[^>]*>([\s\S]*?)<\/button>/.exec(row)?.[1] ?? '').split(/<br\s*\/?>/).map((x) => txt(x));
     const timeLines = (/class="timeColumn"[\s\S]*?<\/div>\s*<p>([\s\S]*?)<\/p>\s*<\/div>/.exec(row)?.[1] ?? '').split(/<br\s*\/?>/).map((x) => txt(x));
@@ -1048,6 +1051,7 @@ export function rochesterToCourses(html: string, termCode: string): CatalogCours
     const n = /^(\d+)">([^<]*)/.exec(b); if (!n) continue;
     const m = /^(.+?)-(\w+)$/.exec(txt(n[2])); if (!m) continue;
     const get = (k: string) => txt(new RegExp(`id="rpResults_lbl${k}_${n[1]}">([\\s\\S]*?)</span>`).exec(b)?.[1]);
+    if (/cancel/i.test(get('Status'))) continue; // 상태 Canceled 분반은 뺀다
     const meetings: Meeting[] = [];
     for (const r of b.matchAll(new RegExp(`id="rpResults_rpSchedule_${n[1]}_lblDay_(\\d+)">([^<]*)</span>`, 'g'))) {
       const st = rocTime(txt(new RegExp(`rpSchedule_${n[1]}_lblStartTime_${r[1]}">([^<]*)`).exec(b)?.[1])), en = rocTime(txt(new RegExp(`rpSchedule_${n[1]}_lblEndTime_${r[1]}">([^<]*)`).exec(b)?.[1]));
@@ -1139,6 +1143,7 @@ export function gwuToCourses(html: string, termCode: string, label: string): Cat
   for (const row of html.matchAll(/<tr class="[^"]*crseRow1[^"]*"[^>]*>([\s\S]*?)<\/tr>/g)) {
     if (/secondaryCoursetable/.test(row[0].slice(0, 200))) continue;
     const c = td(row[1]); if (c.length < 10) continue;
+    if (/CANCEL/i.test(txt(c[0]))) continue; // 첫 칸 상태가 CANCELLED 인 분반은 뺀다 (2026-11-05: 표본 CSCI 페이지에 7개)
     const subj = txt(/<span[^>]*>\s*([A-Z&]+)\s*<\/span>/.exec(c[2])?.[1]); const num = txt(/<span[^>]*>\s*([0-9A-Z]+)\s*<\/span>\s*<\/A>/i.exec(c[2])?.[1]);
     if (!subj || !num) continue;
     const code = `${subj} ${num}`; const sec = txt(c[3]); const title = txt(c[4]);

@@ -100,3 +100,11 @@ test('relabelSocialWebsites: GroupMe / LinkedIn / YouTube given as "Website" get
   const o = relabelSocialWebsites({ id: 'x', name: 'Y', links: [{ label: 'Website', url: 'https://groupme.com/join_group/123/abc' }, { label: 'Website', url: 'https://www.linkedin.com/company/y-club' }, { label: 'Website', url: 'https://www.youtube.com/@yclub' }] } as never);
   assert.deepEqual(o.links?.map((l) => l.label), ['Group chat', 'LinkedIn', 'YouTube']);
 });
+
+test('isSignInPage: an old school Google Site that now asks for Google sign-in is not a public link', async () => {
+  const { isSignInPage } = await import('./sources/sitesocial');
+  const { readFileSync } = await import('node:fs');
+  // fixture: the head of the real page sites.google.com/a/uw.edu/uwspike/ returned on 2026-11-05 (scripts and per-request nonces removed)
+  assert.equal(isSignInPage(readFileSync(new URL('./fixtures/google-signin.html', import.meta.url), 'utf8')), true);
+  assert.equal(isSignInPage('<html><head><title>BLiSS at The University of Michigan</title></head><body>Sign in to see more</body></html>'), false);
+});

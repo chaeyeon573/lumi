@@ -2024,3 +2024,22 @@
 - USF NURS 371 and Vanderbilt PSY 8744 (search-form sources, no direct link) not re-checked this run.
 - Daily refresh: events for all 58 schools with an events file (16,650 upcoming, incl. new UCLA + UCSC); US jobs file 1,293 postings from 166 boards (internships 842, new grad 404, PhD 172, master's 70, postdoc 13). 5 random postings (Varda, Nuro, Adobe Workday, Amazon PhD intern, IMC) all open.
 - Spot check clubs (random): UConn Women & Minorities in Economics, Georgia Tech K-Buzz, UMD Love For Our Elders fine; Duke Impact Investing Group gave 503 once then 200 (script page). IEEE@Penn (ieee.seas.upenn.edu) fails TLS from the container - not verifiable here, left as is.
+
+## 2026-11-05 04:33 UTC
+- Checked every class reader for cancelled sections (after Caltech last run):
+  - UCLA: the status column was ignored. A live check of COM SCI Fall 2026 shows only Open, Closed and Waitlist, but sections whose status says "Cancelled" are now skipped.
+  - FOSE (W&M, Cornell-style hosts): rows with `stat` X or `isCancelled` set are now skipped. W&M Spring 2027 has 3,725 rows, all A or F.
+  - PeopleSoft HCX (Duke, BU): `class_stat` X (Cancelled Section) is now skipped. Duke CHEM has 100 rows, all A.
+  - GWU: rows whose first cell is CANCELLED are now skipped. The 7 in the CSCI sample had no times, so none had got in.
+  - Rochester: status "Canceled" is now skipped (the sample is all Open).
+  - Already handled before: USC (`isCancelled`), CMU ("This Section Cancelled"), Caltech (fixed last run).
+  - Banner 9 (USF, Georgia Tech) has no status field and does not list cancelled sections.
+  - UW: no cancelled or withdrawn sections in CSE, CHEM or MATH (the only "cancellation" text there is about prerequisites).
+  - Illinois: `sectionStatusCode` is A in the sample. I don't know its cancelled code, so I left it alone rather than guess.
+  - The new guards take effect at the weekly re-collect.
+- Codex brief written: `docs/CODEX_BRIEF.md` (data inventory, API, show/hide decisions, starter prompt for the owner to paste into Codex), linked from the top of docs/HANDOFF.md.
+- Spot check courses (Duke Fall 2026, live DukeHub class search): CHEM 202D 002 WF 10:05, CHEM 201DL 001 MW 8:30 and 002 MW 11:45, CHEM 101DL 003 WF 11:45, CHEM 210D 001 TTh 11:45 - all match.
+- Spot check clubs (random): UNC Darkside, Illinois SPGO, Indiana ColorStack fine.
+  - USC Mental Health Content Collective: the domain no longer resolves, so the link moved to deadlinks.
+  - Michigan Alpha Pi Mu: its old sites.google.com/a/umich.edu site now redirects to a Google sign-in (school login). I checked all 21 such links: 6 ask for sign-in (Michigan 4, UW 1, Wake Forest 1) and moved to deadlinks; the other 15 are public (e.g. BLiSS, GIS Student Organization).
+  - The weekly link check now treats a Google sign-in page as not public (`isSignInPage`, test added).
