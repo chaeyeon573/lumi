@@ -12,8 +12,8 @@
  *   댓글도 본인 것 말고는 누가 썼는지 지운다 (글쓴이 댓글은 byAuthor 표시만). 운영진은 서버에 남은 글쓴이로 신고를 처리한다
  */
 import type { Snapshot } from '@core/api/types';
-import type { ID, OpportunityIntentRecord, PollPrompt, Post, ProfileField, Relationships, User } from '@core/types';
-import { canViewField, mutualFriends } from './relations';
+import type { ExtraField, ID, OpportunityIntentRecord, Organization, PollPrompt, Post, ProfileField, Relationships, User, Visibility } from '@core/types';
+import { canView, canViewField, mutualFriends } from './relations';
 import { stripGameSecrets } from './icebreakers';
 
 type Rel = Pick<Snapshot, 'relationships' | 'participations' | 'proposals' | 'users'>;
@@ -43,7 +43,16 @@ export const FIELD_KEYS: Record<ProfileField, readonly (keyof User)[]> = {
  * 공개 범위와 상관없이 본인에게만.
  * birthYear: 가입 때 "Only you see this" 라고 말한다 (StartPage) — 16세 이상 확인·같이 타기 18세 이상 확인은 서버가 원본으로 한다
  */
-export const OWNER_ONLY_KEYS = ['birthYear', 'gender', 'interestedOrgIds', 'meetPreference', 'showToClassmates', 'studyGroupOptOut', 'partnerSearch', 'suspended'] as const satisfies readonly (keyof User)[];
+export const OWNER_ONLY_KEYS = ['birthYear', 'gender', 'interestedOrgIds', 'meetPreference', 'showToClassmates', 'studyGroupOptOut', 'partnerSearch', 'suspended', 'extraVisibility'] as const satisfies readonly (keyof User)[];
+
+/**
+ * fieldVisibility 밖의 항목 (쓰는 언어·출신 나라·졸업 뒤·그룹 멤버십)의 기본 공개 범위.
+ * memberships 는 이 설정이 생기기 전과 같게 public (동아리 페이지의 멤버 목록이 그대로 보인다) — 사람이 줄일 수 있다
+ */
+export const EXTRA_VISIBILITY_DEFAULTS: Record<ExtraField, Visibility> = { languages: 'school', country: 'school', nextChapter: 'school', memberships: 'public' };
+export const extraVisibilityOf = (u: Pick<User, 'extraVisibility'>, f: ExtraField): Visibility => u.extraVisibility?.[f] ?? EXTRA_VISIBILITY_DEFAULTS[f];
+/** 공개 범위 항목 → 그 항목이 담는 프로필 키 */
+export const EXTRA_KEYS: Record<Exclude<ExtraField, 'memberships'>, keyof User> = { languages: 'spokenLanguages', country: 'countryOfOrigin', nextChapter: 'nextChapter' };
 
 /** owner 가 viewer 를 차단했으면 viewer 는 owner 에 대해 아무것도 받지 않는다 */
 export const blockedBy = (s: Pick<Snapshot, 'relationships'>, viewerId: ID, ownerId: ID) =>
@@ -70,6 +79,9 @@ export function profileFor(s: Rel, viewer: User, owner: User): User {
   const bag = out as unknown as Record<string, unknown>;
   for (const k of OWNER_ONLY_KEYS) delete bag[k];
   for (const f of PROFILE_FIELDS) if (!seen.includes(f)) for (const k of FIELD_KEYS[f]) delete bag[k];
+  for (const [f, k] of Object.entries(EXTRA_KEYS) as [Exclude<ExtraField, 'memberships'>, keyof User][]) {
+    if (k in bag && !canView(s, viewer, owner.id, extraVisibilityOf(owner, f))) delete bag[k];
+  }
   if (out.timetable) out.timetable = out.timetable.map((c) => ({ id: c.id, name: '', day: c.day, start: c.start, end: c.end, hue: c.hue }));
   if (out.poll) {
     const mine = out.poll.votes[viewer.id];
@@ -135,4 +147,30 @@ export function intentFor(i: OpportunityIntentRecord, viewerId: ID): Opportunity
   if (i.saved && i.intent === 'interested') return null;
   const { saved: _s, ...rest } = i;
   return rest;
+}
+
+/**
+ * 동아리의 멤버·팔로워 목록에서 viewer 가 보면 안 되는 사람을 뺀다 (각자의 extraVisibility.memberships).
+ * 본인과 그 동아리 운영진은 다 본다. 빠진 사람이 있으면 실제 수를 memberCount·followerCount 로 붙인다 (누구인지는 안 보낸다).
+ * 한 스냅샷 안에서 여러 동아리에 쓰도록 사람마다 결과를 기억한다
+ */
+export function membershipFilter(s: Rel, viewer: User) {
+  const byId = new Map(s.users.map((u) => [u.id, u]));
+  const seen = new Map<ID, boolean>();
+  const shows = (id: ID) => {
+    if (id === viewer.id) return true;
+    let ok = seen.get(id);
+    if (ok === undefined) {
+      const u = byId.get(id);
+      ok = !u || canView(s, viewer, id, extraVisibilityOf(u, 'memberships'));
+      seen.set(id, ok);
+    }
+    return ok;
+  };
+  return (o: Organization): Organization => {
+    if (o.adminIds.includes(viewer.id)) return o;
+    const memberIds = o.memberIds.filter(shows), followerIds = o.followerIds.filter(shows);
+    if (memberIds.length === o.memberIds.length && followerIds.length === o.followerIds.length) return o;
+    return { ...o, memberIds, followerIds, memberCount: o.memberIds.length, followerCount: o.followerIds.length };
+  };
 }

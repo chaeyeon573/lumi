@@ -210,6 +210,11 @@ export function createEngine(ctx: EngineContext) {
         if (rest.twoTruths) rest.twoTruths = { statements: rest.twoTruths.statements.map((x) => x.trim()), lieIndex: rest.twoTruths.lieIndex, updatedAt: now() };
         if (rest.emojiWeek) rest.emojiWeek = { ...rest.emojiWeek, meaning: rest.emojiWeek.meaning?.trim(), updatedAt: now() };
         Object.assign(u, rest);
+        // 멤버십 공개 범위가 바뀌면 내가 속한·팔로우하는 동아리도 다시 보낸다 — 보는 사람마다 목록이 달라진다 (server/view.ts)
+        if (rest.extraVisibility) {
+          const orgs = db().organizations.filter((o) => o.memberIds.includes(id) || o.followerIds.includes(id));
+          if (orgs.length) return { users: [u], organizations: orgs };
+        }
         return { users: [u] };
       },
       setAvailability(id: ID, availability: Availability): Patch {

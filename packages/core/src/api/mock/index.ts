@@ -9,6 +9,8 @@ import { createRidesEngine } from '../rides';
 import { createPlansEngine } from '../plans';
 import { loadDB, resetDB, saveDB, getSession, setSession, type MockDB } from './db';
 import { DEMO_USER_ID, users as seedUsers } from '@core/data/seed';
+import { exportUserData } from '@core/lib/exportdata';
+import { cleanProfileExtras } from '@core/lib/selfupdate';
 import { eraseUser, isProtectedAccount, deleteConfirmOk, DELETE_CONFIRM_WORD, DEMO_DELETE_REFUSED } from '@core/lib/account';
 
 /** 목업의 예시 사용자(데모 계정 포함)는 지울 수 없다 */
@@ -101,6 +103,13 @@ export const mockApi: AroundUApi = {
         listeners.forEach((l) => l(patch));
       });
     },
+    async exportData() {
+      return request(() => {
+        const me = getSession();
+        if (!me) throw new Error(t('로그인이 필요해요.'));
+        return exportUserData(db, me);
+      });
+    },
     async session() { return getSession(); },
   },
 
@@ -144,7 +153,7 @@ export const mockApi: AroundUApi = {
     async unwatch() { return { watches: [], watchableTerms: [], supported: false }; },
   },
 
-  users: { ...wrap(engine.users), update: (id, p) => request(() => withRosters(engine.users.update(id, p))) },
+  users: { ...wrap(engine.users), update: (id, p) => request(() => withRosters(engine.users.update(id, cleanProfileExtras(p)))) },
   activities: wrap(engine.activities),
   posts: wrap(engine.posts),
   relationships: wrap(engine.relationships),

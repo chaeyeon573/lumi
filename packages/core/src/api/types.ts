@@ -1,3 +1,4 @@
+import type { AccountExport } from '@core/lib/exportdata';
 import type {
   Activity, ActivityProposal, ChatRoom, ID, Notification, Organization, Participation, Post, Relationships, Report, School, User, Self,
   ActivityCategory, Visibility, JoinPolicy, ActivityKind, Place, ReportTargetType, Availability, Opportunity, OpportunityIntentRecord, OpportunityIntent, Role, TimePoll, TimeOption, Game, GameInput,
@@ -247,6 +248,8 @@ export interface AroundUApi {
     attachEmail(email: string): Promise<User>;
     /** Permanently delete my account and personal data (App Store 5.1.1(v)). `confirm` must be "DELETE". Signs out. Demo/sample accounts are refused */
     deleteAccount(confirm: string): Promise<void>;
+    /** Download your data (S086): my own records as JSON (@core/lib/exportdata). Only ever the signed-in caller */
+    exportData(): Promise<AccountExport>;
   };
   bootstrap(viewerId: ID): Promise<Snapshot>;
 

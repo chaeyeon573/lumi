@@ -1,4 +1,4 @@
-import type { Affiliation, User } from '@core/types';
+import type { Affiliation, ExtraField, NextChapter, User, Visibility } from '@core/types';
 
 /**
  * users.update 를 사용자가 RPC로 직접 부를 때 바꿀 수 없는 값을 걸러낸다.
@@ -11,8 +11,42 @@ const SERVER_ONLY = ['id', 'createdAt', 'sample', 'suspended', 'viewable', 'mutu
 const sameOrg = (a: Affiliation, b: Affiliation) =>
   a.type === b.type && (a.type === 'university' ? a.schoolId === (b as typeof a).schoolId : a.companyName.trim().toLowerCase() === (b as typeof a).companyName.trim().toLowerCase());
 
+const VISIBILITIES: readonly Visibility[] = ['public', 'school', 'department', 'friends', 'followers', 'private'];
+const EXTRA_FIELDS: readonly ExtraField[] = ['languages', 'country', 'nextChapter', 'memberships'];
+const short = (x: unknown, max: number) => (typeof x === 'string' ? x.replace(/\s+/g, ' ').trim().slice(0, max) : '');
+
+/**
+ * 새 프로필 항목(쓰는 언어·출신 나라·졸업 뒤·공개 범위)을 정리한다 — 글자 수를 줄이고, 빈 값은 지운다(undefined),
+ * 모르는 공개 범위 값은 버린다 ('selected' 는 고른 사람 명단이 없어 쓰지 않는다)
+ */
+export function cleanProfileExtras(patch: Partial<User>): Partial<User> {
+  const out = { ...patch };
+  if ('spokenLanguages' in out) {
+    const list = Array.isArray(out.spokenLanguages) ? out.spokenLanguages.map((l) => short(l, 30)).filter(Boolean) : [];
+    out.spokenLanguages = list.length ? [...new Set(list)].slice(0, 8) : undefined;
+  }
+  if ('countryOfOrigin' in out) out.countryOfOrigin = short(out.countryOfOrigin, 56) || undefined;
+  if ('nextChapter' in out) {
+    const n = (out.nextChapter ?? {}) as NextChapter;
+    const year = Number(n.gradYear);
+    const next: NextChapter = {
+      ...(Number.isInteger(year) && year >= 1950 && year <= 2100 ? { gradYear: year } : {}),
+      ...(short(n.city, 60) ? { city: short(n.city, 60) } : {}),
+      ...(short(n.company, 80) ? { company: short(n.company, 80) } : {}),
+      ...(short(n.role, 80) ? { role: short(n.role, 80) } : {}),
+      ...(short(n.industry, 60) ? { industry: short(n.industry, 60) } : {}),
+    };
+    out.nextChapter = Object.keys(next).length ? next : undefined;
+  }
+  if ('extraVisibility' in out) {
+    const v = (out.extraVisibility ?? {}) as Record<string, unknown>;
+    out.extraVisibility = Object.fromEntries(EXTRA_FIELDS.filter((f) => VISIBILITIES.includes(v[f] as Visibility)).map((f) => [f, v[f] as Visibility]));
+  }
+  return out;
+}
+
 export function sanitizeSelfUpdate(current: User, patch: Partial<User> | undefined): Partial<User> {
-  const out: Partial<User> & Record<string, unknown> = { ...(patch ?? {}) };
+  const out: Partial<User> & Record<string, unknown> = cleanProfileExtras({ ...(patch ?? {}) });
   for (const k of SERVER_ONLY) delete out[k];
   if (current.sample) return out;
   delete out.identityVerified;

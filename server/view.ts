@@ -31,7 +31,7 @@ import type { Patch, Snapshot } from '@core/api/types';
 import type { Activity, ActivityProposal, ChatRoom, Game, ID, Organization, Participation, Post, TimePoll, User } from '@core/types';
 import { gameFor } from '@core/lib/icebreakers';
 import { canViewActivity, canViewPost } from '@core/lib/relations';
-import { blockedBy, intentFor, postFor, profileFor, relationshipsFor } from '@core/lib/privacy';
+import { blockedBy, intentFor, membershipFilter, postFor, profileFor, relationshipsFor } from '@core/lib/privacy';
 import { planVisibleTo, stripPlanSecrets } from '@core/lib/plans';
 import { buildClassIndex, classRostersFor, schoolOf, type ClassIndex } from '@core/lib/classmates';
 import { ridesFor, ridesPatchFor } from '@core/lib/rides';
@@ -105,8 +105,13 @@ function participationsFor(list: Participation[], viewerId: ID, db?: Snapshot, e
 
 /** 동아리 지원자 명단은 운영진에게만 — 다른 사람에게는 나만 남긴다 */
 // 화면에는 이모지 없이 — 이름 끝 💙 등은 빼고, 이모지 로고는 머리글자로 (packages/core/src/lib/orglinks.ts withoutEmoji)
-const orgFor = (viewerId: ID) => (o: Organization): Organization =>
-  withoutEmoji(o.adminIds.includes(viewerId) ? o : { ...o, applicantIds: o.applicantIds.filter((id) => id === viewerId) });
+// 멤버·팔로워 목록은 각자의 멤버십 공개 범위(extraVisibility.memberships) 안에서만 (@core/lib/privacy membershipFilter)
+const orgFor = (viewerId: ID, db?: Snapshot) => {
+  const viewer = db?.users.find((u) => u.id === viewerId);
+  const members = db && viewer ? membershipFilter(db, viewer) : (o: Organization) => o;
+  return (o: Organization): Organization =>
+    withoutEmoji(o.adminIds.includes(viewerId) ? o : members({ ...o, applicantIds: o.applicantIds.filter((id) => id === viewerId) }));
+};
 
 /** 이 사용자에게 보낼 동아리인지 */
 export function orgFilter(db: Snapshot, viewerId: ID): (o: Organization) => boolean {
@@ -205,7 +210,7 @@ export function snapshotFor(full: Snapshot, viewerId: ID): Snapshot {
   const db = moderateView(stripSamples(full, hiddenSamplesFor(full, full.users.find((u) => u.id === viewerId))), viewerId, full);
   return noEmojiView(moderateView({
     ...db,
-    organizations: db.organizations.filter(orgFilter(db, viewerId)).map(orgFor(viewerId)),
+    organizations: db.organizations.filter(orgFilter(db, viewerId)).map(orgFor(viewerId, db)),
     opportunities: db.opportunities.filter(opportunityFilter(db, viewerId)).map(hostNoEmoji),
     users: usersFor(db.users, viewerId, db),
     relationships: relationshipsFor(db.relationships, viewerId),
@@ -233,7 +238,7 @@ export function patchFor(original: Patch, viewerId: ID, db?: Snapshot): Patch | 
   // 신고·정지는 공개 범위로 거르기 전에도 한 번 (익명 글·댓글은 거른 뒤에는 글쓴이 id 가 없다). 끝에서 한 번 더 (다시 맞춘 글·활동)
   if (db) { const m: Patch = { ...patch }; moderatePatch(m, viewerId, db); patch = m; }
   const out: Patch = { ...patch };
-  if (patch.organizations) out.organizations = db ? patch.organizations.filter(orgFilter(db, viewerId)).map(orgFor(viewerId)) : [];
+  if (patch.organizations) out.organizations = db ? patch.organizations.filter(orgFilter(db, viewerId)).map(orgFor(viewerId, db)) : [];
   if (patch.opportunities) out.opportunities = (db ? patch.opportunities.filter(opportunityFilter(db, viewerId)) : patch.opportunities).map(hostNoEmoji);
   if (patch.users) {
     out.users = usersFor(patch.users, viewerId, db);

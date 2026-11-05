@@ -5,6 +5,8 @@
  *     200 { ok: true, deleted: {...counts} }
  *     400 confirmation word missing · 401 not signed in · 403 shared demo account / sample profile
  *
+ *   POST /api/auth/export-data   Authorization: Bearer <token>  → 200 AccountExport (Download your data, S086) · 401
+ *
  * Only ever deletes the signed-in caller — there is no user id in the request.
  *
  * Where a person's data lives, and what this does with it:
@@ -27,6 +29,7 @@
 import type { Express, Request, Response, NextFunction } from 'express';
 import type { Patch, Snapshot } from '@core/api/types';
 import type { ID } from '@core/types';
+import { exportUserData } from '@core/lib/exportdata';
 import { eraseUser, isProtectedAccount, deleteConfirmOk, DELETE_CONFIRM_WORD, DEMO_DELETE_REFUSED } from '@core/lib/account';
 import { users as seedUsersEn, DEMO_USER_ID } from '@core/data/seed.en';
 import { users as seedUsersKo } from '@core/data/seed';
@@ -52,6 +55,14 @@ export interface AccountDeps {
 class HttpError extends Error { constructor(public status: number, message: string) { super(message); } }
 
 export function registerAccountRoutes(app: Express, deps: AccountDeps) {
+  // Download your data (S086) — the caller's own records only (@core/lib/exportdata). No id in the request
+  app.post('/api/auth/export-data', deps.auth, (req: Req, res: Response) => {
+    const me = req.userId;
+    if (!me || !deps.db().users.some((u) => u.id === me)) { res.status(401).json({ error: 'Please sign in first.' }); return; }
+    try { res.json(exportUserData(deps.db(), me)); }
+    catch (e) { console.error('[account] export failed', e); res.status(500).json({ error: 'Could not prepare your data — please try again.' }); }
+  });
+
   app.post('/api/auth/delete-account', deps.auth, async (req: Req, res: Response) => {
     try {
       const me = req.userId;

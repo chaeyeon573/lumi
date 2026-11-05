@@ -5,6 +5,7 @@
  * - 세션 토큰은 localStorage 에 두고 Authorization 헤더로 보낸다.
  * - `subscribe()` 는 SSE(`/api/events`)로 서버 푸시(Patch)를 받는다.
  */
+import type { AccountExport } from '@core/lib/exportdata';
 import type { AroundUApi, Patch, Snapshot } from '../types';
 import type { PublicPlan } from '@core/lib/plans';
 import type { ID, User } from '@core/types';
@@ -110,6 +111,7 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
         writeToken(null, null);
         stopEvents();
       },
+      async exportData() { return call<AccountExport>('auth/export-data', {}); },
       session,
     },
 

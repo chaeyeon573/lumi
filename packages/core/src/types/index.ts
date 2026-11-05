@@ -193,6 +193,29 @@ export interface User {
   viewable?: ProfileField[];
   /** 서버가 다른 사람 프로필에 붙인다: 나와 함께 아는 친구 수 (0이면 없다) */
   mutualFriendCount?: number;
+  /** 쓰는 언어 (선택 — 짐작하지 않는다). 다른 사람에게는 extraVisibility.languages 안에서만 (lib/privacy) */
+  spokenLanguages?: string[];
+  /** 출신 나라 (선택, 언어와 따로). 다른 사람에게는 extraVisibility.country 안에서만 */
+  countryOfOrigin?: string;
+  /** 졸업 뒤 (알럼나이 "Your next chapter", S082) — 다른 사람에게는 extraVisibility.nextChapter 안에서만 */
+  nextChapter?: NextChapter;
+  /**
+   * 새 항목들의 공개 범위 (없는 키는 EXTRA_VISIBILITY_DEFAULTS). ⚠ 본인에게만 내려간다.
+   * memberships: 내가 속하거나 팔로우하는 그룹 — 다른 사람이 받는 동아리의 memberIds·followerIds 에서 나를 뺀다 (server/view.ts)
+   */
+  extraVisibility?: Partial<Record<ExtraField, Visibility>>;
+}
+
+/** fieldVisibility 밖에서 공개 범위를 따로 갖는 항목 (fieldVisibility 는 모든 키가 있어야 해서 새 항목은 여기에) */
+export type ExtraField = 'languages' | 'country' | 'nextChapter' | 'memberships';
+
+/** 졸업 뒤 — 모두 선택. 지어내지 않는다 */
+export interface NextChapter {
+  gradYear?: number;
+  city?: string;
+  company?: string;
+  role?: string;
+  industry?: string;
 }
 
 /**
@@ -309,6 +332,9 @@ export interface Organization {
   memberIds: ID[];
   adminIds: ID[];
   applicantIds: ID[];
+  /** 서버가 붙인다: 멤버십을 숨긴 사람이 있어 memberIds·followerIds 에서 빠졌을 때의 실제 수 (server/view.ts) */
+  memberCount?: number;
+  followerCount?: number;
   /** 외부 링크 (인스타그램·페이스북·홈페이지·오픈채팅) */
   links?: { label: string; url: string }[];
   dues?: string;
