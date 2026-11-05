@@ -296,6 +296,8 @@ export interface AroundUApi {
     update(id: ID, input: Partial<ActivityInput>): Promise<Patch>;
     remove(id: ID): Promise<Patch>;
     join(activityId: ID, userId: ID, message?: string): Promise<Patch>;
+    /** Interested(관심) 켜기·끄기 — 참석(Going)과 따로 */
+    toggleInterest(activityId: ID, userId: ID): Promise<Patch>;
     cancel(activityId: ID, userId: ID): Promise<Patch>;
     approve(participationId: ID): Promise<Patch>;
     reject(participationId: ID): Promise<Patch>;

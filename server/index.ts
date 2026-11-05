@@ -32,6 +32,7 @@ import { randomBytes, randomInt } from 'node:crypto';
 import path from 'node:path';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { previewSchools, previewSchool, previewCourses, previewJobs } from './preview';
 import { t, lang } from '@core/i18n';
 import type { Patch, Snapshot, RegisterInput, CatalogCourse } from '@core/api/types';
 import type { Game, ID, User } from '@core/types';
@@ -394,7 +395,7 @@ const activityHost = (me: ID, activityId: unknown) => db.activities.find((a) => 
 const RULES: Record<Group, Record<string, Rule>> = {
   users: { update: 0, setAvailability: 0, votePoll: 1, ...TOGETHER_RULES.users },
   activities: {
-    create: 0, update: owner(() => db.activities, (a) => a.hostId), remove: owner(() => db.activities, (a) => a.hostId), join: 1, cancel: 1,
+    create: 0, update: owner(() => db.activities, (a) => a.hostId), remove: owner(() => db.activities, (a) => a.hostId), join: 1, cancel: 1, toggleInterest: 1,
     approve: (me, args) => { const p = db.participations.find((x) => x.id === args[0]); return !!p && activityHost(me, p.activityId); },
     reject: (me, args) => { const p = db.participations.find((x) => x.id === args[0]); return !!p && activityHost(me, p.activityId); },
     comment: 1,
@@ -479,7 +480,7 @@ app.get('/api/media/:id', wrap(async (req, res) => {
   const id = String(req.params.id);
   const m = /^[a-f0-9]{24}$/.test(id) ? await store.getMedia(id) : null;
   // 지워진·신고로 숨겨진·정지된 사람의 글에 붙은 사진은 닫는다. 지운 뒤 늦어도 1시간이면 브라우저에서도 사라지게 캐시는 짧게
-  if (!m || !mediaVisible(m.id, m.createdAt, db.posts, moderationState(db))) throw bad('not found', 404);
+  if (!m || !mediaVisible(m.id, m.createdAt, db.posts, moderationState(db), new Date(), db.activities)) throw bad('not found', 404);
   res.setHeader('content-type', m.mime);
   res.setHeader('cache-control', 'public, max-age=3600');
   res.setHeader('x-content-type-options', 'nosniff');
@@ -572,6 +573,12 @@ app.get('/api/agent/status', wrap(async () => {
   for (const r of runs) if (!latest[r.task]) latest[r.task] = { status: r.status, finishedAt: r.finishedAt, summary: r.summary };
   return { latest, recent: runs.slice(0, 30) };
 }));
+// 아직 안 연 학교 미리보기 (파일에서 바로 — DB 에 넣지 않는다) · server/preview.ts
+app.get('/api/jobs', (req, res) => { res.json(previewJobs({ q: String(req.query.q ?? ''), audience: req.query.audience ? String(req.query.audience) : undefined, kind: req.query.kind ? String(req.query.kind) : undefined })); });
+app.get('/api/preview/jobs', (req, res) => { res.json(previewJobs({ q: String(req.query.q ?? ''), audience: req.query.audience ? String(req.query.audience) : undefined, kind: req.query.kind ? String(req.query.kind) : undefined })); });
+app.get('/api/preview', (_req, res) => { res.json({ schools: previewSchools() }); });
+app.get('/api/preview/:id/courses', (req, res) => { const r = previewCourses(String(req.params.id), String(req.query.q ?? '')); if (!r) { res.status(404).json({ error: 'not found' }); return; } res.json({ courses: r }); });
+app.get('/api/preview/:id', (req, res) => { const r = previewSchool(String(req.params.id)); if (!r) { res.status(404).json({ error: 'not found' }); return; } res.json(r); });
 app.get('/api/health', (_req, res) => { res.json({ ok: true, users: db.users.length, lang, store: process.env.DATABASE_URL ? 'postgres' : 'file' }); });
 
 // ─── 오늘의 학식 · 체육관 혼잡도 (server/campus-live.ts) — 웹 서버 한 곳에서 가져오고 알림을 보낸다 ─────

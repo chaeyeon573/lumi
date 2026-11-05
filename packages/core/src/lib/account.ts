@@ -105,6 +105,7 @@ export function eraseUser(db: Snapshot, userId: ID, opts: { now?: () => string }
     if (gone.activities.has(a.id)) continue;
     let touched = false;
     if (a.invitedIds?.includes(userId)) { a.invitedIds = a.invitedIds.filter((x) => x !== userId); touched = true; }
+    if (a.interestedIds?.includes(userId)) { a.interestedIds = a.interestedIds.filter((x) => x !== userId); touched = true; }
     if (a.visibilityTargets?.includes(userId)) { a.visibilityTargets = a.visibilityTargets.filter((x) => x !== userId); touched = true; }
     if (a.comments.some((c) => c.authorId === userId)) { a.comments = a.comments.filter((c) => c.authorId !== userId); touched = true; }
     const sg = a.studyGroup;

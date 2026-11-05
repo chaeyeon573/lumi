@@ -29,7 +29,7 @@ export function JoinButton({ activity: a, className, size = 'md', label }: { act
       const patch = await run(() => api.activities.join(a.id, v.me.id, message));
       // 바로 참가면 패치에 그 활동의 채팅방이 온다 — 토스트의 버튼이 그 방을 연다 (방을 못 찾으면 활동 화면의 채팅 칸으로)
       const room = patch.chatRooms?.find((r) => r.activityId === a.id) ?? useAppStore.getState().chatRooms.find((r) => r.activityId === a.id && r.memberIds.includes(v.me.id));
-      if (a.joinPolicy === 'open') showToast(t('참가했어요! 그룹 채팅방이 열렸어요.'), 'success', { label: lang === 'en' ? 'Open chat' : '채팅 열기', to: room ? `/chats/${room.id}` : `/activities/${a.id}` });
+      if (a.joinPolicy === 'open') showToast(lang === 'en' ? 'You’re going! Added to your Schedule.' : '참석해요! 내 일정에 추가했어요.', 'success', { label: lang === 'en' ? 'Open chat' : '채팅 열기', to: room ? `/chats/${room.id}` : `/activities/${a.id}` });
       else showToast(t('참가 신청을 보냈어요. 승인되면 알려드릴게요.'), 'success');
       setOpen(false); setMsg('');
     } catch { /* toast shown */ } finally { setBusy(false); }
@@ -40,7 +40,15 @@ export function JoinButton({ activity: a, className, size = 'md', label }: { act
   };
 
   if (isHost) return <Button size={size} variant="secondary" className={className} icon={<Settings2 size={16} />} onClick={() => nav(`/activities/${a.id}/manage`)}>{t('참가자 관리')}</Button>;
-  if (mine?.status === 'approved') return <Button size={size} variant="secondary" className={className} icon={<Check size={16} />} onClick={cancel} loading={busy}>{t('참가 중 · 취소')}</Button>;
+  if (mine?.status === 'approved') return (
+    <>
+      <Button size={size} className={className} icon={<Check size={16} />} onClick={() => setOpen(true)}>{lang === 'en' ? 'You’re going!' : '참석해요!'}</Button>
+      <BottomSheet open={open} onClose={() => setOpen(false)} title={lang === 'en' ? 'Can’t make it?' : '못 가게 됐나요?'}>
+        <p className="text-[13px] text-ink-2">{lang === 'en' ? 'Leaving frees your spot and removes you from the group chat.' : '자리를 비우고 그룹 채팅에서 나가요.'}</p>
+        <Button full size="lg" variant="outline" className="mt-4" loading={busy} onClick={async () => { await cancel(); setOpen(false); }}>{lang === 'en' ? 'Leave this meetup' : '참석 취소'}</Button>
+      </BottomSheet>
+    </>
+  );
   if (mine?.status === 'pending') return <Button size={size} variant="outline" className={className} icon={<Clock size={16} />} onClick={cancel} loading={busy}>{t('승인 대기 중')}</Button>;
   if (a.joinPolicy === 'invite' && !invited) return <Button size={size} variant="outline" className={className} disabled>{t('초대받은 사람만')}</Button>;
   if (full) return <Button size={size} variant="outline" className={className} disabled>{t('마감')}</Button>;

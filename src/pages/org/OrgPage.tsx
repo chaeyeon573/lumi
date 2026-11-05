@@ -1,7 +1,9 @@
+import { recruitmentLabel } from '@core/lib/orglinks';
+import { publicLinks } from '@core/lib/orglinks';
 import { useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { t, lang } from '@core/i18n';
-import { BadgeCheck, Users, Megaphone, CalendarDays, Bell, MessageCircle, ExternalLink, ShieldCheck, PenSquare, Crown } from 'lucide-react';
+import { BadgeCheck, Users, Megaphone, CalendarDays, Bell, MessageCircle, ExternalLink, ShieldCheck, PenSquare, Crown, Plus } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Avatar, Button, Cover, Tag, EmptyState, Chip, ChipRow, SampleTag } from '@/components/ui';
 import { ActivityCard } from '@/components/cards/ActivityCard';
@@ -44,7 +46,8 @@ export function OrgPage() {
   const school = schools.find((s) => s.id === org.schoolId);
   const sample = isSampleOrg(org.id);
   // 예시 동아리의 링크(instagram.com/example 등)는 남의 실제 페이지로 간다 — 예시엔 바깥 링크를 달지 않는다
-  const links = sample ? [] : org.links ?? [];
+  // 학교 로그인 뒤 페이지(CalLink·CampusGroups)는 빼고 공개 링크만
+  const links = sample ? [] : publicLinks(org.links);
   const following = v.isFollowing(org.id);
   const isAdmin = org.adminIds.includes(v.me.id);
   const join = orgJoinState(org, v.me.id);
@@ -94,7 +97,7 @@ export function OrgPage() {
             {org.followerIds.length > 0 && <span className="flex items-center gap-1"><Users size={13} className="text-ink-3" />{t('팔로워')} <b>{org.followerIds.length}</b></span>}
             {org.memberIds.length > 0 && <span>{t('회원')} <b>{org.memberIds.length}</b></span>}
             {sample ? null : org.verified ? <Tag tone="gold"><BadgeCheck size={11} /> {t('공식 인증')}</Tag> : <Tag>{t('미인증')}</Tag>}
-            {org.recruitment?.open && <Tag tone="accent">{t('모집 중')}</Tag>}
+            {(() => { const r = recruitmentLabel(org.recruitment); return r && <Tag tone={r.open ? 'accent' : undefined}>{r.text}</Tag>; })()}
           </div>
           <div className="flex gap-2 mt-4">
             {/* 가입 요청을 받을 운영진이 없거나 모집하지 않으면 팔로우가 주 버튼이다 — '모집 안 함'과 '가입 문의'가 같이 보이지 않게 */}
@@ -114,7 +117,7 @@ export function OrgPage() {
             <div className="card p-4"><p className="text-[14px] text-ink-2 leading-relaxed">{org.description}</p>
               {(links.length || org.dues || org.joinProcess || org.policyNote) ? (
                 <div className="mt-3 space-y-2 border-t border-line pt-3">
-                  {links.length > 0 && <div className="flex flex-wrap gap-1.5">{links.map((l) => <a key={l.url} href={l.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 h-8 px-3 rounded-lg bg-surface-2 text-[12px] font-semibold text-ink-2"><ExternalLink size={12} />{lang === 'en' ? l.label : (LINK_LABEL_KO[l.label] ?? l.label)}{/callink\.berkeley\.edu/.test(l.url) && <span className="font-normal text-ink-3">· {lang === 'en' ? 'CalNet login' : 'CalNet 로그인'}</span>}</a>)}</div>}
+                  {links.length > 0 && <div className="flex flex-wrap gap-1.5">{links.map((l) => <a key={l.url} href={l.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 h-8 px-3 rounded-lg bg-surface-2 text-[12px] font-semibold text-ink-2"><ExternalLink size={12} />{lang === 'en' ? l.label : (LINK_LABEL_KO[l.label] ?? l.label)}</a>)}</div>}
                   {org.joinProcess && <div className="text-[13px]"><span className="text-ink-3">{t('가입 절차')} · </span>{org.joinProcess}</div>}
                   {org.dues && <div className="text-[13px]"><span className="text-ink-3">{t('회비')} · </span>{org.dues}</div>}
                   {org.policyNote && <div className="rounded-xl bg-gold-soft px-3 py-2 text-[12px] text-ink-2 flex gap-2"><ShieldCheck size={14} className="text-[#B57A0E] shrink-0 mt-0.5" /><span><b>{t('학교 정책 안내')}</b> · {org.policyNote}</span></div>}
@@ -128,7 +131,7 @@ export function OrgPage() {
           </div>
         )}
         {tab === 'posts' && <div className="mt-3 space-y-3">{posts.length === 0 ? <EmptyState emoji="📝" title={t('아직 게시물이 없어요')} description={isAdmin ? t('소식을 올리면 Feed에도 함께 보여요.') : undefined} action={isAdmin ? <Button size="sm" onClick={() => setPost(true)}>{t('소식 올리기')}</Button> : undefined} /> : posts.map((p) => <PostCard key={p.id} post={p} />)}</div>}
-        {tab === 'events' && <div className="mt-3 space-y-2">{listedEvents.map((o) => <OpportunityCard key={o.id} o={o} variant="row" />)}{events.length === 0 && listedEvents.length > 0 ? null : events.length === 0
+        {tab === 'events' && <div className="mt-3 space-y-2">{isAdmin && <Button full icon={<Plus size={16} />} onClick={() => nav(`/create/activity?kind=org_event&event=1&org=${org.id}`)}>{lang === 'en' ? 'Create Event' : '행사 올리기'}</Button>}{listedEvents.map((o) => <OpportunityCard key={o.id} o={o} variant="row" />)}{events.length === 0 && listedEvents.length > 0 ? null : events.length === 0
           // 날짜가 정해진 행사가 없어도 소개에 적힌 정기 활동(“Group runs Tue/Thu 5pm”)은 여기서도 보인다 — '행사 없음'과 '주 2회 모임'이 엇갈려 보이지 않게
           ? org.regularActivities.length > 0
             ? <div className="card p-4"><b className="text-[14px] flex items-center gap-1.5"><CalendarDays size={15} className="text-primary" />{t('정기 활동')}</b><ul className="mt-2 space-y-1.5">{org.regularActivities.map((r) => <li key={r} className="text-[13px] text-ink-2 flex gap-2"><span className="text-primary">•</span>{r}</li>)}</ul><p className="text-[12px] text-ink-3 mt-2">{en ? 'As the club lists them — no dated events posted on Lumi yet.' : '동아리가 적어 둔 일정이에요 — Lumi에 날짜가 정해진 행사는 아직 없어요.'}</p>{isAdmin && <Button size="sm" className="mt-3" onClick={() => nav(`/create/activity?kind=org_event&org=${org.id}&cat=performance`)}>{t('행사 만들기')}</Button>}</div>
@@ -138,9 +141,10 @@ export function OrgPage() {
           <div className="mt-3 space-y-3">
             {org.recruitment && (
               <div className="card p-4 bg-[linear-gradient(120deg,#FFF4DE,#FFFFFF)]">
-                <div className="flex items-center gap-2"><Megaphone size={16} className="text-[#B57A0E]" /><b className="text-[14px]">{org.recruitment.title}</b>{org.recruitment.open && <Tag tone="accent">{t('모집 중')}</Tag>}</div>
-                <div className="text-[12px] text-ink-2 mt-1">{t('모집 기간 ·')} {org.recruitment.period}</div>
-                {join.kind === 'apply' && <Button size="sm" className="mt-3" onClick={apply}>{t('가입 지원')}</Button>}
+                <div className="flex items-center gap-2"><Megaphone size={16} className="text-[#B57A0E]" /><b className="text-[14px]">{recruitmentLabel(org.recruitment)?.text ?? org.recruitment.title}</b></div>
+                {org.recruitment.period && !org.recruitment.mode && <div className="text-[12px] text-ink-2 mt-1">{t('모집 기간 ·')} {org.recruitment.period}</div>}
+                {org.recruitment.source && <div className="text-[11px] text-ink-3 mt-1">{en ? 'From the club directory' : '학교 단체 목록 기준'}</div>}
+                {join.kind === 'apply' && !org.recruitment.source && <Button size="sm" className="mt-3" onClick={apply}>{t('가입 지원')}</Button>}
                 {org.recruitment.open && joinNote && join.kind !== 'apply' && <p className="text-[12px] text-ink-3 mt-2">{joinNote}</p>}
               </div>
             )}

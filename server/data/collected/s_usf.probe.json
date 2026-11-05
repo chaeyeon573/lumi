@@ -1,0 +1,25 @@
+{
+ "checkedAt": "2026-11-05T10:55:32.116Z",
+ "status": "applied",
+ "stored": false,
+ "source": "timetable:banner9:https://reg-prod.ec.usfca.edu",
+ "sampled": 2208,
+ "withTimes": 2208,
+ "terms": [
+  "Fall 2026",
+  "Spring 2027"
+ ],
+ "sample": [
+  "AEM 124 · Academic Reading/Writing III · Fall 2026 · M 13:00-15:20 W 13:00-15:20 F 13:00-15:20",
+  "BENI 370 · Internet Business Applications (Sec 01H) · Fall 2026 · T 14:40-16:25 R 14:40-16:25",
+  "NURS 220 · Applied Pathophysiology and Pharmacology I (Sec 02) · Fall 2026 · T 12:45-15:30",
+  "BACT 321 · Intermediate Accounting II · Spring 2027 · T 16:35-18:20 R 16:35-18:20",
+  "ENGL 202 · LW: Black Feminist Literature (Sec 02) · Spring 2027 · T 12:45-14:30 R 12:45-14:30",
+  "MIMS 690 · Special Topics (Sec 01) · Spring 2027 · W 18:30-22:10"
+ ],
+ "spotCheck": {
+  "matched": 6,
+  "mismatched": [],
+  "unavailable": 0
+ }
+}

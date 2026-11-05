@@ -1,0 +1,25 @@
+{
+ "checkedAt": "2026-11-03T04:54:23.787Z",
+ "status": "applied",
+ "stored": false,
+ "source": "timetable:usc",
+ "sampled": 11430,
+ "withTimes": 11430,
+ "terms": [
+  "Fall 2026",
+  "Spring 2027"
+ ],
+ "sample": [
+  "ALI 224 · Academic and Professional Speaking Skills I · Fall 2026 · T 14:00-15:20 R 14:00-15:20",
+  "ART 350 · Intermediate Photography: Studio, Field, Independent Project · Fall 2026 · M 15:00-17:40 W 15:00-17:40",
+  "BME 413 · Bioengineering Signals and Systems · Fall 2026 · M 12:00-13:50 W 12:00-13:50",
+  "SOWK 720 · Leadership Communication for Social Impact (Sec 67713) · Fall 2026 · W 17:00-19:00",
+  "ARCH 672 · Future Building Skins: Advanced Applications in Architecture · Spring 2027 · T 15:00-17:50",
+  "AME 491 · Undergraduate Design Projects II (Sec 29030) · Spring 2027 · M 17:00-18:20"
+ ],
+ "spotCheck": {
+  "matched": 6,
+  "mismatched": [],
+  "unavailable": 0
+ }
+}

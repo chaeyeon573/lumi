@@ -6,6 +6,7 @@
  * MLH 해커톤 대부분이 Devpost 에도 올라온다.
  */
 import { fieldOf } from '@core/lib/listings';
+import { plainText, workAuthOf } from './workauth';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -109,20 +110,20 @@ export function isInternTitle(title: string): boolean {
 const US_WORDS = /united states|\busa\b|\bu\.s\.|remote|new york|nyc|san francisco|bay area|seattle|austin|boston|chicago|los angeles|palo alto|mountain view|menlo park|sunnyvale|san jose|san mateo|south san francisco|redwood city|oakland|berkeley|denver|atlanta|miami|washington|philadelphia|pittsburgh|san diego|irvine|portland|salt lake|dallas|houston|phoenix|detroit|ann arbor|minneapolis|nashville|raleigh|columbus|california|texas|massachusetts|virginia|colorado|illinois|florida|georgia|arizona|michigan|ohio|oregon/i;
 const US_STATE = /(?:,|\s)(AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC)\b/;
 const isUS = (loc: string) => US_WORDS.test(loc) || US_STATE.test(loc);
-interface Job { id: string; title: string; location: string; url: string; team?: string; updated?: string }
+interface Job { id: string; title: string; location: string; url: string; team?: string; updated?: string; /** 공고 본문(평문) — 유학생 가능 여부를 읽는다 */ text?: string }
 async function jobsFor(ats: string, slug: string): Promise<Job[]> {
   const get = async (u: string) => { const r = await fetch(u, { headers: UA }); if (!r.ok) throw new Error(`${ats}/${slug} → ${r.status}`); return r.json() as Promise<unknown>; };
   if (ats === 'greenhouse') {
-    const d = (await get(`https://boards-api.greenhouse.io/v1/boards/${slug}/jobs`)) as { jobs?: { id: number; title: string; location?: { name?: string }; absolute_url: string; updated_at?: string; departments?: { name: string }[] }[] };
-    return (d.jobs ?? []).map((j) => ({ id: String(j.id), title: j.title, location: j.location?.name ?? '', url: j.absolute_url, team: j.departments?.[0]?.name, updated: j.updated_at }));
+    const d = (await get(`https://boards-api.greenhouse.io/v1/boards/${slug}/jobs?content=true`)) as { jobs?: { id: number; title: string; location?: { name?: string }; absolute_url: string; updated_at?: string; departments?: { name: string }[]; content?: string }[] };
+    return (d.jobs ?? []).map((j) => ({ id: String(j.id), title: j.title, location: j.location?.name ?? '', url: j.absolute_url, team: j.departments?.[0]?.name, updated: j.updated_at, text: isInternTitle(j.title) ? plainText(j.content) : undefined }));
   }
   if (ats === 'lever') {
-    const d = (await get(`https://api.lever.co/v0/postings/${slug}?mode=json`)) as { id: string; text: string; hostedUrl: string; categories?: { location?: string; team?: string; allLocations?: string[] }; createdAt?: number }[];
-    return d.map((j) => ({ id: j.id, title: j.text, location: j.categories?.allLocations?.join(' / ') || j.categories?.location || '', url: j.hostedUrl, team: j.categories?.team, updated: j.createdAt ? new Date(j.createdAt).toISOString() : undefined }));
+    const d = (await get(`https://api.lever.co/v0/postings/${slug}?mode=json`)) as { id: string; text: string; hostedUrl: string; categories?: { location?: string; team?: string; allLocations?: string[] }; createdAt?: number; descriptionPlain?: string; additionalPlain?: string; lists?: { content?: string }[] }[];
+    return d.map((j) => ({ id: j.id, title: j.text, location: j.categories?.allLocations?.join(' / ') || j.categories?.location || '', url: j.hostedUrl, team: j.categories?.team, updated: j.createdAt ? new Date(j.createdAt).toISOString() : undefined, text: [j.descriptionPlain, ...(j.lists ?? []).map((l) => plainText(l.content)), j.additionalPlain].filter(Boolean).join(' ') }));
   }
   if (ats === 'ashby') {
-    const d = (await get(`https://api.ashbyhq.com/posting-api/job-board/${slug}`)) as { jobs?: { id: string; title: string; location?: string; isRemote?: boolean; jobUrl: string; department?: string; publishedAt?: string; secondaryLocations?: { location: string }[] }[] };
-    return (d.jobs ?? []).map((j) => ({ id: j.id, title: j.title, location: [j.location, ...(j.secondaryLocations ?? []).map((x) => x.location), j.isRemote ? 'Remote' : ''].filter(Boolean).join(' / '), url: j.jobUrl, team: j.department, updated: j.publishedAt }));
+    const d = (await get(`https://api.ashbyhq.com/posting-api/job-board/${slug}`)) as { jobs?: { id: string; title: string; location?: string; isRemote?: boolean; jobUrl: string; department?: string; publishedAt?: string; secondaryLocations?: { location: string }[]; descriptionPlain?: string }[] };
+    return (d.jobs ?? []).map((j) => ({ id: j.id, title: j.title, location: [j.location, ...(j.secondaryLocations ?? []).map((x) => x.location), j.isRemote ? 'Remote' : ''].filter(Boolean).join(' / '), url: j.jobUrl, team: j.department, updated: j.publishedAt, text: j.descriptionPlain }));
   }
   if (ats === 'workday') return workdayJobs(slug);
   if (ats === 'smartrecruiters') {
@@ -130,7 +131,12 @@ async function jobsFor(ats: string, slug: string): Promise<Job[]> {
     const out: Job[] = [];
     for (let offset = 0; offset < 500; offset += 100) {
       const d = (await get(`https://api.smartrecruiters.com/v1/companies/${slug}/postings?q=intern&limit=100&offset=${offset}`)) as { totalFound?: number; content?: { id: string; name: string; releasedDate?: string; location?: { fullLocation?: string; city?: string; region?: string; country?: string; remote?: boolean }; department?: { label?: string } }[] };
-      for (const j of d.content ?? []) out.push(smartRecruitersJob(j, slug));
+      for (const j of d.content ?? []) {
+        const job = smartRecruitersJob(j, slug);
+        // 본문은 공고마다 한 번 더 열어야 온다 — 인턴 제목만
+        if (isInternTitle(j.name)) { try { const x = (await get(`https://api.smartrecruiters.com/v1/companies/${slug}/postings/${j.id}`)) as { jobAd?: { sections?: Record<string, { text?: string }> } }; job.text = plainText(Object.values(x.jobAd?.sections ?? {}).map((v) => v.text ?? '').join(' ')); } catch { /* 본문 없으면 모름 */ } }
+        out.push(job);
+      }
       if ((d.content ?? []).length < 100 || offset + 100 >= (d.totalFound ?? 0)) break;
     }
     return out;
@@ -168,11 +174,14 @@ export async function workdayJobs(slug: string): Promise<Job[]> {
     const list = d.jobPostings ?? [];
     for (const p of list) {
       if (!isInternTitle(p.title)) continue;
-      let country = '';
-      if (!isUS(p.locationsText ?? '')) {
-        try { const x = (await (await fetch(`${api}${p.externalPath}`, { headers: { ...UA, accept: 'application/json' } })).json()) as { jobPostingInfo?: { location?: string; country?: { descriptor?: string } } }; country = [x.jobPostingInfo?.location, x.jobPostingInfo?.country?.descriptor].filter(Boolean).join(', '); } catch { /* 모르면 뺀다 */ }
-      }
-      out.push(workdayJob(p, host, site, country));
+      // 상세를 한 번 연다 — 본문(유학생 가능 여부)과, 근무지가 “N Locations” 로 묶였으면 나라
+      let country = ''; let text = '';
+      try {
+        const x = (await (await fetch(`${api}${p.externalPath}`, { headers: { ...UA, accept: 'application/json' } })).json()) as { jobPostingInfo?: { location?: string; country?: { descriptor?: string }; jobDescription?: string } };
+        if (!isUS(p.locationsText ?? '')) country = [x.jobPostingInfo?.location, x.jobPostingInfo?.country?.descriptor].filter(Boolean).join(', ');
+        text = plainText(x.jobPostingInfo?.jobDescription);
+      } catch { /* 모르면 뺀다 */ }
+      out.push({ ...workdayJob(p, host, site, country), text });
     }
     if (list.length < 20 || offset + 20 >= total) break;
     await new Promise((res) => setTimeout(res, 150));
@@ -194,7 +203,7 @@ export async function fetchInternships(): Promise<Opportunity[]> {
       out.push({
         id: `op_ext_job_${b.ats}_${b.slug}_${j.id}`.slice(0, 120), type: 'internship', title: j.title.trim(), host: b.company,
         description: [j.location, j.team].filter(Boolean).join(' · '), cover: { emoji: '💼', hue: 215 },
-        location: j.location.replace(/\s*[•|/;]\s*/g, ' · ').trim(), remote: /remote/i.test(j.location), field: fieldOf(j.title, j.team), postedAt: j.updated,
+        location: j.location.replace(/\s*[•|/;]\s*/g, ' · ').trim(), remote: /remote/i.test(j.location), field: fieldOf(j.title, j.team), postedAt: j.updated, ...(workAuthOf(j.text ?? '') ? { workAuth: workAuthOf(j.text ?? '') } : {}),
         eligibility: 'See the posting for class year, major and work authorization', sourceUrl: j.url, sourceLabel: `${b.company} careers`,
         tags: ['internship', b.company, ...(/remote/i.test(j.location) ? ['remote'] : [])], interests: ['startup', 'networking'], goals: ['internship'],
         official: true, lastVerified: now, qna: [], reviews: [], createdAt: j.updated ?? now,

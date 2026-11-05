@@ -115,6 +115,186 @@ export async function fetchEngageEvents(host: string, school: EventSchool, horiz
   });
 }
 
+/**
+ * CampusGroups 공개 행사 RSS (<host>/rss_events) — Cornell·Yale·Columbia·Duke·USC… CampusGroups 학교들. 로그인 없이 열린다.
+ * 공개 행사만(privacyLevel 0, "Private …" 분류 제외), 30일 안에 시작하는 것만, 장소가 "sign in to display" 면 장소 없이. 이모지 없음.
+ */
+export function parseCampusGroupsRss(xml: string, host: string, school: EventSchool, now = new Date(), horizonDays = 30): Opportunity[] {
+  const nowIso = now.toISOString(); const until = now.getTime() + horizonDays * 86_400_000;
+  const tag = (it: string, t: string) => text((new RegExp(`<${t}[^>]*>([\\s\\S]*?)<\\/${t}>`).exec(it)?.[1] ?? '').replace(/^<!\[CDATA\[|\]\]>$/g, '')).trim();
+  const out: Opportunity[] = []; const seen = new Set<string>();
+  for (const it of xml.match(/<item>[\s\S]*?<\/item>/g) ?? []) {
+    // 공개 = privacyLevel 0 (모든 학교 같은 칸). 분류는 학교마다 다르다(Cornell "Open/Private …", Yale "Group Meeting") — "Private …" 는 빼고
+    if (tag(it, 'privacyLevel') !== '0' || /^Private\b/i.test(tag(it, 'category'))) continue;
+    const id = tag(it, 'eventId'); const title = tag(it, 'title'); const startRaw = tag(it, 'eventStartDateTime');
+    const start = new Date(startRaw.replace(/\.\d+(?=[+-]\d{2}:\d{2}$)/, '')); if (!id || !title || Number.isNaN(start.getTime())) continue;
+    if (start.getTime() < now.getTime() || start.getTime() > until || isNoticeNotEvent(title)) continue;
+    const key = `${title.toLowerCase()}#${start.toISOString()}`; if (seen.has(key)) continue; seen.add(key);
+    const loc = tag(it, 'eventLocation'); const desc = tag(it, 'description');
+    const food = /^yes|true|1$/i.test(tag(it, 'foodProvided')) || hasFreeFood(title, desc);
+    out.push(base({
+      id: `op_${school.id.replace('s_', '')}_cg_${id}`, type: 'event', title, host: tag(it, 'group') || 'Student organization', schoolId: school.id,
+      description: desc.slice(0, 280), date: start.toISOString(), startTime: localTime(start, school.tz),
+      place: loc && !/sign in|^TBA$|^private/i.test(loc) ? { name: loc, lat: school.center.lat, lng: school.center.lng } : undefined,
+      eligibility: 'Open to students', benefit: food ? 'Free food' : undefined, cover: { emoji: '', hue: 200 },
+      tags: ['event', ...(food ? ['free food'] : [])], interests: ['club'], goals: [], sourceUrl: tag(it, 'link') || `${host}/events`, sourceLabel: 'Student org events',
+    }, nowIso));
+  }
+  return out;
+}
+/**
+ * 학교 행사 RSS 중 pubDate 가 행사 시작 시각인 것 — Caltech events.caltech.edu/calendar/rss (학교 공식 공개 행사, 로그인 없음).
+ * 학교가 고른 공개 행사라 전부 넣는다. 지난 것·horizon 밖·전시(Exhibit/Exhibition)·알림은 뺀다. 글자 코드가 두 번 감싸여 온다(&amp;amp;) → 두 번 푼다.
+ */
+export function parseEventRss(xml: string, school: EventSchool, now = new Date(), horizonDays = 30, prefix = 'rss', label = 'Events'): Opportunity[] {
+  const nowIso = now.toISOString(); const until = now.getTime() + horizonDays * 86_400_000;
+  const tag = (it: string, t: string) => text(text((new RegExp(`<${t}[^>]*>([\\s\\S]*?)<\\/${t}>`).exec(it)?.[1] ?? '').replace(/^<!\[CDATA\[|\]\]>$/g, '')));
+  const out: Opportunity[] = []; const seen = new Set<string>();
+  for (const it of xml.match(/<item>[\s\S]*?<\/item>/g) ?? []) {
+    const title = tag(it, 'title'); const link = tag(it, 'link'); const start = new Date(tag(it, 'pubDate'));
+    if (!title || !link || Number.isNaN(start.getTime())) continue;
+    if (start.getTime() < now.getTime() || start.getTime() > until || isNoticeNotEvent(title) || /\bexhibit(ion)?\b/i.test(title)) continue;
+    const key = `${title.toLowerCase()}#${start.toISOString()}`; if (seen.has(key)) continue; seen.add(key);
+    const desc = tag(it, 'description'); const food = hasFreeFood(title, desc); const talk = TALK_RE.test(title);
+    const slug = (/\/([^/?#]+)\/?$/.exec(link)?.[1] ?? title).toLowerCase().replace(/[^a-z0-9]+/g, '_').slice(0, 60);
+    out.push(base({
+      id: `op_${school.id.replace('s_', '')}_${prefix}_${slug}`, type: 'event', title, host: school.name ?? 'Campus', schoolId: school.id,
+      description: desc.slice(0, 280), date: start.toISOString(), startTime: localTime(start, school.tz),
+      eligibility: /free and open to the public|admission is free|free/i.test(desc) ? 'Free, open to the public' : 'Open to the campus community', benefit: food ? 'Free food' : undefined, cover: { emoji: '', hue: 200 },
+      tags: ['event', ...(food ? ['free food'] : []), ...(talk ? ['talk'] : [])], interests: talk ? ['research', 'study'] : ['club'], goals: [], sourceUrl: link, sourceLabel: school.name ? `${school.name} ${label}` : label,
+    }, nowIso));
+  }
+  return out;
+}
+export async function fetchEventRss(url: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> { return parseEventRss(await get(url), school, new Date(), horizonDays); }
+
+interface TribeEvent { id: number; title: string; url: string; description?: string; excerpt?: string; all_day?: boolean; utc_start_date?: string; cost?: string; hide_from_listings?: boolean; is_virtual?: boolean; status?: string; venue?: { venue?: string } | unknown[]; categories?: { name?: string }[] }
+/** WordPress "The Events Calendar" 공개 REST (/wp-json/tribe/events/v1/events) — UCSC events.ucsc.edu. utc_start_date 는 UTC */
+export function parseTribeEvents(events: TribeEvent[], school: EventSchool, now = new Date(), horizonDays = 30): Opportunity[] {
+  const nowIso = now.toISOString(); const until = now.getTime() + horizonDays * 86_400_000;
+  const out: Opportunity[] = []; const seen = new Set<string>();
+  for (const e of events) {
+    const title = text(text(e.title ?? '')); const start = new Date(`${(e.utc_start_date ?? '').replace(' ', 'T')}Z`);
+    if (!title || !e.url || Number.isNaN(start.getTime()) || e.hide_from_listings || (e.status && e.status !== 'publish')) continue;
+    if (start.getTime() < now.getTime() || start.getTime() > until || isNoticeNotEvent(title)) continue;
+    const cats = (e.categories ?? []).map((c) => text(c.name ?? ''));
+    if (cats.some((c) => /^exhibit/i.test(c)) || /\bexhibit(ion)?\b/i.test(title)) continue;
+    const venue = e.venue && !Array.isArray(e.venue) ? text(e.venue.venue ?? '') : '';
+    if (e.is_virtual || /zoom|on-?line|remote|virtual/i.test(venue)) continue;
+    const key = `${title.toLowerCase()}#${start.toISOString().slice(0, 10)}`; if (seen.has(key)) continue; seen.add(key);
+    const desc = text(text(e.excerpt || e.description || '')); const food = hasFreeFood(title, desc);
+    const talk = TALK_RE.test(title) || cats.some((c) => /lecture|seminar|panel|colloquium|talk|presentation/i.test(c));
+    out.push(base({
+      id: `op_${school.id.replace('s_', '')}_tribe_${e.id}`, type: 'event', title, host: school.name ?? 'Campus', schoolId: school.id,
+      description: desc.slice(0, 280), date: start.toISOString(), startTime: e.all_day ? undefined : localTime(start, school.tz),
+      place: venue ? { name: venue, lat: school.center.lat, lng: school.center.lng } : undefined,
+      eligibility: e.cost && !/free/i.test(e.cost) ? `Cost: ${text(e.cost)}` : 'Open to the campus community', benefit: food ? 'Free food' : undefined, cover: { emoji: '', hue: 200 },
+      tags: ['event', ...(food ? ['free food'] : []), ...(talk ? ['talk'] : []), ...cats.slice(0, 3).map((c) => c.toLowerCase())], interests: talk ? ['research', 'study'] : ['club'], goals: [], sourceUrl: e.url, sourceLabel: school.name ? `${school.name} Events` : 'Events',
+    }, nowIso));
+  }
+  return out;
+}
+export async function fetchTribeEvents(site: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> {
+  const from = new Date().toISOString().slice(0, 10); const to = new Date(Date.now() + horizonDays * 86_400_000).toISOString().slice(0, 10);
+  const all: TribeEvent[] = [];
+  for (let page = 1; page <= 20; page++) {
+    const j = JSON.parse(await get(`${site.replace(/\/+$/, '')}/wp-json/tribe/events/v1/events?per_page=50&page=${page}&start_date=${from}&end_date=${to}`)) as { events?: TribeEvent[]; total_pages?: number };
+    all.push(...(j.events ?? [])); if (!j.total_pages || page >= j.total_pages) break;
+  }
+  return parseTribeEvents(all, school, new Date(), horizonDays);
+}
+
+/** UCLA Community calendar (community.ucla.edu, 학교 공식) — 피드가 없어 주(week) 페이지의 event-card 를 읽는다. data-event-start 는 UTC */
+export function parseUclaCommunityWeek(html: string, school: EventSchool, now = new Date(), horizonDays = 30, origin = 'https://community.ucla.edu'): Opportunity[] {
+  const nowIso = now.toISOString(); const until = now.getTime() + horizonDays * 86_400_000;
+  const out: Opportunity[] = []; const seen = new Set<string>();
+  const cards = html.split(/<div\s+id="event-/).slice(1);
+  for (const c of cards) {
+    const id = /^([0-9a-f-]+)"/.exec(c)?.[1]; const startRaw = /data-event-start="([^"]+Z)"/.exec(c)?.[1]; const stopRaw = /data-event-stop="([^"]+Z)"/.exec(c)?.[1];
+    const a = /<a\s+href="(\/event\/[^"]+)"\s+aria-label="([^"]*)"\s*>([\s\S]*?)<\/a/.exec(c);
+    if (!id || !startRaw || !a) continue;
+    const title = text(a[3]); const start = new Date(startRaw); const stop = stopRaw ? new Date(stopRaw) : start;
+    if (!title || Number.isNaN(start.getTime()) || start.getTime() < now.getTime() || start.getTime() > until || isNoticeNotEvent(title)) continue;
+    // 여러 날 이어지는 전시·상시 프로그램은 '그 시간에 가는 행사'가 아니다
+    if (stop.getTime() - start.getTime() > 86_400_000 || /\bexhibit(ion)?\b/i.test(title)) continue;
+    const allDay = /data-event-allday="true"/.test(c);
+    const loc = text(/<p class="event-card-location">([\s\S]*?)<\/p>/.exec(c)?.[1] ?? '');
+    if (/zoom|on-?line|remote|virtual/i.test(loc) || /\bwebinar\b/i.test(title)) continue;
+    const key = `${title.toLowerCase()}#${start.toISOString().slice(0, 10)}`; if (seen.has(key)) continue; seen.add(key);
+    const desc = text(/<p class="event-card-description">([\s\S]*?)<\/p>/.exec(c)?.[1] ?? '');
+    const host = text(/ by ([^"]+)$/.exec(text(a[2]))?.[1] ?? '') || school.name || 'Campus';
+    const cats = [...c.matchAll(/class="label label-(?:sub)?category"\s*>#([^<]+)</g)].map((m) => text(m[1]));
+    const food = hasFreeFood(title, desc); const talk = TALK_RE.test(title) || cats.some((x) => /lecture|seminar|panel|talk|research/i.test(x));
+    out.push(base({
+      id: `op_${school.id.replace('s_', '')}_ucom_${id.slice(0, 18)}`, type: 'event', title, host, schoolId: school.id,
+      description: desc.slice(0, 280), date: start.toISOString(), startTime: allDay ? undefined : localTime(start, school.tz),
+      place: loc ? { name: loc, lat: school.center.lat, lng: school.center.lng } : undefined,
+      eligibility: 'Open to the campus community', benefit: food ? 'Free food' : undefined, cover: { emoji: '', hue: 200 },
+      tags: ['event', ...(food ? ['free food'] : []), ...(talk ? ['talk'] : []), ...cats.slice(0, 3).map((x) => x.toLowerCase())], interests: talk ? ['research', 'study'] : ['club'], goals: [], sourceUrl: `${origin}${a[1]}`, sourceLabel: school.name ? `${school.name} Community Calendar` : 'Community Calendar',
+    }, nowIso));
+  }
+  return out;
+}
+/** /calendars 에서 주 링크("Mon 11/9 - Sun 11/15")를 읽어 앞으로 horizonDays 안에 걸친 주만 받는다 (보통 5페이지) */
+export function uclaCommunityWeeks(html: string, now = new Date(), horizonDays = 30): string[] {
+  const flat = html.replace(/\s+/g, ' '); const until = now.getTime() + horizonDays * 86_400_000; const out: string[] = [];
+  for (const m of flat.matchAll(/<a href="(\/term\/[a-z]+-(\d{4})\/[^"]+)"\s*>[^<]*<span class="button-aside">\w{3} (\d{1,2})\/(\d{1,2}) - \w{3} (\d{1,2})\/(\d{1,2})<\/span>/g)) {
+    const y = Number(m[2]); const sm = Number(m[3]); const em = Number(m[5]);
+    // 가을 학기 링크의 연도는 학기 연도. 겨울방학처럼 1월로 넘어가면 다음 해
+    const sy = y; const from = Date.UTC(sy, sm - 1, Number(m[4])); const to = Date.UTC(em < sm ? sy + 1 : sy, em - 1, Number(m[6]) + 1);
+    if (to >= now.getTime() && from <= until) out.push(m[1]);
+  }
+  return [...new Set(out)];
+}
+export async function fetchUclaCommunity(origin: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> {
+  const o = origin.replace(/\/+$/, ''); const weeks = uclaCommunityWeeks(await get(`${o}/calendars`), new Date(), horizonDays);
+  const out: Opportunity[] = []; const ids = new Set<string>();
+  for (const w of weeks) for (const e of parseUclaCommunityWeek(await get(`${o}${w}`), school, new Date(), horizonDays, o)) if (!ids.has(e.id)) { ids.add(e.id); out.push(e); }
+  return out;
+}
+
+/** Trumba 공개 RSS (trumba.com/calendars/<webName>.rss) — Harvard Gazette 캘린더. pubDate = 시작(GMT). 설명 첫 줄들 = 장소, 다음 = 날짜·시간 줄.
+ *  "Harvard Key Required: Yes"(학교 로그인) 행사, 여러 날 이어지는 "Ongoing through" 전시는 뺀다 */
+export function parseTrumbaRss(xml: string, school: EventSchool, now = new Date(), horizonDays = 30, label = 'Events'): Opportunity[] {
+  const nowIso = now.toISOString(); const until = now.getTime() + horizonDays * 86_400_000;
+  const out: Opportunity[] = []; const seen = new Set<string>();
+  const raw = (it: string, t: string) => (new RegExp(`<${t}[^>]*>([\\s\\S]*?)<\\/${t}>`).exec(it)?.[1] ?? '');
+  for (const it of xml.match(/<item>[\s\S]*?<\/item>/g) ?? []) {
+    const title = text(text(raw(it, 'title'))); const link = text(raw(it, 'link')); const start = new Date(raw(it, 'pubDate'));
+    if (!title || !link || Number.isNaN(start.getTime()) || start.getTime() < now.getTime() || start.getTime() > until || isNoticeNotEvent(title) || /\bexhibit(ion)?\b/i.test(title)) continue;
+    const desc = raw(it, 'description').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
+    if (/Key Required<\/b>:(?:&nbsp;|\s)*Yes/i.test(desc) || /\bOngoing through\b/i.test(desc)) continue;
+    const parts = desc.split(/<br\s*\/?>/i).map((x) => text(x));
+    const dateIdx = parts.findIndex((x) => /^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*\.?,? /.test(x));
+    const place = dateIdx > 0 ? parts.slice(0, dateIdx).filter(Boolean).join(', ') : '';
+    if (/zoom|on-?line|virtual|webinar/i.test(place)) continue;
+    const allDay = dateIdx >= 0 && !/\d(:\d\d)?\s*(a\.m\.|p\.m\.|noon)/i.test(parts[dateIdx]);
+    const body = parts.slice(dateIdx + 1).filter((x) => x && !/^(Gazette Classification|Organization\/Sponsor|Cost|Harvard Key Required|More info|Contact|Ticket)/i.test(x)).join(' ');
+    const sponsor = text(/Organization\/Sponsor<\/b>:(?:&nbsp;|\s)*([^<]+)/i.exec(desc)?.[1] ?? '');
+    const cost = text(/<b>Cost<\/b>:(?:&nbsp;|\s)*([^<]+)/i.exec(desc)?.[1] ?? '');
+    const cats = text(/Classification<\/b>:(?:&nbsp;|\s)*([^<]+)/i.exec(desc)?.[1] ?? '').split(/,\s*/).filter(Boolean);
+    if (cats.some((c) => /^exhibition/i.test(c))) continue; // 박물관 전시는 매일 따로 올라온다 — '그 시간에 가는 행사'가 아니다
+    const key = `${title.toLowerCase()}#${start.toISOString().slice(0, 10)}`; if (seen.has(key)) continue; seen.add(key);
+    const food = hasFreeFood(title, body); const talk = TALK_RE.test(title) || cats.some((c) => /lecture|seminar|panel|talk/i.test(c));
+    const eid = /eventid%3D(\d+)/.exec(link)?.[1] ?? title.toLowerCase().replace(/[^a-z0-9]+/g, '_').slice(0, 40);
+    out.push(base({
+      id: `op_${school.id.replace('s_', '')}_trumba_${eid}`, type: 'event', title, host: (sponsor && sponsor.length <= 60 ? sponsor : '') || school.name || 'Campus', schoolId: school.id,
+      description: body.slice(0, 280), date: start.toISOString(), startTime: allDay ? undefined : localTime(start, school.tz),
+      place: place ? { name: place, lat: school.center.lat, lng: school.center.lng } : undefined,
+      eligibility: cost && !/^free/i.test(cost) ? `Cost: ${cost}` : 'Open to the campus community', benefit: food ? 'Free food' : undefined, cover: { emoji: '', hue: 200 },
+      tags: ['event', ...(food ? ['free food'] : []), ...(talk ? ['talk'] : []), ...cats.slice(0, 3).map((c) => c.toLowerCase())], interests: talk ? ['research', 'study'] : ['club'], goals: [], sourceUrl: link, sourceLabel: school.name ? `${school.name} ${label}` : label,
+    }, nowIso));
+  }
+  return out;
+}
+export async function fetchTrumba(webName: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> {
+  return parseTrumbaRss((await get(`https://www.trumba.com/calendars/${encodeURIComponent(webName)}.rss`)).replace(/^\uFEFF/, ''), school, new Date(), horizonDays);
+}
+
+export async function fetchCampusGroupsEvents(host: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> {
+  return parseCampusGroupsRss(await get(`${host.replace(/\/+$/, '')}/rss_events`), host, school, new Date(), horizonDays);
+}
+
 /** 행사가 아니라 ‘오늘 세미나 없음’·‘취소’ 같은 알림 — 행사 목록에 넣으면 그날 뭔가 있는 것처럼 보인다 */
 export const isNoticeNotEvent = (title: string) => /^no\b.*\b(today|this week|tonight)\b|\b(cancell?ed|postponed)\b/i.test(title);
 interface LwEvent { id: number; title: string; url: string; date_iso: string; is_canceled?: number | boolean; is_all_day?: number | boolean; is_starred?: number | boolean; is_online?: number | boolean; location?: string; summary?: string; event_types?: string[]; group_title?: string; cost?: string }

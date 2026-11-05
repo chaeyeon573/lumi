@@ -1,3 +1,4 @@
+import { stripEmoji } from '@core/lib/orglinks';
 import type { ReactNode } from 'react';
 import { t } from '@core/i18n';
 import { RefreshCw } from 'lucide-react';
@@ -22,7 +23,8 @@ export function CardSkeleton({ count = 3 }: { count?: number }) {
   );
 }
 
-export function EmptyState({ emoji = '🌱', title, description, action, className }: { emoji?: string; title: string; description?: string; action?: ReactNode; className?: string }) {
+export function EmptyState({ emoji: rawEmoji = '', title, description, action, className }: { emoji?: string; title: string; description?: string; action?: ReactNode; className?: string }) {
+  const emoji = stripEmoji(rawEmoji); // 이모지 그림은 그리지 않는다 (사장님 2026-11-03)
   return (
     <div className={cn('flex flex-col items-center justify-center text-center px-8 py-14', className)}>
       {/* emoji="" = 아이콘 없이 문장만 (빈 회색 상자가 깨진 그림처럼 보였다) */}

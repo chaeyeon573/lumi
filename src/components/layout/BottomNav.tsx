@@ -1,18 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { t, lang } from '@core/i18n';
 import { NavLink, useLocation, useNavigate, useParams } from 'react-router-dom';
-import { Plus, User, Users, Compass, CalendarPlus, Image, Lightbulb, Zap, BookOpen, Vote, Building2, Link2 } from 'lucide-react';
+import { User, Users, Compass, CalendarPlus, Image, Lightbulb, Zap, BookOpen, Vote, Link2, Home, CalendarDays } from 'lucide-react';
 import { cn } from '@core/lib/cn';
 import { BottomSheet } from '@/components/ui';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 
+// 2026-11-02 사장님 시안: Home · Explore · Schedule · Meet · Profile (People 은 Meet 안 · 가운데 + 대신 Meet 의 ‘Create a Meetup’ 과 위의 +)
 const items = [
-  { to: '/', label: t('사람'), Icon: Users },
-  { to: '/discover', label: t('발견'), Icon: Compass },
-  { to: '/community', label: t('캠퍼스'), Icon: Building2 },
-  { to: '/profile', label: t('프로필'), Icon: User },
+  { to: '/', label: lang === 'en' ? 'Home' : '홈', Icon: Home },
+  { to: '/explore', label: lang === 'en' ? 'Explore' : '탐색', Icon: Compass },
+  { to: '/schedule', label: lang === 'en' ? 'Schedule' : '일정', Icon: CalendarDays },
+  { to: '/meet', label: lang === 'en' ? 'Social' : '소셜', Icon: Users },
+  { to: '/profile', label: lang === 'en' ? 'Profile' : '프로필', Icon: User },
 ];
+
+/** 만들기 시트 열기 — Meet 화면 위의 + 버튼 등 어디서나 */
+export const OPEN_CREATE = 'aroundu:create';
+export const openCreate = () => window.dispatchEvent(new Event(OPEN_CREATE));
 
 /** 마지막으로 본 사람 (People 카드) — `+`에서 바로 초대할 때 사용 */
 export const LAST_SEEN_KEY = 'aroundu.people.last';
@@ -27,6 +33,7 @@ export function BottomNav() {
   const orgs = useAppStore((s) => s.organizations);
   const opps = useAppStore((s) => s.opportunities);
   const go = (path: string) => { setOpen(false); nav(path); };
+  useEffect(() => { const on = () => setOpen(true); window.addEventListener(OPEN_CREATE, on); return () => window.removeEventListener(OPEN_CREATE, on); }, []);
 
   // 상황 인식: 현재 화면에 따라 기본값을 채운다
   const path = loc.pathname;
@@ -34,7 +41,7 @@ export function BottomNav() {
   const oppHere = path.startsWith('/opportunities/') ? opps.find((o) => o.id === path.split('/')[2]) : undefined;
   const classHere = path.startsWith('/classes/') ? decodeURIComponent(path.split('/')[2] ?? '') : '';
   const userHere = path.startsWith('/users/') ? params.id ?? path.split('/')[2] : '';
-  let lastSeen = ''; try { lastSeen = path === '/' ? localStorage.getItem(LAST_SEEN_KEY) ?? '' : ''; } catch { /* */ }
+  let lastSeen = ''; try { lastSeen = path === '/people/explore' ? localStorage.getItem(LAST_SEEN_KEY) ?? '' : ''; } catch { /* */ }
   const inviteId = userHere || lastSeen;
   const invitee = inviteId ? v.userById(inviteId) : undefined;
   const adminOrgs = orgs.filter((o) => o.adminIds.includes(v.me.id));
@@ -58,14 +65,7 @@ export function BottomNav() {
     <>
       <nav className="shrink-0 bg-surface/95 backdrop-blur border-t border-line safe-bottom">
         <div className="grid grid-cols-5 h-[64px] items-center">
-          {items.slice(0, 2).map((it) => <NavItem key={it.to} {...it} />)}
-          <div className="grid place-items-center">
-            <button onClick={() => setOpen(true)} aria-label={t('만들기')}
-              className="-mt-6 h-[60px] w-[60px] rounded-full bg-primary text-white grid place-items-center shadow-[var(--shadow-float)] press v2:bg-surface-2 v2:text-lime-400 v2:border v2:border-line">
-              <Plus size={28} strokeWidth={2.4} />
-            </button>
-          </div>
-          {items.slice(2).map((it) => <NavItem key={it.to} {...it} />)}
+          {items.map((it) => <NavItem key={it.to} {...it} />)}
         </div>
       </nav>
       <BottomSheet open={open} onClose={() => setOpen(false)} title={t('무엇을 함께 시작할까요?')} tall>
@@ -85,10 +85,14 @@ export function BottomNav() {
   );
 }
 
+/** 탭이 맡는 다른 주소 — Meet 은 People 도, Schedule 은 약속·시간표도 */
+const ALSO: Record<string, string[]> = { '/meet': ['/people', '/feed'], '/schedule': ['/plans', '/timetable'] };
 function NavItem({ to, label, Icon }: { to: string; label: string; Icon: typeof Users }) {
+  const loc = useLocation();
+  const also = (ALSO[to] ?? []).some((p) => loc.pathname === p || loc.pathname.startsWith(`${p}/`));
   return (
-    <NavLink to={to} end={to === '/'} className={({ isActive }) => cn('flex flex-col items-center justify-center gap-1 v2:gap-0.5 h-full text-[11px] font-semibold', isActive ? 'text-primary' : 'text-ink-3')}>
-      {({ isActive }) => (<><Icon size={24} strokeWidth={isActive ? 2.4 : 1.8} />{label}{isActive && <span className="hidden v2:block h-1 w-1 rounded-full bg-lime-400" />}</>)}
+    <NavLink to={to} end={to === '/'} className={({ isActive }) => cn('flex flex-col items-center justify-center gap-1 v2:gap-0.5 h-full text-[11px] font-semibold', isActive || also ? 'text-[var(--color-primary)] v2:text-primary' : 'text-ink-3')}>
+      {({ isActive }) => (<><Icon size={24} strokeWidth={isActive || also ? 2.4 : 1.8} />{label}{(isActive || also) && <span className="hidden v2:block h-1 w-1 rounded-full bg-lime-400" />}</>)}
     </NavLink>
   );
 }

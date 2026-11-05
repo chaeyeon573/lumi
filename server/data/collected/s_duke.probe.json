@@ -1,0 +1,25 @@
+{
+ "checkedAt": "2026-11-03T03:07:55.287Z",
+ "status": "applied",
+ "stored": false,
+ "source": "timetable:hcx:https://dukehub.duke.edu/psc/CSPRD01/EMPLOYEE/SA|DUKEU",
+ "sampled": 6702,
+ "withTimes": 6702,
+ "terms": [
+  "Fall 2026",
+  "Spring 2027"
+ ],
+ "sample": [
+  "AAAS 102 · Introduction to African American Studies · Fall 2026 · M 11:45-13:00 W 11:45-13:00",
+  "ENVIRON 592 · UNFCCC Practicum · Fall 2026 · W 13:25-15:55",
+  "MUSIC 116 · Alexander Technique for Musicians, Dancers, and Actors · Fall 2026 · W 16:40-17:55",
+  "AEROSCI 102 · Heritage and Values of the United States Air Force · Spring 2027 · T 10:05-11:20",
+  "ENVIRON 816 · Applied Environmental Policy Analysis · Spring 2027 · T 13:25-15:55",
+  "MUSIC 101-1 · Class Piano (Sec 01) · Spring 2027 · M 11:45-13:00"
+ ],
+ "spotCheck": {
+  "matched": 6,
+  "mismatched": [],
+  "unavailable": 0
+ }
+}

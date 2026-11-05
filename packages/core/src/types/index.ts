@@ -252,6 +252,9 @@ export interface Opportunity {
   field?: string;
   /** 회사가 공고를 올린·갱신한 시각 (마감일이 없는 상시 채용) */
   postedAt?: string;
+  /** 유학생이 지원할 수 있나 — 공고 본문에 적힌 것만 (server/sources/workauth.ts). 없으면 공고에 안 적혀 있음
+   *  citizens: 미국 시민·보안 인가 필요 · no_sponsor: 비자 스폰서 없음 · intl_ok: CPT/OPT·유학생 가능이라고 적힘 */
+  workAuth?: 'citizens' | 'no_sponsor' | 'intl_ok';
   official?: boolean;
   lastVerified: string;
   qna: Comment[];
@@ -281,7 +284,8 @@ export type Residence = 'dorm' | 'offcampus' | 'commute';
 export type MeetPreference = 'same_hobby' | 'same_class' | 'same_goal' | 'same_living' | 'new_people';
 
 // ─── 조직 (동아리·학과·연구실·학생회) ──────────────────────────────────────
-export type OrganizationType = 'club' | 'department' | 'lab' | 'council' | 'greek';
+/** coop: 학생 협동조합 하우스 (Berkeley Student Cooperative 등, 2026-11-02) */
+export type OrganizationType = 'club' | 'department' | 'lab' | 'council' | 'greek' | 'coop';
 
 export interface Organization {
   id: ID;
@@ -294,7 +298,12 @@ export interface Organization {
   description: string;
   gallery: { emoji: string; hue: number; caption: string; url?: string }[];
   regularActivities: string[];
-  recruitment?: { title: string; period: string; open: boolean };
+  /**
+   * 모집 상태 (2026-11-02 사장님: 상시 모집인지, 마감이 있는지, 마감일이 언제인지가 중요).
+   * mode: rolling = 언제든 가입 · deadline = 마감일까지 지원(deadline YYYY-MM-DD) · cycle = 정해진 학기에 모집(period) · closed = 지금 안 받음.
+   * 출처가 알려 준 것만 (지어내지 않는다). how = 지원 방식 (Application · Audition · Tryout · Application + interview)
+   */
+  recruitment?: { title: string; period: string; open: boolean; mode?: 'rolling' | 'deadline' | 'cycle' | 'closed'; deadline?: string; how?: string; source?: string };
   notices: { id: ID; title: string; body: string; createdAt: string }[];
   followerIds: ID[];
   memberIds: ID[];
@@ -353,6 +362,8 @@ export interface Activity {
   place: Place;
   capacity: number;
   visibility: Visibility;
+  /** Interested(관심) — 참석 인원에 들지 않는다. ⚠ 본인 것만 내려간다 (server/view.ts) */
+  interestedIds?: ID[];
   /** visibility === 'selected' | 'department' 일 때 대상 */
   visibilityTargets?: string[];
   joinPolicy: JoinPolicy;

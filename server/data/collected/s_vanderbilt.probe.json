@@ -1,0 +1,25 @@
+{
+ "checkedAt": "2026-11-03T11:39:48.820Z",
+ "status": "applied",
+ "stored": false,
+ "source": "timetable:vanderbilt",
+ "sampled": 5070,
+ "withTimes": 5070,
+ "terms": [
+  "Fall 2026",
+  "Spring 2027"
+ ],
+ "sample": [
+  "CORE 1010 · Being Human (Sec 01) · Fall 2026 · M 08:40-09:55 W 08:40-09:55",
+  "ECON 3035 · Econometric Methods (Sec 03) · Fall 2026 · M 09:05-09:55 W 09:05-09:55 F 09:05-09:55",
+  "MGT 6478 · Business Project Management (Sec 01) · Fall 2026 · T 11:30-13:00 R 11:30-13:00",
+  "SPEDV 7800 · Characteristics of Students with Complex Learning Needs · Fall 2026 · M 16:30-19:20",
+  "ECON 3035 · Econometric Methods (Sec 01) · Spring 2027 · T 09:30-10:45 R 09:30-10:45",
+  "MGT 6574 · Spreadsheets for Business Analytics (Sec 02) · Spring 2027 · T 16:15-17:45 R 16:15-17:45"
+ ],
+ "spotCheck": {
+  "matched": 0,
+  "mismatched": [],
+  "unavailable": 0
+ }
+}

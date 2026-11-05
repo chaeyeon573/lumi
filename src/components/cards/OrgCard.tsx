@@ -1,3 +1,4 @@
+import { recruitmentLabel } from '@core/lib/orglinks';
 import { useNavigate } from 'react-router-dom';
 import { BadgeCheck, Users } from 'lucide-react';
 import type { Organization } from '@core/types';
@@ -13,7 +14,7 @@ export function OrgCard({ org }: { org: Organization }) {
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-1 text-[14px] font-bold truncate">{isSampleOrg(org.id) && <SampleTag className="mr-0" />}{org.name}{org.verified && !isSampleOrg(org.id) && <BadgeCheck size={14} className="text-gold shrink-0" />}</div>
         <div className="text-[12px] text-ink-3 flex items-center gap-2"><span>{ORG_TYPE_LABELS[org.type]}</span><span className="flex items-center gap-0.5"><Users size={11} />{org.followerIds.length}</span></div>
-        {org.recruitment?.open && <Tag tone="accent" className="mt-1">{org.recruitment.title}</Tag>}
+        {(() => { const r = recruitmentLabel(org.recruitment); return r && <Tag tone={r.open ? 'accent' : undefined} className="mt-1">{r.text}</Tag>; })()}
       </div>
     </button>
   );

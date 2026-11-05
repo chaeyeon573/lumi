@@ -263,6 +263,12 @@ export function createEngine(ctx: EngineContext) {
         d.posts.forEach((p) => { if (p.relatedActivityId === id) { delete p.relatedActivityId; touched.push(p); } });
         return { posts: touched, removed: { activities: [id], participations: removedParts, chatRooms: rooms } };
       },
+      toggleInterest(activityId: ID, userId: ID): Patch {
+        const a = find(db().activities, activityId);
+        const ids = a.interestedIds ?? [];
+        a.interestedIds = ids.includes(userId) ? ids.filter((i) => i !== userId) : [...ids, userId];
+        return { activities: [a] };
+      },
       join(activityId: ID, userId: ID, message?: string): Patch {
         const activity = find(db().activities, activityId);
         const existing = db().participations.find((p) => p.activityId === activityId && p.userId === userId && p.status !== 'cancelled' && p.status !== 'rejected');

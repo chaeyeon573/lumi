@@ -1,0 +1,20 @@
+{
+ "checkedAt": "2026-11-03T01:03:31.351Z",
+ "status": "applied",
+ "stored": false,
+ "source": "catalog:https://catalogue.uci.edu/",
+ "sampled": 284,
+ "withTimes": 0,
+ "terms": [
+  "catalog"
+ ],
+ "sample": [
+  "CHEM 221A · Fundamentals of Molecular Biophysics · catalog",
+  "CHEM 292 · Graduate Symposium · catalog",
+  "CHEM 51C · Organic Chemistry · catalog",
+  "EHS 204 · Neurotoxicology · catalog",
+  "MUSIC 166 · Strings for Music Performance Majors · catalog",
+  "MUSIC 244 · Readings for the Qualifying Examination · catalog"
+ ],
+ "spotCheck": "no lookup (catalog codes/titles only)"
+}

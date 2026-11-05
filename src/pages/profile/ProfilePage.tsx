@@ -103,6 +103,8 @@ export function ProfilePage() {
             <Button full icon={<Pencil size={15} />} onClick={() => nav('/profile/edit')}>{t('프로필 편집')}</Button>
             <Button full variant="secondary" icon={<ShieldCheck size={15} />} onClick={() => nav('/settings/privacy')}>{t('공개 범위')}</Button>
           </div>
+          {/* 운영진·회원인 조직 — 운영진은 여기서 행사를 올린다 */}
+          <button onClick={() => nav('/orgs/mine')} className="mt-2 w-full h-11 rounded-xl bg-surface-2 text-[13px] font-semibold flex items-center justify-center gap-1.5 press">{lang === 'en' ? 'My Organizations' : '내 조직'}<span className="text-ink-3">· {lang === 'en' ? 'post events' : '행사 올리기'}</span></button>
         </section>
 
 

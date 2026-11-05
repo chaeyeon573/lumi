@@ -15,7 +15,8 @@ export function AppHeader({ search, right }: { search?: boolean; right?: React.R
   );
   return (
     <header className="sticky top-0 z-30 bg-surface/85 backdrop-blur-xl h-16 pl-4 pr-3 flex items-center gap-1.5">
-      <span className="font-display text-[22px] font-extrabold tracking-tight text-primary shrink-0 v2:hidden">Lumi</span>
+      {/* 앱 이름은 Lumi (2026-11-02 사장님) */}
+      <span className="font-display text-[22px] font-extrabold tracking-tight text-ink shrink-0 v2:hidden">Lumi</span>
       <span className="hidden v2:inline font-['Unbounded'] text-[22px] font-extrabold tracking-tight text-ink shrink-0">lumi<span className="text-pink-400">.</span></span>
       <span className="flex-1" />
       {right}

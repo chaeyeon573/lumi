@@ -1,0 +1,2277 @@
+{
+ "collectedAt": "2026-11-05T03:39:26.655Z",
+ "sources": [
+  "engage https://rice.campuslabs.com/engage 77"
+ ],
+ "events": [
+  {
+   "description": "Math Nights are from 5:30-6:30pm on Thursdays (Aug. 27 - Dec. 10) in the Student Resource Center. All students are welcome &ndash; undergraduates and graduates of any department and gender! Our programming changes each week. Find out what is happening this week here: https://site",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12644591",
+   "type": "event",
+   "title": "AWM Math Nights",
+   "host": "Rice University Student Chapter of the Association for Women in Mathematics",
+   "schoolId": "s_rice",
+   "date": "2026-11-05T23:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Student Resource Center (RMC Basement)",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12644591",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "We will be hosting a movie night with RCLS to watch Marshall!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942152",
+   "type": "event",
+   "title": "RJP x RCLS Movie Night",
+   "host": "Rice Justice Project",
+   "schoolId": "s_rice",
+   "date": "2026-11-06T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Duncan Hall 1064",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942152",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Suicide prevention is a community responsibility. We can all play a part in de-stigmatizing mental health, opening up the discussion around suicide, and prepare ourselves for the moment when someone needs us most. Please join us for QPR Suicide prevention training for a brief but",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12842175",
+   "type": "event",
+   "title": "QPR: Suicide Prevention Training",
+   "host": "Student Wellbeing Office",
+   "schoolId": "s_rice",
+   "date": "2026-11-06T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Online",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12842175",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join the Office of Access and Institutional Excellence and the Community Facilitators for a weekly dialogue series. These student-led discussions will provide a brave space for open dialogue on pressing topics related to university life and navigating differences. Each week&rsquo",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12578205",
+   "type": "event",
+   "title": "Dialogues on Differences (DoD)",
+   "host": "Office of Access and Institutional Excellence",
+   "schoolId": "s_rice",
+   "date": "2026-11-06T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Multicultural Center",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12578205",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come stop by our table in front of Chaus and learn more about study abroad! Hear from our Study Abroad Ambassadors &ndash; they are excited to share their study abroad experiences and help you along your own study abroad journey!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12938722",
+   "type": "event",
+   "title": "Study Abroad Ambassadors Tabling",
+   "host": "Office of Study Abroad",
+   "schoolId": "s_rice",
+   "date": "2026-11-06T20:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Chaus",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12938722",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come to the Center for Civic Leadership to learn more about our Moody Global Fellows program! This opportunity allows for FGLI and students who have not had a lot of previous international experience to travel abroad for two weeks in the month of May. To learn more about this ful",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12940641",
+   "type": "event",
+   "title": "Moody Global Fellows Info Session!",
+   "host": "Center for Civic Leadership",
+   "schoolId": "s_rice",
+   "date": "2026-11-06T20:30:00.000Z",
+   "startTime": "14:30",
+   "place": {
+    "name": "Center for Civic Leadership ",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12940641",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A joint social gathering for the Department of Biosciences, held on the first Friday of every month. This month&rsquo;s event will take place on Friday, November 6, from 4:00&ndash;5:00 PM at the Graduate Commons at Valhalla.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12920284",
+   "type": "event",
+   "title": "First Friday EEB",
+   "host": "Ecology and Evolutionary Biology GSA",
+   "schoolId": "s_rice",
+   "date": "2026-11-06T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Vallhala Grad Commons",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12920284",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come grab a drink and meet new friends at CSA's Pop-Up Cafe! We're excited to bring students together over handcrafted drinks inspired by Asian cafe culture. We will serve three specialty drinks: a Matcha Tiramisu, a Strawberry Mango Refresher, and a Vietnamese Ube Coffee. The Mu",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12880919",
+   "type": "event",
+   "title": "CSA Pop-Up Cafe 2026",
+   "host": "Rice Chinese Student Association",
+   "schoolId": "s_rice",
+   "date": "2026-11-06T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Multicultural Center",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12880919",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "On November 6th, we will be hosting a night in celebration of Southeast Asian and Pacific Islander culture. The night will feature performances from Houston dance and music organizations, Rice undergraduate dance groups, and performers from partnering universities. The SEAPI open",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12905088",
+   "type": "event",
+   "title": "Southeast Asian and Pacific Islander (SEAPI) Night",
+   "host": "Vietnamese Student Association",
+   "schoolId": "s_rice",
+   "date": "2026-11-06T23:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Rice Student Center",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12905088",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This RUM-ies event allows previously paired mentor buddies to interact with other RUM-ies and gain lasting connections with the rest of RUMA in a welcoming space.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12907365",
+   "type": "event",
+   "title": "RUM-ies Event: Chaus Mixing",
+   "host": "Rice Undergraduate Marketing Association",
+   "schoolId": "s_rice",
+   "date": "2026-11-07T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Chaus",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12907365",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "All kayaking trips require completing a pool session with trip leaders to demonstrate ability to exit kayaks confidently. The ability to swim independently is required to join this trip. Join ROPE as we head out to the southern end of the biologically diverse Big Thicket National",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_11539016",
+   "type": "event",
+   "title": "November 7-8 Camp & Kayak - Martin Dies Jr. State Park",
+   "host": "Rice Outdoor Programs & Education",
+   "schoolId": "s_rice",
+   "date": "2026-11-07T12:30:00.000Z",
+   "startTime": "06:30",
+   "place": {
+    "name": "Martin Dies Jr. State Park",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/11539016",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Can you hit the crossbar or bend a shot around a wall of defenders? Come test your skills at the Rice Engineers Without Borders Soccer Shootout Fundraiser to take on target and high-score challenges, sip on Peruvian chicha morada, and grab a snack while competing for top-score pr",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "athletics"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942145",
+   "type": "event",
+   "title": "EWB Soccer Shootout",
+   "host": "Engineers Without Borders Rice University Chapter",
+   "schoolId": "s_rice",
+   "date": "2026-11-07T15:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Intramural Field 6",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942145",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Rice Alzheimer&rsquo;s Buddies will host Rice Gathering Place: Fall Friendsgiving! on November 7 in collaboration with CarePartners. This event will bring together individuals living with dementia, their families, and Rice students for an afternoon of connection, conversation, an",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942155",
+   "type": "event",
+   "title": "Rice Gathering Place: Fall Friendsgiving!",
+   "host": "The Rice University Alzheimer's Buddies",
+   "schoolId": "s_rice",
+   "date": "2026-11-07T20:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Duncan Game Theory Room",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942155",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Diwali is the festival of lights and is one of the most popular and widely celebrated festivals across the Indian subcontinent. This festival is usually commemerated with families and friends getting together, sharing ethnic food, distributing Indian sweets, wearing one&rsquo;s f",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942165",
+   "type": "event",
+   "title": "Hanszen College and Basmati Beats Diwali Event",
+   "host": "Basmati Beats",
+   "schoolId": "s_rice",
+   "date": "2026-11-07T23:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Hanszen Commons",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942165",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A social where Kesem members can get together to play pickleball and socialize!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12843567",
+   "type": "event",
+   "title": "Kesem Pickleball Social",
+   "host": "Camp Kesem Rice",
+   "schoolId": "s_rice",
+   "date": "2026-11-08T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Gibbs Recreation and Wellness Center Pickleball Courts",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12843567",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Deepotsav is known as the festival of lights. This festival is celebrated across India. Join us for a dazzling evening of celebration! Enjoy a feast of rich Indian flavors, lively dance, and the festive warmth of lights. Come for the food, stay for the dance, and celebrate with u",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12856488",
+   "type": "event",
+   "title": "Deepotsav'26",
+   "host": "Indian Students at Rice",
+   "schoolId": "s_rice",
+   "date": "2026-11-09T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "GSA grad commons",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12856488",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join Camp Kesem for a sweet and meaningful Letter Writing Social! We&rsquo;ll spend time writing heartfelt letters of encouragement, love, and support to our campers and their families. Whether it&rsquo;s a few words of kindness or a longer message, every letter is an opportunity",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942186",
+   "type": "event",
+   "title": "Kesem Letter Writing Social",
+   "host": "Camp Kesem Rice",
+   "schoolId": "s_rice",
+   "date": "2026-11-09T23:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Chao 1st Floor study room",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942186",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Get ready, get set, it&rsquo;s Homecoming Week! Kick off homecoming with a trip to the arcade featuring indoor laser tag, Cane's and Dominos', photobooth, various arcade games, and earn Bingos for prizes!!! Get ready and bring your friends to set a high score at a Homecoming Kick",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12947390",
+   "type": "event",
+   "title": "Ready! Set! Homecoming!",
+   "host": "Rice Program Council",
+   "schoolId": "s_rice",
+   "date": "2026-11-10T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Rice Memorial Center (RMC) Grand Hall & Sammy's",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12947390",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Welcome back, Rice! Rice Salseros is back every Monday night, starting August 24. Most classes will be in the RMC Grand Hall (with a few select dates in Farnsworth Pavilion). Classes are open to all skill levels - no partner or experience required. Just bring yourself and get rea",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12604826",
+   "type": "event",
+   "title": "Salsa Weekly Lesson",
+   "host": "Rice Salseros",
+   "schoolId": "s_rice",
+   "date": "2026-11-10T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Grand Hall RMSC",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12604826",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Suicide prevention is a community responsibility. We can all play a part in de-stigmatizing mental health, opening up the discussion around suicide, and prepare ourselves for the moment when someone needs us most. Please join us for QPR Suicide prevention training for a brief but",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12842176",
+   "type": "event",
+   "title": "QPR: Suicide Prevention Training",
+   "host": "Student Wellbeing Office",
+   "schoolId": "s_rice",
+   "date": "2026-11-11T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "North College: TBA",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12842176",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Pancakes for Parkinson&rsquo;s is hosting the 9th Annual Pancakes Around the World on November 10 from 7-9 pm in Sammy's! Come learn about Parkinson&rsquo;s Disease and enjoy some delicious pancakes while taking a much-needed break. During this event, multiple cultural clubs and ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12923624",
+   "type": "event",
+   "title": "Pancakes Around the World",
+   "host": "Rice Pancakes for Parkinson's",
+   "schoolId": "s_rice",
+   "date": "2026-11-11T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Sammy's at the RMC",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12923624",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Discover how to make a meaningful impact through servant leadership & civic engagement. Learn how to lead with purpose, strengthen your organization, and create positive change on campus and in the community. Lunch will be provided! If you need an accommodation to fully participa",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12546761",
+   "type": "event",
+   "title": "Lunch & Lead: Servant Leadership",
+   "host": "Student Center",
+   "schoolId": "s_rice",
+   "date": "2026-11-11T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Farnsworth Pavillion",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12546761",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Social Event with Boba provided from Atcha, meant to increase club awareness of Teaming for Transplants and what we do. We are a club focused on bringing transplant awareness to Rice University. This event is meant to be fun, meaningful, and informative to all members, inclusive ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942154",
+   "type": "event",
+   "title": "Boba Mixer",
+   "host": "Teaming for Transplants",
+   "schoolId": "s_rice",
+   "date": "2026-11-11T20:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "RMC Lobby",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942154",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "More likely than not, you've heard of Oxford and Cambridge University. These two prestigious research universities are located in England and renowned globally. If you're interested in spending a semester or academic year completing your studies at either of these schools, it's p",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12895496",
+   "type": "event",
+   "title": "Oxford & Cambridge",
+   "host": "Office of Study Abroad",
+   "schoolId": "s_rice",
+   "date": "2026-11-11T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Miner Lounge ",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12895496",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join the Rice Autoimmune Disorder Society for a hands-on service advocacy event! Come design posters using stickers, markers, and other craft supplies, with each poster focused on a different autoimmune disorder. Your creations will help spread awareness and educate our community",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942157",
+   "type": "event",
+   "title": "RAIDS Poster-Making Event",
+   "host": "Rice Autoimmune Disorder Society",
+   "schoolId": "s_rice",
+   "date": "2026-11-12T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Chao PDR",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942157",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The GMMA Guest Speaker Series with Dr. John Ma will provide Rice students with an informal opportunity to explore the intersection of Christianity, medicine, and life in healthcare. Rather than a formal lecture, the event will center around an open conversation with Dr. Ma, who w",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12856420",
+   "type": "event",
+   "title": "Global Medical Missions Alliance - The Inside Scoop Dr. Ma Speaker Event",
+   "host": "Global Medical Missions Alliance",
+   "schoolId": "s_rice",
+   "date": "2026-11-12T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Lovett College PDR",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12856420",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Open Progress Meeting for anyone that is interested in joining RNEF.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942159",
+   "type": "event",
+   "title": "Rice New Energy Fund Open PM",
+   "host": "Rice New Energy Fund",
+   "schoolId": "s_rice",
+   "date": "2026-11-12T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Virani 285",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942159",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Math Nights are from 5:30-6:30pm on Thursdays (Aug. 27 - Dec. 10) in the Student Resource Center. All students are welcome &ndash; undergraduates and graduates of any department and gender! Our programming changes each week. Find out what is happening this week here: https://site",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12644592",
+   "type": "event",
+   "title": "AWM Math Nights",
+   "host": "Rice University Student Chapter of the Association for Women in Mathematics",
+   "schoolId": "s_rice",
+   "date": "2026-11-12T23:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Student Resource Center (RMC Basement)",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12644592",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Please join Rice's Hong Kong Student Association for our milk tea and mahjong event! Open to all Rice students and no previous experience necessary, just come prepared to have fun, learn how to play mahjong, and enjoy yummy food and drinks! We will have a choice of Hong Kong styl",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942187",
+   "type": "event",
+   "title": "Rice HKSA Milk Tea & Mahjong",
+   "host": "Rice Hong Kong Student Association",
+   "schoolId": "s_rice",
+   "date": "2026-11-13T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "McMurtry PDR",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942187",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Grab a brush and unwind with Women in STEM at our Paint & Sip social! We'll provide canvases and paint for you to make any creation your heart desires. We'll have mocktails and light bites to accompany. Bring a friend and your creativity!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12953511",
+   "type": "event",
+   "title": "Paint & Sip Social",
+   "host": "Rice Women in STEM",
+   "schoolId": "s_rice",
+   "date": "2026-11-13T00:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Ray's Courtyard",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12953511",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "We are hosting a big/little event at our 3rd general body meeting in order to connect newer members of Kesem with more senior members and to encourage Kesem community bonding.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12923678",
+   "type": "event",
+   "title": "GBM 3",
+   "host": "Camp Kesem Rice",
+   "schoolId": "s_rice",
+   "date": "2026-11-13T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "PCF Tent 4",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12923678",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Bioethics and Bites is a new, free dinner event (November 12, 6 to 8 PM) that is open to the entire Rice community. Over a catered dinner from Aga&rsquo;s, Rice students sit in small groups with professors, researchers, and bioethicists from Rice, Baylor College of Medicine, and ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942196",
+   "type": "event",
+   "title": "Bioethics and Bites Event",
+   "host": "Rice Bioethics Initiative",
+   "schoolId": "s_rice",
+   "date": "2026-11-13T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Brockman Hall 101",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942196",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join the Office of Access and Institutional Excellence and the Community Facilitators for a weekly dialogue series. These student-led discussions will provide a brave space for open dialogue on pressing topics related to university life and navigating differences. Each week&rsquo",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12578206",
+   "type": "event",
+   "title": "Dialogues on Differences (DoD)",
+   "host": "Office of Access and Institutional Excellence",
+   "schoolId": "s_rice",
+   "date": "2026-11-13T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Multicultural Center",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12578206",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Do you like scallion pancakes? Do you wanna pie your friend? Well you can have both at Pie & Pancakes! Enjoy made-to-order scallion pancakes packed with toppings Simultaneously pie your friends on our board Pull up to Ray&rsquo;s courtyard Friday Nov 13 anytime from 2-4pm \ud83d",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12905093",
+   "type": "event",
+   "title": "RTA Pie & Pancake",
+   "host": "Rice Taiwanese Association",
+   "schoolId": "s_rice",
+   "date": "2026-11-13T20:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Ray's Courtyard",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12905093",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come stop by our table in front of Chaus and learn more about study abroad! Hear from our Study Abroad Ambassadors &ndash; they are excited to share their study abroad experiences and help you along your own study abroad journey!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12935236",
+   "type": "event",
+   "title": "Study Abroad Ambassadors Tabling",
+   "host": "Office of Study Abroad",
+   "schoolId": "s_rice",
+   "date": "2026-11-13T20:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Chaus",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12935236",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Rice Chinese Student Association's Tea Tasting is an exciting drop-in event on Friday, November 13th from 4 to 6 pm in the Murt PDR. Students will be able to sample jasmine milk teas from five tea shops: Mollytea, Heytea, ChaHalo, ChaRedefine, and UG. These popular drinks rep",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12907375",
+   "type": "event",
+   "title": "CSA Oriental Tea Tasting",
+   "host": "Rice Chinese Student Association",
+   "schoolId": "s_rice",
+   "date": "2026-11-13T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "McMurtry PDR",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12907375",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join the Streams of Joy Campus Fellowship at Rice University for our Thanksgiving Fellowship. This event is an opportunity for students to come together, and celebrate Thanksgiving with grateful hearts, giving thanks to God for His faithfulness, blessings, and grace throughout th",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942185",
+   "type": "event",
+   "title": "Thanksgiving Fellowship",
+   "host": "Streams of Joy Campus Fellowship at Rice University",
+   "schoolId": "s_rice",
+   "date": "2026-11-14T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "RMC Ley 2nd Floor Meeting Room",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942185",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Esperanza, Rice&rsquo;s annual undergraduate formal, is bringing the spirit of New Orleans&rsquo; French Quarter to campus for a night of music, dancing, and authentic Cajun food. Join us on Friday, November 13, from 9:00 pm to 1:00 am at Jamail Plaza. Formal attire is encouraged",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12955080",
+   "type": "event",
+   "title": "Esperanza",
+   "host": "Rice Program Council",
+   "schoolId": "s_rice",
+   "date": "2026-11-14T03:00:00.000Z",
+   "startTime": "21:00",
+   "place": {
+    "name": "Jamail Plaza",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12955080",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Lone Star Trail is the only long-distance National Recreation Trail in Texas. The trail runs 128 miles through the diverse forests of Texas including foothill mixed hardwoods and cypress bayous. The trail meanders through flat and gently rolling forests of pine, oak, and mixe",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_11539377",
+   "type": "event",
+   "title": "November 14-15 Weekend Backpacking - Sam Houston National Forest",
+   "host": "Rice Outdoor Programs & Education",
+   "schoolId": "s_rice",
+   "date": "2026-11-14T13:00:00.000Z",
+   "startTime": "07:00",
+   "place": {
+    "name": "Sam Houston National Forest",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/11539377",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come watch 1lb and 3lb robots fight from across Texas in the Rice Robo-Rumble, hosted by the Rice Robotics Club in the Brockman Hall for Physics! Learn about how battlebots are designed, built, and controlled by speaking with the roboticists who made them.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942146",
+   "type": "event",
+   "title": "Rice Robotics Club Robo-Rumble Battlebots Competition",
+   "host": "Rice Robotics Club",
+   "schoolId": "s_rice",
+   "date": "2026-11-14T15:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Brockman Hall for Physics Room 101",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942146",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Volunteer to prepare or bring a meal, snacks, or treats to Nora&rsquo;s Home for transplant patients and their families. Whether you cook a homemade meal or pick up food, this is a great way for Rice students to give back to the Houston community and help make guests&rsquo; stays",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942182",
+   "type": "event",
+   "title": "Nora's Home - Chef of the Day",
+   "host": "Teaming for Transplants",
+   "schoolId": "s_rice",
+   "date": "2026-11-14T20:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Nora's Home",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942182",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Rice Gluten-Free & Friends will host a community brunch at Snooze A.M. Eatery, a local restaurant offering gluten-free options near Rice University. Students will meet on campus before carpooling to the restaurant at 3191 W Holcombe Blvd. Our club has hosted several successful ev",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12953493",
+   "type": "event",
+   "title": "Rice Gluten-Free & Friends: Community Brunch at Snooze A.M. Eatery",
+   "host": "Rice Gluten-Free & Friends",
+   "schoolId": "s_rice",
+   "date": "2026-11-15T16:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Snooze, an A.M. Eatery",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12953493",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Rice Gluten-Free & Friends will host a community brunch at Snooze A.M. Eatery, a local restaurant offering gluten-free options near Rice University. Students will meet on campus before carpooling to the restaurant at 3191 W Holcombe Blvd. Our club has hosted several successful ev",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12953494",
+   "type": "event",
+   "title": "Rice Gluten-Free & Friends: Community Brunch at Snooze A.M. Eatery",
+   "host": "Rice Gluten-Free & Friends",
+   "schoolId": "s_rice",
+   "date": "2026-11-15T16:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "3191 W Holcombe Blvd A95",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12953494",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Every semester, Rice Escape hosts an escape room or puzzle hunt for all Rice students to participate in a free on-campus puzzle-solving experience! This semester, our club has decided on a casino run-based theme, called OWL OR NOTHING. Students will have 60 minutes to solve all t",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942149",
+   "type": "event",
+   "title": "Rice Escape - OWL OR NOTHING (Fall 2026 Escape Room(",
+   "host": "Rice Escape",
+   "schoolId": "s_rice",
+   "date": "2026-11-16T14:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Wiess Basement",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942149",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Learn about the benefits of study abroad and scholarship opportunities to help make study abroad a reality through the Office of Study Abroad for a summer, semester, or academic year! Special summer scholarship opportunities will be announced. This in-person info session consists",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12941714",
+   "type": "event",
+   "title": "Study Abroad Scholarships",
+   "host": "Office of Study Abroad",
+   "schoolId": "s_rice",
+   "date": "2026-11-16T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Miner Lounge",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12941714",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Information session to learn more about RNEF.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942163",
+   "type": "event",
+   "title": "Rice New Energy Fund Info Session",
+   "host": "Rice New Energy Fund",
+   "schoolId": "s_rice",
+   "date": "2026-11-16T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Mc Nair 214",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942163",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Suicide prevention is a community responsibility. We can all play a part in de-stigmatizing mental health, opening up the discussion around suicide, and prepare ourselves for the moment when someone needs us most. Please join us for QPR Suicide prevention training for a brief but",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12842177",
+   "type": "event",
+   "title": "QPR: Suicide Prevention Training",
+   "host": "Student Wellbeing Office",
+   "schoolId": "s_rice",
+   "date": "2026-11-16T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Ley Conference Room - 2nd Floor RMC",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12842177",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "We will be hosting oncologists from the TMC to speak about their career pathways in medicine, specifically in the field of cancer care. One night will be dedicated to blood cancer professionals, and the other night will be a more general focus on all other types of cancers.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12953503",
+   "type": "event",
+   "title": "Oncology Careers Panel",
+   "host": "Rice for Blood Cancer United",
+   "schoolId": "s_rice",
+   "date": "2026-11-17T00:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Grand Hall",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12953503",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Welcome back, Rice! Rice Salseros is back every Monday night, starting August 24. Most classes will be in the RMC Grand Hall (with a few select dates in Farnsworth Pavilion). Classes are open to all skill levels - no partner or experience required. Just bring yourself and get rea",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12604827",
+   "type": "event",
+   "title": "Salsa Weekly Lesson",
+   "host": "Rice Salseros",
+   "schoolId": "s_rice",
+   "date": "2026-11-17T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Grand Hall RMSC",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12604827",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Every semester, Rice Escape hosts an escape room or puzzle hunt for all Rice students to participate in a free on-campus puzzle-solving experience! This semester, our club has decided on a casino run-based theme, with the name to be determined soon. Students will have 60 minutes ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942176",
+   "type": "event",
+   "title": "Rice Escape Fall 2026 Room",
+   "host": "Rice Escape",
+   "schoolId": "s_rice",
+   "date": "2026-11-17T14:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Wiess Basement",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942176",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for a study break as we celebrate our International students for International Education Week! We will have coffee, tea, and pastries to help overcome that afternoon slump. Many of our graduate affinity and cultural groups will also be present to share treats from around ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12746136",
+   "type": "event",
+   "title": "OISS & GSA International Education Week Coffee Break",
+   "host": "Graduate Student Association",
+   "schoolId": "s_rice",
+   "date": "2026-11-17T21:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Brochstein Plaza",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12746136",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This event brings together not only our BASYK members, but also our fellow RICE community. We want to have a nice potluck where people can bring treats if they would like but also an event where people dont have to worry about what they will be eating that day. We want to provide",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942194",
+   "type": "event",
+   "title": "Thanksgiving PotLuck!",
+   "host": "BASYK Dance Club",
+   "schoolId": "s_rice",
+   "date": "2026-11-17T23:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Lovett PDR",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942194",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "We will be hosting oncologists from the TMC to speak about their career pathways in medicine, specifically in the field of cancer care. One night will be dedicated to blood cancer professionals, and the other night will be a more general focus on all other types of cancers.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12953504",
+   "type": "event",
+   "title": "Oncology Careers Panel",
+   "host": "Rice for Blood Cancer United",
+   "schoolId": "s_rice",
+   "date": "2026-11-18T00:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Grand Hall",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12953504",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come stop by our table in front of Chaus and learn more about study abroad! Hear from our Study Abroad Ambassadors &ndash; they are excited to share their study abroad experiences and help you along your own study abroad journey!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12935296",
+   "type": "event",
+   "title": "Study Abroad Ambassadors Tabling",
+   "host": "Office of Study Abroad",
+   "schoolId": "s_rice",
+   "date": "2026-11-18T16:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Chaus",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12935296",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "This information session is for students interested in the BIOS 368 Summer Immersion in India . Students will spend the first week in Houston before traveling to Bengaluru, India, for the remaining two weeks of the immersion. Please RSVP here on OwlNest if planning to attend. Stu",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12934756",
+   "type": "event",
+   "title": "BIOS 368 Summer Immersion in India: Info Session",
+   "host": "Rice Global",
+   "schoolId": "s_rice",
+   "date": "2026-11-18T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Baker College Library",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12934756",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Happy International Education Week! Join us for the inaugural Global Citizenship Forum: Watson, Wagoner & the World , featuring Center for Civic leadership fellowship recipients Mark Perkins and Biraj Nainabasti as they share their experiences, insights, and perspectives on globa",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "talk",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12941963",
+   "type": "event",
+   "title": "Global Citizenship Forum: Watson, Wagoner & the World",
+   "host": "Center for Civic Leadership",
+   "schoolId": "s_rice",
+   "date": "2026-11-18T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Grand Hall",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12941963",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us during International Education Week's Cafe y Comunidad in tasting authentic Latin American coffees and pastries while engaging with community members about their unique connections to coffee culture. Don't miss this unique opportunity to connect and learn about coffee cul",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12938747",
+   "type": "event",
+   "title": "International Education Week: Cafe y Comunidad",
+   "host": "Office of Study Abroad",
+   "schoolId": "s_rice",
+   "date": "2026-11-18T21:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Flex Studio",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12938747",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The RNEF Gratitude and Goal Setting Night is an end-of-semester gathering hosted by the Rice New Energy Fund, open to all Rice students. The evening gives analysts and interested students a relaxed Thanksgiving-themed way to reflect on the fall, thank the mentors and teammates wh",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12907387",
+   "type": "event",
+   "title": "RNEF Gratitude and Goal Setting Night",
+   "host": "Rice New Energy Fund",
+   "schoolId": "s_rice",
+   "date": "2026-11-19T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Virani Hall 168A",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12907387",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Interested in spending your Fall semester in Europe through a Rice Global program? Join Rice Global for an upcoming information session highlighting two exciting fall opportunities: Rice Global Paris Fall Semester 2:00 PM - 2:30 PM Geared toward students interested in health",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12853365",
+   "type": "event",
+   "title": "Info Session: Fall 2027 Programs in Paris and Venice (Rice Global)",
+   "host": "Rice Global",
+   "schoolId": "s_rice",
+   "date": "2026-11-19T20:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "5th Floor",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12853365",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Math Nights are from 5:30-6:30pm on Thursdays (Aug. 27 - Dec. 10) in the Student Resource Center. All students are welcome &ndash; undergraduates and graduates of any department and gender! Our programming changes each week. Find out what is happening this week here: https://site",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12644593",
+   "type": "event",
+   "title": "AWM Math Nights",
+   "host": "Rice University Student Chapter of the Association for Women in Mathematics",
+   "schoolId": "s_rice",
+   "date": "2026-11-19T23:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Student Resource Center (RMC Basement)",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12644593",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The SIAM x AWM Thanksgiving party is an opportunity for all Rice students to gather and build community during this season of gratitude. Join us to eat for a relaxing and festive way to wind down the semester with great company.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12953476",
+   "type": "event",
+   "title": "AWM x SIAM Thanksgiving Party",
+   "host": "Rice Society for Industrial and Applied Mathematics",
+   "schoolId": "s_rice",
+   "date": "2026-11-19T23:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Graduate Student Commons",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12953476",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come join us for a night of good food, fun crafts, and a fun surprise! We will be having food from popular places like Bluebell, Lenora's Bakery, Sinful Bakery, River Oaks Donuts and more!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942197",
+   "type": "event",
+   "title": "Kesem Pumpkin and Candle Painting",
+   "host": "Camp Kesem Rice",
+   "schoolId": "s_rice",
+   "date": "2026-11-20T00:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Lovett Commons ",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942197",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Diwali is back, and we&rsquo;re lighting up the Academic Quad! Dress up, bring your friends, and join Rice SAS for a night of dance and music performances, mehendi (henna), and delicious South Asian food under the stars. This is one of our favorite nights to bring the Rice comm",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12907374",
+   "type": "event",
+   "title": "Diwali 2026!!",
+   "host": "South Asian Society",
+   "schoolId": "s_rice",
+   "date": "2026-11-20T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Academic Quad",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12907374",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join the Office of Access and Institutional Excellence and the Community Facilitators for a weekly dialogue series. These student-led discussions will provide a brave space for open dialogue on pressing topics related to university life and navigating differences. Each week&rsquo",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12578207",
+   "type": "event",
+   "title": "Dialogues on Differences (DoD)",
+   "host": "Office of Access and Institutional Excellence",
+   "schoolId": "s_rice",
+   "date": "2026-11-20T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Multicultural Center",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12578207",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for Reign in Paradise, an interactive installation in honor of Trans Day of Remembrance and a celebration of the life and legacy our community members.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12567055",
+   "type": "event",
+   "title": "Reign in Paradise - Trans Day of Remembrance Event",
+   "host": "Office of Access and Institutional Excellence",
+   "schoolId": "s_rice",
+   "date": "2026-11-20T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Grand Hall, RMC",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12567055",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for an advance screening of A24's The Debut @ 7pm on November 20th. The film will be shown at Rice Cinema, located inside Sarofim Hall, and admission will be FREE !",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free stuff",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12907368",
+   "type": "event",
+   "title": "A24 x Rice Cinema Club | The Debut Advance Screening",
+   "host": "Rice Cinema Club",
+   "schoolId": "s_rice",
+   "date": "2026-11-21T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Rice Cinema",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free stuff",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12907368",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Rice Ballroom Dance Team is excited for our collegiate ballroom competition Dances with Owls 2026! We offer events in Standard, Latin, Smooth, Rhythm and Social categories, and we welcome all collegiate teams and any dancers from the community to share in the fun! Spectators are ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12856012",
+   "type": "event",
+   "title": "Dances with Owls 2026",
+   "host": "Rice Ballroom Dance Team",
+   "schoolId": "s_rice",
+   "date": "2026-11-21T14:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Grand Hall",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12856012",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "莱斯大学中文戏剧社将举办一场面向所有莱斯大学学生的入门级表演工作坊。本次活动并非旨在呈现完整的演出，而是邀请参与者在剧场中体验戏剧的魅力。我们将从轻松的破冰游戏和热身活动开始，随后进行戏剧游戏、即兴练习和小组短剧表演。参与者将练习通过声音、手势、节奏和肢体语言来表达情感，并与其他参与者进行即兴互动。无需任何表演经验或中文基础。本次工作坊旨在营造轻松愉快、友好协作的氛围，同时向学生介绍莱斯大学中文戏剧社的叙事和表演理念。",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12907393",
+   "type": "event",
+   "title": "Step Into the Scene: RCTC Acting Workshop",
+   "host": "Rice Chinese Theater Club",
+   "schoolId": "s_rice",
+   "date": "2026-11-21T23:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Duncan PDR",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12907393",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Welcome back, Rice! Rice Salseros is back every Monday night, starting August 24. Most classes will be in the RMC Grand Hall (with a few select dates in Farnsworth Pavilion). Classes are open to all skill levels - no partner or experience required. Just bring yourself and get rea",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12604828",
+   "type": "event",
+   "title": "Salsa Weekly Lesson",
+   "host": "Rice Salseros",
+   "schoolId": "s_rice",
+   "date": "2026-11-24T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Grand Hall RMSC",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12604828",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "All kayaking trips require completing a pool session with trip leaders to demonstrate ability to exit kayaks confidently. The ability to swim independently is required to join this trip. Join ROPE this Thanksgiving Recess for a wonderful extended trip along the shoreline of Toled",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12611284",
+   "type": "event",
+   "title": "November 25-29 Thanksgiving Recess Coastal Kayak Camping - Toledo Bend Reservoir, TX",
+   "host": "Rice Outdoor Programs & Education",
+   "schoolId": "s_rice",
+   "date": "2026-11-25T18:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Toledo Bend Reservoir",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12611284",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Rice Global Paris Summer Program combines academic rigor with cultural immersion in one of the world&rsquo;s most inspiring cities. Each session of the program is three weeks long, leaving plenty of time to pursue additional opportunities during the summer! Join us for an in-",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12899058",
+   "type": "event",
+   "title": "Rice Global Paris Summer Program: Virtual Info Session",
+   "host": "Rice Global",
+   "schoolId": "s_rice",
+   "date": "2026-11-26T00:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Online",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12899058",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Every semester, Rice Escape hosts an escape room or puzzle hunt for all Rice students to participate in a free on-campus puzzle-solving experience! This semester, our club has decided on a casino run-based theme, with the name to be determined soon. Students will have 60 minutes ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942177",
+   "type": "event",
+   "title": "Rice Escape Fall 2026 Room",
+   "host": "Rice Escape",
+   "schoolId": "s_rice",
+   "date": "2026-11-28T14:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Wiess Basement",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942177",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Every semester, Rice Escape hosts an escape room or puzzle hunt for all Rice students to participate in a free on-campus puzzle-solving experience! This semester, our club has decided on a casino run-based theme, called OWL OR NOTHING. Students will have 60 minutes to solve all t",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "cultural"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12942150",
+   "type": "event",
+   "title": "Rice Escape - OWL OR NOTHING (Fall 2026 Escape Room(",
+   "host": "Rice Escape",
+   "schoolId": "s_rice",
+   "date": "2026-11-29T14:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Wiess Basement",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12942150",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Every FIRST Wednesday of the month, the Betty and Jacob Friedman Holistic Garden & the Student Wellbeing Office will host Wellbeing Wednesday in the Garden. All are welcome. No prior gardening experience necessary. Come wearing close-toed shoes and bring your own bottled water an",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "communityservice"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12842049",
+   "type": "event",
+   "title": "Wellbeing Wednesday",
+   "host": "Student Wellbeing Office",
+   "schoolId": "s_rice",
+   "date": "2026-12-02T22:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Holistic Garden",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12842049",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Want to watch some Christmas movies? Enjoy some hot chocolate to relax? Maybe even a game of white elephant? Come join BASYK!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12953514",
+   "type": "event",
+   "title": "Christmas Special!",
+   "host": "BASYK Dance Club",
+   "schoolId": "s_rice",
+   "date": "2026-12-03T01:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "McMurtry Movie Room",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12953514",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Math Nights are from 5:30-6:30pm on Thursdays (Aug. 27 - Dec. 10) in the Student Resource Center. All students are welcome &ndash; undergraduates and graduates of any department and gender! Our programming changes each week. Find out what is happening this week here: https://site",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:27.212Z",
+   "createdAt": "2026-11-05T03:39:27.212Z",
+   "id": "op_rice_eg_12644594",
+   "type": "event",
+   "title": "AWM Math Nights",
+   "host": "Rice University Student Chapter of the Association for Women in Mathematics",
+   "schoolId": "s_rice",
+   "date": "2026-12-03T23:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Student Resource Center (RMC Basement)",
+    "lat": 29.7174,
+    "lng": -95.4018
+   },
+   "sourceUrl": "https://rice.campuslabs.com/engage/event/12644594",
+   "sourceLabel": "Student org events"
+  }
+ ]
+}

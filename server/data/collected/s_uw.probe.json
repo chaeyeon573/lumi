@@ -1,0 +1,25 @@
+{
+ "checkedAt": "2026-11-05T05:45:53.806Z",
+ "status": "applied",
+ "stored": false,
+ "source": "timetable:uw",
+ "sampled": 7895,
+ "withTimes": 7895,
+ "terms": [
+  "Fall 2026",
+  "Winter 2027"
+ ],
+ "sample": [
+  "ARCTIC 210 · Inuit/Arctc/Glbl Chg · Fall 2026 · T 12:30-14:20 R 12:30-14:20",
+  "LSJ 346 · Disability Global · Fall 2026 · M 10:30-12:20 W 10:30-12:20",
+  "CEWA 570 · Hydrodynamics · Fall 2026 · W 10:00-11:50 F 10:00-11:50",
+  "SOC W 515 · Clinical Sw: Cyf (Sec C) · Fall 2026 · R 08:30-11:20",
+  "LING 575 · Comput Ling Topics (Sec F) · Winter 2027 · T 15:30-17:50",
+  "E E 205 · Intro Signal Cond · Winter 2027 · M 09:30-10:20 W 09:30-10:20 F 09:30-10:20"
+ ],
+ "spotCheck": {
+  "matched": 6,
+  "mismatched": [],
+  "unavailable": 0
+ }
+}

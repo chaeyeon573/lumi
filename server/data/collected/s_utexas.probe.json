@@ -1,0 +1,20 @@
+{
+ "checkedAt": "2026-11-03T01:28:21.360Z",
+ "status": "applied",
+ "stored": false,
+ "source": "catalog:https://catalog.utexas.edu/courses/",
+ "sampled": 56,
+ "withTimes": 0,
+ "terms": [
+  "catalog"
+ ],
+ "sample": [
+  "BAX 360 · 460 Information and Analysis · catalog",
+  "BAX 362 · Auditing and Control · catalog",
+  "BAX 368 · Advanced Optimization Methods and Decision Making · catalog",
+  "CLA 212 · 312, 412 Lower-Division Clarinet: Major · catalog",
+  "ENM 397K · Engineering Management Seminar · catalog",
+  "ENM 188 · Legal Issues for Engineering Managers · catalog"
+ ],
+ "spotCheck": "no lookup (catalog codes/titles only)"
+}

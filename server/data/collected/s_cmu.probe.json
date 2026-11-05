@@ -1,0 +1,25 @@
+{
+ "checkedAt": "2026-11-03T12:36:26.862Z",
+ "status": "applied",
+ "stored": false,
+ "source": "timetable:cmu",
+ "sampled": 6756,
+ "withTimes": 6756,
+ "terms": [
+  "Fall 2026",
+  "Spring 2027"
+ ],
+ "sample": [
+  "93-430 · Technologies Transforming the Arts · Fall 2026 · T 11:00-12:20 R 11:00-12:20",
+  "54-420 · Production Prep SOM: Turn of the Screw : Directing (A) · Fall 2026 · M 17:00-22:30 T 17:00-22:30 W 17:00-22:30 R 17:00-22:30 F 17:00-22:30 S 11:00-15:00",
+  "95-722 · Digital Transformation (A2) · Fall 2026 · T 11:00-12:20 R 11:00-12:20",
+  "98-008 · Student Taught Courses (StuCo): Intro to Rust Lang · Fall 2026 · R 19:00-19:50",
+  "54-394 · Production Prep SOM: Hansel und Gretel : Directing (A) · Spring 2027 · M 17:00-22:30 T 17:00-22:30 W 17:00-22:30 R 17:00-22:30 F 17:00-22:30 S 11:00-15:00",
+  "95-702 · Distributed Systems for Information Systems Management (B) · Spring 2027 · M 14:00-15:20 W 14:00-15:20"
+ ],
+ "spotCheck": {
+  "matched": 6,
+  "mismatched": [],
+  "unavailable": 0
+ }
+}

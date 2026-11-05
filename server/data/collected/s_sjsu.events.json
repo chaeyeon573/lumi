@@ -1,0 +1,1440 @@
+{
+ "collectedAt": "2026-11-05T03:39:37.927Z",
+ "sources": [
+  "campusgroups https://sammyapp.sjsu.edu 43",
+  "localist https://events.sjsu.edu 14"
+ ],
+ "events": [
+  {
+   "description": "Hi PLS members! Join us for our upcoming volunteer event at Sacred Heart Community Service, where we&apos;ll be helping with their food pantry and clothing closet! Volunteer activities include sorting donations, bagging produce, and distributing goods to community members. Regist",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380101",
+   "type": "event",
+   "title": "Sacred Heart Community Service Volunteering",
+   "host": "35937 Pre-Law Society",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-05T16:30:00.000Z",
+   "startTime": "08:30",
+   "sourceUrl": "https://sammyapp.sjsu.edu/PreLaw/rsvp?id=380101",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come tour JABIL with NETs! Learn about one of the world&apos;s largest global manufacturing, engineering, and supply chain solutions providers. RSVP is required! Lunch and refreshments will be provided during the tour!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379975",
+   "type": "event",
+   "title": "JABIL Tour with NETs",
+   "host": "35663 Network Engineering Technology Society",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-05T19:00:00.000Z",
+   "startTime": "11:00",
+   "benefit": "Free food",
+   "sourceUrl": "https://sammyapp.sjsu.edu/NETS/rsvp?id=379975",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come tour JABIL with NETs! Learn about one of the world's largest global manufacturing, engineering, and supply chain solutions providers. RSVP is required! Lunch and refreshments will be provided during the tour! --- Event Details: https://sammyapp.sjsu.edu/rsvp?id=379975",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:40:00.981Z",
+   "createdAt": "2026-11-05T03:40:00.981Z",
+   "id": "op_sjsu_lc_54387764783929",
+   "type": "event",
+   "title": "JABIL Tour with NETs",
+   "host": "San José State University",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-05T19:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Sign in to download the location",
+    "lat": 37.3352,
+    "lng": -121.8811
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.sjsu.edu/event/jabil-tour-with-nets",
+   "sourceLabel": "San José State University Events"
+  },
+  {
+   "description": "In collaboration with SJSU’s Career Center, join us for an interactive session using the Focus2 Work Interest Assessment to explore potential career paths! Students will learn how to interpret their results, identify careers aligned with their interests, navigate labor market inf",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379946",
+   "type": "event",
+   "title": "Decode Your Career: Explore Your Career Options with Focus2",
+   "host": "35829 UHS University Housing Services",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-06T00:00:00.000Z",
+   "startTime": "16:00",
+   "benefit": "Free food",
+   "sourceUrl": "https://sammyapp.sjsu.edu/UHS/rsvp?id=379946",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Law Association for Women (LAW) at SJSU is excited to welcome Ella Goldman for our first guest speaker event! Join us as Ella shares her journey to law school, experiences as a law student, and advice for aspiring legal professionals. This is a great opportunity to learn ab",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380130",
+   "type": "event",
+   "title": "Join us for a Conversation with Ella Goldman, a law student from the UCI School of Law!",
+   "host": "36121 Law Association for Women",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-06T01:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/LAW/rsvp?id=380130",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Law Association for Women (LAW) at SJSU is excited to welcome Ella Goldman for our first guest speaker event! Join us as Ella shares her journey to law school, experiences as a law student, and advice for aspiring legal professionals. This is a great opportunity to learn",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:40:00.981Z",
+   "createdAt": "2026-11-05T03:40:00.981Z",
+   "id": "op_sjsu_lc_54423182817969",
+   "type": "event",
+   "title": "Join us for a Conversation with Ella Goldman, a law student from the UCI School of Law!",
+   "host": "San José State University",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-06T01:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Sign in to download the location",
+    "lat": 37.3352,
+    "lng": -121.8811
+   },
+   "sourceUrl": "https://events.sjsu.edu/event/join-us-for-a-conversation-with-ella-goldman-a-law-student-from-the-uci-school-of-law",
+   "sourceLabel": "San José State University Events"
+  },
+  {
+   "description": "Hey everyone, we are having our second general meeting detailing upcoming events as well as having a trivia night! Come join us for a meeting full of fun while also providing rice to those in need with our trivia game, FreeRice! Free pizza and boba would be provided, so come in h",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:40:00.981Z",
+   "createdAt": "2026-11-05T03:40:00.981Z",
+   "id": "op_sjsu_lc_54423182798509",
+   "type": "event",
+   "title": "UNICEF Club's Second General Meeting & Trivia Night",
+   "host": "San José State University",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-06T01:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Student Union Meeting Room 3A, 1 Washington Square, Student Union, Suite 1400, San Jose, CA 95192, United States",
+    "lat": 37.3352,
+    "lng": -121.8811
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.sjsu.edu/event/unicef-clubs-second-general-meeting-trivia-night",
+   "sourceLabel": "San José State University Events"
+  },
+  {
+   "description": "On Thursday, join us for our weekly Game Night in the 4th Floor Game Room! We will have a huge selection of board games, cards, and activities ready to go.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380152",
+   "type": "event",
+   "title": "4th Floor Game Night",
+   "host": "35841 UHS Spartan Village on the Paseo",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-06T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/SVP/rsvp?id=380152",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "NSLS Impact Day: Literacy in the Garden Join the SJSU chapter of the National Society of Leadership and Success (NSLS), in collaboration with the CHAD Club, for a community Impact Day at the SJSU Community Garden. The event celebrates literacy and creativity with watercolor paint",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379967",
+   "type": "event",
+   "title": "NSLS Impact Day",
+   "host": "35834 National Society of Leadership and Success",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-06T07:00:00.000Z",
+   "startTime": "23:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/NSLS/rsvp?id=379967",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Want to learn basic gardening skills? Build community? Harvest your own fresh fruits and veggies? Come volunteer at the AS Campus Community Garden! We are a 1/4 acre student led garden located across from the dining commons (372 E San Salvador St.) We grow fruits, veggies, native",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379101",
+   "type": "event",
+   "title": "Fall Garden Volunteering",
+   "host": "36021 A.S. Community Action Center (CAC)",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-06T17:00:00.000Z",
+   "startTime": "09:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/CAC/rsvp?id=379101",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Want to learn basic gardening skills? Build community? Harvest your own fresh fruits and veggies? Come volunteer at the AS Campus Community Garden! We are a 1/4 acre student led garden located across from the dining commons (372 E San Salvador St.) We grow fruits, veggies, native",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379102",
+   "type": "event",
+   "title": "Fall Garden Volunteering",
+   "host": "36021 A.S. Community Action Center (CAC)",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-07T17:00:00.000Z",
+   "startTime": "09:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/CAC/rsvp?id=379102",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come talk to the dean about your experience here at SJSU.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380141",
+   "type": "event",
+   "title": "Dean and Donuts",
+   "host": "35842 UHS International House",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-09T17:30:00.000Z",
+   "startTime": "09:30",
+   "benefit": "Free food",
+   "sourceUrl": "https://sammyapp.sjsu.edu/IHouse/rsvp?id=380141",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come talk to the dean about your experience here at SJSU. --- Event Details: https://sammyapp.sjsu.edu/rsvp?id=380141",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:40:00.981Z",
+   "createdAt": "2026-11-05T03:40:00.981Z",
+   "id": "op_sjsu_lc_54423183109834",
+   "type": "event",
+   "title": "Dean and Donuts",
+   "host": "San José State University",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-09T17:30:00.000Z",
+   "startTime": "09:30",
+   "place": {
+    "name": "Sign in to download the location",
+    "lat": 37.3352,
+    "lng": -121.8811
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.sjsu.edu/event/dean-and-donuts",
+   "sourceLabel": "San José State University Events"
+  },
+  {
+   "description": "Open to all students, this action-packed event is your chance to dive into an exciting world of competition, community, and fun! Join us for an electrifying Super Smash Bros. Ultimate Tournament, or kick back at our free-play stations featuring a variety of popular games. Feeling",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:40:00.981Z",
+   "createdAt": "2026-11-05T03:40:00.981Z",
+   "id": "op_sjsu_lc_54272789288551",
+   "type": "event",
+   "title": "Esports and Gaming Showcase - Fall 2026",
+   "host": "San José State University",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-09T18:30:00.000Z",
+   "startTime": "10:30",
+   "place": {
+    "name": "Student Union Ballrooms A/B/C, 1 Washington Square, San Jose, CA, United States",
+    "lat": 37.3352,
+    "lng": -121.8811
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.sjsu.edu/event/esports-and-gaming-showcase-fall-2026",
+   "sourceLabel": "San José State University Events"
+  },
+  {
+   "description": "Come discuss the sixth story in I, Robot, then check out the film!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380168",
+   "type": "event",
+   "title": "Campus Reading Program November 9th Events!",
+   "host": "36126 Office of Undergraduate Education",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-09T23:30:00.000Z",
+   "startTime": "15:30",
+   "sourceUrl": "https://sammyapp.sjsu.edu/CUE/rsvp?id=380168",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Stay tuned to find out what awesome leadership opportunities we have in store for you!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_378818",
+   "type": "event",
+   "title": "Leadership Workshop",
+   "host": "18633 Office of Student Involvement",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-10T00:00:00.000Z",
+   "startTime": "16:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/GetInvolved/rsvp?id=378818",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "What happens when public communication becomes a tool for democratic participation? Join Camille Zapata, Governor Gavin Newsom’s Director of Digital Strategy, for a wide-ranging panel conversation about social media, political storytelling and the First Amendment. Alongside a soc",
+   "eligibility": "Cost: 0.00",
+   "tags": [
+    "event",
+    "talk",
+    "conferences, training, workshops",
+    "social events and gatherings"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:40:00.981Z",
+   "createdAt": "2026-11-05T03:40:00.981Z",
+   "id": "op_sjsu_lc_54232471957167",
+   "type": "event",
+   "title": "Holding Power Accountable: A Conversation with Camille Zapata",
+   "host": "School of Journalism and Mass Communications",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-10T01:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Digital Humanities Center",
+    "lat": 37.3352,
+    "lng": -121.8811
+   },
+   "sourceUrl": "https://events.sjsu.edu/event/holding-power-accountable-a-conversation-with-camille-zapata",
+   "sourceLabel": "San José State University Events"
+  },
+  {
+   "description": "Join RHA for a Town Hall about Spartan Eats catered by Spartan Eats. Enjoy a taco bar and churros while connecting with Mario Martinez– Resident District Manager & Other Spartan Eats Pro staff. Learn about the dining commons menu, food on campus, and get answers to your questions",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:40:00.981Z",
+   "createdAt": "2026-11-05T03:40:00.981Z",
+   "id": "op_sjsu_lc_54378936789829",
+   "type": "event",
+   "title": "Town Hall: Spartan Eats",
+   "host": "San José State University",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-10T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Sign in to download the location",
+    "lat": 37.3352,
+    "lng": -121.8811
+   },
+   "sourceUrl": "https://events.sjsu.edu/event/town-hall-spartan-eats",
+   "sourceLabel": "San José State University Events"
+  },
+  {
+   "description": "Join us for an info session about Housing student leader positions available for the 2027-2028 academic year! Attendance at an info session is required in order to apply. Our Student Leader positions include: Resident Advisors (RAs) Theme Community Resident Advisors (TCRAs) Inter",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379999",
+   "type": "event",
+   "title": "University Housing Services Student Leader Information Session",
+   "host": "35829 UHS University Housing Services",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-10T20:00:00.000Z",
+   "startTime": "12:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/UHS/rsvp?id=379999",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come see Fritz Lang&apos;s 1927 silent movie masterpiece, Metropolis, with original score performed live by members of the SJSU Saxophone Studio. Don&apos;t miss it!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380170",
+   "type": "event",
+   "title": "Campus Reading Program + College of Humanities & the Arts Present a Silent Film Classic!",
+   "host": "36126 Office of Undergraduate Education",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-10T23:30:00.000Z",
+   "startTime": "15:30",
+   "sourceUrl": "https://sammyapp.sjsu.edu/CUE/rsvp?id=380170",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "ENG 376A",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379543",
+   "type": "event",
+   "title": "Weekly Club Meeting",
+   "host": "35715 San Jose State Amateur Radio Club",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-11T00:30:00.000Z",
+   "startTime": "16:30",
+   "sourceUrl": "https://sammyapp.sjsu.edu/ARC/rsvp?id=379543",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "An acclaimed weekly lecture series brings in artists, designers, and critical theorists from around the world, broadening the students’ experiential base and complementing local offerings. All lectures and exhibitions are open to the general public free of charge. Unless otherwis",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "exhibitions, performances, installations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:40:00.981Z",
+   "createdAt": "2026-11-05T03:40:00.981Z",
+   "id": "op_sjsu_lc_53375479500169",
+   "type": "event",
+   "title": "SJSU Art Galleries Tuesday Night Lecture: Ryan Carrington",
+   "host": "Art and Art History",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-11T01:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "ART 133: Art Lecture Hall",
+    "lat": 37.3352,
+    "lng": -121.8811
+   },
+   "sourceUrl": "https://events.sjsu.edu/event/sjsu-art-galleries-tuesday-night-lecture-ryan-carrington",
+   "sourceLabel": "San José State University Events"
+  },
+  {
+   "description": "Looking to get rid of art supplies and support SJSU artists? Look no further than the Jewelry & Small Metals Guild Art Supply Swap! In order to take art supplies home, you must bring art supplies to give! We will have beads, tools and more to give away. No RSVP needed. Thursday, ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379024",
+   "type": "event",
+   "title": "Art Supply Swap",
+   "host": "35605 Jewelry and Small Metals Guild",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-12T23:30:00.000Z",
+   "startTime": "15:30",
+   "sourceUrl": "https://sammyapp.sjsu.edu/JSMG/rsvp?id=379024",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Are you an early-stage startup founder or just interested in the startup world? Join the SpartUp Incubator for an in-depth discussion on how founders can set themselves up for success as a student entrepreneur. Hear from a panel of entrepreneurs and experts as they share real-wor",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "social events and gatherings"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:40:00.981Z",
+   "createdAt": "2026-11-05T03:40:00.981Z",
+   "id": "op_sjsu_lc_53675110198560",
+   "type": "event",
+   "title": "SpartUp Incubator Founder Fiesta",
+   "host": "Lucas College and Graduate School of Business",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-13T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "BBT 032",
+    "lat": 37.3352,
+    "lng": -121.8811
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.sjsu.edu/event/spartup-incubator-founder-fiesta-2627",
+   "sourceLabel": "San José State University Events"
+  },
+  {
+   "description": "Complimentary/discounted tickets for military & first responders, on-court local hero recognition.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380145",
+   "type": "event",
+   "title": "Men&apos;s Basketball vs UCR",
+   "host": "35983 SJSU Athletics",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-13T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/Athletics/rsvp?id=380145",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Want to learn basic gardening skills? Build community? Harvest your own fresh fruits and veggies? Come volunteer at the AS Campus Community Garden! We are a 1/4 acre student led garden located across from the dining commons (372 E San Salvador St.) We grow fruits, veggies, native",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379103",
+   "type": "event",
+   "title": "Fall Garden Volunteering",
+   "host": "36021 A.S. Community Action Center (CAC)",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-13T17:00:00.000Z",
+   "startTime": "09:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/CAC/rsvp?id=379103",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join the Spartan Real Estate Association for a tour with Kidder Mathews, a leading commercial brokerage firm. This tour will explore how brokers navigate deals, valuations, and client relationships in today&apos;s commercial real estate market. Registration closes October 20th, s",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379751",
+   "type": "event",
+   "title": "SREA Company Tours - Inside the Brokerage - Touring Kidder Mathews",
+   "host": "35759 Spartan Real Estate Association",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-13T21:30:00.000Z",
+   "startTime": "13:30",
+   "sourceUrl": "https://sammyapp.sjsu.edu/REA/rsvp?id=379751",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join PASCs for a STEM Resume Building workshop! Come receive advice on how to craft your resume and learn what tools SJSU has to aid you in your resume building!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380048",
+   "type": "event",
+   "title": "STEM Resume Building",
+   "host": "35829 UHS University Housing Services",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-13T21:30:00.000Z",
+   "startTime": "13:30",
+   "sourceUrl": "https://sammyapp.sjsu.edu/UHS/rsvp?id=380048",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join NETs for a refreshing and adventurous hike!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380122",
+   "type": "event",
+   "title": "NETs Hiking Social",
+   "host": "35663 Network Engineering Technology Society",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-14T15:30:00.000Z",
+   "startTime": "07:30",
+   "sourceUrl": "https://sammyapp.sjsu.edu/NETS/rsvp?id=380122",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Want to learn basic gardening skills? Build community? Harvest your own fresh fruits and veggies? Come volunteer at the AS Campus Community Garden! We are a 1/4 acre student led garden located across from the dining commons (372 E San Salvador St.) We grow fruits, veggies, native",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379104",
+   "type": "event",
+   "title": "Fall Garden Volunteering",
+   "host": "36021 A.S. Community Action Center (CAC)",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-14T17:00:00.000Z",
+   "startTime": "09:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/CAC/rsvp?id=379104",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Family 4-Pack ticket deal, postgame kids&apos; court access (free throws).",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380146",
+   "type": "event",
+   "title": "Men&apos;s Basketball vs Alabama State",
+   "host": "35983 SJSU Athletics",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-16T02:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/Athletics/rsvp?id=380146",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Transgender Day of Remembrance memorializes those that were lost to transphobia in the past year and draws attention to the violence that transgender people face. An art gallery composed of pieces submitted by students will be displayed in the pride center to commemorate the ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380063",
+   "type": "event",
+   "title": "Trans Day of Remembrance Gallery",
+   "host": "35800 Trans Talk",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-16T17:00:00.000Z",
+   "startTime": "09:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/TRT/rsvp?id=380063",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for an info session about Housing student leader positions available for the 2027-2028 academic year! Attendance at an info session is required in order to apply. Our Student Leader positions include: Resident Advisors (RAs) Theme Community Resident Advisors (TCRAs) Inter",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380000",
+   "type": "event",
+   "title": "University Housing Services Student Leader Information Session",
+   "host": "35829 UHS University Housing Services",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-16T20:30:00.000Z",
+   "startTime": "12:30",
+   "sourceUrl": "https://sammyapp.sjsu.edu/UHS/rsvp?id=380000",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Please fill in the Registration Form! Take part in a cross-disciplinary conversation about AI disclosure practices in teaching, research, scholarship, and creative activity (RSCA). Faculty will share perspectives, discuss ethical and practical concerns, and explore areas of commo",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "conferences, training, workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:40:00.981Z",
+   "createdAt": "2026-11-05T03:40:00.981Z",
+   "id": "op_sjsu_lc_54254608868863",
+   "type": "event",
+   "title": "Human Enough? A Faculty Conversation about Norms for AI Disclosure in Teaching and RSCA",
+   "host": "Center for Faculty Excellence and Teaching Innovation",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-16T22:30:00.000Z",
+   "startTime": "14:30",
+   "place": {
+    "name": "MLK AI Center",
+    "lat": 37.3352,
+    "lng": -121.8811
+   },
+   "sourceUrl": "https://events.sjsu.edu/event/human-enough-a-faculty-conversation-about-norms-for-ai-disclosure-in-teaching-and-rsca",
+   "sourceLabel": "San José State University Events"
+  },
+  {
+   "description": "Join the Spartan Real Estate Association for our very last speaker event of the semester as we feature two leaders from PTLA Real Estate Group, a private equity real estate investment and property management firm based in Walnut Creek, specializing in multifamily housing and West",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_378770",
+   "type": "event",
+   "title": "Final SREA Speaker Event: Multifamily Growth & Investment Strategy with Peter Wilson & David Faucher from PTLA Real Estate Group",
+   "host": "35759 Spartan Real Estate Association",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-17T00:00:00.000Z",
+   "startTime": "16:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/REA/rsvp?id=378770",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for an info session about Housing student leader positions available for the 2027-2028 academic year! Attendance at an info session is required in order to apply. Our Student Leader positions include: Resident Advisors (RAs) Theme Community Resident Advisors (TCRAs) Inter",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380001",
+   "type": "event",
+   "title": "University Housing Services Student Leader Information Session",
+   "host": "35829 UHS University Housing Services",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-17T22:00:00.000Z",
+   "startTime": "14:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/UHS/rsvp?id=380001",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Connect with fellow student-athletes majoring in business and gain valuable advice on balancing academics and athletics at the LCoB Student-Athlete Mixer! The LCoB Student-Athlete Mixer is a special evening of networking and insights for our SJSU athletes who are pursuing a degre",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_378277",
+   "type": "event",
+   "title": "2026 Lucas College of Business Student-Athlete Mixer",
+   "host": "36077 Lucas College and Graduate School of Business",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-18T00:00:00.000Z",
+   "startTime": "16:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/LCOB/rsvp?id=378277",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for an info session about Housing student leader positions available for the 2027-2028 academic year! Attendance at an info session is required in order to apply. Our Student Leader positions include: Resident Advisors (RAs) Theme Community Resident Advisors (TCRAs) Inter",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380002",
+   "type": "event",
+   "title": "University Housing Services Student Leader Information Session",
+   "host": "35829 UHS University Housing Services",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-18T00:15:00.000Z",
+   "startTime": "16:15",
+   "sourceUrl": "https://sammyapp.sjsu.edu/UHS/rsvp?id=380002",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "ENG 376A",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379544",
+   "type": "event",
+   "title": "Weekly Club Meeting",
+   "host": "35715 San Jose State Amateur Radio Club",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-18T00:30:00.000Z",
+   "startTime": "16:30",
+   "sourceUrl": "https://sammyapp.sjsu.edu/ARC/rsvp?id=379544",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for an info session about Housing student leader positions available for the 2027-2028 academic year! Attendance at an info session is required in order to apply. Our Student Leader positions include: Resident Advisors (RAs) Theme Community Resident Advisors (TCRAs) Inter",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380003",
+   "type": "event",
+   "title": "University Housing Services Student Leader Information Session",
+   "host": "35829 UHS University Housing Services",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-18T01:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/UHS/rsvp?id=380003",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Take a break and get creative with us! We will provide reusable tote bags, paintbrushes, and paints. All you need to bring is yourself and your creativity. Design and personalize your own tote bag while relaxing and meeting other students. No previous art experience is needed. Ju",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380111",
+   "type": "event",
+   "title": "Sustainable Tote Bag",
+   "host": "35829 UHS University Housing Services",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-18T01:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/UHS/rsvp?id=380111",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "An acclaimed weekly lecture series brings in artists, designers, and critical theorists from around the world, broadening the students’ experiential base and complementing local offerings. All lectures and exhibitions are open to the general public free of charge. Unless otherwis",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "exhibitions, performances, installations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:40:00.981Z",
+   "createdAt": "2026-11-05T03:40:00.981Z",
+   "id": "op_sjsu_lc_53375504656494",
+   "type": "event",
+   "title": "SJSU Art Galleries Tuesday Night Lecture: Althea Rao",
+   "host": "Art and Art History",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-18T01:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "ART 133: Art Lecture Hall",
+    "lat": 37.3352,
+    "lng": -121.8811
+   },
+   "sourceUrl": "https://events.sjsu.edu/event/sjsu-art-galleries-tuesday-night-lecture-althea-rao",
+   "sourceLabel": "San José State University Events"
+  },
+  {
+   "description": "Join us for an info session about Housing student leader positions available for the 2027-2028 academic year! Attendance at an info session is required in order to apply. Our Student Leader positions include: Resident Advisors (RAs) Theme Community Resident Advisors (TCRAs) Inter",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380004",
+   "type": "event",
+   "title": "University Housing Services Student Leader Information Session",
+   "host": "35829 UHS University Housing Services",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-18T20:00:00.000Z",
+   "startTime": "12:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/UHS/rsvp?id=380004",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Over the 2026–27 school year, the SJSU's Humanities Honors Program is pleased to bring you the Humanities Honors Cultural Connections film series — or HumHonCultureCon, for short! — FREE movie events open to the campus community and general public that explore the interconnectedn",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "exhibitions, performances, installations"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:40:00.981Z",
+   "createdAt": "2026-11-05T03:40:00.981Z",
+   "id": "op_sjsu_lc_54306996979665",
+   "type": "event",
+   "title": "HumHonCultureCon Film: Our Land, Our Freedom (2023)",
+   "host": "Humanities",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-19T00:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Dr. Martin Luther King, Jr. Library, 225",
+    "lat": 37.3352,
+    "lng": -121.8811
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.sjsu.edu/event/humhonculturecon-film-our-land-our-freedom-2023",
+   "sourceLabel": "San José State University Events"
+  },
+  {
+   "description": "Join NETs and take a quick break from the stress of classes and have some fun with bowling!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380124",
+   "type": "event",
+   "title": "NETs Bowling Social",
+   "host": "35663 Network Engineering Technology Society",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-19T01:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/NETS/rsvp?id=380124",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Hi Spartans! Come support Men&apos;s Basketball at our rivalry game vs Fresno State!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380147",
+   "type": "event",
+   "title": "Men&apos;s Basketball vs Fresno State",
+   "host": "35983 SJSU Athletics",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-19T02:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/Athletics/rsvp?id=380147",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for an info session about Housing student leader positions available for the 2027-2028 academic year! Attendance at an info session is required in order to apply. Our Student Leader positions include: Resident Advisors (RAs) Theme Community Resident Advisors (TCRAs) Inter",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380005",
+   "type": "event",
+   "title": "University Housing Services Student Leader Information Session",
+   "host": "35829 UHS University Housing Services",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-19T23:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/UHS/rsvp?id=380005",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for an info session about Housing student leader positions available for the 2027-2028 academic year! Attendance at an info session is required in order to apply. Our Student Leader positions include: Resident Advisors (RAs) Theme Community Resident Advisors (TCRAs) Inter",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_380006",
+   "type": "event",
+   "title": "University Housing Services Student Leader Information Session",
+   "host": "35829 UHS University Housing Services",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-20T00:00:00.000Z",
+   "startTime": "16:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/UHS/rsvp?id=380006",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Want to learn basic gardening skills? Build community? Harvest your own fresh fruits and veggies? Come volunteer at the AS Campus Community Garden! We are a 1/4 acre student led garden located across from the dining commons (372 E San Salvador St.) We grow fruits, veggies, native",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379105",
+   "type": "event",
+   "title": "Fall Garden Volunteering",
+   "host": "36021 A.S. Community Action Center (CAC)",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-20T17:00:00.000Z",
+   "startTime": "09:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/CAC/rsvp?id=379105",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Diwali celebration",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379817",
+   "type": "event",
+   "title": "SJSU Campus Diwali",
+   "host": "35730 Small Hands Big Hearts: Help, Teach and Excel",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-21T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Morris Dailey Auditorium, 1 Washington Square, Student Union, Suite 1400, San Jose, CA 95192, United States",
+    "lat": 37.3352,
+    "lng": -121.8811
+   },
+   "sourceUrl": "https://sammyapp.sjsu.edu/SHBH/rsvp?id=379817",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Want to learn basic gardening skills? Build community? Harvest your own fresh fruits and veggies? Come volunteer at the AS Campus Community Garden! We are a 1/4 acre student led garden located across from the dining commons (372 E San Salvador St.) We grow fruits, veggies, native",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379106",
+   "type": "event",
+   "title": "Fall Garden Volunteering",
+   "host": "36021 A.S. Community Action Center (CAC)",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-21T17:00:00.000Z",
+   "startTime": "09:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/CAC/rsvp?id=379106",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Fixit Clinic at SJSU hosts free repair workshops where community members can learn the repair process and bring in their repair projects for troubleshooting. No experience is required!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379184",
+   "type": "event",
+   "title": "Fixit Clinic Repair Workshop",
+   "host": "35564 Fixit Clinic at SJSU",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-21T21:00:00.000Z",
+   "startTime": "13:00",
+   "benefit": "Free food",
+   "sourceUrl": "https://sammyapp.sjsu.edu/FCSJSU/rsvp?id=379184",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "ENG 376A",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379545",
+   "type": "event",
+   "title": "Weekly Club Meeting",
+   "host": "35715 San Jose State Amateur Radio Club",
+   "schoolId": "s_sjsu",
+   "date": "2026-11-25T00:30:00.000Z",
+   "startTime": "16:30",
+   "sourceUrl": "https://sammyapp.sjsu.edu/ARC/rsvp?id=379545",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "ENG 376A",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379546",
+   "type": "event",
+   "title": "Weekly Club Meeting",
+   "host": "35715 San Jose State Amateur Radio Club",
+   "schoolId": "s_sjsu",
+   "date": "2026-12-02T00:30:00.000Z",
+   "startTime": "16:30",
+   "sourceUrl": "https://sammyapp.sjsu.edu/ARC/rsvp?id=379546",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "An acclaimed weekly lecture series brings in artists, designers, and critical theorists from around the world, broadening the students’ experiential base and complementing local offerings. All lectures and exhibitions are open to the general public free of charge. Unless otherwis",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "exhibitions, performances, installations"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:40:00.981Z",
+   "createdAt": "2026-11-05T03:40:00.981Z",
+   "id": "op_sjsu_lc_53922861755511",
+   "type": "event",
+   "title": "SJSU Art Galleries Tuesday Night Lecture: Elena Manferdini - Inside the Dream Factory",
+   "host": "Art and Art History",
+   "schoolId": "s_sjsu",
+   "date": "2026-12-02T01:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "ART 133: Art Lecture Hall",
+    "lat": 37.3352,
+    "lng": -121.8811
+   },
+   "sourceUrl": "https://events.sjsu.edu/event/sjsu-art-galleries-tuesday-night-lecture-elena-manferdini-inside-the-dream-factory",
+   "sourceLabel": "San José State University Events"
+  },
+  {
+   "description": "Join us for a vibrant and engaging showcase where SJSU faculty will demonstrate how their existing course content, materials, assignments, and teaching practices foster career-relevant learning! Faculty will be showing how they make those connections more visible and intentional ",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food",
+    "info sessions, fairs and events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:40:00.981Z",
+   "createdAt": "2026-11-05T03:40:00.981Z",
+   "id": "op_sjsu_lc_54233636756689",
+   "type": "event",
+   "title": "Beyond Classroom and Campus: Connecting Academic Learning to Students’ Future Lives and Careers Faculty Showcase",
+   "host": "Center for Faculty Excellence and Teaching Innovation",
+   "schoolId": "s_sjsu",
+   "date": "2026-12-03T19:30:00.000Z",
+   "startTime": "11:30",
+   "place": {
+    "name": "Clark Hall, Clark Hall 102, Elevate Career Hub",
+    "lat": 37.3352,
+    "lng": -121.8811
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.sjsu.edu/event/beyond-campus-classroom-faculty-showcase",
+   "sourceLabel": "San José State University Events"
+  },
+  {
+   "description": "Want to learn basic gardening skills? Build community? Harvest your own fresh fruits and veggies? Come volunteer at the AS Campus Community Garden! We are a 1/4 acre student led garden located across from the dining commons (372 E San Salvador St.) We grow fruits, veggies, native",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:39:43.347Z",
+   "createdAt": "2026-11-05T03:39:43.347Z",
+   "id": "op_sjsu_cg_379107",
+   "type": "event",
+   "title": "Fall Garden Volunteering",
+   "host": "36021 A.S. Community Action Center (CAC)",
+   "schoolId": "s_sjsu",
+   "date": "2026-12-04T17:00:00.000Z",
+   "startTime": "09:00",
+   "sourceUrl": "https://sammyapp.sjsu.edu/CAC/rsvp?id=379107",
+   "sourceLabel": "Student org events"
+  }
+ ]
+}

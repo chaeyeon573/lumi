@@ -42,6 +42,14 @@ export function listingField(o: Pick<Opportunity, 'title' | 'field'>): Field {
   return f !== 'Other' ? f : ((FIELDS as readonly string[]).includes(o.field ?? '') ? o.field as Field : 'Other');
 }
 
+/** 유학생 지원 가능 표시 — 공고 본문에 회사가 적은 것만(server/sources/workauth.ts). 안 적혀 있으면 표시하지 않는다 */
+export function workAuthLabel(o: Pick<Opportunity, 'workAuth'>, en: boolean): { text: string; tone: 'good' | 'warn' } | null {
+  if (o.workAuth === 'intl_ok') return { text: en ? 'Int’l students OK' : '유학생 가능', tone: 'good' };
+  if (o.workAuth === 'citizens') return { text: en ? 'U.S. citizens only' : '미국 시민만', tone: 'warn' };
+  if (o.workAuth === 'no_sponsor') return { text: en ? 'No visa sponsorship' : '비자 스폰서 없음', tone: 'warn' };
+  return null;
+}
+
 export const REGIONS = ['Bay Area', 'Los Angeles', 'Seattle', 'New York', 'Boston', 'Chicago', 'Texas', 'Remote'] as const;
 export type Region = typeof REGIONS[number];
 const REGION_RULES: [Region, RegExp][] = [

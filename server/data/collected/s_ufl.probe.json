@@ -1,0 +1,20 @@
+{
+ "checkedAt": "2026-11-03T01:27:21.350Z",
+ "status": "applied",
+ "stored": false,
+ "source": "catalog:https://catalog.ufl.edu/",
+ "sampled": 178,
+ "withTimes": 0,
+ "terms": [
+  "catalog"
+ ],
+ "sample": [
+  "CHM 6158C · Electronics and Instrumentation · catalog",
+  "CHM 6154 · Chemical Separations · catalog",
+  "CHM 2213L · Organic Chemistry Laboratory for Majors · catalog",
+  "CHM 2210 · Organic Chemistry 1 · catalog",
+  "EEX 6308 · Single Subject Research Design · catalog",
+  "EEX 7303 · Inquiry in Special Education: Analysis of the Literature · catalog"
+ ],
+ "spotCheck": "no lookup (catalog codes/titles only)"
+}

@@ -44,7 +44,7 @@ export function researchUnitToOrg(r: ResearchUnitRow): Organization {
 }
 
 /** 이미 있는 연구소는 팔로워·멤버를 지키고 이름·책임자·링크만 고친다. 목록에서 빠지고 아무도 안 따르는 것은 지운다 */
-export function mergeResearchUnits(fresh: Organization[], existing: Organization[]): { organizations: Organization[]; removed: string[] } {
+export function mergeResearchUnits(fresh: Organization[], existing: Organization[], prefix = RU_PREFIX): { organizations: Organization[]; removed: string[] } {
   const byId = new Map(existing.map((o) => [o.id, o]));
   const organizations = fresh.flatMap((o) => {
     const prev = byId.get(o.id);
@@ -52,7 +52,7 @@ export function mergeResearchUnits(fresh: Organization[], existing: Organization
     return prev && JSON.stringify(prev) === JSON.stringify(next) ? [] : [next];
   });
   const freshIds = new Set(fresh.map((o) => o.id));
-  const removed = existing.filter((o) => o.id.startsWith(RU_PREFIX) && !freshIds.has(o.id) && !o.followerIds.length && !o.memberIds.length).map((o) => o.id);
+  const removed = existing.filter((o) => o.id.startsWith(prefix) && !freshIds.has(o.id) && !o.followerIds.length && !o.memberIds.length).map((o) => o.id);
   return { organizations, removed };
 }
 

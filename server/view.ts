@@ -23,6 +23,10 @@
  * - 참가 기록: 내 것 + 내가 연 활동의 것 + 다른 사람은 승인된 것만(신청 메시지 없이)
  * - 동아리 지원자 목록은 운영진과 본인에게만, 다른 사람의 저장(saved)은 안 보낸다, 시간 투표는 초대받은 사람에게만
  */
+import { withoutEmoji, stripEmoji } from '@core/lib/orglinks';
+import { noEmojiView } from './noemoji';
+/** 공고·행사 주최 이름에도 이모지 없이 */
+const hostNoEmoji = <T extends { host?: string }>(o: T): T => (o.host && stripEmoji(o.host) !== o.host ? { ...o, host: stripEmoji(o.host) } : o);
 import type { Patch, Snapshot } from '@core/api/types';
 import type { Activity, ActivityProposal, ChatRoom, Game, ID, Organization, Participation, Post, TimePoll, User } from '@core/types';
 import { gameFor } from '@core/lib/icebreakers';
@@ -78,6 +82,7 @@ function activityFor(a: Activity, viewerId: ID): Activity {
   if (a.hostId === viewerId) return a;
   const out = { ...a };
   if (a.invitedIds) out.invitedIds = a.invitedIds.filter((id) => id === viewerId);
+  if (a.interestedIds) out.interestedIds = a.interestedIds.filter((id) => id === viewerId);
   if (a.visibility === 'selected' && a.visibilityTargets) out.visibilityTargets = a.visibilityTargets.filter((id) => id === viewerId);
   return out;
 }
@@ -99,8 +104,9 @@ function participationsFor(list: Participation[], viewerId: ID, db?: Snapshot, e
 }
 
 /** 동아리 지원자 명단은 운영진에게만 — 다른 사람에게는 나만 남긴다 */
+// 화면에는 이모지 없이 — 이름 끝 💙 등은 빼고, 이모지 로고는 머리글자로 (packages/core/src/lib/orglinks.ts withoutEmoji)
 const orgFor = (viewerId: ID) => (o: Organization): Organization =>
-  o.adminIds.includes(viewerId) ? o : { ...o, applicantIds: o.applicantIds.filter((id) => id === viewerId) };
+  withoutEmoji(o.adminIds.includes(viewerId) ? o : { ...o, applicantIds: o.applicantIds.filter((id) => id === viewerId) });
 
 /** 이 사용자에게 보낼 동아리인지 */
 export function orgFilter(db: Snapshot, viewerId: ID): (o: Organization) => boolean {
@@ -111,6 +117,19 @@ export function orgFilter(db: Snapshot, viewerId: ID): (o: Organization) => bool
   for (const x of [...db.activities, ...db.posts, ...db.opportunities] as { orgId?: ID }[]) if (x.orgId) referenced.add(x.orgId);
   return (o) => !o.schoolId || o.schoolId === school || referenced.has(o.id)
     || o.memberIds.includes(viewerId) || o.followerIds.includes(viewerId) || o.adminIds.includes(viewerId) || o.applicantIds.includes(viewerId);
+}
+
+/**
+ * 이 사용자에게 보낼 공고인지 — 학교가 없는 공고(전국 인턴·장학금)와 내 학교 공고만.
+ * 데이터만 모으는 학교(schools-collect.csv)의 행사·연구가 다른 학교 학생에게 내려가지 않게 (2026-11-02).
+ * 학교를 모르는 사용자(가입 전 등)는 예전처럼 거르지 않는다. 내가 저장·관심 표시한 공고는 남긴다
+ */
+export function opportunityFilter(db: Snapshot, viewerId: ID): (o: { id: ID; schoolId?: ID }) => boolean {
+  const me = db.users.find((u) => u.id === viewerId);
+  const school = me?.affiliation.type === 'university' ? me.affiliation.schoolId : '';
+  if (!school) return () => true;
+  const mine = new Set(db.opportunityIntents.filter((i) => i.userId === viewerId).map((i) => i.opportunityId));
+  return (o) => !o.schoolId || o.schoolId === school || mine.has(o.id);
 }
 
 /** 이 사람이 볼 수 있는 게임만, 비밀을 지운 모양으로 */
@@ -184,9 +203,10 @@ export function snapshotFor(full: Snapshot, viewerId: ID): Snapshot {
   // 신고·정지 (server/moderation.ts) — 정지된 사람과 그 콘텐츠, 신고가 쌓여 숨긴 글·댓글을 뺀다.
   // 공개 범위로 거르기 전에 한 번 먼저 — 익명 글은 거른 뒤에는 글쓴이 id 가 없어 정지된 사람의 글인지 알 수 없다
   const db = moderateView(stripSamples(full, hiddenSamplesFor(full, full.users.find((u) => u.id === viewerId))), viewerId, full);
-  return moderateView({
+  return noEmojiView(moderateView({
     ...db,
     organizations: db.organizations.filter(orgFilter(db, viewerId)).map(orgFor(viewerId)),
+    opportunities: db.opportunities.filter(opportunityFilter(db, viewerId)).map(hostNoEmoji),
     users: usersFor(db.users, viewerId, db),
     relationships: relationshipsFor(db.relationships, viewerId),
     posts: postsFor(db.posts, viewerId, db),
@@ -201,7 +221,7 @@ export function snapshotFor(full: Snapshot, viewerId: ID): Snapshot {
     proposals: db.proposals.filter(inProposal(viewerId)),
     rides: ridesFor(db, viewerId), // my school only · blocks both ways · riders & chat only to people in the ride
     timePolls: pollsFor(db.timePolls, viewerId),
-  }, viewerId, full);
+  }, viewerId, full));
 }
 
 export function patchFor(original: Patch, viewerId: ID, db?: Snapshot): Patch | null {
@@ -214,6 +234,7 @@ export function patchFor(original: Patch, viewerId: ID, db?: Snapshot): Patch | 
   if (db) { const m: Patch = { ...patch }; moderatePatch(m, viewerId, db); patch = m; }
   const out: Patch = { ...patch };
   if (patch.organizations) out.organizations = db ? patch.organizations.filter(orgFilter(db, viewerId)).map(orgFor(viewerId)) : [];
+  if (patch.opportunities) out.opportunities = (db ? patch.opportunities.filter(opportunityFilter(db, viewerId)) : patch.opportunities).map(hostNoEmoji);
   if (patch.users) {
     out.users = usersFor(patch.users, viewerId, db);
     // 관계가 바뀐 패치(엔진이 두 당사자를 users 로 같이 보낸다): 나를 차단한 사람은 화면에서 지우고, 내가 당사자면 상대의 글·활동을 다시 맞춘다
@@ -253,5 +274,5 @@ export function patchFor(original: Patch, viewerId: ID, db?: Snapshot): Patch | 
   // 신고·정지 (server/moderation.ts) — 새로 숨겨진 것은 removed.* 로 보내 열린 화면에서도 사라지게
   if (db) moderatePatch(out, viewerId, db);
   const hasContent = Object.entries(out).some(([k, v]) => (k === 'relationships' ? !!v : k === 'removed' ? !!v && Object.values(v).some((ids) => ids && ids.length) : Array.isArray(v) && v.length > 0));
-  return hasContent ? out : null;
+  return hasContent ? noEmojiView(out) : null;
 }

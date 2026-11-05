@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { BadgeCheck, ShieldCheck } from 'lucide-react';
 import { t } from '@core/i18n';
 import { cn } from '@core/lib/cn';
+import { stripEmoji } from '@core/lib/orglinks';
 import type { User } from '@core/types';
 import { assetUrl } from '@/lib/assets';
 
@@ -14,7 +15,8 @@ interface AvatarProps {
   ring?: boolean;
 }
 
-export function Avatar({ emoji, hue, url, size = 44, className, ring }: AvatarProps) {
+export function Avatar({ emoji: rawEmoji, hue, url, size = 44, className, ring }: AvatarProps) {
+  const emoji = stripEmoji(rawEmoji ?? ''); // 이모지는 그리지 않는다 (사장님 2026-11-03) — 머리글자·글자만
   // 이미지가 안 열리면(외부 로고가 내려갔거나 막혔을 때) 깨진 아이콘 대신 이니셜·이모지로
   const [broken, setBroken] = useState(false);
   if (url && !broken) return <img src={assetUrl(url)} alt="" width={size} height={size} loading="lazy" onError={() => setBroken(true)} className={cn('shrink-0 rounded-full object-cover select-none', ring && 'ring-2 ring-white shadow-sm', className)} style={{ width: size, height: size }} />;
@@ -28,7 +30,7 @@ export function Avatar({ emoji, hue, url, size = 44, className, ring }: AvatarPr
     >
       {/^[A-Z0-9ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ•]{1,3}$/.test(emoji)
         ? <span className="font-display font-extrabold text-primary v2:text-night" style={{ lineHeight: 1, fontSize: size * (emoji.length > 2 ? 0.3 : 0.36) }}>{emoji}</span>
-        : <span style={{ lineHeight: 1 }}>{emoji}</span>}
+        : emoji ? <span style={{ lineHeight: 1 }}>{emoji}</span> : null}
     </div>
   );
 }
@@ -40,7 +42,7 @@ export function Portrait({ emoji, hue, url, className, photoType }: { emoji: str
       className={cn('relative w-full grid place-items-center select-none overflow-hidden', className)}
       style={{ background: `radial-gradient(120% 90% at 30% 20%, hsl(${hue} 90% 90%), hsl(${(hue + 35) % 360} 75% 70%) 70%, hsl(${(hue + 60) % 360} 70% 60%))` }}
     >
-      {url ? <img src={assetUrl(url)} alt="" className="absolute inset-0 h-full w-full object-cover" /> : <span className="text-[88px] drop-shadow-sm" style={{ lineHeight: 1 }}>{emoji}</span>}
+      {url ? <img src={assetUrl(url)} alt="" className="absolute inset-0 h-full w-full object-cover" /> : stripEmoji(emoji) ? <span className="text-[88px] drop-shadow-sm" style={{ lineHeight: 1 }}>{stripEmoji(emoji)}</span> : null}
       {photoType && photoType !== 'face' && (
         <span className="absolute bottom-2 left-2 rounded-lg bg-black/35 text-white text-[11px] px-2 py-0.5 backdrop-blur">
           {photoType === 'masked' ? t('얼굴 비공개') : t('뒷모습')}
@@ -56,7 +58,7 @@ export function Cover({ emoji, hue, url, className, size = 40 }: { emoji: string
       className={cn('relative grid place-items-center select-none overflow-hidden', className)}
       style={{ background: `linear-gradient(135deg, hsl(${hue} 80% 92%) 0%, hsl(${(hue + 30) % 360} 75% 78%) 60%, hsl(${(hue + 50) % 360} 70% 68%) 100%)` }}
     >
-      {url ? <img src={assetUrl(url)} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" /> : <span style={{ fontSize: size, lineHeight: 1 }} className="drop-shadow-sm">{emoji}</span>}
+      {url ? <img src={assetUrl(url)} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" /> : stripEmoji(emoji) ? <span style={{ fontSize: size, lineHeight: 1 }} className="drop-shadow-sm">{stripEmoji(emoji)}</span> : null}
     </div>
   );
 }

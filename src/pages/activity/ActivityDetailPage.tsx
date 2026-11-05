@@ -4,12 +4,14 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import L from 'leaflet';
 import { TILES_ENABLED, TILE_URL, LandmarkLayer } from '@/pages/map/MapPage';
-import { Clock, MapPin, Users, Ticket, Lock, Share2, Flag, MoreHorizontal, Pencil, Trash2, BadgeCheck, MessageCircle, ShieldCheck } from 'lucide-react';
+import { Clock, MapPin, Users, Ticket, Lock, Share2, Flag, MoreHorizontal, Pencil, Trash2, BadgeCheck, MessageCircle, ShieldCheck, Heart } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Avatar, Button, Cover, Tag, VisibilityTag, BottomSheet, Dialog, Input, EmptyState } from '@/components/ui';
 import { SampleTag } from '@/components/ui/SampleTag';
 import { isSampleOrg } from '@core/lib/sampleorgs';
 import { JoinButton } from '@/components/cards/JoinButton';
+import { shareOrCopy } from '@/lib/native';
+import type { Activity } from '@core/types';
 import { SheetItem } from '@/components/cards/PostCard';
 import { ReportSheet } from '@/components/cards/ReportSheet';
 import { useViewer } from '@/hooks/useViewer';
@@ -115,9 +117,13 @@ export function ActivityDetailPage() {
       </div>
 
       <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] bg-surface/95 backdrop-blur border-t border-line p-3 flex gap-2 safe-bottom z-20">
-        <button onClick={() => showToast(t('링크를 복사했어요.'))} className="h-[52px] w-[52px] rounded-2xl bg-surface-2 grid place-items-center text-ink-2 press" aria-label={t('공유')}><Share2 size={20} /></button>
-        {canChat ? <Button size="lg" variant="secondary" onClick={() => nav(`/chats/${room!.id}`)} icon={<MessageCircle size={18} />}>{t('그룹 채팅')}</Button> : null}
-        <JoinButton activity={a} size="lg" className="flex-1" />
+        <button onClick={async () => { if (await shareOrCopy({ title: a.title, url: `${window.location.origin}/activities/${a.id}` }) === 'copied') showToast(t('링크를 복사했어요.')); }} className="h-[52px] w-[52px] rounded-2xl bg-surface-2 grid place-items-center text-ink-2 press shrink-0" aria-label={t('공유')}><Share2 size={20} /></button>
+        {/* 시안: 참석 전 Going · Interested → 참석 뒤 You’re going! · Chat */}
+        {/* 조직 행사(사장님 시안): RSVP → You’re going! · View Organization. 학생 모임: Going · Interested → You’re going! · Chat */}
+        <JoinButton activity={a} size="lg" className="flex-1" label={a.joinPolicy === 'open' ? (a.kind === 'org_event' ? 'RSVP' : (lang === 'en' ? 'Going' : '참석')) : undefined} />
+        {a.kind === 'org_event' && a.orgId && mine?.status === 'approved' ? <Button size="lg" variant="secondary" className="flex-1" onClick={() => nav(`/orgs/${a.orgId}`)} icon={<Users size={18} />}>{lang === 'en' ? 'View Organization' : '조직 보기'}</Button>
+          : canChat ? <Button size="lg" variant="secondary" className="flex-1" onClick={() => nav(`/chats/${room!.id}`)} icon={<MessageCircle size={18} />}>{lang === 'en' ? 'Chat' : '채팅'}</Button>
+          : !isHost && !mine && a.kind !== 'org_event' ? <InterestButton a={a} /> : null}
       </div>
 
       <BottomSheet open={menu} onClose={() => setMenu(false)} title={t('활동')}>
@@ -156,5 +162,18 @@ function PersonPill({ id, label }: { id: string; label?: string }) {
     <button onClick={() => nav(`/users/${id}`)} className="flex items-center gap-1.5 rounded-full bg-surface-2 pl-1 pr-3 h-8 text-[12px] font-semibold press">
       <Avatar emoji={u.avatar.emoji} hue={u.avatar.hue} url={u.avatar.url} size={24} />{u.sample && <SampleTag className="h-4 mr-0 px-1 text-[9px]" />}{u.nickname}{label && <span className="text-primary">{label}</span>}
     </button>
+  );
+}
+
+/** Interested(관심) — 참석 인원에 들지 않는다. 나중에 Going 으로 바꿀 수 있다 */
+function InterestButton({ a }: { a: Activity }) {
+  const v = useViewer();
+  const run = useAppStore((s) => s.run);
+  const on = (a.interestedIds ?? []).includes(v.me.id);
+  return (
+    <Button size="lg" variant="outline" className="flex-1" icon={<Heart size={17} fill={on ? 'currentColor' : 'none'} />}
+      onClick={() => run(() => api.activities.toggleInterest(a.id, v.me.id), on ? undefined : (lang === 'en' ? 'Marked as interested — you can switch to Going anytime.' : '관심 표시했어요 — 언제든 참석으로 바꿀 수 있어요.'))}>
+      {lang === 'en' ? 'Interested' : '관심'}
+    </Button>
   );
 }

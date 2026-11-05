@@ -2,6 +2,53 @@
 
 최신이 위.
 
+## 2026-11-02 · 사장님 답 — Co-ops 칸 (BSC 하우스 목록)
+- Berkeley Student Cooperative 공식 사이트(bsc.coop/housing/our-houses-apartments)에서 하우스·아파트 20곳과 각 집 소개 첫 문장을 확인 → server/data/coops-berkeley.csv(확인일 포함). 사이트가 서버 자동 요청(Node)을 503 으로 막아서 우회하지 않고 확인한 목록을 저장소에 둠. 워커가 일주일마다 CSV → 조직(type: coop, 공식). 테스트 2개.
+- 조직 분류에 Co-op housing 추가, Explore › Clubs & Groups 칩 Co-ops, Explore › Events 조직 행사 칸 Co-ops 필터.
+- 266 통과, 빌드 정상.
+
+## 2026-11-02 · 사장님 시안 3단계 — 조직 행사로 시작하는 유입
+- 운영진: Profile › My Organizations(운영 중·회원) → Create Event(사진·행사 이름·조직(운영진인 조직만)·설명·일시·장소·공개 범위 Public(Explore)/Members only(그 조직 회원만)) → “Event Created!” Share Link · View Event · View Organization (+ 인스타·단톡방 안내). 조직 페이지 Events 칸에 운영진용 Create Event.
+- 학생: Explore › Events 맨 위 “From clubs & Greek life”(All·Clubs·Greek, 실제 조직 행사만, 없으면 숨김). 행사 상세 RSVP → “You’re going! Added to your Schedule.” · View Organization. 참석한 행사는 Schedule(내 약속)에 보인다.
+- Co-ops 칸은 넣지 않음 — 지금 데이터에 Co-op 조직 분류가 없다(만들면 지어내기). 질문함.
+- 264 통과, 빌드·화면(v2) 오류 0.
+
+## 2026-11-02 · 사장님 시안 2단계 — 모임 만들기·참석
+- Meet › Create a Meetup: 사진 올리기(웹) · 제목 · 종류 4개(Coffee/Study/Workout/Hangout) · 설명 · 일시 · 장소 · 인원 · 공개 범위 3개(Public=우리 학교 / My Network=친구 / Invite Only=초대한 친구). 참가비·조건·승인 방식은 이 모드에서 숨김(바로 참여). 만든 뒤 “Meetup Created!” — View Meetup · Share Link.
+- 모임 상세: 참석 전 Going · Interested(새로 만듦: 관심 — 인원에 안 듦, 본인 것만 보임, 계정 삭제 때 지움) → 참석 뒤 You’re going! · Chat. 참석 취소는 한 번 더 묻고. 공유 버튼이 실제로 링크를 복사·공유(예전엔 토스트만).
+- 모임 사진: 사진 주소가 모임에 붙어 있으면 계속 보이고, 모임이 지워지거나 주최자가 정지되면 닫힘(server/media.ts). 테스트 2개 추가, 264 통과.
+
+## 2026-11-02 · 사장님 결정 — 이름 Lumi, 탭 Home·Explore·Schedule·Meet·Profile, 밝은 디자인 시안
+- 사장님: 앱 이름은 Lumi, 첫 화면 = 정보 대시보드, 어두운 v2 기본 + Classic(밝은 파스텔) 함께, 배포는 바로.
+- 이름 되돌림(헤더·홈·시작 화면). Classic 색을 사장님 밝은 시안대로(흰 바탕·인디고 #4F55E3·파스텔 카드).
+- 탭: Home · Explore · Schedule(/schedule = 내 약속) · Meet(Activities | People — People 은 Meet 안, /people 도 Meet 탭으로 표시) · Profile.
+- Meet(시안 1단계): Coffee·Study·Workout·Hangout 4칸(누르면 그 종류만), Create a Meetup, Upcoming Meetups(실제 모임·참여 인원), 다른 방법(지금 공강·팀원·같이 타기·링크로 묻기 → 예전 Discover 는 /meet/more).
+- 다음: 모임 만들기·Going/Interested·채팅 흐름, 조직 행사(운영진 등록·RSVP·조직 페이지).
+
+## 2026-11-02 09:20 UTC (버클리 월 01:20 PST) · 초점: 방금 배포한 새 홈·탐색이 라이브에서 도는지
+- 사장님 새 답 없음. 라이브 번들 6d9c8fb 확인. 라이브 주소로 직접 찍음: 홈(AroundU · UC Berkeley · Campus Life: RSF Closed 7 AM–11 PM, Dining Café 3 opens 7 AM · For you) · Explore › Opportunities 오류 0.
+- calendar:s_berkeley 마지막 기록 04:22 error — 고친 코드 배포 뒤 아직 6시간 주기가 안 돌았다(10:22 예정). 인턴 가져오기(유학생 표시 포함)도 10:21 예정.
+- 물어봄: Feed 자리·기본 디자인·법 문서 이름(QUESTIONS.md). 고친 코드 없음.
+
+## 2026-11-02 · 사장님 시안 — 홈·탐색 개편 (AroundU)
+- 하단 탭: Home · People · Meet · Explore · Profile (가운데 + 는 Meet 화면 위 + 로). / = 새 홈, /people = 예전 사람 카드, /meet = 예전 Discover(/discover 는 /meet 로), /explore(+ /explore/events·opportunities·clubs).
+- 홈: AroundU + 학교 이름(인증된 소속에서, 없으면 숨김), “What’s happening at UC Berkeley?”(손 이모지 없음, 대학원·동문 문구 따로), Events·Opportunities·Clubs & Groups·Meetups 4칸, Campus Life(RSF 운영·시간·혼잡도 → /gym, Dining Halls 지금 연 곳 → /dining, 지원하는 학교만), For you(실제 추천 1~2개, 저장 버튼, 없으면 칸 숨김).
+- Explore: 제목·검색·Events/Opportunities/Clubs & Groups 세 줄 — 시안의 Discover 칸은 사장님 요청대로 뺌. 하위 화면은 캠퍼스 › 찾기 목록을 그 칸 칩만 남겨 재사용.
+- 이름: 헤더·시작 화면 로고 Lumi → AroundU. 법 문서·공유 링크 화면의 “Lumi” 는 그대로(법 문서는 사장님 확인 뒤).
+- 262 통과, 빌드 정상, 화면 12개(v2·classic) 오류 0.
+
+## 2026-11-02 · 사장님 요청 — 인턴도 유학생 가능 여부
+- 공고 본문을 읽어 회사가 적은 문장만으로 표시(server/sources/workauth.ts): 유학생 가능(CPT/OPT 받음·international students welcome·sponsor) / 미국 시민만(citizenship required·보안 인가·must be a U.S. person) / 비자 스폰서 없음 / 안 적힘(표시 없음).
+- 본문 가져오기: Greenhouse(?content=true), Lever·Ashby(목록에 본문), Workday·SmartRecruiters(인턴 공고만 상세 한 번 더), USAJobs(자격 요건의 시민권).
+- 실제 456개로 돌려 봄: 유학생 가능 13(Jump Trading·Akuna), 미국 시민만 59(Anduril·Palantir), 스폰서 없음 13(Humana·AlixPartners 등), 안 적힘 371. 잘못 읽은 것 2가지 고침 — “스폰서 없음 (예: STEM OPT)” 목록의 OPT, ServiceNow 수출 통제 안내문. 실제 문장으로 테스트.
+- 화면: 인턴 카드 배지, 상세 “International students” 줄(안 적혀 있으면 “공고에 없음 — 지원 전 확인”), 인턴 칸 “Int’l students OK N” 칩(분야 개수도 따라감). 262 통과, 빌드·화면 오류 0. 라이브 데이터는 다음 인턴 가져오기(12시간마다)부터.
+
+## 2026-11-02 · 사장님 요청 — 유학생 대학원생도 지원 가능한 것
+- 추가: Jane Street Graduate Research Fellowship(2026/11/13 AoE, 박사 $50k+등록금, “International students are eligible” 공식 명시), P.E.O. International Peace Scholarship(유학생 여성 대학원생, 최대 $12,500, “12월 15일까지” — 연도 표기 없어 날짜 미정).
+- 버클리 펠로십 중 페이지에 ‘모든 대학원생’/유학생 대상이 분명한 것만 ‘international students’ 태그: Chowdhury, Philip Brett, Guru Gobind Singh, Soong. (명시 없는 것은 짐작해 달지 않음; Lurcy·Mentored Research Award 는 시민·영주권자 전용으로 페이지에 적혀 있음)
+- 장학금·연구 탭에 “유학생 가능 N” 칩(해당 태그가 있을 때만 보임). 259 통과, 빌드·화면 오류 0.
+- 넣지 않음: Google PhD Fellowship(학교 추천, 2027 일정 공식 없음), Microsoft PhD Fellowship(중단), Two Sigma(페이지 비공개), AAUW International(2027 일정 없음).
+
 ## 2026-11-02 · 사장님 요청 — 대학원생 연구 기회
 - 공식 페이지 확인 후 추가(연구 칸): LLNL Data Science Summer Institute(2027/1/15, 대학원·학부 고학년), Los Alamos Dynamics Summer School(1차 11/14, 최종 2027/1/2 5PM MST, 3·4학년·대학원 1년차), LANL Remote Sensing Summer School(2027/1/10, 대학원생만, 유급).
 - 이미 있는 NASA OSTEM(3/1)·Berkeley Lab Computing Sciences 는 대학원생에게도 보임(대상 ‘모두’ 확인).
@@ -1451,3 +1498,628 @@
 ## 2026-10-13 · 설치
 - PM agent 설정 (3시간마다, 작업 브랜치 claude/lumi-pm, 배포는 사장님).
 - 직전 수정: Discover 활동 날짜별 묶음 + "Be the first" 제거 (aacc152).
+
+## 2026-11-02 — Onboarding per owner mockup (/start)
+- New order: Name first ("What should we call you?" + birth year 16+) → Your goals (5 + Skip) → Here's how Lumi helps you (4 cards; Communities = "Join clubs, Greek life, and other campus groups") → University & student status (school + Undergraduate/Graduate/Alumni, optional year/major, waitlist for other schools) → Your communities (8 + None for now) → school email (optional) + Get Started.
+- No new schema: goals/communities map into existing goals/interests/purposes. "Make campus life easier" and "Residence Hall / Dorm" have no matching field, so they only steer interests (study) or are not stored. Avatar/bio quiz steps removed (bio starts empty, editable in Profile).
+- Checks: tsc, server typecheck, npm test 266/266, vite build, click-through screenshots v2+classic, PAGE ERROR 0 (register/email writes blocked).
+- Added "What would you like to discover?" topics step (8 topics, Skip) before Your communities, per owner mockup — saved into goals/interests. Checks re-run: tsc, server typecheck, tests, build, screenshots v2+classic PAGE ERROR 0.
+
+## 2026-11-02 — Meet → Social tab (owner mockup: For You · Meetups · People · Feed)
+- Bottom tab "Meet" renamed "Social" (still /meet; also lights up on /people and /feed). Header: Social + bell + create (+).
+- For You (/meet): Let's get started, Start a Meetup / Find People, Popular to try (Coffee/Study/Workout/Hangout → Meetups filter), Ask a Question (→ question post), Happening soon (real upcoming meetups, only when any exist).
+- Meetups (/meet/meetups): the former Meet page; empty state "No meetups yet — Create the first meetup on your campus!".
+- People (/people): Find your people → My Classes (/timetable), My Groups (/orgs/mine), Explore People (/people/explore = the former people deck).
+- Feed (/feed): Write a Post; when no posts, "Start a conversation" + Question / Tip / Discussion starters; otherwise the existing feed. Answers the open Feed-placement question.
+- Links updated: Home Meetups card, Plans "find activities", chat empty state, Who's free sheet. Illustrations are icons (no made-up images).
+- Checks: tsc, server typecheck, tests 266/266, build, screenshots classic+v2 of all 5 routes, PAGE ERROR 0.
+
+## 2026-11-02 — Lighter onboarding text + Lumi header on Social
+- Owner mockup: shorter onboarding. Goals = 5 one-line options (Discover opportunities / Plan my classes / Join communities / Campus life & wellness / Meet new people), no subtitles. "Here's what you get" = 4 icon+title cards (Classes & Schedule, Events & Opportunities, Communities, Meet & Connect). "Your university" + "Your status" as rows; year/major questions removed (editable later in Profile). Topics sub "Pick a few." Communities = compact checkbox list (Clubs, Fraternity/Sorority, Co-op Housing, Research Lab, Department/Major, Sports/Recreation, Other). Segmented progress bar; Skip under Continue (top right is the design toggle). Email step kept but one-line, optional.
+- Social tab header now shows the app name (Lumi / lumi.) with bell, chats, profile and the + button, like other tabs.
+- Checks: tsc, server typecheck, tests 266/266, build, click-through screenshots classic+v2, PAGE ERROR 0.
+
+## 2026-11-02 — Collect data for 7 more schools (not open for signup) + next-term classes
+- Owner: start with the 7 recommended schools; also the upcoming term, not just this one.
+- New `server/data/schools-collect.csv` (moved from schools-paused.csv): Stanford, MIT, Harvard, Cornell, UPenn, Dartmouth, Notre Dame. Worker runs the same per-school jobs (club directory detect + import, events, classes) but does not register the school in the app's school list. Time zones added (East Coast / Indiana). Stanford events from events.stanford.edu (Localist API, checked 200 with live events).
+- server/view.ts: opportunities now filtered per viewer like orgs (no-school items + my school + ones I saved), so other schools' events don't reach Berkeley students. Test: server/oppfilter.test.ts.
+- Two terms of classes: Cornell (FA26 + SP27, roster published — CS 1110 SP27 read live), Harvard (2026 Fall + 2027 Spring, skipped if not posted), FOSE schools (current + next regular term in the site's list; Dartmouth = Winter). Stanford already gets the whole academic year (Autumn/Winter/Spring). Next-term rows get an id tag (_sp27) like Berkeley.
+- MIT: fireroad only publishes the current term's times → Fall 2026 only (label fixed to follow the date, was hard-coded "fall"); Spring appears when MIT posts it. Not invented.
+- Blocked here: from this container UPenn/Dartmouth/Notre Dame/Stanford/Harvard class sites fail TLS through the proxy, so those adapters could not be tried live from here; they run on Railway. Results show in /api/agent/status (courses:*, detect:*, orgs:*).
+- Checks: tsc, server typecheck, tests 268/268, build; agent DRY lookup of a collect-school row OK.
+
+## 2026-11-02 — Clubs, student government and their links for the 7 collect schools
+- Owner: clubs too, student body orgs, and links (Instagram, Facebook, official site).
+- Club directories per school (checked live here): Notre Dame = Engage nd.campuslabs.com (540), UPenn = Penn Clubs public JSON (511, new adapter), Dartmouth = CampusGroups dartmouthgroups.dartmouth.edu (255), MIT = engage.mit.edu (379), Stanford = cardinalengage, Cornell = cornell.campusgroups.com. Hosts set in schools-collect.csv. Harvard's directory (soco.college.harvard.edu) needs a Harvard login → no club list.
+- Links (server/sources/orglinks.ts): Engage org detail socialMedia → Website/Instagram/Facebook/LinkedIn/X/YouTube (ND: 407 of 540 have at least one); Penn Clubs detail → website/instagram/facebook/linkedin/X/YouTube/TikTok; CampusGroups list gives each group's own website link (social icons on its club pages load by script, not available).
+- Student government = type council. Rule widened (Undergraduate Assembly, Graduate Student Government, Student Assembly, Senate, class councils…); Dartmouth's "Council on Student Organizations" group type no longer turns every club into a council (was 189 → 7). Found in directories: ND Student Government/Senate + Graduate Student Government, Penn UA + GAPSA. MIT UA is not in engage.mit.edu → added by hand.
+- Not in any directory → server/data/student-governments.csv, checked on the official sites: Harvard Undergraduate Association (thehua.org), Dartmouth Student Government (sg.dartmouth.edu + Instagram), MIT Undergraduate Association (ua.mit.edu + Instagram). Worker adds them weekly (studentgov:<id>).
+- Tests: server/orglinks.test.ts. Checks: tsc, server typecheck, tests 274/274, build; FETCH_DRY runs for ND, UPenn, Dartmouth, MIT OK.
+
+## 2026-11-02 — Bay Area first; load clubs, only sample-test timetables
+- Owner: few schools, Bay Area first; clubs/groups (unstructured) load all now; timetables must not be bulk-loaded (storage cost) — prove the recipe with a few accurate samples so it can be pulled fast later.
+- schools-collect.csv is now Bay Area: Stanford, SF State, SJSU (new row), UC Davis, UC Santa Cruz, Santa Clara (new), USF (new). East Coast six moved back to schools-paused.csv.
+- Collect schools: classes are no longer stored. New `probe:<id>` job (weekly): reads a sample (Stanford CS/MATH/ECON; CourseLeaf 6 subjects), runs the rules + source re-check, records source, terms, sample rows, `stored: false`. Manual: `npm run agent -- probe:s_sfsu`.
+- Fixes found by the tests: CampusGroups paging (UC Davis 265 → 531, SJSU 238 → 440 — pages are 8–10 rows there, we stepped 30; rows without links now read via cb_club_<id>); CourseLeaf titles with "&#8212;" (UC Davis); MIT course import failed on duplicate ids ("ON CONFLICT … second time") → dedupe before saving.
+- Student governments hand-checked on official sites: ASSU, ASUCD, UCSC SUA, SCU ASG, ASUSF Senate (website only; no Instagram unless the official site links it).
+- Already in the live DB before this change (worker ran the earlier list at ~12:20 UTC): Stanford classes 2,439 rows (Stanford had 744 before), MIT/Stanford clubs. Not deleted — live DB deletes need owner OK.
+- Recipe table: docs/pm-agent/DATA_SOURCES.md.
+
+## 2026-11-02 12:40 UTC — routine run
+- Verified on live agent status: calendar:s_berkeley applied at 10:25 with the fixed code (182 events, 50 old removed — the 04:22 error is gone); external:internships applied 10:25 (453 postings, now with posting text for work-authorization labels); USAJobs 129 at 06:03.
+- Focus this run = today's owner requests (onboarding, Social tab, Bay Area data); screens were checked in classic + v2 during those changes, PAGE ERROR 0.
+- Open for owner: delete East Coast class rows already in the live DB (Cornell 9,518 · UPenn 7,492 · Harvard 2,764 · Dartmouth 1,346)? Home/Explore/Schedule to the latest mockup?
+- 2026-11-02 사장님: 동부 수업 데이터 지우지 말 것 (그대로 둔다).
+
+## 2026-11-02 — Bay Area clubs, one school at a time
+- UC Santa Cruz: Get Involved list (getinvolved.ucsc.edu, FacetWP cards) → 109 orgs, 108 with Instagram; greek councils (Panhellenic, Inter-Greek Council) as council, chapters as greek.
+- Santa Clara: CSI RSO directory (scu.edu/csi/organizations/directory) → 162 orgs in 10 categories (names only on that page).
+- USF: myUSF undergraduate category pages (5) → 152 orgs, 138 with Instagram/website; ASUSF Senate is in the directory, so the hand-checked copy is skipped (dedupe by name).
+- New readers in server/sources/orglinks.ts (facetwp / accordion / drupalcards), detected from orgs_host in schools-collect.csv; tests with real page excerpts in server/fixtures.
+- SJSU classes: sjsu.edu not reachable from this container (TLS / 503) → next run, test on the server.
+- Checks: tsc, server typecheck, tests 277/277, build; agent DRY runs for s_ucsc, s_scu, s_usf OK.
+- SJSU events: events.sjsu.edu Localist API (checked: 211 items in 14 days; 9 kept after the student-event filter).
+
+## 2026-11-02 — Closed schools collected to files, not the live DB (owner: Railway cost)
+- `npm run agent -- collect:<id>` (run by the PM agent in its own container): club directory → server/data/collected/<id>.orgs.json (with links, members/followers empty), hand-checked student governments added only if the directory lacks them, class recipe sample → <id>.probe.json. No DB writes.
+- Railway worker now does nothing for closed schools except jobs in the new `railway` column of schools-collect.csv (today: Stanford class probe — explorecourses fails TLS here). Records the result only.
+- Opening a school: move its row to schools.csv, then `import-collected:<id>`.
+- First collection: Stanford 733 · SFSU 290 · SJSU 440 · UC Davis 532 · UCSC 110 · Santa Clara 163 · USF 152 (≈2 MB of JSON in the repo).
+- Note: between 12:20 and this change the worker already wrote some Bay Area/East Coast data to the live DB; left as is (owner: don't delete).
+
+## 2026-11-02 — /preview: see collected schools without opening them (owner: option A)
+- Server reads server/data/collected/<id>.orgs.json only when /api/preview(/:id) is called — nothing in the DB or the in-memory snapshot. Ids checked (s_[a-z0-9]+, only rows of schools-collect.csv).
+- Pages /preview (school list: groups, with links, class recipe status) and /preview/:id (search, All/Clubs/Greek/Student government, description on tap, Directory/Instagram/Website links, class sample). Not linked from the app; the design toggle is hidden there.
+- Checked locally with the real server (file store): list + UCSC + SFSU in v2 and classic, PAGE ERROR 0. Test: server/preview.test.ts.
+- Next (owner): when a school looks right in preview → open it (option B: move row to schools.csv + import-collected).
+
+## 2026-11-02 — Public links only (owner: "Directory needs a school login — not OK")
+- Checked: CampusGroups club pages (Stanford Cardinal Engage, UC Davis AggieLife, SJSU SAMMY, MIT, Dartmouth) and Berkeley CalLink all redirect to a school login. Engage org pages (SF State) and the UCSC/SCU/USF list pages are public.
+- packages/core/src/lib/orglinks.ts `publicLinks`: login-only links are hidden on the org page and in /preview (kept in data for import bookkeeping). Order Website → Instagram → Facebook.
+- server/sources/sitesocial.ts: for clubs with their own website, read the site's first page and take its Instagram/Facebook profile links; a "Website" that is itself a Facebook/Instagram page is relabelled; accounts that appear on 3+ club sites of one school are treated as the school footer and dropped (SF State: sfstatecares, sanfranciscostate…). Part of `collect:<id>`.
+- After: SF State 214/290 with a public link (IG 171, FB 48) · UC Davis 172/532 (IG 77, FB 49) · SJSU 107/440 · USF 138/152 · UCSC 109/110 · Santa Clara 1/163 · Stanford 0/733. Spot check of 12 random new links: all the club's own accounts (one is the national parent org's account).
+- Stanford and Santa Clara have no public links in their directories → queued: small hand-checked batches per run via web search (DATA_SOURCES queue).
+
+## 2026-11-02 — Course files for closed schools + data check
+- collect:<id> now also saves all courses to server/data/collected/<id>.courses.json when the sample recipe passes (no DB): SF State 4,419, UC Davis 10,478 (catalog codes/titles; no times in that source). Catalog titles cleaned of "(Units: 3)" and a leading "—".
+- /preview shows "Courses saved: N" with a search (`/api/preview/:id/courses?q=`).
+- Berkeley live check (demo account, read-only): 1,707 groups (club 1,465 · lab 126 · greek 84 · co-op 20 · student gov 12), only 260 with a public link (CalLink pages need CalNet). 6,567 classes Fall 2026 + Spring 2027, 100 departments. Spot check CS 61A, DATA C8, ECON 1, MATH 51 against classes.berkeley.edu: times, instructor and room (Wheeler 150) match.
+- Logos: Berkeley 1,181 real logos, 256 initials, 270 emoji — 202 of those are a generic 🎯 placeholder; 458 names end with 💙 as written in CalLink. Queued as a question.
+
+## 2026-11-02 14:53 UTC — routine run (data queue + spot check)
+- Queue item: public links for Stanford clubs. New hand-checked file server/data/org-links-stanford.csv (org_id,label,url,checked,source), merged by collect:<id>. First 7: ASSU, Solar Car, Taiko, Women in Business, Concert Network, Pre-Business Association, Stanford Daily — official sites from web search; Instagram/Facebook then read from those sites (Taiko, SWIB). Stanford Robotics Club skipped (two candidate sites, couldn't tell which is official).
+- Spot check, 5 clubs: 2 OK; 1 dead link (UC Davis AACF wixsite → 404); 2 SJSU entries were school offices ("Alumni Engagement", "Leadership and Career Certificate Program"), not clubs. Fixes: Website links that return 404/410 (or Wix "404 Error" page) are dropped (UC Davis 7, SJSU 1); CampusGroups "College/Department/Program" groups skipped unless student government (SJSU 440 → 388, Associated Students kept). Facebook pages/<name>/<id> links keep the id.
+- Spot check, 5 Berkeley classes (JOURN 219, RHETOR R1A, CDSS 198, FOLKLOR C262A, PHYSICS 153) against classes.berkeley.edu: time and room match 5/5.
+- Checks: tsc, server typecheck, tests 283/283, build.
+
+## 2026-11-02 16:04 UTC — routine run
+- Queue: 5 more Stanford official sites (Marching Band lsjumb.stanford.edu, BASES, Ram's Head, Debate Society, Stanford Finance) → org-links-stanford.csv; Stanford now 12/733 with a public site. No official page found for Korean-American Student Association and Gospel Choir (skipped, not guessed).
+- Spot check 5 clubs (UCSC KGD, SCU Sunrise, USF Society of Architecture Students, SFSU Journalism Club, UC Davis Imani Clinic): 4/4 found on their official public lists; UC Davis's list needs login, so only its links are checkable (none for this club).
+- Spot check 5 courses (UC Davis ANS 099, GEO 200DN, NAS 110D; SFSU ITEC 711, ENGR 694): code and title match the official catalogs 5/5.
+
+## 2026-11-02 17:03 UTC — routine run
+- Queue (Stanford links): faster route — official Stanford pages that list student groups with links (engineering.stanford.edu, cs, me, msande, explore-energy). Exact-name match against our 733, then reviewed by hand: 20 added (SWE, Tau Beta Pi, TreeHacks, Student Space Initiative, Women in CS, Stanford in Government, Energy Club…). Rejected 5 matches that pointed at a center (nacc), a national body (asce.org), a general GSB page, a program page, and a duplicate. Stanford now 32/733 with a public site.
+- Spot check clubs (5 new Stanford links): 2 confirmed on the page; 2 sites render only by script (Notion, WiCS) and 1 not reachable from the container — kept because the listing page is official.
+- Spot check classes (Berkeley ARESEC 201, GWS 10, DEVP 230, UGBA 135, ECON C270A): time and room 5/5.
+
+## 2026-11-02 17:35 UTC — routine run
+- Queue (Stanford links): the official a cappella council site acappella.stanford.edu has a page per group with its site/Instagram/Facebook → 9 groups (Counterpoint, Everyday People, Fleet Street, Harmonics, Mixed Company, O-Tone, Raagapella, Talisman, Testimony). Stanford now 41/733 with a public link. Tried and not usable: GSB alumni club page (no club sites), arts.stanford.edu student groups (403), Wikipedia a cappella list (no group links).
+- Spot check clubs: UCSC VSA, Leviathan; SCU Photography Club, Plant People Club; SFSU Mashouf Wellness — 5/5 on the official public lists.
+- Spot check courses: UC Davis ATM 270D, FAP 430, ART 142D; SFSU PSY 697, PHIL 470 — code and title match 5/5.
+
+## 2026-11-02 18:33 UTC — routine run
+- Queue (Stanford links): checked community-center and religious-life pages (El Centro VSOs, BCSC BVSO, ORSL SAR, A3C) — names only, no per-group links. Official list route is used up at 41/733; remaining Stanford groups need one-by-one search. Next runs move to Berkeley.
+- Spot check found a bug: USF/UCSC/SCU names showed HTML codes ("Hui O Hawai&#039;i", "Game Design &#038; Art", "Ballet Folkl&oacute;rico"). The school-list readers now decode numeric and named codes; test added; USF, UCSC and SCU files re-collected (0 codes left).
+- Spot check otherwise: USF VSA, SFSU Lambda Theta Alpha, SCU Commuter Student Union on their official lists; USF Instagram links appear on the USF page; UCSC SUA is the hand-checked student government (not on the club list, expected). Courses UC Davis MGB 299, MDS 421C; SFSU PRSN 509, ACCT 845, SPED 675 — 5/5 match.
+
+## 2026-11-02 19:33 UTC — routine run
+- Queue moved to Berkeley (live): the official Engineering "teams and organizations" page and the EECS student organizations page list ~90 groups with their own sites. Exact-name match against our 1,707 Berkeley groups (ignoring "at Berkeley", trailing 💙): 52 matched, all reviewed; 19 not in our list under the same name (left alone). CalLink links on those pages skipped. Then each site's first page → 43 Instagram/Facebook links. Saved to server/data/org-links-berkeley.csv.
+- New worker task links:<id> (open schools): merges org-links-<short>.csv into the live groups once a week, only groups that gain a link. One small patch per week — no Railway cost to speak of.
+- Spot check clubs: 5 new Berkeley sites (Bike Builders, Space Enterprise, Formula Electric, Codebase, ASCE) — name on the page 5/5.
+- Spot check classes: LS 198, MBN 210, LANPRO 380, JEWISH 175E, STS C200 — first pass failed because classes.berkeley.edu took ~35 s per page (my 20 s timeout); re-checked with 90 s: time and room 5/5. Not a data problem.
+
+## 2026-11-02 20:33 UTC — routine run
+- Live check: links:s_berkeley applied at 19:46 — 52 Berkeley groups gained public links in the app.
+- Queue (Berkeley links): Cal RecWell sport club pages (recwell.berkeley.edu/essential_grid/<team>) are official public team pages; each links the team's CalLink slug, which equals our org id → 22 club sports matched exactly (Boxing, Fencing, Ice Hockey, Triathlon, Pie Queens, Club Volleyball…), with their own sites/Facebook where listed. Chemistry page → AIChE; Haas page → HBSA. Haas's 16 sponsored orgs and the Black RSO list (cejce) have names only. recsports.berkeley.edu is not allowed in this session's network (old host; recwell.berkeley.edu works).
+- Worker: links:<id> now re-merges as soon as the CSV row count changes (not only weekly).
+- Spot check clubs: Badminton (RecWell), Space Enterprise, Combat Robotics, Launchpad, AIChE — 5/5 OK. Courses: UC Davis PUL 475, ECS 289B, MGP 206; SFSU MATH 686, MUS 376 — 5/5.
+
+## 2026-11-02 21:33 UTC — routine run
+- Live: links:s_berkeley applied 20:40 — club sports + AIChE/HBSA (24 groups).
+- Queue (Berkeley links): many Berkeley groups host their site at <CalLink id>.studentorg.berkeley.edu. Checked all 1,437 groups without a public link: kept a site only when it answers 200 and its page names the club (title/body words) → 48 sites (Berkeley Scientific Journal, Blue & Gold Yearbook, Codeology, DeCadence, Traders, ULAB, UC Rally Committee…). Their pages gave 53 Instagram/Facebook links.
+- Spot check caught a personal Facebook profile on a club site (South Indian Society → a person) and a junk link (facebook.com/pg). New rule in sitesocial.ts `relatedHandle`: a social account must share a word, the acronym or the site's sub-name with the club; applied to the CSV — 7 dropped, 3 of those restored after hand review (PiE, ML@B, Underwater Robotics). Test added.
+- Classes: GWS 210, MBN 98 OK; ARCH 207C, PHDBA 239FA, EUST 201 looked off only because the page writes "01:00 pm" with a leading zero — data correct (checked the page text).
+
+## 2026-11-02 22:33 UTC — routine run
+- Live: links:s_berkeley applied 21:48 — 48 more Berkeley groups gained public links.
+- Queue (Berkeley links): same check on Berkeley's other student web hosting, ocf.berkeley.edu/~<CalLink id>: 14 answered, 6 were empty "Index of" folders (skipped) → 8 real sites (CURIE, Upsilon Pi Epsilon, WYSE, Mahjong Club, ASUC SUPERB, BSHA, CALICO, Poker at Berkeley) + 3 social links (UPE, SUPERB). Public Health student groups page → Public Health Advocate, Suitcase Clinic. CDSS student page lists EECS groups already covered.
+- Spot check clubs: UCSC Pagkakaisa Dance Troupe, Slug Fund; SFSU AS Richard Oakes Multicultural Center, Basic Needs Center — on the official lists 4/4; Stanford GSB Coffee Club has no public link yet (expected, Stanford queue).
+- Spot check classes blocked: classes.berkeley.edu now answers 403 to this container (after many reads today). Not a data problem; the Railway worker reads it from its own address. Will retry next run with fewer requests.
+
+## 2026-11-02 23:33 UTC — routine run
+- Re-collected the 7 Bay Area files with the new club-relevance rule for social links (personal profiles dropped): SF State 212/290 with a public link (5 dead sites removed), UC Davis 165/532, SJSU 84/392, USF 138/152, Stanford 41/733, UCSC 109/110, Santa Clara (names only).
+- Spot check classes via web fetch (classes.berkeley.edu still 403 to this container): ANTHRO 127A, MONGOLN C117, MELC 157, CHEM 3A, MUSIC 143 — day, time, room and instructor match 5/5.
+
+## 2026-11-02 — No emoji for clubs (owner: "Do not put emoji")
+- packages/core/src/lib/orglinks.ts withoutEmoji/stripEmoji, applied in server/view.ts (every org sent to the app) and in /preview: emoji at the end of names removed (458 Berkeley names had 💙), emoji logos replaced by initials (202 🎯 + Greek council emblems). Real logo images and Greek letters (ΑΚΨ) stay. Event/listing host names lose emoji too. Stored data unchanged.
+- Clubs & Groups list: removed the ✨ before recommendation reasons.
+- Checked on a local server: Explore › Clubs in v2 and classic shows no emoji, PAGE ERROR 0. Tests 287/287 (server/noemoji.test.ts).
+
+## 2026-11-03 — UCLA, East Coast, recruiting status, more famous schools
+- Owner: famous schools only (SJSU / SF State / Santa Clara / USF dropped to paused, files removed), East Coast back, recruiting status matters, add Chicago / Columbia / NYU and similar.
+- Collected to files (not in the Railway DB): UCLA 1,451 (1,101 with a public link) · UPenn 514 · Cornell 1,483 + 9,518 classes with times (Fall 2026 + Spring 2027) · MIT 427 + 1,712 classes with times · Dartmouth 406 · Notre Dame 540 · re-collected Stanford 733, UC Davis 532.
+- Recruiting status: Penn 283 open anytime / 95 recruit in a set term / 135 not taking members / 1 live deadline (Student-Athlete Investment Club, Dec 20 2026). CampusGroups schools: open vs. "Membership is closed" (Cornell 1,270/198, Stanford 701/32, UC Davis 513/18, MIT 416/10, Dartmouth 385/20). UCLA, Notre Dame (Engage), UCSC: the directory has no recruiting field, shown as nothing.
+- Spot check: UCLA 5 clubs vs. sa.ucla.edu RCO, Penn 5 clubs incl. the deadline vs. pennclubs.com API, Cornell 5 classes (day/time/title) vs. classes.cornell.edu API: all match.
+- Blocked: engage.college.harvard.edu is refused by this session's network policy (agent proxy connect_rejected), so Harvard has only the hand-checked student government. Not worked around.
+- Added to collect (owner 2026-11-03): UChicago (Blueprint, Engage, 446), NYU (NYU Engage, 951), Columbia (LionHub, CampusGroups), Yale (Yale Connect, CampusGroups; class probe on Railway since courses.yale.edu gives an empty answer from the container).
+- Collected 2026-11-03: UChicago 446 (404 with a public link) · NYU 951 (630) · Columbia 357 (18; LionHub draws socials by script) · Yale 1,377 (397). Recruiting: Columbia 338 open / 19 closed, Yale 1,220 open / 143 closed; UChicago and NYU (Engage) have no recruiting field.
+- Next: Yale class probe on Railway (fose), Columbia/NYU/UChicago class sources, public links for Columbia and Stanford clubs, Harvard directory (blocked here).
+
+## 2026-11-03 (2) — owner: never drop data, collect many top schools
+- Restored SJSU, SF State, Santa Clara, USF files and rows from git (commit f385006). Owner rule now: never remove collected data.
+- Found the club platform for 36 paused top schools: 13 Engage, 14 CampusGroups (all with public club lists), WashU on Presence; moved those 28 to collect, collection running (USC first).
+- New readers: Caltech (public approved-club list, 124 names; descriptions are behind Caltech login) + ASCIT; Brown (Student Activities list, 412 groups, Instagram/Facebook from each public club page, 331 with a link; 7,020 catalog courses).
+- Spot check: Brown 2 club pages vs. collected links, match.
+- Blocked: studentorg.ucsd.edu (TLS failure from the container, not bypassed); Princeton club list needs login (skipped by rule).
+
+## 2026-11-03 01:00 run
+- Routine prompt updated to the owner's 11-03 rules (never remove collected data; keep widening top schools to files without asking).
+- Fixed: CampusGroups club pages on school hosts (lionhub.columbia.edu, yaleconnect.yale.edu, catsoncampus.northwestern.edu, …) were not recognized as login-only — now any `/student_community`, `/feeds`, `club_id=` link is hidden (test added). Discord invites in a club's website field are labeled Discord (25 links in 7 school files relabeled, test added).
+- Spot check: NYU 2 + UChicago 2 clubs vs. Engage API (socials and website match), Columbia 1 (its club page needs login, which led to the fix above); MIT 5 classes vs. FireRoad (title, days, times match). Gap: only lectures are kept, labs/recitations are dropped (6.S950 Thu lab, MAD.701 Fri lab) — queued. student.mit.edu answered 503 to the web fetch.
+- Screens: /community, /preview/s_columbia — no PAGE ERROR. Live feed shows demo posts with emoji → QUESTIONS.md.
+- Collection of the 28 new schools still running (USC: 1,964 groups, reading club websites).
+- 11-03: container restart stopped the 28-school run after UC Riverside. Saved: USC 1,964, UC Irvine 733 (+5,415 catalog courses), UC Santa Barbara 1,040 (0 links), UC Riverside 664 (507 with a link). Restarted for the 24 schools without a file (script skips schools that already have one).
+
+## 2026-11-03 — grad courses, jobs, parallel agents (owner: grad students, US-wide jobs and internships, entry-level jobs for undergrads)
+- Graduate courses were already in the catalog files (UC Davis 4,877, Cornell 3,556, UCI 2,600, Brown 2,205, SF State 1,228 by course number).
+- Collection now runs 3 schools at a time (different sites). Two research agents mapped public class-schedule sources for 47 schools (DATA_SOURCES "Class schedules"); one agent verified 147 employer job boards.
+- USF classes: banner9 → 2,429 sections with times. Georgia Tech switched to banner9.
+- Jobs: new reader (server/sources/jobboards.ts, tests) → 967 US postings from 146 boards: internships 626, new grad/entry level 297, PhD 109, master's 55, postdoc 13. Entry level also catches "Engineer I", junior, APM, analyst/rotational programs; an intern's "2027 start" is not new grad (fixed after sample review). Spot check: 5 random postings open on the employer's page with the same title. Visible at /preview/jobs.
+- Gap: big banks, consulting, pharma, retail mostly use Workday (not yet read) — queued.
+
+## 2026-11-03 02:33 run
+- Container restarts keep killing long runs. Collect now saves the courses the class check already fetched (one full fetch per school instead of two).
+- New: PeopleSoft HCX class search reader (Duke DukeHub, BU; guest cookie, re-opens the guest session if it lapses). Duke: 6,291 sections with times (Fall 2026 + Spring 2027, graduate included). BU: only 452 Fall lectures at first — BU sends most regular classes as section type "IND" (CASEN 107 The Voice of Poetry); rule changed to drop only discussion/lab/recitation/tutorial/quiz; re-collect running.
+- Fixed: HTML codes in Banner course titles ("Black Activists &amp; Visionaries") — reader decodes; 862 titles fixed in USF/Georgia Tech files.
+- Spot check: Georgia Tech 5 sections re-fetched live (AE 6115, EAS 4803, MATH 1551, PSYC 4031, VIP 6602 — all match, 2 graduate). Clubs: 5 CampusGroups clubs' websites opened — 3 real student groups (Yale Arnold Air Society links the national site), 2 were school offices (Tufts "Orientation & Student Experience", JHU "Pava Center").
+- Fixed: school offices listed in club directories are now type `department` (kept in files, hidden from club lists): clear non-student categories ("non student org", "Staff-Only", "University Committee") always; looser ones ("Department", "Administrative") only when the name is office-like and not club-like. 736 marked across 28 schools; tests cover real false positives (UCSB Amateur Radio Club, Lehigh Amaranth Literary Magazine, WashU Bears Bikes, Yale Black Seminarians stay clubs).
+- Deployed 46dcbe2 (all checks passed).
+
+## 2026-11-03 03:33 run
+- New `collect-events:<id>` (agent, files only): upcoming events from Engage / Presence / Localist / LiveWhale into `<id>.events.json`. 22 schools, e.g. WashU 977, NYU 804, UT Austin 802, Vanderbilt 695, Purdue 641, UMD 587, Notre Dame 410, Georgia Tech 399, UNC 389, Cornell 135 (events.cornell.edu), USC 54 (calendar.usc.edu). /preview shows the count and an "Upcoming events" card in the school's own time zone (first try showed UTC — fixed; added tz for the 8 California rows).
+- Spot check: 5 Duke sections re-fetched live (AMES 275, ECON 644 grad, ISS 253, PHIL 108CNS, WRITING 120) all match; 5 events (NYU, WashU, Michigan, Cornell, Vanderbilt) match title and start time on the source.
+- Screens: /preview, /preview/s_cornell, /preview/jobs with the local API — PAGE ERROR 0.
+
+## 2026-11-03 04:33 run
+- New USC class reader (classes.usc.edu public JSON: Terms/Active, Schools/TermCode, CoursesByTermSchoolProgram). Lecture / Lecture-Lab / seminar sections are class times; Discussion / Lab / Quiz are optional sections; cancelled skipped; graduate courses included (CSCI 502A). Fall 2026: 243 programs → 5,822 classes.
+- New `collect-courses:<id>`: runs only the class step (collect re-read 1,964 USC clubs + websites first).
+- Fixed: share-tracking tags in club links (instagram …?igsh=…&utm_source=qr, ?hl=en) are dropped when links are shown (live app and preview). Test added.
+- Spot check: Michigan 2 clubs (Engage API), Brown 2 (club pages), UCLA 1 (RCO search) — links match; only the tracking tags differed (fixed above).
+- Deployed cd99024 (checks passed, /preview/s_unc and /preview/s_umich PAGE ERROR 0).
+
+## 2026-11-03 05:33 run
+- Minnesota Schedule Builder: search returns at most 25 course ids and there is no subject/term list type — not usable for a full schedule; courses.umn.edu JSON stays the source (TLS-blocked here, needs Railway). Queued.
+- New Rice class reader (courses.rice.edu QUERY per subject: one row per section, "9:25AM - 10:40AM TR", titles title-cased from all caps, graduate 500-level included). Test with COMP 181/182/510/552.
+- Spot check clubs: Wisconsin Engineering EXPO, UW Society of Physics Students (Linktree), UCI Merage Consulting Association, Lehigh Outing Club, Tufts Biotech Group — each website names the club.
+
+## 2026-11-03 06:33 run
+- Codex now owns screens/content (AGENTS.md, docs/HANDOFF.md). No requests for Claude in HANDOFF this run. Recorded owner's chat answers (emoji: remove everywhere — done server-side; jobs live at no cost — /api/jobs from the deployed file).
+- New UW class reader (washington.edu/students/timeschd/pub/<AUT2026>/<dept>.html, fixed-width text; QZ/LB sections left out; times without AM/PM read UW's way: 8-11 morning, 12 noon, 1-7 afternoon, trailing P = evening). Test with CSE 122/143/599.
+- Spot check clubs: NYU SPS Hospitality, Notre Dame Dance Company, UT ClockTower Cultural Productions, Florida 3D Printing Club, BC Sports Analytics Club — links match Engage (BC source lists the Instagram without https).
+
+## 2026-11-03 07:33 run
+- No Codex commits or HANDOFF requests yet.
+- New Caltech class reader (schedules.caltech.edu/FA2026-27.html, a report export: read text cells in order; 24-hour times; variable "+" and "1.5-0-1.5" units; times split over two cells). 438 Fall sections; live re-check 6/6; Winter page not published (404).
+- Spot check clubs (websites): Yale Mixed Company OK; Yale Magevet and Duke SHPE (national shpe.org) behind bot checks / national site; Columbia "Group Conduct" (Admin Group) and JHU "Carey Business School" (Group Management) were offices shown as clubs → office rule extended ("group management", names with conduct/accountability or ending in "School"); 10 more marked (Cornell Law School, JHU School of Nursing, UW Community Standards & Student Conduct…). Test added.
+
+## 2026-11-03 08:33 run
+- No Codex commits or HANDOFF requests yet.
+- New CMU class reader (enr-apps.as.cmu.edu/open/SOC: one POST per term with DEPT=All, Pittsburgh → ~3,200 courses; "Lec" sections are class times, lettered recitations left out when a course has lectures; extra meeting rows kept). 6,953 sections (Fall 2026 + Spring 2027); live re-check 6/6.
+- Spot check clubs: UVA LumiLink, Purdue Beta Psi Omega, Vanderbilt Neuroscience Majors Club match Engage; Wisconsin ALT Magazine website matches; Georgia Tech T-Book has the Ramblin' Reck Club Instagram/Facebook found on reckclub.org (parent club's official accounts — acceptable).
+
+## 2026-11-03 09:33 run
+- No Codex commits or HANDOFF requests yet.
+- New WashU class reader (registrar.washu.edu class-schedule-search: filters are a POST form, 149 courses per page via `paged`; only sections of the asked term — "Fall Intersession" left out). Spring 2027 not listed yet.
+- Spot check clubs: Michigan SCOPE, Notre Dame Farley Hall Council match Engage; Columbia Student Union for Sustainable Development and Stanford Student Space Initiative websites match; UCLA Undergraduate Economics Society Instagram matches RCO (tracking tail stripped on display).
+- WashU: full collect did not finish in 40 min — `paged=N` returns page 2's courses for every N>1 (checked 30, 60, 200), each request ~27 s / 1 MB, then a connection was dropped (possible throttling). Stopped hitting the site; reader kept (tested) but courses_source cleared so the routine does not loop. Existing WashU catalog file (5,429, no times) unchanged.
+
+## 2026-11-03 10:33 run
+- No Codex commits or HANDOFF requests.
+- New Vanderbilt class reader (more.app.vanderbilt.edu YES: select term → search per subject (302) → switchPage 50 per page; lectures only when a course has lectures; "01:25p" times). Fall 2026: 2,579 sections. Spring 2027 not collected yet — term pick to check next run.
+- Spot check clubs: UChicago Grappling, Rice Blue Sole Steppers, UCR Alpha Epsilon Pi, Florida Anisong Ensemble match Engage; UMD "Department of Environmental Safety… Office of Risk Management" was an office shown as a club → name rule added ("Office of / Department of / Division of / Center for …" without club words): 258 marked across schools (Engage schools have no category). Tests added.
+
+## 2026-11-03 11:33 run
+- No Codex commits or HANDOFF requests.
+- Vanderbilt Spring 2027 was missed: without a session the form pre-selects 1080 (`selected="selected"`), which the term regex skipped. Fixed (option may be selected); re-collecting both terms.
+- Spot check classes: UW AIS 307, CSE 453, G H 101 (Winter), LAW B 531 (grad), SOC 337 re-fetched live — match; independent raw check: CSE 453 "MWF 130-220" → 13:30-14:20, quiz sections left out.
+- Spot check clubs: Brown SOCA and Personal Finance Initiative (club pages), Caltech Competitive Programming and GWiPMA (on the SFE list), Emory Raoul Hall (residence hall → housing.emory.edu; residential community, kept).
+
+## 2026-11-03 12:33 run
+- No Codex commits or HANDOFF requests.
+- UCLA classes parked: sections need one extra request per course (thousands per term) — too heavy for one site; queued.
+- Paused schools: Illinois club directory found — one.illinois.edu is CampusGroups with a public club list → moved to collect, collecting. Ohio State (activities.osu.edu) fails TLS from the container; Texas A&M getinvolved.tamu.edu answers 403 and StuAct Online is script/login; Rutgers getinvolved.rutgers.edu redirects to a resource page — still paused.
+- Spot check classes: CMU 5 re-fetched — times match, but one was "ETC Interdisciplinary Project II This Section Cancelled": CMU marks cancelled sections in the title cell. Reader now leaves them out (test); CMU re-collected 6,953 → 6,756 (197 cancelled removed from the class file — they were not real classes).
+- Illinois collected: 1,227 groups (96 Greek, 13 student government), 115 with a public link, 9,087 catalog courses (no times). Spot check: Illini Dancesport, Illinois MicroTech websites match.
+
+## 2026-11-03 13:33 run
+- No Codex commits or HANDOFF requests.
+- Events for CampusGroups schools: public `<host>/rss_events` feed. First version filtered by category "Open …" — only Cornell names categories that way (Yale "Group Meeting", Duke "Religious/Spiritual"), so 21 schools came back empty; switched to privacyLevel 0 (same field at every school) minus "Private …" categories. Now 22 more schools have event files (Illinois 1,477 … MIT 26). Tests added.
+- Spot check events: Yale "Fall Show Tech", Duke "Cosmic Origins" Exhibition Run, Illinois SIGMusic General Meeting — title and exact start time match the school feed (event pages are script shells, so checked against the feed).
+
+## 2026-11-03 14:33 run
+- No Codex commits or HANDOFF requests.
+- Events for the 9 schools without: Localist (/api/2/events) and LiveWhale (/live/json) don't answer at their obvious calendar hosts (Brown, Caltech, UCLA, UCSC, SCU, USF, Harvard, Princeton, BU) — needs per-school search, later.
+- Jobs: Workday reader added (POST /wday/cxs/<tenant>/<site>/jobs with 8 student/new-grad searches, 3 pages each; "N Locations" dropped). 19 employers verified by a live request (BofA campus site did not answer). New-grad rule now also matches "New College Grad" (NVIDIA). Jobs refreshed: 1,168 postings (internships 747, new grad/entry 374, PhD 157, master's 66, postdoc 13). 2 Workday links open (NVIDIA, Intel).
+- Spot check classes: USC AME 577, CTWR 512, LAW 205, PR 429, WRIT 340 re-fetched — match.
+- Spot check clubs: Illinois Amnesty International, Duke MSA, Columbia Ballet Collaborative — websites match; Emory "Emory Bookstore" was a campus service → office rule by service name at the end (bookstore, police department, dining services, registrar, transportation/parking): 10 marked (Notre Dame "Bookstore Basketball Commission" stays a club). Tests added.
+
+## 2026-11-03 15:33 run
+- No Codex commits or HANDOFF requests.
+- Jobs: amazon.jobs public search.json added (8 student/new-grad searches, US only) — 107 postings (90 internships, 17 early career; 15 PhD, 5 master's). Jobs file now 1,272 (internships 834, new grad/entry 391, PhD 172, master's 71, postdoc 13). Test added.
+- Spot check classes: Duke BA 911, EGR 95FS, LAW 130, PHYSICS 760D, XTIANETH 757 re-fetched — match.
+- Spot check clubs: UT Filipino Students Association, Purdue Stars Hollow Club, Michigan ALA Student Chapter, UVA Afro-Latinx Student Organization match Engage; UNC "School of Social Work" was an academic school shown as a club → rule: names starting "School of / College of" are offices only when they carry no student words (first broader try caught "College of Pharmacy Graduate Student Organization", "Student Board", "Class of 2027" — reverted and narrowed). 45 marked (School of Law, College of Engineering, School of Nursing …). Tests added.
+
+## 2026-11-03 16:33 run
+- No Codex commits or HANDOFF requests. Queue item "collect every school without a club file" marked done (49 rows).
+- WashU links: Presence list and detail have no link fields; 72 club descriptions contain URLs → new `descriptionLinks()` (real URLs only; forms/drive/mail/zoom/music skipped; @handles not used). First run left HTML-encoded quotes (`&#34`) on URLs (Umang) → decoded first; test added. WashU 0 → 22 groups with a public link.
+- Spot check classes: Rice ASIA 229, ECON 200, LATI 510 (grad), PHIL 372, UNIV 195 re-fetched — match.
+- Spot check clubs: WashU Umang (description has its Instagram/Facebook/LinkedIn), Hillel Leadership Council (socials from its own website).
+
+## 2026-11-03 17:33 + 18:33 runs
+- No Codex commits or HANDOFF requests.
+- Brown events: events.brown.edu is a public LiveWhale calendar → `events_source=livewhale:` → 274 upcoming. One event re-opened on the official page: title and 4:30 PM ET match. BU (old PHP calendar), Caltech (custom HTML, no feed), UCLA and USF (Drupal, no feed found) still have no event source.
+- Spot check clubs (17:33): Brown Finance Club, Caltech Fiber Arts Circle match; Vanderbilt MASA was typed **council** — its category "Multicultural Leadership Council" means it belongs to that council. Same mistake at scale: CMU "Student Government Recognized Organizations", Lehigh "Student Senate Recognized Organization", JHU group type "Homewood: Student Government Association" (= registered with SGA), USC "Recreational Club Council (RCC)", plus department groups named "History Undergraduate Association".
+  - New `isCouncil()` (server/sources/orglinks.ts): council by name (student government words; "Undergraduate Association" only when the first word is the school, e.g. Harvard/MIT), or by a category that means governing (Student Government, Senate, Governing Councils, "Councils" plural, Government/Council). "X recognized/funded" wording is ignored. CampusGroups group type counts only when the type itself is government (`GOV_GROUP_TYPE_RE`: Student Government (Duke), Divisional Council (Emory grad school governments), Class Councils (Dartmouth)).
+  - Relabeled from each school's public directory (types only, council → club, nothing removed): CMU 268, Lehigh 226, JHU 118, Vanderbilt 60, USC 54, Rice 13, Yale 3, UMD 2, UNC 1, UCI 1, UCR 1, UW 1, UCSB 1, Stanford 1. First pass wrongly flipped Emory's 2 grad governments, Duke's 6 Student Government committees and Dartmouth's 5 class councils — restored before commit, rule fixed, tests added. WashU (Presence) not handled by the relabel script — 3 suspected left.
+- Spot check classes (17:33): Georgia Tech AE 2220, COE 2701, ID 4202, MGT 4058, VIP 6602 (grad) — match.
+- Spot check classes (18:33): UW DRAMA 514, GWSS 262, LING 532, SPHSC 565 match; ANTH 233 times match but the saved **link was 404** (anth.html — the department page is anthro.html). Reader now uses the department page name + anchor; test with the real page; UW courses re-collected.
+- UW re-collect: 4,926 → 4,923 — HCDE 302 Winter 2027 sections I/J/K are no longer on UW's official page (only section A), so they left the timetable file like cancelled CMU sections. Lehigh: 21 more "Student Senate Affiliated Organization" clubs (dance, Formula SAE, Mock Trial …) council → club (total Lehigh 247).
+- Spot check clubs (18:33): Columbia CU Records, Michigan Music For Dementia, Notre Dame MBA Technology Club, Wisconsin Psychology Club, Georgia Tech PhD 2 Consulting Club — websites name the club.
+
+## 2026-11-03 19:33 run
+- No Codex commits or HANDOFF requests.
+- Caltech events: events.caltech.edu/calendar/rss is public; pubDate is the event start → new `parseEventRss` / `events_source=rss:<url>` → 16 upcoming (Watson Lectures, concerts, HSS 60th …; exhibitions left out; double-encoded `&amp;amp;` decoded). Test with the real feed. USF rss.xml exists but is empty; UCLA/UCSC/SCU no feed found.
+- Club types: relabel script now reads Presence categories — WashU Association of Black Students council → club. USC/UCSB/UW re-run under the final rule: 0 more (relabel queue item done).
+- Spot check classes: Duke AMES 408S, ECON 690 (grad), HISTTHEO 820 (grad), MUSIC 101-3, SPANISH 590S re-fetched — match.
+- Spot check clubs: Yale Health Equity Thread, Penn Electric Racing match. MIT Climbing Club website now shows an MIT server error page (dead link) → queue item for a link check that marks dead links. UNC Unitarian Universalist Fellowship lists the national uua.org site (what the club entered; generic). Purdue Christian Student Fellowship lists Purdue Christian Campus House (its ministry).
+- Club links: CampusGroups reader now uses URLs written in a club's description when the website field is empty (same rule as WashU; sign-up forms such as typeform/jotform skipped). Existing files: UCSB 0 → 9, Northwestern 0 → 2, Emory +2, Tufts 0 new. That is every URL those descriptions contain; the rest need another public source.
+
+## 2026-11-03 20:33 run
+- No Codex commits or HANDOFF requests.
+- Blocked (not bypassed): SJSU schedule (www.sjsu.edu) and UCSC class search (pisa.ucsc.edu) fail TLS from this container even with /root/.ccr/ca-bundle.crt ("self-signed certificate in chain" / "unable to get local issuer") — same as Stanford/Penn. They need a run from Railway (cost question) or another public source.
+- **UCLA class times started.** sa.ucla.edu/ro/Public/SOC is public: the subject list is in the page, `Results` + `Results/CourseTitlesView` give 25 courses per page, `Results/GetCourseSummary` gives one course's sections. Reader `uclaSummaryToCourses` (lectures/seminars only, days + times, room, units, instructor; sections with two day patterns like ASL 1 "MF + TWR" kept), tests with two real responses. Collector `npm run -s ucla-courses -- <requests>`: about 300 requests per run, 0.7 s apart, progress in `s_ucla.courses-progress.json`, a finished subject's classes for that term replace only themselves. Terms Fall 2026 + Winter 2027. Filter widened to all days, 1 am–11 pm so evening/weekend lectures are not lost. First pass found the two-pattern bug (ASL showed 0) → fixed and restarted from the start.
+- Spot check clubs: UCLA MedReach, UT Omega Delta Phi, BC Gratia Plena, Harvard Undergraduate Association, UC Davis Panhellenic — websites name the group; types right (HUA and Panhellenic councils).
+- UCLA spot check: AERO ST 130A (F 12pm–2:50pm), AM IND 261, ANTHRO 194, ARCH&UD 291, ART 495 — first one re-opened on the official class page: time matches. The saved class links were missing `class_no` and went to UCLA's 404 page → reader now keeps the official link from the page; progress reset so the next batch re-reads the first 14 subjects with working links (223 classes now, Fall 2026 14/173 subjects).
+
+## 2026-11-03 21:33 run
+- No Codex commits or HANDOFF requests.
+- UCLA: second batch re-read the first 14 subjects with exact class links (223 classes, all with `class_no`). Course numbers now as UCLA shows them — "0104E M" → **M104E**, "0242B C" → **C242B** (67 fixed). Spot check AF AMER M104E, ANTHRO 19, ARABIC 102A, ARMENIA 101A, ART HIS C242B (grad) on the official class pages — all match.
+- **SF State class times** (new reader `sfsu`): webapps.sfsu.edu public class search → quick search per subject → results JSON. Spring 2027 (the quick search offers only Spring/Winter 2027): 139 subjects → 2,061 classes with times, graduate included. Form token reused across subjects (about 3 requests per subject, 1 s apart). Test with the real CSC response.
+  - The first write replaced the 4,419 catalog-only courses (bulletin, no times). Restored: catalog entries are kept for every course that has no class time (3,209); the 1,210 that now have real times are replaced by the timed version. `collect-courses` now always keeps catalog-only entries this way, so this cannot happen again for any school.
+  - Department for subjects with a space ("A U") was cut to "A" → fixed.
+  - Spot check AA S 210, CHEM 806 (grad), ENGR 425, MKTG 632, USP 433 on the official detail pages — match.
+- Student governments: Instagram from the official site for Harvard UA and SCU ASG; ASSU/SUA link none; ASUCD 403 (not bypassed). Queue item done.
+- Tried: SF State is done; UC Davis class search (registrar-apps.ucdavis.edu) 403 to automated requests — not bypassed.
+- Spot check clubs: JHU Phi Gamma Delta, CMU SEED, Rice SIAM match. Vanderbilt ColorStack and Lehigh Phi Alpha Delta list their national sites (what the clubs entered). Phi Alpha Delta is a pre-law professional fraternity typed greek — left as the directory categorizes it. Remaining councils at JHU/Lehigh/CMU/Vanderbilt/Rice are real councils.
+
+## 2026-11-03 22:33 run
+- No Codex commits or HANDOFF requests.
+- **SF State Fall 2026 added.** The public results link (`classsearch/results?searchFor=<subject>&term=<term>&classCategory=REG`, then `searchresultsjson`) works for any term without the form → reader now reads the latest Fall and Spring (2 requests per subject, 1 s apart). File: Fall 2026 1,993 + Spring 2027 2,123 classes with times + 2,669 catalog-only courses.
+  - The connection to SF State dropped mid-run (proxy: "ws_closed_mid_exchange"); ENG, DES, CWL, NUTR, IBUS, HH, COUN came back empty and the write would have removed their Spring classes. Restored from the previous file before commit. Fixes: the reader retries a failed subject once and logs it; `collect-courses` keeps the previous classes for any (term, department) that came back with nothing (a dropped request is not a removed class). Fall for those subjects fills on the next run.
+  - Spot check Fall: AA S 681, CSC 775 (grad), MATH 310 — match the official detail pages.
+- UCLA batch: 27/173 Fall subjects, 393 classes.
+- Offices: Illinois "Grainger Departments & Programs" (33 — the engineering college's departments, advising, career services) and 5 more UCI "Departments and Programs" units were typed club → department (hidden; nothing removed). Rule + test.
+- Spot check clubs: Minnesota FWCB Club, Wisconsin Food for Thought, UCI Cariño Student Outreach Clinic match; Illinois "Grainger Electrical & Computer Engineering" was the department itself (fixed above); Dartmouth D-LAB is a student-facilitated Rockefeller Center program (kept as club; site 503 to automated requests).
+
+## 2026-11-03 23:33 run
+- No Codex commits or HANDOFF requests.
+- SF State: re-read only the 13 subjects the dropped connection missed (`SFSU_SUBJECTS=…`): Fall 2026 1,993 → 2,242, nothing lost (other subjects kept by the collect-courses rule).
+- **New top schools (files only):** Wake Forest (thelink.wfu.edu, public Engage) 375 groups, 285 with a public link, 117 upcoming events; University of Rochester (ccc.rochester.edu, public CampusGroups) 382 groups, 208 events; Case Western Reserve (community.case.edu, public CampusGroups) 886 groups (30 greek), 398 events. Checked and not found public yet: Northeastern, Brandeis (no Engage/CampusGroups/Presence host answered).
+- UCLA batch: 31/173 Fall subjects, 563 classes. Spot check CHEM 14B, CHEM 153L, CCAS 89, CHIN 50, C&EE 251E (grad) on the official class pages — match.
+- Spot check clubs: Columbia Women's Business Society, NYU Video Game Orchestra, UChicago Phoenix Survivors Alliance, Michigan Sport Sustainability Initiative, Wake Forest MSA match. Purdue Operation Smile lists the national student-programs page (what the club entered). Rochester Music Interest Floor website no longer answers (dead link → link-check queue item).
+
+## 2026-11-04 00:33 run
+- No Codex commits or HANDOFF requests.
+- **Five more top schools (files only, public Engage directories):** Georgia 984 groups (826 with a public link) + 186 events; Indiana 897 (747) + 620 events; William & Mary 534 (465) + 89 events; Tulane 787 (525) + 260 events; George Washington 624 (517), no public events on its Engage (0, rejected — nothing written). Checked, not public: Virginia Tech (gobblerconnect 404), Penn State (orgcentral redirects to login).
+- UCLA batch: 41/173 Fall subjects, 787 classes.
+- Spot check classes: Maryland BSCI213, EDCP610 (grad), ENPM687 (grad), INST462, WGSS618 (grad) re-fetched — match.
+- Spot check clubs: UGA Mind Blowers, IU Limitless Club, W&M Lawyers Helping Lawyers, Tulane Rowing Club (site is script-rendered; its own domain), GWU Kappa Delta — match.
+
+## 2026-11-04 01:33 run
+- No Codex commits or HANDOFF requests.
+- **Four more schools (files only, public Engage):** Syracuse 420 groups (310 with a public link) + 231 events; Miami 435 (374) + 95 events; Michigan State 1,267 (1,043) + 723 events; Clemson 743 (587) + 65 events. Public Engage also found for UCF (832) and Iowa (629), not added (below the top-school bar). Not on Engage: RPI, Pitt, UConn, Ohio State, Arizona, Colorado.
+- **Owner rule fix — dead links were being deleted.** `collect-social` removed a club's Website link when the site did not answer. Now the link still leaves the screen data but is kept in `<id>.deadlinks.json` (org id, url, date). Syracuse's 14 recovered from git. Schools collected 11-03/04 before this fix (Wake Forest 3, Rochester 2, Case Western 3, Georgia, Indiana, W&M, Tulane, GWU, Miami, MSU, Clemson) lost their dead website URLs from the file → queue item to recover them from one directory read each.
+- UCLA batch: 51/173 Fall subjects, 1,048 classes.
+- Spot check classes: CMU 03-751 (grad), 45-980 (grad), 54-428, 57-577, 79-176 re-fetched — match.
+- Spot check clubs: Syracuse NEXIS, Miami NOMAS, MSU NAMI, Clemson Frontline — match.
+
+## 2026-11-04 02:33 run
+- No Codex commits or HANDOFF requests.
+- **Dead website URLs recovered** for the 11 schools added 11-03/04: re-collected each once; club counts identical; 112 URLs that no longer answer now kept in `<id>.deadlinks.json` (UGA 19, Indiana 21, MSU 21, GWU 15, Clemson 14, Tulane 7, Miami 4, WFU 3, CWRU 3, W&M 3, Rochester 2). Checked every changed orgs.json against the previous one: 7 social links found last time but not this time would have dropped (site answered differently) → restored; queue item to make re-collect keep earlier links automatically.
+- Georgetown: website field empty for every CampusGroups club → URLs in descriptions (0 → 4). A URL cut off at the 600-character description end ("web.groupm") slipped past the end check → check tightened (any URL in the last 60 chars of a cut description is skipped); UCSB/Northwestern/Emory/WashU links re-checked — no cut-off URLs.
+- UCLA batch continuing.
+- Spot check classes: Cornell ART 2301, COGST 2310, HADM 7120 (grad), NTRES 3220, YORUB 1109 — match.
+- Spot check clubs: UT Texas Trading Group, UF SwampHacks, UVA Theta Tau match; Notre Dame Sports Analytics Club site 403 to automated requests (sites.nd.edu).
+
+## 2026-11-04 03:33 run
+- No Codex commits or HANDOFF requests.
+- **Daily refresh:** events re-collected for all 53 schools with an event file (all applied); jobs file refreshed — 1,290 US postings from 165/166 boards (internships 840, new grad 403, PhD 171, master's 70, postdoc 13); Boeing Workday answered 502, its previous postings kept.
+- Re-collect now keeps earlier club links: `runCollect` reads the previous orgs file first and, after collect-social, adds back any website/social link the new run did not find (directory links and URLs in deadlinks excepted). Queue item done.
+- UCLA batch: 70 Fall subjects done, 1,565 classes (the public subject list now shows 190 subjects).
+- Spot check classes: USC AEST 420B, DANC 310, JOUR 499, PHYS 720 (grad), WRIT 150 — match.
+- Spot check clubs: Penn Medical Volunteers for Prevention, Yale Simplex Sciences, Stanford Debate Society match; Harvard UA matches (Harvard has only its student government in the file — club directory blocked from here); MIT Infinite Magazine site does not answer (link-check item).
+
+## 2026-11-04 04:33 run
+- No Codex commits or HANDOFF requests.
+- **William & Mary class times:** registration.wm.edu is a public FOSE class search (same reader as Penn/Dartmouth/Yale) → Fall 2026 1,113 + Spring 2027 1,148 lecture sections, graduate/law included. Spot check AFST 100, CHEM 206L, EPPL 654 (grad), LAW 718, THEA 150 re-fetched — match.
+- Looked for class search at the schools that have none: guessed Banner 9 / FOSE hosts for Notre Dame, Clemson, GWU, Georgetown, Purdue, Wake Forest, Tulane, Rochester, BC, Miami, UGA — none answered (Notre Dame classsearch.nd.edu fails TLS here). Rochester's public schedule is cdcs.ur.rochester.edu (custom page) → queue.
+- Dead-link item: collect-social already checks every club Website on each re-collect (404/410) and now keeps the URL in deadlinks — so the weekly re-collect is the link check; item closed.
+- Login-only links: an Emory club's "website" was its Canvas course page (canvas.emory.edu — school login). `isLoginOnlyLink` now hides Canvas / Instructure / Blackboard / Brightspace / D2L course sites (shared file packages/core/src/lib/orglinks.ts, data stays). Test added.
+- Spot check classes (UW): AES 151, CLAS 101, G H 101, MGMT 599 (grad), STAT 180 — match.
+- Spot check clubs: BU Pre-Law Society, Tufts Bikes, BC Music Guild match; Michigan PERMIAS site does not answer; Emory Goizueta Evening Business Association → Canvas (fixed above).
+
+## 2026-11-04 05:33 run
+- No Codex commits or HANDOFF requests.
+- **Rochester class times (new reader `rochester`):** cdcs.ur.rochester.edu is a public ASP.NET search; one search per school division and term (16 requests, the largest about 66 MB) instead of one per department. Lectures where a course has them, else seminars/workshops with times; labs, recitations, thesis, research and independent study left out. Fall 2026 + Spring 2027: 4,360 classes, graduate, Simon, Warner and Eastman included. Test with a real CSC response. Spot check (fresh MATH and ECON searches): MATH 141, 165, 282, ECON 214, ECON 482 (grad) — match.
+- **Club links that are forms:** 43 "Website" links were Google Forms / Typeform / Jotform / MS Forms (Lehigh Inspire Her, 7 at Michigan …) → labeled `Sign-up form` (in `relabelSocialWebsites`, runs on every collect; test). HANDOFF note to Codex.
+- UCLA batch continuing.
+- Spot check clubs: CWRU Discussions journal, Rice KTRU, USC GASP match; Purdue Delta Phi Mu site 503; Lehigh Inspire Her → form (fixed above).
+
+## 2026-11-04 06:33 run
+- No Codex commits or HANDOFF requests.
+- **Illinois class times (new reader `uiuc`):** courses.illinois.edu course explorer XML is public; `<subject>.xml?mode=cascade` gives every section and meeting in one request per subject (about 375 requests, 0.7 s apart). Lectures (LEC / lecture-discussion) where a course has them, else seminars/studios. Fall 2026 5,107 + Spring 2027 4,704 classes with times; 4,643 catalog-only courses kept (no course code lost). Test with the real CS response. Spot check ACCY 303, CI 402 (grad), FIN 463 (grad), MSE 422 (grad), TAM 270 against the official course pages — saved times appear there.
+- Florida: one.uf.edu/apix/soc/schedule is public but returns empty meeting times for every section (Fall 2026 and Spring 2027) → no times from it; queue. Wisconsin public.enroll.wisc.edu 403; UCI WebSoc and UNC reports.unc.edu do not answer from here.
+- UCLA batch continuing.
+- Spot check clubs: Georgia Tech Marine Robotics, Vanderbilt Society of Physics Students, WashU Peer Health Educators, SJSU Men's Ice Hockey, UC Davis Political Review — match.
+
+## 2026-11-04 07:33 run
+- No Codex commits or HANDOFF requests.
+- Looked for more class-time sources: guessed Banner 8 public schedule pages (Purdue, GWU, Wake Forest, Tulane, Clemson, Lehigh) — none answer; Michigan/Purdue web search found no public schedule feed; Northwestern class-descriptions fails TLS here.
+- **Chat invites as websites:** 27 "Website" links were WhatsApp/Slack/Telegram invites (UT, WashU, UW, W&M …) → labeled `Group chat` (in `relabelSocialWebsites`; test). Description links now skip chat invites (Columbia Q&A WhatsApp link was about to be added — not added). HANDOFF note updated.
+- Description links: Illinois +3 (Astrobiology Club, Quant, Spanish and Portuguese Graduate Organization); Columbia, Dartmouth, Caltech, SCU, Tufts, Emory had no more usable URLs in descriptions.
+- UCLA batch continuing.
+- Spot check classes (UCLA): HIST C191P, LIFESCI 7C, MGMTMFE 431 (grad, W/T/R 1–3:50pm + T 8:30–11:20am), MATH 164, MECH&AE 271D (grad) — match the official class pages.
+
+## 2026-11-04 08:33 run
+- No Codex commits or HANDOFF requests.
+- **Placeholder websites:** spot check found Cornell's Diabetes Link chapter with "idonothaveawebsite.com" as its website — 16 Cornell clubs and 1 Illinois (example.com) had such placeholders. Now treated like dead links: off the screen data, kept in `<id>.deadlinks.json` with reason `placeholder`; `isPlaceholderSite` runs in collect-social. Test added.
+- QUESTIONS: whether to fetch class times for the TLS-blocked schools from Railway once a week.
+- UCLA batch: 124+ Fall subjects.
+- Spot check classes: Georgia Tech BIOS 4401, CS 6457 (grad), MATH 2551, VIP 3601, VIP 6602 (grad) — match.
+- Spot check clubs: Northwestern Club Softball matches; Columbia CUGG and JHU HopkinsLEAD pages 403 to automated requests, Duke Impact Investing 503; Cornell Diabetes Link placeholder (fixed above).
+
+## 2026-11-04 09:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **GWU events:** calendar.gwu.edu is a public Localist calendar → `events_source=localist:` → 93 upcoming (talks, free food, featured). One re-opened: "Jenny McKean Moore Reading Series" Nov 5 6:00 PM ET — matches. BU's rss.php is an HTML form (no feed); Penn and UCLA still no feed.
+- UCLA batch: 137+ Fall subjects, 2,561+ classes.
+- Spot check classes (BU): CASAN 287, CASWR 120, GMSFS 702 (grad), QSTFE 427, WEDME 558 (grad) — match.
+- Spot check clubs: UChicago Sustainable Investing Group, Yale Film Archive, Dartmouth Mock Trial match; Brown Aerial & Acrobatics Instagram matches its directory page (Brown lists Instagram/Facebook, no website field); NYU SPS site 503.
+
+## 2026-11-04 10:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- Labs/recitations: wrote a concrete proposal to Codex in HANDOFF — optional `sections` field on `CatalogCourse` (one entry per kind, alternative times to pick from; lecture `meetings` unchanged). Waiting for "OK sections" because the type file is shared.
+- Florida: the public schedule page loads its code in chunks; the API call that returns meeting times was not found — still parked.
+- **UCLA Fall 2026 done:** every subject read, 2,997 classes. Winter 2027 batches start next run.
+- Spot check classes (Rice): ARCH 503 (grad), CMOR 220, HART 589 (grad), MUSI 231, UNIV 195 — match.
+- Spot check clubs: Minnesota Campus Outreach, UCR Catholic Student Fellowship, UCI Anteaters for Autism, UCSB AS Senate (council), UF College Republicans — match.
+
+## 2026-11-04 11:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **Two more schools (files only, public Engage):** UMass Amherst 656 groups (486 with a public link) + 250 events; UConn 855 (698) + 214 events. Rutgers getinvolved redirects to a general page (not a directory); Pitt not on Engage.
+- **Engage reader never marked school offices or Greek councils.** Spot check found W&M "Muscarelle Museum of Art" and IU "Neal-Marshall Black Culture Center" as clubs, Syracuse "Panhellenic Council" as a Greek chapter. Engage `mapOrg` now uses the same rules as CampusGroups (`isOfficeOrg` on every category; Greek council names → council). Existing Engage files relabeled from one directory read each (types only, nothing removed): offices → department at Tulane 70 (research centers), IU 32, WFU 18, Clemson 18, Vanderbilt 15, UGA 11, MSU 11, W&M 10, GWU 10, UMass 7, Rice 4, BC 2, Michigan 2, Syracuse 1, UChicago 1, UNC 1, Purdue 1; Greek councils → council at 22 schools (2–5 each). First pass also caught Syracuse "American Institute of Chemical Engineers / Architecture Students" (category "Academic Department") → rule exception for "American Institute/Society of …" and both restored to club; tests added. Not reachable for the relabel: UC Davis, Dartmouth, SJSU, USC, Wisconsin, UW, Minnesota (their Engage search API did not answer) — they get the rule on the next weekly re-collect.
+- Spot check classes (Duke): AADS 138, DANCE 212, FRENCH 303S, MATH 181CC, WRITING 120 — match.
+- Spot check clubs: Tulane Student Alumni Ambassadors, Miami Pi Tau Sigma, Syracuse Panhellenic (now council), W&M Muscarelle (now department), IU Neal-Marshall (now department).
+
+## 2026-11-04 12:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **GWU class times (new reader `gwu`):** my.gwu.edu/mod/pws "Schedule of Classes" is public — subject pages, paged by POST pageNum. Main sections only (the hidden secondary rows are linked labs/discussions). Main campus Fall 2026 2,689 + Spring 2027 2,623 = 5,211 classes, graduate included. Test with the real CSCI page. Spot check ACCY 3401, CTAD 1170, HSML 6263 (grad), PSC 2240, UW 1020 sec M5 against the live pages — match.
+- Engage relabel retry: the 7 schools that did not answer last run (UC Davis, Dartmouth, SJSU, USC, Wisconsin, UW, Minnesota) are CampusGroups schools, which already had the office and Greek-council rules — nothing missing.
+- Indiana/MSU class search hosts did not answer; Tulane classschedule.tulane.edu is a public ASP.NET search → queue.
+- Spot check clubs: UMass Leading Women of Tomorrow, UConn Iota Phi Theta, Rochester LOGOS, WFU International Law Society match; Case Western "HR Professional Development Center" is a staff office listed as a club — CWRU's directory mixes in ~60 staff/admin groups → queue item (check one by one).
+
+## 2026-11-04 13:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- Tulane classschedule.tulane.edu: ASP.NET form; term change needs a postback and results are filled by script after the search — no results returned to a plain request yet → parked in queue.
+- Course titles: W&M GIS 590 had a trailing tab from the FOSE source → FOSE reader trims titles; existing files cleaned of stray spaces in titles (Illinois catalog 4,643, USC 262, Georgia Tech 14, W&M 13, MIT 7, GWU 3, UCLA 4, BU 1, Cornell 1) — text only.
+- UCLA batch: Winter 2027 started.
+- Spot check classes (W&M): ANTH 150, CRWR 368, GIS 590 (grad), MATH 555 (grad), SOCI 200 — match.
+- Spot check clubs: UGA SUAT, MSU Tau Beta Pi, Clemson Students for Stewardship, BC Symphonic Band match; GW Vibes site does not answer.
+
+## 2026-11-04 14:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **Case Western staff groups:** reviewed the ~70 "club" entries in Department/Resource/Program/Departmental Group/University/Committee one by one (name + description): 59 are offices, academic departments, staff/faculty groups or office programs (Law IT, HR Benefits, University Technology, Study Abroad, Mandel School Admissions, Faculty Parents' Group …) → department; 12 student groups stay clubs (Community Pantry, QuestBridge Scholars, Posse, Springfest Committee, Commuter and Off-Campus Organization …). Saved as hand-checked `server/data/org-type-overrides.csv`, applied by `runCollect` after every re-collect. Queue item done.
+- Directory pages as websites: UCSB "Engaging Humanities" (from my description-link step) and CWRU "Maltz Performing Arts Center" pointed at their own CampusGroups pages (school login) → moved to deadlinks (reason: directory page); CampusGroups reader now drops links on the directory's own host. Engage club pages on their own host are public and stay.
+- UCLA batch: Winter 2027 continuing.
+- Spot check classes (CMU): 05-891 (grad), 42-782 (grad), 54-471, 76-101, 95-883 (grad) — match.
+- Spot check clubs: Northwestern SWE, Illinois Space Society, UT Orthodox Christian Fellowship match; Georgetown IRAP site does not answer; UCSB Engaging Humanities (fixed above).
+
+## 2026-11-04 15:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- Tulane: the search keeps results in the session and shows them at /Results.aspx, but a plain POST of the form is not accepted (results page stays empty; a required field or client-side step is missing). Stopped for today; queue note stays.
+- UCLA batch: Winter 2027 28+ subjects, 3,821+ classes.
+- Spot check classes (Maryland): ARHU158Y, CMSC436, ENMA300, LING660 (grad), UNIV100 — match (ARHU158Y title re-checked directly: identical).
+- Spot check clubs: Penn Rangoli, Cornell Latine Graduate Student Coalition, Columbia CU Records, JHU Mentoring Assistance Peer Program, Emory Goizueta Consulting Group — match.
+
+## 2026-11-04 16:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- Re-checked next terms: Rice Spring 2027 and Caltech Winter 2027 still not published (Caltech WI2026-27 page 404). Rice refreshed: same 2,097 classes, one line updated, nothing removed.
+- UCLA batch: Winter 2027 39+ subjects, 4,071+ classes.
+- Spot check classes (Illinois): ABE 498, BADM 538 (grad), ECON 598 (grad), MATH 416, TE 450 — saved times appear on the official course pages.
+- Spot check clubs: Purdue Cross Impact, UMD East African Student Union, UF Explore Run Club, BU Consulting Group match; UNC "Connor Community" is a residence hall community (housing.unc.edu) — left as is.
+
+## 2026-11-04 17:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **"University … Center/Services/Office" offices:** spot check found UW-Madison "University Health Services" as a club. New name rule in `isOfficeOrg` (starts with University, ends with Services/Center/Office/Department, no club or "activities"/"students" words) → 11 marked department: UGA and UMD University Health Center, UVA University Career Center, WFU University Counseling Center, Tulane University Financial Aid Office, UT University Ombuds Offices, NYU University Learning Center, UChicago University Community Service Center, UCSB University Center, Michigan Detroit Center, UW-Madison UHS. Michigan "University Activities Center" (student programming board) excluded; tests added.
+- UCLA batch: Winter 2027 50+ subjects, 4,270+ classes.
+- Spot check classes (SF State): ACCT 101, CAD 410GW, EDDL 961 (doctoral, Saturday), ISYS 856 (grad), RRS 110 — match (site reset one connection; retried).
+- Spot check clubs: UVA Sailing, Notre Dame Scholastic Magazine, UW SEDS match; Minnesota Somali Pre-Dental Association lists the generic student-union page (what the club entered).
+
+## 2026-11-04 18:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **Mailing-list sign-ups as websites:** WashU Dermatology Interest Group's "Website" was an Outlook group join link (school login). 17 Website links were mailing-list sign-ups (Mailchimp, list-manage, eepurl, Google Groups, Outlook groups, lists.<school>.edu) → labeled `Mailing list` in `relabelSocialWebsites` (runs on every collect; test). HANDOFF note updated.
+- UCLA batch: Winter 2027 58+ subjects, 4,485+ classes.
+- Spot check classes (USC): BME 506 (grad), EE 444 (grad), MATH 434, SOWK 591 (grad), TAC 380 — match.
+- Spot check clubs: Tufts Biotech Group, BC Black Law Students Association match; Vanderbilt Chi Omega site does not answer; Rice Chi Epsilon lists a department awards page (what the chapter entered); WashU DIG (fixed above).
+
+## 2026-11-04 19:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **Shared files as websites:** 14 Website links were Google Docs/Sheets/Drive, Dropbox or Canva files → labeled `Document` (relabelSocialWebsites; test). HANDOFF note updated.
+- **"Governance" as a topic:** spot check found Syracuse "Women in National Security" typed council — Syracuse (and IU, Tulane) use "Governance" as an interest category. Council categories now need "Student Governance", not just "Governance" (test). Relabeled to club: Syracuse Democracy Matters, NYPIRG, Debate Club, Model UN, Women in National Security; IU Graduate Students in African Studies, Women in Law; Tulane Shipwreck Society. IU Funding Board and Student Bar Association stay councils (checked by hand).
+- UCLA batch: Winter 2027 67+ subjects, 4,737+ classes.
+- Spot check classes (UW): BIOC 405, ENGL 182, L ARCH 401, PHG 512 (grad), STAT 180 — match.
+- Spot check clubs: MSU Women and Minorities in Economics, UMass Vocal Suspects match; UGA Wesley/Freshley site misspelled in the directory (ugawelsey.org, does not resolve); UConn UNESCO site does not answer; Syracuse WINS (fixed above).
+
+## 2026-11-04 20:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **Other social links filed as "Website":** scanned all files — GroupMe 249 → `Group chat`; LinkedIn 25, YouTube 15, X 3, TikTok 1 → their own labels (same labels as `socialLinks`); 9 Instagram, 2 Facebook, 5 Discord that the older relabel had not reached → labeled. 309 labels changed, nothing removed (relabelSocialWebsites; test). Linktree / Beacons link-in-bio pages stay "Website".
+- UCLA batch: Winter 2027 83+ subjects, 4,939+ classes.
+- Spot check classes (Georgia Tech): ARCH 8833 (grad), ECE 2040, MATH 1551, PHYS 2211, VIP 4603 — match.
+- Spot check clubs: Lehigh Coffee Club, Dartmouth Student Government, Caltech ASCIT, USF Delta Delta Delta match (Brown lists no website field).
+
+## 2026-11-04 21:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- Spot check jobs (new this run — closed postings must not stay): Affirm Implementation Specialist I, Clorox R&D Packaging Co-op (Workday API: postingAvailable true), Nuro SWE New Grad, Salesforce BDA Early Career, Waymo 2027 Summer Intern — all still open.
+- UCLA batch: Winter 2027 106+ subjects.
+- Spot check classes (BU): CASEC 508 (grad), CDSBF 592 (grad), GMSPM 803 (grad), QSTMK 345, SSWWP 713 (grad) — match.
+- Spot check clubs: UCLA Alpha Phi Alpha, UC Davis Aggie Open Mics, SF State ASME, SJSU ASME match; UCI Alpha Phi site does not answer.
+
+## 2026-11-04 22:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- UCLA batch: Winter 2027 continuing.
+- Spot check classes (Rice): ASIA 220, EMBA 913 (grad, two Friday blocks), MATH 590 (grad), PSYC 550 (grad), UNIV 201 — match.
+- Spot check clubs: Columbia Computer Security Club, Yale Opera Theatre, Harvard UA, MIT Filipino Students Association, Penn Graduate InterVarsity — match.
+
+## 2026-11-04 23:33 run
+- No Codex commits, HANDOFF requests, or answers in QUESTIONS.
+- **Residence halls and Vanderbilt units listed as clubs:** spot check found Emory "Clairmont Tower" (category Residence Hall) and Vanderbilt "Gender and Sexuality Studies" as clubs.
+  - Housing categories (Residence Hall(s), Residential Community/Life) are now strong office categories → 51 marked department: Yale 15 (residential colleges), Vanderbilt 13, Emory 11, CWRU 10, UMass 2. Test added.
+  - Vanderbilt's Engage lists ~250 entries with no category, mostly offices, departments, labs, institutes and programs. Reviewed a name-based list of 79: 76 are university units → department (hand-checked, added to `org-type-overrides.csv`, kept on re-collect); 3 student groups kept as clubs (School of Medicine Ambassadors, School of Nursing Pride, VUSM Street Medicine Initiative).
+- UCLA batch: Winter 2027 continuing.
+- Spot check classes (Duke): ARTS&SCI 104CN, ENVIRON 321A, MATH 353, SOCIOL 202, XTIANETH 757 (grad) — match.
+- Spot check clubs: Georgetown Law Restructuring Club, WFU Men's Club Golf match; Notre Dame College Democrats site 403 to automated requests; Emory Clairmont Tower and Vanderbilt GSS (fixed above).
+
+## 2026-11-05 00:33 UTC
+- UCLA Winter 2027 class times: 10 more subjects (Portuguese, Computing, Psychiatry, Psychology, Public Affairs, ...). File now 5,987 classes; Winter 158/190 subjects.
+- Spot check courses (Cornell): ENMGT 5920, HD 3250, CEE 4760, ARCH 6408, AEM 4670 all match the official class roster.
+- Spot check clubs: Vanderbilt Global China Connection, Emory Barkley Forum, Georgetown Law Restructuring Club, Wake Forest Club Golf (Men) open and name the club. Notre Dame College Democrats site answers 403 to our checker (sites.nd.edu blocks bots); not treated as dead, left as is.
+- Nothing blocked beyond the known TLS schools.
+
+## 2026-11-05 01:33 UTC
+- New events reader `tribe:` (WordPress "The Events Calendar" public REST). UC Santa Cruz: 126 upcoming events from events.ucsc.edu (exhibits and Zoom-only left out). Checked BME 280B Seminar on its page: Nov 5 11:40 am, same as ours. Test added.
+- Looked for more sources: Brown cab.brown.edu answers 202 with an empty page (bot check) - blocked, not bypassed. UNC class search fails TLS here. UC Davis / Santa Clara / Harvard / Michigan / Princeton event sites answer 403 or a bot check.
+- UCLA Winter 2027 now complete (194 subjects; file 6,480 classes: Fall 3,404 + Winter 3,076). Found a bug - the subject list sometimes comes back short (117 instead of 173), so the batch skipped 13 Winter subjects and started Spring. Fixed: the list is fetched twice and merged with subjects seen before. Spring 2027 is in the term menu but returned 0 classes, so a term with no classes yet is not marked done (it will be retried). Winter 2027 batch rerun.
+- Spot check courses (UCLA Winter 2027, rendered official class pages): AM IND 280A MW 10:35-12, EC ENGR C249 MW 8-9:50, BIOSTAT M208 T 12-2:50, ECON 103 MW 11-12:15, MUSCLG CM90T T 7-9:50 pm + F 1-3:50 pm - all match.
+- Spot check clubs (random): JHU Men's Club Basketball, Miami Reach Out and Read, Vanderbilt Culture Advocacy and Leadership, CMU SEED - pages name the club. MSU MBA Finance Association website now redirects to the general MBA page (club page gone) - moved to s_msu.deadlinks.json, not deleted. Re-collect now also leaves out Website links already in a school's deadlinks file (a directory sending the same dead link again would have brought it back).
+
+## 2026-11-05 02:33 UTC
+- UCLA events: 218 upcoming from community.ucla.edu (UCLA's official community calendar). It has no feed, so the reader reads the week pages that overlap the next 30 days (5 pages), takes the UTC start from each card, and leaves out multi-day exhibits and webinars. Test added. Checked "Pier to Pier Walk" on its page: Sun 11/15 9:30 AM, same as ours.
+- Penn Clubs events API is public but has only 5 upcoming events in a month - not wired.
+- Spot check courses (Illinois, official schedule XML): JOUR 200 TR 12:30, LAT 491 MWF 1:00, HK 263 lecture T 3:30, PSYC 588 MWF 9:00 match. ECON 590 is a topics course with 10 sections; each is its own entry (Sec 3Y1, NME, P1 ...) and the sampled one (NME, MTWR 12:30) matches.
+- Spot check clubs (random): Syracuse Kappa Alpha Pi, UT Women's Club Soccer, Tufts Project SHARE fine. W&M Men's Club Soccer website on wmpeople.wm.edu now redirects to the W&M IT services page - that whole site is retired, so all 5 W&M wmpeople links moved to s_wm.deadlinks.json (not deleted). Georgia Tech Swing Dance (gtorg.gatech.edu) did not answer; 8 of 17 gtorg sites failed once while 9 answered - may be the proxy, left for the weekly link check.
+- USF events: no feed found (Drupal listing + JSON-LD per event page); a reader would need ~20 listing pages + one page per event daily - parked in the queue with notes.
+
+## 2026-11-05 03:33 UTC (daily refresh run)
+- Spot check courses: Rice UNIV 330 M 1:00-4:30 PM, UW ART H 400 A/B/C, match. **Caltech EE/MedE 124 was wrong: the official schedule marks it "Course Cancelled" but we showed it as a class.** The Caltech reader ignored the note line. Fixed: "Course cancelled" in the note drops the course, "Section 03 cancelled" drops that section only (test added). Also, for whole-term sources (Caltech, CMU) an empty department is now trusted instead of keeping last time's classes. Re-collected: 28 cancelled entries moved to `s_caltech.courses-dropped.json` (not deleted; checked Ch 8, PE 3, Ge 145, NB 101, SA 59 Design Your Career, Ch 1a Sec 03 on the page - all cancelled). Caltech Winter 2027 is now published: 835 classes (Fall 410 + Winter 425).
+- Any collect-courses run now moves classes that dropped out to `<id>.courses-dropped.json` instead of deleting them.
+- USF NURS 371 and Vanderbilt PSY 8744 (search-form sources, no direct link) not re-checked this run.
+- Daily refresh: events for all 58 schools with an events file (16,650 upcoming, incl. new UCLA + UCSC); US jobs file 1,293 postings from 166 boards (internships 842, new grad 404, PhD 172, master's 70, postdoc 13). 5 random postings (Varda, Nuro, Adobe Workday, Amazon PhD intern, IMC) all open.
+- Spot check clubs (random): UConn Women & Minorities in Economics, Georgia Tech K-Buzz, UMD Love For Our Elders fine; Duke Impact Investing Group gave 503 once then 200 (script page). IEEE@Penn (ieee.seas.upenn.edu) fails TLS from the container - not verifiable here, left as is.
+
+## 2026-11-05 04:33 UTC
+- Checked every class reader for cancelled sections (after Caltech last run):
+  - UCLA: the status column was ignored. A live check of COM SCI Fall 2026 shows only Open, Closed and Waitlist, but sections whose status says "Cancelled" are now skipped.
+  - FOSE (W&M, Cornell-style hosts): rows with `stat` X or `isCancelled` set are now skipped. W&M Spring 2027 has 3,725 rows, all A or F.
+  - PeopleSoft HCX (Duke, BU): `class_stat` X (Cancelled Section) is now skipped. Duke CHEM has 100 rows, all A.
+  - GWU: rows whose first cell is CANCELLED are now skipped. The 7 in the CSCI sample had no times, so none had got in.
+  - Rochester: status "Canceled" is now skipped (the sample is all Open).
+  - Already handled before: USC (`isCancelled`), CMU ("This Section Cancelled"), Caltech (fixed last run).
+  - Banner 9 (USF, Georgia Tech) has no status field and does not list cancelled sections.
+  - UW: no cancelled or withdrawn sections in CSE, CHEM or MATH (the only "cancellation" text there is about prerequisites).
+  - Illinois: `sectionStatusCode` is A in the sample. I don't know its cancelled code, so I left it alone rather than guess.
+  - The new guards take effect at the weekly re-collect.
+- Codex brief written: `docs/CODEX_BRIEF.md` (data inventory, API, show/hide decisions, starter prompt for the owner to paste into Codex), linked from the top of docs/HANDOFF.md.
+- Spot check courses (Duke Fall 2026, live DukeHub class search): CHEM 202D 002 WF 10:05, CHEM 201DL 001 MW 8:30 and 002 MW 11:45, CHEM 101DL 003 WF 11:45, CHEM 210D 001 TTh 11:45 - all match.
+- Spot check clubs (random): UNC Darkside, Illinois SPGO, Indiana ColorStack fine.
+  - USC Mental Health Content Collective: the domain no longer resolves, so the link moved to deadlinks.
+  - Michigan Alpha Pi Mu: its old sites.google.com/a/umich.edu site now redirects to a Google sign-in (school login). I checked all 21 such links: 6 ask for sign-in (Michigan 4, UW 1, Wake Forest 1) and moved to deadlinks; the other 15 are public (e.g. BLiSS, GIS Student Organization).
+  - The weekly link check now treats a Google sign-in page as not public (`isSignInPage`, test added).
+
+## 2026-11-05 05:33 UTC
+- Harvard events: 139 upcoming from the Harvard Gazette calendar (official, public Trumba RSS `trumba.com/calendars/gazette.rss`; pubDate is the start in GMT). Left out: events marked "Harvard Key Required: Yes" (school login, 4 of 470), museum exhibitions (posted daily) and "Ongoing through" items. New reader `trumba:<webName>` + test. Checked "Transcending the Ordinary" (Mon Nov 9, 12-1:30 p.m. in the feed) = 12:00 in ours. Note: one Warren Center talk is listed by Harvard as "12:45 - 2:45 a.m." - probably their typo for p.m., kept as the source says (not guessed).
+- BU events: bu.edu/calendar day pages list events (uid, title, time) but after a few requests the site answered 202 with an empty body (bot check). Stopped; not bypassed.
+- **UW Winter 2027 classes were wrong. Found by spot check: SPH 380 had a second "Sec A" at MW 1:00, which is really SPH 381's time.** UW course headers are pink (#ffcccc) on Autumn pages but blue (#99ccff) on Winter pages. The reader split only on pink, so each Winter department page became one block and every section landed under the department's first course. Winter had 951 entries, mostly wrong. Fixed: split on any header colour (test with the real SPH Winter page). Re-collected: Winter 2027 now has 3,925 classes and Fall 3,972. The 634 wrong Winter entries moved to `s_uw.courses-dropped.json` (not deleted). SPH 380 is TTh 4:30-5:50 and SPH 381 MW 1:00-2:20, both matching the page.
+- Spot check courses (other): CMU 82-175 T 12:30-1:50, BU QSTLA 245 A1 TTh 9:30-10:45, W&M GOVT 470 W 7-9:50 pm match. SF State's detail page loads by script and GWU PUBH 8528 is on a later results page, so neither was re-checked this run.
+- Spot check clubs: MSU Riv, JHU WJHU (site answers 403 but names the station), MIT Cthulhu, BU Rotaract fine. GWU "Development and Alumni Relations" is a university office typed as club. Scanned GWU names and marked 12 clear offices as `department` in org-type-overrides.csv (Title IX Office, Office for Study Abroad, SEAS student services, Multicultural Student Services Center, ...). "Leadership Development Programs" left as is because the name alone doesn't settle it.
+- Penn events: penntoday.upenn.edu/events fills its list from a script feed I could not find yet; parked.
+
+## 2026-11-05 06:33 UTC
+- Audited every class file for misread signs: lopsided term counts, too many sections per course, impossible times, weekend and long meetings.
+- **USF was wrong:** 166 classes showed a Saturday meeting. Banner 9 lists the final exam (meetingType FINL, one date, e.g. ADVT 320 Sat 12/12 10-12) as a meeting, and the reader stored it as a weekly class. Fixed in the Banner reader (`b9Meetings`: skips exam types and one-date meetings; test with the real ADVT 320 section). Re-collected USF: ADVT 320 is now F 11:45-3:25 only, no Sat 10-12 left, 62 weekend classes remain (EMBA, nursing and other weekend programs). 96 entries moved to `s_usf.courses-dropped.json`. Georgia Tech (same reader) re-collected: 7,199 classes, small changes.
+- CMU's 865 weekend and long meetings are real: drama rehearsals and production practicums. Checked 53-603 Game Design Fundamentals: Saturday 11:15-5:05 on CMU's page.
+- Spot check courses this run: CMU 53-603, USF ADVT 320 and BIOL 115 (after the fix), UW SPH 380/381 (after the earlier fix).
+- Spot check clubs: UMN READ, UNC Delta Delta Sigma, Penn Kite and Key, UMD Kappa Theta Pi fine. W&M Black Law Students Association (law.wm.edu) fails TLS from the container for the whole host - not verifiable here, left as is.
+
+## 2026-11-05 07:33 UTC
+- Audited every events file: night times, duplicates, exhibits, emoji, past dates, missing links.
+  - **Exhibitions:** 29 multi-day exhibitions came through readers that don't filter them (e.g. Duke's "Cosmic Origins Exhibition Run" 18 times). collect-events now drops exhibitions in one shared place; sports "exhibition games" are kept.
+  - **Emoji in events:** descriptions and places kept emoji; collect-events now runs every event through `noEmojiView`.
+  - **Emoji in club files:** 73 names and descriptions in 36 files had emoji or ® marks. Club collection now strips them, touching only text that actually contains an emoji (a first try also collapsed spaces in 640 descriptions and was reverted before commit).
+  - **Shared emoji stripper:** skin-tone modifiers (U+1F3FB-1F3FF) and flag tag characters were left behind. Added to `stripEmoji` in packages/core/src/lib/orglinks.ts (shared file) and to server/noemoji.ts, with a test.
+  - All of the above applied to today's files, offline.
+  - Checked and fine: UCSC "CSE Colloquium" at 2:40 a.m. is what UCSC's own API says (source data, kept). UT's 31 "duplicate" General Meetings are different clubs at the same time.
+- Spot check courses (Illinois, official XML): NEUR 598 T 2:00, MUSC 430 B TR 11:00, SPAN 122 E3 MW 1:00-1:50, HIST 377 TR 12:30, PS 512 T 1:00 - all match.
+- Spot check clubs: UT Pre-CAA, Yale Historical Review, UMass Comm Grad, Duke Catholic Center fine. USC SC Men's Rugby answered 503 twice - left for the weekly link check.
+
+## 2026-11-05 08:33 UTC
+- Audited every club file: empty or test names, shared IDs, broken or shared links, HTML in text.
+  - **MSU shared ID:** "National Arab American Medical Association Next Generation" and "Perfect Pair" have directory keys "--" and "-", so both became `oc_msu__`. The link merge-back then gave NAAMA Perfect Pair's Instagram and Facebook. Fixed the ID builder: a key with no letters or digits falls back to the name, then the Engage number; other IDs unchanged. Repaired both entries and their deadlinks rows. perfectpair.org answers again and names the club, so it is restored, and restored deadlinks rows (`restoredAt`) are no longer treated as dead on re-collect.
+  - **Test placeholders:** 15 such as "Test Club" and "Test Org One" (NYU, UMich, JHU ...). Kept in the files but no longer sent by /api/preview or loaded by import-collected (`isPlaceholderOrg`). "Testing Center" and "Test Prep Club" don't count.
+  - **New `cleanCollectedOrgs` step** (runs at every club collect, test added):
+    - decodes double-encoded entities ("Strawberries &amp; Sudoku");
+    - strips HTML tags from 4 descriptions (CMU, UW);
+    - trims link addresses; links with spaces inside ("facebook.com/Alpha Omicron Pi - SJSU", 4) go to deadlinks;
+    - a website shared by 50+ clubs is the school's page, not the club's: UMN student union home on 184 clubs, moved to deadlinks. Residence halls and outreach programs that share their office's page (10-23) are kept.
+  - Applied to today's files offline.
+- Spot check courses (Caltech Winter 2027, fresh official page): CS 2 sec 01 and 07, Ae/APh/CE/ME 101B, Hum/H 53, ME 50A - all match.
+- Spot check clubs: Rice RUF, MSU Blueprints for Pangaea, SFSU Muslim Tech Collaborative fine. Wake Forest "Reynolda" is the university's museum and gardens, so it is marked `department` (override added). Cornell Latinx Student Empowerment (scl.cornell.edu) fails TLS from the container - not verifiable here.
+
+## 2026-11-05 09:33 UTC
+- Audited the US jobs file (1,293 postings):
+  - Every location is in the US. No duplicate links; the 15 same-title pairs are separate requisitions with different IDs.
+  - **Problem:** about 50 hourly trade and shift jobs were labelled "new grad" because their titles end in "I" or say "Entry Level" (Relativity Space shift technicians, Target distribution-center maintenance, SpaceX Jr. Sous Chef, contractor lab and inventory roles, a SkillBridge listing). These aren't college new-grad roles.
+  - **Fix:** `classify` now leaves out technician, maintenance, shift, chef, contractor and warehouse-type titles unless they are internships. Engineer I and Scientist I still count as new grad. Test added.
+  - Applied to today's file: 1,246 kept, 47 moved to `jobs-us.dropped.json` (not deleted).
+- Spot check courses (GWU, official schedule incl. later result pages): BADM 2301 sec 12 TR 2:20, PSYC 3133 MW 2:20, CHEM 2154 sec 21 F 12:45-4:35, ECE 2110 sec 11 MW 12:45, ANTH 3891 MW 2:20 - all match.
+- Spot check clubs: Cornell SWAG, UC Davis Clinica Tepati, UMN Physiology Society, BU Engineers Without Borders fine. GWU "Excellence in Student Life Awards" is a university awards program, so it is marked `department` (override added).
+
+## 2026-11-05 10:33 UTC
+- **UC Riverside class times: 3,111 classes** (Fall 2026 1,584 + Winter 2027 1,527) from UCR's public Banner 9 class search. UCR was already configured but never produced a file, because the Banner reader dropped every "Winter" term (meant for semester schools' winter sessions) and only looked for "Spring" after "Fall". Fixed:
+  - only true winter sessions (Winter Session, Intersession, J-term) are skipped;
+  - if the expected next term isn't listed, the next regular term by code is used;
+  - ALL-CAPS Banner titles are title-cased.
+  - USF and Georgia Tech are unaffected (they find Spring by name).
+- Checked 5 random UCR classes against the live Banner search: NRSC 200A TR 11:00-12:20, ANTH 253 M 11:00-1:50, CEE 206 001 TR 3:30-4:50, POSC 164S TR 5:00-6:20, CS 171 MWF 2:00-2:50 - all match. The class-file audit is clean (7 weekend classes, no exam rows).
+- Emory (atlas.emory.edu), Indiana (classes.iu.edu, refused by the proxy) and UChicago (PeopleSoft guest search) are not reachable from here.
+- **Lehigh class times: 2,700 classes** (Fall 2026 1,392 + Spring 2027 1,308) from Lehigh's public Banner 9 (reg-prod.ec.lehigh.edu). Found by trying the Ellucian cloud host pattern for 17 schools without times; only Lehigh answered. The 3,340 catalog-only entries are kept. Audit clean.
+- **Spot check found a labelling bug:** in Lehigh's live data, MAT 495's first section is 011 but we titled it "(Sec 001)". The Banner reader hard-coded "001" for a course's first section; it now uses the school's section number. Times were right. USF, Georgia Tech, UCR and Lehigh re-collected; FIN 331 now shows Sec 011 / Sec 012 like the live data.
+- Spot check Lehigh vs live Banner: BIOS 323 TR 3:00-4:15, MAT 495 011 MW 10:45-12:00, FIN 331 012 TR 12:10-1:25 match. (WRT 1 and PSYC 1 came back empty only because the check asked for "1"; Lehigh numbers them "001".)
+- Spot check clubs: UVA All Girls STEM Society, UCR South Asian InterVarsity, MSU Big Sister Little Sister, UT TexasDayTrading fine. USC Troy Tones (troytones.org) no longer resolves, so moved to deadlinks.
+
+## 2026-11-05 11:33 UTC
+- **UMD Spring 2027 class times: 6,125 more classes** (file now Fall 6,883 + Spring 6,125). The UMD reader fetched only the current term; it now also fetches the next one when Testudo has published it, with term-tagged IDs so Fall IDs are unchanged (nothing dropped). It also had the same first-section bug as Banner ("Sec 0101" hard-coded) and now uses the school's section number. Checked SPAN 303 0301 TuTh 2:00-3:15, CCJS 621 M 4:00-6:45, CMSC 416 0101 TuTh 2:00-3:15 on Testudo - match. Audit clean.
+- Rice and MIT re-collected: still only Fall 2026. Rice's Spring 2027 (202720) is barely populated, and MIT's catalog shows 2026-2027 subjects with no Spring schedule yet.
+- Spot check courses (Lehigh, live Banner, using Lehigh's "001" numbering): PSYC 1 Spring 010 TR 10:45 and 011 MW 12:10; WRT 1 Fall 010-013 match section by section.
+- Spot check clubs: Duke PASH, Lehigh Anglican Episcopal Student Association, Cornell Hotel Ezra Cornell (site answers 403 but names the club), Penn Petey Greene fine. UT Diversity in Advertising & PR (daprtx.com) no longer resolves, so moved to deadlinks.
+- Searched for other public PeopleSoft class searches like Duke/BU's: nothing usable found.
+
+## 2026-11-05 12:33 UTC
+- **New school (file only): Penn State.**
+  - Clubs: 1,302 organizations from discover.psu.edu (public Engage): 1,173 clubs, 77 Greek, 48 student councils, 16 offices.
+  - 1,017 have a public link besides the directory page.
+  - Links: club websites read for Instagram/Facebook (56 gained), 22 dead websites moved to deadlinks, and four college accounts that appear in many clubs' page footers left out.
+  - Events: 181 upcoming.
+  - Catalog: 15,336 courses from bulletins.psu.edu. No meeting times, because LionPATH's class search needs a login.
+  - Marked 6 university offices as `department`: Career Services, CAPS, University Libraries, Penn State Learning, Adult Learner Programs, Residence Life LLCs. The audit shows only the club-sports page shared by 16 sports clubs, which is fine.
+- Tried other top schools; their directories are not public: Northeastern and Stony Brook (school SSO), Pitt, RPI and Brandeis (campuslabs login), Virginia Tech (GobblerConnect API 404).
+- Spot check courses (Penn State bulletin): BIOET 533, ENGL 399, ENT 596, EE 353 (the source has a double space in the title), EET 409 - titles match.
+- Spot check clubs (Penn State, official directory API): First-Gen Advocates, Hillel, Dickinson Law Cyber Law Society, Supply Chain Management Association - names and links match. University Libraries turned out to be an office (marked above).

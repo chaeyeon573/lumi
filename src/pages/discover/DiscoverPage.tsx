@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Plus } from 'lucide-react';
 import { t, lang } from '@core/i18n';
 import { AppHeader } from '@/components/layout/AppHeader';
+import { openCreate } from '@/components/layout/BottomNav';
 import { Chip, CardSkeleton, EmptyState, ErrorState, Button, Avatar } from '@/components/ui';
 import { SampleTag } from '@/components/ui/SampleTag';
 import { OrgCard } from '@/components/cards/OrgCard';
@@ -54,7 +55,7 @@ export function DiscoverPage() {
 
   return (
     <div className="min-h-full pb-8 bg-bg">
-      <AppHeader />
+      <AppHeader right={<button onClick={openCreate} aria-label={lang === 'en' ? 'Create' : '만들기'} className="h-10 w-10 rounded-full grid place-items-center bg-primary text-white v2:bg-surface-2 v2:text-lime-400 v2:border v2:border-line press"><Plus size={22} strokeWidth={2.4} /></button>} />
       {status === 'loading' && <CardSkeleton />}
       {status === 'error' && <ErrorState message={error ?? undefined} onRetry={init} />}
       {status === 'ready' && (

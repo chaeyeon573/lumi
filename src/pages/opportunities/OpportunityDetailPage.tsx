@@ -1,4 +1,4 @@
-import { badgeOf, campusDate, listingField, locationOf, orgOfListing } from '@core/lib/listings';
+import { badgeOf, campusDate, listingField, locationOf, orgOfListing, workAuthLabel } from '@core/lib/listings';
 import { useEffect, useRef, useState } from 'react';
 import { t, lang } from '@core/i18n';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
@@ -113,6 +113,7 @@ export function OpportunityDetailPage() {
               {o.place && <Row icon={<MapPin size={16} />} label={t('장소')} value={o.place.name} action={<button onClick={() => nav('/map')} className="text-[12px] text-primary font-semibold">{t('지도')}</button>} />}
               {!o.place && o.type === 'internship' && locationOf(o) && <Row icon={<MapPin size={16} />} label={lang === 'en' ? 'Location' : '근무지'} value={`${locationOf(o)}${o.remote ? ' · Remote OK' : ''}`} />}
               {o.type === 'internship' && <Row icon={<span>🧭</span>} label={lang === 'en' ? 'Field' : '분야'} value={listingField(o)} />}
+              {o.type === 'internship' && <Row icon={<span>🛂</span>} label={lang === 'en' ? 'International students' : '유학생'} value={workAuthLabel(o, lang === 'en')?.text ?? (lang === 'en' ? 'Not stated in the posting — check before applying' : '공고에 적혀 있지 않아요 — 지원 전에 확인하세요')} />}
               {o.type === 'internship' && !o.deadline && <Row icon={<AlarmClock size={16} />} label={lang === 'en' ? 'Deadline' : '마감'} value={lang === 'en' ? `Not posted — companies usually close once roles fill. ${badgeOf(o, true).text}.` : `회사가 마감일을 공개하지 않았어요 — 자리가 차면 닫혀요. ${badgeOf(o, false).text}.`} />}
               <Row icon={<span>👤</span>} label={t('누구에게 맞는지')} value={o.eligibility} />
               {o.benefit && <Row icon={<span>🎁</span>} label={t('혜택·상금·장학금')} value={o.benefit} />}

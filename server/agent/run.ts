@@ -25,12 +25,19 @@ import { fetchOursScholarships } from '../sources/ours';
 import { fetchStudyAbroad } from '../sources/studyabroad';
 import { findStudentOrgSites, knownSites } from '../sources/orgsites';
 import { fetchResearchUnits, mergeResearchUnits } from '../sources/researchunits';
+import { coopsFromCsv, COOP_PREFIX } from '../sources/coops';
 import { fetchUsaJobs } from '../sources/usajobs';
+import { studentGovToOrg, isPlaceholderOrg, cleanCollectedOrgs, type StudentGovRow } from '../sources/orglinks';
+import { enrichFromWebsites, isDeadPage, DEAD } from '../sources/sitesocial';
+import { publicLinks, stripEmoji } from '@core/lib/orglinks';
+import { noEmojiView } from '../noemoji';
+import { mkdirSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import type { School } from '@core/types';
+import type { Opportunity, Organization, School } from '@core/types';
+import type { CatalogCourse } from '@core/api/types';
 import { parseCSV } from '../scripts/csv';
 import { detectOrgsPlatform } from './detect';
 import { randomUUID } from 'node:crypto';
@@ -39,7 +46,7 @@ import { sendMail } from '../mail';
 import { MAIL_LOG, logEntries, pickToMail, type MailLogDoc } from './notify-throttle';
 import { COURSE_SOURCES, resolveCourseSource, useImportCheckpoint } from '../sources/courses';
 import { fetchCourseLeaf } from '../sources/catalog';
-import { fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale, fetchLocalist } from '../sources/opportunities';
+import { fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale, fetchLocalist, fetchCampusGroupsEvents, fetchEventRss, fetchTribeEvents, fetchUclaCommunity, fetchTrumba } from '../sources/opportunities';
 import { dropDuplicateTitles, fetchDevpost, fetchInternships } from '../sources/external';
 import { existsSync } from 'node:fs';
 import { applyRules, checkDrift, spotCheck } from './validate';
@@ -107,8 +114,10 @@ async function runCourses(key: string, schoolId?: string): Promise<AgentRun> {
     if (!spot.ok) reasons.push(`spot-check matched ${spot.matched}/${spot.matched + spot.mismatched.length}`);
     const summary = { school: src.schoolId, fetched: fetched.length, kept: rules.kept.length, dropped: rules.dropped.slice(0, 10), dropRate, drift, spotCheck: { ...spot, mismatched: spot.mismatched.slice(0, 10) }, reasons, dry: DRY };
     if (reasons.length) return record({ task: taskName, schoolId: src.schoolId, status: 'rejected', startedAt, summary });
-    if (!DRY) await store.replaceCatalog(src.schoolId, rules.kept);
-    return record({ task: taskName, schoolId: src.schoolId, status: 'applied', startedAt, summary });
+    // 같은 id 가 두 번 오면(MIT fireroad 의 교차 개설 과목 등) DB upsert 가 한 번에 같은 줄을 두 번 고치려다 실패한다 — 첫 줄만
+    const unique = [...new Map(rules.kept.map((c) => [c.id, c])).values()];
+    if (!DRY) await store.replaceCatalog(src.schoolId, unique);
+    return record({ task: taskName, schoolId: src.schoolId, status: 'applied', startedAt, summary: { ...summary, kept: unique.length, duplicateIds: rules.kept.length - unique.length } });
   } catch (e) {
     return record({ task: taskName, schoolId: src.schoolId, status: 'error', startedAt, summary: { error: (e as Error).message } });
   }
@@ -124,10 +133,210 @@ function runScript(task: string, script: string, schoolId: string, extraEnv: Rec
   return record({ task, schoolId, status: failed ? 'error' : 'applied', startedAt, summary: { exit: r.status, lines, dry: DRY } });
 }
 
+/** 탐지한 동아리 플랫폼 → fetch:orgs 에 넘길 환경 변수 */
+function orgsEnv(id: string, platform: string, host: string): Record<string, string> {
+  return platform === 'pennclubs' ? { PENNCLUBS_HOSTS: `${id}=${host}` } : platform === 'facetwp' ? { FACETWP_HOSTS: `${id}=${host}` } : platform === 'accordion' ? { ACCORDION_HOSTS: `${id}=${host}` } : platform === 'drupalcards' ? { DRUPALCARDS_HOSTS: `${id}=${host}` } : platform === 'uclarco' ? { UCLARCO_HOSTS: `${id}=${host}` } : platform === 'browndsf' ? { BROWNDSF_HOSTS: `${id}=${host}` } : platform === 'engage' ? { ENGAGE_HOSTS: `${id}=${host}` } : platform === 'presence' ? { PRESENCE_HOSTS: `${id}=${new URL(host).hostname.split('.')[0]}` } : { CAMPUSGROUPS_HOSTS: `${id}=${host}` };
+}
+
+// ─── 아직 안 연 학교: 파일로 모으기 (2026-11-02 사장님: Railway 비용 — 기본은 PM 에이전트가 파일로, 거기서 못 닿는 것만 Railway) ───
+const DATA_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data');
+const COLLECTED_DIR = path.join(DATA_DIR, 'collected');
+const GOV_CSV = path.join(DATA_DIR, 'student-governments.csv');
+const normName = (n: string) => n.toLowerCase().replace(/\([^)]*\)/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+/** collect:<id> — 동아리(+손으로 확인한 학생회)를 server/data/collected/<id>.orgs.json 에, 수업 표본 결과를 <id>.probe.json 에. DB 에는 쓰지 않는다 */
+/** 공개 웹 페이지 한 장 (10초, 500KB 까지). 실패하면 '' */
+async function fetchPublicPage(url: string): Promise<string> {
+  try {
+    const r = await fetch(url, { headers: { 'user-agent': 'Mozilla/5.0 (compatible; Lumi-campus-directory/1.0)', accept: 'text/html' }, redirect: 'follow', signal: AbortSignal.timeout(10_000) });
+    const body = /html/i.test(r.headers.get('content-type') ?? '') ? (await r.text()).slice(0, 500_000) : '';
+    if (isDeadPage(r.status, body)) return DEAD;
+    return r.ok ? body : '';
+  } catch { return ''; }
+}
+/** 수업만: 표본 확인 → 맞으면 <id>.courses.json (collect 의 마지막 단계, collect-courses:<id> 로 따로도 돈다 — 동아리를 다시 읽지 않는다) */
+async function collectCourses(row: SchoolRow): Promise<AgentRun[]> {
+  const out: AgentRun[] = [];
+  if ((row.courses_source || row.catalog_url) && !(row.railway ?? '').split('|').includes('probe')) {
+    const probe = await runCourseProbe(row);
+    mkdirSync(COLLECTED_DIR, { recursive: true });
+    writeFileSync(path.join(COLLECTED_DIR, `${row.id}.probe.json`), `${JSON.stringify({ checkedAt: probe.finishedAt, status: probe.status, ...probe.summary }, null, 1)}\n`);
+    out.push(probe);
+    // 표본이 맞으면 전체 수업도 파일로 (DB 아님 — 학교를 열 때 그대로 넣는다). 한 줄에 과목 하나
+    if (probe.status === 'applied') {
+      const startedAt = new Date().toISOString();
+      try {
+        const src = row.courses_source ? resolveCourseSource(row.id, row.courses_source) : undefined;
+        const all = probeFull.get(row.id) ?? (src ? applyRules(row.id, await src.fetch()).kept : undefined) ?? (row.catalog_url ? (await fetchCourseLeaf(row.id, row.catalog_url)).courses : []);
+        const file = path.join(COLLECTED_DIR, `${row.id}.courses.json`);
+        // 시간표가 없는 과목의 카탈로그 항목(term 'catalog')은 남긴다 — 시간표가 생긴 과목만 새 것으로 (모은 데이터는 지우지 않는다, SF State 2026-11-03)
+        const fresh = new Set(all.map((c) => c.code));
+        const prev = existsSync(file) ? (JSON.parse(readFileSync(file, 'utf8')) as CatalogCourse[]) : [];
+        const keptCatalog = prev.filter((c) => c.term === 'catalog' && !fresh.has(c.code));
+        // 이번에 한 개도 안 온 (학기, 학과) 묶음은 지난번 것을 남긴다 — 요청이 끊겨 빈 것을 '없어진 수업'으로 지우지 않는다 (SF State ENG·DES, 2026-11-03)
+        const freshGroups = new Set(all.map((c) => `${c.term}#${c.department}`));
+        // 학기 전체를 한 페이지로 받는 출처(Caltech, CMU)는 끊길 일이 없다 → 빈 학과는 정말 없어진 것(취소 등)
+        const wholeTerm = /^(caltech|cmu)\b/.test(row.courses_source ?? '');
+        if (!wholeTerm) keptCatalog.push(...prev.filter((c) => c.term !== 'catalog' && !freshGroups.has(`${c.term}#${c.department}`) && all.some((x) => x.term === c.term)));
+        const unique = [...new Map([...all, ...keptCatalog].map((c) => [c.id, c])).values()].sort((a, b) => a.code.localeCompare(b.code, 'en', { numeric: true }));
+        // 이번에 빠진 수업(취소 등)은 지우지 않고 <id>.courses-dropped.json 에 옮겨 둔다 (화면 데이터에는 안 나감)
+        const nowIds = new Set(unique.map((c) => c.id)); const dropped = prev.filter((c) => !nowIds.has(c.id));
+        if (dropped.length) {
+          const dFile = path.join(COLLECTED_DIR, `${row.id}.courses-dropped.json`);
+          const old = existsSync(dFile) ? (JSON.parse(readFileSync(dFile, 'utf8')) as (CatalogCourse & { droppedAt?: string })[]) : [];
+          const at = new Date().toISOString().slice(0, 10);
+          writeFileSync(dFile, `[\n${[...new Map([...old, ...dropped.map((c) => ({ ...c, droppedAt: at }))].map((c) => [c.id, c])).values()].map((c) => JSON.stringify(c)).join(',\n')}\n]\n`);
+        }
+        writeFileSync(file, `[\n${unique.map((c) => JSON.stringify(c)).join(',\n')}\n]\n`);
+        out.push(await record({ task: `collect-courses:${row.id}`, schoolId: row.id, status: unique.length ? 'applied' : 'rejected', startedAt, summary: { courses: unique.length, withTimes: unique.filter((c) => c.meetings?.length).length, terms: [...new Set(unique.map((c) => c.term))].slice(0, 6) } }));
+      } catch (e) { out.push(await record({ task: `collect-courses:${row.id}`, schoolId: row.id, status: 'error', startedAt, summary: { error: (e as Error).message } })); }
+    }
+  }  return out;
+}
+async function runCollect(row: SchoolRow): Promise<AgentRun[]> {
+  const out: AgentRun[] = [];
+  const d = await detectOrgsPlatform(row.short, row.email_domain, row.orgs_host || undefined);
+  const file = path.join(COLLECTED_DIR, `${row.id}.orgs.json`);
+  // 다시 모을 때 이전 파일의 링크를 지키기 위해 먼저 읽어 둔다 (아래 collect-social 뒤에서 합친다)
+  const prevOrgs: Organization[] = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : [];
+  if (d) out.push(await runScript(`collect-orgs:${row.id}`, 'fetch:orgs', row.id, { ...orgsEnv(row.id, d.platform, d.host), FETCH_DRY: '1', ORGS_JSON_DIR: COLLECTED_DIR }));
+  else out.push(await record({ task: `collect-orgs:${row.id}`, schoolId: row.id, status: 'rejected', startedAt: new Date().toISOString(), summary: { error: 'no public club directory found', tried: row.orgs_host || 'guessed hosts' } }));
+  // 학생회: 디렉터리에 없을 때만 더한다
+  const govRows = existsSync(GOV_CSV) ? (parseCSV(readFileSync(GOV_CSV, 'utf8')) as unknown as StudentGovRow[]).filter((r) => r.school_id === row.id) : [];
+  if (govRows.length) {
+    const list: Organization[] = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : [];
+    const names = new Set(list.map((o) => normName(o.name)));
+    const add = govRows.map(studentGovToOrg).filter((o) => !names.has(normName(o.name)) && !list.some((x) => x.id === o.id));
+    if (add.length) { mkdirSync(COLLECTED_DIR, { recursive: true }); writeFileSync(file, `${JSON.stringify([...list, ...add].sort((a, b) => a.name.localeCompare(b.name)), null, 1)}\n`); }
+  }
+  // railway 칸에 probe 가 있으면(이 컨테이너에서 원본에 못 닿음) 수업 표본은 Railway 가 한다
+  // 손으로 확인한 공개 링크 (server/data/org-links-<short>.csv: org_id,label,url,checked,source) — 디렉터리에 링크가 없는 학교(Stanford·Santa Clara)
+  const linkCsv = path.join(DATA_DIR, `org-links-${row.short}.csv`);
+  if (existsSync(file) && existsSync(linkCsv)) {
+    const extra = parseCSV(readFileSync(linkCsv, 'utf8')) as unknown as { org_id: string; label: string; url: string }[];
+    const list = (JSON.parse(readFileSync(file, 'utf8')) as Organization[]).map((o) => {
+      const add = extra.filter((x) => x.org_id === o.id && x.url && !o.links?.some((l) => l.url === x.url)).map((x) => ({ label: x.label, url: x.url }));
+      return add.length ? { ...o, links: [...(o.links ?? []), ...add] } : o;
+    });
+    writeFileSync(file, `${JSON.stringify(list, null, 1)}\n`);
+  }
+  // 단체 웹사이트 첫 페이지에서 공식 인스타·페북 찾기 (학교 로그인 페이지 대신 공개 링크 — 2026-11-02 사장님)
+  if (existsSync(file)) {
+    const startedAt = new Date().toISOString();
+    const list = JSON.parse(readFileSync(file, 'utf8')) as Organization[];
+    const r = await enrichFromWebsites(list, fetchPublicPage);
+    writeFileSync(file, `${JSON.stringify(r.orgs, null, 1)}\n`);
+    // 응답 없던 웹사이트 주소는 따로 남긴다 (지우지 않는다 — 사장님 2026-11-03)
+    if (r.deadList.length) {
+      const deadFile = path.join(COLLECTED_DIR, `${row.id}.deadlinks.json`);
+      const prevDead = existsSync(deadFile) ? (JSON.parse(readFileSync(deadFile, 'utf8')) as { orgId: string; url: string; checkedAt: string }[]) : [];
+      const now = new Date().toISOString().slice(0, 10);
+      const merged = [...prevDead.filter((d) => !r.deadList.some((x) => x.orgId === d.orgId && x.url === d.url)), ...r.deadList.map((d) => ({ ...d, checkedAt: now }))];
+      writeFileSync(deadFile, `${JSON.stringify(merged, null, 1)}\n`);
+    }
+    const pub = r.orgs.filter((o) => publicLinks(o.links).some((l) => ['Website', 'Instagram', 'Facebook'].includes(l.label))).length;
+    out.push(await record({ task: `collect-social:${row.id}`, schoolId: row.id, status: 'applied', startedAt, summary: { orgs: r.orgs.length, sitesRead: r.checked, gainedSocial: r.found, withPublicLink: pub, schoolFooterAccountsDropped: r.droppedShared.slice(0, 10), deadWebsiteLinksRemoved: r.deadLinks } }));
+  }
+  // 지난번에 모은 링크(웹사이트·인스타 등, 디렉터리 링크 제외)가 이번에 안 나왔으면 되살린다 — 사이트가 이번엔 다르게 응답했을 뿐 지운 게 아니다.
+  // 응답 없던 웹사이트(<id>.deadlinks.json)는 되살리지 않는다 (2026-11-04 재수집에서 7개가 빠질 뻔함)
+  if (existsSync(file)) {
+    const deadFile = path.join(COLLECTED_DIR, `${row.id}.deadlinks.json`);
+    const dead = (existsSync(deadFile) ? (JSON.parse(readFileSync(deadFile, 'utf8')) as { orgId: string; url: string; restoredAt?: string }[]) : []).filter((x) => !x.restoredAt); // 다시 살아나 되돌린 링크(restoredAt)는 죽은 것으로 보지 않는다
+    const before = new Map(prevOrgs.map((o) => [o.id, o]));
+    let kept = 0;
+    const list = (JSON.parse(readFileSync(file, 'utf8')) as Organization[]).map((o) => {
+      // deadlinks 에 옮겨 둔 웹사이트는 디렉터리가 다시 보내도 화면 데이터에 넣지 않는다 (파일에는 남아 있다)
+      const isDead = (l: { label: string; url: string }) => l.label === 'Website' && dead.some((x) => x.orgId === o.id && x.url.replace(/^http:/, 'https:') === l.url.replace(/^http:/, 'https:'));
+      if ((o.links ?? []).some(isDead)) { o = { ...o, links: (o.links ?? []).filter((l) => !isDead(l)) }; kept++; }
+      const old = before.get(o.id); if (!old) return o;
+      const add = (old.links ?? []).filter((l) => !/^(Directory|Presence|MIT Engage|Cardinal Engage)$/.test(l.label) && !(o.links ?? []).some((x) => x.url === l.url) && !dead.some((x) => x.orgId === o.id && x.url === l.url));
+      kept += add.length; return add.length ? { ...o, links: [...(o.links ?? []), ...add] } : o;
+    });
+    if (kept) { writeFileSync(file, `${JSON.stringify(list, null, 1)}\n`); console.log(`  ${row.id}: kept ${kept} earlier links`); }
+  }
+  // 손으로 확인한 종류 고침(server/data/org-type-overrides.csv: 학교 디렉터리에 섞인 교직원·행정 모임 등) — 다시 모아도 유지
+  const ovFile = path.join(DATA_DIR, 'org-type-overrides.csv');
+  if (existsSync(ovFile) && existsSync(file)) {
+    const ov = (parseCSV(readFileSync(ovFile, 'utf8')) as unknown as { school_id: string; org_id: string; type: Organization['type'] }[]).filter((r) => r.school_id === row.id);
+    if (ov.length) {
+      const list = (JSON.parse(readFileSync(file, 'utf8')) as Organization[]).map((o) => { const r = ov.find((x) => x.org_id === o.id); return r && r.type && o.type !== r.type ? { ...o, type: r.type } : o; });
+      writeFileSync(file, `${JSON.stringify(list, null, 1)}\n`);
+    }
+  }
+  // 이모지는 파일에도 남기지 않는다(동아리 이름·설명, 2026-11-05 점검에서 약 160개) — 서버 응답에서도 지우지만 데이터 자체를 깨끗하게
+  if (existsSync(file)) {
+    const raw = readFileSync(file, 'utf8'); const list = JSON.parse(raw) as Organization[];
+    const { orgs: clean, badLinks } = cleanCollectedOrgs(list, new Date().toISOString().slice(0, 10));
+    if (badLinks.length) { const df = path.join(COLLECTED_DIR, `${row.id}.deadlinks.json`); const old = existsSync(df) ? JSON.parse(readFileSync(df, 'utf8')) as unknown[] : []; writeFileSync(df, `${JSON.stringify([...old, ...badLinks], null, 1)}\n`); }
+    const next = `${JSON.stringify(clean, null, 1)}\n`; if (next !== raw) writeFileSync(file, next);
+  }
+  out.push(...(await collectCourses(row)));
+
+  return out;
+}
+/**
+ * collect-events:<id> — 아직 안 연 학교의 다가오는 행사를 server/data/collected/<id>.events.json 에 (DB 아님, 2026-11-03 사장님 질문 “다른 학교는?”).
+ * 동아리 시스템(Engage·Presence) 행사 + 학교 캘린더(Localist·LiveWhale, events_source). 지난 행사·이모지 표지는 넣지 않는다. 매 실행 새로 쓴다(행사는 지나가면 의미가 없다).
+ */
+async function collectEvents(row: SchoolRow): Promise<AgentRun> {
+  const startedAt = new Date().toISOString(); const task = `collect-events:${row.id}`;
+  const school: School = { id: row.id, name: row.name, emailDomain: row.email_domain, region: row.region, center: { lat: Number(row.lat), lng: Number(row.lng) }, ...(row.tz ? { tz: row.tz } : {}) };
+  const got: Opportunity[] = []; const sources: string[] = []; const errors: string[] = [];
+  const d = await detectOrgsPlatform(row.short, row.email_domain, row.orgs_host || undefined);
+  const tryAdd = async (label: string, f: () => Promise<Opportunity[]>) => { try { const xs = await f(); got.push(...xs); sources.push(`${label} ${xs.length}`); } catch (e) { errors.push(`${label}: ${(e as Error).message}`); } };
+  if (d?.platform === 'engage') await tryAdd(`engage ${d.host}`, () => fetchEngageEvents(d.host, school));
+  if (d?.platform === 'campusgroups') await tryAdd(`campusgroups ${d.host}`, () => fetchCampusGroupsEvents(d.host, school));
+  if (d?.platform === 'presence') await tryAdd(`presence ${d.host}`, () => fetchPresenceEvents(new URL(d.host).hostname.split('.')[0], school));
+  const lw = /^livewhale:(https?:\/\/[^\s]+?)\/?$/.exec(row.events_source ?? '')?.[1]; if (lw) await tryAdd(`livewhale ${lw}`, () => fetchLiveWhale(lw, school, 30));
+  const lc = /^localist:(https?:\/\/[^\s]+?)\/?$/.exec(row.events_source ?? '')?.[1]; if (lc) await tryAdd(`localist ${lc}`, () => fetchLocalist(lc, school, 30));
+  const rs = /^rss:(https?:\/\/\S+)$/.exec(row.events_source ?? '')?.[1]; if (rs) await tryAdd(`rss ${rs}`, () => fetchEventRss(rs, school, 30));
+  const tr = /^tribe:(https?:\/\/\S+)$/.exec(row.events_source ?? '')?.[1]; if (tr) await tryAdd(`tribe ${tr}`, () => fetchTribeEvents(tr, school, 30));
+  const uc = /^uclacommunity:(https?:\/\/\S+)$/.exec(row.events_source ?? '')?.[1]; if (uc) await tryAdd(`uclacommunity ${uc}`, () => fetchUclaCommunity(uc, school, 30));
+  const tb = /^trumba:([\w.-]+)$/.exec(row.events_source ?? '')?.[1]; if (tb) await tryAdd(`trumba ${tb}`, () => fetchTrumba(tb, school, 30));
+  if (!sources.length && !errors.length) return record({ task, schoolId: row.id, status: 'skipped', startedAt, summary: { error: 'no public event source known' } });
+  const today = new Date().toISOString().slice(0, 10);
+  // 전시(며칠씩 열려 있는 것)는 '그 시간에 가는 행사'가 아니다 — 읽는 코드마다 빼던 것을 여기서 한 번 더 (Duke "Cosmic Origins Exhibition Run" 18개, 2026-11-05 점검). 운동 경기의 exhibition game 은 남긴다
+  const isExhibit = (t: string) => /\bexhibit(ion)?s?\b/i.test(t) && !/\b(game|match|vs\.?|versus|tournament|scrimmage|bout|meet|showcase)\b/i.test(t);
+  // 이모지는 데이터에도 남기지 않는다 — 제목·주최만이 아니라 설명·장소까지 (서버 응답과 같은 규칙, server/noemoji.ts)
+  const events = [...new Map(got.filter((o) => (!o.date || o.date >= today) && !isExhibit(o.title)).map((o) => [o.id, o])).values()]
+    .map(({ cover: _c, qna: _q, reviews: _r, ...o }) => noEmojiView({ ...o, title: stripEmoji(o.title), host: stripEmoji(o.host) }))
+    .sort((a, b) => `${a.date ?? ''} ${a.startTime ?? ''}`.localeCompare(`${b.date ?? ''} ${b.startTime ?? ''}`));
+  mkdirSync(COLLECTED_DIR, { recursive: true });
+  if (events.length) writeFileSync(path.join(COLLECTED_DIR, `${row.id}.events.json`), `${JSON.stringify({ collectedAt: startedAt, sources, events }, null, 1)}\n`);
+  return record({ task, schoolId: row.id, status: events.length ? 'applied' : errors.length ? 'error' : 'rejected', startedAt, summary: { events: events.length, sources, errors: errors.slice(0, 3), sample: events.slice(0, 4).map((e) => `${e.date ?? ''} ${e.title}`) } });
+}
+
+/** import-collected:<id> — 학교를 열 때 파일로 모아 둔 동아리를 DB 에 한 번에 */
+async function importCollected(id: string): Promise<AgentRun> {
+  // 학교를 열 때 한 번에: 파일로 모아 둔 동아리 + 수업 + 다가오는 행사를 DB 에 (2026-11-03 사장님: 파일로 두고 한 번에 올릴 수 있게)
+  // AGENT_DRY=1 이면 쓰지 않고 몇 개가 들어갈지만 센다
+  const startedAt = new Date().toISOString(); const f = (kind: string) => path.join(COLLECTED_DIR, `${id}.${kind}.json`);
+  if (!existsSync(f('orgs'))) return record({ task: `import-collected:${id}`, schoolId: id, status: 'skipped', startedAt, summary: { error: `no ${f('orgs')}` } });
+  const organizations = (JSON.parse(readFileSync(f('orgs'), 'utf8')) as Organization[]).filter((o) => !isPlaceholderOrg(o.name)); // 시험용 가짜 단체는 DB 로 안 보낸다(파일엔 남김)
+  const courses = existsSync(f('courses')) ? (JSON.parse(readFileSync(f('courses'), 'utf8')) as CatalogCourse[]) : [];
+  const today = new Date().toISOString().slice(0, 10);
+  const opportunities = existsSync(f('events'))
+    ? ((JSON.parse(readFileSync(f('events'), 'utf8')) as { events?: Opportunity[] }).events ?? []).filter((e) => !e.date || e.date >= today).map((e) => ({ ...e, cover: { emoji: '', hue: 200 }, qna: [], reviews: [] }) as Opportunity)
+    : [];
+  if (!DRY) {
+    await store.applyPatch({ organizations });
+    if (courses.length) await store.replaceCatalog(id, courses);
+    if (opportunities.length) await store.applyPatch({ opportunities });
+  }
+  return record({ task: `import-collected:${id}`, schoolId: id, status: 'applied', startedAt, summary: { organizations: organizations.length, courses: courses.length, events: opportunities.length, dry: DRY } });
+}
+
 // ─── 학교 단위 작업 (워커) ─────────────────────────────────────────────────
-interface SchoolRow { id: string; name: string; short: string; email_domain: string; region: string; lat: string; lng: string; orgs_host?: string; courses_source?: string; catalog_url?: string; research_source?: string; events_source?: string; academic_calendar?: string; tz?: string }
+interface SchoolRow { id: string; name: string; short: string; email_domain: string; region: string; lat: string; lng: string; orgs_host?: string; courses_source?: string; catalog_url?: string; research_source?: string; events_source?: string; academic_calendar?: string; tz?: string; railway?: string }
 const SCHOOLS_CSV = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', 'schools.csv');
 const loadSchools = () => parseCSV(readFileSync(SCHOOLS_CSV, 'utf8')) as unknown as SchoolRow[];
+/**
+ * 데이터만 모으는 학교 (2026-11-02 사장님: 다른 학교도 밤새 채우기, 가입 화면엔 아직 안 연다).
+ * 동아리·행사·수업은 똑같이 모으지만 앱 학교 목록에는 올리지 않는다 — 열 때는 줄을 schools.csv 로 옮기면 데이터가 이미 차 있다.
+ * 다른 학교 학생에게는 server/view.ts 의 학교 거르기 때문에 내려가지 않는다
+ */
+const COLLECT_CSV = path.join(path.dirname(SCHOOLS_CSV), 'schools-collect.csv');
+const loadCollect = () => (existsSync(COLLECT_CSV) ? parseCSV(readFileSync(COLLECT_CSV, 'utf8')) as unknown as SchoolRow[] : []).filter((r) => !loadSchools().some((x) => x.id === r.id));
+const findRow = (id: string) => loadSchools().find((r) => r.id === id) ?? loadCollect().find((r) => r.id === id);
 const hoursSince = (iso?: string) => iso ? (Date.now() - new Date(iso).getTime()) / 3_600_000 : Infinity;
 /** AGENT_FORCE="courses:harvard,courses:s_ucmerced" — 이 프로세스가 뜬 뒤 한 번은 최근 성공 여부와 상관없이 다시 돌린다 (어댑터를 고친 직후용) */
 const forced = new Set((process.env.AGENT_FORCE ?? '').split(',').map((x) => x.trim()).filter(Boolean));
@@ -179,12 +388,19 @@ async function runAcademic(row: SchoolRow): Promise<AgentRun> {
   } catch (e) { return record({ task, schoolId: row.id, status: 'error', startedAt, summary: { error: (e as Error).message } }); }
 }
 
-async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
+async function runSchool(row: SchoolRow, listed = true): Promise<AgentRun[]> {
   const out: AgentRun[] = [];
   const latest = await latestRuns();
+  // 0. 아직 안 연 학교: Railway 는 railway 칸에 적힌 일만 (PM 에이전트가 못 닿는 원본) — 나머지는 에이전트가 파일로 모은다
+  if (!listed) {
+    const jobs = (row.railway ?? '').split('|').map((x) => x.trim()).filter(Boolean);
+    const lastProbe = latest.get(`probe:${row.id}`);
+    if (jobs.includes('probe') && (row.courses_source || row.catalog_url) && due(`probe:${row.id}`, lastProbe?.finishedAt, lastProbe?.status === 'applied' ? 24 * 7 : 24)) out.push(await runCourseProbe(row));
+    return out;
+  }
   // 1. 앱에 학교 등록
   const school: School = { id: row.id, name: row.name, emailDomain: row.email_domain, region: row.region, center: { lat: Number(row.lat), lng: Number(row.lng) }, ...(row.tz ? { tz: row.tz } : {}) };
-  if (!DRY) await store.applyPatch({ schools: [school] });
+  if (listed && !DRY) await store.applyPatch({ schools: [school] });
   // 2. 동아리 디렉터리: 탐지 결과는 detect:<id> 실행 기록에 남겨 재사용한다 (30일마다 다시 탐지)
   let host = latest.get(`detect:${row.id}`)?.summary.host as string | undefined;
   let platform = latest.get(`detect:${row.id}`)?.summary.platform as string | undefined;
@@ -198,8 +414,37 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
     out.push(await record({ task: `detect:${row.id}`, schoolId: row.id, status: d ? 'applied' : 'rejected', startedAt, summary: d ? { ...d } : { error: 'no public club directory found (CampusLabs Engage / CampusGroups)', tried: row.orgs_host || 'guessed hosts' } }));
   }
   if (host && platform && due(`orgs:${row.id}`, latest.get(`orgs:${row.id}`)?.finishedAt, 24 * 7)) {
-    const env: Record<string, string> = platform === 'engage' ? { ENGAGE_HOSTS: `${row.id}=${host}` } : platform === 'presence' ? { PRESENCE_HOSTS: `${row.id}=${new URL(host).hostname.split('.')[0]}` } : { CAMPUSGROUPS_HOSTS: `${row.id}=${host}` };
+    const env = orgsEnv(row.id, platform, host);
     out.push(await runScript(`orgs:${row.id}`, 'fetch:orgs', row.id, env));
+  }
+  // 2a. 학생회 — 디렉터리에 없는 학교는 손으로 확인한 공식 학생회(server/data/student-governments.csv)를 7일마다 넣는다 (멤버·팔로워는 그대로)
+  const govFile = path.join(path.dirname(SCHOOLS_CSV), 'student-governments.csv');
+  const govRows = existsSync(govFile) ? (parseCSV(readFileSync(govFile, 'utf8')) as unknown as StudentGovRow[]).filter((r) => r.school_id === row.id) : [];
+  if (govRows.length && due(`studentgov:${row.id}`, latest.get(`studentgov:${row.id}`)?.finishedAt, 24 * 7)) {
+    const startedAt = new Date().toISOString();
+    const snapOrgs = new Map(((await store.loadSnapshot())?.organizations ?? []).map((o) => [o.id, o]));
+    // 디렉터리가 같은 학생회를 이미 넣었으면(USF “ASUSF Senate”) 두 번 넣지 않는다 — 이름(괄호 약칭 빼고)으로 비교
+    const norm = (n: string) => n.toLowerCase().replace(/\([^)]*\)/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+    const dirNames = new Set([...snapOrgs.values()].filter((o) => o.schoolId === row.id && !o.id.includes('_sg_')).map((o) => norm(o.name)));
+    const organizations = govRows.map(studentGovToOrg).filter((o) => !dirNames.has(norm(o.name))).map((o) => { const prev = snapOrgs.get(o.id); return prev ? { ...prev, name: o.name, description: o.description, links: o.links, type: o.type, verified: true } : o; });
+    if (!DRY) await store.applyPatch({ organizations });
+    out.push(await record({ task: `studentgov:${row.id}`, schoolId: row.id, status: 'applied', startedAt, summary: { names: organizations.map((o) => o.name) } }));
+  }
+  // 2c. 손으로 확인한 공개 링크 (server/data/org-links-<short>.csv) — 학교 로그인 디렉터리(CalLink) 대신 공식·공개 링크를 붙인다. 7일마다, 바뀐 단체만 (2026-11-02)
+  const linkCsv = path.join(DATA_DIR, `org-links-${row.short}.csv`);
+  // 파일 줄 수가 지난번과 다르면(새로 확인한 링크가 생기면) 7일을 기다리지 않고 바로
+  const linkRows = existsSync(linkCsv) ? parseCSV(readFileSync(linkCsv, 'utf8')) as unknown as { org_id: string; label: string; url: string }[] : [];
+  const lastLinks = latest.get(`links:${row.id}`);
+  if (linkRows.length && (due(`links:${row.id}`, lastLinks?.finishedAt, 24 * 7) || lastLinks?.summary.rows !== linkRows.length)) {
+    const startedAt = new Date().toISOString();
+    const extra = linkRows;
+    const orgs = ((await store.loadSnapshot())?.organizations ?? []).filter((o) => o.schoolId === row.id);
+    const organizations = orgs.flatMap((o) => {
+      const add = extra.filter((x) => x.org_id === o.id && x.url && !o.links?.some((l) => l.url === x.url || (l.label === x.label && x.label !== 'Website'))).map((x) => ({ label: x.label, url: x.url }));
+      return add.length ? [{ ...o, links: [...(o.links ?? []), ...add] }] : [];
+    });
+    if (organizations.length && !DRY) await store.applyPatch({ organizations });
+    out.push(await record({ task: `links:${row.id}`, schoolId: row.id, status: 'applied', startedAt, summary: { rows: extra.length, orgsUpdated: organizations.length, unknownIds: extra.filter((x) => !orgs.some((o) => o.id === x.org_id)).length, dry: DRY } }));
   }
   // 2b. 기회: 연구(URAP 등, 7일마다) · 행사(Presence, 6시간마다) — 공고(opportunities)로 upsert, 지난 행사는 지운다
   // 학생 단체 행사 (Presence / Engage) — 6시간마다
@@ -221,8 +466,11 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
   // 학사 일정 (수강신청 단계·마감·휴일·기말) — 하루마다, 실패하면 2시간 뒤
   const lastAcademic = latest.get(`academic:${row.id}`);
   if (icsUrlOf(row.academic_calendar) && due(`academic:${row.id}`, lastAcademic?.finishedAt, lastAcademic?.status === 'applied' ? 24 : 2)) out.push(await runAcademic(row));
-  // 3. 수업
-  if (row.courses_source && resolveCourseSource(row.id, row.courses_source)) {
+  // 3. 수업 — 데이터만 모으는 학교는 저장하지 않고 표본만 읽어 "이렇게 가져오면 맞다"를 확인한다 (2026-11-02 사장님: 시간표 전체 적재는 비용 — 방법만 검증)
+  if (!listed) {
+    const lastProbe = latest.get(`probe:${row.id}`);
+    if ((row.courses_source || row.catalog_url) && due(`probe:${row.id}`, lastProbe?.finishedAt, lastProbe?.status === 'applied' ? 24 * 7 : 24)) out.push(await runCourseProbe(row));
+  } else if (row.courses_source && resolveCourseSource(row.id, row.courses_source)) {
     const lastCourses = latest.get(`courses:${row.courses_source.includes(':') ? row.id : row.courses_source}`);
     // 성공하면 하루마다, 실패·거부면 2시간 뒤 다시 (어댑터를 고치면 곧 반영되도록)
     const coursesTask = `courses:${row.courses_source.includes(':') ? row.id : row.courses_source}`;
@@ -246,6 +494,37 @@ async function runSchool(row: SchoolRow): Promise<AgentRun[]> {
   return out;
 }
 
+/**
+ * 수업 시험 읽기 — 표본 몇 학과만 가져와 규칙 검사 · 원본 재확인(어댑터가 있으면)까지 하고 DB 에는 넣지 않는다.
+ * 기록(agent_runs probe:<id>)에 원본·학기·표본 줄을 남겨, 나중에 학교를 열 때 schools.csv 로 옮기기만 하면 같은 방법으로 전부 가져온다
+ */
+/** 표본 확인에서 이미 전부 받은 수업 — 파일로 저장할 때 다시 받지 않는다 (Stanford 는 표본이 3과목뿐이라 제외) */
+const probeFull = new Map<string, CatalogCourse[]>();
+async function runCourseProbe(row: SchoolRow): Promise<AgentRun> {
+  const startedAt = new Date().toISOString(); const task = `probe:${row.id}`;
+  try {
+    let courses: CatalogCourse[] = []; let source = ''; let spot: Awaited<ReturnType<typeof spotCheck>> | undefined;
+    const src = row.courses_source ? resolveCourseSource(row.id, row.courses_source) : undefined;
+    if (src) {
+      source = `timetable:${row.courses_source}`;
+      const prev = process.env.STANFORD_SUBJECTS;
+      if (row.courses_source === 'stanford') process.env.STANFORD_SUBJECTS = 'CS,MATH,ECON';
+      try { courses = applyRules(row.id, await src.fetch()).kept; if (row.courses_source !== 'stanford') probeFull.set(row.id, courses); } finally { if (row.courses_source === 'stanford') { if (prev === undefined) delete process.env.STANFORD_SUBJECTS; else process.env.STANFORD_SUBJECTS = prev; } }
+      spot = await spotCheck(courses, src.lookup, 6);
+    } else if (row.catalog_url) {
+      source = `catalog:${row.catalog_url}`;
+      courses = (await fetchCourseLeaf(row.id, row.catalog_url, 6)).courses;
+    }
+    const terms = [...new Set(courses.map((c) => c.term).filter(Boolean))];
+    const withTimes = courses.filter((c) => c.meetings?.length).length;
+    const sample = courses.filter((_, i) => i % Math.max(1, Math.floor(courses.length / 6)) === 0).slice(0, 6).map((c) => `${c.code} · ${c.title}${c.term ? ` · ${c.term}` : ''}${c.meetings?.length ? ` · ${c.meetings.map((m) => `${'MTWRFSU'[m.day]} ${m.start}-${m.end}`).join(' ')}` : ''}`);
+    const ok = courses.length > 0 && (!spot || spot.ok);
+    return record({ task, schoolId: row.id, status: ok ? 'applied' : 'rejected', startedAt, summary: { stored: false, source, sampled: courses.length, withTimes, terms, sample, spotCheck: spot ? { matched: spot.matched, mismatched: spot.mismatched.slice(0, 5), unavailable: spot.unavailable } : 'no lookup (catalog codes/titles only)' } });
+  } catch (e) {
+    return record({ task, schoolId: row.id, status: 'error', startedAt, summary: { stored: false, error: (e as Error).message } });
+  }
+}
+
 async function notify(results: AgentRun[]) {
   const bad = results.filter((r) => r.status === 'rejected' || r.status === 'error' || r.task.startsWith('adapter:'));
   const line = (r: AgentRun) => `${r.status.toUpperCase().padEnd(8)} ${r.task.padEnd(22)} ${JSON.stringify(r.summary).slice(0, 400)}`;
@@ -261,12 +540,17 @@ async function notify(results: AgentRun[]) {
 
 async function runTask(t: string): Promise<AgentRun[]> {
   const [kind, arg] = t.split(':');
-  if (kind === 'courses') { const row = loadSchools().find((r) => r.id === arg); return [row?.courses_source ? await runCourses(row.courses_source, row.id) : await runCourses(arg)]; }
+  if (kind === 'courses') { const row = findRow(arg); return [row?.courses_source ? await runCourses(row.courses_source, row.id) : await runCourses(arg)]; }
   if (kind === 'orgs') return [await runScript(t, 'fetch:orgs', arg)];
   if (kind === 'greeks') return [await runScript(t, 'fetch:greeks', arg)];
-  if (kind === 'academic') { const row = loadSchools().find((r) => r.id === arg); return [row ? await runAcademic(row) : await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
+  if (kind === 'academic') { const row = findRow(arg); return [row ? await runAcademic(row) : await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
   if (kind === 'seats') { const startedAt = new Date().toISOString(); const s = await pollSeats(store, { dry: DRY, force: true }); return [await record({ task: 'seats', status: s.errors && !s.fetched ? 'error' : 'applied', startedAt, summary: { ...s } })]; }
-  if (kind === 'school') { const row = loadSchools().find((s) => s.id === arg); return row ? runSchool(row) : [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
+  if (kind === 'collect') { const row = findRow(arg); return row ? runCollect(row) : [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv / schools-collect.csv' } })]; }
+  if (kind === 'import-collected') return [await importCollected(arg)];
+  if (kind === 'collect-courses') { const row = findRow(arg); return row ? collectCourses(row) : [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
+  if (kind === 'collect-events') { const row = findRow(arg); return [row ? await collectEvents(row) : await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
+  if (kind === 'probe') { const row = findRow(arg); return [row ? await runCourseProbe(row) : await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv / schools-collect.csv' } })]; }
+  if (kind === 'school') { const row = findRow(arg); return row ? runSchool(row, loadSchools().some((x) => x.id === arg)) : [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'not in schools.csv' } })]; }
   return [await record({ task: t, status: 'skipped', startedAt: new Date().toISOString(), summary: { error: 'unknown task' } })];
 }
 
@@ -328,12 +612,24 @@ if (process.env.AGENT_MODE === 'worker') {
         } catch (e) { await notify([await record({ task: 'labs:s_berkeley', schoolId: 's_berkeley', status: 'error', startedAt, summary: { error: (e as Error).message } })]); }
         did += 1;
       }
+      // Berkeley Student Cooperative 하우스 — 공식 사이트에서 확인한 목록(server/data/coops-berkeley.csv)을 Co-op 조직으로. 일주일에 한 번
+      if (due('coops:s_berkeley', latest.get('coops:s_berkeley')?.finishedAt, 24 * 7)) {
+        const startedAt = new Date().toISOString();
+        try {
+          const file = path.join(path.dirname(SCHOOLS_CSV), 'coops-berkeley.csv');
+          const fresh = existsSync(file) ? coopsFromCsv(readFileSync(file, 'utf8')) : [];
+          const { organizations, removed } = mergeResearchUnits(fresh, (await store.loadSnapshot())?.organizations ?? [], COOP_PREFIX);
+          if (!DRY && (organizations.length || removed.length)) await store.applyPatch({ organizations, removed: { organizations: removed } });
+          await notify([await record({ task: 'coops:s_berkeley', schoolId: 's_berkeley', status: 'applied', startedAt, summary: { fetched: fresh.length, changed: organizations.length, removed: removed.length } })]);
+        } catch (e) { await notify([await record({ task: 'coops:s_berkeley', schoolId: 's_berkeley', status: 'error', startedAt, summary: { error: (e as Error).message } })]); }
+        did += 1;
+      }
       // 연방정부 학생 채용(USAJOBS Pathways) — 키가 이 서비스에 있을 때만, 12시간마다 (server/sources/usajobs.ts)
       if (process.env.USAJOBS_API_KEY && due('external:usajobs', latest.get('external:usajobs')?.finishedAt, 12)) { const r = [await runOpportunities('external:usajobs', '', () => fetchUsaJobs(), 'op_usajobs_')]; did += 1; await notify(r); }
       if (due('external:internships', latest.get('external:internships')?.finishedAt, 12)) { const r = [await runOpportunities('external:internships', '', fetchInternships, 'op_ext_job_')]; did += 1; await notify(r); }
     }
-    for (const row of loadSchools()) {
-      const results = await runSchool(row);
+    for (const [row, listed] of [...loadSchools().map((r) => [r, true] as const), ...loadCollect().map((r) => [r, false] as const)]) {
+      const results = await runSchool(row, listed);
       if (results.length) { did += results.length; await notify(results); }
       if (process.env.AGENT_ONCE === '1') continue;
     }

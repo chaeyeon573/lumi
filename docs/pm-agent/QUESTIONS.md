@@ -4,6 +4,15 @@
 
 사장님께 결정을 받아야 하는 것. 최신이 위. 답은 각 항목 아래에 `**답:** …` 으로 적어 주시면 다음 실행이 따른다.
 
+## 2026-11-02 · Explore 의 Co-ops 칸
+**무엇:** 시안에 Events·Clubs·Greek·Co-ops 가 있는데, 지금 동아리 명단에 Co-op(학생 협동조합 하우스, 예: Berkeley Student Cooperative) 분류가 없다. **제안:** A) BSC 공식 하우스 목록을 확인해 Co-op 조직으로 넣고 칸 만들기 B) 칸 없이 두기.
+
+## 2026-11-02 · 홈·탐색 개편 뒤 남은 것 3가지
+**무엇:** 사장님 시안대로 Home·People·Meet·Explore·Profile 로 바꿔 배포했다(6d9c8fb).
+1) **Feed(학생 글)** 가 하단 탭에서 빠졌다(시안에 없음). 지금은 /community 주소로만 들어간다. → A) Meet 안 탭으로 B) Explore 에 한 줄 C) 그대로. **→ 답 (2026-11-02): Social 탭 안 Feed 칸 (/feed).**
+2) **기본 디자인** — 시안은 밝은 파스텔, 지금 기본은 어두운 New(10/30 결정). 밝은 Classic 도 시안에 맞게 해 두었다. → A) 기본을 밝게 B) 그대로.
+3) **이름** — 헤더·시작 화면은 AroundU. 개인정보처리방침·이용약관·공유 링크 화면엔 아직 “Lumi”. 법 문서라 확인 필요. → A) 전부 AroundU B) 그대로.
+
 ## 2026-11-02 · 문과·사회과학 인턴이 아직 적다 — 공식 출처를 더 열려면
 **지금:** 회사 채용 페이지(Greenhouse·Lever 등)는 대부분 기술 회사라, 분야를 나눠도 언론 16·정책 4·비영리 1 정도다.
 **제안:** A) **USAJobs**(연방정부 인턴·Pathways, 공식 API) — 무료 API 키가 필요하다(developer.usajobs.gov 에서 사장님 이메일로 신청 → Railway 에 `USAJOBS_API_KEY`). 정책·법·보건 인턴이 많이 생긴다. B) 버클리 공식 프로그램을 손으로 확인해 넣기 — UCDC(워싱턴 학기 인턴), UC Center Sacramento, Public Service Center 등 마감이 공개된 것만. C) 둘 다(추천).
@@ -109,3 +118,20 @@
 **답(10/16):** “지금 같이 할 것”을 주인공으로 하면 처음 보는 사람에게 “같이 하자”고 먼저 말하는 게 부담될 수 있다 — 그걸 풀어야 한다.
 **추가(10/16, 아직 안 정해진 부분):** 프로필 편집에 **키(Height, cm)** 칸과 ‘Here for’의 **Dating** 이 그대로 있다 — 둘 다 데이팅 앱 쪽 신호. 1+3 은 반영했고, 이 둘을 뺄지(또는 숨길지)만 정해 주시면 된다. 추천: 둘 다 빼기(기존 값은 남겨 두고 화면·카드에서만 안 보이게).
 **답(10/30, 키·Dating):** 키만 빼기. → 프로필 편집·가입·공개 범위·다른 사람 프로필에서 키 칸 숨김(값은 남김). Dating 은 그대로.
+
+### (11/03) Emoji in the live Berkeley feed and profiles
+The live feed shows example posts with emoji ("coffee meetup tonight ☕", "New member sets 🎸", "day made 😻"), and example profiles use emoji avatars. They come from our demo content (packages/core/src/data/seed.en.ts, 74 lines) and are already in the live DB. Clubs are already cleaned on display.
+**Options:** A) Hide emoji when showing posts, comments and profile text, the same way clubs are handled now (real users' emoji would be hidden too). B) Clean only our demo text and avatars; real users can still write emoji (needs a live DB update, so your OK). C) Leave as is.
+**Recommended:** B. Stripping what real users write feels like censoring them.
+**Answer (11/03, chat):** "이모지는 그냥 없애셈" → done: server strips emoji from everything it sends (server/noemoji.ts), shared Avatar/Cover/EmptyState draw none; remaining hard-coded UI emoji handed to Codex (docs/HANDOFF.md).
+
+### (11/03) Put grad / new-grad jobs into the live app?
+The live app already shows internships from 98 company job boards (refreshed every 12 hours on Railway, internships only). The new US jobs file has 146 boards (88 not in the live list) and adds new-grad / entry-level, PhD, master's and postdoc roles (967 postings now). It is a file only and visible at /preview/jobs.
+**Options:** A) Add the 88 boards and the new-grad/PhD/master's roles to the live feed (about 90 more API calls every 12 hours on Railway; small cost increase). B) Keep it as a file and refresh it from the agent; put it live later together with schools. C) Live feed for internships stays as is; only new-grad jobs go live.
+**Recommended:** A. The calls are light JSON and this is the content grad students and graduating seniors asked for.
+**Answer (11/03, chat):** "돈이 안드는 방식으로 하면 올려도 돼" → /api/jobs reads the jobs file shipped with the deploy (no DB, no Railway fetching); agent refreshes it daily. App screen: Codex.
+
+## 2026-11-04 — 이 컨테이너에서 막힌 학교들의 수업 시간을 Railway 에서 한 번 받을까요?
+**상황:** Stanford, Northwestern, Notre Dame, UVA, Minnesota, SJSU, UC Santa Cruz 등의 공개 수업 검색은 이 작업 컨테이너에서 TLS 인증서 오류로 열리지 않습니다(학교 쪽은 공개, 막힌 건 이쪽 네트워크). 우회는 하지 않았습니다.
+**제안:** A) Railway 서버에서 학교마다 일주일에 한 번만 수업 표본·전체를 받아 파일로 남기기 — 상시 프로세스는 늘지 않고, 학교당 주 1회 수백 번 요청(작은 비용). B) 지금처럼 두고 다른 학교부터 채우기.
+**답:**

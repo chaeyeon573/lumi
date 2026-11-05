@@ -5,6 +5,7 @@
  */
 import type { Opportunity } from '@core/types';
 import { fieldOf, type Field } from '@core/lib/listings';
+import { workAuthOf } from './workauth';
 
 const API = 'https://data.usajobs.gov/api/Search';
 
@@ -46,6 +47,9 @@ export function usaJobToOpportunity(item: UsaJobItem, now = new Date()): Opportu
   const inner = /\(([^)]+)\)/.exec(d.PositionTitle)?.[1] ?? '';
   const titleField = fieldOf(d.PositionTitle) !== 'Other' ? fieldOf(d.PositionTitle) : fieldOf(inner);
   const host = d.OrganizationName || d.DepartmentName || 'U.S. federal government';
+  // 연방 공고는 자격 요건에 시민권을 적는다(“U.S. Citizenship”). 본문 전체(UserArea 포함)에서 읽는다
+  const all = JSON.stringify(d);
+  const workAuth = workAuthOf(all) ?? (/\bU\.?\s?S\.?\s+citizen(ship|s)?\b/i.test(all) ? 'citizens' : undefined);
   const iso = now.toISOString();
   return {
     id: `op_usajobs_${id}`.slice(0, 120), type: 'internship', title: d.PositionTitle.trim(), host,
@@ -54,6 +58,7 @@ export function usaJobToOpportunity(item: UsaJobItem, now = new Date()): Opportu
     location: loc, remote: /remote/i.test(loc), field: titleField !== 'Other' ? titleField : deptField(d.DepartmentName, d.OrganizationName),
     postedAt: d.PublicationStartDate ? new Date(Date.parse(d.PublicationStartDate)).toISOString() : undefined,
     eligibility: 'U.S. federal student hiring path (Pathways) — usually U.S. citizens enrolled in school; see the posting',
+    ...(workAuth ? { workAuth } : {}),
     ...(payText ? { benefit: `Paid · ${payText}` } : {}),
     sourceUrl: d.PositionURI, sourceLabel: 'USAJOBS (U.S. federal government)',
     tags: ['internship', 'federal government', 'Pathways', ...(/remote/i.test(loc) ? ['remote'] : [])], interests: ['networking'], goals: ['internship'],

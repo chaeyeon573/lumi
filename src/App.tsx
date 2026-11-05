@@ -6,7 +6,13 @@ import { ErrorState } from '@/components/ui';
 import { WelcomePage } from '@/pages/onboarding/WelcomePage';
 import { OnboardingPage } from '@/pages/onboarding/OnboardingPage';
 import { StartPage } from '@/pages/onboarding/StartPage';
+import { PreviewListPage, PreviewSchoolPage, PreviewJobsPage } from '@/pages/preview/PreviewPage';
 import { HomePage } from '@/pages/home/HomePage';
+import { HomeDashboard } from '@/pages/home/HomeDashboard';
+import { SocialForYouPage, SocialPeoplePage, SocialFeedPage } from '@/pages/social/SocialPage';
+import { MeetPage } from '@/pages/meet/MeetPage';
+import { MyOrgsPage } from '@/pages/org/MyOrgsPage';
+import { ExplorePage, ExploreSectionPage } from '@/pages/explore/ExplorePage';
 import { MapPage } from '@/pages/map/MapPage';
 import { CommunityPage } from '@/pages/community/CommunityPage';
 import { ProfilePage } from '@/pages/profile/ProfilePage';
@@ -113,8 +119,17 @@ export default function App() {
       <Route path="/c/:school/:code/qr" element={<ClassQrPage />} />
       <Route element={<RequireAuth />}>
         <Route element={<AppShell />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/discover" element={<DiscoverPage />} />
+          <Route path="/" element={<HomeDashboard />} />
+          <Route path="/people" element={<SocialPeoplePage />} />
+          <Route path="/people/explore" element={<HomePage />} />
+          <Route path="/meet" element={<SocialForYouPage />} />
+          <Route path="/meet/meetups" element={<MeetPage />} />
+          <Route path="/feed" element={<SocialFeedPage />} />
+          <Route path="/meet/more" element={<DiscoverPage />} />
+          <Route path="/schedule" element={<PlansPage />} />
+          <Route path="/discover" element={<Navigate to="/meet" replace />} />
+          <Route path="/explore" element={<ExplorePage />} />
+          <Route path="/explore/:section" element={<ExploreSectionPage />} />
           <Route path="/opportunities" element={<Navigate to="/community?tab=opportunities" replace />} />
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/profile" element={<ProfilePage />} />
@@ -133,7 +148,7 @@ export default function App() {
           <Route path="/rides" element={<RidesPage />} />
           <Route path="/rides/new" element={<PostRidePage />} />
           <Route path="/rides/:id" element={<RideDetailPage />} />
-          <Route path="/ask" element={<Navigate to="/discover" replace />} />
+          <Route path="/ask" element={<Navigate to="/meet" replace />} />
           <Route path="/dining" element={<DiningPage />} />
           <Route path="/gym" element={<GymPage />} />
           <Route path="/map" element={<MapPage />} />
@@ -143,6 +158,7 @@ export default function App() {
           <Route path="/create/activity" element={<CreateActivityPage />} />
           <Route path="/create/post" element={<CreatePostPage />} />
           <Route path="/users/:id" element={<PersonPage />} />
+          <Route path="/orgs/mine" element={<MyOrgsPage />} />
           <Route path="/orgs/:id" element={<OrgPage />} />
           <Route path="/chats" element={<ChatInboxPage />} />
           <Route path="/chats/:roomId" element={<ChatRoomPage />} />
@@ -162,6 +178,12 @@ export default function App() {
       {/* 링크로 묻는 약속 — 앱·계정 없이도 열린다 (로그인했으면 내 이름으로) */}
       <Route element={<AppShell withNav={false} />}>
         <Route path="/p/:id" element={<PlanPage />} />
+      </Route>
+      {/* 아직 안 연 학교 미리보기 — 주소로만 (메뉴에 없음) · server/preview.ts */}
+      <Route element={<AppShell withNav={false} />}>
+        <Route path="/preview" element={<PreviewListPage />} />
+        <Route path="/preview/jobs" element={<PreviewJobsPage />} />
+        <Route path="/preview/:id" element={<PreviewSchoolPage />} />
       </Route>
       {/* Privacy Policy · Terms of Use — public, signed in or not (App Store Connect links here; server/legal.ts) */}
       <Route element={<AppShell withNav={false} />}>

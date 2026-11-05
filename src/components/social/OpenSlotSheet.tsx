@@ -85,7 +85,7 @@ export function OpenSlotSheet({ open, onClose, day, block }: { open: boolean; on
       )}
       {cat === 'unknown' && <p className="mt-4 text-[13px] text-ink-2 rounded-xl bg-primary-soft px-3 py-2.5">{t('괜찮아요. 위 사람들에게 커피 한 잔 제안해보거나, 나중에 다시 열어보세요.')}</p>}
       <div className="flex gap-2 mt-4">
-        <Button variant="outline" icon={<Coffee size={16} />} onClick={() => { onClose(); nav('/discover'); }}>{t("Who's free?")}</Button>
+        <Button variant="outline" icon={<Coffee size={16} />} onClick={() => { onClose(); nav('/meet/more'); }}>{t("Who's free?")}</Button>
         <Button full icon={<CalendarPlus size={16} />} disabled={!cat || cat === 'unknown'} loading={busy} onClick={create}>{t('공강 열기')}</Button>
       </div>
     </BottomSheet>

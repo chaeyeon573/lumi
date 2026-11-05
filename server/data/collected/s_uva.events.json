@@ -1,0 +1,1278 @@
+{
+ "collectedAt": "2026-11-05T03:42:50.284Z",
+ "sources": [
+  "engage https://virginia.campuslabs.com/engage 43"
+ ],
+ "events": [
+  {
+   "description": "Ready to tap into your creative side? Join us for a night of painting, creativity, and relaxation at our Paint and Sip: Build Your Own Shirley Temple!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12919850",
+   "type": "event",
+   "title": "Paint & Sip Night",
+   "host": "Hoos First",
+   "schoolId": "s_uva",
+   "date": "2026-11-05T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Hoos First Student Center",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12919850",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join UPC and the United Nations Association Club for a special screening of The Interpreter (2005) on November 5th at 6 PM in 1515! We will have teams of 5 answer trivia questions about the movie and/or the UN. The winning team will win LEGO sets! Grab some Chipotle , broke",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12920642",
+   "type": "event",
+   "title": "UPC x UNA Trivia Night and a Showing of The Interpreter",
+   "host": "University Programs Council",
+   "schoolId": "s_uva",
+   "date": "2026-11-05T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "1515",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12920642",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "IEEE brings in one of their industry partners, Northrop Grumman. We are having Dr. Arik Brown, a distinguished lecturer for IEEE AESS and a true Subject Matter Expert (SME) in the field of RADAR. He will provide us a short presentation on the history of RADAR and the event will f",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12938713",
+   "type": "event",
+   "title": "Northrop Grumman Info Session",
+   "host": "IEEE at The University of Virginia General Student Branch",
+   "schoolId": "s_uva",
+   "date": "2026-11-06T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Rodman Room A238",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12938713",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Disagree with a Professor invites professors and students to engage in lighthearted discussions over free lunch. Each professor brings three statements they are willing to defend and students are invited to disagree with them. Statements range from light-hearted (&ldquo;washing o",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12936310",
+   "type": "event",
+   "title": "Disagree with a Professor",
+   "host": "Think Again",
+   "schoolId": "s_uva",
+   "date": "2026-11-06T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Newcomb Commonwealth Room",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12936310",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come enjoy good food, fellowship, & fun! OAAA programs, support services, spaces, and events are open to all students, regardless of age, color, disability, gender, gender identity or expression, marital status, military status, national or ethnic origin, race, religion, sex, sex",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12521927",
+   "type": "event",
+   "title": "OAAA Bridge Friday",
+   "host": "Office of African American Affairs",
+   "schoolId": "s_uva",
+   "date": "2026-11-06T18:30:00.000Z",
+   "startTime": "13:30",
+   "place": {
+    "name": "OAAA Front Lawn (4 Dawson's Row)",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12521927",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Virginia Belles, UVA's oldest all-female a cappella group, are hosting their annual fall concert on November 6th at 7:00! Join us at the Belle-agio (also known as Chem 402), for OCEAN'S BELLE-EVEN: a collection of beautiful songs and a heist you'll never forget. Venmo @vabell",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12919782",
+   "type": "event",
+   "title": "Virginia Belles Fall Concert",
+   "host": "Virginia Belles",
+   "schoolId": "s_uva",
+   "date": "2026-11-07T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Chemistry Building Room 402",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12919782",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The OM Meditation Club at UVA, in partnership with the University Programs Council, is hosting a Sereni-Tea Study Lounge on Saturday, November 7th, 2026, from 1:00 PM - 5:00 PM at the Contemplative Sciences Center, which provides a calm, reflective, and de-stressing space for stu",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12899634",
+   "type": "event",
+   "title": "Sereni-Tea Study Lounge",
+   "host": "The OM Meditation Club at UVA",
+   "schoolId": "s_uva",
+   "date": "2026-11-07T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Contemplative Sciences Center",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12899634",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Love the Eagles, ABBA, and Kelly Clarkson? Kick off your Saturday night with the Flying V's Spring Concert at 7:30pm in the University Chapel ! Student tickets are only $7 , and all are welcome! Venmo @flyingvsuva to reserve your ticket.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free stuff",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12931053",
+   "type": "event",
+   "title": "Flying V's Fall Concert",
+   "host": "Flying Virginians",
+   "schoolId": "s_uva",
+   "date": "2026-11-08T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "University Chapel",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free stuff",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12931053",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Kick off the week celebrating the Hoos First community by grab bing some Hoos First swag -- including the 2026 edition of the \"I AM FIRST\" t-shirts , a photobooth area and of course, cupcakes!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12873065",
+   "type": "event",
+   "title": "HFCW: Kickoff Celebration",
+   "host": "Hoos First",
+   "schoolId": "s_uva",
+   "date": "2026-11-09T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Newcomb Hall, First Floor",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12873065",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Interested in studying abroad? Learning a language crucial to US national security? Come learn about the Boren Awards, which fund the study of less commonly taught languages in world regions critical to U.S. interests, and underrepresented in study abroad, including Africa, Asia,",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12659340",
+   "type": "event",
+   "title": "Boren Awards Information Session",
+   "host": "Office of Citizen Scholar Development",
+   "schoolId": "s_uva",
+   "date": "2026-11-09T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Rotunda Multipurpose Room (121)",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12659340",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Make origami pokemon with us in the MOL!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12942667",
+   "type": "event",
+   "title": "Pokemon Origami Night!",
+   "host": "Pokemon at UVA",
+   "schoolId": "s_uva",
+   "date": "2026-11-10T00:30:00.000Z",
+   "startTime": "19:30",
+   "place": {
+    "name": "MOL (Chem 202)",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free stuff",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12942667",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Alara Bedir from Cvent is joining us to share portfolio best practices and her background in UI/UX design. Join us for our first guest speaker event of the year and learn tips and tricks to improving your portfolio!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "talk",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12951573",
+   "type": "event",
+   "title": "Portfolios with Cvent: Cvent Portfolio Guest Lecture",
+   "host": "UI/UX Design at UVA",
+   "schoolId": "s_uva",
+   "date": "2026-11-10T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Rice 540",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12951573",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Have you applied to be an Resident Advisor in 2027-2028, but never been through an interview process before? Maybe you're wondering how to best present yourself as a candidate? Come learn tips and tricks for the interview process!⁠ For the complete list of info sessions, workshop",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12598579",
+   "type": "event",
+   "title": "Resident Advisor Selections: Acing the Individual Interview",
+   "host": "Housing & Residence Life",
+   "schoolId": "s_uva",
+   "date": "2026-11-10T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Newcomb Hall Theatre",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12598579",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "As the saying goes, &ldquo;Bloom where you are planted.&rdquo; Visit the Hoos First Student Center&mdash;a space thoughtfully created to foster community among first-generation and limited-income students, faculty, and staff&mdash;to enjoy a cup of warm cider while c raft ing you",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12873121",
+   "type": "event",
+   "title": "HFCW: Give Yourself Flowers",
+   "host": "Hoos First",
+   "schoolId": "s_uva",
+   "date": "2026-11-11T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Hoos First Student Center",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free stuff",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12873121",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "As part of Global Week, ASU is hosting an event on our mission statement: Uniting, empowering, and mobilizing Asian Pacific Islander South Asian Americans for collective liberation. This event will focus on the meaning of collective liberation; why it is important and still neces",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12942990",
+   "type": "event",
+   "title": "Collective Liberation",
+   "host": "Asian Student Union at UVA",
+   "schoolId": "s_uva",
+   "date": "2026-11-11T23:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "LGBTQ Center",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12942990",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "An upbeat, heart-centered class with an energizing flow that builds a feeling of vitality and community. Come to studio 3C to create space for authentic connection with yourself and others.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12907411",
+   "type": "event",
+   "title": "Yoga for Connection",
+   "host": "Contemplative Sciences Center",
+   "schoolId": "s_uva",
+   "date": "2026-11-12T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Contemplative Commons",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12907411",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join Hoos First for our annual night of B INGO - multiple rounds with multipl e wi nners ! Don&rsquo;t miss out on this opportunity to connect with other Hoos First students while competing to win some amazing prizes !",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12874588",
+   "type": "event",
+   "title": "HFCW: Bingo",
+   "host": "Hoos First",
+   "schoolId": "s_uva",
+   "date": "2026-11-12T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "1515",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free stuff",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12874588",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Calling all students, faculty, and staff: w ear your \"I AM FIRST\" or &ldquo;I WAS FIRST&rdquo; t-shirts with pride today! Gather at the Rotunda steps for a university-wide photo. A limited number of shirts will be available prior to the photo.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12874788",
+   "type": "event",
+   "title": "HFCW: Community Picture",
+   "host": "Hoos First",
+   "schoolId": "s_uva",
+   "date": "2026-11-13T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "The Rotunda Steps",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12874788",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join Hoos First over at OAAA for Bridge Friday &ndash; a cherished weekly tradition where students gather for food, fellowship, and fun while building community and unwinding after a busy week. Lunch will be provided.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12874796",
+   "type": "event",
+   "title": "HFCW: Bridge Friday w/OAAA",
+   "host": "Hoos First",
+   "schoolId": "s_uva",
+   "date": "2026-11-13T18:30:00.000Z",
+   "startTime": "13:30",
+   "place": {
+    "name": "Dawson's Row",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12874796",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Drawing on her two recent books, Peculiar Satisfaction: Thomas Jefferson and the Mastery of Subjects (Fordham University Press, 2025) and Surveillance in an Empire of Liberty: Why Thomas Jefferson Matters in Our Information Age (Bloomsbury, 2026), Adler examines Thomas Jefferson&",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12861872",
+   "type": "event",
+   "title": "Why Jefferson Matters in Our Information Age",
+   "host": "Digital Technology for Democracy Lab",
+   "schoolId": "s_uva",
+   "date": "2026-11-13T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Shannon Library",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12861872",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us for a slumber-party-themed photo booth session with our digital camera. Music, games, and snacks will be provided. All are welcome!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12952728",
+   "type": "event",
+   "title": "HFCW: Night In",
+   "host": "Hoos First",
+   "schoolId": "s_uva",
+   "date": "2026-11-13T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Hoos First Student Center",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12952728",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "A capella concert by UVA's only philanthropic upper-voices group held at the University Baptist Church at 8pm. Proceeds will support the Charlottesville Free Clinic.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12952195",
+   "type": "event",
+   "title": "The AcHOOstics Concert",
+   "host": "The AcHOOstics",
+   "schoolId": "s_uva",
+   "date": "2026-11-15T01:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "University Baptist Church",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12952195",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "OAAA PA Info Session",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12937326",
+   "type": "event",
+   "title": "OAAA PA Info Session",
+   "host": "Office of African American Affairs",
+   "schoolId": "s_uva",
+   "date": "2026-11-15T21:45:00.000Z",
+   "startTime": "16:45",
+   "place": {
+    "name": "NHL SE Center",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12937326",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The University Fellowship at St. Paul's Memorial Church invites you to our second annual \"Chompline!\" The event is happening on Sunday, November 15 , with a Chili Cook-off at 5:30, followed by a beautiful service of choral Compline. There is no cost to attend the event, but we wi",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12921651",
+   "type": "event",
+   "title": "Chompline",
+   "host": "The University Fellowship at St. Paul's",
+   "schoolId": "s_uva",
+   "date": "2026-11-15T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "St. Paul's Memorial Church",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12921651",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The purpose of Projects for Peace is to spark initiatives for building prospects for peace in the world. Each year, the University of Virginia nominates one project and an alternate for the $10,000 prizes to actually complete the project. Come explore how your vision for peace co",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12659494",
+   "type": "event",
+   "title": "Projects for Peace Information Session",
+   "host": "Office of Citizen Scholar Development",
+   "schoolId": "s_uva",
+   "date": "2026-11-16T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Rotunda Multipurpose Room (121)",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12659494",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Applying to the Batten BA or the Accelerated MPP for Fall 2027? Stop by to meet with the Batten Admissions Office and our Batten Ambassadors. You can ask questions about the application and get personalized feedback on your materials. Drop-ins are welcome, but registering ahead o",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12917225",
+   "type": "event",
+   "title": "UVA Batten Application Workshop",
+   "host": "Frank Batten School of Leadership and Public Policy",
+   "schoolId": "s_uva",
+   "date": "2026-11-16T22:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Garrett Hall",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12917225",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "OAAA/GradSTAR Program Series \"Are You Research Ready?\"",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12843200",
+   "type": "event",
+   "title": "Are You Research Ready?",
+   "host": "Office of African American Affairs",
+   "schoolId": "s_uva",
+   "date": "2026-11-16T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Newcomb Hall Conference Room 177 ",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12843200",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Celebrate Thanksgiving with DEAFS!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12942931",
+   "type": "event",
+   "title": "DEAFSgiving",
+   "host": "Deafness Education & Awareness for Students",
+   "schoolId": "s_uva",
+   "date": "2026-11-16T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "New Cab Language Commons",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12942931",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come to 1515 For Tasty Tuesday. Try local vendors free for all students!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12911823",
+   "type": "event",
+   "title": "Tasty Tuesday @ 1515",
+   "host": "Student Engagement",
+   "schoolId": "s_uva",
+   "date": "2026-11-17T16:30:00.000Z",
+   "startTime": "11:30",
+   "place": {
+    "name": "1515 University Ave",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12911823",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "OAAA/GradSTAR Lunch with Dean Boone",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12843201",
+   "type": "event",
+   "title": "OAAA/GradSTAR Lunch with Dean Boone",
+   "host": "Office of African American Affairs",
+   "schoolId": "s_uva",
+   "date": "2026-11-17T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "W.E.B. DuBois Conference Room",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12843201",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "November Bingo Night &ndash; Tuesday, November 17 in Newcomb Ballroom Join us for the spookiest Bingo Night of the year in Newcomb Ballroom on Tuesday, October 27 from 7 to 9 p.m. for lots of fun, snacks, and a chance to win prizes from local Charlottesville businesses such as gi",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "free stuff",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12801196",
+   "type": "event",
+   "title": "November Bingo Night",
+   "host": "Alumni Association",
+   "schoolId": "s_uva",
+   "date": "2026-11-18T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Newcomb Ballroom",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12801196",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Register here View the Program . AI Anxiety + Human Flourishing will be held November 18-19, 2026 at the Contemplative Commons. All are welcome. The symposium convenes those interested in AI and emerging technologies, education, and the future wellbeing of young minds. At a time ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12907879",
+   "type": "event",
+   "title": "AI Anxiety + Human Flourishing Image",
+   "host": "Contemplative Sciences Center",
+   "schoolId": "s_uva",
+   "date": "2026-11-18T14:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Contemplative Commons",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12907879",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join panelists from USC and Georgia State University in a conversation hosted by Mona Sloane, Digital Technology for Democracy Lab faculty co-lead, that will address how AI prediction and its burgeoning and highly capitalized industry shifts and changes the cultures and processes",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12939986",
+   "type": "event",
+   "title": "Co-Opting AI: Film",
+   "host": "Digital Technology for Democracy Lab",
+   "schoolId": "s_uva",
+   "date": "2026-11-18T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Online",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12939986",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "OAAA Mid-Week Raising-the-Bar Sessions - Fall 2026",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12889710",
+   "type": "event",
+   "title": "OAAA Mid-Week Raising-the-Bar Sessions - Fall 2026",
+   "host": "Office of African American Affairs",
+   "schoolId": "s_uva",
+   "date": "2026-11-18T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "1515 (1st Floor Lounge/Stage)",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12889710",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "An upbeat, heart-centered class with an energizing flow that builds a feeling of vitality and community. Come to studio 3C to create space for authentic connection with yourself and others.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12907412",
+   "type": "event",
+   "title": "Yoga for Connection",
+   "host": "Contemplative Sciences Center",
+   "schoolId": "s_uva",
+   "date": "2026-11-19T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Contemplative Commons",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12907412",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Register here View the Program . AI Anxiety + Human Flourishing will be held November 18-19, 2026 at the Contemplative Commons. All are welcome. The symposium convenes those interested in AI and emerging technologies, education, and the future wellbeing of young minds. At a time ",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12907880",
+   "type": "event",
+   "title": "AI Anxiety + Human Flourishing Image",
+   "host": "Contemplative Sciences Center",
+   "schoolId": "s_uva",
+   "date": "2026-11-19T14:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Contemplative Commons",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12907880",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Futures in Fashion Association has held a semesterly thrift shop since 2013, where students can buy and sell clothing at their set price. The CIO helps collect, tag, and hang up clothes, usually within a barricade set up on South Lawn. In recent years, the CIO has expanded to inc",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "arts"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12949980",
+   "type": "event",
+   "title": "FFA's Thrift on the Lawn",
+   "host": "Futures in Fashion Association",
+   "schoolId": "s_uva",
+   "date": "2026-11-20T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Lower Lawn (Homer Flat)",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12949980",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come enjoy good food, fellowship, & fun! OAAA programs, support services, spaces, and events are open to all students, regardless of age, color, disability, gender, gender identity or expression, marital status, military status, national or ethnic origin, race, religion, sex, sex",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12521928",
+   "type": "event",
+   "title": "OAAA Bridge Friday",
+   "host": "Office of African American Affairs",
+   "schoolId": "s_uva",
+   "date": "2026-11-20T18:30:00.000Z",
+   "startTime": "13:30",
+   "place": {
+    "name": "OAAA Front Lawn (4 Dawson's Row)",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12521928",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Haven't heard of the Office of Citizen Scholar Development? Don't know what fellowships or undergraduate research are? Come listen to a brief introduction to the office followed by a time for Q&A. This session is helpful for students and alumni who have yet to interact with the O",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "talk",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12659538",
+   "type": "event",
+   "title": "Intro to the Office of Citizen Scholar Development and Q&A",
+   "host": "Office of Citizen Scholar Development",
+   "schoolId": "s_uva",
+   "date": "2026-11-23T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Online",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12659538",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Hardy Fellows Program, formerly the UK Fellows, allows graduating University of Virginia students the opportunity to teach and live abroad in a boarding school in the UK for the year following graduation. Come learn about the different schools with which we have a relationshi",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "thoughtfullearning"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12659557",
+   "type": "event",
+   "title": "Hardy Fellows Information Session",
+   "host": "Office of Citizen Scholar Development",
+   "schoolId": "s_uva",
+   "date": "2026-11-30T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Rotunda Multipurpose Room (121)",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12659557",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come to 1515 For Tasty Tuesday. Try local vendors free for all students!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food",
+    "social"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12911824",
+   "type": "event",
+   "title": "Tasty Tuesday @ 1515",
+   "host": "Student Engagement",
+   "schoolId": "s_uva",
+   "date": "2026-12-01T16:30:00.000Z",
+   "startTime": "11:30",
+   "place": {
+    "name": "1515 University Ave",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12911824",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "An upbeat, heart-centered class with an energizing flow that builds a feeling of vitality and community. Come to studio 3C to create space for authentic connection with yourself and others.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "spirituality"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:50.902Z",
+   "createdAt": "2026-11-05T03:42:50.902Z",
+   "id": "op_uva_eg_12907413",
+   "type": "event",
+   "title": "Yoga for Connection",
+   "host": "Contemplative Sciences Center",
+   "schoolId": "s_uva",
+   "date": "2026-12-03T00:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Contemplative Commons",
+    "lat": 38.0336,
+    "lng": -78.508
+   },
+   "sourceUrl": "https://virginia.campuslabs.com/engage/event/12907413",
+   "sourceLabel": "Student org events"
+  }
+ ]
+}

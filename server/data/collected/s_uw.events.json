@@ -1,0 +1,794 @@
+{
+ "collectedAt": "2026-11-05T03:42:51.894Z",
+ "sources": [
+  "campusgroups https://huskylink.washington.edu 33"
+ ],
+ "events": [
+  {
+   "description": "The Student Activities Office (SAO) offers RSO Drop-In Advising hours in HUB 111B, located within the RSO Resource Center. These drop-in hours provide RSOs with an opportunity to connect with an SAO Advisor, ask questions, and receive guidance and support on a variety of topics.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375337",
+   "type": "event",
+   "title": "RSO Drop-In Advising",
+   "host": "18633 Student Activities Office",
+   "schoolId": "s_uw",
+   "date": "2026-11-05T21:00:00.000Z",
+   "startTime": "13:00",
+   "sourceUrl": "https://huskylink.washington.edu/SAO/rsvp?id=375337",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "You&apos;re invited to a listening session on the proposed changes to the student code of conduct as they relate to RSOs. University Administrators will explain the proposed changes and collect feedback from student leaders.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375462",
+   "type": "event",
+   "title": "RSO Listening Session",
+   "host": "18633 Student Activities Office",
+   "schoolId": "s_uw",
+   "date": "2026-11-06T01:00:00.000Z",
+   "startTime": "17:00",
+   "sourceUrl": "https://huskylink.washington.edu/SAO/rsvp?id=375462",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Meet at Fridays at 3pm in the Asian Languages & Literature Department Lounge (M218) of Gowen Hall. All are welcome!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375433",
+   "type": "event",
+   "title": "Chinese Translation Club Meeting",
+   "host": "35586 Chinese Translation Club @ UW",
+   "schoolId": "s_uw",
+   "date": "2026-11-06T23:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://huskylink.washington.edu/chinesetranslationclub/rsvp?id=375433",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Ever thought about entering a cosplay contest? Now is your chance! Show off your cosplay, get feedback from masters-level judges, and meet fellow cosplayers. Cosplays do NOT have to be handmade! Prizes to be announced soon. Please register for the competition using the google for",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375344",
+   "type": "event",
+   "title": "Xfinity Run It Back Cosplay Contest",
+   "host": "35605 Costume Club",
+   "schoolId": "s_uw",
+   "date": "2026-11-07T00:15:00.000Z",
+   "startTime": "16:15",
+   "place": {
+    "name": "Husky Union Building (HUB), 4001 E Stevens Way NE, Seattle 98195, United States",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://huskylink.washington.edu/costume/rsvp?id=375344",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Intro to CAD (OnShape) and 3D printing",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375142",
+   "type": "event",
+   "title": "Beginner Workshops (CAD)",
+   "host": "36116 Woof3D",
+   "schoolId": "s_uw",
+   "date": "2026-11-10T01:30:00.000Z",
+   "startTime": "17:30",
+   "sourceUrl": "https://huskylink.washington.edu/woof3d/rsvp?id=375142",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Get your game on with the CTC! Mario Kart Super Smash Bros Just Dance And free popcorn! We play every Tuesday from 2-4PM!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375404",
+   "type": "event",
+   "title": "Video Game Party",
+   "host": "35452 New Student & Transfer Programs",
+   "schoolId": "s_uw",
+   "date": "2026-11-10T22:00:00.000Z",
+   "startTime": "14:00",
+   "sourceUrl": "https://huskylink.washington.edu/NSTP/rsvp?id=375404",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General club meeting discussing upcoming club events, icebreakers, and training for new volunteers. Snacks will be provided!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375101",
+   "type": "event",
+   "title": "General Meeting",
+   "host": "35869 NMDP UW",
+   "schoolId": "s_uw",
+   "date": "2026-11-11T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "TBD",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://huskylink.washington.edu/btmuw/rsvp?id=375101",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Pull up to Gym A to meet each other and play casual pickup basketball",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375455",
+   "type": "event",
+   "title": "Open Gym",
+   "host": "35833 Men&apos;s Basketball Club @ UW",
+   "schoolId": "s_uw",
+   "date": "2026-11-11T02:30:00.000Z",
+   "startTime": "18:30",
+   "sourceUrl": "https://huskylink.washington.edu/mensclubbasketball/rsvp?id=375455",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come join us for a worship night gathering at the Red Square! Check our Instagram @uwaacf for details!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375371",
+   "type": "event",
+   "title": "Worship Night",
+   "host": "35514 Asian American Christian Fellowship",
+   "schoolId": "s_uw",
+   "date": "2026-11-11T23:30:00.000Z",
+   "startTime": "15:30",
+   "sourceUrl": "https://huskylink.washington.edu/uwaacf/rsvp?id=375371",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Student Activities Office (SAO) offers RSO Drop-In Advising hours in HUB 111B, located within the RSO Resource Center. These drop-in hours provide RSOs with an opportunity to connect with an SAO Advisor, ask questions, and receive guidance and support on a variety of topics.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375338",
+   "type": "event",
+   "title": "RSO Drop-In Advising",
+   "host": "18633 Student Activities Office",
+   "schoolId": "s_uw",
+   "date": "2026-11-12T21:00:00.000Z",
+   "startTime": "13:00",
+   "sourceUrl": "https://huskylink.washington.edu/SAO/rsvp?id=375338",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "During this event, we will be recognizing the higher rates of violence and inequality that trans-folk face; sharing information about your rights, advocacy and access to resources on UW campus and within Seattle. The event will also include an open Q&A portion. Panelist from: Q C",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375477",
+   "type": "event",
+   "title": "Trans Day of Remembrance Panel",
+   "host": "36616 ASUW Gender Equity Commission",
+   "schoolId": "s_uw",
+   "date": "2026-11-13T02:00:00.000Z",
+   "startTime": "18:00",
+   "sourceUrl": "https://huskylink.washington.edu/GEC/rsvp?id=375477",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Meet at Fridays at 3pm in the Asian Languages & Literature Department Lounge (M218) of Gowen Hall. All are welcome!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375434",
+   "type": "event",
+   "title": "Chinese Translation Club Meeting",
+   "host": "35586 Chinese Translation Club @ UW",
+   "schoolId": "s_uw",
+   "date": "2026-11-13T23:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://huskylink.washington.edu/chinesetranslationclub/rsvp?id=375434",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Watch real Japanese Grand Sumo with us in the HUB!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375474",
+   "type": "event",
+   "title": "Sumo Usual Match Observation",
+   "host": "36009 Sumo Union Membership Organization",
+   "schoolId": "s_uw",
+   "date": "2026-11-14T04:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://huskylink.washington.edu/sumounionmembershiporganization/rsvp?id=375474",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join the Washington Gaming Association’s annual Trading Card Game event at the University of Washington featuring the MTG Club and Pokémon Trainers club. Featuring vendors, artists, give aways, and open play, this event brings together students, collectors, and TCG enthusiasts fo",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375343",
+   "type": "event",
+   "title": "TCG Event",
+   "host": "35672 Gaming Association at UW",
+   "schoolId": "s_uw",
+   "date": "2026-11-14T20:30:00.000Z",
+   "startTime": "12:30",
+   "sourceUrl": "https://huskylink.washington.edu/wgauw/rsvp?id=375343",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Intro to CAD (OnShape) and 3D printing",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375143",
+   "type": "event",
+   "title": "Beginner Workshops (CAD)",
+   "host": "36116 Woof3D",
+   "schoolId": "s_uw",
+   "date": "2026-11-17T01:30:00.000Z",
+   "startTime": "17:30",
+   "sourceUrl": "https://huskylink.washington.edu/woof3d/rsvp?id=375143",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Come watch the screening for the powerful documentary Sentient, which explores animal experimentation, ahead of its release along with a Q&A with Dr. Lisa Jones-Engel! When/where: HUB 334 on November 16th from 6:30-8:30PM Everyone is welcome, regardless of diet, lifestyle, or fam",
+   "eligibility": "Open to students",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375385",
+   "type": "event",
+   "title": "Sentient Film Screening with Animal Advocacy at UW",
+   "host": "36082 Viable Veganism at UW",
+   "schoolId": "s_uw",
+   "date": "2026-11-17T02:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "HUB 334, 4001 East Stevens Way NE, Suite 232, Campus Box 352238, Seattle, WA 98195, United States",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://huskylink.washington.edu/viableveganismuw/rsvp?id=375385",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Watch real Japanese Grand Sumo with us in the HUB!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375475",
+   "type": "event",
+   "title": "Sumo Usual Match Observation",
+   "host": "36009 Sumo Union Membership Organization",
+   "schoolId": "s_uw",
+   "date": "2026-11-17T04:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://huskylink.washington.edu/sumounionmembershiporganization/rsvp?id=375475",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Get your game on with the CTC! Mario Kart Super Smash Bros Just Dance And free popcorn! We play every Tuesday from 2-4PM!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375405",
+   "type": "event",
+   "title": "Video Game Party",
+   "host": "35452 New Student & Transfer Programs",
+   "schoolId": "s_uw",
+   "date": "2026-11-17T22:00:00.000Z",
+   "startTime": "14:00",
+   "sourceUrl": "https://huskylink.washington.edu/NSTP/rsvp?id=375405",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Pull up to Gym A to meet each other and play casual pickup basketball",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375456",
+   "type": "event",
+   "title": "Open Gym",
+   "host": "35833 Men&apos;s Basketball Club @ UW",
+   "schoolId": "s_uw",
+   "date": "2026-11-18T02:30:00.000Z",
+   "startTime": "18:30",
+   "sourceUrl": "https://huskylink.washington.edu/mensclubbasketball/rsvp?id=375456",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly gathering that brings together the entire community of AACF for worship, teaching, and community-building activities. Check our Instagram @uwaacf for details! Locations may be subject to change each week.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375372",
+   "type": "event",
+   "title": "Large Group",
+   "host": "35514 Asian American Christian Fellowship",
+   "schoolId": "s_uw",
+   "date": "2026-11-19T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://huskylink.washington.edu/uwaacf/rsvp?id=375372",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Student Activities Office (SAO) offers RSO Drop-In Advising hours in HUB 111B, located within the RSO Resource Center. These drop-in hours provide RSOs with an opportunity to connect with an SAO Advisor, ask questions, and receive guidance and support on a variety of topics.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375339",
+   "type": "event",
+   "title": "RSO Drop-In Advising",
+   "host": "18633 Student Activities Office",
+   "schoolId": "s_uw",
+   "date": "2026-11-19T21:00:00.000Z",
+   "startTime": "13:00",
+   "sourceUrl": "https://huskylink.washington.edu/SAO/rsvp?id=375339",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Meet at Fridays at 3pm in the Asian Languages & Literature Department Lounge (M218) of Gowen Hall. All are welcome!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375435",
+   "type": "event",
+   "title": "Chinese Translation Club Meeting",
+   "host": "35586 Chinese Translation Club @ UW",
+   "schoolId": "s_uw",
+   "date": "2026-11-20T23:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://huskylink.washington.edu/chinesetranslationclub/rsvp?id=375435",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Join us as we honor the lives of Transgender and gender-diverse people who have been lost to anti-trans violence during Trans Day of Remembrance. We will be walking to Drumheller Fountain with your choosing of real/battery powered tea-lights.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375478",
+   "type": "event",
+   "title": "Trans Day of Remembrance Vigil",
+   "host": "36616 ASUW Gender Equity Commission",
+   "schoolId": "s_uw",
+   "date": "2026-11-21T01:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "MGH 389, 1851 NE Grant Ln, University District, WA , Seattle 98195, United States",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://huskylink.washington.edu/GEC/rsvp?id=375478",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Intro to CAD (OnShape) and 3D printing",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375144",
+   "type": "event",
+   "title": "Beginner Workshops (CAD)",
+   "host": "36116 Woof3D",
+   "schoolId": "s_uw",
+   "date": "2026-11-24T01:30:00.000Z",
+   "startTime": "17:30",
+   "sourceUrl": "https://huskylink.washington.edu/woof3d/rsvp?id=375144",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Watch real Japanese Grand Sumo with us in the HUB!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375476",
+   "type": "event",
+   "title": "Sumo Usual Match Observation",
+   "host": "36009 Sumo Union Membership Organization",
+   "schoolId": "s_uw",
+   "date": "2026-11-24T04:00:00.000Z",
+   "startTime": "20:00",
+   "sourceUrl": "https://huskylink.washington.edu/sumounionmembershiporganization/rsvp?id=375476",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "General club meeting discussing upcoming club events, icebreakers, and training for new volunteers. Snacks will be provided!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375103",
+   "type": "event",
+   "title": "General Meeting (Tentative)",
+   "host": "35869 NMDP UW",
+   "schoolId": "s_uw",
+   "date": "2026-11-25T02:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "TBD",
+    "lat": 47.6553,
+    "lng": -122.3035
+   },
+   "sourceUrl": "https://huskylink.washington.edu/btmuw/rsvp?id=375103",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly gathering that brings together the entire community of AACF for worship, teaching, and community-building activities. Check our Instagram @uwaacf for details! Locations may be subject to change each week.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375373",
+   "type": "event",
+   "title": "Large Group",
+   "host": "35514 Asian American Christian Fellowship",
+   "schoolId": "s_uw",
+   "date": "2026-11-26T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://huskylink.washington.edu/uwaacf/rsvp?id=375373",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Meet at Fridays at 3pm in the Asian Languages & Literature Department Lounge (M218) of Gowen Hall. All are welcome!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375436",
+   "type": "event",
+   "title": "Chinese Translation Club Meeting",
+   "host": "35586 Chinese Translation Club @ UW",
+   "schoolId": "s_uw",
+   "date": "2026-11-27T23:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://huskylink.washington.edu/chinesetranslationclub/rsvp?id=375436",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Intro to CAD (OnShape) and 3D printing",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375145",
+   "type": "event",
+   "title": "Beginner Workshops (CAD)",
+   "host": "36116 Woof3D",
+   "schoolId": "s_uw",
+   "date": "2026-12-01T01:30:00.000Z",
+   "startTime": "17:30",
+   "sourceUrl": "https://huskylink.washington.edu/woof3d/rsvp?id=375145",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Get your game on with the CTC! Mario Kart Super Smash Bros Just Dance And free popcorn! We play every Tuesday from 2-4PM!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375406",
+   "type": "event",
+   "title": "Video Game Party",
+   "host": "35452 New Student & Transfer Programs",
+   "schoolId": "s_uw",
+   "date": "2026-12-01T22:00:00.000Z",
+   "startTime": "14:00",
+   "sourceUrl": "https://huskylink.washington.edu/NSTP/rsvp?id=375406",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Weekly gathering that brings together the entire community of AACF for worship, teaching, and community-building activities. Check our Instagram @uwaacf for details! Locations may be subject to change each week.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375374",
+   "type": "event",
+   "title": "Large Group",
+   "host": "35514 Asian American Christian Fellowship",
+   "schoolId": "s_uw",
+   "date": "2026-12-03T03:00:00.000Z",
+   "startTime": "19:00",
+   "sourceUrl": "https://huskylink.washington.edu/uwaacf/rsvp?id=375374",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "The Student Activities Office (SAO) offers RSO Drop-In Advising hours in HUB 111B, located within the RSO Resource Center. These drop-in hours provide RSOs with an opportunity to connect with an SAO Advisor, ask questions, and receive guidance and support on a variety of topics.",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375340",
+   "type": "event",
+   "title": "RSO Drop-In Advising",
+   "host": "18633 Student Activities Office",
+   "schoolId": "s_uw",
+   "date": "2026-12-03T21:00:00.000Z",
+   "startTime": "13:00",
+   "sourceUrl": "https://huskylink.washington.edu/SAO/rsvp?id=375340",
+   "sourceLabel": "Student org events"
+  },
+  {
+   "description": "Meet at Fridays at 3pm in the Asian Languages & Literature Department Lounge (M218) of Gowen Hall. All are welcome!",
+   "eligibility": "Open to students",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-05T03:42:55.095Z",
+   "createdAt": "2026-11-05T03:42:55.095Z",
+   "id": "op_uw_cg_375437",
+   "type": "event",
+   "title": "Chinese Translation Club Meeting",
+   "host": "35586 Chinese Translation Club @ UW",
+   "schoolId": "s_uw",
+   "date": "2026-12-04T23:00:00.000Z",
+   "startTime": "15:00",
+   "sourceUrl": "https://huskylink.washington.edu/chinesetranslationclub/rsvp?id=375437",
+   "sourceLabel": "Student org events"
+  }
+ ]
+}
