@@ -30,7 +30,7 @@ const hostNoEmoji = <T extends { host?: string }>(o: T): T => (o.host && stripEm
 import type { Patch, Snapshot } from '@core/api/types';
 import type { Activity, ActivityProposal, ChatRoom, Game, ID, Organization, Participation, Post, TimePoll, User } from '@core/types';
 import { gameFor } from '@core/lib/icebreakers';
-import { canViewActivity, canViewPost } from '@core/lib/relations';
+import { canViewActivity, canViewPost, placeLabel } from '@core/lib/relations';
 import { blockedBy, intentFor, membershipFilter, postFor, profileFor, relationshipsFor } from '@core/lib/privacy';
 import { planVisibleTo, stripPlanSecrets } from '@core/lib/plans';
 import { buildClassIndex, classRostersFor, schoolOf, type ClassIndex } from '@core/lib/classmates';
@@ -78,15 +78,41 @@ function activityCheck(db: Snapshot | undefined, viewerId: ID) {
   return (a: Activity) => !!db && !!viewer && studyGroupOk(viewerId)(a)
     && (a.hostId === viewerId || involved.has(a.id) || !!a.studyGroup || canViewActivity(db, viewer, a));
 }
-function activityFor(a: Activity, viewerId: ID): Activity {
+/** 대략적인 곳의 좌표 격자 (~300 m) — 정확한 자리를 거꾸로 알아낼 수 없게 내림한다 */
+const AREA_GRID = 0.003;
+const toGrid = (x: number) => (Number.isFinite(x) ? Math.round(x / AREA_GRID) * AREA_GRID : x);
+/** 내가 승인된 참가자인 활동 — 정확한 장소를 받을 수 있다 */
+function approvedIn(db: Snapshot | undefined, viewerId: ID, extra: Participation[] = []): Set<ID> {
+  const ids = new Set<ID>();
+  for (const p of [...(db?.participations ?? []), ...extra]) if (p.userId === viewerId && p.status === 'approved') ids.add(p.activityId);
+  return ids;
+}
+/**
+ * 모임 장소 — 화면(MeetupLocationPage·ActivityDetailPage)과 같은 규칙(@core/lib/relations placeLabel):
+ * 연 사람·승인된 참가자·누구나 참가하는 모임이면 정확한 곳, 아니면 대략적인 곳(area)과 격자로 내린 좌표만 보낸다.
+ * 예전에는 서버가 모두에게 정확한 이름·좌표를 보내고 화면만 가렸다
+ */
+export function placeFor(a: Activity, viewer: User, approved: boolean): Activity {
+  const where = placeLabel(a, viewer, approved);
+  if (!where.approximate) return a;
+  return { ...a, place: { name: where.name, area: where.name, lat: toGrid(a.place.lat), lng: toGrid(a.place.lng) } };
+}
+function activityFor(a: Activity, viewerId: ID, viewer: User, approved: Set<ID>): Activity {
   if (a.hostId === viewerId) return a;
-  const out = { ...a };
+  const out = { ...placeFor(a, viewer, approved.has(a.id)) };
   if (a.invitedIds) out.invitedIds = a.invitedIds.filter((id) => id === viewerId);
   if (a.interestedIds) out.interestedIds = a.interestedIds.filter((id) => id === viewerId);
   if (a.visibility === 'selected' && a.visibilityTargets) out.visibilityTargets = a.visibilityTargets.filter((id) => id === viewerId);
   return out;
 }
-const activitiesFor = (list: Activity[], viewerId: ID, db?: Snapshot) => { const ok = activityCheck(db, viewerId); return list.filter(ok).map((a) => activityFor(a, viewerId)); };
+/** activityCheck 가 통과시킨 활동은 db·viewer 가 있다는 뜻이다 */
+const activitiesFor = (list: Activity[], viewerId: ID, db?: Snapshot, extraParts: Participation[] = []) => {
+  const viewer = db?.users.find((x) => x.id === viewerId);
+  if (!db || !viewer) return [];
+  const ok = activityCheck(db, viewerId);
+  const approved = approvedIn(db, viewerId, extraParts);
+  return list.filter(ok).map((a) => activityFor(a, viewerId, viewer, approved));
+};
 
 /** 참가 기록: 내 것, 내가 연 활동의 것, 그 밖에는 내가 볼 수 있는 활동의 승인된 참가만 (신청 메시지는 연 사람만 본다) */
 function participationsFor(list: Participation[], viewerId: ID, db?: Snapshot, extra: Activity[] = []): Participation[] {
@@ -261,7 +287,15 @@ export function patchFor(original: Patch, viewerId: ID, db?: Snapshot): Patch | 
   if (patch.relationships) out.relationships = relationshipsFor(patch.relationships, viewerId);
   if (patch.posts) out.posts = postsFor(patch.posts, viewerId, db);
   if (patch.opportunityIntents) out.opportunityIntents = intentsFor(patch.opportunityIntents, viewerId);
-  if (patch.activities) out.activities = activitiesFor(patch.activities, viewerId, db);
+  if (patch.activities) out.activities = activitiesFor(patch.activities, viewerId, db, patch.participations);
+  // 방금 승인된 참가자에게는 정확한 장소가 담긴 활동을 같이 보낸다 — 대략적인 곳만 받아 둔 화면이 바로 바뀌게
+  if (db && patch.participations) {
+    const sent = new Set((patch.activities ?? []).map((a) => a.id));
+    const now = patch.participations.filter((p) => p.userId === viewerId && p.status === 'approved' && !sent.has(p.activityId))
+      .map((p) => db.activities.find((a) => a.id === p.activityId))
+      .filter((a): a is Activity => !!a && a.hostId !== viewerId && a.joinPolicy !== 'open');
+    if (now.length) out.activities = mergeById(out.activities, activitiesFor(now, viewerId, db, patch.participations));
+  }
   if (patch.participations) out.participations = participationsFor(patch.participations, viewerId, db, patch.activities);
   if (db && hidden) { const r = rostersPatch(patch, viewerId, db, hidden, cache); if (r) out.classRosters = r; else delete out.classRosters; } else delete out.classRosters;
   if (patch.notifications) out.notifications = patch.notifications.filter((n) => n.userId === viewerId);

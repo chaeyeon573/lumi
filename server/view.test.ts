@@ -49,3 +49,38 @@ test('snapshot: a notification about an opportunity that is gone is dropped (it 
   assert.ok(!ids.includes('nt9'), 'deadline notice for a removed listing');
   assert.ok(ids.includes('nt10') && ids.includes('nt1'), 'other notices stay');
 });
+
+test('meetup place: outsiders of an approval meetup get only the general area, members get the venue', () => {
+  const d = db();
+  const a = d.activities.find((x) => x.id === 'a_exhibit')!;
+  assert.equal(a.joinPolicy, 'approval');
+  const member = d.users.find((u) => u.id !== a.hostId && snapshotFor(d, u.id).activities.some((x) => x.id === a.id))!.id;
+  d.participations.push({ id: 'p_member', activityId: a.id, userId: member, status: 'approved', createdAt: '2026-11-06T00:00:00Z' });
+  const outsider = d.users.find((u) => u.id !== a.hostId && !d.participations.some((p) => p.activityId === a.id && p.userId === u.id)
+    && snapshotFor(d, u.id).activities.some((x) => x.id === a.id))!;
+  assert.ok(outsider, 'someone outside the meetup can see it');
+  const seen = snapshotFor(d, outsider.id).activities.find((x) => x.id === a.id)!;
+  // the list/detail screens still have a place to draw — just not the venue
+  assert.ok(seen.place.name.length > 0);
+  assert.notEqual(seen.place.name, a.place.name);
+  assert.ok(!JSON.stringify(seen).includes(a.place.name), 'venue name leaked');
+  assert.equal(seen.place.area, seen.place.name);
+  assert.equal(seen.place.address, undefined);
+  assert.ok(seen.place.lat !== a.place.lat || seen.place.lng !== a.place.lng, 'exact coordinates leaked');
+  assert.ok(Math.abs(seen.place.lat - a.place.lat) <= 0.0015 + 1e-9 && Math.abs(seen.place.lng - a.place.lng) <= 0.0015 + 1e-9, 'still roughly in the right area');
+  // host and approved participants get the exact venue
+  assert.deepEqual(snapshotFor(d, a.hostId).activities.find((x) => x.id === a.id)!.place, a.place);
+  assert.deepEqual(snapshotFor(d, member).activities.find((x) => x.id === a.id)!.place, a.place);
+  // an open meetup shows its place to everyone (same rule as the screen)
+  const open = d.activities.find((x) => x.joinPolicy === 'open' && x.hostId !== outsider.id && snapshotFor(d, outsider.id).activities.some((y) => y.id === x.id))!;
+  assert.deepEqual(snapshotFor(d, outsider.id).activities.find((x) => x.id === open.id)!.place, open.place);
+  // a pending applicant still only gets the area
+  const pending = { id: 'p_pending', activityId: a.id, userId: outsider.id, status: 'pending' as const, createdAt: '2026-11-06T00:00:00Z' };
+  d.participations.push(pending);
+  assert.notEqual(snapshotFor(d, outsider.id).activities.find((x) => x.id === a.id)!.place.name, a.place.name);
+  assert.ok(!JSON.stringify(patchFor({ activities: [a], participations: [pending] }, outsider.id, d)).includes(a.place.name));
+  // getting approved sends the venue right away, even when the patch only carries the participation
+  pending.status = 'approved' as never;
+  const patched = patchFor({ participations: [pending] }, outsider.id, d);
+  assert.deepEqual(patched?.activities?.find((x) => x.id === a.id)?.place, a.place);
+});
