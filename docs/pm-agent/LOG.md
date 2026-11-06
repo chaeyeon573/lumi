@@ -2347,3 +2347,9 @@
 - Spot check clubs: UConn MAC Angels, SJSU Men's Ultimate, Michigan LGBTQ+ Nursing, NYU Climate and Energy Club, UCLA La Gente fine (5/5).
 - Spot check courses: 5 random W&M classes (ENGL 231, ENGL 250 Sec 03, LAW 416 Sec 01R, ARTH 150, GBST 390 Sec 02) match the live W&M schedule.
 - Santa Clara club links: no public bulk source (directory has names only; CampusGroups is login-only and its event feed answers 500; the CSO page lists student officers' names, which we do not collect). Left in the queue as club-by-club work.
+
+## 2026-11-06 14:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: MIT Strategic Games Society, UGA Dodd Ambassadors, UC Davis Managerial Economics Society, Indiana La Sociedad Latina, USC FOCUS fine (5/5).
+- Spot check courses: 5 random USF classes (NURS 320 Sec 03, COMS 364, MSEI 601, COMS 326, KIN 220) match the live USF Banner schedule.
+- Data freshness (deadline calendars): 11 rows had a deadline before today and were still listed (the app showed them with a muted "Closed" badge). Marked `status=closed` so the daily import takes them out of the app; the rows stay in the CSVs. Berkeley: Swan Award (10-30). National: Goldwater SRIP (11-02), Princeton in Africa (10-26), Soros (10-29), CBYX (11-01), Princeton in Asia (11-01), ARC Prize 2026 (11-02). Grad national: NSF GRFP (10-19), Hertz (10-30), NDSEG (10-30), DOE SCGSR (11-04). opportunities-grad-national.csv got a `status` column for this.
