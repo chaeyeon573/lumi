@@ -6,7 +6,8 @@ import { StepFrame, en } from './shared';
 
 /**
  * S004–S007 What Lumi can do — one screen, four previews picked by the 2×2 selector (?p=classes|events|clubs|social).
- * Continue walks through the four, then goes on to the university step.
+ * Continue goes straight on to the university step from any preview; the four tabs are there for anyone who wants to
+ * browse (ux-sim 2026-11-06: walking Continue through the tabs while the counter stayed "2 of 6" read as a stuck button).
  * Everything here is a picture of the experience, not data: every card says "Sample preview", nothing is clickable,
  * and there are no people in it (no faces, no names, no counts) — PRODUCT_TASTE "no fake data presented as real".
  */

@@ -9,7 +9,7 @@ import { takeReturnTo } from '@/lib/returnTo';
 import { DEFAULT_FV } from './OnboardingPage';
 import { STEPS, isStep, loadDraft, saveDraft, uniq, type Draft, type Step } from './steps/shared';
 import { GOALS, GoalsStep } from './steps/GoalsStep';
-import { PREVIEWS, WhatStep, isPreview, type Preview } from './steps/WhatStep';
+import { WhatStep, isPreview, type Preview } from './steps/WhatStep';
 import { UniversityStep } from './steps/UniversityStep';
 import { DiscoverStep, TOPICS } from './steps/DiscoverStep';
 import { COMMUNITIES, CommunitiesStep } from './steps/CommunitiesStep';
@@ -50,9 +50,7 @@ export function StartPage() {
   const go = (path: string) => nav(path, { state: { inFlow: true } });
   const next = () => go(`/start/${STEPS[Math.min(idx + 1, STEPS.length - 1)]}`);
   const prevPath = () => {
-    if (step === 'what' && PREVIEWS.indexOf(p) > 0) return `/start/what?p=${PREVIEWS[PREVIEWS.indexOf(p) - 1]}`;
     if (idStep) return '/start/about';
-    if (step === 'university') return '/start/what?p=social';
     return idx > 0 ? `/start/${STEPS[idx - 1]}` : '/welcome';
   };
   // ‹ goes back in history when we came here through the flow (so the browser's own back stays in step), otherwise to the step before
@@ -98,7 +96,7 @@ export function StartPage() {
       {step === 'goals' && <GoalsStep {...props} />}
       {step === 'what' && (
         <WhatStep p={p} onPick={(k) => nav(`/start/what?p=${k}`, { replace: true, state: location.state })}
-          onContinue={() => (p === 'social' ? next() : go(`/start/what?p=${PREVIEWS[PREVIEWS.indexOf(p) + 1]}`))} />
+          onContinue={next} />
       )}
       {step === 'university' && <UniversityStep {...props} schools={schools} />}
       {step === 'discover' && <DiscoverStep {...props} />}
