@@ -36,6 +36,7 @@ import { uid } from '@core/lib/format';
 import type { Store } from './store';
 import { adminName, checkAdmin, footprint, moderationChanged, ModerationError } from './moderation';
 import { verificationPageHtml } from './idverify-page';
+import { REVIEW_READ_PATHS } from './coursereviews';
 
 export const ID_REQUESTS = 'idVerifications';
 export const ID_PHOTOS = 'idPhotos';
@@ -343,7 +344,7 @@ export function pendingMayCall(group: string, method: string, args: unknown[]): 
 
 type Req = Request & { userId?: ID };
 /**
- * Mounted on /api/rpc, /api/media and /api/classqa after the session middleware (server/index.ts), before their routes.
+ * Mounted on /api/rpc, /api/media, /api/classqa and /api/reviews (read paths only) after the session middleware (server/index.ts), before their routes.
  * A waiting account gets 403 with PENDING_MESSAGE for anything outside the allowlist.
  */
 export function pendingGate(db: () => Pick<Snapshot, 'users'>) {
@@ -355,6 +356,7 @@ export function pendingGate(db: () => Pick<Snapshot, 'users'>) {
       const [, group = '', method = ''] = req.path.split('/');
       ok = pendingMayCall(group, method, Array.isArray(req.body?.args) ? req.body.args : []);
     } else if (req.baseUrl === '/api/classqa') ok = req.path === '/list';
+    else if (req.baseUrl === '/api/reviews') ok = REVIEW_READ_PATHS.has(req.path);
     if (ok) { next(); return; }
     res.status(403).json({ error: PENDING_MESSAGE, verification: 'pending' });
   };

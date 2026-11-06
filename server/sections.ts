@@ -11,7 +11,7 @@
  *   - 학교가 시간을 정하지 않은 섹션(시간 없음)과 자리 채우기용 섹션(999 · 일요일 0시 1분)은 뺀다 — 지어내지 않는다
  *   - 같은 수업은 6시간 기억한다 (못 읽은 결과는 10분). 같은 순간에 여러 명이 부르면 요청은 한 번
  */
-import type { CatalogCourse, CatalogSection } from '@core/api/types';
+import type { CatalogCourse, CatalogDetails, CatalogSection } from '@core/api/types';
 import { parseDays, parseTime } from './scripts/csv';
 
 const BERKELEY_PUBLIC = 'https://classes.berkeley.edu';
@@ -64,11 +64,27 @@ export const SECTION_FETCH_MS = 8_000;
 const KEEP_MS = 6 * 3_600_000;
 const RETRY_MS = 10 * 60_000;
 
+/** 수업 하나씩 그때 읽는 것을 기억한다 — 6시간 (못 읽은 결과는 10분). 같은 순간에 여러 명이 부르면 요청은 한 번 */
+function memoized<T>(what: string, load: (c: CatalogCourse) => Promise<T>, empty: () => T, now: () => number) {
+  const memo = new Map<string, { at: number; ok: boolean; value: T }>();
+  const inflight = new Map<string, Promise<T>>();
+  return (c: CatalogCourse): Promise<T> => {
+    const hit = memo.get(c.id);
+    if (hit && now() - hit.at < (hit.ok ? KEEP_MS : RETRY_MS)) return Promise.resolve(hit.value);
+    const running = inflight.get(c.id);
+    if (running) return running;
+    const p = load(c)
+      .then((value) => { memo.set(c.id, { at: now(), ok: true, value }); return value; })
+      .catch((e) => { console.warn(`[${what}] ${c.code} ${c.term}: ${(e as Error).message}`); const value = empty(); memo.set(c.id, { at: now(), ok: false, value }); return value; })
+      .finally(() => inflight.delete(c.id));
+    inflight.set(c.id, p);
+    return p;
+  };
+}
+
 /** 수업 하나의 딸린 섹션 — Berkeley 만. 다른 학교·못 읽음은 빈 목록 */
 export function createSectionReader(get: Fetch = defaultFetch, now = () => Date.now()) {
-  const memo = new Map<string, { at: number; ok: boolean; value: CatalogSection[] }>();
-  const inflight = new Map<string, Promise<CatalogSection[]>>();
-  const load = async (c: CatalogCourse): Promise<CatalogSection[]> => {
+  const read = memoized<CatalogSection[]>('sections', async (c) => {
     let id = c.sourceId;
     if (!id) {
       if (!c.url?.startsWith(`${BERKELEY_PUBLIC}/content/`)) return [];
@@ -76,19 +92,39 @@ export function createSectionReader(get: Fetch = defaultFetch, now = () => Date.
       if (!id) return [];
     }
     return parseAssociatedSections(await get(`${BERKELEY_PUBLIC}/sections/associated/${id}`));
-  };
+  }, () => [], now);
   return async (c: CatalogCourse): Promise<CatalogSection[]> => {
     if (c.sections) return c.sections; // 가져올 때 같이 받아 둔 학교 (Stanford·MIT)
     if (c.schoolId !== 's_berkeley') return [];
-    const hit = memo.get(c.id);
-    if (hit && now() - hit.at < (hit.ok ? KEEP_MS : RETRY_MS)) return hit.value;
-    const running = inflight.get(c.id);
-    if (running) return running;
-    const p = load(c)
-      .then((value) => { memo.set(c.id, { at: now(), ok: true, value }); return value; })
-      .catch((e) => { console.warn(`[sections] ${c.code} ${c.term}: ${(e as Error).message}`); memo.set(c.id, { at: now(), ok: false, value: [] }); return [] as CatalogSection[]; })
-      .finally(() => inflight.delete(c.id));
-    inflight.set(c.id, p);
-    return p;
+    return read(c);
+  };
+}
+
+// ─── 수업 페이지: 수업 번호 · 수강 조건 · Class Notes (S029 펼친 줄의 핑크 한 줄, S030 수업 정보) ─────────
+const lines = (html: string) => decode(html.replace(/<br\s*\/?>/gi, '\n').replace(/<\/(li|p|div)>/gi, '\n').replace(/<[^>]+>/g, ' '))
+  .split('\n').map((x) => x.replace(/\s+/g, ' ').trim().replace(/^[-•*]\s*/, '')).filter(Boolean);
+
+/** classes.berkeley.edu/content/… 한 장 → 학교가 적어 둔 것만. 없는 칸은 비운다 */
+export function parseClassPage(html: string): CatalogDetails {
+  const out: CatalogDetails = {};
+  const num = /<span>\s*Class #:\s*<\/span>\s*(\d{4,6})/.exec(html)?.[1];
+  if (num) out.classNumber = num;
+  const rules = /id="section-rules-requirements"[\s\S]*?<div class="section-content">([\s\S]*?)<\/section>/.exec(html)?.[1] ?? '';
+  const req = /<h3>\s*Requisites\s*<\/h3>\s*<ul>([\s\S]*?)<\/ul>/.exec(rules)?.[1];
+  if (req) { const r = lines(req).map((x) => x.slice(0, 500)); if (r.length) out.requisites = r.slice(0, 6); }
+  const notesSec = /id="section-class-notes"[\s\S]*?<div class="section-content">([\s\S]*?)<\/section>/.exec(html)?.[1] ?? '';
+  const full = /<div class="full">([\s\S]*?)<a [^>]*summary-toggle/.exec(notesSec)?.[1] ?? notesSec.replace(/<a [^>]*summary-toggle[\s\S]*?<\/a>/g, '');
+  const n = lines(full).map((x) => x.slice(0, 400));
+  if (n.length) out.notes = n.slice(0, 12);
+  return out;
+}
+
+/** 수업 페이지 읽기 — Berkeley 수업 페이지 주소가 있을 때만. 다른 학교·못 읽음은 {} */
+export function createDetailsReader(get: Fetch = defaultFetch, now = () => Date.now()) {
+  const read = memoized<CatalogDetails>('details', async (c) => parseClassPage(await get(c.url!)), () => ({}), now);
+  return async (c: CatalogCourse): Promise<CatalogDetails> => {
+    if (c.schoolId !== 's_berkeley' || !c.url?.startsWith(`${BERKELEY_PUBLIC}/content/`)) return c.classNumber ? { classNumber: c.classNumber } : {};
+    const d = await read(c);
+    return c.classNumber && !d.classNumber ? { ...d, classNumber: c.classNumber } : d;
   };
 }

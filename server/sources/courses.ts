@@ -12,6 +12,7 @@ import type { CatalogCourse, CatalogSection } from '@core/api/types';
 import { parseDays, parseTime } from '../scripts/csv';
 import { decodeNumericEntities } from './entities';
 import { catalogTermLabels, currentTerm, nextTerm, normalizeTermLabel, termLabel, termOrder, termSlug } from '@core/lib/terms';
+import { BERKELEY_ABBR } from '@core/data/catalog/subjects';
 
 type Meeting = { day: number; start: string; end: string };
 const courseId = (schoolId: string, code: string) => `cc_${schoolId.replace('s_', '')}_${code.toLowerCase().replace(/[^a-z0-9]+/g, '')}`;
@@ -141,7 +142,6 @@ async function mit(): Promise<CatalogCourse[]> {
  * 학교 사이트는 캐시가 식은 페이지에 40초쯤 걸리기도 해서 요청 하나를 2분까지 기다린다
  */
 const BERKELEY_PUBLIC = 'https://classes.berkeley.edu';
-const BERKELEY_ABBR: Record<string, string> = { COMPSCI: 'CS', 'POL SCI': 'POLSCI', 'MCELLBI': 'MCB', 'INTEGBI': 'IB', 'PB HLTH': 'PBHLTH', 'IND ENG': 'IEOR', 'MEC ENG': 'ME', 'CIV ENG': 'CE', 'BIO ENG': 'BIOE', 'COG SCI': 'COGSCI', 'ART': 'ART', 'L & S': 'LS' };
 /**
  * 번호가 바뀐 과목 — 학생들은 아직 옛 번호로 찾는다 ("MATH 1A"). 제목 뒤에 붙여 옛 번호로도 검색되게 한다.
  * 과목 페이지의 "Formerly Mathematics 1A" 문구로 확인 (2026-10-13, Fall 2025 부터 바뀜). 검색 결과 목록에는 이 문구가 없어 여기 적어 둔다
@@ -288,11 +288,13 @@ async function berkeleyTerm(idx: BerkeleyIndex, termLabel: string, only?: string
         if (!meetings.length) continue;
         // 강의 섹션이 여러 개인 과목(KOREAN 1A 001~007 등)은 섹션마다 한 줄 — 학생이 자기 섹션을 고른다
         const sectionNo = text(row.match(/class="st--section-count"[^>]*>([\s\S]*?)<\/span>/)?.[1] ?? '') || '001';
+        // CalCentral 에 보이는 다섯 자리 수업 번호 ("#29143") — 학생이 이 번호로도 찾는다 (S029)
+        const classNumber = /class="st--section-number"[^>]*>\s*#?(\d{4,6})\s*</.exec(row)?.[1];
         const baseId = courseId('s_berkeley', code);
         const key = `${baseId}#${sectionNo}`;
         const prev = mine.get(key);
         if (prev) { prev.course.meetings = uniq([...prev.course.meetings, ...meetings]); continue; }
-        mine.set(key, { baseId, sectionNo, course: { id: baseId, schoolId: 's_berkeley', code, title, department, instructor, location, meetings: uniq(meetings), term: termLabel, units, url: contentPath ? `${BERKELEY_PUBLIC}${contentPath}` : undefined, sourceId } });
+        mine.set(key, { baseId, sectionNo, course: { id: baseId, schoolId: 's_berkeley', code, title, department, instructor, location, meetings: uniq(meetings), term: termLabel, units, url: contentPath ? `${BERKELEY_PUBLIC}${contentPath}` : undefined, sourceId, ...(classNumber ? { classNumber } : {}) } });
       }
     }
     console.log(`  ${termLabel} · ${l.label}: ${mine.size}`);

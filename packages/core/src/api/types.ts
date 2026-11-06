@@ -11,6 +11,7 @@ import type { OrgHit } from '@core/lib/signup';
 import type { PlansApi } from './plans';
 import type { TimePollWindow } from '@core/types';
 import type { ClassQuestionView } from '@core/lib/classqa';
+import type { CourseReviewsView, ExamInfoView, ExamInput, PastClassesView, ReviewInput, TermPromptView } from '@core/lib/coursereviews';
 import type { PublicExplore } from '@core/lib/publicexplore';
 import type { OrgJoinPolicy } from '@core/types';
 import type { AdvancedPeopleFilter, CheckoutPlatform, CheckoutResult, PlusStatus } from '@core/lib/plus';
@@ -182,6 +183,8 @@ export interface CatalogCourse {
   exams?: { label: string; date: string }[];
   /** 원본 사이트의 수업 번호 (Berkeley: classes.berkeley.edu 의 node id) — 딸린 토론·랩 섹션을 찾을 때 쓴다 */
   sourceId?: string;
+  /** 학교가 매긴 다섯 자리 수업 번호 (Berkeley "Class #: 29147") — CalCentral 에 보이는 번호라 이것으로도 찾는다. 원본에 있을 때만 */
+  classNumber?: string;
   /** 가져올 때 원본에 같이 있던 딸린 섹션 (Stanford·MIT) — 없으면 Berkeley 처럼 고를 때 읽어 온다. 검색 결과로는 내려보내지 않는다 */
   sections?: CatalogSection[];
 }
@@ -194,6 +197,19 @@ export interface CatalogSection {
   kind: string;
   meetings: { day: number; start: string; end: string }[];
   location?: string;
+}
+
+/**
+ * 학교 수업 페이지에서 그때 읽어 오는 것 (Berkeley classes.berkeley.edu/content/…) — 목록 가져오기에는 없다.
+ * 학교가 적어 둔 것만, 지어내지 않는다. 못 읽으면 빈 객체
+ */
+export interface CatalogDetails {
+  /** "Class #: 29147" */
+  classNumber?: string;
+  /** Rules & Requirements → Requisites ("Students not in the Master of Engineering Program") */
+  requisites?: string[];
+  /** Class Notes — 줄마다 하나 */
+  notes?: string[];
 }
 
 /** 수업 방 공개 정보 (/c/<학교>/<코드>) — 로그인 전에도 보이므로 인원 수만, 사람은 없다 */
@@ -304,6 +320,17 @@ export interface AroundUApi {
     terms(schoolId: ID): Promise<{ terms: string[]; current: string }>;
     /** 강의에 딸린 토론·랩 섹션 — 학교 시간표에서 그때 읽어 온다. 없거나 못 읽으면 빈 목록 */
     sections(schoolId: ID, courseId: ID): Promise<CatalogSection[]>;
+    /**
+     * S029 목록 — 한 학기 수업 전부 (딸린 섹션 빼고). 화면이 받아 두고 검색·거르기를 바로 한다 (수천 줄, gzip).
+     * term 을 안 주면 지금 학기. 돌려준 term 이 실제로 보여 주는 학기
+     */
+    browse(schoolId: ID, term?: string): Promise<{ term: string; courses: CatalogCourse[] }>;
+    /** 과목별 Lumi 학생 수 (codeSlug → n, 1 이상만) — 수만, 이름 없음 (@core/lib/coursefinder lumiCounts) */
+    counts(schoolId: ID, term: string): Promise<Record<string, number>>;
+    /** 수업 하나 (id, 또는 과목 코드 + 학기) + 그 과목 Lumi 학생 수 — 추가하기 전에 여는 수업 페이지(S030) */
+    course(schoolId: ID, ref: { id?: ID; code?: string; term?: string }): Promise<{ course: CatalogCourse; count: number } | null>;
+    /** 수업 페이지에서 그때 읽는 수업 번호·수강 조건·노트 (섹션처럼 8초 안에, 못 읽으면 {}) */
+    details(schoolId: ID, courseId: ID): Promise<CatalogDetails>;
   };
 
   /** 학사 일정 (registrar 캘린더) — 지난 30일부터. 일정이 없는 학교는 빈 목록 */
@@ -514,6 +541,28 @@ export interface AroundUApi {
     answer(questionId: ID, text: string): Promise<ClassQuestionView[]>;
     /** 내가 쓴 질문·답 지우기 (answerId 없으면 질문 통째로) */
     remove(questionId: ID, answerId?: ID): Promise<ClassQuestionView[]>;
+  };
+
+  /** 수업 리뷰 · 시험 정보 (course page › Reviews · Exam info) — 규칙 @core/lib/coursereviews, 저장 server/coursereviews.ts. 글쓴이 id 는 내려오지 않는다 */
+  courseReviews: {
+    /** code = 과목 코드 ("CS 61A"), 학교는 보는 사람의 학교 */
+    view(code: string, filter?: { instructor?: string; term?: string }): Promise<CourseReviewsView>;
+    save(input: ReviewInput): Promise<CourseReviewsView>;
+    remove(id: ID): Promise<CourseReviewsView>;
+    /** 도움돼요 누르기·취소 */
+    helpful(id: ID): Promise<CourseReviewsView>;
+    exam(code: string): Promise<ExamInfoView>;
+    saveExam(input: ExamInput): Promise<ExamInfoView>;
+    removeExam(id: ID): Promise<ExamInfoView>;
+    instructors(code: string, term: string): Promise<{ instructors: string[] }>;
+    /** 학기 말 안내의 단계 화면 */
+    term(term: string): Promise<TermPromptView>;
+    /** 목록 줄 별점 — 과목 slug → ★ (리뷰 3개 이상인 수업만) */
+    stars(codes?: string[]): Promise<{ stars: Record<string, { avg: number; count: number }> }>;
+    /** 리뷰용 지난 수업 (시간표 밖) — 최근 4학기 */
+    pastClasses(): Promise<PastClassesView>;
+    addPastClass(input: { code: string; term: string; name?: string }): Promise<PastClassesView>;
+    removePastClass(code: string, term: string): Promise<PastClassesView>;
   };
 
   /** Lumi+ (S087·S088) — 무엇인지는 @core/lib/plus, 막는 건 서버 (server/plus.ts). 오프라인 데모는 늘 꺼짐 */

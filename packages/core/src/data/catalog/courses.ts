@@ -8,6 +8,7 @@
 import type { CatalogCourse } from '@core/api/types';
 import type { ID } from '@core/types';
 import { currentTerm, normalizeTermLabel, termLabel, termOrder } from '@core/lib/terms';
+import { shortSubject } from './subjects';
 
 /** 요일 패턴 → 요일 인덱스(0=월) */
 const PATTERNS: Record<string, number[]> = {
@@ -293,29 +294,45 @@ export function resolveCatalogTerm(courses: CatalogCourse[], schoolId: ID, reque
   return terms.includes(autumn) ? autumn : '';
 }
 
+const norm = (s: string) => s.toLowerCase().replace(/\s+/g, ' ').trim();
+const compact = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+/**
+ * 검색어 하나가 수업 하나에 얼마나 맞는지 (0 = 안 맞음). 수업 목록 검색(searchCatalog)과 S029 목록(@core/lib/coursefinder)이 같이 쓴다.
+ * 학생이 치는 모양: "cs61a" · "CS 61A" · "COMPSCI 61A"(학교 공식 약칭) · "61a"(번호만) · "data c100" · "math 1a"(옛 번호) · "29147"(CalCentral 수업 번호)
+ */
+export function scoreCourse(c: CatalogCourse, query: string): number {
+  const q = norm(query);
+  if (!q) return 0;
+  const cq = shortSubject(compact(q));
+  const code = norm(c.code), cc = compact(c.code);
+  // 다섯 자리 수업 번호 — 정확히 같을 때만
+  if (/^\d{5}$/.test(q)) return c.classNumber === q ? 100 : 0;
+  // 바뀐 과목 번호 — Berkeley 는 제목에 "(formerly MATH 1A)" 를 붙여 둔다. 옛 번호로 찾아도 나오게
+  const formerly = /\(formerly ([^)]+)\)/i.exec(c.title)?.[1] ?? '';
+  // 번호만 ("61a", "c100") — 과목 번호 부분과 비교
+  const num = compact(c.code.trim().split(/\s+/).pop() ?? '');
+  const numberOnly = /^[a-z]?\d+[a-z]*$/.test(cq) && !/^[a-z]{2,}/.test(cq);
+  if (code === q || cc === cq) return 100;
+  if (formerly && compact(formerly) === cq) return 95;
+  if (numberOnly && num === cq) return 90;
+  if (cc.startsWith(cq) || code.startsWith(q)) return 80;
+  if (formerly && cq.length >= 3 && compact(formerly).startsWith(cq)) return 70;
+  if (numberOnly && cq.length >= 2 && num.startsWith(cq)) return 65;
+  if (norm(c.title).includes(q)) return 60;
+  if (norm(c.department).includes(q)) return 40;
+  if (c.instructor && norm(c.instructor).includes(q)) return 30;
+  if (code.includes(q)) return 20;
+  return 0;
+}
+
 /** 코드·이름·학과·교수로 검색. 코드 앞부분 일치를 먼저 보여준다. term 을 주면 그 학기 수업만 */
 export function searchCatalog(courses: CatalogCourse[], schoolId: ID, query: string, limit = 30, department = '', term = ''): CatalogCourse[] {
-  const q = query.trim().toLowerCase().replace(/\s+/g, ' ');
+  const q = norm(query);
   const mine = courses.filter((c) => c.schoolId === schoolId && (!department || c.department === department) && (!term || courseTerm(c) === term));
   // 학과를 골랐으면 그 학과 수업을 과목 번호 순으로 전부 (검색어가 있으면 그 안에서 찾기)
   if (!q) return (department ? [...mine].sort((a, b) => a.code.localeCompare(b.code, 'en', { numeric: true })) : mine).slice(0, department ? 400 : limit);
-  const norm = (s: string) => s.toLowerCase().replace(/\s+/g, ' ');
-  const compact = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
-  const scored = mine.map((c) => {
-    const code = norm(c.code);
-    // 바뀐 과목 번호 — Berkeley 는 제목에 "(formerly MATH 1A)" 를 붙여 둔다. 옛 번호로 찾아도 나오게
-    const formerly = /\(formerly ([^)]+)\)/i.exec(c.title)?.[1] ?? '';
-    let score = 0;
-    if (code === q || compact(c.code) === compact(q)) score = 100;
-    else if (formerly && compact(formerly) === compact(q)) score = 95;
-    else if (formerly && compact(q).length >= 3 && compact(formerly).startsWith(compact(q))) score = 70;
-    else if (code.startsWith(q) || compact(c.code).startsWith(compact(q))) score = 80;
-    else if (norm(c.title).includes(q)) score = 60;
-    else if (norm(c.department).includes(q)) score = 40;
-    else if (c.instructor && norm(c.instructor).includes(q)) score = 30;
-    else if (code.includes(q)) score = 20;
-    return { c, score };
-  }).filter((x) => x.score > 0);
+  const scored = mine.map((c) => ({ c, score: scoreCourse(c, q) })).filter((x) => x.score > 0);
   scored.sort((a, b) => b.score - a.score || a.c.code.localeCompare(b.c.code));
   return scored.slice(0, limit).map((x) => x.c);
 }
@@ -325,4 +342,24 @@ export function catalogDepartments(courses: CatalogCourse[], schoolId: ID, term 
   const m = new Map<string, number>();
   for (const c of courses) if (c.schoolId === schoolId && c.department && (!term || courseTerm(c) === term)) m.set(c.department, (m.get(c.department) ?? 0) + 1);
   return [...m].map(([name, count]) => ({ name, count })).sort((a, b) => a.name.localeCompare(b.name));
+}
+
+/** S029 목록용 한 학기 수업 — 딸린 섹션·원본 node id 는 빼고 (화면이 받아 두고 검색한다). term 은 resolveCatalogTerm 으로 */
+export function browseCatalog(courses: CatalogCourse[], schoolId: ID, term: string): CatalogCourse[] {
+  const out: CatalogCourse[] = [];
+  for (const c of courses) {
+    if (c.schoolId !== schoolId || (term && courseTerm(c) !== term)) continue;
+    const { sections: _s, sourceId: _id, termCode: _tc, ...slim } = c;
+    out.push(slim);
+  }
+  return out;
+}
+
+/** 수업 하나 — id 로, 없으면 과목 코드(+학기)로 첫 강의 분반 */
+export function findCatalogRef(courses: CatalogCourse[], schoolId: ID, ref: { id?: string; code?: string; term?: string }): CatalogCourse | undefined {
+  if (ref.id) { const hit = courses.find((c) => c.id === ref.id && c.schoolId === schoolId); if (hit) return hit; }
+  if (!ref.code) return undefined;
+  const slug = ref.code.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const same = courses.filter((c) => c.schoolId === schoolId && c.code.toLowerCase().replace(/[^a-z0-9]/g, '') === slug && (!ref.term || courseTerm(c) === ref.term));
+  return same.sort((a, b) => a.id.length - b.id.length || a.id.localeCompare(b.id))[0];
 }

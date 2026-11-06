@@ -83,6 +83,10 @@ Radii: cards 20px, icon tiles 14px, chips / buttons fully round. Cards are `surf
 | `FilterSheet({open, groups, values, count, onApply, onClose, focus?})` | bottom sheet over the current screen | ✕ · "Filters" · **Reset** (back to defaults, draft only); sections of wrap chips (selected = pink, one per group, tap again to clear); sticky lavender **Show N results** — `count(draft)` live, disabled "No results" at 0. Picks are a draft until Show; Esc, swipe down on the handle/header, ✕ or the backdrop close without applying. Focus is trapped inside and returns to the opener; chips are buttons with `aria-pressed`; the count is announced (`aria-live`). |
 | `FilterGroup` / `FilterValues`, `appliedChips`, `toggleValue`, `resetValues`, `sortLabel`, `pickValues` | `filterModel.ts` — pure, no React | group `{key, title, options: {value, label, chip?}[], required?}`; `required` = the sort (always one on, not a chip). `chip` = shorter name for the applied chip ("Only saved (2)" → "Saved"). |
 
+`renderGroup(g, value, set)` (FilterBar → FilterSheet) draws one section in place of its chips — S029 uses it for the
+Department section (search + ★ list, favourites first, `orderDepartments`). Return `null` for the default chips. `openRequest={{n, focus}}` lets another button on the screen open the sheet at a section (bump `n`). A group
+option with value `''` is a real choice that is never a chip (S029 Term: `''` = the current term).
+
 The caller passes a `count` that runs **the same filter function as the list** (Explore: `src/pages/explore/exploreFilters.ts`
 `filterOpportunities` / `filterEvents` / `filterClubs`) — never a second copy of the rules. Tested in `server/explorefilters.test.ts`.
 
@@ -112,6 +116,31 @@ The caller passes a `count` that runs **the same filter function as the list** (
 | `EmptyState({icon, tone, title, sub, action, children})` | S041–S044, S028, S095, S096 | whole tab/screen empty; `children` for extra chips/buttons. |
 | `ErrorScreen({message, onRetry})` | S094 "Let's try that again" | use instead of the old `ErrorState` in new screens. |
 | `LoadingCards({count})` | — | keeps the card layout while loading. |
+
+### Timetable (`src/components/timetable/WeekGrid.tsx`)
+| Prop | Use |
+|---|---|
+| `hourPx` | hour height; S029's compact grid uses 26 (labels shrink to the code only below 40) |
+| `ghosts` | `{day,start,end,label}[]` — a course being previewed: pink outline (`sel`) on `sel-soft`. A ghost that hits one of my classes takes the right half so both stay visible |
+| (always) | my own classes that overlap each other sit side by side (they used to cover each other) |
+
+### Course list rules (`@core/lib/coursefinder`, `@core/lib/courseLinks`) — pure, tested in `server/coursefinder.test.ts`
+- `findCourses(courses, {q, dept, level, sort, undergrad})` — the S029 list and its sheet's "Show N results" both call it.
+  Search scoring is `scoreCourse` in `@core/data/catalog/courses` (the server's `searchCatalog` uses it too).
+- `noteLine` / `prerequisiteLines` / `classNoteLines` (reserved-seat lines filtered), `majorDepartment`, `popularOnLumi` (empty search).
+- `findOverlap` / `overlapLine`, `isCourseAdded`, `meetingLine`, `courseLevel` (Berkeley numbering: <100 lower, 100–199 upper, 200+ graduate).
+- `lumiCounts` / `lumiCountLabel` — counts only, same people as classmate rosters (opted in + verified), never samples.
+- `courseLinks(c)` — outbound links from the per-school `COURSE_LINKS` map; empty for schools without a verified entry (see `docs/course-links.md`).
+
+### Course reviews (`src/components/reviews`) — owner 2026-11-06
+| Component | Use | Notes |
+|---|---|---|
+| `StarRow({value,size})`, `StarPicker` | review stars | filled = `gold` token, empty = `line`. No hex. |
+| `SummaryCard`, `ReviewCard`, `ExamSummaryCard`, `ExamTipCard`, `LockedCard` | Reviews / Exam info tabs | cards never show a name: `byline(term, mine)` → "Fall 2026 student" / "Student" / "You". Helpful = pill, pink (`sel`) when mine. |
+| `CourseReviewsTab({code,onAsk})`, `ExamInfoTab` | mounted by `ClassPage.tsx` | the tab only shows what `api.courseReviews.*` returns — lock, ≥3 rules and anonymity are server-side. "Write a review" / "Add exam info" are **outline**: the course page's one primary is Add to schedule. |
+| `ReviewForm({quick})`, `ExamForm`, `Pick`, `DeleteLink` | `/reviews/write`, `/reviews/exam`, `/reviews/term` | only ★ is required; text last ("Anything else? (optional)"). `quick` collapses More details / Add a note. `Pick` = single-choice chips, tap again clears. One lavender `BottomCTA`. |
+| `InviteCard` | Reviews / Exam info tab with < 3 entries | "Be one of the first to review CS 61A" + outline Review (or "Took it before?" → `/reviews/past`). The one allowed "be the first" line — it is an action, shown once on the tab, never on list rows. |
+| `CourseStars({stars})`, `useCourseStars(codes)`, `HeaderStars({code,onOpen})` | Add classes rows, course page hero | render nothing under 3 reviews — no placeholder stars. One `/api/reviews/stars` call per new set of codes (cached). |
 
 ### Screen-specific helpers outside `ha`
 - `src/pages/campus/CampusSource.tsx` — `CampusHead` (S015/S016 back header + title + "UC Berkeley · …") and

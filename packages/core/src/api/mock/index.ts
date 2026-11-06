@@ -17,9 +17,11 @@ import { eraseUser, isProtectedAccount, deleteConfirmOk, DELETE_CONFIRM_WORD, DE
 const MOCK_PROTECTED = new Set<string>([DEMO_USER_ID, ...seedUsers.map((u) => u.id)]);
 import { createClassesEngine } from '../classes';
 import { birthYearProblem, searchOrgs } from '@core/lib/signup';
-import { classRostersFor } from '@core/lib/classmates';
+import { classRostersFor, codeSlug } from '@core/lib/classmates';
 import { createClassQa, type ClassQuestion } from '@core/lib/classqa';
-import { catalogCourses, searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm } from '@core/data/catalog/courses';
+import { createCourseReviews, type CourseReview, type ExamInfo, type PastClass } from '@core/lib/coursereviews';
+import { catalogCourses, searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm, browseCatalog, findCatalogRef, courseTerm } from '@core/data/catalog/courses';
+import { lumiCounts } from '@core/lib/coursefinder';
 import { publicExplore } from '@core/lib/publicexplore';
 import { cleanHowToJoin, requestStatus } from '@core/lib/clubjoin';
 import { cleanAdvancedFilter, matchesAdvanced, offlineStatus, PAYMENTS_CLOSED } from '@core/lib/plus';
@@ -56,6 +58,22 @@ const classQa = createClassQa({
   uid: (prefix) => `${prefix}_${Math.random().toString(36).slice(2, 10)}`,
 });
 const qa = <T>(fn: () => T) => request(fn);
+/** 수업 리뷰 · 시험 정보 — 목업은 이 탭이 열려 있는 동안만 (서버는 server/coursereviews.ts) */
+const mockReviews: CourseReview[] = [];
+const mockExams: ExamInfo[] = [];
+const mockPast = new Map<string, PastClass[]>();
+const upsert = <X extends { id: string }>(list: X[], x: X) => { const i = list.findIndex((y) => y.id === x.id); if (i >= 0) list[i] = x; else list.push(x); };
+const cut = <X extends { id: string }>(list: X[], id: string) => { const i = list.findIndex((y) => y.id === id); if (i >= 0) list.splice(i, 1); };
+const courseReviews = createCourseReviews({
+  reviews: () => mockReviews, exams: () => mockExams,
+  putReview: (r) => upsert(mockReviews, r), dropReview: (id) => cut(mockReviews, id),
+  putExam: (x) => upsert(mockExams, x), dropExam: (id) => cut(mockExams, id),
+  user: (id) => db.users.find((u) => u.id === id),
+  instructors: (schoolId, slug, term) => catalogCourses.filter((c) => c.schoolId === schoolId && c.code.toLowerCase().replace(/[^a-z0-9]/g, '') === slug && c.term === term && c.instructor).map((c) => c.instructor!),
+  pastClasses: (id) => mockPast.get(id) ?? [],
+  putPastClasses: (id, list) => { mockPast.set(id, list); },
+  uid: (prefix) => `${prefix}_${Math.random().toString(36).slice(2, 10)}`,
+});
 
 /** 저장한 사람 폴더·메모 (S077) — 목업은 이 탭이 열려 있는 동안만 (서버는 server/savedpeople.ts) */
 const savedBooks = new Map<string, SavedPeopleBook>();
@@ -175,6 +193,16 @@ export const mockApi: AroundUApi = {
     async terms(schoolId) { return request(() => ({ terms: catalogTerms(catalogCourses, schoolId), current: resolveCatalogTerm(catalogCourses, schoolId) })); },
     // 데모(오프라인)에는 학교 시간표가 없다 — 토론·랩은 실제 서버에서만
     async sections() { return request(() => []); },
+    async browse(schoolId, term) { return request(() => { const t = resolveCatalogTerm(catalogCourses, schoolId, term); return { term: t, courses: browseCatalog(catalogCourses, schoolId, t) }; }); },
+    async counts(schoolId, term) { return request(() => lumiCounts(db.users, schoolId, term)); },
+    async course(schoolId, ref) {
+      return request(() => {
+        const c = findCatalogRef(catalogCourses, schoolId, ref);
+        return c ? { course: c, count: lumiCounts(db.users, schoolId, courseTerm(c))[codeSlug(c.code)] ?? 0 } : null;
+      });
+    },
+    // 수업 페이지(번호·조건·노트)도 실제 서버에서만
+    async details() { return request(() => ({})); },
   },
 
   // 학사 일정·좌석 알림은 서버(워커)가 공식 원본에서 가져온다 — 예시 모드에서는 비어 있다
@@ -248,6 +276,21 @@ export const mockApi: AroundUApi = {
     ask: (key, text) => qa(() => classQa.ask(getSession() ?? '', key, text)),
     answer: (questionId, text) => qa(() => classQa.answer(getSession() ?? '', questionId, text)),
     remove: (questionId, answerId) => qa(() => classQa.remove(getSession() ?? '', questionId, answerId)),
+  },
+  courseReviews: {
+    view: (code, filter) => request(() => courseReviews.view(getSession() ?? '', code, filter)),
+    save: (input) => request(() => courseReviews.saveReview(getSession() ?? '', input)),
+    remove: (id) => request(() => courseReviews.removeReview(getSession() ?? '', id)),
+    helpful: (id) => request(() => courseReviews.helpful(getSession() ?? '', id)),
+    exam: (code) => request(() => courseReviews.examView(getSession() ?? '', code)),
+    saveExam: (input) => request(() => courseReviews.saveExam(getSession() ?? '', input)),
+    removeExam: (id) => request(() => courseReviews.removeExam(getSession() ?? '', id)),
+    instructors: (code, term) => request(() => ({ instructors: courseReviews.instructorsFor(getSession() ?? '', code, term) })),
+    term: (term) => request(() => courseReviews.termPrompt(getSession() ?? '', term)),
+    pastClasses: () => request(() => courseReviews.pastClasses(getSession() ?? '')),
+    addPastClass: (input) => request(() => courseReviews.addPastClass(getSession() ?? '', input)),
+    removePastClass: (code, term) => request(() => courseReviews.removePastClass(getSession() ?? '', code, term)),
+    stars: (codes) => request(() => { const me = db.users.find((u) => u.id === getSession()); const school = me?.affiliation.type === 'university' ? me.affiliation.schoolId ?? '' : ''; return { stars: school ? courseReviews.stars(school, codes) : {} }; }),
   },
 
   // 오프라인 데모: Lumi+ 플래그는 늘 꺼짐 (아무것도 막지 않는다), 결제도 없다

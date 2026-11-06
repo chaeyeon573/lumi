@@ -45,6 +45,10 @@ export function cleanProfileExtras(patch: Partial<User>): Partial<User> {
     const ok = o && kinds.length && ['today', 'this_week', 'next_week'].includes(o.when as string) && /^\d{4}-\d{2}-\d{2}$/.test(o.until ?? '') && VISIBILITIES.includes(o.visibility as Visibility);
     out.openTo = ok ? { kinds: [...new Set(kinds)], when: o.when!, until: o.until!, visibility: o.visibility! } : undefined;
   }
+  if ('favoriteDepartments' in out) {
+    const list = Array.isArray(out.favoriteDepartments) ? out.favoriteDepartments.map((d) => short(d, 100)).filter(Boolean) : [];
+    out.favoriteDepartments = list.length ? [...new Set(list)].slice(-30) : undefined;
+  }
   if ('extraVisibility' in out) {
     const v = (out.extraVisibility ?? {}) as Record<string, unknown>;
     out.extraVisibility = Object.fromEntries(EXTRA_FIELDS.filter((f) => VISIBILITIES.includes(v[f] as Visibility)).map((f) => [f, v[f] as Visibility]));

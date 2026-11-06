@@ -11,6 +11,7 @@ import { homeExploreTabRoutes, homeExploreSubRoutes } from '@/routes/homeExplore
 import { scheduleTabRoutes, scheduleSubRoutes } from '@/routes/schedule';
 import { socialTabRoutes, socialSubRoutes } from '@/routes/social';
 import { meTabRoutes, meSubRoutes } from '@/routes/me';
+import { reviewSubRoutes } from '@/routes/reviews';
 import { legacyRoutes, legacyPublicRoutes } from '@/routes/redirects';
 import { takeReturnTo } from '@/components/classes/ClassLink';
 import { PrivacyPage, TermsPage } from '@/pages/legal/LegalPages';
@@ -87,6 +88,7 @@ export default function App() {
           {scheduleSubRoutes}
           {socialSubRoutes}
           {meSubRoutes}
+          {reviewSubRoutes}
           {legacyRoutes}
         </Route>
       </Route>

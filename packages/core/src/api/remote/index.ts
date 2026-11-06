@@ -136,6 +136,10 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
       departments: (schoolId, term) => call('catalog/departments', { schoolId, term }),
       terms: (schoolId) => call('catalog/terms', { schoolId }),
       sections: (schoolId, courseId) => call('catalog/sections', { schoolId, courseId }),
+      browse: (schoolId, term) => call('catalog/browse', { schoolId, term }),
+      counts: (schoolId, term) => call('catalog/counts', { schoolId, term }),
+      course: (schoolId, ref) => call('catalog/course', { schoolId, ...ref }),
+      details: (schoolId, courseId) => call('catalog/details', { schoolId, courseId }),
     },
 
     academic: { dates: (schoolId) => call('academic/dates', { schoolId }) },
@@ -206,6 +210,21 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
       ask: (key, text) => call('classqa/ask', { key, text }),
       answer: (questionId, text) => call('classqa/answer', { questionId, text }),
       remove: (questionId, answerId) => call('classqa/remove', { questionId, answerId }),
+    },
+    courseReviews: {
+      view: (code, filter) => call('reviews/view', { code, ...filter }),
+      save: (input) => call('reviews/save', input),
+      remove: (id) => call('reviews/remove', { id }),
+      helpful: (id) => call('reviews/helpful', { id }),
+      exam: (code) => call('reviews/exam', { code }),
+      saveExam: (input) => call('reviews/exam/save', input),
+      removeExam: (id) => call('reviews/exam/remove', { id }),
+      instructors: (code, term) => call('reviews/instructors', { code, term }),
+      term: (term) => call('reviews/term', { term }),
+      stars: (codes) => call('reviews/stars', { codes }),
+      pastClasses: () => call('reviews/past', {}),
+      addPastClass: (input) => call('reviews/past/add', input),
+      removePastClass: (code, term) => call('reviews/past/remove', { code, term }),
     },
 
     plus: {

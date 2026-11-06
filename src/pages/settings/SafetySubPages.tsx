@@ -30,7 +30,7 @@ export function BlockedAccountsPage() {
   );
 }
 
-const TARGET = { user: en ? 'Person' : '사람', activity: en ? 'Meetup' : '모임', post: en ? 'Post' : '글', comment: en ? 'Comment' : '댓글', message: en ? 'Chat' : '채팅', ride: 'Ride' } as const;
+const TARGET = { user: en ? 'Person' : '사람', activity: en ? 'Meetup' : '모임', post: en ? 'Post' : '글', comment: en ? 'Comment' : '댓글', message: en ? 'Chat' : '채팅', ride: 'Ride', review: en ? 'Course review' : '수업 리뷰', exam: en ? 'Exam info' : '시험 정보' } as const;
 
 /** Report a concern (S086 줄) — 신고는 그 사람·글·모임의 ··· 에서 한다. 여기서는 어떻게 하는지와 내가 낸 신고의 처리 상태 */
 export function MyReportsPage() {

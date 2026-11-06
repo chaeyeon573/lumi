@@ -1,4 +1,4 @@
-import { useId, useLayoutEffect, useRef, useState, type KeyboardEvent, type PointerEvent } from 'react';
+import { useEffect, useId, useLayoutEffect, useRef, useState, type KeyboardEvent, type PointerEvent, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { ChevronDown, Filter, X } from 'lucide-react';
 import { lang } from '@core/i18n';
@@ -16,10 +16,15 @@ const en = lang === 'en';
  * 값은 부르는 쪽이 들고 있다 (Explore 는 URL) — 시트에서 "Show N results" 를 눌러야 onApply.
  * count(draft) 는 목록과 같은 거르기 함수로 센다 (부르는 쪽 책임).
  */
-export function FilterBar({ groups, values, onApply, count, className }: {
+export function FilterBar({ groups, values, onApply, count, className, renderGroup, openRequest }: {
   groups: FilterGroup[]; values: FilterValues; onApply: (next: FilterValues) => void; count: (draft: FilterValues) => number; className?: string;
+  /** 칩 대신 다른 고르기를 그릴 묶음 (S029 학과: 검색 + ★ 목록) — null 이면 기본 칩 */
+  renderGroup?: GroupRenderer;
+  /** 화면의 다른 버튼이 시트를 연다 (S029 빈 검색의 "Department" 버튼) — n 이 바뀔 때마다 focus 묶음으로 */
+  openRequest?: { n: number; focus?: string };
 }) {
   const [open, setOpen] = useState<{ focus?: string } | null>(null);
+  useEffect(() => { if (openRequest?.n) setOpen({ focus: openRequest.focus }); }, [openRequest?.n]); // eslint-disable-line react-hooks/exhaustive-deps
   const cur = pickValues(groups, values);
   const chips = appliedChips(groups, cur);
   const sort = sortLabel(groups, cur);
@@ -49,11 +54,14 @@ export function FilterBar({ groups, values, onApply, count, className }: {
           {sort!.label}<ChevronDown size={15} />
         </button>
       )}
-      <FilterSheet open={!!open} focus={open?.focus} groups={groups} values={cur} count={count}
+      <FilterSheet open={!!open} focus={open?.focus} groups={groups} values={cur} count={count} renderGroup={renderGroup}
         onClose={() => setOpen(null)} onApply={(v) => { setOpen(null); onApply(v); }} />
     </div>
   );
 }
+
+/** 시트 안 한 묶음을 칩 대신 직접 그린다 — value 는 초안 값, set 으로 초안을 바꾼다. null 을 돌려주면 기본 칩 */
+export type GroupRenderer = (g: FilterGroup, value: string, set: (value: string) => void) => ReactNode | null;
 
 const FOCUSABLE = 'button:not([disabled]), [href], input:not([disabled]), select, textarea, [tabindex]:not([tabindex="-1"])';
 
@@ -64,14 +72,14 @@ const FOCUSABLE = 'button:not([disabled]), [href], input:not([disabled]), select
  * 포커스는 시트 안에서만 돈다. focus 를 주면 그 묶음으로 스크롤하고 고른 칩에 포커스.
  */
 export function FilterSheet({ open, ...rest }: {
-  open: boolean; onClose: () => void; onApply: (next: FilterValues) => void; groups: FilterGroup[]; values: FilterValues; count: (draft: FilterValues) => number; focus?: string; title?: string;
+  open: boolean; onClose: () => void; onApply: (next: FilterValues) => void; groups: FilterGroup[]; values: FilterValues; count: (draft: FilterValues) => number; focus?: string; title?: string; renderGroup?: GroupRenderer;
 }) {
   if (!open) return null;
   return createPortal(<SheetBody {...rest} />, shellEl());
 }
 
-function SheetBody({ onClose, onApply, groups, values, count, focus, title }: {
-  onClose: () => void; onApply: (next: FilterValues) => void; groups: FilterGroup[]; values: FilterValues; count: (draft: FilterValues) => number; focus?: string; title?: string;
+function SheetBody({ onClose, onApply, groups, values, count, focus, title, renderGroup }: {
+  onClose: () => void; onApply: (next: FilterValues) => void; groups: FilterGroup[]; values: FilterValues; count: (draft: FilterValues) => number; focus?: string; title?: string; renderGroup?: GroupRenderer;
 }) {
   const [draft, setDraft] = useState<FilterValues>(() => pickValues(groups, values));
   const [drag, setDrag] = useState<number | null>(null);
@@ -138,11 +146,13 @@ function SheetBody({ onClose, onApply, groups, values, count, focus, title }: {
           {groups.map((g) => (
             <section key={g.key} data-group={g.key} aria-labelledby={`${id}-${g.key}`} className="pt-5">
               <h3 id={`${id}-${g.key}`} className="text-[13px] font-semibold text-ink-2 mb-2.5">{g.title}</h3>
-              <div role="group" aria-labelledby={`${id}-${g.key}`} className="flex flex-wrap gap-2">
-                {g.options.map((o) => (
-                  <Chip key={o.value || '_'} active={(draft[g.key] ?? '') === o.value} onClick={() => setDraft((d) => toggleValue(groups, d, g.key, o.value))}>{o.label}</Chip>
-                ))}
-              </div>
+              {renderGroup?.(g, draft[g.key] ?? '', (v) => setDraft((d) => ({ ...d, [g.key]: v }))) ?? (
+                <div role="group" aria-labelledby={`${id}-${g.key}`} className="flex flex-wrap gap-2">
+                  {g.options.map((o) => (
+                    <Chip key={o.value || '_'} active={(draft[g.key] ?? '') === o.value} onClick={() => setDraft((d) => toggleValue(groups, d, g.key, o.value))}>{o.label}</Chip>
+                  ))}
+                </div>
+              )}
             </section>
           ))}
         </div>
