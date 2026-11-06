@@ -91,8 +91,27 @@ const BADGE: Record<Opportunity['type'], [string, string]> = {
   hackathon: ['Hackathon', '해커톤'], startup: ['Startup', '창업'], exchange: ['Study abroad', '교환학생'], club: ['Club', '동아리'], activity: ['Activity', '활동'],
 };
 export const badgeLabel = (o: Pick<Opportunity, 'type'>) => BADGE[o.type][en ? 0 : 1];
-/** events = ice, everything you apply to = peach (tones.ts CATEGORY_TONE) */
-export const badgeTone = (o: Pick<Opportunity, 'type'>): Tone => (o.type === 'event' ? 'ice' : 'peach');
+/**
+ * the type chip's tint — and the card's 3px stripe (owner 2026-11-06, option C): events and hackathons ice, internships /
+ * startups peach, research and study abroad lavender, scholarships mint
+ */
+const TYPE_TONE: Record<Opportunity['type'], Tone> = { event: 'ice', hackathon: 'ice', internship: 'peach', startup: 'peach', lab: 'lav', exchange: 'lav', scholarship: 'mint', club: 'mint', activity: 'rose' };
+export const badgeTone = (o: Pick<Opportunity, 'type'>): Tone => TYPE_TONE[o.type] ?? 'peach';
+
+/** the time chip on a card (option A): an event's day · time, otherwise the deadline as D-n / D-Day (D-3 or less is urgent → pink) */
+export function listingChip(o: Opportunity): { text: string; urgent: boolean } | undefined {
+  if (o.type === 'event') {
+    const day = o.date ? formatDate(campusDate(o.date)) : '';
+    const time = o.startTime && o.startTime !== '00:00' ? formatTime(o.startTime) : '';
+    const text = [day, time].filter(Boolean).join(' · ');
+    return text ? { text, urgent: false } : undefined;
+  }
+  if (!o.deadline) return undefined;
+  const b = badgeOf(o, en);
+  return { text: b.text, urgent: b.tone === 'urgent' };
+}
+/** host · place under the title (option A) — events carry their place here, the rest have their own location line */
+export const listingHostLine = (o: Opportunity): string => (o.type === 'event' ? [o.host, o.place?.name].filter(Boolean).join(' · ') : o.host ?? '');
 
 /** one meta line: "Thu, Nov 6 · 5 PM · Sproul Plaza" for events, "D-12 · Google" for the rest (the place is its own line, listingWhere) */
 export function listingMeta(o: Opportunity): string {

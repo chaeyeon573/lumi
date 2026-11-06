@@ -179,12 +179,12 @@ test('"improve" is not improv: a consulting club is not an arts club', () => {
   assert.ok(topicsOfText('Weekly improv comedy shows').arts);
 });
 
-test('"Closes in N days" counts Berkeley days, same as the D-day badge', () => {
+test('the deadline reason (D-n) counts Berkeley days, same as the D-day badge', () => {
   // 버클리 목 02:17 (UTC 09:17) — 마감은 금요일 밤 23:59 PDT = UTC 토 06:59. 배지 D-1, 이유도 1일이어야 한다
   const swan = opp('swan', 'scholarship', 'Swan Award', { deadline: '2026-10-31T06:59:00Z' });
   const r = forYou(snap([swan]), person('Computer Science'), { now: new Date('2026-10-29T09:17:00Z'), mix: false });
-  assert.equal(r[0].reasons.find((x) => x.kind === 'deadline')?.text, 'Closes in 1 day');
+  assert.equal(r[0].reasons.find((x) => x.kind === 'deadline')?.text, 'D-1');
   // 버클리 수 22:00 (UTC 목 05:00) — 같은 마감이 이틀 뒤
   const r2 = forYou(snap([swan]), person('Computer Science'), { now: new Date('2026-10-29T05:00:00Z'), mix: false });
-  assert.equal(r2[0].reasons.find((x) => x.kind === 'deadline')?.text, 'Closes in 2 days');
+  assert.equal(r2[0].reasons.find((x) => x.kind === 'deadline')?.text, 'D-2');
 });

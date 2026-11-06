@@ -1,6 +1,7 @@
+import { ClubItem } from '@/pages/explore/ExploreItems';
 import { useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Coffee, BookOpen, Dumbbell, Sparkles, Plus, MapPin, Clock, Users, CalendarDays, UtensilsCrossed, Search } from 'lucide-react';
+import { Coffee, BookOpen, Dumbbell, Sparkles, Plus, MapPin, Clock, CalendarDays, UtensilsCrossed, Search } from 'lucide-react';
 import { TONE, Btn, Chip, ChipRow, EmptyState, EmptyCard, RowCard, SectionHeader } from '@/components/ha';
 import { lang } from '@core/i18n';
 import { SocialShell } from '@/pages/social/SocialPage';
@@ -73,7 +74,8 @@ export function MeetPage() {
       <SectionHeader title={en ? 'Your groups' : '내 그룹'} />
       <div className="space-y-3">
         {groups.slice(0, 4).map((o) => (
-          <RowCard key={o.id} tone="mint" icon={<Users size={20} />} title={o.name} sub={[ORG_TYPE_LABELS[o.type], o.adminIds.includes(v.me.id) ? (en ? 'Officer' : '운영진') : (en ? 'Member' : '회원')].join(' · ')} onClick={() => nav(`/orgs/${o.id}`)} />
+          // text only unless the club has a real logo (owner 2026-11-06 — no icon block)
+          <ClubItem key={o.id} o={o} sub={[ORG_TYPE_LABELS[o.type], o.adminIds.includes(v.me.id) ? (en ? 'Officer' : '운영진') : (en ? 'Member' : '회원')].join(' · ')} onClick={() => nav(`/orgs/${o.id}`)} />
         ))}
         {!groups.length && <RowCard tone="mint" icon={<Search size={20} />} title={en ? 'Find your groups' : '내 그룹 찾기'} sub={en ? 'Clubs, labs and communities on campus' : '동아리·연구실·커뮤니티'} onClick={() => nav('/explore/clubs')} />}
         <RowCard tone="rose" icon={<UtensilsCrossed size={20} />} title={en ? 'Small Tables' : '작은 테이블'} sub={en ? 'Small plans, good company' : '작은 약속, 좋은 사람들'} onClick={() => nav('/social/small-tables')} />

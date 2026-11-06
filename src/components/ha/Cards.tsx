@@ -3,7 +3,7 @@ import { ArrowUpRight, Bookmark, ChevronRight, MapPin } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { cn } from '@core/lib/cn';
 import { Avatar, Cover } from '@/components/ui';
-import { TONE, type Tone } from './tones';
+import { TONE, TONE_STRIPE, type Tone } from './tones';
 
 const en = lang === 'en';
 
@@ -67,18 +67,20 @@ export function RowCard({ tone = 'ice', icon, title, sub, right, onClick, badge,
 }
 
 /**
- * 공고·행사 카드 (PDF S017): 진짜 사진이 있을 때만 왼쪽 사진. 없으면 글만 — 종류 칩, 제목, 한 줄 설명, 메타, "View source ↗", 책갈피.
- * (2026-11-06 사장님: 사진이 없으면 아이콘 칸·이모지 칸·머리글자 칸을 그리지 않는다)
+ * 공고·행사 카드 (PDF S017, 2026-11-06 사장님 option A + C): 위에 종류 칩 + 시간 칩(마감 D-n — D-3 이하는 분홍), 굵은 제목,
+ * 한 줄 설명, 주최 · 장소, "View source ↗", 책갈피. 진짜 사진이 있을 때만 왼쪽 사진 — 아이콘·이모지·머리글자 칸은 그리지 않는다.
+ * 왼쪽 3px 색 줄 = 종류 칩과 같은 색 (TONE_STRIPE)
  */
-export function ListingCard({ cover, badge, badgeTone = 'ice', title, line, meta, where, sourceUrl, saved, onSave, onClick, className }: {
-  cover?: { emoji: string; hue: number; url?: string }; /** @deprecated nothing is drawn without a real photo */ icon?: ReactNode; badge?: string; badgeTone?: Tone; title: string;
-  /** one line of description */ line?: string; meta?: ReactNode;
+export function ListingCard({ cover, badge, badgeTone = 'ice', time, urgent, title, line, meta, where, sourceUrl, saved, onSave, onClick, className }: {
+  cover?: { emoji: string; hue: number; url?: string }; /** @deprecated nothing is drawn without a real photo */ icon?: ReactNode; badge?: string; badgeTone?: Tone;
+  /** the time chip: "D-13" / "D-Day" for deadlines, "Thu, Nov 6 · 5 PM" for events */ time?: string; /** D-3 or less → pink */ urgent?: boolean; title: string;
+  /** one line of description */ line?: string; /** host · place */ meta?: ReactNode;
   /** 근무지 — meta 줄 끝에서 잘리지 않게 따로 한 줄 (📍 Mountain View, CA) */ where?: string;
   sourceUrl?: string; saved?: boolean; onSave?: () => void; onClick?: () => void; className?: string;
 }) {
   const photo = cover?.url ? cover : undefined;
   return (
-    <div className={cn(cardCls, 'p-3 flex gap-3.5 relative', !photo && 'px-4', className)}>
+    <div className={cn(cardCls, 'p-3 flex gap-3.5 relative', TONE_STRIPE[badgeTone], !photo && 'pl-4', className)}>
       {photo && (
         <button onClick={onClick} className="shrink-0 press" tabIndex={-1} aria-hidden>
           <Cover emoji={photo.emoji} hue={photo.hue} url={photo.url} className="h-[88px] w-[88px] rounded-2xl" size={30} />
@@ -86,7 +88,12 @@ export function ListingCard({ cover, badge, badgeTone = 'ice', title, line, meta
       )}
       <div className="flex-1 min-w-0 pr-7">
         <button onClick={onClick} className="block w-full text-left press">
-          {badge && <Badge tone={badgeTone}>{badge}</Badge>}
+          {(badge || time) && (
+            <span className="flex flex-wrap items-center gap-1.5">
+              {badge && <Badge tone={badgeTone}>{badge}</Badge>}
+              {time && <Badge tone={urgent ? 'sel' : 'neutral'}>{time}</Badge>}
+            </span>
+          )}
           <span className="block text-[15px] font-bold leading-snug mt-1.5 line-clamp-2">{title}</span>
           {line && <span className="block text-[13px] text-ink-2 mt-1 truncate">{line}</span>}
           {meta && <span className="block text-[12.5px] text-ink-3 mt-1 truncate">{meta}</span>}
@@ -113,25 +120,31 @@ export function AvatarStack({ people, size = 28, max = 3 }: { people: { id: stri
 }
 
 /**
- * 모임 카드 (PDF S037·S038): 배지, 아이콘 칸, 제목, "Café · Choose a time together", 아래 얼굴들 + "View meetup".
+ * 모임·동아리 행사 카드 — option A (2026-11-06 사장님 검토 중): 위에 종류 칩 + 시간 칩, 굵은 제목, 주최 · 장소, 아래에 사람 + 행동.
+ * 진짜 사진이 있을 때만 오른쪽 위 작은 사진. 없으면 글만 — 아이콘 칸을 그리지 않는다 (`icon` 은 무시). 왼쪽 3px 색 줄 = 칩 색 (option C)
  */
-export function MeetupCard({ tone = 'rose', icon, badge, title, meta, people = [], footnote, action, onClick, className }: {
-  tone?: Tone; icon: ReactNode; badge?: string; title: string; meta?: ReactNode; people?: { id: string; avatar: { emoji: string; hue: number; url?: string } }[];
+export function MeetupCard({ tone = 'rose', badge, time, title, meta, cover, people = [], footnote, action, onClick, className }: {
+  tone?: Tone; /** @deprecated nothing is drawn without a real photo */ icon?: ReactNode; badge?: string; /** when, as a chip ("Sat · 3 PM") */ time?: string; title: string;
+  /** host · place */ meta?: ReactNode; /** a real photo only */ cover?: { url?: string }; people?: { id: string; avatar: { emoji: string; hue: number; url?: string } }[];
   footnote?: ReactNode; action?: string; onClick?: () => void; className?: string;
 }) {
   return (
-    <button onClick={onClick} className={cn(cardCls, 'w-full p-4 text-left press', className)}>
-      <span className="flex items-center gap-3.5">
-        <IconTile tone={tone}>{icon}</IconTile>
+    <button onClick={onClick} className={cn(cardCls, 'w-full p-4 text-left press', TONE_STRIPE[tone], className)}>
+      <span className="flex items-start gap-3">
         <span className="flex-1 min-w-0">
-          {badge && <Badge tone={tone} className="h-5 text-[11px] px-2">{badge}</Badge>}
-          <span className="block text-[15px] font-bold leading-snug mt-1 truncate">{title}</span>
-          {meta && <span className="block text-[12.5px] text-ink-3 mt-0.5 truncate">{meta}</span>}
+          {(badge || time) && (
+            <span className="flex flex-wrap items-center gap-1.5">
+              {badge && <Badge tone={tone} className="h-6 text-[11.5px] px-2.5">{badge}</Badge>}
+              {time && <Badge tone="neutral" className="h-6 text-[11.5px] px-2.5">{time}</Badge>}
+            </span>
+          )}
+          <span className="block text-[15.5px] font-bold leading-snug mt-2 line-clamp-2">{title}</span>
+          {meta && <span className="block text-[12.5px] text-ink-3 mt-1 truncate">{meta}</span>}
         </span>
-        <ChevronRight size={18} className="text-ink-3 shrink-0" />
+        {cover?.url && <Cover emoji="" hue={0} url={cover.url} className="h-16 w-16 rounded-[14px] shrink-0" size={20} />}
       </span>
       {(people.length > 0 || footnote || action) && (
-        <span className="flex items-center gap-2.5 mt-3">
+        <span className="flex items-center gap-2.5 mt-3 pt-3 border-t border-line">
           {people.length > 0 && <AvatarStack people={people} />}
           <span className="flex-1 min-w-0 text-[12px] text-ink-3 truncate">{footnote}</span>
           {action && <span className="text-[12.5px] font-semibold text-sel-fg">{action}</span>}

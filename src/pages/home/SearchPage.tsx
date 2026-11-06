@@ -1,3 +1,4 @@
+import { ClubItem, ListingItem } from '@/pages/explore/ExploreItems';
 import { useMemo, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Search, CalendarDays, Trophy, Users, Coffee, X } from 'lucide-react';
@@ -7,7 +8,6 @@ import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { audienceFits, campusDate } from '@core/lib/listings';
 import { campusToday } from '@core/lib/withpeople';
-import { formatDate, formatTime } from '@core/lib/format';
 import { ORG_TYPE_LABELS } from '@core/lib/labels';
 import { PersonItem } from '@/components/people/PeopleBits';
 import { MeetupItem, studentMeetups } from '@/components/social/MeetupBits';
@@ -58,10 +58,11 @@ export function SearchPage() {
 
   const people = (n: number) => res.people.slice(0, n).map((u) => <div key={u.id} onClickCapture={() => remember(q)}><PersonItem user={u} /></div>);
   const events = (n: number) => [
-    ...res.events.slice(0, n).map((o) => <RowCard key={o.id} tone="ice" icon={<CalendarDays size={20} />} title={o.title} sub={[`${formatDate(campusDate(o.date!))}${o.startTime ? ` ${formatTime(o.startTime)}` : ''}`, o.place?.name].filter(Boolean).join(' · ')} onClick={() => go(`/opportunities/${o.id}`)} />),
+    // text only unless there is a real photo (owner 2026-11-06 — no icon block)
+    ...res.events.slice(0, n).map((o) => <ListingItem key={o.id} o={o} people={false} onOpen={() => go(`/opportunities/${o.id}`)} />),
     ...res.meetups.slice(0, n).map((a) => <div key={a.id} onClickCapture={() => remember(q)}><MeetupItem a={a} /></div>),
   ];
-  const clubs = (n: number) => res.clubs.slice(0, n).map((o) => <RowCard key={o.id} tone="mint" icon={<Users size={20} />} title={o.name} sub={ORG_TYPE_LABELS[o.type]} onClick={() => go(`/orgs/${o.id}`)} />);
+  const clubs = (n: number) => res.clubs.slice(0, n).map((o) => <ClubItem key={o.id} o={o} sub={ORG_TYPE_LABELS[o.type]} onClick={() => go(`/orgs/${o.id}`)} />);
 
   return (
     <div className="min-h-full bg-bg pb-8">

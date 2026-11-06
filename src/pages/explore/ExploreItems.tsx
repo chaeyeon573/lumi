@@ -1,17 +1,17 @@
 import { useMemo, useState, type ComponentProps } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CalendarDays, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { lang } from '@core/i18n';
 import type { Activity, Opportunity, Organization } from '@core/types';
 import { useAppStore } from '@core/store/useAppStore';
 import { formatDate, formatTime } from '@core/lib/format';
 import { canGoTogether, socialSummary } from '@core/lib/withpeople';
-import { Btn, FilterBar, ListingCard, MeetupCard, SearchField, cardCls, type Tone } from '@/components/ha';
+import { Btn, FilterBar, ListingCard, MeetupCard, SearchField, TONE_STRIPE, cardCls, type Tone } from '@/components/ha';
 import { cn } from '@core/lib/cn';
 import { SampleTag } from '@/components/ui';
 import { Faces, usePeopleSnap } from '@/components/together/PeopleLine';
 import { GoTogetherSheet } from '@/components/together/GoTogetherSheet';
-import { badgeLabel, badgeTone, listingMeta, listingWhere } from './exploreData';
+import { badgeLabel, badgeTone, listingWhere, listingChip, listingHostLine } from './exploreData';
 
 const en = lang === 'en';
 
@@ -32,9 +32,10 @@ export function ExploreControls({ placeholder, q, onQ, filters }: {
 
 /** one listing: the PDF card, then — only when someone is actually there — who's going + one button */
 export function ListingItem({ o, saved, onSave, onOpen, people = true }: { o: Opportunity; saved?: boolean; onSave?: () => void; onOpen: () => void; people?: boolean }) {
+  const chip = listingChip(o);
   return (
     <div>
-      <ListingCard cover={o.cover?.url ? o.cover : undefined} badge={badgeLabel(o)} badgeTone={badgeTone(o)} title={o.title} line={o.description} meta={listingMeta(o)} where={listingWhere(o) || undefined}
+      <ListingCard cover={o.cover?.url ? o.cover : undefined} badge={badgeLabel(o)} badgeTone={badgeTone(o)} time={chip?.text} urgent={chip?.urgent} title={o.title} line={o.description} meta={listingHostLine(o)} where={listingWhere(o) || undefined}
         sourceUrl={o.sourceUrl || undefined} saved={saved} onSave={onSave} onClick={onOpen} />
       {people && <ListingPeople o={o} />}
     </div>
@@ -74,7 +75,7 @@ export const CLUB_TONE: Record<Organization['type'], Tone> = { club: 'mint', cou
 export function ClubItem({ o, sub, onClick }: { o: Organization; sub: string; onClick: () => void }) {
   const line = o.description?.replace(/\s+/g, ' ').trim();
   return (
-    <button onClick={onClick} className={cn(cardCls, 'w-full p-4 flex items-center gap-3.5 text-left press')}>
+    <button onClick={onClick} className={cn(cardCls, 'w-full p-4 flex items-center gap-3.5 text-left press', TONE_STRIPE.mint)}>
       {o.logo.url && <img src={/^(https?:|data:|\/)/.test(o.logo.url) ? o.logo.url : `/${o.logo.url}`} alt="" onError={(e) => { e.currentTarget.style.display = 'none'; }} className="size-12 rounded-[14px] object-cover border border-line shrink-0" />}
       <span className="flex-1 min-w-0">
         <span className="block text-[15px] font-bold leading-snug truncate">{o.name}</span>
@@ -92,7 +93,7 @@ export function MoreButton({ left, onClick }: { left: number; onClick: () => voi
 }
 
 /**
- * A club's own event posted on Lumi (activities kind org_event) — PDF S024 MeetupCard: org badge, place · time,
+ * A club's own event posted on Lumi (activities kind org_event) — MeetupCard option A: "Club event" + time chips, title, club · place,
  * the people actually going (host + approved), "View event".
  */
 export function ClubEventItem({ a }: { a: Activity }) {
@@ -105,8 +106,8 @@ export function ClubEventItem({ a }: { a: Activity }) {
   const people = [byId(a.hostId), ...parts.filter((p) => p.activityId === a.id && p.status === 'approved').map((p) => byId(p.userId))].filter((u): u is NonNullable<typeof u> => !!u);
   const time = a.startTime && a.startTime !== '00:00' ? formatTime(a.startTime) : '';
   return (
-    <MeetupCard tone="ice" icon={<CalendarDays size={22} />} badge={org?.name ?? (en ? 'Club event' : '동아리 행사')} title={a.title}
-      meta={[formatDate(a.date), time, a.place?.name].filter(Boolean).join(' · ')}
+    <MeetupCard tone="ice" badge={en ? 'Club event' : '동아리 행사'} time={[formatDate(a.date), time].filter(Boolean).join(' · ')} title={a.title}
+      meta={[org?.name, a.place?.name].filter(Boolean).join(' · ')} cover={a.cover?.url ? a.cover : undefined}
       people={people} footnote={people.length ? `${people.length} ${en ? 'going' : '명 참여'}` : undefined} action={en ? 'View event' : '행사 보기'} onClick={() => nav(`/activities/${a.id}`)} />
   );
 }

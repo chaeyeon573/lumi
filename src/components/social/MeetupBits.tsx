@@ -38,7 +38,7 @@ export function goingPeople(a: Activity, parts: Participation[], userById: (id?:
 /** "Sat 3 PM" / "Today 3 PM" */
 export const whenText = (a: Pick<Activity, 'date' | 'startTime'>) => `${formatDate(a.date)} · ${formatTime(a.startTime)}`;
 
-/** 모임 카드 (PDF S037·S038·S049) — 종류 배지·색, 장소·시간, 함께하는 얼굴, View meetup */
+/** 모임 카드 (PDF S037·S038·S049) — option A: 종류·시간 칩, 제목, 연 사람 · 장소, 함께하는 얼굴, View meetup. 진짜 사진이 있을 때만 사진 */
 export function MeetupItem({ a }: { a: Activity }) {
   const nav = useNavigate();
   const v = useViewer();
@@ -47,8 +47,8 @@ export function MeetupItem({ a }: { a: Activity }) {
   const people = goingPeople(a, parts, v.userById);
   const foot = a.sample ? (en ? 'Sample meetup' : '예시 모임') : `${people.length} ${en ? 'going' : '명 참여'}`;
   return (
-    <MeetupCard tone={k.tone} icon={<k.Icon size={22} />} badge={k.label} title={a.title}
-      meta={[a.place?.name, whenText(a)].filter(Boolean).join(' · ')}
+    <MeetupCard tone="rose" badge={k.label} time={whenText(a)} title={a.title} cover={a.cover?.url ? a.cover : undefined}
+      meta={[v.userById(a.hostId)?.nickname, a.place?.name].filter(Boolean).join(' · ')}
       people={people} footnote={foot} action={en ? 'View meetup' : '모임 보기'} onClick={() => nav(`/activities/${a.id}`)} />
   );
 }

@@ -95,5 +95,5 @@ export function daysUntil(iso: string) {
   return Math.round((Date.parse(`${day}T12:00:00Z`) - Date.parse(`${campusDay(new Date())}T12:00:00Z`)) / 86400000);
 }
 // 지난 마감은 영어로 'Closed' — t('마감')은 정원 찬 모임의 'Full' 로 번역돼 있다
-// 마감 당일은 'D-Day' 대신 'Closes today' (listings.badgeOf 와 같은 말)
-export function dday(iso: string) { const d = daysUntil(iso); return d < 0 ? (lang === 'en' ? 'Closed' : '마감') : d === 0 ? (lang === 'en' ? 'Closes today' : '오늘 마감') : `D-${d}`; }
+// 마감 당일은 'D-Day' (listings.badgeOf 와 같은 말, 사장님 2026-11-06)
+export function dday(iso: string) { const d = daysUntil(iso); return d < 0 ? (lang === 'en' ? 'Closed' : '마감') : d === 0 ? 'D-Day' : `D-${d}`; }

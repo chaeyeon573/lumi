@@ -8,7 +8,7 @@ import { useAppStore } from '@core/store/useAppStore';
 import { useViewer } from '@/hooks/useViewer';
 import { publicLinks, recruitmentLabel } from '@core/lib/orglinks';
 import { orgJoinState, type OrgJoin } from '@core/lib/orgjoin';
-import { askedToast, clubShort, consentLine, consentTitle, CONSENT_VERSION, howToJoinLive, requestStatus, statusLine, whoLabel, type RequestStatus } from '@core/lib/clubjoin';
+import { clubShort, consentLine, consentTitle, CONSENT_VERSION, howToJoinLive, requestStatus, statusLine, whoLabel, type RequestStatus } from '@core/lib/clubjoin';
 import { canGoTogether } from '@core/lib/withpeople';
 import { formatDate, formatTime } from '@core/lib/format';
 import { isSampleOrg } from '@core/lib/sampleorgs';
@@ -86,7 +86,7 @@ export function OrgPage() {
     setBusy(true);
     try {
       if (join.kind === 'join') await run(() => api.orgs.apply(org.id, v.me.id), en ? `You joined ${org.name}.` : `${org.name}에 가입했어요.`);
-      else { const r = await run(() => api.clubs.ask(org.id, CONSENT_VERSION)); setConsent(false); showToast(askedToast(r.status, org.name), 'success'); }
+      else { /* the status card says where it stands — the toast stays short */ await run(() => api.clubs.ask(org.id, CONSENT_VERSION)); setConsent(false); showToast(en ? 'Asked ✓' : '요청했어요 ✓', 'success'); }
     } catch { /* toast */ } finally { setBusy(false); }
   };
   const followers = org.followerCount ?? org.followerIds.length;
@@ -208,25 +208,26 @@ function PeopleRow({ org }: { org: Organization }) {
   );
 }
 
-/** what the Membership row says — who has the requests and where they stand (no "following never grants…" copy) */
-function membershipRow(org: Organization, join: OrgJoin): InfoRow | null {
-  const asked = org.requestCount ?? org.applicantIds.length;
+/**
+ * what the Membership row says — only facts shown nowhere else (PRODUCT_TASTE: no line said three times).
+ * The count lives in the people line and the student's own status in their status card, so: who can join once the club
+ * posted it ("Open to all" / "Application" …); before asking, whether organizers are on Lumi; after asking, nothing else.
+ */
+function membershipRow(org: Organization, join: OrgJoin, status: RequestStatus, today: string): InfoRow | null {
   const organizers = org.adminIds.length;
-  const value = join.kind === 'admin' ? (en ? 'You organize this group' : '내가 운영하는 단체')
-    : join.kind === 'member' ? (en ? 'You’re a member' : '회원이에요')
-    : join.kind === 'join' ? (en ? 'Open — anyone at school can join' : '열림 — 누구나 가입')
-    : join.kind === 'follow' ? null
-    : join.kind === 'applied' ? (organizers ? (en ? 'Organizers on Lumi have your request' : 'Lumi의 운영진이 요청을 받았어요') : (en ? 'Organizers aren’t on Lumi yet — your request is saved' : '운영진이 아직 Lumi에 없어요 — 요청은 저장돼 있어요'))
-    : asked ? (en ? `${asked} ${asked === 1 ? 'student' : 'students'} asked to join` : `${asked}명이 가입을 요청했어요`)
-    : organizers ? (en ? 'Organizers on Lumi answer requests' : 'Lumi의 운영진이 요청에 답해요')
-    : (en ? 'Organizers aren’t on Lumi yet' : '운영진이 아직 Lumi에 없어요');
-  if (!value) return null;
-  const caption = join.kind === 'ask'
-    ? (organizers ? (en ? `${organizers === 1 ? 'The organizer sees' : `${organizers} organizers see`} requests here` : `운영진 ${organizers}명이 여기서 요청을 봐요`)
-      : (en ? 'Requests are saved and passed on when the club joins Lumi' : '요청은 저장했다가 동아리가 Lumi에 오면 전해요'))
-    : undefined;
+  const h = howToJoinLive(org.howToJoin, today) ? org.howToJoin : undefined;
+  const who = h?.who ? whoLabel(h.who) : h?.whoNote;
+  const icon = org.joinPolicy === 'open' ? <Users size={19} /> : <ShieldCheck size={19} />;
+  const row = (value: string, caption?: string): InfoRow => ({ tone: 'mint', icon, label: en ? 'Membership' : '회원', value, caption: caption || undefined });
+  if (join.kind === 'follow') return null;
+  if (join.kind === 'admin') return row(en ? 'You organize this group' : '내가 운영하는 단체', who);
+  if (join.kind === 'member') return row(en ? 'You’re a member' : '회원이에요');
+  if (join.kind === 'join') return row(en ? 'Open — anyone at school can join' : '열림 — 누구나 가입');
+  if (who) return row(who, h?.who ? h.whoNote : undefined);
+  if (status !== 'none') return null;
   const recruit = recruitmentLabel(org.recruitment);
-  return { tone: 'mint', icon: org.joinPolicy === 'open' ? <Users size={19} /> : <ShieldCheck size={19} />, label: en ? 'Membership' : '회원', value, caption: [recruit && !org.joinPolicy ? recruit.text : '', caption ?? ''].filter(Boolean).join(' · ') || undefined };
+  return row(organizers ? (en ? 'Organizers on Lumi answer requests' : 'Lumi의 운영진이 요청에 답해요') : (en ? 'Organizers aren’t on Lumi yet' : '운영진이 아직 Lumi에 없어요'),
+    [recruit && !org.joinPolicy ? recruit.text : '', organizers ? '' : (en ? 'Requests are saved and passed on' : '요청은 저장했다가 전해요')].filter(Boolean).join(' · '));
 }
 
 /** "How to join" the club posted (/club-setup) — its sign-up link, who can join, the next info session */
@@ -235,7 +236,7 @@ function howToJoinRows(org: Organization, today: string): InfoRow[] {
   if (!howToJoinLive(h, today)) return [];
   const rows: InfoRow[] = [];
   if (h.signupUrl) rows.push({ tone: 'lav', icon: <ClipboardList size={19} />, label: en ? 'How to join' : '가입 방법', value: en ? 'Sign-up form' : '가입 신청서', caption: hostOf(h.signupUrl), onClick: () => window.open(h.signupUrl, '_blank', 'noopener'), right: <ExternalLink size={17} className="text-ink-3 shrink-0" /> });
-  if (h.who || h.whoNote) rows.push({ tone: 'mint', icon: <Users size={19} />, label: en ? 'Who can join' : '가입 조건', value: h.who ? whoLabel(h.who) : h.whoNote!, caption: h.who ? h.whoNote : undefined });
+  // who can join goes in the Membership row (membershipRow) — said once
   if (h.next && h.next.date >= today) rows.push({ tone: 'ice', icon: <CalendarDays size={19} />, label: en ? 'Next info session' : '다음 설명회', value: [formatDate(h.next.date), h.next.time ? formatTime(h.next.time) : ''].filter(Boolean).join(' · '), caption: h.next.place });
   return rows;
 }
@@ -257,7 +258,7 @@ function About({ org, join, status, sample }: { org: Organization; join: OrgJoin
     value: i === 0 && l.label === 'Website' ? (en ? 'Visit organization website' : '단체 웹사이트') : (en ? l.label : (LINK_LABEL_KO[l.label] ?? l.label)),
     caption: hostOf(l.url), onClick: () => window.open(l.url, '_blank', 'noopener'), right: <ExternalLink size={17} className="text-ink-3 shrink-0" />,
   }));
-  const m = membershipRow(org, join);
+  const m = membershipRow(org, join, status, today);
   if (m) rows.push(m);
   if (org.regularActivities.length) rows.push({ tone: 'ice', icon: <CalendarDays size={19} />, label: en ? 'Regular activities' : '정기 활동', value: org.regularActivities[0], caption: org.regularActivities.slice(1, 3).join(' · ') || undefined });
   const directoryClub = !org.createdBy && !sample && org.type !== 'department';

@@ -21,5 +21,13 @@ export const TONE_FG: Record<Tone, string> = {
   ice: 'text-t-ice-fg', peach: 'text-t-peach-fg', mint: 'text-t-mint-fg', rose: 'text-t-rose-fg', lav: 'text-t-lav-fg', neutral: 'text-ink-2', sel: 'text-sel-fg',
 };
 
+/**
+ * 글 카드 왼쪽 3px 색 줄 (2026-11-06 사장님 option C) — 칩과 같은 색. 사진이 있는 카드도 같이 (목록이 한 모양으로 보이게)
+ */
+export const TONE_STRIPE: Record<Tone, string> = {
+  ice: 'border-l-[3px] border-l-t-ice-fg', peach: 'border-l-[3px] border-l-t-peach-fg', mint: 'border-l-[3px] border-l-t-mint-fg',
+  rose: 'border-l-[3px] border-l-t-rose-fg', lav: 'border-l-[3px] border-l-t-lav-fg', neutral: '', sel: 'border-l-[3px] border-l-sel-fg',
+};
+
 /** 카테고리 → 색 (홈 타일·Explore 배지·검색의 Explore more 가 같은 표를 쓴다) */
 export const CATEGORY_TONE = { events: 'ice', opportunities: 'peach', clubs: 'mint', meetups: 'rose' } as const satisfies Record<string, Tone>;
