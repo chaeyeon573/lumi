@@ -47,7 +47,8 @@ export function WelcomePage() {
       <div className="flex-1 flex flex-col items-center justify-center text-center pt-6">
         <Wordmark size={52} dot />
         <h1 className="mt-8 text-[30px] font-extrabold leading-[1.15] tracking-[-0.03em]">{lang === 'en' ? <>Your college life,<br />all in one place.</> : <>대학 생활을<br />한곳에서.</>}</h1>
-        <p className="mt-4 text-[15px] text-ink-2 leading-relaxed">{lang === 'en' ? <>Discover your campus.<br />Make a plan. Find your people.</> : <>캠퍼스를 알아가고,<br />약속을 잡고, 나의 사람들을 찾아요.</>}</p>
+        {/* 무엇을 하는 앱인지 한 문장으로 — 사람 + 약속 (ux-sim 2026-11-06: "Pretty vague") */}
+        <p className="mt-4 text-[15px] text-ink-2 leading-relaxed text-balance break-keep max-w-[300px]">{lang === 'en' ? 'Make plans with people on campus — lunch, events, study.' : '캠퍼스 사람들과 약속을 잡아요 — 점심, 행사, 공부.'}</p>
         {/* PDF 의 떠 있는 칩 세 개 — 앱이 하는 일(주간 일정 · 좋은 만남 · 커뮤니티) */}
         <div className="relative w-full max-w-[320px] h-[190px] mt-8" aria-hidden>
           <span className={cn('absolute left-2 top-2 -rotate-[4deg] h-12 px-4 rounded-2xl flex items-center gap-2 text-[14px] font-semibold border border-line', TONE.ice)}><CalendarDays size={18} />{lang === 'en' ? 'Your week' : '나의 한 주'}</span>
