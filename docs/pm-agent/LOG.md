@@ -2328,3 +2328,9 @@
 - Event map points: every event reader sets `place.lat/lng` to the school centre (only the place name is real), so off-campus events such as SCU's Los Angeles law forums show the campus point. Not a per-event bug; told Codex in HANDOFF and CODEX_BRIEF not to draw venue pins from it. A real point per venue would need a geocoder (more requests), not planned without the owner.
 - UC Davis events: events.ucdavis.edu still answers 403 (blocked, not bypassed); www.ucdavis.edu/events lists only evergreen items.
 - Tulane class times batch 6: Spring 2027 A-P (16/26 letters); 4,251 classes in the file.
+
+## 2026-11-06 11:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: UF John Marshall Bar Association, Purdue Nintendo, Vanderbilt Global Brigades fine; UCR InterVarsity's linktree is titled "Fall Conference" (their own page); UGA CGSO site answered 503 (temporary).
+- Spot check courses: first pick of 5 Tulane Spring 2027 classes showed a bug in my own batch script: Spring ids end with the term tag (`_sp27`), and the script took the section from the last id part, so 827 Spring titles read "(Sec SP27)". Times were right. Fixed the script (section is the part after the term code) and repaired the titles in the file (1,089 by the end of the batch; no Fall title changed, checked against the last commit). Re-check of 5 Spring classes (SPHL 8080-92, MKTG 3010-09, BMEN 6970-01, SISE 3011-02, SRED 4936-01) against the live Tulane schedule: all match.
+- Tulane class times done: Fall 2026 2,399 + Spring 2027 2,349 = 4,748 classes. Queue item marked [x].

@@ -76,7 +76,7 @@ for (const t of pick) {
     // 쪽에 수업 칸이 있는데 하나도 못 읽었으면 읽는 코드가 틀린 것 — 끝냄으로 적지 않고 멈춘다 (2026-11-06 첫 시도에서 0개로 18글자를 끝냄 처리했다)
     if (!got.length && blocks > 0) throw new Error(`tulane: ${blocks} course blocks under ${L} but none read - reader needs fixing`);
     // 같은 과목에 분반이 여러 쪽에 걸쳐 있으면 (Sec NN) 표시를 다시 맞춘다
-    for (const c of uniqGot) { const many = uniqGot.filter((o) => o.code === c.code).length > 1; const base = c.title.replace(/ \(Sec [^)]+\)$/, ''); c.title = many ? `${base} (Sec ${c.id.split('_').pop()?.toUpperCase()})` : base; }
+    for (const c of uniqGot) { const many = uniqGot.filter((o) => o.code === c.code).length > 1; const base = c.title.replace(/ \(Sec [^)]+\)$/, ''); c.title = many ? `${base} (Sec ${(/_\d{6}_([a-z0-9]+)/.exec(c.id)?.[1] ?? '').toUpperCase()})` : base; }
     all = [...all.filter((c) => !(c.termCode === t.code && c.code.startsWith(L))), ...uniqGot];
     done.add(L); prog[t.code] = [...done].sort(); did++; save();
     console.log(`  ${t.label} ${L}: ${uniqGot.length} classes with times (budget left ${budget})`);
