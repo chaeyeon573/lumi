@@ -172,8 +172,8 @@ function ActionRow({ org, join, status, following, busy, onAsk, onFollow }: { or
   if (join.kind === 'follow') return <div className="flex gap-2.5 mt-4"><Btn className="flex-1" onClick={onFollow}>{following ? (en ? 'Following' : '팔로잉') : (en ? 'Follow' : '팔로우')}</Btn></div>;
   if (join.kind === 'applied') return (
     <div className="flex gap-2.5 mt-4 items-stretch">
-      <div className="flex-1 min-h-11 px-4 rounded-full border border-sel-line bg-sel-soft text-sel-fg text-[13.5px] font-semibold flex items-center gap-2 min-w-0">
-        <Check size={16} className="shrink-0" /><span className="truncate">{statusLine(status, org.name, requestOf(org, v.me.id))}</span>
+      <div className="flex-1 min-h-11 px-4 py-1.5 rounded-[22px] border border-sel-line bg-sel-soft text-sel-fg text-[13px] leading-snug font-semibold flex items-center gap-2 min-w-0">
+        <Check size={16} className="shrink-0" /><span className="line-clamp-2">{statusLine(status, org.name, requestOf(org, v.me.id))}</span>
       </div>
       {followBtn}
     </div>
