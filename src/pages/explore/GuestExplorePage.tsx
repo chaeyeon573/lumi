@@ -12,7 +12,7 @@ import { BottomSheet } from '@/components/ui';
 import { BackHeader, PageTitle, SegTabs, Chip, ChipRow, BottomCTA, Btn, EmptyCard, ErrorScreen, LoadingCards, InfoNote, Badge } from '@/components/ha';
 import { ClubItem, ExploreControls, ListingItem, MoreButton } from './ExploreItems';
 import {
-  badgeLabel, badgeTone, ORG_BADGE, CLUB_KINDS, clubKindOf, clubMatches, clubSub, EVENT_KINDS, inEventKind, inOppType, listingMatches, listingMeta, OPP_TYPES, PAGE, readExploreQuery, sortClubs, sortListings, writeExploreQuery,
+  badgeLabel, badgeTone, ORG_BADGE, CLUB_KINDS, clubKindOf, clubMatches, clubSub, EVENT_KINDS, inEventKind, inOppType, listingMatches, listingMeta, listingWhere, OPP_TYPES, PAGE, readExploreQuery, sortClubs, sortListings, writeExploreQuery,
 } from './exploreData';
 
 const en = lang === 'en';
@@ -73,7 +73,7 @@ export function GuestExplorePage() {
         {peek?.kind === 'listing' && (
           <div className="space-y-3 pb-1">
             <Badge tone={badgeTone(peek.o)}>{badgeLabel(peek.o)}</Badge>
-            <p className="text-[13.5px] text-ink-3">{listingMeta(peek.o)}</p>
+            <p className="text-[13.5px] text-ink-3">{[listingMeta(peek.o), listingWhere(peek.o)].filter(Boolean).join(' · ')}</p>
             {peek.o.description && <p className="text-[14px] text-ink-2 leading-relaxed line-clamp-6 whitespace-pre-wrap">{peek.o.description}</p>}
             {peek.o.sourceUrl && <a href={peek.o.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-[14px] font-semibold text-sel-fg">{en ? 'View source' : '원문 보기'}<ArrowUpRight size={15} /></a>}
             <Btn full variant="outline" icon={<Bookmark size={16} />} onClick={() => { setPeek(null); askToJoin('save'); }}>{en ? 'Save' : '저장'}</Btn>

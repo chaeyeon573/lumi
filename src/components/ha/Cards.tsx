@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { ArrowUpRight, Bookmark, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, Bookmark, ChevronRight, MapPin } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { cn } from '@core/lib/cn';
 import { Avatar, Cover } from '@/components/ui';
@@ -70,8 +70,9 @@ export function RowCard({ tone = 'ice', icon, title, sub, right, onClick, badge,
  * 공고·행사 카드 (PDF S017): 왼쪽 사진, 배지, 제목, 한 줄, "View source ↗", 오른쪽 위 책갈피.
  * 사진이 없으면 같은 자리에 색 칸 (사진을 지어내지 않는다).
  */
-export function ListingCard({ cover, icon, badge, badgeTone = 'ice', title, meta, sourceUrl, saved, onSave, onClick, className }: {
+export function ListingCard({ cover, icon, badge, badgeTone = 'ice', title, meta, where, sourceUrl, saved, onSave, onClick, className }: {
   cover?: { emoji: string; hue: number; url?: string }; /** 사진이 없을 때 틴트 칸 가운데 (행사·공고 종류 아이콘) */ icon?: ReactNode; badge?: string; badgeTone?: Tone; title: string; meta?: ReactNode;
+  /** 근무지 — meta 줄 끝에서 잘리지 않게 따로 한 줄 (📍 Mountain View, CA) */ where?: string;
   sourceUrl?: string; saved?: boolean; onSave?: () => void; onClick?: () => void; className?: string;
 }) {
   return (
@@ -84,6 +85,7 @@ export function ListingCard({ cover, icon, badge, badgeTone = 'ice', title, meta
           {badge && <Badge tone={badgeTone}>{badge}</Badge>}
           <span className="block text-[15px] font-bold leading-snug mt-1.5 line-clamp-2">{title}</span>
           {meta && <span className="block text-[12.5px] text-ink-3 mt-1 truncate">{meta}</span>}
+          {where && <span className="flex items-center gap-1 text-[12.5px] text-ink-2 mt-0.5 min-w-0"><MapPin size={13} className="shrink-0 text-ink-3" /><span className="truncate">{where}</span></span>}
         </button>
         {sourceUrl && <a href={sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-0.5 mt-1.5 text-[12.5px] font-semibold text-sel-fg">{en ? 'View source' : '원문 보기'}<ArrowUpRight size={14} /></a>}
       </div>

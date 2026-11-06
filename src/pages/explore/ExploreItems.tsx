@@ -11,7 +11,7 @@ import { Btn, Chip, ChipRow, ListingCard, MeetupCard, RowCard, SearchField, type
 import { SampleTag } from '@/components/ui';
 import { Faces, usePeopleSnap } from '@/components/together/PeopleLine';
 import { GoTogetherSheet } from '@/components/together/GoTogetherSheet';
-import { badgeLabel, badgeTone, listingMeta, SORTS, type ExploreSort } from './exploreData';
+import { badgeLabel, badgeTone, listingMeta, listingWhere, SORTS, type ExploreSort } from './exploreData';
 
 const en = lang === 'en';
 
@@ -32,7 +32,7 @@ export function ExploreControls({ placeholder, q, onQ, sort, onSort, children }:
 export function ListingItem({ o, saved, onSave, onOpen, people = true }: { o: Opportunity; saved?: boolean; onSave?: () => void; onOpen: () => void; people?: boolean }) {
   return (
     <div>
-      <ListingCard cover={o.cover?.url ? o.cover : undefined} icon={listingIcon(o.type)} badge={badgeLabel(o)} badgeTone={badgeTone(o)} title={o.title} meta={listingMeta(o)}
+      <ListingCard cover={o.cover?.url ? o.cover : undefined} icon={listingIcon(o.type)} badge={badgeLabel(o)} badgeTone={badgeTone(o)} title={o.title} meta={listingMeta(o)} where={listingWhere(o) || undefined}
         sourceUrl={o.sourceUrl || undefined} saved={saved} onSave={onSave} onClick={onOpen} />
       {people && <ListingPeople o={o} />}
     </div>

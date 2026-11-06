@@ -5,7 +5,7 @@
  */
 import { lang } from '@core/i18n';
 import type { Activity, Opportunity, Organization } from '@core/types';
-import { badgeOf, campusDate, categoriesOf, eventKindsOf, locationOf, type Category, type EventKind } from '@core/lib/listings';
+import { audienceOf, badgeOf, campusDate, categoriesOf, eventKindsOf, locationOf, regionsOf, REGIONS, type Category, type EventKind, type Region } from '@core/lib/listings';
 import { daysUntil } from '@core/lib/recommend';
 import { formatDate, formatTime } from '@core/lib/format';
 import { ORG_TYPE_LABELS } from '@core/lib/labels';
@@ -22,15 +22,23 @@ export const SORTS: { key: ExploreSort; label: string }[] = [
   { key: 'ending', label: en ? 'Ending soon' : '마감 임박' },
 ];
 
-export interface ExploreQuery { q: string; sort: ExploreSort; type: string }
-/** ?q=…&sort=newest|ending&type=… (recommended / no type = absent) — and the old ?sub= links from BrowseTab */
+export interface ExploreQuery { q: string; sort: ExploreSort; type: string; region: string; kind: string }
+/**
+ * ?q=…&sort=newest|ending&type=… (recommended / no type = absent) — and the old ?sub= links from BrowseTab.
+ * Opportunities also keep ?region=Bay Area and ?kind=phd (the live BrowseTab's names, so its links still work).
+ */
 export function readExploreQuery(params: URLSearchParams): ExploreQuery {
   const s = params.get('sort');
   const sort: ExploreSort = s === 'newest' ? 'newest' : s === 'ending' || s === 'deadline' ? 'ending' : 'recommended';
-  return { q: params.get('q') ?? '', sort, type: params.get('type') ?? LEGACY_SUB[params.get('sub') ?? ''] ?? '' };
+  const region = params.get('region') ?? '';
+  const sub = params.get('sub') ?? '';
+  return {
+    q: params.get('q') ?? '', sort, type: params.get('type') ?? LEGACY_SUB[sub] ?? '',
+    region: (REGIONS as readonly string[]).includes(region) ? region : '', kind: params.get('kind') === 'phd' || sub === 'phd' ? 'phd' : '',
+  };
 }
 /** old BrowseTab chips (/profile/saved still sends ?sub=saved) */
-const LEGACY_SUB: Record<string, string> = { saved: 'saved', internship: 'internship', research: 'research', lab: 'research', scholarship: 'scholarship', funding: 'scholarship', hackathon: 'hackathon', startup: 'startup', exchange: 'exchange', free_food: 'free_food' };
+const LEGACY_SUB: Record<string, string> = { phd: 'internship', saved: 'saved', internship: 'internship', research: 'research', lab: 'research', scholarship: 'scholarship', funding: 'scholarship', hackathon: 'hackathon', startup: 'startup', exchange: 'exchange', free_food: 'free_food' };
 
 export function writeExploreQuery(params: URLSearchParams, patch: Partial<ExploreQuery>): URLSearchParams {
   const next = new URLSearchParams(params);
@@ -67,15 +75,36 @@ export const badgeLabel = (o: Pick<Opportunity, 'type'>) => BADGE[o.type][en ? 0
 /** events = ice, everything you apply to = peach (tones.ts CATEGORY_TONE) */
 export const badgeTone = (o: Pick<Opportunity, 'type'>): Tone => (o.type === 'event' ? 'ice' : 'peach');
 
-/** one meta line: "Thu, Nov 6 · 5 PM · Sproul Plaza" for events, "D-12 · Google" for the rest */
+/** one meta line: "Thu, Nov 6 · 5 PM · Sproul Plaza" for events, "D-12 · Google" for the rest (the place is its own line, listingWhere) */
 export function listingMeta(o: Opportunity): string {
   if (o.type === 'event') {
     const day = o.date ? formatDate(campusDate(o.date)) : '';
     const time = o.startTime && o.startTime !== '00:00' ? formatTime(o.startTime) : '';
     return [day, time, o.place?.name || o.host].filter(Boolean).join(' · ');
   }
-  const where = o.type === 'internship' ? locationOf(o) : '';
-  return [badgeOf(o, en).text, o.host, where].filter(Boolean).join(' · ');
+  return [badgeOf(o, en).text, o.host].filter(Boolean).join(' · ');
+}
+
+/**
+ * Where a listing you apply to is — its own card line, so it is never the truncated end of the meta line
+ * (ux-sim 2026-11-06: "Mountain Vie…"). ", USA" is dropped; events carry their place in listingMeta.
+ */
+export function listingWhere(o: Opportunity): string {
+  if (o.type === 'event') return '';
+  return locationOf(o).replace(/,\s*(USA|U\.S\.A?\.?|US|United States( of America)?)\s*$/i, '').trim();
+}
+
+/* ─────────────── opportunity filters: location + PhD/MS ─────────────── */
+
+/** the location chips (live BrowseTab's region select) — region names stay English except these two */
+export const regionLabel = (r: string) => (en ? r : ({ 'Bay Area': '베이 지역', Remote: '원격' } as Record<string, string>)[r] ?? r);
+export const inRegion = (o: Opportunity, region: string) => !region || regionsOf(o).includes(region as Region);
+/** PhD/MS chip — listings written for graduate students (the same audienceOf that keeps them out of undergrad lists) */
+export const inKind = (o: Opportunity, kind: string) => kind !== 'phd' || audienceOf(o) === 'grad';
+/** regions that have at least one listing in `list`, in REGIONS order (Bay Area first) — plus the chosen one */
+export function regionsIn(list: Opportunity[], chosen: string): Region[] {
+  const has = new Set(list.flatMap((o) => regionsOf(o)));
+  return REGIONS.filter((r) => has.has(r) || r === chosen);
 }
 
 const due = (o: Opportunity) => o.deadline ?? o.date ?? '9999';

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Bookmark, Trophy } from 'lucide-react';
+import { Bookmark, GraduationCap, MapPin, Trophy } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { useAppStore } from '@core/store/useAppStore';
 import { useViewer } from '@/hooks/useViewer';
@@ -8,7 +8,7 @@ import { scoreListings } from '@core/lib/foryou';
 import { audienceFits, categoriesOf, spreadByHost } from '@core/lib/listings';
 import { Chip, ChipRow, EmptyCard, EmptyState } from '@/components/ha';
 import { ExploreControls, ListingItem, MoreButton } from './ExploreItems';
-import { inOppType, isOpen, listingMatches, OPP_TYPES, PAGE, sortListings } from './exploreData';
+import { inKind, inOppType, inRegion, isOpen, listingMatches, OPP_TYPES, PAGE, regionLabel, regionsIn, sortListings } from './exploreData';
 import { useExploreParams, useSaved } from './EventsList';
 
 const en = lang === 'en';
@@ -16,11 +16,13 @@ const en = lang === 'en';
 /**
  * Explore · Opportunities (PDF S018) — internships, research, scholarships, hackathons, study abroad.
  * Search + Recommended / Newest / Ending soon; the type filter stays as a second chip row, with Saved when you have any.
+ * Third row (ported from the live BrowseTab): location (?region=Bay Area …, only places that have listings) and,
+ * for graduate students, PhD/MS (?kind=phd).
  */
 export function OpportunitiesList() {
   const nav = useNavigate();
   const me = useViewer().me;
-  const { q, sort, type, set } = useExploreParams();
+  const { q, sort, type, region, kind, set } = useExploreParams();
   const opps = useAppStore((s) => s.opportunities);
   const intents = useAppStore((s) => s.opportunityIntents);
   const orgs = useAppStore((s) => s.organizations);
@@ -28,7 +30,7 @@ export function OpportunitiesList() {
   const schools = useAppStore((s) => s.schools);
   const saved = useSaved();
   const [shown, setShown] = useState(PAGE);
-  useEffect(() => setShown(PAGE), [q, sort, type]);
+  useEffect(() => setShown(PAGE), [q, sort, type, region, kind]);
   const mySchool = me.affiliation.type === 'university' ? me.affiliation.schoolId : '';
 
   // open listings for my school or everyone, only for my level (undergrad vs grad — @core/lib/listings audienceFits)
@@ -39,12 +41,16 @@ export function OpportunitiesList() {
   const savedCount = useMemo(() => base.filter((o) => saved.ids.has(o.id)).length, [base, saved.ids]);
   const types = OPP_TYPES.filter((t) => (counts.get(t.key) ?? 0) > 0 || type === t.key);
 
+  // type + search first — the location / PhD chips only offer what is in there
+  const typed = useMemo(() => base.filter((o) => (type === 'saved' ? saved.ids.has(o.id) : inOppType(o, type)) && listingMatches(o, q)), [base, type, q, saved.ids]);
+  const regions = useMemo(() => regionsIn(typed, region), [typed, region]);
+  const hasPhd = kind === 'phd' || typed.some((o) => inKind(o, 'phd'));
   const list = useMemo(() => {
-    const xs = base.filter((o) => (type === 'saved' ? saved.ids.has(o.id) : inOppType(o, type)) && listingMatches(o, q));
+    const xs = typed.filter((o) => inRegion(o, region) && inKind(o, kind));
     const sorted = sortListings(xs, sort, (o) => scores.get(o.id)?.score ?? -1);
     // the same company ten times in a row reads like an ad board — spread hosts in Recommended
     return sort === 'recommended' ? spreadByHost(sorted) : sorted;
-  }, [base, type, q, sort, scores, saved.ids]);
+  }, [typed, region, kind, sort, scores]);
 
   return (
     <div>
@@ -54,13 +60,19 @@ export function OpportunitiesList() {
           {(savedCount > 0 || type === 'saved') && <Chip size="sm" active={type === 'saved'} onClick={() => set({ type: type === 'saved' ? '' : 'saved' })} icon={<Bookmark size={13} fill={type === 'saved' ? 'currentColor' : 'none'} />}>{en ? `Saved ${savedCount}` : `저장 ${savedCount}`}</Chip>}
           {types.map((t) => <Chip key={t.key} size="sm" active={type === t.key} onClick={() => set({ type: type === t.key ? '' : t.key })}>{t.label}</Chip>)}
         </ChipRow>
+        {(regions.length > 0 || hasPhd) && (
+          <ChipRow>
+            {regions.map((r) => <Chip key={r} size="sm" active={region === r} icon={<MapPin size={13} />} onClick={() => set({ region: region === r ? '' : r })}>{regionLabel(r)}</Chip>)}
+            {hasPhd && <Chip size="sm" active={kind === 'phd'} icon={<GraduationCap size={13} />} onClick={() => set({ kind: kind === 'phd' ? '' : 'phd' })}>{en ? 'PhD/MS' : '대학원'}</Chip>}
+          </ChipRow>
+        )}
       </ExploreControls>
       {base.length === 0 ? (
         <EmptyState icon={<Trophy size={30} />} tone="peach" title={en ? 'No open listings yet' : '열린 공고가 아직 없어요'} sub={en ? 'Internships, research and scholarships appear here while they are open.' : '인턴·연구·장학금이 열려 있는 동안 여기에 보여요.'} />
       ) : list.length === 0 ? (
         type === 'saved'
           ? <EmptyCard title={en ? 'Nothing saved yet' : '저장한 공고가 없어요'} sub={en ? 'Tap the bookmark on a listing to keep it here.' : '공고의 책갈피를 누르면 여기에 모여요.'} secondary={{ label: en ? 'See all' : '모두 보기', onClick: () => set({ type: '' }) }} />
-          : <EmptyCard title={en ? 'No listings match that' : '맞는 공고가 없어요'} sub={q ? (en ? `Nothing for “${q}”.` : `“${q}” 검색 결과가 없어요.`) : undefined} secondary={{ label: en ? 'Clear filters' : '필터 지우기', onClick: () => set({ q: '', type: '' }) }} />
+          : <EmptyCard title={en ? 'No listings match that' : '맞는 공고가 없어요'} sub={q ? (en ? `Nothing for “${q}”.` : `“${q}” 검색 결과가 없어요.`) : undefined} secondary={{ label: en ? 'Clear filters' : '필터 지우기', onClick: () => set({ q: '', type: '', region: '', kind: '' }) }} />
       ) : (
         <div className="space-y-3">
           {list.slice(0, shown).map((o) => <ListingItem key={o.id} o={o} saved={saved.ids.has(o.id)} onSave={() => saved.toggle(o)} onOpen={() => nav(`/opportunities/${o.id}`)} />)}
