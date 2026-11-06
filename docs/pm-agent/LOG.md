@@ -2297,3 +2297,9 @@
   - Lab, recitation and discussion sections are left out (same as other readers); studios and seminars stay.
   - Fall 2026 A-D: 1,605 classes in s_tulane.courses.json. 5 random ones (EDUC 2000-04, NSCI 3300-02, ARST 2080-01, TIDE 1545-02, ARCH 5051-03) match the live Fall 2026 schedule. Tests: 2 fixtures (browser-saved and raw server HTML).
   - Second batch the same hour: Fall 2026 E-L done; 1,956 classes in the file (Fall 12/26 letters).
+
+## 2026-11-06 07:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: UGA Finance Society, UT AMA, Michigan Her Campus, UConn A Cappella fine. UCR "Veterans Services" is a school office typed club; a scan of UCR found 5 more clear offices (Academic Intervention Program, Academic Resource Center, Financial Aid Office, Fraternity and Sorority Involvement Center, Tutorial Assistance Program). All 6 typed `department` in org-type-overrides.csv and today's file. Student-run programs (peer mentors, Highlander Space Program, research centers) left as they are.
+- Spot check courses: 5 random UMD classes. The 2 Fall classes matched; the 3 Spring 2027 classes came back "not found" from the live lookup. The data was right (MUSC 126, AAST 250, THET 608B match the live Testudo page): `umdLookup` did not add the next-term id tag (`_sp27`) the collector adds. Fixed with `tagTerm`; all 5 match now. Also checked 5 UW Winter 2027 classes: all match.
+- Tulane class times batch 3: Fall 2026 A-R done (Q has no subjects), 2,189 classes in the file.
