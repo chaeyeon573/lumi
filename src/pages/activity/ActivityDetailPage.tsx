@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { isUploadedPhoto } from '@core/lib/assets';
 import { useNavigate, useParams } from 'react-router-dom';
 import { CalendarDays, MapPin, Users, Pencil, Trash2, Share2, Flag, UserCog, Lock, Send, UserCheck } from 'lucide-react';
 import { lang } from '@core/i18n';
@@ -10,7 +11,7 @@ import { Avatar, BottomSheet, Cover, Dialog } from '@/components/ui';
 import { SheetItem } from '@/components/cards/PostCard';
 import { ReportSheet } from '@/components/cards/ReportSheet';
 import {
-  BackHeader, PageTitle, HeroBanner, InfoRows, TextCard, Chip, ChipRow, InfoNote, BottomCTA, Btn, AvatarStack, PersonCard, EmptyState, TextArea, TextInput, type InfoRow,
+  BackHeader, PageTitle, InfoRows, TextCard, Chip, ChipRow, InfoNote, BottomCTA, Btn, AvatarStack, PersonCard, EmptyState, TextArea, TextInput, type InfoRow,
 } from '@/components/ha';
 import { formatDate, formatTime, relativeTime } from '@core/lib/format';
 import { placeLabel } from '@core/lib/relations';
@@ -126,7 +127,7 @@ export function ActivityDetailPage() {
       <BackHeader onMore={() => setMenu(true)} />
       <PageTitle title={en ? 'Meetup details' : '모임 상세'} className="pb-3" />
       <div className="px-4 pb-6">
-        {a.cover.url ? <Cover emoji={a.cover.emoji} hue={a.cover.hue} url={a.cover.url} className="h-[100px] w-full rounded-[20px]" size={40} /> : <HeroBanner tone={k.tone} icon={<k.Icon size={40} />} />}
+        {isUploadedPhoto(a.cover.url) && <Cover emoji="" hue={0} url={a.cover.url} className="h-[140px] w-full rounded-[20px]" size={40} />}
         <h1 className="text-[30px] font-extrabold tracking-[-0.03em] leading-tight mt-5">{a.title}</h1>
         <button onClick={() => nav(org ? `/orgs/${org.id}` : isHost ? '/profile' : `/users/${a.hostId}`)} className="text-[14.5px] text-ink-2 mt-1.5 text-left press">
           {en ? 'Hosted by ' : '주최 '}<span className="font-semibold text-ink">{isHost ? (en ? 'you' : '나') : org?.name ?? host?.nickname ?? ''}</span>{a.sample ? (en ? ' · Sample meetup' : ' · 예시 모임') : ` · ${k.label}`}

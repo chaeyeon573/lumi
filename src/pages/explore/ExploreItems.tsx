@@ -1,4 +1,5 @@
 import { useMemo, useState, type ComponentProps } from 'react';
+import { isUploadedPhoto } from '@core/lib/assets';
 import { useNavigate } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { lang } from '@core/i18n';
@@ -6,7 +7,7 @@ import type { Activity, Opportunity, Organization } from '@core/types';
 import { useAppStore } from '@core/store/useAppStore';
 import { formatDate, formatTime } from '@core/lib/format';
 import { canGoTogether, socialSummary } from '@core/lib/withpeople';
-import { Btn, FilterBar, ListingCard, MeetupCard, SearchField, TONE_STRIPE, cardCls, type Tone } from '@/components/ha';
+import { Btn, FilterBar, ListingCard, MeetupCard, SearchField, cardCls, type Tone } from '@/components/ha';
 import { cn } from '@core/lib/cn';
 import { SampleTag } from '@/components/ui';
 import { Faces, usePeopleSnap } from '@/components/together/PeopleLine';
@@ -75,8 +76,8 @@ export const CLUB_TONE: Record<Organization['type'], Tone> = { club: 'mint', cou
 export function ClubItem({ o, sub, onClick }: { o: Organization; sub: string; onClick: () => void }) {
   const line = o.description?.replace(/\s+/g, ' ').trim();
   return (
-    <button onClick={onClick} className={cn(cardCls, 'w-full p-4 flex items-center gap-3.5 text-left press', TONE_STRIPE.mint)}>
-      {o.logo.url && <img src={/^(https?:|data:|\/)/.test(o.logo.url) ? o.logo.url : `/${o.logo.url}`} alt="" onError={(e) => { e.currentTarget.style.display = 'none'; }} className="size-12 rounded-[14px] object-cover border border-line shrink-0" />}
+    <button onClick={onClick} className={cn(cardCls, 'w-full p-4 flex items-center gap-3.5 text-left press')}>
+      {isUploadedPhoto(o.logo.url) && <img src={/^(https?:|data:|\/)/.test(o.logo.url) ? o.logo.url : `/${o.logo.url}`} alt="" onError={(e) => { e.currentTarget.style.display = 'none'; }} className="size-12 rounded-[14px] object-cover border border-line shrink-0" />}
       <span className="flex-1 min-w-0">
         <span className="block text-[15px] font-bold leading-snug truncate">{o.name}</span>
         {line && <span className="block text-[13px] text-ink-2 leading-snug mt-0.5 truncate">{line}</span>}

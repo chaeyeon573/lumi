@@ -1,4 +1,5 @@
 import { useMemo, useState, type ReactNode } from 'react';
+import { isUploadedPhoto } from '@core/lib/assets';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { BadgeCheck, CalendarDays, Check, ClipboardList, ExternalLink, Globe, LogOut, Megaphone, MessageCircle, Pencil, Plus, Share2, ShieldCheck, Undo2, Users, Wallet } from 'lucide-react';
 import { lang } from '@core/i18n';
@@ -101,9 +102,9 @@ export function OrgPage() {
       <BackHeader title={`${en ? 'Community' : '커뮤니티'} — ${TAB_LABEL[tab]}`} onMore={() => setMenu(true)}
         right={room ? <HeaderIcon label={en ? 'Group chat' : '단체 채팅'} onClick={() => nav(`/chats/${room.id}`)}><MessageCircle size={22} /></HeaderIcon> : undefined} />
       <div className="px-4 pt-1">
-        {org.cover?.url && <img src={photoSrc(org.cover.url)} alt="" onError={(e) => { e.currentTarget.style.display = 'none'; }} className="w-full aspect-[5/2] object-cover rounded-[20px] border border-line mb-4" />}
+        {isUploadedPhoto(org.cover?.url) && <img src={photoSrc(org.cover.url)} alt="" onError={(e) => { e.currentTarget.style.display = 'none'; }} className="w-full aspect-[5/2] object-cover rounded-[20px] border border-line mb-4" />}
         <div className="flex items-center gap-3">
-          {org.logo.url && <img src={photoSrc(org.logo.url)} alt="" onError={(e) => { e.currentTarget.style.display = 'none'; }} className="size-14 rounded-[14px] object-cover border border-line shrink-0" />}
+          {isUploadedPhoto(org.logo.url) && <img src={photoSrc(org.logo.url)} alt="" onError={(e) => { e.currentTarget.style.display = 'none'; }} className="size-14 rounded-[14px] object-cover border border-line shrink-0" />}
           <h1 className="ha-title leading-[1.12] min-w-0">{sample && <SampleTag className="align-middle" />}{org.name}</h1>
         </div>
         <div className="flex flex-wrap items-center gap-2 mt-3">

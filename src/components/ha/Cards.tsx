@@ -3,7 +3,8 @@ import { ArrowUpRight, Bookmark, ChevronRight, MapPin } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { cn } from '@core/lib/cn';
 import { Avatar, Cover } from '@/components/ui';
-import { TONE, TONE_STRIPE, type Tone } from './tones';
+import { TONE, type Tone } from './tones';
+import { isUploadedPhoto } from '@core/lib/assets';
 
 const en = lang === 'en';
 
@@ -69,7 +70,7 @@ export function RowCard({ tone = 'ice', icon, title, sub, right, onClick, badge,
 /**
  * 공고·행사 카드 (PDF S017, 2026-11-06 사장님 option A + C): 위에 종류 칩 + 시간 칩(마감 D-n — D-3 이하는 분홍), 굵은 제목,
  * 한 줄 설명, 주최 · 장소, "View source ↗", 책갈피. 진짜 사진이 있을 때만 왼쪽 사진 — 아이콘·이모지·머리글자 칸은 그리지 않는다.
- * 왼쪽 3px 색 줄 = 종류 칩과 같은 색 (TONE_STRIPE)
+ * 사진은 사용자가 직접 올린 것만 (isUploadedPhoto). 색 띠는 없음 (2026-11-06)
  */
 export function ListingCard({ cover, badge, badgeTone = 'ice', time, urgent, title, line, meta, where, sourceUrl, saved, onSave, onClick, className }: {
   cover?: { emoji: string; hue: number; url?: string }; /** @deprecated nothing is drawn without a real photo */ icon?: ReactNode; badge?: string; badgeTone?: Tone;
@@ -78,9 +79,9 @@ export function ListingCard({ cover, badge, badgeTone = 'ice', time, urgent, tit
   /** 근무지 — meta 줄 끝에서 잘리지 않게 따로 한 줄 (📍 Mountain View, CA) */ where?: string;
   sourceUrl?: string; saved?: boolean; onSave?: () => void; onClick?: () => void; className?: string;
 }) {
-  const photo = cover?.url ? cover : undefined;
+  const photo = isUploadedPhoto(cover?.url) ? cover : undefined;
   return (
-    <div className={cn(cardCls, 'p-3 flex gap-3.5 relative', TONE_STRIPE[badgeTone], !photo && 'pl-4', className)}>
+    <div className={cn(cardCls, 'p-3 flex gap-3.5 relative', className)}>
       {photo && (
         <button onClick={onClick} className="shrink-0 press" tabIndex={-1} aria-hidden>
           <Cover emoji={photo.emoji} hue={photo.hue} url={photo.url} className="h-[88px] w-[88px] rounded-2xl" size={30} />
@@ -129,7 +130,7 @@ export function MeetupCard({ tone = 'rose', badge, time, title, meta, cover, peo
   footnote?: ReactNode; action?: string; onClick?: () => void; className?: string;
 }) {
   return (
-    <button onClick={onClick} className={cn(cardCls, 'w-full p-4 text-left press', TONE_STRIPE[tone], className)}>
+    <button onClick={onClick} className={cn(cardCls, 'w-full p-4 text-left press', className)}>
       <span className="flex items-start gap-3">
         <span className="flex-1 min-w-0">
           {(badge || time) && (
@@ -141,7 +142,7 @@ export function MeetupCard({ tone = 'rose', badge, time, title, meta, cover, peo
           <span className="block text-[15.5px] font-bold leading-snug mt-2 line-clamp-2">{title}</span>
           {meta && <span className="block text-[12.5px] text-ink-3 mt-1 truncate">{meta}</span>}
         </span>
-        {cover?.url && <Cover emoji="" hue={0} url={cover.url} className="h-16 w-16 rounded-[14px] shrink-0" size={20} />}
+        {isUploadedPhoto(cover?.url) && <Cover emoji="" hue={0} url={cover.url} className="h-16 w-16 rounded-[14px] shrink-0" size={20} />}
       </span>
       {(people.length > 0 || footnote || action) && (
         <span className="flex items-center gap-2.5 mt-3 pt-3 border-t border-line">

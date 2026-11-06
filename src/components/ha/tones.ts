@@ -24,10 +24,8 @@ export const TONE_FG: Record<Tone, string> = {
 /**
  * 글 카드 왼쪽 3px 색 줄 (2026-11-06 사장님 option C) — 칩과 같은 색. 사진이 있는 카드도 같이 (목록이 한 모양으로 보이게)
  */
-export const TONE_STRIPE: Record<Tone, string> = {
-  ice: 'border-l-[3px] border-l-t-ice-fg', peach: 'border-l-[3px] border-l-t-peach-fg', mint: 'border-l-[3px] border-l-t-mint-fg',
-  rose: 'border-l-[3px] border-l-t-rose-fg', lav: 'border-l-[3px] border-l-t-lav-fg', neutral: '', sel: 'border-l-[3px] border-l-sel-fg',
-};
+/** 종류 색 띠 — 사장님이 빼기로 함(2026-11-06). 호출부 호환용으로 빈 값 */
+export const TONE_STRIPE: Record<Tone, string> = { ice: '', peach: '', mint: '', rose: '', lav: '', neutral: '', sel: '' };
 
 /** 카테고리 → 색 (홈 타일·Explore 배지·검색의 Explore more 가 같은 표를 쓴다) */
 export const CATEGORY_TONE = { events: 'ice', opportunities: 'peach', clubs: 'mint', meetups: 'rose' } as const satisfies Record<string, Tone>;

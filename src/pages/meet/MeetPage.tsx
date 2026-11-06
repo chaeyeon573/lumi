@@ -6,6 +6,7 @@ import { TONE, Btn, Chip, ChipRow, EmptyState, EmptyCard, RowCard, SectionHeader
 import { lang } from '@core/i18n';
 import { SocialShell } from '@/pages/social/SocialPage';
 import { Cover, Avatar } from '@/components/ui';
+import { isUploadedPhoto } from '@core/lib/assets';
 import { SampleTag } from '@/components/ui/SampleTag';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
@@ -123,7 +124,7 @@ export function MeetupRow({ a }: { a: Activity }) {
   const people = [host, ...parts.filter((p) => p.activityId === a.id && p.status === 'approved').map((p) => v.userById(p.userId))].filter(Boolean).slice(0, 4);
   return (
     <button onClick={() => nav(`/activities/${a.id}`)} className="w-full card rounded-[20px] p-3 flex gap-3 text-left press">
-      <Cover emoji={a.cover.emoji} hue={a.cover.hue} url={a.cover.url} className="h-[76px] w-[76px] rounded-2xl shrink-0" size={28} />
+      {isUploadedPhoto(a.cover.url) && <Cover emoji="" hue={0} url={a.cover.url} className="h-[76px] w-[76px] rounded-2xl shrink-0" size={28} />}
       <span className="flex-1 min-w-0">
         <span className="block text-[15px] font-bold leading-snug line-clamp-2">{a.sample && <SampleTag />}{a.title}</span>
         <span className="flex items-center gap-1 text-[12px] text-ink-3 mt-1"><Clock size={12} />{formatDate(a.date)} · {formatTime(a.startTime)}</span>
