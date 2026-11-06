@@ -138,7 +138,8 @@ export function ActivityDetailPage() {
           {canChat && <Chip onClick={() => nav(`/chats/${room!.id}`)}>{en ? 'Group chat' : '그룹 채팅'}</Chip>}
           {poll && <Chip onClick={() => nav(`/together/${poll.id}`)}>{en ? 'Time poll' : '시간 투표'}</Chip>}
         </ChipRow>
-        <InfoNote className="mt-4">{a.joinPolicy === 'approval' ? (en ? 'Approval required → Request to Join. Full → Join Waitlist.' : '승인제 → 참가 요청. 가득 차면 → 대기 명단.') : (en ? 'Join to get the group chat. Full → Join Waitlist.' : '참가하면 그룹 채팅이 열려요. 가득 차면 → 대기 명단.')}</InfoNote>
+        {/* how joining works — only while you can still join (ux-sim 2026-11-06: it still said "Join to get the group chat" after joining) */}
+        {open && !isHost && !mine && <InfoNote className="mt-4">{a.joinPolicy === 'approval' ? (en ? 'Approval required → Request to Join. Full → Join Waitlist.' : '승인제 → 참가 요청. 가득 차면 → 대기 명단.') : (en ? 'Join to get the group chat. Full → Join Waitlist.' : '참가하면 그룹 채팅이 열려요. 가득 차면 → 대기 명단.')}</InfoNote>}
 
         {(a.comments.length > 0 || (!isHost && open)) && (
           <section className="mt-7">
