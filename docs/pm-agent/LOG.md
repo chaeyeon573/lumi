@@ -2404,3 +2404,4 @@
 - Spot check clubs: GWU Vocal Chords Journal, UCR School on Wheels, UMN Engineering World Health (Google Site), USC Students Demand Action, Tulane Chess Club fine (5/5).
 - Spot check courses: 5 random Tulane Spring 2027 classes (AFRS 7812, NSCI 3310, FINE 4002, ENLS 2400, ANTH 2814) match the live Tulane schedule.
 - scan-club-sites batch 2 (3,000 sites, 2,404 opened): 6 taken-over domains set aside — Georgia Tech 180 Degrees Consulting, Cru, Phi Sigma Kappa, Startup Exchange; MSU Delta Sigma Pi; NC State Maitri (slot/togel/casino pages). 11,602 left.
+- scan-club-sites batch 3 (3,000 sites, 2,288 opened): 3 more set aside — Purdue MaClure Cooperative House (weebly page now a slot site), Rice Business Society, Tulane Journal. 8,602 left.
