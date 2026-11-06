@@ -166,6 +166,19 @@ export const mockApi: AroundUApi = {
 
   // 학사 일정·좌석 알림은 서버(워커)가 공식 원본에서 가져온다 — 예시 모드에서는 비어 있다
   academic: { async dates() { return { dates: [] }; } },
+  // 예시 모드에는 검토하는 사람이 없다 — 보낸 것으로만 표시한다 (사진은 이 브라우저 밖으로 나가지 않는다)
+  verification: {
+    async submitStudentId() {
+      return request(() => {
+        const me = getSession();
+        const user = me ? db.users.find((u) => u.id === me) : undefined;
+        if (!user) throw new Error(t('로그인이 필요해요.'));
+        user.verification = { method: 'student_id', status: 'pending', submittedAt: new Date().toISOString() };
+        listeners.forEach((l) => l({ users: [user] }));
+        return user;
+      });
+    },
+  },
   seats: {
     async mine() { return { watches: [], watchableTerms: [], supported: false }; },
     async watch() { throw new Error('Seat alerts need the live server.'); },

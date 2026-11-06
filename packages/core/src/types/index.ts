@@ -188,6 +188,12 @@ export interface User {
   };
   /** 운영자가 정지한 계정 — 로그인·글쓰기가 막히고 다른 사람에게서 그 사람과 콘텐츠가 숨겨진다 (server/moderation.ts). 서버 전용 */
   suspended?: { at: string; by: string; reason: string; reportId?: ID };
+  /**
+   * 학생증 사진으로 인증하는 중 (학교 이메일을 못 쓰는 사람 — 졸업생·코드가 안 오는 사람, 2026-11-06 사장님 결정).
+   * pending·rejected 인 동안은 둘러보기만 하고 다른 사람에게 보이지 않는다 (server/idverify.ts). 서버 전용 · 본인에게만 내려간다.
+   * 없으면 예전 계정 그대로 (학교 이메일로 가입했거나 이 기능 전에 가입)
+   */
+  verification?: StudentIdVerification;
   createdAt: string;
   /** 서버가 다른 사람 프로필에 붙인다: 이 보는 사람에게 열린 항목 (lib/privacy). 본인 프로필·오프라인 데모에는 없다 */
   viewable?: ProfileField[];
@@ -206,6 +212,17 @@ export interface User {
   extraVisibility?: Partial<Record<ExtraField, Visibility>>;
   /** "Open to" (S080) — 잠깐 켜 두는 선택 상태. 다른 사람에게는 visibility 안에서, until 날짜까지만 (lib/privacy). 위치는 없다 */
   openTo?: OpenTo;
+}
+
+/** 학생증 사진 인증 상태 — 사진 자체는 여기에 없다 (서버의 비공개 저장소에만, 검토 뒤 지운다) */
+export interface StudentIdVerification {
+  method: 'student_id';
+  /** pending: 사진을 기다리거나(submittedAt 없음) 검토 중 · rejected: 다시 찍어야 함(reason) · approved: 학교 인증됨 */
+  status: 'pending' | 'rejected' | 'approved';
+  submittedAt?: string;
+  decidedAt?: string;
+  /** 거절 이유 — 운영자가 쓴 짧은 문장. 본인에게만 */
+  reason?: string;
 }
 
 export type OpenToKind = 'coffee' | 'study' | 'advice' | 'walk' | 'lunch';
@@ -676,7 +693,7 @@ export interface ChatRoom {
 export type NotificationType =
   | 'friend_accepted' | 'mutual_like' | 'participation_approved' | 'participation_rejected'
   | 'participation_request' | 'activity_reminder' | 'comment' | 'like' | 'follow'
-  | 'org_event' | 'nearby_activity' | 'proposal' | 'proposal_result' | 'deadline' | 'opportunity_match' | 'plan_vote' | 'plan_decided' | 'game_received' | 'game_result' | 'study_group' | 'seat_alert' | 'dining_favorite' | 'gym_alert';
+  | 'org_event' | 'nearby_activity' | 'proposal' | 'proposal_result' | 'deadline' | 'opportunity_match' | 'plan_vote' | 'plan_decided' | 'game_received' | 'game_result' | 'study_group' | 'seat_alert' | 'dining_favorite' | 'gym_alert' | 'verification';
 
 export interface Notification {
   id: ID;

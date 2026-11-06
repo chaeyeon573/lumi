@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { AlarmClock, Armchair, Bell, BookOpen, CalendarCheck, CalendarX, CheckCheck, Clock, Dumbbell, Heart, Inbox, MapPin, Megaphone, MessageCircle, Sparkles, ThumbsUp, UserCheck, UserPlus, Users, Utensils, Vote } from 'lucide-react';
+import { AlarmClock, Armchair, Bell, BookOpen, CalendarCheck, CalendarX, CheckCheck, Clock, Dumbbell, Heart, IdCard, Inbox, MapPin, Megaphone, MessageCircle, Sparkles, ThumbsUp, UserCheck, UserPlus, Users, Utensils, Vote } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { api } from '@core/api';
 import { useAppStore } from '@core/store/useAppStore';
@@ -39,6 +39,7 @@ const ICONS: Record<NotificationType, { Icon: typeof Heart; tone: Tone }> = {
   seat_alert: { Icon: Armchair, tone: 'mint' },
   dining_favorite: { Icon: Utensils, tone: 'peach' },
   gym_alert: { Icon: Dumbbell, tone: 'mint' },
+  verification: { Icon: IdCard, tone: 'lav' },
 };
 
 /**

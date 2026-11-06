@@ -57,6 +57,8 @@ export interface Store {
   listAiLogs(limit?: number): Promise<AiLog[]>;
   /** 화면 스냅샷 밖의 문서 묶음 (학사 일정 academicDates · 좌석 알림 seatWatches/seatStatus) — 전부 읽기 */
   listDocs<T extends { id: string }>(collection: string): Promise<T[]>;
+  /** 한 문서만 (없으면 null) — 큰 문서(학생증 사진 idPhotos)를 메모리에 다 올리지 않게 */
+  getDoc<T extends { id: string }>(collection: string, id: string): Promise<T | null>;
   /** id 기준 upsert */
   putDocs(collection: string, items: { id: string }[]): Promise<void>;
   removeDocs(collection: string, ids: string[]): Promise<void>;
@@ -229,6 +231,10 @@ export class PgStore implements Store {
     const { rows } = await this.pool.query<{ data: T }>('SELECT data FROM docs WHERE collection = $1 ORDER BY id', [collection]);
     return rows.map((r) => r.data);
   }
+  async getDoc<T extends { id: string }>(collection: string, id: string): Promise<T | null> {
+    const { rows } = await this.pool.query<{ data: T }>('SELECT data FROM docs WHERE collection = $1 AND id = $2', [collection, id]);
+    return rows[0]?.data ?? null;
+  }
   async putDocs(collection: string, items: { id: string }[]) {
     if (!items.length) return;
     await this.serial(async () => {
@@ -346,6 +352,7 @@ export class FileStore implements Store {
   async addAiLog(l: AiLog) { (this.data.aiLogs ??= []).push(l); await this.flush(); }
   async listAiLogs(limit = 200) { return [...(this.data.aiLogs ?? [])].reverse().slice(0, limit); }
   async listDocs<T extends { id: string }>(collection: string) { return Object.values(this.data.docs?.[collection] ?? {}).map((x) => structuredClone(x) as T).sort((a, b) => a.id.localeCompare(b.id)); }
+  async getDoc<T extends { id: string }>(collection: string, id: string) { const x = this.data.docs?.[collection]?.[id]; return x ? structuredClone(x) as T : null; }
   async putDocs(collection: string, items: { id: string }[]) {
     if (!items.length) return;
     const c = ((this.data.docs ??= {})[collection] ??= {});

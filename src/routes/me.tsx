@@ -16,6 +16,7 @@ import { PrivacySettingsPage } from '@/pages/settings/PrivacySettingsPage';
 import { SafetySettingsPage } from '@/pages/settings/SafetySettingsPage';
 import { AccountSecurityPage, BlockedAccountsPage, MyReportsPage, NotificationSettingsPage } from '@/pages/settings/SafetySubPages';
 import { BlockPage, ReportPage } from '@/pages/settings/ReportBlockPages';
+import { VerifyIdPage } from '@/pages/settings/VerifyIdPage';
 import { MyPostsRedirect, Redirect } from './redirects';
 
 /** WP5 Messages + Profile + Settings (S068–S086, S092–S096). 파일 주인: WP5. Lumi+ (S087·S088) 는 사장님 결정 전까지 없다 */
@@ -27,6 +28,7 @@ export const meTabRoutes = (
 export const meSubRoutes = (
   <>
     <Route path="/chats" element={<ChatInboxPage />} />                   {/* S068 (?tab=direct|groups|requests) */}
+    <Route path="/verify-id" element={<VerifyIdPage />} />                {/* student ID photo — send again after sign-up (server/idverify.ts) */}
     <Route path="/chats/:roomId" element={<ChatRoomPage />} />            {/* S069 */}
     <Route path="/notifications" element={<NotificationsPage />} />       {/* S070 · S095 */}
     <Route path="/profile/edit" element={<EditProfilePage />} />          {/* S072 */}

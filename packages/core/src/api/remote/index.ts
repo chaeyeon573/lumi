@@ -138,6 +138,10 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
     },
 
     academic: { dates: (schoolId) => call('academic/dates', { schoolId }) },
+    verification: {
+      async submitStudentId(data) { return (await call<{ user: User }>('verification/student-id', { data })).user; },
+    },
+
     seats: {
       mine: () => call('seats/mine', {}),
       watch: (courseId) => call('seats/watch', { courseId }),

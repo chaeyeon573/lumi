@@ -271,6 +271,12 @@ export interface AroundUApi {
   };
   bootstrap(viewerId: ID): Promise<Snapshot>;
 
+  /** Student ID photo verification (server/idverify.ts) — the fallback when a school e-mail can't be used */
+  verification: {
+    /** Send (or re-send) a photo of the student ID — a JPEG data: URL already shrunk and redrawn on the device. Returns me */
+    submitStudentId(dataUrl: string): Promise<User>;
+  };
+
   schools: {
     search(query: string): Promise<School[]>;
     sendVerificationCode(email: string, schoolId: ID): Promise<{ ok: boolean; hint: string }>;

@@ -5,6 +5,7 @@ import { cn } from '@core/lib/cn';
 import { Chip, ChipRow, FormField, IconTile, InfoNote, SearchField, cardCls } from '@/components/ha';
 import { ComingSoonSchools } from '../ComingSoonSchools';
 import { SectionTitle, StepFrame, en, type StepProps } from './shared';
+import { alumniIdHint } from './StudentIdStep';
 
 /** The line under a school's name — its full name when we know it, otherwise the region */
 export const FULL_NAME: Record<string, string> = { 'UC Berkeley': 'University of California, Berkeley' };
@@ -75,7 +76,8 @@ export function UniversityStep({ d, patch, next, schools }: StepProps & { school
               </ChipRow>
             </>
           )}
-          <InfoNote className="mt-5">{en ? 'Master’s / PhD and graduation year are editable later.' : '석사·박사 과정과 졸업 연도는 나중에 고칠 수 있어요.'}</InfoNote>
+          {d.role === 'alumni' && <InfoNote className="mt-5">{alumniIdHint}</InfoNote>}
+          <InfoNote className={d.role === 'alumni' ? 'mt-2' : 'mt-5'}>{en ? 'Master’s / PhD and graduation year are editable later.' : '석사·박사 과정과 졸업 연도는 나중에 고칠 수 있어요.'}</InfoNote>
         </>
       )}
     </StepFrame>

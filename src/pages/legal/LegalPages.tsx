@@ -16,7 +16,7 @@ import { apiMode } from '@core/api';
 /** Same shape as GET /api/legal (server/legal.ts) */
 interface LegalConfig { operator: string | null; contactEmail: string | null }
 
-export const LEGAL_UPDATED = 'November 2, 2026';
+export const LEGAL_UPDATED = 'November 6, 2026';
 
 function useLegalConfig(): LegalConfig {
   const [cfg, setCfg] = useState<LegalConfig>({ operator: null, contactEmail: null });
@@ -77,6 +77,7 @@ export function PrivacyPage() {
 
       <H>1. What we collect</H>
       <P><B>Account.</B> Your school email address, used to send you a 6-digit sign-in code and to confirm you're a student at your school. Other users never see it. You can skip it when you sign up, but then you can't sign back in on another device. Signing in creates a random session token that your device keeps.</P>
+      <P><B>Student ID photo (only if you can't use a school email).</B> If you have no school email — for example as an alum — or the code never arrives, you can send a photo of your student ID (or alumni card or diploma) instead. It's used only to check that you study at (or graduated from) your school. Only the Lumi team sees it — never other users — and we delete it as soon as we've reviewed it, whether we approve it or not. We keep only the result (verified or not, and the reason if not). The photo is shrunk and stripped of location data (EXIF) on your device, and again on our server. Until it's approved, other users don't see your account.</P>
       <P><B>Profile.</B> The name or nickname you choose, birth year (only you see it — it isn't on your profile and isn't sent to other users; we use it to check the 16+ rule, and 18+ for rides), school, major, year, and whether you're an undergrad, grad student or alum. Optional extras you can fill in: a short bio, likes, free-time activities, interests, goals, who you'd like to meet, answers to profile questions and icebreaker games, what you'd like to do right now, and where you live in general terms (dorm, off-campus or commuting, plus an area — never an address). Your avatar is an emoji and a color — Lumi doesn't upload photos from your device.</P>
       <P><B>Classes.</B> Classes you add to your timetable (course, days and times, and optionally room, instructor and section), class-seat alerts, and whether classmates can see that you take a class.</P>
       <P><B>What you create and do.</B> Posts, comments, meetups and who joins them, plans and votes, rides (a pickup point from a preset list, destination, time, seats, and an optional cost estimate and note), chats and messages, friend requests, follows, likes, saved listings and clubs, favorite dining dishes and gym crowd alerts, blocks and reports. Photos you choose to attach to a post — we shrink them and remove location data (EXIF) on your device before upload.</P>
@@ -84,7 +85,7 @@ export function PrivacyPage() {
       <P><B>AI features.</B> Questions you ask Ask Lumi and its answers, text you paste to fill in your profile at sign-up, and conversation starters we suggest. We keep a log of these to fix problems and prevent abuse.</P>
       <P><B>Feedback.</B> Anything you send with Settings → Send feedback.</P>
       <P><B>Technical.</B> Our hosting provider keeps standard server logs (such as IP address, the page or request, time and errors). Lumi doesn't use analytics or advertising tools and doesn't use cookies to track you. Your browser stores your sign-in token and a few settings (like design, language and filters) on your device. If you turn on notifications in the iPhone app, we store a push token for that device so we can send them; it's deleted when you sign out on that device or delete your account.</P>
-      <P><B>What we don't collect.</B> Lumi doesn't read your device's location (GPS), contacts, your photo library (only the photos you pick are uploaded), camera or microphone. Maps show places for events and rides, not where you are. Notifications appear inside the app; in the iPhone app you can also choose to get them as push notifications (off until you say yes, and you can turn them off in Settings). The only emails we send you are sign-in codes.</P>
+      <P><B>What we don't collect.</B> Lumi doesn't read your device's location (GPS), contacts, your photo library (only the photos you pick are uploaded) or microphone, and uses the camera only when you take a photo for a post or of your student ID. Maps show places for events and rides, not where you are. Notifications appear inside the app; in the iPhone app you can also choose to get them as push notifications (off until you say yes, and you can turn them off in Settings). The only emails we send you are sign-in codes.</P>
 
       <H>2. How we use it</H>
       <UL>
@@ -102,6 +103,7 @@ export function PrivacyPage() {
         <li><B>Anonymous posts</B> don't show your name to other users, and their app isn't told who wrote them (comments on anonymous posts are anonymous too). We still know who wrote them so we can act on reports.</li>
         <li><B>Messages</B> are visible to the people in that chat. They're stored on our servers and aren't end-to-end encrypted, so we can review them when someone reports a problem.</li>
         <li><B>Your email address</B> is never shown to other users.</li>
+        <li><B>A student ID photo</B> is seen only by the Lumi team reviewing it, and is deleted after the review.</li>
       </UL>
 
       <H>4. Service providers</H>
@@ -120,6 +122,7 @@ export function PrivacyPage() {
       <UL>
         <li>We keep your account information until you delete your account.</li>
         <li>Sign-in codes expire after 10 minutes.</li>
+        <li>A student ID photo is deleted as soon as we've reviewed it (approved or not), or when you delete your account if that comes first.</li>
         <li>When you delete your account (<B>Settings → Delete account</B>), we delete your sign-in email, your profile and timetable, your posts and comments and photos you uploaded, your connections, and your messages — 1:1 chats with you are removed for both people. Meetups, plans and rides you host are cancelled, and the people in them get a notice that doesn't name you. You're signed out everywhere and your devices' push tokens are deleted. Reports you filed are kept without your name; reports about you are kept for safety review.</li>
         <li>Ask Lumi logs and feedback are kept to fix problems and prevent abuse, and are deleted with your account. Text you paste into "fill in my profile" during sign-up is logged before you have an account, so it isn't linked to you — email <Contact cfg={cfg} /> if you want it removed.</li>
         <li>Server logs are kept by our hosting provider for a limited time.</li>

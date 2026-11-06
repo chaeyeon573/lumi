@@ -25,6 +25,8 @@
  *
  * 신고·운영 (server/moderation.ts): POST /api/rpc/reports/create → 저장 + FEEDBACK_EMAIL 알림 + 3명 신고 시 자동 숨김,
  *   GET /admin/reports (관리 화면, ADMIN_KEY 입력), /api/admin/reports·/api/admin/users/:id/… (x-admin-key) — 기각·삭제·정지·정지 해제
+ * 학생증 사진 인증 (server/idverify.ts): 학교 이메일 없이 가입 → 검토 대기(둘러보기만, 다른 사람에게 안 보임),
+ *   POST /api/verification/student-id, GET /admin/verifications (ADMIN_KEY) — 승인·거절 후 사진은 바로 지운다
  */
 import express, { type Request, type Response, type NextFunction } from 'express';
 import cors from 'cors';
@@ -50,7 +52,7 @@ import { registerRideRoutes } from './rides';
 import { cleanOrgEntities } from './orgtext';
 import { migrateDemo, demoUserIdFor, rollSampleActivities, rollSampleContent } from './demo';
 import { hiddenSamplesFor, SAMPLE_OPPORTUNITY_IDS, SAMPLE_ORG_IDS } from './samples';
-import { birthYearProblem, searchOrgs } from '@core/lib/signup';
+import { searchOrgs } from '@core/lib/signup';
 import { aiEnabled, ask, profileDraft, starters, rateLimit, AiError, campusToday, forgetStarters } from './ai';
 import { registerAccountRoutes } from './account';
 import { createClassQaService, registerClassQaRoutes } from './classqa';
@@ -69,6 +71,8 @@ import { PROTECTED_IDS } from './account';
 import { acceptUpload, dayStart, MAX_MEDIA_PER_DAY, mediaVisible } from './media';
 import { createReviewLogin, reviewConfig, ReviewLoginError } from './review-login';
 import { orgRules, registerPublicExploreRoute } from './orgs';
+import { createIdVerify, pendingGate, registerIdVerifyRoutes, registerProblem } from './idverify';
+import { awaitingVerification } from '@core/lib/verification';
 
 const PORT = Number(process.env.PORT ?? 8787);
 const store = createStore();
@@ -159,6 +163,9 @@ await campus.load();
 // 수업 질문 (S030 Questions — server/classqa.ts, 스냅샷 밖 문서 묶음)
 const classQa = createClassQaService({ db: () => db, store, push: pushPatch });
 await classQa.load();
+// 학생증 사진 인증 (server/idverify.ts) — 요청 기록은 스냅샷 밖 문서 묶음, 사진은 따로(idPhotos) 두고 검토 뒤 지운다
+const idVerify = createIdVerify({ db: () => db, store, push: pushPatch });
+await idVerify.load();
 setInterval(() => { syncFromWorker().catch((e) => console.error('[sync] failed', e)); }, Number(process.env.DATA_SYNC_SECONDS ?? 120) * 1000);
 
 // ─── 앱 ─────────────────────────────────────────────────────────────────
@@ -183,6 +190,9 @@ const requireUser = (req: Req): ID => {
 const wrap = (fn: (req: Req, res: Response) => Promise<unknown> | unknown) => async (req: Req, res: Response, next: NextFunction) => {
   try { const out = await fn(req, res); if (!res.headersSent) res.json(out ?? {}); } catch (e) { next(e); }
 };
+// 학생증 검토를 기다리는 계정 — 다른 사람에게 닿는 일(글·모임·메시지·친구 요청·그룹 신청·약속·사진·수업 질문)은 승인 전까지 거절 (server/idverify.ts).
+// 모든 RPC·사진·수업 질문 경로보다 먼저 건다
+app.use(['/api/rpc', '/api/media', '/api/classqa'], auth, pendingGate(() => db));
 
 async function issueSession(userId: ID) {
   const token = randomBytes(32).toString('hex');
@@ -231,16 +241,18 @@ app.post('/api/auth/login', wrap(async (req) => {
 app.post('/api/auth/register', wrap(async (req) => {
   const input = req.body.input as RegisterInput;
   if (!input || typeof input.nickname !== 'string' || !input.nickname.trim() || !input.schoolId) throw bad(t('입력값을 확인해주세요.'));
-  // Lumi is 16+ — the sign-up screen checks too, but the server is the source of truth (@core/lib/signup)
-  const age = birthYearProblem(input.birthYear);
-  if (age) throw bad(age === 'under_16' ? t('Lumi는 만 16세 이상 대학생을 위한 앱이에요.') : t('출생 연도를 확인해주세요.'));
+  // Lumi is 16+ — the sign-up screen checks too, but the server is the source of truth (@core/lib/signup), on the student-ID path too
   const email = norm(input.email);
+  const verifiedEmail = email ? verifiedEmails.has(email) : false;
+  const start = registerProblem(input, verifiedEmail);
+  if ('error' in start) throw bad(start.error === 'under_16' ? t('Lumi는 만 16세 이상 대학생을 위한 앱이에요.') : t('출생 연도를 확인해주세요.'));
   if (email && await store.findAccount(email)) throw bad(t('이미 가입된 이메일이에요. 이메일로 로그인해주세요.'), 409);
   // 서버가 검증하지 않은 인증 상태는 믿지 않는다 — 코드로 확인하지 않은 이메일은 계정에 붙이지 않는다
   // (붙이면 그 주소의 진짜 주인이 '이미 가입된 이메일'에 막힌다)
-  const verified = email ? verifiedEmails.has(email) : false;
-  if (email && !verified) throw bad(t('학교 이메일 인증을 먼저 해주세요.'));
-  const user = engine.register({ ...input, emailVerified: verified });
+  if (email && !verifiedEmail) throw bad(t('학교 이메일 인증을 먼저 해주세요.'));
+  const user = engine.register({ ...input, emailVerified: verifiedEmail });
+  // 학교 이메일 없이 가입 → 학생증 사진을 기다리는 계정 (둘러보기만, 다른 사람에게 안 보인다 — server/idverify.ts)
+  if (start.verification) user.verification = start.verification;
   if (email) { await store.createAccount({ email, userId: user.id, createdAt: new Date().toISOString() }); verifiedEmails.delete(email); }
   await store.applyPatch({ users: [user], notifications: db.notifications.filter((n) => n.userId === user.id) });
   return { token: await issueSession(user.id), user };
@@ -260,6 +272,8 @@ app.post('/api/auth/attach-email', auth, wrap(async (req: Req) => {
     const patch = engine.users.update(me, { affiliation: { ...user.affiliation, emailVerified: true } });
     await store.applyPatch(patch); broadcast(patch);
   }
+  // 학생증 검토를 기다리던 사람이 결국 학교 이메일로 인증했다 — 사진은 지우고 바로 보이게
+  await idVerify.verifiedByEmail(me);
   return { user: db.users.find((u) => u.id === me) };
 }));
 
@@ -374,6 +388,7 @@ registerAccountRoutes(app, {
     (id, emails) => { emails.forEach((e) => verifiedEmails.delete(e)); forgetStarters(id); },
     (id) => push.forgetUser(id),
     (id) => classQa.forgetUser(id),
+    (id) => idVerify.forgetUser(id),
   ],
 });
 
@@ -403,6 +418,9 @@ registerPlanRoutes(app, {
   db: () => db, auth, push: (p) => { void store.applyPatch(p); broadcast(p); }, patchFor: (p, me) => patchFor(p, me, db),
   dist: path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist'),
 });
+
+// ─── 학생증 사진 인증 — /api/verification/student-id, /admin/verifications, /api/admin/verifications/* (server/idverify.ts) ─────
+registerIdVerifyRoutes(app, idVerify, { auth });
 
 // ─── 신고·운영 — /api/rpc/reports/create (일반 RPC보다 먼저), /admin/reports, /api/admin/* (server/moderation.ts) ─────
 registerModerationRoutes(app, {
@@ -582,7 +600,7 @@ app.post('/api/ai/starters', auth, wrap(async (req: Req) => {
   // 실제 계정은 예시 프로필을 볼 수 없다 (데모 계정은 자기 학교 예시만)
   if (hiddenSamplesFor(db, me).users.has(target.id)) throw bad(t('입력값을 확인해주세요.'), 404);
   // 정지된 사람은 다른 사람에게 보이지 않는다 (server/moderation.ts) — 첫마디 제안도 없다
-  if (isSuspended(target)) throw bad(t('입력값을 확인해주세요.'), 404);
+  if (isSuspended(target) || awaitingVerification(target)) throw bad(t('입력값을 확인해주세요.'), 404);
   rateLimit(`starters:${me.id}`, 30);
   const language = req.body.lang === 'ko' ? 'ko' : 'en';
   const r = await runAi('starters', { userId: me.id, schoolId: schoolIdOf(me), input: target.id }, () => starters(aiViewFor(db, me), me, target, language), (x) => x.starters.join(' | '));

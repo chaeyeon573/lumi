@@ -16,7 +16,8 @@ changes what Lumi collects or who receives it, update the page, this file, and t
 
 | Data | Where it comes from | Where it is stored | Who else receives it |
 |---|---|---|---|
-| School email | Sign-up "email" step / sign-in sheet → `POST /api/schools/send-code`, `/api/auth/register`, `/api/auth/attach-email` (`server/index.ts`) | Postgres `accounts` (email ↔ user id), `email_codes` (6-digit code, 10-min TTL) — `server/store.ts` | **Resend** (sends the code, `server/mail.ts`). Never sent to other users (not on the `User` object). Optional: "Skip for now" creates an account with no email. |
+| School email | Sign-up "email" step / sign-in sheet → `POST /api/schools/send-code`, `/api/auth/register`, `/api/auth/attach-email` (`server/index.ts`) | Postgres `accounts` (email ↔ user id), `email_codes` (6-digit code, 10-min TTL) — `server/store.ts` | **Resend** (sends the code, `server/mail.ts`). Never sent to other users (not on the `User` object). Since 2026-11-06 an account without a verified school email starts **pending** and needs a student ID photo (row below); `/api/auth/attach-email` later still verifies it and deletes any waiting photo. |
+| **Student ID photo** (since 2026-11-06, owner: "e-mail first, if that doesn't work a photo of the student ID") | Only when the student can't use a school email (alumni, code never arrives): S011 "Can't use your school email?" → `/start/student-id`, or `/verify-id` after sign-up. `<input type=file accept=image/* capture>` → shrunk to 1600px and redrawn as JPEG on the device (`src/lib/idPhoto.ts`, EXIF/location gone) → `POST /api/verification/student-id` → JPEG only, metadata segments stripped again on the server (`server/idverify.ts` `cleanJpeg`), 5 per account / 20 per network per day | Postgres `docs` collection `idPhotos` (image) + `idVerifications` (request line, no image) — **outside the snapshot, never under `/api/media`**. The image is **deleted as soon as an admin approves or rejects**, or with the account; the request line (who, school, when, decision, reason) stays as an audit record until account deletion. The user object carries only `verification` {status, reason} — owner-only (`OWNER_ONLY_KEYS`) | **Nobody but the Lumi team**: shown only on `/admin/verifications` via `GET /api/admin/verifications/:id/photo` with `ADMIN_KEY` (no-store). Not sent to any third party. While pending, the account is hidden from other users and can't post, join, message or request membership (server-enforced). |
 | Session token | `issueSession()` — 32 random bytes | Postgres `sessions` (no expiry today); browser `localStorage` `aroundu.remote.token.v1` (`packages/core/src/api/remote/index.ts`) | — |
 | Profile | `RegisterInput` / `users.update` (`packages/core/src/types/index.ts` `User`) — nickname, birth year (owner-only since 2026-11-02: `OWNER_ONLY_KEYS` in `packages/core/src/lib/privacy.ts` strips it from everyone else's snapshot; no age on cards or profiles; sign-up says "Only you see this"), school, role, major, year, emoji avatar + color, bio, likes, free time, interests, purposes, goals, looking-for / can-offer roles, prompt answers, icebreaker answers, "now want", daily answer, housing type + zone, optional height, `gender` (sign-up sets `'private'`; no production screen asks for it) | Postgres `docs` (`users`) | Other signed-in users (see §4 gap 1). OpenAI for AI features (below). |
 | Photos | **Post photos the user picks** (since 2026-11-02): `<input type=file accept=image/*>` on Create post → shrunk to 1600px and redrawn on the device (location/EXIF removed) → `/api/media` (server/media.ts, Postgres `media` table), deleted with the account. Avatars are still emoji + hue; sample profiles use bundled stock images. | Yes | No |
@@ -73,7 +74,7 @@ Answer **"No"** to "used to track you" for every type below.
 | Sensitive Info | No (no field asks for race, religion, orientation, etc.; `gender` is fixed to "private" in production) | — | — | — |
 | Contacts | No | — | — | — |
 | User Content → **Emails or Text Messages** | Yes (in-app chat messages; previews pass through Expo/APNs as push text) | Yes | No | App Functionality |
-| User Content → **Photos or Videos** | Yes (photos a user attaches to a post; location data removed on the device first) | Yes | No | App Functionality |
+| User Content → **Photos or Videos** | Yes (photos a user attaches to a post; a student ID / alumni card photo when someone verifies without a school email — seen only by the Lumi team and deleted after review; location data removed on the device first) | Yes | No | App Functionality (incl. verifying that the person is a student — not tracking, not advertising) |
 | User Content → Audio Data | No | — | — | — |
 | User Content → Gameplay Content | No (icebreaker answers declared under Other User Content) | — | — | — |
 | User Content → **Customer Support** | Yes (Feedback button) | Yes (when signed in) | No | App Functionality, Analytics (product improvement) |
@@ -94,7 +95,7 @@ Third-party processors to keep in mind when answering "third-party partners": Ra
 The iPhone app is `apps/shell` (Expo): the live web app in a WebView plus native push (expo-notifications → Expo
 Push → APNs), share sheet, haptics and an in-app Safari view for other sites. It asks for notifications only after the person's first action or from Settings → Notifications, and declares
 two more usage strings since bridge v2 (2026-11-02): photo library and camera, used only when someone taps the
-photo box on Create post (iOS shows the system picker). No location/contacts/mic/Face ID. It keeps a copy of the session token in the iOS
+photo box on Create post or takes a photo of their student ID to verify without a school email (iOS shows the system picker). No location/contacts/mic/Face ID. It keeps a copy of the session token in the iOS
 Keychain so people stay signed in. No analytics or crash SDK. (`apps/mobile` is the old mock-data prototype and
 is not what ships.) Any added SDK (crash reporting, analytics) changes these answers.
 
@@ -109,8 +110,10 @@ is not what ships.) Any added SDK (crash reporting, analytics) changes these ans
 > **[REVIEW_LOGIN_EMAIL]**, tap **Send code**, then enter the code **[REVIEW_LOGIN_CODE]** and tap **Sign in**.
 > It is a regular UC Berkeley student account with a verified school email, so you see what a real student sees.
 > To see the app filled with sample people, meetups and chats, open **https://heetz.up.railway.app/welcome?demo=berkeley**
-> on the device (it opens in the app) — that shared demo account is labelled "Sample". You can also create an
-> account without a school email: tap **Get in**, answer the short questions, and on the last step tap **Skip for now**.
+> on the device (it opens in the app) — that shared demo account is labelled "Sample". Students who can't use a
+> school email (e.g. alumni) can instead send a photo of their student ID on the last sign-up step ("Can't use your
+> school email?"); the Lumi team checks it, usually within a day, and deletes the photo right after. Until then the
+> account can look around but isn't visible to others and can't post or message.
 >
 > **Report and block:** On any person's profile, tap ⋯ → **Report user** or **Block**. Posts, meetups,
 > listings and rides have a ⋯/flag menu with **Report**. In a chat, tap ⋯ → Report / Block. Blocked users can't
@@ -125,7 +128,8 @@ is not what ships.) Any added SDK (crash reporting, analytics) changes these ans
 > screen and the last sign-up step), and can read them any time in Settings.
 >
 > Lumi does not use location or contacts. Photos and the camera are used only when you add a photo to a post
-> (Create post → photo box); location data is removed from the photo on the device before upload. Push notifications are optional: the app offers them
+> (Create post → photo box) or photograph your student ID to verify without a school email; location data is removed
+> from the photo on the device before upload. A student ID photo is seen only by the Lumi team and deleted after review. Push notifications are optional: the app offers them
 > after your first action (e.g. joining a meetup) or from Settings → Notifications → Push notifications.
 > It is for users 16+; ride sharing is 18+.
 >

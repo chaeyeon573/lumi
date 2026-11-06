@@ -35,6 +35,7 @@ import { DEMO_USER_ID } from '@core/data/seed.en';
 import { sampleFreeFor, stripRelationships } from './samples';
 import { legalConfig } from './legal';
 import { adminPageHtml } from './moderation-page';
+import { awaitingVerification } from '@core/lib/verification';
 
 /** distinct real accounts that must report a post/comment before it is hidden pending review (Terms §3 says the same) */
 export const AUTO_HIDE_REPORTS = 3;
@@ -144,7 +145,9 @@ export function moderationState(db: Db): ModState {
   const key = `${version}|${db.reports.length}|${db.users.length}`;
   const hit = stateCache.get(db.reports);
   if (hit && hit.key === key) return hit.st;
-  const suspended = new Set(db.users.filter((u) => u.suspended).map((u) => u.id));
+  // accounts still waiting for their student ID to be checked (server/idverify.ts) are hidden from everyone else the
+  // same way — not in People, search, class lists or member lists — until an admin approves them
+  const suspended = new Set(db.users.filter((u) => u.suspended || awaitingVerification(u)).map((u) => u.id));
   const real = new Map(db.users.filter((u) => !u.sample).map((u) => [u.id, u]));
   const counts = new Map<string, Set<ID>>();
   for (const r of db.reports) {
@@ -381,7 +384,7 @@ export function removeReported(db: Snapshot, reportId: ID, by: string, opts: { n
 }
 
 /** everything of this user's that other people can see — re-sent on suspend (→ removed.* for others) and unsuspend (→ back) */
-function footprint(db: Snapshot, uid: ID): Patch {
+export function footprint(db: Snapshot, uid: ID): Patch {
   const mine = (c: Comment) => c.authorId === uid;
   const hostedActivities = new Set(db.activities.filter((a) => a.hostId === uid).map((a) => a.id));
   const hostedRides = new Set((db.rides ?? []).filter((r) => r.hostId === uid).map((r) => r.id));
@@ -477,7 +480,7 @@ export function checkAdmin(req: Request, env: NodeJS.ProcessEnv = process.env): 
   failures.set(ip, next);
   throw new ModerationError(403, 'forbidden');
 }
-const adminName = (req: Request) => {
+export const adminName = (req: Request) => {
   const raw = String(req.headers['x-admin-name'] ?? '').replace(/[^\w .@'-]/g, '').trim().slice(0, 40);
   return raw || 'admin';
 };
