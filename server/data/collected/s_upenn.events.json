@@ -1,0 +1,1239 @@
+{
+ "collectedAt": "2026-11-06T03:41:28.222Z",
+ "sources": [
+  "penntoday https://penntoday.upenn.edu/api/events 43"
+ ],
+ "events": [
+  {
+   "description": "Presented by the Price Lab for Digital Humanities, this workshop will feature graphic designer and paper engineer Kelli Anderson demystifying how pop-up books are made. Anderson will show her design process for 3D elements, including how to build “blanks”, envision 2D design on 3",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_how_pop_books_are_made",
+   "type": "event",
+   "title": "How Pop-up Books Are Made",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-06T15:30:00.000Z",
+   "startTime": "10:30",
+   "place": {
+    "name": "Van Pelt-Dietrich Library, 3420 Walnut St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/how-pop-books-are-made",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "Organized by Penn Housing Rights project, this discussion will focus on the ongoing struggle to address homelessness as reflected in the principles enshrined in the U.S. Constitution. Expert panelists will reflect on historical advances and drawbacks in legislation and litigation",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "talk",
+    "talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_criminalization_homelessness_america",
+   "type": "event",
+   "title": "The Criminalization of Homelessness in America",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-06T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Gittis Hall, 3501 Sansom St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/criminalization-homelessness-america",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academic calendar"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_advance_registration_spring_term_ends",
+   "type": "event",
+   "title": "Advance Registration for Spring Term ends",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-09T05:00:00.000Z",
+   "sourceUrl": "https://penntoday.upenn.edu/events/advance-registration-spring-term-ends",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "This inaugural conference at Perry World House will mark a decade as Penn’s home for global policy engagement. Spanning a full day of keynote conversations, leaders from government, defense, humanitarian organizations, and journalism will take on four of the most urgent challenge",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_perry_world_house_10_inaugural_annual_conference",
+   "type": "event",
+   "title": "Perry World House at 10: Inaugural Annual Conference",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-09T14:45:00.000Z",
+   "startTime": "09:45",
+   "place": {
+    "name": "Hybrid; Perry World House, 3803 Locust Walk",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/perry-world-house-10-inaugural-annual-conference",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "Hosted by Penn’s Public Service and Policy Initiative, the Penn Institute for Urban Research, and Results for America (RFA), Tulsa Mayor Monroe Nichols (D) and former Tulsa Mayor G.T. Bynum (R) will discuss the chapter they co-authored in “Do What Works: Smarter Government, Bette",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "talk",
+    "talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_accountability_across_administrations",
+   "type": "event",
+   "title": "Accountability Across Administrations",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-09T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Fisher Fine Arts Library, 220 S. 34th St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/accountability-across-administrations",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "As Philadelphia commemorates the 250th anniversary of the nation’s founding, this Public Trust event invites audiences to reconsider the origins of American democratic thought by centering the governance traditions of the Haudenosaunee Confederacy (often referred to historically ",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "talk",
+    "talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_gifts_longhouse",
+   "type": "event",
+   "title": "Gifts of the Longhouse",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-10T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Public Trust, 4017 Walnut St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/gifts-longhouse",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "Part of Penn Arts & Sciences’ long-running Knowledge by the Slice lunchtime series, this special post-election roundtable with political science faculty examining the results of the 2026 midterm elections, the broader state of elections in the U.S., and what the outcomes mean for",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_election_roundtable_results_analysis_and_what_comes_next",
+   "type": "event",
+   "title": "Election Roundtable: Results, Analysis and What Comes Next",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-11T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Houston Hall, 3417 Spruce St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/election-roundtable-results-analysis-and-what-comes-next",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "The Wharton AI in Finance Lab brings together faculty and Ph.D. fellows who use large language models, machine learning, and new data to study questions in asset pricing, corporate finance, and innovation. At this information session, the Lab’s fellows will share the projects the",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_ai_finance_lab_info_session",
+   "type": "event",
+   "title": "AI in Finance Lab Info Session",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-12T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Academic Research Building, 265 S. 37th St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/ai-finance-lab-info-session",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "Rachel Kolb, author of the recent memoir “Articulate: A Deaf Memoir of Voice,” will recount stories from a life spent practicing various types of articulation, both in English and in American Sign Language (ASL). Drawing from lived experiences and the process of writing her book,",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "talk",
+    "talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_practice_articulation",
+   "type": "event",
+   "title": "The Practice of Articulation",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-12T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "David Rittenhouse Laboratory, 209 S. 33rd St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/practice-articulation",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "Curated by film and media scholar Wanda Strauven, this screening program will feature a series of short contemporary and historical films made by and/or alongside kids. The screening will be followed by a conversation between Strauven and Turkish visual artist Aslı Baykal, filmma",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "screenings"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_children_reinventing_cinema",
+   "type": "event",
+   "title": "Children Reinventing Cinema",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-12T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Public Trust, 4017 Walnut St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/children-reinventing-cinema",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "During Homecoming 2026, Penn Nursing will bring together leading medical experts and Penn alumni for “Practicing Where It Matters Most: The Future of Community-Based Primary Care,” the Inaugural Leonard A. Lauder Community Care Nurse Practitioner Program Symposium. All members of",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_future_community_based_primary_care",
+   "type": "event",
+   "title": "The Future of Community-Based Primary Care",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-13T14:30:00.000Z",
+   "startTime": "09:30",
+   "place": {
+    "name": "Fagin Hall, 418 Curie Blvd.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/future-community-based-primary-care",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "This program, organized by SNF Paideia, brings together visiting students from the United States Studies Centre at the University of Sydney and students from across Penn for a conversation about the U.S. midterm elections. Participants will hear reflections from students in Penn’",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "free food",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_processing_us_midterm_elections",
+   "type": "event",
+   "title": "Processing the U.S. Midterm Elections",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-13T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Gutmann College House, 211 S. 40th St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://penntoday.upenn.edu/events/processing-us-midterm-elections",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "This launch party will celebrate the essential role the arts have always played at Penn. Vice provost for the arts Timothy Rommen will share plans for advancing the arts at the University. Then, Institute of Contemporary Art director Johanna Burton will invite participants to exp",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_arts_penn_launch_party",
+   "type": "event",
+   "title": "Arts at Penn Launch Party",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-13T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Institute of Contemporary Art, 118 S. 36th St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/arts-penn-launch-party",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "As Philadelphia commemorates the 250th anniversary of the Declaration of Independence, “Celebrating Satire: Political Cartoons and the Boundaries of Free Expression” explores one of democracy’s oldest and most venerated traditions: political satire. Bringing together internationa",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_celebrating_satire",
+   "type": "event",
+   "title": "Celebrating Satire",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-13T18:00:00.000Z",
+   "startTime": "13:00",
+   "place": {
+    "name": "Annenberg School for Communication, 3620 Walnut St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/celebrating-satire",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academic calendar"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_homecoming_harvard_0",
+   "type": "event",
+   "title": "Homecoming (Harvard)",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-14T05:00:00.000Z",
+   "sourceUrl": "https://penntoday.upenn.edu/events/homecoming-harvard-0",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "During the 2026 Homecoming Weekend, Penn alumni are invited to stop by the Penn Arts & Sciences table to reconnect with alumni and faculty, pick up assorted buttons representing a variety of Penn Arts & Sciences majors and programs, and learn how to stay involved through mentorin",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_homecoming_weekend_penn_arts_sciences",
+   "type": "event",
+   "title": "Homecoming Weekend with Penn Arts & Sciences",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-14T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "College Green",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/homecoming-weekend-penn-arts-sciences",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "Participants will tour the Morris Arboretum & Gardens viewing trees from Asia, Europe, Africa, and the Americas, an international assortment inspired by the travels of founders John and Lydia Morris. Free with Penn ID.",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_trees_around_world_tour_0",
+   "type": "event",
+   "title": "Trees Around the World Tour",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-14T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Morris Arboretum & Gardens, 100 E. Northwestern Ave.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/trees-around-world-tour-0",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "This conversation between Arthur Ross Gallery inaugural faculty director Gwendolyn DuBois Shaw and two Penn alum and seasoned art curators, Jill Vaum Rothschild and Sylvia Yount, will explore the themes and questions at the heart of the exhibitions being organized around the coun",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "talk",
+    "america 250"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_curators_conversation_liberty",
+   "type": "event",
+   "title": "Curators’ Conversation: ‘At Liberty’",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-14T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Arthur Ross Gallery, Fisher Fine Arts Library, 220 S. 34th St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/curators-conversation-liberty",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "Kelly Writers House faculty director and Kelly Family Professor of English Al Filreis will invite six of his former students for a wide-open discussion about student-centered learning. Participants will explore the benefits of learned-centered education, including the characteris",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_democratic_pedagogy_learner_centered_teaching",
+   "type": "event",
+   "title": "Democratic Pedagogy: Learner-Centered Teaching",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-14T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Kelly Writers House, 3805 Locust Walk",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/democratic-pedagogy-learner-centered-teaching",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "The Penn Wind Ensemble will present a night of dance music from across the world—and time. Conducted by Paul Bryan, the Penn Wind Ensemble, with an over 40-year history performing and rehearsing in Penn’s historic Irvine Auditorium, is comprised of musicians from across the Penn ",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "music"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_penn_wind_ensemble_invitation_dance",
+   "type": "event",
+   "title": "Penn Wind Ensemble: Invitation to the Dance",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-15T20:00:00.000Z",
+   "startTime": "15:00",
+   "place": {
+    "name": "Annenberg Center for the Performing Arts, 3680 Walnut St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/penn-wind-ensemble-invitation-dance",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "This program will highlight American author, journalist, and activist Barbara Ehrenreich’s landmark book “Nickel and Dimed,” which investigates the impact of the 1996 welfare reform act on the working poor in the U.S. In her late fifties, Ehrenreich went undercover, reporting as ",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "talk",
+    "talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_nickel_and_dimed_25_years_later",
+   "type": "event",
+   "title": "Nickel and Dimed, 25 Years Later",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-16T22:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Public Trust, 4017 Walnut St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/nickel-and-dimed-25-years-later",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "From public health and marketing to climate science to logistics, geographic information systems (GIS) is becoming a core competency for professionals in a range of fields. This annual day celebrates the expanding influence of GIS and the professionals who bridge disciplines to s",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_penn_gis_day_2026",
+   "type": "event",
+   "title": "Penn GIS Day 2026",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-17T14:30:00.000Z",
+   "startTime": "09:30",
+   "place": {
+    "name": "Van Pelt-Dietrich Library, 3420 Walnut St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/penn-gis-day-2026",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "Swing by the Lippincott Library to unwind and explore exciting food creations from Penn’s student entrepreneurs. Sample their innovative snacks, share feedback, and discover how the business library supports creativity and innovation at Penn. Free and open to the public. Register",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_lippincotts_snack_stop_destress_discover",
+   "type": "event",
+   "title": "Lippincott’s Snack Stop: Destress & Discover",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-17T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Van Pelt-Dietrich Library, 3420 Walnut St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/lippincotts-snack-stop-destress-discover",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "PennSound co-director Chris Mustazza will discuss highlights from “The Poetic Record,” a book that explores the story of voice collectors and poets working together to record, collect, and study the voices of poets and help preserve this vital dimension of sonic, musical, and lit",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "talk",
+    "talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_poetic_record",
+   "type": "event",
+   "title": "The Poetic Record",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-17T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Kelly Writers House, 3805 Locust Walk",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/poetic-record",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "Presented with the School of Social Policy & Practice (SP2) and the Andrea Mitchell Center for the Study of Democracy, this program will explore the political forces that have shaped anti-poverty policy from the New Deal to guaranteed income initiatives, and what it will take to ",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "talk",
+    "talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_politics_ending_poverty",
+   "type": "event",
+   "title": "The Politics of Ending Poverty",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-18T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "Public Trust, 4017 Walnut St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/politics-ending-poverty",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "Responding to calls to reconsider human-nonhuman relations in a time of global polycrisis, this program will offer a novel framework for imagining connections between animated matter and political action. Drawing on their expertise in the history of science, religious studies, me",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "talk",
+    "talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_changing_world_anime_rituals_and_robots",
+   "type": "event",
+   "title": "Changing The World with Anime, Rituals, and Robots",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-18T22:15:00.000Z",
+   "startTime": "17:15",
+   "place": {
+    "name": "Williams Hall, 255 S. 36th St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/changing-world-anime-rituals-and-robots",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "This program at Kelly Writers House features a presentation from book artist, scholar, and cultural critic Johanna Drucker about her new work: “The Re-Declaration Project,” a limited-edition print that incorporates typefaces and visual cues used in past Declarations, while interr",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "america 250"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_re_declaration_project",
+   "type": "event",
+   "title": "The Re-Declaration Project",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-18T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Kelly Writers House, 3805 Locust Walk",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/re-declaration-project",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "The forthcoming graphic novel “Framing Emmett Till: Exposing Dark Fear” follows an anonymous Black writer as they investigates Till’s murder, confronting not only the unresolved truths of the past, but the ways Black pain is consumed, reshaped, and monetized in the present. The K",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_framing_emmett_till_exposing_dark_fear",
+   "type": "event",
+   "title": "Framing Emmett Till: Exposing Dark Fear",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-18T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Van Pelt-Dietrich Library, 3420 Walnut St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/framing-emmett-till-exposing-dark-fear",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "This Kelly Writers House program will feature a conversation between celebrated writer and Penn professor Lorene Cary and English professor at The City University of New York Duncan Faherty. They will explore the histories and contemporary interpretations of Philadelphia’s Declar",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "america 250"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_sacred_houses",
+   "type": "event",
+   "title": "Sacred Houses",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-19T23:00:00.000Z",
+   "startTime": "18:00",
+   "place": {
+    "name": "Kelly Writers House, 3805 Locust Walk",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/sacred-houses",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "This student-organized symposium will connect generations of communication research and scholarship to address the crises facing contemporary media systems. The program will bring together media practitioners and scholars across career stages, with each panel spotlighting the con",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_continuum_crisis_media_race_and_capital",
+   "type": "event",
+   "title": "Continuum of Crisis: Media, Race, and Capital",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-20T14:30:00.000Z",
+   "startTime": "09:30",
+   "place": {
+    "name": "Annenberg School for Communication, 3620 Walnut St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/continuum-crisis-media-race-and-capital",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "In celebration of Archives for Black Lives in Philadelphia’s (A4BLiP) 10th anniversary, this daylong lab will bring together members of A4BLiP. Participants will collaboratively develop a toolkit to support and provide resources for community groups. Attendees will also reflect o",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_resource_toolkit_archives_black_lives_philadelphia",
+   "type": "event",
+   "title": "Resource Toolkit: Archives for Black Lives in Philadelphia",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-20T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Van Pelt-Dietrich Library, 3420 Walnut St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/resource-toolkit-archives-black-lives-philadelphia",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "Participants will explore the variety of conifers—both evergreen and deciduous—on display at the Morris Arboretum & Gardens. These notable specimens provide multiseasonal interest with an array of forms, foliage, bark, and cones. Free with Penn ID.",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_conifers_tour_2",
+   "type": "event",
+   "title": "Conifers Tour",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-21T16:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Morris Arboretum & Gardens, 100 E. Northwestern Ave.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/conifers-tour-2",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "Penn Flutes will present an afternoon of music directed by Sam Scheibe. Penn Chorale is a vocal ensemble that sings a variety of choral music, with emphasis on works from the late 20th and 21st centuries. The ensemble rehearses in Rose Recital Hall and performs in the St. Mary’s ",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "music"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_penn_chorale_0",
+   "type": "event",
+   "title": "Penn Chorale",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-22T21:00:00.000Z",
+   "startTime": "16:00",
+   "place": {
+    "name": "St. Mary’s Church, 3916 Locust Walk",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/penn-chorale-0",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academic calendar"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_thur_fri_class_schedule_tue_wed_starts",
+   "type": "event",
+   "title": "Thur-Fri class schedule on Tue-Wed starts",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-24T05:00:00.000Z",
+   "sourceUrl": "https://penntoday.upenn.edu/events/thur-fri-class-schedule-tue-wed-starts",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academic calendar"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_thur_fri_class_schedule_tue_wed_ends",
+   "type": "event",
+   "title": "Thur-Fri class schedule on Tue-Wed ends",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-25T05:00:00.000Z",
+   "sourceUrl": "https://penntoday.upenn.edu/events/thur-fri-class-schedule-tue-wed-ends",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academic calendar"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_thanksgiving_break_starts",
+   "type": "event",
+   "title": "Thanksgiving Break starts",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-26T05:00:00.000Z",
+   "sourceUrl": "https://penntoday.upenn.edu/events/thanksgiving-break-starts",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academic calendar"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_thanksgiving_break_ends",
+   "type": "event",
+   "title": "Thanksgiving Break ends",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-29T05:00:00.000Z",
+   "sourceUrl": "https://penntoday.upenn.edu/events/thanksgiving-break-ends",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "academic calendar"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_classes_resume_17",
+   "type": "event",
+   "title": "Classes resume",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-11-30T05:00:00.000Z",
+   "sourceUrl": "https://penntoday.upenn.edu/events/classes-resume-17",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "The final installment in Penn Climate’s Fall 2026 Seminar Series will feature Scott Moore, practice professor of political science and director of the Penn Global Climate Security and Geopolitics Project at Penn, will draw from recent research on China’s climate diplomacy and cli",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "talk",
+    "talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_can_china_solve_climate_change",
+   "type": "event",
+   "title": "Can China Solve Climate Change?",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-12-01T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "TBD",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/can-china-solve-climate-change",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "Authors and Penn Music PhDs Deirdre Loughridge and Thomas Patteson will discuss their new book, “The Museum of Imaginary Musical Instruments.” The book presents a wide-ranging collection of musical instruments that never existed and shows how these phantom artifacts reflect chang",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "talk",
+    "talks"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_book_talk_museum_imaginary_musical_instruments",
+   "type": "event",
+   "title": "Book Talk: The Museum of Imaginary Musical Instruments",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-12-01T22:15:00.000Z",
+   "startTime": "17:15",
+   "place": {
+    "name": "Penn Music Building, 201 S. 34th St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/book-talk-museum-imaginary-musical-instruments",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "This performance and quilting project, hosted by the Wolf Humanities Center, will ask questions about the meaning of birthplaces today. Participants will collaborate to build a series of performative quilts, culminating in an airing of the quilts and a story-sharing event where a",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "special events"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_love_abide_you_birthplace_quilts",
+   "type": "event",
+   "title": "Love Abide with You, The Birthplace Quilts",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-12-02T17:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "LGBT Center, 3907 Spruce St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/love-abide-you-birthplace-quilts",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "Presented in connection with the Arthur Ross Gallery’s exhibition “At Liberty: Life in the City of Brotherly Love During the Early Republic,” this screening of “Becoming American: Philadelphia’s Story” invites audiences to consider the people, communities, and experiences that sh",
+   "eligibility": "Free, open to the Penn community",
+   "tags": [
+    "event",
+    "screenings"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_becoming_american_philadelphias_story",
+   "type": "event",
+   "title": "‘Becoming American: Philadelphia’s Story’",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-12-02T19:00:00.000Z",
+   "startTime": "14:00",
+   "place": {
+    "name": "Arthur Ross Gallery, Fisher Fine Arts Library, 220 S. 34th St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/becoming-american-philadelphias-story",
+   "sourceLabel": "Penn Today Events"
+  },
+  {
+   "description": "The Penn Language Center’s 15th annual Language Educator Symposium will explore the selected theme, “From Requirement to Relevance: World Language Study for Professional Purposes.” The one-day symposium convenes professionals in language education to explore current issues in the",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "special events"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:41:31.110Z",
+   "createdAt": "2026-11-06T03:41:31.110Z",
+   "id": "op_upenn_pt_language_educator_symposium_2026",
+   "type": "event",
+   "title": "Language Educator Symposium 2026",
+   "host": "University of Pennsylvania",
+   "schoolId": "s_upenn",
+   "date": "2026-12-05T15:00:00.000Z",
+   "startTime": "10:00",
+   "place": {
+    "name": "Van Pelt-Dietrich Library, 3420 Walnut St.",
+    "lat": 39.9522,
+    "lng": -75.1932
+   },
+   "sourceUrl": "https://penntoday.upenn.edu/events/language-educator-symposium-2026",
+   "sourceLabel": "Penn Today Events"
+  }
+ ]
+}

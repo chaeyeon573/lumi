@@ -1,0 +1,120 @@
+{
+ "collectedAt": "2026-11-06T03:41:49.157Z",
+ "sources": [
+  "jsonld https://www.usfca.edu/life-at-usf/events 4"
+ ],
+ "events": [
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:42:00.953Z",
+   "createdAt": "2026-11-06T03:42:00.953Z",
+   "id": "op_usf_ld_13570341",
+   "type": "event",
+   "title": "PASJ Presents: The Lost Ballad of our Mechanical Ancestor",
+   "host": "University of San Francisco",
+   "schoolId": "s_usf",
+   "date": "2026-11-07T04:00:00.000Z",
+   "startTime": "20:00",
+   "place": {
+    "name": "Lone Mountain Main 148 - Studio Theatre",
+    "lat": 37.7766,
+    "lng": -122.4506
+   },
+   "sourceUrl": "https://www.usfca.edu/event/pasj-presents-lost-ballad-our-mechanical-ancestor/13570341",
+   "sourceLabel": "University of San Francisco Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:42:01.715Z",
+   "createdAt": "2026-11-06T03:42:01.715Z",
+   "id": "op_usf_ld_13610969",
+   "type": "event",
+   "title": "Pack the Pantry: A Department Giving Challenge",
+   "host": "University of San Francisco",
+   "schoolId": "s_usf",
+   "date": "2026-11-09T16:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "On-Campus Event - LM and Lower Campus Donation Bins",
+    "lat": 37.7766,
+    "lng": -122.4506
+   },
+   "sourceUrl": "https://www.usfca.edu/event/pack-pantry-department-giving-challenge/13610969",
+   "sourceLabel": "University of San Francisco Events"
+  },
+  {
+   "description": "Join us for a discussion between journalist Melanie D.G. Kaplan and USF law professor Matthew Liebman about Melanie's new book Lab Dog: A Beagle and His Human Investigate the Surprising World of Animal Research . When Melanie adopted a beagle named Hammy, she never expected he wo",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:42:02.460Z",
+   "createdAt": "2026-11-06T03:42:02.460Z",
+   "id": "op_usf_ld_13579744",
+   "type": "event",
+   "title": "Lab Dog: A Beagle and His Human Investigate the Surprising World of Animal Research",
+   "host": "University of San Francisco",
+   "schoolId": "s_usf",
+   "date": "2026-11-10T01:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Kendrick Hall 104 - Lecture Hall",
+    "lat": 37.7766,
+    "lng": -122.4506
+   },
+   "sourceUrl": "https://www.usfca.edu/event/lab-dog-beagle-and-his-human-investigate-surprising-world-animal-research/13579744",
+   "sourceLabel": "University of San Francisco Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T03:42:03.203Z",
+   "createdAt": "2026-11-06T03:42:03.203Z",
+   "id": "op_usf_ld_13437600",
+   "type": "event",
+   "title": "USFVotes Resource Pop-Up",
+   "host": "University of San Francisco",
+   "schoolId": "s_usf",
+   "date": "2026-11-10T19:45:00.000Z",
+   "startTime": "11:45",
+   "place": {
+    "name": "University Center 1st Floor Tabling Station",
+    "lat": 37.7766,
+    "lng": -122.4506
+   },
+   "sourceUrl": "https://www.usfca.edu/event/usfvotes-resource-pop/13437600",
+   "sourceLabel": "University of San Francisco Events"
+  }
+ ]
+}

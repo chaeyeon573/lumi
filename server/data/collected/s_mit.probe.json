@@ -1,20 +1,20 @@
 {
- "checkedAt": "2026-11-05T11:40:03.672Z",
+ "checkedAt": "2026-11-05T20:35:32.606Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:mit",
- "sampled": 1713,
- "withTimes": 1713,
+ "sampled": 1963,
+ "withTimes": 1963,
  "terms": [
   "Fall 2026"
  ],
  "sample": [
   "1.000 · Introduction to Computer Programming and Numerical Methods for Engineering Applications · Fall 2026 · M 09:00-10:30 W 09:00-10:30",
-  "14.17 · Blockchain and Financial System Design · Fall 2026 · T 10:30-12:00 R 10:30-12:00",
-  "18.085 · Computational Science and Engineering I · Fall 2026 · M 09:30-11:00 W 09:30-11:00",
-  "21G.S03 · Special Subject: Global Studies and Languages · Fall 2026 · M 13:00-14:00 R 13:00-14:00 F 13:00-14:00",
-  "3.093 · Metalsmithing: Objects and Power · Fall 2026 · T 10:00-11:00",
-  "8.012 · Physics I · Fall 2026 · T 09:00-10:30 R 09:00-10:30"
+  "14.452 · Economic Growth · Fall 2026 · T 13:00-14:30 R 13:00-14:30",
+  "18.01A · Calculus · Fall 2026 · T 13:00-14:00 R 13:00-14:00",
+  "21G.753 · Spanish III (Lecture option 2) · Fall 2026 · M 11:00-12:00 T 11:00-12:00 W 11:00-12:00 R 11:00-12:00",
+  "24.251 · Introduction to Philosophy of Language · Fall 2026 · T 14:30-16:00 R 14:30-16:00",
+  "7.492 · Methods and Problems in Microbiology · Fall 2026 · W 13:00-15:30"
  ],
  "spotCheck": {
   "matched": 6,

@@ -46,7 +46,7 @@ import { sendMail } from '../mail';
 import { MAIL_LOG, logEntries, pickToMail, type MailLogDoc } from './notify-throttle';
 import { COURSE_SOURCES, resolveCourseSource, useImportCheckpoint } from '../sources/courses';
 import { fetchCourseLeaf } from '../sources/catalog';
-import { fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale, fetchLocalist, fetchCampusGroupsEvents, fetchEventRss, fetchTribeEvents, fetchUclaCommunity, fetchTrumba } from '../sources/opportunities';
+import { fetchPresenceEvents, fetchEngageEvents, fetchLiveWhale, fetchLocalist, fetchCampusGroupsEvents, fetchEventRss, fetchTribeEvents, fetchUclaCommunity, fetchTrumba, fetchJsonLdEvents, fetchPennToday } from '../sources/opportunities';
 import { dropDuplicateTitles, fetchDevpost, fetchInternships } from '../sources/external';
 import { existsSync } from 'node:fs';
 import { applyRules, checkDrift, spotCheck } from './validate';
@@ -292,6 +292,8 @@ async function collectEvents(row: SchoolRow): Promise<AgentRun> {
   const tr = /^tribe:(https?:\/\/\S+)$/.exec(row.events_source ?? '')?.[1]; if (tr) await tryAdd(`tribe ${tr}`, () => fetchTribeEvents(tr, school, 30));
   const uc = /^uclacommunity:(https?:\/\/\S+)$/.exec(row.events_source ?? '')?.[1]; if (uc) await tryAdd(`uclacommunity ${uc}`, () => fetchUclaCommunity(uc, school, 30));
   const tb = /^trumba:([\w.-]+)$/.exec(row.events_source ?? '')?.[1]; if (tb) await tryAdd(`trumba ${tb}`, () => fetchTrumba(tb, school, 30));
+  const jl = /^jsonld:(https?:\/\/\S+)$/.exec(row.events_source ?? '')?.[1]; if (jl) await tryAdd(`jsonld ${jl}`, () => fetchJsonLdEvents(jl, school, 7));
+  const pt = /^penntoday:(https?:\/\/\S+)$/.exec(row.events_source ?? '')?.[1]; if (pt) await tryAdd(`penntoday ${pt}`, () => fetchPennToday(pt, school, 30));
   if (!sources.length && !errors.length) return record({ task, schoolId: row.id, status: 'skipped', startedAt, summary: { error: 'no public event source known' } });
   const today = new Date().toISOString().slice(0, 10);
   // 전시(며칠씩 열려 있는 것)는 '그 시간에 가는 행사'가 아니다 — 읽는 코드마다 빼던 것을 여기서 한 번 더 (Duke "Cosmic Origins Exhibition Run" 18개, 2026-11-05 점검). 운동 경기의 exhibition game 은 남긴다

@@ -212,3 +212,30 @@ test('cleanCollectedOrgs: a website shared by 10+ clubs is a school page, not th
   assert.deepEqual(orgs[1].links!.map((l: { label: string }) => l.label), ['Directory', 'Instagram']);
   assert.equal(orgs[0].description, 'Graduate Business Association Mission Statement We meet');
 });
+
+test('publicFix / cleanCollectedOrgs: login-redirect social links point at the real profile; admin and editor links are set aside', async () => {
+  const { publicFix, cleanCollectedOrgs } = await import('./sources/orglinks');
+  assert.equal(publicFix('https://www.instagram.com/accounts/login/?next=%2Fshpeuga%2F&source=omni_redirect'), 'https://www.instagram.com/shpeuga/');
+  assert.equal(publicFix('https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fgw_rotaract%2F'), 'https://www.instagram.com/gw_rotaract/');
+  assert.equal(publicFix('https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fpsu-black-caucus'), 'https://www.linkedin.com/company/psu-black-caucus');
+  assert.equal(publicFix('https://twitter.com/i/flow/login?redirect_after_login=%2Fthaakat'), 'https://www.twitter.com/thaakat');
+  assert.equal(publicFix('https://sites.nd.edu/balletclub/wp-admin/'), 'https://sites.nd.edu/balletclub/');
+  assert.equal(publicFix('https://www.instagram.com/realclub/'), 'https://www.instagram.com/realclub/');
+  const { orgs, badLinks } = cleanCollectedOrgs([
+    { id: 'a', name: 'ASA', links: [{ label: 'Directory', url: 'https://x' }, { label: 'Website', url: 'https://manage.wix.com/account/sites' }] },
+    { id: 'b', name: 'Swim', links: [{ label: 'Website', url: 'https://sites.google.com/d/1xWxpbzrvAxVt9oASH60Fh9_U7Uqjj25v/p/1O0ScqdGVB3HQaNnhsEMl9wXkOB' }] },
+    { id: 'c', name: 'Alpha Phi', links: [{ label: 'Website', url: 'https://sites.google.com/d.umn.edu/plsalphaphi/home?authuser=0' }] },
+  ] as never, '2026-11-05');
+  assert.deepEqual(orgs[0].links!.map((l: { label: string }) => l.label), ['Directory']);
+  assert.equal(orgs[1].links!.length, 0);
+  assert.equal(orgs[2].links!.length, 1, 'a domain-named Google Site stays');
+  assert.equal(badLinks.length, 2);
+});
+
+test('publicFix: tracking tails (fbclid, utm_*, igshid) are removed, other query parts stay', async () => {
+  const { publicFix } = await import('./sources/orglinks');
+  assert.equal(publicFix('https://linktr.ee/SylvanSnackBar?fbclid=PAZXh0bgNhZW0CMTEAAaa'), 'https://linktr.ee/SylvanSnackBar');
+  assert.equal(publicFix('https://www.instagram.com/umass_club/?igshid=abc&utm_source=qr'), 'https://www.instagram.com/umass_club/');
+  assert.equal(publicFix('https://example.org/page?id=7&utm_campaign=x'), 'https://example.org/page?id=7');
+  assert.equal(publicFix('https://example.org/page?id=7'), 'https://example.org/page?id=7');
+});

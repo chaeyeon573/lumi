@@ -20,7 +20,7 @@ const uniq = (ms: Meeting[]) => ms.filter((m, i) => ms.findIndex((x) => x.day ==
  * 두 학기를 같이 담으면 같은 과목이 두 번 나온다 — 지금 학기는 원래 id 그대로(cc_berkeley_cs61a), 다른 학기는 꼬리표를 붙인다(cc_berkeley_cs61a_sp27).
  * 사용자가 시간표에 넣은 수업은 요일·시간을 복사해 두므로 id 가 바뀌어도 영향이 없다.
  */
-const tagTerm = (courses: CatalogCourse[], label: string, now = new Date()): CatalogCourse[] => {
+export const tagTerm = (courses: CatalogCourse[], label: string, now = new Date()): CatalogCourse[] => {
   if (label === termLabel(currentTerm(now))) return courses;
   const slug = termSlug(label);
   return courses.map((c) => ({ ...c, id: `${c.id}_${slug}` }));
@@ -113,15 +113,21 @@ function mitSchedule(s: string): { meetings: Meeting[]; location?: string } {
   }
   return { meetings: uniq(meetings), location };
 }
+/** FireRoad "Lecture,slot1,slot2" 의 slot 은 고르는 분반(대안)이다 — MIT 카탈로그도 "R9.30-11 or R11-12.30 …" 로 적는다(6.1010, 2026-11-05).
+ *  전에는 모두 합쳐 한 수업에 목요일 네 번처럼 나왔다 → 분반마다 따로 */
+export function mitLectureOptions(s: string): { meetings: Meeting[]; location?: string }[] {
+  const lec = s.split(';').find((part) => /^lecture,/i.test(part)); if (!lec) return [];
+  return lec.split(',').slice(1).map((slot) => mitSchedule(`Lecture,${slot}`)).filter((o) => o.meetings.length > 0);
+}
 async function mit(): Promise<CatalogCourse[]> {
   const res = await fetch('https://fireroad.mit.edu/courses/all?full=true', { headers: { 'user-agent': 'AroundU-importer' } });
   const all = (await res.json()) as { subject_id: string; title: string; schedule?: string; instructors?: string[]; total_units?: number; offered_fall?: boolean; offered_spring?: boolean }[];
   // fireroad 의 schedule 은 지금 학기 시간표 하나뿐 — 다음 학기 시간을 지어내지 않는다 (MIT 가 다음 학기를 올리면 fireroad 가 바꿔 준다)
   const term = process.env.MIT_TERM ?? (currentTerm().season === 'Spring' ? 'spring' : 'fall');
-  return all.filter((c) => c.schedule && (term === 'fall' ? c.offered_fall !== false : c.offered_spring !== false)).map((c) => {
-    const { meetings, location } = mitSchedule(c.schedule!);
-    return { id: courseId('s_mit', c.subject_id), schoolId: 's_mit', code: c.subject_id, title: c.title, department: c.subject_id.split('.')[0], instructor: c.instructors?.[0], location, meetings, term: `${term === 'fall' ? 'Fall' : 'Spring'} ${currentTerm().year}`, units: c.total_units, url: `https://student.mit.edu/catalog/search.cgi?search=${encodeURIComponent(c.subject_id)}` };
-  }).filter((c) => c.meetings.length > 0);
+  return all.filter((c) => c.schedule && (term === 'fall' ? c.offered_fall !== false : c.offered_spring !== false)).flatMap((c) => {
+    const opts = mitLectureOptions(c.schedule!);
+    return opts.map(({ meetings, location }, i) => ({ id: i === 0 ? courseId('s_mit', c.subject_id) : `${courseId('s_mit', c.subject_id)}_l${i + 1}`, schoolId: 's_mit', code: c.subject_id, title: opts.length > 1 ? `${c.title} (Lecture option ${i + 1})` : c.title, department: c.subject_id.split('.')[0], instructor: c.instructors?.[0], location, meetings, term: `${term === 'fall' ? 'Fall' : 'Spring'} ${currentTerm().year}`, units: c.total_units, url: `https://student.mit.edu/catalog/search.cgi?search=${encodeURIComponent(c.subject_id)}` }));
+  });
 }
 
 // ─── Berkeley: 공개 수업 시간표 classes.berkeley.edu (키 불필요) ────────────────
@@ -403,7 +409,7 @@ async function cornellSubject(roster: string, subject: string): Promise<CatalogC
   const res = await fetch(`https://classes.cornell.edu/api/2.0/search/classes.json?roster=${roster}&subject=${encodeURIComponent(subject)}`, { headers: { 'user-agent': 'AroundU-importer' } });
   if (!res.ok) return [];
   const data = (await res.json()) as { data?: { classes?: CornellClass[] } };
-  const out: CatalogCourse[] = []; const seen = new Set<string>();
+  const out: CatalogCourse[] = []; const seen = new Set<string>(); const secOf = new Map<string, string>();
   for (const c of data.data?.classes ?? []) {
     const code = `${c.subject} ${c.catalogNbr}`; const baseId = courseId('s_cornell', code);
     const lectures = c.enrollGroups.flatMap((g) => g.classSections.filter((sec) => sec.ssrComponent === 'LEC').map((sec) => ({ g, sec })));
@@ -418,12 +424,12 @@ async function cornellSubject(roster: string, subject: string): Promise<CatalogC
       }
       if (!meetings.length) continue;
       const id = seen.has(baseId) ? `${baseId}_${sec.section}` : baseId;
-      if (seen.has(id)) continue; seen.add(id);
-      out.push({ id, schoolId: 's_cornell', code, title: seen.size > 1 && id !== baseId ? `${c.titleLong} (Lec ${sec.section})` : c.titleLong, department: c.subject, instructor, location, meetings: uniq(meetings), term: normalizeTermLabel(roster), termCode: roster, units: g.unitsMinimum, url: `https://classes.cornell.edu/browse/roster/${roster}/class/${c.subject}/${c.catalogNbr}` });
+      if (seen.has(id)) continue; seen.add(id); secOf.set(id, `${sec.ssrComponent.charAt(0)}${sec.ssrComponent.slice(1).toLowerCase()} ${sec.section}`);
+      out.push({ id, schoolId: 's_cornell', code, title: c.titleLong, department: c.subject, instructor, location, meetings: uniq(meetings), term: normalizeTermLabel(roster), termCode: roster, units: g.unitsMinimum, url: `https://classes.cornell.edu/browse/roster/${roster}/class/${c.subject}/${c.catalogNbr}` });
     }
   }
-  // 섹션이 둘 이상인 과목은 첫 섹션 제목에도 번호를 붙인다
-  for (const c of out) if (out.some((o) => o.id.startsWith(`${c.id}_`))) c.title = `${c.title} (Lec 001)`;
+  // 섹션이 둘 이상인 과목은 학교가 준 종류·번호 그대로 붙인다(첫 섹션을 'Lec 001' 로 적던 것은 틀렸다 — ECE 6950 첫 강의는 002, ENGL 1183 은 SEM 101, 2026-11-05)
+  for (const c of out) if (out.filter((o) => o.code === c.code).length > 1) c.title = `${c.title} (${secOf.get(c.id)})`;
   return out;
 }
 async function cornell(): Promise<CatalogCourse[]> {
@@ -575,7 +581,8 @@ function foseSource(schoolId: string, host: string): CourseSource {
     for (const r of rows) { if (!r.code || !r.meetingTimes || r.stat === 'X' || (r.isCancelled && r.isCancelled !== '0')) continue; (byCourse.get(r.code) ?? byCourse.set(r.code, []).get(r.code)!).push(r); }
     const out: CatalogCourse[] = [];
     for (const [code, secs] of byCourse) {
-      const lectures = secs.filter((x) => /^LEC|^SEM|^LAB$/.test(x.schd) && !/^LAB$/.test(x.schd)); const picked = lectures.length ? lectures : secs.slice(0, 1);
+      // 강의·세미나·스튜디오: LEC/SEM(Brown·Yale 식), W&M 은 LC·LC1…·L10…·SM·SM1…·S10…·SO·SD·WK — 전엔 W&M 이 하나도 안 맞아 과목마다 첫 분반만 남았다 (2026-11-05 CRWR 368)
+      const lectures = secs.filter((x) => /^(LEC|SEM|LC\d?|L1\d|SM\d?|S1\d|SO|SD|WK)$/.test(x.schd.trim())); const picked = lectures.length ? lectures : secs.slice(0, 1);
       const baseId = courseId(schoolId, code);
       picked.forEach((sec, i) => {
         let mts: { meet_day: string; start_time: string; end_time: string }[] = [];
@@ -1310,8 +1317,12 @@ export function wustlToCourses(html: string, termName: string, label: string): C
     const title = val(row, 'heading wide'), code = val(row, 'heading middle'), dept = val(row, 'department');
     const units = Number(/(\d+(?:\.\d+)?) Units?/.exec(val(row, 'heading narrow'))?.[1]);
     if (!/^[A-Z][A-Z0-9 &-]* \d{3,4}[A-Z]?$/.test(code)) continue;
-    for (const sec of row.split('data-section-id=').slice(1)) {
-      if (val(sec, 'value value-term') !== termName) continue;
+    // WashU 는 분반 종류를 안 주지만 번호 규칙이 있다: 숫자 분반(01, 02) = 강의, 글자 분반(A, B, C) = 토론·실험(학생이 하나 고름).
+    // 숫자 분반이 있으면 글자 분반은 뺀다 — 다른 학교처럼 강의만 (2026-11-05 CLASSICS 3010: 01 월수 + A/B/C 금)
+    const secs = row.split('data-section-id=').slice(1).filter((x) => val(x, 'value value-term') === termName);
+    const hasNumbered = secs.some((x) => /^\d+$/.test(val(x, 'value value-section-number')));
+    for (const sec of secs) {
+      if (hasNumbered && !/^\d+$/.test(val(sec, 'value value-section-number'))) continue;
       const num = val(sec, 'value value-section-number'), days = val(sec, 'value value-days'), time = val(sec, 'value value-time');
       const t = /^(\d{1,2}:\d{2}) ?([AP]M)\s*-\s*(\d{1,2}:\d{2}) ?([AP]M)$/i.exec(time); if (!t) continue;
       const start = to24(`${t[1]}${t[2]}`), end = to24(`${t[3]}${t[4]}`);
@@ -1324,25 +1335,30 @@ export function wustlToCourses(html: string, termName: string, label: string): C
   for (const c of out) if (out.filter((o) => o.code === c.code).length > 1) c.title = `${c.title} (Sec ${secOf.get(c.id)})`;
   return tagTerm(out, label);
 }
-async function wustlPage(termName: string, page: number): Promise<string> {
-  const r = await fetch(WUSTL, { method: 'POST', headers: { ...UAH, 'content-type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ term: termName, paged: String(page), filter_submit: '1' }).toString() });
-  if (!r.ok) throw new Error(`wustl ${termName} p${page} → ${r.status}`); return r.text();
+async function wustlPost(fields: Record<string, string>): Promise<string> {
+  const r = await fetch(WUSTL, { method: 'POST', headers: { ...UAH, 'content-type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams({ ...fields, paged: '1', filter_submit: '1' }).toString() });
+  if (!r.ok) throw new Error(`wustl ${JSON.stringify(fields)} → ${r.status}`); return r.text();
 }
+const wustlOptions = (html: string, id: string) => [...(new RegExp(`<select id="${id}"[\\s\\S]*?<\\/select>`).exec(html)?.[0] ?? '').matchAll(/<option value="([^"]+)"/g)].map((m) => decodeEntities(m[1]));
+/** 학교(school) → 그 학교 학과(department) 목록 → 학과마다 한 번. 학과 결과는 한 쪽에 다 나온다(Biology 64·Economics 65, 2026-11-05 확인).
+ *  전에는 학기 전체를 쪽(paged)으로 넘겼는데 2쪽 이후가 늘 같은 쪽이라 꺼 두었었다 */
 async function wustl(): Promise<CatalogCourse[]> {
-  const first = await wustlPage('', 1);
+  const first = await wustlPost({ term: '' });
   const names = [...(/name="term"[\s\S]*?<\/select>/.exec(first)?.[0] ?? '').matchAll(/value="(20\d{2} (?:Fall|Spring))"/g)].map((m) => m[1]);
   const [cur, next] = catalogTermLabels(); const want = (l: string) => names.find((n) => `${n.split(' ')[1]} ${n.split(' ')[0]}` === l);
-  const out: CatalogCourse[] = [];
+  const schools = wustlOptions(first, 'schoolselect').filter((x) => !/^Washington University in St\. Louis$/.test(x));
+  const out: CatalogCourse[] = []; const seen = new Set<string>();
   for (const label of [cur, next]) {
     const termName = want(label); if (!termName) { console.log(`  s_wustl ${label}: not listed yet`); continue; }
-    const seen = new Set<string>(); let n = 0;
-    for (let page = 1; page <= 120; page++) {
-      const html = await wustlPage(termName, page); const got = wustlToCourses(html, termName, label);
-      const fresh = got.filter((c) => !seen.has(c.id)); fresh.forEach((c) => seen.add(c.id)); out.push(...fresh); n += fresh.length;
-      if (!html.includes('Next Page') || !html.includes('scpi__classes--row')) break;
-      await new Promise((r) => setTimeout(r, 800));
+    let n = 0;
+    for (const school of schools) {
+      const depts = wustlOptions(await wustlPost({ term: termName, school }), 'departmentselect');
+      for (const department of depts) {
+        await new Promise((r) => setTimeout(r, 700));
+        for (const c of wustlToCourses(await wustlPost({ term: termName, school, department }), termName, label)) if (!seen.has(c.id)) { seen.add(c.id); out.push(c); n++; }
+      }
     }
-    console.log(`  s_wustl ${termName} (${label}): ${n} classes`);
+    console.log(`  s_wustl ${termName} (${label}): ${schools.length} schools → ${n} classes`);
   }
   return out;
 }
@@ -1411,11 +1427,11 @@ async function vanderbilt(): Promise<CatalogCourse[]> {
 // ─── Harvard: my.harvard.edu 공개 과목 검색 (키 불필요) ─────────────────────
 // 검색 결과는 JSON 안에 이스케이프된 HTML 로 오고 15개씩 page=N 으로 넘어간다. term=2026+Fall · school=FAS 필터가 된다.
 // 과목마다 /course/sections/<id>/<offer>/<strm>/<session> 조각에 섹션별 요일(aria-label "Tuesday, selected")·시간·장소·교수가 있다.
-const HV = 'https://my.harvard.edu';
+export const HV = 'https://my.harvard.edu';
 const hvUnescape = (s: string) => s.replace(/\\"/g, '"').replace(/\\n/g, '\n').replace(/\\\//g, '/').replace(/\\u([0-9a-fA-F]{4})/g, (_, h) => String.fromCharCode(parseInt(h, 16)));
 const hvText = (h: string) => h.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&#039;|&#39;/g, "'").replace(/\s+/g, ' ').trim();
 const HV_DAYS: Record<string, number> = { Monday: 0, Tuesday: 1, Wednesday: 2, Thursday: 3, Friday: 4, Saturday: 5, Sunday: 6 };
-async function hvGet(url: string): Promise<string> {
+export async function hvGet(url: string): Promise<string> {
   for (let attempt = 0; ; attempt++) {
     try { const r = await fetch(url, { headers: { 'user-agent': 'Mozilla/5.0 AroundU-importer' } }); if (r.ok) return hvUnescape(await r.text()); if (r.status < 500 || attempt >= 3) throw new Error(`${url} → ${r.status}`); }
     catch (e) { if (attempt >= 3) throw e; }
@@ -1424,9 +1440,9 @@ async function hvGet(url: string): Promise<string> {
 }
 /** 검색 필터 값 "2026 Fall" — 진행 중인 학기 (@core/lib/terms) */
 /** 지금 학기 + 다음 학기 ("2026 Fall", "2027 Spring"). HARVARD_TERM="2026 Fall|2027 Spring" 로 지정 가능 */
-function hvTermLabels(): string[] { if (process.env.HARVARD_TERM) return process.env.HARVARD_TERM.split('|').map((x) => x.trim()).filter(Boolean); const c = currentTerm(); const n = nextTerm(c); return [`${c.year} ${c.season}`, `${n.year} ${n.season}`]; }
-interface HvCard { key: string; code: string; title: string; sectionsUrl?: string; inline: string; dept: string }
-function hvCards(html: string): HvCard[] {
+export function hvTermLabels(): string[] { if (process.env.HARVARD_TERM) return process.env.HARVARD_TERM.split('|').map((x) => x.trim()).filter(Boolean); const c = currentTerm(); const n = nextTerm(c); return [`${c.year} ${c.season}`, `${n.year} ${n.season}`]; }
+export interface HvCard { key: string; code: string; title: string; sectionsUrl?: string; inline: string; dept: string }
+export function hvCards(html: string): HvCard[] {
   const out: HvCard[] = [];
   for (const card of html.split(/data-course-id="/).slice(1)) {
     const code = hvText(/badge badge-light relative md:-top-0\.5">([\s\S]*?)<\/span>/.exec(card)?.[1] ?? '').replace(/\s+/g, ' ');
@@ -1454,7 +1470,7 @@ function hvSections(html: string): { no: string; location?: string; instructor?:
   }
   return out;
 }
-async function harvardCourses(cards: HvCard[], term: string): Promise<CatalogCourse[]> {
+export async function harvardCourses(cards: HvCard[], term: string): Promise<CatalogCourse[]> {
   const out: CatalogCourse[] = [];
   for (const card of cards) {
     const html = card.sectionsUrl ? await hvGet(`${HV}${card.sectionsUrl}`) : card.inline;
@@ -1521,8 +1537,9 @@ async function mitLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   if (!res.ok) return null;
   const x = (await res.json()) as { subject_id: string; title: string; schedule?: string; instructors?: string[]; total_units?: number };
   if (!x.schedule) return null;
-  const { meetings, location } = mitSchedule(x.schedule);
-  return { id: c.id, schoolId: 's_mit', code: x.subject_id, title: x.title, department: x.subject_id.split('.')[0], instructor: x.instructors?.[0], location, meetings, term: c.term, units: x.total_units, url: c.url };
+  const n = Number(/_l(\d+)$/.exec(c.id)?.[1] ?? 1); const opt = mitLectureOptions(x.schedule)[n - 1]; if (!opt) return null;
+  const { meetings, location } = opt;
+  return { id: c.id, schoolId: 's_mit', code: x.subject_id, title: c.title, department: x.subject_id.split('.')[0], instructor: x.instructors?.[0], location, meetings, term: c.term, units: x.total_units, url: c.url };
 }
 async function berkeleyLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   // 공개 시간표 어댑터가 department 에 학과 이름("offered through")을 넣는다 — 학과 필터 이름과 다르면 찾지 못해 '확인 불가'로 센다

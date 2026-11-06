@@ -35,7 +35,8 @@ export async function discoverSubjects(rootUrl: string, maxPages = 80): Promise<
     for (const m of html.matchAll(/\(([A-Z][A-Z&]{1,5})\)/g)) codes.set(m[1], (codes.get(m[1]) ?? 0) + 3);
     for (const m of html.matchAll(/title="([A-Z][A-Z&]{1,5})\s\d/g)) codes.set(m[1], (codes.get(m[1]) ?? 0) + 2);
     for (const m of html.matchAll(/\b([A-Z][A-Z&]{1,5})&#160;\d{2,4}/g)) codes.set(m[1], (codes.get(m[1]) ?? 0) + 1);
-    for (const m of html.matchAll(/href="\/courses\/([a-z]{2,6})\/"/g)) codes.set(m[1].toUpperCase(), (codes.get(m[1].toUpperCase()) ?? 0) + 5);
+    // 과목 목록 주소가 /courses/<code>/ 또는 /course-descriptions/<code>/ (NC State, 2026-11-05)
+    for (const m of html.matchAll(/href="\/(?:courses|course-descriptions)\/([a-z]{2,6})\/"/g)) codes.set(m[1].toUpperCase(), (codes.get(m[1].toUpperCase()) ?? 0) + 5);
     for (const href of html.matchAll(/href="([^"#?]+)"/g)) {
       let next: URL; try { next = new URL(href[1], url); } catch { continue; }
       if (next.origin !== origin || seen.has(next.href) || !interesting(next.pathname) || next.pathname.split('/').length > 5) continue;
@@ -53,11 +54,11 @@ const SEED_SUBJECTS = ['CS', 'CSCI', 'COMP', 'CMSC', 'CMPSC', 'EECS', 'ECE', 'EE
 
 /** "AFST 5505a, The Making of … Staff" / "AERO 101. Title. 1 Credits." → 코드·이름·학점 */
 const TITLE_RE = /^\[?\s*([A-Z][A-Z&]{1,5}\s?[A-Z]{0,2}\d{1,4}[A-Z]{0,4})\s*\]?[.,:\s–-]+\s*(.+?)\s*$/;
-function parseBlock(schoolId: string, block: string, origin?: string): CatalogCourse | null {
+export function parseBlock(schoolId: string, block: string, origin?: string): CatalogCourse | null {
   const strong = /<strong>([\s\S]*?)<\/strong>/.exec(block)?.[1];
   const titleEl = /class="[^"]*courseblocktitle[^"]*"[^>]*>([\s\S]*?)<\/(?:p|div|h[1-6])>/.exec(block)?.[1];
   const detailTitle = /class="[^"]*detail-title[^"]*"[^>]*>([\s\S]*?)<\/(?:span|div)>/.exec(block)?.[1];
-  const detailCode = /class="[^"]*detail-code[^"]*"[^>]*>([\s\S]*?)<\/(?:span|div)>/.exec(block)?.[1];
+  const detailCode = /class="[^"]*detail-(?:course)?code[^"]*"[^>]*>([\s\S]*?)<\/(?:span|div)>/.exec(block)?.[1];
   let code = '', title = '';
   if (detailCode && detailTitle) { code = strip(detailCode).replace(/\.$/, ''); title = strip(detailTitle).replace(/\.$/, ''); }
   else {
@@ -65,6 +66,8 @@ function parseBlock(schoolId: string, block: string, origin?: string): CatalogCo
     const m = TITLE_RE.exec(text); if (!m) return null;
     code = m[1].replace(/\s+/g, ' '); title = m[2].replace(/[.\s]+$/, '');
   }
+  // 교차 개설 "NR 421/ NR 521" → 학교 목록 머리처럼 첫 번호만 (NC State). Caltech 의 "ACM/EE 106A" 같은 공동 학과 번호는 그대로
+  { const x = /^([A-Z][A-Z&]{1,5} \d{3,4}[A-Z]{0,2})\s*\/\s*[A-Z][A-Z&]{1,5} \d/.exec(code); if (x) code = x[1]; }
   // 제목 끝에 붙는 "3 Credits" / "0,3 Credits" / "1-4 Units" 는 학점이지 이름이 아니다
   title = title.replace(/[\s.,]*\(?\d+(?:[.,–-]\d+)*\)?\s*(?:units?|credits?|credit hours?|hours?|points?)\.?\s*$/i, '').replace(/[.\s]+$/, '').trim();
   // SF State 처럼 제목 뒤에 “(Units: 3)” 가 붙어 오는 카탈로그

@@ -291,6 +291,97 @@ export async function fetchTrumba(webName: string, school: EventSchool, horizonD
   return parseTrumbaRss((await get(`https://www.trumba.com/calendars/${encodeURIComponent(webName)}.rss`)).replace(/^\uFEFF/, ''), school, new Date(), horizonDays);
 }
 
+/** 시간대 없는 현지 시각 "2026-11-06T20:00:00" → 그 학교 시간대 기준 실제 시각(Date) */
+export function zonedToDate(local: string, tz: string): Date {
+  const asUtc = new Date(`${local.slice(0, 19)}Z`);
+  const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: tz, hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).formatToParts(asUtc).map((x) => [x.type, x.value]));
+  const seen = Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day), Number(parts.hour), Number(parts.minute), Number(parts.second));
+  return new Date(asUtc.getTime() - (seen - asUtc.getTime()));
+}
+interface LdEvent { '@type'?: string; name?: string; startDate?: string; endDate?: string; eventAttendanceMode?: string; eventStatus?: string; location?: { name?: string } | { name?: string }[]; description?: string; organizer?: { name?: string } }
+/** 행사 상세 페이지의 schema.org Event(JSON-LD) 하나 → Opportunity. USF(usfca.edu) 처럼 피드가 없고 상세 페이지에만 시각이 있는 곳 */
+export function parseJsonLdEvent(html: string, url: string, school: EventSchool, now = new Date(), horizonDays = 7): Opportunity | null {
+  // JSON-LD 안에 끝 쉼표·글 속 줄바꿈이 그대로 있는 사이트가 있다(USF) — 줄바꿈은 빈칸으로, 닫는 괄호 앞 쉼표는 지우고 읽는다
+  // 그래도 안 읽히면(설명 속 따옴표가 안 감싸진 경우, USF) 필요한 칸만 글자로 뽑는다
+  const loose = (raw: string): LdEvent | null => {
+    const f = (k: string) => new RegExp(`"${k}"\\s*:\\s*"([^"]*)"`).exec(raw)?.[1];
+    if (!/"@type"\s*:\s*"Event"/.test(raw)) return null;
+    const loc = /"location"\s*:\s*\{[^}]*?"name"\s*:\s*"([^"]*)"/.exec(raw)?.[1];
+    const desc = /"description"\s*:\s*"([\s\S]*)"\s*}\s*$/.exec(raw.trim())?.[1];
+    return { '@type': 'Event', name: f('name'), startDate: f('startDate'), endDate: f('endDate'), eventStatus: f('eventStatus'), eventAttendanceMode: f('eventAttendanceMode'), location: loc ? { name: loc } : undefined, description: desc };
+  };
+  const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => { try { return JSON.parse(m[1].replace(/[\u0000-\u001f]+/g, ' ').replace(/,(\s*[}\]])/g, '$1')) as LdEvent | LdEvent[]; } catch { return loose(m[1]); } });
+  const ev = blocks.flat().find((b): b is LdEvent => !!b && (b as LdEvent)['@type'] === 'Event'); if (!ev?.name || !ev.startDate) return null;
+  const title = text(text(ev.name)); const start = /[zZ]|[+-]\d\d:?\d\d$/.test(ev.startDate) ? new Date(ev.startDate) : zonedToDate(ev.startDate, school.tz ?? 'America/Los_Angeles');
+  const end = ev.endDate ? (/[zZ]|[+-]\d\d:?\d\d$/.test(ev.endDate) ? new Date(ev.endDate) : zonedToDate(ev.endDate, school.tz ?? 'America/Los_Angeles')) : start;
+  if (Number.isNaN(start.getTime()) || start.getTime() < now.getTime() || start.getTime() > now.getTime() + horizonDays * 86_400_000) return null;
+  if (isNoticeNotEvent(title) || /\bexhibit(ion)?\b/i.test(title) || /Cancelled|Postponed/i.test(ev.eventStatus ?? '') || /Online/i.test(ev.eventAttendanceMode ?? '') || end.getTime() - start.getTime() > 86_400_000) return null;
+  const loc = text((Array.isArray(ev.location) ? ev.location[0] : ev.location)?.name ?? '');
+  const desc = text(text(ev.description ?? '')); const food = hasFreeFood(title, desc); const talk = TALK_RE.test(title);
+  const slug = (/\/([^/?#]+)\/?$/.exec(url)?.[1] ?? title).toLowerCase().replace(/[^a-z0-9]+/g, '_').slice(0, 60);
+  return base({
+    id: `op_${school.id.replace('s_', '')}_ld_${slug}`, type: 'event', title, host: text(ev.organizer?.name ?? '') || school.name || 'Campus', schoolId: school.id,
+    description: desc.slice(0, 280), date: start.toISOString(), startTime: localTime(start, school.tz),
+    place: loc ? { name: loc, lat: school.center.lat, lng: school.center.lng } : undefined,
+    eligibility: 'Open to the campus community', benefit: food ? 'Free food' : undefined, cover: { emoji: '', hue: 200 },
+    tags: ['event', ...(food ? ['free food'] : []), ...(talk ? ['talk'] : [])], interests: talk ? ['research', 'study'] : ['club'], goals: [], sourceUrl: url, sourceLabel: school.name ? `${school.name} Events` : 'Events',
+  }, now.toISOString());
+}
+/** 목록 페이지(?page=N)에서 /event/ 링크를 모으고 상세 페이지마다 JSON-LD 를 읽는다. 한 사이트에 몰리지 않게 7일치·최대 6쪽·40개, 요청 사이 0.7초.
+ *  USF 는 '추천' 행사 상세에만 JSON-LD 가 있고 나머지는 본문 글로만 시각을 적어(2026-11-05) 하루 몇 개만 나온다 — 글에서 시각을 추측하지 않는다 */
+export async function fetchJsonLdEvents(listing: string, school: EventSchool, horizonDays = 7): Promise<Opportunity[]> {
+  const origin = new URL(listing).origin; const links: string[] = []; const until = Date.now() + horizonDays * 86_400_000;
+  const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+  for (let p = 0; p < 6; p++) {
+    const html = await get(`${listing}${listing.includes('?') ? '&' : '?'}page=${p}`);
+    const found = [...new Set([...html.matchAll(/href="(\/event\/[^"#?]+)"/g)].map((m) => `${origin}${m[1]}`))].filter((u) => !links.includes(u));
+    links.push(...found);
+    const dates = [...html.matchAll(/f--date-string">\s*([A-Za-z]+)\s*<span>(\d+)<\/span>/g)].map((m) => { const mi = MONTHS.indexOf(m[1].toLowerCase()); const y = new Date().getUTCFullYear(); const d = Date.UTC(y, mi, Number(m[2])); return d < Date.now() - 180 * 86_400_000 ? Date.UTC(y + 1, mi, Number(m[2])) : d; });
+    // 맨 위 '추천 행사' 카드는 날짜가 멀 수 있다 — 목록은 날짜순이니 쪽의 마지막 날짜로 판단한다
+    if (!found.length || (dates.length && dates[dates.length - 1] > until) || links.length >= 40) break;
+    await new Promise((r) => setTimeout(r, 700));
+  }
+  const out: Opportunity[] = []; const ids = new Set<string>();
+  for (const u of links.slice(0, 40)) {
+    try { const e = parseJsonLdEvent(await get(u), u, school, new Date(), horizonDays); if (e && !ids.has(e.id)) { ids.add(e.id); out.push(e); } } catch { /* 한 페이지 실패는 건너뛴다 */ }
+    await new Promise((r) => setTimeout(r, 700));
+  }
+  return out;
+}
+
+interface PennTodayItem { title?: string; summary?: string; location?: string; category?: string; start_date?: string; end_date?: string; all_day?: string; url?: string; event_url?: string }
+/** Penn Today 행사(penntoday.upenn.edu/api/events, 공개 JSON). 시각은 "2026-11-09T18:00:00-0500" — 쌍점 없는 시간대라 고쳐 읽는다. 여러 날 이어지는 전시는 뺀다 */
+export function parsePennToday(items: PennTodayItem[], school: EventSchool, now = new Date(), horizonDays = 30): Opportunity[] {
+  const iso = (t?: string) => new Date((t ?? '').replace(/([+-]\d\d)(\d\d)$/, '$1:$2'));
+  const out: Opportunity[] = []; const seen = new Set<string>(); const until = now.getTime() + horizonDays * 86_400_000;
+  for (const it of items) {
+    const title = text(text(it.title ?? '')); const start = iso(it.start_date); const end = it.end_date ? iso(it.end_date) : start;
+    if (!title || !it.url || Number.isNaN(start.getTime()) || start.getTime() < now.getTime() || start.getTime() > until || isNoticeNotEvent(title)) continue;
+    if (end.getTime() - start.getTime() > 86_400_000 || /\bexhibit(ion)?\b/i.test(title)) continue;
+    const loc = text(it.location ?? ''); if (/zoom|on-?line|virtual|webinar/i.test(loc + ' ' + title)) continue;
+    const key = `${title.toLowerCase()}#${start.toISOString().slice(0, 10)}`; if (seen.has(key)) continue; seen.add(key);
+    const desc = text(text(it.summary ?? '')); const food = hasFreeFood(title, desc); const talk = TALK_RE.test(title) || /lecture|talk|panel|seminar/i.test(it.category ?? '');
+    const allDay = /^true$/i.test(it.all_day ?? '');
+    out.push(base({
+      id: `op_${school.id.replace('s_', '')}_pt_${(/\/events\/([^/?#]+)/.exec(it.url)?.[1] ?? title).toLowerCase().replace(/[^a-z0-9]+/g, '_').slice(0, 60)}`, type: 'event', title, host: school.name ?? 'Penn', schoolId: school.id,
+      description: desc.slice(0, 280), date: start.toISOString(), startTime: allDay ? undefined : localTime(start, school.tz),
+      place: loc ? { name: loc, lat: school.center.lat, lng: school.center.lng } : undefined,
+      eligibility: /free/i.test(desc) ? 'Free, open to the Penn community' : 'Open to the campus community', benefit: food ? 'Free food' : undefined, cover: { emoji: '', hue: 200 },
+      tags: ['event', ...(food ? ['free food'] : []), ...(talk ? ['talk'] : []), ...(it.category ? [text(it.category).toLowerCase()] : [])], interests: talk ? ['research', 'study'] : ['club'], goals: [], sourceUrl: it.url, sourceLabel: 'Penn Today Events',
+    }, now.toISOString()));
+  }
+  return out;
+}
+export async function fetchPennToday(api: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> {
+  const items: PennTodayItem[] = []; const until = Date.now() + horizonDays * 86_400_000;
+  for (let page = 0; page < 8; page++) {
+    const j = JSON.parse(await get(`${api}?items_per_page=100&page=${page}`)) as { items?: PennTodayItem[] };
+    const got = j.items ?? []; items.push(...got);
+    const last = got[got.length - 1]?.start_date; if (!got.length || (last && new Date(last.replace(/([+-]\d\d)(\d\d)$/, '$1:$2')).getTime() > until)) break;
+  }
+  return parsePennToday(items, school, new Date(), horizonDays);
+}
+
 export async function fetchCampusGroupsEvents(host: string, school: EventSchool, horizonDays = 30): Promise<Opportunity[]> {
   return parseCampusGroupsRss(await get(`${host.replace(/\/+$/, '')}/rss_events`), host, school, new Date(), horizonDays);
 }

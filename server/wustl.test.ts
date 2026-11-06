@@ -13,3 +13,10 @@ test('WashU class schedule search: sections with days/times, 12h→24h, graduate
   assert.equal(wustlToCourses(html, '2027 Spring', 'Spring 2027').length, 0);
   assert.ok(resolveCourseSource('s_wustl', 'wustl'));
 });
+
+test('WashU: lettered sections (A, B, C = discussions) are left out when numbered lecture sections exist (CLASSICS 3010, Spring 2027)', () => {
+  const html = readFileSync(new URL('./fixtures/wustl-classics3010.html', import.meta.url), 'utf8');
+  const out = wustlToCourses(html, '2027 Spring', 'Spring 2027');
+  assert.equal(out.length, 1);
+  assert.deepEqual(out[0].meetings, [{ day: 0, start: '15:00', end: '15:50' }, { day: 2, start: '15:00', end: '15:50' }]);
+});

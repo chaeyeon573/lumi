@@ -85,6 +85,8 @@ export function isDeadPage(status: number, html: string): boolean { return statu
 export const isPlaceholderSite = (url: string) => /^https?:\/\/(www\.)?(idonothaveawebsite|nowebsite|example|website|none|tbd|test)\.(com|org|net)\/?$/i.test(url.trim());
 /** 받은 페이지가 로그인 화면(학교 Google 계정 등)이면 공개 링크가 아니다 — 옛 sites.google.com/a/<school>.edu 가 Google 로그인으로 넘어간다 (2026-11-05 표본) */
 export const isSignInPage = (html: string) => /<title>[^<]*(Google (Drive|Accounts): Sign[- ]in|Sign in - Google Accounts)/i.test(html) || /accounts\.google\.com\/(v3\/signin|ServiceLogin)[^"']*continue=https:\/\/sites\.google\.com/i.test(html.slice(0, 5000));
+/** 동아리 도메인이 만료돼 남의 손에 넘어가 도박·성인 스팸이 된 페이지 — 제목만 보고 보수적으로 (2026-11-05 NC State sveccs.org → "Slot Pulsa…") */
+export const isHijackedPage = (html: string) => { const t = (/<title[^>]*>([^<]*)<\/title>/i.exec(html)?.[1] ?? '').toLowerCase(); return /\b(slot|slots|gacor|togel|judi|casino|poker online|sportsbook|betting|bet88|pulsa|maxwin|viagra|cialis|escort|porn|xxx)\b/.test(t); };
 export async function enrichFromWebsites(orgs: Organization[], fetchPage: (url: string) => Promise<string>, concurrency = 6): Promise<{ orgs: Organization[]; checked: number; found: number; droppedShared: string[]; deadLinks: number; deadList: { orgId: string; url: string }[] }> {
   orgs = orgs.map(relabelSocialWebsites);
   const want = orgs.filter((o) => o.links?.some((l) => l.label === 'Website') && !(o.links?.some((l) => l.label === 'Instagram') && o.links?.some((l) => l.label === 'Facebook')));
@@ -94,7 +96,7 @@ export async function enrichFromWebsites(orgs: Organization[], fetchPage: (url: 
     while (i < want.length) {
       const o = want[i++]; const site = o.links!.find((l) => l.label === 'Website')!.url;
       if (isPlaceholderSite(site)) { dead.add(o.id); continue; }
-      try { const html = await fetchPage(site); if (html === DEAD || isSignInPage(html)) dead.add(o.id); else if (html) got.set(o.id, extractAllSocial(html)); } catch { /* skip */ }
+      try { const html = await fetchPage(site); if (html === DEAD || isSignInPage(html) || isHijackedPage(html)) dead.add(o.id); else if (html) got.set(o.id, extractAllSocial(html)); } catch { /* skip */ }
     }
   }));
   // 학교 바닥글 계정 거르기

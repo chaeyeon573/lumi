@@ -308,6 +308,24 @@ export function uclaOrgToOrg(o: UclaOrg, schoolId = 's_ucla'): Organization {
 /** 디렉터리에 남은 시험용 가짜 단체("Test Club", "Test Org One", "Test CIO"…) — 파일에는 두고 화면·DB 로는 보내지 않는다 (2026-11-05 점검 15개). "Test Prep Club"·"Testing Center" 는 해당 없음 */
 export const isPlaceholderOrg = (name: string) => /^test\s+(club|org(anization)?|group|cio|clp|test)\b/i.test(name.trim()) || /^(asdf|do not use|delete me)\b/i.test(name.trim());
 
+const ADMIN_RE = /^https?:\/\/(manage|editor)\.wix\.com\/|^https?:\/\/[a-z0-9]+\.admin\.mailchimp\.com\/|^https?:\/\/sites\.google\.com\/d\/[A-Za-z0-9_-]{20,}/i;
+/** 로그인 화면 주소 안에 든 원래 주소를 꺼낸다 (instagram ?next=, linkedin ?session_redirect=, twitter ?redirect_after_login=) */
+export function publicFix(url: string): string {
+  try {
+    const u = new URL(url.trim());
+    const host = u.hostname.replace(/^www\./, '');
+    const inner = host === 'instagram.com' && u.pathname.startsWith('/accounts/login') ? u.searchParams.get('next')
+      : host === 'linkedin.com' && /^\/(uas\/login|login|authwall)/.test(u.pathname) ? u.searchParams.get('session_redirect')
+      : (host === 'twitter.com' || host === 'x.com') && u.pathname.startsWith('/i/flow/login') ? u.searchParams.get('redirect_after_login') : null;
+    if (inner) { const t = new URL(inner, `https://www.${host}`); if (t.pathname.length > 1) return `https://www.${host}${t.pathname}`; }
+    if (/\/wp-admin\/?$/.test(u.pathname)) return `${u.origin}${u.pathname.replace(/wp-admin\/?$/, '')}`;
+    if (/\.squarespace\.com$/.test(host) && /^\/config\/?/.test(u.pathname)) return `${u.origin}/`;
+    // 광고 추적 꼬리표(fbclid, utm_*, igshid …)만 뗀다 — 다른 쿼리는 그대로 (UMass linktr.ee?fbclid=…, 2026-11-06 점검)
+    const track = [...u.searchParams.keys()].filter((k) => /^(fbclid|gclid|igsh|igshid|mc_cid|mc_eid|utm_[a-z]+)$/i.test(k));
+    if (track.length) { for (const k of track) u.searchParams.delete(k); return u.toString(); }
+  } catch { /* not a URL */ }
+  return url;
+}
 /** 모은 동아리 파일 다듬기(collect 때마다, 2026-11-05 점검):
  *  - 이모지가 있는 이름·설명만 이모지를 뺀다(다른 띄어쓰기는 그대로)
  *  - 디렉터리가 두 번 감싼 HTML 문자(&amp; &#39;)를 푼다 (UW·Lehigh)
@@ -322,6 +340,13 @@ export function cleanCollectedOrgs(list: Organization[], today: string): { orgs:
   const shared = new Set([...uses].filter(([, n]) => n >= 50).map(([u]) => u));
   const tags = (t?: string) => (t && /<\/?(p|b|strong|i|em|br|div|span|ul|li|a)\b[^>]*>/i.test(t) ? t.replace(/<br\s*\/?>|<\/p>|<\/li>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/[ \t]{2,}/g, ' ').trim() : t);
   const orgs = list.map((o0) => {
+    // 로그인 화면으로 저장된 SNS 주소 → 원래 프로필(주소 안 next/redirect 값). 관리자 주소 꼬리(/wp-admin, Squarespace /config) → 공개 사이트
+    // 공개가 아닌 관리·편집 주소(Wix 대시보드, Mailchimp 관리, Google Sites 편집 링크)는 badLinks 로 (2026-11-05 점검 30여 개)
+    if ((o0.links ?? []).some((l) => publicFix(l.url) !== l.url || ADMIN_RE.test(l.url))) {
+      const links: typeof o0.links = [];
+      for (const l of o0.links ?? []) { if (ADMIN_RE.test(l.url) && l.label !== 'Directory') { badLinks.push({ orgId: o0.id, url: l.url, checkedAt: today, note: 'admin / editor address, not a public page' }); continue; } links.push({ ...l, url: publicFix(l.url) }); }
+      o0 = { ...o0, links };
+    }
     let o = has(o0.name) || has(o0.description) ? { ...o0, name: has(o0.name) ? stripEmoji(o0.name) || o0.name : o0.name, ...(has(o0.description) ? { description: stripEmoji(o0.description!) } : {}) } : o0;
     if (ent(o.name) !== o.name || ent(o.description) !== o.description) o = { ...o, name: ent(o.name)!, ...(o.description ? { description: ent(o.description) } : {}) };
     if (tags(o.description) !== o.description) o = { ...o, description: tags(o.description)! };

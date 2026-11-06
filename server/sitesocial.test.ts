@@ -108,3 +108,10 @@ test('isSignInPage: an old school Google Site that now asks for Google sign-in i
   assert.equal(isSignInPage(readFileSync(new URL('./fixtures/google-signin.html', import.meta.url), 'utf8')), true);
   assert.equal(isSignInPage('<html><head><title>BLiSS at The University of Michigan</title></head><body>Sign in to see more</body></html>'), false);
 });
+
+test('isHijackedPage: an expired club domain now showing a gambling spam page is not the club', async () => {
+  const { isHijackedPage } = await import('./sources/sitesocial');
+  assert.equal(isHijackedPage('<html><head><title>Slot Pulsa Indosat 5000: Pilihan Deposit Minimum Serta Gampang Menang</title></head></html>'), true);
+  assert.equal(isHijackedPage('<html><head><title>Stanford Poker Club</title></head></html>'), false);
+  assert.equal(isHijackedPage('<html><head><title>Student Veterinary Emergency & Critical Care Society</title></head></html>'), false);
+});
