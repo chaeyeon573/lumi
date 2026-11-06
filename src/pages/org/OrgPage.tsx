@@ -1,6 +1,6 @@
 import { useMemo, useState, type ReactNode } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { BadgeCheck, CalendarDays, ClipboardList, ExternalLink, Globe, Megaphone, MessageCircle, Plus, Share2, ShieldCheck, Users, Wallet } from 'lucide-react';
+import { BadgeCheck, CalendarDays, ClipboardList, ExternalLink, Globe, LogOut, Megaphone, MessageCircle, Plus, Share2, ShieldCheck, Users, Wallet } from 'lucide-react';
 import { lang } from '@core/i18n';
 import type { Organization } from '@core/types';
 import { api } from '@core/api';
@@ -51,6 +51,7 @@ export function OrgPage() {
   const orgs = useAppStore((s) => s.organizations);
   const rooms = useAppStore((s) => s.chatRooms);
   const [menu, setMenu] = useState(false);
+  const [leaving, setLeaving] = useState(false);
   const org = orgs.find((o) => o.id === id);
   if (!org) return (
     <div className="min-h-full bg-bg">
@@ -64,6 +65,10 @@ export function OrgPage() {
   const isAdmin = org.adminIds.includes(v.me.id);
   const join = orgJoinState(org, v.me.id);
   const room = rooms.find((r) => r.orgId === org.id && r.memberIds.includes(v.me.id));
+  const inGroup = join.kind === 'admin' || join.kind === 'member';
+  // 마지막 운영진은 나갈 수 없다 (서버 orgs.leave 와 같은 규칙) — 메뉴에 이유를 그대로 적는다
+  const lastOrganizer = isAdmin && !org.adminIds.some((a) => a !== v.me.id);
+  const leave = () => { setLeaving(false); run(() => api.orgs.leave(org.id, v.me.id), en ? `You left ${org.name}.` : `${org.name}에서 나왔어요.`).catch(() => {}); };
   const follow = () => run(() => api.relationships.toggleFollow(v.me.id, org.id, 'org'), following ? undefined : (en ? 'Following — you’ll hear about new events.' : '팔로우했어요. 새 행사 소식을 받아요.')).catch(() => {});
 
   return (
@@ -94,14 +99,31 @@ export function OrgPage() {
           <MenuItem icon={<Share2 size={18} />} label={en ? 'Copy link' : '링크 복사'} onClick={() => { setMenu(false); void navigator.clipboard?.writeText(window.location.href.split('?')[0]).catch(() => {}); showToast(en ? 'Link copied' : '링크를 복사했어요'); }} />
           {isAdmin && <MenuItem icon={<ClipboardList size={18} />} label={en ? 'Membership requests' : '가입 요청'} onClick={() => { setMenu(false); nav(`/orgs/${org.id}/requests`); }} />}
           {!isAdmin && following && <MenuItem icon={<Users size={18} />} label={en ? 'Unfollow' : '팔로우 취소'} onClick={() => { setMenu(false); void follow(); }} />}
+          {inGroup && <MenuItem icon={<LogOut size={18} />} label={en ? 'Leave group' : '그룹 나가기'} disabled={lastOrganizer}
+            sub={lastOrganizer ? (en ? 'You’re the only organizer. A group needs at least one, so you can’t leave yet.' : '이 그룹의 운영진은 나 혼자예요. 그룹에는 운영진이 한 명은 있어야 해서 지금은 나갈 수 없어요.') : undefined}
+            onClick={() => { setMenu(false); setLeaving(true); }} />}
+        </div>
+      </BottomSheet>
+      <BottomSheet open={leaving} onClose={() => setLeaving(false)} title={en ? `Leave ${org.name}?` : `${org.name}에서 나갈까요?`}>
+        <p className="text-[14px] text-ink-2 pb-4">{following
+          ? (en ? 'You’ll still follow it and hear about new events.' : '팔로우는 그대로라 새 행사 소식은 계속 받아요.')
+          : (en ? 'You can ask to join again later.' : '나중에 다시 가입할 수 있어요.')}</p>
+        <div className="space-y-2 pb-1">
+          <Btn full variant="danger" onClick={leave}>{en ? 'Leave group' : '그룹 나가기'}</Btn>
+          <Btn full variant="outline" onClick={() => setLeaving(false)}>{en ? 'Cancel' : '취소'}</Btn>
         </div>
       </BottomSheet>
     </div>
   );
 }
 
-function MenuItem({ icon, label, onClick }: { icon: ReactNode; label: string; onClick: () => void }) {
-  return <button onClick={onClick} className="w-full h-12 px-2 flex items-center gap-3 rounded-xl text-[15px] font-medium text-ink press">{icon}{label}</button>;
+function MenuItem({ icon, label, sub, disabled, onClick }: { icon: ReactNode; label: string; sub?: string; disabled?: boolean; onClick: () => void }) {
+  return (
+    <button onClick={onClick} disabled={disabled} className={cn('w-full min-h-12 px-2 py-2 flex items-center gap-3 rounded-xl text-left text-[15px] font-medium text-ink press', disabled && 'text-ink-3')}>
+      {icon}
+      <span className="min-w-0">{label}{sub && <span className="block text-[12.5px] font-normal text-ink-3 mt-0.5">{sub}</span>}</span>
+    </button>
+  );
 }
 
 /** what the Membership row says — who decides, and that following is not membership */

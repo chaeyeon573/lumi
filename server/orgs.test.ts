@@ -103,6 +103,34 @@ test('open group: joining is immediate and the admins get a "new member" note', 
   assert.deepEqual(p.notifications?.map((n) => n.userId), ['u_jimin']);
 });
 
+test('leave: a member leaves (still following); the last organizer can’t and is told why', () => {
+  const { db, engine } = setup();
+  const { org } = engine.orgs.create('u_jimin', input({ joinPolicy: 'open' }));
+  engine.orgs.apply(org.id, 'u_me');
+  db.organizations[0].followerIds.push('u_me');
+  engine.orgs.leave(org.id, 'u_me');
+  assert.deepEqual(db.organizations[0].memberIds, ['u_jimin']);
+  assert.deepEqual(db.organizations[0].followerIds, ['u_me']);
+  assert.deepEqual(orgJoinState(db.organizations[0], 'u_me'), { kind: 'join' });
+  // leaving twice does nothing
+  engine.orgs.leave(org.id, 'u_me');
+  assert.deepEqual(db.organizations[0].memberIds, ['u_jimin']);
+  // the only organizer can't leave — the reason is a sentence a person can read
+  assert.throws(() => engine.orgs.leave(org.id, 'u_jimin'), /only organizer/);
+  assert.deepEqual(db.organizations[0].adminIds, ['u_jimin']);
+  assert.deepEqual(db.organizations[0].memberIds, ['u_jimin']);
+  // with a second organizer, either one may leave
+  db.organizations[0].adminIds.push('u_me'); db.organizations[0].memberIds.push('u_me');
+  engine.orgs.leave(org.id, 'u_jimin');
+  assert.deepEqual(db.organizations[0].adminIds, ['u_me']);
+  assert.deepEqual(db.organizations[0].memberIds, ['u_me']);
+  assert.throws(() => engine.orgs.leave(org.id, 'u_me'), /only organizer/);
+  // RPC: only as yourself
+  const rules = orgRules(() => db);
+  assert.equal(ruleAllows(rules.leave, 'u_me', [org.id, 'u_me']), true);
+  assert.equal(ruleAllows(rules.leave, 'u_me', [org.id, 'u_jimin']), false);
+});
+
 test('RPC rules: only that group’s admins answer requests; create and apply only as yourself', () => {
   const { db, engine } = setup();
   const { org } = engine.orgs.create('u_jimin', input());

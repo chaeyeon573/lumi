@@ -356,6 +356,8 @@ export interface AroundUApi {
     create(creatorId: ID, input: OrgInput): Promise<{ org: Organization; patch: Patch }>;
     /** S091 — 운영진이 가입 요청을 승인(accept) / 거절한다 */
     respondApplication(orgId: ID, userId: ID, accept: boolean): Promise<Patch>;
+    /** S022 — 회원·운영진이 그룹에서 나간다 (마지막 운영진은 못 나간다, 이유를 던진다) */
+    leave(orgId: ID, userId: ID): Promise<Patch>;
   };
 
   /** 로그인 없이 — 열린 학교의 공개 행사·공고·동아리 (사람 정보 없음, S089) */

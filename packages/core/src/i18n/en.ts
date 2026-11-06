@@ -1434,4 +1434,5 @@ export const en: Record<string, string> = {
   '가입 방식을 골라주세요.': 'Pick a join policy.',
   '같은 이름의 단체가 이미 있어요. 그 페이지에서 팔로우하거나 다른 이름을 써주세요.': 'A group with this name already exists. Follow it from its page, or pick another name.',
   '그룹은 한 사람당 열 개까지 만들 수 있어요.': 'You can create up to ten groups.',
+  '이 그룹의 운영진은 나 혼자예요. 그룹에는 운영진이 한 명은 있어야 해서 지금은 나갈 수 없어요.': 'You’re the only organizer. A group needs at least one, so you can’t leave yet.',
 };

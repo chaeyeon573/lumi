@@ -148,7 +148,7 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
     activities: group('activities', ['create', 'update', 'remove', 'join', 'cancel', 'approve', 'reject', 'comment', 'toggleInterest', 'joinWaitlist']),
     posts: group('posts', ['create', 'remove', 'toggleLike', 'toggleSave', 'comment', 'approveTag']),
     relationships: group('relationships', ['toggleLike', 'toggleFollow', 'sendFriendRequest', 'cancelFriendRequest', 'respondFriendRequest', 'unfriend', 'block', 'unblock']),
-    orgs: group('orgs', ['apply', 'create', 'respondApplication']),
+    orgs: group('orgs', ['apply', 'create', 'respondApplication', 'leave']),
     // 로그인 없이 (S089) — 토큰 없이 GET, 공개 데이터만 (server: GET /api/public/explore)
     guest: {
       async explore(schoolId) {

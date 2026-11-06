@@ -534,6 +534,19 @@ export function createEngine(ctx: EngineContext) {
         const nt = notify(userId, { type: 'participation_approved', title: t('가입 승인'), body: `${org.name}${t('의 회원이 됐어요.')}`, link: `/orgs/${org.id}` });
         return { organizations: [org], notifications: [nt] };
       },
+      /**
+       * 그룹 나가기 (S022 ··· / Members) — 회원·운영진이 스스로 나간다. 팔로우는 그대로 둔다 (소식은 계속 받는다).
+       * 마지막 운영진은 나갈 수 없다 — 가입 요청에 답할 사람이 없어진다. 이유를 사람이 읽을 문장으로 던진다
+       */
+      leave(orgId: ID, userId: ID): Patch {
+        const org = find(db().organizations, orgId);
+        const isAdmin = org.adminIds.includes(userId);
+        if (!isAdmin && !org.memberIds.includes(userId)) return { organizations: [org] };
+        if (isAdmin && !org.adminIds.some((a) => a !== userId)) throw new Error(t('이 그룹의 운영진은 나 혼자예요. 그룹에는 운영진이 한 명은 있어야 해서 지금은 나갈 수 없어요.'));
+        org.adminIds = org.adminIds.filter((a) => a !== userId);
+        org.memberIds = org.memberIds.filter((m) => m !== userId);
+        return { organizations: [org] };
+      },
     },
 
     opportunities: {
