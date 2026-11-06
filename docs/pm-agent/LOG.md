@@ -2282,4 +2282,17 @@
 ## 2026-11-06 05:33 UTC
 - No Codex requests, no owner answers; no new deploy-branch commits.
 - Tulane class times (queue item): found how the public search works in a browser (details in DATA_SOURCES). The same request over plain HTTP is redirected to the home page, so no reader yet. Nothing collected; continue next run.
-- Spot checks this hour: courses 5/5 Rice Spring match (04:33 run); clubs checked at 03:33. No new mismatches.
+- Spot checks were not run in this run (missed). The last ones were courses at 04:33 (Rice 5/5) and clubs at 03:33; the 06:33 run does them first.
+
+## 2026-11-06 06:33 UTC
+- No Codex requests, no owner answers. Deploy branch had new screen commits (course reviews, S029); merged.
+- Spot checks (done first this run):
+  - Clubs: MIT Lebanese Club, UW Microphiles Journal, GWU Remote Area Medical, Vanderbilt GMMA fine. Cornell Commitment (scl.cornell.edu) answered 503 here; that host is a known TLS block from the container.
+  - Courses: 5 random Duke classes (SPANISH 303 Sec 07, BME 507, LINGUIST 450S, HEBREW 101, GERMAN 570) match the live DukeHub schedule.
+- Fixed the 05:33 log line, which said spot checks ran that hour; they did not.
+- Tulane class times, new reader (public schedule, no login; only days and times are public, instructor and room need a login and are not read):
+  - Plain HTTP works after all: a term postback on Search.aspx sets the session term; Results.aspx?course=<letter> gives the first page; `Page$N` postbacks give the rest.
+  - The server sends single-quoted attributes (title='Lecture') and `&#39;` in pager links; the browser-saved page had double quotes. The first trial read 0 classes and marked 18 letters done; the progress file was reset (no class data in it) and the parser reads both forms now. The script also stops, instead of marking a letter done, if a page has course blocks but none are read.
+  - The search matches the letter anywhere in the code (course=D also returns EDUC, TIDE), so a letter keeps only codes starting with it; 243 duplicate rows from the trial were merged.
+  - Lab, recitation and discussion sections are left out (same as other readers); studios and seminars stay.
+  - Fall 2026 A-D: 1,605 classes in s_tulane.courses.json. 5 random ones (EDUC 2000-04, NSCI 3300-02, ARST 2080-01, TIDE 1545-02, ARCH 5051-03) match the live Fall 2026 schedule. Tests: 2 fixtures (browser-saved and raw server HTML).

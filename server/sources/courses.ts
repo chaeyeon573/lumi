@@ -888,6 +888,42 @@ export function riceToCourses(html: string, termCode: string, label: string): Ca
   for (const c of out) if (out.filter((o) => o.code === c.code).length > 1) c.title = `${c.title} (Sec ${secOf.get(c.id)})`;
   return tagTerm(out, label);
 }
+// ─── Tulane: classschedule.tulane.edu 공개 수업 목록 (로그인 없이 보이는 것만: 요일·시간. 강사·강의실은 로그인 뒤라 안 읽는다) ───
+// 학기는 Search.aspx 에서 학기 고르기(postback)로 세션에 정하고, Results.aspx?course=<앞글자> 를 쪽마다(Page$N postback) 읽는다 — server/scripts/tulane-courses.ts
+export const TULANE = 'https://classschedule.tulane.edu';
+const TU_DAYS: Record<string, number> = { Monday: 0, Tuesday: 1, Wednesday: 2, Thursday: 3, Friday: 4, Saturday: 5, Sunday: 6 };
+/** 실험·실습·토론 분반은 빼고 강의(세미나·스튜디오 등 수업 자체)만 — 다른 학교 읽기와 같다 */
+const TU_SKIP = /^(Laboratory|Lab|Recitation|Discussion|Drill|Tutorial|Clinical|Practicum|Final Exam|Exam)$/i;
+export function tulaneResultsToCourses(html: string, label: string): CatalogCourse[] {
+  const out: CatalogCourse[] = []; const secOf = new Map<string, string>();
+  const txt = (h = '') => decodeEntities(h.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ')).trim();
+  const parts = html.split(/(?=<button[^>]*onclick="getCourseDesc\(')/).slice(1);
+  for (const b of parts) {
+    const m = /getCourseDesc\('(\d{6})','([A-Z]{2,5})','(\w+)'\)[\s\S]*?for [A-Z]{2,5}-\w+-(\w+)"/.exec(b); if (!m) continue;
+    const [, termCode, subj, num, sec] = m; const code = `${subj} ${num}`;
+    const title = txt(/<\/button><\/b><b>([\s\S]*?)<\/b>/.exec(b)?.[1]);
+    const meetings: Meeting[] = [];
+    for (const row of b.match(/<tr class="meetrow"[\s\S]*?<\/tr>/g) ?? []) {
+      const tds = [...row.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map((x) => x[1]);
+      // 서버가 보내는 그대로는 홑따옴표(title='Lecture'), 브라우저를 거치면 겹따옴표 — 둘 다 읽는다
+      const type = /title=["']([^"']*)["']/.exec(tds[0] ?? '')?.[1]?.trim() ?? txt(tds[0]);
+      if (TU_SKIP.test(type)) continue;
+      const days = (/aria-label=["']([^"']*)["']/.exec(tds[1] ?? '')?.[1] ?? '').split(/\s+/).filter((d) => d in TU_DAYS);
+      const t = /(\d{1,2}:\d{2}[AP]M)\s*-\s*(\d{1,2}:\d{2}[AP]M)/i.exec(txt(tds[2])); if (!t) continue;
+      const start = to24(t[1]), end = to24(t[2]); if (!start || !end) continue;
+      for (const d of days) meetings.push({ day: TU_DAYS[d], start, end });
+    }
+    if (!meetings.length) continue;
+    const id = `${courseId('s_tulane', code)}_${termCode}_${sec}`.toLowerCase();
+    if (out.some((c) => c.id === id)) continue; secOf.set(id, sec);
+    const units = Number(/Credit Hours<\/b><\/td>\s*<td>\s*([\d.]+)/.exec(b)?.[1]);
+    out.push({ id, schoolId: 's_tulane', code, title, department: subj, meetings: uniq(meetings), term: label, termCode, units: Number.isFinite(units) && units > 0 ? units : undefined, url: `${TULANE}/Results.aspx?course=${subj}${num}` });
+  }
+  for (const c of out) if (out.filter((o) => o.code === c.code && o.term === c.term).length > 1) c.title = `${c.title} (Sec ${secOf.get(c.id)})`;
+  return tagTerm(out, label);
+}
+/** Results 쪽에 N 쪽 링크(Page$N)가 있나 */
+export const tulaneHasPage = (html: string, n: number) => html.includes(`'Page$${n}'`) || html.includes(`&#39;Page$${n}&#39;`);
 async function riceGet(q: string): Promise<string> { const r = await fetch(`${RICE}${q}`, { headers: UAH }); if (!r.ok) throw new Error(`rice ${q} → ${r.status}`); return r.text(); }
 /** Rice 학기 목록 — 기본으로 골라진 학기(selected)도 읽는다 (Spring 2027 이 selected 가 되자 빠졌다, 2026-11-06) */
 export function riceTerms(html: string): { code: string; label: string }[] {
