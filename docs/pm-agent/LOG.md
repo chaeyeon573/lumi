@@ -2242,3 +2242,8 @@
   - Wix dashboard, Mailchimp admin and Google Sites editor links (sites.google.com/d/<id>/...) move to deadlinks: 9 links in 16 files.
   - Domain-named Google Sites such as sites.google.com/d.umn.edu/... stay.
 - Other spot-check clubs: UF NAYGN (title "NAYGN at UF"), Penn State Weather Outreach, NC State 1911 Consulting, JHU Club Equestrian fine.
+
+## 2026-11-06 00:33 UTC
+- Codex 요청 없음, 사장님 답 없음.
+- Harvard 수업 시간 배치 2회차: Fall 2026 학과 112/170 끝(이번 87개), 파일 1,244 수업. Spring 2027 은 학과 스캔 전.
+- 검사: Harvard 수업 5개(SPANSH 20, PSY 3270, ENGLISH 188N, ECON 3009, PSY 1542) my.harvard 공식 시간과 일치. 동아리 5개 중 4개 공식 사이트 일치; UC Davis "Book Group" 링크는 Canvas 로그인 링크라 publicLinks() 가 화면에서 숨김(지우지 않음).
