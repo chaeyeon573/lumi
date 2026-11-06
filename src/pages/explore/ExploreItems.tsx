@@ -75,7 +75,7 @@ export function ClubItem({ o, sub, onClick }: { o: Organization; sub: string; on
   const line = o.description?.replace(/\s+/g, ' ').trim();
   return (
     <button onClick={onClick} className={cn(cardCls, 'w-full p-4 flex items-center gap-3.5 text-left press')}>
-      {o.logo.url && <img src={/^(https?:|data:|\/)/.test(o.logo.url) ? o.logo.url : `/${o.logo.url}`} alt="" className="size-12 rounded-[14px] object-cover border border-line shrink-0" />}
+      {o.logo.url && <img src={/^(https?:|data:|\/)/.test(o.logo.url) ? o.logo.url : `/${o.logo.url}`} alt="" onError={(e) => { e.currentTarget.style.display = 'none'; }} className="size-12 rounded-[14px] object-cover border border-line shrink-0" />}
       <span className="flex-1 min-w-0">
         <span className="block text-[15px] font-bold leading-snug truncate">{o.name}</span>
         {line && <span className="block text-[13px] text-ink-2 leading-snug mt-0.5 truncate">{line}</span>}
