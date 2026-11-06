@@ -28,7 +28,9 @@ const en = lang === 'en';
  * Campus event (PDF S020) · Opportunity details (S021) · Opportunity Q&A (S090) — one screen, ?tab=qna for Q&A.
  * Details: type + "Source verified" badges, the date / deadline pill with View source, big title, host; SegTabs;
  * description, Who it's for / Benefits / Original source, "Register at Source"; the people who are actually going
- * or applied (Go together · Prep together). BottomCTA: bookmark + Going (events) / I applied (everything else).
+ * or applied (Go together · Prep together). BottomCTA: bookmark + Going (events) / **Apply at Source** (everything
+ * else with a source link). "I applied" is the question asked when they come back from the source (askApplied),
+ * not the main button — ux-sim 2026-11-06: the big "I applied" read as a claim ("I haven't") and hid the real link.
  */
 export function OpportunityDetailPage() {
   const { id } = useParams();
@@ -131,8 +133,9 @@ export function OpportunityDetailPage() {
           )}
           {o.description && !(o.type === 'internship' && o.location) && <TextCard><span className="whitespace-pre-wrap">{o.description}</span></TextCard>}
           <InfoRows rows={detailRows(o, openSource)} />
-          {o.sourceUrl && (
-            <Btn full variant="outline" size="lg" icon={<ExternalLink size={17} />} onClick={openSource}>{isEvent ? (en ? 'Register at Source' : '원문에서 신청') : (en ? 'Apply at Source' : '원문에서 지원')}</Btn>
+          {/* applications: Apply at Source is the main button below; events keep Register here and Going below */}
+          {o.sourceUrl && isEvent && (
+            <Btn full variant="outline" size="lg" icon={<ExternalLink size={17} />} onClick={openSource}>{en ? 'Register at Source' : '원문에서 신청'}</Btn>
           )}
           <WithPeople o={o} />
         </div>
@@ -175,7 +178,9 @@ export function OpportunityDetailPage() {
               : <Btn full size="lg" onClick={() => setIntent('going', en ? 'Marked as going.' : '갈 예정으로 표시했어요.')}>{en ? 'Going' : '갈래요'}</Btn>
             : applied
               ? <Btn full size="lg" variant="outline" icon={<CheckCircle2 size={18} className="text-ok" />} onClick={() => setIntent('interested', en ? 'Marked as not applied.' : '지원 표시를 지웠어요.')}>{en ? 'Applied' : '지원 완료'}</Btn>
-              : <Btn full size="lg" onClick={() => setIntent('applied', en ? 'Marked as applied.' : '지원 완료로 표시했어요.')}>{en ? 'I applied' : '지원했어요'}</Btn>}
+              : o.sourceUrl
+                ? <Btn full size="lg" icon={<ExternalLink size={18} />} onClick={openSource}>{en ? 'Apply at Source' : '원문에서 지원'}</Btn>
+                : <Btn full size="lg" onClick={() => setIntent('applied', en ? 'Marked as applied.' : '지원 완료로 표시했어요.')}>{en ? 'I applied' : '지원했어요'}</Btn>}
         </BottomCTA>
       )}
 
