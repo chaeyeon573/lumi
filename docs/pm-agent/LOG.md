@@ -2261,3 +2261,11 @@
 - Harvard class times run 4: Spring 2027 73/161 subjects; 2,390 classes with times in the file (Fall 2026 complete).
 - Spot check courses: 5 random Cornell classes (COML 2703, LAW 6641, ENGRG 1050, FREN 6225, CS 5433) match the live Cornell class roster.
 - Spot check clubs: UGA ICMA chapter, Columbia Lion Dance, Purdue Letters of Love, Vanderbilt NROTC fine. UConn ConnASDA's site (ctasda.org) no longer resolves; left for the weekly dead-link check, which moves it to deadlinks after repeated failures.
+
+## 2026-11-06 03:33 UTC (daily refresh)
+- No Codex requests, no owner answers.
+- Harvard class times done: Fall 2026 170/170 and Spring 2027 161/161 subjects, 2,760 classes with times. Queue item marked [x]. Re-run `npm run -s harvard-courses` only when a new term is added.
+- Events refreshed for all 63 schools: 16,518 upcoming, no errors.
+- Jobs refreshed: 1,279 postings from 182/183 boards (internships 859, new grad 369, PhD 170, master's 78, postdoc 13). Target Workday answered 500 this time (kept from yesterday's file rules: not re-added). The 17 boards added 11-05 brought 18 student postings (Charles River Associates 8, Clinton Foundation 4, Patreon 3, Sierra Club 2, Axios 1); the others have no student-level openings today.
+- Spot check courses: 5 random Rice classes (CHBE 418, PSYC 380, EDUC 565, CHEM 530, RELI 337) match the live Rice schedule.
+- Spot check clubs: W&M Judo, UChicago Engineering Society, Yale Choose Life fine. UC Davis Ascend (ascenducd.org) did not answer (proxy 502, looks like a dead domain) and Penn SHPE (fling.seas.upenn.edu) failed TLS from the container; both left for the weekly dead-link check.

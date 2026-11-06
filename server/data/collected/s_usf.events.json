@@ -1,32 +1,9 @@
 {
- "collectedAt": "2026-11-05T14:38:13.218Z",
+ "collectedAt": "2026-11-06T03:41:49.157Z",
  "sources": [
-  "jsonld https://www.usfca.edu/life-at-usf/events 5"
+  "jsonld https://www.usfca.edu/life-at-usf/events 4"
  ],
  "events": [
-  {
-   "description": "Exclusive Networking Event! Meet the BFFs: the Big, First and Foremost companies in the Bay Area. Talk to alumni and recruiters to learn what it takes to work at these companies and build your professional network! Ask about their work culture, career paths, and job opportunities",
-   "eligibility": "Open to the campus community",
-   "tags": [
-    "event"
-   ],
-   "interests": [
-    "club"
-   ],
-   "goals": [],
-   "official": true,
-   "lastVerified": "2026-11-05T14:38:19.038Z",
-   "createdAt": "2026-11-05T14:38:19.038Z",
-   "id": "op_usf_ld_13391247",
-   "type": "event",
-   "title": "Meet the BFFs",
-   "host": "University of San Francisco",
-   "schoolId": "s_usf",
-   "date": "2026-11-06T01:00:00.000Z",
-   "startTime": "17:00",
-   "sourceUrl": "https://www.usfca.edu/event/meet-bffs/13391247",
-   "sourceLabel": "University of San Francisco Events"
-  },
   {
    "description": "",
    "eligibility": "Open to the campus community",
@@ -38,8 +15,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-05T14:38:19.796Z",
-   "createdAt": "2026-11-05T14:38:19.796Z",
+   "lastVerified": "2026-11-06T03:42:00.953Z",
+   "createdAt": "2026-11-06T03:42:00.953Z",
    "id": "op_usf_ld_13570341",
    "type": "event",
    "title": "PASJ Presents: The Lost Ballad of our Mechanical Ancestor",
@@ -66,8 +43,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-05T14:38:20.530Z",
-   "createdAt": "2026-11-05T14:38:20.530Z",
+   "lastVerified": "2026-11-06T03:42:01.715Z",
+   "createdAt": "2026-11-06T03:42:01.715Z",
    "id": "op_usf_ld_13610969",
    "type": "event",
    "title": "Pack the Pantry: A Department Giving Challenge",
@@ -94,8 +71,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-05T14:38:38.824Z",
-   "createdAt": "2026-11-05T14:38:38.824Z",
+   "lastVerified": "2026-11-06T03:42:02.460Z",
+   "createdAt": "2026-11-06T03:42:02.460Z",
    "id": "op_usf_ld_13579744",
    "type": "event",
    "title": "Lab Dog: A Beagle and His Human Investigate the Surprising World of Animal Research",
@@ -122,8 +99,8 @@
    ],
    "goals": [],
    "official": true,
-   "lastVerified": "2026-11-05T14:38:40.313Z",
-   "createdAt": "2026-11-05T14:38:40.313Z",
+   "lastVerified": "2026-11-06T03:42:03.203Z",
+   "createdAt": "2026-11-06T03:42:03.203Z",
    "id": "op_usf_ld_13437600",
    "type": "event",
    "title": "USFVotes Resource Pop-Up",
