@@ -16,8 +16,9 @@ import { usePeopleSnap } from './PeopleLine';
 const en = lang === 'en';
 
 /**
- * 같이 가기 시트 — 열리면 바로 같이 가기 모임에 들어간다 (없으면 연다). 누가 가는지, 언제 어디서 만나는지,
- * I'm in / Maybe, 그룹 채팅. 같은 일을 엔진(opportunities.goTogether / leaveTogether)이 한다.
+ * 같이 가기 시트 — 다른 사람이 연 모임이 있으면 열리자마자 그 모임에 들어간다. 아직 아무도 안 열었으면 먼저 묻는다
+ * ("Start a go-together group?") — 한 번 눌렀더니 혼자뿐인 모임의 주최자가 돼 있었다 (ux-sim 2026-11-06).
+ * 누가 가는지, 언제 어디서 만나는지, I'm in / Maybe, 그룹 채팅. 같은 일을 엔진(opportunities.goTogether / leaveTogether)이 한다.
  */
 export function GoTogetherSheet({ o, open, onClose, autoJoin = true }: { o: Opportunity; open: boolean; onClose: () => void; autoJoin?: boolean }) {
   const nav = useNavigate();
@@ -44,7 +45,8 @@ export function GoTogetherSheet({ o, open, onClose, autoJoin = true }: { o: Oppo
     if (!open) { tried.current = false; return; }
     if (tried.current || !autoJoin || !me) return;
     tried.current = true;
-    if (!myGoCrew(snap, me, o.id)) void join();
+    // someone else's group: join it. Nobody's yet: wait for "Start group" — don't make them host of a group of one
+    if (!myGoCrew(snap, me, o.id) && crewsFor(snap, me, o.id, 'go').length > 0) void join();
   }, [open]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const people = useMemo(() => {
@@ -63,15 +65,16 @@ export function GoTogetherSheet({ o, open, onClose, autoJoin = true }: { o: Oppo
   const kicker = [free ? (en ? 'Free food' : '무료 음식') : (en ? 'Event' : '행사'), o.date ? `${badgeOf(o, en).text}${o.startTime ? ` ${o.startTime}` : ''}` : '', o.place?.name ?? ''].filter(Boolean).join(' · ');
 
   return (
-    <BottomSheet open={open} onClose={onClose} title={en ? 'Go together?' : '같이 갈래요?'}>
+    <BottomSheet open={open} onClose={onClose} title={!anyCrew && !busy ? (en ? 'Start a go-together group?' : '같이 가기 모임을 열까요?') : (en ? 'Go together?' : '같이 갈래요?')}>
       <div className="-mt-1">
         <div className="text-[11px] font-bold uppercase tracking-wide text-primary truncate">{kicker}</div>
         <div className="text-[15px] font-bold mt-0.5 line-clamp-2">{o.title}</div>
         <p className="text-[13px] text-ink-2 mt-1">
           {busy && !crew ? (en ? 'Finding your group…' : '같이 갈 모임을 찾는 중…')
+            : meet && crew && goingCount === 1 ? (en ? `Meet at ${place || 'the entrance'} at ${meet} — just you so far.` : `${meet}에 ${place || '입구'}에서 만나요 — 아직 나 혼자예요.`)
             : meet ? (en ? `Meet at ${place || 'the entrance'} at ${meet} — ${goingCount} ${goingCount === 1 ? 'person is' : 'people are'} going.` : `${meet}에 ${place || '입구'}에서 만나요 — ${goingCount}명이 가요.`)
               : goingCount > 0 ? (en ? `${goingCount} going, no meetup yet — tap I'm in to start one.` : `${goingCount}명이 가요. 아직 모임이 없어요 — 갈래요를 누르면 열려요.`)
-                : (en ? 'Nobody has started a group yet.' : '아직 같이 가는 모임이 없어요.')}
+                : (en ? 'Nobody has started one yet. You’d be first — others going can join you.' : '아직 아무도 안 열었어요. 열면 가는 사람들이 들어올 수 있어요.')}
         </p>
       </div>
 
@@ -80,7 +83,7 @@ export function GoTogetherSheet({ o, open, onClose, autoJoin = true }: { o: Oppo
           <Person u={me} you label="going" />
         )}
         {people.map(({ u, label }) => <Person key={u.id} u={u} label={label} onOpen={() => { onClose(); nav(`/users/${u.id}`); }} />)}
-        {!crew && people.length === 0 && !busy && <p className="py-3 text-[13px] text-ink-3">{en ? 'Tap I’m in — whoever taps Go together next joins you here.' : '갈래요를 누르면, 다음에 같이 가기를 누르는 사람이 여기로 들어와요.'}</p>}
+        {!crew && anyCrew && people.length === 0 && !busy && <p className="py-3 text-[13px] text-ink-3">{en ? 'Tap I’m in — whoever taps Go together next joins you here.' : '갈래요를 누르면, 다음에 같이 가기를 누르는 사람이 여기로 들어와요.'}</p>}
       </div>
 
       <div className="flex flex-wrap gap-2 mt-3">
@@ -90,10 +93,14 @@ export function GoTogetherSheet({ o, open, onClose, autoJoin = true }: { o: Oppo
         {place && <span className="h-9 px-3.5 rounded-full bg-surface-2 text-ink text-[13px] font-semibold inline-flex items-center gap-1.5 max-w-full truncate"><MapPin size={14} className="shrink-0" /><span className="truncate">{place}</span></span>}
       </div>
 
-      <Button size="lg" full className="mt-4" disabled={busy || !room} loading={busy} icon={<MessageCircle size={18} />} onClick={() => { if (room) { onClose(); nav(`/chats/${room.id}`); } }}>
-        {crew ? (en ? `Group chat · meet at ${meet}` : `그룹 채팅 · ${meet} 만남`) : (en ? 'Group chat' : '그룹 채팅')}
-      </Button>
-      {!crew && !busy && <Button size="md" variant="outline" full className="mt-2" onClick={join}>{en ? `Join${meet ? ` · meet at ${meet}` : ''}` : `들어가기${meet ? ` · ${meet} 만남` : ''}`}</Button>}
+      {!crew && !anyCrew ? (
+        <Button size="lg" full className="mt-4" loading={busy} onClick={join}>{en ? 'Start group' : '모임 열기'}</Button>
+      ) : (
+        <Button size="lg" full className="mt-4" disabled={busy || !room} loading={busy} icon={<MessageCircle size={18} />} onClick={() => { if (room) { onClose(); nav(`/chats/${room.id}`); } }}>
+          {crew ? (en ? `Group chat · meet at ${meet}` : `그룹 채팅 · ${meet} 만남`) : (en ? 'Group chat' : '그룹 채팅')}
+        </Button>
+      )}
+      {!crew && anyCrew && !busy && <Button size="md" variant="outline" full className="mt-2" onClick={join}>{en ? `Join${meet ? ` · meet at ${meet}` : ''}` : `들어가기${meet ? ` · ${meet} 만남` : ''}`}</Button>}
     </BottomSheet>
   );
 }
