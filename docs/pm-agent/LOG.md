@@ -2371,3 +2371,10 @@
 - Spot check clubs: Purdue Linux Users Group, Vanderbilt Pre-Dental Society, Duke WISER, SF State Arab Student Union, Wisconsin Brazilian Student Association fine (5/5).
 - Spot check courses: 5 random Cornell Fall 2026 classes (HADM 1650 Lec 005, AIIS 6010, BEE 4950 Prj 601, AS 1102 Sem 124, STS 3605) match the live Cornell roster.
 - Stanford club links: Stanford Club Sports runs its official site at stanfordclubsports.com (not on stanford.edu, so it opens from here). Each of the 44 "CSA" club-sport groups plus the Club Sports umbrella group now links to its team page; each page was opened and its title matched to the group (men's/women's checked one by one). Rows in org-links-stanford.csv (kept on every collect) and applied to today's file. Stanford clubs with a public link: 44 → 89 of 733.
+
+## 2026-11-06 18:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: UT Texas Perfect Pair, UF Delta Tau Delta, Georgia Tech Saudi Student Association, Vanderbilt Army ROTC fine. Wake Forest "Campus Recreation" is a school office typed club.
+  - Wake Forest scan: 10 clear offices typed `department` (Campus Recreation, Dean of the College, ZSR Library, Safe Office, Conference Services, Campus Programs & Services, Military Science Department, Law Office of Career and Professional Development, Student Organization Finance Office, Sabin Center). "Safe Office Crew" and "The Housing Project" left (may be student-run).
+  - All schools, names that are plainly offices ("Office of …", "Dean of …", "Department of …", "… Office", "… Library", "… Registrar", "Campus Recreation"): 69 more typed `department`. Not changed: student-government offices (council), "Department of X Graduate Student Association/Assembly/Council", Outside the Box (theatre), MSU Future Alumni, JHU Bloomberg Consulting Office, Michigan Library ambassadors. 79 rows added to org-type-overrides.csv; only the type field changed in the files.
+- Spot check courses: 5 random MIT classes (21G.403 option 1, 15.071, 16.851, 15.369, 15.S13) match FireRoad.
