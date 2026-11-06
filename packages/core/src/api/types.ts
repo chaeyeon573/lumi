@@ -264,6 +264,11 @@ export interface AroundUApi {
     session(): Promise<ID | null>;
     /** 이미 가입한 계정에 (코드로 확인한) 학교 이메일을 붙인다 — 다른 기기에서 이메일로 로그인할 수 있게 */
     attachEmail(email: string): Promise<User>;
+    /**
+     * Student-ID accounts only: any e-mail just for signing in (the code comes from `schools.sendVerificationCode(email, '')`,
+     * the login path). Never school verification, never the badge (server/signin-email.ts). Returns me
+     */
+    addSignInEmail(email: string, code: string): Promise<User>;
     /** Permanently delete my account and personal data (App Store 5.1.1(v)). `confirm` must be "DELETE". Signs out. Demo/sample accounts are refused */
     deleteAccount(confirm: string): Promise<void>;
     /** Download your data (S086): my own records as JSON (@core/lib/exportdata). Only ever the signed-in caller */

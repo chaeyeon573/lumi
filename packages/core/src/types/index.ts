@@ -194,6 +194,11 @@ export interface User {
    * 없으면 예전 계정 그대로 (학교 이메일로 가입했거나 이 기능 전에 가입)
    */
   verification?: StudentIdVerification;
+  /**
+   * 학생증으로 인증한 사람이 로그인용으로 붙인 개인 이메일 (server/signin-email.ts). 로그인 코드만 받는다 —
+   * 학교 인증·인증 배지와는 상관없다. 서버 전용 · 본인에게만 내려간다
+   */
+  signInEmail?: string;
   createdAt: string;
   /** 서버가 다른 사람 프로필에 붙인다: 이 보는 사람에게 열린 항목 (lib/privacy). 본인 프로필·오프라인 데모에는 없다 */
   viewable?: ProfileField[];

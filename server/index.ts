@@ -73,6 +73,7 @@ import { createReviewLogin, reviewConfig, ReviewLoginError } from './review-logi
 import { orgRules, registerPublicExploreRoute } from './orgs';
 import { createIdVerify, pendingGate, registerIdVerifyRoutes, registerProblem } from './idverify';
 import { awaitingVerification } from '@core/lib/verification';
+import { registerSignInEmailRoutes, schoolEmailOk } from './signin-email';
 
 const PORT = Number(process.env.PORT ?? 8787);
 const store = createStore();
@@ -164,7 +165,7 @@ await campus.load();
 const classQa = createClassQaService({ db: () => db, store, push: pushPatch });
 await classQa.load();
 // 학생증 사진 인증 (server/idverify.ts) — 요청 기록은 스냅샷 밖 문서 묶음, 사진은 따로(idPhotos) 두고 검토 뒤 지운다
-const idVerify = createIdVerify({ db: () => db, store, push: pushPatch });
+const idVerify = createIdVerify({ db: () => db, store, push: pushPatch, sendMail });
 await idVerify.load();
 setInterval(() => { syncFromWorker().catch((e) => console.error('[sync] failed', e)); }, Number(process.env.DATA_SYNC_SECONDS ?? 120) * 1000);
 
@@ -243,7 +244,9 @@ app.post('/api/auth/register', wrap(async (req) => {
   if (!input || typeof input.nickname !== 'string' || !input.nickname.trim() || !input.schoolId) throw bad(t('입력값을 확인해주세요.'));
   // Lumi is 16+ — the sign-up screen checks too, but the server is the source of truth (@core/lib/signup), on the student-ID path too
   const email = norm(input.email);
-  const verifiedEmail = email ? verifiedEmails.has(email) : false;
+  // only the school's own domain counts as school verification — a code to any other address (the login path sends those)
+  // is a sign-in address at most (server/signin-email.ts), never the badge
+  const verifiedEmail = email ? verifiedEmails.has(email) && (reviewLogin.matches(email) || schoolEmailOk(email, db.schools.find((s) => s.id === input.schoolId))) : false;
   const start = registerProblem(input, verifiedEmail);
   if ('error' in start) throw bad(start.error === 'under_16' ? t('Lumi는 만 16세 이상 대학생을 위한 앱이에요.') : t('출생 연도를 확인해주세요.'));
   if (email && await store.findAccount(email)) throw bad(t('이미 가입된 이메일이에요. 이메일로 로그인해주세요.'), 409);
@@ -263,6 +266,11 @@ app.post('/api/auth/attach-email', auth, wrap(async (req: Req) => {
   const me = requireUser(req);
   const email = norm(req.body.email);
   if (!verifiedEmails.has(email)) throw bad(t('인증 코드가 만료되었거나 올바르지 않아요.'));
+  { // a school address of the person's own school only — a personal address goes through /api/auth/signin-email instead
+    const mine = db.users.find((u) => u.id === me);
+    const school = mine?.affiliation.type === 'university' ? db.schools.find((s) => s.id === (mine.affiliation as { schoolId?: string }).schoolId) : undefined;
+    if (!reviewLogin.matches(email) && !schoolEmailOk(email, school)) throw bad(school?.emailDomain ? `@${school.emailDomain}${t(' 이메일만 사용할 수 있어요.')}` : t('입력값을 확인해주세요.'));
+  }
   const owner = await store.findAccount(email);
   if (owner && owner.userId !== me) throw bad(t('이미 가입된 이메일이에요. 이메일로 로그인해주세요.'), 409);
   if (!owner) await store.createAccount({ email, userId: me, createdAt: new Date().toISOString() });
@@ -418,6 +426,9 @@ registerPlanRoutes(app, {
   db: () => db, auth, push: (p) => { void store.applyPatch(p); broadcast(p); }, patchFor: (p, me) => patchFor(p, me, db),
   dist: path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist'),
 });
+
+// ─── 학생증 계정의 로그인용 개인 이메일 — POST /api/auth/signin-email (server/signin-email.ts). 학교 인증과는 상관없다 ─────
+registerSignInEmailRoutes(app, { db: () => db, store, auth, push: pushPatch, reserved: (e) => reviewLogin.matches(e) });
 
 // ─── 학생증 사진 인증 — /api/verification/student-id, /admin/verifications, /api/admin/verifications/* (server/idverify.ts) ─────
 registerIdVerifyRoutes(app, idVerify, { auth });

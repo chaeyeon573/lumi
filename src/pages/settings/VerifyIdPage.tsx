@@ -7,6 +7,7 @@ import { verificationStep } from '@core/lib/verification';
 import { useAppStore, useCurrentUser } from '@core/store/useAppStore';
 import { BackHeader, BottomCTA, Btn, EmptyState, InfoNote, PageTitle } from '@/components/ha';
 import { ID_PRIVACY_LINE, IdPhotoPicker } from '@/components/verify/StudentId';
+import { SignInEmailCard } from '@/components/settings/SignInEmailCard';
 
 const en = lang === 'en';
 
@@ -47,6 +48,7 @@ export function VerifyIdPage() {
             <EmptyState icon={<Hourglass size={30} />} tone="lav" title={en ? 'We’re checking your photo' : '사진을 확인하고 있어요'}
               sub={en ? 'Usually within a day. We’ll tell you here when it’s done.' : '보통 하루 안에 끝나요. 끝나면 여기서 알려 드릴게요.'}>
               <Btn variant="link" size="sm" onClick={() => setReplace(true)}>{en ? 'Send a clearer photo instead' : '더 선명한 사진으로 바꾸기'}</Btn>
+              {!me?.signInEmail && <div className="mt-6 text-left"><SignInEmailCard /></div>}
             </EmptyState>
           )}
       </div>
@@ -63,6 +65,7 @@ export function VerifyIdPage() {
         )}
         <IdPhotoPicker alumni={alumni} value={photo} onChange={(v) => { setPhoto(v); setErr(''); }} />
         <InfoNote>{en ? 'Usually checked within a day.' : '보통 하루 안에 확인해요.'}</InfoNote>
+        <SignInEmailCard />
         {err && <p role="alert" className="text-[13px] text-danger leading-snug">{err}</p>}
       </main>
       <BottomCTA><Btn full size="lg" onClick={send} disabled={!photo || busy} loading={busy}>{en ? 'Send for review' : '확인 요청 보내기'}</Btn></BottomCTA>

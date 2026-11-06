@@ -31,6 +31,7 @@ export function StartPage() {
   const location = useLocation();
   const nav = useNavigate();
   const setCurrentUser = useAppStore((s) => s.setCurrentUser);
+  const showToast = useAppStore((s) => s.showToast);
   const [d, setD] = useState<Draft>(loadDraft);
   const [schools, setSchools] = useState<School[]>([]);
   useEffect(() => { saveDraft(d); }, [d]);
@@ -66,7 +67,7 @@ export function StartPage() {
    * Create the account, follow the picked organizations, then Home. With an e-mail it was verified by AboutStep;
    * without one (student ID path) the server starts the account as pending and the photo goes up right after.
    */
-  const finish = async (email: string, idPhoto?: string) => {
+  const finish = async (email: string, idPhoto?: string, signIn?: { email: string; code: string }) => {
     const picks = [...GOALS.filter((g) => d.goalKeys.includes(g.key)), ...TOPICS.filter((t) => d.topics.includes(t.key)), ...COMMUNITIES.filter((c) => d.communities.includes(c.key))];
     const goals = uniq(picks.flatMap((x) => x.goals));
     const interests = uniq(picks.flatMap((x) => x.interests));
@@ -83,6 +84,8 @@ export function StartPage() {
     for (const o of d.orgs) await api.relationships.toggleFollow(user.id, o.id, 'org').catch(() => undefined);
     // the account exists now; if the photo doesn't make it, the banner on Home asks for it again (/verify-id)
     if (idPhoto) user = await api.verification.submitStudentId(idPhoto).catch(() => user);
+    // the optional sign-in e-mail (code already sent from the student ID screen) — a miss can be fixed in Settings
+    if (signIn) user = await api.auth.addSignInEmail(signIn.email, signIn.code).catch((e: Error) => { showToast(`${e.message} You can add it later in Settings › Account security.`, 'error'); return user; });
     saveDraft(null);
     await setCurrentUser(user);
     nav(takeReturnTo(), { replace: true });
@@ -101,7 +104,7 @@ export function StartPage() {
       {step === 'discover' && <DiscoverStep {...props} />}
       {step === 'communities' && <CommunitiesStep {...props} schoolName={school?.name} />}
       {step === 'about' && !idStep && <AboutStep d={d} patch={patch} school={school} finish={finish} onUseId={() => go('/start/student-id')} />}
-      {idStep && <StudentIdStep d={d} patch={patch} finish={(photo) => finish('', photo)} />}
+      {idStep && <StudentIdStep d={d} patch={patch} finish={(photo, signIn) => finish('', photo, signIn)} />}
     </div>
   );
 }

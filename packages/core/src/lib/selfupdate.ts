@@ -6,7 +6,7 @@ import type { Affiliation, ExtraField, NextChapter, OpenTo, OpenToKind, User, Vi
  * 그대로 두면 누구나 자기를 '인증됨'으로 바꿔 수업 명단·라이드 같은 인증 전용 기능을 열 수 있었다.
  * 데모(예시) 계정은 데모용 '즉시 인증' 토글을 쓸 수 있게 인증 값만 허용한다.
  */
-const SERVER_ONLY = ['id', 'createdAt', 'sample', 'suspended', 'verification', 'viewable', 'mutualFriendCount'] as const;
+const SERVER_ONLY = ['id', 'createdAt', 'sample', 'suspended', 'verification', 'signInEmail', 'viewable', 'mutualFriendCount'] as const;
 
 const sameOrg = (a: Affiliation, b: Affiliation) =>
   a.type === b.type && (a.type === 'university' ? a.schoolId === (b as typeof a).schoolId : a.companyName.trim().toLowerCase() === (b as typeof a).companyName.trim().toLowerCase());

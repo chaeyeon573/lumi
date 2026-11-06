@@ -333,3 +333,47 @@ test('the review page holds no data and is locked down', async () => {
     assert.doesNotMatch(html, /innerHTML/);
   } finally { s.close(); }
 });
+
+test('admin alert: "N waiting" + the review link only, at most once an hour, through sendMail', async () => {
+  const s = await setup();
+  s.close();
+  const mails: { to: string; subject: string; text: string }[] = [];
+  let clock = new Date('2026-11-06T10:00:00Z');
+  const iv = createIdVerify({
+    db: () => s.db, store: s.store, push: () => {}, now: () => clock,
+    sendMail: async (to, subject, text) => { mails.push({ to, subject, text }); return true; },
+    env: { FEEDBACK_EMAIL: 'team@example.com', PUBLIC_URL: 'https://lumi.example.com/' },
+  });
+  await iv.load();
+  try {
+    await iv.submit(PENDING, b64(jpeg()), '10.0.0.1');
+    assert.equal(mails.length, 1);
+    assert.equal(mails[0].to, 'team@example.com');
+    assert.match(mails[0].subject, /1 student ID waiting/);
+    assert.match(mails[0].text, /^1 waiting for review\./);
+    assert.match(mails[0].text, /https:\/\/lumi\.example\.com\/admin\/verifications/);
+    const u = s.user(PENDING);
+    for (const leak of [u.nickname, 'Berkeley', String(u.birthYear), PENDING, 'iv_', 'base64', 'image/jpeg']) assert.equal(`${mails[0].subject} ${mails[0].text}`.includes(leak), false, `alert must not contain ${leak}`);
+
+    // a second photo inside the hour: no second e-mail now
+    clock = new Date('2026-11-06T10:20:00Z');
+    await iv.submit(PENDING, b64(jpeg()), '10.0.0.1');
+    assert.equal(mails.length, 1);
+    // after the hour the next photo alerts again, with the current count
+    clock = new Date('2026-11-06T11:05:00Z');
+    iv.stopAlerts();
+    await iv.submit(PENDING, b64(jpeg()), '10.0.0.1');
+    assert.equal(mails.length, 2);
+    assert.match(mails[1].text, /^1 waiting/);
+  } finally { iv.stopAlerts(); }
+});
+
+test('admin alert: no FEEDBACK_EMAIL → no e-mail, the photo is still taken', async () => {
+  const s = await setup();
+  s.close();
+  let sent = 0;
+  const iv = createIdVerify({ db: () => s.db, store: s.store, push: () => {}, sendMail: async () => { sent++; return true; }, env: {} });
+  await iv.submit(PENDING, b64(jpeg()), '10.0.0.2');
+  assert.equal(sent, 0);
+  assert.equal(iv.requests().length, 1);
+});

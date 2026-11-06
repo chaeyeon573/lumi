@@ -97,6 +97,7 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
         writeToken(r.token, r.user.id);
         return r.user;
       },
+      async addSignInEmail(email, code) { return (await call<{ user: User }>('auth/signin-email', { email, code })).user; },
       async attachEmail(email) {
         const r = await call<{ user: User }>('auth/attach-email', { email });
         return r.user;

@@ -6,6 +6,7 @@ import { relativeTime } from '@core/lib/format';
 import type { User } from '@core/types';
 import { Badge, Btn, EmptyState, IconTile, InfoNote, PersonCard, RowCard, Switch, TextCard, cardCls } from '@/components/ha';
 import { SchoolEmailCard } from '@/components/settings/SchoolEmailCard';
+import { SignInEmailCard } from '@/components/settings/SignInEmailCard';
 import { PushSettingRow } from '@/components/native/PushSettingRow';
 import { useViewer } from '@/hooks/useViewer';
 import { cn } from '@core/lib/cn';
@@ -60,6 +61,7 @@ export function AccountSecurityPage() {
     <SubScreen title={en ? 'Account security' : '계정 보안'}>
       <div className="space-y-3">
         <SchoolEmailCard />
+        <SignInEmailCard />
         <div className={cn(cardCls, 'p-4 flex items-center gap-3.5')}>
           <IconTile tone="mint"><ShieldCheck size={21} /></IconTile>
           <span className="flex-1 min-w-0">
@@ -68,7 +70,7 @@ export function AccountSecurityPage() {
           </span>
         </div>
       </div>
-      {aff && !aff.emailVerified && <InfoNote className="mt-4">{en ? 'Until you add your school email, this phone is your only way back in.' : '학교 이메일을 추가하기 전에는 이 기기로만 다시 들어올 수 있어요.'}</InfoNote>}
+      {aff && !aff.emailVerified && !v.me.signInEmail && <InfoNote className="mt-4">{en ? 'Until you add your school email, this phone is your only way back in.' : '학교 이메일을 추가하기 전에는 이 기기로만 다시 들어올 수 있어요.'}</InfoNote>}
     </SubScreen>
   );
 }

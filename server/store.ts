@@ -42,6 +42,8 @@ export interface Store {
 
   findAccount(email: string): Promise<Account | null>;
   createAccount(a: Account): Promise<void>;
+  /** 로그인 이메일 하나를 뗀다 (학생증 계정이 로그인용 개인 이메일을 바꿀 때 — server/signin-email.ts) */
+  deleteAccount(email: string): Promise<void>;
   createSession(s: Session): Promise<void>;
   findSession(token: string): Promise<Session | null>;
   deleteSession(token: string): Promise<void>;
@@ -195,6 +197,7 @@ export class PgStore implements Store {
     return rows[0] ? { email: rows[0].email, userId: rows[0].user_id, createdAt: rows[0].created_at.toISOString() } : null;
   }
   async createAccount(a: Account) { await this.pool.query('INSERT INTO accounts (email, user_id) VALUES ($1, $2)', [a.email, a.userId]); }
+  async deleteAccount(email: string) { await this.pool.query('DELETE FROM accounts WHERE email = $1', [email]); }
   async createSession(s: Session) { await this.pool.query('INSERT INTO sessions (token, user_id) VALUES ($1, $2)', [s.token, s.userId]); }
   async findSession(token: string) {
     const { rows } = await this.pool.query<{ token: string; user_id: string; created_at: Date }>('SELECT * FROM sessions WHERE token = $1', [token]);
@@ -340,6 +343,7 @@ export class FileStore implements Store {
   }
   async findAccount(email: string) { return this.data.accounts.find((a) => a.email === email) ?? null; }
   async createAccount(a: Account) { this.data.accounts.push(a); await this.flush(); }
+  async deleteAccount(email: string) { this.data.accounts = this.data.accounts.filter((a) => a.email !== email); await this.flush(); }
   async createSession(s: Session) { this.data.sessions.push(s); await this.flush(); }
   async findSession(token: string) { return this.data.sessions.find((s) => s.token === token) ?? null; }
   async deleteSession(token: string) { this.data.sessions = this.data.sessions.filter((s) => s.token !== token); await this.flush(); }

@@ -23,6 +23,8 @@
  *   appears to others. Reject → status 'rejected' + reason, still hidden, may send a new photo. Either way the photo is
  *   deleted right away and the student gets an in-app notification. The request record (no image) stays as an audit line.
  * - 5 photos per account per day, 20 per network per day. Deleting the account deletes its requests and photo.
+ * - A new photo e-mails FEEDBACK_EMAIL like a new report does (sendMail), at most once an hour: only "N waiting" and the
+ *   link to /admin/verifications — no photo, no name, school or anything else about the student.
  */
 import type { Express, NextFunction, Request, Response } from 'express';
 import { randomBytes } from 'node:crypto';
@@ -39,6 +41,8 @@ export const ID_REQUESTS = 'idVerifications';
 export const ID_PHOTOS = 'idPhotos';
 export const PHOTOS_PER_USER_DAY = 5;
 export const PHOTOS_PER_IP_DAY = 20;
+/** at most one "N waiting" e-mail per hour; photos sent in between are counted in the next one */
+export const ALERT_EVERY_MS = 3600_000;
 /** what a waiting account is told when it tries something that reaches other people */
 export const PENDING_MESSAGE = 'We’re still checking your student ID — you can do this once you’re verified (usually within a day).';
 
@@ -131,6 +135,16 @@ export interface IdVerifyDeps {
   /** persist + broadcast (each viewer's copy is filtered by server/view.ts) */
   push(patch: Patch): void;
   now?: () => Date;
+  /** server/mail.ts sendMail — the admin alert. Unset → no alert */
+  sendMail?: (to: string, subject: string, text: string) => Promise<boolean>;
+  env?: NodeJS.ProcessEnv;
+}
+
+/** the alert e-mail — a count and a link, nothing about any student */
+export function alertMail(waiting: number, base: string) {
+  const subject = `[Lumi] ${waiting} student ID${waiting === 1 ? '' : 's'} waiting for review`;
+  const text = [`${waiting} waiting for review.`, '', `Review: ${base.replace(/\/+$/, '')}/admin/verifications`, '', 'The photos are deleted as soon as you approve or reject.'].join('\n');
+  return { subject, text };
 }
 
 export function createIdVerify(deps: IdVerifyDeps) {
@@ -139,6 +153,29 @@ export function createIdVerify(deps: IdVerifyDeps) {
   const sent = new Map<string, number[]>();
   const user = (id: ID) => deps.db().users.find((u) => u.id === id);
   const open = (r: IdRequest) => !r.decision;
+  const env = () => deps.env ?? process.env;
+  let lastAlert = 0;
+  let alertTimer: ReturnType<typeof setTimeout> | null = null;
+  let alertBase = '';
+
+  /** e-mail FEEDBACK_EMAIL "N waiting" — at most once an hour; a photo inside the hour is picked up by a send at the hour */
+  function alertAdmins() {
+    const to = env().FEEDBACK_EMAIL?.trim();
+    if (!deps.sendMail) return;
+    if (!to) { console.warn('[idverify] FEEDBACK_EMAIL is not set — no alert e-mail for the new student ID photo'); return; }
+    const t = now().getTime();
+    if (lastAlert && t - lastAlert < ALERT_EVERY_MS) {
+      if (!alertTimer) { alertTimer = setTimeout(() => { alertTimer = null; alertAdmins(); }, lastAlert + ALERT_EVERY_MS - t); alertTimer.unref?.(); }
+      return;
+    }
+    const waiting = [...requests.values()].filter(open).length;
+    if (!waiting) return;
+    lastAlert = t;
+    const { subject, text } = alertMail(waiting, env().PUBLIC_URL?.trim() || alertBase);
+    deps.sendMail(to, subject, text)
+      .then((ok) => { if (!ok) console.warn('[idverify] alert e-mail not sent (Resend not configured or refused)'); })
+      .catch((e) => console.error('[idverify] alert e-mail failed', e instanceof Error ? e.message : e));
+  }
 
   function limited(key: string, max: number): boolean {
     const t = now().getTime();
@@ -174,7 +211,7 @@ export function createIdVerify(deps: IdVerifyDeps) {
     },
 
     /** a student sends (or re-sends) a photo. Returns the updated user */
-    async submit(userId: ID, raw: unknown, ip: string): Promise<User> {
+    async submit(userId: ID, raw: unknown, ip: string, origin = ''): Promise<User> {
       const u = user(userId);
       if (!u) throw new IdVerifyError(401, 'Please sign in first.');
       if (u.sample) throw new IdVerifyError(400, 'Example accounts can’t send a student ID.');
@@ -195,6 +232,8 @@ export function createIdVerify(deps: IdVerifyDeps) {
       await closeOpen(userId, { status: 'withdrawn', by: 'student', at, note: 'replaced by a newer photo' }, req.id);
       u.verification = { method: 'student_id', status: 'pending', submittedAt: at };
       deps.push({ users: [u] });
+      if (origin) alertBase = origin;
+      alertAdmins();
       console.log(`[idverify] ${userId} sent a student ID photo (${req.width}×${req.height}, ${Math.round(req.bytes / 1024)} KB)`);
       return u;
     },
@@ -277,6 +316,7 @@ export function createIdVerify(deps: IdVerifyDeps) {
 
     /** tests */
     requests: () => [...requests.values()],
+    stopAlerts() { if (alertTimer) clearTimeout(alertTimer); alertTimer = null; },
   };
 }
 export type IdVerify = ReturnType<typeof createIdVerify>;
@@ -340,7 +380,7 @@ export function registerIdVerifyRoutes(app: Express, iv: IdVerify, deps: IdVerif
   app.post('/api/verification/student-id', deps.auth, handle(async (req) => {
     if ((req as { suspended?: boolean }).suspended) throw new IdVerifyError(403, 'This account is suspended.');
     if (!req.userId) throw new IdVerifyError(401, 'Please sign in first.');
-    return { user: await iv.submit(req.userId, req.body?.data, req.ip ?? 'unknown') };
+    return { user: await iv.submit(req.userId, req.body?.data, req.ip ?? 'unknown', `${req.protocol}://${req.get('host')}`) };
   }));
 
   app.get('/admin/verifications', (_req, res) => {
