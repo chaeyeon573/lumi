@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Coffee, Users, MessageCircle, Plus, SlidersHorizontal, Sparkles, UserPlus } from 'lucide-react';
+import { Coffee, Users, MessageCircle, Plus, Filter, Sparkles, UserPlus } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
@@ -151,7 +151,7 @@ export function SocialPeoplePage() {
         {YEAR_CHIPS.map((c) => <Chip key={c.key} active={year === c.key} onClick={() => setYear(year === c.key ? 'all' : c.key)}>{c.label}</Chip>)}
       </ChipRow>
       <div className="flex items-center justify-around mt-3">
-        <Btn variant="link" size="sm" icon={<SlidersHorizontal size={16} />} onClick={() => nav('/social/people/filters')}>{en ? 'More Filters' : '조건 더 보기'}</Btn>
+        <Btn variant="link" size="sm" icon={<Filter size={16} />} onClick={() => nav('/social/people/filters')}>{en ? 'More Filters' : '조건 더 보기'}</Btn>
         <Btn variant="link" size="sm" icon={<Sparkles size={16} />} onClick={() => nav('/social/people/common')}>{en ? 'Something in common' : '함께 가진 것'}</Btn>
       </div>
       <div className="space-y-3 mt-3">

@@ -1,6 +1,6 @@
 import { useId, useLayoutEffect, useRef, useState, type KeyboardEvent, type PointerEvent } from 'react';
 import { createPortal } from 'react-dom';
-import { ChevronDown, SlidersHorizontal, X } from 'lucide-react';
+import { ChevronDown, Filter, X } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { cn } from '@core/lib/cn';
 import { shellEl } from '@/components/ui/Sheet';
@@ -33,7 +33,7 @@ export function FilterBar({ groups, values, onApply, count, className }: {
           aria-label={n ? (en ? `Filters, ${n} applied` : `필터 ${n}개 적용됨`) : (en ? 'Filters' : '필터')}
           className={cn('shrink-0 inline-flex items-center gap-1.5 h-9 pl-3 pr-3.5 rounded-full border text-[13px] font-semibold whitespace-nowrap press',
             n ? 'bg-sel-soft border-sel-line text-sel-fg' : 'bg-surface border-line text-ink')}>
-          <SlidersHorizontal size={15} />
+          <Filter size={15} />
           <span>{en ? 'Filters' : '필터'}{n > 0 && ` (${n})`}</span>
         </button>
         {chips.map((c) => (
