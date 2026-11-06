@@ -142,7 +142,8 @@ export function spreadByHost<T extends { host: string }>(items: T[], gap = 3): T
 
 // ─── 누구를 위한 공고인가 (대학원생 / 학부생 / 모두) ─────────────────────────
 export type Audience = 'grad' | 'undergrad' | 'all';
-const GRAD_RE = /\blaw students?\b|\bj\.?d\.? (students?|candidates?)|\bmba\b|\bph\.?\s?d\b|ms\s?\/\s?ph\.?d|\bmasters?\b|master'?s\b|graduate students?|doctoral|dissertation|postdoc|\bgsr\b|\bgsi\b/i;
+// “Grad Student Appreciation Party”, “Grad students only” — 줄임말 grad 도 (예전엔 Social 첫 화면 한 곳에서만 걸렀다)
+const GRAD_RE = /\blaw students?\b|\bj\.?d\.? (students?|candidates?)|\bmba\b|\bph\.?\s?d\b|ms\s?\/\s?ph\.?d|\bmasters?\b|master'?s\b|\bgrad(uate)?\s+students?\b|\bgrads only\b|doctoral|dissertation|postdoc|\bgsr\b|\bgsi\b/i;
 const UNDERGRAD_RE = /undergrad|bachelor'?s|freshm[ae]n|sophomore|high school|\bfirst[- ]year students?\b/i;
 export function audienceOf(o: Pick<Opportunity, 'title' | 'tags' | 'eligibility' | 'description'>): Audience {
   if (o.tags.some((t) => /^graduate$/i.test(t))) return 'grad';
@@ -153,7 +154,10 @@ export function audienceOf(o: Pick<Opportunity, 'title' | 'tags' | 'eligibility'
   return 'all';
 }
 export const isGradStudent = (u: Pick<User, 'affiliation'>) => u.affiliation.type === 'university' && u.affiliation.role === 'graduate';
-/** 이 학생에게 맞는 대상인가 (모두 대상이면 맞음) */
+/**
+ * 이 학생에게 맞는 대상인가 (모두 대상이면 맞음) — 목록 규칙은 여기 한 곳: 대학원생 전용 행사·공고는 학부생의 어떤 목록에도,
+ * 학부생 전용 프로그램은 대학원생의 목록에 넣지 않는다 (PRODUCT_TASTE). 직접 연 상세·저장한 것은 그대로 보인다
+ */
 export const audienceFits = (u: Pick<User, 'affiliation'>, o: Pick<Opportunity, 'title' | 'tags' | 'eligibility' | 'description'>) => {
   const a = audienceOf(o);
   return a === 'all' || (a === 'grad') === isGradStudent(u);

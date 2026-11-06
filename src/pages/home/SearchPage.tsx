@@ -5,7 +5,7 @@ import { lang } from '@core/i18n';
 import { BackHeader, PageTitle, SearchField, SegTabs, RowCard, SectionHeader, CategoryGrid, CategoryTile, CATEGORY_TONE, EmptyCard } from '@/components/ha';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
-import { campusDate } from '@core/lib/listings';
+import { audienceFits, campusDate } from '@core/lib/listings';
 import { campusToday } from '@core/lib/withpeople';
 import { formatDate, formatTime } from '@core/lib/format';
 import { ORG_TYPE_LABELS } from '@core/lib/labels';
@@ -48,7 +48,7 @@ export function SearchPage() {
     return {
       people: v.visibleUsers.filter((u) => matchesPerson(u, norm)).slice(0, 30),
       meetups: studentMeetups(v.visibleActivities, v.me, parts).filter((a) => has(a.title, a.description, a.place?.name)).slice(0, 20),
-      events: opps.filter((o) => o.type === 'event' && !!o.date && campusDate(o.date) >= today && (!o.schoolId || o.schoolId === school) && has(o.title, o.host, o.place?.name, ...o.tags))
+      events: opps.filter((o) => o.type === 'event' && !!o.date && campusDate(o.date) >= today && (!o.schoolId || o.schoolId === school) && audienceFits(v.me, o) && has(o.title, o.host, o.place?.name, ...o.tags))
         .sort((a, b) => `${campusDate(a.date!)}${a.startTime}`.localeCompare(`${campusDate(b.date!)}${b.startTime}`)).slice(0, 20),
       clubs: orgs.filter((o) => (!o.schoolId || o.schoolId === school) && has(o.name, o.description)).slice(0, 20),
     };

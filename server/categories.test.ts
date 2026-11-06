@@ -8,7 +8,7 @@ import assert from 'node:assert/strict';
 import type { Snapshot } from '@core/api/types';
 import type { Opportunity, Organization } from '@core/types';
 import * as seed from '@core/data/seed.en';
-import { categoriesOf, eventKindsOf, inCategory, isOfType, listingsOfOrg, locationOf, orgLinker, orgOfListing, regionsOf, fieldOf, listingField, audienceOf } from '@core/lib/listings';
+import { categoriesOf, eventKindsOf, inCategory, isOfType, listingsOfOrg, locationOf, orgLinker, orgOfListing, regionsOf, fieldOf, listingField, audienceOf, audienceFits } from '@core/lib/listings';
 import { coursesFromCatalog, clashesWith, hasCatalogCourse } from '@core/lib/timetable';
 import { forYou } from '@core/lib/foryou';
 import { recommendFor, searchListings } from './ai-search';
@@ -205,4 +205,22 @@ test('audience: law-student and MBA listings are for graduate students', () => {
   assert.equal(audienceOf(o('Law Student Volunteer')), 'grad');
   assert.equal(audienceOf(o('MBA Summer Intern, Strategy')), 'grad');
   assert.equal(audienceOf(o('Policy Intern')), 'all');
+});
+
+test('audience: grad-only events and programs stay off an undergrad’s lists; undergrad-only programs off a grad student’s', () => {
+  const o = (title: string, eligibility = '') => ({ title, tags: [], eligibility, description: '' });
+  const undergrad = { ...me, affiliation: { ...me.affiliation, role: 'undergraduate' } } as typeof me;
+  const grad = { ...me, affiliation: { ...me.affiliation, role: 'graduate' } } as typeof me;
+  for (const title of ['Grad Student Appreciation Party', 'Graduate Students Happy Hour', 'Grads only: thesis writing night']) {
+    assert.equal(audienceOf(o(title)), 'grad', title);
+    assert.equal(audienceFits(undergrad, o(title)), false, title);
+    assert.equal(audienceFits(grad, o(title)), true, title);
+  }
+  // undergrad-only stays away from grad students (existing rule)
+  assert.equal(audienceFits(grad, o('Undergraduate Research Apprentice Program')), false);
+  assert.equal(audienceFits(undergrad, o('Undergraduate Research Apprentice Program')), true);
+  // open to both, or a word that only looks like it
+  assert.equal(audienceOf(o('Undergrad and grad students welcome: game night')), 'all');
+  assert.equal(audienceOf(o('Graduation photo booth')), 'all');
+  assert.equal(audienceOf(o('Upgrade students’ resumes workshop')), 'all');
 });

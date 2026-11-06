@@ -17,15 +17,11 @@ import { shareOrCopy } from '@/lib/native';
 
 const en = lang === 'en';
 
-/** 대학원생 행사 제목 ("Grad Student Appreciation Party") — 학부생의 첫 화면에는 넣지 않는다 */
-const GRAD_ONLY = /\bgrad(uate)?\s+students?\b/i;
-
 /** 이번 주 같이 갈 수 있는 실제 캠퍼스 행사 — 누가 가는 것 먼저, 그다음 무료 음식·소셜, 그다음 빠른 순 */
 export function useCampusWeek(): Opportunity[] {
   const v = useViewer();
   const opps = useAppStore((s) => s.opportunities);
   const me = v.me;
-  const undergrad = me.affiliation.type === 'university' && me.affiliation.role === 'undergraduate';
   return useMemo(() => {
     const school = me.affiliation.type === 'university' ? me.affiliation.schoolId : '';
     const today = campusToday();
@@ -34,9 +30,9 @@ export function useCampusWeek(): Opportunity[] {
     const score = (o: Opportunity) => goingPeople(v.snap, me, o.id).length * 10 + (has(o, 'free food') || has(o, 'social') ? 3 : 0);
     const when = (o: Opportunity) => `${campusDate(o.date!)}${o.startTime}`;
     return opps
-      .filter((o) => (!o.schoolId || o.schoolId === school) && canGoTogether(o) && campusDate(o.date!) <= weekEnd && audienceFits(me, o) && !(undergrad && GRAD_ONLY.test(o.title)))
+      .filter((o) => (!o.schoolId || o.schoolId === school) && canGoTogether(o) && campusDate(o.date!) <= weekEnd && audienceFits(me, o))
       .sort((a, b) => score(b) - score(a) || when(a).localeCompare(when(b)));
-  }, [opps, v.snap, me, undergrad]);
+  }, [opps, v.snap, me]);
 }
 
 /** 행사 한 줄 + Go together (시트가 같이 가기 모임에 넣고 채팅을 연다) */

@@ -5,7 +5,7 @@
  */
 import { lang } from '@core/i18n';
 import type { Activity, Opportunity, Organization } from '@core/types';
-import { audienceOf, badgeOf, campusDate, categoriesOf, eventKindsOf, locationOf, type Category, type EventKind } from '@core/lib/listings';
+import { badgeOf, campusDate, categoriesOf, eventKindsOf, locationOf, type Category, type EventKind } from '@core/lib/listings';
 import { daysUntil } from '@core/lib/recommend';
 import { formatDate, formatTime } from '@core/lib/format';
 import { ORG_TYPE_LABELS } from '@core/lib/labels';
@@ -57,8 +57,6 @@ export const clubMatches = (o: Organization, q: string) => matches([o.name, o.de
 
 /** still open for this person — same rule as Home's For you (deadline not passed, or the event day not passed) */
 export const isOpen = (o: Opportunity) => (o.deadline ? daysUntil(o.deadline) >= 0 : !o.date || daysUntil(o.date) >= 0);
-/** undergrad-only programs are not shown to grad students and the other way round (PRODUCT_TASTE) */
-export const fitsAudience = (o: Opportunity, grad: boolean) => audienceOf(o) !== (grad ? 'undergrad' : 'grad');
 
 /** the one-word badge on a card (PDF: "Campus event", "Internship", "Research", "Hackathon") */
 const BADGE: Record<Opportunity['type'], [string, string]> = {

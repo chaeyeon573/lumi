@@ -7,7 +7,7 @@ import { useAppStore } from '@core/store/useAppStore';
 import { useViewer } from '@/hooks/useViewer';
 import { api } from '@core/api';
 import { scoreListings } from '@core/lib/foryou';
-import { eventKindsOf } from '@core/lib/listings';
+import { audienceFits, eventKindsOf } from '@core/lib/listings';
 import { todayISO } from '@core/lib/format';
 import { nowMin, toMin } from '@core/lib/timetable';
 import { Chip, ChipRow, EmptyCard, EmptyState } from '@/components/ha';
@@ -55,7 +55,7 @@ export function EventsList() {
   useEffect(() => setShown(PAGE), [q, sort, kind]);
   const mySchool = me.affiliation.type === 'university' ? me.affiliation.schoolId : '';
 
-  const events = useMemo(() => opps.filter((o) => o.type === 'event' && (!o.schoolId || o.schoolId === mySchool) && isOpen(o)), [opps, mySchool]);
+  const events = useMemo(() => opps.filter((o) => o.type === 'event' && (!o.schoolId || o.schoolId === mySchool) && isOpen(o) && audienceFits(me, o)), [opps, mySchool, me]);
   const scores = useMemo(() => scoreListings({ opportunities: opps, opportunityIntents: intents, organizations: orgs, relationships, schools }, me, events), [opps, intents, orgs, relationships, schools, me, events]);
   const today = todayISO();
   const clubEvents = useMemo(() => v.visibleActivities

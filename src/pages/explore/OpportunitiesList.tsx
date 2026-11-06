@@ -5,10 +5,10 @@ import { lang } from '@core/i18n';
 import { useAppStore } from '@core/store/useAppStore';
 import { useViewer } from '@/hooks/useViewer';
 import { scoreListings } from '@core/lib/foryou';
-import { categoriesOf, isGradStudent, spreadByHost } from '@core/lib/listings';
+import { audienceFits, categoriesOf, spreadByHost } from '@core/lib/listings';
 import { Chip, ChipRow, EmptyCard, EmptyState } from '@/components/ha';
 import { ExploreControls, ListingItem, MoreButton } from './ExploreItems';
-import { fitsAudience, inOppType, isOpen, listingMatches, OPP_TYPES, PAGE, sortListings } from './exploreData';
+import { inOppType, isOpen, listingMatches, OPP_TYPES, PAGE, sortListings } from './exploreData';
 import { useExploreParams, useSaved } from './EventsList';
 
 const en = lang === 'en';
@@ -30,12 +30,10 @@ export function OpportunitiesList() {
   const [shown, setShown] = useState(PAGE);
   useEffect(() => setShown(PAGE), [q, sort, type]);
   const mySchool = me.affiliation.type === 'university' ? me.affiliation.schoolId : '';
-  const grad = isGradStudent(me);
 
-  // open listings for my school or everyone; research / scholarships only for my level (undergrad vs grad)
+  // open listings for my school or everyone, only for my level (undergrad vs grad — @core/lib/listings audienceFits)
   const base = useMemo(() => opps.filter((o) => o.type !== 'event' && o.type !== 'activity' && o.type !== 'club'
-    && (!o.schoolId || o.schoolId === mySchool) && isOpen(o)
-    && (!(categoriesOf(o).includes('research') || categoriesOf(o).includes('scholarship')) || fitsAudience(o, grad))), [opps, mySchool, grad]);
+    && (!o.schoolId || o.schoolId === mySchool) && isOpen(o) && audienceFits(me, o)), [opps, mySchool, me]);
   const scores = useMemo(() => scoreListings({ opportunities: opps, opportunityIntents: intents, organizations: orgs, relationships, schools }, me, base), [opps, intents, orgs, relationships, schools, me, base]);
   const counts = useMemo(() => { const c = new Map<string, number>(); for (const o of base) for (const k of categoriesOf(o)) c.set(k, (c.get(k) ?? 0) + 1); return c; }, [base]);
   const savedCount = useMemo(() => base.filter((o) => saved.ids.has(o.id)).length, [base, saved.ids]);

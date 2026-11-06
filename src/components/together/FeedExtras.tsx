@@ -8,7 +8,7 @@ import { useViewer } from '@/hooks/useViewer';
 import { api } from '@core/api';
 import { DAILY_QUESTIONS } from '@core/lib/labels';
 import { todayISO } from '@core/lib/format';
-import { badgeOf, campusDate } from '@core/lib/listings';
+import { audienceFits, badgeOf, campusDate } from '@core/lib/listings';
 import { canGoTogether, campusToday, goingPeople, percentages } from '@core/lib/withpeople';
 import { cn } from '@core/lib/cn';
 import { PeopleLine } from './PeopleLine';
@@ -121,7 +121,7 @@ export function MeanwhileThisWeek() {
     const school = v.me.affiliation.type === 'university' ? v.me.affiliation.schoolId : '';
     const today = campusToday();
     const weekEnd = new Date(Date.parse(`${today}T12:00:00Z`) + 7 * 86400000).toISOString().slice(0, 10);
-    const list = opps.filter((o) => (!o.schoolId || o.schoolId === school) && canGoTogether(o) && campusDate(o.date!) <= weekEnd);
+    const list = opps.filter((o) => (!o.schoolId || o.schoolId === school) && canGoTogether(o) && campusDate(o.date!) <= weekEnd && audienceFits(v.me, o));
     const score = (o: (typeof list)[number]) => goingPeople(v.snap, v.me, o.id).length * 10 + (o.tags.some((tg) => tg.toLowerCase() === 'free food') ? 3 : 0);
     return list.sort((a, b) => score(b) - score(a) || `${campusDate(a.date!)}${a.startTime}`.localeCompare(`${campusDate(b.date!)}${b.startTime}`))[0];
   }, [opps, v]);

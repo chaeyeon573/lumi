@@ -9,7 +9,7 @@ import { useViewer } from '@/hooks/useViewer';
 import { publicLinks, recruitmentLabel } from '@core/lib/orglinks';
 import { orgJoinState, type OrgJoin } from '@core/lib/orgjoin';
 import { isSampleOrg } from '@core/lib/sampleorgs';
-import { listingsOfOrg } from '@core/lib/listings';
+import { audienceFits, listingsOfOrg } from '@core/lib/listings';
 import { daysUntil } from '@core/lib/recommend';
 import { todayISO } from '@core/lib/format';
 import { cn } from '@core/lib/cn';
@@ -213,7 +213,7 @@ function Events({ org, isAdmin, following }: { org: Organization; isAdmin: boole
   const saved = useSaved();
   const today = todayISO();
   const acts = useMemo(() => v.visibleActivities.filter((a) => a.orgId === org.id && a.date >= today).sort((a, b) => `${a.date} ${a.startTime}`.localeCompare(`${b.date} ${b.startTime}`)), [v, org.id, today]);
-  const hosted = useMemo(() => listingsOfOrg(org, opps), [org, opps]);
+  const hosted = useMemo(() => listingsOfOrg(org, opps).filter((o) => audienceFits(v.me, o)), [org, opps, v.me]);
   const listed = hosted.filter((o) => o.type === 'event' && o.date && daysUntil(o.date) >= 0).sort((a, b) => `${a.date} ${a.startTime ?? ''}`.localeCompare(`${b.date} ${b.startTime ?? ''}`));
   const others = hosted.filter((o) => o.type !== 'event' && (o.deadline ? daysUntil(o.deadline) >= 0 : true));
   const create = () => nav(`/create/activity?kind=org_event&event=1&org=${org.id}`);
