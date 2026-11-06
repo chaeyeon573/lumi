@@ -19,7 +19,7 @@ import { createClassesEngine } from '../classes';
 import { birthYearProblem, searchOrgs } from '@core/lib/signup';
 import { classRostersFor, codeSlug } from '@core/lib/classmates';
 import { createClassQa, type ClassQuestion } from '@core/lib/classqa';
-import { createCourseReviews, type CourseReview, type ExamInfo } from '@core/lib/coursereviews';
+import { createCourseReviews, type CourseReview, type ExamInfo, type PastClass } from '@core/lib/coursereviews';
 import { catalogCourses, searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm, browseCatalog, findCatalogRef, courseTerm } from '@core/data/catalog/courses';
 import { lumiCounts } from '@core/lib/coursefinder';
 import { publicExplore } from '@core/lib/publicexplore';
@@ -61,6 +61,7 @@ const qa = <T>(fn: () => T) => request(fn);
 /** 수업 리뷰 · 시험 정보 — 목업은 이 탭이 열려 있는 동안만 (서버는 server/coursereviews.ts) */
 const mockReviews: CourseReview[] = [];
 const mockExams: ExamInfo[] = [];
+const mockPast = new Map<string, PastClass[]>();
 const upsert = <X extends { id: string }>(list: X[], x: X) => { const i = list.findIndex((y) => y.id === x.id); if (i >= 0) list[i] = x; else list.push(x); };
 const cut = <X extends { id: string }>(list: X[], id: string) => { const i = list.findIndex((y) => y.id === id); if (i >= 0) list.splice(i, 1); };
 const courseReviews = createCourseReviews({
@@ -69,6 +70,8 @@ const courseReviews = createCourseReviews({
   putExam: (x) => upsert(mockExams, x), dropExam: (id) => cut(mockExams, id),
   user: (id) => db.users.find((u) => u.id === id),
   instructors: (schoolId, slug, term) => catalogCourses.filter((c) => c.schoolId === schoolId && c.code.toLowerCase().replace(/[^a-z0-9]/g, '') === slug && c.term === term && c.instructor).map((c) => c.instructor!),
+  pastClasses: (id) => mockPast.get(id) ?? [],
+  putPastClasses: (id, list) => { mockPast.set(id, list); },
   uid: (prefix) => `${prefix}_${Math.random().toString(36).slice(2, 10)}`,
 });
 
@@ -284,6 +287,9 @@ export const mockApi: AroundUApi = {
     removeExam: (id) => request(() => courseReviews.removeExam(getSession() ?? '', id)),
     instructors: (code, term) => request(() => ({ instructors: courseReviews.instructorsFor(getSession() ?? '', code, term) })),
     term: (term) => request(() => courseReviews.termPrompt(getSession() ?? '', term)),
+    pastClasses: () => request(() => courseReviews.pastClasses(getSession() ?? '')),
+    addPastClass: (input) => request(() => courseReviews.addPastClass(getSession() ?? '', input)),
+    removePastClass: (code, term) => request(() => courseReviews.removePastClass(getSession() ?? '', code, term)),
     stars: (codes) => request(() => { const me = db.users.find((u) => u.id === getSession()); const school = me?.affiliation.type === 'university' ? me.affiliation.schoolId ?? '' : ''; return { stars: school ? courseReviews.stars(school, codes) : {} }; }),
   },
 

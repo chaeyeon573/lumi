@@ -1,8 +1,11 @@
 /**
- * 리뷰 쓰기 폼 — 필수: 별(1–5) + 글(50–2000자). 선택: 난이도 · 주당 시간 · 성적 · 출석 · 녹화 · 태그 · 강사(그 학기 강사 중에서).
- * 쓰기 화면(/reviews/write)과 학기 말 단계 화면(/reviews/term)이 같이 쓴다. 검사·거르기는 서버가 한다 — 거절 이유를 그대로 보여 준다.
+ * 리뷰 쓰기 폼 — owner 2026-11-06 "글이 필수는 아니게!!": 필수는 별 하나. 10초 안에: 별 → 칩 몇 개 → Post.
+ * 순서: Overall ★ · Tags · Hours per week · Difficulty · (Grading · Attendance · Recorded · Instructor) · "Anything else? (optional)" 글.
+ * quick(학기 말 단계 화면): 별 · 태그 · 시간만 보이고 More details · Add a note 는 접혀 있다.
+ * 글을 쓰면 10–2000자 + 서버 거르기 (거절 이유를 그대로 보여 준다).
  */
 import { useState, type ReactNode } from 'react';
+import { ChevronDown } from 'lucide-react';
 import {
   GRADINGS, GRADING_LABEL, REVIEW_COPY, REVIEW_LIMITS, REVIEW_TAGS, TAG_LABEL, WORKLOADS, WORKLOAD_LABEL,
   type CourseReviewsView, type Grading, type MyReview, type ReviewTag, type Workload,
@@ -15,9 +18,9 @@ import { StarPicker } from './ReviewParts';
 
 type YesNo = 'yes' | 'no';
 
-export function ReviewForm({ code, term, existing, instructors, submitLabel, onSaved, extra }: {
+export function ReviewForm({ code, term, existing, instructors, submitLabel, onSaved, extra, quick }: {
   code: string; term: string; existing?: MyReview; instructors: string[]; submitLabel?: string;
-  onSaved: (v: CourseReviewsView) => void; extra?: ReactNode;
+  onSaved: (v: CourseReviewsView) => void; extra?: ReactNode; quick?: boolean;
 }) {
   const toast = useAppStore((s) => s.showToast);
   const [rating, setRating] = useState(existing?.rating ?? 0);
@@ -29,18 +32,21 @@ export function ReviewForm({ code, term, existing, instructors, submitLabel, onS
   const [recorded, setRecorded] = useState<YesNo | undefined>(existing?.recorded === undefined ? undefined : existing.recorded ? 'yes' : 'no');
   const [tags, setTags] = useState<ReviewTag[]>(existing?.tags ?? []);
   const [instructor, setInstructor] = useState<string | undefined>(existing?.instructor);
+  const [more, setMore] = useState(!quick);
+  const [note, setNote] = useState(!quick || !!existing?.text);
   const [busy, setBusy] = useState(false);
   const len = text.trim().length;
-  const ready = rating > 0 && len >= REVIEW_LIMITS.textMin && len <= REVIEW_LIMITS.textMax;
+  const textOk = len === 0 || (len >= REVIEW_LIMITS.textMin && len <= REVIEW_LIMITS.textMax);
+  const ready = rating > 0 && textOk;
 
   const submit = async () => {
     setBusy(true);
     try {
       const v = await api.courseReviews.save({
-        code, term, rating, text, difficulty: difficulty ?? null, workload: workload ?? null, grading: grading ?? null,
+        code, term, rating, text: text.trim() || null, difficulty: difficulty ?? null, workload: workload ?? null, grading: grading ?? null,
         attendance: attendance ?? null, recorded: recorded === undefined ? null : recorded === 'yes', tags, instructor: instructor ?? null,
       });
-      toast(existing ? 'Review updated' : 'Review posted — all reviews are unlocked', 'success');
+      toast(existing ? 'Review updated' : 'Review posted', 'success');
       onSaved(v);
     } catch (e) { toast((e as Error).message, 'error'); } finally { setBusy(false); }
   };
@@ -52,30 +58,43 @@ export function ReviewForm({ code, term, existing, instructors, submitLabel, onS
         <FormField label="Overall">
           <StarPicker value={rating} onChange={setRating} />
         </FormField>
-        <FormField label="Your review" hint={<span className={cn(len > 0 && len < REVIEW_LIMITS.textMin && 'text-sel-fg')}>{len < REVIEW_LIMITS.textMin ? `At least ${REVIEW_LIMITS.textMin} characters · ${len}` : `${len} / ${REVIEW_LIMITS.textMax}`}</span>}>
-          <TextArea value={text} maxLength={REVIEW_LIMITS.textMax} onChange={(e) => setText(e.target.value)} placeholder={REVIEW_COPY.placeholder} className="min-h-[150px]" />
-        </FormField>
-        <InfoNote className="-mt-3">{REVIEW_COPY.rules}</InfoNote>
-
-        <div className="pt-1">
-          <div className="text-[15px] font-bold">More details</div>
-          <div className="text-[12.5px] text-ink-3 mt-0.5">Optional</div>
-        </div>
-        <Pick label="Difficulty" value={difficulty} onChange={setDifficulty} options={[1, 2, 3, 4, 5].map((n) => ({ value: n, label: n === 1 ? '1 Easy' : n === 5 ? '5 Hard' : String(n) }))} />
-        <Pick label="Hours per week" value={workload} onChange={setWorkload} options={WORKLOADS.map((w) => ({ value: w, label: WORKLOAD_LABEL[w] }))} />
-        <Pick label="Grading" value={grading} onChange={setGrading} options={GRADINGS.map((g) => ({ value: g, label: GRADING_LABEL[g] }))} />
-        <Pick label="Attendance" value={attendance} onChange={setAttendance} options={[{ value: 'taken' as const, label: 'Taken' }, { value: 'not_taken' as const, label: 'Not taken' }]} />
-        <Pick label="Lectures recorded" value={recorded} onChange={setRecorded} options={[{ value: 'yes' as const, label: 'Yes' }, { value: 'no' as const, label: 'No' }]} />
-        <FormField label="Tags" hint={`Up to ${REVIEW_LIMITS.maxTags}`}>
+        <FormField label="What was it like?" hint={`Optional · up to ${REVIEW_LIMITS.maxTags}`}>
           <ChipRow wrap>{REVIEW_TAGS.map((t) => <Chip key={t} size="sm" active={tags.includes(t)} onClick={() => toggleTag(t)}>{TAG_LABEL[t]}</Chip>)}</ChipRow>
         </FormField>
-        {instructors.length > 0 && <Pick label="Instructor" value={instructor} onChange={setInstructor} options={instructors.map((i) => ({ value: i, label: i }))} />}
+        <Pick label="Hours per week" value={workload} onChange={setWorkload} options={WORKLOADS.map((w) => ({ value: w, label: WORKLOAD_LABEL[w] }))} />
+
+        {more ? (
+          <>
+            <Pick label="Difficulty" value={difficulty} onChange={setDifficulty} options={[1, 2, 3, 4, 5].map((n) => ({ value: n, label: n === 1 ? '1 Easy' : n === 5 ? '5 Hard' : String(n) }))} />
+            <Pick label="Grading" value={grading} onChange={setGrading} options={GRADINGS.map((g) => ({ value: g, label: GRADING_LABEL[g] }))} />
+            <Pick label="Attendance" value={attendance} onChange={setAttendance} options={[{ value: 'taken' as const, label: 'Taken' }, { value: 'not_taken' as const, label: 'Not taken' }]} />
+            <Pick label="Lectures recorded" value={recorded} onChange={setRecorded} options={[{ value: 'yes' as const, label: 'Yes' }, { value: 'no' as const, label: 'No' }]} />
+            {instructors.length > 0 && <Pick label="Instructor" value={instructor} onChange={setInstructor} options={instructors.map((i) => ({ value: i, label: i }))} />}
+          </>
+        ) : <Expander label="More details" onClick={() => setMore(true)} />}
+
+        {note ? (
+          <>
+            <FormField label={REVIEW_COPY.textLabel} hint={len > 0 && <span className={cn(len < REVIEW_LIMITS.textMin && 'text-sel-fg')}>{len < REVIEW_LIMITS.textMin ? `Add a few more words · ${len}` : `${len} / ${REVIEW_LIMITS.textMax}`}</span>}>
+              <TextArea value={text} maxLength={REVIEW_LIMITS.textMax} onChange={(e) => setText(e.target.value)} placeholder={REVIEW_COPY.placeholder} className="min-h-[110px]" autoFocus={quick} />
+            </FormField>
+            <InfoNote className="-mt-3">{REVIEW_COPY.rules}</InfoNote>
+          </>
+        ) : <Expander label="Add a note" onClick={() => setNote(true)} />}
         {extra}
       </div>
       <BottomCTA>
         <Btn full size="lg" disabled={!ready} loading={busy} onClick={submit}>{submitLabel ?? (existing ? 'Save changes' : 'Post review')}</Btn>
       </BottomCTA>
     </>
+  );
+}
+
+function Expander({ label, onClick }: { label: string; onClick: () => void }) {
+  return (
+    <button type="button" onClick={onClick} className="flex items-center gap-1.5 text-[14px] font-semibold text-sel-fg press">
+      {label}<ChevronDown size={16} />
+    </button>
   );
 }
 

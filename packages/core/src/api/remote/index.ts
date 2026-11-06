@@ -222,6 +222,9 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
       instructors: (code, term) => call('reviews/instructors', { code, term }),
       term: (term) => call('reviews/term', { term }),
       stars: (codes) => call('reviews/stars', { codes }),
+      pastClasses: () => call('reviews/past', {}),
+      addPastClass: (input) => call('reviews/past/add', input),
+      removePastClass: (code, term) => call('reviews/past/remove', { code, term }),
     },
 
     plus: {

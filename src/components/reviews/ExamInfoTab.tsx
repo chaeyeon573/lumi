@@ -11,7 +11,7 @@ import { api } from '@core/api';
 import { Btn, EmptyState, ErrorScreen, InfoNote, LoadingCards, cardCls } from '@/components/ha';
 import { ReportSheet } from '@/components/cards/ReportSheet';
 import { cn } from '@core/lib/cn';
-import { ExamSummaryCard, ExamTipCard, LockedCard, examLink } from './ReviewParts';
+import { ExamSummaryCard, ExamTipCard, InviteCard, LockedCard, examLink } from './ReviewParts';
 
 export function ExamInfoTab({ code, onAsk }: { code: string; onAsk?: () => void }) {
   const nav = useNavigate();
@@ -31,11 +31,11 @@ export function ExamInfoTab({ code, onAsk }: { code: string; onAsk?: () => void 
 
   return (
     <div className="space-y-4">
-      {v.total === 0 && !v.mine.length
-        ? <EmptyState icon={<ClipboardList size={28} />} tone="peach" className="pt-4" title="No exam info yet" sub={v.write.ok ? 'Share the format and how you prepared.' : v.write.message} />
-        : <ExamSummaryCard s={v.summary} />}
+      {v.total === 0 && !v.mine.length && !(v.invite && (writeTerm || (!v.write.ok && v.write.reason === 'not_enrolled')))
+        ? <EmptyState icon={<ClipboardList size={28} />} tone="peach" className="pt-4" title="No exam info yet" sub={v.write.ok || v.write.reason === 'not_enrolled' ? undefined : v.write.message} />
+        : v.total > 0 ? <ExamSummaryCard s={v.summary} /> : null}
 
-      {writeTerm && !mineNow && !(v.locked && v.unlock?.reviewable.length) && <Btn full variant="outline" icon={<ClipboardList size={17} />} onClick={() => nav(examLink(v.course.code, writeTerm))}>Add exam info</Btn>}
+      {writeTerm && !mineNow && !v.invite && !(v.locked && v.unlock?.reviewable.length) && <Btn full variant="outline" icon={<ClipboardList size={17} />} onClick={() => nav(examLink(v.course.code, writeTerm))}>Add exam info</Btn>}
       {v.mine.map((m) => (
         <button key={m.id} type="button" onClick={() => nav(examLink(m.code, m.term))} className={cn(cardCls, 'w-full p-3.5 flex items-center gap-3 text-left press')}>
           <span className="flex-1 min-w-0 text-[13.5px] font-semibold">Your exam info · {m.term}{m.status === 'checking' && <span className="text-ink-3 font-medium"> · Being checked</span>}</span>
@@ -43,6 +43,8 @@ export function ExamInfoTab({ code, onAsk }: { code: string; onAsk?: () => void 
         </button>
       ))}
 
+      {v.invite && <InviteCard title={`Be one of the first to share ${v.course.code} exam info`} code={v.course.code} label="Add" writeTerm={writeTerm && !mineNow ? writeTerm : null}
+        canAddPast={!v.write.ok && v.write.reason === 'not_enrolled'} onWrite={(t) => nav(examLink(v.course.code, t))} />}
       {v.locked && v.unlock && <LockedCard unlock={v.unlock} onAsk={onAsk} title="Write one review to unlock all exam info" />}
 
       {v.tips.length > 0 && (

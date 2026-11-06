@@ -12,6 +12,10 @@
  *   POST /api/reviews/instructors   { code, term }                → { instructors } (그 학기 학교 수업 목록 + 내 시간표)
  *   POST /api/reviews/term          { term }                      → TermPromptView (학기 말 안내의 단계 화면)
  *   POST /api/reviews/stars         { codes? }                    → { stars: { [slug]: { avg, count } } } (리뷰 3개 이상인 수업만)
+ *   POST /api/reviews/past          {}                            → PastClassesView (리뷰용 지난 수업 — 시간표·같은 수업 학생·수에는 없다)
+ *   POST /api/reviews/past/add      { code, term, name? }         → PastClassesView (최근 4학기, 인증 학생, 하루 10개 · 모두 30개)
+ *   POST /api/reviews/past/remove   { code, term }                → PastClassesView
+ *   GET  /admin/reviews · GET /api/admin/reviews/metrics (x-admin-key) → 학기별 수: 안내 · 14일 안에 쓴 학생 · 리뷰 · 글 % · 3개 이상 수업
  *
  * 저장: store 문서 묶음 courseReviews · examInfos · reviewPrompts (스냅샷 밖 — 모든 사람의 bootstrap 에 싣지 않는다).
  * 글쓴이 id 는 이 파일과 /admin/reports 에만 있다. 화면에 가는 모양은 @core/lib/coursereviews 의 …View 뿐.
@@ -32,19 +36,25 @@ import type { CatalogCourse, Patch, Snapshot } from '@core/api/types';
 import type { ID, Notification, User } from '@core/types';
 import {
   createCourseReviews, promptBody, ReviewError, verifiedStudent,
-  type CourseReview, type ExamInfo, type ExamInput, type ReviewInput,
+  type CourseReview, type ExamInfo, type ExamInput, type PastClass, type ReviewInput,
 } from '@core/lib/coursereviews';
 import { codeSlug, enrollments, normalizeCode, schoolOf } from '@core/lib/classmates';
 import { addDays, campusDate } from '@core/lib/academic';
-import { normalizeTermLabel } from '@core/lib/terms';
+import { normalizeTermLabel, termOrder as termOrderOf } from '@core/lib/terms';
 import { TERM_DATES, type TermDates } from '@core/data/termdates';
 import { uid } from '@core/lib/format';
 import type { Store } from './store';
-import { AUTO_HIDE_REPORTS, fileReport, moderationState, realReporters, registerReportTarget, type TargetInfo } from './moderation';
+import { AUTO_HIDE_REPORTS, adminName, checkAdmin, fileReport, ModerationError, moderationState, realReporters, registerReportTarget, type TargetInfo } from './moderation';
+import { reviewsAdminPageHtml } from './coursereviews-page';
 
 export const COURSE_REVIEWS = 'courseReviews';
 export const EXAM_INFOS = 'examInfos';
 export const REVIEW_PROMPTS = 'reviewPrompts';
+/** 리뷰용으로 넣은 지난 수업 — 사람마다 문서 하나 { id: userId, classes }. 시간표(user.timetable)가 아니다 */
+export const REVIEW_CLASSES = 'reviewClasses';
+/** 측정: 안내를 받고 며칠 안에 썼는지 */
+export const METRIC_WINDOW_DAYS = 14;
+interface PastClassesDoc { id: ID; classes: PastClass[] }
 /** 마지막 수업일 뒤 며칠까지 첫 안내를 보내나 (그 뒤에 처음 시간표를 넣은 사람에게는 보내지 않는다) */
 export const PROMPT_WINDOW_DAYS = 60;
 export const REMINDER_AFTER_DAYS = 7;
@@ -74,6 +84,7 @@ export function createCourseReviewsService(deps: CourseReviewsDeps) {
   const reviews = new Map<ID, CourseReview>();
   const exams = new Map<ID, ExamInfo>();
   const prompts = new Map<string, ReviewPromptDoc>();
+  const past = new Map<ID, PastClass[]>();
   const now = () => deps.now?.() ?? new Date();
   const table = () => deps.termDates ?? TERM_DATES;
   const userOf = (id: ID) => { const u = deps.db().users.find((x) => x.id === id); return u && deps.sharedLogins?.has(id) ? { ...u, sample: true } : u; };
@@ -97,6 +108,11 @@ export function createCourseReviewsService(deps: CourseReviewsDeps) {
       const filed = fileReport(deps.db() as Snapshot, 'system', type, item.id, `Auto-filter: ${reason} — hidden until an admin checks it`, now());
       if (filed.created) { deps.push?.(filed.patch); console.log(`[reviews] held ${type} ${item.id} (${reason}) → ${filed.report.id}`); }
     },
+    pastClasses: (userId) => past.get(userId) ?? [],
+    putPastClasses(userId, list) {
+      if (list.length) { past.set(userId, list); save(deps.store, REVIEW_CLASSES, { id: userId, classes: list } as PastClassesDoc); }
+      else { past.delete(userId); drop(deps.store, REVIEW_CLASSES, userId); }
+    },
     uid,
     now,
     termDates: deps.termDates,
@@ -109,7 +125,7 @@ export function createCourseReviewsService(deps: CourseReviewsDeps) {
     locate(id: ID): TargetInfo {
       const x = type === 'review' ? reviews.get(id) : exams.get(id);
       if (!x) return { exists: false, excerpt: '' };
-      const body = 'rating' in x ? `${x.rating}★ — ${x.text}` : `exam info — ${x.midterms} midterm(s), final ${x.final ? 'yes' : 'no'}${x.tip ? ` — ${x.tip}` : ''}`;
+      const body = 'rating' in x ? `${x.rating}★${x.tags.length ? ` [${x.tags.join(', ')}]` : ''}${x.text ? ` — ${x.text}` : ' (no text)'}` : `exam info — ${x.midterms} midterm(s), final ${x.final ? 'yes' : 'no'}${x.tip ? ` — ${x.tip}` : ''}`;
       return { exists: true, kind: type, ownerId: x.authorId, excerpt: clip(`${x.code} · ${x.term}${x.held ? ` [held: ${x.held.reason}]` : ''} · ${body}`.replace(/\s+/g, ' '), 400), state: stateOf(type, x) };
     },
     remove(id: ID) {
@@ -187,11 +203,14 @@ export function createCourseReviewsService(deps: CourseReviewsDeps) {
       for (const r of await deps.store.listDocs<CourseReview>(COURSE_REVIEWS)) reviews.set(r.id, r);
       for (const x of await deps.store.listDocs<ExamInfo>(EXAM_INFOS)) exams.set(x.id, x);
       for (const p of await deps.store.listDocs<ReviewPromptDoc>(REVIEW_PROMPTS)) prompts.set(p.id, p);
+      past.clear();
+      for (const d of await deps.store.listDocs<PastClassesDoc>(REVIEW_CLASSES)) if (d.classes?.length) past.set(d.id, d.classes);
       console.log(`[reviews] ${reviews.size} course reviews, ${exams.size} exam infos, ${prompts.size} term prompts`);
     },
     /** 계정 삭제 — 리뷰·시험 정보·도움돼요 + 안내 기록 */
     forgetUser(userId: ID) {
       const out = engine.forgetUser(userId);
+      if (past.delete(userId)) drop(deps.store, REVIEW_CLASSES, userId);
       for (const p of [...prompts.values()]) if (p.userId === userId) { prompts.delete(p.id); drop(deps.store, REVIEW_PROMPTS, p.id); }
       return out;
     },
@@ -200,13 +219,43 @@ export function createCourseReviewsService(deps: CourseReviewsDeps) {
       return {
         courseReviews: [...reviews.values()].filter((r) => r.authorId === userId).map(({ authorId: _a, helpful, ...r }) => ({ ...r, helpful: helpful.length })),
         examInfos: [...exams.values()].filter((x) => x.authorId === userId).map(({ authorId: _a, ...x }) => x),
+        pastClassesForReview: past.get(userId) ?? [],
       };
     },
+    /**
+     * /admin/reviews — 학기별 수만 (글쓴이 정보 없음): 안내 받은 학생 · 14일 안에 1개 이상 쓴 학생(수·%) · 리뷰 수 ·
+     * 글이 있는 리뷰 % · 리뷰 3개 이상인 수업 수. 관리자가 지운 리뷰는 없으니 세지 않는다. 숨긴 것도 리뷰로 센다 (쓴 것)
+     */
+    metrics(): ReviewMetrics {
+      const all = [...reviews.values()];
+      const terms = new Set<string>([...all.map((r) => r.term), ...[...prompts.values()].filter((p) => p.sentAt).map((p) => p.term)]);
+      const pct = (n: number, d: number) => (d ? Math.round((n / d) * 100) : null);
+      const courses3 = (list: CourseReview[]) => {
+        const m = new Map<string, number>();
+        for (const r of list) m.set(`${r.schoolId}|${r.slug}`, (m.get(`${r.schoolId}|${r.slug}`) ?? 0) + 1);
+        return [...m.values()].filter((n) => n >= 3).length;
+      };
+      const rows = [...terms].sort((a, b) => termOrderOf(b) - termOrderOf(a)).map((term) => {
+        const sent = [...prompts.values()].filter((p) => p.term === term && p.sentAt);
+        const wrote = sent.filter((p) => {
+          const from = Date.parse(p.sentAt!), to = from + METRIC_WINDOW_DAYS * 86_400_000;
+          return all.some((r) => r.authorId === p.userId && Date.parse(r.createdAt) >= from && Date.parse(r.createdAt) <= to);
+        }).length;
+        const list = all.filter((r) => r.term === term);
+        return { term, prompted: sent.length, wroteWithin14Days: wrote, wrotePct: pct(wrote, sent.length), reviews: list.length, withTextPct: pct(list.filter((r) => r.text).length, list.length), coursesWith3Plus: courses3(list) };
+      });
+      return { windowDays: METRIC_WINDOW_DAYS, terms: rows, total: { reviews: all.length, withTextPct: pct(all.filter((r) => r.text).length, all.length), coursesWith3Plus: courses3(all), examInfos: exams.size } };
+    },
     /** 테스트용 */
-    raw: () => ({ reviews: [...reviews.values()], exams: [...exams.values()], prompts: [...prompts.values()] }),
+    raw: () => ({ reviews: [...reviews.values()], exams: [...exams.values()], prompts: [...prompts.values()], past: [...past.entries()] }),
   };
 }
 export type CourseReviewsService = ReturnType<typeof createCourseReviewsService>;
+export interface ReviewMetrics {
+  windowDays: number;
+  terms: { term: string; prompted: number; wroteWithin14Days: number; wrotePct: number | null; reviews: number; withTextPct: number | null; coursesWith3Plus: number }[];
+  total: { reviews: number; withTextPct: number | null; coursesWith3Plus: number; examInfos: number };
+}
 
 /** 학기 말 안내 — 한 시간마다, 캠퍼스 시간 10–20시에만 (밤에 알림이 가지 않게). REVIEW_PROMPT_MINUTES=0 이면 끔 */
 export function startReviewPromptJob(svc: Pick<CourseReviewsService, 'promptRound'>, env: NodeJS.ProcessEnv = process.env) {
@@ -227,7 +276,7 @@ export function startReviewPromptJob(svc: Pick<CourseReviewsService, 'promptRoun
 type Req = Request & { userId?: ID };
 type Handler = (req: Req, res: Response) => Promise<unknown> | unknown;
 /** 검토 대기 계정도 읽기는 된다 (server/idverify.ts pendingGate 가 이 경로만 통과시킨다) */
-export const REVIEW_READ_PATHS: ReadonlySet<string> = new Set(['/view', '/exam', '/instructors', '/term', '/stars']);
+export const REVIEW_READ_PATHS: ReadonlySet<string> = new Set(['/view', '/exam', '/instructors', '/term', '/stars', '/past']);
 
 export function registerCourseReviewRoutes(app: Express, svc: CourseReviewsService, deps: {
   auth: (req: Request, res: Response, next: NextFunction) => unknown;
@@ -235,6 +284,7 @@ export function registerCourseReviewRoutes(app: Express, svc: CourseReviewsServi
   requireUser: (req: Req) => ID;
   bad: (msg: string, status?: number) => Error;
   db: () => Pick<Snapshot, 'users'>;
+  env?: () => NodeJS.ProcessEnv;
 }) {
   const route = (path: string, fn: (me: ID, body: Record<string, unknown>) => unknown) =>
     app.post(`/api/reviews/${path}`, deps.auth, deps.wrap((req) => {
@@ -250,10 +300,26 @@ export function registerCourseReviewRoutes(app: Express, svc: CourseReviewsServi
   route('exam/remove', (me, b) => svc.removeExam(me, b.id));
   route('instructors', (me, b) => ({ instructors: svc.instructorsFor(me, b.code, b.term) }));
   route('term', (me, b) => svc.termPrompt(me, b.term));
+  route('past', (me) => svc.pastClasses(me));
+  route('past/add', (me, b) => svc.addPastClass(me, { code: b.code, term: b.term, name: b.name }));
+  route('past/remove', (me, b) => svc.removePastClass(me, b.code, b.term));
   route('stars', (me, b) => {
     const u: User | undefined = deps.db().users.find((x) => x.id === me);
     const school = u ? schoolOf(u) : '';
     const codes = Array.isArray(b.codes) ? b.codes.slice(0, 500).map((c) => codeSlug(normalizeCode(String(c)))) : undefined;
     return { stars: school ? svc.stars(school, codes) : {} };
+  });
+
+  // ─── /admin/reviews — 수만 (ADMIN_KEY). 페이지에는 데이터가 없다: 키를 받아 API 를 부른다 ───
+  app.get('/admin/reviews', (_req, res) => {
+    res.set({
+      'cache-control': 'no-store', 'x-robots-tag': 'noindex, nofollow', 'x-frame-options': 'DENY', 'referrer-policy': 'no-referrer',
+      'content-security-policy': "default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+    });
+    res.type('html').send(reviewsAdminPageHtml());
+  });
+  app.get('/api/admin/reviews/metrics', (req, res) => {
+    try { checkAdmin(req, deps.env?.() ?? process.env); void adminName(req); res.set('cache-control', 'no-store').json(svc.metrics()); }
+    catch (e) { const status = e instanceof ModerationError ? e.status : 500; res.status(status).json({ error: e instanceof Error && status !== 500 ? e.message : 'Something went wrong.' }); }
   });
 }

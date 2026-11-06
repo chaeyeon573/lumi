@@ -14,6 +14,7 @@ import { TERM_DATES, termDatesFor } from '@core/data/termdates';
 import { createCourseReviewsService, registerCourseReviewRoutes, COURSE_REVIEWS, EXAM_INFOS, REVIEW_PROMPTS } from './coursereviews';
 import { AUTO_HIDE_REPORTS, dismissReport, fileReport, hideReported, removeReported } from './moderation';
 import { pendingGate } from './idverify';
+import { buildClassIndex, enrollments } from '@core/lib/classmates';
 
 const FALL = 'Fall 2026';
 /** 2026-11-06 낮 (캠퍼스 시간) — Fall 2026 8주차(10/12) 이후 */
@@ -81,11 +82,11 @@ test('reviews: only verified students with the class in that term, from week 8',
   denied(() => svc.saveReview('u_x', review()), 403, /Add this class/);
   // the class is in the schedule, but for another term
   denied(() => svc.saveReview('u_a', review('CS 61A', { term: 'Spring 2027' })), 403);
-  // a school without confirmed term dates does not open reviews (and says so)
+  // a school without confirmed term dates does not open the CURRENT term (and says so)
   denied(() => svc.saveReview('u_m', review('CSE 15')), 409, /term dates/);
-  // required fields
+  // stars are the only required field
   denied(() => svc.saveReview('u_b', review('CS 61A', { rating: 0 })), 400, /stars/);
-  denied(() => svc.saveReview('u_b', review('CS 61A', { text: 'Too short.' })), 400, /50/);
+  denied(() => svc.saveReview('u_b', review('CS 61A', { text: 'ok' })), 400, /few more words/);
   denied(() => svc.saveReview('u_b', review('CS 61A', { text: 'x'.repeat(2001) })), 400, /2000/);
   denied(() => svc.saveReview('u_b', review('CS 61A', { instructor: 'Someone Else' })), 400, /instructor/);
   assert.deepEqual(svc.instructorsFor('u_b', 'CS 61A', FALL), ['John DeNero']);
@@ -174,20 +175,24 @@ test('reviews: summary + one review for everyone; the rest after writing one rev
   // exam info follows the same rule
   svc.saveExam('u_b', { code: 'CS 61A', term: FALL, midterms: 2, final: true, formats: ['coding'] });
   svc.saveExam('u_c', { code: 'CS 61A', term: FALL, midterms: 2, final: true, formats: ['coding'], tip: 'Practice old exams.' });
+  assert.equal(svc.examView('u_a', 'CS 61A').locked, false); // 2 → nothing to unlock yet
+  svc.saveExam('u_d', { code: 'CS 61A', term: FALL, midterms: 1, final: true, formats: ['short_answer'] });
   const lockedExam = svc.examView('u_a', 'CS 61A');
-  assert.equal(lockedExam.locked, true); assert.equal(lockedExam.tips.length, 1); assert.equal(lockedExam.summary.count, 2); assert.equal(lockedExam.summary.midterms, 2);
+  assert.equal(lockedExam.locked, true); assert.equal(lockedExam.tips.length, 1); assert.equal(lockedExam.summary.count, 3); assert.equal(lockedExam.summary.midterms, 2);
   // write one review of ANOTHER course → everything opens
   svc.saveReview('u_a', review('MATH 1A'));
   const open = svc.view('u_a', 'CS 61A');
   assert.equal(open.locked, false); assert.equal(open.reviews.length, 3); assert.equal(open.unlock, undefined);
-  assert.equal(svc.examView('u_a', 'CS 61A').tips.length, 2);
+  assert.equal(svc.examView('u_a', 'CS 61A').tips.length, 3);
   // filters
   assert.deepEqual(open.filters.terms, [FALL]);
   assert.equal(svc.view('u_a', 'CS 61A', { term: 'Spring 2027' }).reviews.length, 0);
 });
 
 test('reviews: before week 8 the locked state says when, never a dead end', () => {
-  const { svc } = setup(OCT1);
+  const { svc, clock } = setup(NOV6);
+  for (const u of ['u_b', 'u_c', 'u_d']) svc.saveReview(u, review());
+  clock.now = OCT1;
   const v = svc.view('u_fresh', 'CS 61A');
   assert.equal(v.locked, true);
   assert.deepEqual(v.unlock!.reviewable, []);
@@ -364,4 +369,104 @@ test('reviews: the shared demo login can read but not write, and gets no term pr
   denied(() => svc.saveReview('u_me', review()), 403);
   clock.now = new Date('2026-12-11T20:00:00Z');
   assert.equal(svc.promptRound().length, 0);
+});
+
+test('reviews: stars alone are a review; text is optional with a 10-character floor and the same filters', () => {
+  const { svc } = setup();
+  const v = svc.saveReview('u_b', { code: 'CS 61A', term: FALL, rating: 4, tags: ['labs', 'problem_sets'], workload: '6-10' });
+  assert.equal(v.mine[0].rating, 4);
+  assert.equal(v.mine[0].text, undefined);
+  assert.equal(svc.raw().reviews[0].text, undefined);
+  // a card without text: stars + chips only
+  const card = svc.view('u_c', 'CS 61A').reviews[0];
+  assert.equal(card.text, undefined); assert.deepEqual(card.tags, ['labs', 'problem_sets']);
+  // empty / whitespace text is no text; "ok" is not a review text; 10 characters is
+  assert.equal(svc.saveReview('u_c', review('CS 61A', { text: '   ' })).mine[0].text, undefined);
+  denied(() => svc.saveReview('u_d', review('CS 61A', { text: 'good stuff' .slice(0, 9) })), 400, /10\+ characters/);
+  assert.equal(svc.saveReview('u_d', review('CS 61A', { text: 'Good class' })).mine[0].text, 'Good class');
+  denied(() => svc.saveReview('u_e', review('CS 61A', { text: 'notes at www.notes.com' })), 400, /link/);
+  // the summary's top tags count reviews without text too
+  assert.deepEqual(svc.view('u_a', 'CS 61A').summary.topTags.map((t) => t.tag).sort(), ['labs', 'problem_sets']);
+});
+
+test('reviews: past classes can be reviewed right away, without touching the schedule, classmates or counts', async () => {
+  const { svc, d, clock } = setup(OCT1); // before week 8 of the current term
+  const before = structuredClone(d.users.find((u) => u.id === 'u_x')!.timetable);
+  // terms on offer: the last 4 regular terms before now
+  assert.deepEqual(svc.pastClasses('u_x').terms, ['Spring 2026', 'Fall 2025', 'Spring 2025', 'Fall 2024']);
+  const out = svc.addPastClass('u_x', { code: 'cs 61a', term: 'Spring 2026', name: 'CS 61A SICP' });
+  assert.deepEqual(out.classes.map((c) => [c.code, c.term, c.reviewed]), [['CS 61A', 'Spring 2026', false]]);
+  // week-8 gating is only for the current term
+  assert.equal(svc.saveReview('u_x', review('CS 61A', { term: 'Spring 2026', text: undefined })).mine[0].term, 'Spring 2026');
+  denied(() => svc.saveReview('u_x', review('CS 61A', { term: 'Fall 2025' })), 403); // not added for that term
+  // one review per course + term still
+  svc.saveReview('u_x', review('CS 61A', { term: 'Spring 2026', rating: 2 }));
+  assert.equal(svc.raw().reviews.filter((r) => r.authorId === 'u_x').length, 1);
+  // not on the schedule, not a classmate, not in "N on Lumi"
+  const u = d.users.find((x) => x.id === 'u_x')!;
+  assert.deepEqual(u.timetable, before);
+  assert.ok(!enrollments(u, clock.now).some((e) => e.code === 'CS 61A'));
+  const idx = buildClassIndex(d.users, clock.now);
+  assert.ok(![...idx.entries()].some(([k, members]) => k.includes('cs61a') && members.some((m) => m.userId === 'u_x')));
+  // same anti-abuse rules: verified only, last 4 terms, a course code, a daily limit
+  denied(() => svc.addPastClass('u_n', { code: 'CS 61A', term: 'Spring 2026' }), 403);
+  denied(() => svc.addPastClass('u_p', { code: 'CS 61A', term: 'Spring 2026' }), 403);
+  denied(() => svc.addPastClass('u_x', { code: 'CS 61A', term: 'Fall 2023' }), 400, /last 4/);
+  denied(() => svc.addPastClass('u_x', { code: 'CS 61A', term: FALL }), 400);
+  denied(() => svc.addPastClass('u_x', { code: 'Public speaking', term: 'Spring 2026' }), 400, /course code/);
+  for (let i = 1; i < REVIEW_LIMITS.pastPerDay; i++) svc.addPastClass('u_x', { code: `MATH ${i}`, term: 'Fall 2025' });
+  denied(() => svc.addPastClass('u_x', { code: 'MATH 99', term: 'Fall 2025' }), 429);
+  // a past term works at a school with no term dates on file
+  svc.addPastClass('u_m', { code: 'CSE 15', term: 'Spring 2026' });
+  assert.equal(svc.saveReview('u_m', review('CSE 15', { term: 'Spring 2026' })).mine.length, 1);
+  // the record survives a restart; account deletion removes it
+  await svc.load();
+  assert.equal(svc.pastClasses('u_x').classes.length, REVIEW_LIMITS.pastPerDay);
+  svc.forgetUser('u_x');
+  assert.equal(svc.pastClasses('u_x').classes.length, 0);
+  // past classes show up in the lock card as reviewable
+  svc.addPastClass('u_e', { code: 'DATA C8', term: 'Fall 2025' });
+  for (const w of ['u_b', 'u_c', 'u_d']) svc.addPastClass(w, { code: 'MATH 1A', term: 'Fall 2025' });
+  for (const w of ['u_b', 'u_c', 'u_d']) svc.saveReview(w, review('MATH 1A', { term: 'Fall 2025' }));
+  const lock = svc.view('u_e', 'MATH 1A');
+  assert.equal(lock.locked, true);
+  assert.ok(lock.unlock!.reviewable.some((c) => c.code === 'DATA C8' && c.past));
+});
+
+test('reviews: the lock only applies to courses with 3+ reviews; fewer are shown openly with an invite', () => {
+  const { svc } = setup();
+  svc.saveReview('u_b', review());
+  let v = svc.view('u_x', 'CS 61A');
+  assert.equal(v.locked, false); assert.equal(v.reviews.length, 1); assert.equal(v.invite, true); assert.equal(v.unlock, undefined);
+  svc.saveReview('u_c', review());
+  v = svc.view('u_x', 'CS 61A');
+  assert.equal(v.locked, false); assert.equal(v.reviews.length, 2);
+  assert.equal(svc.view('u_b', 'CS 61A').invite, false); // already reviewed it
+  svc.saveReview('u_d', review());
+  v = svc.view('u_x', 'CS 61A');
+  assert.equal(v.locked, true); assert.equal(v.reviews.length, 1); assert.equal(v.invite, false);
+  // helpful works on what you can see
+  assert.equal(svc.helpful('u_x', v.reviews[0].id).reviews[0].helpedByMe, true);
+});
+
+test('metrics: per term, counts only — prompted, wrote within 14 days, reviews, with text, courses with 3+', () => {
+  const { svc, clock } = setup(new Date('2026-12-11T20:00:00Z'));
+  const prompted = svc.promptRound().length;
+  clock.now = new Date('2026-12-14T20:00:00Z');
+  svc.saveReview('u_b', review());
+  svc.saveReview('u_c', { code: 'CS 61A', term: FALL, rating: 3 });
+  svc.saveReview('u_d', { code: 'CS 61A', term: FALL, rating: 4, tags: ['labs'] });
+  clock.now = new Date('2027-01-05T20:00:00Z'); // > 14 days after the prompt
+  svc.saveReview('u_e', review());
+  const m = svc.metrics();
+  const fall = m.terms.find((t) => t.term === FALL)!;
+  assert.equal(fall.prompted, prompted);
+  assert.equal(fall.wroteWithin14Days, 3);
+  assert.equal(fall.wrotePct, Math.round((3 / prompted) * 100));
+  assert.equal(fall.reviews, 4);
+  assert.equal(fall.withTextPct, 50);
+  assert.equal(fall.coursesWith3Plus, 1);
+  assert.equal(m.total.reviews, 4);
+  const json = JSON.stringify(m);
+  for (const id of ['u_b', 'u_c', 'u_d', 'u_e']) assert.ok(!json.includes(id));
 });

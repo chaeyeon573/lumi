@@ -11,7 +11,7 @@ import { useAppStore } from '@core/store/useAppStore';
 import { Btn, Chip, ChipRow, EmptyState, ErrorScreen, InfoNote, LoadingCards, SectionHeader, cardCls } from '@/components/ha';
 import { ReportSheet } from '@/components/cards/ReportSheet';
 import { cn } from '@core/lib/cn';
-import { LockedCard, ReviewCard, StarRow, SummaryCard, writeLink } from './ReviewParts';
+import { InviteCard, LockedCard, ReviewCard, StarRow, SummaryCard, pastLink, writeLink } from './ReviewParts';
 
 export function CourseReviewsTab({ code, onAsk }: { code: string; onAsk?: () => void }) {
   const nav = useNavigate();
@@ -40,13 +40,13 @@ export function CourseReviewsTab({ code, onAsk }: { code: string; onAsk?: () => 
 
   return (
     <div className="space-y-4">
-      {v.total === 0 && !v.mine.length ? (
-        <EmptyState icon={<Star size={28} />} tone="peach" className="pt-4" title={`No reviews for ${v.course.code} yet`}
-          sub={v.write.ok ? 'Yours would be the first one classmates see.' : v.write.message} />
-      ) : <SummaryCard s={v.summary} />}
+      {v.total === 0 && !v.mine.length && !(v.invite && (writeTerm || (!v.write.ok && v.write.reason === 'not_enrolled'))) ? (
+        <EmptyState icon={<Star size={28} />} tone="peach" className="pt-4 pb-2" title={`No reviews for ${v.course.code} yet`}
+          sub={v.write.ok || (!v.write.ok && v.write.reason === 'not_enrolled') ? undefined : v.write.message} />
+      ) : v.total > 0 ? <SummaryCard s={v.summary} /> : null}
 
       {/* 쓰기 — 테두리 버튼 (화면의 라벤더 버튼은 수업 페이지의 Add to schedule 하나), 이미 썼으면 고치기 */}
-      {writeTerm && !mineNow && !v.locked && <Btn full variant="outline" icon={<Star size={17} />} onClick={() => nav(writeLink(v.course.code, writeTerm))}>Write a review</Btn>}
+      {writeTerm && !mineNow && !v.locked && !v.invite && <Btn full variant="outline" icon={<Star size={17} />} onClick={() => nav(writeLink(v.course.code, writeTerm))}>Write a review</Btn>}
       {v.mine.map((m) => (
         <button key={m.id} type="button" onClick={() => nav(writeLink(m.code, m.term))} className={cn(cardCls, 'w-full p-3.5 flex items-center gap-3 text-left press')}>
           <span className="flex-1 min-w-0">
@@ -57,6 +57,8 @@ export function CourseReviewsTab({ code, onAsk }: { code: string; onAsk?: () => 
         </button>
       ))}
 
+      {v.invite && <InviteCard title={`Be one of the first to review ${v.course.code}`} code={v.course.code} writeTerm={writeTerm && !mineNow ? writeTerm : null}
+        canAddPast={!v.write.ok && v.write.reason === 'not_enrolled'} onWrite={(t) => nav(writeLink(v.course.code, t))} />}
       {v.locked && v.unlock && <LockedCard unlock={v.unlock} onAsk={onAsk} />}
 
       {!v.locked && (v.filters.instructors.length > 1 || v.filters.terms.length > 1) && (
@@ -84,6 +86,7 @@ export function CourseReviewsTab({ code, onAsk }: { code: string; onAsk?: () => 
       )}
       {!v.locked && v.reviews.length === 0 && v.total > 0 && <p className="text-[13.5px] text-ink-3 text-center py-4">No reviews match these filters.</p>}
 
+      {!v.locked && <button type="button" onClick={() => nav(pastLink())} className="block text-[13.5px] font-semibold text-sel-fg press">Add a past class to review</button>}
       <InfoNote>Reviews are anonymous. Students see the term, never your name.</InfoNote>
       <ReportSheet open={!!report} onClose={() => { setReport(null); load(); }} targetType="review" targetId={report ?? ''} />
     </div>

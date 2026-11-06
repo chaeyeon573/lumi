@@ -41,7 +41,7 @@ export function adminPageHtml(threshold: number): string {
 </head>
 <body>
 <main>
-  <h1>Reports</h1>
+  <h1>Reports <a href="/admin/reviews" style="font-size:13px;font-weight:500;margin-left:8px;color:var(--accent)">Course review numbers</a></h1>
   <div class="bar" id="login">
     <input id="key" type="password" placeholder="Admin key" autocomplete="off" />
     <input id="name" placeholder="Your name (audit log)" maxlength="40" />

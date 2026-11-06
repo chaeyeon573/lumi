@@ -12,7 +12,7 @@ import {
 import { codeSlug } from '@core/lib/classmates';
 import { api } from '@core/api';
 import { cn } from '@core/lib/cn';
-import { Chip, ChipRow, cardCls } from '@/components/ha';
+import { Btn, Chip, ChipRow, cardCls } from '@/components/ha';
 
 /** ★★★★☆ — 채운 별은 gold, 빈 별은 선 색 */
 export function StarRow({ value, size = 16, className }: { value: number; size?: number; className?: string }) {
@@ -54,6 +54,12 @@ export function SummaryCard({ s }: { s: ReviewSummary }) {
           <div className="text-[12.5px] text-ink-3 mt-1">{s.count === 1 ? '1 review' : `${s.count} reviews`}</div>
         </div>
       </div>
+      {s.topTags.length > 0 && (
+        <div className="mt-4">
+          <div className="text-[12.5px] text-ink-3 mb-2">Students say</div>
+          <ChipRow wrap className="gap-1.5">{s.topTags.map((t) => <Chip key={t.tag} size="sm">{TAG_LABEL[t.tag]}<span className="text-ink-3">{t.count}</span></Chip>)}</ChipRow>
+        </div>
+      )}
       {s.count > 0 && (
         <div className="grid grid-cols-2 gap-2 mt-4">
           <Stat label="Recommend" value={s.recommendedPct !== null ? `${s.recommendedPct}%` : '—'} />
@@ -74,9 +80,6 @@ export function SummaryCard({ s }: { s: ReviewSummary }) {
           </div>
         </div>
       )}
-      {s.topTags.length > 0 && (
-        <ChipRow wrap className="mt-4">{s.topTags.map((t) => <Chip key={t.tag} size="sm">{TAG_LABEL[t.tag]}</Chip>)}</ChipRow>
-      )}
     </div>
   );
 }
@@ -96,20 +99,20 @@ export const byline = (term: string | null, mine: boolean) => (mine ? 'You' : te
 /** 리뷰 카드 — 이름 없음, 학기, 별, 글, 칩, 도움돼요(수), 신고 */
 export function ReviewCard({ r, onHelpful, onReport, busy }: { r: ReviewCardView; onHelpful?: () => void; onReport?: () => void; busy?: boolean }) {
   const chips = [
+    ...r.tags.map((t) => TAG_LABEL[t]),
     r.workload && `${WORKLOAD_LABEL[r.workload]} / week`,
     r.difficulty && `Difficulty ${r.difficulty}/5`,
     r.grading && GRADING_LABEL[r.grading],
     r.attendance && (r.attendance === 'taken' ? 'Attendance taken' : 'No attendance'),
     r.recorded !== undefined && (r.recorded ? 'Recorded lectures' : 'Not recorded'),
-    ...r.tags.map((t) => TAG_LABEL[t]),
-  ].filter(Boolean).slice(0, 5) as string[];
+  ].filter(Boolean).slice(0, r.text ? 5 : 7) as string[];
   return (
     <div className={cn(cardCls, 'p-4')}>
       <div className="flex items-center gap-2">
         <span className="text-[13px] font-semibold text-ink-2 flex-1 min-w-0 truncate">{byline(r.term, r.mine)}{r.status === 'checking' && <span className="text-ink-3 font-medium"> · Being checked</span>}</span>
         <StarRow value={r.rating} size={14} />
       </div>
-      <p className="text-[14.5px] text-ink mt-2 leading-relaxed whitespace-pre-line [overflow-wrap:anywhere]">{r.text}</p>
+      {r.text && <p className="text-[14.5px] text-ink mt-2 leading-relaxed whitespace-pre-line [overflow-wrap:anywhere]">{r.text}</p>}
       {r.instructor && <div className="text-[12.5px] text-ink-3 mt-2">Instructor · {r.instructor}</div>}
       {chips.length > 0 && <ChipRow wrap className="mt-3 gap-1.5">{chips.map((c) => <Chip key={c} size="sm">{c}</Chip>)}</ChipRow>}
       {(onHelpful || onReport) && (
@@ -177,7 +180,28 @@ export function LockedCard({ unlock, onAsk, title = REVIEW_COPY.lockedTitle }: {
       ) : (
         <p className="text-[13.5px] text-ink-2 mt-1.5">{unlock.message}{onAsk && <> Questions are open now.</>}</p>
       )}
-      {onAsk && unlock.reviewable.length === 0 && <button type="button" onClick={onAsk} className="mt-2 text-[13px] font-semibold text-sel-fg press">Ask in Questions</button>}
+      <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
+        <button type="button" onClick={() => nav(pastLink())} className="text-[13px] font-semibold text-sel-fg press">Add a past class to review</button>
+        {onAsk && unlock.reviewable.length === 0 && <button type="button" onClick={onAsk} className="text-[13px] font-semibold text-sel-fg press">Ask in Questions</button>}
+      </div>
+    </div>
+  );
+}
+
+export const pastLink = (code?: string) => `/reviews/past${code ? `?${new URLSearchParams({ code })}` : ''}`;
+
+/**
+ * 리뷰가 3개 미만일 때 한 줄 — "Be one of the first to review CS 61A" + Review (owner 2026-11-06: 할 수 있는 행동이라 빈자리 문구와 다르다).
+ * 지금 쓸 수 있으면 쓰기로, 시간표에 없으면 지난 수업 넣기로.
+ */
+export function InviteCard({ title, code, writeTerm, canAddPast, label = 'Review', onWrite }: { title: string; code: string; writeTerm: string | null; canAddPast: boolean; label?: string; onWrite: (term: string) => void }) {
+  const nav = useNavigate();
+  if (!writeTerm && !canAddPast) return null;
+  return (
+    <div className={cn(cardCls, 'p-3.5 flex items-center gap-3')}>
+      <Star size={18} className="text-gold shrink-0" fill="currentColor" strokeWidth={1.8} />
+      <span className="flex-1 min-w-0 text-[14px] font-semibold leading-snug">{title}</span>
+      <Btn size="sm" variant="outline" onClick={() => (writeTerm ? onWrite(writeTerm) : nav(pastLink(code)))}>{writeTerm ? label : 'Took it before?'}</Btn>
     </div>
   );
 }

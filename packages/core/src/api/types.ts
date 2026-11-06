@@ -11,7 +11,7 @@ import type { OrgHit } from '@core/lib/signup';
 import type { PlansApi } from './plans';
 import type { TimePollWindow } from '@core/types';
 import type { ClassQuestionView } from '@core/lib/classqa';
-import type { CourseReviewsView, ExamInfoView, ExamInput, ReviewInput, TermPromptView } from '@core/lib/coursereviews';
+import type { CourseReviewsView, ExamInfoView, ExamInput, PastClassesView, ReviewInput, TermPromptView } from '@core/lib/coursereviews';
 import type { PublicExplore } from '@core/lib/publicexplore';
 import type { OrgJoinPolicy } from '@core/types';
 import type { AdvancedPeopleFilter, CheckoutPlatform, CheckoutResult, PlusStatus } from '@core/lib/plus';
@@ -559,6 +559,10 @@ export interface AroundUApi {
     term(term: string): Promise<TermPromptView>;
     /** 목록 줄 별점 — 과목 slug → ★ (리뷰 3개 이상인 수업만) */
     stars(codes?: string[]): Promise<{ stars: Record<string, { avg: number; count: number }> }>;
+    /** 리뷰용 지난 수업 (시간표 밖) — 최근 4학기 */
+    pastClasses(): Promise<PastClassesView>;
+    addPastClass(input: { code: string; term: string; name?: string }): Promise<PastClassesView>;
+    removePastClass(code: string, term: string): Promise<PastClassesView>;
   };
 
   /** Lumi+ (S087·S088) — 무엇인지는 @core/lib/plus, 막는 건 서버 (server/plus.ts). 오프라인 데모는 늘 꺼짐 */

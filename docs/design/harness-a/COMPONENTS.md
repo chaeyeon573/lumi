@@ -138,7 +138,8 @@ The caller passes a `count` that runs **the same filter function as the list** (
 | `StarRow({value,size})`, `StarPicker` | review stars | filled = `gold` token, empty = `line`. No hex. |
 | `SummaryCard`, `ReviewCard`, `ExamSummaryCard`, `ExamTipCard`, `LockedCard` | Reviews / Exam info tabs | cards never show a name: `byline(term, mine)` → "Fall 2026 student" / "Student" / "You". Helpful = pill, pink (`sel`) when mine. |
 | `CourseReviewsTab({code,onAsk})`, `ExamInfoTab` | mounted by `ClassPage.tsx` | the tab only shows what `api.courseReviews.*` returns — lock, ≥3 rules and anonymity are server-side. "Write a review" / "Add exam info" are **outline**: the course page's one primary is Add to schedule. |
-| `ReviewForm`, `ExamForm`, `Pick`, `DeleteLink` | `/reviews/write`, `/reviews/exam`, `/reviews/term` | `Pick` = single-choice chips, tap again clears (optional fields). One lavender `BottomCTA`. |
+| `ReviewForm({quick})`, `ExamForm`, `Pick`, `DeleteLink` | `/reviews/write`, `/reviews/exam`, `/reviews/term` | only ★ is required; text last ("Anything else? (optional)"). `quick` collapses More details / Add a note. `Pick` = single-choice chips, tap again clears. One lavender `BottomCTA`. |
+| `InviteCard` | Reviews / Exam info tab with < 3 entries | "Be one of the first to review CS 61A" + outline Review (or "Took it before?" → `/reviews/past`). The one allowed "be the first" line — it is an action, shown once on the tab, never on list rows. |
 | `CourseStars({stars})`, `useCourseStars(codes)`, `HeaderStars({code,onOpen})` | Add classes rows, course page hero | render nothing under 3 reviews — no placeholder stars. One `/api/reviews/stars` call per new set of codes (cached). |
 
 ### Screen-specific helpers outside `ha`
