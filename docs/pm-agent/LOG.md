@@ -2341,3 +2341,9 @@
 - Spot check clubs: Michigan Black Students in Aerospace, UGA Habitat, Notre Dame The Juggler, UVA Sketch fine; UMN Kappa Eta Kappa's site shows only "Coming Soon" (placeholder on their own domain, left as is).
 - Spot check courses: 5 random Caltech classes (MedE/EE 204, ME 040, ACM/IDS 216, ME/Ge/Ae 266A, Ph 127A) match the live Caltech schedule.
 - Class times for the 41 schools with none: tried the public schedules of Penn, Dartmouth, Notre Dame, Yale, Purdue, Clemson, UGA, Northwestern, Wisconsin, Michigan, UT Austin, Georgetown. None usable from this container: TLS fails at the proxy even with the session CA bundle (6 hosts), bot checks (Yale 202), 403 blocks (Wisconsin, Michigan), login (UT Austin, Georgetown). Blocked, not bypassed; details in DATA_SOURCES. The FOSE schools are already configured and need a run from Railway (open QUESTIONS item).
+
+## 2026-11-06 13:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: UConn MAC Angels, SJSU Men's Ultimate, Michigan LGBTQ+ Nursing, NYU Climate and Energy Club, UCLA La Gente fine (5/5).
+- Spot check courses: 5 random W&M classes (ENGL 231, ENGL 250 Sec 03, LAW 416 Sec 01R, ARTH 150, GBST 390 Sec 02) match the live W&M schedule.
+- Santa Clara club links: no public bulk source (directory has names only; CampusGroups is login-only and its event feed answers 500; the CSO page lists student officers' names, which we do not collect). Left in the queue as club-by-club work.
