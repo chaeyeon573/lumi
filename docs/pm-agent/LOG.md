@@ -2255,3 +2255,9 @@
 - Spot check clubs: 5 open (UMass, Indiana, Syracuse, MIT, Clemson), two problems fixed:
   - UMass Sylvan Snackbar link carried a Facebook tracking tail (?fbclid=...). `publicFix` now drops only tracking parameters (fbclid, gclid, utm_*, igshid, mc_cid/mc_eid); other query parts stay. Applied to today's files: 2,480 links in 45 schools. Test added.
   - Clemson "Housing Operations" was typed club. It and 4 other Clemson offices (Housing Summer Programs, Office of Sustainability, Glenn Department of Civil Engineering, Center for Education Abroad) are now `department` via org-type-overrides.csv.
+
+## 2026-11-06 02:33 UTC
+- No Codex requests, no owner answers.
+- Harvard class times run 4: Spring 2027 73/161 subjects; 2,390 classes with times in the file (Fall 2026 complete).
+- Spot check courses: 5 random Cornell classes (COML 2703, LAW 6641, ENGRG 1050, FREN 6225, CS 5433) match the live Cornell class roster.
+- Spot check clubs: UGA ICMA chapter, Columbia Lion Dance, Purdue Letters of Love, Vanderbilt NROTC fine. UConn ConnASDA's site (ctasda.org) no longer resolves; left for the weekly dead-link check, which moves it to deadlinks after repeated failures.
