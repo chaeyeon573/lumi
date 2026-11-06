@@ -320,6 +320,9 @@ export function publicFix(url: string): string {
     if (inner) { const t = new URL(inner, `https://www.${host}`); if (t.pathname.length > 1) return `https://www.${host}${t.pathname}`; }
     if (/\/wp-admin\/?$/.test(u.pathname)) return `${u.origin}${u.pathname.replace(/wp-admin\/?$/, '')}`;
     if (/\.squarespace\.com$/.test(host) && /^\/config\/?/.test(u.pathname)) return `${u.origin}/`;
+    // 광고 추적 꼬리표(fbclid, utm_*, igshid …)만 뗀다 — 다른 쿼리는 그대로 (UMass linktr.ee?fbclid=…, 2026-11-06 점검)
+    const track = [...u.searchParams.keys()].filter((k) => /^(fbclid|gclid|igsh|igshid|mc_cid|mc_eid|utm_[a-z]+)$/i.test(k));
+    if (track.length) { for (const k of track) u.searchParams.delete(k); return u.toString(); }
   } catch { /* not a URL */ }
   return url;
 }
