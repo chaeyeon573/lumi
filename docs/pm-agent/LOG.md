@@ -2365,3 +2365,9 @@
 - No Codex requests, no owner answers, no new deploy-branch commits.
 - Spot check clubs: UNC Cadence, Michigan Rho Chi, UMD H2OPE fine. Vanderbilt Black Seminarians page answered 500 (their server). MSU ISCRO's website in the directory is "iscromsu.con" (typo); iscromsu.com is the club's site (title "HOME | ISCRO", supply chain). Fixed in today's file; the typo is kept in s_msu.deadlinks.json; new server/data/org-links-msu.csv adds the right link on every collect (the weekly dead-link check sets the .con link aside again). A scan of all schools found no other top-level-domain typo.
 - Spot check courses: 5 random UW Fall 2026 classes (MUSEN 350, LAW B 579 Sec A, ENGL 265, DENTFN 511 Sec A, ESS 543) match the live UW time schedule.
+
+## 2026-11-06 17:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: Purdue Linux Users Group, Vanderbilt Pre-Dental Society, Duke WISER, SF State Arab Student Union, Wisconsin Brazilian Student Association fine (5/5).
+- Spot check courses: 5 random Cornell Fall 2026 classes (HADM 1650 Lec 005, AIIS 6010, BEE 4950 Prj 601, AS 1102 Sem 124, STS 3605) match the live Cornell roster.
+- Stanford club links: Stanford Club Sports runs its official site at stanfordclubsports.com (not on stanford.edu, so it opens from here). Each of the 44 "CSA" club-sport groups plus the Club Sports umbrella group now links to its team page; each page was opened and its title matched to the group (men's/women's checked one by one). Rows in org-links-stanford.csv (kept on every collect) and applied to today's file. Stanford clubs with a public link: 44 → 89 of 733.
