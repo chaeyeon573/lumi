@@ -67,23 +67,28 @@ export function RowCard({ tone = 'ice', icon, title, sub, right, onClick, badge,
 }
 
 /**
- * 공고·행사 카드 (PDF S017): 왼쪽 사진, 배지, 제목, 한 줄, "View source ↗", 오른쪽 위 책갈피.
- * 사진이 없으면 같은 자리에 색 칸 (사진을 지어내지 않는다).
+ * 공고·행사 카드 (PDF S017): 진짜 사진이 있을 때만 왼쪽 사진. 없으면 글만 — 종류 칩, 제목, 한 줄 설명, 메타, "View source ↗", 책갈피.
+ * (2026-11-06 사장님: 사진이 없으면 아이콘 칸·이모지 칸·머리글자 칸을 그리지 않는다)
  */
-export function ListingCard({ cover, icon, badge, badgeTone = 'ice', title, meta, where, sourceUrl, saved, onSave, onClick, className }: {
-  cover?: { emoji: string; hue: number; url?: string }; /** 사진이 없을 때 틴트 칸 가운데 (행사·공고 종류 아이콘) */ icon?: ReactNode; badge?: string; badgeTone?: Tone; title: string; meta?: ReactNode;
+export function ListingCard({ cover, badge, badgeTone = 'ice', title, line, meta, where, sourceUrl, saved, onSave, onClick, className }: {
+  cover?: { emoji: string; hue: number; url?: string }; /** @deprecated nothing is drawn without a real photo */ icon?: ReactNode; badge?: string; badgeTone?: Tone; title: string;
+  /** one line of description */ line?: string; meta?: ReactNode;
   /** 근무지 — meta 줄 끝에서 잘리지 않게 따로 한 줄 (📍 Mountain View, CA) */ where?: string;
   sourceUrl?: string; saved?: boolean; onSave?: () => void; onClick?: () => void; className?: string;
 }) {
+  const photo = cover?.url ? cover : undefined;
   return (
-    <div className={cn(cardCls, 'p-3 flex gap-3.5 relative', className)}>
-      <button onClick={onClick} className="shrink-0 press" tabIndex={-1} aria-hidden>
-        {cover ? <Cover emoji={cover.emoji} hue={cover.hue} url={cover.url} className="h-[88px] w-[88px] rounded-2xl" size={30} /> : <span className={cn('grid place-items-center h-[88px] w-[88px] rounded-2xl', TONE[badgeTone])}>{icon}</span>}
-      </button>
+    <div className={cn(cardCls, 'p-3 flex gap-3.5 relative', !photo && 'px-4', className)}>
+      {photo && (
+        <button onClick={onClick} className="shrink-0 press" tabIndex={-1} aria-hidden>
+          <Cover emoji={photo.emoji} hue={photo.hue} url={photo.url} className="h-[88px] w-[88px] rounded-2xl" size={30} />
+        </button>
+      )}
       <div className="flex-1 min-w-0 pr-7">
         <button onClick={onClick} className="block w-full text-left press">
           {badge && <Badge tone={badgeTone}>{badge}</Badge>}
           <span className="block text-[15px] font-bold leading-snug mt-1.5 line-clamp-2">{title}</span>
+          {line && <span className="block text-[13px] text-ink-2 mt-1 truncate">{line}</span>}
           {meta && <span className="block text-[12.5px] text-ink-3 mt-1 truncate">{meta}</span>}
           {where && <span className="flex items-center gap-1 text-[12.5px] text-ink-2 mt-0.5 min-w-0"><MapPin size={13} className="shrink-0 text-ink-3" /><span className="truncate">{where}</span></span>}
         </button>

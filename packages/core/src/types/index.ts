@@ -389,8 +389,44 @@ export interface Organization {
   joinPolicy?: OrgJoinPolicy;
   /** 이 그룹을 Lumi 에서 만든 사람 — 학교 공식 목록에서 온 동아리에는 없다 (로그인 없이 보는 Explore 에는 만든 그룹을 넣지 않는다) */
   createdBy?: ID;
+  /** 진짜 표지 사진 (운영진이 올린 것, /api/media/<id>) — 없으면 화면에 자리도 그리지 않는다 (2026-11-06 사장님) */
+  cover?: { url: string };
+  /**
+   * "Ask to join" 요청 (2026-11-06 사장님: 모든 동아리에 가입 요청) — 학생이 동의 문구를 보고 누른 기록.
+   * applicantIds 와 같은 사람들이고, 여기에 언제 동의했는지·동아리에 실제로 전해졌는지가 있다 (@core/lib/clubjoin).
+   * 서버는 운영진에게만 전부 보내고, 다른 사람에게는 본인 것만 남긴다 (server/view.ts)
+   */
+  joinRequests?: JoinRequest[];
+  /** 운영진이 /club-setup 에서 적은 가입 방법 — 학교 목록의 joinProcess 와 따로 (@core/lib/clubjoin cleanHowToJoin) */
+  howToJoin?: HowToJoin;
+  /**
+   * 학교 공식 동아리 명부에 공개로 적힌 연락 이메일 — 운영진 확인 링크·안내 메일은 이 주소로만 간다 (방문자가 적은 주소로는 절대 안 보낸다).
+   * ⚠ 서버 밖으로 나가지 않는다 (server/view.ts 가 지운다). source = 어디서 봤는지
+   */
+  contact?: { email: string; source: string };
+  /** 서버가 붙인다: 가입을 요청한 학생 수 (본인 포함), 보는 사람이 볼 수 있는 요청자 얼굴(공개 범위 안), 운영진에게만 요청자 이름·학년·전공 */
+  requestCount?: number;
+  requestFaces?: ID[];
+  requesters?: JoinRequester[];
+  /** 서버가 붙인다: 공식 연락 이메일이 있는지 (주소는 보내지 않는다) — "Manage this page" 를 보여 줄지 */
+  hasContact?: boolean;
 }
 export type OrgJoinPolicy = 'open' | 'approval';
+
+/** 가입 요청 하나. askedAt = 동의하고 누른 때. deliveredAt = 동아리에 실제로 전해진 때 (Lumi 운영진에게 · 동아리 이메일로) — 전해지기 전엔 없다 */
+export interface JoinRequest { userId: ID; askedAt: string; consent: string; deliveredAt?: string; deliveredVia?: 'organizers' | 'email' }
+/** 운영진에게 보이는 요청자 — 동의한 학생, 서로 차단하지 않은 사람만 (server/view.ts) */
+export interface JoinRequester { userId: ID; name: string; year: string; major: string; askedAt: string }
+export type HowToJoinWho = 'open' | 'application' | 'tryouts' | 'dues';
+export interface HowToJoin {
+  /** https 주소 하나 (구글 폼 등) */
+  signupUrl?: string;
+  who?: HowToJoinWho;
+  whoNote?: string;
+  /** 다음 설명회·모임 — 날짜(YYYY-MM-DD) · 시간(HH:MM) · 장소 */
+  next?: { date: string; time?: string; place?: string };
+  updatedAt: string;
+}
 
 // ─── 활동 ─────────────────────────────────────────────────────────────────
 export type ActivityKind = 'personal' | 'group' | 'org_event';
@@ -686,6 +722,8 @@ export interface ChatMessage {
   system?: boolean;
   /** 아이스브레이커 결과 메시지 — 화면은 이 게임을 카드로 그린다 */
   gameId?: ID;
+  /** 운영진이 동아리 이름으로 보낸 메시지 ("Cal Hiking (organizer)") — 가입을 요청한 학생에게만 (@core/api/engine orgs.messageRequesters) */
+  asOrg?: { id: ID; name: string };
 }
 
 export interface ChatRoom {

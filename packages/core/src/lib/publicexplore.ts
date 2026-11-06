@@ -54,7 +54,7 @@ export const publicListing = (o: Opportunity): Opportunity => ({
 /** a club without its people (ids, notices, gallery) and without login-only links */
 export const publicClub = (o: Organization): Organization => withoutEmoji({
   ...o, description: clip(o.description ?? '', 280), followerIds: [], memberIds: [], adminIds: [], applicantIds: [], notices: [], gallery: [],
-  links: publicLinks(o.links), createdBy: undefined,
+  links: publicLinks(o.links), createdBy: undefined, contact: undefined, joinRequests: undefined, // no people, no club e-mail (@core/lib/clubjoin)
 });
 
 /** the school's region from its name ("UC Berkeley" → Bay Area) — the same city rules as the location chips */

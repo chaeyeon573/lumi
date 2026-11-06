@@ -87,7 +87,7 @@ async function setup() {
   engine.relationships.block(Z, 'u_dohyun');
   const org = db.organizations.find((o) => o.schoolId === 's_berkeley')!;
   engine.relationships.toggleFollow(Z, org.id, 'org');
-  engine.orgs.apply(org.id, Z);
+  engine.orgs.apply(org.id, Z, true); // a join request with its consent record (joinRequests) — erased with the account
   // proposal, 1:1 chat, ice-breaker game (with its 1:1 room)
   engine.proposals.create(Z, LILY, { category: 'coffee', message: 'coffee? — zephyrine', when: 'tomorrow' });
   const dm = engine.chats.openDirect(Z, MAYA).room;

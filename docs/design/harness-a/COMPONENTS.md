@@ -94,7 +94,7 @@ The caller passes a `count` that runs **the same filter function as the list** (
 | `Badge({tone})` | "Campus event", "Source verified", "Coffee" | |
 | `CategoryTile` + `CategoryGrid` | Home 2×2 | use `CATEGORY_TONE`. |
 | `RowCard({tone, icon, title, sub, right?, badge?, onClick?})` | "Make room for a good plan ›" | chevron appears when clickable. |
-| `ListingCard({cover, icon, badge, badgeTone, title, meta, where?, sourceUrl, saved, onSave, onClick})` | S017 event/opportunity card | `where` = the location on its own line (pin icon) so it is never cut off at the end of `meta`. 88px image, or a tinted block with the type icon (`listingIcon(o.type)` from `src/lib/icons`) when there is no photo — never invent one. "View source ↗" only with a real URL. |
+| `ListingCard({cover, badge, badgeTone, title, line, meta, where?, sourceUrl, saved, onSave, onClick})` | S017 event/opportunity card | 88px image **only when a real photo exists**; otherwise text only — category chip, title, one-line description (`line`), meta (owner 2026-11-06: no icon block, emoji block or initials square anywhere; `icon` is ignored). `where` = the location on its own line (pin icon) so it is never cut off at the end of `meta`. Same rule for Explore › Clubs rows (`ClubItem`) and the club page header. "View source ↗" only with a real URL. |
 | `MeetupCard({tone, icon, badge, title, meta, people, footnote, action, onClick})` | S037 "Coffee after class … View meetup" | `people` are real participants only. |
 | `AvatarStack` | overlapping faces | |
 | `PersonCard({avatar, name, meta, bio, action})` | S039 "Jordan · Second-year · Design   [Add Friend]" | `action` = a `Btn size="sm" variant="outline"`. |

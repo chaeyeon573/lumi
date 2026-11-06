@@ -21,6 +21,7 @@ import { classRostersFor } from '@core/lib/classmates';
 import { createClassQa, type ClassQuestion } from '@core/lib/classqa';
 import { catalogCourses, searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm } from '@core/data/catalog/courses';
 import { publicExplore } from '@core/lib/publicexplore';
+import { cleanHowToJoin, requestStatus } from '@core/lib/clubjoin';
 import { cleanAdvancedFilter, matchesAdvanced, offlineStatus, PAYMENTS_CLOSED } from '@core/lib/plus';
 import { createSavedPeople, type SavedPeopleBook } from '@core/lib/savedpeople';
 import { uid } from '@core/lib/format';
@@ -201,7 +202,19 @@ export const mockApi: AroundUApi = {
   activities: wrap(engine.activities),
   posts: wrap(engine.posts),
   relationships: wrap(engine.relationships),
-  orgs: wrap(engine.orgs),
+  orgs: wrap({ apply: engine.orgs.apply, create: engine.orgs.create, respondApplication: engine.orgs.respondApplication, leave: engine.orgs.leave, withdraw: engine.orgs.withdraw }),
+  // 목업에는 서버(메일·운영진 확인 링크)가 없다 — 요청과 메시지만 이 브라우저의 데이터로
+  clubs: {
+    ask: (orgId, consent) => request(() => { const me = getSession() ?? ''; const patch = engine.orgs.apply(orgId, me, consent); const org = db.organizations.find((o) => o.id === orgId); return { patch, status: org ? requestStatus(org, me) : 'none' as const }; }),
+    manageLink: async () => ({ sent: false, message: 'Organizer links need the Lumi server.' }),
+    setup: () => Promise.reject(new Error('Organizer setup needs the Lumi server.')),
+    saveSetup: () => Promise.reject(new Error('Organizer setup needs the Lumi server.')),
+    setupPhoto: () => Promise.reject(new Error('Organizer setup needs the Lumi server.')),
+    claim: () => Promise.reject(new Error('Organizer setup needs the Lumi server.')),
+    saveHowToJoin: (orgId, info) => request(() => engine.orgs.setHowToJoin(orgId, cleanHowToJoin(info))),
+    photo: () => Promise.reject(new Error('Photos need the Lumi server.')),
+    message: (orgId, studentIds, text) => request(() => engine.orgs.messageRequesters(orgId, getSession() ?? '', studentIds, text)),
+  },
   // 목업에는 서버가 없다 — 같은 공개 규칙(lib/publicexplore)을 이 브라우저의 데이터에
   guest: { explore: (schoolId) => request(() => publicExplore(db, schoolId)) },
   opportunities: wrap(engine.opportunities),

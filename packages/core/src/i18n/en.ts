@@ -1435,4 +1435,14 @@ export const en: Record<string, string> = {
   '같은 이름의 단체가 이미 있어요. 그 페이지에서 팔로우하거나 다른 이름을 써주세요.': 'A group with this name already exists. Follow it from its page, or pick another name.',
   '그룹은 한 사람당 열 개까지 만들 수 있어요.': 'You can create up to ten groups.',
   '이 그룹의 운영진은 나 혼자예요. 그룹에는 운영진이 한 명은 있어야 해서 지금은 나갈 수 없어요.': 'You’re the only organizer. A group needs at least one, so you can’t leave yet.',
+  // club "Ask to join" (2026-11-06, @core/lib/clubjoin)
+  '가입하는 곳이 아니에요. 팔로우하면 새 소식을 받아요.': 'This isn’t a group you join — follow it to hear their news.',
+  '운영진에게 보일 정보를 확인하고 다시 눌러주세요.': 'Check what organizers will see, then tap Ask to join again.',
+  '메시지를 적어주세요.': 'Write a message first.',
+  '메시지가 너무 길어요.': 'That message is too long.',
+  '이 동아리에 가입을 요청한 학생에게만 보낼 수 있어요.': 'You can only message students who asked to join this club.',
+  '{club}에 가입하고 싶다고 전했어요': 'We told {club} you want to join',
+  '답이 오면 여기서 알려 드려요.': 'You’ll hear here when they reply.',
+  '{club} 가입 방법을 올렸어요': '{club} posted how to join',
+  '동아리 페이지에서 확인하세요.': 'See it on the club page.',
 };

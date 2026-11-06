@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Ban, CalendarDays, Flag, LogOut, Lock, SendHorizontal, User as UserIcon, Users } from 'lucide-react';
 import { lang } from '@core/i18n';
+import { orgSenderLabel } from '@core/lib/clubjoin';
 import { api } from '@core/api';
 import { useAppStore } from '@core/store/useAppStore';
 import { formatDate, formatDateTime, formatTime } from '@core/lib/format';
@@ -97,7 +98,9 @@ export function ChatRoomPage() {
           const mine = m.senderId === v.me.id;
           const u = v.userById(m.senderId);
           const prev = room.messages[i - 1];
-          const showName = !mine && room.type !== 'direct' && prev?.senderId !== m.senderId;
+          // a club organizer writing as the club ("CHAOS (organizer)", @core/lib/clubjoin) is always labeled, also in a 1:1 chat
+          const asOrg = m.asOrg && prev?.asOrg?.id !== m.asOrg.id ? orgSenderLabel(m.asOrg.name) : undefined;
+          const showName = !!asOrg || (!mine && room.type !== 'direct' && prev?.senderId !== m.senderId);
           const at = stamp(m.createdAt);
           const showStamp = !prev || stamp(prev.createdAt).day !== at.day || Date.parse(m.createdAt) - Date.parse(prev.createdAt) > HOUR;
           return (
@@ -106,7 +109,7 @@ export function ChatRoomPage() {
               <div className={cn('flex gap-2 items-end', mine ? 'justify-end' : 'justify-start')}>
                 {!mine && room.type !== 'direct' && <Avatar emoji={u?.avatar.emoji ?? ''} hue={u?.avatar.hue ?? 200} url={u?.avatar.url} size={28} className={cn(room.messages[i + 1]?.senderId === m.senderId && 'invisible')} />}
                 <div className={cn('max-w-[78%]', mine && 'text-right')}>
-                  {showName && <div className="text-[11.5px] text-ink-3 mb-1 ml-1">{u?.nickname}</div>}
+                  {showName && <div className={cn('text-[11.5px] text-ink-3 mb-1', mine ? 'mr-1' : 'ml-1')}>{asOrg ?? u?.nickname}</div>}
                   <div className={cn('inline-block px-4 py-2.5 rounded-[20px] border text-[15px] leading-snug text-left whitespace-pre-wrap break-words', mine ? 'bg-sel-soft border-sel-line text-ink' : 'bg-surface border-line text-ink')}>{m.text}</div>
                 </div>
               </div>

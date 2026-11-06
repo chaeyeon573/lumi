@@ -14,6 +14,7 @@ import type { ClassQuestionView } from '@core/lib/classqa';
 import type { PublicExplore } from '@core/lib/publicexplore';
 import type { OrgJoinPolicy } from '@core/types';
 import type { AdvancedPeopleFilter, CheckoutPlatform, CheckoutResult, PlusStatus } from '@core/lib/plus';
+import type { ClubSetupView, HowToJoinInput, RequestStatus } from '@core/lib/clubjoin';
 import type { SavedEntryInput, SavedPeopleView } from '@core/lib/savedpeople';
 
 /** 클라이언트가 보유하는 전체 데이터 스냅샷 (실제 API에서는 필요한 부분만 내려받도록 분리) */
@@ -364,13 +365,32 @@ export interface AroundUApi {
   };
 
   orgs: {
-    apply(orgId: ID, userId: ID): Promise<Patch>;
+    /** 열린 그룹에 가입 (S026 open). 가입 요청(동의 문구 포함)은 clubs.ask */
+    apply(orgId: ID, userId: ID, consent?: string): Promise<Patch>;
+    /** 내 가입 요청 거두기 — 그 동아리 운영진은 더 이상 메시지를 보낼 수 없다 */
+    withdraw(orgId: ID, userId: ID): Promise<Patch>;
     /** S026 — 학생이 그룹을 만든다 (만든 사람 = 운영진) */
     create(creatorId: ID, input: OrgInput): Promise<{ org: Organization; patch: Patch }>;
     /** S091 — 운영진이 가입 요청을 승인(accept) / 거절한다 */
     respondApplication(orgId: ID, userId: ID, accept: boolean): Promise<Patch>;
     /** S022 — 회원·운영진이 그룹에서 나간다 (마지막 운영진은 못 나간다, 이유를 던진다) */
     leave(orgId: ID, userId: ID): Promise<Patch>;
+  };
+
+  /**
+   * 동아리 "Ask to join" (2026-11-06, server/clubs.ts · @core/lib/clubjoin) — 동의하고 요청, 운영진 확인 링크(동아리 공식 이메일로만),
+   * 운영진 설정 (/club-setup/:token, 계정 없이) · 운영진 계정으로 가입 방법·사진·요청한 학생에게 메시지
+   */
+  clubs: {
+    ask(orgId: ID, consent: string): Promise<{ patch: Patch; status: RequestStatus }>;
+    manageLink(orgId: ID): Promise<{ sent: boolean; message: string }>;
+    setup(token: string): Promise<ClubSetupView>;
+    saveSetup(token: string, info: HowToJoinInput): Promise<ClubSetupView>;
+    setupPhoto(token: string, kind: 'logo' | 'cover', dataUrl: string | null): Promise<{ url: string | null }>;
+    claim(token: string): Promise<{ orgId: ID; patch: Patch }>;
+    saveHowToJoin(orgId: ID, info: HowToJoinInput): Promise<Patch>;
+    photo(orgId: ID, kind: 'logo' | 'cover', dataUrl: string | null): Promise<{ url: string | null; patch: Patch }>;
+    message(orgId: ID, studentIds: ID[], text: string): Promise<{ sent: number; skipped: number; patch: Patch }>;
   };
 
   /** 로그인 없이 — 열린 학교의 공개 행사·공고·동아리 (사람 정보 없음, S089) */

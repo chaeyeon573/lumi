@@ -2,7 +2,8 @@
  * Groups (orgs) — RPC permissions for S026 Create a group / S091 Membership requests, and the
  * signed-out Explore (S089).
  *
- *   POST /api/rpc/orgs/apply               [orgId, me]              — anyone, as themselves (unchanged)
+ *   POST /api/clubs/ask                    { orgId, consent }       — anyone, as themselves (server/clubs.ts)
+ *   POST /api/rpc/orgs/withdraw            [orgId, me]              — withdraw my own request
  *   POST /api/rpc/orgs/create              [me, OrgInput]           — a signed-in student creates a group (engine checks school + name)
  *   POST /api/rpc/orgs/respondApplication  [orgId, userId, accept]  — only that group's admins
  *   POST /api/rpc/orgs/leave               [orgId, me]              — a member leaves (the last organizer can't — engine says why)
@@ -18,7 +19,8 @@ import type { Rule } from './together-rules';
 import { SAMPLE_OPPORTUNITY_IDS, SAMPLE_ORG_IDS } from './samples';
 
 export const orgRules = (db: () => Pick<Snapshot, 'organizations'>) => ({
-  apply: 1,
+  // apply (Ask to join / join an open group) goes through POST /api/clubs/ask (server/clubs.ts — consent, rate limit, outreach)
+  withdraw: 1,
   create: 0,
   respondApplication: (me: ID, args: unknown[]) => !!db().organizations.find((o) => o.id === args[0])?.adminIds.includes(me),
   leave: 1,

@@ -76,7 +76,7 @@ const RETURN_KEY = 'lumi.returnTo';
 /** 로그인 전에 수업 링크로 들어와 가입하면, 가입 뒤 그 수업 방으로 돌아온다 */
 export function rememberReturnTo(path: string) { try { sessionStorage.setItem(RETURN_KEY, path); } catch { /* */ } }
 export function takeReturnTo(): string | null {
-  try { const p = sessionStorage.getItem(RETURN_KEY); if (p) sessionStorage.removeItem(RETURN_KEY); return p && p.startsWith('/c/') ? p : null; } catch { return null; }
+  try { const p = sessionStorage.getItem(RETURN_KEY); if (p) sessionStorage.removeItem(RETURN_KEY); return p && (p.startsWith('/c/') || p.startsWith('/club-setup/')) ? p : null; } catch { return null; }
 }
 
 /** 수업을 추가할 때 한 줄 설명 — 누가 무엇을 보는지 */

@@ -7,7 +7,7 @@
 import type { Patch, Snapshot, RegisterInput, ActivityInput, PostInput, OpportunityInput, TimePollInput, GoTogetherResult, DailyResults, OrgInput } from './types';
 import type {
   Activity, ActivityProposal, Availability, ChatRoom, ID, Notification, OpportunityIntent, Participation, Post, User, Opportunity, TimePoll, TimeOption, ReportTargetType,
-  Game, GameInput, GameKind, Role, Organization,
+  Game, GameInput, GameKind, Role, Organization, JoinRequest, HowToJoin,
 } from '@core/types';
 import { freeBlocks, jsDayToIdx, toMin } from '@core/lib/timetable';
 import { uid, pairKey } from '@core/lib/format';
@@ -19,6 +19,7 @@ import { DAILY_QUESTIONS, PERSON_ROLE_LABELS } from '@core/lib/labels';
 import { campusDate } from '@core/lib/listings';
 import { pollPlaceNames, POLL_MAX_GRID_OPTIONS } from '@core/lib/pollgrid';
 import { orgJoinState } from '@core/lib/orgjoin';
+import { CONSENT_VERSION, deliverSaved, ORG_MESSAGE_MAX, requestOf } from '@core/lib/clubjoin';
 import { audienceFits, isFull, waitlistOf } from '@core/lib/meetups';
 import { initialsOf } from '@core/lib/orglinks';
 import { groupLimitReason, hasPlus, limitsFor, meetupLimitReason, upcomingHosted } from '@core/lib/plus';
@@ -60,6 +61,11 @@ export function createEngine(ctx: EngineContext) {
     const nt: Notification = { id: uid('nt'), userId, read: false, createdAt: now(), ...n };
     db().notifications.unshift(nt);
     return nt;
+  }
+
+  /** "We told {club} you want to join" — the moment a saved join request really reaches the club (@core/lib/clubjoin) */
+  function toldNote(org: Organization, userId: ID): Notification {
+    return notify(userId, { type: 'org_event', title: t('{club}에 가입하고 싶다고 전했어요').replace('{club}', org.name), body: t('답이 오면 여기서 알려 드려요.'), link: `/orgs/${org.id}` });
   }
 
   function ensureActivityRoom(activity: Activity): ChatRoom {
@@ -488,12 +494,16 @@ export function createEngine(ctx: EngineContext) {
     },
 
     orgs: {
-      /** 가입 요청 — 모집 중이고 운영진이 Lumi에 있을 때만 (lib/orgjoin). 운영진 모두에게 알림이 가고, 알림은 가입 요청 목록(S091 /orgs/:id/requests)으로 열린다 */
-      apply(orgId: ID, userId: ID): Patch {
+      /**
+       * 가입 요청 (2026-11-06 사장님: 모든 동아리에 "Ask to join") — 학생이 동의 문구("운영진이 이름·학년·전공을 보고 메시지를 보낼 수 있어요")를
+       * 보고 누른 것만 받는다 (consent). 운영진이 Lumi에 있으면 바로 전해지고(알림 → S091), 없으면 저장해 두었다가 동아리 이메일이 가거나
+       * 운영진이 오면 전해진다 (@core/lib/clubjoin). 열린 그룹은 바로 회원. 학생회·학교 부서는 가입하는 곳이 아니다
+       */
+      apply(orgId: ID, userId: ID, consent?: unknown): Patch {
         const org = find(db().organizations, orgId);
         const state = orgJoinState(org, userId);
         if (state.kind === 'admin' || state.kind === 'member' || state.kind === 'applied') return { organizations: [org] };
-        if (state.kind === 'follow') throw new Error(t(state.why === 'not_recruiting' ? '지금은 가입 요청을 받지 않는 동아리예요. 팔로우하면 새 행사 소식을 받아요.' : '이 동아리 운영진이 아직 Lumi에 없어요. 동아리 안내에 적힌 방법으로 가입하세요.'));
+        if (state.kind === 'follow') throw new Error(t('가입하는 곳이 아니에요. 팔로우하면 새 소식을 받아요.'));
         const who = find(db().users, userId);
         // 열린 그룹 (S026 Join policy: Anyone can join) — 바로 회원, 운영진에게는 알림만
         if (state.kind === 'join') {
@@ -501,9 +511,92 @@ export function createEngine(ctx: EngineContext) {
           const nts = org.adminIds.filter((a) => a !== userId).map((a) => notify(a, { type: 'follow', title: t('새 회원'), body: `${who.nickname} · ${org.name}`, link: `/orgs/${org.id}?tab=members` }));
           return { organizations: [org], notifications: nts };
         }
+        if (consent !== true && consent !== CONSENT_VERSION) throw new Error(t('운영진에게 보일 정보를 확인하고 다시 눌러주세요.'));
+        const at = now();
+        // 나를 차단했거나 내가 차단한 운영진에게는 가지 않는다
+        const organizers = org.adminIds.filter((a) => a !== userId && !isBlocked(db(), a, userId));
         org.applicantIds.push(userId);
-        const nts = org.adminIds.filter((a) => a !== userId).map((a) => notify(a, { type: 'participation_request', title: t('가입 요청'), body: `${who.nickname} · ${org.name}`, link: `/orgs/${org.id}/requests` }));
+        const req: JoinRequest = { userId, askedAt: at, consent: CONSENT_VERSION, ...(organizers.length ? { deliveredAt: at, deliveredVia: 'organizers' as const } : {}) };
+        org.joinRequests = [...(org.joinRequests ?? []).filter((r) => r.userId !== userId), req];
+        const nts = organizers.map((a) => notify(a, { type: 'participation_request', title: t('가입 요청'), body: `${who.nickname} · ${org.name}`, link: `/orgs/${org.id}/requests` }));
         return { organizations: [org], notifications: nts };
+      },
+      /** 가입 요청 거두기 — 기록(동의)도 지운다. 그 뒤로 이 동아리 운영진은 메시지를 보낼 수 없다 */
+      withdraw(orgId: ID, userId: ID): Patch {
+        const org = find(db().organizations, orgId);
+        org.applicantIds = org.applicantIds.filter((a) => a !== userId);
+        org.joinRequests = (org.joinRequests ?? []).filter((r) => r.userId !== userId);
+        return { organizations: [org] };
+      },
+      /**
+       * 운영진이 동아리 이름으로 요청한 학생에게 메시지 (S091) — 1:1 대화방을 그대로 쓴다 (새 채팅을 만들지 않는다).
+       * 동의하고 요청한 학생(요청을 거두거나 거절되면 끝), 서로 차단하지 않은 사람에게만. 여러 명이면 각자의 1:1 대화방으로 나눠 보낸다.
+       * 한 명에게 보낼 때 막히면 그 이유를 던지고, 여럿이면 보낸 수와 건너뛴 수를 돌려준다
+       */
+      messageRequesters(orgId: ID, organizerId: ID, studentIds: ID[], text: string): { patch: Patch; sent: number; skipped: number } {
+        const org = find(db().organizations, orgId);
+        if (!org.adminIds.includes(organizerId)) throw new Error(t('권한이 없어요.'));
+        const body = String(text ?? '').trim();
+        if (!body) throw new Error(t('메시지를 적어주세요.'));
+        if (body.length > ORG_MESSAGE_MAX) throw new Error(t('메시지가 너무 길어요.'));
+        const ids = [...new Set((Array.isArray(studentIds) ? studentIds : []).map(String))];
+        const reasonFor = (sid: ID): string | null => {
+          if (sid === organizerId) return t('자기 자신에게는 보낼 수 없어요.');
+          if (!requestOf(org, sid) || !(org.applicantIds.includes(sid) || org.memberIds.includes(sid))) return t('이 동아리에 가입을 요청한 학생에게만 보낼 수 있어요.');
+          if (isBlocked(db(), organizerId, sid)) return t('차단된 사용자와는 대화할 수 없어요.');
+          if (!db().users.some((u) => u.id === sid)) return t('사용자를 찾을 수 없어요.');
+          return null;
+        };
+        if (ids.length === 1) { const why = reasonFor(ids[0]); if (why) throw new Error(why); }
+        const rooms: ChatRoom[] = [];
+        let skipped = 0;
+        for (const sid of ids) {
+          if (reasonFor(sid)) { skipped++; continue; }
+          const room = ensureDirectRoom(organizerId, sid);
+          room.messages.push({ id: uid('m'), senderId: organizerId, text: body, createdAt: now(), asOrg: { id: org.id, name: org.name } });
+          room.lastReadAt[organizerId] = now();
+          rooms.push(room);
+        }
+        return { patch: { chatRooms: rooms }, sent: rooms.length, skipped };
+      },
+      /**
+       * 서버 전용 (RPC 규칙에 없다) — 동아리 공식 이메일로 확인된 사람이 운영진이 된다 (server/clubs.ts). 저장돼 있던 요청이 이 순간 전해지고
+       * 기다리던 학생마다 "We told {club} you want to join" 알림
+       */
+      claim(orgId: ID, userId: ID): Patch {
+        const org = find(db().organizations, orgId);
+        if (!org.adminIds.includes(userId)) org.adminIds.push(userId);
+        if (!org.memberIds.includes(userId)) org.memberIds.push(userId);
+        org.applicantIds = org.applicantIds.filter((a) => a !== userId);
+        org.joinRequests = (org.joinRequests ?? []).filter((r) => r.userId !== userId);
+        const told = deliverSaved(org, 'organizers', now());
+        return { organizations: [org], notifications: told.map((sid) => toldNote(org, sid)) };
+      },
+      /** 서버 전용 — 안내 메일이 실제로 동아리 주소로 나갔다. 그 메일이 센 요청(until 까지)만 전해진 것으로 바꾸고 알린다 */
+      markEmailed(orgId: ID, until: string): Patch {
+        const org = find(db().organizations, orgId);
+        const told = deliverSaved(org, 'email', now(), until);
+        return told.length ? { organizations: [org], notifications: told.map((sid) => toldNote(org, sid)) } : {};
+      },
+      /**
+       * 서버 전용 — 운영진이 /club-setup 에서 적은 가입 방법을 동아리 페이지에 올린다. 처음 올리거나 링크·설명회가 바뀌면
+       * 기다리는 학생 모두에게 "{club} posted how to join" (동아리 페이지로)
+       */
+      setHowToJoin(orgId: ID, info: HowToJoin): Patch {
+        const org = find(db().organizations, orgId);
+        const before = org.howToJoin;
+        org.howToJoin = info;
+        const changed = !before || before.signupUrl !== info.signupUrl || JSON.stringify(before.next ?? null) !== JSON.stringify(info.next ?? null) || before.who !== info.who;
+        const nts = changed ? org.applicantIds.filter((sid) => !org.adminIds.includes(sid)).map((sid) => notify(sid, { type: 'org_event', title: t('{club} 가입 방법을 올렸어요').replace('{club}', org.name), body: t('동아리 페이지에서 확인하세요.'), link: `/orgs/${org.id}` })) : [];
+        return { organizations: [org], notifications: nts };
+      },
+      /** 서버 전용 — 운영진이 올린 진짜 로고·표지 사진 (null 이면 지운다). 사진이 없으면 화면은 자리도 그리지 않는다 */
+      setImage(orgId: ID, kind: 'logo' | 'cover', url: string | null): Patch {
+        const org = find(db().organizations, orgId);
+        if (kind === 'logo') org.logo = { ...org.logo, url: url ?? undefined };
+        else if (url) org.cover = { url }; else delete org.cover;
+        if (kind === 'logo' && !url) delete org.logo.url;
+        return { organizations: [org] };
       },
       /**
        * 그룹 만들기 (S026) — 학교를 인증한 학생만, 그 학교 안에. 만든 사람이 운영진·회원이 된다.
@@ -541,7 +634,8 @@ export function createEngine(ctx: EngineContext) {
         const org = find(db().organizations, orgId);
         if (!org.applicantIds.includes(userId)) return { organizations: [org] };
         org.applicantIds = org.applicantIds.filter((a) => a !== userId);
-        if (!accept) return { organizations: [org] };
+        // 거절하면 요청 기록(동의)도 지운다 — 운영진이 계속 메시지를 보낼 수 없게. 승인하면 회원으로 남고 기록도 남는다
+        if (!accept) { org.joinRequests = (org.joinRequests ?? []).filter((r) => r.userId !== userId); return { organizations: [org] }; }
         if (!org.memberIds.includes(userId)) org.memberIds.push(userId);
         const nt = notify(userId, { type: 'participation_approved', title: t('가입 승인'), body: `${org.name}${t('의 회원이 됐어요.')}`, link: `/orgs/${org.id}` });
         return { organizations: [org], notifications: [nt] };

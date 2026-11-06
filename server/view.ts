@@ -30,13 +30,14 @@ const hostNoEmoji = <T extends { host?: string }>(o: T): T => (o.host && stripEm
 import type { Patch, Snapshot } from '@core/api/types';
 import type { Activity, ActivityProposal, ChatRoom, Game, ID, Organization, Participation, Post, TimePoll, User } from '@core/types';
 import { gameFor } from '@core/lib/icebreakers';
-import { canViewActivity, canViewPost, placeLabel } from '@core/lib/relations';
-import { blockedBy, intentFor, membershipFilter, postFor, profileFor, relationshipsFor } from '@core/lib/privacy';
+import { canView, canViewActivity, canViewPost, isBlocked, placeLabel } from '@core/lib/relations';
+import { pendingRequests, yearAndMajor } from '@core/lib/clubjoin';
+import { blockedBy, extraVisibilityOf, intentFor, membershipFilter, postFor, profileFor, relationshipsFor } from '@core/lib/privacy';
 import { planVisibleTo, stripPlanSecrets } from '@core/lib/plans';
 import { buildClassIndex, classRostersFor, schoolOf, type ClassIndex } from '@core/lib/classmates';
 import { ridesFor, ridesPatchFor } from '@core/lib/rides';
 import { hiddenSamplesFor, stripRelationships, stripSamples, type HiddenSamples } from './samples';
-import { moderatePatch, moderateView } from './moderation';
+import { isSuspended, moderatePatch, moderateView } from './moderation';
 
 /**
  * 다른 사람 프로필 — 공개 범위 밖 항목은 키째 빠진다 (@core/lib/privacy). 시간표는 바쁜 시간 블록만, 오늘의 질문 답은
@@ -135,9 +136,40 @@ function participationsFor(list: Participation[], viewerId: ID, db?: Snapshot, e
 const orgFor = (viewerId: ID, db?: Snapshot) => {
   const viewer = db?.users.find((u) => u.id === viewerId);
   const members = db && viewer ? membershipFilter(db, viewer) : (o: Organization) => o;
+  const requests = joinRequestView(viewerId, viewer, db);
   return (o: Organization): Organization =>
-    withoutEmoji(o.adminIds.includes(viewerId) ? o : members({ ...o, applicantIds: o.applicantIds.filter((id) => id === viewerId) }));
+    withoutEmoji(requests(o.adminIds.includes(viewerId) ? o : members({ ...o, applicantIds: o.applicantIds.filter((id) => id === viewerId) }), o));
 };
+
+/**
+ * 가입 요청 ("Ask to join", @core/lib/clubjoin) — 누구에게나 요청 수, 얼굴은 각자의 멤버십 공개 범위 안에서 차단 없이만,
+ * 요청자 이름·학년·전공은 그 동아리 운영진에게만 (동의한 학생, 서로 차단하지 않은 사람). 요청 기록은 운영진에게 전부, 다른 사람에게는 본인 것만.
+ * 동아리 공식 연락 이메일(contact)은 서버 밖으로 나가지 않는다 — 있는지만 (hasContact)
+ */
+function joinRequestView(viewerId: ID, viewer: User | undefined, db: Snapshot | undefined) {
+  const byId = new Map((db?.users ?? []).map((u) => [u.id, u]));
+  return (shown: Organization, full: Organization): Organization => {
+    const { contact, ...out } = shown as Organization;
+    out.requestCount = full.applicantIds.length;
+    out.hasContact = !!contact?.email;
+    const admin = full.adminIds.includes(viewerId);
+    if (!admin) {
+      out.joinRequests = (full.joinRequests ?? []).filter((r) => r.userId === viewerId);
+      if (!out.joinRequests.length) delete out.joinRequests;
+      out.requestFaces = db && viewer ? full.applicantIds.filter((id) => {
+        const u = byId.get(id);
+        return id !== viewerId && !!u && !isSuspended(u) && !isBlocked(db, viewerId, id) && canView(db, viewer, id, extraVisibilityOf(u, 'memberships'));
+      }).slice(0, 6) : [];
+      return out;
+    }
+    out.requesters = db ? pendingRequests(full).flatMap((r) => {
+      const u = byId.get(r.userId);
+      if (!u || isSuspended(u) || isBlocked(db, viewerId, u.id)) return [];
+      return [{ userId: u.id, name: u.nickname, ...yearAndMajor(u), askedAt: r.askedAt }];
+    }) : [];
+    return out;
+  };
+}
 
 /** 이 사용자에게 보낼 동아리인지 */
 export function orgFilter(db: Snapshot, viewerId: ID): (o: Organization) => boolean {

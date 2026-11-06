@@ -153,7 +153,22 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
     activities: group('activities', ['create', 'update', 'remove', 'join', 'cancel', 'approve', 'reject', 'comment', 'toggleInterest', 'joinWaitlist']),
     posts: group('posts', ['create', 'remove', 'toggleLike', 'toggleSave', 'comment', 'approveTag']),
     relationships: group('relationships', ['toggleLike', 'toggleFollow', 'sendFriendRequest', 'cancelFriendRequest', 'respondFriendRequest', 'unfriend', 'block', 'unblock']),
-    orgs: group('orgs', ['apply', 'create', 'respondApplication', 'leave']),
+    orgs: {
+      ...group<Omit<AroundUApi['orgs'], 'apply'>>('orgs', ['create', 'respondApplication', 'leave', 'withdraw']),
+      // joining an open group goes through the same endpoint as asking (server/clubs.ts)
+      apply: async (orgId, _userId, consent) => (await call<{ patch: Patch }>('clubs/ask', { orgId, consent })).patch,
+    },
+    clubs: {
+      ask: (orgId, consent) => call('clubs/ask', { orgId, consent }),
+      manageLink: (orgId) => call('clubs/manage-link', { orgId }),
+      setup: (token) => call(`club-setup/${encodeURIComponent(token)}/view`, {}),
+      saveSetup: (token, info) => call(`club-setup/${encodeURIComponent(token)}/how-to-join`, info),
+      setupPhoto: (token, kind, data) => call(`club-setup/${encodeURIComponent(token)}/photo`, { kind, data }),
+      claim: (token) => call(`club-setup/${encodeURIComponent(token)}/claim`, {}),
+      saveHowToJoin: (orgId, info) => call('clubs/how-to-join', { orgId, info }),
+      photo: (orgId, kind, data) => call('clubs/photo', { orgId, kind, data }),
+      message: (orgId, studentIds, text) => call('clubs/message', { orgId, studentIds, text }),
+    },
     // 로그인 없이 (S089) — 토큰 없이 GET, 공개 데이터만 (server: GET /api/public/explore)
     guest: {
       async explore(schoolId) {

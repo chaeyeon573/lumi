@@ -78,6 +78,7 @@ import { awaitingVerification } from '@core/lib/verification';
 import { registerSignInEmailRoutes, schoolEmailOk } from './signin-email';
 import { plusEnabled, registerPlusRoutes } from './plus';
 import { createSavedPeopleService, registerSavedPeopleRoutes } from './savedpeople';
+import { createClubsService, registerClubRoutes } from './clubs';
 
 const PORT = Number(process.env.PORT ?? 8787);
 const store = createStore();
@@ -176,6 +177,9 @@ await idVerify.load();
 // 저장한 사람 폴더·메모 (S077, Lumi+ — server/savedpeople.ts, 스냅샷 밖 문서 묶음, 본인만)
 const savedPeople = createSavedPeopleService({ db: () => db, store });
 await savedPeople.load();
+// 동아리 "Ask to join" — 운영진 확인 링크·안내 메일 기록 (server/clubs.ts, 스냅샷 밖 문서 묶음 clubTokens · clubOutreach). 안내 메일은 CLUB_OUTREACH=1 일 때만
+const clubs = createClubsService({ db: () => db, store, engine: engine.orgs, push: pushPatch, sendMail });
+await clubs.load();
 setInterval(() => { syncFromWorker().catch((e) => console.error('[sync] failed', e)); }, Number(process.env.DATA_SYNC_SECONDS ?? 120) * 1000);
 
 // ─── 앱 ─────────────────────────────────────────────────────────────────
@@ -202,7 +206,7 @@ const wrap = (fn: (req: Req, res: Response) => Promise<unknown> | unknown) => as
 };
 // 학생증 검토를 기다리는 계정 — 다른 사람에게 닿는 일(글·모임·메시지·친구 요청·그룹 신청·약속·사진·수업 질문)은 승인 전까지 거절 (server/idverify.ts).
 // 모든 RPC·사진·수업 질문 경로보다 먼저 건다
-app.use(['/api/rpc', '/api/media', '/api/classqa'], auth, pendingGate(() => db));
+app.use(['/api/rpc', '/api/media', '/api/classqa', '/api/clubs', '/api/club-setup'], auth, pendingGate(() => db));
 
 async function issueSession(userId: ID) {
   const token = randomBytes(32).toString('hex');
@@ -446,6 +450,8 @@ registerIdVerifyRoutes(app, idVerify, { auth });
 // ─── Lumi+ (S087·S088) — /api/plus/*, /api/admin/users/:id/plus (server/plus.ts) · 저장한 사람 폴더·메모 /api/saved-people/* ───
 registerPlusRoutes(app, { db: () => db, auth, wrap, requireUser, bad, viewFor: (me) => snapshotFor(db, me), push: pushPatch });
 registerSavedPeopleRoutes(app, savedPeople, { db: () => db, auth, wrap, requireUser, bad });
+// ─── 동아리 가입 요청·운영진 설정 링크·안내 메일 — /api/clubs/*, /api/club-setup/:token, /club-optout (server/clubs.ts) ───
+registerClubRoutes(app, clubs, { auth, requireUser, patchFor: (p, me) => patchFor(p, me, db) });
 
 // ─── 신고·운영 — /api/rpc/reports/create (일반 RPC보다 먼저), /admin/reports, /api/admin/* (server/moderation.ts) ─────
 registerModerationRoutes(app, {
@@ -550,7 +556,7 @@ app.get('/api/media/:id', wrap(async (req, res) => {
   const id = String(req.params.id);
   const m = /^[a-f0-9]{24}$/.test(id) ? await store.getMedia(id) : null;
   // 지워진·신고로 숨겨진·정지된 사람의 글에 붙은 사진은 닫는다. 지운 뒤 늦어도 1시간이면 브라우저에서도 사라지게 캐시는 짧게
-  if (!m || !mediaVisible(m.id, m.createdAt, db.posts, moderationState(db), new Date(), db.activities)) throw bad('not found', 404);
+  if (!m || !mediaVisible(m.id, m.createdAt, db.posts, moderationState(db), new Date(), db.activities, db.organizations)) throw bad('not found', 404);
   res.setHeader('content-type', m.mime);
   res.setHeader('cache-control', 'public, max-age=3600');
   res.setHeader('x-content-type-options', 'nosniff');

@@ -80,7 +80,7 @@ export function SocialForYouPage() {
   const all = useMemo(() => studentMeetups(v.visibleActivities, v.me, parts), [v, parts]);
   const k = kindByKey(kind);
   const soon = all.filter((a) => !k || k.cats.includes(a.category)).slice(0, 3);
-  const post = v.visiblePosts.filter((p) => p.showOnFeed !== false && p.authorId !== v.me.id).sort((a, b) => b.createdAt.localeCompare(a.createdAt))[0];
+  const post = v.visiblePosts.filter((p) => p.showOnFeed !== false && !p.orgId && p.authorId !== v.me.id).sort((a, b) => b.createdAt.localeCompare(a.createdAt))[0];
   const people = usePeopleInCommon().filter((x) => x.common.length > 0).slice(0, 2);
 
   if (!all.length && !post && !people.length) return (
@@ -180,7 +180,8 @@ export function SocialFeedPage() {
   const v = useViewer();
   const orgs = useAppStore((s) => s.organizations);
   const [f, setF] = useState<FeedFilter>('all');
-  const feed = useMemo(() => v.visiblePosts.filter((p) => p.showOnFeed !== false).sort((a, b) => b.createdAt.localeCompare(a.createdAt)), [v]);
+  // people only — a club's posts live on its own page (Feed/Events tabs), never here (owner 2026-11-06)
+  const feed = useMemo(() => v.visiblePosts.filter((p) => p.showOnFeed !== false && !p.orgId).sort((a, b) => b.createdAt.localeCompare(a.createdAt)), [v]);
   const mine = useMemo(() => myGroups(orgs, v.me.id), [orgs, v.me.id]);
   const school = v.me.affiliation.type === 'university' ? v.me.affiliation.schoolId : '';
   const schoolName = v.me.affiliation.type === 'university' ? v.me.affiliation.schoolName : '';

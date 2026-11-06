@@ -1,13 +1,13 @@
-import { listingIcon } from '@/lib/icons';
 import { useMemo, useState, type ComponentProps } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CalendarDays, Users } from 'lucide-react';
+import { CalendarDays, ChevronRight } from 'lucide-react';
 import { lang } from '@core/i18n';
 import type { Activity, Opportunity, Organization } from '@core/types';
 import { useAppStore } from '@core/store/useAppStore';
 import { formatDate, formatTime } from '@core/lib/format';
 import { canGoTogether, socialSummary } from '@core/lib/withpeople';
-import { Btn, FilterBar, ListingCard, MeetupCard, RowCard, SearchField, type Tone } from '@/components/ha';
+import { Btn, FilterBar, ListingCard, MeetupCard, SearchField, cardCls, type Tone } from '@/components/ha';
+import { cn } from '@core/lib/cn';
 import { SampleTag } from '@/components/ui';
 import { Faces, usePeopleSnap } from '@/components/together/PeopleLine';
 import { GoTogetherSheet } from '@/components/together/GoTogetherSheet';
@@ -34,7 +34,7 @@ export function ExploreControls({ placeholder, q, onQ, filters }: {
 export function ListingItem({ o, saved, onSave, onOpen, people = true }: { o: Opportunity; saved?: boolean; onSave?: () => void; onOpen: () => void; people?: boolean }) {
   return (
     <div>
-      <ListingCard cover={o.cover?.url ? o.cover : undefined} icon={listingIcon(o.type)} badge={badgeLabel(o)} badgeTone={badgeTone(o)} title={o.title} meta={listingMeta(o)} where={listingWhere(o) || undefined}
+      <ListingCard cover={o.cover?.url ? o.cover : undefined} badge={badgeLabel(o)} badgeTone={badgeTone(o)} title={o.title} line={o.description} meta={listingMeta(o)} where={listingWhere(o) || undefined}
         sourceUrl={o.sourceUrl || undefined} saved={saved} onSave={onSave} onClick={onOpen} />
       {people && <ListingPeople o={o} />}
     </div>
@@ -67,11 +67,23 @@ export function ListingPeople({ o }: { o: Opportunity }) {
 /** club tint by kind — clubs mint (CATEGORY_TONE), Greek rose, labs lavender, co-ops peach */
 export const CLUB_TONE: Record<Organization['type'], Tone> = { club: 'mint', council: 'mint', greek: 'rose', lab: 'lav', coop: 'peach', department: 'ice' };
 
-/** a club row: its one-line description (what they do), then kind · my relation (ux-sim 2026-11-06: "I can't tell what they do") */
+/**
+ * a club row (owner 2026-11-06): a real logo only when there is one — otherwise text only: name, one line of what they do,
+ * then kind · my relation. No icon block, no initials square
+ */
 export function ClubItem({ o, sub, onClick }: { o: Organization; sub: string; onClick: () => void }) {
-  const line = o.description?.trim();
-  return <RowCard tone={CLUB_TONE[o.type]} icon={<Users size={22} />} title={o.name} onClick={onClick}
-    sub={line ? <><span className="block truncate text-ink-2">{line}</span><span className="block truncate">{sub}</span></> : sub} />;
+  const line = o.description?.replace(/\s+/g, ' ').trim();
+  return (
+    <button onClick={onClick} className={cn(cardCls, 'w-full p-4 flex items-center gap-3.5 text-left press')}>
+      {o.logo.url && <img src={/^(https?:|data:|\/)/.test(o.logo.url) ? o.logo.url : `/${o.logo.url}`} alt="" className="size-12 rounded-[14px] object-cover border border-line shrink-0" />}
+      <span className="flex-1 min-w-0">
+        <span className="block text-[15px] font-bold leading-snug truncate">{o.name}</span>
+        {line && <span className="block text-[13px] text-ink-2 leading-snug mt-0.5 truncate">{line}</span>}
+        <span className="block text-[12.5px] text-ink-3 mt-0.5 truncate">{sub}</span>
+      </span>
+      <ChevronRight size={18} className="text-ink-3 shrink-0" />
+    </button>
+  );
 }
 
 export function MoreButton({ left, onClick }: { left: number; onClick: () => void }) {

@@ -245,12 +245,19 @@ for (const [schoolId, host] of Object.entries(ENGAGE_HOSTS)) {
   const active = raw.filter((o) => !o.Status || /active/i.test(o.Status));
   // 상세에서 공식 사이트·인스타·페북 등 (socialMedia) — 공개 값만
   const social = new Map<string, ReturnType<typeof engageLinks>>();
+  // 공개 프로필에 적힌 동아리 연락 이메일 — 운영진 확인 링크·안내 메일은 이 주소로만 간다 (server/clubs.ts). 화면·스냅샷에는 나가지 않는다 (server/view.ts)
+  const contacts = new Map<string, { email: string; source: string }>();
   await eachLimited(active.filter((o) => o.WebsiteKey), 4, async (o) => {
     const res = await fetch(`${host}/api/discovery/organization/bykey/${encodeURIComponent(o.WebsiteKey!)}`, { headers: { accept: 'application/json', 'user-agent': 'AroundU-importer' } });
-    if (res.ok) social.set(o.Id, engageLinks(((await res.json()) as { socialMedia?: EngageSocial }).socialMedia));
+    if (!res.ok) return;
+    const j = (await res.json()) as { socialMedia?: EngageSocial; email?: string | null };
+    social.set(o.Id, engageLinks(j.socialMedia));
+    const email = String(j.email ?? '').trim().toLowerCase();
+    if (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) contacts.set(o.Id, { email, source: `${host}/organization/${o.WebsiteKey}` });
   });
-  const orgs = active.map((o) => { const m = mapOrg(schoolId, host, o); const extra = social.get(o.Id) ?? []; return extra.length ? { ...m, links: [...(m.links ?? []), ...extra] } : m; })
-    .map(mergeExisting);
+  const orgs = active.map((o) => { const m = mapOrg(schoolId, host, o); const extra = social.get(o.Id) ?? []; return { o, m: extra.length ? { ...m, links: [...(m.links ?? []), ...extra] } : m }; })
+    .map(({ o, m }) => { const merged = mergeExisting(m); const c = contacts.get(o.Id); return c ? { ...merged, contact: c } : merged; });
+  console.log(`연락 이메일 ${contacts.size}/${active.length}`);
   console.log(`링크 있는 곳 ${[...social.values()].filter((l) => l.length).length}/${active.length} · `);
   const csv = ['school_id,name,type,category,description', ...orgs.map((o) => [o.schoolId, o.name, o.type, o.parent ?? '', o.description].map((v) => `"${String(v).replace(/"/g, '""')}"`).join(','))].join('\n');
   writeFileSync(path.join(dataDir, `orgs-${schoolId}.csv`), csv);

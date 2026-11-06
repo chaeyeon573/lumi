@@ -14,6 +14,7 @@ import { meTabRoutes, meSubRoutes } from '@/routes/me';
 import { legacyRoutes, legacyPublicRoutes } from '@/routes/redirects';
 import { takeReturnTo } from '@/components/classes/ClassLink';
 import { PrivacyPage, TermsPage } from '@/pages/legal/LegalPages';
+import { ClubSetupPage } from '@/pages/org/ClubSetupPage';
 import { NativeBridge } from '@/components/native/NativeBridge';
 import { isNativeShell } from '@/lib/native';
 
@@ -100,6 +101,8 @@ export default function App() {
       <Route element={<AppShell withNav={false} />}>
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
+        {/* S097 club setup from the link sent to the club's official directory e-mail — no account needed (server/clubs.ts) */}
+        <Route path="/club-setup/:token" element={<ClubSetupPage />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

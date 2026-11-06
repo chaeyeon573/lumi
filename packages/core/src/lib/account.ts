@@ -175,6 +175,8 @@ export function eraseUser(db: Snapshot, userId: ID, opts: { now?: () => string }
   for (const o of db.organizations) {
     let touched = false;
     for (const k of ['followerIds', 'memberIds', 'adminIds', 'applicantIds'] as const) if (o[k].includes(userId)) { o[k] = o[k].filter((x) => x !== userId); touched = true; }
+    // 동아리 가입 요청 기록(동의 시각 포함)도 지운다 (@core/lib/clubjoin)
+    if (o.joinRequests?.some((r) => r.userId === userId)) { o.joinRequests = o.joinRequests.filter((r) => r.userId !== userId); touched = true; }
     if (touched) changed.organizations.set(o.id, o);
   }
   for (const o of db.opportunities) {

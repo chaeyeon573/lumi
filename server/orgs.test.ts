@@ -66,8 +66,8 @@ test('approval group: the request reaches the admins; approving makes a member a
   const { db, engine } = setup();
   const { org } = engine.orgs.create('u_jimin', input());
   // no recruitment field — the join policy decides
-  assert.deepEqual(orgJoinState(org, 'u_me'), { kind: 'apply', organizers: 1 });
-  const p = engine.orgs.apply(org.id, 'u_me');
+  assert.deepEqual(orgJoinState(org, 'u_me'), { kind: 'ask', organizers: 1 });
+  const p = engine.orgs.apply(org.id, 'u_me', true);
   assert.deepEqual(db.organizations[0].applicantIds, ['u_me']);
   assert.deepEqual(p.notifications?.map((n) => [n.userId, n.type]), [['u_jimin', 'participation_request']]);
 
@@ -85,21 +85,21 @@ test('approval group: the request reaches the admins; approving makes a member a
 test('approval group: declining removes the request quietly (no notification) and the person may ask again', () => {
   const { db, engine } = setup();
   const { org } = engine.orgs.create('u_jimin', input());
-  engine.orgs.apply(org.id, 'u_me');
+  engine.orgs.apply(org.id, 'u_me', true);
   const before = db.notifications.length;
   const r = engine.orgs.respondApplication(org.id, 'u_me', false);
   assert.deepEqual(db.organizations[0].applicantIds, []);
   assert.deepEqual(db.organizations[0].memberIds, ['u_jimin']);
   assert.equal(r.notifications, undefined);
   assert.equal(db.notifications.length, before);
-  assert.deepEqual(orgJoinState(db.organizations[0], 'u_me'), { kind: 'apply', organizers: 1 });
+  assert.deepEqual(orgJoinState(db.organizations[0], 'u_me'), { kind: 'ask', organizers: 1 });
 });
 
 test('open group: joining is immediate and the admins get a "new member" note', () => {
   const { db, engine } = setup();
   const { org } = engine.orgs.create('u_jimin', input({ joinPolicy: 'open' }));
   assert.deepEqual(orgJoinState(org, 'u_me'), { kind: 'join' });
-  const p = engine.orgs.apply(org.id, 'u_me');
+  const p = engine.orgs.apply(org.id, 'u_me', true);
   assert.deepEqual(db.organizations[0].memberIds, ['u_jimin', 'u_me']);
   assert.deepEqual(db.organizations[0].applicantIds, []);
   assert.deepEqual(p.notifications?.map((n) => n.userId), ['u_jimin']);
@@ -108,7 +108,7 @@ test('open group: joining is immediate and the admins get a "new member" note', 
 test('leave: a member leaves (still following); the last organizer can’t and is told why', () => {
   const { db, engine } = setup();
   const { org } = engine.orgs.create('u_jimin', input({ joinPolicy: 'open' }));
-  engine.orgs.apply(org.id, 'u_me');
+  engine.orgs.apply(org.id, 'u_me', true);
   db.organizations[0].followerIds.push('u_me');
   engine.orgs.leave(org.id, 'u_me');
   assert.deepEqual(db.organizations[0].memberIds, ['u_jimin']);
@@ -133,7 +133,7 @@ test('leave: a member leaves (still following); the last organizer can’t and i
   assert.equal(ruleAllows(rules.leave, 'u_me', [org.id, 'u_jimin']), false);
 });
 
-test('RPC rules: only that group’s admins answer requests; create and apply only as yourself', () => {
+test('RPC rules: only that group’s admins answer requests; create and withdraw only as yourself', () => {
   const { db, engine } = setup();
   const { org } = engine.orgs.create('u_jimin', input());
   const rules = orgRules(() => db);
@@ -142,15 +142,16 @@ test('RPC rules: only that group’s admins answer requests; create and apply on
   assert.equal(ruleAllows(rules.respondApplication, 'u_jimin', ['o_missing', 'u_me', true]), false);
   assert.equal(ruleAllows(rules.create, 'u_me', ['u_me', input()]), true);
   assert.equal(ruleAllows(rules.create, 'u_me', ['u_jimin', input()]), false);
-  assert.equal(ruleAllows(rules.apply, 'u_me', [org.id, 'u_me']), true);
-  assert.equal(ruleAllows(rules.apply, 'u_me', [org.id, 'u_jimin']), false);
+  assert.equal(ruleAllows(rules.withdraw, 'u_me', [org.id, 'u_me']), true);
+  assert.equal(ruleAllows(rules.withdraw, 'u_me', [org.id, 'u_jimin']), false);
+  assert.equal('apply' in rules, false); // asking goes through /api/clubs/ask (consent · rate limit · outreach — server/clubs.ts)
 });
 
 test('view: members who are not admins never see who else asked to join', () => {
   const { db, engine } = setup();
   const { org } = engine.orgs.create('u_jimin', input());
-  engine.orgs.apply(org.id, 'u_me');
-  engine.orgs.apply(org.id, 'u_dohyun');
+  engine.orgs.apply(org.id, 'u_me', true);
+  engine.orgs.apply(org.id, 'u_dohyun', true);
   const toAdmin = patchFor({ organizations: [db.organizations[0]] }, 'u_jimin', db)!;
   const toApplicant = patchFor({ organizations: [db.organizations[0]] }, 'u_me', db)!;
   const toOther = patchFor({ organizations: [db.organizations[0]] }, 'u_yuna', db)!;
