@@ -1,0 +1,3136 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-06T01:51:21.157Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "runs": [
+    {
+      "runId": "cmp2ha-base-cold-start-hangout-minji",
+      "persona": "minji-freshman-17",
+      "scenario": "cold-start-hangout",
+      "outcome": "abandoned",
+      "reportedOutcome": "abandoned",
+      "goalAchieved": false,
+      "stepsToGoal": null,
+      "actions": 22,
+      "frictionCount": 4,
+      "maxSeverity": 4,
+      "mode": "local",
+      "auth": "none",
+      "commit": "2567ab7395d4",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "high",
+        "rationale": "Signed up through 7 screens and then found nobody — no meetups, no people, just 'invite friends'",
+        "basis": [
+          26,
+          29
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/run.json",
+      "report": "ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/report.md"
+    },
+    {
+      "runId": "cmp2ha-base-find-a-club-aisha",
+      "persona": "aisha-firstgen-anxious",
+      "scenario": "find-a-club",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 2,
+      "actions": 3,
+      "frictionCount": 3,
+      "maxSeverity": 3,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "2567ab7395d4",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Found a club fast, but Unverified + Not recruiting + Ask to join leaves me scared to tap anything",
+        "basis": [
+          4,
+          6
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/cmp2ha-base-find-a-club-aisha/run.json",
+      "report": "ux-sim/runs/cmp2ha-base-find-a-club-aisha/report.md"
+    },
+    {
+      "runId": "cmp2ha-base-first-open-decide-marcus",
+      "persona": "marcus-senior-lowtech",
+      "scenario": "first-open-decide",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 20,
+      "actions": 20,
+      "frictionCount": 2,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "none",
+      "commit": "2567ab7395d4",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Sign-up asked my name and birth year before showing anything and ran 7 screens; the first job card was CS, not History",
+        "basis": [
+          2,
+          18,
+          27
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/cmp2ha-base-first-open-decide-marcus/run.json",
+      "report": "ux-sim/runs/cmp2ha-base-first-open-decide-marcus/report.md"
+    },
+    {
+      "runId": "cmp2ha-base-internship-near-berkeley-priya",
+      "persona": "priya-phd-desktop",
+      "scenario": "internship-near-berkeley",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 4,
+      "actions": 4,
+      "frictionCount": 2,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "2567ab7395d4",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "The board is useful, but the layout is a phone column on my laptop and it pushes social features over job facts",
+        "basis": [
+          0,
+          9
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/cmp2ha-base-internship-near-berkeley-priya/run.json",
+      "report": "ux-sim/runs/cmp2ha-base-internship-near-berkeley-priya/report.md"
+    },
+    {
+      "runId": "cmp2ha-base-lunch-today-diego",
+      "persona": "diego-transfer-commuter",
+      "scenario": "lunch-today",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 3,
+      "actions": 5,
+      "frictionCount": 1,
+      "maxSeverity": 1,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "2567ab7395d4",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Fast for lunch, but I still haven't seen anything about study partners or rides for my commute",
+        "basis": [
+          1,
+          5
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/cmp2ha-base-lunch-today-diego/run.json",
+      "report": "ux-sim/runs/cmp2ha-base-lunch-today-diego/report.md"
+    },
+    {
+      "runId": "cmp2ha-base-ride-sfo-thanksgiving-seoyeon",
+      "persona": "seoyeon-exchange-korean",
+      "scenario": "ride-sfo-thanksgiving",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 9,
+      "actions": 9,
+      "frictionCount": 2,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "2567ab7395d4",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "low",
+        "rationale": "Found and joined a matching SFO ride, no phone number asked; Rides screens stay English",
+        "basis": [
+          13,
+          17
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/cmp2ha-base-ride-sfo-thanksgiving-seoyeon/run.json",
+      "report": "ux-sim/runs/cmp2ha-base-ride-sfo-thanksgiving-seoyeon/report.md"
+    },
+    {
+      "runId": "cmp2ha-base-timetable-add-classes-minji",
+      "persona": "minji-freshman-17",
+      "scenario": "timetable-add-classes",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 6,
+      "actions": 6,
+      "frictionCount": 3,
+      "maxSeverity": 1,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "2567ab7395d4",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Adding was easy but nothing shows people my age or my dorm yet",
+        "basis": [
+          12
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/cmp2ha-base-timetable-add-classes-minji/run.json",
+      "report": "ux-sim/runs/cmp2ha-base-timetable-add-classes-minji/report.md"
+    },
+    {
+      "runId": "cmp2ha-new-cold-start-hangout-minji",
+      "persona": "minji-freshman-17",
+      "scenario": "cold-start-hangout",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 25,
+      "actions": 25,
+      "frictionCount": 4,
+      "maxSeverity": 3,
+      "mode": "local",
+      "auth": "none",
+      "commit": "a3f2ebed58f4",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Korean switch and a way to go to something this week were easy, but I'm still the only one — no people anywhere",
+        "basis": [
+          2,
+          35,
+          37
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/run.json",
+      "report": "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/report.md"
+    },
+    {
+      "runId": "cmp2ha-new-find-a-club-aisha",
+      "persona": "aisha-firstgen-anxious",
+      "scenario": "find-a-club",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 2,
+      "actions": 3,
+      "frictionCount": 3,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "a3f2ebed58f4",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Calmer than before, but I still don't know how to actually join or when the next hike is",
+        "basis": [
+          4,
+          6
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/cmp2ha-new-find-a-club-aisha/run.json",
+      "report": "ux-sim/runs/cmp2ha-new-find-a-club-aisha/report.md"
+    },
+    {
+      "runId": "cmp2ha-new-first-open-decide-marcus",
+      "persona": "marcus-senior-lowtech",
+      "scenario": "first-open-decide",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 24,
+      "actions": 24,
+      "frictionCount": 3,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "none",
+      "commit": "a3f2ebed58f4",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Look-around-first earned trust, but the welcome never mentions internships, the preview step looped, and the first internships were in DC/Bakersfield",
+        "basis": [
+          2,
+          5,
+          10,
+          30
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/cmp2ha-new-first-open-decide-marcus/run.json",
+      "report": "ux-sim/runs/cmp2ha-new-first-open-decide-marcus/report.md"
+    },
+    {
+      "runId": "cmp2ha-new-internship-near-berkeley-priya",
+      "persona": "priya-phd-desktop",
+      "scenario": "internship-near-berkeley",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 3,
+      "actions": 3,
+      "frictionCount": 3,
+      "maxSeverity": 2,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "a3f2ebed58f4",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Details page is cleaner, but no location/PhD filter and the main button is 'I applied' instead of Apply",
+        "basis": [
+          4,
+          6
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/run.json",
+      "report": "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/report.md"
+    },
+    {
+      "runId": "cmp2ha-new-lunch-today-diego",
+      "persona": "diego-transfer-commuter",
+      "scenario": "lunch-today",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 3,
+      "actions": 5,
+      "frictionCount": 1,
+      "maxSeverity": 1,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "a3f2ebed58f4",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Lunch was quick; still no sign of study partners or rides for my commute",
+        "basis": [
+          1,
+          5
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/cmp2ha-new-lunch-today-diego/run.json",
+      "report": "ux-sim/runs/cmp2ha-new-lunch-today-diego/report.md"
+    },
+    {
+      "runId": "cmp2ha-new-ride-sfo-thanksgiving-seoyeon",
+      "persona": "seoyeon-exchange-korean",
+      "scenario": "ride-sfo-thanksgiving",
+      "outcome": "abandoned",
+      "reportedOutcome": "abandoned",
+      "goalAchieved": false,
+      "stepsToGoal": null,
+      "actions": 14,
+      "frictionCount": 3,
+      "maxSeverity": 4,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "a3f2ebed58f4",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "high",
+        "rationale": "The one thing I came for (sharing a ride to SFO) does not exist anywhere I looked",
+        "basis": [
+          11,
+          19,
+          23
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/cmp2ha-new-ride-sfo-thanksgiving-seoyeon/run.json",
+      "report": "ux-sim/runs/cmp2ha-new-ride-sfo-thanksgiving-seoyeon/report.md"
+    },
+    {
+      "runId": "cmp2ha-new-timetable-add-classes-minji",
+      "persona": "minji-freshman-17",
+      "scenario": "timetable-add-classes",
+      "outcome": "success",
+      "reportedOutcome": "success",
+      "goalAchieved": true,
+      "stepsToGoal": 5,
+      "actions": 5,
+      "frictionCount": 0,
+      "maxSeverity": null,
+      "mode": "local",
+      "auth": "fresh",
+      "commit": "a3f2ebed58f4",
+      "harness": "6f174347960d",
+      "catalog": "cached",
+      "overrodePatience": false,
+      "dropoffRisk": {
+        "kind": "hypothesis",
+        "level": "medium",
+        "rationale": "Adding was easy, but nothing shows people my age or my dorm yet",
+        "basis": [
+          11
+        ],
+        "source": "persona-agent"
+      },
+      "runFile": "ux-sim/runs/cmp2ha-new-timetable-add-classes-minji/run.json",
+      "report": "ux-sim/runs/cmp2ha-new-timetable-add-classes-minji/report.md"
+    }
+  ],
+  "totals": {
+    "runs": 14,
+    "findings": 33,
+    "frictionEvents": 34,
+    "environmentLimitedEvents": 0,
+    "maxSeverity": 4,
+    "bySeverity": {
+      "1": 11,
+      "2": 16,
+      "3": 5,
+      "4": 2
+    },
+    "multiPersonaFindings": 0,
+    "singletonFindings": 32
+  },
+  "findings": [
+    {
+      "fingerprint": "d56357a742fa",
+      "title": "Missing / empty content on /people/explore — “Invite friends”",
+      "screen": "/people/explore",
+      "frictionType": "content_gap",
+      "keyElement": "invite friends",
+      "keyElementLabel": "Invite friends",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-cold-start-hangout-minji"
+      ],
+      "occurrences": 1,
+      "severityMax": 4,
+      "maxSeverity": 4,
+      "severityMedian": 4,
+      "events": [
+        {
+          "runId": "cmp2ha-base-cold-start-hangout-minji",
+          "persona": "minji-freshman-17",
+          "scenario": "cold-start-hangout",
+          "step": 29,
+          "severity": 4,
+          "quote": "헐 아무도 없어?? 친구 초대하라고... 친구가 없어서 깐 건데 ㅠ",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/029-click.jpg",
+            "ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/029-click-som.jpg"
+          ],
+          "url": "/people/explore",
+          "wish": "show me at least some people or plans this week"
+        }
+      ],
+      "wishes": [
+        "show me at least some people or plans this week"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /people/explore is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “show me at least some people or plans this week”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "673d175397b9",
+      "title": "Missing / empty content on /meetups/new — “모임 만들기”",
+      "screen": "/meetups/new",
+      "frictionType": "content_gap",
+      "keyElement": "모임 만들기",
+      "keyElementLabel": "모임 만들기",
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-new-ride-sfo-thanksgiving-seoyeon"
+      ],
+      "occurrences": 1,
+      "severityMax": 4,
+      "maxSeverity": 4,
+      "severityMedian": 4,
+      "events": [
+        {
+          "runId": "cmp2ha-new-ride-sfo-thanksgiving-seoyeon",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 23,
+          "severity": 4,
+          "quote": "커피, 공부, 운동, 점심... 공항 가는 건 없네. 이걸로 올리면 이상하게 보일 것 같아. 이 앱엔 라이드가 없나 봐. 그냥 우버 탈래",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-ride-sfo-thanksgiving-seoyeon/shots/023-click.jpg",
+            "ux-sim/runs/cmp2ha-new-ride-sfo-thanksgiving-seoyeon/shots/023-click-som.jpg"
+          ],
+          "url": "/meetups/new",
+          "wish": "a way to find or post a shared ride to SFO"
+        }
+      ],
+      "wishes": [
+        "a way to find or post a shared ride to SFO"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /meetups/new is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “a way to find or post a shared ride to SFO”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "d80495a57f74",
+      "title": "Trust / privacy worry on /orgs/:id — “Ask to join”",
+      "screen": "/orgs/:id",
+      "frictionType": "trust_privacy",
+      "keyElement": "ask to join",
+      "keyElementLabel": "Ask to join",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-find-a-club-aisha"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "maxSeverity": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "cmp2ha-base-find-a-club-aisha",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 4,
+          "severity": 3,
+          "quote": "Wait, 'Unverified' — is this even the real club? And 'Ask to join'... who am I asking, does it send my profile? Maybe 'Recruiting' tells me if they're taking people.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-find-a-club-aisha/shots/004-click.jpg",
+            "ux-sim/runs/cmp2ha-base-find-a-club-aisha/shots/004-click-som.jpg"
+          ],
+          "url": "/orgs/oc_berkeley_cal_hiking_and_outdoor_society_chaos_",
+          "wish": "say plainly what Ask to join does and whether I can just show up to a hike"
+        }
+      ],
+      "wishes": [
+        "say plainly what Ask to join does and whether I can just show up to a hike"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Explain who will see what when tapping “Ask to join” on /orgs/:id before asking for it. Personas said they wanted: “say plainly what Ask to join does and whether I can just show up to a hike”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "b671f45c6bb2",
+      "title": "Confusing UI on /orgs/:id?tab=recruit — “Recruiting”",
+      "screen": "/orgs/:id?tab=recruit",
+      "frictionType": "ux_confusion",
+      "keyElement": "recruiting",
+      "keyElementLabel": "Recruiting",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-find-a-club-aisha"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "maxSeverity": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "cmp2ha-base-find-a-club-aisha",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 6,
+          "severity": 3,
+          "quote": "So they're not recruiting... but I can still ask to join? Did I miss a window? I don't want to send a request that's wrong. I'll follow them for now so I don't lose it, that seems safe.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-find-a-club-aisha/shots/006-click.jpg",
+            "ux-sim/runs/cmp2ha-base-find-a-club-aisha/shots/006-click-som.jpg"
+          ],
+          "url": "/orgs/oc_berkeley_cal_hiking_and_outdoor_society_chaos_?tab=recruit",
+          "wish": "tell me whether I can just show up to hikes and when they take new people"
+        }
+      ],
+      "wishes": [
+        "tell me whether I can just show up to hikes and when they take new people"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Recruiting” on /orgs/:id?tab=recruit does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “tell me whether I can just show up to hikes and when they take new people”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "437a7795dcb2",
+      "title": "Missing / empty content on /social/people — “친구 초대”",
+      "screen": "/social/people",
+      "frictionType": "content_gap",
+      "keyElement": "친구 초대",
+      "keyElementLabel": "친구 초대",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-new-cold-start-hangout-minji"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "maxSeverity": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "cmp2ha-new-cold-start-hangout-minji",
+          "persona": "minji-freshman-17",
+          "scenario": "cold-start-hangout",
+          "step": 35,
+          "severity": 3,
+          "quote": "사람도 없네.. 친구 초대하래. 근데 밑에 보드게임 나이트 토요일 — '같이 가기' 누르면 같이 갈 사람 찾아주나?",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/035-click.jpg",
+            "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/035-click-som.jpg"
+          ],
+          "url": "/social/people",
+          "wish": "show me some people or plans this week, not invite friends"
+        }
+      ],
+      "wishes": [
+        "show me some people or plans this week, not invite friends"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /social/people is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “show me some people or plans this week, not invite friends”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "5cea59c4df99",
+      "title": "Hard to find on /social/meetups",
+      "screen": "/social/meetups",
+      "frictionType": "discoverability",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-new-ride-sfo-thanksgiving-seoyeon"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "maxSeverity": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "cmp2ha-new-ride-sfo-thanksgiving-seoyeon",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 11,
+          "severity": 3,
+          "quote": "라이드나 공항 같은 게 없어... 검색해볼까? SFO",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-ride-sfo-thanksgiving-seoyeon/shots/011-click.jpg",
+            "ux-sim/runs/cmp2ha-new-ride-sfo-thanksgiving-seoyeon/shots/011-click-som.jpg"
+          ],
+          "url": "/social/meetups",
+          "wish": "a place to find/share rides to the airport"
+        }
+      ],
+      "wishes": [
+        "a place to find/share rides to the airport"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for where they looked (/social/meetups); label icon-only controls. Personas said they wanted: “a place to find/share rides to the airport”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "bd87967c28f4",
+      "title": "Missing / empty content on /search — “행사, 사람, 동아리 검색…”",
+      "screen": "/search",
+      "frictionType": "content_gap",
+      "keyElement": "행사 사람 동아리 검색",
+      "keyElementLabel": "행사, 사람, 동아리 검색…",
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-new-ride-sfo-thanksgiving-seoyeon"
+      ],
+      "occurrences": 1,
+      "severityMax": 3,
+      "maxSeverity": 3,
+      "severityMedian": 3,
+      "events": [
+        {
+          "runId": "cmp2ha-new-ride-sfo-thanksgiving-seoyeon",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 19,
+          "severity": 3,
+          "quote": "결과 없음... 라이드 기능이 없나? 그럼 내가 '모임 만들기'로 공항 같이 갈 사람 구해볼까",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-ride-sfo-thanksgiving-seoyeon/shots/019-type.jpg",
+            "ux-sim/runs/cmp2ha-new-ride-sfo-thanksgiving-seoyeon/shots/019-type-som.jpg"
+          ],
+          "url": "/search?q=SFO",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /search is really missing (or only missing in the test environment); avoid showing empty sections."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "8a0bf61f729f",
+      "title": "Onboarding friction on /start — “Skip”",
+      "screen": "/start",
+      "frictionType": "onboarding",
+      "keyElement": "skip",
+      "keyElementLabel": "Skip",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-cold-start-hangout-minji"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "cmp2ha-base-cold-start-hangout-minji",
+          "persona": "minji-freshman-17",
+          "scenario": "cold-start-hangout",
+          "step": 14,
+          "severity": 2,
+          "quote": "아 귀찮아.. 또 고르래. 이메일은 언제 해? Skip",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/014-click.jpg",
+            "ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/014-click-som.jpg"
+          ],
+          "url": "/start",
+          "wish": "fewer steps, email sooner"
+        }
+      ],
+      "wishes": [
+        "fewer steps, email sooner"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Shorten or explain this sign-up step (/start); ask only what is needed now and let the rest wait until it is useful. Personas said they wanted: “fewer steps, email sooner”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "8bb560735e71",
+      "title": "No reason to stay on / — “Campus event Grad Student Appreciation P”",
+      "screen": "/",
+      "frictionType": "motivation",
+      "keyElement": "campus event grad student appreciation",
+      "keyElementLabel": "Campus event Grad Student Appreciation P",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-cold-start-hangout-minji"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "cmp2ha-base-cold-start-hangout-minji",
+          "persona": "minji-freshman-17",
+          "scenario": "cold-start-hangout",
+          "step": 24,
+          "severity": 2,
+          "quote": "Grad student party?? 나 17살인데.. 사람은 어디 있어? Meetups 눌러보자",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/024-click.jpg",
+            "ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/024-click-som.jpg"
+          ],
+          "url": "/",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Give a reason to stay on /: show real people or things happening now (or a clear next step) instead of empty or generic content."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "9c8f7a48cd72",
+      "title": "Missing / empty content on /meet/meetups",
+      "screen": "/meet/meetups",
+      "frictionType": "content_gap",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-cold-start-hangout-minji"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "cmp2ha-base-cold-start-hangout-minji",
+          "persona": "minji-freshman-17",
+          "scenario": "cold-start-hangout",
+          "step": 26,
+          "severity": 2,
+          "quote": "아무것도 없네.. People 탭은?",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/026-click.jpg",
+            "ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/026-click-som.jpg"
+          ],
+          "url": "/meet/meetups",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /meet/meetups is really missing (or only missing in the test environment); avoid showing empty sections."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "e2f05b7465c0",
+      "title": "Trust / privacy worry on /start — “2005”",
+      "screen": "/start",
+      "frictionType": "trust_privacy",
+      "keyElement": null,
+      "keyElementLabel": "2005",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-first-open-decide-marcus"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "cmp2ha-base-first-open-decide-marcus",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "first-open-decide",
+          "step": 2,
+          "severity": 2,
+          "quote": "Name and birth year right away. I haven't even seen an internship. At least it says why it wants the year. First name only, fine.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-first-open-decide-marcus/shots/002-click.jpg",
+            "ux-sim/runs/cmp2ha-base-first-open-decide-marcus/shots/002-click-som.jpg"
+          ],
+          "url": "/start",
+          "wish": "let me look around before asking who I am"
+        }
+      ],
+      "wishes": [
+        "let me look around before asking who I am"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Explain who will see what when tapping “2005” on /start before asking for it. Personas said they wanted: “let me look around before asking who I am”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "d3b01943595d",
+      "title": "Onboarding friction on /start — “None for now”",
+      "screen": "/start",
+      "frictionType": "onboarding",
+      "keyElement": "none for now",
+      "keyElementLabel": "None for now",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-first-open-decide-marcus"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "cmp2ha-base-first-open-decide-marcus",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "first-open-decide",
+          "step": 18,
+          "severity": 2,
+          "quote": "Another list. 'None for now.' This is the sixth screen, getting long.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-first-open-decide-marcus/shots/018-click.jpg",
+            "ux-sim/runs/cmp2ha-base-first-open-decide-marcus/shots/018-click-som.jpg"
+          ],
+          "url": "/start",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Shorten or explain this sign-up step (/start); ask only what is needed now and let the rest wait until it is useful."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "6346e7cbb6c1",
+      "title": "Missing / empty content on /opportunities/:id — “Start a prep crew e.g. Interview prep · ”",
+      "screen": "/opportunities/:id",
+      "frictionType": "content_gap",
+      "keyElement": "start a prep crew e",
+      "keyElementLabel": "Start a prep crew e.g. Interview prep · ",
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-internship-near-berkeley-priya"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "cmp2ha-base-internship-near-berkeley-priya",
+          "persona": "priya-phd-desktop",
+          "scenario": "internship-near-berkeley",
+          "step": 9,
+          "severity": 2,
+          "quote": "Good enough — Mountain View, MS/PhD, Apply on Waymo. Why is 'Start a prep crew' above the actual details? And nothing about pay.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-internship-near-berkeley-priya/shots/009-click.jpg",
+            "ux-sim/runs/cmp2ha-base-internship-near-berkeley-priya/shots/009-click-som.jpg"
+          ],
+          "url": "/opportunities/op_ext_job_greenhouse_waymo_8287385",
+          "wish": "pay, dates and eligibility first; social extras below"
+        }
+      ],
+      "wishes": [
+        "pay, dates and eligibility first; social extras below"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /opportunities/:id is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “pay, dates and eligibility first; social extras below”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "c839eaceb32e",
+      "title": "Unclear wording on /rides — “Find a ride”",
+      "screen": "/rides",
+      "frictionType": "copy",
+      "keyElement": "find a ride",
+      "keyElementLabel": "Find a ride",
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-ride-sfo-thanksgiving-seoyeon"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "cmp2ha-base-ride-sfo-thanksgiving-seoyeon",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 11,
+          "severity": 2,
+          "quote": "어... 다 영어네. 내 라이드는 없고. 'Find a ride' 누르면 다른 사람 것 보이겠지",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-ride-sfo-thanksgiving-seoyeon/shots/011-click.jpg",
+            "ux-sim/runs/cmp2ha-base-ride-sfo-thanksgiving-seoyeon/shots/011-click-som.jpg"
+          ],
+          "url": "/rides?mine=1",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite “Find a ride” on /rides in plain language (and check the Korean UI)."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "e4346cedfac4",
+      "title": "Onboarding friction on /start/what — “계속”",
+      "screen": "/start/what",
+      "frictionType": "onboarding",
+      "keyElement": "계속",
+      "keyElementLabel": "계속",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-new-cold-start-hangout-minji"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "cmp2ha-new-cold-start-hangout-minji",
+          "persona": "minji-freshman-17",
+          "scenario": "cold-start-hangout",
+          "step": 9,
+          "severity": 2,
+          "quote": "뭐지, 계속 눌렀는데 아직 2/6? 탭 4개 다 봐야 돼? 아 귀찮아",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/009-click.jpg",
+            "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/009-click-som.jpg"
+          ],
+          "url": "/start/what?p=events",
+          "wish": "let me skip the tour"
+        }
+      ],
+      "wishes": [
+        "let me skip the tour"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Shorten or explain this sign-up step (/start/what); ask only what is needed now and let the rest wait until it is useful. Personas said they wanted: “let me skip the tour”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "f499ce6cb47f",
+      "title": "Missing / empty content on /social/meetups",
+      "screen": "/social/meetups",
+      "frictionType": "content_gap",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-new-cold-start-hangout-minji"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "cmp2ha-new-cold-start-hangout-minji",
+          "persona": "minji-freshman-17",
+          "scenario": "cold-start-hangout",
+          "step": 33,
+          "severity": 2,
+          "quote": "모임은 없고 첫 약속 만들래. 밑에 게임나이트 있네. 사람 탭은?",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/033-click.jpg",
+            "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/033-click-som.jpg"
+          ],
+          "url": "/social/meetups",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /social/meetups is really missing (or only missing in the test environment); avoid showing empty sections."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "3b0baf47bb8b",
+      "title": "Confusing UI on /social/people — “갈래요”",
+      "screen": "/social/people",
+      "frictionType": "ux_confusion",
+      "keyElement": "갈래요",
+      "keyElementLabel": "갈래요",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-new-cold-start-hangout-minji"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "cmp2ha-new-cold-start-hangout-minji",
+          "persona": "minji-freshman-17",
+          "scenario": "cold-start-hangout",
+          "step": 37,
+          "severity": 2,
+          "quote": "어? 바로 들어가졌네. '1명이 가요' — 나 혼자잖아 ㅋㅋ. 그래도 토요일 보드게임, 그룹 채팅 있으니까 누가 오면 얘기하면 되겠다",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/037-click.jpg",
+            "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/037-click-som.jpg"
+          ],
+          "url": "/social/people",
+          "wish": "ask before joining, and say nobody else is in yet"
+        }
+      ],
+      "wishes": [
+        "ask before joining, and say nobody else is in yet"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “갈래요” on /social/people does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “ask before joining, and say nobody else is in yet”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "8151a7027a56",
+      "title": "Unclear wording on /orgs/:id",
+      "screen": "/orgs/:id",
+      "frictionType": "copy",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-new-find-a-club-aisha"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "cmp2ha-new-find-a-club-aisha",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 4,
+          "severity": 2,
+          "quote": "OK, at least nothing scary to tap — Follow just gets updates. But 'Not taking requests on Lumi'... so how DO I join? And 'never grants private access' — private access to what? Maybe Events shows a hike I can go to.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-find-a-club-aisha/shots/004-click.jpg",
+            "ux-sim/runs/cmp2ha-new-find-a-club-aisha/shots/004-click-som.jpg"
+          ],
+          "url": "/orgs/oc_berkeley_cal_hiking_and_outdoor_society_chaos_",
+          "wish": "say plainly how to join (show up / their own sign-up) instead of what Lumi doesn't do"
+        }
+      ],
+      "wishes": [
+        "say plainly how to join (show up / their own sign-up) instead of what Lumi doesn't do"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite the wording on /orgs/:id in plain language (and check the Korean UI). Personas said they wanted: “say plainly how to join (show up / their own sign-up) instead of what Lumi doesn't do”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "919841c6195c",
+      "title": "Missing / empty content on /orgs/:id?tab=events — “Events”",
+      "screen": "/orgs/:id?tab=events",
+      "frictionType": "content_gap",
+      "keyElement": "events",
+      "keyElementLabel": "Events",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-new-find-a-club-aisha"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "cmp2ha-new-find-a-club-aisha",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 6,
+          "severity": 2,
+          "quote": "No actual hike dates. I'll follow them so I hear about the next one — it says that's all following does, which feels safe.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-find-a-club-aisha/shots/006-click.jpg",
+            "ux-sim/runs/cmp2ha-new-find-a-club-aisha/shots/006-click-som.jpg"
+          ],
+          "url": "/orgs/oc_berkeley_cal_hiking_and_outdoor_society_chaos_?tab=events",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /orgs/:id?tab=events is really missing (or only missing in the test environment); avoid showing empty sections."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "6a8b724870e4",
+      "title": "Missing / empty content on /guest/explore/opportunities — “Internship Oil and Gas Bond Reviews and ”",
+      "screen": "/guest/explore/opportunities",
+      "frictionType": "content_gap",
+      "keyElement": "internship oil and gas bond",
+      "keyElementLabel": "Internship Oil and Gas Bond Reviews and ",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-new-first-open-decide-marcus"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "cmp2ha-new-first-open-decide-marcus",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "first-open-decide",
+          "step": 5,
+          "severity": 2,
+          "quote": "So it does have real internships — Bureau of Land Management, Park Service. But Bakersfield and DC, not near Berkeley, and what's 'D-Day'? Still, it's real stuff, not a party app. I'll join.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-first-open-decide-marcus/shots/005-click.jpg",
+            "ux-sim/runs/cmp2ha-new-first-open-decide-marcus/shots/005-click-som.jpg"
+          ],
+          "url": "/guest/explore/opportunities?type=internship",
+          "wish": "show Bay Area ones first and say 'closes today' in words"
+        }
+      ],
+      "wishes": [
+        "show Bay Area ones first and say 'closes today' in words"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Check whether the data on /guest/explore/opportunities is really missing (or only missing in the test environment); avoid showing empty sections. Personas said they wanted: “show Bay Area ones first and say 'closes today' in words”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "3cac57534b9b",
+      "title": "Onboarding friction on /start/what — “Continue”",
+      "screen": "/start/what",
+      "frictionType": "onboarding",
+      "keyElement": "continue",
+      "keyElementLabel": "Continue",
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-new-first-open-decide-marcus"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "cmp2ha-new-first-open-decide-marcus",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "first-open-decide",
+          "step": 10,
+          "severity": 2,
+          "quote": "I pressed Continue and it's still '2 of 6'? It just flipped to another sample. How many of these are there?",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-first-open-decide-marcus/shots/010-click.jpg",
+            "ux-sim/runs/cmp2ha-new-first-open-decide-marcus/shots/010-click-som.jpg"
+          ],
+          "url": "/start/what?p=events",
+          "wish": "Continue should go to the next step, or let me skip the preview"
+        }
+      ],
+      "wishes": [
+        "Continue should go to the next step, or let me skip the preview"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Shorten or explain this sign-up step (/start/what); ask only what is needed now and let the rest wait until it is useful. Personas said they wanted: “Continue should go to the next step, or let me skip the preview”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "df7b2a2fea8f",
+      "title": "Hard to find on /explore/opportunities — “Internships”",
+      "screen": "/explore/opportunities",
+      "frictionType": "discoverability",
+      "keyElement": "internships",
+      "keyElementLabel": "Internships",
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-new-internship-near-berkeley-priya"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "cmp2ha-new-internship-near-berkeley-priya",
+          "persona": "priya-phd-desktop",
+          "scenario": "internship-near-berkeley",
+          "step": 4,
+          "severity": 2,
+          "quote": "No location filter, no PhD/MS filter. I have to read each truncated 'Mountain Vie…' line. The top ones happen to be Bay Area, so fine.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/004-click.jpg",
+            "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/004-click-som.jpg"
+          ],
+          "url": "/explore/opportunities?type=internship",
+          "wish": "a Bay Area / near Berkeley location filter and a PhD/MS filter"
+        }
+      ],
+      "wishes": [
+        "a Bay Area / near Berkeley location filter and a PhD/MS filter"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for (“Internships”) where they looked (/explore/opportunities); label icon-only controls. Personas said they wanted: “a Bay Area / near Berkeley location filter and a PhD/MS filter”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "efe3a99b03a1",
+      "title": "Confusing UI on /opportunities/:id — “I applied”",
+      "screen": "/opportunities/:id",
+      "frictionType": "ux_confusion",
+      "keyElement": "i applied",
+      "keyElementLabel": "I applied",
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-new-internship-near-berkeley-priya"
+      ],
+      "occurrences": 1,
+      "severityMax": 2,
+      "maxSeverity": 2,
+      "severityMedian": 2,
+      "events": [
+        {
+          "runId": "cmp2ha-new-internship-near-berkeley-priya",
+          "persona": "priya-phd-desktop",
+          "scenario": "internship-near-berkeley",
+          "step": 6,
+          "severity": 2,
+          "quote": "Better: facts first, source verified, last checked Nov 1. But the big lavender button says 'I applied' — I haven't. The real 'Apply at Source' is half under it. Still no pay.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/006-click.jpg",
+            "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/006-click-som.jpg"
+          ],
+          "url": "/opportunities/op_ext_job_greenhouse_waymo_8287385",
+          "wish": "make 'Apply at source' the main button; 'I applied' secondary"
+        }
+      ],
+      "wishes": [
+        "make 'Apply at source' the main button; 'I applied' secondary"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “I applied” on /opportunities/:id does before people tap it — plain-word label, visible result, or a one-line hint. Personas said they wanted: “make 'Apply at source' the main button; 'I applied' secondary”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "4d28c4b04f0f",
+      "title": "No reason to stay on /",
+      "screen": "/",
+      "frictionType": "motivation",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-internship-near-berkeley-priya",
+        "cmp2ha-new-internship-near-berkeley-priya"
+      ],
+      "occurrences": 2,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "cmp2ha-base-internship-near-berkeley-priya",
+          "persona": "priya-phd-desktop",
+          "scenario": "internship-near-berkeley",
+          "step": 0,
+          "severity": 1,
+          "quote": "Phone-width column in the middle of a 1440 screen again. At least 'Opportunities' is on the first screen now. I want a list I can filter, not one card.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-internship-near-berkeley-priya/shots/000-start.jpg",
+            "ux-sim/runs/cmp2ha-base-internship-near-berkeley-priya/shots/000-start-som.jpg"
+          ],
+          "url": "/",
+          "wish": null
+        },
+        {
+          "runId": "cmp2ha-new-internship-near-berkeley-priya",
+          "persona": "priya-phd-desktop",
+          "scenario": "internship-near-berkeley",
+          "step": 0,
+          "severity": 1,
+          "quote": "Still a phone column, but at least it says so and the side isn't just black. 'Opportunities' up top. I want a list I can filter.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/000-start.jpg",
+            "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/000-start-som.jpg"
+          ],
+          "url": "/",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Give a reason to stay on /: show real people or things happening now (or a clear next step) instead of empty or generic content."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "abbbb40d845c",
+      "title": "Hard to find on /explore/clubs",
+      "screen": "/explore/clubs",
+      "frictionType": "discoverability",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-find-a-club-aisha"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "cmp2ha-base-find-a-club-aisha",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 2,
+          "severity": 1,
+          "quote": "Pre-Med Society feels like a résumé club. Hiking club sounds friendly and low-pressure. There are a lot of sororities further down... no search box though.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-find-a-club-aisha/shots/002-click.jpg",
+            "ux-sim/runs/cmp2ha-base-find-a-club-aisha/shots/002-click-som.jpg"
+          ],
+          "url": "/explore/clubs",
+          "wish": "search clubs by interest"
+        }
+      ],
+      "wishes": [
+        "search clubs by interest"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for where they looked (/explore/clubs); label icon-only controls. Personas said they wanted: “search clubs by interest”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "78bb102ba0f1",
+      "title": "Unclear wording on /chats/:id",
+      "screen": "/chats/:id",
+      "frictionType": "copy",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-lunch-today-diego"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "cmp2ha-base-lunch-today-diego",
+          "persona": "diego-transfer-commuter",
+          "scenario": "lunch-today",
+          "step": 9,
+          "severity": 1,
+          "quote": "Sent. Took a minute. Only thing: it's called lunch but it's 6pm, and the list said 1 going while the page said 0 joined.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-lunch-today-diego/shots/009-type.jpg",
+            "ux-sim/runs/cmp2ha-base-lunch-today-diego/shots/009-type-som.jpg"
+          ],
+          "url": "/chats/cr_dcznn1xkdm",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite the wording on /chats/:id in plain language (and check the Korean UI)."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "b94b701b00c1",
+      "title": "Unclear wording on /profile — “My rides Airports, groceries, SF, Tahoe”",
+      "screen": "/profile",
+      "frictionType": "copy",
+      "keyElement": "my rides airports groceries sf",
+      "keyElementLabel": "My rides Airports, groceries, SF, Tahoe",
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-ride-sfo-thanksgiving-seoyeon"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "cmp2ha-base-ride-sfo-thanksgiving-seoyeon",
+          "persona": "seoyeon-exchange-korean",
+          "scenario": "ride-sfo-thanksgiving",
+          "step": 9,
+          "severity": 1,
+          "quote": "'My rides — Airports' 이거 영어로 남아있네. 그래도 공항이라 써있어서 이거다",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-ride-sfo-thanksgiving-seoyeon/shots/009-scroll.jpg",
+            "ux-sim/runs/cmp2ha-base-ride-sfo-thanksgiving-seoyeon/shots/009-scroll-som.jpg"
+          ],
+          "url": "/profile",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite “My rides Airports, groceries, SF, Tahoe” on /profile in plain language (and check the Korean UI)."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "f44b69218f53",
+      "title": "Hard to find on /schedule — “My timetable”",
+      "screen": "/schedule",
+      "frictionType": "discoverability",
+      "keyElement": "my timetable",
+      "keyElementLabel": "My timetable",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-timetable-add-classes-minji"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "cmp2ha-base-timetable-add-classes-minji",
+          "persona": "minji-freshman-17",
+          "scenario": "timetable-add-classes",
+          "step": 2,
+          "severity": 1,
+          "quote": "My Plans? 시간표 아니네. 아 밑에 My timetable 있다",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-timetable-add-classes-minji/shots/002-click.jpg",
+            "ux-sim/runs/cmp2ha-base-timetable-add-classes-minji/shots/002-click-som.jpg"
+          ],
+          "url": "/schedule",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Surface the path personas were looking for (“My timetable”) where they looked (/schedule); label icon-only controls."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "a104f66ab71e",
+      "title": "Confusing UI on /timetable — “Add lecture only”",
+      "screen": "/timetable",
+      "frictionType": "ux_confusion",
+      "keyElement": "add lecture only",
+      "keyElementLabel": "Add lecture only",
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-timetable-add-classes-minji"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "cmp2ha-base-timetable-add-classes-minji",
+          "persona": "minji-freshman-17",
+          "scenario": "timetable-add-classes",
+          "step": 10,
+          "severity": 1,
+          "quote": "디스커션 섹션?? 몰라.. 'Add lecture only' 누르면 되겠지",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-timetable-add-classes-minji/shots/010-click.jpg",
+            "ux-sim/runs/cmp2ha-base-timetable-add-classes-minji/shots/010-click-som.jpg"
+          ],
+          "url": "/timetable",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Make it obvious what “Add lecture only” on /timetable does before people tap it — plain-word label, visible result, or a one-line hint."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "a0f2ea5c4667",
+      "title": "Unclear wording on /timetable",
+      "screen": "/timetable",
+      "frictionType": "copy",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-base-timetable-add-classes-minji"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "cmp2ha-base-timetable-add-classes-minji",
+          "persona": "minji-freshman-17",
+          "scenario": "timetable-add-classes",
+          "step": 12,
+          "severity": 1,
+          "quote": "들어갔다! 근데 '2 classes'? 하나인데..",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-base-timetable-add-classes-minji/shots/012-click.jpg",
+            "ux-sim/runs/cmp2ha-base-timetable-add-classes-minji/shots/012-click-som.jpg"
+          ],
+          "url": "/timetable",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite the wording on /timetable in plain language (and check the Korean UI)."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "2da294b75311",
+      "title": "Unclear wording on /explore/clubs — “Ending soon”",
+      "screen": "/explore/clubs",
+      "frictionType": "copy",
+      "keyElement": "ending soon",
+      "keyElementLabel": "Ending soon",
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "find-a-club"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-new-find-a-club-aisha"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "cmp2ha-new-find-a-club-aisha",
+          "persona": "aisha-firstgen-anxious",
+          "scenario": "find-a-club",
+          "step": 2,
+          "severity": 1,
+          "quote": "Nice, there's a search and Greek life is separate. But the cards only say 'Outdoors · Public organization' — I can't tell what they do. 'Ending soon' for clubs? Hiking sounds friendly though.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-find-a-club-aisha/shots/002-click.jpg",
+            "ux-sim/runs/cmp2ha-new-find-a-club-aisha/shots/002-click-som.jpg"
+          ],
+          "url": "/explore/clubs",
+          "wish": "one line about what the club does on each card"
+        }
+      ],
+      "wishes": [
+        "one line about what the club does on each card"
+      ],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite “Ending soon” on /explore/clubs in plain language (and check the Korean UI). Personas said they wanted: “one line about what the club does on each card”."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "e8f92cdd453e",
+      "title": "Unclear wording on /welcome",
+      "screen": "/welcome",
+      "frictionType": "copy",
+      "keyElement": null,
+      "keyElementLabel": null,
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-new-first-open-decide-marcus"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "cmp2ha-new-first-open-decide-marcus",
+          "persona": "marcus-senior-lowtech",
+          "scenario": "first-open-decide",
+          "step": 0,
+          "severity": 1,
+          "quote": "'Your college life, all in one place.' Pretty vague — nothing about internships. But 'Look around first' — good, I want to see it before giving my info.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-first-open-decide-marcus/shots/000-start.jpg",
+            "ux-sim/runs/cmp2ha-new-first-open-decide-marcus/shots/000-start-som.jpg"
+          ],
+          "url": "/welcome",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite the wording on /welcome in plain language (and check the Korean UI)."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    },
+    {
+      "fingerprint": "3d5404e260fd",
+      "title": "Unclear wording on /activities/:id — “Group chat”",
+      "screen": "/activities/:id",
+      "frictionType": "copy",
+      "keyElement": "group chat",
+      "keyElementLabel": "Group chat",
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "personaCount": 1,
+      "scenarios": [
+        "lunch-today"
+      ],
+      "scenarioCount": 1,
+      "runs": [
+        "cmp2ha-new-lunch-today-diego"
+      ],
+      "occurrences": 1,
+      "severityMax": 1,
+      "maxSeverity": 1,
+      "severityMedian": 1,
+      "events": [
+        {
+          "runId": "cmp2ha-new-lunch-today-diego",
+          "persona": "diego-transfer-commuter",
+          "scenario": "lunch-today",
+          "step": 5,
+          "severity": 1,
+          "quote": "Done. Big 'Open Group Chat' button. Still says 'Join to get the group chat' under it though — I already joined.",
+          "evidence": [
+            "ux-sim/runs/cmp2ha-new-lunch-today-diego/shots/005-click.jpg",
+            "ux-sim/runs/cmp2ha-new-lunch-today-diego/shots/005-click-som.jpg"
+          ],
+          "url": "/activities/a_s6hk3tyebs",
+          "wish": null
+        }
+      ],
+      "wishes": [],
+      "environmentCaveats": [],
+      "suggestedImprovement": {
+        "kind": "hypothesis",
+        "text": "Rewrite “Group chat” on /activities/:id in plain language (and check the Korean UI)."
+      },
+      "hypothesisNote": "Found by AI personas driving a real browser. Treat it as a hypothesis to confirm with real students, not as measured behaviour; counts are numbers of simulated personas, not user rates."
+    }
+  ],
+  "environmentLimited": [],
+  "falseSuccesses": [],
+  "autoChecks": [
+    {
+      "route": "/guest/explore/opportunities",
+      "device": "phone",
+      "smallTapTargetsMax": 14,
+      "examples": [
+        {
+          "id": 7,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 139,
+          "name": "Search opportunities",
+          "w": 295,
+          "h": 23
+        },
+        {
+          "id": 12,
+          "name": "Recommended",
+          "w": 131,
+          "h": 36
+        },
+        {
+          "id": 13,
+          "name": "Newest",
+          "w": 82,
+          "h": 36
+        },
+        {
+          "id": 14,
+          "name": "Ending soon",
+          "w": 111,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-new-first-open-decide-marcus/shots/004-click.jpg"
+    },
+    {
+      "route": "/meetups/new",
+      "device": "phone",
+      "smallTapTargetsMax": 14,
+      "examples": [
+        {
+          "id": 53,
+          "name": "뒤로",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 109,
+          "name": "커피",
+          "w": 81,
+          "h": 36
+        },
+        {
+          "id": 110,
+          "name": "공부",
+          "w": 81,
+          "h": 36
+        },
+        {
+          "id": 111,
+          "name": "운동",
+          "w": 81,
+          "h": 36
+        },
+        {
+          "id": 112,
+          "name": "점심",
+          "w": 81,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-new-ride-sfo-thanksgiving-seoyeon/shots/023-click.jpg"
+    },
+    {
+      "route": "/guest/explore/events",
+      "device": "phone",
+      "smallTapTargetsMax": 13,
+      "examples": [
+        {
+          "id": 7,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 11,
+          "name": "Search events",
+          "w": 295,
+          "h": 23
+        },
+        {
+          "id": 12,
+          "name": "Recommended",
+          "w": 131,
+          "h": 36
+        },
+        {
+          "id": 13,
+          "name": "Newest",
+          "w": 82,
+          "h": 36
+        },
+        {
+          "id": 14,
+          "name": "Ending soon",
+          "w": 111,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-new-first-open-decide-marcus/shots/002-click.jpg"
+    },
+    {
+      "route": "/social",
+      "device": "phone",
+      "smallTapTargetsMax": 13,
+      "examples": [
+        {
+          "id": 64,
+          "name": "알림",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 65,
+          "name": "메시지",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 109,
+          "name": "커피",
+          "w": 60,
+          "h": 36
+        },
+        {
+          "id": 110,
+          "name": "공부",
+          "w": 60,
+          "h": 36
+        },
+        {
+          "id": 111,
+          "name": "운동",
+          "w": 60,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-new-ride-sfo-thanksgiving-seoyeon/shots/022-click.jpg"
+    },
+    {
+      "route": "/explore/clubs",
+      "device": "phone",
+      "smallTapTargetsMax": 12,
+      "examples": [
+        {
+          "id": 20,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 21,
+          "name": "All",
+          "w": 37,
+          "h": 28
+        },
+        {
+          "id": 22,
+          "name": "Clubs",
+          "w": 55,
+          "h": 28
+        },
+        {
+          "id": 23,
+          "name": "Greek",
+          "w": 56,
+          "h": 28
+        },
+        {
+          "id": 24,
+          "name": "Co-ops",
+          "w": 65,
+          "h": 28
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-find-a-club-aisha/shots/002-click.jpg"
+    },
+    {
+      "route": "/profile",
+      "device": "phone",
+      "smallTapTargetsMax": 12,
+      "examples": [
+        {
+          "id": 21,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 22,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 30,
+          "name": "Find a class to watch",
+          "w": 165,
+          "h": 36
+        },
+        {
+          "id": 18,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-ride-sfo-thanksgiving-seoyeon/shots/002-click.jpg"
+    },
+    {
+      "route": "/rides",
+      "device": "phone",
+      "smallTapTargetsMax": 12,
+      "examples": [
+        {
+          "id": 48,
+          "name": "뒤로",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 78,
+          "name": "Find a ride",
+          "w": 173,
+          "h": 36
+        },
+        {
+          "id": 79,
+          "name": "My rides",
+          "w": 173,
+          "h": 36
+        },
+        {
+          "id": 80,
+          "name": "Post a ride",
+          "w": 99,
+          "h": 36
+        },
+        {
+          "id": 19,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-ride-sfo-thanksgiving-seoyeon/shots/011-click.jpg"
+    },
+    {
+      "route": "/start/communities",
+      "device": "phone",
+      "smallTapTargetsMax": 12,
+      "examples": [
+        {
+          "id": 11,
+          "name": "뒤로",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 37,
+          "name": "건너뛰기",
+          "w": 80,
+          "h": 40
+        },
+        {
+          "id": 46,
+          "name": "동아리",
+          "w": 73,
+          "h": 36
+        },
+        {
+          "id": 47,
+          "name": "그릭 라이프",
+          "w": 101,
+          "h": 36
+        },
+        {
+          "id": 48,
+          "name": "연구실",
+          "w": 73,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/020-click.jpg"
+    },
+    {
+      "route": "/people/explore",
+      "device": "phone",
+      "smallTapTargetsMax": 11,
+      "examples": [
+        {
+          "id": 83,
+          "name": "Filters",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 67,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 47,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 68,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 69,
+          "name": "For You",
+          "w": 85,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/029-click.jpg"
+    },
+    {
+      "route": "/meet/meetups",
+      "device": "phone",
+      "smallTapTargetsMax": 10,
+      "examples": [
+        {
+          "id": 66,
+          "name": "Create",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 67,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 47,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 68,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 69,
+          "name": "For You",
+          "w": 85,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/026-click.jpg"
+    },
+    {
+      "route": "/people",
+      "device": "phone",
+      "smallTapTargetsMax": 10,
+      "examples": [
+        {
+          "id": 66,
+          "name": "Create",
+          "w": 36,
+          "h": 36
+        },
+        {
+          "id": 67,
+          "name": "Notifications",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 47,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 68,
+          "name": "Me",
+          "w": 32,
+          "h": 32
+        },
+        {
+          "id": 69,
+          "name": "For You",
+          "w": 85,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/028-click.jpg"
+    },
+    {
+      "route": "/social/people",
+      "device": "phone",
+      "smallTapTargetsMax": 10,
+      "examples": [
+        {
+          "id": 71,
+          "name": "알림",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 72,
+          "name": "메시지",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 78,
+          "name": "모두 보기",
+          "w": 69,
+          "h": 20
+        },
+        {
+          "id": 99,
+          "name": "Blood on the Clocktower Weekly Game Night",
+          "w": 164,
+          "h": 41
+        },
+        {
+          "id": 110,
+          "name": "11월 7일 (토) 오후 4시 · Social Sciences Building Room 140",
+          "w": 164,
+          "h": 18
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/035-click.jpg"
+    },
+    {
+      "route": "/start/university",
+      "device": "phone",
+      "smallTapTargetsMax": 9,
+      "examples": [
+        {
+          "id": 11,
+          "name": "뒤로",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 26,
+          "name": "학교 검색",
+          "w": 287,
+          "h": 23
+        },
+        {
+          "id": 27,
+          "name": "학부생",
+          "w": 73,
+          "h": 36
+        },
+        {
+          "id": 28,
+          "name": "대학원생",
+          "w": 86,
+          "h": 36
+        },
+        {
+          "id": 29,
+          "name": "졸업생",
+          "w": 73,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/013-click.jpg"
+    },
+    {
+      "route": "/schedule/classes",
+      "device": "phone",
+      "smallTapTargetsMax": 9,
+      "examples": [
+        {
+          "id": 28,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 29,
+          "name": "Fall 2026",
+          "w": 90,
+          "h": 36
+        },
+        {
+          "id": 30,
+          "name": "Spring 2027",
+          "w": 109,
+          "h": 36
+        },
+        {
+          "id": 31,
+          "name": "Course code or name, like MATH 51",
+          "w": 295,
+          "h": 23
+        },
+        {
+          "id": 34,
+          "name": "Mon",
+          "w": 51,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-new-timetable-add-classes-minji/shots/004-click.jpg"
+    },
+    {
+      "route": "/orgs/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 8,
+      "examples": [
+        {
+          "id": 20,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 60,
+          "name": "About",
+          "w": 56,
+          "h": 28
+        },
+        {
+          "id": 61,
+          "name": "Post",
+          "w": 47,
+          "h": 28
+        },
+        {
+          "id": 3,
+          "name": "Events",
+          "w": 61,
+          "h": 28
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-find-a-club-aisha/shots/004-click.jpg"
+    },
+    {
+      "route": "/orgs/:id?tab=recruit",
+      "device": "phone",
+      "smallTapTargetsMax": 8,
+      "examples": [
+        {
+          "id": 20,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 60,
+          "name": "About",
+          "w": 56,
+          "h": 28
+        },
+        {
+          "id": 61,
+          "name": "Post",
+          "w": 47,
+          "h": 28
+        },
+        {
+          "id": 3,
+          "name": "Events",
+          "w": 61,
+          "h": 28
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-find-a-club-aisha/shots/006-click.jpg"
+    },
+    {
+      "route": "/timetable",
+      "device": "phone",
+      "smallTapTargetsMax": 7,
+      "examples": [
+        {
+          "id": 22,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 26,
+          "name": "Friends",
+          "w": 92,
+          "h": 28
+        },
+        {
+          "id": 27,
+          "name": "Class",
+          "w": 88,
+          "h": 36
+        },
+        {
+          "id": 21,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-timetable-add-classes-minji/shots/004-click.jpg"
+    },
+    {
+      "route": "/social/meetups",
+      "device": "phone",
+      "smallTapTargetsMax": 7,
+      "examples": [
+        {
+          "id": 71,
+          "name": "알림",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 72,
+          "name": "메시지",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 78,
+          "name": "모두 보기",
+          "w": 69,
+          "h": 20
+        },
+        {
+          "id": 99,
+          "name": "Blood on the Clocktower Weekly Game Night",
+          "w": 164,
+          "h": 41
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/033-click.jpg"
+    },
+    {
+      "route": "/",
+      "device": "phone",
+      "smallTapTargetsMax": 6,
+      "examples": [
+        {
+          "id": 54,
+          "name": "See all",
+          "w": 62,
+          "h": 21
+        },
+        {
+          "id": 65,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        },
+        {
+          "id": 5,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/024-click.jpg"
+    },
+    {
+      "route": "/activities/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 6,
+      "examples": [
+        {
+          "id": 38,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 39,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 21,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-lunch-today-diego/shots/003-click.jpg"
+    },
+    {
+      "route": "/settings",
+      "device": "phone",
+      "smallTapTargetsMax": 6,
+      "examples": [
+        {
+          "id": 36,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 40,
+          "name": "Allow",
+          "w": 69,
+          "h": 36
+        },
+        {
+          "id": 41,
+          "name": "Open",
+          "w": 66,
+          "h": 36
+        },
+        {
+          "id": 42,
+          "name": "한국어",
+          "w": 156,
+          "h": 36
+        },
+        {
+          "id": 43,
+          "name": "English",
+          "w": 156,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-ride-sfo-thanksgiving-seoyeon/shots/004-click.jpg"
+    },
+    {
+      "route": "/welcome",
+      "device": "phone",
+      "smallTapTargetsMax": 5,
+      "examples": [
+        {
+          "id": 2,
+          "name": "Sign in",
+          "w": 46,
+          "h": 21
+        },
+        {
+          "id": 3,
+          "name": "Terms of Use",
+          "w": 76,
+          "h": 15
+        },
+        {
+          "id": 4,
+          "name": "Privacy Policy",
+          "w": 180,
+          "h": 33
+        },
+        {
+          "id": 5,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/000-start.jpg"
+    },
+    {
+      "route": "/schedule",
+      "device": "phone",
+      "smallTapTargetsMax": 5,
+      "examples": [
+        {
+          "id": 22,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 2,
+          "name": "Messages",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 23,
+          "name": "+ Plan Together",
+          "w": 92,
+          "h": 18
+        },
+        {
+          "id": 20,
+          "name": "Feedback",
+          "w": 93,
+          "h": 32
+        },
+        {
+          "id": 21,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-timetable-add-classes-minji/shots/002-click.jpg"
+    },
+    {
+      "route": "/start/what",
+      "device": "phone",
+      "smallTapTargetsMax": 5,
+      "examples": [
+        {
+          "id": 11,
+          "name": "뒤로",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/007-click.jpg"
+    },
+    {
+      "route": "/start",
+      "device": "phone",
+      "smallTapTargetsMax": 4,
+      "examples": [
+        {
+          "id": 6,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 5,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/002-click.jpg"
+    },
+    {
+      "route": "/start/about",
+      "device": "phone",
+      "smallTapTargetsMax": 4,
+      "examples": [
+        {
+          "id": 11,
+          "name": "뒤로",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 62,
+          "name": "학생증으로 인증",
+          "w": 93,
+          "h": 18
+        },
+        {
+          "id": 63,
+          "name": "이용약관",
+          "w": 234,
+          "h": 31
+        },
+        {
+          "id": 64,
+          "name": "개인정보처리방침",
+          "w": 92,
+          "h": 15
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/023-click.jpg"
+    },
+    {
+      "route": "/chats/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 3,
+      "examples": [
+        {
+          "id": 38,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 54,
+          "name": "Menu",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 21,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-lunch-today-diego/shots/007-click.jpg"
+    },
+    {
+      "route": "/rides/:id",
+      "device": "phone",
+      "smallTapTargetsMax": 3,
+      "examples": [
+        {
+          "id": 48,
+          "name": "뒤로",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 93,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 19,
+          "name": "Switch to the classic design",
+          "w": 158,
+          "h": 32
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-base-ride-sfo-thanksgiving-seoyeon/shots/015-click.jpg"
+    },
+    {
+      "route": "/orgs/:id?tab=events",
+      "device": "phone",
+      "smallTapTargetsMax": 3,
+      "examples": [
+        {
+          "id": 67,
+          "name": "Back",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 68,
+          "name": "More",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 69,
+          "name": "Follow",
+          "w": 76,
+          "h": 36
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-new-find-a-club-aisha/shots/006-click.jpg"
+    },
+    {
+      "route": "/start/discover",
+      "device": "phone",
+      "smallTapTargetsMax": 2,
+      "examples": [
+        {
+          "id": 11,
+          "name": "뒤로",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 37,
+          "name": "건너뛰기",
+          "w": 80,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/019-click.jpg"
+    },
+    {
+      "route": "/notifications",
+      "device": "phone",
+      "smallTapTargetsMax": 2,
+      "examples": [
+        {
+          "id": 53,
+          "name": "뒤로",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 100,
+          "name": "더 보기",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-new-ride-sfo-thanksgiving-seoyeon/shots/013-click.jpg"
+    },
+    {
+      "route": "/search",
+      "device": "phone",
+      "smallTapTargetsMax": 2,
+      "examples": [
+        {
+          "id": 53,
+          "name": "뒤로",
+          "w": 40,
+          "h": 40
+        },
+        {
+          "id": 104,
+          "name": "행사, 사람, 동아리 검색…",
+          "w": 295,
+          "h": 23
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-new-ride-sfo-thanksgiving-seoyeon/shots/018-click.jpg"
+    },
+    {
+      "route": "/start/goals",
+      "device": "phone",
+      "smallTapTargetsMax": 1,
+      "examples": [
+        {
+          "id": 11,
+          "name": "뒤로",
+          "w": 40,
+          "h": 40
+        }
+      ],
+      "horizontalOverflowPxMax": 0,
+      "brokenImagesMax": 0,
+      "evidence": "ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/004-click.jpg"
+    }
+  ]
+}

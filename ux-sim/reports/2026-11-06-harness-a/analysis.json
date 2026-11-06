@@ -1,0 +1,839 @@
+{
+  "schemaVersion": 1,
+  "kind": "ux-sim-analysis",
+  "date": "2026-11-06",
+  "generatedAt": "2026-11-06T01:51:13.480Z",
+  "author": "Orchestrating Claude session (https://claude.ai/code/session_01Fy5mmf17fdkKuHwrxbkNpM) — also played the 14 persona runs (single agent, no subagents, on request)",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "sources": {
+    "findings": "ux-sim/reports/2026-11-06-harness-a/findings.json",
+    "runs": [
+      "cmp2ha-base-cold-start-hangout-minji",
+      "cmp2ha-base-find-a-club-aisha",
+      "cmp2ha-base-first-open-decide-marcus",
+      "cmp2ha-base-internship-near-berkeley-priya",
+      "cmp2ha-base-lunch-today-diego",
+      "cmp2ha-base-ride-sfo-thanksgiving-seoyeon",
+      "cmp2ha-base-timetable-add-classes-minji",
+      "cmp2ha-new-cold-start-hangout-minji",
+      "cmp2ha-new-find-a-club-aisha",
+      "cmp2ha-new-first-open-decide-marcus",
+      "cmp2ha-new-internship-near-berkeley-priya",
+      "cmp2ha-new-lunch-today-diego",
+      "cmp2ha-new-ride-sfo-thanksgiving-seoyeon",
+      "cmp2ha-new-timetable-add-classes-minji"
+    ],
+    "harness": "6f174347960d",
+    "appCommits": [
+      "2567ab7395d4",
+      "a3f2ebed58f4"
+    ]
+  },
+  "problems": [
+    {
+      "key": "onboarding-preview-loops",
+      "title": "Sign-up step \"What Lumi can do\": Continue flips through four sample tabs while the counter stays at 2 of 6",
+      "summary": "Seen on: NEW only. Both sign-up personas pressed Continue on step 2 and landed on another sample tab of the same step, three times, before reaching step 3. Minji (17, impatient with forms) and Marcus (low-tech) each logged it; it added 3 actions to every sign-up.",
+      "rootCauseHypothesis": "/start/what uses the primary Continue button to advance the tab strip (?p=events → clubs → social) instead of the step; the header counter \"2 of 6\" does not move, so it reads like a stuck button.",
+      "severity": 2,
+      "confidence": "high",
+      "frictionTypes": [
+        "onboarding"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "marcus-senior-lowtech"
+      ],
+      "scenarios": [
+        "cold-start-hangout",
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-new-cold-start-hangout-minji",
+          "step": 9,
+          "quote": "뭐지, 계속 눌렀는데 아직 2/6? 탭 4개 다 봐야 돼? 아 귀찮아"
+        },
+        {
+          "runId": "cmp2ha-new-first-open-decide-marcus",
+          "step": 10,
+          "quote": "I pressed Continue and it's still '2 of 6'? It just flipped to another sample. How many of these are there?"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Make Continue go to step 3 from any tab (tabs stay tappable for the curious), or label it \"Next sample\" and add a visible \"Skip preview\". Quick fix.",
+      "fingerprints": [
+        "e4346cedfac4",
+        "3cac57534b9b"
+      ]
+    },
+    {
+      "key": "opportunity-filters-missing",
+      "title": "Opportunities lost the Location (Bay Area) and PhD/MS filters; you read every truncated card line instead",
+      "summary": "Seen on: NEW only. On BASE Priya chose Internships → Location: Bay Area (131 listings, \"PhD/MS internships\" chip, per-field counts). On NEW the list has category chips and a search box but no location or level filter; the location is the end of a truncated line (\"Mountain Vie…\"). She still succeeded because the first cards happened to be Bay Area.",
+      "rootCauseHypothesis": "The redesigned /explore/opportunities kept type chips (?type=internship) but dropped the region select (?region=) and the sub-filters from /explore/opportunities?sub=internship.",
+      "severity": 2,
+      "confidence": "high",
+      "frictionTypes": [
+        "discoverability"
+      ],
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-new-internship-near-berkeley-priya",
+          "step": 4,
+          "quote": "No location filter, no PhD/MS filter. I have to read each truncated 'Mountain Vie…' line. The top ones happen to be Bay Area, so fine."
+        },
+        {
+          "runId": "cmp2ha-base-internship-near-berkeley-priya",
+          "step": 7,
+          "note": "BASE for comparison: Location select set to Bay Area, 131 listings, PhD/MS chip"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Bring back the Location select (Bay Area / Remote / Anywhere) and a PhD/MS chip on the Internships tab; the BASE query parameters already exist server-side. Small port, not a one-liner.",
+      "fingerprints": [
+        "df7b2a2fea8f"
+      ]
+    },
+    {
+      "key": "i-applied-is-primary-button",
+      "title": "On an internship page the big button says \"I applied\"; the real \"Apply at Source\" sits half-hidden under it",
+      "summary": "Seen on: NEW only. The detail page is otherwise better (facts first, \"Source verified\", \"Last checked Sun, Nov 1\"), but the sticky lavender primary button is \"I applied\" and \"Apply at Source\" is cut off behind the sticky bar. Priya: \"I haven't.\" Still no pay information on either side.",
+      "rootCauseHypothesis": "The sticky action bar on /opportunities/:id puts the tracking action (I applied) as primary and the outbound link as a secondary row above it that the bar overlaps.",
+      "severity": 2,
+      "confidence": "medium",
+      "frictionTypes": [
+        "ux_confusion"
+      ],
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-new-internship-near-berkeley-priya",
+          "step": 6,
+          "quote": "But the big lavender button says 'I applied' — I haven't. The real 'Apply at Source' is half under it. Still no pay."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Make \"Apply at source ↗\" the primary sticky button; show \"I applied\" as a secondary text button after the student returns from the source. Quick fix.",
+      "fingerprints": [
+        "efe3a99b03a1"
+      ]
+    },
+    {
+      "key": "guest-internships-far-and-closing",
+      "title": "Guest \"Look around first\": the first internships are in Bakersfield and Washington DC, all marked \"D-Day\"",
+      "summary": "Seen on: NEW only (guest mode is new). Marcus used \"Look around first\", which is exactly what he wanted, and chose Internships. The first three were Bureau of Land Management (Bakersfield) and National Park Service (DC), each \"D-Day\". It convinced him the listings are real, but not that they are for him or near Berkeley.",
+      "rootCauseHypothesis": "The guest Opportunities list sorts \"Recommended\" without a profile, so national federal listings closing today float to the top; \"D-Day\" is unexplained shorthand (related: internship-list-labels-unclear).",
+      "severity": 2,
+      "confidence": "medium",
+      "frictionTypes": [
+        "content_gap",
+        "copy"
+      ],
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-new-first-open-decide-marcus",
+          "step": 5,
+          "quote": "So it does have real internships — Bureau of Land Management, Park Service. But Bakersfield and DC, not near Berkeley, and what's 'D-Day'?"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": "Listings are the shared live snapshot (2026-11-02), identical on both sides; check the guest ordering on live.",
+      "suggestedFix": "For guests, sort campus/Bay Area first and hide listings closing today; write \"Closes today\" instead of \"D-Day\". Quick fix.",
+      "fingerprints": [
+        "6a8b724870e4"
+      ]
+    },
+    {
+      "key": "club-join-status-unclear",
+      "title": "Club pages still don't say how to join (BASE: Ask to join vs Not recruiting; NEW: \"Not taking requests on Lumi\")",
+      "summary": "Seen on: BOTH, milder on NEW. BASE: Aisha saw an \"Unverified\" badge and a big \"Ask to join\" next to \"Not recruiting right now\" (sev 3, trust). NEW removes the badge and the contradiction — only \"Follow\" — but says \"Membership: Not taking requests on Lumi · Following never grants private access\", which tells her what Lumi doesn't do, not how she can join (sev 2, copy).",
+      "rootCauseHypothesis": "The club page describes Lumi's membership feature state instead of the club's real joining route (show up / their own form / recruiting season).",
+      "severity": 3,
+      "confidence": "high",
+      "frictionTypes": [
+        "trust_privacy",
+        "ux_confusion",
+        "copy"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "find-a-club"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-base-find-a-club-aisha",
+          "step": 4,
+          "quote": "Wait, 'Unverified' — is this even the real club? And 'Ask to join'... who am I asking, does it send my profile?"
+        },
+        {
+          "runId": "cmp2ha-base-find-a-club-aisha",
+          "step": 6,
+          "quote": "So they're not recruiting... but I can still ask to join? Did I miss a window?"
+        },
+        {
+          "runId": "cmp2ha-new-find-a-club-aisha",
+          "step": 4,
+          "quote": "'Not taking requests on Lumi'... so how DO I join? And 'never grants private access' — private access to what?"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Replace the Membership row with one plain line from the club's own listing (\"Open to everyone — come to a weekend hike\" / \"Applies each fall — next round Jan\") and drop \"private access\" jargon. Copy fix.",
+      "fingerprints": [
+        "d80495a57f74",
+        "b671f45c6bb2",
+        "8151a7027a56"
+      ]
+    },
+    {
+      "key": "club-page-looks-empty",
+      "title": "Club Events tab has no dated events — \"Weekend hikes\" with no next date",
+      "summary": "Seen on: NEW (BASE not visited in this cell; same data on both sides). Aisha checked Events hoping for a hike she could go to and found only the regular-activities text.",
+      "rootCauseHypothesis": "Org listings carry free-text \"regular activities\" but no dated events in the snapshot; the tab promises more than the data has.",
+      "severity": 2,
+      "confidence": "medium",
+      "frictionTypes": [
+        "content_gap"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "find-a-club"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-new-find-a-club-aisha",
+          "step": 6,
+          "quote": "No actual hike dates. I'll follow them so I hear about the next one"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": "Events come from the shared live snapshot; CHAOS may have dated events on CalLink that the importer does not attach to the org. Check on live.",
+      "suggestedFix": "When a club has no dated events, show its own link/calendar (\"See their schedule ↗\") instead of an empty tab.",
+      "fingerprints": [
+        "919841c6195c"
+      ]
+    },
+    {
+      "key": "club-list-cards-thin",
+      "title": "Club list cards lost the one-line description; the list offers an \"Ending soon\" sort for clubs",
+      "summary": "Seen on: NEW only. NEW cards show only \"Outdoors · Public organization\"; BASE cards said \"Weekend hikes, backpacking trips and gear rentals\". The shared Recommended/Newest/Ending soon sort row also appears on Clubs, where \"Ending soon\" means nothing.",
+      "rootCauseHypothesis": "One generic list card + sort row is reused across Events / Opportunities / Clubs.",
+      "severity": 1,
+      "confidence": "medium",
+      "frictionTypes": [
+        "copy"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "find-a-club"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-new-find-a-club-aisha",
+          "step": 2,
+          "quote": "But the cards only say 'Outdoors · Public organization' — I can't tell what they do. 'Ending soon' for clubs?"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Put the club's one-line description back on the card; hide \"Ending soon\" on the Clubs tab. Quick fix.",
+      "fingerprints": [
+        "2da294b75311"
+      ]
+    },
+    {
+      "key": "welcome-does-not-say-what-for",
+      "title": "NEW welcome (\"Your college life, all in one place\") doesn't say what you can do here",
+      "summary": "Seen on: NEW only. Marcus, who came for internships, found the hero vague; BASE's welcome at least scrolled \"457 INTERNSHIPS\" and \"Find someone for lunch\". He recovered via \"Look around first\".",
+      "rootCauseHypothesis": "The hero copy is a brand line; the three floating chips (\"Your week\", \"Good company\", \"Your communities\") are abstract.",
+      "severity": 1,
+      "confidence": "low",
+      "frictionTypes": [
+        "copy"
+      ],
+      "personas": [
+        "marcus-senior-lowtech"
+      ],
+      "scenarios": [
+        "first-open-decide"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-new-first-open-decide-marcus",
+          "step": 0,
+          "quote": "'Your college life, all in one place.' Pretty vague — nothing about internships."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Name concrete things in the chips: \"Find someone for lunch\", \"Internships near campus\", \"Clubs that fit you\".",
+      "fingerprints": [
+        "e8f92cdd453e"
+      ]
+    },
+    {
+      "key": "joined-hint-stale",
+      "title": "After joining a meetup, \"Join to get the group chat\" still shows and the toast covers the question box",
+      "summary": "Seen on: NEW only, minor. Diego joined fine; the hint under the tabs still told him to join, and the \"You're going!\" toast sat on top of \"Ask the host…\".",
+      "rootCauseHypothesis": "The hint is static copy on /activities/:id; the toast is positioned over the inline input.",
+      "severity": 1,
+      "confidence": "medium",
+      "frictionTypes": [
+        "copy"
+      ],
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "lunch-today"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-new-lunch-today-diego",
+          "step": 5,
+          "quote": "Big 'Open Group Chat' button. Still says 'Join to get the group chat' under it though — I already joined."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Hide the hint once joined; move the toast above the sticky bar. Quick fix.",
+      "fingerprints": [
+        "3d5404e260fd"
+      ]
+    },
+    {
+      "key": "go-together-joins-without-asking",
+      "title": "\"Go together\" on an event makes you host of a one-person group in one tap",
+      "summary": "Seen on: NEW in this batch (the feature also exists on BASE; earlier analyses). On empty Social tabs NEW now shows \"This week on campus\" with \"Go together\". Minji tapped it expecting to find others; she was instantly in a \"Go together · Board Games\" group of 1, marked \"I'm going\". It is what turned her cold start into a goal-met run.",
+      "rootCauseHypothesis": "One tap both RSVPs and creates the group; the sheet says \"1 person is going\" without saying that person is you.",
+      "severity": 2,
+      "confidence": "medium",
+      "frictionTypes": [
+        "ux_confusion"
+      ],
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-new-cold-start-hangout-minji",
+          "step": 37,
+          "quote": "어? 바로 들어가졌네. '1명이 가요' — 나 혼자잖아 ㅋㅋ."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Open the sheet first (\"Start a go-together group? You'll be the first — we'll show it to others going\"), then confirm.",
+      "fingerprints": [
+        "3b0baf47bb8b"
+      ]
+    },
+    {
+      "key": "cold-start-nobody-here",
+      "title": "A brand-new account finds nobody: Meetups and People are empty, People says \"invite friends\"",
+      "summary": "Seen on: BOTH. BASE: Minji signed up, found \"No meetups yet\" and an empty People list → abandoned (sev 4, \"친구가 없어서 깐 건데\"). NEW: same empty Meetups and People, but both tabs now list \"This week on campus\" events with \"Go together\" underneath, which gave her something to do → goal met (sev 3).",
+      "rootCauseHypothesis": "Cold start is real (no other students locally or for a new campus); NEW mitigates it by filling the empty state with real campus events.",
+      "severity": 4,
+      "confidence": "high",
+      "frictionTypes": [
+        "content_gap"
+      ],
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-base-cold-start-hangout-minji",
+          "step": 26,
+          "note": "BASE /meet/meetups: \"No meetups yet — create the first meetup\""
+        },
+        {
+          "runId": "cmp2ha-base-cold-start-hangout-minji",
+          "step": 29,
+          "quote": "헐 아무도 없어?? 친구 초대하라고... 친구가 없어서 깐 건데 ㅠ"
+        },
+        {
+          "runId": "cmp2ha-new-cold-start-hangout-minji",
+          "step": 33,
+          "note": "NEW /social/meetups: empty, but \"This week on campus\" events below"
+        },
+        {
+          "runId": "cmp2ha-new-cold-start-hangout-minji",
+          "step": 35,
+          "quote": "사람도 없네.. 친구 초대하래."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": "A fresh account sees no other students locally and on live (see README). Not environment-limited.",
+      "suggestedFix": "Keep NEW's \"this week on campus\" fill on BASE's empty states too; replace \"Invite friends\" as the only CTA with \"Go to something this week\".",
+      "fingerprints": [
+        "d56357a742fa",
+        "9c8f7a48cd72",
+        "437a7795dcb2",
+        "f499ce6cb47f"
+      ]
+    },
+    {
+      "key": "desktop-phone-column",
+      "title": "On a laptop the app is a phone-width column",
+      "summary": "Seen on: BOTH. NEW adds a branded side panel and says so (\"laid out for your phone… Everything works here too\"), which Priya found less off-putting than BASE's black bars.",
+      "rootCauseHypothesis": "Mobile-only layout.",
+      "severity": 1,
+      "confidence": "high",
+      "frictionTypes": [
+        "motivation"
+      ],
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-base-internship-near-berkeley-priya",
+          "step": 0,
+          "quote": "Phone-width column in the middle of a 1440 screen again."
+        },
+        {
+          "runId": "cmp2ha-new-internship-near-berkeley-priya",
+          "step": 0,
+          "quote": "Still a phone column, but at least it says so and the side isn't just black."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Two-column desktop layout for Explore lists and detail pages.",
+      "fingerprints": [
+        "4d28c4b04f0f"
+      ]
+    },
+    {
+      "key": "internship-details-missing-pay-and-role",
+      "title": "Internship pages never say if it is paid; BASE also puts \"Start a prep crew\" above the job facts",
+      "summary": "Seen on: BOTH (pay); BASE only (prep crew above facts). NEW puts location, field, international-student and eligibility facts first and moves social features below — the ordering part is fixed. Pay is still missing on both.",
+      "rootCauseHypothesis": "The listing schema has no compensation field; BASE's layout ranked social features first.",
+      "severity": 2,
+      "confidence": "high",
+      "frictionTypes": [
+        "content_gap"
+      ],
+      "personas": [
+        "priya-phd-desktop"
+      ],
+      "scenarios": [
+        "internship-near-berkeley"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-base-internship-near-berkeley-priya",
+          "step": 9,
+          "quote": "Why is 'Start a prep crew' above the actual details? And nothing about pay."
+        },
+        {
+          "runId": "cmp2ha-new-internship-near-berkeley-priya",
+          "step": 6,
+          "quote": "Still no pay."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Add \"Pay: stated / not stated in posting\" as a row, like the international-students row.",
+      "fingerprints": [
+        "6346e7cbb6c1",
+        "efe3a99b03a1"
+      ]
+    },
+    {
+      "key": "signup-asks-too-much-too-early",
+      "title": "BASE sign-up asks name and birth year on screen 1 and runs 7 screens before you see anything",
+      "summary": "Seen on: BASE. Marcus hesitated at name + birth year before seeing any internship; Minji skipped interests to get to the e-mail. NEW: \"Look around first\" lets you see real listings signed out, and name/birth year/e-mail move to the last step (6 of 6) — but the step-2 preview loop (onboarding-preview-loops) keeps the action count similar.",
+      "rootCauseHypothesis": "BASE /start asks identity first.",
+      "severity": 2,
+      "confidence": "high",
+      "frictionTypes": [
+        "onboarding",
+        "trust_privacy"
+      ],
+      "personas": [
+        "marcus-senior-lowtech",
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "first-open-decide",
+        "cold-start-hangout"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-base-first-open-decide-marcus",
+          "step": 2,
+          "quote": "Name and birth year right away. I haven't even seen an internship."
+        },
+        {
+          "runId": "cmp2ha-base-first-open-decide-marcus",
+          "step": 18,
+          "quote": "Another list. 'None for now.' This is the sixth screen, getting long."
+        },
+        {
+          "runId": "cmp2ha-base-cold-start-hangout-minji",
+          "step": 14,
+          "quote": "아 귀찮아.. 또 고르래. 이메일은 언제 해? Skip"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Resolved by NEW's order (guest look-around + identity last).",
+      "fingerprints": [
+        "e2f05b7465c0",
+        "d3b01943595d",
+        "8a0bf61f729f"
+      ]
+    },
+    {
+      "key": "teasers-and-for-you-skew-grad-careers",
+      "title": "A 17-year-old's first home screen leads with a \"Grad Student Appreciation Party\"",
+      "summary": "Seen on: BASE (Minji right after sign-up). NEW's first card for the same snapshot was a public-health talk / designathon; not re-observed as friction.",
+      "rootCauseHypothesis": "For-you ranking ignores year/level for a brand-new undergrad.",
+      "severity": 2,
+      "confidence": "medium",
+      "frictionTypes": [
+        "motivation"
+      ],
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-base-cold-start-hangout-minji",
+          "step": 24,
+          "quote": "Grad student party?? 나 17살인데.. 사람은 어디 있어?"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": "Same events snapshot on both sides.",
+      "suggestedFix": "Filter grad-only events out of For you for undergrads.",
+      "fingerprints": [
+        "8bb560735e71"
+      ]
+    },
+    {
+      "key": "going-button-unclear",
+      "title": "BASE plan page: \"Going / Interested\" and the count disagrees (\"1 going\" vs \"0 joined\")",
+      "summary": "Seen on: BASE. Diego joined fine but noticed the list said \"1 going\" and the page \"0 joined\". NEW has one \"Join Meetup\" button and a consistent \"1 going · 4 spots\" → \"2 going\".",
+      "rootCauseHypothesis": "List counts the host, detail does not.",
+      "severity": 1,
+      "confidence": "high",
+      "frictionTypes": [
+        "copy"
+      ],
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "lunch-today"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-base-lunch-today-diego",
+          "step": 9,
+          "quote": "Only thing: it's called lunch but it's 6pm, and the list said 1 going while the page said 0 joined."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": "\"Lunch at 6pm\" is the clock artefact (runs at 17:35 PT), not a finding.",
+      "suggestedFix": "Resolved on NEW.",
+      "fingerprints": [
+        "78bb102ba0f1"
+      ]
+    },
+    {
+      "key": "timetable-behind-schedule-tab",
+      "title": "BASE Schedule tab opens \"My Plans\"; the timetable is behind a second button",
+      "summary": "Seen on: BASE. NEW Schedule opens the week grid with \"Add Classes\" (5 actions to goal vs 6, no friction).",
+      "rootCauseHypothesis": "Schedule = plans first.",
+      "severity": 1,
+      "confidence": "high",
+      "frictionTypes": [
+        "discoverability"
+      ],
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-base-timetable-add-classes-minji",
+          "step": 2,
+          "quote": "My Plans? 시간표 아니네. 아 밑에 My timetable 있다"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Resolved on NEW.",
+      "fingerprints": [
+        "f44b69218f53"
+      ]
+    },
+    {
+      "key": "section-picker-extra-step",
+      "title": "Adding a class asks for a discussion section from a long list",
+      "summary": "Seen on: BOTH; BASE logged it (\"Add lecture only\"), NEW labels it \"Optional\" with a plain \"Add Class\" button and Minji did not log friction.",
+      "rootCauseHypothesis": "Section picker always shown.",
+      "severity": 1,
+      "confidence": "medium",
+      "frictionTypes": [
+        "ux_confusion"
+      ],
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-base-timetable-add-classes-minji",
+          "step": 10,
+          "quote": "디스커션 섹션?? 몰라.. 'Add lecture only' 누르면 되겠지"
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Mostly resolved on NEW (optional + Add Class).",
+      "fingerprints": [
+        "a104f66ab71e"
+      ]
+    },
+    {
+      "key": "timetable-class-count",
+      "title": "BASE timetable header says \"2 classes\" for one course",
+      "summary": "Seen on: BASE. NEW shows no count.",
+      "rootCauseHypothesis": "Counts meetings.",
+      "severity": 1,
+      "confidence": "high",
+      "frictionTypes": [
+        "copy"
+      ],
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "timetable-add-classes"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-base-timetable-add-classes-minji",
+          "step": 12,
+          "quote": "들어갔다! 근데 '2 classes'? 하나인데.."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Resolved on NEW.",
+      "fingerprints": [
+        "a0f2ea5c4667"
+      ]
+    },
+    {
+      "key": "no-club-search",
+      "title": "BASE club list has no search and runs into a long Greek-life block",
+      "summary": "Seen on: BASE. NEW has \"Search clubs\", defaults to Student Clubs and puts Greek Life in its own chip.",
+      "rootCauseHypothesis": "One mixed list.",
+      "severity": 1,
+      "confidence": "high",
+      "frictionTypes": [
+        "discoverability"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "find-a-club"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-base-find-a-club-aisha",
+          "step": 2,
+          "quote": "There are a lot of sororities further down... no search box though."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Resolved on NEW.",
+      "fingerprints": [
+        "abbbb40d845c"
+      ]
+    },
+    {
+      "key": "korean-hard-to-find-and-partial",
+      "title": "BASE: Korean only in Settings, and Rides stays English after switching",
+      "summary": "Seen on: BASE. Seoyeon switched to 한국어 in Settings, but \"My rides\" and the Rides screens stayed English. NEW has a language toggle on the welcome screen (Minji found it on step 1) and every NEW screen she and Seoyeon saw was Korean.",
+      "rootCauseHypothesis": "Untranslated Rides strings; no language switch before sign-in.",
+      "severity": 2,
+      "confidence": "high",
+      "frictionTypes": [
+        "copy"
+      ],
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-base-ride-sfo-thanksgiving-seoyeon",
+          "step": 9,
+          "quote": "'My rides — Airports' 이거 영어로 남아있네."
+        },
+        {
+          "runId": "cmp2ha-base-ride-sfo-thanksgiving-seoyeon",
+          "step": 11,
+          "quote": "어... 다 영어네. 내 라이드는 없고."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": null,
+      "suggestedFix": "Resolved on NEW (Rides removed; welcome toggle added).",
+      "fingerprints": [
+        "b94b701b00c1",
+        "c839eaceb32e"
+      ]
+    },
+    {
+      "key": "rides-removed-by-design",
+      "title": "Removed by design: a student looking for a shared SFO ride finds no trace of rides on NEW",
+      "summary": "Seen on: NEW. NOT a regression — rides, seat alerts, map and academic calendar were removed on purpose. Reported so the owner sees the consequence: Seoyeon (BASE: joined Jun's Nov 25 SFO ride in 9 actions) searched Meetups, Search (\"SFO\" → no results) and the meetup form (coffee/study/workout/lunch/hangout, campus places only) and abandoned at patience. Nothing tells her rides are gone or where students do this instead.",
+      "rootCauseHypothesis": "Deliberate scope cut; no empty-state or search fallback for ride/airport intents.",
+      "severity": 4,
+      "confidence": "high",
+      "frictionTypes": [
+        "discoverability",
+        "content_gap"
+      ],
+      "personas": [
+        "seoyeon-exchange-korean"
+      ],
+      "scenarios": [
+        "ride-sfo-thanksgiving"
+      ],
+      "evidence": [
+        {
+          "runId": "cmp2ha-new-ride-sfo-thanksgiving-seoyeon",
+          "step": 11,
+          "quote": "라이드나 공항 같은 게 없어... 검색해볼까? SFO"
+        },
+        {
+          "runId": "cmp2ha-new-ride-sfo-thanksgiving-seoyeon",
+          "step": 19,
+          "quote": "결과 없음... 라이드 기능이 없나?"
+        },
+        {
+          "runId": "cmp2ha-new-ride-sfo-thanksgiving-seoyeon",
+          "step": 23,
+          "quote": "커피, 공부, 운동, 점심... 공항 가는 건 없네."
+        }
+      ],
+      "environmentLimited": false,
+      "environmentNote": "Removed by design in NEW; kept in the matrix on request. Do not file as a regression.",
+      "suggestedFix": "Optional: if the cut stays, let a meetup be \"Travel\" with an off-campus place, or answer \"SFO/ride/airport\" searches with a one-line pointer.",
+      "fingerprints": [
+        "673d175397b9",
+        "5cea59c4df99",
+        "bd87967c28f4"
+      ],
+      "file": false
+    }
+  ],
+  "dismissed": [],
+  "harnessIssues": [
+    {
+      "title": "One agent played every persona and knew the success checks",
+      "detail": "On request, the orchestrating session played all 14 runs itself instead of one blind subagent per cell, after reading the README (which summarises each success check) and the scenario files (to judge route adaptation). Decisions were kept identical per cell across BASE and NEW where the screens allowed it, but the runs are less independent than PERSONA_RUN.md intends.",
+      "runs": [
+        "cmp2ha-base-cold-start-hangout-minji",
+        "cmp2ha-base-find-a-club-aisha",
+        "cmp2ha-base-first-open-decide-marcus",
+        "cmp2ha-base-internship-near-berkeley-priya",
+        "cmp2ha-base-lunch-today-diego",
+        "cmp2ha-base-ride-sfo-thanksgiving-seoyeon",
+        "cmp2ha-base-timetable-add-classes-minji",
+        "cmp2ha-new-cold-start-hangout-minji",
+        "cmp2ha-new-find-a-club-aisha",
+        "cmp2ha-new-first-open-decide-marcus",
+        "cmp2ha-new-internship-near-berkeley-priya",
+        "cmp2ha-new-lunch-today-diego",
+        "cmp2ha-new-ride-sfo-thanksgiving-seoyeon",
+        "cmp2ha-new-timetable-add-classes-minji"
+      ]
+    },
+    {
+      "title": "Mid-run peek at run.json",
+      "detail": "In cmp2ha-new-cold-start-hangout-minji the session read run.json goal state after step 37 and before finishing (PERSONA_RUN rule 2). The next action was finish; the persona's reported outcome may be biased toward success.",
+      "runs": [
+        "cmp2ha-new-cold-start-hangout-minji"
+      ]
+    },
+    {
+      "title": "Player mis-tap",
+      "detail": "cmp2ha-new-ride-sfo-thanksgiving-seoyeon step 13: the player tapped the bell (Notifications) meaning to open Search; it adds a backtrack to that run's frustration. Not an app problem.",
+      "runs": [
+        "cmp2ha-new-ride-sfo-thanksgiving-seoyeon"
+      ]
+    },
+    {
+      "title": "Clock: runs at 17:34–17:47 PT",
+      "detail": "Lunch peers' 12:30/13:00 plans were moved to 18:19–18:20 (\"lunch at 6pm\") on both sides. Same hour both sides; no lunch finding is based on it.",
+      "runs": [
+        "cmp2ha-base-lunch-today-diego",
+        "cmp2ha-new-lunch-today-diego"
+      ]
+    },
+    {
+      "title": "first-open-decide landing regex predates the NEW tab routes",
+      "detail": "urlMatches ^/(discover|community|profile)?(\\?.*)?$ — add explore|schedule|social (and /social/*, /explore/*) before the next NEW batch. Not triggered here.",
+      "runs": [
+        "cmp2ha-new-first-open-decide-marcus"
+      ]
+    }
+  ],
+  "notes": "BASE = origin/claude/friendly-euler-emuo1f @ 2567ab7 (live). NEW = origin/claude/harness-a @ a3f2ebe. Same harness 6f174347960d, same catalog f079553d, same live events snapshot fa9ccb47 (2026-11-02, read-only), fresh accounts on both sides, interleaved cell by cell between 01:34 and 01:47 UTC (17:34–17:47 PT). One run per cell = anecdote, not a trend.\n\nScenario table (BASE → NEW): lunch-today/diego: success(3 act, 22s) → success(3 act, 26s); timetable-add-classes/minji: success(6 act, 33s) → success(5 act, 21s); internship-near-berkeley/priya: success(4 act, 77s) → success(3 act, 50s); find-a-club/aisha: success(2 act, 62s) → success(2 act, 48s); cold-start-hangout/minji: abandoned(— act, —s) → success(25 act, 47s); first-open-decide/marcus: success(20 act, 129s) → success(24 act, 166s); ride-sfo-thanksgiving/seoyeon: success(9 act, 102s) → abandoned(— act, —s) [removed by design]. No false successes on either side. Structured version: comparison.json.\n\nSuccess-check adaptations: none were needed. NEW kept /orgs/:id, /opportunities/:id, signed-in landing on \"/\", users.timetable, activities/participations/chatRooms, so every check ran unchanged on both sides. Caveats: (1) first-open-decide's urlMatches ^/(discover|community|profile)? does not list NEW's /explore, /schedule, /social tabs — both Marcus runs landed on \"/\" so it did not matter, but widen it before the next NEW batch; (2) NEW cold-start was met by \"posted a plan\": the one-tap \"Go together · Board Games\" group (activity a_gvzfofa8ma, hostId = Minji, nobody else) — it satisfies the check as written; (3) ride-sfo-thanksgiving cannot be met on NEW by design.\n\nSeverity on NEW: max 2 for every problem except the by-design ride cut (4) and cold start (3, improved from 4). No bugs, console errors or failed requests on either side.\n\nCommitted evidence: run.json + report.md for all 14 runs, but only the key screenshots (start, goal step, every evidence step above, and the frames used in the owner images) — 55 JPEGs, ~1.5 MB. Other thumbnails linked from report.md/summary.md stay local."
+}

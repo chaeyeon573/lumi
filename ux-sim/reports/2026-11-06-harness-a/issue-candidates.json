@@ -1,0 +1,204 @@
+{
+  "generatedAt": "2026-11-06T01:51:20.998Z",
+  "source": "ux-sim/reports/2026-11-06-harness-a/analysis.json",
+  "layer": "curated (analysis.json)",
+  "rule": "not environment-limited, and severity ≥ 3 or ≥ 2 personas, unless the problem sets file: true|false",
+  "dedupe": "before creating, search existing issues for <!-- ux-sim:problem=<key> --> and for any <!-- ux-sim:fp=<fingerprint> --> marker; update the match instead of duplicating",
+  "note": "Candidates only — ux-sim never creates issues.",
+  "coverage": {
+    "findings": 33,
+    "grouped": 33,
+    "dismissed": 0,
+    "unassigned": []
+  },
+  "warnings": [],
+  "candidates": [
+    {
+      "key": "onboarding-preview-loops",
+      "fingerprints": [
+        "e4346cedfac4",
+        "3cac57534b9b"
+      ],
+      "title": "[ux-sim] Sign-up step \"What Lumi can do\": Continue flips through four sample tabs while the counter stays at 2 of 6",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nSeen on: NEW only. Both sign-up personas pressed Continue on step 2 and landed on another sample tab of the same step, three times, before reaching step 3. Minji (17, impatient with forms) and Marcus (low-tech) each logged it; it added 3 actions to every sign-up.\n\nSeverity **2** (Moderate — slowed me down or made me hesitate; I recovered on my own.) · analyst confidence high · **2 simulated persona(s)** across 2 scenario(s).\n\n### Root cause (hypothesis)\n\n/start/what uses the primary Continue button to advance the tab strip (?p=events → clubs → social) instead of the step; the header counter \"2 of 6\" does not move, so it reads like a stuck button.\n\n### Evidence\n\n- run `cmp2ha-new-cold-start-hangout-minji` step 9 — “뭐지, 계속 눌렀는데 아직 2/6? 탭 4개 다 봐야 돼? 아 귀찮아” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/009-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/009-click-som.jpg)\n- run `cmp2ha-new-first-open-decide-marcus` step 10 — “I pressed Continue and it's still '2 of 6'? It just flipped to another sample. How many of these are there?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-new-first-open-decide-marcus/shots/010-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-new-first-open-decide-marcus/shots/010-click-som.jpg)\n\nRuns: [`cmp2ha-new-cold-start-hangout-minji`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/report.md), [`cmp2ha-new-first-open-decide-marcus`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-new-first-open-decide-marcus/report.md)\n\n### Who\n\nPersonas: `minji-freshman-17`, `marcus-senior-lowtech` · scenarios: `cold-start-hangout`, `first-open-decide`\n\n### Suggested fix (hypothesis)\n\nMake Continue go to step 3 from any tab (tabs stay tappable for the curious), or label it \"Next sample\" and add a visible \"Skip preview\". Quick fix.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=onboarding-preview-loops -->\n<!-- ux-sim:fp=e4346cedfac4 -->\n<!-- ux-sim:fp=3cac57534b9b -->",
+      "labels": [
+        "ux-sim",
+        "severity:2",
+        "onboarding"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "marcus-senior-lowtech"
+      ],
+      "scenarios": [
+        "cold-start-hangout",
+        "first-open-decide"
+      ],
+      "severity": 2
+    },
+    {
+      "key": "club-join-status-unclear",
+      "fingerprints": [
+        "d80495a57f74",
+        "b671f45c6bb2",
+        "8151a7027a56"
+      ],
+      "title": "[ux-sim] Club pages still don't say how to join (BASE: Ask to join vs Not recruiting; NEW: \"Not taking requests on Lumi\")",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nSeen on: BOTH, milder on NEW. BASE: Aisha saw an \"Unverified\" badge and a big \"Ask to join\" next to \"Not recruiting right now\" (sev 3, trust). NEW removes the badge and the contradiction — only \"Follow\" — but says \"Membership: Not taking requests on Lumi · Following never grants private access\", which tells her what Lumi doesn't do, not how she can join (sev 2, copy).\n\nSeverity **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.) · analyst confidence high · **1 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nThe club page describes Lumi's membership feature state instead of the club's real joining route (show up / their own form / recruiting season).\n\n### Evidence\n\n- run `cmp2ha-base-find-a-club-aisha` step 4 — “Wait, 'Unverified' — is this even the real club? And 'Ask to join'... who am I asking, does it send my profile?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-find-a-club-aisha/shots/004-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-find-a-club-aisha/shots/004-click-som.jpg)\n- run `cmp2ha-base-find-a-club-aisha` step 6 — “So they're not recruiting... but I can still ask to join? Did I miss a window?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-find-a-club-aisha/shots/006-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-find-a-club-aisha/shots/006-click-som.jpg)\n- run `cmp2ha-new-find-a-club-aisha` step 4 — “'Not taking requests on Lumi'... so how DO I join? And 'never grants private access' — private access to what?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-new-find-a-club-aisha/shots/004-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-new-find-a-club-aisha/shots/004-click-som.jpg)\n\nRuns: [`cmp2ha-base-find-a-club-aisha`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-find-a-club-aisha/report.md), [`cmp2ha-new-find-a-club-aisha`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-new-find-a-club-aisha/report.md)\n\n### Who\n\nPersonas: `aisha-firstgen-anxious` · scenarios: `find-a-club`\n\n### Suggested fix (hypothesis)\n\nReplace the Membership row with one plain line from the club's own listing (\"Open to everyone — come to a weekend hike\" / \"Applies each fall — next round Jan\") and drop \"private access\" jargon. Copy fix.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=club-join-status-unclear -->\n<!-- ux-sim:fp=d80495a57f74 -->\n<!-- ux-sim:fp=b671f45c6bb2 -->\n<!-- ux-sim:fp=8151a7027a56 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "trust_privacy",
+        "ux_confusion",
+        "copy"
+      ],
+      "personas": [
+        "aisha-firstgen-anxious"
+      ],
+      "scenarios": [
+        "find-a-club"
+      ],
+      "severity": 3
+    },
+    {
+      "key": "cold-start-nobody-here",
+      "fingerprints": [
+        "d56357a742fa",
+        "9c8f7a48cd72",
+        "437a7795dcb2",
+        "f499ce6cb47f"
+      ],
+      "title": "[ux-sim] A brand-new account finds nobody: Meetups and People are empty, People says \"invite friends\"",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nSeen on: BOTH. BASE: Minji signed up, found \"No meetups yet\" and an empty People list → abandoned (sev 4, \"친구가 없어서 깐 건데\"). NEW: same empty Meetups and People, but both tabs now list \"This week on campus\" events with \"Go together\" underneath, which gave her something to do → goal met (sev 3).\n\nSeverity **4** (Blocker — I could not continue, gave up, or would stop using the app here.) · analyst confidence high · **1 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nCold start is real (no other students locally or for a new campus); NEW mitigates it by filling the empty state with real campus events.\n\n### Evidence\n\n- run `cmp2ha-base-cold-start-hangout-minji` step 26 _(BASE /meet/meetups: \"No meetups yet — create the first meetup\")_ [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/026-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/026-click-som.jpg)\n- run `cmp2ha-base-cold-start-hangout-minji` step 29 — “헐 아무도 없어?? 친구 초대하라고... 친구가 없어서 깐 건데 ㅠ” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/029-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/029-click-som.jpg)\n- run `cmp2ha-new-cold-start-hangout-minji` step 33 _(NEW /social/meetups: empty, but \"This week on campus\" events below)_ [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/033-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/033-click-som.jpg)\n- run `cmp2ha-new-cold-start-hangout-minji` step 35 — “사람도 없네.. 친구 초대하래.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/035-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/shots/035-click-som.jpg)\n\nRuns: [`cmp2ha-base-cold-start-hangout-minji`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/report.md), [`cmp2ha-new-cold-start-hangout-minji`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-new-cold-start-hangout-minji/report.md)\n\n### Who\n\nPersonas: `minji-freshman-17` · scenarios: `cold-start-hangout`\n\n### Environment note\n\nA fresh account sees no other students locally and on live (see README). Not environment-limited.\n\n### Suggested fix (hypothesis)\n\nKeep NEW's \"this week on campus\" fill on BASE's empty states too; replace \"Invite friends\" as the only CTA with \"Go to something this week\".\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=cold-start-nobody-here -->\n<!-- ux-sim:fp=d56357a742fa -->\n<!-- ux-sim:fp=9c8f7a48cd72 -->\n<!-- ux-sim:fp=437a7795dcb2 -->\n<!-- ux-sim:fp=f499ce6cb47f -->",
+      "labels": [
+        "ux-sim",
+        "severity:4",
+        "content_gap"
+      ],
+      "personas": [
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "severity": 4
+    },
+    {
+      "key": "signup-asks-too-much-too-early",
+      "fingerprints": [
+        "e2f05b7465c0",
+        "d3b01943595d",
+        "8a0bf61f729f"
+      ],
+      "title": "[ux-sim] BASE sign-up asks name and birth year on screen 1 and runs 7 screens before you see anything",
+      "body": "> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nSeen on: BASE. Marcus hesitated at name + birth year before seeing any internship; Minji skipped interests to get to the e-mail. NEW: \"Look around first\" lets you see real listings signed out, and name/birth year/e-mail move to the last step (6 of 6) — but the step-2 preview loop (onboarding-preview-loops) keeps the action count similar.\n\nSeverity **2** (Moderate — slowed me down or made me hesitate; I recovered on my own.) · analyst confidence high · **2 simulated persona(s)** across 2 scenario(s).\n\n### Root cause (hypothesis)\n\nBASE /start asks identity first.\n\n### Evidence\n\n- run `cmp2ha-base-first-open-decide-marcus` step 2 — “Name and birth year right away. I haven't even seen an internship.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-first-open-decide-marcus/shots/002-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-first-open-decide-marcus/shots/002-click-som.jpg)\n- run `cmp2ha-base-first-open-decide-marcus` step 18 — “Another list. 'None for now.' This is the sixth screen, getting long.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-first-open-decide-marcus/shots/018-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-first-open-decide-marcus/shots/018-click-som.jpg)\n- run `cmp2ha-base-cold-start-hangout-minji` step 14 — “아 귀찮아.. 또 고르래. 이메일은 언제 해? Skip” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/014-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/shots/014-click-som.jpg)\n\nRuns: [`cmp2ha-base-first-open-decide-marcus`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-first-open-decide-marcus/report.md), [`cmp2ha-base-cold-start-hangout-minji`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/cmp2ha-base-cold-start-hangout-minji/report.md)\n\n### Who\n\nPersonas: `marcus-senior-lowtech`, `minji-freshman-17` · scenarios: `first-open-decide`, `cold-start-hangout`\n\n### Suggested fix (hypothesis)\n\nResolved by NEW's order (guest look-around + identity last).\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=signup-asks-too-much-too-early -->\n<!-- ux-sim:fp=e2f05b7465c0 -->\n<!-- ux-sim:fp=d3b01943595d -->\n<!-- ux-sim:fp=8a0bf61f729f -->",
+      "labels": [
+        "ux-sim",
+        "severity:2",
+        "onboarding",
+        "trust_privacy"
+      ],
+      "personas": [
+        "marcus-senior-lowtech",
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "first-open-decide",
+        "cold-start-hangout"
+      ],
+      "severity": 2
+    }
+  ],
+  "skipped": [
+    {
+      "key": "opportunity-filters-missing",
+      "title": "Opportunities lost the Location (Bay Area) and PhD/MS filters; you read every truncated card line instead",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "i-applied-is-primary-button",
+      "title": "On an internship page the big button says \"I applied\"; the real \"Apply at Source\" sits half-hidden under it",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "guest-internships-far-and-closing",
+      "title": "Guest \"Look around first\": the first internships are in Bakersfield and Washington DC, all marked \"D-Day\"",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "club-page-looks-empty",
+      "title": "Club Events tab has no dated events — \"Weekend hikes\" with no next date",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "club-list-cards-thin",
+      "title": "Club list cards lost the one-line description; the list offers an \"Ending soon\" sort for clubs",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "welcome-does-not-say-what-for",
+      "title": "NEW welcome (\"Your college life, all in one place\") doesn't say what you can do here",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "joined-hint-stale",
+      "title": "After joining a meetup, \"Join to get the group chat\" still shows and the toast covers the question box",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "go-together-joins-without-asking",
+      "title": "\"Go together\" on an event makes you host of a one-person group in one tap",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "desktop-phone-column",
+      "title": "On a laptop the app is a phone-width column",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "internship-details-missing-pay-and-role",
+      "title": "Internship pages never say if it is paid; BASE also puts \"Start a prep crew\" above the job facts",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "teasers-and-for-you-skew-grad-careers",
+      "title": "A 17-year-old's first home screen leads with a \"Grad Student Appreciation Party\"",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "going-button-unclear",
+      "title": "BASE plan page: \"Going / Interested\" and the count disagrees (\"1 going\" vs \"0 joined\")",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "timetable-behind-schedule-tab",
+      "title": "BASE Schedule tab opens \"My Plans\"; the timetable is behind a second button",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "section-picker-extra-step",
+      "title": "Adding a class asks for a discussion section from a long list",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "timetable-class-count",
+      "title": "BASE timetable header says \"2 classes\" for one course",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "no-club-search",
+      "title": "BASE club list has no search and runs into a long Greek-life block",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "korean-hard-to-find-and-partial",
+      "title": "BASE: Korean only in Settings, and Rides stays English after switching",
+      "why": "severity < 3 and a single persona"
+    },
+    {
+      "key": "rides-removed-by-design",
+      "title": "Removed by design: a student looking for a shared SFO ride finds no trace of rides on NEW",
+      "why": "file: false"
+    }
+  ]
+}

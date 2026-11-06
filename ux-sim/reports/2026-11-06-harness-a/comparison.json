@@ -1,0 +1,256 @@
+{
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour. One run per cell.",
+  "base": {
+    "branch": "origin/claude/friendly-euler-emuo1f",
+    "app": "2567ab7395d4"
+  },
+  "new": {
+    "branch": "origin/claude/harness-a",
+    "app": "a3f2ebed58f4"
+  },
+  "harness": "6f174347960d",
+  "catalog": "f079553d",
+  "eventsSnapshot": "fa9ccb47",
+  "simSecNote": "simulated reading + waiting seconds (harness clock), not wall time",
+  "scenarios": [
+    {
+      "scenario": "lunch-today",
+      "persona": "diego",
+      "removedByDesign": false,
+      "base": {
+        "outcome": "success",
+        "goalMet": true,
+        "falseSuccess": false,
+        "actionsToGoal": 3,
+        "simSecToGoal": 22,
+        "actions": 5,
+        "maxSeverity": 1,
+        "evidence": [
+          "joined or asked to join a peer's lunch plan",
+          "joined or asked to join a plan"
+        ]
+      },
+      "new": {
+        "outcome": "success",
+        "goalMet": true,
+        "falseSuccess": false,
+        "actionsToGoal": 3,
+        "simSecToGoal": 26,
+        "actions": 5,
+        "maxSeverity": 1,
+        "evidence": [
+          "joined or asked to join a peer's lunch plan",
+          "joined or asked to join a plan"
+        ]
+      }
+    },
+    {
+      "scenario": "timetable-add-classes",
+      "persona": "minji",
+      "removedByDesign": false,
+      "base": {
+        "outcome": "success",
+        "goalMet": true,
+        "falseSuccess": false,
+        "actionsToGoal": 6,
+        "simSecToGoal": 33,
+        "actions": 6,
+        "maxSeverity": 1,
+        "evidence": [
+          "Calculus I is in my saved timetable"
+        ]
+      },
+      "new": {
+        "outcome": "success",
+        "goalMet": true,
+        "falseSuccess": false,
+        "actionsToGoal": 5,
+        "simSecToGoal": 21,
+        "actions": 5,
+        "maxSeverity": 0,
+        "evidence": [
+          "Calculus I is in my saved timetable"
+        ]
+      }
+    },
+    {
+      "scenario": "internship-near-berkeley",
+      "persona": "priya",
+      "removedByDesign": false,
+      "base": {
+        "outcome": "success",
+        "goalMet": true,
+        "falseSuccess": false,
+        "actionsToGoal": 4,
+        "simSecToGoal": 77,
+        "actions": 4,
+        "maxSeverity": 2,
+        "evidence": [
+          "^/opportunities/[^/?]+",
+          null
+        ]
+      },
+      "new": {
+        "outcome": "success",
+        "goalMet": true,
+        "falseSuccess": false,
+        "actionsToGoal": 3,
+        "simSecToGoal": 50,
+        "actions": 3,
+        "maxSeverity": 2,
+        "evidence": [
+          "^/opportunities/[^/?]+",
+          null
+        ]
+      }
+    },
+    {
+      "scenario": "find-a-club",
+      "persona": "aisha",
+      "removedByDesign": false,
+      "base": {
+        "outcome": "success",
+        "goalMet": true,
+        "falseSuccess": false,
+        "actionsToGoal": 2,
+        "simSecToGoal": 62,
+        "actions": 3,
+        "maxSeverity": 3,
+        "evidence": [
+          "^/orgs/[^/?]+"
+        ]
+      },
+      "new": {
+        "outcome": "success",
+        "goalMet": true,
+        "falseSuccess": false,
+        "actionsToGoal": 2,
+        "simSecToGoal": 48,
+        "actions": 3,
+        "maxSeverity": 2,
+        "evidence": [
+          "^/orgs/[^/?]+"
+        ]
+      }
+    },
+    {
+      "scenario": "cold-start-hangout",
+      "persona": "minji",
+      "removedByDesign": false,
+      "base": {
+        "outcome": "abandoned",
+        "goalMet": false,
+        "falseSuccess": false,
+        "actionsToGoal": null,
+        "simSecToGoal": null,
+        "actions": 22,
+        "maxSeverity": 4,
+        "evidence": null
+      },
+      "new": {
+        "outcome": "success",
+        "goalMet": true,
+        "falseSuccess": false,
+        "actionsToGoal": 25,
+        "simSecToGoal": 47,
+        "actions": 25,
+        "maxSeverity": 3,
+        "evidence": [
+          "the account the browser is signed in to was created during this run",
+          "posted a plan"
+        ]
+      }
+    },
+    {
+      "scenario": "first-open-decide",
+      "persona": "marcus",
+      "removedByDesign": false,
+      "base": {
+        "outcome": "success",
+        "goalMet": true,
+        "falseSuccess": false,
+        "actionsToGoal": 20,
+        "simSecToGoal": 129,
+        "actions": 20,
+        "maxSeverity": 2,
+        "evidence": [
+          "the account the browser is signed in to was created during this run",
+          "^/(discover|community|profile)?(\\?.*)?$"
+        ]
+      },
+      "new": {
+        "outcome": "success",
+        "goalMet": true,
+        "falseSuccess": false,
+        "actionsToGoal": 24,
+        "simSecToGoal": 166,
+        "actions": 24,
+        "maxSeverity": 2,
+        "evidence": [
+          "the account the browser is signed in to was created during this run",
+          "^/(discover|community|profile)?(\\?.*)?$"
+        ]
+      }
+    },
+    {
+      "scenario": "ride-sfo-thanksgiving",
+      "persona": "seoyeon",
+      "removedByDesign": true,
+      "base": {
+        "outcome": "success",
+        "goalMet": true,
+        "falseSuccess": false,
+        "actionsToGoal": 9,
+        "simSecToGoal": 102,
+        "actions": 9,
+        "maxSeverity": 2,
+        "evidence": [
+          "joined someone's SFO ride"
+        ]
+      },
+      "new": {
+        "outcome": "abandoned",
+        "goalMet": false,
+        "falseSuccess": false,
+        "actionsToGoal": null,
+        "simSecToGoal": null,
+        "actions": 14,
+        "maxSeverity": 4,
+        "evidence": null
+      }
+    }
+  ],
+  "problemsByStatus": {
+    "resolvedOnNew": [
+      "signup-asks-too-much-too-early",
+      "teasers-and-for-you-skew-grad-careers",
+      "going-button-unclear",
+      "timetable-behind-schedule-tab",
+      "timetable-class-count",
+      "no-club-search",
+      "korean-hard-to-find-and-partial",
+      "floating-pills-cover-buttons (not logged; the Design/Feedback pills are gone on NEW)"
+    ],
+    "improvedStillPresent": [
+      "cold-start-nobody-here (4 → 3)",
+      "club-join-status-unclear (3 → 2)",
+      "internship-details-missing-pay-and-role (ordering fixed; pay still missing)",
+      "section-picker-extra-step (now optional)",
+      "desktop-phone-column (1 → 1)"
+    ],
+    "newOnNew": [
+      "onboarding-preview-loops (2, 2 personas)",
+      "opportunity-filters-missing (2)",
+      "i-applied-is-primary-button (2)",
+      "guest-internships-far-and-closing (2)",
+      "club-page-looks-empty (2)",
+      "go-together-joins-without-asking (2, existed on BASE too)",
+      "club-list-cards-thin (1)",
+      "welcome-does-not-say-what-for (1)",
+      "joined-hint-stale (1)"
+    ],
+    "removedByDesign": [
+      "rides-removed-by-design (4, file: false)"
+    ]
+  }
+}

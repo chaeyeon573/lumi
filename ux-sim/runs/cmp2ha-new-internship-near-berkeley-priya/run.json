@@ -1,0 +1,1129 @@
+{
+  "schemaVersion": 1,
+  "runId": "cmp2ha-new-internship-near-berkeley-priya",
+  "status": "finished",
+  "createdAt": "2026-11-06T01:37:36.547Z",
+  "finishedAt": "2026-11-06T01:38:05.422Z",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "persona": {
+    "id": "priya-phd-desktop",
+    "name": "Priya",
+    "age": 26,
+    "year": "Second-year PhD student",
+    "school": "UC Berkeley",
+    "major": "EECS (systems)",
+    "account": {
+      "$comment": "Profile for auth: fresh — the harness registers this account through the app's own sign-up API (lib/account.mjs). nickname defaults to name, birthYear to this year − age.",
+      "nickname": "Priya",
+      "department": "EECS",
+      "yearInSchool": 6,
+      "role": "graduate",
+      "goals": [
+        "scholarship",
+        "friends"
+      ],
+      "interests": [
+        "coffee",
+        "research"
+      ],
+      "purposes": [
+        "networking",
+        "friend"
+      ],
+      "lookingFor": [
+        "friend",
+        "mentor"
+      ]
+    },
+    "purpose": "Find fellowships, funding deadlines and maybe people outside her lab — on her laptop between experiments.",
+    "techFamiliarity": "high",
+    "readingDepth": 0.8,
+    "language": {
+      "preferred": "en",
+      "englishUiComfort": "high",
+      "notes": "Fluent English."
+    },
+    "device": {
+      "type": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "locale": "en-US"
+    },
+    "patience": {
+      "maxSteps": 40,
+      "frustrationThreshold": 5,
+      "confusionTolerance": 3,
+      "timeBudgetSec": 420
+    },
+    "backstory": "I live in my lab. I'd like to know about fellowships and travel grants before the deadline instead of hearing about them a week late, and honestly it would be nice to meet people who aren't in my research group. I'm allergic to apps that treat me like an undergrad.",
+    "quitsWhen": [
+      "Everything is for undergrads",
+      "Deadlines that already passed",
+      "Mobile-only layout stretched on my laptop",
+      "Gimmicky social features"
+    ],
+    "voice": "Precise, a little dry. Notices sloppy details. 'This deadline is wrong', 'Why is this here?'"
+  },
+  "scenario": {
+    "id": "internship-near-berkeley",
+    "title": "Find an internship near Berkeley",
+    "goal": "You need a paid internship (summer or part-time) somewhere near Berkeley / the Bay Area. Use the app to find one that looks real and open, and open its details so you know how to apply.",
+    "startUrl": "/",
+    "setup": {
+      "auth": "fresh",
+      "school": "berkeley"
+    },
+    "success": {
+      "description": "An internship listing's detail page is open (reached by the persona — the run starts on /).",
+      "all": [
+        {
+          "urlMatches": "^/opportunities/[^/?]+"
+        },
+        {
+          "textMatches": "\\bintern(ship)?s?\\b"
+        }
+      ]
+    }
+  },
+  "target": {
+    "mode": "local",
+    "baseUrl": "http://localhost:43265",
+    "stack": {
+      "catalog": {
+        "kind": "cached",
+        "source": "berkeley course adapter (server/sources/courses.ts) via server/scripts/fetch-courses.ts",
+        "schoolId": "s_berkeley",
+        "courses": 6588,
+        "terms": [
+          "Fall 2026",
+          "Spring 2027"
+        ],
+        "fetchedAt": "2026-11-02T06:52:47.693Z"
+      },
+      "events": {
+        "kind": "cached",
+        "source": "https://heetz.up.railway.app POST /api/auth/demo + POST /api/bootstrap (read-only), worker-fetched opportunities",
+        "baseUrl": "https://heetz.up.railway.app",
+        "fetchedAt": "2026-11-02T07:25:30.398Z",
+        "stamp": "fa9ccb47",
+        "opportunities": 1119,
+        "updatedExisting": 125,
+        "byType": {
+          "lab": 38,
+          "scholarship": 62,
+          "internship": 454,
+          "hackathon": 102,
+          "event": 146,
+          "exchange": 316,
+          "startup": 1
+        },
+        "eventsThisWeek": 103,
+        "freeFoodThisWeek": 7
+      },
+      "port": 43265,
+      "worktree": "/home/user/lumi-cmp2-new",
+      "commit": "a3f2ebed58f4da26824ab8f6efabccd9baecd84c",
+      "stamp": "a3f2ebed58f4",
+      "dirty": false,
+      "dataFile": "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/stack/db.json",
+      "template": "ux-sim/stack/templates/lumi-cmp2-new-a3f2ebed58f4-catf079553d-evfa9ccb47.json",
+      "log": "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/stack/server.log",
+      "owned": true,
+      "autoreply": false
+    },
+    "liveGuard": {
+      "enabled": false
+    }
+  },
+  "auth": {
+    "mode": "fresh",
+    "userId": "u_xdo8y91j7m",
+    "email": "priya.riya1j47@berkeley.edu",
+    "sample": false,
+    "emailVerified": true,
+    "profile": {
+      "nickname": "Priya",
+      "birthYear": 2000,
+      "department": "EECS",
+      "yearInSchool": 6,
+      "role": "graduate",
+      "year": 2026,
+      "gender": "private",
+      "goals": [
+        "scholarship",
+        "friends"
+      ],
+      "interests": [
+        "coffee",
+        "research"
+      ],
+      "purposes": [
+        "networking",
+        "friend"
+      ],
+      "lookingFor": [
+        "friend",
+        "mentor"
+      ],
+      "likes": "",
+      "bio": "",
+      "language": "en",
+      "appLanguage": null,
+      "schoolId": "s_berkeley"
+    },
+    "createdVia": "POST /api/schools/send-code → /api/schools/verify-code → /api/auth/register"
+  },
+  "harness": {
+    "hash": "6f174347960d",
+    "commit": "29aa633114d3a6233c4828a1d8cf59485768bd2a",
+    "dirty": false
+  },
+  "environment": {
+    "summary": "Local stack: this worktree's server + built web app, fresh seeded FileStore per run, no secrets, no worker.",
+    "knownLimits": [
+      "Dining menus and RSF gym crowd levels need live campus sources (the local stack runs with CAMPUS_LIVE=0) — empty or missing data there is not a UX bug.",
+      "AI features (Ask Lumi, AI profile draft on /start, conversation starters) need an OpenAI key; none is configured locally.",
+      "Course catalog is the real Berkeley Class Schedule (6588 courses, Fall 2026 + Spring 2027), fetched 2026-11-02 with the worker's adapter. Seat counts and very recent changes may differ from live.",
+      "Campus events, free food, internships, hackathons and scholarships are a read-only snapshot of live (1119 real items, 103 events this week, taken 2026-11-02 07:25 UTC) plus the CSV calendar. Nothing new appears during the run; Q&A and reviews are empty.",
+      "No e-mail is sent: the sign-up / sign-in code is shown on screen in the hint (live sends a real e-mail).",
+      "Real-time updates (SSE) work locally; other people never reply unless the stack was started with --autoreply.",
+      "Signed in as a brand-new real (non-sample, e-mail-verified) account made for this run. Other students exist only if the scenario seeds peers (local fixtures); sample profiles are hidden from real accounts, as on live."
+    ],
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "locale": "en-US",
+    "timezone": "America/Los_Angeles",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+    "browserVersion": "153.0.8010.12"
+  },
+  "limits": {
+    "maxSteps": 40,
+    "frustrationThreshold": 5,
+    "confusionTolerance": 3,
+    "timeBudgetSec": 420,
+    "weights": {
+      "failed": 1,
+      "no_effect": 1,
+      "repeated": 0.75,
+      "backtrack": 0.5,
+      "mismatch": 0.5
+    }
+  },
+  "counters": {
+    "actions": 3,
+    "frustration": 0.5,
+    "confusionNotes": 0,
+    "simTimeSec": 49.851000000000006
+  },
+  "steps": [
+    {
+      "index": 0,
+      "at": "2026-11-06T01:37:36.775Z",
+      "kind": "start",
+      "command": "start",
+      "args": {
+        "persona": "priya-phd-desktop",
+        "scenario": "internship-near-berkeley",
+        "auth": "fresh"
+      },
+      "latencyMs": 937,
+      "urlBefore": null,
+      "setupNotes": [
+        "signed in as a brand-new verified account priya.riya1j47@berkeley.edu (Priya, EECS, born 2000)"
+      ],
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:43265/",
+      "route": "/",
+      "screenshot": "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/000-start.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/000-start-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 26,
+        "newElementIds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "elements": [
+          "[1]<button> Search",
+          "[2]<button> Notifications",
+          "[3]<button> Messages",
+          "[4]<button> Events",
+          "[5]<button> Opportunities",
+          "[6]<button> Clubs",
+          "[7]<button> Meetups",
+          "[8]<button> RSF Crowd meter unavailable",
+          "[9]<button> Dining Menus unavailable",
+          "[10]<button> See all",
+          "[11]<button> (no label, icon: briefcase)",
+          "[12]<button> Internship PhD Machine Learning Software Engineer Intern (Summer 2027) Posted 17d ago · Ly",
+          "[13]<a> View source",
+          "[14]<button> Save",
+          "[15]<button> (no label, icon: flask-conical)",
+          "[16]<button> Research Syracuse iSchool ASSURE-REU: Text Analytics for Social Scientists 2027 D-3 · Syra",
+          "[18]<button> Save",
+          "[22]<a selected> Home",
+          "[23]<a> Explore",
+          "[24]<a> Schedule",
+          "[25]<a> Social",
+          "[26]<a> Profile",
+          "[17]<a> View source  ↓ below",
+          "[19]<button> Make room for a good plan Add classes and find your free time  ↓ below",
+          "[20]<button> Explore  ↓ below",
+          "[21]<button> Find your communities Follow interests. Verify membership separately.  ↓ below"
+        ],
+        "text": "lumi | . | People and things to do around campus. | Lumi is laid out for your phone — open this link there for the full experience. Everything works here too. | Lumi | Good evening! | What’s happening at UC Berkeley | Events | Opportunities | Clubs | Meetups | Campus today | RSF | Crowd meter unavailable | Dining | Menus unavailable | For you | See all | Internship | PhD Machine Learning Software Engineer Intern (Summer 2027) | Posted 17d ago · Lyft · San Francisco, CA | View source | Research | Syracuse iSchool ASSURE-REU: Text Analytics for Social Scientists 2027 | D-3 · Syracuse University School of Information Studies (NSF/DoD) | Home | Explore | Schedule | Social | Profile",
+        "scroll": {
+          "top": 0,
+          "max": 447
+        },
+        "fingerprint": "02065d9b44a9176f1cf5b316d7bc9350e49a6478",
+        "simReadSec": 20.1
+      },
+      "checks": {
+        "smallTapTargets": [],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 130
+      }
+    },
+    {
+      "index": 1,
+      "at": "2026-11-06T01:37:43.007Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "feeling": "neutral",
+        "thought": "Still a phone column, but at least it says so and the side isn't just black. 'Opportunities' up top. I want a list I can filter.",
+        "friction": "motivation",
+        "severity": "1"
+      },
+      "about": 0,
+      "feeling": "neutral",
+      "thought": "Still a phone column, but at least it says so and the side isn't just black. 'Opportunities' up top. I want a list I can filter.",
+      "urlAfter": "http://localhost:43265/",
+      "route": "/",
+      "frictionId": "f1"
+    },
+    {
+      "index": 2,
+      "at": "2026-11-06T01:37:43.093Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 5,
+        "expect": "a list of opportunities with filters for internships and location",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:43265/",
+      "target": {
+        "id": 5,
+        "tag": "button",
+        "role": "button",
+        "name": "Opportunities",
+        "box": {
+          "x": 726,
+          "y": 142,
+          "w": 192,
+          "h": 104
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "a list of opportunities with filters for internships and location",
+        "confidence": 0.7
+      },
+      "latencyMs": 857,
+      "tapPoint": {
+        "x": 822,
+        "y": 194.4,
+        "centre": true
+      },
+      "actionNumber": 1,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:43265/explore/opportunities",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/002-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/002-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 143,
+        "newElementIds": [
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153
+        ],
+        "elements": [
+          "[1]<button> Search",
+          "[2]<button> Notifications",
+          "[3]<button> Messages",
+          "[27]<a role=tab> Events",
+          "[28]<a role=tab selected> Opportunities",
+          "[29]<a role=tab> Clubs",
+          "[30]<input type=search> Search opportunities",
+          "[31]<button selected> Recommended",
+          "[32]<button> Newest",
+          "[33]<button> Ending soon",
+          "[34]<button> Internships",
+          "[35]<button> Research",
+          "[36]<button> Scholarships",
+          "[37]<button> Hackathons",
+          "[38]<button> Study abroad",
+          "[39]<button> Startups",
+          "[11]<button> (no label, icon: briefcase)",
+          "[40]<button> Internship 2027 Summer Intern, MS/PhD, Software Engineer, ML Frameworks and Efficiency Pos",
+          "[41]<a> View source",
+          "[14]<button> Save",
+          "[42]<button> (no label, icon: briefcase)",
+          "[12]<button> Internship PhD Machine Learning Software Engineer Intern (Summer 2027) Posted 17d ago · Ly",
+          "[13]<a> View source",
+          "[18]<button> Save",
+          "[15]<button> (no label, icon: flask-conical)",
+          "[16]<button> Research Syracuse iSchool ASSURE-REU: Text Analytics for Social Scientists 2027 D-3 · Syra",
+          "[17]<a> View source",
+          "[43]<button> Save",
+          "[44]<button> (no label, icon: trophy)",
+          "[45]<button> Hackathon Hack the Feed: Creator Tools Hackathon Tomorrow · Oriane, GMI Cloud & Lovable",
+          "[47]<button> Save",
+          "[22]<a> Home",
+          "[23]<a selected> Explore",
+          "[24]<a> Schedule",
+          "[25]<a> Social",
+          "[26]<a> Profile",
+          "[153]<label> (no label, icon: search)",
+          "[46]<a> View source  ↓ below",
+          "[51]<button> Save  ↓ below",
+          "[48]<button> (no label, icon: briefcase)  ↓ below",
+          "[49]<button> Internship 2027 Summer Intern, MS/PhD, Software Engineer, Simulation Evaluation ML Model P  ↓ below",
+          "[50]<a> View source  ↓ below",
+          "[55]<button> Save  ↓ below",
+          "[52]<button> (no label, icon: trophy)  ↓ below",
+          "[53]<button> Hackathon SF Frontier Hackathon: Build your Autonomous Code Factory Nov 13 · Obvious  ↓ below",
+          "[54]<a> View source  ↓ below",
+          "[59]<button> Save  ↓ below",
+          "[56]<button> (no label, icon: trophy)  ↓ below",
+          "[57]<button> Hackathon Meta VR Start Developer Competition 2026 D-13 · Meta  ↓ below",
+          "[58]<a> View source  ↓ below",
+          "[63]<button> Save  ↓ below",
+          "[60]<button> (no label, icon: briefcase)  ↓ below",
+          "[61]<button> Internship Software Engineering Intern (Summer 2027) Posted 14d ago · Scale AI · San Franc  ↓ below",
+          "[62]<a> View source  ↓ below",
+          "[67]<button> Save  ↓ below",
+          "[64]<button> (no label, icon: briefcase)  ↓ below",
+          "[65]<button> Internship 2027 Summer Intern, MS/PhD, Software/ML Engineer, Simulation Posted 14d ago · W  ↓ below",
+          "[66]<a> View source  ↓ below",
+          "[71]<button> Save  ↓ below",
+          "[68]<button> (no label, icon: briefcase)  ↓ below",
+          "[69]<button> Internship [2027] Data Scientist - PhD Intern Posted 6d ago · Roblox · San Mateo, CA, Unit  ↓ below",
+          "[70]<a> View source  ↓ below",
+          "[75]<button> Save  ↓ below",
+          "[72]<button> (no label, icon: trophy)  ↓ below",
+          "[73]<button> Hackathon Remote Control AI D-Day · avacado  ↓ below",
+          "[74]<a> View source  ↓ below",
+          "[79]<button> Save  ↓ below",
+          "[76]<button> (no label, icon: briefcase)  ↓ below",
+          "[77]<button> Internship PhD Machine Learning Engineer, Intern Posted 6d ago · Stripe · San Francisco, N  ↓ below",
+          "[78]<a> View source  ↓ below",
+          "[83]<button> Save  ↓ below",
+          "[80]<button> (no label, icon: briefcase)  ↓ below",
+          "[81]<button> Internship 2027 Summer Intern, MS/PhD, Software Engineer, Sys Intel & Machine Learning Pos  ↓ below",
+          "[82]<a> View source  ↓ below",
+          "[87]<button> Save  ↓ below",
+          "[84]<button> (no label, icon: briefcase)  ↓ below",
+          "[85]<button> Internship Software Engineer (Machine Learning) Intern (Summer 2027) Posted 5d ago · Affir  ↓ below"
+        ],
+        "text": "lumi | . | People and things to do around campus. | Lumi is laid out for your phone — open this link there for the full experience. Everything works here too. | Explore | Events | Opportunities | Clubs | Recommended | Newest | Ending soon | Internships | Research | Scholarships | Hackathons | Study abroad | Startups | Internship | 2027 Summer Intern, MS/PhD, Software Engineer, ML Frameworks and Efficiency | Posted 13d ago · Waymo · Mountain View, CA, USA | View source (×3 on screen) | Internship | PhD Machine Learning Software Engineer Intern (Summer 2027) | Posted 17d ago · Lyft · San Francisco, CA | View source | Research | Syracuse iSchool ASSURE-REU: Text Analytics for Social Scientists 2027 | D-3 · Syracuse University School of Information Studies (NSF/DoD) | Hackathon | Hack the Feed: Creator Tools Hackathon | Tomorrow · Oriane, GMI Cloud & Lovable | Home | Explore | Schedule | Social | Profile",
+        "scroll": {
+          "top": 0,
+          "max": 4384
+        },
+        "fingerprint": "22c9e023e9a09a9ea6b46410ee3b4c3b1d391ac0",
+        "simReadSec": 9.6
+      },
+      "checks": {
+        "smallTapTargets": [],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 130
+      },
+      "signals": [],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "opportunity list with search and category chips",
+        "feeling": "curious",
+        "note": "List with search and an Internships chip. Filter."
+      }
+    },
+    {
+      "index": 3,
+      "at": "2026-11-06T01:37:46.915Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "opportunity list with search and category chips",
+        "feeling": "curious",
+        "thought": "List with search and an Internships chip. Filter."
+      },
+      "about": 2,
+      "feeling": "curious",
+      "thought": "List with search and an Internships chip. Filter.",
+      "urlAfter": "http://localhost:43265/explore/opportunities",
+      "route": "/explore/opportunities"
+    },
+    {
+      "index": 4,
+      "at": "2026-11-06T01:37:47.004Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 34,
+        "expect": "only internships, maybe with a location filter",
+        "confidence": "0.75"
+      },
+      "urlBefore": "http://localhost:43265/explore/opportunities",
+      "target": {
+        "id": 34,
+        "tag": "button",
+        "role": "button",
+        "name": "Internships",
+        "box": {
+          "x": 522,
+          "y": 233,
+          "w": 90,
+          "h": 32
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "only internships, maybe with a location filter",
+        "confidence": 0.75
+      },
+      "latencyMs": 828,
+      "tapPoint": {
+        "x": 567,
+        "y": 249,
+        "centre": true
+      },
+      "actionNumber": 2,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:43265/explore/opportunities?type=internship",
+      "route": "/explore/opportunities",
+      "screenshot": "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/004-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/004-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 143,
+        "newElementIds": [
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187
+        ],
+        "elements": [
+          "[1]<button> Search",
+          "[2]<button> Notifications",
+          "[3]<button> Messages",
+          "[27]<a role=tab> Events",
+          "[28]<a role=tab selected> Opportunities",
+          "[29]<a role=tab> Clubs",
+          "[30]<input type=search> Search opportunities",
+          "[31]<button selected> Recommended",
+          "[32]<button> Newest",
+          "[33]<button> Ending soon",
+          "[34]<button selected> Internships",
+          "[35]<button> Research",
+          "[36]<button> Scholarships",
+          "[37]<button> Hackathons",
+          "[38]<button> Study abroad",
+          "[39]<button> Startups",
+          "[11]<button> (no label, icon: briefcase)",
+          "[40]<button> Internship 2027 Summer Intern, MS/PhD, Software Engineer, ML Frameworks and Efficiency Pos",
+          "[41]<a> View source",
+          "[14]<button> Save",
+          "[42]<button> (no label, icon: briefcase)",
+          "[12]<button> Internship PhD Machine Learning Software Engineer Intern (Summer 2027) Posted 17d ago · Ly",
+          "[13]<a> View source",
+          "[18]<button> Save",
+          "[48]<button> (no label, icon: briefcase)",
+          "[61]<button> Internship Software Engineering Intern (Summer 2027) Posted 14d ago · Scale AI · San Franc",
+          "[62]<a> View source",
+          "[43]<button> Save",
+          "[60]<button> (no label, icon: briefcase)",
+          "[69]<button> Internship [2027] Data Scientist - PhD Intern Posted 6d ago · Roblox · San Mateo, CA, Unit",
+          "[70]<a> View source",
+          "[47]<button> Save",
+          "[22]<a> Home",
+          "[23]<a selected> Explore",
+          "[24]<a> Schedule",
+          "[25]<a> Social",
+          "[26]<a> Profile",
+          "[153]<label> (no label, icon: search)",
+          "[51]<button> Save  ↓ below",
+          "[64]<button> (no label, icon: briefcase)  ↓ below",
+          "[49]<button> Internship 2027 Summer Intern, MS/PhD, Software Engineer, Simulation Evaluation ML Model P  ↓ below",
+          "[50]<a> View source  ↓ below",
+          "[55]<button> Save  ↓ below",
+          "[68]<button> (no label, icon: briefcase)  ↓ below",
+          "[77]<button> Internship PhD Machine Learning Engineer, Intern Posted 6d ago · Stripe · San Francisco, N  ↓ below",
+          "[78]<a> View source  ↓ below",
+          "[59]<button> Save  ↓ below",
+          "[76]<button> (no label, icon: briefcase)  ↓ below",
+          "[85]<button> Internship Software Engineer (Machine Learning) Intern (Summer 2027) Posted 5d ago · Affir  ↓ below",
+          "[86]<a> View source  ↓ below",
+          "[63]<button> Save  ↓ below",
+          "[80]<button> (no label, icon: briefcase)  ↓ below",
+          "[105]<button> Internship PhD Intern, Software Engineer - Graphics (2027) Posted 9d ago · Figma · San Fra  ↓ below",
+          "[106]<a> View source  ↓ below",
+          "[67]<button> Save  ↓ below",
+          "[84]<button> (no label, icon: briefcase)  ↓ below",
+          "[65]<button> Internship 2027 Summer Intern, MS/PhD, Software/ML Engineer, Simulation Posted 14d ago · W  ↓ below",
+          "[66]<a> View source  ↓ below",
+          "[71]<button> Save  ↓ below",
+          "[96]<button> (no label, icon: briefcase)  ↓ below",
+          "[101]<button> Internship PhD Data Scientist, Intern Posted 7d ago · Stripe · New York, Seattle, South Sa  ↓ below",
+          "[102]<a> View source  ↓ below",
+          "[75]<button> Save  ↓ below",
+          "[100]<button> (no label, icon: briefcase)  ↓ below",
+          "[137]<button> Internship 2027 Summer Internship - MS/PhD Data Scientist, Proprietary Research Posted 6d   ↓ below",
+          "[138]<a> View source  ↓ below",
+          "[79]<button> Save  ↓ below",
+          "[104]<button> (no label, icon: briefcase)  ↓ below",
+          "[121]<button> Internship PhD Intern, Security Engineer (2027) Posted 8d ago · Figma · San Francisco, CA   ↓ below",
+          "[122]<a> View source  ↓ below",
+          "[83]<button> Save  ↓ below",
+          "[112]<button> (no label, icon: briefcase)  ↓ below",
+          "[81]<button> Internship 2027 Summer Intern, MS/PhD, Software Engineer, Sys Intel & Machine Learning Pos  ↓ below",
+          "[82]<a> View source  ↓ below",
+          "[87]<button> Save  ↓ below",
+          "[120]<button> (no label, icon: briefcase)  ↓ below",
+          "[141]<button> Internship PhD Machine Learning Internship 2027 (USA) Posted 9d ago · Pinterest · San Fran  ↓ below",
+          "[142]<a> View source  ↓ below"
+        ],
+        "text": "lumi | . | People and things to do around campus. | Lumi is laid out for your phone — open this link there for the full experience. Everything works here too. | Explore | Events | Opportunities | Clubs | Recommended | Newest | Ending soon | Internships | Research | Scholarships | Hackathons | Study abroad | Startups | Internship (×4 on screen) | 2027 Summer Intern, MS/PhD, Software Engineer, ML Frameworks and Efficiency | Posted 13d ago · Waymo · Mountain View, CA, USA | View source (×4 on screen) | Internship | PhD Machine Learning Software Engineer Intern (Summer 2027) | Posted 17d ago · Lyft · San Francisco, CA | View source | Software Engineering Intern (Summer 2027) | Posted 14d ago · Scale AI · San Francisco, CA | [2027] Data Scientist - PhD Intern | Posted 6d ago · Roblox · San Mateo, CA, United States | Home | Explore | Schedule | Social | Profile",
+        "scroll": {
+          "top": 0,
+          "max": 4384
+        },
+        "fingerprint": "eb96c9d9dfd6e05493d6aeacff4f033dbc93aeac",
+        "simReadSec": 5.6
+      },
+      "checks": {
+        "smallTapTargets": [],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 130
+      },
+      "signals": [
+        {
+          "type": "mismatch",
+          "weight": 0.5,
+          "detail": "screen did not match what the persona expected"
+        }
+      ],
+      "frustrationAfter": 0,
+      "reflection": {
+        "mismatch": true,
+        "actualOutcome": "internships only, but no location or PhD/MS filter anywhere; locations only in the truncated card line",
+        "feeling": "neutral",
+        "note": "No location filter, no PhD/MS filter. I have to read each truncated 'Mountain Vie…' line. The top ones happen to be Bay Area, so fine."
+      }
+    },
+    {
+      "index": 5,
+      "at": "2026-11-06T01:37:56.293Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "yes",
+        "actual": "internships only, but no location or PhD/MS filter anywhere; locations only in the truncated card line",
+        "feeling": "neutral",
+        "thought": "No location filter, no PhD/MS filter. I have to read each truncated 'Mountain Vie…' line. The top ones happen to be Bay Area, so fine.",
+        "friction": "discoverability",
+        "severity": "2",
+        "element": "34",
+        "wish": "a Bay Area / near Berkeley location filter and a PhD/MS filter"
+      },
+      "about": 4,
+      "feeling": "neutral",
+      "thought": "No location filter, no PhD/MS filter. I have to read each truncated 'Mountain Vie…' line. The top ones happen to be Bay Area, so fine.",
+      "urlAfter": "http://localhost:43265/explore/opportunities?type=internship",
+      "route": "/explore/opportunities",
+      "frictionId": "f2"
+    },
+    {
+      "index": 6,
+      "at": "2026-11-06T01:37:56.395Z",
+      "kind": "action",
+      "command": "click",
+      "args": {
+        "id": 40,
+        "expect": "listing details with pay, deadline and how to apply",
+        "confidence": "0.7"
+      },
+      "urlBefore": "http://localhost:43265/explore/opportunities?type=internship",
+      "target": {
+        "id": 40,
+        "tag": "button",
+        "role": "button",
+        "name": "Internship 2027 Summer Intern, MS/PhD, Software Engineer, ML Frameworks and Efficiency Pos",
+        "box": {
+          "x": 637,
+          "y": 294,
+          "w": 240,
+          "h": 117
+        },
+        "inViewport": true
+      },
+      "intent": {
+        "expectedOutcome": "listing details with pay, deadline and how to apply",
+        "confidence": 0.7
+      },
+      "latencyMs": 838,
+      "tapPoint": {
+        "x": 757,
+        "y": 352.3,
+        "centre": true
+      },
+      "actionNumber": 3,
+      "result": "ok",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:43265/opportunities/op_ext_job_greenhouse_waymo_8287385",
+      "route": "/opportunities/:id",
+      "screenshot": "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/006-click.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/006-click-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 10,
+        "newElementIds": [
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          196
+        ],
+        "elements": [
+          "[188]<button> Back",
+          "[189]<button> More",
+          "[190]<button> View source",
+          "[191]<button role=tab selected> Details",
+          "[192]<button role=tab> Q&A0",
+          "[193]<button> Original source Waymo careers Last checked Sun, Nov 1",
+          "[194]<button> Apply at Source",
+          "[14]<button> Save",
+          "[196]<button> I applied",
+          "[195]<button> Prep together Open a small prep group for this one.  ↓ below"
+        ],
+        "text": "lumi | . | People and things to do around campus. | Lumi is laid out for your phone — open this link there for the full experience. Everything works here too. | Internship | Source verified | View source | 2027 Summer Intern, MS/PhD, Software Engineer, ML Frameworks and Efficiency | Waymo | · Mountain View, CA, USA | Details | Q&A | 0 | Location | Mountain View, CA, USA | Field | Data & AI | International students | Not stated in the posting | Check before applying | Who it’s for | See the posting for class year, major and work authorization | As the source states it | Original source | Waymo careers | Last checked Sun, Nov 1 | Apply at Source | Do it with people | I applied",
+        "scroll": {
+          "top": 0,
+          "max": 193
+        },
+        "fingerprint": "215f7e50f699f6ed4d41dc4b01c4ba706b3c7332",
+        "simReadSec": 12
+      },
+      "checks": {
+        "smallTapTargets": [],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 130
+      },
+      "signals": [],
+      "frustrationAfter": 0.5,
+      "reflection": {
+        "mismatch": false,
+        "actualOutcome": "details first: location, field, eligibility, source + last checked; Apply at Source is half hidden under a big 'I applied' button",
+        "feeling": "neutral",
+        "note": "Better: facts first, source verified, last checked Nov 1. But the big lavender button says 'I applied' — I haven't. The real 'Apply at Source' is half under it. Still no pay."
+      }
+    },
+    {
+      "index": 7,
+      "at": "2026-11-06T01:38:05.260Z",
+      "kind": "note",
+      "command": "note",
+      "args": {
+        "mismatch": "no",
+        "actual": "details first: location, field, eligibility, source + last checked; Apply at Source is half hidden under a big 'I applied' button",
+        "feeling": "neutral",
+        "thought": "Better: facts first, source verified, last checked Nov 1. But the big lavender button says 'I applied' — I haven't. The real 'Apply at Source' is half under it. Still no pay.",
+        "friction": "ux_confusion",
+        "severity": "2",
+        "element": "196",
+        "wish": "make 'Apply at source' the main button; 'I applied' secondary"
+      },
+      "about": 6,
+      "feeling": "neutral",
+      "thought": "Better: facts first, source verified, last checked Nov 1. But the big lavender button says 'I applied' — I haven't. The real 'Apply at Source' is half under it. Still no pay.",
+      "urlAfter": "http://localhost:43265/opportunities/op_ext_job_greenhouse_waymo_8287385",
+      "route": "/opportunities/:id",
+      "frictionId": "f3"
+    },
+    {
+      "index": 8,
+      "at": "2026-11-06T01:38:05.350Z",
+      "kind": "finish",
+      "command": "finish",
+      "args": {
+        "outcome": "success",
+        "reason": "Found a Waymo MS/PhD ML intern role in Mountain View; details page shows the source and the eligibility caveats.",
+        "dropoff": "medium",
+        "dropoff-why": "Details page is cleaner, but no location/PhD filter and the main button is 'I applied' instead of Apply",
+        "dropoff-basis": "4,6"
+      },
+      "urlBefore": "http://localhost:43265/opportunities/op_ext_job_greenhouse_waymo_8287385",
+      "consoleErrors": [],
+      "failedRequests": [],
+      "blockedRequests": [],
+      "environmentHits": [],
+      "urlAfter": "http://localhost:43265/opportunities/op_ext_job_greenhouse_waymo_8287385",
+      "route": "/opportunities/:id",
+      "screenshot": "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/008-finish.jpg",
+      "annotatedScreenshot": "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/008-finish-som.jpg",
+      "observation": {
+        "title": "Lumi · People and things to do around campus",
+        "elementCount": 10,
+        "newElementIds": [],
+        "elements": [
+          "[188]<button> Back",
+          "[189]<button> More",
+          "[190]<button> View source",
+          "[191]<button role=tab selected> Details",
+          "[192]<button role=tab> Q&A0",
+          "[193]<button> Original source Waymo careers Last checked Sun, Nov 1",
+          "[194]<button> Apply at Source",
+          "[14]<button> Save",
+          "[196]<button> I applied",
+          "[195]<button> Prep together Open a small prep group for this one.  ↓ below"
+        ],
+        "text": "lumi | . | People and things to do around campus. | Lumi is laid out for your phone — open this link there for the full experience. Everything works here too. | Internship | Source verified | View source | 2027 Summer Intern, MS/PhD, Software Engineer, ML Frameworks and Efficiency | Waymo | · Mountain View, CA, USA | Details | Q&A | 0 | Location | Mountain View, CA, USA | Field | Data & AI | International students | Not stated in the posting | Check before applying | Who it’s for | See the posting for class year, major and work authorization | As the source states it | Original source | Waymo careers | Last checked Sun, Nov 1 | Apply at Source | Do it with people | I applied",
+        "scroll": {
+          "top": 0,
+          "max": 193
+        },
+        "fingerprint": "215f7e50f699f6ed4d41dc4b01c4ba706b3c7332",
+        "simReadSec": 0
+      },
+      "checks": {
+        "smallTapTargets": [],
+        "horizontalOverflowPx": 0,
+        "brokenImages": 0,
+        "navLoadMs": 130
+      }
+    }
+  ],
+  "frictionEvents": [
+    {
+      "id": "f1",
+      "step": 0,
+      "noteStep": 1,
+      "type": "motivation",
+      "severity": 1,
+      "feeling": "neutral",
+      "quote": "Still a phone column, but at least it says so and the side isn't just black. 'Opportunities' up top. I want a list I can filter.",
+      "url": "/",
+      "route": "/",
+      "element": null,
+      "key": null,
+      "wish": null,
+      "evidence": [
+        "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/000-start.jpg",
+        "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/000-start-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f2",
+      "step": 4,
+      "noteStep": 5,
+      "type": "discoverability",
+      "severity": 2,
+      "feeling": "neutral",
+      "quote": "No location filter, no PhD/MS filter. I have to read each truncated 'Mountain Vie…' line. The top ones happen to be Bay Area, so fine.",
+      "url": "/explore/opportunities?type=internship",
+      "route": "/explore/opportunities",
+      "element": {
+        "id": 34,
+        "role": "button",
+        "name": "Internships"
+      },
+      "key": null,
+      "wish": "a Bay Area / near Berkeley location filter and a PhD/MS filter",
+      "evidence": [
+        "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/004-click.jpg",
+        "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/004-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    },
+    {
+      "id": "f3",
+      "step": 6,
+      "noteStep": 7,
+      "type": "ux_confusion",
+      "severity": 2,
+      "feeling": "neutral",
+      "quote": "Better: facts first, source verified, last checked Nov 1. But the big lavender button says 'I applied' — I haven't. The real 'Apply at Source' is half under it. Still no pay.",
+      "url": "/opportunities/op_ext_job_greenhouse_waymo_8287385",
+      "route": "/opportunities/:id",
+      "element": {
+        "id": 196,
+        "role": "button",
+        "name": "I applied"
+      },
+      "key": null,
+      "wish": "make 'Apply at source' the main button; 'I applied' secondary",
+      "evidence": [
+        "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/006-click.jpg",
+        "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/006-click-som.jpg"
+      ],
+      "environmentLimited": false,
+      "environmentLimitedReason": null,
+      "environmentCaveat": null
+    }
+  ],
+  "autoChecks": [],
+  "outcome": "success",
+  "reportedOutcome": "success",
+  "outcomeReason": "Found a Waymo MS/PhD ML intern role in Mountain View; details page shows the source and the eligibility caveats.",
+  "endedBy": "persona",
+  "goalAchieved": true,
+  "goalFirstMetAtStep": 6,
+  "stepsToGoal": 3,
+  "goalEvidence": {
+    "step": 6,
+    "url": "/opportunities/op_ext_job_greenhouse_waymo_8287385",
+    "matched": [
+      {
+        "urlMatches": "^/opportunities/[^/?]+"
+      },
+      {
+        "textMatches": "\\bintern(ship)?s?\\b"
+      }
+    ],
+    "screenshot": "ux-sim/runs/cmp2ha-new-internship-near-berkeley-priya/shots/006-click.jpg"
+  },
+  "falseSuccess": false,
+  "unnoticedSuccess": false,
+  "successCheck": {
+    "evaluatedFrom": "first persona action (never the start screen)",
+    "recordChecks": "none"
+  },
+  "patienceExhaustedAtStep": null,
+  "actionsAfterPatienceExhausted": 0,
+  "overrodePatience": false,
+  "abandonPoint": null,
+  "dropoffRisk": {
+    "kind": "hypothesis",
+    "level": "medium",
+    "rationale": "Details page is cleaner, but no location/PhD filter and the main button is 'I applied' instead of Apply",
+    "basis": [
+      4,
+      6
+    ],
+    "source": "persona-agent"
+  }
+}
