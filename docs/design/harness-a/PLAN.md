@@ -7,7 +7,7 @@ components), `docs/PRODUCT_TASTE.md`.
 
 ## What the foundation already did
 
-- One dark theme (`src/index.css`); `?design=` / Classic removed. Selected = pink `sel*`, primary = lime, category tints `t-*`.
+- One dark theme (`src/index.css`); `?design=` / Classic removed. Selected = pink `sel*`, primary = lavender (was lime), category tints `t-*`.
 - `src/components/ha` kit: TabBar, BrandHeader / TitleHeader / BackHeader / OnboardingHeader / PageTitle, Btn, BottomCTA,
   Chip(Row), SegTabs, SearchField, form fields, Switch, IconTile, Badge, CategoryTile, RowCard, ListingCard, MeetupCard,
   PersonCard, InfoRows, TextCard, HeroBanner, SectionHeader, InfoNote, EmptyCard, EmptyState, ErrorScreen, LoadingCards.
@@ -173,5 +173,5 @@ cd <worktree> && npx tsc -b && npm run typecheck:server && npm test
 ```
 Screenshots at 390×844 (Playwright: `/home/user/aroundu-ux-sim/tools/ux-sim/node_modules/playwright-core`, chromium
 `/opt/pw-browsers/chromium`, sign in with `/welcome?demo=berkeley`; the app scrolls inside `#scroll-root`). Put them next
-to the matching PDF page and check: header pattern, title size, card shape, chip/tab selection colour (pink), one lime
+to the matching PDF page and check: header pattern, title size, card shape, chip/tab selection colour (pink), one lavender
 button, footnote line, empty state.

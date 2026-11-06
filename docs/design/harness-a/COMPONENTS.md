@@ -15,7 +15,7 @@ use `v2:` in new code**.
 | Background | `#F9F9FF` | `bg` | `#08070C` | page background |
 | Surface | `#FFFFFF` | `surface` / `surface-2` / `line` | `#16131F` / `#1F1B2B` / `#2A2433` | cards / inputs, pressed / 1px borders |
 | Text | navy | `ink` / `ink-2` / `ink-3` | `#F4F1FF` / `#A79FC4` / `#8A84A6` | titles / body, meta / captions, placeholders |
-| **Primary** (navy CTA) | `#333E72` | `primary` + `on-primary` | lime `#D4FF3A` + ink `#0C0A14` | the one big button per screen (BottomCTA, empty-state button, Get Started) |
+| **Primary** (navy CTA) | `#333E72` | `primary` + `on-primary` | lavender `#C4B5FD` + ink `#140F24` | the one big button per screen (BottomCTA, empty-state button, Get Started) |
 | **Selected** (bright blue) | `#4D61FF` | `sel` / `sel-fg` / `sel-soft` / `sel-line` | `#FF3DA8` / `#FF7AC0` / `#2A0E20` / `#6B1A4C` | underline tab bar, selected chip, active tab-bar item, links ("View source ↗", "Sign In", "View meetup"), switches, focus ring |
 | Ice blue (Events) | `#EDF0FF` | `t-ice` / `t-ice-fg` | `#171C36` / `#9DB0FF` | events, classes, calendar icons |
 | Peach (Opportunities) | `#FFF2E7` | `t-peach` / `t-peach-fg` | `#2A2015` / `#FFC27A` | opportunities, dining, coffee |
@@ -25,7 +25,7 @@ use `v2:` in new code**.
 | status | — | `ok`, `danger`, `gold` | `#6FE0B9`, `#FF5C7A`, `#FFC94D` | live dot, errors, warnings |
 
 Decisions:
-- **One primary: lime-on-ink.** It is our existing dark brand button and has the strongest contrast (17:1). Pink is
+- **One primary: lavender-on-ink** (was neon lime `#D4FF3A` until 2026-11-06 — the owner found it hard on the eyes; the `lime-*` token names stay for old screens). Pink is
   never a filled button — it only marks *selection* and *links*, exactly where the PDF uses bright blue.
 - **Category tints** are deep, low-saturation versions of the PDF pastels with a light icon colour; the tile label
   stays `ink`, so the four Home tiles keep their colour coding on black. `tones.ts` maps
@@ -67,7 +67,7 @@ Radii: cards 20px, icon tiles 14px, chips / buttons fully round. Cards are `surf
 ### Controls (`Controls.tsx`)
 | Component | PDF | Notes |
 |---|---|---|
-| `Btn({variant, size, full, loading, icon})` | navy pill / white outline pill / blue text | `primary` (lime), `outline`, `link` (pink text), `danger`. Sizes `lg` 52 · `md` 44 · `sm` 36. |
+| `Btn({variant, size, full, loading, icon})` | navy pill / white outline pill / blue text | `primary` (lavender), `outline`, `link` (pink text), `danger`. Sizes `lg` 52 · `md` 44 · `sm` 36. |
 | `BottomCTA({leading?, note?})` | sticky bottom button bar (Continue, Going, Create Meetup …) | put a `Btn full size="lg"` inside; `leading` for `RoundIconBtn` (bookmark). |
 | `RoundIconBtn` | round bookmark button left of "Going" | |
 | `Chip({active, onClick, icon, size})`, `ChipRow({wrap})`, `ChoiceChips` | Recommended / Newest / Ending soon, Coffee / Study … | selected = `sel-soft` + `sel-line` border + `sel-fg` text. `ChipRow` scrolls sideways unless `wrap`. |
@@ -110,7 +110,7 @@ Radii: cards 20px, icon tiles 14px, chips / buttons fully round. Cards are `surf
 
 ## 4. Rules
 - One `primary` button per screen. Everything else is `outline` or `link`.
-- Selection is always pink (`sel*`); category colour is always a tint (`t-*`). Don't use lime for selection.
+- Selection is always pink (`sel*`); category colour is always a tint (`t-*`). Don't use the primary lavender for selection.
 - Data that isn't there is not drawn: no sample people mixed into real counts, no stock photos, no "Be the first" lines
   on every row (PRODUCT_TASTE). Sample content in onboarding (S004–S007) carries "Sample preview".
 - Headers: tab roots use `BrandHeader`/`TitleHeader`; every other screen uses `BackHeader` (+ `PageTitle` when the PDF

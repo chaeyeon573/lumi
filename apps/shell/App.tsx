@@ -228,7 +228,7 @@ function Offline({ failure, dark, background, onRetry }: { failure: Failure; dar
       <Text style={[styles.mark, { color: ink }]}>lumi<Text style={{ color: '#FF3DA8' }}>.</Text></Text>
       <Text style={[styles.title, { color: ink }]}>{failure.offline ? "You're offline" : "Lumi can't be reached"}</Text>
       <Text style={[styles.body, { color: sub }]}>{failure.offline ? 'Check your Wi-Fi or cellular connection, then try again.' : 'The server is not answering right now. Give it a moment and try again.'}</Text>
-      <Pressable onPress={onRetry} style={({ pressed }) => [styles.button, { backgroundColor: dark ? '#D4FF3A' : '#0F2B48', opacity: pressed ? 0.8 : 1 }]} accessibilityRole="button">
+      <Pressable onPress={onRetry} style={({ pressed }) => [styles.button, { backgroundColor: dark ? '#C4B5FD' : '#0F2B48', opacity: pressed ? 0.8 : 1 }]} accessibilityRole="button">
         <Text style={[styles.buttonText, { color: dark ? '#0C0A14' : '#FFFFFF' }]}>Try again</Text>
       </Pressable>
       {DEBUG && <Text style={[styles.detail, { color: sub }]}>{failure.detail}</Text>}

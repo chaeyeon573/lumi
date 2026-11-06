@@ -17,11 +17,12 @@
   --color-ink-2: #A79FC4;
   --color-ink-3: #8A84A6;
 
-  /* PDF Primary(남색 버튼) → 라임 버튼 + 검은 글자. 한 화면에 큰 버튼 하나 */
-  --color-primary: #D4FF3A;
-  --color-primary-deep: #A9CC1F;
+  /* PDF Primary(남색 버튼) → 라벤더 버튼 + 짙은 글자. 한 화면에 큰 버튼 하나.
+     형광 라임(#D4FF3A)은 "눈이 아프다"는 사장님 피드백(2026-11-06)으로 라벤더로 바꿨다 — 이름(lime-*)은 예전 화면 호환용으로 남긴다 */
+  --color-primary: #C4B5FD;
+  --color-primary-deep: #A78BFA;
   --color-primary-soft: #2A0E20;
-  --color-on-primary: #0C0A14;
+  --color-on-primary: #140F24;
   /* text-primary 는 제목·링크용으로 쓰여 왔다 — 어두운 바탕에서는 밝은 글자 */
   --color-title: #F4F1FF;
   --text-color-primary: var(--color-title);
@@ -50,15 +51,15 @@
   --color-heart: #FF3DA8;
   --color-heart-soft: #2A0E20;
   --color-verify: #FF7AC0;
-  --color-mint: #D4FF3A;
-  --color-mint-soft: #1C220A;
+  --color-mint: #C4B5FD;
+  --color-mint-soft: #1C1730;
   --color-gold: #FFC94D;
   --color-gold-soft: #2A2410;
   --color-danger: #FF5C7A;
   --color-danger-soft: #3A1020;
   --color-ok: #6FE0B9;
 
-  /* Lumi 핑크·라임 스케일 */
+  /* Lumi 핑크 · (예전 이름 lime-*) 라벤더 스케일 */
   --color-pink-900: #2A0E20;
   --color-pink-800: #5C1640;
   --color-pink-600: #C42683;
@@ -66,12 +67,12 @@
   --color-pink-300: #FF7AC0;
   --color-pink-200: #FFB3D9;
   --color-pink-100: #FFE0F0;
-  --color-lime-900: #1C220A;
-  --color-lime-800: #4A5A12;
-  --color-lime-600: #A9CC1F;
-  --color-lime-400: #D4FF3A;
-  --color-lime-200: #E6FF8F;
-  --color-lime-100: #F4FFD1;
+  --color-lime-900: #1C1730;
+  --color-lime-800: #3D3266;
+  --color-lime-600: #A78BFA;
+  --color-lime-400: #C4B5FD;
+  --color-lime-200: #DDD6FE;
+  --color-lime-100: #EDE9FE;
   --color-night: #0C0A14;
 
   --radius-xl2: 20px;
