@@ -62,7 +62,7 @@ export function OpportunityCard({ o, reasons, variant = 'feed', className }: { o
             <span className="rounded-lg px-2 h-6 inline-flex items-center text-[11px] font-bold text-white" style={{ background: color }}>{OPP_TYPE_EMOJI[o.type]} {OPP_TYPE_LABELS[o.type]}</span>
             {o.official && <Tag tone="gold"><BadgeCheck size={11} /> {t('공식')}</Tag>}
           </div>
-          {o.deadline && <span className={cn('absolute top-3 right-3 rounded-lg px-2 h-6 inline-flex items-center gap-1 text-[11px] font-bold', urgent ? 'bg-danger text-white' : 'bg-white/90 text-ink')}><AlarmClock size={11} />{dday(o.deadline)}</span>}
+          {o.deadline && <span className={cn('absolute top-3 right-3 rounded-lg px-2 h-6 inline-flex items-center gap-1 text-[11px] font-bold', urgent ? 'bg-danger text-white' : 'bg-surface/90 text-ink')}><AlarmClock size={11} />{dday(o.deadline)}</span>}
         </div>
       </button>
       )}

@@ -57,7 +57,7 @@ function Frame({ step, children }: { step: Step; children: React.ReactNode }) {
   return (
     <div className="min-h-full flex flex-col">
       <TopBar back title={<span className="text-[15px]">{titles[step]} <span className="text-ink-3 font-medium">{idx + 1}/{STEPS.length}</span></span>} />
-      <div className="px-4 pt-1"><div className="h-1.5 rounded-full bg-line overflow-hidden"><div className="h-full bg-primary transition-all" style={{ width: `${((idx + 1) / STEPS.length) * 100}%` }} /></div></div>
+      <div className="px-4 pt-1"><div className="h-1.5 rounded-full bg-line overflow-hidden"><div className="h-full bg-sel transition-all" style={{ width: `${((idx + 1) / STEPS.length) * 100}%` }} /></div></div>
       <div className="flex-1 px-4 py-5 space-y-5">{children}</div>
     </div>
   );
@@ -81,11 +81,11 @@ function BasicStep({ form, patch, next }: StepProps) {
           <div className="h-20 w-20 rounded-3xl grid place-items-center text-4xl" style={{ background: `linear-gradient(135deg, hsl(${form.avatar.hue} 85% 88%), hsl(${(form.avatar.hue + 40) % 360} 80% 74%))` }}>{form.avatar.emoji}</div>
           <div className="flex-1">
             <Segmented value={form.avatarType} onChange={(v) => patch({ avatarType: v, avatar: { ...form.avatar, photoType: v } })} options={[{ value: 'face', label: t('얼굴') }, { value: 'masked', label: t('마스크·가면') }, { value: 'back', label: t('뒷모습') }]} />
-            <input type="range" min={0} max={359} value={form.avatar.hue} onChange={(e) => patch({ avatar: { ...form.avatar, hue: Number(e.target.value) } })} className="w-full mt-3 accent-primary" aria-label={t('배경 색상')} />
+            <input type="range" min={0} max={359} value={form.avatar.hue} onChange={(e) => patch({ avatar: { ...form.avatar, hue: Number(e.target.value) } })} className="w-full mt-3 accent-sel" aria-label={t('배경 색상')} />
           </div>
         </div>
         <div className="grid grid-cols-8 gap-1.5">
-          {EMOJIS.map((e) => <button key={e} type="button" onClick={() => patch({ avatar: { ...form.avatar, emoji: e } })} className={cn('h-10 rounded-xl text-xl grid place-items-center', form.avatar.emoji === e ? 'bg-primary-soft ring-2 ring-primary' : 'bg-surface-2')}>{e}</button>)}
+          {EMOJIS.map((e) => <button key={e} type="button" onClick={() => patch({ avatar: { ...form.avatar, emoji: e } })} className={cn('h-10 rounded-xl text-xl grid place-items-center', form.avatar.emoji === e ? 'bg-sel-soft ring-2 ring-sel' : 'bg-surface-2')}>{e}</button>)}
         </div>
       </Field>
       <div className="rounded-xl bg-surface-2 px-3.5 py-3 text-[12px] text-ink-2 flex gap-2"><ShieldCheck size={16} className="text-mint shrink-0" />{t('본인 인증은 가입 후 프로필에서 진행할 수 있어요. 인증 상태는 프로필에 배지로 표시돼요.')}</div>
@@ -248,7 +248,7 @@ function PermissionsStep({ form, patch }: StepProps) {
         <Segmented className="mt-3" value={form.locationPermission} onChange={(v) => patch({ locationPermission: v })} options={[{ value: 'granted', label: t('허용') }, { value: 'denied', label: t('허용 안 함') }, { value: 'undecided', label: t('나중에') }]} />
       </div>
       <div className="card p-4">
-        <div className="flex items-start gap-3"><span className="h-11 w-11 rounded-2xl bg-gold-soft text-[#B57A0E] grid place-items-center shrink-0"><Bell size={20} /></span>
+        <div className="flex items-start gap-3"><span className="h-11 w-11 rounded-2xl bg-gold-soft text-gold grid place-items-center shrink-0"><Bell size={20} /></span>
           <div className="flex-1"><b className="text-[15px]">{t('알림 권한')}</b><p className="text-[12px] text-ink-3 mt-0.5">{t('참가 승인, 친구 요청 수락, 활동 시작 전 알림을 받아요.')}</p></div></div>
         <div className="px-1"><Toggle label={t('알림 허용')} checked={form.notifications} onChange={(v) => patch({ notifications: v })} /></div>
       </div>

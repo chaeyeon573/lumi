@@ -100,7 +100,7 @@ export function ActivityCard({ activity: a, variant = 'feed', className, badge }
             {badge && <Tag tone="accent">{badge}</Tag>}
             {(a.official && !a.sample) && <Tag tone="gold"><BadgeCheck size={11} /> {t('학교 공식')}</Tag>}
           </div>
-          <div className="absolute bottom-3 right-3"><VisibilityTag value={a.visibility} className="bg-white/85 rounded-lg px-1.5 h-6 backdrop-blur" /></div>
+          <div className="absolute bottom-3 right-3"><VisibilityTag value={a.visibility} className="bg-surface/85 rounded-lg px-1.5 h-6 backdrop-blur" /></div>
         </div>
       </button>
       <div className="p-3.5">

@@ -51,8 +51,8 @@
   --color-heart: #FF3DA8;
   --color-heart-soft: #2A0E20;
   --color-verify: #FF7AC0;
-  --color-mint: #C4B5FD;
-  --color-mint-soft: #1C1730;
+  --color-mint: #6FE0B9;       /* 성공·인증·'가요' — 라벤더(큰 버튼)와 겹치지 않게 진짜 민트 */
+  --color-mint-soft: #11261F;
   --color-gold: #FFC94D;
   --color-gold-soft: #2A2410;
   --color-danger: #FF5C7A;

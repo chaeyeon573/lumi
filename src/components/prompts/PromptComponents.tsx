@@ -124,7 +124,7 @@ function Waveform({ active, progress = 0 }: { active?: boolean; progress?: numbe
   const bars = [4, 9, 14, 8, 16, 11, 6, 13, 9, 15, 7, 12, 5, 10, 14, 8, 6, 11, 9, 13];
   return (
     <div className="flex items-center gap-[3px] h-5 flex-1">
-      {bars.map((h, i) => <span key={i} className={cn('w-[3px] rounded-full transition-colors', i / bars.length < progress ? 'bg-primary' : 'bg-primary/35', active && 'animate-pulse')} style={{ height: h }} />)}
+      {bars.map((h, i) => <span key={i} className={cn('w-[3px] rounded-full transition-colors', i / bars.length < progress ? 'bg-sel' : 'bg-sel/35', active && 'animate-pulse')} style={{ height: h }} />)}
     </div>
   );
 }
@@ -188,7 +188,7 @@ export function PromptAnswerCard({ prompt, compact }: { prompt: ProfilePrompt; c
 export function CompletionMeter({ percent, done, total, complete }: { percent: number; done: number; total: number; complete: boolean }) {
   return (
     <div className="flex items-center gap-3">
-      <div className="flex-1 h-2 rounded-full bg-line overflow-hidden"><div className={cn('h-full rounded-full transition-all', complete ? 'bg-mint' : 'bg-primary')} style={{ width: `${percent}%` }} /></div>
+      <div className="flex-1 h-2 rounded-full bg-line overflow-hidden"><div className={cn('h-full rounded-full transition-all', complete ? 'bg-ok' : 'bg-sel')} style={{ width: `${percent}%` }} /></div>
       <span className={cn('text-[12px] font-bold tabular-nums', complete ? 'text-mint' : 'text-ink-2')}>{done}/{total}</span>
       {complete && <Tag tone="mint"><Check size={11} /> {t('프로필 완성')}</Tag>}
     </div>

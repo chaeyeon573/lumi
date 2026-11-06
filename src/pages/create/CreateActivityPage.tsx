@@ -128,7 +128,7 @@ export function CreateActivityPage() {
     const url = `${window.location.origin}/activities/${created}`;
     return (
       <div className="min-h-full flex flex-col items-center justify-center px-8 text-center bg-bg">
-        <span className="h-24 w-24 rounded-full bg-primary-soft grid place-items-center text-[var(--color-primary)] v2:text-lime-400"><Check size={48} strokeWidth={2.4} /></span>
+        <span className="h-24 w-24 rounded-full bg-t-mint grid place-items-center text-t-mint-fg"><Check size={48} strokeWidth={2.4} /></span>
         <h1 className="font-display text-[24px] font-extrabold mt-6">{isOrgEvent ? (lang === 'en' ? 'Event Created!' : '행사를 올렸어요!') : (lang === 'en' ? 'Meetup Created!' : '모임을 만들었어요!')}</h1>
         <p className="text-[14px] text-ink-3 mt-2">{isOrgEvent ? (lang === 'en' ? (form.visibility === 'selected' ? 'Your members can see it now.' : 'Your event is now live on Explore.') : (form.visibility === 'selected' ? '회원에게 바로 보여요.' : 'Explore 에 바로 올라갔어요.')) : (lang === 'en' ? 'Your meetup is now live on Meet.' : 'Meet 에 바로 올라갔어요.')}</p>
         <div className="w-full max-w-[320px] mt-8 space-y-2.5">
@@ -179,7 +179,7 @@ export function CreateActivityPage() {
         {isMeetup && <Field label={t('제목')} required><Input placeholder={lang === 'en' ? 'e.g. Coffee & Catch Up' : '예: 커피 한잔해요'} value={form.title} onChange={(e) => patch({ title: e.target.value })} maxLength={60} /></Field>}
         {isMeetup && <Field label={lang === 'en' ? 'Category' : '종류'} required>
           <div className="grid grid-cols-4 gap-2">{MEET_KINDS.map((k) => { const on = MEET_KIND_CATEGORY[k.key] === form.category || (k.cats as readonly string[]).includes(form.category) && !MEET_KINDS.some((x) => MEET_KIND_CATEGORY[x.key] === form.category); return (
-            <button key={k.key} type="button" onClick={() => setCategory(MEET_KIND_CATEGORY[k.key])} className={cn('rounded-2xl h-[72px] flex flex-col items-center justify-center gap-1 border-2 press', k.tone, on ? 'border-primary v2:border-lime-400' : 'border-transparent')}>
+            <button key={k.key} type="button" onClick={() => setCategory(MEET_KIND_CATEGORY[k.key])} className={cn('rounded-2xl h-[72px] flex flex-col items-center justify-center gap-1 border-2 press', k.tone, on ? 'border-sel' : 'border-transparent')}>
               <k.Icon size={20} /><span className="text-[12px] font-semibold text-ink">{k.title}</span>
             </button>); })}</div>
         </Field>}
@@ -224,7 +224,7 @@ export function CreateActivityPage() {
         {!simple && <Field label={t('참가 조건 (선택)')}><Input placeholder={t('예: 창업이나 AI에 관심 있는 분')} value={form.conditions ?? ''} onChange={(e) => patch({ conditions: e.target.value })} /></Field>}
         {!simple && <Field label={t('참가 승인 방식')} required>
           <div className="space-y-1.5">{(Object.keys(JOIN_POLICY_LABELS) as JoinPolicy[]).map((j) => (
-            <button key={j} type="button" onClick={() => patch({ joinPolicy: j })} className={cn('w-full text-left rounded-xl px-3.5 h-11 text-[14px] font-medium border flex items-center justify-between', form.joinPolicy === j ? 'border-primary bg-primary-soft' : 'border-line')}>{JOIN_POLICY_LABELS[j]}<span className={cn('h-4 w-4 rounded-full border-2', form.joinPolicy === j ? 'border-primary bg-primary' : 'border-line')} /></button>
+            <button key={j} type="button" onClick={() => patch({ joinPolicy: j })} className={cn('w-full text-left rounded-xl px-3.5 h-11 text-[14px] font-medium border flex items-center justify-between', form.joinPolicy === j ? 'border-sel-line bg-sel-soft' : 'border-line')}>{JOIN_POLICY_LABELS[j]}<span className={cn('h-4 w-4 rounded-full border-2', form.joinPolicy === j ? 'border-sel bg-sel' : 'border-line')} /></button>
           ))}</div>
           {form.joinPolicy === 'invite' && (
             <div className="mt-2"><p className="text-[12px] text-ink-3 mb-1.5">{t('초대할 친구')}</p><div className="flex flex-wrap gap-1.5">{friends.map((f) => <Chip key={f.id} size="sm" active={form.invitedIds?.includes(f.id)} onClick={() => patch({ invitedIds: form.invitedIds?.includes(f.id) ? form.invitedIds.filter((x) => x !== f.id) : [...(form.invitedIds ?? []), f.id] })}>{f.avatar.emoji} {f.nickname}</Chip>)}{friends.length === 0 && <span className="text-[12px] text-ink-3">{t('친구가 없어요')}</span>}</div></div>
@@ -236,7 +236,7 @@ export function CreateActivityPage() {
             { key: 'network', Icon: UsersIcon, title: lang === 'en' ? 'My Network' : '내 네트워크', desc: lang === 'en' ? 'Friends and mutual connections only' : '친구와 서로 아는 사람만', on: form.joinPolicy !== 'invite' && form.visibility === 'friends', set: { visibility: 'friends' as Visibility, joinPolicy: 'open' as JoinPolicy } },
             { key: 'invite', Icon: LockIcon, title: lang === 'en' ? 'Invite Only' : '초대한 사람만', desc: lang === 'en' ? 'Only the friends you invite can see and join' : '초대한 친구만 보고 참여', on: form.joinPolicy === 'invite', set: { visibility: 'private' as Visibility, joinPolicy: 'invite' as JoinPolicy } },
           ]).map((o) => (
-            <button key={o.key} type="button" onClick={() => patch(o.set)} className={cn('w-full rounded-2xl px-3.5 py-3 flex items-center gap-3 text-left border-2', o.on ? 'border-primary bg-primary-soft v2:border-lime-400' : 'border-line')}>
+            <button key={o.key} type="button" onClick={() => patch(o.set)} className={cn('w-full rounded-2xl px-3.5 py-3 flex items-center gap-3 text-left border-2', o.on ? 'border-sel-line bg-sel-soft' : 'border-line')}>
               <o.Icon size={19} className="text-ink-2 shrink-0" /><span className="flex-1 min-w-0"><span className="block text-[14px] font-bold">{o.title}</span><span className="block text-[12px] text-ink-3">{o.desc}</span></span>
             </button>
           ))}</div>
@@ -247,7 +247,7 @@ export function CreateActivityPage() {
             { key: 'public', Icon: Globe, title: lang === 'en' ? 'Public (Show on Explore)' : '전체 공개 (Explore 에 표시)', desc: lang === 'en' ? 'Anyone at your school can see and RSVP' : '우리 학교 누구나 보고 RSVP', on: form.visibility === 'school', set: { visibility: 'school' as Visibility, visibilityTargets: [] } },
             { key: 'members', Icon: LockIcon, title: lang === 'en' ? 'Members only' : '회원만', desc: lang === 'en' ? 'Only your organization’s members can see' : '우리 조직 회원만 볼 수 있어요', on: form.visibility === 'selected', set: { visibility: 'selected' as Visibility, visibilityTargets: (() => { const o = adminOrgs.find((x) => x.id === form.orgId); return o ? [...new Set([...o.memberIds, ...o.adminIds])] : []; })() } },
           ]).map((o) => (
-            <button key={o.key} type="button" onClick={() => patch(o.set)} className={cn('w-full rounded-2xl px-3.5 py-3 flex items-center gap-3 text-left border-2', o.on ? 'border-primary bg-primary-soft v2:border-lime-400' : 'border-line')}>
+            <button key={o.key} type="button" onClick={() => patch(o.set)} className={cn('w-full rounded-2xl px-3.5 py-3 flex items-center gap-3 text-left border-2', o.on ? 'border-sel-line bg-sel-soft' : 'border-line')}>
               <o.Icon size={19} className="text-ink-2 shrink-0" /><span className="flex-1 min-w-0"><span className="block text-[14px] font-bold">{o.title}</span><span className="block text-[12px] text-ink-3">{o.desc}</span></span>
             </button>
           ))}</div>

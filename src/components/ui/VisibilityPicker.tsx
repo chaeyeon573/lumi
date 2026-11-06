@@ -46,13 +46,13 @@ export function VisibilityList({ value, options, onChange }: { value: Visibility
         const active = v === value;
         return (
           <button key={v} type="button" onClick={() => onChange(v)}
-            className={cn('w-full flex items-center gap-3 rounded-xl px-3.5 py-3 border text-left transition', active ? 'border-primary bg-primary-soft' : 'border-line bg-surface')}>
-            <span className={cn('h-9 w-9 rounded-xl grid place-items-center', active ? 'bg-primary text-white v2:text-on-primary' : 'bg-surface-2 text-ink-2')}><I size={17} /></span>
+            className={cn('w-full flex items-center gap-3 rounded-xl px-3.5 py-3 border text-left transition', active ? 'border-sel-line bg-sel-soft' : 'border-line bg-surface')}>
+            <span className={cn('h-9 w-9 rounded-xl grid place-items-center', active ? 'bg-sel text-on-primary' : 'bg-surface-2 text-ink-2')}><I size={17} /></span>
             <span className="flex-1">
               <span className="block text-[14px] font-semibold">{VISIBILITY_LABELS[v]}</span>
               <span className="block text-[12px] text-ink-3">{visibilityDescription(v)}</span>
             </span>
-            <span className={cn('h-5 w-5 rounded-full border-2 grid place-items-center', active ? 'border-primary' : 'border-line')}>{active && <span className="h-2.5 w-2.5 rounded-full bg-primary" />}</span>
+            <span className={cn('h-5 w-5 rounded-full border-2 grid place-items-center', active ? 'border-sel' : 'border-line')}>{active && <span className="h-2.5 w-2.5 rounded-full bg-sel" />}</span>
           </button>
         );
       })}

@@ -58,7 +58,7 @@ export function PeopleLine({ o, className, quiet = true }: { o: Opportunity; cla
           {s.text}
         </span>
       )}
-      <button onClick={onCta} className={cn('h-8 px-3.5 rounded-full text-[12px] font-bold shrink-0 press whitespace-nowrap', s.kind === 'go' ? 'bg-primary text-white' : 'bg-surface-2 text-ink border border-line')}>
+      <button onClick={onCta} className={cn('h-8 px-3.5 rounded-full text-[12px] font-bold shrink-0 press whitespace-nowrap', 'bg-surface-2 text-ink border border-line')}>
         {s.kind === 'go' && !go ? (lang === 'en' ? 'See who’s going' : '누가 가는지') : s.cta}
       </button>
       {go && <GoTogetherSheet o={o} open={sheet} onClose={() => setSheet(false)} />}

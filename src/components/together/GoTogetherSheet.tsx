@@ -84,7 +84,7 @@ export function GoTogetherSheet({ o, open, onClose, autoJoin = true }: { o: Oppo
       </div>
 
       <div className="flex flex-wrap gap-2 mt-3">
-        <button onClick={() => !crew && join()} disabled={busy} className={cn('h-9 px-3.5 rounded-full text-[13px] font-semibold inline-flex items-center gap-1.5 border press', crew ? 'bg-primary text-white border-primary' : 'bg-surface border-line text-ink')}><Check size={14} />{en ? "I'm in" : '갈래요'}</button>
+        <button onClick={() => !crew && join()} disabled={busy} className={cn('h-9 px-3.5 rounded-full text-[13px] font-semibold inline-flex items-center gap-1.5 border press', crew ? 'bg-sel-soft text-sel-fg border-sel-line' : 'bg-surface border-line text-ink')}><Check size={14} />{en ? "I'm in" : '갈래요'}</button>
         <button onClick={() => crew && maybe()} disabled={busy} className={cn('h-9 px-3.5 rounded-full text-[13px] font-semibold inline-flex items-center gap-1.5 border press', !crew && !busy ? 'bg-surface-2 border-line text-ink' : 'bg-surface border-line text-ink-2')}><HelpCircle size={14} />{en ? 'Maybe' : '아마도'}</button>
         {meet && <span className="h-9 px-3.5 rounded-full bg-surface-2 text-ink text-[13px] font-semibold inline-flex items-center gap-1.5"><Clock size={14} />{en ? 'Meet' : '만남'} {meet}</span>}
         {place && <span className="h-9 px-3.5 rounded-full bg-surface-2 text-ink text-[13px] font-semibold inline-flex items-center gap-1.5 max-w-full truncate"><MapPin size={14} className="shrink-0" /><span className="truncate">{place}</span></span>}
