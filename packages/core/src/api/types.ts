@@ -183,6 +183,8 @@ export interface CatalogCourse {
   exams?: { label: string; date: string }[];
   /** 원본 사이트의 수업 번호 (Berkeley: classes.berkeley.edu 의 node id) — 딸린 토론·랩 섹션을 찾을 때 쓴다 */
   sourceId?: string;
+  /** 학교가 매긴 다섯 자리 수업 번호 (Berkeley "Class #: 29147") — CalCentral 에 보이는 번호라 이것으로도 찾는다. 원본에 있을 때만 */
+  classNumber?: string;
   /** 가져올 때 원본에 같이 있던 딸린 섹션 (Stanford·MIT) — 없으면 Berkeley 처럼 고를 때 읽어 온다. 검색 결과로는 내려보내지 않는다 */
   sections?: CatalogSection[];
 }
@@ -195,6 +197,19 @@ export interface CatalogSection {
   kind: string;
   meetings: { day: number; start: string; end: string }[];
   location?: string;
+}
+
+/**
+ * 학교 수업 페이지에서 그때 읽어 오는 것 (Berkeley classes.berkeley.edu/content/…) — 목록 가져오기에는 없다.
+ * 학교가 적어 둔 것만, 지어내지 않는다. 못 읽으면 빈 객체
+ */
+export interface CatalogDetails {
+  /** "Class #: 29147" */
+  classNumber?: string;
+  /** Rules & Requirements → Requisites ("Students not in the Master of Engineering Program") */
+  requisites?: string[];
+  /** Class Notes — 줄마다 하나 */
+  notes?: string[];
 }
 
 /** 수업 방 공개 정보 (/c/<학교>/<코드>) — 로그인 전에도 보이므로 인원 수만, 사람은 없다 */
@@ -305,6 +320,17 @@ export interface AroundUApi {
     terms(schoolId: ID): Promise<{ terms: string[]; current: string }>;
     /** 강의에 딸린 토론·랩 섹션 — 학교 시간표에서 그때 읽어 온다. 없거나 못 읽으면 빈 목록 */
     sections(schoolId: ID, courseId: ID): Promise<CatalogSection[]>;
+    /**
+     * S029 목록 — 한 학기 수업 전부 (딸린 섹션 빼고). 화면이 받아 두고 검색·거르기를 바로 한다 (수천 줄, gzip).
+     * term 을 안 주면 지금 학기. 돌려준 term 이 실제로 보여 주는 학기
+     */
+    browse(schoolId: ID, term?: string): Promise<{ term: string; courses: CatalogCourse[] }>;
+    /** 과목별 Lumi 학생 수 (codeSlug → n, 1 이상만) — 수만, 이름 없음 (@core/lib/coursefinder lumiCounts) */
+    counts(schoolId: ID, term: string): Promise<Record<string, number>>;
+    /** 수업 하나 (id, 또는 과목 코드 + 학기) + 그 과목 Lumi 학생 수 — 추가하기 전에 여는 수업 페이지(S030) */
+    course(schoolId: ID, ref: { id?: ID; code?: string; term?: string }): Promise<{ course: CatalogCourse; count: number } | null>;
+    /** 수업 페이지에서 그때 읽는 수업 번호·수강 조건·노트 (섹션처럼 8초 안에, 못 읽으면 {}) */
+    details(schoolId: ID, courseId: ID): Promise<CatalogDetails>;
   };
 
   /** 학사 일정 (registrar 캘린더) — 지난 30일부터. 일정이 없는 학교는 빈 목록 */

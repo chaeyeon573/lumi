@@ -5,7 +5,7 @@
  *   POST /api/auth/delete-account      본인 계정 영구 삭제 { confirm: 'DELETE' } (server/account.ts) — 데모·예시 계정은 거절
  *   POST /api/bootstrap
  *   POST /api/schools/{search,send-code,verify-code,orgs}
- *   POST /api/catalog/{courses,departments,terms,sections}   term 생략 = 지금 학기 (Fall 2026 …)
+ *   POST /api/catalog/{courses,departments,terms,sections,browse,counts,course,details}   term 생략 = 지금 학기 (Fall 2026 …)
  *   POST /api/rpc/:group/:method        body: { args: [...] }  → 엔진 메서드 호출, Patch 반환
  *   GET  /api/events?token=…            SSE: 다른 사용자의 변경을 Patch 로 푸시
  *   POST /api/system/reset              ALLOW_RESET=1 일 때만
@@ -44,8 +44,11 @@ import type { Patch, Snapshot, RegisterInput, CatalogCourse } from '@core/api/ty
 import type { Game, ID, User } from '@core/types';
 import { sanitizeSelfUpdate } from '@core/lib/selfupdate';
 import { createEngine } from '@core/api/engine';
-import { createSectionReader } from './sections';
-import { searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm, catalogCourses as builtInCatalog } from '@core/data/catalog/courses';
+import { createDetailsReader, createSectionReader } from './sections';
+import { gzipSync } from 'node:zlib';
+import { lumiCounts } from '@core/lib/coursefinder';
+import { codeSlug } from '@core/lib/classmates';
+import { searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm, browseCatalog, findCatalogRef, courseTerm, catalogCourses as builtInCatalog } from '@core/data/catalog/courses';
 import { createStore } from './store';
 import { snapshotFor, patchFor } from './view';
 import { TOGETHER_RULES, ruleAllows } from './together-rules';
@@ -437,6 +440,36 @@ app.post('/api/catalog/departments', wrap(async (req) => { const s = String(req.
 app.post('/api/catalog/terms', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const list = schoolCatalog(s); return { terms: catalogTerms(list, s), current: resolveCatalogTerm(list, s) }; }));
 // 강의에 딸린 토론·랩 — 학생이 그 수업을 넣을 때 학교 시간표에서 읽어 온다 (6시간 기억)
 app.post('/api/catalog/sections', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const c = schoolCatalog(s).find((x) => x.id === String(req.body.courseId ?? '')); return c ? readSections(c) : []; }));
+
+// S029 목록 — 한 학기 전부를 한 번에 (화면이 받아 두고 검색·거르기를 바로 한다). 수천 줄이라 gzip 해서 학기·목록 판마다 한 번만 만든다
+const browseCache = new Map<string, { version: string; json: string; gz: Buffer }>();
+app.post('/api/catalog/browse', wrap(async (req, res) => {
+  const s = String(req.body.schoolId ?? ''); const list = schoolCatalog(s);
+  const term = resolveCatalogTerm(list, s, String(req.body.term ?? ''));
+  const key = `${s}|${term}`;
+  let hit = browseCache.get(key);
+  if (!hit || hit.version !== catalogVersion) {
+    const json = JSON.stringify({ term, courses: browseCatalog(list, s, term) });
+    hit = { version: catalogVersion, json, gz: gzipSync(json) };
+    browseCache.set(key, hit);
+  }
+  res.type('application/json').set('vary', 'accept-encoding');
+  if (/\bgzip\b/.test(String(req.headers['accept-encoding'] ?? ''))) res.set('content-encoding', 'gzip').send(hit.gz);
+  else res.send(hit.json);
+}));
+// 과목별 Lumi 학생 수 — 수만 (이름 없음). 같은 수업 학생 보이기를 끈 사람·미인증·예시 프로필은 세지 않는다 (@core/lib/coursefinder)
+app.post('/api/catalog/counts', wrap(async (req) => lumiCounts(db.users, String(req.body.schoolId ?? ''), String(req.body.term ?? ''))));
+// 수업 하나 (추가하기 전에 여는 수업 페이지 S030) + 그 과목 Lumi 학생 수
+app.post('/api/catalog/course', wrap(async (req) => {
+  const s = String(req.body.schoolId ?? '');
+  const c = findCatalogRef(schoolCatalog(s), s, { id: String(req.body.id ?? '') || undefined, code: String(req.body.code ?? '') || undefined, term: String(req.body.term ?? '') || undefined });
+  if (!c) return null;
+  const { sections: _sections, sourceId: _sourceId, ...course } = c;
+  return { course, count: lumiCounts(db.users, s, courseTerm(c))[codeSlug(c.code)] ?? 0 };
+}));
+// 수업 페이지의 수업 번호·수강 조건·Class Notes — 펼칠 때 읽는다 (섹션처럼 8초, 6시간 기억)
+const readDetails = createDetailsReader();
+app.post('/api/catalog/details', wrap(async (req) => { const s = String(req.body.schoolId ?? ''); const c = schoolCatalog(s).find((x) => x.id === String(req.body.courseId ?? '')); return c ? readDetails(c) : {}; }));
 
 // ─── 수업 질문 — POST /api/classqa/{list,ask,answer,remove} (server/classqa.ts) ───
 registerClassQaRoutes(app, classQa, { auth, wrap, requireUser, bad });

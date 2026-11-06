@@ -136,6 +136,10 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
       departments: (schoolId, term) => call('catalog/departments', { schoolId, term }),
       terms: (schoolId) => call('catalog/terms', { schoolId }),
       sections: (schoolId, courseId) => call('catalog/sections', { schoolId, courseId }),
+      browse: (schoolId, term) => call('catalog/browse', { schoolId, term }),
+      counts: (schoolId, term) => call('catalog/counts', { schoolId, term }),
+      course: (schoolId, ref) => call('catalog/course', { schoolId, ...ref }),
+      details: (schoolId, courseId) => call('catalog/details', { schoolId, courseId }),
     },
 
     academic: { dates: (schoolId) => call('academic/dates', { schoolId }) },

@@ -17,10 +17,11 @@ import { eraseUser, isProtectedAccount, deleteConfirmOk, DELETE_CONFIRM_WORD, DE
 const MOCK_PROTECTED = new Set<string>([DEMO_USER_ID, ...seedUsers.map((u) => u.id)]);
 import { createClassesEngine } from '../classes';
 import { birthYearProblem, searchOrgs } from '@core/lib/signup';
-import { classRostersFor } from '@core/lib/classmates';
+import { classRostersFor, codeSlug } from '@core/lib/classmates';
 import { createClassQa, type ClassQuestion } from '@core/lib/classqa';
 import { createCourseReviews, type CourseReview, type ExamInfo } from '@core/lib/coursereviews';
-import { catalogCourses, searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm } from '@core/data/catalog/courses';
+import { catalogCourses, searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm, browseCatalog, findCatalogRef, courseTerm } from '@core/data/catalog/courses';
+import { lumiCounts } from '@core/lib/coursefinder';
 import { publicExplore } from '@core/lib/publicexplore';
 import { cleanHowToJoin, requestStatus } from '@core/lib/clubjoin';
 import { cleanAdvancedFilter, matchesAdvanced, offlineStatus, PAYMENTS_CLOSED } from '@core/lib/plus';
@@ -189,6 +190,16 @@ export const mockApi: AroundUApi = {
     async terms(schoolId) { return request(() => ({ terms: catalogTerms(catalogCourses, schoolId), current: resolveCatalogTerm(catalogCourses, schoolId) })); },
     // 데모(오프라인)에는 학교 시간표가 없다 — 토론·랩은 실제 서버에서만
     async sections() { return request(() => []); },
+    async browse(schoolId, term) { return request(() => { const t = resolveCatalogTerm(catalogCourses, schoolId, term); return { term: t, courses: browseCatalog(catalogCourses, schoolId, t) }; }); },
+    async counts(schoolId, term) { return request(() => lumiCounts(db.users, schoolId, term)); },
+    async course(schoolId, ref) {
+      return request(() => {
+        const c = findCatalogRef(catalogCourses, schoolId, ref);
+        return c ? { course: c, count: lumiCounts(db.users, schoolId, courseTerm(c))[codeSlug(c.code)] ?? 0 } : null;
+      });
+    },
+    // 수업 페이지(번호·조건·노트)도 실제 서버에서만
+    async details() { return request(() => ({})); },
   },
 
   // 학사 일정·좌석 알림은 서버(워커)가 공식 원본에서 가져온다 — 예시 모드에서는 비어 있다

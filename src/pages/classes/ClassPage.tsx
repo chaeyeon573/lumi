@@ -1,6 +1,12 @@
 import { useMemo, useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { BookOpen, CalendarDays, Handshake, Lock, MapPin, Plus, Users } from 'lucide-react';
+import type { CatalogCourse } from '@core/api/types';
+import { courseTerm } from '@core/data/catalog/courses';
+import { isCourseAdded } from '@core/lib/coursefinder';
+import { catalogCourseName } from '@core/lib/timetable';
+import { useAddCourse } from '@/pages/schedule/addCourse';
+import { CourseInfoCard, Elsewhere, LumiCountLine, useCatalogCourse, useCatalogDetails } from './CourseInfo';
 import { lang } from '@core/i18n';
 import type { Activity, ClassRoster, User } from '@core/types';
 import { api } from '@core/api';
@@ -11,9 +17,9 @@ import { ClassQuestions } from '@/components/classes/ClassQuestions';
 import { SchoolEmailCard } from '@/components/settings/SchoolEmailCard';
 import { Avatar } from '@/components/ui';
 import {
-  BackHeader, PageTitle, SegTabs, InfoRows, SectionHeader, MeetupCard, InfoNote, EmptyState, Btn, Switch, TextInput, cardCls,
+  BackHeader, PageTitle, SegTabs, InfoRows, SectionHeader, MeetupCard, InfoNote, EmptyState, Btn, Switch, TextInput, BottomCTA, LoadingCards, cardCls,
 } from '@/components/ha';
-import { classKey, codeFromName, courseCodeOf, courseTermOf, campusDateOf, enrollments, schoolOf, type Enrollment } from '@core/lib/classmates';
+import { classKey, codeFromName, codeSlug, courseCodeOf, courseTermOf, campusDateOf, enrollments, schoolOf, type Enrollment } from '@core/lib/classmates';
 import { DAY_LABELS } from '@core/lib/timetable';
 import { slotLabel } from '@core/api/classes';
 import { formatDate, formatTime } from '@core/lib/format';
@@ -30,7 +36,79 @@ type Tab = 'class' | 'questions' | 'study';
  */
 export function ClassPage() {
   const { courseName = '' } = useParams();
-  const name = decodeURIComponent(courseName);
+  return <ClassSpace name={decodeURIComponent(courseName)} />;
+}
+
+/**
+ * 학교 수업 목록의 수업 하나 (/classes/course/:courseId) — 시간표에 넣기 전에도 열린다 (owner 2026-11-06).
+ * 이미 넣은 수업이면 그 수업 공간(ClassSpace) 그대로, 아니면 수업 정보 · Lumi 학생 수 · 바깥 링크 + 아래 "Add to schedule".
+ * 질문은 넣은 (인증) 학생만 — 넣기 전에는 한 줄만.
+ */
+export function CatalogClassPage() {
+  const { courseId = '' } = useParams();
+  const v = useViewer();
+  const schoolId = schoolOf(v.me);
+  const hit = useCatalogCourse(schoolId, { id: decodeURIComponent(courseId) });
+  if (hit === undefined) return <div className="min-h-full bg-bg"><BackHeader title={en ? 'Class space' : '수업 공간'} /><LoadingCards className="px-4 pt-2" count={2} /></div>;
+  if (!hit) return (
+    <div className="min-h-full bg-bg">
+      <BackHeader title={en ? 'Class space' : '수업 공간'} />
+      <EmptyState icon={<BookOpen size={28} />} title={en ? 'We couldn’t find this class' : '수업을 찾을 수 없어요'} action={{ label: en ? 'Add classes' : '수업 추가', onClick: () => history.back() }} />
+    </div>
+  );
+  const c = hit.course;
+  const slug = codeSlug(c.code), term = courseTerm(c);
+  const row = isCourseAdded(v.me.timetable ?? [], c) ? (v.me.timetable ?? []).find((x) => x.name === catalogCourseName(c)) ?? (v.me.timetable ?? []).find((x) => { const code = courseCodeOf(x); return !!code && codeSlug(code) === slug && courseTermOf(x) === term; }) : undefined;
+  if (row) return <ClassSpace name={row.name} catalog={hit} fromCatalog />;
+  return <NotAddedSpace c={c} count={hit.count} />;
+}
+
+function NotAddedSpace({ c, count }: { c: CatalogCourse; count: number }) {
+  const [params, setParams] = useSearchParams();
+  const v = useViewer();
+  const add = useAddCourse();
+  const [busy, setBusy] = useState(false);
+  const details = useCatalogDetails(schoolOf(v.me), c.id);
+  const tab = (['class', 'questions', 'study'].includes(params.get('tab') ?? '') ? params.get('tab') : 'class') as Tab;
+  const setTab = (k: string) => setParams(k === 'class' ? {} : { tab: k }, { replace: true });
+  const name = catalogCourseName(c);
+  return (
+    <div className="min-h-full flex flex-col bg-bg">
+      <BackHeader title={en ? 'Class space' : '수업 공간'} />
+      <div className="px-4 pt-1 flex-1 pb-6">
+        <div className="rounded-[20px] bg-t-ice border border-line px-4 py-4">
+          <div className="text-[12px] text-t-ice-fg/80">{courseTerm(c) || (en ? 'Class' : '수업')}</div>
+          <div className="text-[26px] font-extrabold tracking-[-0.02em] text-t-ice-fg leading-tight mt-0.5 [overflow-wrap:anywhere]">{c.code}</div>
+          <div className="text-[13px] text-ink-2 mt-1 line-clamp-2">{c.title}</div>
+        </div>
+        <SegTabs className="mt-3" value={tab} onChange={setTab} tabs={[
+          { key: 'class', label: en ? 'Class' : '수업' },
+          { key: 'questions', label: en ? 'Questions' : '질문' },
+          { key: 'study', label: en ? 'Study' : '스터디' },
+        ]} />
+        <div className="pt-4">
+          {tab === 'class' && (
+            <div className="space-y-5">
+              <CourseInfoCard c={c} details={details} />
+              <LumiCountLine count={count} />
+              <InfoNote>{en ? 'Add this class to see classmates who opted in.' : '수업을 넣으면 스스로 켠 같은 수업 학생이 보여요.'}</InfoNote>
+              <StudyPreview name={name} enrollment={undefined} onAll={() => setTab('study')} />
+              <Elsewhere c={c} />
+            </div>
+          )}
+          {tab === 'questions' && <p className="px-1 py-2 text-[14px] text-ink-2">{en ? 'Add this class to see and ask questions.' : '수업을 넣으면 질문을 보고 물어볼 수 있어요.'}</p>}
+          {tab === 'study' && <Study name={name} enrollment={undefined} roster={undefined} />}
+        </div>
+      </div>
+      <BottomCTA>
+        <Btn full size="lg" loading={busy} onClick={async () => { setBusy(true); try { await add(c); } catch { /* toast */ } finally { setBusy(false); } }}>{en ? 'Add to schedule' : '시간표에 추가'}</Btn>
+      </BottomCTA>
+    </div>
+  );
+}
+
+/** 내 시간표의 수업 공간. catalog 를 주면(목록에서 연 경우) 그 수업 정보로, 아니면 과목 코드·학기로 목록에서 찾아 본다 */
+export function ClassSpace({ name, catalog, fromCatalog }: { name: string; catalog?: { course: CatalogCourse; count: number }; fromCatalog?: boolean }) {
   const nav = useNavigate();
   const [params, setParams] = useSearchParams();
   const v = useViewer();
@@ -38,6 +116,10 @@ export function ClassPage() {
   const rosters = useAppStore((s) => s.classRosters);
   const mine = me.timetable.filter((c) => c.name === name);
   const tab = (['class', 'questions', 'study'].includes(params.get('tab') ?? '') ? params.get('tab') : 'class') as Tab;
+  const firstCode = mine[0] ? courseCodeOf(mine[0]) : null;
+  const looked = useCatalogCourse(catalog ? '' : schoolOf(me), firstCode ? { code: firstCode, term: courseTermOf(mine[0]) } : {});
+  const cc = catalog ?? looked ?? undefined;
+  const details = useCatalogDetails(schoolOf(me), cc?.course.id);
   if (!mine.length) return (
     <div className="min-h-full bg-bg">
       <BackHeader title={en ? 'Class space' : '수업 공간'} />
@@ -57,7 +139,7 @@ export function ClassPage() {
   const setTab = (k: string) => setParams(k === 'class' ? {} : { tab: k }, { replace: true });
 
   return (
-    <div className="min-h-full bg-bg pb-10">
+    <div className={cn('min-h-full bg-bg', fromCatalog ? 'flex flex-col' : 'pb-10')}>
       <BackHeader title={en ? 'Class space' : '수업 공간'} />
       <PageTitle title={en ? 'Class space' : '수업 공간'} className="pb-3" />
       <div className="px-4">
@@ -74,6 +156,8 @@ export function ClassPage() {
         <div className="pt-4">
           {tab === 'class' && (
             <div className="space-y-6">
+              {cc && <CourseInfoCard c={cc.course} details={details} />}
+              {cc && <LumiCountLine count={cc.count} />}
               <InfoRows rows={[
                 { tone: 'ice', icon: <CalendarDays size={20} />, label: en ? 'Your class time' : '수업 시간', value: when(lecture.length ? lecture : mine), caption: sections.length ? sections.join(' · ') : (en ? 'From your schedule' : '내 시간표'), onClick: () => nav('/schedule') },
                 { tone: 'peach', icon: <MapPin size={20} />, label: en ? 'Classroom' : '강의실', value: lead.room || (en ? 'Private to you' : '나만 보기'), caption: lead.room ? (en ? 'Only you see this · Edit class details' : '나만 보여요 · 수업 정보 수정') : (en ? 'Edit class details' : '수업 정보 수정'), onClick: () => nav(`/schedule/classes/${lead.id}`) },
@@ -82,6 +166,7 @@ export function ClassPage() {
                 <InfoNote>{en ? 'Classmates are matched by course code, like “CS 61A”. Add this class from your school’s class list to find who else takes it.' : '같은 수업 학생은 과목 코드(예: CS 61A)로 찾아요. 학교 수업 목록에서 추가해 주세요.'}</InfoNote>
               )}
               <StudyPreview name={name} enrollment={enrollment} onAll={() => setTab('study')} />
+              {cc && <Elsewhere c={cc.course} />}
               {enrollment && <CopyClassLink compact schoolId={enrollment.schoolId} code={enrollment.code} />}
               <InfoNote>{en ? 'Classmates appear only when they opt in. This is not a university roster.' : '같은 수업 학생은 스스로 켠 사람만 보여요. 학교 명단이 아니에요.'}</InfoNote>
             </div>
@@ -95,6 +180,7 @@ export function ClassPage() {
           {tab === 'study' && <Study name={name} enrollment={enrollment} roster={roster} />}
         </div>
       </div>
+      {fromCatalog && <BottomCTA><Btn full size="lg" disabled>{en ? 'Added ✓' : '추가됨 ✓'}</Btn></BottomCTA>}
     </div>
   );
 }

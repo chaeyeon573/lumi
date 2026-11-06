@@ -1,7 +1,8 @@
 import { Route } from 'react-router-dom';
 import { ScheduleTab } from '@/pages/schedule/ScheduleTab';
 import { ClassFormPage } from '@/pages/schedule/ClassFormPage';
-import { ClassPage } from '@/pages/classes/ClassPage';
+import { CatalogClassPage, ClassPage } from '@/pages/classes/ClassPage';
+import { AddClassesPage } from '@/pages/schedule/AddClassesPage';
 import { StudyGroupPage } from '@/pages/classes/StudyGroupPage';
 import { PlansPage } from '@/pages/plans/PlansPage';
 import { CreateTogetherPage } from '@/pages/together/CreateTogetherPage';
@@ -17,8 +18,10 @@ export const scheduleTabRoutes = (
 );
 export const scheduleSubRoutes = (
   <>
-    <Route path="/schedule/classes" element={<ClassFormPage />} />        {/* S029 add */}
+    <Route path="/schedule/classes" element={<AddClassesPage />} />       {/* S029 add — search the class list */}
+    <Route path="/schedule/classes/manual" element={<ClassFormPage />} /> {/* S029 "Can't find it? Add it yourself" */}
     <Route path="/schedule/classes/:id" element={<ClassFormPage />} />    {/* S029 edit */}
+    <Route path="/classes/course/:courseId" element={<CatalogClassPage />} /> {/* S030 before adding (catalog course) */}
     <Route path="/classes/:courseName" element={<ClassPage />} />         {/* S030 */}
     <Route path="/study/:id" element={<StudyGroupPage />} />
     <Route path="/schedule/plans" element={<PlansPage />} />              {/* S031 */}

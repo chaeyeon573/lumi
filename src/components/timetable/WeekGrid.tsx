@@ -20,7 +20,7 @@ const clock = (hhmm: string) => (lang === 'en' ? (() => { const m = toMin(hhmm);
  * 주간 시간표 격자 (PDF S027) — 요일 머리(날짜 숫자 포함), 왼쪽 시각, 수업 블록(틴트), 이번 주 약속(점선 테두리).
  * 보이는 시간 범위는 기본 9~18시, 수업·약속이 더 이르거나 늦으면 늘린다.
  */
-export function WeekGrid({ courses, acts = [], days, today, dates, onCourse, onActivity, onCell, dim }: {
+export function WeekGrid({ courses, acts = [], days, today, dates, onCourse, onActivity, onCell, dim, hourPx: hourPxIn, ghosts = [] }: {
   courses: Course[]; acts?: { a: Activity; day: number }[]; days: number[];
   /** 오늘 요일 (0=월) — 이번 주가 아니면 -1 */
   today: number;
@@ -29,14 +29,19 @@ export function WeekGrid({ courses, acts = [], days, today, dates, onCourse, onA
   onCourse: (c: Course) => void; onActivity?: (a: Activity) => void; onCell?: (day: number, minute: number) => void;
   /** 빈 시간표 (S028) — 칸만 */
   dim?: boolean;
+  /** 한 시간 높이 — 수업 추가(S029) 위쪽의 작은 격자는 낮게 */
+  hourPx?: number;
+  /** 넣기 전에 미리보는 수업 (S029) — 핑크 테두리 빈 블록 */
+  ghosts?: { day: number; start: string; end: string; label: string }[];
 }) {
   // 이번 주 약속(저녁 7시 달리기 등)도 범위에 넣는다 — 안 그러면 격자 밖으로 잘려 안 보인다
-  const spans = [...courses.map((c) => [c.start, c.end]), ...acts.map(({ a }) => [a.startTime, a.endTime])];
+  const spans = [...courses.map((c) => [c.start, c.end]), ...acts.map(({ a }) => [a.startTime, a.endTime]), ...ghosts.map((g) => [g.start, g.end])];
   const gStart = Math.max(GRID_START - 2, Math.min(9, ...spans.map(([s]) => Math.floor(toMin(s) / 60))));
   const gEnd = Math.min(GRID_END + 2, Math.max(18, ...spans.map(([, e]) => Math.ceil(toMin(e) / 60))));
   const hours = Array.from({ length: gEnd - gStart }, (_, i) => gStart + i);
   // 빈 시간표(S028)는 낮게 — 아래 "Make the week yours" 가 첫 화면에 보이게 (PDF)
-  const hourPx = dim ? 38 : HOUR_PX;
+  const hourPx = hourPxIn ?? (dim ? 38 : HOUR_PX);
+  const small = hourPx < 40;
   const now = nowMin();
   const nowTop = now >= gStart * 60 && now <= gEnd * 60 ? (now - gStart * 60) / 60 * hourPx : null;
   const cols = `34px repeat(${days.length}, minmax(0, 1fr))`;
@@ -45,7 +50,7 @@ export function WeekGrid({ courses, acts = [], days, today, dates, onCourse, onA
       <div className="grid" style={{ gridTemplateColumns: cols }}>
         <div />
         {days.map((d, i) => (
-          <div key={d} className="text-center py-2">
+          <div key={d} className={cn('text-center', small ? 'py-1' : 'py-2')}>
             <div className={cn('text-[12.5px] font-bold', d === today ? 'text-sel-fg' : 'text-ink')}>{DAY_LABELS[d]}</div>
             {dates?.[i] && <div className={cn('text-[11px] mt-0.5 tabular-nums', d === today ? 'text-sel-fg font-semibold' : 'text-ink-3')}>{Number(dates[i].slice(8, 10))}</div>}
           </div>
@@ -59,16 +64,27 @@ export function WeekGrid({ courses, acts = [], days, today, dates, onCourse, onA
             {d === today && nowTop !== null && <div className="absolute left-0 right-0 z-[1] h-[2px] bg-sel pointer-events-none" style={{ top: nowTop }}><span className="absolute -left-[3px] -top-[3px] h-2 w-2 rounded-full bg-sel" /></div>}
             {courses.filter((c) => c.day === d).map((c) => {
               const m = /^([A-Z][A-Z&.]*\s*\d+[A-Z]{0,3})\s*(.*)$/.exec(c.name);
-              const shared = acts.some((x) => x.day === d && toMin(c.start) < toMin(x.a.endTime) && toMin(x.a.startTime) < toMin(c.end));
+              const shared = acts.some((x) => x.day === d && toMin(c.start) < toMin(x.a.endTime) && toMin(x.a.startTime) < toMin(c.end))
+                || ghosts.some((g) => g.day === d && toMin(c.start) < toMin(g.end) && toMin(g.start) < toMin(c.end));
+              // 내 수업끼리 겹치면 나란히 (예전엔 뒤 수업이 앞 수업을 통째로 가렸다)
+              const peers = courses.filter((x) => x.day === d && toMin(x.start) < toMin(c.end) && toMin(c.start) < toMin(x.end)).sort((a, b) => toMin(a.start) - toMin(b.start) || a.id.localeCompare(b.id));
+              const lane = peers.indexOf(c), span = (shared ? 50 : 100) / Math.max(1, peers.length);
               return (
-                <button key={c.id} onClick={(e) => { e.stopPropagation(); onCourse(c); }} className={cn('absolute left-[2px] rounded-[6px] px-1.5 py-1 text-left overflow-hidden press', shared ? 'right-1/2' : 'right-[2px]', TONE[courseTone(c.name)])}
-                  style={{ top: (toMin(c.start) - gStart * 60) / 60 * hourPx + 1, height: (toMin(c.end) - toMin(c.start)) / 60 * hourPx - 2 }}>
-                  <div className="text-[11px] font-extrabold leading-tight text-ink [overflow-wrap:anywhere] line-clamp-2">{m ? m[1] : c.name}</div>
-                  <div className="text-[10px] font-medium leading-tight mt-0.5 opacity-90">{clock(c.start)}</div>
-                  {c.section && <div className="text-[9.5px] font-medium leading-tight mt-0.5 opacity-80 truncate">{c.section}</div>}
+                <button key={c.id} onClick={(e) => { e.stopPropagation(); onCourse(c); }} className={cn('absolute rounded-[6px] text-left overflow-hidden press', small ? 'px-1 py-0.5' : 'px-1.5 py-1', TONE[courseTone(c.name)])}
+                  style={{ top: (toMin(c.start) - gStart * 60) / 60 * hourPx + 1, height: (toMin(c.end) - toMin(c.start)) / 60 * hourPx - 2, left: `calc(${lane * span}% + 2px)`, width: `calc(${span}% - 4px)` }}>
+                  <div className={cn('font-extrabold leading-tight text-ink [overflow-wrap:anywhere]', small ? 'text-[10px] line-clamp-1' : 'text-[11px] line-clamp-2')}>{m ? m[1] : c.name}</div>
+                  {!small && <div className="text-[10px] font-medium leading-tight mt-0.5 opacity-90">{clock(c.start)}</div>}
+                  {c.section && !small && <div className="text-[9.5px] font-medium leading-tight mt-0.5 opacity-80 truncate">{c.section}</div>}
                 </button>
               );
             })}
+            {ghosts.filter((g) => g.day === d).map((g, i) => (
+              // 내 수업과 겹치면 오른쪽 절반에 — 둘 다 보이게 (겹친다는 것이 격자에서 바로 보인다)
+              <div key={`g${i}`} aria-hidden className={cn('absolute right-[2px] z-[2] rounded-[6px] border-2 border-sel bg-sel-soft px-1 py-0.5 overflow-hidden pointer-events-none', courses.some((c) => c.day === d && toMin(c.start) < toMin(g.end) && toMin(g.start) < toMin(c.end)) ? 'left-1/2' : 'left-[2px]')}
+                style={{ top: (toMin(g.start) - gStart * 60) / 60 * hourPx + 1, height: Math.max(14, (toMin(g.end) - toMin(g.start)) / 60 * hourPx - 2) }}>
+                <div className="text-[10px] font-extrabold leading-tight text-sel-fg truncate">{g.label}</div>
+              </div>
+            ))}
             {acts.filter((x) => x.day === d).map(({ a }) => {
               // 수업과 겹치면 오른쪽 절반에 — 수업 블록을 가리지 않게
               const clash = courses.some((c) => c.day === d && toMin(c.start) < toMin(a.endTime) && toMin(a.startTime) < toMin(c.end));

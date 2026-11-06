@@ -83,6 +83,10 @@ Radii: cards 20px, icon tiles 14px, chips / buttons fully round. Cards are `surf
 | `FilterSheet({open, groups, values, count, onApply, onClose, focus?})` | bottom sheet over the current screen | ✕ · "Filters" · **Reset** (back to defaults, draft only); sections of wrap chips (selected = pink, one per group, tap again to clear); sticky lavender **Show N results** — `count(draft)` live, disabled "No results" at 0. Picks are a draft until Show; Esc, swipe down on the handle/header, ✕ or the backdrop close without applying. Focus is trapped inside and returns to the opener; chips are buttons with `aria-pressed`; the count is announced (`aria-live`). |
 | `FilterGroup` / `FilterValues`, `appliedChips`, `toggleValue`, `resetValues`, `sortLabel`, `pickValues` | `filterModel.ts` — pure, no React | group `{key, title, options: {value, label, chip?}[], required?}`; `required` = the sort (always one on, not a chip). `chip` = shorter name for the applied chip ("Only saved (2)" → "Saved"). |
 
+`renderGroup(g, value, set)` (FilterBar → FilterSheet) draws one section in place of its chips — S029 uses it for the
+Department section (search + ★ list, favourites first, `orderDepartments`). Return `null` for the default chips. A group
+option with value `''` is a real choice that is never a chip (S029 Term: `''` = the current term).
+
 The caller passes a `count` that runs **the same filter function as the list** (Explore: `src/pages/explore/exploreFilters.ts`
 `filterOpportunities` / `filterEvents` / `filterClubs`) — never a second copy of the rules. Tested in `server/explorefilters.test.ts`.
 
@@ -112,6 +116,20 @@ The caller passes a `count` that runs **the same filter function as the list** (
 | `EmptyState({icon, tone, title, sub, action, children})` | S041–S044, S028, S095, S096 | whole tab/screen empty; `children` for extra chips/buttons. |
 | `ErrorScreen({message, onRetry})` | S094 "Let's try that again" | use instead of the old `ErrorState` in new screens. |
 | `LoadingCards({count})` | — | keeps the card layout while loading. |
+
+### Timetable (`src/components/timetable/WeekGrid.tsx`)
+| Prop | Use |
+|---|---|
+| `hourPx` | hour height; S029's compact grid uses 26 (labels shrink to the code only below 40) |
+| `ghosts` | `{day,start,end,label}[]` — a course being previewed: pink outline (`sel`) on `sel-soft`. A ghost that hits one of my classes takes the right half so both stay visible |
+| (always) | my own classes that overlap each other sit side by side (they used to cover each other) |
+
+### Course list rules (`@core/lib/coursefinder`, `@core/lib/courseLinks`) — pure, tested in `server/coursefinder.test.ts`
+- `findCourses(courses, {q, dept, level, sort, undergrad})` — the S029 list and its sheet's "Show N results" both call it.
+  Search scoring is `scoreCourse` in `@core/data/catalog/courses` (the server's `searchCatalog` uses it too).
+- `findOverlap` / `overlapLine`, `isCourseAdded`, `meetingLine`, `courseLevel` (Berkeley numbering: <100 lower, 100–199 upper, 200+ graduate).
+- `lumiCounts` / `lumiCountLabel` — counts only, same people as classmate rosters (opted in + verified), never samples.
+- `courseLinks(c)` — outbound links from the per-school `COURSE_LINKS` map; empty for schools without a verified entry (see `docs/course-links.md`).
 
 ### Screen-specific helpers outside `ha`
 - `src/pages/campus/CampusSource.tsx` — `CampusHead` (S015/S016 back header + title + "UC Berkeley · …") and

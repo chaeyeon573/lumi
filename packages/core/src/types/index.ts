@@ -179,6 +179,8 @@ export interface User {
   studyGroupOptOut?: string[];
   /** 프로젝트 파트너 찾기 — 같은 수업 학생에게만 보인다. 짝을 찾았거나 학기가 지나면 빠진다 */
   partnerSearch?: PartnerSearch[];
+  /** 수업 추가(S029) 학과 고르기의 ★ — 학과 이름. 본인에게만 */
+  favoriteDepartments?: string[];
   fieldVisibility: Record<ProfileField, Visibility>;
   settings: {
     messagePolicy: 'connected' | 'friends_only' | 'none';
