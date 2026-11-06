@@ -478,7 +478,7 @@ export function createEngine(ctx: EngineContext) {
     },
 
     orgs: {
-      /** 가입 요청 — 모집 중이고 운영진이 Lumi에 있을 때만 (lib/orgjoin). 운영진 모두에게 알림이 가고, 알림은 신청한 사람 프로필로 열린다 */
+      /** 가입 요청 — 모집 중이고 운영진이 Lumi에 있을 때만 (lib/orgjoin). 운영진 모두에게 알림이 가고, 알림은 가입 요청 목록(S091 /orgs/:id/requests)으로 열린다 */
       apply(orgId: ID, userId: ID): Patch {
         const org = find(db().organizations, orgId);
         const state = orgJoinState(org, userId);
@@ -492,7 +492,7 @@ export function createEngine(ctx: EngineContext) {
           return { organizations: [org], notifications: nts };
         }
         org.applicantIds.push(userId);
-        const nts = org.adminIds.filter((a) => a !== userId).map((a) => notify(a, { type: 'participation_request', title: t('가입 요청'), body: `${who.nickname} · ${org.name}`, link: `/users/${userId}` }));
+        const nts = org.adminIds.filter((a) => a !== userId).map((a) => notify(a, { type: 'participation_request', title: t('가입 요청'), body: `${who.nickname} · ${org.name}`, link: `/orgs/${org.id}/requests` }));
         return { organizations: [org], notifications: nts };
       },
       /**

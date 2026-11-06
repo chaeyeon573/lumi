@@ -36,12 +36,12 @@ function setup(org: Organization) {
   return { db, engine: createEngine({ db, t, demo: false, push: () => {} }) };
 }
 
-test('orgs.apply: the join request goes to every organizer on Lumi as a notification that opens the applicant', () => {
+test('orgs.apply: the join request goes to every organizer on Lumi as a notification that opens the requests list (S091)', () => {
   const { db, engine } = setup(club({ recruitment: { title: 'Fall', period: 'Now', open: true }, adminIds: ['u_lily', 'u_maya'] }));
   const patch = engine.orgs.apply('o_t', 'u_me');
   assert.deepEqual(db.organizations[0].applicantIds, ['u_me']);
   assert.deepEqual(patch.notifications?.map((n) => n.userId).sort(), ['u_lily', 'u_maya']);
-  assert.ok(patch.notifications?.every((n) => n.link === '/users/u_me'));
+  assert.ok(patch.notifications?.every((n) => n.link === '/orgs/o_t/requests'));
   // 두 번 눌러도 한 번
   engine.orgs.apply('o_t', 'u_me');
   assert.deepEqual(db.organizations[0].applicantIds, ['u_me']);
