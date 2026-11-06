@@ -2360,3 +2360,8 @@
 - Spot check courses: 5 random Duke Spring 2027 classes (PHYSICS 544, EGR 590, MATH 111L Sec 005, RELIGION 209S, LIT 377) match the live DukeHub schedule.
 - Data freshness, continued: 5 national hackathons with no deadline and a date already past (LA Hacks AI, Cleantech Hackathon at Stanford, Hack for Social Impact, Bay Area AI+Car, Technica; all Oct 17-25) marked `status=closed`.
 - So this no longer needs a manual pass: the daily calendar import (server/scripts/import-opportunities.ts) now retires a row when its deadline has passed, or when it has no deadline and its date has passed (`csvRowClosed`, test added). Rows with no date at all stay. CSV rows are never deleted.
+
+## 2026-11-06 16:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: UNC Cadence, Michigan Rho Chi, UMD H2OPE fine. Vanderbilt Black Seminarians page answered 500 (their server). MSU ISCRO's website in the directory is "iscromsu.con" (typo); iscromsu.com is the club's site (title "HOME | ISCRO", supply chain). Fixed in today's file; the typo is kept in s_msu.deadlinks.json; new server/data/org-links-msu.csv adds the right link on every collect (the weekly dead-link check sets the .con link aside again). A scan of all schools found no other top-level-domain typo.
+- Spot check courses: 5 random UW Fall 2026 classes (MUSEN 350, LAW B 579 Sec A, ENGL 265, DENTFN 511 Sec A, ESS 543) match the live UW time schedule.
