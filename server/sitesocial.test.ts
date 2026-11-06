@@ -114,4 +114,6 @@ test('isHijackedPage: an expired club domain now showing a gambling spam page is
   assert.equal(isHijackedPage('<html><head><title>Slot Pulsa Indosat 5000: Pilihan Deposit Minimum Serta Gampang Menang</title></head></html>'), true);
   assert.equal(isHijackedPage('<html><head><title>Stanford Poker Club</title></head></html>'), false);
   assert.equal(isHijackedPage('<html><head><title>Student Veterinary Emergency & Critical Care Society</title></head></html>'), false);
+  assert.equal(isHijackedPage('<html><head><title>小小影视 - 院线级高清影视免费畅享 | 最新电影热播剧集综艺动漫漫画</title></head></html>'), true);
+  assert.equal(isHijackedPage('<html><head><title>Chinese Film Club 中国电影社</title></head></html>'), false);
 });

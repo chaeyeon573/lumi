@@ -86,7 +86,10 @@ export const isPlaceholderSite = (url: string) => /^https?:\/\/(www\.)?(idonotha
 /** 받은 페이지가 로그인 화면(학교 Google 계정 등)이면 공개 링크가 아니다 — 옛 sites.google.com/a/<school>.edu 가 Google 로그인으로 넘어간다 (2026-11-05 표본) */
 export const isSignInPage = (html: string) => /<title>[^<]*(Google (Drive|Accounts): Sign[- ]in|Sign in - Google Accounts)/i.test(html) || /accounts\.google\.com\/(v3\/signin|ServiceLogin)[^"']*continue=https:\/\/sites\.google\.com/i.test(html.slice(0, 5000));
 /** 동아리 도메인이 만료돼 남의 손에 넘어가 도박·성인 스팸이 된 페이지 — 제목만 보고 보수적으로 (2026-11-05 NC State sveccs.org → "Slot Pulsa…") */
-export const isHijackedPage = (html: string) => { const t = (/<title[^>]*>([^<]*)<\/title>/i.exec(html)?.[1] ?? '').toLowerCase(); return /\b(slot|slots|gacor|togel|judi|casino|poker online|sportsbook|betting|bet88|pulsa|maxwin|viagra|cialis|escort|porn|xxx)\b/.test(t); };
+// 중국어 불법 영상·도박 사이트로 넘어간 도메인 (W&M TBD Theatre: tbdtheatre.com → "小小影视 - 院线级高清影视免费畅享", 2026-11-06).
+// 영화 동아리 제목에 '电影' 만 있는 건 걸리지 않게 — 영상 낱말과 '무료·고화질·최신' 낱말이 같이 있거나, 도박 낱말일 때만
+const CJK_SPAM = /((影视|电影|热播|综艺|在线观看|追剧).*(免费|高清|最新|畅享))|((免费|高清|最新).*(影视|在线观看|热播))|博彩|娱乐城|彩票|成人视频/;
+export const isHijackedPage = (html: string) => { const raw = /<title[^>]*>([^<]*)<\/title>/i.exec(html)?.[1] ?? ''; const t = raw.toLowerCase(); return /\b(slot|slots|gacor|togel|judi|casino|poker online|sportsbook|betting|bet88|pulsa|maxwin|viagra|cialis|escort|porn|xxx)\b/.test(t) || CJK_SPAM.test(raw); };
 export async function enrichFromWebsites(orgs: Organization[], fetchPage: (url: string) => Promise<string>, concurrency = 6): Promise<{ orgs: Organization[]; checked: number; found: number; droppedShared: string[]; deadLinks: number; deadList: { orgId: string; url: string }[] }> {
   orgs = orgs.map(relabelSocialWebsites);
   const want = orgs.filter((o) => o.links?.some((l) => l.label === 'Website') && !(o.links?.some((l) => l.label === 'Instagram') && o.links?.some((l) => l.label === 'Facebook')));

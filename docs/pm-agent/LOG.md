@@ -2303,3 +2303,11 @@
 - Spot check clubs: UGA Finance Society, UT AMA, Michigan Her Campus, UConn A Cappella fine. UCR "Veterans Services" is a school office typed club; a scan of UCR found 5 more clear offices (Academic Intervention Program, Academic Resource Center, Financial Aid Office, Fraternity and Sorority Involvement Center, Tutorial Assistance Program). All 6 typed `department` in org-type-overrides.csv and today's file. Student-run programs (peer mentors, Highlander Space Program, research centers) left as they are.
 - Spot check courses: 5 random UMD classes. The 2 Fall classes matched; the 3 Spring 2027 classes came back "not found" from the live lookup. The data was right (MUSC 126, AAST 250, THET 608B match the live Testudo page): `umdLookup` did not add the next-term id tag (`_sp27`) the collector adds. Fixed with `tagTerm`; all 5 match now. Also checked 5 UW Winter 2027 classes: all match.
 - Tulane class times batch 3: Fall 2026 A-R done (Q has no subjects), 2,189 classes in the file.
+
+## 2026-11-06 08:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: Michigan The Gentlemen, UGA Spoon University, Penn State Tri-Alpha, UVA Student Bar Association fine. W&M TBD Theatre Troupe's website (tbdtheatre.com) now shows a Chinese pirated-video site: the domain was taken over.
+  - Link moved to s_wm.deadlinks.json (note: unrelated streaming spam site); the club keeps its Instagram and YouTube.
+  - `isHijackedPage` now also catches Chinese video-piracy and gambling titles (needs a video word together with free/HD/latest, or a gambling word, so a film club title is not caught). Test added.
+- Spot check courses: 5 random CMU classes (14-601 A, 18-444, 54-832 A1, 79-201 A, 90-735) match the live CMU schedule. 18-444's Friday 10:00 meeting is a second row of lecture section A in the official schedule, not a separate recitation.
+- Tulane class times batch 4: Fall 2026 complete (26/26 letters, 2,399 classes). Spring 2027 started (A: 319).
