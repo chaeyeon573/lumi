@@ -41,10 +41,11 @@ export function RoundIconBtn({ label, active, className, children, ...rest }: Bu
 /**
  * 아래 고정 CTA 줄 (PDF: Continue · Going · Create Meetup …).
  * 화면 맨 아래에 붙어 스크롤과 함께 움직이지 않는다. leading 에는 책갈피 같은 둥근 버튼.
+ * data-bottom-cta: 이 줄이 있는 화면에서는 토스트가 위로 간다 (Toast.tsx).
  */
 export function BottomCTA({ children, leading, note }: { children: ReactNode; leading?: ReactNode; note?: ReactNode }) {
   return (
-    <div className="sticky bottom-0 z-20 mt-auto bg-bg/95 backdrop-blur border-t border-line px-4 pt-3 pb-4 safe-bottom">
+    <div data-bottom-cta className="sticky bottom-0 z-20 mt-auto bg-bg/95 backdrop-blur border-t border-line px-4 pt-3 pb-4 safe-bottom">
       {note && <div className="mb-2">{note}</div>}
       <div className="flex items-center gap-3">{leading}<div className="flex-1 min-w-0">{children}</div></div>
     </div>
