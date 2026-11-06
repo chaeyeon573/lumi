@@ -2247,3 +2247,11 @@
 - Codex 요청 없음, 사장님 답 없음.
 - Harvard 수업 시간 배치 2회차: Fall 2026 학과 112/170 끝(이번 87개), 파일 1,244 수업. Spring 2027 은 학과 스캔 전.
 - 검사: Harvard 수업 5개(SPANSH 20, PSY 3270, ENGLISH 188N, ECON 3009, PSY 1542) my.harvard 공식 시간과 일치. 동아리 5개 중 4개 공식 사이트 일치; UC Davis "Book Group" 링크는 Canvas 로그인 링크라 publicLinks() 가 화면에서 숨김(지우지 않음).
+
+## 2026-11-06 01:33 UTC
+- No Codex requests, no owner answers.
+- Harvard class times run 3: Fall 2026 done (170/170 subjects); 1,419 classes with times in the file. Spring 2027 subject scan done (161 subjects), 1 started.
+- Spot check courses: 5 random USC classes (CTIN 396, MPKS 520, AME 502, EDUE 601, FREN 440) match the live USC schedule.
+- Spot check clubs: 5 open (UMass, Indiana, Syracuse, MIT, Clemson), two problems fixed:
+  - UMass Sylvan Snackbar link carried a Facebook tracking tail (?fbclid=...). `publicFix` now drops only tracking parameters (fbclid, gclid, utm_*, igshid, mc_cid/mc_eid); other query parts stay. Applied to today's files: 2,480 links in 45 schools. Test added.
+  - Clemson "Housing Operations" was typed club. It and 4 other Clemson offices (Housing Summer Programs, Office of Sustainability, Glenn Department of Civil Engineering, Center for Education Abroad) are now `department` via org-type-overrides.csv.
