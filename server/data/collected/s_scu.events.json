@@ -1,0 +1,892 @@
+{
+ "collectedAt": "2026-11-06T09:35:22.494Z",
+ "sources": [
+  "livewhale https://events.scu.edu 30"
+ ],
+ "events": [
+  {
+   "description": "Meet with Santa Clara Law School representatives at the WCC Los Angeles Pre-Forum Reception!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "school of law"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_510657",
+   "type": "event",
+   "title": "West Coast Consortium (WCC) Los Angeles Pre-Forum Reception",
+   "host": "School of Law",
+   "schoolId": "s_scu",
+   "date": "2026-11-07T01:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "USC Gould School of Law",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/school-of-law/event/510657-west-coast-consortium-wcc-los-angeles-pre-forum-recep",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "school of law"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_517279",
+   "type": "event",
+   "title": "Keynote: “From Crisis to Renewal: International Law in a Changing World” – Nilufer Ora",
+   "host": "School of Law",
+   "schoolId": "s_scu",
+   "date": "2026-11-07T01:30:00.000Z",
+   "startTime": "17:30",
+   "place": {
+    "name": "Charney Hall - Room 102/103",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/school-of-law/event/517279-keynote-from-crisis-to-renewal-international-law-in-a",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "The JST-SCU Annual Thea Bowman Lecture. This year’s lecture, titled “Hand in Hand: Solidarity and Synodality,” will be given by Nicole Symmonds, Ph.D., assistant professor of Christian ethics at Columbia Theological Seminary.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_517277",
+   "type": "event",
+   "title": "JST-SCU Annual Thea Bowman Lecture",
+   "host": "Jesuit School of Theology",
+   "schoolId": "s_scu",
+   "date": "2026-11-07T02:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "JST",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/jesuit-school-of-theology/event/517277-jst-scu-annual-thea-bowman-lecture",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "Meet with Santa Clara Law representatives at the upcoming Los Angeles LSAC Law School Forum!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "school of law"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_510625",
+   "type": "event",
+   "title": "Los Angeles LSAC Law School Forum",
+   "host": "School of Law",
+   "schoolId": "s_scu",
+   "date": "2026-11-07T16:00:00.000Z",
+   "startTime": "08:00",
+   "place": {
+    "name": "Westin Bonaventure Hotel",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/school-of-law/event/510625-los-angeles-lsac-law-school-forum",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "school of law"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_517281",
+   "type": "event",
+   "title": "WILIG Coffee and Conversation",
+   "host": "School of Law",
+   "schoolId": "s_scu",
+   "date": "2026-11-07T16:30:00.000Z",
+   "startTime": "08:30",
+   "place": {
+    "name": "Charney 104",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/school-of-law/event/517281-wilig-coffee-and-conversation",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "Learn tips on preserving your autumn fruits and veggies at home and make some persimmon jam to take home!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "sustainability",
+    "workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_513409",
+   "type": "event",
+   "title": "Preserving Your Fall Harvest - Persimmon Jam",
+   "host": "Sustainability",
+   "schoolId": "s_scu",
+   "date": "2026-11-07T19:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "The Forge Garden",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/sustainability/event/513409-preserving-your-fall-harvest-persimmon-jam",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "Join us for the LGBTQ+ Affinity Night of The Importance of Being Earnest , an evening celebrating community and Oscar Wilde’s enduring queer wit.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "college of arts &amp; sciences",
+    "performances",
+    "student organizations"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_521612",
+   "type": "event",
+   "title": "LGBTQ+ Affinity Night of The Importance of Being Earnest",
+   "host": "Arts & Sciences",
+   "schoolId": "s_scu",
+   "date": "2026-11-08T03:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Fess Parker Studio Theatre",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/arts-and-sciences/event/521612-lgbtq-affinity-night-of-the-importance-of-being",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "Come eat pizza with some religious sisters, brothers, and priests! This is a great opportunity to casually connect with people who have answered the call to religious life and to hear their stories.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_517761",
+   "type": "event",
+   "title": "Slices of Religious Life",
+   "host": "Mission and Ministry",
+   "schoolId": "s_scu",
+   "date": "2026-11-09T02:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Nobili Dining Room",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.scu.edu/live/events/517449-slices-of-religious-life",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "leavey school of business"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_506618",
+   "type": "event",
+   "title": "ISA Research Seminar: Joel Goh (National University of Singapore)",
+   "host": "Leavey School of Business",
+   "schoolId": "s_scu",
+   "date": "2026-11-09T20:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Lucas 106",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/leavey-school-of-business/event/506618-isa-research-seminar-joel-goh-national-university",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "An artists’ talk and reception featuring Art Hazelwood. Following Mr. Hazelwood’s remarks, attendees will have the opportunity for Q&A with all of the exhibition’s participating artists. Food & drink are included. All are welcome to this free event!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    " open to the public",
+    "college of arts &amp; sciences",
+    "exhibits"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_521944",
+   "type": "event",
+   "title": "An Artists’ Talk & Reception featuring Art Hazelwood",
+   "host": "Arts & Sciences",
+   "schoolId": "s_scu",
+   "date": "2026-11-10T00:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "California Mission Room, Benson Center",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/arts-and-sciences/event/521944-an-artists-talk-reception-featuring-art",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "¡Ven a nuestra Misa en Español! Join us for our monthly Spanish Mass, a gathering for students seeking spirituality and fellowship. Experience the beauty of the Mass celebrated in Spanish, followed by delicious food and refreshments.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_510973",
+   "type": "event",
+   "title": "Misa en Español",
+   "host": "Center for Spirituality and Faith",
+   "schoolId": "s_scu",
+   "date": "2026-11-10T03:00:00.000Z",
+   "startTime": "19:00",
+   "benefit": "Free food",
+   "sourceUrl": "https://events.scu.edu/live/events/510961-misa-en-espaol",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "Join us for the sixth installment of the Provost’s Compelling Conversations series, with Dr. Maryanne Wolf.",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    " open to the public",
+    "lectures"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_521985",
+   "type": "event",
+   "title": "Will Reading and Writing be Transformed in the Age of AI?",
+   "host": "Provost",
+   "schoolId": "s_scu",
+   "date": "2026-11-10T03:00:00.000Z",
+   "startTime": "19:00",
+   "place": {
+    "name": "Locatelli Center",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/live/events/521456-maryanne-wolf-transformation-of-reading-in-age-of-ai",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    " open to the public",
+    "college of arts &amp; sciences",
+    "lectures"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_525089",
+   "type": "event",
+   "title": "Interactive, Accessible Course Notes and Slides with PreTeXt",
+   "host": "Arts & Sciences",
+   "schoolId": "s_scu",
+   "date": "2026-11-10T23:50:00.000Z",
+   "startTime": "15:50",
+   "place": {
+    "name": "O’Connor Hall, Room 205",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/arts-and-sciences/event/525089-interactive-accessible-course-notes-and-slides-with-p",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "Come for sweet treats and conversation. Hang out and visit with the Center of Spirituality and Faith staff, student interns, and with each other, or grab a donut and go! All are welcome!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_516829",
+   "type": "event",
+   "title": "Coffee and Donuts",
+   "host": "Center for Spirituality and Faith",
+   "schoolId": "s_scu",
+   "date": "2026-11-11T17:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Center for Spirituality & Faith, Benson Memorial Center 105",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.scu.edu/live/events/510723-coffee-and-donuts",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "Join guest artist Pilar Agüero-Esparza in a walk through of the exhibition The Four (Revisited) .",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    " open to the public",
+    "exhibits",
+    "tours"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_521654",
+   "type": "event",
+   "title": "Faculty and Artist Lunch Time Conversation with Guest Artist Pilar Agüero-Esparza",
+   "host": "de Saisset",
+   "schoolId": "s_scu",
+   "date": "2026-11-11T20:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "de Saisset Museum",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/de-saisset/event/521654-faculty-and-artist-lunch-time-conversation-with-guest",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "Join the Department of Philosophy for our 2nd annual celebration of World Philosophy Day! We will have engaging panels and talks by philosophy faculty, alumni, and students; fun prizes (including philosopher finger puppets), and food. Everyone is welcome!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    " open to the public",
+    "college of arts &amp; sciences"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_521790",
+   "type": "event",
+   "title": "Celebration of World Philosophy Day at SCU",
+   "host": "Arts & Sciences",
+   "schoolId": "s_scu",
+   "date": "2026-11-12T17:30:00.000Z",
+   "startTime": "09:30",
+   "place": {
+    "name": "California Mission Room, lower level Benson Memorial Hall",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/arts-and-sciences/event/521790-celebration-of-world-philosophy-day-at-scu",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_524998",
+   "type": "event",
+   "title": "Thank You Donuts",
+   "host": "Accounting",
+   "schoolId": "s_scu",
+   "date": "2026-11-13T19:00:00.000Z",
+   "startTime": "11:00",
+   "place": {
+    "name": "Lucas Hall Lobby, Santa Clara University",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.scu.edu/accounting/event/524998-thank-you-donuts",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "leavey school of business"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_518244",
+   "type": "event",
+   "title": "ISA Research Seminar: Candi Yano (UC Berkeley)",
+   "host": "Leavey School of Business",
+   "schoolId": "s_scu",
+   "date": "2026-11-13T20:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Lucas 106",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/leavey-school-of-business/event/518244-isa-research-seminar-candi-yano-uc-berkeley",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_517567",
+   "type": "event",
+   "title": "Idea Lab Design Thinking Workshop",
+   "host": "Ciocca Center",
+   "schoolId": "s_scu",
+   "date": "2026-11-14T08:00:00.000Z",
+   "sourceUrl": "https://events.scu.edu/ciocca-center/event/517567-idea-lab-design-thinking-workshop",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "Come and listen to Dr. Wei He from Stanford University/SLAC speak on this interesting topic. What happens when magnetic moments cannot agree on how to align? Spin-1/2 kagome antiferromagnets, built from corner-sharing triangles, offer a fascinating example of how geometric frustr",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "college of arts &amp; sciences",
+    "lectures",
+    "undergraduate academic calendar"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_521976",
+   "type": "event",
+   "title": "Quantum Spin Liquids and Competing States in Kagome Antiferromagnets",
+   "host": "Arts & Sciences",
+   "schoolId": "s_scu",
+   "date": "2026-11-17T01:00:00.000Z",
+   "startTime": "17:00",
+   "place": {
+    "name": "Bergin Hall 214",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/arts-and-sciences/event/521976-quantum-spin-liquids-and-competing-states-in-kagome-a",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "Come for sweet treats and conversation. Hang out and visit with the Center of Spirituality and Faith staff, student interns, and with each other, or grab a donut and go! All are welcome!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_516833",
+   "type": "event",
+   "title": "Coffee and Donuts",
+   "host": "Center for Spirituality and Faith",
+   "schoolId": "s_scu",
+   "date": "2026-11-18T17:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Center for Spirituality & Faith, Benson Memorial Center 105",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.scu.edu/live/events/510723-coffee-and-donuts",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "In honoring the prophetic leadership of the UCA martyrs, we invite you to a panel discussion on living out a deep spirituality, one that calls us to accompany one another, to root ourselves in love and hope, to practice critical thinking, and to engage in social justice. During o",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_517938",
+   "type": "event",
+   "title": "Signs of the Times: Panel on Solidarity & Social Justice Incubator",
+   "host": "Mission and Ministry",
+   "schoolId": "s_scu",
+   "date": "2026-11-18T19:45:00.000Z",
+   "startTime": "11:45",
+   "place": {
+    "name": "Forbes, Lucas Hall",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/live/events/517461-signs-of-the-times-panel-on-solidarity-social",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "Make ornaments, photo frames, and more from upcycled foil trays!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "sustainability",
+    "workshops"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_352372",
+   "type": "event",
+   "title": "Holiday Gift Making Workshop",
+   "host": "Sustainability",
+   "schoolId": "s_scu",
+   "date": "2026-11-19T00:30:00.000Z",
+   "startTime": "16:30",
+   "place": {
+    "name": "The Forge Garden",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/sustainability/event/352372-holiday-gift-making-workshop",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    " open to the public"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_517570",
+   "type": "event",
+   "title": "BVA Café",
+   "host": "Ciocca Center",
+   "schoolId": "s_scu",
+   "date": "2026-11-20T02:30:00.000Z",
+   "startTime": "18:30",
+   "place": {
+    "name": "Lucas Hall Santa Clara University",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/ciocca-center/event/517570-bva-cafe",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "leavey school of business"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_518243",
+   "type": "event",
+   "title": "ISA Research Seminar: Nazlia Mousavi (University of Nottingham)",
+   "host": "Leavey School of Business",
+   "schoolId": "s_scu",
+   "date": "2026-11-20T20:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "Lucas 106",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/leavey-school-of-business/event/518243-isa-research-seminar-nazlia-mousavi-university-of",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "Come for sweet treats and conversation. Hang out and visit with the Center of Spirituality and Faith staff, student interns, and with each other, or grab a donut and go! All are welcome!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_516837",
+   "type": "event",
+   "title": "Coffee and Donuts",
+   "host": "Center for Spirituality and Faith",
+   "schoolId": "s_scu",
+   "date": "2026-11-25T17:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Center for Spirituality & Faith, Benson Memorial Center 105",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.scu.edu/live/events/510723-coffee-and-donuts",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "More info coming soon!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    "ai",
+    "lectures",
+    "workshops"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_524858",
+   "type": "event",
+   "title": "Health + X",
+   "host": "Faculty Development",
+   "schoolId": "s_scu",
+   "date": "2026-12-01T23:30:00.000Z",
+   "startTime": "15:30",
+   "place": {
+    "name": "Benson Center, Parlors BC",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/faculty-development/event/524858-health-x",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "Come for sweet treats and conversation. Hang out and visit with the Center of Spirituality and Faith staff, student interns, and with each other, or grab a donut and go! All are welcome!",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "free food"
+   ],
+   "interests": [
+    "club"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_516841",
+   "type": "event",
+   "title": "Coffee and Donuts",
+   "host": "Center for Spirituality and Faith",
+   "schoolId": "s_scu",
+   "date": "2026-12-02T17:00:00.000Z",
+   "startTime": "09:00",
+   "place": {
+    "name": "Center for Spirituality & Faith, Benson Memorial Center 105",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "benefit": "Free food",
+   "sourceUrl": "https://events.scu.edu/live/events/510723-coffee-and-donuts",
+   "sourceLabel": "Santa Clara University Events"
+  },
+  {
+   "description": "Join Renee Billingslea , Teaching Professor, in a walk through of the exhibition The Four (Revisited) .",
+   "eligibility": "Open to the campus community",
+   "tags": [
+    "event",
+    "talk",
+    " open to the public",
+    "exhibits",
+    "tours"
+   ],
+   "interests": [
+    "research",
+    "study"
+   ],
+   "goals": [],
+   "official": true,
+   "lastVerified": "2026-11-06T09:35:22.731Z",
+   "createdAt": "2026-11-06T09:35:22.731Z",
+   "id": "op_scu_lw_521655",
+   "type": "event",
+   "title": "Faculty and Artist Lunch Time Conversation with Teaching Professor Renee Billingslea",
+   "host": "de Saisset",
+   "schoolId": "s_scu",
+   "date": "2026-12-02T20:00:00.000Z",
+   "startTime": "12:00",
+   "place": {
+    "name": "de Saisset Museum",
+    "lat": 37.3496,
+    "lng": -121.939
+   },
+   "sourceUrl": "https://events.scu.edu/de-saisset/event/521655-faculty-and-artist-lunch-time-conversation-with-teach",
+   "sourceLabel": "Santa Clara University Events"
+  }
+ ]
+}

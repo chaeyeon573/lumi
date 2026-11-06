@@ -474,3 +474,12 @@ export async function fetchLocalist(base_: string, school: EventSchool, horizonD
   }
   return localistToOpportunities(all, school, new Date(), horizonDays);
 }
+
+/** 전시(며칠씩 열려 있는 것)는 '그 시간에 가는 행사'가 아니다 (Duke "Cosmic Origins Exhibition Run" 18개, 2026-11-05).
+ *  - 제목에 exhibit/exhibition 이 있으면 뺀다 — 운동 경기의 exhibition game 은 남긴다
+ *  - 캘린더가 "exhibits" 로 분류했고 시작 시각이 없는(종일) 것도 뺀다 (SCU "Parallel Visions", 9/21~11/20 전시, 2026-11-06).
+ *    시각이 있는 작가 강연·리셉션은 같은 분류여도 남긴다 */
+export function isExhibitEvent(o: { title: string; tags?: string[]; startTime?: string }): boolean {
+  if (/\bexhibit(ion)?s?\b/i.test(o.title) && !/\b(game|match|vs\.?|versus|tournament|scrimmage|bout|meet|showcase)\b/i.test(o.title)) return true;
+  return !o.startTime && (o.tags ?? []).some((t) => /^\s*exhibit/i.test(t));
+}

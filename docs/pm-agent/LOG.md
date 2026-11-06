@@ -2311,3 +2311,11 @@
   - `isHijackedPage` now also catches Chinese video-piracy and gambling titles (needs a video word together with free/HD/latest, or a gambling word, so a film club title is not caught). Test added.
 - Spot check courses: 5 random CMU classes (14-601 A, 18-444, 54-832 A1, 79-201 A, 90-735) match the live CMU schedule. 18-444's Friday 10:00 meeting is a second row of lecture section A in the official schedule, not a separate recitation.
 - Tulane class times batch 4: Fall 2026 complete (26/26 letters, 2,399 classes). Spring 2027 started (A: 319).
+
+## 2026-11-06 09:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: Michigan IPhO, Cornell Women's Network, UChicago TAMID, Tulane Leadership Institute, UMD Accessible Prosthetics fine (5/5).
+- Spot check courses: 5 random Tulane Fall 2026 classes (GESS 2900-02, LING 6820-01, TIDR 1500-01, MGSC 3005-01, RCSE 7100-01) match the live Tulane schedule.
+- Santa Clara events connected: events.scu.edu answers now (was 403) and is LiveWhale, same reader as Brown. 29 upcoming events (the reader keeps free food, talks and featured items).
+  - "Parallel Visions" (art exhibition, Sept 21 - Nov 20, no start time, tagged "exhibits") got through the exhibit filter, which only read titles. New `isExhibitEvent`: also drops all-day items tagged exhibits; timed artist talks and receptions with that tag stay (checked across all schools: 16 timed ones kept). Test added.
+  - Found: off-campus SCU events (law school forums in Los Angeles) carry the campus map point. Added to the queue.

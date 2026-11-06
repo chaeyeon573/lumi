@@ -78,3 +78,11 @@ test('Penn Today events API: -0500 offsets read correctly, ongoing exhibits / mu
   assert.ok(!out.some((e) => /Homecoming Weekend|Symposium: Stranger Things/.test(e.title)), 'multi-day');
   assert.ok(!out.some((e) => /Brotherly Love/.test(e.title)), 'virtual');
 });
+
+test('isExhibitEvent: exhibit titles and all-day items tagged exhibits are left out; timed artist talks and exhibition games stay', async () => {
+  const { isExhibitEvent } = await import('./sources/opportunities');
+  assert.equal(isExhibitEvent({ title: 'Cosmic Origins Exhibition Run' }), true);
+  assert.equal(isExhibitEvent({ title: 'Basketball Exhibition Game vs. Chico State', startTime: '19:00' }), false);
+  assert.equal(isExhibitEvent({ title: '“Parallel Visions”', tags: ['event', 'talk', ' open to the public', 'exhibits', 'lectures'] }), true);
+  assert.equal(isExhibitEvent({ title: 'An Artists’ Talk & Reception featuring Art Hazelwood', startTime: '16:30', tags: ['exhibits'] }), false);
+});
