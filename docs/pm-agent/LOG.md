@@ -2385,3 +2385,9 @@
 - Spot check clubs: USC Polo Club, UNC Undergraduate Consulting Club, NC State Embedded Machine Learning Club, UVA Student Game Developers fine. Purdue Block and Bridle Club (ansc.purdue.edu) fails TLS from the container (known Purdue block).
 - Spot check courses: 5 random CMU Spring 2027 classes (67-364, 79-201, 54-418, 14-848, 47-804) match the live CMU schedule.
 - Looked for bulk club-link sources at the schools with the lowest link share: Caltech (124 clubs, 0 links: SFE page and ASCIT clubs page list names/funding only), CampusGroups schools (club pages login-only), WashU Presence (no website field in the API). Nothing public to add in bulk; noted in the queue.
+
+## 2026-11-06 20:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: Vanderbilt Men's Club Ultimate, Rochester LOGOS, Purdue NSSLHA fine; UConn Professional Sales Society (homepages.uconn.edu) answered 503. CWRU "Institute for Smart, Secure and Connected Systems" is a research institute typed club.
+  - Scan of "Institute for …" / "Center for …" names across schools (33): 15 clear research centers and offices typed `department` (CWRU 3 institutes, Georgia Tech IEN, INNS and Counseling Center, Cornell data science center, Indiana Center for Language Technology, JHU SAIS institute, UCI ICTS, UNC IRMII, UT Center for Students in Recovery, Vanderbilt MHS, UConn Center for Fraternity and Sorority Development, Tulane Center for Public Service events portal). Left: student chapters (IEEE, INFORMS, IHI Open School), center grad student associations, and unclear names.
+- Spot check courses: 5 random Rice Spring 2027 classes (COMP 413 Sec 003, CHEM 313, LALX 390, CLAS 208, PHYS 128 Sec 007) match the live Rice schedule.
