@@ -2276,4 +2276,5 @@
 - Rice Spring 2027 is published, but the reader skipped it: the term regex needed `">` right after the value, so the option marked `selected` (now Spring 2027) was never read. Fixed with `riceTerms()` (test added) and re-collected: Rice 4,157 classes (Fall 2026 2,097 + Spring 2027 2,060).
   - Same pattern fixed in the Rice subject list and the SF State term list (SF State already has both terms; the fix only prevents the same miss later).
 - Spot check courses: 5 random Rice Spring 2027 classes (COMP 413 Sec 003, MATH 366, ELEC 475, CHEM 365, MUSI 232 Sec 002) match the live Rice schedule.
+- MIT Spring 2027: FireRoad still gives only the current term's schedule (6.1010 has no spring schedule yet); nothing to add.
 - Spot check clubs: done at 03:33 this hour (5 checked).
