@@ -198,7 +198,9 @@ export function sortClubs(list: Organization[], sort: ExploreSort, score?: (o: O
   const xs = list.map((o, i) => ({ o, i }));
   // newest: groups started on Lumi first (their ids carry the time), then the directory's newest additions
   if (sort === 'newest') return xs.sort((a, b) => Number(!!b.o.createdBy) - Number(!!a.o.createdBy) || b.i - a.i).map((x) => x.o);
-  return xs.sort((a, b) => (score ? score(b.o) - score(a.o) : 0) || Number(!!b.o.recruitment?.open) - Number(!!a.o.recruitment?.open) || a.o.name.localeCompare(b.o.name)).map((x) => x.o);
+  // Recommended: student clubs and Greek life before research units and co-ops — the Clubs tab is about clubs; labs stay one filter away (live check 2026-11-06)
+  const tier = (o: Organization) => (o.type === 'lab' ? 2 : o.type === 'coop' ? 1 : 0);
+  return xs.sort((a, b) => tier(a.o) - tier(b.o) || (score ? score(b.o) - score(a.o) : 0) || Number(!!b.o.recruitment?.open) - Number(!!a.o.recruitment?.open) || a.o.name.localeCompare(b.o.name)).map((x) => x.o);
 }
 
 /** the badge under a group's name and the kind on its row (PDF: "Student club") */
