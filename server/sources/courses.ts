@@ -889,11 +889,15 @@ export function riceToCourses(html: string, termCode: string, label: string): Ca
   return tagTerm(out, label);
 }
 async function riceGet(q: string): Promise<string> { const r = await fetch(`${RICE}${q}`, { headers: UAH }); if (!r.ok) throw new Error(`rice ${q} → ${r.status}`); return r.text(); }
+/** Rice 학기 목록 — 기본으로 골라진 학기(selected)도 읽는다 (Spring 2027 이 selected 가 되자 빠졌다, 2026-11-06) */
+export function riceTerms(html: string): { code: string; label: string }[] {
+  return [...html.matchAll(/<option value="(\d{6})"[^>]*>([^<]+)/g)].map((m) => ({ code: m[1], label: labelOf(m[2]) }));
+}
 async function riceForm(): Promise<{ terms: { code: string; label: string }[]; subjects: string[] }> {
   const html = await riceGet('');
-  const terms = [...html.matchAll(/<option value="(\d{6})">([^<]+)/g)].map((m) => ({ code: m[1], label: labelOf(m[2]) }));
+  const terms = riceTerms(html);
   const sel = /<select id="p_subj_cd"[\s\S]*?<\/select>/.exec(html)?.[0] ?? '';
-  return { terms, subjects: [...sel.matchAll(/<option value="([A-Z]{2,5})">/g)].map((m) => m[1]) };
+  return { terms, subjects: [...sel.matchAll(/<option value="([A-Z]{2,5})"[^>]*>/g)].map((m) => m[1]) };
 }
 async function rice(): Promise<CatalogCourse[]> {
   const { terms, subjects } = await riceForm(); const [cur, next] = catalogTermLabels();
@@ -1045,7 +1049,7 @@ async function sfsu(): Promise<CatalogCourse[]> {
   // SFSU_SUBJECTS=ECON,SOC 이면 그 전공만 다시 읽는다(지난번에 연결이 끊겨 빠진 것) — 나머지는 collect-courses 가 지난 파일 것을 그대로 둔다
   const only = process.env.SFSU_SUBJECTS?.split(',').map((x) => x.trim()).filter(Boolean);
   const subjects = [...sel.matchAll(/<option value="([^"]+)"/g)].map((m) => m[1]).filter((v) => v && v !== 'X' && (!only || only.includes(v)));
-  const labels = Object.fromEntries([...form.matchAll(/<option value="(\d{4})">([^<]+)/g)].map((m) => [m[1], labelOf(m[2])]));
+  const labels = Object.fromEntries([...form.matchAll(/<option value="(\d{4})"[^>]*>([^<]+)/g)].map((m) => [m[1], labelOf(m[2])]));
   // 가장 최근 가을·봄 두 학기(여름·겨울 계절학기 제외)
   const terms = Object.keys(labels).filter((t) => /Spring|Fall/.test(labels[t])).sort().reverse().slice(0, 2); if (!terms.length) throw new Error(`sfsu: no term (page ${form.length} chars, ${Object.keys(labels).length} options)`);
   const out: CatalogCourse[] = [];

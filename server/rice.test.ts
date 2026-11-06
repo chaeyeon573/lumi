@@ -13,3 +13,9 @@ test('Rice courses.rice.edu: class meetings, 12h→24h times, title case, gradua
   assert.equal(by('COMP 510').title, 'Computer Ethics');
   assert.ok(resolveCourseSource('s_rice', 'rice'));
 });
+
+test('Rice term list: the selected term is read too (Spring 2027 was skipped once it became the default)', async () => {
+  const { riceTerms } = await import('./sources/courses');
+  const html = '<option value="202710">Fall Semester 2026</option><option value="202711">Fall Quadmester 2026</option><option value="202720" selected="selected">Spring Semester 2027</option>';
+  assert.deepEqual(riceTerms(html), [{ code: '202710', label: 'Fall 2026' }, { code: '202711', label: 'Fall 2026' }, { code: '202720', label: 'Spring 2027' }]);
+});

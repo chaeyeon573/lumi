@@ -1,20 +1,21 @@
 {
- "checkedAt": "2026-11-05T11:35:52.851Z",
+ "checkedAt": "2026-11-06T04:40:34.189Z",
  "status": "applied",
  "stored": false,
  "source": "timetable:rice",
- "sampled": 2097,
- "withTimes": 2097,
+ "sampled": 4157,
+ "withTimes": 4157,
  "terms": [
-  "Fall 2026"
+  "Fall 2026",
+  "Spring 2027"
  ],
  "sample": [
   "AAAS 115 · Black Gods of the Caribbean · Fall 2026 · W 16:00-18:30",
-  "CHBE 470 · Process Dynamics & Control · Fall 2026 · M 10:00-10:50 W 10:00-10:50 F 10:00-10:50",
-  "EEPS 603 · Seminar: Department Research · Fall 2026 · F 12:00-12:50",
-  "HUMA 201 · Public Speaking (Sec 001) · Fall 2026 · T 10:50-12:05 R 10:50-12:05",
-  "MGMT 667 · Re Development: Feasibility (Sec 001) · Fall 2026 · M 09:45-11:15 W 09:45-11:15",
-  "PSYC 485 · Ug Supervised Research (Sec 019) · Fall 2026 · T 07:00-07:50"
+  "EEPS 515 · Cosmochemistry Seminar · Fall 2026 · T 09:25-10:40 R 09:25-10:40",
+  "MGMT 645 · Portfolio Management (Sec 003) · Fall 2026 · F 12:30-15:45",
+  "UNIV 195 · Dialogues on Community Wrkshp (Sec 049) · Fall 2026 · M 12:00-12:50",
+  "ECON 616 · Data Analysis for Mkt Design · Spring 2027 · M 14:00-15:15 W 14:00-15:15 M 18:00-18:50",
+  "MGMT 503 · Management Control (Sec 002) · Spring 2027 · T 18:15-21:30"
  ],
  "spotCheck": {
   "matched": 6,

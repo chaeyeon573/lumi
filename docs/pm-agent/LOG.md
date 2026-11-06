@@ -2269,3 +2269,11 @@
 - Jobs refreshed: 1,279 postings from 182/183 boards (internships 859, new grad 369, PhD 170, master's 78, postdoc 13). Target Workday answered 500 this time; its 8 postings from the previous file are kept (fetch-jobs keeps a failed board's last postings). The 17 boards added 11-05 brought 18 student postings (Charles River Associates 8, Clinton Foundation 4, Patreon 3, Sierra Club 2, Axios 1); the others have no student-level openings today.
 - Spot check courses: 5 random Rice classes (CHBE 418, PSYC 380, EDUC 565, CHEM 530, RELI 337) match the live Rice schedule.
 - Spot check clubs: W&M Judo, UChicago Engineering Society, Yale Choose Life fine. UC Davis Ascend (ascenducd.org) did not answer (proxy 502, looks like a dead domain) and Penn SHPE (fling.seas.upenn.edu) failed TLS from the container; both left for the weekly dead-link check.
+
+## 2026-11-06 04:33 UTC
+- No Codex requests, no owner answers. The deploy branch had new screen work (Harness A screens, club "Ask to join", Lumi+ screens) and a README change to the screen-review focus list; merged in (fast-forward), 469 tests passed.
+- UCLA Spring 2027: still no classes published (batch stopped on the first empty subject).
+- Rice Spring 2027 is published, but the reader skipped it: the term regex needed `">` right after the value, so the option marked `selected` (now Spring 2027) was never read. Fixed with `riceTerms()` (test added) and re-collected: Rice 4,157 classes (Fall 2026 2,097 + Spring 2027 2,060).
+  - Same pattern fixed in the Rice subject list and the SF State term list (SF State already has both terms; the fix only prevents the same miss later).
+- Spot check courses: 5 random Rice Spring 2027 classes (COMP 413 Sec 003, MATH 366, ELEC 475, CHEM 365, MUSI 232 Sec 002) match the live Rice schedule.
+- Spot check clubs: done at 03:33 this hour (5 checked).
