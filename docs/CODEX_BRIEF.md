@@ -101,6 +101,7 @@ Rules for both sides are in `AGENTS.md`. Running requests go in `docs/HANDOFF.md
 ### Events: `<id>.events.json` → `{ collectedAt, events: Opportunity[] }`
 - 16,650 upcoming events (next 30 days), 58 schools, refreshed daily.
 - Times are in UTC. Show them in the school's `tz`.
+- `place.lat/lng` is always the school centre, not the venue (only `place.name` is real). Some events are off campus.
 - Fields: `title`, `host`, `date`, `startTime`, `place?`, `description`, `tags`, `sourceUrl`, `sourceLabel`, `benefit?`.
 - `tags` include `free food` and `talk`.
 - Exhibits, cancelled events and online-only events are already left out.

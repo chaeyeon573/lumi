@@ -2320,3 +2320,11 @@
   - "Parallel Visions" (art exhibition, Sept 21 - Nov 20, no start time, tagged "exhibits") got through the exhibit filter, which only read titles. New `isExhibitEvent`: also drops all-day items tagged exhibits; timed artist talks and receptions with that tag stay (checked across all schools: 16 timed ones kept). Test added.
   - Found: off-campus SCU events (law school forums in Los Angeles) carry the campus map point. Added to the queue.
 - Tulane class times batch 5: Spring 2027 A-H (8/26 letters); 3,628 classes in the file.
+
+## 2026-11-06 10:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: MIT Bhangra, Georgia Tech The Technique, Vanderbilt SSI, Indiana Protective Order Project fine. MSU Table Tennis Club's domain (msutabletennis.club) no longer resolves; left for the weekly dead-link check.
+- Spot check courses: 5 random Harvard classes (MUSIC 189R Sec 002, OEB 119, CHEM 135, STAT 221, TDM 122GM) match the live my.harvard schedule.
+- Event map points: every event reader sets `place.lat/lng` to the school centre (only the place name is real), so off-campus events such as SCU's Los Angeles law forums show the campus point. Not a per-event bug; told Codex in HANDOFF and CODEX_BRIEF not to draw venue pins from it. A real point per venue would need a geocoder (more requests), not planned without the owner.
+- UC Davis events: events.ucdavis.edu still answers 403 (blocked, not bypassed); www.ucdavis.edu/events lists only evergreen items.
+- Tulane class times batch 6: Spring 2027 A-P (16/26 letters); 4,251 classes in the file.
