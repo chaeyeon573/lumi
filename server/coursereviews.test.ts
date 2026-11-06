@@ -354,3 +354,14 @@ test('term prompt view: steps through the term’s classes with what is done', (
   assert.equal(next.classes.length, 0);
   void spring;
 });
+
+test('reviews: the shared demo login can read but not write, and gets no term prompt', () => {
+  const d = { users: [student('u_me', [cs61a])], reports: [], notifications: [], posts: [], activities: [], opportunities: [], chatRooms: [], rides: [], relationships: { ...structuredClone(seed.relationships), blocks: [] } } as unknown as Snapshot;
+  const store = { async listDocs<T>() { return [] as T[]; }, async putDocs() {}, async removeDocs() {} };
+  const clock = { now: NOV6 };
+  const svc = createCourseReviewsService({ db: () => d, store, now: () => clock.now, sharedLogins: new Set(['u_me']) });
+  assert.equal(svc.view('u_me', 'CS 61A').total, 0);
+  denied(() => svc.saveReview('u_me', review()), 403);
+  clock.now = new Date('2026-12-11T20:00:00Z');
+  assert.equal(svc.promptRound().length, 0);
+});

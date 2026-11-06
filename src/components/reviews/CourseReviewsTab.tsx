@@ -45,8 +45,8 @@ export function CourseReviewsTab({ code, onAsk }: { code: string; onAsk?: () => 
           sub={v.write.ok ? 'Yours would be the first one classmates see.' : v.write.message} />
       ) : <SummaryCard s={v.summary} />}
 
-      {/* 쓰기 — 지금 쓸 수 있으면 화면의 큰 버튼 하나, 이미 썼으면 고치기 */}
-      {writeTerm && !mineNow && <Btn full size="lg" onClick={() => nav(writeLink(v.course.code, writeTerm))}>Write a review</Btn>}
+      {/* 쓰기 — 테두리 버튼 (화면의 라벤더 버튼은 수업 페이지의 Add to schedule 하나), 이미 썼으면 고치기 */}
+      {writeTerm && !mineNow && !v.locked && <Btn full variant="outline" icon={<Star size={17} />} onClick={() => nav(writeLink(v.course.code, writeTerm))}>Write a review</Btn>}
       {v.mine.map((m) => (
         <button key={m.id} type="button" onClick={() => nav(writeLink(m.code, m.term))} className={cn(cardCls, 'w-full p-3.5 flex items-center gap-3 text-left press')}>
           <span className="flex-1 min-w-0">

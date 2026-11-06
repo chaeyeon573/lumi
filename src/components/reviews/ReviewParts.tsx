@@ -102,7 +102,7 @@ export function ReviewCard({ r, onHelpful, onReport, busy }: { r: ReviewCardView
     r.attendance && (r.attendance === 'taken' ? 'Attendance taken' : 'No attendance'),
     r.recorded !== undefined && (r.recorded ? 'Recorded lectures' : 'Not recorded'),
     ...r.tags.map((t) => TAG_LABEL[t]),
-  ].filter(Boolean) as string[];
+  ].filter(Boolean).slice(0, 5) as string[];
   return (
     <div className={cn(cardCls, 'p-4')}>
       <div className="flex items-center gap-2">
@@ -135,7 +135,7 @@ export function ExamSummaryCard({ s }: { s: ExamSummary }) {
       <div className="text-[12.5px] text-ink-3">{s.count === 1 ? 'From 1 student' : `From ${s.count} students`}</div>
       <div className="grid grid-cols-2 gap-2 mt-3">
         <div className="rounded-2xl bg-surface-2 px-3 py-2.5"><div className="text-[12px] text-ink-3">Midterms</div><div className="text-[16px] font-bold mt-0.5">{s.midterms !== null ? midtermLabel(s.midterms) : '—'}</div></div>
-        <div className="rounded-2xl bg-surface-2 px-3 py-2.5"><div className="text-[12px] text-ink-3">Final exam</div><div className="text-[16px] font-bold mt-0.5">{s.finalPct === null ? '—' : s.finalPct >= 50 ? `Yes · ${s.finalPct}%` : `No · ${100 - s.finalPct}%`}</div></div>
+        <div className="rounded-2xl bg-surface-2 px-3 py-2.5"><div className="text-[12px] text-ink-3">Final exam</div><div className="text-[16px] font-bold mt-0.5">{s.finalPct === null ? '—' : s.finalPct === 100 ? 'Yes' : s.finalPct === 0 ? 'No' : s.finalPct >= 50 ? `Yes · ${s.finalPct}%` : `No · ${100 - s.finalPct}%`}</div></div>
       </div>
       {(s.formats.length > 0 || notes) && (
         <ChipRow wrap className="mt-3 gap-1.5">
@@ -160,11 +160,11 @@ export function ExamTipCard({ x, onReport }: { x: ExamTipView; onReport?: () => 
 }
 
 /** 잠금 카드 — "Write one review to unlock all reviews" + 지금 쓸 수 있는 내 수업, 없으면 언제부터인지 */
-export function LockedCard({ unlock, onAsk }: { unlock: UnlockInfo; onAsk?: () => void }) {
+export function LockedCard({ unlock, onAsk, title = REVIEW_COPY.lockedTitle }: { unlock: UnlockInfo; onAsk?: () => void; title?: string }) {
   const nav = useNavigate();
   return (
     <div className={cn(cardCls, 'p-4')}>
-      <div className="flex items-center gap-2 text-[15px] font-bold"><Lock size={16} className="shrink-0" />{REVIEW_COPY.lockedTitle}</div>
+      <div className="flex items-center gap-2 text-[15px] font-bold"><Lock size={16} className="shrink-0" />{title}</div>
       {unlock.reviewable.length > 0 ? (
         <div className="mt-3 divide-y divide-line">
           {unlock.reviewable.map((c) => (
@@ -214,5 +214,16 @@ export function CourseStars({ stars, className }: { stars?: { avg: number; count
     <span className={cn('inline-flex items-center gap-1 text-[12.5px] font-semibold text-ink-2', className)} aria-label={`${fmtAvg(stars.avg)} stars from ${stars.count} reviews`}>
       <Star size={13} className="text-gold" fill="currentColor" strokeWidth={1.8} />{fmtAvg(stars.avg)}<span className="text-ink-3 font-medium">({stars.count})</span>
     </span>
+  );
+}
+
+/** 수업 페이지 머리 — 제목 아래 "★ 4.32 · 57 reviews" (3개 이상일 때만). 누르면 Reviews 탭 */
+export function HeaderStars({ code, onOpen }: { code: string; onOpen: () => void }) {
+  const stars = useCourseStars([code])[codeSlug(code)];
+  if (!stars || stars.count < 3) return null;
+  return (
+    <button type="button" onClick={onOpen} className="mt-2 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-ink press" aria-label={`${fmtAvg(stars.avg)} stars from ${stars.count} reviews — open reviews`}>
+      <Star size={15} className="text-gold" fill="currentColor" strokeWidth={1.8} />{fmtAvg(stars.avg)}<span className="text-ink-2 font-medium">· {stars.count} reviews</span>
+    </button>
   );
 }

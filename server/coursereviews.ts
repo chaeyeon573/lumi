@@ -62,6 +62,8 @@ export interface CourseReviewsDeps {
   catalog?(schoolId: ID): CatalogCourse[];
   now?(): Date;
   termDates?: readonly TermDates[];
+  /** 같이 쓰는 데모 로그인 (App Review) — 볼 수는 있어도 리뷰를 쓰지 않고 학기 말 안내도 받지 않는다 (예시 프로필처럼) */
+  sharedLogins?: ReadonlySet<ID>;
 }
 
 const save = (store: CourseReviewsDeps['store'], col: string, item: { id: string }) => void store.putDocs(col, [item]).catch((e) => console.error(`[reviews] save ${col} failed`, e));
@@ -74,7 +76,7 @@ export function createCourseReviewsService(deps: CourseReviewsDeps) {
   const prompts = new Map<string, ReviewPromptDoc>();
   const now = () => deps.now?.() ?? new Date();
   const table = () => deps.termDates ?? TERM_DATES;
-  const userOf = (id: ID) => deps.db().users.find((u) => u.id === id);
+  const userOf = (id: ID) => { const u = deps.db().users.find((x) => x.id === id); return u && deps.sharedLogins?.has(id) ? { ...u, sample: true } : u; };
 
   const engine = createCourseReviews({
     reviews: () => [...reviews.values()],
@@ -151,6 +153,7 @@ export function createCourseReviewsService(deps: CourseReviewsDeps) {
       if (!td.verified || today < td.lastInstruction || today > addDays(td.lastInstruction, PROMPT_WINDOW_DAYS)) continue;
       const link = `/reviews/term?term=${encodeURIComponent(td.term)}`;
       for (const u of deps.db().users) {
+        if (deps.sharedLogins?.has(u.id)) continue;
         if (schoolOf(u) !== td.schoolId || !verifiedStudent(u) || u.suspended) continue;
         const id = `${u.id}|${td.schoolId}|${td.term}`;
         const rec = prompts.get(id);

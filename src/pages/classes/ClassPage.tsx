@@ -14,6 +14,9 @@ import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { CopyClassLink } from '@/components/classes/ClassLink';
 import { ClassQuestions } from '@/components/classes/ClassQuestions';
+import { CourseReviewsTab } from '@/components/reviews/CourseReviewsTab';
+import { ExamInfoTab } from '@/components/reviews/ExamInfoTab';
+import { HeaderStars } from '@/components/reviews/ReviewParts';
 import { SchoolEmailCard } from '@/components/settings/SchoolEmailCard';
 import { Avatar } from '@/components/ui';
 import {
@@ -26,7 +29,20 @@ import { formatDate, formatTime } from '@core/lib/format';
 import { cn } from '@core/lib/cn';
 
 const en = lang === 'en';
-type Tab = 'class' | 'questions' | 'study';
+type Tab = 'class' | 'reviews' | 'exam' | 'questions' | 'study';
+const TAB_KEYS: Tab[] = ['class', 'reviews', 'exam', 'questions', 'study'];
+/**
+ * Owner 2026-11-06: reviews matter most on the course page.
+ *   Not added yet (catalog / Add classes): Reviews · Exam info · Class · Questions, opens on Reviews.
+ *   In my schedule: Class · Reviews · Exam info · Questions.
+ * Study opens from the Class tab ("Study together" › See all) — the Class tab stays underlined there.
+ */
+const courseTabs = (reviewsFirst = false) => {
+  const cls = { key: 'class', label: en ? 'Class' : '수업' };
+  const rev = [{ key: 'reviews', label: en ? 'Reviews' : '리뷰' }, { key: 'exam', label: en ? 'Exam info' : '시험' }];
+  return [...(reviewsFirst ? [...rev, cls] : [cls, ...rev]), { key: 'questions', label: en ? 'Questions' : '질문' }];
+};
+const tabOf = (raw: string | null, def: Tab = 'class'): Tab => (TAB_KEYS.includes(raw as Tab) ? raw as Tab : def);
 
 /**
  * Class space (PDF S030) — 내 시간표의 수업 하나. Class · Questions · Study 밑줄 탭 (주소 ?tab= 가 탭을 정한다).
@@ -69,8 +85,8 @@ function NotAddedSpace({ c, count }: { c: CatalogCourse; count: number }) {
   const add = useAddCourse();
   const [busy, setBusy] = useState(false);
   const details = useCatalogDetails(schoolOf(v.me), c.id);
-  const tab = (['class', 'questions', 'study'].includes(params.get('tab') ?? '') ? params.get('tab') : 'class') as Tab;
-  const setTab = (k: string) => setParams(k === 'class' ? {} : { tab: k }, { replace: true });
+  const tab = tabOf(params.get('tab'), 'reviews');
+  const setTab = (k: string) => setParams(k === 'reviews' ? {} : { tab: k }, { replace: true });
   const name = catalogCourseName(c);
   return (
     <div className="min-h-full flex flex-col bg-bg">
@@ -80,12 +96,9 @@ function NotAddedSpace({ c, count }: { c: CatalogCourse; count: number }) {
           <div className="text-[12px] text-t-ice-fg/80">{courseTerm(c) || (en ? 'Class' : '수업')}</div>
           <div className="text-[26px] font-extrabold tracking-[-0.02em] text-t-ice-fg leading-tight mt-0.5 [overflow-wrap:anywhere]">{c.code}</div>
           <div className="text-[13px] text-ink-2 mt-1 line-clamp-2">{c.title}</div>
+          <HeaderStars code={c.code} onOpen={() => setTab('reviews')} />
         </div>
-        <SegTabs className="mt-3" value={tab} onChange={setTab} tabs={[
-          { key: 'class', label: en ? 'Class' : '수업' },
-          { key: 'questions', label: en ? 'Questions' : '질문' },
-          { key: 'study', label: en ? 'Study' : '스터디' },
-        ]} />
+        <SegTabs className="mt-3" value={tab === 'study' ? 'class' : tab} onChange={setTab} tabs={courseTabs(true)} />
         <div className="pt-4">
           {tab === 'class' && (
             <div className="space-y-5">
@@ -96,6 +109,8 @@ function NotAddedSpace({ c, count }: { c: CatalogCourse; count: number }) {
               <Elsewhere c={c} />
             </div>
           )}
+          {tab === 'reviews' && <CourseReviewsTab code={c.code} onAsk={() => setTab('questions')} />}
+          {tab === 'exam' && <ExamInfoTab code={c.code} onAsk={() => setTab('questions')} />}
           {tab === 'questions' && <p className="px-1 py-2 text-[14px] text-ink-2">{en ? 'Add this class to see and ask questions.' : '수업을 넣으면 질문을 보고 물어볼 수 있어요.'}</p>}
           {tab === 'study' && <Study name={name} enrollment={undefined} roster={undefined} />}
         </div>
@@ -115,7 +130,7 @@ export function ClassSpace({ name, catalog, fromCatalog }: { name: string; catal
   const me = v.me;
   const rosters = useAppStore((s) => s.classRosters);
   const mine = me.timetable.filter((c) => c.name === name);
-  const tab = (['class', 'questions', 'study'].includes(params.get('tab') ?? '') ? params.get('tab') : 'class') as Tab;
+  const tab = tabOf(params.get('tab'));
   const firstCode = mine[0] ? courseCodeOf(mine[0]) : null;
   const looked = useCatalogCourse(catalog ? '' : schoolOf(me), firstCode ? { code: firstCode, term: courseTermOf(mine[0]) } : {});
   const cc = catalog ?? looked ?? undefined;
@@ -147,12 +162,9 @@ export function ClassSpace({ name, catalog, fromCatalog }: { name: string; catal
           <div className="text-[12px] text-t-ice-fg/80">{en ? 'Your class space' : '내 수업 공간'}</div>
           <div className="text-[26px] font-extrabold tracking-[-0.02em] text-t-ice-fg leading-tight mt-0.5 [overflow-wrap:anywhere]">{code ?? name}</div>
           <div className="text-[13px] text-ink-2 mt-1 truncate">{[title, courseTermOf(first)].filter(Boolean).join(' · ')}</div>
+          {code && <HeaderStars code={code} onOpen={() => setTab('reviews')} />}
         </div>
-        <SegTabs className="mt-3" value={tab} onChange={setTab} tabs={[
-          { key: 'class', label: en ? 'Class' : '수업' },
-          { key: 'questions', label: en ? 'Questions' : '질문' },
-          { key: 'study', label: en ? 'Study' : '스터디' },
-        ]} />
+        <SegTabs className="mt-3" value={tab === 'study' ? 'class' : tab} onChange={setTab} tabs={courseTabs()} />
         <div className="pt-4">
           {tab === 'class' && (
             <div className="space-y-6">
@@ -171,6 +183,9 @@ export function ClassSpace({ name, catalog, fromCatalog }: { name: string; catal
               <InfoNote>{en ? 'Classmates appear only when they opt in. This is not a university roster.' : '같은 수업 학생은 스스로 켠 사람만 보여요. 학교 명단이 아니에요.'}</InfoNote>
             </div>
           )}
+          {(tab === 'reviews' || tab === 'exam') && (code
+            ? (tab === 'reviews' ? <CourseReviewsTab code={code} onAsk={() => setTab('questions')} /> : <ExamInfoTab code={code} onAsk={() => setTab('questions')} />)
+            : <EmptyState icon={<BookOpen size={28} />} title={en ? 'Reviews need a course code' : '과목 코드가 필요해요'} sub={en ? 'Add this class from your school’s class list to see its reviews.' : '학교 수업 목록에서 추가하면 리뷰를 볼 수 있어요.'} action={{ label: en ? 'Find it in the class list' : '수업 목록에서 찾기', onClick: () => nav('/schedule/classes') }} />)}
           {tab === 'questions' && (
             !enrollment ? <EmptyState icon={<BookOpen size={28} />} title={en ? 'Questions need a course code' : '과목 코드가 필요해요'} sub={en ? 'Add this class from your school’s class list to ask classmates.' : '학교 수업 목록에서 추가하면 같은 수업 학생에게 물어볼 수 있어요.'} action={{ label: en ? 'Find it in the class list' : '수업 목록에서 찾기', onClick: () => nav('/schedule/classes') }} />
               : roster?.unverified ? <Verify code={enrollment.code} />

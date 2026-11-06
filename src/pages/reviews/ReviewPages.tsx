@@ -133,7 +133,7 @@ export function TermReviewPage() {
   return (
     <div className="min-h-full bg-bg flex flex-col">
       <OnboardingHeader step={step + 1} total={todo.length} onBack={step > 0 ? () => setStep((s) => s - 1) : () => nav(-1)} onSkip={next} />
-      <CourseHead title={`How was ${cur.code}?`} code={cur.name === cur.code ? cur.code : cur.name} term={term} />
+      <CourseHead title={`How was ${cur.code}?`} code={(cur.name.startsWith(cur.code) ? cur.name.slice(cur.code.length).trim() : cur.name) || cur.code} term={term} />
       {state?.ok === false ? (
         <>
           <EmptyState icon={<Star size={28} />} tone="peach" title="Not open yet" sub={state.message} />

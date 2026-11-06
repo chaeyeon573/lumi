@@ -132,6 +132,15 @@ The caller passes a `count` that runs **the same filter function as the list** (
 - `lumiCounts` / `lumiCountLabel` — counts only, same people as classmate rosters (opted in + verified), never samples.
 - `courseLinks(c)` — outbound links from the per-school `COURSE_LINKS` map; empty for schools without a verified entry (see `docs/course-links.md`).
 
+### Course reviews (`src/components/reviews`) — owner 2026-11-06
+| Component | Use | Notes |
+|---|---|---|
+| `StarRow({value,size})`, `StarPicker` | review stars | filled = `gold` token, empty = `line`. No hex. |
+| `SummaryCard`, `ReviewCard`, `ExamSummaryCard`, `ExamTipCard`, `LockedCard` | Reviews / Exam info tabs | cards never show a name: `byline(term, mine)` → "Fall 2026 student" / "Student" / "You". Helpful = pill, pink (`sel`) when mine. |
+| `CourseReviewsTab({code,onAsk})`, `ExamInfoTab` | mounted by `ClassPage.tsx` | the tab only shows what `api.courseReviews.*` returns — lock, ≥3 rules and anonymity are server-side. "Write a review" / "Add exam info" are **outline**: the course page's one primary is Add to schedule. |
+| `ReviewForm`, `ExamForm`, `Pick`, `DeleteLink` | `/reviews/write`, `/reviews/exam`, `/reviews/term` | `Pick` = single-choice chips, tap again clears (optional fields). One lavender `BottomCTA`. |
+| `CourseStars({stars})`, `useCourseStars(codes)`, `HeaderStars({code,onOpen})` | Add classes rows, course page hero | render nothing under 3 reviews — no placeholder stars. One `/api/reviews/stars` call per new set of codes (cached). |
+
 ### Screen-specific helpers outside `ha`
 - `src/pages/campus/CampusSource.tsx` — `CampusHead` (S015/S016 back header + title + "UC Berkeley · …") and
   `CampusSource` (official-source card; footnote only when the feed is unavailable).

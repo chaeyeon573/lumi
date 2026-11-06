@@ -178,7 +178,7 @@ await campus.load();
 const classQa = createClassQaService({ db: () => db, store, push: pushPatch });
 await classQa.load();
 // 수업 리뷰 · 시험 정보 (course page › Reviews · Exam info — server/coursereviews.ts, 스냅샷 밖 문서 묶음) + 학기 말 리뷰 안내
-const courseReviews = createCourseReviewsService({ db: () => db, store, push: pushPatch, catalog: (schoolId) => catalogBySchool.get(schoolId) ?? [] });
+const courseReviews = createCourseReviewsService({ db: () => db, store, push: pushPatch, catalog: (schoolId) => catalogBySchool.get(schoolId) ?? [], sharedLogins: PROTECTED_IDS });
 await courseReviews.load();
 startReviewPromptJob(courseReviews);
 // 학생증 사진 인증 (server/idverify.ts) — 요청 기록은 스냅샷 밖 문서 묶음, 사진은 따로(idPhotos) 두고 검토 뒤 지운다

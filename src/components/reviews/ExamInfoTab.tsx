@@ -35,7 +35,7 @@ export function ExamInfoTab({ code, onAsk }: { code: string; onAsk?: () => void 
         ? <EmptyState icon={<ClipboardList size={28} />} tone="peach" className="pt-4" title="No exam info yet" sub={v.write.ok ? 'Share the format and how you prepared.' : v.write.message} />
         : <ExamSummaryCard s={v.summary} />}
 
-      {writeTerm && !mineNow && <Btn full size="lg" onClick={() => nav(examLink(v.course.code, writeTerm))}>Add exam info</Btn>}
+      {writeTerm && !mineNow && !(v.locked && v.unlock?.reviewable.length) && <Btn full variant="outline" icon={<ClipboardList size={17} />} onClick={() => nav(examLink(v.course.code, writeTerm))}>Add exam info</Btn>}
       {v.mine.map((m) => (
         <button key={m.id} type="button" onClick={() => nav(examLink(m.code, m.term))} className={cn(cardCls, 'w-full p-3.5 flex items-center gap-3 text-left press')}>
           <span className="flex-1 min-w-0 text-[13.5px] font-semibold">Your exam info · {m.term}{m.status === 'checking' && <span className="text-ink-3 font-medium"> · Being checked</span>}</span>
@@ -43,7 +43,7 @@ export function ExamInfoTab({ code, onAsk }: { code: string; onAsk?: () => void 
         </button>
       ))}
 
-      {v.locked && v.unlock && <LockedCard unlock={v.unlock} onAsk={onAsk} />}
+      {v.locked && v.unlock && <LockedCard unlock={v.unlock} onAsk={onAsk} title="Write one review to unlock all exam info" />}
 
       {v.tips.length > 0 && (
         <div className="space-y-3">

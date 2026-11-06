@@ -16,6 +16,7 @@ import { openExternal } from '@/lib/native';
 import { cn } from '@core/lib/cn';
 import { departmentsOf, useCatalogBrowse, useCatalogTerms } from './catalogData';
 import { useAddCourse } from './addCourse';
+import { CourseStars, useCourseStars } from '@/components/reviews/ReviewParts';
 
 const en = lang === 'en';
 const L = (e: string, k: string) => (en ? e : k);
@@ -110,12 +111,14 @@ export function AddClassesPage() {
     if (popular.length) out.push({ key: 'popular', title: L('Popular on Lumi', 'Lumi 에서 많이 듣는 수업'), items: popular });
     return out;
   }, [dq, values.dept, values.level, data.courses, data.counts, depts, me.affiliation, undergrad]); // eslint-disable-line react-hooks/exhaustive-deps
+  // ★ avg (count) on rows with 3+ reviews (server/coursereviews.ts) — nothing under 3, no placeholder stars
+  const stars = useCourseStars(curated ? curated.flatMap((x) => x.items.map((c) => c.code)) : list.slice(0, shown).map((c) => c.code));
   const row = (c: CatalogCourse) => (
-    <CourseRow key={c.id} c={c} count={data.counts[codeSlug(c.code)]} open={open === c.id} added={isCourseAdded(timetable, c)}
+    <CourseRow key={c.id} c={c} count={data.counts[codeSlug(c.code)]} stars={stars[codeSlug(c.code)]} open={open === c.id} added={isCourseAdded(timetable, c)}
       overlap={open === c.id && overlap ? overlapLine(overlap, DAY_LABELS, en) : null}
       picked={open === c.id ? pickedSections : []} onPickSections={setPickedSections}
       onToggle={() => setOpen(open === c.id ? null : c.id)} onAdd={() => doAdd(c)}
-      onPage={() => nav(`/classes/course/${encodeURIComponent(c.id)}`)} schoolId={schoolId} />
+      onPage={() => nav(`/classes/course/${encodeURIComponent(c.id)}?tab=reviews`)} schoolId={schoolId} />
   );
 
   const close = () => (window.history.length > 1 ? nav(-1) : nav('/schedule', { replace: true }));
@@ -195,8 +198,8 @@ function ManualOnly({ onManual }: { onManual: () => void }) {
 }
 
 /** 목록 한 줄 — 코드+이름(굵게) · 교수 · 요일·시각 · 장소 · 학점·단계, 오른쪽에 조용히 "N on Lumi". 누르면 펼친다 */
-function CourseRow({ c, count, open, added, overlap, picked, onPickSections, onToggle, onAdd, onPage, schoolId }: {
-  c: CatalogCourse; count?: number; open: boolean; added: boolean; overlap: string | null; picked: CatalogSection[];
+function CourseRow({ c, count, stars, open, added, overlap, picked, onPickSections, onToggle, onAdd, onPage, schoolId }: {
+  c: CatalogCourse; count?: number; stars?: { avg: number; count: number }; open: boolean; added: boolean; overlap: string | null; picked: CatalogSection[];
   onPickSections: (s: CatalogSection[]) => void; onToggle: () => void; onAdd: () => Promise<void>; onPage: () => void; schoolId: string;
 }) {
   const level = courseLevel(c.code);
@@ -215,6 +218,7 @@ function CourseRow({ c, count, open, added, overlap, picked, onPickSections, onT
         </span>
         <span className="shrink-0 flex flex-col items-end gap-1 pt-0.5">
           {added && <span className="inline-flex items-center gap-0.5 text-[12px] font-semibold text-sel-fg"><Check size={13} strokeWidth={3} />{L('Added', '추가됨')}</span>}
+          <CourseStars stars={stars} />
           {lumi && <span className="text-[12px] text-ink-3 whitespace-nowrap">{lumi}</span>}
         </span>
       </button>
@@ -225,7 +229,8 @@ function CourseRow({ c, count, open, added, overlap, picked, onPickSections, onT
             <Btn size="md" className="flex-1" loading={busy} disabled={added} onClick={async () => { setBusy(true); try { await onAdd(); } finally { setBusy(false); } }}>
               {added ? L('Added ✓', '추가됨 ✓') : L('Add to schedule', '시간표에 추가')}
             </Btn>
-            <Btn size="md" variant="outline" className="flex-1" onClick={onPage}>{L('Class page', '수업 페이지')}</Btn>
+            {/* owner 2026-11-06: reviews first — one outline button opens the course page on Reviews */}
+            <Btn size="md" variant="outline" className="flex-1" onClick={onPage}>{L('Reviews & info', '리뷰 · 정보')}</Btn>
           </div>
           {site && (
             <button type="button" onClick={() => openExternal(site.url)} className="inline-flex items-center gap-0.5 text-[12.5px] font-semibold text-ink-2 press">
