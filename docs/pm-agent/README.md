@@ -24,16 +24,16 @@
 ## 매 실행 순서
 
 1. **이번 초점 고르기** — `docs/pm-agent/LOG.md` 의 마지막 기록을 보고, 아래 목록에서 최근에 안 본 것 1개.
-   1. People (사람 카드·아이스브레이커)  2. Discover (Now / Activities / Teams)
-   3. Campus › Browse (필터·공고 목록·동아리)  4. Ask Lumi — 실제 질문 8~10개
-   5. 시간표·수업 페이지  6. 첫 화면·온보딩  7. Feed·채팅
+   (2026-11-06부터 Harness A 화면 — 탭: Home · Explore · Schedule · Social · Profile. 화면 번호·주소는 `docs/design/harness-a/SCREENS.md`)
+   1. Social › People·For You (사람 카드, 첫 사용자 빈 화면)  2. Social › Meetups·모임 상세·같이 가기
+   3. Explore (행사·기회·동아리 목록, 필터 시트, D-day)  4. 동아리 페이지 Ask to join 흐름 (알림 문구가 실제 상태와 맞나)
+   5. Schedule·수업 페이지·약속 잡기  6. 첫 화면·온보딩(`/start/...`)·학생증 인증  7. Messages·Feed·Profile·Settings
    8. 데이터 신선도 — `server/data/opportunities-*.csv` 에서 마감 지났는데 열려 있는 행
-2. **화면 보기** — 라이브, New(v2) 디자인 (2026-10-30 사장님 결정으로 Classic 과 비교 알약은 없앴다 — 학생에게는 v2 만 보인다. `classic` 은 예전 화면과 비교할 때만):
+2. **화면 보기** — 라이브 (디자인은 검정 + 라벤더 하나뿐 — Classic/v2 스위치는 2026-11-06에 없어졌다. shoot.mjs 의 design 인자는 무시된다):
    ```bash
    npm ci && npm i --no-save --prefix /tmp/pw playwright-core@1.64
    mkdir -p /tmp/shots
    node docs/pm-agent/shoot.mjs /tmp/shots v2 "<paths>" https://heetz.up.railway.app
-   # 필요할 때만: node docs/pm-agent/shoot.mjs /tmp/shots classic "<paths>" https://heetz.up.railway.app
    ```
    스크린샷을 Read 로 직접 본다. 텍스트 출력만 보고 판단하지 않는다.
 3. **사장님처럼 평가** — PRODUCT_TASTE.md 기준으로 "이거 왜 이래?" 싶은 것을 찾는다.
