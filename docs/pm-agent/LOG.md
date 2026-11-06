@@ -2353,3 +2353,10 @@
 - Spot check clubs: MIT Strategic Games Society, UGA Dodd Ambassadors, UC Davis Managerial Economics Society, Indiana La Sociedad Latina, USC FOCUS fine (5/5).
 - Spot check courses: 5 random USF classes (NURS 320 Sec 03, COMS 364, MSEI 601, COMS 326, KIN 220) match the live USF Banner schedule.
 - Data freshness (deadline calendars): 11 rows had a deadline before today and were still listed (the app showed them with a muted "Closed" badge). Marked `status=closed` so the daily import takes them out of the app; the rows stay in the CSVs. Berkeley: Swan Award (10-30). National: Goldwater SRIP (11-02), Princeton in Africa (10-26), Soros (10-29), CBYX (11-01), Princeton in Asia (11-01), ARC Prize 2026 (11-02). Grad national: NSF GRFP (10-19), Hertz (10-30), NDSEG (10-30), DOE SCGSR (11-04). opportunities-grad-national.csv got a `status` column for this.
+
+## 2026-11-06 15:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: Illinois Project Code, UC Davis Klesis, Cornell Amateur Radio fine. Clemson Campus Outreach links to cocolumbia.org; that site lists Clemson among its campuses, so it is right. JHU Engineers Without Borders site answers 403 to automated requests (not bypassed).
+- Spot check courses: 5 random Duke Spring 2027 classes (PHYSICS 544, EGR 590, MATH 111L Sec 005, RELIGION 209S, LIT 377) match the live DukeHub schedule.
+- Data freshness, continued: 5 national hackathons with no deadline and a date already past (LA Hacks AI, Cleantech Hackathon at Stanford, Hack for Social Impact, Bay Area AI+Car, Technica; all Oct 17-25) marked `status=closed`.
+- So this no longer needs a manual pass: the daily calendar import (server/scripts/import-opportunities.ts) now retires a row when its deadline has passed, or when it has no deadline and its date has passed (`csvRowClosed`, test added). Rows with no date at all stay. CSV rows are never deleted.

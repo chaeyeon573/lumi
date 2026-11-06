@@ -483,3 +483,11 @@ export function isExhibitEvent(o: { title: string; tags?: string[]; startTime?: 
   if (/\bexhibit(ion)?s?\b/i.test(o.title) && !/\b(game|match|vs\.?|versus|tournament|scrimmage|bout|meet|showcase)\b/i.test(o.title)) return true;
   return !o.startTime && (o.tags ?? []).some((t) => /^\s*exhibit/i.test(t));
 }
+
+/** 마감 달력 CSV 한 줄이 끝났나 — status=closed, 마감일이 지남, 또는 마감 없이 행사일이 지남 (2026-11-06: 지난 공고 16줄이 "Closed" 표시로 남아 있었다) */
+export function csvRowClosed(r: { status?: string; deadline?: string; date?: string }, today = new Date().toISOString().slice(0, 10)): boolean {
+  if ((r.status ?? '').trim().toLowerCase() === 'closed') return true;
+  const dl = (r.deadline ?? '').trim().slice(0, 10); const d = (r.date ?? '').trim().slice(0, 10);
+  if (dl) return dl < today;
+  return !!d && d < today;
+}

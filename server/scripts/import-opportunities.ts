@@ -12,6 +12,7 @@
  *   - PRUNE_DEMO=1 이면 CSV 에 있는 학교의 데모 시드 공고(링크가 example.com 이거나 없는 것)와 그에 딸린 저장 기록을 지운다
  */
 import { pacificToIso } from '../sources/ours';
+import { csvRowClosed } from '../sources/opportunities';
 import { readFileSync } from 'node:fs';
 import type { Opportunity, OpportunityType, Goal } from '@core/types';
 import { createStore, emptySnapshot } from '../store';
@@ -50,7 +51,8 @@ for (const r of rows) {
   if (!r.title || !r.url) { console.warn('skip row (title/url required):', r.title); continue; }
   const type = (TYPES.includes(r.type as OpportunityType) ? r.type : 'event') as OpportunityType;
   const id = `op_${r.school_id ? r.school_id.replace('s_', '') : 'all'}_${slug(r.title)}`;
-  if ((r.status ?? '').trim().toLowerCase() === 'closed') { if (existing.has(id)) retired.push(id); continue; }
+  // 닫힌 줄·마감이 지난 줄·행사가 끝난 줄은 앱에서 내린다 (CSV 줄은 그대로 둔다)
+  if (csvRowClosed(r)) { if (existing.has(id)) retired.push(id); continue; }
   const prev = existing.get(id);
   out.push({
     id, type, title: r.title, host: r.host || r.source_label || '', description: r.description || '',

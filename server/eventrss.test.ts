@@ -86,3 +86,15 @@ test('isExhibitEvent: exhibit titles and all-day items tagged exhibits are left 
   assert.equal(isExhibitEvent({ title: '“Parallel Visions”', tags: ['event', 'talk', ' open to the public', 'exhibits', 'lectures'] }), true);
   assert.equal(isExhibitEvent({ title: 'An Artists’ Talk & Reception featuring Art Hazelwood', startTime: '16:30', tags: ['exhibits'] }), false);
 });
+
+test('csvRowClosed: closed status, a passed deadline, or (no deadline) a passed date retire a calendar row', async () => {
+  const { csvRowClosed } = await import('./sources/opportunities');
+  const today = '2026-11-06';
+  assert.equal(csvRowClosed({ status: 'closed' }, today), true);
+  assert.equal(csvRowClosed({ deadline: '2026-11-02' }, today), true);
+  assert.equal(csvRowClosed({ deadline: '2026-11-04T14:00' }, today), true);
+  assert.equal(csvRowClosed({ deadline: '2026-11-06' }, today), false, 'deadline today is still open');
+  assert.equal(csvRowClosed({ deadline: '2027-01-06', date: '2026-10-01' }, today), false, 'an open deadline wins over an old date');
+  assert.equal(csvRowClosed({ date: '2026-10-17' }, today), true);
+  assert.equal(csvRowClosed({}, today), false, 'no date known: keep (description says when)');
+});
