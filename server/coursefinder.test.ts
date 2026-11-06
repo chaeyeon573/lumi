@@ -12,7 +12,7 @@ import type { CatalogCourse } from '@core/api/types';
 import type { Course, User } from '@core/types';
 import * as seed from '@core/data/seed.en';
 import { browseCatalog, findCatalogRef, scoreCourse, searchCatalog } from '@core/data/catalog/courses';
-import { courseLevel, findCourses, findOverlap, isCourseAdded, lumiCountLabel, lumiCounts, meetingLine, orderDepartments, overlapLine, timeRange, toggleFavorite } from '@core/lib/coursefinder';
+import { capLine, classNoteLines, courseLevel, findCourses, findOverlap, isCourseAdded, isReservationLine, lumiCountLabel, lumiCounts, majorDepartment, meetingLine, noteLine, orderDepartments, overlapLine, popularOnLumi, prerequisiteLines, timeRange, toggleFavorite } from '@core/lib/coursefinder';
 import { berkeleySubject, berkeleytimeUrl, courseLinks, instructorNames, lectureSection, type SchoolCourseLinks } from '@core/lib/courseLinks';
 import { codeSlug } from '@core/lib/classmates';
 import { parseClassPage, createDetailsReader } from './sections';
@@ -237,4 +237,47 @@ test('browse list: one term, no attached sections or source ids; course lookup b
   assert.equal(findCatalogRef(all, 's_berkeley', { id: 'cc_m51_002' })?.title, 'Calculus I (formerly MATH 1A) (Lec 002)');
   assert.equal(findCatalogRef(all, 's_berkeley', { code: 'cs 61a', term: 'Spring 2027' })?.id, 'cc_sp');
   assert.equal(findCatalogRef(all, 's_stanford', { code: 'CS 61A' }), undefined);
+});
+
+// ─── 핑크 한 줄 · 수업 정보 노트 ──────────────────────────────────────────────
+test('note line: reserved-seat and eligibility lines never show; prereq first, then one class note, ~80 chars', () => {
+  for (const x of ['Students not in the Master of Engineering Program', 'Reserved for Haas undergraduates', 'Seats reserved for students with enrollment permission are not open.', 'Undergraduate Students: College of Engineering declared majors or Computer Science BA']) assert.ok(isReservationLine(x), x);
+  for (const x of ['MATH 1A or equivalent', 'Time conflicts are allowed', 'Lectures will be recorded']) assert.ok(!isReservationLine(x), x);
+  // CS 61A (real page): only an eligibility requisite → the first class note instead
+  assert.equal(noteLine({ requisites: ['Students not in the Master of Engineering Program'], notes: ['Time conflicts are allowed', 'Lectures will be recorded'] }), 'Time conflicts are allowed');
+  assert.equal(noteLine({ requisites: ['MATH 1A'], notes: ['Time conflicts are allowed'] }), 'Prereq: MATH 1A');
+  assert.equal(noteLine({ requisites: ['Prerequisites: MATH 1A'] }), 'Prereq: MATH 1A', 'no doubled label');
+  assert.equal(noteLine({ notes: ['Seats reserved for students in internal programs.', '**Enrollment is closed for Fall 2026**'] }), 'Enrollment is closed for Fall 2026', 'reserved-seat note skipped, markdown stars dropped');
+  assert.equal(noteLine({ requisites: ['Students not in the Master of Engineering Program'], notes: ['Seats reserved for students with enrollment permission are not open.'] }), null, 'nothing qualifies → no line');
+  assert.equal(noteLine({}), null);
+  assert.equal(noteLine(null), null);
+  // real DATA C100 requisite — long, capped at a word with "…"
+  const long = noteLine({ requisites: ['DATA C8 or STAT 20 with a C- or better, or Pass; and COMPSCI 61A, COMPSCI/DATA C88C, or ENGIN 7 with a C- or better, or Pass'] })!;
+  assert.ok(long.startsWith('Prereq: DATA C8 or STAT 20') && long.endsWith('…') && long.length <= 80, long);
+  assert.equal(capLine('short'), 'short');
+});
+
+test('class page rows: Prerequisites and Notes kept apart, both without reserved-seat lines', () => {
+  const d = { requisites: ['Students not in the Master of Engineering Program', 'MATH 1A'], notes: ['Lectures will be recorded', 'Seats reserved for students with enrollment permission are not open.'] };
+  assert.deepEqual(prerequisiteLines(d), ['MATH 1A']);
+  assert.deepEqual(classNoteLines(d), ['Lectures will be recorded']);
+  const real = parseClassPage(readFileSync(path.join(here, 'fixtures', 'berkeley-class-2026-fall-compsci-61a.html'), 'utf8'));
+  assert.deepEqual(prerequisiteLines(real), [], 'CS 61A has no real prerequisite');
+  assert.equal(classNoteLines(real).length, 5, 'the "Seats reserved …" note is dropped');
+});
+
+// ─── 빈 검색 ─────────────────────────────────────────────────────────────────
+test('empty search: major → its catalog department; Popular on Lumi only with 3+ courses at N ≥ 3', () => {
+  const depts = ['Electrical Engineering and Computer Sciences', 'Economics', 'Walter A. Haas School of Business', 'Data Science Undergraduate Studies', 'Statistics', 'Agricultural and Resource Economics'];
+  assert.equal(majorDepartment('Computer Science', depts), 'Electrical Engineering and Computer Sciences');
+  assert.equal(majorDepartment('Economics', depts), 'Economics', 'exact name beats a longer one containing it');
+  assert.equal(majorDepartment('Business (Haas)', depts), 'Walter A. Haas School of Business');
+  assert.equal(majorDepartment('Data Science', depts), 'Data Science Undergraduate Studies');
+  assert.equal(majorDepartment('Undeclared', depts), null);
+  assert.equal(majorDepartment('', depts), null);
+  assert.equal(majorDepartment('Underwater Basket Weaving', depts), null);
+  const counts = { cs61a: 5, cs61b: 3, datac100: 4, cs161: 2 };
+  assert.deepEqual(codes(popularOnLumi(CATALOG, counts)), ['CS 61A', 'DATA C100', 'CS 61B'], 'most first; N = 2 is not popular');
+  assert.deepEqual(popularOnLumi(CATALOG, { cs61a: 5, cs61b: 3 }), [], 'only two courses at N ≥ 3 → no section');
+  assert.deepEqual(codes(popularOnLumi(CATALOG, { math51: 9, cs61a: 3, cs61b: 3 })), ['MATH 51', 'CS 61A', 'CS 61B'], 'a course with two lecture sections appears once');
 });

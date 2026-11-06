@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { ArrowUpRight, ChevronDown } from 'lucide-react';
 import { lang } from '@core/i18n';
 import type { CatalogCourse, CatalogDetails } from '@core/api/types';
 import { api } from '@core/api';
 import { DAY_LABELS } from '@core/lib/timetable';
-import { LEVEL_LABELS, courseLevel, meetingLine } from '@core/lib/coursefinder';
+import { LEVEL_LABELS, classNoteLines, courseLevel, meetingLine, prerequisiteLines } from '@core/lib/coursefinder';
 import { courseLinks, lectureSection } from '@core/lib/courseLinks';
 import { courseTerm } from '@core/data/catalog/courses';
 import { openExternal } from '@/lib/native';
@@ -48,8 +48,9 @@ export function CourseInfoCard({ c, details }: { c: CatalogCourse; details: Cata
   const level = courseLevel(c.code);
   const sec = c.url ? lectureSection(c) : null;
   const classNo = details?.classNumber ?? c.classNumber;
-  const notes = [...(details?.requisites ?? []), ...(details?.notes ?? [])];
-  const rows: { label: string; value: string; pink?: boolean }[] = [
+  const prereqs = prerequisiteLines(details);
+  const notes = classNoteLines(details);
+  const rows: { label: string; value: string; clamp?: boolean }[] = [
     { label: L('Course', '과목'), value: `${c.code} · ${c.title}` },
     ...(c.instructor ? [{ label: L('Instructor', '교수'), value: c.instructor }] : []),
     ...(courseTerm(c) ? [{ label: L('Term', '학기'), value: courseTerm(c) }] : []),
@@ -58,7 +59,8 @@ export function CourseInfoCard({ c, details }: { c: CatalogCourse; details: Cata
     ...(c.meetings.length ? [{ label: L('Days & time', '요일·시간'), value: meetingLine(c.meetings, DAY_LABELS) }] : []),
     ...(c.location ? [{ label: L('Location', '장소'), value: c.location }] : []),
     ...(c.units != null ? [{ label: L('Units', '학점'), value: String(c.units) }] : []),
-    ...(notes.length ? [{ label: L('Notes', '노트'), value: notes.join('\n'), pink: !!details?.requisites?.length }] : []),
+    ...(prereqs.length ? [{ label: L('Prerequisites', '선수과목'), value: prereqs.join('\n'), clamp: true }] : []),
+    ...(notes.length ? [{ label: L('Notes', '노트'), value: notes.join('\n'), clamp: true }] : []),
   ];
   const shown = more ? rows : rows.slice(0, 4);
   return (
@@ -67,7 +69,7 @@ export function CourseInfoCard({ c, details }: { c: CatalogCourse; details: Cata
         {shown.map((r) => (
           <div key={r.label} className="py-3 grid grid-cols-[104px_1fr] gap-3">
             <dt className="text-[12.5px] text-ink-3 pt-px">{r.label}</dt>
-            <dd className={cn('text-[14px] leading-snug whitespace-pre-line [overflow-wrap:anywhere]', r.label === L('Course', '과목') ? 'font-bold text-ink' : 'text-ink', r.pink && 'text-sel-fg')}>{r.value}</dd>
+            <dd className={cn('text-[14px] leading-snug [overflow-wrap:anywhere]', r.label === L('Course', '과목') ? 'font-bold text-ink' : r.clamp ? 'text-ink-2' : 'text-ink')}>{r.clamp ? <Clamp text={r.value} /> : r.value}</dd>
           </div>
         ))}
       </dl>
@@ -77,6 +79,20 @@ export function CourseInfoCard({ c, details }: { c: CatalogCourse; details: Cata
         </button>
       )}
     </div>
+  );
+}
+
+/** 긴 학교 글 — 세 줄까지, 넘치면 "Show more" */
+function Clamp({ text }: { text: string }) {
+  const [open, setOpen] = useState(false);
+  const [over, setOver] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
+  useLayoutEffect(() => { const el = ref.current; if (el && !open) setOver(el.scrollHeight > el.clientHeight + 1); }, [text, open]);
+  return (
+    <>
+      <span ref={ref} className={cn('whitespace-pre-line', open ? 'block' : 'line-clamp-3')}>{text}</span>
+      {(over || open) && <button type="button" onClick={() => setOpen(!open)} className="mt-1 text-[13px] font-semibold text-sel-fg press">{open ? L('Show less', '접기') : L('Show more', '더 보기')}</button>}
+    </>
   );
 }
 

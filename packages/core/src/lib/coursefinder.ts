@@ -7,7 +7,7 @@
  *   - "N on Lumi" 는 수만 (이름 없음). 같은 수업 학생 보이기를 끈 사람·인증 안 한 사람·예시 프로필은 세지 않는다
  *   - 학부생에게는 대학원 수업을 둘러보기 목록에 밀어 넣지 않는다 (PRODUCT_TASTE). 직접 검색하면 찾을 수 있다
  */
-import type { CatalogCourse } from '@core/api/types';
+import type { CatalogCourse, CatalogDetails } from '@core/api/types';
 import type { Course, ID, User } from '@core/types';
 import { scoreCourse } from '@core/data/catalog/courses';
 import { buildClassIndex, codeSlug, courseCodeOf, courseTermOf } from './classmates';
@@ -152,4 +152,52 @@ export function isCourseAdded(timetable: Course[], c: Pick<CatalogCourse, 'code'
   const name = `${c.code} ${c.title}`.slice(0, 60);
   const slug = codeSlug(c.code), term = normalizeTermLabel(c.term ?? '');
   return timetable.some((x) => x.name === name || (!!x.code && codeSlug(x.code) === slug && (!term || courseTermOf(x) === term)));
+}
+
+// ─── 학교 노트 — 핑크 한 줄 (S029 펼친 줄) · 수업 정보의 Prerequisites / Notes 줄 (S030) ──────────
+/**
+ * 자리 배정·수강 자격 줄은 보여 주지 않는다 (owner 2026-11-06: "Students not in the Master of Engineering Program",
+ * "Seats reserved for …", "Undergraduate Students: College of Engineering declared majors …" 는 어색하다)
+ */
+export const isReservationLine = (s: string) =>
+  /reserv|enrollment permission|^students (not )?in (the )?|^(undergraduate|graduate) students\s*:|declared (majors?|students)|^open (only )?to\b|^restricted to\b/i.test(s.trim());
+const clean = (s: string) => s.replace(/\*+/g, '').replace(/\s+/g, ' ').trim();
+/** 학교 페이지 Requisites 중 진짜 선수과목만 */
+export const prerequisiteLines = (d: Pick<CatalogDetails, 'requisites'> | null | undefined) => (d?.requisites ?? []).map(clean).filter((x) => x && !isReservationLine(x));
+/** Class Notes 중 자리 배정 이야기가 아닌 것 */
+export const classNoteLines = (d: Pick<CatalogDetails, 'notes'> | null | undefined) => (d?.notes ?? []).map(clean).filter((x) => x && !isReservationLine(x));
+/** 약 max 자에서 자르고 "…" */
+export const capLine = (s: string, max = 80) => (s.length <= max ? s : `${s.slice(0, max - 1).replace(/[\s,;:·-]+\S*$/, '').trimEnd() || s.slice(0, max - 1)}…`);
+/**
+ * 줄의 핑크 한 줄: 선수과목("Prereq: MATH 1A") → 자리 배정이 아닌 노트 하나. 없으면 null (줄을 그리지 않는다).
+ * 성적 방식(P/NP)은 학교 수업 페이지에 없어 넣지 않는다 — 생기면 이 사이에 넣는다
+ */
+export function noteLine(d: Pick<CatalogDetails, 'requisites' | 'notes'> | null | undefined, en = true): string | null {
+  const pre = prerequisiteLines(d)[0];
+  if (pre) return capLine(`${en ? 'Prereq' : '선수과목'}: ${pre.replace(/^prerequisites?\s*:\s*/i, '')}`);
+  const note = classNoteLines(d)[0];
+  return note ? capLine(note) : null;
+}
+
+// ─── 검색칸이 비었을 때 (A–Z 목록 대신) ───────────────────────────────────────
+/** 학생이 적은 전공 → 그 학기 수업 목록의 학과 이름 ("Computer Science" → "Electrical Engineering and Computer Sciences"). 못 찾으면 null */
+export function majorDepartment(major: string | undefined, depts: string[]): string | null {
+  const m = (major ?? '').replace(/\(.*?\)/g, ' ').toLowerCase().replace(/[^a-z& ]+/g, ' ').replace(/\s+/g, ' ').trim();
+  if (m.length < 3 || /^(undeclared|undecided|other|none)$/.test(m)) return null;
+  const lower = depts.map((d) => [d, d.toLowerCase()] as const);
+  const exact = lower.find(([, d]) => d === m);
+  if (exact) return exact[0];
+  const contains = lower.filter(([, d]) => d.includes(m)).sort((a, b) => a[0].length - b[0].length);
+  if (contains.length) return contains[0][0];
+  const words = m.split(' ').filter((w) => w.length > 3 && !['and', 'studies', 'science', 'sciences'].includes(w));
+  const all = words.length ? lower.filter(([, d]) => words.every((w) => d.includes(w))).sort((a, b) => a[0].length - b[0].length) : [];
+  return all[0]?.[0] ?? null;
+}
+
+/** "Popular on Lumi" — N ≥ 3 인 과목이 3개 이상일 때만, 많은 순 (과목 하나에 강의 분반이 여럿이면 첫 분반만). 아니면 [] */
+export function popularOnLumi(courses: CatalogCourse[], counts: Record<string, number>, limit = 8): CatalogCourse[] {
+  const seen = new Set<string>();
+  const hot = courses.filter((c) => { const k = codeSlug(c.code); if ((counts[k] ?? 0) < 3 || seen.has(k)) return false; seen.add(k); return true; });
+  if (hot.length < 3) return [];
+  return hot.sort((a, b) => (counts[codeSlug(b.code)] ?? 0) - (counts[codeSlug(a.code)] ?? 0) || byCode(a, b)).slice(0, limit);
 }

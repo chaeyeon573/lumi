@@ -10,7 +10,7 @@ import { WeekGrid } from '@/components/timetable/WeekGrid';
 import { Btn, Chip, FilterBar, SearchField, type FilterGroup, type FilterValues, type GroupRenderer } from '@/components/ha';
 import { DAY_LABELS, todayIdx } from '@core/lib/timetable';
 import { codeSlug, courseTermOf } from '@core/lib/classmates';
-import { LEVEL_LABELS, courseLevel, findCourses, findOverlap, isCourseAdded, lumiCountLabel, meetingLine, orderDepartments, overlapLine, toggleFavorite, type CourseLevel, type CourseSort } from '@core/lib/coursefinder';
+import { LEVEL_LABELS, courseLevel, findCourses, findOverlap, isCourseAdded, lumiCountLabel, majorDepartment, meetingLine, noteLine, orderDepartments, overlapLine, popularOnLumi, toggleFavorite, type CourseLevel, type CourseSort } from '@core/lib/coursefinder';
 import { courseLinks } from '@core/lib/courseLinks';
 import { openExternal } from '@/lib/native';
 import { cn } from '@core/lib/cn';
@@ -96,6 +96,28 @@ export function AddClassesPage() {
     return () => io.disconnect();
   }, [list, shown]);
 
+  // 검색칸이 비고 학과·단계도 안 골랐으면: A–Z 목록 대신 "내 전공 수업" → "Popular on Lumi", 둘 다 없으면 한 줄 안내
+  const [openReq, setOpenReq] = useState({ n: 0, focus: undefined as string | undefined });
+  const curated = useMemo(() => {
+    if (dq.trim() || values.dept || values.level) return null;
+    const out: { key: string; title: string; items: CatalogCourse[]; more?: { label: string; run: () => void } }[] = [];
+    const major = majorDepartment(me.affiliation.type === 'university' ? me.affiliation.department : undefined, depts.map((d) => d.name));
+    if (major) {
+      const all = findCourses(data.courses, { dept: major, undergrad });
+      if (all.length) out.push({ key: 'major', title: L(`${major} classes`, `${major} 수업`), items: all.slice(0, 8), more: all.length > 8 ? { label: L(`See all ${all.length}`, `${all.length}개 모두`), run: () => setValues((v) => ({ ...v, dept: major })) } : undefined });
+    }
+    const popular = popularOnLumi(data.courses, data.counts);
+    if (popular.length) out.push({ key: 'popular', title: L('Popular on Lumi', 'Lumi 에서 많이 듣는 수업'), items: popular });
+    return out;
+  }, [dq, values.dept, values.level, data.courses, data.counts, depts, me.affiliation, undergrad]); // eslint-disable-line react-hooks/exhaustive-deps
+  const row = (c: CatalogCourse) => (
+    <CourseRow key={c.id} c={c} count={data.counts[codeSlug(c.code)]} open={open === c.id} added={isCourseAdded(timetable, c)}
+      overlap={open === c.id && overlap ? overlapLine(overlap, DAY_LABELS, en) : null}
+      picked={open === c.id ? pickedSections : []} onPickSections={setPickedSections}
+      onToggle={() => setOpen(open === c.id ? null : c.id)} onAdd={() => doAdd(c)}
+      onPage={() => nav(`/classes/course/${encodeURIComponent(c.id)}`)} schoolId={schoolId} />
+  );
+
   const close = () => (window.history.length > 1 ? nav(-1) : nav('/schedule', { replace: true }));
   const doAdd = async (c: CatalogCourse) => {
     try { await add(c, pickedSections); setAddedHere((n) => n + 1); setPickedSections([]); data.refreshCounts(); } catch { /* run 이 오류 토스트 */ }
@@ -119,7 +141,7 @@ export function AddClassesPage() {
         <div ref={searchRef}>
           <SearchField placeholder={L('CS 61A, 61a, or class number', '과목 코드 · 번호 · 이름')} value={q} onChange={(x) => { setQ(x); setOpen(null); }} />
         </div>
-        <FilterBar groups={groups} values={values} count={count} renderGroup={renderGroup} onApply={(next) => { setValues(next); setOpen(null); }} />
+        <FilterBar groups={groups} values={values} count={count} renderGroup={renderGroup} openRequest={openReq} onApply={(next) => { setValues(next); setOpen(null); }} />
       </div>
 
       <div ref={listRef} className="flex-1 min-h-0 overflow-y-auto overscroll-contain mt-2 pb-24" aria-busy={data.loading}>
@@ -132,18 +154,26 @@ export function AddClassesPage() {
         ) : (
           <>
             {data.error && <p className="px-4 py-3 text-[13.5px] text-ink-2">{L('We couldn’t load the class list. You can add a class yourself.', '수업 목록을 불러오지 못했어요. 직접 넣을 수 있어요.')}</p>}
-            {!data.error && list.length === 0 && <p className="px-4 pt-2 text-[14px] text-ink-2">{dq.trim() ? L(`No class matches “${dq.trim()}”.`, `“${dq.trim()}”에 맞는 수업이 없어요.`) : L('No classes with these filters.', '이 조건의 수업이 없어요.')}</p>}
-            <ul className="divide-y divide-line border-y border-line" role="list">
-              {list.slice(0, shown).map((c) => (
-                <CourseRow key={c.id} c={c} count={data.counts[codeSlug(c.code)]} open={open === c.id} added={isCourseAdded(timetable, c)}
-                  overlap={open === c.id && overlap ? overlapLine(overlap, DAY_LABELS, en) : null}
-                  picked={open === c.id ? pickedSections : []} onPickSections={setPickedSections}
-                  onToggle={() => setOpen(open === c.id ? null : c.id)} onAdd={() => doAdd(c)}
-                  onPage={() => nav(`/classes/course/${encodeURIComponent(c.id)}`)} schoolId={schoolId} />
-              ))}
-            </ul>
-            {shown < list.length && <div ref={sentinel} className="h-10" aria-hidden />}
-            {shown >= list.length && (
+            {!data.error && curated && (
+              curated.length ? curated.map((sec) => (
+                <section key={sec.key} className="mb-4">
+                  <div className="flex items-baseline gap-2 px-4 pt-1 pb-2">
+                    <h2 className="flex-1 min-w-0 text-[15px] font-bold leading-snug">{sec.title}</h2>
+                    {sec.more && <button onClick={sec.more.run} className="shrink-0 text-[13px] font-semibold text-sel-fg press">{sec.more.label}</button>}
+                  </div>
+                  <ul className="divide-y divide-line border-y border-line" role="list">{sec.items.map(row)}</ul>
+                </section>
+              )) : (
+                <div className="px-6 pt-6 text-center">
+                  <p className="text-[14.5px] text-ink-2 leading-snug">{L('Type a course code like CS 61A or a class number', 'CS 61A 같은 과목 코드나 수업 번호를 쳐 보세요')}</p>
+                  <Btn variant="outline" size="sm" className="mt-4" onClick={() => setOpenReq((r) => ({ n: r.n + 1, focus: 'dept' }))}>{L('Browse by department', '학과로 찾기')}</Btn>
+                </div>
+              )
+            )}
+            {!data.error && !curated && list.length === 0 && <p className="px-4 pt-2 text-[14px] text-ink-2">{dq.trim() ? L(`No class matches “${dq.trim()}”.`, `“${dq.trim()}”에 맞는 수업이 없어요.`) : L('No classes with these filters.', '이 조건의 수업이 없어요.')}</p>}
+            {!curated && <ul className="divide-y divide-line border-y border-line" role="list">{list.slice(0, shown).map(row)}</ul>}
+            {!curated && shown < list.length && <div ref={sentinel} className="h-10" aria-hidden />}
+            {(curated || shown >= list.length) && (
               <div className="px-4 pt-5 pb-2 text-center">
                 <button onClick={() => nav('/schedule/classes/manual')} className="text-[14px] font-semibold text-sel-fg press">{L('Can’t find it? Add it yourself', '못 찾겠어요? 직접 넣기')}</button>
               </div>
@@ -220,7 +250,7 @@ function Expanded({ c, schoolId, added, overlap, picked, onPickSections }: {
     api.catalog.sections(schoolId, c.id).then((s) => alive && setSections(s)).catch(() => alive && setSections([]));
     return () => { alive = false; };
   }, [schoolId, c.id]);
-  const note = details?.requisites?.length ? details.requisites.join(' · ') : details?.notes?.[0];
+  const note = noteLine(details, en);
   const kinds = [...new Set((sections ?? []).map((s) => s.kind))];
   const toggle = (s: CatalogSection) => onPickSections(picked.some((x) => x.label === s.label) ? picked.filter((x) => x.label !== s.label) : [...picked.filter((x) => x.kind !== s.kind), s]);
   return (

@@ -111,7 +111,7 @@ export function parseClassPage(html: string): CatalogDetails {
   if (num) out.classNumber = num;
   const rules = /id="section-rules-requirements"[\s\S]*?<div class="section-content">([\s\S]*?)<\/section>/.exec(html)?.[1] ?? '';
   const req = /<h3>\s*Requisites\s*<\/h3>\s*<ul>([\s\S]*?)<\/ul>/.exec(rules)?.[1];
-  if (req) { const r = lines(req).map((x) => x.slice(0, 200)); if (r.length) out.requisites = r.slice(0, 6); }
+  if (req) { const r = lines(req).map((x) => x.slice(0, 500)); if (r.length) out.requisites = r.slice(0, 6); }
   const notesSec = /id="section-class-notes"[\s\S]*?<div class="section-content">([\s\S]*?)<\/section>/.exec(html)?.[1] ?? '';
   const full = /<div class="full">([\s\S]*?)<a [^>]*summary-toggle/.exec(notesSec)?.[1] ?? notesSec.replace(/<a [^>]*summary-toggle[\s\S]*?<\/a>/g, '');
   const n = lines(full).map((x) => x.slice(0, 400));

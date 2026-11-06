@@ -1,4 +1,4 @@
-import { useId, useLayoutEffect, useRef, useState, type KeyboardEvent, type PointerEvent, type ReactNode } from 'react';
+import { useEffect, useId, useLayoutEffect, useRef, useState, type KeyboardEvent, type PointerEvent, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { ChevronDown, Filter, X } from 'lucide-react';
 import { lang } from '@core/i18n';
@@ -16,12 +16,15 @@ const en = lang === 'en';
  * 값은 부르는 쪽이 들고 있다 (Explore 는 URL) — 시트에서 "Show N results" 를 눌러야 onApply.
  * count(draft) 는 목록과 같은 거르기 함수로 센다 (부르는 쪽 책임).
  */
-export function FilterBar({ groups, values, onApply, count, className, renderGroup }: {
+export function FilterBar({ groups, values, onApply, count, className, renderGroup, openRequest }: {
   groups: FilterGroup[]; values: FilterValues; onApply: (next: FilterValues) => void; count: (draft: FilterValues) => number; className?: string;
   /** 칩 대신 다른 고르기를 그릴 묶음 (S029 학과: 검색 + ★ 목록) — null 이면 기본 칩 */
   renderGroup?: GroupRenderer;
+  /** 화면의 다른 버튼이 시트를 연다 (S029 빈 검색의 "Department" 버튼) — n 이 바뀔 때마다 focus 묶음으로 */
+  openRequest?: { n: number; focus?: string };
 }) {
   const [open, setOpen] = useState<{ focus?: string } | null>(null);
+  useEffect(() => { if (openRequest?.n) setOpen({ focus: openRequest.focus }); }, [openRequest?.n]); // eslint-disable-line react-hooks/exhaustive-deps
   const cur = pickValues(groups, values);
   const chips = appliedChips(groups, cur);
   const sort = sortLabel(groups, cur);
