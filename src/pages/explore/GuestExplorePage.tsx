@@ -4,7 +4,7 @@ import { ArrowUpRight, Bookmark, Users } from 'lucide-react';
 import { lang } from '@core/i18n';
 import { api } from '@core/api';
 import type { Opportunity, Organization } from '@core/types';
-import type { PublicExplore } from '@core/lib/publicexplore';
+import { closesToday, homeRegionOf, nearCampus, type PublicExplore } from '@core/lib/publicexplore';
 import { categoriesOf } from '@core/lib/listings';
 import { recruitmentLabel } from '@core/lib/orglinks';
 import { useAppStore } from '@core/store/useAppStore';
@@ -103,8 +103,12 @@ function GuestList({ section, data, params, setParams, onSave, onPeek }: {
   useEffect(() => setShown(PAGE), [q, sort, type]);
   const listings = useMemo(() => {
     if (section === 'clubs') return [];
-    const base = section === 'events' ? data.events.filter((o) => inEventKind(o, type)) : data.opportunities.filter((o) => inOppType(o, type));
-    return sortListings(base.filter((o) => listingMatches(o, q)), sort);
+    // a visitor has no profile to rank by: listings that close today are hidden (nothing left to do with them), and
+    // Recommended puts campus / home-region (Bay Area) ones first (lib/publicexplore, same rule as the server's cap) — not a national listing in DC (ux-sim 2026-11-06, guest-internships-far-and-closing)
+    const base = section === 'events' ? data.events.filter((o) => inEventKind(o, type)) : data.opportunities.filter((o) => inOppType(o, type) && !closesToday(o));
+    const home = data.school ? homeRegionOf(data.school.name) : undefined;
+    const near = (o: Opportunity) => (data.school && nearCampus(o, data.school.id, home) ? 1 : 0);
+    return sortListings(base.filter((o) => listingMatches(o, q)), sort, section === 'events' ? undefined : near);
   }, [section, data, type, q, sort]);
   const kind = clubKindOf(type);
   const clubs = useMemo(() => (section === 'clubs' ? sortClubs(data.clubs.filter((o) => kind.types.includes(o.type) && clubMatches(o, q)), sort) : []), [section, data, kind, q, sort]);

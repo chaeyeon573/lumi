@@ -15,6 +15,8 @@ import * as seed from '@core/data/seed.en';
 import { t } from '@core/i18n';
 import { createEngine } from '@core/api/engine';
 import { orgJoinState } from '@core/lib/orgjoin';
+import { schoolTz } from '@core/lib/campusclock';
+import { publicExplore } from '@core/lib/publicexplore';
 import { ruleAllows } from './together-rules';
 import { orgRules, publicExploreFor } from './orgs';
 import { patchFor } from './view';
@@ -204,4 +206,27 @@ test('public explore: only open, official listings and the school’s club direc
   assert.equal(db.organizations[0].memberIds.length, 1);
   // unknown / not-open school
   assert.equal(publicExploreFor(db, 's_nowhere').school, null);
+});
+
+test('public explore: a visitor sees campus / Bay Area listings first and nothing that closes today', () => {
+  const today = new Intl.DateTimeFormat('en-CA', { timeZone: schoolTz(), year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  const intern = (id: string, extra: Partial<Opportunity>) => listing({ id, type: 'internship', date: undefined, schoolId: undefined, ...extra });
+  const opps = [
+    intern('op_dc_today', { location: 'Washington, DC', deadline: today }),
+    intern('op_dc_soon', { location: 'Washington, DC', deadline: '2099-01-01' }),
+    intern('op_sf_rolling', { location: 'San Francisco, CA' }), // no deadline — used to sort last and fall off the cap
+    intern('op_campus', { schoolId: 's_berkeley', deadline: '2099-06-01' }),
+  ];
+  const { db } = setup([], opps);
+  assert.deepEqual(publicExploreFor(db, 's_berkeley').opportunities.map((o) => o.id), ['op_campus', 'op_sf_rolling', 'op_dc_soon']);
+});
+
+test('public explore: the cap is per kind — campus study-abroad pages do not push internships out', () => {
+  const opps = [
+    ...Array.from({ length: 5 }, (_, i) => listing({ id: `op_ex${i}`, type: 'exchange', date: undefined, deadline: '2099-01-01' })),
+    listing({ id: 'op_intern', type: 'internship', date: undefined, schoolId: undefined, location: 'Oakland, CA' }),
+  ];
+  const { db } = setup([], opps);
+  const out = publicExplore(db, 's_berkeley', { maxPerType: 2, maxOpportunities: 3 });
+  assert.deepEqual(out.opportunities.map((o) => o.id), ['op_ex0', 'op_ex1', 'op_intern']);
 });

@@ -104,12 +104,13 @@ export function locationOf(o: Pick<Opportunity, 'location' | 'description' | 'ty
 /** 캠퍼스(학교 시간대) 날짜 YYYY-MM-DD — 날짜만 있으면 그대로 */
 export const campusDate = (iso: string) => (/T/.test(iso) ? new Intl.DateTimeFormat('en-CA', { timeZone: schoolTz(), year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(iso)) : iso.slice(0, 10));
 
-/** 목록 오른쪽 배지 — 마감 D-day, 없으면 행사 날짜, 없으면 올라온 지 며칠 */
+/** 목록 오른쪽 배지 — 마감 D-n (당일은 Closes today), 없으면 행사 날짜, 없으면 올라온 지 며칠 */
 export function badgeOf(o: Pick<Opportunity, 'deadline' | 'date' | 'postedAt' | 'createdAt' | 'type'>, en: boolean): { text: string; tone: 'urgent' | 'soon' | 'normal' | 'muted' } {
   if (o.deadline) {
     const d = daysUntil(o.deadline);
     if (d < 0) return { text: en ? 'Closed' : '마감', tone: 'muted' };
-    return { text: d === 0 ? 'D-Day' : `D-${d}`, tone: d <= 3 ? 'urgent' : d <= 14 ? 'soon' : 'normal' };
+    // 마감 당일은 'D-Day' 대신 말로 — 처음 보는 학생이 'D-Day' 를 몰랐다 (ux-sim 2026-11-06). foryou 이유 줄과 같은 말
+    return { text: d === 0 ? (en ? 'Closes today' : '오늘 마감') : `D-${d}`, tone: d <= 3 ? 'urgent' : d <= 14 ? 'soon' : 'normal' };
   }
   if (o.date) {
     // 학교 행사 목록의 날짜는 UTC 시각("2026-10-16T02:00Z")으로 온다 — 캠퍼스(태평양) 날짜로 읽어야 저녁 행사가 다음 날로 밀리지 않는다
