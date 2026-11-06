@@ -45,7 +45,7 @@ export const legacyRoutes = (
   <>
     <Route path="/meet" element={<Redirect to="/social" />} />
     <Route path="/meet/meetups" element={<Redirect to="/social/meetups" />} />
-    <Route path="/meet/more" element={<Redirect to="/social/more" />} />
+    <Route path="/meet/more" element={<Redirect to="/social" />} />
     <Route path="/people" element={<Redirect to="/social/people" />} />
     <Route path="/people/explore" element={<Redirect to="/social/people/explore" />} />
     <Route path="/feed" element={<Redirect to="/social/feed" />} />
