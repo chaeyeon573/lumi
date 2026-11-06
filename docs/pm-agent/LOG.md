@@ -2405,3 +2405,9 @@
 - Spot check courses: 5 random Tulane Spring 2027 classes (AFRS 7812, NSCI 3310, FINE 4002, ENLS 2400, ANTH 2814) match the live Tulane schedule.
 - scan-club-sites batch 2 (3,000 sites, 2,404 opened): 6 taken-over domains set aside — Georgia Tech 180 Degrees Consulting, Cru, Phi Sigma Kappa, Startup Exchange; MSU Delta Sigma Pi; NC State Maitri (slot/togel/casino pages). 11,602 left.
 - scan-club-sites batch 3 (3,000 sites, 2,288 opened): 3 more set aside — Purdue MaClure Cooperative House (weebly page now a slot site), Rice Business Society, Tulane Journal. 8,602 left.
+
+## 2026-11-06 23:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: Indiana Dance Marathon, Yale Clean Energy Collaborative, CMU EMS fine; UT First-Gen Longhorns and Tulane Summer Lyric Theatre pages answered 503 (their servers).
+- Spot check courses: 5 random USC Spring 2027 classes (CJ 540 Sec 70165, BISC 483, PHYS 430, POSC 439 Sec 52226, DMM 540 Sec 20241) match the live USC schedule.
+- scan-club-sites batch 4 (4,500 sites, 3,584 opened): 12 hits, 11 real (slot/togel/casino/lottery/Chinese video pages) and **1 false positive**: UChicago Model UN's site title is "ChoMUN XXX" (Roman numeral, 30th conference) and the old `xxx` keyword in isHijackedPage caught it. Link restored and its deadlinks entry removed; `xxx` taken out of the rule (adult sites are still caught by porn/escort); test added. All hits from earlier batches re-read: all real spam. 4,102 sites left.
