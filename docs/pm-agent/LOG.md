@@ -2296,3 +2296,4 @@
   - The search matches the letter anywhere in the code (course=D also returns EDUC, TIDE), so a letter keeps only codes starting with it; 243 duplicate rows from the trial were merged.
   - Lab, recitation and discussion sections are left out (same as other readers); studios and seminars stay.
   - Fall 2026 A-D: 1,605 classes in s_tulane.courses.json. 5 random ones (EDUC 2000-04, NSCI 3300-02, ARST 2080-01, TIDE 1545-02, ARCH 5051-03) match the live Fall 2026 schedule. Tests: 2 fixtures (browser-saved and raw server HTML).
+  - Second batch the same hour: Fall 2026 E-L done; 1,956 classes in the file (Fall 12/26 letters).
