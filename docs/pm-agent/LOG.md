@@ -2334,3 +2334,10 @@
 - Spot check clubs: UF John Marshall Bar Association, Purdue Nintendo, Vanderbilt Global Brigades fine; UCR InterVarsity's linktree is titled "Fall Conference" (their own page); UGA CGSO site answered 503 (temporary).
 - Spot check courses: first pick of 5 Tulane Spring 2027 classes showed a bug in my own batch script: Spring ids end with the term tag (`_sp27`), and the script took the section from the last id part, so 827 Spring titles read "(Sec SP27)". Times were right. Fixed the script (section is the part after the term code) and repaired the titles in the file (1,089 by the end of the batch; no Fall title changed, checked against the last commit). Re-check of 5 Spring classes (SPHL 8080-92, MKTG 3010-09, BMEN 6970-01, SISE 3011-02, SRED 4936-01) against the live Tulane schedule: all match.
 - Tulane class times done: Fall 2026 2,399 + Spring 2027 2,349 = 4,748 classes. Queue item marked [x].
+
+## 2026-11-06 12:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Owner asked (chat) which AI features to add. Answer with 4 options in order and 2 things not to do is in QUESTIONS.md (2026-11-06) for a decision.
+- Spot check clubs: Michigan Black Students in Aerospace, UGA Habitat, Notre Dame The Juggler, UVA Sketch fine; UMN Kappa Eta Kappa's site shows only "Coming Soon" (placeholder on their own domain, left as is).
+- Spot check courses: 5 random Caltech classes (MedE/EE 204, ME 040, ACM/IDS 216, ME/Ge/Ae 266A, Ph 127A) match the live Caltech schedule.
+- Class times for the 41 schools with none: tried the public schedules of Penn, Dartmouth, Notre Dame, Yale, Purdue, Clemson, UGA, Northwestern, Wisconsin, Michigan, UT Austin, Georgetown. None usable from this container: TLS fails at the proxy even with the session CA bundle (6 hosts), bot checks (Yale 202), 403 blocks (Wisconsin, Michigan), login (UT Austin, Georgetown). Blocked, not bypassed; details in DATA_SOURCES. The FOSE schools are already configured and need a run from Railway (open QUESTIONS item).
