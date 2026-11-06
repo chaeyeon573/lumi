@@ -2398,3 +2398,9 @@
   - Second taken-over domain today in 10 samples: added a queue item for a one-time scan of all club Website links.
 - Spot check courses: 5 random UMD Spring 2027 classes; times all match. GEOG 663 showed a title difference only: the UMD lookup stripped only 4-digit section labels, so "(Sec PGS1)" was doubled on re-check. Lookup now strips any section label; re-check matches. Stored data was right.
 - New `npm run -s scan-club-sites -- 1500`: opens each club Website link once (6 at a time, 15 s limit, one request per site), sets aside only taken-over domains (isHijackedPage) into deadlinks; unreachable sites are left to the weekly dead-link check. First batch: 1,500 sites tried, 1,263 opened, 1 taken over (BU The Politica → Indonesian lottery spam "Togel SDY"). 14,602 left.
+
+## 2026-11-06 22:33 UTC
+- No Codex requests, no owner answers, no new deploy-branch commits.
+- Spot check clubs: GWU Vocal Chords Journal, UCR School on Wheels, UMN Engineering World Health (Google Site), USC Students Demand Action, Tulane Chess Club fine (5/5).
+- Spot check courses: 5 random Tulane Spring 2027 classes (AFRS 7812, NSCI 3310, FINE 4002, ENLS 2400, ANTH 2814) match the live Tulane schedule.
+- scan-club-sites batch 2 (3,000 sites, 2,404 opened): 6 taken-over domains set aside — Georgia Tech 180 Degrees Consulting, Cru, Phi Sigma Kappa, Startup Exchange; MSU Delta Sigma Pi; NC State Maitri (slot/togel/casino pages). 11,602 left.
