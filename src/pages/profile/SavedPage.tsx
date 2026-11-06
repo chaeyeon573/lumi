@@ -1,3 +1,4 @@
+import { listingIcon } from '@/lib/icons';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Bookmark, Users } from 'lucide-react';
 import { api } from '@core/api';
@@ -48,7 +49,7 @@ export function SavedPage() {
       )}
       <div className="space-y-3">
         {tab !== 'clubs' && listings.map((o) => (
-          <ListingCard key={o.id} cover={o.cover.url ? o.cover : undefined} badge={OPP_TYPE_LABELS[o.type]} badgeTone={o.type === 'event' ? CATEGORY_TONE.events : CATEGORY_TONE.opportunities}
+          <ListingCard key={o.id} cover={o.cover.url ? o.cover : undefined} icon={listingIcon(o.type)} badge={OPP_TYPE_LABELS[o.type]} badgeTone={o.type === 'event' ? CATEGORY_TONE.events : CATEGORY_TONE.opportunities}
             title={o.title} meta={[o.deadline ? `${en ? 'Due' : '마감'} ${formatDate(o.deadline)}` : o.date ? formatDate(o.date) : '', o.host].filter(Boolean).join(' · ')}
             sourceUrl={o.sourceUrl || undefined} saved onSave={() => run(() => api.opportunities.toggleSave(o.id, me), en ? 'Removed from Saved' : '저장에서 뺐어요')}
             onClick={() => nav(`/opportunities/${o.id}`)} />

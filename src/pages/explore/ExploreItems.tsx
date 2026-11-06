@@ -1,3 +1,4 @@
+import { listingIcon } from '@/lib/icons';
 import { useMemo, useState, type ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarDays, Users } from 'lucide-react';
@@ -31,7 +32,7 @@ export function ExploreControls({ placeholder, q, onQ, sort, onSort, children }:
 export function ListingItem({ o, saved, onSave, onOpen, people = true }: { o: Opportunity; saved?: boolean; onSave?: () => void; onOpen: () => void; people?: boolean }) {
   return (
     <div>
-      <ListingCard cover={o.cover?.url ? o.cover : undefined} badge={badgeLabel(o)} badgeTone={badgeTone(o)} title={o.title} meta={listingMeta(o)}
+      <ListingCard cover={o.cover?.url ? o.cover : undefined} icon={listingIcon(o.type)} badge={badgeLabel(o)} badgeTone={badgeTone(o)} title={o.title} meta={listingMeta(o)}
         sourceUrl={o.sourceUrl || undefined} saved={saved} onSave={onSave} onClick={onOpen} />
       {people && <ListingPeople o={o} />}
     </div>

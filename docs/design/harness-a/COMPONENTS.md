@@ -84,7 +84,7 @@ Radii: cards 20px, icon tiles 14px, chips / buttons fully round. Cards are `surf
 | `Badge({tone})` | "Campus event", "Source verified", "Coffee" | |
 | `CategoryTile` + `CategoryGrid` | Home 2×2 | use `CATEGORY_TONE`. |
 | `RowCard({tone, icon, title, sub, right?, badge?, onClick?})` | "Make room for a good plan ›" | chevron appears when clickable. |
-| `ListingCard({cover, badge, badgeTone, title, meta, sourceUrl, saved, onSave, onClick})` | S017 event/opportunity card | 88px image (or a tinted block when there is no photo — never invent one), "View source ↗" only with a real URL. |
+| `ListingCard({cover, icon, badge, badgeTone, title, meta, sourceUrl, saved, onSave, onClick})` | S017 event/opportunity card | 88px image, or a tinted block with the type icon (`listingIcon(o.type)` from `src/lib/icons`) when there is no photo — never invent one. "View source ↗" only with a real URL. |
 | `MeetupCard({tone, icon, badge, title, meta, people, footnote, action, onClick})` | S037 "Coffee after class … View meetup" | `people` are real participants only. |
 | `AvatarStack` | overlapping faces | |
 | `PersonCard({avatar, name, meta, bio, action})` | S039 "Jordan · Second-year · Design   [Add Friend]" | `action` = a `Btn size="sm" variant="outline"`. |

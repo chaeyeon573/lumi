@@ -1,3 +1,4 @@
+import { listingIcon } from '@/lib/icons';
 import { useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { BookOpen, CalendarClock, CalendarDays, Coffee, Dumbbell, Plus, Sparkles } from 'lucide-react';
@@ -142,7 +143,7 @@ function EventItem({ o }: { o: Opportunity }) {
   const run = useAppStore((s) => s.run);
   const saved = !!useAppStore((s) => s.opportunityIntents).find((i) => i.opportunityId === o.id && i.userId === v.me.id)?.saved;
   return (
-    <ListingCard cover={o.cover.url ? o.cover : undefined} badge={OPP_TYPE_LABELS[o.type]} badgeTone={o.type === 'event' ? CATEGORY_TONE.events : CATEGORY_TONE.opportunities} title={o.title}
+    <ListingCard cover={o.cover.url ? o.cover : undefined} icon={listingIcon(o.type)} badge={OPP_TYPE_LABELS[o.type]} badgeTone={o.type === 'event' ? CATEGORY_TONE.events : CATEGORY_TONE.opportunities} title={o.title}
       meta={[o.date ? formatDate(campusDate(o.date)) : '', o.place?.name].filter(Boolean).join(' · ')} sourceUrl={o.sourceUrl || undefined}
       saved={saved} onSave={() => run(() => api.opportunities.toggleSave(o.id, v.me.id))} onClick={() => nav(`/opportunities/${o.id}`)} />
   );
