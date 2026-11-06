@@ -80,6 +80,7 @@ Order: Bay Area schools only. Never invent data; only official/public sources; v
 - [ ] QA sample every run (owner 2026-11-02): pick 5 clubs + 5 courses at random across schools, re-open the official source, compare name/links/times; log mismatches and fix the reader
 - [x] (owner 2026-11-02 "Do not put emoji": done in server/view.ts + preview — names lose trailing emoji, emoji logos become initials) Logos: Berkeley 202 clubs show a generic 🎯 placeholder and 458 names end with 💙 (as written in CalLink) — propose to owner: show initials instead of 🎯 and hide the trailing 💙 in display
 - [ ] Re-collect weekly (`collect:<id>` for each row) and commit only real changes
+- [ ] One-time scan of every club Website link for taken-over domains (11-06: 2 found in 10 random samples - W&M TBD Theatre → Chinese video site, BU Alpha Phi Omega → Vietnamese football streams). The weekly enrich step only opens sites of clubs missing Instagram+Facebook. Plan: a budgeted script over all ~16k Website links (one request per site, many hosts so no single site is flooded), move hits (isHijackedPage / isSignInPage) to deadlinks.
 - [ ] Stanford class probe result on Railway (`probe:s_stanford` in /api/agent/status)
 - [ ] SJSU class schedule recipe (sjsu.edu/classes/schedules/<term>.php) — test from the server via probe
 - [ ] UCSC class schedule recipe (pisa.ucsc.edu class search)

@@ -534,7 +534,7 @@ async function umdLookup(c: CatalogCourse): Promise<CatalogCourse | null> {
   const term = c.termCode ?? c.term;
   const html = await umdGet(`${UMD}/${term}/sections?courseIds=${c.code}`);
   // 다음 학기 수업은 id 에 학기 꼬리표(_sp27)가 붙어 있다 — 모을 때와 같이 붙여서 찾는다 (2026-11-06 검사에서 Spring 수업을 못 찾음)
-  return tagTerm(umdParseSections(html, term, new Map([[c.code, { title: c.title.replace(/ \(Sec \d{4}\)$/, ''), units: c.units }]])), umdLabel(term)).find((x) => x.id === c.id) ?? null;
+  return tagTerm(umdParseSections(html, term, new Map([[c.code, { title: c.title.replace(/ \(Sec [^)]+\)$/, ''), units: c.units }]])), umdLabel(term)).find((x) => x.id === c.id) ?? null;
 }
 
 // ─── 플랫폼 어댑터: 학교마다 호스트만 다르고 API 가 같은 제품들 ──────────────

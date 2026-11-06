@@ -88,8 +88,10 @@ export const isSignInPage = (html: string) => /<title>[^<]*(Google (Drive|Accoun
 /** 동아리 도메인이 만료돼 남의 손에 넘어가 도박·성인 스팸이 된 페이지 — 제목만 보고 보수적으로 (2026-11-05 NC State sveccs.org → "Slot Pulsa…") */
 // 중국어 불법 영상·도박 사이트로 넘어간 도메인 (W&M TBD Theatre: tbdtheatre.com → "小小影视 - 院线级高清影视免费畅享", 2026-11-06).
 // 영화 동아리 제목에 '电影' 만 있는 건 걸리지 않게 — 영상 낱말과 '무료·고화질·최신' 낱말이 같이 있거나, 도박 낱말일 때만
+// 베트남어 축구 중계·도박 사이트로 넘어간 도메인 (BU Alpha Phi Omega: apo-zu.org → "TieuLamTV - Trực tiếp Ngoại Hạng Anh 2026 miễn phí full HD", 2026-11-06)
+const VI_SPAM = /(trực tiếp|xem bóng đá|link xem).*(miễn phí|bóng đá|ngoại hạng|full hd)|nhà cái|cá cược|đá gà|xổ số|tài xỉu/i;
 const CJK_SPAM = /((影视|电影|热播|综艺|在线观看|追剧).*(免费|高清|最新|畅享))|((免费|高清|最新).*(影视|在线观看|热播))|博彩|娱乐城|彩票|成人视频/;
-export const isHijackedPage = (html: string) => { const raw = /<title[^>]*>([^<]*)<\/title>/i.exec(html)?.[1] ?? ''; const t = raw.toLowerCase(); return /\b(slot|slots|gacor|togel|judi|casino|poker online|sportsbook|betting|bet88|pulsa|maxwin|viagra|cialis|escort|porn|xxx)\b/.test(t) || CJK_SPAM.test(raw); };
+export const isHijackedPage = (html: string) => { const raw = /<title[^>]*>([^<]*)<\/title>/i.exec(html)?.[1] ?? ''; const t = raw.toLowerCase(); return /\b(slot|slots|gacor|togel|judi|casino|poker online|sportsbook|betting|bet88|pulsa|maxwin|viagra|cialis|escort|porn|xxx)\b/.test(t) || CJK_SPAM.test(raw) || VI_SPAM.test(raw); };
 export async function enrichFromWebsites(orgs: Organization[], fetchPage: (url: string) => Promise<string>, concurrency = 6): Promise<{ orgs: Organization[]; checked: number; found: number; droppedShared: string[]; deadLinks: number; deadList: { orgId: string; url: string }[] }> {
   orgs = orgs.map(relabelSocialWebsites);
   const want = orgs.filter((o) => o.links?.some((l) => l.label === 'Website') && !(o.links?.some((l) => l.label === 'Instagram') && o.links?.some((l) => l.label === 'Facebook')));

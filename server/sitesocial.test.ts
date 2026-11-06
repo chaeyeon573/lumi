@@ -116,4 +116,6 @@ test('isHijackedPage: an expired club domain now showing a gambling spam page is
   assert.equal(isHijackedPage('<html><head><title>Student Veterinary Emergency & Critical Care Society</title></head></html>'), false);
   assert.equal(isHijackedPage('<html><head><title>小小影视 - 院线级高清影视免费畅享 | 最新电影热播剧集综艺动漫漫画</title></head></html>'), true);
   assert.equal(isHijackedPage('<html><head><title>Chinese Film Club 中国电影社</title></head></html>'), false);
+  assert.equal(isHijackedPage('<html><head><title>TieuLamTV - Trực tiếp Ngoại Hạng Anh 2026 miễn phí full HD</title></head></html>'), true);
+  assert.equal(isHijackedPage('<html><head><title>Vietnamese Student Association - Hội Sinh Viên Việt Nam</title></head></html>'), false);
 });
