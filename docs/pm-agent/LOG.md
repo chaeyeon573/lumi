@@ -2266,6 +2266,6 @@
 - No Codex requests, no owner answers.
 - Harvard class times done: Fall 2026 170/170 and Spring 2027 161/161 subjects, 2,760 classes with times. Queue item marked [x]. Re-run `npm run -s harvard-courses` only when a new term is added.
 - Events refreshed for all 63 schools: 16,518 upcoming, no errors.
-- Jobs refreshed: 1,279 postings from 182/183 boards (internships 859, new grad 369, PhD 170, master's 78, postdoc 13). Target Workday answered 500 this time (kept from yesterday's file rules: not re-added). The 17 boards added 11-05 brought 18 student postings (Charles River Associates 8, Clinton Foundation 4, Patreon 3, Sierra Club 2, Axios 1); the others have no student-level openings today.
+- Jobs refreshed: 1,279 postings from 182/183 boards (internships 859, new grad 369, PhD 170, master's 78, postdoc 13). Target Workday answered 500 this time; its 8 postings from the previous file are kept (fetch-jobs keeps a failed board's last postings). The 17 boards added 11-05 brought 18 student postings (Charles River Associates 8, Clinton Foundation 4, Patreon 3, Sierra Club 2, Axios 1); the others have no student-level openings today.
 - Spot check courses: 5 random Rice classes (CHBE 418, PSYC 380, EDUC 565, CHEM 530, RELI 337) match the live Rice schedule.
 - Spot check clubs: W&M Judo, UChicago Engineering Society, Yale Choose Life fine. UC Davis Ascend (ascenducd.org) did not answer (proxy 502, looks like a dead domain) and Penn SHPE (fling.seas.upenn.edu) failed TLS from the container; both left for the weekly dead-link check.
