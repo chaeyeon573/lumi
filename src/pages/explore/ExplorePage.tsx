@@ -25,8 +25,8 @@ export function ExploreIndex() {
 
 /**
  * Explore 탭 (PDF S017 Events · S018 Opportunities · S019 Clubs) — 큰 제목 + 검색·알림·메시지, 밑줄 탭.
- * 칸마다 검색 + Recommended / Newest / Ending soon + 카드 (EventsList · OpportunitiesList · ClubsList).
- * 탭은 주소(/explore/:section), 검색·칩은 쿼리(?q · ?sort · ?type) — 상세에서 뒤로 오면 같은 칸·칩으로.
+ * 칸마다 검색 + 필터 한 줄(FilterBar → FilterSheet) + 카드 (EventsList · OpportunitiesList · ClubsList).
+ * 탭은 주소(/explore/:section), 검색·필터는 쿼리(?q · ?sort · ?type · ?region · ?when …) — 상세에서 뒤로 오면 같은 칸·필터로.
  * 탭을 바꾸면 검색·칩은 새로 (칸마다 칩 종류가 다르다).
  */
 export function ExplorePage() {

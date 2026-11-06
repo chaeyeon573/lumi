@@ -1,5 +1,5 @@
 /**
- * Explore lists (S017–S019, S089) — URL state, search, the three sort chips and the second chip rows.
+ * Explore lists (S017–S019, S089) — URL state, search, sorts and the filter vocabularies (the sheet itself: exploreFilters.ts).
  * Pure helpers: the signed-in lists (store data) and the signed-out list (GET /api/public/explore) share them,
  * so a guest and a student see the same order for the same data.
  */
@@ -9,40 +9,59 @@ import { audienceOf, badgeOf, campusDate, categoriesOf, eventKindsOf, locationOf
 import { daysUntil } from '@core/lib/recommend';
 import { formatDate, formatTime } from '@core/lib/format';
 import { ORG_TYPE_LABELS } from '@core/lib/labels';
-import type { Tone } from '@/components/ha';
+import type { Tone } from '@/components/ha/tones';
 
 const en = lang === 'en';
 
 /* ─────────────── URL ─────────────── */
 
 export type ExploreSort = 'recommended' | 'newest' | 'ending';
+/** "ending" reads "Closing soon" on Opportunities, "Soonest" on Events (an event doesn't close); Clubs have no third sort */
 export const SORTS: { key: ExploreSort; label: string }[] = [
   { key: 'recommended', label: en ? 'Recommended' : '추천' },
   { key: 'newest', label: en ? 'Newest' : '최신' },
-  { key: 'ending', label: en ? 'Ending soon' : '마감 임박' },
+  { key: 'ending', label: en ? 'Closing soon' : '마감 임박' },
 ];
 
-export interface ExploreQuery { q: string; sort: ExploreSort; type: string; region: string; kind: string }
+export type ExploreQuery = {
+  q: string; sort: ExploreSort;
+  /** Opportunities: internship · research … · Events: free_food · talk … (event kind) · Clubs: club · greek · lab · coop */
+  type: string;
+  /** Opportunities: ?region=Bay Area · ?kind=phd (PhD/MS) · ?due=week|month · ?saved=1 */
+  region: string; kind: string; due: string; saved: string;
+  /** Events: ?when=today|week|weekend */
+  when: string;
+};
 /**
  * ?q=…&sort=newest|ending&type=… (recommended / no type = absent) — and the old ?sub= links from BrowseTab.
  * Opportunities also keep ?region=Bay Area and ?kind=phd (the live BrowseTab's names, so its links still work).
+ * Saved used to be a type (?type=saved, ?sub=saved) — it is its own filter now (?saved=1) so it can go with a type;
+ * the old links still open Saved. Clubs' old ?type=all (every kind) is the same as no type now.
  */
 export function readExploreQuery(params: URLSearchParams): ExploreQuery {
   const s = params.get('sort');
   const sort: ExploreSort = s === 'newest' ? 'newest' : s === 'ending' || s === 'deadline' ? 'ending' : 'recommended';
   const region = params.get('region') ?? '';
   const sub = params.get('sub') ?? '';
+  const rawType = params.get('type') ?? LEGACY_SUB[sub] ?? '';
+  const when = params.get('when') ?? '';
+  const due = params.get('due') ?? '';
   return {
-    q: params.get('q') ?? '', sort, type: params.get('type') ?? LEGACY_SUB[sub] ?? '',
+    q: params.get('q') ?? '', sort, type: rawType === 'saved' || rawType === 'all' ? '' : rawType,
     region: (REGIONS as readonly string[]).includes(region) ? region : '', kind: params.get('kind') === 'phd' || sub === 'phd' ? 'phd' : '',
+    due: due === 'week' || due === 'month' ? due : '', saved: params.get('saved') === '1' || rawType === 'saved' ? '1' : '',
+    when: when === 'today' || when === 'week' || when === 'weekend' ? when : '',
   };
 }
-/** old BrowseTab chips (/profile/saved still sends ?sub=saved) */
+/** old BrowseTab chips (/profile/saved used to send ?sub=saved) */
 const LEGACY_SUB: Record<string, string> = { phd: 'internship', saved: 'saved', internship: 'internship', research: 'research', lab: 'research', scholarship: 'scholarship', funding: 'scholarship', hackathon: 'hackathon', startup: 'startup', exchange: 'exchange', free_food: 'free_food' };
 
+/** '' (and Recommended) = the key leaves the URL; ?sub= and the old ?type=saved go once anything is written */
 export function writeExploreQuery(params: URLSearchParams, patch: Partial<ExploreQuery>): URLSearchParams {
   const next = new URLSearchParams(params);
   next.delete('sub');
+  if (next.get('type') === 'saved' && !('saved' in patch)) next.set('saved', '1');
+  if (next.get('type') === 'saved' || next.get('type') === 'all') next.delete('type');
   for (const [k, v] of Object.entries(patch)) {
     if (!v || (k === 'sort' && v === 'recommended')) next.delete(k); else next.set(k, String(v));
   }
@@ -119,8 +138,8 @@ export function sortListings(list: Opportunity[], sort: ExploreSort, score?: (o:
   return xs.sort((a, b) => (score ? score(b) - score(a) : 0) || (a.type === 'event' ? when(a).localeCompare(when(b)) : due(a).localeCompare(due(b))));
 }
 
-/** second chip row on Opportunities (keeps BrowseTab's type filter) */
-export const OPP_TYPES: { key: Category | 'saved'; label: string }[] = [
+/** Type on Opportunities (BrowseTab's type filter) — the sheet shows the ones that have listings */
+export const OPP_TYPES: { key: Category; label: string }[] = [
   { key: 'internship', label: en ? 'Internships' : '인턴' },
   { key: 'research', label: en ? 'Research' : '연구' },
   { key: 'scholarship', label: en ? 'Scholarships' : '장학금' },
@@ -128,9 +147,9 @@ export const OPP_TYPES: { key: Category | 'saved'; label: string }[] = [
   { key: 'exchange', label: en ? 'Study abroad' : '교환학생' },
   { key: 'startup', label: en ? 'Startups' : '창업' },
 ];
-export const inOppType = (o: Opportunity, type: string) => !type || type === 'saved' || categoriesOf(o).includes(type as Category);
+export const inOppType = (o: Opportunity, type: string) => !type || categoriesOf(o).includes(type as Category);
 
-/** second chip row on Events — only kinds that exist in the list */
+/** Kind on Events — the sheet shows only kinds that exist in the list */
 export const EVENT_KINDS: { key: EventKind; label: string }[] = [
   { key: 'free_food', label: en ? 'Free food' : '무료 음식' },
   { key: 'talk', label: en ? 'Talks' : '강연' },
@@ -145,17 +164,16 @@ export const activityMatches = (a: Activity, q: string) => matches([a.title, a.d
 
 /* ─────────────── clubs ─────────────── */
 
-/** PDF S019 second row: Student Clubs · Greek Life · Research Labs · Co-op (councils sit with clubs) */
+/** Type on Clubs (PDF S019): Student Clubs · Greek Life · Research Labs · Co-op (councils sit with clubs). No type = every kind */
 export const CLUB_KINDS: { key: string; label: string; types: Organization['type'][] }[] = [
   { key: 'club', label: en ? 'Student Clubs' : '동아리', types: ['club', 'council'] },
   { key: 'greek', label: en ? 'Greek Life' : 'Greek', types: ['greek'] },
   { key: 'lab', label: en ? 'Research Labs' : '연구실', types: ['lab'] },
   { key: 'coop', label: en ? 'Co-op' : '코업', types: ['coop'] },
 ];
-export const clubKindOf = (key: string) => CLUB_KINDS.find((k) => k.key === key) ?? CLUB_KINDS[0];
+export const clubKindOf = (key: string) => CLUB_KINDS.find((k) => k.key === key);
 
-/** Clubs sort by Recommended / Newest only — "Ending soon" means nothing for a club (ux-sim 2026-11-06); old ?sort=ending → Recommended */
-export const CLUB_SORTS = SORTS.filter((s) => s.key !== 'ending');
+/** Clubs sort by Recommended / Newest only — "Closing soon" means nothing for a club (ux-sim 2026-11-06); old ?sort=ending → Recommended */
 export const clubSort = (sort: ExploreSort): ExploreSort => (sort === 'ending' ? 'recommended' : sort);
 export function sortClubs(list: Organization[], sort: ExploreSort, score?: (o: Organization) => number): Organization[] {
   const xs = list.map((o, i) => ({ o, i }));

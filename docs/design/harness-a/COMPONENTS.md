@@ -70,11 +70,21 @@ Radii: cards 20px, icon tiles 14px, chips / buttons fully round. Cards are `surf
 | `Btn({variant, size, full, loading, icon})` | navy pill / white outline pill / blue text | `primary` (lavender), `outline`, `link` (pink text), `danger`. Sizes `lg` 52 · `md` 44 · `sm` 36. |
 | `BottomCTA({leading?, note?})` | sticky bottom button bar (Continue, Going, Create Meetup …) | put a `Btn full size="lg"` inside; `leading` for `RoundIconBtn` (bookmark). |
 | `RoundIconBtn` | round bookmark button left of "Going" | |
-| `Chip({active, onClick, icon, size})`, `ChipRow({wrap})`, `ChoiceChips` | Recommended / Newest / Ending soon, Coffee / Study … | selected = `sel-soft` + `sel-line` border + `sel-fg` text. `ChipRow` scrolls sideways unless `wrap`. |
+| `Chip({active, onClick, icon, size})`, `ChipRow({wrap})`, `ChoiceChips` | Coffee / Study …, the chips inside FilterSheet | selected = `sel-soft` + `sel-line` border + `sel-fg` text. `ChipRow` scrolls sideways unless `wrap`. |
 | `SegTabs({tabs, value?, onChange?})` | underline tabs | each tab `{key, label, to?, count?}`. With `to` they are links (replace) — the URL owns the tab. |
 | `SearchField({placeholder, value, onChange \| onOpen})` | "Search events" | `onOpen` turns it into a button that opens `/search`. |
 | `FormField({label, hint})`, `TextInput({icon})`, `TextArea`, `SelectField({icon, value, placeholder, onClick})` | form rows (School email ✉, Verification code 🔒, Group type ▾) | `SelectField` opens a sheet you provide. |
 | `Switch` | toggle rows (S066, S085) | |
+
+### Filters (`Filters.tsx` + `filterModel.ts`) — owner 2026-11-06 (reference board: entry B, panel 1)
+| Component | Use | Notes |
+|---|---|---|
+| `FilterBar({groups, values, onApply, count})` | the one row under a list's search box (Explore S017–S019, S089) | `[sliders Filters (n)]` + only the applied filters as pink × chips (× clears that one). Nothing applied → just the button, plus the sort quietly on the right ("Recommended ▾", opens the sheet at Sort); a non-default sort stays on the right next to chips. Owns the sheet's open state; values live with the caller (Explore: the URL). |
+| `FilterSheet({open, groups, values, count, onApply, onClose, focus?})` | bottom sheet over the current screen | ✕ · "Filters" · **Reset** (back to defaults, draft only); sections of wrap chips (selected = pink, one per group, tap again to clear); sticky lavender **Show N results** — `count(draft)` live, disabled "No results" at 0. Picks are a draft until Show; Esc, swipe down on the handle/header, ✕ or the backdrop close without applying. Focus is trapped inside and returns to the opener; chips are buttons with `aria-pressed`; the count is announced (`aria-live`). |
+| `FilterGroup` / `FilterValues`, `appliedChips`, `toggleValue`, `resetValues`, `sortLabel`, `pickValues` | `filterModel.ts` — pure, no React | group `{key, title, options: {value, label, chip?}[], required?}`; `required` = the sort (always one on, not a chip). `chip` = shorter name for the applied chip ("Only saved (2)" → "Saved"). |
+
+The caller passes a `count` that runs **the same filter function as the list** (Explore: `src/pages/explore/exploreFilters.ts`
+`filterOpportunities` / `filterEvents` / `filterClubs`) — never a second copy of the rules. Tested in `server/explorefilters.test.ts`.
 
 ### Cards (`Cards.tsx`)
 | Component | PDF | Notes |

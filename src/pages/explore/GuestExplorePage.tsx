@@ -5,15 +5,13 @@ import { lang } from '@core/i18n';
 import { api } from '@core/api';
 import type { Opportunity, Organization } from '@core/types';
 import { closesToday, homeRegionOf, nearCampus, type PublicExplore } from '@core/lib/publicexplore';
-import { categoriesOf } from '@core/lib/listings';
 import { recruitmentLabel } from '@core/lib/orglinks';
 import { useAppStore } from '@core/store/useAppStore';
 import { BottomSheet } from '@/components/ui';
-import { BackHeader, PageTitle, SegTabs, Chip, ChipRow, BottomCTA, Btn, EmptyCard, ErrorScreen, LoadingCards, InfoNote, Badge } from '@/components/ha';
+import { BackHeader, PageTitle, SegTabs, BottomCTA, Btn, EmptyCard, ErrorScreen, LoadingCards, InfoNote, Badge } from '@/components/ha';
 import { ClubItem, ExploreControls, ListingItem, MoreButton } from './ExploreItems';
-import {
-  badgeLabel, badgeTone, ORG_BADGE, CLUB_KINDS, CLUB_SORTS, clubKindOf, clubSort, clubMatches, clubSub, EVENT_KINDS, inEventKind, inOppType, listingMatches, listingMeta, listingWhere, OPP_TYPES, PAGE, readExploreQuery, sortClubs, sortListings, writeExploreQuery,
-} from './exploreData';
+import { badgeLabel, badgeTone, ORG_BADGE, clubSort, clubSub, listingMeta, listingWhere, PAGE, readExploreQuery, sortClubs, writeExploreQuery, type ExploreQuery } from './exploreData';
+import { campusToday, clubGroups, eventGroups, filterClubs, filterEvents, filterOpportunities, opportunityGroups, sortEvents, sortOpportunities, type ExploreFilter } from './exploreFilters';
 
 const en = lang === 'en';
 const SECTIONS = ['events', 'opportunities', 'clubs'] as const;
@@ -21,7 +19,7 @@ type Section = typeof SECTIONS[number];
 const TITLE: Record<Section, string> = { events: en ? 'Events' : '행사', opportunities: en ? 'Opportunities' : '기회', clubs: en ? 'Clubs' : '동아리' };
 
 /**
- * Explore without an account (PDF S089) — the same Explore tabs, search and sort chips, read-only, from
+ * Explore without an account (PDF S089) — the same Explore tabs, search and filter sheet, read-only, from
  * GET /api/public/explore (official listings + the club directory, no people). Saving, details and joining ask
  * the visitor to join Lumi first. A signed-in person is sent to the real Explore.
  */
@@ -97,37 +95,36 @@ function GuestList({ section, data, params, setParams, onSave, onPeek }: {
   section: Section; data: PublicExplore; params: URLSearchParams; setParams: (p: URLSearchParams, o?: { replace?: boolean }) => void;
   onSave: () => void; onPeek: (x: { kind: 'listing'; o: Opportunity } | { kind: 'club'; o: Organization }) => void;
 }) {
-  const { q, sort, type } = readExploreQuery(params);
-  const set = (patch: Parameters<typeof writeExploreQuery>[1]) => setParams(writeExploreQuery(params, patch), { replace: true });
+  const query = readExploreQuery(params);
+  const { q, type } = query;
+  const sort = section === 'clubs' ? clubSort(query.sort) : query.sort;
+  const set = (patch: Partial<ExploreQuery>) => setParams(writeExploreQuery(params, patch), { replace: true });
   const [shown, setShown] = useState(PAGE);
-  useEffect(() => setShown(PAGE), [q, sort, type]);
+  const key = params.toString();
+  useEffect(() => setShown(PAGE), [key]);
+  const day = useMemo(() => campusToday(), []);
+  // a visitor has no profile to rank by: listings that close today are hidden (nothing left to do with them), and
+  // Recommended puts campus / home-region (Bay Area) ones first (lib/publicexplore, same rule as the server's cap) — not a national listing in DC (ux-sim 2026-11-06, guest-internships-far-and-closing)
+  const opps = useMemo(() => data.opportunities.filter((o) => !closesToday(o)), [data]);
+  const groups = useMemo(() => (section === 'events' ? eventGroups(data.events, query) : section === 'opportunities' ? opportunityGroups(opps, query) : clubGroups()),
+    [section, data, opps, type, query.region]); // eslint-disable-line react-hooks/exhaustive-deps
+  /** the list and the sheet's live count go through the same filter */
+  const count = (f: ExploreFilter) => (section === 'events' ? filterEvents(data.events, [], f, day).length
+    : section === 'opportunities' ? filterOpportunities(opps, f, { today: day }).length : filterClubs(data.clubs, f).length);
   const listings = useMemo(() => {
-    if (section === 'clubs') return [];
-    // a visitor has no profile to rank by: listings that close today are hidden (nothing left to do with them), and
-    // Recommended puts campus / home-region (Bay Area) ones first (lib/publicexplore, same rule as the server's cap) — not a national listing in DC (ux-sim 2026-11-06, guest-internships-far-and-closing)
-    const base = section === 'events' ? data.events.filter((o) => inEventKind(o, type)) : data.opportunities.filter((o) => inOppType(o, type) && !closesToday(o));
+    if (section === 'events') return sortEvents(filterEvents(data.events, [], query, day), sort).flatMap((x) => (x.kind === 'listing' ? [x.o] : []));
+    if (section !== 'opportunities') return [];
     const home = data.school ? homeRegionOf(data.school.name) : undefined;
     const near = (o: Opportunity) => (data.school && nearCampus(o, data.school.id, home) ? 1 : 0);
-    return sortListings(base.filter((o) => listingMatches(o, q)), sort, section === 'events' ? undefined : near);
-  }, [section, data, type, q, sort]);
-  const kind = clubKindOf(type);
-  const clubs = useMemo(() => (section === 'clubs' ? sortClubs(data.clubs.filter((o) => kind.types.includes(o.type) && clubMatches(o, q)), clubSort(sort)) : []), [section, data, kind, q, sort]);
-  const types = section === 'opportunities' ? OPP_TYPES.filter((t) => t.key !== 'saved' && data.opportunities.some((o) => categoriesOf(o).includes(t.key as never))) : [];
+    return sortOpportunities(filterOpportunities(opps, query, { today: day }), sort, near);
+  }, [section, data, opps, key, day]); // eslint-disable-line react-hooks/exhaustive-deps
+  const clubs = useMemo(() => (section === 'clubs' ? sortClubs(filterClubs(data.clubs, query), sort) : []), [section, data, key]); // eslint-disable-line react-hooks/exhaustive-deps
   const total = section === 'clubs' ? clubs.length : listings.length;
   const placeholder = section === 'events' ? (en ? 'Search events' : '행사 검색') : section === 'opportunities' ? (en ? 'Search opportunities' : '기회 검색') : (en ? 'Search clubs' : '동아리 검색');
   return (
     <>
-      <ExploreControls placeholder={placeholder} q={q} onQ={(x) => set({ q: x })} sort={section === 'clubs' ? clubSort(sort) : sort} onSort={(s) => set({ sort: s })} sorts={section === 'clubs' ? CLUB_SORTS : undefined}>
-        {section === 'events' && data.events.some((o) => EVENT_KINDS.some((k) => inEventKind(o, k.key))) && (
-          <ChipRow>{EVENT_KINDS.filter((k) => data.events.some((o) => inEventKind(o, k.key))).map((k) => <Chip key={k.key} size="sm" active={type === k.key} onClick={() => set({ type: type === k.key ? '' : k.key })}>{k.label}</Chip>)}</ChipRow>
-        )}
-        {section === 'opportunities' && types.length > 0 && (
-          <ChipRow>{types.map((t) => <Chip key={t.key} size="sm" active={type === t.key} onClick={() => set({ type: type === t.key ? '' : t.key })}>{t.label}</Chip>)}</ChipRow>
-        )}
-        {section === 'clubs' && (
-          <ChipRow>{CLUB_KINDS.map((k) => <Chip key={k.key} size="sm" active={kind.key === k.key} onClick={() => set({ type: k.key === 'club' ? '' : k.key })}>{k.label}</Chip>)}</ChipRow>
-        )}
-      </ExploreControls>
+      <ExploreControls placeholder={placeholder} q={q} onQ={(x) => set({ q: x })}
+        filters={{ groups, values: { ...query, sort }, onApply: (v) => set(v as Partial<ExploreQuery>), count: (d) => count({ ...query, ...d }) }} />
       {total === 0 ? (
         <EmptyCard title={q ? (en ? 'Nothing matches that' : '맞는 결과가 없어요') : section === 'events' ? (en ? 'Nothing coming up yet' : '다가오는 행사가 아직 없어요') : (en ? 'Nothing listed yet' : '아직 목록이 없어요')}
           sub={q ? (en ? `Nothing for “${q}”.` : `“${q}” 검색 결과가 없어요.`) : undefined} secondary={q ? { label: en ? 'Clear search' : '검색 지우기', onClick: () => set({ q: '' }) } : undefined} />

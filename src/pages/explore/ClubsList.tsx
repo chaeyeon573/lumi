@@ -6,9 +6,10 @@ import type { Organization } from '@core/types';
 import { useAppStore } from '@core/store/useAppStore';
 import { useViewer } from '@/hooks/useViewer';
 import { scoreClubs } from '@core/lib/foryou';
-import { Btn, Chip, ChipRow, EmptyCard, EmptyState, InfoNote } from '@/components/ha';
+import { Btn, EmptyCard, EmptyState, InfoNote } from '@/components/ha';
 import { ClubItem, ExploreControls, MoreButton } from './ExploreItems';
-import { CLUB_KINDS, CLUB_SORTS, clubKindOf, clubMatches, clubSort, clubSub, PAGE, sortClubs } from './exploreData';
+import { clubSort, clubSub, PAGE, sortClubs } from './exploreData';
+import { clubGroups, filterClubs } from './exploreFilters';
 import { useExploreParams } from './EventsList';
 
 const en = lang === 'en';
@@ -20,13 +21,14 @@ export function relationOf(o: Organization, me: string, following: boolean) {
 
 /**
  * Explore · Clubs (PDF S019) — the school's clubs, Greek chapters, labs and co-ops as RowCards.
- * Search + sort chips + kind chips (Student Clubs default, like the PDF). "Create a group" (S026) sits on the count line.
+ * Search + one filter row; the sheet holds Sort (Recommended · Newest) · Type (Student Clubs · Greek Life · Research
+ * Labs · Co-op). No type = every kind. "Create a group" (S026) sits on the count line.
  */
 export function ClubsList() {
   const nav = useNavigate();
   const v = useViewer();
   const me = v.me;
-  const { q, sort: rawSort, type, set } = useExploreParams();
+  const { q, sort: rawSort, type, query, set, apply } = useExploreParams();
   const sort = clubSort(rawSort);
   const orgs = useAppStore((s) => s.organizations);
   const opportunities = useAppStore((s) => s.opportunities);
@@ -36,25 +38,19 @@ export function ClubsList() {
   const [shown, setShown] = useState(PAGE);
   useEffect(() => setShown(PAGE), [q, sort, type]);
   const mySchool = me.affiliation.type === 'university' ? me.affiliation.schoolId : '';
-  const all = type === 'all';
-  const kind = clubKindOf(type);
 
   // the school's groups (school offices are not clubs) + anything I'm in from elsewhere
   const mine = (o: Organization) => o.memberIds.includes(me.id) || o.adminIds.includes(me.id) || o.followerIds.includes(me.id);
   const base = useMemo(() => orgs.filter((o) => o.type !== 'department' && (o.schoolId === mySchool || mine(o))), [orgs, mySchool, me.id]); // eslint-disable-line react-hooks/exhaustive-deps
   const scores = useMemo(() => scoreClubs({ opportunities, opportunityIntents: intents, organizations: orgs, relationships, schools }, me, base), [opportunities, intents, orgs, relationships, schools, me, base]);
-  const matching = useMemo(() => base.filter((o) => clubMatches(o, q)), [base, q]);
-  const list = useMemo(() => sortClubs(matching.filter((o) => all || kind.types.includes(o.type)), sort, (o) => scores.get(o.id)?.score ?? -1), [matching, all, kind, sort, scores]);
-  const elsewhere = q && !all ? matching.length - list.length : 0;
+  const groups = useMemo(() => clubGroups(), []);
+  const list = useMemo(() => sortClubs(filterClubs(base, query), sort, (o) => scores.get(o.id)?.score ?? -1), [base, q, type, sort, scores]); // eslint-disable-line react-hooks/exhaustive-deps
+  const elsewhere = q && type ? filterClubs(base, { q }).length - list.length : 0;
 
   return (
     <div>
-      <ExploreControls placeholder={en ? 'Search clubs' : '동아리 검색'} q={q} onQ={(x) => set({ q: x })} sort={sort} onSort={(s) => set({ sort: s })} sorts={CLUB_SORTS}>
-        <ChipRow>
-          {CLUB_KINDS.map((k) => <Chip key={k.key} size="sm" active={!all && kind.key === k.key} onClick={() => set({ type: k.key === 'club' ? '' : k.key })}>{k.label}</Chip>)}
-          {all && <Chip size="sm" active onClick={() => set({ type: '' })}>{en ? 'All groups' : '전체'}</Chip>}
-        </ChipRow>
-      </ExploreControls>
+      <ExploreControls placeholder={en ? 'Search clubs' : '동아리 검색'} q={q} onQ={(x) => set({ q: x })}
+        filters={{ groups, values: { ...query, sort }, onApply: apply, count: (d) => filterClubs(base, { ...query, ...d }).length }} />
       <div className="flex items-center justify-between -mt-1 mb-2">
         <span className="text-[12.5px] text-ink-3">{en ? `${list.length} group${list.length === 1 ? '' : 's'}` : `${list.length}개`}</span>
         <Btn variant="link" size="sm" icon={<Plus size={15} />} onClick={() => nav('/orgs/new')}>{en ? 'Create a group' : '그룹 만들기'}</Btn>
@@ -65,7 +61,7 @@ export function ClubsList() {
       ) : list.length === 0 ? (
         <EmptyCard title={en ? 'No groups match that' : '맞는 단체가 없어요'}
           sub={elsewhere > 0 ? (en ? `${elsewhere} match in other kinds.` : `다른 종류에 ${elsewhere}개 있어요.`) : q ? (en ? `Nothing for “${q}”.` : `“${q}” 검색 결과가 없어요.`) : undefined}
-          secondary={elsewhere > 0 ? { label: en ? 'Search all groups' : '전체에서 찾기', onClick: () => set({ type: 'all' }) } : { label: en ? 'Clear search' : '검색 지우기', onClick: () => set({ q: '' }) }} />
+          secondary={elsewhere > 0 ? { label: en ? 'Search all groups' : '전체에서 찾기', onClick: () => set({ type: '' }) } : { label: en ? 'Clear search' : '검색 지우기', onClick: () => set({ q: '' }) }} />
       ) : (
         <div className="space-y-3">
           {list.slice(0, shown).map((o) => <ClubItem key={o.id} o={o} sub={clubSub(o, relationOf(o, me.id, v.isFollowing(o.id)))} onClick={() => nav(`/orgs/${o.id}`)} />)}

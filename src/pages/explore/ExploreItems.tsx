@@ -1,5 +1,5 @@
 import { listingIcon } from '@/lib/icons';
-import { useMemo, useState, type ReactNode } from 'react';
+import { useMemo, useState, type ComponentProps } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarDays, Users } from 'lucide-react';
 import { lang } from '@core/i18n';
@@ -7,23 +7,25 @@ import type { Activity, Opportunity, Organization } from '@core/types';
 import { useAppStore } from '@core/store/useAppStore';
 import { formatDate, formatTime } from '@core/lib/format';
 import { canGoTogether, socialSummary } from '@core/lib/withpeople';
-import { Btn, Chip, ChipRow, ListingCard, MeetupCard, RowCard, SearchField, type Tone } from '@/components/ha';
+import { Btn, FilterBar, ListingCard, MeetupCard, RowCard, SearchField, type Tone } from '@/components/ha';
 import { SampleTag } from '@/components/ui';
 import { Faces, usePeopleSnap } from '@/components/together/PeopleLine';
 import { GoTogetherSheet } from '@/components/together/GoTogetherSheet';
-import { badgeLabel, badgeTone, listingMeta, listingWhere, SORTS, type ExploreSort } from './exploreData';
+import { badgeLabel, badgeTone, listingMeta, listingWhere } from './exploreData';
 
 const en = lang === 'en';
 
-/** search + Recommended / Newest / Ending soon (+ an optional second chip row) — PDF S017–S019 */
-export function ExploreControls({ placeholder, q, onQ, sort, onSort, sorts = SORTS, children }: {
-  placeholder: string; q: string; onQ: (q: string) => void; sort: ExploreSort; onSort: (s: ExploreSort) => void; /** Clubs leave out Ending soon */ sorts?: typeof SORTS; children?: ReactNode;
+/**
+ * search + one filter row under it — [Filters (n)] and the applied filters as × chips, the sort quietly on the right;
+ * everything else is in the filter sheet (owner 2026-11-06: three chip rows were too much). PDF S017–S019, S089.
+ */
+export function ExploreControls({ placeholder, q, onQ, filters }: {
+  placeholder: string; q: string; onQ: (q: string) => void; filters: ComponentProps<typeof FilterBar>;
 }) {
   return (
     <div className="space-y-3 mb-4">
       <SearchField placeholder={placeholder} value={q} onChange={onQ} />
-      <ChipRow>{sorts.map((s) => <Chip key={s.key} active={sort === s.key} onClick={() => onSort(s.key)}>{s.label}</Chip>)}</ChipRow>
-      {children}
+      <FilterBar {...filters} />
     </div>
   );
 }
