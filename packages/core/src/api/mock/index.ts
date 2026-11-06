@@ -21,6 +21,9 @@ import { classRostersFor } from '@core/lib/classmates';
 import { createClassQa, type ClassQuestion } from '@core/lib/classqa';
 import { catalogCourses, searchCatalog, catalogDepartments, catalogTerms, resolveCatalogTerm } from '@core/data/catalog/courses';
 import { publicExplore } from '@core/lib/publicexplore';
+import { cleanAdvancedFilter, matchesAdvanced, offlineStatus, PAYMENTS_CLOSED } from '@core/lib/plus';
+import { createSavedPeople, type SavedPeopleBook } from '@core/lib/savedpeople';
+import { uid } from '@core/lib/format';
 
 let db: MockDB = loadDB();
 let failNextRequest = false;
@@ -52,6 +55,13 @@ const classQa = createClassQa({
   uid: (prefix) => `${prefix}_${Math.random().toString(36).slice(2, 10)}`,
 });
 const qa = <T>(fn: () => T) => request(fn);
+
+/** 저장한 사람 폴더·메모 (S077) — 목업은 이 탭이 열려 있는 동안만 (서버는 server/savedpeople.ts) */
+const savedBooks = new Map<string, SavedPeopleBook>();
+const savedPeople = createSavedPeople({
+  get: (owner) => savedBooks.get(owner), put: (b) => { savedBooks.set(b.id, b); }, drop: (owner) => { savedBooks.delete(owner); }, all: () => [...savedBooks.values()],
+  relationships: () => db.relationships, userExists: (id) => db.users.some((u) => u.id === id), uid,
+});
 
 const rides = createRidesEngine({ get db() { return db; }, t, demo: true, push(patch) { saveDB(db); listeners.forEach((l) => l(patch)); } });
 
@@ -117,6 +127,7 @@ export const mockApi: AroundUApi = {
         if (!deleteConfirmOk(confirm)) throw new Error(`Type ${DELETE_CONFIRM_WORD} to confirm.`);
         if (isProtectedAccount(user, MOCK_PROTECTED)) throw new Error(DEMO_DELETE_REFUSED);
         const { patch } = eraseUser(db, user.id);
+        savedPeople.forgetUser(user.id);
         writeEmails(Object.fromEntries(Object.entries(readEmails()).filter(([, id]) => id !== user.id)));
         setSession(null);
         listeners.forEach((l) => l(patch));
@@ -224,6 +235,20 @@ export const mockApi: AroundUApi = {
     ask: (key, text) => qa(() => classQa.ask(getSession() ?? '', key, text)),
     answer: (questionId, text) => qa(() => classQa.answer(getSession() ?? '', questionId, text)),
     remove: (questionId, answerId) => qa(() => classQa.remove(getSession() ?? '', questionId, answerId)),
+  },
+
+  // 오프라인 데모: Lumi+ 플래그는 늘 꺼짐 (아무것도 막지 않는다), 결제도 없다
+  plus: {
+    status: async () => offlineStatus(),
+    checkout: async () => ({ status: 'unavailable', message: PAYMENTS_CLOSED }),
+    matchPeople: (filter) => request(() => { const me = getSession() ?? ''; const f = cleanAdvancedFilter(filter); return { ids: db.users.filter((u) => u.id !== me && matchesAdvanced(u, f, db.organizations)).map((u) => u.id) }; }),
+  },
+  savedPeople: {
+    view: () => request(() => savedPeople.view(getSession() ?? '')),
+    createFolder: (name) => request(() => savedPeople.createFolder(getSession() ?? '', name)),
+    renameFolder: (folderId, name) => request(() => savedPeople.renameFolder(getSession() ?? '', folderId, name)),
+    removeFolder: (folderId) => request(() => savedPeople.removeFolder(getSession() ?? '', folderId)),
+    setEntry: (personId, input) => request(() => savedPeople.setEntry(getSession() ?? '', personId, input)),
   },
 
   // 목업 모드에는 푸시 서버가 없다

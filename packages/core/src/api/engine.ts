@@ -21,6 +21,7 @@ import { pollPlaceNames, POLL_MAX_GRID_OPTIONS } from '@core/lib/pollgrid';
 import { orgJoinState } from '@core/lib/orgjoin';
 import { audienceFits, isFull, waitlistOf } from '@core/lib/meetups';
 import { initialsOf } from '@core/lib/orglinks';
+import { groupLimitReason, hasPlus, limitsFor, meetupLimitReason, upcomingHosted } from '@core/lib/plus';
 import { canGoTogether, campusToday, crewMembers, crewsFor, dailyTally, meetTimeFor, DAILY_MIN_ANSWERS, MEETUP_CAPACITY } from '@core/lib/withpeople';
 
 export interface EngineContext {
@@ -32,6 +33,8 @@ export interface EngineContext {
   demo: boolean;
   /** 지연 후 발생한 변경(자동 응답)을 밖으로 내보낸다 */
   push: (patch: Patch) => void;
+  /** Lumi+ 플래그 (서버 LUMI_PLUS). 없거나 false 면 아무것도 막지 않고 지금 한도 그대로 (@core/lib/plus) */
+  plusEnabled?: () => boolean;
 }
 
 /** 데모용 자동 응답 대상 — 실제 서버에서는 상대 사용자의 행동으로 대체된다 */
@@ -249,6 +252,13 @@ export function createEngine(ctx: EngineContext) {
 
     activities: {
       create(hostId: ID, input: ActivityInput): { activity: Activity; patch: Patch } {
+        // Lumi+ 한도 (플래그가 켜졌을 때만 — 꺼져 있으면 지금처럼 제한 없음). 행사에 같이 가기 자동 모임은 세지 않는다
+        if (!input.listingCrew && !input.orgId) {
+          const host = db().users.find((u) => u.id === hostId);
+          const enabled = ctx.plusEnabled?.() ?? false;
+          const lim = limitsFor(host, enabled);
+          if (lim.upcomingMeetups !== null && upcomingHosted(db().activities, hostId, campusToday()) >= lim.upcomingMeetups) throw new Error(meetupLimitReason(lim, hasPlus(host)));
+        }
         const activity: Activity = { id: uid('a'), hostId, hostType: input.orgId ? 'org' : 'user', comments: [], createdAt: now(), ...input };
         db().activities.unshift(activity);
         const room = ensureActivityRoom(activity);
@@ -497,7 +507,7 @@ export function createEngine(ctx: EngineContext) {
       },
       /**
        * 그룹 만들기 (S026) — 학교를 인증한 학생만, 그 학교 안에. 만든 사람이 운영진·회원이 된다.
-       * 같은 학교에 같은 이름의 단체가 있으면 만들지 않는다 (학교 공식 동아리와 헷갈리지 않게). 한 사람당 열 개까지
+       * 같은 학교에 같은 이름의 단체가 있으면 만들지 않는다 (학교 공식 동아리와 헷갈리지 않게). 한 사람당 개수는 @core/lib/plus PLAN_LIMITS
        */
       create(creatorId: ID, input: OrgInput): { org: Organization; patch: Patch } {
         const me = find(db().users, creatorId);
@@ -511,7 +521,9 @@ export function createEngine(ctx: EngineContext) {
         if (input?.joinPolicy !== 'open' && input?.joinPolicy !== 'approval') throw new Error(t('가입 방식을 골라주세요.'));
         const key = (x: string) => x.toLowerCase().replace(/[^a-z0-9가-힣]+/g, '');
         if (db().organizations.some((o) => o.schoolId === schoolId && key(o.name) === key(name))) throw new Error(t('같은 이름의 단체가 이미 있어요. 그 페이지에서 팔로우하거나 다른 이름을 써주세요.'));
-        if (db().organizations.filter((o) => o.createdBy === creatorId).length >= 10) throw new Error(t('그룹은 한 사람당 열 개까지 만들 수 있어요.'));
+        // 한도는 @core/lib/plus 한 곳에서 (무료 = 지금 그대로 10개, Lumi+ 플래그가 켜지면 Lumi+ 는 더)
+        { const enabled = ctx.plusEnabled?.() ?? false; const lim = limitsFor(me, enabled);
+          if (db().organizations.filter((o) => o.createdBy === creatorId).length >= lim.groups) throw new Error(groupLimitReason(lim, enabled, hasPlus(me))); }
         const hue = [...name].reduce((h, c) => (h * 31 + c.charCodeAt(0)) % 360, 7);
         const org: Organization = {
           id: uid('org'), name, logo: { emoji: initialsOf(name), hue }, type: input.type, schoolId, verified: false, description,

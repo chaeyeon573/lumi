@@ -27,6 +27,8 @@
  *   GET /admin/reports (관리 화면, ADMIN_KEY 입력), /api/admin/reports·/api/admin/users/:id/… (x-admin-key) — 기각·삭제·정지·정지 해제
  * 학생증 사진 인증 (server/idverify.ts): 학교 이메일 없이 가입 → 검토 대기(둘러보기만, 다른 사람에게 안 보임),
  *   POST /api/verification/student-id, GET /admin/verifications (ADMIN_KEY) — 승인·거절 후 사진은 바로 지운다
+ * Lumi+ (server/plus.ts): POST /api/plus/{status,checkout,people-match}, POST /api/admin/users/:id/plus (x-admin-key) — LUMI_PLUS=1 이면 막기 시작
+ * 저장한 사람 폴더·메모 (server/savedpeople.ts): POST /api/saved-people/{view,folder,folder/rename,folder/remove,entry} — 본인만
  */
 import express, { type Request, type Response, type NextFunction } from 'express';
 import cors from 'cors';
@@ -74,6 +76,8 @@ import { orgRules, registerPublicExploreRoute } from './orgs';
 import { createIdVerify, pendingGate, registerIdVerifyRoutes, registerProblem } from './idverify';
 import { awaitingVerification } from '@core/lib/verification';
 import { registerSignInEmailRoutes, schoolEmailOk } from './signin-email';
+import { plusEnabled, registerPlusRoutes } from './plus';
+import { createSavedPeopleService, registerSavedPeopleRoutes } from './savedpeople';
 
 const PORT = Number(process.env.PORT ?? 8787);
 const store = createStore();
@@ -125,6 +129,8 @@ const engine = createEngine({
   t,
   demo: process.env.DEMO_AUTOREPLY === '1',
   push(patch) { void store.applyPatch(patch); broadcast(patch); },
+  // Lumi+ (server/plus.ts) — LUMI_PLUS off by default: no gating, today's limits
+  plusEnabled: () => plusEnabled(),
 });
 
 // 같은 수업 — 스터디 그룹 제안·파트너 목록 (server/classes.ts)
@@ -167,6 +173,9 @@ await classQa.load();
 // 학생증 사진 인증 (server/idverify.ts) — 요청 기록은 스냅샷 밖 문서 묶음, 사진은 따로(idPhotos) 두고 검토 뒤 지운다
 const idVerify = createIdVerify({ db: () => db, store, push: pushPatch, sendMail });
 await idVerify.load();
+// 저장한 사람 폴더·메모 (S077, Lumi+ — server/savedpeople.ts, 스냅샷 밖 문서 묶음, 본인만)
+const savedPeople = createSavedPeopleService({ db: () => db, store });
+await savedPeople.load();
 setInterval(() => { syncFromWorker().catch((e) => console.error('[sync] failed', e)); }, Number(process.env.DATA_SYNC_SECONDS ?? 120) * 1000);
 
 // ─── 앱 ─────────────────────────────────────────────────────────────────
@@ -397,7 +406,9 @@ registerAccountRoutes(app, {
     (id) => push.forgetUser(id),
     (id) => classQa.forgetUser(id),
     (id) => idVerify.forgetUser(id),
+    (id) => savedPeople.forgetUser(id),
   ],
+  exportExtras: (id) => ({ savedPeople: savedPeople.raw(id) ?? null }),
 });
 
 // ─── 푸시 토큰 — POST /api/push/{register,unregister} (server/push.ts) ─────────────
@@ -432,6 +443,9 @@ registerSignInEmailRoutes(app, { db: () => db, store, auth, push: pushPatch, res
 
 // ─── 학생증 사진 인증 — /api/verification/student-id, /admin/verifications, /api/admin/verifications/* (server/idverify.ts) ─────
 registerIdVerifyRoutes(app, idVerify, { auth });
+// ─── Lumi+ (S087·S088) — /api/plus/*, /api/admin/users/:id/plus (server/plus.ts) · 저장한 사람 폴더·메모 /api/saved-people/* ───
+registerPlusRoutes(app, { db: () => db, auth, wrap, requireUser, bad, viewFor: (me) => snapshotFor(db, me), push: pushPatch });
+registerSavedPeopleRoutes(app, savedPeople, { db: () => db, auth, wrap, requireUser, bad });
 
 // ─── 신고·운영 — /api/rpc/reports/create (일반 RPC보다 먼저), /admin/reports, /api/admin/* (server/moderation.ts) ─────
 registerModerationRoutes(app, {

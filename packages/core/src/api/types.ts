@@ -13,6 +13,8 @@ import type { TimePollWindow } from '@core/types';
 import type { ClassQuestionView } from '@core/lib/classqa';
 import type { PublicExplore } from '@core/lib/publicexplore';
 import type { OrgJoinPolicy } from '@core/types';
+import type { AdvancedPeopleFilter, CheckoutPlatform, CheckoutResult, PlusStatus } from '@core/lib/plus';
+import type { SavedEntryInput, SavedPeopleView } from '@core/lib/savedpeople';
 
 /** 클라이언트가 보유하는 전체 데이터 스냅샷 (실제 API에서는 필요한 부분만 내려받도록 분리) */
 export interface Snapshot {
@@ -492,6 +494,24 @@ export interface AroundUApi {
     answer(questionId: ID, text: string): Promise<ClassQuestionView[]>;
     /** 내가 쓴 질문·답 지우기 (answerId 없으면 질문 통째로) */
     remove(questionId: ID, answerId?: ID): Promise<ClassQuestionView[]>;
+  };
+
+  /** Lumi+ (S087·S088) — 무엇인지는 @core/lib/plus, 막는 건 서버 (server/plus.ts). 오프라인 데모는 늘 꺼짐 */
+  plus: {
+    status(): Promise<PlusStatus>;
+    /** S088 Continue Securely — 결제사가 붙기 전에는 늘 { status: 'unavailable' } (성공을 흉내내지 않는다) */
+    checkout(platform: CheckoutPlatform): Promise<CheckoutResult>;
+    /** S059 언어·관심사·커뮤니티 조건에 맞는 사람 id (플래그가 켜지면 Lumi+ 만) */
+    matchPeople(filter: AdvancedPeopleFilter): Promise<{ ids: ID[] }>;
+  };
+
+  /** 저장한 사람 폴더·비공개 메모 (S077) — 본인만. 스냅샷 밖 (server/savedpeople.ts) */
+  savedPeople: {
+    view(): Promise<SavedPeopleView>;
+    createFolder(name: string): Promise<SavedPeopleView>;
+    renameFolder(folderId: ID, name: string): Promise<SavedPeopleView>;
+    removeFolder(folderId: ID): Promise<SavedPeopleView>;
+    setEntry(personId: ID, input: SavedEntryInput): Promise<SavedPeopleView>;
   };
 
   /** 서버 푸시(웹소켓 등)를 흉내내는 구독. 실제 API로 교체 시 SSE/WebSocket으로 대체 */

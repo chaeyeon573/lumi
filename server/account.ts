@@ -50,6 +50,8 @@ export interface AccountDeps {
   disconnect(userId: ID): void;
   /** other places that keep something about a user (doc collections, in-memory caches). `emails` = their login emails */
   forget?: ((userId: ID, emails: string[]) => unknown)[];
+  /** Download your data: the person's records kept outside the snapshot (e.g. saved-people folders and notes) */
+  exportExtras?: (userId: ID) => Record<string, unknown>;
 }
 
 class HttpError extends Error { constructor(public status: number, message: string) { super(message); } }
@@ -59,7 +61,7 @@ export function registerAccountRoutes(app: Express, deps: AccountDeps) {
   app.post('/api/auth/export-data', deps.auth, (req: Req, res: Response) => {
     const me = req.userId;
     if (!me || !deps.db().users.some((u) => u.id === me)) { res.status(401).json({ error: 'Please sign in first.' }); return; }
-    try { res.json(exportUserData(deps.db(), me)); }
+    try { res.json({ ...exportUserData(deps.db(), me), ...(deps.exportExtras?.(me) ?? {}) }); }
     catch (e) { console.error('[account] export failed', e); res.status(500).json({ error: 'Could not prepare your data — please try again.' }); }
   });
 

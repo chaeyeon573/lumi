@@ -43,7 +43,7 @@ export const FIELD_KEYS: Record<ProfileField, readonly (keyof User)[]> = {
  * 공개 범위와 상관없이 본인에게만.
  * birthYear: 가입 때 "Only you see this" 라고 말한다 (StartPage) — 16세 이상 확인·같이 타기 18세 이상 확인은 서버가 원본으로 한다
  */
-export const OWNER_ONLY_KEYS = ['birthYear', 'gender', 'interestedOrgIds', 'meetPreference', 'showToClassmates', 'studyGroupOptOut', 'partnerSearch', 'suspended', 'verification', 'signInEmail', 'extraVisibility'] as const satisfies readonly (keyof User)[];
+export const OWNER_ONLY_KEYS = ['birthYear', 'gender', 'interestedOrgIds', 'meetPreference', 'showToClassmates', 'studyGroupOptOut', 'partnerSearch', 'suspended', 'verification', 'signInEmail', 'extraVisibility', 'plus'] as const satisfies readonly (keyof User)[];
 
 /**
  * fieldVisibility 밖의 항목 (쓰는 언어·출신 나라·졸업 뒤·그룹 멤버십)의 기본 공개 범위.

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Bell, Check, Eye, Globe, Lock, LogOut, MessageSquareText, ShieldCheck, User } from 'lucide-react';
+import { Bell, Check, Eye, Globe, Lock, LogOut, MessageSquareText, ShieldCheck, Sparkles, User } from 'lucide-react';
 import { lang, setLang } from '@core/i18n';
 import { apiMode } from '@core/api';
 import { useAppStore } from '@core/store/useAppStore';
@@ -15,8 +15,8 @@ const en = lang === 'en';
 
 /**
  * Settings (PDF S084): Your account (Edit Profile · Discovery & privacy · Visibility settings · Privacy & safety),
- * App (Notifications · Language), ⇥ Sign Out. 그 밑에 의견 보내기와 Privacy Policy · Terms (App Store 링크).
- * 계정 삭제는 Privacy & safety 안 (PDF S086). 예전 데모 도구·디자인 전환은 없다. Lumi+ 는 사장님 결정 전까지 넣지 않는다.
+ * App (Notifications · Language · Lumi+), ⇥ Sign Out. 그 밑에 의견 보내기와 Privacy Policy · Terms (App Store 링크).
+ * 계정 삭제는 Privacy & safety 안 (PDF S086). 예전 데모 도구·디자인 전환은 없다. Lumi+ (S087) 는 결제가 열리기 전에도 보인다 — 혜택과 가격만, 버튼은 Coming soon.
  */
 export function SettingsPage() {
   const nav = useNavigate();
@@ -38,7 +38,8 @@ export function SettingsPage() {
       <div className="space-y-3">
         <RowCard tone="ice" icon={<Bell size={21} />} title={en ? 'Notifications' : '알림'} sub={en ? 'Control what reaches you' : '무엇을 받을지'} onClick={() => nav('/settings/notifications')} />
         <RowCard tone="rose" icon={<Globe size={21} />} title={en ? 'Language' : '언어'} sub={en ? 'English' : '한국어'} onClick={() => setLangOpen(true)} />
-        <RowCard tone="lav" icon={<MessageSquareText size={21} />} title={en ? 'Send feedback' : '의견 보내기'} sub={en ? 'Ideas, bugs, anything confusing' : '아이디어·버그·헷갈린 점'} onClick={() => setFeedback(true)} />
+        <RowCard tone="lav" icon={<Sparkles size={21} />} title="Lumi+" sub={en ? 'A few extras, on your terms' : '필요한 만큼만, 몇 가지 더'} onClick={() => nav('/settings/plus')} />
+        <RowCard tone="mint" icon={<MessageSquareText size={21} />} title={en ? 'Send feedback' : '의견 보내기'} sub={en ? 'Ideas, bugs, anything confusing' : '아이디어·버그·헷갈린 점'} onClick={() => setFeedback(true)} />
       </div>
       <button onClick={async () => { await logout(); nav('/welcome', { replace: true }); }} className="mt-6 h-11 flex items-center gap-2 text-[15px] font-semibold text-sel-fg press">
         <LogOut size={18} />{en ? 'Sign Out' : '로그아웃'}

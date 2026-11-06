@@ -217,6 +217,11 @@ export interface User {
   extraVisibility?: Partial<Record<ExtraField, Visibility>>;
   /** "Open to" (S080) — 잠깐 켜 두는 선택 상태. 다른 사람에게는 visibility 안에서, until 날짜까지만 (lib/privacy). 위치는 없다 */
   openTo?: OpenTo;
+  /**
+   * Lumi+ (S087) — 서버만 바꾼다 (관리자 부여 · 나중에 결제 확인). 본인에게만 내려간다 (lib/privacy OWNER_ONLY_KEYS),
+   * 자기 프로필 수정으로는 못 바꾼다 (lib/selfupdate). 뜻은 @core/lib/plus 한 곳에서 읽는다
+   */
+  plus?: PlusEntitlement;
 }
 
 /** 학생증 사진 인증 상태 — 사진 자체는 여기에 없다 (서버의 비공개 저장소에만, 검토 뒤 지운다) */
@@ -229,6 +234,9 @@ export interface StudentIdVerification {
   /** 거절 이유 — 운영자가 쓴 짧은 문장. 본인에게만 */
   reason?: string;
 }
+
+/** Lumi+ 이용 권한 — since 부터 until 까지 (until 없으면 끝날 때까지). source: 누가 켰는지 */
+export interface PlusEntitlement { since: string; until?: string; source: 'admin' | 'stripe' | 'apple' }
 
 export type OpenToKind = 'coffee' | 'study' | 'advice' | 'walk' | 'lunch';
 export interface OpenTo {

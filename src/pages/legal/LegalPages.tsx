@@ -80,7 +80,7 @@ export function PrivacyPage() {
       <P><B>Student ID photo (only if you can't use a school email).</B> If you have no school email — for example as an alum — or the code never arrives, you can send a photo of your student ID (or alumni card or diploma) instead. It's used only to check that you study at (or graduated from) your school. Only the Lumi team sees it — never other users — and we delete it as soon as we've reviewed it, whether we approve it or not. We keep only the result (verified or not, and the reason if not). The photo is shrunk and stripped of location data (EXIF) on your device, and again on our server. Until it's approved, other users don't see your account. If you verify this way you can also add any email address just for signing in on another device; it's checked with a code, used only to send you sign-in codes, never shown to other users, and doesn't count as school verification.</P>
       <P><B>Profile.</B> The name or nickname you choose, birth year (only you see it — it isn't on your profile and isn't sent to other users; we use it to check the 16+ rule, and 18+ for rides), school, major, year, and whether you're an undergrad, grad student or alum. Optional extras you can fill in: a short bio, likes, free-time activities, interests, goals, who you'd like to meet, answers to profile questions and icebreaker games, what you'd like to do right now, and where you live in general terms (dorm, off-campus or commuting, plus an area — never an address). Your avatar is an emoji and a color — Lumi doesn't upload photos from your device.</P>
       <P><B>Classes.</B> Classes you add to your timetable (course, days and times, and optionally room, instructor and section), class-seat alerts, and whether classmates can see that you take a class.</P>
-      <P><B>What you create and do.</B> Posts, comments, meetups and who joins them, plans and votes, rides (a pickup point from a preset list, destination, time, seats, and an optional cost estimate and note), chats and messages, friend requests, follows, likes, saved listings and clubs, favorite dining dishes and gym crowd alerts, blocks and reports. Photos you choose to attach to a post — we shrink them and remove location data (EXIF) on your device before upload.</P>
+      <P><B>What you create and do.</B> Posts, comments, meetups and who joins them, plans and votes, rides (a pickup point from a preset list, destination, time, seats, and an optional cost estimate and note), chats and messages, friend requests, follows, likes, saved people (with any folders and private notes you add — only you can see them), saved listings and clubs, favorite dining dishes and gym crowd alerts, blocks and reports. Photos you choose to attach to a post — we shrink them and remove location data (EXIF) on your device before upload.</P>
       <P><B>Link plans.</B> If someone without an account answers a plan through a shared link, we store the first name they type and a scrambled (hashed) token that lets their device change the answer later.</P>
       <P><B>AI features.</B> Questions you ask Ask Lumi and its answers, text you paste to fill in your profile at sign-up, and conversation starters we suggest. We keep a log of these to fix problems and prevent abuse.</P>
       <P><B>Feedback.</B> Anything you send with Settings → Send feedback.</P>
@@ -123,7 +123,7 @@ export function PrivacyPage() {
         <li>We keep your account information until you delete your account.</li>
         <li>Sign-in codes expire after 10 minutes.</li>
         <li>A student ID photo is deleted as soon as we've reviewed it (approved or not), or when you delete your account if that comes first.</li>
-        <li>When you delete your account (<B>Settings → Delete account</B>), we delete your sign-in email, your profile and timetable, your posts and comments and photos you uploaded, your connections, and your messages — 1:1 chats with you are removed for both people. Meetups, plans and rides you host are cancelled, and the people in them get a notice that doesn't name you. You're signed out everywhere and your devices' push tokens are deleted. Reports you filed are kept without your name; reports about you are kept for safety review.</li>
+        <li>When you delete your account (<B>Settings → Delete account</B>), we delete your sign-in email, your profile and timetable, your posts and comments and photos you uploaded, your connections and saved-people notes (including notes others kept about you), and your messages — 1:1 chats with you are removed for both people. Meetups, plans and rides you host are cancelled, and the people in them get a notice that doesn't name you. You're signed out everywhere and your devices' push tokens are deleted. Reports you filed are kept without your name; reports about you are kept for safety review.</li>
         <li>Ask Lumi logs and feedback are kept to fix problems and prevent abuse, and are deleted with your account. Text you paste into "fill in my profile" during sign-up is logged before you have an account, so it isn't linked to you — email <Contact cfg={cfg} /> if you want it removed.</li>
         <li>Server logs are kept by our hosting provider for a limited time.</li>
       </UL>
@@ -205,19 +205,22 @@ export function TermsPage() {
       <P>Events, listings, deadlines, dining menus, gym crowd levels, class seats and academic dates come from public sources and can be wrong or out of date. Ask Lumi and other AI suggestions can make mistakes. Always check the official source before relying on them.</P>
       <P>Lumi is an independent app. It isn't affiliated with, endorsed by or sponsored by UC Berkeley or any other school.</P>
 
-      <H>7. Ending your account</H>
+      <H>7. Lumi+</H>
+      <P>Lumi+ is an optional paid plan with a few extras: more people filters, folders and private notes for saved people, and higher limits for groups and meetups. Safety features, finding people, meetups and your timetable stay free. Payments aren't open yet, so Lumi+ can't be bought today. Before any purchase, the app will show the price, how renewal works, and how to cancel and get a refund, and we'll add those terms here first.</P>
+
+      <H>8. Ending your account</H>
       <P>You can delete your account any time in <B>Settings → Delete account</B>. We may suspend or end your access if you break these terms or put others at risk.</P>
 
-      <H>8. Disclaimers</H>
+      <H>9. Disclaimers</H>
       <P>Lumi is provided "as is" without warranties of any kind. To the extent the law allows, we aren't liable for indirect or consequential damages, or for the conduct of other users on or off Lumi.</P>
 
-      <H>9. Apple</H>
+      <H>10. Apple</H>
       <P>If you got Lumi from Apple's App Store: these terms are between you and us, not Apple. Apple isn't responsible for Lumi or its content, has no obligation to provide support for it, and isn't responsible for handling any claims about it. Apple and its subsidiaries are third-party beneficiaries of these terms and may enforce them.</P>
 
-      <H>10. Changes</H>
+      <H>11. Changes</H>
       <P>We may update these terms. We'll change the date at the top and let you know in the app about important changes. If you keep using Lumi after that, you accept the new terms.</P>
 
-      <H>11. Contact</H>
+      <H>12. Contact</H>
       <P><Operator cfg={cfg} /> · <Contact cfg={cfg} /></P>
     </LegalShell>
   );

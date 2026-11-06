@@ -193,6 +193,19 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
       remove: (questionId, answerId) => call('classqa/remove', { questionId, answerId }),
     },
 
+    plus: {
+      status: () => call('plus/status', {}),
+      checkout: (platform) => call('plus/checkout', { platform }),
+      matchPeople: (filter) => call('plus/people-match', { filter }),
+    },
+    savedPeople: {
+      view: () => call('saved-people/view', {}),
+      createFolder: (name) => call('saved-people/folder', { name }),
+      renameFolder: (folderId, name) => call('saved-people/folder/rename', { folderId, name }),
+      removeFolder: (folderId) => call('saved-people/folder/remove', { folderId }),
+      setEntry: (personId, input) => call('saved-people/entry', { personId, ...input }),
+    },
+
     push: {
       register: (token, device) => call<{ registered: boolean }>('push/register', { token, ...device }),
       async unregister(token) { await call('push/unregister', { token }); },

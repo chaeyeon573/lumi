@@ -1,10 +1,14 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Check, Globe, Users } from 'lucide-react';
 import { lang } from '@core/i18n';
-import type { Interest, User } from '@core/types';
+import type { ID, Interest, User } from '@core/types';
+import { api } from '@core/api';
+import { hasAdvancedFilter, matchesAdvanced, type AdvancedPeopleFilter } from '@core/lib/plus';
 import { BottomSheet } from '@/components/ui';
-import { BackHeader, PageTitle, SearchField, Chip, ChipRow, InfoNote, EmptyCard, BottomCTA, Btn, FormField, SelectField } from '@/components/ha';
+import { BackHeader, PageTitle, SearchField, Chip, ChipRow, InfoNote, EmptyCard, BottomCTA, Btn, SelectField, LoadingCards } from '@/components/ha';
+import { PlusLock } from '@/components/plus/PlusLock';
+import { usePlus } from '@/hooks/usePlus';
 import { useViewer } from '@/hooks/useViewer';
 import { useAppStore } from '@core/store/useAppStore';
 import { ALL_INTERESTS, INTEREST_LABELS } from '@core/lib/labels';
@@ -35,17 +39,37 @@ const writeQuery = (x: PeopleQuery) => {
   return p;
 };
 const schoolOf = (u: User) => (u.affiliation.type === 'university' ? u.affiliation.schoolId : undefined);
+/** 언어·관심사·커뮤니티 — Lumi+ 부분 (@core/lib/plus). 나머지(학년·같은 캠퍼스·같은 관심사·검색)는 무료 */
+const advancedOf = (x: PeopleQuery): AdvancedPeopleFilter => ({ language: x.language || undefined, interests: x.interests.length ? x.interests : undefined, org: x.org || undefined });
+const withoutAdvanced = (x: PeopleQuery): PeopleQuery => ({ ...x, language: '', interests: [], org: '' });
 
-/** 조건에 맞는지 — 상대가 보이게 한 항목만으로 (서버가 닫힌 항목은 보내지 않는다) */
-function usePeopleFilter(x: PeopleQuery) {
+/**
+ * Lumi+ 플래그가 켜져 있으면 언어·관심사·커뮤니티는 서버가 고른다 (Lumi+ 만 — 서버가 다른 사람은 거절한다).
+ * 꺼져 있으면(지금) 예전처럼 이 기기에서. undefined = 서버에 묻는 중
+ */
+function useAdvancedIds(x: PeopleQuery, enabled: boolean, locked: boolean): Set<ID> | null | undefined {
+  const adv = advancedOf(x);
+  const key = enabled && !locked && hasAdvancedFilter(adv) ? JSON.stringify(adv) : '';
+  const [got, setGot] = useState<{ key: string; ids: Set<ID> } | null>(null);
+  useEffect(() => {
+    if (!key) return;
+    let alive = true;
+    api.plus.matchPeople(JSON.parse(key) as AdvancedPeopleFilter).then((r) => { if (alive) setGot({ key, ids: new Set(r.ids) }); }).catch(() => { if (alive) setGot({ key, ids: new Set() }); });
+    return () => { alive = false; };
+  }, [key]);
+  if (!key) return null;
+  return got?.key === key ? got.ids : undefined;
+}
+
+/** 조건에 맞는지 — 상대가 보이게 한 항목만으로 (서버가 닫힌 항목은 보내지 않는다). serverIds 가 있으면 고급 조건은 서버 답으로 */
+function usePeopleFilter(x: PeopleQuery, serverIds?: Set<ID> | null) {
   const v = useViewer();
   const orgs = useAppStore((s) => s.organizations);
   const mySchool = schoolOf(v.me);
+  const adv = advancedOf(x);
   return (u: User) => {
     if (x.years.length && !x.years.includes(yearKey(u) as YearKey)) return false;
-    if (x.language && !(u.spokenLanguages ?? []).some((l) => l.toLowerCase() === x.language.toLowerCase())) return false;
-    if (x.interests.length && !x.interests.some((i) => (u.interests ?? []).includes(i))) return false;
-    if (x.org) { const o = orgs.find((y) => y.id === x.org); if (!o || !(o.memberIds.includes(u.id) || o.adminIds.includes(u.id))) return false; }
+    if (serverIds ? !serverIds.has(u.id) : !matchesAdvanced(u, adv, orgs)) return false;
     if (x.sameCampus && (!mySchool || schoolOf(u) !== mySchool)) return false;
     if (x.shared && !commonInterests(v.me, u).length) return false;
     if (x.q.trim() && !matchesPerson(u, x.q.trim().toLowerCase())) return false;
@@ -62,10 +86,14 @@ export function PeopleResultsPage({ mode = 'results' }: { mode?: 'results' | 'co
   const [params, setParams] = useSearchParams();
   // 검색어는 자기 상태로 (주소에 바로 묶으면 빠르게 친 글자가 사라진다), 나머지 조건은 주소에서
   const [text, setText] = useState(params.get('q') ?? '');
-  const x = { ...readQuery(params), q: text };
+  const plus = usePlus();
+  // Lumi+ 가 켜졌는데 없는 사람: 언어·관심사·커뮤니티 조건은 쓰지 않는다 (서버도 거절한다)
+  const asked = { ...readQuery(params), q: text };
+  const x = plus.locked ? withoutAdvanced(asked) : asked;
   const set = (p: Partial<PeopleQuery>) => { if (p.q !== undefined) setText(p.q); setParams(writeQuery({ ...x, ...p }), { replace: true }); };
   const ranked = usePeopleInCommon();
-  const ok = usePeopleFilter(x);
+  const serverIds = useAdvancedIds(x, plus.enabled, plus.locked);
+  const ok = usePeopleFilter(x, serverIds);
   const list = ranked.filter(({ u, common }) => (mode === 'results' || common.length > 0) && ok(u));
   const title = mode === 'common' ? (en ? 'Something in common' : '함께 가진 것') : (en ? 'People results' : '사람 찾기');
   const statusLabel = x.years.length ? YEAR_CHIPS.filter((c) => x.years.includes(c.key)).map((c) => c.label).join(', ') : (en ? 'All statuses' : '모든 학적');
@@ -82,22 +110,28 @@ export function PeopleResultsPage({ mode = 'results' }: { mode?: 'results' | 'co
           <Chip active={x.shared} onClick={() => set({ shared: !x.shared })}>{en ? 'Shared interests' : '같은 관심사'}</Chip>
           {(x.language || x.interests.length > 0 || x.org) && <Chip active onClick={() => nav(`/social/people/filters?${writeQuery(x)}`)}>{en ? 'More filters' : '조건'}</Chip>}
         </ChipRow>
-        <div className="space-y-3 mt-4">
+        {serverIds === undefined ? <LoadingCards className="mt-4" /> : <div className="space-y-3 mt-4">
           {list.slice(0, 40).map(({ u, common }) => <PersonItem key={u.id} user={u} line={mode === 'common' ? common.map((c) => c.text).join(' · ') : common[0]?.text} lead={mode === 'common' ? 'common' : 'bio'} />)}
           {!list.length && (ranked.length
             ? <EmptyCard title={mode === 'common' ? (en ? 'Nothing in common yet' : '아직 겹치는 사람이 없어요') : (en ? 'No one matches that yet' : '아직 맞는 사람이 없어요')}
                 sub={mode === 'common' ? (en ? 'Add your classes and interests — shared ones show up here.' : '수업과 관심사를 넣으면 겹치는 사람이 보여요.') : (en ? 'Try fewer filters.' : '조건을 줄여 보세요.')}
                 secondary={anyFilter ? { label: en ? 'Clear filters' : '조건 지우기', onClick: () => { setText(''); setParams({}, { replace: true }); } } : { label: en ? 'Edit profile' : '프로필 수정', onClick: () => nav('/profile/edit') }} />
             : <CampusStart parts={['classes', 'invite']} />)}
-        </div>
+        </div>}
         <InfoNote className="mt-5">{en ? 'Suggestions reflect registered people, not school rosters.' : '학교 명단이 아니라 Lumi 에 가입한 사람만 보여요.'}</InfoNote>
       </div>
     </div>
   );
 }
 
+/** FormField 과 같은 모양 — Lumi+ 가 잠겨 있으면 이름 옆에 자물쇠 + Lumi+ */
+function Field({ label, locked, children }: { label: string; locked: boolean; children: ReactNode }) {
+  return <div><div className="flex items-center justify-between gap-2 text-[13px] font-semibold text-ink mb-2"><span>{label}</span>{locked && <PlusLock />}</div>{children}</div>;
+}
+
 /**
  * People filters (PDF S059) — 학년·학적(1st–4th+ · Graduate · Alumni), 쓰는 언어(누가 공개했을 때만), 관심사, 그룹, Show Results.
+ * 언어·관심사·커뮤니티는 Lumi+ (LUMI_PLUS 가 켜졌을 때만 잠긴다 — 꺼져 있으면 모두에게 열림, @core/lib/plus).
  * 대학교 칸은 지금 한 학교만 열려 있어 빼고 Same campus 칩으로 둔다. 국적은 고르지 않는다 (언어와 따로, 본인이 공개해도 거르는 데 쓰지 않는다).
  */
 export function PeopleFiltersPage() {
@@ -105,10 +139,14 @@ export function PeopleFiltersPage() {
   const [params] = useSearchParams();
   const v = useViewer();
   const orgs = useAppStore((s) => s.organizations);
-  const [x, setX] = useState<PeopleQuery>(() => readQuery(params));
+  const plus = usePlus();
+  const [picked, setX] = useState<PeopleQuery>(() => readQuery(params));
+  // Lumi+ 플래그가 켜졌고 Lumi+ 가 없으면: 언어·관심사·커뮤니티는 자물쇠 (눌러도 고르지 않고 Lumi+ 화면으로)
+  const x = plus.locked ? withoutAdvanced(picked) : picked;
   const [sheet, setSheet] = useState<'lang' | 'org' | null>(null);
   const ranked = usePeopleInCommon();
   const ok = usePeopleFilter(x);
+  const gate = (fn: () => void) => () => (plus.locked ? nav('/settings/plus') : fn());
   const count = ranked.filter(({ u }) => ok(u)).length;
   const languages = useMemo(() => [...new Set([...(v.me.spokenLanguages ?? []), ...v.visibleUsers.flatMap((u) => u.spokenLanguages ?? [])].map((l) => l.trim()).filter(Boolean))].sort(), [v]);
   const groups = useMemo(() => myGroups(orgs, v.me.id), [orgs, v.me.id]);
@@ -126,13 +164,13 @@ export function PeopleFiltersPage() {
           </ChipRow>
         </section>
         {languages.length > 0 && (
-          <FormField label={en ? 'Spoken language' : '쓰는 언어'}><SelectField icon={<Globe size={18} />} value={x.language} placeholder={en ? 'Optional' : '선택'} onClick={() => setSheet('lang')} /></FormField>
+          <Field locked={plus.locked} label={en ? 'Spoken language' : '쓰는 언어'}><SelectField icon={<Globe size={18} />} value={x.language} placeholder={en ? 'Optional' : '선택'} onClick={gate(() => setSheet('lang'))} className={plus.locked ? 'opacity-60' : undefined} /></Field>
         )}
-        <FormField label={en ? 'Interests' : '관심사'}>
-          <ChipRow wrap>{ALL_INTERESTS.filter((i) => i !== 'etc').map((i) => <Chip key={i} size="sm" active={x.interests.includes(i)} onClick={() => setX({ ...x, interests: tog(x.interests, i) })}>{INTEREST_LABELS[i]}</Chip>)}</ChipRow>
-        </FormField>
+        <Field locked={plus.locked} label={en ? 'Interests' : '관심사'}>
+          <ChipRow wrap className={plus.locked ? 'opacity-60' : undefined}>{ALL_INTERESTS.filter((i) => i !== 'etc').map((i) => <Chip key={i} size="sm" active={x.interests.includes(i)} onClick={gate(() => setX({ ...x, interests: tog(x.interests, i) }))}>{INTEREST_LABELS[i]}</Chip>)}</ChipRow>
+        </Field>
         {groups.length > 0 && (
-          <FormField label={en ? 'Communities' : '커뮤니티'}><SelectField icon={<Users size={18} />} value={groups.find((o) => o.id === x.org)?.name} placeholder={en ? 'Visible shared communities' : '내 그룹 회원'} onClick={() => setSheet('org')} /></FormField>
+          <Field locked={plus.locked} label={en ? 'Communities' : '커뮤니티'}><SelectField icon={<Users size={18} />} value={groups.find((o) => o.id === x.org)?.name} placeholder={en ? 'Visible shared communities' : '내 그룹 회원'} onClick={gate(() => setSheet('org'))} className={plus.locked ? 'opacity-60' : undefined} /></Field>
         )}
         <div className="flex items-center justify-between">
           <span className="text-[14px] font-semibold">{en ? 'Same campus only' : '같은 캠퍼스만'}</span>

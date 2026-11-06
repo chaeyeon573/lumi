@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { api } from '@core/api';
 import { useAppStore } from '@core/store/useAppStore';
 import type { ID, User } from '@core/types';
-import { Btn, PersonCard } from '@/components/ha';
+import { Btn, PersonCard, cardCls } from '@/components/ha';
 import { useViewer } from '@/hooks/useViewer';
 import { en, majorYear } from './shared';
 
-/** 사람 카드 하나 (PDF S075 · S077) — 오른쪽 버튼은 지금 관계에서 할 수 있는 것 하나만 */
-export function PersonRow({ user, action }: { user: User; action: 'message' | 'friend' }) {
+/** 사람 카드 하나 (PDF S075 · S077) — 오른쪽 버튼은 지금 관계에서 할 수 있는 것 하나만. footer: 카드 아래 칸 (S077 폴더·메모) */
+export function PersonRow({ user, action, footer }: { user: User; action: 'message' | 'friend'; footer?: ReactNode }) {
   const nav = useNavigate();
   const v = useViewer();
   const run = useAppStore((s) => s.run);
@@ -31,7 +31,10 @@ export function PersonRow({ user, action }: { user: User; action: 'message' | 'f
     else if (!v.pendingIn(user.id)) right = btn(en ? 'Add Friend' : '친구 추가', addFriend);
   }
   const bio = v.canSeeField(user, 'bio') ? user.bio : undefined;
-  return <PersonCard avatar={user.avatar} name={user.nickname} meta={user.sample ? `${en ? 'Sample' : '예시'} · ${majorYear(user)}` : majorYear(user)} bio={bio} action={right} onClick={() => nav(`/users/${user.id}`)} />;
+  const card = <PersonCard avatar={user.avatar} name={user.nickname} meta={user.sample ? `${en ? 'Sample' : '예시'} · ${majorYear(user)}` : majorYear(user)} bio={bio} action={right} onClick={() => nav(`/users/${user.id}`)}
+    className={footer ? '!border-0 !rounded-none !bg-transparent' : undefined} />;
+  if (!footer) return card;
+  return <div className={cardCls}>{card}<div className="px-4 pb-3.5 -mt-1">{footer}</div></div>;
 }
 
 /** 이름·전공으로 찾기 */

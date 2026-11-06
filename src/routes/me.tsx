@@ -11,6 +11,7 @@ import { ChatInboxPage } from '@/pages/chat/ChatInboxPage';
 import { ChatRoomPage } from '@/pages/chat/ChatRoomPage';
 import { NotificationsPage } from '@/pages/notifications/NotificationsPage';
 import { SettingsPage } from '@/pages/settings/SettingsPage';
+import { CheckoutPage, PlusPage } from '@/pages/settings/PlusPages';
 import { DiscoveryPage } from '@/pages/settings/DiscoveryPage';
 import { PrivacySettingsPage } from '@/pages/settings/PrivacySettingsPage';
 import { SafetySettingsPage } from '@/pages/settings/SafetySettingsPage';
@@ -19,7 +20,7 @@ import { BlockPage, ReportPage } from '@/pages/settings/ReportBlockPages';
 import { VerifyIdPage } from '@/pages/settings/VerifyIdPage';
 import { MyPostsRedirect, Redirect } from './redirects';
 
-/** WP5 Messages + Profile + Settings (S068–S086, S092–S096). 파일 주인: WP5. Lumi+ (S087·S088) 는 사장님 결정 전까지 없다 */
+/** WP5 Messages + Profile + Settings (S068–S088, S092–S096). 파일 주인: WP5. Lumi+ (S087·S088) — 사장님 결정 2026-11-06, 결제는 아직 없다 */
 export const meTabRoutes = (
   <>
     <Route path="/profile" element={<ProfilePage />} />                   {/* S071 */}
@@ -53,6 +54,8 @@ export const meSubRoutes = (
     <Route path="/settings/reports" element={<MyReportsPage />} />
     <Route path="/settings/security" element={<AccountSecurityPage />} />
     <Route path="/settings/notifications" element={<NotificationSettingsPage />} />
+    <Route path="/settings/plus" element={<PlusPage />} />                {/* S087 */}
+    <Route path="/settings/plus/checkout" element={<CheckoutPage />} />   {/* S088 */}
     <Route path="/report/:type/:id" element={<ReportPage />} />           {/* S092 */}
     <Route path="/users/:id/block" element={<BlockPage />} />             {/* S093 */}
   </>
