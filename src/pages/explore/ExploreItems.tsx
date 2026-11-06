@@ -16,13 +16,13 @@ import { badgeLabel, badgeTone, listingMeta, listingWhere, SORTS, type ExploreSo
 const en = lang === 'en';
 
 /** search + Recommended / Newest / Ending soon (+ an optional second chip row) — PDF S017–S019 */
-export function ExploreControls({ placeholder, q, onQ, sort, onSort, children }: {
-  placeholder: string; q: string; onQ: (q: string) => void; sort: ExploreSort; onSort: (s: ExploreSort) => void; children?: ReactNode;
+export function ExploreControls({ placeholder, q, onQ, sort, onSort, sorts = SORTS, children }: {
+  placeholder: string; q: string; onQ: (q: string) => void; sort: ExploreSort; onSort: (s: ExploreSort) => void; /** Clubs leave out Ending soon */ sorts?: typeof SORTS; children?: ReactNode;
 }) {
   return (
     <div className="space-y-3 mb-4">
       <SearchField placeholder={placeholder} value={q} onChange={onQ} />
-      <ChipRow>{SORTS.map((s) => <Chip key={s.key} active={sort === s.key} onClick={() => onSort(s.key)}>{s.label}</Chip>)}</ChipRow>
+      <ChipRow>{sorts.map((s) => <Chip key={s.key} active={sort === s.key} onClick={() => onSort(s.key)}>{s.label}</Chip>)}</ChipRow>
       {children}
     </div>
   );
@@ -65,8 +65,11 @@ export function ListingPeople({ o }: { o: Opportunity }) {
 /** club tint by kind — clubs mint (CATEGORY_TONE), Greek rose, labs lavender, co-ops peach */
 export const CLUB_TONE: Record<Organization['type'], Tone> = { club: 'mint', council: 'mint', greek: 'rose', lab: 'lav', coop: 'peach', department: 'ice' };
 
+/** a club row: its one-line description (what they do), then kind · my relation (ux-sim 2026-11-06: "I can't tell what they do") */
 export function ClubItem({ o, sub, onClick }: { o: Organization; sub: string; onClick: () => void }) {
-  return <RowCard tone={CLUB_TONE[o.type]} icon={<Users size={22} />} title={o.name} sub={sub} onClick={onClick} />;
+  const line = o.description?.trim();
+  return <RowCard tone={CLUB_TONE[o.type]} icon={<Users size={22} />} title={o.name} onClick={onClick}
+    sub={line ? <><span className="block truncate text-ink-2">{line}</span><span className="block truncate">{sub}</span></> : sub} />;
 }
 
 export function MoreButton({ left, onClick }: { left: number; onClick: () => void }) {

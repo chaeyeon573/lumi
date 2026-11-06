@@ -12,7 +12,7 @@ import { BottomSheet } from '@/components/ui';
 import { BackHeader, PageTitle, SegTabs, Chip, ChipRow, BottomCTA, Btn, EmptyCard, ErrorScreen, LoadingCards, InfoNote, Badge } from '@/components/ha';
 import { ClubItem, ExploreControls, ListingItem, MoreButton } from './ExploreItems';
 import {
-  badgeLabel, badgeTone, ORG_BADGE, CLUB_KINDS, clubKindOf, clubMatches, clubSub, EVENT_KINDS, inEventKind, inOppType, listingMatches, listingMeta, listingWhere, OPP_TYPES, PAGE, readExploreQuery, sortClubs, sortListings, writeExploreQuery,
+  badgeLabel, badgeTone, ORG_BADGE, CLUB_KINDS, CLUB_SORTS, clubKindOf, clubSort, clubMatches, clubSub, EVENT_KINDS, inEventKind, inOppType, listingMatches, listingMeta, listingWhere, OPP_TYPES, PAGE, readExploreQuery, sortClubs, sortListings, writeExploreQuery,
 } from './exploreData';
 
 const en = lang === 'en';
@@ -111,13 +111,13 @@ function GuestList({ section, data, params, setParams, onSave, onPeek }: {
     return sortListings(base.filter((o) => listingMatches(o, q)), sort, section === 'events' ? undefined : near);
   }, [section, data, type, q, sort]);
   const kind = clubKindOf(type);
-  const clubs = useMemo(() => (section === 'clubs' ? sortClubs(data.clubs.filter((o) => kind.types.includes(o.type) && clubMatches(o, q)), sort) : []), [section, data, kind, q, sort]);
+  const clubs = useMemo(() => (section === 'clubs' ? sortClubs(data.clubs.filter((o) => kind.types.includes(o.type) && clubMatches(o, q)), clubSort(sort)) : []), [section, data, kind, q, sort]);
   const types = section === 'opportunities' ? OPP_TYPES.filter((t) => t.key !== 'saved' && data.opportunities.some((o) => categoriesOf(o).includes(t.key as never))) : [];
   const total = section === 'clubs' ? clubs.length : listings.length;
   const placeholder = section === 'events' ? (en ? 'Search events' : '행사 검색') : section === 'opportunities' ? (en ? 'Search opportunities' : '기회 검색') : (en ? 'Search clubs' : '동아리 검색');
   return (
     <>
-      <ExploreControls placeholder={placeholder} q={q} onQ={(x) => set({ q: x })} sort={sort} onSort={(s) => set({ sort: s })}>
+      <ExploreControls placeholder={placeholder} q={q} onQ={(x) => set({ q: x })} sort={section === 'clubs' ? clubSort(sort) : sort} onSort={(s) => set({ sort: s })} sorts={section === 'clubs' ? CLUB_SORTS : undefined}>
         {section === 'events' && data.events.some((o) => EVENT_KINDS.some((k) => inEventKind(o, k.key))) && (
           <ChipRow>{EVENT_KINDS.filter((k) => data.events.some((o) => inEventKind(o, k.key))).map((k) => <Chip key={k.key} size="sm" active={type === k.key} onClick={() => set({ type: type === k.key ? '' : k.key })}>{k.label}</Chip>)}</ChipRow>
         )}

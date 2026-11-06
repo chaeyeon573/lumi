@@ -205,7 +205,11 @@ function Feed({ org, isAdmin }: { org: Organization; isAdmin: boolean }) {
   );
 }
 
-/** S024 — dated events from the school's listings (ListingCard) and events the group posted on Lumi (MeetupCard) */
+/**
+ * S024 — dated events from the school's listings (ListingCard) and events the group posted on Lumi (MeetupCard),
+ * each with its date. With none, it says so — the club's own "Weekend hikes" has no date and is not shown as an event
+ * (ux-sim 2026-11-06: "No actual hike dates") — and points to the club's own public page when there is one.
+ */
 function Events({ org, isAdmin, following }: { org: Organization; isAdmin: boolean; following: boolean }) {
   const nav = useNavigate();
   const v = useViewer();
@@ -218,16 +222,21 @@ function Events({ org, isAdmin, following }: { org: Organization; isAdmin: boole
   const others = hosted.filter((o) => o.type !== 'event' && (o.deadline ? daysUntil(o.deadline) >= 0 : true));
   const create = () => nav(`/create/activity?kind=org_event&event=1&org=${org.id}`);
   const empty = !acts.length && !listed.length && !others.length;
+  // the club's own public page (never a login-only one; sample clubs have none — same rule as About)
+  const page = isSampleOrg(org.id) ? undefined : publicLinks(org.links)[0];
   return (
     <div className="space-y-3">
       {isAdmin && <Btn variant="outline" icon={<Plus size={16} />} onClick={create}>{en ? 'Create Event' : '행사 올리기'}</Btn>}
       {listed.map((o) => <ListingItem key={o.id} o={o} saved={saved.ids.has(o.id)} onSave={() => saved.toggle(o)} onOpen={() => nav(`/opportunities/${o.id}`)} />)}
       {acts.map((a) => <ClubEventItem key={a.id} a={a} />)}
       {others.map((o) => <ListingItem key={o.id} o={o} saved={saved.ids.has(o.id)} onSave={() => saved.toggle(o)} onOpen={() => nav(`/opportunities/${o.id}`)} />)}
-      {empty && (org.regularActivities.length
-        // 날짜가 정해진 행사가 없어도 정기 활동은 보인다 — '행사 없음'과 '주 2회 모임'이 엇갈려 보이지 않게
-        ? <TextCard title={en ? 'Regular activities' : '정기 활동'}>{org.regularActivities.join(' · ')}<div className="text-[12.5px] text-ink-3 mt-1.5">{en ? 'As the group lists them — no dated events on Lumi yet.' : '단체가 적어 둔 일정이에요 — 날짜가 정해진 행사는 아직 없어요.'}</div></TextCard>
-        : <EmptyCard title={en ? 'No upcoming events' : '예정된 행사가 없어요'} sub={isAdmin ? (en ? 'Events you post appear in Explore too.' : '올린 행사는 Explore 에도 보여요.') : following ? undefined : (en ? 'Follow to hear when they post one.' : '팔로우하면 행사가 올라올 때 알려 드려요.')} />)}
+      {empty && (
+        // 날짜 없는 정기 활동은 행사처럼 보이지 않게 한 줄로만 — 날짜는 지어내지 않고, 단체 공개 페이지가 있으면 거기로
+        <EmptyCard title={en ? 'No dated events yet' : '날짜가 정해진 행사가 아직 없어요'}
+          sub={org.regularActivities.length ? (en ? `They list: ${org.regularActivities.join(' · ')}` : `단체가 적어 둔 활동: ${org.regularActivities.join(' · ')}`)
+            : isAdmin ? (en ? 'Events you post appear in Explore too.' : '올린 행사는 Explore 에도 보여요.') : following ? undefined : (en ? 'Follow to hear when they post one.' : '팔로우하면 행사가 올라올 때 알려 드려요.')}
+          secondary={page ? { label: en ? 'Their page ↗' : '단체 페이지 ↗', onClick: () => window.open(page.url, '_blank', 'noopener') } : undefined} />
+      )}
     </div>
   );
 }

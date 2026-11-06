@@ -154,11 +154,11 @@ export const CLUB_KINDS: { key: string; label: string; types: Organization['type
 ];
 export const clubKindOf = (key: string) => CLUB_KINDS.find((k) => k.key === key) ?? CLUB_KINDS[0];
 
-/** recruiting deadline, if the directory gave one ("Ending soon" on clubs) */
-const clubDue = (o: Organization) => (o.recruitment?.open && o.recruitment.deadline ? o.recruitment.deadline : '9999');
+/** Clubs sort by Recommended / Newest only — "Ending soon" means nothing for a club (ux-sim 2026-11-06); old ?sort=ending → Recommended */
+export const CLUB_SORTS = SORTS.filter((s) => s.key !== 'ending');
+export const clubSort = (sort: ExploreSort): ExploreSort => (sort === 'ending' ? 'recommended' : sort);
 export function sortClubs(list: Organization[], sort: ExploreSort, score?: (o: Organization) => number): Organization[] {
   const xs = list.map((o, i) => ({ o, i }));
-  if (sort === 'ending') return xs.sort((a, b) => clubDue(a.o).localeCompare(clubDue(b.o)) || a.o.name.localeCompare(b.o.name)).map((x) => x.o);
   // newest: groups started on Lumi first (their ids carry the time), then the directory's newest additions
   if (sort === 'newest') return xs.sort((a, b) => Number(!!b.o.createdBy) - Number(!!a.o.createdBy) || b.i - a.i).map((x) => x.o);
   return xs.sort((a, b) => (score ? score(b.o) - score(a.o) : 0) || Number(!!b.o.recruitment?.open) - Number(!!a.o.recruitment?.open) || a.o.name.localeCompare(b.o.name)).map((x) => x.o);

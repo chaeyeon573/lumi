@@ -8,7 +8,7 @@ import { useViewer } from '@/hooks/useViewer';
 import { scoreClubs } from '@core/lib/foryou';
 import { Btn, Chip, ChipRow, EmptyCard, EmptyState, InfoNote } from '@/components/ha';
 import { ClubItem, ExploreControls, MoreButton } from './ExploreItems';
-import { CLUB_KINDS, clubKindOf, clubMatches, clubSub, PAGE, sortClubs } from './exploreData';
+import { CLUB_KINDS, CLUB_SORTS, clubKindOf, clubMatches, clubSort, clubSub, PAGE, sortClubs } from './exploreData';
 import { useExploreParams } from './EventsList';
 
 const en = lang === 'en';
@@ -26,7 +26,8 @@ export function ClubsList() {
   const nav = useNavigate();
   const v = useViewer();
   const me = v.me;
-  const { q, sort, type, set } = useExploreParams();
+  const { q, sort: rawSort, type, set } = useExploreParams();
+  const sort = clubSort(rawSort);
   const orgs = useAppStore((s) => s.organizations);
   const opportunities = useAppStore((s) => s.opportunities);
   const intents = useAppStore((s) => s.opportunityIntents);
@@ -48,7 +49,7 @@ export function ClubsList() {
 
   return (
     <div>
-      <ExploreControls placeholder={en ? 'Search clubs' : '동아리 검색'} q={q} onQ={(x) => set({ q: x })} sort={sort} onSort={(s) => set({ sort: s })}>
+      <ExploreControls placeholder={en ? 'Search clubs' : '동아리 검색'} q={q} onQ={(x) => set({ q: x })} sort={sort} onSort={(s) => set({ sort: s })} sorts={CLUB_SORTS}>
         <ChipRow>
           {CLUB_KINDS.map((k) => <Chip key={k.key} size="sm" active={!all && kind.key === k.key} onClick={() => set({ type: k.key === 'club' ? '' : k.key })}>{k.label}</Chip>)}
           {all && <Chip size="sm" active onClick={() => set({ type: '' })}>{en ? 'All groups' : '전체'}</Chip>}
