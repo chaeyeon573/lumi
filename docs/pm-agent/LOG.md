@@ -2319,3 +2319,4 @@
 - Santa Clara events connected: events.scu.edu answers now (was 403) and is LiveWhale, same reader as Brown. 29 upcoming events (the reader keeps free food, talks and featured items).
   - "Parallel Visions" (art exhibition, Sept 21 - Nov 20, no start time, tagged "exhibits") got through the exhibit filter, which only read titles. New `isExhibitEvent`: also drops all-day items tagged exhibits; timed artist talks and receptions with that tag stay (checked across all schools: 16 timed ones kept). Test added.
   - Found: off-campus SCU events (law school forums in Los Angeles) carry the campus map point. Added to the queue.
+- Tulane class times batch 5: Spring 2027 A-H (8/26 letters); 3,628 classes in the file.
