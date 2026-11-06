@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "kind": "ux-sim-analysis",
+  "date": "2026-11-06",
+  "generatedAt": "2026-11-06T19:17:16.286Z",
+  "author": "Scheduled orchestrating Claude session (https://claude.ai/code/session_01VX4jQF3M6doYf7VDXmTdrm)",
+  "disclaimer": "AI simulation — hypotheses, not measured user behaviour.",
+  "sources": {
+    "findings": "ux-sim/reports/2026-11-06-sched/findings.json",
+    "runs": [
+      "sched-20261106-1915-diego-cold-start-hangout",
+      "sched-20261106-1915-jordan-cold-start-hangout",
+      "sched-20261106-1915-jordan-find-a-club",
+      "sched-20261106-1915-minji-find-a-club"
+    ],
+    "harness": "6f174347960d",
+    "appCommits": [
+      "deedbfee6b32"
+    ]
+  },
+  "problems": [
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "signup-asks-too-much-too-early",
+      "title": "Sign-up shows \"1 of 6\" up front and puts the account last; both cold-start personas quit or nearly quit in setup",
+      "summary": "The reworked /start (goals → what Lumi can do → university → discover → communities → account) still has six screens before an account. Jordan quit on screen 4 (a second interest picker); Diego skipped twice and arrived with most patience spent.",
+      "rootCauseHypothesis": "Profiling before value; \"1 of 6\" makes the length explicit; the discover picker repeats the goals screen; the tour opens on Classes even after \"Meet new people\".",
+      "severity": 4,
+      "frictionTypes": [
+        "onboarding",
+        "motivation"
+      ],
+      "personas": [
+        "jordan-sophomore-impatient",
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261106-1915-jordan-cold-start-hangout",
+          "step": 12,
+          "quote": "four screens in and I haven't seen a single human. this is the part where I delete it."
+        },
+        {
+          "runId": "sched-20261106-1915-jordan-cold-start-hangout",
+          "step": 1,
+          "quote": "1 of 6?? six screens before I even see anything. ugh."
+        },
+        {
+          "runId": "sched-20261106-1915-jordan-cold-start-hangout",
+          "step": 4,
+          "quote": "I said meet people. why are you showing me calculus. skip."
+        },
+        {
+          "runId": "sched-20261106-1915-diego-cold-start-hangout",
+          "step": 13,
+          "quote": "Still no account. I'm hitting Skip. Nine taps in and I haven't seen a single person."
+        }
+      ],
+      "suggestedFix": "Drop or merge the discover picker into goals; open the tour on the tab matching the chosen goal; show something real (this week on campus) before the optional screens.",
+      "fingerprints": [
+        "7cca98e6be77",
+        "79be2378ff4a",
+        "41e0f0d87a46",
+        "b9f72b5ec8d6"
+      ]
+    },
+    {
+      "confidence": "medium",
+      "environmentLimited": false,
+      "environmentNote": "Local stack has no other students; real at quiet times on live.",
+      "key": "cold-start-nobody-here",
+      "title": "A brand-new account finds nobody to meet: Meetups says \"Make the first plan\"",
+      "summary": "Diego quit on empty Meetups; only official events with \"Go together\" below.",
+      "rootCauseHypothesis": "No fallback for an empty campus except hosting.",
+      "severity": 3,
+      "frictionTypes": [
+        "content_gap"
+      ],
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261106-1915-diego-cold-start-hangout",
+          "step": 27,
+          "quote": "Nobody's made a plan. I'm new, I'm not gonna be the first to host."
+        }
+      ],
+      "suggestedFix": "Low-pressure \"count me in for lunch/coffee this week\" signal instead of \"make the first plan\".",
+      "fingerprints": [
+        "7d5aa37f0937"
+      ]
+    },
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Members empty is partly local (no other students); events/organizers come from the same imported data as live — likely the same there.",
+      "key": "club-page-looks-empty",
+      "title": "Club pages are empty past the join button: no dated events, no members, organizers \"not on Lumi yet\"",
+      "summary": "Jordan (Cal Hacks) and Minji (KSA): Events, Members and About tabs empty; \"Organizers aren't on Lumi yet · requests are saved and passed on\" made them doubt anyone reads the request. Same problem as 2026-11-02.",
+      "rootCauseHypothesis": "Clubs come from official lists without officers; the page shows empty tabs instead of the club's own links and meeting times.",
+      "severity": 3,
+      "frictionTypes": [
+        "content_gap"
+      ],
+      "personas": [
+        "jordan-sophomore-impatient",
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "find-a-club"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261106-1915-jordan-find-a-club",
+          "step": 7,
+          "quote": "no events. for the biggest hackathon club. so nothing happening."
+        },
+        {
+          "runId": "sched-20261106-1915-jordan-find-a-club",
+          "step": 5,
+          "quote": "organizers aren't even here? so I'm asking... nobody?"
+        },
+        {
+          "runId": "sched-20261106-1915-minji-find-a-club",
+          "step": 10,
+          "quote": "3 tabs, 다 비었어. so the only real thing here is the Ask to join button"
+        }
+      ],
+      "suggestedFix": "Hide empty tabs; show the club's official site/Instagram and usual meeting time; say exactly who receives the request (e.g. \"we email the officers listed on CalLink\").",
+      "file": true,
+      "fingerprints": [
+        "919841c6195c",
+        "d417653a9f04",
+        "6de492d10b73"
+      ]
+    },
+    {
+      "confidence": "high",
+      "environmentLimited": false,
+      "environmentNote": "Same on live.",
+      "key": "club-list-starts-with-greek-life",
+      "title": "Club list \"Recommended\" is effectively alphabetical: sororities and consulting clubs first, no photos or what's on",
+      "summary": "Minji saw Alpha Chi Omega first under \"Recommended\"; Jordan saw a text-only directory led by consulting clubs. Both found their club only by searching. Third and fourth persona on this problem.",
+      "rootCauseHypothesis": "Recommended ignores the student's picks; list rows have no activity signal.",
+      "severity": 2,
+      "frictionTypes": [
+        "motivation",
+        "ux_confusion"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "jordan-sophomore-impatient"
+      ],
+      "scenarios": [
+        "find-a-club"
+      ],
+      "evidence": [
+        {
+          "runId": "sched-20261106-1915-minji-find-a-club",
+          "step": 2,
+          "quote": "'Recommended' is just alphabet sororities? 뭐지. I'm not rushing a sorority at 17"
+        },
+        {
+          "runId": "sched-20261106-1915-jordan-find-a-club",
+          "step": 1,
+          "quote": "94 groups. no pics, no 'meeting tonight'. kinda bulletin board."
+        }
+      ],
+      "suggestedFix": "Rank by the student's goals/communities picks; show a \"meets Thursdays\" or \"event this week\" line where known.",
+      "file": true,
+      "fingerprints": [
+        "3419c6f0e368",
+        "fa9ec7d60ba3"
+      ]
+    }
+  ],
+  "dismissed": [
+    {
+      "fingerprints": [
+        "92201442c279"
+      ],
+      "reason": "Single sev-1 wording nit (\"Followed is different from verified membership\")."
+    }
+  ],
+  "harnessIssues": [
+    {
+      "title": "tap-target auto-checks noisy",
+      "detail": "Several runs flag header icons and the 23px-tall search input as <44px; worth one aggregated design ticket rather than per-run noise.",
+      "runs": [
+        "sched-20261106-1915-jordan-find-a-club",
+        "sched-20261106-1915-jordan-cold-start-hangout"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "generatedAt": "2026-11-06T19:17:42.219Z",
+  "source": "ux-sim/reports/2026-11-06-sched/analysis.json",
+  "layer": "curated (analysis.json)",
+  "rule": "not environment-limited, and severity ≥ 3 or ≥ 2 personas, unless the problem sets file: true|false",
+  "dedupe": "before creating, search existing issues for <!-- ux-sim:problem=<key> --> and for any <!-- ux-sim:fp=<fingerprint> --> marker; update the match instead of duplicating",
+  "note": "Candidates only — ux-sim never creates issues.",
+  "coverage": {
+    "findings": 11,
+    "grouped": 10,
+    "dismissed": 1,
+    "unassigned": []
+  },
+  "warnings": [],
+  "candidates": [
+    {
+      "key": "signup-asks-too-much-too-early",
+      "fingerprints": [
+        "7cca98e6be77",
+        "79be2378ff4a",
+        "41e0f0d87a46",
+        "b9f72b5ec8d6"
+      ],
+      "title": "[ux-sim] Sign-up shows \"1 of 6\" up front and puts the account last; both cold-start personas quit or nearly quit in setup",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nThe reworked /start (goals → what Lumi can do → university → discover → communities → account) still has six screens before an account. Jordan quit on screen 4 (a second interest picker); Diego skipped twice and arrived with most patience spent.\n\nSeverity **4** (Blocker — I could not continue, gave up, or would stop using the app here.) · analyst confidence high · **2 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nProfiling before value; \"1 of 6\" makes the length explicit; the discover picker repeats the goals screen; the tour opens on Classes even after \"Meet new people\".\n\n### Evidence\n\n- run `sched-20261106-1915-jordan-cold-start-hangout` step 12 — “four screens in and I haven't seen a single human. this is the part where I delete it.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-jordan-cold-start-hangout/shots/012-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-jordan-cold-start-hangout/shots/012-click-som.jpg)\n- run `sched-20261106-1915-jordan-cold-start-hangout` step 1 — “1 of 6?? six screens before I even see anything. ugh.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-jordan-cold-start-hangout/shots/001-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-jordan-cold-start-hangout/shots/001-click-som.jpg)\n- run `sched-20261106-1915-jordan-cold-start-hangout` step 4 — “I said meet people. why are you showing me calculus. skip.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-jordan-cold-start-hangout/shots/004-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-jordan-cold-start-hangout/shots/004-click-som.jpg)\n- run `sched-20261106-1915-diego-cold-start-hangout` step 13 — “Still no account. I'm hitting Skip. Nine taps in and I haven't seen a single person.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-diego-cold-start-hangout/shots/013-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-diego-cold-start-hangout/shots/013-click-som.jpg)\n\nRuns: [`sched-20261106-1915-jordan-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-jordan-cold-start-hangout/report.md), [`sched-20261106-1915-diego-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-diego-cold-start-hangout/report.md)\n\n### Who\n\nPersonas: `jordan-sophomore-impatient`, `diego-transfer-commuter` · scenarios: `cold-start-hangout`\n\n### Environment note\n\nSame on live.\n\n### Suggested fix (hypothesis)\n\nDrop or merge the discover picker into goals; open the tour on the tab matching the chosen goal; show something real (this week on campus) before the optional screens.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=signup-asks-too-much-too-early -->\n<!-- ux-sim:fp=7cca98e6be77 -->\n<!-- ux-sim:fp=79be2378ff4a -->\n<!-- ux-sim:fp=41e0f0d87a46 -->\n<!-- ux-sim:fp=b9f72b5ec8d6 -->",
+      "labels": [
+        "ux-sim",
+        "severity:4",
+        "onboarding",
+        "motivation"
+      ],
+      "personas": [
+        "jordan-sophomore-impatient",
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "severity": 4
+    },
+    {
+      "key": "cold-start-nobody-here",
+      "fingerprints": [
+        "7d5aa37f0937"
+      ],
+      "title": "[ux-sim] A brand-new account finds nobody to meet: Meetups says \"Make the first plan\"",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nDiego quit on empty Meetups; only official events with \"Go together\" below.\n\nSeverity **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.) · analyst confidence medium · **1 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nNo fallback for an empty campus except hosting.\n\n### Evidence\n\n- run `sched-20261106-1915-diego-cold-start-hangout` step 27 — “Nobody's made a plan. I'm new, I'm not gonna be the first to host.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-diego-cold-start-hangout/shots/027-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-diego-cold-start-hangout/shots/027-click-som.jpg)\n\nRuns: [`sched-20261106-1915-diego-cold-start-hangout`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-diego-cold-start-hangout/report.md)\n\n### Who\n\nPersonas: `diego-transfer-commuter` · scenarios: `cold-start-hangout`\n\n### Environment note\n\nLocal stack has no other students; real at quiet times on live.\n\n### Suggested fix (hypothesis)\n\nLow-pressure \"count me in for lunch/coffee this week\" signal instead of \"make the first plan\".\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=cold-start-nobody-here -->\n<!-- ux-sim:fp=7d5aa37f0937 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "content_gap"
+      ],
+      "personas": [
+        "diego-transfer-commuter"
+      ],
+      "scenarios": [
+        "cold-start-hangout"
+      ],
+      "severity": 3
+    },
+    {
+      "key": "club-page-looks-empty",
+      "fingerprints": [
+        "919841c6195c",
+        "d417653a9f04",
+        "6de492d10b73"
+      ],
+      "title": "[ux-sim] Club pages are empty past the join button: no dated events, no members, organizers \"not on Lumi yet\"",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nJordan (Cal Hacks) and Minji (KSA): Events, Members and About tabs empty; \"Organizers aren't on Lumi yet · requests are saved and passed on\" made them doubt anyone reads the request. Same problem as 2026-11-02.\n\nSeverity **3** (Major — real confusion, a wrong path or many extra steps; I nearly gave up or only got through by guessing.) · analyst confidence high · **2 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nClubs come from official lists without officers; the page shows empty tabs instead of the club's own links and meeting times.\n\n### Evidence\n\n- run `sched-20261106-1915-jordan-find-a-club` step 7 — “no events. for the biggest hackathon club. so nothing happening.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-jordan-find-a-club/shots/007-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-jordan-find-a-club/shots/007-click-som.jpg)\n- run `sched-20261106-1915-jordan-find-a-club` step 5 — “organizers aren't even here? so I'm asking... nobody?” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-jordan-find-a-club/shots/005-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-jordan-find-a-club/shots/005-click-som.jpg)\n- run `sched-20261106-1915-minji-find-a-club` step 10 — “3 tabs, 다 비었어. so the only real thing here is the Ask to join button” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-minji-find-a-club/shots/010-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-minji-find-a-club/shots/010-click-som.jpg)\n\nRuns: [`sched-20261106-1915-jordan-find-a-club`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-jordan-find-a-club/report.md), [`sched-20261106-1915-minji-find-a-club`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-minji-find-a-club/report.md)\n\n### Who\n\nPersonas: `jordan-sophomore-impatient`, `minji-freshman-17` · scenarios: `find-a-club`\n\n### Environment note\n\nMembers empty is partly local (no other students); events/organizers come from the same imported data as live — likely the same there.\n\n### Suggested fix (hypothesis)\n\nHide empty tabs; show the club's official site/Instagram and usual meeting time; say exactly who receives the request (e.g. \"we email the officers listed on CalLink\").\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=club-page-looks-empty -->\n<!-- ux-sim:fp=919841c6195c -->\n<!-- ux-sim:fp=d417653a9f04 -->\n<!-- ux-sim:fp=6de492d10b73 -->",
+      "labels": [
+        "ux-sim",
+        "severity:3",
+        "content_gap"
+      ],
+      "personas": [
+        "jordan-sophomore-impatient",
+        "minji-freshman-17"
+      ],
+      "scenarios": [
+        "find-a-club"
+      ],
+      "severity": 3
+    },
+    {
+      "key": "club-list-starts-with-greek-life",
+      "fingerprints": [
+        "3419c6f0e368",
+        "fa9ec7d60ba3"
+      ],
+      "title": "[ux-sim] Club list \"Recommended\" is effectively alphabetical: sororities and consulting clubs first, no photos or what's on",
+      "body": "> **AI 시뮬레이션 — 실제 사용자 측정이 아닌 가설.** 이탈 가능성은 가설로만 적습니다.\n\n> **AI simulation — hypotheses, not measured user behaviour.** Curated from AI personas driving a real browser — a hypothesis to confirm with real students, not measured behaviour.\n\n### Problem\n\nMinji saw Alpha Chi Omega first under \"Recommended\"; Jordan saw a text-only directory led by consulting clubs. Both found their club only by searching. Third and fourth persona on this problem.\n\nSeverity **2** (Moderate — slowed me down or made me hesitate; I recovered on my own.) · analyst confidence high · **2 simulated persona(s)** across 1 scenario(s).\n\n### Root cause (hypothesis)\n\nRecommended ignores the student's picks; list rows have no activity signal.\n\n### Evidence\n\n- run `sched-20261106-1915-minji-find-a-club` step 2 — “'Recommended' is just alphabet sororities? 뭐지. I'm not rushing a sorority at 17” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-minji-find-a-club/shots/002-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-minji-find-a-club/shots/002-click-som.jpg)\n- run `sched-20261106-1915-jordan-find-a-club` step 1 — “94 groups. no pics, no 'meeting tonight'. kinda bulletin board.” [screenshot](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-jordan-find-a-club/shots/001-click.jpg) · [marked](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-jordan-find-a-club/shots/001-click-som.jpg)\n\nRuns: [`sched-20261106-1915-minji-find-a-club`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-minji-find-a-club/report.md), [`sched-20261106-1915-jordan-find-a-club`](https://github.com/chaeyeon573/AroundU/blob/claude/ux-sim/ux-sim/runs/sched-20261106-1915-jordan-find-a-club/report.md)\n\n### Who\n\nPersonas: `minji-freshman-17`, `jordan-sophomore-impatient` · scenarios: `find-a-club`\n\n### Environment note\n\nSame on live.\n\n### Suggested fix (hypothesis)\n\nRank by the student's goals/communities picks; show a \"meets Thursdays\" or \"event this week\" line where known.\n\n### Note\n\nSeverity and persona counts describe simulated personas, not rates of real students. Re-run the affected cells after a fix and compare (docs/ux-sim/ORCHESTRATE.md).\n\n<!-- ux-sim:problem=club-list-starts-with-greek-life -->\n<!-- ux-sim:fp=3419c6f0e368 -->\n<!-- ux-sim:fp=fa9ec7d60ba3 -->",
+      "labels": [
+        "ux-sim",
+        "severity:2",
+        "motivation",
+        "ux_confusion"
+      ],
+      "personas": [
+        "minji-freshman-17",
+        "jordan-sophomore-impatient"
+      ],
+      "scenarios": [
+        "find-a-club"
+      ],
+      "severity": 2
+    }
+  ],
+  "skipped": []
+}
