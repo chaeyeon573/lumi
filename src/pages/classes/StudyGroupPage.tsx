@@ -65,7 +65,7 @@ export function StudyGroupPage() {
           <div className="mt-2 text-[13.5px] text-ink">{en ? 'With ' : '함께: '}{others.map((u, i) => <span key={u.id}>{i > 0 && ', '}<button onClick={() => nav(`/users/${u.id}`)} className="font-semibold">{u.nickname}{u.sample && <span className="ml-1 text-[11px] font-medium text-ink-3">{en ? 'Sample' : '예시'}</span>}</button>{sg.responses[u.id] === 'in' && <Check size={12} className="inline ml-0.5 text-ok" />}</span>)}</div>
           {past ? <p className="mt-4 text-[13px] text-ink-3">{en ? 'This time has passed.' : '지난 시간이에요.'}</p> : (
             <div className="mt-4 flex flex-wrap gap-2">
-              <Btn size="sm" loading={busy === 'in'} className={cn(mine === 'in' && 'pointer-events-none')} icon={<Check size={14} />} onClick={() => respond('in')}>{mine === 'in' ? (en ? 'You’re in' : '함께해요') : (en ? 'I’m in' : '갈게요')}</Btn>
+              <Btn size="sm" loading={busy === 'in'} className={cn(mine === 'in' && 'pointer-events-none')} icon={<Check size={14} />} onClick={() => respond('in')}>{mine === 'in' ? (en ? 'You’re in' : '함께해요') : (en ? 'Join' : '갈게요')}</Btn>
               <Btn size="sm" variant="outline" onClick={() => setOther(true)}>{en ? 'Other time' : '다른 시간'}</Btn>
               <Btn size="sm" variant="link" loading={busy === 'no'} onClick={() => respond('no')}>{mine === 'no' ? (en ? 'Passed' : '패스함') : (en ? 'Not now' : '이번엔 패스')}</Btn>
             </div>

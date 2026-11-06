@@ -18,7 +18,7 @@ const en = lang === 'en';
 /**
  * 같이 가기 시트 — 다른 사람이 연 모임이 있으면 열리자마자 그 모임에 들어간다. 아직 아무도 안 열었으면 먼저 묻는다
  * ("Start a go-together group?") — 한 번 눌렀더니 혼자뿐인 모임의 주최자가 돼 있었다 (ux-sim 2026-11-06).
- * 누가 가는지, 언제 어디서 만나는지, I'm in / Maybe, 그룹 채팅. 같은 일을 엔진(opportunities.goTogether / leaveTogether)이 한다.
+ * 누가 가는지, 언제 어디서 만나는지, Going / Maybe, 그룹 채팅. 같은 일을 엔진(opportunities.goTogether / leaveTogether)이 한다.
  */
 export function GoTogetherSheet({ o, open, onClose, autoJoin = true }: { o: Opportunity; open: boolean; onClose: () => void; autoJoin?: boolean }) {
   const nav = useNavigate();
@@ -73,7 +73,7 @@ export function GoTogetherSheet({ o, open, onClose, autoJoin = true }: { o: Oppo
           {busy && !crew ? (en ? 'Finding your group…' : '같이 갈 모임을 찾는 중…')
             : meet && crew && goingCount === 1 ? (en ? `Meet at ${place || 'the entrance'} at ${meet} — just you so far.` : `${meet}에 ${place || '입구'}에서 만나요 — 아직 나 혼자예요.`)
             : meet ? (en ? `Meet at ${place || 'the entrance'} at ${meet} — ${goingCount} ${goingCount === 1 ? 'person is' : 'people are'} going.` : `${meet}에 ${place || '입구'}에서 만나요 — ${goingCount}명이 가요.`)
-              : goingCount > 0 ? (en ? `${goingCount} going, no meetup yet — tap I'm in to start one.` : `${goingCount}명이 가요. 아직 모임이 없어요 — 갈래요를 누르면 열려요.`)
+              : goingCount > 0 ? (en ? `${goingCount} going, no meetup yet — tap Going to start one.` : `${goingCount}명이 가요. 아직 모임이 없어요 — 갈래요를 누르면 열려요.`)
                 : (en ? 'Nobody has started one yet. You’d be first — others going can join you.' : '아직 아무도 안 열었어요. 열면 가는 사람들이 들어올 수 있어요.')}
         </p>
       </div>
@@ -83,11 +83,11 @@ export function GoTogetherSheet({ o, open, onClose, autoJoin = true }: { o: Oppo
           <Person u={me} you label="going" />
         )}
         {people.map(({ u, label }) => <Person key={u.id} u={u} label={label} onOpen={() => { onClose(); nav(`/users/${u.id}`); }} />)}
-        {!crew && anyCrew && people.length === 0 && !busy && <p className="py-3 text-[13px] text-ink-3">{en ? 'Tap I’m in — whoever taps Go together next joins you here.' : '갈래요를 누르면, 다음에 같이 가기를 누르는 사람이 여기로 들어와요.'}</p>}
+        {!crew && anyCrew && people.length === 0 && !busy && <p className="py-3 text-[13px] text-ink-3">{en ? 'Tap Going — whoever taps Go together next joins you here.' : '갈래요를 누르면, 다음에 같이 가기를 누르는 사람이 여기로 들어와요.'}</p>}
       </div>
 
       <div className="flex flex-wrap gap-2 mt-3">
-        <button onClick={() => !crew && join()} disabled={busy} className={cn('h-9 px-3.5 rounded-full text-[13px] font-semibold inline-flex items-center gap-1.5 border press', crew ? 'bg-sel-soft text-sel-fg border-sel-line' : 'bg-surface border-line text-ink')}><Check size={14} />{en ? "I'm in" : '갈래요'}</button>
+        <button onClick={() => !crew && join()} disabled={busy} className={cn('h-9 px-3.5 rounded-full text-[13px] font-semibold inline-flex items-center gap-1.5 border press', crew ? 'bg-sel-soft text-sel-fg border-sel-line' : 'bg-surface border-line text-ink')}><Check size={14} />{en ? 'Going' : '갈래요'}</button>
         <button onClick={() => crew && maybe()} disabled={busy} className={cn('h-9 px-3.5 rounded-full text-[13px] font-semibold inline-flex items-center gap-1.5 border press', !crew && !busy ? 'bg-surface-2 border-line text-ink' : 'bg-surface border-line text-ink-2')}><HelpCircle size={14} />{en ? 'Maybe' : '아마도'}</button>
         {meet && <span className="h-9 px-3.5 rounded-full bg-surface-2 text-ink text-[13px] font-semibold inline-flex items-center gap-1.5"><Clock size={14} />{en ? 'Meet' : '만남'} {meet}</span>}
         {place && <span className="h-9 px-3.5 rounded-full bg-surface-2 text-ink text-[13px] font-semibold inline-flex items-center gap-1.5 max-w-full truncate"><MapPin size={14} className="shrink-0" /><span className="truncate">{place}</span></span>}
