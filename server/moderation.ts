@@ -39,7 +39,7 @@ import { awaitingVerification } from '@core/lib/verification';
 
 /** distinct real accounts that must report a post/comment before it is hidden pending review (Terms §3 says the same) */
 export const AUTO_HIDE_REPORTS = 3;
-export const REPORT_TARGETS: readonly ReportTargetType[] = ['user', 'activity', 'post', 'comment', 'message', 'ride'];
+export const REPORT_TARGETS: readonly ReportTargetType[] = ['user', 'activity', 'post', 'comment', 'message', 'ride', 'review', 'exam'];
 /** the shared demo logins — never suspended (App Review signs in with them) */
 const DEMO_LOGINS: ReadonlySet<ID> = new Set([DEMO_USER_ID, `${DEMO_USER_ID}_ucmerced`]);
 
@@ -51,7 +51,7 @@ const clip = (s: string, n: number) => (s.length > n ? `${s.slice(0, n - 1)}…`
 const oneLine = (s: string) => s.replace(/\s+/g, ' ').trim();
 
 // ─── where a reported thing lives ───────────────────────────────────────────
-export type TargetKind = 'user' | 'post' | 'comment' | 'activity' | 'opportunity' | 'ride' | 'room' | 'message';
+export type TargetKind = 'user' | 'post' | 'comment' | 'activity' | 'opportunity' | 'ride' | 'room' | 'message' | 'review' | 'exam';
 export interface TargetInfo {
   exists: boolean;
   kind?: TargetKind;
@@ -60,7 +60,26 @@ export interface TargetInfo {
   excerpt: string;
   /** a comment's post/meetup/listing, a message's room */
   parent?: { type: 'post' | 'activity' | 'opportunity' | 'room'; id: ID };
+  /** content kept outside the snapshot (course reviews, exam info): whether others see it right now */
+  state?: 'visible' | 'held' | 'auto_hidden' | 'hidden';
 }
+
+// ─── content that lives outside the snapshot (course reviews · exam info — server/coursereviews.ts) ─────
+/**
+ * A service that keeps its own content registers here so reports on it use the same /admin/reports page:
+ * locate → excerpt + owner for the page and the alert, remove → "Remove", hide → "Hide" (kept, invisible to others),
+ * release → "Dismiss" clears a hold the service put on it (e.g. an automatic text filter). Auto-hide at AUTO_HIDE_REPORTS
+ * is the service's own job (it reads realReporters when it builds a view).
+ */
+export interface ExternalTarget {
+  locate(id: ID): TargetInfo;
+  remove(id: ID): boolean;
+  hide(id: ID, by: string): boolean;
+  release(id: ID): void;
+}
+const externals = new Map<ReportTargetType, ExternalTarget>();
+export function registerReportTarget(type: ReportTargetType, t: ExternalTarget) { externals.set(type, t); }
+export const externalTarget = (type: ReportTargetType) => externals.get(type);
 
 type Db = Pick<Snapshot, 'users' | 'posts' | 'activities' | 'opportunities' | 'chatRooms' | 'reports'> & { rides?: Snapshot['rides'] };
 
@@ -110,6 +129,9 @@ export function locate(db: Db, type: ReportTargetType, id: ID): TargetInfo {
       const f = findMessage(db, id);
       return f ? out('message', f.m.senderId, f.m.text, { type: 'room', id: f.room.id }) : { exists: false, excerpt: '' };
     }
+    case 'review':
+    case 'exam':
+      return externals.get(type)?.locate(id) ?? { exists: false, excerpt: '' };
   }
   return { exists: false, excerpt: '' };
 }
@@ -277,7 +299,9 @@ export function fileReport(db: Snapshot, reporterId: ID, targetType: ReportTarge
   const dup = db.reports.find((r) => r.reporterId === reporterId && r.targetType === targetType && r.targetId === targetId && isOpen(r));
   if (dup) return { report: dup, created: false, autoHidden: false, target, patch: { reports: [dup] }, ...counts() };
 
-  const wasHidden = moderationState(db).hidden.has(targetId);
+  const ext = externals.get(targetType);
+  const hiddenNow = () => (ext ? realReporters(db, targetType, targetId, target.ownerId).size >= AUTO_HIDE_REPORTS : moderationState(db).hidden.has(targetId));
+  const wasHidden = hiddenNow();
   const report: Report = {
     id: `rp_${randomBytes(6).toString('hex')}`, reporterId, targetType, targetId, reason, createdAt: now.toISOString(), status: 'open',
     excerpt: target.excerpt || undefined, targetOwnerId: target.ownerId, log: [],
@@ -285,7 +309,7 @@ export function fileReport(db: Snapshot, reporterId: ID, targetType: ReportTarge
   db.reports.push(report);
   moderationChanged();
   const patch: Patch = { reports: [report] };
-  const autoHidden = !wasHidden && moderationState(db).hidden.has(targetId);
+  const autoHidden = !wasHidden && hiddenNow();
   if (autoHidden) {
     const entry: ReportLogEntry = { at: now.toISOString(), by: 'system', action: 'auto_hidden', note: `${AUTO_HIDE_REPORTS}+ people reported it — hidden from everyone but the author until reviewed` };
     const same = db.reports.filter((r) => r.targetType === targetType && r.targetId === targetId && isOpen(r));
@@ -316,6 +340,7 @@ export function dismissReport(db: Snapshot, reportId: ID, by: string, note?: str
   const report = mustFind(db, reportId);
   const wasHidden = moderationState(db).hidden.has(report.targetId);
   const reports = close(db, report, 'dismissed', entryOf('dismissed', by, note));
+  externals.get(report.targetType)?.release(report.targetId);
   // auto-hidden and now cleared → send it to everyone again
   const back = wasHidden && !moderationState(db).hidden.has(report.targetId) ? carrier(db, report.targetType, report.targetId) : {};
   return { ...back, reports };
@@ -333,6 +358,10 @@ export function removeReported(db: Snapshot, reportId: ID, by: string, opts: { n
   if (!t.exists) throw new ModerationError(409, 'That content is already gone (deleted by its author or another admin). Dismiss the report instead.');
   const patch: Patch = {};
   switch (t.kind) {
+    case 'review':
+    case 'exam':
+      externals.get(report.targetType)?.remove(id);
+      break;
     case 'post':
       db.posts = db.posts.filter((p) => p.id !== id);
       patch.removed = { posts: [id] };
@@ -381,6 +410,17 @@ export function removeReported(db: Snapshot, reportId: ID, by: string, opts: { n
   const what = `${t.kind} ${id}: "${clip(t.excerpt, 200)}"`;
   patch.reports = close(db, report, 'actioned', entryOf('removed', by, [opts.note, `removed ${what}`].filter(Boolean).join(' — ')));
   return patch;
+}
+
+/** keep the reported review / exam info but hide it from everyone but its author (only for content registered with registerReportTarget) */
+export function hideReported(db: Snapshot, reportId: ID, by: string, note?: string): Patch {
+  const report = mustFind(db, reportId);
+  const ext = externals.get(report.targetType);
+  if (!ext) throw new ModerationError(400, 'Only reviews and exam info can be hidden — remove it instead.');
+  const t = ext.locate(report.targetId);
+  if (!t.exists) throw new ModerationError(409, 'That content is already gone. Dismiss the report instead.');
+  ext.hide(report.targetId, by);
+  return { reports: close(db, report, 'actioned', entryOf('hidden', by, [note, `hid ${t.kind} ${report.targetId}: "${clip(t.excerpt, 200)}"`].filter(Boolean).join(' — '))) };
 }
 
 /** everything of this user's that other people can see — re-sent on suspend (→ removed.* for others) and unsuspend (→ back) */
@@ -500,7 +540,7 @@ export function alertText({ filed, reporter, owner, adminUrl }: AlertInput) {
     `Reason: ${r.reason}`,
     `Reporter: ${who(reporter, r.reporterId)}`,
     `Content: ${filed.target.excerpt ? `"${clip(filed.target.excerpt, 300)}"` : '—'}`,
-    `Open reports on this target: ${filed.openOnTarget} (${filed.realOnTarget} from distinct real accounts; auto-hide at ${AUTO_HIDE_REPORTS} for posts/comments)`,
+    `Open reports on this target: ${filed.openOnTarget} (${filed.realOnTarget} from distinct real accounts; auto-hide at ${AUTO_HIDE_REPORTS} for posts/comments/reviews)`,
     ...(filed.autoHidden ? [`This ${r.targetType} is now hidden from everyone except its author until you dismiss or remove it.`] : []),
     ``,
     `Review: ${adminUrl}`,
@@ -602,7 +642,7 @@ export function registerModerationRoutes(app: Express, deps: ModerationDeps) {
           reporter: userBrief(db, r.reporterId),
           owner: userBrief(db, target.ownerId ?? r.targetOwnerId),
           target,
-          autoHidden: st.hidden.has(r.targetId),
+          autoHidden: target.state ? target.state === 'auto_hidden' || target.state === 'held' : st.hidden.has(r.targetId),
           openOnTarget: db.reports.filter((x) => x.targetType === r.targetType && x.targetId === r.targetId && isOpen(x)).length,
           realOnTarget: realReporters(db, r.targetType, r.targetId, target.ownerId ?? r.targetOwnerId).size,
           messages: room ? room.messages.filter((m) => !m.system).slice(-30).map((m) => ({ id: m.id, senderId: m.senderId, sender: db.users.find((u) => u.id === m.senderId)?.nickname ?? m.senderId, text: m.text, createdAt: m.createdAt })) : undefined,
@@ -626,6 +666,13 @@ export function registerModerationRoutes(app: Express, deps: ModerationDeps) {
     const patch = removeReported(deps.db(), String(req.params.id), by, { note: str(body(req).note), messageId: str(body(req).messageId) });
     deps.push(patch);
     console.log(`[moderation] ${by} removed content for ${req.params.id}`);
+    return { ok: true, reports: patch.reports };
+  }));
+
+  app.post('/api/admin/reports/:id/hide', admin((req, by) => {
+    const patch = hideReported(deps.db(), String(req.params.id), by, str(body(req).note));
+    deps.push(patch);
+    console.log(`[moderation] ${by} hid content for ${req.params.id}`);
     return { ok: true, reports: patch.reports };
   }));
 

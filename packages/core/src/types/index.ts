@@ -751,7 +751,7 @@ export interface ChatRoom {
 export type NotificationType =
   | 'friend_accepted' | 'mutual_like' | 'participation_approved' | 'participation_rejected'
   | 'participation_request' | 'activity_reminder' | 'comment' | 'like' | 'follow'
-  | 'org_event' | 'nearby_activity' | 'proposal' | 'proposal_result' | 'deadline' | 'opportunity_match' | 'plan_vote' | 'plan_decided' | 'game_received' | 'game_result' | 'study_group' | 'seat_alert' | 'dining_favorite' | 'gym_alert' | 'verification';
+  | 'org_event' | 'nearby_activity' | 'proposal' | 'proposal_result' | 'deadline' | 'opportunity_match' | 'plan_vote' | 'plan_decided' | 'game_received' | 'game_result' | 'study_group' | 'seat_alert' | 'dining_favorite' | 'gym_alert' | 'verification' | 'course_review';
 
 export interface Notification {
   id: ID;
@@ -765,8 +765,8 @@ export interface Notification {
 }
 
 // ─── 신고 ─────────────────────────────────────────────────────────────────
-/** message: 채팅방 id (또는 메시지 id) · comment: 글·모임 댓글 id · activity: 모임 또는 공고 id */
-export type ReportTargetType = 'user' | 'activity' | 'post' | 'comment' | 'message' | 'ride';
+/** message: 채팅방 id (또는 메시지 id) · comment: 글·모임 댓글 id · activity: 모임 또는 공고 id · review / exam: 수업 리뷰·시험 정보 id (server/coursereviews.ts) */
+export type ReportTargetType = 'user' | 'activity' | 'post' | 'comment' | 'message' | 'ride' | 'review' | 'exam';
 /** open: 검토 대기 · dismissed: 문제없음 · actioned: 삭제·정지 조치함 (server/moderation.ts) */
 export type ReportStatus = 'open' | 'dismissed' | 'actioned';
 /** 신고에 남기는 운영 기록 — 누가 언제 무엇을 했는지 */
@@ -774,7 +774,7 @@ export interface ReportLogEntry {
   at: string;
   /** 운영자 이름 (관리 화면에서 입력) 또는 'system' */
   by: string;
-  action: 'auto_hidden' | 'dismissed' | 'removed' | 'suspended' | 'unsuspended';
+  action: 'auto_hidden' | 'dismissed' | 'removed' | 'hidden' | 'suspended' | 'unsuspended';
   note?: string;
 }
 

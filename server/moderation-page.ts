@@ -51,7 +51,7 @@ export function adminPageHtml(threshold: number): string {
     <select id="status"><option value="open">Open</option><option value="all">All</option></select>
     <button id="reload">Reload</button>
     <button id="forget">Forget key</button>
-    <span class="meta">Posts/comments reported by ${threshold} distinct real accounts are hidden from everyone but the author until you act. Review every report within 24 hours.</span>
+    <span class="meta">Posts, comments, course reviews and exam info reported by ${threshold} distinct real accounts are hidden from everyone but the author until you act. Review every report within 24 hours.</span>
   </div>
   <div id="err"></div>
   <div id="suspended"></div>
@@ -86,7 +86,7 @@ export function adminPageHtml(threshold: number): string {
     const removable = r.target.exists && kind !== 'user' && kind !== 'room';
     const owner = r.owner;
     const c = el('div', { class: 'card', id: r.id },
-      el('div', {}, el('span', { class: 'pill ' + r.status }, r.status), r.autoHidden ? el('span', { class: 'pill hidden' }, 'auto-hidden') : null,
+      el('div', {}, el('span', { class: 'pill ' + r.status }, r.status), r.target.state ? el('span', { class: 'pill ' + (r.target.state === 'visible' ? 'dismissed' : 'hidden') }, r.target.state.replace('_', '-')) : r.autoHidden ? el('span', { class: 'pill hidden' }, 'auto-hidden') : null,
         el('b', {}, kind + ' '), el('code', {}, r.targetId)),
       el('div', { class: 'meta' }, when(r.createdAt) + ' · ' + r.id + ' · open reports on this ' + kind + ': ' + r.openOnTarget + ' (' + r.realOnTarget + ' real)'),
       el('div', {}, el('b', {}, 'Reason: '), r.reason),
@@ -103,6 +103,8 @@ export function adminPageHtml(threshold: number): string {
     }
     const row = el('div', { class: 'row' }, note,
       el('button', { onclick: () => act('/api/admin/reports/' + r.id + '/dismiss', { note: noteVal() }) }, open ? 'Dismiss' : 'Dismiss again'));
+    // course reviews / exam info (server/coursereviews.ts): Hide keeps it for the author only; Dismiss shows it again
+    if (r.target.exists && (kind === 'review' || kind === 'exam') && r.target.state !== 'hidden') row.append(el('button', { class: 'danger', onclick: () => act('/api/admin/reports/' + r.id + '/hide', { note: noteVal() }, 'Hide this ' + kind + ' from everyone but its author?') }, 'Hide ' + kind));
     if (removable) row.append(el('button', { class: 'danger', onclick: () => act('/api/admin/reports/' + r.id + '/remove', { note: noteVal() }, 'Delete this ' + kind + ' for everyone? This cannot be undone.') }, 'Remove ' + kind));
     if (owner && !owner.suspended) row.append(el('button', { class: 'danger', onclick: () => act('/api/admin/reports/' + r.id + '/suspend', { note: noteVal() }, 'Suspend ' + (owner.nickname || owner.id) + '? They are signed out and hidden from everyone until unsuspended.') }, 'Suspend owner'));
     if (owner && owner.suspended) row.append(el('button', { onclick: () => act('/api/admin/users/' + encodeURIComponent(owner.id) + '/unsuspend', { note: noteVal() }, 'Unsuspend ' + (owner.nickname || owner.id) + '?') }, 'Unsuspend owner'));

@@ -11,8 +11,8 @@ const en = lang === 'en';
 /** PDF S092 의 네 가지 + 대상마다 꼭 필요한 하나 (사칭·안전·성적 메시지·부적절한 내용) */
 const BASE = en ? ['Spam', 'Harassment', 'False information'] : ['스팸', '괴롭힘', '거짓 정보'];
 const EXTRA: Partial<Record<ReportTargetType, string>> = en
-  ? { user: 'Impersonation', activity: 'Safety concern', message: 'Sexual content', post: 'Inappropriate content', comment: 'Inappropriate content', ride: 'Safety concern' }
-  : { user: '사칭', activity: '안전 우려', message: '성적인 메시지', post: '부적절한 내용', comment: '부적절한 내용', ride: '안전 우려' };
+  ? { user: 'Impersonation', activity: 'Safety concern', message: 'Sexual content', post: 'Inappropriate content', comment: 'Inappropriate content', ride: 'Safety concern', review: 'Names a student', exam: 'Real exam questions' }
+  : { user: '사칭', activity: '안전 우려', message: '성적인 메시지', post: '부적절한 내용', comment: '부적절한 내용', ride: '안전 우려', review: '학생 이름이 있어요', exam: '실제 시험 문제' };
 export const reportReasons = (type: ReportTargetType) => [...BASE, ...(EXTRA[type] ? [EXTRA[type]!] : []), en ? 'Other' : '기타'];
 
 /**

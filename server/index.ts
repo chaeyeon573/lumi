@@ -29,6 +29,8 @@
  *   POST /api/verification/student-id, GET /admin/verifications (ADMIN_KEY) — 승인·거절 후 사진은 바로 지운다
  * Lumi+ (server/plus.ts): POST /api/plus/{status,checkout,people-match}, POST /api/admin/users/:id/plus (x-admin-key) — LUMI_PLUS=1 이면 막기 시작
  * 저장한 사람 폴더·메모 (server/savedpeople.ts): POST /api/saved-people/{view,folder,folder/rename,folder/remove,entry} — 본인만
+ * 수업 리뷰·시험 정보 (server/coursereviews.ts): POST /api/reviews/{view,save,remove,helpful,exam,exam/save,exam/remove,instructors,term,stars}
+ *   — 인증 학생·그 학기 시간표·8주차부터, 글쓴이 id 는 내려가지 않는다. 신고는 /admin/reports (review·exam), 학기 말 안내 잡 (REVIEW_PROMPT_MINUTES)
  */
 import express, { type Request, type Response, type NextFunction } from 'express';
 import cors from 'cors';
@@ -79,6 +81,7 @@ import { registerSignInEmailRoutes, schoolEmailOk } from './signin-email';
 import { plusEnabled, registerPlusRoutes } from './plus';
 import { createSavedPeopleService, registerSavedPeopleRoutes } from './savedpeople';
 import { createClubsService, registerClubRoutes, startClubFollowUpJob } from './clubs';
+import { createCourseReviewsService, registerCourseReviewRoutes, startReviewPromptJob } from './coursereviews';
 
 const PORT = Number(process.env.PORT ?? 8787);
 const store = createStore();
@@ -171,6 +174,10 @@ await campus.load();
 // 수업 질문 (S030 Questions — server/classqa.ts, 스냅샷 밖 문서 묶음)
 const classQa = createClassQaService({ db: () => db, store, push: pushPatch });
 await classQa.load();
+// 수업 리뷰 · 시험 정보 (course page › Reviews · Exam info — server/coursereviews.ts, 스냅샷 밖 문서 묶음) + 학기 말 리뷰 안내
+const courseReviews = createCourseReviewsService({ db: () => db, store, push: pushPatch, catalog: (schoolId) => catalogBySchool.get(schoolId) ?? [] });
+await courseReviews.load();
+startReviewPromptJob(courseReviews);
 // 학생증 사진 인증 (server/idverify.ts) — 요청 기록은 스냅샷 밖 문서 묶음, 사진은 따로(idPhotos) 두고 검토 뒤 지운다
 const idVerify = createIdVerify({ db: () => db, store, push: pushPatch, sendMail });
 await idVerify.load();
@@ -207,7 +214,7 @@ const wrap = (fn: (req: Req, res: Response) => Promise<unknown> | unknown) => as
 };
 // 학생증 검토를 기다리는 계정 — 다른 사람에게 닿는 일(글·모임·메시지·친구 요청·그룹 신청·약속·사진·수업 질문)은 승인 전까지 거절 (server/idverify.ts).
 // 모든 RPC·사진·수업 질문 경로보다 먼저 건다
-app.use(['/api/rpc', '/api/media', '/api/classqa', '/api/clubs', '/api/club-setup'], auth, pendingGate(() => db));
+app.use(['/api/rpc', '/api/media', '/api/classqa', '/api/clubs', '/api/club-setup', '/api/reviews'], auth, pendingGate(() => db));
 
 async function issueSession(userId: ID) {
   const token = randomBytes(32).toString('hex');
@@ -412,8 +419,9 @@ registerAccountRoutes(app, {
     (id) => classQa.forgetUser(id),
     (id) => idVerify.forgetUser(id),
     (id) => savedPeople.forgetUser(id),
+    (id) => courseReviews.forgetUser(id),
   ],
-  exportExtras: (id) => ({ savedPeople: savedPeople.raw(id) ?? null }),
+  exportExtras: (id) => ({ savedPeople: savedPeople.raw(id) ?? null, ...courseReviews.exportFor(id) }),
 });
 
 // ─── 푸시 토큰 — POST /api/push/{register,unregister} (server/push.ts) ─────────────
@@ -432,6 +440,8 @@ app.post('/api/catalog/sections', wrap(async (req) => { const s = String(req.bod
 
 // ─── 수업 질문 — POST /api/classqa/{list,ask,answer,remove} (server/classqa.ts) ───
 registerClassQaRoutes(app, classQa, { auth, wrap, requireUser, bad });
+// ─── 수업 리뷰 · 시험 정보 — POST /api/reviews/* (server/coursereviews.ts) ───
+registerCourseReviewRoutes(app, courseReviews, { auth, wrap, requireUser, bad, db: () => db });
 
 // ─── 학사 일정 · 좌석 알림 ── /api/academic/dates, /api/seats/{mine,watch,unwatch}
 mountCampusRoutes(app, campus, { auth, wrap, requireUser, bad, user: (id) => db.users.find((u) => u.id === id), catalog: schoolCatalog });

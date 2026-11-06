@@ -11,6 +11,7 @@ import type { OrgHit } from '@core/lib/signup';
 import type { PlansApi } from './plans';
 import type { TimePollWindow } from '@core/types';
 import type { ClassQuestionView } from '@core/lib/classqa';
+import type { CourseReviewsView, ExamInfoView, ExamInput, ReviewInput, TermPromptView } from '@core/lib/coursereviews';
 import type { PublicExplore } from '@core/lib/publicexplore';
 import type { OrgJoinPolicy } from '@core/types';
 import type { AdvancedPeopleFilter, CheckoutPlatform, CheckoutResult, PlusStatus } from '@core/lib/plus';
@@ -514,6 +515,24 @@ export interface AroundUApi {
     answer(questionId: ID, text: string): Promise<ClassQuestionView[]>;
     /** 내가 쓴 질문·답 지우기 (answerId 없으면 질문 통째로) */
     remove(questionId: ID, answerId?: ID): Promise<ClassQuestionView[]>;
+  };
+
+  /** 수업 리뷰 · 시험 정보 (course page › Reviews · Exam info) — 규칙 @core/lib/coursereviews, 저장 server/coursereviews.ts. 글쓴이 id 는 내려오지 않는다 */
+  courseReviews: {
+    /** code = 과목 코드 ("CS 61A"), 학교는 보는 사람의 학교 */
+    view(code: string, filter?: { instructor?: string; term?: string }): Promise<CourseReviewsView>;
+    save(input: ReviewInput): Promise<CourseReviewsView>;
+    remove(id: ID): Promise<CourseReviewsView>;
+    /** 도움돼요 누르기·취소 */
+    helpful(id: ID): Promise<CourseReviewsView>;
+    exam(code: string): Promise<ExamInfoView>;
+    saveExam(input: ExamInput): Promise<ExamInfoView>;
+    removeExam(id: ID): Promise<ExamInfoView>;
+    instructors(code: string, term: string): Promise<{ instructors: string[] }>;
+    /** 학기 말 안내의 단계 화면 */
+    term(term: string): Promise<TermPromptView>;
+    /** 목록 줄 별점 — 과목 slug → ★ (리뷰 3개 이상인 수업만) */
+    stars(codes?: string[]): Promise<{ stars: Record<string, { avg: number; count: number }> }>;
   };
 
   /** Lumi+ (S087·S088) — 무엇인지는 @core/lib/plus, 막는 건 서버 (server/plus.ts). 오프라인 데모는 늘 꺼짐 */

@@ -207,6 +207,18 @@ export function createRemoteApi(baseUrl: string): AroundUApi {
       answer: (questionId, text) => call('classqa/answer', { questionId, text }),
       remove: (questionId, answerId) => call('classqa/remove', { questionId, answerId }),
     },
+    courseReviews: {
+      view: (code, filter) => call('reviews/view', { code, ...filter }),
+      save: (input) => call('reviews/save', input),
+      remove: (id) => call('reviews/remove', { id }),
+      helpful: (id) => call('reviews/helpful', { id }),
+      exam: (code) => call('reviews/exam', { code }),
+      saveExam: (input) => call('reviews/exam/save', input),
+      removeExam: (id) => call('reviews/exam/remove', { id }),
+      instructors: (code, term) => call('reviews/instructors', { code, term }),
+      term: (term) => call('reviews/term', { term }),
+      stars: (codes) => call('reviews/stars', { codes }),
+    },
 
     plus: {
       status: () => call('plus/status', {}),
