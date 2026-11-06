@@ -10,7 +10,7 @@
  *   - organizers message only students who consented, as the club, in the existing direct conversation; blocks and withdraw stop it
  *   npm test
  */
-import { test } from 'node:test';
+import { test, mock } from 'node:test';
 import assert from 'node:assert/strict';
 import type { Patch, Snapshot } from '@core/api/types';
 import type { Organization } from '@core/types';
@@ -50,6 +50,8 @@ function setup(opts: { orgs?: Organization[]; env?: Record<string, string>; mail
   const mails: { to: string; subject: string; text: string; html?: string }[] = [];
   const pushed: Patch[] = [];
   let clock = new Date('2026-11-06T18:00:00Z');
+  // 엔진(engine.ts)은 실제 시계(new Date())로 요청 시각을 적는다 — 테스트 시계와 같게 맞춘다. 고정 시각만 쓰면 실제 시간이 2026-11-06 18:00 UTC 를 넘는 순간 요청이 '미래'가 되어 3개가 깨졌다 (2026-11-06 18:40)
+  mock.timers.reset(); mock.timers.enable({ apis: ['Date'], now: clock.getTime() });
   const env = { ...(opts.env ?? {}) };
   const svc = createClubsService({
     db: () => db, store, engine: engine.orgs, push: (p) => pushed.push(p),
@@ -57,7 +59,7 @@ function setup(opts: { orgs?: Organization[]; env?: Record<string, string>; mail
     env: () => env, now: () => clock,
   });
   const org = (id = 'oc_chaos') => db.organizations.find((o) => o.id === id)!;
-  return { db, svc, engine, mails, pushed, docs, media, env, org, tick: (days: number) => { clock = new Date(clock.getTime() + days * 86400_000); } };
+  return { db, svc, engine, mails, pushed, docs, media, env, org, tick: (days: number) => { clock = new Date(clock.getTime() + days * 86400_000); mock.timers.setTime(clock.getTime()); } };
 }
 /** a raw setup token the way a click on an e-mail link would bring it */
 async function tokenFor(s: ReturnType<typeof setup>, orgId = 'oc_chaos'): Promise<string> {
