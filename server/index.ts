@@ -78,7 +78,7 @@ import { awaitingVerification } from '@core/lib/verification';
 import { registerSignInEmailRoutes, schoolEmailOk } from './signin-email';
 import { plusEnabled, registerPlusRoutes } from './plus';
 import { createSavedPeopleService, registerSavedPeopleRoutes } from './savedpeople';
-import { createClubsService, registerClubRoutes } from './clubs';
+import { createClubsService, registerClubRoutes, startClubFollowUpJob } from './clubs';
 
 const PORT = Number(process.env.PORT ?? 8787);
 const store = createStore();
@@ -180,6 +180,7 @@ await savedPeople.load();
 // 동아리 "Ask to join" — 운영진 확인 링크·안내 메일 기록 (server/clubs.ts, 스냅샷 밖 문서 묶음 clubTokens · clubOutreach). 안내 메일은 CLUB_OUTREACH=1 일 때만
 const clubs = createClubsService({ db: () => db, store, engine: engine.orgs, push: pushPatch, sendMail });
 await clubs.load();
+startClubFollowUpJob(clubs);
 setInterval(() => { syncFromWorker().catch((e) => console.error('[sync] failed', e)); }, Number(process.env.DATA_SYNC_SECONDS ?? 120) * 1000);
 
 // ─── 앱 ─────────────────────────────────────────────────────────────────

@@ -28,7 +28,8 @@ interface AppState extends Snapshot {
 }
 
 /** 토스트 버튼 — 누르면 이 경로로 간다 (웹·앱 공통이라 함수 대신 경로) */
-export interface ToastAction { label: string; to: string }
+/** to = go there · run = do it here (e.g. Undo) — one of the two */
+export interface ToastAction { label: string; to?: string; run?: () => void }
 
 const empty: Snapshot = {
   users: [], schools: [], organizations: [], activities: [], participations: [], posts: [],
@@ -113,7 +114,7 @@ export const useAppStore = create<AppState>((set, get) => ({
   showToast(text, tone = 'info', action) {
     const id = ++toastSeq;
     set({ toast: { id, text, tone, action } });
-    setTimeout(() => { if (get().toast?.id === id) set({ toast: null }); }, action ? 6000 : 2600);
+    setTimeout(() => { if (get().toast?.id === id) set({ toast: null }); }, action?.run ? 5000 : action ? 6000 : 2600);
   },
 }));
 

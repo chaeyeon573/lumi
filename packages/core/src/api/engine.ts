@@ -19,9 +19,9 @@ import { DAILY_QUESTIONS, PERSON_ROLE_LABELS } from '@core/lib/labels';
 import { campusDate } from '@core/lib/listings';
 import { pollPlaceNames, POLL_MAX_GRID_OPTIONS } from '@core/lib/pollgrid';
 import { orgJoinState } from '@core/lib/orgjoin';
-import { clubShort, CONSENT_VERSION, deliverSaved, ORG_MESSAGE_MAX, requestOf } from '@core/lib/clubjoin';
+import { clubShort, CONSENT_VERSION, deliverSaved, ORG_MESSAGE_MAX, promiseDate, requestOf } from '@core/lib/clubjoin';
 import { audienceFits, isFull, waitlistOf } from '@core/lib/meetups';
-import { initialsOf } from '@core/lib/orglinks';
+import { initialsOf, publicLinks } from '@core/lib/orglinks';
 import { groupLimitReason, hasPlus, limitsFor, meetupLimitReason, upcomingHosted } from '@core/lib/plus';
 import { canGoTogether, campusToday, crewMembers, crewsFor, dailyTally, meetTimeFor, DAILY_MIN_ANSWERS, MEETUP_CAPACITY } from '@core/lib/withpeople';
 
@@ -516,7 +516,8 @@ export function createEngine(ctx: EngineContext) {
         // 나를 차단했거나 내가 차단한 운영진에게는 가지 않는다
         const organizers = org.adminIds.filter((a) => a !== userId && !isBlocked(db(), a, userId));
         org.applicantIds.push(userId);
-        const req: JoinRequest = { userId, askedAt: at, consent: CONSENT_VERSION, ...(organizers.length ? { deliveredAt: at, deliveredVia: 'organizers' as const } : {}) };
+        // 운영진이 없으면 저장만 — "3일 안에 알려 드릴게요" 의 날짜를 같이 적어 둔다 (followUps 가 지킨다)
+        const req: JoinRequest = { userId, askedAt: at, consent: CONSENT_VERSION, ...(organizers.length ? { deliveredAt: at, deliveredVia: 'organizers' as const } : { promisedBy: promiseDate(at) }) };
         org.joinRequests = [...(org.joinRequests ?? []).filter((r) => r.userId !== userId), req];
         const nts = organizers.map((a) => notify(a, { type: 'participation_request', title: t('가입 요청'), body: `${who.nickname} · ${org.name}`, link: `/orgs/${org.id}/requests` }));
         return { organizations: [org], notifications: nts };
@@ -572,11 +573,39 @@ export function createEngine(ctx: EngineContext) {
         const told = deliverSaved(org, 'organizers', now());
         return { organizations: [org], notifications: told.map((sid) => toldNote(org, sid)) };
       },
-      /** 서버 전용 — 안내 메일이 실제로 동아리 주소로 나갔다. 그 메일이 센 요청(until 까지)만 전해진 것으로 바꾸고 알린다 */
-      markEmailed(orgId: ID, until: string): Patch {
+      /**
+       * 서버 전용 — 동아리에 실제로 전해졌다: 안내 메일이 나갔거나(email) 운영자가 직접 연락했다(contacted, /admin/clubs).
+       * 그때까지(until) 저장돼 있던 요청을 전해진 것으로 바꾸고 각자에게 "We told {club} you want to join". quiet = 방금 누른 학생 (토스트가 이미 말했다)
+       */
+      markTold(orgId: ID, via: 'email' | 'contacted', until?: string, quiet?: ID): Patch {
         const org = find(db().organizations, orgId);
-        const told = deliverSaved(org, 'email', now(), until);
-        return told.length ? { organizations: [org], notifications: told.map((sid) => toldNote(org, sid)) } : {};
+        const told = deliverSaved(org, via, now(), until);
+        return told.length ? { organizations: [org], notifications: told.filter((sid) => sid !== quiet).map((sid) => toldNote(org, sid)) } : {};
+      },
+      /**
+       * 서버 전용 (server/clubs.ts 의 작업이 한 시간마다) — "3일 안에 알려 드릴게요" 를 지킨다. 약속한 날이 지난 요청마다 정확히 한 번:
+       * 그 사이 전해졌으면 이미 알림을 받았다(그대로 둔다), 아직이면 지금 상태 그대로 — "{club} isn't on Lumi yet" + 동아리가 공개로 적은 가입 방법·링크
+       */
+      followUps(nowIso: string = now()): Patch {
+        const orgs: Organization[] = []; const nts: Notification[] = [];
+        for (const org of db().organizations) {
+          let touched = false;
+          for (const r of org.joinRequests ?? []) {
+            if (!r.promisedBy || r.followedUpAt || r.promisedBy > nowIso || !org.applicantIds.includes(r.userId)) continue;
+            r.followedUpAt = nowIso; touched = true;
+            if (r.deliveredAt) continue; // the status changed in the meantime — they were told then
+            const club = clubShort(org.name);
+            const link = org.howToJoin?.signupUrl ?? publicLinks(org.links).find((l) => /instagram/i.test(l.url))?.url ?? publicLinks(org.links)[0]?.url;
+            const host = link ? link.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '') : '';
+            nts.push(notify(r.userId, {
+              type: 'org_event', title: t('{club}은(는) 아직 Lumi에 없어요').replace('{club}', club),
+              body: (host ? t('가입 방법은 여기서 볼 수 있어요: {link}. ').replace('{link}', host) : '') + t('요청은 그대로 두고, 답이 오면 알려 드릴게요.'),
+              link: `/orgs/${org.id}`,
+            }));
+          }
+          if (touched) orgs.push(org);
+        }
+        return orgs.length ? { organizations: orgs, notifications: nts } : {};
       },
       /**
        * 서버 전용 — 운영진이 /club-setup 에서 적은 가입 방법을 동아리 페이지에 올린다. 처음 올리거나 링크·설명회가 바뀌면

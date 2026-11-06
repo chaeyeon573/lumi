@@ -20,6 +20,9 @@
  *   a club with no organizers on Lumi and ≥3 waiting requests gets at most one e-mail per 30 days at its official address.
  *   GET  /api/admin/clubs/:id/outreach-preview[?format=html]   x-admin-key: ADMIN_KEY
  *   GET  /club-optout/:orgId/:token  (confirm page) · POST /api/club-optout/:orgId/:token  → never e-mail that club again
+ * The Lumi team's own outreach (Instagram DM for now): GET /admin/clubs (ADMIN_KEY) · GET /api/admin/clubs ·
+ *   POST /api/admin/clubs/:id/dm (fresh setup link + DM text, never stored) · POST /api/admin/clubs/:id/contacted { channel }
+ * 3-day follow-up: startClubFollowUpJob → engine orgs.followUps (one in-app update per saved request)
  *
  * Tokens: 32 random bytes, only the SHA-256 is stored (doc collection clubTokens), one club each, expire (manage link 24 h,
  * e-mail link 7 days), the account claim uses the token up. Lookups and sends are rate-limited. The outreach log (clubOutreach,
@@ -30,10 +33,12 @@ import type { Express, Request, Response, NextFunction } from 'express';
 import type { Patch, Snapshot } from '@core/api/types';
 import type { ID, Organization } from '@core/types';
 import type { Engine } from '@core/api/engine';
-import { ClubJoinError, cleanHowToJoin, CONSENT_VERSION, pendingRequests, requestStatus, type RequestStatus } from '@core/lib/clubjoin';
+import { ClubJoinError, cleanHowToJoin, clubShort, CONSENT_VERSION, dmText, pendingRequests, requestStatus, TOLD_WINDOW_DAYS, type RequestStatus } from '@core/lib/clubjoin';
+import { publicLinks } from '@core/lib/orglinks';
 import { acceptUpload } from './media';
 import type { MediaFile, Store } from './store';
-import { checkAdmin, ModerationError } from './moderation';
+import { adminName, checkAdmin, ModerationError } from './moderation';
+import { clubsAdminPageHtml } from './clubs-admin-page';
 
 export const CLUB_TOKENS = 'clubTokens';
 export const CLUB_OUTREACH = 'clubOutreach';
@@ -44,7 +49,12 @@ export const OUTREACH_TTL_MS = 7 * 24 * 3600_000;
 const DAY = 24 * 3600_000;
 
 export interface ClubToken { id: string; orgId: ID; via: 'manage' | 'outreach'; createdAt: string; expiresAt: string; usedAt?: string }
-export interface OutreachLog { id: ID; sends: { at: string; count: number; to: string }[]; optOutHashes: string[]; optedOutAt?: string }
+/** one doc per club: e-mails sent, the Lumi team's own contacts (who/when/channel — never the message), opt-out */
+export interface OutreachLog { id: ID; sends: { at: string; count: number; to: string }[]; contacts?: ClubContact[]; optOutHashes: string[]; optedOutAt?: string }
+export type ContactChannel = 'instagram' | 'email' | 'other';
+export interface ClubContact { at: string; by: string; channel: ContactChannel; waiting: number }
+export const CONTACT_CHANNELS: ContactChannel[] = ['instagram', 'email', 'other'];
+export const FOLLOW_UP_EVERY_MS = 60 * 60 * 1000;
 
 const sha = (raw: string) => createHash('sha256').update(raw).digest('hex');
 const newToken = () => randomBytes(32).toString('base64url');
@@ -68,7 +78,7 @@ export function limiter(now: () => number) {
 export interface ClubsDeps {
   db: () => Snapshot;
   store: Pick<Store, 'listDocs' | 'putDocs' | 'removeDocs' | 'putMedia'>;
-  engine: Pick<Engine['orgs'], 'apply' | 'withdraw' | 'claim' | 'markEmailed' | 'setHowToJoin' | 'setImage' | 'messageRequesters'>;
+  engine: Pick<Engine['orgs'], 'apply' | 'withdraw' | 'claim' | 'markTold' | 'followUps' | 'setHowToJoin' | 'setImage' | 'messageRequesters'>;
   push: (patch: Patch) => void;
   sendMail: (to: string, subject: string, text: string, html?: string) => Promise<boolean>;
   env?: () => NodeJS.ProcessEnv;
@@ -111,6 +121,13 @@ export function createClubsService(deps: ClubsDeps) {
     return t;
   }
   const optedOut = (orgId: ID) => !!logs.get(orgId)?.optedOutAt;
+  /** the latest time the club was told (e-mail sent or contacted by the Lumi team) within TOLD_WINDOW_DAYS */
+  const lastTold = (orgId: ID): { at: string; via: 'email' | 'contacted' } | undefined => {
+    const log = logs.get(orgId);
+    const all = [...(log?.sends ?? []).map((x) => ({ at: x.at, via: 'email' as const })), ...(log?.contacts ?? []).map((x) => ({ at: x.at, via: 'contacted' as const }))].sort((a, b) => b.at.localeCompare(a.at));
+    const last = all[0];
+    return last && now().getTime() - Date.parse(last.at) < TOLD_WINDOW_DAYS * DAY ? last : undefined;
+  };
 
   /** what a student's request status is right now (only what really happened) */
   const statusOf = (orgId: ID, userId: ID): RequestStatus => requestStatus(orgOf(orgId), userId);
@@ -191,7 +208,7 @@ ${btn(links.setup, 'Add how to join →')}
       if (!sent) return false; // nothing reached the club — nobody's status changes
       const next: OutreachLog = { ...log, sends: [...log.sends, { at, count, to: mail.to }], optOutHashes: [...log.optOutHashes, sha(optRaw)].slice(-12) };
       logs.set(o.id, next); await save(CLUB_OUTREACH, next);
-      const patch = deps.engine.markEmailed(o.id, at);
+      const patch = deps.engine.markTold(o.id, 'email', at);
       if (Object.keys(patch).length) deps.push(patch);
       return true;
     } finally { sending.delete(o.id); }
@@ -213,6 +230,14 @@ ${btn(links.setup, 'Add how to join →')}
       if (!allow(`ask:${me}`, 30, 3600_000)) throw err('You’ve sent a lot of requests in the last hour — try again a bit later.', 429);
       const patch = deps.engine.apply(orgId, me, consent);
       deps.push(patch);
+      // the club was told about waiting requests in the last 30 days (an e-mail, or the Lumi team contacted it) and has no
+      // organizers on Lumi yet → this request counts as passed on too (owner 2026-11-06). The toast says so; no extra notification
+      const o = orgOf(orgId);
+      const told = lastTold(o.id);
+      if (!o.adminIds.length && told && requestStatus(o, me) === 'saved') {
+        const p = deps.engine.markTold(o.id, told.via, undefined, me);
+        if (Object.keys(p).length) { deps.push(p); Object.assign(patch, { organizations: p.organizations }); }
+      }
       await maybeOutreach(orgId, base).catch((e) => console.error('[clubs] outreach failed', e));
       return { patch, status: statusOf(orgId, me) };
     },
@@ -306,6 +331,50 @@ ${btn(links.setup, 'Add how to join →')}
       return r;
     },
 
+    // ─── "update you within 3 days" (startClubFollowUpJob, hourly) ───
+    followUps(): Patch { const p = deps.engine.followUps(now().toISOString()); if (Object.keys(p).length) deps.push(p); return p; },
+
+    // ─── /admin/clubs — the Lumi team contacts clubs itself (Instagram DM for now) ───
+    /** clubs with requests waiting and no organizers on Lumi, oldest request first */
+    adminList() {
+      const t = now().getTime();
+      return deps.db().organizations
+        .filter((o) => !o.adminIds.length && pendingRequests(o).length)
+        .map((o) => {
+          const reqs = pendingRequests(o);
+          const oldest = reqs.map((r) => r.askedAt).sort()[0];
+          const log = logs.get(o.id);
+          return {
+            id: o.id, name: o.name, short: clubShort(o.name), waiting: reqs.length, saved: reqs.filter((r) => !r.deliveredAt).length,
+            oldestAskedAt: oldest, oldestDays: Math.floor((t - Date.parse(oldest)) / DAY),
+            links: [...(o.howToJoin?.signupUrl ? [{ label: 'Sign-up form', url: o.howToJoin.signupUrl }] : []), ...publicLinks(o.links)],
+            hasContactEmail: !!contactOf(o), optedOut: !!log?.optedOutAt,
+            contacts: log?.contacts ?? [], lastEmailAt: log?.sends.at(-1)?.at ?? null,
+          };
+        })
+        .sort((a, b) => a.oldestAskedAt.localeCompare(b.oldestAskedAt));
+    },
+    /** a fresh setup link for ONE club (minted on click) and the DM text around it — the DM is never stored */
+    adminDm(orgId: ID, base: string) {
+      const o = orgOf(orgId);
+      const raw = issue(o.id, 'outreach');
+      const link = `${base}/club-setup/${raw}`;
+      const school = schoolOf(o)?.name.replace(/^UC\s+/i, '') ?? 'Berkeley';
+      return { link, dm: dmText(o.name, pendingRequests(o).length, link, school) };
+    },
+    /** "Mark contacted": every request waiting right now counts as passed on; who/when/channel stored, never the message */
+    async markContacted(orgId: ID, by: string, channel: unknown) {
+      const o = orgOf(orgId);
+      if (!CONTACT_CHANNELS.includes(channel as ContactChannel)) throw err('Pick Instagram, e-mail or other.');
+      const at = now().toISOString();
+      const log = logOf(o.id);
+      const next: OutreachLog = { ...log, contacts: [...(log.contacts ?? []), { at, by: String(by).slice(0, 60), channel: channel as ContactChannel, waiting: pendingRequests(o).length }] };
+      logs.set(o.id, next); await save(CLUB_OUTREACH, next);
+      const patch = deps.engine.markTold(o.id, 'contacted', at);
+      if (Object.keys(patch).length) deps.push(patch);
+      return { told: patch.notifications?.length ?? 0 };
+    },
+
     // ─── outreach ───
     maybeOutreach,
     outreachBlocker: (orgId: ID) => outreachBlocker(orgOf(orgId)),
@@ -332,6 +401,13 @@ ${btn(links.setup, 'Add how to join →')}
   return svc;
 }
 export type ClubsService = ReturnType<typeof createClubsService>;
+
+/** keeps the "update you within 3 days" promise — hourly in the web server (like startStudyGroupJob), once at start */
+export function startClubFollowUpJob(svc: Pick<ClubsService, 'followUps'>, everyMs = FOLLOW_UP_EVERY_MS) {
+  const run = () => { try { const p = svc.followUps(); if (p.notifications?.length) console.log(`[clubs] ${p.notifications.length} 3-day follow-ups`); } catch (e) { console.error('[clubs] follow-ups failed', e); } };
+  setTimeout(run, 30_000).unref?.();
+  return setInterval(run, everyMs).unref?.();
+}
 
 type Req = Request & { userId?: ID; suspended?: boolean };
 type Handler = (req: Req, res: Response) => Promise<unknown> | unknown;
@@ -390,6 +466,18 @@ export function registerClubRoutes(app: Express, svc: ClubsService, deps: {
     const r = svc.claim(req.params.token, me);
     return { orgId: r.orgId, patch: mine(r.patch, me) };
   }));
+
+  // the Lumi team's own outreach (owner 2026-11-06 — Instagram DMs for now): /admin/clubs + its API (ADMIN_KEY)
+  app.get('/admin/clubs', (_req, res) => {
+    res.set({
+      'cache-control': 'no-store', 'x-robots-tag': 'noindex, nofollow', 'x-frame-options': 'DENY', 'referrer-policy': 'no-referrer',
+      'content-security-policy': "default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+    });
+    res.type('html').send(clubsAdminPageHtml());
+  });
+  app.get('/api/admin/clubs', handle((req, res) => { checkAdmin(req, env()); noStore(res); return { clubs: svc.adminList() }; }));
+  app.post('/api/admin/clubs/:id/dm', handle((req, res) => { checkAdmin(req, env()); noStore(res); return svc.adminDm(String(req.params.id), base(req)); }));
+  app.post('/api/admin/clubs/:id/contacted', handle((req, res) => { checkAdmin(req, env()); noStore(res); return svc.markContacted(String(req.params.id), adminName(req), body(req).channel); }));
 
   // outreach: admin preview + opt-out
   app.get('/api/admin/clubs/:id/outreach-preview', handle((req, res) => {

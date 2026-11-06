@@ -22,10 +22,10 @@ export function clubShort(name: string): string {
   return m && /[A-Z].*[A-Z]/.test(m[1]) ? m[1].trim() : name.trim();
 }
 
-/** the version of the consent line the student saw (stored on each request) */
-export const CONSENT_VERSION = 'v2:name-year-major-message';
+/** the version of the consent line the student saw (stored on each request). v3 (owner 2026-11-06): one quiet line under the
+ * Ask to join button — tapping the button is the consent, no sheet */
+export const CONSENT_VERSION = 'v3:line-under-button:name-year-major-message';
 export const consentLine = (name: string, club = clubShort(name)) => L(`${club} organizers will see your name, year and major and can message you.`, `${club} 운영진이 내 이름·학년·전공을 보고 메시지를 보낼 수 있어요.`);
-export const consentTitle = (name: string, club = clubShort(name)) => L(`We’ll tell ${club} you want to join`, `${club}에 가입하고 싶다고 전할게요`);
 
 /** a request to the club, if this student has one */
 export const requestOf = (org: Pick<Organization, 'joinRequests'>, userId: ID): JoinRequest | undefined => org.joinRequests?.find((r) => r.userId === userId);
@@ -33,9 +33,9 @@ export const requestOf = (org: Pick<Organization, 'joinRequests'>, userId: ID): 
 /**
  * what the student's own request status is — only what really happened:
  *   none  · no request
- *   saved · stored on Lumi, nobody at the club has it yet (no organizers, no outreach e-mail covering it)
+ *   saved · stored on Lumi, nobody at the club has it yet
  *   sent  · organizers on Lumi have it
- *   told  · an outreach e-mail went to the club's official address and counted this request
+ *   told  · the club was told: an outreach e-mail counted it, or the Lumi team contacted the club (Instagram DM, e-mail …)
  */
 export type RequestStatus = 'none' | 'saved' | 'sent' | 'told';
 export function requestStatus(org: Pick<Organization, 'joinRequests' | 'applicantIds' | 'adminIds'>, userId: ID): RequestStatus {
@@ -44,22 +44,32 @@ export function requestStatus(org: Pick<Organization, 'joinRequests' | 'applican
   // a request from before this record existed went to organizers on Lumi (the old flow only sent when there were some)
   if (!r) return org.adminIds.some((a) => a !== userId) ? 'sent' : 'saved';
   if (!r.deliveredAt) return 'saved';
-  return r.deliveredVia === 'email' ? 'told' : 'sent';
+  return r.deliveredVia === 'organizers' ? 'sent' : 'told';
 }
 
-/** toast right after asking (must match requestStatus) */
+/** days until a saved request gets its promised update ("update you within 3 days") */
+export const FOLLOW_UP_DAYS = 3;
+/** a club contacted (or e-mailed) this recently counts as told for new requests too */
+export const TOLD_WINDOW_DAYS = 30;
+export const promiseDate = (askedAt: string) => new Date(Date.parse(askedAt) + FOLLOW_UP_DAYS * 86400_000).toISOString();
+const shortDay = (iso: string) => new Date(iso).toLocaleDateString(lang === 'en' ? 'en-US' : 'ko-KR', { month: 'short', day: 'numeric' });
+
+/** the toast right after the one tap (owner 2026-11-06 — must match requestStatus) */
 export function askedToast(status: RequestStatus, name: string): string {
   const club = clubShort(name);
-  if (status === 'sent') return L(`Sent to ${club} organizers`, `${club} 운영진에게 보냈어요`);
-  if (status === 'told') return L(`We told ${club} you want to join — you’ll hear here when they reply.`, `${club}에 가입하고 싶다고 전했어요 — 답이 오면 여기서 알려 드려요.`);
-  return L(`Saved — we’ll pass it on to ${club}.`, `저장했어요 — ${club}에 전해 드릴게요.`);
+  if (status === 'sent') return L(`Sent to ${club} ✓`, `${club}에 보냈어요 ✓`);
+  if (status === 'told') return L(`Sent ✓ We passed it to ${club} — you’ll hear here when they reply.`, `보냈어요 ✓ ${club}에 전했어요 — 답이 오면 여기서 알려 드려요.`);
+  return L(`Saved ✓ We’ll pass it to ${club} and update you within ${FOLLOW_UP_DAYS} days.`, `저장했어요 ✓ ${club}에 전하고 ${FOLLOW_UP_DAYS}일 안에 알려 드릴게요.`);
 }
 
-/** the student's own status line on the club page */
-export function statusLine(status: RequestStatus, name: string): string {
+/** the student's own one-line status on the club page */
+export function statusLine(status: RequestStatus, name: string, req?: Pick<JoinRequest, 'askedAt' | 'promisedBy'>): string {
   const club = clubShort(name);
-  if (status === 'saved') return L(`You asked · waiting for ${club}`, `요청함 · ${club} 기다리는 중`);
-  if (status === 'told') return L(`We told ${club} you want to join`, `${club}에 전했어요`);
+  if (status === 'saved') {
+    const by = req?.promisedBy ?? (req ? promiseDate(req.askedAt) : undefined);
+    return by && Date.parse(by) > Date.now() ? L(`You asked · we’ll update you by ${shortDay(by)}`, `요청함 · ${shortDay(by)}까지 알려 드려요`) : L(`You asked · waiting for ${club}`, `요청함 · ${club} 기다리는 중`);
+  }
+  if (status === 'told') return L(`We passed it to ${club}`, `${club}에 전했어요`);
   return L(`Sent to ${club}`, `${club}에 보냈어요`);
 }
 
@@ -68,7 +78,7 @@ export function statusLine(status: RequestStatus, name: string): string {
  * — each gets "We told {club} you want to join" (or "Sent to …" when organizers arrived). `until` limits it to
  * requests made up to that moment (an e-mail covers the requests counted in it, not later ones)
  */
-export function deliverSaved(org: Organization, via: 'organizers' | 'email', at: string, until?: string): ID[] {
+export function deliverSaved(org: Organization, via: NonNullable<JoinRequest['deliveredVia']>, at: string, until?: string): ID[] {
   const out: ID[] = [];
   for (const r of org.joinRequests ?? []) {
     if (r.deliveredAt || !org.applicantIds.includes(r.userId)) continue;
@@ -77,6 +87,10 @@ export function deliverSaved(org: Organization, via: 'organizers' | 'email', at:
   }
   return out;
 }
+
+/** the DM the Lumi team sends a club (owner 2026-11-06 — Instagram for now). Never stored */
+export const dmText = (name: string, waiting: number, link: string, schoolShort = 'Berkeley') =>
+  `Hi ${clubShort(name)}! ${waiting} ${schoolShort} ${waiting === 1 ? 'student' : 'students'} asked to join you on Lumi (a campus app for finding people to do things with). Could you tell them how to join? 2 minutes, no account needed: ${link}`;
 
 /** requests still waiting on the club (on Lumi, not yet handled) */
 export const pendingRequests = (org: Pick<Organization, 'joinRequests' | 'applicantIds'>): JoinRequest[] => (org.joinRequests ?? []).filter((r) => org.applicantIds.includes(r.userId));

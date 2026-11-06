@@ -174,11 +174,13 @@ test('outreach: ≥3 waiting, one e-mail per club per 30 days, no student names;
   assert.equal(third.status, 'told');
   for (const u of [ME, MAYA, DANIEL]) assert.equal(requestStatus(s.org(), u), 'told');
   assert.deepEqual(s.db.notifications.filter((n) => n.title === 'We told CHAOS you want to join').map((n) => n.userId).sort(), [ME, MAYA, DANIEL].sort());
-  // a 4th request inside 30 days: no new e-mail, and that student stays "saved" (the e-mail didn't count them)
+  // a 4th request inside 30 days: no new e-mail; the club was told within 30 days, so it counts as passed on (owner
+  // 2026-11-06) — the toast says so, no extra notification
   s.tick(10);
   const fourth = await s.svc.ask('oc_chaos', SOFIA, true, BASE);
   assert.equal(s.mails.length, 1);
-  assert.equal(fourth.status, 'saved');
+  assert.equal(fourth.status, 'told');
+  assert.ok(!s.db.notifications.some((n) => n.userId === SOFIA));
   // the log survives a restart
   assert.equal(([...(s.docs.get(CLUB_OUTREACH)?.values() ?? [])] as unknown as { sends: unknown[] }[])[0].sends.length, 1);
   await s.svc.load();
@@ -310,16 +312,93 @@ test('account deletion removes the person’s requests and consent records', asy
   assert.deepEqual(s.org().joinRequests, []);
 });
 
-test('wording: the club’s own acronym only; toast and status say "sent"/"told" only when it happened', async () => {
+test('wording: the club’s own acronym only; toast and status say "sent" only when it happened', async () => {
   const { clubShort, askedToast, statusLine } = await import('@core/lib/clubjoin');
   assert.equal(clubShort('Cal Hiking and Outdoor Society (CHAOS)'), 'CHAOS');
   assert.equal(clubShort('Korean Student Association (KSA)'), 'KSA');
   assert.equal(clubShort('Cal Indie Collective (band club)'), 'Cal Indie Collective (band club)');
   assert.equal(clubShort('Blueprint'), 'Blueprint');
-  assert.equal(askedToast('saved', 'Cal Hiking and Outdoor Society (CHAOS)'), 'Saved — we’ll pass it on to CHAOS.');
-  assert.doesNotMatch(askedToast('saved', 'X Club') + statusLine('saved', 'X Club'), /sent|told|delivered/i);
-  assert.equal(askedToast('sent', 'CHAOS'), 'Sent to CHAOS organizers');
-  assert.equal(askedToast('told', 'CHAOS'), 'We told CHAOS you want to join — you’ll hear here when they reply.');
-  assert.equal(statusLine('saved', 'CHAOS'), 'You asked · waiting for CHAOS');
+  assert.equal(askedToast('sent', 'Cal Hiking and Outdoor Society (CHAOS)'), 'Sent to CHAOS ✓');
+  assert.equal(askedToast('told', 'CHAOS'), 'Sent ✓ We passed it to CHAOS — you’ll hear here when they reply.');
+  assert.equal(askedToast('saved', 'CHAOS'), 'Saved ✓ We’ll pass it to CHAOS and update you within 3 days.');
+  assert.doesNotMatch(askedToast('saved', 'X Club') + statusLine('saved', 'X Club'), /sent|passed it|told|delivered/i);
+  const askedAt = new Date().toISOString();
+  assert.match(statusLine('saved', 'CHAOS', { askedAt }), /^You asked · we’ll update you by [A-Z][a-z]{2} \d{1,2}$/);
   assert.equal(statusLine('sent', 'CHAOS'), 'Sent to CHAOS');
+  assert.equal(statusLine('told', 'CHAOS'), 'We passed it to CHAOS');
+});
+
+test('undo: withdrawing right after asking leaves nothing behind', async () => {
+  const s = setup();
+  await s.svc.ask('oc_chaos', ME, true, BASE);
+  s.svc.withdraw('oc_chaos', ME);
+  assert.deepEqual(s.org().applicantIds, []);
+  assert.deepEqual(s.org().joinRequests, []);
+  assert.equal(requestStatus(s.org(), ME), 'none');
+});
+
+test('mark contacted (/admin/clubs): every waiting request is passed on and told; later ones too for 30 days; nothing about the DM is stored', async () => {
+  const s = setup();
+  for (const u of [ME, MAYA]) await s.svc.ask('oc_chaos', u, true, BASE);
+  await s.svc.ask('oc_other', DANIEL, true, BASE);
+  s.tick(2);
+  // the list: clubs without organizers with requests waiting, oldest first, with their public links
+  s.org('oc_other').links = [{ label: 'Instagram', url: 'https://instagram.com/otherclub' }];
+  const list = s.svc.adminList();
+  assert.deepEqual(list.map((c) => [c.id, c.waiting]), [['oc_chaos', 2], ['oc_other', 1]]);
+  assert.equal(list[0].oldestDays, 2);
+  assert.deepEqual(list[1].links.map((l) => l.label), ['Instagram']);
+  // DM text: a fresh link for that one club, the real count, no names
+  const dm = s.svc.adminDm('oc_chaos', BASE);
+  assert.match(dm.dm, /^Hi CHAOS! 2 Berkeley students asked to join you on Lumi \(a campus app for finding people to do things with\)\. Could you tell them how to join\? 2 minutes, no account needed: https:\/\/lumi\.example\/club-setup\/[A-Za-z0-9_-]+$/);
+  const raw = dm.link.split('/club-setup/')[1];
+  assert.equal(s.svc.setupView(raw).org.id, 'oc_chaos');
+  // mark contacted
+  await assert.rejects(() => s.svc.markContacted('oc_chaos', 'owner', 'carrier pigeon'), /Instagram/);
+  const r = await s.svc.markContacted('oc_chaos', 'owner', 'instagram');
+  assert.equal(r.told, 2);
+  for (const u of [ME, MAYA]) assert.equal(requestStatus(s.org(), u), 'told');
+  assert.equal(requestStatus(s.org('oc_other'), DANIEL), 'saved');
+  assert.deepEqual(s.db.notifications.filter((n) => n.title === 'We told CHAOS you want to join').map((n) => n.userId).sort(), [ME, MAYA].sort());
+  const stored = JSON.stringify([...(s.docs.get(CLUB_OUTREACH)?.values() ?? [])]);
+  assert.match(stored, /"by":"owner","channel":"instagram"/);
+  assert.ok(!stored.includes('Could you tell them') && !stored.includes(raw), 'the DM and its link are never stored');
+  // a later request within 30 days: passed on at once (no extra notification — the toast says it); after 30 days: saved again
+  s.tick(10);
+  assert.equal((await s.svc.ask('oc_chaos', SOFIA, true, BASE)).status, 'told');
+  assert.ok(!s.db.notifications.some((n) => n.userId === SOFIA));
+  s.tick(25);
+  assert.equal((await s.svc.ask('oc_chaos', EMMA, true, BASE)).status, 'saved');
+  // clubs that got organizers drop off the list
+  s.svc.claim(s.svc.adminDm('oc_chaos', BASE).link.split('/club-setup/')[1], LILY);
+  assert.deepEqual(s.svc.adminList().map((c) => c.id), ['oc_other']);
+});
+
+test('3-day follow-up: exactly one update per saved request, with the club’s public link; none once it was passed on', async () => {
+  const s = setup();
+  s.org('oc_other').links = [{ label: 'Website', url: 'https://www.otherclub.org/' }, { label: 'Instagram', url: 'https://www.instagram.com/other_berkeley/' }];
+  await s.svc.ask('oc_chaos', MAYA, true, BASE);   // passed on before day 3 (contacted) — she hears then, not again
+  await s.svc.ask('oc_other', DANIEL, true, BASE); // still saved on day 3 → one follow-up
+  await s.svc.ask('oc_other', EMMA, true, BASE);   // withdraws → nothing
+  const by = s.org('oc_other').joinRequests!.find((r) => r.userId === DANIEL)!.promisedBy!;
+  assert.ok(by, 'a saved request records the promised date');
+  const at = (ms: number) => new Date(Date.parse(by) + ms).toISOString();
+  assert.deepEqual(s.engine.orgs.followUps(at(-60_000)), {}, 'not before the 3 days are up');
+  await s.svc.markContacted('oc_chaos', 'owner', 'email');
+  s.svc.withdraw('oc_other', EMMA);
+  const before = s.db.notifications.length;
+  const notes = s.engine.orgs.followUps(at(60_000)).notifications ?? [];
+  assert.deepEqual(notes.map((n) => n.userId), [DANIEL]);
+  assert.equal(notes[0].title, 'Other Club isn’t on Lumi yet');
+  assert.equal(notes[0].body, 'Here’s how they take members: instagram.com/other_berkeley. We’ll keep your request and tell you when they reply.');
+  assert.equal(notes[0].link, '/orgs/oc_other');
+  // exactly one — the hourly job running again sends nothing more
+  assert.deepEqual(s.engine.orgs.followUps(at(3_600_000)), {});
+  assert.equal(s.db.notifications.length, before + 1);
+  // the job wrapper pushes it as a patch
+  assert.deepEqual(s.svc.followUps(), {});
+  // a request to a club with organizers never had a promise
+  const t = setup({ orgs: [chaos({ adminIds: [LILY], memberIds: [LILY] })] });
+  await t.svc.ask('oc_chaos', ME, true, BASE);
+  assert.equal(t.org().joinRequests![0].promisedBy, undefined);
 });

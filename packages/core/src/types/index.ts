@@ -414,7 +414,14 @@ export interface Organization {
 export type OrgJoinPolicy = 'open' | 'approval';
 
 /** 가입 요청 하나. askedAt = 동의하고 누른 때. deliveredAt = 동아리에 실제로 전해진 때 (Lumi 운영진에게 · 동아리 이메일로) — 전해지기 전엔 없다 */
-export interface JoinRequest { userId: ID; askedAt: string; consent: string; deliveredAt?: string; deliveredVia?: 'organizers' | 'email' }
+export interface JoinRequest {
+  userId: ID; askedAt: string; consent: string; deliveredAt?: string;
+  /** organizers = Lumi 운영진이 받음 · email = 안내 메일이 감 · contacted = 운영자가 동아리에 직접 연락함 (인스타 DM 등, /admin/clubs) */
+  deliveredVia?: 'organizers' | 'email' | 'contacted';
+  /** 저장만 됐을 때 "3일 안에 알려 드릴게요" 의 날짜 — 그때까지 바뀐 게 없으면 한 번 알린다 (engine orgs.followUps) */
+  promisedBy?: string;
+  followedUpAt?: string;
+}
 /** 운영진에게 보이는 요청자 — 동의한 학생, 서로 차단하지 않은 사람만 (server/view.ts) */
 export interface JoinRequester { userId: ID; name: string; year: string; major: string; askedAt: string }
 export type HowToJoinWho = 'open' | 'application' | 'tryouts' | 'dues';

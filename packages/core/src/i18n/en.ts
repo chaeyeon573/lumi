@@ -1445,4 +1445,7 @@ export const en: Record<string, string> = {
   '답이 오면 여기서 알려 드려요.': 'You’ll hear here when they reply.',
   '{club} 가입 방법을 올렸어요': '{club} posted how to join',
   '동아리 페이지에서 확인하세요.': 'See it on the club page.',
+  '{club}은(는) 아직 Lumi에 없어요': '{club} isn’t on Lumi yet',
+  '가입 방법은 여기서 볼 수 있어요: {link}. ': 'Here’s how they take members: {link}. ',
+  '요청은 그대로 두고, 답이 오면 알려 드릴게요.': 'We’ll keep your request and tell you when they reply.',
 };

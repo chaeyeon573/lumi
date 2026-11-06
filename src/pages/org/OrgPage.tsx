@@ -1,6 +1,6 @@
 import { useMemo, useState, type ReactNode } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { BadgeCheck, CalendarDays, Check, ClipboardList, ExternalLink, Globe, LogOut, Megaphone, MessageCircle, Pencil, Plus, Send, Share2, ShieldCheck, Undo2, Users, Wallet } from 'lucide-react';
+import { BadgeCheck, CalendarDays, Check, ClipboardList, ExternalLink, Globe, LogOut, Megaphone, MessageCircle, Pencil, Plus, Share2, ShieldCheck, Undo2, Users, Wallet } from 'lucide-react';
 import { lang } from '@core/i18n';
 import type { Organization, User } from '@core/types';
 import { api } from '@core/api';
@@ -8,7 +8,7 @@ import { useAppStore } from '@core/store/useAppStore';
 import { useViewer } from '@/hooks/useViewer';
 import { publicLinks, recruitmentLabel } from '@core/lib/orglinks';
 import { orgJoinState, type OrgJoin } from '@core/lib/orgjoin';
-import { clubShort, consentLine, consentTitle, CONSENT_VERSION, howToJoinLive, requestStatus, statusLine, whoLabel, type RequestStatus } from '@core/lib/clubjoin';
+import { askedToast, clubShort, consentLine, CONSENT_VERSION, requestOf, howToJoinLive, requestStatus, statusLine, whoLabel, type RequestStatus } from '@core/lib/clubjoin';
 import { canGoTogether } from '@core/lib/withpeople';
 import { formatDate, formatTime } from '@core/lib/format';
 import { isSampleOrg } from '@core/lib/sampleorgs';
@@ -45,7 +45,8 @@ const photoSrc = (url: string) => (/^(https?:|data:|\/)/.test(url) ? url : `/${u
  * Header (owner 2026-11-06): no placeholder block — a real cover as a banner and a real logo next to the name only when they
  * exist; otherwise the page starts with the name. Then category + one meta line, the action row (Ask to join primary, Follow
  * outline), the people line ("7 students asked to join · 2 friends follow" with faces), then the tabs.
- * Asking follows @core/lib/clubjoin: one consent line first; the wording only says "sent" when the club really has it.
+ * Asking follows @core/lib/clubjoin: one tap (a quiet consent line under the button), a toast with Undo that says exactly
+ * what happened, and one status line in the action row — "sent" only when the club really has it.
  */
 export function OrgPage() {
   const { id } = useParams();
@@ -60,7 +61,6 @@ export function OrgPage() {
   const rooms = useAppStore((s) => s.chatRooms);
   const [menu, setMenu] = useState(false);
   const [leaving, setLeaving] = useState(false);
-  const [consent, setConsent] = useState(false);
   const [busy, setBusy] = useState(false);
   const org = orgs.find((o) => o.id === id);
   if (!org) return (
@@ -81,12 +81,16 @@ export function OrgPage() {
   const lastOrganizer = isAdmin && !org.adminIds.some((a) => a !== v.me.id);
   const leave = () => { setLeaving(false); run(() => api.orgs.leave(org.id, v.me.id), en ? `You left ${org.name}.` : `${org.name}에서 나왔어요.`).catch(() => {}); };
   const follow = () => run(() => api.relationships.toggleFollow(v.me.id, org.id, 'org'), following ? undefined : (en ? 'Following — you’ll hear about new events.' : '팔로우했어요. 새 행사 소식을 받아요.')).catch(() => {});
-  const withdraw = () => run(() => api.orgs.withdraw(org.id, v.me.id), en ? 'Request withdrawn.' : '요청을 거뒀어요.').catch(() => {});
+  const withdraw = (undo = false) => run(() => api.orgs.withdraw(org.id, v.me.id), undo ? (en ? 'Request undone.' : '요청을 취소했어요.') : (en ? 'Request withdrawn.' : '요청을 거뒀어요.')).catch(() => {});
   const ask = async () => {
     setBusy(true);
     try {
       if (join.kind === 'join') await run(() => api.orgs.apply(org.id, v.me.id), en ? `You joined ${org.name}.` : `${org.name}에 가입했어요.`);
-      else { /* the status card says where it stands — the toast stays short */ await run(() => api.clubs.ask(org.id, CONSENT_VERSION)); setConsent(false); showToast(en ? 'Asked ✓' : '요청했어요 ✓', 'success'); }
+      else {
+        // one tap = consent (the line under the button says what organizers will see). The toast says exactly what happened, with Undo
+        const r = await run(() => api.clubs.ask(org.id, CONSENT_VERSION));
+        showToast(askedToast(r.status, org.name), 'success', { label: en ? 'Undo' : '취소', run: () => { void withdraw(true); } });
+      }
     } catch { /* toast */ } finally { setBusy(false); }
   };
   const followers = org.followerCount ?? org.followerIds.length;
@@ -109,7 +113,7 @@ export function OrgPage() {
         </div>
         {meta && <p className="text-[13px] text-ink-3 mt-2">{meta}</p>}
         {sample && <p className="text-[12.5px] text-ink-3 mt-2">{en ? 'Sample club — made up to show how Lumi works.' : '예시 동아리 — Lumi 사용법을 보여 주려고 만든 거예요.'}</p>}
-        <ActionRow org={org} join={join} status={status} following={following} busy={busy} onAsk={() => (join.kind === 'join' ? ask() : setConsent(true))} onFollow={follow} />
+        <ActionRow org={org} join={join} status={status} following={following} busy={busy} onAsk={ask} onFollow={follow} />
         <PeopleRow org={org} />
       </div>
       <SegTabs className="mx-4 mt-4" tabs={TABS.map((k) => ({ key: k, label: TAB_LABEL[k] }))} value={tab} onChange={setTab} />
@@ -119,13 +123,6 @@ export function OrgPage() {
         {tab === 'events' && <Events org={org} isAdmin={isAdmin} following={following} />}
         {tab === 'members' && <Members org={org} />}
       </div>
-      <BottomSheet open={consent} onClose={() => setConsent(false)} title={consentTitle(org.name)}>
-        <p className="text-[14px] text-ink-2 pb-4">{consentLine(org.name)}</p>
-        <div className="space-y-2 pb-1">
-          <Btn full loading={busy} onClick={ask}>{en ? 'Ask to join' : '가입 요청'}</Btn>
-          <Btn full variant="outline" onClick={() => setConsent(false)}>{en ? 'Cancel' : '취소'}</Btn>
-        </div>
-      </BottomSheet>
       <BottomSheet open={menu} onClose={() => setMenu(false)} title={org.name}>
         <div className="space-y-1 pb-1">
           <MenuItem icon={<Share2 size={18} />} label={en ? 'Copy link' : '링크 복사'} onClick={() => { setMenu(false); void navigator.clipboard?.writeText(window.location.href.split('?')[0]).catch(() => {}); showToast(en ? 'Link copied' : '링크를 복사했어요'); }} />
@@ -161,10 +158,11 @@ function MenuItem({ icon, label, sub, disabled, onClick }: { icon: ReactNode; la
 
 /**
  * Ask to join (primary) + Follow (outline), both above the fold. After asking, the student's own status takes the primary's
- * place ("You asked · waiting for CHAOS" / "Sent to CHAOS") — withdraw is in the ··· menu. Organizers get "See who asked".
+ * place in one line ("You asked · we'll update you by Nov 9" / "Sent to CHAOS") — withdraw is in the ··· menu. Organizers get "See who asked".
  */
 function ActionRow({ org, join, status, following, busy, onAsk, onFollow }: { org: Organization; join: OrgJoin; status: RequestStatus; following: boolean; busy: boolean; onAsk: () => void; onFollow: () => void }) {
   const nav = useNavigate();
+  const v = useViewer();
   const followBtn = <Btn variant="outline" onClick={onFollow} className={cn('shrink-0', following && 'text-sel-fg border-sel-line')}>{following ? (en ? 'Following' : '팔로잉') : (en ? 'Follow' : '팔로우')}</Btn>;
   if (join.kind === 'admin') {
     const n = org.requesters?.length ?? org.applicantIds.length;
@@ -175,17 +173,19 @@ function ActionRow({ org, join, status, following, busy, onAsk, onFollow }: { or
   if (join.kind === 'applied') return (
     <div className="flex gap-2.5 mt-4 items-stretch">
       <div className="flex-1 min-h-11 px-4 rounded-full border border-sel-line bg-sel-soft text-sel-fg text-[13.5px] font-semibold flex items-center gap-2 min-w-0">
-        <Check size={16} className="shrink-0" /><span className="truncate">{statusLine(status, org.name)}</span>
+        <Check size={16} className="shrink-0" /><span className="truncate">{statusLine(status, org.name, requestOf(org, v.me.id))}</span>
       </div>
       {followBtn}
     </div>
   );
-  return (
+  const row = (
     <div className="flex gap-2.5 mt-4">
       <Btn className="flex-1" loading={busy} onClick={onAsk}>{join.kind === 'join' ? (en ? 'Join group' : '가입하기') : (en ? 'Ask to join' : '가입 요청')}</Btn>
       {followBtn}
     </div>
   );
+  // one quiet consent line before the tap (owner 2026-11-06 — no sheet; tapping is the consent)
+  return join.kind === 'ask' ? <>{row}<p className="text-[12.5px] text-ink-3 mt-2">{consentLine(org.name)}</p></> : row;
 }
 
 /** "7 students asked to join · 2 friends follow" with faces — real people only, each as their privacy allows (server/view.ts) */
@@ -264,7 +264,6 @@ function About({ org, join, status, sample }: { org: Organization; join: OrgJoin
   const directoryClub = !org.createdBy && !sample && org.type !== 'department';
   return (
     <div className="space-y-3">
-      {status !== 'none' && <RequestCard org={org} status={status} />}
       {how.length > 0 && <InfoRows rows={how} />}
       {status !== 'none' && <NextEventNudge org={org} />}
       {org.description && <TextCard>{org.description}</TextCard>}
@@ -279,20 +278,6 @@ function About({ org, join, status, sample }: { org: Organization; join: OrgJoin
       <ManageSheet org={org} open={manage} onClose={() => setManage(false)} />
     </div>
   );
-}
-
-/** the student's own request — only what really happened (@core/lib/clubjoin): saved / sent / told, and how many asked */
-function RequestCard({ org, status }: { org: Organization; status: RequestStatus }) {
-  const club = clubShort(org.name);
-  const asked = org.requestCount ?? 0;
-  const others = Math.max(0, asked - 1);
-  const title = status === 'saved' ? (en ? `Saved — we’ll pass it on to ${club}` : `저장했어요 — ${club}에 전해 드릴게요`)
-    : status === 'told' ? (en ? `We told ${club} you want to join` : `${club}에 가입하고 싶다고 전했어요`)
-    : (en ? `Sent to ${club} organizers` : `${club} 운영진에게 보냈어요`);
-  const sub = status === 'told' ? (en ? 'You’ll hear here when they reply.' : '답이 오면 여기서 알려 드려요.')
-    : status === 'saved' ? (asked > 1 ? (en ? `${asked} students asked so far` : `지금까지 ${asked}명이 요청했어요`) : (en ? 'You’ll hear here when they see it.' : '전해지면 여기서 알려 드려요.'))
-    : others ? (en ? `${others} other ${others === 1 ? 'student' : 'students'} asked too` : `다른 학생 ${others}명도 요청했어요`) : undefined;
-  return <RowCard tone="rose" icon={<Send size={20} />} title={title} sub={sub} />;
 }
 
 /** "Go together" to the club's next dated event, when there is one (Explore listings or an event the club posted) */
