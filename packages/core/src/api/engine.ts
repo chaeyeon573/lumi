@@ -19,7 +19,7 @@ import { DAILY_QUESTIONS, PERSON_ROLE_LABELS } from '@core/lib/labels';
 import { campusDate } from '@core/lib/listings';
 import { pollPlaceNames, POLL_MAX_GRID_OPTIONS } from '@core/lib/pollgrid';
 import { orgJoinState } from '@core/lib/orgjoin';
-import { CONSENT_VERSION, deliverSaved, ORG_MESSAGE_MAX, requestOf } from '@core/lib/clubjoin';
+import { clubShort, CONSENT_VERSION, deliverSaved, ORG_MESSAGE_MAX, requestOf } from '@core/lib/clubjoin';
 import { audienceFits, isFull, waitlistOf } from '@core/lib/meetups';
 import { initialsOf } from '@core/lib/orglinks';
 import { groupLimitReason, hasPlus, limitsFor, meetupLimitReason, upcomingHosted } from '@core/lib/plus';
@@ -65,7 +65,7 @@ export function createEngine(ctx: EngineContext) {
 
   /** "We told {club} you want to join" — the moment a saved join request really reaches the club (@core/lib/clubjoin) */
   function toldNote(org: Organization, userId: ID): Notification {
-    return notify(userId, { type: 'org_event', title: t('{club}에 가입하고 싶다고 전했어요').replace('{club}', org.name), body: t('답이 오면 여기서 알려 드려요.'), link: `/orgs/${org.id}` });
+    return notify(userId, { type: 'org_event', title: t('{club}에 가입하고 싶다고 전했어요').replace('{club}', clubShort(org.name)), body: t('답이 오면 여기서 알려 드려요.'), link: `/orgs/${org.id}` });
   }
 
   function ensureActivityRoom(activity: Activity): ChatRoom {
@@ -587,7 +587,7 @@ export function createEngine(ctx: EngineContext) {
         const before = org.howToJoin;
         org.howToJoin = info;
         const changed = !before || before.signupUrl !== info.signupUrl || JSON.stringify(before.next ?? null) !== JSON.stringify(info.next ?? null) || before.who !== info.who;
-        const nts = changed ? org.applicantIds.filter((sid) => !org.adminIds.includes(sid)).map((sid) => notify(sid, { type: 'org_event', title: t('{club} 가입 방법을 올렸어요').replace('{club}', org.name), body: t('동아리 페이지에서 확인하세요.'), link: `/orgs/${org.id}` })) : [];
+        const nts = changed ? org.applicantIds.filter((sid) => !org.adminIds.includes(sid)).map((sid) => notify(sid, { type: 'org_event', title: t('{club} 가입 방법을 올렸어요').replace('{club}', clubShort(org.name)), body: t('동아리 페이지에서 확인하세요.'), link: `/orgs/${org.id}` })) : [];
         return { organizations: [org], notifications: nts };
       },
       /** 서버 전용 — 운영진이 올린 진짜 로고·표지 사진 (null 이면 지운다). 사진이 없으면 화면은 자리도 그리지 않는다 */

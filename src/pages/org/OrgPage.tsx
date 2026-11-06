@@ -8,7 +8,7 @@ import { useAppStore } from '@core/store/useAppStore';
 import { useViewer } from '@/hooks/useViewer';
 import { publicLinks, recruitmentLabel } from '@core/lib/orglinks';
 import { orgJoinState, type OrgJoin } from '@core/lib/orgjoin';
-import { askedToast, consentLine, consentTitle, CONSENT_VERSION, howToJoinLive, requestStatus, statusLine, whoLabel, type RequestStatus } from '@core/lib/clubjoin';
+import { askedToast, clubShort, consentLine, consentTitle, CONSENT_VERSION, howToJoinLive, requestStatus, statusLine, whoLabel, type RequestStatus } from '@core/lib/clubjoin';
 import { canGoTogether } from '@core/lib/withpeople';
 import { formatDate, formatTime } from '@core/lib/format';
 import { isSampleOrg } from '@core/lib/sampleorgs';
@@ -97,7 +97,7 @@ export function OrgPage() {
       <BackHeader title={`${en ? 'Community' : '커뮤니티'} — ${TAB_LABEL[tab]}`} onMore={() => setMenu(true)}
         right={room ? <HeaderIcon label={en ? 'Group chat' : '단체 채팅'} onClick={() => nav(`/chats/${room.id}`)}><MessageCircle size={22} /></HeaderIcon> : undefined} />
       <div className="px-4 pt-1">
-        {org.cover?.url && <img src={photoSrc(org.cover.url)} alt="" className="w-full aspect-[2/1] object-cover rounded-[20px] border border-line mb-4" />}
+        {org.cover?.url && <img src={photoSrc(org.cover.url)} alt="" className="w-full aspect-[5/2] object-cover rounded-[20px] border border-line mb-4" />}
         <div className="flex items-center gap-3">
           {org.logo.url && <img src={photoSrc(org.logo.url)} alt="" className="size-14 rounded-[14px] object-cover border border-line shrink-0" />}
           <h1 className="ha-title leading-[1.12] min-w-0">{sample && <SampleTag className="align-middle" />}{org.name}</h1>
@@ -130,7 +130,7 @@ export function OrgPage() {
         <div className="space-y-1 pb-1">
           <MenuItem icon={<Share2 size={18} />} label={en ? 'Copy link' : '링크 복사'} onClick={() => { setMenu(false); void navigator.clipboard?.writeText(window.location.href.split('?')[0]).catch(() => {}); showToast(en ? 'Link copied' : '링크를 복사했어요'); }} />
           {isAdmin && <MenuItem icon={<ClipboardList size={18} />} label={en ? 'Who asked to join' : '가입 요청'} onClick={() => { setMenu(false); nav(`/orgs/${org.id}/requests`); }} />}
-          {status !== 'none' && <MenuItem icon={<Undo2 size={18} />} label={en ? 'Withdraw my request' : '가입 요청 거두기'} sub={en ? `${org.name} can’t message you after this.` : `거두면 ${org.name}에서 메시지를 보낼 수 없어요.`} onClick={() => { setMenu(false); void withdraw(); }} />}
+          {status !== 'none' && <MenuItem icon={<Undo2 size={18} />} label={en ? 'Withdraw my request' : '가입 요청 거두기'} sub={en ? `${clubShort(org.name)} can’t message you after this.` : `거두면 ${clubShort(org.name)}에서 메시지를 보낼 수 없어요.`} onClick={() => { setMenu(false); void withdraw(); }} />}
           {!isAdmin && following && <MenuItem icon={<Users size={18} />} label={en ? 'Unfollow' : '팔로우 취소'} onClick={() => { setMenu(false); void follow(); }} />}
           {inGroup && <MenuItem icon={<LogOut size={18} />} label={en ? 'Leave group' : '그룹 나가기'} disabled={lastOrganizer}
             sub={lastOrganizer ? (en ? 'You’re the only organizer. A group needs at least one, so you can’t leave yet.' : '이 그룹의 운영진은 나 혼자예요. 그룹에는 운영진이 한 명은 있어야 해서 지금은 나갈 수 없어요.') : undefined}
@@ -216,11 +216,12 @@ function membershipRow(org: Organization, join: OrgJoin): InfoRow | null {
     : join.kind === 'member' ? (en ? 'You’re a member' : '회원이에요')
     : join.kind === 'join' ? (en ? 'Open — anyone at school can join' : '열림 — 누구나 가입')
     : join.kind === 'follow' ? null
+    : join.kind === 'applied' ? (organizers ? (en ? 'Organizers on Lumi have your request' : 'Lumi의 운영진이 요청을 받았어요') : (en ? 'Organizers aren’t on Lumi yet — your request is saved' : '운영진이 아직 Lumi에 없어요 — 요청은 저장돼 있어요'))
     : asked ? (en ? `${asked} ${asked === 1 ? 'student' : 'students'} asked to join` : `${asked}명이 가입을 요청했어요`)
     : organizers ? (en ? 'Organizers on Lumi answer requests' : 'Lumi의 운영진이 요청에 답해요')
     : (en ? 'Organizers aren’t on Lumi yet' : '운영진이 아직 Lumi에 없어요');
   if (!value) return null;
-  const caption = join.kind === 'ask' || join.kind === 'applied'
+  const caption = join.kind === 'ask'
     ? (organizers ? (en ? `${organizers === 1 ? 'The organizer sees' : `${organizers} organizers see`} requests here` : `운영진 ${organizers}명이 여기서 요청을 봐요`)
       : (en ? 'Requests are saved and passed on when the club joins Lumi' : '요청은 저장했다가 동아리가 Lumi에 오면 전해요'))
     : undefined;
@@ -281,11 +282,12 @@ function About({ org, join, status, sample }: { org: Organization; join: OrgJoin
 
 /** the student's own request — only what really happened (@core/lib/clubjoin): saved / sent / told, and how many asked */
 function RequestCard({ org, status }: { org: Organization; status: RequestStatus }) {
+  const club = clubShort(org.name);
   const asked = org.requestCount ?? 0;
   const others = Math.max(0, asked - 1);
-  const title = status === 'saved' ? (en ? `Saved — we’ll pass it on to ${org.name}` : `저장했어요 — ${org.name}에 전해 드릴게요`)
-    : status === 'told' ? (en ? `We told ${org.name} you want to join` : `${org.name}에 가입하고 싶다고 전했어요`)
-    : (en ? `Sent to ${org.name} organizers` : `${org.name} 운영진에게 보냈어요`);
+  const title = status === 'saved' ? (en ? `Saved — we’ll pass it on to ${club}` : `저장했어요 — ${club}에 전해 드릴게요`)
+    : status === 'told' ? (en ? `We told ${club} you want to join` : `${club}에 가입하고 싶다고 전했어요`)
+    : (en ? `Sent to ${club} organizers` : `${club} 운영진에게 보냈어요`);
   const sub = status === 'told' ? (en ? 'You’ll hear here when they reply.' : '답이 오면 여기서 알려 드려요.')
     : status === 'saved' ? (asked > 1 ? (en ? `${asked} students asked so far` : `지금까지 ${asked}명이 요청했어요`) : (en ? 'You’ll hear here when they see it.' : '전해지면 여기서 알려 드려요.'))
     : others ? (en ? `${others} other ${others === 1 ? 'student' : 'students'} asked too` : `다른 학생 ${others}명도 요청했어요`) : undefined;

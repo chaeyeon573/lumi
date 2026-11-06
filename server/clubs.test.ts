@@ -309,3 +309,17 @@ test('account deletion removes the person’s requests and consent records', asy
   assert.deepEqual(s.org().applicantIds, []);
   assert.deepEqual(s.org().joinRequests, []);
 });
+
+test('wording: the club’s own acronym only; toast and status say "sent"/"told" only when it happened', async () => {
+  const { clubShort, askedToast, statusLine } = await import('@core/lib/clubjoin');
+  assert.equal(clubShort('Cal Hiking and Outdoor Society (CHAOS)'), 'CHAOS');
+  assert.equal(clubShort('Korean Student Association (KSA)'), 'KSA');
+  assert.equal(clubShort('Cal Indie Collective (band club)'), 'Cal Indie Collective (band club)');
+  assert.equal(clubShort('Blueprint'), 'Blueprint');
+  assert.equal(askedToast('saved', 'Cal Hiking and Outdoor Society (CHAOS)'), 'Saved — we’ll pass it on to CHAOS.');
+  assert.doesNotMatch(askedToast('saved', 'X Club') + statusLine('saved', 'X Club'), /sent|told|delivered/i);
+  assert.equal(askedToast('sent', 'CHAOS'), 'Sent to CHAOS organizers');
+  assert.equal(askedToast('told', 'CHAOS'), 'We told CHAOS you want to join — you’ll hear here when they reply.');
+  assert.equal(statusLine('saved', 'CHAOS'), 'You asked · waiting for CHAOS');
+  assert.equal(statusLine('sent', 'CHAOS'), 'Sent to CHAOS');
+});

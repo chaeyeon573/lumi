@@ -85,7 +85,7 @@ export function MembershipRequestsPage() {
               onClick={() => setSelected(selected === uid ? null : uid)}
               action={
                 <span className="flex items-center gap-1.5" onClick={(e) => e.stopPropagation()}>
-                  {d && <Btn size="sm" variant="link" icon={<MessageCircle size={15} />} onClick={() => { setWriteTo([uid]); setText(''); }}>{en ? 'Message' : '메시지'}</Btn>}
+                  {d && <Btn size="sm" variant="outline" className="!px-0 w-9" aria-label={en ? `Message ${d.name}` : `${d.name}에게 메시지`} onClick={() => { setWriteTo([uid]); setText(''); }}><MessageCircle size={16} /></Btn>}
                   <Btn size="sm" variant="outline" loading={busy === uid} icon={<Check size={15} />} onClick={() => answer(uid, true)}>{en ? 'Approve' : '승인'}</Btn>
                 </span>
               } />

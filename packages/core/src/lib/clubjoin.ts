@@ -13,10 +13,19 @@ import { lang } from '@core/i18n';
 
 const L = (en: string, ko: string) => (lang === 'en' ? en : ko);
 
+/**
+ * the short name students use — "Cal Hiking and Outdoor Society (CHAOS)" → "CHAOS". Only the club's own acronym in
+ * parentheses at the end of its directory name; otherwise the full name (never made up)
+ */
+export function clubShort(name: string): string {
+  const m = /\(([A-Z][A-Za-z0-9&.+\- ]{1,11})\)\s*$/.exec(name.trim());
+  return m && /[A-Z].*[A-Z]/.test(m[1]) ? m[1].trim() : name.trim();
+}
+
 /** the version of the consent line the student saw (stored on each request) */
 export const CONSENT_VERSION = 'v2:name-year-major-message';
-export const consentLine = (club: string) => L(`${club} organizers will see your name, year and major and can message you.`, `${club} 운영진이 내 이름·학년·전공을 보고 메시지를 보낼 수 있어요.`);
-export const consentTitle = (club: string) => L(`We’ll tell ${club} you want to join`, `${club}에 가입하고 싶다고 전할게요`);
+export const consentLine = (name: string, club = clubShort(name)) => L(`${club} organizers will see your name, year and major and can message you.`, `${club} 운영진이 내 이름·학년·전공을 보고 메시지를 보낼 수 있어요.`);
+export const consentTitle = (name: string, club = clubShort(name)) => L(`We’ll tell ${club} you want to join`, `${club}에 가입하고 싶다고 전할게요`);
 
 /** a request to the club, if this student has one */
 export const requestOf = (org: Pick<Organization, 'joinRequests'>, userId: ID): JoinRequest | undefined => org.joinRequests?.find((r) => r.userId === userId);
@@ -39,14 +48,16 @@ export function requestStatus(org: Pick<Organization, 'joinRequests' | 'applican
 }
 
 /** toast right after asking (must match requestStatus) */
-export function askedToast(status: RequestStatus, club: string): string {
+export function askedToast(status: RequestStatus, name: string): string {
+  const club = clubShort(name);
   if (status === 'sent') return L(`Sent to ${club} organizers`, `${club} 운영진에게 보냈어요`);
   if (status === 'told') return L(`We told ${club} you want to join — you’ll hear here when they reply.`, `${club}에 가입하고 싶다고 전했어요 — 답이 오면 여기서 알려 드려요.`);
   return L(`Saved — we’ll pass it on to ${club}.`, `저장했어요 — ${club}에 전해 드릴게요.`);
 }
 
 /** the student's own status line on the club page */
-export function statusLine(status: RequestStatus, club: string): string {
+export function statusLine(status: RequestStatus, name: string): string {
+  const club = clubShort(name);
   if (status === 'saved') return L(`You asked · waiting for ${club}`, `요청함 · ${club} 기다리는 중`);
   if (status === 'told') return L(`We told ${club} you want to join`, `${club}에 전했어요`);
   return L(`Sent to ${club}`, `${club}에 보냈어요`);
@@ -132,7 +143,7 @@ export function yearAndMajor(u: User, d = new Date()): { year: string; major: st
 }
 
 /** "Cal Hiking (organizer)" — how an organizer's message is signed */
-export const orgSenderLabel = (name: string) => L(`${name} (organizer)`, `${name} (운영진)`);
+export const orgSenderLabel = (name: string) => L(`${clubShort(name)} (organizer)`, `${clubShort(name)} (운영진)`);
 export const ORG_MESSAGE_MAX = 1000;
 
 /** what /club-setup/:token shows (server/clubs.ts setupView) */

@@ -229,8 +229,11 @@ ${btn(links.setup, 'Add how to join →')}
       const raw = issue(o.id, 'manage');
       const link = `${base}/club-setup/${raw}`;
       const subject = `Manage ${o.name} on Lumi`;
-      const text = `Someone asked to manage ${o.name} on Lumi, a campus app where students find people to do things with.\n\nIf that’s you, open this link within 24 hours:\n${link}\n\nYou can add how to join (your sign-up link, who can join, the next info session), and with a free organizer account see who asked to join.\n\nIf it wasn’t you, ignore this e-mail.\n\n— Lumi\n\nYou’re getting this because your e-mail is listed for ${o.name} in the student organization directory.`;
-      const sent = await deps.sendMail(to, subject, text).catch(() => false);
+      const text = `Someone asked to manage ${o.name} on Lumi, a campus app where students find people to do things with.\n\nIf that’s you, open this link within 24 hours:\n\n${link}\n\nYou can add how to join (your sign-up link, who can join, the next info session), and with a free organizer account see who asked to join.\n\nIf it wasn’t you, ignore this e-mail.\n\n— Lumi\n\nYou’re getting this because your e-mail is listed for ${o.name} in the student organization directory.`;
+      const esc = (x: string) => x.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      const html = `<!doctype html><html><body style="font:15px/1.55 -apple-system,Segoe UI,Helvetica,Arial,sans-serif;max-width:520px;margin:0 auto;padding:24px 16px">${text.split('\n\n').map((p) => `<p>${p === link ? `<a href="${esc(link)}">Manage ${esc(o.name)} on Lumi →</a>` : esc(p).replace(/\n/g, '<br>')}</p>`).join('')}</body></html>`;
+      // html too, so an unconfigured server never prints the one-time link to its logs (server/mail.ts)
+      const sent = await deps.sendMail(to, subject, text, html).catch(() => false);
       const domain = to.split('@')[1];
       return sent
         ? { sent: true, message: `We e-mailed a link to the club’s address in the campus directory (…@${domain}).` }
