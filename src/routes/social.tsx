@@ -3,7 +3,6 @@ import { SocialForYouPage, SocialPeoplePage, SocialFeedPage } from '@/pages/soci
 import { PostPage } from '@/pages/social/PostPage';
 import { MeetPage } from '@/pages/meet/MeetPage';
 import { SmallTablesPage } from '@/pages/meet/SmallTablesPage';
-import { DiscoverPage } from '@/pages/discover/DiscoverPage';
 import { SearchPage } from '@/pages/home/SearchPage';
 import { ActivityDetailPage } from '@/pages/activity/ActivityDetailPage';
 import { ManageActivityPage } from '@/pages/activity/ManageActivityPage';
@@ -79,7 +78,7 @@ export const socialSubRoutes = (
     <Route path="/social/people/filters" element={<PeopleFiltersPage />} /> {/* S059 */}
     <Route path="/social/people/common" element={<PeopleResultsPage mode="common" />} /> {/* S061 */}
     <Route path="/social/people/explore" element={<Navigate to="/social/people/results" replace />} />
-    <Route path="/social/more" element={<DiscoverPage />} />
+    <Route path="/social/more" element={<Navigate to="/social" replace />} /> {/* old "who's free" page, no entry point left */}
     <Route path="/users/:id" element={<PersonPage />} />                  {/* S054 */}
     <Route path="/users/:id/suggest" element={<SuggestMeetupPage />} />   {/* S055 */}
     <Route path="/search" element={<SearchPage />} />                     {/* S056 */}

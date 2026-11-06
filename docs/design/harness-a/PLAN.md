@@ -50,9 +50,9 @@ components), `docs/PRODUCT_TASTE.md`.
 `src/App.tsx`, `src/index.css`, `src/components/ha/*` (existing files), `src/components/layout/{AppShell,TopBar,AppHeader}.tsx`,
 `src/routes/redirects.tsx` (existing lines) = foundation; change only through the coordinator.
 
-Note: dead code from dropped features (`src/pages/rides`, `seats`, `map`, `academic`, `plans/PlanPage|CreatePlanPage`,
-`components/rides|seats`) is not routed. Leave it (or delete it in a separate, coordinator-approved commit) — the server
-keeps those APIs.
+Note: dead code from dropped features (rides, seats, academic calendar, `plans/PlanPage|CreatePlanPage`, the old
+Home swipe deck, `/social/more` DiscoverPage and the `+` create sheet) was deleted on 2026-11-06 — nothing in `src/` is
+unreachable from `src/main.tsx` any more. The server keeps those APIs.
 
 ---
 
