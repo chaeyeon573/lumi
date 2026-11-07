@@ -98,3 +98,11 @@ test('csvRowClosed: closed status, a passed deadline, or (no deadline) a passed 
   assert.equal(csvRowClosed({ date: '2026-10-17' }, today), true);
   assert.equal(csvRowClosed({}, today), false, 'no date known: keep (description says when)');
 });
+
+test('decodeHtmlText: named, numeric and double-encoded entities in event text are decoded', async () => {
+  const { decodeHtmlText } = await import('./sources/entities');
+  assert.equal(decodeHtmlText('Men&apos;s Water Polo Weekly Practice'), "Men's Water Polo Weekly Practice");
+  assert.equal(decodeHtmlText('Serve &amp;apos;N Learn'), "Serve 'N Learn");
+  assert.equal(decodeHtmlText('Q&amp;A &#8211; Panel'), 'Q&A – Panel');
+  assert.equal(decodeHtmlText('Plain title'), 'Plain title');
+});

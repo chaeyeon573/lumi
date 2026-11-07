@@ -7,3 +7,14 @@ export function charFromCode(n: number): string {
 }
 /** &#123; / &#x7B; 를 모두 글자로 (nbsp(160)는 공백) */
 export const decodeNumericEntities = (s: string) => s.replace(/&#(x[0-9a-f]+|\d+);/gi, (_, v: string) => (v === '160' ? ' ' : charFromCode(v[0] === 'x' || v[0] === 'X' ? parseInt(v.slice(1), 16) : Number(v))));
+
+/** 이름 있는 글자 코드(&apos; &amp; &quot; &lt; &gt; &nbsp;)와 숫자 코드를 푼다 — 두 번 감싼 것(&amp;apos;)도.
+ *  행사 제목 321개가 "Men&apos;s Water Polo" 처럼 그대로 나가고 있었다 (CampusGroups RSS 등, 2026-11-07) */
+export function decodeHtmlText(s: string): string {
+  if (!s || !/&(#\d+|#x[0-9a-f]+|[a-z]+);/i.test(s)) return s;
+  let t = s;
+  for (let i = 0; i < 2 && /&(#\d+|#x[0-9a-f]+|apos|quot|lt|gt|nbsp|amp);/i.test(t); i++) {
+    t = decodeNumericEntities(t.replace(/&apos;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ')).replace(/&amp;/g, '&');
+  }
+  return t;
+}

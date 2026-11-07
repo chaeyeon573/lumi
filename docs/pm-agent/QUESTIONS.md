@@ -15,6 +15,11 @@
 **정할 것:** 할지, 하면 몇 번부터. AI 호출은 요청마다 비용. 정해 주시면 Claude 는 서버 API(예: 빈 시간 × 행사), Codex 는 화면.
 **답:**
 
+## 2026-11-07 — Rutgers 는 Newark 캠퍼스만 공개 목록이 있습니다. 파일로 둘까요?
+**상황:** rutgers.campusgroups.com 의 공개 단체 231개 중 229개가 Rutgers–Newark 단체(raiderlink.newark)입니다. 본 캠퍼스(New Brunswick)는 getinvolved.rutgers.edu 가 안내 페이지로만 넘어가 공개 목록이 없습니다. 그래서 학교 이름을 "Rutgers University–Newark"(s_rutgersnewark)로 정확히 적어 파일로 넣었습니다(단체 231, 행사 59).
+**제안:** A) Newark 캠퍼스로 그대로 둔다(추천 — 공개·공식 자료이고 이름이 정확함) B) 본 캠퍼스가 아니니 목록에서 뺀다(파일은 지우지 않고 학교 목록 줄만 뺀다).
+**답:**
+
 ## 2026-11-05 — '명문대' 경계에 있는 학교도 파일로 넣을까요?
 **상황:** 동아리 목록이 공개라 바로 넣을 수 있는 학교 중, 상위권 기준에 걸칠까 말까 한 곳들입니다: Arizona(공개 행사 피드 있음), Pepperdine, SUNY Buffalo(Engage 675개), UCF, Iowa. Penn State·NC State 는 상위 주립이라 이미 넣었습니다(11-05).
 **제안:** A) 다 넣는다(파일만, 비용 없음). B) 이번에는 넣지 않고 기준 안 학교만 계속.
